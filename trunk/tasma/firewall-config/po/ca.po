@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 12:15+0300\n"
+"POT-Creation-Date: 2007-05-26 03:49+0300\n"
 "PO-Revision-Date: 2007-03-18 19:53+0100\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@ns1.uludag.org.tr>\n"
@@ -92,7 +92,15 @@ msgstr ""
 "Pica ací per a engegar el tallafocs i permetre connexions als serveis "
 "especificats."
 
-#: src/firewall-config.py:431
+#: src/firewall-config.py:344
+msgid "You are not allowed to edit firewall settings."
+msgstr ""
+
+#: src/firewall-config.py:344
+msgid "Access Denied"
+msgstr ""
+
+#: src/firewall-config.py:438
 msgid "Pardus Firewall Interface is already running!"
 msgstr "La interfície del tallafocs de Pardus ja està en marxa"
 

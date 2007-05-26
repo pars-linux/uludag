@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 12:15+0300\n"
+"POT-Creation-Date: 2007-05-26 03:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,7 +88,15 @@ msgid ""
 "services."
 msgstr ""
 
-#: src/firewall-config.py:431
+#: src/firewall-config.py:344
+msgid "You are not allowed to edit firewall settings."
+msgstr ""
+
+#: src/firewall-config.py:344
+msgid "Access Denied"
+msgstr ""
+
+#: src/firewall-config.py:438
 msgid "Pardus Firewall Interface is already running!"
 msgstr ""
 
