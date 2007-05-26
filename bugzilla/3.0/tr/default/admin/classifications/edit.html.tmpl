@@ -20,13 +20,13 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Sınıflamayı düzenle"
+  title = "Sınıflandırmayı düzenle"
 %]
 
 <form method=post action="editclassifications.cgi">
   <table  border=0 cellpadding=4 cellspacing=0>
     <tr>
-      <th align="right">Sınıflama:</th>
+      <th align="right">Sınıflandırma:</th>
       <td><input size=64 maxlength=64 name="classification" 
                  value="[% classification.name FILTER html %]"></td>
     </tr>
@@ -82,6 +82,6 @@
 </form>
 
 <p><a href="./">[% terms.Bugs %] ana sayfasına</a> geri dönün
-veya diğer sınıflamaları <a href="editclassifications.cgi"> düzenleyin</a>.
+veya diğer sınıflandırmaları <a href="editclassifications.cgi"> düzenleyin</a>.
 
 [% PROCESS global/footer.html.tmpl %] 
