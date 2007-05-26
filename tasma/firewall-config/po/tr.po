@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 12:15+0300\n"
+"POT-Creation-Date: 2007-05-26 03:49+0300\n"
 "PO-Revision-Date: 2006-04-27 13:04+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -91,7 +91,15 @@ msgstr ""
 "Güvenlik duvarını başlatmak ve belirlenen servislere erişime izin vermek "
 "için tıklayın."
 
-#: src/firewall-config.py:431
+#: src/firewall-config.py:344
+msgid "You are not allowed to edit firewall settings."
+msgstr "Güvenlik duvarı ayarlarını değiştirme izniniz yok."
+
+#: src/firewall-config.py:344
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
+
+#: src/firewall-config.py:438
 msgid "Pardus Firewall Interface is already running!"
 msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor!"
 
@@ -226,15 +234,3 @@ msgstr "Kabul Et"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Reddet"
-
-#~ msgid ""
-#~ "All outgoing connections are <b>accepted</b> by default. If you want to "
-#~ "forbid your computer to access services on other computers, check the "
-#~ "service name below:"
-#~ msgstr ""
-#~ "Giden tüm bağlantılara, varsayılan olarak <b>izin verilir</b>. Eğer bu "
-#~ "bilgisayarın, diğer bilgisayarlardaki servislere erişmesini engellemek "
-#~ "istiyorsanız, aşağıdan servisi işaretleyin:"
-
-#~ msgid "Outgoing Connections"
-#~ msgstr "Giden Bağlantılar"

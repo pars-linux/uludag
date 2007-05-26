@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 12:15+0300\n"
+"POT-Creation-Date: 2007-05-26 03:49+0300\n"
 "PO-Revision-Date: 2007-05-02 00:10-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -34,9 +34,9 @@ msgstr "Ayuda con IPtables"
 msgid "Help with KDE stuff"
 msgstr "Ayuda con asuntos KDE"
 
+# ... todas las conex....
 #: src/firewall-config.py:91
 #, python-format
-# ... todas las conex....
 msgid "Accept all incoming connection through ports %s"
 msgstr "Aceptar todas conexiones entrantes por puerto %s"
 
@@ -95,32 +95,41 @@ msgstr ""
 "Presione aquí para activar el cortafuegos y permitir conexiones solamente a "
 "servicios especificados."
 
-#: src/firewall-config.py:431
+#: src/firewall-config.py:344
+msgid "You are not allowed to edit firewall settings."
+msgstr ""
+
+#: src/firewall-config.py:344
+msgid "Access Denied"
+msgstr ""
+
+#: src/firewall-config.py:438
 msgid "Pardus Firewall Interface is already running!"
-msgstr "Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
+msgstr ""
+"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
 #: src/rules.py:16
 msgid "Mail services"
 msgstr "Servicios de correo"
 
-#: src/rules.py:20
 # (http)
 # (https)
+#: src/rules.py:20
 msgid "Web services"
 msgstr "Servicios de web"
 
-#: src/rules.py:24
 # ... de acseso remoto (rsh)...
+#: src/rules.py:24
 msgid "Remote login service"
 msgstr "Servicios de login remoto"
 
-#: src/rules.py:32
 # ...con windows (samba)
+#: src/rules.py:32
 msgid "Windows file sharing service"
 msgstr "Servicios de archivos compartidos de Windows"
 
-#: src/rules.py:36
 # (IRC)
+#: src/rules.py:36
 msgid "Internet relay chat service"
 msgstr "Servicios de Internet relay chat"
 
@@ -236,4 +245,3 @@ msgstr "Aceptar"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rechazar"
-

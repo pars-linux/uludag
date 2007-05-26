@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 12:15+0300\n"
+"POT-Creation-Date: 2007-05-26 03:49+0300\n"
 "PO-Revision-Date: 2007-03-10 14:54+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -92,7 +92,15 @@ msgstr ""
 "Cliquer ici pour démarrer le pare-feu et n'autoriser que les connections aux "
 "services spécifiés."
 
-#: src/firewall-config.py:431
+#: src/firewall-config.py:344
+msgid "You are not allowed to edit firewall settings."
+msgstr ""
+
+#: src/firewall-config.py:344
+msgid "Access Denied"
+msgstr ""
+
+#: src/firewall-config.py:438
 msgid "Pardus Firewall Interface is already running!"
 msgstr "L'interface du Pare-feu Pardus est déjà en cours d'exécution !"
 
