@@ -270,9 +270,10 @@ class MainApplication(programbase):
                 chk.show()
                 self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
 
-            mainwidget.frameIncoming.setEnabled(True)
-            mainwidget.frameAdvanced.setEnabled(True)
-            mainwidget.pushNewRule.setEnabled(True)
+            if self.wheel:
+                mainwidget.frameIncoming.setEnabled(True)
+                mainwidget.frameAdvanced.setEnabled(True)
+                mainwidget.pushNewRule.setEnabled(True)
         else:
             mainwidget.frameIncoming.setEnabled(False)
             mainwidget.frameAdvanced.setEnabled(False)
@@ -294,7 +295,8 @@ class MainApplication(programbase):
             info = reply.data.split('\n')
             if info[0] == 'state':
                 self.setState(info[1])
-                mainwidget.pushStatus.setEnabled(True)
+                if self.wheel:
+                    mainwidget.pushStatus.setEnabled(True)
             elif info[0] == 'profile':
                 self.profile = {
                     'profile': info[1],
@@ -316,7 +318,8 @@ class MainApplication(programbase):
             elif reply.id == 3:
                 # Get State
                 self.setState(reply.data)
-                mainwidget.pushStatus.setEnabled(True)
+                if self.wheel:
+                    mainwidget.pushStatus.setEnabled(True)
             elif reply.id == 4:
                 # Get Profile
                 info = reply.data.split('\n')
@@ -329,12 +332,16 @@ class MainApplication(programbase):
                 }
             elif reply.id == 10:
                 self.wheel = True
+                mainwidget.pushStatus.setEnabled(True)
                 mainwidget.frameIncoming.setEnabled(True)
                 mainwidget.frameAdvanced.setEnabled(True)
                 mainwidget.pushNewRule.setEnabled(True)
         elif reply.command == 'fail':
             if reply.id == 5:
-                mainwidget.pushStatus.setEnabled(True)
+                if self.wheel:
+                    mainwidget.pushStatus.setEnabled(True)
+        elif reply.command == "denied":
+            KMessageBox.error(self, i18n("You are not allowed to edit firewall settings."), i18n("Access Denied"))
 
 
     def slotStatus(self):
