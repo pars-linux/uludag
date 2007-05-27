@@ -1,3 +1,4 @@
+# translation of es.po to spanish
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -10,9 +11,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-27 14:25+0200\n"
-"PO-Revision-Date: 2007-04-09 00:14-0400\n"
-"Last-Translator: Christian Faure <christian.faurebouvard@laposte.net>\n"
-"Language-Team:  <es@li.org>\n"
+"PO-Revision-Date: 2007-05-27 18:54-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
+"Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +38,7 @@ msgstr "Automático"
 #: browser.py:90
 # Conectar/Desconectar
 msgid "Turn on/off connection"
-msgstr "Habilitar/Deshabilitar conexión"
+msgstr "Conectar/Desconectar"
 
 #: browser.py:103
 msgid "Configure connection"
@@ -54,7 +55,7 @@ msgid ""
 "'%s'\n"
 "connection?"
 msgstr ""
-"Debería eliminar\n"
+"Desea eliminar\n"
 "la conexión\n"
 "'%s' ?"
 
@@ -74,9 +75,8 @@ msgstr "Conexión nueva"
 #: browser.py:386 nameconf.py:28
 # Settings por "Configuración"?
 # Servidores de nombres (DNS)?
-
 msgid "Name Service Settings"
-msgstr "Parámetros del servicio de nombres"
+msgstr "Configuración de servidores de nombres (DNS)"
 
 #: browser.py:420
 msgid "Network Connections Help"
@@ -89,11 +89,11 @@ msgstr "Computadora"
 #: nameconf.py:41
 # Nombre de máquina (hostname)
 msgid "Host name:"
-msgstr "Nombre de Host:"
+msgstr "Nombre de maquina (hostname):"
 
 #: nameconf.py:45 connection.py:310
 msgid "Name servers"
-msgstr "Servidor de Nombres"
+msgstr "Servidores de Nombres"
 
 #: nameconf.py:56
 msgid "Up"
@@ -106,12 +106,12 @@ msgstr "Inactivo"
 #: nameconf.py:134
 # ...de nombres
 msgid "Add Name Server"
-msgstr "Agregar Servidor de nombre"
+msgstr "Agregar Servidor de nombres"
 
 #: nameconf.py:135
 # ..de nombres
 msgid "Name server:"
-msgstr "Servidor de Nombre:"
+msgstr "Servidor de nombres:"
 
 #: connection.py:43
 msgid "<hidden>"
@@ -119,9 +119,8 @@ msgstr "<oculto>"
 
 #: connection.py:76
 # Resultado de búsqueda
-
 msgid "Scan results:"
-msgstr "Resultado de scan:"
+msgstr "Resultado de búsqueda:"
 
 #: connection.py:91
 msgid "Scan again"
@@ -170,7 +169,7 @@ msgstr "Nombre de Usuario:"
 #: connection.py:263
 # Settings por "Configuración"?
 msgid "Network settings"
-msgstr "Propiedades de Red"
+msgstr "Configuración de Red"
 
 #: connection.py:273
 msgid "Automatic query (DHCP)"
@@ -191,7 +190,7 @@ msgstr "Mascara de Red:"
 #: connection.py:301
 # Puerta de enlace (GW)
 msgid "Gateway:"
-msgstr "Puerto de Enlace:"
+msgstr "Puerta de enlace (GW):"
 
 #: connection.py:512
 msgid "Configure network connection"
@@ -238,6 +237,7 @@ msgid "Create"
 msgstr "Crear"
 
 #: newconn.py:112
+# aqui podría ser mas preciso
 msgid "No suitable device found"
 msgstr "Dispositivo no encontrado"
 
@@ -258,8 +258,9 @@ msgid "Edit Connections..."
 msgstr "Editar conexiones..."
 
 #: network-applet.py:296
+# i translated as "for EACH" device
 msgid "Icon Per Device"
-msgstr "Ícono por dispositivo"
+msgstr "Ícono por cada dispositivo"
 
 #: network-applet.py:297
 msgid "Single Icon"
@@ -268,12 +269,11 @@ msgstr "Ícono único"
 #: network-applet.py:341
 # Icono de la barra de tareas?
 msgid "Should network-applet start automatically when you login?"
-msgstr "Debería network-applet iniciarse al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:491
 # Icono de la barra de tareas?
 # Icono de acceso rápido?
-
 msgid "Network Applet"
 msgstr "Applet de Red"
 

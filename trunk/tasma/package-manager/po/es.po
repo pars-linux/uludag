@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-13 21:11+0300\n"
-"PO-Revision-Date: 2007-05-16 20:35-0400\n"
+"PO-Revision-Date: 2007-05-27 19:47-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -162,7 +162,7 @@ msgstr "Ayuda del Administrador de Paquetes"
 
 #: src/Preferences.py:77
 msgid "Add New Repository"
-msgstr "Agregar Repositorio"
+msgstr "Agregar Repositorio Nuevo"
 
 #: src/Preferences.py:84
 msgid "Edit Repository"
@@ -187,7 +187,7 @@ msgstr "<b>Aplicando Modificaciones de Repositorio</b>"
 # ...guardados en el cache...
 #: src/Preferences.py:210
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Se eliminarán todos los paquetes guardadas del cache. Está seguro ?"
+msgstr "Se eliminarán todos los paquetes guardados en el cache. Está seguro ?"
 
 #: src/Progress.py:51
 msgid "downloaded ( total: %1 )"
@@ -305,7 +305,7 @@ msgstr "Actualizar Paquete(s)"
 # No Disp.
 #: src/package-manager.py:363
 msgid "N\\A"
-msgstr "N\\A"
+msgstr "No disponible"
 
 #: src/package-manager.py:381
 msgid "Description: "
@@ -329,7 +329,7 @@ msgstr "Resultados de la Busqueda"
 
 #: src/package-manager.py:430
 msgid "Currently your basket is empty."
-msgstr "El carrito está vacío."
+msgstr "Actualmente el carrito está vacío."
 
 #: src/package-manager.py:433 src/package-manager.py:441
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
@@ -340,7 +340,7 @@ msgstr ""
 # ...requeridas...
 #: src/package-manager.py:436
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr " y <b>%3</b> dependencias requeridos con un tamaño adicional de <b>%4</b>"
+msgstr " y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
 
 #: src/package-manager.py:438 src/package-manager.py:446
 msgid "in your basket."
@@ -362,6 +362,13 @@ msgstr " en el carrito."
 # B es requerido por 2 paquetes
 # me parece que sería así:
 # requeridos por %3 paquetes con un tamaño total de %4
+# no Christian, lo entiendo asi:
+# B requiere A
+# C requiere B
+# ahora se selecciono B para actualizar - pero esto implica que tambien C se debe actualizar
+# C sería la dependencia "reversa" de B
+# en este caso podría haber varios paquetes tipo "C" dependiendo de uno o varios de los del tipo B
+# hay un mensaje --90-- mas adelante con una explicacion
 #: src/package-manager.py:444
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr "y <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
@@ -407,15 +414,15 @@ msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
 msgstr ""
-" Con los paquetes seleccionados, también <b>%1</b> dependencias adicionales "
-"requeridos se <b>instalarán</b>."
+" Con los paquetes seleccionados, también se <b>instalarán %1</b> paquetes adicionales "
+"requeridos."
 
 # "Total:"..
 # o
 # "un total de"....
 #: src/package-manager.py:514
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr "<br><br>Total <b>%1</b> paquetes se <b>instalarán</b>."
+msgstr "<br><br>un total de <b>%1</b> paquetes se <b>instalarán</b>."
 
 #: src/package-manager.py:517
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
@@ -427,12 +434,12 @@ msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
 msgstr ""
-"Con los paquetes seleccionados, también <b>%1</b> dependencias adicionales "
-"requeridos se <b>actualizarán</b>."
+"Con los paquetes seleccionados, también se <b>actualizarán %1</b> paquetes adicionales "
+"requeridos."
 
 #: src/package-manager.py:521
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>Total <b>%1</b> paquetes se <b>actualizarán</b>."
+msgstr "<br><br>Un total de <b>%1</b> paquetes se <b>actualizarán</b>."
 
 #: src/package-manager.py:524
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -448,8 +455,7 @@ msgid ""
 "the packages you want to remove. Accidentally removing some reverse "
 "dependencies may break the system stability."
 msgstr ""
-" Los paquetes seleccionados tienen dependencias reversas. Estas dependencias "
-"reversas necesitan los paquetes seleccionados para su funcionamiento. Al "
+" Los paquetes seleccionados son requeridos por otros (dependencias reversas). Al "
 "remover los paquetes seleccionados tambien se <b>removerán %1</b> "
 "dependencias reversas. Favor verifique el carrito y asegurese que realmente "
 "contiene los paquetes que desea remover. Remover accidentalmente algunas "
@@ -458,7 +464,7 @@ msgstr ""
 
 #: src/package-manager.py:529
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr "<br><br>Total <b>%1</b> paquetes se <b>removerán</b>."
+msgstr "<br><br>Un total de <b>%1</b> paquetes se <b>removerán</b>."
 
 #: src/package-manager.py:531
 msgid "<br>Do you want to continue?</qt>"
@@ -603,15 +609,15 @@ msgstr "Si marcado, pisi solo mostrará aplicaciones de escritorio"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &periodic update check"
-msgstr "Habilitar comprobación &periódica de paquetes a actualizar"
+msgstr "Habilitar comprobación &periódica de actualizaciones de paquetes"
 
 #: src/PreferencesDialog.py:208
 msgid "&Enable system tray icon"
-msgstr "&Habilitar ícono en barra de menu"
+msgstr "&Habilitar ícono en barra de tareas"
 
 #: src/PreferencesDialog.py:209
 msgid "Check interval:"
-msgstr "Intervalo de Comprobación:"
+msgstr "Intervalo de comprobación:"
 
 #: src/PreferencesDialog.py:210
 msgid " min"
@@ -627,14 +633,14 @@ msgstr "Vaciar cache"
 
 #: src/PreferencesDialog.py:213
 msgid "C&lean disk cache now"
-msgstr "&Vaciar cache de disco ahora"
+msgstr "&Vaciar cache en disco ahora"
 
 #: src/PreferencesDialog.py:214
 msgid ""
 "Clearing the disk cache will remove all downloaded software. \n"
 "This will not delete installed software or affect your system stability."
 msgstr ""
-"Al vaciar el cache de disco, se eliminarán todos los software descargados. \n"
+"Al vaciar el cache en disco, se eliminarán todos los paquetes de software descargados. \n"
 "Esto no afectará los software instalados, ni la estabilidad del sistema."
 
 #: src/PreferencesDialog.py:216
