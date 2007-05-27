@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:17+0300\n"
-"PO-Revision-Date: 2007-05-21 19:41-0400\n"
+"PO-Revision-Date: 2007-05-27 17:24-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,15 +19,15 @@ msgstr ""
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
 msgid "Bootloader Manager"
-msgstr "Administrador de Arranque"
+msgstr "Administrador del Cargador de Arranque"
 
 #: src/boot-manager.py:37
 msgid "Developer and Current Maintainer"
-msgstr ""
+msgstr "Desarrollador y Mantenedor actual"
 
 #: src/boot-manager.py:38
 msgid "Contributions to Boot.Loader model."
-msgstr ""
+msgstr "Contribuciones al concepto de Boot.Loader."
 
 #: src/boot-manager.py:79
 msgid "Bootloader Manager is already started!"
@@ -39,7 +39,7 @@ msgstr "Nueva entrada"
 
 #: src/mainview.py:55
 msgid "Remember last booted entry."
-msgstr "Recordar la elección del ultimo arranque"
+msgstr "Recordar la elección del ultimo arranque."
 
 #: src/mainview.py:97
 msgid "Title:"
@@ -59,7 +59,7 @@ msgstr "Núcleo (kernel):"
 
 #: src/mainview.py:137
 msgid "Kernel Parameters:"
-msgstr "Parámetros del Kernel:"
+msgstr "Parámetros del kernel:"
 
 #: src/mainview.py:147
 msgid "Initial Ramdisk:"
@@ -87,11 +87,11 @@ msgstr "Falló"
 
 #: src/mainview.py:388
 msgid "You are not allowed to edit boot loader settings."
-msgstr ""
+msgstr "No tiene permisos para modificar la configuración del cargador de arranque."
 
 #: src/mainview.py:388
 msgid "Access Denied"
-msgstr ""
+msgstr "Acceso denegado"
 
 #: src/ui_elements.py:90
 msgid "Edit entry"
@@ -101,5 +101,3 @@ msgstr "Editar entrada"
 msgid "Delete entry"
 msgstr "Eliminar entrada"
 
-#~ msgid "Disk %1, Partition %2"
-#~ msgstr "Disco %1, Partición %2"

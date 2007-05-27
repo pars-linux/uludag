@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:49+0300\n"
-"PO-Revision-Date: 2007-05-02 00:10-0400\n"
+"PO-Revision-Date: 2007-05-27 17:18-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "Interfaz gráfico del Cortafuegos Pardus"
 
 #: src/firewall-config.py:53
 msgid "GUI Design & Usability"
-msgstr "Diseño Interfaz gráfico & Usabilidad"
+msgstr "Diseño del Interfaz gráfico & Usabilidad"
 
 #: src/firewall-config.py:54
 msgid "Help with IPTables"
@@ -32,32 +32,31 @@ msgstr "Ayuda con IPtables"
 
 #: src/firewall-config.py:55
 msgid "Help with KDE stuff"
-msgstr "Ayuda con asuntos KDE"
+msgstr "Ayuda con KDE"
 
-# ... todas las conex....
 #: src/firewall-config.py:91
 #, python-format
 msgid "Accept all incoming connection through ports %s"
-msgstr "Aceptar todas conexiones entrantes por puerto %s"
+msgstr "Aceptar todas las conexiones entrantes por puertos %s"
 
 #: src/firewall-config.py:93
 #, python-format
 msgid "Reject all incoming connection through ports %s"
-msgstr "Rechazar todas conexiones entrantes por puerto %s"
+msgstr "Rechazar todas las conexiones entrantes por puertos %s"
 
 #: src/firewall-config.py:96
 #, python-format
 msgid "Accept all outgoing connection through ports %s"
-msgstr "Aceptar todas conexiones salientes por puerto %s"
+msgstr "Aceptar todas las conexiones salientes por puertos %s"
 
 #: src/firewall-config.py:98
 #, python-format
 msgid "Reject all outgoing connection through ports %s"
-msgstr "Rechazar todas conexiones salientes por puerto %s"
+msgstr "Rechazar todas las conexiones salientes por puertos %s"
 
 #: src/firewall-config.py:127
 msgid "Invalid port range."
-msgstr "Rango de Puertos inválido"
+msgstr "Rango de puertos inválido."
 
 #: src/firewall-config.py:150 src/firewall.py:188
 msgid "Firewall Configuration"
@@ -97,16 +96,15 @@ msgstr ""
 
 #: src/firewall-config.py:344
 msgid "You are not allowed to edit firewall settings."
-msgstr ""
+msgstr "No tiene permisos suficientes para modificar las propiedades del cortafuegos."
 
 #: src/firewall-config.py:344
 msgid "Access Denied"
-msgstr ""
+msgstr "Acceso denegado"
 
 #: src/firewall-config.py:438
 msgid "Pardus Firewall Interface is already running!"
-msgstr ""
-"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
+msgstr "Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
 #: src/rules.py:16
 msgid "Mail services"
@@ -121,17 +119,17 @@ msgstr "Servicios de web"
 # ... de acseso remoto (rsh)...
 #: src/rules.py:24
 msgid "Remote login service"
-msgstr "Servicios de login remoto"
+msgstr "Servicios de acceso remoto (rsh)"
 
 # ...con windows (samba)
 #: src/rules.py:32
 msgid "Windows file sharing service"
-msgstr "Servicios de archivos compartidos de Windows"
+msgstr "Servicios de archivos compartidos con windows (samba)"
 
 # (IRC)
 #: src/rules.py:36
 msgid "Internet relay chat service"
-msgstr "Servicios de Internet relay chat"
+msgstr "Servicios de Internet relay chat (IRC)"
 
 #: src/rules.py:40
 msgid "File transfer service"
@@ -153,7 +151,7 @@ msgstr "Alt+S"
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr ""
-"Presione aquí para desactivar el cortafuegos y permitir todas conexiones "
+"Presione aquí para desactivar el cortafuegos y permitir toda clase de conexiones "
 "entrantes."
 
 #: src/firewall.py:196
@@ -162,7 +160,7 @@ msgid ""
 "allow other computers to access services on this computer, check the service "
 "below:"
 msgstr ""
-"Todas conexiones entrantes <b>se rechazan</b> por defecto. Si quiere "
+"Todas las conexiones entrantes <b>se rechazan</b> por defecto. Si quiere "
 "permitir que otras computadoras puedan acceder a servicios corriendo "
 "localmente aquí, marque el servicio abajo:"
 
@@ -245,3 +243,4 @@ msgstr "Aceptar"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rechazar"
+

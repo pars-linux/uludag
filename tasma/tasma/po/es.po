@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-26 21:00+0200\n"
-"PO-Revision-Date: 2007-05-16 20:07-0400\n"
+"PO-Revision-Date: 2007-05-27 19:13-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Bienvenido a TASMA"
 
 #: src/aboutview.cpp:88
 msgid "TASMA is a configuration application for Pardus Operating System. You can tweak the systems default configuration settings and by using the modules presented in TASMA. "
-msgstr "TASMA es un programa para la configuración del Sistema Operativo Pardus. Puede ajustar las configuraciones del sistema usando los módulos presentes en TASMA. "
+msgstr "TASMA es un programa para la configuración del Sistema Operativo Pardus. Puede ajustar las configuraciones del sistema usando los módulos presentados en TASMA. "
 
 #: src/aboutview.cpp:99
 msgid "For a better understanding modules are grouped by categories. You can activate a category by selecting a category from the left. After activating a category its contents will be shown as icons in the right panel. You can start a configuration module by clicking (or double clicking) its icon."
@@ -85,7 +85,7 @@ msgstr "Mantenido por"
 
 #: src/main.cpp:66
 msgid "Old Maintainer & Original Author"
-msgstr "Autor Original"
+msgstr "Autor Original & Mantenedores anteriores"
 
 #: src/main.cpp:67
 msgid "KDE Developers"
@@ -160,7 +160,7 @@ msgstr "Tarjeta de TV"
 #, no-c-format
 # Sintonizador?
 msgid "Tuner"
-msgstr "Tuner"
+msgstr "Sintonizador"
 
 #: modules/tasmatv/tvconfigui.cpp:151
 #: rc.cpp:36
@@ -213,5 +213,6 @@ msgid ""
 "Your emails"
 msgstr ""
 "_: email\n"
-"click3d(at)linuxmail.org"
+"click3d(at)linuxmail(dot)org "
+"christian.faurebouvard(at)laposte(dot)net"
 
