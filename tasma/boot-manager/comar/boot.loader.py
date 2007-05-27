@@ -18,6 +18,16 @@ FAIL_NOTITLE = _({
     "tr": "Başlık belirtilmeli.",
 })
 
+FAIL_NOROOT = _({
+    "en": "Root drive must be given.",
+    "tr": "Kök sürücü belirtilmeli.",
+})
+
+FAIL_NOKERNEL = _({
+    "en": "Kernel path must be given.",
+    "tr": "Çekirdek adresi belirtilmeli.",
+})
+
 FAIL_NOENTRY = _({
     "en": "No such entry.",
     "tr": "Böyle bir kayıt bulunmuyor.",
@@ -26,6 +36,11 @@ FAIL_NOENTRY = _({
 FAIL_NODEVICE = _({
     "en": "No such device.",
     "tr": "Böyle bir aygıt bulunmuyor.",
+})
+
+FAIL_NOSYSTEM = _({
+    "en": "No such system.",
+    "tr": "Böyle bir sistem türü bulunmuyor.",
 })
 
 # Grub parser configuration
@@ -38,10 +53,11 @@ MAX_ENTRIES = 3
 # Supported operating systems and required fields for them
 
 SYSTEMS = {
-    "linux": "Linux,root,kernel,initrd,options",
-    "xen": "Xen,root,kernel,initrd,options",
-    "windows": "Windows,root",
-    "other": "%s,root,kernel,initrd,options" % LABEL_OTHER,
+    "linux": "Linux,*root,*kernel,initrd,options",
+    "xen": "Xen,*root,*kernel,initrd,options",
+    "windows": "Windows,*root",
+    "memtest": "Memtest,",
+    "other": "%s,*root,kernel,initrd,options" % LABEL_OTHER,
 }
 
 # Grub parser
@@ -422,6 +438,9 @@ def parseGrubEntry(entry):
                 os_entry["kernel"] = kernel
             if os_entry["kernel"] == "/boot/xen.gz":
                 os_entry["os_type"] = "xen"
+            elif os_entry["kernel"] == "/boot/memtest.bin":
+                os_entry["os_type"] = "memtest"
+                del os_entry["kernel"]
         elif key in ["chainloader", "makeactive"]:
             os_entry["os_type"] = "windows"
         elif key == "savedefault":
@@ -438,15 +457,29 @@ def parseGrubEntry(entry):
                 os_entry["initrd"] = value
     return os_entry
 
-def makeGrubEntry(title, os_type, root, kernel=None, initrd=None, options=None):
+def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=None):
+    if os_type not in SYSTEMS:
+        fail(FAIL_NOSYSTEM)
+    
+    required = []
+    for field in SYSTEMS[os_type].split(",")[1:]:
+        if field.startswith("*"):
+            required.append(field[1:])
+    
+    if "root" in required:
+        if not root:
+            fail(FAIL_NOROOT)
+    else:
+        root = getRoot()
     grub_device = grubDevice(root)
     if not grub_device:
         fail(FAIL_NODEVICE)
     
+    if "kernel" in required and not kernel:
+        fail(FAIL_NOKERNEL)
+    
     entry = grubEntry(title)
     
-    if os_type not in SYSTEMS:
-        os_type = "other"
     if os_type == "windows":
         entry.setCommand("rootnoverify", grub_device)
         entry.setCommand("makeactive", "")
@@ -465,7 +498,10 @@ def makeGrubEntry(title, os_type, root, kernel=None, initrd=None, options=None):
                 entry.setCommand("module", kernel)
         if initrd and "initrd" in SYSTEMS[os_type]:
             entry.setCommand("module", initrd, append=True)
-    else:
+    elif os_type == "memtest":
+        entry.setCommand("root", grub_device)
+        entry.setCommand("kernel", "/boot/memtest.bin")
+    else: # linux, other
         if kernel and "kernel" in SYSTEMS[os_type]:
             if options and "options" in SYSTEMS[os_type]:
                 entry.setCommand("kernel", "%s %s" % (kernel, options))
@@ -480,6 +516,7 @@ def makeGrubEntry(title, os_type, root, kernel=None, initrd=None, options=None):
 def listSystems():
     sys_list = []
     for key, values in SYSTEMS.iteritems():
+        values = values.replace("*", "")
         sys_list.append("%s %s" % (key, values))
     return "\n".join(sys_list)
 
@@ -554,7 +591,7 @@ def removeEntry(index, title):
     else:
         fail(FAIL_NOENTRY)
 
-def setEntry(title, os_type, root, kernel=None, initrd=None, options=None, default="no", index=None):
+def setEntry(title, os_type, root=None, kernel=None, initrd=None, options=None, default="no", index=None):
     try:
         grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
