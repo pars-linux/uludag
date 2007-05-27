@@ -26,8 +26,8 @@
   #               which the component belongs.
   #%]
   
-[% title = BLOCK %]Deleted Component '[% comp.name FILTER html %]' from Product
-                   '[% product.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% comp.name FILTER html %]' bileşeni
+                   '[% product.name FILTER html %]' ürününden silindi[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -40,17 +40,17 @@
   [% ELSE %]
     [%+ terms.bug %]
   [% END %]
-  deleted.
+  silindi.
   </p><p>
-  All references to those deleted [% terms.bugs %] have been removed.
+  Silinen [% terms.bugs %]'a yapılan tüm göndermeler kaldırıldı.
 [% ELSE %]
-  No [% terms.bugs %] existed for the component.
+  Bileşlen için hiçbir [% terms.bug %] bulunmamaktadır.
 [% END %]
 </p>
 
-<p>Flag inclusions and exclusions deleted.</p>
+<p>İçerme veya dışlama işaretleri silindi.</p>
 
-<p>Component '[% comp.name FILTER html %]' deleted.</p>
+<p>'[% comp.name FILTER html %]' bileşeni silindi.</p>
 
 [% PROCESS admin/components/footer.html.tmpl
   no_edit_component_link = 1

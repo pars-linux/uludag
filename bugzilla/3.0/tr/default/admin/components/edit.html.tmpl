@@ -29,7 +29,7 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Edit Component '[% comp.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% comp.name FILTER html %]' Bileşenini Düzenle[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -38,12 +38,12 @@
   <table border="0" cellpadding="4" cellspacing="0">
 
     <tr>
-      <td valign="top">Component:</td>
+      <td valign="top">Bileşen:</td>
       <td><input size="64" maxlength="64" name="component" value="
       [%- comp.name FILTER html %]"></td>
     </tr>
     <tr>
-      <td valign="top">Component Description:</td>
+      <td valign="top">Bileşenin tanımı:</td>
       <td>
         [% INCLUDE global/textarea.html.tmpl
           name           = 'description'
@@ -55,7 +55,7 @@
       </td>
     </tr>
     <tr>
-      <td valign="top"><label for="initialowner">Default Assignee:</label></td>
+      <td valign="top"><label for="initialowner">Varsayılan olarak atanan:</label></td>
       <td>
         [% INCLUDE global/userselect.html.tmpl
            name => "initialowner"
@@ -69,7 +69,7 @@
 [% IF Param('useqacontact') %]
     </tr>
     <tr>
-      <td valign="top"><label for="initialqacontact">Default QA contact:</label></td>
+      <td valign="top"><label for="initialqacontact">Varsayılan Soru/Cevap İrtibatı:</label></td>
       <td>
         [% INCLUDE global/userselect.html.tmpl
            name => "initialqacontact"
@@ -84,7 +84,7 @@
     </tr>
     <tr>
       <td valign="top">
-        <label for="initialcc">Default CC List:</label>
+        <label for="initialcc">Varsayılan CC Listesi:</label>
       </td>
       <td>
         [% INCLUDE global/userselect.html.tmpl
@@ -96,7 +96,7 @@
         %]
         <br>
         [% IF !Param("usemenuforusers") %]
-          <em>Enter user names for the CC list as a comma-separated list.</em>
+          <em>CC listesi için kullanıcı isimlerini virgülle ayrılmış liste şeklinde girin.</em>
         [% END %]
       </td>
     </tr>
@@ -104,12 +104,12 @@
       <td>[% terms.Bugs %]:</td>
       <td>
 [% IF comp.bug_count > 0 %]
-        <a title="Bugs in component '[% comp.name FILTER html %]'"
+        <a title="'[% comp.name FILTER html %]' bileşenindeki hatalar"
            href="buglist.cgi?component=
                 [%- comp.name FILTER url_quote %]&amp;product=
                 [%- product.name FILTER url_quote %]">[% comp.bug_count %]</a>
 [% ELSE %]
-        None
+        Yok
 [% END %]
       </td>
     </tr>
@@ -120,10 +120,10 @@
    <input type="hidden" name="componentold" value="[% comp.name FILTER html %]">
    <input type="hidden" name="product" value="[% product.name FILTER html %]">
    <input type="hidden" name="token" value="[% token FILTER html %]">
-   <input type="submit" value="Update" id="update"> or <a 
+   Bu bileşeni <input type="submit" value="Güncelle" id="update"> veya <a 
         href="editcomponents.cgi?action=del&amp;product=
         [%- product.name FILTER url_quote %]&amp;component=
-        [%- comp.name FILTER url_quote %]">Delete</a> this component.
+        [%- comp.name FILTER url_quote %]"> Sil</a>.
 
 </form>
 
