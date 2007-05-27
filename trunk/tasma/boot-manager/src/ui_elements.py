@@ -42,7 +42,8 @@ class EntryView(QScrollView):
     def add(self, editWidget, index, title, description, pardus, os_data):
         e = Entry(self.viewport(), editWidget, index, title, description, pardus, os_data)
         self.entries.append(e)
-        self.myResize(self.contentsWidth())
+        size = QSize(self.width(), self.height())
+        self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
         return e
     
     def resizeEvent(self, event):
