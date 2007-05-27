@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-21 14:01+0200\n"
-"PO-Revision-Date: 2007-03-04 10:04-0300\n"
+"PO-Revision-Date: 2007-05-27 18:20-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgstr "%d paquetes seleccionados, tamaño %s bytes comprimido, %s bytes instala
 
 #: browser.py:334
 msgid "Use selected packages"
-msgstr "Use paquetes seleccionados"
+msgstr "Usar paquetes seleccionados"
 
 #: gui.py:80
 msgid "&Open"
@@ -156,7 +156,7 @@ msgid ""
 "onto the root folder of CD."
 msgstr ""
 "El contenido de este directorio se\n"
-"copiará al directorio del root en el CD."
+"copiará al directorio raíz del CD."
 
 #: gui.py:147
 msgid "Type:"
@@ -188,7 +188,7 @@ msgstr "FlashDisk (1 GB)"
 
 #: gui.py:163
 msgid "Custom size"
-msgstr "Tamaño customizado"
+msgstr "Tamaño personalizado"
 
 #: gui.py:171
 msgid "Update Repo"
@@ -196,11 +196,11 @@ msgstr "Actualizar repo"
 
 #: gui.py:174
 msgid "Select packages"
-msgstr "Paquetes seleccionados"
+msgstr "Seleccionar paquetes"
 
 #: gui.py:177
 msgid "Make ISO"
-msgstr "Crear ISO"
+msgstr "Generar ISO"
 
 #: gui.py:210
 msgid "Select release files folder"
@@ -266,7 +266,7 @@ msgstr "Proyecto guardado como '%s'."
 
 #: gui.py:386
 msgid "Pardus distribution media maker"
-msgstr "Pardus distribución media maker"
+msgstr "Creador de medio para distribución Pardus"
 
 #: project.py:112
 #, python-format

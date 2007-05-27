@@ -6,13 +6,14 @@
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
 # Willem Gielen <w.gielen@gmail.com>, 2007.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# klemens <click3d at linuxmail org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-05 16:50+0200\n"
-"PO-Revision-Date: 2007-02-04 16:29+0200\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"PO-Revision-Date: 2007-05-27 18:23-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,11 +88,11 @@ msgstr "Referencias"
 #: plsa-cli:40
 #, python-format
 msgid "generate advisory for locale LANG (default: %s)"
-msgstr "generar recomendación para idioma local (por omisión: %s)"
+msgstr "generar recomendación para idioma LANG (por omisión: %s)"
 
 #: plsa-cli:40
 msgid "LANG"
-msgstr "Idioma"
+msgstr "LANG"
 
 #: plsa-cli:42
 msgid "open KMail compose dialog"
@@ -100,7 +101,7 @@ msgstr "Abrir diálogo de nuevo correo en KMail para reporte"
 #: plsa-cli:54
 #, python-format
 msgid "'%s' locale is not supported."
-msgstr "'%s' localeno soportado."
+msgstr "'%s' locale no soportado."
 
 #: plsa-cli:59
 #, python-format
