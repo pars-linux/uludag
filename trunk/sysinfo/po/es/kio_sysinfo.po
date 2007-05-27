@@ -2,13 +2,14 @@
 # This file is put in the public domain.
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# klemens <click3d at linuxmail org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-01 16:28+0300\n"
-"PO-Revision-Date: 2007-02-04 16:17+0200\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"PO-Revision-Date: 2007-05-27 18:34-0400\n"
+"Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -199,7 +200,7 @@ msgstr "Espacio Disponible"
 
 #: sysinfo.cpp:295
 msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Apriete el botón derecho del ratón para más opciones tal como Montar y Expulsar"
+msgstr "Presione el botón derecho del ratón para más opciones tal como Montar y Expulsar"
 
 #: sysinfo.cpp:478
 msgid "%1 (3D Support)"
@@ -211,7 +212,7 @@ msgstr "%1 (Sin Soporte 3D)"
 
 #: sysinfo.cpp:491
 msgid "Network is <strong>unreachable</strong>"
-msgstr "Red <strong>inaccesible</strong>"
+msgstr "Red <strong>no accesible</strong>"
 
 #: sysinfo.cpp:493
 msgid "You are <strong>offline</strong>"

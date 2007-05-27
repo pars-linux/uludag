@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-20 20:48+0200\n"
-"PO-Revision-Date: 2007-03-04 09:29-0300\n"
+"PO-Revision-Date: 2007-05-27 18:30-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Tamaño instalado"
 
 #: src/repostats.py:310
 msgid "Source package"
-msgstr "Paquete fuente"
+msgstr "Paquete de fuentes"
 
 #: src/repostats.py:312
 msgid "Build dependencies"
@@ -80,7 +80,7 @@ msgid ""
 "%s\n"
 "%s\n"
 msgstr ""
-"Paquetes fuente duplicados:\n"
+"Paquetes de fuentes duplicados:\n"
 "%s\n"
 "%s\n"
 
@@ -113,12 +113,13 @@ msgid "Actions"
 msgstr "Acciones"
 
 #: src/repostats.py:378
+# should it be like "DO the process of build" or "files of .. build process" ?
 msgid "Build files"
 msgstr "Archivos de compilación"
 
 #: src/repostats.py:380
 msgid "Bug reports"
-msgstr "Reporte de fallas"
+msgstr "Reportes de fallas"
 
 #: src/repostats.py:381
 msgid "Binary packages"
@@ -155,7 +156,7 @@ msgstr ""
 
 #: src/repostats.py:534
 msgid "Number of source packages"
-msgstr "Cantidad de paquetes fuente"
+msgstr "Cantidad de paquetes de fuentes"
 
 #: src/repostats.py:535
 msgid "Number of binary packages"
@@ -163,7 +164,7 @@ msgstr "Cantidad de paquetes binarios"
 
 #: src/repostats.py:536
 msgid "Number of patches"
-msgstr "Cantidad de correciones"
+msgstr "Cantidad de parches"
 
 #: src/repostats.py:537
 msgid "Number of packagers"
@@ -219,7 +220,7 @@ msgstr "Examinando paquetes binarios...\n"
 
 #: src/repostats.py:626
 msgid "Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"
-msgstr "Uso: repostats.py [OPTIONS] ruta-del-repositorio-de-fuentes [ruta-del-repositorio-de-binarios]\n"
+msgstr "Uso: repostats.py [OPTIONS] ruta-a-repositorio-de-fuentes [ruta-a-repositorio-de-binarios]\n"
 
 #: src/repostats.py:627
 msgid "HTML output directory."

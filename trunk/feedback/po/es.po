@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "POT-Creation-Date: 2006-11-17 10:48+0200\n"
-"PO-Revision-Date: 2007-05-16 20:16-0400\n"
+"PO-Revision-Date: 2007-05-27 18:06-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgid ""
 msgstr ""
 "<h2>Información de la Computadora</h2>\n"
 "<p>\n"
-"Pardus Hardware Collect Info Wizard recaudará ahora informaciones\n"
+"Pardus Hardware Collect Info Wizard reunirá ahora informaciones\n"
 "sobre el hardware, incluyendo CPU, memoria y tarjetas de red. Esta \n"
 "información se enviará al centro de desarrollo de Pardus para\n"
 "elaborar las proximas versiones de Pardus mas estables y mas seguros. \n"
@@ -154,7 +154,7 @@ msgstr ""
 "Hemos colectado todas informaciones necesarias para enviarlos\n"
 "a los desarolladores de Pardus.\n"
 "<p>\n"
-"Gracias por apoyar al sistema operativo Pardus."
+"Gracias por su apoyo al sistema operativo Pardus."
 
 #: src/welcomedlg.py:231
 msgid ""
@@ -170,7 +170,7 @@ msgid ""
 msgstr ""
 "<h2>Bienvenido a Pardus</h2>\n"
 "\n"
-"Con este pequeño asistente puede enviar mensajes a los \n"
+"Con este sencillo asistente puede enviar mensajes a los \n"
 "desarolladores de Pardus y ayudar a hacer a Pardus el mejor Linux del mundo.\n"
 "\n"
 "<p>\n"
@@ -209,7 +209,7 @@ msgstr "Para estudiar"
 # shouldn't it be: "What do You use Pardus for" (ne-icin) ?
 #: src/purposedlg.py:93
 msgid "<h2>Why do you use Pardus?</h2>"
-msgstr "<h2>Para que está usando Pardus ?</h2>"
+msgstr "<h2>Para que está utilizando Pardus ?</h2>"
 
 #: src/purposedlg.py:94
 msgid "<b>Step 2 of 7</b>"
@@ -257,7 +257,7 @@ msgstr "Adios!"
 
 #: src/feedback.py:166
 msgid "Collecting hardware information..."
-msgstr "Recolectando informaciones de hardware..."
+msgstr "Reuniendo informaciones de hardware..."
 
 #: src/feedback.py:176
 #: src/feedback.py:250
@@ -283,7 +283,7 @@ msgstr "<font color=\"#ff0000\">Feedback parece interrumpido. Datos están corru
 
 #: src/feedback.py:259
 msgid "<font color=\"#ff0000\">Server does not support this version. Please update feedback tool.</font><br>\n"
-msgstr "<font color=\"#ff0000\">Servidor no soporta esta versión. Favor actualice feedback tool.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Servidor no soporta esta versión. Favor actualice la herramienta de feedback.</font><br>\n"
 
 #: src/feedback.py:261
 msgid "<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</font><br>\n"
@@ -320,7 +320,7 @@ msgid ""
 "announces."
 msgstr ""
 "<h2>Information personal (opcional)</h2>\n"
-"Puede incluir su dirección e-mail en nuestra lista de noticias."
+"Puede anotar su dirección e-mail para incluirle en nuestra lista de noticias."
 
 #: src/personalinfodlg.py:248
 msgid "E-mail:"
