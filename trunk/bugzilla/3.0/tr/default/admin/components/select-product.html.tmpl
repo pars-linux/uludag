@@ -29,18 +29,18 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Edit components for which product?"
+  title = "Hangi ürünün bileşenleri düzenlenecek?"
 %]
 
 [% columns = [
      { 
        name => "name"
-       heading => "Edit components of..."
+       heading => "Bileşenleri düzenlenecek..."
        contentlink => "editcomponents.cgi?product=%%name%%" 
      },
      { 
        name => "description"
-       heading => "Description" 
+       heading => "Tanımı" 
        allow_html_content => 1
      }
    ]
@@ -65,7 +65,7 @@
 
 [% IF !showbugcounts %]
   <p><a href="editcomponents.cgi?showbugcounts=1">
-      Redisplay table with [% terms.bug %] counts (slower)</a></p>
+      Tabloyu [% terms.bug %] sayıları ile birlikte tekrar göster (yavaşlatır)</a></p>
 [% END %]
 
 [% PROCESS global/footer.html.tmpl %]

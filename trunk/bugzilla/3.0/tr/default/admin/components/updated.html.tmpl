@@ -45,8 +45,8 @@
   #                   the Initial CC, if it was updated.
   #%]
   
-[% title = BLOCK %]Updating Component '[% comp.name FILTER html %]' of Product
-                   '[% product.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% product.name FILTER html %]' ürününün
+                    '[% comp.name FILTER html %]' bileşeni güncelleniyor[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -54,43 +54,43 @@
 [% IF updated_description %]
   <table>
     <tr>
-      <td>Updated description to:</td>
+      <td>Tanım şu şekilde güncellendi:</td>
       <td>'[% comp.description FILTER html_light %]'</td>
     </tr>
   </table>
 [% END %]
 
 [% IF updated_initialowner %]
-  <p>Updated Default Assignee to: '[% comp.default_assignee.login FILTER html %]'.</p>
+  <p>Varsayılan olarak atanan '[% comp.default_assignee.login FILTER html %]' olarak güncellendi.</p>
 [% END %]
 
 [% IF updated_initialqacontact %]
   <p>
   [% IF comp.default_qa_contact.id %]
-    Updated Default QA Contact to '[% comp.default_qa_contact.login FILTER html %]'.
+    Varsayılan Soru/Cevap İrtibatı '[% comp.default_qa_contact.login FILTER html %]' olarak güncellendi.
   [% ELSE %]
-    Removed Default QA Contact.
+    Varsayılan Soru/Cevap İrtibatı silindi.
   [% END %]
   </p>
 [% END %]
 
 [% IF updated_name %]
-  <p>Updated Component name to: '[% comp.name FILTER html %]'.</p>
+  <p>Bileşen ismi '[% comp.name FILTER html %]' olarak güncellendi.</p>
 [% END %]
 
 [% IF updated_initialcc %]
   [% IF initial_cc_names %]
-    <p>Updated Default CC list to:
+    <p>Varsayılan CC listesi şu şekilde güncellendi:
       '[% initial_cc_names FILTER html %]'.</p>
   [% ELSE %]
-    <p>Removed the Default CC list.</p>
+    <p>Varsayılan CC listesi kaldırıldı.</p>
   [% END %]
 [% END %]
 
 [% UNLESS updated_description || updated_initialowner || 
           updated_initialqacontact || updated_name  ||
           updated_initialcc %]
-  <p>Nothing changed for component '[% comp.name FILTER html %]'.</p>
+  <p>'[% comp.name FILTER html %]' bileşeni için hiçbir şey değiştirilmedi.</p>
 [% END %]
 
 [% PROCESS admin/components/footer.html.tmpl %]
