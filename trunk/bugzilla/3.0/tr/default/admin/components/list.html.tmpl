@@ -28,8 +28,8 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Select component of product
-                   '[% product.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% product.name FILTER html %]'
+                   ürününe ait bileşeni seçin[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -45,17 +45,17 @@
 [% columns = [
      { 
        name => "name"
-       heading => "Edit component..."
+       heading => "Bileşeni düzenle..."
        contentlink => edit_contentlink
      },
      { 
        name => "description"
-       heading => "Description" 
+       heading => "Tanımı" 
        allow_html_content => 1
      },
      { 
        name => "initialowner"
-       heading => "Default Assignee"
+       heading => "Varsayılan olarak atanan"
      },
    ]
 %]
@@ -64,7 +64,7 @@
 
   [% columns.push({
        name => 'initialqacontact'
-       heading => 'QA Contact'
+       heading => 'Soru/Cevap İrtibatı'
      }) %]
 
 [% END %]
@@ -81,7 +81,7 @@
 [% END %]
 
 [% columns.push({
-     heading => "Action"
+     heading => "Eylem"
      content => "Delete"
      contentlink => delete_contentlink
    }) %]
@@ -113,13 +113,13 @@
      overrides = overrides
 %]
 
-<p><a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Add</a>
-    a new component to product '[% product.name FILTER html %]'</p>
+<p>'[% product.name FILTER html %]' ürününe yeni bir bileşen 
+    <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER url_quote %]">Ekle</a></p>
 
 [% IF ! showbugcounts %]
 
   <p><a href="editcomponents.cgi?product=[% product.name FILTER url_quote %]&amp;showbugcounts=1">
-      Redisplay table with [% terms.bug %] counts (slower)</a></p>
+      Tabloyu [% terms.bug %] sayıları ile birlikte yeniden göster (yavaşlatır)</a></p>
 
 [% END %]
 
