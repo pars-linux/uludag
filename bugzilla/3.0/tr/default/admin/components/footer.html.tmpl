@@ -28,28 +28,28 @@
 <hr>
 
 <p>
-Edit 
+ 
 
 [% IF comp && !no_edit_component_link %]
-  component <a 
-  title="Edit Component '[% comp.name FILTER html %]'"
+  <a 
+  title="'[% comp.name FILTER html %]' bileşenini düzenle"
   href="editcomponents.cgi?action=edit&amp;product=
   [%- product.name FILTER url_quote %]&amp;component=[% comp.name FILTER url_quote %]">
-   '[% comp.name FILTER html %]'</a> 
-  or edit
+   '[% comp.name FILTER html %]' bileşenini düzenle</a> 
+  veya
 [% END %]
 
 [% IF !no_edit_other_components_link %]
-other components of product <a 
-  title="Choose a component from product '[% product.name FILTER html %]' to edit"
+  <a 
+  title="Düzenlemek için '[% product.name FILTER html %]' ürününden bir bileşen seçin"
   href="editcomponents.cgi?product=
-  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>, 
-  or edit 
+  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]' ürününe ait diğer bileşenleri düzenle</a>, 
+  veya 
 [% END %]
 
-product <a 
-  title="Edit Product '[% product.name FILTER html %]'"
+ <a 
+  title="'[% product.name FILTER html %]' Ürününü Düzenle"
   href="editproducts.cgi?action=edit&amp;product=
-  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]'</a>.
+  [%- product.name FILTER url_quote %]">'[% product.name FILTER html %]' ürününü düzenle</a>.
 
 </p>
