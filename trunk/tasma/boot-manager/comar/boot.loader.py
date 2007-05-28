@@ -306,19 +306,25 @@ def bootParameters(root):
 
 def grubDevice(dev):
     device_map = os.path.join(os.path.dirname(GRUB_CONF), "device.map")
-    for device in file(device_map):
-        grub_dev, linux_dev = device.strip().split("\t")
-        if dev.startswith(linux_dev):
-            part = dev.replace(linux_dev, "")
-            if part.startswith("p"):
-                part = int(part[1:]) - 1
-            else:
-                part = int(part) - 1
-            return grub_dev.replace(")", ",%s)" % part)
+    try:
+        for device in file(device_map):
+            grub_dev, linux_dev = device.strip().split("\t")
+            if dev.startswith(linux_dev):
+                part = dev.replace(linux_dev, "", 1)
+                if part.startswith("p"):
+                    part = int(part[1:]) - 1
+                else:
+                    part = int(part) - 1
+                return grub_dev.replace(")", ",%s)" % part)
+    except ValueError:
+        return
 
 def linuxDevice(dev):
     device_map = os.path.join(os.path.dirname(GRUB_CONF), "device.map")
-    dev, part = dev.split(",")
+    try:
+        dev, part = dev.split(",")
+    except ValueError:
+        return
     dev = "%s)" % dev
     part = int(part.replace(")", "")) + 1
     for device in file(device_map):
@@ -410,17 +416,11 @@ def parseGrubEntry(entry):
         "os_type": "other",
         "title": entry.title,
     }
-    hidden = False
     for command in entry.commands:
         key = command.key
         value = command.value
-        if key == "root":
+        if key in ["root", "rootnoverify"]:
             os_entry["root"] = linuxDevice(value)
-        elif key == "rootnoverify" and not hidden:
-            os_entry["root"] = linuxDevice(value)
-        elif key == "hide":
-            os_entry["root"] = linuxDevice(value)
-            hidden = True
         elif key == "initrd":
             os_entry["initrd"] = value
         elif key == "kernel":
@@ -484,9 +484,11 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
         entry.setCommand("rootnoverify", grub_device)
         entry.setCommand("makeactive", "")
         entry.setCommand("chainloader", "+1")
-        # FIXME
-        if not grub_device.startswith("(hd0"):
-            pass
+        # If Windows is not on first disk...
+        disk = grub_device.split(",", 1)[0] + ")"
+        if disk != "(hd0,0)":
+            entry.setCommand("map", "%s (hd0)" % disk)
+            entry.setCommand("map", "(hd0) %s" % disk, append=True)
     else:
         entry.setCommand("root", grub_device)
     if os_type == "xen":
