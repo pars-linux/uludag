@@ -392,14 +392,14 @@ msgstr "Sie haben insgesamt<b>%1</b> Pakete zum <b>installieren</b> ausgewählt.
 
 #: src/package-manager.py:517
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr "Sie haben <b>%1</b> Paket(e) zum <b>upgraden</b> ausgewählt."
+msgstr "<qt>Sie haben <b>%1</b> Paket(e) zum <b>upgraden</b> ausgewählt."
 
 #: src/package-manager.py:520
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
 msgstr ""
-"Zusätzlich zum Upgrade ausgewählte(s) Paket(e), werden auch für Abhängige "
+" Zusätzlich zum Upgrade ausgewählte(s) Paket(e), werden auch für Abhängige "
 "Pakete ein <b>Upgrade</b> durchgeführt."
 
 #: src/package-manager.py:521
@@ -408,7 +408,7 @@ msgstr "<br><br>Für insgesamt <b>%1</b> Pakete wird ein <b>Upgrade</b> durchgef
 
 #: src/package-manager.py:524
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr "Sie haben <b>%1</b> Paket(e) zum <b>entfernen</b> ausgewählt."
+msgstr "<qt>Sie haben <b>%1</b> Paket(e) zum <b>entfernen</b> ausgewählt."
 
 #: src/package-manager.py:527
 msgid ""
@@ -419,7 +419,7 @@ msgid ""
 "the packages you want to remove. Accidentally removing some reverse "
 "dependencies may break the system stability."
 msgstr ""
-"Ausgewählte Pakete haben Gegenabhängigkeiten. Aufgrund der "
+" Ausgewählte Pakete haben Gegenabhängigkeiten. Aufgrund der "
 "Gegenabhängigkeiten von den gewählten Pakete, müssen diese Pakete "
 "funktionieren; durch das Entfernen der ausgewählten Pakete; <b>%1</b> werden "
 "die Gegenabhängigkeiten ebenso <b>entfernt</b>. Bitte überprüfen Sie Ihre "
@@ -433,7 +433,7 @@ msgstr "<br<br>Insgesamt <b>%1</b> ausgewählte Pakete werden <b>entfernt</b>."
 
 #: src/package-manager.py:531
 msgid "<br>Do you want to continue?</qt>"
-msgstr "Wollen Sie fortfahren?"
+msgstr "<br>Wollen Sie fortfahren?</qt>"
 
 #: src/package-manager.py:553
 msgid "<b>Removing Package(s)</b>"
