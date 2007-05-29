@@ -31,7 +31,7 @@ def getPartitionsOfDevice(device_path):
         partition = {}
         if part.num >= 1:
             fs_name = ""
-            if part.fs_type and part.fs_type.name != 'linux-swap':
+            if part.fs_type and part.fs_type.name != 'linux-swap(new)':
                 if part.fs_type.name == 'fat16' or part.fs_type.name == 'fat32':
                     part_type = 'vfat'
                 elif part.fs_type.name == 'ntfs':
