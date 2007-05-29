@@ -377,15 +377,15 @@ class Widget(QVBox):
         
         bar = QToolBar("lala", None, self)
         
-        but = QToolButton(getIconSet("add"), "", "lala", self.slotCreate, bar)
-        but.setTextLabel(i18n("New connection"), False)
-        but.setUsesTextLabel(True)
-        but.setTextPosition(but.BesideIcon)
+        self.butNew = QToolButton(getIconSet("add"), "", "lala", self.slotCreate, bar)
+        self.butNew.setTextLabel(i18n("New connection"), False)
+        self.butNew.setUsesTextLabel(True)
+        self.butNew.setTextPosition(self.butNew.BesideIcon)
         
-        but = QToolButton(getIconSet("configure"), "", "lala", self.slotSettings, bar)
-        but.setTextLabel(i18n("Name Service Settings"), False)
-        but.setUsesTextLabel(True)
-        but.setTextPosition(but.BesideIcon)
+        self.butConf = QToolButton(getIconSet("configure"), "", "lala", self.slotSettings, bar)
+        self.butConf.setTextLabel(i18n("Name Service Settings"), False)
+        self.butConf.setUsesTextLabel(True)
+        self.butConf.setTextPosition(self.butConf.BesideIcon)
         
         lab = QToolButton(bar)
         lab.setEnabled(False)
@@ -407,6 +407,9 @@ class Widget(QVBox):
         comlink.hotplug_hook.append(self.view.hotPlug)
         comlink.noconn_hook.append(self.slotCreate)
         comlink.connect()
+        
+        comlink.setInterfaceAccess = self.setInterfaceAccess
+        comlink.checkAccess("setConnection", 1001)
     
     def slotCreate(self):
         newconn.ask_for_new(self)
@@ -419,3 +422,9 @@ class Widget(QVBox):
     def slotHelp(self):
         self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
         self.helpwin.show()
+    
+    def setInterfaceAccess(self, id, access):
+        if not access:
+            self.butNew.setEnabled(False)
+            self.butConf.setEnabled(False)
+            self.view.viewport().setEnabled(False)
