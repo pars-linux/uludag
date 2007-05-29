@@ -33,7 +33,7 @@ import comar
 # FSTAB
 import fstab
 
-version = '1.2'
+version = '1.3'
 
 def AboutData():
     about_data = KAboutData('disk-manager',
