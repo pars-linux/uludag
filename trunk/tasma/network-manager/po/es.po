@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-27 14:25+0200\n"
+"POT-Creation-Date: 2007-05-29 16:40+0300\n"
 "PO-Revision-Date: 2007-05-27 18:54-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -23,20 +23,20 @@ msgstr ""
 msgid "Name:"
 msgstr "Nombre:"
 
-#: browser.py:56 connection.py:191
+#: browser.py:56 connection.py:206
 msgid "Authentication"
 msgstr "Autenticación"
 
-#: browser.py:59 connection.py:282
+#: browser.py:59 connection.py:297
 msgid "Address:"
 msgstr "Dirección:"
 
-#: browser.py:62 connection.py:319
+#: browser.py:62 connection.py:334
 msgid "Automatic"
 msgstr "Automático"
 
-#: browser.py:90
 # Conectar/Desconectar
+#: browser.py:90
 msgid "Turn on/off connection"
 msgstr "Conectar/Desconectar"
 
@@ -67,18 +67,18 @@ msgstr "Eliminar conexión ?"
 msgid "No device!"
 msgstr "No hay dispositivo !"
 
-#: browser.py:381 network-applet.py:456
 # Nueva Conexión
+#: browser.py:381 network-applet.py:456
 msgid "New connection"
 msgstr "Conexión nueva"
 
-#: browser.py:386 nameconf.py:28
 # Settings por "Configuración"?
 # Servidores de nombres (DNS)?
+#: browser.py:386 nameconf.py:28
 msgid "Name Service Settings"
 msgstr "Configuración de servidores de nombres (DNS)"
 
-#: browser.py:420
+#: browser.py:423
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
 
@@ -86,12 +86,12 @@ msgstr "Ayuda de conexión de red"
 msgid "Computer"
 msgstr "Computadora"
 
-#: nameconf.py:41
 # Nombre de máquina (hostname)
+#: nameconf.py:41
 msgid "Host name:"
 msgstr "Nombre de maquina (hostname):"
 
-#: nameconf.py:45 connection.py:310
+#: nameconf.py:45 connection.py:325
 msgid "Name servers"
 msgstr "Servidores de Nombres"
 
@@ -103,96 +103,109 @@ msgstr "Activo"
 msgid "Down"
 msgstr "Inactivo"
 
-#: nameconf.py:134
 # ...de nombres
+#: nameconf.py:134
 msgid "Add Name Server"
 msgstr "Agregar Servidor de nombres"
 
-#: nameconf.py:135
 # ..de nombres
+#: nameconf.py:135
 msgid "Name server:"
 msgstr "Servidor de nombres:"
 
-#: connection.py:43
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+#, fuzzy
+msgid "Mode"
+msgstr "Modo:"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:55
 msgid "<hidden>"
 msgstr "<oculto>"
 
-#: connection.py:76
 # Resultado de búsqueda
+#: connection.py:88
 msgid "Scan results:"
 msgstr "Resultado de búsqueda:"
 
-#: connection.py:91
+#: connection.py:106
 msgid "Scan again"
 msgstr "Buscar de nuevo"
 
-#: connection.py:93
+#: connection.py:108
 msgid "Use"
 msgstr "Usar"
 
-#: connection.py:148
+#: connection.py:163
 msgid "Connection name:"
 msgstr "Nombre de conexión:"
 
-#: connection.py:155
+#: connection.py:170
 msgid "Connection"
 msgstr "Conexión"
 
-#: connection.py:161
+#: connection.py:176
 msgid "Device:"
 msgstr "Dispositivo:"
 
-#: connection.py:166
+#: connection.py:181
 msgid "Select"
 msgstr "Seleccionar"
 
-#: connection.py:180
+#: connection.py:195
 msgid "Scan"
 msgstr "Buscar"
 
-#: connection.py:197
+#: connection.py:212
 msgid "Mode:"
 msgstr "Modo:"
 
-#: connection.py:205
+#: connection.py:220
 msgid "No authentication"
 msgstr "Sin autenticación"
 
-#: connection.py:223 connection.py:234
+#: connection.py:238 connection.py:249
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: connection.py:231
+#: connection.py:246
 msgid "User name:"
 msgstr "Nombre de Usuario:"
 
-#: connection.py:263
 # Settings por "Configuración"?
+#: connection.py:278
 msgid "Network settings"
 msgstr "Configuración de Red"
 
-#: connection.py:273
+#: connection.py:288
 msgid "Automatic query (DHCP)"
 msgstr "Asignación automatica (DHCP)"
 
-#: connection.py:278
+#: connection.py:293
 msgid "Manual"
 msgstr "Manual"
 
-#: connection.py:289 connection.py:306 connection.py:321
+#: connection.py:304 connection.py:321 connection.py:336
 msgid "Custom"
 msgstr "Personalizado"
 
-#: connection.py:294
+#: connection.py:309
 msgid "Net mask:"
 msgstr "Mascara de Red:"
 
-#: connection.py:301
 # Puerta de enlace (GW)
+#: connection.py:316
 msgid "Gateway:"
 msgstr "Puerta de enlace (GW):"
 
-#: connection.py:512
+#: connection.py:527
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
@@ -204,15 +217,15 @@ msgstr "Administrador de Red"
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está iniciado!"
 
-#: comariface.py:162
+#: comariface.py:166
 msgid "Waiting COMAR..."
 msgstr "Esperando COMAR..."
 
-#: comariface.py:163
+#: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "Conexión con COMAR cerrada inesperadamente, intentando reconectar..."
 
-#: comariface.py:182 comariface.py:199 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -220,7 +233,11 @@ msgstr ""
 "No posible conectar con COMAR! Si no se está ejecutando lo debería iniciar "
 "con el comando 'service comar start' desde una consola de root."
 
-#: comariface.py:365
+#: comariface.py:303
+msgid "You are not allowed to change network settings."
+msgstr ""
+
+#: comariface.py:380
 msgid "new connection"
 msgstr "nueva conexión"
 
@@ -236,8 +253,8 @@ msgstr "Seleccionar dispositivo:"
 msgid "Create"
 msgstr "Crear"
 
-#: newconn.py:112
 # aqui podría ser mas preciso
+#: newconn.py:112
 msgid "No suitable device found"
 msgstr "Dispositivo no encontrado"
 
@@ -257,8 +274,8 @@ msgstr "Cortafuegos..."
 msgid "Edit Connections..."
 msgstr "Editar conexiones..."
 
-#: network-applet.py:296
 # i translated as "for EACH" device
+#: network-applet.py:296
 msgid "Icon Per Device"
 msgstr "Ícono por cada dispositivo"
 
@@ -266,14 +283,14 @@ msgstr "Ícono por cada dispositivo"
 msgid "Single Icon"
 msgstr "Ícono único"
 
-#: network-applet.py:341
 # Icono de la barra de tareas?
+#: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
-msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr ""
+"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
-#: network-applet.py:491
 # Icono de la barra de tareas?
 # Icono de acceso rápido?
+#: network-applet.py:491
 msgid "Network Applet"
 msgstr "Applet de Red"
-
