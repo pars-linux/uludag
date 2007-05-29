@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-27 14:25+0200\n"
+"POT-Creation-Date: 2007-05-29 16:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "Name:"
 msgstr ""
 
-#: browser.py:56 connection.py:191
+#: browser.py:56 connection.py:206
 msgid "Authentication"
 msgstr ""
 
-#: browser.py:59 connection.py:282
+#: browser.py:59 connection.py:297
 msgid "Address:"
 msgstr ""
 
-#: browser.py:62 connection.py:319
+#: browser.py:62 connection.py:334
 msgid "Automatic"
 msgstr ""
 
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Name Service Settings"
 msgstr ""
 
-#: browser.py:420
+#: browser.py:423
 msgid "Network Connections Help"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Host name:"
 msgstr ""
 
-#: nameconf.py:45 connection.py:310
+#: nameconf.py:45 connection.py:325
 msgid "Name servers"
 msgstr ""
 
@@ -100,83 +100,95 @@ msgstr ""
 msgid "Name server:"
 msgstr ""
 
-#: connection.py:43
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+msgid "Mode"
+msgstr ""
+
+#: connection.py:29
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:55
 msgid "<hidden>"
 msgstr ""
 
-#: connection.py:76
+#: connection.py:88
 msgid "Scan results:"
 msgstr ""
 
-#: connection.py:91
+#: connection.py:106
 msgid "Scan again"
 msgstr ""
 
-#: connection.py:93
+#: connection.py:108
 msgid "Use"
 msgstr ""
 
-#: connection.py:148
+#: connection.py:163
 msgid "Connection name:"
 msgstr ""
 
-#: connection.py:155
+#: connection.py:170
 msgid "Connection"
 msgstr ""
 
-#: connection.py:161
+#: connection.py:176
 msgid "Device:"
 msgstr ""
 
-#: connection.py:166
+#: connection.py:181
 msgid "Select"
 msgstr ""
 
-#: connection.py:180
+#: connection.py:195
 msgid "Scan"
 msgstr ""
 
-#: connection.py:197
+#: connection.py:212
 msgid "Mode:"
 msgstr ""
 
-#: connection.py:205
+#: connection.py:220
 msgid "No authentication"
 msgstr ""
 
-#: connection.py:223 connection.py:234
+#: connection.py:238 connection.py:249
 msgid "Password:"
 msgstr ""
 
-#: connection.py:231
+#: connection.py:246
 msgid "User name:"
 msgstr ""
 
-#: connection.py:263
+#: connection.py:278
 msgid "Network settings"
 msgstr ""
 
-#: connection.py:273
+#: connection.py:288
 msgid "Automatic query (DHCP)"
 msgstr ""
 
-#: connection.py:278
+#: connection.py:293
 msgid "Manual"
 msgstr ""
 
-#: connection.py:289 connection.py:306 connection.py:321
+#: connection.py:304 connection.py:321 connection.py:336
 msgid "Custom"
 msgstr ""
 
-#: connection.py:294
+#: connection.py:309
 msgid "Net mask:"
 msgstr ""
 
-#: connection.py:301
+#: connection.py:316
 msgid "Gateway:"
 msgstr ""
 
-#: connection.py:512
+#: connection.py:527
 msgid "Configure network connection"
 msgstr ""
 
@@ -188,21 +200,25 @@ msgstr ""
 msgid "Network manager module is already started!"
 msgstr ""
 
-#: comariface.py:162
+#: comariface.py:166
 msgid "Waiting COMAR..."
 msgstr ""
 
-#: comariface.py:163
+#: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 
-#: comariface.py:182 comariface.py:199 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
 msgstr ""
 
-#: comariface.py:365
+#: comariface.py:303
+msgid "You are not allowed to change network settings."
+msgstr ""
+
+#: comariface.py:380
 msgid "new connection"
 msgstr ""
 

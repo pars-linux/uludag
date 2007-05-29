@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-27 14:25+0200\n"
+"POT-Creation-Date: 2007-05-29 16:40+0300\n"
 "PO-Revision-Date: 2007-03-01 21:12+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Name:"
 msgstr "Naam:"
 
-#: browser.py:56 connection.py:191
+#: browser.py:56 connection.py:206
 msgid "Authentication"
 msgstr "Identificatie"
 
-#: browser.py:59 connection.py:282
+#: browser.py:59 connection.py:297
 msgid "Address:"
 msgstr "Adres:"
 
-#: browser.py:62 connection.py:319
+#: browser.py:62 connection.py:334
 msgid "Automatic"
 msgstr "Automatisch"
 
@@ -79,7 +79,7 @@ msgstr "Nieuwe verbinding"
 msgid "Name Service Settings"
 msgstr "Naam dienst instellingen"
 
-#: browser.py:420
+#: browser.py:423
 msgid "Network Connections Help"
 msgstr "Netwerkverbindingen hulp"
 
@@ -92,7 +92,7 @@ msgid "Host name:"
 msgstr "Hostnaam:"
 
 # naamservers
-#: nameconf.py:45 connection.py:310
+#: nameconf.py:45 connection.py:325
 msgid "Name servers"
 msgstr "Naamservers"
 
@@ -114,84 +114,97 @@ msgstr "Voeg naamserver toe"
 msgid "Name server:"
 msgstr "Naamserver:"
 
-#: connection.py:43
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+#, fuzzy
+msgid "Mode"
+msgstr "Modus:"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:55
 msgid "<hidden>"
 msgstr "<verborgen>"
 
-#: connection.py:76
+#: connection.py:88
 msgid "Scan results:"
 msgstr "Scan resultaat:"
 
-#: connection.py:91
+#: connection.py:106
 msgid "Scan again"
 msgstr "Scan opnieuw"
 
-#: connection.py:93
+#: connection.py:108
 msgid "Use"
 msgstr "Gebruik"
 
-#: connection.py:148
+#: connection.py:163
 msgid "Connection name:"
 msgstr "Naam verbinding:"
 
-#: connection.py:155
+#: connection.py:170
 msgid "Connection"
 msgstr "Verbinding"
 
-#: connection.py:161
+#: connection.py:176
 msgid "Device:"
 msgstr "Apparaat:"
 
-#: connection.py:166
+#: connection.py:181
 msgid "Select"
 msgstr "Kies"
 
-#: connection.py:180
+#: connection.py:195
 msgid "Scan"
 msgstr "Scan"
 
-#: connection.py:197
+#: connection.py:212
 msgid "Mode:"
 msgstr "Modus:"
 
-#: connection.py:205
+#: connection.py:220
 msgid "No authentication"
 msgstr "Geen identificatie"
 
-#: connection.py:223 connection.py:234
+#: connection.py:238 connection.py:249
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: connection.py:231
+#: connection.py:246
 msgid "User name:"
 msgstr "Gebruikersnaam:"
 
-#: connection.py:263
+#: connection.py:278
 msgid "Network settings"
 msgstr "Netwerkinstellingen"
 
-#: connection.py:273
+#: connection.py:288
 msgid "Automatic query (DHCP)"
 msgstr "Automatische aanvraag (DHCP)"
 
-#: connection.py:278
+#: connection.py:293
 msgid "Manual"
 msgstr "Handmatig"
 
-#: connection.py:289 connection.py:306 connection.py:321
+#: connection.py:304 connection.py:321 connection.py:336
 msgid "Custom"
 msgstr "Eigen"
 
-#: connection.py:294
+#: connection.py:309
 msgid "Net mask:"
 msgstr "Netmask:"
 
-#: connection.py:301
+#: connection.py:316
 msgid "Gateway:"
 msgstr "Gateway:"
 
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:512
+#: connection.py:527
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
 
@@ -203,17 +216,17 @@ msgstr "Netwerkmanager"
 msgid "Network manager module is already started!"
 msgstr "Netwerkmanager module is al opgestart!"
 
-#: comariface.py:162
+#: comariface.py:166
 msgid "Waiting COMAR..."
 msgstr "Wachten COMAR..."
 
-#: comariface.py:163
+#: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 "Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
 "verbinden..."
 
-#: comariface.py:182 comariface.py:199 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -221,7 +234,11 @@ msgstr ""
 "Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
 "starten met het commando 'service comar start' in de root console."
 
-#: comariface.py:365
+#: comariface.py:303
+msgid "You are not allowed to change network settings."
+msgstr ""
+
+#: comariface.py:380
 msgid "new connection"
 msgstr "nieuwe verbinding"
 
@@ -274,4 +291,3 @@ msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Netwerk-applet"
-

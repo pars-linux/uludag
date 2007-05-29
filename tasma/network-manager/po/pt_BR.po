@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-27 14:25+0200\n"
+"POT-Creation-Date: 2007-05-29 16:40+0300\n"
 "PO-Revision-Date: 2007-02-28 23:13-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
+"listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,15 +21,15 @@ msgstr ""
 msgid "Name:"
 msgstr "Nome:"
 
-#: browser.py:56 connection.py:191
+#: browser.py:56 connection.py:206
 msgid "Authentication"
 msgstr "Autenticação"
 
-#: browser.py:59 connection.py:282
+#: browser.py:59 connection.py:297
 msgid "Address:"
 msgstr "Endereço:"
 
-#: browser.py:62 connection.py:319
+#: browser.py:62 connection.py:334
 msgid "Automatic"
 msgstr "Automático"
 
@@ -70,7 +71,7 @@ msgstr "Nova conexão"
 msgid "Name Service Settings"
 msgstr "Preferências do Serviço de Nomes"
 
-#: browser.py:420
+#: browser.py:423
 msgid "Network Connections Help"
 msgstr "Ajuda de Conexões de Rede"
 
@@ -82,7 +83,7 @@ msgstr "Computador"
 msgid "Host name:"
 msgstr "Nome do host:"
 
-#: nameconf.py:45 connection.py:310
+#: nameconf.py:45 connection.py:325
 msgid "Name servers"
 msgstr "Servidores de nome"
 
@@ -102,83 +103,96 @@ msgstr "Adicionar um Servidor de Nomes"
 msgid "Name server:"
 msgstr "Servidor de nomes:"
 
-#: connection.py:43
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+#, fuzzy
+msgid "Mode"
+msgstr "Modo:"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:55
 msgid "<hidden>"
 msgstr "<escondido>"
 
-#: connection.py:76
+#: connection.py:88
 msgid "Scan results:"
 msgstr "Resultado da examinação:"
 
-#: connection.py:91
+#: connection.py:106
 msgid "Scan again"
 msgstr "Examinar de novo"
 
-#: connection.py:93
+#: connection.py:108
 msgid "Use"
 msgstr "Usar"
 
-#: connection.py:148
+#: connection.py:163
 msgid "Connection name:"
 msgstr "Nome da conexão:"
 
-#: connection.py:155
+#: connection.py:170
 msgid "Connection"
 msgstr "Conexão"
 
-#: connection.py:161
+#: connection.py:176
 msgid "Device:"
 msgstr "Dispositivo:"
 
-#: connection.py:166
+#: connection.py:181
 msgid "Select"
 msgstr "Selecionar"
 
-#: connection.py:180
+#: connection.py:195
 msgid "Scan"
 msgstr "Examinar"
 
-#: connection.py:197
+#: connection.py:212
 msgid "Mode:"
 msgstr "Modo:"
 
-#: connection.py:205
+#: connection.py:220
 msgid "No authentication"
 msgstr "Sem autenticação"
 
-#: connection.py:223 connection.py:234
+#: connection.py:238 connection.py:249
 msgid "Password:"
 msgstr "Senha:"
 
-#: connection.py:231
+#: connection.py:246
 msgid "User name:"
 msgstr "Nome do usuário:"
 
-#: connection.py:263
+#: connection.py:278
 msgid "Network settings"
 msgstr "Preferências de rede"
 
-#: connection.py:273
+#: connection.py:288
 msgid "Automatic query (DHCP)"
 msgstr "Consulta automática (DHCP)"
 
-#: connection.py:278
+#: connection.py:293
 msgid "Manual"
 msgstr "Manual"
 
-#: connection.py:289 connection.py:306 connection.py:321
+#: connection.py:304 connection.py:321 connection.py:336
 msgid "Custom"
 msgstr "Personalizado"
 
-#: connection.py:294
+#: connection.py:309
 msgid "Net mask:"
 msgstr "Máscara de rede:"
 
-#: connection.py:301
+#: connection.py:316
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:512
+#: connection.py:527
 msgid "Configure network connection"
 msgstr "Configurar conexão de rede"
 
@@ -190,15 +204,15 @@ msgstr "Gerenciador de Rede"
 msgid "Network manager module is already started!"
 msgstr "O módulo do Gerenciador de rede já está iniciado!"
 
-#: comariface.py:162
+#: comariface.py:166
 msgid "Waiting COMAR..."
 msgstr "Esperando COMAR..."
 
-#: comariface.py:163
+#: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "Conexão com COMAR fechou inesperadamente, tentando reconectar-se..."
 
-#: comariface.py:182 comariface.py:199 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -206,7 +220,11 @@ msgstr ""
 "Não é possível se conectar ao COMAR! Se ele não estiver executando você deve "
 "iniciá-lo com o comando 'service comar start' num console como root."
 
-#: comariface.py:365
+#: comariface.py:303
+msgid "You are not allowed to change network settings."
+msgstr ""
+
+#: comariface.py:380
 msgid "new connection"
 msgstr "nova conexão"
 
@@ -257,4 +275,3 @@ msgstr "O applet de rede deve iniciar automaticamente quando você se logar?"
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Applet de Rede"
-

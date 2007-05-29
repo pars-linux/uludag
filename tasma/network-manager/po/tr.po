@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-27 14:25+0200\n"
+"POT-Creation-Date: 2007-05-29 16:40+0300\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -19,15 +19,15 @@ msgstr ""
 msgid "Name:"
 msgstr "İsim:"
 
-#: browser.py:56 connection.py:191
+#: browser.py:56 connection.py:206
 msgid "Authentication"
 msgstr "Kimlik doğrulama"
 
-#: browser.py:59 connection.py:282
+#: browser.py:59 connection.py:297
 msgid "Address:"
 msgstr "Adres:"
 
-#: browser.py:62 connection.py:319
+#: browser.py:62 connection.py:334
 msgid "Automatic"
 msgstr "Otomatik"
 
@@ -69,7 +69,7 @@ msgstr "Yeni bağlantı"
 msgid "Name Service Settings"
 msgstr "İsim Servisi Ayarları"
 
-#: browser.py:420
+#: browser.py:423
 msgid "Network Connections Help"
 msgstr "Ağ Bağlantıları Yardımı"
 
@@ -81,7 +81,7 @@ msgstr "Bilgisayar"
 msgid "Host name:"
 msgstr "Makina adı:"
 
-#: nameconf.py:45 connection.py:310
+#: nameconf.py:45 connection.py:325
 msgid "Name servers"
 msgstr "İsim sunucuları"
 
@@ -101,83 +101,95 @@ msgstr "İsim Sunucusu Ekle"
 msgid "Name server:"
 msgstr "İsim sunucusu:"
 
-#: connection.py:43
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+msgid "Mode"
+msgstr "Mod"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr "Potokol"
+
+#: connection.py:55
 msgid "<hidden>"
 msgstr "<gizli>"
 
-#: connection.py:76
+#: connection.py:88
 msgid "Scan results:"
 msgstr "Tarama sonuçları:"
 
-#: connection.py:91
+#: connection.py:106
 msgid "Scan again"
 msgstr "Yeniden tara"
 
-#: connection.py:93
+#: connection.py:108
 msgid "Use"
 msgstr "Kullan"
 
-#: connection.py:148
+#: connection.py:163
 msgid "Connection name:"
 msgstr "Bağlantı adı:"
 
-#: connection.py:155
+#: connection.py:170
 msgid "Connection"
 msgstr "Bağlantı"
 
-#: connection.py:161
+#: connection.py:176
 msgid "Device:"
 msgstr "Aygıt:"
 
-#: connection.py:166
+#: connection.py:181
 msgid "Select"
 msgstr "Aygıt seç"
 
-#: connection.py:180
+#: connection.py:195
 msgid "Scan"
 msgstr "Tara"
 
-#: connection.py:197
+#: connection.py:212
 msgid "Mode:"
 msgstr "Mod:"
 
-#: connection.py:205
+#: connection.py:220
 msgid "No authentication"
 msgstr "Doğrulama yok"
 
-#: connection.py:223 connection.py:234
+#: connection.py:238 connection.py:249
 msgid "Password:"
 msgstr "Parola:"
 
-#: connection.py:231
+#: connection.py:246
 msgid "User name:"
 msgstr "Kullanıcı adı:"
 
-#: connection.py:263
+#: connection.py:278
 msgid "Network settings"
 msgstr "Ağ ayarları"
 
-#: connection.py:273
+#: connection.py:288
 msgid "Automatic query (DHCP)"
 msgstr "Otomatik ayar (DHCP)"
 
-#: connection.py:278
+#: connection.py:293
 msgid "Manual"
 msgstr "Elle ayarla"
 
-#: connection.py:289 connection.py:306 connection.py:321
+#: connection.py:304 connection.py:321 connection.py:336
 msgid "Custom"
 msgstr "Özel"
 
-#: connection.py:294
+#: connection.py:309
 msgid "Net mask:"
 msgstr "Ağ maskesi:"
 
-#: connection.py:301
+#: connection.py:316
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
 
-#: connection.py:512
+#: connection.py:527
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
@@ -189,15 +201,15 @@ msgstr "Ağ Yöneticisi"
 msgid "Network manager module is already started!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
-#: comariface.py:162
+#: comariface.py:166
 msgid "Waiting COMAR..."
 msgstr "ÇOMAR Bekleniyor..."
 
-#: comariface.py:163
+#: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "ÇOMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
 
-#: comariface.py:182 comariface.py:199 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -205,7 +217,11 @@ msgstr ""
 "ÇOMAR bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı "
 "konsolu açıp 'service comar start' komutu ile çalıştırın."
 
-#: comariface.py:365
+#: comariface.py:303
+msgid "You are not allowed to change network settings."
+msgstr "Ağ ayarlarını değiştirme izniniz yok."
+
+#: comariface.py:380
 msgid "new connection"
 msgstr "yeni bağlantı"
 

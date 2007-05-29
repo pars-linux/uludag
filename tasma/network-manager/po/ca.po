@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-27 14:25+0200\n"
+"POT-Creation-Date: 2007-05-29 16:40+0300\n"
 "PO-Revision-Date: 2007-04-02 17:31+0200\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -21,15 +21,15 @@ msgstr ""
 msgid "Name:"
 msgstr "Nom:"
 
-#: browser.py:56 connection.py:191
+#: browser.py:56 connection.py:206
 msgid "Authentication"
 msgstr "Autenticació"
 
-#: browser.py:59 connection.py:282
+#: browser.py:59 connection.py:297
 msgid "Address:"
 msgstr "Adreça:"
 
-#: browser.py:62 connection.py:319
+#: browser.py:62 connection.py:334
 msgid "Automatic"
 msgstr "Automàtic"
 
@@ -71,7 +71,7 @@ msgstr "Nova connexió"
 msgid "Name Service Settings"
 msgstr "Nom dels arranjaments del servei (DNS)"
 
-#: browser.py:420
+#: browser.py:423
 msgid "Network Connections Help"
 msgstr "Ajut per a la connexió de la xarxa"
 
@@ -83,7 +83,7 @@ msgstr "Ordinador"
 msgid "Host name:"
 msgstr "Nom de l'ordinador amfitrió:"
 
-#: nameconf.py:45 connection.py:310
+#: nameconf.py:45 connection.py:325
 msgid "Name servers"
 msgstr "Nom dels servidors"
 
@@ -103,83 +103,96 @@ msgstr "Afegeix un nom de servidor"
 msgid "Name server:"
 msgstr "Nom del servidor:"
 
-#: connection.py:43
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+#, fuzzy
+msgid "Mode"
+msgstr "Mode:"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:55
 msgid "<hidden>"
 msgstr "<amagat>"
 
-#: connection.py:76
+#: connection.py:88
 msgid "Scan results:"
 msgstr "Resultats de l'exploració:"
 
-#: connection.py:91
+#: connection.py:106
 msgid "Scan again"
 msgstr "Explora una altra vegada"
 
-#: connection.py:93
+#: connection.py:108
 msgid "Use"
 msgstr "Fés-la servir"
 
-#: connection.py:148
+#: connection.py:163
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
 
-#: connection.py:155
+#: connection.py:170
 msgid "Connection"
 msgstr "Connexió"
 
-#: connection.py:161
+#: connection.py:176
 msgid "Device:"
 msgstr "Dispositiu:"
 
-#: connection.py:166
+#: connection.py:181
 msgid "Select"
 msgstr "Seleciona"
 
-#: connection.py:180
+#: connection.py:195
 msgid "Scan"
 msgstr "Explora"
 
-#: connection.py:197
+#: connection.py:212
 msgid "Mode:"
 msgstr "Mode:"
 
-#: connection.py:205
+#: connection.py:220
 msgid "No authentication"
 msgstr "Sense autenticació"
 
-#: connection.py:223 connection.py:234
+#: connection.py:238 connection.py:249
 msgid "Password:"
 msgstr "Mot de pas:"
 
-#: connection.py:231
+#: connection.py:246
 msgid "User name:"
 msgstr "Nom d'usuari:"
 
-#: connection.py:263
+#: connection.py:278
 msgid "Network settings"
 msgstr "Arranjaments de la xarxa"
 
-#: connection.py:273
+#: connection.py:288
 msgid "Automatic query (DHCP)"
 msgstr "Protocol dinàmic (DHCP)"
 
-#: connection.py:278
+#: connection.py:293
 msgid "Manual"
 msgstr "Personalitzat"
 
-#: connection.py:289 connection.py:306 connection.py:321
+#: connection.py:304 connection.py:321 connection.py:336
 msgid "Custom"
 msgstr "A mida"
 
-#: connection.py:294
+#: connection.py:309
 msgid "Net mask:"
 msgstr "Màscara de xarxa:"
 
-#: connection.py:301
+#: connection.py:316
 msgid "Gateway:"
 msgstr "Portal d'enllaç:"
 
-#: connection.py:512
+#: connection.py:527
 msgid "Configure network connection"
 msgstr "Configura la connexió de la xarxa"
 
@@ -191,21 +204,29 @@ msgstr "Arranjador de la xarxa"
 msgid "Network manager module is already started!"
 msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
 
-#: comariface.py:162
+#: comariface.py:166
 msgid "Waiting COMAR..."
 msgstr "Cal esperar el servei de COMAR..."
 
-#: comariface.py:163
+#: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "La connexió a COMAR s'ha tallat sense inesperadament. Mirem de reconnectar..."
+msgstr ""
+"La connexió a COMAR s'ha tallat sense inesperadament. Mirem de reconnectar..."
 
-#: comariface.py:182 comariface.py:199 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:111
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
-msgstr "No em puc connectar a COMAR. Si no està en marxa, l'hauríeu de tornar a engear amb el comandament 'service comar start' com a arrel d'ençà d'una terminal"
+msgstr ""
+"No em puc connectar a COMAR. Si no està en marxa, l'hauríeu de tornar a "
+"engear amb el comandament 'service comar start' com a arrel d'ençà d'una "
+"terminal"
 
-#: comariface.py:365
+#: comariface.py:303
+msgid "You are not allowed to change network settings."
+msgstr ""
+
+#: comariface.py:380
 msgid "new connection"
 msgstr "nova connexió"
 
@@ -231,7 +252,8 @@ msgstr "Instal·la els paquets relatius a la xarxa"
 
 #: newconn.py:119
 msgid "No package with COMAR network scripts are installed yet."
-msgstr "No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
+msgstr ""
+"No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
 
 #: network-applet.py:293
 msgid "Firewall..."
@@ -251,9 +273,10 @@ msgstr "Icona simple"
 
 #: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
-msgstr "Que vols que el programa de gestió de xarxa s'engegue automàticament en entrar al sistema?"
+msgstr ""
+"Que vols que el programa de gestió de xarxa s'engegue automàticament en "
+"entrar al sistema?"
 
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr ""
-
