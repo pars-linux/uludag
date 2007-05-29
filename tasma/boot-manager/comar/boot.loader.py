@@ -481,14 +481,14 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
     entry = grubEntry(title)
     
     if os_type == "windows":
-        entry.setCommand("rootnoverify", grub_device)
-        entry.setCommand("makeactive", "")
-        entry.setCommand("chainloader", "+1")
         # If Windows is not on first disk...
         disk = grub_device.split(",", 1)[0] + ")"
         if disk != "(hd0,0)":
             entry.setCommand("map", "%s (hd0)" % disk)
             entry.setCommand("map", "(hd0) %s" % disk, append=True)
+        entry.setCommand("rootnoverify", grub_device)
+        entry.setCommand("makeactive", "")
+        entry.setCommand("chainloader", "+1")
     else:
         entry.setCommand("root", grub_device)
     if os_type == "xen":
@@ -533,10 +533,17 @@ def getOptions():
     ]
     if "password" in grub.config.options:
         options.append("password yes")
+    if "background" in grub.config.options:
+        options.append("background %s" % grub.config.getOption("background"))
+    if "splashimage" in grub.config.options:
+        splash = grub.config.getOption("splashimage")
+        if ")" in splash:
+            splash = splash.split(")")[1]
+        options.append("splash %s" % splash)
     grub.release()
     return "\n".join(options)
 
-def setOptions(default=None, timeout=None, password=None):
+def setOptions(default=None, timeout=None, password=None, background=None, splash=None):
     try:
         grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
     except IOError:
@@ -552,6 +559,12 @@ def setOptions(default=None, timeout=None, password=None):
         grub.config.setOption("timeout", timeout)
     if password != None:
         grub.config.setOption("password", "--md5 %s" % md5crypt(password))
+    if background != None:
+        grub.config.setOption("background", background)
+    if splash != None:
+        root = getRoot()
+        root_grub = grubDevice(root)
+        grub.config.setOption("splashimage", "%s%s" % (root_grub, splash))
     grub.release()
     notify("Boot.Loader.changed", "option")
 
