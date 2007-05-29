@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005,2006 TUBITAK/UEKAE
+# Copyright (C) 2006-2007 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -17,7 +17,7 @@ import shutil
 
 import kdedistutils
 
-version = "1.2"
+version = "1.3"
 
 distfiles = """
     AUTHORS
@@ -57,7 +57,7 @@ if "dist" in sys.argv:
 
 kdedistutils.setup(
     name="disk-manager",
-    version="1.2",
+    version=version,
     author="Gökmen GÖKSEL",
     author_email="gokmen@pardus.org.tr",
     min_kde_version = "3.5.0",
