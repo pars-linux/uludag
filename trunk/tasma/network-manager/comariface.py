@@ -30,6 +30,7 @@ class Hook:
         self.remote_hook = []
         self.hotplug_hook = []
         self.noconn_hook = []
+        self.denied_hook = []
         self.warn_limited_access = False
     
     def emitNoConn(self):
@@ -65,7 +66,9 @@ class Hook:
     
     def emitState(self, conn=None):
         self._emit(conn, "emitState", self.state_hook)
-
+    
+    def emitDenied(self):
+        map(lambda x: x(), self.denied_hook)
 
 class Connection(Hook):
     @staticmethod
@@ -294,13 +297,10 @@ class ComarInterface(Hook):
             self.emitRemotes(reply.script, reply.data)
     
     def handleDenied(self, reply):
-        self.setInterfaceAccess(reply.id, False)
+        self.emitDenied()
         if not self.warn_limited_access:
             self.warn_limited_access = True
             KMessageBox.sorry(None, i18n("You are not allowed to change network settings."))
-    
-    def setInterfaceAccess(self, id, access):
-        pass
     
     def handleNotify(self, reply):
         if reply.notify == "Net.Link.connectionChanged":
@@ -338,7 +338,7 @@ class ComarInterface(Hook):
         hash = Connection.hash(script, name)
         return self.connections.get(hash, None)
     
-    def checkAccess(self, method, id):
+    def checkAccess(self, method, id=0):
         self.com.can_access("Net.Link.%s" % method, id=id)
     
     def askNotifications(self):

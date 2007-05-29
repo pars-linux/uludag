@@ -408,8 +408,8 @@ class Widget(QVBox):
         comlink.noconn_hook.append(self.slotCreate)
         comlink.connect()
         
-        comlink.setInterfaceAccess = self.setInterfaceAccess
-        comlink.checkAccess("setConnection", 1001)
+        comlink.denied_hook.append(self.setInterface)
+        comlink.checkAccess("setConnection")
     
     def slotCreate(self):
         newconn.ask_for_new(self)
@@ -423,8 +423,7 @@ class Widget(QVBox):
         self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
         self.helpwin.show()
     
-    def setInterfaceAccess(self, id, access):
-        if not access:
-            self.butNew.setEnabled(False)
-            self.butConf.setEnabled(False)
-            self.view.viewport().setEnabled(False)
+    def setInterface(self):
+        self.butNew.setEnabled(False)
+        self.butConf.setEnabled(False)
+        self.view.viewport().setEnabled(False)
