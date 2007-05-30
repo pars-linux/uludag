@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-29 16:40+0300\n"
-"PO-Revision-Date: 2007-03-09 14:29+0200\n"
+"PO-Revision-Date: 2007-05-31 00:29+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
-"Language-Team: french <fr@li.org>\n"
+"Language-Team: french <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,15 +35,15 @@ msgstr "Automatiquement"
 
 #: browser.py:90
 msgid "Turn on/off connection"
-msgstr "Activer/Désactiver la connection"
+msgstr "Activer/Désactiver la connexion"
 
 #: browser.py:103
 msgid "Configure connection"
-msgstr "Configurer la connection réseau"
+msgstr "Configurer la connexion réseau"
 
 #: browser.py:106
 msgid "Delete connection"
-msgstr "Effacer la connection"
+msgstr "Effacer la connexion"
 
 #: browser.py:124
 #, python-format
@@ -53,12 +53,12 @@ msgid ""
 "connection?"
 msgstr ""
 "Dois je supprimer la \n"
-"la connection \n"
+"la connexion \n"
 "'%s' ?"
 
 #: browser.py:125
 msgid "Delete connection?"
-msgstr "Supprimer la connection?"
+msgstr "Supprimer la connexion ?"
 
 #: browser.py:205
 msgid "No device!"
@@ -66,7 +66,7 @@ msgstr "Pas de périphérique!"
 
 #: browser.py:381 network-applet.py:456
 msgid "New connection"
-msgstr "Créer une connection"
+msgstr "Créer une connexion"
 
 #: browser.py:386 nameconf.py:28
 msgid "Name Service Settings"
@@ -74,7 +74,7 @@ msgstr "Configuration du service de nom"
 
 #: browser.py:423
 msgid "Network Connections Help"
-msgstr "Aide à propos des connections réseaux"
+msgstr "Aide à propos des connexions réseaux"
 
 #: nameconf.py:35
 msgid "Computer"
@@ -106,16 +106,15 @@ msgstr "Serveur de nom:"
 
 #: connection.py:27
 msgid "Channel"
-msgstr ""
+msgstr "Canal"
 
 #: connection.py:28
-#, fuzzy
 msgid "Mode"
-msgstr "Mode:"
+msgstr "Mode"
 
 #: connection.py:29
 msgid "Protocol"
-msgstr ""
+msgstr "Protocole"
 
 #: connection.py:55
 msgid "<hidden>"
@@ -135,11 +134,11 @@ msgstr "Utiliser"
 
 #: connection.py:163
 msgid "Connection name:"
-msgstr "Nom de la connection :"
+msgstr "Nom de la connexion :"
 
 #: connection.py:170
 msgid "Connection"
-msgstr "Connection"
+msgstr "Connexion"
 
 #: connection.py:176
 msgid "Device:"
@@ -195,7 +194,7 @@ msgstr "Passerelle:"
 
 #: connection.py:527
 msgid "Configure network connection"
-msgstr "Configurer la connection réseau"
+msgstr "Configurer la connexion réseau"
 
 #: network-manager.py:33 network-manager.py:85
 msgid "Network Manager"
@@ -211,8 +210,7 @@ msgstr "En attente de COMAR..."
 
 #: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr ""
-"La connection avec COMAR a été perdue, tentative de reconnection en cours..."
+msgstr "La connexion avec COMAR a été perdue, tentative de reconnexion en cours..."
 
 #: comariface.py:186 comariface.py:203 network-applet.py:111
 msgid ""
@@ -225,15 +223,15 @@ msgstr ""
 
 #: comariface.py:303
 msgid "You are not allowed to change network settings."
-msgstr ""
+msgstr "Vous n'êtes pas autorisé à changer les paramètres réseau."
 
 #: comariface.py:380
 msgid "new connection"
-msgstr "Nouvelle connection"
+msgstr "Nouvelle connexion"
 
 #: newconn.py:26
 msgid "Create a new connection"
-msgstr "Créer une nouvelle connection"
+msgstr "Crxéer une nouvelle conneion"
 
 #: newconn.py:31
 msgid "Select device:"
@@ -263,7 +261,7 @@ msgstr "Pare-feu..."
 
 #: network-applet.py:294
 msgid "Edit Connections..."
-msgstr "Editer les connections réseaux..."
+msgstr "Éditer les connexions réseaux..."
 
 #: network-applet.py:296
 msgid "Icon Per Device"
@@ -275,8 +273,9 @@ msgstr "Une seule icône"
 
 #: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
-msgstr "Démarrer automatiquement l'applet réseau dès votre connection?"
+msgstr "Démarrer automatiquement l'applet réseau dès votre connexion ?"
 
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Applet Réseau"
+
