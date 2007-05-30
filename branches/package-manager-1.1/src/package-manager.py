@@ -281,6 +281,18 @@ class MainApplicationWidget(QWidget):
         self.updateStatusBar()
         kapp.restoreOverrideCursor()
 
+    def clearPackageList(self):
+        self.htmlPart.view().setContentsPos(0, 0)
+        self.htmlPart.begin()
+        self.htmlPart.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        </head>
+        <body/>
+        ''')
+        self.htmlPart.end()
+
     def createHTML(self,packages,part=None):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
@@ -396,6 +408,11 @@ class MainApplicationWidget(QWidget):
 
     def setLastSelected(self):
         item = self.listView.firstChild()
+
+        # There may be no item in component list. No more new packages to install for example.
+        if not item:
+            self.clearPackageList()
+            return
 
         # FIXME: a quick and ugly hack to see if we are in search state.
         if item.text(0) == i18n("Search Results"):
