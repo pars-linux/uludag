@@ -260,6 +260,11 @@ class grubConf:
 
 class grubParser:
     def __init__(self, _file, write=False, timeout=-1):
+        device_map = os.path.join(os.path.dirname(_file), "device.map")
+        if not os.path.exists(device_map):
+            if not os.path.exists(_file):
+                file(_file, "w").close()
+            os.system("/sbin/grub --batch --no-floppy --device-map=%s < %s" % (device_map, _file))
         from comar.utility import FileLock
         self.file = _file
         self.write = write
