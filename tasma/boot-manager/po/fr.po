@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:17+0300\n"
-"PO-Revision-Date: 2007-05-07 08:44+0200\n"
+"PO-Revision-Date: 2007-05-30 08:24+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,11 @@ msgstr "Gestionnaire de bootloader (chargeur de démarrage)"
 
 #: src/boot-manager.py:37
 msgid "Developer and Current Maintainer"
-msgstr ""
+msgstr "Développeur et responsable de la maintenance actuel"
 
 #: src/boot-manager.py:38
 msgid "Contributions to Boot.Loader model."
-msgstr ""
+msgstr "Contributions au modèle du Boot.Loader"
 
 #: src/boot-manager.py:79
 msgid "Bootloader Manager is already started!"
@@ -38,7 +38,7 @@ msgstr "Nouvelle entrée"
 
 #: src/mainview.py:55
 msgid "Remember last booted entry."
-msgstr ""
+msgstr "Se souvenir de la dernière entrée démarrée."
 
 #: src/mainview.py:97
 msgid "Title:"
@@ -58,7 +58,7 @@ msgstr "Noyau:"
 
 #: src/mainview.py:137
 msgid "Kernel Parameters:"
-msgstr ""
+msgstr "Paramètres du noyau :"
 
 #: src/mainview.py:147
 msgid "Initial Ramdisk:"
@@ -66,7 +66,7 @@ msgstr "Init Ramdrive (Initialisation Ramdrive):"
 
 #: src/mainview.py:157
 msgid "Set as default boot entry."
-msgstr ""
+msgstr "Établir comme entrée de démarrage par défaut."
 
 #: src/mainview.py:214
 msgid "Are you sure you want to remove this entry?"
@@ -88,11 +88,11 @@ msgstr "Echec"
 
 #: src/mainview.py:388
 msgid "You are not allowed to edit boot loader settings."
-msgstr ""
+msgstr "Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
 
 #: src/mainview.py:388
 msgid "Access Denied"
-msgstr ""
+msgstr "Accès refusé"
 
 #: src/ui_elements.py:90
 msgid "Edit entry"
@@ -102,5 +102,3 @@ msgstr "Éditer l'entrée"
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
 
-#~ msgid "Disk %1, Partition %2"
-#~ msgstr "Disque %1, Partition %2"
