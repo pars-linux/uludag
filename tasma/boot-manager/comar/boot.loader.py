@@ -43,6 +43,11 @@ FAIL_NOSYSTEM = _({
     "tr": "Böyle bir sistem türü bulunmuyor.",
 })
 
+FAIL_NOGRUB = _({
+    "en": "Unable to find Grub device map.",
+    "tr": "Grub aygıt haritası bulunamadı.",
+})
+
 # Grub parser configuration
 
 GRUB_CONF = "/boot/grub/grub.conf"
@@ -262,9 +267,7 @@ class grubParser:
     def __init__(self, _file, write=False, timeout=-1):
         device_map = os.path.join(os.path.dirname(_file), "device.map")
         if not os.path.exists(device_map):
-            if not os.path.exists(_file):
-                file(_file, "w").close()
-            os.system("/sbin/grub --batch --no-floppy --device-map=%s < %s" % (device_map, _file))
+            fail(FAIL_NOGRUB)
         from comar.utility import FileLock
         self.file = _file
         self.write = write
