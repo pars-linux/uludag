@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Live 2007.1 Felis chaus</Title>
+    <Title>Pardus Live 2007.2 Caracal</Title>
     <WorkDir>/root/pardusman/LiveCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -211,6 +211,8 @@
         <Package>alsa-tools</Package>
         <Package>alsa-utils</Package>
         <Package>amarok</Package>
+        <Package>amrnb</Package>
+        <Package>amrwb</Package>
         <Package>armagetronad</Package>
         <Package>armagetronad-moviepack</Package>
         <Package>armagetronad-moviesounds</Package>
@@ -233,6 +235,7 @@
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
         <Package>boost</Package>
+        <Package>boot-manager</Package>
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
@@ -275,6 +278,7 @@
         <Package>diffutils</Package>
         <Package>disk-manager</Package>
         <Package>disktype</Package>
+        <Package>djbfft</Package>
         <Package>djvu</Package>
         <Package>dmapi</Package>
         <Package>dmidecode</Package>
@@ -288,6 +292,7 @@
         <Package>eciadsl</Package>
         <Package>ed</Package>
         <Package>eject</Package>
+        <Package>enscript</Package>
         <Package>esound</Package>
         <Package>essential</Package>
         <Package>ethtool</Package>
@@ -335,6 +340,7 @@
         <Package>glibmm</Package>
         <Package>glut</Package>
         <Package>gmp</Package>
+        <Package>gnokii</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnuchess</Package>
         <Package>gnupg</Package>
@@ -497,6 +503,7 @@
         <Package>libfontenc</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
+        <Package>libglade2</Package>
         <Package>libgpg-error</Package>
         <Package>libgphoto2</Package>
         <Package>libgpod</Package>
@@ -530,6 +537,7 @@
         <Package>libpcre</Package>
         <Package>libperl</Package>
         <Package>libpng</Package>
+        <Package>libpthread-stubs</Package>
         <Package>libquicktime</Package>
         <Package>libraw1394</Package>
         <Package>librsvg</Package>
@@ -538,6 +546,8 @@
         <Package>libsigc++</Package>
         <Package>libsndfile</Package>
         <Package>libstdc++</Package>
+        <Package>libsvg</Package>
+        <Package>libsvg-cairo</Package>
         <Package>libtheora</Package>
         <Package>libtool</Package>
         <Package>libungif</Package>
@@ -548,6 +558,7 @@
         <Package>libwmf</Package>
         <Package>libwpd</Package>
         <Package>libwww</Package>
+        <Package>libxcb</Package>
         <Package>libxkbfile</Package>
         <Package>libxkbui</Package>
         <Package>libxml2</Package>
@@ -630,6 +641,7 @@
         <Package>pinentry</Package>
         <Package>pisi</Package>
         <Package>pm-utils</Package>
+        <Package>pnm2ppa</Package>
         <Package>poppler</Package>
         <Package>popt</Package>
         <Package>portaudio</Package>
@@ -644,6 +656,9 @@
         <Package>pth</Package>
         <Package>pwc</Package>
         <Package>pwdb</Package>
+        <Package>pycairo</Package>
+        <Package>pygobject</Package>
+        <Package>pygtk</Package>
         <Package>pyparted</Package>
         <Package>python</Package>
         <Package>python-bsddb3</Package>
@@ -721,6 +736,7 @@
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>tightvnc</Package>
+        <Package>time</Package>
         <Package>timidity</Package>
         <Package>timidity-shompatches</Package>
         <Package>tn5250</Package>
@@ -736,6 +752,7 @@
         <Package>unarj</Package>
         <Package>ungrab-winmodem</Package>
         <Package>unionfs</Package>
+        <Package>unixodbc</Package>
         <Package>unrar</Package>
         <Package>unshield</Package>
         <Package>unzip</Package>
@@ -758,6 +775,7 @@
         <Package>x264</Package>
         <Package>x2x</Package>
         <Package>xbitmaps</Package>
+        <Package>xcb-proto</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
