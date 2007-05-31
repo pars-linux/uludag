@@ -43,11 +43,9 @@
         <Package>db1</Package>
         <Package>db3</Package>
         <Package>db4</Package>
-        <Package>ddcxinfos</Package>
         <Package>debianutils</Package>
         <Package>dhcpcd</Package>
         <Package>diffutils</Package>
-        <Package>dmidecode</Package>
         <Package>e2fsprogs</Package>
         <Package>expat</Package>
         <Package>fbgrab</Package>
@@ -141,6 +139,7 @@
         <Package>tar</Package>
         <Package>tcp-wrappers</Package>
         <Package>texinfo</Package>
+        <Package>time</Package>
         <Package>udev</Package>
         <Package>unifdef</Package>
         <Package>unzip</Package>
