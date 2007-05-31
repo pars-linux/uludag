@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2007.1 Felis chaus</Title>
+    <Title>Pardus 2007.2 Caracal</Title>
     <WorkDir>/root/pardusman/InstallCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -58,6 +58,8 @@
         <SelectedPackage>gle</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
+        <SelectedPackage>glibc-locales-fr</SelectedPackage>
+        <SelectedPackage>glibc-locales-it</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>glibc-locales-pt</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
@@ -91,6 +93,8 @@
         <SelectedPackage>kchmviewer</SelectedPackage>
         <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
+        <SelectedPackage>kde-i18n-fr</SelectedPackage>
+        <SelectedPackage>kde-i18n-it</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
@@ -114,6 +118,7 @@
         <SelectedPackage>lbreakout2</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
+        <SelectedPackage>logrotate</SelectedPackage>
         <SelectedPackage>lsof</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>ltmodem</SelectedPackage>
@@ -226,6 +231,8 @@
         <Package>alsa-tools</Package>
         <Package>alsa-utils</Package>
         <Package>amarok</Package>
+        <Package>amrnb</Package>
+        <Package>amrwb</Package>
         <Package>antiword</Package>
         <Package>apr</Package>
         <Package>apr-util</Package>
@@ -264,12 +271,14 @@
         <Package>bluez-utils</Package>
         <Package>bogofilter</Package>
         <Package>boost</Package>
+        <Package>boot-manager</Package>
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
+        <Package>catbox</Package>
         <Package>ccache</Package>
         <Package>cdparanoia</Package>
         <Package>cdrdao</Package>
@@ -312,6 +321,7 @@
         <Package>digikamimageplugins</Package>
         <Package>disk-manager</Package>
         <Package>disktype</Package>
+        <Package>djbfft</Package>
         <Package>djvu</Package>
         <Package>dmapi</Package>
         <Package>dmidecode</Package>
@@ -326,6 +336,7 @@
         <Package>ed</Package>
         <Package>eject</Package>
         <Package>elfutils</Package>
+        <Package>enscript</Package>
         <Package>esound</Package>
         <Package>essential</Package>
         <Package>ethtool</Package>
@@ -370,11 +381,14 @@
         <Package>glibc</Package>
         <Package>glibc-locales-de</Package>
         <Package>glibc-locales-es</Package>
+        <Package>glibc-locales-fr</Package>
+        <Package>glibc-locales-it</Package>
         <Package>glibc-locales-nl</Package>
         <Package>glibc-locales-pt</Package>
         <Package>glibmm</Package>
         <Package>glut</Package>
         <Package>gmp</Package>
+        <Package>gnokii</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnuconfig</Package>
         <Package>gnupg</Package>
@@ -445,6 +459,8 @@
         <Package>kchmviewer</Package>
         <Package>kde-i18n-de</Package>
         <Package>kde-i18n-es</Package>
+        <Package>kde-i18n-fr</Package>
+        <Package>kde-i18n-it</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-pt_BR</Package>
         <Package>kde-i18n-tr</Package>
@@ -578,6 +594,7 @@
         <Package>libpcre</Package>
         <Package>libperl</Package>
         <Package>libpng</Package>
+        <Package>libpthread-stubs</Package>
         <Package>libquicktime</Package>
         <Package>libraw1394</Package>
         <Package>librsvg</Package>
@@ -598,6 +615,7 @@
         <Package>libwmf</Package>
         <Package>libwpd</Package>
         <Package>libwww</Package>
+        <Package>libxcb</Package>
         <Package>libxkbfile</Package>
         <Package>libxkbui</Package>
         <Package>libxml2</Package>
@@ -608,6 +626,7 @@
         <Package>lirc-drivers</Package>
         <Package>live555</Package>
         <Package>lmpcm_usb</Package>
+        <Package>logrotate</Package>
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
@@ -624,7 +643,6 @@
         <Package>man-pages</Package>
         <Package>mc</Package>
         <Package>memtest86</Package>
-        <Package>memusage</Package>
         <Package>microcode-ctl</Package>
         <Package>mingetty</Package>
         <Package>minicom</Package>
@@ -684,6 +702,7 @@
         <Package>pisi</Package>
         <Package>pkgconfig</Package>
         <Package>pm-utils</Package>
+        <Package>pnm2ppa</Package>
         <Package>poppler</Package>
         <Package>popt</Package>
         <Package>portaudio</Package>
@@ -784,6 +803,7 @@
         <Package>testdisk</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
+        <Package>time</Package>
         <Package>timidity</Package>
         <Package>timidity-shompatches</Package>
         <Package>tn5250</Package>
@@ -800,6 +820,7 @@
         <Package>ungrab-winmodem</Package>
         <Package>unifdef</Package>
         <Package>unionfs</Package>
+        <Package>unixodbc</Package>
         <Package>unrar</Package>
         <Package>unshield</Package>
         <Package>unzip</Package>
@@ -821,6 +842,7 @@
         <Package>x11-ssh-askpass</Package>
         <Package>x264</Package>
         <Package>xbitmaps</Package>
+        <Package>xcb-proto</Package>
         <Package>xdelta</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
