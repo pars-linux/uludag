@@ -33,7 +33,7 @@ def run(cmd, ignore_error=False):
 def chroot_comar(image_dir):
     if os.fork() == 0:
         os.chroot(image_dir)
-        subprocess.call(["/usr/bin/comar"])
+        subprocess.call(["/sbin/start-stop-daemon", "--start", "-b", "--pidfile", "/var/run/comar.pid", "--make-pidfile", "--exec", "/usr/bin/comar"])
         sys.exit(0)
     waitBus("%s/var/run/comar.socket" % image_dir)
 
