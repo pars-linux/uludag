@@ -32,6 +32,9 @@ application/dot; oowriter '%s'; -n "$DISPLAY"
 application/x-dot; oowriter '%s'; -n "$DISPLAY"
 application/x-msword; oowriter '%s'; -n "$DISPLAY"
 application/msword; oowriter '%s'; -n "$DISPLAY"
+application/rtf; oowriter '%s'; -n "$DISPLAY"
+application/x-rtf; oowriter '%s'; -n "$DISPLAY"
+text/rtf; oowriter '%s'; -n "$DISPLAY"
 
 # MS Access
 application/mdb; oobase '%s'; -n "$DISPLAY"
@@ -88,6 +91,10 @@ image/*; gwenview '%s'; -n "$DISPLAY"
 # Text
 text/*; kwrite '%s'; -n "$DISPLAY"
 application/txt; kwrite '%s'; -n "$DISPLAY"
+
+# CHM
+application/chm; kchmviewer '%s'; -n "$DISPLAY"
+application/x-chm; kchmviewer '%s'; -n "$DISPLAY"
 
 # Po files
 text/x-pofile; kbabel '%s'; -n "$DISPLAY"
