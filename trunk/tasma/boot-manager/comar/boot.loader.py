@@ -491,7 +491,7 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
     if os_type == "windows":
         # If Windows is not on first disk...
         disk = grub_device.split(",", 1)[0] + ")"
-        if disk != "(hd0,0)":
+        if disk != "(hd0)":
             entry.setCommand("map", "%s (hd0)" % disk)
             entry.setCommand("map", "(hd0) %s" % disk, append=True)
         entry.setCommand("rootnoverify", grub_device)
