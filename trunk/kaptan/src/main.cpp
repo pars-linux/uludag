@@ -24,7 +24,7 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char** argv)
 {
-    KAboutData aboutData("kaptan", description, "2.0", description, KAboutData::License_GPL, "(c) 2004-2006 TUBİTAK/UEKAE", 0, 0, "ismail@pardus.org.tr");
+    KAboutData aboutData("kaptan", description, "2.2", description, KAboutData::License_GPL, "(c) 2004-2006 TUBİTAK/UEKAE", 0, 0, "ismail@pardus.org.tr");
     aboutData.addAuthor("İsmail Dönmez", 0, "ismail@pardus.org.tr");
     aboutData.addAuthor("Barış Metin", 0, "baris@pardus.org.tr");
     aboutData.addAuthor("S.Çağlar Onur", 0, "caglar@pardus.org.tr");
