@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-29 16:40+0300\n"
-"PO-Revision-Date: 2007-03-01 21:12+0200\n"
+"PO-Revision-Date: 2007-06-03 22:17+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -116,16 +116,15 @@ msgstr "Naamserver:"
 
 #: connection.py:27
 msgid "Channel"
-msgstr ""
+msgstr "Kanaal"
 
 #: connection.py:28
-#, fuzzy
 msgid "Mode"
-msgstr "Modus:"
+msgstr "Modus"
 
 #: connection.py:29
 msgid "Protocol"
-msgstr ""
+msgstr "Protocol"
 
 #: connection.py:55
 msgid "<hidden>"
@@ -133,7 +132,7 @@ msgstr "<verborgen>"
 
 #: connection.py:88
 msgid "Scan results:"
-msgstr "Scan resultaat:"
+msgstr "Scan resultaten:"
 
 #: connection.py:106
 msgid "Scan again"
@@ -157,7 +156,7 @@ msgstr "Apparaat:"
 
 #: connection.py:181
 msgid "Select"
-msgstr "Kies"
+msgstr "Selecteer"
 
 #: connection.py:195
 msgid "Scan"
@@ -197,11 +196,11 @@ msgstr "Eigen"
 
 #: connection.py:309
 msgid "Net mask:"
-msgstr "Netmask:"
+msgstr "Netmasker:"
 
 #: connection.py:316
 msgid "Gateway:"
-msgstr "Gateway:"
+msgstr "Poort:"
 
 # infinitief vertalen: netwerkverbinding configureren
 #: connection.py:527
@@ -210,11 +209,11 @@ msgstr "Configureer netwerkverbinding"
 
 #: network-manager.py:33 network-manager.py:85
 msgid "Network Manager"
-msgstr "Netwerkmanager"
+msgstr "Netwerkbeheer"
 
 #: network-manager.py:80
 msgid "Network manager module is already started!"
-msgstr "Netwerkmanager module is al opgestart!"
+msgstr "Netwerkbeheer module is al opgestart!"
 
 #: comariface.py:166
 msgid "Waiting COMAR..."
@@ -236,7 +235,7 @@ msgstr ""
 
 #: comariface.py:303
 msgid "You are not allowed to change network settings."
-msgstr ""
+msgstr "U mag de netwerkinstellingen niet aanpassen."
 
 #: comariface.py:380
 msgid "new connection"
@@ -291,3 +290,4 @@ msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Netwerk-applet"
+
