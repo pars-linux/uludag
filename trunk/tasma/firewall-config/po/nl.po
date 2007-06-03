@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:49+0300\n"
-"PO-Revision-Date: 2007-03-01 21:31+0200\n"
+"PO-Revision-Date: 2007-06-03 21:35+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -97,11 +97,11 @@ msgstr ""
 
 #: src/firewall-config.py:344
 msgid "You are not allowed to edit firewall settings."
-msgstr ""
+msgstr "U bent niet bevoegd om de firewall instellingen te bewerken"
 
 #: src/firewall-config.py:344
 msgid "Access Denied"
-msgstr ""
+msgstr "Toegang geweigerd"
 
 #: src/firewall-config.py:438
 msgid "Pardus Firewall Interface is already running!"
@@ -146,7 +146,7 @@ msgstr "Alt+S"
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr ""
-"Klik hier  om de firewall te beëindigen en alle inkomende verbindingen toe "
+"Klik hier om de firewall te beëindigen en alle inkomende verbindingen toe "
 "te staan."
 
 #: src/firewall.py:196
@@ -238,3 +238,4 @@ msgstr "Accepteer"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Keur af"
+
