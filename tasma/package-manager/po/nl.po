@@ -1,3 +1,4 @@
+# translation of nl.po to Nederlands
 # translation of nl.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -11,9 +12,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-13 21:11+0300\n"
-"PO-Revision-Date: 2007-05-13 21:13+0300\n"
-"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2007-06-03 21:31+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -288,8 +289,8 @@ msgid ""
 "Package-manager needs to update package database. You need a network "
 "connection to update."
 msgstr ""
-"Pakketbeheer dient de pakketdatabase bij te werken. U heeft hiervoor een "
-"netwerkverbinding nodig."
+"Pakketbeheer dient de pakketdatabase bij te werken. U heeft een netwerkverbinding "
+"om te updaten."
 
 #: src/package-manager.py:208
 msgid "Package database is empty"
@@ -450,7 +451,7 @@ msgstr "<br>Wilt u doorgaan?</qt>"
 
 #: src/package-manager.py:553
 msgid "<b>Removing Package(s)</b>"
-msgstr "<b>Bijwerken pakket(ten)</b>"
+msgstr "<b>Verwijderen pakket(ten)</b>"
 
 #: src/package-manager.py:570 src/package-manager.py:692
 msgid "<b>Upgrading Package(s)</b>"
@@ -588,15 +589,15 @@ msgstr "Indien geselecteerd, zal pisi alleen desktop toepassingen weergeven"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &periodic update check"
-msgstr "Gebruik &interval contrôle voor op te waarderen pakketten"
+msgstr "Activeer &periodieke update check"
 
 #: src/PreferencesDialog.py:208
 msgid "&Enable system tray icon"
-msgstr "G&ebruik systeemvak pictogram"
+msgstr "G&ebruik systeemvak icoon"
 
 #: src/PreferencesDialog.py:209
 msgid "Check interval:"
-msgstr "Contrôle interval:"
+msgstr "Controle interval:"
 
 #: src/PreferencesDialog.py:210
 msgid " min"
@@ -633,7 +634,7 @@ msgstr "Maximum cachegrootte:"
 
 #: src/PreferencesDialog.py:218
 msgid "&Use hard disk cache for downloaded software"
-msgstr "Gebr&uik hardeschijf-cache voor gedownloade software"
+msgstr "Gebr&uik hardeschijf cache voor gedownloade software"
 
 #: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
