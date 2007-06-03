@@ -2,8 +2,10 @@
 Name=Bootloader Manager
 Name[tr]=Önyükleyici Yöneticisi
 Name[es]=Administrador del Cargador de Arranque
-GenericName[en]=Bootloader Managemenet Interface
+Name[nl]=Opstartbeheer
+GenericName[en]=Bootloader Management Interface
 GenericName[es]=Interfaz de Administración de Arranque
+GenericName[nl]=Opstartbeheer interface
 GenericName[tr]=Önyükleyici Yönetim Arabirimi
 Icon=boot_manager
 X-KDE-ModuleType=Library
