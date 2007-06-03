@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:17+0300\n"
-"PO-Revision-Date: 2007-06-03 22:10+0200\n"
+"PO-Revision-Date: 2007-06-03 22:19+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -86,7 +86,7 @@ msgstr "Mislukt"
 
 #: src/mainview.py:388
 msgid "You are not allowed to edit boot loader settings."
-msgstr "U mag de opstart instellingen niet aanpassen."
+msgstr "U mag de opstartinstellingen niet aanpassen."
 
 #: src/mainview.py:388
 msgid "Access Denied"
