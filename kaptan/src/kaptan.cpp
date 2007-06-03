@@ -54,7 +54,7 @@ Kaptan::Kaptan(QWidget *parent, const char *name)
     addPage(wallpaper, i18n("Wallpaper Setup"));
     setHelpEnabled(KWizard::page(i++), false);
 
-    networkEnabled = checkComarACL("Net.Link.setConnection")
+    networkEnabled = checkComarACL("Net.Link.setConnection");
     if (networkEnabled)
     {
         network = new Network(this);
@@ -62,7 +62,7 @@ Kaptan::Kaptan(QWidget *parent, const char *name)
         setHelpEnabled(KWizard::page(i++), false);
     }
 
-    packageEnabled = checkComarACL("PackageHandler.setupPackage")
+    packageEnabled = checkComarACL("PackageHandler.setupPackage");
     if (packageEnabled)
     {
         package = new Package(this);
