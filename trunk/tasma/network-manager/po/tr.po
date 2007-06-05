@@ -111,7 +111,7 @@ msgstr "Mod"
 
 #: connection.py:29
 msgid "Protocol"
-msgstr "Potokol"
+msgstr "Protokol"
 
 #: connection.py:55
 msgid "<hidden>"
