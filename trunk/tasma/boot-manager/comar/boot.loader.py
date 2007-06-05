@@ -1,16 +1,38 @@
 import os
 import os.path
 
-# l10n
+from comar.utility import FileLock
 
-LABEL_OTHER = _({
-    "en": "Other",
-    "tr": "Diğer",
-})
+# l10n
 
 FAIL_TIMEOUT = _({
     "en": "Request timed out.",
     "tr": "Talep zaman aşımına uğradı.",
+})
+
+FAIL_NOGRUB = {
+    "en": "Grub is not properly installed..",
+    "tr": "Grub düzgün bir şekilde kurulu değil.",
+}
+
+FAIL_NOENTRY = _({
+    "en": "No such entry.",
+    "tr": "Böyle bir kayıt bulunmuyor.",
+})
+
+FAIL_NOPARDUSENTRY = _({
+    "en": "There should be at least one Pardus kernel entry.",
+    "tr": "En az bir Pardus çekirdek girsisi tanımlı olmalı.",
+})
+
+FAIL_NODEVICE = _({
+    "en": "No such device: %s",
+    "tr": "Böyle bir aygıt yok: %s",
+})
+
+FAIL_NOSYSTEM = _({
+    "en": "No such system.",
+    "tr": "Böyle bir sistem türü bulunmuyor.",
 })
 
 FAIL_NOTITLE = _({
@@ -27,42 +49,35 @@ FAIL_NOKERNEL = _({
     "en": "Kernel path must be given.",
     "tr": "Çekirdek adresi belirtilmeli.",
 })
-
-FAIL_NOENTRY = _({
-    "en": "No such entry.",
-    "tr": "Böyle bir kayıt bulunmuyor.",
+FAIL_NOTITLE = _({
+    "en": "Title must be given.",
+    "tr": "Başlık belirtilmeli.",
 })
 
-FAIL_NODEVICE = _({
-    "en": "No such device.",
-    "tr": "Böyle bir aygıt bulunmuyor.",
+FAIL_NOROOT = _({
+    "en": "Root drive must be given.",
+    "tr": "Kök sürücü belirtilmeli.",
 })
 
-FAIL_NOSYSTEM = _({
-    "en": "No such system.",
-    "tr": "Böyle bir sistem türü bulunmuyor.",
-})
-
-FAIL_NOGRUB = _({
-    "en": "Unable to find Grub device map.",
-    "tr": "Grub aygıt haritası bulunamadı.",
+FAIL_NOKERNEL = _({
+    "en": "Kernel path must be given.",
+    "tr": "Çekirdek adresi belirtilmeli.",
 })
 
 # Grub parser configuration
 
-GRUB_CONF = "/boot/grub/grub.conf"
+GRUB_DIR = "/boot/grub"
 
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
 
-# Supported operating systems and required fields for them
+# Supported operating systems and required fields
 
 SYSTEMS = {
     "linux": "Linux,*root,*kernel,initrd,options",
     "xen": "Xen,*root,*kernel,initrd,options",
     "windows": "Windows,*root",
     "memtest": "Memtest,",
-    "other": "%s,*root,kernel,initrd,options" % LABEL_OTHER,
 }
 
 # Grub parser
@@ -264,23 +279,77 @@ class grubConf:
         self.entries.remove(entry)
 
 class grubParser:
-    def __init__(self, _file, write=False, timeout=-1):
-        device_map = os.path.join(os.path.dirname(_file), "device.map")
-        if not os.path.exists(device_map):
-            fail(FAIL_NOGRUB)
-        from comar.utility import FileLock
-        self.file = _file
+    def __init__(self, _dir, write=False, timeout=-1):
+        self.dir = _dir
         self.write = write
-        lockfile = "%s/.%s.lock" % (os.path.dirname(_file), os.path.basename(_file))
-        self.lock = FileLock(lockfile)
-        self.lock.lock(write, timeout)
-        self.config = grubConf()
-        if os.path.exists(_file):
-            self.config.parseConf(_file)
+        self.grub_conf = os.path.join(_dir, "grub.conf")
+        self.device_map = os.path.join(_dir, "device.map")
+        self.device_remap = os.path.join(_dir, "device.remap")
+        
+        self.lock = FileLock("%s/.grub.lock" % _dir)
+        try:
+            self.lock.lock(write, timeout)
+        except IOError:
+            fail(FAIL_TIMEOUT)
+        
+        # Fail if grub is not installed
+        if os.path.exists(self.grub_conf) and os.path.exists(self.device_map):
+            self.config = grubConf()
+            self.config.parseConf(self.grub_conf)
+        else:
+            self.fail(FAIL_NOGRUB)
+        
+        # Get device map
+        mapped_devices = {}
+        for line in file(self.device_map):
+            try:
+                grub_device, linux_device = line.split("\t")
+            except ValueError:
+                self.fail(FAIL_NOGRUB)
+            mapped_devices[grub_device] = linux_device.strip()
+        
+        # Remap devices if necessary
+        if not os.path.exists(self.device_remap):
+            remapped_devices = {}
+            for entry in self.config.entries:
+                commands = entry.listCommands()
+                if "root" in commands and "kernel" in commands:
+                    grub_device = entry.getCommand("root").value
+                    try:
+                        grub_disk, grub_part, linux_disk, linux_part = parseGrubDevice(grub_device, remapped=False)
+                    except TypeError:
+                        self.fail(FAIL_NODEVICE % grub_device)
+                    entry_version, entry_root = getKernelData(entry.getCommand("kernel"))
+                    if entry_root:
+                        if entry_root.startswith("LABEL="):
+                            entry_root = getDeviceByLabel(entry_root.split("LABEL=")[1])
+                        try:
+                            linux_disk2, linux_part2, grub_disk2, grub_part2 = parseLinuxDevice(entry_root, remapped=False)
+                        except:
+                            self.fail(FAIL_NODEVICE % entry_root)
+                        remapped_devices["(%s)" % grub_disk] = linux_disk2
+            
+            grub_devices = mapped_devices.keys()
+            grub_devices.sort(key=lambda x: int(x[3:-1]))
+            linux_devices = []
+            for device in grub_devices:
+                linux_devices.append(mapped_devices[device])
+            if "(hd0)" in remapped_devices and remapped_devices["(hd0)"] != mapped_devices["(hd0)"]:
+                # Need remapping
+                linux_devices.remove(remapped_devices["(hd0)"])
+                linux_devices.insert(0, remapped_devices["(hd0)"])
+            list_map = []
+            for i in xrange(len(grub_devices)):
+                list_map.append("%s\t%s" % (grub_devices[i], linux_devices[i]))
+            file(self.device_remap, "w").write("\n".join(list_map))
+    
+    def fail(self, msg):
+        self.lock.unlock()
+        fail(msg)
     
     def release(self, save=True):
         if save and self.write:
-            self.config.write(self.file)
+            self.config.write(self.grub_conf)
         self.lock.unlock()
 
 
@@ -295,6 +364,78 @@ def parseVersion(version):
     except IndexError:
         raise ParseError
     return k_version, k_suffix
+
+def parseLinuxDevice(device, remapped=True):
+    _file = "device.map"
+    if remapped:
+        _file = "device.remap"
+    device_map = os.path.join(GRUB_DIR, _file)
+    for line in file(device_map):
+        grub_disk, linux_disk = line.strip().split("\t")
+        grub_disk = grub_disk[1:-1]
+        if device.startswith(linux_disk):
+            part = device.replace(linux_disk, "", 1)
+            if part:
+                if part.startswith("p"):
+                    grub_part = int(part[1:]) - 1
+                else:
+                    grub_part = int(part) - 1
+                return linux_disk, part, grub_disk, grub_part
+
+def parseGrubDevice(device, remapped=True):
+    try:
+        disk, part = device.split(",")
+    except ValueError:
+        return
+    disk = disk[1:]
+    part = part[:-1]
+    if not part.isdigit():
+        return
+    _file = "device.map"
+    if remapped:
+        _file = "device.remap"
+    device_map = os.path.join(GRUB_DIR, _file)
+    for line in file(device_map):
+        grub_disk, linux_disk = line.strip().split("\t")
+        grub_disk = grub_disk[1:-1]
+        if disk == grub_disk:
+            linux_part = int(part) + 1
+            if linux_disk[-1].isdigit():
+                linux_part = "p%s" % linux_part
+            return grub_disk, part, linux_disk, linux_part
+
+def grubAddress(device):
+    try:
+        linux_disk, linux_part, grub_disk, grub_part = parseLinuxDevice(device)
+    except ValueError:
+        fail(FAIL_NODEVICE)
+    return "(%s,%s)" % (grub_disk, grub_part)
+
+def linuxAddress(device):
+    try:
+        grub_disk, grub_part, linux_disk, linux_part = parseGrubDevice(device)
+    except ValueError:
+        fail(FAIL_NODEVICE)
+    return "%s%s" % (linux_disk, linux_part)
+
+def getKernelData(command):
+    kernel_version = None
+    kernel_root = None
+    if command.key == "kernel":
+        kernel = command.value
+        if kernel.startswith("("):
+            kernel = kernel.split(")", 1)[1]
+        if " " in kernel:
+            kernel, parameters = kernel.split(" ", 1)
+        else:
+            parameters = ""
+        parameters = parameters.split()
+        for param in parameters:
+            if param.startswith("root="):
+                kernel_root = param.split("root=", 1)[1]
+                kernel_version = kernel.split("kernel-")[-1]
+                break
+    return kernel_version, kernel_root
 
 def bootParameters(root):
     s = []
@@ -312,41 +453,18 @@ def bootParameters(root):
             s.append(i)
     return " ".join(s).strip()
 
-def grubDevice(dev):
-    device_map = os.path.join(os.path.dirname(GRUB_CONF), "device.map")
-    try:
-        for device in file(device_map):
-            grub_dev, linux_dev = device.strip().split("\t")
-            if dev.startswith(linux_dev):
-                part = dev.replace(linux_dev, "", 1)
-                if part.startswith("p"):
-                    part = int(part[1:]) - 1
-                else:
-                    part = int(part) - 1
-                return grub_dev.replace(")", ",%s)" % part)
-    except ValueError:
-        return
-
-def linuxDevice(dev):
-    device_map = os.path.join(os.path.dirname(GRUB_CONF), "device.map")
-    try:
-        dev, part = dev.split(",")
-    except ValueError:
-        return
-    dev = "%s)" % dev
-    part = int(part.replace(")", "")) + 1
-    for device in file(device_map):
-        grub_dev, linux_dev = device.strip().split("\t")
-        if dev == grub_dev:
-            if linux_dev[-1].isdigit():
-                part = "p%s" % part
-            return "%s%s" % (linux_dev, part)
-
 def getRoot():
     for mount in os.popen("/bin/mount").readlines():
         mount_items = mount.split()
         if mount_items[0].startswith("/dev") and mount_items[2] == "/":
             return mount_items[0]
+
+def getDeviceByLabel(_f):
+    f = os.path.join("/dev/disk/by-label/%s" % _f)
+    if os.path.islink(f):
+        return "/dev/%s" % os.readlink(f)[6:]
+    else:
+        return None
 
 def md5crypt(password):
     import random
@@ -421,14 +539,14 @@ def md5crypt(password):
 
 def parseGrubEntry(entry):
     os_entry = {
-        "os_type": "other",
+        "os_type": "unknown",
         "title": entry.title,
     }
     for command in entry.commands:
         key = command.key
         value = command.value
         if key in ["root", "rootnoverify"]:
-            os_entry["root"] = linuxDevice(value)
+            os_entry["root"] = linuxAddress(value)
         elif key == "initrd":
             os_entry["initrd"] = value
         elif key == "kernel":
@@ -442,7 +560,7 @@ def parseGrubEntry(entry):
                 os_entry["kernel"] = value
             if os_entry["kernel"].startswith("("):
                 root, kernel = os_entry["kernel"].split(")", 1)
-                os_entry["root"] = linuxDevice(root + ")")
+                os_entry["root"] = linuxAddress(root + ")")
                 os_entry["kernel"] = kernel
             if os_entry["kernel"] == "/boot/xen.gz":
                 os_entry["os_type"] = "xen"
@@ -479,9 +597,12 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
             fail(FAIL_NOROOT)
     else:
         root = getRoot()
-    grub_device = grubDevice(root)
-    if not grub_device:
+    
+    try:
+        linux_disk, linux_part, grub_disk, grub_part = parseLinuxDevice(root)
+    except ValueError:
         fail(FAIL_NODEVICE)
+    grub_device = "(%s,%s)" % (grub_disk, grub_part)
     
     if "kernel" in required and not kernel:
         fail(FAIL_NOKERNEL)
@@ -490,10 +611,9 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
     
     if os_type == "windows":
         # If Windows is not on first disk...
-        disk = grub_device.split(",", 1)[0] + ")"
-        if disk != "(hd0)":
-            entry.setCommand("map", "%s (hd0)" % disk)
-            entry.setCommand("map", "(hd0) %s" % disk, append=True)
+        if grub_disk != "hd0":
+            entry.setCommand("map", "(%s) (hd0)" % grub_disk)
+            entry.setCommand("map", "(hd0) (%s)" % grub_disk, append=True)
         entry.setCommand("rootnoverify", grub_device)
         entry.setCommand("makeactive", "")
         entry.setCommand("chainloader", "+1")
@@ -511,7 +631,7 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
     elif os_type == "memtest":
         entry.setCommand("root", grub_device)
         entry.setCommand("kernel", "/boot/memtest.bin")
-    else: # linux, other
+    else: # linux
         if kernel and "kernel" in SYSTEMS[os_type]:
             if options and "options" in SYSTEMS[os_type]:
                 entry.setCommand("kernel", "%s %s" % (kernel, options))
@@ -524,17 +644,14 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
 # Boot.Loader methods
 
 def listSystems():
-    sys_list = []
+    systems = []
     for key, values in SYSTEMS.iteritems():
         values = values.replace("*", "")
-        sys_list.append("%s %s" % (key, values))
-    return "\n".join(sys_list)
+        systems.append("%s %s" % (key, values))
+    return "\n".join(systems)
 
 def getOptions():
-    try:
-        grub = grubParser(GRUB_CONF, write=False, timeout=TIMEOUT)
-    except IOError:
-        fail(FAIL_TIMEOUT)
+    grub = grubParser(GRUB_DIR, write=False, timeout=TIMEOUT)
     options = [
         "default %s" % grub.config.getOption("default", "0"),
         "timeout %s" % grub.config.getOption("timeout", "0"),
@@ -552,10 +669,7 @@ def getOptions():
     return "\n".join(options)
 
 def setOptions(default=None, timeout=None, password=None, background=None, splash=None):
-    try:
-        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
-    except IOError:
-        fail(FAIL_TIMEOUT)
+    grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
     if default != None:
         grub.config.setOption("default", default)
         for index, entry in enumerate(grub.config.entries):
@@ -571,16 +685,13 @@ def setOptions(default=None, timeout=None, password=None, background=None, splas
         grub.config.setOption("background", background)
     if splash != None:
         root = getRoot()
-        root_grub = grubDevice(root)
+        root_grub = grubAddress(root)
         grub.config.setOption("splashimage", "%s%s" % (root_grub, splash))
     grub.release()
     notify("Boot.Loader.changed", "option")
 
 def listEntries():
-    try:
-        grub = grubParser(GRUB_CONF, write=False, timeout=TIMEOUT)
-    except IOError:
-        fail(FAIL_TIMEOUT)
+    grub = grubParser(GRUB_DIR, write=False, timeout=TIMEOUT)
     entries = []
     for index, entry in enumerate(grub.config.entries):
         os_entry = []
@@ -596,18 +707,24 @@ def listEntries():
     return "\n\n".join(entries)
 
 def removeEntry(index, title):
-    try:
-        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
-    except IOError:
-        fail(FAIL_TIMEOUT)
+    grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
     index = int(index)
     if 0 <= index < len(grub.config.entries):
         entry = grub.config.entries[index]
         if entry.title != title:
             fail(FAIL_NOENTRY)
+        default_entry = None
+        default = grub.config.options.get("default", 0)
+        if default != "saved":
+            default = int(default)
+            if default >= len(grub.config.entries):
+                default = 0
+            if len(grub.config.entries):
+                default_entry = grub.config.entries[default]
         grub.config.removeEntry(entry)
-        default_index = grub.config.options.get("default", "0")
-        if default_index == index:
+        if default_entry in grub.config.entries:
+            grub.config.setOption("default", grub.config.indexOf(default_entry))
+        else:
             grub.config.setOption("default", "0")
         grub.release()
         notify("Boot.Loader.changed", "entry")
@@ -615,10 +732,7 @@ def removeEntry(index, title):
         fail(FAIL_NOENTRY)
 
 def setEntry(title, os_type, root=None, kernel=None, initrd=None, options=None, default="no", index=None):
-    try:
-        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
-    except IOError:
-        fail(FAIL_TIMEOUT)
+    grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
     
     if not len(title):
         fail(FAIL_NOTITLE)
@@ -641,72 +755,56 @@ def setEntry(title, os_type, root=None, kernel=None, initrd=None, options=None, 
         default_index = grub.config.getOption("default", "0")
         if default_index != "saved" and int(default_index) == index:
             grub.config.setOption("default", "0")
+    
     grub.release()
     notify("Boot.Loader.changed", "entry")
 
 def updateKernelEntry(version, root=None):
-    try:
-        grub = grubParser(GRUB_CONF, write=True, timeout=TIMEOUT)
-    except IOError:
-        fail(FAIL_TIMEOUT)
+    grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
     
-    new_version, new_suffix = parseVersion("kernel-%s" % version)
     if not root:
         root = getRoot()
-    root_grub = grubDevice(root)
-    if not root_grub:
-        fail(FAIL_NODEVICE)
     
+    new_version, new_suffix = parseVersion("kernel-%s" % version)
+    
+    # Find Pardus kernels
     entries = []
     versions = {}
-    for x in grub.config.entries:
-        entry = parseGrubEntry(x)
-        if entry["root"] == root:
-            if entry["os_type"] in ["linux", "xen"]:
-                kernel = entry["kernel"].split("/")[-1]
-                try:
-                    k_version, k_suffix = parseVersion(kernel)
-                except ParseError:
-                    continue
-                if k_suffix == new_suffix:
-                    versions[k_version] = x
-                    entries.append(x)
+    for entry in grub.config.entries:
+        os_entry = parseGrubEntry(entry)
+        if os_entry["root"] == root and os_entry["os_type"] in ["linux", "xen"]:
+            kernel = os_entry["kernel"].split("/")[-1]
+            kernel_version = kernel.split("kernel-")[1]
+            try:
+                k_version, k_suffix = parseVersion(kernel)
+            except ParseError:
+                continue
+            if k_suffix == new_suffix:
+                entries.append(entry)
+                versions[k_version] = entry
     
+    # Find default entry
     default = grub.config.options.get("default", 0)
     if default == "saved":
         default_index = grub.config.getSavedIndex()
     else:
-        default_index = int(grub.config.options.get("default", 0))
+        default_index = int(default)
     if default_index >= len(grub.config.entries):
         default_index = 0
     default_entry = None
     if len(grub.config.entries):
         default_entry = grub.config.entries[default_index]
     
-    make_default = False
-    if default_entry in entries:
-        make_default = True
-    
-    updated_index = None
-    action = None
-    if not len(entries):
-        action = "append"
-    else:
-        if new_version in versions:
-            if make_default:
-                updated_index = grub.config.indexOf(versions[new_version])
-        else:
-            action = "insert"
-    
-    if action:
+    if new_version not in versions:
+        # Build new entry
         release = open("/etc/pardus-release", "r").readline().strip()
-        title = "%s [%s%s]" % (release, new_version, new_suffix)
+        title = "%s [%s]" % (release, version)
         
         os_type = "linux"
         if new_suffix == "-dom0":
             os_type = "xen"
         
-        if action == "append":
+        if not len(entries):
             index = -1
             boot_parameters = bootParameters(root)
         else:
@@ -722,18 +820,22 @@ def updateKernelEntry(version, root=None):
         
         grub.config.addEntry(new_entry, index)
         
+        # Remove old kernels
         if MAX_ENTRIES > 0:
             for x in entries[MAX_ENTRIES - 1:]:
                 grub.config.removeEntry(x)
-        
-        if make_default:
-            updated_index = grub.config.indexOf(new_entry)
-        elif default_entry in grub.config.entries:
-            updated_index = grub.config.indexOf(default_entry)
-        else:
-            updated_index = 0
-        if default != "saved":
-            grub.config.setOption("default", updated_index)
+    else:
+        new_entry = versions[new_version]
+    
+    # Update default index if required
+    if default_entry in entries:
+        updated_index = grub.config.indexOf(new_entry)
+    elif default_entry in grub.config.entries:
+        updated_index = grub.config.indexOf(default_entry)
+    else:
+        updated_index = 0
+    if default != "saved":
+        grub.config.setOption("default", updated_index)
     
     grub.release()
     notify("Boot.Loader.changed", "entry")
