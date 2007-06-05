@@ -21,7 +21,7 @@
 [% PROCESS "global/field-descs.none.tmpl" %]
 
 [% PROCESS global/header.html.tmpl
-           title = "Add a new Custom Field"
+           title = "Yeni Değiştirilebilir Alan Ekle"
            onload = "document.getElementById('new_bugmail').disabled = true;" %]
 
 <script type="text/javascript">
@@ -35,32 +35,32 @@
 </script>
 
 <p>
-  Adding custom fields can make the interface of [% terms.Bugzilla %] very
-  complicated. Many admins who are new to [% terms.Bugzilla %] start off
-  adding many custom fields, and then their users complain that the interface
-  is "too complex". Please think carefully before adding any custom fields.
-  It may be the case that [% terms.Bugzilla %] already does what you need,
-  and you just haven't enabled the correct feature yet.
+  Değiştirilebilir  alanlar eklenmesi [% terms.Bugzilla %]'nın kullanıcı arayüzünü çok
+  karmaşık hale getirebilir. [% terms.Bugzilla %]'ya alışık olmayan pek çok yönetici
+  çok sayıda değiştirilebilir alan ekleyerek başlar ve kullanıcıları da, kullanıcı
+  arayüzünün “çok karmaşık” olduğundan şikayet ederler. Lütfen herhangi bir
+  değiştirilebilir alan eklemeden önce dikkatle düşünün. [% terms.Bugzilla %] zaten
+  sizin istediğinizi yapıyor olabilir ve siz bu özelliği henüz etkinleştirmemiş olabilirsiniz.
 </p>
 
 <ul>
-  <li>Custom field names must begin with "cf_" to distinguish them from
-      standard fields. If you omit "cf_" from the beginning of the name, it
-      will be added for you.</li>
-  <li>Descriptions are a very short string describing the field and will be
-      used as the label for this field in the user interface.</li>
+  <li>Değiştirilebilir alan isimleri, onların standart alanlardan ayırdedilebilmesi için 
+      "cf_"ile başlamalıdır. İsmin başındaki "cf_"'yi siz ihmal etseniz bile
+      eklenecektir.</li>
+  <li>Tanım, alanı tanımlayan çok kısa bir karakter dizisidir ve kullanıcı
+      arayüzünde bu alan için etiket olarak kullanılacaktır..</li>
 </ul>
 
 <form id="add_field" action="editfields.cgi" method="GET">
   <table border="0" cellspacing="0" cellpadding="5">
     <tr>
-      <th align="right"><label for="name">Name:</label></th>
+      <th align="right"><label for="name">Adı:</label></th>
       <td>
         <input type="text" id="name" name="name" value="cf_" size="40" maxlength="64">
       </td>
 
       <th align="right">
-        <label for="enter_bug">Can be set on [% terms.bug %] creation:</label>
+        <label for="enter_bug">[% terms.Bug %] oluşturulurken ayarlanabilir:</label>
       </th>
       <td>
         <input type="checkbox" id="enter_bug" name="enter_bug" value="1"
@@ -68,16 +68,16 @@
       </td>
     </tr>
     <tr>
-      <th align="right"><label for="desc">Description:</label></th>
+      <th align="right"><label for="desc">Tanımı:</label></th>
       <td><input type="text" id="desc" name="desc" value="" size="40"></td>
 
       <th align="right">
-        <label for="new_bugmail">Displayed in bugmail for new [% terms.bugs %]:</label>
+        <label for="new_bugmail">Yeni [% terms.bugs %] için hata postasında gösterilir:</label>
       </th>
       <td><input type="checkbox" id="new_bugmail" name="new_bugmail" value="1"></td>
     </tr>
     <tr>
-      <th align="right"><label for="type">Type:</label></th>
+      <th align="right"><label for="type">Tipi:</label></th>
       <td>
         <select id="type" name="type">
           [% FOREACH type = field_types.keys %]
@@ -87,11 +87,11 @@
         </select>
       </td>
 
-      <th align="right"><label for="obsolete">Is obsolete:</label></th>
+      <th align="right"><label for="obsolete">Kullanımdan kalktı mı:</label></th>
       <td><input type="checkbox" id="obsolete" name="obsolete" value="1"></td>
     </tr>
     <tr>
-      <th align="right"><label for="sortkey">Sortkey:</label></th>
+      <th align="right"><label for="sortkey">Sıralama anahtarı:</label></th>
       <td>
         <input type="text" id="sortkey" name="sortkey" size="6" maxlength="6">
       </td>
@@ -103,12 +103,12 @@
   <p>
     <input type="hidden" name="action" value="new">
     <input type="hidden" name="token" value="[% token FILTER html %]">
-    <input type="submit" id="create" value="Create">
+    <input type="submit" id="create" value="Oluştur">
   </p>
 </form>
 
 <p>
-  <a href="editfields.cgi">Back to the list of existing custom fields</a>
+  <a href="editfields.cgi">Mevcut değiştirilebilir alanlar listesine geri dön</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
