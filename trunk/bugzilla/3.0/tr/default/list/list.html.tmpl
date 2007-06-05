@@ -31,7 +31,7 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = "$terms.Bug List" %]
+[% title = "$terms.Bug Listesi" %]
 [% IF searchname || defaultsavename %]
   [% title = title _ ": " _ (searchname OR defaultsavename) FILTER html %]
 [% END %]
@@ -76,8 +76,8 @@
 
 [% IF toolong %]
   <h2>
-    This list is too long for [% terms.Bugzilla %]'s little mind; the
-    Next/Prev/First/Last buttons won't appear on individual [% terms.bugs %].
+    Bu liste [% terms.Bugzilla %]'nın küçük hafızası için çok uzun; 
+    bu sebeple [% terms.bugs %]ın İleri/Geri/İlk/Son düğmeleri görünmeyebilir.
   </h2>
 [% END %]
 
@@ -88,7 +88,7 @@
 [%############################################################################%]
 
 [% IF bugs.size > 9 %]
-  [% bugs.size %] [%+ terms.bugs %] found.
+  [% bugs.size %] adet [%+ terms.bug %] bulundu.
 [% END %]
 
 [%############################################################################%]
@@ -113,9 +113,9 @@
 [% IF bugs.size == 0 %]
   [% terms.zeroSearchResults %].
 [% ELSIF bugs.size == 1 %]
-  One [% terms.bug %] found.
+  Bir [% terms.bug %] bulundu.
 [% ELSE %]
-  [% bugs.size %] [%+ terms.bugs %] found.
+  [% bugs.size %] adet [%+ terms.bug %] bulundu.
 [% END %]
 
 <br>
@@ -143,7 +143,7 @@
             <input type="hidden" name="id" value="[% id FILTER html %]">
           [% END %]
           <input type="hidden" name="format" value="multiple">
-          <input type="submit" id="long_format" value="Long Format">
+          <input type="submit" id="long_format" value="Uzun Biçim">
         </form>
         <form method="post" action="show_bug.cgi">
             <input type="hidden" name="ctype" value="xml">
@@ -157,7 +157,7 @@
         [% IF user.in_group(Param('timetrackinggroup')) %]
           <form method="post" action="summarize_time.cgi">
             <input type="hidden" name="id" value="[% buglist_joined FILTER html %]">
-            <input type="submit" id="timesummary" value="Time Summary">
+            <input type="submit" id="timesummary" value="Zaman Özeti">
           </form>
         [% END %]
       </td>
