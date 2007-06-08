@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-29 16:40+0300\n"
-"PO-Revision-Date: 2007-05-27 18:54-0400\n"
+"PO-Revision-Date: 2007-06-07 19:20-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -115,16 +115,15 @@ msgstr "Servidor de nombres:"
 
 #: connection.py:27
 msgid "Channel"
-msgstr ""
+msgstr "Canal"
 
 #: connection.py:28
-#, fuzzy
 msgid "Mode"
-msgstr "Modo:"
+msgstr "Modo"
 
 #: connection.py:29
 msgid "Protocol"
-msgstr ""
+msgstr "Protocolo"
 
 #: connection.py:55
 msgid "<hidden>"
@@ -235,7 +234,7 @@ msgstr ""
 
 #: comariface.py:303
 msgid "You are not allowed to change network settings."
-msgstr ""
+msgstr "No tiene permisos para modificar la configuración de red."
 
 #: comariface.py:380
 msgid "new connection"
@@ -286,11 +285,11 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:341
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 # Icono de la barra de tareas?
 # Icono de acceso rápido?
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Applet de Red"
+
