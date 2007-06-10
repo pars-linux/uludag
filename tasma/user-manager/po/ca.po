@@ -7,27 +7,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manager per a Pardus en català\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 13:28+0200\n"
+"POT-Creation-Date: 2007-06-10 22:32+0300\n"
 "PO-Revision-Date: 2007-03-28 03:20+0100\n"
 "Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
-"Language-Team: Catalan translators Pardus <Pardus-translation-ca@uludag.org.tr>\n"
+"Language-Team: Catalan translators Pardus <Pardus-translation-ca@uludag.org."
+"tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 # S'ha de traduir Service comar start?
-#: mainview.py:30
-#: mainview.py:66
-msgid "Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."
-msgstr "Ho sent. No es pot connectar amb el COMAR. En cas que no estigués activat, engegueu-lo amb l'ordre 'service comar start' en una consola amb mode arrel."
+#: mainview.py:30 mainview.py:69
+msgid ""
+"Cannot connect to the COMAR! If it is not running you should start it with "
+"the 'service comar start' command in a root console."
+msgstr ""
+"Ho sent. No es pot connectar amb el COMAR. En cas que no estigués activat, "
+"engegueu-lo amb l'ordre 'service comar start' en una consola amb mode arrel."
 
-#: mainview.py:46
+#: mainview.py:49
 msgid "Waiting COMAR..."
 msgstr "Cal que esperem la connexió amb el COMAR..."
 
-#: mainview.py:47
+#: mainview.py:50
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "La connexió amb el COMAR s'ha tancat inesperadament, mirem ara de reconnectar..."
+msgstr ""
+"La connexió amb el COMAR s'ha tancat inesperadament, mirem ara de "
+"reconnectar..."
 
 #: user-manager.py:30
 msgid "User Management"
@@ -41,13 +47,11 @@ msgstr "Ho sent. El mòdul del gestor d'usuaris ja està en marxa"
 msgid "User Manager"
 msgstr "Gestor d'usuaris"
 
-#: groupedit.py:22
-#: useredit.py:25
+#: groupedit.py:22 useredit.py:25
 msgid "ID:"
 msgstr "ID:"
 
-#: groupedit.py:30
-#: useredit.py:37
+#: groupedit.py:30 useredit.py:37
 msgid "Select manually"
 msgstr "Selecciona manualment"
 
@@ -71,86 +75,94 @@ msgstr "Introduïu informació per al nou grup"
 msgid "Adding group..."
 msgstr "Afegim un grup..."
 
-#: groupedit.py:185
-#: useredit.py:554
-#: useredit.py:586
+#: groupedit.py:185 useredit.py:554 useredit.py:586
 #, python-format
 msgid "Operation failed, reason:<br>%s"
 msgstr "L'operació ha fallat, la raó es:<br>%s"
 
-#: groupedit.py:187
-#: useredit.py:556
-#: useredit.py:588
+#: groupedit.py:187 useredit.py:556 useredit.py:588
 msgid "You are not allowed to do that"
 msgstr "Ho sent. No teniu autorització per a fer això"
 
-#: groupedit.py:189
-#: useredit.py:558
-#: useredit.py:590
+#: groupedit.py:189 useredit.py:558 useredit.py:590
 msgid "Comar script error :("
 msgstr "Hi ha hagut un error en la seqüència del COMAR :("
 
-#: browser.py:94
+#: browser.py:95
 msgid "Show system user and groups"
 msgstr "Mostra l'usuari del sistema i els grups"
 
-#: browser.py:104
-#: browser.py:114
+#: browser.py:105 browser.py:115
 msgid "ID"
 msgstr "ID"
 
-#: browser.py:106
+#: browser.py:107
 msgid "User name"
 msgstr "Nom de l'usuari"
 
-#: browser.py:107
+#: browser.py:108
 msgid "Full name"
 msgstr "Nom complet"
 
-#: browser.py:116
+#: browser.py:117
 msgid "Group name"
 msgstr "Nom del grup"
 
-#: browser.py:121
+#: browser.py:122
 msgid "Users"
 msgstr "Usuaris"
 
-#: browser.py:122
+#: browser.py:123
 msgid "Groups"
 msgstr "Grups"
 
-#: browser.py:131
+#: browser.py:136
 msgid "User Manager Help"
 msgstr "Ajuda del gestor d'usuaris"
 
 # S'ha de traduir User Name?
-#: browser.py:138
+#: browser.py:143
 #, python-format
-msgid "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %s<br>ID: %d"
-msgstr "<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom: %s<br>Nom de l'usuari: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom: %s<br>Nom de "
+"l'usuari: %s<br>ID: %d"
 
-#: browser.py:144
+#: browser.py:149
 msgid "Delete User"
 msgstr "Suprimeix l'usuari"
 
-#: browser.py:145
+#: browser.py:150
 msgid "Delete user and files"
 msgstr "Suprimeix l'usuari i els arxius"
 
-#: browser.py:146
+#: browser.py:151
 msgid "Delete user"
 msgstr "Suprimeix l'usuari"
 
 # S'ha de traduir Group Name?
-#: browser.py:157
+#: browser.py:162
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr "<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom del grup: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom del grup: %"
+"s<br>ID: %d"
 
-#: browser.py:163
-#: browser.py:164
+#: browser.py:168 browser.py:169
 msgid "Delete Group"
 msgstr "Suprimeix el grup"
+
+#: browser.py:261
+#, fuzzy
+msgid "You are not allowed to manage user settings."
+msgstr "Ho sent. No teniu autorització per a fer això"
+
+#: browser.py:261
+msgid "Access Denied"
+msgstr ""
 
 #: useredit.py:72
 msgid "User name:"
@@ -222,7 +234,8 @@ msgstr "Els mots de pas són diferents"
 
 #: useredit.py:393
 msgid "You must enter a user ID or use the auto selection."
-msgstr "Heu d'introduir una ID per a l'usuari o fer servir la selecció automàtica."
+msgstr ""
+"Heu d'introduir una ID per a l'usuari o fer servir la selecció automàtica."
 
 #: useredit.py:398
 msgid "You must enter a user name."
@@ -253,8 +266,12 @@ msgid "Show all groups"
 msgstr "Mostra tots els grups"
 
 #: useredit.py:533
-msgid "You are removing yourself from the 'wheel' system group, you might not use your administrator permissions after that."
-msgstr "Us esteu esborrant del grup de sistema 'wheel', després no podreu utilitzar els vostres permissos com a administrador."
+msgid ""
+"You are removing yourself from the 'wheel' system group, you might not use "
+"your administrator permissions after that."
+msgstr ""
+"Us esteu esborrant del grup de sistema 'wheel', després no podreu utilitzar "
+"els vostres permissos com a administrador."
 
 #: useredit.py:534
 msgid "Important Group Change"

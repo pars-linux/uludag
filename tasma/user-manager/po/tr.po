@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 13:28+0200\n"
+"POT-Creation-Date: 2007-06-10 22:32+0300\n"
 "PO-Revision-Date: 2006-06-15 15:23+0300\n"
 "Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
 "Language-Team: Türkçe <->\n"
@@ -16,19 +16,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11\n"
 
-#: mainview.py:30 mainview.py:66
+#: mainview.py:30 mainview.py:69
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
 msgstr ""
-"Çomar bağlantısı kurulamadı! Eğer çalışmıyorsa yönetici kabuğundan "
-"'service comar start' komutunu vererek çalıştırın."
+"Çomar bağlantısı kurulamadı! Eğer çalışmıyorsa yönetici kabuğundan 'service "
+"comar start' komutunu vererek çalıştırın."
 
-#: mainview.py:46
+#: mainview.py:49
 msgid "Waiting COMAR..."
 msgstr "COMAR Bekleniyor..."
 
-#: mainview.py:47
+#: mainview.py:50
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "COMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
 
@@ -85,39 +85,39 @@ msgstr "Bunu yapmaya yetkiniz yok"
 msgid "Comar script error :("
 msgstr "Comar betik hatası :("
 
-#: browser.py:94
+#: browser.py:95
 msgid "Show system user and groups"
 msgstr "Sistem kullanıcı ve gruplarını göster"
 
-#: browser.py:104 browser.py:114
+#: browser.py:105 browser.py:115
 msgid "ID"
 msgstr "No"
 
-#: browser.py:106
+#: browser.py:107
 msgid "User name"
 msgstr "Kullanıcı adı"
 
-#: browser.py:107
+#: browser.py:108
 msgid "Full name"
 msgstr "Ad soyad"
 
-#: browser.py:116
+#: browser.py:117
 msgid "Group name"
 msgstr "Grup adı"
 
-#: browser.py:121
+#: browser.py:122
 msgid "Users"
 msgstr "Kullanıcılar"
 
-#: browser.py:122
+#: browser.py:123
 msgid "Groups"
 msgstr "Gruplar"
 
-#: browser.py:131
+#: browser.py:136
 msgid "User Manager Help"
 msgstr "Kullanıcı Yöneticisi Yardımı"
 
-#: browser.py:138
+#: browser.py:143
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
@@ -126,27 +126,35 @@ msgstr ""
 "<big><b>Bu kullanıcıyı sileyim mi?</b></big><br><br>Adı soyadı: %"
 "s<br>Kullanıcı adı: %s<br>No: %d"
 
-#: browser.py:144
+#: browser.py:149
 msgid "Delete User"
 msgstr "Kullanıcı Sil"
 
-#: browser.py:145
+#: browser.py:150
 msgid "Delete user and files"
 msgstr "Kullanıcıyı ve dosyalarını sil"
 
-#: browser.py:146
+#: browser.py:151
 msgid "Delete user"
 msgstr "Kullanıcıyı sil"
 
-#: browser.py:157
+#: browser.py:162
 #, python-format
 msgid ""
 "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr "<big><b>Bu grubu sileyim mi?</b></big><br><br>Grup adı: %s<br>No: %d"
 
-#: browser.py:163 browser.py:164
+#: browser.py:168 browser.py:169
 msgid "Delete Group"
 msgstr "Grup Sil"
+
+#: browser.py:261
+msgid "You are not allowed to manage user settings."
+msgstr "Kullanıcı ayarlarını değiştirme yetkiniz yok."
+
+#: browser.py:261
+msgid "Access Denied"
+msgstr "Erişim Engellendi"
 
 #: useredit.py:72
 msgid "User name:"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 13:28+0200\n"
+"POT-Creation-Date: 2007-06-10 22:32+0300\n"
 "PO-Revision-Date: 2006-12-07 21:45+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: mainview.py:30 mainview.py:66
+#: mainview.py:30 mainview.py:69
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -27,11 +27,11 @@ msgstr ""
 "Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
 "starten met het commando 'service comar start' in de root console."
 
-#: mainview.py:46
+#: mainview.py:49
 msgid "Waiting COMAR..."
 msgstr "Wachten COMAR..."
 
-#: mainview.py:47
+#: mainview.py:50
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 "Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
@@ -90,39 +90,39 @@ msgstr "U bent hiertoe niet bevoegd"
 msgid "Comar script error :("
 msgstr "Fout in COMAR-script :("
 
-#: browser.py:94
+#: browser.py:95
 msgid "Show system user and groups"
 msgstr "Systeemgebruikers en -groepen weergeven"
 
-#: browser.py:104 browser.py:114
+#: browser.py:105 browser.py:115
 msgid "ID"
 msgstr "ID"
 
-#: browser.py:106
+#: browser.py:107
 msgid "User name"
 msgstr "Gebruikersnaam"
 
-#: browser.py:107
+#: browser.py:108
 msgid "Full name"
 msgstr "Volledige naam"
 
-#: browser.py:116
+#: browser.py:117
 msgid "Group name"
 msgstr "Groepsnaam"
 
-#: browser.py:121
+#: browser.py:122
 msgid "Users"
 msgstr "Gebruikers"
 
-#: browser.py:122
+#: browser.py:123
 msgid "Groups"
 msgstr "Groepen"
 
-#: browser.py:131
+#: browser.py:136
 msgid "User Manager Help"
 msgstr "Gebruikersbeheer hulp"
 
-#: browser.py:138
+#: browser.py:143
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
@@ -131,19 +131,19 @@ msgstr ""
 "<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %"
 "s<br>Gebruikersnaam: %s <br>ID: %d"
 
-#: browser.py:144
+#: browser.py:149
 msgid "Delete User"
 msgstr "Verwijder gebruiker"
 
-#: browser.py:145
+#: browser.py:150
 msgid "Delete user and files"
 msgstr "Verwijder gebruiker en bestanden"
 
-#: browser.py:146
+#: browser.py:151
 msgid "Delete user"
 msgstr "Verwijder gebruiker"
 
-#: browser.py:157
+#: browser.py:162
 #, python-format
 msgid ""
 "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
@@ -151,9 +151,18 @@ msgstr ""
 "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
 "s<br>ID: %d"
 
-#: browser.py:163 browser.py:164
+#: browser.py:168 browser.py:169
 msgid "Delete Group"
 msgstr "Verwijder groep"
+
+#: browser.py:261
+#, fuzzy
+msgid "You are not allowed to manage user settings."
+msgstr "U bent hiertoe niet bevoegd"
+
+#: browser.py:261
+msgid "Access Denied"
+msgstr ""
 
 #: useredit.py:72
 msgid "User name:"

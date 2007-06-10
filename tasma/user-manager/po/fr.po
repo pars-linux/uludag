@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 13:28+0200\n"
+"POT-Creation-Date: 2007-06-10 22:32+0300\n"
 "PO-Revision-Date: 2007-04-01 17:53+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: mainview.py:30 mainview.py:66
+#: mainview.py:30 mainview.py:69
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -25,13 +25,14 @@ msgstr ""
 "d'exécution, veuillez le lancer en tapant la commade 'service comar start' "
 "dans une console d'administration."
 
-#: mainview.py:46
+#: mainview.py:49
 msgid "Waiting COMAR..."
 msgstr "En attente de COMAR..."
 
-#: mainview.py:47
+#: mainview.py:50
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "La connection à COMAR a été perdue, tentative de reconnection en cours..."
+msgstr ""
+"La connection à COMAR a été perdue, tentative de reconnection en cours..."
 
 #: user-manager.py:30
 msgid "User Management"
@@ -86,67 +87,79 @@ msgstr "Vous n'êtes pas autorisé a faire ceci"
 msgid "Comar script error :("
 msgstr "Erreur de script Comar :("
 
-#: browser.py:94
+#: browser.py:95
 msgid "Show system user and groups"
 msgstr "Montrer les utilisateurs et les groupes système."
 
-#: browser.py:104 browser.py:114
+#: browser.py:105 browser.py:115
 msgid "ID"
 msgstr "ID"
 
-#: browser.py:106
+#: browser.py:107
 msgid "User name"
 msgstr "Nom d'utilisateur"
 
-#: browser.py:107
+#: browser.py:108
 msgid "Full name"
 msgstr "Nom complet"
 
-#: browser.py:116
+#: browser.py:117
 msgid "Group name"
 msgstr "Nom du groupe"
 
-#: browser.py:121
+#: browser.py:122
 msgid "Users"
 msgstr "Utilisateurs"
 
-#: browser.py:122
+#: browser.py:123
 msgid "Groups"
 msgstr "Groupes"
 
-#: browser.py:131
+#: browser.py:136
 msgid "User Manager Help"
 msgstr "Aide du gestionnaire d'utilisateurs"
 
-#: browser.py:138
+#: browser.py:143
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Dois je supprimer cet utilisateur ?</b></big><br><br>Nom : %s<br>Nom d'utilisateur : %"
-"s<br>ID: %d"
+"<big><b>Dois je supprimer cet utilisateur ?</b></big><br><br>Nom : %s<br>Nom "
+"d'utilisateur : %s<br>ID: %d"
 
-#: browser.py:144
+#: browser.py:149
 msgid "Delete User"
 msgstr "Supprimer l'utilisateur"
 
-#: browser.py:145
+#: browser.py:150
 msgid "Delete user and files"
 msgstr "Supprimer l'utilisateur et les fichiers"
 
-#: browser.py:146
+#: browser.py:151
 msgid "Delete user"
 msgstr "Supprimer l'utilisateur"
 
-#: browser.py:157
+#: browser.py:162
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr "<big><b>Dois je supprimer ce groupe ?</b></big><br><br>Nom du groupe : %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Dois je supprimer ce groupe ?</b></big><br><br>Nom du groupe : %"
+"s<br>ID: %d"
 
-#: browser.py:163 browser.py:164
+#: browser.py:168 browser.py:169
 msgid "Delete Group"
 msgstr "Supprimer le groupe"
+
+#: browser.py:261
+#, fuzzy
+msgid "You are not allowed to manage user settings."
+msgstr "Vous n'êtes pas autorisé a faire ceci"
+
+#: browser.py:261
+msgid "Access Denied"
+msgstr ""
 
 #: useredit.py:72
 msgid "User name:"
@@ -210,7 +223,8 @@ msgstr "Le mot de passe est trop court."
 
 #: useredit.py:387
 msgid "Don't use your full name or user name as a password."
-msgstr "Ne pas utiliser le nom complet ou le nom d'utilisateur comme mot de passe."
+msgstr ""
+"Ne pas utiliser le nom complet ou le nom d'utilisateur comme mot de passe."
 
 #: useredit.py:390
 msgid "Passwords don't match."
@@ -218,7 +232,8 @@ msgstr "Les mots de passe ne sont pas identiques."
 
 #: useredit.py:393
 msgid "You must enter a user ID or use the auto selection."
-msgstr "Vous devez spécifier un ID utilisateur ou utiliser la sélection automatique."
+msgstr ""
+"Vous devez spécifier un ID utilisateur ou utiliser la sélection automatique."
 
 #: useredit.py:398
 msgid "You must enter a user name."
@@ -234,7 +249,9 @@ msgstr "Le nom d'utilisateur ne doit pas commencer par un nombre."
 
 #: useredit.py:408
 msgid "You should select at least one group this user belongs to."
-msgstr "Vous devez sélectionner au moins un groupe d'appartenance pour cet utilisateur."
+msgstr ""
+"Vous devez sélectionner au moins un groupe d'appartenance pour cet "
+"utilisateur."
 
 #: useredit.py:439
 msgid "Edit User's Information"
@@ -253,8 +270,8 @@ msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
 msgstr ""
-"Vous êtes en train de vous retirer du groupe système 'wheel'. Vous ne pourrez "
-"plus utiliser vos permissions d'administrateur après cela."
+"Vous êtes en train de vous retirer du groupe système 'wheel'. Vous ne "
+"pourrez plus utiliser vos permissions d'administrateur après cela."
 
 #: useredit.py:534
 msgid "Important Group Change"
@@ -271,4 +288,3 @@ msgstr "Ajout de l'utilisateur..."
 #: useredit.py:615
 msgid "Getting user information..."
 msgstr "Obtention des informations concernant l'utilisateur..."
-
