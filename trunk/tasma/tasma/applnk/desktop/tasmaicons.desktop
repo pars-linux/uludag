@@ -12,7 +12,7 @@ X-KDE-ParentApp=tasma
 
 Name=Icons
 Name[tr]=Simgeler
-Name[nl]=Pictogrammen
+Name[nl]=Iconen
 Name[es]=Íconos
 Name[de]=Symbole
 Name[pt_BR]=Ícones
@@ -21,7 +21,7 @@ Name[it]=Icone
 
 Comment=Customize KDE Icons
 Comment[tr]=KDE Simgelerini Özelleştirir
-Comment[nl]=KDE-pictogrammen aanpassen
+Comment[nl]=KDE-iconen aanpassen
 Comment[de]=KDE-Symbole anpassen
 Comment[pt_BR]=Customizar Ícones do KDE
 Comment[fr]=Personnaliser les icônes de KDE
