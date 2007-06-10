@@ -14,7 +14,7 @@ Exec=kcmshell privacy
 
 Keywords=Privacy,privacy
 Keywords[tr]=gizlilik
-Keywords[nl]=privacy
+Keywords[nl]=Privacy,privacy
 Keywords[es]=privacidad
 Keywords[de]=Privatsphäre
 Keywords[pt_BR]=Privacidade,privacidade
@@ -23,6 +23,7 @@ Keywords[it]=Privacy,privacy
 
 Name=Privacy
 Name[tr]=Gizlilik
+Name[nl]=Privacy
 Name[es]=Privacidad
 Name[de]=Privatsphäre
 Name[pt_BR]=Privacidade
