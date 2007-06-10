@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 13:28+0200\n"
+"POT-Creation-Date: 2007-06-10 22:32+0300\n"
 "PO-Revision-Date: 2007-05-27 19:05-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -19,17 +19,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: mainview.py:30 mainview.py:66
+#: mainview.py:30 mainview.py:69
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
-msgstr "No posible conectar con COMAR! Si no se está ejecutando lo debería iniciar con el comando 'service comar start' en una consola de root."
+msgstr ""
+"No posible conectar con COMAR! Si no se está ejecutando lo debería iniciar "
+"con el comando 'service comar start' en una consola de root."
 
-#: mainview.py:46
+#: mainview.py:49
 msgid "Waiting COMAR..."
 msgstr "Esperando COMAR..."
 
-#: mainview.py:47
+#: mainview.py:50
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "Conexión con COMAR perdida inesperadamente, intentando reconectar..."
 
@@ -73,9 +75,9 @@ msgstr "Ingrese Información para el grupo nuevo"
 msgid "Adding group..."
 msgstr "Agregando grupo..."
 
+# La operación falló, a causa de:...
 #: groupedit.py:185 useredit.py:554 useredit.py:586
 #, python-format
-# La operación falló, a causa de:...
 msgid "Operation failed, reason:<br>%s"
 msgstr "La operación falló, a causa de: <br>%s"
 
@@ -87,69 +89,78 @@ msgstr "No tiene permisos para realizar esta operación"
 msgid "Comar script error :("
 msgstr "Error de script Comar :("
 
-#: browser.py:94
+#: browser.py:95
 msgid "Show system user and groups"
 msgstr "Mostrar usuarios y grupos del sistema"
 
-#: browser.py:104 browser.py:114
+#: browser.py:105 browser.py:115
 msgid "ID"
 msgstr "ID"
 
-#: browser.py:106
+#: browser.py:107
 msgid "User name"
 msgstr "Nombre de usuario"
 
-#: browser.py:107
+#: browser.py:108
 msgid "Full name"
 msgstr "Nombre completo"
 
-#: browser.py:116
+#: browser.py:117
 msgid "Group name"
 msgstr "Nombre de grupo"
 
-#: browser.py:121
+#: browser.py:122
 msgid "Users"
 msgstr "Usuarios"
 
-#: browser.py:122
+#: browser.py:123
 msgid "Groups"
 msgstr "Grupos"
 
-#: browser.py:131
+#: browser.py:136
 msgid "User Manager Help"
 msgstr "Ayuda del Administrador de Usuarios"
 
-#: browser.py:138
+#: browser.py:143
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Eliminar este usuario ?</b></big><br><br>Nombre: %s<br>Nombre "
-"de usuario: %s<br>ID: %d"
+"<big><b>Eliminar este usuario ?</b></big><br><br>Nombre: %s<br>Nombre de "
+"usuario: %s<br>ID: %d"
 
-#: browser.py:144
+#: browser.py:149
 msgid "Delete User"
 msgstr "Eliminar Usuario"
 
-#: browser.py:145
+#: browser.py:150
 msgid "Delete user and files"
 msgstr "Eliminar usuario y archivos personales"
 
-#: browser.py:146
+#: browser.py:151
 msgid "Delete user"
 msgstr "Eliminar usuario"
 
-#: browser.py:157
+#: browser.py:162
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
-"<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %"
-"s<br>ID: %d"
+"<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
 
-#: browser.py:163 browser.py:164
+#: browser.py:168 browser.py:169
 msgid "Delete Group"
 msgstr "Eliminar Grupo"
+
+#: browser.py:261
+#, fuzzy
+msgid "You are not allowed to manage user settings."
+msgstr "No tiene permisos para realizar esta operación"
+
+#: browser.py:261
+msgid "Access Denied"
+msgstr ""
 
 #: useredit.py:72
 msgid "User name:"
@@ -159,13 +170,13 @@ msgstr "Nombre de usuario:"
 msgid "Full name:"
 msgstr "Nombre completo:"
 
-#: useredit.py:126
 # Carpeta personal (home)
+#: useredit.py:126
 msgid "Home:"
 msgstr "Carpeta personal (home):"
 
-#: useredit.py:158
 # "home" por "personal (home)"
+#: useredit.py:158
 msgid "Select user's home directory"
 msgstr "Seleccione la carpeta personal (home) del usuario"
 
@@ -177,18 +188,18 @@ msgstr "Contraseña:"
 msgid "Confirm password:"
 msgstr "Confirmar contraseña:"
 
-#: useredit.py:202
 # Intérprete de comados (shell)
+#: useredit.py:202
 msgid "Shell:"
 msgstr "Intérprete de comandos (shell):"
 
-#: useredit.py:224
 # Favor ingresar comando
+#: useredit.py:224
 msgid "Please specify an existing shell command"
 msgstr "Favor ingresar comando"
 
-#: useredit.py:226
 # El comando indicado no es ejecutable
+#: useredit.py:226
 msgid "Specified shell command is not executable"
 msgstr "El comando indicado no es ejecutable"
 
@@ -260,10 +271,12 @@ msgstr "Mostrar todos los grupos"
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
-msgstr "Se está removiendo del grupo de sistema 'wheel', puede que pierda los derechos de administrador a causa de esto."
+msgstr ""
+"Se está removiendo del grupo de sistema 'wheel', puede que pierda los "
+"derechos de administrador a causa de esto."
 
-#: useredit.py:534
 # should i translate as "dangerous" ?
+#: useredit.py:534
 msgid "Important Group Change"
 msgstr "Cambio de grupo importante"
 
@@ -278,4 +291,3 @@ msgstr "Agregando usuario..."
 #: useredit.py:615
 msgid "Getting user information..."
 msgstr "Obteniendo información de usuario..."
-

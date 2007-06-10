@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-12 13:28+0200\n"
+"POT-Creation-Date: 2007-06-10 22:32+0300\n"
 "PO-Revision-Date: 2007-04-24 10:50+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -17,19 +17,23 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: mainview.py:30 mainview.py:66
+#: mainview.py:30 mainview.py:69
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
-msgstr "Impossibile collegarsi a COMAR! Se non è in esecuzione, dovresti avviarlo digitando in una console di root 'service comar start'."
+msgstr ""
+"Impossibile collegarsi a COMAR! Se non è in esecuzione, dovresti avviarlo "
+"digitando in una console di root 'service comar start'."
 
-#: mainview.py:46
+#: mainview.py:49
 msgid "Waiting COMAR..."
 msgstr "In attesa di COMAR..."
 
-#: mainview.py:47
+#: mainview.py:50
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "Connessione a COMAR chiusa inaspettatamente, tentativo di riconnessione in corso..."
+msgstr ""
+"Connessione a COMAR chiusa inaspettatamente, tentativo di riconnessione in "
+"corso..."
 
 #: user-manager.py:30
 msgid "User Management"
@@ -84,67 +88,79 @@ msgstr "Non hai i permessi necessari ad eseguire questa operazione"
 msgid "Comar script error :("
 msgstr "Errore di script di COMAR :("
 
-#: browser.py:94
+#: browser.py:95
 msgid "Show system user and groups"
 msgstr "Mostra gli utenti e i gruppi di sistema"
 
-#: browser.py:104 browser.py:114
+#: browser.py:105 browser.py:115
 msgid "ID"
 msgstr "ID"
 
-#: browser.py:106
+#: browser.py:107
 msgid "User name"
 msgstr "Nome utente"
 
-#: browser.py:107
+#: browser.py:108
 msgid "Full name"
 msgstr "Nome completo"
 
-#: browser.py:116
+#: browser.py:117
 msgid "Group name"
 msgstr "Nome del gruppo"
 
-#: browser.py:121
+#: browser.py:122
 msgid "Users"
 msgstr "Utenti"
 
-#: browser.py:122
+#: browser.py:123
 msgid "Groups"
 msgstr "Gruppi"
 
-#: browser.py:131
+#: browser.py:136
 msgid "User Manager Help"
 msgstr "Aiuto sull'amministrazione degli utenti"
 
-#: browser.py:138
+#: browser.py:143
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Desideri veramente eliminare questo utente?</b></big><br><br>Nome: %s<br>Nome utente: %"
-"s<br>ID: %d"
+"<big><b>Desideri veramente eliminare questo utente?</b></big><br><br>Nome: %"
+"s<br>Nome utente: %s<br>ID: %d"
 
-#: browser.py:144
+#: browser.py:149
 msgid "Delete User"
 msgstr "Eliminazione utente"
 
-#: browser.py:145
+#: browser.py:150
 msgid "Delete user and files"
 msgstr "Elimina utente e i suoi file"
 
-#: browser.py:146
+#: browser.py:151
 msgid "Delete user"
 msgstr "Elimina utente"
 
-#: browser.py:157
+#: browser.py:162
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr "<big><b>Desideri veramente eliminare questo gruppo?</b></big><br><br>Nome del gruppo: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Desideri veramente eliminare questo gruppo?</b></big><br><br>Nome "
+"del gruppo: %s<br>ID: %d"
 
-#: browser.py:163 browser.py:164
+#: browser.py:168 browser.py:169
 msgid "Delete Group"
 msgstr "Elimina gruppo"
+
+#: browser.py:261
+#, fuzzy
+msgid "You are not allowed to manage user settings."
+msgstr "Non hai i permessi necessari ad eseguire questa operazione"
+
+#: browser.py:261
+msgid "Access Denied"
+msgstr ""
 
 #: useredit.py:72
 msgid "User name:"
@@ -250,7 +266,9 @@ msgstr "Mostra tutti i gruppi"
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
-msgstr "Ti stai togliendo dal gruppo di sistema 'wheel'; dopo questa operazione non potrai utilizzare i permessi di amministratore."
+msgstr ""
+"Ti stai togliendo dal gruppo di sistema 'wheel'; dopo questa operazione non "
+"potrai utilizzare i permessi di amministratore."
 
 #: useredit.py:534
 msgid "Important Group Change"
@@ -267,4 +285,3 @@ msgstr "Aggiunta utente in corso..."
 #: useredit.py:615
 msgid "Getting user information..."
 msgstr "Recupero informazioni sull'utente in corso..."
-
