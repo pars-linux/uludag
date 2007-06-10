@@ -76,6 +76,7 @@ class BrowseStack(QVBox):
         but = QToolButton(getIconSet("add.png"), i18n("Add"), "lala", parent.slotAdd, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+        self.new_but = but
         bar.addSeparator()
         but = QToolButton(getIconSet("configure.png"), i18n("Edit"), "lala", parent.slotEdit, bar)
         self.edit_but = but
@@ -125,6 +126,10 @@ class BrowseStack(QVBox):
         link.call("User.Manager.userList", id=1)
         link.call("User.Manager.groupList", id=2)
         
+        # Access control
+        self.can_access = False
+        self.hideControls()
+        
         self.slotSelect()
     
     def slotHelp(self):
@@ -168,6 +173,8 @@ class BrowseStack(QVBox):
                     self.groupModified(item.gid)
     
     def slotSelect(self):
+        if not self.can_access:
+            return
         bool = False
         bool2 = False
         if self.tab.currentPageIndex() == 0:
@@ -185,7 +192,8 @@ class BrowseStack(QVBox):
         self.delete_but.setEnabled(bool2)
     
     def slotDouble(self, item, point, col):
-        self.parent().slotEdit()
+        if self.can_access:
+            self.parent().slotEdit()
     
     def slotTabChanged(self, w):
         self.slotSelect()
@@ -244,3 +252,20 @@ class BrowseStack(QVBox):
                     self.groups.takeItem(item)
                     return
                 item = item.nextSibling()
+    
+    def slotAccessReply(self, reply):
+        if reply.command == "result":
+            self.can_access = True
+            self.showControls()
+        else:
+            KMessageBox.error(self, i18n("You are not allowed to manage user settings."), i18n("Access Denied"))
+    
+    def hideControls(self):
+        self.new_but.setEnabled(False)
+        self.edit_but.setEnabled(False)
+        self.delete_but.setEnabled(False)
+    
+    def showControls(self):
+        self.new_but.setEnabled(True)
+        self.edit_but.setEnabled(True)
+        self.delete_but.setEnabled(True)
