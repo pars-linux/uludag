@@ -41,6 +41,9 @@ class UserManager(QWidgetStack):
         self.link.localize()
         self.notifier = QSocketNotifier(self.link.sock.fileno(), QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        
+        # Access control
+        self.link.can_access("User.Manager.addUser", id=1000)
     
     def waitComar(self):
         dia = KProgressDialog(None, "lala", i18n("Waiting COMAR..."),
@@ -91,6 +94,8 @@ class UserManager(QWidgetStack):
             self.useredit.slotInfo(reply)
         elif id == 6:
             self.useredit.slotEditReply(reply)
+        elif id == 1000:
+            self.browse.slotAccessReply(reply)
     
     def slotCancel(self):
         self.raiseWidget(self.browse)
