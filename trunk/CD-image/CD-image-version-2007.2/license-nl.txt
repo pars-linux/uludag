@@ -22,7 +22,7 @@ Auteursrecht (C) 1989, 1991 Free Software Foundation, Inc.
 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 Het is eenieder toegestaan om dit licentiedocument te kopiëren en er letterlijke kopieën van te verspreiden, er wijzigingen in maken is echter niet toegestaan.
 
-                                   Voorwoord
+Voorwoord
 
 De licenties van de meeste software zijn zo opgesteld om U het recht te ontnemen om die software te delen en te wijzigen. Hier tegenover staat de
 GNU Algemene Publieke Licentie, die bedoeld is om U de vrijheid te garanderen dat U de software kan delen en wijzigen -- om er zeker van te zijn dat de
@@ -39,7 +39,7 @@ Bijvoorbeeld, als U kopieën van zulk programma verspreidt, kostenloos of voor e
 ontvangen al de rechten geven die U hebt. U moet uzelf ervan verzekeren dan ook zij de broncode ontvangen of kunnen verkrijgen. U moet hen ook deze licentie
 tonen zodat ze hun rechten kennen.
 
- We beschermen uw rechten met twee stappen
+We beschermen uw rechten met twee stappen
 (1) de software wordt auteursrechtelijk beschermd, en
 (2) we bieden U deze licentie die U de legale toestemming geeft om de software te kopiëren, te verspreiden en/of te wijzigen. 
 
@@ -51,8 +51,8 @@ duidelijk gemaakt dat elk patent in licentie gegeven moet zijn voor eenieders vr
 
 De exacte bepalingen en condities om te kopiëren, verspreiden en wijzigen volgen hieronder.
 
-                      GNU ALGEMENE PUBLIEKE LICENTIE
-       BEPALINGEN EN VOORWAARDEN OM TE KOPIËREN, VERSPREIDEN EN WIJZIGEN
+GNU ALGEMENE PUBLIEKE LICENTIE
+BEPALINGEN EN VOORWAARDEN OM TE KOPIËREN, VERSPREIDEN EN WIJZIGEN
 
 0.  Deze licentie is van toepassing op elk programma of ander werk dat een notie bevat van de eigenaar die zegt dat het verspreid mag worden onder de bepalingen van deze licentie. Het "Programma", verder in de tekst, verwijst naar eender zulk programma of werk, en een "werk gebaseerd op het programma" verwijst naar het Programma of eender welk ander afgeleid werk onder de wet van het auteursrecht: dit wil zeggen, een werk dat het Programma of een deel ervan bevat, letterlijk oftewel gewijzigd en/of vertaald naar een andere taal. (Hierna vallen vertalingen zonder beperking onder de term "wijziging".)
 Elke licentiehouder wordt geadresseerd als "u". 
