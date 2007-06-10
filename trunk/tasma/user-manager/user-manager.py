@@ -18,7 +18,7 @@ from kdeui import *
 import mainview
 from utility import *
 
-mod_version = "1.0"
+mod_version = "1.1"
 mod_app = "user-manager"
 
 
