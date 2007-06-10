@@ -13,6 +13,7 @@ X-KDE-HasReadOnlyMode=true
 
 Name=Printers
 Name[tr]=Yazıcılar
+Name[nl]=Printers
 Name[es]=Impresoras
 Name[de]=Drucker
 Name[pt_BR]=Impressoras

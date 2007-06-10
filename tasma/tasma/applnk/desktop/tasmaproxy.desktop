@@ -12,6 +12,7 @@ X-KDE-ParentApp=tasma
 
 Name=Proxy
 Name[tr]=Vekil Sunucu
+Name[nl]=Proxy
 Name[es]=Proxy
 Name[de]=Proxy
 Name[pt_BR]=Proxy
@@ -20,7 +21,7 @@ Name[it]=Proxy
 
 Comment=Configure the proxy servers used
 Comment[tr]=Vekil sunucularını yapılandırır
-Comment[nl]=Hier kunt u de Proxy-servers instellen
+Comment[nl]=Configureer proxy servers
 Comment[es]=Configuración del servidor proxy
 Comment[de]=Proxy-Server konfigurieren
 Comment[pt_BR]=Configurar os servidores proxy utilizados
@@ -29,7 +30,7 @@ Comment[it]=Configurazione dei server proxy utilizzati
 
 Keywords=Proxy,Proxy server,Firewall,Squid,proxy
 Keywords[tr]=Vekil,Vekil sunucu,Güvenlik duvarı,Squid,proxy
-Keywords[nl]=proxy,proxy server,firewall,squid
+Keywords[nl]=Proxy,Proxy server,Firewall,Squid, proxy
 Keywords[es]=proxy,servidor proxy server,firewall,cortafuegos,squid
 Keywords[de]=Proxy,Proxy-Server,Firewall,Squid,Proxy
 Keywords[pt_BR]=Proxy,Servidor proxy,Firewall,Squid,proxy
