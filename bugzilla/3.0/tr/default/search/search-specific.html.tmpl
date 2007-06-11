@@ -48,9 +48,9 @@ kelimeleri tarayacak ve sonucu size ilişkisel bir liste olarak sunacaktır.
     </td>
     <td>
       <select name="bug_status" id="bug_status">
-        [% statuses = [ { name = 'open', label = "Open" },
-                        { name = 'closed', label = "Closed" },
-                        { name = 'all', label = "All" } ] %]
+        [% statuses = [ { name = 'open', label = "Açık" },
+                        { name = 'closed', label = "Kapalı" },
+                        { name = 'all', label = "Hepsi" } ] %]
         [% FOREACH status = statuses %]
             <option value="__[% status.name %]__" 
                   [% " selected" IF default.bug_status.0 == "__${status.name}__" %]>
@@ -66,7 +66,7 @@ kelimeleri tarayacak ve sonucu size ilişkisel bir liste olarak sunacaktır.
     </td>
     <td>
       <select name="product" id="product">
-        <option value="">All</option>
+        <option value="">Hepsi</option>
         [% IF Param('useclassification') %]
           [% FOREACH c = classification %]
             <optgroup label="[% c.name FILTER html %]">
@@ -109,8 +109,8 @@ kelimeleri tarayacak ve sonucu size ilişkisel bir liste olarak sunacaktır.
     <td>
       <input type="submit" id="search" value="Ara"
              onclick="if (this.form.content.value == '')
-                      {alert('The Words field cannot be empty. You have to ' +
-                             'enter at least one word in your search criteria.');
+                      {alert('Kelimeler kısmı boş bırakılamaz.Arama kriteri' +
+                             'olarak en azından bir kelime yazmalısınız.');
                        return false;} return true;">
     </td>
   </tr>
