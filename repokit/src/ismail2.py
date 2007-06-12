@@ -161,6 +161,7 @@ class Package(AutoPiksemel):
     runtime_deps   = Tag("RuntimeDependencies", RuntimeDeps, optional)
     files          = TagCollection("Files", "Path", Path)
     conflicts      = TagCollection("Conflicts", "Package", optional)
+    replaces       = TagCollection("Replaces", "Package", optional)
     provides       = TagCollection("Provides", "COMAR", ComarProvide, optional)
     additionals    = TagCollection("AdditionalFiles",
                                    "AdditionalFile", AdditionalFile, optional)
