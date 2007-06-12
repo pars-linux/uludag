@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-03 11:59+0300\n"
-"PO-Revision-Date: 2007-03-01 21:19+0200\n"
+"PO-Revision-Date: 2007-06-12 21:03+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,11 @@ msgstr ""
 #: src/service-manager.py:30 src/service-manager.py:82
 #: src/service_manager.py:102
 msgid "Service Manager"
-msgstr "Dienstmanager"
+msgstr "Dienstbeheer"
 
 #: src/service-manager.py:76
 msgid "Service Manager is already started!"
-msgstr "Dienstmanager is reeds gestart!"
+msgstr "Dienstbeheer is reeds gestart!"
 
 #: src/sm_mainview.py:152
 msgid "You are not allowed to do this operation."
@@ -126,3 +126,4 @@ msgstr "&Lijst van alleen servers."
 #: src/service_manager.py:112
 msgid "Alt+L"
 msgstr "ALT+L"
+
