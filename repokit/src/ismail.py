@@ -349,6 +349,7 @@ class Package(AutoPiksemel):
                                             contains=one_or_more_tag("Component", class_=Component))
     files                 =              tag("Files", contains=one_or_more_tag("Path", class_=Path))
     conflicts             =     optional_tag("Conflicts", contains=one_or_more_tag("Package"))
+    replaces              =     optional_tag("Replaces", contains=one_or_more_tag("Package"))
     provides              =     optional_tag("Provides",
                                             contains=one_or_more_tag("COMAR", class_=ComarProvide))
     additionals           =     optional_tag("AdditionalFiles",
