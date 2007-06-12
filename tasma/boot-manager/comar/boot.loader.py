@@ -812,7 +812,7 @@ def updateKernelEntry(version, root=None):
             boot_parameters = parseGrubEntry(entries[0])["options"]
         
         kernel = "/boot/kernel-%s%s" % (new_version, new_suffix)
-        initrd = "/boot/initrmfs-%s%s" % (new_version, new_suffix)
+        initrd = "/boot/initramfs-%s%s" % (new_version, new_suffix)
         new_entry = makeGrubEntry(title, os_type, root, kernel, initrd, boot_parameters)
         
         if grub.config.getOption("default", "0") == "saved":
