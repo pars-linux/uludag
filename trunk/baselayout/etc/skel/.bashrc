@@ -42,7 +42,7 @@ alias cp="cp -i"
 
 alias scp-resume="rsync --compress-level=3 --partial --progress --rsh=ssh"
 
-# Change the window title of X terminals 
+# Change the window title of X terminals
 case $TERM in
 	xterm*|rxvt|Eterm|eterm)
 		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
