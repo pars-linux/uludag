@@ -549,6 +549,8 @@ def parseGrubEntry(entry):
             os_entry["root"] = linuxAddress(value)
         elif key == "initrd":
             os_entry["initrd"] = value
+            if os_entry["initrd"].startswith("("):
+                os_entry["initrd"] = os_entry["initrd"].split(")", 1)[1]
         elif key == "kernel":
             try:
                 kernel, options = value.split(" ", 1)
