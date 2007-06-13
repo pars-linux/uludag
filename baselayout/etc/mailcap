@@ -87,6 +87,7 @@ application/vnd.sun.xml.impress.template; ooimpress '%s'; -n "$DISPLAY"
 
 # Image files
 image/*; gwenview '%s'; -n "$DISPLAY"
+application/illustrator; gimp '%s'; -n "$DISPLAY"
 
 # Text
 text/*; kwrite '%s'; -n "$DISPLAY"
