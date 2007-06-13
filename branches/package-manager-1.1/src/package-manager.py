@@ -270,7 +270,7 @@ class MainApplicationWidget(QWidget):
         ##
 
         self.packageCache.clearCache()
-        upgradables = pisi.api.list_upgradable()
+        upgradables = map(self.filterReplacement, pisi.api.list_upgradable())
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
@@ -281,6 +281,14 @@ class MainApplicationWidget(QWidget):
         self.updateStatusBar()
         kapp.restoreOverrideCursor()
 
+    # <Replaces> type is added to pisi. But list_upgradable still returns the installed but upgradable 
+    # package list. But package manager has to show the to be upgraded package info.
+    def filterReplacement(self, pkg):
+        if pisi.context.packagedb.has_replacement(pkg):
+            return pisi.context.packagedb.get_replacement(pkg)
+        else:
+            return pkg
+    
     def clearPackageList(self):
         self.htmlPart.view().setContentsPos(0, 0)
         self.htmlPart.begin()
