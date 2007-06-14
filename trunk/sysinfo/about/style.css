@@ -164,9 +164,10 @@ table td:first-child {
 }
 
 .bar {
-    background-color: #FFF;
+    background-color: #EEE;
     text-align: right;
-    border-left: solid 1px #CCCCCC;
+    border-left: solid 1px #CCC;
+    border-right: solid 1px #CCC;
 }
 
 .bar div {
@@ -174,9 +175,9 @@ table td:first-child {
     background-color: #408999;
     border-bottom: solid 2px #2C5F6A;
     text-align: right;
+    vertical-align:middle;
     color: white;
     float: left;
-    padding-top: 0;
+    padding-top: 3px;
     padding-bottom: 3px;
-    height:1em;
 }
