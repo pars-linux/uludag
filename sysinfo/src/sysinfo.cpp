@@ -307,12 +307,13 @@ QString kio_sysinfoProtocol::diskInfo()
                                "        <table width=\"100%\">"
                                "            <tr>"
                                "                <td>"
-                               "                    <a href=\"media:/%2\" title=\"%3\">%4</a> [%5] [%6]"
+                               "                    <a href=\"media:/%2\" title=\"%3\">%4</a> [%5]<br>"
+                               "                    " + i18n("Total") + ": %6 " + i18n("Available") + ": %7"
                                "                </td>"
                                "            </tr>"
                                "            <tr>"
                                "                <td width=\"90%\" class=\"bar\">"
-                               "                    <div style=\"width: %7%\">%8&nbsp</div>"
+                               "                    <div style=\"width: %8%\">%9&nbsp</div>"
                                "                </td>"
                                "            </tr>"
                                "        </table>"
@@ -325,6 +326,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                 arg( label ).
                                 arg( di.fsType ).
                                 arg( formattedUnit( di.total,0 ) ).
+                                arg( formattedUnit( di.avail,0 ) ).
                                 arg( di.mounted ? percent : 0).
                                 arg( di.mounted ? formattedUnit( usage ) : QString::null );
         }
