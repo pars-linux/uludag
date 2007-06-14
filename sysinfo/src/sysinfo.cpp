@@ -306,13 +306,11 @@ QString kio_sysinfoProtocol::diskInfo()
                                "    <td width=\"100%\">"
                                "        <table width=\"100%\">"
                                "            <tr>"
-                               "                <td>"
+                               "                <td width=\"60%\">"
                                "                    <a href=\"media:/%2\" title=\"%3\">%4</a> [%5]<br>"
-                               "                    " + i18n("Total") + ": %6 " + i18n("Available") + ": %7"
+                               "                    " + i18n("Total") + ": <b>%6</b> " + i18n("Available") + ": <b>%7</b>"
                                "                </td>"
-                               "            </tr>"
-                               "            <tr>"
-                               "                <td width=\"90%\" class=\"bar\">"
+                               "                <td width=\"40%\" class=\"bar\">"
                                "                    <div style=\"width: %8%\">%9&nbsp</div>"
                                "                </td>"
                                "            </tr>"
@@ -351,160 +349,64 @@ int kio_sysinfoProtocol::netInfo() const
     return 0;
 }
 
-#define HAVE_GLXCHOOSEVISUAL
-#ifdef HAVE_GLXCHOOSEVISUAL
-#include <GL/glx.h>
-#endif
+#define INFO_XORG "/etc/X11/xorg.conf"
+#define INFO_OPENGL "/usr/bin/glxinfo"
 
-//-------------------------------------
-bool hasDirectRendering ( QString &renderer ) {
-    renderer = QString::null;
+bool isOpenGlSupported() {
 
-    Display *dpy = QApplication::desktop()->x11Display();
-
-#ifdef HAVE_GLXCHOOSEVISUAL
-    int attribSingle[] = {
-        GLX_RGBA,
-        GLX_RED_SIZE,   1,
-        GLX_GREEN_SIZE, 1,
-        GLX_BLUE_SIZE,  1,
-        None
-    };
-    int attribDouble[] = {
-      GLX_RGBA,
-      GLX_RED_SIZE, 1,
-      GLX_GREEN_SIZE, 1,
-      GLX_BLUE_SIZE, 1,
-      GLX_DOUBLEBUFFER,
-      None
-    };
-
-    XVisualInfo* visinfo = glXChooseVisual (
-        dpy, QApplication::desktop()->primaryScreen(), attribSingle
-    );
-    if (visinfo)
-    {
-        GLXContext ctx = glXCreateContext ( dpy, visinfo, NULL, True );
-        if (glXIsDirect(dpy, ctx))
-        {
-            glXDestroyContext (dpy,ctx);
-            return true;
-        }
-
-        XSetWindowAttributes attr;
-        unsigned long mask;
-        Window root;
-        XVisualInfo *visinfo;
-        int width = 100, height = 100;
-        int scrnum = QApplication::desktop()->primaryScreen();
-
-        root = RootWindow(dpy, scrnum);
-
-        visinfo = glXChooseVisual(dpy, scrnum, attribSingle);
-        if (!visinfo)
-        {
-            visinfo = glXChooseVisual(dpy, scrnum, attribDouble);
-            if (!visinfo)
-            {
-                fprintf(stderr, "Error: couldn't find RGB GLX visual\n");
-                return false;
-            }
-        }
-
-        attr.background_pixel = 0;
-        attr.border_pixel = 0;
-        attr.colormap = XCreateColormap(dpy, root, visinfo->visual, AllocNone);
-        attr.event_mask = StructureNotifyMask | ExposureMask;
-        mask = CWBackPixel | CWBorderPixel | CWColormap | CWEventMask;
-
-        Window win = XCreateWindow(dpy, root, 0, 0, width, height,
-                                   0, visinfo->depth, InputOutput,
-                                   visinfo->visual, mask, &attr);
-
-        if ( glXMakeCurrent(dpy, win, ctx))
-            renderer = (const char *) glGetString(GL_RENDERER);
-        XDestroyWindow(dpy, win);
-
-        glXDestroyContext (dpy,ctx);
-        return false;
-    }
-    else
-    {
-        return false;
-    }
-#else
-#error no GL?
-    return false;
-#endif
-}
-
-#define INFO_DRI "/proc/dri/0/name"
-
-static int ReadPipe(QString FileName, QStringList &list)
-{
     FILE *pipe;
+    QString line;
 
-    if ((pipe = popen(FileName.ascii(), "r")) == NULL) {
-    pclose(pipe);
-    return 0;
+    if ((pipe = popen(INFO_OPENGL, "r")) == NULL) {
+        pclose(pipe);
+        return false;
     }
 
     QTextStream t(pipe, IO_ReadOnly);
-
-    while (!t.atEnd()) list.append(t.readLine());
-
-    pclose(pipe);
-    return list.count();
+    while (!t.atEnd()) {
+        line = t.readLine();
+        line = line.stripWhiteSpace();
+        if (line.startsWith("direct rendering: "))
+            if (line.replace("direct rendering: ","") == "Yes")
+                return true;
+            else
+                return false;
+    }
+    return false;
 }
 
 bool kio_sysinfoProtocol::glInfo()
 {
     QFile file;
+    QString line;
+    int inFold=0;
+    bool openGlSupported = isOpenGlSupported();
 
-    QString pci;
-    QString module;
-    QString renderer;
-
-    file.setName(INFO_DRI);
+    file.setName(INFO_XORG);
     if (!file.exists() || !file.open(IO_ReadOnly))
         return false;
 
     QTextStream stream(&file);
-    QString line = stream.readLine();
-    if (!line.isEmpty()) {
-        module = line.mid(0, line.find(0x20));
-
-        QRegExp rx = QRegExp("\\b[Pp][Cc][Ii][:]([0-9a-fA-F]+[:])?([0-9a-fA-F]+[:][0-9a-fA-F]+[:.][0-9a-fA-F]+)\\b");
-        if (rx.search(line)>0)   {
-            pci = rx.cap(2);
-            int end = pci.findRev(':');
-            int end2 = pci.findRev('.');
-            if (end2>end) end=end2;
-            pci[end]='.';
-
-            QString cmd = QString("/usr/sbin/lspci -m -v -s ") + pci;
-            QStringList pci_info;
-            int num;
-
-            if ((num = ReadPipe(cmd, pci_info)) && num>=7) {
-                for (int i=2; i<=6; i++) {
-                    line = pci_info[i];
-                    line.remove(QRegExp("[^:]*:[ ]*"));
-                    switch (i){
-                        case 2: m_info[GFX_VENDOR] = line;    break;
-                        case 3: m_info[GFX_MODEL] = line;    break;
-                    }
-                }
-                bool dri = hasDirectRendering( renderer );
-                if (dri)
-                    m_info[GFX_DRIVER] = i18n("%1 (3D Support)").arg(module);
+    while (!stream.atEnd()) {
+        line = stream.readLine();
+        line = line.stripWhiteSpace();
+        if (line.startsWith("Section \"Device\"")) inFold = 1;
+        if (line.startsWith("EndSection")) inFold = 0;
+        if (inFold==1){
+            if (line.startsWith("VendorName"))
+                m_info[GFX_VENDOR] = line.replace("VendorName ","").replace("\"","");
+            if (line.startsWith("BoardName"))
+                m_info[GFX_MODEL] = line.replace("BoardName ","").replace("\"","");
+            if (line.startsWith("Driver")){
+                QString driver = line.replace("Driver ","").replace("\"","");
+                if (openGlSupported)
+                    m_info[GFX_DRIVER] = i18n("%1 (3D Support)").arg(driver);
                 else
-                    m_info[GFX_DRIVER] = i18n("%1 (No 3D Support)").arg(module);
-                return true;
+                    m_info[GFX_DRIVER] = i18n("%1 (No 3D Support)").arg(driver);
             }
         }
     }
-    return false;
+    return true;
 }
 
 QString kio_sysinfoProtocol::netStatus( int code ) const
