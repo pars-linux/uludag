@@ -150,3 +150,23 @@ class Entry(QWidget):
         w = max(w, w2)
         h = max(fm.height() + 3 + fm2.height(), 32) + 10
         return QSize(w, h)
+
+class ComboList(QComboBox):
+    def __init__(self, parent):
+        QComboBox.__init__(self, parent)
+        self.elements = {}
+    
+    def addItem(self, name, label):
+        label = unicode(label)
+        self.elements[name] = label
+        self.insertItem(label)
+    
+    def getSelected(self):
+        label = unicode(self.currentText())
+        for name in self.elements:
+            if label == unicode(self.elements[name]):
+                return name
+    
+    def setSelected(self, name):
+        label = self.elements[name]
+        self.setCurrentText(label)
