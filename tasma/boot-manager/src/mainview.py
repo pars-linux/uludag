@@ -95,70 +95,64 @@ class widgetEditEntry(QWidget):
         
         self.labelTitle = QLabel(self)
         self.labelTitle.setText(i18n("Title:"))
-        self.labelTitle.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
         layout.addWidget(self.labelTitle, 0, 0)
         
         self.editTitle = QLineEdit(self)
         self.labelTitle.setMinimumSize(90, 10)
-        layout.addMultiCellWidget(self.editTitle, 0, 0, 1, 2)
+        layout.addWidget(self.editTitle, 1, 0)
         
         self.labelSystem = QLabel(self)
         self.labelSystem.setText(i18n("System:"))
-        self.labelSystem.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-        layout.addWidget(self.labelSystem, 1, 0)
+        layout.addWidget(self.labelSystem, 2, 0)
         
-        self.listSystem = QComboBox(self)
-        layout.addWidget(self.listSystem, 1, 1)
+        self.listSystem = ComboList(self)
+        layout.addWidget(self.listSystem, 3, 0)
         
-        spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
-        layout.addItem(spacer, 1, 2)
+        #spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
+        #layout.addItem(spacer, 1, 2)
         
         self.labelRoot = QLabel(self)
         self.labelRoot.setText(i18n("Root:"))
-        self.labelRoot.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-        layout.addWidget(self.labelRoot, 2, 0)
+        layout.addWidget(self.labelRoot, 4, 0)
         
         self.editRoot = QLineEdit(self)
-        layout.addMultiCellWidget(self.editRoot, 2, 2, 1, 2)
+        layout.addWidget(self.editRoot, 5, 0)
         
         self.fields["root"] = (self.labelRoot, self.editRoot)
         
         self.labelKernel = QLabel(self)
         self.labelKernel.setText(i18n("Kernel:"))
-        self.labelKernel.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-        layout.addWidget(self.labelKernel, 3, 0)
+        layout.addWidget(self.labelKernel, 6, 0)
         
         self.editKernel = QLineEdit(self)
-        layout.addMultiCellWidget(self.editKernel, 3, 3, 1, 2)
+        layout.addWidget(self.editKernel, 7, 0)
         
         self.fields["kernel"] = (self.labelKernel, self.editKernel)
         
         self.labelOptions = QLabel(self)
         self.labelOptions.setText(i18n("Kernel Parameters:"))
-        self.labelOptions.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-        layout.addWidget(self.labelOptions, 4, 0)
+        layout.addWidget(self.labelOptions, 8, 0)
         
         self.editOptions = QLineEdit(self)
-        layout.addMultiCellWidget(self.editOptions, 4, 4, 1, 2)
+        layout.addWidget(self.editOptions, 9, 0)
         
         self.fields["options"] = (self.labelOptions, self.editOptions)
         
         self.labelInitrd = QLabel(self)
         self.labelInitrd.setText(i18n("Initial Ramdisk:"))
-        self.labelInitrd.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-        layout.addWidget(self.labelInitrd, 5, 0)
+        layout.addWidget(self.labelInitrd, 10, 0)
         
         self.editInitrd = QLineEdit(self)
-        layout.addMultiCellWidget(self.editInitrd, 5, 5, 1, 2)
+        layout.addWidget(self.editInitrd, 11, 0)
         
         self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
         
         self.checkDefault = QCheckBox(self)
         self.checkDefault.setText(i18n("Set as default boot entry."))
-        layout.addMultiCellWidget(self.checkDefault, 6, 6, 1, 2)
+        layout.addWidget(self.checkDefault, 12, 0)
         
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
-        layout.addMultiCell(spacer, 8, 8, 0, 1)
+        layout.addItem(spacer, 13, 0)
         
         layout_buttons = QHBoxLayout(layout)
         spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
@@ -171,8 +165,6 @@ class widgetEditEntry(QWidget):
         self.buttonCancel = QPushButton(self)
         self.buttonCancel.setText(i18n("Cancel"))
         layout_buttons.addWidget(self.buttonCancel)
-        
-        layout.addMultiCell(layout_buttons, 9, 9, 1, 2)
         
         self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
@@ -228,18 +220,11 @@ class widgetEditEntry(QWidget):
         
         self.listSystem.clear()
         if systems:
-            keys = systems.keys()
-            other = False
-            if "other" in keys:
-                other = True
-                keys.remove("other")
-            keys.sort()
-            for name in keys:
+            for name in systems:
                 label = unicode(systems[name][0])
-                self.listSystem.insertItem(label)
-            if other:
-                label = unicode(systems["other"][0])
-                self.listSystem.insertItem(label)
+                self.listSystem.addItem(name, label)
+            
+            self.listSystem.setSelected("linux")
             self.slotSystem("Linux")
         
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
@@ -271,11 +256,7 @@ class widgetEditEntry(QWidget):
             default = "yes"
         
         systems = self.parent.systems
-        os_type = "other"
-        for name, (sys_label, fields) in systems.iteritems():
-            if unicode(sys_label) == unicode(self.listSystem.currentText()):
-                os_type = name
-                break
+        os_type = self.listSystem.getSelected()
         
         args = {
             "os_type": os_type,
