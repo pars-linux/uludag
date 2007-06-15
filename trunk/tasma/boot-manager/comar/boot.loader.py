@@ -407,15 +407,15 @@ def parseGrubDevice(device, remapped=True):
 def grubAddress(device):
     try:
         linux_disk, linux_part, grub_disk, grub_part = parseLinuxDevice(device)
-    except ValueError:
-        fail(FAIL_NODEVICE)
+    except (ValueError, TypeError:
+        fail(FAIL_NODEVICE % device)
     return "(%s,%s)" % (grub_disk, grub_part)
 
 def linuxAddress(device):
     try:
         grub_disk, grub_part, linux_disk, linux_part = parseGrubDevice(device)
-    except ValueError:
-        fail(FAIL_NODEVICE)
+    except (ValueError, TypeError):
+        fail(FAIL_NODEVICE % device)
     return "%s%s" % (linux_disk, linux_part)
 
 def getKernelData(command):
@@ -602,8 +602,8 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
     
     try:
         linux_disk, linux_part, grub_disk, grub_part = parseLinuxDevice(root)
-    except ValueError:
-        fail(FAIL_NODEVICE)
+    except (ValueError, TypeError):
+        fail(FAIL_NODEVICE % root)
     grub_device = "(%s,%s)" % (grub_disk, grub_part)
     
     if "kernel" in required and not kernel:
