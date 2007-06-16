@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:25+0300\n"
-"PO-Revision-Date: 2007-02-20 21:39+0200\n"
+"PO-Revision-Date: 2007-06-17 01:15+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr " uren"
 #: rc.cpp:52 ../src/mousedlg.cpp:122
 #, no-c-format
 msgid "&Single-click to open files and folders"
-msgstr "&Eenmaal-klikken om bestanden en mappen te openen"
+msgstr "&Eenmaal klikken om bestanden en mappen te openen"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 134
 #: rc.cpp:33 ../src/wallpaperdlg.cpp:99
@@ -73,8 +73,7 @@ msgstr "<big>Laden...</big>"
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid ""
-"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
 msgstr "<center>Gereed! Vanaf nu kunt u <b>Pardus</b> gaan gebruiken</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
@@ -229,7 +228,7 @@ msgstr ""
 #: rc.cpp:84 ../src/styledlg.cpp:97
 #, no-c-format
 msgid "Use enhanced Kickoff style menu"
-msgstr "Gebruik verbeterd Kickoff stijl menu"
+msgstr "Gebruik het verbeterde Kickoff stijl menu"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 38
@@ -247,3 +246,4 @@ msgstr "Achtergrond instellen"
 #, no-c-format
 msgid "Welcome"
 msgstr "Welkom"
+
