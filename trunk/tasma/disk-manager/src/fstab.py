@@ -98,7 +98,7 @@ class Fstab:
             raise FstabError, "Syntax of the fstab file doesn't seem to be correct"
 
         self.defaultMountDir = "/mnt"
-        self.excludedFilesystems = ["proc", "tmpfs", "swap"]
+        self.excludedFilesystems = ["proc", "tmpfs", "swap", "sysfs"]
         self.allDevices = getBlockDevices()
 
         self.defaultFileSystemOptions = {}
