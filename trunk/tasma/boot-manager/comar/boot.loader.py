@@ -407,7 +407,7 @@ def parseGrubDevice(device, remapped=True):
 def grubAddress(device):
     try:
         linux_disk, linux_part, grub_disk, grub_part = parseLinuxDevice(device)
-    except (ValueError, TypeError:
+    except (ValueError, TypeError):
         fail(FAIL_NODEVICE % device)
     return "(%s,%s)" % (grub_disk, grub_part)
 
