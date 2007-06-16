@@ -167,7 +167,7 @@ msgstr "Paket Yöneticisi"
 #: rc.cpp:45 ../src/mousedlg.cpp:119
 #, no-c-format
 msgid "Reverse scroll"
-msgstr "Ters kaydırma yönü"
+msgstr "Fare tekerleğinin kaydırma yönünü değiştir"
 
 #: ../src/mouse.cpp:31
 msgid "Right handed"
