@@ -1,2 +1,2 @@
 
-SUBDIRS = sysinfo comarNetworkStatus about po
+SUBDIRS = sysinfo comarNetworkStatus po

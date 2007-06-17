@@ -1,3 +1,5 @@
+SUBDIRS = about
+
 INCLUDES = $(all_includes) `pkg-config --cflags hal`
 
 kde_module_LTLIBRARIES = kio_sysinfo.la libksysinfopart.la
