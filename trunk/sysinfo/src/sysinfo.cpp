@@ -339,7 +339,7 @@ int kio_sysinfoProtocol::netInfo() const
     // query kded.networkstatus.status(QString host)
     DCOPRef nsd( "kded", "networkstatus" );
     nsd.setDCOPClient( m_dcopClient );
-    DCOPReply reply = nsd.call( "status", QString( "www.pardus.org.tr" ) );
+    DCOPReply reply = nsd.call( "status" );
 
     if ( reply.isValid() )
         return reply;
