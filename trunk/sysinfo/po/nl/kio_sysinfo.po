@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-01 16:28+0300\n"
+"POT-Creation-Date: 2007-06-17 19:09+0300\n"
 "PO-Revision-Date: 2006-11-27 19:01+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -34,203 +34,206 @@ msgstr "%1 MB"
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo.cpp:107 sysinfo.cpp:101
-msgid "My Computer"
-msgstr "Mijn computer"
-
-#: sysinfo.cpp:102
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
-
-#: sysinfo.cpp:108
-msgid "Looking for disk information..."
-msgstr "Ophalen schijfinformatie..."
-
-#: sysinfo.cpp:109
-msgid "Disk Information"
-msgstr "Schijfinformatie"
-
-#: sysinfo.cpp:113
-msgid "OS Information"
-msgstr "OS informatie"
-
-#: sysinfo.cpp:115
-msgid "OS:"
-msgstr "OS:"
-
-#: sysinfo.cpp:116
-msgid "Current user:"
-msgstr "Huidige gebruiker:"
-
-#: sysinfo.cpp:117
-msgid "System:"
-msgstr "Systeem:"
-
-#: sysinfo.cpp:118
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo.cpp:124
-msgid "Display Info"
-msgstr "Scherminformatie:"
-
-#: sysinfo.cpp:126
-msgid "Vendor:"
-msgstr "Leverancier:"
-
-#: sysinfo.cpp:127
-msgid "Model:"
-msgstr "Model:"
-
-#: sysinfo.cpp:129
-msgid "Driver:"
-msgstr "Stuurprogramma:"
-
-#: sysinfo.cpp:136
-msgid "Getting OS information...."
-msgstr "Ophalen OS-informatie..."
-
-#: sysinfo.cpp:139
-msgid "Common Folders"
-msgstr "Algemene mappen"
-
-#: sysinfo.cpp:143
-msgid "My Home Folder"
-msgstr "Mijn persoonlijke map"
-
-#: sysinfo.cpp:144
-msgid "Root Folder"
-msgstr "Root map"
-
-#: sysinfo.cpp:145
-msgid "Network Folders"
-msgstr "Netwerkmappen"
-
-#: sysinfo.cpp:149
-msgid "Looking up network status..."
-msgstr "Opzoeken netwerkstatus..."
-
-#: sysinfo.cpp:152
-msgid "Network Status"
-msgstr "Netwerkstatus"
-
-#: sysinfo.cpp:159
-msgid "Looking for CPU information..."
-msgstr "Ophalen CPU-informatie..."
-
-#: sysinfo.cpp:163
-msgid "CPU Information"
-msgstr "CPU-informatie"
-
-#: sysinfo.cpp:165
-msgid "Processor (CPU):"
-msgstr "Processor (CPU):"
-
-#: sysinfo.cpp:166
-msgid "Speed:"
-msgstr "Snelheid:"
-
-#: sysinfo.cpp:167
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: sysinfo.cpp:172
-msgid "Looking for memory information..."
-msgstr "Ophalen geheugeninformatie..."
-
-#: sysinfo.cpp:174
-msgid "Memory Information"
-msgstr "Geheugeninformatie"
-
-#: sysinfo.cpp:176
-msgid "Total memory (RAM):"
-msgstr "Totaal geheugen (RAM):"
-
-#: sysinfo.cpp:177
-msgid "Free memory:"
-msgstr "Vrij geheugen:"
-
-#: sysinfo.cpp:178
-msgid "Used Memory"
-msgstr "Gebruikt geheugen"
-
-#: sysinfo.cpp:179
-msgid "Total swap:"
-msgstr "Totaal swapgeheugen:"
-
-#: sysinfo.cpp:180
-msgid "Free swap:"
-msgstr "Vrij swapgeheugen:"
-
-#: sysinfo.cpp:254
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 caches)"
-
-#: sysinfo.cpp:184
+#: sysinfo.cpp:97
 msgid "Looking for hardware information..."
 msgstr "Ophalen hardware informatie..."
 
-#: sysinfo.cpp:186
+#: sysinfo.cpp:100 sysinfo.cpp:104
+msgid "My Computer"
+msgstr "Mijn computer"
+
+#: sysinfo.cpp:105
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
+
+#: sysinfo.cpp:113
+msgid "Common Folders"
+msgstr "Algemene mappen"
+
+#: sysinfo.cpp:117
+msgid "My Home Folder"
+msgstr "Mijn persoonlijke map"
+
+#: sysinfo.cpp:118
+msgid "Root Folder"
+msgstr "Root map"
+
+#: sysinfo.cpp:119
+msgid "Network Folders"
+msgstr "Netwerkmappen"
+
+#: sysinfo.cpp:125
+msgid "Network Status"
+msgstr "Netwerkstatus"
+
+#: sysinfo.cpp:135
+msgid "CPU Information"
+msgstr "CPU-informatie"
+
+#: sysinfo.cpp:137
+msgid "Processor (CPU):"
+msgstr "Processor (CPU):"
+
+#: sysinfo.cpp:138
+msgid "Speed:"
+msgstr "Snelheid:"
+
+#: sysinfo.cpp:139
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo.cpp:145
+msgid "Memory Information"
+msgstr "Geheugeninformatie"
+
+#: sysinfo.cpp:147
+msgid "Total memory (RAM):"
+msgstr "Totaal geheugen (RAM):"
+
+#: sysinfo.cpp:148
+msgid "Free memory:"
+msgstr "Vrij geheugen:"
+
+#: sysinfo.cpp:149
+msgid "Used Memory"
+msgstr "Gebruikt geheugen"
+
+#: sysinfo.cpp:150
+msgid "Total swap:"
+msgstr "Totaal swapgeheugen:"
+
+#: sysinfo.cpp:151
+msgid "Free swap:"
+msgstr "Vrij swapgeheugen:"
+
+#: sysinfo.cpp:158
 msgid "Hardware Information"
 msgstr "Hardware informatie"
 
-#: sysinfo.cpp:191
+#: sysinfo.cpp:160
+msgid "Type:"
+msgstr ""
+
+#: sysinfo.cpp:161 sysinfo.cpp:189
+msgid "Vendor:"
+msgstr "Leverancier:"
+
+#: sysinfo.cpp:162 sysinfo.cpp:190
+msgid "Model:"
+msgstr "Model:"
+
+#: sysinfo.cpp:163
 msgid "Bios Vendor:"
 msgstr "Bios Aanbieder:"
 
-#: sysinfo.cpp:192
+#: sysinfo.cpp:164
 msgid "Bios Version:"
 msgstr "Bios versie:"
 
-#: sysinfo.cpp:288
-msgid "Device"
-msgstr "Apparaat"
+#: sysinfo.cpp:171
+msgid "Disk Information"
+msgstr "Schijfinformatie"
 
-#: sysinfo.cpp:288
-msgid "Filesystem"
-msgstr "Bestandsysteem"
+#: sysinfo.cpp:176
+msgid "OS Information"
+msgstr "OS informatie"
 
-#: sysinfo.cpp:289
-msgid "Total space"
-msgstr "Totale ruimte"
+#: sysinfo.cpp:178
+msgid "OS:"
+msgstr "OS:"
 
-#: sysinfo.cpp:289
-msgid "Available space"
+#: sysinfo.cpp:179
+msgid "Current user:"
+msgstr "Huidige gebruiker:"
+
+#: sysinfo.cpp:180
+msgid "System:"
+msgstr "Systeem:"
+
+#: sysinfo.cpp:181
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo.cpp:187
+msgid "Display Info"
+msgstr "Scherminformatie:"
+
+#: sysinfo.cpp:192
+msgid "Driver:"
+msgstr "Stuurprogramma:"
+
+#: sysinfo.cpp:257
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 caches)"
+
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Total"
+msgstr "Totaal swapgeheugen:"
+
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Available"
 msgstr "Beschikbare ruimte"
 
-#: sysinfo.cpp:295
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Klik met de rechter muisknop voor meer opties zoals aankoppelen of uitwerpen"
-
-#: sysinfo.cpp:478
+#: sysinfo.cpp:403
 msgid "%1 (3D Support)"
 msgstr "%1 (3D-ondersteuning)"
 
-#: sysinfo.cpp:480
+#: sysinfo.cpp:405
 msgid "%1 (No 3D Support)"
 msgstr "%1 (geen 3D-ondersteuning)"
 
-#: sysinfo.cpp:491
+#: sysinfo.cpp:415
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Netwerk is <strong>onbereikbaar</strong>"
 
-#: sysinfo.cpp:493
+#: sysinfo.cpp:417
 msgid "You are <strong>offline</strong>"
 msgstr "U bent <strong>offline</strong>"
 
-#: sysinfo.cpp:495
+#: sysinfo.cpp:419
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Netwerk is <strong>afgesloten</strong>"
 
-#: sysinfo.cpp:497
+#: sysinfo.cpp:421
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>Bezig</strong> te verbinden met het netwerk"
 
-#: sysinfo.cpp:499
+#: sysinfo.cpp:423
 msgid "You are <strong>online</strong>"
 msgstr "U bent <strong>online</strong>"
 
-#: sysinfo.cpp:501
+#: sysinfo.cpp:425
 msgid "Unknown network status"
 msgstr "Onbekende netwerkstatus"
 
+#~ msgid "Looking for disk information..."
+#~ msgstr "Ophalen schijfinformatie..."
+
+#~ msgid "Getting OS information...."
+#~ msgstr "Ophalen OS-informatie..."
+
+#~ msgid "Looking up network status..."
+#~ msgstr "Opzoeken netwerkstatus..."
+
+#~ msgid "Looking for CPU information..."
+#~ msgstr "Ophalen CPU-informatie..."
+
+#~ msgid "Looking for memory information..."
+#~ msgstr "Ophalen geheugeninformatie..."
+
+#~ msgid "Device"
+#~ msgstr "Apparaat"
+
+#~ msgid "Filesystem"
+#~ msgstr "Bestandsysteem"
+
+#~ msgid "Total space"
+#~ msgstr "Totale ruimte"
+
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr ""
+#~ "Klik met de rechter muisknop voor meer opties zoals aankoppelen of "
+#~ "uitwerpen"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-01 16:28+0300\n"
+"POT-Creation-Date: 2007-06-17 19:09+0300\n"
 "PO-Revision-Date: 2006-11-01 18:01+0300\n"
 "Last-Translator: Ali Erdinç Köroğlu <erdinc@pardus.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -31,204 +31,206 @@ msgstr "%1 MB"
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo.cpp:97 sysinfo.cpp:101
+#: sysinfo.cpp:97
+msgid "Looking for hardware information..."
+msgstr "Donanım bilgileri alınıyor.."
+
+#: sysinfo.cpp:100 sysinfo.cpp:104
 msgid "My Computer"
 msgstr "Sistem"
 
-#: sysinfo.cpp:102
+#: sysinfo.cpp:105
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 msgstr ""
 "Dizinler, Sabit Diskler, Ayrılabilir Aygıtlar, Sistem Bilgisi ve daha "
 "fazlası..."
 
-#: sysinfo.cpp:108
-msgid "Looking for disk information..."
-msgstr "Disk bilgisine bakılıyor..."
-
-#: sysinfo.cpp:109
-msgid "Disk Information"
-msgstr "Disk Bilgisi"
-
 #: sysinfo.cpp:113
-msgid "OS Information"
-msgstr "İşletim Sistemi Bilgisi"
-
-#: sysinfo.cpp:115
-msgid "OS:"
-msgstr "İşletim sistemi:"
-
-#: sysinfo.cpp:116
-msgid "Current user:"
-msgstr "Kullanıcı:"
-
-#: sysinfo.cpp:117
-msgid "System:"
-msgstr "Sistem:"
-
-#: sysinfo.cpp:118
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo.cpp:124
-msgid "Display Info"
-msgstr "Ekran Bilgisi:"
-
-#: sysinfo.cpp:126
-msgid "Vendor:"
-msgstr "Üretici:"
-
-#: sysinfo.cpp:127
-msgid "Model:"
-msgstr "Model:"
-
-#: sysinfo.cpp:129
-msgid "Driver:"
-msgstr "Sürücü:"
-
-#: sysinfo.cpp:136
-msgid "Getting OS information...."
-msgstr "İşletim sistemi bilgisi alınıyor..."
-
-#: sysinfo.cpp:139
 msgid "Common Folders"
 msgstr "Ortak Dizinler"
 
-#: sysinfo.cpp:143
+#: sysinfo.cpp:117
 msgid "My Home Folder"
 msgstr "Ev Dizini"
 
-#: sysinfo.cpp:144
+#: sysinfo.cpp:118
 msgid "Root Folder"
 msgstr "Kök Dizini"
 
-#: sysinfo.cpp:145
+#: sysinfo.cpp:119
 msgid "Network Folders"
 msgstr "Ağ Dizinleri"
 
-#: sysinfo.cpp:149
-msgid "Looking up network status..."
-msgstr "Ağ durumuna bakılıyor..."
-
-#: sysinfo.cpp:152
+#: sysinfo.cpp:125
 msgid "Network Status"
 msgstr "Ağ Durumu"
 
-#: sysinfo.cpp:159
-msgid "Looking for CPU information..."
-msgstr "İşlemci bilgisine bakılıyor..."
-
-#: sysinfo.cpp:163
+#: sysinfo.cpp:135
 msgid "CPU Information"
 msgstr "İşlemci Bilgisi"
 
-#: sysinfo.cpp:165
+#: sysinfo.cpp:137
 msgid "Processor (CPU):"
 msgstr "İşlemci (CPU):"
 
-#: sysinfo.cpp:166
+#: sysinfo.cpp:138
 msgid "Speed:"
 msgstr "Hız:"
 
-#: sysinfo.cpp:167
+#: sysinfo.cpp:139
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo.cpp:172
-msgid "Looking for memory information..."
-msgstr "Bellek bilgisi alınıyor..."
-
-#: sysinfo.cpp:174
+#: sysinfo.cpp:145
 msgid "Memory Information"
 msgstr "Bellek Bilgisi"
 
-#: sysinfo.cpp:176
+#: sysinfo.cpp:147
 msgid "Total memory (RAM):"
 msgstr "Toplam bellek (RAM):"
 
-#: sysinfo.cpp:177
+#: sysinfo.cpp:148
 msgid "Free memory:"
 msgstr "Boş bellek:"
 
-#: sysinfo.cpp:178
+#: sysinfo.cpp:149
 msgid "Used Memory"
 msgstr "Kullanılan Bellek"
 
-#: sysinfo.cpp:179
+#: sysinfo.cpp:150
 msgid "Total swap:"
 msgstr "Toplam takas:"
 
-#: sysinfo.cpp:180
+#: sysinfo.cpp:151
 msgid "Free swap:"
 msgstr "Boş takas:"
 
-#: sysinfo.cpp:184
-msgid "Looking for hardware information..."
-msgstr "Donanım bilgileri alınıyor.."
-
-#: sysinfo.cpp:186
+#: sysinfo.cpp:158
 msgid "Hardware Information"
 msgstr "Donanım Bilgisi"
 
-#: sysinfo.cpp:191
+#: sysinfo.cpp:160
+msgid "Type:"
+msgstr ""
+
+#: sysinfo.cpp:161 sysinfo.cpp:189
+msgid "Vendor:"
+msgstr "Üretici:"
+
+#: sysinfo.cpp:162 sysinfo.cpp:190
+msgid "Model:"
+msgstr "Model:"
+
+#: sysinfo.cpp:163
 msgid "Bios Vendor:"
 msgstr "Bios Üreticisi:"
 
-#: sysinfo.cpp:192
+#: sysinfo.cpp:164
 msgid "Bios Version:"
 msgstr "Bios Versiyonu:"
 
-#: sysinfo.cpp:256
+#: sysinfo.cpp:171
+msgid "Disk Information"
+msgstr "Disk Bilgisi"
+
+#: sysinfo.cpp:176
+msgid "OS Information"
+msgstr "İşletim Sistemi Bilgisi"
+
+#: sysinfo.cpp:178
+msgid "OS:"
+msgstr "İşletim sistemi:"
+
+#: sysinfo.cpp:179
+msgid "Current user:"
+msgstr "Kullanıcı:"
+
+#: sysinfo.cpp:180
+msgid "System:"
+msgstr "Sistem:"
+
+#: sysinfo.cpp:181
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo.cpp:187
+msgid "Display Info"
+msgstr "Ekran Bilgisi:"
+
+#: sysinfo.cpp:192
+msgid "Driver:"
+msgstr "Sürücü:"
+
+#: sysinfo.cpp:257
 msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 Önbellek)"
 
-#: sysinfo.cpp:288
-msgid "Device"
-msgstr "Aygıt"
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Total"
+msgstr "Toplam takas:"
 
-#: sysinfo.cpp:288
-msgid "Filesystem"
-msgstr "Dosya sistemi"
-
-#: sysinfo.cpp:289
-msgid "Total space"
-msgstr "Toplam disk alanı"
-
-#: sysinfo.cpp:289
-msgid "Available space"
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Available"
 msgstr "Kullanılabilir boş alan"
 
-#: sysinfo.cpp:295
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Bağlama ya da ayırma gibi seçenekler için farenin sağ tuşuna tıklayın"
-
-#: sysinfo.cpp:478
+#: sysinfo.cpp:403
 msgid "%1 (3D Support)"
 msgstr "%1 (3B desteği var)"
 
-#: sysinfo.cpp:480
+#: sysinfo.cpp:405
 msgid "%1 (No 3D Support)"
 msgstr "%1 (3B desteği yok)"
 
-#: sysinfo.cpp:491
+#: sysinfo.cpp:415
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Ağa erişim <strong>yapılamıyor</strong>"
 
-#: sysinfo.cpp:493
+#: sysinfo.cpp:417
 msgid "You are <strong>offline</strong>"
 msgstr "Şu anda <strong>bağlı değilsiniz</strong>"
 
-#: sysinfo.cpp:495
+#: sysinfo.cpp:419
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Ağ bağlantısı <strong>kapatılıyor</strong>"
 
-#: sysinfo.cpp:497
+#: sysinfo.cpp:421
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "Ağa bağlantı <strong>sağlanıyor</strong>"
 
-#: sysinfo.cpp:499
+#: sysinfo.cpp:423
 msgid "You are <strong>online</strong>"
 msgstr "Şu anda <strong>bağlısınız</strong>"
 
-#: sysinfo.cpp:501
+#: sysinfo.cpp:425
 msgid "Unknown network status"
 msgstr "Bilinmeyen ağ durumu"
+
+#~ msgid "Looking for disk information..."
+#~ msgstr "Disk bilgisine bakılıyor..."
+
+#~ msgid "Getting OS information...."
+#~ msgstr "İşletim sistemi bilgisi alınıyor..."
+
+#~ msgid "Looking up network status..."
+#~ msgstr "Ağ durumuna bakılıyor..."
+
+#~ msgid "Looking for CPU information..."
+#~ msgstr "İşlemci bilgisine bakılıyor..."
+
+#~ msgid "Looking for memory information..."
+#~ msgstr "Bellek bilgisi alınıyor..."
+
+#~ msgid "Device"
+#~ msgstr "Aygıt"
+
+#~ msgid "Filesystem"
+#~ msgstr "Dosya sistemi"
+
+#~ msgid "Total space"
+#~ msgstr "Toplam disk alanı"
+
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr ""
+#~ "Bağlama ya da ayırma gibi seçenekler için farenin sağ tuşuna tıklayın"
