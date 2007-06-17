@@ -111,7 +111,7 @@ msgstr "Donanım Bilgisi"
 
 #: sysinfo.cpp:160
 msgid "Type:"
-msgstr ""
+msgstr "Tip"
 
 #: sysinfo.cpp:161 sysinfo.cpp:189
 msgid "Vendor:"
@@ -166,14 +166,12 @@ msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 Önbellek)"
 
 #: sysinfo.cpp:311
-#, fuzzy
 msgid "Total"
-msgstr "Toplam takas:"
+msgstr "Toplam:"
 
 #: sysinfo.cpp:311
-#, fuzzy
 msgid "Available"
-msgstr "Kullanılabilir boş alan"
+msgstr "Kullanılabilir"
 
 #: sysinfo.cpp:403
 msgid "%1 (3D Support)"
@@ -206,31 +204,3 @@ msgstr "Şu anda <strong>bağlısınız</strong>"
 #: sysinfo.cpp:425
 msgid "Unknown network status"
 msgstr "Bilinmeyen ağ durumu"
-
-#~ msgid "Looking for disk information..."
-#~ msgstr "Disk bilgisine bakılıyor..."
-
-#~ msgid "Getting OS information...."
-#~ msgstr "İşletim sistemi bilgisi alınıyor..."
-
-#~ msgid "Looking up network status..."
-#~ msgstr "Ağ durumuna bakılıyor..."
-
-#~ msgid "Looking for CPU information..."
-#~ msgstr "İşlemci bilgisine bakılıyor..."
-
-#~ msgid "Looking for memory information..."
-#~ msgstr "Bellek bilgisi alınıyor..."
-
-#~ msgid "Device"
-#~ msgstr "Aygıt"
-
-#~ msgid "Filesystem"
-#~ msgstr "Dosya sistemi"
-
-#~ msgid "Total space"
-#~ msgstr "Toplam disk alanı"
-
-#~ msgid "Press the right mouse button for more options like Mount or Eject"
-#~ msgstr ""
-#~ "Bağlama ya da ayırma gibi seçenekler için farenin sağ tuşuna tıklayın"
