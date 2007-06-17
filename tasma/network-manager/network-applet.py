@@ -16,6 +16,7 @@ import comar
 from qt import *
 from kdecore import *
 from kdeui import *
+import  dcopext
 
 I18N_NOOP = lambda x: x
 
@@ -390,8 +391,19 @@ class ConnectionItem(QCustomMenuItem):
 
 
 class NetTray(KSystemTray):
+    NoNetworks = 1
+    Unreachable = 2
+    OfflineDisconnected = 3
+    OfflineFailed = 4
+    ShuttingDown = 5
+    Offline = 6
+    Establishing = 7
+    Online = 8
+
     def __init__(self, parent, dev=None):
         KSystemTray.__init__(self)
+        self.dcop = parent.app.dcopClient()
+
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
@@ -401,16 +413,22 @@ class NetTray(KSystemTray):
         if dev:
             QToolTip.add(self, dev.devname)
         self.updateIcon()
-    
+
+    def updateNetworkStatus(self, status):
+        kded = dcopext.DCOPApp("kded", self.dcop)
+        kded.networkstatus.setNetworkStatus("COMARNetworkStatus", status)
+
     def updateIcon(self):
         if self.dev:
             for conn in self.dev.connections.values():
                 script = conn.script
                 if conn.state == "connecting":
                     self.setPixmap(icons.get_state(script, "connecting"))
+                    self.updateNetworkStatus(self.Establishing)
                     return
                 elif conn.state == "up":
                     self.setPixmap(icons.get_state(script, "up"))
+                    self.updateNetworkStatus(self.Online)
                     return
         else:
             script = "net-tools"
@@ -418,11 +436,14 @@ class NetTray(KSystemTray):
                 for conn in dev.connections.values():
                     if conn.state == "connecting":
                         self.setPixmap(icons.get_state(script, "connecting"))
+                        self.updateNetworkStatus(self.Establishing)
                         return
                     elif conn.state == "up":
                         self.setPixmap(icons.get_state(script, "up"))
+                        self.updateNetworkStatus(self.Online)
                         return
         self.setPixmap(icons.get_state(script, "down"))
+        self.updateNetworkStatus(self.Offline)
     
     def appendConns(self, menu, dev, idx):
         conn_keys = dev.connections.keys()
