@@ -1,4 +1,3 @@
-
 INCLUDES = $(all_includes) `pkg-config --cflags hal`
 
 kde_module_LTLIBRARIES = kio_sysinfo.la libksysinfopart.la
@@ -12,6 +11,20 @@ kde_services_DATA = sysinfo.protocol ksysinfopart.desktop
 libksysinfopart_la_SOURCES = ksysinfopart.cpp
 libksysinfopart_la_LIBADD = -lkhtml $(LIB_KPARTS)
 libksysinfopart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN)
+
+kde_module_LTLIBRARIES = kded_comarnetworkstatus.la
+
+METASOURCES = AUTO
+INCLUDES = $(all_includes)
+
+kded_comarnetworkstatus_la_SOURCES = comarNetworkStatus.cpp comarNetworkStatus.skel networkstatusiface.stub
+kded_comarnetworkstatus_la_LDFLAGS = $(all_libraries) -module -avoid-version
+kded_comarnetworkstatus_la_LIBADD = $(all_libraries) $(KDE_RPATH) -lnetworkstatus
+
+networkstatusiface_DIR = $(includedir)
+
+servicesdir = $(kde_servicesdir)/kded
+services_DATA = comarNetworkStatus.desktop
 
 xdg_apps_DATA = kfmclient_sysinfo.desktop
 
