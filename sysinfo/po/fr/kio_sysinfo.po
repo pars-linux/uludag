@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-01 16:28+0300\n"
+"POT-Creation-Date: 2007-06-17 19:09+0300\n"
 "PO-Revision-Date: 2007-03-10 16:06+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -31,203 +31,208 @@ msgstr "%1 Mo"
 msgid "%1 KB"
 msgstr "%1 Ko"
 
-#: sysinfo.cpp:107 sysinfo.cpp:101
-msgid "My Computer"
-msgstr "Mon Ordinateur"
-
-#: sysinfo.cpp:102
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Répertoires, Disques durs, Périphériques mobiles, Informations systèmes et plus encore..."
-
-#: sysinfo.cpp:108
-msgid "Looking for disk information..."
-msgstr "Recherche des informations concernant le disque..."
-
-#: sysinfo.cpp:109
-msgid "Disk Information"
-msgstr "Informations du disque"
-
-#: sysinfo.cpp:113
-msgid "OS Information"
-msgstr "Information de l'OS"
-
-#: sysinfo.cpp:115
-msgid "OS:"
-msgstr "OS:"
-
-#: sysinfo.cpp:116
-msgid "Current user:"
-msgstr "Utilisateur actif : "
-
-#: sysinfo.cpp:117
-msgid "System:"
-msgstr "Système : "
-
-#: sysinfo.cpp:118
-msgid "KDE:"
-msgstr "KDE :"
-
-#: sysinfo.cpp:124
-msgid "Display Info"
-msgstr "Propriétés de la carte vidéo"
-
-#: sysinfo.cpp:126
-msgid "Vendor:"
-msgstr "Fabricant : "
-
-#: sysinfo.cpp:127
-msgid "Model:"
-msgstr "Modèle : "
-
-#: sysinfo.cpp:129
-msgid "Driver:"
-msgstr "Pilote :"
-
-#: sysinfo.cpp:136
-msgid "Getting OS information...."
-msgstr "Obtention des informations sur l'OS..."
-
-#: sysinfo.cpp:139
-msgid "Common Folders"
-msgstr "Répertoire Communs"
-
-#: sysinfo.cpp:143
-msgid "My Home Folder"
-msgstr "Mon Répertoire d'Accueil"
-
-#: sysinfo.cpp:144
-msgid "Root Folder"
-msgstr "Répertoire Racine"
-
-#: sysinfo.cpp:145
-msgid "Network Folders"
-msgstr "Répertoires Réseaux"
-
-#: sysinfo.cpp:149
-msgid "Looking up network status..."
-msgstr "Détermination du statut réseau..."
-
-#: sysinfo.cpp:152
-msgid "Network Status"
-msgstr "Statu Réseau"
-
-#: sysinfo.cpp:159
-msgid "Looking for CPU information..."
-msgstr "Recherche des informations pour la CPU"
-
-#: sysinfo.cpp:163
-msgid "CPU Information"
-msgstr "Information CPU"
-
-#: sysinfo.cpp:165
-msgid "Processor (CPU):"
-msgstr "Processeur (CPU) :"
-
-#: sysinfo.cpp:166
-msgid "Speed:"
-msgstr "Vitesse :"
-
-#: sysinfo.cpp:167
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: sysinfo.cpp:172
-msgid "Looking for memory information..."
-msgstr "Recherche des informations concernant la mémoire,,,"
-
-#: sysinfo.cpp:174
-msgid "Memory Information"
-msgstr "Informations concernant la mémoire"
-
-#: sysinfo.cpp:176
-msgid "Total memory (RAM):"
-msgstr "Mémoire cumulée (RAM):"
-
-#: sysinfo.cpp:177
-msgid "Free memory:"
-msgstr "Mémoire disponible :"
-
-#: sysinfo.cpp:178
-msgid "Used Memory"
-msgstr "Mémoire allouée :"
-
-#: sysinfo.cpp:179
-msgid "Total swap:"
-msgstr "Mémoire d'échange (swap) cumulée :"
-
-#: sysinfo.cpp:180
-msgid "Free swap:"
-msgstr "Mémoire d'échange (swap) disponible :"
-
-#: sysinfo.cpp:184
+#: sysinfo.cpp:97
 msgid "Looking for hardware information..."
 msgstr "Recherche des informations concernant les périphériques..."
 
-#: sysinfo.cpp:186
+#: sysinfo.cpp:100 sysinfo.cpp:104
+msgid "My Computer"
+msgstr "Mon Ordinateur"
+
+#: sysinfo.cpp:105
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Répertoires, Disques durs, Périphériques mobiles, Informations systèmes et "
+"plus encore..."
+
+#: sysinfo.cpp:113
+msgid "Common Folders"
+msgstr "Répertoire Communs"
+
+#: sysinfo.cpp:117
+msgid "My Home Folder"
+msgstr "Mon Répertoire d'Accueil"
+
+#: sysinfo.cpp:118
+msgid "Root Folder"
+msgstr "Répertoire Racine"
+
+#: sysinfo.cpp:119
+msgid "Network Folders"
+msgstr "Répertoires Réseaux"
+
+#: sysinfo.cpp:125
+msgid "Network Status"
+msgstr "Statu Réseau"
+
+#: sysinfo.cpp:135
+msgid "CPU Information"
+msgstr "Information CPU"
+
+#: sysinfo.cpp:137
+msgid "Processor (CPU):"
+msgstr "Processeur (CPU) :"
+
+#: sysinfo.cpp:138
+msgid "Speed:"
+msgstr "Vitesse :"
+
+#: sysinfo.cpp:139
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo.cpp:145
+msgid "Memory Information"
+msgstr "Informations concernant la mémoire"
+
+#: sysinfo.cpp:147
+msgid "Total memory (RAM):"
+msgstr "Mémoire cumulée (RAM):"
+
+#: sysinfo.cpp:148
+msgid "Free memory:"
+msgstr "Mémoire disponible :"
+
+#: sysinfo.cpp:149
+msgid "Used Memory"
+msgstr "Mémoire allouée :"
+
+#: sysinfo.cpp:150
+msgid "Total swap:"
+msgstr "Mémoire d'échange (swap) cumulée :"
+
+#: sysinfo.cpp:151
+msgid "Free swap:"
+msgstr "Mémoire d'échange (swap) disponible :"
+
+#: sysinfo.cpp:158
 msgid "Hardware Information"
 msgstr "Informations concernant les périphériques"
 
-#: sysinfo.cpp:191
+#: sysinfo.cpp:160
+msgid "Type:"
+msgstr ""
+
+#: sysinfo.cpp:161 sysinfo.cpp:189
+msgid "Vendor:"
+msgstr "Fabricant : "
+
+#: sysinfo.cpp:162 sysinfo.cpp:190
+msgid "Model:"
+msgstr "Modèle : "
+
+#: sysinfo.cpp:163
 msgid "Bios Vendor:"
 msgstr "Fabricant du Bios :"
 
-#: sysinfo.cpp:192
+#: sysinfo.cpp:164
 msgid "Bios Version:"
 msgstr "Version du Bios :"
 
-#: sysinfo.cpp:256
+#: sysinfo.cpp:171
+msgid "Disk Information"
+msgstr "Informations du disque"
+
+#: sysinfo.cpp:176
+msgid "OS Information"
+msgstr "Information de l'OS"
+
+#: sysinfo.cpp:178
+msgid "OS:"
+msgstr "OS:"
+
+#: sysinfo.cpp:179
+msgid "Current user:"
+msgstr "Utilisateur actif : "
+
+#: sysinfo.cpp:180
+msgid "System:"
+msgstr "Système : "
+
+#: sysinfo.cpp:181
+msgid "KDE:"
+msgstr "KDE :"
+
+#: sysinfo.cpp:187
+msgid "Display Info"
+msgstr "Propriétés de la carte vidéo"
+
+#: sysinfo.cpp:192
+msgid "Driver:"
+msgstr "Pilote :"
+
+#: sysinfo.cpp:257
 msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 Caches)"
 
-#: sysinfo.cpp:288
-msgid "Device"
-msgstr "Périphérique"
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Total"
+msgstr "Mémoire d'échange (swap) cumulée :"
 
-#: sysinfo.cpp:288
-msgid "Filesystem"
-msgstr "Système de fichier"
-
-#: sysinfo.cpp:289
-msgid "Total space"
-msgstr "Espace total"
-
-#: sysinfo.cpp:289
-msgid "Available space"
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Available"
 msgstr "Espace disponible"
 
-#: sysinfo.cpp:295
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Presser le bouton droit de la souris pour plus d'options comme Monter ou Ejecter"
-
-#: sysinfo.cpp:478
+#: sysinfo.cpp:403
 msgid "%1 (3D Support)"
 msgstr "%1 (Support 3D)"
 
-#: sysinfo.cpp:480
+#: sysinfo.cpp:405
 msgid "%1 (No 3D Support)"
 msgstr "%1 (Pas de support 3D)"
 
-#: sysinfo.cpp:491
+#: sysinfo.cpp:415
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Le réseau n'est <strong>pas accessible</strong>"
 
-#: sysinfo.cpp:493
+#: sysinfo.cpp:417
 msgid "You are <strong>offline</strong>"
 msgstr "Vous êtes <strong>hors-ligne</strong>"
 
-#: sysinfo.cpp:495
+#: sysinfo.cpp:419
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Le réseau est <strong>en cours d'arrêt.</strong>"
 
-#: sysinfo.cpp:497
+#: sysinfo.cpp:421
 msgid "<strong>Establishing</strong> connection to the network"
-msgstr "<strong>Etablissement<strong> de la connection <strong>en cours</strong>"
+msgstr ""
+"<strong>Etablissement<strong> de la connection <strong>en cours</strong>"
 
-#: sysinfo.cpp:499
+#: sysinfo.cpp:423
 msgid "You are <strong>online</strong>"
 msgstr "Vous êtes <strong>en ligne</strong>"
 
-#: sysinfo.cpp:501
+#: sysinfo.cpp:425
 msgid "Unknown network status"
 msgstr "Statut réseau inconnu"
 
+#~ msgid "Looking for disk information..."
+#~ msgstr "Recherche des informations concernant le disque..."
+
+#~ msgid "Getting OS information...."
+#~ msgstr "Obtention des informations sur l'OS..."
+
+#~ msgid "Looking up network status..."
+#~ msgstr "Détermination du statut réseau..."
+
+#~ msgid "Looking for CPU information..."
+#~ msgstr "Recherche des informations pour la CPU"
+
+#~ msgid "Looking for memory information..."
+#~ msgstr "Recherche des informations concernant la mémoire,,,"
+
+#~ msgid "Device"
+#~ msgstr "Périphérique"
+
+#~ msgid "Filesystem"
+#~ msgstr "Système de fichier"
+
+#~ msgid "Total space"
+#~ msgstr "Espace total"
+
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr ""
+#~ "Presser le bouton droit de la souris pour plus d'options comme Monter ou "
+#~ "Ejecter"

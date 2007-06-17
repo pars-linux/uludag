@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-01 16:28+0300\n"
+"POT-Creation-Date: 2007-06-17 19:09+0300\n"
 "PO-Revision-Date: 2006-12-11 00:19+0200\n"
 "Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
+"translation-de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,204 +32,205 @@ msgstr "%1 MB"
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo.cpp:107
-#: sysinfo.cpp:101
-msgid "My Computer"
-msgstr "Mein Computer"
-
-#: sysinfo.cpp:102
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Ordner, Festplatten, Wechseldatenträger, Systeminformation und mehr..."
-
-#: sysinfo.cpp:108
-msgid "Looking for disk information..."
-msgstr "Es wird nach Diskettenlaufwerkinformationen gesucht..."
-
-#: sysinfo.cpp:109
-msgid "Disk Information"
-msgstr "Diskettenlaufwerkinformation"
-
-#: sysinfo.cpp:113
-msgid "OS Information"
-msgstr "Betriebssystem -  Information"
-
-#: sysinfo.cpp:115
-msgid "OS:"
-msgstr "BS:"
-
-#: sysinfo.cpp:116
-msgid "Current user:"
-msgstr "Aktueller Benutzer:"
-
-#: sysinfo.cpp:117
-msgid "System:"
-msgstr "System:"
-
-#: sysinfo.cpp:118
-msgid "KDE:"
-msgstr "KDE:"
-
-#: sysinfo.cpp:124
-msgid "Display Info"
-msgstr "Anzeige Info"
-
-#: sysinfo.cpp:126
-msgid "Vendor:"
-msgstr "Hersteller:"
-
-#: sysinfo.cpp:127
-msgid "Model:"
-msgstr "Modell:"
-
-#: sysinfo.cpp:129
-msgid "Driver:"
-msgstr "Treiber:"
-
-#: sysinfo.cpp:136
-msgid "Getting OS information...."
-msgstr "BS - Informationen werden abgerufen..."
-
-#: sysinfo.cpp:139
-msgid "Common Folders"
-msgstr "Gemeinsamer Ordner"
-
-#: sysinfo.cpp:143
-msgid "My Home Folder"
-msgstr "Persönlicher Ordner"
-
-#: sysinfo.cpp:144
-msgid "Root Folder"
-msgstr "Root Ordner"
-
-#: sysinfo.cpp:145
-msgid "Network Folders"
-msgstr "Netzwerkordner"
-
-#: sysinfo.cpp:149
-msgid "Looking up network status..."
-msgstr "Netzwerkverbindungen werden gesucht..."
-
-#: sysinfo.cpp:152
-msgid "Network Status"
-msgstr "Netzwerkstatus"
-
-#: sysinfo.cpp:159
-msgid "Looking for CPU information..."
-msgstr "CPU information werden gesucht..."
-
-#: sysinfo.cpp:163
-msgid "CPU Information"
-msgstr "CPU Information"
-
-#: sysinfo.cpp:165
-msgid "Processor (CPU):"
-msgstr "Prozessor (CPU):"
-
-#: sysinfo.cpp:166
-msgid "Speed:"
-msgstr "Geschwindigkeit:"
-
-#: sysinfo.cpp:167
-msgid "%1 MHz"
-msgstr "%1 MHz"
-
-#: sysinfo.cpp:172
-msgid "Looking for memory information..."
-msgstr "Speicherinformationen werden gesucht..."
-
-#: sysinfo.cpp:174
-msgid "Memory Information"
-msgstr "Speicherinformationen"
-
-#: sysinfo.cpp:176
-msgid "Total memory (RAM):"
-msgstr "Gesamter Arbeitsspeicher (RAM):"
-
-#: sysinfo.cpp:177
-msgid "Free memory:"
-msgstr "Verfügbarer Arbeitsspeicher:"
-
-#: sysinfo.cpp:178
-msgid "Used Memory"
-msgstr "Belegter Arbeitsspeicher:"
-
-#: sysinfo.cpp:179
-msgid "Total swap:"
-msgstr "Gesamter Swap:"
-
-#: sysinfo.cpp:180
-msgid "Free swap:"
-msgstr "Verfügbarer Swap:"
-
-#: sysinfo.cpp:184
+#: sysinfo.cpp:97
 msgid "Looking for hardware information..."
 msgstr "Hardware - Informationen werden gesucht..."
 
-#: sysinfo.cpp:186
+#: sysinfo.cpp:100 sysinfo.cpp:104
+msgid "My Computer"
+msgstr "Mein Computer"
+
+#: sysinfo.cpp:105
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr "Ordner, Festplatten, Wechseldatenträger, Systeminformation und mehr..."
+
+#: sysinfo.cpp:113
+msgid "Common Folders"
+msgstr "Gemeinsamer Ordner"
+
+#: sysinfo.cpp:117
+msgid "My Home Folder"
+msgstr "Persönlicher Ordner"
+
+#: sysinfo.cpp:118
+msgid "Root Folder"
+msgstr "Root Ordner"
+
+#: sysinfo.cpp:119
+msgid "Network Folders"
+msgstr "Netzwerkordner"
+
+#: sysinfo.cpp:125
+msgid "Network Status"
+msgstr "Netzwerkstatus"
+
+#: sysinfo.cpp:135
+msgid "CPU Information"
+msgstr "CPU Information"
+
+#: sysinfo.cpp:137
+msgid "Processor (CPU):"
+msgstr "Prozessor (CPU):"
+
+#: sysinfo.cpp:138
+msgid "Speed:"
+msgstr "Geschwindigkeit:"
+
+#: sysinfo.cpp:139
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo.cpp:145
+msgid "Memory Information"
+msgstr "Speicherinformationen"
+
+#: sysinfo.cpp:147
+msgid "Total memory (RAM):"
+msgstr "Gesamter Arbeitsspeicher (RAM):"
+
+#: sysinfo.cpp:148
+msgid "Free memory:"
+msgstr "Verfügbarer Arbeitsspeicher:"
+
+#: sysinfo.cpp:149
+msgid "Used Memory"
+msgstr "Belegter Arbeitsspeicher:"
+
+#: sysinfo.cpp:150
+msgid "Total swap:"
+msgstr "Gesamter Swap:"
+
+#: sysinfo.cpp:151
+msgid "Free swap:"
+msgstr "Verfügbarer Swap:"
+
+#: sysinfo.cpp:158
 msgid "Hardware Information"
 msgstr "Hardware-Information"
 
-#: sysinfo.cpp:191
+#: sysinfo.cpp:160
+msgid "Type:"
+msgstr ""
+
+#: sysinfo.cpp:161 sysinfo.cpp:189
+msgid "Vendor:"
+msgstr "Hersteller:"
+
+#: sysinfo.cpp:162 sysinfo.cpp:190
+msgid "Model:"
+msgstr "Modell:"
+
+#: sysinfo.cpp:163
 msgid "Bios Vendor:"
 msgstr "Bios Hersteller:"
 
-#: sysinfo.cpp:192
+#: sysinfo.cpp:164
 msgid "Bios Version:"
 msgstr "Bios Version:"
 
-#: sysinfo.cpp:256
+#: sysinfo.cpp:171
+msgid "Disk Information"
+msgstr "Diskettenlaufwerkinformation"
+
+#: sysinfo.cpp:176
+msgid "OS Information"
+msgstr "Betriebssystem -  Information"
+
+#: sysinfo.cpp:178
+msgid "OS:"
+msgstr "BS:"
+
+#: sysinfo.cpp:179
+msgid "Current user:"
+msgstr "Aktueller Benutzer:"
+
+#: sysinfo.cpp:180
+msgid "System:"
+msgstr "System:"
+
+#: sysinfo.cpp:181
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo.cpp:187
+msgid "Display Info"
+msgstr "Anzeige Info"
+
+#: sysinfo.cpp:192
+msgid "Driver:"
+msgstr "Treiber:"
+
+#: sysinfo.cpp:257
 msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 Caches)"
 
-#: sysinfo.cpp:288
-msgid "Device"
-msgstr "Gerät"
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Total"
+msgstr "Gesamter Swap:"
 
-#: sysinfo.cpp:288
-msgid "Filesystem"
-msgstr "Dateisystem"
-
-#: sysinfo.cpp:289
-msgid "Total space"
-msgstr "Gesamter Speicherplatz"
-
-#: sysinfo.cpp:289
-msgid "Available space"
+#: sysinfo.cpp:311
+#, fuzzy
+msgid "Available"
 msgstr "Verfügbarer Speicherplatz"
 
-#: sysinfo.cpp:295
-msgid "Press the right mouse button for more options like Mount or Eject"
-msgstr "Klicken Sie die rechte Maustaste für weitere Optionen, wie Mounten oder Auswerfen"
-
-#: sysinfo.cpp:478
+#: sysinfo.cpp:403
 msgid "%1 (3D Support)"
 msgstr "%1 (3D Unterstützung)"
 
-#: sysinfo.cpp:480
+#: sysinfo.cpp:405
 msgid "%1 (No 3D Support)"
 msgstr "%1 (Keine 3D Unterstützung)"
 
-#: sysinfo.cpp:491
+#: sysinfo.cpp:415
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Netzwerk ist  <strong>nicht erreichbar</strong>"
 
-#: sysinfo.cpp:493
+#: sysinfo.cpp:417
 msgid "You are <strong>offline</strong>"
 msgstr "Sie sind <strong>offline</strong>"
 
-#: sysinfo.cpp:495
+#: sysinfo.cpp:419
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Netzwerkverbindungen werden <strong>getrennt</strong>"
 
-#: sysinfo.cpp:497
+#: sysinfo.cpp:421
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>Herstellung</strong>Verbindung zum Netzwerk"
 
-#: sysinfo.cpp:499
+#: sysinfo.cpp:423
 msgid "You are <strong>online</strong>"
 msgstr "Sie sind <strong>online</strong>"
 
-#: sysinfo.cpp:501
+#: sysinfo.cpp:425
 msgid "Unknown network status"
 msgstr "Unbekannter Netzwerkstatus"
 
+#~ msgid "Looking for disk information..."
+#~ msgstr "Es wird nach Diskettenlaufwerkinformationen gesucht..."
+
+#~ msgid "Getting OS information...."
+#~ msgstr "BS - Informationen werden abgerufen..."
+
+#~ msgid "Looking up network status..."
+#~ msgstr "Netzwerkverbindungen werden gesucht..."
+
+#~ msgid "Looking for CPU information..."
+#~ msgstr "CPU information werden gesucht..."
+
+#~ msgid "Looking for memory information..."
+#~ msgstr "Speicherinformationen werden gesucht..."
+
+#~ msgid "Device"
+#~ msgstr "Gerät"
+
+#~ msgid "Filesystem"
+#~ msgstr "Dateisystem"
+
+#~ msgid "Total space"
+#~ msgstr "Gesamter Speicherplatz"
+
+#~ msgid "Press the right mouse button for more options like Mount or Eject"
+#~ msgstr ""
+#~ "Klicken Sie die rechte Maustaste für weitere Optionen, wie Mounten oder "
+#~ "Auswerfen"
