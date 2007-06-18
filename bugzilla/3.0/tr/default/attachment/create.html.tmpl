@@ -25,9 +25,9 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [%# Define strings that will serve as the title and header of this page %]
-[% title = BLOCK %]Create New Attachment for [% terms.Bug %] #[% bug.bug_id %][% END %]
-[% header = BLOCK %]Create New Attachment for
-  [%+ "$terms.Bug $bug.bug_id" FILTER bug_link(bug.bug_id) FILTER none %][% END %]
+[% title = BLOCK %]#[% bug.bug_id %] Numaralı [% terms.Bug %] İçin Yeni Eklenti Oluştur[% END %]
+[% header = BLOCK %]
+  [%+ "$terms.Bug $bug.bug_id" FILTER bug_link(bug.bug_id) FILTER none %] İçin Yeni Eklenti Oluştur[% END %]
 [% subheader = BLOCK %][% bug.short_desc FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -48,9 +48,9 @@
 
     [%# Additional fields for attachments on existing bugs: %]
     <tr>
-      <th>Obsoletes:</th>
+      <th>Geçersiz kıldığı eklentiler:</th>
       <td>
-        <em>(optional) Check each existing attachment made obsolete by your new attachment.</em><br>
+        <em>(isteğe bağlı) Yeni eklenti ile geçersiz hale gelen eklentileri işaretleyiniz.</em><br>
         [% IF attachments.size %]
           [% FOREACH attachment = attachments %]
             [% IF ((attachment.isprivate == 0) || (Param("insidergroup")
@@ -61,26 +61,26 @@
             [% END %]
           [% END %]
         [% ELSE %]
-            [no attachments can be made obsolete]
+            [hiç bir eklenti geçersiz hale gelmiyor]
         [% END %]
       </td>
     </tr>
 
     [% IF (user.id != bug.assigned_to.id) AND user.in_group("editbugs", bug.product_id) %]
       <tr>
-        <th>Reassignment:</th>
+        <th>Yeniden Atama:</th>
         <td>
-          <em>If you want to assign this [% terms.bug %] to yourself,
-              check the box below.</em><br>
+          <em>Bu [% terms.bug %]yı kendinize atamak istiyorsanız,
+              aşağıdaki kutucuğu işaretleyin.</em><br>
           <input type="checkbox" id="takebug" name="takebug" value="1">
-          <label for="takebug">take [% terms.bug %]</label>
+          <label for="takebug">[% terms.bug %]yı al</label>
         </td>
       </tr>
     [% END %]
     <tr>
-      <th><label for="comment">Comment:</label></th>
+      <th><label for="comment">Yorum:</label></th>
       <td>
-        <em>(optional) Add a comment about this attachment to the [% terms.bug %].</em><br>
+        <em>(isteğe bağlı) Bu eklenti hakkında yorum ekle.</em><br>
         [% INCLUDE global/textarea.html.tmpl
           name    = 'comment'
           id      = 'comment'
@@ -93,18 +93,18 @@
     </tr>
     [% IF (Param("insidergroup") && user.in_group(Param("insidergroup"))) %]
       <tr>
-        <th>Privacy:</th>
+        <th>Kişiye Özel:</th>
         <td>
-          <em>If the attachment is private, check the box below.</em><br>
+          <em>Eklenti özel ise, aşağıdaki kutucugu işaretleyiniz.</em><br>
           <input type="checkbox" name="isprivate" id="isprivate"
           value="1" onClick="updateCommentPrivacy(this)">
-        <label for="isprivate">Private</label>
+        <label for="isprivate">Özel</label>
         </td>
       </tr>
     [% END %]
     <tr>
       <th>&nbsp;</th>
-      <td><input type="submit" id="create" value="Submit"></td>
+      <td><input type="submit" id="create" value="Gönder"></td>
     </tr>
   </table>
 
