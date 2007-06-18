@@ -4,14 +4,15 @@
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Faik Uygur <faik@pardus.org.tr>, 2007.
+# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-13 21:11+0300\n"
-"PO-Revision-Date: 2007-05-13 21:14+0300\n"
-"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2007-06-18 15:05+0300\n"
+"Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
+"Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -201,11 +202,11 @@ msgstr "Aktuelles %1 <b>%2</b> Paket"
 
 #: src/Progress.py:141
 msgid "installed"
-msgstr "wurde installiert"
+msgstr "installiert"
 
 #: src/Progress.py:143
 msgid "removed"
-msgstr "wurde entfernt"
+msgstr "entfernt"
 
 #: src/Progress.py:145
 msgid "upgraded"
@@ -404,7 +405,7 @@ msgstr ""
 
 #: src/package-manager.py:521
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>Für insgesamt <b>%1</b> Pakete wird ein <b>Upgrade</b> durchgeführt."
+msgstr "<br><br>Insgesamt <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
 
 #: src/package-manager.py:524
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -521,7 +522,7 @@ msgstr "Sie können hier die Software-Depots und die dazugehörigen Adressen ans
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
-msgstr "%Neues Depot hinzufügen"
+msgstr "Neues Depot &hinzufügen"
 
 #: src/PreferencesDialog.py:195
 msgid "Click here to add a new software repository"
@@ -565,11 +566,11 @@ msgstr "&Depots"
 
 #: src/PreferencesDialog.py:205
 msgid "&Show only desktop applications"
-msgstr "&Nur Desktopanwendungen anzeigen"
+msgstr "&Nur Desktop-Anwendungen anzeigen"
 
 #: src/PreferencesDialog.py:206
 msgid "If checked, then pisi will only show desktop applications"
-msgstr "Wenn diese Auswahl getroffen ist, wird PiSi nur Desktopanwendungen anzeigen"
+msgstr "Wenn diese Auswahl getroffen ist, wird PiSi nur Desktop-Anwendungen anzeigen"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &periodic update check"
@@ -577,7 +578,7 @@ msgstr "&Intervall-Upgradebare Paket-Überprüfung aktivieren"
 
 #: src/PreferencesDialog.py:208
 msgid "&Enable system tray icon"
-msgstr "&System Tray Icon aktivieren"
+msgstr "&System-Tray-Icon aktivieren"
 
 #: src/PreferencesDialog.py:209
 msgid "Check interval:"
