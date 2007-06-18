@@ -268,7 +268,7 @@ class ComarInterface(Hook):
                 for mode in link.auth_modes:
                     if mode.id == type:
                         if mode.type == "pass":
-                            conn.auth_pass = rest
+                            conn.auth_pass = rest.strip("\n")
                         elif mode.type == "login":
                             conn.auth_user, conn.auth_pass = rest.split("\n")
                         break
