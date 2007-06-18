@@ -20,14 +20,16 @@
   # date: the date when the request to delete the attachment was made.
   #%]
 
-The content of attachment [% attachid %] has been deleted by
-    [%+ user.identity %]
+[% attachid %] numaralı eklentinin içeriği 
+
+    [%+ user.identity %] tarafından
 [% IF reason %]
-who provided the following reason:
+şu sebeple: 
 
-[%+ reason %]
+[%+ reason %] 
 [% ELSE %]
-without providing any reason.
+sebep gösterilmeden 
 [% END %]
+silindi. 
 
-The token used to delete this attachment was generated at [% date FILTER time %].
+Belirtke bu eklentiyi silmek için kullanıldı ve [% date FILTER time %] tarihinde üretildi.
