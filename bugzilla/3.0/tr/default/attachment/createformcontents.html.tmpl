@@ -23,9 +23,9 @@
   #%]
 
 <tr>
-  <th><label for="data">File</label>:</th>
+  <th><label for="data">Dosya</label>:</th>
   <td>
-    <em>Enter the path to the file on your computer.</em><br>
+    <em>Dosyanın bilgisayarınızdaki yerini belirleyiniz.</em><br>
     <input type="file" id="data" name="data" size="50"
       [% IF Param("allow_attach_url") %]
         onchange="DataFieldHandler()" 
@@ -35,21 +35,21 @@
 </tr>
 [% IF Param("maxlocalattachment") %]
 <tr>
-  <th>BigFile:</th>
+  <th>BüyükDosya:</th>
   <td>
     <input type="checkbox" id="bigfile"
            name="bigfile" value="bigfile">
     <label for="bigfile">
-      Big File - Stored locally and may be purged
+      Büyük Dosya - Sınırlı olarak depolanır ve belki silinebilir.
     </label>
   </td>
 </tr>
 [% END %]
 [% IF Param("allow_attach_url") %]
 <tr>
-  <th><label for="attachurl">AttachURL</label>:</th>
+  <th><label for="attachurl">Eklenti Bağlantısı (URL)</label>:</th>
   <td>
-    <em>URL to be attached instead.</em><br>
+    <em>Eklenti yerine (URL) bağlantısı.</em><br>
     <input type="text" id="attachurl" name="attachurl" size="60" 
            maxlength="2000"
            onkeyup="URLFieldHandler()" onblur="URLFieldHandler()">
@@ -57,34 +57,34 @@
 </tr>
 [% END %]
 <tr>
-  <th><label for="description">Description</label>:</th>
+  <th><label for="description">Açıklama</label>:</th>
   <td>
-    <em>Describe the attachment briefly.</em><br>
+    <em>Eklentiyi kısaca açıklayınız.</em><br>
     <input type="text" id="description" name="description" size="60" maxlength="200">
   </td>
 </tr>
 <tr>
-  <th>Content Type:</th>
+  <th>İçerik Türü:</th>
   <td>
-    <em>If the attachment is a patch, check the box below.</em><br>
+    <em>Eklenti bir yama ise, aşagıdaki kutucuğu işaretleyiniz.</em><br>
     <input type="checkbox" id="ispatch" name="ispatch" value="1"
            onchange="setContentTypeDisabledState(this.form);">
-    <label for="ispatch">patch</label><br><br>
+    <label for="ispatch">yama</label><br><br>
 
-    <em>Otherwise, choose a method for determining the content type.</em><br>
+    <em>Değilse, içerik türünü belirlemek için bir yöntem seçiniz.</em><br>
     <input type="radio" id="autodetect"
            name="contenttypemethod" value="autodetect" checked="checked">
-      <label for="autodetect">auto-detect</label><br>
+      <label for="autodetect">otomatik-algılama</label><br>
     <input type="radio" id="list"
            name="contenttypemethod" value="list">
-      <label for="list">select from list</label>:
+      <label for="list">listeden seç</label>:
       <select name="contenttypeselection" id="contenttypeselection"
               onchange="this.form.contenttypemethod[1].checked = true;">
         [% PROCESS "attachment/content-types.html.tmpl" %]
       </select><br>
     <input type="radio" id="manual"
                  name="contenttypemethod" value="manual">
-      <label for="manual">enter manually</label>:
+      <label for="manual">elle belirle</label>:
       <input type="text" name="contenttypeentry" id="contenttypeentry"
              size="30" maxlength="200"
              onchange="if (this.value) this.form.contenttypemethod[2].checked = true;">
