@@ -167,7 +167,7 @@ msgstr "%1 (+ %2 Önbellek)"
 
 #: sysinfo.cpp:311
 msgid "Total"
-msgstr "Toplam:"
+msgstr "Toplam"
 
 #: sysinfo.cpp:311
 msgid "Available"
