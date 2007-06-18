@@ -31,28 +31,27 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Changes Submitted"
+  title = "Değişiklikler Gönderildi"
 %]
 
 <dl>
   <dt>
-    <a title="[% description FILTER html %]" href="attachment.cgi?id=[% attachid %]&amp;action=edit">Attachment #[% attachid %]</a>
-    to [% "$terms.bug $bugid" FILTER bug_link(bugid) %] created
+    [% "$terms.bug $bugid" FILTER bug_link(bugid) %] için
+    <a title="[% description FILTER html %]" href="attachment.cgi?id=[% attachid %]&amp;action=edit">Eklenti #[% attachid %]</a>
+    oluşturuldu.
   </dt>
   <dd>
     [% PROCESS "bug/process/bugmail.html.tmpl" mailing_bugid = bugid %]
     [% IF convertedbmp %]
       <p>
-        <b>Note:</b> [% terms.Bugzilla %] automatically converted your BMP image file to a
-        compressed PNG format.
+        <b>Not:</b> [% terms.Bugzilla %] BMP uzantılı görsel dosyasını, otomatik olarak sıkıştırılmış PNG dosyasına çevirdi.
       </p>
     [% END %]
     [% IF contenttypemethod == 'autodetect' %]
       <p>
-        <b>Note:</b> [% terms.Bugzilla %] automatically detected the content type
-        <em>[% contenttype %]</em> for this attachment.  If this is
-        incorrect, correct the value by
-        editing the attachment's <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">details</a>.
+        <b>Not:</b> [% terms.Bugzilla %] bu eklenti için içerik türünü <em>[% contenttype %]</em> olarak algıladı. 
+        Eğer belirlenen tür yanlış ise, 
+        bu değeri eklenti <a href="attachment.cgi?id=[% attachid %]&amp;action=edit">detaylarını</a> değiştirerek düzeltin.
       </p>
     [% END %]
 
@@ -62,8 +61,8 @@
 </dl>
 
 <p>
-<a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">Create
- Another Attachment to [% terms.Bug %] #[% bugid %]</a>
+<a href="attachment.cgi?bugid=[% bugid %]&amp;action=enter">#[% bugid %] numaralı [% terms.Bug %] için
+    farklı bir eklenti oluştur.</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
