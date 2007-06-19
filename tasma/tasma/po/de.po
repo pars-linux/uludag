@@ -1,15 +1,16 @@
-# translation of de.po to Deutsch
+# translation of de.po to
 # This file is put in the public domain.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-26 21:00+0200\n"
-"PO-Revision-Date: 2006-12-09 21:50+0200\n"
-"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"PO-Revision-Date: 2007-06-18 15:09+0300\n"
+"Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
+"Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +47,7 @@ msgstr "35 Mhz Crystal"
 
 #: src/tmoduleview.cpp:148
 msgid "<big>Loading...</big>"
-msgstr "<big>Lädt...</big>"
+msgstr "<big>Am laden...</big>"
 
 #: src/tasmamainwin.cpp:80
 msgid "About Current Module"
@@ -151,10 +152,10 @@ msgstr "Grösse"
 
 #: src/main.cpp:62
 msgid "TASMA - Pardus Configuration Center"
-msgstr "TASMA - Pardus Konfigurationszentrum"
+msgstr "TASMA - Pardus-Konfigurationszentrum"
 
 msgid "TASMA Tv Card Configuration Module"
-msgstr "TASMA TV-Karte Konfigurationsmodul"
+msgstr "TASMA TV-Karte-Konfigurationsmodul"
 
 #: src/aboutview.cpp:88
 msgid ""
@@ -194,7 +195,7 @@ msgid ""
 "Your emails"
 msgstr ""
 "_:EMAIL VON DEN ÜBERSETZERN\n"
-"oelcerman@fussballkreis.org\n"
+"mustafa.oelcerman@fk-koeln.de\n"
 "aytekguelen@yahoo.de"
 
 #: _translatorinfo.cpp:1
