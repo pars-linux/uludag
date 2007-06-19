@@ -21,10 +21,10 @@ version = '0.1'
 distfiles = """
     README
     AUTHORS
-    *.ui
-    *.png
-    *.py
-    *.desktop
+    src/*.ui
+    src/*.png
+    src/*.py
+    src/*.desktop
     po/*.po
     po/*.pot
     help/*.css
@@ -56,12 +56,12 @@ if "dist" in sys.argv:
     sys.exit(0)
 
 app_data = [
-    'hede-manager.py',
-    ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['hede_manager.png']),
-    'mainview.py',
-    'hede_manager.ui',
-    'utility.py',
-    'hede-manager.desktop',
+    'src/hede-manager.py',
+    ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/hede_manager.png']),
+    'src/mainview.py',
+    'src/hede_manager.ui',
+    'src/utility.py',
+    'src/hede-manager.desktop',
     'help'
 ]
 
@@ -77,5 +77,5 @@ kdedistutils.setup(
     application_data = app_data,
     executable_links = [('hede-manager','hede-manager.py')],
     i18n = ('po', ['.']),
-    kcontrol_modules = [ ('hede-manager.desktop','hede-manager.py')],
+    kcontrol_modules = [ ('src/hede-manager.desktop','src/hede-manager.py')],
 )
