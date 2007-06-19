@@ -97,7 +97,7 @@ def listAvailable():
     kernel_version = os.uname()[2]
     path = os.path.join(MODULES_DIR, kernel_version)
     if os.path.exists(path):
-        for roor, dirs, files in os.walk(path):
+        for root, dirs, files in os.walk(path):
             for _file in files:
                 if _file.endswith(".ko"):
                     modname = _file[:-3]
