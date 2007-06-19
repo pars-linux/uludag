@@ -18,7 +18,7 @@ from ui_elements import *
 
 import comar
 
-BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY = xrange(1, 6)
+BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY, BOOT_SET_TIMEOUT = xrange(1, 7)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -45,17 +45,31 @@ class widgetEntryList(QWidget):
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         but.hide()
-        layout.addWidget(bar, 0, 0)
+        layout.addMultiCellWidget(bar, 0, 0, 0, 4)
         self.toolbar = bar
         
         self.listEntries = EntryView(self)
-        layout.addWidget(self.listEntries, 1, 0)
+        layout.addMultiCellWidget(self.listEntries, 1, 1, 0, 4)
         
         self.checkSaved = QCheckBox(self)
         self.checkSaved.setText(i18n("Remember last booted entry."))
         layout.addWidget(self.checkSaved, 2, 0)
         
+        spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
+        layout.addItem(spacer, 2, 1)
+        
+        self.labelTimeout = QLabel(self)
+        self.labelTimeout.setText(i18n("Timeout:"))
+        layout.addWidget(self.labelTimeout, 2, 2)
+        
+        self.spinTimeout = QSpinBox(self)
+        self.spinTimeout.setMinValue(3)
+        self.spinTimeout.setMaxValue(30)
+        self.spinTimeout.setEnabled(False)
+        layout.addWidget(self.spinTimeout, 2, 3)
+        
         self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
+        self.connect(self.spinTimeout, SIGNAL("valueChanged(int)"), self.slotTimeoutChanged)
         
         self.init()
         
@@ -74,6 +88,10 @@ class widgetEntryList(QWidget):
             self.link.call("Boot.Loader.setOptions", {"default": "saved"})
         else:
             self.link.call("Boot.Loader.setOptions", {"default": "0"})
+    
+    def slotTimeoutChanged(self, value):
+        self.spinTimeout.setEnabled(False)
+        self.link.call("Boot.Loader.setOptions", {"timeout": value}, id=BOOT_SET_TIMEOUT)
     
     def slotAddEntry(self):
         self.parent.widgetEditEntry.newEntry()
@@ -354,17 +372,26 @@ class widgetMain(QWidget):
                 for option in reply.data.split("\n"):
                     key, value = option.split(" ", 1)
                     self.options[key] = value
+                # Default entry
                 if self.options["default"] == "saved":
                     self.widgetEntries.checkSaved.setChecked(True)
+                # Timeout
+                timeout = int(self.options["timeout"])
+                self.widgetEntries.spinTimeout.setValue(timeout)
+                self.widgetEntries.spinTimeout.setEnabled(True)
             elif reply.id == BOOT_SET_ENTRY:
                 self.widgetEditEntry.saved = False
                 self.widgetEntries.listEntries.setEnabled(False)
                 self.widgetEditEntry.slotExit()
+            elif reply.id == BOOT_SET_TIMEOUT:
+                self.widgetEntries.spinTimeout.setEnabled(True)
         elif reply.command == "fail":
             if reply.id == BOOT_SET_ENTRY:
                 self.widgetEditEntry.saved = False
                 KMessageBox.error(self, unicode(reply.data), i18n("Failed"))
                 self.widgetEditEntry.buttonOK.setEnabled(True)
+            elif reply.id == BOOT_SET_TIMEOUT:
+                self.widgetEntries.spinTimeout.setEnabled(True)
             else:
                 KMessageBox.error(self, "%s failed: %s" % (reply.id, unicode(reply.data)), i18n("Failed"))
         elif reply.command == "denied":
