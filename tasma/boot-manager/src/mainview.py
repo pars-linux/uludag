@@ -233,6 +233,7 @@ class widgetEditEntry(QWidget):
             widgetEdit.setText("")
         
         self.checkDefault.setChecked(False)
+        self.buttonOK.setEnabled(True)
     
     def slotSystem(self, label):
         systems = self.parent.systems
@@ -251,6 +252,7 @@ class widgetEditEntry(QWidget):
         KMessageBox.information(self, message, i18n("Error"))
     
     def slotSave(self):
+        self.buttonOK.setEnabled(False)
         default = "no"
         if self.parent.widgetEntries.checkSaved.isChecked():
             default = "saved"
@@ -362,6 +364,7 @@ class widgetMain(QWidget):
             if reply.id == BOOT_SET_ENTRY:
                 self.widgetEditEntry.saved = False
                 KMessageBox.error(self, unicode(reply.data), i18n("Failed"))
+                self.widgetEditEntry.buttonOK.setEnabled(True)
             else:
                 KMessageBox.error(self, "%s failed: %s" % (reply.id, unicode(reply.data)), i18n("Failed"))
         elif reply.command == "denied":
