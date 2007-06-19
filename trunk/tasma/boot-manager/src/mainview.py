@@ -392,6 +392,7 @@ class widgetMain(QWidget):
                 self.widgetEditEntry.buttonOK.setEnabled(True)
             elif reply.id == BOOT_SET_TIMEOUT:
                 self.widgetEntries.spinTimeout.setEnabled(True)
+                KMessageBox.error(self, unicode(reply.data), i18n("Failed"))
             else:
                 KMessageBox.error(self, "%s failed: %s" % (reply.id, unicode(reply.data)), i18n("Failed"))
         elif reply.command == "denied":
