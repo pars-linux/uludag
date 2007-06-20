@@ -31,7 +31,8 @@ class HelpDialog(QDialog):
         self.resize(500,600)
         self.layout.addWidget(self.htmlPart.view(),1,1)
 
-        if getKDELocale() == "tr":
-            self.htmlPart.openURL(KURL(locate("data","package-manager/help/tr/%s" % help_files[help])))
+        locale = getKDELocale()
+        if locale in ["tr", "es", "en", "fr", "nl"]:
+            self.htmlPart.openURL(KURL(locate("data","package-manager/help/%s/%s" % (locale, help_files[help]))))
         else:
             self.htmlPart.openURL(KURL(locate("data","package-manager/help/en/%s" % help_files[help])))
