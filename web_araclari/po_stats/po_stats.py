@@ -43,9 +43,10 @@ def usage():
 
 def processPOFile(poPath, proName = 'Noname'):
     """Returns a dictionary filled up with some information about the po file"""
+    print "processing: ", poPath
     ID, STR = range(1, 3)
 
-    fileInfo = {}
+    fileExists, fileInfo  = 1, {}
 
     headerFields = ["Project-Id-Version", "POT-Creation-Date", "PO-Revision-Date", "Last-Translator", "Language-Team"]
 
@@ -68,21 +69,24 @@ def processPOFile(poPath, proName = 'Noname'):
             fileObj = urlopen(poPath)
         except:
             print >> sys.stderr, "Unable to read file: '%s'" % poPath
-            sys.exit(1)
+            fileExists = 0
     elif urlparse(poPath)[0] == "":
         try:
             fileObj = open(poPath)
         except IOError, msg:
-            print >> sys.stderr, "Unable to read file: '%s'" % poPath
-            sys.exit(1)
+            print >> sys.stderr, "File doesn't exist: '%s'" % poPath
+            fileExists = 0
     else:
         print >> sys.stderr, "Unknown url: '%s'" % poPath
 
-    lines = fileObj.readlines()
+    if fileExists:
+        lines = fileObj.readlines()
+    else:
+        lines = []
 
     def processEntry(msgid, msgstr, fuzzy):
         if (not msgid) and msgstr:
-            # We're in the header section of the PO.
+            # header section
             _ = lambda x: x.split(':')[1].strip()
             for e in msgstr.split('\n'):
                 for i in headerFields:
@@ -114,14 +118,14 @@ def processPOFile(poPath, proName = 'Noname'):
         # Skip comments
         if l[0] == '#':
             continue
-        # Now we are in a msgid section, output previous section
+        # msgid section
         if l.startswith('msgid'):
             if section == STR:
                 processEntry(msgid, msgstr, fuzzy)
             section = ID
             l = l[5:]
             msgid = msgstr = ''
-        # Now we are in a msgstr section
+        # msgstr section
         elif l.startswith('msgstr'):
             section = STR
             l = l[6:]
@@ -147,9 +151,12 @@ def processPOFile(poPath, proName = 'Noname'):
     for k in ['Untranslated', 'Translated', 'Fuzzy']:
         fileInfo['Total'] += fileInfo[k]
 
-    fileInfo['pU'] = 100 * fileInfo['Untranslated'] / fileInfo['Total']
-    fileInfo['pT'] = 100 * fileInfo['Translated'] / fileInfo['Total']
-    fileInfo['pF'] = 100 * fileInfo['Fuzzy'] / fileInfo['Total']
+    if fileInfo['Total'] == 0:
+        fileInfo['pU'] = fileInfo['pT'] = fileInfo['pF'] = 0
+    else:
+        fileInfo['pU'] = 100 * fileInfo['Untranslated'] / fileInfo['Total']
+        fileInfo['pT'] = 100 * fileInfo['Translated'] / fileInfo['Total']
+        fileInfo['pF'] = 100 * fileInfo['Fuzzy'] / fileInfo['Total']
 
     return fileInfo
 
@@ -172,6 +179,7 @@ def createHTML(files, po_lang, html_lang = 'en'):
     of.write(htmlHeaderTemplate[html_lang] % (po_lang))
     of.writelines(body)
     of.write(htmlFooterTemplate[html_lang])
+    print "-- stats page is ready for ", po_lang
 
 def main():
     try:
