@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-19 10:50+0200\n"
+"POT-Creation-Date: 2007-06-20 20:03+0300\n"
 "PO-Revision-Date: 2006-11-30 22:01+0200\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -17,71 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/diskform.py:92 src/diskform.py:139
+#: src/diskform.py:93 src/diskform.py:140
 msgid "Disks"
 msgstr "Diskler "
 
-#: src/diskform.py:93 src/diskform.py:140
+#: src/diskform.py:94 src/diskform.py:141
 msgid "Partitions"
 msgstr "Disk Bölümleri"
 
-#: src/diskform.py:132 src/disk-manager.py:94 src/disk-manager.py:379
+#: src/diskform.py:133 src/disk-manager.py:89 src/disk-manager.py:392
 msgid "Disk Manager"
 msgstr "Disk Yöneticisi"
 
-#: src/diskform.py:133
+#: src/diskform.py:134
 msgid "File System Type :"
 msgstr "Dosya Sistemi Tipi:"
 
-#: src/diskform.py:134
+#: src/diskform.py:135
 msgid "Mount Point :"
 msgstr "Bağlama Noktası :"
 
-#: src/diskform.py:135
+#: src/diskform.py:136
 msgid "Additional Options :"
 msgstr "Ek Seçenekler :"
 
-#: src/diskform.py:136
+#: src/diskform.py:137
 msgid "Get Default Options"
 msgstr "Öntanımlı Seçenekleri Getir"
 
-#: src/diskform.py:137
+#: src/diskform.py:138
 msgid "Find Disks Automatically"
 msgstr "Diskleri Otomatik Bul"
 
-#: src/diskform.py:138
+#: src/diskform.py:139
 msgid "Show System Partitions"
 msgstr "Sistem Bölümlerini Göster"
 
-#: src/diskform.py:141
+#: src/diskform.py:142
 msgid "To update disk changes the manager must run as root"
 msgstr "Disk değişiklikleri için yönetici girişi yapmalısınız"
 
-#: src/disk-manager.py:126
+#: src/disk-manager.py:121
 msgid "User not in disk group !"
 msgstr "Kullanıcı disk grubunda değil !"
 
-#: src/disk-manager.py:227 src/disk-manager.py:250
+#: src/disk-manager.py:132 src/disk-manager.py:134
+msgid "File /etc/fstab is not correct, please fix it manually."
+msgstr "/etc/fstab dosyası bozulmuş, lütfen manuel olarak düzeltin."
+
+#: src/disk-manager.py:229 src/disk-manager.py:253
 msgid "Completed"
 msgstr "Tamamlandı"
 
-#: src/disk-manager.py:227 src/disk-manager.py:250
+#: src/disk-manager.py:229 src/disk-manager.py:253
 msgid "File /etc/fstab updated !"
 msgstr "Dosya /etc/fstab güncellendi !"
 
-#: src/disk-manager.py:268
+#: src/disk-manager.py:271
 #, python-format
 msgid "%s for %s failure !!"
 msgstr "%s işlemi %s için başarısız oldu !!"
 
-#: src/disk-manager.py:296
+#: src/disk-manager.py:307
 msgid "Mount Point"
 msgstr "Bağlama Noktası"
 
-#: src/disk-manager.py:297
+#: src/disk-manager.py:308
 msgid "File System Type"
 msgstr "Dosya Sistemi Tipi"
 
-#: src/disk-manager.py:374
+#: src/disk-manager.py:387
 msgid "Disk Manager is already running!"
 msgstr "Disk Yöneticisi zaten çalışıyor!"
