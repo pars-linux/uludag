@@ -803,13 +803,13 @@ class MainApplicationWidget(QWidget):
         
         pisi.api.init(write=False)
 
+        if command in nop:
+            return
+
         # after every operation check package cache limits
         if command not in ["System.Manager.clearCache", 
                            "System.Manager.setRepositories"]:
             self.command.checkCacheLimits()
-
-        if command in nop:
-            return
 
         self.basket.empty()
         self.operateAction.setEnabled(False)
