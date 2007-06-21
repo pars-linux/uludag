@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 15:59+0300\n"
+"POT-Creation-Date: 2007-06-21 19:34+0300\n"
 "PO-Revision-Date: 2007-05-30 08:24+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-msgid "Bootloader Manager"
+#, fuzzy
+msgid "Boot Manager"
 msgstr "Gestionnaire de bootloader (chargeur de démarrage)"
 
 #: src/boot-manager.py:37
@@ -29,7 +30,8 @@ msgid "Contributions to Boot.Loader model."
 msgstr "Contributions au modèle du Boot.Loader"
 
 #: src/boot-manager.py:79
-msgid "Bootloader Manager is already started!"
+#, fuzzy
+msgid "Boot Manager is already started!"
 msgstr "Le gestionnaire de bootloader (chargeur de démarrage) est déjà lancé !"
 
 #: src/mainview.py:35

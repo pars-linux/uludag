@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 15:59+0300\n"
+"POT-Creation-Date: 2007-06-21 19:34+0300\n"
 "PO-Revision-Date: 2007-06-03 22:19+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-msgid "Bootloader Manager"
+#, fuzzy
+msgid "Boot Manager"
 msgstr "Opstartbeheer"
 
 #: src/boot-manager.py:37
@@ -29,7 +30,8 @@ msgid "Contributions to Boot.Loader model."
 msgstr "Medewerkers aan het bootlader model"
 
 #: src/boot-manager.py:79
-msgid "Bootloader Manager is already started!"
+#, fuzzy
+msgid "Boot Manager is already started!"
 msgstr "Opstartbeheer is reeds actief!"
 
 #: src/mainview.py:35

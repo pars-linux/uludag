@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 15:59+0300\n"
+"POT-Creation-Date: 2007-06-21 19:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-msgid "Bootloader Manager"
+msgid "Boot Manager"
 msgstr ""
 
 #: src/boot-manager.py:37
@@ -29,7 +29,7 @@ msgid "Contributions to Boot.Loader model."
 msgstr ""
 
 #: src/boot-manager.py:79
-msgid "Bootloader Manager is already started!"
+msgid "Boot Manager is already started!"
 msgstr ""
 
 #: src/mainview.py:35
