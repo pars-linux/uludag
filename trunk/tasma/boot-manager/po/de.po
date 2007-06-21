@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-26 03:17+0300\n"
+"POT-Creation-Date: 2007-06-21 15:59+0300\n"
 "PO-Revision-Date: 2007-06-18 14:53+0300\n"
 "Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
 "Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
@@ -41,63 +41,76 @@ msgstr "Neuer Eintrag"
 msgid "Remember last booted entry."
 msgstr ""
 
-#: src/mainview.py:97
+#: src/mainview.py:62
+msgid "Timeout:"
+msgstr ""
+
+#: src/mainview.py:115
 msgid "Title:"
 msgstr "Titel:"
 
-#: src/mainview.py:106
+#: src/mainview.py:123
 msgid "System:"
 msgstr "System:"
 
-#: src/mainview.py:117
+#: src/mainview.py:133
 msgid "Root:"
 msgstr "Root:"
 
-#: src/mainview.py:127
+#: src/mainview.py:142
 msgid "Kernel:"
 msgstr "Kernel:"
 
-#: src/mainview.py:137
+#: src/mainview.py:151
 msgid "Kernel Parameters:"
 msgstr "Kernel-Parameter:"
 
-#: src/mainview.py:147
+#: src/mainview.py:160
 msgid "Initial Ramdisk:"
 msgstr "RAM-Disk initialisieren"
 
-#: src/mainview.py:157
+#: src/mainview.py:169
 msgid "Set as default boot entry."
 msgstr "Als Standard-Booteintrag setzen"
 
-#: src/mainview.py:214
-msgid "Are you sure you want to remove this entry?"
-msgstr "Sind Sie sicher, dass Sie diesen Eintrag löschen möchten?"
+#: src/mainview.py:233
+msgid "There must be at least one Pardus entry."
+msgstr ""
 
-#: src/mainview.py:214
-msgid "Delete Entry"
-msgstr "Eintrag löschen"
-
-#: src/mainview.py:346
-msgid "Bootloader configuration changed by another application."
-msgstr "Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
-
-#: src/mainview.py:381 src/mainview.py:383
-msgid "Failed"
-msgstr "Fehlgeschlagen"
-
-#: src/mainview.py:388
-msgid "You are not allowed to edit boot loader settings."
-msgstr "Sie sind nicht berechtigt diese Boot-Loader-Einstellungen zu bearbeiten."
-
-#: src/mainview.py:388
+#: src/mainview.py:233 src/mainview.py:411
 msgid "Access Denied"
 msgstr "Zugang verweigert"
 
-#: src/ui_elements.py:90
+#: src/mainview.py:235
+msgid "Are you sure you want to remove this entry?"
+msgstr "Sind Sie sicher, dass Sie diesen Eintrag löschen möchten?"
+
+#: src/mainview.py:235
+msgid "Delete Entry"
+msgstr "Eintrag löschen"
+
+#: src/mainview.py:358
+msgid "Bootloader configuration changed by another application."
+msgstr ""
+"Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
+
+#: src/mainview.py:400 src/mainview.py:404 src/mainview.py:406
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: src/mainview.py:411
+msgid "You are not allowed to edit boot loader settings."
+msgstr ""
+"Sie sind nicht berechtigt diese Boot-Loader-Einstellungen zu bearbeiten."
+
+#: src/ui_elements.py:91
 msgid "Edit entry"
 msgstr "Eintrag bearbeiten"
 
-#: src/ui_elements.py:94
+#: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Eintrag löschen"
 
+#, fuzzy
+#~ msgid "Denied"
+#~ msgstr "Zugang verweigert"

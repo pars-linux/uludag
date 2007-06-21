@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-26 03:17+0300\n"
+"POT-Creation-Date: 2007-06-21 15:59+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -39,62 +39,70 @@ msgstr "Yeni ekle"
 msgid "Remember last booted entry."
 msgstr "Son açılan kaydı, bir sonraki açılışta hatırla."
 
-#: src/mainview.py:97
+#: src/mainview.py:62
+msgid "Timeout:"
+msgstr "Bekleme Süresi:"
+
+#: src/mainview.py:115
 msgid "Title:"
 msgstr "Başlık:"
 
-#: src/mainview.py:106
+#: src/mainview.py:123
 msgid "System:"
 msgstr "Sistem:"
 
-#: src/mainview.py:117
+#: src/mainview.py:133
 msgid "Root:"
 msgstr "Kök Sürücü:"
 
-#: src/mainview.py:127
+#: src/mainview.py:142
 msgid "Kernel:"
 msgstr "Çekirdek:"
 
-#: src/mainview.py:137
+#: src/mainview.py:151
 msgid "Kernel Parameters:"
 msgstr "Çekirdek Parametreleri:"
 
-#: src/mainview.py:147
+#: src/mainview.py:160
 msgid "Initial Ramdisk:"
 msgstr "Önyükleme Dosyası (Initrd):"
 
-#: src/mainview.py:157
+#: src/mainview.py:169
 msgid "Set as default boot entry."
 msgstr "Öntanımlı açılış kaydı olarak ata."
 
-#: src/mainview.py:214
-msgid "Are you sure you want to remove this entry?"
-msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
+#: src/mainview.py:233
+msgid "There must be at least one Pardus entry."
+msgstr "En az bir Pardus girdisi olmalı."
 
-#: src/mainview.py:214
-msgid "Delete Entry"
-msgstr "Kaydı Sil"
-
-#: src/mainview.py:346
-msgid "Bootloader configuration changed by another application."
-msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
-
-#: src/mainview.py:381 src/mainview.py:383
-msgid "Failed"
-msgstr "Başarısız"
-
-#: src/mainview.py:388
-msgid "You are not allowed to edit boot loader settings."
-msgstr "Önyükleyici ayarlarını değiştirme izniniz yok."
-
-#: src/mainview.py:388
+#: src/mainview.py:233 src/mainview.py:411
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
 
-#: src/ui_elements.py:90
+#: src/mainview.py:235
+msgid "Are you sure you want to remove this entry?"
+msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
+
+#: src/mainview.py:235
+msgid "Delete Entry"
+msgstr "Kaydı Sil"
+
+#: src/mainview.py:358
+msgid "Bootloader configuration changed by another application."
+msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
+
+#: src/mainview.py:400 src/mainview.py:404 src/mainview.py:406
+msgid "Failed"
+msgstr "Başarısız"
+
+#: src/mainview.py:411
+msgid "You are not allowed to edit boot loader settings."
+msgstr "Önyükleyici ayarlarını değiştirme izniniz yok."
+
+#: src/ui_elements.py:91
 msgid "Edit entry"
 msgstr "Kaydı düzenle"
 
-#: src/ui_elements.py:94
+#: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Kaydı sil"
