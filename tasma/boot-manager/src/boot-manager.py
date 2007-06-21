@@ -18,7 +18,7 @@ from kdeui import *
 import mainview
 from utility import *
 
-mod_name = 'Bootloader Manager'
+mod_name = 'Boot Manager'
 mod_app = 'boot-manager'
 mod_version = '0.3'
 
@@ -27,7 +27,7 @@ def AboutData():
         mod_app,
         mod_name,
         mod_version,
-        I18N_NOOP('Bootloader Manager'),
+        I18N_NOOP('Boot Manager'),
         KAboutData.License_GPL,
         '(C) 2006-2007 UEKAE/TÜBİTAK',
         None,
@@ -76,12 +76,12 @@ def main():
     KUniqueApplication.addCmdLineOptions()
 
     if not KUniqueApplication.start():
-        print i18n('Bootloader Manager is already started!')
+        print i18n('Boot Manager is already started!')
         return
 
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
-    win.setCaption(i18n('Bootloader Manager'))
+    win.setCaption(i18n('Boot Manager'))
     win.resize(QSize(500, 400).expandedTo(win.minimumSizeHint()))
     attachMainWidget(win)
     kapp.setMainWidget(win)
