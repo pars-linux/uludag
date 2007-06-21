@@ -104,7 +104,7 @@
       <ul class="links">
         [% IF user.showmybugslink %]
           [% filtered_username = user.login FILTER url_quote %]
-          <li><a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Üzerimdeki [% terms.Bugs %]</a></li>
+          <li><a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Bildirdiğim [% terms.Bugs %]</a></li>
           [% print_pipe = 1 %]
         [% END %]
 
