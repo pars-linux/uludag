@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 15:59+0300\n"
+"POT-Creation-Date: 2007-06-21 19:34+0300\n"
 "PO-Revision-Date: 2007-05-27 17:24-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-msgid "Bootloader Manager"
+#, fuzzy
+msgid "Boot Manager"
 msgstr "Administrador del Cargador de Arranque"
 
 #: src/boot-manager.py:37
@@ -30,7 +31,8 @@ msgid "Contributions to Boot.Loader model."
 msgstr "Contribuciones al concepto de Boot.Loader."
 
 #: src/boot-manager.py:79
-msgid "Bootloader Manager is already started!"
+#, fuzzy
+msgid "Boot Manager is already started!"
 msgstr "El administrador del cargador de arranque ya se está ejecutando !"
 
 #: src/mainview.py:35

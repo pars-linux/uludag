@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 15:59+0300\n"
+"POT-Creation-Date: 2007-06-21 19:34+0300\n"
 "PO-Revision-Date: 2007-06-18 14:53+0300\n"
 "Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
 "Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-msgid "Bootloader Manager"
-msgstr "Boot-Loader-Manager"
+msgid "Boot Manager"
+msgstr "Boot-Manager"
 
 #: src/boot-manager.py:37
 msgid "Developer and Current Maintainer"
@@ -30,8 +30,8 @@ msgid "Contributions to Boot.Loader model."
 msgstr ""
 
 #: src/boot-manager.py:79
-msgid "Bootloader Manager is already started!"
-msgstr "Boot-Load-Manager ist bereits gestartet worden!"
+msgid "Boot Manager is already started!"
+msgstr "Boot-Manager ist bereits gestartet worden!"
 
 #: src/mainview.py:35
 msgid "New Entry"

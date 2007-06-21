@@ -1,4 +1,4 @@
-# Bootloader Manager.
+# Boot Manager.
 # Copyright (C) 2007, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the package.
 # Bahadır Kandemir <bahadir@pardus.org.tr>.
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 15:59+0300\n"
+"POT-Creation-Date: 2007-06-21 19:34+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-msgid "Bootloader Manager"
-msgstr "Önyükleyici Yöneticisi"
+msgid "Boot Manager"
+msgstr "Açılış Yöneticisi"
 
 #: src/boot-manager.py:37
 msgid "Developer and Current Maintainer"
@@ -28,8 +28,8 @@ msgid "Contributions to Boot.Loader model."
 msgstr "Boot.Loader modeline katkılar"
 
 #: src/boot-manager.py:79
-msgid "Bootloader Manager is already started!"
-msgstr "Önyükleyici Yöneticisi zaten çalışıyor!"
+msgid "Boot Manager is already started!"
+msgstr "Açılış Yöneticisi zaten çalışıyor!"
 
 #: src/mainview.py:35
 msgid "New Entry"
