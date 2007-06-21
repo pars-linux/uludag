@@ -223,6 +223,15 @@ class widgetEditEntry(QWidget):
         self.parent.showScreen("EditEntry")
     
     def deleteEntry(self, index, title):
+        entries = self.parent.entries
+        pardus_root = getRoot()
+        pardus_entries = []
+        for entry in entries:
+            if entry["os_type"] == "linux" and entry["root"] == pardus_root:
+                pardus_entries.append(entry)
+        if len(pardus_entries) < 2 and entries[index] in pardus_entries:
+            KMessageBox.error(self, i18n("There must be at least one Pardus entry."), i18n("Denied"))
+            return
         confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
         if confirm == KMessageBox.Yes:
             self.parent.widgetEntries.listEntries.setEnabled(False)
