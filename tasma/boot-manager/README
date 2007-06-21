@@ -4,12 +4,6 @@ Bootloader Manager
 Bootloader Manager is boot loader editor of Pardus Linux
 
 
-Requirements
-------------
-
-* python-grub (in trunk/python-modules)
-
-
 Installing & Running
 --------------------
 
