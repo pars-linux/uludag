@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-26 03:17+0300\n"
+"POT-Creation-Date: 2007-06-21 15:59+0300\n"
 "PO-Revision-Date: 2007-05-30 08:24+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -40,65 +40,78 @@ msgstr "Nouvelle entrée"
 msgid "Remember last booted entry."
 msgstr "Se souvenir de la dernière entrée démarrée."
 
-#: src/mainview.py:97
+#: src/mainview.py:62
+msgid "Timeout:"
+msgstr ""
+
+#: src/mainview.py:115
 msgid "Title:"
 msgstr "Titre:"
 
-#: src/mainview.py:106
+#: src/mainview.py:123
 msgid "System:"
 msgstr "Système:"
 
-#: src/mainview.py:117
+#: src/mainview.py:133
 msgid "Root:"
 msgstr "Root (Racine):"
 
-#: src/mainview.py:127
+#: src/mainview.py:142
 msgid "Kernel:"
 msgstr "Noyau:"
 
-#: src/mainview.py:137
+#: src/mainview.py:151
 msgid "Kernel Parameters:"
 msgstr "Paramètres du noyau :"
 
-#: src/mainview.py:147
+#: src/mainview.py:160
 msgid "Initial Ramdisk:"
 msgstr "Init Ramdrive (Initialisation Ramdrive):"
 
-#: src/mainview.py:157
+#: src/mainview.py:169
 msgid "Set as default boot entry."
 msgstr "Établir comme entrée de démarrage par défaut."
 
-#: src/mainview.py:214
+#: src/mainview.py:233
+#, fuzzy
+msgid "There must be at least one Pardus entry."
+msgstr "Se souvenir de la dernière entrée démarrée."
+
+#: src/mainview.py:233 src/mainview.py:411
+msgid "Access Denied"
+msgstr "Accès refusé"
+
+#: src/mainview.py:235
 msgid "Are you sure you want to remove this entry?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette entrée ?"
 
-#: src/mainview.py:214
+#: src/mainview.py:235
 msgid "Delete Entry"
 msgstr "Supprimer l'entrée"
 
-#: src/mainview.py:346
+#: src/mainview.py:358
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 "Configuration du booloader (chargeur de démarrage) changé par une autre "
 "application."
 
-#: src/mainview.py:381 src/mainview.py:383
+#: src/mainview.py:400 src/mainview.py:404 src/mainview.py:406
 msgid "Failed"
 msgstr "Echec"
 
-#: src/mainview.py:388
+#: src/mainview.py:411
 msgid "You are not allowed to edit boot loader settings."
-msgstr "Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
+msgstr ""
+"Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
 
-#: src/mainview.py:388
-msgid "Access Denied"
-msgstr "Accès refusé"
-
-#: src/ui_elements.py:90
+#: src/ui_elements.py:91
 msgid "Edit entry"
 msgstr "Éditer l'entrée"
 
-#: src/ui_elements.py:94
+#: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
 
+#, fuzzy
+#~ msgid "Denied"
+#~ msgstr "Accès refusé"

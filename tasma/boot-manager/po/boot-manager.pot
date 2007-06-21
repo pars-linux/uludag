@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-26 03:17+0300\n"
+"POT-Creation-Date: 2007-06-21 15:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,62 +40,70 @@ msgstr ""
 msgid "Remember last booted entry."
 msgstr ""
 
-#: src/mainview.py:97
+#: src/mainview.py:62
+msgid "Timeout:"
+msgstr ""
+
+#: src/mainview.py:115
 msgid "Title:"
 msgstr ""
 
-#: src/mainview.py:106
+#: src/mainview.py:123
 msgid "System:"
 msgstr ""
 
-#: src/mainview.py:117
+#: src/mainview.py:133
 msgid "Root:"
 msgstr ""
 
-#: src/mainview.py:127
+#: src/mainview.py:142
 msgid "Kernel:"
 msgstr ""
 
-#: src/mainview.py:137
+#: src/mainview.py:151
 msgid "Kernel Parameters:"
 msgstr ""
 
-#: src/mainview.py:147
+#: src/mainview.py:160
 msgid "Initial Ramdisk:"
 msgstr ""
 
-#: src/mainview.py:157
+#: src/mainview.py:169
 msgid "Set as default boot entry."
 msgstr ""
 
-#: src/mainview.py:214
-msgid "Are you sure you want to remove this entry?"
+#: src/mainview.py:233
+msgid "There must be at least one Pardus entry."
 msgstr ""
 
-#: src/mainview.py:214
-msgid "Delete Entry"
-msgstr ""
-
-#: src/mainview.py:346
-msgid "Bootloader configuration changed by another application."
-msgstr ""
-
-#: src/mainview.py:381 src/mainview.py:383
-msgid "Failed"
-msgstr ""
-
-#: src/mainview.py:388
-msgid "You are not allowed to edit boot loader settings."
-msgstr ""
-
-#: src/mainview.py:388
+#: src/mainview.py:233 src/mainview.py:411
 msgid "Access Denied"
 msgstr ""
 
-#: src/ui_elements.py:90
+#: src/mainview.py:235
+msgid "Are you sure you want to remove this entry?"
+msgstr ""
+
+#: src/mainview.py:235
+msgid "Delete Entry"
+msgstr ""
+
+#: src/mainview.py:358
+msgid "Bootloader configuration changed by another application."
+msgstr ""
+
+#: src/mainview.py:400 src/mainview.py:404 src/mainview.py:406
+msgid "Failed"
+msgstr ""
+
+#: src/mainview.py:411
+msgid "You are not allowed to edit boot loader settings."
+msgstr ""
+
+#: src/ui_elements.py:91
 msgid "Edit entry"
 msgstr ""
 
-#: src/ui_elements.py:94
+#: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr ""
