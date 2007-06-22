@@ -379,7 +379,7 @@ def findMonitors(cards):
         p = XorgParser()
         sec = XorgSection("Device")
         sec.setValue("Identifier", "Card0")
-        sec.setValue("Driver", "nv")
+        sec.setValue("Driver", cards[0].driver)
         p.sections.append(sec)
 
         sec = XorgSection("Monitor")
