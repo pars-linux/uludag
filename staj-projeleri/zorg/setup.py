@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 
-from distutils.core import setup
+from distutils.core import setup, Extension
 import zorg
 
 
@@ -13,4 +13,9 @@ setup(name="zorg",
       author_email="fatih.asici@gmail.com",
       url="http://www.pardus.org.tr/",
       packages = ['zorg'],
+      ext_modules = [Extension("zorg.ddc",
+                               sources=["zorg/ddc.c",
+                                        "zorg/vbe.c",
+                                        "zorg/vesamode.c"],
+                               libraries=["x86"])]
       )
