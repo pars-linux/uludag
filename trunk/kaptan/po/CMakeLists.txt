@@ -2,11 +2,14 @@ SET(POT_FILE ${CMAKE_CURRENT_BINARY_DIR}/kaptan.pot)
 
 SET(
   PO_FILES
+  ca.po
   de.po
-  nl.po
-  tr.po
   es.po
+  fr.po
+  it.po
+  nl.po
   pt_BR.po
+  tr.po
   )
 
 SET(_gmofiles)
