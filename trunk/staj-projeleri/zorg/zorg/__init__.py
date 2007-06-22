@@ -13,7 +13,8 @@
 __version__ = "0.1"
 
 __all__ = ["parser",
-           "utils"]
+           "utils",
+           "ddc"]
 
 
 def versionString():
