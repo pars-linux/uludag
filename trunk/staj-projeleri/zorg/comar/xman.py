@@ -753,6 +753,7 @@ class XorgConfig:
 
 def autoConfigure():
     config = XorgConfig()
+    config.touchpad = queryTouchpad()
     config.reset()
 
     # detect graphic card and find monitor of first card
@@ -803,7 +804,6 @@ def autoConfigure():
     config.monitors = monitors
 
     config.keyboardLayout = queryKeymap()
-    config.touchpad = queryTouchpad()
 
     config.layout = SINGLE_HEAD
     config.save(xorg_conf)
