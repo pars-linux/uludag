@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Live 2007.2 Beta</Title>
+    <Title>Pardus Live 2007.2 RC</Title>
     <WorkDir>/root/pardusman/LiveCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -13,11 +13,11 @@
         <SelectedPackage>alsa-oss</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>armagetronad</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
-        <SelectedPackage>axel</SelectedPackage>
         <SelectedPackage>bcm43xx-firmware</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
@@ -213,6 +213,7 @@
         <Package>amarok</Package>
         <Package>amrnb</Package>
         <Package>amrwb</Package>
+        <Package>aria2</Package>
         <Package>armagetronad</Package>
         <Package>armagetronad-moviepack</Package>
         <Package>armagetronad-moviesounds</Package>
@@ -225,7 +226,6 @@
         <Package>atmel-firmware</Package>
         <Package>attr</Package>
         <Package>audiofile</Package>
-        <Package>axel</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bc</Package>
@@ -239,6 +239,7 @@
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
+        <Package>c-ares</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
@@ -263,6 +264,7 @@
         <Package>db1</Package>
         <Package>db3</Package>
         <Package>db4</Package>
+        <Package>db4-java</Package>
         <Package>dbus</Package>
         <Package>dbus-glib</Package>
         <Package>dbus-python</Package>
@@ -544,6 +546,7 @@
         <Package>libsamplerate</Package>
         <Package>libsdl</Package>
         <Package>libsigc++</Package>
+        <Package>libsmbios</Package>
         <Package>libsndfile</Package>
         <Package>libstdc++</Package>
         <Package>libsvg</Package>
@@ -619,6 +622,7 @@
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
         <Package>ntp-client</Package>
+        <Package>obexftp</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
