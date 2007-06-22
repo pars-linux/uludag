@@ -699,12 +699,6 @@ class XorgConfig:
             "Buttons" :  "5"
         }
 
-        if self.touchpad:
-            secTouchpad = XorgSection("InputDevice")
-            secTouchpad.setValue("Identifier", "Touchpad")
-            secTouchpad.setValue("Driver", "synaptics")
-            secTouchpad.options = touchpadDevices[self.touchpad]
-
         self.parser.sections = [
             secModule,
             XorgSection("Extensions"),
@@ -714,6 +708,14 @@ class XorgConfig:
             secKeyboard,
             secMouse
         ]
+
+        if self.touchpad in touchpadDevices:
+            secTouchpad = XorgSection("InputDevice")
+            secTouchpad.setValue("Identifier", "Touchpad")
+            secTouchpad.setValue("Driver", "synaptics")
+            secTouchpad.options = touchpadDevices[self.touchpad]
+
+            self.parser.sections.append(secTouchpad)
 
     def addLayouts(self):
         sec = XorgSection("ServerLayout")
