@@ -97,7 +97,7 @@ class Device:
         for line in loadFile(xdriverlist):
             if line.startswith(self.vendorId + self.deviceId):
                 drv = line.rstrip("\n").split(" ")[1]
-                if drv in available_drivers:
+                if drv in availableDrivers:
                     self.driver = drv
 
         # if could not find driver from driverlist try X -configure
