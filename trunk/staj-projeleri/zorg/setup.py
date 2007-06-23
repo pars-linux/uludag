@@ -14,8 +14,8 @@ setup(name="zorg",
       url="http://www.pardus.org.tr/",
       packages = ['zorg'],
       ext_modules = [Extension("zorg.ddc",
-                               sources=["zorg/ddc.c",
-                                        "zorg/vbe.c",
-                                        "zorg/vesamode.c"],
+                               sources=["zorg/ddc/ddc.c",
+                                        "zorg/ddc/vbe.c",
+                                        "zorg/ddc/vesamode.c"],
                                libraries=["x86"])]
       )
