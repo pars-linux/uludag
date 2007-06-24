@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-21 19:34+0300\n"
-"PO-Revision-Date: 2007-05-27 17:24-0400\n"
+"PO-Revision-Date: 2007-06-23 21:56-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,8 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-#, fuzzy
 msgid "Boot Manager"
-msgstr "Administrador del Cargador de Arranque"
+msgstr "Administrador de Arranque"
 
 #: src/boot-manager.py:37
 msgid "Developer and Current Maintainer"
@@ -31,9 +30,8 @@ msgid "Contributions to Boot.Loader model."
 msgstr "Contribuciones al concepto de Boot.Loader."
 
 #: src/boot-manager.py:79
-#, fuzzy
 msgid "Boot Manager is already started!"
-msgstr "El administrador del cargador de arranque ya se está ejecutando !"
+msgstr "El administrador de arranque ya se está ejecutando !"
 
 #: src/mainview.py:35
 msgid "New Entry"
@@ -45,7 +43,7 @@ msgstr "Recordar la elección del ultimo arranque."
 
 #: src/mainview.py:62
 msgid "Timeout:"
-msgstr ""
+msgstr "Tiempo de espera:"
 
 #: src/mainview.py:115
 msgid "Title:"
@@ -76,9 +74,8 @@ msgid "Set as default boot entry."
 msgstr "Establecer como elección por defecto"
 
 #: src/mainview.py:233
-#, fuzzy
 msgid "There must be at least one Pardus entry."
-msgstr "Recordar la elección del ultimo arranque."
+msgstr "Se requiere por lo menos una entrada de Pardus."
 
 #: src/mainview.py:233 src/mainview.py:411
 msgid "Access Denied"
@@ -102,8 +99,7 @@ msgstr "Falló"
 
 #: src/mainview.py:411
 msgid "You are not allowed to edit boot loader settings."
-msgstr ""
-"No tiene permisos para modificar la configuración del cargador de arranque."
+msgstr "No tiene permisos para modificar la configuración de arranque."
 
 #: src/ui_elements.py:91
 msgid "Edit entry"
@@ -113,6 +109,3 @@ msgstr "Editar entrada"
 msgid "Delete entry"
 msgstr "Eliminar entrada"
 
-#, fuzzy
-#~ msgid "Denied"
-#~ msgstr "Acceso denegado"
