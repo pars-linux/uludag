@@ -15,6 +15,22 @@
 
 #define TIMING(x, y, z) Py_BuildValue("iii", x, y, z)
 
+/* Strips the 13-bytes buffer */
+char *
+strip(char *s)
+{
+	char *ps;
+
+	s[12] = 0;
+	for (ps = s + strlen(s) - 1; ps != s - 1; ps--)
+		if (isspace(*ps))
+			*ps = 0;
+		else
+			break;
+
+	return s;
+}
+
 PyObject *
 get_established_timings(struct vbe_edid1_info *edid)
 {
@@ -141,13 +157,13 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 			vimage_size = VBE_EDID_DETAILED_TIMING_VIMAGE_SIZE(*timing);
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_serial) {
-			snprintf(serial, 13, "%s", monitor->data.string);
+			snprintf(serial, 13, "%s", strip(monitor->data.string));
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_ascii) {
-			snprintf(ascii, 13, "%s", monitor->data.string);
+			snprintf(ascii, 13, "%s", strip(monitor->data.string));
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_name) {
-			snprintf(name, 13, "%s", monitor->data.string);
+			snprintf(name, 13, "%s", strip(monitor->data.string));
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_range) {
 			hsync_min = monitor->data.range_data.horizontal_min;
