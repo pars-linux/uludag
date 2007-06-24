@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-20 20:03+0300\n"
-"PO-Revision-Date: 2007-05-27 18:41-0400\n"
+"PO-Revision-Date: 2007-06-23 21:53-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +72,7 @@ msgstr "Usuario no en grupo disk !"
 
 #: src/disk-manager.py:132 src/disk-manager.py:134
 msgid "File /etc/fstab is not correct, please fix it manually."
-msgstr ""
+msgstr "Archivo /etc/fstab no está correcto, favor corrijalo manualmente"
 
 #: src/disk-manager.py:229 src/disk-manager.py:253
 msgid "Completed"
@@ -98,3 +98,4 @@ msgstr "Tipo de Sistema de Archivos"
 #: src/disk-manager.py:387
 msgid "Disk Manager is already running!"
 msgstr "Administrador de Discos ya se está ejecutando"
+
