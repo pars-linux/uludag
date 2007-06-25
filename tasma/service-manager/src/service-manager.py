@@ -20,7 +20,7 @@ from sm_utility import *
 
 mod_name = 'Service Manager'
 mod_app = 'service-manager'
-mod_version = '1.2.0'
+mod_version = '1.2.1'
 
 def AboutData():
     return KAboutData(
