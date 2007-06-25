@@ -20,6 +20,9 @@ from service_manager import formMain
 
 import comar
 
+SERVICE_ACCESS, SERVICE_UPDATE, SERVICE_INFO, SERVICE_START, SERVICE_STOP, \
+SERVICE_RESTART1, SERVICE_RESTART2, SERVICE_ON, SERVICE_OFF = xrange(9)
+
 
 class serviceItem(KListViewItem):
     def __init__(self, parent=None, package='', type='server', state=False, autostart=False, description=''):
@@ -85,15 +88,17 @@ class widgetMain(formMain):
 
         self.buttonStart.setIconSet(getIconSet('player_play', 32))
         self.buttonStop.setIconSet(getIconSet('player_stop', 32))
+        self.buttonRestart.setIconSet(getIconSet('reload', 32))
 
         self.radioAutoRun.setEnabled(False)
         self.radioNoAutoRun.setEnabled(False)
         self.buttonStart.setEnabled(False)
         self.buttonStop.setEnabled(False)
+        self.buttonRestart.setEnabled(False)
 
         # Access Control
         self.wheel = False
-        self.comar.can_access('System.Service.setState', id=10)
+        self.comar.can_access('System.Service.setState', id=SERVICE_ACCESS)
 
         # Populate list
         self.populateList()
@@ -104,13 +109,14 @@ class widgetMain(formMain):
             self.checkServersOnly.setChecked(False)
 
         # Notify list
-        self.comar.ask_notify('System.Service.changed', id=1)
+        self.comar.ask_notify('System.Service.changed', id=SERVICE_UPDATE)
 
         # Connections
         self.connect(self.checkServersOnly, SIGNAL('clicked()'), self.slotListServers)
         self.connect(self.listServices, SIGNAL('selectionChanged()'), self.slotSelectionChanged)
         self.connect(self.buttonStart, SIGNAL('clicked()'), self.slotStart)
         self.connect(self.buttonStop, SIGNAL('clicked()'), self.slotStop)
+        self.connect(self.buttonRestart, SIGNAL('clicked()'), self.slotRestart)
         self.connect(self.radioAutoRun, SIGNAL('clicked()'), self.slotOn)
         self.connect(self.radioNoAutoRun, SIGNAL('clicked()'), self.slotOff)
 
@@ -132,13 +138,13 @@ class widgetMain(formMain):
                     item.setAutoStart(autostart)
             # item is new, add to list
             if not item:
-                self.comar.call_package('System.Service.info', reply.script, id=2)
+                self.comar.call_package('System.Service.info', reply.script, id=SERVICE_INFO)
         elif reply.command == 'result':
             info = reply.data.split('\n')
-            if reply.id == 2: # System.Service.info
+            if reply.id == SERVICE_INFO: # System.Service.info
                 self.addServiceItem(reply)
-            elif reply.id in [3, 4]: # System.Service.{start,stop}
-                state = reply.id == 3
+            elif reply.id in [SERVICE_START, SERVICE_STOP, SERVICE_RESTART1, SERVICE_RESTART2]: # System.Service.{start,stop}
+                state = reply.id in [SERVICE_START, SERVICE_RESTART2]
                 # locate item
                 item = self.findItem(reply.script)
                 # update if neccessary
@@ -146,10 +152,12 @@ class widgetMain(formMain):
                     item.setState(state)
                     if item == self.listServices.selectedItem():
                         self.updateItemStatus(item)
-            elif reply.id == 10:
+                if reply.id == SERVICE_RESTART1:
+                    self.comar.call_package('System.Service.start', reply.script, id=SERVICE_RESTART2)
+            elif reply.id == SERVICE_ACCESS:
                 self.wheel = True
         elif reply.command == 'denied':
-            if reply.id != 10:
+            if reply.id != SERVICE_ACCESS:
                 KMessageBox.error(self, i18n('You are not allowed to do this operation.'), i18n('Access Denied'))
                 item = self.listServices.selectedItem()
                 self.updateItemStatus(item)
@@ -158,17 +166,24 @@ class widgetMain(formMain):
             item = self.listServices.selectedItem()
             self.updateItemStatus(item)
         elif reply.command == 'fail':
-            if reply.id in [3, 4]: # System.Service.{start,stop}
-                state = reply.id == 3
-                if state:
+            if reply.id in [SERVICE_START, SERVICE_STOP, SERVICE_RESTART1, SERVICE_RESTART2]: # System.Service.{start,stop}
+                if reply.id == SERVICE_START:
                     KMessageBox.error(self, reply.data, i18n('Unable to start service'))
                     self.buttonStart.setEnabled(1)
-                else:
+                elif reply.id == SERVICE_STOP:
                     KMessageBox.error(self, reply.data, i18n('Unable to stop service'))
                     self.buttonStop.setEnabled(1)
+                    self.buttonRestart.setEnabled(1)
+                elif reply.id in [SERVICE_RESTART1, SERVICE_RESTART2]:
+                    KMessageBox.error(self, reply.data, i18n('Unable to restart service'))
+                    if reply.id == SERVICE_RESTART1:
+                        self.buttonStop.setEnabled(1)
+                        self.buttonRestart.setEnabled(1)
+                    else:
+                        self.buttonStart.setEnabled(1)
 
     def populateList(self):
-        self.comar.call('System.Service.info', id=2)
+        self.comar.call('System.Service.info', id=SERVICE_INFO)
 
     def findItem(self, package):
         item = self.listServices.firstChild()
@@ -192,6 +207,7 @@ class widgetMain(formMain):
     def updateItemStatus(self, item):
         self.buttonStart.setEnabled(False)
         self.buttonStop.setEnabled(False)
+        self.buttonRestart.setEnabled(False)
         self.textInformation.setText(i18n('Select a service from list.'))
 
         info = []
@@ -201,10 +217,12 @@ class widgetMain(formMain):
 
         QToolTip.add(self.buttonStart, i18n('Start'))
         QToolTip.add(self.buttonStop, i18n('Stop'))
+        QToolTip.add(self.buttonRestart, i18n('Restart'))
 
         if item.state:
             if self.wheel:
                 self.buttonStop.setEnabled(True)
+                self.buttonRestart.setEnabled(True)
             info.append(i18n('%s is running.').replace('%s', item.description))
         else:
             if self.wheel:
@@ -245,18 +263,25 @@ class widgetMain(formMain):
     def slotStart(self):
         item = self.listServices.selectedItem()
         self.buttonStart.setEnabled(False)
-        self.comar.call_package('System.Service.start', item.package, id=3)
+        self.comar.call_package('System.Service.start', item.package, id=SERVICE_START)
 
     def slotStop(self):
         item = self.listServices.selectedItem()
         if item.type != 'server' and not self.confirmStop():
             return
         self.buttonStop.setEnabled(False)
-        self.comar.call_package('System.Service.stop', item.package, id=4)
+        self.buttonRestart.setEnabled(False)
+        self.comar.call_package('System.Service.stop', item.package, id=SERVICE_STOP)
+
+    def slotRestart(self):
+        item = self.listServices.selectedItem()
+        self.buttonStop.setEnabled(False)
+        self.buttonRestart.setEnabled(False)
+        self.comar.call_package('System.Service.stop', item.package, id=SERVICE_RESTART1)
 
     def slotOn(self):
         item = self.listServices.selectedItem()
-        self.comar.call_package('System.Service.setState', item.package, {'state': 'on'}, id=5)
+        self.comar.call_package('System.Service.setState', item.package, {'state': 'on'}, id=SERVICE_ON)
 
     def slotOff(self):
         item = self.listServices.selectedItem()
@@ -264,7 +289,7 @@ class widgetMain(formMain):
             self.radioAutoRun.setChecked(True)
             self.radioNoAutoRun.setChecked(False)
             return
-        self.comar.call_package('System.Service.setState', item.package, {'state': 'off'}, id=5)
+        self.comar.call_package('System.Service.setState', item.package, {'state': 'off'}, id=SERVICE_OFF)
 
     def confirmStop(self):
         msg = i18n('If you stop this service, you may have problems.\nAre you sure you want to stop this service?')
