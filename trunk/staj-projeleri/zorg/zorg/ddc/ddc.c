@@ -156,7 +156,9 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 			himage_size = VBE_EDID_DETAILED_TIMING_HIMAGE_SIZE(*timing);
 			vimage_size = VBE_EDID_DETAILED_TIMING_VIMAGE_SIZE(*timing);
 
-		} else if (monitor->type == vbe_edid_monitor_descriptor_serial) {
+		}
+
+		if (monitor->type == vbe_edid_monitor_descriptor_serial) {
 			snprintf(serial, 13, "%s", strip(monitor->data.string));
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_ascii) {
