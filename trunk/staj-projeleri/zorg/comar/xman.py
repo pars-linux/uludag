@@ -131,6 +131,7 @@ class Device:
 class Monitor:
     def __init__(self):
         self.identifier = None
+        self.probed = False
         self.wide = False
         self.digital = False
         self.panel_w = 0
@@ -275,6 +276,8 @@ def queryDDC(adapter=0):
 
     if not edid:
         return mon
+    else:
+        mon.probed = True
 
     mon.eisaid = edid["eisa_id"]
     mon.digital = edid["input_digital"]
@@ -334,28 +337,36 @@ def queryDDC(adapter=0):
                 mon.vref_min, mon.vref_max = vfreqs[0], vfreqs[-1]
 
 
-    if mon.eisaid != "":
-        for line in loadFile(MonitorsDB):
-            l = line.split(";")
-            if mon.eisaid == l[2].strip().upper():
-                mon.vendorname = l[0].lstrip()
-                mon.modelname = l[1].lstrip()
-                mon.hsync_min, mon.hsync_max = map(float, l[3].strip().split("-"))
-                mon.vref_min, mon.vref_max = map(float, l[4].strip().split("-"))
-
     for m in mon.modelines:
         t = m[m.find("ModeLine"):].split()[1].strip('"')
         if t not in mon.res:
-            mon.res[:0] = [t] #= t + " " + mon.res
+            mon.res[:0] = [t]
 
     #if not mon.res:
     #    mon.res = ["800x600", "640x480"]
 
     return mon
 
-def queryPanel(mon):
+def queryPanel(mon, card):
     #if xisrunning():
     #    return
+
+    p = XorgParser()
+    sec = XorgSection("Device")
+    sec.setValue("Identifier", "Card0")
+    sec.setValue("Driver", card.driver)
+    p.sections.append(sec)
+
+    sec = XorgSection("Monitor")
+    sec.setValue("Identifier", "Monitor0")
+    p.sections.append(sec)
+
+    sec = XorgSection("Screen")
+    sec.setValue("Identifier", "Screen0")
+    sec.setValue("Device", "Card0")
+    p.sections.append(sec)
+
+    open(xorg_conf, "w").write(str(p))
 
     patterns = [
         "Panel size is",
@@ -395,49 +406,43 @@ def queryPanel(mon):
     #        mon.res[:0] = ["%dx%d" % (mon.panel_w, mon.panel_h)]
 
     if mon.panel_w > 800 and mon.panel_h > 600:
-        mon.res[:0] = (mon.panel_w, mon.panel_h)
+        panel_res = "%dx%d" % (mon.panel_w, mon.panel_h)
+        if mon.res[0] != panel_res:
+            mon.res[:0] = ["%dx%d" % (mon.panel_w, mon.panel_h)]
         #if not mon.eisaid:
             # FIXME: add modelines here
 
 def findMonitors(cards):
     monitors = []
 
-    vbeInfo = ddc.vbeInfo()
-    if vbeInfo:
-        mon = queryDDC()
-    else:
-        mon = Monitor()
+    # vbeInfo = ddc.vbeInfo()
+    # Maybe we can learn the maximum resolution from vbeInfo["mode_list"] ?
 
-    # defaults for the case where ddc fails
-    if mon.hsync_min == 0 or mon.vref_min == 0:
-        mon.hsync_min = 31.5
-        mon.hsync_max = 50
-        mon.vref_min = 50
-        mon.vref_max = 70
+    for adapter in xrange(len(cards)):
+        mon = queryDDC(adapter)
 
-    # check lcd panel
-    if mon.digital and (cards[0].driver in lcd_drivers):
-        p = XorgParser()
-        sec = XorgSection("Device")
-        sec.setValue("Identifier", "Card0")
-        sec.setValue("Driver", cards[0].driver)
-        p.sections.append(sec)
+        # defaults for the case where ddc fails
+        if mon.hsync_min == 0 or mon.vref_min == 0:
+            mon.hsync_min = 31.5
+            mon.hsync_max = 50
+            mon.vref_min = 50
+            mon.vref_max = 70
 
-        sec = XorgSection("Monitor")
-        sec.setValue("Identifier", "Monitor0")
-        p.sections.append(sec)
+        if mon.eisaid:
+            for line in loadFile(MonitorsDB):
+                l = line.split(";")
+                if mon.eisaid == l[2].strip().upper():
+                    mon.vendorname = l[0].lstrip()
+                    mon.modelname = l[1].lstrip()
+                    mon.hsync_min, mon.hsync_max = map(float, l[3].strip().split("-"))
+                    mon.vref_min, mon.vref_max = map(float, l[4].strip().split("-"))
 
-        sec = XorgSection("Screen")
-        sec.setValue("Identifier", "Screen0")
-        sec.setValue("Device", "Card0")
-        p.sections.append(sec)
+        # check lcd panel
+        if mon.digital and (cards[adapter].driver in lcd_drivers):
+            queryPanel(mon, cards[adapter])
 
-        open(xorg_conf, "w").write(str(p))
+        monitors.append(mon)
 
-        queryPanel(mon)
-
-    mon.identifier = "Monitor0"
-    monitors.append(mon)
     return monitors
 
 
@@ -758,6 +763,25 @@ class XorgConfig:
 
             self.parser.sections.append(secTouchpad)
 
+    def setupScreens(self):
+        mon0 = self.screens[0].monitor
+        mon1 = self.screens[1].monitor
+
+        if not mon0.probed and mon1.probed:
+            self.screens.reverse()
+
+        i = 0
+        self.devices = []
+        self.monitors = []
+        for scr in self.screens:
+            scr.number = i
+            scr.setup()
+
+            self.devices.append(scr.device)
+            self.monitors.append(scr.monitor)
+
+            i += 1
+
     def addLayouts(self):
         sec = XorgSection("ServerLayout")
 
@@ -822,31 +846,17 @@ def autoConfigure():
     # we need card data to check for lcd displays
     monitors = findMonitors(devices)
 
-    index = len(monitors)
-    while len(devices) > len(monitors):
-        mon = Monitor()
-        mon.identifier = "Monitor%d" % index
-        mon.hsync_min = 31.5
-        mon.hsync_max = 50
-        mon.vref_min = 50
-        mon.vref_max = 70
-        mon.res = ["800x600", "640x480"]
-        monitors.append(mon)
-        index += 1
-
-    for i in xrange(index):
+    for i in xrange(len(monitors)):
         screen = Screen(i, devices[i], monitors[i])
         screen.res = monitors[i].res[0]
-        screen.setup()
 
         config.screens.append(screen)
 
-    config.devices = devices
-    config.monitors = monitors
-
     config.keyboardLayout = queryKeymap()
-
     config.layout = SINGLE_HEAD
+
+    config.setupScreens()
+
     config.save(xorg_conf)
 
 def safeConfigure(driver = "vesa"):
