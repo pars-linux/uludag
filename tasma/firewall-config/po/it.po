@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-26 03:49+0300\n"
+"POT-Creation-Date: 2007-06-25 15:01+0300\n"
 "PO-Revision-Date: 2007-03-17 14:09+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -61,15 +61,20 @@ msgstr "Range porte non valido."
 msgid "Firewall Configuration"
 msgstr "Configurazione firewall"
 
-#: src/firewall-config.py:237
+#: src/firewall-config.py:195
+#, python-format
+msgid "Ports: %s"
+msgstr ""
+
+#: src/firewall-config.py:238
 msgid "&Stop Firewall"
 msgstr "&Ferma il firewall"
 
-#: src/firewall-config.py:238
+#: src/firewall-config.py:239
 msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Il firewall è in esecuzione</font></b>"
 
-#: src/firewall-config.py:240
+#: src/firewall-config.py:241
 msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
@@ -77,15 +82,15 @@ msgstr ""
 "Clicca qui per fermare il firewall e permettere tutte le connessioni in "
 "ingresso e in uscita."
 
-#: src/firewall-config.py:245
+#: src/firewall-config.py:246
 msgid "&Start Firewall"
 msgstr "Avvia fire&wall"
 
-#: src/firewall-config.py:246
+#: src/firewall-config.py:247
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Il firewall non è in esecuzione</font></b>"
 
-#: src/firewall-config.py:248
+#: src/firewall-config.py:249
 msgid ""
 "Click here to start the firewall and allow connections only to specified "
 "services."
@@ -93,15 +98,15 @@ msgstr ""
 "Clicca qui per avviare il firewall e consentire esclusivamente le "
 "connessioni ai servizi specificati."
 
-#: src/firewall-config.py:344
+#: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
 msgstr ""
 
-#: src/firewall-config.py:344
+#: src/firewall-config.py:345
 msgid "Access Denied"
 msgstr ""
 
-#: src/firewall-config.py:438
+#: src/firewall-config.py:439
 msgid "Pardus Firewall Interface is already running!"
 msgstr "L'interfaccia di configurazione del firewall è già in esecuzione!"
 
@@ -109,23 +114,23 @@ msgstr "L'interfaccia di configurazione del firewall è già in esecuzione!"
 msgid "Mail services"
 msgstr "Servizi di posta"
 
-#: src/rules.py:20
+#: src/rules.py:21
 msgid "Web services"
 msgstr "Servizi web"
 
-#: src/rules.py:24
+#: src/rules.py:26
 msgid "Remote login service"
 msgstr "Servizio di login remoto"
 
-#: src/rules.py:32
+#: src/rules.py:35
 msgid "Windows file sharing service"
 msgstr "Servizio di condivisione file con Windows"
 
-#: src/rules.py:36
+#: src/rules.py:40
 msgid "Internet relay chat service"
 msgstr "Servizio di chat IRC"
 
-#: src/rules.py:40
+#: src/rules.py:45
 msgid "File transfer service"
 msgstr "Servizio di trasferimento file"
 
