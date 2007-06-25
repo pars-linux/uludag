@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 11:59+0300\n"
+"POT-Creation-Date: 2007-06-25 14:59+0300\n"
 "PO-Revision-Date: 2007-06-12 21:03+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -29,31 +29,31 @@ msgstr "Dienstbeheer"
 msgid "Service Manager is already started!"
 msgstr "Dienstbeheer is reeds gestart!"
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "You are not allowed to do this operation."
 msgstr "U mag deze handeling niet verrichten."
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "Access Denied"
 msgstr "Toegang geweigerd"
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "COMAR script execution failed."
 msgstr "COMAR script uitvoeren is mislukt."
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "Script Error"
 msgstr "Scriptfout"
 
-#: src/sm_mainview.py:163
+#: src/sm_mainview.py:164
 msgid "Unable to start service"
 msgstr "Dienst kan niet gestart worden"
 
-#: src/sm_mainview.py:166
+#: src/sm_mainview.py:167
 msgid "Unable to stop service"
 msgstr "Dienst kan niet gestopt worden"
 
-#: src/sm_mainview.py:194 src/service_manager.py:106
+#: src/sm_mainview.py:195 src/service_manager.py:106
 msgid "Select a service from list."
 msgstr "Kies een dienst van de lijst."
 
@@ -71,15 +71,7 @@ msgstr "%s is actief."
 msgid "%s is not running."
 msgstr "%s is niet actief."
 
-#: src/sm_mainview.py:214
-msgid "Execute startup script"
-msgstr "Voer een opstartscript uit"
-
-#: src/sm_mainview.py:215
-msgid "Execute shutdown script"
-msgstr "Voer een afsluitscript uit"
-
-#: src/sm_mainview.py:279
+#: src/sm_mainview.py:270
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
@@ -87,7 +79,7 @@ msgstr ""
 "Als u deze dienst stopt, kunt u in de problemen raken.\n"
 "Weet u zeker dat u deze dienst wilt stoppen?"
 
-#: src/sm_mainview.py:283
+#: src/sm_mainview.py:274
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
@@ -127,3 +119,8 @@ msgstr "&Lijst van alleen servers."
 msgid "Alt+L"
 msgstr "ALT+L"
 
+#~ msgid "Execute startup script"
+#~ msgstr "Voer een opstartscript uit"
+
+#~ msgid "Execute shutdown script"
+#~ msgstr "Voer een afsluitscript uit"

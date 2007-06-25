@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 11:59+0300\n"
+"POT-Creation-Date: 2007-06-25 14:59+0300\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -26,31 +26,31 @@ msgstr "Gerenciador de Serviços"
 msgid "Service Manager is already started!"
 msgstr "Gerenciador de Serviços já está executando!"
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "You are not allowed to do this operation."
 msgstr "Você não tem permissão para realizar esta operação."
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "Access Denied"
 msgstr "Acesso Negado"
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "COMAR script execution failed."
 msgstr "Execução do script do COMAR falhou."
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "Script Error"
 msgstr "Erro do Script"
 
-#: src/sm_mainview.py:163
+#: src/sm_mainview.py:164
 msgid "Unable to start service"
 msgstr "Incapaz de iniciar o serviço"
 
-#: src/sm_mainview.py:166
+#: src/sm_mainview.py:167
 msgid "Unable to stop service"
 msgstr "Incapaz de parar o serviço"
 
-#: src/sm_mainview.py:194 src/service_manager.py:106
+#: src/sm_mainview.py:195 src/service_manager.py:106
 msgid "Select a service from list."
 msgstr "Selecione um serviço da lista."
 
@@ -68,15 +68,7 @@ msgstr "%s está executando."
 msgid "%s is not running."
 msgstr "%s não está executando."
 
-#: src/sm_mainview.py:214
-msgid "Execute startup script"
-msgstr "Executar script de inicialização"
-
-#: src/sm_mainview.py:215
-msgid "Execute shutdown script"
-msgstr "Executar script de finalização"
-
-#: src/sm_mainview.py:279
+#: src/sm_mainview.py:270
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
@@ -84,7 +76,7 @@ msgstr ""
 "Se você parar este serviço, você poderá ter problemas.\n"
 "Você tem certeza de que quer parar este serviço?"
 
-#: src/sm_mainview.py:283
+#: src/sm_mainview.py:274
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
@@ -123,3 +115,9 @@ msgstr "&Listar servidores somente."
 #: src/service_manager.py:112
 msgid "Alt+L"
 msgstr "Alt+L"
+
+#~ msgid "Execute startup script"
+#~ msgstr "Executar script de inicialização"
+
+#~ msgid "Execute shutdown script"
+#~ msgstr "Executar script de finalização"
