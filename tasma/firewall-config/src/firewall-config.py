@@ -188,10 +188,11 @@ class MainApplication(programbase):
         mainwidget.frameAdvancedLayout.setAlignment(Qt.AlignTop)
 
         # Populate checkboxes
-        for key, (list_rules, name) in rules.filter.iteritems():
+        for key, (list_rules, name, ports) in rules.filter.iteritems():
             if key.startswith('in'):
                 chk = QCheckBox(mainwidget.frameIncoming, key)
                 chk.setText(i18n(name))
+                QToolTip.add(chk, unicode(i18n("Ports: %s")) % ports)
                 frameIncomingLayout.addWidget(chk)
                 self.incoming.append(chk)
                 self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
