@@ -14,14 +14,17 @@ filter = {
     'inMail': (
         ['-A PARDUS-IN-USER -p tcp -m multiport --dports 25,110 -j ACCEPT'],
         i18n('Mail services'),
+        '25, 110',
     ),
     'inWeb': (
         ['-A PARDUS-IN-USER -p tcp -m multiport --dports 80,443 -j ACCEPT'],
         i18n('Web services'),
+        '80, 443',
     ),
     'inRemote': (
         ['-A PARDUS-IN-USER -p tcp -m multiport --dports 22 -j ACCEPT'],
         i18n('Remote login service'),
+        '22',
     ),
     'inWFS': (
         [
@@ -30,13 +33,16 @@ filter = {
             '-A PARDUS-IN-USER -p udp -m multiport --sports 137:139,445 -j ACCEPT',
         ],
         i18n('Windows file sharing service'),
+        '137, 138, 139, 445',
     ),
     'inIRC': (
         ['-A PARDUS-IN-USER -p tcp -m multiport --dports 6667:6669 -j ACCEPT'],
         i18n('Internet relay chat service'),
+        '6667, 6668, 6669',
     ),
     'inFTP': (
         ['-A PARDUS-IN-USER -p tcp -m multiport --dports 21 -j ACCEPT'],
         i18n('File transfer service'),
+        '21',
     ),
 }
