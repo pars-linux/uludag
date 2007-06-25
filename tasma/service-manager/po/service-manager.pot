@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 11:59+0300\n"
+"POT-Creation-Date: 2007-06-25 14:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,31 +25,31 @@ msgstr ""
 msgid "Service Manager is already started!"
 msgstr ""
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "You are not allowed to do this operation."
 msgstr ""
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "Access Denied"
 msgstr ""
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "COMAR script execution failed."
 msgstr ""
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "Script Error"
 msgstr ""
 
-#: src/sm_mainview.py:163
+#: src/sm_mainview.py:164
 msgid "Unable to start service"
 msgstr ""
 
-#: src/sm_mainview.py:166
+#: src/sm_mainview.py:167
 msgid "Unable to stop service"
 msgstr ""
 
-#: src/sm_mainview.py:194 src/service_manager.py:106
+#: src/sm_mainview.py:195 src/service_manager.py:106
 msgid "Select a service from list."
 msgstr ""
 
@@ -67,21 +67,13 @@ msgstr ""
 msgid "%s is not running."
 msgstr ""
 
-#: src/sm_mainview.py:214
-msgid "Execute startup script"
-msgstr ""
-
-#: src/sm_mainview.py:215
-msgid "Execute shutdown script"
-msgstr ""
-
-#: src/sm_mainview.py:279
+#: src/sm_mainview.py:270
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
 msgstr ""
 
-#: src/sm_mainview.py:283
+#: src/sm_mainview.py:274
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"

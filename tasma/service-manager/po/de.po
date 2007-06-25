@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-03 11:59+0300\n"
+"POT-Creation-Date: 2007-06-25 14:59+0300\n"
 "PO-Revision-Date: 2007-06-18 15:07+0300\n"
 "Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
 "Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
@@ -26,31 +26,31 @@ msgstr "Dienste-Manager"
 msgid "Service Manager is already started!"
 msgstr "Dienste-Manager wird bereits ausgeführt!"
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "You are not allowed to do this operation."
 msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
 
-#: src/sm_mainview.py:152
+#: src/sm_mainview.py:153
 msgid "Access Denied"
 msgstr "Zugang verweigert"
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "COMAR script execution failed."
 msgstr "COMAR-Skriptausführung ist fehlgeschlagen."
 
-#: src/sm_mainview.py:156
+#: src/sm_mainview.py:157
 msgid "Script Error"
 msgstr "Skriptfehler"
 
-#: src/sm_mainview.py:163
+#: src/sm_mainview.py:164
 msgid "Unable to start service"
 msgstr "Dienst kann nicht gestartet werden"
 
-#: src/sm_mainview.py:166
+#: src/sm_mainview.py:167
 msgid "Unable to stop service"
 msgstr "Dienst kann nicht angehalten werden"
 
-#: src/sm_mainview.py:194 src/service_manager.py:106
+#: src/sm_mainview.py:195 src/service_manager.py:106
 msgid "Select a service from list."
 msgstr "Wählen Sie ein Dienst aus der Liste aus."
 
@@ -68,15 +68,7 @@ msgstr "%s ist gestartet."
 msgid "%s is not running."
 msgstr "%s ist angehalten."
 
-#: src/sm_mainview.py:214
-msgid "Execute startup script"
-msgstr "Startskript ausführen"
-
-#: src/sm_mainview.py:215
-msgid "Execute shutdown script"
-msgstr "Herunterfahrskript ausführen"
-
-#: src/sm_mainview.py:279
+#: src/sm_mainview.py:270
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
@@ -84,7 +76,7 @@ msgstr ""
 "Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
 "Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
 
-#: src/sm_mainview.py:283
+#: src/sm_mainview.py:274
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
@@ -124,3 +116,8 @@ msgstr "&Liste nur die Server auf."
 msgid "Alt+L"
 msgstr "Alt+L"
 
+#~ msgid "Execute startup script"
+#~ msgstr "Startskript ausführen"
+
+#~ msgid "Execute shutdown script"
+#~ msgstr "Herunterfahrskript ausführen"
