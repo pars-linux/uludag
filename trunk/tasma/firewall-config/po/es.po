@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-26 03:49+0300\n"
+"POT-Creation-Date: 2007-06-25 15:01+0300\n"
 "PO-Revision-Date: 2007-05-27 17:18-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -62,15 +62,20 @@ msgstr "Rango de puertos inválido."
 msgid "Firewall Configuration"
 msgstr "Configuración de Cortafuegos"
 
-#: src/firewall-config.py:237
+#: src/firewall-config.py:195
+#, python-format
+msgid "Ports: %s"
+msgstr ""
+
+#: src/firewall-config.py:238
 msgid "&Stop Firewall"
 msgstr "&Parar Cortafuegos"
 
-#: src/firewall-config.py:238
+#: src/firewall-config.py:239
 msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Cortafuegos está activo</font></b>"
 
-#: src/firewall-config.py:240
+#: src/firewall-config.py:241
 msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
@@ -78,15 +83,15 @@ msgstr ""
 "Presione aquí para desactivar el cortafuegos y permitir toda clase de "
 "conexiones entrantes y salientes."
 
-#: src/firewall-config.py:245
+#: src/firewall-config.py:246
 msgid "&Start Firewall"
 msgstr "&Iniciar Cortafuegos"
 
-#: src/firewall-config.py:246
+#: src/firewall-config.py:247
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Cortafuegos está desactivado</font></b>"
 
-#: src/firewall-config.py:248
+#: src/firewall-config.py:249
 msgid ""
 "Click here to start the firewall and allow connections only to specified "
 "services."
@@ -94,17 +99,19 @@ msgstr ""
 "Presione aquí para activar el cortafuegos y permitir conexiones solamente a "
 "servicios especificados."
 
-#: src/firewall-config.py:344
+#: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
-msgstr "No tiene permisos suficientes para modificar las propiedades del cortafuegos."
+msgstr ""
+"No tiene permisos suficientes para modificar las propiedades del cortafuegos."
 
-#: src/firewall-config.py:344
+#: src/firewall-config.py:345
 msgid "Access Denied"
 msgstr "Acceso denegado"
 
-#: src/firewall-config.py:438
+#: src/firewall-config.py:439
 msgid "Pardus Firewall Interface is already running!"
-msgstr "Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
+msgstr ""
+"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
 #: src/rules.py:16
 msgid "Mail services"
@@ -112,26 +119,26 @@ msgstr "Servicios de correo"
 
 # (http)
 # (https)
-#: src/rules.py:20
+#: src/rules.py:21
 msgid "Web services"
 msgstr "Servicios de web"
 
 # ... de acseso remoto (rsh)...
-#: src/rules.py:24
+#: src/rules.py:26
 msgid "Remote login service"
 msgstr "Servicios de acceso remoto (rsh)"
 
 # ...con windows (samba)
-#: src/rules.py:32
+#: src/rules.py:35
 msgid "Windows file sharing service"
 msgstr "Servicios de archivos compartidos con windows (samba)"
 
 # (IRC)
-#: src/rules.py:36
+#: src/rules.py:40
 msgid "Internet relay chat service"
 msgstr "Servicios de Internet relay chat (IRC)"
 
-#: src/rules.py:40
+#: src/rules.py:45
 msgid "File transfer service"
 msgstr "Servicios de transferencia de archivos FTP"
 
@@ -151,8 +158,8 @@ msgstr "Alt+S"
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr ""
-"Presione aquí para desactivar el cortafuegos y permitir toda clase de conexiones "
-"entrantes."
+"Presione aquí para desactivar el cortafuegos y permitir toda clase de "
+"conexiones entrantes."
 
 #: src/firewall.py:196
 msgid ""
@@ -243,4 +250,3 @@ msgstr "Aceptar"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rechazar"
-

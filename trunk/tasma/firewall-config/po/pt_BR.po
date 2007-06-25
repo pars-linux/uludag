@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-26 03:49+0300\n"
+"POT-Creation-Date: 2007-06-25 15:01+0300\n"
 "PO-Revision-Date: 2007-02-19 22:24-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -61,15 +61,20 @@ msgstr "Intervalo de portas inválido."
 msgid "Firewall Configuration"
 msgstr "Configuração do Firewall"
 
-#: src/firewall-config.py:237
+#: src/firewall-config.py:195
+#, python-format
+msgid "Ports: %s"
+msgstr ""
+
+#: src/firewall-config.py:238
 msgid "&Stop Firewall"
 msgstr "&Parar Firewall"
 
-#: src/firewall-config.py:238
+#: src/firewall-config.py:239
 msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>O Firewall está executando.</font></b>"
 
-#: src/firewall-config.py:240
+#: src/firewall-config.py:241
 msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
@@ -77,15 +82,15 @@ msgstr ""
 "Clique aqui para parar o firewall e permitir todas as conexões de entrada e "
 "saída."
 
-#: src/firewall-config.py:245
+#: src/firewall-config.py:246
 msgid "&Start Firewall"
 msgstr "&Iniciar Firewall"
 
-#: src/firewall-config.py:246
+#: src/firewall-config.py:247
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>O Firewall não está executando.</font></b>"
 
-#: src/firewall-config.py:248
+#: src/firewall-config.py:249
 msgid ""
 "Click here to start the firewall and allow connections only to specified "
 "services."
@@ -93,15 +98,15 @@ msgstr ""
 "Clique aqui para iniciar o firewall e permitir conexões somente de serviços "
 "especificados."
 
-#: src/firewall-config.py:344
+#: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
 msgstr ""
 
-#: src/firewall-config.py:344
+#: src/firewall-config.py:345
 msgid "Access Denied"
 msgstr ""
 
-#: src/firewall-config.py:438
+#: src/firewall-config.py:439
 msgid "Pardus Firewall Interface is already running!"
 msgstr "A interface do Pardus Firewall já está executando."
 
@@ -109,23 +114,23 @@ msgstr "A interface do Pardus Firewall já está executando."
 msgid "Mail services"
 msgstr "Serviços de email"
 
-#: src/rules.py:20
+#: src/rules.py:21
 msgid "Web services"
 msgstr "Serviços web"
 
-#: src/rules.py:24
+#: src/rules.py:26
 msgid "Remote login service"
 msgstr "Serviço de login remoto"
 
-#: src/rules.py:32
+#: src/rules.py:35
 msgid "Windows file sharing service"
 msgstr "Serviço de compartilhamento de arquivos do Windows"
 
-#: src/rules.py:36
+#: src/rules.py:40
 msgid "Internet relay chat service"
 msgstr "Serviço IRC"
 
-#: src/rules.py:40
+#: src/rules.py:45
 msgid "File transfer service"
 msgstr "Serviço de transferência de arquivos"
 
