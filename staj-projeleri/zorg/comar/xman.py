@@ -5,6 +5,8 @@ import os
 
 from zorg.parser import *
 from zorg.utils import *
+from zorg import ddc
+from zorg import modeline
 
 xorg_conf = "/etc/X11/xorg.conf"
 activeCards = "/etc/X11/activeCards"
@@ -129,7 +131,8 @@ class Device:
 class Monitor:
     def __init__(self):
         self.identifier = None
-        self.wide = 0
+        self.wide = False
+        self.digital = False
         self.panel_w = 0
         self.panel_h = 0
         self.hsync_min = 0
@@ -137,7 +140,7 @@ class Monitor:
         self.vref_min = 0
         self.vref_max = 0
         self.modelines = []
-        self.res = []
+        self.res = ["800x600", "640x480"]
         self.vendorname = "Unknown"
         self.modelname = "Unknown"
         self.eisaid = ""
@@ -265,41 +268,71 @@ def findVideoCards():
         #sys.exit(0)
         return None
 
-def queryDDC():
+def queryDDC(adapter=0):
     mon = Monitor()
 
-    ddc = capture("/usr/sbin/ddcxinfos")
-    if ddc[1] != '':
+    edid = ddc.query(adapter)
+
+    if not edid:
         return mon
 
-    for line in ddc[0].split("\n"):
-        t = line.find("truly")
-        if t != -1:
-            mon.wide = atoi(line[t+6:])
-        t = line.find("EISA ID=")
-        if t != -1:
-            mon.eisaid = line[line.find("EISA ID=")+8:].upper().strip()
-        t = line.find("kHz HorizSync")
-        if t != -1:
-            mon.hsync_min = atoi(line)
-            mon.hsync_max = atoi(line[line.find("-") + 1:])
-        t = line.find("Hz VertRefresh")
-        if t != -1:
-            mon.vref_min = atoi(line)
-            mon.vref_max = atoi(line[line.find("-") + 1:])
-        if line[:8] == "ModeLine":
-            mon.modelines.append("    %s\n" % line)
+    mon.eisaid = edid["eisa_id"]
+    mon.digital = edid["input_digital"]
 
-    if mon.hsync_max == 0 or mon.vref_max == 0:
-        # in case those not probed separately, get them from modelines
-        freqs = filter(lambda x: x.find("hfreq=") != -1, ddc[1])
-        if len(freqs) > 1:
-            line = freqs[0]
-            mon.hsync_min = atoi(line[line.find("hfreq=") + 6:])
-            mon.vref_min = atoi(line[line.find("vfreq=") + 6:])
-            line = freqs[-1]
-            mon.hsync_max = atoi(line[line.find("hfreq=") + 6:])
-            mon.vref_max = atoi(line[line.find("vfreq=") + 6:])
+    detailed = edid["detailed_timing"]
+
+    def nearlyEquals(r1, r2, around):
+        return abs(r1 - r2) < around
+
+    if detailed:
+        try:
+            ratio1 = float(edid["max_size_horizontal"]) / edid["max_size_vertical"]
+            ratio2 = float(detailed["horizontal_image_size"]) / detailed["vertical_image_size"]
+
+            if nearlyEquals(ratio1, ratio2, 0.02):
+                mon.wide = (ratio1 > (4.0 / 3))
+
+        except ZeroDivisionError:
+            ratio1 = 0
+
+        mon.hsync_min, mon.hsync_max = detailed["hsync_range"]
+        mon.vref_min, mon.vref_max = detailed["vref_range"]
+
+        mon.modelines = "" # TODO: Write modelines if needed
+
+        modes = edid["standard_timings"] + edid["established_timings"]
+        res_set = set((x, y) for x, y, z in modes if x > 800 and y > 600)
+        #res = list(res)
+        res = []
+
+        for w, h in list(res_set): # Needs testing
+            r = float(w) / h
+            if nearlyEquals(r, (4.0 / 3), 0.1) \
+                or (ratio1 and nearlyEquals(r, ratio1, 0.2)):
+                res.append((w, h))
+
+        res.sort(reverse=True)
+
+        mon.res[:0] = ["%dx%d" % (x, y) for x, y in res]
+
+        if mon.hsync_max == 0 or mon.vref_max == 0:
+            hfreqs = vfreqs = []
+            for w, h, vfreq in modes:
+                vals = {
+                    "hPix" : w,
+                    "vPix" : h,
+                    "vFreq" : vfreq
+                }
+                m = modeline.ModeLine(vals)
+                hfreqs.append(m["hFreq"] / 1000.0) # in kHz
+                vfreqs.append(m["vFreq"])
+
+            if len(hfreqs) > 2 and len(vfreqs) > 2:
+                hfreqs.sort()
+                vfreqs.sort()
+                mon.hsync_min, mon.hsync_max = hfreqs[0], hfreqs[-1]
+                mon.vref_min, mon.vref_max = vfreqs[0], vfreqs[-1]
+
 
     if mon.eisaid != "":
         for line in loadFile(MonitorsDB):
@@ -315,8 +348,8 @@ def queryDDC():
         if t not in mon.res:
             mon.res[:0] = [t] #= t + " " + mon.res
 
-    if not mon.res:
-        mon.res = ["800x600", "640x480"]
+    #if not mon.res:
+    #    mon.res = ["800x600", "640x480"]
 
     return mon
 
@@ -356,16 +389,24 @@ def queryPanel(mon):
     f.close()
 
     # modelines stuff
-    if not mon.eisaid:
-        if mon.panel_h and mon_panel_w:
-            #mon.modelines = calcModeLine(mon.panel_w, mon.panel_h, 60)
-            mon.res[:0] = ["%dx%d" % (mon.panel_w, mon.panel_h)]
+    #if not mon.eisaid:
+    #    if mon.panel_h and mon_panel_w:
+    #        #mon.modelines = calcModeLine(mon.panel_w, mon.panel_h, 60)
+    #        mon.res[:0] = ["%dx%d" % (mon.panel_w, mon.panel_h)]
+
+    if mon.panel_w > 800 and mon.panel_h > 600:
+        mon.res[:0] = (mon.panel_w, mon.panel_h)
+        #if not mon.eisaid:
+            # FIXME: add modelines here
 
 def findMonitors(cards):
     monitors = []
-    # FIXME: modify ddcxinfos to probe for more monitors
-    # probe monitor freqs, for the first monitor for now
-    mon = queryDDC()
+
+    vbeInfo = ddc.vbeInfo()
+    if vbeInfo:
+        mon = queryDDC()
+    else:
+        mon = Monitor()
 
     # defaults for the case where ddc fails
     if mon.hsync_min == 0 or mon.vref_min == 0:
@@ -375,7 +416,7 @@ def findMonitors(cards):
         mon.vref_max = 70
 
     # check lcd panel
-    if cards[0].driver in lcd_drivers:
+    if mon.digital and (cards[0].driver in lcd_drivers):
         p = XorgParser()
         sec = XorgSection("Device")
         sec.setValue("Identifier", "Card0")
