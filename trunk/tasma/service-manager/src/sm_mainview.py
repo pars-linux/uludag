@@ -46,6 +46,7 @@ class serviceItem(KListViewItem):
             self.setPixmap(0, getIcon('player_play', 16))
         else:
             self.setPixmap(0, QPixmap())
+            self.setText(0, "")
 
     def setAutoStart(self, autostart):
         self.autostart = autostart
@@ -198,27 +199,17 @@ class widgetMain(formMain):
         if not item:
             return
 
-        if item.type in ['server', 'local']:
-            QToolTip.add(self.buttonStart, i18n('Start'))
-            QToolTip.add(self.buttonStop, i18n('Stop'))
+        QToolTip.add(self.buttonStart, i18n('Start'))
+        QToolTip.add(self.buttonStop, i18n('Stop'))
 
-            if item.state:
-                if self.wheel:
-                    self.buttonStop.setEnabled(True)
-                info.append(i18n('%s is running.').replace('%s', item.description))
-            else:
-                if self.wheel:
-                    self.buttonStart.setEnabled(True)
-                info.append(i18n('%s is not running.').replace('%s', item.description))
-        else:
-            QToolTip.add(self.buttonStart, i18n('Execute startup script'))
-            QToolTip.add(self.buttonStop, i18n('Execute shutdown script'))
-
-            info.append(item.description)
-
+        if item.state:
             if self.wheel:
                 self.buttonStop.setEnabled(True)
+            info.append(i18n('%s is running.').replace('%s', item.description))
+        else:
+            if self.wheel:
                 self.buttonStart.setEnabled(True)
+            info.append(i18n('%s is not running.').replace('%s', item.description))
 
         if self.wheel:
             self.radioAutoRun.setEnabled(True)
