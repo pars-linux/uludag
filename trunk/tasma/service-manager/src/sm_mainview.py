@@ -150,7 +150,7 @@ class widgetMain(formMain):
                 # update if neccessary
                 if item.state != state:
                     item.setState(state)
-                    if item == self.listServices.selectedItem():
+                    if item == self.listServices.selectedItem() and reply.id != SERVICE_RESTART1:
                         self.updateItemStatus(item)
                 if reply.id == SERVICE_RESTART1:
                     self.comar.call_package('System.Service.start', reply.script, id=SERVICE_RESTART2)
