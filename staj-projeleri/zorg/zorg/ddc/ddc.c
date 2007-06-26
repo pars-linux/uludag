@@ -93,12 +93,12 @@ get_standard_timings(struct vbe_edid1_info *edid)
 		   ((xres != 0) && (xres != 1)) ||
 		   ((vfreq != 0) && (vfreq != 1))) {
 			switch(edid->standard_timing[j].aspect) {
-				case 0: aspect = 1; break; /*undefined*/
+				case 0: aspect = 0.625; break; /*undefined*/
 				case 1: aspect = 0.750; break;
 				case 2: aspect = 0.800; break;
-				case 3: aspect = 0.625; break;
+				case 3: aspect = 0.5625; break;
 			}
-			x = (xres + 31) * 8;
+			x = xres * 8 + 248;
 			y = x * aspect;
 			timings[i++] = TIMING(x, y, (vfreq & 0x3f) + 60);
 		}
@@ -135,6 +135,8 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 	char	serial[13] = {0};
 	char	ascii[13] = {0};
 	char	name[13] = {0};
+
+	PyObject *flags;
 	
 	for(i = 0; i < 4; i++) {
 		struct vbe_edid_monitor_descriptor *monitor = NULL;
@@ -143,7 +145,7 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 		timing = &edid->monitor_details.detailed_timing[i];
 		monitor = &edid->monitor_details.monitor_descriptor[i];
 
-		if ((monitor->zero_flag_1 != 0) || (monitor->zero_flag_2 != 0)) {
+		if (timing->pixel_clock && (monitor->zero_flag_1 || monitor->zero_flag_2)) {
 			pixel_clock = VBE_EDID_DETAILED_TIMING_PIXEL_CLOCK(*timing);
 			horizontal_active = VBE_EDID_DETAILED_TIMING_HORIZONTAL_ACTIVE(*timing);
 			horizontal_blanking = VBE_EDID_DETAILED_TIMING_HORIZONTAL_BLANKING(*timing);
@@ -156,9 +158,7 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 			himage_size = VBE_EDID_DETAILED_TIMING_HIMAGE_SIZE(*timing);
 			vimage_size = VBE_EDID_DETAILED_TIMING_VIMAGE_SIZE(*timing);
 
-		}
-
-		if (monitor->type == vbe_edid_monitor_descriptor_serial) {
+		} else if (monitor->type == vbe_edid_monitor_descriptor_serial) {
 			snprintf(serial, 13, "%s", strip(monitor->data.string));
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_ascii) {
@@ -172,6 +172,14 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 			hsync_max = monitor->data.range_data.horizontal_max;
 			vref_min = monitor->data.range_data.vertical_min;
 			vref_max = monitor->data.range_data.vertical_max;
+			flags = Py_BuildValue("{s:O,s:O,s:O,s:O,s:O,s:i}",
+				"interlaced",	PyBool_FromLong(timing->flags.interlaced),
+				"stereo",	PyBool_FromLong(timing->flags.stereo),
+				"separate_sync",	PyBool_FromLong(timing->flags.separate_sync),
+				"hsync_positive",	PyBool_FromLong(timing->flags.hsync_positive),
+				"vsync_positive",	PyBool_FromLong(timing->flags.vsync_positive),
+				"stereo_mode",	timing->flags.stereo_mode
+			);
 		}
 	}
 
@@ -191,7 +199,8 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 		"s:s,"		/* ascii_string */
 		"s:s,"		/* name */
 		"s:(i,i),"	/* hsync_range */
-		"s:(i,i)}",	/* vref_range */
+		"s:(i,i),"	/* vref_range */
+		"s:O}",		/* flags */
 
 		"pixel_clock", pixel_clock,
 		"horizontal_active", horizontal_active,
@@ -208,8 +217,8 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 		"ascii_string", ascii,
 		"name", name,
 		"hsync_range", hsync_min, hsync_max,
-		"vref_range", vref_min, vref_max
-	);
+		"vref_range", vref_min, vref_max,
+		"flags", flags);
 }
 
 PyDoc_STRVAR(vbeInfo__doc__,
@@ -266,7 +275,7 @@ ddc_vbeInfo(PyObject *self, PyObject *args)
 		"s:s,"		/* vendor_name */
 		"s:s,"		/* product_name */
 		"s:s,"		/* product_revision */
-		"s:i"		/* memory_size */
+		"s:i,"		/* memory_size */
 		"s:O}",		/* mode_list */
 
 		"signature", vbe_info->signature, 4,
@@ -345,7 +354,6 @@ ddc_query(PyObject *self, PyObject *args)
 		"s:i,"		/* max_size_horizontal */
 		"s:i,"		/* max_size_vertical */
 		"s:f,"		/* gamma */
-		"s:O,"		/* dpms_rgb */
 		"s:O,"		/* dpms_active_off */
 		"s:O,"		/* dpms_suspend */
 		"s:O,"		/* dpms_standby */
@@ -366,7 +374,6 @@ ddc_query(PyObject *self, PyObject *args)
 		"max_size_horizontal", edid->max_size_horizontal,
 		"max_size_vertical", edid->max_size_vertical,
 		"gamma", edid->gamma / 100.0 + 1,
-		"dpms_rgb", PyBool_FromLong(edid->feature_support.rgb),
 		"dpms_active_off", PyBool_FromLong(edid->feature_support.active_off),
 		"dpms_suspend", PyBool_FromLong(edid->feature_support.suspend),
 		"dpms_standby", PyBool_FromLong(edid->feature_support.standby),

@@ -178,9 +178,10 @@ struct vbe_edid_detailed_timing {
 	struct {
 		unsigned char interlaced: 1;
 		unsigned char stereo: 2;
-		unsigned char digital_composite: 2;
-		unsigned char variant: 2;
-		unsigned char zero: 1;
+		unsigned char separate_sync: 2;
+		unsigned char hsync_positive: 1;
+		unsigned char vsync_positive: 1;
+		unsigned char stereo_mode: 1;
 	} flags __attribute__ ((packed));
 } __attribute__ ((packed));
 
@@ -224,20 +225,22 @@ struct vbe_edid1_info {
 	unsigned char version;
 	unsigned char revision;
 	struct {
-		unsigned char separate_sync: 1;
-		unsigned char composite_sync: 1;
+		unsigned char serration_vsync: 1;
 		unsigned char sync_on_green: 1;
-		unsigned char unused: 2;
-		unsigned char voltage_level: 2;
+		unsigned char composite_sync: 1;
+		unsigned char separate_sync: 1;
+		unsigned char blank_to_blank_setup: 1;
+		unsigned char video_level: 2;
 		unsigned char digital: 1;
 	} video_input_definition __attribute__ ((packed));
 	unsigned char max_size_horizontal;
 	unsigned char max_size_vertical;
 	unsigned char gamma;
 	struct {
-		unsigned char unused1: 3;
-		unsigned char rgb: 1;
-		unsigned char unused2: 1;
+		unsigned char default_gtf_supported: 1;
+		unsigned char pereferred_timing_mode: 1;
+		unsigned char standard_color_space: 1;
+		unsigned char display_type: 2;
 		unsigned char active_off: 1;
 		unsigned char suspend: 1;
 		unsigned char standby: 1;
