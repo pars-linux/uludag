@@ -157,6 +157,14 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 			vsync_pulse_width = VBE_EDID_DETAILED_TIMING_VSYNC_PULSE_WIDTH(*timing);
 			himage_size = VBE_EDID_DETAILED_TIMING_HIMAGE_SIZE(*timing);
 			vimage_size = VBE_EDID_DETAILED_TIMING_VIMAGE_SIZE(*timing);
+			flags = Py_BuildValue("{s:O,s:O,s:O,s:O,s:O,s:i}",
+				"interlaced",	PyBool_FromLong(timing->flags.interlaced),
+				"stereo",	PyBool_FromLong(timing->flags.stereo),
+				"separate_sync",	PyBool_FromLong(timing->flags.separate_sync),
+				"hsync_positive",	PyBool_FromLong(timing->flags.hsync_positive),
+				"vsync_positive",	PyBool_FromLong(timing->flags.vsync_positive),
+				"stereo_mode",	timing->flags.stereo_mode
+			);
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_serial) {
 			snprintf(serial, 13, "%s", strip(monitor->data.string));
@@ -172,14 +180,6 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 			hsync_max = monitor->data.range_data.horizontal_max;
 			vref_min = monitor->data.range_data.vertical_min;
 			vref_max = monitor->data.range_data.vertical_max;
-			flags = Py_BuildValue("{s:O,s:O,s:O,s:O,s:O,s:i}",
-				"interlaced",	PyBool_FromLong(timing->flags.interlaced),
-				"stereo",	PyBool_FromLong(timing->flags.stereo),
-				"separate_sync",	PyBool_FromLong(timing->flags.separate_sync),
-				"hsync_positive",	PyBool_FromLong(timing->flags.hsync_positive),
-				"vsync_positive",	PyBool_FromLong(timing->flags.vsync_positive),
-				"stereo_mode",	timing->flags.stereo_mode
-			);
 		}
 	}
 
