@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-25 14:59+0300\n"
+"POT-Creation-Date: 2007-06-26 09:10+0300\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/service-manager.py:30 src/service-manager.py:82
-#: src/service_manager.py:102
+#: src/service_manager.py:108
 msgid "Service Manager"
 msgstr "Gerenciador de Serviços"
 
@@ -26,49 +26,60 @@ msgstr "Gerenciador de Serviços"
 msgid "Service Manager is already started!"
 msgstr "Gerenciador de Serviços já está executando!"
 
-#: src/sm_mainview.py:153
+#: src/sm_mainview.py:161
 msgid "You are not allowed to do this operation."
 msgstr "Você não tem permissão para realizar esta operação."
 
-#: src/sm_mainview.py:153
+#: src/sm_mainview.py:161
 msgid "Access Denied"
 msgstr "Acesso Negado"
 
-#: src/sm_mainview.py:157
+#: src/sm_mainview.py:165
 msgid "COMAR script execution failed."
 msgstr "Execução do script do COMAR falhou."
 
-#: src/sm_mainview.py:157
+#: src/sm_mainview.py:165
 msgid "Script Error"
 msgstr "Erro do Script"
 
-#: src/sm_mainview.py:164
+#: src/sm_mainview.py:171
 msgid "Unable to start service"
 msgstr "Incapaz de iniciar o serviço"
 
-#: src/sm_mainview.py:167
+#: src/sm_mainview.py:174
 msgid "Unable to stop service"
 msgstr "Incapaz de parar o serviço"
 
-#: src/sm_mainview.py:195 src/service_manager.py:106
+#: src/sm_mainview.py:178
+#, fuzzy
+msgid "Unable to restart service"
+msgstr "Incapaz de iniciar o serviço"
+
+#: src/sm_mainview.py:211 src/service_manager.py:112
 msgid "Select a service from list."
 msgstr "Selecione um serviço da lista."
 
-#: src/sm_mainview.py:202 src/service_manager.py:108
+#: src/sm_mainview.py:218 src/service_manager.py:114
+#: src/service_manager.py:116
 msgid "Start"
 msgstr "Iniciar"
 
-#: src/sm_mainview.py:208
+#: src/sm_mainview.py:220
+#, fuzzy
+msgid "Restart"
+msgstr "Iniciar"
+
+#: src/sm_mainview.py:226
 #, python-format
 msgid "%s is running."
 msgstr "%s está executando."
 
-#: src/sm_mainview.py:212
+#: src/sm_mainview.py:230
 #, python-format
 msgid "%s is not running."
 msgstr "%s não está executando."
 
-#: src/sm_mainview.py:270
+#: src/sm_mainview.py:295
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
@@ -76,7 +87,7 @@ msgstr ""
 "Se você parar este serviço, você poderá ter problemas.\n"
 "Você tem certeza de que quer parar este serviço?"
 
-#: src/sm_mainview.py:274
+#: src/sm_mainview.py:299
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
@@ -84,35 +95,35 @@ msgstr ""
 "Se você parar este serviço, você poderá ter problemas.\n"
 "Você tem certeza de que quer parar este serviço?"
 
-#: src/service_manager.py:85 src/service_manager.py:113
+#: src/service_manager.py:91 src/service_manager.py:121
 msgid "1"
 msgstr "1"
 
-#: src/service_manager.py:86 src/service_manager.py:114
+#: src/service_manager.py:92 src/service_manager.py:122
 msgid "Service"
 msgstr "Serviço"
 
-#: src/service_manager.py:87 src/service_manager.py:115
+#: src/service_manager.py:93 src/service_manager.py:123
 msgid "Run on Startup"
 msgstr "Execute Durante Inicialização"
 
-#: src/service_manager.py:88 src/service_manager.py:116
+#: src/service_manager.py:94 src/service_manager.py:124
 msgid "Package"
 msgstr "Pacote"
 
-#: src/service_manager.py:104
+#: src/service_manager.py:110
 msgid "Run on startup."
 msgstr "Execute durante inicialização"
 
-#: src/service_manager.py:105
+#: src/service_manager.py:111
 msgid "Don't run on startup."
 msgstr "Não execute durante inicialização"
 
-#: src/service_manager.py:111
+#: src/service_manager.py:119
 msgid "&List servers only."
 msgstr "&Listar servidores somente."
 
-#: src/service_manager.py:112
+#: src/service_manager.py:120
 msgid "Alt+L"
 msgstr "Alt+L"
 
