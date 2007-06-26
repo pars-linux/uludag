@@ -162,3 +162,48 @@ def calcModeLine(w, h, vfreq):
     vals["vFreq"] = vfreq
     m = ModeLine(vals)
     return m["entry"]
+
+def calcFromEdid(edid):
+    dt = edid["detailed_timing"]
+    hActive = dt["horizontal_active"]
+    vActive = dt["vertical_active"]
+    hBlanking = dt["horizontal_blanking"]
+    vBlanking = dt["vertical_blanking"]
+    pixelClock = dt["pixel_clock"]
+
+    hTotal = hActive + hBlanking
+    vTotal = vActive + vBlanking
+
+    ret = {}
+
+    ret["mode"] = (hActive, vActive)
+    ret["vfreq"] = float(pixelClock) / (hTotal * vTotal)
+    ret["hfreq"] = float(pixelClock) / (hTotal * 1000.0)
+
+    ret["dot_clock"] = pixelClock / 1000000.0
+
+    ret["htimings"] = (hActive, \
+                       hActive + dt["hsync_offset"],\
+                       hActive + dt["hsync_offset"] + dt["hsync_pulse_width"], \
+                       hTotal)
+    ret["vtimings"] = (vActive, \
+                       vActive + dt["vsync_offset"],\
+                       vActive + dt["vsync_offset"] + dt["vsync_pulse_width"], \
+                       vTotal)
+    flags = dt["flags"]
+    ret["flags"] = []
+    if flags["interlaced"] or flags["separate_sync"]:
+        if flags["interlaced"]:
+            ret["flags"].append("Interlace")
+
+        if flags["hsync_positive"]:
+            ret["flags"].append("+HSync")
+        else:
+            ret["flags"].append("-HSync")
+
+        if flags["vsync_positive"]:
+            ret["flags"].append("+VSync")
+        else:
+            ret["flags"].append("-VSync")
+
+    return ret
