@@ -135,28 +135,28 @@ struct vbe_edid_detailed_timing {
 	((_x).pixel_clock * 10000)
 	unsigned char horizontal_active;
 	unsigned char horizontal_blanking;
-	unsigned char horizontal_active_hi: 4;
 	unsigned char horizontal_blanking_hi: 4;
+	unsigned char horizontal_active_hi: 4;
 #define VBE_EDID_DETAILED_TIMING_HORIZONTAL_ACTIVE(_x) \
 	(((_x).horizontal_active_hi << 8) + (_x).horizontal_active)
 #define VBE_EDID_DETAILED_TIMING_HORIZONTAL_BLANKING(_x) \
 	(((_x).horizontal_blanking_hi << 8) + (_x).horizontal_blanking)
 	unsigned char vertical_active;
 	unsigned char vertical_blanking;
-	unsigned char vertical_active_hi: 4;
 	unsigned char vertical_blanking_hi: 4;
+	unsigned char vertical_active_hi: 4;
 #define VBE_EDID_DETAILED_TIMING_VERTICAL_ACTIVE(_x) \
 	(((_x).vertical_active_hi << 8) + (_x).vertical_active)
 #define VBE_EDID_DETAILED_TIMING_VERTICAL_BLANKING(_x) \
 	(((_x).vertical_blanking_hi << 8) + (_x).vertical_blanking)
 	unsigned char hsync_offset;
 	unsigned char hsync_pulse_width;
-	unsigned char vsync_offset: 4;
 	unsigned char vsync_pulse_width: 4;
-	unsigned char hsync_offset_hi: 2;
-	unsigned char hsync_pulse_width_hi: 2;
-	unsigned char vsync_offset_hi: 2;
+	unsigned char vsync_offset: 4;
 	unsigned char vsync_pulse_width_hi: 2;
+	unsigned char vsync_offset_hi: 2;
+	unsigned char hsync_pulse_width_hi: 2;
+	unsigned char hsync_offset_hi: 2;
 #define VBE_EDID_DETAILED_TIMING_HSYNC_OFFSET(_x) \
 	(((_x).hsync_offset_hi << 8) + (_x).hsync_offset)
 #define VBE_EDID_DETAILED_TIMING_HSYNC_PULSE_WIDTH(_x) \
@@ -167,8 +167,8 @@ struct vbe_edid_detailed_timing {
 	(((_x).vsync_pulse_width_hi << 4) + (_x).vsync_pulse_width)
 	unsigned char himage_size;
 	unsigned char vimage_size;
-	unsigned char himage_size_hi: 4;
 	unsigned char vimage_size_hi: 4;
+	unsigned char himage_size_hi: 4;
 #define VBE_EDID_DETAILED_TIMING_HIMAGE_SIZE(_x) \
 	(((_x).himage_size_hi << 8) + (_x).himage_size)
 #define VBE_EDID_DETAILED_TIMING_VIMAGE_SIZE(_x) \
@@ -176,12 +176,12 @@ struct vbe_edid_detailed_timing {
 	unsigned char hborder;
 	unsigned char vborder;
 	struct {
-		unsigned char interlaced: 1;
-		unsigned char stereo: 2;
-		unsigned char separate_sync: 2;
-		unsigned char hsync_positive: 1;
-		unsigned char vsync_positive: 1;
 		unsigned char stereo_mode: 1;
+		unsigned char vsync_positive: 1;
+		unsigned char hsync_positive: 1;
+		unsigned char separate_sync: 2;
+		unsigned char stereo: 2;
+		unsigned char interlaced: 1;
 	} flags __attribute__ ((packed));
 } __attribute__ ((packed));
 
@@ -247,22 +247,23 @@ struct vbe_edid1_info {
 	} feature_support __attribute__ ((packed));
 	unsigned char color_characteristics[10];
 	struct {
-		unsigned char timing_720x400_70: 1;
-		unsigned char timing_720x400_88: 1;
-		unsigned char timing_640x480_60: 1;
-		unsigned char timing_640x480_67: 1;
-		unsigned char timing_640x480_72: 1;
-		unsigned char timing_640x480_75: 1;
-		unsigned char timing_800x600_56: 1;
-		unsigned char timing_800x600_60: 1;
-		unsigned char timing_800x600_72: 1;
-		unsigned char timing_800x600_75: 1;
-		unsigned char timing_832x624_75: 1;
-		unsigned char timing_1024x768_87i: 1;
-		unsigned char timing_1024x768_60: 1;
-		unsigned char timing_1024x768_70: 1;
-		unsigned char timing_1024x768_75: 1;
 		unsigned char timing_1280x1024_75: 1;
+		unsigned char timing_1024x768_75: 1;
+		unsigned char timing_1024x768_70: 1;
+		unsigned char timing_1024x768_60: 1;
+		unsigned char timing_1024x768_87i: 1;
+		unsigned char timing_832x624_75: 1;
+		unsigned char timing_800x600_75: 1;
+		unsigned char timing_800x600_72: 1;
+
+		unsigned char timing_800x600_60: 1;
+		unsigned char timing_800x600_56: 1;
+		unsigned char timing_640x480_75: 1;
+		unsigned char timing_640x480_72: 1;
+		unsigned char timing_640x480_67: 1;
+		unsigned char timing_640x480_60: 1;
+		unsigned char timing_720x400_88: 1;
+		unsigned char timing_720x400_70: 1;
 	} established_timings __attribute__ ((packed));
 	struct {
 		unsigned char timing_1152x870_75: 1;
