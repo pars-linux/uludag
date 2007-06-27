@@ -275,6 +275,7 @@ def queryDDC(adapter=0):
     edid = ddc.query(adapter)
 
     if not edid:
+        mon.probed = False
         return mon
     else:
         mon.probed = True
@@ -282,68 +283,55 @@ def queryDDC(adapter=0):
     mon.eisaid = edid["eisa_id"]
     mon.digital = edid["input_digital"]
 
+    if edid["version"] != 1 and edid["revision"] != 3:
+        return mon
+
     detailed = edid["detailed_timing"]
 
-    def nearlyEquals(r1, r2, around):
-        return abs(r1 - r2) < around
+    mon.hsync_min, mon.hsync_max = detailed["hsync_range"]
+    mon.vref_min, mon.vref_max = detailed["vref_range"]
 
-    if detailed:
-        try:
-            ratio1 = float(edid["max_size_horizontal"]) / edid["max_size_vertical"]
-            ratio2 = float(detailed["horizontal_image_size"]) / detailed["vertical_image_size"]
+    mon.modelines = "" # TODO: Write modelines if needed
 
-            if nearlyEquals(ratio1, ratio2, 0.02):
-                mon.wide = (ratio1 > (4.0 / 3))
+    # FIXME: When subsystem is ready, review these.
 
-        except ZeroDivisionError:
-            ratio1 = 0
+    #modes = edid["standard_timings"] + edid["established_timings"]
 
-        mon.hsync_min, mon.hsync_max = detailed["hsync_range"]
-        mon.vref_min, mon.vref_max = detailed["vref_range"]
+    m = modeline.calcFromEdid(edid)
+    dtmode = m["mode"] + (m["vfreq"],)
 
-        mon.modelines = "" # TODO: Write modelines if needed
+    modes = edid["standard_timings"] + (dtmode,)
 
-        modes = edid["standard_timings"] + edid["established_timings"]
-        res_set = set((x, y) for x, y, z in modes if x > 800 and y > 600)
-        #res = list(res)
-        res = []
+    res = set((x, y) for x, y, z in modes if x > 800 and y > 600)
+    res = list(res)
 
-        for w, h in list(res_set): # Needs testing
-            r = float(w) / h
-            if nearlyEquals(r, (4.0 / 3), 0.1) \
-                or (ratio1 and nearlyEquals(r, ratio1, 0.2)):
-                res.append((w, h))
+    res.sort(reverse=True)
 
-        res.sort(reverse=True)
+    mon.res[:0] = ["%dx%d" % (x, y) for x, y in res]
 
-        mon.res[:0] = ["%dx%d" % (x, y) for x, y in res]
+    if mon.hsync_max == 0 or mon.vref_max == 0:
+        hfreqs = vfreqs = []
+        for w, h, vfreq in modes:
+            vals = {
+                "hPix" : w,
+                "vPix" : h,
+                "vFreq" : vfreq
+            }
+            m = modeline.ModeLine(vals)
+            hfreqs.append(m["hFreq"] / 1000.0) # in kHz
+            vfreqs.append(m["vFreq"])
 
-        if mon.hsync_max == 0 or mon.vref_max == 0:
-            hfreqs = vfreqs = []
-            for w, h, vfreq in modes:
-                vals = {
-                    "hPix" : w,
-                    "vPix" : h,
-                    "vFreq" : vfreq
-                }
-                m = modeline.ModeLine(vals)
-                hfreqs.append(m["hFreq"] / 1000.0) # in kHz
-                vfreqs.append(m["vFreq"])
-
-            if len(hfreqs) > 2 and len(vfreqs) > 2:
-                hfreqs.sort()
-                vfreqs.sort()
-                mon.hsync_min, mon.hsync_max = hfreqs[0], hfreqs[-1]
-                mon.vref_min, mon.vref_max = vfreqs[0], vfreqs[-1]
+        if len(hfreqs) > 2 and len(vfreqs) > 2:
+            hfreqs.sort()
+            vfreqs.sort()
+            mon.hsync_min, mon.hsync_max = hfreqs[0], hfreqs[-1]
+            mon.vref_min, mon.vref_max = vfreqs[0], vfreqs[-1]
 
 
     for m in mon.modelines:
         t = m[m.find("ModeLine"):].split()[1].strip('"')
         if t not in mon.res:
             mon.res[:0] = [t]
-
-    #if not mon.res:
-    #    mon.res = ["800x600", "640x480"]
 
     return mon
 
