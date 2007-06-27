@@ -445,6 +445,171 @@ def getActiveCards():
     else:
         return None
 
+class XConfig:
+    def __init__(self):
+        self._parser = XorgParser()
+
+    def new(self):
+        secModule = XorgSection("Module")
+        modules = ["dbe", "type1", "freetype", "record", "xtrap", "glx", "dri", "v4l", "extmod"]
+        if self.touchpad in touchpadDevices:
+            modules.append("synaptics")
+
+        for module in modules:
+            self.addModule(module)
+
+        extmod = XorgSection("extmod")
+        extmod.options = {"omit xfree86-dga" : unquoted()}
+        secModule.sections = [extmod]
+
+        secdri = XorgSection("dri")
+        secdri.set("Mode", unquoted("0666"))
+
+        secFiles = XorgSection("Files")
+        secFiles.set("RgbPath", "/usr/lib/X11/rgb")
+        fontPaths = (
+            "/usr/share/fonts/misc/",
+            "/usr/share/fonts/dejavu/",
+            "/usr/share/fonts/TTF/",
+            "/usr/share/fonts/freefont/",
+            "/usr/share/fonts/TrueType/",
+            "/usr/share/fonts/corefonts",
+            "/usr/share/fonts/Speedo/",
+            "/usr/share/fonts/Type1/",
+            "/usr/share/fonts/100dpi/",
+            "/usr/share/fonts/75dpi/",
+            "/usr/share/fonts/encodings/",
+        )
+        for fontPath in fontPaths:
+            secFiles.add("FontPath", fontPath)
+
+        secFlags = XorgSection("ServerFlags")
+        secFlags.options = {
+            "AllowMouseOpenFail" : "true",
+            "BlankTime" : "0",
+            "StandbyTime" : "0",
+            "SuspendTime" : "0",
+            "OffTime" : "0"
+        }
+
+        secKeyboard = XorgSection("InputDevice")
+        secKeyboard.set("Identifier", "Keyboard0")
+        secKeyboard.set("Driver", "kbd")
+        secKeyboard.options = {
+            "AutoRepeat" : "500 30",
+            "XkbModel" : "pc105",
+            "XkbLayout" : "trq" # FIXME: query this
+        }
+
+        secMouse = XorgSection("InputDevice")
+        secMouse.set("Identifier", "Mouse0")
+        secMouse.set("Driver", "mouse")
+        secMouse.options = {
+            "Protocol" : "ExplorerPS/2",
+            "Device" : "/dev/input/mice",
+            "ZAxisMapping" : "4 5 6 7",
+            "Buttons" :  "5"
+        }
+
+        self._parser.sections = [
+            secModule,
+            XorgSection("Extensions"),
+            secdri,
+            secFiles,
+            secFlags,
+            secKeyboard,
+            secMouse
+        ]
+
+    def load(self):
+        self._parser.parseFile(xorg_conf)
+
+    def save(self):
+        f = open(fileName, "w")
+        f.write(self._parser.toString())
+        f.close()
+
+    def addModule(self, moduleName):
+        p = self._parser.getSections("Module")[0]
+        p.add("Load", moduleName)
+
+    def modules(self):
+        p = self._parser.getSections("Module")[0]
+        return [e.values[0] for e in p.entries]
+
+    def setFlag(self, flag, value):
+        p = self._parser.getSections("ServerFlags")[0]
+        p.options[flag] = value
+
+    def flags(self):
+        p = self._parser.getSections("ServerFlags")[0]
+        return p.options
+
+    def setKeyboard(self, **options):
+        s = self._parser.getSections("InputDevice")
+        for p in s:
+            if p.get("Driver") == "kbd":
+                p.options.update(options)
+                return
+
+    def keyboardOptions(self):
+        s = self._parser.getSections("InputDevice")
+        for p in s:
+            if p.get("Driver") == "kbd":
+                return p.options
+
+    def setMouse(self, **options):
+        s = self._parser.getSections("InputDevice")
+        for p in s:
+            if p.get("Driver") == "mouse":
+                p.options.update(options)
+                return
+
+    def mouseOptions(self):
+        s = self._parser.getSections("InputDevice")
+        for p in s:
+            if p.get("Driver") == "mouse":
+                return p.options
+
+    def addTouchpad(self, dev_type):
+        if dev_type in touchpadDevices:
+            secTouchpad = XorgSection("InputDevice")
+            secTouchpad.set("Identifier", "Touchpad")
+            secTouchpad.set("Driver", "synaptics")
+            secTouchpad.options = touchpadDevices[dev_type]
+
+            self._parser.sections.append(secTouchpad)
+
+    def setTouchpad(self, dev_type):
+        s = self._parser.getSections("InputDevice")
+        for p in s:
+            if p.get("Driver") == "synaptics":
+                p.options.update(touchpadDevices[dev_type])
+                return
+
+        self.addTouchpad(self, dev_type)
+
+    def touchpadOptions(self):
+        s = self._parser.getSections("InputDevice")
+        for p in s:
+            if p.get("Driver") == "synaptics":
+                return p.options
+
+    def setPrimaryScreen(self):
+        pass
+
+    def setSecondaryScreen(self):
+        pass
+
+    def getPrimaryScreen(self):
+        pass
+
+    def getSecondaryScreen(self)
+        pass
+
+    def finalize(self):
+        pass
+
 class XorgConfig:
     def __init__(self):
         self.devices = []
@@ -886,20 +1051,5 @@ def safeConfigure(driver = "vesa"):
     config.save(xorg_conf)
 
 if __name__ == "__main__":
-    #import pycallgraph
-    #pycallgraph.start_trace()
-
-    #from pyaspects.weaver import *
-    #from pyaspects.debuggeraspect import DebuggerAspect
-    #da = DebuggerAspect()
-    #weave_all_class_methods(da, XorgParser)
-    #weave_all_class_methods(da, XorgSection)
-    #weave_all_class_methods(da, XorgEntry)
-
     #safeConfigure()
     autoConfigure()
-
-    #pycallgraph.stop_trace()
-    #pycallgraph.make_dot_graph("xman.png")
-
-
