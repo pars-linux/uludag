@@ -87,9 +87,8 @@ main(int argc, char *argv[])
 		}
 	}
 
-	dict_load ("sozluk/sözlük.xml");
-	import_belgeler ("sozluk/belgeler_org.xml", "Belgeler.org", "http://www.belgeler.org/");
-	import_csv 	("sozluk/tbd_sozluk.csv", "TDB", "http://www.tdb.org.tr/");
+	import_csv ("sozluk/tbd_sozluk.csv", "TBD", "http://www.tbd.org.tr/");
+	import_csv ("sozluk/en_tr.csv", "İng", "İngilizce-Türkçe sözlük");
 
 	prefs_setup ();
 

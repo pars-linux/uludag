@@ -120,7 +120,7 @@ jabber_connect (void)
 		j_user = iks_id_new (iks_parser_stack (j_parser), buf);
 	}
 	log_event ("Bağlanmayı deniyorum (%s)", j_user->full);
-	iks_set_log_hook (j_parser, (iksLogHook *) on_log);
+	//iks_set_log_hook (j_parser, (iksLogHook *) on_log);
 
 	authorized = 0;
 
