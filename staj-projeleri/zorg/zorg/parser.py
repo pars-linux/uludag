@@ -80,8 +80,8 @@ class XorgSection:
     def __repr__(self):
         return "<XorgSection '%s'>" % self.name
 
-    #def getEntries(self, key):
-    #    return tuple(x for x in self.entries if x.key == key)
+    def getEntries(self, key):
+        return tuple(x for x in self.entries if x.key == key)
 
     def getSections(self, *names):
         return tuple(x for x in self.sections if x.name in names)
@@ -93,14 +93,21 @@ class XorgSection:
         else:
             return defaults
 
+    get = value
+
     def setValue(self, key, *values):
         entry = self.entry(key)
         if entry:
             entry.values = values
         else:
-            entry = XorgEntry(key)
-            entry.values = values
-            self.entries.append(entry)
+            self.add(key, *values)
+
+    set = setValue
+
+    def add(self, key, *values):
+        entry = XorgEntry(key)
+        entry.values = values
+        self.entries.append(values)
 
 class XorgParser:
     def __init__(self):
@@ -158,6 +165,7 @@ class XorgParser:
                 self.sections.append(sec)
             return secs # :)
 
+    #FIXME: Rename this to toString
     def __str__(self):
         s = ""
 
@@ -197,4 +205,6 @@ class XorgParser:
             s += "EndSection\n\n"
 
         return s
+
+    toString = __str__
 
