@@ -107,7 +107,7 @@ class XorgSection:
     def add(self, key, *values):
         entry = XorgEntry(key)
         entry.values = values
-        self.entries.append(values)
+        self.entries.append(entry)
 
 class XorgParser:
     def __init__(self):
