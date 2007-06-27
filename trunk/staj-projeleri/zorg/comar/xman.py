@@ -449,11 +449,15 @@ class XConfig:
     def __init__(self):
         self._parser = XorgParser()
 
+        self._priScreen = None
+        self._secScreen = None
+
+        self.layout = None
+        self.defaultScreen = None
+
     def new(self):
         secModule = XorgSection("Module")
-        modules = ["dbe", "type1", "freetype", "record", "xtrap", "glx", "dri", "v4l", "extmod"]
-        if self.touchpad in touchpadDevices:
-            modules.append("synaptics")
+        modules = ("dbe", "type1", "freetype", "record", "xtrap", "glx", "dri", "v4l", "extmod")
 
         for module in modules:
             self.addModule(module)
@@ -525,7 +529,7 @@ class XConfig:
         self._parser.parseFile(xorg_conf)
 
     def save(self):
-        f = open(fileName, "w")
+        f = open(xorg_conf, "w")
         f.write(self._parser.toString())
         f.close()
 
@@ -595,20 +599,102 @@ class XConfig:
             if p.get("Driver") == "synaptics":
                 return p.options
 
-    def setPrimaryScreen(self):
-        pass
+    def _addDevice(self, dev):
+        sec = XorgSection("Device")
+        sec.set("Screen", 0)
+        sec.set("Identifier", dev.identifier)
+        sec.set("Driver", dev.driver)
+        sec.set("VendorName", dev.vendorName)
+        sec.set("BoardName", dev.boardName)
 
-    def setSecondaryScreen(self):
+        self._parser.sections.append(sec)
+        return sec
+
+    def _addMonitor(self, mon):
+        sec = XorgSection("Monitor")
+        sec.set("Identifier", mon.identifier)
+        sec.set("VendorName", mon.vendorname)
+        sec.set("ModelName", mon.modelname)
+        sec.set("HorizSync", mon.hsync_min, unquoted("-"), mon.hsync_max)
+        sec.set("VertRefresh", mon.vref_min, unquoted("-"), mon.vref_max)
+
+        self._parser.sections.append(sec)
+        return sec
+
+    def _addScreen(self, scr):
+        sec = XorgSection("Screen")
+        sec.set("Identifier", scr.identifier)
+        sec.set("Device", scr.device.identifier)
+        sec.set("Monitor", scr.monitor.identifier)
+        sec.set("DefaultDepth", scr.depth)
+
+        subsec = XorgSection("Display")
+        subsec.set("Depth", scr.depth)
+        #modes = ["%sx%s" % (x, y) for x, y in scr.modes]
+        subsec.set("Modes", *scr.modes)
+
+        sec.sections = [subsec]
+        self._parser.sections.append(sec)
+        return sec
+
+    def setPrimaryScreen(self, screen):
+        dev = screen.device
+        mon = screen.monitor
+
+        secDev = self._addDevice(dev)
+        secMon = self._addMonitor(mon)
+        secScr = self._addScreen(screen)
+
+        self._priScreen = screen
+
+    def setSecondaryScreen(self, screen):
         pass
 
     def getPrimaryScreen(self):
         pass
 
-    def getSecondaryScreen(self)
+    def getSecondaryScreen(self):
         pass
 
     def finalize(self):
-        pass
+        sec = XorgSection("ServerLayout")
+
+        if self.layout == PROBE:
+            sec.set("Identifier", "Configured by zorg for probe")
+            e = XorgEntry()
+            e.key = "Screen"
+            e.values = [0, "Screen0", 0, 0]
+            sec.entries.append(e)
+
+        elif self.layout == SINGLE_HEAD:
+            if self._priScreen:
+                self.defaultScreen = self._priScreen
+            else:
+                self.defaultScreen = self._secScreen
+
+            sec.set("Identifier", "SingleHead")
+            sec.set("Screen", self.defaultScreen.identifier)
+
+            inputDevices = {
+                "Mouse0" : "CorePointer",
+                "Keyboard0" : "CoreKeyboard"
+            }
+            if self.touchpadOptions():
+                self.addModule("synaptics")
+                inputDevices["Touchpad"] = "SendCoreEvents"
+
+            for x, y in inputDevices.items():
+                e = XorgEntry()
+                e.key = "InputDevice"
+                e.values = (x, y)
+                sec.entries.append(e)
+
+            sec.options = {
+                "Xinerama" : "off",
+                "Clone" : "off"
+            }
+
+        self.parser.sections.append(sec)
 
 class XorgConfig:
     def __init__(self):
@@ -1015,20 +1101,15 @@ def autoConfigure():
 def safeConfigure(driver = "vesa"):
     safedrv = driver.upper()
 
-    config = XorgConfig()
-    config.reset()
-
     dev = Device()
     dev.identifier = "VideoCard0"
     dev.boardName = "%s Configured Board" % safedrv
     dev.vendorName = "%s Configured Vendor" % safedrv
     dev.driver = driver
-    config.devices = [dev]
 
     # set failsafe monitor stuff
     mon = Monitor()
     mon.identifier = "Monitor0"
-
     mon.vendorname = "%s Configured Vendor" % safedrv
     mon.modelname = "%s Configured Model" % safedrv
 
@@ -1036,20 +1117,20 @@ def safeConfigure(driver = "vesa"):
     mon.hsync_max = 50
     mon.vref_min = 50
     mon.vref_max = 70
-    mon.res = ["800x600", "640x480"]
-    config.monitors = [mon]
 
     screen = Screen(0, dev, mon)
     screen.identifier = "Screen0"
     screen.depth = 16
     screen.modes = ["800x600", "640x480"]
-    config.screens = [screen]
 
-    config.keyboardLayout = queryKeymap()
+    config = XConfig()
+    config.new()
+    config.setKeyboard(XkbLayout=queryKeymap())
+    config.setPrimaryScreen(screen)
+
     config.layout = SINGLE_HEAD
-
-    config.save(xorg_conf)
+    config.save()
 
 if __name__ == "__main__":
-    #safeConfigure()
-    autoConfigure()
+    safeConfigure()
+    #autoConfigure()
