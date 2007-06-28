@@ -37,7 +37,7 @@ def getWindowsUsers(partition):
     
     if hivefile != "":      # kullanicilari bulmaya calisiyorum
         try:
-            hive = registry.Hive(os.path.join(partition,"Windows/System32/config/SOFTWARE"))
+            hive = registry.Hive(os.path.join(partition, hivefile))
             key = hive.getKey("Microsoft\\Windows NT\\CurrentVersion\\ProfileList")
             subkeys = key.subKeys()
             for subkey in subkeys:
@@ -47,10 +47,12 @@ def getWindowsUsers(partition):
                 path = path.replace("\\", "/")
                 path = os.path.join(partition, path)
                 if os.path.isfile(os.path.join(path, "NTUSER.DAT")):        # bir kullanici buldum
-                    if os.path.isfile(os.path.join(partition, "bootmgr")):
-                        users.append((partition, "Windows Vista", os.path.basename(path), path))
-                    else:
-                        users.append((partition, "Windows XP", os.path.basename(path), path))
+                    username = os.path.basename(path)
+                    if username not in ["LocalService", "NetworkService"]:
+                        if os.path.isfile(os.path.join(partition, "bootmgr")):
+                            users.append((partition, "Windows Vista", username, path))
+                        else:
+                            users.append((partition, "Windows XP", username, path))
         except:     # hata durumunda bir seyler yap
             raise
     

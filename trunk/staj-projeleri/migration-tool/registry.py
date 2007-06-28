@@ -5,14 +5,15 @@ import string
 class Hive:
     "Class for reading windows registry hives"
     def __init__(self, filename):
-        self.__file__ = open(filename)      # open hive file
-        data = self.__file__.read(4096)     # load binary data
-        hivedata = struct.unpack("36s2i4052s", data)        # unpack hive structure
+        hivefile = open(filename)      # open hive file
+        self.data = hivefile.read()
+        hivefile.close()
+        hivedata = struct.unpack("36s2i4052s", self.data[:4096])        # unpack hive structure
         self.__firstKeyIndex__ = hivedata[1]
     
     def firstKey(self):
         "Returns the root key of hive"
-        return Key(self.__file__, self.__firstKeyIndex__ + 4096)
+        return Key(self.data, self.__firstKeyIndex__ + 4096)
     
     def getKey(self, path):
         "Returns the key corresponding to path given"
@@ -31,13 +32,11 @@ class Hive:
 class Key:
     "Class for windows registry keys"
     
-    def __init__(self, thefile, position):
-        self.__file__ = thefile
+    def __init__(self, data, position):
+        self.data = data
         self.__index__ = position
         
-        self.__file__.seek(position)
-        data = self.__file__.read(80)
-        keydata = struct.unpack("19i2h", data)
+        keydata = struct.unpack("19i2h", self.data[position:(position + 80)])
         
         self.numSubKeys = keydata[6]
         lfIndex = keydata[8]
@@ -45,13 +44,13 @@ class Key:
         self.__valueListIndex__ = keydata[11]
         namesize = keydata[19]
         
-        self.name = self.__file__.read(namesize)       # read the name of the key
+        self.name = self.data[(position + 80):(position + 80 + namesize)]      # read the name of the key
         
         self.__children__ = []
-        self.__file__.seek(4096 + lfIndex + 8)
+        position = 4096 + lfIndex
         for x in range(self.numSubKeys):
-            data = self.__file__.read(8)
-            subkeydata = struct.unpack("2i", data)
+            position += 8
+            subkeydata = struct.unpack("2i", self.data[position:(position + 8)])
             subkeyindex = subkeydata[0]
             self.__children__.append(subkeyindex)
         
@@ -59,7 +58,7 @@ class Key:
         "Get subkey by index"
         if (childno < 0) or (childno >= self.numSubKeys):
             raise IndexError, "list index out of range"
-        return Key(self.__file__, self.__children__[childno] + 4096)
+        return Key(self.data, self.__children__[childno] + 4096)
     
     def getSubKey(self, keyname):
         "Get subkey by name"
@@ -81,17 +80,16 @@ class Key:
         "Returns a dictionary of fields and values of the key"
         fields = []
         dictionary = {}
-        self.__file__.seek(4096 + self.__valueListIndex__ + 4)
+        position = 4096 + self.__valueListIndex__ + 4
         
         for x in range(self.numValues):
-            data = self.__file__.read(4)
-            valuedata = struct.unpack("i", data)
+            valuedata = struct.unpack("i", self.data[position:(position + 4)])
             fields.append(valuedata[0])
+            position += 4
         
         for fieldindex in fields:
-            self.__file__.seek(4096 + fieldindex)
-            data = self.__file__.read(24)
-            valuekey = struct.unpack("i2sh3i2h", data)
+            position = 4096 + fieldindex
+            valuekey = struct.unpack("i2sh3i2h", self.data[position:(position + 24)])
             
             vk = valuekey[1]
             namesize = valuekey[2]
@@ -101,9 +99,9 @@ class Key:
             flag = valuekey[5]
             
             if (0 < valtype < 3 and vk == "vk"):        # FIXME: hata kontrolu genisletilebilir
-                field = self.__file__.read(namesize)
-                self.__file__.seek(4096 + dataindex + 4)
-                data = self.__file__.read(datasize)
+                field = self.data[(position + 24):(position + 24 + namesize)]
+                position = 4096 + dataindex + 4
+                data = self.data[position:(position + datasize)]
                 
                 mylist = data.split("\x00")
                 value = "".join(mylist)
