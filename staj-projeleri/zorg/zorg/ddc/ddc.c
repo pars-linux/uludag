@@ -18,7 +18,7 @@
 int
 is_valid(struct vbe_edid1_info *edid)
 {
-	unsigned char sum = 0;
+	char sum = 0;
 	int i = 128;
 
 	while (i--)
@@ -330,14 +330,14 @@ ddc_query(PyObject *self, PyObject *args)
 		return Py_None;
 	}
 
-	/* Some monitors cannot respond immediately. Wait until it is valid. */
-	int i = 100;
+	/* Some monitors cannot respond immediately. Wait for a valid EDID. */
+	int i = 20;
 	while (i--) {
 		if (is_valid(edid))
 			break;
-		usleep(10);
+		usleep(50);
 	}
-	if (i == 0 && !is_valid(edid)) {
+	if (i < 0 && !is_valid(edid)) {
 		Py_INCREF(Py_None);
 		return Py_None;
 	}

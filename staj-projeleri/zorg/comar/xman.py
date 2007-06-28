@@ -769,6 +769,7 @@ def autoConfigure():
     monitor = findMonitors(device, 0)[0]
 
     if not monitor.probed:
+        device.monitors = []
         monitor = findMonitors(device, 1)[0]
 
     screen = Screen(device, monitor)
