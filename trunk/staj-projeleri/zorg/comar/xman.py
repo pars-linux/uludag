@@ -148,9 +148,9 @@ class Monitor:
         self.depth = "16"
 
 class Screen:
-    def __init__(self, number=0, device=None, monitor=None):
+    def __init__(self, device=None, monitor=None):
         self.identifier = None
-        self.number = number
+        self.number = None
         self.device = device
         self.monitor = monitor
         self.depth = 16
@@ -457,6 +457,22 @@ class XConfig:
 
     def new(self):
         secModule = XorgSection("Module")
+        secdri = XorgSection("dri")
+        secFiles = XorgSection("Files")
+        secFlags = XorgSection("ServerFlags")
+        secKeyboard = XorgSection("InputDevice")
+        secMouse = XorgSection("InputDevice")
+
+        self._parser.sections = [
+            secModule,
+            XorgSection("Extensions"),
+            secdri,
+            secFiles,
+            secFlags,
+            secKeyboard,
+            secMouse
+        ]
+
         modules = ("dbe", "type1", "freetype", "record", "xtrap", "glx", "dri", "v4l", "extmod")
 
         for module in modules:
@@ -466,10 +482,8 @@ class XConfig:
         extmod.options = {"omit xfree86-dga" : unquoted()}
         secModule.sections = [extmod]
 
-        secdri = XorgSection("dri")
         secdri.set("Mode", unquoted("0666"))
 
-        secFiles = XorgSection("Files")
         secFiles.set("RgbPath", "/usr/lib/X11/rgb")
         fontPaths = (
             "/usr/share/fonts/misc/",
@@ -487,7 +501,6 @@ class XConfig:
         for fontPath in fontPaths:
             secFiles.add("FontPath", fontPath)
 
-        secFlags = XorgSection("ServerFlags")
         secFlags.options = {
             "AllowMouseOpenFail" : "true",
             "BlankTime" : "0",
@@ -496,7 +509,6 @@ class XConfig:
             "OffTime" : "0"
         }
 
-        secKeyboard = XorgSection("InputDevice")
         secKeyboard.set("Identifier", "Keyboard0")
         secKeyboard.set("Driver", "kbd")
         secKeyboard.options = {
@@ -505,7 +517,6 @@ class XConfig:
             "XkbLayout" : "trq" # FIXME: query this
         }
 
-        secMouse = XorgSection("InputDevice")
         secMouse.set("Identifier", "Mouse0")
         secMouse.set("Driver", "mouse")
         secMouse.options = {
@@ -514,16 +525,6 @@ class XConfig:
             "ZAxisMapping" : "4 5 6 7",
             "Buttons" :  "5"
         }
-
-        self._parser.sections = [
-            secModule,
-            XorgSection("Extensions"),
-            secdri,
-            secFiles,
-            secFlags,
-            secKeyboard,
-            secMouse
-        ]
 
     def load(self):
         self._parser.parseFile(xorg_conf)
@@ -591,7 +592,7 @@ class XConfig:
                 p.options.update(touchpadDevices[dev_type])
                 return
 
-        self.addTouchpad(self, dev_type)
+        self.addTouchpad(dev_type)
 
     def touchpadOptions(self):
         s = self._parser.getSections("InputDevice")
@@ -640,6 +641,9 @@ class XConfig:
     def setPrimaryScreen(self, screen):
         dev = screen.device
         mon = screen.monitor
+
+        screen.number = 0
+        screen.setup()
 
         secDev = self._addDevice(dev)
         secMon = self._addMonitor(mon)
@@ -694,7 +698,7 @@ class XConfig:
                 "Clone" : "off"
             }
 
-        self.parser.sections.append(sec)
+        self._parser.sections.append(sec)
 
 class XorgConfig:
     def __init__(self):
@@ -1056,60 +1060,49 @@ class XorgConfig:
         self.parser.sections.append(sec)
 
 def autoConfigure():
-    config = XorgConfig()
-    config.touchpad = queryTouchpad()
-    config.reset()
-
     # detect graphic card and find monitor of first card
     devices = findVideoCards()
-    for card in devices:
-        card.query()
-
-    if len(devices) == 1:
-        import copy
-        card = copy.deepcopy(devices[0])
-        card.identifier = "VideoCard1"
-        devices.append(card)
-
-    #elif len(devices) > 2:
-    #    devs = []
-    #    for card in devices:
-    #        function = atoi(card.busId.split(":")[-1])
-    #        if function == 0:
-    #            devs.append(card)
-
+    if devices:
+        device = devices[0]
+        device.query()
+    else:
+        return
 
     # save active cards for checking next boots.
     #saveActiveCard(cards)
 
     # we need card data to check for lcd displays
-    monitors = findMonitors(devices)
+    monitors = findMonitors((device, device))
 
-    for i in xrange(len(monitors)):
-        screen = Screen(i, devices[i], monitors[i])
-        screen.res = monitors[i].res[0]
+    if len(monitors) > 1 and \
+        not monitors[0].probed and monitors[1].probed:
+        monitor = monitors[1]
+    else:
+        monitor = monitors[0]
 
-        config.screens.append(screen)
+    screen = Screen(device, monitor)
+    screen.res = monitor.res[0]
 
-    config.keyboardLayout = queryKeymap()
+    config = XConfig()
+    config.new()
+    config.setKeyboard(XkbLayout=queryKeymap())
+    config.setTouchpad(queryTouchpad())
+    config.setPrimaryScreen(screen)
+
     config.layout = SINGLE_HEAD
-
-    config.setupScreens()
-
-    config.save(xorg_conf)
+    config.finalize()
+    config.save()
 
 def safeConfigure(driver = "vesa"):
     safedrv = driver.upper()
 
     dev = Device()
-    dev.identifier = "VideoCard0"
     dev.boardName = "%s Configured Board" % safedrv
     dev.vendorName = "%s Configured Vendor" % safedrv
     dev.driver = driver
 
     # set failsafe monitor stuff
     mon = Monitor()
-    mon.identifier = "Monitor0"
     mon.vendorname = "%s Configured Vendor" % safedrv
     mon.modelname = "%s Configured Model" % safedrv
 
@@ -1118,8 +1111,7 @@ def safeConfigure(driver = "vesa"):
     mon.vref_min = 50
     mon.vref_max = 70
 
-    screen = Screen(0, dev, mon)
-    screen.identifier = "Screen0"
+    screen = Screen(dev, mon)
     screen.depth = 16
     screen.modes = ["800x600", "640x480"]
 
@@ -1129,8 +1121,9 @@ def safeConfigure(driver = "vesa"):
     config.setPrimaryScreen(screen)
 
     config.layout = SINGLE_HEAD
+    config.finalize()
     config.save()
 
 if __name__ == "__main__":
-    safeConfigure()
-    #autoConfigure()
+    #safeConfigure()
+    autoConfigure()
