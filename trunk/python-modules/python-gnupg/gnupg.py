@@ -158,7 +158,7 @@ class GPG:
     def sign(self,message,keyid=None,passphrase=None,clearsign=True):
         """sign message"""
         
-        args = ["--batch", "-sa"]
+        args = ["-sa"]
         if clearsign:
             args.append("--clearsign")
         if keyid:
