@@ -10,6 +10,7 @@ class UserMigration:
         # Tum bulduklarini "sources" sozlugune kaydet
         widget = OptionsWidget(self.sources, self.options)
         self.Apply()
+        print "not implemented yet :)"
     
     def Apply(self):
         # Options sozlugundeki seceneklerin uzerinden gecerek yapilmasi istenen islemleri sirayla uygula
