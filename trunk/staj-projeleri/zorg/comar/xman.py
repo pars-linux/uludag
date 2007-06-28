@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from ConfigParser import RawConfigParser
+from ConfigParser import RawConfigParser, ParsingError
 
 from zorg.parser import *
 from zorg.utils import *
@@ -80,6 +80,7 @@ class Device:
 
         self.busId = ""
         self.pciId = "%s:%s" % (vendorId, deviceId)
+        self.cardId = ""
 
         self.driver = None
         self.vendorName = "Unknown Vendor"
@@ -87,11 +88,8 @@ class Device:
 
         self.monitors = []
 
-    # not needed
-    def __str__(self):
-        return "%s@%s" % (self.pciId, self.busId)
-
     def query(self):
+        self.cardId = "%s:%s@%s" % (self.vendorId, self.deviceId, self.busId)
         self.vendorName, self.boardName = queryPCI(self.vendorId, self.deviceId)
         availableDrivers = listAvailableDrivers()
 
@@ -103,21 +101,17 @@ class Device:
 
         # if could not find driver from driverlist try X -configure
         if not self.driver:
+            print "Running X server to query driver..."
             ret = run("/usr/bin/X", ":1", "-configure", "-logfile", "/var/log/xlog")
             if ret == 0:
                 home = os.getenv("HOME", "")
-                #cfg = XorgConfig()
-                #cfg.parse(home + "/xorg.conf.new")
-                #unlink(home + "/xorg.conf.new")
-                #devs = cfg.devices
-                #if devs:
-                #    self.driver = devs[0].driver
                 p = XorgParser()
                 p.parseFile(home + "/xorg.conf.new")
                 unlink(home + "/xorg.conf.new")
                 sec = p.getSections("Device")
                 if sec:
                     self.driver = sec[0].value("Driver")
+                    print "Driver reported by X server is %s." % self.driver
 
         # use nvidia if nv is found
         if (self.driver == "nv") and ("nvidia" in availableDrivers):
@@ -372,6 +366,7 @@ def queryPanel(mon, card):
         "Detected LCD/plasma panel ("
     ]
 
+    print "Running X server to query panel..."
     a = run("/usr/bin/X", ":1", "-probeonly", "-allowMouseOpenFail", "-logfile", "/var/log/xlog")
     if a != 0:
         return
@@ -392,6 +387,9 @@ def queryPanel(mon, card):
     #    if mon.panel_h and mon_panel_w:
     #        #mon.modelines = calcModeLine(mon.panel_w, mon.panel_h, 60)
     #        mon.res[:0] = ["%dx%d" % (mon.panel_w, mon.panel_h)]
+
+    if mon.panel_w or mon.panel_h:
+        print "Panel size reported by X server is %dx%d." % (mon.panel_w, mon.panel_h)
 
     if mon.panel_w > 800 and mon.panel_h > 600:
         panel_res = "%dx%d" % (mon.panel_w, mon.panel_h)
@@ -700,7 +698,10 @@ class XConfig:
 
 def saveConfig(cfg, cards):
     cp = RawConfigParser()
-    cp.read(zorg_conf)
+    try:
+        cp.read(zorg_conf)
+    except ParsingError:
+        pass
 
     if not cp.has_section("General"):
         cp.add_section("General")
@@ -716,17 +717,17 @@ def saveConfig(cfg, cards):
         if not cp.has_section(sec):
             cp.add_section(sec)
 
-        cp.set(sec, "card", scr.device.busId)
+        cp.set(sec, "card", scr.device.cardId)
         cp.set(sec, "monitor", scr.monitor.identifier)
         cp.set(sec, "resolution", scr.res)
         cp.set(sec, "depth", scr.depth)
 
-    cardNames = [x.busId for x in cards]
+    cardNames = [x.cardId for x in cards]
 
     cp.set("General", "cards", ",".join(cardNames))
 
     for card in cards:
-        sec = card.busId
+        sec = card.cardId
         if not cp.has_section(sec):
             cp.add_section(sec)
 
@@ -791,7 +792,7 @@ def safeConfigure(driver = "vesa"):
     safedrv = driver.upper()
 
     dev = Device()
-    dev.busId = "%s:0:0:0" % safedrv
+    dev.cardId = "0:0@%s:0:0:0" % safedrv
     dev.boardName = "%s Configured Board" % safedrv
     dev.vendorName = "%s Configured Vendor" % safedrv
     dev.driver = driver
@@ -843,36 +844,36 @@ def listCards():
 
     return "\n".join(cards)
 
-def cardInfo(busId):
+def cardInfo(cardId):
     cp = RawConfigParser()
     cp.read(zorg_conf)
 
-    if not cp.has_section(busId):
+    if not cp.has_section(cardId):
         return ""
 
     info = []
     #info.append("identifier=%s" % cp.get(busId, "identifier"))
 
-    name = "%s - %s" % (cp.get(busId, "boardName"), cp.get(busId, "vendorName"))
+    name = "%s - %s" % (cp.get(cardId, "boardName"), cp.get(cardId, "vendorName"))
     info.append("name=%s" % name)
-    info.append("driver=%s" % cp.get(busId, "driver"))
+    info.append("driver=%s" % cp.get(cardId, "driver"))
 
     return "\n".join(info)
 
-def listMonitors(card):
+def listMonitors(cardId):
     cp = RawConfigParser()
     cp.read(zorg_conf)
 
-    if not cp.has_section(card):
+    if not cp.has_section(cardId):
         return ""
 
-    identifiers = cp.get(card, "monitors").split(",")
+    identifiers = cp.get(cardId, "monitors").split(",")
     monitors = []
 
     for monId in identifiers:
         vendorName = cp.get(monId, "vendorName")
         modelName = cp.get(monId, "modelName")
-        monitors.append("%s@%s %s - %s" % (monId, card, modelName, vendorName))
+        monitors.append("%s@%s %s - %s" % (monId, cardId, modelName, vendorName))
 
     return "\n".join(monitors)
 
