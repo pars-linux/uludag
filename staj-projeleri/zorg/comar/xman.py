@@ -295,7 +295,7 @@ def queryDDC(adapter=0):
     # FIXME: When subsystem is ready, review these.
 
     #modes = edid["standard_timings"] + edid["established_timings"]
-    modes = edid["standard_timings"]
+    modes = list(edid["standard_timings"])
 
     m = modeline.calcFromEdid(edid)
     if m:
