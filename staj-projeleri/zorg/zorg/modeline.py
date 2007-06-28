@@ -177,8 +177,11 @@ def calcFromEdid(edid):
     ret = {}
 
     ret["mode"] = (hActive, vActive)
-    ret["vfreq"] = float(pixelClock) / (hTotal * vTotal)
-    ret["hfreq"] = float(pixelClock) / (hTotal * 1000.0)
+    try:
+        ret["vfreq"] = float(pixelClock) / (hTotal * vTotal)
+        ret["hfreq"] = float(pixelClock) / (hTotal * 1000.0)
+    except ZeroDivisionError:
+        return
 
     ret["dot_clock"] = pixelClock / 1000000.0
 
