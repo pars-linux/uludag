@@ -43,12 +43,12 @@ def getWindowsUsers(partition):
             for subkey in subkeys:
                 key2 = key.getSubKey(subkey)
                 path = key2.getValue("ProfileImagePath")
-                path = path.split("\\",1)[1]
-                path = path.replace("\\", "/")
-                path = os.path.join(partition, path)
-                if os.path.isfile(os.path.join(path, "NTUSER.DAT")):        # bir kullanici buldum
-                    username = os.path.basename(path)
-                    if username not in ["LocalService", "NetworkService"]:
+                if key2.getValue("Flags") == 0:
+                    path = path.split("\\",1)[1]
+                    path = path.replace("\\", "/")
+                    path = os.path.join(partition, path)
+                    if os.path.isfile(os.path.join(path, "NTUSER.DAT")):        # bir kullanici buldum
+                        username = os.path.basename(path)
                         if os.path.isfile(os.path.join(partition, "bootmgr")):
                             users.append((partition, "Windows Vista", username, path))
                         else:

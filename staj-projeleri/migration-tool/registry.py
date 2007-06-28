@@ -98,7 +98,7 @@ class Key:
             valtype = valuekey[5]
             flag = valuekey[5]
             
-            if (0 < valtype < 3 and vk == "vk"):        # FIXME: hata kontrolu genisletilebilir
+            if (0 < valtype < 3 and vk == "vk"):        # valuetype = REG_SZ or REG_EXPAND_SZ
                 field = self.data[(position + 24):(position + 24 + namesize)]
                 position = 4096 + dataindex + 4
                 data = self.data[position:(position + datasize)]
@@ -106,6 +106,10 @@ class Key:
                 mylist = data.split("\x00")
                 value = "".join(mylist)
                 dictionary[field] = value
+            
+            if valtype == 4 and vk == "vk":     # valuetype = REG_DWORD
+                field = self.data[(position + 24):(position + 24 + namesize)]
+                dictionary[field] = dataindex
         
         return dictionary
     
