@@ -826,7 +826,7 @@ if __name__ == '__main__':
         print 'Usage: GPG.py <signed file>'
         sys.exit()
 
-    obj = GPGSubprocess()
+    obj = GPG()
     file = open(sys.argv[1], 'rb')
     sig = obj.verify_file( file )
     print sig.__dict__
