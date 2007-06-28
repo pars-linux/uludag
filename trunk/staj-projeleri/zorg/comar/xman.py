@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from ConfigParser import RawConfigParser
 
 from zorg.parser import *
 from zorg.utils import *
@@ -9,6 +10,7 @@ from zorg import ddc
 from zorg import modeline
 
 xorg_conf = "/etc/X11/xorg.conf"
+zorg_conf = "/var/lib/zorg/config"
 activeCards = "/etc/X11/activeCards"
 xorg_off = "/var/run/xorg_off"
 xdriverlist = "/usr/lib/X11/xdriverlist"
@@ -20,9 +22,6 @@ xkb_path = "/usr/share/X11/xkb/symbols/pc"
 truecolor_cards = ["i810", "intel", "nv", "nvidia", "radeon", "fglrx"]
 lcd_drivers = ["nv", "nvidia", "ati", "via", "i810", "intel", "sis", "savage", "neomagic"]
 default_kmap = "trq"
-
-PROBE, SINGLE_HEAD, DUAL_HEAD = 0, 1, 2
-#DH_CLONE, DH_XINERAMA = 0, 1
 
 synapticsOptions = {
     "Protocol" : "auto-dev",
@@ -74,19 +73,19 @@ touchpadDevices = {"synaptics" : synapticsOptions,
                    "alps"      : alpsOptions}
 
 class Device:
-    def __init__(self, vendorId=None, deviceId=None):
+    def __init__(self, vendorId="", deviceId=""):
         self.identifier = None
         self.vendorId = vendorId
         self.deviceId = deviceId
 
-        self.busId = None
+        self.busId = ""
         self.pciId = "%s:%s" % (vendorId, deviceId)
 
         self.driver = None
-        self.vendorName = "Unknown"
-        self.boardName = "Unknown"
+        self.vendorName = "Unknown Vendor"
+        self.boardName = "Unknown Board"
 
-        self.monitors = None
+        self.monitors = []
 
     # not needed
     def __str__(self):
@@ -142,8 +141,8 @@ class Monitor:
         self.vref_max = 0
         self.modelines = []
         self.res = ["800x600", "640x480"]
-        self.vendorname = "Unknown"
-        self.modelname = "Unknown"
+        self.vendorname = "Unknown Vendor"
+        self.modelname = "Unknown Model"
         self.eisaid = ""
         self.depth = "16"
 
@@ -426,6 +425,7 @@ def findMonitors(card, *adapters):
         if mon.digital and (card.driver in lcd_drivers):
             queryPanel(mon, card)
 
+        card.monitors.append(mon)
         monitors.append(mon)
 
     return monitors
@@ -660,14 +660,14 @@ class XConfig:
     def finalize(self):
         sec = XorgSection("ServerLayout")
 
-        if self.layout == PROBE:
+        if self.layout == "probe":
             sec.set("Identifier", "Configured by zorg for probe")
             e = XorgEntry()
             e.key = "Screen"
             e.values = [0, "Screen0", 0, 0]
             sec.entries.append(e)
 
-        elif self.layout == SINGLE_HEAD:
+        elif self.layout == "singleHead":
             if self._priScreen:
                 self.defaultScreen = self._priScreen
             else:
@@ -697,6 +697,64 @@ class XConfig:
 
         self._parser.sections.append(sec)
 
+def saveConfig(cfg, cards):
+    cp = RawConfigParser()
+    cp.read(zorg_conf)
+
+    if not cp.has_section("General"):
+        cp.add_section("General")
+
+    cp.set("General", "serverLayout", cfg.layout)
+    cp.set("General", "defaultScreen", cfg.defaultScreen.identifier)
+
+    for scr in cfg._priScreen, cfg._secScreen:
+        if not scr:
+            continue
+
+        sec = scr.identifier
+        if not cp.has_section(sec):
+            cp.add_section(sec)
+
+        cp.set(sec, "card", scr.device.busId)
+        cp.set(sec, "monitor", scr.monitor.identifier)
+        cp.set(sec, "resolution", scr.res)
+        cp.set(sec, "depth", scr.depth)
+
+    cardNames = [x.busId for x in cards]
+
+    cp.set("General", "cards", ",".join(cardNames))
+
+    for card in cards:
+        sec = card.busId
+        if not cp.has_section(sec):
+            cp.add_section(sec)
+
+        cp.set(sec, "pciId", card.pciId)
+        #cp.set(sec, "busId", card.busId)
+        cp.set(sec, "vendorName", card.vendorName)
+        cp.set(sec, "boardName", card.boardName)
+        cp.set(sec, "driver", card.driver)
+        monitorNames = [x.identifier for x in card.monitors]
+        cp.set(sec, "monitors", ",".join(monitorNames))
+
+        for mon in card.monitors:
+            sec = mon.identifier
+            if not cp.has_section(sec):
+                cp.add_section(sec)
+
+            cp.set(sec, "probed", mon.probed)
+            cp.set(sec, "digital", mon.digital)
+            cp.set(sec, "hsync", "%s-%s" % (mon.hsync_min, mon.hsync_max))
+            cp.set(sec, "vref", "%s-%s" % (mon.vref_min, mon.vref_max))
+            cp.set(sec, "resolutions", ",".join(mon.res))
+            cp.set(sec, "eisaid", mon.eisaid)
+            cp.set(sec, "vendorName", mon.vendorname)
+            cp.set(sec, "modelName", mon.modelname)
+
+    f = file(zorg_conf, "w")
+    cp.write(f)
+    f.close()
+
 def autoConfigure():
     # detect graphic card and find monitor of first card
     devices = findVideoCards()
@@ -705,9 +763,6 @@ def autoConfigure():
         device.query()
     else:
         return
-
-    # save active cards for checking next boots.
-    #saveActiveCard(cards)
 
     # we need card data to check for lcd displays
     monitor = findMonitors(device, 0)[0]
@@ -724,14 +779,17 @@ def autoConfigure():
     config.setTouchpad(queryTouchpad())
     config.setPrimaryScreen(screen)
 
-    config.layout = SINGLE_HEAD
+    config.layout = "singleHead"
     config.finalize()
     config.save()
+
+    saveConfig(config, devices)
 
 def safeConfigure(driver = "vesa"):
     safedrv = driver.upper()
 
     dev = Device()
+    dev.busId = "%s:0:0:0" % safedrv
     dev.boardName = "%s Configured Board" % safedrv
     dev.vendorName = "%s Configured Vendor" % safedrv
     dev.driver = driver
@@ -745,6 +803,7 @@ def safeConfigure(driver = "vesa"):
     mon.hsync_max = 50
     mon.vref_min = 50
     mon.vref_max = 70
+    dev.monitors = [mon]
 
     screen = Screen(dev, mon)
     screen.depth = 16
@@ -755,10 +814,84 @@ def safeConfigure(driver = "vesa"):
     config.setKeyboard(XkbLayout=queryKeymap())
     config.setPrimaryScreen(screen)
 
-    config.layout = SINGLE_HEAD
+    config.layout = "singleHead"
     config.finalize()
     config.save()
+
+    saveConfig(config, [dev])
+
+def listCards():
+    cp = RawConfigParser()
+    cp.read(zorg_conf)
+
+    if not cp.has_option("General", "cards"):
+        return ""
+
+    cardNames = cp.get("General", "cards").split(",")
+
+    cards = []
+    for cardName in cardNames:
+        if not cp.has_section(cardName):
+            continue # zorg.conf is broken
+
+        #busId = cp.get(cardName, "busid")
+        vendorName = cp.get(cardName, "vendorName")
+        boardName = cp.get(cardName, "boardName")
+        cards.append("%s %s - %s" % (cardName, boardName, vendorName))
+
+    return "\n".join(cards)
+
+def cardInfo(busId):
+    cp = RawConfigParser()
+    cp.read(zorg_conf)
+
+    if not cp.has_section(busId):
+        return ""
+
+    info = []
+    #info.append("identifier=%s" % cp.get(busId, "identifier"))
+
+    name = "%s - %s" % (cp.get(busId, "boardName"), cp.get(busId, "vendorName"))
+    info.append("name=%s" % name)
+    info.append("driver=%s" % cp.get(busId, "driver"))
+
+    return "\n".join(info)
+
+def listMonitors(card):
+    cp = RawConfigParser()
+    cp.read(zorg_conf)
+
+    if not cp.has_section(card):
+        return ""
+
+    identifiers = cp.get(card, "monitors").split(",")
+    monitors = []
+
+    for monId in identifiers:
+        vendorName = cp.get(monId, "vendorName")
+        modelName = cp.get(monId, "modelName")
+        monitors.append("%s@%s %s - %s" % (monId, card, modelName, vendorName))
+
+    return "\n".join(monitors)
+
+def monitorInfo(identifier):
+    cp = RawConfigParser()
+    cp.read(zorg_conf)
+
+    if not cp.has_section(identifier):
+        return ""
+
+    info = []
+    name = "%s - %s" % (cp.get(identifier, "modelName"), cp.get(identifier, "vendorName"))
+    info.append("name=%s" % name)
+    info.append("resolutions=%s" % cp.get(identifier, "resolutions"))
+
+    return "\n".join(info)
 
 if __name__ == "__main__":
     #safeConfigure()
     autoConfigure()
+    #print listCards()
+    #print cardInfo("PCI:0:5:0")
+    #print listMonitors("PCI:0:5:0")
+    print monitorInfo("Monitor0")
