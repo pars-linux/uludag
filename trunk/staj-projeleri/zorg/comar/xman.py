@@ -295,11 +295,12 @@ def queryDDC(adapter=0):
     # FIXME: When subsystem is ready, review these.
 
     #modes = edid["standard_timings"] + edid["established_timings"]
+    modes = edid["standard_timings"]
 
     m = modeline.calcFromEdid(edid)
-    dtmode = m["mode"] + (m["vfreq"],)
-
-    modes = edid["standard_timings"] + (dtmode,)
+    if m:
+        dtmode = m["mode"] + (m["vfreq"],)
+        modes.append(dtmode)
 
     res = set((x, y) for x, y, z in modes if x > 800 and y > 600)
     res = list(res)
