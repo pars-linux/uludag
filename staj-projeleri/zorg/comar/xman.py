@@ -400,13 +400,10 @@ def queryPanel(mon, card):
         #if not mon.eisaid:
             # FIXME: add modelines here
 
-def findMonitors(cards):
+def findMonitors(card, *adapters):
     monitors = []
 
-    # vbeInfo = ddc.vbeInfo()
-    # Maybe we can learn the maximum resolution from vbeInfo["mode_list"] ?
-
-    for adapter in xrange(len(cards)):
+    for adapter in adapters:
         mon = queryDDC(adapter)
 
         # defaults for the case where ddc fails
@@ -426,8 +423,8 @@ def findMonitors(cards):
                     mon.vref_min, mon.vref_max = map(float, l[4].strip().split("-"))
 
         # check lcd panel
-        if mon.digital and (cards[adapter].driver in lcd_drivers):
-            queryPanel(mon, cards[adapter])
+        if mon.digital and (card.driver in lcd_drivers):
+            queryPanel(mon, card)
 
         monitors.append(mon)
 
@@ -1072,13 +1069,10 @@ def autoConfigure():
     #saveActiveCard(cards)
 
     # we need card data to check for lcd displays
-    monitors = findMonitors((device, device))
+    monitor = findMonitors(device, 0)[0]
 
-    if len(monitors) > 1 and \
-        not monitors[0].probed and monitors[1].probed:
-        monitor = monitors[1]
-    else:
-        monitor = monitors[0]
+    if not monitor.probed:
+        monitor = findMonitors(device, 1)[0]
 
     screen = Screen(device, monitor)
     screen.res = monitor.res[0]
