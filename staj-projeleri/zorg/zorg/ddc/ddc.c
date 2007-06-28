@@ -15,6 +15,18 @@
 
 #define TIMING(x, y, z) Py_BuildValue("iii", x, y, z)
 
+int
+is_valid(struct vbe_edid1_info *edid)
+{
+	unsigned char sum = 0;
+	int i = 128;
+
+	while (i--)
+		sum += *((char *)edid + i);
+
+	return sum == 0;
+}
+
 /* Strips the 13-bytes buffer */
 char *
 strip(char *s)
@@ -314,6 +326,18 @@ ddc_query(PyObject *self, PyObject *args)
 	}
 	
 	if ((edid = vbe_get_edid_info(adapter)) == NULL) {
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+
+	/* Some monitors cannot respond immediately. Wait until it is valid. */
+	int i = 100;
+	while (i--) {
+		if (is_valid(edid))
+			break;
+		usleep(10);
+	}
+	if (i == 0 && !is_valid(edid)) {
 		Py_INCREF(Py_None);
 		return Py_None;
 	}
