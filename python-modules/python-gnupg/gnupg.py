@@ -1,4 +1,4 @@
-""" A wrapper for the 'gpg' command.  
+""" A wrapper for the 'gpg' command.
 
 We're wrapping gpg instead of using, for example, cryptlib, in order
 to reduce dependencies and cut down on the amount of code which
@@ -11,7 +11,7 @@ large blobs like install images with ISconf, this will likely have to
 change.
 
 This is a generic wrapper and is not ISconf-specific -- feel free to
-use it in your own applications, and see the pycrypto license below.  
+use it in your own applications, and see the pycrypto license below.
 
 Portions of this module are derived from A.M. Kuchling's well-designed
 GPG.py, using Richard Jones' updated version 1.3, which can be found
@@ -52,7 +52,7 @@ _______________________ pycrypto LICENSE file ends __________________________
 Steve Traugott, stevegt@terraluna.org
 Thu Jun 23 21:27:20 PDT 2005
 
-    
+
 """
 
 import os
@@ -64,11 +64,11 @@ class GPG:
     def __init__(self, gpgbinary='gpg', gnupghome=None, verbose=False):
         """Initialize a GPG process wrapper.  Options are:
 
-        gpgbinary -- full pathname for GPG binary.  
+        gpgbinary -- full pathname for GPG binary.
 
         gnupghome -- full pathname to where we can find the public and
         private keyrings.  Default is whatever gpg defaults to.
-    
+
         >>> gpg = GPG(gnupghome="/tmp/pygpgtest")
 
         """
@@ -91,7 +91,7 @@ class GPG:
 
         cmd.extend(args)
         cmd = ' '.join(cmd)
-        if self.verbose: 
+        if self.verbose:
             print cmd
 
         child_stdout, child_stdin, child_stderr, child_pass = \
@@ -104,7 +104,7 @@ class GPG:
     def _read_response(self, child_stderr, response):
         # Internal method: reads all the output from GPG, taking notice
         # only of lines that begin with the magic [GNUPG:] prefix.
-        # 
+        #
         # Calls methods on the response object for each valid token found,
         # with the arg being the remainder of the status line.
         response.stderr = ''
@@ -143,7 +143,7 @@ class GPG:
         self._read_data(child_stdout, result)
 
         return result
-    
+
     def _read_data(self,child_stdout,result):
         # Read the contents of the file from GPG's stdout
         result.data = ""
@@ -151,13 +151,13 @@ class GPG:
             data = child_stdout.read(1024)
             if data == "": break
             result.data = result.data + data
-    
+
     #
     # SIGNATURE METHODS
     #
     def sign(self,message,keyid=None,passphrase=None,clearsign=True):
         """sign message"""
-        
+
         args = ["-sa"]
         if clearsign:
             args.append("--clearsign")
@@ -172,14 +172,14 @@ class GPG:
         self._read_response(child_stderr, result)
         self._read_data(child_stdout, result)
         return result
-        
+
     def verify(self, data):
         """Verify the signature on the contents of the string 'data'
 
         >>> gpg = GPG(gnupghome="/tmp/pygpgtest")
         >>> input = gpg.gen_key_input(Passphrase='foo')
         >>> key = gpg.gen_key(input)
-        >>> assert key 
+        >>> assert key
         >>> sig = gpg.sign('hello',keyid=key.fingerprint,passphrase='bar')
         >>> assert not sig
         >>> sig = gpg.sign('hello',keyid=key.fingerprint,passphrase='foo')
@@ -191,7 +191,7 @@ class GPG:
 
         file = StringIO.StringIO(data)
         return self.verify_file(file)
-    
+
     def verify_file(self, file):
         "Verify the signature on the contents of the file-like object 'file'"
         sig = Verify()
@@ -203,7 +203,7 @@ class GPG:
     #
 
     def import_key(self, key_data):
-        """ import the key_data into our keyring 
+        """ import the key_data into our keyring
 
         >>> import shutil
         >>> shutil.rmtree("/tmp/pygpgtest")
@@ -280,7 +280,7 @@ class GPG:
         return child_stdout.read()
 
     def list_keys(self,secret=False):
-        """ list the keys currently in the keyring 
+        """ list the keys currently in the keyring
 
         >>> import shutil
         >>> shutil.rmtree("/tmp/pygpgtest")
@@ -293,7 +293,7 @@ class GPG:
         >>> pubkeys = gpg.list_keys()
         >>> assert print1 in pubkeys.fingerprints
         >>> assert print2 in pubkeys.fingerprints
-        
+
         """
 
         which='keys'
@@ -327,14 +327,14 @@ class GPG:
     def gen_key(self,input):
         """Generate a key; you might use gen_key_input() to create the
         control input.
-        
+
         >>> gpg = GPG(gnupghome="/tmp/pygpgtest")
         >>> input = gpg.gen_key_input()
         >>> result = gpg.gen_key(input)
-        >>> assert result 
+        >>> assert result
         >>> result = gpg.gen_key('foo')
-        >>> assert not result 
-        
+        >>> assert not result
+
         """
         args = ["--gen-key --batch"]
         result = GenKey()
@@ -365,7 +365,7 @@ class GPG:
             out += "%s: %s\n" % (key, str(val))
         out += "%commit\n"
         return out
-        
+
         # Key-Type: RSA
         # Key-Length: 1024
         # Name-Real: ISdlink Server on %s
@@ -393,7 +393,7 @@ class GPG:
         """import a set of keys, but only if filter(fingerprint)
         is true for all of them
 
-        XXX test filter 
+        XXX test filter
 
         """
         args = "--with-fingerprint --with-colons" % self.path
@@ -425,7 +425,7 @@ class GPG:
     #
     # ENCRYPTION
     #
-    def encrypt_file(self, file, recipients, sign=None, 
+    def encrypt_file(self, file, recipients, sign=None,
             always_trust=False, passphrase=None):
         "Encrypt the message read from the file-like object 'file'"
         args = ['--encrypt --armor']
@@ -445,7 +445,7 @@ class GPG:
         """Encrypt the message contained in the string 'data'
 
         >>> import shutil
-        >>> if os.path.exists("/tmp/pygpgtest"): 
+        >>> if os.path.exists("/tmp/pygpgtest"):
         ...     shutil.rmtree("/tmp/pygpgtest")
         >>> gpg = GPG(gnupghome="/tmp/pygpgtest")
         >>> input = gpg.gen_key_input(passphrase='foo')
@@ -541,7 +541,7 @@ class Verify:
 
     def is_valid(self):
         return self.valid
- 
+
 class ImportResult:
     "Used to hold information about a key import result"
 
@@ -554,7 +554,7 @@ class ImportResult:
         self.fingerprints = []
         for result in self.counts:
             setattr(self, result, None)
-    
+
     def __nonzero__(self):
         if self.not_imported: return 0
         if not self.fingerprints: return 0
@@ -652,7 +652,7 @@ class ListKeys(list):
         # fpr:::::::::3324C8D0D1196A6CB497ABD6D694CE9742ABDCE6:
         self.curkey['fingerprint'] = args[9]
         self.fingerprints.append(args[9])
-        
+
     def uid(self, args):
         self.curkey['uids'].append(args[9])
 
@@ -671,34 +671,34 @@ class Crypt(Verify):
         return self.data
     def ENC_TO(self, value): pass
     def USERID_HINT(self, value): pass
-    def NEED_PASSPHRASE(self, value): 
+    def NEED_PASSPHRASE(self, value):
         self.status = 'need passphrase'
-    def BAD_PASSPHRASE(self, value): 
+    def BAD_PASSPHRASE(self, value):
         self.status = 'bad passphrase'
-    def GOOD_PASSPHRASE(self, value): 
+    def GOOD_PASSPHRASE(self, value):
         self.status = 'good passphrase'
-    def BEGIN_DECRYPTION(self, value): 
+    def BEGIN_DECRYPTION(self, value):
         self.status = self.status or 'decryption incomplete'
-    def DECRYPTION_FAILED(self, value): 
+    def DECRYPTION_FAILED(self, value):
         self.status = self.status or 'decryption failed'
-    def DECRYPTION_OKAY(self, value): 
+    def DECRYPTION_OKAY(self, value):
         self.status = 'decryption ok'
         self.ok = True
     def GOODMDC(self, value): pass
     def END_DECRYPTION(self, value): pass
 
-    def BEGIN_ENCRYPTION(self, value): 
+    def BEGIN_ENCRYPTION(self, value):
         self.status = self.status or 'encryption incomplete'
-    def END_ENCRYPTION(self, value): 
+    def END_ENCRYPTION(self, value):
         self.status = 'encryption ok'
         self.ok = True
-    def INV_RECP(self, value): 
+    def INV_RECP(self, value):
         self.status = 'invalid recipient'
-    def KEYEXPIRED(self, value): 
+    def KEYEXPIRED(self, value):
         self.status = 'key expired'
-    def SIG_CREATED(self, value): 
+    def SIG_CREATED(self, value):
         self.status = 'sig expired'
-    def SIGEXPIRED(self, value): 
+    def SIGEXPIRED(self, value):
         self.status = 'sig expired'
 
 
@@ -747,7 +747,7 @@ import types
 class PopenHi:
     """derived from open2.Popen3, but opens a fourth, high-numbered
     fd for input to the child
-    
+
     """
 
     try:
