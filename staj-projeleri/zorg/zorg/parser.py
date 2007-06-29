@@ -86,23 +86,19 @@ class XorgSection:
     def getSections(self, *names):
         return tuple(x for x in self.sections if x.name in names)
 
-    def value(self, key, index = 0, *defaults):
+    def get(self, key, index = 0, *defaults):
         entry = self.entry(key)
         if entry:
             return entry.values[index]
         else:
             return defaults
 
-    get = value
-
-    def setValue(self, key, *values):
+    def set(self, key, *values):
         entry = self.entry(key)
         if entry:
             entry.values = values
         else:
             self.add(key, *values)
-
-    set = setValue
 
     def add(self, key, *values):
         entry = XorgEntry(key)
@@ -165,8 +161,7 @@ class XorgParser:
                 self.sections.append(sec)
             return secs # :)
 
-    #FIXME: Rename this to toString
-    def __str__(self):
+    def toString(self):
         s = ""
 
         def writeSection(sect, dep):
@@ -205,6 +200,3 @@ class XorgParser:
             s += "EndSection\n\n"
 
         return s
-
-    toString = __str__
-
