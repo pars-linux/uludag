@@ -730,7 +730,7 @@ def saveConfig(cfg, cards=[]):
         zconfig.setSection(sec)
 
         zconfig.set("pciId", card.pciId)
-        #zconfig.set("busId", card.busId)
+        zconfig.set("busId", card.busId)
         zconfig.set("vendorName", card.vendorName)
         zconfig.set("boardName", card.boardName)
         zconfig.set("driver", card.driver)
@@ -892,12 +892,48 @@ def monitorInfo(identifier):
     return "\n".join(info)
 
 def addMonitor(data):
-    pass
+    zconfig = ZorgConfig()
+
+    numbers = set(atoi(lremove(x, "Monitor")) for x in zconfig.cp.sections() if x.startswith("Monitor"))
+    numbers = list(set(xrange(len(numbers) + 1)) - numbers)
+    numbers.sort()
+    number = numbers[0]
+
+    info = dict(x.split("=", 1) for x in data.strip().splitlines())
+
+    zconfig.setSection("Monitor%d" % number)
+    keys = ("modelname", "vendorname", "probed", "eisaid", "digital", \
+            "hsync_min", "hsync_max", "vref_min", "vref_max", "resolutions")
+
+    for key, value in info.items():
+        if key.lower() not in keys:
+            continue
+
+        zconfig.set(key, value)
+
+    zconfig.write()
 
 def removeMonitor(monitorId):
-    pass
+    zconfig = ZorgConfig()
+
+    if not zconfig.hasSection(monitorId):
+        return
+
+    zconfig.cp.remove_section(monitorId)
+    zconfig.write()
 
 def probeMonitors():
+    zconfig = ZorgConfig()
+
+    cards = zconfig.get("cards").split(",")
+
+    for card in cards:
+        if not zconfig.hasSection(card):
+            continue
+
+        # Not implemented yet
+
+def installINF(filePath):
     pass
 
 def getScreens():
@@ -977,7 +1013,7 @@ def setScreens(screens):
 
 if __name__ == "__main__":
     #safeConfigure()
-    autoConfigure()
+    #autoConfigure()
     print listCards()
     print cardInfo("PCI:0:5:0")
     print listMonitors("PCI:0:5:0")
@@ -995,3 +1031,14 @@ resolution=1024x768
 depth=16
 
 """)
+
+    addMonitor("""
+hsync_min=30
+hsync_max=60
+vref_min=50
+vref_max=75
+vendorname=VENDOR
+modelname=MODEL
+""")
+
+    removeMonitor("Monitor2")
