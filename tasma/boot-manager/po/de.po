@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 19:34+0300\n"
+"POT-Creation-Date: 2007-06-29 19:27+0300\n"
 "PO-Revision-Date: 2007-06-18 14:53+0300\n"
 "Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
 "Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
@@ -33,72 +33,106 @@ msgstr ""
 msgid "Boot Manager is already started!"
 msgstr "Boot-Manager ist bereits gestartet worden!"
 
-#: src/mainview.py:35
+#: src/mainview.py:36
 msgid "New Entry"
 msgstr "Neuer Eintrag"
 
-#: src/mainview.py:55
+#: src/mainview.py:41
+msgid "Unused Kernels"
+msgstr ""
+
+#: src/mainview.py:61
 msgid "Remember last booted entry."
 msgstr ""
 
-#: src/mainview.py:62
+#: src/mainview.py:68
 msgid "Timeout:"
 msgstr ""
 
-#: src/mainview.py:115
+#: src/mainview.py:124
 msgid "Title:"
 msgstr "Titel:"
 
-#: src/mainview.py:123
+#: src/mainview.py:132
 msgid "System:"
 msgstr "System:"
 
-#: src/mainview.py:133
+#: src/mainview.py:142
 msgid "Root:"
 msgstr "Root:"
 
-#: src/mainview.py:142
+#: src/mainview.py:151
 msgid "Kernel:"
 msgstr "Kernel:"
 
-#: src/mainview.py:151
+#: src/mainview.py:160
 msgid "Kernel Parameters:"
 msgstr "Kernel-Parameter:"
 
-#: src/mainview.py:160
+#: src/mainview.py:169
 msgid "Initial Ramdisk:"
 msgstr "RAM-Disk initialisieren"
 
-#: src/mainview.py:169
+#: src/mainview.py:178
 msgid "Set as default boot entry."
 msgstr "Als Standard-Booteintrag setzen"
 
-#: src/mainview.py:233
+#: src/mainview.py:247
 msgid "There must be at least one Pardus entry."
 msgstr ""
 
-#: src/mainview.py:233 src/mainview.py:411
+#: src/mainview.py:247 src/mainview.py:524
 msgid "Access Denied"
 msgstr "Zugang verweigert"
 
-#: src/mainview.py:235
+#: src/mainview.py:249
 msgid "Are you sure you want to remove this entry?"
 msgstr "Sind Sie sicher, dass Sie diesen Eintrag löschen möchten?"
 
-#: src/mainview.py:235
+#: src/mainview.py:249
 msgid "Delete Entry"
 msgstr "Eintrag löschen"
 
+#: src/mainview.py:255
+msgid ""
+"This is a Pardus kernel entry.\n"
+"Do you want to uninstall it from the system?"
+msgstr ""
+
+#: src/mainview.py:255 src/mainview.py:404
+msgid "Uninstall Kernel"
+msgstr ""
+
+#: src/mainview.py:345
+msgid "Unused kernels:"
+msgstr ""
+
+#: src/mainview.py:353
+msgid "Add Boot Entry"
+msgstr ""
+
 #: src/mainview.py:358
+msgid "Uninstall"
+msgstr ""
+
+#: src/mainview.py:366
+msgid "Ok"
+msgstr ""
+
+#: src/mainview.py:404
+msgid "Do you want to uninstall this kernel from the system?"
+msgstr ""
+
+#: src/mainview.py:463
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 "Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
 
-#: src/mainview.py:400 src/mainview.py:404 src/mainview.py:406
+#: src/mainview.py:513 src/mainview.py:517 src/mainview.py:519
 msgid "Failed"
 msgstr "Fehlgeschlagen"
 
-#: src/mainview.py:411
+#: src/mainview.py:524
 msgid "You are not allowed to edit boot loader settings."
 msgstr ""
 "Sie sind nicht berechtigt diese Boot-Loader-Einstellungen zu bearbeiten."
