@@ -110,7 +110,7 @@ class Device:
                 unlink(home + "/xorg.conf.new")
                 sec = p.getSections("Device")
                 if sec:
-                    self.driver = sec[0].value("Driver")
+                    self.driver = sec[0].get("Driver")
                     print "Driver reported by X server is %s." % self.driver
 
         # use nvidia if nv is found
@@ -335,17 +335,17 @@ def queryPanel(mon, card):
 
     p = XorgParser()
     sec = XorgSection("Device")
-    sec.setValue("Identifier", "Card0")
-    sec.setValue("Driver", card.driver)
+    sec.set("Identifier", "Card0")
+    sec.set("Driver", card.driver)
     p.sections.append(sec)
 
     sec = XorgSection("Monitor")
-    sec.setValue("Identifier", "Monitor0")
+    sec.set("Identifier", "Monitor0")
     p.sections.append(sec)
 
     sec = XorgSection("Screen")
-    sec.setValue("Identifier", "Screen0")
-    sec.setValue("Device", "Card0")
+    sec.set("Identifier", "Screen0")
+    sec.set("Device", "Card0")
     p.sections.append(sec)
 
     open(xorg_conf, "w").write(str(p))
@@ -887,7 +887,7 @@ def listMonitors(cardId):
     for monId in identifiers:
         vendorName = cp.get(monId, "vendorName")
         modelName = cp.get(monId, "modelName")
-        monitors.append("%s@%s %s - %s" % (monId, cardId, modelName, vendorName))
+        monitors.append("%s %s - %s" % (monId, modelName, vendorName))
 
     return "\n".join(monitors)
 
@@ -909,6 +909,9 @@ def addMonitor(data):
     pass
 
 def removeMonitor(monitorId):
+    pass
+
+def probeMonitors():
     pass
 
 def getScreens():
@@ -986,7 +989,7 @@ def setScreens(screens):
 
 if __name__ == "__main__":
     #safeConfigure()
-    #autoConfigure()
+    autoConfigure()
     print listCards()
     print cardInfo("PCI:0:5:0")
     print listMonitors("PCI:0:5:0")
