@@ -525,6 +525,11 @@ class XConfig:
     def load(self):
         self._parser.parseFile(xorg_conf)
 
+    def removeScreens(self):
+        sections = self._parser.getSections("Device", "Monitor", "Screen")
+        for sec in sections:
+            self._parser.sections.remove(sec)
+
     def save(self):
         f = open(xorg_conf, "w")
         f.write(self._parser.toString())
@@ -596,9 +601,9 @@ class XConfig:
             if p.get("Driver") == "synaptics":
                 return p.options
 
-    def _addDevice(self, dev):
+    def _addDevice(self, dev, screenNumber):
         sec = XorgSection("Device")
-        sec.set("Screen", 0)
+        sec.set("Screen", screenNumber)
         sec.set("Identifier", dev.identifier)
         sec.set("Driver", dev.driver)
         sec.set("VendorName", dev.vendorName)
@@ -641,40 +646,30 @@ class XConfig:
         screen.number = 0
         screen.setup()
 
-        secDev = self._addDevice(dev)
+        secDev = self._addDevice(dev, screen.number)
         secMon = self._addMonitor(mon)
         secScr = self._addScreen(screen)
 
         self._priScreen = screen
 
     def setSecondaryScreen(self, screen):
-        pass
+        #TODO: If nvidia module is used, use its own options to set 2nd screen.
+        dev = screen.device
+        mon = screen.monitor
 
-    def getPrimaryScreen(self):
-        pass
+        screen.number = 1
+        screen.setup()
 
-    def getSecondaryScreen(self):
-        pass
+        secDev = self._addDevice(dev, screen.number)
+        secMon = self._addMonitor(mon)
+        secScr = self._addScreen(screen)
+
+        self._secScreen = screen
 
     def finalize(self):
         sec = XorgSection("ServerLayout")
 
-        if self.layout == "probe":
-            sec.set("Identifier", "Configured by zorg for probe")
-            e = XorgEntry()
-            e.key = "Screen"
-            e.values = [0, "Screen0", 0, 0]
-            sec.entries.append(e)
-
-        elif self.layout == "singleHead":
-            if self._priScreen:
-                self.defaultScreen = self._priScreen
-            else:
-                self.defaultScreen = self._secScreen
-
-            sec.set("Identifier", "SingleHead")
-            sec.set("Screen", self.defaultScreen.identifier)
-
+        def addInputDevices():
             inputDevices = {
                 "Mouse0" : "CorePointer",
                 "Keyboard0" : "CoreKeyboard"
@@ -689,10 +684,24 @@ class XConfig:
                 e.values = (x, y)
                 sec.entries.append(e)
 
+        if self.layout == "singleHead":
+            if self._priScreen:
+                self.defaultScreen = self._priScreen
+            else:
+                self.defaultScreen = self._secScreen
+
+            sec.set("Identifier", "SingleHead")
+            sec.set("Screen", self.defaultScreen.identifier)
+
+            addInputDevices()
+
             sec.options = {
                 "Xinerama" : "off",
                 "Clone" : "off"
             }
+
+        elif self.layout == "dualHead":
+            pass
 
         self._parser.sections.append(sec)
 
@@ -746,8 +755,10 @@ def saveConfig(cfg, cards):
 
             cp.set(sec, "probed", mon.probed)
             cp.set(sec, "digital", mon.digital)
-            cp.set(sec, "hsync", "%s-%s" % (mon.hsync_min, mon.hsync_max))
-            cp.set(sec, "vref", "%s-%s" % (mon.vref_min, mon.vref_max))
+            cp.set(sec, "hsync_min", mon.hsync_min)
+            cp.set(sec, "hsync_max", mon.hsync_max)
+            cp.set(sec, "vref_min", mon.vref_min)
+            cp.set(sec, "vref_max", mon.vref_max)
             cp.set(sec, "resolutions", ",".join(mon.res))
             cp.set(sec, "eisaid", mon.eisaid)
             cp.set(sec, "vendorName", mon.vendorname)
@@ -844,6 +855,9 @@ def listCards():
 
     return "\n".join(cards)
 
+def setCardOptions(cardId, options):
+    pass
+
 def cardInfo(cardId):
     cp = RawConfigParser()
     cp.read(zorg_conf)
@@ -891,10 +905,102 @@ def monitorInfo(identifier):
 
     return "\n".join(info)
 
+def addMonitor(data):
+    pass
+
+def removeMonitor(monitorId):
+    pass
+
+def getScreens():
+    cp = RawConfigParser()
+    cp.read(zorg_conf)
+
+    scrInfo = []
+
+    for scr in "Screen0", "Screen1":
+        if not cp.has_section(scr):
+            continue
+
+        l = []
+        for option in "card", "monitor", "resolution", "depth":
+            l.append("%s=%s" % (option, cp.get(scr, option)))
+
+        scrInfo.append("\n".join(l))
+
+    return "\n\n".join(scrInfo)
+
+def setScreens(screens):
+    cp = RawConfigParser()
+    cp.read(zorg_conf)
+
+    config = XConfig()
+    config.load()
+    config.removeScreens()
+
+    index = 0
+    for screen in screens.strip().split("\n\n"):
+        info = dict(x.split("=", 1) for x in screen.strip().splitlines())
+        print info
+
+        cardId = info["card"]
+
+        if not cp.has_section(cardId):
+            return
+
+        pciId, busId = cardId.split("@")
+        vendorId, deviceId = pciId.split(":")
+
+        dev = Device(vendorId, deviceId)
+        dev.driver = cp.get(cardId, "driver")
+        dev.vendorName = cp.get(cardId, "vendorName")
+        dev.boardName = cp.get(cardId, "boardName")
+
+        monitorId = info["monitor"]
+        if not cp.has_section(monitorId):
+            return
+
+        mon = Monitor()
+        mon.probed = cp.getboolean(monitorId, "probed")
+        mon.digital = cp.getboolean(monitorId, "digital")
+        mon.eisa_id= cp.get(monitorId, "eisaid")
+        mon.vendorname = cp.get(monitorId, "vendorName")
+        mon.modelname = cp.get(monitorId, "modelName")
+
+        mon.hsync_min = cp.getfloat(monitorId, "hsync_min")
+        mon.hsync_max = cp.getfloat(monitorId, "hsync_max")
+        mon.vref_min = cp.getfloat(monitorId, "vref_min")
+        mon.vref_max = cp.getfloat(monitorId, "vref_max")
+        mon.res = cp.get(monitorId, "resolutions").split(",")
+
+        scr = Screen(dev, mon)
+        scr.resolution = info["resolution"]
+        scr.depth = info["depth"]
+
+        if index == 0:
+            config.setPrimaryScreen(scr)
+            index = 1
+        else:
+            config.setSecondaryScreen(scr)
+
+    config.save()
+
 if __name__ == "__main__":
     #safeConfigure()
-    autoConfigure()
-    #print listCards()
-    #print cardInfo("PCI:0:5:0")
-    #print listMonitors("PCI:0:5:0")
+    #autoConfigure()
+    print listCards()
+    print cardInfo("PCI:0:5:0")
+    print listMonitors("PCI:0:5:0")
     print monitorInfo("Monitor0")
+    print getScreens()
+    setScreens("""
+card=10de:0240@PCI:0:5:0
+monitor=Monitor0
+resolution=800x600
+depth=24
+
+card=10de:0240@PCI:0:5:0
+monitor=Monitor0
+resolution=1024x768
+depth=16
+
+""")
