@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-from ConfigParser import RawConfigParser, ParsingError
 
 from zorg.parser import *
 from zorg.utils import *
@@ -10,7 +9,6 @@ from zorg import ddc
 from zorg import modeline
 
 xorg_conf = "/etc/X11/xorg.conf"
-zorg_conf = "/var/lib/zorg/config"
 activeCards = "/etc/X11/activeCards"
 xorg_off = "/var/run/xorg_off"
 xdriverlist = "/usr/lib/X11/xdriverlist"
@@ -706,67 +704,55 @@ class XConfig:
         self._parser.sections.append(sec)
 
 def saveConfig(cfg, cards=[]):
-    cp = RawConfigParser()
-    try:
-        cp.read(zorg_conf)
-    except ParsingError:
-        pass
+    zconfig = ZorgConfig()
 
-    if not cp.has_section("General"):
-        cp.add_section("General")
-
-    cp.set("General", "serverLayout", cfg.layout)
-    cp.set("General", "defaultScreen", cfg.defaultScreen.identifier)
+    zconfig.set("serverLayout", cfg.layout)
+    zconfig.set("defaultScreen", cfg.defaultScreen.identifier)
 
     for scr in cfg._priScreen, cfg._secScreen:
         if not scr:
             continue
 
         sec = scr.identifier
-        if not cp.has_section(sec):
-            cp.add_section(sec)
+        zconfig.setSection(sec)
 
-        cp.set(sec, "card", scr.device.cardId)
-        cp.set(sec, "monitor", scr.monitor.identifier)
-        cp.set(sec, "resolution", scr.res)
-        cp.set(sec, "depth", scr.depth)
+        zconfig.set("card", scr.device.cardId)
+        zconfig.set("monitor", scr.monitor.identifier)
+        zconfig.set("resolution", scr.res)
+        zconfig.set("depth", scr.depth)
 
     if cards:
         cardNames = [x.cardId for x in cards]
-        cp.set("General", "cards", ",".join(cardNames))
+        zconfig.set("cards", ",".join(cardNames), "General")
 
     for card in cards:
         sec = card.cardId
-        if not cp.has_section(sec):
-            cp.add_section(sec)
+        zconfig.setSection(sec)
 
-        cp.set(sec, "pciId", card.pciId)
-        #cp.set(sec, "busId", card.busId)
-        cp.set(sec, "vendorName", card.vendorName)
-        cp.set(sec, "boardName", card.boardName)
-        cp.set(sec, "driver", card.driver)
+        zconfig.set("pciId", card.pciId)
+        #zconfig.set("busId", card.busId)
+        zconfig.set("vendorName", card.vendorName)
+        zconfig.set("boardName", card.boardName)
+        zconfig.set("driver", card.driver)
         monitorNames = [x.identifier for x in card.monitors]
-        cp.set(sec, "monitors", ",".join(monitorNames))
+        zconfig.set("monitors", ",".join(monitorNames))
 
         for mon in card.monitors:
             sec = mon.identifier
-            if not cp.has_section(sec):
-                cp.add_section(sec)
+            zconfig.setSection(sec)
 
-            cp.set(sec, "probed", mon.probed)
-            cp.set(sec, "digital", mon.digital)
-            cp.set(sec, "hsync_min", mon.hsync_min)
-            cp.set(sec, "hsync_max", mon.hsync_max)
-            cp.set(sec, "vref_min", mon.vref_min)
-            cp.set(sec, "vref_max", mon.vref_max)
-            cp.set(sec, "resolutions", ",".join(mon.res))
-            cp.set(sec, "eisaid", mon.eisaid)
-            cp.set(sec, "vendorName", mon.vendorname)
-            cp.set(sec, "modelName", mon.modelname)
+            zconfig.set("probed", mon.probed)
+            zconfig.set("digital", mon.digital)
+            zconfig.set("hsync_min", mon.hsync_min)
+            zconfig.set("hsync_max", mon.hsync_max)
+            zconfig.set("vref_min", mon.vref_min)
+            zconfig.set("vref_max", mon.vref_max)
+            zconfig.set("resolutions", ",".join(mon.res))
+            zconfig.set("eisaid", mon.eisaid)
+            zconfig.set("vendorName", mon.vendorname)
+            zconfig.set("modelName", mon.modelname)
 
-    f = file(zorg_conf, "w")
-    cp.write(f)
-    f.close()
+    zconfig.write()
 
 def autoConfigure():
     # detect graphic card and find monitor of first card
@@ -835,22 +821,22 @@ def safeConfigure(driver = "vesa"):
     saveConfig(config, [dev])
 
 def listCards():
-    cp = RawConfigParser()
-    cp.read(zorg_conf)
+    zconfig = ZorgConfig()
 
-    if not cp.has_option("General", "cards"):
+    if not zconfig.hasOption("cards"):
         return ""
 
-    cardNames = cp.get("General", "cards").split(",")
+    cardNames = zconfig.get("cards").split(",")
 
     cards = []
     for cardName in cardNames:
-        if not cp.has_section(cardName):
+        if not zconfig.hasSection(cardName):
             continue # zorg.conf is broken
 
-        #busId = cp.get(cardName, "busid")
-        vendorName = cp.get(cardName, "vendorName")
-        boardName = cp.get(cardName, "boardName")
+        zconfig.setSection(cardName)
+        #busId = zconfig.get("busid")
+        vendorName = zconfig.get("vendorName")
+        boardName = zconfig.get("boardName")
         cards.append("%s %s - %s" % (cardName, boardName, vendorName))
 
     return "\n".join(cards)
@@ -859,49 +845,49 @@ def setCardOptions(cardId, options):
     pass
 
 def cardInfo(cardId):
-    cp = RawConfigParser()
-    cp.read(zorg_conf)
+    zconfig = ZorgConfig()
 
-    if not cp.has_section(cardId):
+    if not zconfig.hasSection(cardId):
         return ""
+    zconfig.setSection(cardId)
 
     info = []
-    #info.append("identifier=%s" % cp.get(busId, "identifier"))
+    #info.append("identifier=%s" % zconfig.get("identifier"))
 
-    name = "%s - %s" % (cp.get(cardId, "boardName"), cp.get(cardId, "vendorName"))
+    name = "%s - %s" % (zconfig.get("boardName"), zconfig.get("vendorName"))
     info.append("name=%s" % name)
-    info.append("driver=%s" % cp.get(cardId, "driver"))
+    info.append("driver=%s" % zconfig.get("driver"))
 
     return "\n".join(info)
 
 def listMonitors(cardId):
-    cp = RawConfigParser()
-    cp.read(zorg_conf)
+    zconfig = ZorgConfig()
 
-    if not cp.has_section(cardId):
+    if not zconfig.hasSection(cardId):
         return ""
 
-    identifiers = cp.get(cardId, "monitors").split(",")
+    identifiers = zconfig.get("monitors", section=cardId).split(",")
     monitors = []
 
     for monId in identifiers:
-        vendorName = cp.get(monId, "vendorName")
-        modelName = cp.get(monId, "modelName")
+        zconfig.setSection(monId)
+        vendorName = zconfig.get("vendorName")
+        modelName = zconfig.get("modelName")
         monitors.append("%s %s - %s" % (monId, modelName, vendorName))
 
     return "\n".join(monitors)
 
 def monitorInfo(identifier):
-    cp = RawConfigParser()
-    cp.read(zorg_conf)
+    zconfig = ZorgConfig()
 
-    if not cp.has_section(identifier):
+    if not zconfig.hasSection(identifier):
         return ""
 
+    zconfig.setSection(identifier)
     info = []
-    name = "%s - %s" % (cp.get(identifier, "modelName"), cp.get(identifier, "vendorName"))
+    name = "%s - %s" % (zconfig.get("modelName"), zconfig.get("vendorName"))
     info.append("name=%s" % name)
-    info.append("resolutions=%s" % cp.get(identifier, "resolutions"))
+    info.append("resolutions=%s" % zconfig.get("resolutions"))
 
     return "\n".join(info)
 
@@ -915,26 +901,25 @@ def probeMonitors():
     pass
 
 def getScreens():
-    cp = RawConfigParser()
-    cp.read(zorg_conf)
+    zconfig = ZorgConfig()
 
     scrInfo = []
 
     for scr in "Screen0", "Screen1":
-        if not cp.has_section(scr):
+        if not zconfig.hasSection(scr):
             continue
+        zconfig.setSection(scr)
 
         l = []
         for option in "card", "monitor", "resolution", "depth":
-            l.append("%s=%s" % (option, cp.get(scr, option)))
+            l.append("%s=%s" % (option, zconfig.get(option)))
 
         scrInfo.append("\n".join(l))
 
     return "\n\n".join(scrInfo)
 
 def setScreens(screens):
-    cp = RawConfigParser()
-    cp.read(zorg_conf)
+    zconfig = ZorgConfig()
 
     config = XConfig()
     config.load()
@@ -943,37 +928,38 @@ def setScreens(screens):
     index = 0
     for screen in screens.strip().split("\n\n"):
         info = dict(x.split("=", 1) for x in screen.strip().splitlines())
-        print info
 
         cardId = info["card"]
 
-        if not cp.has_section(cardId):
+        if not zconfig.hasSection(cardId):
             return
+        zconfig.setSection(cardId)
 
         pciId, busId = cardId.split("@")
         vendorId, deviceId = pciId.split(":")
 
         dev = Device(vendorId, deviceId)
-        dev.driver = cp.get(cardId, "driver")
-        dev.vendorName = cp.get(cardId, "vendorName")
-        dev.boardName = cp.get(cardId, "boardName")
+        dev.driver = zconfig.get("driver")
+        dev.vendorName = zconfig.get("vendorName")
+        dev.boardName = zconfig.get("boardName")
 
         monitorId = info["monitor"]
-        if not cp.has_section(monitorId):
+        if not zconfig.hasSection(monitorId):
             return
+        zconfig.setSection(monitorId)
 
         mon = Monitor()
-        mon.probed = cp.getboolean(monitorId, "probed")
-        mon.digital = cp.getboolean(monitorId, "digital")
-        mon.eisa_id= cp.get(monitorId, "eisaid")
-        mon.vendorname = cp.get(monitorId, "vendorName")
-        mon.modelname = cp.get(monitorId, "modelName")
+        mon.probed = zconfig.getBool("probed")
+        mon.digital = zconfig.getBool("digital")
+        mon.eisa_id= zconfig.get("eisaid")
+        mon.vendorname = zconfig.get("vendorName")
+        mon.modelname = zconfig.get("modelName")
 
-        mon.hsync_min = cp.getfloat(monitorId, "hsync_min")
-        mon.hsync_max = cp.getfloat(monitorId, "hsync_max")
-        mon.vref_min = cp.getfloat(monitorId, "vref_min")
-        mon.vref_max = cp.getfloat(monitorId, "vref_max")
-        mon.res = cp.get(monitorId, "resolutions").split(",")
+        mon.hsync_min = zconfig.getFloat("hsync_min")
+        mon.hsync_max = zconfig.getFloat("hsync_max")
+        mon.vref_min = zconfig.getFloat("vref_min")
+        mon.vref_max = zconfig.getFloat("vref_max")
+        mon.res = zconfig.get("resolutions").split(",")
 
         scr = Screen(dev, mon)
         scr.resolution = info["resolution"]
