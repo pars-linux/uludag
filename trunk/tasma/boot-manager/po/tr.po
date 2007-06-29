@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-21 19:34+0300\n"
+"POT-Creation-Date: 2007-06-29 19:27+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -31,71 +31,107 @@ msgstr "Boot.Loader modeline katkılar"
 msgid "Boot Manager is already started!"
 msgstr "Açılış Yöneticisi zaten çalışıyor!"
 
-#: src/mainview.py:35
+#: src/mainview.py:36
 msgid "New Entry"
 msgstr "Yeni ekle"
 
-#: src/mainview.py:55
+#: src/mainview.py:41
+msgid "Unused Kernels"
+msgstr "Kullanılmayan Çekirdekler"
+
+#: src/mainview.py:61
 msgid "Remember last booted entry."
 msgstr "Son açılan kaydı, bir sonraki açılışta hatırla."
 
-#: src/mainview.py:62
+#: src/mainview.py:68
 msgid "Timeout:"
 msgstr "Bekleme Süresi:"
 
-#: src/mainview.py:115
+#: src/mainview.py:124
 msgid "Title:"
 msgstr "Başlık:"
 
-#: src/mainview.py:123
+#: src/mainview.py:132
 msgid "System:"
 msgstr "Sistem:"
 
-#: src/mainview.py:133
+#: src/mainview.py:142
 msgid "Root:"
 msgstr "Kök Sürücü:"
 
-#: src/mainview.py:142
+#: src/mainview.py:151
 msgid "Kernel:"
 msgstr "Çekirdek:"
 
-#: src/mainview.py:151
+#: src/mainview.py:160
 msgid "Kernel Parameters:"
 msgstr "Çekirdek Parametreleri:"
 
-#: src/mainview.py:160
+#: src/mainview.py:169
 msgid "Initial Ramdisk:"
 msgstr "Önyükleme Dosyası (Initrd):"
 
-#: src/mainview.py:169
+#: src/mainview.py:178
 msgid "Set as default boot entry."
 msgstr "Öntanımlı açılış kaydı olarak ata."
 
-#: src/mainview.py:233
+#: src/mainview.py:247
 msgid "There must be at least one Pardus entry."
 msgstr "En az bir Pardus girdisi olmalı."
 
-#: src/mainview.py:233 src/mainview.py:411
+#: src/mainview.py:247 src/mainview.py:524
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
 
-#: src/mainview.py:235
+#: src/mainview.py:249
 msgid "Are you sure you want to remove this entry?"
 msgstr "Bu kaydı silmek istediğinizden emin misiniz?"
 
-#: src/mainview.py:235
+#: src/mainview.py:249
 msgid "Delete Entry"
 msgstr "Kaydı Sil"
 
+#: src/mainview.py:255
+msgid ""
+"This is a Pardus kernel entry.\n"
+"Do you want to uninstall it from the system?"
+msgstr ""
+"Bu bir Pardus çekirdek girdisi.\n"
+"Sistemden tamamen kaldırmak ister misiniz?"
+
+#: src/mainview.py:255 src/mainview.py:404
+msgid "Uninstall Kernel"
+msgstr "Çekirdeği Sistemden Kaldır"
+
+#: src/mainview.py:345
+msgid "Unused kernels:"
+msgstr "Kullanılmayan çekirdekler:"
+
+#: src/mainview.py:353
+msgid "Add Boot Entry"
+msgstr "Açılış Girdisi Ekle"
+
 #: src/mainview.py:358
+msgid "Uninstall"
+msgstr "Sistemden Kaldır"
+
+#: src/mainview.py:366
+msgid "Ok"
+msgstr "Tamam"
+
+#: src/mainview.py:404
+msgid "Do you want to uninstall this kernel from the system?"
+msgstr "Bu çekirdeği sistemden kaldırmak ister misiniz?"
+
+#: src/mainview.py:463
 msgid "Bootloader configuration changed by another application."
 msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
 
-#: src/mainview.py:400 src/mainview.py:404 src/mainview.py:406
+#: src/mainview.py:513 src/mainview.py:517 src/mainview.py:519
 msgid "Failed"
 msgstr "Başarısız"
 
-#: src/mainview.py:411
+#: src/mainview.py:524
 msgid "You are not allowed to edit boot loader settings."
 msgstr "Önyükleyici ayarlarını değiştirme izniniz yok."
 
