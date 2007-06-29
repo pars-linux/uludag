@@ -27,4 +27,4 @@ Comment[it]=Interfaccia grafica per il Gestore di pacchetti PiSi
 Icon=package-manager
 Type=Application
 Exec=package-manager
-Categories=Qt;KDE;System;
+Categories=Qt;KDE;Core;
