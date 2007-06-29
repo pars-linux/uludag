@@ -705,7 +705,7 @@ class XConfig:
 
         self._parser.sections.append(sec)
 
-def saveConfig(cfg, cards):
+def saveConfig(cfg, cards=[]):
     cp = RawConfigParser()
     try:
         cp.read(zorg_conf)
@@ -731,9 +731,9 @@ def saveConfig(cfg, cards):
         cp.set(sec, "resolution", scr.res)
         cp.set(sec, "depth", scr.depth)
 
-    cardNames = [x.cardId for x in cards]
-
-    cp.set("General", "cards", ",".join(cardNames))
+    if cards:
+        cardNames = [x.cardId for x in cards]
+        cp.set("General", "cards", ",".join(cardNames))
 
     for card in cards:
         sec = card.cardId
@@ -981,11 +981,13 @@ def setScreens(screens):
 
         if index == 0:
             config.setPrimaryScreen(scr)
+            config.defaultScreen = scr #FIXME: Get this information from screen lines
             index = 1
         else:
             config.setSecondaryScreen(scr)
 
     config.save()
+    saveConfig(config)
 
 if __name__ == "__main__":
     #safeConfigure()
