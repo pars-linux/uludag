@@ -1,5 +1,6 @@
 import os
 import os.path
+import shutil
 
 from comar.utility import FileLock
 
@@ -64,9 +65,16 @@ FAIL_NOKERNEL = _({
     "tr": "Çekirdek adresi belirtilmeli.",
 })
 
+FAIL_KERNEL_IN_USE = _({
+    "en": "Kernel is in use or not installed: %s",
+    "tr": "Çekirdek kullanılıyor ya da yüklü değil: %s",
+})
+
 # Grub parser configuration
 
+BOOT_DIR = "/boot"
 GRUB_DIR = "/boot/grub"
+MODULES_DIR = "/lib/modules"
 
 TIMEOUT = 3.0
 MAX_ENTRIES = 3
@@ -643,6 +651,17 @@ def makeGrubEntry(title, os_type, root=None, kernel=None, initrd=None, options=N
             entry.setCommand("initrd", initrd)
     return entry
 
+def removeKernel(version):
+    dir_modules = os.path.join(MODULES_DIR, version)
+    if os.path.exists(dir_modules):
+        shutil.rmtree(dir_modules)
+
+    files_kernel = ["kernel", "System.map", "Module.sysmvers", "initramfs", "initrd", "vmlinux"]
+    for _file in files_kernel:
+        _file = os.path.join(BOOT_DIR, "%s-%s" % (_file, version))
+        if os.path.exists(_file):
+            os.unlink(_file)
+
 # Boot.Loader methods
 
 def listSystems():
@@ -708,7 +727,7 @@ def listEntries():
     grub.release()
     return "\n\n".join(entries)
 
-def removeEntry(index, title):
+def removeEntry(index, title, uninstall="no"):
     grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
     index = int(index)
     if 0 <= index < len(grub.config.entries):
@@ -723,6 +742,11 @@ def removeEntry(index, title):
                 default = 0
             if len(grub.config.entries):
                 default_entry = grub.config.entries[default]
+        if uninstall == "yes":
+            os_entry = parseGrubEntry(entry)
+            if os_entry["os_type"]in ["linux", "xen"] and os_entry["root"] == getRoot():
+                kernel_version = os_entry["kernel"].split("kernel-")[1]
+                removeKernel(kernel_version)
         grub.config.removeEntry(entry)
         if default_entry in grub.config.entries:
             grub.config.setOption("default", grub.config.indexOf(default_entry))
@@ -841,3 +865,34 @@ def updateKernelEntry(version, root=None):
     
     grub.release()
     notify("Boot.Loader.changed", "entry")
+
+def listUnused():
+    grub = grubParser(GRUB_DIR, write=False, timeout=TIMEOUT)
+    
+    root = getRoot()
+    
+    # Find kernel entries
+    kernels_in_use = []
+    for entry in grub.config.entries:
+        os_entry = parseGrubEntry(entry)
+        if os_entry["root"] == root and os_entry["os_type"] in ["linux", "xen"]:
+            kernel_version = os_entry["kernel"].split("kernel-")[1]
+            kernels_in_use.append(kernel_version)
+    
+    # Find installed kernels
+    kernels_installed = []
+    for _file in os.listdir(BOOT_DIR):
+        if _file.startswith("kernel-"):
+            kernel_version = _file.split("kernel-")[1]
+            kernels_installed.append(kernel_version)
+    
+    kernels_unused = set(kernels_installed) - set(kernels_in_use)
+    kernels_unused = list(kernels_unused)
+    
+    grub.release()
+    return "\n".join(kernels_unused)
+
+def removeUnused(version):
+    if version not in listUnused().split("\n"):
+        fail(FAIL_KERNEL_IN_USE % version)
+    removeKernel(version)
