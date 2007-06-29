@@ -18,7 +18,8 @@ from ui_elements import *
 
 import comar
 
-BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY, BOOT_SET_TIMEOUT = xrange(1, 7)
+BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY, \
+BOOT_SET_TIMEOUT, BOOT_UNUSED, BOOT_REMOVE_UNUSED = xrange(1, 9)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -33,6 +34,11 @@ class widgetEntryList(QWidget):
         
         but = QToolButton(getIconSet("add"), "", "main", self.slotAddEntry, bar)
         but.setTextLabel(i18n("New Entry"), False)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+        
+        but = QToolButton(getIconSet("file_broken"), "", "main", self.slotUnused, bar)
+        but.setTextLabel(i18n("Unused Kernels"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         
@@ -95,6 +101,9 @@ class widgetEntryList(QWidget):
     
     def slotAddEntry(self):
         self.parent.widgetEditEntry.newEntry()
+    
+    def slotUnused(self):
+        self.parent.showScreen("Unused")
     
     def slotHelp(self):
         pass
@@ -226,18 +235,31 @@ class widgetEditEntry(QWidget):
         entries = self.parent.entries
         pardus_root = getRoot()
         pardus_entries = []
+        pardus_versions = {}
         for entry in entries:
-            if entry["os_type"] == "linux" and entry["root"] == pardus_root:
+            if entry["os_type"] in ["linux", "xen"] and entry["root"] == pardus_root:
                 pardus_entries.append(entry)
+                version = entry["kernel"].split("kernel-")[1]
+                if version not in pardus_versions:
+                    pardus_versions[version] = 0
+                pardus_versions[version] += 1
         if len(pardus_entries) < 2 and entries[index] in pardus_entries:
             KMessageBox.error(self, i18n("There must be at least one Pardus entry."), i18n("Access Denied"))
             return
         confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
         if confirm == KMessageBox.Yes:
+            uninstall = "no"
+            if entries[index] in pardus_entries:
+                entry_version = entries[index]["kernel"].split("kernel-")[1]
+                if pardus_versions[entry_version] == 1:
+                    confirm_uninstall = KMessageBox.questionYesNo(self, i18n("This is a Pardus kernel entry.\nDo you want to uninstall it from the system?"), i18n("Uninstall Kernel"))
+                    if confirm_uninstall == KMessageBox.Yes:
+                        uninstall = "yes"
             self.parent.widgetEntries.listEntries.setEnabled(False)
             args = {
                 "index": index,
                 "title": title,
+                "uninstall": uninstall,
             }
             self.link.call("Boot.Loader.removeEntry", args)
     
@@ -310,6 +332,85 @@ class widgetEditEntry(QWidget):
         self.resetEntry()
         self.parent.showScreen("Entries")
 
+class widgetUnused(QWidget):
+    def __init__(self, parent, comar_link):
+        QWidget.__init__(self, parent)
+        self.parent = parent
+        
+        self.link = comar_link
+        
+        layout = QGridLayout(self, 1, 1, 11, 6)
+        
+        self.labelTitle = QLabel(self)
+        self.labelTitle.setText(i18n("Unused kernels:"))
+        layout.addWidget(self.labelTitle, 0, 0)
+        
+        self.listKernels = QListBox(self)
+        self.listKernels.setMinimumSize(100, 200)
+        layout.addMultiCellWidget(self.listKernels, 1, 4, 0, 0)
+        
+        self.buttonAdd = QPushButton(self)
+        self.buttonAdd.setText(i18n("Add Boot Entry"))
+        self.buttonAdd.setEnabled(False)
+        layout.addWidget(self.buttonAdd, 1, 1)
+        
+        self.buttonRemove = QPushButton(self)
+        self.buttonRemove.setText(i18n("Uninstall"))
+        self.buttonRemove.setEnabled(False)
+        layout.addWidget(self.buttonRemove, 2, 1)
+        
+        spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
+        layout.addItem(spacer, 3, 1)
+        
+        self.buttonOK = QPushButton(self)
+        self.buttonOK.setText(i18n("Ok"))
+        layout.addWidget(self.buttonOK, 4, 1)
+        
+        self.connect(self.buttonAdd, SIGNAL("clicked()"), self.slotAdd)
+        self.connect(self.buttonRemove, SIGNAL("clicked()"), self.slotRemove)
+        self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotExit)
+        self.connect(self.listKernels, SIGNAL("currentChanged(QListBoxItem *)"), self.slotKernels)
+        
+        self.listUnused()
+    
+    def listUnused(self):
+        self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
+    
+    def slotKernels(self, item):
+        if not item:
+            self.buttonAdd.setEnabled(False)
+            self.buttonRemove.setEnabled(False)
+        else:
+            self.buttonAdd.setEnabled(True)
+            self.buttonRemove.setEnabled(True)
+    
+    def slotAdd(self):
+        self.buttonAdd.setEnabled(False)
+        self.buttonRemove.setEnabled(False)
+        self.parent.widgetEditEntry.newEntry()
+        
+        version = str(self.listKernels.currentText())
+        root = getRoot()
+        self.parent.widgetEditEntry.editTitle.setText(version)
+        self.parent.widgetEditEntry.editRoot.setText(root)
+        if version.endswith("-dom0"):
+            self.parent.widgetEditEntry.listSystem.setCurrentText("Xen")
+        else:
+            self.parent.widgetEditEntry.listSystem.setCurrentText("Linux")
+        self.parent.widgetEditEntry.editKernel.setText("/boot/kernel-%s" % version)
+        self.parent.widgetEditEntry.editOptions.setText("root=%s" % root)
+    
+    def slotRemove(self):
+        confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall this kernel from the system?"), i18n("Uninstall Kernel"))
+        if confirm == KMessageBox.Yes:
+            self.buttonAdd.setEnabled(False)
+            self.buttonRemove.setEnabled(False)
+            version = str(self.listKernels.currentText())
+            self.link.call("Boot.Loader.removeUnused", {"version": version}, id=BOOT_REMOVE_UNUSED)
+    
+    def slotExit(self):
+        self.parent.showScreen("Entries")
+
 class widgetMain(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
@@ -338,6 +439,10 @@ class widgetMain(QWidget):
         self.stack.addWidget(self.widgetEditEntry)
         self.screens.append("EditEntry")
         
+        self.widgetUnused = widgetUnused(self, self.link)
+        self.stack.addWidget(self.widgetUnused)
+        self.screens.append("Unused")
+        
         self.link.ask_notify("Boot.Loader.changed")
         self.link.can_access("Boot.Loader.setEntry", id=BOOT_ACCESS)
         self.link.call("Boot.Loader.getOptions", id=BOOT_OPTIONS)
@@ -357,6 +462,8 @@ class widgetMain(QWidget):
                 if self.widgetEditEntry.entry and not self.widgetEditEntry.saved:
                     KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
                     self.widgetEditEntry.slotExit()
+            if reply.data == "entry":
+                self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
         elif reply.command == "result":
             if reply.id == BOOT_ACCESS:
                 self.can_access = True
@@ -394,6 +501,12 @@ class widgetMain(QWidget):
                 self.widgetEditEntry.slotExit()
             elif reply.id == BOOT_SET_TIMEOUT:
                 self.widgetEntries.spinTimeout.setEnabled(True)
+            elif reply.id == BOOT_UNUSED:
+                self.widgetUnused.listKernels.clear()
+                for version in reply.data.split("\n"):
+                    self.widgetUnused.listKernels.insertItem(version)
+            elif reply.id == BOOT_REMOVE_UNUSED:
+                self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
         elif reply.command == "fail":
             if reply.id == BOOT_SET_ENTRY:
                 self.widgetEditEntry.saved = False
