@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-25 15:01+0300\n"
-"PO-Revision-Date: 2007-05-27 17:18-0400\n"
+"PO-Revision-Date: 2007-06-30 08:40-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Configuración de Cortafuegos"
 #: src/firewall-config.py:195
 #, python-format
 msgid "Ports: %s"
-msgstr ""
+msgstr "Puertos: %s"
 
 #: src/firewall-config.py:238
 msgid "&Stop Firewall"
@@ -101,8 +101,7 @@ msgstr ""
 
 #: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
-msgstr ""
-"No tiene permisos suficientes para modificar las propiedades del cortafuegos."
+msgstr "No tiene permisos suficientes para modificar las propiedades del cortafuegos."
 
 #: src/firewall-config.py:345
 msgid "Access Denied"
@@ -110,8 +109,7 @@ msgstr "Acceso denegado"
 
 #: src/firewall-config.py:439
 msgid "Pardus Firewall Interface is already running!"
-msgstr ""
-"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
+msgstr "Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
 #: src/rules.py:16
 msgid "Mail services"
@@ -250,3 +248,4 @@ msgstr "Aceptar"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rechazar"
+

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 19:27+0300\n"
-"PO-Revision-Date: 2007-06-23 21:56-0400\n"
+"PO-Revision-Date: 2007-06-30 08:39-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Nueva entrada"
 
 #: src/mainview.py:41
 msgid "Unused Kernels"
-msgstr ""
+msgstr "Núcleos (kernels) sin usar"
 
 #: src/mainview.py:61
 msgid "Remember last booted entry."
@@ -98,30 +98,32 @@ msgid ""
 "This is a Pardus kernel entry.\n"
 "Do you want to uninstall it from the system?"
 msgstr ""
+"Esto es una entrada de núcleo (kenel) de Pardus.\n"
+"Desea desinstalarlo del sistema ?"
 
 #: src/mainview.py:255 src/mainview.py:404
 msgid "Uninstall Kernel"
-msgstr ""
+msgstr "Desinstalar núcleo"
 
 #: src/mainview.py:345
 msgid "Unused kernels:"
-msgstr ""
+msgstr "Núcleos sin uso:"
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
-msgstr ""
+msgstr "Agregar entrada de arranque"
 
 #: src/mainview.py:358
 msgid "Uninstall"
-msgstr ""
+msgstr "Desinstalar"
 
 #: src/mainview.py:366
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: src/mainview.py:404
 msgid "Do you want to uninstall this kernel from the system?"
-msgstr ""
+msgstr "Desea desinstalar éste núcleo (kernel) del sistema ?"
 
 #: src/mainview.py:463
 msgid "Bootloader configuration changed by another application."
@@ -142,3 +144,4 @@ msgstr "Editar entrada"
 #: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Eliminar entrada"
+
