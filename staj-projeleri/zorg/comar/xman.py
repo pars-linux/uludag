@@ -447,7 +447,6 @@ class XConfig:
         self._secScreen = None
 
         self.layout = None
-        self.defaultScreen = None
 
     def new(self):
         secModule = XorgSection("Module")
@@ -683,13 +682,8 @@ class XConfig:
                 sec.entries.append(e)
 
         if self.layout == "singleHead":
-            if self._priScreen:
-                self.defaultScreen = self._priScreen
-            else:
-                self.defaultScreen = self._secScreen
-
             sec.set("Identifier", "SingleHead")
-            sec.set("Screen", self.defaultScreen.identifier)
+            sec.set("Screen", self._priScreen.identifier)
 
             addInputDevices()
 
@@ -707,7 +701,6 @@ def saveConfig(cfg, cards=[]):
     zconfig = ZorgConfig()
 
     zconfig.set("serverLayout", cfg.layout)
-    zconfig.set("defaultScreen", cfg.defaultScreen.identifier)
 
     for scr in cfg._priScreen, cfg._secScreen:
         if not scr:
@@ -1003,7 +996,6 @@ def setScreens(screens):
 
         if index == 0:
             config.setPrimaryScreen(scr)
-            config.defaultScreen = scr #FIXME: Get this information from screen lines
             index = 1
         else:
             config.setSecondaryScreen(scr)
