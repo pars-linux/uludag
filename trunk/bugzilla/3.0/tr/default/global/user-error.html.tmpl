@@ -43,34 +43,35 @@
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% DEFAULT title = "Error" %]
+[% DEFAULT title = "Hata" %]
 
 [% error_message = BLOCK %]
   [% IF    error == "account_creation_disabled" %]
-    [% title = "Account Creation Disabled" %]
-    User account creation has been disabled or restricted.
+    [% title = "Hesap Oluşturma Etkin Değil" %]
+    Kullanıcı hesabı oluşturma engellenmiş ya da sınırlandırılmış.
     <hr>
-    New accounts must be created by an administrator.
+    Yeni hesaplar yönetici tarafından oluşturulmalı.
 
   [% ELSIF error == "account_disabled" %]
-    [% title = "Account Disabled" %]
+    [% title = "Hesap Etkisizleştirilmiş" %]
     [% disabled_reason FILTER none %]
     <hr>
-    If you believe your account should be restored, please
-    send email to [% Param("maintainer") %] explaining why.
+    Eğer hesabınızın etkinleştirilmesi gerektiğini düşünüyorsanız,
+    lütfen [% Param("maintainer") %] adresine gerekçeli e-posta gönderin.
 
   [% ELSIF error == "account_exists" %]
-    [% title = "Account Already Exists" %]
-    There is already an account with
+    [% title = "Böyle Bir Kullanıcı Hesabı Zaten Var" %]
+
     [% IF email %]
-      the login name [% email FILTER html %].
+      Kullanıcı adı [% email FILTER html %] olan 
     [% ELSE %]
-      that login name.
+      Bu kullanıcı adına sahip
     [% END %]
+    bir hesap zaten var.
 
   [% ELSIF error == "account_inexistent" %]
-    [% title = "Account Does Not Exist" %]
-    There is no [% terms.Bugzilla %] account with that login name.
+    [% title = "Böyle Bir Kullanıcı Hesabı Yok" %]
+    Bu kullanıcı adına sahip herhangi bir [% terms.Bugzilla %] hesabı yok.
 
   [% ELSIF error == "alias_has_comma_or_space" %]
     [% title = "Invalid Characters In Alias" %]
