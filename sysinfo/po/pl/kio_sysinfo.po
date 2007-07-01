@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-17 19:09+0300\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+#: sysinfo.cpp:67
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: sysinfo.cpp:69
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: sysinfo.cpp:71
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: sysinfo.cpp:97
+msgid "Looking for hardware information..."
+msgstr "Wyszukuje informacji o sprzęcie"
+
+#: sysinfo.cpp:100 sysinfo.cpp:104
+msgid "My Computer"
+msgstr "Mój Komputer"
+
+#: sysinfo.cpp:105
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr "Katalogi, Dyski, Nośniki Wymienne, Informacje Systemowe i wiele więcej..."
+
+#: sysinfo.cpp:113
+msgid "Common Folders"
+msgstr "Popularne Katalogi"
+
+#: sysinfo.cpp:117
+msgid "My Home Folder"
+msgstr "Katalog Domowy"
+
+#: sysinfo.cpp:118
+msgid "Root Folder"
+msgstr "Katalog Użytkownika Root"
+
+#: sysinfo.cpp:119
+msgid "Network Folders"
+msgstr "Katalogi Sieciowe"
+
+#: sysinfo.cpp:125
+msgid "Network Status"
+msgstr "Stan Sieci"
+
+#: sysinfo.cpp:135
+msgid "CPU Information"
+msgstr "Inforpacje o Procesorze"
+
+#: sysinfo.cpp:137
+msgid "Processor (CPU):"
+msgstr "Procesor:"
+
+#: sysinfo.cpp:138
+msgid "Speed:"
+msgstr "Prędkość:"
+
+#: sysinfo.cpp:139
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo.cpp:145
+msgid "Memory Information"
+msgstr "Informacje o Pamięci"
+
+#: sysinfo.cpp:147
+msgid "Total memory (RAM):"
+msgstr "Całkowita pamięć (RAM):"
+
+#: sysinfo.cpp:148
+msgid "Free memory:"
+msgstr "Wolna pamięć:"
+
+#: sysinfo.cpp:149
+msgid "Used Memory"
+msgstr "Używana Pamięć"
+
+#: sysinfo.cpp:150
+msgid "Total swap:"
+msgstr "Całkowity swap:"
+
+#: sysinfo.cpp:151
+msgid "Free swap:"
+msgstr "Wolny swap:"
+
+#: sysinfo.cpp:158
+msgid "Hardware Information"
+msgstr "Informacje o Sprzęcie"
+
+#: sysinfo.cpp:160
+msgid "Type:"
+msgstr "Typ:"
+
+#: sysinfo.cpp:161 sysinfo.cpp:189
+msgid "Vendor:"
+msgstr "Dostawca (Vendor):"
+
+#: sysinfo.cpp:162 sysinfo.cpp:190
+msgid "Model:"
+msgstr "Model:"
+
+#: sysinfo.cpp:163
+msgid "Bios Vendor:"
+msgstr "Dostawca Biosu:"
+
+#: sysinfo.cpp:164
+msgid "Bios Version:"
+msgstr "Wesja Biosu:"
+
+#: sysinfo.cpp:171
+msgid "Disk Information"
+msgstr "Informacje o Dysku"
+
+#: sysinfo.cpp:176
+msgid "OS Information"
+msgstr "Informacje o Systemie Operacyjnym"
+
+#: sysinfo.cpp:178
+msgid "OS:"
+msgstr "System:"
+
+#: sysinfo.cpp:179
+msgid "Current user:"
+msgstr "Bieżący użytkownik:"
+
+#: sysinfo.cpp:180
+msgid "System:"
+msgstr "System:"
+
+#: sysinfo.cpp:181
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo.cpp:187
+msgid "Display Info"
+msgstr "Wyświetl Informację"
+
+#: sysinfo.cpp:192
+msgid "Driver:"
+msgstr "Sterownik:"
+
+#: sysinfo.cpp:257
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 Caches)"
+
+#: sysinfo.cpp:311
+msgid "Total"
+msgstr "Sumarycznie"
+
+#: sysinfo.cpp:311
+msgid "Available"
+msgstr "Dostępne"
+
+#: sysinfo.cpp:403
+msgid "%1 (3D Support)"
+msgstr "%1 (Wsparcie 3D)"
+
+#: sysinfo.cpp:405
+msgid "%1 (No 3D Support)"
+msgstr "%1 (Brak wsparcia 3D)"
+
+#: sysinfo.cpp:415
+msgid "Network is <strong>unreachable</strong>"
+msgstr "Sieć jest <strong>niedostępna</strong>"
+
+#: sysinfo.cpp:417
+msgid "You are <strong>offline</strong>"
+msgstr "Jesteś <strong>offline</strong>"
+
+#: sysinfo.cpp:419
+msgid "Network is <strong>shutting down</strong>"
+msgstr "Połączenie sieciowe jest <strong>zamykane</strong>"
+
+#: sysinfo.cpp:421
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "<strong>Nawiązuję</strong> połączenie sieciowe"
+
+#: sysinfo.cpp:423
+msgid "You are <strong>online</strong>"
+msgstr "Jesteś <strong>online</strong>"
+
+#: sysinfo.cpp:425
+msgid "Unknown network status"
+msgstr "Nieznany stan połączenia sieciowego"

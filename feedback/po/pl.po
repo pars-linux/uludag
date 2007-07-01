@@ -1,0 +1,339 @@
+﻿# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: feedback\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-17 10:48+0200\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/experiencedlg.py:142 src/feedback.py:69 src/goodbyedlg.py:232
+#: src/hardwareinfodlg.py:238 src/opiniondlg.py:58 src/personalinfodlg.py:244
+#: src/questiondlg.py:253 src/upload.py:245 src/usagedlg.py:69
+#: src/welcomedlg.py:230
+msgid "Feedback Wizard"
+msgstr "Kreator Opinii"
+
+#: src/usagedlg.py:71
+msgid "At home"
+msgstr "W domu"
+
+#: src/usagedlg.py:72
+msgid "At work"
+msgstr "W pracy"
+
+#: src/usagedlg.py:73
+msgid "At school"
+msgstr "W szkole"
+
+#: src/purposedlg.py:92 src/usagedlg.py:74
+msgid "<p align=\"right\">(You can click on multiple items)</p>"
+msgstr "<p align=\"right\">(możesz zaznaczyć kilka opcji)</p>"
+
+#: src/usagedlg.py:75
+msgid "<b>Step 3 of 7</b>"
+msgstr "<b>Krok 3 z 7</b>"
+
+#: src/usagedlg.py:76
+msgid "<h2>Where do you use Pardus?</h2>"
+msgstr "<h2>Gdzie używasz Pardusa?</h2>"
+
+#: src/questiondlg.py:255
+msgid "Very satisfying. Pardus fulfils my requirements"
+msgstr "Bardzo dobra. Pardus spełnia w pełni moje oczekiwania"
+
+#: src/questiondlg.py:256
+msgid "Good, however it lacks some capabilities"
+msgstr "Dobra, spełnia prawie wszystkie oczekiwania"
+
+#: src/questiondlg.py:257
+msgid "It does not meet my requirements"
+msgstr "Nie spełnia moich oczekiwań"
+
+#: src/questiondlg.py:258
+msgid "<h2>How does Pardus fit your needs?</h2>"
+msgstr "<h2>Jak oceniasz przydatność Pardusa?</h2>"
+
+#: src/questiondlg.py:259
+msgid "<b>Step 4 of 7</b>"
+msgstr "<b>Krok 4 z 7</b>"
+
+#: src/hardwareinfodlg.py:239
+msgid "&Do not send my computer's hardware information"
+msgstr "&Nie wysyłaj informacji o moim sprzęcie"
+
+#: src/hardwareinfodlg.py:240
+msgid "<b>Step 7 of 7</b>"
+msgstr "<b>Krok 7 z 7</b>"
+
+#: src/hardwareinfodlg.py:241
+msgid ""
+"<h2>Computer information</h2>\n"
+"<p>\n"
+"Pardus Hardware CollectInfo Wizard will now gather information from\n"
+"your hardware, including CPU, memory and network cards. This \n"
+"information will be sent to Pardus Development Center, in order to\n"
+"build more stable and secure Pardus. You will need an internet\n"
+"access for this operation to complete. \n"
+"\n"
+"<b>Note that we will not collect any of your personal documents.</b>"
+msgstr ""
+"<h2>Informacje o komputerze</h2>\n"
+"<p>\n"
+"Pardus zbierze teraz informacje o twoim sprzęcie, w tym informacje takie jak\n"
+"twój procesor, pamięć RAM, karty sieciowe. Zebrane dane posłużą w dalszym\n"
+"ulepszaniu Pardusa. By dane zostały wysłane musisz być podłączony/a do sieci.\n"
+"\n"
+"<b>Notka, Pardus nie wyśle żadnych twoich plików ani innych poufnych danych systemowych.</b>"
+
+#: src/opiniondlg.py:59
+msgid "<h2>Your opinions about Pardus?</h2>"
+msgstr "<h2>Jaka jest Twoja opinia o Pardusie?</h2>"
+
+#: src/opiniondlg.py:60
+msgid ""
+"(Ease of installation and use, capability of software,\n"
+"general quality, adoptability, suitability to requirements, etc)"
+msgstr ""
+"(Łatwość obsługi, możliwości oprogramowania,\n"
+"jakość, spełnienie twoich wymagań itp.)"
+
+#: src/opiniondlg.py:62
+msgid "<b>Step 5 of 7</b>"
+msgstr "<b>Krok 5 z 7</b>"
+
+#: src/experiencedlg.py:144
+msgid "Experienced system administrator"
+msgstr "Doświadczony administrator systemu"
+
+#: src/experiencedlg.py:145
+msgid "New user"
+msgstr "Nowy użytkownik"
+
+#: src/experiencedlg.py:146
+msgid "Home/office productivity user"
+msgstr "Użytkownik domowy/pracownik"
+
+#: src/experiencedlg.py:147
+msgid "Experienced user"
+msgstr "Doświadczony użytkownik"
+
+#: src/experiencedlg.py:148
+msgid "<h2>What is your experience level?</h2>"
+msgstr "<h2>Jakie jest twoje doświadczenie z Linuksem?</h2>"
+
+#: src/experiencedlg.py:149
+msgid "<b>Step 1 of 7</b>"
+msgstr "<b>Krok 1 z 7</b>"
+
+#: src/goodbyedlg.py:233
+msgid ""
+"<h2>Thank you</h2>\n"
+"We have collected all necessary information in order to send \n"
+"to Pardus developers.\n"
+"<p>\n"
+"Thank you for your support to Pardus operating system."
+msgstr ""
+"<h2>Dziękujemy</h2>\n"
+"Wszystkie potrzebne dane zostały zebrane i są gotowe do przesłania \n"
+"twórcom Pardusa.\n"
+"<p>\n"
+"Dziękujemy za wsparcie rozwoju systemu."
+
+#: src/welcomedlg.py:231
+msgid ""
+"<h2>Welcome to Pardus</h2>\n"
+"\n"
+"With this small wizard, you can send your messages to Pardus \n"
+"developers and help Pardus be the best Linux in the world.\n"
+"\n"
+"<p>\n"
+"The information you will give here will accelerate Pardus development. \n"
+"Please click on \"Forward\" button for the next step.\n"
+"<p>"
+msgstr ""
+"<h2>Witaj w Pardusie</h2>\n"
+"\n"
+"Za pomocę tej aplikacji możesz przesłać wiadomość twórcom \n"
+"Pardusa i pomóc mu zdominować świat.\n"
+"\n"
+"<p>\n"
+"Informacje jakie przekażesz usprawnią dalszy rozwój dystrybucji. \n"
+"Kliknij na przycisk \"Dalej\" by przejść do kolejnego etapu.\n"
+"<p>"
+
+#: src/purposedlg.py:84
+msgid "Feedback wizard"
+msgstr "Twórca opinii"
+
+#: src/purposedlg.py:86
+msgid "Daily use"
+msgstr "Do codziennej pracy"
+
+#: src/purposedlg.py:87
+msgid "It's my hobby"
+msgstr "Jako hobby"
+
+#: src/purposedlg.py:88
+msgid "For internet access"
+msgstr "Do surfowania w sieci"
+
+#: src/purposedlg.py:89
+msgid "For business"
+msgstr "W pracy, do zarabiania"
+
+#: src/purposedlg.py:90
+msgid "Entertainment purposes"
+msgstr "Do rozrywki"
+
+#: src/purposedlg.py:91
+msgid "Educational purposes"
+msgstr "Do celów edukacyjnych"
+
+#: src/purposedlg.py:93
+msgid "<h2>Why do you use Pardus?</h2>"
+msgstr "<h2>Do czego używasz Pardusa?</h2>"
+
+#: src/purposedlg.py:94
+msgid "<b>Step 2 of 7</b>"
+msgstr "<b>Krok 2 z 7</b>"
+
+#: src/feedback.py:77
+msgid "Welcome"
+msgstr "Witaj"
+
+#: src/feedback.py:80
+msgid "Experience"
+msgstr "Doświadczenie"
+
+#: src/feedback.py:83
+msgid "Purpose"
+msgstr "Cel"
+
+#: src/feedback.py:86
+msgid "Usage"
+msgstr "Wykorzystanie"
+
+#: src/feedback.py:89
+msgid "Questions"
+msgstr "Pytania"
+
+#: src/feedback.py:92
+msgid "Opinions"
+msgstr "Opinie"
+
+#: src/feedback.py:95
+msgid "Personal Info"
+msgstr "Informacje Osobiste"
+
+#: src/feedback.py:98
+msgid "Hardware Info"
+msgstr "Informacje o Sprzęcie"
+
+#: src/feedback.py:101
+msgid "Uploading"
+msgstr "Przesyłam"
+
+#: src/feedback.py:104
+msgid "Goodbye!"
+msgstr "Do widzenia!"
+
+#: src/feedback.py:166
+msgid "Collecting hardware information..."
+msgstr "Zbieram informacje o sprzęcie"
+
+#: src/feedback.py:176 src/feedback.py:250
+msgid "<font color=\"#008800\">Done</font><br>\n"
+msgstr "<font color=\"#008800\">Zrobione</font><br>\n"
+
+#: src/feedback.py:180
+msgid "Uploading data..."
+msgstr "Wysyłam dane..."
+
+#: src/feedback.py:243 src/feedback.py:254
+msgid "<font color=\"#ff0000\">Failed</font><br>\n"
+msgstr "<font color=\"#ff0000\">Błąd</font><br>\n"
+
+#: src/feedback.py:244
+msgid ""
+"<font color=\"#ff0000\">Unable to connect feedback database.</font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Nie mogę połączyć się z bazą danych opinii.</font><br>\n"
+
+#: src/feedback.py:257
+msgid ""
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is corrupted.</"
+"font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Dane opinii mają zły format.</"
+"font><br>\n"
+
+#: src/feedback.py:259
+msgid ""
+"<font color=\"#ff0000\">Server does not support this version. Please update "
+"feedback tool.</font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Serwer nie obsługuje tej wersji opinii. "
+"Zaktualizuj aplikację.</font><br>\n"
+
+#: src/feedback.py:261
+msgid ""
+"<font color=\"#ff0000\">Feedback seems to be broken. Data is missing.</"
+"font><br>\n"
+msgstr ""
+"<font color=\"#ff0000\">Niepełne dane opinii.</"
+"font><br>\n"
+
+#: src/feedback.py:263
+msgid "<font color=\"#ff0000\">Feedback database is offline.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Baza danych opinii jest obecnie niedostępna.</font><br>\n"
+
+#: src/feedback.py:265
+msgid "<font color=\"#ff0000\">You've already sent feedback.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Już wysłałeś opinię</font><br>\n"
+
+#: src/feedback.py:267
+msgid "<font color=\"#ff0000\">Feedback database has errors.</font><br>\n"
+msgstr "<font color=\"#ff0000\">Błędy po stronie bazy danych opinii.</font><br>\n"
+
+#: src/feedback.py:286
+msgid "Feedback tool is already running!"
+msgstr "Kreator opinii już działa!"
+
+#: src/upload.py:246
+msgid "<h2>Upload</h2>"
+msgstr "<h2>Wysyłanie</h2>"
+
+#: src/upload.py:247
+msgid "Retry"
+msgstr "Ponów"
+
+#: src/personalinfodlg.py:245
+msgid ""
+"<h2>Your personal information (optional)</h2>\n"
+"You can submit your e-mail address for inclusion in our low traffic\n"
+"announces."
+msgstr ""
+"<h2>Dane osobiste (opcjonalne)</h2>\n"
+"Możesz podać swój adres email by otrzymywać ogłoszenia\n"
+"(nieduża ilość wiadomości)."
+
+#: src/personalinfodlg.py:248
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#: src/personalinfodlg.py:249
+msgid "Add me to your Pardus announce list"
+msgstr "Dodaj mnie do listy ogłoszeń Pardusa"
+
+#: src/personalinfodlg.py:251
+msgid "<b>Step 6 of 7</b>"
+msgstr "<b>Krok 6 z 7</b>"
