@@ -2,7 +2,8 @@
 
 from ConfigParser import RawConfigParser, ParsingError
 
-zorg_config = "/var/lib/zorg/config"
+zorgConfigDir = "/var/lib/zorg"
+zorgConfig = "config"
 
 trueList = ("1", "on", "true", "yes", "enable")
 falseList = ("0", "off", "false", "no", "disable")
@@ -207,9 +208,16 @@ class XorgParser:
 
 class ZorgConfig:
     def __init__(self):
+        import os
+
+        if not os.path.exists(zorgConfigDir):
+            os.mkdir(zorgConfigDir, 0755)
+
+        self.configFile = os.path.join(zorgConfigDir, zorgConfig)
+
         self.cp = RawConfigParser()
         try:
-            self.cp.read(zorg_config)
+            self.cp.read(self.configFile)
         except ParsingError:
             pass
 
@@ -259,6 +267,6 @@ class ZorgConfig:
         self.cp.set(section, option, value)
 
     def write(self):
-        f = file(zorg_config, "w")
+        f = file(self.configFile, "w")
         self.cp.write(f)
         f.close()

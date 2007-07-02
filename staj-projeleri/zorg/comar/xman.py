@@ -9,7 +9,6 @@ from zorg import ddc
 from zorg import modeline
 
 xorg_conf = "/etc/X11/xorg.conf"
-activeCards = "/etc/X11/activeCards"
 xorg_off = "/var/run/xorg_off"
 xdriverlist = "/usr/lib/X11/xdriverlist"
 MonitorsDB = "/usr/lib/X11/MonitorsDB"
@@ -71,14 +70,14 @@ touchpadDevices = {"synaptics" : synapticsOptions,
                    "alps"      : alpsOptions}
 
 class Device:
-    def __init__(self, vendorId="", deviceId=""):
+    def __init__(self, busId="", vendorId="", deviceId=""):
         self.identifier = None
+
+        self.busId = busId
         self.vendorId = vendorId
         self.deviceId = deviceId
 
-        self.busId = ""
-        self.pciId = "%s:%s" % (vendorId, deviceId)
-        self.cardId = ""
+        self.cardId = "%s:%s@%s" % (self.vendorId, self.deviceId, self.busId)
 
         self.driver = None
         self.vendorName = "Unknown Vendor"
@@ -87,7 +86,6 @@ class Device:
         self.monitors = []
 
     def query(self):
-        self.cardId = "%s:%s@%s" % (self.vendorId, self.deviceId, self.busId)
         self.vendorName, self.boardName = queryPCI(self.vendorId, self.deviceId)
         availableDrivers = listAvailableDrivers()
 
@@ -161,12 +159,6 @@ class Screen:
         if self.res in self.monitor.res:
             i = self.monitor.res.index(self.res)
             self.modes = self.monitor.res[i:]
-
-def saveActiveCard(cards):
-    f = file(activeCards, "w")
-    for card in cards:
-        f.write("%s\n" % card.PciId)
-    f.close()
 
 def queryTouchpad():
     try:
@@ -245,8 +237,7 @@ def findVideoCards():
                         deviceId = lremove(sysValue(sysDir, _dev, "device"), "0x")
                         busId = tuple(int(x, 16) for x in _dev.replace(".",":").split(":"))[1:4]
 
-                        a = Device(vendorId, deviceId)
-                        a.busId = "PCI:%d:%d:%d" % busId
+                        a = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
                         cards.append(a)
                 #except:
                 #    pass
@@ -432,18 +423,6 @@ def findMonitors(card, *adapters):
         queryPanel(digitalMonitor, card)
 
     return monitors
-
-
-def getActiveCards():
-    if os.path.exists(activeCards):
-        cards = []
-        lines = file(activeCards,'r').readlines()
-        for card in lines:
-            pciId, busId = card.rstrip("\n").split("@")
-            cards.append((pciId.split(":"), busId))
-        return cards
-    else:
-        return None
 
 class XConfig:
     def __init__(self):
@@ -728,8 +707,9 @@ def saveConfig(cfg, cards=[]):
         sec = card.cardId
         zconfig.setSection(sec)
 
-        zconfig.set("pciId", card.pciId)
         zconfig.set("busId", card.busId)
+        zconfig.set("vendorId", card.vendorId)
+        zconfig.set("deviceId", card.deviceId)
         zconfig.set("vendorName", card.vendorName)
         zconfig.set("boardName", card.boardName)
         zconfig.set("driver", card.driver)
@@ -789,7 +769,7 @@ def safeConfigure(driver = "vesa"):
     safedrv = driver.upper()
 
     dev = Device()
-    dev.cardId = "0:0@%s:0:0:0" % safedrv
+    dev.cardId = "%s_CONFIGURED_CARD" % safedrv
     dev.boardName = "%s Configured Board" % safedrv
     dev.vendorName = "%s Configured Vendor" % safedrv
     dev.driver = driver
@@ -826,18 +806,17 @@ def listCards():
     if not zconfig.hasOption("cards"):
         return ""
 
-    cardNames = zconfig.get("cards").split(",")
+    cardIds = zconfig.get("cards").split(",")
 
     cards = []
-    for cardName in cardNames:
-        if not zconfig.hasSection(cardName):
+    for cardId in cardIds:
+        if not zconfig.hasSection(cardId):
             continue # zorg.conf is broken
 
-        zconfig.setSection(cardName)
-        #busId = zconfig.get("busid")
+        zconfig.setSection(cardId)
         vendorName = zconfig.get("vendorName")
         boardName = zconfig.get("boardName")
-        cards.append("%s %s - %s" % (cardName, boardName, vendorName))
+        cards.append("%s %s - %s" % (cardId, boardName, vendorName))
 
     return "\n".join(cards)
 
@@ -852,7 +831,6 @@ def cardInfo(cardId):
     zconfig.setSection(cardId)
 
     info = []
-    #info.append("identifier=%s" % zconfig.get("identifier"))
 
     name = "%s - %s" % (zconfig.get("boardName"), zconfig.get("vendorName"))
     info.append("name=%s" % name)
@@ -877,13 +855,13 @@ def listMonitors(cardId):
 
     return "\n".join(monitors)
 
-def monitorInfo(identifier):
+def monitorInfo(monitorId):
     zconfig = ZorgConfig()
 
-    if not zconfig.hasSection(identifier):
+    if not zconfig.hasSection(monitorId):
         return ""
 
-    zconfig.setSection(identifier)
+    zconfig.setSection(monitorId)
     info = []
     name = "%s - %s" % (zconfig.get("modelName"), zconfig.get("vendorName"))
     info.append("name=%s" % name)
@@ -891,7 +869,7 @@ def monitorInfo(identifier):
 
     return "\n".join(info)
 
-def addMonitor(data):
+def addMonitor(monitorData):
     zconfig = ZorgConfig()
 
     numbers = set(atoi(lremove(x, "Monitor")) for x in zconfig.cp.sections() if x.startswith("Monitor"))
@@ -899,7 +877,7 @@ def addMonitor(data):
     numbers.sort()
     number = numbers[0]
 
-    info = dict(x.split("=", 1) for x in data.strip().splitlines())
+    info = dict(x.split("=", 1) for x in monitorData.strip().splitlines())
 
     zconfig.setSection("Monitor%d" % number)
     keys = ("modelname", "vendorname", "probed", "eisaid", "digital", \
@@ -971,10 +949,11 @@ def setScreens(screens):
             return
         zconfig.setSection(cardId)
 
-        pciId, busId = cardId.split("@")
-        vendorId, deviceId = pciId.split(":")
+        busId = zconfig.get("busId")
+        vendorId = zconfig.get("vendorId")
+        deviceId = zconfig.get("deviceId")
 
-        dev = Device(vendorId, deviceId)
+        dev = Device(busId, vendorId, deviceId)
         dev.driver = zconfig.get("driver")
         dev.vendorName = zconfig.get("vendorName")
         dev.boardName = zconfig.get("boardName")
