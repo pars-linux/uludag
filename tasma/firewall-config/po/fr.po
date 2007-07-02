@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-25 15:01+0300\n"
-"PO-Revision-Date: 2007-05-30 08:27+0200\n"
+"PO-Revision-Date: 2007-07-02 08:56+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -63,11 +63,11 @@ msgstr "Configuration du Pare-feu"
 #: src/firewall-config.py:195
 #, python-format
 msgid "Ports: %s"
-msgstr ""
+msgstr "Ports : %s"
 
 #: src/firewall-config.py:238
 msgid "&Stop Firewall"
-msgstr "&Arrêter le Pare-Feu"
+msgstr "&Arrêter le Pare-feu"
 
 #: src/firewall-config.py:239
 msgid "<b><font size='+1'>Firewall is running</font></b>"
@@ -127,7 +127,7 @@ msgstr "Service de partage de fichier Windows"
 
 #: src/rules.py:40
 msgid "Internet relay chat service"
-msgstr "Service de discution en temps réel sur internet (IRC)"
+msgstr "Service de discussion en temps réel sur internet (IRC)"
 
 #: src/rules.py:45
 msgid "File transfer service"
@@ -241,3 +241,4 @@ msgstr "Accepter"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rejeter"
+

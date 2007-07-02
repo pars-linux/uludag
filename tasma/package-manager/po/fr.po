@@ -1,3 +1,4 @@
+# translation of fr.po to french
 # translation of fr.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -9,9 +10,9 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-13 21:11+0300\n"
-"PO-Revision-Date: 2007-05-13 21:14+0300\n"
-"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"PO-Revision-Date: 2007-07-02 08:53+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: french <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +40,7 @@ msgstr "<h3>Préparation de Pisi...</h3>"
 
 #: src/ProgressDialog.py:98
 msgid "Now installing <b>amsn</b> package"
-msgstr "Installation du packet <b>amsn</b>"
+msgstr "Installation du paquet <b>amsn</b>"
 
 #: src/Tray.py:39
 msgid "Update"
@@ -57,7 +58,7 @@ msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 #: src/CustomEventListener.py:47 src/CustomEventListener.py:51
 #: src/package-manager.py:299
 msgid "Select all packages in this category"
-msgstr "Selectionner tous les paquets de cette catégorie"
+msgstr "Sélectionner tous les paquets de cette catégorie"
 
 #: src/CustomEventListener.py:48 src/package-manager.py:301
 msgid "Reverse package selections"
@@ -125,7 +126,7 @@ msgid ""
 "installed:"
 msgstr ""
 "Dépendances supplémentaires des/du paquet(s) sélectionné(s) qui vont "
-"également être intallée(s) :"
+"également être installée(s) :"
 
 #: src/BasketDialog.py:69
 msgid "Selected package(s) for upgrade:"
@@ -137,7 +138,7 @@ msgid ""
 "upgraded:"
 msgstr ""
 "Dépendance(s) supplémentaire(s) du/des paquet(s) sélectionné(s) qui vont "
-"églament être mis à jour :"
+"également être mis à jour :"
 
 #: src/BasketDialog.py:78
 msgid "Total Size:"
@@ -165,7 +166,7 @@ msgstr "Ajouter un Nouveau Dépôt"
 
 #: src/Preferences.py:84
 msgid "Edit Repository"
-msgstr "Editer un Dépôt"
+msgstr "Éditer un Dépôt"
 
 #: src/Preferences.py:130 src/Preferences.py:146
 msgid ""
@@ -237,7 +238,7 @@ msgstr "Gestionnaire de Paquets"
 
 #: src/package-manager.py:58
 msgid "Developer and Current Maintainer"
-msgstr "Developpeur et responsable de la maintenant actuel"
+msgstr "Développeur et responsable actuel"
 
 #: src/package-manager.py:59
 msgid "Original Author"
@@ -381,7 +382,7 @@ msgstr "<b>Installer  le(s( paquet(s)</b>"
 
 #: src/package-manager.py:510
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr "<qt>Vous avez sélectionné <b>%1</b> paque(s) à <b>installer</b>."
+msgstr "<qt>Vous avez sélectionné <b>%1</b> paquet(s) à <b>installer</b>."
 
 #: src/package-manager.py:513
 msgid ""
@@ -428,7 +429,7 @@ msgstr ""
 "dépendances inversées ont besoin des paquet sélectionnés pour fonctionner, "
 "les dépendances inversées <b>%1</b> vont également être <b>supprimées</b>. "
 "Veuillez vérifier votre panier et vous assurer que ces paquets sont "
-"réélement ceux que vous vouler supprimer. La suppression accidentelle d'une "
+"réellement ceux que vous voulez supprimer. La suppression accidentelle d'une "
 "dépendance inversée pourrait compromettre la stabilité du système."
 
 #: src/package-manager.py:529
@@ -437,7 +438,7 @@ msgstr "<br><br>Au total, <b>%1</b> paquets vont être <b>supprimés</b>."
 
 #: src/package-manager.py:531
 msgid "<br>Do you want to continue?</qt>"
-msgstr "<br>Voulez-vous continuer ?</qt>"
+msgstr "<br>Voulez vous continuer ?</qt>"
 
 #: src/package-manager.py:553
 msgid "<b>Removing Package(s)</b>"
@@ -469,7 +470,7 @@ msgstr "Confirmer"
 
 #: src/package-manager.py:915
 msgid "Show Installed Packages"
-msgstr "Lister les paquets intallés"
+msgstr "Lister les paquets installés"
 
 #: src/package-manager.py:918
 msgid "Show New Packages"
@@ -481,7 +482,7 @@ msgstr "Lister les paquets dont une mise à jour est disponible"
 
 #: src/package-manager.py:954
 msgid "Package to install"
-msgstr "Paquet à intaller"
+msgstr "Paquet à installer"
 
 #: src/package-manager.py:954
 msgid "Show main window on startup"
@@ -497,7 +498,7 @@ msgstr "paquet PiSi à installer"
 
 #: src/pm-install.py:50
 msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Vous avez sélectionner un paquet à installer. Voulez-vous continuer ?"
+msgstr "Vous avez sélectionner un paquet à installer. Voulez vous continuer ?"
 
 #: src/pm-install.py:51
 msgid "Install Package"
@@ -535,7 +536,7 @@ msgstr "Cliquer ici pour ajouter un nouveau dépôt de logiciels"
 
 #: src/PreferencesDialog.py:196
 msgid "&Edit Repository"
-msgstr "&Editer un dépôt"
+msgstr "Édit&er un dépôt"
 
 #: src/PreferencesDialog.py:197
 msgid "Click here to modify the name or address of a repository"
@@ -567,7 +568,7 @@ msgstr "Cliquer ici pour baisser le dépôt d'un niveau"
 
 #: src/PreferencesDialog.py:204
 msgid "&Repositories"
-msgstr "&Dépots"
+msgstr "&Dépôts"
 
 #: src/PreferencesDialog.py:205
 msgid "&Show only desktop applications"
@@ -589,7 +590,7 @@ msgstr "Activ&er l'affichage de la miniature."
 
 #: src/PreferencesDialog.py:209
 msgid "Check interval:"
-msgstr "Intervale entre chaque vérification :"
+msgstr "Intervalle entre chaque vérification :"
 
 #: src/PreferencesDialog.py:210
 msgid " min"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 19:27+0300\n"
-"PO-Revision-Date: 2007-05-30 08:24+0200\n"
+"PO-Revision-Date: 2007-07-02 16:05+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,8 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-#, fuzzy
 msgid "Boot Manager"
-msgstr "Gestionnaire de bootloader (chargeur de démarrage)"
+msgstr "Gestionnaire de démarrage"
 
 #: src/boot-manager.py:37
 msgid "Developer and Current Maintainer"
@@ -30,9 +29,8 @@ msgid "Contributions to Boot.Loader model."
 msgstr "Contributions au modèle du Boot.Loader"
 
 #: src/boot-manager.py:79
-#, fuzzy
 msgid "Boot Manager is already started!"
-msgstr "Le gestionnaire de bootloader (chargeur de démarrage) est déjà lancé !"
+msgstr "Le gestionnaire de démarrage est déjà lancé !"
 
 #: src/mainview.py:36
 msgid "New Entry"
@@ -40,7 +38,7 @@ msgstr "Nouvelle entrée"
 
 #: src/mainview.py:41
 msgid "Unused Kernels"
-msgstr ""
+msgstr "Noyaux inutilisés"
 
 #: src/mainview.py:61
 msgid "Remember last booted entry."
@@ -48,7 +46,7 @@ msgstr "Se souvenir de la dernière entrée démarrée."
 
 #: src/mainview.py:68
 msgid "Timeout:"
-msgstr ""
+msgstr "Délais d'attente dépassé :"
 
 #: src/mainview.py:124
 msgid "Title:"
@@ -72,16 +70,15 @@ msgstr "Paramètres du noyau :"
 
 #: src/mainview.py:169
 msgid "Initial Ramdisk:"
-msgstr "Init Ramdrive (Initialisation Ramdrive):"
+msgstr "Ramdrive initial :"
 
 #: src/mainview.py:178
 msgid "Set as default boot entry."
 msgstr "Établir comme entrée de démarrage par défaut."
 
 #: src/mainview.py:247
-#, fuzzy
 msgid "There must be at least one Pardus entry."
-msgstr "Se souvenir de la dernière entrée démarrée."
+msgstr "Il doit y avoir au moins une entrée Pardus."
 
 #: src/mainview.py:247 src/mainview.py:524
 msgid "Access Denied"
@@ -100,45 +97,46 @@ msgid ""
 "This is a Pardus kernel entry.\n"
 "Do you want to uninstall it from the system?"
 msgstr ""
+"Ceci est une entrée de noyau Pardus.\n"
+"Voulez vous la désinstaller du système ?"
 
 #: src/mainview.py:255 src/mainview.py:404
 msgid "Uninstall Kernel"
-msgstr ""
+msgstr "Desinstaller le noyau"
 
 #: src/mainview.py:345
 msgid "Unused kernels:"
-msgstr ""
+msgstr "Noyaux non utilisés :"
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
-msgstr ""
+msgstr "Ajouter une Entrée de Démarrage"
 
 #: src/mainview.py:358
 msgid "Uninstall"
-msgstr ""
+msgstr "Désinstaller"
 
 #: src/mainview.py:366
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: src/mainview.py:404
 msgid "Do you want to uninstall this kernel from the system?"
-msgstr ""
+msgstr "Voulez vous désinstaller ce noyau du système ?"
 
 #: src/mainview.py:463
 msgid "Bootloader configuration changed by another application."
 msgstr ""
-"Configuration du booloader (chargeur de démarrage) changé par une autre "
+"Configuration du chargeur de démarrage changée par une autre "
 "application."
 
 #: src/mainview.py:513 src/mainview.py:517 src/mainview.py:519
 msgid "Failed"
-msgstr "Echec"
+msgstr "Échec"
 
 #: src/mainview.py:524
 msgid "You are not allowed to edit boot loader settings."
-msgstr ""
-"Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
+msgstr "Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
 
 #: src/ui_elements.py:91
 msgid "Edit entry"
@@ -148,6 +146,3 @@ msgstr "Éditer l'entrée"
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
 
-#, fuzzy
-#~ msgid "Denied"
-#~ msgstr "Accès refusé"
