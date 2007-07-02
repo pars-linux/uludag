@@ -156,6 +156,8 @@ class Screen:
         if self.device.driver in truecolor_cards:
             self.depth = 24
 
+        print "Supported modes are %s" % self.monitor.res
+        print "Requested mode is %s" % self.res
         if self.res in self.monitor.res:
             i = self.monitor.res.index(self.res)
             self.modes = self.monitor.res[i:]
@@ -398,6 +400,7 @@ def queryPanel(mon, card):
 
 def findMonitors(card, *adapters):
     monitors = []
+    digitalMonitor = None
 
     for adapter in adapters:
         mon = queryDDC(adapter)
@@ -420,10 +423,13 @@ def findMonitors(card, *adapters):
 
         # check lcd panel
         if mon.digital and (card.driver in lcd_drivers):
-            queryPanel(mon, card)
+            digitalMonitor = mon
 
         card.monitors.append(mon)
         monitors.append(mon)
+
+    if digitalMonitor:
+        queryPanel(digitalMonitor, card)
 
     return monitors
 
@@ -760,6 +766,7 @@ def autoConfigure():
     monitor = findMonitors(device, 0)[0]
 
     if not monitor.probed:
+        print "Could not detect a monitor on the first controller. Trying next..."
         device.monitors = []
         monitor = findMonitors(device, 1)[0]
 
@@ -991,7 +998,7 @@ def setScreens(screens):
         mon.res = zconfig.get("resolutions").split(",")
 
         scr = Screen(dev, mon)
-        scr.resolution = info["resolution"]
+        scr.res = info["resolution"]
         scr.depth = info["depth"]
 
         if index == 0:
@@ -1005,24 +1012,26 @@ def setScreens(screens):
 
 if __name__ == "__main__":
     #safeConfigure()
-    #autoConfigure()
+    autoConfigure()
     print listCards()
     print cardInfo("PCI:0:5:0")
     print listMonitors("PCI:0:5:0")
     print monitorInfo("Monitor0")
     print getScreens()
+
     setScreens("""
 card=10de:0240@PCI:0:5:0
 monitor=Monitor0
-resolution=800x600
+resolution=1024x768
 depth=24
 
 card=10de:0240@PCI:0:5:0
 monitor=Monitor0
-resolution=1024x768
+resolution=800x600
 depth=16
 
 """)
+    print getScreens()
 
     addMonitor("""
 hsync_min=30
@@ -1032,5 +1041,4 @@ vref_max=75
 vendorname=VENDOR
 modelname=MODEL
 """)
-
     removeMonitor("Monitor2")
