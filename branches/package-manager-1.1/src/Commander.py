@@ -158,7 +158,7 @@ class Commander(QObject):
         return list(pisi.api.list_installed())
 
     def listNewPackages(self):
-        return list(pisi.api.list_available() - pisi.api.list_installed())
+        return list(pisi.api.list_available() - pisi.api.list_installed() - set(pisi.api.list_replaces().values()))
 
     def packageGraph(self,list,ignoreInstalled=True):
         return pisi.api.package_graph(list, ignoreInstalled)

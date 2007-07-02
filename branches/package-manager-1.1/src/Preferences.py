@@ -203,6 +203,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.parent.command.setRepositories(repoList)
             self.parent.progressDialog.setCurrentOperation(i18n("<b>Applying Repository Changes</b>"))
             self.parent.progressDialog.show()
+            return
 
         self.parent.refreshState()
 
