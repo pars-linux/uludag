@@ -1,0 +1,39 @@
+--- model.xml.orig	2007-05-30 17:06:10.000000000 +0300
++++ model.xml	2007-07-02 12:21:21.000000000 +0300
+@@ -199,6 +199,36 @@
+ 
+ 
+ <group name="Hardware">
++	<class name="Display">
++		<method name="autoConfigure"/>
++		<method name="safeConfigure"/>
++		<method name="listCards"/>
++		<method name="setCardOptions">
++			<argument>cardId</argument>
++			<argument>options</argument>
++		</method>
++		<method name="cardInfo">
++			<argument>cardId</argument>
++		</method>
++		<method name="listMonitors">
++			<argument>cardId</argument>
++		</method>
++		<method name="monitorInfo">
++			<argument>monitorId</argument>
++		</method>
++		<method name="addMonitor">
++			<argument>monitorData</argument>
++		</method>
++		<method name="removeMonitor">
++			<argument>monitorId</argument>
++		</method>
++		<method name="probeMonitors"/>
++		<method name="installINF"/>
++		<method name="getScreens"/>
++		<method name="setScreens">
++			<argument>screens</argument>
++		</method>
++	</class>
+ </group>
+ 
+ 
