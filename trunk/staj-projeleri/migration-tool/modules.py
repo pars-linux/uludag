@@ -13,25 +13,10 @@ class UserMigration:
         self.destinations = {}
         self.options = {"Bookmarks":"true", "IEBookmarks":"true", "FFBookmarks":"true"}
         
-        # Desteklenen programlarin yuklu olup olmadigina bak, yukluyse hangi dizinde olduklarini bul.
-        # "Masaustu", "Belgelerim", "Muziklerim" gibi dizinleri bul. Boyutlarini kaydet.
-        # Hangi sistem ayarlarinin yapilabildigine bak.
-        # Tum bulduklarini "sources" sozlugune kaydet
-        
         # Collect Information:
-        print "\nCollecting Information..."
         if parttype in ["Windows Vista", "Windows XP"]:
             self.collectWindowsInformation()
         self.collectLocalInformation()
-        
-        # List sources:
-        for field, value in self.sources.iteritems():
-            print field, "\t", value
-        
-        widget = OptionsWidget(self.sources, self.options)
-        
-        print "\nApplying Changes..."
-        self.Apply()
     
     def collectWindowsInformation(self):
         # Find user directories using registry:
@@ -95,16 +80,16 @@ class UserMigration:
             print "WARNING: Mozilla profile cannot be detected!"
             return ""
         
-    def Apply(self):
+    def migrate(self):
         # Copy Bookmarks:
         if self.options.has_key("Bookmarks") and self.options["Bookmarks"]:
             bm = Bookmark()
             # Load IE Bookmarks:
-            if self.options.has_key("IEBookmarks") and self.options["IEBookmarks"]:
+            if self.options.has_key("IEBookmarks") and self.options["IEBookmarks"] and self.sources.has_key("Favorites Path"):
                 bm.getIEBookmarks(self.sources["Favorites Path"])
                 print "Internet Explorer bookmarks loaded."
             # Load FF Bookmarks:
-            if self.options.has_key("FFBookmarks") and self.options["FFBookmarks"]:
+            if self.options.has_key("FFBookmarks") and self.options["FFBookmarks"] and self.sources.has_key("Firefox Profile Path"):
                 possiblefile = os.path.join(self.sources["Firefox Profile Path"], "bookmarks.html")
                 if os.path.isfile(possiblefile):
                     bm.getFFBookmarks(possiblefile)
@@ -121,10 +106,3 @@ class UserMigration:
                         print "WARNING: Firefox bookmarks file cannot be found."
                 else:
                     print "WARNING: Firefox is in use. Bookmarks cannot be saved."
-
-
-class OptionsWidget:
-    def __init__(self, sources, options):
-        # sources'ta bulunan secenekleri soran bir widget goster
-        # Bu widget'i kullarak aldigin cevaplari "options" sozlugune kaydet
-        pass

@@ -1,19 +1,18 @@
-#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-import partition
-import modules
+import sys
 
-# Search partitions and find users:
-users = []      # user1 = (partition, type, username, userdir)
-partitions = partition.getPartitions()
-for part in partitions:
-    if partition.isWindowsPart(part):
-        users.extend(partition.getWindowsUsers(part))
+from qt import *
 
-# List users
-for no,user in enumerate(users):
-    print no, user
-no = input("Choose an operating system and user:")
+from wizard import Wizard
 
-partition, parttype, username, userdir = users[no]
-myMigration = modules.UserMigration(partition, parttype, userdir)
+def main():
+    app = QApplication(sys.argv)
+    wizard = Wizard()
+    
+    app.setMainWidget(wizard)
+    wizard.show()
+    app.exec_loop()
+
+if __name__ == "__main__":
+    main()

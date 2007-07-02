@@ -1,0 +1,69 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>UserWid</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>UserWid</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>600</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>Pardus Göç Aracı'na hoşgeldiniz. Bu uygulama sayesinde, bilgisayarınızda daha önce kurulu olan işletim sistemlerinin dosya ve ayarlarını kolayca Pardus'a aktarabileceksiniz...</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="text">
+                <string>Aşağıda ayarlarını aktarmak istediğiniz kullanıcıyı seçerek e-posta hesaplarınızı, adres defterinizi, e-posta mesajlarınızı, anında mesajlaşma hesaplarınızı, yer imlerinizi, çerezlerinizi, arkaplan resminizi ve dosyalarınızı Pardus'a kopyalayabilirsiniz. Devam etmek için kullanıcı seçip, ileri tuşuna basınız.</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QComboBox">
+            <property name="name">
+                <cstring>usersBox</cstring>
+            </property>
+        </widget>
+        <spacer>
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>41</width>
+                    <height>71</height>
+                </size>
+            </property>
+        </spacer>
+    </vbox>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

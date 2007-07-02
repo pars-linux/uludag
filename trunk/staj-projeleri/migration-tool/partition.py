@@ -57,3 +57,12 @@ def getWindowsUsers(partition):
             raise
     
     return users
+
+def allUsers():
+    "Search partitions and find users"
+    users = []      # user1 = (partition, parttype, username, userdir)
+    partitions = getPartitions()
+    for part in partitions:
+        if isWindowsPart(part):
+            users.extend(getWindowsUsers(part))
+    return users
