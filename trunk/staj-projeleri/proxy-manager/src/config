@@ -1,0 +1,18 @@
+# Configuration file for the Proxy Manager of Tasma
+
+[deneme]
+type=0
+isActive=1
+option=1
+http_host=200.200.200.200
+http_port=4343
+ftp_host=123.123.123.123
+ftp_port=3128
+
+[deneme2]
+type=1
+isActive=0
+option=1
+http_host=123.123.123.123
+http_port=8080
+
