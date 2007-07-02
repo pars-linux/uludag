@@ -31,7 +31,7 @@ for lang in ["tr", "nl", "de", "es", "pt_BR", "it","fr","ca", "pl"]:
 		"Boot Manager": REPO_PATH + "tasma/boot-manager/po/%s.po" % lang,}
 
 for langs in po_files:
-	ret = htmlHeaderTemplate['en']
+	ret = htmlHeaderTemplate['en'] % langs
 	for tra in po_files[langs]:
 		if isfile(po_files[langs][tra]):
 			po = polib.pofile(po_files[langs][tra])
@@ -45,7 +45,8 @@ for langs in po_files:
 			path = po_files[langs][tra].replace(REPO_PATH, REAL_PATH)
 			ret = ret + table(path=path, name=tra, all=str(all), translated=str(translated), fuzzy=str(fuzzy), untranslated=str(untranslated), percent=str(percent)+'%', percent_fuzzy=str(percent_fuzzy), percent_untrans=str(percent_untrans))
 		else:
-			ret = ret + table(path=path, name=tra, all='-', translated='-', fuzzy='-', untranslated='-', percent='0%', percent_fuzzy='0', percent_untrans='100')
+			path = po_files[langs][tra].replace(langs + '.po', '').replace(REPO_PATH, REAL_PATH)
+			ret = ret + table(path=path, name=tra, all='no translation', translated='-', fuzzy='-', untranslated='-', percent='0%', percent_fuzzy='0', percent_untrans='100')
 	ret = ret + htmlFooterTemplate["en"]
 	file = open(REPO_PATH + 'web/miss/eng/projects/translation/stats/stats-' + langs + '.html', 'w')
 	file.write(ret)
