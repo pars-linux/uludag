@@ -271,7 +271,16 @@ class MainApplicationWidget(QWidget):
         ##
 
         self.packageCache.clearCache()
+
+        replaces = pisi.api.list_replaces()
         upgradables = pisi.api.list_upgradable()
+
+        # list_upgradable returns replaced package name, we need the package name that 
+        # replaces for pm to list it (ex. gaim -> pidgin)
+        for x in replaces.keys():
+            upgradables.remove(x)
+        upgradables.extend(set(replaces.values()))
+        
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
