@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from ConfigParser import RawConfigParser, ParsingError
-
-zorgConfigDir = "/var/lib/zorg"
-zorgConfig = "config"
-
 trueList = ("1", "on", "true", "yes", "enable")
 falseList = ("0", "off", "false", "no", "disable")
 
@@ -205,68 +200,3 @@ class XorgParser:
             s += "EndSection\n\n"
 
         return s
-
-class ZorgConfig:
-    def __init__(self):
-        import os
-
-        if not os.path.exists(zorgConfigDir):
-            os.mkdir(zorgConfigDir, 0755)
-
-        self.configFile = os.path.join(zorgConfigDir, zorgConfig)
-
-        self.cp = RawConfigParser()
-        try:
-            self.cp.read(self.configFile)
-        except ParsingError:
-            pass
-
-        self.setSection("General")
-
-    def setSection(self, name):
-        if not self.cp.has_section(name):
-            self.cp.add_section(name)
-
-        self.currentSection = name
-
-    def hasSection(self, name):
-        return self.cp.has_section(name)
-
-    def hasOption(self, option, section=None):
-        if section is None:
-            section = self.currentSection
-        return self.cp.has_option(section, option)
-
-    def get(self, option, default = "", section=None):
-        if section is None:
-            section = self.currentSection
-        if not self.cp.has_option(section, option):
-            return default
-
-        return self.cp.get(self.currentSection, option)
-
-    def getBool(self, option, default = False, section=None):
-        if section is None:
-            section = self.currentSection
-        if not self.cp.has_option(section, option):
-            return default
-
-        return self.cp.getboolean(self.currentSection, option)
-
-    def getFloat(self, option, default = 0.0, section=None):
-        if section is None:
-            section = self.currentSection
-        if not self.cp.has_option(section, option):
-            return default
-
-        return self.cp.getfloat(self.currentSection, option)
-
-    def set(self, option, value, section=None):
-        if section is None:
-            section = self.currentSection
-        self.cp.set(section, option, value)
-
-    def write(self):
-        f = file(self.configFile, "w")
-        self.cp.write(f)
-        f.close()

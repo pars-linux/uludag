@@ -12,10 +12,12 @@
 
 __version__ = "0.1"
 
-__all__ = ["parser",
-           "utils",
+__all__ = ["config",
            "ddc",
-           "modeline"]
+           "modeline",
+           "parser",
+           "probe",
+           "utils"]
 
 
 def versionString():
