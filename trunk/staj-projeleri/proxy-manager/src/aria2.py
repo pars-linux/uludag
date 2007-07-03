@@ -12,10 +12,9 @@ class Aria2(Module):
     
     def __init__(self):
         # FIXME: find paths automatically
-        self.path = "/home/bertan/.aria2/aria2.conf"
-        self.confRead = open(self.path, "r")
-        self.lines = self.confRead.readlines()
-        self.confWrite = open(self.path, "w")
+        self.path = "config_files/aria2.conf"
+        confRead = open(self.path, "r")
+        self.lines = confRead.readlines()
     
     def setGlobalProxy(self, ip, port=None):
         proxy = "http-proxy = " + ip
@@ -42,10 +41,10 @@ class Aria2(Module):
     def close(self):
         for a in self.lines:
             print a
-        self.confWrite.writelines(self.lines)
-        self.confWrite.flush()
-        self.confWrite.close()
-        self.confRead.close()
+        confWrite = open(self.path, "w")
+        confWrite.writelines(self.lines)
+        confWrite.flush()
+        confWrite.close()
     
 
 # FIXME: test kodunu sil

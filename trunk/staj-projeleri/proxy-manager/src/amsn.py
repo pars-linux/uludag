@@ -14,9 +14,8 @@ class AMSN(Module):
     
     def __init__(self):
         # FIXME: find paths automatically
-        self.path = "/home/bertan/.amsn/rmznbrtn_hotmail_com/config.xml"
+        self.path = "config_files/config.xml"
         self.doc = xml.dom.minidom.parse(self.path)
-        self.conf = open(self.path, "w")
         entries = self.doc.getElementsByTagName("entry")
         for entry in entries:
             # value of the 'attribute' element
@@ -39,5 +38,7 @@ class AMSN(Module):
         self.connectiontype.firstChild.nodeValue = "direct"
     
     def close(self):
-        self.conf.write(self.doc.toxml("utf-8"))
+        conf = open(self.path, "w")
+        conf.write(self.doc.toxml("utf-8"))
+        conf.close()
 

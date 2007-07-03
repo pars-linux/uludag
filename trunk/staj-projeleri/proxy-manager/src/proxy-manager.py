@@ -74,7 +74,6 @@ def main():
 
     win = QDialog()
     win.setCaption(i18n('Proxy Manager'))
-    # FIXME: icon ismi degissin bence
     win.setIcon(loadIconSet("proxy").pixmap(QIconSet.Small, QIconSet.Normal))
     widget = browser(win)
     win.aboutus = KAboutApplication(win)
@@ -84,7 +83,8 @@ def main():
     win.resize(620, 420)
 
     app.setMainWidget(win)
-    win.exec_loop()
+    sys.exit(win.exec_loop())
+
 # FIXME: fix here
 if __name__ == '__main__':
     main()
