@@ -14,7 +14,7 @@ class Gftp(Module):
     
     def __init__(self):
         # FIXME: find paths automatically
-        self.path = "/home/bertan/.gftp/gftprc"
+        self.path = "config_files/gftprc"
         # keys of the config file
         self.http = "http_proxy_host"
         self.httpPort = "http_proxy_port"

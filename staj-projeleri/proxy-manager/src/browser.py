@@ -35,6 +35,7 @@ class browser(QVBox):
         but.setTextPosition(but.BesideIcon)
         
         parseConfig()
+        createModules()
         self.prflview = ProfileView(self)
         # FIXME: Connections
 ##        self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
@@ -47,7 +48,7 @@ class browser(QVBox):
 ##        self.connect(self.combo_fs,SIGNAL('activated(const QString&)'),self.saveSession)
         
     def slotAdd(self):
-        profileHandler(self,self.profiles,self.parent)
+        profileHandler(self)
     
     def slotEdit(self):
         pass
@@ -71,14 +72,17 @@ class ProfileView(QScrollView):
     def maxHint(self):
         maxw = 0
         maxh = 0
+        print "basla"
         for item in self.profileItems:
             hint = item.sizeHint()
             w = hint.width()
             h = hint.height()
+            print w
             if w > maxw:
                 maxw = w
             if h > maxh:
                 maxh = h
+        print maxw
         return maxw, maxh
     
     def columnHint(self, width):
@@ -86,6 +90,7 @@ class ProfileView(QScrollView):
             return 2
         maxw, maxh = self.maxHint()
         c = width / maxw
+        print width
         if c < 1:
             c = 1
         if c > 3:
@@ -94,7 +99,7 @@ class ProfileView(QScrollView):
 
     def myResize(self, aw, ah):
         childs = self.profileItems
-        self.columns = self.columnHint(self.visibleWidth())
+        self.columns = self.columnHint(self.width())
         if not childs or len(childs) == 0:
             return
         
@@ -102,7 +107,7 @@ class ProfileView(QScrollView):
         j = 0
         maxw = aw / self.columns
         maxh = self.maxHint()[1]
-##        childs.sort(key=lambda x: x.self.name)
+        childs.sort(key=lambda x: x.name)
         for item in childs:
             item.is_odd = (i + j) % 2
             item.setGeometry(i * maxw, j * maxh, maxw, maxh)
@@ -125,8 +130,8 @@ class ProfileView(QScrollView):
         paint.save()
         paint.restore()
     
-    def add(self, prfl):
-        ProfileItem(self, prfl)
+    def add(self, name):
+        ProfileItem(self, name)
         self.myResize(self.contentsWidth(),self.contentsHeight())
 
 
@@ -155,8 +160,6 @@ class ProfileItem(QWidget):
         w = self.mypix.width()
         self.text_start = self.pix_start + w + 6
         
-##        view.connections[conn.hash] = self ??????????? conn = conn.conn
-        
         self.edit_but = IconButton("configure", self)
         QToolTip.add(self.edit_but, i18n("Configure this profile"))
 ##        self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
@@ -180,9 +183,8 @@ class ProfileItem(QWidget):
 ##            comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
     
     def slotEdit(self):
-        pass
-##        w = connection.Window(self.view.parent(), self.conn)
-    
+        profileHandler(self.parent().parent(), self.name)
+
     def mouseDoubleClickEvent(self, event):
         self.slotEdit()
     

@@ -14,7 +14,7 @@ class KDE(Module):
     
     def __init__(self):
         # FIXME: find paths automatically
-        self.path = "/home/bertan/.kde3.5/share/config/kioslaverc"
+        self.path = "config_files/kioslaverc"
         # keys of the config file
         self.https = "httpsProxy"
         self.http = "httpProxy"
@@ -22,8 +22,9 @@ class KDE(Module):
         self.type = "ProxyType"
         
         if os.path.exists(self.path):
-            self.confRead = open(self.path, "r")
-            self.lines = self.confRead.readlines()
+            confRead = open(self.path, "r")
+            self.lines = confRead.readlines()
+            confRead.close()
         else:
             self.lines = []
         for e in self.lines:
@@ -48,8 +49,6 @@ class KDE(Module):
         if not self.ti:
             self.lines.append(self.type + "=")
             self.ti = len(self.lines) - 1
-        
-        self.confRead.close()
 
     def setGlobalProxy(self, ip, port=None):
         if not port: value = "=" + ip + "\n"

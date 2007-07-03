@@ -14,9 +14,16 @@ from khtml import *
 
 import ConfigParser
 
+from firefox import Firefox
+from amsn import AMSN
+from aria2 import Aria2
+from kde import KDE
+from gftp import Gftp
 
 programs = None
 config = ConfigParser.SafeConfigParser()
+configPath = "config_files/config"
+modules = []
 
 def loadIcon(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIcon(name, group, size)
@@ -32,5 +39,11 @@ def getPrograms():
     
 def parseConfig():
     # FIXME: use a variable for "home" path
-    config.read("/home/bertan/.proxy/config")
-    
+    config.read(configPath)
+
+def createModules():
+    modules.append(Firefox())
+    modules.append(AMSN())
+    modules.append(Aria2())
+    modules.append(KDE())
+    modules.append(Gftp())

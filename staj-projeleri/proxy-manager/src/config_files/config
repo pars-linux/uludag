@@ -1,0 +1,27 @@
+[deneme2]
+http_port = 8080
+http_host = 123.123.123.123
+isactive = 0
+type = 1
+
+[we]
+http_port = 8080
+option = 1
+http_host = 123.123.123.123
+type = 3
+isactive = 0
+
+[deneme]
+type = 0
+isactive = 1
+
+[e2]
+http_port = 8080
+type = 2
+ssl_port = 8080
+http_host = 123.123.123.123
+gopher_host = 123.123.123.123
+ssl_host = 123.123.123.123
+gopher_port = 8080
+isactive = 0
+
