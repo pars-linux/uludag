@@ -241,6 +241,7 @@ PyDoc_STRVAR(vbeInfo__doc__,
 PyObject*
 ddc_vbeInfo(PyObject *self, PyObject *args)
 {
+	PyObject *ret;
 	struct vbe_info *vbe_info = NULL;
 	
 	const char *vendor_name = NULL;
@@ -280,7 +281,7 @@ ddc_vbeInfo(PyObject *self, PyObject *args)
 		}
 	}
 	
-	return Py_BuildValue(
+	ret = Py_BuildValue(
 		"{s:s#,"	/* signature */
 		"s:(i,i),"	/* version */
 		"s:s,"		/* oem_name */
@@ -299,6 +300,9 @@ ddc_vbeInfo(PyObject *self, PyObject *args)
 		"memory_size", vbe_info->memory_size,
 		"mode_list", modes
 	);
+
+	free(vbe_info);
+	return ret;
 }
 
 
@@ -310,6 +314,7 @@ PyDoc_STRVAR(query__doc__,
 PyObject*
 ddc_query(PyObject *self, PyObject *args)
 {
+	PyObject *ret;
 	int adapter;
 	struct vbe_edid1_info *edid;
 	
@@ -330,19 +335,14 @@ ddc_query(PyObject *self, PyObject *args)
 		return Py_None;
 	}
 
-	/* Some monitors cannot respond immediately. Wait for a valid EDID. */
-	int i = 20;
-	while (i--) {
-		if (is_valid(edid))
-			break;
-		usleep(50);
-	}
-	if (i < 0 && !is_valid(edid)) {
+	if (!is_valid(edid)) {
+		free(edid);
 		Py_INCREF(Py_None);
 		return Py_None;
 	}
 
 	if (edid->version == 255 && edid->revision == 255) {
+		free(edid);
 		Py_INCREF(Py_None);
 		return Py_None;
 	}
@@ -365,7 +365,7 @@ ddc_query(PyObject *self, PyObject *args)
 		}
 	}
 
-	return Py_BuildValue(
+	ret = Py_BuildValue(
 		"{s:i,"		/* version */
 		"s:i,"		/* revision */
 		"s:i,"		/* serial_number */
@@ -406,6 +406,9 @@ ddc_query(PyObject *self, PyObject *args)
 		"detailed_timing", get_detailed_timing_info(edid),
 		"eisa_id", eisa_id
 	);
+
+	free(edid);
+	return ret;
 }
 
 static PyMethodDef ddc_methods[] = {
