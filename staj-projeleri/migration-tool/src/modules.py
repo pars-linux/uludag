@@ -1,3 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2007, TUBITAK/UEKAE
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+#
+
 import registry
 import os.path
 import ConfigParser
@@ -11,7 +22,7 @@ class UserMigration:
         self.userdir = userdir
         self.sources = {}
         self.destinations = {}
-        self.options = {"Bookmarks":"true", "IEBookmarks":"true", "FFBookmarks":"true"}
+        self.options = {}
         
         # Collect Information:
         if parttype in ["Windows Vista", "Windows XP"]:
@@ -77,23 +88,28 @@ class UserMigration:
                 else:
                     return parser.get(profilename, "Path")
         except:
-            print "WARNING: Mozilla profile cannot be detected!"
             return ""
         
-    def migrate(self):
+    def migrate(self, warning = None, log = None):
+        if not warning:
+            def warning(text):
+                print text
+        if not log:
+            def log(text):
+                print text
         # Copy Bookmarks:
         if self.options.has_key("Bookmarks") and self.options["Bookmarks"]:
             bm = Bookmark()
             # Load IE Bookmarks:
             if self.options.has_key("IEBookmarks") and self.options["IEBookmarks"] and self.sources.has_key("Favorites Path"):
                 bm.getIEBookmarks(self.sources["Favorites Path"])
-                print "Internet Explorer bookmarks loaded."
+                log("Internet Explorer bookmarks loaded.")
             # Load FF Bookmarks:
             if self.options.has_key("FFBookmarks") and self.options["FFBookmarks"] and self.sources.has_key("Firefox Profile Path"):
                 possiblefile = os.path.join(self.sources["Firefox Profile Path"], "bookmarks.html")
                 if os.path.isfile(possiblefile):
                     bm.getFFBookmarks(possiblefile)
-                    print "Firefox bookmarks loaded."
+                    log("Firefox bookmarks loaded.")
             # Save FF Bookmarks:
             if self.destinations.has_key("Firefox Profile Path"):
                 lockfile = os.path.join(self.destinations["Firefox Profile Path"], "lock")
@@ -101,8 +117,8 @@ class UserMigration:
                     possiblefile = os.path.join(self.destinations["Firefox Profile Path"], "bookmarks.html")
                     if os.path.isfile(possiblefile):
                         bm.setFFBookmarks(possiblefile)
-                        print "Firefox bookmarks saved."
+                        log("Firefox bookmarks saved.")
                     else:
-                        print "WARNING: Firefox bookmarks file cannot be found."
+                        warning("Firefox bookmarks file cannot be found.")
                 else:
-                    print "WARNING: Firefox is in use. Bookmarks cannot be saved."
+                    warning("Firefox is in use. Bookmarks cannot be saved.")

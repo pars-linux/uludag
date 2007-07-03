@@ -1,0 +1,46 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ProgressWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ProgressWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>345</width>
+            <height>322</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>text</cstring>
+            </property>
+            <property name="text">
+                <string>Değişiklikler yapılırken lütfen bekleyiniz...</string>
+            </property>
+        </widget>
+        <widget class="QProgressBar">
+            <property name="name">
+                <cstring>bar</cstring>
+            </property>
+        </widget>
+        <widget class="QTextEdit">
+            <property name="name">
+                <cstring>log</cstring>
+            </property>
+            <property name="textFormat">
+                <enum>LogText</enum>
+            </property>
+        </widget>
+    </vbox>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
