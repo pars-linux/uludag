@@ -1,0 +1,276 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Pardusman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-04-07 09:56+0300\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+#: browser.py:36
+msgid "Version:"
+msgstr "Wersja:"
+
+#: browser.py:38
+#, python-format
+msgid "%s, release %s, build %s"
+msgstr "%s, wydanie %s, budowa %s"
+
+#: browser.py:41
+msgid "Component:"
+msgstr "Komponent:"
+
+#: browser.py:46
+msgid "Homepage:"
+msgstr "Strona Domowa:"
+
+#: browser.py:54
+msgid "Summary:"
+msgstr "Podsumowanie:"
+
+#: browser.py:61
+msgid "Description:"
+msgstr "Opis:"
+
+#: browser.py:73
+msgid "Depends on:"
+msgstr "Zależy od:"
+
+#: browser.py:78
+msgid "Depended by:"
+msgstr "Zależnośc dla:"
+
+#: browser.py:206
+#, python-format
+msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
+msgstr "%d pakietów, %s bajtów skompresowanych, %s bajtów zainstalowanych."
+
+#: browser.py:215
+msgid "Component"
+msgstr "Komponent"
+
+#: browser.py:226
+msgid "Search:"
+msgstr "Szukaj:"
+
+#: browser.py:230
+msgid "Package"
+msgstr "Pakiet"
+
+#: browser.py:231
+msgid "Archive Size"
+msgstr "Rozmiar Archiwum"
+
+#: browser.py:232
+msgid "Installed Size"
+msgstr "Rozmiar Instalacji"
+
+#: browser.py:303
+msgid "No packages selected."
+msgstr "Nie wybrano pakietów."
+
+#: browser.py:308
+#, python-format
+msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
+msgstr "%d wybranych pakietów, %s bajtów pakietów, %s bajtów dla instalacji"
+
+#: browser.py:334
+msgid "Use selected packages"
+msgstr "Użyj wybranych pakietów"
+
+#: gui.py:80
+msgid "&Open"
+msgstr "&Otwórz"
+
+#: gui.py:82
+msgid "Save &as..."
+msgstr "Zapisz &jako..."
+
+#: gui.py:97
+msgid ""
+"Pardusman says:\n"
+"\n"
+"  Teh winnars dont use teh drugs!  \n"
+" "
+msgstr ""
+"Pardusman mówi:\n"
+"\n"
+"  Teh winnars dont use teh drugs!  \n"
+" "
+
+#: gui.py:103
+msgid "Title:"
+msgstr "Tytuł:"
+
+#: gui.py:108
+msgid "Title of distribution media, used in grub menu."
+msgstr "Tytuł medium używany w menu grub."
+
+#: gui.py:112
+msgid "Work folder:"
+msgstr "Katalog roboczy:"
+
+#: gui.py:119
+msgid ""
+"This folder holds local repository cache\n"
+"and temporary files generated during the\n"
+"ISO making process."
+msgstr ""
+"Ten folder przechowuje kesz repozytorium\n"
+"jak i pliki tymczasowe używane do stworzenia\n"
+"obrazu ISO."
+
+#: gui.py:125
+msgid "Repository:"
+msgstr "Repozytorium:"
+
+#: gui.py:130
+msgid ""
+"PiSi package repository of the distribution.\n"
+"Must be a URL pointing to the repository index\n"
+"file (i.e. pisi-index.xml.bz2)."
+msgstr ""
+"Repozytorium PiSi dla dystrybucji.\n"
+"Musi być URLem do pliku index repozytorium\n"
+"(pisi-index.xml.bz2)."
+
+#: gui.py:134
+msgid "Release files:"
+msgstr "Pliki z notką wydania:"
+
+#: gui.py:141
+msgid ""
+"Content of this folder is copied\n"
+"onto the root folder of CD."
+msgstr ""
+"Zawartość tego folderu jest kopiowana\n"
+"do głównego katalogu CD."
+
+#: gui.py:147
+msgid "Type:"
+msgstr "Typ:"
+
+#: gui.py:150
+msgid "Installation"
+msgstr "Instalacja"
+
+#: gui.py:151
+msgid "Live system"
+msgstr "System Live"
+
+#: gui.py:154
+msgid "Media:"
+msgstr "Media:"
+
+#: gui.py:160
+msgid "CD (700 MB)"
+msgstr "CD (700 MB)"
+
+#: gui.py:161
+msgid "DVD (4.2 GB)"
+msgstr "DVD (4.2 GB)"
+
+#: gui.py:162
+msgid "FlashDisk (1 GB)"
+msgstr "FlashDisk (1 GB)"
+
+#: gui.py:163
+msgid "Custom size"
+msgstr "Inny rozmiar"
+
+#: gui.py:171
+msgid "Update Repo"
+msgstr "Repozytorium Aktualizacji"
+
+#: gui.py:174
+msgid "Select packages"
+msgstr "Wybierz pakiety"
+
+#: gui.py:177
+msgid "Make ISO"
+msgstr "Stwórz obraz"
+
+#: gui.py:210
+msgid "Select release files folder"
+msgstr "Wybierz piki z notką wydania"
+
+#: gui.py:221
+msgid "Select folder for temporary files and cache"
+msgstr "Wybierz katalog tymczasowy"
+
+#: gui.py:241
+msgid "Project directory does not exist."
+msgstr "Katalog projektu nie istnieje."
+
+#: gui.py:244
+msgid "Release files directory does not exist."
+msgstr "Katalog z notkami wydania nie istnieje."
+
+#: gui.py:285
+msgid "Project title not given."
+msgstr "Brak tytułu projektu."
+
+#: gui.py:292
+msgid "Release files directory not given."
+msgstr "Katalog z notkami wydania nie podany."
+
+#: gui.py:299
+msgid "Project directory not given."
+msgstr "Katalog projektu nie podany."
+
+#: gui.py:306
+msgid "Repository address not given."
+msgstr "Nie podano adresu repozytorium."
+
+#: gui.py:344
+#, python-format
+msgid "%s - Pardusman"
+msgstr "%s - Pardusman"
+
+#: gui.py:346
+msgid "New project - Pardusman"
+msgstr "Nowy projekt - Pardusman"
+
+#: gui.py:350
+msgid "Select a project..."
+msgstr "Wybierz projekt..."
+
+#: gui.py:361
+#, python-format
+msgid "Project '%s' opened."
+msgstr "Projekt '%' wybrany."
+
+#: gui.py:368
+msgid "Saved."
+msgstr "Zapisany."
+
+#: gui.py:373
+msgid "Save project as..."
+msgstr "Zapisz projekt jako..."
+
+#: gui.py:382
+#, python-format
+msgid "Project saved as '%s'."
+msgstr "Projekt zapisant jako '%s'."
+
+#: gui.py:386
+msgid "Pardus distribution media maker"
+msgstr "Generator nośników Pardusa"
+
+#: project.py:112
+#, python-format
+msgid "Project file '%s' does not exists!"
+msgstr "Plik projektu '%s' nie istnieje!"
+
+#: project.py:115
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr "To nie jest plik projektu Pardusmana, błędny xml!"
+
+#: project.py:117
+msgid "Not a Pardusman project file"
+msgstr "To nie jest plik projektu Pardusmana"
