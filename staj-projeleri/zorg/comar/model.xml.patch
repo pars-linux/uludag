@@ -1,9 +1,10 @@
 --- model.xml.orig	2007-05-30 17:06:10.000000000 +0300
-+++ model.xml	2007-07-02 12:21:21.000000000 +0300
-@@ -199,6 +199,36 @@
++++ model.xml	2007-07-03 12:03:33.000000000 +0300
+@@ -205,6 +205,40 @@
+ <group name="Storage">
+ </group>
  
- 
- <group name="Hardware">
++<group name="Xorg">
 +	<class name="Display">
 +		<method name="autoConfigure"/>
 +		<method name="safeConfigure"/>
@@ -34,6 +35,9 @@
 +			<argument>screens</argument>
 +		</method>
 +	</class>
- </group>
++	<class name="Input">
++	</class>
++</group>
  
- 
+ <group name="Time">
+ <class name="Clock">
