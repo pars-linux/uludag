@@ -1,0 +1,281 @@
+# translation of fr.po to french
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-02-21 14:01+0200\n"
+"PO-Revision-Date: 2007-07-04 00:51+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: french <pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: browser.py:36
+msgid "Version:"
+msgstr "Version :"
+
+#: browser.py:38
+#, python-format
+msgid "%s, release %s, build %s"
+msgstr "%s, version %s, révision %s"
+
+#: browser.py:41
+msgid "Component:"
+msgstr "Composant :"
+
+#: browser.py:46
+msgid "Homepage:"
+msgstr "Page d'accueil :"
+
+#: browser.py:54
+msgid "Summary:"
+msgstr "Résumé :"
+
+#: browser.py:61
+msgid "Description:"
+msgstr "Description :"
+
+#: browser.py:73
+msgid "Depends on:"
+msgstr "Dépend de :"
+
+#: browser.py:78
+msgid "Depended by:"
+msgstr "Dépendance de :"
+
+#: browser.py:206
+#, python-format
+msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
+msgstr "Total de %d paquets, %s octets compressés, %s octets installés."
+
+#: browser.py:215
+msgid "Component"
+msgstr "Composant"
+
+#: browser.py:226
+msgid "Search:"
+msgstr "Recherche :"
+
+#: browser.py:230
+msgid "Package"
+msgstr "Paquet"
+
+#: browser.py:231
+msgid "Archive Size"
+msgstr "Taille de l'archive"
+
+#: browser.py:232
+msgid "Installed Size"
+msgstr "Taille installée"
+
+#: browser.py:303
+msgid "No packages selected."
+msgstr "Aucun paquet sélectionné."
+
+#: browser.py:308
+#, python-format
+msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
+msgstr "%d paquets sélectionnés, archive de %s octets, pour une installation de %s octets."
+
+#: browser.py:334
+msgid "Use selected packages"
+msgstr "Utiliser les paquets sélectionnés"
+
+#: gui.py:80
+msgid "&Open"
+msgstr "&Ouvrir"
+
+#: gui.py:82
+msgid "Save &as..."
+msgstr "S&auver sous..."
+
+#: gui.py:97
+msgid ""
+"Pardusman says:\n"
+"\n"
+"  Teh winnars dont use teh drugs!  \n"
+" "
+msgstr ""
+"Pardusman dit :\n"
+"\n"
+"  LeS vaiNquEurs n'uTilIsEnT pAs de drOgUeS!  \n"
+" "
+
+#: gui.py:103
+msgid "Title:"
+msgstr "Titre :"
+
+#: gui.py:108
+msgid "Title of distribution media, used in grub menu."
+msgstr "Titre du média de distribution, utilisé dans le menu grub."
+
+#: gui.py:112
+msgid "Work folder:"
+msgstr "Répertoire de travail :"
+
+#: gui.py:119
+msgid ""
+"This folder holds local repository cache\n"
+"and temporary files generated during the\n"
+"ISO making process."
+msgstr ""
+"Ce répertoire conserve un cache local du dépôt\n"
+"et les fichiers temporaires générés durant le processus\n"
+"de génération de l'ISO."
+
+#: gui.py:125
+msgid "Repository:"
+msgstr "Dépôt :"
+
+#: gui.py:130
+msgid ""
+"PiSi package repository of the distribution.\n"
+"Must be a URL pointing to the repository index\n"
+"file (i.e. pisi-index.xml.bz2)."
+msgstr ""
+"Dépôt de paquet PiSi de la distribution.\n"
+"Doit être une URL pointant vers le fichier d'index\n"
+"du dépôt (i.e pisi-index.xml.bz2)."
+
+#: gui.py:134
+msgid "Release files:"
+msgstr "Fichiers de version :"
+
+#: gui.py:141
+msgid ""
+"Content of this folder is copied\n"
+"onto the root folder of CD."
+msgstr ""
+"Le contenu de ce répertoire est copié\n"
+"dans la racine du CD."
+
+#: gui.py:147
+msgid "Type:"
+msgstr "Type :"
+
+#: gui.py:150
+msgid "Installation"
+msgstr "Installation :"
+
+#: gui.py:151
+msgid "Live system"
+msgstr "Système 'live'"
+
+#: gui.py:154
+msgid "Media:"
+msgstr "Média :"
+
+#: gui.py:160
+msgid "CD (700 MB)"
+msgstr "CD (700 Mo)"
+
+#: gui.py:161
+msgid "DVD (4.2 GB)"
+msgstr "DVD (4.2 Go)"
+
+#: gui.py:162
+msgid "FlashDisk (1 GB)"
+msgstr "FlashDisk (1 Go)"
+
+#: gui.py:163
+msgid "Custom size"
+msgstr "Taille personnalisée"
+
+#: gui.py:171
+msgid "Update Repo"
+msgstr "Mettre à jour le dépôt"
+
+#: gui.py:174
+msgid "Select packages"
+msgstr "Sélectionner les paquets"
+
+#: gui.py:177
+msgid "Make ISO"
+msgstr "Faire l'ISO"
+
+#: gui.py:210
+msgid "Select release files folder"
+msgstr "Sélectionner le répertoire des fichiers de version "
+
+#: gui.py:221
+msgid "Select folder for temporary files and cache"
+msgstr "Sélectionner le répertoire pour les fichiers temporaire et le cache"
+
+#: gui.py:241
+msgid "Project directory does not exist."
+msgstr "Le répertoire du projet n'existe pas."
+
+#: gui.py:244
+msgid "Release files directory does not exist."
+msgstr "Le répertoire des fichiers de version n'existe pas."
+
+#: gui.py:285
+msgid "Project title not given."
+msgstr "Le titre du projet n'a pas été précisé."
+
+#: gui.py:292
+msgid "Release files directory not given."
+msgstr "Le répertoire des fichiers de version n'a pas été précisé."
+
+#: gui.py:299
+msgid "Project directory not given."
+msgstr "Le répertoire du projet n'a pas été précisé."
+
+#: gui.py:306
+msgid "Repository address not given."
+msgstr "L'adresse du dépôt n'a pas été donné."
+
+#: gui.py:344
+#, python-format
+msgid "%s - Pardusman"
+msgstr "%s - Pardusman"
+
+#: gui.py:346
+msgid "New project - Pardusman"
+msgstr "Nouveau projet - Pardusman"
+
+#: gui.py:350
+msgid "Select a project..."
+msgstr "Sélectionner un projet..."
+
+#: gui.py:361
+#, python-format
+msgid "Project '%s' opened."
+msgstr "Projet '%s' ouvert."
+
+#: gui.py:368
+msgid "Saved."
+msgstr "Sauvé."
+
+#: gui.py:373
+msgid "Save project as..."
+msgstr "Sauver le projet sous..."
+
+#: gui.py:382
+#, python-format
+msgid "Project saved as '%s'."
+msgstr "Projet sauvé en tant que '%s'."
+
+#: gui.py:386
+msgid "Pardus distribution media maker"
+msgstr "Créateur de médias de distribution Pardus"
+
+#: project.py:112
+#, python-format
+msgid "Project file '%s' does not exists!"
+msgstr "Le fichier projet '%s' n'existe pas !"
+
+#: project.py:115
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr "Le fichier n'est pas un fichier projet Pardusman, xml invalide !"
+
+#: project.py:117
+msgid "Not a Pardusman project file"
+msgstr "N'est pas un fichier projet Pardusman"
+
