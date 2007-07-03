@@ -19,7 +19,7 @@ from zorg import versionString
 zorg_info = " Xorg AutoConfiguration tool"
 
 class OUT:
-    def __init__(self):
+    def __init__(self, colorout):
         if colorout:
             self.NORMAL = '\x1b[37;0m'
             self.BOLD = '\x1b[37;01m'
@@ -60,7 +60,33 @@ class OUT:
         self._write(self.type_error, "%s%s" % (self.ERRORMSG, msg))
         sys.exit(1)
 
-if __name__ == "__main__":
+class ZorgApp:
+    def __init__(self, opts):
+        self.debug = opts.debug
+        self.out = OUT(opts.colorout)
+        self.com = comar.Link()
+
+    def safe(self):
+        self.com.Xorg.Display.safeConfigure()
+
+    def probe(self):
+        self.com.Xorg.Display.autoConfigure()
+
+    def info(self):
+        com = self.com
+        com.Xorg.Display.listCards()
+        reply = com.read()
+        if not reply:
+            self.out.error("Could not retrieve card list.")
+            return
+
+        cards = reply.data
+        self.out.sect("Following video cards have been configured:")
+        for card in cards.splitlines():
+            cardId, name = card.split(" ", 1)
+            self.out.info(name)
+
+def main():
     # running from command line
     parser = OptionParser(description = "%s version %s" % (zorg_info, versionString()))
     parser.add_option("-d", "--debug", action="store_true", dest="debug",
@@ -79,15 +105,17 @@ if __name__ == "__main__":
                       default=False, help="list available BIOS modes for Intel cards")
 
     opts, args = parser.parse_args()
-    debug = opts.debug
-    colorout = opts.colorout
-    out = OUT()
+
+    app = ZorgApp(opts)
 
     if opts.safe:
-        com = comar.Link()
-        com.Xorg.Display.safeConfigure()
+        app.safe()
     elif opts.probe:
-        com = comar.Link()
-        com.Xorg.Display.autoConfigure()
+        app.probe()
+    elif opts.info:
+        app.info()
     else:
-        out.error("Not implemented yet.")
+        app.out.error("Not implemented yet.")
+
+if __name__ == "__main__":
+    main()
