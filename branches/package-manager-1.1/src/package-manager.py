@@ -808,7 +808,8 @@ class MainApplicationWidget(QWidget):
             return
 
         # after every operation check package cache limits
-        if command not in ["System.Manager.clearCache", 
+        if command not in ["System.Manager.clearCache",
+                           "System.Manager.cancelled",
                            "System.Manager.setRepositories"]:
             self.command.checkCacheLimits()
 
