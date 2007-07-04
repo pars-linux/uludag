@@ -44,7 +44,7 @@ class Wizard(QWizard):
             self.migration = UserMigration(part, parttype, userdir)
             # Update old settings page with the new one:
             self.removePage(self.settingspage)
-            self.settingspage = Options(self.migration.sources)
+            self.settingspage = Options(self.migration.sources, self.migration.destinations)
             self.insertPage(self.settingspage, u"2. Ayarların Seçilmesi", 1)
             QWizard.next(self)
         
