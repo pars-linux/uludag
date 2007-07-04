@@ -53,6 +53,9 @@ def getWindowsUsers(partition):
             subkeys = key.subKeys()
             for subkey in subkeys:
                 key2 = key.getSubKey(subkey)
+                values = key2.valueDict()
+                if not (values.has_key("ProfileImagePath") and values.has_key("ProfileImagePath")):
+                    continue
                 path = key2.getValue("ProfileImagePath")
                 if key2.getValue("Flags") == 0:
                     path = path.split("\\",1)[1]

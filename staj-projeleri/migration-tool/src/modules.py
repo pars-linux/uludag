@@ -9,6 +9,7 @@
 # any later version.
 #
 
+import sys
 import os
 import ConfigParser
 
@@ -46,9 +47,11 @@ class UserMigration:
                         self.sources[field + " Path"] = value
         # Find user wallpaper
         wallpaper = Wallpaper.getWindowsWallpaperPath(self.partition, hive)
-        if wallpaper:
-            self.sources["Wallpaper Path"] = wallpaper
-        
+        try:
+            if wallpaper:
+                self.sources["Wallpaper Path"] = wallpaper
+        except:
+            print "error in wallpaper module:", sys.exc_info()[0]
         # Search for programs:
         if self.sources.has_key("AppData Path"):
             # Firefox:
@@ -68,9 +71,12 @@ class UserMigration:
         if profilepath != "":
             self.destinations["Firefox Profile Path"] = profilepath
         # Wallpaper
-        wallpaper = Wallpaper.getKDEWallpaperPath()
-        if wallpaper:
-            self.destinations["Wallpaper Path"] = wallpaper
+        try:
+            wallpaper = Wallpaper.getKDEWallpaperPath()
+            if wallpaper:
+                self.destinations["Wallpaper Path"] = wallpaper
+        except:
+            print "error in wallpaper module:", sys.exc_info()[0]
             
     def getMozillaProfile(self, ffpath):
         try:
@@ -133,7 +139,8 @@ class UserMigration:
                     warning("Firefox is in use. Bookmarks cannot be saved.")
         # Change Wallpaper:
         if self.options.has_key("Change Wallpaper") and self.options["Change Wallpaper"]:
-            if Wallpaper.changeWallpaper(self.sources["Wallpaper Path"]):
+            try:
+                Wallpaper.changeWallpaper(self.sources["Wallpaper Path"])
                 log("Wallpaper changed.")
-            else:
+            except:
                 warning("Wallpaper cannot be changed")
