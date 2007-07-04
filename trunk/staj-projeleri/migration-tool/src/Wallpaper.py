@@ -45,13 +45,24 @@ def getKDEWallpaperPath():
         return None
 
 def getWindowsWallpaperPath(partition, hive):
-    value = hive.getValue("Control Panel\\Desktop","WallPaper")
-    if value.find("C:\\") != -1:
-        value = value.replace("C:\\", "")
-        value = value.replace("\\", "/")
-        value = winPath(partition, value)
-        if value:
-            return value
+    try:
+        key = hive.getKey("Control Panel\\Desktop")
+        values = key.valueDict()
+        if values.has_key("Wallpaper"):     # Windows XP
+            value = values["Wallpaper"]
+        elif values.has_key("WallPaper"):   # Windows Vista
+            value = values["WallPaper"]
+        else:
+            return ""
+        value = hive.getValue("Control Panel\\Desktop","WallPaper")
+        if value.find("C:\\") != -1:
+            value = value.replace("C:\\", "")
+            value = value.replace("\\", "/")
+            value = winPath(partition, value)
+            if value:
+                return value
+    except:
+        return ""
 
 def getThumbnail(oldfile, width=100, height=100):
     newfile = tempfile.mktemp(".jpg")
