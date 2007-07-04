@@ -17,6 +17,9 @@ from dcopext import DCOPClient, DCOPObj
 
 import registry
 
+class WallpaperError:
+    pass
+
 def winPath(currentdir, path):
     pathlist = path.split("/",1)
     files = os.listdir(currentdir)
@@ -35,34 +38,31 @@ def getKDEWallpaperPath():
     # Create a dcop object:
     client = DCOPClient()
     if not client.attach():
-        return None
+        raise WallpaperError, "KDE wallpaper cannot be found"
     # Get wallpaper path:
     background = DCOPObj("kdesktop", client, "KBackgroundIface")
     ok, wallpaper = background.currentWallpaper(0)
     if ok:
         return wallpaper
     else:
-        return None
+        raise WallpaperError, "KDE wallpaper cannot be found"
 
 def getWindowsWallpaperPath(partition, hive):
-    try:
-        key = hive.getKey("Control Panel\\Desktop")
-        values = key.valueDict()
-        if values.has_key("Wallpaper"):     # Windows XP
-            value = values["Wallpaper"]
-        elif values.has_key("WallPaper"):   # Windows Vista
-            value = values["WallPaper"]
-        else:
-            return ""
-        value = hive.getValue("Control Panel\\Desktop","WallPaper")
-        if value.find("C:\\") != -1:
-            value = value.replace("C:\\", "")
-            value = value.replace("\\", "/")
-            value = winPath(partition, value)
-            if value:
-                return value
-    except:
-        return ""
+    key = hive.getKey("Control Panel\\Desktop")
+    values = key.valueDict()
+    if values.has_key("Wallpaper"):     # Windows XP
+        value = values["Wallpaper"]
+    elif values.has_key("WallPaper"):   # Windows Vista
+        value = values["WallPaper"]
+    else:
+        raise WallpaperError, "Windows wallpaper cannot be found"
+    if value.find("C:\\") != -1:
+        value = value.replace("C:\\", "")
+        value = value.replace("\\", "/")
+        value = winPath(partition, value)
+        if value:
+            return value
+    raise WallpaperError, "Windows wallpaper cannot be found"
 
 def getThumbnail(oldfile, width=100, height=100):
     newfile = tempfile.mktemp(".jpg")
@@ -71,20 +71,17 @@ def getThumbnail(oldfile, width=100, height=100):
     return newfile
 
 def changeWallpaper(path):
-    try:
-        # Copy file to wallpapers dir:
-        newpath = os.path.join(os.path.expanduser("~/.kde/share/wallpapers"), os.path.basename(path))
-        shutil.copyfile(path, newpath)
-        # Create a dcop object:
-        client = DCOPClient()
-        if not client.attach():
-            return None
-        # Set Wallpaper:
-        background = DCOPObj("kdesktop", client, "KBackgroundIface")
-        ok, wallpaper = background.setWallpaper(newpath, 6)
-        if ok:
-            return True
-        else:
-            return False
-    except:
-        return False
+    # Copy file to wallpapers dir:
+    newpath = os.path.join(os.path.expanduser("~/.kde/share/wallpapers"), os.path.basename(path))
+    shutil.copyfile(path, newpath)
+    # Create a dcop object:
+    client = DCOPClient()
+    if not client.attach():
+        raise WallpaperError, "Wallpaper cannot be changed"
+    # Set Wallpaper:
+    background = DCOPObj("kdesktop", client, "KBackgroundIface")
+    ok, wallpaper = background.setWallpaper(newpath, 6)     # 6: Scaled
+    if ok:
+        return True
+    else:
+        raise WallpaperError, "Wallpaper cannot be changed"
