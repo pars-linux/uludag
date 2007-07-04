@@ -9,10 +9,11 @@
 # any later version.
 #
 
-import registry
-import os.path
+import os
 import ConfigParser
 
+import registry
+import Wallpaper
 from bookmark import *
 
 class UserMigration:
@@ -43,6 +44,10 @@ class UserMigration:
                     value = os.path.join(self.partition, value)
                     if os.path.isdir(value):
                         self.sources[field + " Path"] = value
+        # Find user wallpaper
+        wallpaper = Wallpaper.getWindowsWallpaperPath(self.partition, hive)
+        if wallpaper:
+            self.sources["Wallpaper Path"] = wallpaper
         
         # Search for programs:
         if self.sources.has_key("AppData Path"):
@@ -62,6 +67,10 @@ class UserMigration:
         profilepath = self.getMozillaProfile(os.path.expanduser("~/.mozilla/firefox/"))
         if profilepath != "":
             self.destinations["Firefox Profile Path"] = profilepath
+        # Wallpaper
+        wallpaper = Wallpaper.getKDEWallpaperPath()
+        if wallpaper:
+            self.destinations["Wallpaper Path"] = wallpaper
             
     def getMozillaProfile(self, ffpath):
         try:
@@ -122,3 +131,9 @@ class UserMigration:
                         warning("Firefox bookmarks file cannot be found.")
                 else:
                     warning("Firefox is in use. Bookmarks cannot be saved.")
+        # Change Wallpaper:
+        if self.options.has_key("Change Wallpaper") and self.options["Change Wallpaper"]:
+            if Wallpaper.changeWallpaper(self.sources["Wallpaper Path"]):
+                log("Wallpaper changed.")
+            else:
+                warning("Wallpaper cannot be changed")

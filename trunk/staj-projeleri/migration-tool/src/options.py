@@ -11,8 +11,10 @@
 
 from qt import *
 
+import Wallpaper
+
 class Options(QWidget):
-    def __init__(self, sources):
+    def __init__(self, sources, destinations={}):
         QWidget.__init__(self)
         self.sources = sources
         self.layout = QVBoxLayout(self)
@@ -20,31 +22,81 @@ class Options(QWidget):
         # Bookmarks:
         if sources.has_key("Firefox Profile Path") or sources.has_key("Favorites Path"):
             self.Bookmarks = QGroupBox(self)
-            self.Bookmarks.setTitle(u"Yer İmleri")
+            self.Bookmarks.setTitle(u"Bookmarks")
             self.Bookmarks.setColumnLayout(0,Qt.Vertical)
             self.BookmarksLayout = QVBoxLayout(self.Bookmarks.layout())
             self.layout.addWidget(self.Bookmarks)
             
             if sources.has_key("Firefox Profile Path"):
                 self.FFBookmarks = QCheckBox(self.Bookmarks)
-                self.FFBookmarks.setText(u"Firefox yer imlerini alayım mı?")
+                self.FFBookmarks.setText(u"Firefox bookmarks")
                 self.BookmarksLayout.addWidget(self.FFBookmarks)
             
             if sources.has_key("Favorites Path"):
                 self.IEBookmarks = QCheckBox(self.Bookmarks)
-                self.IEBookmarks.setText(u"Internet Explorer yer imlerini alayım mı?")
+                self.IEBookmarks.setText(u"Internet Explorer favorites")
                 self.BookmarksLayout.addWidget(self.IEBookmarks)
         
+        # Wallpaper:
+        if sources.has_key("Wallpaper Path") and destinations.has_key("Wallpaper Path"):
+            self.wpGroup = QButtonGroup(self)
+            self.wpGroup.setTitle("Wallpaper")
+            self.wpGroup.setColumnLayout(0,Qt.Horizontal)
+            self.wpLayout = QHBoxLayout(self.wpGroup.layout())
+            self.layout.addWidget(self.wpGroup)
+            # Radio Box:
+            self.radioLayout = QVBoxLayout(self.wpGroup)
+            self.wpLayout.addLayout(self.radioLayout)
+            
+            self.newRadio = QRadioButton(self.wpGroup)
+            self.newRadio.setText(u"Keep current wallpaper")
+            self.newRadio.setChecked(True)
+            self.radioLayout.addWidget(self.newRadio)
+            
+            self.oldRadio = QRadioButton(self.wpGroup)
+            self.oldRadio.setText(u"Use old wallpaper")
+            self.radioLayout.addWidget(self.oldRadio)
+            
+            # New (current) Wallpaper:
+            self.newLayout = QVBoxLayout(self.wpGroup)
+            self.wpLayout.addLayout(self.newLayout)
+            
+            self.newLabel = QLabel(self.wpGroup)
+            self.newLabel.setText(u"Current Wallpaper:")
+            self.newLayout.addWidget(self.newLabel)
+            
+            self.newThumb = QLabel(self.wpGroup)
+            newwp = Wallpaper.getThumbnail(destinations["Wallpaper Path"])
+            pixmap = QPixmap(newwp)
+            self.newThumb.setPixmap(pixmap)
+            self.newLayout.addWidget(self.newThumb)
+            
+            # Old Wallpaper:
+            self.oldLayout = QVBoxLayout(self.wpGroup)
+            self.wpLayout.addLayout(self.oldLayout)
+            
+            self.oldLabel = QLabel(self.wpGroup)
+            self.oldLabel.setText(u"Old Wallpaper:")
+            self.oldLayout.addWidget(self.oldLabel)
+            
+            self.oldThumb = QLabel(self.wpGroup)
+            oldwp = Wallpaper.getThumbnail(sources["Wallpaper Path"])
+            pixmap = QPixmap(oldwp)
+            self.oldThumb.setPixmap(pixmap)
+            self.oldLayout.addWidget(self.oldThumb)
+            
         spacer = QSpacerItem(1,1,QSizePolicy.Minimum,QSizePolicy.Expanding)
         self.layout.addItem(spacer)
     
     def getOptionsSteps(self):
-        options = {"Bookmarks":0, "FFBookmarks":0, "IEBookmarks":0}
+        options = {"Bookmarks":0, "FFBookmarks":0, "IEBookmarks":0, "Change Wallpaper":0}
         if self.sources.has_key("Firefox Profile Path") and self.FFBookmarks.isOn():
             options["FFBookmarks"] = 1
             options["Bookmarks"] = 1
         if self.sources.has_key("Favorites Path") and self.IEBookmarks.isOn():
             options["IEBookmarks"] = 1
             options["Bookmarks"] = 1
-        steps = options["Bookmarks"] + options["FFBookmarks"] + options["IEBookmarks"]
+        if self.oldRadio.isChecked():
+            options["Change Wallpaper"] = 1
+        steps = options["Bookmarks"] + options["FFBookmarks"] + options["IEBookmarks"] + options["Change Wallpaper"]
         return options, steps
