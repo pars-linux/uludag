@@ -12,6 +12,7 @@
 import os
 import shutil
 import tempfile
+import ConfigParser
 
 from dcopext import DCOPClient, DCOPObj
 
@@ -35,14 +36,11 @@ def winPath(currentdir, path):
     return None
 
 def getKDEWallpaperPath():
-    # Create a dcop object:
-    client = DCOPClient()
-    if not client.attach():
-        raise WallpaperError, "KDE wallpaper cannot be found"
-    # Get wallpaper path:
-    background = DCOPObj("kdesktop", client, "KBackgroundIface")
-    ok, wallpaper = background.currentWallpaper(0)
-    if ok:
+    parser = ConfigParser.ConfigParser()
+    parser.readfp(open(os.path.expanduser("~/.kde/share/config/kdesktoprc")))
+    wallpaper = parser.get("Desktop0", "Wallpaper")
+    wallpaper = wallpaper.replace("$HOME", os.path.expanduser("~"))
+    if os.path.isfile(wallpaper):
         return wallpaper
     else:
         raise WallpaperError, "KDE wallpaper cannot be found"
