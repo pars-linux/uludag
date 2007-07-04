@@ -17,7 +17,7 @@ from dcopext import DCOPClient, DCOPObj
 
 import registry
 
-class WallpaperError:
+class WallpaperError(Exception):
     pass
 
 def winPath(currentdir, path):
