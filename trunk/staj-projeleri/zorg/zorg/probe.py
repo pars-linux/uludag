@@ -139,7 +139,7 @@ class Screen:
         self.number = None
         self.device = device
         self.monitor = monitor
-        self.depth = 16
+        self.depth = None
         self.modes = ["800x600", "640x480"]
         self.res = "800x600"
 
@@ -148,14 +148,19 @@ class Screen:
         self.monitor.identifier = "Monitor%d" % self.number
         self.device.identifier = "VideoCard%d" % self.number
 
-        if self.device.driver in truecolor_cards:
-            self.depth = 24
+        if not self.depth:
+            if self.device.driver in truecolor_cards:
+                self.depth = 24
+            else:
+                self.depth = 16
 
         print "Supported modes are %s" % self.monitor.res
         print "Requested mode is %s" % self.res
         if self.res in self.monitor.res:
             i = self.monitor.res.index(self.res)
             self.modes = self.monitor.res[i:]
+        else:
+            self.modes[:0] = [self.res]
 
 def queryTouchpad():
     try:

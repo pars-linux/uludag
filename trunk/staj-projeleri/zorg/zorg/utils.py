@@ -67,3 +67,27 @@ def sysValue(path, dir, _file):
 
 def xisrunning():
     return os.path.exists(xorg_lock)
+
+def parseMode(mode):
+    m = mode.split("-", 1)
+    res = m.pop(0)
+
+    try:
+        w, h = map(int, res.split("x", 1))
+    except:
+        return None, None
+
+    depth = None
+
+    if m:
+        try:
+            d = int(m[0])
+            if d in (16, 24):
+                depth = d
+            else:
+                res = None
+        except ValueError:
+            res = None
+
+    return res, depth
+
