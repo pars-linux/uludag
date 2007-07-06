@@ -1,6 +1,4 @@
-<?xml version="1.0"?>
-
-<config>
+<?xml version="1.0" encoding="utf-8"?><config>
    <entry>
       <attribute>autolisten_voiceclips</attribute>
       <value>1</value>
@@ -23,7 +21,7 @@
    </entry>
    <entry>
       <attribute>proxypass</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>leftdelimiter</attribute>
@@ -215,7 +213,7 @@
    </entry>
    <entry>
       <attribute>globalnick</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>showpicnotify</attribute>
@@ -323,7 +321,7 @@
    </entry>
    <entry>
       <attribute>proxy</attribute>
-      <value></value>
+      <value>212.21.212.121 3223</value>
    </entry>
    <entry>
       <attribute>strictfonts</attribute>
@@ -363,7 +361,7 @@
    </entry>
    <entry>
       <attribute>p4c_name</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>sngdblclick</attribute>
@@ -483,7 +481,7 @@
    </entry>
    <entry>
       <attribute>proxyuser</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>sound</attribute>
@@ -491,7 +489,7 @@
    </entry>
    <entry>
       <attribute>openfilecommand</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>orderusersincreasing</attribute>
@@ -531,7 +529,7 @@
    </entry>
    <entry>
       <attribute>libtls_temp</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>winchatoutheight</attribute>
@@ -567,7 +565,7 @@
    </entry>
    <entry>
       <attribute>login</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>reconnect</attribute>
@@ -587,11 +585,11 @@
    </entry>
    <entry>
       <attribute>connectiontype</attribute>
-      <value>direct</value>
+      <value>proxy</value>
    </entry>
    <entry>
       <attribute>mailcommand</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>default_ns_server</attribute>
@@ -631,7 +629,7 @@
    </entry>
    <entry>
       <attribute>p4contextprefix</attribute>
-      <value></value>
+      <value/>
    </entry>
    <entry>
       <attribute>blockinter2</attribute>

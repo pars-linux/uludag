@@ -48,12 +48,8 @@ class browser(QVBox):
 ##        self.connect(self.combo_fs,SIGNAL('activated(const QString&)'),self.saveSession)
         
     def slotAdd(self):
-        profileHandler(self)
-    
-    def slotEdit(self):
-        pass
-    def slotDelete(self):
-        pass
+        profileHandler(self.prflview)
+        
     def slotHelp(self):
         pass
 
@@ -72,25 +68,23 @@ class ProfileView(QScrollView):
     def maxHint(self):
         maxw = 0
         maxh = 0
-        print "basla"
         for item in self.profileItems:
             hint = item.sizeHint()
             w = hint.width()
             h = hint.height()
-            print w
             if w > maxw:
                 maxw = w
             if h > maxh:
                 maxh = h
-        print maxw
         return maxw, maxh
     
     def columnHint(self, width):
+        # FIXME: clean the whole code or remove the next line
+        return 1
         if len(self.profileItems) == 1:
             return 2
         maxw, maxh = self.maxHint()
         c = width / maxw
-        print width
         if c < 1:
             c = 1
         if c > 3:
@@ -132,22 +126,27 @@ class ProfileView(QScrollView):
     
     def add(self, name):
         ProfileItem(self, name)
-        self.myResize(self.contentsWidth(),self.contentsHeight())
+        self.myResize(self.width(),self.height())
 
 
 class ProfileItem(QWidget):
     def __init__(self, view, name):
         self.is_odd = 0
         QWidget.__init__(self, view.viewport())
-        self.isActive = config.getboolean(name, "isActive")
         self.tipper = ProfileTipper(self)
         self.tipper.parent = self
         view.profileItems.append(self)
         
         self.view = view
-        self.name = name
+        if name == "noproxy":
+            self.noproxy = True
+            self.name = i18n("No Proxy")
+        else: 
+            self.noproxy = False
+            self.name = name
         
         self.mypix = loadIconSet("proxy").pixmap(QIconSet.Large, QIconSet.Normal)
+        self.isActive = config.getboolean(name, "isActive")
         self.check = QCheckBox(self)
         self.check.setChecked(self.isActive)
         QToolTip.add(self.check, i18n("Activate/Deactivate this proxy profile"))
@@ -160,36 +159,47 @@ class ProfileItem(QWidget):
         w = self.mypix.width()
         self.text_start = self.pix_start + w + 6
         
-        self.edit_but = IconButton("configure", self)
-        QToolTip.add(self.edit_but, i18n("Configure this profile"))
-##        self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
-        self.del_but = IconButton("cancel", self)
-        QToolTip.add(self.del_but, i18n("Delete this profile"))
-##        self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
+        if not self.noproxy:
+            self.edit_but = IconButton("configure", self)
+            QToolTip.add(self.edit_but, i18n("Configure this profile"))
+            self.connect(self.edit_but, SIGNAL("clicked()"), self.slotEdit)
+            self.del_but = IconButton("cancel", self)
+            QToolTip.add(self.del_but, i18n("Delete this profile"))
+            self.connect(self.del_but, SIGNAL("clicked()"), self.slotDelete)
         
         self.show()
-        
-        self.ignore_signal = False
     
     def slotToggle(self, on):
-        if self.ignore_signal:
+        if self.isActive or not on:
             return
+        else:
+            if not self.noproxy: changeProxy(self.name)
+            else: changeProxy("noproxy")
+            for i in self.view.profileItems:
+                i.check.setChecked(False)
+                i.isActive = False
+            self.isActive = True
+            self.check.setChecked(True)
     
     def slotDelete(self):
-        pass
-##        conn = self.conn
-##        m = i18n("Should I delete the\n'%s'\nconnection?")
-##        if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % conn.name, i18n("Delete connection?")):
-##            comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
+        m = i18n("Should I delete the\n'%s'\nproxy profile?")
+        if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % self.name, i18n("Delete proxy profile?")):
+            config.remove_section(self.name)
+            f = open(configPath,"w")
+            config.write(f)
+            f.close()
+            print self.view.profileItems.remove(self)
+            self.view.myResize(self.view.width(),self.view.height())
+            print "resized"
     
     def slotEdit(self):
-        profileHandler(self.parent().parent(), self.name)
+        if not self.noproxy:
+            profileHandler(self.parent().parent(), self.name)
 
     def mouseDoubleClickEvent(self, event):
         self.slotEdit()
     
     def addressText(self):
-##        if self.options.get    ext
         text = "defsbsd"
         return text
     
@@ -198,8 +208,9 @@ class ProfileItem(QWidget):
         col = KGlobalSettings.baseColor()
         if self.is_odd:
             col = KGlobalSettings.alternateBackgroundColor()
-        self.edit_but.setPaletteBackgroundColor(col)
-        self.del_but.setPaletteBackgroundColor(col)
+        if not self.noproxy:
+            self.edit_but.setPaletteBackgroundColor(col)
+            self.del_but.setPaletteBackgroundColor(col)
         paint.fillRect(event.rect(), QBrush(col))
         dip = (self.height() - self.mypix.height()) / 2
         paint.drawPixmap(self.pix_start, dip, self.mypix)
@@ -219,9 +230,10 @@ class ProfileItem(QWidget):
         h = event.size().height()
         dip = (h - self.check.height()) / 2
         self.check.move(6, dip)
-        dip = (h - self.del_but.myHeight) / 2
-        self.del_but.setGeometry(w - self.del_but.myWidth - 6 - 6, dip, self.del_but.myWidth, self.del_but.myHeight)
-        self.edit_but.setGeometry(w - self.del_but.myWidth - 6 - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
+        if not self.noproxy:
+            dip = (h - self.edit_but.myHeight) / 2
+            self.del_but.setGeometry(w - self.del_but.myWidth - 6 - 6, dip, self.del_but.myWidth, self.del_but.myHeight)
+            self.edit_but.setGeometry(w - self.del_but.myWidth - 6 - 6 - self.edit_but.myWidth - 3, dip, self.edit_but.myWidth, self.edit_but.myHeight)
         return QWidget.resizeEvent(self, event)
     
     def sizeHint(self):
@@ -232,8 +244,12 @@ class ProfileItem(QWidget):
         fm2 = self.fontMetrics()
         rect = fm.boundingRect(unicode(self.name))
         rect2 = fm2.boundingRect(self.addressText())
-        w = self.text_start + min(rect.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.del_but.myWidth + 6
-        w2 = self.text_start + min(rect2.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.del_but.myWidth + 6
+        if not self.noproxy:
+            w = self.text_start + min(rect.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.del_but.myWidth + 6
+            w2 = self.text_start + min(rect2.width(), 240) + 6 + self.edit_but.myWidth + 3 + self.del_but.myWidth + 6
+        else:
+            w = self.text_start + min(rect.width(), 240) + 6
+            w2 = self.text_start + min(rect2.width(), 240) + 6
         w = max(w, w2)
         h = max(fm.height() + 3 + fm2.height(), 32) + 10
         return QSize(w, h)
@@ -254,7 +270,10 @@ class ProfileTipper(QToolTip):
         prfl_item = self.parent
         
         rect = prfl_item.rect()
-        rect.setWidth(rect.width() - prfl_item.del_but.myWidth - prfl_item.edit_but.myWidth - 6 - 6 - 4)
+        if not self.parent.noproxy:
+            rect.setWidth(rect.width() - prfl_item.del_but.myWidth - prfl_item.edit_but.myWidth - 6 - 6 - 4)
+        else:
+            rect.setWidth(rect.width() - 6 - 6 - 4)
         rect.setX(rect.x() + prfl_item.pix_start)
         if not rect.contains(point):
             return

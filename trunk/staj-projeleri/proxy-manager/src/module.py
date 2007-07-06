@@ -13,7 +13,7 @@ class Module:
     def __init__(self):
         pass
     
-    def setGlobalProxy(self,ip, port=None):
+    def setGlobalProxy(self, ip, port=None):
 ##        for module in self.modules:
 ##            if(module.__class__.__dict__.get("setGlobalProxy")):
 ##                module.setGlobalProxy(ip)
@@ -21,13 +21,13 @@ class Module:
 ##                print "method is not defined"
         return
     
-    def setHTTPProxy(ip, port=None):
+    def setHTTPProxy(self, ip, port=None):
         return
     
-    def setFTPProxy(ip, port=None):
+    def setFTPProxy(self, ip, port=None):
         return
     
-    def setGopherProxy(ip, port=None):
+    def setGopherProxy(self, ip, port=None):
         return
     
     def setSSLProxy(self, ip, port=None):
