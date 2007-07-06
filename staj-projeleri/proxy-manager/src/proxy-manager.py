@@ -85,6 +85,5 @@ def main():
     app.setMainWidget(win)
     sys.exit(win.exec_loop())
 
-# FIXME: fix here
 if __name__ == '__main__':
     main()

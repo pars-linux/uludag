@@ -28,9 +28,12 @@ class AMSN(Module):
                 self.proxy = value
 
     def setGlobalProxy(self, ip, port=None):
+        self.setHTTPProxy(ip, port)
+    
+    def setHTTPProxy(self, ip, port=None):
         self.connectiontype.firstChild.nodeValue = "proxy"
         textValue = ip
-        if not port: textValue + " " + port
+        if port: textValue = textValue + " " + port
         if self.proxy.firstChild == None: self.proxy.appendChild( self.doc.createTextNode(textValue) )
         else: self.proxy.firstChild.nodeValue = textValue
     

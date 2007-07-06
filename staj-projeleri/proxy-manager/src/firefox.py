@@ -27,7 +27,7 @@ class Firefox(Module):
         self.socks_port = "network.proxy.socks_port"
         self.type = "network.proxy.type"
         self.share = "network.proxy.share_proxy_settings"
-        self.start = "user_pref(\"network.proxy."
+        self.start = "user_pref(\""
         self.defaultProxy = "\", "");\n"
         
         if os.path.exists(self.path):
@@ -39,36 +39,60 @@ class Firefox(Module):
         
         i = 0
         # indexes to determine where the corresponding line is
-        hi = hpi = fi = fpi = gi = gpi = 0
-        si = spi = soi = sopi = self.ti = self.shi = 0
+        hi = hpi = fi = fpi = gi = gpi = -1
+        si = spi = soi = sopi = self.ti = self.shi = -1
         
         while len(self.lines) != i:
-            if not hi and self.lines[i].find(self.http) != -1: hi = i
-            elif not hpi and self.lines[i].find(self.http_port) != -1: hpi = i
-            elif not fi and self.lines[i].find(self.ftp) != -1: fi = i
-            elif not fpi and self.lines[i].find(self.ftp_port) != -1: fpi= i
-            elif not gi and self.lines[i].find(self.gopher) != -1: gi = i
-            elif not gpi and self.lines[i].find(self.gopher_port) != -1: gpi = i
-            elif not si and self.lines[i].find(self.ssl) != -1: si = i
-            elif not spi and self.lines[i].find(self.ssl_port) != -1: spi = i
-            elif not soi and self.lines[i].find(self.socks) != -1: soi = i
-            elif not sopi and self.lines[i].find(self.socks_port) != -1: sopi = i
-            elif not self.ti and self.lines[i].find(self.type) != -1: ti = i
-            elif not self.shi and self.lines[i].find(self.share) != -1: shi = i
+            if hi == -1 and self.lines[i].find(self.http) != -1: hi = i
+            elif hpi == -1 and self.lines[i].find(self.http_port) != -1: hpi = i
+            elif fi == -1 and self.lines[i].find(self.ftp) != -1: fi = i
+            elif fpi == -1 and self.lines[i].find(self.ftp_port) != -1: fpi= i
+            elif gi == -1 and self.lines[i].find(self.gopher) != -1: gi = i
+            elif gpi == -1 and self.lines[i].find(self.gopher_port) != -1: gpi = i
+            elif si == -1 and self.lines[i].find(self.ssl) != -1: si = i
+            elif spi == -1 and self.lines[i].find(self.ssl_port) != -1: spi = i
+            elif soi == -1 and self.lines[i].find(self.socks) != -1: soi = i
+            elif sopi == -1 and self.lines[i].find(self.socks_port) != -1: sopi = i
+            elif self.ti == -1 and self.lines[i].find(self.type) != -1: self.ti = i
+            elif self.shi == -1 and self.lines[i].find(self.share) != -1: self.shi = i
             i = i + 1
         # if lines are not found, then add them
-        if not hi: self.lines.append(self.start + self.http + self.defaultProxy)
-        if not hpi: self.lines.append(self.start + self.http_port + self.defaultProxy)
-        if not fi: self.lines.append(self.start + self.ftp + self.defaultProxy)
-        if not fpi: self.lines.append(self.start + self.ftp_port + self.defaultProxy)
-        if not gi: self.lines.append(self.start + self.gopher + self.defaultProxy)
-        if not gpi: self.lines.append(self.start + self.gopher_port + self.defaultProxy)
-        if not si: self.lines.append(self.start + self.ssl + self.defaultProxy)
-        if not spi: self.lines.append(self.start + self.ssl_port + self.defaultProxy)
-        if not soi: self.lines.append(self.start + self.socks + self.defaultProxy)
-        if not sopi: self.lines.append(self.start + self.socks_port + self.defaultProxy)
-        if not self.ti: self.lines.append(self.start + self.type + self.defaultProxy)
-        if not self.shi: self.lines.append(self.start + self.share + self.defaultProxy)
+        if hi == -1: 
+            self.lines.append(self.start + self.http + self.defaultProxy)
+            hi = len(self.lines) - 1
+        if hpi == -1:
+            self.lines.append(self.start + self.http_port + self.defaultProxy)
+            hpi = len(self.lines) - 1
+        if fi == -1:
+            self.lines.append(self.start + self.ftp + self.defaultProxy)
+            fi = len(self.lines) - 1
+        if fpi == -1:
+            self.lines.append(self.start + self.ftp_port + self.defaultProxy)
+            fpi = len(self.lines) - 1
+        if gi == -1:
+            self.lines.append(self.start + self.gopher + self.defaultProxy)
+            gi = len(self.lines) - 1
+        if gpi == -1:
+            self.lines.append(self.start + self.gopher_port + self.defaultProxy)
+            gpi = len(self.lines) - 1
+        if si == -1:
+            self.lines.append(self.start + self.ssl + self.defaultProxy)
+            si = len(self.lines) - 1
+        if spi == -1:
+            self.lines.append(self.start + self.ssl_port + self.defaultProxy)
+            spi = len(self.lines) - 1
+        if soi == -1:
+            self.lines.append(self.start + self.socks + self.defaultProxy)
+            soi = len(self.lines) - 1
+        if sopi == -1:
+            self.lines.append(self.start + self.socks_port + self.defaultProxy)
+            sopi = len(self.lines) - 1
+        if self.ti == -1:
+            self.lines.append(self.start + self.type + "\", 0);\n")
+            self.ti = len(self.lines) - 1
+        if self.shi == -1:
+            self.lines.append(self.start + self.share + "\", false);\n")
+            self.shi = len(self.lines) - 1
         
         self.proxyIndexList = [hi, fi, gi, si, soi]
         self.portIndexList = [hpi, fpi, gpi, spi, sopi]
@@ -124,25 +148,24 @@ class Firefox(Module):
             self.lines[i] = "//" + self.lines[i]
         for i in self.portIndexList:
             self.lines[i] = "//" + self.lines[i]
-        self.lines[ti] = "user_pref(\"network.proxy.type\", 0);" + "\n"
+        self.lines[self.ti] = "user_pref(\"network.proxy.type\", 0);" + "\n"
     
     def close(self):
         confWrite = open(self.path, "w")
         confWrite.writelines(self.lines)
-        confWrite.flush()
         confWrite.close()
 
 
 # FIXME: test kodunu sil
-from time import *
-print time()
-a = Firefox()
-a.setGlobalProxy("192.223.211.123")
-a.setHTTPProxy("122.311.11.11", "123")
-a.setFTPProxy("122.311.11.11", "123")
-a.setGopherProxy("122.311.11.11", "123")
-a.setSSLProxy("122.311.11.11", "123")
-a.setSOCKSProxy("122.311.11.11", "123")
-##a.noProxy()
-a.close()
-print time()
+##from time import *
+##print time()
+##a = Firefox()
+##a.setGlobalProxy("192.223.211.123")
+##a.setHTTPProxy("122.311.11.11", "123")
+##a.setFTPProxy("122.311.11.11", "123")
+##a.setGopherProxy("122.311.11.11", "123")
+##a.setSSLProxy("122.311.11.11", "123")
+##a.setSOCKSProxy("122.311.11.11", "123")
+####a.noProxy()
+##a.close()
+##print time()

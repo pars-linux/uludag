@@ -200,10 +200,10 @@ misc_color=a000:8d00:4600
 email=
 
 # Güvenlik duvarı
-ftp_proxy_host=123.321.123.333
+ftp_proxy_host=212.21.212.121
 
 # Güvenlik duvarında bağlanılacak port
-ftp_proxy_port=ftp
+ftp_proxy_port=3223
 
 # Güvenlik duvarı kullanıcı adı
 ftp_proxy_username=
@@ -259,10 +259,10 @@ entropy_len=1024
 verify_ssl_peer=1
 
 # Güvenlik duvarı
-http_proxy_host=123.321.123.444
+http_proxy_host=212.21.212.121
 
 # Güvenlik duvarında bağlanılacak port
-http_proxy_port=http
+http_proxy_port=3223
 
 # Güvenlik duvarı kullanıcı adı
 http_proxy_username=
