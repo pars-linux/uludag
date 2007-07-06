@@ -6,6 +6,12 @@ zorg consists of python scripts and modules which
 automate the configuration of Xorg.
 
 
+Requirements
+------------
+
+* libx86
+
+
 Installing & Running
 --------------------
 
