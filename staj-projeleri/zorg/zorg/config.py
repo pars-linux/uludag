@@ -381,3 +381,4 @@ def saveConfig(cfg, cards=[]):
             zconfig.set("modelName", mon.modelname)
 
     zconfig.write()
+

@@ -15,5 +15,6 @@ setup(name="zorg",
                                sources=["zorg/ddc/ddc.c",
                                         "zorg/ddc/vbe.c",
                                         "zorg/ddc/vesamode.c"],
-                               libraries=["x86"])]
+                               libraries=["x86"])],
+      scripts = ["zorg-cli"]
       )
