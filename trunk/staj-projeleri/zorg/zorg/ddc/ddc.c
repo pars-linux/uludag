@@ -196,6 +196,11 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 		}
 	}
 
+	if (flags == NULL) {
+		Py_INCREF(Py_None);
+		flags = Py_None;
+	}
+
 	return Py_BuildValue(
 		"{s:i,"		/* pixel_clock */
 		"s:i,"		/* horizontal_active */
