@@ -246,6 +246,7 @@ def setScreen(screenNumber, cardId, monitorId, mode):
     deviceId = zconfig.get("deviceId")
 
     dev = Device(busId, vendorId, deviceId)
+    dev.cardId = cardId
     dev.driver = zconfig.get("driver")
     dev.vendorName = zconfig.get("vendorName")
     dev.boardName = zconfig.get("boardName")
