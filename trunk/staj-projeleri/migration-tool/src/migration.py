@@ -12,11 +12,27 @@
 import sys
 
 from qt import *
+from kdecore import *
+from kdeui import *
 
 from wizard import Wizard
 
 def main():
-    app = QApplication(sys.argv)
+    about = KAboutData(
+        "Migration Tool",
+        "migration",
+        "0.3",
+        "Migration Tool",
+        KAboutData.License_GPL,
+        '(C) 2006-2007 UEKAE/TÜBİTAK',
+        None,
+        None,
+        'bugs@pardus.org.tr'
+    )
+    about.addAuthor("Murat Ongan", "Developer and Current Maintainer", "mongan@cclub.metu.edu.tr")
+    
+    KCmdLineArgs.init(sys.argv, about)
+    app = KUniqueApplication(True, True, True)
     wizard = Wizard()
     
     app.setMainWidget(wizard)
