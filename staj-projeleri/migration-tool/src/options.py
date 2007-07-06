@@ -44,26 +44,11 @@ class Options(QWidget):
             self.wpGroup.setColumnLayout(0,Qt.Horizontal)
             self.wpLayout = QHBoxLayout(self.wpGroup.layout())
             self.layout.addWidget(self.wpGroup)
-            # Radio Box:
-            self.radioLayout = QVBoxLayout(self.wpGroup)
-            self.wpLayout.addLayout(self.radioLayout)
-            
-            self.newRadio = QRadioButton(self.wpGroup)
-            self.newRadio.setText(u"Keep current wallpaper")
-            self.newRadio.setChecked(True)
-            self.radioLayout.addWidget(self.newRadio)
-            
-            self.oldRadio = QRadioButton(self.wpGroup)
-            self.oldRadio.setText(u"Use old wallpaper")
-            self.radioLayout.addWidget(self.oldRadio)
             
             # New (current) Wallpaper:
-            self.newLayout = QVBoxLayout(self.wpGroup)
+            self.newLayout = QVBoxLayout(None)
+            self.newLayout.setAlignment(Qt.AlignCenter)
             self.wpLayout.addLayout(self.newLayout)
-            
-            self.newLabel = QLabel(self.wpGroup)
-            self.newLabel.setText(u"Current Wallpaper:")
-            self.newLayout.addWidget(self.newLabel)
             
             self.newThumb = QLabel(self.wpGroup)
             newwp = Wallpaper.getThumbnail(destinations["Wallpaper Path"])
@@ -71,13 +56,15 @@ class Options(QWidget):
             self.newThumb.setPixmap(pixmap)
             self.newLayout.addWidget(self.newThumb)
             
-            # Old Wallpaper:
-            self.oldLayout = QVBoxLayout(self.wpGroup)
-            self.wpLayout.addLayout(self.oldLayout)
+            self.newRadio = QRadioButton(self.wpGroup)
+            self.newRadio.setText(u"Keep current wallpaper")
+            self.newRadio.setChecked(True)
+            self.newLayout.addWidget(self.newRadio)
             
-            self.oldLabel = QLabel(self.wpGroup)
-            self.oldLabel.setText(u"Old Wallpaper:")
-            self.oldLayout.addWidget(self.oldLabel)
+            # Old Wallpaper:
+            self.oldLayout = QVBoxLayout(None)
+            self.oldLayout.setAlignment(Qt.AlignCenter)
+            self.wpLayout.addLayout(self.oldLayout)
             
             self.oldThumb = QLabel(self.wpGroup)
             oldwp = Wallpaper.getThumbnail(sources["Wallpaper Path"])
@@ -85,6 +72,10 @@ class Options(QWidget):
             self.oldThumb.setPixmap(pixmap)
             self.oldLayout.addWidget(self.oldThumb)
             
+            self.oldRadio = QRadioButton(self.wpGroup)
+            self.oldRadio.setText(u"Use old wallpaper")
+            self.oldLayout.addWidget(self.oldRadio)
+        
         spacer = QSpacerItem(1,1,QSizePolicy.Minimum,QSizePolicy.Expanding)
         self.layout.addItem(spacer)
     
