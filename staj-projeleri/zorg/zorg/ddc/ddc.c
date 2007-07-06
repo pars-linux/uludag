@@ -28,19 +28,17 @@ is_valid(struct vbe_edid1_info *edid)
 }
 
 /* Strips the 13-bytes buffer */
-char *
+void
 strip(char *s)
 {
 	char *ps;
 
 	s[12] = 0;
-	for (ps = s + strlen(s) - 1; ps != s - 1; ps--)
+	for (ps = s + strlen(s) - 1; ps >= s; ps--)
 		if (isspace(*ps))
 			*ps = 0;
 		else
 			break;
-
-	return s;
 }
 
 PyObject *
@@ -179,13 +177,16 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 			);
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_serial) {
-			snprintf(serial, 13, "%s", strip(monitor->data.string));
+			memcpy(serial, monitor->data.string, 13);
+			strip(serial);
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_ascii) {
-			snprintf(ascii, 13, "%s", strip(monitor->data.string));
+			memcpy(ascii, monitor->data.string, 13);
+			strip(ascii);
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_name) {
-			snprintf(name, 13, "%s", strip(monitor->data.string));
+			memcpy(name, monitor->data.string, 13);
+			strip(name);
 
 		} else if (monitor->type == vbe_edid_monitor_descriptor_range) {
 			hsync_min = monitor->data.range_data.horizontal_min;
@@ -230,7 +231,8 @@ get_detailed_timing_info(struct vbe_edid1_info *edid)
 		"name", name,
 		"hsync_range", hsync_min, hsync_max,
 		"vref_range", vref_min, vref_max,
-		"flags", flags);
+		"flags", flags
+	);
 }
 
 PyDoc_STRVAR(vbeInfo__doc__,
