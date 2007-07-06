@@ -1,1 +1,2 @@
 recursive-include zorg/ddc *.h
+include . COPYING
