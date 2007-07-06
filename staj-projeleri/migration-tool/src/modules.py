@@ -22,8 +22,8 @@ class UserMigration:
         self.partition = partition
         self.parttype = parttype
         self.userdir = userdir
-        self.sources = {}
-        self.destinations = {}
+        self.sources = {"Home Path":userdir}
+        self.destinations = {"Home Path":os.path.expanduser("~")}
         self.options = {}
         
         # Collect Information:
@@ -107,10 +107,10 @@ class UserMigration:
         
     def migrate(self, warning = None, log = None):
         if not warning:
-            def warning(text):
-                print text
+            def warning(text, steps):
+                print text, steps
         if not log:
-            def log(text):
+            def log(text, steps):
                 print text
         # Copy Bookmarks:
         if self.options.has_key("Bookmarks") and self.options["Bookmarks"]:
@@ -118,13 +118,13 @@ class UserMigration:
             # Load IE Bookmarks:
             if self.options.has_key("IEBookmarks") and self.options["IEBookmarks"] and self.sources.has_key("Favorites Path"):
                 bm.getIEBookmarks(self.sources["Favorites Path"])
-                log("Internet Explorer bookmarks loaded.")
+                log("Internet Explorer bookmarks loaded.", 1)
             # Load FF Bookmarks:
             if self.options.has_key("FFBookmarks") and self.options["FFBookmarks"] and self.sources.has_key("Firefox Profile Path"):
                 possiblefile = os.path.join(self.sources["Firefox Profile Path"], "bookmarks.html")
                 if os.path.isfile(possiblefile):
                     bm.getFFBookmarks(possiblefile)
-                    log("Firefox bookmarks loaded.")
+                    log("Firefox bookmarks loaded.", 1)
             # Save FF Bookmarks:
             if self.destinations.has_key("Firefox Profile Path"):
                 lockfile = os.path.join(self.destinations["Firefox Profile Path"], "lock")
@@ -132,15 +132,15 @@ class UserMigration:
                     possiblefile = os.path.join(self.destinations["Firefox Profile Path"], "bookmarks.html")
                     if os.path.isfile(possiblefile):
                         bm.setFFBookmarks(possiblefile)
-                        log("Firefox bookmarks saved.")
+                        log("Firefox bookmarks saved.", 1)
                     else:
-                        warning("Firefox bookmarks file cannot be found.")
+                        warning("Firefox bookmarks file cannot be found.", 1)
                 else:
-                    warning("Firefox is in use. Bookmarks cannot be saved.")
+                    warning("Firefox is in use. Bookmarks cannot be saved.", 1)
         # Change Wallpaper:
         if self.options.has_key("Change Wallpaper") and self.options["Change Wallpaper"]:
             try:
                 Wallpaper.changeWallpaper(self.sources["Wallpaper Path"])
-                log("Wallpaper changed.")
+                log("Wallpaper changed.", 1)
             except:
-                warning("Wallpaper cannot be changed")
+                warning("Wallpaper cannot be changed", 1)
