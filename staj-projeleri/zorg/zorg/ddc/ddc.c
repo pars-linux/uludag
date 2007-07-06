@@ -124,7 +124,7 @@ get_standard_timings(struct vbe_edid1_info *edid)
 PyObject *
 get_detailed_timing_info(struct vbe_edid1_info *edid)
 {
-	PyObject *flags;
+	PyObject *flags = NULL;
 	
 	int	i,
 		pixel_clock = 0,
