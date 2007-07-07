@@ -10,5 +10,6 @@ NoDisplay=true
 Name=System Information
 Name[de]=System-Information
 Name[pt_BR]=Informação do Sistema
+Name[nl]=Systeem informatie
 Categories=Qt;KDE;System;
 X-KDE-HasTempFileOption=true

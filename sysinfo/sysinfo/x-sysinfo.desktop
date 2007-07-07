@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Comment=Sysinfo
 Comment[pt_BR]=Informações do Sistema
+Comment[nl]=Systeem informatie
 Type=MimeType
 MimeType=application/x-sysinfo
 X-KDE-AutoEmbed=true

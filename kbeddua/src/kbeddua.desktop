@@ -4,6 +4,7 @@ Name=KBeddua
 Name[tr_TR]=KBeddua
 Name[de]=KBeddua
 Name[pt_BR]=KBeddua
+Name[nl]=KBeddua
 Exec=kbeddua
 Icon=kbeddua
 Type=Application

@@ -1,11 +1,13 @@
 [Desktop Entry]
 Name=Feedback
 Name[en]=Feedback
+Name[nl]=Feedback
 Name[tr]=Geribildirim
 Name[de]=Feedback
 Name[pt_BR]=Feedback
 Comment=Pardus Feedback Tool
 Comment[tr]=Pardus Geribildirim Aracı
+Comment[nl]=Pardus feedback tool
 Comment[de]=Pardus Feedbacktool
 Comment[pt_BR]=Ferramenta de Feedback Pardus
 GenericName[en]=Pardus Feedback Tool

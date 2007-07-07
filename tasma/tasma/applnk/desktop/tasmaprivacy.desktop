@@ -4,7 +4,7 @@ Encoding=UTF-8
 
 Comment=Privacy - a kcontrol module to clean unwanted traces the user leaves on the system
 Comment[tr]=Gizlilik - kullanıcının sistemde bıraktığı iztenilmeyen izlemeleri temizleyen kcontrol modülü
-Comment[nl]=Privacy - een configuratiemodule waarmee u ongewenste sporen die gebruikers achterlaten kunt wissen.
+Comment[nl]=Privacy - een configuratiemodule waarmee u ongewenste sporen kunt wissen.
 Comment[de]=Privatsphäre - ein KControl Modul zum säubern der unerwünschten Spuren auf dem System
 Comment[pt_BR]=Privacidade - um módulo do kcontrol para limpar rastros indesejáveis que o usuário deixa no sistema
 Comment[fr]=Vie privée - un module kcontrol permettant de nettoyer toutes les traces indésirables lorsque l'utilisateur quitte le système
