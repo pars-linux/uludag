@@ -4,7 +4,6 @@ import os
 
 from zorg.parser import *
 from zorg.utils import *
-from zorg import ddc
 from zorg import modeline
 
 xdriverlist = "/usr/lib/X11/xdriverlist"
@@ -15,6 +14,11 @@ xkb_path = "/usr/share/X11/xkb/symbols/pc"
 
 truecolor_cards = ["i810", "intel", "nv", "nvidia", "radeon", "fglrx"]
 lcd_drivers = ["nv", "nvidia", "ati", "via", "i810", "intel", "sis", "savage", "neomagic"]
+opengl_impl = {
+    "fglrx"     : "ati",
+    "nvidia"    : "nvidia"
+}
+
 default_kmap = "trq"
 
 synapticsOptions = {
@@ -258,6 +262,7 @@ def findVideoCards():
 def queryDDC(adapter=0):
     mon = Monitor()
 
+    from zorg import ddc
     edid = ddc.query(adapter)
 
     if not edid:
@@ -427,3 +432,7 @@ def findMonitors(card, *adapters):
         queryPanel(digitalMonitor, card)
 
     return monitors
+
+def driver2opengl(driver):
+    return opengl_impl.get(driver, "xorg-x11")
+
