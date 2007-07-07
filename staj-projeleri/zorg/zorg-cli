@@ -19,11 +19,6 @@ import zorg.utils
 
 zorg_info = " Xorg AutoConfiguration tool"
 
-implementations = {
-    "fglrx"     : "ati",
-    "nvidia"    : "nvidia"
-}
-
 class OUT:
     def __init__(self, colorout):
         if colorout:
@@ -138,6 +133,8 @@ def setDriver(driver):
     reply = link.read_cmd()
     if reply.command == "fail":
         out.error(reply.data)
+        
+    updateOpenGL(None, False)
 
 def info():
     link.Xorg.Display.listCards()
@@ -215,7 +212,7 @@ def info():
     out.info("")
     out.sect("Current OpenGL implementation is %s" % o.current)
 
-def opengl(impl, headers):
+def updateOpenGL(impl, headers):
     if not impl:
         link.Xorg.Display.screenInfo(screenNumber="0")
         reply = link.read_cmd()
@@ -240,7 +237,8 @@ def opengl(impl, headers):
                 driver = line.split("=", 1)[1]
                 break
 
-        impl = implementations.get(driver, "xorg-x11")
+        from zorg.probe import driver2opengl
+        impl = driver2opengl(driver)
 
     out.sect("Switching to %s OpenGL implementation" % impl)
     link.Xorg.Display.updateOpenGL(implementation=impl,
@@ -319,7 +317,7 @@ if __name__ == "__main__":
     elif opts.info:
         info()
     elif opts.opengl:
-        opengl(opts.impl, opts.headers)
+        updateOpenGL(opts.impl, opts.headers)
     elif opts.intelfix:
         out.error("Not implemented yet.")
     elif opts.intellist:

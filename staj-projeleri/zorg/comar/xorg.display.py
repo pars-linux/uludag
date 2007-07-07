@@ -4,7 +4,6 @@
 from zorg.config import *
 from zorg.probe import *
 from zorg.utils import *
-from zorg import opengl
 
 def autoConfigure():
     # detect graphic card and find monitor of first card
@@ -37,6 +36,8 @@ def autoConfigure():
     config.save()
 
     saveConfig(config, devices)
+
+    updateOpenGL(driver2opengl(device.driver), "false")
 
 def safeConfigure(driver = "vesa"):
     safedrv = driver.upper()
@@ -289,7 +290,9 @@ def updateXorgConf():
         setScreen(n, scrInfo["card"], scrInfo["monitor"], mode)
 
 def updateOpenGL(implementation, withHeaders):
-    o = opengl.OpenGL()
+    import zorg.opengl
+    o = zorg.opengl.OpenGL()
+
     if withHeaders.lower() != "true" and implementation == o.current:
         return
 
