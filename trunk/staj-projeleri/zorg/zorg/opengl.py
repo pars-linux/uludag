@@ -16,43 +16,43 @@ import subprocess
 
 class OpenGL:
     env_path = '/etc/env.d/03opengl'
-    
+
     def __init__(self):
         self.fake = False
         self.impheaders = False
         self.current = self.getCurrent()
         self.available = self.getAvailable()
-    
+
     # Low level operations
     def opUnlink(self, name):
         if self.fake:
             print "unlink(%s)" % name
         else:
             os.unlink(name)
-    
+
     def opSymlink(self, src, dest):
         if self.fake:
             print "link(%s -> %s)" % (dest, src)
         else:
             os.symlink(src, dest)
-    
+
     def opWrite(self, name, content):
         if self.fake:
             print "write(%s)" % name
         else:
             file(name, "w").write(content)
-    
+
     def opUpdateEnv(self):
         if self.fake:
             print "update_environment()"
         else:
             subprocess.run(["/sbin/update-environment"])
-    
+
     # Utilities
     def setLibrary(self, spath, dpath, name):
         for suffix in (".a", ".so", ".la"):
             self.setLibraryFile(spath, dpath, name + suffix)
-    
+
     def setLibraryFile(self, spath, dpath, name):
         sname = os.path.join(spath, name)
         dname = os.path.join(dpath, name)
@@ -66,7 +66,7 @@ class OpenGL:
             self.opWrite(dname, data)
         else:
             self.opSymlink(sname, dname)
-    
+
     # Main methods
     def getAvailable(self):
         paths = ("/usr/lib/opengl",)
@@ -78,7 +78,7 @@ class OpenGL:
                     if os.path.isdir(os.path.join(path, name)) and name != "global":
                         implems.append(name)
         return implems
-    
+
     def getCurrent(self):
         current = None
         dict = {}
@@ -94,7 +94,7 @@ class OpenGL:
             i = tmp.find("opengl/") + 7
             current = tmp[i:tmp.find("/", i)]
         return current
-    
+
     def setCurrent(self, implem):
         # Setup libraries
         ipath = os.path.join("/usr/lib/opengl", implem)
@@ -118,7 +118,7 @@ class OpenGL:
 
 def usage():
     o = OpenGL()
-    
+
     print "Usage: update-opengl [OPTIONS] <GL-implementation>"
     print
     print "Options:"
@@ -130,22 +130,22 @@ def main(args):
     if len(args) == 0:
         usage()
         sys.exit(0)
-    
+
     if "--get-implementation" in args:
         o = OpenGL()
         print o.current
         sys.exit(0)
-    
+
     o = OpenGL()
-    
+
     if "--impl-headers" in args:
         args.remove("--impl-headers")
         o.impheaders = True
-    
+
     if "--fake" in args:
         args.remove("--fake")
         o.fake = True
-    
+
     o.setCurrent(args[0])
 
 if __name__ == "__main__":

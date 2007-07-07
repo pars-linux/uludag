@@ -1,6 +1,6 @@
---- model.xml.orig	2007-07-06 11:28:35.000000000 +0300
-+++ model.xml	2007-07-06 11:25:57.000000000 +0300
-@@ -205,6 +205,45 @@
+--- /etc/comar/model.xml.orig	2007-07-06 11:28:35.000000000 +0300
++++ /etc/comar/model.xml	2007-07-07 13:09:27.000000000 +0300
+@@ -205,6 +205,49 @@
  <group name="Storage">
  </group>
  
@@ -38,6 +38,10 @@
 +			<argument>cardId</argument>
 +			<argument>monitorId</argument>
 +			<argument>mode</argument>
++		</method>
++		<method name="updateOpenGL">
++			<argument>implementation</argument>
++			<argument>withHeaders</argument>
 +		</method>
 +	</class>
 +	<class name="Input">
