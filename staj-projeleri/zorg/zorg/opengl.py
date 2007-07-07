@@ -46,7 +46,7 @@ class OpenGL:
         if self.fake:
             print "update_environment()"
         else:
-            subprocess.run(["/sbin/update-environment"])
+            subprocess.call(["/sbin/update-environment"])
 
     # Utilities
     def setLibrary(self, spath, dpath, name):
