@@ -4,6 +4,7 @@
 from zorg.config import *
 from zorg.probe import *
 from zorg.utils import *
+from zorg import opengl
 
 def autoConfigure():
     # detect graphic card and find monitor of first card
@@ -286,4 +287,17 @@ def updateXorgConf():
         scrInfo = dict(x.split("=", 1) for x in scrData.strip().splitlines())
         mode = "%s-%s" % (scrInfo["resolution"], scrInfo["depth"])
         setScreen(n, scrInfo["card"], scrInfo["monitor"], mode)
+
+def updateOpenGL(implementation, withHeaders):
+    o = opengl.OpenGL()
+    if withHeaders.lower() != "true" and implementation == o.current:
+        return
+
+    if withHeaders == "true":
+        o.impheaders = True
+
+    if implementation in o.available:
+        o.setCurrent(implementation)
+    else:
+        fail("No such implementation: %s" % implementation)
 
