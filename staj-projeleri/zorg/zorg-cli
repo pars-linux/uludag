@@ -200,7 +200,7 @@ def info():
             continue
 
         if not reply.data:
-            out.warn("Not configured.")
+            out.warn("  Not configured")
             continue
 
         info = dict(x.split("=", 1) for x in reply.data.splitlines())

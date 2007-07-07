@@ -103,10 +103,11 @@ class OpenGL:
         self.setLibrary(libpath, "/usr/lib", "libGLcore")
         # Setup extensions
         extpath = os.path.join(ipath, "extensions")
-        self.setLibrary(extpath, "/usr/lib/modules/extensions", "libglx")
-        for name in os.listdir(extpath):
-            if name.endswith(".so") or name.endswith(".a") or name.endswith(".la"):
-                self.setLibraryFile(extpath, "/usr/lib/modules/extensions", name)
+        if os.path.exists(extpath):
+            self.setLibrary(extpath, "/usr/lib/modules/extensions", "libglx")
+            for name in os.listdir(extpath):
+                if os.path.splitext(name) in ("so", "a", "la"):
+                    self.setLibraryFile(extpath, "/usr/lib/modules/extensions", name)
         # Setup includes
         # FIXME: really setup includes here
         # Setup environment
