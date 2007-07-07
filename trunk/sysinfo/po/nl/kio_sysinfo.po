@@ -2,14 +2,14 @@
 # translation of tr.po to
 # This file is put in the public domain.
 #
-# Willem Gielen <w.gielen@gmail.com>, 2006.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-17 19:09+0300\n"
-"PO-Revision-Date: 2006-11-27 19:01+0200\n"
+"PO-Revision-Date: 2007-07-07 16:03+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -44,8 +44,7 @@ msgstr "Mijn computer"
 
 #: sysinfo.cpp:105
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
-"Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
+msgstr "Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
 
 #: sysinfo.cpp:113
 msgid "Common Folders"
@@ -113,7 +112,7 @@ msgstr "Hardware informatie"
 
 #: sysinfo.cpp:160
 msgid "Type:"
-msgstr ""
+msgstr "Type:"
 
 #: sysinfo.cpp:161 sysinfo.cpp:189
 msgid "Vendor:"
@@ -168,14 +167,12 @@ msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 caches)"
 
 #: sysinfo.cpp:311
-#, fuzzy
 msgid "Total"
-msgstr "Totaal swapgeheugen:"
+msgstr "Totaal"
 
 #: sysinfo.cpp:311
-#, fuzzy
 msgid "Available"
-msgstr "Beschikbare ruimte"
+msgstr "Beschikbaar"
 
 #: sysinfo.cpp:403
 msgid "%1 (3D Support)"
@@ -209,31 +206,3 @@ msgstr "U bent <strong>online</strong>"
 msgid "Unknown network status"
 msgstr "Onbekende netwerkstatus"
 
-#~ msgid "Looking for disk information..."
-#~ msgstr "Ophalen schijfinformatie..."
-
-#~ msgid "Getting OS information...."
-#~ msgstr "Ophalen OS-informatie..."
-
-#~ msgid "Looking up network status..."
-#~ msgstr "Opzoeken netwerkstatus..."
-
-#~ msgid "Looking for CPU information..."
-#~ msgstr "Ophalen CPU-informatie..."
-
-#~ msgid "Looking for memory information..."
-#~ msgstr "Ophalen geheugeninformatie..."
-
-#~ msgid "Device"
-#~ msgstr "Apparaat"
-
-#~ msgid "Filesystem"
-#~ msgstr "Bestandsysteem"
-
-#~ msgid "Total space"
-#~ msgstr "Totale ruimte"
-
-#~ msgid "Press the right mouse button for more options like Mount or Eject"
-#~ msgstr ""
-#~ "Klik met de rechter muisknop voor meer opties zoals aankoppelen of "
-#~ "uitwerpen"
