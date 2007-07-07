@@ -152,7 +152,7 @@ class Screen:
         self.monitor.identifier = "Monitor%d" % self.number
         self.device.identifier = "VideoCard%d" % self.number
 
-        if not self.depth or self.device.driver == "fglrx":
+        if not self.depth or self.device.driver in ("fglrx", "nvidia"):
             if self.device.driver in truecolor_cards:
                 self.depth = 24
             else:
