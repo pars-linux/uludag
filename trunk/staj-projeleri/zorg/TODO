@@ -18,6 +18,7 @@ Legend:
    - force auto-probe if requested (e.g. with an option from GUI)
    ? compatibility check between kernel and xorg driver versions (e.g. nvidia-kernel and nvidia-glx issue)
 
+ - method access attributes
  ? distinguish boot and service initialization (after boot we should be able to start X even if xorg=off passed)
  - DPI setup
  - INF file installation
