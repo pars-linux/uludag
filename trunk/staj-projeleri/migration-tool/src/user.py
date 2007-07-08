@@ -20,7 +20,7 @@ class UserWidget(user_ui.UserWid):
         self.users = partition.allUsers()
         for user in self.users:
             part, parttype, username, userdir = user
-            self.usersBox.insertItem(username + " - " + parttype + " (" + part + ")")
+            self.usersBox.insertItem("%s - %s (%s)" % (username, parttype, part))
         if len(self.users) > 0:
             self.parent.setNextEnabled(self, True)
         else:

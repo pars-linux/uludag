@@ -93,7 +93,7 @@ class ApplyThread(QThread):
         self._wizard.progresspage.log.clear()
         self._wizard.warning = False
         def printwarning(text, steps):
-            self._wizard.progresspage.log.append("<b>WARNING: </b>" + text)
+            self._wizard.progresspage.log.append("<b>WARNING:</b> %s" % text)
             self.progress += steps
             self.updateProgress()
             self._wizard.warning = True

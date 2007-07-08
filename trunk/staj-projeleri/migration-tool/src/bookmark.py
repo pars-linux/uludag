@@ -88,7 +88,7 @@ class Bookmark:
                     data += handleNode(child)
             if node.tagName == "group":
                 header = node.getElementsByTagName("header")[0]
-                data += "<DT><H3>" + getText(header.childNodes) + "</H3>\n<DL><p>\n"
+                data += "<DT><H3>%s</H3>\n<DL><p>\n" % getText(header.childNodes)
                 children = node.childNodes
                 for child in children:
                     data += handleNode(child)
@@ -96,7 +96,7 @@ class Bookmark:
             if node.tagName == "bookmark":
                 name = node.getElementsByTagName("name")[0]
                 url = node.getElementsByTagName("url")[0]
-                data += "<DT><A HREF=\"" + getText(url.childNodes) + "\">" + getText(name.childNodes) + "</A>\n"
+                data += "<DT><A HREF=\"%s\">%s</A>\n" % (getText(url.childNodes), getText(name.childNodes))
             return data
         bookmarkfile = open(filename)
         data = bookmarkfile.read()
@@ -190,8 +190,8 @@ class FFBookmarkParser(HTMLParser.HTMLParser):
     
     def handle_charref(self, data):
         if self.mode == "get data" or self.mode == "get dd":
-            self.datapart += "&#" + data + ";"
+            self.datapart += "&#%s;" % data
     
     def handle_entitiyref(self, data):
         if self.mode == "get data" or self.mode == "get dd":
-            self.datapart += "&" + data + ";"
+            self.datapart += "&%s;" % data

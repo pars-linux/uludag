@@ -110,7 +110,7 @@ class FilesPage(QWidget):
             pass
         elif self.link.isChecked():
             for name, path in self.folders:
-                dest = os.path.join(os.path.expanduser("~/Desktop"), (name + ".desktop"))
+                dest = os.path.join(os.path.expanduser("~/Desktop"), "%s.desktop" % name)
                 icons = {u"Belgelerim":"folder",
                          u"Masaüstü":"desktop",
                          u"Müzik":"folder_sound",
