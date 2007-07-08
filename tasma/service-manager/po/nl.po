@@ -4,16 +4,16 @@
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
-# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007.
 # Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-26 09:10+0300\n"
-"PO-Revision-Date: 2007-06-12 21:03+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"PO-Revision-Date: 2007-07-08 17:59+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,9 +54,8 @@ msgid "Unable to stop service"
 msgstr "Dienst kan niet gestopt worden"
 
 #: src/sm_mainview.py:178
-#, fuzzy
 msgid "Unable to restart service"
-msgstr "Dienst kan niet gestart worden"
+msgstr "Kan dienst niet herstarten"
 
 #: src/sm_mainview.py:211 src/service_manager.py:112
 msgid "Select a service from list."
@@ -68,9 +67,8 @@ msgid "Start"
 msgstr "Start"
 
 #: src/sm_mainview.py:220
-#, fuzzy
 msgid "Restart"
-msgstr "Start"
+msgstr "Herstart"
 
 #: src/sm_mainview.py:226
 #, python-format
@@ -130,8 +128,3 @@ msgstr "&Lijst van alleen servers."
 msgid "Alt+L"
 msgstr "ALT+L"
 
-#~ msgid "Execute startup script"
-#~ msgstr "Voer een opstartscript uit"
-
-#~ msgid "Execute shutdown script"
-#~ msgstr "Voer een afsluitscript uit"

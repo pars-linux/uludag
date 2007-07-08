@@ -5,7 +5,7 @@
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
-# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007.
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 # Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
 msgid ""
@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-20 20:03+0300\n"
-"PO-Revision-Date: 2007-03-01 21:28+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"PO-Revision-Date: 2007-07-08 18:09+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,8 +60,7 @@ msgstr "Toon systeempartities"
 
 #: src/diskform.py:142
 msgid "To update disk changes the manager must run as root"
-msgstr ""
-"Om schijf veranderingen te updaten dient schijfbeheer actief te zijn als root"
+msgstr "Om schijf veranderingen te updaten dient schijfbeheer actief te zijn als root"
 
 #: src/disk-manager.py:121
 msgid "User not in disk group !"
@@ -69,7 +68,7 @@ msgstr "Gebruiker niet in de schijfgroep!"
 
 #: src/disk-manager.py:132 src/disk-manager.py:134
 msgid "File /etc/fstab is not correct, please fix it manually."
-msgstr ""
+msgstr "Bestand /etc/fstab is niet correct, repareer het alstublieft handmatig."
 
 #: src/disk-manager.py:229 src/disk-manager.py:253
 msgid "Completed"
@@ -95,3 +94,4 @@ msgstr "Bestandssysteem type"
 #: src/disk-manager.py:387
 msgid "Disk Manager is already running!"
 msgstr "Schijfbeheer is al actief!"
+
