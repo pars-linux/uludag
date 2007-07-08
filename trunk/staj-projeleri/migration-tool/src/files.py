@@ -109,6 +109,13 @@ class FilesPage(QWidget):
         if self.nothing.isChecked():
             pass
         elif self.link.isChecked():
+            desktopfile = """
+            [Desktop Entry]
+            Encoding=UTF-8
+            Icon=%s
+            Type=Link
+            URL=%s
+            """
             for name, path in self.folders:
                 dest = os.path.join(os.path.expanduser("~/Desktop"), "%s.desktop" % name)
                 icons = {u"Belgelerim":"folder",
@@ -118,7 +125,7 @@ class FilesPage(QWidget):
                          u"Video":"folder_video"}
                 dest = findName(dest)
                 link = open(dest, "w")
-                link.write("[Desktop Entry]\nEncoding=UTF-8\nIcon=%s\nType=Link\nURL=%s" % (icons[name] ,path))
+                link.write(desktopfile % (icons[name] ,path))
                 printlog("link '%s' created" % unicode(dest), 1)
                 link.close()
         else:

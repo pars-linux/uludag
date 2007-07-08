@@ -16,22 +16,22 @@ import os
 import registry
 
 def getPartitions():
-	"get all partitions in the form: '/mnt/hda9'"
-	partitions=[]
-	df = commands.getoutput("df")
-	df = string.split(df,"\n")
-	for i in df[1:]:
-		i = string.split(i," ")
-		partitions.append(i[-1])
-	return partitions
+    "get all partitions in the form: '/mnt/hda9'"
+    partitions=[]
+    df = commands.getoutput("df")
+    df = string.split(df,"\n")
+    for i in df[1:]:
+        i = string.split(i," ")
+        partitions.append(i[-1])
+    return partitions
 
 def isWindowsPart(partition):
-	"check which partitions have windows installed"
-	possible_files=["boot.ini","command.com","bootmgr"]
-	for a in possible_files:
-		if os.path.exists(os.path.join(partition,a)):
-			return True
-	return False
+    "check which partitions have windows installed"
+    possible_files=["boot.ini","command.com","bootmgr"]
+    for a in possible_files:
+        if os.path.exists(os.path.join(partition,a)):
+            return True
+    return False
 
 def getWindowsUsers(partition):
     # User: (partition, parttype, username, userdir)
