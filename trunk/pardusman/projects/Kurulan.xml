@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2007.2 RC</Title>
+    <Title>Pardus 2007.2 Caracal caracal</Title>
     <WorkDir>/root/pardusman/InstallCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -36,7 +36,6 @@
         <SelectedPackage>crystal</SelectedPackage>
         <SelectedPackage>dcraw</SelectedPackage>
         <SelectedPackage>digikam</SelectedPackage>
-        <SelectedPackage>digikamimageplugins</SelectedPackage>
         <SelectedPackage>disktype</SelectedPackage>
         <SelectedPackage>dosbox</SelectedPackage>
         <SelectedPackage>dosfstools</SelectedPackage>
@@ -56,6 +55,7 @@
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gle</SelectedPackage>
+        <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
         <SelectedPackage>glibc-locales-fr</SelectedPackage>
@@ -87,10 +87,12 @@
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
+        <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kde-i18n-ca</SelectedPackage>
         <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
         <SelectedPackage>kde-i18n-fr</SelectedPackage>
@@ -320,7 +322,6 @@
         <Package>dialog</Package>
         <Package>diffutils</Package>
         <Package>digikam</Package>
-        <Package>digikamimageplugins</Package>
         <Package>disk-manager</Package>
         <Package>disktype</Package>
         <Package>djbfft</Package>
@@ -381,6 +382,7 @@
         <Package>gle</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-ca</Package>
         <Package>glibc-locales-de</Package>
         <Package>glibc-locales-es</Package>
         <Package>glibc-locales-fr</Package>
@@ -459,6 +461,7 @@
         <Package>katapult</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kde-i18n-ca</Package>
         <Package>kde-i18n-de</Package>
         <Package>kde-i18n-es</Package>
         <Package>kde-i18n-fr</Package>
@@ -569,6 +572,7 @@
         <Package>libidn</Package>
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
+        <Package>libkdcraw</Package>
         <Package>libkexif</Package>
         <Package>libkexiv2</Package>
         <Package>libkipi</Package>
@@ -838,6 +842,7 @@
         <Package>vim</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
+        <Package>wavpack</Package>
         <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
