@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Live 2007.2 RC</Title>
+    <Title>Pardus Live 2007.2 Caracal caracal</Title>
     <WorkDir>/root/pardusman/LiveCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -47,6 +47,7 @@
         <SelectedPackage>frozen-bubble</SelectedPackage>
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
+        <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
@@ -74,10 +75,12 @@
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
+        <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kde-i18n-ca</SelectedPackage>
         <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
@@ -335,6 +338,7 @@
         <Package>gimp</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-ca</Package>
         <Package>glibc-locales-de</Package>
         <Package>glibc-locales-es</Package>
         <Package>glibc-locales-nl</Package>
@@ -405,6 +409,7 @@
         <Package>katapult</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kde-i18n-ca</Package>
         <Package>kde-i18n-de</Package>
         <Package>kde-i18n-es</Package>
         <Package>kde-i18n-nl</Package>
@@ -674,7 +679,6 @@
         <Package>rdate</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
-        <Package>reiserfsprogs</Package>
         <Package>rp-pppoe</Package>
         <Package>rpcalc</Package>
         <Package>rt2400</Package>
@@ -770,6 +774,7 @@
         <Package>vim</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
+        <Package>wavpack</Package>
         <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
