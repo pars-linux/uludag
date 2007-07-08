@@ -44,7 +44,7 @@ class UserMigration:
                     value = value.replace("\\", "/")
                     value = os.path.join(self.partition, value)
                     if os.path.isdir(value):
-                        self.sources[field + " Path"] = value
+                        self.sources["%s Path" % field] = value
         # Find user wallpaper
         wallpaper = Wallpaper.getWindowsWallpaperPath(self.partition, hive)
         try:

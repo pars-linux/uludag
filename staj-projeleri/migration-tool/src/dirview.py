@@ -12,6 +12,7 @@
 import os
 
 from qt import *
+from kdecore import *
 
 class DirView(QListView):
     def __init__(self, parent, dirname, folders):
@@ -46,10 +47,10 @@ class DirViewItem(QCheckListItem):
         self.size = 0
         if os.path.isdir(self.name):
             self.type = "dir"
-            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/16x16/actions/folder.png")
+            self.pix = KGlobal.iconLoader().loadIcon("folder", KIcon.Small)
         else:
             self.type = "file"
-            self.pix = QPixmap("/usr/share/icons/Tulliana-2.0/16x16/mimetypes/empty.png")
+            self.pix = KGlobal.iconLoader().loadIcon("file", KIcon.Small)
             self.size = os.path.getsize(self.name)
             self.writeSize()
         self.setPixmap(0, self.pix)
@@ -66,7 +67,7 @@ class DirViewItem(QCheckListItem):
                 
     def expand(self):
         self.setOpen(1)
-        self.setPixmap(0, QPixmap("/usr/share/icons/Tulliana-2.0/16x16/actions/fileopen.png"))
+        self.setPixmap(0, KGlobal.iconLoader().loadIcon("fileopen", KIcon.Small))
         # Add grand children:
         for child in self.children:
             if not child.childCount():
@@ -74,12 +75,12 @@ class DirViewItem(QCheckListItem):
                 
     def key(self, col, asc):
         if self.type == "dir":
-            return "a"+self.name
+            return "a%s" % self.name
         else:
-            return "b"+self.name
+            return "b%s" % self.name
         
     def collapse(self):
-        self.setPixmap(0, QPixmap("/usr/share/icons/Tulliana-2.0/16x16/actions/folder.png"))
+        self.setPixmap(0, KGlobal.iconLoader().loadIcon("folder", KIcon.Small))
         
     def writeSize(self):
         if self.size >= 1024 * 1024:
