@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-29 19:27+0300\n"
+"POT-Creation-Date: 2007-07-09 15:28+0300\n"
 "PO-Revision-Date: 2007-06-18 14:53+0300\n"
 "Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
 "Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
@@ -81,7 +81,7 @@ msgstr "Als Standard-Booteintrag setzen"
 msgid "There must be at least one Pardus entry."
 msgstr ""
 
-#: src/mainview.py:247 src/mainview.py:524
+#: src/mainview.py:247 src/mainview.py:527
 msgid "Access Denied"
 msgstr "Zugang verweigert"
 
@@ -104,7 +104,9 @@ msgid "Uninstall Kernel"
 msgstr ""
 
 #: src/mainview.py:345
-msgid "Unused kernels:"
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
 msgstr ""
 
 #: src/mainview.py:353
@@ -128,11 +130,11 @@ msgid "Bootloader configuration changed by another application."
 msgstr ""
 "Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
 
-#: src/mainview.py:513 src/mainview.py:517 src/mainview.py:519
+#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
 msgid "Failed"
 msgstr "Fehlgeschlagen"
 
-#: src/mainview.py:524
+#: src/mainview.py:527
 msgid "You are not allowed to edit boot loader settings."
 msgstr ""
 "Sie sind nicht berechtigt diese Boot-Loader-Einstellungen zu bearbeiten."
