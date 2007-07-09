@@ -83,7 +83,7 @@ def setup_grub(project):
         os.makedirs(path)
     
     def copy(src, dest):
-        run('cp -P "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
+        run('cp -PR "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
     
     # Copy the kernel and initramfs
     path = os.path.join(image_dir, "boot")
