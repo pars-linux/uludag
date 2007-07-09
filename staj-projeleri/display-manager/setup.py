@@ -59,7 +59,6 @@ app_data = [
     'src/display-manager.py',
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/display_manager.png']),
     'src/mainview.py',
-    'src/display_manager.ui',
     'src/utility.py',
     'src/display-manager.desktop',
     'help'
