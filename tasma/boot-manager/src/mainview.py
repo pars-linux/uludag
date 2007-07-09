@@ -342,7 +342,7 @@ class widgetUnused(QWidget):
         layout = QGridLayout(self, 1, 1, 11, 6)
         
         self.labelTitle = QLabel(self)
-        self.labelTitle.setText(i18n("Unused kernels:"))
+        self.labelTitle.setText(i18n("These kernels are installed in the system but doesn't exist in boot loader list:"))
         layout.addWidget(self.labelTitle, 0, 0)
         
         self.listKernels = QListBox(self)
