@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'profileDialog.ui'
 #
-# Created: Thu Jul 5 15:57:48 2007
-#      by: The PyQt User Interface Compiler (pyuic) 3-snapshot-20070613
+# Created: Pzt Tem 9 14:40:35 2007
+#      by: The PyQt User Interface Compiler (pyuic) 3.17
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -228,6 +228,29 @@ class profileDialog(QDialog):
 
         self.resize(QSize(398,432).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
+
+        self.setTabOrder(self.name_edit,self.rd1)
+        self.setTabOrder(self.rd1,self.rd2)
+        self.setTabOrder(self.rd2,self.rd3)
+        self.setTabOrder(self.rd3,self.ch0)
+        self.setTabOrder(self.ch0,self.ch1)
+        self.setTabOrder(self.ch1,self.http_host)
+        self.setTabOrder(self.http_host,self.http_port)
+        self.setTabOrder(self.http_port,self.ch2)
+        self.setTabOrder(self.ch2,self.ftp_host)
+        self.setTabOrder(self.ftp_host,self.ftp_port)
+        self.setTabOrder(self.ftp_port,self.ch3)
+        self.setTabOrder(self.ch3,self.gopher_host)
+        self.setTabOrder(self.gopher_host,self.gopher_port)
+        self.setTabOrder(self.gopher_port,self.ch4)
+        self.setTabOrder(self.ch4,self.ssl_host)
+        self.setTabOrder(self.ssl_host,self.ssl_port)
+        self.setTabOrder(self.ssl_port,self.ch5)
+        self.setTabOrder(self.ch5,self.socks_host)
+        self.setTabOrder(self.socks_host,self.socks_port)
+        self.setTabOrder(self.socks_port,self.auto_url)
+        self.setTabOrder(self.auto_url,self.apply_but)
+        self.setTabOrder(self.apply_but,self.cancel_but)
 
 
     def languageChange(self):

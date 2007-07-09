@@ -18,7 +18,6 @@ from profileHandler import *
 class browser(QVBox):
     def __init__(self,parent = None,name = None,fl = 0):
         QWidget.__init__(self, parent)
-        self.parent = parent
         self.setMargin(6)
         self.setSpacing(6)
         
@@ -37,20 +36,12 @@ class browser(QVBox):
         parseConfig()
         createModules()
         self.prflview = ProfileView(self)
-        # FIXME: Connections
-##        self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
-##        self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
-##        self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.slotAutoFind)
-##        self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
-##        self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
-##        self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
-##        self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
-##        self.connect(self.combo_fs,SIGNAL('activated(const QString&)'),self.saveSession)
         
     def slotAdd(self):
         profileHandler(self.prflview)
         
     def slotHelp(self):
+        # FIXME: prepare a help document
         pass
 
 class ProfileView(QScrollView):
@@ -63,58 +54,37 @@ class ProfileView(QScrollView):
         for prflname in config.sections():
             # FIXME: True parametresini duzelt. Bunun icin en son kullanilan network profiline fln bakacan.
             ProfileItem(self, prflname)
-        self.myResize(self.contentsWidth(),self.contentsHeight())
+        self.myResize()
 
-    def maxHint(self):
-        maxw = 0
+    def maxHeight(self):
         maxh = 0
         for item in self.profileItems:
             hint = item.sizeHint()
-            w = hint.width()
             h = hint.height()
-            if w > maxw:
-                maxw = w
             if h > maxh:
                 maxh = h
-        return maxw, maxh
-    
-    def columnHint(self, width):
-        # FIXME: clean the whole code or remove the next line
-        return 1
-        if len(self.profileItems) == 1:
-            return 2
-        maxw, maxh = self.maxHint()
-        c = width / maxw
-        if c < 1:
-            c = 1
-        if c > 3:
-            c = 3
-        return c
+        return maxh
 
-    def myResize(self, aw, ah):
+    def myResize(self):
         childs = self.profileItems
-        self.columns = self.columnHint(self.width())
         if not childs or len(childs) == 0:
             return
         
         i = 0
-        j = 0
-        maxw = aw / self.columns
-        maxh = self.maxHint()[1]
-        childs.sort(key=lambda x: x.name)
+        w = self.width()
+        maxh = self.maxHeight()
+        # FIXME: add an index-value to "profile" class for sorting
+##        childs.sort(key=lambda x: x.name)
         for item in childs:
-            item.is_odd = (i + j) % 2
-            item.setGeometry(i * maxw, j * maxh, maxw, maxh)
+            item.is_odd = i % 2
+            item.setGeometry(0, i * maxh, w, maxh)
             item.update()
             i += 1
-            if i >= self.columns:
-                i = 0
-                j += 1
-        self.resizeContents(aw, j * maxh)
+        self.resizeContents(w, i * maxh)
     
     def resizeEvent(self, event):
         size = event.size()
-        self.myResize(size.width(), size.height())
+        self.myResize()
         QWidget.resizeEvent(self, event)
   
     def paintEvent(self, event):
@@ -126,7 +96,7 @@ class ProfileView(QScrollView):
     
     def add(self, name):
         ProfileItem(self, name)
-        self.myResize(self.width(),self.height())
+        self.myResize()
 
 
 class ProfileItem(QWidget):
@@ -188,9 +158,9 @@ class ProfileItem(QWidget):
             f = open(configPath,"w")
             config.write(f)
             f.close()
-            print self.view.profileItems.remove(self)
-            self.view.myResize(self.view.width(),self.view.height())
-            print "resized"
+            del self.view.profileItems[self.view.profileItems.index(self)]
+            self.hide()
+            self.view.myResize()
     
     def slotEdit(self):
         if not self.noproxy:

@@ -32,7 +32,7 @@ class profileHandler(profileDialog):
                 self.chooseType2()
             # FIXME: Bu tip için verilen adresi oku ve değerleri ona göre ata.
             #            Ayrıca ne aralıkla bu adresi kontrol edeceğine karar ver; login?
-            elif config.getint(self.name, "type") == 3:
+            elif type == 3:
                 self.rd3.setChecked(True)
                 self.auto_url.setEnabled(True)
                 self.auto_url.setText(config.get(self.name, "auto_url"))
@@ -192,6 +192,7 @@ class profileHandler(profileDialog):
                     config.set(name,"socks_host",unicode(self.socks_host.text()))
                     config.set(name,"socks_port",unicode(self.socks_port.text()))
         else:
+            config.set(name,"type","3")
             config.set(name,"auto_url",unicode(self.auto_url.text()))
         f = open(configPath,"w")
         config.write(f)

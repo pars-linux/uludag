@@ -14,13 +14,15 @@ from qt import *
 from kdecore import *
 from khtml import *
 
+import os
+
 import ConfigParser
 
 import pisi
 
-programs = None
+configDir = os.path.expanduser("~/.proxy/")
+configPath = configDir +"proxy"
 config = ConfigParser.SafeConfigParser()
-configPath = "config_files/config"
 modules = []
 
 def loadIcon(name, group=KIcon.Desktop, size=16):
@@ -30,29 +32,45 @@ def loadIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
 def parseConfig():
-    # FIXME: use a variable for "home" path
+    if not os.path.exists(configDir):
+        os.mkdir(configDir)
     config.read(configPath)
+    noProxy = "noproxy"
+    if not config.has_section(noProxy):
+        config.add_section(noProxy)
+    if not config.has_option(noProxy,"isActive"):
+        config.set(noProxy,"isActive","1")
+    config.set(noProxy, "type", "0")
 
 def createModules():
     pisi.api.init(write=False)
     installed = pisi.api.list_installed()
-    if "firefox" in installed:
-        from firefox import Firefox
-        modules.append(Firefox())
+    pisi_packages = []
+    pisi_packages.append("firefox")
+    pisi_packages.append("thunderbird")
+    pisi_packages.append("amsn")
+    pisi_packages.append("aria2")
+    pisi_packages.append("kdebase")
+    pisi_packages.append("gftp")
+    if pisi_packages[0] in installed:
+        from apps.mozilla import Mozilla, isUsed
+        if isUsed(pisi_packages[0]):
+            modules.append(Mozilla(pisi_packages[0]))
+    if pisi_packages[1] in installed:
+        from apps.mozilla import Mozilla
+        if isUsed(pisi_packages[1]):
+            modules.append(Mozilla(pisi_packages[1]))
     if "amsn" in installed:
-        from amsn import AMSN
+        from apps.amsn import AMSN
         modules.append(AMSN())
-        # FIXME: uncomment
-##    if "aria2" in installed:
-    if True:
-        from aria2 import Aria2
+    if "aria2" in installed:
+        from apps.aria2 import Aria2
         modules.append(Aria2())
     if "kdebase" in installed:
-        from kde import KDE
+        from apps.kde import KDE
         modules.append(KDE())
     if "gftp" in installed:
-        global Gftp
-        from gftp import Gftp
+        from apps.gftp import Gftp
         modules.append(Gftp())
         
 
@@ -67,7 +85,6 @@ def changeProxy(section):
                 m.setGlobalProxy(config.get(section,"http_host"), config.get(section,"http_port"))
             else:
                 m.setGlobalProxy(config.get(section,"http_host"))
-    # FIXME: "or type == 3" maybe added later
     elif type == 2:
         for m in modules:
             if config.has_option(section,"http_host"):
@@ -95,6 +112,9 @@ def changeProxy(section):
                     m.setSOCKSProxy(config.get(section,"socks_host"), config.get(section,"socks_port"))
                 else:
                     m.setSOCKSProxy(config.get(section,"socks_host"))
+    elif type == 3:
+        for m in modules:
+            m.setPAC_URL(config.get(section,"auto_url"))
         
     for m in modules:
         m.close()
