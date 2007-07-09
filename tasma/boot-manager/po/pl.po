@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-07 09:56+0300\n"
+"POT-Creation-Date: 2007-07-09 15:28+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -80,7 +79,7 @@ msgstr "Ustaw jako domyślne."
 msgid "There must be at least one Pardus entry."
 msgstr "Musi być co najmniej jeden wpis Pardusa."
 
-#: src/mainview.py:247 src/mainview.py:524
+#: src/mainview.py:247 src/mainview.py:527
 msgid "Access Denied"
 msgstr "Odmowa Dostępu"
 
@@ -105,8 +104,10 @@ msgid "Uninstall Kernel"
 msgstr "Usuwanie Kernela"
 
 #: src/mainview.py:345
-msgid "Unused kernels:"
-msgstr "Nieużywane Kernele"
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
+msgstr ""
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
@@ -128,11 +129,11 @@ msgstr "Czy chcesz usunąć tego kernela z systemu?"
 msgid "Bootloader configuration changed by another application."
 msgstr "Konfiguracja menedżera GRUB zmieniona przez inną aplikację."
 
-#: src/mainview.py:513 src/mainview.py:517 src/mainview.py:519
+#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
 msgid "Failed"
 msgstr "Niepowodzenie"
 
-#: src/mainview.py:524
+#: src/mainview.py:527
 msgid "You are not allowed to edit boot loader settings."
 msgstr "Nie masz uprawnień do edycji ustawień menedżera rozruchowego"
 
@@ -143,3 +144,6 @@ msgstr "Edytuj wpis"
 #: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Skasuj wpis"
+
+#~ msgid "Unused kernels:"
+#~ msgstr "Nieużywane Kernele"

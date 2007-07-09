@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-29 19:27+0300\n"
+"POT-Creation-Date: 2007-07-09 15:28+0300\n"
 "PO-Revision-Date: 2007-07-02 16:05+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -80,7 +80,7 @@ msgstr "Établir comme entrée de démarrage par défaut."
 msgid "There must be at least one Pardus entry."
 msgstr "Il doit y avoir au moins une entrée Pardus."
 
-#: src/mainview.py:247 src/mainview.py:524
+#: src/mainview.py:247 src/mainview.py:527
 msgid "Access Denied"
 msgstr "Accès refusé"
 
@@ -105,8 +105,10 @@ msgid "Uninstall Kernel"
 msgstr "Desinstaller le noyau"
 
 #: src/mainview.py:345
-msgid "Unused kernels:"
-msgstr "Noyaux non utilisés :"
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
+msgstr ""
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
@@ -127,16 +129,16 @@ msgstr "Voulez vous désinstaller ce noyau du système ?"
 #: src/mainview.py:463
 msgid "Bootloader configuration changed by another application."
 msgstr ""
-"Configuration du chargeur de démarrage changée par une autre "
-"application."
+"Configuration du chargeur de démarrage changée par une autre application."
 
-#: src/mainview.py:513 src/mainview.py:517 src/mainview.py:519
+#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
 msgid "Failed"
 msgstr "Échec"
 
-#: src/mainview.py:524
+#: src/mainview.py:527
 msgid "You are not allowed to edit boot loader settings."
-msgstr "Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
+msgstr ""
+"Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
 
 #: src/ui_elements.py:91
 msgid "Edit entry"
@@ -146,3 +148,5 @@ msgstr "Éditer l'entrée"
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
 
+#~ msgid "Unused kernels:"
+#~ msgstr "Noyaux non utilisés :"

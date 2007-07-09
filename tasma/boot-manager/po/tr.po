@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-29 19:27+0300\n"
+"POT-Creation-Date: 2007-07-09 15:28+0300\n"
 "PO-Revision-Date: 2007-04-30 09:26+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Bahadır Kandemir <bahadir@pardus.org.tr>>\n"
@@ -79,7 +79,7 @@ msgstr "Öntanımlı açılış kaydı olarak ata."
 msgid "There must be at least one Pardus entry."
 msgstr "En az bir Pardus girdisi olmalı."
 
-#: src/mainview.py:247 src/mainview.py:524
+#: src/mainview.py:247 src/mainview.py:527
 msgid "Access Denied"
 msgstr "Erişim Engellendi"
 
@@ -104,8 +104,11 @@ msgid "Uninstall Kernel"
 msgstr "Çekirdeği Sistemden Kaldır"
 
 #: src/mainview.py:345
-msgid "Unused kernels:"
-msgstr "Kullanılmayan çekirdekler:"
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
+msgstr ""
+"Bu çekirdekler sisteminizde kurulu ancak önyükleyici listesinde bulunmuyor:"
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
@@ -127,11 +130,11 @@ msgstr "Bu çekirdeği sistemden kaldırmak ister misiniz?"
 msgid "Bootloader configuration changed by another application."
 msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
 
-#: src/mainview.py:513 src/mainview.py:517 src/mainview.py:519
+#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
 msgid "Failed"
 msgstr "Başarısız"
 
-#: src/mainview.py:524
+#: src/mainview.py:527
 msgid "You are not allowed to edit boot loader settings."
 msgstr "Önyükleyici ayarlarını değiştirme izniniz yok."
 
@@ -142,3 +145,6 @@ msgstr "Kaydı düzenle"
 #: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Kaydı sil"
+
+#~ msgid "Unused kernels:"
+#~ msgstr "Kullanılmayan çekirdekler:"
