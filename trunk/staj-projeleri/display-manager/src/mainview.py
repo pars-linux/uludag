@@ -13,12 +13,10 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
+import comar
+
 from utility import *
 
-import kdedesigner
-from display_manager import mainForm
-
-import comar
 
 class ScreenWidget(QWidget):
     def __init__(self, parent):
