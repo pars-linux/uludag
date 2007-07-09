@@ -20,7 +20,7 @@ from utility import *
 
 mod_name = 'Boot Manager'
 mod_app = 'boot-manager'
-mod_version = '0.3.3'
+mod_version = '0.3.2'
 
 def AboutData():
     about_data = KAboutData(
