@@ -637,5 +637,30 @@
         </widget>
     </grid>
 </widget>
+<tabstops>
+    <tabstop>name_edit</tabstop>
+    <tabstop>rd1</tabstop>
+    <tabstop>rd2</tabstop>
+    <tabstop>rd3</tabstop>
+    <tabstop>ch0</tabstop>
+    <tabstop>ch1</tabstop>
+    <tabstop>http_host</tabstop>
+    <tabstop>http_port</tabstop>
+    <tabstop>ch2</tabstop>
+    <tabstop>ftp_host</tabstop>
+    <tabstop>ftp_port</tabstop>
+    <tabstop>ch3</tabstop>
+    <tabstop>gopher_host</tabstop>
+    <tabstop>gopher_port</tabstop>
+    <tabstop>ch4</tabstop>
+    <tabstop>ssl_host</tabstop>
+    <tabstop>ssl_port</tabstop>
+    <tabstop>ch5</tabstop>
+    <tabstop>socks_host</tabstop>
+    <tabstop>socks_port</tabstop>
+    <tabstop>auto_url</tabstop>
+    <tabstop>apply_but</tabstop>
+    <tabstop>cancel_but</tabstop>
+</tabstops>
 <layoutdefaults spacing="2" margin="11"/>
 </UI>
