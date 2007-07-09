@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-09 15:28+0300\n"
-"PO-Revision-Date: 2007-06-30 08:39-0400\n"
+"PO-Revision-Date: 2007-07-09 20:46-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Desarrollador y Mantenedor actual"
 
 #: src/boot-manager.py:38
 msgid "Contributions to Boot.Loader model."
-msgstr "Contribuciones al concepto de Boot.Loader."
+msgstr "Contribuciones al concepto del Cargador de Arranque."
 
 #: src/boot-manager.py:79
 msgid "Boot Manager is already started!"
@@ -109,7 +109,7 @@ msgstr "Desinstalar núcleo"
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
-msgstr ""
+msgstr "Los siguientes núcleos (kernel) están disponibles en el sistema, pero no están en la lista de arranque:"
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
@@ -147,5 +147,3 @@ msgstr "Editar entrada"
 msgid "Delete entry"
 msgstr "Eliminar entrada"
 
-#~ msgid "Unused kernels:"
-#~ msgstr "Núcleos sin uso:"
