@@ -21,7 +21,7 @@ from icons import icons, getIconSet
 def I18N_NOOP(x):
     return x
 
-mod_version = "1.15"
+mod_version = "1.15.2"
 mod_app = "network-manager"
 
 
