@@ -17,7 +17,7 @@ import shutil
 
 import kdedistutils
 
-version = "1.4"
+version = "1.4.1"
 
 distfiles = """
     AUTHORS
