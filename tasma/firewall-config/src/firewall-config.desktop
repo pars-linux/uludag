@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Firewall Config
 Name[tr]=Güvenlik Duvarı Ayarları
-Name[de]=Firewallkonfiguration
+Name[de]=Firewall-Konfiguration
 Name[es]=Configurar Cortafuegos
 Name[nl]=Firewall configuratie
 Name[pt_BR]=Configuração de Firewall
@@ -10,11 +10,11 @@ GenericName[en]=Firewall Configuration
 GenericName[es]=Configurar Cortafuegos
 GenericName[nl]=Firewall configuratie
 GenericName[tr]=Güvenlik Duvarı Ayarları
-GenericName[de]=Firewallkonfiguration
+GenericName[de]=Firewall-Konfiguration
 GenericName[pt_BR]=Configuração de Firewall
 Comment=Firewall Configuration Interface
 Comment[tr]=Güvenlik Duvarı Ayarları
-Comment[de]=Firewallkonfiguration-Schnittstelle
+Comment[de]=Firewall-Konfigurations-Schnittstelle
 Comment[es]=Interfaz para configurar el cortafuegos
 Comment[nl]=Firewall configuratie interface
 Comment[pt_BR]=Interface de Configuração de Firewall
