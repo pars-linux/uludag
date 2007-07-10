@@ -9,6 +9,7 @@ X-KDE-autostart-after=kdesktop
 X-KDE-autostart-condition=kaptanrc:General:RunOnStart:true
 
 Name=Kaptan Desktop
+Name[de]=Kaptan Arbeitsfläche
 Name[tr]=Kaptan Masaüstü
 Name[pt_BR]=Kaptan Desktop
 Name[nl]=Kaptan Desktop
