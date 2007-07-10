@@ -73,14 +73,14 @@ _textwrap   = textwrap.wrap
 ### }}}
 
 
-def pofile(fpath, wrapwidth=78):
+def pofile(fhandle, wrapwidth=78):
     """
-    Convenience function that parse the po/pot file <fpath> and return
+    Convenience function that parse the po/pot file <fhandle> and return
     a POFile instance.
 
     Keyword argument:
     -----------------
-    fpath     -- full or relative path to the po/pot file to parse
+    fhandle   -- file handler for the po/pot file to parse
     wrapwidth -- integer, the wrap width, only useful when -w option
                  was passed to xgettext, default to 78 (optional)
 
@@ -92,10 +92,6 @@ def pofile(fpath, wrapwidth=78):
     <POFile instance at ...>
     """
     ### pofile {{{
-    try:
-        fhandle = open(fpath, 'r+')
-    except IOError, err:
-        raise IOError('Unable to open the po file "%s": %s' % (fpath, err))
     parser = _POFileParser(fhandle)
     instance = parser.parse()
     instance.wrapwidth = wrapwidth
