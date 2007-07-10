@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Boot Manager
+Name[de]=Boot-Manager
 Name[tr]=Açılış Yöneticisi
 Name[es]=Administrador del Cargador de Arranque
 Name[nl]=Opstartbeheer
+GenericName[de]=Boot-Management-Schnittstelle
 GenericName[en]=Boot Management Interface
 GenericName[es]=Interfaz de Administración de Arranque
 GenericName[nl]=Opstartbeheer interface
