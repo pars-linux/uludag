@@ -11,6 +11,7 @@
 # Please read the COPYING file.
 
 import optparse
+import sys
 
 import comar
 import zorg
@@ -305,6 +306,13 @@ if __name__ == "__main__":
     out = OUT(opts.colorout)
     link = comar.Link()
 
+    link.can_access("Xorg.Display.listCards")
+    try:
+        link.read_cmd()
+    except comar.LinkClosed:
+        out.error("Connection closed by COMAR daemon.")
+        sys.exit(1)
+
     if opts.safe:
         safe()
     elif opts.probe:
@@ -324,4 +332,3 @@ if __name__ == "__main__":
         out.error("Not implemented yet.")
     else:
         parser.print_help()
-
