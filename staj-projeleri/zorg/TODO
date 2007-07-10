@@ -19,6 +19,7 @@ Legend:
    ? compatibility check between kernel and xorg driver versions (e.g. nvidia-kernel and nvidia-glx issue)
 
  - method access attributes
+ - i18n support
  ? distinguish boot and service initialization (after boot we should be able to start X even if xorg=off passed)
  - DPI setup
  - INF file installation
