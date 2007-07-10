@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-09 15:28+0300\n"
-"PO-Revision-Date: 2007-07-02 16:05+0200\n"
+"PO-Revision-Date: 2007-07-10 22:58+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -109,6 +109,8 @@ msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
 msgstr ""
+"Les noyaux suivants sont installés sur le système mains n'existent pas dans "
+"la liste du chargeur de démarrage :"
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
@@ -128,8 +130,7 @@ msgstr "Voulez vous désinstaller ce noyau du système ?"
 
 #: src/mainview.py:463
 msgid "Bootloader configuration changed by another application."
-msgstr ""
-"Configuration du chargeur de démarrage changée par une autre application."
+msgstr "Configuration du chargeur de démarrage changée par une autre application."
 
 #: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
 msgid "Failed"
@@ -137,8 +138,7 @@ msgstr "Échec"
 
 #: src/mainview.py:527
 msgid "You are not allowed to edit boot loader settings."
-msgstr ""
-"Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
+msgstr "Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
 
 #: src/ui_elements.py:91
 msgid "Edit entry"
@@ -148,5 +148,3 @@ msgstr "Éditer l'entrée"
 msgid "Delete entry"
 msgstr "Supprimer l'entrée"
 
-#~ msgid "Unused kernels:"
-#~ msgstr "Noyaux non utilisés :"
