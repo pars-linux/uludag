@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Type=Service
 Name=PiSi Package Info
+Name[de]=PiSi-Paketinfo
 Name[tr]=PiSi Paketi Bilgisi
 Name[pt_BR]=Informação de Pacote PiSi
 Name[nl]=PiSi pakket informatie
