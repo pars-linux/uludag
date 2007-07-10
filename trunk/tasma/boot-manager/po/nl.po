@@ -9,17 +9,15 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-09 15:28+0300\n"
-"PO-Revision-Date: 2007-07-08 18:05+0200\n"
+"PO-Revision-Date: 2007-07-10 23:14+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/boot-manager.py:30 src/boot-manager.py:84
-#, fuzzy
 msgid "Boot Manager"
 msgstr "Opstartbeheer"
 
@@ -112,6 +110,8 @@ msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
 msgstr ""
+"Deze kernels zijn binnen het systeem geïnstalleerd, maar bestaan niet in de bootlader "
+"lijst:"
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
@@ -149,5 +149,3 @@ msgstr "Bewerk keuze"
 msgid "Delete entry"
 msgstr "Verwijder keuze"
 
-#~ msgid "Unused kernels:"
-#~ msgstr "Niet gebruikte kernels:"
