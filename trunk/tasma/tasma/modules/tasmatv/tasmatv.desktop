@@ -14,7 +14,7 @@ Name=Tv Card Configuration
 Name[tr]=Tv Kartı Yapılandırması
 Name[nl]=TV-kaart configuratie
 Name[es]=Configurar Tarjeta de TV
-Name[de]=Konfiguration der TV Karte
+Name[de]=Konfiguration der TV-Karte
 Name[pt_BR]=Configuração da Placa de TV
 
 Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-sound
