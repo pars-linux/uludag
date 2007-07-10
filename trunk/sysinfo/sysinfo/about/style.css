@@ -9,16 +9,14 @@ body>h1 {
 	font-family: "Trebuchet MS", Sans-Serif;
 	letter-spacing: .1em;
 	color: #fff;
-	opacity: .9;
-	margin-left: 160px;
-    margin-top:20px;
+	margin-left: 180px;
+    margin-top:30px;
 }
 
 body>h3 {
 	color: #ffffff;
-	opacity: 0.4;
-	padding: 0px 0px 5px 160px;
-	font-size: 8pt;
+	padding: 0px 0px 5px 180px;
+	font-size: 9pt;
 	font-weight: normal;
 	letter-spacing: .2em;
 }
@@ -35,13 +33,13 @@ div#container1 {
 }
 
 div#column {
-	width: 47%;
+	width: 50%;
     float:left;
 }
 
 div#column2 {
     float:left;
-	width: 52%;
+	width: 49%;
 }
 
 h2 {
@@ -164,10 +162,10 @@ table td:first-child {
 }
 
 .bar {
-    background-color: #EEE;
+    /*background-color: #FFF;*/
     text-align: right;
-    border-left: solid 1px #CCC;
-    border-right: solid 1px #CCC;
+    /*border-left: solid 1px #FCB125;*/
+    border-right: solid 1px #FCB125;
 }
 
 .bar div {
