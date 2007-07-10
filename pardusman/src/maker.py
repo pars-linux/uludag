@@ -291,7 +291,7 @@ def make_iso(project):
         os.link(image_file, os.path.join(iso_dir, "pardus.img"))
         
         def copy(src, dest):
-            run('cp "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
+            run('cp -PR "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
         
         if project.release_files:
             path = project.release_files
