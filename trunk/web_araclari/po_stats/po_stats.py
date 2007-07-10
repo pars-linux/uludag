@@ -3,7 +3,7 @@ from pstemplates import *
 from os.path import isfile
 import polib
 
-REPO_PATH = '../../../'
+REPO_PATH = '../../'
 REAL_PATH = 'http://svn.pardus.org.tr/uludag/trunk/'
 
 po_files = {}
