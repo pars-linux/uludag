@@ -5,7 +5,6 @@
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>
-        <SelectedPackage>AssaultCube</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
         <SelectedPackage>acx100</SelectedPackage>
@@ -19,8 +18,12 @@
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
+        <SelectedPackage>bash-completion</SelectedPackage>
+        <SelectedPackage>bash-completion-config</SelectedPackage>
         <SelectedPackage>bcm43xx-firmware</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
+        <SelectedPackage>blender</SelectedPackage>
+        <SelectedPackage>blobby</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-libs</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
@@ -113,6 +116,7 @@
         <SelectedPackage>kradio</SelectedPackage>
         <SelectedPackage>ksudoku</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
+        <SelectedPackage>kvm</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
@@ -182,6 +186,7 @@
         <SelectedPackage>unshield</SelectedPackage>
         <SelectedPackage>vbetool</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
+        <SelectedPackage>virtualbox</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
@@ -193,8 +198,6 @@
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <Package>915resolution</Package>
-        <Package>AssaultCube</Package>
-        <Package>AssaultCube-maps</Package>
         <Package>DirectFB</Package>
         <Package>IO-Socket-SSL</Package>
         <Package>Locale-gettext</Package>
@@ -241,9 +244,13 @@
         <Package>audiofile</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
+        <Package>bash-completion</Package>
+        <Package>bash-completion-config</Package>
         <Package>bc</Package>
         <Package>bcm43xx-firmware</Package>
         <Package>bind-tools</Package>
+        <Package>blender</Package>
+        <Package>blobby</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
@@ -335,8 +342,10 @@
         <Package>foomatic-db-engine</Package>
         <Package>foomatic-db-hpijs</Package>
         <Package>foomatic-filters</Package>
+        <Package>freealut</Package>
         <Package>freetype</Package>
         <Package>frozen-bubble</Package>
+        <Package>ftgl</Package>
         <Package>ftp</Package>
         <Package>fuse</Package>
         <Package>fxload</Package>
@@ -461,6 +470,7 @@
         <Package>kradio</Package>
         <Package>ksudoku</Package>
         <Package>ktorrent</Package>
+        <Package>kvm</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lbreakout2</Package>
@@ -663,6 +673,7 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
+        <Package>physfs</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
         <Package>pinentry</Package>
@@ -790,6 +801,7 @@
         <Package>vbetool</Package>
         <Package>vcdimager</Package>
         <Package>vim</Package>
+        <Package>virtualbox</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
         <Package>wavpack</Package>
@@ -801,8 +813,10 @@
         <Package>x11-ssh-askpass</Package>
         <Package>x264</Package>
         <Package>x2x</Package>
+        <Package>xalan-c</Package>
         <Package>xbitmaps</Package>
         <Package>xcb-proto</Package>
+        <Package>xerces-c</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xmlsec</Package>
@@ -816,6 +830,7 @@
         <Package>xorg-video</Package>
         <Package>xtrans</Package>
         <Package>xvid</Package>
+        <Package>yafray</Package>
         <Package>yakuake</Package>
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
