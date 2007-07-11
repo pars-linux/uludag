@@ -37,6 +37,7 @@
         <SelectedPackage>eagle-firmware</SelectedPackage>
         <SelectedPackage>eciadsl</SelectedPackage>
         <SelectedPackage>ed</SelectedPackage>
+        <SelectedPackage>et131x</SelectedPackage>
         <SelectedPackage>ethtool</SelectedPackage>
         <SelectedPackage>fbset</SelectedPackage>
         <SelectedPackage>feedback</SelectedPackage>
@@ -142,6 +143,7 @@
         <SelectedPackage>rt2570</SelectedPackage>
         <SelectedPackage>rt61</SelectedPackage>
         <SelectedPackage>rt73</SelectedPackage>
+        <SelectedPackage>sc92031</SelectedPackage>
         <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>schedutils</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
@@ -300,6 +302,7 @@
         <Package>enscript</Package>
         <Package>esound</Package>
         <Package>essential</Package>
+        <Package>et131x</Package>
         <Package>ethtool</Package>
         <Package>exiv2</Package>
         <Package>expat</Package>
@@ -689,6 +692,7 @@
         <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
+        <Package>sc92031</Package>
         <Package>schedtool</Package>
         <Package>schedutils</Package>
         <Package>screen</Package>
