@@ -13,9 +13,10 @@ import sys
 import os
 import subprocess
 
-
 class OpenGL:
-    env_path = '/etc/env.d/03opengl'
+    env_path = "/etc/env.d/03opengl"
+    extensions_path = "/usr/lib/xorg/modules/extensions"
+    opengl_path = "/usr/lib/opengl"
 
     def __init__(self):
         self.fake = False
@@ -69,7 +70,7 @@ class OpenGL:
 
     # Main methods
     def getAvailable(self):
-        paths = ("/usr/lib/opengl",)
+        paths = (opengl_path,)
         # FIXME: lib32 and lib64 should be checked too for 64 bit support
         implems = []
         for path in paths:
@@ -97,7 +98,7 @@ class OpenGL:
 
     def setCurrent(self, implem):
         # Setup libraries
-        ipath = os.path.join("/usr/lib/opengl", implem)
+        ipath = os.path.join(opengl_path, implem)
         libpath = os.path.join(ipath, "lib")
         self.setLibrary(libpath, "/usr/lib", "libGL")
         self.setLibrary(libpath, "/usr/lib", "libGLcore")
@@ -105,12 +106,12 @@ class OpenGL:
         # Setup extensions
         extpath = os.path.join(ipath, "extensions")
         if not os.path.exists(extpath):
-            extpath = "/usr/lib/opengl/xorg-x11/extensions"
+            extpath = os.path.join(opengl_path, "xorg-x11/extensions")
 
-        self.setLibrary(extpath, "/usr/lib/modules/extensions", "libglx")
+        self.setLibrary(extpath, extensions_path, "libglx")
         for name in os.listdir(extpath):
             if os.path.splitext(name) in ("so", "a", "la"):
-                self.setLibraryFile(extpath, "/usr/lib/modules/extensions", name)
+                self.setLibraryFile(extpath, extensions_path, name)
 
         # Setup includes
         # FIXME: really setup includes here
