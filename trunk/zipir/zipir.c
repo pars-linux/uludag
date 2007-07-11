@@ -385,6 +385,11 @@ zip_get_attrib (zip *z, char *name)
                 hpos = hpos + 4 + get_word (extra_data + hpos + 2);
                 break;
 
+            case 0xCAFE:
+                printf ("   has CAFE in, this is probably a jar, ha ha ha\n");
+                hpos = hpos + 4 + get_word (extra_data + hpos + 2);
+                break;
+
             default:
                 printf ("   Unknown data type = %lu\n", data_type);
                 hpos = hpos + 4 + get_word (extra_data + hpos + 2);
