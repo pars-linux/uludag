@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-20 20:03+0300\n"
-"PO-Revision-Date: 2007-04-25 14:51+0200\n"
+"PO-Revision-Date: 2007-07-11 20:35+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr "L'utente non appartiene al gruppo disk!"
 
 #: src/disk-manager.py:132 src/disk-manager.py:134
 msgid "File /etc/fstab is not correct, please fix it manually."
-msgstr ""
+msgstr "Il file /etc/fstab contiene degli errori, correggili manualmente."
 
 #: src/disk-manager.py:229 src/disk-manager.py:253
 msgid "Completed"
@@ -89,3 +89,4 @@ msgstr "Tipo filesystem"
 #: src/disk-manager.py:387
 msgid "Disk Manager is already running!"
 msgstr "Il gestore dischi è già in esecuzione!"
+
