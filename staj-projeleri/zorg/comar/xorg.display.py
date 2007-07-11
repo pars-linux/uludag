@@ -122,6 +122,7 @@ def cardInfo(cardId):
 
     info = []
 
+    info.append("id=%s" % cardId)
     info.append("vendorName=%s" % zconfig.get("vendorName"))
     info.append("boardName=%s" % zconfig.get("boardName"))
     info.append("vendorId=%s" % zconfig.get("vendorId"))
@@ -159,6 +160,7 @@ def monitorInfo(monitorId):
     info = []
     #name = "%s - %s" % (zconfig.get("modelName"), zconfig.get("vendorName"))
     #info.append("name=%s" % name)
+    info.append("id=%s" % monitorId)
     info.append("vendorName=%s" % zconfig.get("vendorName"))
     info.append("modelName=%s" % zconfig.get("modelName"))
     info.append("resolutions=%s" % zconfig.get("resolutions"))
@@ -219,6 +221,7 @@ def screenInfo(screenNumber):
     zconfig.setSection(scr)
 
     scrInfo = []
+    scrInfo.append("number=%s" % screenNumber)
     for option in "card", "monitor", "resolution", "depth":
         scrInfo.append("%s=%s" % (option, zconfig.get(option)))
 
