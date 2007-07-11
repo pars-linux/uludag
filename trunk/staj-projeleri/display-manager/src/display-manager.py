@@ -80,7 +80,7 @@ def main():
     win = QDialog()
     win.setCaption(i18n('Display Manager'))
     win.setMinimumSize(400, 300)
-    win.resize(400, 300)
+    win.resize(500, 300)
     attachMainWidget(win)
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
