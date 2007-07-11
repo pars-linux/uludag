@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-25 15:01+0300\n"
-"PO-Revision-Date: 2007-03-17 14:09+0200\n"
+"PO-Revision-Date: 2007-07-11 20:20+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgstr "Configurazione firewall"
 #: src/firewall-config.py:195
 #, python-format
 msgid "Ports: %s"
-msgstr ""
+msgstr "Porte: %s"
 
 #: src/firewall-config.py:238
 msgid "&Stop Firewall"
@@ -100,11 +100,11 @@ msgstr ""
 
 #: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
-msgstr ""
+msgstr "Non hai i permessi necessari per modificare le impostazioni del firewall."
 
 #: src/firewall-config.py:345
 msgid "Access Denied"
-msgstr ""
+msgstr "Accesso negato"
 
 #: src/firewall-config.py:439
 msgid "Pardus Firewall Interface is already running!"
@@ -241,3 +241,4 @@ msgstr "Consenti"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Blocca"
+
