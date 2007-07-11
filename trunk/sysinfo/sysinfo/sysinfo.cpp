@@ -152,7 +152,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     sysInfo += "</table>";
 
     // hw info
-    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull() 
+    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
         || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
     {
         sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
@@ -356,12 +356,12 @@ int kio_sysinfoProtocol::netInfo() const
 
 bool isOpenGlSupported() {
 
-    int scr = 0;               // print for screen 0    
-    Display *dpy;              // Active X display      
-    GLXContext ctx;            // GLX context           
-    XVisualInfo *visinfo;      // Visual info           
-    char *displayname = NULL;  // Server to connect     
-    Bool allowDirect = true;   // Direct rendering only 
+    int scr = 0;               // print for screen 0
+    Display *dpy;              // Active X display
+    GLXContext ctx;            // GLX context
+    XVisualInfo *visinfo;      // Visual info
+    char *displayname = NULL;  // Server to connect
+    Bool allowDirect = true;   // Direct rendering only
     Bool isEnabled = false;
 
     // GLX attributes
@@ -409,7 +409,7 @@ bool isOpenGlSupported() {
                 return false;
     }
     */
-    
+
     return isEnabled;
 }
 
