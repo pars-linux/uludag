@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-10 22:32+0300\n"
-"PO-Revision-Date: 2007-04-24 10:50+0200\n"
+"PO-Revision-Date: 2007-07-11 20:33+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -143,8 +143,7 @@ msgstr "Elimina utente"
 
 #: browser.py:162
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
 "<big><b>Desideri veramente eliminare questo gruppo?</b></big><br><br>Nome "
 "del gruppo: %s<br>ID: %d"
@@ -154,13 +153,12 @@ msgid "Delete Group"
 msgstr "Elimina gruppo"
 
 #: browser.py:261
-#, fuzzy
 msgid "You are not allowed to manage user settings."
-msgstr "Non hai i permessi necessari ad eseguire questa operazione"
+msgstr "Non hai i permessi necessari per gestire le impostazioni degli utenti."
 
 #: browser.py:261
 msgid "Access Denied"
-msgstr ""
+msgstr "Accesso negato"
 
 #: useredit.py:72
 msgid "User name:"
@@ -220,7 +218,7 @@ msgstr "Dovresti inserire una password per questo utente."
 
 #: useredit.py:383
 msgid "Password must be longer."
-msgstr "La password deve essere più lunga"
+msgstr "La password deve essere più lunga."
 
 #: useredit.py:387
 msgid "Don't use your full name or user name as a password."
@@ -285,3 +283,4 @@ msgstr "Aggiunta utente in corso..."
 #: useredit.py:615
 msgid "Getting user information..."
 msgstr "Recupero informazioni sull'utente in corso..."
+
