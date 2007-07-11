@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-29 16:40+0300\n"
-"PO-Revision-Date: 2007-03-16 20:07+0200\n"
+"PO-Revision-Date: 2007-07-11 20:18+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -105,20 +105,19 @@ msgstr "Server dei nomi (DNS):"
 
 #: connection.py:27
 msgid "Channel"
-msgstr ""
+msgstr "Canale"
 
 #: connection.py:28
-#, fuzzy
 msgid "Mode"
-msgstr "Modalità:"
+msgstr "Modalità"
 
 #: connection.py:29
 msgid "Protocol"
-msgstr ""
+msgstr "Protocollo"
 
 #: connection.py:55
 msgid "<hidden>"
-msgstr ""
+msgstr "<nascosto>"
 
 #: connection.py:88
 msgid "Scan results:"
@@ -224,7 +223,7 @@ msgstr ""
 
 #: comariface.py:303
 msgid "You are not allowed to change network settings."
-msgstr ""
+msgstr "Non hai i permessi necessari per modificare le impostazioni di rete."
 
 #: comariface.py:380
 msgid "new connection"
@@ -279,3 +278,4 @@ msgstr "Desideri avviare l'applet di rete automaticamente al login?"
 #: network-applet.py:491
 msgid "Network Applet"
 msgstr "Applet di rete"
+
