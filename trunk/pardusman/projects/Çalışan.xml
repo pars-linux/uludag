@@ -14,7 +14,6 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
-        <SelectedPackage>armagetronad</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -230,9 +229,6 @@
         <Package>amrnb</Package>
         <Package>amrwb</Package>
         <Package>aria2</Package>
-        <Package>armagetronad</Package>
-        <Package>armagetronad-moviepack</Package>
-        <Package>armagetronad-moviesounds</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
         <Package>aspell</Package>
