@@ -387,6 +387,7 @@ bool isOpenGlSupported() {
 
     if(glXIsDirect(dpy, ctx)) isEnabled = true;
 
+    XFree(visinfo);
     XCloseDisplay (dpy);
 
     /*
