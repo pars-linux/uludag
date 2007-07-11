@@ -39,3 +39,26 @@ class HelpDialog(QDialog):
         if not os.path.exists(url):
             url = locate('data', '%s/help/en/main_help.html' % name)
         self.htmlPart.openURL(KURL(url))
+
+class Card:
+    def __init__(self, cardId, name):
+        self.id = cardId
+        self.name = name
+        self.monitors = []
+        self.depths = []
+        
+class Monitor:
+    def __init__(self, monId):
+        self.id = monId
+        self.name = ""
+        self.res = []
+
+def pairs2dict(lines):
+    return dict(x.split("=", 1) for x in lines)
+
+def dict2pairs(pairs):
+    lines = []
+    for k, v in pairs.items():
+        lines.append("%s=%s" % (k, v))
+        
+    return "\n".join(lines)
