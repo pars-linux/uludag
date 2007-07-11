@@ -53,12 +53,13 @@ class Monitor:
         self.name = ""
         self.res = []
 
-def pairs2dict(lines):
+def pairs2dict(data):
+    lines = data.strip().splitlines()
     return dict(x.split("=", 1) for x in lines)
 
-def dict2pairs(pairs):
+def dict2pairs(info):
     lines = []
-    for k, v in pairs.items():
+    for k, v in info.items():
         lines.append("%s=%s" % (k, v))
         
     return "\n".join(lines)

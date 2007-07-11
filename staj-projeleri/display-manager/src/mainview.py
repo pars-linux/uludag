@@ -226,8 +226,9 @@ class widgetMain(QWidget):
                     self.link.Xorg.Display.cardInfo(cardId=cardId, id=CARD_INFO)
                     
             elif reply.id == CARD_INFO:
-                lines = reply.data.strip().splitlines()
-                cardInfo = dict(x.split("=", 1) for x in lines)
+                #lines = reply.data.strip().splitlines()
+                #cardInfo = dict(x.split("=", 1) for x in lines)
+                cardInfo = pairs2dict(reply.data)
                 
                 card = ""
                 for c in self.cards:
@@ -236,6 +237,8 @@ class widgetMain(QWidget):
                 
                 self.nrCards += 1
                 monitors = cardInfo["monitors"].split(",")
+                if not monitors[0]:
+                    return
                 
                 for mon in monitors:
                     #if mon == scr.curMonitor:
@@ -252,8 +255,9 @@ class widgetMain(QWidget):
                     self.link.Xorg.Display.monitorInfo(monitorId=mon, id=MONITOR_INFO)
                     
             elif reply.id == MONITOR_INFO:
-                lines = reply.data.strip().splitlines()
-                monInfo = dict(x.split("=", 1) for x in lines)
+                #lines = reply.data.strip().splitlines()
+                #monInfo = dict(x.split("=", 1) for x in lines)
+                monInfo = pairs2dict(reply.data)
                 monId = monInfo["id"]
                 self.nrMonitors += 1
                 
@@ -280,8 +284,9 @@ class widgetMain(QWidget):
                 if not reply.data:
                     return
                 
-                lines = reply.data.strip().splitlines()
-                scrInfo = dict(x.split("=", 1) for x in lines)
+                #lines = reply.data.strip().splitlines()
+                #scrInfo = dict(x.split("=", 1) for x in lines)
+                scrInfo = pairs2dict(reply.data)
                 scrNum = scrInfo["number"]
                 index = int(scrNum)
                 
