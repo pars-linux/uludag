@@ -1,4 +1,4 @@
-# translation of kio_sysinfo.po to italiano
+# translation of kio_sysinfo.po to Italian
 # This file is put in the public domain.
 #
 # Andrea Decorte <adecorte@gmail.com>, 2007.
@@ -7,9 +7,9 @@ msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-17 19:09+0300\n"
-"PO-Revision-Date: 2007-03-05 09:24+0200\n"
+"PO-Revision-Date: 2007-07-11 20:45+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
-"Language-Team: italiano\n"
+"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -112,7 +112,7 @@ msgstr "Informazioni sull'hardware"
 
 #: sysinfo.cpp:160
 msgid "Type:"
-msgstr ""
+msgstr "Tipo:"
 
 #: sysinfo.cpp:161 sysinfo.cpp:189
 msgid "Vendor:"
@@ -167,14 +167,12 @@ msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 cache)"
 
 #: sysinfo.cpp:311
-#, fuzzy
 msgid "Total"
-msgstr "Swap totale:"
+msgstr "Totale"
 
 #: sysinfo.cpp:311
-#, fuzzy
 msgid "Available"
-msgstr "Spazio disponibile"
+msgstr "Disponibile"
 
 #: sysinfo.cpp:403
 msgid "%1 (3D Support)"
@@ -208,31 +206,3 @@ msgstr "<strong>Sei connesso</strong>"
 msgid "Unknown network status"
 msgstr "Stato della rete sconosciuto"
 
-#~ msgid "Looking for disk information..."
-#~ msgstr "Recupero delle informazioni sul disco..."
-
-#~ msgid "Getting OS information...."
-#~ msgstr "Recupero delle informazioni sul sistema operativo...."
-
-#~ msgid "Looking up network status..."
-#~ msgstr "Analisi dello stato della rete..."
-
-#~ msgid "Looking for CPU information..."
-#~ msgstr "Recupero delle informazioni sulla CPU..."
-
-#~ msgid "Looking for memory information..."
-#~ msgstr "Recupero delle informazioni sulla memoria..."
-
-#~ msgid "Device"
-#~ msgstr "Dispositivo"
-
-#~ msgid "Filesystem"
-#~ msgstr "Filesystem"
-
-#~ msgid "Total space"
-#~ msgstr "Spazio totale"
-
-#~ msgid "Press the right mouse button for more options like Mount or Eject"
-#~ msgstr ""
-#~ "Premi il pulsante destro del mouse per avere ulteriori opzioni come il "
-#~ "montaggio o la rimozione"
