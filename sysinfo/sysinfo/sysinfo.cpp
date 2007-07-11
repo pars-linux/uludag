@@ -352,10 +352,44 @@ int kio_sysinfoProtocol::netInfo() const
 }
 
 #define INFO_XORG "/etc/X11/xorg.conf"
-#define INFO_OPENGL "/usr/bin/glxinfo"
+#include <GL/glx.h>
 
 bool isOpenGlSupported() {
 
+    int scr = 0;               // print for screen 0    
+    Display *dpy;              // Active X display      
+    GLXContext ctx;            // GLX context           
+    XVisualInfo *visinfo;      // Visual info           
+    char *displayname = NULL;  // Server to connect     
+    Bool allowDirect = true;   // Direct rendering only 
+    Bool isEnabled = false;
+
+    // GLX attributes
+    int attribVisual[] = {GLX_RGBA, None};
+
+    // Open the display with screen#:scr to fiddle with
+    dpy = XOpenDisplay (displayname);
+    if (!dpy) return false;
+
+    visinfo = glXChooseVisual(dpy, scr, attribVisual);
+    if (!visinfo) {
+        XCloseDisplay (dpy);
+        return false;
+    }
+
+    ctx = glXCreateContext( dpy, visinfo, NULL, allowDirect );
+    if (!ctx) {
+       fprintf(stderr, "Error: glXCreateContext failed\n");
+       XFree(visinfo);
+       XCloseDisplay (dpy);
+       return false;
+    }
+
+    if(glXIsDirect(dpy, ctx)) isEnabled = true;
+
+    XCloseDisplay (dpy);
+
+    /*
     FILE *pipe;
     QString line;
 
@@ -374,7 +408,9 @@ bool isOpenGlSupported() {
             else
                 return false;
     }
-    return false;
+    */
+    
+    return isEnabled;
 }
 
 bool kio_sysinfoProtocol::glInfo()
