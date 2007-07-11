@@ -365,16 +365,33 @@ bool isOpenGlSupported() {
     Bool isEnabled = false;
 
     // GLX attributes
-    int attribVisual[] = {GLX_RGBA, None};
+    int attribSingle[] = {
+        GLX_RGBA,
+        GLX_RED_SIZE,   1,
+        GLX_GREEN_SIZE, 1,
+        GLX_BLUE_SIZE,  1,
+        None
+    };
+    int attribDouble[] = {
+        GLX_RGBA,
+        GLX_RED_SIZE, 1,
+        GLX_GREEN_SIZE, 1,
+        GLX_BLUE_SIZE, 1,
+        GLX_DOUBLEBUFFER,
+        None
+    };
 
     // Open the display with screen#:scr to fiddle with
     dpy = XOpenDisplay (displayname);
     if (!dpy) return false;
 
-    visinfo = glXChooseVisual(dpy, scr, attribVisual);
+    visinfo = glXChooseVisual(dpy, scr, attribSingle);
     if (!visinfo) {
-        XCloseDisplay (dpy);
-        return false;
+        visinfo = glXChooseVisual(dpy, scr, attribDouble);
+        if (!visinfo) {
+            XCloseDisplay (dpy);
+            return false;
+        }
     }
 
     ctx = glXCreateContext( dpy, visinfo, NULL, allowDirect );
@@ -387,6 +404,7 @@ bool isOpenGlSupported() {
 
     if(glXIsDirect(dpy, ctx)) isEnabled = true;
 
+    glXDestroyContext (dpy,ctx);
     XFree(visinfo);
     XCloseDisplay (dpy);
 
