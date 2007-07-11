@@ -175,6 +175,7 @@ class XConfig:
         sec.set("Driver", dev.driver)
         sec.set("VendorName", dev.vendorName)
         sec.set("BoardName", dev.boardName)
+        sec.set("BusId", dev.busId)
 
         self._parser.sections.append(sec)
         return sec
