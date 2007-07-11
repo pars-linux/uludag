@@ -5,6 +5,7 @@
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>915resolution</SelectedPackage>
+        <SelectedPackage>AssaultCube</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
         <SelectedPackage>acx100</SelectedPackage>
@@ -51,6 +52,8 @@
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
+        <SelectedPackage>glibc-locales-fr</SelectedPackage>
+        <SelectedPackage>glibc-locales-it</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
         <SelectedPackage>glibc-locales-pt</SelectedPackage>
         <SelectedPackage>gnuchess</SelectedPackage>
@@ -76,6 +79,10 @@
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
+        <SelectedPackage>k3b-i18n-de</SelectedPackage>
+        <SelectedPackage>k3b-i18n-es</SelectedPackage>
+        <SelectedPackage>k3b-i18n-nl</SelectedPackage>
+        <SelectedPackage>k3b-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
@@ -84,6 +91,8 @@
         <SelectedPackage>kde-i18n-ca</SelectedPackage>
         <SelectedPackage>kde-i18n-de</SelectedPackage>
         <SelectedPackage>kde-i18n-es</SelectedPackage>
+        <SelectedPackage>kde-i18n-fr</SelectedPackage>
+        <SelectedPackage>kde-i18n-it</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
@@ -124,7 +133,6 @@
         <SelectedPackage>ndiswrapper</SelectedPackage>
         <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
-        <SelectedPackage>neverball</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
@@ -132,7 +140,6 @@
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
-        <SelectedPackage>ppracer</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
@@ -181,12 +188,13 @@
         <SelectedPackage>x11-ssh-askpass</SelectedPackage>
         <SelectedPackage>x2x</SelectedPackage>
         <SelectedPackage>xfsprogs</SelectedPackage>
-        <SelectedPackage>xvidcap</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <Package>915resolution</Package>
+        <Package>AssaultCube</Package>
+        <Package>AssaultCube-maps</Package>
         <Package>DirectFB</Package>
         <Package>IO-Socket-SSL</Package>
         <Package>Locale-gettext</Package>
@@ -344,6 +352,8 @@
         <Package>glibc-locales-ca</Package>
         <Package>glibc-locales-de</Package>
         <Package>glibc-locales-es</Package>
+        <Package>glibc-locales-fr</Package>
+        <Package>glibc-locales-it</Package>
         <Package>glibc-locales-nl</Package>
         <Package>glibc-locales-pt</Package>
         <Package>glibmm</Package>
@@ -406,6 +416,10 @@
         <Package>jpeg</Package>
         <Package>jpeg-mmx</Package>
         <Package>k3b</Package>
+        <Package>k3b-i18n-de</Package>
+        <Package>k3b-i18n-es</Package>
+        <Package>k3b-i18n-nl</Package>
+        <Package>k3b-i18n-pt_BR</Package>
         <Package>k3b-i18n-tr</Package>
         <Package>kaffeine</Package>
         <Package>kaptan</Package>
@@ -415,6 +429,8 @@
         <Package>kde-i18n-ca</Package>
         <Package>kde-i18n-de</Package>
         <Package>kde-i18n-es</Package>
+        <Package>kde-i18n-fr</Package>
+        <Package>kde-i18n-it</Package>
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-pt_BR</Package>
         <Package>kde-i18n-tr</Package>
@@ -620,7 +636,6 @@
         <Package>netcat</Package>
         <Package>netpbm</Package>
         <Package>network-manager</Package>
-        <Package>neverball</Package>
         <Package>nfs-utils</Package>
         <Package>nmap</Package>
         <Package>normalize</Package>
@@ -660,7 +675,6 @@
         <Package>portmap</Package>
         <Package>poster</Package>
         <Package>ppp</Package>
-        <Package>ppracer</Package>
         <Package>pptpclient</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
@@ -802,7 +816,6 @@
         <Package>xorg-video</Package>
         <Package>xtrans</Package>
         <Package>xvid</Package>
-        <Package>xvidcap</Package>
         <Package>yakuake</Package>
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
