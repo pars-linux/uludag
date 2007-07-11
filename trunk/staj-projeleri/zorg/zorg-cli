@@ -171,7 +171,7 @@ def info():
         out.info("  Monitors connected to this device:")
 
         monitorIds = info["monitors"].split(",")
-        if not monitorIds:
+        if not monitorIds[0]:
             out.error("    Could not find any configured monitors for this device")
             continue
 
