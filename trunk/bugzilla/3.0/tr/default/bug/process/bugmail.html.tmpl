@@ -42,12 +42,12 @@
 
 <dl>
 [% PROCESS emails
-   description = "Email sent to"
+   description = "Aşağıdaki adreslere eposta gönderildi"
    names = mail.sent
 %]
 
 [% PROCESS emails
-   description = "Excluding"
+   description = "Aşağıdaki adreslere eposta gönderilmedi"
    names = mail.excluded
 %]
 </dl>
@@ -65,10 +65,10 @@
         <code>[% name FILTER html %]</code>[% ", " UNLESS loop.last() %]
       [% END %]
     [% ELSE %]
-      no one
+      hiç kimse
     [% END %]
   [% ELSE %]
-    (list of e-mails not available)
+    (eposta listesi yok)
   [% END %]
   </dd>
 [% END %]
