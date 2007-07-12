@@ -150,10 +150,10 @@ class DefaultMonitor(Monitor):
         self.vendorname = ""
         self.modelname = "Default Monitor"
 
-        mon.hsync_min = 31.5
-        mon.hsync_max = 50
-        mon.vref_min = 50
-        mon.vref_max = 70
+        self.hsync_min = 31.5
+        self.hsync_max = 50
+        self.vref_min = 50
+        self.vref_max = 70
 
 class Screen:
     def __init__(self, device=None, monitor=None):
