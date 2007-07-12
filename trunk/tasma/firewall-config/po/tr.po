@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-25 15:01+0300\n"
+"POT-Creation-Date: 2007-07-12 20:08+0300\n"
 "PO-Revision-Date: 2006-04-27 13:04+0300\n"
 "Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
 "Language-Team: Turkish\n"
@@ -131,6 +131,10 @@ msgstr "Sohbet servisi (IRC)"
 #: src/rules.py:45
 msgid "File transfer service"
 msgstr "Dosya transfer servisi"
+
+#: src/rules.py:50
+msgid "Desktop Sharing"
+msgstr "Masaüstü Paylaşım"
 
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"

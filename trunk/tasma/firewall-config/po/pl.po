@@ -1,10 +1,8 @@
-
-
 msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-17 10:48+0200\n"
+"POT-Creation-Date: 2007-07-12 20:08+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -74,8 +72,8 @@ msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
 msgstr ""
-"Kliknij tutaj by wyłączyć firewall i zezwolić na wszystkie przychodzące "
-"i wychodzące połączenia."
+"Kliknij tutaj by wyłączyć firewall i zezwolić na wszystkie przychodzące i "
+"wychodzące połączenia."
 
 #: src/firewall-config.py:246
 msgid "&Start Firewall"
@@ -128,6 +126,10 @@ msgstr "IRC"
 msgid "File transfer service"
 msgstr "Transfer plików"
 
+#: src/rules.py:50
+msgid "Desktop Sharing"
+msgstr ""
+
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr "<b><font size=\"+1\">Firewall działa</font></b>"
@@ -162,8 +164,9 @@ msgstr "Przychodzące Połączenia"
 msgid ""
 "In this tab, you can create your own firewall rules. Use '+' button to "
 "create rules, and uncheck rules from list to remove them."
-msgstr "W tej zakładce możesz tworzyć własne reguły firewalla. Uzyj przycisku '+' "
-"do tworzenia nowych reguł. Odznacz reguły, które mają być usunięte."
+msgstr ""
+"W tej zakładce możesz tworzyć własne reguły firewalla. Uzyj przycisku '+' do "
+"tworzenia nowych reguł. Odznacz reguły, które mają być usunięte."
 
 #: src/firewall.py:201
 msgid "Advanced"

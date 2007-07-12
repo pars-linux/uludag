@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-25 15:01+0300\n"
+"POT-Creation-Date: 2007-07-12 20:08+0300\n"
 "PO-Revision-Date: 2007-03-18 19:53+0100\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@ns1.uludag.org.tr>\n"
@@ -132,6 +132,10 @@ msgstr "Servei de sistema de xat i missatgeria instantània (IRC)"
 #: src/rules.py:45
 msgid "File transfer service"
 msgstr "Servei de transmissió de fitxers"
+
+#: src/rules.py:50
+msgid "Desktop Sharing"
+msgstr ""
 
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
