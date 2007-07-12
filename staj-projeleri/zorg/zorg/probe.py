@@ -147,6 +147,7 @@ class DefaultMonitor(Monitor):
     def __init__(self):
         Monitor.__init__(self)
 
+        self.identifier = "DefaultMonitor"
         self.vendorname = ""
         self.modelname = "Default Monitor"
 

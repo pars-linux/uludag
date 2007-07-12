@@ -25,10 +25,11 @@ def autoConfigure():
         monitor = findMonitors(device, 1)[0]
 
     # Add a default monitor for other devices
-    for dev in devices:
-        if not dev.monitors:
-            mon = DefaultMonitor()
-            dev.monitors.append(mon)
+    if len(devices) > 1:
+        defMon = DefaultMonitor()
+        for dev in devices:
+            if not dev.monitors:
+                dev.monitors.append(defMon)
 
     screen = Screen(device, monitor)
     screen.res = monitor.res[0]
