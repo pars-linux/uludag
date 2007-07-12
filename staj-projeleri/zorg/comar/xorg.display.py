@@ -24,6 +24,12 @@ def autoConfigure():
         device.monitors = []
         monitor = findMonitors(device, 1)[0]
 
+    # Add a default monitor for other devices
+    for dev in devices:
+        if not dev.monitors:
+            mon = DefaultMonitor()
+            dev.monitors.append(mon)
+
     screen = Screen(device, monitor)
     screen.res = monitor.res[0]
 
@@ -51,14 +57,7 @@ def safeConfigure(driver = "vesa"):
     dev.driver = driver
 
     # set failsafe monitor stuff
-    mon = Monitor()
-    mon.vendorname = "%s Configured Vendor" % safedrv
-    mon.modelname = "%s Configured Model" % safedrv
-
-    mon.hsync_min = 31.5
-    mon.hsync_max = 50
-    mon.vref_min = 50
-    mon.vref_max = 70
+    mon = DefaultMonitor()
     dev.monitors = [mon]
 
     screen = Screen(dev, mon)

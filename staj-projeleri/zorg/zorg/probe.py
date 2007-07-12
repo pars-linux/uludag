@@ -143,6 +143,18 @@ class Monitor:
         self.eisaid = ""
         self.depth = "16"
 
+class DefaultMonitor(Monitor):
+    def __init__(self):
+        Monitor.__init__(self)
+
+        self.vendorname = ""
+        self.modelname = "Default Monitor"
+
+        mon.hsync_min = 31.5
+        mon.hsync_max = 50
+        mon.vref_min = 50
+        mon.vref_max = 70
+
 class Screen:
     def __init__(self, device=None, monitor=None):
         self.identifier = None
