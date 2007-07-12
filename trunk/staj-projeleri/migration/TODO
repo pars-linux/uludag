@@ -1,0 +1,31 @@
+TODO List
+=========
+- Todo
+? Not determined if/how we have to do
+/ In progress
++ Accomplished
+
+General:
+    / User help pages
+    - Developer documentation
+    - Find linux partitions and users
+    - Find a pretty application name :)
+    - Calculate folder size using blocks
+
+GUI Improvements:
+    - Select all, select none buttons
+    ? Dynamic total required size calculation (slows down computer)
+    - Smooth progressbar
+    - Enable back button in the last page and ask for other users
+
+Possible New Modules:
+    - IM Accounts and history
+    - E-Mail Accounts, Address Book, Messages, Filters
+    - RSS Feeds
+    - Opera and Konqueror support with kbookmarks
+    - Browser history, cookies and settings
+    - Fonts
+    - Other wallpapers
+    ? System Sounds
+    ? Mouse, keyboard, monitor, printer, settings
+    - Network settings
