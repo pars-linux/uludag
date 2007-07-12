@@ -170,7 +170,12 @@ class widgetMain(QWidget):
                 self.slotMonitorSelected(index, scr)
                 break
         
-        index = scr.res.index(scr.curRes)
+        if scr.curRes in scr.res:
+            index = scr.res.index(scr.curRes)
+        else: # in case an unsupported mode is forced
+            scr.res[:0] = [scr.curRes]
+            scr.resList.insertItem(i18n("%s (forced)" % scr.curRes), 0)
+            index = 0
         scr.resList.setCurrentItem(index)
 
         for d in scr.depths:
