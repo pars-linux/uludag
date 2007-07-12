@@ -1,0 +1,263 @@
+# translation of tr.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-07-12 17:59+0300\n"
+"PO-Revision-Date: 2007-07-12 17:59+0300\n"
+"Last-Translator: Murat Ongan\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: migration/applythread.py:41
+msgid "Wallpaper changed."
+msgstr "Duvar kağıdı değiştirildi."
+
+#: migration/applythread.py:49
+msgid "Firefox bookmarks cannot be loaded."
+msgstr "Firefox yer imleri okunamadı."
+
+#: migration/applythread.py:51
+msgid "Firefox bookmarks loaded."
+msgstr "Firefox yer imleri okundu."
+
+#: migration/applythread.py:56
+msgid "Internet Explorer favorites cannot be loaded."
+msgstr "Internet Explorer sık kullanılanları yüklenemedi."
+
+#: migration/applythread.py:58
+msgid "Internet Explorer favorites loaded."
+msgstr "Internet Explorer sık kullanılanları yüklendi."
+
+#: migration/applythread.py:64
+msgid "Bookmarks saved."
+msgstr "Yer imleri kaydedildi."
+
+#: migration/applythread.py:70
+#, python-format
+msgid "Link '%s' created."
+msgstr "'%s' linki oluşturuldu."
+
+#: migration/applythread.py:79
+msgid "Nothing done, because no option selected. You can close the wizard..."
+msgstr ""
+"Hiçbir değişiklik seçilmediği için işlem yapılmadı. Uygulamayı "
+"kapatabilirsiniz."
+
+#: migration/applythread.py:81 migration/applythread.py:83
+msgid "All operations completed. You can close the wizard..."
+msgstr "Tüm işlemler tamamlandı. Uygulamadan çıkabilirsiniz."
+
+#: migration/applythread.py:89 migration/gui/optionspage.py:26
+msgid "Wallpaper"
+msgstr "Duvar Kağıdı"
+
+#: migration/applythread.py:93
+msgid "Links"
+msgstr "Bağlantılar"
+
+#: migration/migration.py:26
+msgid "Migration Tool"
+msgstr "Göç Aracı"
+
+#: migration/migration.py:28
+msgid "A wizard to transfer files and settings from existing operating systems"
+msgstr ""
+"Bilgisayarda önceden var olan işletim sistemlerinden dosya ve ayarları "
+"aktarmaya yarayan bir sihirbaz"
+
+#: migration/migration.py:35
+msgid "Developer and Current Maintainer"
+msgstr "Geliştirici ve Sorumlu"
+
+#: migration/wizard.py:38
+msgid "Pardus Migration Tool"
+msgstr "Pardus Göç Aracı"
+
+#: migration/wizard.py:41
+msgid "Next"
+msgstr "İleri"
+
+#: migration/wizard.py:43
+msgid "Finish"
+msgstr "Son"
+
+#: migration/wizard.py:48 migration/gui/sidebar.py:26
+msgid "Selecting User"
+msgstr "Kullanıcının Seçilmesi"
+
+#: migration/wizard.py:52 migration/wizard.py:141 migration/gui/sidebar.py:26
+msgid "Selecting Options"
+msgstr "Ayarların Seçilmesi"
+
+#: migration/wizard.py:55 migration/wizard.py:145 migration/gui/sidebar.py:26
+msgid "Selecting Files"
+msgstr "Dosyaların Seçilmesi"
+
+#: migration/wizard.py:58 migration/gui/sidebar.py:26
+msgid "Applying Changes"
+msgstr "Değişikliklerin Uygulanması"
+
+#: migration/wizard.py:114
+msgid "Step"
+msgstr "Adım"
+
+#: migration/wizard.py:122
+msgid ""
+"Migration tool couldn't find any old users in your computer. You can't use "
+"this aplication."
+msgstr ""
+"Göç aracı, bilgisayarınızda önceden var olan bir kullanıcı bulamadı. "
+"Uygulamayı kullanamazsınız."
+
+#: migration/wizard.py:123
+msgid "No User"
+msgstr "Kullanıcı Yok"
+
+#: migration/wizard.py:160 migration/wizard.py:176 migration/wizard.py:181
+#: migration/wizard.py:194
+msgid "Warning!"
+msgstr "Dikkat!"
+
+#: migration/wizard.py:160
+msgid "Firefox is open. Please close it first to continue..."
+msgstr "Firefox şu anda açık. Devam etmeden önce Firefox'u kapatmalısınız..."
+
+#: migration/wizard.py:176
+#, python-format
+msgid "Folder '%s' cannot be created, please choose another folder!"
+msgstr "'%s' dizinini yaratılamadı. Lütfen farklı bir dizin seçiniz!"
+
+#: migration/wizard.py:181
+#, python-format
+msgid ""
+"You don't have permission to write to folder '%s', please choose another "
+"folder!"
+msgstr "'%s' dizinine yazma hakkınız yok. Lütfen farklı bir dizin seçiniz!"
+
+#: migration/wizard.py:194
+#, python-format
+msgid ""
+"Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
+"MB of free space!"
+msgstr ""
+"Seçtiğiniz dosyaların toplam boyutu %(size)d MB, ancak sizin %(free)d MB boş "
+"alanınız var."
+
+#: migration/gui/optionspage.py:47
+msgid "Keep current wallpaper"
+msgstr "Duvar kağıdını değiştirme"
+
+#: migration/gui/optionspage.py:49
+msgid "Don't use wallpaper"
+msgstr "Duvar kağıdı kullanma"
+
+#: migration/gui/optionspage.py:65
+msgid "Use my old wallpaper"
+msgstr "Eski duvar kağıdımı kullan"
+
+#: migration/gui/optionspage.py:77
+msgid "Firefox bookmarks"
+msgstr "Firefox yer imleri"
+
+#: migration/gui/optionspage.py:83
+msgid "Internet Explorer favorites"
+msgstr "Internet Explorer sık kullanılanları"
+
+#: migration/gui/userpage.py:25
+msgid ""
+"Welcome to Pardus Migration Tool. You can transfer files and settings from "
+"your existing operating systems to Pardus with this application."
+msgstr ""
+"Pardus Göç Aracı'na hoş geldiniz. Bu uygulama sayesinde daha önceden kurulu "
+"olan işletim sistemlerinizden dosya ve ayarlarınızı Pardus'a "
+"aktarabilirsiniz."
+
+#: migration/gui/userpage.py:30
+msgid ""
+"After selecting user, you will be able to copy e-mail accounts, address "
+"books, e-mails, instant messenger accounts, bookmarks, cookies, background "
+"images and files to Pardus. Please choose the user and click \"next\" to "
+"continue..."
+msgstr ""
+"Ayar ve dosyalarını almak istediğiniz kullanıcıyı seçerek e-posta "
+"hesaplarınızı, adres defterinizi, e-posta mesajlarınızı, anında mesajlaşma "
+"hesaplarınızı, yer imlerinizi, çerezlerinizi, duvar kağıdınızı ve "
+"dosyalarınızı Pardus'a aktarabilirsiniz. Devam etmek için kullanıcıyı seçip "
+"\"ileri\" tuşuna basınız..."
+
+#: migration/gui/filespage.py:26
+msgid "Do Nothing"
+msgstr "Hiçbir şey yapma"
+
+#: migration/gui/filespage.py:30
+msgid "Put links to my desktop"
+msgstr "Masaüstüme linklerini ekle"
+
+#: migration/gui/filespage.py:37
+msgid "Copy files to directory:"
+msgstr "Dosyaları şu dizine kopyala:"
+
+#: migration/gui/filespage.py:59
+msgid "My Documents"
+msgstr "Belgelerim"
+
+#: migration/gui/filespage.py:60
+msgid "Desktop"
+msgstr "Masaüstü"
+
+#: migration/gui/filespage.py:61
+msgid "My Music"
+msgstr "Müziğim"
+
+#: migration/gui/filespage.py:62
+msgid "My Pictures"
+msgstr "Resimlerim"
+
+#: migration/gui/filespage.py:63
+msgid "My Video"
+msgstr "Videolarım"
+
+#: migration/gui/dirview.py:29
+msgid "Name"
+msgstr "İsim"
+
+#: migration/gui/dirview.py:30
+msgid "Size"
+msgstr "Boyut"
+
+#: migration/gui/progresspage.py:25
+msgid "Please wait while applying changes..."
+msgstr "Değişiklikler yapılırken lütfen bekleyiniz..."
+
+#: migration/gui/progresspage.py:52
+msgid "Click here to see details..."
+msgstr "Ayrıntıları görmek için buraya tıklayınız..."
+
+#: migration/gui/progresspage.py:77
+#, python-format
+msgid "<b>WARNING: %s</b>"
+msgstr "<b>UYARI: %s</b>"
+
+#: migration/gui/progresspage.py:79
+#, python-format
+msgid "<b>ERROR: %s</b>"
+msgstr "<b>HATA: %s</b>"
+
+#: migration/utility/files.py:111
+#, python-format
+msgid "file '%s' cannot be copied"
+msgstr "'%s' dosyası kopyalanamadı."
+
+#: migration/utility/files.py:113
+#, python-format
+msgid "file '%s' copied"
+msgstr "'%s' dosyası kopyalandı."
+

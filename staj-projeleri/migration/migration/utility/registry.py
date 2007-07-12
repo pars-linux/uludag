@@ -38,8 +38,8 @@ class Hive:
         "Returns the value corresponding to path and field given"
         key = self.getKey(path)
         return key.getValue(field)
-        
-        
+
+
 class Key:
     "Class for windows registry keys"
     
