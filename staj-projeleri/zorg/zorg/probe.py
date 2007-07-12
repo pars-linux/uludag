@@ -77,6 +77,7 @@ class Device:
         self.busId = busId
         self.vendorId = vendorId
         self.deviceId = deviceId
+        self.functionOf = None
 
         self.cardId = "%s:%s@%s" % (self.vendorId, self.deviceId, self.busId)
 
@@ -88,13 +89,18 @@ class Device:
 
     def query(self):
         self.vendorName, self.boardName = queryPCI(self.vendorId, self.deviceId)
-        availableDrivers = listAvailableDrivers()
 
-        for line in loadFile(xdriverlist):
-            if line.startswith(self.vendorId + self.deviceId):
-                drv = line.rstrip("\n").split(" ")[1]
-                if drv in availableDrivers:
-                    self.driver = drv
+        if self.functionOf:
+            self.driver = self.functionOf.driver
+
+        if not self.driver:
+            availableDrivers = listAvailableDrivers()
+
+            for line in loadFile(xdriverlist):
+                if line.startswith(self.vendorId + self.deviceId):
+                    drv = line.rstrip("\n").split(" ")[1]
+                    if drv in availableDrivers:
+                        self.driver = drv
 
         # if could not find driver from driverlist try X -configure
         if not self.driver:
@@ -236,7 +242,9 @@ def findVideoCards():
     for bus in ["pci"]:
         sysDir = os.path.join("/sys/bus", bus, "devices")
         if os.path.isdir(sysDir):
-            for _dev in os.listdir(sysDir):
+            devs = os.listdir(sysDir)
+            devs.sort()
+            for _dev in devs:
                 #try:
                     if sysValue(sysDir, _dev, "class").startswith("0x03"):
                         vendorId = lremove(sysValue(sysDir, _dev, "vendor"), "0x")
@@ -244,6 +252,13 @@ def findVideoCards():
                         busId = tuple(int(x, 16) for x in _dev.replace(".",":").split(":"))[1:4]
 
                         a = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
+
+                        nrBus, device, function = busId
+                        if function > 0:
+                            for card in cards:
+                                if [nrBus, device] == card.busId.split(":")[1:3]:
+                                    a.functionOf = card
+
                         cards.append(a)
                 #except:
                 #    pass

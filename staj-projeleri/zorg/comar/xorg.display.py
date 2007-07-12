@@ -6,13 +6,15 @@ from zorg.probe import *
 from zorg.utils import *
 
 def autoConfigure():
-    # detect graphic card and find monitor of first card
+    # detect graphic cards and find monitor of first card
     devices = findVideoCards()
     if devices:
         device = devices[0]
-        device.query()
     else:
         return
+
+    for dev in devices:
+        dev.query()
 
     # we need card data to check for lcd displays
     monitor = findMonitors(device, 0)[0]
