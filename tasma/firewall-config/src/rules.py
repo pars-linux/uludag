@@ -45,4 +45,9 @@ filter = {
         i18n('File transfer service'),
         '21',
     ),
+    'inVNC': (
+        ['-A PARDUS-IN-USER -p tcp -m multiport --dports 5800:5804,5900:5904 -j ACCEPT'],
+        i18n('Desktop Sharing'),
+        '5800:5804,5900:5904',
+    ),
 }
