@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-25 15:01+0300\n"
+"POT-Creation-Date: 2007-07-12 20:08+0300\n"
 "PO-Revision-Date: 2007-07-02 08:56+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -133,6 +133,10 @@ msgstr "Service de discussion en temps réel sur internet (IRC)"
 msgid "File transfer service"
 msgstr "Service de transfert de fichier"
 
+#: src/rules.py:50
+msgid "Desktop Sharing"
+msgstr ""
+
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Le Pare-feu est en cours d'exécution</font></b>"
@@ -241,4 +245,3 @@ msgstr "Accepter"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rejeter"
-
