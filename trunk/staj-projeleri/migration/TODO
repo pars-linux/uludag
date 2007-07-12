@@ -6,7 +6,7 @@ TODO List
 + Accomplished
 
 General:
-    / User help pages
+    + User help pages
     - Developer documentation
     - Find linux partitions and users
     - Find a pretty application name :)
@@ -17,6 +17,7 @@ GUI Improvements:
     ? Dynamic total required size calculation (slows down computer)
     - Smooth progressbar
     - Enable back button in the last page and ask for other users
+    - Include tooltips for each option
 
 Possible New Modules:
     - IM Accounts and history

@@ -18,6 +18,7 @@ from kdecore import *
 from kdeui import *
 
 # GUI Modules
+from gui.help import HelpDialog
 from gui.sidebar import SideBar
 from gui.userpage import UserPage
 from gui.optionspage import OptionsPage
@@ -56,6 +57,12 @@ class MigrationWizard(KWizard):
         # Progress page:
         self.progresspage = ProgressPage(self)
         self.addPage(self.progresspage, i18n("Applying Changes"))
+        # Help:
+        self.connect(self.helpButton(), SIGNAL("clicked()"), self.slotHelp)
+    
+    def slotHelp(self):
+        self.helpwin = HelpDialog("migration", i18n("Migration Tool Help"), self)
+        self.helpwin.show()
     
     def modify(self, page, name):
         "Modifies widgets to add left panel before adding pages"
