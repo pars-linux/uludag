@@ -15,14 +15,10 @@ from kdecore import *
 from khtml import *
 
 import os
-
-import ConfigParser
-
 import pisi
+import profile
 
-configDir = os.path.expanduser("~/.proxy/")
-configPath = configDir +"proxy"
-config = ConfigParser.SafeConfigParser()
+profiles = []
 modules = []
 
 def loadIcon(name, group=KIcon.Desktop, size=16):
@@ -31,16 +27,8 @@ def loadIcon(name, group=KIcon.Desktop, size=16):
 def loadIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
-def parseConfig():
-    if not os.path.exists(configDir):
-        os.mkdir(configDir)
-    config.read(configPath)
-    noProxy = "noproxy"
-    if not config.has_section(noProxy):
-        config.add_section(noProxy)
-    if not config.has_option(noProxy,"isActive"):
-        config.set(noProxy,"isActive","1")
-    config.set(noProxy, "type", "0")
+def initProfiles():
+    profiles[0:] = profile.parseConfig()
 
 def createModules():
     pisi.api.init(write=False)
@@ -74,53 +62,31 @@ def createModules():
         modules.append(Gftp())
         
 
-def changeProxy(section):
-    type = config.getint(section,"type")
-    if type == 0:
+def changeProxy(prfl):
+    if prfl.type == profile.direct:
         for m in modules:
             m.noProxy()
-    elif type == 1:
+    elif prfl.type == profile.globl:
         for m in modules:
-            if config.has_option(section,"http_port"):
-                m.setGlobalProxy(config.get(section,"http_host"), config.get(section,"http_port"))
-            else:
-                m.setGlobalProxy(config.get(section,"http_host"))
-    elif type == 2:
+            m.setGlobalProxy(prfl.globl_host, prfl.globl_port)
+    elif prfl.type == profile.indiv:
         for m in modules:
-            if config.has_option(section,"http_host"):
-                if config.has_option(section,"http_port"):
-                    m.setHTTPProxy(config.get(section,"http_host"), config.get(section,"http_port"))
-                else:
-                    m.setHTTPProxy(config.get(section,"http_host"))
-            if config.has_option(section,"ftp_host"):
-                if config.has_option(section,"ftp_port"):
-                    m.setFTPProxy(config.get(section,"ftp_host"), config.get(section,"ftp_port"))
-                else:
-                    m.setFTPProxy(config.get(section,"ftp_host"))
-            if config.has_option(section,"gopher_host"):
-                if config.has_option(section,"gopher_port"):
-                    m.setGopherProxy(config.get(section,"gopher_host"), config.get(section,"gopher_port"))
-                else:
-                    m.setGopherProxy(config.get(section,"gopher_host"))
-            if config.has_option(section,"ssl_host"):
-                if config.has_option(section,"ssl_port"):
-                    m.setSSLProxy(config.get(section,"ssl_host"), config.get(section,"ssl_port"))
-                else:
-                    m.setSSLProxy(config.get(section,"ssl_host"))
-            if config.has_option(section,"socks_host"):
-                if config.has_option(section,"socks_port"):
-                    m.setSOCKSProxy(config.get(section,"socks_host"), config.get(section,"socks_port"))
-                else:
-                    m.setSOCKSProxy(config.get(section,"socks_host"))
-    elif type == 3:
+            if prfl.has_http:
+                m.setHTTPProxy(prfl.http_host, prfl.http_port)
+            if prfl.has_ftp:
+                m.setFTPProxy(prfl.ftp_host, prfl.ftp_port)
+            if prfl.has_ssl:
+                m.setSSLProxy(prfl.ssl_host, prfl.ssl_port)
+            if prfl.has_socks:
+                m.setSOCKSProxy(prfl.socks_host, prfl.socks_port)
+    elif prfl.type == profile.auto:
         for m in modules:
-            m.setPAC_URL(config.get(section,"auto_url"))
+            m.setPAC_URL(prfl.auto_url)
         
+    for p in profiles:
+        p.isActive = False
+    prfl.isActive = True
+    
     for m in modules:
         m.close()
-    for s in config.sections():
-        config.set(s,"isActive","0")
-    config.set(section,"isActive","1")
-    f = open(configPath,"w")
-    config.write(f)
-    f.close()
+    profile.save()

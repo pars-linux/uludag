@@ -10,32 +10,34 @@
 
 from profileDialog import profileDialog
 from utility import *
+import profile
 
 class profileHandler(profileDialog):
-    def __init__(self,parent = None,name = None,modal = 0,fl = 0):
+    def __init__(self,parent = None,prfl = None,prfl_item = None, modal = 0,fl = 0):
         profileDialog.__init__(self,parent)
-        self.name = name
+        self.prfl = prfl
+        self.prfl_item = prfl_item
         self.updated = False
-        if not name:
+        if not prfl:
             self.new = True
             self.name_edit.setText(i18n("new_proxy"))
             self.rd1.setChecked(True)
+            self.slotToggleEnableGlobal(True)
         else:
             self.new = False
-            self.name_edit.setText(self.name)
-            type = config.getint(self.name, "type")
-            if type == 0:
+            self.name_edit.setText(self.prfl.name)
+            if self.prfl.type == profile.globl:
                 self.rd1.setChecked(True)
-            elif type == 1:
-                self.chooseType1()
-            elif type == 2:
-                self.chooseType2()
-            # FIXME: Bu tip için verilen adresi oku ve değerleri ona göre ata.
-            #            Ayrıca ne aralıkla bu adresi kontrol edeceğine karar ver; login?
-            elif type == 3:
+                self.globl_host.setText(self.prfl.globl_host)
+                self.globl_port.setText(self.prfl.globl_port)
+                self.globl_host.setEnabled(True)
+                self.globl_port.setEnabled(True)
+            elif self.prfl.type == profile.indiv:
+                self.chooseIndivType()
+            elif self.prfl.type == profile.auto:
                 self.rd3.setChecked(True)
                 self.auto_url.setEnabled(True)
-                self.auto_url.setText(config.get(self.name, "auto_url"))
+                self.auto_url.setText(self.prfl.auto_url)
             
         # Configure UI
         self.apply_but.setIconSet(loadIconSet("apply", KIcon.Small))
@@ -47,68 +49,81 @@ class profileHandler(profileDialog):
         self.connect(self.apply_but, SIGNAL('clicked()'), self.slotApply)
         self.connect(self.cancel_but, SIGNAL('clicked()'), SLOT('close()'))
         self.connect(self.name_edit, SIGNAL('textChanged(const QString &)'), self.slotUpdated)
-        self.connect(self.ch0,SIGNAL('toggled(bool)'), self.slotToggleEnableGlobal)
         self.connect(self.ch1,SIGNAL('toggled(bool)'), self.slotToggleEnableHTTP)
         self.connect(self.ch2,SIGNAL('toggled(bool)'), self.slotToggleEnableFTP)
-        self.connect(self.ch3,SIGNAL('toggled(bool)'), self.slotToggleEnableGopher)
         self.connect(self.ch4,SIGNAL('toggled(bool)'), self.slotToggleEnableSSL)
         self.connect(self.ch5,SIGNAL('toggled(bool)'), self.slotToggleEnableSOCKS)
         self.connect(self.rd1,SIGNAL('toggled(bool)'), self.slotToggleEnableType)
-        self.connect(self.rd3,SIGNAL('toggled(bool)'), self.slotToggleEnableType)
+        self.connect(self.rd2,SIGNAL('toggled(bool)'), self.slotToggleEnableType)
         self.connect(self.rd3,SIGNAL('toggled(bool)'), self.slotToggleEnableType)
         
         self.show()
-    
+        
+
+    def chooseIndivType(self):
+        self.rd2.setChecked(True)
+        self.ch1.setChecked(True)
+        if self.prfl.http_host:
+            self.http_host.setText(self.prfl.http_host)
+            self.http_port.setText(self.prfl.http_port)
+        if self.prfl.ftp_host:
+            self.ch2.setChecked(True)
+            self.ftp_host.setText(self.prfl.ftp_host)
+            self.ftp_port.setText(self.prfl.ftp_port)
+        if self.prfl.ssl_host:
+            self.ch4.setChecked(True)
+            self.ssl_host.setText(self.prfl.ssl_host)
+            self.ssl_port.setText(self.prfl.ssl_port)
+        if self.prfl.socks_host:
+            self.ch5.setChecked(True)
+            self.socks_host.setText(self.prfl.socks_host)
+            self.socks_port.setText(self.prfl.socks_port)
+        self.slotToggleEnableIndiv(True)
+        
+
     def slotUpdated(self,content):
         self.updated = True
     
     def slotToggleEnableType(self, on):
         if self.rd1.isChecked():
-            self.ch0.setEnabled(False)
-            self.ch1.setEnabled(False)
-            self.slotToggleEnableHTTP(False)
             self.slotToggleEnableGlobal(True)
+            self.slotToggleEnableIndiv(False)
             self.slotToggleEnableAuto(False)
         elif self.rd2.isChecked():
-            self.ch0.setEnabled(True)
-            self.ch1.setEnabled(True)
-            self.slotToggleEnableHTTP(self.ch1.isChecked())
-            self.slotToggleEnableGlobal(self.ch0.isChecked())
+            self.slotToggleEnableGlobal(False)
+            self.slotToggleEnableIndiv(True)
             self.slotToggleEnableAuto(False)
         elif self.rd3.isChecked():
-            self.ch0.setEnabled(False)
-            self.ch1.setEnabled(False)
-            self.slotToggleEnableHTTP(False)
-            self.slotToggleEnableGlobal(True)
+            self.slotToggleEnableGlobal(False)
+            self.slotToggleEnableIndiv(False)
             self.slotToggleEnableAuto(True)
     
     def slotToggleEnableGlobal(self, on):
-        if on == self.ch2.isEnabled():
-            self.ch2.setEnabled(not on)
-            self.ch3.setEnabled(not on)
-            self.ch4.setEnabled(not on)
-            self.ch5.setEnabled(not on)
-            if on:
-                self.ch1.setText(i18n("Global"))
-                self.slotToggleEnableFTP(False)
-                self.slotToggleEnableGopher(False)
-                self.slotToggleEnableSSL(False)
-                self.slotToggleEnableSOCKS(False)
-            else:
-                self.ch1.setText(i18n("Http"))
-                self.slotToggleEnableFTP(self.ch2.isChecked())
-                self.slotToggleEnableGopher(self.ch3.isChecked())
-                self.slotToggleEnableSSL(self.ch4.isChecked())
-                self.slotToggleEnableSOCKS(self.ch5.isChecked())
+        self.globl_host.setEnabled(on)
+        self.globl_port.setEnabled(on)
+    
+    def slotToggleEnableIndiv(self, on):
+        self.ch1.setEnabled(on)
+        self.ch2.setEnabled(on)
+        self.ch4.setEnabled(on)
+        self.ch5.setEnabled(on)
+        if not on:
+            self.slotToggleEnableHTTP(False)
+            self.slotToggleEnableFTP(False)
+            self.slotToggleEnableSSL(False)
+            self.slotToggleEnableSOCKS(False)
+        else:
+            self.slotToggleEnableHTTP(self.ch1.isChecked())
+            self.slotToggleEnableFTP(self.ch2.isChecked())
+            self.slotToggleEnableSSL(self.ch4.isChecked())
+            self.slotToggleEnableSOCKS(self.ch5.isChecked())
+    
     def slotToggleEnableHTTP(self, on):
             self.http_host.setEnabled(on)
             self.http_port.setEnabled(on)
     def slotToggleEnableFTP(self, on):
             self.ftp_host.setEnabled(on)
             self.ftp_port.setEnabled(on)
-    def slotToggleEnableGopher(self, on):
-            self.gopher_host.setEnabled(on)
-            self.gopher_port.setEnabled(on)
     def slotToggleEnableSSL(self, on):
             self.ssl_host.setEnabled(on)
             self.ssl_port.setEnabled(on)
@@ -118,109 +133,26 @@ class profileHandler(profileDialog):
     def slotToggleEnableAuto(self,on):
             self.auto_url.setEnabled(on)
 
-    def chooseType1(self):
-        self.rd2.setChecked(True)
-        self.ch0.setChecked(True)
-        self.ch1.setEnabled(True)
-        self.ch1.setChecked(True)
-        self.ch1.setText(i18n("Global"))
-        self.http_host.setText(config.get(self.name, "http_host"))
-        self.http_port.setText(config.get(self.name, "http_port"))
-        self.slotToggleEnableHTTP(True)
-    
-    def chooseType2(self):
-        self.rd2.setChecked(True)
-        if config.has_option(self.name, "http_host"):
-            self.ch1.setChecked(True)
-            self.http_host.setText(config.get(self.name, "http_host"))
-            self.http_port.setText(config.get(self.name, "http_port"))
-            self.slotToggleEnableHTTP(True)
-        if config.has_option(self.name, "ftp_host"):
-            self.ch2.setChecked(True)
-            self.ftp_host.setText(config.get(self.name, "ftp_host"))
-            self.ftp_port.setText(config.get(self.name, "ftp_port"))
-        if config.has_option(self.name, "gopher_host"):
-            self.ch3.setChecked(True)
-            self.gopher_host.setText(config.get(self.name, "gopher_host"))
-            self.gopher_port.setText(config.get(self.name, "gopher_port"))
-        if config.has_option(self.name, "ssl_host"):
-            self.ch4.setChecked(True)
-            self.ssl_host.setText(config.get(self.name, "ssl_host"))
-            self.ssl_port.setText(config.get(self.name, "ssl_port"))
-        if config.has_option(self.name, "socks_host"):
-            self.ch5.setChecked(True)
-            self.socks_host.setText(config.get(self.name, "socks_host"))
-            self.socks_port.setText(config.get(self.name, "socks_port"))
-        self.slotToggleEnableGlobal(False)
-        self.ch1.setEnabled(True)
-
-    def slotApply(self):
-        # FIXME: consider if "name" of the profile changes
-        name = unicode(self.name_edit.text())
-        ok = self.validate()
-        old_isActive = "0"
-        if not ok:
-            return
-        if not self.new:
-            old_isActive = config.get(self.name,"isActive")
-            config.remove_section(self.name)
-        # Set the configurations to "config"
-        config.add_section(name)
-        config.set(name,"isActive",old_isActive)
-        if self.rd1.isChecked():
-            config.set(name,"type","0")
-        elif self.rd2.isChecked():
-            if self.ch0.isChecked():
-                config.set(name,"type","1")
-                config.set(name,"http_host",unicode(self.http_host.text()))
-                config.set(name,"http_port",unicode(self.http_port.text()))
-            else:
-                config.set(name,"type","2")
-                if self.ch1.isChecked():
-                    config.set(name,"http_host",unicode(self.http_host.text()))
-                    config.set(name,"http_port",unicode(self.http_port.text()))
-                if self.ch2.isChecked():
-                    config.set(name,"ftp_host",unicode(self.ftp_host.text()))
-                    config.set(name,"ftp_port",unicode(self.ftp_port.text()))
-                if self.ch3.isChecked():
-                    config.set(name,"gopher_host",unicode(self.gopher_host.text()))
-                    config.set(name,"gopher_port",unicode(self.gopher_port.text()))
-                if self.ch4.isChecked():
-                    config.set(name,"ssl_host",unicode(self.ssl_host.text()))
-                    config.set(name,"ssl_port",unicode(self.ssl_port.text()))
-                if self.ch5.isChecked():
-                    config.set(name,"socks_host",unicode(self.socks_host.text()))
-                    config.set(name,"socks_port",unicode(self.socks_port.text()))
-        else:
-            config.set(name,"type","3")
-            config.set(name,"auto_url",unicode(self.auto_url.text()))
-        f = open(configPath,"w")
-        config.write(f)
-        f.close()
-        if self.new:
-            self.parent().add(name)
-        self.close()
-    
     def validate(self):
         name = unicode(self.name_edit.text())
         if name == "":
             self.warning.setText(i18n("Enter a name."))
             return
-        if (self.new or (self.updated and self.name != name)) and config.has_section(name):
+        if (self.new or (self.updated and self.name != name)) and profile.exists(name):
             self.warning.setText(i18n("This name is in use. Pick another."))
             return False
-        if self.rd2.isChecked():
-            if self.ch0.isChecked() and len(self.http_host.text()) == 0:
-                self.warning.setText(i18n("Please specify a host."))
+        if self.rd1.isChecked() and len(self.globl_host.text()) == 0:
+            self.warning.setText(i18n("Please specify a host."))
+            return False
+        elif self.rd2.isChecked():
+            if not self.ch1.isChecked() and not self.ch2.isChecked() and not self.ch4.isChecked() and not self.ch5.isChecked():
+                self.warning.setText(i18n("Please specify at least one protocol."))
                 return False
             if self.ch1.isChecked() and len(self.http_host.text()) == 0:
                 self.warning.setText(i18n("Please specify a host for http."))
                 return False
             if self.ch2.isChecked() and len(self.ftp_host.text()) == 0:
                 self.warning.setText(i18n("Please specify a host for ftp."))
-                return False
-            if self.ch3.isChecked() and len(self.gopher_host.text()) == 0:
-                self.warning.setText(i18n("Please specify a host for gopher."))
                 return False
             if self.ch4.isChecked() and len(self.ssl_host.text()) == 0:
                 self.warning.setText(i18n("Please specify a host for ssl."))
@@ -234,3 +166,51 @@ class profileHandler(profileDialog):
         
         return True
 
+    def slotApply(self):
+        name = unicode(self.name_edit.text())
+        ok = self.validate()
+        if not ok:
+            return
+        if self.new:
+            self.prfl = profile.Profile(name)
+        else:
+            self.prfl.changeName(name)
+        if self.rd1.isChecked():
+            self.prfl.type = profile.globl
+            self.prfl.globl_host = unicode(self.globl_host.text())
+            self.prfl.globl_port = unicode(self.globl_port.text())
+            self.prfl.comment = profile.comment_globl + " " + self.prfl.globl_host
+        elif self.rd2.isChecked():
+            self.prfl.type = profile.indiv
+            self.prfl.comment = i18n("Protocols: ")
+            if self.ch1.isChecked():
+                self.has_http = True
+                self.prfl.http_host = unicode(self.http_host.text())
+                self.prfl.http_port = unicode(self.http_port.text())
+                self.prfl.comment += " " + profile.comment_http + ":" + self.prfl.http_host
+            if self.ch2.isChecked():
+                self.has_ftp = True
+                self.prfl.ftp_host = unicode(self.ftp_host.text())
+                self.prfl.ftp_port = unicode(self.ftp_port.text())
+                self.prfl.comment += " " + profile.comment_ftp + ":" + self.prfl.ftp_host
+            if self.ch4.isChecked():
+                self.has_ssl = True
+                self.prfl.ssl_host = unicode(self.ssl_host.text())
+                self.prfl.ssl_port = unicode(self.ssl_port.text())
+                self.prfl.comment += " " + profile.comment_ssl + ":" + self.prfl.ssl_host
+            if self.ch5.isChecked():
+                self.has_socks = True
+                self.prfl.socks_host = unicode(self.socks_host.text())
+                self.prfl.socks_port = unicode(self.socks_port.text())
+                self.prfl.comment += " " + profile.comment_socks + ":" + self.prfl.socks_host
+        else:
+            self.prfl.type = profile.auto
+            self.prfl.auto_url = unicode(self.auto_url.text())
+            self.prfl.comment = profile.comment_auto
+        self.prfl.save()
+        if self.new:
+            self.parent().add(self.prfl)
+        profile.save()
+        self.prfl_item.repaint()
+        self.close()
+        
