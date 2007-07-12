@@ -19,8 +19,9 @@ class Bookmark:
         self.dom = xml.dom.minidom.getDOMImplementation()
         self.document = self.dom.createDocument(None, "bookmarks", None)
     
-    def getFFBookmarks(self, filename):
+    def getFFBookmarks(self, path):
         "Gets Firefox Bookmarks from a bookmarks.html file"
+        filename = os.path.join(path, "bookmarks.html")
         bookmarkfile = open(filename)
         data = bookmarkfile.read()
         bookmarkfile.close()
@@ -73,7 +74,7 @@ class Bookmark:
         self.document.documentElement.appendChild(groupnode)
         searchDirectory(directory, self.document, groupnode)
     
-    def setFFBookmarks(self, filename):
+    def setFFBookmarks(self, path):
         def getText(nodelist):
             rc = ""
             for node in nodelist:
@@ -98,6 +99,9 @@ class Bookmark:
                 url = node.getElementsByTagName("url")[0]
                 data += "<DT><A HREF=\"%s\">%s</A>\n" % (getText(url.childNodes), getText(name.childNodes))
             return data
+        if os.path.lexists(os.path.join(path, "lock")):
+            raise Exception, "Firefox is in use. Bookmarks cannot be saved."
+        filename = os.path.join(path, "bookmarks.html")
         bookmarkfile = open(filename)
         data = bookmarkfile.read()
         bookmarkfile.close()

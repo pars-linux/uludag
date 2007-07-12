@@ -15,29 +15,31 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-from wizard import Wizard
+from wizard import MigrationWizard
+
+def I18N_NOOP(text):
+    return text
 
 def main():
     about = KAboutData(
-        "Migration Tool",
         "migration",
-        "0.3",
-        "Migration Tool",
+        I18N_NOOP("Migration Tool"),
+        "0.5",
+        I18N_NOOP("A wizard to transfer files and settings from existing operating systems"),
         KAboutData.License_GPL,
         '(C) 2006-2007 UEKAE/TÜBİTAK',
         None,
-        None,
-        'bugs@pardus.org.tr'
+        "http://www.pardus.org.tr",
+        "bugs@pardus.org.tr"
     )
-    about.addAuthor("Murat Ongan", "Developer and Current Maintainer", "mongan@cclub.metu.edu.tr")
-    
+    about.addAuthor("Murat Ongan", I18N_NOOP("Developer and Current Maintainer"), "mongan@cclub.metu.edu.tr")
     KCmdLineArgs.init(sys.argv, about)
-    app = KUniqueApplication(True, True, True)
-    wizard = Wizard()
+    kapp = KApplication(True, True)
+    wizard = MigrationWizard(kapp)
     
-    app.setMainWidget(wizard)
+    kapp.setMainWidget(wizard)
     wizard.show()
-    app.exec_loop()
+    kapp.exec_loop()
 
 if __name__ == "__main__":
     main()
