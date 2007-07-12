@@ -151,8 +151,6 @@ class widgetMain(QWidget):
         self.connect(applyButton, SIGNAL("clicked()"), self.slotApply)
         
     def populatePage(self, scr):
-        #self.tab.setTabEnabled(scr, True)
-        
         scr.cardList.clear()
         for card in self.cards:
             scr.cardList.insertItem(card.name)
@@ -224,15 +222,9 @@ class widgetMain(QWidget):
                     cardId, name = card.split(" ", 1)
                     c = Card(cardId, name)
                     self.cards.append(c)
-                    scr = self.tab.currentPage()
-                    scr.card = c
-                    #if cardId == scr.curCard:
-                    #    scr.cardList.setCurrentItem(len(self.cards) - 1)
                     self.link.Xorg.Display.cardInfo(cardId=cardId, id=CARD_INFO)
                     
             elif reply.id == CARD_INFO:
-                #lines = reply.data.strip().splitlines()
-                #cardInfo = dict(x.split("=", 1) for x in lines)
                 cardInfo = pairs2dict(reply.data)
                 
                 card = ""
@@ -246,9 +238,6 @@ class widgetMain(QWidget):
                     return
                 
                 for mon in monitors:
-                    #if mon == scr.curMonitor:
-                    #    scr.monitor = self.monitors[mon]
-
                     if self.monitors.has_key(mon):
                         card.monitors.append(self.monitors[mon])
                         continue
@@ -260,8 +249,6 @@ class widgetMain(QWidget):
                     self.link.Xorg.Display.monitorInfo(monitorId=mon, id=MONITOR_INFO)
                     
             elif reply.id == MONITOR_INFO:
-                #lines = reply.data.strip().splitlines()
-                #monInfo = dict(x.split("=", 1) for x in lines)
                 monInfo = pairs2dict(reply.data)
                 monId = monInfo["id"]
                 self.nrMonitors += 1
@@ -289,8 +276,6 @@ class widgetMain(QWidget):
                 if not reply.data:
                     return
                 
-                #lines = reply.data.strip().splitlines()
-                #scrInfo = dict(x.split("=", 1) for x in lines)
                 scrInfo = pairs2dict(reply.data)
                 scrNum = scrInfo["number"]
                 index = int(scrNum)
