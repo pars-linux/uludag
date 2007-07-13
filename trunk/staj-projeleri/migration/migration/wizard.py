@@ -57,12 +57,16 @@ class MigrationWizard(KWizard):
         # Progress page:
         self.progresspage = ProgressPage(self)
         self.addPage(self.progresspage, i18n("Applying Changes"))
-        # Help:
+        # Connections:
         self.connect(self.helpButton(), SIGNAL("clicked()"), self.slotHelp)
+        self.connect(self.kapp, SIGNAL("aboutToQuit()"), self.slotQuit)
     
     def slotHelp(self):
         self.helpwin = HelpDialog("migration", i18n("Migration Tool Help"), self)
         self.helpwin.show()
+    
+    def slotQuit(self):
+        self.deleteLater()
     
     def modify(self, page, name):
         "Modifies widgets to add left panel before adding pages"
@@ -155,9 +159,6 @@ class MigrationWizard(KWizard):
             self.options = self.optionspage.getOptions()
             KWizard.next(self)
         elif self.currentPage() == self.filespage:
-            #for root in self.filespage.dirview.roots:
-                #print u"%s (%s):" % (root.text(), root.name)
-                #print root.selectedFiles()
             # Control if firefox is open:
             KApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
             if self.options.has_key("Firefox Profile Path") or self.options.has_key("Favorites Path"):
@@ -166,10 +167,6 @@ class MigrationWizard(KWizard):
                     KApplication.restoreOverrideCursor()
                     QMessageBox.warning(self, i18n("Warning!"), i18n("Firefox is open. Please close it first to continue..."),
                                         QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton)
-                    ## Replace progress page:
-                    #self.removePage(self.progresspage)
-                    #self.progresspage = ProgressPage(self)
-                    #self.addPage(self.progresspage, i18n("Applying Changes"))
                     return
             # Control files:
             self.options.update(self.filespage.getOptions())
@@ -203,7 +200,6 @@ class MigrationWizard(KWizard):
             KApplication.restoreOverrideCursor()
             # Apply:
             self.applythread = ApplyThread(self)
-            #QObject.connect(self.kapp, SIGNAL("aboutToQuit()"), self.applythread.exit)
             thread.start_new_thread(self.applythread.run, ())
             self.setBackEnabled(self.progresspage, False)
             KWizard.next(self)
