@@ -74,34 +74,33 @@
     Bu kullanıcı adına sahip herhangi bir [% terms.Bugzilla %] hesabı yok.
 
   [% ELSIF error == "alias_has_comma_or_space" %]
-    [% title = "Invalid Characters In Alias" %]
-    The alias you entered, <em>[% alias FILTER html %]</em>,
-    contains one or more commas or spaces.  Aliases cannot contain
-    commas or spaces because those characters are used to separate
-    aliases from each other in lists.  Please choose an alias
-    that does not contain commas and spaces.
+    [% title = "Etiket Geçersiz Karakter İçeriyor" %]
+    Girdiğiniz etiket, <em>[% alias FILTER html %]</em>,
+    birden fazla boşluk yada virgül içeriyor. Etiketler virgül yada
+    boşluk içeremezler, çünkü bu karakterler etiketleri liste içindeki
+    diğer etiketlerden ayırmaya yarar. Lütfen boşluk yada virgül
+    içermeyen bir etiket seçin.
 
   [% ELSIF error == "alias_in_use" %]
-    [% title = "Alias In Use" %]
+    [% title = "Etiket Kullanımda" %]
     [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %]
-    has already taken the alias <em>[% alias FILTER html %]</em>.
-    Please choose another one.
+    hali hazırda <em>[% alias FILTER html %]</em> etiketini kullanıyor.
+    Lütfen farkli bir etiket seçin.
 
   [% ELSIF error == "alias_not_defined" %]
-    [% title = "Alias Is Not Defined" %]
-    You did not supply an alias to this [% terms.bug %].
+    [% title = "Etiket Belirlenmedi" %]
+    Bu [% terms.bug %] için herhangi bir etiket girmemişsiniz.
 
   [% ELSIF error == "alias_is_numeric" %]
-    [% title = "Alias Is Numeric" %]
-    You tried to give this [% terms.bug %] the alias <em>[% alias FILTER html %]</em>,
-    but aliases cannot be merely numbers, since they could
-    then be confused with [% terms.bug %] IDs.  Please choose an
-    alias containing at least one letter.
+    [% title = "Etiket Rakamlardan Oluşuyor" %]
+    Bu [% terms.bug %] için <em>[% alias FILTER html %]</em> etiketini girmeyi denediniz,
+    ancak etiketler yalnızca rakamlardan oluşamaz, böyle olursa [% terms.bug %] numaraları
+    ile karışabilir. Lütfen en azından bir harf içeren bir etiket seçin.
 
   [% ELSIF error == "alias_too_long" %]
-    [% title = "Alias Too Long" %]
-    [% terms.Bug %] aliases cannot be longer than 20 characters.
-    Please choose a shorter alias.
+    [% title = "Etiket Çok Uzun" %]
+    [% terms.Bug %] etiketleri 20 karakterden uzun olamaz.
+    Lütfen daha kısa bir etiket seçin.
 
   [% ELSIF error == "auth_cant_create_account" %]
     [% title = "Can't create accounts" %]
