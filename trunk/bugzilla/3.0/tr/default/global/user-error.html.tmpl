@@ -103,100 +103,102 @@
     Lütfen daha kısa bir etiket seçin.
 
   [% ELSIF error == "auth_cant_create_account" %]
-    [% title = "Can't create accounts" %]
-    This site is using an authentication scheme which does not permit
-    account creation. Please contact an administrator to get a new account
-    created.
+    [% title = "Hesap Oluşturulamıyor" %]
+    Bu site hesap oluşturulmasına izin vermeyen bir yetkilendirme şeması 
+    kullanıyor. Yeni hesabınızın oluşturabilmek için lütfen yönetici ile
+    iletişime geçin.
 
   [% ELSIF error == "auth_failure" %]
-    [% title = "Authorization Required" %]
+    [% title = "Yetki Gerekiyor" %]
     [% admindocslinks = {'groups.html' => 'Group Security'} %]
-    Sorry,
+    Üzgünüm,
     [% IF group %]
-      you aren't a member of the '[% group FILTER html %]' group,
+      '[% group FILTER html %]' grubuna üye değilsiniz,
     [% END %]
 
     [% IF reason %]
       [% IF group %] and [% END %]
       [% IF reason == "cant_bless" %]
-        you don't have permissions to add or remove people from a group,
+        bir gruba kişi ekleme yada çıkarma yetkisine sahip değilsiniz,
       [% ELSIF reason == "not_visible" %]
-        there are visibility restrictions on certain user groups,
+        bazı kullanıcı gruplarının görünürlük sınırlamaları var,
       [% END %]
     [% END %]
 
-    [% IF group || reason %] and so [% END %] you are not authorized to
-    [% IF action == "access" %]
-      access
-    [% ELSIF action == "add" %]
-      add new
-    [% ELSIF action == "begin" %]
-      begin
-    [% ELSIF action == "modify" %]
-      modify
-    [% ELSIF action == "delete" %]
-      delete
-    [% ELSIF action == "edit" %]
-      add, modify or delete
-    [% ELSIF action == "move" %]
-      move
-    [% ELSIF action == "run" %]
-      run
-    [% ELSIF action == "schedule" %]
-      schedule
-    [% ELSIF action == "use" %]
-      use
-    [% END %]
-
+    [% IF group || reason %] ve bu nedenle [% END %] 
     [% IF object == "attachment" %]
-      this attachment
+      bu eklentiyi
     [% ELSIF object == "bugs" %]
       [%+ terms.bugs %]
     [% ELSIF object == "charts" %]
       the "New Charts" feature
     [% ELSIF object == "classifications" %]
-      classifications
+      sınıflandırma
     [% ELSIF object == "components" %]
-      components
+      ürün
     [% ELSIF object == "custom_fields" %]
-      custom fields
+      özel alan
     [% ELSIF object == "field_values" %]
-      field values
+      alan değeri
     [% ELSIF object == "flagtypes" %]
-      flag types
+      bayrak tipi
     [% ELSIF object == "group_access" %]
-      group access
+      grup erişimi
     [% ELSIF object == "groups" %]
-      groups
+      grup
     [% ELSIF object == "keywords" %]
-      keywords
+      anahtar kelime
     [% ELSIF object == "milestones" %]
-      milestones
+      mihenk taşı
     [% ELSIF object == "multiple_bugs" %]
-      multiple [% terms.bugs %] at once
+      aynı anda birden fazla [% terms.bug %]
     [% ELSIF object == "parameters" %]
-      parameters
+      parametre
     [% ELSIF object == "products" %]
-      products
+      ürün
     [% ELSIF object == "quips" %]
-      quips
+      hazır cevap
     [% ELSIF object == "reports" %]
-      whine reports
+      şikayet raporu
     [% ELSIF object == "sanity_check" %]
-      a sanity check
+      bir bilinç kontrolü
     [% ELSIF object == "settings" %]
-      settings
+      ayar
     [% ELSIF object == "sudo_session" %]
-      an sudo session
+      bir sudo oturumu
     [% ELSIF object == "timetracking_summaries" %]
-      time-tracking summary reports
+      zaman-takip özet raporu
     [% ELSIF object == "user" %]
-      the user you specified
+      belirlediğiniz kullanıcı
     [% ELSIF object == "users" %]
-      users
+      kullanıcı
     [% ELSIF object == "versions" %]
-      versions
-    [% END %].
+      sürüm
+    [% END %]
+
+    [% IF action == "access" %]
+      erişim
+    [% ELSIF action == "add" %]
+      yeni ekleme
+    [% ELSIF action == "begin" %]
+      başlama
+    [% ELSIF action == "modify" %]
+      değiştirme
+    [% ELSIF action == "delete" %]
+      silme
+    [% ELSIF action == "edit" %]
+      ekleme. değiştirme yada silme
+    [% ELSIF action == "move" %]
+      taşıma
+    [% ELSIF action == "run" %]
+      çalıştırma
+    [% ELSIF action == "schedule" %]
+      planlama
+    [% ELSIF action == "use" %]
+      kullanma
+    [% END %]
+
+     yetkisine sahip değilsiniz.
 
     [% Hook.process("auth_failure") %]
 
