@@ -267,30 +267,29 @@
     '[% product FILTER html %]' ürünü için sınıflandırma '[% classification FILTER html %]' yok.
 
   [% ELSIF error == "classification_invalid_sortkey" %]
-    [% title = "Invalid Sortkey for Classification" %]
-    The sortkey <em>[% sortkey FILTER html %]</em> for the '[% name FILTER html %]'
-    classification is invalid. It must be a positive integer.
+    [% title = "Sınıflandırma İçin Geçersiz Sıralama Anahtarı" %]
+    '[% name FILTER html %]' sınıflandırması için sıralama anahtarı <em>[% sortkey FILTER html %]</em> 
+    geçersiz. Pozitif tam sayı olmalı.
 
   [% ELSIF error == "classification_not_deletable" %]
-    [% title = "Default Classification Can Not Be Deleted" %]
-    You can not delete the default classification
+    [% title = "Varsayılan Sınıflandırma Silinemiyor" %]
+    Varsayılan sınıflandırmayı silemezsiniz.
 
   [% ELSIF error == "classification_has_products" %]
-     Sorry, there are products for this classification. You
-     must reassign those products to another classification before you
-     can delete this one.
+    Üzgünüm, bu sınıflandırma için ürünler var. Bu sınfılandırmayı
+    silmeden önce bu ürünleri başka bir sınıflandırmaya atamalısınız. 
 
   [% ELSIF error == "component_already_exists" %]
-    [% title = "Component Already Exists" %]
-    A component with the name '[% name FILTER html %]' already exists.
+    [% title = "Bileşen Zaten Var" %]
+    '[% name FILTER html %]' isminde bir bileşen zanet var.
 
   [% ELSIF error == "component_blank_description" %]
-    [% title = "Blank Component Description Not Allowed" %]
-    You must enter a non-blank description for component '[% name FILTER html %]'.
+    [% title = "Boş Bileşen Açıklamasına İzin Verilmiyor" %]
+    '[% name FILTER html %]' bileşeni için boş olmayan bir açıklama girmelisiniz.
      
   [% ELSIF error == "component_blank_name" %]
-    [% title = "Blank Component Name Not Allowed" %]
-    You must enter a name for this new component.
+    [% title = "Boş Bileşen İsmine İzin Verilmiyor" %]
+    Yeni bileşen için bir isim girmelisiniz.
 
   [% ELSIF error == "component_has_bugs" %]
     [% title = BLOCK %]Component has [% terms.Bugs %][% END %]
