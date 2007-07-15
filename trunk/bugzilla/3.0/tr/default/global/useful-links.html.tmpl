@@ -59,7 +59,7 @@
           [% print_pipe = 1 %]
         [% END %]
         [% IF Param('useclassification') && user.groups.editclassifications %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editclassifications.cgi">Classifications</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editclassifications.cgi">Sınıflandırmalar</a></li>
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.editcomponents || user.get_products_by_permission("editcomponents").size %]
@@ -71,9 +71,9 @@
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.admin %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editfields.cgi">Custom Fields</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editfields.cgi">Özel Alanlar</a></li>
           [% print_pipe = 1 %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editvalues.cgi">Field Values</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editvalues.cgi">Alan Değerleri</a></li>
         [% END %]
         [% IF user.groups.creategroups %]
           <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editgroups.cgi">Gruplar</a></li>
@@ -84,7 +84,7 @@
           [% print_pipe = 1 %]
         [% END %]
         [% IF user.groups.bz_canusewhines %]
-          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editwhines.cgi">Whining</a></li>
+          <li>[% '<span class="separator">| </span>' IF print_pipe %]<a href="editwhines.cgi">Şikayetler</a></li>
           [% print_pipe = 1 %]
         [% END %]
       </ul>
@@ -128,7 +128,7 @@
                      [% q.name FILTER url_quote %]&amp;sharer_id=
                      [% q.user.id FILTER url_quote %]"
                class="shared"
-               title="Shared by [% q.user.identity FILTER html %]"
+               title="[% q.user.identity FILTER html %] tarafından paylaşıldı."
                >[% q.name FILTER html FILTER no_break %]</a></li>
           [% print_pipe = 1 %]
         [% END %]
