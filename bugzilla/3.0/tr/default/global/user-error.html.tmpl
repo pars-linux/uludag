@@ -109,7 +109,7 @@
     iletişime geçin.
 
   [% ELSIF error == "auth_failure" %]
-    [% title = "Yetki Gerekiyor" %]
+    [% title = "Yetki Gerekli" %]
     [% admindocslinks = {'groups.html' => 'Group Security'} %]
     Üzgünüm,
     [% IF group %]
@@ -203,71 +203,68 @@
     [% Hook.process("auth_failure") %]
 
   [% ELSIF error == "attachment_deletion_disabled" %]
-    [% title = "Attachment Deletion Disabled" %]
-    Attachment deletion is disabled on this installation.
+    [% title = "Eklenti Silme Etkisizleştirildi" %]
+    Bu kurulumda eklenti silme etkisizleştirildi.
 
   [% ELSIF error == "attachment_removed" %]
-    [% title = "Attachment Removed" %]
-    The attachment you are attempting to access has been removed.
+    [% title = "Eklenti Silindi" %]
+    Erişmeye çalıştığınız eklenti silinmiş.
 
   [% ELSIF error == "bug_access_denied" %]
     [% title = "Access Denied" %]
     [% admindocslinks = {'groups.html' => 'Group Security'} %]
-    You are not authorized to access [% terms.bug %] #[% bug_id FILTER html %].
+    #[% bug_id FILTER html %] numaralı [% terms.bug %]ya erişim hakkınız yok.
 
   [% ELSIF error == "bug_access_query" %]
-    [% title = "Access Denied" %]
-    [% docslinks = {'myaccount.html' => 'Creating an account'} %]
-    You are not authorized to access [% terms.bug %] #[% bug_id FILTER html %].
-    To see this [% terms.bug %], you must
-    first <a href="show_bug.cgi?id=
-                   [% bug_id FILTER url_quote %]&amp;GoAheadAndLogIn=1">log
-    in to an account</a> with the appropriate permissions.
+    [% title = "Erişim Engellendi" %]
+    [% docslinks = {'myaccount.html' => 'Bir hesap oluşturma'} %]
+    #[% bug_id FILTER html %] numaralı [% terms.bug %]ya erişim hakkınız yok.
+    Bu [% terms.bug %]yı görmek için, öncelikle uygun yetkilere sahip bir <a href="show_bug.cgi?id=
+    [% bug_id FILTER url_quote %]&amp;GoAheadAndLogIn=1">hesaba giriş</a> yapmalısınız.
 
   [% ELSIF error == "buglist_parameters_required" %]
-    [% title = "Parameters Required" %]
-    [% docslinks = {'query.html' => "Searching for $terms.bugs",
-                    'list.html'  => "$terms.Bug lists"} %]
-    You may not search, or create saved searches, without any search terms.
+    [% title = "Parametre Gerekli" %]
+    [% docslinks = {'query.html' => "$terms.Bug için arama",
+                    'list.html'  => "$terms.Bug listeleri"} %]
+    Herhangi bir arama kriteri olmadan, arama yapamaz yada kaydedilmiş aramalar oluşturamazsınız.
 
   [% ELSIF error == "bugs_not_changed" %]
-    [% title = BLOCK %][% terms.Bugs %] Not Changed[% END %]
-    You do not seem to have made any changes in the selected [% terms.bugs %],
-    so there is nothing to Commit.
+    [% title = BLOCK %][% terms.Bug %] Değiştirilmedi[% END %]
+    Seçili [% terms.bug %] üzerinde hiçbir değişiklik yapılmamış görünüyor,
+    bu nedenle kaydedilecek bir şey yok.
 
   [% ELSIF error == "chart_too_large" %]
     [% title = "Chart Too Large" %]
     Sorry, but 2000 x 2000 is the maximum size for a chart.
 
   [% ELSIF error == "comment_required" %]
-    [% title = "Comment Required" %]
-    You have to specify a <b>comment</b> on this change.
-    Please explain your change.
+    [% title = "Yorum Gerekli" %]
+    Bu değişiklik için bir <b>yorum</b> girmelisiniz.
+    Lütfen değişikliği açıklayınız.
 
   [% ELSIF error == "comment_too_long" %]
-    [% title = "Comment Too Long" %]
-    Comments cannot be longer than 65,535 characters.
+    [% title = "Yorum Çok Uzun" %]
+    Yorumlar 65,535 karakterden uzun olamaz.
 
   [% ELSIF error == "auth_classification_not_enabled" %]
-    [% title = "Classification Not Enabled" %]
-    Sorry, classification is not enabled.
+    [% title = "Sınıflandırma Etkin Değil" %]
+    Üzgünüm, sınıflandırma etkin değil.
 
   [% ELSIF error == "classification_not_specified" %]
-    [% title = "You Must Supply A Classification Name" %]
-    You must enter a classification name.
+    [% title = "Bir Sınıflandırma İsmi Belirtmelisiniz" %]
+    Bir sınıflandırma ismi girmelisiniz.
 
   [% ELSIF error == "classification_already_exists" %]
     [% title = "Classification Already Exists" %]
     A classification with the name '[% name FILTER html %]' already exists.
 
   [% ELSIF error == "classification_doesnt_exist" %]
-    [% title = "Classification Does Not Exist" %]
-    The classification '[% name FILTER html %]' does not exist.
+    [% title = "Sınıflandırma Yok" %]
+    Sınıflandırma '[% name FILTER html %]' yok.
 
   [% ELSIF error == "classification_doesnt_exist_for_product" %]
-    [% title = "Classification Does Not Exist For Product" %]
-    The classification '[% classification FILTER html %]' does not exist
-    for product '[% product FILTER html %]'.
+    [% title = "Ürün İçin Sınıflandırma Yok" %]
+    '[% product FILTER html %]' ürünü için sınıflandırma '[% classification FILTER html %]' yok.
 
   [% ELSIF error == "classification_invalid_sortkey" %]
     [% title = "Invalid Sortkey for Classification" %]
