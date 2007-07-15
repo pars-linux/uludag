@@ -74,33 +74,33 @@
     Bu kullanıcı adına sahip herhangi bir [% terms.Bugzilla %] hesabı yok.
 
   [% ELSIF error == "alias_has_comma_or_space" %]
-    [% title = "Etiket Geçersiz Karakter İçeriyor" %]
-    Girdiğiniz etiket, <em>[% alias FILTER html %]</em>,
-    birden fazla boşluk yada virgül içeriyor. Etiketler virgül yada
-    boşluk içeremezler, çünkü bu karakterler etiketleri liste içindeki
-    diğer etiketlerden ayırmaya yarar. Lütfen boşluk yada virgül
-    içermeyen bir etiket seçin.
+    [% title = "Sembolik Ad Geçersiz Karakter İçeriyor" %]
+    Girdiğiniz sembolik ad, <em>[% alias FILTER html %]</em>,
+    birden fazla boşluk yada virgül içeriyor. Sembolik adlar virgül yada
+    boşluk içeremezler, çünkü bu karakterler sembolik adları liste içindeki
+    diğer sembolik adlardan ayırmaya yarar. Lütfen boşluk yada virgül
+    içermeyen bir sembolik ad seçin.
 
   [% ELSIF error == "alias_in_use" %]
-    [% title = "Etiket Kullanımda" %]
+    [% title = "Sembolik Ad Kullanımda" %]
     [% terms.Bug %] [%+ bug_id FILTER bug_link(bug_id) FILTER none %]
-    hali hazırda <em>[% alias FILTER html %]</em> etiketini kullanıyor.
-    Lütfen farkli bir etiket seçin.
+    hali hazırda <em>[% alias FILTER html %]</em> sembolik adını kullanıyor.
+    Lütfen farkli bir sembolik ad seçin.
 
   [% ELSIF error == "alias_not_defined" %]
-    [% title = "Etiket Belirlenmedi" %]
-    Bu [% terms.bug %] için herhangi bir etiket girmemişsiniz.
+    [% title = "Sembolik Ad Belirlenmedi" %]
+    Bu [% terms.bug %] için herhangi bir sembolik ad girmemişsiniz.
 
   [% ELSIF error == "alias_is_numeric" %]
-    [% title = "Etiket Rakamlardan Oluşuyor" %]
-    Bu [% terms.bug %] için <em>[% alias FILTER html %]</em> etiketini girmeyi denediniz,
-    ancak etiketler yalnızca rakamlardan oluşamaz, böyle olursa [% terms.bug %] numaraları
-    ile karışabilir. Lütfen en azından bir harf içeren bir etiket seçin.
+    [% title = "Sembolik Ad Rakamlardan Oluşuyor" %]
+    Bu [% terms.bug %] için <em>[% alias FILTER html %]</em> sembolik ad girmeyi denediniz,
+    ancak sembolik adlar yalnızca rakamlardan oluşamaz, böyle olursa [% terms.bug %] numaraları
+    ile karışabilir. Lütfen en azından bir harf içeren bir sembolik ad seçin.
 
   [% ELSIF error == "alias_too_long" %]
-    [% title = "Etiket Çok Uzun" %]
-    [% terms.Bug %] etiketleri 20 karakterden uzun olamaz.
-    Lütfen daha kısa bir etiket seçin.
+    [% title = "Sembolik Ad Çok Uzun" %]
+    [% terms.Bug %] sembolik adları 20 karakterden uzun olamaz.
+    Lütfen daha kısa bir sembolik ad seçin.
 
   [% ELSIF error == "auth_cant_create_account" %]
     [% title = "Hesap Oluşturulamıyor" %]
@@ -157,7 +157,7 @@
     [% ELSIF object == "products" %]
       ürün
     [% ELSIF object == "quips" %]
-      hazır cevap
+      nükteli söz
     [% ELSIF object == "reports" %]
       şikayet raporu
     [% ELSIF object == "sanity_check" %]
