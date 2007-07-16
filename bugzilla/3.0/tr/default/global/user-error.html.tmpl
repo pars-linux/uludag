@@ -292,24 +292,22 @@
     Yeni bileşen için bir isim girmelisiniz.
 
   [% ELSIF error == "component_has_bugs" %]
-    [% title = BLOCK %]Component has [% terms.Bugs %][% END %]
-    There are [% nb FILTER html %] [%+ terms.bugs %] entered for this component!
-    You must reassign those [% terms.bugs %] to another component before you
-    can delete this one.
+    [% title = BLOCK %] Bileşenine Atanmış [% terms.Bugs %] Var[% END %]
+    Bu bileşen için girilmiş [% nb FILTER html %] tane [%+ terms.bugs %] var!
+    Bileşeni silebilmek için önce bu [% terms.bugs %]ı başka bir bileşene atamalısınız.
 
   [% ELSIF error == "component_name_too_long" %]
-    [% title = "Component Name Is Too Long" %]
-    The name of a component is limited to 64 characters. 
-    '[% name FILTER html %]' is too long ([% name.size %] characters).
+    [% title = "Bileşen Adı Çok Uzun" %]
+    Bileşen isimleri 64 karakterle sınırlandırılmıştır.
+    '[% name FILTER html %]' çok uzun. ([% name.size %] karakter).
 
   [% ELSIF error == "component_need_initialowner" %]
-    [% title = "Component Requires Default Assignee" %]
-    You must enter a default assignee for component '[% name FILTER html %]'.
+    [% title = "Bileşen İçin Öntanımlı Atanan Gerekli" %]
+    '[% name FILTER html %]' bileşeni için bir öntanımlı atanan belirlemelisiniz.
 
   [% ELSIF error == "component_not_valid" %]
-    [% title = "Specified Component Does Not Exist" %]
-    Product [% product FILTER html %] does not have a component
-    named [% name FILTER html %].
+    [% title = "Belirtilen Bileşen Mevcut Değil" %]
+    [% product FILTER html %] ürününün [% name FILTER html %] adında bir bileşeni yok.
 
   [% ELSIF error == "customfield_nonexistent" %]
     [% title = "Unknown Custom Field" %]
@@ -1476,12 +1474,12 @@
     That token cannot be used to create a user account.
 
   [% ELSIF error == "zero_length_file" %]
-    [% title = "File Is Empty" %]
-    The file you are trying to attach is empty!
+    [% title = "Dosya Boş" %]
+    Göndereyi denediğiniz dosya boş!
 
   [% ELSIF error == "illegal_user_id" %]
-    [% title = "Illegal User ID" %]
-    User ID '[% userid FILTER html %]' is not valid integer.
+    [% title = "Geçersiz Kullanıcı Kimliği" %]
+    Kullanıcı kimliği '[% userid FILTER html %]' geçerli bir tamsayı değil.
 
   [% ELSE %]
 
@@ -1489,10 +1487,10 @@
     [% error_message = Hook.process("errors") %]
 
     [% IF not error_message %]
-      [% title = "Error string not found" %]
-      The user error string <code>[% error FILTER html %]</code> was not found.
-      Please send email to [% Param("maintainer") %] describing the steps taken
-      to obtain this message.
+      [% title = "Hata Metni Bulunamadı" %]
+      <code>[% error FILTER html %]</code> numaralı kullanıcı hatası bulunamadı.
+      Lütfen [% Param("maintainer") %] adresine bu iletiyi almanızı sağlayan adımları
+      anlatan bir eposta gönderin.
     [% ELSE %]
       [% error_message FILTER none %]
     [% END %]
@@ -1530,7 +1528,7 @@
 </table>
 
 <p>
-  Please press <b>Back</b> and try again.
+  Lütfen <b>geri</b> düğmesine basınız ve tekrar deneyiniz.
 </p>
 
 [%# If a saved search fails, people want the ability to edit or delete it. 
@@ -1543,17 +1541,17 @@
                AND error != "saved_search_used_by_whines"
                AND !sharer_id %]
   <p>  
-    Alternatively, you can    
+    Alternatif olarak, '[% namedcmd FILTER html %]' kaydelimiş aramasını    
     <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
-                  [% namedcmd FILTER url_quote %]">forget</a>
+                  [% namedcmd FILTER url_quote %]">unutabilirsiniz</a>
                   
     [% FOREACH q = Bugzilla.user.queries %]
       [% IF q.name == namedcmd %]
-        or <a href="query.cgi?[% q.url FILTER html %]">edit</a>
+        ya da <a href="query.cgi?[% q.url FILTER html %]">değiştirebilirsiniz</a>
       [% END %]
     [% END %]
     
-    the saved search '[% namedcmd FILTER html %]'.
+    .
   </p>
 [% END %]            
 
