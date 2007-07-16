@@ -1,4 +1,4 @@
-# translation of es.po to spanish
+# translation of es.po to español
 # translation of es.po to
 # Copyright (C) 2007 Free Software Foundation, Inc.
 #
@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:25+0300\n"
-"PO-Revision-Date: 2007-05-27 17:51-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-07-15 20:15-0400\n"
+"Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
+"Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -93,7 +93,7 @@ msgstr "Comprobar actualizaciones automáticamente cada"
 #: rc.cpp:49 ../src/mousedlg.cpp:121
 #, no-c-format
 msgid "Click behaviour"
-msgstr "Comportamiento de Clic"
+msgstr "Comportamiento de clíc"
 
 #: ../src/kaptan.cpp:78
 msgid "Congratulations"
@@ -141,7 +141,7 @@ msgid ""
 "below. You can also select default click behaviour."
 msgstr ""
 "Si es zurdo podría preferir invertir las funciones de los botones del "
-"puntero (ratón) indicando la opción 'Zurdo' abajo. También se puede "
+"puntero (ratón) indicando la opción 'Zurdo' abajo. También puede "
 "establecer el comportamiento por defecto de los botones."
 
 #: ../src/main.cpp:18
@@ -221,15 +221,14 @@ msgid ""
 "desktop :)."
 msgstr ""
 "Este aplicativo, llamado <b>Kaptan Desktop</b>, le ayudará realizar una "
-"configuración básica pero funcional para su estación de trabajo <b>Pardus</"
-"b> de manera rápida. Este aplicativo también establece algunas "
+"configuración básica pero funcional para su estación de trabajo <b>Pardus</b> de manera rápida. Este aplicativo también establece algunas "
 "configuraciones por defecto para un mejor escritorio :)."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 54
 #: rc.cpp:84 ../src/styledlg.cpp:97
 #, no-c-format
 msgid "Use enhanced Kickoff style menu"
-msgstr "Usar menu de estilo Kick-off mejorado"
+msgstr "Usar menú de estilo Kick-off mejorado"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 16
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 38
