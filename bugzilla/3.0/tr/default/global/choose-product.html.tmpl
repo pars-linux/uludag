@@ -31,14 +31,14 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% IF target == "enter_bug.cgi" %]
-  [% title = "Enter $terms.Bug" %]
-  [% subheader = BLOCK %]First, you must pick a product on which to enter [% terms.abug %]. [% END %]
+  [% title = "$terms.Bug Gir" %]
+  [% subheader = BLOCK %]Öncelikle, [% terms.bug %] girmek için bir ürün seçmelisiniz. [% END %]
 [% ELSIF target == "describecomponents.cgi" %]
-  [% title = "$terms.Bugzilla Component Descriptions" %]
-  [% subheader = "Please specify the product whose components you want described." %]
+  [% title = "$terms.Bugzilla Bileşen Açıklamaları" %]
+  [% subheader = "Lütfen bileşenlerini açıklamak istediğiniz ürünü belirtiniz." %]
 [% END %]
 
-[% DEFAULT title = "Choose a Product" %]
+[% DEFAULT title = "Bir Ürün Seçiniz" %]
 [% PROCESS global/header.html.tmpl %]
 
 <table>

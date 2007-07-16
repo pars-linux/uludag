@@ -22,11 +22,11 @@
   #%]
 
 [% IF target == "enter_bug.cgi" %]
-  [% title = "Select Classification" %]
-  [% subheader = "Please select the classification." %]
+  [% title = "Sınıflandırma Seçimi" %]
+  [% subheader = "Lütfen sınıflandırmayı seçiniz." %]
 [% END %]
 
-[% DEFAULT title = "Choose the classification" %]
+[% DEFAULT title = "Sınıflandırmayı Seç" %]
 [% PROCESS global/header.html.tmpl %]
 
 <table>
@@ -37,10 +37,10 @@
       <a href="[% target FILTER url_quote %]?classification=__all
             [% IF cloned_bug_id %]&amp;cloned_bug_id=[% cloned_bug_id FILTER url_quote %][% END -%] 
             [%- IF format %]&amp;format=[% format FILTER url_quote %][% END %]">
-      All</a>:
+      Hepsi</a>:
     </th>
 
-    <td valign="top">&nbsp;Show all products</td>
+    <td valign="top">&nbsp;Tüm ürünleri göster</td>
   </tr>
   <tr>
     <th colspan="2">&nbsp;</th>
