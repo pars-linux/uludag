@@ -294,12 +294,15 @@ QString kio_sysinfoProtocol::diskInfo()
             DiskInfo di = ( *it );
             QString tooltip = i18n( di.model );
             QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
-
+            QString pattern, bar;
             unsigned long long usage,percent,peer;
             usage = di.total - di.avail;
             peer = di.total / 100;
-
             peer == 0 ? percent = 0 : percent = usage / peer;
+            percent > 25 ? pattern = "<div style=\"width: %1%\">%2&nbsp;</div>" : pattern = "<div style=\"width: %1%\">&nbsp;</div>&nbsp;%2";
+
+            bar = QString(pattern).arg( di.mounted ? percent : 0).
+                                   arg( di.mounted ? formattedUnit( usage ) : QString::null );
 
             result += QString( "<tr>"
                                "    <td>%1</td>"
@@ -313,7 +316,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                "            </tr>"
                                "            <tr height=\"10px\">"
                                "                <td class=\"bar\">"
-                               "                    <div style=\"width: %8%\">%9&nbsp</div>"
+                               "                    %8"
                                "                </td>"
                                "            </tr>"
                                "        </table>"
@@ -327,8 +330,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                 arg( di.fsType ).
                                 arg( formattedUnit( di.total,0 ) ).
                                 arg( formattedUnit( di.avail,0 ) ).
-                                arg( di.mounted ? percent : 0).
-                                arg( di.mounted ? formattedUnit( usage ) : QString::null );
+                                arg( bar );
         }
     }
     result += "</table>";
