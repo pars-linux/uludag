@@ -1,4 +1,3 @@
-# translation of es.po to spanish
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -10,9 +9,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-12 20:08+0300\n"
-"PO-Revision-Date: 2007-06-30 08:40-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-07-15 19:42-0400\n"
+"Last-Translator: \n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,7 +68,7 @@ msgstr "Puertos: %s"
 
 #: src/firewall-config.py:238
 msgid "&Stop Firewall"
-msgstr "&Parar Cortafuegos"
+msgstr "&Detener Cortafuegos"
 
 #: src/firewall-config.py:239
 msgid "<b><font size='+1'>Firewall is running</font></b>"
@@ -80,7 +79,7 @@ msgid ""
 "Click here to stop the firewall and allow all incoming and outgoing "
 "connections."
 msgstr ""
-"Presione aquí para desactivar el cortafuegos y permitir toda clase de "
+"Presione aquí para detener el cortafuegos y permitir toda clase de "
 "conexiones entrantes y salientes."
 
 #: src/firewall-config.py:246
@@ -101,17 +100,15 @@ msgstr ""
 
 #: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
-msgstr ""
-"No tiene permisos suficientes para modificar las propiedades del cortafuegos."
+msgstr "No tiene permisos suficientes para modificar la configuración del cortafuegos."
 
 #: src/firewall-config.py:345
 msgid "Access Denied"
-msgstr "Acceso denegado"
+msgstr "Acceso Denegado"
 
 #: src/firewall-config.py:439
 msgid "Pardus Firewall Interface is already running!"
-msgstr ""
-"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
+msgstr "Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
 #: src/rules.py:16
 msgid "Mail services"
@@ -144,7 +141,7 @@ msgstr "Servicios de transferencia de archivos FTP"
 
 #: src/rules.py:50
 msgid "Desktop Sharing"
-msgstr ""
+msgstr "Escritorio compartido"
 
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
@@ -152,7 +149,7 @@ msgstr "<b><font size=\"+1\">Cortafuegos está activado</font></b>"
 
 #: src/firewall.py:192
 msgid "&Stop"
-msgstr "&Parar"
+msgstr "&Detener"
 
 #: src/firewall.py:193
 msgid "Alt+S"
@@ -162,7 +159,7 @@ msgstr "Alt+S"
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr ""
-"Presione aquí para desactivar el cortafuegos y permitir toda clase de "
+"Presione aquí para detener el cortafuegos y permitir toda clase de "
 "conexiones entrantes."
 
 #: src/firewall.py:196
@@ -172,8 +169,7 @@ msgid ""
 "below:"
 msgstr ""
 "Todas las conexiones entrantes <b>se rechazan</b> por defecto. Si quiere "
-"permitir que otras computadoras puedan acceder a servicios corriendo "
-"localmente aquí, marque el servicio abajo:"
+"permitir que otras computadoras puedan acceder a servicios locales aquí, marque el servicio abajo:"
 
 #: src/firewall.py:197
 msgid "Incoming Connections"
@@ -254,3 +250,4 @@ msgstr "Aceptar"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rechazar"
+
