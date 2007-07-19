@@ -108,6 +108,8 @@ msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
 msgstr ""
+"Te kernele są zainstalowane w systemie ale nie są wpisane w "
+"menedżerze rozruchu GRUB"
 
 #: src/mainview.py:353
 msgid "Add Boot Entry"
