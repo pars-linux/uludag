@@ -461,13 +461,12 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1: [%2] ile çakışıyor\n"
 
 #: src/package-manager.py:506
-#, fuzzy
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
-"Çakışan paketler kaldırılsın mı?"
+"Çakışan paketler sistemden kaldırılsın mı?"
 
 #: src/package-manager.py:521 src/package-manager.py:582
 #: src/package-manager.py:719
