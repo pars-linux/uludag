@@ -503,7 +503,7 @@ class MainApplicationWidget(QWidget):
             msg = i18n("The following packages conflicts:\n")
             for pkg in pkg_conflicts.keys():
                 msg += i18n("%1 conflicts with: [%2]\n").arg(pkg).arg(", ".join(pkg_conflicts[pkg]))
-            msg += i18n("\nRemove the following conflicting packages?")
+            msg += i18n("\nRemove the conflicting packages from the system?")
             if self.showConfirmMessage(msg, i18n("Conflict Error")) == KMessageBox.No:
                 self.searchLine.clear()
                 self.refreshState(False)
