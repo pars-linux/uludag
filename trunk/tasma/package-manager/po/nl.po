@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-13 21:11+0300\n"
+"POT-Creation-Date: 2007-07-26 18:36+0300\n"
 "PO-Revision-Date: 2007-06-03 21:31+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -21,36 +21,11 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/ProgressDialog.py:91
-msgid "Progress"
-msgstr "Voortgang"
-
-#: src/ProgressDialog.py:92 src/Progress.py:82
-msgid "-- / --  package"
-msgstr "-- / --  pakket"
-
-#: src/ProgressDialog.py:93 src/Progress.py:81
-msgid "downloaded (total: -- )"
-msgstr "gedownload (totaal: -- )"
-
-#: src/ProgressDialog.py:94 src/Progress.py:80
-msgid "--"
-msgstr "--"
-
-#: src/ProgressDialog.py:97
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Voorbereiden PiSi...</h3>"
-
-#: src/ProgressDialog.py:98
-msgid "Now installing <b>amsn</b> package"
-msgstr "Installeert nu <b>amsn</b> pakket"
-
 #: src/Tray.py:39
 msgid "Update"
 msgstr "Update"
 
-#: src/Tray.py:44 src/package-manager.py:273 src/package-manager.py:661
-#: src/package-manager.py:808
+#: src/Tray.py:44 src/package-manager.py:277 src/package-manager.py:690
 msgid "All"
 msgstr "Alles"
 
@@ -58,50 +33,62 @@ msgstr "Alles"
 msgid "There are <b>%1</b> updates available!"
 msgstr "Er zijn <b>%1</b> updates beschikbaar!"
 
-#: src/CustomEventListener.py:47 src/CustomEventListener.py:51
-#: src/package-manager.py:299
-msgid "Select all packages in this category"
-msgstr "Selecteer alle pakketten in deze categorie"
+#: src/CommonText.py:15 src/package-manager.py:723
+msgid "downloading"
+msgstr "downloaden"
 
-#: src/CustomEventListener.py:48 src/package-manager.py:301
-msgid "Reverse package selections"
-msgstr "Keer pakketselectie om"
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "uitpakken"
 
-#: src/BalloonMessage.py:44
-msgid "Show Updates"
-msgstr "Toon updates"
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "configureren"
 
-#: src/BalloonMessage.py:45
-msgid "Ignore"
-msgstr "Negeer"
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "verwijderen"
 
-#: src/RepoDialog.py:72
-msgid "Repository Dialog"
-msgstr "Repository dialoog"
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "installeren"
 
-#: src/RepoDialog.py:73
-msgid "&Ok"
-msgstr "&Ok"
+#: src/Commander.py:62
+msgid "Can't connect to Comar daemon"
+msgstr "Kan geen verbinding maken met Comar daemon"
 
-#: src/RepoDialog.py:75
-msgid "Repository &Address"
-msgstr "Repository &adres"
+#: src/Commander.py:97
+msgid "You do not have permission to do this operation."
+msgstr "U heeft geen toestemming voor deze handeling."
 
-#: src/RepoDialog.py:76
-msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr "Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+#: src/Preferences.py:77
+msgid "Add New Repository"
+msgstr "Toevoegen nieuwe repository"
 
-#: src/RepoDialog.py:79
-msgid "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+#: src/Preferences.py:84
+msgid "Edit Repository"
+msgstr "Bewerken repository"
 
-#: src/RepoDialog.py:80
-msgid "Repository &Name"
-msgstr "Repository &naam"
+#: src/Preferences.py:130 src/Preferences.py:146
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
+"</qt>"
 
-#: src/RepoDialog.py:81
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
+#: src/Preferences.py:130 src/Preferences.py:146
+msgid "Pisi Error"
+msgstr "Pisi fout"
+
+#: src/Preferences.py:180 src/package-manager.py:766
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Toepassen veranderingen repository</b>"
+
+#: src/Preferences.py:212
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
 
 #: src/BasketDialog.py:50 src/BasketDialog.py:55
 msgid "Basket"
@@ -159,360 +146,6 @@ msgstr "Totale grootte: <b>%1</b>"
 msgid "Size: "
 msgstr "Grootte: "
 
-#: src/HelpDialog.py:28 src/package-manager.py:941
-msgid "Package Manager Help"
-msgstr "Pakketbeheer hulp"
-
-#: src/Preferences.py:77
-msgid "Add New Repository"
-msgstr "Toevoegen nieuwe repository"
-
-#: src/Preferences.py:84
-msgid "Edit Repository"
-msgstr "Bewerken repository"
-
-#: src/Preferences.py:130 src/Preferences.py:146
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
-"</qt>"
-
-#: src/Preferences.py:130 src/Preferences.py:146
-msgid "Pisi Error"
-msgstr "Pisi fout"
-
-#: src/Preferences.py:178 src/package-manager.py:737
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Toepassen veranderingen repository</b>"
-
-#: src/Preferences.py:210
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
-
-#: src/Progress.py:51
-msgid "downloaded ( total: %1 )"
-msgstr "gedownload (totaal: %1 )"
-
-#: src/Progress.py:78
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>Voorbereiden PiSi...</b>"
-
-#: src/Progress.py:100
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Annuleren handeling...</b>"
-
-#: src/Progress.py:127 src/Progress.py:131
-msgid "Now %1 <b>%2</b> package"
-msgstr "Nu %1 <b>%2</b> pakket"
-
-#: src/Progress.py:141
-msgid "installed"
-msgstr "geïnstalleerd"
-
-#: src/Progress.py:143
-msgid "removed"
-msgstr "verwijderd"
-
-#: src/Progress.py:145
-msgid "upgraded"
-msgstr "opgewaardeerd"
-
-#: src/Progress.py:147
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 pakket %3"
-
-#: src/Commander.py:62
-msgid "Can't connect to Comar daemon"
-msgstr "Kan geen verbinding maken met Comar daemon"
-
-#: src/Commander.py:97
-msgid "You do not have permission to do this operation."
-msgstr "U heeft geen toestemming voor deze handeling."
-
-#: src/package-manager.py:47
-msgid "GUI for PiSi package manager"
-msgstr "Grafische gebruikersinterface voor PiSi pakketbeheer"
-
-#: src/package-manager.py:55 src/package-manager.py:867
-msgid "Package Manager"
-msgstr "Pakketbeheer"
-
-#: src/package-manager.py:58
-msgid "Developer and Current Maintainer"
-msgstr "Ontwikkelaar en huidige handhaver"
-
-#: src/package-manager.py:59
-msgid "Original Author"
-msgstr "Originele auteur"
-
-#: src/package-manager.py:60
-msgid "CSS/JS Meister"
-msgstr "CSS/JS Meister"
-
-#: src/package-manager.py:61
-msgid "GUI Design & Usability"
-msgstr "Ontwerp en functionaliteit grafische gebruikersinterface"
-
-#: src/package-manager.py:62
-msgid "PiSi Authors"
-msgstr "PiSi auteurs"
-
-#: src/package-manager.py:62
-msgid "Authors of PiSi API"
-msgstr "Auteurs van PiSi API"
-
-#: src/package-manager.py:113
-msgid "Search: "
-msgstr "Zoek: "
-
-# mand tonen
-#: src/package-manager.py:117
-msgid "Show basket"
-msgstr "Toon mandje"
-
-#: src/package-manager.py:122 src/package-manager.py:229
-msgid "Install Package(s)"
-msgstr "Installeer pakket(ten)"
-
-#: src/package-manager.py:143
-msgid "Components"
-msgstr "Componenten"
-
-#: src/package-manager.py:171
-msgid "Loading Package List..."
-msgstr "Laden pakketlijst..."
-
-#: src/package-manager.py:207
-msgid ""
-"Package-manager needs to update package database. You need a network "
-"connection to update."
-msgstr ""
-"Pakketbeheer dient de pakketdatabase bij te werken. U heeft een netwerkverbinding "
-"om te updaten."
-
-#: src/package-manager.py:208
-msgid "Package database is empty"
-msgstr "Pakketdatabase is leeg"
-
-#: src/package-manager.py:245
-msgid "Remove Package(s)"
-msgstr "Verwijder pakket(ten)"
-
-#: src/package-manager.py:271
-msgid "Upgrade Package(s)"
-msgstr "Opwaarderen pakket(ten)"
-
-#: src/package-manager.py:363
-msgid "N\\A"
-msgstr "N\\B"
-
-#: src/package-manager.py:381
-msgid "Description: "
-msgstr "Beschrijving: "
-
-#: src/package-manager.py:381
-msgid "Version: "
-msgstr "Versie: "
-
-#: src/package-manager.py:382
-msgid "Package Size: "
-msgstr "Pakketgrootte: "
-
-#: src/package-manager.py:382
-msgid "Homepage: "
-msgstr "Homepage: "
-
-#: src/package-manager.py:397 src/package-manager.py:669
-msgid "Search Results"
-msgstr "Zoekresultaten"
-
-# mand tonen
-#: src/package-manager.py:430
-msgid "Currently your basket is empty."
-msgstr "Momenteel is uw mandje leeg."
-
-#: src/package-manager.py:433 src/package-manager.py:441
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
-"van <b>%2</b>"
-
-#: src/package-manager.py:436
-msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr "met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
-
-# mand tonen
-#: src/package-manager.py:438 src/package-manager.py:446
-msgid "in your basket."
-msgstr "in uw mandje."
-
-#: src/package-manager.py:444
-msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
-msgstr ""
-"met<b>%3</b> omgekeerde afhankelijkheden met een totale grootte van <b>%4</"
-"b> "
-
-#: src/package-manager.py:475
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten "
-"kunnen niet samen geïnstalleerd worden."
-
-#: src/package-manager.py:476 src/package-manager.py:486
-msgid "Conflict Error"
-msgstr "Conflict fout"
-
-#: src/package-manager.py:482
-msgid "The following packages conflicts:\n"
-msgstr "De volgende pakketten zijn in conflict:\n"
-
-#: src/package-manager.py:484
-msgid "%1 conflicts with: [%2]\n"
-msgstr "%1 in conflict met: [%2]\n"
-
-#: src/package-manager.py:485
-msgid ""
-"\n"
-"Remove the following conflicting packages?"
-msgstr ""
-"\n"
-"Verwijder de volgende conflicterende pakketten?"
-
-#: src/package-manager.py:500 src/package-manager.py:561
-#: src/package-manager.py:690
-msgid "<b>Installing Package(s)</b>"
-msgstr "<b>Installeren pakket(ten)</b>"
-
-#: src/package-manager.py:510
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr "<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
-
-#: src/package-manager.py:513
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>installed</b>."
-msgstr ""
-"Met de geselecteerde pakketten; zullen ook <b>%1</b> extra afhankelijkheden "
-"worden <b>geïnstalleerd</b>."
-
-#: src/package-manager.py:514
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>geïnstalleerd</b>."
-
-#: src/package-manager.py:517
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
-
-#: src/package-manager.py:520
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>upgraded</b>."
-msgstr ""
-" Met de geselecteerde pakketten; worden ook <b>%1</b> extra afhankelijkheden "
-"<b>opgewaardeerd</b>."
-
-#: src/package-manager.py:521
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>opgewaardeerd</b>."
-
-#: src/package-manager.py:524
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
-
-#: src/package-manager.py:527
-msgid ""
-" Selected packages have reverse dependencies. Because the reverse "
-"dependencies of the selected packages needs those packages to work; by "
-"removing the selected packages; <b>%1</b> reverse dependencies are also "
-"going to be <b>removed</b>. Please check your basket and make sure those are "
-"the packages you want to remove. Accidentally removing some reverse "
-"dependencies may break the system stability."
-msgstr ""
-"De selecteerde pakketten hebben omgekeerde afhankelijkheden. Omdat "
-"omgekeerde afhankelijkheden van de geselecteerde pakketten de pakketten "
-"nodig hebben om te functioneren; zullen, bij het verwijderen van de "
-"geselecteerde pakketten, <b>%1</b> omgekeerde afhankelijkheden worden "
-"<b>verwijderd</b>. Controleer alstublieft uw mandje en verzeker u ervan dat "
-"dit de pakketten zijn die u wilt verwijderen. Per ongeluk verwijderen van "
-"sommige omgekeerde afhankelijkheden kan de systeemsstabiliteit in gevaar "
-"brengen."
-
-#: src/package-manager.py:529
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr "<br><br>In totaal zullen <b>%1</b> pakketten worden <b>verwijderd</b>."
-
-#: src/package-manager.py:531
-msgid "<br>Do you want to continue?</qt>"
-msgstr "<br>Wilt u doorgaan?</qt>"
-
-#: src/package-manager.py:553
-msgid "<b>Removing Package(s)</b>"
-msgstr "<b>Verwijderen pakket(ten)</b>"
-
-#: src/package-manager.py:570 src/package-manager.py:692
-msgid "<b>Upgrading Package(s)</b>"
-msgstr "<b>Opwaarderen pakket(ten)</b>"
-
-#: src/package-manager.py:653
-msgid "Others"
-msgstr "Anderen"
-
-#: src/package-manager.py:694 src/CommonText.py:15
-msgid "downloading"
-msgstr "downloaden"
-
-#: src/package-manager.py:740 src/package-manager.py:833
-msgid "<b>Updating Repository</b>"
-msgstr "<b>Updaten repository</b>"
-
-#: src/package-manager.py:741
-msgid "Downloading package list of %1"
-msgstr "Downloaden pakketlijst van %1"
-
-#: src/package-manager.py:746
-msgid "Confirm"
-msgstr "Bevestig"
-
-#: src/package-manager.py:915
-msgid "Show Installed Packages"
-msgstr "Toon geïnstalleerde pakketten"
-
-#: src/package-manager.py:918
-msgid "Show New Packages"
-msgstr "Toon nieuwe pakketten"
-
-#: src/package-manager.py:920
-msgid "Show Upgradable Packages"
-msgstr "Toon op te waarderen pakketten"
-
-#: src/package-manager.py:954
-msgid "Package to install"
-msgstr "Te installeren pakket"
-
-#: src/package-manager.py:954
-msgid "Show main window on startup"
-msgstr "Toon hoofdvenster bij opstarten"
-
-#: src/package-manager.py:957
-msgid "Package Manager is already running!"
-msgstr "Pakketbeheer is al opgestart!"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "Te installeren PiSi pakket"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "U heeft een pakket geselecteerd om te installeren. Wilt u doorgaan?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Installeer pakket"
-
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
 msgid "Repository Name"
 msgstr "Repository naam"
@@ -530,7 +163,8 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid "You can see current software repositories and corresponding addresses here"
+msgid ""
+"You can see current software repositories and corresponding addresses here"
 msgstr ""
 "U kunt hier de huidige software repositories en corresponderende adressen "
 "zien"
@@ -650,19 +284,392 @@ msgstr "Mb <i>(gebruik 0 voor geen limiet)</i>"
 msgid "C&ache"
 msgstr "C&ache"
 
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "uitpakken"
+#: src/HelpDialog.py:28 src/package-manager.py:969
+msgid "Package Manager Help"
+msgstr "Pakketbeheer hulp"
 
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "configureren"
+#: src/ProgressDialog.py:91
+msgid "Progress"
+msgstr "Voortgang"
 
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "verwijderen"
+#: src/ProgressDialog.py:92 src/Progress.py:82
+msgid "-- / --  package"
+msgstr "-- / --  pakket"
 
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "installeren"
+#: src/ProgressDialog.py:93 src/Progress.py:81
+msgid "downloaded (total: -- )"
+msgstr "gedownload (totaal: -- )"
 
+#: src/ProgressDialog.py:94 src/Progress.py:80
+msgid "--"
+msgstr "--"
+
+#: src/ProgressDialog.py:97
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Voorbereiden PiSi...</h3>"
+
+#: src/ProgressDialog.py:98
+msgid "Now installing <b>amsn</b> package"
+msgstr "Installeert nu <b>amsn</b> pakket"
+
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Te installeren PiSi pakket"
+
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "U heeft een pakket geselecteerd om te installeren. Wilt u doorgaan?"
+
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Installeer pakket"
+
+#: src/package-manager.py:48
+msgid "GUI for PiSi package manager"
+msgstr "Grafische gebruikersinterface voor PiSi pakketbeheer"
+
+#: src/package-manager.py:56 src/package-manager.py:895
+msgid "Package Manager"
+msgstr "Pakketbeheer"
+
+#: src/package-manager.py:59
+msgid "Developer and Current Maintainer"
+msgstr "Ontwikkelaar en huidige handhaver"
+
+#: src/package-manager.py:60
+msgid "Original Author"
+msgstr "Originele auteur"
+
+#: src/package-manager.py:61
+msgid "CSS/JS Meister"
+msgstr "CSS/JS Meister"
+
+#: src/package-manager.py:62
+msgid "GUI Design & Usability"
+msgstr "Ontwerp en functionaliteit grafische gebruikersinterface"
+
+#: src/package-manager.py:63
+msgid "PiSi Authors"
+msgstr "PiSi auteurs"
+
+#: src/package-manager.py:63
+msgid "Authors of PiSi API"
+msgstr "Auteurs van PiSi API"
+
+#: src/package-manager.py:115
+msgid "Search: "
+msgstr "Zoek: "
+
+# mand tonen
+#: src/package-manager.py:119
+msgid "Show basket"
+msgstr "Toon mandje"
+
+#: src/package-manager.py:124 src/package-manager.py:232
+msgid "Install Package(s)"
+msgstr "Installeer pakket(ten)"
+
+#: src/package-manager.py:145
+msgid "Components"
+msgstr "Componenten"
+
+#: src/package-manager.py:173
+msgid "Loading Package List..."
+msgstr "Laden pakketlijst..."
+
+#: src/package-manager.py:209
+msgid ""
+"Package-manager needs to update package database. You need a network "
+"connection to update."
+msgstr ""
+"Pakketbeheer dient de pakketdatabase bij te werken. U heeft een "
+"netwerkverbinding om te updaten."
+
+#: src/package-manager.py:210
+msgid "Package database is empty"
+msgstr "Pakketdatabase is leeg"
+
+#: src/package-manager.py:248
+msgid "Remove Package(s)"
+msgstr "Verwijder pakket(ten)"
+
+#: src/package-manager.py:275
+msgid "Upgrade Package(s)"
+msgstr "Opwaarderen pakket(ten)"
+
+#: src/package-manager.py:315 src/CustomEventListener.py:47
+#: src/CustomEventListener.py:51
+msgid "Select all packages in this category"
+msgstr "Selecteer alle pakketten in deze categorie"
+
+#: src/package-manager.py:317 src/CustomEventListener.py:48
+msgid "Reverse package selections"
+msgstr "Keer pakketselectie om"
+
+#: src/package-manager.py:379
+msgid "N\\A"
+msgstr "N\\B"
+
+#: src/package-manager.py:397
+msgid "Description: "
+msgstr "Beschrijving: "
+
+#: src/package-manager.py:397
+msgid "Version: "
+msgstr "Versie: "
+
+#: src/package-manager.py:398
+msgid "Package Size: "
+msgstr "Pakketgrootte: "
+
+#: src/package-manager.py:398
+msgid "Homepage: "
+msgstr "Homepage: "
+
+#: src/package-manager.py:418 src/package-manager.py:698
+msgid "Search Results"
+msgstr "Zoekresultaten"
+
+# mand tonen
+#: src/package-manager.py:451
+msgid "Currently your basket is empty."
+msgstr "Momenteel is uw mandje leeg."
+
+#: src/package-manager.py:454 src/package-manager.py:462
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
+"van <b>%2</b>"
+
+#: src/package-manager.py:457
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr ""
+"met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
+
+# mand tonen
+#: src/package-manager.py:459 src/package-manager.py:467
+msgid "in your basket."
+msgstr "in uw mandje."
+
+#: src/package-manager.py:465
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr ""
+"met<b>%3</b> omgekeerde afhankelijkheden met een totale grootte van <b>%4</"
+"b> "
+
+#: src/package-manager.py:496
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten "
+"kunnen niet samen geïnstalleerd worden."
+
+#: src/package-manager.py:497 src/package-manager.py:507
+msgid "Conflict Error"
+msgstr "Conflict fout"
+
+#: src/package-manager.py:503
+msgid "The following packages conflicts:\n"
+msgstr "De volgende pakketten zijn in conflict:\n"
+
+#: src/package-manager.py:505
+msgid "%1 conflicts with: [%2]\n"
+msgstr "%1 in conflict met: [%2]\n"
+
+#: src/package-manager.py:506
+#, fuzzy
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+"\n"
+"Verwijder de volgende conflicterende pakketten?"
+
+#: src/package-manager.py:521 src/package-manager.py:582
+#: src/package-manager.py:719
+msgid "<b>Installing Package(s)</b>"
+msgstr "<b>Installeren pakket(ten)</b>"
+
+#: src/package-manager.py:531
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
+msgstr ""
+"<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
+
+#: src/package-manager.py:534
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>installed</b>."
+msgstr ""
+"Met de geselecteerde pakketten; zullen ook <b>%1</b> extra afhankelijkheden "
+"worden <b>geïnstalleerd</b>."
+
+#: src/package-manager.py:535
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
+msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>geïnstalleerd</b>."
+
+#: src/package-manager.py:538
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
+msgstr ""
+"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
+
+#: src/package-manager.py:541
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>upgraded</b>."
+msgstr ""
+" Met de geselecteerde pakketten; worden ook <b>%1</b> extra afhankelijkheden "
+"<b>opgewaardeerd</b>."
+
+#: src/package-manager.py:542
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
+msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>opgewaardeerd</b>."
+
+#: src/package-manager.py:545
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
+msgstr ""
+"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
+
+#: src/package-manager.py:548
+msgid ""
+" Selected packages have reverse dependencies. Because the reverse "
+"dependencies of the selected packages needs those packages to work; by "
+"removing the selected packages; <b>%1</b> reverse dependencies are also "
+"going to be <b>removed</b>. Please check your basket and make sure those are "
+"the packages you want to remove. Accidentally removing some reverse "
+"dependencies may break the system stability."
+msgstr ""
+"De selecteerde pakketten hebben omgekeerde afhankelijkheden. Omdat "
+"omgekeerde afhankelijkheden van de geselecteerde pakketten de pakketten "
+"nodig hebben om te functioneren; zullen, bij het verwijderen van de "
+"geselecteerde pakketten, <b>%1</b> omgekeerde afhankelijkheden worden "
+"<b>verwijderd</b>. Controleer alstublieft uw mandje en verzeker u ervan dat "
+"dit de pakketten zijn die u wilt verwijderen. Per ongeluk verwijderen van "
+"sommige omgekeerde afhankelijkheden kan de systeemsstabiliteit in gevaar "
+"brengen."
+
+#: src/package-manager.py:550
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
+msgstr "<br><br>In totaal zullen <b>%1</b> pakketten worden <b>verwijderd</b>."
+
+#: src/package-manager.py:552
+msgid "<br>Do you want to continue?</qt>"
+msgstr "<br>Wilt u doorgaan?</qt>"
+
+#: src/package-manager.py:574
+msgid "<b>Removing Package(s)</b>"
+msgstr "<b>Verwijderen pakket(ten)</b>"
+
+#: src/package-manager.py:591 src/package-manager.py:721
+msgid "<b>Upgrading Package(s)</b>"
+msgstr "<b>Opwaarderen pakket(ten)</b>"
+
+#: src/package-manager.py:682
+msgid "Others"
+msgstr "Anderen"
+
+#: src/package-manager.py:769 src/package-manager.py:861
+msgid "<b>Updating Repository</b>"
+msgstr "<b>Updaten repository</b>"
+
+#: src/package-manager.py:770
+msgid "Downloading package list of %1"
+msgstr "Downloaden pakketlijst van %1"
+
+#: src/package-manager.py:775
+msgid "Confirm"
+msgstr "Bevestig"
+
+#: src/package-manager.py:943
+msgid "Show Installed Packages"
+msgstr "Toon geïnstalleerde pakketten"
+
+#: src/package-manager.py:946
+msgid "Show New Packages"
+msgstr "Toon nieuwe pakketten"
+
+#: src/package-manager.py:948
+msgid "Show Upgradable Packages"
+msgstr "Toon op te waarderen pakketten"
+
+#: src/package-manager.py:982
+msgid "Package to install"
+msgstr "Te installeren pakket"
+
+#: src/package-manager.py:982
+msgid "Show main window on startup"
+msgstr "Toon hoofdvenster bij opstarten"
+
+#: src/package-manager.py:985
+msgid "Package Manager is already running!"
+msgstr "Pakketbeheer is al opgestart!"
+
+#: src/BalloonMessage.py:44
+msgid "Show Updates"
+msgstr "Toon updates"
+
+#: src/BalloonMessage.py:45
+msgid "Ignore"
+msgstr "Negeer"
+
+#: src/Progress.py:51
+msgid "downloaded ( total: %1 )"
+msgstr "gedownload (totaal: %1 )"
+
+#: src/Progress.py:78
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Voorbereiden PiSi...</b>"
+
+#: src/Progress.py:100
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Annuleren handeling...</b>"
+
+#: src/Progress.py:127 src/Progress.py:131
+msgid "Now %1 <b>%2</b> package"
+msgstr "Nu %1 <b>%2</b> pakket"
+
+#: src/Progress.py:141
+msgid "installed"
+msgstr "geïnstalleerd"
+
+#: src/Progress.py:143
+msgid "removed"
+msgstr "verwijderd"
+
+#: src/Progress.py:145
+msgid "upgraded"
+msgstr "opgewaardeerd"
+
+#: src/Progress.py:147
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 pakket %3"
+
+#: src/RepoDialog.py:72
+msgid "Repository Dialog"
+msgstr "Repository dialoog"
+
+#: src/RepoDialog.py:73
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/RepoDialog.py:75
+msgid "Repository &Address"
+msgstr "Repository &adres"
+
+#: src/RepoDialog.py:76
+msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr ""
+"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+
+#: src/RepoDialog.py:79
+msgid "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:80
+msgid "Repository &Name"
+msgstr "Repository &naam"
+
+#: src/RepoDialog.py:81
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
