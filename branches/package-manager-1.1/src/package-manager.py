@@ -331,7 +331,7 @@ class MainApplicationWidget(QWidget):
         kapp.restoreOverrideCursor()
 
     def createHTMLForPackages(self,packages):
-        result = ''
+        result = ""
         template ='''
         <!-- package start -->
         <div>
@@ -344,7 +344,7 @@ class MainApplicationWidget(QWidget):
         <div style="margin-left:25px;" class="package_info_content" id="package_ic%d">
         <p><b>%s</b>
         %s<br>
-        <b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b><a href=\"%s\">%s</a>
+        <b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b><a href=\"%s\">%s</a>
         </p>
         </div>
         </div>
@@ -353,8 +353,8 @@ class MainApplicationWidget(QWidget):
         '''
 
         index = 0
-        titleStyle = ''
-        style = ''
+        titleStyle = ""
+        style = ""
         packages.sort(key=string.lower)
 
         for app in packages:
@@ -366,10 +366,16 @@ class MainApplicationWidget(QWidget):
 
             size = 0L
             if self.state == remove_state:
-                package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
+                # first try to locate package information from repository databases
+                try:
+                    package, repo = pisi.context.packagedb.get_package_repo(app, pisi.itembyrepodb.repos)
+                except pisi.itembyrepodb.NotfoundError:
+                    # if it fails use provided information directly
+                    package = pisi.context.packagedb.get_package(app, pisi.itembyrepodb.installed)
+                    repo = i18n("N\A")
                 size = package.installedSize
             else:
-                package = pisi.context.packagedb.get_package(app)
+                package, repo = pisi.context.packagedb.get_package_repo(app, pisi.itembyrepodb.repos)
                 size = package.packageSize
 
             desc = package.description
@@ -380,7 +386,7 @@ class MainApplicationWidget(QWidget):
             if package.source:
                 homepage = package.source.homepage
             else:
-                homepage = 'http://paketler.pardus.org.tr'
+                homepage = i18n("N\A")
 
             if size:
                 tpl = pisi.util.human_readable_size(size)
@@ -394,19 +400,21 @@ class MainApplicationWidget(QWidget):
             else:
                 checkState = ""
 
-            curindex = index+1
+            curindex = index + 1
             if self.state == remove_state and app in unremovable_packages:
                 checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
                            disabled %s name="%s id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
             else:
                 checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
                            %s onclick="changeBackgroundColor(this)" name="%s" id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
-            
+
             iconSize = getIconSize()
             result += template % (checkbox, titleStyle,curindex,iconPath,iconSize,iconSize,app,summary,style,curindex,curindex,
-                                  i18n("Description: "),desc,i18n("Version: "),
-                                  version,i18n("Package Size: "),size,i18n("Homepage: "),
-                                  homepage,homepage)
+                                  i18n("Description: "), desc,
+                                  i18n("Version: "), version,
+                                  i18n("Repository: "), repo,
+                                  i18n("Package Size: "), size,
+                                  i18n("Homepage: "), homepage, homepage)
             index += 1
 
         return result
