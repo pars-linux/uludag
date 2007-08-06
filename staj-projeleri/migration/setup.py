@@ -64,7 +64,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     package_dir = {"":""},
-    application_data = [("migration", ["migration/migration.py", "migration/wizard.py", "migration/applythread.py", "migration/migration.png"]), ("migration/gui", ["migration/gui/__init__.py", "migration/gui/dirview.py", "migration/gui/filespage.py", "migration/gui/help.py", "migration/gui/optionspage.py", "migration/gui/progresspage.py", "migration/gui/sidebar.py", "migration/gui/userpage.py"]), ("migration/utility", ["migration/utility/__init__.py", "migration/utility/bookmark.py", "migration/utility/files.py", "migration/utility/info.py", "migration/utility/partition.py", "migration/utility/registry.py", "migration/utility/wall.py", "migration/utility/wall.py"]), ("help", ["help"])],
+    application_data = [("migration", ["migration/migration.py", "migration/wizard.py", "migration/applythread.py", "migration/migration.png"]), ("migration/gui", ["migration/gui/__init__.py", "migration/gui/dirview.py", "migration/gui/filespage.py", "migration/gui/help.py", "migration/gui/optionspage.py", "migration/gui/progresspage.py", "migration/gui/sidebar.py", "migration/gui/userpage.py"]), ("migration/utility", ["migration/utility/__init__.py", "migration/utility/account.py", "migration/utility/bookmark.py", "migration/utility/files.py", "migration/utility/info.py", "migration/utility/partition.py", "migration/utility/registry.py", "migration/utility/wall.py", "migration/utility/wall.py"]), ("help", ["help"])],
     executable_links = [("migration", "migration/migration.py")],
     i18n = ("po", ["migration", "migration/gui", "migration/utility"])
 )
