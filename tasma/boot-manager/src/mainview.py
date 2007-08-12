@@ -506,7 +506,8 @@ class widgetMain(QWidget):
             elif reply.id == BOOT_UNUSED:
                 self.widgetUnused.listKernels.clear()
                 for version in reply.data.split("\n"):
-                    self.widgetUnused.listKernels.insertItem(version)
+                    if version.strip():
+                        self.widgetUnused.listKernels.insertItem(version)
             elif reply.id == BOOT_REMOVE_UNUSED:
                 self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
         elif reply.command == "fail":
