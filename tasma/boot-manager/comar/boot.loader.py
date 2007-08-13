@@ -27,8 +27,8 @@ FAIL_NOPARDUSENTRY = _({
 })
 
 FAIL_NODEVICE = _({
-    "en": "No such device: %s",
-    "tr": "Böyle bir aygıt yok: %s",
+    "en": "No such device: '%s'",
+    "tr": "Böyle bir aygıt yok: '%s'",
 })
 
 FAIL_NOSYSTEM = _({
@@ -66,8 +66,8 @@ FAIL_NOKERNEL = _({
 })
 
 FAIL_KERNEL_IN_USE = _({
-    "en": "Kernel is in use or not installed: %s",
-    "tr": "Çekirdek kullanılıyor ya da yüklü değil: %s",
+    "en": "Kernel is in use or not installed: '%s'",
+    "tr": "Çekirdek kullanılıyor ya da yüklü değil: '%s'",
 })
 
 # Grub parser configuration
@@ -893,6 +893,7 @@ def listUnused():
     return "\n".join(kernels_unused)
 
 def removeUnused(version):
-    if version not in listUnused().split("\n"):
+    unused = [x for x in listUnused().split("\n") if x.strip()]
+    if version not in unused:
         fail(FAIL_KERNEL_IN_USE % version)
     removeKernel(version)
