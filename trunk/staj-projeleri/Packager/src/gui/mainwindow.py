@@ -6,16 +6,19 @@
 # TODO: pyqt - endswith/endsWith bug?
 # TODO: import ebuild?
 
+# PyKDE/PyQT imports
 from qt import *
 from kdeui import *
-from kdecore import KShortcut
+from kdecore import KShortcut, i18n
 from kparts import KParts
 from widgets import *
 
+# System imports
 import os
 import shutil
 from threading import Thread
 
+# PiSi imports
 import pisi.api
 from pisi.config import Options
 import pisi.ui
@@ -66,7 +69,7 @@ class MainWindow(KParts.MainWindow):
         self.bottomTabWidget2 = QHBox(self.twBottomTabs)
         self.teOutput = KTextEdit(self.bottomTabWidget2)
         self.teOutput.setReadOnly(True)
-        self.twBottomTabs.addTab(self.bottomTabWidget2, "IDE Output")
+        self.twBottomTabs.addTab(self.bottomTabWidget2, i18n("IDE Output"))
         
         # actions
         
@@ -74,24 +77,24 @@ class MainWindow(KParts.MainWindow):
         self.actionNew = KStdAction.openNew(self.new, self.actionCollection())
         self.actionOpen = KStdAction.open(self.open, self.actionCollection())
         self.actionSave = KStdAction.save(self.save, self.actionCollection())
-        self.actionSaveAll = KAction("Save All", "save_all", KShortcut(), self.saveAll, self.actionCollection())
+        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
         self.actionClose = KStdAction.close(self.closePacket, self.actionCollection())
         self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
 
 #        # build actions        
-        self.actionFetch = KAction("Fetch", "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection())
-        self.actionUnpack = KAction("Unpack", KShortcut(), self.unpackSlot, self.actionCollection())        
-        self.actionSetup = KAction("Setup", "configure", KShortcut(), self.setupSlot, self.actionCollection())
-        self.actionBuild = KAction("Build", "compfile", KShortcut(), self.buildSlot, self.actionCollection())
-        self.actionInstall = KAction("Install", KShortcut(), self.installSlot, self.actionCollection())
-        self.actionMakePackage = KAction("Make Package", "package", KShortcut(), self.makePackageSlot, self.actionCollection())
+        self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection())
+        self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection())        
+        self.actionSetup = KAction(i18n("Setup"), "configure", KShortcut(), self.setupSlot, self.actionCollection())
+        self.actionBuild = KAction(i18n("Build"), "compfile", KShortcut(), self.buildSlot, self.actionCollection())
+        self.actionInstall = KAction(i18n("Install"), KShortcut(), self.installSlot, self.actionCollection())
+        self.actionMakePackage = KAction(i18n("Make Package"), "package", KShortcut(), self.makePackageSlot, self.actionCollection())
         
         #automation actions
-        self.actionAddRelease = KAction("Add Release", "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection())
-        self.actionValidatePspec = KAction("Validate Pspec File", "ok", KShortcut(), self.validatePspecSlot, self.actionCollection())
-        self.actionCheckSHA1 = KAction("Check SHA1", KShortcut(), self.checkSHA1Slot, self.actionCollection())
-        self.actionComputeSHA1 = KAction("Compute SHA1", "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection())
-        self.actionDetectType = KAction("Detect File Type", "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
+        self.actionAddRelease = KAction(i18n("Add Release"), "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection())
+        self.actionValidatePspec = KAction(i18n("Validate Pspec File"), "ok", KShortcut(), self.validatePspecSlot, self.actionCollection())
+        self.actionCheckSHA1 = KAction(i18n("Check SHA1"), KShortcut(), self.checkSHA1Slot, self.actionCollection())
+        self.actionComputeSHA1 = KAction(i18n("Compute SHA1"), "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection())
+        self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
     
         # menubar popups
         self.popupFile = KPopupMenu(self)
@@ -120,15 +123,15 @@ class MainWindow(KParts.MainWindow):
         self.actionComputeSHA1.plug(popupAuto)
         self.actionDetectType.plug(popupAuto)
         
-        self.menuBar().insertItem("File", self.popupFile) # insertion
-        self.menuBar().insertItem("Build", self.popupBuild) # insertion
-        self.menuBar().insertItem("Automation", popupAuto)
-        self.menuBar().insertItem("Help", self.helpMenu())
+        self.menuBar().insertItem(i18n("File"), self.popupFile) # insertion
+        self.menuBar().insertItem(i18n("Build"), self.popupBuild) # insertion
+        self.menuBar().insertItem(i18n("Automation"), popupAuto)
+        self.menuBar().insertItem(i18n("Help"), self.helpMenu())
         
         # toolbar operations
         toolbar = self.toolBar()
         toolbar.setIconText(KToolBar.IconTextBottom)
-        toolbar.setLabel("Main toolbar")
+        toolbar.setLabel(i18n("Main toolbar"))
         self.actionNew.plug(toolbar)
         self.actionOpen.plug(toolbar)
         self.actionSave.plug(toolbar)
@@ -164,7 +167,7 @@ class MainWindow(KParts.MainWindow):
             pisi.api.init(database = True, options = self.options, ui = self.ui)
             
         except Exception, err:
-            print "Error during PiSi initialization: %s" % str(err)
+            print str(i18n("Error during PiSi initialization: %s")) % str(err)
             self.exit()
             
         self.pisithread = None
@@ -230,8 +233,8 @@ class MainWindow(KParts.MainWindow):
         self.connect(self.actionsTab, PYSIGNAL("changeName"), self.changeActionsTab)
         self.connect(self.pspecTab, PYSIGNAL("changeName"), self.changePspecTab)
 
-        self.twTabs.addTab(self.pspecTab, "Specification")
-        self.twTabs.addTab(self.actionsTab, "Actions")
+        self.twTabs.addTab(self.pspecTab, i18n("Specification"))
+        self.twTabs.addTab(self.actionsTab, i18n("Actions"))
         self.twTabs.setCurrentPage(0)
         
         self.enableOperations()
@@ -241,7 +244,7 @@ class MainWindow(KParts.MainWindow):
 	    # ask for directory of package - TODO: değiştirmeli mi?
         fileDialog = QFileDialog(self, "dialog", True)
         fileDialog.setMode(QFileDialog.DirectoryOnly)
-        fileDialog.setCaption("Select PiSi Source Package")
+        fileDialog.setCaption(i18n("Select PiSi Source Package"))
         if not fileDialog.exec_loop():
             return
         packageDir = str(fileDialog.selectedFile())
@@ -249,14 +252,14 @@ class MainWindow(KParts.MainWindow):
         try: 
             self.pspecFile = open(packageDir + "pspec.xml", "r") 
         except:
-            QMessageBox.warning(self, "Error", "No pspec.xml found.", QMessageBox.Ok)
+            QMessageBox.warning(self, i18n("Error"), i18n("No pspec.xml found."), QMessageBox.Ok)
             return
         self.pspecFile.close()
         
         try: 
             self.actionspyFile = open(packageDir + "actions.py", "r")
         except:
-            QMessageBox.warning(self, "Error", "No actions.py found.", QMessageBox.Ok)
+            QMessageBox.warning(self, i18n("Error"), i18n("No actions.py found."), QMessageBox.Ok)
             return
         self.actionspyFile.close()
         
@@ -280,12 +283,12 @@ class MainWindow(KParts.MainWindow):
         self.pspecTab = pspecWidget(self.twTabs, os.path.join(self.tempDir, "pspec.xml"))
         
         if self.pspecTab == None: 
-            QMessageBox.critical(self, "Invalid file", "pspec.xml is not valid or well-formed.")
+            QMessageBox.critical(self, i18n("Invalid file"), i18n("pspec.xml is not valid or well-formed."))
             return
         
         self.actionsTab = actionsWidget(self.twTabs, os.path.join(self.tempDir, "actions.py"))
-        self.twTabs.addTab(self.pspecTab, "Specification")
-        self.twTabs.addTab(self.actionsTab, "Actions")
+        self.twTabs.addTab(self.pspecTab, i18n("Specification"))
+        self.twTabs.addTab(self.actionsTab, i18n("Actions"))
         self.twTabs.setCurrentPage(0)
         
         #connections
@@ -296,13 +299,13 @@ class MainWindow(KParts.MainWindow):
     
     def save(self, all=False):
         if self.actionsTab == None or self.actionsTab == None:
-            KMessageBox.sorry(self, "There is no package to save. Create or Open a package first.", "No package")
+            KMessageBox.sorry(self, i18n("There is no package to save. Create or Open a package first."), i18n("No package"))
             return
         
         if self.realDir == None:
             fileDialog = QFileDialog(self, "dialog", True)
             fileDialog.setMode(QFileDialog.DirectoryOnly)
-            fileDialog.setCaption("Select PiSi Source Package Directory")
+            fileDialog.setCaption(i18n("Select PiSi Source Package Directory"))
             if not fileDialog.exec_loop():
                 return
             self.realDir = unicode(fileDialog.selectedFile())
@@ -433,7 +436,7 @@ class MainWindow(KParts.MainWindow):
     
     def addReleaseSlot(self):
         rel = str(int(self.pspecTab.pspec.history[0].release) + 1)
-        dlg = newListViewDialog(self, ["Release", "Date", "Version", "Comment", "Name", "E-mail", "Type"], "Add Release", [rel, "Date", "Version", "Comment", "Name", "E-mail", "Type"])
+        dlg = newListViewDialog(self, [i18n("Release"), i18n("Date"), i18n("Version"), i18n("Comment"), i18n("Name"), i18n("E-mail"), i18n("Type")], i18n("Add Release"), [rel, i18n("Date"), i18n("Version"), i18n("Comment"), i18n("Name"), i18n("E-mail"), i18n("Type")])
         if dlg.exec_loop() == KDialog.Rejected:
             return
         
@@ -456,18 +459,18 @@ class MainWindow(KParts.MainWindow):
     
     def validatePspecSlot(self):
         if self.pspecTab.where() == "design":
-            KMessageBox.information(self, "Pspec file is valid.", "Valid File")
+            KMessageBox.information(self, i18n("Pspec file is valid."), i18n("Valid File"))
             return
         
         if not self.pspecTab.syncFromCode():
-            KMessageBox.sorry(self, "Pspec file is not valid.", "Invalid File")
+            KMessageBox.sorry(self, i18n("Pspec file is not valid."), i18n("Invalid File"))
         else:
-            KMessageBox.information(self, "Pspec file is valid.", "Valid File")
+            KMessageBox.information(self, i18n("Pspec file is valid."), i18n("Valid File"))
     
     def checkSHA1Slot(self):
         down, loc = self.pspecTab.isSourceDownloaded()
         if not down:
-            KMessageBox.information(self, "Please fetch the source first.")
+            KMessageBox.information(self, i18n("Please fetch the source first."))
             return
 #            ans = KMessageBox.questionYesNo(self, "Source must be downloaded first. Do you want to download now?", "Hmm")
 #            if ans == KMessageBox.No:
@@ -477,7 +480,7 @@ class MainWindow(KParts.MainWindow):
         
         old = str(self.pspecTab.sourcePage.sourceleSHA1.text())
         if old.strip() == "":
-            KMessageBox.information(self, "SHA1 field must be entered for check.")
+            KMessageBox.information(self, i18n("SHA1 field must be entered for check."))
             return
         import sha
         
@@ -486,15 +489,15 @@ class MainWindow(KParts.MainWindow):
         temp.close()
         
         if old != new:
-            KMessageBox.information(self, "Current SHA1 (%s) is invalid.\n\nValid one is %s" % (old, new), "Invalid SHA1")
+            KMessageBox.information(self, i18n("Current SHA1 (%s) is invalid.\n\nValid one is %s") % (old, new), i18n("Invalid SHA1"))
         else:
-            KMessageBox.information(self, "Current SHA1 is valid.", "Valid SHA1")        
+            KMessageBox.information(self, i18n("Current SHA1 is valid."), i18n("Valid SHA1"))
 
     
     def computeSHA1Slot(self):
         down, loc = self.pspecTab.isSourceDownloaded()
         if not down:
-            KMessageBox.information(self, "Please fetch the source first.")
+            KMessageBox.information(self, i18n("Please fetch the source first."))
             return
 #            ans = KMessageBox.questionYesNo(self, "Source must be downloaded first. Do you want to download now?", "Hmm")
 #            if ans == KMessageBox.No:
@@ -507,7 +510,7 @@ class MainWindow(KParts.MainWindow):
         new = sha.new(temp.read()).hexdigest()
         temp.close()
         
-        KMessageBox.information(self, "SHA1 is %s.\n\nThis will be set as current SHA1." % new, "SHA1 computed")
+        KMessageBox.information(self, i18n("SHA1 is %s.\n\nThis will be set as current SHA1.") % new, i18n("SHA1 computed"))
         self.pspecTab.sourcePage.sourceleSHA1.setText(new)
         
     def detectTypeSlot(self):
@@ -515,7 +518,7 @@ class MainWindow(KParts.MainWindow):
         
         down, loc = self.pspecTab.isSourceDownloaded()
         if not down:
-            KMessageBox.information(self, "Please fetch the source first.")
+            KMessageBox.information(self, i18n("Please fetch the source first."))
             return
 #            ans = KMessageBox.questionYesNo(self, "Source must be downloaded first. Do you want to download now?", "Hmm")
 #            if ans == KMessageBox.No:
@@ -527,7 +530,7 @@ class MainWindow(KParts.MainWindow):
         type = com.read()
         com.close()
         
-        KMessageBox.information(self, "File type is: \"%s\".\nThis will be set as the current file type." % types[type.strip()], "Type detected")
+        KMessageBox.information(self, i18n("File type is: \"%s\".\nThis will be set as the current file type.") % types[type.strip()], i18n("Type detected"))
         self.pspecTab.sourcePage.sourceleType.setText(types[type.strip()])
     
 class PisiThread(Thread):
@@ -536,9 +539,9 @@ class PisiThread(Thread):
          from cgi import escape
          try:
              pisi.api.build_until(self.path, self.stage)
-             self.output.append("\n=> <b>Succesfully finished.</b>\n\n")
+             self.output.append(i18n("\n=> <b>Succesfully finished.</b>\n\n"))
          except Exception, inst:
-             self.output.append("\n<font color=\"red\">*** Error: %s</font>\n\n" % unicode(escape(inst)))
+             self.output.append(i18n("\n<font color=\"red\">*** Error: %s</font>\n\n") % unicode(escape(inst)))
              return
          del self.output
          
