@@ -63,6 +63,21 @@ def windowsInfo(sources):
     profilepath = getMozillaProfile(possiblepath)
     if profilepath:
         sources["Firefox Profile Path"] = profilepath
+    # Thunderbird:
+    possiblepath = os.path.join(sources["AppData Path"], "Thunderbird")
+    profilepath = getMozillaProfile(possiblepath)
+    if profilepath:
+        sources["Thunderbird Profile Path"] = profilepath
+    # Messenger Contacts:
+    possiblepath = os.path.join(sources["Home Path"], "Contacts")
+    if os.path.isdir(possiblepath):
+        sources["Contacts Path"] = possiblepath
+    # Google Talk:
+    try:
+        key = hive.getKey("Software\\Google\\Google Talk")
+        sources["GTalk Key"] = key
+    except:
+        pass
     # Return Info:
     return sources
 

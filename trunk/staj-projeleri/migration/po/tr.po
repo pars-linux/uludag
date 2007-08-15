@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-12 17:59+0300\n"
-"PO-Revision-Date: 2007-07-12 17:59+0300\n"
+"POT-Creation-Date: 2007-08-15 12:51+0300\n"
+"PO-Revision-Date: 2007-08-15 12:54+0300\n"
 "Last-Translator: Murat Ongan\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,50 +16,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: migration/applythread.py:41
+#: migration/applythread.py:42
 msgid "Wallpaper changed."
 msgstr "Duvar kağıdı değiştirildi."
 
-#: migration/applythread.py:49
+#: migration/applythread.py:50
 msgid "Firefox bookmarks cannot be loaded."
 msgstr "Firefox yer imleri okunamadı."
 
-#: migration/applythread.py:51
+#: migration/applythread.py:52
 msgid "Firefox bookmarks loaded."
 msgstr "Firefox yer imleri okundu."
 
-#: migration/applythread.py:56
+#: migration/applythread.py:57
 msgid "Internet Explorer favorites cannot be loaded."
 msgstr "Internet Explorer sık kullanılanları yüklenemedi."
 
-#: migration/applythread.py:58
+#: migration/applythread.py:59
 msgid "Internet Explorer favorites loaded."
 msgstr "Internet Explorer sık kullanılanları yüklendi."
 
-#: migration/applythread.py:64
+#: migration/applythread.py:65
 msgid "Bookmarks saved."
 msgstr "Yer imleri kaydedildi."
 
-#: migration/applythread.py:70
+#: migration/applythread.py:74
+msgid "GTalk accounts cannot be loaded."
+msgstr "GTalk hesapları okunamadı."
+
+#: migration/applythread.py:76
+msgid "GTalk accounts loaded."
+msgstr "GTalk hesapları okundu."
+
+#: migration/applythread.py:82
+msgid "MSN accounts cannot be loaded."
+msgstr "MSN hesapları okunamadı."
+
+#: migration/applythread.py:84
+msgid "MSN accounts loaded."
+msgstr "MSN hesapları okundu."
+
+#: migration/applythread.py:90
+msgid "Thunderbird accounts cannot be loaded."
+msgstr "Thunderbird hesapları okunamadı."
+
+#: migration/applythread.py:92
+msgid "Thunderbird accounts loaded."
+msgstr "Thunderbird hesapları okundu."
+
+#: migration/applythread.py:100
+msgid "Accounts saved."
+msgstr "Hesaplar kaydedildi."
+
+#: migration/applythread.py:106
 #, python-format
 msgid "Link '%s' created."
 msgstr "'%s' linki oluşturuldu."
 
-#: migration/applythread.py:79
+#: migration/applythread.py:115
 msgid "Nothing done, because no option selected. You can close the wizard..."
 msgstr ""
 "Hiçbir değişiklik seçilmediği için işlem yapılmadı. Uygulamayı "
 "kapatabilirsiniz."
 
-#: migration/applythread.py:81 migration/applythread.py:83
+#: migration/applythread.py:117 migration/applythread.py:119
 msgid "All operations completed. You can close the wizard..."
 msgstr "Tüm işlemler tamamlandı. Uygulamadan çıkabilirsiniz."
 
-#: migration/applythread.py:89 migration/gui/optionspage.py:26
+#: migration/applythread.py:125 migration/gui/optionspage.py:26
 msgid "Wallpaper"
 msgstr "Duvar Kağıdı"
 
-#: migration/applythread.py:93
+#: migration/applythread.py:129 migration/gui/optionspage.py:89
+msgid "Accounts"
+msgstr "Hesaplar"
+
+#: migration/applythread.py:131
 msgid "Links"
 msgstr "Bağlantılar"
 
@@ -77,39 +109,43 @@ msgstr ""
 msgid "Developer and Current Maintainer"
 msgstr "Geliştirici ve Sorumlu"
 
-#: migration/wizard.py:38
+#: migration/wizard.py:39
 msgid "Pardus Migration Tool"
 msgstr "Pardus Göç Aracı"
 
-#: migration/wizard.py:41
+#: migration/wizard.py:42
 msgid "Next"
 msgstr "İleri"
 
-#: migration/wizard.py:43
+#: migration/wizard.py:44
 msgid "Finish"
 msgstr "Son"
 
-#: migration/wizard.py:48 migration/gui/sidebar.py:26
+#: migration/wizard.py:49 migration/gui/sidebar.py:26
 msgid "Selecting User"
 msgstr "Kullanıcının Seçilmesi"
 
-#: migration/wizard.py:52 migration/wizard.py:141 migration/gui/sidebar.py:26
+#: migration/wizard.py:53 migration/wizard.py:152 migration/gui/sidebar.py:26
 msgid "Selecting Options"
 msgstr "Ayarların Seçilmesi"
 
-#: migration/wizard.py:55 migration/wizard.py:145 migration/gui/sidebar.py:26
+#: migration/wizard.py:56 migration/wizard.py:156 migration/gui/sidebar.py:26
 msgid "Selecting Files"
 msgstr "Dosyaların Seçilmesi"
 
-#: migration/wizard.py:58 migration/gui/sidebar.py:26
+#: migration/wizard.py:59 migration/gui/sidebar.py:26
 msgid "Applying Changes"
 msgstr "Değişikliklerin Uygulanması"
 
-#: migration/wizard.py:114
+#: migration/wizard.py:65
+msgid "Migration Tool Help"
+msgstr "Göç Aracı Yardımı"
+
+#: migration/wizard.py:125
 msgid "Step"
 msgstr "Adım"
 
-#: migration/wizard.py:122
+#: migration/wizard.py:133
 msgid ""
 "Migration tool couldn't find any old users in your computer. You can't use "
 "this aplication."
@@ -117,32 +153,32 @@ msgstr ""
 "Göç aracı, bilgisayarınızda önceden var olan bir kullanıcı bulamadı. "
 "Uygulamayı kullanamazsınız."
 
-#: migration/wizard.py:123
+#: migration/wizard.py:134
 msgid "No User"
 msgstr "Kullanıcı Yok"
 
-#: migration/wizard.py:160 migration/wizard.py:176 migration/wizard.py:181
-#: migration/wizard.py:194
+#: migration/wizard.py:168 migration/wizard.py:180 migration/wizard.py:185
+#: migration/wizard.py:198
 msgid "Warning!"
 msgstr "Dikkat!"
 
-#: migration/wizard.py:160
+#: migration/wizard.py:168
 msgid "Firefox is open. Please close it first to continue..."
 msgstr "Firefox şu anda açık. Devam etmeden önce Firefox'u kapatmalısınız..."
 
-#: migration/wizard.py:176
+#: migration/wizard.py:180
 #, python-format
 msgid "Folder '%s' cannot be created, please choose another folder!"
 msgstr "'%s' dizinini yaratılamadı. Lütfen farklı bir dizin seçiniz!"
 
-#: migration/wizard.py:181
+#: migration/wizard.py:185
 #, python-format
 msgid ""
 "You don't have permission to write to folder '%s', please choose another "
 "folder!"
 msgstr "'%s' dizinine yazma hakkınız yok. Lütfen farklı bir dizin seçiniz!"
 
-#: migration/wizard.py:194
+#: migration/wizard.py:198
 #, python-format
 msgid ""
 "Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
@@ -170,6 +206,18 @@ msgstr "Firefox yer imleri"
 #: migration/gui/optionspage.py:83
 msgid "Internet Explorer favorites"
 msgstr "Internet Explorer sık kullanılanları"
+
+#: migration/gui/optionspage.py:96
+msgid "MSN Accounts"
+msgstr "MSN Hesapları"
+
+#: migration/gui/optionspage.py:102
+msgid "GTalk Accounts"
+msgstr "GTalk Hesapları"
+
+#: migration/gui/optionspage.py:108
+msgid "Thunderbird Accounts"
+msgstr "Thunderbird Hesapları"
 
 #: migration/gui/userpage.py:25
 msgid ""

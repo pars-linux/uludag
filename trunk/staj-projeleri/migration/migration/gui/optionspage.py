@@ -90,18 +90,24 @@ class OptionsPage(QWidget):
             self.Accounts.setColumnLayout(0, Qt.Vertical)
             self.AccountsLayout = QVBoxLayout(self.Accounts.layout())
             self.lay.addWidget(self.Accounts)
-            # GTalk Accounts:
-            if sources.has_key("GTalk Key"):
-                self.GTalk = QCheckBox(self.Accounts, "GTalk")
-                self.GTalk.setText(i18n("GTalk Accounts"))
-                self.GTalk.setChecked(True)
-                self.AccountsLayout.addWidget(self.GTalk)
             # MSN Accounts:
             if sources.has_key("Contacts Path"):
                 self.MSN = QCheckBox(self.Accounts, "MSN")
                 self.MSN.setText(i18n("MSN Accounts"))
                 self.MSN.setChecked(True)
                 self.AccountsLayout.addWidget(self.MSN)
+            # GTalk Accounts:
+            if sources.has_key("GTalk Key"):
+                self.GTalk = QCheckBox(self.Accounts, "GTalk")
+                self.GTalk.setText(i18n("GTalk Accounts"))
+                self.GTalk.setChecked(True)
+                self.AccountsLayout.addWidget(self.GTalk)
+            # Thunderbird Accounts:
+            if sources.has_key("Thunderbird Profile Path"):
+                self.TB = QCheckBox(self.Accounts, "TB")
+                self.TB.setText(i18n("Thunderbird Accounts"))
+                self.TB.setChecked(True)
+                self.AccountsLayout.addWidget(self.TB)
         # Spacer:
         spacer = QSpacerItem(1,1,QSizePolicy.Minimum,QSizePolicy.Expanding)
         self.lay.addItem(spacer)
@@ -117,6 +123,7 @@ class OptionsPage(QWidget):
                  ("FFBookmarks", "Firefox Profile Path"),
                  ("oldRadio", "Wallpaper Path"),
                  ("GTalk", "GTalk Key"),
+                 ("TB", "Thunderbird Profile Path"),
                  ("MSN", "Contacts Path")]
         for widgetname, dictname in items:
             item = self.child(widgetname)

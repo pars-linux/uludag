@@ -64,8 +64,9 @@ class ApplyThread:
             else:
                 self._wizard.progresspage.go(i18n("Bookmarks saved."), self._wizard.progresspage.OK, 1000)
         # Accounts:
-        if self._wizard.options.has_key("GTalk Key") or self._wizard.options.has_key("Contacts Path"):
+        if self._wizard.options.has_key("GTalk Key") or self._wizard.options.has_key("Contacts Path") or self._wizard.options.has_key("Thunderbird Profile Path"):
             account = Account()
+            # GTalk Accounts:
             if self._wizard.options.has_key("GTalk Key"):
                 try:
                     account.getGTalkAccounts(self._wizard.options["GTalk Key"])
@@ -73,6 +74,7 @@ class ApplyThread:
                     self._wizard.progresspage.go(i18n("GTalk accounts cannot be loaded."), self._wizard.progresspage.WARNING, 0)
                 else:
                     self._wizard.progresspage.go(i18n("GTalk accounts loaded."), self._wizard.progresspage.OK, 0)
+            # MSN Messenger Accounts:
             if self._wizard.options.has_key("Contacts Path"):
                 try:
                     account.getMSNAccounts(self._wizard.options["Contacts Path"])
@@ -80,8 +82,18 @@ class ApplyThread:
                     self._wizard.progresspage.go(i18n("MSN accounts cannot be loaded."), self._wizard.progresspage.WARNING, 0)
                 else:
                     self._wizard.progresspage.go(i18n("MSN accounts loaded."), self._wizard.progresspage.OK, 0)
+            # Thunderbird Accounts:
+            if self._wizard.options.has_key("Thunderbird Profile Path"):
+                try:
+                    account.getTBAccounts(self._wizard.options["Thunderbird Profile Path"])
+                except:
+                    self._wizard.progresspage.go(i18n("Thunderbird accounts cannot be loaded."), self._wizard.progresspage.WARNING, 0)
+                else:
+                    self._wizard.progresspage.go(i18n("Thunderbird accounts loaded."), self._wizard.progresspage.OK, 0)
             try:
+                account.yaz()
                 account.setKopeteAccounts()
+                account.setKMailAccounts()
             except Exception, err:
                 self._wizard.progresspage.go(err, self._wizard.progresspage.ERROR, 1000)
             else:
@@ -113,7 +125,7 @@ class ApplyThread:
             self._wizard.progresspage.addOperation(i18n("Wallpaper"), os.path.getsize(self._wizard.options["Wallpaper Path"]))
         if self._wizard.options.has_key("Firefox Profile Path") or self._wizard.options.has_key("Favorites Path"):
             self._wizard.progresspage.addOperation(i18n("Bookmarks"), 1000)
-        if self._wizard.options.has_key("GTalk Key"):
+        if self._wizard.options.has_key("GTalk Key") or self._wizard.options.has_key("Contacts Path") or self._wizard.options.has_key("Thunderbird Profile Path"):
             self._wizard.progresspage.addOperation(i18n("Accounts"), 1000)
         if self._wizard.options.has_key("links"):
             self._wizard.progresspage.addOperation(i18n("Links"), len(self._wizard.options["links"]) * 1000)
