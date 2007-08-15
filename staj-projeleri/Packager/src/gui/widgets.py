@@ -2,6 +2,7 @@
 
 from qt import *
 from kdeui import *
+from kdecore import i18n
 
 from pisi import specfile as spec
 from pisi.dependency import Dependency
@@ -22,11 +23,11 @@ class pspecWidget(QWidget):
             self.pspec.read(self.fileLocation)
 
         # code and design buttons
-        self.btnDesign = KPushButton("Design", self)
+        self.btnDesign = KPushButton(i18n("Design"), self)
         self.btnDesign.setToggleButton(True)
         self.btnDesign.setOn(True)
         self.btnDesign.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        self.btnCode = KPushButton("Code", self)
+        self.btnCode = KPushButton(i18n("Code"), self)
         self.btnCode.setToggleButton(True)    
         self.btnCode.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         
@@ -55,9 +56,9 @@ class pspecWidget(QWidget):
         self.historyPage = historyWidget(self.toolBox)
                 
         # inclusion to toolbox
-        self.toolBox.addItem(self.sourcePage, "Source")
-        self.toolBox.addItem(self.packagePage, "Package(s)")
-        self.toolBox.addItem(self.historyPage, "History")
+        self.toolBox.addItem(self.sourcePage, i18n("Source"))
+        self.toolBox.addItem(self.packagePage, i18n("Package(s)"))
+        self.toolBox.addItem(self.historyPage, i18n("History"))
         
         from editors import editor as ed
         
@@ -115,7 +116,7 @@ class pspecWidget(QWidget):
     def designWillOpen(self):
 
         if not self.syncFromCode():
-            KMessageBox.sorry(self, "Specification is not valid or well-formed.", "Invalid XML Code")
+            KMessageBox.sorry(self, i18n("Specification is not valid or well-formed."), i18n("Invalid XML Code"))
             self.btnDesign.setOn(False)
             self.btnCode.setOn(True)
             return
@@ -165,7 +166,7 @@ class pspecWidget(QWidget):
         try:
             self.get()
         except Exception, err:
-            KMessageBox.error(self, str(err), "Error during syncronisation")
+            KMessageBox.error(self, str(err), i18n("Error during syncronisation"))
             return
         
         editFile = self.fileLocation
@@ -199,19 +200,19 @@ class sourceWidget(QWidget):
         QWidget.__init__(self, parent)
         self.listviewHeight = 140
         self.pageLayout = QVBoxLayout(self, 7, -1)
-        sourceGroupBox = QGroupBox("General", self)
+        sourceGroupBox = QGroupBox(i18n("General"), self)
         sourceGroupBox.setFlat(True)
         sourceGroupBox.setAlignment(Qt.AlignHCenter)
         sourceGroupBox.setColumnLayout(0, Qt.Vertical) # hayati!
         sourceGridLayout = QGridLayout(sourceGroupBox.layout(), 0, 0, 5)
         
         #general information
-        sourcelblName = QLabel("Name:", sourceGroupBox)
-        sourcelblHomepage = QLabel("Homepage:", sourceGroupBox)
-        sourcelblLicense = QLabel("License:", sourceGroupBox)
-        sourcelblIsA = QLabel("Is a:", sourceGroupBox)
-        sourcelblPartOf = QLabel("Part of:", sourceGroupBox)
-        sourcelblPackager = QLabel("Packager:", sourceGroupBox)
+        sourcelblName = QLabel(i18n("Name:"), sourceGroupBox)
+        sourcelblHomepage = QLabel(i18n("Homepage:"), sourceGroupBox)
+        sourcelblLicense = QLabel(i18n("License:"), sourceGroupBox)
+        sourcelblIsA = QLabel(i18n("Is a:"), sourceGroupBox)
+        sourcelblPartOf = QLabel(i18n("Part of:"), sourceGroupBox)
+        sourcelblPackager = QLabel(i18n("Packager:"), sourceGroupBox)
         self.sourceleName = KLineEdit(sourceGroupBox)
         self.sourceleHomepage = KLineEdit(sourceGroupBox)
         self.sourceleLicense = KLineEdit(sourceGroupBox)
@@ -248,11 +249,11 @@ class sourceWidget(QWidget):
         #archive section
         sourceArchiveWidget = QWidget(sourceTabWidget)
         sourceArchiveLayout = QGridLayout(sourceArchiveWidget, 0, 0, 5, 15)
-        sourcelblURI = QLabel("URI:", sourceArchiveWidget)
+        sourcelblURI = QLabel(i18n("URI:"), sourceArchiveWidget)
         self.sourceleURI = KLineEdit(sourceArchiveWidget)
         sourcelblSHA1 = QLabel("SHA1:", sourceArchiveWidget)
         self.sourceleSHA1 = KLineEdit(sourceArchiveWidget)
-        sourcelblType = QLabel("Type:", sourceArchiveWidget)
+        sourcelblType = QLabel(i18n("Type:"), sourceArchiveWidget)
         self.sourceleType = KLineEdit(sourceArchiveWidget)
         sourceArchiveLayout.addWidget(sourcelblURI, 0, 0)
         sourceArchiveLayout.addWidget(self.sourceleURI, 0, 1)
@@ -260,19 +261,19 @@ class sourceWidget(QWidget):
         sourceArchiveLayout.addWidget(self.sourceleSHA1, 1, 1)
         sourceArchiveLayout.addWidget(sourcelblType, 2, 0)
         sourceArchiveLayout.addWidget(self.sourceleType, 2, 1)
-        sourceTabWidget.addTab(sourceArchiveWidget, "Archive")
+        sourceTabWidget.addTab(sourceArchiveWidget, i18n("Archive"))
         
         #summary and desc. section
-        self.sourceSummary = newListView(sourceTabWidget, ["Language", "Summary", "Description"], self.listviewHeight)
-        sourceTabWidget.addTab(self.sourceSummary, "Summary & Description")
+        self.sourceSummary = newListView(sourceTabWidget, [i18n("Language"), i18n("Summary"), i18n("Description")], self.listviewHeight)
+        sourceTabWidget.addTab(self.sourceSummary, i18n("Summary & Description"))
         
         #build deps. section
-        self.sourceBuildDeps = newListView(sourceTabWidget, ["Condition", "Dependency"], self.listviewHeight)
-        sourceTabWidget.addTab(self.sourceBuildDeps, "Build Dependencies")
+        self.sourceBuildDeps = newListView(sourceTabWidget, [i18n("Condition"), i18n("Dependency")], self.listviewHeight)
+        sourceTabWidget.addTab(self.sourceBuildDeps, i18n("Build Dependencies"))
         
         #patches section
-        self.sourcePatches = newListView(sourceTabWidget, ["Level", "Patch"], self.listviewHeight)
-        sourceTabWidget.addTab(self.sourcePatches, "Patches")
+        self.sourcePatches = newListView(sourceTabWidget, [i18n("Level"), i18n("Patch")], self.listviewHeight)
+        sourceTabWidget.addTab(self.sourcePatches, i18n("Patches"))
         
         # inclusion of general info. and other tabs
         self.pageLayout.addWidget(sourceGroupBox)
@@ -315,7 +316,7 @@ class sourceWidget(QWidget):
     
     def get(self, source):
         if str(self.sourceleName.text()).strip() == "":
-            raise Exception, "Source name must be filled"
+            raise Exception, i18n("Source name must be filled.")
         
         source.name = str(self.sourceleName.text()).strip()
         source.homepage = str(self.sourceleHomepage.text()).strip()
@@ -381,17 +382,17 @@ class packageWidget(QWidget):
             QWidget.__init__(self, parent)
             self.listviewHeight = 140
             self.pageLayout = QVBoxLayout(self, 7, -1)
-            groupBox = QGroupBox("General", self)
+            groupBox = QGroupBox(i18n("General"), self)
             groupBox.setFlat(True)
             groupBox.setAlignment(Qt.AlignHCenter)
             groupBox.setColumnLayout(0, Qt.Vertical) # hayati!
             gridLayout = QGridLayout(groupBox.layout(), 0, 0, 5)
             
             #general information
-            lblName = QLabel("Name:", groupBox)
-            lblLicense = QLabel("License:", groupBox)
-            lblIsA = QLabel("Is a:", groupBox)
-            lblPartOf = QLabel("Part of:", groupBox)
+            lblName = QLabel(i18n("Name:"), groupBox)
+            lblLicense = QLabel(i18n("License:"), groupBox)
+            lblIsA = QLabel(i18n("Is a:"), groupBox)
+            lblPartOf = QLabel(i18n("Part of:"), groupBox)
             self.leName = KLineEdit(groupBox)
             self.leLicense = KLineEdit(groupBox)
             self.leIsA = KLineEdit(groupBox)
@@ -420,28 +421,28 @@ class packageWidget(QWidget):
             TabWidget = KTabWidget(self)
             
             #summary and desc. section
-            self.summary = newListView(TabWidget, ["Language", "Summary", "Description"], self.listviewHeight)
-            TabWidget.addTab(self.summary, "Summary & Description")
+            self.summary = newListView(TabWidget, [i18n("Language"), i18n("Summary"), i18n("Description")], self.listviewHeight)
+            TabWidget.addTab(self.summary, i18n("Summary & Description"))
             
             #runtime deps. section
-            self.runtimeDeps = newListView(TabWidget, ["Condition", "Dependency"], self.listviewHeight)
-            TabWidget.addTab(self.runtimeDeps, "Runtime Dependencies")
+            self.runtimeDeps = newListView(TabWidget, [i18n("Condition"), i18n("Dependency")], self.listviewHeight)
+            TabWidget.addTab(self.runtimeDeps, i18n("Runtime Dependencies"))
             
             #files section
-            self.files = newListView(TabWidget, ["Type", "Permanent?", "Path"], self.listviewHeight)
-            TabWidget.addTab(self.files, "Files")
+            self.files = newListView(TabWidget, [i18n("Type"), i18n("Permanent?"), i18n("Path")], self.listviewHeight)
+            TabWidget.addTab(self.files, i18n("Files"))
             
             #additional files section
-            self.addFiles = newListView(TabWidget, ["Owner", "Permission", "Target", "File"], self.listviewHeight)
-            TabWidget.addTab(self.addFiles, "Additional Files")
+            self.addFiles = newListView(TabWidget, [i18n("Owner"), i18n("Permission"), i18n("Target"), i18n("File")], self.listviewHeight)
+            TabWidget.addTab(self.addFiles, i18n("Additional Files"))
             
             #Conflicts section
-            self.conflicts = newListView(TabWidget, ["Condition", "Package"], self.listviewHeight)
-            TabWidget.addTab(self.conflicts, "Conflicts")
+            self.conflicts = newListView(TabWidget, [i18n("Condition"), i18n("Package")], self.listviewHeight)
+            TabWidget.addTab(self.conflicts, i18n("Conflicts"))
             
             #COMAR Scripts section
-            self.comar = newListView(TabWidget, ["Provides", "Script"], self.listviewHeight)
-            TabWidget.addTab(self.comar, "COMAR Scripts")
+            self.comar = newListView(TabWidget, [i18n("Provides"), i18n("Script")], self.listviewHeight)
+            TabWidget.addTab(self.comar, i18n("COMAR Scripts"))
             
             # inclusion of general info. and other tabs
             self.pageLayout.addWidget(groupBox)
@@ -596,8 +597,8 @@ class packageWidget(QWidget):
         topLayout = QHBoxLayout(pageLayout, 5)
         
         # add/remove package buttons
-        btnAddPackage = KPushButton("Add New Package", self)
-        btnRemovePackage = KPushButton("Remove Package", self)
+        btnAddPackage = KPushButton(i18n("Add New Package"), self)
+        btnRemovePackage = KPushButton(i18n("Remove Package"), self)
         topSpacer = QSpacerItem(250, 20, QSizePolicy.Expanding)
         topLayout.addWidget(btnAddPackage)
         topLayout.addWidget(btnRemovePackage)
@@ -647,7 +648,7 @@ class packageWidget(QWidget):
     
     def removePackageSlot(self):
         if self.twPackages.count() == 1:
-            KMessageBox.error(self, "At least one package must exist.", "Error")
+            KMessageBox.error(self, i18n("At least one package must exist."), i18n("Error"))
             return
         self.twPackages.removePage(self.twPackages.currentPage())
         
@@ -656,7 +657,7 @@ class historyWidget(QWidget):
         QWidget.__init__(self, parent)
         self.pageLayout = QHBoxLayout(self)
         
-        self.history = newListView(self, ["Release", "Date", "Version", "Comment", "Name", "E-mail", "Type"])
+        self.history = newListView(self, [i18n("Release"), i18n("Date"), i18n("Version"), i18n("Comment"), i18n("Name"), i18n("E-mail"), i18n("Type")])
         self.pageLayout.addWidget(self.history)
         
     def addRelease(self, rel, reverse=False):
@@ -728,17 +729,17 @@ class actionsWidget(QWidget):
         
 def getConstraint(dep):
     if dep.version:
-        constraint = "Version = " + dep.version
+        constraint = i18n("Version") + " = " + dep.version
     elif dep.versionTo:
-        constraint = "Version <= " + dep.versionTo
+        constraint = i18n("Version") + " <= " + dep.versionTo
     elif dep.versionFrom:
-        constraint = "Version >= " + dep.versionFrom
+        constraint = i18n("Version") + " >= " + dep.versionFrom
     elif dep.release:
-        constraint = "Release = " + dep.release
+        constraint = i18n("Release") + " = " + dep.release
     elif dep.releaseTo:
-        constraint = "Release <= " + dep.releaseTo
+        constraint = i18n("Release") + " <= " + dep.releaseTo
     elif dep.releaseFrom:
-        constraint = "Release >= " + dep.releaseFrom
+        constraint = i18n("Release") + " >= " + dep.releaseFrom
     else:
         constraint = ""
     return constraint
@@ -747,17 +748,17 @@ def getConstraintReverse(condition, package, dep):
     dep.version = dep.versionFrom = dep.versionTo = None
     dep.release = dep.releaseFrom = dep.releaseTo = None
     
-    if condition.startswith("Version = "):
+    if condition.startswith(i18n("Version") + " = "):
         dep.version = condition.split("= ")[1]
-    elif condition.startswith("Version <= "):
+    elif condition.startswith(i18n("Version") + " <= "):
         dep.versionTo = condition.split("= ")[1]
-    elif condition.startswith("Version >= "):
+    elif condition.startswith(i18n("Version") + " >= "):
         dep.versionFrom = condition.split("= ")[1]
-    elif condition.startswith("Release = "):
+    elif condition.startswith(i18n("Release") + " = "):
         dep.release = condition.split("= ")[1]
-    elif condition.startswith("Release <= "):
+    elif condition.startswith(i18n("Release") + " <= "):
         dep.releaseTo = condition.split("= ")[1]
-    elif condition.startswith("Release >= "):
+    elif condition.startswith(i18n("Release") + " >= "):
         dep.releaseFrom = condition.split("= ")[1]
 
     dep.package = package
@@ -864,10 +865,10 @@ class newListViewDialog(KDialog):
         mainLayout.addLayout(topLayout)
         bottomLayout = QHBoxLayout(None, 5)
         bottomLayout.addItem(QSpacerItem(30, 10))
-        okButton = KPushButton("OK", self)
+        okButton = KPushButton(i18n("OK"), self)
         okButton.setDefault(True)
         bottomLayout.addWidget(okButton)
-        cancelButton = KPushButton("Cancel", self)
+        cancelButton = KPushButton(i18n("Cancel"), self)
         bottomLayout.addWidget(cancelButton)
         mainLayout.addLayout(bottomLayout)
         
