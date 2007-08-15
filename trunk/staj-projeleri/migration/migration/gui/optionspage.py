@@ -84,7 +84,7 @@ class OptionsPage(QWidget):
                 self.IEBookmarks.setChecked(True)
                 self.BookmarksLayout.addWidget(self.IEBookmarks)
         # Accounts:
-        if sources.has_key("GTalk Key"):
+        if sources.has_key("GTalk Key") or sources.has_key("Thunderbird Profile Path") or sources.has_key("Contacts Path"):
             self.Accounts = QGroupBox(self, "Accounts")
             self.Accounts.setTitle(i18n("Accounts"))
             self.Accounts.setColumnLayout(0, Qt.Vertical)
