@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-15 16:18+0300\n"
+"POT-Creation-Date: 2007-08-15 18:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: packager.py:9 packager.py:16
+#: packager.py:12 packager.py:19
 msgid "Packager"
 msgstr ""
 
-#: packager.py:9
+#: packager.py:12
 msgid "A tool for accelerating package making process"
 msgstr ""
 
@@ -191,6 +191,10 @@ msgid ""
 "Current SHA1 (%s) is invalid.\n"
 "\n"
 "Valid one is %s"
+msgstr ""
+
+#: gui/mainwindow.py:492
+msgid "Invalid SHA1"
 msgstr ""
 
 #: gui/mainwindow.py:494

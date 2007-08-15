@@ -3,7 +3,7 @@
 
 import sys
 from gui.mainwindow import MainWindow
-from kdecore import KApplication, KAboutData, KCmdLineArgs, KGlobal, KIcon, i18n
+from kdecore import KApplication, KAboutData, KCmdLineArgs, KGlobal, KIcon
 
 def I18N_NOOP(x):
     return x
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     programLogo = KGlobal.iconLoader().loadIcon("pisikga", KIcon.Desktop)
     about.setProgramLogo(programLogo.convertToImage())
 #    QObject.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
-    pac = MainWindow(None, I18N_NOOP("Packager v0.0.1"))
+    pac = MainWindow(None, I18N_NOOP("Packager") + "v0.0.1")
     app.setMainWidget(pac)
     pac.show()
     app.exec_loop()

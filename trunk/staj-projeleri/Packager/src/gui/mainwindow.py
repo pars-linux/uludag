@@ -431,7 +431,7 @@ class MainWindow(KParts.MainWindow):
     
     def makePackageSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "buidpackages", self.teOutput, self.realDir)
+        self.pisithread.setup(self.tempDir + "/pspec.xml", "buildpackages", self.teOutput, self.realDir)
         self.pisithread.start()
     
     def addReleaseSlot(self):
@@ -510,12 +510,27 @@ class MainWindow(KParts.MainWindow):
         new = sha.new(temp.read()).hexdigest()
         temp.close()
         
-        KMessageBox.information(self, i18n("SHA1 is %s.\n\nThis will be set as current SHA1.") % new, i18n("SHA1 computed"))
+        KMessageBox.information(self, str(i18n("SHA1 is %s.\n\nThis will be set as current SHA1.")) % new, i18n("SHA1 computed"))
         self.pspecTab.sourcePage.sourceleSHA1.setText(new)
         
     def detectTypeSlot(self):
-        types = {"bzip2": "tarbz2", "gzip": "targz"}
         
+        def guessTypeByExtension(filename):
+            if filename.endswith(".tar.gz") or filename.endswith(".tgz"):
+                return "targz"
+            elif filename.endswith(".tar.bz2") or filename.endswith(".tbz2"):
+                return "tarbz2"
+            elif filename.endswith(".zip"):
+                return "zip"
+            elif filename.endswith(".tar.lzma"):
+                return "tarlzma"
+            elif filename.endswith(".tar"):
+                return "tar"
+            elif filename.endswith(".gzip"):
+                return "gzip"
+            else:
+                return "binary"
+            
         down, loc = self.pspecTab.isSourceDownloaded()
         if not down:
             KMessageBox.information(self, i18n("Please fetch the source first."))
@@ -526,12 +541,12 @@ class MainWindow(KParts.MainWindow):
 #            self.fetchSlot()
 #            self.pisithread.join()
         
-        com = os.popen("file %s | cut -f 2 -d\" \"" % loc)
-        type = com.read()
-        com.close()
-        
-        KMessageBox.information(self, i18n("File type is: \"%s\".\nThis will be set as the current file type.") % types[type.strip()], i18n("Type detected"))
-        self.pspecTab.sourcePage.sourceleType.setText(types[type.strip()])
+#        com = os.popen("file -bi \"%s\" | cut -f 2 -d\" \"" % loc)
+#        type = com.read()
+#        com.close()
+        ext = guessTypeByExtension(loc)
+        KMessageBox.information(self, str(i18n("File type is: \"%s\".\nThis will be set as the current file type.")) % ext, i18n("Type detected"))
+        self.pspecTab.sourcePage.sourceleType.setText(ext)
     
 class PisiThread(Thread):
     
@@ -541,13 +556,13 @@ class PisiThread(Thread):
              pisi.api.build_until(self.path, self.stage)
              self.output.append(i18n("\n=> <b>Succesfully finished.</b>\n\n"))
          except Exception, inst:
-             self.output.append(i18n("\n<font color=\"red\">*** Error: %s</font>\n\n") % unicode(escape(inst)))
+             self.output.append(str(i18n("\n<font color=\"red\">*** Error: %s</font>\n\n")) % unicode(escape(str(inst))))
              return
          del self.output
          
          if self.stage == "buildpackages":
              # TODO: .pisi'nin yerini belirle
-             command = "mv %s %s" % (os.getcwd() + "/*.pisi",self.pisiTo) #boşlukları handle et!
+             command = "mv %s %s" % (str(os.getcwd() + "/*.pisi").replace(" ", "\ "),self.pisiTo.replace(" ", "\ "))
              os.system(command)
 
     def setup(self, path, stage, output, pisiTo=None):
@@ -590,3 +605,6 @@ class UI(pisi.ui.UI):
     def confirm(self, msg):
         self.display(msg + " auto-confirmed.", "red")
         return True
+    
+    def display_progress(self, **kwargs):
+        pass
