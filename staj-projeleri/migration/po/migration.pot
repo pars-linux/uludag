@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-12 17:59+0300\n"
+"POT-Creation-Date: 2007-08-15 12:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,48 +16,80 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: migration/applythread.py:41
+#: migration/applythread.py:42
 msgid "Wallpaper changed."
 msgstr ""
 
-#: migration/applythread.py:49
+#: migration/applythread.py:50
 msgid "Firefox bookmarks cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:51
+#: migration/applythread.py:52
 msgid "Firefox bookmarks loaded."
 msgstr ""
 
-#: migration/applythread.py:56
+#: migration/applythread.py:57
 msgid "Internet Explorer favorites cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:58
+#: migration/applythread.py:59
 msgid "Internet Explorer favorites loaded."
 msgstr ""
 
-#: migration/applythread.py:64
+#: migration/applythread.py:65
 msgid "Bookmarks saved."
 msgstr ""
 
-#: migration/applythread.py:70
+#: migration/applythread.py:74
+msgid "GTalk accounts cannot be loaded."
+msgstr ""
+
+#: migration/applythread.py:76
+msgid "GTalk accounts loaded."
+msgstr ""
+
+#: migration/applythread.py:82
+msgid "MSN accounts cannot be loaded."
+msgstr ""
+
+#: migration/applythread.py:84
+msgid "MSN accounts loaded."
+msgstr ""
+
+#: migration/applythread.py:90
+msgid "Thunderbird accounts cannot be loaded."
+msgstr ""
+
+#: migration/applythread.py:92
+msgid "Thunderbird accounts loaded."
+msgstr ""
+
+#: migration/applythread.py:100
+msgid "Accounts saved."
+msgstr ""
+
+#: migration/applythread.py:106
 #, python-format
 msgid "Link '%s' created."
 msgstr ""
 
-#: migration/applythread.py:79
+#: migration/applythread.py:115
 msgid "Nothing done, because no option selected. You can close the wizard..."
 msgstr ""
 
-#: migration/applythread.py:81 migration/applythread.py:83
+#: migration/applythread.py:117 migration/applythread.py:119
 msgid "All operations completed. You can close the wizard..."
 msgstr ""
 
-#: migration/applythread.py:89 migration/gui/optionspage.py:26
+#: migration/applythread.py:125 migration/gui/optionspage.py:26
 msgid "Wallpaper"
 msgstr ""
 
-#: migration/applythread.py:93
+#: migration/applythread.py:129 migration/gui/optionspage.py:89
+msgid "Accounts"
+msgstr ""
+
+#: migration/applythread.py:131
 msgid "Links"
 msgstr ""
 
@@ -73,70 +105,74 @@ msgstr ""
 msgid "Developer and Current Maintainer"
 msgstr ""
 
-#: migration/wizard.py:38
+#: migration/wizard.py:39
 msgid "Pardus Migration Tool"
 msgstr ""
 
-#: migration/wizard.py:41
+#: migration/wizard.py:42
 msgid "Next"
 msgstr ""
 
-#: migration/wizard.py:43
+#: migration/wizard.py:44
 msgid "Finish"
 msgstr ""
 
-#: migration/wizard.py:48 migration/gui/sidebar.py:26
+#: migration/wizard.py:49 migration/gui/sidebar.py:26
 msgid "Selecting User"
 msgstr ""
 
-#: migration/wizard.py:52 migration/wizard.py:141 migration/gui/sidebar.py:26
+#: migration/wizard.py:53 migration/wizard.py:152 migration/gui/sidebar.py:26
 msgid "Selecting Options"
 msgstr ""
 
-#: migration/wizard.py:55 migration/wizard.py:145 migration/gui/sidebar.py:26
+#: migration/wizard.py:56 migration/wizard.py:156 migration/gui/sidebar.py:26
 msgid "Selecting Files"
 msgstr ""
 
-#: migration/wizard.py:58 migration/gui/sidebar.py:26
+#: migration/wizard.py:59 migration/gui/sidebar.py:26
 msgid "Applying Changes"
 msgstr ""
 
-#: migration/wizard.py:114
+#: migration/wizard.py:65
+msgid "Migration Tool Help"
+msgstr ""
+
+#: migration/wizard.py:125
 msgid "Step"
 msgstr ""
 
-#: migration/wizard.py:122
+#: migration/wizard.py:133
 msgid ""
 "Migration tool couldn't find any old users in your computer. You can't use "
 "this aplication."
 msgstr ""
 
-#: migration/wizard.py:123
+#: migration/wizard.py:134
 msgid "No User"
 msgstr ""
 
-#: migration/wizard.py:160 migration/wizard.py:176 migration/wizard.py:181
-#: migration/wizard.py:194
+#: migration/wizard.py:168 migration/wizard.py:180 migration/wizard.py:185
+#: migration/wizard.py:198
 msgid "Warning!"
 msgstr ""
 
-#: migration/wizard.py:160
+#: migration/wizard.py:168
 msgid "Firefox is open. Please close it first to continue..."
 msgstr ""
 
-#: migration/wizard.py:176
+#: migration/wizard.py:180
 #, python-format
 msgid "Folder '%s' cannot be created, please choose another folder!"
 msgstr ""
 
-#: migration/wizard.py:181
+#: migration/wizard.py:185
 #, python-format
 msgid ""
 "You don't have permission to write to folder '%s', please choose another "
 "folder!"
 msgstr ""
 
-#: migration/wizard.py:194
+#: migration/wizard.py:198
 #, python-format
 msgid ""
 "Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
@@ -161,6 +197,18 @@ msgstr ""
 
 #: migration/gui/optionspage.py:83
 msgid "Internet Explorer favorites"
+msgstr ""
+
+#: migration/gui/optionspage.py:96
+msgid "MSN Accounts"
+msgstr ""
+
+#: migration/gui/optionspage.py:102
+msgid "GTalk Accounts"
+msgstr ""
+
+#: migration/gui/optionspage.py:108
+msgid "Thunderbird Accounts"
 msgstr ""
 
 #: migration/gui/userpage.py:25
