@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import struct
 
 from zorg.hwdata import *
 from zorg.parser import *
@@ -12,6 +13,40 @@ MonitorsDB = "/usr/lib/X11/MonitorsDB"
 
 driver_path = "/usr/lib/xorg/modules/drivers"
 xkb_path = "/usr/share/X11/xkb/symbols/pc"
+
+sysdir = "/sys/bus/pci/devices/"
+
+# from pci/header.h
+PCI_COMMAND             = 0x04
+PCI_COMMAND_IO          = 0x1
+PCI_COMMAND_MEMORY      = 0x2
+
+PCI_BRIDGE_CONTROL      = 0x3e
+PCI_BRIDGE_CTL_VGA      = 0x08
+
+#PCI_BASE_CLASS_DISPLAY  = 0x03
+PCI_CLASS_DISPLAY_VGA   = 0x0300
+
+#PCI_BASE_CLASS_BRIDGE   = 0x06
+PCI_CLASS_BRIDGE_PCI    = 0x0604
+
+class PCIDevice:
+    def __init__(self, name):
+        self.name = name
+        self.class_ = None
+        self.bridge = None
+        self.config = None
+
+    def _readConfig(self, offset, size=1):
+        if self.config is None:
+            self.config = open(os.path.join(sysdir, self.name, "config")).read()
+
+        return self.config[offset:offset+size]
+
+    def readConfigWord(self, offset):
+        data = self._readConfig(offset, 2)
+
+        return struct.unpack("h", data)[0]
 
 def queryTouchpad():
     try:
@@ -116,33 +151,42 @@ def findVideoCards():
     """ Finds video cards. Result is a list of Device objects. """
     cards = []
 
-    # read only PCI for now, follow sysfs changes
-    for bus in ["pci"]:
-        sysDir = os.path.join("/sys/bus", bus, "devices")
-        if os.path.isdir(sysDir):
-            devs = os.listdir(sysDir)
-            devs.sort()
-            for _dev in devs:
-                #try:
-                    if sysValue(sysDir, _dev, "class").startswith("0x03"):
-                        vendorId = lremove(sysValue(sysDir, _dev, "vendor"), "0x")
-                        deviceId = lremove(sysValue(sysDir, _dev, "device"), "0x")
-                        busId = tuple(int(x, 16) for x in _dev.replace(".",":").split(":"))[1:4]
+    ## read only PCI for now, follow sysfs changes
+    #for bus in ["pci"]:
+    #    sysDir = os.path.join("/sys/bus", bus, "devices")
+    #    if os.path.isdir(sysDir):
+    #        devs = os.listdir(sysDir)
+    #        devs.sort()
+    #        for _dev in devs:
+    #            #try:
+    #                if sysValue(sysDir, _dev, "class").startswith("0x03"):
+    #                    vendorId = lremove(sysValue(sysDir, _dev, "vendor"), "0x")
+    #                    deviceId = lremove(sysValue(sysDir, _dev, "device"), "0x")
+    #                    busId = tuple(int(x, 16) for x in _dev.replace(".",":").split(":"))[1:4]
 
-                        a = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
+    #                    a = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
 
-                        nrBus, device, function = busId
-                        if function > 0:
-                            for card in cards:
-                                if [nrBus, device] == card.busId.split(":")[1:3]:
-                                    a.functionOf = card
+    #                    nrBus, device, function = busId
+    #                    if function > 0:
+    #                        for card in cards:
+    #                            if [nrBus, device] == card.busId.split(":")[1:3]:
+    #                                a.functionOf = card
 
-                        cards.append(a)
-                #except:
-                #    pass
+    #                    cards.append(a)
+    #            #except:
+    #            #    pass
 
-    #for i in xrange(len(cards)):
-    #    cards[i].identifier = "VideoCard%d" % i
+    ##for i in xrange(len(cards)):
+    ##    cards[i].identifier = "VideoCard%d" % i
+
+    pbus = getPrimaryBus()
+    if pbus:
+        vendorId = lremove(sysValue(sysdir, pbus, "vendor"), "0x")
+        deviceId = lremove(sysValue(sysdir, pbus, "device"), "0x")
+        busId = tuple(int(x, 16) for x in pbus.replace(".",":").split(":"))[1:4]
+
+        card = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
+        cards.append(card)
 
     if len(cards):
         return cards
@@ -151,6 +195,57 @@ def findVideoCards():
         # We start X and leave the decision to the user.
         #sys.exit(0)
         return None
+
+def getPrimaryBus():
+    devices = []
+    bridges = []
+
+    for dev in os.listdir(sysdir):
+        pci_class = open(os.path.join(sysdir, dev, "class")).read()[:6]
+
+        device = PCIDevice(dev)
+        device.class_ = int(pci_class, 16)
+        devices.append(device)
+
+        if device.class_ == PCI_CLASS_BRIDGE_PCI:
+            bridges.append(device)
+
+    for dev in devices:
+        for bridge in bridges:
+            dev_path = os.path.join(sysdir, bridge.name, dev.name)
+            if os.path.exists(dev_path):
+                dev.bridge = bridge
+
+    primaryBus = None
+    for dev in devices:
+        if dev.class_ != PCI_CLASS_DISPLAY_VGA:
+            continue
+
+        vga_routed = True
+        bridge = dev.bridge
+        while bridge:
+            bridge_ctl = bridge.readConfigWord(PCI_BRIDGE_CONTROL)
+
+            if not (bridge_ctl & PCI_BRIDGE_CTL_VGA):
+                vga_routed = False
+                break
+
+            bridge = bridge.bridge
+
+        if vga_routed:
+            pci_cmd = dev.readConfigWord(PCI_COMMAND)
+
+            if pci_cmd & (PCI_COMMAND_IO | PCI_COMMAND_MEMORY):
+                primaryBus = dev.name
+                break
+
+    #if primaryBus is None:
+    #    for dev in devices:
+    #        if dev.class_ == PCI_CLASS_DISPLAY_VGA:
+    #            primaryBus = dev.name
+    #            break
+
+    return primaryBus
 
 def queryDDC(adapter=0):
     mon = Monitor()
