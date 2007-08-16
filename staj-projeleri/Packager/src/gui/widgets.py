@@ -154,14 +154,9 @@ class pspecWidget(QWidget):
         self.historyPage.get(self.pspec.history)
     
     def syncFromCode(self):
-        import os
-        tempfile = open("/tmp/packager-template-" + str(os.getpid()), "w")
-        tempfile.write(self.editor.getContent())
-        tempfile.close()
-        fillResult = self.fill("/tmp/packager-template-" + str(os.getpid()))
-        os.unlink("/tmp/packager-template-" + str(os.getpid()))
-        return fillResult
-    
+        self.editor.save()
+        return self.fill(self.editor.editedFile)
+           
     def syncFromDesign(self):        
         try:
             self.get()
@@ -672,7 +667,6 @@ class historyWidget(QWidget):
         
     def fill(self, history):
         self.history.listView.clear()
-#        history.reverse() # 
         for rel in history:
             self.addRelease(rel)
     
@@ -681,7 +675,6 @@ class historyWidget(QWidget):
             history.pop()
             
         iterator = QListViewItemIterator(self.history.listView)
-#        iterator += self.historylv.childCount() - 1
         while iterator.current():
             lvi = iterator.current()
             update = spec.Update()
