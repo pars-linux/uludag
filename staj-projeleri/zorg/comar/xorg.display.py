@@ -1,7 +1,6 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from zorg.config import *
+from zorg.config import XConfig, ZorgConfig
 from zorg.probe import *
 from zorg.utils import *
 
@@ -14,7 +13,7 @@ def autoConfigure():
         return
 
     for dev in devices:
-        dev.query()
+        queryDevice(dev)
 
     # we need card data to check for lcd displays
     monitor = findMonitors(device, 0)[0]
@@ -32,7 +31,9 @@ def autoConfigure():
                 dev.monitors.append(defMon)
 
     screen = Screen(device, monitor)
+    #screen.number = 0
     screen.res = monitor.res[0]
+    #screen.setup()
 
     config = XConfig()
     config.new()
@@ -44,7 +45,14 @@ def autoConfigure():
     config.finalize()
     config.save()
 
-    saveConfig(config, devices)
+    z = ZorgConfig()
+    for dev in devices:
+        z.addCard(dev)
+        for mon in dev.monitors:
+            z.addMonitor(mon)
+
+    z.setScreen(screen)
+    z.save()
 
     updateOpenGL(driver2opengl(device.driver), "false")
 
@@ -74,161 +82,83 @@ def safeConfigure(driver = "vesa"):
     config.finalize()
     config.save()
 
-    saveConfig(config, [dev])
-
-def listCards():
-    zconfig = ZorgConfig()
-
-    if not zconfig.hasOption("cards"):
-        return ""
-
-    cardIds = zconfig.get("cards").split(",")
-
-    cards = []
-    for cardId in cardIds:
-        if not zconfig.hasSection(cardId):
-            continue # zorg.conf is broken
-
-        zconfig.setSection(cardId)
-        vendorName = zconfig.get("vendorName")
-        boardName = zconfig.get("boardName")
-        cards.append("%s %s - %s" % (cardId, boardName, vendorName))
-
-    return "\n".join(cards)
+    z = ZorgConfig()
+    z.addCard(dev)
+    z.addMonitor(mon)
+    z.setScreen(screen)
+    z.save()
 
 def setCardOptions(cardId, options):
-    zconfig = ZorgConfig()
+    z = ZorgConfig()
 
-    if not zconfig.hasSection(cardId):
+    card = z.getCard(cardId)
+
+    if not card:
         fail("Device ID is not correct: %s" % cardId)
-    zconfig.setSection(cardId)
 
     opts = dict(x.split("=", 1) for x in options.strip().splitlines())
 
     if opts.has_key("driver"):
         driver = opts["driver"]
         if driver in listAvailableDrivers():
-            zconfig.set("driver", driver)
+            card.driver = driver
         else:
             fail("Driver does not exist: %s" % driver)
 
-    zconfig.write()
-    updateXorgConf()
-
-def cardInfo(cardId):
-    zconfig = ZorgConfig()
-
-    if not zconfig.hasSection(cardId):
-        return ""
-    zconfig.setSection(cardId)
-
-    info = []
-
-    info.append("id=%s" % cardId)
-    info.append("vendorName=%s" % zconfig.get("vendorName"))
-    info.append("boardName=%s" % zconfig.get("boardName"))
-    info.append("vendorId=%s" % zconfig.get("vendorId"))
-    info.append("deviceId=%s" % zconfig.get("deviceId"))
-    info.append("busId=%s" % zconfig.get("busId"))
-    info.append("driver=%s" % zconfig.get("driver"))
-    info.append("monitors=%s" % zconfig.get("monitors"))
-
-    return "\n".join(info)
-
-def listMonitors(cardId):
-    zconfig = ZorgConfig()
-
-    if not zconfig.hasSection(cardId):
-        return ""
-
-    identifiers = zconfig.get("monitors", section=cardId).split(",")
-    monitors = []
-
-    for monId in identifiers:
-        zconfig.setSection(monId)
-        vendorName = zconfig.get("vendorName")
-        modelName = zconfig.get("modelName")
-        monitors.append("%s %s - %s" % (monId, modelName, vendorName))
-
-    return "\n".join(monitors)
-
-def monitorInfo(monitorId):
-    zconfig = ZorgConfig()
-
-    if not zconfig.hasSection(monitorId):
-        return ""
-
-    zconfig.setSection(monitorId)
-    info = []
-    #name = "%s - %s" % (zconfig.get("modelName"), zconfig.get("vendorName"))
-    #info.append("name=%s" % name)
-    info.append("id=%s" % monitorId)
-    info.append("vendorName=%s" % zconfig.get("vendorName"))
-    info.append("modelName=%s" % zconfig.get("modelName"))
-    info.append("resolutions=%s" % zconfig.get("resolutions"))
-
-    return "\n".join(info)
+    z.addCard(card)
+    updateXorgConf(z)
+    z.save()
 
 def addMonitor(monitorData):
-    zconfig = ZorgConfig()
-
-    numbers = set(atoi(lremove(x, "Monitor")) for x in zconfig.cp.sections() if x.startswith("Monitor"))
-    numbers = list(set(xrange(len(numbers) + 1)) - numbers)
-    numbers.sort()
-    number = numbers[0]
+    z = ZorgConfig()
 
     info = dict(x.split("=", 1) for x in monitorData.strip().splitlines())
+    flags = info.get("flags", "")
 
-    zconfig.setSection("Monitor%d" % number)
-    keys = ("modelname", "vendorname", "probed", "eisaid", "digital", \
-            "hsync_min", "hsync_max", "vref_min", "vref_max", "resolutions")
+    mon = Monitor()
+    defmon = DefaultMonitor()
 
-    for key, value in info.items():
-        if key.lower() not in keys:
-            continue
+    mon.eisaid = info.get("eisaid", "")
+    mon.probed = "probed" in flags
+    mon.digital = "digital" in flags
+    mon.hsync_min = info.get("hsync_min", defmon.hsync_min)
+    mon.hsync_max = info.get("hsync_max", defmon.hsync_max)
+    mon.vref_min = info.get("vref_min", defmon.vref_min)
+    mon.vref_max = info.get("vref_max", defmon.vref_max)
+    mon.vendorname = info.get("vendorname", "UNKNOWN")
+    mon.modelname = info.get("modelname", "UNKNOWN")
+    mon.res = info.get("resolutions", "800x600,640x480").split(",")
 
-        zconfig.set(key, value)
+    if mon.eisaid:
+        mon.id = "EISA_%s" % mon.eisaid
+    else:
+        if mon.modelname:
+            prefix = "MODEL_%s" % mon.modelname.replace(" ", "_")
+        else:
+            prefix = "MONITOR"
 
-    zconfig.write()
+        ID = prefix
+        index = 0
+        while z.getMonitor(ID):
+            ID = "%s_%s" % (prefix, index)
+            index += 1
+
+        mon.id = ID
+
+    z.addMonitor(mon)
+    z.save()
 
 def removeMonitor(monitorId):
-    zconfig = ZorgConfig()
-
-    if not zconfig.hasSection(monitorId):
-        return
-
-    zconfig.cp.remove_section(monitorId)
-    zconfig.write()
+    z = ZorgConfig()
+    z.removeMonitor(monitorId)
+    z.save()
 
 def probeMonitors():
-    zconfig = ZorgConfig()
-
-    cards = zconfig.get("cards").split(",")
-
-    for card in cards:
-        if not zconfig.hasSection(card):
-            continue
-
-        # Not implemented yet
+    # We need to find a way to get primary device first.
+    pass
 
 def installINF(filePath):
     pass
-
-def screenInfo(screenNumber):
-    zconfig = ZorgConfig()
-    scr = "Screen%s" % screenNumber
-
-    if not zconfig.hasSection(scr):
-        return ""
-    zconfig.setSection(scr)
-
-    scrInfo = []
-    scrInfo.append("number=%s" % screenNumber)
-    for option in "card", "monitor", "resolution", "depth":
-        scrInfo.append("%s=%s" % (option, zconfig.get(option)))
-
-    return "\n".join(scrInfo)
-
 
 def setScreen(screenNumber, cardId, monitorId, mode):
     if screenNumber not in ("0", "1"):
@@ -238,61 +168,57 @@ def setScreen(screenNumber, cardId, monitorId, mode):
     if not res:
         fail("Invalid mode: %s" % mode)
 
-    zconfig = ZorgConfig()
+    z = ZorgConfig()
 
     config = XConfig()
     config.load()
     config.removeScreens()
 
-    if not zconfig.hasSection(cardId):
+    dev = z.getCard(cardId)
+    if not dev:
         fail("Card ID is incorrect: %s" % cardId)
-    zconfig.setSection(cardId)
 
-    busId = zconfig.get("busId")
-    vendorId = zconfig.get("vendorId")
-    deviceId = zconfig.get("deviceId")
-
-    dev = Device(busId, vendorId, deviceId)
-    dev.cardId = cardId
-    dev.driver = zconfig.get("driver")
-    dev.vendorName = zconfig.get("vendorName")
-    dev.boardName = zconfig.get("boardName")
-
-    if not zconfig.hasSection(monitorId):
+    mon = z.getMonitor(monitorId)
+    if not mon:
         fail("Monitor ID is incorrect: %s" % monitorId)
-    zconfig.setSection(monitorId)
-
-    mon = Monitor()
-    mon.probed = zconfig.getBool("probed")
-    mon.digital = zconfig.getBool("digital")
-    mon.eisa_id= zconfig.get("eisaid")
-    mon.vendorname = zconfig.get("vendorName")
-    mon.modelname = zconfig.get("modelName")
-
-    mon.hsync_min = zconfig.getFloat("hsync_min")
-    mon.hsync_max = zconfig.getFloat("hsync_max")
-    mon.vref_min = zconfig.getFloat("vref_min")
-    mon.vref_max = zconfig.getFloat("vref_max")
-    mon.res = zconfig.get("resolutions").split(",")
 
     scr = Screen(dev, mon)
+    scr.number = int(screenNumber)
     scr.res = res
     scr.depth = depth
 
     if screenNumber == "0":
         config.setPrimaryScreen(scr)
+        scr1 = z.getScreen(1)
+        if scr1:
+            config.setSecondaryScreen(scr1)
     else:
+        scr0 = z.getScreen(0)
+        if scr0:
+            config.setPrimaryScreen(scr0)
         config.setSecondaryScreen(scr)
 
     config.save()
-    saveConfig(config)
+    z.setScreen(scr)
+    z.save()
 
-def updateXorgConf():
-    for n in "0", "1":
-        scrData = screenInfo(n)
-        scrInfo = dict(x.split("=", 1) for x in scrData.strip().splitlines())
-        mode = "%s-%s" % (scrInfo["resolution"], scrInfo["depth"])
-        setScreen(n, scrInfo["card"], scrInfo["monitor"], mode)
+def updateXorgConf(z):
+    scr0 = z.getScreen(0)
+    scr1 = z.getScreen(1)
+
+    config = XConfig()
+    config.load()
+    config.removeScreens()
+
+    # Do z.setScreen against possible changes.
+    # e.g. depth can be set to 24 if fglrx is used.
+    config.setPrimaryScreen(scr0)
+    z.setScreen(scr0)
+    if scr1:
+        config.setSecondaryScreen(scr1)
+        z.setScreen(scr1)
+
+    config.save()
 
 def updateOpenGL(implementation, withHeaders):
     import zorg.opengl
@@ -308,4 +234,3 @@ def updateOpenGL(implementation, withHeaders):
         o.setCurrent(implementation)
     else:
         fail("No such implementation: %s" % implementation)
-
