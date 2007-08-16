@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from ConfigParser import RawConfigParser, ParsingError
+import piksemel
+from csapi import atoi
 
 from zorg.parser import *
-from zorg.probe import touchpadDevices
+from zorg.hwdata import *
 
 xorgConf = "/etc/X11/xorg.conf"
-zorgConfigDir = "/var/lib/zorg"
-zorgConfig = "config"
 
 class XConfig:
     def __init__(self):
@@ -36,7 +35,8 @@ class XConfig:
             secMouse
         ]
 
-        modules = ("dbe", "type1", "freetype", "record", "xtrap", "glx", "dri", "v4l", "extmod")
+        modules = ("dbe", "type1", "freetype", "record", "xtrap",
+                   "glx", "dri", "v4l", "extmod")
 
         for module in modules:
             self.addModule(module)
@@ -267,119 +267,199 @@ class XConfig:
 
         self._parser.sections.append(sec)
 
+def addTag(p, name, data):
+    t = p.insertTag(name)
+    t.insertData(data)
+
 class ZorgConfig:
+    zorgConfigDir = "/var/lib/zorg"
+    zorgConfig = "config.xml"
+
     def __init__(self):
         import os
 
-        if not os.path.exists(zorgConfigDir):
-            os.mkdir(zorgConfigDir, 0755)
+        if not os.path.exists(self.zorgConfigDir):
+            os.mkdir(self.zorgConfigDir, 0755)
 
-        self.configFile = os.path.join(zorgConfigDir, zorgConfig)
+        self.configFile = os.path.join(self.zorgConfigDir, self.zorgConfig)
 
-        self.cp = RawConfigParser()
         try:
-            self.cp.read(self.configFile)
-        except ParsingError:
-            pass
+            self.doc = piksemel.parse(self.configFile)
+        except OSError:
+            self.doc = piksemel.newDocument("ZORG")
 
-        self.setSection("General")
+    def __getCard(self, tag):
+        busId = tag.getTagData("BusId")
+        vendorId = tag.getTagData("VendorId")
+        deviceId = tag.getTagData("DeviceId")
+        
+        card = Device(busId, vendorId, deviceId)
+        
+        card.driver = tag.getTagData("Driver")
+        card.vendorName = tag.getTagData("Vendor")
+        card.boardName = tag.getTagData("Board")
+        
+        monitorsTag = tag.getTag("Monitors")
+        for mon in monitorsTag.tags("Monitor"):
+            monitorId = mon.firstChild().data()
+            monitor = self.getMonitor(monitorId)
+            if monitor:
+                card.monitors.append(monitor)
+        
+        return card
+    
+    def __getMonitor(self, tag):
+        mon = Monitor()
+        
+        mon.id = tag.getAttribute("id")
+        mon.eisaid = tag.getTagData("EISAID")
+        
+        hsync = tag.getTagData("HorizSync").split("-")
+        vref = tag.getTagData("VertRefresh").split("-")
+        mon.hsync_min, mon.hsync_max = map(atoi, hsync)
+        mon.vref_min, mon.vref_max = map(atoi, vref)
+        
+        digital = tag.getTagData("Digital")
+        mon.digital = digital.lower() == "true"
+        
+        mon.vendorname = tag.getTagData("Vendor")
+        mon.modelname = tag.getTagData("Model")
+        
+        mon.res = []
+        resTag = tag.getTag("Resolutions")
+        for res in resTag.tags("Resolution"):
+            mon.res.append(res.firstChild().data())
+            #TODO: Check if res is preferred
+        
+        return mon
 
-    def setSection(self, name):
-        if not self.cp.has_section(name):
-            self.cp.add_section(name)
-
-        self.currentSection = name
-
-    def hasSection(self, name):
-        return self.cp.has_section(name)
-
-    def hasOption(self, option, section=None):
-        if section is None:
-            section = self.currentSection
-        return self.cp.has_option(section, option)
-
-    def get(self, option, default = "", section=None):
-        if section is None:
-            section = self.currentSection
-        if not self.cp.has_option(section, option):
-            return default
-
-        return self.cp.get(self.currentSection, option)
-
-    def getBool(self, option, default = False, section=None):
-        if section is None:
-            section = self.currentSection
-        if not self.cp.has_option(section, option):
-            return default
-
-        return self.cp.getboolean(self.currentSection, option)
-
-    def getFloat(self, option, default = 0.0, section=None):
-        if section is None:
-            section = self.currentSection
-        if not self.cp.has_option(section, option):
-            return default
-
-        return self.cp.getfloat(self.currentSection, option)
-
-    def set(self, option, value, section=None):
-        if section is None:
-            section = self.currentSection
-        self.cp.set(section, option, value)
-
-    def write(self):
-        f = file(self.configFile, "w")
-        self.cp.write(f)
-        f.close()
-
-def saveConfig(cfg, cards=[]):
-    zconfig = ZorgConfig()
-
-    zconfig.set("serverLayout", cfg.layout)
-
-    for scr in cfg._priScreen, cfg._secScreen:
-        if not scr:
-            continue
-
-        sec = scr.identifier
-        zconfig.setSection(sec)
-
-        zconfig.set("card", scr.device.cardId)
-        zconfig.set("monitor", scr.monitor.identifier)
-        zconfig.set("resolution", scr.res)
-        zconfig.set("depth", scr.depth)
-
-    if cards:
-        cardNames = [x.cardId for x in cards]
-        zconfig.set("cards", ",".join(cardNames), "General")
-
-    for card in cards:
-        sec = card.cardId
-        zconfig.setSection(sec)
-
-        zconfig.set("busId", card.busId)
-        zconfig.set("vendorId", card.vendorId)
-        zconfig.set("deviceId", card.deviceId)
-        zconfig.set("vendorName", card.vendorName)
-        zconfig.set("boardName", card.boardName)
-        zconfig.set("driver", card.driver)
-        monitorNames = [x.identifier for x in card.monitors]
-        zconfig.set("monitors", ",".join(monitorNames))
-
+    def cards(self):
+        cardList = []
+        for tag in self.doc.tags("Card"):
+            cardList.append(self.__getCard(tag))
+        
+        return cardList
+            
+    def getCard(self, ID):
+        for tag in self.doc.tags("Card"):
+            if tag.getAttribute("id") == ID:
+                return self.__getCard(tag)
+    
+    def addCard(self, card):
+        for tag in self.doc.tags("Card"):
+            if tag.getAttribute("id") == card.id:
+                tag.hide()
+                break
+        
+        tag = self.doc.insertTag("Card")
+        tag.setAttribute("id", card.id)
+        
+        tags = {
+            "BusId" : card.busId,
+            "VendorId" : card.vendorId,
+            "DeviceId" : card.deviceId,
+            "Driver" : card.driver,
+            "Vendor" : card.vendorName,
+            "Board" : card.boardName
+        }
+        
+        for k, v in tags.items():
+            addTag(tag, k, v)
+        
+        mons = tag.insertTag("Monitors")
         for mon in card.monitors:
-            sec = mon.identifier
-            zconfig.setSection(sec)
+            addTag(mons, "Monitor", mon.id)
+    
+    def monitors(self):
+        monitorList = []
+        for tag in self.doc.tags("Monitor"):
+            monitorList.append(self.__getMonitor(tag))
+        
+        return monitorList
 
-            zconfig.set("probed", mon.probed)
-            zconfig.set("digital", mon.digital)
-            zconfig.set("hsync_min", mon.hsync_min)
-            zconfig.set("hsync_max", mon.hsync_max)
-            zconfig.set("vref_min", mon.vref_min)
-            zconfig.set("vref_max", mon.vref_max)
-            zconfig.set("resolutions", ",".join(mon.res))
-            zconfig.set("eisaid", mon.eisaid)
-            zconfig.set("vendorName", mon.vendorname)
-            zconfig.set("modelName", mon.modelname)
+    def getMonitor(self, ID):
+        for tag in self.doc.tags("Monitor"):
+            if tag.getAttribute("id") == ID:
+                return self.__getMonitor(tag)
+    
+    def addMonitor(self, monitor):
+        self.removeMonitor(monitor.id)
 
-    zconfig.write()
-
+        tag = self.doc.insertTag("Monitor")
+        tag.setAttribute("id", monitor.id)
+        
+        hsync = "%s-%s" % (monitor.hsync_min, monitor.hsync_max)
+        vref = "%s-%s" % (monitor.vref_min, monitor.vref_max)
+        
+        tags = {
+            "EISAID" : monitor.eisaid,
+            "HorizSync" : hsync,
+            "VertRefresh" : vref,
+            "Digital" : str(monitor.digital),
+            "Vendor" : monitor.vendorname,
+            "Model" : monitor.modelname
+        }
+        
+        for k, v in tags.items():
+            addTag(tag, k, v)
+        
+        resTag = tag.insertTag("Resolutions")
+        for res in monitor.res:
+            addTag(resTag, "Resolution", res)
+            #TODO: Check if it is preferred
+    
+    def removeMonitor(self, ID):
+        for tag in self.doc.tags("Monitor"):
+            if tag.getAttribute("id") == ID:
+                tag.hide()
+                break
+    
+    def getScreen(self, number):
+        nr = str(number)
+        for tag in self.doc.tags("Screen"):
+            if tag.getAttribute("number") == nr:
+                card = self.getCard(tag.getTagData("Card"))
+                monitor = self.getMonitor(tag.getTagData("Monitor"))
+                
+                scr = Screen(card, monitor)
+                
+                scr.number = nr
+                scr.res = tag.getTagData("Resolution")
+                scr.depth = atoi(tag.getTagData("Depth"))
+                # is scr.modes needed?
+                # scr.enabled ?
+                
+                return scr
+    
+    def setScreen(self, screen):
+        nr = str(screen.number)
+        for tag in self.doc.tags("Screen"):
+            if tag.getAttribute("number") == nr:
+                tag.hide()
+                break
+        
+        tag = self.doc.insertTag("Screen")
+        tag.setAttribute("number", nr)
+        #TODO: set also enabled attribute
+        
+        tags = {
+            "Card" : screen.device.id,
+            "Monitor" : screen.monitor.id,
+            "Resolution" : screen.res,
+            "Depth" : str(screen.depth)
+        }
+        
+        for k, v in tags.items():
+            addTag(tag, k, v)
+    
+    def enableScreen(self, number, enable=True):
+        nr = str(screen.number)
+        for tag in self.doc.tags("Screen"):
+            if tag.getAttribute("number") == nr:
+                tag.setAttribute("enabled", str(enable))
+                break
+        
+    def save(self):
+        f = file(self.configFile, "w")
+        f.write(self.doc.toPrettyString())
+        f.close()
