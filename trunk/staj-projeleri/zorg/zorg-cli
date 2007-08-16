@@ -15,8 +15,9 @@ import sys
 
 import comar
 import zorg
-import zorg.opengl
-import zorg.utils
+from zorg.opengl import OpenGL
+from zorg.utils import parseMode
+from zorg.config import ZorgConfig
 
 zorg_info = " Xorg AutoConfiguration tool"
 
@@ -64,7 +65,7 @@ def safe():
 
 def probe(opts):
     if opts.mode:
-        res, depth = zorg.utils.parseMode(opts.mode)
+        res, depth = parseMode(opts.mode)
         if not res:
             out.error("Mode is not supported or not valid: %s" % opts.mode)
             return
@@ -82,29 +83,16 @@ def probe(opts):
         setMode(opts)
 
 def setMode(opts):
-    link.Xorg.Display.screenInfo(screenNumber="0")
-    reply = link.read_cmd()
-    if reply.command == "result":
-        scrInfo = dict(x.split("=", 1) for x in reply.data.strip().splitlines())
-    else:
-        out.error(reply.data)
+    z = ZorgConfig()
+    scr = z.getScreen(0)
+    if not scr:
+        out.error("Could not get screen info")
         return
-
-    link.Xorg.Display.monitorInfo(monitorId=scrInfo["monitor"])
-    reply = link.read_cmd()
-    if reply.command == "result":
-        for line in reply.data.splitlines():
-            if line.startswith("resolutions="):
-                resolutions = line.split("=", 1)[1].split(",")
-                break
-    else:
-        out.error(reply.data)
-        return
-
+    
     out.sect("Setting mode to %s" % opts.mode)
 
     res = opts.mode.split("-")[0]
-    if res in resolutions:
+    if res in scr.monitor.res:
         pass
     elif opts.force:
         out.warn("Forcing unsupported mode: %s" % opts.mode)
@@ -112,25 +100,23 @@ def setMode(opts):
         out.error("Mode is not supported: %s" % opts.mode)
         return
 
-    link.Xorg.Display.setScreen(screenNumber="0", cardId=scrInfo["card"],
-                                monitorId=scrInfo["monitor"], mode=opts.mode)
+    link.Xorg.Display.setScreen(screenNumber="0", cardId=scr.device.id,
+                                monitorId=scr.monitor.id, mode=opts.mode)
 
     reply = link.read_cmd()
     if reply.command == "fail":
         out.error(reply.data)
 
 def setDriver(driver):
-    link.Xorg.Display.screenInfo(screenNumber="0")
-    reply = link.read_cmd()
-    if reply.command == "result":
-        scrInfo = dict(x.split("=", 1) for x in reply.data.strip().splitlines())
-    else:
-        out.error(reply.data)
+    z = ZorgConfig()
+    scr = z.getScreen(0)
+    if not scr:
+        out.error("Could not get screen info")
         return
 
     out.sect("Setting card driver to %s" % driver)
     opts = "driver=%s" % driver
-    link.Xorg.Display.setCardOptions(cardId=scrInfo["card"], options=opts)
+    link.Xorg.Display.setCardOptions(cardId=scr.device.id, options=opts)
     reply = link.read_cmd()
     if reply.command == "fail":
         out.error(reply.data)
@@ -138,108 +124,65 @@ def setDriver(driver):
     updateOpenGL(None, False)
 
 def info():
-    link.Xorg.Display.listCards()
-    reply = link.read_cmd()
-    if reply.command == "fail":
-        out.error(reply.data)
-        return
+    z = ZorgConfig()
 
     cards = {}
     monitors = {}
 
-    for card in reply.data.splitlines():
-        cardId, name = card.split(" ", 1)
-        link.Xorg.Display.cardInfo(cardId=cardId)
-        reply = link.read_cmd()
-        if reply.command == "fail":
-            out.error(reply.data)
-            continue
-        info = dict(x.split("=", 1) for x in reply.data.splitlines())
+    for card in z.cards():
+        cards[card.id] = card.boardName
 
-        cards[cardId] = info["boardName"]
-
-        if info["busId"]:
+        if card.busId:
             out.sect("Configured a video card on %s bus %s, device %s, function %s"
-                    % tuple(info["busId"].split(":")))
+                    % tuple(card.busId.split(":")))
         else:
             out.sect("Configured a failsafe video driver")
-        out.info("  PCI ID = %s:%s" % (info["vendorId"], info["deviceId"]))
-        out.info("  Vendor = %s" % info["vendorName"])
-        out.info("  Device = %s" % info["boardName"])
-        out.info("  Driver = %s" % info["driver"])
+        out.info("  PCI ID = %s:%s" % (card.vendorId, card.deviceId))
+        out.info("  Vendor = %s" % card.vendorName)
+        out.info("  Device = %s" % card.boardName)
+        out.info("  Driver = %s" % card.driver)
         out.info("")
         out.info("  Monitors connected to this device:")
 
-        monitorIds = info["monitors"].split(",")
-        if not monitorIds[0]:
+        if not card.monitors:
             out.error("    Could not find any configured monitors for this device")
             continue
 
-        for mon in monitorIds:
-            link.Xorg.Display.monitorInfo(monitorId=mon)
-            reply = link.read_cmd()
-            if reply.command == "fail":
-                out.error("Could not get monitor info")
-                continue
-
-            info = dict(x.split("=", 1) for x in reply.data.splitlines())
-            monitors[mon] = info["modelName"]
-            out.info("    Vendor                = %s" % info["vendorName"])
-            out.info("    Model                 = %s" % info["modelName"])
-            out.info("    Supported resolutions = %s" % info["resolutions"])
+        for mon in card.monitors:
+            monitors[mon.id] = mon.modelname
+            out.info("    Vendor                = %s" % mon.vendorname)
+            out.info("    Model                 = %s" % mon.modelname)
+            out.info("    Supported resolutions = %s" % ",".join(mon.res))
             out.info("")
 
-    for n in "0", "1":
+    for n in 0, 1:
+        scr = z.getScreen(n)
         out.sect("Screen %s properties:" % n)
-        link.Xorg.Display.screenInfo(screenNumber=n)
-        reply = link.read_cmd()
-        if reply.command != "result":
-            out.error(reply.data)
-            continue
 
-        if not reply.data:
+        if not scr:
             out.warn("  Not configured")
             continue
 
-        info = dict(x.split("=", 1) for x in reply.data.splitlines())
-
-        out.info("  Video card  = %s" % cards[info["card"]])
-        out.info("  Monitor     = %s" % monitors[info["monitor"]])
-        out.info("  Resolution  = %s" % info["resolution"])
-        out.info("  Color depth = %s" % info["depth"])
+        out.info("  Video card  = %s" % cards[scr.device.id])
+        out.info("  Monitor     = %s" % monitors[scr.monitor.id])
+        out.info("  Resolution  = %s" % scr.res)
+        out.info("  Color depth = %s" % scr.depth)
         out.info("")
 
-    o = zorg.opengl.OpenGL()
+    o = OpenGL()
     out.info("")
     out.sect("Current OpenGL implementation is %s" % o.current)
 
 def updateOpenGL(impl, headers):
     if not impl:
-        link.Xorg.Display.screenInfo(screenNumber="0")
-        reply = link.read_cmd()
-        if reply.command == "fail":
-            out.error(reply.data)
+        z = ZorgConfig()
+        scr = z.getScreen(0)
+        if not scr:
+            out.error("Could not get screen info")
             return
-
-        for line in reply.data.splitlines():
-            if line.startswith("card="):
-                card = line.split("=", 1)[1]
-                break
-
-        link.Xorg.Display.cardInfo(cardId=card)
-        reply = link.read_cmd()
-        if reply.command == "fail":
-            out.error(reply.data)
-            return
-
-        driver = "vesa"
-        for line in reply.data.splitlines():
-            if line.startswith("driver="):
-                driver = line.split("=", 1)[1]
-                break
 
         from zorg.probe import driver2opengl
-        impl = driver2opengl(driver)
+        impl = driver2opengl(scr.device.driver)
 
     out.sect("Switching to %s OpenGL implementation" % impl)
     link.Xorg.Display.updateOpenGL(implementation=impl,
