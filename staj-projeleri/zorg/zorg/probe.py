@@ -2,6 +2,7 @@
 
 import os
 
+from zorg.hwdata import *
 from zorg.parser import *
 from zorg.utils import *
 from zorg import modeline
@@ -11,179 +12,6 @@ MonitorsDB = "/usr/lib/X11/MonitorsDB"
 
 driver_path = "/usr/lib/xorg/modules/drivers"
 xkb_path = "/usr/share/X11/xkb/symbols/pc"
-
-truecolor_cards = ["i810", "intel", "nv", "nvidia", "radeon", "fglrx"]
-lcd_drivers = ["nv", "nvidia", "ati", "via", "i810", "intel", "sis", "savage", "neomagic"]
-opengl_impl = {
-    "fglrx"     : "ati",
-    "nvidia"    : "nvidia"
-}
-
-default_kmap = "trq"
-
-synapticsOptions = {
-    "Protocol" : "auto-dev",
-    # "Device" : "/dev/input/mouse0",
-    "LeftEdge" : "1700",
-    "RightEdge" : "5300",
-    "TopEdge" : "1700",
-    "BottomEdge" : "4200",
-    "FingerLow" : "25",
-    "FingerHigh" : "30",
-    "MaxTapTime" : "180",
-    "MaxTapMove" : "220",
-    "VertScrollDelta" : "100",
-    "MinSpeed" : "0.09",
-    "MaxSpeed" : "0.18",
-    "AccelFactor" : "0.0015",
-    "SHMConfig" : "true",
-    # Option     "ClickTime" : "0"
-}
-
-alpsOptions = {
-    "Protocol" : "auto-dev",
-    "LeftEdge" : "130",
-    "RightEdge" : "840",
-    "TopEdge" : "130",
-    "BottomEdge" : "640",
-    "FingerLow" : "7",
-    "FingerHigh" : "8",
-    "MaxTapTime" : "300",
-    "MaxTapMove" : "110",
-    "EmulateMidButtonTime" : "75",
-    "VertScrollDelta" : "20",
-    "HorizScrollDelta" : "20",
-    "MinSpeed" : "0.60",
-    "MaxSpeed" : "1.10",
-    "AccelFactor" : "0.030",
-    "EdgeMotionMinSpeed" : "200",
-    "EdgeMotionMaxSpeed" : "200",
-    "UpDownScrolling" : "1",
-    "CircularScrolling" : "1",
-    "CircScrollDelta" : "0.1",
-    "CircScrollTrigger" : "2",
-    "SHMConfig" : "true",
-    "Emulate3Buttons" : "true",
-    # "ClickTime" : "0"
-}
-
-touchpadDevices = {"synaptics" : synapticsOptions,
-                   "alps"      : alpsOptions}
-
-class Device:
-    def __init__(self, busId="", vendorId="", deviceId=""):
-        self.identifier = None
-
-        self.busId = busId
-        self.vendorId = vendorId
-        self.deviceId = deviceId
-        self.functionOf = None
-
-        self.cardId = "%s:%s@%s" % (self.vendorId, self.deviceId, self.busId)
-
-        self.driver = None
-        self.vendorName = "Unknown Vendor"
-        self.boardName = "Unknown Board"
-
-        self.monitors = []
-
-    def query(self):
-        self.vendorName, self.boardName = queryPCI(self.vendorId, self.deviceId)
-
-        if self.functionOf:
-            self.driver = self.functionOf.driver
-
-        if not self.driver:
-            availableDrivers = listAvailableDrivers()
-
-            for line in loadFile(xdriverlist):
-                if line.startswith(self.vendorId + self.deviceId):
-                    drv = line.rstrip("\n").split(" ")[1]
-                    if drv in availableDrivers:
-                        self.driver = drv
-
-        # if could not find driver from driverlist try X -configure
-        if not self.driver:
-            print "Running X server to query driver..."
-            ret = run("/usr/bin/X", ":1", "-configure", "-logfile", "/var/log/xlog")
-            if ret == 0:
-                home = os.getenv("HOME", "")
-                p = XorgParser()
-                p.parseFile(home + "/xorg.conf.new")
-                unlink(home + "/xorg.conf.new")
-                sec = p.getSections("Device")
-                if sec:
-                    self.driver = sec[0].get("Driver")
-                    print "Driver reported by X server is %s." % self.driver
-
-        # use nvidia if nv is found
-        if (self.driver == "nv") and ("nvidia" in availableDrivers):
-            self.driver = "nvidia"
-
-        # In case we can't parse or find xorg.conf.new
-        if not self.driver:
-            self.driver = "vesa"
-
-class Monitor:
-    def __init__(self):
-        self.identifier = None
-        self.probed = False
-        self.wide = False
-        self.digital = False
-        self.panel_w = 0
-        self.panel_h = 0
-        self.hsync_min = 0
-        self.hsync_max = 0
-        self.vref_min = 0
-        self.vref_max = 0
-        self.modelines = []
-        self.res = ["800x600", "640x480"]
-        self.vendorname = "Unknown Vendor"
-        self.modelname = "Unknown Model"
-        self.eisaid = ""
-        self.depth = "16"
-
-class DefaultMonitor(Monitor):
-    def __init__(self):
-        Monitor.__init__(self)
-
-        self.identifier = "DefaultMonitor"
-        self.vendorname = ""
-        self.modelname = "Default Monitor"
-
-        self.hsync_min = 31.5
-        self.hsync_max = 50
-        self.vref_min = 50
-        self.vref_max = 70
-
-class Screen:
-    def __init__(self, device=None, monitor=None):
-        self.identifier = None
-        self.number = None
-        self.device = device
-        self.monitor = monitor
-        self.depth = None
-        self.modes = ["800x600", "640x480"]
-        self.res = "800x600"
-
-    def setup(self):
-        self.identifier = "Screen%d" % self.number
-        self.monitor.identifier = "Monitor%d" % self.number
-        self.device.identifier = "VideoCard%d" % self.number
-
-        if not self.depth or self.device.driver == "fglrx":
-            if self.device.driver in truecolor_cards:
-                self.depth = 24
-            else:
-                self.depth = 16
-
-        print "Supported modes are %s" % self.monitor.res
-        print "Requested mode is %s" % self.res
-        if self.res in self.monitor.res:
-            i = self.monitor.res.index(self.res)
-            self.modes = self.monitor.res[i:]
-        else:
-            self.modes[:0] = [self.res]
 
 def queryTouchpad():
     try:
@@ -246,6 +74,43 @@ def queryPCI(vendor, device):
             elif not line.startswith("#"):
                 flag = 0
     return None, None
+
+def queryDevice(dev):
+    dev.vendorName, dev.boardName = queryPCI(dev.vendorId, dev.deviceId)
+
+    if dev.functionOf:
+        dev.driver = dev.functionOf.driver
+
+    if not dev.driver:
+        availableDrivers = listAvailableDrivers()
+
+        for line in loadFile(xdriverlist):
+            if line.startswith(dev.vendorId + dev.deviceId):
+                drv = line.rstrip("\n").split(" ")[1]
+                if drv in availableDrivers:
+                    dev.driver = drv
+
+    # if could not find driver from driverlist try X -configure
+    if not dev.driver:
+        print "Running X server to query driver..."
+        ret = run("/usr/bin/X", ":1", "-configure", "-logfile", "/var/log/xlog")
+        if ret == 0:
+            home = os.getenv("HOME", "")
+            p = XorgParser()
+            p.parseFile(home + "/xorg.conf.new")
+            unlink(home + "/xorg.conf.new")
+            sec = p.getSections("Device")
+            if sec:
+                dev.driver = sec[0].get("Driver")
+                print "Driver reported by X server is %s." % dev.driver
+
+    # use nvidia if nv is found
+    if (dev.driver == "nv") and ("nvidia" in availableDrivers):
+        dev.driver = "nvidia"
+
+    # In case we can't parse or find xorg.conf.new
+    if not dev.driver:
+        dev.driver = "vesa"
 
 def findVideoCards():
     """ Finds video cards. Result is a list of Device objects. """
@@ -441,6 +306,7 @@ def findMonitors(card, *adapters):
             mon.vref_max = 70
 
         if mon.eisaid:
+            mon.id = "EISA_%s" % mon.eisaid
             for line in loadFile(MonitorsDB):
                 l = line.split(";")
                 if mon.eisaid == l[2].strip().upper():
@@ -460,7 +326,3 @@ def findMonitors(card, *adapters):
         queryPanel(digitalMonitor, card)
 
     return monitors
-
-def driver2opengl(driver):
-    return opengl_impl.get(driver, "xorg-x11")
-
