@@ -9,7 +9,7 @@
 # PyKDE/PyQT imports
 from qt import *
 from kdeui import *
-from kdecore import KShortcut, i18n
+from kdecore import *
 from kparts import KParts
 from widgets import *
 
@@ -407,31 +407,37 @@ class MainWindow(KParts.MainWindow):
     def fetchSlot(self):        
         self.prepareBuild()
         self.pisithread.setup(self.tempDir + "/pspec.xml", "fetch", self.teOutput)
+        qApp.processEvents(QEventLoop.ExcludeUserInput)    
         self.pisithread.start()
         
     def unpackSlot(self):
         self.prepareBuild()
         self.pisithread.setup(self.tempDir + "/pspec.xml", "unpack", self.teOutput)
+        qApp.processEvents(QEventLoop.ExcludeUserInput)    
         self.pisithread.start()
     
     def setupSlot(self):
         self.prepareBuild()
         self.pisithread.setup(self.tempDir + "/pspec.xml", "setup", self.teOutput)
+        qApp.processEvents(QEventLoop.ExcludeUserInput)    
         self.pisithread.start()
-    
+        
     def buildSlot(self):
         self.prepareBuild()
         self.pisithread.setup(self.tempDir + "/pspec.xml", "build", self.teOutput)
+        qApp.processEvents(QEventLoop.ExcludeUserInput)    
         self.pisithread.start()
     
     def installSlot(self):
         self.prepareBuild()
         self.pisithread.setup(self.tempDir + "/pspec.xml", "install", self.teOutput)
+        qApp.processEvents(QEventLoop.ExcludeUserInput)    
         self.pisithread.start()
     
     def makePackageSlot(self):
         self.prepareBuild()
         self.pisithread.setup(self.tempDir + "/pspec.xml", "buildpackages", self.teOutput, self.realDir)
+        qApp.processEvents(QEventLoop.ExcludeUserInput)    
         self.pisithread.start()
     
     def addReleaseSlot(self):
@@ -485,6 +491,7 @@ class MainWindow(KParts.MainWindow):
         import sha
         
         temp = open(loc)
+        # TODO: büyük dosyalar için new() + update()'ler şeklinde değiştir
         new = sha.new(temp.read()).hexdigest()
         temp.close()
         
@@ -558,7 +565,6 @@ class PisiThread(Thread):
          except Exception, inst:
              self.output.append(str(i18n("\n<font color=\"red\">*** Error: %s</font>\n\n")) % unicode(escape(str(inst))))
              return
-         del self.output
          
          if self.stage == "buildpackages":
              # TODO: .pisi'nin yerini belirle
