@@ -128,7 +128,7 @@ def queryDevice(dev):
     # if could not find driver from driverlist try X -configure
     if not dev.driver:
         print "Running X server to query driver..."
-        ret = run("/usr/bin/X", ":1", "-configure", "-logfile", "/var/log/xlog")
+        ret = run("/usr/bin/X", ":99", "-configure", "-logfile", "/var/log/xlog")
         if ret == 0:
             home = os.getenv("HOME", "")
             p = XorgParser()
@@ -354,7 +354,7 @@ def queryPanel(mon, card):
     ]
 
     print "Running X server to query panel..."
-    a = run("/usr/bin/X", ":1", "-probeonly", "-allowMouseOpenFail", \
+    a = run("/usr/bin/X", ":99", "-probeonly", "-allowMouseOpenFail", \
             "-config", "/tmp/xorg.conf", \
             "-logfile", "/var/log/xlog")
     if a != 0:
