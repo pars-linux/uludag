@@ -37,9 +37,11 @@ class SecureXMLRPCServer(BaseHTTPServer.HTTPServer,SimpleXMLRPCServer.SimpleXMLR
 
         SimpleXMLRPCServer.SimpleXMLRPCDispatcher.__init__(self)
         SocketServer.BaseServer.__init__(self, server_address, HandlerClass)
+        # ssl related stuff
         ctx = SSL.Context(SSL.SSLv23_METHOD)
         ctx.use_privatekey_file (KEYFILE)
         ctx.use_certificate_file(CERTFILE)
+        # opens the ssl socket
         self.socket = SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))
         self.server_bind()
         self.server_activate()
