@@ -253,9 +253,10 @@ def queryDDC(adapter=0):
     from zorg import ddc
     edid = ddc.query(adapter)
 
-    if not edid:
-        mon.probed = False
-        return mon
+    if not edid or not edid["eisa_id"]:
+        #mon.probed = False
+        #return mon
+        return DefaultMonitor()
     else:
         mon.probed = True
 
@@ -334,7 +335,7 @@ def queryPanel(mon, card):
     sec.set("Device", "Card0")
     p.sections.append(sec)
 
-    open("/tmp/xorg.conf", "w").write(str(p))
+    open("/tmp/xorg.conf", "w").write(p.toString())
 
     patterns = [
         "Panel size is",
@@ -411,7 +412,8 @@ def findMonitors(card, *adapters):
                     mon.vref_min, mon.vref_max = map(float, l[4].strip().split("-"))
 
         # check lcd panel
-        if mon.digital and (card.driver in lcd_drivers):
+        #if mon.digital and (card.driver in lcd_drivers):
+        if card.driver in lcd_drivers:
             digitalMonitor = mon
 
         card.monitors.append(mon)
