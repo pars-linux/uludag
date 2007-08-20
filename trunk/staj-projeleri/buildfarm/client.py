@@ -10,23 +10,18 @@
 #
 # Please read the COPYING file.
 
+REMOTE_HOST = "localhost"
+REMOTE_PORT = 443
+
 import xmlrpclib
 
-server = xmlrpclib.Server("https://localhost:443")
+if __name__ == "__main__":
+    
+    # Handle command-line arguments
+    
+    remoteURI = "https://" + REMOTE_HOST + ":" + str(REMOTE_PORT)
+    server = xmlrpclib.ServerProxy(remoteURI)
 
-print "Provided Methods: %s\n" % server.system.listMethods()
+    print "Provided Methods: %s\n" % server.system.listMethods()
 
-print "Update repository: %s" % server.updateRepository()
-
-print "WorkQueue: %s" % server.getWorkQueue()
-print "WaitQueue: %s" % server.getWaitQueue()
-
-print "Remove A from WorkQueue: %s" % server.removeFromWorkQueue("a/pspec.xml")
-print "Append B to WaitQueue: %s" % server.appendToWaitQueue("b/pspec.xml")
-print "Append A to WorkQueue: %s" % server.appendToWorkQueue("a/pspec.xml")
-print "Transfer A to WaitQueue: %s" % server.transferToWorkQueue("a/pspec.xml")
-
-print "WorkQueue: %s" % server.getWorkQueue()
-print "WaitQueue: %s" % server.getWaitQueue()
-
-#print server.buildPackages()
+    # print server._buildPackages()

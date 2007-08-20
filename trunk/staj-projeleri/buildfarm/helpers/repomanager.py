@@ -39,34 +39,40 @@ class RepositoryManager:
             return rval
 
     def __getRevision__(self):
+        # Parses the output and returns the revision number e.g. '15061'
         o = self.output[len(self.output) - 1]
         for i in range(0, len(o)):
             if o[i] == "revision":
                 return int(o[i+1].strip("."))
 
     def __MODIFIED__(self):
+        # Returns the list of items marked with U
         data=[]
         for d in self.output:
             if d[0] == "U": data.append(d[1])
         return data
 
     def __ADDED__(self):
+        # Returns the list of items marked with A
         data=[]
         for d in self.output:
             if d[0] == "A": data.append(d[1])
         return data
 
     def __REMOVED__(self):
+        # Returns the list of items marked with D
         data=[]
         for d in self.output:
             if d[0] == "D": data.append(d[1])
         return data
 
     def __ALL__(self, filter='', exclude=[]):
+        # Returns all the items in a list
         return self.__MODIFIED__() + self.__REMOVED__() + self.__ADDED__()
 
     def updateRepository(self):
         def update():
+            # Calls 'svn up' from the directory 'config.localPspecRepo'
             oldwd = os.getcwd()
             os.chdir(config.localPspecRepo)
             logger.info("Yerel pspec deposu güncelleniyor: '%s'" % (config.localPspecRepo))

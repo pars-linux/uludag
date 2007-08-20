@@ -17,6 +17,9 @@ LISTEN_PORT=443
 KEYFILE="certs/new.cert.key"
 CERTFILE="certs/new.cert.cert"
 
+import sys
+import os
+
 import socket
 import SocketServer
 import BaseHTTPServer
@@ -31,7 +34,11 @@ from helpers import repomanager
 
 import main
 
-class SecureXMLRPCServer(BaseHTTPServer.HTTPServer,SimpleXMLRPCServer.SimpleXMLRPCDispatcher):
+# Inherits from ForkingMixIn for asynchronous request handling
+
+class SecureXMLRPCServer(SocketServer.ForkingMixIn,
+                         BaseHTTPServer.HTTPServer,
+                         SimpleXMLRPCServer.SimpleXMLRPCDispatcher):
     def __init__(self, server_address, HandlerClass, logRequests=True):
         self.logRequests = logRequests
 
@@ -82,18 +89,56 @@ class SecureXMLRpcRequestHandler(SimpleXMLRPCServer.SimpleXMLRPCRequestHandler):
 class CombinedServerClass(qmanager.QueueManager, repomanager.RepositoryManager):
     pass
 
-server = SecureXMLRPCServer((LISTEN_HOST, LISTEN_PORT), SecureXMLRpcRequestHandler)
 
-# let server.system.listMethods
-server.register_introspection_functions()
 
-# export CombinedServerClass
-server.register_instance(CombinedServerClass())
+def runServer():
+    
+    # Initialize server instance
+    server = SecureXMLRPCServer((LISTEN_HOST, LISTEN_PORT), SecureXMLRpcRequestHandler)
+    
+    # let server.system.listMethods
+    server.register_introspection_functions()
+    
+    # export CombinedServerClass
+    server.register_instance(CombinedServerClass())
+    
+    # export buildPackages, buildIndex
+    # FIXME: run these on another thread and return to client ASAP
+    server.register_function(main.buildPackages)
+    server.register_function(main.buildIndex)
+    
+    # enter main loop
+    server.serve_forever()
 
-# export buildPackages, buildIndex
-# FIXME: run these on another thread and return to client ASAP
-server.register_function(main.buildPackages)
-server.register_function(main.buildIndex)
 
-# enter main loop
-server.serve_forever()
+
+if __name__ == "__main__":
+    
+    # Add stream redirections
+    #try:
+    #    pid = os.fork()
+    #    if pid > 0:
+    #        # Exit first parent
+    #        sys.exit(0)
+    #except OSError, e:
+    #    print >> sys.stderr, "fork() failed: %d (%s)" % (e.errno, e.strerror)
+    #    sys.exit(1)
+    #    
+    ## Decouple from parent environment
+    ##os.chdir("/")
+    #os.setsid()
+    #os.umask(0)
+    #
+    ## Do second fork
+    #try:
+    #    pid = os.fork()
+    #    if pid > 0:
+    #        # Exit from second parent
+    #        sys.exit(0)
+    #except OSError, e:
+    #    print >> sys.stderr, "fork() failed: %d (%s)" % (e.errno, e.strerror)
+    #    sys.exit(1)
+        
+    # Start the daemon main loop
+    
+    runServer()
