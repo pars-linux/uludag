@@ -10,6 +10,10 @@
 #
 # Please read the COPYING file.
 
+# XMLRPC Connection parameters
+HOST = "localhost"
+PORT = 443
+
 #Some configuration info for other modules..
 workDir          = "/var/pisi/"
 outputDir        = "/var/pisi/buildlogs/"

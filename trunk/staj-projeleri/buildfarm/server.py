@@ -10,10 +10,9 @@
 #
 # Please read the COPYING file.
 #
-# Based on http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496786
+# XMLRPC over SSL Based on :
+# http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/496786
 
-LISTEN_HOST="localhost"
-LISTEN_PORT=443
 KEYFILE="certs/new.cert.key"
 CERTFILE="certs/new.cert.cert"
 
@@ -33,20 +32,20 @@ from helpers import qmanager
 from helpers import repomanager
 
 import main
+import config
 
-# Inherits from ForkingMixIn for asynchronous request handling
+# Inherits from ForkingMixIn for multi-process support
 
 class SecureXMLRPCServer(SocketServer.ForkingMixIn,
                          BaseHTTPServer.HTTPServer,
                          SimpleXMLRPCServer.SimpleXMLRPCDispatcher):
     
-    # Collects the zombie process
+    # "SocketServer.py" cleans the zombies just after a new connection request
+    # This function overrides the SIGCHLD handler for immediate clean-up.
     def overrideHandler(self):
         def SIGCHLDHandler(signum,frame):
             # dummy wrapper for calling collect_children()
             self.collect_children()
-
-        # Registers a new handler for SIGCHLD
         import signal
         signal.signal(signal.SIGCHLD, SIGCHLDHandler)
         
@@ -107,7 +106,7 @@ class CombinedServerClass(qmanager.QueueManager, repomanager.RepositoryManager):
 def runServer():
     
     # Initialize server instance
-    server = SecureXMLRPCServer((LISTEN_HOST, LISTEN_PORT), SecureXMLRpcRequestHandler)
+    server = SecureXMLRPCServer((config.HOST, config.PORT), SecureXMLRpcRequestHandler)
     
     # let server.system.listMethods
     server.register_introspection_functions()
@@ -122,8 +121,6 @@ def runServer():
     
     # enter main loop
     server.serve_forever()
-
-
 
 if __name__ == "__main__":
     
