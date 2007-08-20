@@ -39,7 +39,7 @@ class PisiApi:
         self.__oldBinaryPackages = []
 
     def init(self, stdout, stderr):
-        logger.info(_("Initilasing PiSi API..."))
+        logger.info(_("Initialising PiSi API..."))
         pisi.api.init(options = self.options, stdout = stdout, stderr = stderr)
 
     def finalize(self):
@@ -49,8 +49,8 @@ class PisiApi:
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
         if not os.path.exists(pspec):
-            logger.error(_("'%s' is not exists!") % (pspec))
-            raise _("'%s' is not exists!") % pspec
+            logger.error(_("'%s' does not exists!") % (pspec))
+            raise _("'%s' does not exists!") % pspec
 
         logger.info(_("BUILD called for %s") % (pspec)) 
 

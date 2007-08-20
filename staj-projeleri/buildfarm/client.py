@@ -10,18 +10,16 @@
 #
 # Please read the COPYING file.
 
-REMOTE_HOST = "localhost"
-REMOTE_PORT = 443
-
 import xmlrpclib
+import config
 
 if __name__ == "__main__":
     
     # Handle command-line arguments
     
-    remoteURI = "https://" + REMOTE_HOST + ":" + str(REMOTE_PORT)
+    
+    remoteURI = "https://" + config.HOST + ":" + str(config.PORT)
     server = xmlrpclib.ServerProxy(remoteURI)
 
     print "Provided Methods: %s\n" % server.system.listMethods()
 
-    # print server._buildPackages()
