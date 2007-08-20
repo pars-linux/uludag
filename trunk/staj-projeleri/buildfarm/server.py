@@ -39,7 +39,22 @@ import main
 class SecureXMLRPCServer(SocketServer.ForkingMixIn,
                          BaseHTTPServer.HTTPServer,
                          SimpleXMLRPCServer.SimpleXMLRPCDispatcher):
+    
+    # Collects the zombie process
+    def overrideHandler(self):
+        def SIGCHLDHandler(signum,frame):
+            # dummy wrapper for calling collect_children()
+            self.collect_children()
+
+        # Registers a new handler for SIGCHLD
+        import signal
+        signal.signal(signal.SIGCHLD, SIGCHLDHandler)
+        
     def __init__(self, server_address, HandlerClass, logRequests=True):
+        
+        # Override SIGCHLD Handler
+        self.overrideHandler()
+        
         self.logRequests = logRequests
 
         SimpleXMLRPCServer.SimpleXMLRPCDispatcher.__init__(self)
@@ -89,8 +104,6 @@ class SecureXMLRpcRequestHandler(SimpleXMLRPCServer.SimpleXMLRPCRequestHandler):
 class CombinedServerClass(qmanager.QueueManager, repomanager.RepositoryManager):
     pass
 
-
-
 def runServer():
     
     # Initialize server instance
@@ -114,7 +127,7 @@ def runServer():
 
 if __name__ == "__main__":
     
-    # Add stream redirections
+    ## Add stream redirections
     #try:
     #    pid = os.fork()
     #    if pid > 0:
@@ -138,7 +151,7 @@ if __name__ == "__main__":
     #except OSError, e:
     #    print >> sys.stderr, "fork() failed: %d (%s)" % (e.errno, e.strerror)
     #    sys.exit(1)
-        
-    # Start the daemon main loop
+    #    
+    ## Start the daemon main loop
     
     runServer()
