@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-26 21:00+0200\n"
-"PO-Revision-Date: 2007-06-18 15:09+0300\n"
-"Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
+"PO-Revision-Date: 2007-08-21 00:17+0100\n"
+"Last-Translator: Gökhan Akca <goekhanakca@web.de>\n"
 "Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,12 +35,14 @@ msgstr "(c) 2005, TUBITAK - UEKAE"
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
 msgstr "(c) 2005-2006, TUBITAK - UEKAE"
 
-#: modules/tasmatv/tvconfigui.cpp:155 rc.cpp:48
+#: modules/tasmatv/tvconfigui.cpp:155
+#: rc.cpp:48
 #, no-c-format
 msgid "28 Mhz Crystal"
 msgstr "28 Mhz Crystal"
 
-#: modules/tasmatv/tvconfigui.cpp:156 rc.cpp:51
+#: modules/tasmatv/tvconfigui.cpp:156
+#: rc.cpp:51
 #, no-c-format
 msgid "35 Mhz Crystal"
 msgstr "35 Mhz Crystal"
@@ -53,7 +55,8 @@ msgstr "<big>Am laden...</big>"
 msgid "About Current Module"
 msgstr "Über das aktuelle Modul"
 
-#: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:36
+#: modules/tasmatv/tvconfigui.cpp:151
+#: rc.cpp:36
 #, no-c-format
 msgid "Addons"
 msgstr "Erweiterungen"
@@ -62,7 +65,8 @@ msgstr "Erweiterungen"
 msgid "Configuration Center"
 msgstr "Konfigurationszentrum"
 
-#: modules/tasmatv/tasmatv.cpp:44 src/main.cpp:65
+#: modules/tasmatv/tasmatv.cpp:44
+#: src/main.cpp:65
 msgid "Current Maintainer"
 msgstr "Aktueller Leiter des Programms"
 
@@ -70,37 +74,32 @@ msgstr "Aktueller Leiter des Programms"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:45
+#: modules/tasmatv/tvconfigui.cpp:154
+#: rc.cpp:45
 #, no-c-format
 msgid "Do not use PLL"
 msgstr "PLL nicht verwenden"
 
 #: src/aboutview.cpp:99
-msgid ""
-"For a better understanding modules are grouped by categories. You can "
-"activate a category by selecting a category from the left. After activating "
-"a category its contents will be shown as icons in the right panel. You can "
-"start a configuration module by clicking (or double clicking) its icon."
-msgstr ""
-"Für eine bessere Verständigung, wurden die Module in Katogerien gruppiert. "
-"Sie können eine Kategorie aktivieren, indem Sie eine Kategorie aus dem "
-"linken Bereich auswählen. Nachdem Sie eine Kategorie aktiviert haben, wird "
-"dessen Inhalt als Icon in der rechten Leiste angezeigt. Sie können ein "
-"Konfigurationsmodule durch klicken( oder durch einem Doppelklick) des "
-"jeweiligen Icons starten."
+msgid "For a better understanding modules are grouped by categories. You can activate a category by selecting a category from the left. After activating a category its contents will be shown as icons in the right panel. You can start a configuration module by clicking (or double clicking) its icon."
+msgstr "Für eine bessere Verständigung, wurden die Module in Katogerien gruppiert. Sie können eine Kategorie aktivieren, indem Sie eine Kategorie aus dem linken Bereich auswählen. Nachdem Sie eine Kategorie aktiviert haben, wird dessen Inhalt als Icon in der rechten Leiste angezeigt. Sie können ein Konfigurationsmodul durch klicken( oder durch einem Doppelklick) des jeweiligen Icons starten."
 
 #: src/main.cpp:67
 msgid "KDE Developers"
 msgstr "Die KDE-Entwickler"
 
-#: modules/tasmatv/tvconfigui.cpp:138 modules/tasmatv/tvconfigui.cpp:146
-#: rc.cpp:9 rc.cpp:24
+#: modules/tasmatv/tvconfigui.cpp:138
+#: modules/tasmatv/tvconfigui.cpp:146
+#: rc.cpp:9
+#: rc.cpp:24
 #, no-c-format
 msgid "Manufacturer"
 msgstr "Hersteller"
 
-#: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:147
-#: rc.cpp:6 rc.cpp:27
+#: modules/tasmatv/tvconfigui.cpp:137
+#: modules/tasmatv/tvconfigui.cpp:147
+#: rc.cpp:6
+#: rc.cpp:27
 #, no-c-format
 msgid "Model"
 msgstr "Model"
@@ -113,9 +112,14 @@ msgstr "Die Modul-Entwickler"
 msgid "Name"
 msgstr "Name"
 
-#: modules/tasmatv/tvconfigui.cpp:140 modules/tasmatv/tvconfigui.cpp:142
-#: modules/tasmatv/tvconfigui.cpp:145 modules/tasmatv/tvconfigui.cpp:149
-#: rc.cpp:12 rc.cpp:15 rc.cpp:21 rc.cpp:30
+#: modules/tasmatv/tvconfigui.cpp:140
+#: modules/tasmatv/tvconfigui.cpp:142
+#: modules/tasmatv/tvconfigui.cpp:145
+#: modules/tasmatv/tvconfigui.cpp:149
+#: rc.cpp:12
+#: rc.cpp:15
+#: rc.cpp:21
+#: rc.cpp:30
 #, no-c-format
 msgid "New Item"
 msgstr "Neues Element"
@@ -124,7 +128,8 @@ msgstr "Neues Element"
 msgid "Old Maintainer & Original Author"
 msgstr "Vorheriger Leiter & ursprünglicher Autor"
 
-#: modules/tasmatv/cards-db.cpp:99 modules/tasmatv/tuners-db.cpp:173
+#: modules/tasmatv/cards-db.cpp:99
+#: modules/tasmatv/tuners-db.cpp:173
 msgid "Other"
 msgstr "Andere"
 
@@ -132,16 +137,18 @@ msgstr "Andere"
 msgid "Pardus Configuration Center"
 msgstr "Pardus Konfigurationszentrum"
 
-#: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:42
+#: modules/tasmatv/tvconfigui.cpp:153
+#: rc.cpp:42
 #, no-c-format
 msgid "Phase Locked Loop (PLL)"
-msgstr "Phasen endlose Schleife (PLL)"
+msgstr "Phasengekoppelter Regelkreis (PLL)"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:34
 msgid "PiSi Package Info"
 msgstr "PiSi Paket-Info"
 
-#: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:39
+#: modules/tasmatv/tvconfigui.cpp:152
+#: rc.cpp:39
 #, no-c-format
 msgid "Radio Card"
 msgstr "Radio-Karte"
@@ -158,21 +165,17 @@ msgid "TASMA Tv Card Configuration Module"
 msgstr "TASMA TV-Karte-Konfigurationsmodul"
 
 #: src/aboutview.cpp:88
-msgid ""
-"TASMA is a configuration application for Pardus Operating System. You can "
-"tweak the systems default configuration settings and by using the modules "
-"presented in TASMA. "
-msgstr ""
-"TASMA ist ein Konfigurationsprogramm für das Pardus Betriebssystem. Durch "
-"die Verwendung des Moduls in TASMA, können Sie die Systemvoreinstellungen "
-"optimieren."
+msgid "TASMA is a configuration application for Pardus Operating System. You can tweak the systems default configuration settings and by using the modules presented in TASMA. "
+msgstr "TASMA ist ein Konfigurationsprogramm für das Pardus Betriebssystem. Durch die Verwendung des Moduls in TASMA, können Sie die Systemvoreinstellungen optimieren."
 
-#: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:18
+#: modules/tasmatv/tvconfigui.cpp:150
+#: rc.cpp:18
 #, no-c-format
 msgid "Tuner"
 msgstr "Empfänger"
 
-#: modules/tasmatv/tvconfigui.cpp:143 rc.cpp:3
+#: modules/tasmatv/tvconfigui.cpp:143
+#: rc.cpp:3
 #, no-c-format
 msgid "Tv Card"
 msgstr "TV-Karte"
