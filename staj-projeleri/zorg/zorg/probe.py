@@ -24,8 +24,7 @@ PCI_COMMAND_MEMORY      = 0x2
 PCI_BRIDGE_CONTROL      = 0x3e
 PCI_BRIDGE_CTL_VGA      = 0x08
 
-#PCI_BASE_CLASS_DISPLAY  = 0x03
-PCI_CLASS_DISPLAY_VGA   = 0x0300
+PCI_BASE_CLASS_DISPLAY  = 0x03
 
 #PCI_BASE_CLASS_BRIDGE   = 0x06
 PCI_CLASS_BRIDGE_PCI    = 0x0604
@@ -218,7 +217,7 @@ def getPrimaryBus():
 
     primaryBus = None
     for dev in devices:
-        if dev.class_ != PCI_CLASS_DISPLAY_VGA:
+        if not (dev.class_ >> 8) == PCI_BASE_CLASS_DISPLAY:
             continue
 
         vga_routed = True
@@ -239,11 +238,13 @@ def getPrimaryBus():
                 primaryBus = dev.name
                 break
 
-    #if primaryBus is None:
-    #    for dev in devices:
-    #        if dev.class_ == PCI_CLASS_DISPLAY_VGA:
-    #            primaryBus = dev.name
-    #            break
+    # Just to ensure that we have picked a device. Normally,
+    # primaryBus might not be None here.
+    if primaryBus is None:
+        for dev in devices:
+            if (dev.class_ >> 8) == PCI_BASE_CLASS_DISPLAY:
+                primaryBus = dev.name
+                break
 
     return primaryBus
 
