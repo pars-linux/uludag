@@ -217,7 +217,7 @@ def getPrimaryBus():
 
     primaryBus = None
     for dev in devices:
-        if not (dev.class_ >> 8) == PCI_BASE_CLASS_DISPLAY:
+        if (dev.class_ >> 8) != PCI_BASE_CLASS_DISPLAY:
             continue
 
         vga_routed = True
