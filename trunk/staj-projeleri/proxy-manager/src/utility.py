@@ -8,13 +8,11 @@
 # Free Software Foundation; either version 2 of the License, or (at your
 # option) any later version. Please read the COPYING file.
 
-# FIXME: clean print statements in all files
-
 from qt import *
 from kdecore import *
-from khtml import *
 
 import os
+
 import pisi
 import profile
 
@@ -31,24 +29,14 @@ def initProfiles():
     profiles[0:] = profile.parseConfig()
 
 def createModules():
-    pisi.api.init(write=False)
-    installed = pisi.api.list_installed()
-    pisi_packages = []
-    pisi_packages.append("firefox")
-    pisi_packages.append("thunderbird")
-    pisi_packages.append("amsn")
-    pisi_packages.append("aria2")
-    pisi_packages.append("kdebase")
-    pisi_packages.append("gftp")
-    if pisi_packages[0] in installed:
-        from apps.mozilla import Mozilla, isUsed
-        if isUsed(pisi_packages[0]):
-            modules.append(Mozilla(pisi_packages[0]))
-    if pisi_packages[1] in installed:
+    home_dir = os.path.expanduser("~/")
+    if "firefox" in installed or "thunderbird" in installed:
         from apps.mozilla import Mozilla
-        if isUsed(pisi_packages[1]):
-            modules.append(Mozilla(pisi_packages[1]))
-    if "amsn" in installed:
+        if os.exists(home_dir + ".mozilla/firefox"):
+            modules.append(Mozilla(home_dir + ".mozilla/firefox/"))
+        if os.exists(home_dir + ".thunderbird"):
+            modules.append(Mozilla(home_dir + ".thunderbird/"))
+    if "amsn" in installed and os.exists(home_dir + ".amsn/config.xml"):
         from apps.amsn import AMSN
         modules.append(AMSN())
     if "aria2" in installed:
@@ -60,6 +48,9 @@ def createModules():
     if "gftp" in installed:
         from apps.gftp import Gftp
         modules.append(Gftp())
+    if "pidgin" in installed and os.exists(home_dir + ".purple/prefs.xml"):
+        from apps.pidgin import Pidgin
+        modules.append(Pidgin())
         
 
 def changeProxy(prfl):
@@ -83,10 +74,11 @@ def changeProxy(prfl):
         for m in modules:
             m.setPAC_URL(prfl.auto_url)
         
+    for m in modules:
+        m.close()
+        
     for p in profiles:
         p.isActive = False
     prfl.isActive = True
     
-    for m in modules:
-        m.close()
     profile.save()
