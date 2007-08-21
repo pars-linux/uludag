@@ -9,29 +9,14 @@
 import os
 
 from app import App
-import ConfigParser
-
-ffpath = os.path.expanduser("~/.mozilla/firefox/")
-tbpath = os.path.expanduser("~/.thunderbird/")
-
-# Determine if the app has a directory inside 'home' of the user
-# FIXME: this can be a part of 'apps' class
-def isUsed(app="firefox"):
-    if (app == "firefox" and not os.path.exists(ffpath)) or (app == "thunderbird" and not os.path.exists(tbpath)):
-        return False
-    else:
-        return True
-    
+import ConfigParser    
 
 class Mozilla(App):
-    def __init__(self, app="firefox"):
+    def __init__(self, configdir):
         # Finds the path of the config file
         # NOTE: this is for default profile only.
+        self.configdir = configdir
         config = ConfigParser.SafeConfigParser()
-        if app == "firefox":
-            self.configdir = ffpath
-        if app == "thunderbird":
-            self.configdir = tbpath
         config.read(self.configdir + "profiles.ini")
         self.path = self.configdir + config.get("Profile0", "Path") + "/user.js"
         # keys of the config file
