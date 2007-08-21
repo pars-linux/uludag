@@ -66,6 +66,9 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
         self.socket = SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))
         self.server_bind()
         self.server_activate()
+        
+    def __getattr__(self,x):
+        return getattr(self,x)
 
 class SecureXMLRpcRequestHandler(SimpleXMLRPCServer.SimpleXMLRPCRequestHandler):
     def setup(self):
