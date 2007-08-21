@@ -64,7 +64,7 @@ class QueueManager:
     def getWaitQueue(self):
         return self.waitQueue
 
-    def removeFromWaitQueue(self):
+    def removeFromWaitQueue(self, pspec):
         if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
             self.__serialize__(self.waitQueue, "waitQueue")
