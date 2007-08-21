@@ -62,7 +62,7 @@ class QueueManager:
                 queueName.append(line.strip("\n"))
         queue.close()
 
-    def removeFromWaitQueue(self):
+    def removeFromWaitQueue(self, pspec):
         if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
 
