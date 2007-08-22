@@ -292,68 +292,68 @@ class ZorgConfig:
         busId = tag.getTagData("BusId")
         vendorId = tag.getTagData("VendorId")
         deviceId = tag.getTagData("DeviceId")
-        
+
         card = Device(busId, vendorId, deviceId)
-        
+
         card.driver = tag.getTagData("Driver")
         card.vendorName = tag.getTagData("Vendor")
         card.boardName = tag.getTagData("Board")
-        
+
         monitorsTag = tag.getTag("Monitors")
         for mon in monitorsTag.tags("Monitor"):
             monitorId = mon.firstChild().data()
             monitor = self.getMonitor(monitorId)
             if monitor:
                 card.monitors.append(monitor)
-        
+
         return card
-    
+
     def __getMonitor(self, tag):
         mon = Monitor()
-        
+
         mon.id = tag.getAttribute("id")
         mon.eisaid = tag.getTagData("EISAID")
-        
+
         hsync = tag.getTagData("HorizSync").split("-")
         vref = tag.getTagData("VertRefresh").split("-")
         mon.hsync_min, mon.hsync_max = map(atoi, hsync)
         mon.vref_min, mon.vref_max = map(atoi, vref)
-        
+
         digital = tag.getTagData("Digital")
         mon.digital = digital.lower() == "true"
-        
+
         mon.vendorname = tag.getTagData("Vendor")
         mon.modelname = tag.getTagData("Model")
-        
+
         mon.res = []
         resTag = tag.getTag("Resolutions")
         for res in resTag.tags("Resolution"):
             mon.res.append(res.firstChild().data())
             #TODO: Check if res is preferred
-        
+
         return mon
 
     def cards(self):
         cardList = []
         for tag in self.doc.tags("Card"):
             cardList.append(self.__getCard(tag))
-        
+
         return cardList
-            
+
     def getCard(self, ID):
         for tag in self.doc.tags("Card"):
             if tag.getAttribute("id") == ID:
                 return self.__getCard(tag)
-    
+
     def addCard(self, card):
         for tag in self.doc.tags("Card"):
             if tag.getAttribute("id") == card.id:
                 tag.hide()
                 break
-        
+
         tag = self.doc.insertTag("Card")
         tag.setAttribute("id", card.id)
-        
+
         tags = {
             "BusId" : card.busId,
             "VendorId" : card.vendorId,
@@ -362,35 +362,35 @@ class ZorgConfig:
             "Vendor" : card.vendorName,
             "Board" : card.boardName
         }
-        
+
         for k, v in tags.items():
             addTag(tag, k, v)
-        
+
         mons = tag.insertTag("Monitors")
         for mon in card.monitors:
             addTag(mons, "Monitor", mon.id)
-    
+
     def monitors(self):
         monitorList = []
         for tag in self.doc.tags("Monitor"):
             monitorList.append(self.__getMonitor(tag))
-        
+
         return monitorList
 
     def getMonitor(self, ID):
         for tag in self.doc.tags("Monitor"):
             if tag.getAttribute("id") == ID:
                 return self.__getMonitor(tag)
-    
+
     def addMonitor(self, monitor):
         self.removeMonitor(monitor.id)
 
         tag = self.doc.insertTag("Monitor")
         tag.setAttribute("id", monitor.id)
-        
+
         hsync = "%s-%s" % (monitor.hsync_min, monitor.hsync_max)
         vref = "%s-%s" % (monitor.vref_min, monitor.vref_max)
-        
+
         tags = {
             "EISAID" : monitor.eisaid,
             "HorizSync" : hsync,
@@ -399,66 +399,66 @@ class ZorgConfig:
             "Vendor" : monitor.vendorname,
             "Model" : monitor.modelname
         }
-        
+
         for k, v in tags.items():
             addTag(tag, k, v)
-        
+
         resTag = tag.insertTag("Resolutions")
         for res in monitor.res:
             addTag(resTag, "Resolution", res)
             #TODO: Check if it is preferred
-    
+
     def removeMonitor(self, ID):
         for tag in self.doc.tags("Monitor"):
             if tag.getAttribute("id") == ID:
                 tag.hide()
                 break
-    
+
     def getScreen(self, number):
         nr = str(number)
         for tag in self.doc.tags("Screen"):
             if tag.getAttribute("number") == nr:
                 card = self.getCard(tag.getTagData("Card"))
                 monitor = self.getMonitor(tag.getTagData("Monitor"))
-                
+
                 scr = Screen(card, monitor)
-                
+
                 scr.number = nr
                 scr.res = tag.getTagData("Resolution")
                 scr.depth = atoi(tag.getTagData("Depth"))
                 # is scr.modes needed?
                 # scr.enabled ?
-                
+
                 return scr
-    
+
     def setScreen(self, screen):
         nr = str(screen.number)
         for tag in self.doc.tags("Screen"):
             if tag.getAttribute("number") == nr:
                 tag.hide()
                 break
-        
+
         tag = self.doc.insertTag("Screen")
         tag.setAttribute("number", nr)
         #TODO: set also enabled attribute
-        
+
         tags = {
             "Card" : screen.device.id,
             "Monitor" : screen.monitor.id,
             "Resolution" : screen.res,
             "Depth" : str(screen.depth)
         }
-        
+
         for k, v in tags.items():
             addTag(tag, k, v)
-    
+
     def enableScreen(self, number, enable=True):
         nr = str(screen.number)
         for tag in self.doc.tags("Screen"):
             if tag.getAttribute("number") == nr:
                 tag.setAttribute("enabled", str(enable))
                 break
-        
+
     def save(self):
         f = file(self.configFile, "w")
         f.write(self.doc.toPrettyString())
