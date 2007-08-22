@@ -1,4 +1,11 @@
-* Authentication framework
+
+* Think about using optparse.
+* LDAP Authentication
+* Update,Sync and Status options
+* main.py -> module
+* 3 bugs reported to bugzilla
+* Daemonize + stream redirections + buildfarm log
+
 * Refactor everything
 * Finalize API
 * Implement full functional client
