@@ -32,7 +32,9 @@ class QueueManager:
             self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDependencies()
 
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDependencies()
-
+        self.__serialize__(self.waitQueue, "waitQueue")
+        self.__serialize__(self.workQueue, "workQueue")
+        
     def __del__(self):
         self.__serialize__(self.waitQueue, "waitQueue")
         self.__serialize__(self.workQueue, "workQueue")
@@ -57,14 +59,25 @@ class QueueManager:
             if not line.startswith("#"):
                 queueName.append(line.strip("\n"))
         queue.close()
+    
+    def __initWorkQueueFromFile__(self):
+        self.workQueue = []
+        self.__deserialize__(self.workQueue, "workQueue")
+        
+    def __initWaitQueueFromFile__(self):
+        self.waitQueue = []
+        self.__deserialize__(self.waitQueue, "waitQueue")
 
     def getWorkQueue(self):
+        self.__initWorkQueueFromFile__()
         return self.workQueue
 
     def getWaitQueue(self):
+        self.__initWaitQueueFromFile__()
         return self.waitQueue
 
     def removeFromWaitQueue(self, pspec):
+        self.__initWaitQueueFromFile__()
         if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
             self.__serialize__(self.waitQueue, "waitQueue")
@@ -72,6 +85,7 @@ class QueueManager:
         return False
 
     def removeFromWorkQueue(self, pspec):
+        self.__initWorkQueueFromFile__()
         if self.workQueue.__contains__(pspec):
             self.workQueue.remove(pspec)
             self.__serialize__(self.workQueue, "workQueue")
@@ -79,18 +93,20 @@ class QueueManager:
         return False
 
     def appendToWorkQueue(self, pspec):
-         if not self.workQueue.__contains__(pspec):
+        self.__initWorkQueueFromFile__()
+        if not self.workQueue.__contains__(pspec):
             self.workQueue.append(pspec)
             self.__serialize__(self.workQueue, "workQueue")
             return True
-         return False
+        return False
 
     def appendToWaitQueue(self, pspec):
-         if not self.waitQueue.__contains__(pspec):
+        self.__initWaitQueueFromFile__()
+        if not self.waitQueue.__contains__(pspec):
             self.waitQueue.append(pspec)
             self.__serialize__(self.waitQueue, "waitQueue")
             return True
-         return False
+        return False
 
     def transferToWorkQueue(self, pspec):
         if self.appendToWorkQueue(pspec):

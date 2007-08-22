@@ -67,8 +67,8 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
         self.server_bind()
         self.server_activate()
         
-    def __getattr__(self,x):
-        return getattr(self,x)
+    def __getattr__(self,obj):
+        return getattr(self,obj)
 
 class SecureXMLRpcRequestHandler(SimpleXMLRPCServer.SimpleXMLRPCRequestHandler):
     def setup(self):
