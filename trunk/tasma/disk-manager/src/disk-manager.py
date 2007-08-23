@@ -91,8 +91,9 @@ class HelpDialog(QDialog):
         self.htmlPart = KHTMLPart(self)
         self.resize(500, 300)
         self.layout.addWidget(self.htmlPart.view(), 1, 1)
-        if os.environ['LANG'].startswith('tr_TR'):
-            self.htmlPart.openURL(KURL(locate('data', 'disk-manager/help/tr/main_help.html')))
+        self.lang_code = os.environ['LANG'][:5].split('_')[0].lower()
+        if os.path.isdir(locate('data', 'disk-manager/help/%s/'%self.lang_code)):
+            self.htmlPart.openURL(KURL(locate('data', 'disk-manager/help/%s/main_help.html'%self.lang_code)))
         else:
             self.htmlPart.openURL(KURL(locate('data', 'disk-manager/help/en/main_help.html')))
 
