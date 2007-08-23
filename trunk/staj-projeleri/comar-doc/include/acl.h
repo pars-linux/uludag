@@ -1,0 +1,25 @@
+/*
+** Copyright (c) 2005, TUBITAK/UEKAE
+**
+** This program is free software; you can redistribute it and/or modify it
+** under the terms of the GNU General Public License as published by the
+** Free Software Foundation; either version 2 of the License, or (at your
+** option) any later version. Please read the COPYING file.
+*/
+
+#ifndef ACL_H
+#define ACL_H 1
+
+//! A user id and group id only
+struct Creds {
+	uid_t uid;
+	gid_t gid;
+	// there'll be other fields
+};
+
+void acl_init(void);
+int acl_is_capable(int cmd, int node, struct Creds *cred);
+int acl_can_connect(struct Creds *cred);
+
+
+#endif /* ACL_H */
