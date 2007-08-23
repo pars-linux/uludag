@@ -69,7 +69,9 @@ def client(op, cmd=None, pspec=None):
     if op == "update":
         print op
     elif op == "sync":
-        print op
+        print _("'%s' doesn't contain these packages: " % "pardus-2007")
+        print '-' * 40
+        print "\n".join(server.sync())
     elif op == "status":
         print op
     
@@ -77,7 +79,7 @@ def client(op, cmd=None, pspec=None):
     elif op == "list":
         funcString = "get" + cmd.capitalize() + "Queue"
         print _("Current %s queue" % cmd)
-        print "-" * 19
+        print '-' * 20
         print "\n".join(server.__getattr__(funcString)())
         
     elif op == "build":
