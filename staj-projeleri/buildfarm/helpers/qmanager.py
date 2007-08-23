@@ -235,7 +235,7 @@ class QueueManager:
     
         current = os.getcwd()
         os.chdir(config.binaryPath)
-        os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
+        os.system("/usr/bin/pisi index %s %s --skip-signing --skip-sources" % (config.localPspecRepo, config.binaryPath))
         logger.info(_("PiSi Index generated..."))
     
         #FIXME: will be enabled after some internal tests
