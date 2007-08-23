@@ -27,11 +27,10 @@ import SimpleXMLRPCServer
 """ pyOpenSSL """
 from OpenSSL import SSL
 
-""" helpers """
-from helpers import qmanager
+""" Helpers """
+from helpers import qmanager2 as qmanager
 from helpers import repomanager
 
-import main
 import config
 
 # Inherits from ForkingMixIn for multi-process support
@@ -116,11 +115,6 @@ def runServer():
     
     # export CombinedServerClass
     server.register_instance(CombinedServerClass())
-    
-    # export buildPackages, buildIndex
-    # FIXME: run these on another thread and return to client ASAP
-    server.register_function(main.buildPackages)
-    server.register_function(main.buildIndex)
     
     # enter main loop
     server.serve_forever()
