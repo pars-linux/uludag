@@ -28,7 +28,7 @@ import SimpleXMLRPCServer
 from OpenSSL import SSL
 
 """ Helpers """
-from helpers import qmanager2 as qmanager
+from helpers import qmanager
 from helpers import repomanager
 
 import config
