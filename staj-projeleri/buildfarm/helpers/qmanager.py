@@ -92,7 +92,11 @@ class QueueManager:
 
     def removeFromWaitQueue(self, pspec):
         self.__initWaitQueueFromFile__()
-        if self.waitQueue.__contains__(pspec):
+        if pspec == "all" and self.waitQueue != []:
+            self.waitQueue = []
+            self.__serialize__(self.waitQueue, "waitQueue")
+            return True
+        elif self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
             self.__serialize__(self.waitQueue, "waitQueue")
             return True
@@ -100,7 +104,11 @@ class QueueManager:
 
     def removeFromWorkQueue(self, pspec):
         self.__initWorkQueueFromFile__()
-        if self.workQueue.__contains__(pspec):
+        if pspec == "all" and self.workQueue != []:
+            self.workQueue = []
+            self.__serialize__(self.workQueue, "workQueue")
+            return True
+        elif self.workQueue.__contains__(pspec):
             self.workQueue.remove(pspec)
             self.__serialize__(self.workQueue, "workQueue")
             return True
@@ -135,7 +143,7 @@ class QueueManager:
         return False
     
     def buildPackages(self):
-        
+
         sys.excepthook = self.__handle_exception__
         
         def createDirectories():
