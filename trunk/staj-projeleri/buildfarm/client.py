@@ -31,7 +31,7 @@ def usage():
   help           Displays this help screen
   status         Displays the buildfarm's active job(s)
   sync           Synchronizes the binary repositories
-  update         Updates the repository
+  update         Updates local pspec repository
   list
     wait         Dumps the wait queue
     work         Dumps the work queue
@@ -47,12 +47,13 @@ def usage():
   remove
     wait p       Removes the package 'p' from the wait queue
     work p       Removes the package 'p' from the work queue
+                 Note: p can be 'all' to remove all packages from a queue
     
   Examples:
     $ %(program)s list wait
     $ %(program)s build packages
     $ %(program)s append work xmoto/pspec.xml
-    $ %(program)s remove work xmoto/pspec.xml
+    $ %(program)s remove work all
  """ % subst)
 
 def client(op, cmd=None, pspec=None):
@@ -63,14 +64,14 @@ def client(op, cmd=None, pspec=None):
     remoteURI = "https://" + REMOTE_HOST + ":" + str(REMOTE_PORT)
     server = xmlrpclib.ServerProxy(remoteURI)
     
-    #print "\n".join(server.system.listMethods())
-    
     # 1 Parameter : op
     if op == "update":
-        print op
+        print _("These packages are added to the work queue")
+        print '-' * 45
+        print "\n".join(server.updateRepository())
     elif op == "sync":
         print _("'%s' doesn't contain these packages: " % "pardus-2007")
-        print '-' * 40
+        print '-' * 45
         print "\n".join(server.sync())
     elif op == "status":
         print op
@@ -99,7 +100,7 @@ def client(op, cmd=None, pspec=None):
         if retval:
             print _("Removed!")
         else:
-            print _("Make sure that '%s' is in the %s queue!" % (pspec, cmd))
+            print _("Make sure that the packages are already in the %s queue!" % cmd)
             
     elif op == "append":
         funcString = "appendTo" + cmd.capitalize() + "Queue"
@@ -108,7 +109,7 @@ def client(op, cmd=None, pspec=None):
         if retval:
             print _("%s successfully appended to the %s queue!" % (pspec, cmd))
         else:
-            print _("Can not append %s to the %s queue!" % (pspec, cmd))
+            print _("The package '%s' is already in the %s queue!" % (pspec, cmd))
             
     elif op == "transfer":
         funcString = "transferTo" + cmd.capitalize() + "Queue"
