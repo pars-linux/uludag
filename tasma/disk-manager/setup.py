@@ -28,6 +28,8 @@ distfiles = """
     src/*.ui
     src/*.desktop
     src/*.png
+    src/help/*.css
+    src/help/*/*.html
     po/*.po
     po/*.pot
 """
