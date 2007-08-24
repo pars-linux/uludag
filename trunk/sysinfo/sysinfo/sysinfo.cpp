@@ -255,12 +255,12 @@ void kio_sysinfoProtocol::memoryInfo()
         kdDebug() << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit << endl;
         if ( totalFree > info.freeram * info.mem_unit || true )
             m_info[MEM_FREERAM] = i18n("%1 (+ %2 Caches)").arg(formattedUnit( info.freeram * mem_unit ))
-                                  .arg( formattedUnit( totalFree - info.freeram * mem_unit ,0));
+                                  .arg( formattedUnit( totalFree - info.freeram * mem_unit));
         else
             m_info[MEM_FREERAM] = formattedUnit( info.freeram * mem_unit );
 
-        m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit ,0);
-        m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit ,0);
+        m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit );
+        m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit );
 
         m_info[SYSTEM_UPTIME] = convertSeconds( info.uptime );
     }
