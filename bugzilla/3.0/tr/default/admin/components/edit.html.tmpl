@@ -29,7 +29,9 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]'[% comp.name FILTER html %]' Bileşenini Düzenle[% END %]
+[% title = BLOCK %]
+    '[% product.name FILTER html %]' Ürününün '[% comp.name FILTER html %]' Bileşenini Düzenle
+[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -104,7 +106,7 @@
       <td>[% terms.Bugs %]:</td>
       <td>
 [% IF comp.bug_count > 0 %]
-        <a title="'[% comp.name FILTER html %]' bileşenindeki hatalar"
+        <a title="'[% comp.name FILTER html %]' bileşenindeki [% terms.Bugs %]"
            href="buglist.cgi?component=
                 [%- comp.name FILTER url_quote %]&amp;product=
                 [%- product.name FILTER url_quote %]">[% comp.bug_count %]</a>
