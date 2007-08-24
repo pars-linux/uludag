@@ -117,16 +117,8 @@ class RepositoryManager:
         diff.sort()
         
         if sendMail:
-            # send "[RFC] Güncellemeler hedere hodoro" to the list
+            #mailer.info(_("Aşağıdaki listeye itirazı olan yoksa bu akşam bunları\
+            #güncelleme olarak salıyoruz:\n\n%s") % "\n".join(diff))
             pass
         
         return diff
-                
-        #import os
-        #
-        #for i in os.listdir("pardus-2007-test/"):
-        #    if not os.path.exists("pardus-2007/%s" % i):
-        #        # print "copying pardus-2007-test/%s --> pardus-2007/%s" % (i, i)
-        #        #os.system("cp pardus-2007-test/%s pardus-2007/%s" % (i, i))
-        #        #os.system("pisi index /root/2007 pardus-2007 --skip-signing --skip-sources")
-        #        print i
