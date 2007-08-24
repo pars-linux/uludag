@@ -68,6 +68,7 @@ def client(op, cmd=None, pspec=None):
         if result:
             print _("These packages are added to the work queue\n%s\n" % ('-'*42))
             print "\n".join(result)
+            print _("\nTotal: %d packages" % len(result) )
         else:
             print _("Local pspec repository is up-to-date")
     elif op == "sync":
@@ -75,6 +76,7 @@ def client(op, cmd=None, pspec=None):
         if result:
             print _("'%s' doesn't contain these packages:\n%s" % ("pardus-2007", ('-'*45)))
             print "\n".join(result)
+            print _("\nTotal: %d packages" % len(result) )
         else:
             print_("The repositories are already synchronized.")
     elif op == "status":
@@ -82,12 +84,12 @@ def client(op, cmd=None, pspec=None):
     
     # 2 Parameters
     elif op == "add":
-        retval = server.appendToWorkQueue(pspec)
+        retval = server.appendToWorkQueue(pspec,True)
         
         if retval:
             print _("%s successfully added to the work queue!" % pspec)
         else:
-            print _("The package '%s' is already in the work queue!" % pspec)
+            print _("The package '%s' doesn't exist or is already in the work queue!" % pspec)
         
     elif op == "list":
         funcString = "get" + cmd.capitalize() + "Queue"
@@ -123,7 +125,7 @@ def client(op, cmd=None, pspec=None):
         if retval:
             print _("%s transferred to %s queue!" % (pspec, cmd))
         else:
-            print _("Can not transfer %s to %s queue!" % (pspec, cmd))
+            print _("Make sure that %s queue contains %s!" % (cmd, pspec))
     
 if __name__ == "__main__":
 
