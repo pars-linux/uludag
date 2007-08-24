@@ -114,7 +114,12 @@ class QueueManager:
             return True
         return False
 
-    def appendToWorkQueue(self, pspec):
+    def appendToWorkQueue(self, pspec, checkIfExists=False):
+        if checkIfExists:
+            # check
+            if not os.path.isfile(os.path.join(config.localPspecRepo, pspec)):
+                return False
+            
         self.__initWorkQueueFromFile__()
         if not self.workQueue.__contains__(pspec):
             self.workQueue.append(pspec)
@@ -131,13 +136,15 @@ class QueueManager:
         return False
 
     def transferToWorkQueue(self, pspec):
-        if self.appendToWorkQueue(pspec):
+        self.__initWaitQueueFromFile__()
+        if self.waitQueue.__contains__(pspec) and self.appendToWorkQueue(pspec):
             self.removeFromWaitQueue(pspec)
             return True
         return False
 
     def transferToWaitQueue(self, pspec):
-        if self.appendToWaitQueue(pspec):
+        self.__initWorkQueueFromFile__()
+        if self.workQueue.__contains__(pspec) and self.appendToWaitQueue(pspec):
             self.removeFromWorkQueue(pspec)
             return True
         return False
