@@ -107,11 +107,15 @@ kelimeleri tarayacak ve sonucu size ilişkisel bir liste olarak sunacaktır.
   <tr>
     <td></td>
     <td>
-      <input type="submit" id="search" value="Ara"
+       [% IF Param('specific_search_allow_empty_words') %]
+         <input type="submit" id="search" value="Ara">
+       [% ELSE %]
+         <input type="submit" id="search" value="Ara"
              onclick="if (this.form.content.value == '')
                       {alert('Kelimeler kısmı boş bırakılamaz.Arama kriteri' +
                              'olarak en azından bir kelime yazmalısınız.');
                        return false;} return true;">
+      [% END %]
     </td>
   </tr>
 </table>
