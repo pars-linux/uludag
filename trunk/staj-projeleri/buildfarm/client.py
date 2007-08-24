@@ -71,6 +71,7 @@ def client(op, cmd=None, pspec=None):
             print _("\nTotal: %d packages" % len(result) )
         else:
             print _("Local pspec repository is up-to-date")
+            
     elif op == "sync":
         result = server.sync()
         if result:
@@ -79,6 +80,7 @@ def client(op, cmd=None, pspec=None):
             print _("\nTotal: %d packages" % len(result) )
         else:
             print_("The repositories are already synchronized.")
+            
     elif op == "status":
         print op
     
@@ -125,7 +127,7 @@ def client(op, cmd=None, pspec=None):
         if retval:
             print _("%s transferred to %s queue!" % (pspec, cmd))
         else:
-            print _("Make sure that %s queue contains %s!" % (cmd, pspec))
+            print _("Make sure that the queue contains %s!" % pspec)
     
 if __name__ == "__main__":
 
