@@ -18,6 +18,7 @@ CERTFILE="certs/new.cert.cert"
 
 import sys
 import os
+from time import asctime
 
 import socket
 import SocketServer
@@ -39,6 +40,8 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
                          BaseHTTPServer.HTTPServer,
                          SimpleXMLRPCServer.SimpleXMLRPCDispatcher):
     
+    currentClients = []
+    
     # "SocketServer.py" cleans the zombies just after a new connection request
     # This function overrides the SIGCHLD handler for immediate clean-up.
     def overrideHandler(self):
@@ -47,6 +50,15 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
             self.collect_children()
         import signal
         signal.signal(signal.SIGCHLD, SIGCHLDHandler)
+    
+    # Overridden two methods for creating a list of current connections
+    def process_request(self, request, client_address):
+        open(config.stateFile, "a").write("%s %s\n" % (client_address[0], client_address[1]))
+        SocketServer.ForkingMixIn.process_request(self, request, client_address)
+        
+    def close_request(self, request):
+        # process the stateFile and remove the current connection
+        SocketServer.BaseServer.close_request(self, request)
         
     def __init__(self, server_address, HandlerClass, logRequests=True):
         
