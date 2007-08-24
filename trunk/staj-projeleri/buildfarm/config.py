@@ -20,6 +20,7 @@ outputDir        = "/var/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
 localPspecRepo   = "./exampleRepo"      # must be an absolute path!
 logFile          = "%s/buildfarm.log" % workDir
+stateFile        = "%s/buildfarm.state" % workDir
 
 #information for mailer module.
 mailFrom         = "buildfarm@pardus.org.tr"
