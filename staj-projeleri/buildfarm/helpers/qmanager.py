@@ -33,6 +33,8 @@ _  =  __trans.ugettext
 
 class QueueManager:
     def __init__(self):
+        self.__createDirectories__()
+        
         self.workQueue = []
         self.waitQueue = []
 
@@ -48,6 +50,19 @@ class QueueManager:
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDependencies()
         self.__serialize__(self.waitQueue, "waitQueue")
         self.__serialize__(self.workQueue, "workQueue")
+        
+    def __createDirectories__(self):
+        directories = [config.workDir,
+                       config.binaryPath,
+                       config.localPspecRepo,
+                       config.outputDir]
+
+        for dir in directories:
+            if dir and not os.path.isdir(dir):
+                try:
+                    os.makedirs(dir)
+                except OSError:
+                    raise _("Directory '%s' cannot be created, permission problem?") % dir
         
     def __del__(self):
         self.__serialize__(self.waitQueue, "waitQueue")
@@ -116,7 +131,6 @@ class QueueManager:
 
     def appendToWorkQueue(self, pspec, checkIfExists=False):
         if checkIfExists:
-            # check
             if not os.path.isfile(os.path.join(config.localPspecRepo, pspec)):
                 return False
             
@@ -152,22 +166,6 @@ class QueueManager:
     def buildPackages(self):
 
         sys.excepthook = self.__handle_exception__
-        
-        def createDirectories():
-            directories = [config.workDir,
-                           config.binaryPath,
-                           config.localPspecRepo,
-                           config.outputDir]
-
-            for dir in directories:
-                if dir and not os.path.isdir(dir):
-                    try:
-                        os.makedirs(dir)
-                    except OSError:
-                        raise _("Directory '%s' cannot be created, permission problem?") % dir
-        
-        # Make sure that directories exists.
-        createDirectories()
 
         queue = shallowCopy(self.getWorkQueue())
     
@@ -229,7 +227,7 @@ class QueueManager:
         logger.info(_("Work Queue: %s") % (self.getWorkQueue()))
     
         if self.getWaitQueue():
-            # mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(qmgr.getWaitQueue()))
+            # mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(self.getWaitQueue()))
             return self.getWaitQueue()
         else:
             # mailer.info(_("Queue finished without a problem!..."))
