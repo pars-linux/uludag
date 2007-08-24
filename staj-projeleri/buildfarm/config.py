@@ -18,7 +18,7 @@ PORT = 443
 workDir          = "/var/pisi/"
 outputDir        = "/var/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
-localPspecRepo   = "./exampleRepo"
+localPspecRepo   = "./exampleRepo"      # must be an absolute path!
 logFile          = "%s/buildfarm.log" % workDir
 
 #information for mailer module.
