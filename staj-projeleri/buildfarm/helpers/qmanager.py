@@ -164,7 +164,10 @@ class QueueManager:
         return False
     
     def getBuildfarmStatus(self):
-        return open(config.stateFile, "r").readlines()
+        f = open(config.stateFile, "r")
+        lines = f.readlines()
+        f.close()
+        return lines
     
     def buildPackages(self):
 
