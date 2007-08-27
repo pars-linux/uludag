@@ -22,6 +22,23 @@ _ = __trans.ugettext
 REMOTE_HOST = "localhost"
 REMOTE_PORT = 443
 
+def sendDirectory(dirname):
+    # Sends the directory hierarchy to the remote server.
+    # The remote server builds the pisi package(s) and places them in a
+    # meaningful remote directory (e.g. /var/www/maintainer/package)
+    
+    # First of all check if it is a non-empty directory
+    import os
+    import subprocess
+    
+    if os.path.isdir(dirname) and os.listdir(dirname):
+        print "The directory exists!"
+        retval = subprocess.call(["tar", "-cf", dirname+".tar", dirname])
+        
+        return True
+    else:
+        return False
+
 def usage():
     subst = {'program':sys.argv[0]}
     print _("""Usage: %(program)s <command> [<param> ...]
@@ -33,6 +50,7 @@ def usage():
   sync           Synchronizes the binary repositories
   update         Updates local pspec repository
   add p          Adds the package 'p' to the work queue
+  send dir       Sends the contents of 'dir' to the server for remote building
   list
     wait         Dumps the wait queue
     work         Dumps the work queue
@@ -83,17 +101,14 @@ def client(op, cmd=None, pspec=None):
             print_("The repositories are already synchronized.")
             
     elif op == "status":
-        result = server.getBuildfarmStatus()
-        if result:
-            print _("\nHere is the current activity of the buildfarm :\n")
-            print _("%25s %16s %7s %22s" % ("Timestamp","IP Address","Port","Function"))
-            print "-"*74
-            for line in result:
-                print line,
-        else:
-            print _("Buildfarm is ready ;)\n")
+        retval = server.getBuildfarmStatus()
+        print retval
     
     # 2 Parameters
+    elif op == "send":
+        # pspec is a directory which can contain 1 or more packages
+        sendDirectory(pspec)
+        
     elif op == "add":
         retval = server.appendToWorkQueue(pspec,True)
         
@@ -113,12 +128,15 @@ def client(op, cmd=None, pspec=None):
         
     elif op == "build":
         funcString = "build" + cmd.capitalize()
-        print _("Calling %s()..." % funcString)
+        print _("Building %s..." % cmd)
         retval = server.__getattr__(funcString)()
-        if retval:
-            print _("%s successfully returned." % funcString)
-        else:
-            print _("Errors during %s." % funcString)
+        if retval == 0:
+            print _("Packages are successfully builded!")
+        elif retval == 1:
+            print _("Work Queue is empty!")
+        elif retval == 2:
+            print _("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n")\
+                    % "\n".join(server.getWaitQueue())
     
     # 3 Parameters
     elif op == "remove":
@@ -155,7 +173,7 @@ if __name__ == "__main__":
             usage()
     
     elif len(args) == 2:
-        if args[0] == "add":
+        if args[0] in ("add","send"):
             client(args[0],pspec=args[1])
         elif args[0] == "list" and args[1] in ("work","wait") or \
             args[0] == "build" and args[1] in ("index","packages"):

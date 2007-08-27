@@ -33,7 +33,8 @@ _  =  __trans.ugettext
 
 class QueueManager:
     def __init__(self):
-        self.__createDirectories__()
+        
+        self.isBusy = 0
         
         self.workQueue = []
         self.waitQueue = []
@@ -48,27 +49,14 @@ class QueueManager:
             self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDependencies()
 
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDependencies()
-        self.__serialize__(self.waitQueue, "waitQueue")
-        self.__serialize__(self.workQueue, "workQueue")
-        
-    def __createDirectories__(self):
-        directories = [config.workDir,
-                       config.binaryPath,
-                       config.localPspecRepo,
-                       config.outputDir]
-
-        for dir in directories:
-            if dir and not os.path.isdir(dir):
-                try:
-                    os.makedirs(dir)
-                except OSError:
-                    raise _("Directory '%s' cannot be created, permission problem?") % dir
+        self.__del__()
         
     def __del__(self):
         self.__serialize__(self.waitQueue, "waitQueue")
         self.__serialize__(self.workQueue, "workQueue")
 
     def __serialize__(self, queueName, fileName):
+        # FIXME : Implement a file lock
         try:
             queue = open(os.path.join(config.workDir, fileName), "w")
         except IOError:
@@ -79,6 +67,7 @@ class QueueManager:
         queue.close()
 
     def __deserialize__(self, queueName, fileName):
+        # FIXME : Implement a file lock
         try:
             queue = open(os.path.join(config.workDir, fileName), "r")
         except IOError:
@@ -164,81 +153,89 @@ class QueueManager:
         return False
     
     def getBuildfarmStatus(self):
-        f = open(config.stateFile, "r")
-        lines = f.readlines()
-        f.close()
-        return lines
+        return self.isBusy
+    
+    def processQueue(self, queue, pspec):
+        packagename = os.path.basename(os.path.dirname(pspec))
+        build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
+        logger.info(
+            _("Compiling source %s (%d of %d)") % 
+                (
+                    packagename,
+                    int(queue.index(pspec) + 1),
+                    len(queue)
+                )
+            )
+        logger.raw()
+
+        pisi = pisiinterface.PisiApi(config.workDir)
+
+        pisi.init(stdout = build_output, stderr = build_output)
+        try:
+            try:
+                (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
+            except Exception, e:
+                self.transferToWaitQueue(pspec)
+                errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
+                logger.error(errmsg)
+                # mailer.error(errmsg, pspec)
+            else:
+                try:
+                    for p in newBinaryPackages:
+                        logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
+                        pisi.install(os.path.join(config.workDir, p))
+                except Exception, e:
+                    self.transferToWaitQueue(pspec)
+                    errmsg = _("Error occured for '%s' in INSTALL process: %s") % (os.path.join(config.workDir, p), e)
+                    logger.error(errmsg)
+                    # mailer.error(errmsg, pspec)
+
+                    newBinaryPackages.remove(p)
+                    self.__removeBinaryPackageFromWorkDir__(p)
+                else:
+                    self.removeFromWorkQueue(pspec)
+                    self.__movePackages__(newBinaryPackages, oldBinaryPackages)
+        finally:
+            pisi.finalize()
+        
     
     def buildPackages(self):
+        
+        # Well defined return values
+        # 0 : Successfully ended
+        # 1 : Work queue is empty
+        # 2 : Queue finished with problems
 
         sys.excepthook = self.__handle_exception__
 
         queue = shallowCopy(self.getWorkQueue())
     
         if len(queue) == 0:
-            logger.info(_("Both Wait and Work Queues are empty..."))
-            return True
+            logger.info(_("Work queue is empty!"))
+            return 1
     
         logger.raw(_("QUEUE"))
         logger.info(_("Work Queue: %s") % (self.getWorkQueue()))
+        # replace getWorkQueue()[:] with queue[:]
         sortedQueue = self.getWorkQueue()[:]
         sortedQueue.sort()
         # mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
         logger.raw()
     
         for pspec in queue:
-            packagename = os.path.basename(os.path.dirname(pspec))
-            build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
-            logger.info(
-                _("Compiling source %s (%d of %d)") % 
-                    (
-                        packagename,
-                        int(queue.index(pspec) + 1),
-                        len(queue)
-                    )
-                )
-            logger.raw()
-    
-            pisi = pisiinterface.PisiApi(config.workDir)
-            pisi.init(stdout = build_output, stderr = build_output)
-            try:
-                try:
-                    (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
-                except Exception, e:
-                    self.transferToWaitQueue(pspec)
-                    errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
-                    logger.error(errmsg)
-                    # mailer.error(errmsg, pspec)
-                else:
-                    try:
-                        for p in newBinaryPackages:
-                            logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
-                            pisi.install(os.path.join(config.workDir, p))
-                    except Exception, e:
-                        self.transferToWaitQueue(pspec)
-                        errmsg = _("Error occured for '%s' in INSTALL process: %s") % (os.path.join(config.workDir, p), e)
-                        logger.error(errmsg)
-                        # mailer.error(errmsg, pspec)
-    
-                        newBinaryPackages.remove(p)
-                        self.__removeBinaryPackageFromWorkDir__(p)
-                    else:
-                        self.removeFromWorkQueue(pspec)
-                        self.__movePackages__(newBinaryPackages, oldBinaryPackages)
-            finally:
-                pisi.finalize()
-    
+            self.processQueue(queue, pspec)
+            
         logger.raw(_("QUEUE"))
         logger.info(_("Wait Queue: %s") % (self.getWaitQueue()))
         logger.info(_("Work Queue: %s") % (self.getWorkQueue()))
     
         if self.getWaitQueue():
             # mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(self.getWaitQueue()))
-            return self.getWaitQueue()
+            return 2
         else:
             # mailer.info(_("Queue finished without a problem!..."))
             pass
-        return True
+        return 0
     
     def buildIndex(self):
         logger.raw()
@@ -263,24 +260,7 @@ class QueueManager:
     
     def __movePackages__(self, newBinaryPackages, oldBinaryPackages):
         # sanitaze input
-        try:
-            newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
-        except AttributeError:
-            pass
-    
-        try:
-            oldBinaryPackages = set(map(lambda x: os.path.basename(x), oldBinaryPackages))
-        except AttributeError:
-            pass
-    
-        unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
-        newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
-        oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
-    
-        logger.info(_("*** New binary package(s): %s") % newPackages)
-        logger.info(_("*** Old binary package(s): %s") % oldPackages)
-        logger.info(_("*** Unchanged binary package(s): %s") % unchangedPackages)
-    
+        
         exists = os.path.exists
         join   = os.path.join
         remove = os.remove
@@ -305,6 +285,24 @@ class QueueManager:
             if exists(join(config.workDir, package)):
                 copy(join(config.workDir, package), config.binaryPath)
                 remove(join(config.workDir, package))
+                
+        try:
+            newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
+        except AttributeError:
+            pass
+    
+        try:
+            oldBinaryPackages = set(map(lambda x: os.path.basename(x), oldBinaryPackages))
+        except AttributeError:
+            pass
+    
+        unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
+        newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
+        oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
+    
+        logger.info(_("*** New binary package(s): %s") % newPackages)
+        logger.info(_("*** Old binary package(s): %s") % oldPackages)
+        logger.info(_("*** Unchanged binary package(s): %s") % unchangedPackages)
     
         for package in newPackages:
             if package:

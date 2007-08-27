@@ -48,31 +48,6 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
             self.collect_children()
         import signal
         signal.signal(signal.SIGCHLD, SIGCHLDHandler)
-    
-    # Overriddes three methods for creating the list of active jobs
-    def process_request(self, request, client_address):
-        f = open(config.stateFile, "a")
-        f.write("%25s %16s %7s " % (asctime(), client_address[0], client_address[1]))
-        f.close()
-        SocketServer.ForkingMixIn.process_request(self, request, client_address)
-    
-    def finish_request(self, request, client_address):
-        self.RequestHandlerClass(request, client_address, self)
-        f = open(config.stateFile, "r+")
-        # FIXME: "%s   %s" need to be more flexible
-        lines = [l for l in f.readlines() \
-                 if not l.__contains__("%s   %s" % (client_address[0],client_address[1]))]
-        f.seek(0, 0)
-        f.truncate()
-        f.writelines(lines)
-        f.close()
-        
-    # Overriddes the _dispatch method for getting the method name and args.
-    def _dispatch(self, method, params):
-        f = open(config.stateFile, "a")
-        f.write("%20s()\n" % (method))
-        f.close()
-        return SimpleXMLRPCServer.SimpleXMLRPCDispatcher._dispatch(self, method, params)
         
     def __init__(self, server_address, HandlerClass, logRequests=True):
         
