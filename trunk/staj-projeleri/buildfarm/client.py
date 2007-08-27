@@ -62,6 +62,7 @@ def client(op, cmd=None, pspec=None):
     remoteURI = "https://" + REMOTE_HOST + ":" + str(REMOTE_PORT)
     server = xmlrpclib.ServerProxy(remoteURI)
     
+
     # 1 Parameter
     if op == "update":
         result = server.updateRepository()
@@ -82,7 +83,14 @@ def client(op, cmd=None, pspec=None):
             print_("The repositories are already synchronized.")
             
     elif op == "status":
-        print op
+        result = server.getBuildfarmStatus()
+        if result:
+            print _("Here is the current activity of the buildfarm :\n%s\n" % ("-"*47))
+            print _("%25s %16s %7s %22s\n" % ("Timestamp","IP Address","Port","Function"))
+            for line in result:
+                print line,
+        else:
+            print _("Buildfarm is ready ;)\n")
     
     # 2 Parameters
     elif op == "add":

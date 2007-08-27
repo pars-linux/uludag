@@ -40,8 +40,6 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
                          BaseHTTPServer.HTTPServer,
                          SimpleXMLRPCServer.SimpleXMLRPCDispatcher):
     
-    currentClients = []
-    
     # "SocketServer.py" cleans the zombies just after a new connection request
     # This function overrides the SIGCHLD handler for immediate clean-up.
     def overrideHandler(self):
@@ -51,14 +49,29 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
         import signal
         signal.signal(signal.SIGCHLD, SIGCHLDHandler)
     
-    # Overridden two methods for creating a list of current connections
+    # Overriddes three methods for creating a list of current connections
     def process_request(self, request, client_address):
-        open(config.stateFile, "a").write("%s %s\n" % (client_address[0], client_address[1]))
+        f = open(config.stateFile, "a")
+        f.write("%25s %16s %7s " % (asctime(), client_address[0], client_address[1]))
+        f.close()
         SocketServer.ForkingMixIn.process_request(self, request, client_address)
+    
+    def finish_request(self, request, client_address):
+        self.RequestHandlerClass(request, client_address, self)
+        f = open(config.stateFile, "a+")
+        # FIXME: "%s   %s" need to be more flexible
+        lines = [l for l in f.readlines() \
+                 if not l.__contains__("%s   %s" % (client_address[0],client_address[1]))]
+        f.close()
+        open(config.stateFile,"w").writelines(lines)
         
-    def close_request(self, request):
-        # process the stateFile and remove the current connection
-        SocketServer.BaseServer.close_request(self, request)
+    
+    # Overriddes the _dispatch method for getting the method name and args.
+    def _dispatch(self, method, params):
+        f = open(config.stateFile, "a")
+        f.write("%20s()\n" % (method))
+        f.close()
+        return SimpleXMLRPCServer.SimpleXMLRPCDispatcher._dispatch(self, method, params)
         
     def __init__(self, server_address, HandlerClass, logRequests=True):
         
@@ -71,7 +84,7 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
         SocketServer.BaseServer.__init__(self, server_address, HandlerClass)
         # ssl related stuff
         ctx = SSL.Context(SSL.SSLv23_METHOD)
-        ctx.use_privatekey_file (KEYFILE)
+        ctx.use_privatekey_file(KEYFILE)
         ctx.use_certificate_file(CERTFILE)
         # opens the ssl socket
         self.socket = SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))

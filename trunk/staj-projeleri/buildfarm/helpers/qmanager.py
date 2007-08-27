@@ -163,6 +163,9 @@ class QueueManager:
             return True
         return False
     
+    def getBuildfarmStatus(self):
+        return open(config.stateFile, "r").readlines()
+    
     def buildPackages(self):
 
         sys.excepthook = self.__handle_exception__
