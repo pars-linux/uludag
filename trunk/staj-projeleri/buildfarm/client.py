@@ -85,8 +85,9 @@ def client(op, cmd=None, pspec=None):
     elif op == "status":
         result = server.getBuildfarmStatus()
         if result:
-            print _("Here is the current activity of the buildfarm :\n%s\n" % ("-"*47))
-            print _("%25s %16s %7s %22s\n" % ("Timestamp","IP Address","Port","Function"))
+            print _("\nHere is the current activity of the buildfarm :\n")
+            print _("%25s %16s %7s %22s" % ("Timestamp","IP Address","Port","Function"))
+            print "-"*74
             for line in result:
                 print line,
         else:
