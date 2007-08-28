@@ -17,6 +17,8 @@ import sys
 from shutil import copy as shutilCopy
 from copy import copy as shallowCopy
 
+from comar.utility import FileLock
+
 """ BuildFarm Modules """
 import config
 import dependency
@@ -31,25 +33,12 @@ import gettext
 __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
-isBusy = False
-
-def getBuildfarmStatus():
-    # To be implemented
-    global isBusy
-    print isBusy
-    setBusyFlag(not isBusy)
-    print isBusy
-    
-    return isBusy
-
-def setBusyFlag(flag):
-    global isBusy
-    isBusy = flag
-    return True
-
 class QueueManager:
     
     def __init__(self):
+        
+        self.locks = {"waitQueue" : FileLock("%s/waitQueue.lock" % config.workDir),
+                      "workQueue" : FileLock("%s/workQueue.lock" % config.workDir)}
         
         self.workQueue = []
         self.waitQueue = []
@@ -71,27 +60,31 @@ class QueueManager:
         self.__serialize__(self.workQueue, "workQueue")
 
     def __serialize__(self, queueName, fileName):
-        # FIXME : Implement a file lock
+        self.locks[fileName].lock()
         try:
             queue = open(os.path.join(config.workDir, fileName), "w")
         except IOError:
+            self.locks[fileName].unlock()
             return
 
         for pspec in queueName:
             queue.write("%s\n" % pspec)
         queue.close()
+        self.locks[fileName].unlock()
 
     def __deserialize__(self, queueName, fileName):
-        # FIXME : Implement a file lock
+        self.locks[fileName].lock()
         try:
             queue = open(os.path.join(config.workDir, fileName), "r")
         except IOError:
+            self.locks[fileName].unlock()
             return
 
         for line in queue.readlines():
             if not line.startswith("#"):
                 queueName.append(line.strip("\n"))
         queue.close()
+        self.locks[fileName].unlock()
     
     def __initWorkQueueFromFile__(self):
         self.workQueue = []
@@ -188,6 +181,9 @@ class QueueManager:
         return True
     
     def processQueue(self, queue, pspec):
+        self.locks["waitQueue"].lock()
+        self.locks["workQueue"].lock()
+        
         packagename = os.path.basename(os.path.dirname(pspec))
         build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
         logger.info(
@@ -207,6 +203,8 @@ class QueueManager:
             try:
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
             except Exception, e:
+                self.locks["waitQueue"].unlock()
+                self.locks["workQueue"].unlock()
                 self.transferToWaitQueue(pspec)
                 errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
                 logger.error(errmsg)
@@ -217,6 +215,8 @@ class QueueManager:
                         logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
                         pisi.install(os.path.join(config.workDir, p))
                 except Exception, e:
+                    self.locks["waitQueue"].unlock()
+                    self.locks["workQueue"].unlock()
                     self.transferToWaitQueue(pspec)
                     errmsg = _("Error occured for '%s' in INSTALL process: %s") % (os.path.join(config.workDir, p), e)
                     logger.error(errmsg)
@@ -225,6 +225,8 @@ class QueueManager:
                     newBinaryPackages.remove(p)
                     self.__removeBinaryPackageFromWorkDir__(p)
                 else:
+                    self.locks["waitQueue"].unlock()
+                    self.locks["workQueue"].unlock()
                     self.removeFromWorkQueue(pspec)
                     self.__movePackages__(newBinaryPackages, oldBinaryPackages)
         finally:
@@ -245,7 +247,7 @@ class QueueManager:
         if len(queue) == 0:
             logger.info(_("Work queue is empty!"))
             return 1
-    
+        
         logger.raw(_("QUEUE"))
         logger.info(_("Work Queue: %s") % (self.getWorkQueue()))
         # replace getWorkQueue()[:] with queue[:]
