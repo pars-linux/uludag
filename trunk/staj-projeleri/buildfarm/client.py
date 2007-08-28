@@ -122,18 +122,7 @@ def client(op, cmd=None, pspec=None):
             print_("The repositories are already synchronized.")
             
     elif op == "status":
-        #retval = server.getBuildfarmStatus()
-        #print retval
-        #from time import sleep
-        #x = True
-        #while True:
-        #    x = not x
-        #    print server.getBuildfarmStatus()
-        #    sleep(2)
-        from time import sleep
-        while True:
-            print server.getBuildfarmStatus()
-            sleep(2)
+        pass
             
     # 2 Parameters
     elif op == "send":
