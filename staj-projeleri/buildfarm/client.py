@@ -22,20 +22,42 @@ _ = __trans.ugettext
 REMOTE_HOST = "localhost"
 REMOTE_PORT = 443
 
-def sendDirectory(dirname):
+def sendDirectory(server, dirname, username=""):
     # Sends the directory hierarchy to the remote server.
     # The remote server builds the pisi package(s) and places them in a
     # meaningful remote directory (e.g. /var/www/maintainer/package)
     
-    # First of all check if it is a non-empty directory
     import os
-    import subprocess
+    from subprocess import call
     
+    # First of all check if it is a non-empty directory
     if os.path.isdir(dirname) and os.listdir(dirname):
-        print "The directory exists!"
-        retval = subprocess.call(["tar", "-cf", dirname+".tar", dirname])
+        # dirname ex. = applications/editors/vim
+        # filename ex. = vim.tar.bz2
+        dirname = os.path.normpath(dirname)
+        filename = os.path.basename(dirname) + ".tar.bz2"
         
-        return True
+        tarCmd = ["tar", "cjf", filename, dirname]
+        
+        # if you give a package directory, it will add the component.xml
+        # of the upper directory
+        if not os.path.isfile("%s/component.xml" % dirname):
+            tarCmd.append("--add-file=%s/component.xml" % os.path.dirname(dirname))
+        
+        # ASK : Use tarfile module instead?
+        call(tarCmd)
+        
+        # Serialize file data
+        f = open(filename, "rb")
+        d = xmlrpclib.Binary(f.read())
+        f.close()
+        
+        # Delete the compressed archive
+        os.unlink(filename)
+        
+        # Call the appropriate method with the username validated from LDAP. 
+        return server.buildArchive(filename, d, username)
+    
     else:
         return False
 
@@ -80,7 +102,6 @@ def client(op, cmd=None, pspec=None):
     remoteURI = "https://" + REMOTE_HOST + ":" + str(REMOTE_PORT)
     server = xmlrpclib.ServerProxy(remoteURI)
     
-
     # 1 Parameter
     if op == "update":
         result = server.updateRepository()
@@ -101,13 +122,27 @@ def client(op, cmd=None, pspec=None):
             print_("The repositories are already synchronized.")
             
     elif op == "status":
-        retval = server.getBuildfarmStatus()
-        print retval
-    
+        #retval = server.getBuildfarmStatus()
+        #print retval
+        #from time import sleep
+        #x = True
+        #while True:
+        #    x = not x
+        #    print server.getBuildfarmStatus()
+        #    sleep(2)
+        from time import sleep
+        while True:
+            print server.getBuildfarmStatus()
+            sleep(2)
+            
     # 2 Parameters
     elif op == "send":
         # pspec is a directory which can contain 1 or more packages
-        sendDirectory(pspec)
+        retval = sendDirectory(server, pspec, "ozan")
+        if retval:
+            print _("Everything's OK")
+        else:
+            print _("There were problems during the process")
         
     elif op == "add":
         retval = server.appendToWorkQueue(pspec,True)

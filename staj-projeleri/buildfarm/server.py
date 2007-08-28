@@ -117,6 +117,9 @@ def runServer():
     # export CombinedServerClass
     server.register_instance(CombinedServerClass())
     
+    server.register_function(qmanager.getBuildfarmStatus)
+    server.register_function(qmanager.setBusyFlag)
+    
     # enter main loop
     server.serve_forever()
 

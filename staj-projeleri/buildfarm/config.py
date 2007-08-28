@@ -21,6 +21,12 @@ binaryPath       = "/var/cache/pisi/packages/"
 localPspecRepo   = "./exampleRepo"      # must be an absolute path!
 logFile          = "%s/buildfarm.log" % workDir
 
+#Configuration info for remote building/installing process
+remoteWorkDir    = "%s/remote" % workDir
+remoteOutputDir  = "%s/buildlogs" % remoteWorkDir
+remoteBinaryPath = "/var/cache/pisi/remote/packages"
+logFile          = "%s/buildfarm.log" % remoteWorkDir
+
 #information for mailer module.
 mailFrom         = "buildfarm@pardus.org.tr"
 ccList           = []
