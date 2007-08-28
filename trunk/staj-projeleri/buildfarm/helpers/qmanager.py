@@ -31,10 +31,25 @@ import gettext
 __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
+isBusy = False
+
+def getBuildfarmStatus():
+    # To be implemented
+    global isBusy
+    print isBusy
+    setBusyFlag(not isBusy)
+    print isBusy
+    
+    return isBusy
+
+def setBusyFlag(flag):
+    global isBusy
+    isBusy = flag
+    return True
+
 class QueueManager:
+    
     def __init__(self):
-        
-        self.isBusy = 0
         
         self.workQueue = []
         self.waitQueue = []
@@ -152,8 +167,25 @@ class QueueManager:
             return True
         return False
     
-    def getBuildfarmStatus(self):
-        return self.isBusy
+    def buildArchive(self, filename, d, username=""):
+        
+        def extractArchive(filename, d):
+            from subprocess import call
+            dir = os.path.join(config.remoteWorkDir, username)
+            if not os.path.exists(dir):
+                os.mkdir(dir)
+            os.chdir(dir)
+            f = open(filename, "wb")
+            f.write(d.data)
+            f.close()
+            
+            return call(["tar", "xvjf", filename])
+        
+        # Returns 0 if successful
+        print extractArchive(filename, d)
+        
+        
+        return True
     
     def processQueue(self, queue, pspec):
         packagename = os.path.basename(os.path.dirname(pspec))
