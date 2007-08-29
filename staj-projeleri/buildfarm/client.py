@@ -37,6 +37,8 @@ def sendDirectory(server, dirname, username=""):
         dirname = os.path.normpath(dirname)
         filename = os.path.basename(dirname) + ".tar.bz2"
         
+        print dirname
+        
         tarCmd = ["tar", "cjf", filename, dirname]
         
         # if you give a package directory, it will add the component.xml
@@ -56,7 +58,7 @@ def sendDirectory(server, dirname, username=""):
         os.unlink(filename)
         
         # Call the appropriate method with the username validated from LDAP. 
-        return server.buildArchive(filename, d, username)
+        return server.buildArchive(dirname, filename, d, username)
     
     else:
         return False
