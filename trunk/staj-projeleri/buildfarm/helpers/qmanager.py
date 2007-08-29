@@ -161,7 +161,19 @@ class QueueManager:
             return True
         return False
     
-    def buildArchive(self, filename, d, username=""):
+    def buildArchive(self, dirname, filename, d, username=""):
+        
+        def getPspecList(dirname):
+            # Searchs the dirname and returns a list of pspec.xml's
+            root = os.path.normpath("%s/%s/%s" % (config.remoteWorkDir, username, dirname))
+            
+            # Search the root hierarchy
+            for i in os.listdir(root):
+                if os.path.isdir(i):
+                    getPspecList(i)
+                elif os.path.isfile(i) and 
+            #print root
+            return False
         
         def extractArchive(filename, d):
             from subprocess import call
@@ -177,6 +189,7 @@ class QueueManager:
         
         # Returns 0 if successful
         print extractArchive(filename, d)
+        getPspecList(dirname)
         
         return True
     
