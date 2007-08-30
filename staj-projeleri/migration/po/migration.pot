@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-15 12:51+0300\n"
+"POT-Creation-Date: 2007-08-30 19:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,55 +41,63 @@ msgid "Bookmarks saved."
 msgstr ""
 
 #: migration/applythread.py:74
-msgid "GTalk accounts cannot be loaded."
+msgid "Windows Mail accounts cannot be loaded."
 msgstr ""
 
 #: migration/applythread.py:76
-msgid "GTalk accounts loaded."
+msgid "Windows Mail accounts loaded."
 msgstr ""
 
 #: migration/applythread.py:82
-msgid "MSN accounts cannot be loaded."
-msgstr ""
-
-#: migration/applythread.py:84
-msgid "MSN accounts loaded."
-msgstr ""
-
-#: migration/applythread.py:90
 msgid "Thunderbird accounts cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:92
+#: migration/applythread.py:84
 msgid "Thunderbird accounts loaded."
 msgstr ""
 
+#: migration/applythread.py:90
+msgid "MSN accounts cannot be loaded."
+msgstr ""
+
+#: migration/applythread.py:92
+msgid "MSN accounts loaded."
+msgstr ""
+
+#: migration/applythread.py:98
+msgid "GTalk accounts cannot be loaded."
+msgstr ""
+
 #: migration/applythread.py:100
+msgid "GTalk accounts loaded."
+msgstr ""
+
+#: migration/applythread.py:108
 msgid "Accounts saved."
 msgstr ""
 
-#: migration/applythread.py:106
+#: migration/applythread.py:114
 #, python-format
 msgid "Link '%s' created."
 msgstr ""
 
-#: migration/applythread.py:115
+#: migration/applythread.py:123
 msgid "Nothing done, because no option selected. You can close the wizard..."
 msgstr ""
 
-#: migration/applythread.py:117 migration/applythread.py:119
+#: migration/applythread.py:125 migration/applythread.py:127
 msgid "All operations completed. You can close the wizard..."
 msgstr ""
 
-#: migration/applythread.py:125 migration/gui/optionspage.py:26
+#: migration/applythread.py:133 migration/gui/optionspage.py:26
 msgid "Wallpaper"
 msgstr ""
 
-#: migration/applythread.py:129 migration/gui/optionspage.py:89
+#: migration/applythread.py:137 migration/gui/optionspage.py:89
 msgid "Accounts"
 msgstr ""
 
-#: migration/applythread.py:131
+#: migration/applythread.py:139
 msgid "Links"
 msgstr ""
 
@@ -200,15 +208,19 @@ msgid "Internet Explorer favorites"
 msgstr ""
 
 #: migration/gui/optionspage.py:96
-msgid "MSN Accounts"
+msgid "Windows Mail Accounts"
 msgstr ""
 
 #: migration/gui/optionspage.py:102
-msgid "GTalk Accounts"
+msgid "Thunderbird Accounts"
 msgstr ""
 
 #: migration/gui/optionspage.py:108
-msgid "Thunderbird Accounts"
+msgid "MSN Accounts"
+msgstr ""
+
+#: migration/gui/optionspage.py:114
+msgid "GTalk Accounts"
 msgstr ""
 
 #: migration/gui/userpage.py:25

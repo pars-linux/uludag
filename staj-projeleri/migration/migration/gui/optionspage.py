@@ -84,12 +84,24 @@ class OptionsPage(QWidget):
                 self.IEBookmarks.setChecked(True)
                 self.BookmarksLayout.addWidget(self.IEBookmarks)
         # Accounts:
-        if sources.has_key("GTalk Key") or sources.has_key("Thunderbird Profile Path") or sources.has_key("Contacts Path"):
+        if sources.has_key("Windows Mail Path") or sources.has_key("Thunderbird Profile Path") or sources.has_key("Contacts Path") or sources.has_key("GTalk Key"):
             self.Accounts = QGroupBox(self, "Accounts")
             self.Accounts.setTitle(i18n("Accounts"))
             self.Accounts.setColumnLayout(0, Qt.Vertical)
             self.AccountsLayout = QVBoxLayout(self.Accounts.layout())
             self.lay.addWidget(self.Accounts)
+            # Windows Mail Accounts:
+            if sources.has_key("Windows Mail Path"):
+                self.WinMail = QCheckBox(self.Accounts, "WinMail")
+                self.WinMail.setText(i18n("Windows Mail Accounts"))
+                self.WinMail.setChecked(True)
+                self.AccountsLayout.addWidget(self.WinMail)
+            # Thunderbird Accounts:
+            if sources.has_key("Thunderbird Profile Path"):
+                self.TB = QCheckBox(self.Accounts, "TB")
+                self.TB.setText(i18n("Thunderbird Accounts"))
+                self.TB.setChecked(True)
+                self.AccountsLayout.addWidget(self.TB)
             # MSN Accounts:
             if sources.has_key("Contacts Path"):
                 self.MSN = QCheckBox(self.Accounts, "MSN")
@@ -102,12 +114,6 @@ class OptionsPage(QWidget):
                 self.GTalk.setText(i18n("GTalk Accounts"))
                 self.GTalk.setChecked(True)
                 self.AccountsLayout.addWidget(self.GTalk)
-            # Thunderbird Accounts:
-            if sources.has_key("Thunderbird Profile Path"):
-                self.TB = QCheckBox(self.Accounts, "TB")
-                self.TB.setText(i18n("Thunderbird Accounts"))
-                self.TB.setChecked(True)
-                self.AccountsLayout.addWidget(self.TB)
         # Spacer:
         spacer = QSpacerItem(1,1,QSizePolicy.Minimum,QSizePolicy.Expanding)
         self.lay.addItem(spacer)
@@ -123,6 +129,7 @@ class OptionsPage(QWidget):
                  ("FFBookmarks", "Firefox Profile Path"),
                  ("oldRadio", "Wallpaper Path"),
                  ("GTalk", "GTalk Key"),
+                 ("WinMail", "Windows Mail Path"),
                  ("TB", "Thunderbird Profile Path"),
                  ("MSN", "Contacts Path")]
         for widgetname, dictname in items:

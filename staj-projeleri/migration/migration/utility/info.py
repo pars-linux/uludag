@@ -78,6 +78,17 @@ def windowsInfo(sources):
         sources["GTalk Key"] = key
     except:
         pass
+    # Windows Mail:
+    try:
+        value = hive.getValue("Software\\Microsoft\\Windows Mail","Store Root")
+        if value.find("%USERPROFILE%\\") != -1:
+            value = value.replace("%USERPROFILE%\\", "")
+            value = value.replace("\\", "/")
+            value = os.path.join(sources["Home Path"], value)
+            if os.path.isdir(value):
+                sources["Windows Mail Path"] = value
+    except:
+        pass
     # Return Info:
     return sources
 

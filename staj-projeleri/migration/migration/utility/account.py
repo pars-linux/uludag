@@ -99,11 +99,16 @@ class Account:
             accountdict = {}
             accountdict["type"] = "SMTP"
             account = account.strip()
-            fields = {"host":"hostname", "port":"port", "user":"username", "secure":"try_ssl"}
+            fields = {"host":"hostname", "port":"port", "secure":"try_ssl"}
             # Get account information from TB prefs:
             for key in fields.keys():
                 field = "mail.smtpserver." + account + "." + fields[key]
                 accountdict[key] = prefs.get(field, None)
+            if prefs.get("mail.smtpserver." + account + ".auth_method", 0):
+                accountdict["auth"] = True
+                accountdict["user"] = prefs.get("mail.smtpserver." + account + ".username", None)
+            else:
+                accountdict["auth"] = False
             # Correct values:
             if accountdict.has_key("secure"):
                 accountdict["SSL"] = False
@@ -169,6 +174,22 @@ class Account:
                         fields = {}
                         if getData(dom, "SMTP_Server"):
                             accountdict["type"] = "SMTP"
+                            sicility = int(getData(dom, "SMTP_Use_Sicily"))
+                            if sicility == 0:
+                                accountdict["auth"] = False
+                            elif sicility == 1:
+                                accountdict["auth"] = True
+                                accountdict["user"] = getData(dom, "SMTP_User_Name")
+                            elif sicility == 2:
+                                if getData(dom, "POP3_User_Name"):
+                                    accountdict["auth"] = True
+                                    accountdict["user"] = getData(dom, "POP3_User_Name")
+                                elif getData(dom, "IMAP_User_Name"):
+                                    accountdict["auth"] = True
+                                    accountdict["user"] = getData(dom, "IMAP_User_Name")
+                            elif sicility == 3:
+                                accountdict["auth"] = True
+                                accountdict["user"] = getData(dom, "SMTP_User_Name")
                             fields = {"host":"SMTP_Server", "port":"SMTP_Port", "SSL":"SMTP_Secure_Connection", "realname":"SMTP_Display_Name", "email":"SMTP_Email_Address"}
                         for key in fields.keys():
                             value = getData(dom, fields[key])
@@ -215,9 +236,10 @@ class Account:
         config.setGroup("General")
         transportno = config.readNumEntry("transports") + 1
         for account in self.accounts:
+            if not KMailAccountIsValid(config, account):
+                continue
+            # Add POP3 Account:
             if account["type"] == "POP3":
-                if KMailAccountExists(config, "pop", account["host"], account["user"]):
-                    continue
                 config.setGroup("General")
                 config.writeEntry("accounts", accountno)
                 config.setGroup("Account " + str(accountno))
@@ -228,9 +250,13 @@ class Account:
                 config.writeEntry("auth", "USER")
                 config.writeEntry("host", account["host"])
                 config.writeEntry("login", account["user"])
-                inbox = account.get("inbox", "inbox")
-                inbox = KMailFolderName(inbox)
+                
+                # Set Inbox Folder:
+                #inbox = account.get("inbox", "inbox")
+                #inbox = KMailFolderName(inbox)
+                inbox = "inbox"
                 config.writeEntry("Folder", inbox)
+                
                 if account.has_key("SSL") and account["SSL"]:
                     config.writeEntry("use-ssl", "true")
                     config.writeEntry("port", 995)
@@ -240,9 +266,8 @@ class Account:
                 if account.has_key("port") and account["port"]:
                     config.writeEntry("port", account["port"])
                 config.writeEntry("use-tls", "false")
+            # Add IMAP Account:
             elif account["type"] == "IMAP":
-                if KMailAccountExists(config, "imap", account["host"], account["user"]):
-                    continue
                 config.setGroup("General")
                 config.writeEntry("accounts", accountno)
                 config.setGroup("Account " + str(accountno))
@@ -263,18 +288,18 @@ class Account:
                 if account.has_key("port") and account["port"]:
                     config.writeEntry("port", account["port"])
                 config.writeEntry("use-tls", "false")
+            # Add SMTP Account:
             elif account["type"] == "SMTP":
-                if KMailTransportExists(config, account["host"], account["user"]):
-                    continue
                 config.setGroup("General")
                 config.writeEntry("transports", transportno)
                 config.setGroup("Transport " + str(transportno))
                 transportno += 1
-                config.writeEntry("auth", "true")
-                config.writeEntry("authtype", "PLAIN")
+                if account.get("auth", False) and account.has_key("user"):
+                    config.writeEntry("auth", "true")
+                    config.writeEntry("authtype", "PLAIN")
+                    config.writeEntry("user", account["user"])
                 config.writeEntry("name", account["host"])
                 config.writeEntry("host", account["host"])
-                config.writeEntry("user", account["user"])
                 if account.has_key("SSL") and account["SSL"]:
                     config.writeEntry("encryption", "SSL")
                     config.writeEntry("port", 465)
@@ -284,17 +309,18 @@ class Account:
                         config.writeEntry("encryption", "TLS")
                 if account.has_key("port") and account["port"]:
                     config.writeEntry("port", account["port"])
-        config.sync()
-        # Add missing directories and mbox files:
-        for folder in self.folders:
-            name = folder[0]
-            path = KMailFolderName(name)
-            path = os.path.join(os.path.expanduser("~/.kde/share/apps/kmail/mail"), path)
-            if not os.path.exists(path):
-                dirpath = os.path.dirname(path)
-                if not os.path.isdir(dirpath):
-                    os.makedirs(dirpath)
-                open(path, "w").close()
+            config.sync()
+        
+        ## Add missing directories and mbox files:
+        #for folder in self.folders:
+            #name = folder[0]
+            #path = KMailFolderName(name)
+            #path = os.path.join(os.path.expanduser("~/.kde/share/apps/kmail/mail"), path)
+            #if not os.path.exists(path):
+                #dirpath = os.path.dirname(path)
+                #if not os.path.isdir(dirpath):
+                    #os.makedirs(dirpath)
+                #open(path, "w").close()
     
     def yaz(self):
         "Prints accounts"
@@ -338,7 +364,7 @@ def parsePrefs(filepath):
             prefs[key] = value
         elif len(pieces) == 2:
             key = pieces[0]
-            value = pieces[1].strip(", ();\n\t")
+            value = pieces[1].strip(",(); \r\n\t")
             prefs[key] = value
     return prefs
 
@@ -380,6 +406,42 @@ def KMailAccountExists(config, type1, host1, user1):
             break
     config.setGroup(oldgroup)
     return found
+
+def KMailAccountIsValid(config, account1):
+    "Check if the account is valid and not already in KMail accounts"
+    if (not account1.has_key("type")) or (not account1.has_key("host")) or (not account1.has_key("user")):
+        return False
+    if account1["type"] in ["POP3", "IMAP"]:
+        config.setGroup("General")
+        accounts = config.readNumEntry("accounts")
+    elif account1["type"] == "SMTP":
+        config.setGroup("General")
+        accounts = config.readNumEntry("transports")
+    else:
+        return False
+    # Check all accounts 
+    for account2 in xrange(1, accounts + 1):
+        if account1["type"] == "SMTP":
+            config.setGroup("Transport " + str(account2))
+            host2 = config.readEntry("host")
+            user2 = config.readEntry("user")
+            if account1["host"] == host2 and account1["user"] == user2:
+                return False
+        elif account1["type"] == "POP3":
+            config.setGroup("Account " + str(account2))
+            type2 = config.readEntry("Type")
+            host2 = config.readEntry("host")
+            user2 = config.readEntry("login")
+            if "pop" == type2 and account1["host"] == host2 and account1["user"] == user2:
+                return False
+        elif account1["type"] == "IMAP":
+            config.setGroup("Account " + str(account2))
+            type2 = config.readEntry("Type")
+            host2 = config.readEntry("host")
+            user2 = config.readEntry("login")
+            if "imap" == type2 and account1["host"] == host2 and account1["user"] == user2:
+                return False
+    return True
 
 def KMailTransportExists(config, host1, user1):
     found = False

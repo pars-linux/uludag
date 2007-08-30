@@ -5,11 +5,17 @@ TODO List
 / In progress
 + Accomplished
 
+Before 2007.3:
+    - Add KNode Accounts
+    - migrate identities to kmail
+    - Find a way to migrate e-mails (copy mbox file, use python mailbox module, use kmail dcop interface)
+    - Check SMTP Authentication Type (Thunderbird, OE, KMail)
+    - Find a pretty application name :)
+
 General:
     + User help pages
     + Developer documentation (docs/açıklama.txt)
     - Find linux partitions and users
-    - Find a pretty application name :)
     - Calculate folder size using blocks
 
 GUI Improvements:
@@ -20,8 +26,8 @@ GUI Improvements:
     - Include tooltips for each option
 
 Possible New Modules:
-    - IM Accounts and history
-    - E-Mail Accounts, Address Book, Messages, Filters
+    + IM Accounts
+    / E-Mail Accounts, Address Book, Messages, Filters
     - RSS Feeds
     - Opera and Konqueror support with kbookmarks
     - Browser history, cookies and settings
