@@ -47,7 +47,7 @@ def showmainpage(request, reponame):
 	for i in xrange(5):
 		lipatch.append((x[i].pkgname, x[i].numofpatchs))
 		
-	return render_to_response("index.html", {"title": title, "numofsrcs":numofsrcs, "numofbins":numofbins, "numofpatchs":numofpatchs, "numofpkgrs":numofpkgrs, "longestpatch":lipatch, "longestaction":liactionpy, "reponame":reponame})
+	return render_to_response("index.html", {"title": title, "numofsrcs":numofsrcs, "numofbins":numofbins, "numofpatchs":numofpatchs, "numofpkgrs":numofpkgrs, "longestpatch":lipatch, "longestaction":liactionpy})
 	
 def showsourcepkgs(request, reponame):
 	
@@ -77,7 +77,7 @@ def showsourcepkgs(request, reponame):
 		
 		rsltli.append((pkgname, version, packager[0], smry))
 	
-	return render_to_response("source.html", {"title": title, "srcli":rsltli, "reponame":reponame})
+	return render_to_response("source.html", {"title": title, "srcli":rsltli})
 		
 def showbinarypkgs(request, reponame):
 	
@@ -135,4 +135,4 @@ def showbinarypkgs(request, reponame):
 		
 		rsltli.append((pkgname, version, packager, smry))
 	
-	return render_to_response("binary.html", {"title": title, "srcli":rsltli, "reponame":reponame})
+	return render_to_response("binary.html", {"title": title, "srcli":rsltli})

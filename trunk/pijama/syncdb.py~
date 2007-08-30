@@ -74,7 +74,7 @@ class WUpdate:
 			
 			#print pckgname, reponame, self.spec.source.isA[0], self.spec.source.partOf, actionfilelen
 			
-			x=t(pkgname=pckgname, reponame=reponame, isa=ISA, partof=PARTOF, actionpylen=actionfilelen, numofpatchs=numofpatchs, path=root)
+			x=t(pkgname=pckgname, reponame=reponame, isa=ISA, partof=PARTOF, actionpylen=actionfilelen, numofpatchs=numofpatchs)
 			
 			x.save()
 			

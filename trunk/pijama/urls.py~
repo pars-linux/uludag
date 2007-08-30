@@ -16,6 +16,6 @@ urlpatterns = patterns('',
 	(r'^main/(?P<reponame>2007)/$', 'pijama.views.showmainpage'),
 	(r'^main/(?P<reponame>contrib)/$', 'pijama.views.showmainpage'),
 	(r'^main/(?P<reponame>devel)/$', 'pijama.views.showmainpage'),
-	(r'^main/(?P<reponame>.*)/sources/$', 'pijama.views.showsourcepkgs'),
+	(r'^main/(?P<reponame>2007)/sources/$', 'pijama.views.showsourcepkgs'),
 	(r'^main/(?P<reponame>.*)/binaries/$', 'pijama.views.showbinarypkgs'),
 )
