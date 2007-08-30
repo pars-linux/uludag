@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-30 18:02+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: views.py:13 templates/index.html:8 templates/base_main.html:15
+msgid "General Knowledge"
+msgstr "Genel Bilgiler"
+
+#: views.py:54 templates/source.html:8 templates/base_main.html:16
+msgid "Source Packages"
+msgstr "Kaynak Paketler"
+
+#: views.py:84 templates/binary.html:8 templates/base_main.html:18
+msgid "Binary Packages"
+msgstr "İkilik Paketler"
+
+#: templates/binary.html:16 templates/source.html:16
+msgid "Package"
+msgstr "Paket adı"
+
+#: templates/binary.html:16 templates/source.html:16
+msgid "Version"
+msgstr "Sürüm"
+
+#: templates/binary.html:16 templates/source.html:16
+msgid "Packager"
+msgstr "Paketçi adı"
+
+#: templates/binary.html:16 templates/source.html:16
+msgid "Summary"
+msgstr "Özet"
+
+#: templates/index.html:16
+msgid "Number of source packages"
+msgstr "Kaynak paket sayısı"
+
+#: templates/index.html:17
+msgid "Number of binary packages"
+msgstr "İkilik paket sayısı"
+
+#: templates/index.html:18
+msgid "Number of patchs"
+msgstr "Yama sayısı"
+
+#: templates/index.html:19
+msgid "Number of packagers"
+msgstr "Paketçi sayısı"
+
+#: templates/index.html:23
+msgid "Patched mostly"
+msgstr "En çok yamalanan:"
+
+#: templates/index.html:35
+msgid "Longest action.py file"
+msgstr "En uzun inşa betiği:"
+
+#: templates/base_main.html:19
+msgid "Packagers"
+msgstr "Paketçiler"
+
+#: templates/base_main.html:20
+msgid "Search"
+msgstr "Arama"
+
+#: templates/base_main.html:21
+msgid "Feed"
+msgstr "Besleme"
