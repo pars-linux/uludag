@@ -1464,7 +1464,7 @@ Gives a brief list of sources published in the repositories.
 
         self.init(database = True, write = False)
 
-        l = ctx.sourcedb.list()
+        l = ctx.sourcedb.list_sources()
         l.sort()
         for p in l:
             sf, repo = ctx.sourcedb.get_spec_repo(p)
