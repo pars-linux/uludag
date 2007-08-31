@@ -75,9 +75,3 @@ class PackageDB(object):
             return self.package_nodes[repo].keys()
 
         raise Exception(_('Package %s not found.') % name)
-
-def init():
-    return PackageDB()
-
-def finalize():
-    pass

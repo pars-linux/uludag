@@ -10,15 +10,6 @@
 # Please read the COPYING file.
 #
 
-"""
-package source database
-interface for update/query to local package repository
-we basically store everything in sourceinfo class
-yes, we are cheap
-to handle multiple repositories, for sources, we
-store a set of repositories in which the source appears.
-the actual guy to take is determined from the repo order.
-"""
 
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -83,19 +74,3 @@ class SourceDB(object):
     def remove_repo(self, repo):
         self.d.remove_repo(repo)
         self.dpkgtosrc.remove_repo(repo)
-
-srcdb = None
-
-def init():
-    global srcdb
-    if srcdb is not None:
-        return srcdb
-
-    srcdb = SourceDB()
-    return srcdb
-
-def finalize():
-    global srcdb
-    if srcdb is not None:
-        srcdb.close()
-        srcdb = None

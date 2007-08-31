@@ -108,9 +108,3 @@ class InstallDB:
             return os.path.join(packages_path, "%s-%s" % (package, installed_pkgs[package]))
 
         raise Exception(_('Package %s is not installed') % package)
-
-def init():
-    return InstallDB()
-
-def finalize():
-    raise Exception(_('Not implemented'))
