@@ -18,4 +18,7 @@ urlpatterns = patterns('',
 	(r'^main/(?P<reponame>devel)/$', 'pijama.views.showmainpage'),
 	(r'^main/(?P<reponame>.*)/sources/$', 'pijama.views.showsourcepkgs'),
 	(r'^main/(?P<reponame>.*)/binaries/$', 'pijama.views.showbinarypkgs'),
+	(r'^main/(?P<reponame>.*)/packagers/$', 'pijama.views.showpackagers', {'flag': False}),
+	(r'^main/(?P<reponame>.*)/packagers_by_name/$', 'pijama.views.showpackagers', {'flag': True}),
+	(r'^main/(?P<reponame>.*)/packagers/(?P<packagername>.*)/$', 'pijama.views.showpackagerdetails'),
 )

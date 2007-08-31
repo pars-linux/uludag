@@ -178,8 +178,8 @@ class WUpdate:
 			else: t1=history[-1].type
 			if history[0].type == None: t2="normal" 
 			else: t2=history[0].type
-			p.history_set.create(updatetype=t1, date=self.makedate(history[-1].date))#first relase date
-			p.history_set.create(updatetype=t2, date=self.makedate(history[0].date))#last edit date
+			p.history_set.create(updatetype=t1, date=self.makedate(history[-1].date)i reponame=reponame)#first relase date
+			p.history_set.create(updatetype=t2, date=self.makedate(history[0].date), reponame=reponame)#last edit date
 				
 			if "screenshots" in dirs:
 				for filename in os.listdir("screenshots"):
