@@ -30,19 +30,19 @@ class PackageDB(object):
 
     def __init__(self):
 
-        self.package_nodes = {} # Packages
-        self.revdeps = {}       # Reverse dependencies 
-        self.obsoletes = {}     # Obsoletes
-        self.replaces = {}      # Replaces
+        self.__package_nodes = {} # Packages
+        self.__revdeps = {}       # Reverse dependencies 
+        self.__obsoletes = {}     # Obsoletes
+        self.__replaces = {}      # Replaces
 
         repodb = pisi.db.repodb.RepoDB()
 
         for repo in repodb.list_repos():
             doc = repodb.get_repo_doc(repo)
-            self.package_nodes[repo] = self.__generate_packages(doc)
-            self.revdeps[repo] = self.__generate_revdeps(doc)
-            self.obsoletes[repo] = self.__generate_obsoletes(doc)
-            self.replaces[repo] = self.__generate_replaces(doc)
+            self.__package_nodes[repo] = self.__generate_packages(doc)
+            self.__revdeps[repo] = self.__generate_revdeps(doc)
+            self.__obsoletes[repo] = self.__generate_obsoletes(doc)
+            self.__replaces[repo] = self.__generate_replaces(doc)
             del doc
 
     def __generate_replaces(self, doc):
@@ -71,45 +71,45 @@ class PackageDB(object):
         return revdeps
     
     def has_package(self, name, repo):
-        return self.package_nodes.has_key(repo) and self.package_nodes[repo].has_key(name)
+        return self.__package_nodes.has_key(repo) and self.__package_nodes[repo].has_key(name)
 
     def get_package(self, name, repo):
         pkg, repo = self.get_package_repo(name, repo)
         return pkg
 
     def get_package_repo(self, name, repo):
-        if self.package_nodes.has_key(repo):
-            if self.package_nodes[repo].has_key(name):
+        if self.__package_nodes.has_key(repo):
+            if self.__package_nodes[repo].has_key(name):
                 pkg = pisi.metadata.Package()
-                pkg.parse(self.package_nodes[repo][name])
+                pkg.parse(self.__package_nodes[repo][name])
                 return pkg, repo
 
         raise Exception(_('Package %s not found.') % name)
 
     def which_repo(self, name):
-        for repo in self.package_nodes.keys():
-            if self.package_nodes[repo].has_key(name):
+        for repo in self.__package_nodes.keys():
+            if self.__package_nodes[repo].has_key(name):
                 return repo
 
     def get_obsoletes(self, repo):
-        if not self.obsoletes.has_key(repo):
+        if not self.__obsoletes.has_key(repo):
             raise Exception(_('Repository %s does not exits') % repo)
 
-        return self.obsoletes[repo]
+        return self.__obsoletes[repo]
     
     def get_rev_deps(self, name, repo):
-        if not self.revdeps.has_key(repo):
+        if not self.__revdeps.has_key(repo):
             raise Exception(_('Repository %s does not exits') % repo)
 
-        if self.revdeps[repo].has_key(name):
-            return list(self.revdeps[repo][name])
+        if self.__revdeps[repo].has_key(name):
+            return list(self.__revdeps[repo][name])
         else:
             return []
 
     # replacesdb holds the info about the replaced packages (ex. gaim -> pidgin)
     def get_replaces(self, repo):
         pairs = {}
-        for pkg_name in self.replaces[repo]:
+        for pkg_name in self.__replaces[repo]:
             replaces = self.get_package(pkg_name, repo).replaces
             for r in replaces:
                 if pisi.replace.installed_package_replaced(r):
@@ -121,7 +121,7 @@ class PackageDB(object):
         raise Exception(_('Not implemented'))
 
     def list_packages(self, repo):
-        if self.package_nodes.has_key(repo):
-            return self.package_nodes[repo].keys()
+        if self.__package_nodes.has_key(repo):
+            return self.__package_nodes[repo].keys()
 
         raise Exception(_('Repository %s does not exists.') % repo)
