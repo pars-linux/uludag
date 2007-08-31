@@ -66,6 +66,11 @@ class InstallDB:
         self.installed_pkgs = dict(map(lambda x:pisi.util.parse_package_name(x),
                                        os.listdir(packages_path)))
 
+        self.config_pending = []
+        pending_info_path = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.config_pending)
+        if os.path.exists(pending_info_path):
+            self.config_pending = open(pending_info_path, "r").read().split()
+
     def list_installed(self):
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
         return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(packages_path))
@@ -91,17 +96,36 @@ class InstallDB:
                            ctime)
         return info
 
-    def get_package(self, package):
+    # FIXME: notused is for pgraph.py:get_package
+    def get_package(self, package, notused=None):
         metadata = pisi.metadata.MetaData()
         metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
         metadata.read(metadata_xml)
         return metadata.package
 
+    def mark_pending(self, package):
+        if package not in self.config_pending:
+            self.config_pending.append(package)
+            self.__write_config_pending()
+
     def list_pending(self):
-        raise Exception(_('Not implemented'))
+        return self.config_pending
 
     def clear_pending(self, package):
-        raise Exception(_('Not implemented'))
+        if package not in self.config_pending:
+            self.config_pending.remove(package)
+            self.__write_config_pending()
+
+    def __write_config_pending(self):
+        pending_info_dir = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir)
+        if not os.path.exists(pending_info_dir):
+            os.makedirs(pending_info_dir)
+
+        pending_info_file = os.path.join(pending_info_dir, ctx.const.config_pending)
+        pending = open(pending_info_file, "w")
+        for pkg in set(self.config_pending):
+            pending.write("%s\n" % pkg)
+        pending.close()
 
     def __package_path(self, package):
 

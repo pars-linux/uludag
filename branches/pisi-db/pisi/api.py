@@ -227,13 +227,13 @@ def generate_conflicts(A):
 
 def generate_pending_order(A):
     # returns pending package list in reverse topological order of dependency
-    G_f = pgraph.PGraph(ctx.packagedb, pisi.db.installed) # construct G_f
-    for x in A.keys():
+    G_f = pgraph.PGraph(ctx.installdb, pisi.db.installed) # construct G_f
+    for x in A:
         G_f.add_package(x)
     B = A
     while len(B) > 0:
         Bp = set()
-        for x in B.keys():
+        for x in B:
             pkg = ctx.installdb.get_package(x)
             for dep in pkg.runtimeDependencies():
                 if dep.package in G_f.vertices():
@@ -258,7 +258,7 @@ def configure_pending():
     try:
         for x in order:
             if ctx.installdb.has_package(x):
-                pkginfo = A[x]
+                pkginfo = ctx.installdb.get_package(x)
                 pkgname = pisi.util.package_name(x, pkginfo.version,
                                         pkginfo.release,
                                         False,

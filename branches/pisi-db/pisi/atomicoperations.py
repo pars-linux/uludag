@@ -406,12 +406,14 @@ class Install(AtomicOperation):
             self.remove_old.remove_db()
 
         # installdb
-        ctx.installdb.install(self.metadata.package.name,
-                          self.metadata.package.version,
-                          self.metadata.package.release,
-                          self.metadata.package.build,
-                          self.metadata.package.distribution,
-                          config_later = self.config_later)
+#         ctx.installdb.install(self.metadata.package.name,
+#                           self.metadata.package.version,
+#                           self.metadata.package.release,
+#                           self.metadata.package.build,
+#                           self.metadata.package.distribution,
+#                           config_later = self.config_later)
+
+        ctx.installdb.mark_pending(self.config_later)
 
         # filesdb
         ctx.filesdb.add_files(self.metadata.package.name, self.files)
