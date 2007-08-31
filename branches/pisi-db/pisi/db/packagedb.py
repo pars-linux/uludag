@@ -31,12 +31,27 @@ class PackageDB(object):
     def __init__(self):
 
         self.package_nodes = {}
+        self.revdeps = {}
         repodb = pisi.db.repodb.RepoDB()
 
         for repo in repodb.list_repos():
             doc = repodb.get_repo_doc(repo)
-            self.package_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Package")))
+            self.package_nodes[repo] = self.__generate_packages(doc)
+            self.revdeps[repo] = self.__generate_revdeps(doc)
             del doc
+
+    def __generate_packages(self, doc):
+        return dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Package")))
+
+    def __generate_revdeps(self, doc):
+        revdeps = {}
+        for node in doc.tags("Package"):
+            name = node.getTagData('Name')
+            deps = node.getTag('RuntimeDependencies')
+            if deps:
+                for dep in deps.tags("Dependency"):
+                    revdeps.setdefault(dep.firstChild().data(), set()).add(name)
+        return revdeps
     
     def has_package(self, name, repo):
         return self.package_nodes.has_key(repo) and self.package_nodes[repo].has_key(name)
@@ -66,7 +81,13 @@ class PackageDB(object):
         raise Exception(_('Not implemented'))
     
     def get_rev_deps(self, name, repo):
-        raise Exception(_('Not implemented'))
+        if not self.revdeps.has_key(repo):
+            raise Exception(_('Repository %s does not exits') % repo)
+
+        if self.revdeps[repo].has_key(name):
+            return list(self.revdeps[repo][name])
+        else:
+            return []
 
     def get_deps(self, name, repo):
         raise Exception(_('Not implemented'))
@@ -75,4 +96,4 @@ class PackageDB(object):
         if self.package_nodes.has_key(repo):
             return self.package_nodes[repo].keys()
 
-        raise Exception(_('Package %s not found.') % name)
+        raise Exception(_('Repository %s does not exists.') % repo)
