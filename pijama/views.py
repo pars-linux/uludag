@@ -72,6 +72,7 @@ def showsourcepkgs(request, reponame):
 		version=li[0].version
 		summary=spec.source.summary
 		
+		if summary.has_key("tr") and summary.has_key("en"): smry=summary["tr"]
 		if summary.has_key("en"): smry=summary["en"]
 		if summary.has_key("tr"): smry=summary["tr"]
 		
@@ -129,10 +130,85 @@ def showbinarypkgs(request, reponame):
 				summary=spec.source.summary
 				packager=spec.source.packager.name
 			
-		
+		if summary.has_key("tr") and summary.has_key("en"): smry=summary["tr"]
 		if summary.has_key("en"): smry=summary["en"]
 		if summary.has_key("tr"): smry=summary["tr"]
 		
 		rsltli.append((pkgname, version, packager, smry))
 	
 	return render_to_response("binary.html", {"title": title, "srcli":rsltli, "reponame":reponame})
+		
+def showpackagers(request, reponame, flag):
+	
+	title = _("Packagers (according to the package count)")
+	
+	
+	#print "here"
+	something=__import__("pijama.pijidb.models")
+	t=something.pijidb.models.__getattribute__("Packager")
+	
+	l=t.objects.filter(id__gt=0).values("name")
+	li=l.distinct()
+	
+	t=something.pijidb.models.__getattribute__("RepoPackages")
+	pkgs=t.objects.filter(reponame__exact="2007")
+	
+	rsltli={}
+	for n in li:
+		nname=n["name"]
+		count=0
+		for p in pkgs:
+			value=p.packager_set.values()
+			pname=value[0]["name"]
+			if pname == nname: count += 1
+			
+		rsltli[nname]=count
+		rslt=rsltli.items()	
+	if not flag:
+		rslt.sort(key=lambda x: x[1])
+		rslt.reverse()
+	else:
+		rslt.sort(key=lambda x: x[0])
+	
+	return render_to_response("packagers.html", {"title": title, "rslt":rslt, "reponame":reponame})
+	
+def showpackagerdetails(request, reponame, packagername):
+	
+	#print packagername
+	
+	title = packagername
+	
+	something=__import__("pijama.pijidb.models")
+	t=something.pijidb.models.__getattribute__("RepoPackages")
+	pkgs=t.objects.filter(reponame__exact=reponame)
+	
+	rsltli = []
+	historyli = []
+	email=""
+	flag=False
+	for p in pkgs:
+		li=p.packager_set.values()
+		#print li[0]["name"], packagername
+		if li[0]["name"] == packagername:
+			rsltli.append(p.pkgname)
+			flag=True
+			if not email: email=li[0]["email"]
+			
+		spec=SpecFile()
+		spec.read(os.path.join(p.path,"pspec.xml"))
+		h=spec.history	
+		for x in h:
+			if x.name == li[0]["name"]:
+				tpl=(spec.source.name, x.date, x.comment)
+				historyli.append(tpl)
+			
+		
+	historyli.sort(key=lambda x: x[1]) # sort according to the date
+	
+	if flag:
+		email=email.replace("@", " [at] ") 
+		
+	
+	return render_to_response("packagerdetails.html", {"title": title, "rslt":rsltli, "reponame":reponame, "email":email, "packagername":packagername, "history":historyli})
+	
+	
