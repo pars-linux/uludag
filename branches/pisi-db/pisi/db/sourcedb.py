@@ -18,30 +18,54 @@ _ = __trans.ugettext
 import piksemel
 
 import pisi
-import pisi.context as ctx
+import pisi.specfile
 
 class SourceDB(object):
 
     def __init__(self):
 
         self.source_nodes = {}
+        self.pkgstosrc = {}
+
         repodb = pisi.db.repodb.RepoDB()
 
         for repo in repodb.list_repos():
+
+            self.source_nodes[repo] = {}
+            self.pkgstosrc[repo] = {}
+
             doc = repodb.get_repo_doc(repo)
-            self.source_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Source")))
+            for spec in doc.tags("SpecFile"):
+                src_name = x.getTag("Source").getTagData("Name")
+                self.source_nodes[repo][src_name] = spec.toString()
+                for package in spec.tags("Package"):
+                    self.pkgstosrc[repo][package.getTagData("Name")] = src_name
+            del doc
 
-    def list_sources(self):
-        raise Exception(_('Not implemented'))
+    def list_sources(self, repo):
+        if self.source_nodes.has_key(repo):
+            return self.source_nodes[repo].keys()
 
-    def has_spec(self, name, repo=None):
-        raise Exception(_('Not implemented'))
+        raise Exception(_('Repository %s does not exists.') % repo)
 
-    def get_spec(self, name, repo=None):
-        raise Exception(_('Not implemented'))
+    def has_spec(self, name, repo):
+        return self.source_nodes.has_key(repo) and self.source_nodes[repo].has_key(name)
 
-    def get_spec_repo(self, name, repo=None):
-        raise Exception(_('Not implemented'))
+    def get_spec(self, name, repo):
+        spec, repo = self.get_spec_repo(name, repo)
+        return spec
 
-    def pkgtosrc(self, name):
-        raise Exception(_('Not implemented'))
+    def get_spec_repo(self, name, repo):
+        if self.source_nodes.has_key(repo):
+            if self.source_nodes[repo].has_key(name):
+                spec = pisi.specfile.SpecFile()
+                spec.parse(self.source_nodes[repo][name])
+                return spec, repo
+
+        raise Exception(_('Source package %s not found.') % name)
+
+    def pkgtosrc(self, name, repo):
+        if self.pkgstosrc.has_key(repo) and self.pkgstosrc[repo].has_key(name):
+            return self.pkgstosrc[repo]
+    
+
