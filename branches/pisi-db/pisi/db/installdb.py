@@ -75,12 +75,12 @@ class InstallDB:
 
     def get_files(self, package):
         files = pisi.files.Files()
-        files_xml = os.path.join(self._package_path(package), ctx.const.files_xml)
+        files_xml = os.path.join(self.__package_path(package), ctx.const.files_xml)
         files.read(files_xml)
         return files
 
     def get_info(self, package):
-        files_xml = os.path.join(self._package_path(package), ctx.const.files_xml)
+        files_xml = os.path.join(self.__package_path(package), ctx.const.files_xml)
         ctime = pisi.util.creation_time(files_xml)
         pkg = self.get_package(package)
         info = InstallInfo("i", 
@@ -93,7 +93,7 @@ class InstallDB:
 
     def get_package(self, package):
         metadata = pisi.metadata.MetaData()
-        metadata_xml = os.path.join(self._package_path(package), ctx.const.metadata_xml)
+        metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
         metadata.read(metadata_xml)
         return metadata.package
 
@@ -103,7 +103,7 @@ class InstallDB:
     def clear_pending(self, package):
         raise Exception(_('Not implemented'))
 
-    def _package_path(self, package):
+    def __package_path(self, package):
 
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
 
