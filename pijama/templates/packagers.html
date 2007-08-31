@@ -1,11 +1,11 @@
 {% load i18n %}
 {% extends "base_main.html" %}
 
-{% block title%}{{title}}{% endblock %}
+{% block title%}{{title}} ({{addition}}){% endblock %}
 
 {% block header %}
 
-<h1 align='center'>{% trans "Packagers (according to the package count)" %}</h1>
+<h1 align='center'>{% trans "Packagers" %} ({{addition}})</h1>
 
 {% endblock %}
 
