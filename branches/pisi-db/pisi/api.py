@@ -132,11 +132,8 @@ def finalize():
             ctx.log.removeHandler(ctx.loghandler)
 
 
-        pisi.db.repodb.finalize()
         pisi.db.installdb.finalize()
         pisi.db.filesdb.finalize()
-        pisi.db.componentdb.finalize()
-        pisi.db.packagedb.finalize()
         pisi.db.sourcedb.finalize()
 
         if ctx.build_leftover and os.path.exists(ctx.build_leftover):
@@ -402,7 +399,7 @@ def remove_repo(name):
                  % name)
 
 def list_repos():
-    return ctx.repodb.list()
+    return ctx.repodb.list_repos()
 
 def update_repo(repo, force=False):
     ctx.ui.info(_('* Updating repository: %s') % repo)

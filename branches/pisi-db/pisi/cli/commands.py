@@ -766,7 +766,7 @@ expanded to package names.
 
         if not ctx.get_option('bypass_update_repo'):
             ctx.ui.info(_('Updating repositories'))
-            repos = ctx.repodb.list()
+            repos = ctx.repodb.list_repos()
             for repo in repos:
                 pisi.api.update_repo(repo)
         else:
@@ -1226,7 +1226,7 @@ If no repository is given, all repositories are updated.
         if self.args:
             repos = self.args
         else:
-            repos = ctx.repodb.list()
+            repos = ctx.repodb.list_repos()
 
         for repo in repos:
             pisi.api.update_repo(repo, ctx.get_option('force'))
@@ -1326,7 +1326,7 @@ Lists currently tracked repositories.
     def run(self):
 
         self.init(database = True, write = False)
-        for repo in ctx.repodb.list():
+        for repo in ctx.repodb.list_repos():
             ctx.ui.info(repo)
             print '  ', ctx.repodb.get_repo(repo).indexuri.get_uri()
         self.finalize()
@@ -1371,7 +1371,7 @@ all repositories.
                 self.print_packages(arg)
         else:
             # print for all repos
-            for repo in ctx.repodb.list():
+            for repo in ctx.repodb.list_repos():
                 ctx.ui.info(_("Repository : %s\n") % repo)
                 self.print_packages(repo)
         self.finalize()
@@ -1386,7 +1386,7 @@ all repositories.
         installed_list = ctx.installdb.list_installed()
         l.sort()
         for p in l:
-            package = ctx.packagedb.get_package(p)
+            package = ctx.packagedb.get_package(p, repo)
             if self.options.long:
                 ctx.ui.info(unicode(package))
             else:

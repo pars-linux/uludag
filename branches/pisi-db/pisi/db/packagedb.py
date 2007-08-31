@@ -38,24 +38,24 @@ class PackageDB(object):
             self.package_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x), doc.tags("Package")))
     
     def has_package(self, name, repo):
-        return self.package_map.has_key(repo) and self.package_map[repo].has_key(name)
+        return self.package_nodes.has_key(repo) and self.package_nodes[repo].has_key(name)
 
     def get_package(self, name, repo):
         pkg, repo = self.get_package_repo(name, repo)
         return pkg
 
     def get_package_repo(self, name, repo):
-        if self.package_map.has_key(repo):
-            if self.package_map[repo].has_key(name):
+        if self.package_nodes.has_key(repo):
+            if self.package_nodes[repo].has_key(name):
                 pkg = pisi.metadata.Package()
-                pkg.parse(self.package_map[repo][name].toString())
+                pkg.parse(self.package_nodes[repo][name].toString())
                 return pkg, repo
 
         raise Exception(_('Package %s not found.') % name)
 
     def which_repo(self, name):
-        for repo in self.package_map.keys():
-            if self.package_map[repo].has_key(name):
+        for repo in self.package_nodes.keys():
+            if self.package_nodes[repo].has_key(name):
                 return repo
 
     def get_obsoletes(self, repo=None):
@@ -71,7 +71,10 @@ class PackageDB(object):
         raise Exception(_('Not implemented'))
 
     def list_packages(self, repo):
-        raise Exception(_('Not implemented'))
+        if self.package_nodes.has_key(repo):
+            return self.package_nodes[repo].keys()
+
+        raise Exception(_('Package %s not found.') % name)
 
 def init():
     return PackageDB()
