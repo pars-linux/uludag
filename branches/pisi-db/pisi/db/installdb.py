@@ -13,6 +13,7 @@
 # installation database
 #
 
+import os
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
@@ -20,7 +21,6 @@ _ = __trans.ugettext
 # PiSi
 import pisi
 import pisi.context as ctx
-import pisi.db.lockeddbshelve as shelve
 import pisi.files
 import pisi.util
 
@@ -28,10 +28,9 @@ class InstallDBError(pisi.Error):
     pass
 
 class InstallInfo:
-    # some data is replicated from packagedb
-    # we store as an object, hey, we can waste O(1) space.
-    # this is also easier to modify in the future, without
-    # requiring database upgrades! wow!
+
+    state_map = { 'i': _('installed'), 'ip':_('installed-pending') }
+
     def __init__(self, state, version, release, build, distribution, time):
         self.state = state
         self.version = version
@@ -48,9 +47,6 @@ class InstallInfo:
                                    time_str)
         return s
 
-    state_map = { 'i': _('installed'), 'ip':_('installed-pending'),
-                  'r':_('removed'), 'p': _('purged') }
-
     def __str__(self):
         s = _("State: %s\nVersion: %s, Release: %s, Build: %s\n") % \
             (InstallInfo.state_map[self.state], self.version,
@@ -61,134 +57,60 @@ class InstallInfo:
                                                           time_str)
         return s
 
-
 class InstallDB:
 
+    # TODO: configpending
     def __init__(self):
-        self.d = shelve.LockedDBShelf('install')
-        self.dp = shelve.LockedDBShelf('configpending')
-        self.files_dir = pisi.util.join_path(ctx.config.db_dir(), 'files')
-
-    def close(self):
-        self.d.close()
-        self.dp.close()
-
-    def files_name(self, pkg, version, release):
-        pkg_dir = self.pkg_dir(pkg, version, release)
-        return pisi.util.join_path(pkg_dir, ctx.const.files_xml)
-
-    def files(self, pkg):
-        pkg = str(pkg)
-        pkginfo = self.d[pkg]
-        files = pisi.files.Files()
-        files.read(self.files_name(pkg,pkginfo.version,pkginfo.release))
-        return files
-
-    def pkg_dir(self, pkg, version, release):
-        return pisi.util.join_path(ctx.config.lib_dir(), 'package',
-                    pkg + '-' + version + '-' + release)
-
-    def is_recorded(self, pkg):
-        return self.d.has_key(str(pkg))
-
-    def is_installed(self, pkg):
-        pkg = str(pkg)
-        if self.is_recorded(pkg):
-            info = self.d.get(pkg)
-            return info.state=='i' or info.state=='ip'
-        else:
-            return False
+        pass
 
     def list_installed(self):
-        l = []
-        for (pkg, info) in self.d.items():
-            if info.state=='i' or info.state=='ip':
-                l.append(pkg)
-        return l
+        packages_path = os.path.join(ctx.config.lib_dir(), "package")
+        return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(packages_path))
+
+    def get_files(self, package):
+        files = pisi.files.Files()
+        files_xml = os.path.join(self._package_path(package), ctx.const.files_xml)
+        files.read(files_xml)
+        return files
+
+    def get_info(self, package):
+        files_xml = os.path.join(self._package_path(package), ctx.const.files_xml)
+        ctime = pisi.util.creation_time(files_xml)
+        pkg = self.get_package(package)
+        info = InstallInfo("i", 
+                           pkg.version,
+                           pkg.release,
+                           pkg.build,
+                           pkg.distribution,
+                           ctime)
+        return info
+
+    def get_package(self, package):
+        metadata = pisi.metadata.MetaData()
+        metadata_xml = os.path.join(self._package_path(package), ctx.const.metadata_xml)
+        metadata.read(metadata_xml)
+        return metadata.package
 
     def list_pending(self):
-        # warning: reads the entire db
-        d = {}
-        for (pkg, x) in self.dp.items():
-            pkginfo = self.d[pkg]
-            d[pkg] = pkginfo
-        return d
+        raise Exception(_('Not implemented'))
 
-    def get_info(self, pkg):
-        pkg = str(pkg)
-        return self.d[pkg]
+    def clear_pending(self, package):
+        raise Exception(_('Not implemented'))
 
-    def get_version(self, pkg):
-        pkg = str(pkg)
-        info = self.d[pkg]
-        return (info.version, info.release, info.build)
+    def _package_path(self, package):
 
-    def is_removed(self, pkg):
-        pkg = str(pkg)
-        if self.is_recorded(pkg):
-            info = self.d[pkg]
-            return info.state=='r'
-        else:
-            return False
+        packages_path = os.path.join(ctx.config.lib_dir(), "package")
 
-    def install(self, pkg, version, release, build, distro = "",
-                config_later = False, rebuild=False):
-        """install package with specific version, release, build"""
-        pkg = str(pkg)
-        if self.is_installed(pkg):
-            raise InstallDBError(_("Already installed"))
-        if config_later:
-            state = 'ip'
-            self.dp.put(pkg, True)
-        else:
-            state = 'i'
+        installed_pkgs = dict(map(lambda x:pisi.util.parse_package_name(x),
+                                  os.listdir(packages_path)))
 
-        # FIXME: it might be more appropriate to pass date
-        # as an argument, or installation data afterwards
-        # to do this -- exa
-        if not rebuild:
-            import time
-            ctime = time.localtime()
-        else:
-            files_xml = self.files_name(pkg, version, release)
-            ctime = pisi.util.creation_time(files_xml)
+        if installed_pkgs.has_key(package):
+            return os.path.join(packages_path, "%s-%s" % (package, installed_pkgs[package]))
 
-        self.d.put(pkg, InstallInfo(state, version, release, build, distro, ctime))
-
-    def clear_pending(self, pkg):
-        pkg = str(pkg)
-        info = self.d.get(pkg)
-        if self.is_installed(pkg):
-            assert info.state == 'ip'
-            info.state = 'i'
-        self.d.put(pkg, info)
-        self.dp.delete(pkg)
-
-    def remove(self, pkg):
-        pkg = str(pkg)
-        info = self.d.get(pkg)
-        info.state = 'r'
-        self.d.put(pkg, info)
-        if self.dp.has_key(pkg):
-            self.dp.delete(pkg)
-
-    def purge(self, pkg):
-        pkg = str(pkg)
-        if self.d.has_key(pkg):
-            self.d.delete(pkg)
-
-db = None
+        raise Exception(_('Package %s is not installed') % package)
 
 def init():
-    global db
-    if db is not None:
-        return db
-
-    db = InstallDB()
-    return db
+    return InstallDB()
 
 def finalize():
-    global db
-    if db is not None:
-        db.close()
-        db = None
+    raise Exception(_('Not implemented'))

@@ -131,8 +131,6 @@ def finalize():
             ctx.loghandler.flush()
             ctx.log.removeHandler(ctx.loghandler)
 
-
-        pisi.db.installdb.finalize()
         pisi.db.filesdb.finalize()
         pisi.db.sourcedb.finalize()
 
