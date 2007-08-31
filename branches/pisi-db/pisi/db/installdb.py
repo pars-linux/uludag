@@ -59,7 +59,6 @@ class InstallInfo:
 
 class InstallDB:
 
-    # TODO: configpending
     def __init__(self):
 
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
