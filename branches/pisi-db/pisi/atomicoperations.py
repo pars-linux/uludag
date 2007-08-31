@@ -243,7 +243,7 @@ class Install(AtomicOperation):
                         raise Error(_('Package downgrade declined'))
 
             # schedule for reinstall
-            self.old_files = ctx.installdb.files(pkg.name)
+            self.old_files = ctx.installdb.get_files(pkg.name)
             self.old_path = ctx.installdb.pkg_dir(pkg.name, iversion, irelease)
             self.reinstall = True
             self.remove_old = Remove(pkg.name)
@@ -448,7 +448,7 @@ class Remove(AtomicOperation):
         self.package_name = package_name
         self.package = ctx.installdb.get_package(self.package_name)
         try:
-            self.files = ctx.installdb.files(self.package_name)
+            self.files = ctx.installdb.get_files(self.package_name)
         except pisi.Error, e:
             # for some reason file was deleted, we still allow removes!
             ctx.ui.error(unicode(e))
