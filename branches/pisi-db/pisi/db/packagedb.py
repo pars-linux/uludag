@@ -32,7 +32,8 @@ class PackageDB(object):
 
         self.package_nodes = {} # Packages
         self.revdeps = {}       # Reverse dependencies 
-        self.obsoletes = []     # Obsoletes
+        self.obsoletes = {}     # Obsoletes
+        self.replaces = {}      # Replaces
 
         repodb = pisi.db.repodb.RepoDB()
 
@@ -41,11 +42,19 @@ class PackageDB(object):
             self.package_nodes[repo] = self.__generate_packages(doc)
             self.revdeps[repo] = self.__generate_revdeps(doc)
             self.obsoletes[repo] = self.__generate_obsoletes(doc)
+            self.replaces[repo] = self.__generate_replaces(doc)
             del doc
 
+    def __generate_replaces(self, doc):
+        return [x.getTagData("Name") for x in doc.tags("Package") if x.getTagData("Replaces")]
+        
     def __generate_obsoletes(self, doc):
         distribution = doc.getTag("Distribution")
         obsoletes = distribution and distribution.getTag("Obsoletes")
+
+        if not obsoletes:
+            return []
+
         return map(lambda x: x.firstChild().data(), obsoletes.tags("Package"))
         
     def __generate_packages(self, doc):
@@ -82,11 +91,11 @@ class PackageDB(object):
             if self.package_nodes[repo].has_key(name):
                 return repo
 
-    def get_obsoletes(self, repo=None):
-        raise Exception(_('Not implemented'))
-    
-    def get_replaces(self, repo):
-        raise Exception(_('Not implemented'))
+    def get_obsoletes(self, repo):
+        if not self.obsoletes.has_key(repo):
+            raise Exception(_('Repository %s does not exits') % repo)
+
+        return self.obsoletes[repo]
     
     def get_rev_deps(self, name, repo):
         if not self.revdeps.has_key(repo):
@@ -96,6 +105,17 @@ class PackageDB(object):
             return list(self.revdeps[repo][name])
         else:
             return []
+
+    # replacesdb holds the info about the replaced packages (ex. gaim -> pidgin)
+    def get_replaces(self, repo):
+        pairs = {}
+        for pkg_name in self.replaces[repo]:
+            replaces = self.get_package(pkg_name, repo).replaces
+            for r in replaces:
+                if pisi.replace.installed_package_replaced(r):
+                    pairs[r.package] = pkg_name
+
+        return pairs
 
     def get_deps(self, name, repo):
         raise Exception(_('Not implemented'))
