@@ -109,7 +109,7 @@ class Index(xmlfile.XmlFile):
                 ctx.ui.info(_('Adding %s to package index') % pkg)
                 self.add_package(pkg, deltas, repo_uri)
 
-    def update_db(self, repo, txn = None):
+    def update_db(self, repo):
         # FIXME: updating db takes too much time. So a notify mechanism is used to inform the status
         # of the operation.
 
@@ -122,17 +122,17 @@ class Index(xmlfile.XmlFile):
                                     percent = self.progress.update(self.processed),
                                     info = _("Updating package database of %s") % repo)
 
-        ctx.componentdb.remove_repo(repo, txn=txn)
+        ctx.componentdb.remove_repo(repo)
         for comp in self.components:
-            ctx.componentdb.update_component(comp, repo, txn)
-        ctx.packagedb.remove_repo(repo, txn=txn)
-        ctx.packagedb.add_obsoletes(self.distribution.obsoletes, repo, txn=txn)
+            ctx.componentdb.update_component(comp, repo)
+        ctx.packagedb.remove_repo(repo)
+        ctx.packagedb.add_obsoletes(self.distribution.obsoletes, repo)
         for pkg in self.packages:
-            ctx.packagedb.add_package(pkg, repo, txn=txn)
+            ctx.packagedb.add_package(pkg, repo)
             update_progress()
-        ctx.sourcedb.remove_repo(repo, txn=txn)
+        ctx.sourcedb.remove_repo(repo)
         for sf in self.specs:
-            ctx.sourcedb.add_spec(sf, repo, txn=txn)
+            ctx.sourcedb.add_spec(sf, repo)
             update_progress()
 
     def add_package(self, path, deltas, repo_uri):

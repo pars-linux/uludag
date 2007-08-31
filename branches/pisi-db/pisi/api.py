@@ -139,9 +139,6 @@ def finalize():
         pisi.db.packagedb.finalize()
         pisi.db.sourcedb.finalize()
 
-        if ctx.dbenv:
-            ctx.dbenv.close()
-            ctx.dbenv_lock.close()
         if ctx.build_leftover and os.path.exists(ctx.build_leftover):
             os.unlink(ctx.build_leftover)
 
@@ -428,7 +425,7 @@ def update_repo(repo, force=False):
         except pisi.file.NoSignatureFound, e:
             ctx.ui.warning(e)
 
-        ctx.txn_proc(lambda txn : index.update_db(repo, txn=txn))
+        index.update_db(repo)
         ctx.ui.info(_('* Package database updated.'))
     else:
         raise Error(_('No repository named %s found.') % repo)
@@ -454,7 +451,7 @@ def rebuild_repo(repo):
         except IOError, e:
             ctx.ui.warning(_("Input/Output error while reading %s: %s") % (indexpath, unicode(e)))
             return
-        ctx.txn_proc(lambda txn : index.update_db(repo, txn=txn))
+        index.update_db(repo)
     else:
         raise Error(_('No repository named %s found.') % repo)
 
@@ -496,16 +493,16 @@ def rebuild_db(files=False):
                 if clean:
                     fn = pisi.util.join_path(ctx.config.db_dir(), db)
                     #NB: there is a parameter bug with python-bsddb3, fixed in pardus
-                    ctx.dbenv.dbremove(file=fn, flags=bsddb3.db.DB_AUTO_COMMIT)
+                    #ctx.dbenv.dbremove(file=fn, flags=bsddb3.db.DB_AUTO_COMMIT)
 
-    def reload_packages(files, txn):
+    def reload_packages(files):
         packages = os.listdir(pisi.util.join_path(ctx.config.lib_dir(), 'package'))
         progress = ctx.ui.Progress(len(packages))
         processed = 0
         for package_fn in packages:
             if not package_fn == "scripts":
                 ctx.ui.debug('Resurrecting %s' % package_fn)
-                pisi.api.resurrect_package(package_fn, files, txn)
+                pisi.api.resurrect_package(package_fn, files)
                 processed += 1
                 ctx.ui.display_progress(operation = "rebuilding-db",
                                         percent = progress.update(processed),
@@ -539,10 +536,8 @@ def rebuild_db(files=False):
     # construct new database
     init(database=True, options=options, ui=ui, comar=comar)
     clean_duplicates()
-    txn = ctx.dbenv.txn_begin()
-    reload_packages(files, txn)
+    reload_packages(files)
     reload_indices()
-    txn.commit()
 
 ############# FIXME: this was a quick fix. ##############################
 

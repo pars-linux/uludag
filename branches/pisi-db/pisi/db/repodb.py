@@ -35,12 +35,10 @@ class Repo:
 class RepoDB(object):
     """RepoDB maps repo ids to repository information"""
 
-    def __init__(self, txn = None):
+    def __init__(self):
         self.d = shelve.LockedDBShelf("repo")
-        def proc(txn):
-            if not self.d.has_key("order", txn):
-                self.d.put("order", [], txn)
-        self.d.txn_proc(proc, txn)
+        if not self.d.has_key("order"):
+            self.d.put("order", [])
 
     def close(self):
         self.d.close()
@@ -57,35 +55,33 @@ class RepoDB(object):
         name = str(name)
         return self.d["repo-" + name]
 
-    def set_default_repo(self, name, txn = None):
+    def set_default_repo(self, name):
         name = str(name)
-        def proc(txn):
-            order = self.d.get("order", txn)
-            try:
-                index = order.index(name)
-                order[0], order[index] = order[index], order[0]
-                self.d.put("order", order, txn)
-            except ValueError:
-                raise Error(_('No repository named %s exists') % name)
-        self.d.txn_proc(proc, txn)
+        order = self.d.get("order")
+        try:
+            index = order.index(name)
+            order[0], order[index] = order[index], order[0]
+            self.d.put("order", order)
+        except ValueError:
+            raise Error(_('No repository named %s exists') % name)
 
-    def add_repo(self, name, repo_info, txn = None, at = None):
+    def add_repo(self, name, repo_info, at = None):
         """add repository with name and repo_info at a given optional position"""
         name = str(name)
         assert (isinstance(repo_info,Repo))
-        def proc(txn):
-            if self.d.has_key("repo-" + name, txn):
-                raise Error(_('Repository %s already exists') % name)
-            self.d.put("repo-" + name, repo_info, txn)
-            order = self.d.get("order", txn)
-            if at == None:
-                order.append(name)
-            else:
-                if at<0 or at>len(order):
-                    raise Error(_("Cannot add repository at position %s") % at)
-                order.insert(at, name)
-            self.d.put("order", order, txn)
-        self.d.txn_proc(proc, txn)
+
+        if self.d.has_key("repo-" + name):
+            raise Error(_('Repository %s already exists') % name)
+
+        self.d.put("repo-" + name, repo_info)
+        order = self.d.get("order")
+        if at == None:
+            order.append(name)
+        else:
+            if at<0 or at>len(order):
+                raise Error(_("Cannot add repository at position %s") % at)
+            order.insert(at, name)
+        self.d.put("order", order)
 
     def list(self):
         return self.d["order"]
@@ -93,17 +89,16 @@ class RepoDB(object):
     def clear(self):
         self.d.clear()
 
-    def remove_repo(self, name, txn = None):
+    def remove_repo(self, name):
         name = str(name)
-        def proc(txn):
-            self.d.delete("repo-" + name, txn)
-            l = self.d.get("order", txn)
-            l.remove(name)
-            self.d.put("order", l, txn)
-            ctx.packagedb.remove_repo(name, txn=txn)
-            ctx.sourcedb.remove_repo(name, txn=txn)
-            ctx.componentdb.remove_repo(name, txn=txn)
-        self.d.txn_proc(proc, txn)
+
+        self.d.delete("repo-" + name)
+        l = self.d.get("order")
+        l.remove(name)
+        self.d.put("order", l)
+        ctx.packagedb.remove_repo(name)
+        ctx.sourcedb.remove_repo(name)
+        ctx.componentdb.remove_repo(name)
 
 db = None
 

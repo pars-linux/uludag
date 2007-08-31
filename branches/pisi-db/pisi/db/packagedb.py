@@ -55,20 +55,20 @@ class PackageDB(object):
         self.do.destroy()
         self.drp.destroy()
 
-    def has_package(self, name, repo=None, txn = None):
-        return self.d.has_key(name, repo, txn=txn)
+    def has_package(self, name, repo=None):
+        return self.d.has_key(name, repo)
 
-    def get_package(self, name, repo=None, txn = None):
+    def get_package(self, name, repo=None):
         try:
-            return self.d.get_item(name, repo, txn=txn)
+            return self.d.get_item(name, repo)
         except pisi.db.itembyrepodb.NotfoundError:
             raise Error(_('Package %s not found') % name)
 
-    def get_package_repo(self, name, repo=None, txn = None):
-        return self.d.get_item_repo(name, repo, txn=txn)
+    def get_package_repo(self, name, repo=None):
+        return self.d.get_item_repo(name, repo)
 
-    def which_repo(self, name, txn = None):
-        return self.d.which_repo(name, txn=txn)
+    def which_repo(self, name):
+        return self.d.which_repo(name)
 
     def get_obsoletes(self, repo=None):
         obsoletes = []
@@ -89,15 +89,15 @@ class PackageDB(object):
 
         return pairs
     
-    def get_rev_deps(self, name, repo = None, txn = None):
-        if self.dr.has_key(name, repo, txn=txn):
-            return self.dr.get_item(name, repo, txn=txn)
+    def get_rev_deps(self, name, repo = None):
+        if self.dr.has_key(name, repo):
+            return self.dr.get_item(name, repo)
         else:
             return []
 
-    def get_deps(self, name, repo = None, txn = None):
-        if self.d.has_key(name, repo, txn=txn):
-            pinfo =  self.d.get_item(name, repo, txn=txn)
+    def get_deps(self, name, repo = None):
+        if self.d.has_key(name, repo):
+            pinfo =  self.d.get_item(name, repo)
             return pinfo.packageDependencies
         else:
             return []
@@ -105,79 +105,70 @@ class PackageDB(object):
     def list_packages(self, repo=None):
         return self.d.list(repo)
 
-    def add_obsoletes(self, obsoletes, repo, txn = None):
-        def proc(txn):
-            self.do.add_item(repo, obsoletes, repo, txn)
-        ctx.txn_proc(proc, txn)
+    def add_obsoletes(self, obsoletes, repo):
+        self.do.add_item(repo, obsoletes, repo)
 
-    def add_package(self, package_info, repo, txn = None):
+    def add_package(self, package_info, repo):
         name = str(package_info.name)
 
-        def proc(txn):
-            self.d.add_item(name, package_info, repo, txn)
-            for dep in package_info.runtimeDependencies():
-                dep_name = str(dep.package)
-                if self.dr.has_key(dep_name, repo, txn):
-                    revdep = self.dr.get_item(dep_name, repo, txn)
-                    revdep = filter(lambda (n,d):n!=name, revdep)
-                    revdep.append( (name, dep) )
-                    self.dr.add_item(dep_name, revdep, repo, txn)
-                else:
-                    self.dr.add_item(dep_name, [ (name, dep) ], repo, txn)
+        self.d.add_item(name, package_info, repo)
+        for dep in package_info.runtimeDependencies():
+            dep_name = str(dep.package)
+            if self.dr.has_key(dep_name, repo):
+                revdep = self.dr.get_item(dep_name, repo)
+                revdep = filter(lambda (n,d):n!=name, revdep)
+                revdep.append( (name, dep) )
+                self.dr.add_item(dep_name, revdep, repo)
+            else:
+                self.dr.add_item(dep_name, [ (name, dep) ], repo)
 
-            if package_info.replaces:
-                self.drp.add_item(name, package_info.replaces, repo, txn)
+        if package_info.replaces:
+            self.drp.add_item(name, package_info.replaces, repo)
             
-            # add component
-            ctx.componentdb.add_package(package_info.partOf, package_info.name, repo, txn)
+        # add component
+        ctx.componentdb.add_package(package_info.partOf, package_info.name, repo)
 
-        ctx.txn_proc(proc, txn)
-
-    def clear(self, txn = None):
+    def clear(self):
         self.d.clear()
         self.dr.clear()
         self.do.clear()
         self.drp.clear()
 
-    def remove_package(self, name, repo = None, txn = None):
+    def remove_package(self, name, repo = None):
         name = str(name)
-        def proc(txn):
-            package_info = self.d.get_item(name, repo, txn=txn)
-            self.d.remove_item(name, repo, txn=txn)
-            for dep in package_info.runtimeDependencies():
-                dep_name = str(dep.package)
-                if self.dr.has_key(dep_name, repo, txn):
-                    revdep = self.dr.get_item(dep_name, repo, txn)
-                    revdep = filter(lambda (n,d):n!=name, revdep)
-                    if revdep:
-                        self.dr.add_item(dep_name, revdep, repo, txn)
-                    else:
-                        # Bug 3558: removal of revdep list of a package from revdepdb
-                        # should only be done by the list members (dep. packages), not
-                        # the package itself. So if a package is removed, it is removed
-                        # from packagedb but its revdepdb part may still exist, until
-                        # all the list members are removed.
-                        self.dr.remove_item(dep_name, repo, txn=txn)
 
-            # remove from component
-            ctx.componentdb.remove_package(package_info.partOf, package_info.name, repo, txn)
+        package_info = self.d.get_item(name, repo)
+        self.d.remove_item(name, repo)
+        for dep in package_info.runtimeDependencies():
+            dep_name = str(dep.package)
+            if self.dr.has_key(dep_name, repo):
+                revdep = self.dr.get_item(dep_name, repo)
+                revdep = filter(lambda (n,d):n!=name, revdep)
+                if revdep:
+                    self.dr.add_item(dep_name, revdep, repo)
+                else:
+                    # Bug 3558: removal of revdep list of a package from revdepdb
+                    # should only be done by the list members (dep. packages), not
+                    # the package itself. So if a package is removed, it is removed
+                    # from packagedb but its revdepdb part may still exist, until
+                    # all the list members are removed.
+                    self.dr.remove_item(dep_name, repo)
 
-        self.d.txn_proc(proc, txn)
+        # remove from component
+        ctx.componentdb.remove_package(package_info.partOf, package_info.name, repo)
 
-    def remove_repo(self, repo, txn = None):
-        def proc(txn):
-            self.d.remove_repo(repo, txn=txn)
-            self.dr.remove_repo(repo, txn=txn)
-            self.do.remove_repo(repo, txn=txn)
-            self.drp.remove_repo(repo, txn=txn)
-        self.d.txn_proc(proc, txn)
+    def remove_repo(self, repo):
+        self.d.remove_repo(repo)
+        self.dr.remove_repo(repo)
+        self.do.remove_repo(repo)
+        self.drp.remove_repo(repo)
 
-def remove_tracking_package(name, txn = None):
+def remove_tracking_package(name):
     # remove the guy from the tracking databases
-    if pkgdb.has_package(name, pisi.db.itembyrepodb.installed, txn=txn):
-        pkgdb.remove_package(name, pisi.db.itembyrepodb.installed, txn=txn)
-    if pkgdb.has_package(name, pisi.db.itembyrepodb.thirdparty, txn=txn):
-        pkgdb.remove_package(name, pisi.db.itembyrepodb.thirdparty, txn=txn)
+    if pkgdb.has_package(name, pisi.db.itembyrepodb.installed):
+        pkgdb.remove_package(name, pisi.db.itembyrepodb.installed)
+    if pkgdb.has_package(name, pisi.db.itembyrepodb.thirdparty):
+        pkgdb.remove_package(name, pisi.db.itembyrepodb.thirdparty)
 
 pkgdb = None
 

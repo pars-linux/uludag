@@ -43,51 +43,46 @@ class SourceDB(object):
     def list(self):
         return self.d.list()
 
-    def has_spec(self, name, repo=None, txn=None):
-        return self.d.has_key(name, repo, txn)
+    def has_spec(self, name, repo=None):
+        return self.d.has_key(name, repo)
 
-    def get_spec(self, name, repo=None, txn = None):
+    def get_spec(self, name, repo=None):
         try:
-            return self.d.get_item(name, repo, txn)
+            return self.d.get_item(name, repo)
         except pisi.db.itembyrepodb.NotfoundError:
             raise NotfoundError(_("Source package %s not found") % name)
 
-    def get_spec_repo(self, name, repo=None, txn = None):
+    def get_spec_repo(self, name, repo=None):
         try:
-            return self.d.get_item_repo(name, repo, txn)
+            return self.d.get_item_repo(name, repo)
         except pisi.db.itembyrepodb.NotfoundError:
             raise NotfoundError(_("Source package %s not found") % name)
 
-    def pkgtosrc(self, name, txn = None):
-        return self.dpkgtosrc.get_item(name, txn=txn)
+    def pkgtosrc(self, name):
+        return self.dpkgtosrc.get_item(name)
 
-    def add_spec(self, spec, repo, txn = None):
+    def add_spec(self, spec, repo):
         assert not spec.errors()
         name = str(spec.source.name)
-        def proc(txn):
-            self.d.add_item(name, spec, repo, txn)
-            for pkg in spec.packages:
-                self.dpkgtosrc.add_item(pkg.name, name, repo, txn)
-            ctx.componentdb.add_spec(spec.source.partOf, spec.source.name, repo, txn)
-        self.d.txn_proc(proc, txn)
 
-    def remove_spec(self, name, repo, txn = None):
+        self.d.add_item(name, spec, repo)
+        for pkg in spec.packages:
+            self.dpkgtosrc.add_item(pkg.name, name, repo)
+        ctx.componentdb.add_spec(spec.source.partOf, spec.source.name, repo)
+
+    def remove_spec(self, name, repo):
         name = str(name)
-        def proc(txn):
-            assert self.has_spec(name, txn=txn)
-            spec = self.d.get_item(name, repo, txn)
-            self.d.remove_item(name, txn=txn)
-            for pkg in spec.packages:
-                self.dpkgtosrc.remove_item_repo(pkg.name, repo, txn)
-            ctx.componentdb.remove_spec(spec.source.partOf, spec.source.name, repo, txn)
 
-        self.d.txn_proc(proc, txn)
+        assert self.has_spec(name)
+        spec = self.d.get_item(name, repo)
+        self.d.remove_item(name)
+        for pkg in spec.packages:
+            self.dpkgtosrc.remove_item_repo(pkg.name, repo)
+        ctx.componentdb.remove_spec(spec.source.partOf, spec.source.name, repo)
 
-    def remove_repo(self, repo, txn = None):
-        def proc(txn):
-            self.d.remove_repo(repo, txn=txn)
-            self.dpkgtosrc.remove_repo(repo, txn=txn)
-        self.d.txn_proc(proc, txn)
+    def remove_repo(self, repo):
+        self.d.remove_repo(repo)
+        self.dpkgtosrc.remove_repo(repo)
 
 srcdb = None
 

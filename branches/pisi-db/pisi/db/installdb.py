@@ -88,30 +88,23 @@ class InstallDB:
         return pisi.util.join_path(ctx.config.lib_dir(), 'package',
                     pkg + '-' + version + '-' + release)
 
-    def is_recorded(self, pkg, txn = None):
-        pkg = str(pkg)
-        def proc(txn):
-            return self.d.has_key(pkg)
-        return self.d.txn_proc(proc, txn)
+    def is_recorded(self, pkg):
+        return self.d.has_key(str(pkg))
 
-    def is_installed(self, pkg, txn = None):
+    def is_installed(self, pkg):
         pkg = str(pkg)
-        def proc(txn):
-            if self.is_recorded(pkg, txn):
-                info = self.d.get(pkg, txn)
-                return info.state=='i' or info.state=='ip'
-            else:
-                return False
-        return self.d.txn_proc(proc, txn)
+        if self.is_recorded(pkg):
+            info = self.d.get(pkg)
+            return info.state=='i' or info.state=='ip'
+        else:
+            return False
 
-    def list_installed(self, txn = None):
-        def proc(txn):
-            l = []
-            for (pkg, info) in self.d.items(txn):
-                if info.state=='i' or info.state=='ip':
-                    l.append(pkg)
-            return l
-        return self.d.txn_proc(proc, txn)
+    def list_installed(self):
+        l = []
+        for (pkg, info) in self.d.items():
+            if info.state=='i' or info.state=='ip':
+                l.append(pkg)
+        return l
 
     def list_pending(self):
         # warning: reads the entire db
@@ -139,59 +132,50 @@ class InstallDB:
             return False
 
     def install(self, pkg, version, release, build, distro = "",
-                config_later = False, rebuild=False, txn = None):
+                config_later = False, rebuild=False):
         """install package with specific version, release, build"""
         pkg = str(pkg)
-        def proc(txn):
-            if self.is_installed(pkg, txn):
-                raise InstallDBError(_("Already installed"))
-            if config_later:
-                state = 'ip'
-                self.dp.put(pkg, True, txn)
-            else:
-                state = 'i'
+        if self.is_installed(pkg):
+            raise InstallDBError(_("Already installed"))
+        if config_later:
+            state = 'ip'
+            self.dp.put(pkg, True)
+        else:
+            state = 'i'
 
-            # FIXME: it might be more appropriate to pass date
-            # as an argument, or installation data afterwards
-            # to do this -- exa
-            if not rebuild:
-                import time
-                ctime = time.localtime()
-            else:
-                files_xml = self.files_name(pkg, version, release)
-                ctime = pisi.util.creation_time(files_xml)
+        # FIXME: it might be more appropriate to pass date
+        # as an argument, or installation data afterwards
+        # to do this -- exa
+        if not rebuild:
+            import time
+            ctime = time.localtime()
+        else:
+            files_xml = self.files_name(pkg, version, release)
+            ctime = pisi.util.creation_time(files_xml)
 
-            self.d.put(pkg, InstallInfo(state, version, release, build, distro, ctime), txn)
+        self.d.put(pkg, InstallInfo(state, version, release, build, distro, ctime))
 
-        self.d.txn_proc(proc,txn)
-
-    def clear_pending(self, pkg, txn = None):
+    def clear_pending(self, pkg):
         pkg = str(pkg)
-        def proc(txn):
-            info = self.d.get(pkg, txn)
-            if self.is_installed(pkg, txn):
-                assert info.state == 'ip'
-                info.state = 'i'
-            self.d.put(pkg, info, txn)
-            self.dp.delete(pkg, txn)
-        self.d.txn_proc(proc,txn)
+        info = self.d.get(pkg)
+        if self.is_installed(pkg):
+            assert info.state == 'ip'
+            info.state = 'i'
+        self.d.put(pkg, info)
+        self.dp.delete(pkg)
 
-    def remove(self, pkg, txn = None):
+    def remove(self, pkg):
         pkg = str(pkg)
-        def proc(txn):
-            info = self.d.get(pkg, txn)
-            info.state = 'r'
-            self.d.put(pkg, info, txn)
-            if self.dp.has_key(pkg):
-                self.dp.delete(pkg, txn)
-        self.d.txn_proc(proc, txn)
+        info = self.d.get(pkg)
+        info.state = 'r'
+        self.d.put(pkg, info)
+        if self.dp.has_key(pkg):
+            self.dp.delete(pkg)
 
-    def purge(self, pkg, txn = None):
+    def purge(self, pkg):
         pkg = str(pkg)
-        def proc(txn):
-            if self.d.has_key(pkg, txn):
-                self.d.delete(pkg, txn)
-        self.d.txn_proc(proc, txn)
+        if self.d.has_key(pkg):
+            self.d.delete(pkg)
 
 db = None
 

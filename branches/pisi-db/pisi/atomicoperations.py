@@ -123,13 +123,7 @@ class Install(AtomicOperation):
         self.store_pisi_files()
         self.postinstall()
 
-        txn = ctx.dbenv.txn_begin()
-        try:
-            self.update_databases(txn)
-            txn.commit()
-        except db.DBError, e:
-            txn.abort()
-            raise e
+        self.update_databases()
 
         ctx.enable_keyboard_interrupts()
 
@@ -406,10 +400,10 @@ class Install(AtomicOperation):
             ctx.ui.info(_('Storing %s') % fpath, verbose=True)
             self.package.extract_file(fpath, self.package.pkg_dir())
 
-    def update_databases(self, txn):
+    def update_databases(self):
         "update databases"
         if self.reinstall:
-            self.remove_old.remove_db(txn)
+            self.remove_old.remove_db()
 
         # installdb
         ctx.installdb.install(self.metadata.package.name,
@@ -417,14 +411,13 @@ class Install(AtomicOperation):
                           self.metadata.package.release,
                           self.metadata.package.build,
                           self.metadata.package.distribution,
-                          config_later = self.config_later,
-                          txn = txn)
+                          config_later = self.config_later)
 
         # filesdb
-        ctx.filesdb.add_files(self.metadata.package.name, self.files, txn=txn)
+        ctx.filesdb.add_files(self.metadata.package.name, self.files)
 
         # installed packages
-        ctx.packagedb.add_package(self.pkginfo, pisi.db.itembyrepodb.installed, txn=txn)
+        ctx.packagedb.add_package(self.pkginfo, pisi.db.itembyrepodb.installed)
 
 
 def install_single(pkg, upgrade = False):
@@ -477,13 +470,7 @@ class Remove(AtomicOperation):
         for fileinfo in self.files.list:
             self.remove_file(fileinfo, self.package_name)
 
-        txn = ctx.dbenv.txn_begin()
-        try:
-            self.remove_db(txn)
-            txn.commit()
-        except db.DBError, e:
-            txn.abort()
-            raise e
+        self.remove_db()
 
         self.remove_pisi_files()
         ctx.ui.close()
@@ -548,11 +535,11 @@ class Remove(AtomicOperation):
     def remove_pisi_files(self):
         util.clean_dir(self.package.pkg_dir())
 
-    def remove_db(self, txn):
-        ctx.installdb.remove(self.package_name, txn)
-        ctx.filesdb.remove_files(self.files, txn)
+    def remove_db(self):
+        ctx.installdb.remove(self.package_name)
+        ctx.filesdb.remove_files(self.files)
         # FIXME: something goes wrong here, if we use ctx operations ends up with segmentation fault!
-        pisi.db.packagedb.remove_tracking_package(self.package_name, txn)
+        pisi.db.packagedb.remove_tracking_package(self.package_name)
 
 
 def remove_single(package_name):
@@ -563,7 +550,7 @@ def build(package):
     import pisi.build
     return pisi.build.build(package)
 
-def virtual_install(metadata, files, txn):
+def virtual_install(metadata, files):
     """Recreate the package info for rebuilddb command"""
     # installdb
     ctx.installdb.install(metadata.package.name,
@@ -571,17 +558,16 @@ def virtual_install(metadata, files, txn):
                           metadata.package.release,
                           metadata.package.build,
                           metadata.package.distribution,
-                          rebuild=True,
-                          txn=txn)
+                          rebuild=True)
 
     # filesdb
     if files:
-        ctx.filesdb.add_files(metadata.package.name, files, txn=txn)
+        ctx.filesdb.add_files(metadata.package.name, files)
 
     # installed packages
-    ctx.packagedb.add_package(metadata.package, pisi.db.itembyrepodb.installed, txn=txn)
+    ctx.packagedb.add_package(metadata.package, pisi.db.itembyrepodb.installed)
 
-def resurrect_package(package_fn, write_files, txn = None):
+def resurrect_package(package_fn, write_files):
     """Resurrect the package from xml files"""
 
     metadata_xml = util.join_path(ctx.config.lib_dir(), 'package',
@@ -613,8 +599,6 @@ def resurrect_package(package_fn, write_files, txn = None):
         files = None
 
     #import pisi.atomicoperations
-    def f(t):
-        pisi.atomicoperations.virtual_install(metadata, files, t)
-    ctx.txn_proc(f, txn)
+    pisi.atomicoperations.virtual_install(metadata, files)
 
     ctx.ui.info(_('OK.'))
