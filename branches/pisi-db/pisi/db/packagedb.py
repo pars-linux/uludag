@@ -35,7 +35,8 @@ class PackageDB(object):
 
         for repo in repodb.list_repos():
             doc = repodb.get_repo_doc(repo)
-            self.package_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x), doc.tags("Package")))
+            self.package_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Package")))
+            del doc
     
     def has_package(self, name, repo):
         return self.package_nodes.has_key(repo) and self.package_nodes[repo].has_key(name)
@@ -48,7 +49,7 @@ class PackageDB(object):
         if self.package_nodes.has_key(repo):
             if self.package_nodes[repo].has_key(name):
                 pkg = pisi.metadata.Package()
-                pkg.parse(self.package_nodes[repo][name].toString())
+                pkg.parse(self.package_nodes[repo][name])
                 return pkg, repo
 
         raise Exception(_('Package %s not found.') % name)

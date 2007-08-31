@@ -29,7 +29,7 @@ class ComponentDB(object):
 
         for repo in self.repodb.list_repos():
             doc = self.repodb.get_repo_doc(repo)
-            self.component_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x), doc.tags("Component")))
+            self.component_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Component")))
             del doc
 
     def has_component(self, name, repo):
@@ -41,7 +41,7 @@ class ComponentDB(object):
             raise Exception(_('Component %s not found') % component_name)
 
         component = pisi.component.Component()
-        component.parse(self.component_nodes[repo][component_name].toString())
+        component.parse(self.component_nodes[repo][component_name])
         
         doc = self.repodb.get_repo_doc(repo)
         for pkg in doc.tags("Package"):
@@ -56,6 +56,7 @@ class ComponentDB(object):
         return component
 
     def get_packages(self, component_name, repo, walk=False):
+
         packages = []
 
         if not self.has_component(component_name, repo):
