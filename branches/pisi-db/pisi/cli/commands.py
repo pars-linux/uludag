@@ -1636,14 +1636,15 @@ Finds the installed package which contains the specified file.
             files.append(ctx.filesdb.get_file(path))
 
         if files:
-            for (pkg_name, file_info) in files:
+            for (pkg_name, file_path) in files:
                 if ctx.config.options.quiet:
                     ctx.ui.info(pkg_name)
                 else:
-                    ctx.ui.info(_("Package %s has file %s") % (pkg_name, file_info.path))
+                    ctx.ui.info(_("Package %s has file %s") % (pkg_name, file_path))
                     if ctx.config.options.long:
-                        ctx.ui.info(_('Type: %s, Hash: %s') % (file_info.type,
-                                                           file_info.hash))
+                        pass
+#                         ctx.ui.info(_('Type: %s, Hash: %s') % (file_path.type,
+#                                                            file_path.hash))
         else:
             ctx.ui.error(_("Path '%s' does not belong to an installed package") % path)
 

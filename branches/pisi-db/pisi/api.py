@@ -131,6 +131,8 @@ def finalize():
             ctx.loghandler.flush()
             ctx.log.removeHandler(ctx.loghandler)
 
+        ctx.filesdb.close()
+
         if ctx.build_leftover and os.path.exists(ctx.build_leftover):
             os.unlink(ctx.build_leftover)
 

@@ -82,6 +82,7 @@ class Constants:
         self.__c.mirrors_conf = "/etc/pisi/mirrors.conf"
         self.__c.config_pending = "configpending"
         self.__c.info_dir = "info"
+        self.__c.files_db = "files.db"
 
         #file/directory permissions
         self.__c.umask = 0022
