@@ -234,7 +234,7 @@ def generate_pending_order(A):
     while len(B) > 0:
         Bp = set()
         for x in B.keys():
-            pkg = ctx.packagedb.get_package(x, pisi.db.installed)
+            pkg = ctx.installdb.get_package(x)
             for dep in pkg.runtimeDependencies():
                 if dep.package in G_f.vertices():
                     G_f.add_dep(x, dep)
@@ -302,7 +302,7 @@ def info_file(package_fn):
 def info_name(package_name, installed=False):
     """Fetch package information for the given package."""
     if installed:
-        package = ctx.packagedb.get_package(package_name, pisi.db.installed)
+        package = ctx.installdb.get_package(package_name)
         repo = None
     else:
         package, repo = ctx.packagedb.get_package_repo(package_name, pisi.db.repos)

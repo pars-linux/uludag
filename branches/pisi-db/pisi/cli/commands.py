@@ -1143,7 +1143,7 @@ Usage: list-installed
             ctx.ui.info(_('Package Name     |St|   Version|  Rel.| Build|  Distro|             Date'))
             print         '========================================================================'
         for pkg in installed:
-            package = ctx.packagedb.get_package(pkg, pisi.db.installed)
+            package = ctx.installdb.get_package(pkg)
             inst_info = ctx.installdb.get_info(pkg)
             if self.options.long:
                 ctx.ui.info(unicode(package))
@@ -1521,7 +1521,7 @@ Lists the packages that will be upgraded.
             ctx.ui.info(_('Package Name     |St|   Version|  Rel.| Build|  Distro|             Date'))
             print         '========================================================================'
         for pkg in upgradable_pkgs:
-            package = ctx.packagedb.get_package(pkg, pisi.db.installed)
+            package = ctx.installdb.get_package(pkg)
             inst_info = ctx.installdb.get_info(pkg)
             if self.options.long:
                 ctx.ui.info(package)

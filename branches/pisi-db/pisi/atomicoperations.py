@@ -417,7 +417,7 @@ class Install(AtomicOperation):
         ctx.filesdb.add_files(self.metadata.package.name, self.files)
 
         # installed packages
-        ctx.packagedb.add_package(self.pkginfo, pisi.db.installed)
+        ctx.installdb.add_package(self.pkginfo)
 
 
 def install_single(pkg, upgrade = False):
@@ -446,7 +446,7 @@ class Remove(AtomicOperation):
     def __init__(self, package_name, ignore_dep = None):
         super(Remove, self).__init__(ignore_dep)
         self.package_name = package_name
-        self.package = ctx.packagedb.get_package(self.package_name, pisi.db.installed)
+        self.package = ctx.installdb.get_package(self.package_name)
         try:
             self.files = ctx.installdb.files(self.package_name)
         except pisi.Error, e:
@@ -565,7 +565,7 @@ def virtual_install(metadata, files):
         ctx.filesdb.add_files(metadata.package.name, files)
 
     # installed packages
-    ctx.packagedb.add_package(metadata.package, pisi.db.installed)
+    ctx.installdb.add_package(metadata.package)
 
 def resurrect_package(package_fn, write_files):
     """Resurrect the package from xml files"""

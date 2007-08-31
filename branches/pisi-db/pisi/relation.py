@@ -54,6 +54,6 @@ def installed_package_satisfies(relation):
     if not ctx.installdb.is_installed(pkg_name):
         return False
     else:
-        pkg = ctx.packagedb.get_package(pkg_name, pisi.db.installed)
+        pkg = ctx.installdb.get_package(pkg_name)
         (version, release) = (pkg.version, pkg.release)
         return relation.satisfies_relation(pkg_name, version, release)

@@ -10,4 +10,4 @@
 # Please read the COPYING file.
 #
 
-installed, thirdparty, repos, all = None, None, None, None
+installed, thirdparty, repos, all = "DBNotExists", None, None, None

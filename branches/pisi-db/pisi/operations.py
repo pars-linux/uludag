@@ -646,7 +646,7 @@ def plan_remove(A):
             for (rev_dep, depinfo) in rev_deps:
                 # we don't deal with uninstalled rev deps
                 # and unsatisfied dependencies (this is important, too)
-                if ctx.packagedb.has_package(rev_dep, pisi.db.installed) and \
+                if ctx.installdb.has_package(rev_dep) and \
                    dependency.installed_satisfies_dep(depinfo):
                     if not rev_dep in G_f.vertices():
                         Bp.add(rev_dep)
