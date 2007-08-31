@@ -20,32 +20,35 @@ import pisi.db.lockeddbshelve as shelve
 class Error(pisi.Error):
     pass
 
-class FilesDB(shelve.LockedDBShelf):
+class FilesDB(object):
 
     def __init__(self):
-        shelve.LockedDBShelf.__init__(self, 'files')
+        self.d = shelve.LockedDBShelf('files')
 
     def add_files(self, pkg_name, files):
         for x in files.list:
             path = x.path
             del x.path # don't store redundant attribute in db
-            self.put(path, (pkg_name, x))
+            self.d.put(path, (pkg_name, x))
             x.path = path # store it back in
 
     def remove_files(self, files):
         for x in files.list:
-            if self.has_key(x.path):
-                self.delete(x.path)
+            if self.d.has_key(x.path):
+                self.d.delete(x.path)
 
+    def close(self):
+        self.d.close()
+    
     def has_file(self, path):
-        return self.has_key(str(path))
+        return self.d.has_key(str(path))
 
     def get_file(self, path):
         path = str(path)
-        if not self.has_key(path):
+        if not self.d.has_key(path):
             return None
         else:
-            (name, fileinfo) = self.get(path)
+            (name, fileinfo) = self.d.get(path)
             fileinfo.path = path
             return (name, fileinfo)
 
@@ -54,7 +57,7 @@ class FilesDB(shelve.LockedDBShelf):
         import fnmatch
         glob = str(glob)
         infos = []
-        for key in self.keys():
+        for key in self.d.keys():
             if fnmatch.fnmatch(key, glob):
 
                 # FIXME: Why should we assign path attribute manually
