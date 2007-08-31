@@ -30,16 +30,24 @@ class PackageDB(object):
 
     def __init__(self):
 
-        self.package_nodes = {}
-        self.revdeps = {}
+        self.package_nodes = {} # Packages
+        self.revdeps = {}       # Reverse dependencies 
+        self.obsoletes = []     # Obsoletes
+
         repodb = pisi.db.repodb.RepoDB()
 
         for repo in repodb.list_repos():
             doc = repodb.get_repo_doc(repo)
             self.package_nodes[repo] = self.__generate_packages(doc)
             self.revdeps[repo] = self.__generate_revdeps(doc)
+            self.obsoletes[repo] = self.__generate_obsoletes(doc)
             del doc
 
+    def __generate_obsoletes(self, doc):
+        distribution = doc.getTag("Distribution")
+        obsoletes = distribution and distribution.getTag("Obsoletes")
+        return map(lambda x: x.firstChild().data(), obsoletes.tags("Package"))
+        
     def __generate_packages(self, doc):
         return dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Package")))
 
