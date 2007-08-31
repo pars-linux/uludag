@@ -1,0 +1,44 @@
+{% load i18n %}
+{% extends "base_main.html" %}
+
+{% block title%}{{title}}{% endblock %}
+
+{% block header %}
+
+<h1 align='center'>{{packagername}}</h1>
+
+{% endblock %}
+
+
+{% block content %} 
+
+<p> {% trans "Packager" %}: {{packagername}} {{email}}</p>
+
+<div class='statstat'>
+<h3>{% trans "Packages that he/she responsible from" %}:</h3><p>
+
+<table><tbody>
+
+{% for x in rslt %}
+
+<tr><td> <a href="http://127.0.0.1:8000/main/{{reponame}}/source/{{x}}">{{x}}
+
+{% endfor %}
+
+</tbody></table></p></div>
+
+<div class='statstat'>
+<h3>{% trans "Packages updates" %}:</h3><p>
+
+<table><tbody>
+
+{% for x in history %}
+
+<tr><td> <a href="http://127.0.0.1:8000/main/{{reponame}}/source/{{x.0}}">{{x.0}}</a> ({{x.1}})<br>{{x.2}}
+
+{% endfor %}
+
+</tbody></table></p></div>
+
+{% endblock %}
+
