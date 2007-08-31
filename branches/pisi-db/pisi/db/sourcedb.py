@@ -15,62 +15,33 @@ import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
+import piksemel
+
 import pisi
 import pisi.context as ctx
-
-class NotfoundError(pisi.Error):
-    pass
 
 class SourceDB(object):
 
     def __init__(self):
-        pass
-#         self.d = pisi.db.ItemByRepoDB('source')
-#         self.dpkgtosrc = pisi.db.ItemByRepoDB('pkgtosrc')
 
-    def close(self):
-        pass
+        self.source_nodes = {}
+        repodb = pisi.db.repodb.RepoDB()
 
-    def list(self):
-        return self.d.list()
+        for repo in repodb.list_repos():
+            doc = repodb.get_repo_doc(repo)
+            self.source_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Source")))
+
+    def list_sources(self):
+        raise Exception(_('Not implemented'))
 
     def has_spec(self, name, repo=None):
-        return self.d.has_key(name, repo)
+        raise Exception(_('Not implemented'))
 
     def get_spec(self, name, repo=None):
-        try:
-            return self.d.get_item(name, repo)
-        except Exception, e:
-            raise NotfoundError(_("Source package %s not found") % name)
+        raise Exception(_('Not implemented'))
 
     def get_spec_repo(self, name, repo=None):
-        try:
-            return self.d.get_item_repo(name, repo)
-        except Exception, e:
-            raise NotfoundError(_("Source package %s not found") % name)
+        raise Exception(_('Not implemented'))
 
     def pkgtosrc(self, name):
-        return self.dpkgtosrc.get_item(name)
-
-    def add_spec(self, spec, repo):
-        assert not spec.errors()
-        name = str(spec.source.name)
-
-        self.d.add_item(name, spec, repo)
-        for pkg in spec.packages:
-            self.dpkgtosrc.add_item(pkg.name, name, repo)
-        ctx.componentdb.add_spec(spec.source.partOf, spec.source.name, repo)
-
-    def remove_spec(self, name, repo):
-        name = str(name)
-
-        assert self.has_spec(name)
-        spec = self.d.get_item(name, repo)
-        self.d.remove_item(name)
-        for pkg in spec.packages:
-            self.dpkgtosrc.remove_item_repo(pkg.name, repo)
-        ctx.componentdb.remove_spec(spec.source.partOf, spec.source.name, repo)
-
-    def remove_repo(self, repo):
-        self.d.remove_repo(repo)
-        self.dpkgtosrc.remove_repo(repo)
+        raise Exception(_('Not implemented'))
