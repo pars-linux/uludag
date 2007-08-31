@@ -51,7 +51,7 @@ class Relation:
 
 def installed_package_satisfies(relation):
     pkg_name = relation.package
-    if not ctx.installdb.is_installed(pkg_name):
+    if not ctx.installdb.has_package(pkg_name):
         return False
     else:
         pkg = ctx.installdb.get_package(pkg_name)

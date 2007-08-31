@@ -68,7 +68,7 @@ class Install(AtomicOperation):
             delta = None
 
             # Package is installed. This is an upgrade. Check delta.
-            if ctx.installdb.is_installed(pkg.name):
+            if ctx.installdb.has_package(pkg.name):
                 (version, release, build) = ctx.installdb.get_version(pkg.name)
                 delta = pkg.get_delta(buildFrom=build)
 
@@ -190,7 +190,7 @@ class Install(AtomicOperation):
 
         self.reinstall = False
         self.upgrade = False
-        if ctx.installdb.is_installed(pkg.name): # is this a reinstallation?
+        if ctx.installdb.has_package(pkg.name): # is this a reinstallation?
 
             #FIXME: consider REPOSITORY instead of DISTRIBUTION -- exa
             #ipackage = ctx.packagedb.get_package(pkg.name, pisi.db.itembyrepodb.installed)
@@ -460,7 +460,7 @@ class Remove(AtomicOperation):
 
         ctx.ui.status(_('Removing package %s') % self.package_name)
         ctx.ui.notify(pisi.ui.removing, package = self.package, files = self.files)
-        if not ctx.installdb.is_installed(self.package_name):
+        if not ctx.installdb.has_package(self.package_name):
             raise Exception(_('Trying to remove nonexistent package ')
                             + self.package_name)
 

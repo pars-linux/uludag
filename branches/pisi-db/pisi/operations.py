@@ -200,7 +200,7 @@ in the respective order to satisfy extra dependencies:
     for x in order:
         atomicoperations.install_single_file(dfn[x])
 
-    pisi_installed = ctx.installdb.is_installed('pisi')
+    pisi_installed = ctx.installdb.has_package('pisi')
 
     if 'pisi' in order and pisi_installed:
         upgrade_pisi()
@@ -225,7 +225,7 @@ def remove_conflicting_packages(conflicts):
         raise Error(_("Conflicts remain"))
 
 def remove_obsoleted_packages():
-    obsoletes = filter(ctx.installdb.is_installed, ctx.packagedb.get_obsoletes())
+    obsoletes = filter(ctx.installdb.has_package, ctx.packagedb.get_obsoletes())
     if obsoletes:
         if remove(obsoletes, ignore_dep=True, ignore_safety=True):
             raise Error(_("Obsoleted packages remaining"))
@@ -255,7 +255,7 @@ def check_conflicts(order, packagedb):
     return list(C)
 
 def is_upgradable(name, ignore_build = False):
-    if not ctx.installdb.is_installed(name):
+    if not ctx.installdb.has_package(name):
         return False
     (version, release, build) = ctx.installdb.get_version(name)
     try:
@@ -275,7 +275,7 @@ def upgrade_base(A = set(), ignore_package_conflicts = False):
     if not ctx.get_option('ignore_safety'):
         if ctx.componentdb.has_component('system.base'):
             systembase = set(ctx.componentdb.get_union_comp('system.base').packages)
-            extra_installs = filter(lambda x: not ctx.installdb.is_installed(x), systembase - set(A))
+            extra_installs = filter(lambda x: not ctx.installdb.has_package(x), systembase - set(A))
             if extra_installs:
                 ctx.ui.warning(_('Safety switch: Following packages in system.base will be installed: ') +
                                util.strlist(extra_installs))
@@ -303,7 +303,7 @@ def install_pkg_names(A, reinstall = False):
 
     # filter packages that are already installed
     if not reinstall:
-        Ap = set(filter(lambda x: not ctx.installdb.is_installed(x), A))
+        Ap = set(filter(lambda x: not ctx.installdb.has_package(x), A))
         d = A - Ap
         if len(d) > 0:
             ctx.ui.warning(_("The following package(s) are already installed and are not going to be installed again:\n") +
@@ -343,7 +343,7 @@ def install_pkg_names(A, reinstall = False):
 
     ctx.ui.notify(ui.packagestogo, order = order)
 
-    pisi_installed = ctx.installdb.is_installed('pisi')
+    pisi_installed = ctx.installdb.has_package('pisi')
 
     for x in order:
         atomicoperations.install_single_name(x, True)  # allow reinstalls here
@@ -418,7 +418,7 @@ def upgrade_pkg_names(A = []):
             Ap.append(replaces[x])
             continue
 
-        if not ctx.installdb.is_installed(x):
+        if not ctx.installdb.has_package(x):
             ctx.ui.info(_('Package %s is not installed.') % x, True)
             continue
         (version, release, build) = ctx.installdb.get_version(x)
@@ -535,7 +535,7 @@ def plan_upgrade(A):
             pkg = packagedb.get_package(x)
             for dep in pkg.runtimeDependencies():
                 # add packages that can be upgraded
-                if ctx.installdb.is_installed(dep.package) and dependency.installed_satisfies_dep(dep):
+                if ctx.installdb.has_package(dep.package) and dependency.installed_satisfies_dep(dep):
                     continue
                 
                 if dependency.repo_satisfies_dep(dep):
@@ -557,7 +557,7 @@ def plan_upgrade(A):
             rev_deps = packagedb.get_rev_deps(x)
             for (rev_dep, depinfo) in rev_deps:
                 # add only installed but unsatisfied reverse dependencies
-                if ctx.installdb.is_installed(rev_dep) and \
+                if ctx.installdb.has_package(rev_dep) and \
                         (not dependency.installed_satisfies_dep(depinfo)):
                     if not dependency.repo_satisfies_dep(depinfo):
                         raise Error(_('Reverse dependency %s of %s cannot be satisfied') % (rev_dep, x))
@@ -593,7 +593,7 @@ def remove(A, ignore_dep = False, ignore_safety = False):
 
     Ap = []
     for x in A:
-        if ctx.installdb.is_installed(x):
+        if ctx.installdb.has_package(x):
             Ap.append(x)
         else:
             ctx.ui.info(_('Package %s does not exist. Cannot remove.') % x)
@@ -623,7 +623,7 @@ in the respective order to satisfy dependencies:
     ctx.ui.notify(ui.packagestogo, order = order)
 
     for x in order:
-        if ctx.installdb.is_installed(x):
+        if ctx.installdb.has_package(x):
             atomicoperations.remove_single(x)
         else:
             ctx.ui.info(_('Package %s is not installed. Cannot remove.') % x)
@@ -705,7 +705,7 @@ installed in the respective order to satisfy dependencies:
 
     ctx.ui.notify(ui.packagestogo, order = order_inst)
 
-    pisi_installed = ctx.installdb.is_installed('pisi')
+    pisi_installed = ctx.installdb.has_package('pisi')
 
     for x in order_inst:
         atomicoperations.install_single_name(x)
@@ -794,7 +794,7 @@ def calculate_download_sizes(order):
     for pkg in [ctx.packagedb.get_package(name) for name in order]:
 
         delta = None
-        if ctx.installdb.is_installed(pkg.name):
+        if ctx.installdb.has_package(pkg.name):
             (version, release, build) = ctx.installdb.get_version(pkg.name)
             delta = pkg.get_delta(buildFrom=build)
 

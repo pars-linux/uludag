@@ -468,7 +468,7 @@ class Builder:
                 build_deps_names = set([x.package for x in build_deps])
                 devel_deps_names = set(ctx.componentdb.get_component('system.devel').packages)
                 extra_names = devel_deps_names - build_deps_names
-                extra_names = filter(lambda x: not ctx.installdb.is_installed(x), extra_names)
+                extra_names = filter(lambda x: not ctx.installdb.has_package(x), extra_names)
                 if extra_names:
                     ctx.ui.warning(_('Safety switch: following extra packages in system.devel will be installed: ') +
                                pisi.util.strlist(extra_names))

@@ -61,11 +61,18 @@ class InstallDB:
 
     # TODO: configpending
     def __init__(self):
-        pass
+
+        packages_path = os.path.join(ctx.config.lib_dir(), "package")
+
+        self.installed_pkgs = dict(map(lambda x:pisi.util.parse_package_name(x),
+                                       os.listdir(packages_path)))
 
     def list_installed(self):
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
         return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(packages_path))
+
+    def has_package(self, package):
+        return self.installed_pkgs.has_key(package)
 
     def get_files(self, package):
         files = pisi.files.Files()
@@ -98,11 +105,6 @@ class InstallDB:
         raise Exception(_('Not implemented'))
 
     def _package_path(self, package):
-
-        packages_path = os.path.join(ctx.config.lib_dir(), "package")
-
-        installed_pkgs = dict(map(lambda x:pisi.util.parse_package_name(x),
-                                  os.listdir(packages_path)))
 
         if installed_pkgs.has_key(package):
             return os.path.join(packages_path, "%s-%s" % (package, installed_pkgs[package]))

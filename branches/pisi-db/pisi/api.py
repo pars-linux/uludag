@@ -257,7 +257,7 @@ def configure_pending():
     order = generate_pending_order(A)
     try:
         for x in order:
-            if ctx.installdb.is_installed(x):
+            if ctx.installdb.has_package(x):
                 pkginfo = A[x]
                 pkgname = pisi.util.package_name(x, pkginfo.version,
                                         pkginfo.release,
@@ -312,7 +312,7 @@ def info_name(package_name, installed=False):
     #FIXME: get it from sourcedb if available
     metadata.source = None
     #TODO: fetch the files from server if possible (wow, you maniac -- future exa)
-    if installed and ctx.installdb.is_installed(package.name):
+    if installed and ctx.installdb.has_package(package.name):
         try:
             files = ctx.installdb.files(package.name)
         except pisi.Error, e:

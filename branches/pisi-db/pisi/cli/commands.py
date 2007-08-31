@@ -945,7 +945,7 @@ Usage: info <package1> <package2> ... <packagen>
             ctx.ui.info(_('Package file: %s') % arg)
             self.print_pkginfo(metadata, files)
         else:
-            if ctx.installdb.is_installed(arg):
+            if ctx.installdb.has_package(arg):
                 metadata, files, repo = pisi.api.info_name(arg, True)
                 if self.options.short:
                     ctx.ui.info(_('[inst] '), noln=True)
@@ -963,7 +963,7 @@ Usage: info <package1> <package2> ... <packagen>
             if not ctx.packagedb.has_package(arg):
                 ctx.ui.info(_("%s is not found in repositories") % arg)
 
-            if not ctx.installdb.is_installed(arg):
+            if not ctx.installdb.has_package(arg):
                 ctx.ui.info(_("%s is not installed") % arg)
 
     def print_pkginfo(self, metadata, files, repo = None):
@@ -1035,7 +1035,7 @@ If no packages are given, checks all installed packages.
 
         for pkg in pkgs:
             ctx.ui.info(_('* Checking %s... ') % pkg, noln=True)
-            if ctx.installdb.is_installed(pkg):
+            if ctx.installdb.has_package(pkg):
                 corrupt = pisi.api.check(pkg)
                 if corrupt:
                     ctx.ui.info(_('\nPackage %s is corrupt.') % pkg)
