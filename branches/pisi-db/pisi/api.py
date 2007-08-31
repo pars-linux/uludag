@@ -108,11 +108,11 @@ def init(database = True, write = True,
     if database:
         shelve.init_dbenv(write=write)
         ctx.repodb = pisi.db.repodb.RepoDB()
-        ctx.installdb = pisi.db.installdb.init()
-        ctx.filesdb = pisi.db.filesdb.init()
+        ctx.installdb = pisi.db.installdb.InstallDB()
+        ctx.filesdb = pisi.db.filesdb.FilesDB()
         ctx.componentdb = pisi.db.componentdb.ComponentDB()
-        ctx.packagedb = pisi.db.packagedb.init()
-        ctx.sourcedb = pisi.db.sourcedb.init()
+        ctx.packagedb = pisi.db.packagedb.PackageDB()
+        ctx.sourcedb = pisi.db.sourcedb.SourceDB()
     else:
         ctx.repodb = None
         ctx.installdb = None
@@ -130,9 +130,6 @@ def finalize():
         if ctx.log:
             ctx.loghandler.flush()
             ctx.log.removeHandler(ctx.loghandler)
-
-        pisi.db.filesdb.finalize()
-        pisi.db.sourcedb.finalize()
 
         if ctx.build_leftover and os.path.exists(ctx.build_leftover):
             os.unlink(ctx.build_leftover)
