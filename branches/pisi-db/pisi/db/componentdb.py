@@ -57,6 +57,9 @@ class ComponentDB(object):
 
     def get_packages(self, component_name, repo, walk=False):
         packages = []
+
+        if not self.has_component(component_name, repo):
+            raise Exception(_('Component %s not found') % component_name)
         
         if walk:
             components = filter(lambda x:x.startswith(component_name), self.component_nodes[repo].keys())
