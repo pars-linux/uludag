@@ -23,7 +23,7 @@ class FilesDB(object):
         pass
     
     def has_file(self, path):
-        raise Exception(_("Not implemented")
+        raise Exception(_("Not implemented"))
 
     def get_file(self, path):
-        raise Exception(_("Not implemented")
+        raise Exception(_("Not implemented"))
