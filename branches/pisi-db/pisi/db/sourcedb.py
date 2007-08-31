@@ -66,6 +66,6 @@ class SourceDB(object):
 
     def pkgtosrc(self, name, repo):
         if self.pkgstosrc.has_key(repo) and self.pkgstosrc[repo].has_key(name):
-            return self.pkgstosrc[repo]
+            return self.pkgstosrc[repo][name]
     
 
