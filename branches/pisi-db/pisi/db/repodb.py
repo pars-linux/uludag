@@ -10,95 +10,53 @@
 # Please read the COPYING file.
 #
 
-import gettext
-__trans = gettext.translation('pisi', fallback=True)
-_ = __trans.ugettext
+import os
 
 import pisi
-import pisi.db.lockeddbshelve as shelve
+import pisi.uri
+import pisi.index
 import pisi.context as ctx
-
-class Error(pisi.Error):
-    pass
 
 class Repo:
     def __init__(self, indexuri):
         self.indexuri = indexuri
 
-#class HttpRepo
-
-#class FtpRepo
-
-#class RemovableRepo
-
-
 class RepoDB(object):
-    """RepoDB maps repo ids to repository information"""
 
     def __init__(self):
-        self.d = shelve.LockedDBShelf("repo")
-        if not self.d.has_key("order"):
-            self.d.put("order", [])
+        pass
 
     def close(self):
-        self.d.close()
+        pass
 
     def repo_name(self, ix):
-        l = self.list()
-        return l[ix]
+        pass
 
     def has_repo(self, name):
-        name = str(name)
-        return self.d.has_key("repo-" + name)
+        return name in self.list()
 
-    def get_repo(self, name):
-        name = str(name)
-        return self.d["repo-" + name]
-
+    def get_repo(self, repo):
+        urifile_path = pisi.util.join_path(ctx.config.index_dir(), repo, "uri")
+        uri = open(urifile_path, "r").read()
+        return Repo(pisi.uri.URI(uri))
+        
     def set_default_repo(self, name):
-        name = str(name)
-        order = self.d.get("order")
-        try:
-            index = order.index(name)
-            order[0], order[index] = order[index], order[0]
-            self.d.put("order", order)
-        except ValueError:
-            raise Error(_('No repository named %s exists') % name)
+        pass
 
     def add_repo(self, name, repo_info, at = None):
-        """add repository with name and repo_info at a given optional position"""
-        name = str(name)
-        assert (isinstance(repo_info,Repo))
-
-        if self.d.has_key("repo-" + name):
-            raise Error(_('Repository %s already exists') % name)
-
-        self.d.put("repo-" + name, repo_info)
-        order = self.d.get("order")
-        if at == None:
-            order.append(name)
-        else:
-            if at<0 or at>len(order):
-                raise Error(_("Cannot add repository at position %s") % at)
-            order.insert(at, name)
-        self.d.put("order", order)
+        repo_path = pisi.util.join_path(ctx.config.index_dir(), name)
+        os.makedirs(repo_path)
+        urifile_path = pisi.util.join_path(ctx.config.index_dir(), name, "uri")
+        uri = open(urifile_path, "w").write(repo_info.indexuri.get_uri())
 
     def list(self):
-        return self.d["order"]
+        return os.listdir(ctx.config.index_dir())
 
     def clear(self):
-        self.d.clear()
+        pass
 
     def remove_repo(self, name):
-        name = str(name)
-
-        self.d.delete("repo-" + name)
-        l = self.d.get("order")
-        l.remove(name)
-        self.d.put("order", l)
-        ctx.packagedb.remove_repo(name)
-        ctx.sourcedb.remove_repo(name)
-        ctx.componentdb.remove_repo(name)
+        pass
 
 db = None
 
