@@ -55,6 +55,21 @@ class ComponentDB(object):
         
         return component
 
+    def get_packages(self, component_name, repo, walk=False):
+        packages = []
+        
+        if walk:
+            components = filter(lambda x:x.startswith(component_name), self.component_nodes[repo].keys())
+        else:
+            components = self.component_nodes[repo].keys()
+
+        doc = self.repodb.get_repo_doc(repo)
+        for pkg in doc.tags("Package"):
+            if pkg.getTagData("PartOf") in components:
+                packages.append(pkg.getTagData("Name"))
+
+        return packages
+
     def list_components(self, repo):
 
         if not self.component_nodes.has_key(repo):
