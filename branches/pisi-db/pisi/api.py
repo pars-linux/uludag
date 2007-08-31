@@ -299,22 +299,21 @@ def info_file(package_fn):
     package.read()
     return package.metadata, package.files
 
-def info_name(package_name, installed=False):
+def info_name(package_name, repo=None):
     """Fetch package information for the given package."""
-    if installed:
+    if not repo:
         package = ctx.installdb.get_package(package_name)
-        repo = None
     else:
-        package, repo = ctx.packagedb.get_package_repo(package_name, pisi.db.repos)
+        package = ctx.packagedb.get_package(package_name, repo)
 
     metadata = pisi.metadata.MetaData()
     metadata.package = package
     #FIXME: get it from sourcedb if available
     metadata.source = None
     #TODO: fetch the files from server if possible (wow, you maniac -- future exa)
-    if installed and ctx.installdb.has_package(package.name):
+    if not repo and ctx.installdb.has_package(package.name):
         try:
-            files = ctx.installdb.files(package.name)
+            files = ctx.installdb.get_files(package.name)
         except pisi.Error, e:
             ctx.ui.warning(e)
             files = None

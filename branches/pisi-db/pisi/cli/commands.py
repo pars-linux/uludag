@@ -946,25 +946,25 @@ Usage: info <package1> <package2> ... <packagen>
             self.print_pkginfo(metadata, files)
         else:
             if ctx.installdb.has_package(arg):
-                metadata, files, repo = pisi.api.info_name(arg, True)
+                metadata, files, repo = pisi.api.info_name(arg, None)
                 if self.options.short:
                     ctx.ui.info(_('[inst] '), noln=True)
                 else:
                     ctx.ui.info(_('Installed package:'))
                 self.print_pkginfo(metadata, files,pisi.db.installed)
+            else:
+                ctx.ui.info(_("%s is not installed") % arg)
 
-            if ctx.packagedb.has_package(arg):
-                metadata, files, repo = pisi.api.info_name(arg, False)
+            for repo in ctx.repodb.list_repos():
+                metadata, files, repo = pisi.api.info_name(arg, repo)
                 if self.options.short:
                     ctx.ui.info(_('[repo] '), noln=True)
                 else:
                     ctx.ui.info(_('Package found in %s repository:') % repo)
                 self.print_pkginfo(metadata, files, pisi.db.repos)
-            if not ctx.packagedb.has_package(arg):
+            else:
                 ctx.ui.info(_("%s is not found in repositories") % arg)
 
-            if not ctx.installdb.has_package(arg):
-                ctx.ui.info(_("%s is not installed") % arg)
 
     def print_pkginfo(self, metadata, files, repo = None):
         if ctx.get_option('short'):
@@ -973,8 +973,10 @@ Usage: info <package1> <package2> ... <packagen>
         else:
             ctx.ui.info(unicode(metadata.package))
             if repo:
-                revdeps =  [x[0] for x in
-                            ctx.packagedb.get_rev_deps(metadata.package.name, repo)]
+                # FIX:DB
+#                 revdeps =  [x[0] for x in
+#                             ctx.packagedb.get_rev_deps(metadata.package.name, repo)]
+                revdeps = []
                 print _('Reverse Dependencies:'), util.strlist(revdeps)
         if self.options.files or self.options.files_path:
             if files:

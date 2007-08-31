@@ -63,7 +63,6 @@ class InstallDB:
     def __init__(self):
 
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
-
         self.installed_pkgs = dict(map(lambda x:pisi.util.parse_package_name(x),
                                        os.listdir(packages_path)))
 
@@ -106,7 +105,9 @@ class InstallDB:
 
     def _package_path(self, package):
 
-        if installed_pkgs.has_key(package):
-            return os.path.join(packages_path, "%s-%s" % (package, installed_pkgs[package]))
+        packages_path = os.path.join(ctx.config.lib_dir(), "package")
+
+        if self.installed_pkgs.has_key(package):
+            return os.path.join(packages_path, "%s-%s" % (package, self.installed_pkgs[package]))
 
         raise Exception(_('Package %s is not installed') % package)
