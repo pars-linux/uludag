@@ -32,7 +32,6 @@ import pisi.db.filesdb
 import pisi.db.installdb
 import pisi.db.sourcedb
 import pisi.db.componentdb
-import pisi.db.lockeddbshelve as shelve
 import pisi.index
 import pisi.config
 import pisi.metadata
@@ -106,7 +105,6 @@ def init(database = True, write = True,
     # initialize repository databases
     ctx.database = database
     if database:
-        shelve.init_dbenv(write=write)
         ctx.repodb = pisi.db.repodb.RepoDB()
         ctx.installdb = pisi.db.installdb.InstallDB()
         ctx.filesdb = pisi.db.filesdb.FilesDB()
