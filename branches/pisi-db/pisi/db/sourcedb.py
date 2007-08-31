@@ -24,8 +24,8 @@ import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
+import pisi
 import pisi.context as ctx
-import pisi.db.itembyrepodb
 
 class NotfoundError(pisi.Error):
     pass
@@ -33,12 +33,12 @@ class NotfoundError(pisi.Error):
 class SourceDB(object):
 
     def __init__(self):
-        self.d = pisi.db.itembyrepodb.ItemByRepoDB('source')
-        self.dpkgtosrc = pisi.db.itembyrepodb.ItemByRepoDB('pkgtosrc')
+        pass
+#         self.d = pisi.db.ItemByRepoDB('source')
+#         self.dpkgtosrc = pisi.db.ItemByRepoDB('pkgtosrc')
 
     def close(self):
-        self.d.close()
-        self.dpkgtosrc.close()
+        pass
 
     def list(self):
         return self.d.list()
@@ -49,13 +49,13 @@ class SourceDB(object):
     def get_spec(self, name, repo=None):
         try:
             return self.d.get_item(name, repo)
-        except pisi.db.itembyrepodb.NotfoundError:
+        except Exception, e:
             raise NotfoundError(_("Source package %s not found") % name)
 
     def get_spec_repo(self, name, repo=None):
         try:
             return self.d.get_item_repo(name, repo)
-        except pisi.db.itembyrepodb.NotfoundError:
+        except Exception, e:
             raise NotfoundError(_("Source package %s not found") % name)
 
     def pkgtosrc(self, name):

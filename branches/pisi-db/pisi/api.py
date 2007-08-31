@@ -107,10 +107,10 @@ def init(database = True, write = True,
     ctx.database = database
     if database:
         shelve.init_dbenv(write=write)
-        ctx.repodb = pisi.db.repodb.init()
+        ctx.repodb = pisi.db.repodb.RepoDB()
         ctx.installdb = pisi.db.installdb.init()
         ctx.filesdb = pisi.db.filesdb.init()
-        ctx.componentdb = pisi.db.componentdb.init()
+        ctx.componentdb = pisi.db.componentdb.ComponentDB()
         ctx.packagedb = pisi.db.packagedb.init()
         ctx.sourcedb = pisi.db.sourcedb.init()
     else:
@@ -162,7 +162,7 @@ def list_available(repo = None):
 def list_upgradable():
     return filter(pisi.operations.is_upgradable, ctx.installdb.list_installed()) + ctx.packagedb.get_replaces().keys()
 
-def package_graph(A, repo = pisi.db.itembyrepodb.installed, ignore_installed = False):
+def package_graph(A, repo = pisi.db.installed, ignore_installed = False):
     """Construct a package relations graph.
     
     Graph will contain all dependencies of packages A, if ignore_installed
@@ -235,14 +235,14 @@ def generate_conflicts(A):
 
 def generate_pending_order(A):
     # returns pending package list in reverse topological order of dependency
-    G_f = pgraph.PGraph(ctx.packagedb, pisi.db.itembyrepodb.installed) # construct G_f
+    G_f = pgraph.PGraph(ctx.packagedb, pisi.db.installed) # construct G_f
     for x in A.keys():
         G_f.add_package(x)
     B = A
     while len(B) > 0:
         Bp = set()
         for x in B.keys():
-            pkg = ctx.packagedb.get_package(x, pisi.db.itembyrepodb.installed)
+            pkg = ctx.packagedb.get_package(x, pisi.db.installed)
             for dep in pkg.runtimeDependencies():
                 if dep.package in G_f.vertices():
                     G_f.add_dep(x, dep)
@@ -310,10 +310,10 @@ def info_file(package_fn):
 def info_name(package_name, installed=False):
     """Fetch package information for the given package."""
     if installed:
-        package = ctx.packagedb.get_package(package_name, pisi.db.itembyrepodb.installed)
+        package = ctx.packagedb.get_package(package_name, pisi.db.installed)
         repo = None
     else:
-        package, repo = ctx.packagedb.get_package_repo(package_name, pisi.db.itembyrepodb.repos)
+        package, repo = ctx.packagedb.get_package_repo(package_name, pisi.db.repos)
 
     metadata = pisi.metadata.MetaData()
     metadata.package = package
@@ -330,10 +330,10 @@ def info_name(package_name, installed=False):
         files = None
     return metadata, files, repo
 
-def search_package_terms(terms, repo = pisi.db.itembyrepodb.all):
+def search_package_terms(terms, repo = pisi.db.all):
     return search_in_packages(terms, ctx.packagedb.list_packages(repo), repo)
 
-def search_in_packages(terms, packages, repo = pisi.db.itembyrepodb.all):
+def search_in_packages(terms, packages, repo = pisi.db.all):
 
     def search(package, term):
         term = unicode(term).lower()

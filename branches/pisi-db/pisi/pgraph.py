@@ -15,13 +15,14 @@
 import string
 
 import pisi
+import pisi.db
 import graph
 
 # Cache the results from packagedb queries in a graph
 
 class PGraph(graph.Digraph):
 
-    def __init__(self, packagedb, repo = pisi.db.itembyrepodb.repos):
+    def __init__(self, packagedb, repo = pisi.db.repos):
         super(PGraph, self).__init__()
         self.packagedb = packagedb
         self.repo = repo

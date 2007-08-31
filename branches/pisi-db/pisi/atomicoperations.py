@@ -153,7 +153,7 @@ class Install(AtomicOperation):
         # check if package is in database
         # If it is not, put it into 3rd party packagedb
         if not ctx.packagedb.has_package(self.pkginfo.name):
-            ctx.packagedb.add_package(self.pkginfo, pisi.db.itembyrepodb.thirdparty)
+            ctx.packagedb.add_package(self.pkginfo, pisi.db.thirdparty)
 
         # If it is explicitly specified that package conflicts with this package and also
         # we passed check_conflicts tests in operations.py than this means a non-conflicting
@@ -417,7 +417,7 @@ class Install(AtomicOperation):
         ctx.filesdb.add_files(self.metadata.package.name, self.files)
 
         # installed packages
-        ctx.packagedb.add_package(self.pkginfo, pisi.db.itembyrepodb.installed)
+        ctx.packagedb.add_package(self.pkginfo, pisi.db.installed)
 
 
 def install_single(pkg, upgrade = False):
@@ -446,7 +446,7 @@ class Remove(AtomicOperation):
     def __init__(self, package_name, ignore_dep = None):
         super(Remove, self).__init__(ignore_dep)
         self.package_name = package_name
-        self.package = ctx.packagedb.get_package(self.package_name, pisi.db.itembyrepodb.installed)
+        self.package = ctx.packagedb.get_package(self.package_name, pisi.db.installed)
         try:
             self.files = ctx.installdb.files(self.package_name)
         except pisi.Error, e:
@@ -565,7 +565,7 @@ def virtual_install(metadata, files):
         ctx.filesdb.add_files(metadata.package.name, files)
 
     # installed packages
-    ctx.packagedb.add_package(metadata.package, pisi.db.itembyrepodb.installed)
+    ctx.packagedb.add_package(metadata.package, pisi.db.installed)
 
 def resurrect_package(package_fn, write_files):
     """Resurrect the package from xml files"""
