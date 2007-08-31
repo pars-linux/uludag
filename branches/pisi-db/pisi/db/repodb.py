@@ -12,6 +12,8 @@
 
 import os
 
+import piksemel
+
 import pisi
 import pisi.uri
 import pisi.index
@@ -26,57 +28,28 @@ class RepoDB(object):
     def __init__(self):
         pass
 
-    def close(self):
-        pass
-
-    def repo_name(self, ix):
-        pass
-
     def has_repo(self, name):
         return name in self.list()
 
-    def get_local_index(self, repo_name):
+    def get_repo_doc(self, repo_name):
         repo = self.get_repo(repo_name)
         index = os.path.basename(repo.indexuri.get_uri())
-        return pisi.util.join_path(ctx.config.index_dir(), repo_name, index)
+        index_path = pisi.util.join_path(ctx.config.index_dir(), repo_name, index)
+        return piksemel.parse(index_path[:-4])
     
     def get_repo(self, repo):
         urifile_path = pisi.util.join_path(ctx.config.index_dir(), repo, "uri")
         uri = open(urifile_path, "r").read()
         return Repo(pisi.uri.URI(uri))
         
-    def set_default_repo(self, name):
-        pass
-
     def add_repo(self, name, repo_info, at = None):
         repo_path = pisi.util.join_path(ctx.config.index_dir(), name)
         os.makedirs(repo_path)
         urifile_path = pisi.util.join_path(ctx.config.index_dir(), name, "uri")
         uri = open(urifile_path, "w").write(repo_info.indexuri.get_uri())
 
-    def list(self):
+    def list_repos(self):
         return os.listdir(ctx.config.index_dir())
 
-    def clear(self):
-        pass
-
     def remove_repo(self, name):
-        pass
-
-db = None
-
-def init():
-    global db
-
-    if db is not None:
-        return db
-
-    db = RepoDB()
-    return db
-
-def finalize():
-    global db
-
-    if db is not None:
-        db.close()
-        db = None
+        raise Exception(_('Not implemented'))
