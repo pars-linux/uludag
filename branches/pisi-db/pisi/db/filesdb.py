@@ -52,23 +52,6 @@ class FilesDB(object):
             fileinfo.path = path
             return (name, fileinfo)
 
-    def match_files(self, glob):
-        # NB: avoid using, this reads the entire db
-        import fnmatch
-        glob = str(glob)
-        infos = []
-        for key in self.d.keys():
-            if fnmatch.fnmatch(key, glob):
-
-                # FIXME: Why should we assign path attribute manually
-                # in fileinfo? This is also done in get_file(), seems
-                # like a dirty workaround... - baris
-                name = self[key][0]
-                fileinfo = self[key][1]
-                fileinfo.path = key
-                infos.append((name, fileinfo))
-        return infos
-
 filesdb = None
 
 def init():

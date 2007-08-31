@@ -1620,8 +1620,6 @@ Finds the installed package which contains the specified file.
         group = OptionGroup(self.parser, _("search-file options"))
         group.add_option("-l", "--long", action="store_true",
                                default=False, help=_("Show in long format"))
-        group.add_option("-f", "--fuzzy", action="store_true",
-                               default=False, help=_("Fuzzy search"))
         group.add_option("-q", "--quiet", action="store_true",
                                default=False, help=_("Show only package name"))
         self.parser.add_option_group(group)
@@ -1632,12 +1630,8 @@ Finds the installed package which contains the specified file.
         files = []
         path = path.lstrip('/') #FIXME: this shouldn't be necessary :/
 
-        if not ctx.config.options.fuzzy:
-            if ctx.filesdb.has_file(path):
-                files.append(ctx.filesdb.get_file(path))
-        else:
-            #FIXME: this linear search thing is not working well -- exa
-            files = ctx.filesdb.match_files(path)
+        if ctx.filesdb.has_file(path):
+            files.append(ctx.filesdb.get_file(path))
 
         if files:
             for (pkg_name, file_info) in files:
