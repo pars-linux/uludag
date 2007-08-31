@@ -35,6 +35,11 @@ class RepoDB(object):
     def has_repo(self, name):
         return name in self.list()
 
+    def get_local_index(self, repo_name):
+        repo = self.get_repo(repo_name)
+        index = os.path.basename(repo.indexuri.get_uri())
+        return pisi.util.join_path(ctx.config.index_dir(), repo_name, index)
+    
     def get_repo(self, repo):
         urifile_path = pisi.util.join_path(ctx.config.index_dir(), repo, "uri")
         uri = open(urifile_path, "r").read()
