@@ -36,7 +36,7 @@ class SourceDB(object):
 
             doc = repodb.get_repo_doc(repo)
             for spec in doc.tags("SpecFile"):
-                src_name = x.getTag("Source").getTagData("Name")
+                src_name = spec.getTag("Source").getTagData("Name")
                 self.source_nodes[repo][src_name] = spec.toString()
                 for package in spec.tags("Package"):
                     self.pkgstosrc[repo][package.getTagData("Name")] = src_name
