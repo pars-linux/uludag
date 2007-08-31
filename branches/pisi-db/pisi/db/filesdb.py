@@ -15,55 +15,15 @@ __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
 import pisi
-import pisi.db.lockeddbshelve as shelve
-
-class Error(pisi.Error):
-    pass
+import pisi.context as ctx
 
 class FilesDB(object):
 
     def __init__(self):
-        self.d = shelve.LockedDBShelf('files')
-
-    def add_files(self, pkg_name, files):
-        for x in files.list:
-            path = x.path
-            del x.path # don't store redundant attribute in db
-            self.d.put(path, (pkg_name, x))
-            x.path = path # store it back in
-
-    def remove_files(self, files):
-        for x in files.list:
-            if self.d.has_key(x.path):
-                self.d.delete(x.path)
-
-    def close(self):
-        self.d.close()
+        pass
     
     def has_file(self, path):
-        return self.d.has_key(str(path))
+        raise Exception(_("Not implemented")
 
     def get_file(self, path):
-        path = str(path)
-        if not self.d.has_key(path):
-            return None
-        else:
-            (name, fileinfo) = self.d.get(path)
-            fileinfo.path = path
-            return (name, fileinfo)
-
-filesdb = None
-
-def init():
-    global filesdb
-    if filesdb is not None:
-        return filesdb
-
-    filesdb = FilesDB()
-    return filesdb
-
-def finalize():
-    global filesdb
-    if filesdb is not None:
-        filesdb.close()
-        filesdb = None
+        raise Exception(_("Not implemented")
