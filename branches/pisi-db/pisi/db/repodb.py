@@ -29,7 +29,7 @@ class RepoDB(object):
         pass
 
     def has_repo(self, name):
-        return name in self.list()
+        return name in self.list_repos()
 
     def get_repo_doc(self, repo_name):
         repo = self.get_repo(repo_name)
