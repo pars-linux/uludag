@@ -140,7 +140,7 @@ def showbinarypkgs(request, reponame):
 		
 def showpackagers(request, reponame, flag):
 	
-	title = _("Packagers (according to the package count)")
+	title = _("Packagers")
 	
 	
 	#print "here"
@@ -167,10 +167,12 @@ def showpackagers(request, reponame, flag):
 	if not flag:
 		rslt.sort(key=lambda x: x[1])
 		rslt.reverse()
+		addition=_("according to the package count")
 	else:
 		rslt.sort(key=lambda x: x[0])
+		addition=_("alphabetical")
 	
-	return render_to_response("packagers.html", {"title": title, "rslt":rslt, "reponame":reponame})
+	return render_to_response("packagers.html", {"title": title, "rslt":rslt, "reponame":reponame, "addition":addition})
 	
 def showpackagerdetails(request, reponame, packagername):
 	
@@ -210,5 +212,66 @@ def showpackagerdetails(request, reponame, packagername):
 		
 	
 	return render_to_response("packagerdetails.html", {"title": title, "rslt":rsltli, "reponame":reponame, "email":email, "packagername":packagername, "history":historyli})
+	
+def showpkgdetails(request, reponame, packagename):
+	
+	title = packagename
+	
+	something=__import__("pijama.pijidb.models")
+	t=something.pijidb.models.__getattribute__("RepoPackages")
+	pkg=t.objects.filter(reponame__exact=reponame, pkgname=packagename)[0]
+	
+	spec=SpecFile()
+	spec.read(os.path.join(pkg.path, "pspec.xml"))
+	
+	#pkgname=spec.source.name
+	h=spec.history
+	pkgversion=h[0].version
+	
+	summary=spec.source.summary
+	if summary.has_key("tr") and summary.has_key("en"): pkgsummary=summary["tr"]
+	if summary.has_key("en"): pkgsummary=summary["en"]
+	if summary.has_key("tr"): pkgsummary=summary["tr"]
+	
+	pkghomepage=spec.source.homepage
+	
+	pkglicense=spec.source.license # list
+	
+	pkgpatches=pkg.patch_set.values() # list containing dicts
+	
+	pkgbinaries=pkg.binarypacks_set.values()# list conataining dicts
+	
+	h=spec.history
+	pkghistory=[(hh.release, hh.date, hh.version, hh.name, hh.comment)for hh in h] # list containing tuples
+	
+	pkgpath=pkg.path.split("pardus")
+	pkgpath="pardus"+pkgpath[-1]
+
+	return render_to_response("packagedetails.html", {"title": title, "reponame":reponame, "pkgname":packagename, "pkgversion":pkgversion, "pkgsummary":pkgsummary, "pkghomepage":pkghomepage, "pkglicense":pkglicense, "pkgbinaries":pkgbinaries, "pkgpatches":pkgpatches, "pkghistory":pkghistory, "pkgpath":pkgpath, "reponame":reponame})
+	
+def showbinarydetails(request, reponame, packagename):
+	
+	title=packagename
+	
+	something=__import__("pijama.pijidb.models")
+	t=something.pijidb.models.__getattribute__("BinaryPacks")
+	pkg=t.objects.filter(reponame__exact=reponame, name=packagename)[0]
+	
+	pkgsource=pkg.pkgname.pkgname
+	
+	builddeps=pkg.pkgname.builddeps_set.values()
+	runtimedeps=pkg.pkgname.runtimedeps_set.values()
+	
+	spec=SpecFile()
+	spec.read(os.path.join(pkg.pkgname.path, "pspec.xml"))
+	h=spec.history
+	pkgversion=h[0].version
+	
+	return render_to_response("binarypackagedetails.html", {"pkgname":packagename, "builddeps":builddeps, "runtimedeps":runtimedeps, "pkgversion":pkgversion, "pkgsource":pkgsource, "reponame":reponame})
+
+
+	
+	
+	
 	
 	

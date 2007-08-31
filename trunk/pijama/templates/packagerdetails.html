@@ -21,7 +21,7 @@
 
 {% for x in rslt %}
 
-<tr><td> <a href="http://127.0.0.1:8000/main/{{reponame}}/source/{{x}}">{{x}}
+<tr><td> <a href="http://127.0.0.1:8000/main/{{reponame}}/sources/{{x}}">{{x}}
 
 {% endfor %}
 
@@ -34,7 +34,7 @@
 
 {% for x in history %}
 
-<tr><td> <a href="http://127.0.0.1:8000/main/{{reponame}}/source/{{x.0}}">{{x.0}}</a> ({{x.1}})<br>{{x.2}}
+<tr><td> <a href="http://127.0.0.1:8000/main/{{reponame}}/sources/{{x.0}}">{{x.0}}</a> ({{x.1}})<br>{{x.2}}
 
 {% endfor %}
 
