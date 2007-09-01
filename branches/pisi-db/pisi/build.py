@@ -29,7 +29,7 @@ import pisi.util
 import pisi.file
 import pisi.context as ctx
 import pisi.dependency as dependency
-import pisi.operations as operations
+import pisi.operations.install as install
 import pisi.sourcearchive
 import pisi.files
 import pisi.fetcher
@@ -502,7 +502,7 @@ class Builder:
                 if ctx.ui.confirm(
                 _('Do you want to install the unsatisfied build dependencies')):
                     ctx.ui.info(_('Installing build dependencies.'))
-                    operations.install([dep.package for dep in dep_unsatis])
+                    install.install([dep.package for dep in dep_unsatis])
                 else:
                     fail()
             else:

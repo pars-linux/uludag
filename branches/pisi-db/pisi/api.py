@@ -37,10 +37,14 @@ import pisi.config
 import pisi.metadata
 import pisi.file
 import pisi.version
-import pisi.operations
 import pisi.build
 import pisi.atomicoperations
 import pisi.operations.delta
+import pisi.operations.remove
+import pisi.operations.upgrade
+import pisi.operations.install
+import pisi.operations.helper
+import pisi.operations.emerge
 import pisi.comariface
 import pisi.signalhandler
 
@@ -153,7 +157,7 @@ def list_available(repo = None):
     return set(ctx.packagedb.list_packages(repo = repo))
 
 def list_upgradable():
-    return filter(pisi.operations.is_upgradable, ctx.installdb.list_installed()) + ctx.packagedb.get_replaces().keys()
+    return filter(pisi.operations.helper.is_upgradable, ctx.installdb.list_installed()) + ctx.packagedb.get_replaces().keys()
 
 def package_graph(A, repo = pisi.db.installed, ignore_installed = False):
     """Construct a package relations graph.
@@ -478,34 +482,34 @@ def rebuild_db(files=False):
 # from pisi.atomicoperations import resurrect_package, build
 
 def install(*args, **kw):
-    return pisi.operations.install(*args, **kw)
+    return pisi.operations.install.install(*args, **kw)
 
 def remove(*args, **kw):
-    return pisi.operations.remove(*args, **kw)
+    return pisi.operations.remove.remove(*args, **kw)
 
 def upgrade(*args, **kw):
-    return pisi.operations.upgrade(*args, **kw)
+    return pisi.operations.upgrade.upgrade(*args, **kw)
 
 def emerge(*args, **kw):
-    return pisi.operations.emerge(*args, **kw)
+    return pisi.operations.emerge.emerge(*args, **kw)
 
 def plan_install(*args, **kw):
-    return pisi.operations.plan_install_pkg_names(*args, **kw)
+    return pisi.operations.install.plan_install_pkg_names(*args, **kw)
 
 def plan_remove(*args, **kw):
-    return pisi.operations.plan_remove(*args, **kw)
+    return pisi.operations.remove.plan_remove(*args, **kw)
 
 def plan_upgrade(*args, **kw):
-    return pisi.operations.plan_upgrade(*args, **kw)
+    return pisi.operations.upgrade.plan_upgrade(*args, **kw)
 
 def upgrade_base(*args, **kw):
-    return pisi.operations.upgrade_base(*args, **kw)
+    return pisi.operations.upgrade.upgrade_base(*args, **kw)
 
 def calculate_conflicts(*args, **kw):
     return pisi.conflict.calculate_conflicts(*args, **kw)
 
 def reorder_base_packages(*args, **kw):
-    return pisi.operations.reorder_base_packages(*args, **kw)
+    return pisi.operations.helper.reorder_base_packages(*args, **kw)
 
 def build_until(*args, **kw):
     return pisi.build.build_until(*args, **kw)
