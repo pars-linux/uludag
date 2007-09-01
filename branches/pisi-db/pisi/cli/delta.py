@@ -47,7 +47,7 @@ and creates a delta pisi package with the changed files between two releases.
 
     def run(self):
 
-        from pisi.delta import create_delta_package 
+        from pisi.operations.delta import create_delta_package 
 
         self.init(database=False, write=False)
 

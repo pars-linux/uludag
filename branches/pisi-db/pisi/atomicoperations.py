@@ -27,7 +27,7 @@ import pisi.files
 import pisi.uri
 import pisi.ui
 import pisi.version
-import pisi.delta
+import pisi.operations.delta
 import pisi.db.packagedb
 
 class Error(pisi.Error):
@@ -323,7 +323,7 @@ class Install(AtomicOperation):
         # of these files may be relocated to some other directory in the new package. 
         # We handle these cases here.
         def relocate_files():
-            for old_file, new_file in pisi.delta.find_relocations(self.old_files, self.files):
+            for old_file, new_file in pisi.operations.delta.find_relocations(self.old_files, self.files):
                 old_path, new_path = ("/" + old_file.path, "/" + new_file.path)
 
                 destdir = os.path.dirname(new_path)

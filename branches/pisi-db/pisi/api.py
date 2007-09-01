@@ -40,7 +40,7 @@ import pisi.version
 import pisi.operations
 import pisi.build
 import pisi.atomicoperations
-import pisi.delta
+import pisi.operations.delta
 import pisi.comariface
 import pisi.signalhandler
 
