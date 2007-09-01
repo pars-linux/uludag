@@ -472,20 +472,6 @@ def rebuild_db(files=False):
         for pkg in replica:
             pisi.util.clean_dir(pisi.util.join_path(pisi.api.ctx.config.lib_dir(), 'package', pkg))
 
-    def destroy(files):
-        #TODO: either don't delete version files here, or remove force flag...
-        import bsddb3.db
-        for db in os.listdir(ctx.config.db_dir()):
-            if db.endswith('.bdb'):# or db.startswith('log'):  # delete only db files
-                if db.startswith('files') or db.startswith('filesdbversion'):
-                    clean = files
-                else:
-                    clean = True
-                if clean:
-                    fn = pisi.util.join_path(ctx.config.db_dir(), db)
-                    #NB: there is a parameter bug with python-bsddb3, fixed in pardus
-                    #ctx.dbenv.dbremove(file=fn, flags=bsddb3.db.DB_AUTO_COMMIT)
-
     def reload_packages(files):
         packages = os.listdir(pisi.util.join_path(ctx.config.lib_dir(), 'package'))
         progress = ctx.ui.Progress(len(packages))
@@ -516,7 +502,6 @@ def rebuild_db(files=False):
     except Exception: #FIXME: what exception could we catch here, replace with that.
         files = True # exception means the files db version was wrong
     shelve.init_dbenv(write=True, writeversion=True)
-    destroy(files) # bye bye
 
     # save parameters and shutdown pisi
     options = ctx.config.options

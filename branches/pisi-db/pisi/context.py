@@ -61,8 +61,6 @@ build_leftover = None
 #    """ Register a UI implementation"""
 #    ui = _impl
 
-import bsddb3.db as db
-
 def disable_keyboard_interrupts():
     sig and sig.disable_signal(signal.SIGINT)
 

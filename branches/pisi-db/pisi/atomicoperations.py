@@ -16,7 +16,6 @@ __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
 import os
-import bsddb3.db as db
 import shutil
 
 import pisi
