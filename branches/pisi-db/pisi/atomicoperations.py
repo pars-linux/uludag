@@ -548,5 +548,5 @@ def remove_single(package_name):
 
 def build(package):
     # wrapper for build op
-    import pisi.build
-    return pisi.build.build(package)
+    import pisi.operations.build
+    return pisi.operations.build.build(package)

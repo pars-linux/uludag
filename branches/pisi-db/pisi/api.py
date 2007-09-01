@@ -37,7 +37,6 @@ import pisi.config
 import pisi.metadata
 import pisi.file
 import pisi.version
-import pisi.build
 import pisi.atomicoperations
 import pisi.operations.delta
 import pisi.operations.remove
@@ -45,6 +44,7 @@ import pisi.operations.upgrade
 import pisi.operations.install
 import pisi.operations.helper
 import pisi.operations.emerge
+import pisi.operations.build
 import pisi.comariface
 import pisi.signalhandler
 
@@ -512,7 +512,7 @@ def reorder_base_packages(*args, **kw):
     return pisi.operations.helper.reorder_base_packages(*args, **kw)
 
 def build_until(*args, **kw):
-    return pisi.build.build_until(*args, **kw)
+    return pisi.operations.build.build_until(*args, **kw)
 
 def build(*args, **kw):
     return pisi.atomicoperations.build(*args, **kw)

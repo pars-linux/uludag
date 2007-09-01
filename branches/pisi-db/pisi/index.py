@@ -161,10 +161,10 @@ class Index(xmlfile.XmlFile):
             #ctx.ui.error(str(Error(*errs)))
 
     def add_spec(self, path, repo_uri):
-        import pisi.build
+        import pisi.operations.build
         ctx.ui.info(_('Adding %s to source index') % path)
         #TODO: may use try/except to handle this
-        builder = pisi.build.Builder(path)
+        builder = pisi.operations.build.Builder(path)
             #ctx.ui.error(_('SpecFile in %s is corrupt, skipping...') % path)
             #ctx.ui.error(str(Error(*errs)))
         builder.fetch_component()
