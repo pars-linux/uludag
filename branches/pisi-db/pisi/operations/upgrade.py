@@ -233,14 +233,16 @@ def upgrade_base(A = set(), ignore_package_conflicts = False):
 def is_upgradable(name, ignore_build = False):
     if not ctx.installdb.has_package(name):
         return False
-    (version, release, build) = ctx.installdb.get_version(name)
+
+    info = ctx.installdb.get_info(name)
+    (version, release, build) = (info.version, info.release, info.build)
     try:
-        pkg = ctx.packagedb.get_package(name)
+        pkg = ctx.packagedb.get_package(name, ctx.packagedb.which_repo(name))
     except KeyboardInterrupt:
         raise
     except Exception: #FIXME: what exception could we catch here, replace with that.
         return False
-        
+
     if ignore_build or (not build) or (not pkg.build):
         return pisi.version.Version(release) < pisi.version.Version(pkg.release)
     else:
