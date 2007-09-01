@@ -1,0 +1,33 @@
+{% load i18n %}
+
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="/main/media/stil.css" rel="stylesheet" type="text/css"/>
+	<title>{% block title %}{% endblock %}</title>
+	</head>
+
+	<body>
+	<div id='header-bugzilla'>
+	</div>
+
+	<div class='menu'>
+	<a href='./{{reponame}}'>{% trans "General Knowledge" %}</a>
+ 	| <a href='http://127.0.0.1:8000/main/{{reponame}}/sources'>{% trans "Source Packages" %}</a>
+
+ 	| <a href='http://127.0.0.1:8000/main/{{reponame}}/binaries'>{% trans "Binary Packages" %}</a>
+ 	| <a href='http://127.0.0.1:8000/main/{{reponame}}/packagers'>{% trans "Packagers" %}</a>
+	<a href='http://127.0.0.1:8000/main/{{reponame}}/search'>{% trans "Search" %}</a>
+	| <a href='http://127.0.0.1:8000/main/{{reponame}}/feed'>{% trans "Feed" %}</a>
+
+	</div>
+
+	{% block header %}{% endblock %}
+
+	<div class="content">
+             {% block content %}{% endblock %}
+         </div>
+
+	</body>
+
+</html>

@@ -21,6 +21,7 @@ class RepoPackages(models.Model):
 	actionpylen=models.IntegerField(default=0)
 	numofpatchs=models.IntegerField(default=0)
 	path=models.CharField(maxlength=500, null=True)
+	summary=models.CharField(maxlength=2000, null=True)
 	
 	def __str__(self):
         	return self.pkgname
@@ -67,6 +68,7 @@ class BinaryPacks(models.Model):
 	pkgname=models.ForeignKey(RepoPackages)
 	name=models.CharField(maxlength=50)
 	reponame=models.CharField(maxlength=50)
+	summary=models.CharField(maxlength=2000)
 		
 	def __str__(self):
 		return self.name

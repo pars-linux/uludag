@@ -44,7 +44,7 @@ class WUpdate:
 		return datetime.date(int(li[0]), int(li[1]), int(li[2]))
 		
 	
-	def tableactions(self, pckgname, reponame, dirs, root, actionfilelen, numofpatchs):
+	def tableactions(self, pckgname, reponame, dirs, root, actionfilelen, numofpatchs, summary):
 		
 		try:#try whether there exists a package at the repo, if so just edit the repo date edit info
 			something=__import__("pijama.pijidb.models")
@@ -74,7 +74,7 @@ class WUpdate:
 			
 			#print pckgname, reponame, self.spec.source.isA[0], self.spec.source.partOf, actionfilelen
 			
-			x=t(pkgname=pckgname, reponame=reponame, isa=ISA, partof=PARTOF, actionpylen=actionfilelen, numofpatchs=numofpatchs, path=root)
+			x=t(pkgname=pckgname, reponame=reponame, isa=ISA, partof=PARTOF, actionpylen=actionfilelen, numofpatchs=numofpatchs, path=root, summary=summary)
 			
 			x.save()
 			
@@ -125,7 +125,7 @@ class WUpdate:
 				
 			binaries=self.spec.packages
 			for binary in binaries:
-				p.binarypacks_set.create(name=binary.name, reponame=reponame)
+				p.binarypacks_set.create(name=binary.name, reponame=reponame, summary=binary.summary)
 				
 			print "binaries done"
 			for pkgknowledge in binaries:			
@@ -178,7 +178,7 @@ class WUpdate:
 			else: t1=history[-1].type
 			if history[0].type == None: t2="normal" 
 			else: t2=history[0].type
-			p.history_set.create(updatetype=t1, date=self.makedate(history[-1].date)i reponame=reponame)#first relase date
+			p.history_set.create(updatetype=t1, date=self.makedate(history[-1].date), reponame=reponame)#first relase date
 			p.history_set.create(updatetype=t2, date=self.makedate(history[0].date), reponame=reponame)#last edit date
 				
 			if "screenshots" in dirs:
@@ -226,11 +226,15 @@ class WUpdate:
 				print self.pkgname
 				
 				numofpatchs=len(self.spec.source.patches)
+				summary=self.spec.source.summary
+				print summary
+				#if summary.has_key("en"):summary=summary["en"]
+				#if summary.has_key("tr"):summary=summary["tr"]
 				
 				f=open(os.path.join(root,"actions.py"))
 				actionfilelen=len(f.readlines())
 				f.close()
-				self.tableactions(self.pkgname, self.reponame, dirs, root, actionfilelen, numofpatchs)
+				self.tableactions(self.pkgname, self.reponame, dirs, root, actionfilelen, numofpatchs, summary)
 				
 if __name__ == "__main__":
 	

@@ -1,0 +1,31 @@
+{% load i18n %}
+{% extends "base_main.html" %}
+
+{% block title%}{{title}}{% endblock %}
+
+{% block header %}
+
+<h1 align='center'>{{pkgname}}</h1>
+
+{% endblock %}
+
+
+{% block content %} 
+
+<h3>{{pkgname}} <em>{{pkgversion}}</em></h3>
+
+<p>{% trans "Installed size" %}: {{pkginstalledsize|filesizeformat}}</p>
+<p>{% trans "Package size" %}: {{pkgpackagesize|filesizeformat}}</p>
+
+<p>{% trans "Source package" %}: <a href="http://127.0.0.1:8000/main/{{reponame}}/http://paketler.pardus.org.tr/2007/source/{{pkgsource}}">{{pkgsource}}</a></p> 
+
+<h3>{% trans "Buildtime dependencies" %}:</h3>
+
+<p>{% for x in builddeps %} <a href="http://127.0.0.1:8000/main/{{reponame}}/binaries/{{x.name}}">{{x.name}}</a>, {% endfor %}</p>
+
+<h3>{% trans "Runtime dependencies" %}:</h3>
+
+<p>{% for x in runtimedeps %} <a href="http://127.0.0.1:8000/main/{{reponame}}/binaries/{{x.name}}">{{x.name}}</a>, {% endfor%}</p>
+
+{% endblock %}
+

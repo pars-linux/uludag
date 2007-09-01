@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-31 18:34+0300\n"
+"POT-Creation-Date: 2007-09-01 12:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Oğuz Yarımtepe <oguzy@comu.edu.tr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Kaynak Paketler"
 msgid "Binary Packages"
 msgstr "İkilik Paketler"
 
-#: views.py:143
+#: views.py:143 templates/packagers.html:8 templates/base_main.html:19
 msgid "Packagers"
 msgstr "Paketçiler"
 
@@ -39,6 +39,32 @@ msgstr "paket sayısına göre"
 #: views.py:173
 msgid "alphabetical"
 msgstr "alfabetik"
+
+#: views.py:279 templates/search.html:8 templates/base_main.html:20
+msgid "Search"
+msgstr "Arama"
+
+#: views.py:284
+msgid "Search Result"
+msgstr "Arama Sonuçları"
+
+#: templates/search.html:19 templates/packagerdetails.html:15
+#: templates/packagers.html:16 templates/binary.html:16
+#: templates/source.html:16
+msgid "Packager"
+msgstr "Paketçi adı"
+
+#: templates/search.html:20
+msgid "Binary"
+msgstr ""
+
+#: templates/search.html:21
+msgid "Source"
+msgstr "Kaynak paketler"
+
+#: templates/search.html:22
+msgid "Patch"
+msgstr "Yamalar"
 
 #: templates/packagedetails.html:20
 msgid "License"
@@ -90,11 +116,6 @@ msgstr "Güncelleyen"
 msgid "Summary"
 msgstr "Özet"
 
-#: templates/packagerdetails.html:15 templates/packagers.html:16
-#: templates/binary.html:16 templates/source.html:16
-msgid "Packager"
-msgstr "Paketçi adı"
-
 #: templates/packagerdetails.html:18
 msgid "Packages that he/she responsible from"
 msgstr "Sorumlu olduğu paketler"
@@ -104,14 +125,22 @@ msgid "Packages updates"
 msgstr "Paket güncelleştirmeleri"
 
 #: templates/binarypackagedetails.html:17
+msgid "Installed size"
+msgstr ""
+
+#: templates/binarypackagedetails.html:18
+msgid "Package size"
+msgstr "Paket büyüklüğü"
+
+#: templates/binarypackagedetails.html:20
 msgid "Source package"
 msgstr "Kaynak paketler"
 
-#: templates/binarypackagedetails.html:19
+#: templates/binarypackagedetails.html:22
 msgid "Buildtime dependencies"
 msgstr "İnşa bağımlılıkları"
 
-#: templates/binarypackagedetails.html:23
+#: templates/binarypackagedetails.html:26
 msgid "Runtime dependencies"
 msgstr "Çalışma zamanı bağımlılıkları"
 
@@ -147,9 +176,13 @@ msgstr "En çok yamalanan:"
 msgid "Longest action.py file"
 msgstr "En uzun inşa betiği:"
 
-#: templates/base_main.html:20
-msgid "Search"
-msgstr "Arama"
+#: templates/search_result.html:8
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+#: templates/search_result.html:15
+msgid "Result"
+msgstr "Sonuç"
 
 #: templates/base_main.html:21
 msgid "Feed"
