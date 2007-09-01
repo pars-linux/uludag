@@ -16,6 +16,7 @@ import piksemel
 
 import pisi
 import pisi.uri
+import pisi.util
 import pisi.index
 import pisi.context as ctx
 
@@ -52,4 +53,4 @@ class RepoDB(object):
         return os.listdir(ctx.config.index_dir())
 
     def remove_repo(self, name):
-        raise Exception(_('Not implemented'))
+        pisi.util.clean_dir(os.path.join(ctx.config.index_dir(), name))

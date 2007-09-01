@@ -391,7 +391,6 @@ def add_repo(name, indexuri, at = None):
 def remove_repo(name):
     if ctx.repodb.has_repo(name):
         ctx.repodb.remove_repo(name)
-        pisi.util.clean_dir(os.path.join(ctx.config.index_dir(), name))
         ctx.ui.info(_('Repo %s removed from system.') % name)
     else:
         ctx.ui.error(_('Repository %s does not exist. Cannot remove.')
