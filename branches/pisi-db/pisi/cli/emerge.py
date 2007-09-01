@@ -19,6 +19,7 @@ _ = __trans.ugettext
 import pisi.cli.command as command
 import pisi.cli.build as build
 import pisi.context as ctx
+import pisi.api
 
 class Emerge(build.Build):
     """Build and install PiSi source packages from repository

@@ -16,6 +16,7 @@ import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
+import pisi.api
 import pisi.cli.command as command
 
 class ConfigurePending(command.PackageOp):

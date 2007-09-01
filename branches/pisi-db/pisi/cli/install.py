@@ -18,6 +18,7 @@ _ = __trans.ugettext
 
 import pisi.cli.command as command
 import pisi.context as ctx
+import pisi.api
 
 class Install(command.PackageOp):
     """Install PiSi packages

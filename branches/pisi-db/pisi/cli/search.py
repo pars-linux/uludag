@@ -19,6 +19,7 @@ _ = __trans.ugettext
 import pisi.cli.command as command
 import pisi.cli.info as info
 import pisi.context as ctx
+import pisi.api
 
 class Search(info.Info):
     """Search packages

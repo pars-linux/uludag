@@ -11,6 +11,7 @@
 #
 
 import pisi
+import pisi.api
 import pisi.cli.command as command
 
 class DeleteCache(command.Command):
