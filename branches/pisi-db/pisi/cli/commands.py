@@ -1183,15 +1183,9 @@ dirs under /var/lib/pisi
         self.parser.add_option_group(group)
 
     def run(self):
-        if self.args:
-            self.init(database=True)
-            for package_fn in self.args:
-                pisi.api.resurrect_package(package_fn, ctx.get_option('files`'))
-        else:
-            self.init(database=False)
-            if ctx.ui.confirm(_('Rebuild PiSi databases?')):
-                pisi.api.rebuild_db(ctx.get_option('files'))
-
+        self.init(database=True)
+        if ctx.ui.confirm(_('Rebuild PiSi databases?')):
+            pisi.api.rebuild_db(ctx.get_option('files'))
         self.finalize()
 
 

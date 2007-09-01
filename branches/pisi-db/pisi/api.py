@@ -446,60 +446,14 @@ def rebuild_repo(repo):
 
 def rebuild_db(files=False):
 
-    assert not ctx.database
+    def rebuild_filesdb():
+        for pkg in list_installed():
+            ctx.ui.info(_('* Adding \'%s\' to db... ') % pkg, noln=True)
+            files = ctx.installdb.get_files(pkg)
+            ctx.filesdb.add_files(pkg, files)
+            ctx.ui.info(_('OK.'))
 
-    # Bug 2596
-    # finds and cleans duplicate package directories under '/var/lib/pisi/package'
-    # deletes the _older_ versioned package directories.
-    def clean_duplicates():
-        i_version = {} # installed versions
-        replica = []
-        for pkg in os.listdir(pisi.util.join_path(pisi.api.ctx.config.lib_dir(), 'package')):
-            (name, ver) = pisi.util.parse_package_name(pkg)
-            if i_version.has_key(name):
-                if pisi.version.Version(ver) > pisi.version.Version(i_version[name]):
-                    # found a greater version, older one is a replica
-                    replica.append(name + '-' + i_version[name])
-                    i_version[name] = ver
-                else:
-                    # found an older version which is a replica
-                    replica.append(name + '-' + ver)
-            else:
-                i_version[name] = ver
-
-        for pkg in replica:
-            pisi.util.clean_dir(pisi.util.join_path(pisi.api.ctx.config.lib_dir(), 'package', pkg))
-
-    def reload_packages(files):
-        packages = os.listdir(pisi.util.join_path(ctx.config.lib_dir(), 'package'))
-        progress = ctx.ui.Progress(len(packages))
-        processed = 0
-        for package_fn in packages:
-            if not package_fn == "scripts":
-                ctx.ui.debug('Resurrecting %s' % package_fn)
-                pisi.api.resurrect_package(package_fn, files)
-                processed += 1
-                ctx.ui.display_progress(operation = "rebuilding-db",
-                                        percent = progress.update(processed),
-                                        info = _("Rebuilding package database"))
-
-    def reload_indices():
-        index_dir = ctx.config.index_dir()
-        if os.path.exists(index_dir):  # it may have been erased, or we may be upgrading from a previous version -- exa
-            for repo in os.listdir(index_dir):
-                indexuri = pisi.util.join_path(ctx.config.lib_dir(), 'index', repo, 'uri')
-                indexuri = open(indexuri, 'r').readline()
-                pisi.api.add_repo(repo, indexuri)
-                pisi.api.rebuild_repo(repo)
-
-    # check db schema versions
-    try:
-        shelve.check_dbversion('filesdbversion', pisi.__filesdbversion__, write=False)
-    except KeyboardInterrupt:
-        raise
-    except Exception: #FIXME: what exception could we catch here, replace with that.
-        files = True # exception means the files db version was wrong
-    shelve.init_dbenv(write=True, writeversion=True)
+    ctx.filesdb.destroy()
 
     # save parameters and shutdown pisi
     options = ctx.config.options
@@ -509,9 +463,7 @@ def rebuild_db(files=False):
 
     # construct new database
     init(database=True, options=options, ui=ui, comar=comar)
-    clean_duplicates()
-    reload_packages(files)
-    reload_indices()
+    rebuild_filesdb()
 
 ############# FIXME: this was a quick fix. ##############################
 
@@ -559,9 +511,6 @@ def build_until(*args, **kw):
 
 def build(*args, **kw):
     return pisi.atomicoperations.build(*args, **kw)
-
-def resurrect_package(*args, **kw):
-    return pisi.atomicoperations.resurrect_package(*args, **kw)
 
 ########################################################################
 

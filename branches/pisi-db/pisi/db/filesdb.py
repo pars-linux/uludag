@@ -41,14 +41,19 @@ class FilesDB(object):
 
         self.__check_filesdb()
 
-        for f in files:
-            self.filesdb[f] = pkg
+        for f in files.list:
+            self.filesdb[f.path] = pkg
 
     def remove_files(self, pkg, files):
         for f in files:
             if self.filesdb.has_key(f):
                 del self.filesdb[f]
 
+    def destroy(self):
+        files_db = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.files_db)
+        if os.path.exists(files_db):
+            os.unlink(files_db)
+    
     def close(self):
         if isinstance(self.filesdb, shelve.DbfilenameShelf):
             self.filesdb.close()
@@ -64,11 +69,10 @@ class FilesDB(object):
         files_db = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.files_db)
 
         if not os.path.exists(files_db):
-            flag = "c"
+            flag = "n"
         elif os.access(files_db, os.W_OK):
             flag = "w"
         else:
             flag = "r"
 
         self.filesdb = shelve.open(files_db, flag)
-        
