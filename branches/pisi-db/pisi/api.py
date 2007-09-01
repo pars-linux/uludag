@@ -416,7 +416,6 @@ def update_repo(repo, force=False):
         except pisi.file.NoSignatureFound, e:
             ctx.ui.warning(e)
 
-        index.update_db(repo)
         ctx.ui.info(_('* Package database updated.'))
     else:
         raise Error(_('No repository named %s found.') % repo)
@@ -442,7 +441,6 @@ def rebuild_repo(repo):
         except IOError, e:
             ctx.ui.warning(_("Input/Output error while reading %s: %s") % (indexpath, unicode(e)))
             return
-        index.update_db(repo)
     else:
         raise Error(_('No repository named %s found.') % repo)
 
