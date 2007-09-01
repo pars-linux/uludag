@@ -17,6 +17,7 @@ __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
 import pisi.cli.command as command
+import pisi.context as ctx
 
 class AddRepo(command.Command):
     """Add a repository
