@@ -29,16 +29,7 @@ class FilesDB(object):
 
     def __init__(self):
         self.filesdb = {}
-        
-        files_db = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.files_db)
-        if os.path.exists(files_db):
-
-            if os.access(files_db, os.W_OK):
-                flag = ""
-            else:
-                flag = "r"
-
-            self.filesdb = shelve.open(files_db, flag)
+        self.__check_filesdb()
     
     def has_file(self, path):
         return self.filesdb.has_key(path)
@@ -71,5 +62,13 @@ class FilesDB(object):
             os.makedirs(info_dir)
 
         files_db = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.files_db)
+
         if not os.path.exists(files_db):
-            self.filesdb = shelve.open(files_db)
+            flag = "c"
+        elif os.access(files_db, os.W_OK):
+            flag = "w"
+        else:
+            flag = "r"
+
+        self.filesdb = shelve.open(files_db, flag)
+        
