@@ -1,0 +1,28 @@
+{% load i18n %}
+{% extends "base_main.html" %}
+
+{% block title%}{{title}}{% endblock %}
+
+{% block header %}
+
+<h1 align='center'>{% trans "Source Packages" %}</h1>
+
+{% endblock %}
+
+
+{% block content %} 
+
+<table>
+<thead><tr><th>{% trans "Package" %}<th>{% trans "Version" %}<th>{% trans "Packager" %}<th>{% trans "Summary" %}</tr></thead>
+
+<tbody>
+
+{% for x in srcli %}
+
+<tr><td><a href="http://127.0.0.1:8000/main/{{reponame}}/sources/{{x.0}}">{{x.0}}</a><td>{{x.1}}<td><a href="http://127.0.0.1:8000/main/{{reponame}}/packagers/{{x.2.name}}">{{x.2.name}}</a><td>{{x.3}}
+
+{% endfor %}
+</tbody></table>
+
+{% endblock %}
+

@@ -267,11 +267,65 @@ def showbinarydetails(request, reponame, packagename):
 	h=spec.history
 	pkgversion=h[0].version
 	
-	return render_to_response("binarypackagedetails.html", {"pkgname":packagename, "builddeps":builddeps, "runtimedeps":runtimedeps, "pkgversion":pkgversion, "pkgsource":pkgsource, "reponame":reponame})
+	pisi.api.init(write=False)
+	x=pisi.context.packagedb.get_package(pkg)
+	pkginstalledsize=x.installedSize
+	pkgpackagesize=x.packageSize
+	
+	return render_to_response("binarypackagedetails.html", {"title":title,"pkgname":packagename, "builddeps":builddeps, "runtimedeps":runtimedeps, "pkgversion":pkgversion, "pkgsource":pkgsource, "reponame":reponame, "pkginstalledsize":pkginstalledsize, "pkgpackagesize":pkgpackagesize})
 
+def search(request, reponame):
+		
+	title=_("Search")	
+	return render_to_response("search.html", {"title":title, "reponame":reponame})
+
+def searchresult(request, reponame):
+		
+	title=_("Search Result")
+		
+	wordli=request.POST["keywords"].strip().split()
+	
+	something=__import__("pijama.pijidb.models")
+	
+	rsltli=[]
+	option=""
+	if request.POST["searchin"] == "packager":
+			
+		t=something.pijidb.models.__getattribute__("Packager")	
+		for word in wordli:
+			p=t.objects.filter(name__icontains=word, reponame=reponame).values("name")
+			li1=[x["name"] for x in p]
+			rsltli=list(set(li1+rsltli))
+			
+	if request.POST["searchin"] == "binary":
+				
+		pisi.api.init(write=False)		
+		t=something.pijidb.models.__getattribute__("BinaryPacks")
+		for word in wordli:
+			p=t.objects.filter(name__icontains=word, reponame=reponame).values("name")
+			li1=[x["name"] for x in p]
+			p=t.objects.filter(summary__icontains=word, reponame=reponame).values("name")
+			li2=[x["name"] for x in p]
+			rsltli=list(set(li1+rsltli))
+			
+	if request.POST["searchin"] == "source":
+				
+		pisi.api.init(write=False)		
+		t=something.pijidb.models.__getattribute__("RepoPackages")
+		for word in wordli:
+			p=t.objects.filter(pkgname__icontains=word, reponame=reponame).values("pkgname")
+			li1=[x["pkgname"] for x in p]
+			p=t.objects.filter(summary__icontains=word, reponame=reponame).values("pkgname")
+			li2=[x["pkgname"] for x in p]
+			rsltli=list(set(li1+rsltli))
+			
+	if request.POST["searchin"] == "patch":
+				
+		pisi.api.init(write=False)		
+		t=something.pijidb.models.__getattribute__("Patch")
+		for word in wordli:
+			p=t.objects.filter(name__icontains=word, reponame=reponame)
+			rsltli=[(x.name,x.pkgname.path+"/files/"+x.name) for x in p]
 
 	
-	
-	
-	
-	
+	return render_to_response("search_result.html", {"title":title, "reponame":reponame, "rslt":rsltli, "option":request.POST["searchin"]})

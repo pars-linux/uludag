@@ -1,0 +1,28 @@
+{% load i18n %}
+{% extends "base_main.html" %}
+
+{% block title%}{{title}}{% endblock %}
+
+{% block header %}
+
+<h1 align='center'>{% trans "Packagers" %} ({{addition}})</h1>
+
+{% endblock %}
+
+
+{% block content %} 
+
+<table>
+<thead><tr><th><a href="http://127.0.0.1:8000/main/{{reponame}}/packagers_by_name">{% trans "Packager" %}</a><th><th>{% trans "Package count" %}</tr></thead>
+
+<tbody>
+
+{% for x in rslt %}
+
+<tr><td><a href="http://127.0.0.1:8000/main/{{reponame}}/packagers/{{x.0}}">{{x.0}}</a><td>{{x.1}}
+
+{% endfor %}
+</tbody></table>
+
+{% endblock %}
+
