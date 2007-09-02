@@ -77,6 +77,18 @@ class PackageDB(object):
         pkg, repo = self.get_package_repo(name, repo)
         return pkg
 
+    def get_version(self, name, repo):
+        if not self.has_package(name, repo):
+            raise Exception(_('Package %s not found.') % name)
+            
+        pkg_doc = piksemel.parseString(self.__package_nodes[repo][name])
+        history = pkg_doc.getTag("History")
+        build = pkg_doc.getTagData("Build")
+        version = history.getTag("Update").getTagData("Version")
+        release = history.getTag("Update").getAttribute("release")
+        del pkg_doc
+        return version, release, build and int(build)
+
     def get_package_repo(self, name, repo):
         if self.__package_nodes.has_key(repo):
             if self.__package_nodes[repo].has_key(name):

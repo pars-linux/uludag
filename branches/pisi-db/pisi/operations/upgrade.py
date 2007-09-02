@@ -234,16 +234,16 @@ def is_upgradable(name, ignore_build = False):
     if not ctx.installdb.has_package(name):
         return False
 
-    info = ctx.installdb.get_info(name)
-    (version, release, build) = (info.version, info.release, info.build)
+    (version, release, build) = ctx.installdb.get_version(name)
+
     try:
-        pkg = ctx.packagedb.get_package(name, ctx.packagedb.which_repo(name))
+        pkg_version, pkg_release, pkg_build = ctx.packagedb.get_version(name, ctx.packagedb.which_repo(name))
     except KeyboardInterrupt:
         raise
     except Exception: #FIXME: what exception could we catch here, replace with that.
         return False
 
-    if ignore_build or (not build) or (not pkg.build):
-        return pisi.version.Version(release) < pisi.version.Version(pkg.release)
+    if ignore_build or (not build) or (not pkg_build):
+        return pisi.version.Version(release) < pisi.version.Version(pkg_release)
     else:
-        return build < pkg.build
+        return build < pkg_build

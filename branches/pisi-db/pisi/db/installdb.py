@@ -18,6 +18,8 @@ import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
+import piksemel
+
 # PiSi
 import pisi
 import pisi.context as ctx
@@ -76,6 +78,16 @@ class InstallDB:
 
     def has_package(self, package):
         return self.installed_pkgs.has_key(package)
+
+    def get_version(self, package):
+        metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
+        meta_doc = piksemel.parse(metadata_xml)
+        history = meta_doc.getTag("Package").getTag("History")
+        build = meta_doc.getTag("Package").getTagData("Build")
+        version = history.getTag("Update").getTagData("Version")
+        release = history.getTag("Update").getAttribute("release")
+        del meta_doc
+        return version, release, build and int(build)
 
     def get_files(self, package):
         files = pisi.files.Files()
