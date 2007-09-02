@@ -87,6 +87,7 @@ class PackageDB(object):
         version = history.getTag("Update").getTagData("Version")
         release = history.getTag("Update").getAttribute("release")
         del pkg_doc
+
         return version, release, build and int(build)
 
     def get_package_repo(self, name, repo):
