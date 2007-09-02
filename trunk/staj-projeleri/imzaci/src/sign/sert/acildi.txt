@@ -1,0 +1,2 @@
+SHA1(test_dosya.txt)= 0d1b952262534f3a0f99459e8a4149b49a45e58e
+asSA9
