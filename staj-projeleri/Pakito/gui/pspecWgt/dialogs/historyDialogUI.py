@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../../uis/dialogs/historyDialog/historyDialogUI.ui'
 #
-# Created: Pzt Eyl 3 00:50:25 2007
+# Created: Pzt Eyl 3 16:14:10 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,10 +44,6 @@ class HistoryDialogUI(KDialog):
 
         groupBox2Layout.addWidget(self.textLabel8,1,0)
 
-        self.leType = KLineEdit(self.groupBox2,"leType")
-
-        groupBox2Layout.addWidget(self.leType,1,4)
-
         layout22 = QVBoxLayout(None,0,6,"layout22")
 
         self.textLabel9 = QLabel(self.groupBox2,"textLabel9")
@@ -61,27 +57,31 @@ class HistoryDialogUI(KDialog):
 
         groupBox2Layout.addWidget(self.leVersion,1,1)
 
+        self.dwDate = KDateWidget(self.groupBox2,"dwDate")
+        self.dwDate.setDate(QDate(2006,1,1))
+
+        groupBox2Layout.addWidget(self.dwDate,0,4)
+
+        self.teComment = KTextEdit(self.groupBox2,"teComment")
+
+        groupBox2Layout.addMultiCellWidget(self.teComment,2,2,1,4)
+
+        self.cbType = KComboBox(0,self.groupBox2,"cbType")
+
+        groupBox2Layout.addWidget(self.cbType,1,4)
+
+        self.textLabel6 = QLabel(self.groupBox2,"textLabel6")
+
+        groupBox2Layout.addWidget(self.textLabel6,0,0)
+
         self.niRelease = KIntNumInput(self.groupBox2,"niRelease")
         self.niRelease.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Fixed,0,0,self.niRelease.sizePolicy().hasHeightForWidth()))
         self.niRelease.setValue(1)
         self.niRelease.setMinValue(1)
 
         groupBox2Layout.addWidget(self.niRelease,0,1)
-
-        self.dwDate = KDateWidget(self.groupBox2,"dwDate")
-        self.dwDate.setDate(QDate(2006,1,1))
-
-        groupBox2Layout.addWidget(self.dwDate,0,4)
         spacer19 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
         groupBox2Layout.addItem(spacer19,0,2)
-
-        self.teComment = KTextEdit(self.groupBox2,"teComment")
-
-        groupBox2Layout.addMultiCellWidget(self.teComment,2,2,1,4)
-
-        self.textLabel6 = QLabel(self.groupBox2,"textLabel6")
-
-        groupBox2Layout.addWidget(self.textLabel6,0,0)
         HistoryDialogUILayout.addWidget(self.groupBox2)
 
         self.groupBox3 = QGroupBox(self,"groupBox3")
@@ -105,7 +105,7 @@ class HistoryDialogUI(KDialog):
         self.leEmail = KLineEdit(self.groupBox3,"leEmail")
         groupBox3Layout.addWidget(self.leEmail)
         HistoryDialogUILayout.addWidget(self.groupBox3)
-        spacer25 = QSpacerItem(20,40,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        spacer25 = QSpacerItem(20,10,QSizePolicy.Minimum,QSizePolicy.Fixed)
         HistoryDialogUILayout.addItem(spacer25)
 
         Layout1 = QHBoxLayout(None,0,6,"Layout1")
@@ -128,12 +128,11 @@ class HistoryDialogUI(KDialog):
 
         self.languageChange()
 
-        self.resize(QSize(550,377).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(550,421).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.setTabOrder(self.niRelease,self.leVersion)
-        self.setTabOrder(self.leVersion,self.leType)
-        self.setTabOrder(self.leType,self.teComment)
+        self.setTabOrder(self.leVersion,self.teComment)
         self.setTabOrder(self.teComment,self.leName)
         self.setTabOrder(self.leName,self.leEmail)
         self.setTabOrder(self.leEmail,self.btnHelp)
@@ -148,6 +147,10 @@ class HistoryDialogUI(KDialog):
         self.textLabel7.setText(self.__tr("Date:"))
         self.textLabel8.setText(self.__tr("Version:"))
         self.textLabel9.setText(self.__tr("Comment:"))
+        self.cbType.clear()
+        self.cbType.insertItem(QString.null)
+        self.cbType.insertItem(self.__tr("bug"))
+        self.cbType.insertItem(self.__tr("security"))
         self.textLabel6.setText(self.__tr("Release:"))
         self.groupBox3.setTitle(self.__tr("Updater"))
         self.textLabel10.setText(self.__tr("Name:"))

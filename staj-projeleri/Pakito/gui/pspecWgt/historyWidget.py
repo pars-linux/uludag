@@ -10,6 +10,7 @@ from pisi.conflict import Conflict
 from pisi.replace import Replace
 
 from historyWidgetUI import HistoryWidgetUI
+from dialogs.historyDialog import HistoryDialog
 
 class historyWidget(HistoryWidgetUI):
     def __init__(self, parent):
@@ -30,20 +31,38 @@ class historyWidget(HistoryWidgetUI):
             rel.type = ""
         lvi = KListViewItem(self.lvHistory, rel.release,
                                 rel.date, rel.version,
-                                rel.comment, rel.name,
+                                unicode(rel.comment), rel.name,
                                 rel.email, rel.type)
         if reverse:
             lvi.moveItem(self.lvHistory.lastItem())
 
     def slotAddHistory(self):
-        pass
+        dia = HistoryDialog(self, relValue = self.lvHistory.childCount() + 1)
+        if dia.exec_loop() == QDialog.Accepted:
+            res = dia.getResult()
+            lvi = QListViewItem(self.lvHistory, res[0], res[1], res[2], res[4], res[5], res[6], res[3])
 
     def slotRemoveHistory(self):
-        pass
+        lvi = self.lvHistory.selectedItem()
+        if lvi:
+            self.lvHistory.takeItem(lvi) 
 
     def slotBrowseHistory(self):
-        pass
-        
+        lvi = self.lvHistory.selectedItem()
+        if not lvi:
+            return
+        dia = HistoryDialog(self, [str(lvi.text(0)), str(lvi.text(1)), str(lvi.text(2)), str(lvi.text(6)), unicode(lvi.text(3)), unicode(lvi.text(4)), str(lvi.text(5))])
+        if dia.exec_loop() == QDialog.Rejected:
+            return
+        res = dia.getResult()
+        lvi.setText(0, res[0])
+        lvi.setText(1, res[1])
+        lvi.setText(2, res[2])
+        lvi.setText(3, res[4])
+        lvi.setText(4, res[5])
+        lvi.setText(5, res[6])
+        lvi.setText(6, res[3])
+
     def fill(self, history):
         self.lvHistory.clear()
         for rel in history:
