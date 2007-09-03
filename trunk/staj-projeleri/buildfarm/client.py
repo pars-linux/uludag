@@ -98,6 +98,19 @@ def usage():
 
 def client(op, **kwargs):
     
+    # Used for identifying server return codes in a user friendly manner
+    returnStrings = {'build' : [_("Build process is successfully finished!"),
+                                _("Buildfarm is busy!"),
+                                _("Work Queue is empty!"),
+                                _("Queue finished with problems :(")],
+                     'add'   : [_("%s successfully added to the work queue!"),
+                                _("The package '%s' doesn't exist!"),
+                                _("The package '%s' is already in the work queue!")]
+                    }
+                                
+                                
+                                
+    
     # TODO : I can build a list of all formatted strings and select them
     # with the return values provided by the server to minimize the code.
     funcString = None
@@ -127,9 +140,6 @@ def client(op, **kwargs):
         else:
             print_("The repositories are already synchronized.")
             
-    elif op == "status":
-        pass
-            
     # 2 Parameters
     
     elif op == "send":
@@ -153,24 +163,13 @@ def client(op, **kwargs):
         funcString = "build" + cmd.capitalize()
         print _("Building %s..." % cmd)
         retval = server.__getattr__(funcString)()
-        if retval == 0:
-            print _("Packages are successfully builded!")
-        elif retval == 1:
-            print _("Work Queue is empty!")
-        elif retval == 2:
-            print _("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n")\
-                    % "\n".join(server.getWaitQueue())
+        print returnStrings['build'][retval]
     
     # 3 or more Parameters
     elif op == "add":
         for pspec in pspecList:
             retval = server.appendToWorkQueue(pspec, True)
-            if retval == 0:
-                print _("%s successfully added to the work queue!" % pspec)
-            elif retval == -1:
-                print _("The package '%s' doesn't exist!" % pspec)
-            elif retval == 1:
-                print _("The package '%s' is already in the work queue!" % pspec)
+            print (returnStrings['add'][retval] % pspec)
             
     elif op == "remove":
         funcString = "removeFrom" + cmd.capitalize() + "Queue"
@@ -197,7 +196,7 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     
     # dummy trick to facilitate parsing of 'add' in the next blocks..
-    if args[0] == "add":
+    if args.__contains__("add"):
         args.insert(1, "work")
     
     if args == []:
@@ -207,7 +206,7 @@ if __name__ == "__main__":
         usage()
     
     elif len(args) == 1:
-        if args[0] in ("update","sync","status"):
+        if args[0] in ("update","sync"):
             client(args[0])
         else:
             usage()
