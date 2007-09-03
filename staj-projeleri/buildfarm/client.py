@@ -98,21 +98,23 @@ def usage():
 
 def client(op, **kwargs):
     
-    # Used for identifying server return codes in a user friendly manner
-    returnStrings = {'build' : [_("Build process is successfully finished!"),
-                                _("Buildfarm is busy!"),
-                                _("Work Queue is empty!"),
-                                _("Queue finished with problems :(")],
-                     'add'   : [_("%s successfully added to the work queue!"),
-                                _("The package '%s' doesn't exist!"),
-                                _("The package '%s' is already in the work queue!")]
+    # Used for identifying server return codes in a user friendly manner 
+    returnStrings = {'build'    : [_("Build process is successfully finished!"),
+                                   None,
+                                   _("Work Queue is empty!"),
+                                   _("Queue finished with problems!")],
+                     'add'      : [_("'%s' successfully added to the work queue!"),
+                                   None,
+                                   _("The package '%s' doesn't exist!"),
+                                   _("The package '%s' is already in the work queue!")],
+                     'remove'   : [_("Removed '%s' from %s queue!"),
+                                   None,
+                                   _("'%s' doesn't exist in the %s queue!")],
+                     'transfer' : [_("'%s' is successfully transferred to %s queue!"),
+                                   None,
+                                   _("'%s' doesn't exist in the %s queue!")]
                     }
-                                
-                                
-                                
     
-    # TODO : I can build a list of all formatted strings and select them
-    # with the return values provided by the server to minimize the code.
     funcString = None
     cmd = kwargs.get('cmd', None)
     pspecList = kwargs.get('pspec', None)
@@ -141,14 +143,6 @@ def client(op, **kwargs):
             print_("The repositories are already synchronized.")
             
     # 2 Parameters
-    
-    elif op == "send":
-        # pspec is a directory which can contain 1 or more packages
-        retval = sendDirectory(server, kwargs[pspec], "ozan")
-        if retval:
-            print _("Everything's OK")
-        else:
-            print _("There were problems during the process")
         
     elif op == "list":
         funcString = "get" + cmd.capitalize() + "Queue"
@@ -163,33 +157,37 @@ def client(op, **kwargs):
         funcString = "build" + cmd.capitalize()
         print _("Building %s..." % cmd)
         retval = server.__getattr__(funcString)()
-        print returnStrings['build'][retval]
+        if retval == 1:
+            print _("Buildfarm is busy!")
+        else:
+            print returnStrings['build'][retval]
     
     # 3 or more Parameters
     elif op == "add":
         for pspec in pspecList:
             retval = server.appendToWorkQueue(pspec, True)
-            print (returnStrings['add'][retval] % pspec)
+            if retval == 1:
+               print _("Buildfarm is busy!")
+            else:
+                print (returnStrings['add'][retval] % pspec)
             
     elif op == "remove":
         funcString = "removeFrom" + cmd.capitalize() + "Queue"
         for pspec in pspecList:    
-            print _("Removing '%s' from %s queue.." % (pspec, cmd)),
             retval = server.__getattr__(funcString)(pspec)
-            if retval:
-                print _("[Removed]")
+            if retval == 1:
+               print _("Buildfarm is busy!")
             else:
-                print _("[Doesn't exist]")
+                print returnStrings['remove'][retval] % (pspec, cmd)
             
     elif op == "transfer":
         funcString = "transferTo" + cmd.capitalize() + "Queue"
         for pspec in pspecList:
-            print _("Transferring '%s' to %s queue.." % (pspec, cmd)),
             retval = server.__getattr__(funcString)(pspec)
-            if retval:
-                print _("[Transferred]")
+            if retval == 1:
+               print _("Buildfarm is busy!")
             else:
-                print _("[Doesn't exist]")
+                print returnStrings['transfer'][retval] % (pspec, cmd)
             
 if __name__ == "__main__":
 
@@ -216,7 +214,7 @@ if __name__ == "__main__":
         if args[0] in ("send"):
             client(args[0],pspec=args[1])
         elif args[0] == "list" and args[1] in ("work","wait") or \
-            args[0] == "build" and args[1] in ("index","packages"):
+             args[0] == "build" and args[1] in ("index","packages"):
             client(args[0],cmd=args[1])
         else:
             usage()
