@@ -100,8 +100,10 @@ class ApplyThread:
                     self._wizard.progresspage.go(i18n("GTalk accounts loaded."), self._wizard.progresspage.OK, 0)
             try:
                 account.yaz()
+                print account.getSize()
                 account.setKopeteAccounts()
                 account.setKMailAccounts()
+                account.setKNodeAccounts()
             except Exception, err:
                 self._wizard.progresspage.go(err, self._wizard.progresspage.ERROR, 1000)
             else:
