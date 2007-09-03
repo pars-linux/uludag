@@ -19,7 +19,11 @@ from comariface import comlink
 
 
 class Window(QDialog):
+    myInstance = None
     def __init__(self, parent):
+        if Window.myInstance:
+            return None
+        Window.myInstance = self
         QDialog.__init__(self, parent)
         self.setMinimumSize(340, 340)
         self.resize(340, 340)
@@ -65,6 +69,7 @@ class Window(QDialog):
         self.connect(but, SIGNAL("clicked()"), self.reject)
         
         vb.addWidget(hb)
+        self.show()
     
     def reject(self):
         comlink.device_hook.remove(self.slotDevices)
@@ -111,7 +116,10 @@ class Window(QDialog):
         else:
             item = QListViewItem(parent, "", i18n("No suitable device found"))
             item.setSelectable(False)
-
+    
+    def closeEvent(self, event):
+        QDialog.closeEvent(self, event)
+        Window.myInstance = None
 
 def ask_for_new(parent):
     if len(comlink.links) == 0:
@@ -120,4 +128,3 @@ def ask_for_new(parent):
             QMessageBox.Ok, QMessageBox.NoButton)
         return
     win = Window(parent)
-    win.show()
