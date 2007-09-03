@@ -168,12 +168,6 @@ class QueueManager:
             root = os.path.normpath("%s/%s/%s" % (config.remoteWorkDir, username, dirname))
             
             # Search the root hierarchy
-            for i in os.listdir(root):
-                if os.path.isdir(i):
-                    getPspecList(i)
-                elif os.path.isfile(i) and 
-            #print root
-            return False
         
         def extractArchive(filename, d):
             from subprocess import call
@@ -192,59 +186,6 @@ class QueueManager:
         getPspecList(dirname)
         
         return True
-    
-    #def processQueue(self, queue, pspec):
-    #    self.locks["waitQueue"].lock()
-    #    self.locks["workQueue"].lock()
-    #    
-    #    packagename = os.path.basename(os.path.dirname(pspec))
-    #    build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
-    #    logger.info(
-    #        _("Compiling source %s (%d of %d)") % 
-    #            (
-    #                packagename,
-    #                int(queue.index(pspec) + 1),
-    #                len(queue)
-    #            )
-    #        )
-    #    logger.raw()
-    #
-    #    pisi = pisiinterface.PisiApi(config.workDir)
-    #
-    #    pisi.init(stdout = build_output, stderr = build_output)
-    #    try:
-    #        try:
-    #            (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
-    #        except Exception, e:
-    #            self.locks["waitQueue"].unlock()
-    #            self.locks["workQueue"].unlock()
-    #            self.transferToWaitQueue(pspec)
-    #            errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
-    #            logger.error(errmsg)
-    #            # mailer.error(errmsg, pspec)
-    #        else:
-    #            try:
-    #                for p in newBinaryPackages:
-    #                    logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
-    #                    pisi.install(os.path.join(config.workDir, p))
-    #            except Exception, e:
-    #                self.locks["waitQueue"].unlock()
-    #                self.locks["workQueue"].unlock()
-    #                self.transferToWaitQueue(pspec)
-    #                errmsg = _("Error occured for '%s' in INSTALL process: %s") % (os.path.join(config.workDir, p), e)
-    #                logger.error(errmsg)
-    #                # mailer.error(errmsg, pspec)
-    #
-    #                newBinaryPackages.remove(p)
-    #                self.__removeBinaryPackageFromWorkDir__(p)
-    #            else:
-    #                self.locks["waitQueue"].unlock()
-    #                self.locks["workQueue"].unlock()
-    #                self.removeFromWorkQueue(pspec)
-    #                self.__movePackages__(newBinaryPackages, oldBinaryPackages)
-    #    finally:
-    #        pisi.finalize()
-        
     
     def buildPackages(self):
 
