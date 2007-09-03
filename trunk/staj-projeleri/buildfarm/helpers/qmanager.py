@@ -17,8 +17,6 @@ import sys
 from shutil import copy as shutilCopy
 from copy import copy as shallowCopy
 
-from comar.utility import FileLock
-
 """ BuildFarm Modules """
 import config
 import dependency
@@ -27,6 +25,7 @@ import mailer
 
 """ Helpers """
 from helpers import pisiinterface
+from comar.utility import FileLock
 
 """ Gettext Support """
 import gettext
@@ -38,7 +37,8 @@ class QueueManager:
     def __init__(self):
         
         self.locks = {"waitQueue" : FileLock("%s/waitQueue.lock" % config.workDir),
-                      "workQueue" : FileLock("%s/workQueue.lock" % config.workDir)}
+                      "workQueue" : FileLock("%s/workQueue.lock" % config.workDir),
+                      "build"     : FileLock("%s/build.lock" % config.workDir)}
         
         self.workQueue = []
         self.waitQueue = []
@@ -73,7 +73,7 @@ class QueueManager:
         self.locks[fileName].unlock()
 
     def __deserialize__(self, queueName, fileName):
-        self.locks[fileName].lock(shared=True)
+        self.locks[fileName].lock()
         try:
             queue = open(os.path.join(config.workDir, fileName), "r")
         except IOError:
@@ -104,11 +104,7 @@ class QueueManager:
 
     def removeFromWaitQueue(self, pspec):
         self.__initWaitQueueFromFile__()
-        if pspec == "all" and self.waitQueue != []:
-            self.waitQueue = []
-            self.__serialize__(self.waitQueue, "waitQueue")
-            return True
-        elif self.waitQueue.__contains__(pspec):
+        if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
             self.__serialize__(self.waitQueue, "waitQueue")
             return True
@@ -116,28 +112,26 @@ class QueueManager:
 
     def removeFromWorkQueue(self, pspec):
         self.__initWorkQueueFromFile__()    
-        if pspec == "all" and self.workQueue != []:
-            self.workQueue = []
-            self.__serialize__(self.workQueue, "workQueue")
-            return True
-        elif self.workQueue.__contains__(pspec):
+        if self.workQueue.__contains__(pspec):
             self.workQueue.remove(pspec)
-            # serialize'da patliyor buildPackages()
             self.__serialize__(self.workQueue, "workQueue")
             return True
         return False
 
     def appendToWorkQueue(self, pspec, checkIfExists=False):
+        # 0: Successful
+        # 1: Package doesn't exist
+        # 2: Package is already in the queue
         if checkIfExists:
             if not os.path.isfile(os.path.join(config.localPspecRepo, pspec)):
-                return False
+                return 1
             
         self.__initWorkQueueFromFile__()
         if not self.workQueue.__contains__(pspec):
             self.workQueue.append(pspec)
             self.__serialize__(self.workQueue, "workQueue")
-            return True
-        return False
+            return 0
+        return 2
 
     def appendToWaitQueue(self, pspec):
         self.__initWaitQueueFromFile__()
@@ -155,6 +149,10 @@ class QueueManager:
         return False
 
     def transferToWaitQueue(self, pspec):
+        f = sys._getframe(1)
+        methodName = f.f_code.co_name
+        print methodName
+        
         self.__initWorkQueueFromFile__()
         if self.workQueue.__contains__(pspec) and self.appendToWaitQueue(pspec):
             self.removeFromWorkQueue(pspec)
@@ -162,12 +160,6 @@ class QueueManager:
         return False
     
     def buildArchive(self, dirname, filename, d, username=""):
-        
-        def getPspecList(dirname):
-            # Searchs the dirname and returns a list of pspec.xml's
-            root = os.path.normpath("%s/%s/%s" % (config.remoteWorkDir, username, dirname))
-            
-            # Search the root hierarchy
         
         def extractArchive(filename, d):
             from subprocess import call
@@ -188,21 +180,29 @@ class QueueManager:
         return True
     
     def buildPackages(self):
-
+        # Return values are interpreted by the client
+        # 0: Successful
+        # 1: Buildfarm is busy
+        # 2: Empty work queue
+        # 3: Finished with errors
+        
+        try:
+            self.locks["build"].lock(timeout=0)
+        except:
+            return 1
+        
         sys.excepthook = self.__handle_exception__
 
         queue = shallowCopy(self.getWorkQueue())
     
         if len(queue) == 0:
             logger.info(_("Work queue is empty..."))
-            return True
-    
-        self.locks["workQueue"].lock(shared=True)
-        self.locks["waitQueue"].lock(shared=True)
+            self.locks["build"].unlock()
+            return 2
         
         logger.raw(_("QUEUE"))
-        logger.info(_("Work Queue: %s") % (self.getWorkQueue()))
-        sortedQueue = self.getWorkQueue()[:]
+        logger.info(_("Work Queue: %s") % (queue))
+        sortedQueue = queue[:]
         sortedQueue.sort()
         # mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
         logger.raw()
@@ -226,8 +226,6 @@ class QueueManager:
                 try:
                     (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
                 except Exception, e:
-                    self.locks["workQueue"].unlock()
-                    self.locks["waitQueue"].unlock()
                     self.transferToWaitQueue(pspec)
                     errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
                     logger.error(errmsg)
@@ -238,8 +236,6 @@ class QueueManager:
                             logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
                             pisi.install(os.path.join(config.workDir, p))
                     except Exception, e:
-                        self.locks["workQueue"].unlock()
-                        self.locks["waitQueue"].unlock()
                         self.transferToWaitQueue(pspec)
                         errmsg = _("Error occured for '%s' in INSTALL process: %s") % (os.path.join(config.workDir, p), e)
                         logger.error(errmsg)
@@ -247,9 +243,6 @@ class QueueManager:
                         newBinaryPackages.remove(p)
                         self.__removeBinaryPackageFromWorkDir__(p)
                     else:
-                        self.locks["workQueue"].unlock()
-                        self.locks["waitQueue"].unlock()
-                        print "hede"
                         self.removeFromWorkQueue(pspec)
                         self.__movePackages__(newBinaryPackages, oldBinaryPackages)
             finally:
@@ -261,13 +254,25 @@ class QueueManager:
     
         if self.getWaitQueue():
             # mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(self.getWaitQueue()))
-            return self.getWaitQueue()
+            self.workQueue += self.waitQueue
+            self.waitQueue = []
+            self.__del__()
+            self.locks["build"].unlock()
+            return 3
         else:
             # mailer.info(_("Queue finished without a problem!..."))
             pass
-        return True
+        
+        self.locks["build"].unlock()
+        return 0
     
     def buildIndex(self):
+        
+        try:
+            self.locks["build"].lock(timeout=0)
+        except:
+            return 1
+        
         logger.raw()
         logger.info(_("Generating PiSi Index..."))
     
@@ -286,7 +291,9 @@ class QueueManager:
         os.chdir(current)
     
         # FIXME: handle indexing errors
-        return True
+        
+        self.locks["build"].unlock()
+        return 0
     
     def __movePackages__(self, newBinaryPackages, oldBinaryPackages):
         # sanitaze input
