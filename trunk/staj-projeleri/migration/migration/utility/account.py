@@ -10,9 +10,11 @@
 #
 
 import os
+import tempfile
 import xml.dom.minidom
 
-from kdecore import KConfig
+from kdecore import KConfig, i18n
+from dcopext import DCOPClient, DCOPObj
 
 class Account:
     def __init__(self):
@@ -61,7 +63,8 @@ class Account:
                                 self.folders.append((mboxname, mboxpath))
                         elif os.path.splitext(itemname)[1] == ".sbd" and os.path.isdir(itempath):
                             addFolders(os.path.join(name, os.path.splitext(itemname)[0]), itempath)
-                self.folders.append((foldername, ""))
+                if (foldername, "") not in self.folders:
+                    self.folders.append((foldername, ""))
                 addFolders(foldername, folderpath)
                 accountdict["inbox"] = os.path.join(foldername, "Inbox")
             elif servertype == "nntp":
@@ -77,14 +80,24 @@ class Account:
             for key in fields.keys():
                 field = "mail.server." + server + "." + fields[key]
                 accountdict[key] = prefs.get(field, None)
-            # Correct values:
+            # Correct real hostname and real username:
+            realhost = prefs.get("mail.server." + server + ".realhostname", None)
+            if realhost:
+                accountdict["host"] = realhost
+            realuser = prefs.get("mail.server." + server + ".realuserName", None)
+            if realuser:
+                accountdict["user"] = realuser
+            # Correct paths:
             if accountdict.has_key("dir"):
-                accountdict["dir"] = accountdict["dir"].replace("[ProfD]", path)
+                accountdict["dir"] = os.path.join(path, accountdict["dir"].replace("[ProfD]", ""))
             if accountdict.has_key("file"):
-                accountdict["file"] = accountdict["file"].replace("[ProfD]", path)
+                accountdict["file"] = os.path.join(path, accountdict["file"].replace("[ProfD]", ""))
+            # Correct values:
             if accountdict.has_key("SSL"):
                 if accountdict["SSL"]:
                     accountdict["SSL"] = True
+                else:
+                    accountdict["SSL"] = False
             # Add new account:
             if accountdict:
                 self.accounts.append(accountdict)
@@ -121,6 +134,29 @@ class Account:
             if accountdict:
                 self.accounts.append(accountdict)
     
+    def getSize(self):
+        totalsize = 0
+        for (name, path) in self.folders:
+            # is empty folder?
+            if not path:
+                continue
+            # is mbox file?
+            if os.path.isfile(path):
+                totalsize += os.path.getsize(path)
+            elif os.path.isdir(path):
+                # is OE folder?
+                if os.path.isfile(os.path.join(path, "winmail.fol")):
+                    for item in os.listdir(path):
+                        if os.path.splitext(item)[1] == ".eml":
+                            totalsize += os.path.getsize(os.path.join(path, item))
+                # is maildir folder?
+                elif os.path.isdir(os.path.join(path, "new")) and os.path.isdir(os.path.join(path, "cur")):
+                    for item in os.listdir(os.path.join(path, "new")):
+                        totalsize += os.path.getsize(os.path.join(path, "new", item))
+                    for item in os.listdir(os.path.join(path, "new")):
+                        totalsize += os.path.getsize(os.path.join(path, "new", item))
+        return totalsize
+    
     def getMSNAccounts(self, path):
         "Imports MSN accounts using windows users's 'Contacts' directory"
         files = os.listdir(path)
@@ -150,8 +186,8 @@ class Account:
             if os.path.isdir(path):
                 for item2 in os.listdir(path):
                     if os.path.splitext(item2)[1] == ".oeaccount":      # Hey, I found an account file :)
-                        path = os.path.join(path, item2)
-                        dom = xml.dom.minidom.parse(path)
+                        accountpath = os.path.join(path, item2)
+                        dom = xml.dom.minidom.parse(accountpath)
                         accountdict = {}
                         if getData(dom, "NNTP_Server"):
                             accountdict["type"] = "NNTP"
@@ -169,6 +205,10 @@ class Account:
                         # Add Account:
                         if accountdict:
                             self.accounts.append(accountdict)
+                        # Get Folders:
+                        if accountdict.get("type", None) == "POP3":
+                            foldername = accountdict.get("name", "")
+                            self.folders.extend(getOEFolders(path, foldername))
                         # Get SMTP
                         accountdict = {}
                         fields = {}
@@ -310,17 +350,66 @@ class Account:
                 if account.has_key("port") and account["port"]:
                     config.writeEntry("port", account["port"])
             config.sync()
-        
-        ## Add missing directories and mbox files:
-        #for folder in self.folders:
-            #name = folder[0]
-            #path = KMailFolderName(name)
-            #path = os.path.join(os.path.expanduser("~/.kde/share/apps/kmail/mail"), path)
-            #if not os.path.exists(path):
-                #dirpath = os.path.dirname(path)
-                #if not os.path.isdir(dirpath):
-                    #os.makedirs(dirpath)
-                #open(path, "w").close()
+    
+    def addKMailMessages(self):
+        # Information message:
+        infomessagepath = os.path.join(tempfile.gettempdir(), "temp_kmail_info.eml")
+        message = "From:pardus@localhost\r\nSubject:%s\r\n\r\n%s" % (i18n("Migrated Folder"), i18n("This messagebox is migrated using Pardus Migration Tool"))
+        messagefile = open(infomessagepath, "w")
+        messagefile.write(message)
+        messagefile.close()
+        # Create a dcop object:
+        client = DCOPClient()
+        if not client.attach():
+            raise Exception, "Message cannot be added"
+        kmail = DCOPObj("kmail", client, "KMailIface")
+        # Loop over folders:
+        for (name, path) in self.folders[2:]:
+            print name
+            # Add Info Message:
+            #addMessage(name, infomessagepath, kmail)
+            # Chech Message Box Type
+            if os.path.isfile(path):
+                # Copy mbox:
+                box = mbox(path)
+                messagepath = box.next()
+                while messagepath:
+                    try:
+                        addMessage(name, messagepath, kmail)
+                    except Exception, text:
+                        print "Message '%s' cannot be migrated to '%s'\n  %s" % (messagepath, name, text)
+                    messagepath = box.next()
+                    #break
+            elif os.path.isdir(path) and os.path.isfile(os.path.join(path, "winmail.fol")):
+                # Copy OE messagebox
+                box = oebox(path)
+                messagepath = box.next()
+                while messagepath:
+                    try:
+                        print "mail.metu.edu.tr/Inbox", name, name == "mail.metu.edu.tr/Inbox"
+                        addMessage(name, messagepath, kmail)
+                    except Exception, text:
+                        print "Message '%s' cannot be migrated to '%s'\n  %s" % (messagepath, name, text)
+                    messagepath = box.next()
+
+    
+    def setKNodeAccounts(self):
+        for account in self.accounts:
+            if account["type"] == "NNTP":
+                files = os.listdir(os.path.expanduser("~/.kde/share/apps/knode"))
+                accountid = 1
+                while "nntp." + str(accountid) in files:
+                    accountid += 1
+                dirname = os.path.expanduser("~/.kde/share/apps/knode/nntp." + str(accountid))
+                os.mkdir(dirname)
+                infofile = open(os.path.join(dirname, "info"), "w")
+                infofile.write("id=%d\n" % accountid)
+                fields = {"host":"server", "name":"name", "email":"Email", "realname":"Name", "port":"port"}
+                for key in fields.keys():
+                    value = account.get(key, None)
+                    if value:
+                        infofile.write("%s=%s\n" % (fields[key], value))
+                infofile.close()
     
     def yaz(self):
         "Prints accounts"
@@ -331,6 +420,7 @@ class Account:
                     print "%15s : %s" % (key, account[key])
         for folder in self.folders:
             print "%30s : %s" % folder
+
 
 def parsePrefs(filepath):
     "Parses Thunderbird's prefs.js file and returns it as a dictionary"
@@ -368,6 +458,7 @@ def parsePrefs(filepath):
             prefs[key] = value
     return prefs
 
+
 def getData(dom, tagname):
     "Gets data from a DOM's 'tagname' named children"
     data = ""
@@ -383,6 +474,7 @@ def getData(dom, tagname):
         data = int(data, 16)
     return data
 
+
 def KMailFolderName(folder):
     "Returns KMail folder name of given folder. (GMail/Inbox -> .GMail.directory/Inbox)"
     path = folder.split("/")
@@ -391,21 +483,6 @@ def KMailFolderName(folder):
     folder = "/".join(path)
     return folder
 
-def KMailAccountExists(config, type1, host1, user1):
-    found = False
-    oldgroup = config.group()
-    config.setGroup("General")
-    accounts = config.readNumEntry("accounts")
-    for account in xrange(1, accounts + 1):
-        config.setGroup("Account " + str(account))
-        type2 = config.readEntry("Type")
-        host2 = config.readEntry("host")
-        user2 = config.readEntry("login")
-        if type1 == type2 and host1 == host2 and user1 == user2:
-            found = True
-            break
-    config.setGroup(oldgroup)
-    return found
 
 def KMailAccountIsValid(config, account1):
     "Check if the account is valid and not already in KMail accounts"
@@ -443,18 +520,84 @@ def KMailAccountIsValid(config, account1):
                 return False
     return True
 
-def KMailTransportExists(config, host1, user1):
-    found = False
-    oldgroup = config.group()
-    config.setGroup("General")
-    accounts = config.readNumEntry("transports")
-    for account in xrange(1, accounts + 1):
-        config.setGroup("Transport " + str(account))
-        host2 = config.readEntry("host")
-        user2 = config.readEntry("user")
-        if host1 == host2 and user1 == user2:
-            found = True
-            break
-    config.setGroup(oldgroup)
-    return found
+
+def getOEFolders(path, relative=""):
+    "Returns OE mailbox folders under a path"
+    folders = []
+    # Get Sub Dirs:
+    for item in os.listdir(path):
+        itempath = os.path.join(path, item)
+        # Here is a directory. Is it a mailbox?
+        if os.path.isdir(itempath) and os.path.isfile(os.path.join(itempath, "winmail.fol")):
+            foldername = os.path.join(relative, item)
+            folders.append((foldername, itempath))
+            folders.extend(getOEFolders(itempath, foldername))
+    return folders
+
+
+class mbox:
+    "Class to handle unix mailbox format mbox (mailbox.UnixMailbox is not stable)"
+    def __init__(self, path):
+        "Opens mbox file and initilizes class"
+        self.mboxfile = open(path)
+        self.mboxfile.readline()
+    def next(self):
+        "Iterates messages"
+        message = ""
+        emptylines = 0
+        line = self.mboxfile.readline()
+        while line and line[:5] != "From ":
+            message += line
+            line = self.mboxfile.readline()
+        # Create a temporary message file:
+        if message != "":
+            messagepath = os.path.join(tempfile.gettempdir(), "temp_mbox_mail.eml")
+            messagefile = open(messagepath, "w")
+            messagefile.write(message)
+            messagefile.close()
+            return messagepath
+        else:
+            return None
+
+
+class oebox:
+    "Class to handle Outlook Express messagebox format"
+    def __init__(self, path):
+        "Opens messagebox directory and initilizes class"
+        self.path = path
+        self.messages = os.listdir(path)
+        self.messages = filter(lambda x: os.path.splitext(x)[1] == ".eml", self.messages)
+        self.index = 0
+    def next(self):
+        "Iterates messages"
+        if len(self.messages) <= self.index:
+            return None
+        messagepath = os.path.join(self.path, self.messages[self.index])
+        self.index += 1
+        return messagepath
+
+
+def addMessage(folder, message, kmail=None):
+    "Adds a message to kmail with dcop interface"
+    if not kmail:
+        # Create a dcop object:
+        client = DCOPClient()
+        if not client.attach():
+            raise Exception, "Message cannot be added"
+        kmail = DCOPObj("kmail", client, "KMailIface")
+    # Add Message:
+    ok, status = kmail.dcopAddMessage(str(folder), message, "")
+    if not ok:
+        raise Exception, "Message cannot be added"
+    elif status == -4:
+        raise Exception, "Message cannot be added: duplicate message"
+    elif status == -2:
+        raise Exception, "Message cannot be added: cannot add message to folder"
+    elif status == -1:
+        raise Exception, "Message cannot be added: cannot make folder"
+    elif status == 0:
+        raise Exception, "Message cannot be added: error while adding message"
+    elif status != 1:
+        raise Exception, "Message cannot be added, status: %d" % status
+    return True
 

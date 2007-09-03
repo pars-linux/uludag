@@ -6,10 +6,10 @@ TODO List
 + Accomplished
 
 Before 2007.3:
-    - Add KNode Accounts
-    - migrate identities to kmail
-    - Find a way to migrate e-mails (copy mbox file, use python mailbox module, use kmail dcop interface)
-    - Check SMTP Authentication Type (Thunderbird, OE, KMail)
+    + Add KNode Accounts
+    ? migrate identities to kmail
+    + Find a way to migrate e-mails (copy mbox file, use python mailbox module, use kmail dcop interface) -> get messages by hand and add them with dcop
+    + Check SMTP Authentication Type (Thunderbird, OE, KMail)
     - Find a pretty application name :)
 
 General:
