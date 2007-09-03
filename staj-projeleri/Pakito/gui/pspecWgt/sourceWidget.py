@@ -1,0 +1,299 @@
+# -*- coding: utf-8
+
+from qt import *
+from kdeui import *
+from kdecore import *
+
+from pisi import specfile as spec
+from pisi.dependency import Dependency
+
+from sourceWidgetUI import SourceWidgetUI
+from dialogs.summaryDialog import SummaryDialog
+from dialogs.dependencyDialog import DependencyDialog
+
+class sourceWidget(SourceWidgetUI):
+    def __init__(self, parent):
+        SourceWidgetUI.__init__(self, parent)
+        self.lePackager.setPaletteForegroundColor(QColor("black"))
+        self.lePackager.setPaletteBackgroundColor(QColor("white"))
+        #self.lePackager.setValidator(QRegExpValidator(QRegExp(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,4}$"), self))
+      
+        self.connect(self.pbAddSummary, SIGNAL("clicked()"), self.slotAddSummary)
+        self.connect(self.pbRemoveSummary, SIGNAL("clicked()"), self.slotRemoveSummary)
+        self.connect(self.pbBrowseSummary, SIGNAL("clicked()"), self.slotBrowseSummary)
+        self.connect(self.lvSummary, SIGNAL("executed(QListViewItem *)"), self.slotBrowseSummary)
+
+        self.connect(self.pbAddBuildDep, SIGNAL("clicked()"), self.slotAddBuildDep)
+        self.connect(self.pbRemoveBuildDep, SIGNAL("clicked()"), self.slotRemoveBuildDep)
+        self.connect(self.pbBrowseBuildDep, SIGNAL("clicked()"), self.slotBrowseBuildDep)
+        self.connect(self.lvBuildDep, SIGNAL("executed(QListViewItem *)"), self.slotBrowseBuildDep)
+        
+        il = KGlobal.iconLoader()
+        for w in [self.pbLicense, self.pbIsA, self.pbAddSummary, self.pbAddBuildDep, self.pbAddPatch]:
+            w.setIconSet(il.loadIconSet("edit_add", KIcon.Toolbar))
+        
+        self.pbPackager.setIconSet(il.loadIconSet("edit_user", KIcon.Toolbar))
+        
+        for w in [self.pbRemoveSummary, self.pbRemoveBuildDep, self.pbRemovePatch]:
+            w.setIconSet(il.loadIconSet("edit_remove", KIcon.Toolbar))
+       
+        for w in [self.pbBrowseSummary, self.pbBrowseBuildDep, self.pbBrowsePatch]:
+            w.setIconSet(il.loadIconSet("fileopen", KIcon.Toolbar))
+
+        self.isAPopup = QPopupMenu(self)
+   
+        isAList = ["app", "app:console", "app:gui", "app:web", "|", "library", "service", "|", "data", "data:doc", "data:font", "|", "kernel", "driver", "|", "locale"]
+
+        for isa in isAList:
+            if isa == "|":
+                self.isAPopup.insertSeparator()
+            else:
+                self.isAPopup.insertItem(isa)
+
+        self.connect(self.pbIsA, SIGNAL("clicked()"), self.slotIsAPopup)
+        self.connect(self.isAPopup, SIGNAL("activated(int)"), self.slotIsAHandle)
+
+        self.licensePopup = QPopupMenu(self)
+        for l in ["GPL", "GPL-2", "GPL-3", "as-is", "LGPL-2", "LGPL-2.1", "BSD", "MIT", "LGPL"]:
+            self.licensePopup.insertItem(l)
+        
+        self.connect(self.pbLicense, SIGNAL("clicked()"), self.slotLicensePopup)
+        self.connect(self.licensePopup, SIGNAL("activated(int)"), self.slotLicenseHandle)
+
+    def slotLicensePopup(self):
+        self.licensePopup.exec_loop(self.pbLicense.mapToGlobal(QPoint(0,0 + self.pbLicense.height())))
+
+    def slotLicenseHandle(self, id):
+        text = str(self.licensePopup.text(id)).replace("&", "")
+        curText = str(self.leLicense.text())
+        if curText.strip() == "":
+            self.leLicense.setText(text)
+        else:
+            self.leLicense.setText("%s, %s" % (curText, text))
+
+    def slotIsAPopup(self):
+        self.isAPopup.exec_loop(self.pbIsA.mapToGlobal(QPoint(0,0 + self.pbIsA.height())))
+
+    def slotIsAHandle(self, id):
+        text = str(self.isAPopup.text(id)).replace("&", "")
+        curText = str(self.leIsA.text())
+        if curText.strip() == "":
+            self.leIsA.setText(text)
+        else:
+            self.leIsA.setText("%s, %s" % (curText, text))
+
+    def slotBrowseSummary(self):
+        lvi = self.lvSummary.selectedItem()
+        if not lvi:
+            return
+        sums = self.getSummaryList()
+        dia = SummaryDialog(sums, activeLanguage = str(lvi.text(0)))
+        if dia.exec_loop() == QDialog.Rejected:
+            return
+        self.setSummaryList(dia.getResult())
+
+    def slotRemoveSummary(self):
+        lvi = self.lvSummary.selectedItem()
+        if lvi:
+            self.lvSummary.takeItem(lvi) 
+
+    def slotAddSummary(self):
+        sums = self.getSummaryList()
+        sums.insert(0, ["","",""])
+        dialog = SummaryDialog(sums, parent = self)
+        if dialog.exec_loop() == QDialog.Accepted:
+            self.setSummaryList(dialog.getResult())
+
+    def setSummaryList(self, l):
+        self.lvSummary.clear()
+        for sum in l:
+            lvi = KListViewItem(self.lvSummary, sum[0], sum[1], sum[2])
+
+    def getSummaryList(self):
+        ret = []
+        iterator = QListViewItemIterator(self.lvSummary)
+        while iterator.current():
+            l = []
+            lvi = iterator.current()
+            l.append(str(lvi.text(0)))
+            l.append(unicode(lvi.text(1)))
+            l.append(unicode(lvi.text(2)))
+            ret.append(l)
+            iterator += 1
+        return ret
+    
+    def getBuildDepList(self):
+        ret = []
+        iterator = QListViewItemIterator(self.lvBuildDep)
+        while iterator.current():
+            l = []
+            lvi = iterator.current()
+            l.append(str(lvi.text(0)))
+            l.append(str(lvi.text(1)))
+            ret.append(l)
+            iterator += 1
+        return ret
+    
+    def setBuildDepList(self, l):
+        self.lvBuildDep.clear()
+        for dep in l:
+            cond = dep[0].split()
+            if len(cond) == 3:
+                lvi = KListViewItem(self.lvBuildDep, "%s %s %s" % tuple(cond), dep[1])
+            else:
+                lvi = KListViewItem(self.lvBuildDep, "", dep[1])
+
+    def slotAddBuildDep(self):
+        dia = DependencyDialog(parent = self)
+        if dia.exec_loop() == QDialog.Accepted:
+            cond, dep = dia.getResult()
+            lvi = KListViewItem(self.lvBuildDep, cond, dep)
+
+    def slotRemoveBuildDep(self):
+        lvi = self.lvBuildDep.selectedItem()
+        if lvi:
+           self.lvBuildDep.takeItem(lvi)
+
+    def slotBrowseBuildDep(self):
+        lvi = self.lvBuildDep.selectedItem()
+        if not lvi:
+            return
+        dia = DependencyDialog((str(lvi.text(0)), str(lvi.text(1))), parent = self)
+        if dia.exec_loop() == QDialog.Accepted:
+            cond, dep = dia.getResult()
+            lvi.setText(0, cond)
+            lvi.setText(1, dep)
+
+    def fill(self, source):
+        self.leName.setText(source.name)
+        self.leHomepage.setText(source.homepage)
+        self.leLicense.setText(", ".join(source.license))
+        self.leIsA.setText(", ".join(source.isA))
+        self.lePackager.setText("%s (%s)" % (source.packager.name, source.packager.email))
+        if source.partOf:
+            self.lePartOf.setText(source.partOf)   
+        
+        #archive
+        self.leURI.setText(source.archive.uri)
+        self.cbType.setCurrentText(source.archive.type)
+        self.leSHA1.setText(source.archive.sha1sum)
+
+        self.lvSummary.clear()
+        for lang, sum in source.summary.iteritems(): #TODO: summary yok desc varsa?
+            lvi = KListViewItem(self.lvSummary, lang, unicode(sum))
+            if lang in source.description:
+                lvi.setText(2, unicode(source.description[lang]))
+
+        self.lvBuildDep.clear()
+        for dep in source.buildDependencies:
+            lvi = KListViewItem(self.lvBuildDep, getConstraint(dep), dep.package)
+        
+        self.lvPatches.clear()
+        for patch in source.patches:
+            if not patch.level:
+                patch.level = ""
+            if not patch.compressionType:
+                patch.compressionType = ""
+            lvi = KListViewItem(self.lvPatches, str(patch.level), str(patch.compressionType), patch.filename)
+    
+    def get(self, source):
+        if str(self.leName.text()).strip() == "":
+            raise Exception, i18n("Source name must be filled.")
+        
+        source.name = str(self.leName.text()).strip()
+        source.homepage = str(self.leHomepage.text()).strip()
+        source.license = str(self.leLicense.text()).strip().split(", ")
+        source.isA = str(self.leIsA.text()).strip().split(", ")
+        if self.lePartOf.text() and str(self.lePartOf.text()).strip() != "":
+            source.partOf = str(self.lePartOf.text()).strip()
+        else:
+            source.partOf = None
+        
+        packagerText = str(self.lePackager.text()).strip()
+        if packagerText != "":
+            packager = packagerText.split(" (")
+            packagerName = unicode(packager[0])
+            packagerEmail = packager[1][:-1]
+            source.packager.name = packagerName
+            source.packager.email = packagerEmail
+        else:
+            pass # hata
+        
+        source.archive.uri= str(self.leURI.text()).strip()
+        source.archive.type = str(self.cbType.currentText()).strip()
+        source.archive.sha1sum = str(self.leSHA1.text()).strip()
+        
+        source.summary.clear()
+        source.description.clear()
+        iterator = QListViewItemIterator(self.lvSummary)
+        while iterator.current():
+            lvi = iterator.current()
+            if str(lvi.text(1)).strip() != "":
+                source.summary[str(lvi.text(0))] = unicode(lvi.text(1))
+            if str(lvi.text(2)).strip() != "":
+                source.description[str(lvi.text(0))] = unicode(lvi.text(2))
+            iterator += 1
+            
+        source.buildDependencies = []
+        iterator = QListViewItemIterator(self.lvBuildDep)
+        while iterator.current():
+            lvi = iterator.current()
+            dep = Dependency()
+            getConstraintReverse(str(lvi.text(0)), str(lvi.text(1)), dep)
+            source.buildDependencies.insert(0,dep)
+            iterator += 1
+        
+        source.patches = []
+        iterator = QListViewItemIterator(self.lvPatches)
+        while iterator.current():
+            lvi = iterator.current()
+            patch = spec.Patch()
+            if str(lvi.text(0)) == "":
+                patch.level = None
+            else:
+                patch.level = int(str(lvi.text(0)))
+            
+            if str(lvi.text(1)) == "":
+                patch.compressionType = None
+            else:
+                patch.compressionType = str(lvi.text(1))
+            
+            patch.filename = str(lvi.text(2))
+            source.patches.insert(0,patch)
+            iterator += 1
+    
+def getConstraint(dep):
+    if dep.version:
+        constraint = i18n("Version") + " = " + dep.version
+    elif dep.versionTo:
+        constraint = i18n("Version") + " <= " + dep.versionTo
+    elif dep.versionFrom:
+        constraint = i18n("Version") + " >= " + dep.versionFrom
+    elif dep.release:
+        constraint = i18n("Release") + " = " + dep.release
+    elif dep.releaseTo:
+        constraint = i18n("Release") + " <= " + dep.releaseTo
+    elif dep.releaseFrom:
+        constraint = i18n("Release") + " >= " + dep.releaseFrom
+    else:
+        constraint = ""
+    return constraint
+
+def getConstraintReverse(condition, package, dep):
+    dep.version = dep.versionFrom = dep.versionTo = None
+    dep.release = dep.releaseFrom = dep.releaseTo = None
+    
+    if condition.startswith(i18n("Version") + " = "):
+        dep.version = condition.split("= ")[1]
+    elif condition.startswith(i18n("Version") + " <= "):
+        dep.versionTo = condition.split("= ")[1]
+    elif condition.startswith(i18n("Version") + " >= "):
+        dep.versionFrom = condition.split("= ")[1]
+    elif condition.startswith(i18n("Release") + " = "):
+        dep.release = condition.split("= ")[1]
+    elif condition.startswith(i18n("Release") + " <= "):
+        dep.releaseTo = condition.split("= ")[1]
+    elif condition.startswith(i18n("Release") + " >= "):
+        dep.releaseFrom = condition.split("= ")[1]
+
+    dep.package = package
