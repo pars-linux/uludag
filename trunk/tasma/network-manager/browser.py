@@ -421,7 +421,6 @@ class Widget(QVBox):
     
     def slotHelp(self):
         self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
-        self.helpwin.show()
     
     def setInterface(self):
         self.butNew.setEnabled(False)
