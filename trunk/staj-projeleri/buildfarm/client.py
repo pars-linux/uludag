@@ -96,9 +96,13 @@ def usage():
     $ %(program)s remove work all
  """ % subst)
 
-def client(op, cmd=None, pspec=None):
+def client(op, **kwargs):
     
+    # TODO : I can build a list of all formatted strings and select them
+    # with the return values provided by the server to minimize the code.
     funcString = None
+    cmd = kwargs.get('cmd', None)
+    pspecList = kwargs.get('pspec', None)
     
     # Get a connection handle
     remoteURI = "https://" + REMOTE_HOST + ":" + str(REMOTE_PORT)
@@ -127,21 +131,14 @@ def client(op, cmd=None, pspec=None):
         pass
             
     # 2 Parameters
+    
     elif op == "send":
         # pspec is a directory which can contain 1 or more packages
-        retval = sendDirectory(server, pspec, "ozan")
+        retval = sendDirectory(server, kwargs[pspec], "ozan")
         if retval:
             print _("Everything's OK")
         else:
             print _("There were problems during the process")
-        
-    elif op == "add":
-        retval = server.appendToWorkQueue(pspec,True)
-        
-        if retval:
-            print _("%s successfully added to the work queue!" % pspec)
-        else:
-            print _("The package '%s' doesn't exist or is already in the work queue!" % pspec)
         
     elif op == "list":
         funcString = "get" + cmd.capitalize() + "Queue"
@@ -164,27 +161,44 @@ def client(op, cmd=None, pspec=None):
             print _("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n")\
                     % "\n".join(server.getWaitQueue())
     
-    # 3 Parameters
+    # 3 or more Parameters
+    elif op == "add":
+        for pspec in pspecList:
+            retval = server.appendToWorkQueue(pspec, True)
+            if retval == 0:
+                print _("%s successfully added to the work queue!" % pspec)
+            elif retval == -1:
+                print _("The package '%s' doesn't exist!" % pspec)
+            elif retval == 1:
+                print _("The package '%s' is already in the work queue!" % pspec)
+            
     elif op == "remove":
         funcString = "removeFrom" + cmd.capitalize() + "Queue"
-        print _("Removing '%s' from %s queue.." % (pspec, cmd))
-        retval = server.__getattr__(funcString)(pspec)
-        if retval:
-            print _("Removed!")
-        else:
-            print _("Make sure that the packages are already in the %s queue!" % cmd)
+        for pspec in pspecList:    
+            print _("Removing '%s' from %s queue.." % (pspec, cmd)),
+            retval = server.__getattr__(funcString)(pspec)
+            if retval:
+                print _("[Removed]")
+            else:
+                print _("[Doesn't exist]")
             
     elif op == "transfer":
         funcString = "transferTo" + cmd.capitalize() + "Queue"
-        retval = server.__getattr__(funcString)(pspec)
-        if retval:
-            print _("%s transferred to %s queue!" % (pspec, cmd))
-        else:
-            print _("Make sure that the queue contains %s!" % pspec)
-    
+        for pspec in pspecList:
+            print _("Transferring '%s' to %s queue.." % (pspec, cmd)),
+            retval = server.__getattr__(funcString)(pspec)
+            if retval:
+                print _("[Transferred]")
+            else:
+                print _("[Doesn't exist]")
+            
 if __name__ == "__main__":
 
     args = sys.argv[1:]
+    
+    # dummy trick to facilitate parsing of 'add' in the next blocks..
+    if args[0] == "add":
+        args.insert(1, "work")
     
     if args == []:
         usage()
@@ -199,17 +213,18 @@ if __name__ == "__main__":
             usage()
     
     elif len(args) == 2:
-        if args[0] in ("add","send"):
+        # doesn't work.
+        if args[0] in ("send"):
             client(args[0],pspec=args[1])
         elif args[0] == "list" and args[1] in ("work","wait") or \
             args[0] == "build" and args[1] in ("index","packages"):
-            client(args[0],args[1])
+            client(args[0],cmd=args[1])
         else:
             usage()
-            
-    elif len(args) == 3:
-        if args[0] in ("remove","transfer") and args[1] in ("work","wait"):
-            client(args[0],args[1],args[2])
+    
+    elif len(args) >= 3:        
+        if args[0] in ("add","remove","transfer") and args[1] in ("work","wait"):
+            client(args[0],cmd=args[1],pspec=args[2:])
         else:
             usage()
         
