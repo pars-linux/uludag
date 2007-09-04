@@ -794,12 +794,13 @@
 </customwidgets>
 <tabstops>
     <tabstop>leName</tabstop>
-    <tabstop>leIsA</tabstop>
-    <tabstop>pbIsA</tabstop>
     <tabstop>leHomepage</tabstop>
-    <tabstop>lePartOf</tabstop>
     <tabstop>leLicense</tabstop>
     <tabstop>pbLicense</tabstop>
+    <tabstop>leIsA</tabstop>
+    <tabstop>pbIsA</tabstop>
+    <tabstop>lePartOf</tabstop>
+    <tabstop>lePackager</tabstop>
     <tabstop>pbPackager</tabstop>
     <tabstop>twSource</tabstop>
     <tabstop>leURI</tabstop>
@@ -814,6 +815,10 @@
     <tabstop>pbAddPatch</tabstop>
     <tabstop>pbRemovePatch</tabstop>
     <tabstop>pbBrowsePatch</tabstop>
+    <tabstop>pbAddBuildDep</tabstop>
+    <tabstop>pbRemoveBuildDep</tabstop>
+    <tabstop>pbBrowseBuildDep</tabstop>
+    <tabstop>pbViewPatch</tabstop>
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>

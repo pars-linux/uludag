@@ -14,6 +14,7 @@ from patchDialogUI import PatchDialogUI
 class PatchDialog(PatchDialogUI):
     def __init__(self, parent = None, patch = None, name = None):
         PatchDialogUI.__init__(self, parent, name)
+        self.realLoc = ""
         self.connect(self.btnOk, SIGNAL("clicked()"), self, SLOT("accept()"))
         self.connect(self.btnCancel, SIGNAL("clicked()"), self, SLOT("reject()"))
         self.connect(self.pbPatch, SIGNAL("clicked()"), self.slotPatch)
@@ -26,6 +27,8 @@ class PatchDialog(PatchDialogUI):
 
     def slotPatch(self):
         self.realLoc = KFileDialog.getOpenFileName(QString.null, QString.null, self, i18n("Select Patch File"))
+        if not self.realLoc or str(self.realLoc).strip() == "":
+            return
         self.lePatch.setText(os.path.split(str(self.realLoc))[1])
 
     def getResult(self):

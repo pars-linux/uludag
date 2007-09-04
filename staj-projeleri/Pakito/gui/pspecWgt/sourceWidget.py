@@ -7,7 +7,6 @@ from kdecore import *
 from pisi import specfile as spec
 from pisi.dependency import Dependency
 
-import os.path
 import os
 import shutil
 
@@ -21,9 +20,8 @@ class sourceWidget(SourceWidgetUI):
         SourceWidgetUI.__init__(self, parent)
 
         if fileLoc:
-            self.tempDir = os.path.split(fileLoc)[0]
-            self.filesDir = self.tempDir + "/files"
-            self.comarDir = self.tempDir + "/comar"
+            tempDir = os.path.split(fileLoc)[0]
+            self.filesDir = tempDir + "/files"
 
         self.lePackager.setPaletteForegroundColor(QColor("black"))
         self.lePackager.setPaletteBackgroundColor(QColor("white"))
@@ -78,6 +76,10 @@ class sourceWidget(SourceWidgetUI):
         
         self.connect(self.pbLicense, SIGNAL("clicked()"), self.slotLicensePopup)
         self.connect(self.licensePopup, SIGNAL("activated(int)"), self.slotLicenseHandle)
+
+        self.lvSummary.setSorting(-1)
+        self.lvBuildDep.setSorting(-1)
+        self.lvPatches.setSorting(-1)
 
     def slotLicensePopup(self):
         self.licensePopup.exec_loop(self.pbLicense.mapToGlobal(QPoint(0,0 + self.pbLicense.height())))
@@ -221,6 +223,7 @@ class sourceWidget(SourceWidgetUI):
             lvi.setText(0, res[0])
             lvi.setText(1, res[1])
             lvi.setText(2, res[2])
+            #TODO: patch file may be renamed
 
     def slotViewPatch(self):
         lvi = self.lvPatches.selectedItem()
