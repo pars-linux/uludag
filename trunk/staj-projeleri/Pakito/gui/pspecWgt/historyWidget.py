@@ -26,6 +26,8 @@ class historyWidget(HistoryWidgetUI):
         self.connect(self.pbBrowseHistory, SIGNAL("clicked()"), self.slotBrowseHistory)
         self.connect(self.lvHistory, SIGNAL("executed(QListViewItem *)"), self.slotBrowseHistory)
 
+        self.lvHistory.setSorting(-1)
+
     def addRelease(self, rel, reverse=False):
         if not rel.type:
             rel.type = ""

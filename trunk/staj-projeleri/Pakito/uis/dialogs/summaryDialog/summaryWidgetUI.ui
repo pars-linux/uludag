@@ -97,6 +97,13 @@
         </widget>
     </hbox>
 </widget>
+<customwidgets>
+</customwidgets>
+<tabstops>
+    <tabstop>leLanguage</tabstop>
+    <tabstop>leSummary</tabstop>
+    <tabstop>teDescription</tabstop>
+</tabstops>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klineedit.h</includehint>

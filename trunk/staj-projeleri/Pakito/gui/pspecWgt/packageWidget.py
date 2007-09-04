@@ -4,6 +4,9 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
+import os
+import shutil
+
 from pisi import specfile as spec
 from pisi.dependency import Dependency
 from pisi.conflict import Conflict
@@ -13,12 +16,19 @@ from packageWidgetUI import PackageWidgetUI
 from dialogs.summaryDialog import SummaryDialog
 from dialogs.dependencyDialog import DependencyDialog
 from dialogs.fileDialog import FileDialog
+from dialogs.additionalFileDialog import AdditionalFileDialog
+from dialogs.comarDialog import COMARDialog
 
 class packageWidget(QWidget):
     
     class packageTab(PackageWidgetUI):
-        def __init__(self, parent):
+        def __init__(self, parent, filesDir = None, comarDir = None):
             PackageWidgetUI.__init__(self, parent)
+            if filesDir:
+                self.filesDir = filesDir
+            if comarDir:
+                self.comarDir = comarDir
+
             il = KGlobal.iconLoader()
 
             for w in [self.pbLicense, self.pbIsA, self.pbAddRuntimeDep, self.pbAddSummary, self.pbAddReplaces, self.pbAddFile, self.pbAddAdditional, self.pbAddConflict, self.pbAddCOMAR]:
@@ -57,6 +67,26 @@ class packageWidget(QWidget):
             self.connect(self.pbRemoveFile, SIGNAL("clicked()"), self.slotRemoveFile)
             self.connect(self.pbBrowseFile, SIGNAL("clicked()"), self.slotBrowseFile)
             self.connect(self.lvFiles, SIGNAL("executed(QListViewItem *)"), self.slotBrowseFile)
+
+            self.connect(self.pbAddAdditional, SIGNAL("clicked()"), self.slotAddAdditional)
+            self.connect(self.pbViewAdditional, SIGNAL("clicked()"), self.slotViewAdditional)
+            self.connect(self.pbRemoveAdditional, SIGNAL("clicked()"), self.slotRemoveAdditional)
+            self.connect(self.pbBrowseAdditional, SIGNAL("clicked()"), self.slotBrowseAdditional)
+            self.connect(self.lvAdditionalFiles, SIGNAL("executed(QListViewItem *)"), self.slotBrowseAdditional)
+
+            self.connect(self.pbAddCOMAR, SIGNAL("clicked()"), self.slotAddCOMAR)
+            self.connect(self.pbViewCOMAR, SIGNAL("clicked()"), self.slotViewCOMAR)
+            self.connect(self.pbRemoveCOMAR, SIGNAL("clicked()"), self.slotRemoveCOMAR)
+            self.connect(self.pbBrowseCOMAR, SIGNAL("clicked()"), self.slotBrowseCOMAR)
+            self.connect(self.lvCOMAR, SIGNAL("executed(QListViewItem *)"), self.slotBrowseCOMAR)
+
+            self.lvSummary.setSorting(-1)
+            self.lvRuntimeDep.setSorting(-1)
+            self.lvReplaces.setSorting(-1)
+            self.lvFiles.setSorting(-1)
+            self.lvAdditionalFiles.setSorting(-1)
+            self.lvConflicts.setSorting(-1)
+            self.lvCOMAR.setSorting(-1)
 
         def slotBrowseSummary(self):
             lvi = self.lvSummary.selectedItem()
@@ -182,6 +212,83 @@ class packageWidget(QWidget):
                 lvi.setText(0, res[0])
                 lvi.setText(1, res[1])
                 lvi.setText(2, res[2])
+
+        def slotAddAdditional(self):
+            dia = AdditionalFileDialog(self)
+            if dia.exec_loop() == QDialog.Rejected:
+                return
+            res = dia.getResult()
+            KListViewItem(self.lvAdditionalFiles, res[0], res[1], res[2], res[3])
+            if not os.path.isdir(self.filesDir):
+                os.mkdir(self.filesDir)
+            shutil.copyfile(res[4], self.filesDir + "/" + res[3])
+
+        def slotRemoveAdditional(self):
+            lvi = self.lvAdditionalFiles.selectedItem()
+            if not lvi:
+                return
+            file = str(lvi.text(3))
+            self.lvAdditionalFiles.takeItem(lvi)
+            filePath = self.filesDir + "/" + file
+            if os.path.isdir(self.filesDir) and os.path.isfile(filePath):
+                os.unlink(filePath)
+
+        def slotBrowseAdditional(self):
+            lvi = self.lvAdditionalFiles.selectedItem()
+            if not lvi:
+                return
+            dia = AdditionalFileDialog(self, [str(lvi.text(0)), str(lvi.text(1)), str(lvi.text(2)), str(lvi.text(3))])
+            if dia.exec_loop() == QDialog.Rejected:
+                return
+            res = dia.getResult()
+            lvi.setText(0, res[0])
+            lvi.setText(1, res[1])
+            lvi.setText(2, res[2])
+            lvi.setText(3, res[3])
+            #TODO: additinal file may be renamed
+
+        def slotViewAdditional(self):
+            lvi = self.lvAdditionalFiles.selectedItem()
+            if not lvi:
+                return
+            os.system("kfmclient exec %s" % self.filesDir + "/" + str(lvi.text(3)))
+
+        def slotAddCOMAR(self):
+            dia = COMARDialog(self)
+            if dia.exec_loop() == QDialog.Rejected:
+                return
+            res = dia.getResult()
+            KListViewItem(self.lvCOMAR, res[0], res[1])
+            if not os.path.isdir(self.comarDir):
+                os.mkdir(self.comarDir)
+            shutil.copyfile(res[2], self.comarDir + "/" + res[1])
+
+        def slotRemoveCOMAR(self):
+            lvi = self.lvCOMAR.selectedItem()
+            if not lvi:
+                return
+            file = str(lvi.text(1))
+            self.lvCOMAR.takeItem(lvi)
+            filePath = self.comarDir + "/" + file
+            if os.path.isdir(self.comarDir) and os.path.isfile(filePath):
+                os.unlink(filePath)
+
+        def slotBrowseCOMAR(self):
+            lvi = self.lvCOMAR.selectedItem()
+            if not lvi:
+                return
+            dia = COMARDialog(self, [str(lvi.text(0)), str(lvi.text(1))])
+            if dia.exec_loop() == QDialog.Rejected:
+                return
+            res = dia.getResult()
+            lvi.setText(0, res[0])
+            lvi.setText(1, res[1])
+
+        def slotViewCOMAR(self):
+            lvi = self.lvCOMAR.selectedItem()
+            if not lvi:
+                return
+            os.system("kfmclient exec %s" % self.comarDir + "/" + str(lvi.text(1)))
 
         def fill(self, package):
             # general info
@@ -337,6 +444,11 @@ class packageWidget(QWidget):
         pageLayout = QVBoxLayout(self, 6, 11)
         topLayout = QHBoxLayout(pageLayout, 5)
         
+        if fileLoc:
+            tempDir = os.path.split(fileLoc)[0]
+            self.filesDir = tempDir + "/files"
+            self.comarDir = tempDir + "/comar"
+
         # add/remove package buttons
         pbAddPackage = KPushButton(i18n("Add New Package"), self)
         pbRemovePackage = KPushButton(i18n("Remove Package"), self)
@@ -352,7 +464,7 @@ class packageWidget(QWidget):
         self.connect(pbRemovePackage, SIGNAL("clicked()"), self.removePackageSlot)
     
     def addPackage(self, package, focus = False):
-        tab = self.packageTab(self.twPackages)
+        tab = self.packageTab(self.twPackages, self.filesDir, self.comarDir)
         tab.fill(package)
         self.twPackages.addTab(tab, package.name)
         if focus:
