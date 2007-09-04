@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../uis/pspecWidget/sourceWidgetUI.ui'
 #
-# Created: Paz Eyl 2 20:18:58 2007
+# Created: Pzt Eyl 3 17:41:34 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -229,19 +229,22 @@ class SourceWidgetUI(QWidget):
         self.lvPatches.setResizeMode(KListView.LastColumn)
         TabPageLayout_3.addWidget(self.lvPatches)
 
-        layout15 = QVBoxLayout(None,0,6,"layout15")
+        layout21 = QVBoxLayout(None,0,6,"layout21")
 
         self.pbAddPatch = KPushButton(self.TabPage_3,"pbAddPatch")
-        layout15.addWidget(self.pbAddPatch)
+        layout21.addWidget(self.pbAddPatch)
 
         self.pbRemovePatch = KPushButton(self.TabPage_3,"pbRemovePatch")
-        layout15.addWidget(self.pbRemovePatch)
-        spacer9_3 = QSpacerItem(20,40,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        layout15.addItem(spacer9_3)
+        layout21.addWidget(self.pbRemovePatch)
+        spacer9_3 = QSpacerItem(20,20,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        layout21.addItem(spacer9_3)
+
+        self.pbViewPatch = KPushButton(self.TabPage_3,"pbViewPatch")
+        layout21.addWidget(self.pbViewPatch)
 
         self.pbBrowsePatch = KPushButton(self.TabPage_3,"pbBrowsePatch")
-        layout15.addWidget(self.pbBrowsePatch)
-        TabPageLayout_3.addLayout(layout15)
+        layout21.addWidget(self.pbBrowsePatch)
+        TabPageLayout_3.addLayout(layout21)
         self.twSource.insertTab(self.TabPage_3,QString.fromLatin1(""))
         layout30.addWidget(self.twSource)
         gbGeneralLayout.addLayout(layout30)
@@ -317,6 +320,7 @@ class SourceWidgetUI(QWidget):
         self.lvPatches.header().setLabel(2,self.__tr("Patch"))
         self.pbAddPatch.setText(QString.null)
         self.pbRemovePatch.setText(QString.null)
+        self.pbViewPatch.setText(QString.null)
         self.pbBrowsePatch.setText(QString.null)
         self.twSource.changeTab(self.TabPage_3,self.__tr("Patches"))
 

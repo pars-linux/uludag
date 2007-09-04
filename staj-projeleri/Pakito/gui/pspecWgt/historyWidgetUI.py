@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../uis/pspecWidget/historyWidgetUI.ui'
 #
-# Created: Paz Eyl 2 20:08:30 2007
+# Created: Pzt Eyl 3 19:09:07 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -58,7 +58,7 @@ class HistoryWidgetUI(QWidget):
 
         self.languageChange()
 
-        self.resize(QSize(640,395).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(485,533).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
 

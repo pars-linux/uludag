@@ -49,10 +49,10 @@ class PspecWidget(QWidget):
         self.toolBox.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
         
         # source section of toolbox
-        self.sourcePage = sourceWidget(self.toolBox)
+        self.sourcePage = sourceWidget(self.toolBox, self.fileLocation)
         
         # packages section of toolbox
-        self.packagePage = packageWidget(self.toolBox)
+        self.packagePage = packageWidget(self.toolBox, self.fileLocation)
         
         # history section of toolbox
         self.historyPage = historyWidget(self.toolBox)

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../uis/pspecWidget/packageWidgetUI.ui'
 #
-# Created: Paz Eyl 2 20:37:39 2007
+# Created: Pzt Eyl 3 22:16:58 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -208,27 +208,30 @@ class PackageWidgetUI(QWidget):
         self.lvAdditionalFiles.header().setClickEnabled(0,self.lvAdditionalFiles.header().count() - 1)
         self.lvAdditionalFiles.addColumn(self.__tr("Permission"))
         self.lvAdditionalFiles.header().setClickEnabled(0,self.lvAdditionalFiles.header().count() - 1)
-        self.lvAdditionalFiles.addColumn(self.__tr("File"))
-        self.lvAdditionalFiles.header().setClickEnabled(0,self.lvAdditionalFiles.header().count() - 1)
         self.lvAdditionalFiles.addColumn(self.__tr("Target"))
+        self.lvAdditionalFiles.header().setClickEnabled(0,self.lvAdditionalFiles.header().count() - 1)
+        self.lvAdditionalFiles.addColumn(self.__tr("File"))
         self.lvAdditionalFiles.header().setClickEnabled(0,self.lvAdditionalFiles.header().count() - 1)
         self.lvAdditionalFiles.setAllColumnsShowFocus(1)
         self.lvAdditionalFiles.setResizeMode(KListView.LastColumn)
         TabPageLayout_5.addWidget(self.lvAdditionalFiles)
 
-        layout15_2_2 = QVBoxLayout(None,0,6,"layout15_2_2")
+        layout27 = QVBoxLayout(None,0,6,"layout27")
 
         self.pbAddAdditional = KPushButton(self.TabPage_5,"pbAddAdditional")
-        layout15_2_2.addWidget(self.pbAddAdditional)
+        layout27.addWidget(self.pbAddAdditional)
 
         self.pbRemoveAdditional = KPushButton(self.TabPage_5,"pbRemoveAdditional")
-        layout15_2_2.addWidget(self.pbRemoveAdditional)
-        spacer9_3_2_2 = QSpacerItem(20,40,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        layout15_2_2.addItem(spacer9_3_2_2)
+        layout27.addWidget(self.pbRemoveAdditional)
+        spacer9_3_2_2 = QSpacerItem(20,160,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        layout27.addItem(spacer9_3_2_2)
+
+        self.pbViewAdditional = KPushButton(self.TabPage_5,"pbViewAdditional")
+        layout27.addWidget(self.pbViewAdditional)
 
         self.pbBrowseAdditional = KPushButton(self.TabPage_5,"pbBrowseAdditional")
-        layout15_2_2.addWidget(self.pbBrowseAdditional)
-        TabPageLayout_5.addLayout(layout15_2_2)
+        layout27.addWidget(self.pbBrowseAdditional)
+        TabPageLayout_5.addLayout(layout27)
         self.twPackage.insertTab(self.TabPage_5,QString.fromLatin1(""))
 
         self.TabPage_6 = QWidget(self.twPackage,"TabPage_6")
@@ -259,29 +262,35 @@ class PackageWidgetUI(QWidget):
         self.twPackage.insertTab(self.TabPage_6,QString.fromLatin1(""))
 
         self.TabPage_7 = QWidget(self.twPackage,"TabPage_7")
-        TabPageLayout_7 = QHBoxLayout(self.TabPage_7,11,6,"TabPageLayout_7")
+        TabPageLayout_7 = QGridLayout(self.TabPage_7,1,1,11,6,"TabPageLayout_7")
 
         self.lvCOMAR = KListView(self.TabPage_7,"lvCOMAR")
         self.lvCOMAR.addColumn(self.__tr("Provides"))
         self.lvCOMAR.header().setClickEnabled(0,self.lvCOMAR.header().count() - 1)
         self.lvCOMAR.addColumn(self.__tr("Script"))
         self.lvCOMAR.header().setClickEnabled(0,self.lvCOMAR.header().count() - 1)
+        self.lvCOMAR.setAllColumnsShowFocus(1)
         self.lvCOMAR.setResizeMode(KListView.LastColumn)
-        TabPageLayout_7.addWidget(self.lvCOMAR)
 
-        layout15_2_2_2 = QVBoxLayout(None,0,6,"layout15_2_2_2")
+        TabPageLayout_7.addWidget(self.lvCOMAR,0,0)
+
+        layout28 = QVBoxLayout(None,0,6,"layout28")
 
         self.pbAddCOMAR = KPushButton(self.TabPage_7,"pbAddCOMAR")
-        layout15_2_2_2.addWidget(self.pbAddCOMAR)
+        layout28.addWidget(self.pbAddCOMAR)
 
         self.pbRemoveCOMAR = KPushButton(self.TabPage_7,"pbRemoveCOMAR")
-        layout15_2_2_2.addWidget(self.pbRemoveCOMAR)
-        spacer9_3_2_2_2 = QSpacerItem(20,40,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        layout15_2_2_2.addItem(spacer9_3_2_2_2)
+        layout28.addWidget(self.pbRemoveCOMAR)
+        spacer9_3_2_2_2 = QSpacerItem(20,170,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        layout28.addItem(spacer9_3_2_2_2)
+
+        self.pbViewCOMAR = KPushButton(self.TabPage_7,"pbViewCOMAR")
+        layout28.addWidget(self.pbViewCOMAR)
 
         self.pbBrowseCOMAR = KPushButton(self.TabPage_7,"pbBrowseCOMAR")
-        layout15_2_2_2.addWidget(self.pbBrowseCOMAR)
-        TabPageLayout_7.addLayout(layout15_2_2_2)
+        layout28.addWidget(self.pbBrowseCOMAR)
+
+        TabPageLayout_7.addLayout(layout28,0,1)
         self.twPackage.insertTab(self.TabPage_7,QString.fromLatin1(""))
         gbPackageLayout.addWidget(self.twPackage)
         PackageWidgetUILayout.addWidget(self.gbPackage)
@@ -329,10 +338,11 @@ class PackageWidgetUI(QWidget):
         self.twPackage.changeTab(self.TabPage_4,self.__tr("Files"))
         self.lvAdditionalFiles.header().setLabel(0,self.__tr("Owner"))
         self.lvAdditionalFiles.header().setLabel(1,self.__tr("Permission"))
-        self.lvAdditionalFiles.header().setLabel(2,self.__tr("File"))
-        self.lvAdditionalFiles.header().setLabel(3,self.__tr("Target"))
+        self.lvAdditionalFiles.header().setLabel(2,self.__tr("Target"))
+        self.lvAdditionalFiles.header().setLabel(3,self.__tr("File"))
         self.pbAddAdditional.setText(QString.null)
         self.pbRemoveAdditional.setText(QString.null)
+        self.pbViewAdditional.setText(QString.null)
         self.pbBrowseAdditional.setText(QString.null)
         self.twPackage.changeTab(self.TabPage_5,self.__tr("Additional Files"))
         self.lvConflicts.header().setLabel(0,self.__tr("Condition"))
@@ -345,6 +355,7 @@ class PackageWidgetUI(QWidget):
         self.lvCOMAR.header().setLabel(1,self.__tr("Script"))
         self.pbAddCOMAR.setText(QString.null)
         self.pbRemoveCOMAR.setText(QString.null)
+        self.pbViewCOMAR.setText(QString.null)
         self.pbBrowseCOMAR.setText(QString.null)
         self.twPackage.changeTab(self.TabPage_7,self.__tr("COMAR Scripts"))
 

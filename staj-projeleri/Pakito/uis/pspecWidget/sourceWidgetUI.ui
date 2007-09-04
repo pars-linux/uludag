@@ -724,7 +724,7 @@
                                     </widget>
                                     <widget class="QLayoutWidget">
                                         <property name="name">
-                                            <cstring>layout15</cstring>
+                                            <cstring>layout21</cstring>
                                         </property>
                                         <vbox>
                                             <property name="name">
@@ -759,10 +759,18 @@
                                                 <property name="sizeHint">
                                                     <size>
                                                         <width>20</width>
-                                                        <height>40</height>
+                                                        <height>20</height>
                                                     </size>
                                                 </property>
                                             </spacer>
+                                            <widget class="KPushButton">
+                                                <property name="name">
+                                                    <cstring>pbViewPatch</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string></string>
+                                                </property>
+                                            </widget>
                                             <widget class="KPushButton">
                                                 <property name="name">
                                                     <cstring>pbBrowsePatch</cstring>
@@ -782,6 +790,8 @@
         </widget>
     </grid>
 </widget>
+<customwidgets>
+</customwidgets>
 <tabstops>
     <tabstop>leName</tabstop>
     <tabstop>leIsA</tabstop>
@@ -828,6 +838,7 @@
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>

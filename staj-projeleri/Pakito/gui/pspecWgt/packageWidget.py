@@ -30,6 +30,9 @@ class packageWidget(QWidget):
             for w in [self.pbBrowseRuntimeDep, self.pbBrowseSummary, self.pbBrowseReplaces, self.pbBrowseFile, self.pbBrowseAdditional, self.pbBrowseConflict, self.pbBrowseCOMAR]:
                 w.setIconSet(il.loadIconSet("fileopen", KIcon.Toolbar))
 
+            self.pbViewCOMAR.setIconSet(il.loadIconSet("filefind", KIcon.Toolbar))
+            self.pbViewAdditional.setIconSet(il.loadIconSet("filefind", KIcon.Toolbar))
+
             self.connect(self.pbAddSummary, SIGNAL("clicked()"), self.slotAddSummary)
             self.connect(self.pbRemoveSummary, SIGNAL("clicked()"), self.slotRemoveSummary)
             self.connect(self.pbBrowseSummary, SIGNAL("clicked()"), self.slotBrowseSummary)
@@ -329,7 +332,7 @@ class packageWidget(QWidget):
                 package.providesComar.insert(0,comar)
                 iterator += 1
 
-    def __init__(self, parent):
+    def __init__(self, parent, fileLoc = None):
         QWidget.__init__(self, parent)
         pageLayout = QVBoxLayout(self, 6, 11)
         topLayout = QHBoxLayout(pageLayout, 5)
