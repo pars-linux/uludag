@@ -7,13 +7,24 @@ from kdecore import *
 from pisi import specfile as spec
 from pisi.dependency import Dependency
 
+import os.path
+import os
+import shutil
+
 from sourceWidgetUI import SourceWidgetUI
 from dialogs.summaryDialog import SummaryDialog
 from dialogs.dependencyDialog import DependencyDialog
+from dialogs.patchDialog import PatchDialog
 
 class sourceWidget(SourceWidgetUI):
-    def __init__(self, parent):
+    def __init__(self, parent, fileLoc = None):
         SourceWidgetUI.__init__(self, parent)
+
+        if fileLoc:
+            self.tempDir = os.path.split(fileLoc)[0]
+            self.filesDir = self.tempDir + "/files"
+            self.comarDir = self.tempDir + "/comar"
+
         self.lePackager.setPaletteForegroundColor(QColor("black"))
         self.lePackager.setPaletteBackgroundColor(QColor("white"))
         #self.lePackager.setValidator(QRegExpValidator(QRegExp(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,4}$"), self))
@@ -28,6 +39,12 @@ class sourceWidget(SourceWidgetUI):
         self.connect(self.pbBrowseBuildDep, SIGNAL("clicked()"), self.slotBrowseBuildDep)
         self.connect(self.lvBuildDep, SIGNAL("executed(QListViewItem *)"), self.slotBrowseBuildDep)
         
+        self.connect(self.pbAddPatch, SIGNAL("clicked()"), self.slotAddPatch)
+        self.connect(self.pbRemovePatch, SIGNAL("clicked()"), self.slotRemovePatch)
+        self.connect(self.pbBrowsePatch, SIGNAL("clicked()"), self.slotBrowsePatch)
+        self.connect(self.pbViewPatch, SIGNAL("clicked()"), self.slotViewPatch)
+        self.connect(self.lvPatches, SIGNAL("executed(QListViewItem *)"), self.slotBrowsePatch)
+        
         il = KGlobal.iconLoader()
         for w in [self.pbLicense, self.pbIsA, self.pbAddSummary, self.pbAddBuildDep, self.pbAddPatch]:
             w.setIconSet(il.loadIconSet("edit_add", KIcon.Toolbar))
@@ -39,6 +56,8 @@ class sourceWidget(SourceWidgetUI):
        
         for w in [self.pbBrowseSummary, self.pbBrowseBuildDep, self.pbBrowsePatch]:
             w.setIconSet(il.loadIconSet("fileopen", KIcon.Toolbar))
+        
+        self.pbViewPatch.setIconSet(il.loadIconSet("filefind", KIcon.Toolbar))
 
         self.isAPopup = QPopupMenu(self)
    
@@ -163,6 +182,51 @@ class sourceWidget(SourceWidgetUI):
             cond, dep = dia.getResult()
             lvi.setText(0, cond)
             lvi.setText(1, dep)
+
+    def slotAddPatch(self):
+        dia = PatchDialog(self)
+        if dia.exec_loop() == QDialog.Accepted:
+            res = dia.getResult()
+            lvi = KListViewItem(self.lvPatches, res[0], res[1], res[2])
+            if not os.path.isdir(self.filesDir):
+                os.mkdir(self.filesDir)
+            shutil.copyfile(res[3], self.filesDir + "/" + res[2])
+
+    def slotRemovePatch(self):
+        lvi = self.lvPatches.selectedItem()
+        if not lvi:
+            return
+        patch = str(lvi.text(2))
+        patchPath = self.filesDir + "/" + patch
+        if lvi:
+            self.lvPatches.takeItem(lvi)
+        if os.path.isdir(self.filesDir) and os.path.isfile(patchPath):
+            os.unlink(patchPath)
+
+    def slotBrowsePatch(self):
+        lvi = self.lvPatches.selectedItem()
+        if not lvi:
+            return
+        if not lvi.text(0) or str(lvi.text(0)).strip() == "":
+            level = "0"
+        else:
+            level = str(lvi.text(0))
+        if not lvi.text(1) or str(lvi.text(1)).strip() == "":
+            comp = ""
+        else:
+            comp = str(lvi.text(1))
+        dia = PatchDialog(self, [level, comp, str(lvi.text(2))])
+        if dia.exec_loop() == QDialog.Accepted:
+            res = dia.getResult()
+            lvi.setText(0, res[0])
+            lvi.setText(1, res[1])
+            lvi.setText(2, res[2])
+
+    def slotViewPatch(self):
+        lvi = self.lvPatches.selectedItem()
+        if not lvi:
+            return
+        os.system("kfmclient exec %s" % self.filesDir + "/" + str(lvi.text(2)))
 
     def fill(self, source):
         self.leName.setText(source.name)

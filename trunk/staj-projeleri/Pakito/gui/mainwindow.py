@@ -11,6 +11,7 @@ from qt import *
 from kdeui import *
 from kdecore import *
 from kparts import KParts
+from kfile import KFileDialog
 
 # System imports
 import os
@@ -263,26 +264,25 @@ class MainWindow(KParts.MainWindow):
         self.enableOperations()
         
     def open(self):
-    
 	    # ask for directory of package - TODO: değiştirmeli mi?
-        fileDialog = QFileDialog(self, "dialog", True)
-        fileDialog.setMode(QFileDialog.DirectoryOnly)
-        fileDialog.setCaption(i18n("Select PiSi Source Package"))
-        if not fileDialog.exec_loop():
-            return
-        packageDir = str(fileDialog.selectedFile())
+        packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package"))
         
+        if not packageDir or packageDir == "":
+            return
+        else:
+            packageDir = unicode(packageDir) + "/"
+
         try: 
             self.pspecFile = open(packageDir + "pspec.xml", "r") 
         except:
-            QMessageBox.warning(self, i18n("Error"), i18n("No pspec.xml found."), QMessageBox.Ok)
+            KMessageBox.sorry(self, i18n("No pspec.xml found."), i18n("Error"))
             return
         self.pspecFile.close()
         
         try: 
             self.actionspyFile = open(packageDir + "actions.py", "r")
         except:
-            QMessageBox.warning(self, i18n("Error"), i18n("No actions.py found."), QMessageBox.Ok)
+            KMessageBox.sorry(self, i18n("Error"), i18n("No pspec.xml found."))
             return
         self.actionspyFile.close()
         
@@ -295,8 +295,7 @@ class MainWindow(KParts.MainWindow):
         if not os.path.isdir(tempDir):
             os.mkdir(tempDir)
         
-        hede, packageName = os.path.split(packageDir[:-1])
-        del hede
+        packageName = os.path.split(packageDir[:-1])[1]
         self.tempDir = tempDir + packageName
         if os.path.isdir(self.tempDir):
             shutil.rmtree(self.tempDir)
@@ -307,7 +306,7 @@ class MainWindow(KParts.MainWindow):
         self.pspecTab = PspecWidget(self.twTabs, os.path.join(self.tempDir, "pspec.xml"))
         
         if self.pspecTab == None: 
-            QMessageBox.critical(self, i18n("Invalid file"), i18n("pspec.xml is not valid or well-formed."))
+            KMessageBox.sorry(self, i18n("Invalid File"), i18n("pspec.xml is not valid or well-formed"))
             return
         
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.tempDir, "actions.py"))
@@ -327,12 +326,10 @@ class MainWindow(KParts.MainWindow):
             return
         
         if self.realDir == None:
-            fileDialog = QFileDialog(self, "dialog", True)
-            fileDialog.setMode(QFileDialog.DirectoryOnly)
-            fileDialog.setCaption(i18n("Select PiSi Source Package Directory"))
-            if not fileDialog.exec_loop():
+            packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package Directory"))
+            if not packageDir or str(packageDir) == "":
                 return
-            self.realDir = unicode(fileDialog.selectedFile())
+            self.realDir = unicode(packageDir)
             
         if all == True:
             self.changePspecTab(False)        
