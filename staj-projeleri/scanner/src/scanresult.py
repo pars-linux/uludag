@@ -1,13 +1,4 @@
 # -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'scanresult.ui'
-#
-# Created: Sal Ağu 28 14:38:12 2007
-#      by: The PyQt User Interface Compiler (pyuic) 3.17.3
-#
-# WARNING! All changes made in this file will be lost!
-
-
 from qt import *
 
 
@@ -19,28 +10,94 @@ class ScanResult(QDialog):
             self.setName("ScanResult")
 
 
-        ScanResultLayout = QHBoxLayout(self,11,6,"ScanResultLayout")
+        ScanResultLayout = QVBoxLayout(self,11,6,"ScanResultLayout")
 
-        self.scrollView1 = QScrollView(self,"scrollView1")
-        self.scrollView1.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding,0,0,self.scrollView1.sizePolicy().hasHeightForWidth()))
+        self.scrollView = QScrollView(self,"scrollView")
+        self.scrollView.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding,0,0,self.scrollView.sizePolicy().hasHeightForWidth()))
+        self.scrollView.setMinimumSize(QSize(0,0))
 
-        self.pixmapLabel1 = QLabel(self.scrollView1.viewport(),"pixmapLabel1")
-#        self.pixmapLabel1.setGeometry(QRect(0,0,100,100))
-        self.pixmapLabel1.setScaledContents(1)
-        self.scrollView1.addChild(self.pixmapLabel1)
-        ScanResultLayout.addWidget(self.scrollView1)
+        self.pixmapLabel = QLabel(self.scrollView.viewport(),"pixmapLabel")
+        self.pixmapLabel.setScaledContents(1)
+        self.scrollView.addChild(self.pixmapLabel)
+        ScanResultLayout.addWidget(self.scrollView)
 
-        self.pixmapLabel1.setPixmap(QPixmap(image))
+        self.pixmapLabel.setPixmap(QPixmap(image))
+        
+        layout = QHBoxLayout(None,0,6,"layout")
+        leftSpacer = QSpacerItem(40,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layout.addItem(leftSpacer)
+
+        self.saveButton = QPushButton(self,"saveButton")
+        layout.addWidget(self.saveButton)
+
+        self.cancelButton = QPushButton(self,"cancelButton")
+        layout.addWidget(self.cancelButton)
+        rightSpacer = QSpacerItem(40,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layout.addItem(rightSpacer)
+        ScanResultLayout.addLayout(layout)
 
         self.languageChange()
 
-        self.resize(QSize(600,480).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(640,480).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
+
+        self.connect(self.cancelButton,SIGNAL("released()"),self.reject)
+        self.connect(self.saveButton,SIGNAL("released()"),self.save)
 
 
     def languageChange(self):
         self.setCaption(self.__tr("Scan Result"))
+        self.saveButton.setText(self.__tr("Save..."))
+        self.cancelButton.setText(self.__tr("Cancel"))
 
 
     def __tr(self,s,c = None):
         return qApp.translate("ScanResult",s,c)
+
+
+    def save(self):
+        outputFormats = QImageIO.outputFormats()
+        filter = ""
+        for format in outputFormats:
+            if format == "JPEG":
+                filter += ";;" + format + "( *." + format.lower() + " *.jpg)"
+            else:
+                filter += ";;" + format + "( *." + format.lower() + ")"
+            
+        filter = filter.lstrip(';')
+        
+        fileDialog =  QFileDialog("~",filter,self,"fileDialog")
+        fileDialog.setMode(QFileDialog.AnyFile)
+        if fileDialog.exec_loop() == QDialog.Accepted :
+            fileName = unicode(fileDialog.selectedFile())
+            selectedFilter = str(fileDialog.selectedFilter())
+            
+            tmp = fileName.rsplit('.',1)
+            
+            format = None
+            
+            if len(tmp) == 2:
+                fileName, extension = tmp[0],tmp[1]
+
+                if extension.lower() == "jpg":
+                    extension = "JPEG"
+                    
+                if extension.upper() in outputFormats:
+                    format = extension.upper()
+                else:
+                    fileName += "." + extension
+            
+            if format == None:
+                format = selectedFilter.split('(',1)[0].upper()
+
+            if format == "JPEG":
+                fileName += ".jpg"
+            else:
+                fileName += "."+format.lower()
+            
+            if self.pixmapLabel.pixmap().save(fileName,format):
+                QMessageBox.information(self,"Save Result","File successfully saved.",QMessageBox.Ok)
+            else:
+                if QMessageBox.information(self,"Save Result","Save unsuccessful!",QMessageBox.Retry,QMessageBox.Cancel) == QMessageBox.Retry:
+                    self.save();
+                
