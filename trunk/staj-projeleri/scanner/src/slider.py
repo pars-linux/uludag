@@ -20,9 +20,17 @@ class Slider(QVBox):
         self.slider = QSlider(orientation,self,name)
         self.option = option
         self.device = device
-        self.slider.setMinValue(self.option.constraint[0])
-        self.slider.setMaxValue(self.option.constraint[1])
-        self.slider.setPageStep(self.option.constraint[2])
+
+        pageStep = self.option.constraint[2]
+        self.mult = 1
+        if pageStep == 0:
+            pageStep = 1
+        while pageStep < 1:
+            self.mult *= 2
+            pageStep *= self.mult
+        self.slider.setMinValue(self.option.constraint[0]*self.mult)
+        self.slider.setMaxValue(self.option.constraint[1]*self.mult)
+        self.slider.setPageStep(pageStep)
         self.updateState()
         self.connect(self.slider,SIGNAL("valueChanged(int)"),self.valueChangedAction)
     
@@ -36,14 +44,14 @@ class Slider(QVBox):
     def valueChangedAction(self,i):
         self.option = self.device[self.option.name.replace("-","_")]
         if self.option.is_active():
-            self.device.__setattr__(self.option.name.replace("-","_"),i)
+            self.device.__setattr__(self.option.name.replace("-","_"),float(i)/self.mult)
             print self.option.name, i
         self.emit(PYSIGNAL("stateChanged"),())
         
     def updateState(self):
         self.option = self.device[self.option.name.replace("-","_")]
         if self.option.is_active():
-            self.slider.setValue(self.device.__getattr__(self.option.name.replace("-","_")))
+            self.slider.setValue(self.device.__getattr__(self.option.name.replace("-","_"))*self.mult)
             self.setEnabled(self.option.is_settable())
             self.show()
         else:
