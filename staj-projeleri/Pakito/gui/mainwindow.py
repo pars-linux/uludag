@@ -33,7 +33,6 @@ class MainWindow(KParts.MainWindow):
         iconloader = KGlobal.iconLoader()
         mainIcon = iconloader.loadIcon("pisikga", KIcon.Desktop)
         self.setIcon(mainIcon)
-        self.setFixedSize(1010, 705) # TODO: maximize window?
         self.mainWidget =  QWidget(self)
         self.setCentralWidget(self.mainWidget)
         self.pspecTab = None
@@ -191,6 +190,7 @@ class MainWindow(KParts.MainWindow):
         self.pisithread = None
         
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
+        self.showMaximized()
     
     def sockHandle(self, socket):
         self.teOutput.setText(unicode(self.teOutput.text()) + unicode(os.read(socket, 100)))
