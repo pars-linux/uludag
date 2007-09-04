@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>667</width>
-            <height>340</height>
+            <height>315</height>
         </rect>
     </property>
     <property name="caption">
@@ -235,14 +235,6 @@
                                 <widget class="KLineEdit">
                                     <property name="name">
                                         <cstring>lePackager</cstring>
-                                    </property>
-                                </widget>
-                                <widget class="KPushButton">
-                                    <property name="name">
-                                        <cstring>pbPackager</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string></string>
                                     </property>
                                 </widget>
                             </hbox>
@@ -801,7 +793,6 @@
     <tabstop>pbIsA</tabstop>
     <tabstop>lePartOf</tabstop>
     <tabstop>lePackager</tabstop>
-    <tabstop>pbPackager</tabstop>
     <tabstop>twSource</tabstop>
     <tabstop>leURI</tabstop>
     <tabstop>cbType</tabstop>
@@ -830,7 +821,6 @@
     <includehint>klineedit.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>klineedit.h</includehint>
-    <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>kcombobox.h</includehint>
     <includehint>klineedit.h</includehint>
