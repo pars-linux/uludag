@@ -47,8 +47,6 @@ class sourceWidget(SourceWidgetUI):
         for w in [self.pbLicense, self.pbIsA, self.pbAddSummary, self.pbAddBuildDep, self.pbAddPatch]:
             w.setIconSet(il.loadIconSet("edit_add", KIcon.Toolbar))
         
-        self.pbPackager.setIconSet(il.loadIconSet("edit_user", KIcon.Toolbar))
-        
         for w in [self.pbRemoveSummary, self.pbRemoveBuildDep, self.pbRemovePatch]:
             w.setIconSet(il.loadIconSet("edit_remove", KIcon.Toolbar))
        
@@ -58,7 +56,6 @@ class sourceWidget(SourceWidgetUI):
         self.pbViewPatch.setIconSet(il.loadIconSet("filefind", KIcon.Toolbar))
 
         self.isAPopup = QPopupMenu(self)
-   
         isAList = ["app", "app:console", "app:gui", "app:web", "|", "library", "service", "|", "data", "data:doc", "data:font", "|", "kernel", "driver", "|", "locale"]
 
         for isa in isAList:
@@ -66,7 +63,6 @@ class sourceWidget(SourceWidgetUI):
                 self.isAPopup.insertSeparator()
             else:
                 self.isAPopup.insertItem(isa)
-
         self.connect(self.pbIsA, SIGNAL("clicked()"), self.slotIsAPopup)
         self.connect(self.isAPopup, SIGNAL("activated(int)"), self.slotIsAHandle)
 

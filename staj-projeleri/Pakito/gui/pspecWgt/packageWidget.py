@@ -80,6 +80,24 @@ class packageWidget(QWidget):
             self.connect(self.pbBrowseCOMAR, SIGNAL("clicked()"), self.slotBrowseCOMAR)
             self.connect(self.lvCOMAR, SIGNAL("executed(QListViewItem *)"), self.slotBrowseCOMAR)
 
+            self.isAPopup = QPopupMenu(self)
+            isAList = ["app", "app:console", "app:gui", "app:web", "|", "library", "service", "|", "data", "data:doc", "data:font", "|", "kernel", "driver", "|", "locale"]
+
+            for isa in isAList:
+                if isa == "|":
+                    self.isAPopup.insertSeparator()
+                else:
+                    self.isAPopup.insertItem(isa)
+            self.connect(self.pbIsA, SIGNAL("clicked()"), self.slotIsAPopup)
+            self.connect(self.isAPopup, SIGNAL("activated(int)"), self.slotIsAHandle)
+
+            self.licensePopup = QPopupMenu(self)
+            for l in ["GPL", "GPL-2", "GPL-3", "as-is", "LGPL-2", "LGPL-2.1", "BSD", "MIT", "LGPL"]:
+                self.licensePopup.insertItem(l)
+        
+            self.connect(self.pbLicense, SIGNAL("clicked()"), self.slotLicensePopup)
+            self.connect(self.licensePopup, SIGNAL("activated(int)"), self.slotLicenseHandle)
+            
             self.lvSummary.setSorting(-1)
             self.lvRuntimeDep.setSorting(-1)
             self.lvReplaces.setSorting(-1)
@@ -87,6 +105,28 @@ class packageWidget(QWidget):
             self.lvAdditionalFiles.setSorting(-1)
             self.lvConflicts.setSorting(-1)
             self.lvCOMAR.setSorting(-1)
+
+        def slotLicensePopup(self):
+            self.licensePopup.exec_loop(self.pbLicense.mapToGlobal(QPoint(0,0 + self.pbLicense.height())))
+
+        def slotLicenseHandle(self, id):
+            text = str(self.licensePopup.text(id)).replace("&", "")
+            curText = str(self.leLicense.text())
+            if curText.strip() == "":
+                self.leLicense.setText(text)
+            else:
+                self.leLicense.setText("%s, %s" % (curText, text))
+
+        def slotIsAPopup(self):
+            self.isAPopup.exec_loop(self.pbIsA.mapToGlobal(QPoint(0,0 + self.pbIsA.height())))
+
+        def slotIsAHandle(self, id):
+            text = str(self.isAPopup.text(id)).replace("&", "")
+            curText = str(self.leIsA.text())
+            if curText.strip() == "":
+                self.leIsA.setText(text)
+            else:
+                self.leIsA.setText("%s, %s" % (curText, text))
 
         def slotBrowseSummary(self):
             lvi = self.lvSummary.selectedItem()

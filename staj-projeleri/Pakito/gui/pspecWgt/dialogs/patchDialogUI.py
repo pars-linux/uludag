@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../../uis/dialogs/patchDialog/patchDialogUI.ui'
 #
-# Created: Pzt Eyl 3 20:25:23 2007
+# Created: Sal Eyl 4 15:39:21 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -84,6 +84,13 @@ class PatchDialogUI(KDialog):
         self.resize(QSize(374,112).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
+        self.setTabOrder(self.niLevel,self.cbType)
+        self.setTabOrder(self.cbType,self.lePatch)
+        self.setTabOrder(self.lePatch,self.pbPatch)
+        self.setTabOrder(self.pbPatch,self.btnHelp)
+        self.setTabOrder(self.btnHelp,self.btnOk)
+        self.setTabOrder(self.btnOk,self.btnCancel)
+
 
     def languageChange(self):
         self.setCaption(self.__tr("Patch"))
@@ -93,7 +100,7 @@ class PatchDialogUI(KDialog):
         self.cbType.clear()
         self.cbType.insertItem(QString.null)
         self.cbType.insertItem(self.__tr("bz2"))
-        self.cbType.insertItem(self.__tr("gzip"))
+        self.cbType.insertItem(self.__tr("gz"))
         self.cbType.insertItem(self.__tr("targz"))
         self.cbType.insertItem(self.__tr("tarbz2"))
         self.cbType.insertItem(self.__tr("zip"))

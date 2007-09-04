@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../../uis/dialogs/historyDialog/historyDialogUI.ui'
 #
-# Created: Pzt Eyl 3 16:14:10 2007
+# Created: Sal Eyl 4 15:39:10 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -78,6 +78,7 @@ class HistoryDialogUI(KDialog):
         self.niRelease.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Fixed,0,0,self.niRelease.sizePolicy().hasHeightForWidth()))
         self.niRelease.setValue(1)
         self.niRelease.setMinValue(1)
+        self.niRelease.setMaxValue(1000)
 
         groupBox2Layout.addWidget(self.niRelease,0,1)
         spacer19 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
@@ -132,7 +133,8 @@ class HistoryDialogUI(KDialog):
         self.clearWState(Qt.WState_Polished)
 
         self.setTabOrder(self.niRelease,self.leVersion)
-        self.setTabOrder(self.leVersion,self.teComment)
+        self.setTabOrder(self.leVersion,self.cbType)
+        self.setTabOrder(self.cbType,self.teComment)
         self.setTabOrder(self.teComment,self.leName)
         self.setTabOrder(self.leName,self.leEmail)
         self.setTabOrder(self.leEmail,self.btnHelp)
