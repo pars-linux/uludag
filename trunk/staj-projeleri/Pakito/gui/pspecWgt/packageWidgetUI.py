@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../uis/pspecWidget/packageWidgetUI.ui'
 #
-# Created: Pzt Eyl 3 22:16:58 2007
+# Created: Sal Eyl 4 16:44:33 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -29,62 +29,10 @@ class PackageWidgetUI(QWidget):
         self.gbPackage.setColumnLayout(0,Qt.Vertical)
         self.gbPackage.layout().setSpacing(6)
         self.gbPackage.layout().setMargin(11)
-        gbPackageLayout = QVBoxLayout(self.gbPackage.layout())
+        gbPackageLayout = QGridLayout(self.gbPackage.layout())
         gbPackageLayout.setAlignment(Qt.AlignTop)
-
-        layout30 = QGridLayout(None,1,1,0,6,"layout30")
-
-        self.lblName = QLabel(self.gbPackage,"lblName")
-
-        layout30.addWidget(self.lblName,0,0)
-
-        self.lblsA = QLabel(self.gbPackage,"lblsA")
-
-        layout30.addWidget(self.lblsA,0,3)
-
-        self.lblLicense = QLabel(self.gbPackage,"lblLicense")
-
-        layout30.addWidget(self.lblLicense,1,0)
-
-        self.leName = KLineEdit(self.gbPackage,"leName")
-
-        layout30.addWidget(self.leName,0,1)
-
-        layout12 = QHBoxLayout(None,0,6,"layout12")
-
-        self.leLicense = KLineEdit(self.gbPackage,"leLicense")
-        layout12.addWidget(self.leLicense)
-
-        self.pbLicense = KPushButton(self.gbPackage,"pbLicense")
-        layout12.addWidget(self.pbLicense)
-
-        layout30.addLayout(layout12,1,1)
-        spacer1_2 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
-        layout30.addItem(spacer1_2,1,2)
-
-        self.lblPartOf = QLabel(self.gbPackage,"lblPartOf")
-
-        layout30.addWidget(self.lblPartOf,1,3)
-
-        layout11 = QHBoxLayout(None,0,6,"layout11")
-
-        self.leIsA = KLineEdit(self.gbPackage,"leIsA")
-        layout11.addWidget(self.leIsA)
-
-        self.pbIsA = KPushButton(self.gbPackage,"pbIsA")
-        self.pbIsA.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.pbIsA.sizePolicy().hasHeightForWidth()))
-        layout11.addWidget(self.pbIsA)
-
-        layout30.addLayout(layout11,0,4)
-        spacer1 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
-        layout30.addItem(spacer1,0,2)
-
-        self.lePartOf = KLineEdit(self.gbPackage,"lePartOf")
-
-        layout30.addWidget(self.lePartOf,1,4)
-        gbPackageLayout.addLayout(layout30)
-        spacer4 = QSpacerItem(20,2,QSizePolicy.Minimum,QSizePolicy.Fixed)
-        gbPackageLayout.addItem(spacer4)
+        spacer4 = QSpacerItem(20,16,QSizePolicy.Minimum,QSizePolicy.Fixed)
+        gbPackageLayout.addItem(spacer4,2,3)
 
         self.twPackage = QTabWidget(self.gbPackage,"twPackage")
 
@@ -292,24 +240,64 @@ class PackageWidgetUI(QWidget):
 
         TabPageLayout_7.addLayout(layout28,0,1)
         self.twPackage.insertTab(self.TabPage_7,QString.fromLatin1(""))
-        gbPackageLayout.addWidget(self.twPackage)
+
+        gbPackageLayout.addMultiCellWidget(self.twPackage,3,3,0,6)
+
+        self.lblName = QLabel(self.gbPackage,"lblName")
+
+        gbPackageLayout.addWidget(self.lblName,0,0)
+
+        self.lblsA = QLabel(self.gbPackage,"lblsA")
+
+        gbPackageLayout.addWidget(self.lblsA,0,4)
+
+        self.lblLicense = QLabel(self.gbPackage,"lblLicense")
+
+        gbPackageLayout.addWidget(self.lblLicense,1,0)
+
+        self.leName = KLineEdit(self.gbPackage,"leName")
+
+        gbPackageLayout.addMultiCellWidget(self.leName,0,0,1,2)
+        spacer1_2 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
+        gbPackageLayout.addItem(spacer1_2,1,3)
+
+        self.lblPartOf = QLabel(self.gbPackage,"lblPartOf")
+
+        gbPackageLayout.addWidget(self.lblPartOf,1,4)
+        spacer1 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
+        gbPackageLayout.addItem(spacer1,0,3)
+
+        self.lePartOf = KLineEdit(self.gbPackage,"lePartOf")
+
+        gbPackageLayout.addMultiCellWidget(self.lePartOf,1,1,5,6)
+
+        self.leIsA = KLineEdit(self.gbPackage,"leIsA")
+
+        gbPackageLayout.addWidget(self.leIsA,0,5)
+
+        self.pbIsA = KPushButton(self.gbPackage,"pbIsA")
+        self.pbIsA.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.pbIsA.sizePolicy().hasHeightForWidth()))
+
+        gbPackageLayout.addWidget(self.pbIsA,0,6)
+
+        self.leLicense = KLineEdit(self.gbPackage,"leLicense")
+
+        gbPackageLayout.addWidget(self.leLicense,1,1)
+
+        self.pbLicense = KPushButton(self.gbPackage,"pbLicense")
+
+        gbPackageLayout.addWidget(self.pbLicense,1,2)
         PackageWidgetUILayout.addWidget(self.gbPackage)
 
         self.languageChange()
 
-        self.resize(QSize(689,440).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(602,280).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
 
     def languageChange(self):
         self.setCaption(self.__tr("Form1"))
         self.gbPackage.setTitle(self.__tr("General"))
-        self.lblName.setText(self.__tr("Name:"))
-        self.lblsA.setText(self.__tr("Is A:"))
-        self.lblLicense.setText(self.__tr("License:"))
-        self.pbLicense.setText(QString.null)
-        self.lblPartOf.setText(self.__tr("Part Of:"))
-        self.pbIsA.setText(QString.null)
         self.lvSummary.header().setLabel(0,self.__tr("Language"))
         self.lvSummary.header().setLabel(1,self.__tr("Summary"))
         self.lvSummary.header().setLabel(2,self.__tr("Description"))
@@ -358,6 +346,12 @@ class PackageWidgetUI(QWidget):
         self.pbViewCOMAR.setText(QString.null)
         self.pbBrowseCOMAR.setText(QString.null)
         self.twPackage.changeTab(self.TabPage_7,self.__tr("COMAR Scripts"))
+        self.lblName.setText(self.__tr("Name:"))
+        self.lblsA.setText(self.__tr("Is A:"))
+        self.lblLicense.setText(self.__tr("License:"))
+        self.lblPartOf.setText(self.__tr("Part Of:"))
+        self.pbIsA.setText(QString.null)
+        self.pbLicense.setText(QString.null)
 
 
     def __tr(self,s,c = None):

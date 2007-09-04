@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../../uis/dialogs/summaryDialog/summaryDialogUI.ui'
 #
-# Created: Paz Eyl 2 17:53:54 2007
+# Created: Sal Eyl 4 15:39:37 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
