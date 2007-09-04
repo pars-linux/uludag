@@ -17,9 +17,6 @@ class ActionsWidget(QWidget):
         if actionsFile != None:
             self.editor.openFile(actionsFile)
         
-        # event connection
-#        self.connect(self.teActions, SIGNAL("textChanged()"), self.changed)
-        
     def changed(self):
         if not self.change:
             self.change = True
