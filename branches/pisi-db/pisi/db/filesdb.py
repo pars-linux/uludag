@@ -15,6 +15,7 @@ _ = __trans.ugettext
 
 import os
 import shelve
+import md5
 
 import pisi
 import pisi.context as ctx
@@ -32,22 +33,22 @@ class FilesDB(object):
         self.__check_filesdb()
     
     def has_file(self, path):
-        return self.filesdb.has_key(path)
+        return self.filesdb.has_key(md5.new(path).digest())
 
     def get_file(self, path):
-        return self.filesdb[path], path
+        return self.filesdb[md5.new(path).digest()], path
     
     def add_files(self, pkg, files):
 
         self.__check_filesdb()
 
         for f in files.list:
-            self.filesdb[f.path] = pkg
+            self.filesdb[md5.new(f.path).digest()] = pkg
 
     def remove_files(self, pkg, files):
         for f in files:
-            if self.filesdb.has_key(f):
-                del self.filesdb[f]
+            if self.filesdb.has_key(md5.new(f.path).digest()):
+                del self.filesdb[md5.new(f.path).digest()]
 
     def destroy(self):
         files_db = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.files_db)
