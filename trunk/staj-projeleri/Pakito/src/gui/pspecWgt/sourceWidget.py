@@ -20,8 +20,8 @@ class sourceWidget(SourceWidgetUI):
         SourceWidgetUI.__init__(self, parent)
 
         if fileLoc:
-            tempDir = os.path.split(fileLoc)[0]
-            self.filesDir = tempDir + "/files"
+            self.packageDir = os.path.split(fileLoc)[0]
+            self.filesDir = self.packageDir + "/files"
 
         self.lePackager.setPaletteForegroundColor(QColor("black"))
         self.lePackager.setPaletteBackgroundColor(QColor("white"))
@@ -55,7 +55,7 @@ class sourceWidget(SourceWidgetUI):
         
         self.pbViewPatch.setIconSet(il.loadIconSet("filefind", KIcon.Toolbar))
 
-        self.isAPopup = QPopupMenu(self)
+        self.isAPopup = KPopupMenu(self)
         isAList = ["app", "app:console", "app:gui", "app:web", "|", "library", "service", "|", "data", "data:doc", "data:font", "|", "kernel", "driver", "|", "locale"]
 
         for isa in isAList:
@@ -66,7 +66,7 @@ class sourceWidget(SourceWidgetUI):
         self.connect(self.pbIsA, SIGNAL("clicked()"), self.slotIsAPopup)
         self.connect(self.isAPopup, SIGNAL("activated(int)"), self.slotIsAHandle)
 
-        self.licensePopup = QPopupMenu(self)
+        self.licensePopup = KPopupMenu(self)
         for l in ["GPL", "GPL-2", "GPL-3", "as-is", "LGPL-2", "LGPL-2.1", "BSD", "MIT", "LGPL"]:
             self.licensePopup.insertItem(l)
         
@@ -76,6 +76,67 @@ class sourceWidget(SourceWidgetUI):
         self.lvSummary.setSorting(-1)
         self.lvBuildDep.setSorting(-1)
         self.lvPatches.setSorting(-1)
+
+###########################################################################33
+
+
+        self.connect(self.leName, SIGNAL("textChanged(const QString &)"), self.slotNameChanged)
+        self.connect(self.leHomepage, SIGNAL("textChanged(const QString &)"), self.slotHomepageChanged)
+        self.connect(self.leLicense, SIGNAL("textChanged(const QString &)"), self.slotLicenseChanged)
+        self.connect(self.leIsA, SIGNAL("textChanged(const QString &)"), self.slotIsAChanged)
+        self.connect(self.lePartOf, SIGNAL("textChanged(const QString &)"), self.slotPartOfChanged)
+        self.connect(self.lePackager, SIGNAL("textChanged(const QString &)"), self.slotPackagerChanged)
+        self.connect(self.leEmail, SIGNAL("textChanged(const QString &)"), self.slotEmailChanged)
+        self.connect(self.leURI, SIGNAL("textChanged(const QString &)"), self.slotURIChanged)
+        self.connect(self.leSHA1, SIGNAL("textChanged(const QString &)"), self.slotSHA1Changed)
+        self.connect(self.cbType, SIGNAL("textChanged(const QString &)"), self.slotTypeChanged)
+        
+    def slotNameChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>).*?(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\2")
+        pass
+        
+    def slotHomepageChanged(self, newOne):
+#        self.sedPspec("(<Homepage>).*?(</Homepage>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\2")
+        pass
+        
+    def slotLicenseChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+        
+    def slotIsAChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+    def slotPartOfChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+    def slotPackagerChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+    def slotEmailChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+    def slotURIChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+    def slotSHA1Changed(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+    def slotTypeChanged(self, newOne):
+#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
+        pass
+        
+    def sedPspec(self, pattern, repl):
+        import re
+        exp = re.compile(pattern, re.S)
+        fName = self.packageDir + "/pspec.xml"
+        f = open(fName)
+        new = re.sub(exp, repl, f.read())
+        f.close()
+        f = open(fName, "w")
+        f.write(new)
+        f.close()
+
+###########################################################################
 
     def slotLicensePopup(self):
         self.licensePopup.exec_loop(self.pbLicense.mapToGlobal(QPoint(0,0 + self.pbLicense.height())))
@@ -232,7 +293,8 @@ class sourceWidget(SourceWidgetUI):
         self.leHomepage.setText(source.homepage)
         self.leLicense.setText(", ".join(source.license))
         self.leIsA.setText(", ".join(source.isA))
-        self.lePackager.setText("%s (%s)" % (source.packager.name, source.packager.email))
+        self.lePackager.setText(source.packager.name)
+        self.leEmail.setText(source.packager.email)
         if source.partOf:
             self.lePartOf.setText(source.partOf)   
         
@@ -258,72 +320,6 @@ class sourceWidget(SourceWidgetUI):
             if not patch.compressionType:
                 patch.compressionType = ""
             lvi = KListViewItem(self.lvPatches, str(patch.level), str(patch.compressionType), patch.filename)
-    
-    def get(self, source):
-        if str(self.leName.text()).strip() == "":
-            raise Exception, i18n("Source name must be filled.")
-        
-        source.name = str(self.leName.text()).strip()
-        source.homepage = str(self.leHomepage.text()).strip()
-        source.license = str(self.leLicense.text()).strip().split(", ")
-        source.isA = str(self.leIsA.text()).strip().split(", ")
-        if self.lePartOf.text() and str(self.lePartOf.text()).strip() != "":
-            source.partOf = str(self.lePartOf.text()).strip()
-        else:
-            source.partOf = None
-        
-        packagerText = str(self.lePackager.text()).strip()
-        if packagerText != "":
-            packager = packagerText.split(" (")
-            packagerName = unicode(packager[0])
-            packagerEmail = packager[1][:-1]
-            source.packager.name = packagerName
-            source.packager.email = packagerEmail
-        else:
-            pass # hata
-        
-        source.archive.uri= str(self.leURI.text()).strip()
-        source.archive.type = str(self.cbType.currentText()).strip()
-        source.archive.sha1sum = str(self.leSHA1.text()).strip()
-        
-        source.summary.clear()
-        source.description.clear()
-        iterator = QListViewItemIterator(self.lvSummary)
-        while iterator.current():
-            lvi = iterator.current()
-            if str(lvi.text(1)).strip() != "":
-                source.summary[str(lvi.text(0))] = unicode(lvi.text(1))
-            if str(lvi.text(2)).strip() != "":
-                source.description[str(lvi.text(0))] = unicode(lvi.text(2))
-            iterator += 1
-            
-        source.buildDependencies = []
-        iterator = QListViewItemIterator(self.lvBuildDep)
-        while iterator.current():
-            lvi = iterator.current()
-            dep = Dependency()
-            getConstraintReverse(str(lvi.text(0)), str(lvi.text(1)), dep)
-            source.buildDependencies.insert(0,dep)
-            iterator += 1
-        
-        source.patches = []
-        iterator = QListViewItemIterator(self.lvPatches)
-        while iterator.current():
-            lvi = iterator.current()
-            patch = spec.Patch()
-            if str(lvi.text(0)) == "":
-                patch.level = None
-            else:
-                patch.level = int(str(lvi.text(0)))
-            
-            if str(lvi.text(1)) == "":
-                patch.compressionType = None
-            else:
-                patch.compressionType = str(lvi.text(1))
-            
-            patch.filename = str(lvi.text(2))
-            source.patches.insert(0,patch)
-            iterator += 1
     
 def getConstraint(dep):
     if dep.version:

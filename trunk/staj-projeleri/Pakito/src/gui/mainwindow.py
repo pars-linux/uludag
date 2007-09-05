@@ -49,12 +49,6 @@ class MainWindow(KParts.MainWindow):
         self.topSplitter = QSplitter(self.mainSplitter)
         self.topSplitter.setOrientation(Qt.Horizontal)
         self.mainLayout.addWidget(self.mainSplitter)
-        
-        # left tree
-#        self.lvProjects = KListView(self.topSplitter)
-#        self.lvProjects.setMaximumWidth(200)
-#        self.lvProjects.addColumn("Projects")
-#        self.lvProjects.ResizeMode(KListView.LastColumn)
 
         #right tabs
         self.twTabs = KTabWidget(self.topSplitter)
@@ -74,31 +68,8 @@ class MainWindow(KParts.MainWindow):
         self.teOutput.setPaper(QBrush(QColor("white")))
         self.twBottomTabs.addTab(self.bottomTabWidget2, i18n("IDE Output"))
         
-        # actions
+        self.doActions()
         
-        # (standard) file actions
-        self.actionNew = KStdAction.openNew(self.new, self.actionCollection())
-        self.actionOpen = KStdAction.open(self.open, self.actionCollection())
-        self.actionSave = KStdAction.save(self.save, self.actionCollection())
-        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
-        self.actionClose = KStdAction.close(self.closePacket, self.actionCollection())
-        self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
-
-#        # build actions        
-        self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection())
-        self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection())        
-        self.actionSetup = KAction(i18n("Setup"), "configure", KShortcut(), self.setupSlot, self.actionCollection())
-        self.actionBuild = KAction(i18n("Build"), "compfile", KShortcut(), self.buildSlot, self.actionCollection())
-        self.actionInstall = KAction(i18n("Install"), KShortcut(), self.installSlot, self.actionCollection())
-        self.actionMakePackage = KAction(i18n("Make Package"), "package", KShortcut(), self.makePackageSlot, self.actionCollection())
-        
-        #automation actions
-        self.actionAddRelease = KAction(i18n("Add Release"), "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection())
-        self.actionValidatePspec = KAction(i18n("Validate Pspec File"), "ok", KShortcut(), self.validatePspecSlot, self.actionCollection())
-        self.actionCheckSHA1 = KAction(i18n("Check SHA1"), KShortcut(), self.checkSHA1Slot, self.actionCollection())
-        self.actionComputeSHA1 = KAction(i18n("Compute SHA1"), "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection())
-        self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
-    
         # menubar popups
         self.popupFile = KPopupMenu(self)
         self.actionNew.plug(self.popupFile)
@@ -156,12 +127,6 @@ class MainWindow(KParts.MainWindow):
         self.actionComputeSHA1.plug(toolbar)
         self.actionDetectType.plug(toolbar)
         
-        # status bar op.
-        #self.sb = self.statusBar()
-        #self.progress = QProgressBar(self)
-        #self.progress.setMaximumHeight(15)
-        #self.sb.addWidget(self.progress)
-        
         self.disableOperations()
         
         #prepare pisi
@@ -191,6 +156,32 @@ class MainWindow(KParts.MainWindow):
         
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
         self.showMaximized()
+    
+    def doActions(self):                
+        # actions
+        
+        # (standard) file actions
+        self.actionNew = KStdAction.openNew(self.new, self.actionCollection())
+        self.actionOpen = KStdAction.open(self.open, self.actionCollection())
+        self.actionSave = KStdAction.save(self.save, self.actionCollection())
+        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
+        self.actionClose = KStdAction.close(self.closePacket, self.actionCollection())
+        self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
+
+        # build actions        
+        self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection())
+        self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection())        
+        self.actionSetup = KAction(i18n("Setup"), "configure", KShortcut(), self.setupSlot, self.actionCollection())
+        self.actionBuild = KAction(i18n("Build"), "compfile", KShortcut(), self.buildSlot, self.actionCollection())
+        self.actionInstall = KAction(i18n("Install"), KShortcut(), self.installSlot, self.actionCollection())
+        self.actionMakePackage = KAction(i18n("Make Package"), "package", KShortcut(), self.makePackageSlot, self.actionCollection())
+        
+        #automation actions
+        self.actionAddRelease = KAction(i18n("Add Release"), "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection())
+        self.actionValidatePspec = KAction(i18n("Validate Pspec File"), "ok", KShortcut(), self.validatePspecSlot, self.actionCollection())
+        self.actionCheckSHA1 = KAction(i18n("Check SHA1"), KShortcut(), self.checkSHA1Slot, self.actionCollection())
+        self.actionComputeSHA1 = KAction(i18n("Compute SHA1"), "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection())
+        self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
     
     def sockHandle(self, socket):
         self.teOutput.setText(unicode(self.teOutput.text()) + unicode(os.read(socket, 100)))
@@ -264,7 +255,6 @@ class MainWindow(KParts.MainWindow):
         self.enableOperations()
         
     def open(self):
-	    # ask for directory of package - TODO: değiştirmeli mi?
         packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package"))
         
         if not packageDir or packageDir == "":
@@ -273,16 +263,16 @@ class MainWindow(KParts.MainWindow):
             packageDir = unicode(packageDir) + "/"
 
         try: 
-            self.pspecFile = open(packageDir + "pspec.xml", "r") 
+            self.pspecFile = open(packageDir + "pspec.xml", "r+")
         except:
             KMessageBox.sorry(self, i18n("No pspec.xml found."), i18n("Error"))
             return
         self.pspecFile.close()
         
         try: 
-            self.actionspyFile = open(packageDir + "actions.py", "r")
+            self.actionspyFile = open(packageDir + "actions.py", "r+")
         except:
-            KMessageBox.sorry(self, i18n("Error"), i18n("No pspec.xml found."))
+            KMessageBox.sorry(self, i18n("No actions.py found."), i18n("Error") )
             return
         self.actionspyFile.close()
         
@@ -301,12 +291,12 @@ class MainWindow(KParts.MainWindow):
             shutil.rmtree(self.tempDir)
 
         shutil.copytree(packageDir, self.tempDir)
-        qApp.processEvents(QEventLoop.ExcludeUserInput)
+        qApp.processEvents()
 
         self.pspecTab = PspecWidget(self.twTabs, os.path.join(self.tempDir, "pspec.xml"))
         
         if self.pspecTab == None: 
-            KMessageBox.sorry(self, i18n("Invalid File"), i18n("pspec.xml is not valid or well-formed"))
+            KMessageBox.sorry(self, i18n("pspec.xml is not valid or well-formed"), i18n("Invalid File"))
             return
         
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.tempDir, "actions.py"))
@@ -321,39 +311,40 @@ class MainWindow(KParts.MainWindow):
         self.enableOperations()
     
     def save(self, all=False):
-        if self.actionsTab == None or self.actionsTab == None:
-            KMessageBox.sorry(self, i18n("There is no package to save. Create or Open a package first."), i18n("No package"))
-            return
-        
-        if self.realDir == None:
-            packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package Directory"))
-            if not packageDir or str(packageDir) == "":
-                return
-            self.realDir = unicode(packageDir)
-            
-        if all == True:
-            self.changePspecTab(False)        
-            self.pspecTab.change = False
-            self.changeActionsTab(False)
-            self.actionsTab.change = False
-            
-            self.savePspec()
-            self.saveActions()
-            return
-        
-        if self.twTabs.currentPage() is self.pspecTab:
-            self.changePspecTab(False)
-            self.pspecTab.change = False
-            # real save process
-            self.savePspec()
-            return
-        
-        if self.twTabs.currentPage() is self.actionsTab:
-            self.changeActionsTab(False)        
-            self.actionsTab.change = False
-            # real save process
-            self.saveActions()
-            return
+#        if self.actionsTab == None or self.actionsTab == None:
+#            KMessageBox.sorry(self, i18n("There is no package to save. Create or Open a package first."), i18n("No package"))
+#            return
+#        
+#        if self.realDir == None:
+#            packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package Directory"))
+#            if not packageDir or str(packageDir) == "":
+#                return
+#            self.realDir = unicode(packageDir)
+#            
+#        if all == True:
+#            self.changePspecTab(False)        
+#            self.pspecTab.change = False
+#            self.changeActionsTab(False)
+#            self.actionsTab.change = False
+#            
+#            self.savePspec()
+#            self.saveActions()
+#            return
+#        
+#        if self.twTabs.currentPage() is self.pspecTab:
+#            self.changePspecTab(False)
+#            self.pspecTab.change = False
+#            # real save process
+#            self.savePspec()
+#            return
+#        
+#        if self.twTabs.currentPage() is self.actionsTab:
+#            self.changeActionsTab(False)        
+#            self.actionsTab.change = False
+#            # real save process
+#            self.saveActions()
+#            return
+        pass
     
     def saveAll(self):
         self.save(all = True)
@@ -371,10 +362,8 @@ class MainWindow(KParts.MainWindow):
         
     def exit(self):
         self.closePacket()
-        
         if self.tempDir:
-            dir, hede = os.path.split(self.tempDir)
-            del hede
+            dir = os.path.split(self.tempDir)[0]
             if os.path.isdir(dir):
                 shutil.rmtree(dir)
         pisi.api.finalize()
@@ -579,7 +568,7 @@ class PisiThread(QThread):
          from cgi import escape
          try:
              pisi.api.build_until(self.path, self.stage)
-             qApp.processEvents(QEventLoop.ExcludeUserInput)
+             qApp.processEvents()
              self.output.setText(self.output.text() + i18n("<b>Succesfully finished.</b>"))
          except Exception, inst:
              self.output.append(str(i18n("\n<font color=\"red\">*** Error: %s</font>\n\n")) % unicode(escape(str(inst))))
