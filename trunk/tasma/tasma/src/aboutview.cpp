@@ -87,7 +87,7 @@ void AboutView::updateView( const QRect& rect )
   p.setFont( f );
   QString desc1 = i18n( "TASMA is a configuration application for "
                         "Pardus Operating System. You can tweak the "
-                        "systems default configuration settings and "
+                        "systems default configuration settings "
                         "by using the modules presented in TASMA. " );
   QRect r = p.boundingRect( descX, descY+10,
                             rect.width()-descX*2, rect.height()-(descY+50),
