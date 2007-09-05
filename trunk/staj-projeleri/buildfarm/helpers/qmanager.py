@@ -98,24 +98,23 @@ class QueueManager:
         self.__deserialize__(self.waitQueue, "waitQueue")
         
     def __tryToLock__(self, depth):
-        # find the caller of the caller
-        # this method will always be called from these 6 methods:
-        # transferToWaitQueue(),transferToWorkQueue()
-        # appendToWaitQueue(),appendToWorkQueue()
-        # removeFromWaitQueue(),removeFromWorkQueue()
+        # find the caller info
         # if the request to this function from stack depth 'depth'
         # is coming from the xmlrpc client, the method will try to acquire
         # the lock and raise exception if unsuccessful.
+        #
+        # 0: Acquired the lock (Must release it in the caller)
+        # 1: Can't acquire the lock
+        # 2: Don't need to acquire the lock (Method is called from this module)
         f = sys._getframe(depth)
         methodName = f.f_code.co_name
         if methodName == "_dispatch":
             try:
                 self.locks["build"].lock(timeout=0)
-                print "brdaim"
-                return True
+                return 0
             except:
-                return False
-        return True
+                return 1
+        return 2
 
     # Getter functions can't brake the integrity of the queues.
     def getWorkQueue(self):
@@ -127,26 +126,33 @@ class QueueManager:
         return self.waitQueue
 
     def removeFromWaitQueue(self, pspec):
-        if not self.__tryToLock__(2):
+        lock = self.__tryToLock__(2)
+        if lock == 1:
             return 1
         self.__initWaitQueueFromFile__()
         if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
             self.__serialize__(self.waitQueue, "waitQueue")
+            if lock == 0:
+                self.locks['build'].unlock()
             return 0
-        self.locks['build'].unlock()
+        if lock == 0:
+            self.locks['build'].unlock()
         return 2
 
     def removeFromWorkQueue(self, pspec):
-        if not self.__tryToLock__(2):
+        lock = self.__tryToLock__(2)
+        if lock == 1:
             return 1
         self.__initWorkQueueFromFile__()
         if self.workQueue.__contains__(pspec):
             self.workQueue.remove(pspec)
             self.__serialize__(self.workQueue, "workQueue")
-            #self.locks['build'].unlock()
+            if lock == 0:
+                self.locks['build'].unlock()
             return 0
-        #self.locks['build'].unlock()
+        if lock == 0:
+            self.locks['build'].unlock()
         return 2
 
     def appendToWorkQueue(self, pspec, checkIfExists=False):
@@ -154,7 +160,8 @@ class QueueManager:
         # 1: Buildfarm is busy
         # 2: Package doesn't exist
         # 3: Package is already in the queue
-        if not self.__tryToLock__(2):
+        lock = self.__tryToLock__(2)
+        if lock == 1:
             return 1
         if checkIfExists:
             if not os.path.isfile(os.path.join(config.localPspecRepo, pspec)):
@@ -165,9 +172,11 @@ class QueueManager:
         if not self.workQueue.__contains__(pspec):
             self.workQueue.append(pspec)
             self.__serialize__(self.workQueue, "workQueue")
-            self.locks['build'].unlock()
+            if lock == 0:
+                self.locks['build'].unlock()
             return 0
-        self.locks['build'].unlock()
+        if lock == 0:
+            self.locks['build'].unlock()
         return 3
 
     # Can't be invoked from clients so doesn't need introspection.
@@ -180,7 +189,8 @@ class QueueManager:
         return False
 
     def transferToWorkQueue(self, pspec):
-        if not self.__tryToLock__(2):
+        lock = self.__tryToLock__(2)
+        if lock == 1:
             return 1
         self.__initWaitQueueFromFile__()
         if self.waitQueue.__contains__(pspec) and self.appendToWorkQueue(pspec):
@@ -189,12 +199,17 @@ class QueueManager:
         return 2
 
     def transferToWaitQueue(self, pspec):
-        if not self.__tryToLock__(2):
+        lock = self.__tryToLock__(2)
+        if lock == 1:
             return 1
         self.__initWorkQueueFromFile__()
         if self.workQueue.__contains__(pspec) and self.appendToWaitQueue(pspec):
             self.removeFromWorkQueue(pspec)
+            if lock == 0:
+                self.locks['build'].unlock()
             return 0
+        if lock == 0:
+            self.locks['build'].unlock()
         return 2
     
     def buildArchive(self, dirname, filename, d, username=""):
