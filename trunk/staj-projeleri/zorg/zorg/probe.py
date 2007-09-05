@@ -153,34 +153,6 @@ def findVideoCards():
     """ Finds video cards. Result is a list of Device objects. """
     cards = []
 
-    ## read only PCI for now, follow sysfs changes
-    #for bus in ["pci"]:
-    #    sysDir = os.path.join("/sys/bus", bus, "devices")
-    #    if os.path.isdir(sysDir):
-    #        devs = os.listdir(sysDir)
-    #        devs.sort()
-    #        for _dev in devs:
-    #            #try:
-    #                if sysValue(sysDir, _dev, "class").startswith("0x03"):
-    #                    vendorId = lremove(sysValue(sysDir, _dev, "vendor"), "0x")
-    #                    deviceId = lremove(sysValue(sysDir, _dev, "device"), "0x")
-    #                    busId = tuple(int(x, 16) for x in _dev.replace(".",":").split(":"))[1:4]
-
-    #                    a = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
-
-    #                    nrBus, device, function = busId
-    #                    if function > 0:
-    #                        for card in cards:
-    #                            if [nrBus, device] == card.busId.split(":")[1:3]:
-    #                                a.functionOf = card
-
-    #                    cards.append(a)
-    #            #except:
-    #            #    pass
-
-    ##for i in xrange(len(cards)):
-    ##    cards[i].identifier = "VideoCard%d" % i
-
     pbus = getPrimaryBus()
     if pbus:
         vendorId = lremove(pciInfo(pbus, "vendor"), "0x")
@@ -195,7 +167,6 @@ def findVideoCards():
     else:
         # This machine might be a terminal server with no video cards.
         # We start X and leave the decision to the user.
-        #sys.exit(0)
         return None
 
 def getPrimaryBus():
