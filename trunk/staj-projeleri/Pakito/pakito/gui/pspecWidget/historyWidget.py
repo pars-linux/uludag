@@ -10,7 +10,7 @@ from pisi.conflict import Conflict
 from pisi.replace import Replace
 
 from pakito.gui.pspecWidget.historyWidgetUI import HistoryWidgetUI
-from pakito.gui.pspecwidget.dialogs.historyDialog import HistoryDialog
+from pakito.gui.pspecWidget.dialogs.historyDialog import HistoryDialog
 
 class historyWidget(HistoryWidgetUI):
     def __init__(self, parent):

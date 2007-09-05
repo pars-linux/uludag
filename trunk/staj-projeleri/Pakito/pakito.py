@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from gui.mainwindow import MainWindow
+from pakito.gui.mainwindow import MainWindow
 from kdecore import KApplication, KAboutData, KCmdLineArgs, KGlobal, KIcon
 from qt import QObject, SIGNAL, SLOT
 
