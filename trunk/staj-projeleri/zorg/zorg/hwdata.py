@@ -128,7 +128,8 @@ class Screen:
 
     def setup(self):
         self.identifier = "Screen%d" % self.number
-        self.monitor.identifier = "Monitor%d" % self.number
+        if self.monitor:
+            self.monitor.identifier = "Monitor%d" % self.number
         self.device.identifier = "VideoCard%d" % self.number
 
         if not self.depth or self.device.driver == "fglrx":
@@ -137,13 +138,14 @@ class Screen:
             else:
                 self.depth = 16
 
-        print "Supported modes are %s" % self.monitor.res
-        print "Requested mode is %s" % self.res
-        if self.res in self.monitor.res:
-            i = self.monitor.res.index(self.res)
-            self.modes = self.monitor.res[i:]
-        else:
-            self.modes[:0] = [self.res]
+        if self.monitor:
+            print "Supported modes are %s" % self.monitor.res
+            print "Requested mode is %s" % self.res
+            if self.res in self.monitor.res:
+                i = self.monitor.res.index(self.res)
+                self.modes = self.monitor.res[i:]
+            else:
+                self.modes[:0] = [self.res]
 
 def driver2opengl(driver):
     return opengl_impl.get(driver, "xorg-x11")

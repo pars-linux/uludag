@@ -151,6 +151,8 @@ def queryDevice(dev):
     if dev.driver in randr12_drivers:
         dev.randr12 = True
 
+    queryOutputs(dev)
+
 def findVideoCards():
     """ Finds video cards. Result is a list of Device objects. """
     cards = []

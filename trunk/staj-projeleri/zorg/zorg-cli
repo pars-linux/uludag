@@ -88,7 +88,7 @@ def setMode(opts):
     if not scr:
         out.error("Could not get screen info")
         return
-    
+
     out.sect("Setting mode to %s" % opts.mode)
 
     res = opts.mode.split("-")[0]
@@ -120,7 +120,7 @@ def setDriver(driver):
     reply = link.read_cmd()
     if reply.command == "fail":
         out.error(reply.data)
-        
+
     updateOpenGL(None, False)
 
 def info():
@@ -164,7 +164,7 @@ def info():
             continue
 
         out.info("  Video card  = %s" % cards[scr.device.id])
-        out.info("  Monitor     = %s" % monitors[scr.monitor.id])
+        #out.info("  Monitor     = %s" % monitors[scr.monitor.id])
         out.info("  Resolution  = %s" % scr.res)
         out.info("  Color depth = %s" % scr.depth)
         out.info("")

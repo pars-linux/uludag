@@ -15,24 +15,17 @@ def autoConfigure():
     for dev in devices:
         queryDevice(dev)
 
-    # we need card data to check for lcd displays
-    monitor = findMonitors(device, 0)[0]
-
-    if not monitor.probed:
-        print "Could not detect a monitor on the first controller. Trying next..."
-        device.monitors = []
-        monitor = findMonitors(device, 1)[0]
-
-    # Add a default monitor for other devices
-    if len(devices) > 1:
-        defMon = DefaultMonitor()
-        for dev in devices:
-            if not dev.monitors:
-                dev.monitors.append(defMon)
+    monitor = None
+    if device.monitors:
+        if len(device.monitors) > 1 and not device.monitors[0].probed:
+            monitor = device.monitors[1]
+        else:
+            monitor = device.monitors[0]
 
     screen = Screen(device, monitor)
     #screen.number = 0
-    screen.res = monitor.res[0]
+    if monitor:
+        screen.res = monitor.res[0]
     #screen.setup()
 
     config = XConfig()
