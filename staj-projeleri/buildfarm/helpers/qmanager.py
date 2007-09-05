@@ -50,9 +50,10 @@ class QueueManager:
             self.workQueue += self.waitQueue
             self.waitQueue = []
         else:
-            self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDependencies()
+            print self.waitQueue
+            self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolveDependencies()
 
-        self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDependencies()
+        self.workQueue = dependency.DependencyResolver(self.workQueue).resolveDependencies()
         self.__del__()
         
     def __del__(self):
