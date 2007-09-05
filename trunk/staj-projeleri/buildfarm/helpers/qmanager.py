@@ -36,29 +36,31 @@ class QueueManager:
     
     def __init__(self):
         
-        self.locks = {"waitQueue" : FileLock("%s/waitQueue.lock" % config.workDir),
-                      "workQueue" : FileLock("%s/workQueue.lock" % config.workDir),
-                      "build"     : FileLock("%s/build.lock" % config.workDir)}
+        self.locks = {"waitQueue" : FileLock("%s/.waitqueue.lock" % config.workDir),
+                      "workQueue" : FileLock("%s/.workqueue.lock" % config.workDir),
+                      "build"     : FileLock("%s/.build.lock" % config.workDir)}
         
         self.workQueue = []
         self.waitQueue = []
-
-        self.__deserialize__(self.workQueue, "workQueue")
-        self.__deserialize__(self.waitQueue, "waitQueue")
-
-        if len(self.waitQueue):
-            self.workQueue += self.waitQueue
-            self.waitQueue = []
-        else:
-            print self.waitQueue
-            self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolveDependencies()
-
-        self.workQueue = dependency.DependencyResolver(self.workQueue).resolveDependencies()
-        self.__del__()
+        
+        self.__checkQueues__()
         
     def __del__(self):
         self.__serialize__(self.waitQueue, "waitQueue")
         self.__serialize__(self.workQueue, "workQueue")
+        
+    def __checkQueues__(self):
+        # If waitQueue contains some packages, this method
+        # moves them to the workQueue and calls dependency resolver on it.
+        self.__deserialize__(self.workQueue, "workQueue")
+        self.__deserialize__(self.waitQueue, "waitQueue")
+        
+        if len(self.waitQueue):
+            self.workQueue += self.waitQueue
+            self.waitQueue = []
+            
+        self.workQueue = dependency.DependencyResolver(self.workQueue).resolveDependencies()
+        self.__del__()
 
     def __serialize__(self, queueName, fileName):
         self.locks[fileName].lock()
@@ -106,10 +108,10 @@ class QueueManager:
         # the lock and raise exception if unsuccessful.
         f = sys._getframe(depth)
         methodName = f.f_code.co_name
-        print methodName
         if methodName == "_dispatch":
             try:
                 self.locks["build"].lock(timeout=0)
+                print "brdaim"
                 return True
             except:
                 return False
@@ -125,12 +127,15 @@ class QueueManager:
         return self.waitQueue
 
     def removeFromWaitQueue(self, pspec):
+        if not self.__tryToLock__(2):
+            return 1
         self.__initWaitQueueFromFile__()
         if self.waitQueue.__contains__(pspec):
             self.waitQueue.remove(pspec)
             self.__serialize__(self.waitQueue, "waitQueue")
-            return True
-        return False
+            return 0
+        self.locks['build'].unlock()
+        return 2
 
     def removeFromWorkQueue(self, pspec):
         if not self.__tryToLock__(2):
@@ -139,9 +144,9 @@ class QueueManager:
         if self.workQueue.__contains__(pspec):
             self.workQueue.remove(pspec)
             self.__serialize__(self.workQueue, "workQueue")
-            self.locks['build'].unlock()
+            #self.locks['build'].unlock()
             return 0
-        self.locks['build'].unlock()
+        #self.locks['build'].unlock()
         return 2
 
     def appendToWorkQueue(self, pspec, checkIfExists=False):
@@ -175,11 +180,13 @@ class QueueManager:
         return False
 
     def transferToWorkQueue(self, pspec):
+        if not self.__tryToLock__(2):
+            return 1
         self.__initWaitQueueFromFile__()
         if self.waitQueue.__contains__(pspec) and self.appendToWorkQueue(pspec):
             self.removeFromWaitQueue(pspec)
             return 0
-        return 1
+        return 2
 
     def transferToWaitQueue(self, pspec):
         if not self.__tryToLock__(2):
@@ -224,6 +231,7 @@ class QueueManager:
         
         sys.excepthook = self.__handle_exception__
 
+        self.__checkQueues__()
         queue = shallowCopy(self.getWorkQueue())
     
         if len(queue) == 0:
@@ -285,9 +293,6 @@ class QueueManager:
     
         if self.getWaitQueue():
             # mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(self.getWaitQueue()))
-            self.workQueue += self.waitQueue
-            self.waitQueue = []
-            self.__del__()
             self.locks["build"].unlock()
             return 3
         else:
