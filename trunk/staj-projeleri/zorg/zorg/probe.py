@@ -275,7 +275,65 @@ def queryRandrOutputs(device):
             device.tvStandards = line.strip().rsplit(": ", 1)[1].split()
 
 def queryNvidiaOutputs(device):
-    pass
+    lines = xserverProbe(device)
+    if not lines:
+        return
+
+    device.tvStandards = [
+            "PAL-B",  "PAL-D",  "PAL-G",   "PAL-H",
+            "PAL-I",  "PAL-K1", "PAL-M",   "PAL-N",
+            "PAL-NC", "NTSC-J", "NTSC-M",  "HD480i",
+            "HD480p", "HD720p", "HD1080i", "HD1080p",
+            "HD576i", "HD576p"
+        ]
+
+    # This is for nvidia-old drivers
+    modeFormat = re.compile('.+ "(.+)": .+ MHz, .+ kHz, .+ Hz.*')
+    oldFormat = False
+
+    parsingModesFor = ""
+
+    for line in lines:
+        if "Supported display device(s): " in line:
+            outs = line.rsplit(":", 1)[-1].split(",")
+            for out in outs:
+                out = out.strip()
+                device.outputs[out] = []
+
+        elif "--- Modes in ModePool for " in line:
+            for key in device.outputs.keys():
+                if key in line:
+                    parsingModesFor = key
+                    break
+
+        elif "Validated modes for display device " in line:
+            oldFormat = True
+            for key in device.outputs.keys():
+                if key in line:
+                    parsingModesFor = key
+                    break
+
+        elif parsingModesFor:
+            if not oldFormat:
+                if "--- End of ModePool for " in line:
+                    parsingModesFor = ""
+                    continue
+
+                mode = line.split(":")[2].split("@", 1)[0].replace(" ", "")
+
+                if not mode in device.outputs[parsingModesFor]:
+                    device.outputs[parsingModesFor].append(mode)
+
+            else:
+                matched = modeFormat.match(line)
+                if matched:
+                    mode = matched.groups()[0]
+
+                    if not mode in device.outputs[parsingModesFor]:
+                        device.outputs[parsingModesFor].append(mode)
+
+                else:
+                    parsingModesFor = ""
 
 def queryFglrxOutputs(device):
     pass
