@@ -42,6 +42,7 @@ class SecureXMLRPCServer(SocketServer.ForkingMixIn,
     
     # "SocketServer.py" cleans the zombies just after a new connection request
     # This function overrides the SIGCHLD handler for immediate clean-up.
+    # FIXME: Breaks repomanager.py/updateRepositories() -> Errno 10
     def overrideHandler(self):
         def SIGCHLDHandler(signum,frame):
             # dummy wrapper for calling collect_children()
@@ -122,31 +123,41 @@ def runServer():
 
 if __name__ == "__main__":
     
-    ## Add stream redirections
-    #try:
-    #    pid = os.fork()
-    #    if pid > 0:
-    #        # Exit first parent
-    #        sys.exit(0)
-    #except OSError, e:
-    #    print >> sys.stderr, "fork() failed: %d (%s)" % (e.errno, e.strerror)
-    #    sys.exit(1)
-    #    
-    ## Decouple from parent environment
-    ##os.chdir("/")
-    #os.setsid()
-    #os.umask(0)
-    #
-    ## Do second fork
-    #try:
-    #    pid = os.fork()
-    #    if pid > 0:
-    #        # Exit from second parent
-    #        sys.exit(0)
-    #except OSError, e:
-    #    print >> sys.stderr, "fork() failed: %d (%s)" % (e.errno, e.strerror)
-    #    sys.exit(1)
-    #    
-    ## Start the daemon main loop
+    try:
+        pid = os.fork()
+        if pid > 0:
+            # Exit first parent
+            sys.exit(0)
+    except OSError, e:
+        print >> sys.stderr, "fork() failed: %d (%s)" % (e.errno, e.strerror)
+        sys.exit(1)
+        
+    # Decouple from parent environment
+    #os.chdir("/")
+    os.setsid()
+    os.umask(0)
+
+    # Do second fork
+    try:
+        pid = os.fork()
+        if pid > 0:
+            # Exit from second parent
+            sys.exit(0)
+    except OSError, e:
+        print >> sys.stderr, "fork() failed: %d (%s)" % (e.errno, e.strerror)
+        sys.exit(1)
     
+    # Close current standard stream fd's
+    os.close(sys.stdin.fileno())
+    os.close(sys.stdout.fileno())
+    os.close(sys.stderr.fileno())
+    
+    # 384 is the bitwise or of S_IRUSR and S_IWUSR 
+    out = os.open(config.daemonLog, os.O_WRONLY|os.O_CREAT|os.O_APPEND, 384)
+    
+    # Redirect stdout and stderr to daemon log file
+    os.dup2(out, sys.stdout.fileno())
+    os.dup2(out, sys.stderr.fileno())
+    
+    ## Start the daemon main loop
     runServer()
