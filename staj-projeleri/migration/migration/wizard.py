@@ -27,7 +27,7 @@ from gui.progresspage import ProgressPage
 
 # Utility Modules
 from utility import partition, info, files
-from applythread import ApplyThread
+import applythread
 
 class MigrationWizard(KWizard):
     "Modified KWizard for migration tool"
@@ -55,7 +55,7 @@ class MigrationWizard(KWizard):
         self.filespage = QWidget(self)
         self.addPage(self.filespage, i18n("Selecting Files"))
         # Progress page:
-        self.progresspage = ProgressPage(self)
+        self.progresspage = QWidget(self)
         self.addPage(self.progresspage, i18n("Applying Changes"))
         # Connections:
         self.connect(self.helpButton(), SIGNAL("clicked()"), self.slotHelp)
@@ -159,47 +159,11 @@ class MigrationWizard(KWizard):
             self.options = self.optionspage.getOptions()
             KWizard.next(self)
         elif self.currentPage() == self.filespage:
-            # Control if firefox is open:
-            KApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
-            if self.options.has_key("Firefox Profile Path") or self.options.has_key("Favorites Path"):
-                lockfile = os.path.join(self.destinations["Firefox Profile Path"], "lock")
-                if os.path.lexists(lockfile):
-                    KApplication.restoreOverrideCursor()
-                    QMessageBox.warning(self, i18n("Warning!"), i18n("Firefox is open. Please close it first to continue..."),
-                                        QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton)
-                    return
-            # Control files:
-            self.options.update(self.filespage.getOptions())
-            if self.options.has_key("folders"):
-                # Existance of directory:
-                if not os.path.isdir(self.options["copy destination"]):
-                    try:
-                        os.makedirs(self.options["copy destination"])
-                    except:
-                        KApplication.restoreOverrideCursor()
-                        QMessageBox.warning(self, i18n("Warning!"), unicode(i18n("Folder '%s' cannot be created, please choose another folder!")) % self.options["copy destination"], QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton)
-                        return
-                # Write access:
-                if not os.access(self.options["copy destination"], os.W_OK):
-                    KApplication.restoreOverrideCursor()
-                    QMessageBox.warning(self, i18n("Warning!"), unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % self.options["copy destination"], QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton)
-                    return
-                # File size:
-                totalsize = 0
-                for folder in self.options["folders"]:
-                    size = files.totalSize(folder["files"])
-                    folder["size"] = size
-                    totalsize += size
-                if totalsize:
-                    free = files.freeSpace(self.options["copy destination"])
-                    if totalsize >= free:
-                        KApplication.restoreOverrideCursor()
-                        arguments = {"size":totalsize / 1024 / 1024, "free":free / 1024 / 1024}
-                        QMessageBox.warning(self, i18n("Warning!"), unicode(i18n("Total size of files you've chosen is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton)
-                        return
-            KApplication.restoreOverrideCursor()
+            # Update old progress page with the new one:
+            self.removePage(self.progresspage)
+            self.progresspage = ProgressPage(self)
+            self.insertPage(self.progresspage, i18n("Applying Changes"), 3)
             # Apply:
-            self.applythread = ApplyThread(self)
-            thread.start_new_thread(self.applythread.run, ())
             self.setBackEnabled(self.progresspage, False)
+            thread.start_new_thread(applythread.run, (self,))
             KWizard.next(self)

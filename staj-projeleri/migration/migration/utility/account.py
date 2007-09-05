@@ -54,6 +54,8 @@ class Account:
                 folderpath = os.path.join(path, prefs["mail.server." + realserver + ".directory-rel"].replace("[ProfD]", ""))
                 # Add message boxes in this account:
                 def addFolders(name, path):
+                    if not os.path.isdir(path):
+                        return
                     for itemname in os.listdir(path):
                         itempath = os.path.join(path, itemname)
                         if os.path.splitext(itemname)[1] == ".msf" and os.path.isfile(itempath):
@@ -134,29 +136,6 @@ class Account:
             if accountdict:
                 self.accounts.append(accountdict)
     
-    def getSize(self):
-        totalsize = 0
-        for (name, path) in self.folders:
-            # is empty folder?
-            if not path:
-                continue
-            # is mbox file?
-            if os.path.isfile(path):
-                totalsize += os.path.getsize(path)
-            elif os.path.isdir(path):
-                # is OE folder?
-                if os.path.isfile(os.path.join(path, "winmail.fol")):
-                    for item in os.listdir(path):
-                        if os.path.splitext(item)[1] == ".eml":
-                            totalsize += os.path.getsize(os.path.join(path, item))
-                # is maildir folder?
-                elif os.path.isdir(os.path.join(path, "new")) and os.path.isdir(os.path.join(path, "cur")):
-                    for item in os.listdir(os.path.join(path, "new")):
-                        totalsize += os.path.getsize(os.path.join(path, "new", item))
-                    for item in os.listdir(os.path.join(path, "new")):
-                        totalsize += os.path.getsize(os.path.join(path, "new", item))
-        return totalsize
-    
     def getMSNAccounts(self, path):
         "Imports MSN accounts using windows users's 'Contacts' directory"
         files = os.listdir(path)
@@ -202,6 +181,7 @@ class Account:
                             value = getData(dom, fields[key])
                             if value:
                                 accountdict[key] = value
+                        accountdict["inbox"] = os.path.join(accountdict["name"], "Inbox")
                         # Add Account:
                         if accountdict:
                             self.accounts.append(accountdict)
@@ -292,10 +272,20 @@ class Account:
                 config.writeEntry("login", account["user"])
                 
                 # Set Inbox Folder:
-                #inbox = account.get("inbox", "inbox")
-                #inbox = KMailFolderName(inbox)
-                inbox = "inbox"
-                config.writeEntry("Folder", inbox)
+                inbox = account.get("inbox", "inbox")
+                folder = KMailFolderName(inbox)
+                config.writeEntry("Folder", folder)
+                # Create inbox if not exists:
+                folders = inbox.split("/")
+                for i in xrange(len(folders)):
+                    foldername = "/".join(folders[:(i + 1)])
+                    foldername = KMailFolderName(foldername)
+                    folderpath = os.path.expanduser("~/.kde/share/apps/kmail/mail/" + foldername)
+                    if not os.path.exists(folderpath):
+                        os.makedirs(folderpath)
+                        os.makedirs(os.path.join(folderpath, "cur"))
+                        os.makedirs(os.path.join(folderpath, "new"))
+                        os.makedirs(os.path.join(folderpath, "tmp"))
                 
                 if account.has_key("SSL") and account["SSL"]:
                     config.writeEntry("use-ssl", "true")
@@ -351,46 +341,62 @@ class Account:
                     config.writeEntry("port", account["port"])
             config.sync()
     
-    def addKMailMessages(self):
+    def addKMailMessages(self, progress=None):
         # Information message:
         infomessagepath = os.path.join(tempfile.gettempdir(), "temp_kmail_info.eml")
         message = "From:pardus@localhost\r\nSubject:%s\r\n\r\n%s" % (i18n("Migrated Folder"), i18n("This messagebox is migrated using Pardus Migration Tool"))
         messagefile = open(infomessagepath, "w")
         messagefile.write(message)
         messagefile.close()
-        # Create a dcop object:
-        client = DCOPClient()
-        if not client.attach():
-            raise Exception, "Message cannot be added"
-        kmail = DCOPObj("kmail", client, "KMailIface")
+        kmail = ConnectKMail()
         # Loop over folders:
         for (name, path) in self.folders[2:]:
-            print name
             # Add Info Message:
             #addMessage(name, infomessagepath, kmail)
             # Chech Message Box Type
             if os.path.isfile(path):
                 # Copy mbox:
                 box = mbox(path)
+                boxsize = os.path.getsize(path)
+                totalsize = 0
                 messagepath = box.next()
                 while messagepath:
                     try:
                         addMessage(name, messagepath, kmail)
-                    except Exception, text:
-                        print "Message '%s' cannot be migrated to '%s'\n  %s" % (messagepath, name, text)
+                    except DuplicateMessage, text:
+                        totalsize += os.path.getsize(messagepath)
+                        progress.go(None, progress.OK, os.path.getsize(messagepath))
+                    except DCOPError, text:
+                        progress.go(text, progress.WARNING, 0)
+                        kmail = ConnectKMail()
+                        continue
+                    except MailError, text:
+                        totalsize += os.path.getsize(messagepath)
+                        progress.go(text, progress.WARNING, os.path.getsize(messagepath))
+                    else:
+                        totalsize += os.path.getsize(messagepath)
+                        progress.go(None, progress.OK, os.path.getsize(messagepath))
                     messagepath = box.next()
-                    #break
+                progress.go(unicode(i18n("Message Box %s copied")) % name, progress.OK, boxsize - totalsize)
             elif os.path.isdir(path) and os.path.isfile(os.path.join(path, "winmail.fol")):
                 # Copy OE messagebox
                 box = oebox(path)
                 messagepath = box.next()
                 while messagepath:
                     try:
-                        print "mail.metu.edu.tr/Inbox", name, name == "mail.metu.edu.tr/Inbox"
                         addMessage(name, messagepath, kmail)
-                    except Exception, text:
-                        print "Message '%s' cannot be migrated to '%s'\n  %s" % (messagepath, name, text)
+                    except DuplicateMessage, text:
+                        progress.go(None, progress.OK, os.path.getsize(messagepath))
+                    except DCOPError, text:
+                        progress.go(text, progress.WARNING, 0)
+                        kmail = ConnectKMail()
+                        continue
+                    except MailError, text:
+                        progress.go(text, progress.WARNING, os.path.getsize(messagepath))
+                    else:
+                        progress.go(None, progress.OK, os.path.getsize(messagepath))
                     messagepath = box.next()
+                progress.go(unicode(i18n("Message Box %s copied")) % name, progress.OK, 0)
 
     
     def setKNodeAccounts(self):
@@ -420,6 +426,40 @@ class Account:
                     print "%15s : %s" % (key, account[key])
         for folder in self.folders:
             print "%30s : %s" % folder
+    
+    def accountSize(self, accounttypes=None):
+        "Size of accounts"
+        if not accounttypes:
+            return len(self.accounts) * 500
+        else:
+            number = 0
+            for account in self.accounts:
+                if account.get("type", None) in accounttypes:
+                    number += 1
+            return number * 500
+    
+    def mailSize(self):
+        totalsize = 0
+        for (name, path) in self.folders:
+            # is empty folder?
+            if not path:
+                continue
+            # is mbox file?
+            if os.path.isfile(path):
+                totalsize += os.path.getsize(path)
+            elif os.path.isdir(path):
+                # is OE folder?
+                if os.path.isfile(os.path.join(path, "winmail.fol")):
+                    for item in os.listdir(path):
+                        if os.path.splitext(item)[1] == ".eml":
+                            totalsize += os.path.getsize(os.path.join(path, item))
+                # is maildir folder?
+                elif os.path.isdir(os.path.join(path, "new")) and os.path.isdir(os.path.join(path, "cur")):
+                    for item in os.listdir(os.path.join(path, "new")):
+                        totalsize += os.path.getsize(os.path.join(path, "new", item))
+                    for item in os.listdir(os.path.join(path, "new")):
+                        totalsize += os.path.getsize(os.path.join(path, "new", item))
+        return totalsize
 
 
 def parsePrefs(filepath):
@@ -577,6 +617,18 @@ class oebox:
         return messagepath
 
 
+def ConnectKMail():
+    # Run KMail:
+    if not os.system("kmail") == 0:
+        raise Exception, "KMail cannot be started"
+    # Create a dcop object:
+    client = DCOPClient()
+    if not client.attach():
+        raise Exception, "Message cannot be added"
+    kmail = DCOPObj("kmail", client, "KMailIface")
+    return kmail
+
+
 def addMessage(folder, message, kmail=None):
     "Adds a message to kmail with dcop interface"
     if not kmail:
@@ -588,16 +640,27 @@ def addMessage(folder, message, kmail=None):
     # Add Message:
     ok, status = kmail.dcopAddMessage(str(folder), message, "")
     if not ok:
-        raise Exception, "Message cannot be added"
+        raise DCOPError, "Can not connect to kmail with DCOP"
     elif status == -4:
-        raise Exception, "Message cannot be added: duplicate message"
+        raise DuplicateMessage, "Message in %s cannot be added: duplicate message" % folder
     elif status == -2:
-        raise Exception, "Message cannot be added: cannot add message to folder"
+        raise MailError, "Message in %s cannot be added: cannot add message to folder" % folder
     elif status == -1:
-        raise Exception, "Message cannot be added: cannot make folder"
+        raise MailError, "Message in %s cannot be added: cannot make folder" % folder
     elif status == 0:
-        raise Exception, "Message cannot be added: error while adding message"
+        raise MailError, "Message in %s cannot be added: error while adding message" % folder
     elif status != 1:
-        raise Exception, "Message cannot be added, status: %d" % status
-    return True
+        raise MailError, "Message in %s cannot be added, status: %d" % (folder, status)
+    else:
+        return True
+
+
+class DCOPError(Exception):
+    pass
+
+class MailError(Exception):
+    pass
+
+class DuplicateMessage(Exception):
+    pass
 

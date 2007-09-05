@@ -10,7 +10,11 @@ Before 2007.3:
     ? migrate identities to kmail
     + Find a way to migrate e-mails (copy mbox file, use python mailbox module, use kmail dcop interface) -> get messages by hand and add them with dcop
     + Check SMTP Authentication Type (Thunderbird, OE, KMail)
-    - Find a pretty application name :)
+    + Copy e-mail messages
+    - Make package (where should i put archive file?)
+    - Remove bugs
+    - Update help file
+    - Find an application name and logo
 
 General:
     + User help pages
@@ -27,7 +31,10 @@ GUI Improvements:
 
 Possible New Modules:
     + IM Accounts
-    / E-Mail Accounts, Address Book, Messages, Filters
+    + E-Mail Accounts
+    + E-Mail Messages
+    - E-Mail Filters
+    - Address Books
     - RSS Feeds
     - Opera and Konqueror support with kbookmarks
     - Browser history, cookies and settings
