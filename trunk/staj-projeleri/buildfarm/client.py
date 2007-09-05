@@ -108,9 +108,9 @@ def client(op, **kwargs):
                      'remove'   : [_("Removed '%s' from %s queue!"),
                                    None,
                                    _("'%s' doesn't exist in the %s queue!")],
-                     'transfer' : [_("'%s' is successfully transferred to %s queue!"),
+                     'transfer' : [_("'%s' is successfully transferred!"),
                                    None,
-                                   _("'%s' doesn't exist in the %s queue!")]
+                                   _("'%s' doesn't exist in the source queue!")]
                     }
     
     funcString = None
@@ -185,7 +185,7 @@ def client(op, **kwargs):
             if retval == 1:
                print _("Buildfarm is busy!")
             else:
-                print returnStrings['transfer'][retval] % (pspec, cmd)
+                print returnStrings['transfer'][retval] % (pspec)
             
 if __name__ == "__main__":
 
