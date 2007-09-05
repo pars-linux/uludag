@@ -146,6 +146,10 @@ def queryDevice(dev):
     if not dev.driver:
         dev.driver = "vesa"
 
+    # If driver supports RandR 1.2, we will use a different probe method.
+    if dev.driver in randr12_drivers:
+        dev.randr12 = True
+
 def findVideoCards():
     """ Finds video cards. Result is a list of Device objects. """
     cards = []

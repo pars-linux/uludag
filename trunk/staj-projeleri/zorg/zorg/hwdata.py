@@ -3,6 +3,8 @@
 truecolor_cards = ["i810", "intel", "nv", "nvidia", "radeon", "fglrx"]
 lcd_drivers = ["nv", "nvidia", "ati", "via", "i810",
                "intel", "sis", "savage", "neomagic"]
+randr12_drivers = ["ati", "intel"]
+
 opengl_impl = {
     "fglrx"     : "ati",
     "nvidia"    : "nvidia"
@@ -73,7 +75,10 @@ class Device:
         self.vendorName = "Unknown Vendor"
         self.boardName = "Unknown Board"
 
+        self.outputs = {}
         self.monitors = []
+
+        self.randr12 = False
 
 class Monitor:
     def __init__(self):
