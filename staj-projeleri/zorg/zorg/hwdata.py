@@ -66,7 +66,6 @@ class Device:
         self.busId = busId
         self.vendorId = vendorId
         self.deviceId = deviceId
-        self.functionOf = None
 
         self.id = "%s:%s@%s" % (self.vendorId, self.deviceId, self.busId)
 

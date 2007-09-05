@@ -115,9 +115,6 @@ def queryPCI(vendor, device):
 def queryDevice(dev):
     dev.vendorName, dev.boardName = queryPCI(dev.vendorId, dev.deviceId)
 
-    if dev.functionOf:
-        dev.driver = dev.functionOf.driver
-
     if not dev.driver:
         availableDrivers = listAvailableDrivers()
 
