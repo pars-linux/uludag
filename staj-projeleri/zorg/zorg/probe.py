@@ -221,6 +221,48 @@ def getPrimaryBus():
 
     return primaryBus
 
+def queryOutputs(device):
+    if device.randr12:
+        queryRandrOutputs(device)
+    elif device.driver == "nvidia":
+        queryNvidiaOutputs(device)
+    elif device.driver == "fglrx":
+        queryFglrxOutputs(device)
+    else:
+        device.monitors = findMonitors(device, 0, 1)
+
+def queryRandrOutputs(device):
+    pass
+
+def queryNvidiaOutputs(device):
+    pass
+
+def queryFglrxOutputs(device):
+    pass
+
+def xserverProbe(card):
+    p = XorgParser()
+    sec = XorgSection("Device")
+    sec.set("Identifier", "Card0")
+    sec.set("Driver", card.driver)
+    sec.set("BusId", card.busId)
+    p.sections.append(sec)
+
+    sec = XorgSection("Screen")
+    sec.set("Identifier", "Screen0")
+    sec.set("Device", "Card0")
+    p.sections.append(sec)
+
+    open("/tmp/xorg.conf", "w").write(p.toString())
+
+    ret = run("/usr/bin/X", ":99", "-probeonly", "-allowMouseOpenFail", \
+            "-config", "/tmp/xorg.conf", \
+            "-logfile", "/var/log/xlog")
+    if ret != 0:
+        return
+
+    return file("/var/log/xlog").readlines()
+
 def queryDDC(adapter=0):
     mon = Monitor()
 
