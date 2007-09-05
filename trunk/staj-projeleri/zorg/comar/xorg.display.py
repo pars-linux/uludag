@@ -14,6 +14,7 @@ def autoConfigure():
 
     for dev in devices:
         queryDevice(dev)
+        queryOutputs(dev)
 
     monitor = None
     if device.monitors:
