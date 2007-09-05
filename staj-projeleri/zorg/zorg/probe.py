@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import re
 import struct
 
 from zorg.hwdata import *
@@ -232,7 +233,44 @@ def queryOutputs(device):
         device.monitors = findMonitors(device, 0, 1)
 
 def queryRandrOutputs(device):
-    pass
+    lines = xserverProbe(device)
+    if not lines:
+        return
+
+    findOutput = re.compile("^.*: Output (\S+) (.*)$")
+    outStates = ("connected", "disconnected", "enabled by config file")
+
+    parsingModesFor = ""
+
+    for line in lines:
+        if "Output" in line:
+            matched = findOutput.match(line)
+            if matched:
+                name, state = matched.groups()
+                if device.outputs.has_key(name) or not state in outStates:
+                    continue
+                else:
+                    device.outputs[name] = []
+
+        elif "Printing probed modes for output" in line:
+            name = line.rsplit(None, 1)[-1]
+            if device.outputs.has_key(name) and not device.outputs[name]:
+                parsingModesFor = name
+
+        elif parsingModesFor:
+            fields = line.split()
+            if "Modeline" in fields:
+                modeWithRate = fields[fields.index("Modeline") + 1]
+                mode, rate = modeWithRate.rsplit("x", 1)
+                mode = mode.strip('"')
+
+                if not mode in device.outputs[parsingModesFor]:
+                    device.outputs[parsingModesFor].append(mode)
+            else:
+                parsingModesFor = ""
+
+        elif "TV standards supported by chip:" in line:
+            device.tvStandards = line.strip().rsplit(": ", 1)[1].split()
 
 def queryNvidiaOutputs(device):
     pass
