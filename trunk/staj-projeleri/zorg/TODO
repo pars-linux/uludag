@@ -13,14 +13,12 @@ Legend:
  - configuration setup on boot
    - check config files
    - check hardware changes
-   - Intel BIOS fix if needed
    - read kernel options (xorg=...)
    - force auto-probe if requested (e.g. with an option from GUI)
    ? compatibility check between kernel and xorg driver versions (e.g. nvidia-kernel and nvidia-glx issue)
 
  - method access attributes
  - i18n support
- ? distinguish boot and service initialization (after boot we should be able to start X even if xorg=off passed)
  - DPI setup
  - INF file installation
  - method to test server
@@ -31,12 +29,9 @@ Modules:
  - setup opengl headers
  - try to get preferred resolution and use it by default
  - parser to get monitor vendor/model list
- - find next available display number (:0, :1, ...)
  - expand vendor name from EISA ID (e.g. SAM0101 -> Samsung)
- ? some wrappers for python-xlib module (for applying changes on the fly)
 
 Command Line Tool:
- - Intel BIOS fix support
  - test option
  ? DPI selection
  ? Xorg log file verbosity selection
