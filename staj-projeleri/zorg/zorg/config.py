@@ -309,6 +309,11 @@ class ZorgConfig:
             if monitor:
                 card.monitors.append(monitor)
 
+        outputsTag = tag.getTag("Outputs")
+        for output in outputsTag.tags("Output"):
+            out = output.firstChild().data()
+            card.outputs[out] = []
+
         return card
 
     def __getMonitor(self, tag):
@@ -372,6 +377,10 @@ class ZorgConfig:
         mons = tag.insertTag("Monitors")
         for mon in card.monitors:
             addTag(mons, "Monitor", mon.id)
+
+        outs = tag.insertTag("Outputs")
+        for out in card.outputs.keys():
+            addTag(outs, "Output", out)
 
     def monitors(self):
         monitorList = []
