@@ -49,10 +49,12 @@ def send(message, pspec = "", type = ""):
         recipientsEmail.append(specFile.source.packager.email)
 
     templates = {"error": tmpl.error_message,
-                 "info" : tmpl.info_message}
+                 "info" : tmpl.info_message,
+                 "sync" : tmpl.sync_message}
 
     packagename=os.path.basename(os.path.dirname(pspec))
     last_log = "".join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
+    
     message = templates.get(type) % {'log'      : wrap(last_log),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
@@ -63,6 +65,8 @@ def send(message, pspec = "", type = ""):
                                  'pspec'        : pspec,
                                  'type'         : type,
                                  'packagename'  : packagename}
+    
+    print message
 
     # timeout value in seconds
     socket.setdefaulttimeout(10)
@@ -87,3 +91,6 @@ def error(message, pspec):
 
 def info(message):
     send(message, type = "info")
+    
+def sync(message):
+    send(message, type = "sync")
