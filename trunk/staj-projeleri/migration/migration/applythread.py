@@ -16,6 +16,8 @@ from kdeui import *
 
 # General Modules
 import os
+import thread
+import time
 
 # Special Modules
 import utility.wall
@@ -24,122 +26,248 @@ from utility.bookmark import Bookmark
 from utility.account import Account
 from gui.progresspage import ProgressPage
 
-class ApplyThread:
-    "responsible for applying selected options and updating progress page in a thread"
-    def __init__(self, wizard):
-        self._wizard = wizard
+def run(wizard):
+    # Set First Progress Bar Steps:
+    if wizard.options.has_key("Wallpaper Path"):
+        wizard.progresspage.addProgress(3, 1)
+    if wizard.options.has_key("Firefox Profile Path"):
+        wizard.progresspage.addProgress(10, 1)
+    if wizard.options.has_key("Favorites Path"):
+        wizard.progresspage.addProgress(10, 1)
+    if wizard.options.has_key("GTalk Key"):
+        wizard.progresspage.addProgress(5, 1)
+    if wizard.options.has_key("Contacts Path"):
+        wizard.progresspage.addProgress(5, 1)
+    if wizard.options.has_key("Thunderbird Profile Path"):
+        wizard.progresspage.addProgress(15, 1)
+    if wizard.options.has_key("Windows Mail Path"):
+        wizard.progresspage.addProgress(15, 1)
+    if wizard.options.has_key("links"):
+        wizard.progresspage.addProgress(3, 1)
+    if wizard.options.has_key("folders"):
+        wizard.progresspage.addProgress(20, 1)
     
-    def run(self):
-        self.prepare()
-        # Wallpaper:
-        if self._wizard.options.has_key("Wallpaper Path"):
-            size = os.path.getsize(self._wizard.options["Wallpaper Path"])
-            try:
-                utility.wall.setWallpaper(self._wizard.options["Wallpaper Path"])
-            except Exception, err:
-                self._wizard.progresspage.go(err, self._wizard.progresspage.ERROR, size)
-            else:
-                self._wizard.progresspage.go(i18n("Wallpaper changed."), self._wizard.progresspage.OK, size)
-        # Bookmarks:
-        if self._wizard.options.has_key("Firefox Profiles Path") or self._wizard.options.has_key("Favorites Path"):
-            bm = utility.bookmark.Bookmark()
-            if self._wizard.options.has_key("Firefox Profile Path"):
-                try:
-                    bm.getFFBookmarks(self._wizard.options["Firefox Profile Path"])
-                except:
-                    self._wizard.progresspage.go(i18n("Firefox bookmarks cannot be loaded."), self._wizard.progresspage.WARNING, 0)
-                else:
-                    self._wizard.progresspage.go(i18n("Firefox bookmarks loaded."), self._wizard.progresspage.OK, 0)
-            if self._wizard.options.has_key("Favorites Path"):
-                try:
-                    bm.getIEBookmarks(self._wizard.options["Favorites Path"])
-                except:
-                    self._wizard.progresspage.go(i18n("Internet Explorer favorites cannot be loaded."), self._wizard.progresspage.WARNING, 0)
-                else:
-                    self._wizard.progresspage.go(i18n("Internet Explorer favorites loaded."), self._wizard.progresspage.OK, 0)
-            try:
-                bm.setFFBookmarks(self._wizard.destinations["Firefox Profile Path"])
-            except Exception, err:
-                self._wizard.progresspage.go(err, self._wizard.progresspage.ERROR, 1000)
-            else:
-                self._wizard.progresspage.go(i18n("Bookmarks saved."), self._wizard.progresspage.OK, 1000)
-        # Accounts:
-        if self._wizard.options.has_key("GTalk Key") or self._wizard.options.has_key("Contacts Path") or self._wizard.options.has_key("Thunderbird Profile Path") or self._wizard.options.has_key("Windows Mail Path"):
-            account = Account()
-            # Windows Mail Accounts:
-            if self._wizard.options.has_key("Windows Mail Path"):
-                try:
-                    account.getOEAccounts(self._wizard.options["Windows Mail Path"])
-                except:
-                    self._wizard.progresspage.go(i18n("Windows Mail accounts cannot be loaded."), self._wizard.progresspage.WARNING, 0)
-                else:
-                    self._wizard.progresspage.go(i18n("Windows Mail accounts loaded."), self._wizard.progresspage.OK, 0)
-            # Thunderbird Accounts:
-            if self._wizard.options.has_key("Thunderbird Profile Path"):
-                try:
-                    account.getTBAccounts(self._wizard.options["Thunderbird Profile Path"])
-                except:
-                    self._wizard.progresspage.go(i18n("Thunderbird accounts cannot be loaded."), self._wizard.progresspage.WARNING, 0)
-                else:
-                    self._wizard.progresspage.go(i18n("Thunderbird accounts loaded."), self._wizard.progresspage.OK, 0)
-            # MSN Messenger Accounts:
-            if self._wizard.options.has_key("Contacts Path"):
-                try:
-                    account.getMSNAccounts(self._wizard.options["Contacts Path"])
-                except:
-                    self._wizard.progresspage.go(i18n("MSN accounts cannot be loaded."), self._wizard.progresspage.WARNING, 0)
-                else:
-                    self._wizard.progresspage.go(i18n("MSN accounts loaded."), self._wizard.progresspage.OK, 0)
-            # GTalk Accounts:
-            if self._wizard.options.has_key("GTalk Key"):
-                try:
-                    account.getGTalkAccounts(self._wizard.options["GTalk Key"])
-                except:
-                    self._wizard.progresspage.go(i18n("GTalk accounts cannot be loaded."), self._wizard.progresspage.WARNING, 0)
-                else:
-                    self._wizard.progresspage.go(i18n("GTalk accounts loaded."), self._wizard.progresspage.OK, 0)
-            try:
-                account.yaz()
-                print account.getSize()
-                account.setKopeteAccounts()
-                account.setKMailAccounts()
-                account.setKNodeAccounts()
-            except Exception, err:
-                self._wizard.progresspage.go(err, self._wizard.progresspage.ERROR, 1000)
-            else:
-                self._wizard.progresspage.go(i18n("Accounts saved."), self._wizard.progresspage.OK, 1000)
-        # Links:
-        if self._wizard.options.has_key("links"):
-            links = self._wizard.options["links"]
-            for link in links:
-                utility.files.createLink(link)
-                self._wizard.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], self._wizard.progresspage.OK, 1000)
-        # Folders:
-        if self._wizard.options.has_key("folders"):
-            folders = self._wizard.options["folders"]
-            for folder in folders:
-                foldername = os.path.join(self._wizard.options["copy destination"], folder["localname"])
-                utility.files.copyFolder(folder, self._wizard.options["copy destination"], self._wizard.progresspage)
-        # The end:
-        if self._wizard.progresspage.progressbar.progress() == 0:
-            self._wizard.progresspage.label.setText(i18n("Nothing done, because no option selected. You can close the wizard..."))
-        elif self._wizard.progresspage.warning:
-            self._wizard.progresspage.label.setText(i18n("All operations completed. You can close the wizard..."))
+    
+    # Initialization:
+    account = Account()
+    bookmark = Bookmark()
+    
+    
+    # Control Settings and Set Second Progress Bar:
+    # Wallpaper:
+    if wizard.options.has_key("Wallpaper Path"):
+        size = os.path.getsize(wizard.options["Wallpaper Path"])
+        wizard.progresspage.addOperation(i18n("Wallpaper"), size)
+        wizard.progresspage.makeProgress(3)
+    # Firefox:
+    if wizard.options.has_key("Firefox Profile Path"):
+        try:
+            bookmark.getFFBookmarks(wizard.options["Firefox Profile Path"])
+        except:
+            print i18n("WARNING:"), i18n("Firefox bookmarks cannot be loaded.")
         else:
-            self._wizard.progresspage.label.setText(i18n("All operations completed. You can close the wizard..."))
-        self._wizard.setFinishEnabled(self._wizard.progresspage, True)
+            print i18n("OK:"), i18n("Firefox bookmarks loaded.")
+        wizard.progresspage.makeProgress(10)
+    # Internet Explorer:
+    if wizard.options.has_key("Favorites Path"):
+        try:
+            bookmark.getIEBookmarks(wizard.options["Favorites Path"])
+        except:
+            print i18n("WARNING:"), i18n("Internet Explorer favorites cannot be loaded.")
+        else:
+            print i18n("OK:"), i18n("Internet Explorer favorites loaded.")
+        wizard.progresspage.makeProgress(10)
+    # Bookmarks:
+    size = bookmark.size()
+    if size > 0:
+        lockfile = os.path.join(wizard.destinations["Firefox Profile Path"], "lock")
+        while os.path.lexists(lockfile):
+            if warning(wizard, i18n("Firefox is open. Please close it first to continue...")) == 2:
+                wizard.back()
+                return
+        wizard.progresspage.addOperation(i18n("Bookmarks"), size)
+    # Windows Mail:
+    if wizard.options.has_key("Windows Mail Path"):
+        try:
+            account.getOEAccounts(wizard.options["Windows Mail Path"])
+        except:
+            print i18n("WARNING:"), i18n("Windows Mail accounts cannot be loaded.")
+        else:
+            print i18n("OK:"), i18n("Windows Mail accounts loaded.")
+        wizard.progresspage.makeProgress(15)
+    # Thunderbird:
+    if wizard.options.has_key("Thunderbird Profile Path"):
+        try:
+            account.getTBAccounts(wizard.options["Thunderbird Profile Path"])
+        except:
+            print i18n("WARNING:"), i18n("Thunderbird accounts cannot be loaded.")
+        else:
+            print i18n("OK:"), i18n("Thunderbird accounts loaded.")
+        wizard.progresspage.makeProgress(15)
+    # MSN Messenger Accounts:
+    if wizard.options.has_key("Contacts Path"):
+        try:
+            account.getMSNAccounts(wizard.options["Contacts Path"])
+        except:
+            print i18n("WARNING:"), i18n("MSN accounts cannot be loaded.")
+        else:
+            print i18n("OK:"), i18n("MSN accounts loaded.")
+        wizard.progresspage.makeProgress(5)
+    # GTalk Accounts:
+    if wizard.options.has_key("GTalk Key"):
+        try:
+            account.getGTalkAccounts(wizard.options["GTalk Key"])
+        except:
+            print i18n("WARNING:"), i18n("GTalk accounts cannot be loaded.")
+        else:
+            print i18n("OK:"), i18n("GTalk accounts loaded.")
+        wizard.progresspage.makeProgress(5)
+    # Mail Accounts:
+    size = account.accountSize(["POP3", "IMAP", "SMTP"])
+    if size > 0:
+        # TODO: Control KMail to be closed
+        wizard.progresspage.addOperation(i18n("E-Mail Accounts"), size)
+    # E-Mails:
+    if wizard.options.has_key("Copy E-Mails"):
+        size = account.mailSize()
+        if size > 0:
+            wizard.progresspage.addOperation(i18n("E-Mail Messages"), size)
+    # News Accounts:
+    size = account.accountSize(["NNTP"])
+    if size > 0:
+        # TODO: Control KNode to be closed
+        wizard.progresspage.addOperation(i18n("News Accounts"), size)
+    # IM Accounts:
+    size = account.accountSize(["Jabber", "MSN"])
+    if size > 0:
+        # TODO: Control Kopete to be closed
+        wizard.progresspage.addOperation(i18n("Instant Messenger Accounts"), size)
+    # Files:
+    wizard.options.update(wizard.filespage.getOptions())
+    if wizard.options.has_key("links"):
+        wizard.progresspage.makeProgress(3)
+        wizard.progresspage.addOperation(i18n("Desktop Links"), len(wizard.options["links"]) * 1000)
+    if wizard.options.has_key("folders"):
+        # Existance of directory:
+        if not os.path.isdir(wizard.options["copy destination"]):
+            try:
+                os.makedirs(wizard.options["copy destination"])
+            except:
+                warning(wizard, unicode(i18n("Folder '%s' cannot be created, please choose another folder!")) % wizard.options["copy destination"])
+                wizard.back()
+                return
+        # Write access:
+        if not os.access(wizard.options["copy destination"], os.W_OK):
+            warning(wizard, unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % wizard.options["copy destination"])
+            wizard.back()
+            return
+        # File size:
+        for folder in wizard.options["folders"]:
+            size = utility.files.totalSize(folder["files"])
+            wizard.progresspage.addOperation(folder["localname"], size)
+        wizard.progresspage.makeProgress(20)
+    # Control total size
+    free = utility.files.freeSpace(os.path.expanduser("~"))
+    if wizard.progresspage.steps2 > free:
+        arguments = {"size":wizard.progresspage.steps2 / 1024 / 1024, "free":free / 1024 / 1024}
+        warning(wizard,unicode(i18n("Total size of files you've chosen is %(size)d MB, but you have only %(free)d MB of free space!")) % arguments)
+        wizard.back()
+        return
     
-    def prepare(self):
-        # Add items:
-        if self._wizard.options.has_key("Wallpaper Path"):
-            self._wizard.progresspage.addOperation(i18n("Wallpaper"), os.path.getsize(self._wizard.options["Wallpaper Path"]))
-        if self._wizard.options.has_key("Firefox Profile Path") or self._wizard.options.has_key("Favorites Path"):
-            self._wizard.progresspage.addOperation(i18n("Bookmarks"), 1000)
-        if self._wizard.options.has_key("GTalk Key") or self._wizard.options.has_key("Contacts Path") or self._wizard.options.has_key("Thunderbird Profile Path") or self._wizard.options.has_key("Windows Mail Path"):
-            self._wizard.progresspage.addOperation(i18n("Accounts"), 1000)
-        if self._wizard.options.has_key("links"):
-            self._wizard.progresspage.addOperation(i18n("Links"), len(self._wizard.options["links"]) * 1000)
-        if self._wizard.options.has_key("folders"):
-            folders = self._wizard.options["folders"]
-            for folder in folders:
-                self._wizard.progresspage.addOperation(folder["localname"], folder["size"])
+    
+    # Applying Changes:
+    # Wallpaper:
+    if wizard.options.has_key("Wallpaper Path"):
+        size = os.path.getsize(wizard.options["Wallpaper Path"])
+        try:
+            utility.wall.setWallpaper(wizard.options["Wallpaper Path"])
+        except Exception, err:
+            wizard.progresspage.go(err, wizard.progresspage.ERROR, size)
+        else:
+            wizard.progresspage.go(i18n("Wallpaper changed."), wizard.progresspage.OK, size)
+    # Bookmarks:
+    size = bookmark.size()
+    if size > 0:
+        try:
+            bookmark.setFFBookmarks(wizard.destinations["Firefox Profile Path"])
+        except Exception, err:
+            wizard.progresspage.go(err, wizard.progresspage.ERROR, size)
+        else:
+            wizard.progresspage.go(i18n("Bookmarks saved."), wizard.progresspage.OK, size)
+    # Mail Accounts:
+    size = account.accountSize(["POP3", "IMAP", "SMTP"])
+    if size > 0:
+        try:
+            account.setKMailAccounts()
+        except Exception, err:
+            wizard.progresspage.go(err, wizard.progresspage.ERROR, size)
+        else:
+            wizard.progresspage.go(i18n("Mail Accounts saved."), wizard.progresspage.OK, size)
+    # E-Mails:
+    if wizard.options.has_key("Copy E-Mails"):
+        size = account.mailSize()
+        if size > 0:
+            try:
+                account.addKMailMessages(wizard.progresspage)
+            except Exception, err:
+                wizard.progresspage.go(err, wizard.progresspage.ERROR, size)
+            else:
+                wizard.progresspage.go(i18n("Accounts saved."), wizard.progresspage.OK, 0)
+    # News Accounts:
+    size = account.accountSize(["NNTP"])
+    if size > 0:
+        try:
+            account.setKNodeAccounts()
+        except Exception, err:
+            wizard.progresspage.go(err, wizard.progresspage.ERROR, size)
+        else:
+            wizard.progresspage.go(i18n("News Accounts saved."), wizard.progresspage.OK, size)
+    # IM Accounts:
+    size = account.accountSize(["Jabber", "MSN"])
+    if size > 0:
+        try:
+            account.setKopeteAccounts()
+        except Exception, err:
+            wizard.progresspage.go(err, wizard.progresspage.ERROR, size)
+        else:
+            wizard.progresspage.go(i18n("Instant Messenger Accounts saved."), wizard.progresspage.OK, size)
+    # Links:
+    if wizard.options.has_key("links"):
+        links = wizard.options["links"]
+        for link in links:
+            utility.files.createLink(link)
+            wizard.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], wizard.progresspage.OK, 1000)
+    # Folders:
+    if wizard.options.has_key("folders"):
+        folders = wizard.options["folders"]
+        for folder in folders:
+            foldername = os.path.join(wizard.options["copy destination"], folder["localname"])
+            utility.files.copyFolder(folder, wizard.options["copy destination"], wizard.progresspage)
+    
+    
+    # The end:
+    if wizard.progresspage.progressbar2.progress() == 0:
+        wizard.progresspage.label.setText(i18n("Nothing done, because no option selected. You can close the wizard..."))
+    else:
+        wizard.progresspage.label.setText(i18n("All operations completed. You can close the wizard..."))
+    wizard.setFinishEnabled(wizard.progresspage, True)
+
+
+def warning(wizard, message):
+    "Shows a warning box and waits until box closes. This method should be used to become thread-safe"
+    wizard.progresspage.warning = None
+    event = WarningEvent(message)
+    QApplication.postEvent(wizard.progresspage, event)
+    # Wait until messagebox returns
+    while wizard.progresspage.warning == None:
+        time.sleep(0.2)
+    return wizard.progresspage.warning
+
+
+class WarningEvent(QCustomEvent):
+    def __init__(self, message):
+        QCustomEvent.__init__(self, 65456)
+        self.message = message
+    def getMessage(self):
+        return message
+

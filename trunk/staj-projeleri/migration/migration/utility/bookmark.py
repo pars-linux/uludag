@@ -117,6 +117,9 @@ class Bookmark:
         data = self.document.toprettyxml()
         xmlfile.write(data)
         xmlfile.close()
+    
+    def size(self):
+        return len(self.document.getElementsByTagName("bookmark")) * 200
         
 class FFBookmarkParser(HTMLParser.HTMLParser):
     def __init__(self, document):

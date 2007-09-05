@@ -83,37 +83,49 @@ class OptionsPage(QWidget):
                 self.IEBookmarks.setText(i18n("Internet Explorer favorites"))
                 self.IEBookmarks.setChecked(True)
                 self.BookmarksLayout.addWidget(self.IEBookmarks)
-        # Accounts:
-        if sources.has_key("Windows Mail Path") or sources.has_key("Thunderbird Profile Path") or sources.has_key("Contacts Path") or sources.has_key("GTalk Key"):
-            self.Accounts = QGroupBox(self, "Accounts")
-            self.Accounts.setTitle(i18n("Accounts"))
-            self.Accounts.setColumnLayout(0, Qt.Vertical)
-            self.AccountsLayout = QVBoxLayout(self.Accounts.layout())
-            self.lay.addWidget(self.Accounts)
+        # Mail Accounts:
+        if sources.has_key("Windows Mail Path") or sources.has_key("Thunderbird Profile Path"):
+            self.MailAccounts = QGroupBox(self, "MailAccounts")
+            self.MailAccounts.setTitle(i18n("E-Mail and News Accounts"))
+            self.MailAccounts.setColumnLayout(0, Qt.Vertical)
+            self.MailAccountsLayout = QVBoxLayout(self.MailAccounts.layout())
+            self.lay.addWidget(self.MailAccounts)
             # Windows Mail Accounts:
             if sources.has_key("Windows Mail Path"):
-                self.WinMail = QCheckBox(self.Accounts, "WinMail")
-                self.WinMail.setText(i18n("Windows Mail Accounts"))
+                self.WinMail = QCheckBox(self.MailAccounts, "WinMail")
+                self.WinMail.setText(i18n("Windows Mail accounts"))
                 self.WinMail.setChecked(True)
-                self.AccountsLayout.addWidget(self.WinMail)
+                self.MailAccountsLayout.addWidget(self.WinMail)
             # Thunderbird Accounts:
             if sources.has_key("Thunderbird Profile Path"):
-                self.TB = QCheckBox(self.Accounts, "TB")
-                self.TB.setText(i18n("Thunderbird Accounts"))
+                self.TB = QCheckBox(self.MailAccounts, "TB")
+                self.TB.setText(i18n("Thunderbird accounts"))
                 self.TB.setChecked(True)
-                self.AccountsLayout.addWidget(self.TB)
+                self.MailAccountsLayout.addWidget(self.TB)
+            # E-Mails:
+            self.mail = QCheckBox(self.MailAccounts, "mail")
+            self.mail.setText(i18n("Copy e-mail messages from e-mail accounts"))
+            self.mail.setChecked(True)
+            self.MailAccountsLayout.addWidget(self.mail)
+        # IM Accounts:
+        if sources.has_key("Contacts Path") or sources.has_key("GTalk Key"):
+            self.IMAccounts = QGroupBox(self, "IMAccounts")
+            self.IMAccounts.setTitle(i18n("Instant Messenger Accounts"))
+            self.IMAccounts.setColumnLayout(0, Qt.Vertical)
+            self.IMAccountsLayout = QVBoxLayout(self.IMAccounts.layout())
+            self.lay.addWidget(self.IMAccounts)
             # MSN Accounts:
             if sources.has_key("Contacts Path"):
-                self.MSN = QCheckBox(self.Accounts, "MSN")
-                self.MSN.setText(i18n("MSN Accounts"))
+                self.MSN = QCheckBox(self.IMAccounts, "MSN")
+                self.MSN.setText(i18n("MSN accounts"))
                 self.MSN.setChecked(True)
-                self.AccountsLayout.addWidget(self.MSN)
+                self.IMAccountsLayout.addWidget(self.MSN)
             # GTalk Accounts:
             if sources.has_key("GTalk Key"):
-                self.GTalk = QCheckBox(self.Accounts, "GTalk")
-                self.GTalk.setText(i18n("GTalk Accounts"))
+                self.GTalk = QCheckBox(self.IMAccounts, "GTalk")
+                self.GTalk.setText(i18n("GTalk accounts"))
                 self.GTalk.setChecked(True)
-                self.AccountsLayout.addWidget(self.GTalk)
+                self.IMAccountsLayout.addWidget(self.GTalk)
         # Spacer:
         spacer = QSpacerItem(1,1,QSizePolicy.Minimum,QSizePolicy.Expanding)
         self.lay.addItem(spacer)
@@ -121,6 +133,7 @@ class OptionsPage(QWidget):
     def getOptions(self):
         "Returns a dictionary consists of selected options"
         options = {}
+        self.sources["Copy E-Mails"] = True
         # Add fundamental items:
         for item in ["Partition", "OS Type", "User Name", "Home Path"]:
             options[item] = self.sources[item]
@@ -128,9 +141,10 @@ class OptionsPage(QWidget):
         items = [("IEBookmarks", "Favorites Path"),
                  ("FFBookmarks", "Firefox Profile Path"),
                  ("oldRadio", "Wallpaper Path"),
-                 ("GTalk", "GTalk Key"),
                  ("WinMail", "Windows Mail Path"),
                  ("TB", "Thunderbird Profile Path"),
+                 ("mail", "Copy E-Mails"),
+                 ("GTalk", "GTalk Key"),
                  ("MSN", "Contacts Path")]
         for widgetname, dictname in items:
             item = self.child(widgetname)

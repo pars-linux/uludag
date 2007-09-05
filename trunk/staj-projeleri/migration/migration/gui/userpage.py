@@ -27,7 +27,7 @@ class UserPage(QWidget):
         lay.addWidget(self.paragraph1)
         # Paragraph 2:
         self.paragraph2 = QLabel(self,"paragraph2")
-        self.paragraph2.setText(i18n("After selecting user, you will be able to copy e-mail accounts, address books, e-mails, instant messenger accounts, bookmarks, cookies, background images and files to Pardus. Please choose the user and click \"next\" to continue..."))
+        self.paragraph2.setText(i18n("After selecting user, you will be able to copy wallpaper, bookmarks, e-mail accounts, e-mail messages, news accounts, instant messenger accounts and files to Pardus. Please choose the user and click \"next\" to continue..."))
         self.paragraph2.setAlignment(QLabel.WordBreak | QLabel.AlignVCenter)
         lay.addWidget(self.paragraph2)
         # Users Box:
