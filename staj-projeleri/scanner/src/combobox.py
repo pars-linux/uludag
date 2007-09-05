@@ -10,16 +10,19 @@ class ComboBox(QHBox):
     #        self.insertItem(repr(c))
     #    self.connect(self,SIGNAL("activated(int)"),self.activatedAction)
         
-    def __init__(self,rw,parent,name,option,device):
+    def __init__(self,title,rw,parent,name,option=None,device=None):
         QHBox.__init__(self,parent,name)
-        
-        self.label = QLabel(option.title,self,option.title)
+
+        self.label = QLabel(title,self,title)
         self.comboBox = QComboBox(rw,self,name)
         self.option = option
         self.device = device
-        for c in self.option.constraint:
-            self.comboBox.insertItem(repr(c))
-        self.updateState()
+        if self.option == None:
+            self.setEnabled(False)
+        else:
+            for c in self.option.constraint:
+                self.comboBox.insertItem(repr(c))
+            self.updateState()
         self.connect(self.comboBox,SIGNAL("activated(int)"),self.activatedAction)    
     
     def activatedAction(self,i):

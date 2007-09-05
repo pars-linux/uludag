@@ -5,6 +5,8 @@ import sane
 from labeledline import *
 from option import *
 from optionsthread import *
+from combobox import *
+
 
 class Options(QWidget):
     def __init__(self,parent):
@@ -21,15 +23,14 @@ class Options(QWidget):
         self.tabWidget.setMaximumSize(QSize(350,32767))
         self.hLayout.addWidget(self.tabWidget)
         
-        self.tab = QScrollView(self.tabWidget,"scrollView")
-        self.tabViewport = QWidget(self.tab.viewport(),"tab")
+        self.advancedTab = QScrollView(self.tabWidget,"scrollView")
+        self.tabViewport = QWidget(self.advancedTab.viewport(),"advancedTab")
         self.tabViewport.setMinimumWidth(328);
-        #self.tabViewport.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding,0,0,self.tabWidget.sizePolicy().hasHeightForWidth()))
-        self.tab.viewport().setPaletteBackgroundColor(self.tabViewport.paletteBackgroundColor())
-        self.tab.viewport().setPaletteForegroundColor(QColor(0,0,0))
+        self.advancedTab.viewport().setPaletteBackgroundColor(self.tabViewport.paletteBackgroundColor())
+        self.advancedTab.viewport().setPaletteForegroundColor(QColor(0,0,0))
         self.tabLayout = QVBoxLayout(self.tabViewport)
         
-        self.tab.addChild(self.tabViewport)
+        self.advancedTab.addChild(self.tabViewport)
         
         self.devices = sane.get_devices()
         
@@ -46,21 +47,35 @@ class Options(QWidget):
         
         self.connect(self.deviceSelect,SIGNAL("activated(int)"),self.deviceSelected)
 
+        self.basicOptionsBox = QGroupBox(1,Qt.Horizontal,"Basic Options",self.tabViewport,"basicOptionsBox")
+        self.basicOptionsBox.setFlat(True)
+        self.tabLayout.addWidget(self.basicOptionsBox)
+        
+        self.scanMode = ComboBox("Scan Mode",False,self.basicOptionsBox,"combobox")
+        
+        self.resolution = ComboBox("Resolution",False,self.basicOptionsBox,"combobox")
+
+        self.showAdvancedButton = QButton(self.tabViewport,"showAdvancedButton")
+        self.showAdvancedButton.setText("More")
+        self.tabLayout.addWidget(self.showAdvancedButton)
+        
+
+        self.connect(self.showAdvancedButton,SIGNAL("released()"),self.showMore)
+
         self.opt = None
         
-        self.tabWidget.insertTab(self.tab,QString.fromLatin1(""))
+        self.tabWidget.insertTab(self.advancedTab,QString.fromLatin1(""))
 
-        self.tab_2 = QWidget(self.tabWidget,"tab_2")
-                
-        self.tabWidget.insertTab(self.tab_2,QString.fromLatin1(""))
+        self.basicTab = QWidget(self.tabWidget,"basicTab")
+        self.tabWidget.insertTab(self.basicTab,QString.fromLatin1(""))
         
         self.languageChange()
         
         self.device = None
 
     def languageChange(self):
-        self.tabWidget.changeTab(self.tab,self.__tr("Basic Settings"))
-        self.tabWidget.changeTab(self.tab_2,self.__tr("Advanced Settings"))
+        self.tabWidget.changeTab(self.advancedTab,self.__tr("Advanced Settings"))
+        self.tabWidget.changeTab(self.basicTab,self.__tr("Basic Settings"))
         
     def __tr(self,s,c = None):
         return qApp.translate("Form1",s,c)
@@ -70,13 +85,19 @@ class Options(QWidget):
         for option in self.optionList:
             option.widget.updateState()
     
+    def showMore(self):
+        if self.opt.isShown():
+            self.opt.hide()
+        else:
+            self.opt.show()
+    
     def deviceSelected(self,no):
         self.clearOptions()
         if no > 0:
             self.opt = QWidget(self.tabViewport)
             self.tabLayout.addWidget(self.opt)
             self.optLayout = QVBoxLayout(self.opt)
-    
+            
             self.tmpVBox = QVBox(self.opt,"vbox")
             self.loadingLabel = QLabel("Loading...",self.tmpVBox,"loadingLabel")
             self.optLayout.addWidget(self.tmpVBox)
@@ -101,7 +122,19 @@ class Options(QWidget):
         self.groupBoxes = []
         self.optionList = []
         for option in self.options:
-            if option[4] == sane.TYPE_GROUP:
+            if option[1] == "mode":
+                self.basicOptionsBox.removeChild(self.scanMode)
+                self.scanMode = Option(self.basicOptionsBox, option, self.device)
+                self.optionList.append(self.scanMode)
+                self.scanMode = self.scanMode.getWidget(None)
+            elif option[1] == "resolution":
+                self.basicOptionsBox.removeChild(self.resolution)
+                self.resolution = Option(self.basicOptionsBox, option, self.device)
+                self.optionList.append(self.resolution)
+                self.resolution = self.resolution.getWidget(None)
+            elif option[1] == "preview":
+                continue
+            elif option[4] == sane.TYPE_GROUP:
                 groupBox = QGroupBox(1, Qt.Vertical, option[2], self.opt, option[2] + "GroupBox")
                 groupBox.setFlat(True)
                 self.groupBoxes.append(groupBox)
@@ -112,7 +145,6 @@ class Options(QWidget):
                 self.optionList.append(o)
                 self.connect(o.widget, PYSIGNAL("stateChanged"), self.updateOptions)
 
-        self.opt.show()
         self.emit(PYSIGNAL("newDeviceSelected"),())
     
     def getOptionValues(self):
@@ -127,6 +159,9 @@ class Options(QWidget):
                 self.optionList[i].setValue(values[i])
     
     def clearOptions(self):
+        self.scanMode.setEnabled(False)
+        self.resolution.setEnabled(False)
+        self.showAdvancedButton.setEnabled(False)
         if self.opt != None:
             self.tabLayout.remove(self.opt)
             self.opt = None

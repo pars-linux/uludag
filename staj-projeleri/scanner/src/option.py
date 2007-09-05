@@ -23,21 +23,21 @@ class Option:
                     self.widget = CheckBox(self.deviceOption.title,parent,"checkbox",self.deviceOption,self.device)
                 elif self.deviceOption.type == sane.TYPE_INT:
                     if isinstance(self.deviceOption.constraint,list):
-                        self.widget = ComboBox(False,parent,"combobox",self.deviceOption,self.device)
+                        self.widget = ComboBox(self.deviceOption.title,False,parent,"combobox",self.deviceOption,self.device)
                     elif isinstance(self.deviceOption.constraint,tuple):
                         self.widget = Slider(Qt.Horizontal,parent,"slider",self.deviceOption,self.device)
                     elif self.deviceOption.constraint == None:
                         self.widget = LineEdit(parent,"lineedit",self.deviceOption,self.device);
                 elif self.deviceOption.type == sane.TYPE_FIXED:
                     if isinstance(self.deviceOption.constraint,list):
-                        self.widget = ComboBox(False,parent,"combobox",self.deviceOption,self.device)
+                        self.widget = ComboBox(self.deviceOption.title,False,parent,"combobox",self.deviceOption,self.device)
                     elif isinstance(self.deviceOption.constraint,tuple):
                         self.widget = Slider(Qt.Horizontal,parent,"slider",self.deviceOption,self.device)
                     elif self.deviceOption.constraint == None:
                         self.widget = LineEdit(parent,"lineedit",self.deviceOption,self.device)
                 elif self.deviceOption.type == sane.TYPE_STRING:
                     if isinstance(self.deviceOption.constraint,list):
-                        self.widget = ComboBox(False,parent,"combobox",self.deviceOption,self.device)
+                        self.widget = ComboBox(self.deviceOption.title,False,parent,"combobox",self.deviceOption,self.device)
                     elif self.deviceOption.constraint == None:
                         self.widget = LineEdit(parent,"lineedit",self.deviceOption,self.device)
                 else:
