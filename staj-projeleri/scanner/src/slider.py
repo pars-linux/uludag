@@ -1,6 +1,8 @@
 
 from qt import *
 
+import sane
+
 class Slider(QVBox):
     #def __init__(self,parent,name,option,device):
     #    QSlider.__init__(self,parent,name)
@@ -25,12 +27,11 @@ class Slider(QVBox):
         self.mult = 1
         if pageStep == 0:
             pageStep = 1
-        while pageStep < 1:
+        while pageStep*self.mult < 1:
             self.mult *= 2
-            pageStep *= self.mult
         self.slider.setMinValue(self.option.constraint[0]*self.mult)
         self.slider.setMaxValue(self.option.constraint[1]*self.mult)
-        self.slider.setPageStep(pageStep)
+        self.slider.setPageStep(pageStep*self.mult)
         self.updateState()
         self.connect(self.slider,SIGNAL("valueChanged(int)"),self.valueChangedAction)
     
@@ -44,7 +45,10 @@ class Slider(QVBox):
     def valueChangedAction(self,i):
         self.option = self.device[self.option.name.replace("-","_")]
         if self.option.is_active():
-            self.device.__setattr__(self.option.name.replace("-","_"),float(i)/self.mult)
+            if self.option.type == sane.TYPE_FIXED:
+                self.device.__setattr__(self.option.name.replace("-","_"),float(i)/self.mult)
+            else:
+                self.device.__setattr__(self.option.name.replace("-","_"),i/self.mult)
             print self.option.name, i
         self.emit(PYSIGNAL("stateChanged"),())
         
