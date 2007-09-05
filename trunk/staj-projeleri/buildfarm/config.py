@@ -27,3 +27,6 @@ ccList           = []
 smtpServer       = "mail.pardus.org.tr"
 smtpUser         = ""
 smtpPassword     = ""
+
+#daemon related configuration strings.
+daemonLog        = "/var/log/buildfarmd.log"
