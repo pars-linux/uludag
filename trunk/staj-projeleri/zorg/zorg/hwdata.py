@@ -77,6 +77,7 @@ class Device:
 
         self.outputs = {}
         self.monitors = []
+        self.tvStandards = []
 
         self.randr12 = False
 
