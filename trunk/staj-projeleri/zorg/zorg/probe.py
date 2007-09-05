@@ -408,6 +408,10 @@ def xserverProbe(card):
     sec = XorgSection("Screen")
     sec.set("Identifier", "Screen0")
     sec.set("Device", "Card0")
+
+    if card.driver == "fglrx":
+        sec.set("DefaultDepth", unquoted("24"))
+
     p.sections.append(sec)
 
     open("/tmp/xorg.conf", "w").write(p.toString())
