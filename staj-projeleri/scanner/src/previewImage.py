@@ -25,22 +25,38 @@ class PreviewImage(QWidget):
         self.selectionExists = False
         self.needsReposition = False
     
+        self.pixmap = QPixmap(self.image.width(),self.image.height())
+    
     def sizeHint(self):
         return self.image.size()
     
     def paintEvent(self,event):
-        painter = QPainter(self)
-        painter.drawImage(0,0,self.image)
+        rect = event.rect()
+        self.pixmap.resize(rect.size())
+        painter = QPainter(self.pixmap)
+        painter.translate(-rect.x(),-rect.y())
+        painter.drawImage(rect.topLeft(),self.image,rect)
         
         if self.selectionExists and self.tl_X != self.br_X and self.tl_Y != self.br_Y:
             painter.setPen(Qt.white)
+            painter.fillRect(0,0,self.image.width(),self.tl_Y,QBrush(QColor(66,66,90),QBrush.Dense5Pattern))
+            painter.fillRect(0,self.tl_Y,self.tl_X,self.image.height(),QBrush(QColor(66,66,90),QBrush.Dense5Pattern))
+            painter.fillRect(self.br_X,self.tl_Y,self.image.width(),self.image.height(),QBrush(QColor(66,66,90),QBrush.Dense5Pattern))
+            painter.fillRect(self.tl_X,self.br_Y,self.br_X,self.image.height(),QBrush(QColor(66,66,90),QBrush.Dense5Pattern))
             painter.drawRect(self.tl_X,self.tl_Y,self.br_X-self.tl_X+1,self.br_Y-self.tl_Y+1)
+            
     
             painter.setPen(Qt.DotLine)
             painter.drawRect(self.tl_X,self.tl_Y,self.br_X-self.tl_X+1,self.br_Y-self.tl_Y+1)
+            
+        painter.end()
+        bitBlt(self,rect.topLeft(),self.pixmap)
+        
         if self.needsReposition:
             self.emit(PYSIGNAL("needsReposition"),(int((self.tl_X+self.br_X)/2),int((self.tl_Y+self.br_Y)/2)))
             self.needsReposition = False
+        
+        
         
     def mousePressEvent(self,event):
         self.pressedButton = event.button()
