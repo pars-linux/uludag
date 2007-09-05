@@ -47,6 +47,9 @@ class PCIDevice:
 
         return struct.unpack("h", data)[0]
 
+def pciInfo(dev, attr):
+    return sysValue(sysdir, dev, attr)
+
 def queryTouchpad():
     try:
         a = file("/proc/bus/input/devices")
@@ -180,8 +183,8 @@ def findVideoCards():
 
     pbus = getPrimaryBus()
     if pbus:
-        vendorId = lremove(sysValue(sysdir, pbus, "vendor"), "0x")
-        deviceId = lremove(sysValue(sysdir, pbus, "device"), "0x")
+        vendorId = lremove(pciInfo(pbus, "vendor"), "0x")
+        deviceId = lremove(pciInfo(pbus, "device"), "0x")
         busId = tuple(int(x, 16) for x in pbus.replace(".",":").split(":"))[1:4]
 
         card = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
@@ -200,10 +203,8 @@ def getPrimaryBus():
     bridges = []
 
     for dev in os.listdir(sysdir):
-        pci_class = open(os.path.join(sysdir, dev, "class")).read()[:6]
-
         device = PCIDevice(dev)
-        device.class_ = int(pci_class, 16)
+        device.class_ = int(pciInfo(dev, "class")[:6], 16)
         devices.append(device)
 
         if device.class_ == PCI_CLASS_BRIDGE_PCI:
