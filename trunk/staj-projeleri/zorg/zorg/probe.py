@@ -418,7 +418,8 @@ def xserverProbe(card):
 
     ret = run("/usr/bin/X", ":99", "-probeonly", "-allowMouseOpenFail", \
             "-config", "/tmp/xorg.conf", \
-            "-logfile", "/var/log/xlog")
+            "-logfile", "/var/log/xlog", \
+            "-logverbose", "6")
     if ret != 0:
         return
 
