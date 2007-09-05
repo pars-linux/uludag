@@ -21,6 +21,7 @@ distfiles = """
     README
     AUTHORS
     COPYING
+    *.py
     migration/migration.png
     migration/*.py
     migration/gui/*.py
