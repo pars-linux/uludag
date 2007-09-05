@@ -195,12 +195,14 @@ class XConfig:
         sec = XorgSection("Screen")
         sec.set("Identifier", scr.identifier)
         sec.set("Device", scr.device.identifier)
-        sec.set("Monitor", scr.monitor.identifier)
+        if scr.monitor:
+            sec.set("Monitor", scr.monitor.identifier)
         sec.set("DefaultDepth", scr.depth)
 
         subsec = XorgSection("Display")
         subsec.set("Depth", scr.depth)
-        subsec.set("Modes", *scr.modes)
+        if not scr.device.randr12:
+            subsec.set("Modes", *scr.modes)
 
         sec.sections = [subsec]
         self._parser.sections.append(sec)
@@ -214,7 +216,8 @@ class XConfig:
         screen.setup()
 
         secDev = self._addDevice(dev, screen.number)
-        secMon = self._addMonitor(mon)
+        if mon:
+            secMon = self._addMonitor(mon)
         secScr = self._addScreen(screen)
 
         self._priScreen = screen
@@ -444,13 +447,15 @@ class ZorgConfig:
 
         tags = {
             "Card" : screen.device.id,
-            "Monitor" : screen.monitor.id,
             "Resolution" : screen.res,
             "Depth" : str(screen.depth)
         }
 
         for k, v in tags.items():
             addTag(tag, k, v)
+
+        if screen.monitor:
+            addTag(tag, "Monitor", screen.monitor.id)
 
     def enableScreen(self, number, enable=True):
         nr = str(screen.number)
