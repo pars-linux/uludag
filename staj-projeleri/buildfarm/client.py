@@ -65,35 +65,33 @@ def sendDirectory(server, dirname, username=""):
 
 def usage():
     subst = {'program':sys.argv[0]}
-    print _("""Usage: %(program)s <command> [<param> ...]
+    print _("""Usage: %(program)s <operation> <command> [<param> ...]
     
-  where command is:
+  where operation is:
 
-  help           Displays this help screen
-  status         Displays the buildfarm's active job(s)
-  sync           Synchronizes the binary repositories
-  update         Updates local pspec repository
-  add p          Adds the package 'p' to the work queue
-  send dir       Sends the contents of 'dir' to the server for remote building
-  list
-    wait         Dumps the wait queue
-    work         Dumps the work queue
-  build
-    index        Builds PiSi index for the repository
-    packages     Builds and installs all packages of the work queue
-  transfer
-    wait p       Transfers the package 'p' from the work queue to the wait queue
-    work p       Transfers the package 'p' from the wait queue to the work queue
-  remove
-    wait p       Removes the package 'p' from the wait queue
-    work p       Removes the package 'p' from the work queue
-                 Note: p can be 'all' to remove all packages from a queue
+  help              Displays this help screen
+  sync              Synchronizes the binary repositories
+  update            Updates local pspec repository
+  add  p1,..,pn     Adds the package(s) p1,..,pn to work queue
+  send dir          Sends the contents of 'dir' to the server for remote building
+  list              Has 2 possible commands : wait, work
+    wait            Dumps the wait queue
+    work            Dumps the work queue
+  build             Has 2 possible commands : index, packages
+    index           Builds PiSi index for the repository
+    packages        Builds and installs all packages of the work queue
+  transfer          Has 2 possible commands : wait, work
+    wait p1,..,pn   Transfers the package(s) p1,..,pn from work queue to wait queue
+    work p1,..,pn   Transfers the package(s) p1,..,pn from wait queue to work queue
+  remove            Has 2 possible commands : wait, work
+    wait p1,..,pn   Removes the package(s) p1,..,pn from wait queue
+    work p1,..,pn   Removes the package(s) p1,..,pn from work queue
     
   Examples:
     $ %(program)s list wait
     $ %(program)s build packages
-    $ %(program)s append work xmoto/pspec.xml
-    $ %(program)s remove work all
+    $ %(program)s add xmoto/pspec.xml
+    $ %(program)s remove work xmoto/pspec.xml ppracer/pspec.xml
  """ % subst)
 
 def client(op, **kwargs):
