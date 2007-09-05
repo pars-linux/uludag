@@ -110,3 +110,18 @@ This message is sent from Pardus buildfarm. Please do not reply as it is automat
 %(message)s
 Happy hacking!
 """
+
+sync_message = """\
+From: Pardus Buildfarm <%(mailFrom)s>
+To: %(mailTo)s
+Cc: %(ccList)s
+Subject: [buildfarm] Güncellemeler
+Content-Type: text/plain;
+            charset="utf-8"
+            
+Hello,
+
+%(message)s
+Happy hacking!
+"""
+
