@@ -378,107 +378,6 @@ class packageWidget(QWidget):
             for comar in package.providesComar:  #TODO: summary yok desc varsa?
                 lvi = KListViewItem(self.lvCOMAR, comar.om, comar.script) 
                  
-        def get(self, package):
-            if str(self.leName.text()):
-                package.name = str(self.leName.text())
-            if str(self.leLicense.text()):
-                package.license = str(self.leLicense.text()).split(", ")
-            else:
-                package.license = None
-            if str(self.leIsA.text()):
-                package.isA = str(self.leIsA.text()).split(", ")
-            else:
-                package.isA = None
-            if self.lePartOf.text() and str(self.lePartOf.text()).strip() != "":
-                package.partOf = str(self.lePartOf.text())
-            else:
-                package.partOf = None
-    
-    	    #get package summary and desc.
-            package.summary.clear()
-            package.description.clear()
-            iterator = QListViewItemIterator(self.lvSummary)
-            while iterator.current():
-                lvi = iterator.current()
-                if str(lvi.text(1)).strip() != "":
-                    package.summary[str(lvi.text(0))] = unicode(lvi.text(1))
-                if str(lvi.text(2)).strip() != "":
-                    package.description[str(lvi.text(0))] = unicode(lvi.text(2))
-                iterator += 1
-                
-            #get package runtime dependencies
-            # TODO: componentDependencies
-            package.packageDependencies = []
-            iterator = QListViewItemIterator(self.lvRuntimeDep)
-            while iterator.current():
-                lvi = iterator.current()
-                dep = Dependency()
-                getConstraintReverse(str(lvi.text(0)), str(lvi.text(1)), dep)
-                package.packageDependencies.insert(0, dep)
-                iterator += 1
-            
-            #get replaces
-            package.replaces = []
-            iterator = QListViewItemIterator(self.lvReplaces)
-            while iterator.current():
-                lvi = iterator.current()
-                rep = Replace()
-                getConstraintReverse(str(lvi.text(0)), str(lvi.text(1)), rep)
-                package.replaces.insert(0, rep)
-                iterator += 1
-            
-            #get package files
-            package.files = []
-            iterator = QListViewItemIterator(self.lvFiles)
-            while iterator.current():
-                lvi = iterator.current()
-                path = spec.Path()
-                path.fileType = str(lvi.text(0))
-                if str(lvi.text(1)).strip() != "":
-                    path.permanent = str(lvi.text(1))
-                path.path = str(lvi.text(2))
-                package.files.insert(0, path)
-                iterator += 1
-
-            #get package additional files
-            package.additionalFiles = []
-            iterator = QListViewItemIterator(self.lvAdditionalFiles)
-            while iterator.current():
-                lvi = iterator.current()
-                addFile = spec.AdditionalFile()
-                if str(lvi.text(0)).strip() != "":
-                    addFile.owner = str(lvi.text(0))
-                if str(lvi.text(1)).strip() != "":
-                    addFile.permission = str(lvi.text(1))
-                if str(lvi.text(2)).strip() != "":
-                    addFile.target = str(lvi.text(2))
-                addFile.filename = str(lvi.text(3))                
-                package.additionalFiles.insert(0,addFile)
-                iterator += 1    
-        
-            #get package conflicts
-            package.conflicts = []
-            iterator = QListViewItemIterator(self.lvConflicts)
-            while iterator.current():
-                lvi = iterator.current()
-                conflict = Conflict()
-                getConstraintReverse(str(lvi.text(0)), str(lvi.text(1)), conflict)
-                package.conflicts.insert(0,conflict)
-                iterator += 1 
-        
-            #get comar scripts
-            package.providesComar = []
-            iterator = QListViewItemIterator(self.lvCOMAR)
-            while iterator.current():
-                lvi = iterator.current()
-                comar = spec.ComarProvide()
-                if str(lvi.text(0)).strip() != "":
-                    comar.om = str(lvi.text(0))
-                if str(lvi.text(1)).strip() != "":
-                    comar.script = str(lvi.text(1))               
-                package.providesComar.insert(0,comar)
-                iterator += 1
-
     def __init__(self, parent, fileLoc = None):
         QWidget.__init__(self, parent)
         pageLayout = QVBoxLayout(self, 6, 11)
@@ -516,18 +415,6 @@ class packageWidget(QWidget):
         self.packages = packages
         for package in packages:
             self.addPackage(package)
-            
-    def get(self, packages):
-        while len(packages) != 0:
-            packages.pop()
-        
-        packageCount = self.twPackages.count()        
-        for i in range(packageCount):
-            tab = self.twPackages.page(i)
-            package = spec.Package()
-            #sen de bunu doldur heman
-            tab.get(package)
-            packages.append(package)
     
     def addPackageSlot(self):
         package = spec.Package()

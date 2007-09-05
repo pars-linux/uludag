@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '../../uis/pspecWidget/sourceWidgetUI.ui'
 #
-# Created: Sal Eyl 4 16:44:28 2007
+# Created: Sal Eyl 4 22:38:24 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -34,7 +34,7 @@ class SourceWidgetUI(QWidget):
         gbGeneralLayout = QGridLayout(self.gbGeneral.layout())
         gbGeneralLayout.setAlignment(Qt.AlignTop)
         spacer4 = QSpacerItem(20,16,QSizePolicy.Minimum,QSizePolicy.Fixed)
-        gbGeneralLayout.addItem(spacer4,3,3)
+        gbGeneralLayout.addItem(spacer4,1,0)
 
         self.twSource = QTabWidget(self.gbGeneral,"twSource")
         self.twSource.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding,0,0,self.twSource.sizePolicy().hasHeightForWidth()))
@@ -166,77 +166,96 @@ class SourceWidgetUI(QWidget):
         TabPageLayout_3.addLayout(layout21)
         self.twSource.insertTab(self.TabPage_3,QString.fromLatin1(""))
 
-        gbGeneralLayout.addMultiCellWidget(self.twSource,4,4,0,6)
+        gbGeneralLayout.addMultiCellWidget(self.twSource,2,2,0,1)
 
-        self.lblName = QLabel(self.gbGeneral,"lblName")
+        layout11 = QGridLayout(None,1,1,0,6,"layout11")
 
-        gbGeneralLayout.addWidget(self.lblName,0,0)
-        spacer1 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
-        gbGeneralLayout.addItem(spacer1,0,3)
+        self.lblIsA = QLabel(self.gbGeneral,"lblIsA")
 
-        self.lblLicense = QLabel(self.gbGeneral,"lblLicense")
+        layout11.addWidget(self.lblIsA,0,0)
 
-        gbGeneralLayout.addWidget(self.lblLicense,2,0)
+        self.lePartOf = KLineEdit(self.gbGeneral,"lePartOf")
 
-        self.leName = KLineEdit(self.gbGeneral,"leName")
+        layout11.addWidget(self.lePartOf,1,1)
 
-        gbGeneralLayout.addMultiCellWidget(self.leName,0,0,1,2)
+        layout10 = QHBoxLayout(None,0,6,"layout10")
+
+        self.leIsA = KLineEdit(self.gbGeneral,"leIsA")
+        layout10.addWidget(self.leIsA)
+
+        self.pbIsA = KPushButton(self.gbGeneral,"pbIsA")
+        self.pbIsA.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.pbIsA.sizePolicy().hasHeightForWidth()))
+        layout10.addWidget(self.pbIsA)
+
+        layout11.addLayout(layout10,0,1)
+
+        layout9 = QHBoxLayout(None,0,6,"layout9")
+
+        self.lePackager = KLineEdit(self.gbGeneral,"lePackager")
+        layout9.addWidget(self.lePackager)
+
+        self.textLabel1 = QLabel(self.gbGeneral,"textLabel1")
+        layout9.addWidget(self.textLabel1)
+
+        self.leEmail = KLineEdit(self.gbGeneral,"leEmail")
+        layout9.addWidget(self.leEmail)
+
+        layout11.addLayout(layout9,2,1)
 
         self.lblPackager = QLabel(self.gbGeneral,"lblPackager")
         self.lblPackager.setFrameShape(QLabel.NoFrame)
         self.lblPackager.setFrameShadow(QLabel.Plain)
 
-        gbGeneralLayout.addWidget(self.lblPackager,2,4)
-        spacer1_2 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
-        gbGeneralLayout.addItem(spacer1_2,1,3)
-
-        self.leHomepage = KLineEdit(self.gbGeneral,"leHomepage")
-
-        gbGeneralLayout.addMultiCellWidget(self.leHomepage,1,1,1,2)
-
-        self.lePartOf = KLineEdit(self.gbGeneral,"lePartOf")
-
-        gbGeneralLayout.addMultiCellWidget(self.lePartOf,1,1,5,6)
-        spacer1_3 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
-        gbGeneralLayout.addItem(spacer1_3,2,3)
-
-        self.lblIsA = QLabel(self.gbGeneral,"lblIsA")
-
-        gbGeneralLayout.addWidget(self.lblIsA,0,4)
+        layout11.addWidget(self.lblPackager,2,0)
 
         self.lblPartOf5 = QLabel(self.gbGeneral,"lblPartOf5")
 
-        gbGeneralLayout.addWidget(self.lblPartOf5,1,4)
+        layout11.addWidget(self.lblPartOf5,1,0)
 
-        self.lblHomepage = QLabel(self.gbGeneral,"lblHomepage")
+        gbGeneralLayout.addLayout(layout11,0,1)
 
-        gbGeneralLayout.addWidget(self.lblHomepage,1,0)
+        layout12 = QGridLayout(None,1,1,0,6,"layout12")
+
+        self.leHomepage = KLineEdit(self.gbGeneral,"leHomepage")
+
+        layout12.addMultiCellWidget(self.leHomepage,1,1,1,2)
 
         self.leLicense = KLineEdit(self.gbGeneral,"leLicense")
 
-        gbGeneralLayout.addWidget(self.leLicense,2,1)
+        layout12.addWidget(self.leLicense,2,1)
+        spacer1_2 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
+        layout12.addItem(spacer1_2,1,3)
+
+        self.leName = KLineEdit(self.gbGeneral,"leName")
+
+        layout12.addMultiCellWidget(self.leName,0,0,1,2)
+
+        self.lblName = QLabel(self.gbGeneral,"lblName")
+
+        layout12.addWidget(self.lblName,0,0)
+
+        self.lblHomepage = QLabel(self.gbGeneral,"lblHomepage")
+
+        layout12.addWidget(self.lblHomepage,1,0)
+        spacer1 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
+        layout12.addItem(spacer1,0,3)
 
         self.pbLicense = KPushButton(self.gbGeneral,"pbLicense")
 
-        gbGeneralLayout.addWidget(self.pbLicense,2,2)
+        layout12.addWidget(self.pbLicense,2,2)
 
-        self.lePackager = KLineEdit(self.gbGeneral,"lePackager")
+        self.lblLicense = QLabel(self.gbGeneral,"lblLicense")
 
-        gbGeneralLayout.addMultiCellWidget(self.lePackager,2,2,5,6)
+        layout12.addWidget(self.lblLicense,2,0)
+        spacer1_3 = QSpacerItem(20,20,QSizePolicy.Fixed,QSizePolicy.Minimum)
+        layout12.addItem(spacer1_3,2,3)
 
-        self.leIsA = KLineEdit(self.gbGeneral,"leIsA")
-
-        gbGeneralLayout.addWidget(self.leIsA,0,5)
-
-        self.pbIsA = KPushButton(self.gbGeneral,"pbIsA")
-        self.pbIsA.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.pbIsA.sizePolicy().hasHeightForWidth()))
-
-        gbGeneralLayout.addWidget(self.pbIsA,0,6)
+        gbGeneralLayout.addLayout(layout12,0,0)
         SourceWidgetUILayout.addWidget(self.gbGeneral)
 
         self.languageChange()
 
-        self.resize(QSize(586,307).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(622,307).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.setTabOrder(self.leName,self.leHomepage)
@@ -246,7 +265,8 @@ class SourceWidgetUI(QWidget):
         self.setTabOrder(self.leIsA,self.pbIsA)
         self.setTabOrder(self.pbIsA,self.lePartOf)
         self.setTabOrder(self.lePartOf,self.lePackager)
-        self.setTabOrder(self.lePackager,self.twSource)
+        self.setTabOrder(self.lePackager,self.leEmail)
+        self.setTabOrder(self.leEmail,self.twSource)
         self.setTabOrder(self.twSource,self.leURI)
         self.setTabOrder(self.leURI,self.cbType)
         self.setTabOrder(self.cbType,self.leSHA1)
@@ -301,14 +321,15 @@ class SourceWidgetUI(QWidget):
         self.pbViewPatch.setText(QString.null)
         self.pbBrowsePatch.setText(QString.null)
         self.twSource.changeTab(self.TabPage_3,self.__tr("Patches"))
-        self.lblName.setText(self.__tr("Name:"))
-        self.lblLicense.setText(self.__tr("License:"))
-        self.lblPackager.setText(self.__tr("Packager:"))
         self.lblIsA.setText(self.__tr("Is A:"))
+        self.pbIsA.setText(QString.null)
+        self.textLabel1.setText(self.__tr("E-mail:"))
+        self.lblPackager.setText(self.__tr("Packager:"))
         self.lblPartOf5.setText(self.__tr("Part Of:"))
+        self.lblName.setText(self.__tr("Name:"))
         self.lblHomepage.setText(self.__tr("Homepage:"))
         self.pbLicense.setText(QString.null)
-        self.pbIsA.setText(QString.null)
+        self.lblLicense.setText(self.__tr("License:"))
 
 
     def __tr(self,s,c = None):

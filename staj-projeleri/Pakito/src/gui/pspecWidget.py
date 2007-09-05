@@ -84,13 +84,7 @@ class PspecWidget(QWidget):
         else:
             return "design"
         
-    def fill(self, fileLocation = None):
-        if fileLocation != None:
-            try:
-                self.pspec.read(fileLocation)
-            except:
-                return False            
-            
+    def fill(self):
         #source bilgileri
         self.sourcePage.fill(self.pspec.source)
         
@@ -99,12 +93,10 @@ class PspecWidget(QWidget):
         
         #history bilgileri
         self.historyPage.fill(self.pspec.history)
-        
-        return True
     
     def pbDesignClicked(self):
         if self.pbDesign.isOn(): # design section will open
-            self.designWillOpen()            
+            self.designWillOpen()
         else:
             self.codeWillOpen()
             
@@ -115,13 +107,12 @@ class PspecWidget(QWidget):
             self.designWillOpen()
             
     def designWillOpen(self):
-
         if not self.syncFromCode():
             KMessageBox.sorry(self, i18n("Specification is not valid or well-formed."), i18n("Invalid XML Code"))
             self.pbDesign.setOn(False)
             self.pbCode.setOn(True)
-            return
         else:
+            self.fill()
             self.widgetStack.raiseWidget(0)
             self.pbCode.setOn(False)
             self.pbDesign.setOn(True)
@@ -130,47 +121,16 @@ class PspecWidget(QWidget):
         self.pbDesign.setOn(False)
         self.pbCode.setOn(True)
         self.widgetStack.raiseWidget(1)
-#        self.editor.widget().setFocus()        
 
-        self.syncFromDesign()
-        
-    def codeChanged(self):
-        if self.changeCount == 0:
-            self.changeCount += 1
-            return
-        
-        if not self.change:
-            self.change = True
-            self.emit(PYSIGNAL("changeName"), (True,))
-    
-    def get(self): # bu verdiklerimi doldurun ivedi
-        
-        #source bilgileri
-        self.sourcePage.get(self.pspec.source)
-        
-        # paket bilgileri
-        self.packagePage.get(self.pspec.packages)
-        
-        #history bilgileri
-        self.historyPage.get(self.pspec.history)
+        self.editor.openFile(self.fileLocation)
     
     def syncFromCode(self):
         self.editor.save()
-        return self.fill(self.editor.editedFile)
-           
-    def syncFromDesign(self):        
         try:
-            self.get()
-        except Exception, err:
-            KMessageBox.error(self, str(err), i18n("Error during syncronisation"))
-            return
-        
-        editFile = self.fileLocation
-        try:
-            self.pspec.write(editFile)
-        except Exception, err:
-            KMessageBox.sorry(self, i18n(str(err)), i18n("Error"))
-        self.editor.openFile(editFile)
+            self.pspec.read(self.editor.editedFile)
+        except:
+            return False
+        return True
         
     def isSourceDownloaded(self):
         import os.path as path
@@ -183,5 +143,4 @@ class PspecWidget(QWidget):
         if path.exists(loc):
             return (True, loc)
         else:
-            return (False, None)
-        
+            return (False, None)        
