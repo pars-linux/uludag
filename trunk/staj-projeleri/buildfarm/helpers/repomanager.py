@@ -19,6 +19,12 @@ from string import find
 """ BuildFarm Modules """
 import config
 import logger
+import mailer
+
+# i18n
+import gettext
+__trans = gettext.translation('buildfarm', fallback=True)
+_ = __trans.ugettext
 
 Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
 
@@ -75,13 +81,13 @@ class RepositoryManager:
             # Calls 'svn up' from the directory 'config.localPspecRepo'
             oldwd = os.getcwd()
             os.chdir(config.localPspecRepo)
-            logger.info("Yerel pspec deposu güncelleniyor: '%s'" % (config.localPspecRepo))
+            logger.info(_("Updating local pspec repository: '%s'") % (config.localPspecRepo))
             f = os.popen("svn up")
 
             out = [o.split() for o in f.readlines()]
             if f.close():
-                logger.error("SVN'de bir sorun var :(")
-                raise RepoError("SVN'de bir sorun var:\n %s" % (out))
+                logger.error(_("A Problem occurred with SVN :("))
+                raise RepoError(_("A Problem occurred with SVN:\n %s") % (out))
                 # FIXME: sys.exit is fatal for server
                 sys.exit(-1)
             os.chdir(oldwd)
@@ -89,10 +95,10 @@ class RepositoryManager:
 
         self.output = update()
         if self.__getRevision__():
-            logger.info("Depo güncellendi (%d satır çıktı): Revizyon '%d'" % (len(self.output), self.__getRevision__()))
+            logger.info(_("Repository is up-to-date (%d line(s) extracted): Revision '%d'") % (len(self.output), self.__getRevision__()))
         else:
-            logger.error("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
-            raise RepoError("Güncelleme başarısız! (localPspecRepo için verilen '%s' adresi yanlış olabilir)" % (config.localPspecRepo))
+            logger.error(_("Can't update the local pspec repository. Verify that the path '%s' is correct!") % (config.localPspecRepo))
+            raise RepoError(_("Can't update the local pspec repository. Verify that the path '%s' is correct!") % (config.localPspecRepo))
 
         updatedpspecfiles = self.__getChanges__(type = "U", filter="pspec.xml")
         newpspecfiles     = self.__getChanges__(type = "A", filter="pspec.xml")
@@ -117,8 +123,7 @@ class RepositoryManager:
         diff.sort()
         
         if sendMail:
-            #mailer.info(_("Aşağıdaki listeye itirazı olan yoksa bu akşam bunları\
-            #güncelleme olarak salıyoruz:\n\n%s") % "\n".join(diff))
-            pass
+            mailer.sync(_("The packages listed below will be added \
+                          to the stable repository tonight if all the developers are OK :\n\n%s") % "\n".join(diff))
         
         return diff
