@@ -124,6 +124,6 @@ class RepositoryManager:
         
         if sendMail:
             mailer.sync(_("The packages listed below will be added \
-                          to the stable repository tonight if all the developers are OK :\n\n%s") % "\n".join(diff))
+to the stable repository tonight if all the developers are OK :\n\n%s") % "\n".join(diff))
         
         return diff
