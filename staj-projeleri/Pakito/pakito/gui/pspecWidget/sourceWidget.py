@@ -16,12 +16,12 @@ from pakito.gui.pspecWidget.dialogs.dependencyDialog import DependencyDialog
 from pakito.gui.pspecWidget.dialogs.patchDialog import PatchDialog
 
 class sourceWidget(SourceWidgetUI):
-    def __init__(self, parent, fileLoc = None):
+    def __init__(self, parent, fileLoc, xmlUtil):
         SourceWidgetUI.__init__(self, parent)
 
-        if fileLoc:
-            self.packageDir = os.path.split(fileLoc)[0]
-            self.filesDir = self.packageDir + "/files"
+        self.packageDir = os.path.split(fileLoc)[0]
+        self.filesDir = self.packageDir + "/files"
+        self.xmlUtil = xmlUtil
 
         self.lePackager.setPaletteForegroundColor(QColor("black"))
         self.lePackager.setPaletteBackgroundColor(QColor("white"))
@@ -77,9 +77,6 @@ class sourceWidget(SourceWidgetUI):
         self.lvBuildDep.setSorting(-1)
         self.lvPatches.setSorting(-1)
 
-###########################################################################33
-
-
         self.connect(self.leName, SIGNAL("textChanged(const QString &)"), self.slotNameChanged)
         self.connect(self.leHomepage, SIGNAL("textChanged(const QString &)"), self.slotHomepageChanged)
         self.connect(self.leLicense, SIGNAL("textChanged(const QString &)"), self.slotLicenseChanged)
@@ -87,56 +84,59 @@ class sourceWidget(SourceWidgetUI):
         self.connect(self.lePartOf, SIGNAL("textChanged(const QString &)"), self.slotPartOfChanged)
         self.connect(self.lePackager, SIGNAL("textChanged(const QString &)"), self.slotPackagerChanged)
         self.connect(self.leEmail, SIGNAL("textChanged(const QString &)"), self.slotEmailChanged)
-        self.connect(self.leURI, SIGNAL("textChanged(const QString &)"), self.slotURIChanged)
-        self.connect(self.leSHA1, SIGNAL("textChanged(const QString &)"), self.slotSHA1Changed)
-        self.connect(self.cbType, SIGNAL("textChanged(const QString &)"), self.slotTypeChanged)
+        self.connect(self.leURI, SIGNAL("textChanged(const QString &)"), self.slotArchiveChanged)
+        self.connect(self.leSHA1, SIGNAL("textChanged(const QString &)"), self.slotArchiveChanged)
+        self.connect(self.cbType, SIGNAL("activated(const QString &)"), self.slotArchiveChanged)
         
     def slotNameChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>).*?(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\2")
-        pass
+        self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Name")
         
     def slotHomepageChanged(self, newOne):
-#        self.sedPspec("(<Homepage>).*?(</Homepage>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\2")
-        pass
+        self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Homepage")
         
     def slotLicenseChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
+        while self.xmlUtil.deleteTagByPath("Source", "License"):
+            pass
         
+        packagerNode = self.xmlUtil.getTagByPath("Source", "Packager")
+        licenses = str(newOne).split(", ")
+        licenses.reverse()
+        for license in licenses:
+            self.xmlUtil.addTagBelow(packagerNode, "License", license)
+                    
     def slotIsAChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
-    def slotPartOfChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
-    def slotPackagerChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
-    def slotEmailChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
-    def slotURIChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
-    def slotSHA1Changed(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
-    def slotTypeChanged(self, newOne):
-#        self.sedPspec("(<Source>.*?<Name>)(.*?)(</Name>)", r"\1" + str(newOne).replace("\\", "\\\\") + r"\3")
-        pass
+        while self.xmlUtil.deleteTagByPath("Source", "IsA"):
+            pass
         
-    def sedPspec(self, pattern, repl):
-        import re
-        exp = re.compile(pattern, re.S)
-        fName = self.packageDir + "/pspec.xml"
-        f = open(fName)
-        new = re.sub(exp, repl, f.read())
-        f.close()
-        f = open(fName, "w")
-        f.write(new)
-        f.close()
+        packagerNode = self.xmlUtil.getTagByPath("Source", "Summary")
+        for isa in str(newOne).split(", "):
+            self.xmlUtil.addTagAbove(packagerNode, "IsA", isa)
+    
+    def slotPackagerChanged(self, newOne):
+        self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Packager", "Name")
 
-###########################################################################
+    def slotEmailChanged(self, newOne):
+        self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Packager", "Email")
+                    
+    def slotPartOfChanged(self, newOne):
+        if str(newOne).strip() == "":
+            self.xmlUtil.deleteTagByPath("Source", "PartOf")
+        else:
+            node = self.xmlUtil.getTagByPath("Source", "PartOf")
+            if node:
+                self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "PartOf")
+            else:
+                summaryNode = self.xmlUtil.getTagByPath("Source", "Summary")
+                self.xmlUtil.addTagAbove(summaryNode, "PartOf", str(newOne))
+        
+    def slotArchiveChanged(self, newOne):
+        self.xmlUtil.deleteTagByPath("Source", "Archive")
+        descNode = self.xmlUtil.getTagByPath("Source", "Description")
+        if descNode:
+            self.xmlUtil.addTagBelow(descNode, "Archive", str(self.leURI.text()), sha1sum = str(self.leSHA1.text()), type = str(self.cbType.currentText()))
+        else:
+            sumNode = self.xmlUtil.getTagByPath("Source", "Summary")
+            self.xmlUtil.addTagBelow(sumNode, "Archive", str(self.leURI.text()), sha1sum = str(self.leSHA1.text()), type = str(self.cbType.currentText()))
 
     def slotLicensePopup(self):
         self.licensePopup.exec_loop(self.pbLicense.mapToGlobal(QPoint(0,0 + self.pbLicense.height())))

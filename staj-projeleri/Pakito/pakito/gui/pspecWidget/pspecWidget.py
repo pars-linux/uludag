@@ -5,23 +5,24 @@ from kdeui import *
 from kdecore import KURL, KGlobal, KIcon, i18n
 
 from pisi import specfile as spec
-from pisi.dependency import Dependency
-from pisi.conflict import Conflict
-from pisi.replace import Replace
 
 from pakito.gui.pspecWidget.sourceWidget import sourceWidget
 from pakito.gui.pspecWidget.packageWidget import packageWidget
 from pakito.gui.pspecWidget.historyWidget import historyWidget
+from pakito.gui.editors import Editor as ed
+
+from pakito.xmlUtil import XmlUtil
 
 class PspecWidget(QWidget):
     """ a widget consists code and design view of an pspec.xml file """
     
-    def __init__(self, parent, fileLocation = None):
+    def __init__(self, parent, fileLocation):
         QWidget.__init__(self, parent)
         self.pspec = spec.SpecFile()
         self.fileLocation = fileLocation
-        if self.fileLocation != None:
-            self.pspec.read(self.fileLocation)
+        
+        self.xmlUtil = XmlUtil(fileLocation)
+        self.pspec.read(self.fileLocation)
 
         # code and design buttons
         self.pbDesign = KPushButton(i18n("Design"), self)
@@ -49,10 +50,10 @@ class PspecWidget(QWidget):
         self.toolBox.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
         
         # source section of toolbox
-        self.sourcePage = sourceWidget(self.toolBox, self.fileLocation)
+        self.sourcePage = sourceWidget(self.toolBox, self.fileLocation, self.xmlUtil)
         
         # packages section of toolbox
-        self.packagePage = packageWidget(self.toolBox, self.fileLocation)
+        self.packagePage = packageWidget(self.toolBox, self.fileLocation, self.xmlUtil)
         
         # history section of toolbox
         self.historyPage = historyWidget(self.toolBox)
@@ -61,8 +62,6 @@ class PspecWidget(QWidget):
         self.toolBox.addItem(self.sourcePage, i18n("Source"))
         self.toolBox.addItem(self.packagePage, i18n("Package(s)"))
         self.toolBox.addItem(self.historyPage, i18n("History"))
-        
-        from editors import Editor as ed
         
         self.widgetStack.addWidget(self.toolBox, 0)
         self.editor = ed("xml", self.widgetStack)
@@ -107,22 +106,32 @@ class PspecWidget(QWidget):
             self.designWillOpen()
             
     def designWillOpen(self):
-        if not self.syncFromCode():
+        qApp.setOverrideCursor(KCursor.workingCursor())
+        res = self.syncFromCode()
+        qApp.setOverrideCursor(KCursor.arrowCursor)
+
+        if not res:
             KMessageBox.sorry(self, i18n("Specification is not valid or well-formed."), i18n("Invalid XML Code"))
             self.pbDesign.setOn(False)
             self.pbCode.setOn(True)
         else:
+            qApp.setOverrideCursor(KCursor.workingCursor())
             self.fill()
             self.widgetStack.raiseWidget(0)
             self.pbCode.setOn(False)
             self.pbDesign.setOn(True)
+            qApp.setOverrideCursor(KCursor.arrowCursor)
+
             
     def codeWillOpen(self):
+        qApp.setOverrideCursor(KCursor.workingCursor())
         self.pbDesign.setOn(False)
         self.pbCode.setOn(True)
         self.widgetStack.raiseWidget(1)
 
+        self.syncFromDesign()
         self.editor.openFile(self.fileLocation)
+        qApp.setOverrideCursor(KCursor.arrowCursor)
     
     def syncFromCode(self):
         self.editor.save()
@@ -131,6 +140,9 @@ class PspecWidget(QWidget):
         except:
             return False
         return True
+    
+    def syncFromDesign(self):
+        self.xmlUtil.write()
         
     def isSourceDownloaded(self):
         import os.path as path
