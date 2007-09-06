@@ -7,7 +7,7 @@ from toolbar import *
 from previewArea import *
 from scanresult import *
 
-class Form1(QMainWindow):
+class ScanWindow(QMainWindow):
     def __init__(self,parent = None,name = None,fl = 0):
         QMainWindow.__init__(self,parent,name,fl)
         
@@ -169,12 +169,3 @@ class Form1(QMainWindow):
             s.show()
      
             return
-
-if __name__ == "__main__":
-    a = QApplication(sys.argv)
-    QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
-    w = Form1()
-    a.setMainWidget(w)
-    w.show()
-    a.exec_loop()
-    #a.connect(a,SIGNAL("aboutToQuit()"),w.exit) #???
