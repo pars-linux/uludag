@@ -1,9 +1,12 @@
-* A server configuration script?
-* A Django Interface
 
-* LDAP Authentication
-* 3 bugs reported to bugzilla
++ A server configuration script.
 
-* Finalize API
-* Manage Xen domains
-* Montly Report tool?
+- COMAR System Service Script?
+- A Django Interface
+
+- LDAP Authentication
+- 3 bugs reported to bugzilla
+
+- Finalize API
+- Manage Xen domains
+- Montly Report tool?
