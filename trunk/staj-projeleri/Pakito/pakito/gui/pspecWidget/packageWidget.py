@@ -22,12 +22,11 @@ from pakito.gui.pspecWidget.dialogs.comarDialog import COMARDialog
 class packageWidget(QWidget):
     
     class packageTab(PackageWidgetUI):
-        def __init__(self, parent, filesDir = None, comarDir = None):
+        def __init__(self, parent, filesDir, comarDir, xmlUtil):
             PackageWidgetUI.__init__(self, parent)
-            if filesDir:
-                self.filesDir = filesDir
-            if comarDir:
-                self.comarDir = comarDir
+            self.filesDir = filesDir
+            self.comarDir = comarDir
+            self.xmlUtil = xmlUtil
 
             il = KGlobal.iconLoader()
 
@@ -105,7 +104,61 @@ class packageWidget(QWidget):
             self.lvAdditionalFiles.setSorting(-1)
             self.lvConflicts.setSorting(-1)
             self.lvCOMAR.setSorting(-1)
+            
+            self.connect(self.leName, SIGNAL("textChanged(const QString &)"), self.slotNameChanged)
+            self.connect(self.leLicense, SIGNAL("textChanged(const QString &)"), self.slotLicenseChanged)
+            self.connect(self.leIsA, SIGNAL("textChanged(const QString &)"), self.slotIsAChanged)
+            self.connect(self.lePartOf, SIGNAL("textChanged(const QString &)"), self.slotPartOfChanged)
 
+        def slotNameChanged(self, newOne):
+            self.xmlUtil.setDataOfTagByPath(str(newOne), "Package", "Name")
+            
+        def slotIsAChanged(self, newOne):
+            while self.xmlUtil.deleteTagByPath("Package", "IsA"):
+                pass
+            
+            if str(newOne).strip() == "":
+                return
+        
+            nameNode = self.xmlUtil.getTagByPath("Package", "Name")
+            list = str(newOne).split(", ")
+            list.reverse()
+            for isa in list:
+                self.xmlUtil.addTagBelow(nameNode, "IsA", isa)
+                    
+        def slotLicenseChanged(self, newOne):
+            while self.xmlUtil.deleteTagByPath("Package", "License"):
+                pass
+        
+            if str(newOne).strip() == "":
+                return
+            
+            isANode = self.xmlUtil.getTagByPath("Package", "IsA")
+            if isANode:
+                mainNode = isANode
+            else:
+                mainNode = self.xmlUtil.getTagByPath("Package", "Name")
+                    
+            licenses = str(newOne).split(", ")
+            licenses.reverse()
+            for license in licenses:
+                self.xmlUtil.addTagBelow(mainNode, "License", license)
+                
+        def slotPartOfChanged(self, newOne):
+            if str(newOne).strip() == "":
+                self.xmlUtil.deleteTagByPath("Package", "PartOf")
+            else:
+                node = self.xmlUtil.getTagByPath("Package", "PartOf")
+                if node:
+                    self.xmlUtil.setDataOfTagByPath(str(newOne), "Package", "PartOf")
+                else:
+                    runtimeNode = self.xmlUtil.getTagByPath("Package", "RuntimeDependencies")
+                    if runtimeNode:
+                        self.xmlUtil.addTagAbove(runtimeNode, "PartOf", str(newOne))
+                    else:
+                        filesNode = self.xmlUtil.getTagByPath("Package", "Files")
+                        self.xmlUtil.addTagAbove(filesNode, "PartOf", str(newOne))
+        
         def slotLicensePopup(self):
             self.licensePopup.exec_loop(self.pbLicense.mapToGlobal(QPoint(0,0 + self.pbLicense.height())))
 
@@ -378,15 +431,15 @@ class packageWidget(QWidget):
             for comar in package.providesComar:  #TODO: summary yok desc varsa?
                 lvi = KListViewItem(self.lvCOMAR, comar.om, comar.script) 
                  
-    def __init__(self, parent, fileLoc = None):
+    def __init__(self, parent, fileLoc, xmlUtil):
         QWidget.__init__(self, parent)
         pageLayout = QVBoxLayout(self, 6, 11)
         topLayout = QHBoxLayout(pageLayout, 5)
         
-        if fileLoc:
-            tempDir = os.path.split(fileLoc)[0]
-            self.filesDir = tempDir + "/files"
-            self.comarDir = tempDir + "/comar"
+        tempDir = os.path.split(fileLoc)[0]
+        self.filesDir = tempDir + "/files"
+        self.comarDir = tempDir + "/comar"
+        self.xmlUtil = xmlUtil
 
         # add/remove package buttons
         pbAddPackage = KPushButton(i18n("Add New Package"), self)
@@ -403,7 +456,7 @@ class packageWidget(QWidget):
         self.connect(pbRemovePackage, SIGNAL("clicked()"), self.removePackageSlot)
     
     def addPackage(self, package, focus = False):
-        tab = self.packageTab(self.twPackages, self.filesDir, self.comarDir)
+        tab = self.packageTab(self.twPackages, self.filesDir, self.comarDir, self.xmlUtil)
         tab.fill(package)
         self.twPackages.addTab(tab, package.name)
         if focus:

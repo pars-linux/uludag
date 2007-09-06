@@ -76,7 +76,7 @@ class MainWindow(KParts.MainWindow):
         self.popupFile.insertSeparator()
         self.actionOpen.plug(self.popupFile)
         self.actionSave.plug(self.popupFile)
-        self.actionSaveAll.plug(self.popupFile)
+#        self.actionSaveAll.plug(self.popupFile)
         self.popupFile.insertSeparator()
         self.actionClose.plug(self.popupFile)
         self.actionExit.plug(self.popupFile)
@@ -109,7 +109,7 @@ class MainWindow(KParts.MainWindow):
         self.actionNew.plug(toolbar)
         self.actionOpen.plug(toolbar)
         self.actionSave.plug(toolbar)
-        self.actionSaveAll.plug(toolbar)
+#        self.actionSaveAll.plug(toolbar)
         
         # build toolbar
 #        buildToolbar = QToolBar(self)  
@@ -132,30 +132,16 @@ class MainWindow(KParts.MainWindow):
         #prepare pisi
         import fcntl
          
-        rEnd, wEnd = os.pipe()
-        self.pipeReadEnd = rEnd
-        fcntl.fcntl(rEnd, fcntl.F_SETFL, os.O_NONBLOCK)
+        self.pipeReadEnd, self.pipeWriteEnd = os.pipe()
+        fcntl.fcntl(self.pipeReadEnd, fcntl.F_SETFL, os.O_NONBLOCK)
         self.sockNotifier = QSocketNotifier(self.pipeReadEnd, QSocketNotifier.Read, self)
         self.connect(self.sockNotifier, SIGNAL("activated(int)"), self.sockHandle)
-        self.ui = UI(wEnd)
-        
-        # database true çünkü build --setup için gerekli
-        try:
-            self.options = Options()
-            
-            # TODO: Catbox violation için workaround !
-            self.options.ignore_sandbox = False
-
-            pisi.api.init(database = True, options = self.options, ui = self.ui)
-            
-        except Exception, err:
-            print str(i18n("Error during PiSi initialization: %s")) % str(err)
-            self.exit()
             
         self.pisithread = None
         
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
         self.showMaximized()
+        self.currentOut = ""
     
     def doActions(self):                
         # actions
@@ -164,8 +150,10 @@ class MainWindow(KParts.MainWindow):
         self.actionNew = KStdAction.openNew(self.new, self.actionCollection())
         self.actionOpen = KStdAction.open(self.open, self.actionCollection())
         self.actionSave = KStdAction.save(self.save, self.actionCollection())
-        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
+        self.actionSave.setEnabled(False)
+#        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
         self.actionClose = KStdAction.close(self.closePacket, self.actionCollection())
+        self.actionClose.setEnabled(False)
         self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
 
         # build actions        
@@ -184,7 +172,10 @@ class MainWindow(KParts.MainWindow):
         self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
     
     def sockHandle(self, socket):
-        self.teOutput.setText(unicode(self.teOutput.text()) + unicode(os.read(socket, 100)))
+        currentOut = unicode(os.read(socket, 1000)).replace("\n", "<br>")
+        self.teOutput.setText(unicode(self.teOutput.text() + currentOut))
+        # scroll down if necessary
+        self.teOutput.setContentsPos(0, self.teOutput.contentsHeight())
         
     def prepareBuild(self):
         self.teOutput.clear()
@@ -207,7 +198,10 @@ class MainWindow(KParts.MainWindow):
         self.actionValidatePspec.setDisabled(True)
         self.actionCheckSHA1.setDisabled(True)
         self.actionComputeSHA1.setDisabled(True)
-        self.actionDetectType.setDisabled(True)        
+        self.actionDetectType.setDisabled(True) 
+        
+        self.actionClose.setEnabled(False)
+        self.actionSave.setEnabled(False)       
         
     def enableOperations(self):
         self.actionFetch.setEnabled(True)
@@ -222,6 +216,9 @@ class MainWindow(KParts.MainWindow):
         self.actionCheckSHA1.setEnabled(True)
         self.actionComputeSHA1.setEnabled(True)
         self.actionDetectType.setEnabled(True)
+        
+        self.actionClose.setEnabled(True)
+        self.actionSave.setEnabled(True)
         
     def new(self):
         self.closePacket()
@@ -263,18 +260,20 @@ class MainWindow(KParts.MainWindow):
             packageDir = unicode(packageDir) + "/"
 
         try: 
-            self.pspecFile = open(packageDir + "pspec.xml", "r+")
+            pspecFile = open(packageDir + "pspec.xml", "r+")
         except:
             KMessageBox.sorry(self, i18n("No pspec.xml found."), i18n("Error"))
             return
-        self.pspecFile.close()
+        pspecFile.close()
         
         try: 
-            self.actionspyFile = open(packageDir + "actions.py", "r+")
+            actionspyFile = open(packageDir + "actions.py", "r+")
         except:
             KMessageBox.sorry(self, i18n("No actions.py found."), i18n("Error") )
             return
-        self.actionspyFile.close()
+        actionspyFile.close()
+        
+        qApp.setOverrideCursor(KCursor.waitCursor)
         
         # cleaning
         self.closePacket()
@@ -292,12 +291,14 @@ class MainWindow(KParts.MainWindow):
 
         shutil.copytree(packageDir, self.tempDir)
         qApp.processEvents()
-
-        self.pspecTab = PspecWidget(self.twTabs, os.path.join(self.tempDir, "pspec.xml"))
         
-        if self.pspecTab == None: 
-            KMessageBox.sorry(self, i18n("pspec.xml is not valid or well-formed"), i18n("Invalid File"))
-            return
+        try:
+            self.pspecTab = PspecWidget(self.twTabs, os.path.join(self.tempDir, "pspec.xml"))
+        except Exception, err:
+            KMessageBox.sorry(self, i18n("pspec.xml cannot be parsed: %s" % str(err)), i18n("Invalid File"))
+            self.closePacket()
+            qApp.setOverrideCursor(KCursor.arrowCursor)
+            return          
         
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.tempDir, "actions.py"))
         self.twTabs.addTab(self.pspecTab, i18n("Specification"))
@@ -309,42 +310,42 @@ class MainWindow(KParts.MainWindow):
         self.connect(self.pspecTab, PYSIGNAL("changeName"), self.changePspecTab)     
         
         self.enableOperations()
+        qApp.setOverrideCursor(KCursor.arrowCursor)
     
     def save(self, all=False):
-#        if self.actionsTab == None or self.actionsTab == None:
-#            KMessageBox.sorry(self, i18n("There is no package to save. Create or Open a package first."), i18n("No package"))
-#            return
-#        
-#        if self.realDir == None:
-#            packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package Directory"))
-#            if not packageDir or str(packageDir) == "":
-#                return
-#            self.realDir = unicode(packageDir)
-#            
-#        if all == True:
-#            self.changePspecTab(False)        
-#            self.pspecTab.change = False
-#            self.changeActionsTab(False)
-#            self.actionsTab.change = False
-#            
-#            self.savePspec()
-#            self.saveActions()
-#            return
-#        
-#        if self.twTabs.currentPage() is self.pspecTab:
-#            self.changePspecTab(False)
-#            self.pspecTab.change = False
-#            # real save process
-#            self.savePspec()
-#            return
-#        
-#        if self.twTabs.currentPage() is self.actionsTab:
-#            self.changeActionsTab(False)        
-#            self.actionsTab.change = False
-#            # real save process
-#            self.saveActions()
-#            return
-        pass
+        if self.actionsTab == None or self.actionsTab == None:
+            KMessageBox.sorry(self, i18n("There is no package to save. Create or Open a package first."), i18n("No package"))
+            return
+        
+        if self.realDir == None:
+            packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package Directory"))
+            if not packageDir or str(packageDir) == "":
+                return
+            self.realDir = unicode(packageDir)
+            
+        if all == True:
+            self.changePspecTab(False)        
+            self.pspecTab.change = False
+            self.changeActionsTab(False)
+            self.actionsTab.change = False
+            
+            self.savePspec()
+            self.saveActions()
+            return
+        
+        if self.twTabs.currentPage() is self.pspecTab:
+            self.changePspecTab(False)
+            self.pspecTab.change = False
+            # real save process
+            self.savePspec()
+            return
+        
+        if self.twTabs.currentPage() is self.actionsTab:
+            self.changeActionsTab(False)        
+            self.actionsTab.change = False
+            # real save process
+            self.saveActions()
+            return
     
     def saveAll(self):
         self.save(all = True)
@@ -361,12 +362,14 @@ class MainWindow(KParts.MainWindow):
         shutil.copyfile(self.tempDir+"/actions.py", self.realDir+"/actions.py")
         
     def exit(self):
+        qApp.setOverrideCursor(KCursor.waitCursor)
+
         self.closePacket()
         if self.tempDir:
             dir = os.path.split(self.tempDir)[0]
             if os.path.isdir(dir):
                 shutil.rmtree(dir)
-        pisi.api.finalize()
+#        pisi.api.finalize()
         self.close()
     
     def changeActionsTab(self, changed=True):
@@ -416,62 +419,43 @@ class MainWindow(KParts.MainWindow):
         
     def fetchSlot(self):        
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "fetch", self.teOutput)
+        self.pisithread.setup(self.tempDir + "/pspec.xml", "fetch", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def unpackSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "unpack", self.teOutput)    
+        self.pisithread.setup(self.tempDir + "/pspec.xml", "unpack", self.pipeWriteEnd)    
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def setupSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "setup", self.teOutput)    
+        self.pisithread.setup(self.tempDir + "/pspec.xml", "setup", self.pipeWriteEnd)    
+        qApp.processEvents(QEventLoop.ExcludeUserInput)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def buildSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "build", self.teOutput)
+        self.pisithread.setup(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def installSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "install", self.teOutput)
+        self.pisithread.setup(self.tempDir + "/pspec.xml", "install", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def makePackageSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "buildpackages", self.teOutput, self.realDir)    
+        self.pisithread.setup(self.tempDir + "/pspec.xml", "buildpackages", self.pipeWriteEnd, self.realDir)    
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def addReleaseSlot(self):
-        rel = str(int(self.pspecTab.pspec.history[0].release) + 1)
-        dlg = newListViewDialog(self, [i18n("Release"), i18n("Date"), i18n("Version"), i18n("Comment"), i18n("Name"), i18n("E-mail"), i18n("Type")], i18n("Add Release"), [rel, i18n("Date"), i18n("Version"), i18n("Comment"), i18n("Name"), i18n("E-mail"), i18n("Type")])
-        if dlg.exec_loop() == KDialog.Rejected:
-            return
-        
-        res = dlg.getResults()
-        if res == None:
-            return
-        
-        update = spec.Update()
-        update.release = res[0]
-        update.date = res[1]
-        update.version = res[2]
-        update.comment = res[3]
-        update.name = unicode(res[4])
-        update.email = res[5]
-        update.type = res[6]
-        self.pspecTab.historyPage.addRelease(update, True)
-        self.pspecTab.pspec.history.insert(0, update)
-        if self.pspecTab.where() == "code":
-            self.pspecTab.syncFromDesign() 
+        pass
     
     def validatePspecSlot(self):
         if self.pspecTab.where() == "design":
@@ -567,11 +551,14 @@ class PisiThread(QThread):
     def run(self):
          from cgi import escape
          try:
+             self.initPisi()
+             qApp.processEvents(QEventLoop.ExcludeUserInput)
              pisi.api.build_until(self.path, self.stage)
-             qApp.processEvents()
-             self.output.setText(self.output.text() + i18n("<b>Succesfully finished.</b>"))
+             qApp.processEvents(QEventLoop.ExcludeUserInput)
+             pisi.api.finalize()
+             os.write(self.output, str(i18n("<b>Succesfully finished.</b><br>")))
          except Exception, inst:
-             self.output.append(str(i18n("\n<font color=\"red\">*** Error: %s</font>\n\n")) % unicode(escape(str(inst))))
+             os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
              return
          
          if self.stage == "buildpackages":
@@ -579,12 +566,18 @@ class PisiThread(QThread):
              command = "mv %s %s" % (str(os.getcwd() + "/*.pisi").replace(" ", "\ "),self.pisiTo.replace(" ", "\ "))
              os.system(command)
 
-    def setup(self, path, stage, output, pisiTo=None):
+    def setup(self, path, stage, pipe, pisiTo=None):
         self.path = path
         self.stage = stage
-        self.output = output
+        self.output = pipe
         self.pisiTo = pisiTo
     
+    def initPisi(self):
+        ui = UI(self.output)
+        opts = Options()
+        opts.debug = True
+        pisi.api.init(database = True, write = False, options = opts, ui = ui, stdout = self.output, stderr = self.output, signal_handling = False)
+                
 class UI(pisi.ui.UI):
     def __init__(self, out):
         pisi.ui.UI.__init__(self)
@@ -594,7 +587,6 @@ class UI(pisi.ui.UI):
     def display(self, msg, color="black"):
         from cgi import escape
         finalStr = "<font color=\"%s\">%s</font><br>" % (color, unicode(escape(msg)))
-#        print finalStr
         os.write(self.out, finalStr)
     
     def info(self, msg, verbose = False, noln = False):
@@ -618,6 +610,7 @@ class UI(pisi.ui.UI):
     
     def display_progress(self, **kwargs):
         print kwargs
+        #TODO: display a progress bar
     
 def cleanTabs(tw):
         for i in range(tw.count()):
