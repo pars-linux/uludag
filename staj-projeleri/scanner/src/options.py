@@ -11,7 +11,6 @@ from combobox import *
 class Options(QWidget):
     def __init__(self,parent):
         QWidget.__init__(self,parent)
-        #self.optFrame = QWidget(parent)
         self.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Expanding,0,0,False))
         self.setMinimumSize(QSize(350,410))
         self.setMaximumSize(QSize(350,32767))
@@ -22,21 +21,40 @@ class Options(QWidget):
         self.tabWidget.setMinimumSize(QSize(350,410))
         self.tabWidget.setMaximumSize(QSize(350,32767))
         self.hLayout.addWidget(self.tabWidget)
+
+        self.basicTab = QScrollView(self.tabWidget,"basicTab")
+        self.basicTabViewport = QWidget(self.basicTab.viewport(),"basicTab")
+        self.basicTabViewport.setMinimumWidth(328);
+        self.basicTab.viewport().setPaletteBackgroundColor(self.basicTabViewport.paletteBackgroundColor())
+        self.basicTab.viewport().setPaletteForegroundColor(QColor(0,0,0))
+        self.basicTabLayout = QVBoxLayout(self.basicTabViewport)
+        
+        self.basicTab.addChild(self.basicTabViewport)
+        
+        self.basicOptionsBox = QGroupBox(1,Qt.Horizontal,"Basic Options",self.basicTabViewport,"basicOptionsBox")
+        self.basicOptionsBox.setFlat(True)
+        self.basicTabLayout.addWidget(self.basicOptionsBox)
+        
+        self.scanMode = ComboBox("Scan Mode",False,self.basicOptionsBox,"combobox")
+        
+        self.resolution = ComboBox("Resolution",False,self.basicOptionsBox,"combobox")
+        
+        self.tabWidget.insertTab(self.basicTab,QString.fromLatin1(""))
         
         self.advancedTab = QScrollView(self.tabWidget,"scrollView")
-        self.tabViewport = QWidget(self.advancedTab.viewport(),"advancedTab")
-        self.tabViewport.setMinimumWidth(328);
-        self.advancedTab.viewport().setPaletteBackgroundColor(self.tabViewport.paletteBackgroundColor())
+        self.advancedTabViewport = QWidget(self.advancedTab.viewport(),"advancedTab")
+        self.advancedTabViewport.setMinimumWidth(328);
+        self.advancedTab.viewport().setPaletteBackgroundColor(self.advancedTabViewport.paletteBackgroundColor())
         self.advancedTab.viewport().setPaletteForegroundColor(QColor(0,0,0))
-        self.tabLayout = QVBoxLayout(self.tabViewport)
+        self.advancedTabLayout = QVBoxLayout(self.advancedTabViewport)
         
-        self.advancedTab.addChild(self.tabViewport)
+        self.advancedTab.addChild(self.advancedTabViewport)
         
         self.devices = sane.get_devices()
         
-        self.deviceSelectBox = QGroupBox(1,Qt.Horizontal,"Devices",self.tabViewport,"deviceSelectBox")
+        self.deviceSelectBox = QGroupBox(1,Qt.Horizontal,"Devices",self.advancedTabViewport,"deviceSelectBox")
         self.deviceSelectBox.setFlat(True)
-        self.tabLayout.addWidget(self.deviceSelectBox)
+        self.advancedTabLayout.addWidget(self.deviceSelectBox)
         
         self.deviceSelect = QComboBox(False,self.deviceSelectBox,"deviceSelect")
         
@@ -46,29 +64,11 @@ class Options(QWidget):
             self.deviceSelect.insertItem(device[1] + " " + device[2])
         
         self.connect(self.deviceSelect,SIGNAL("activated(int)"),self.deviceSelected)
-
-        self.basicOptionsBox = QGroupBox(1,Qt.Horizontal,"Basic Options",self.tabViewport,"basicOptionsBox")
-        self.basicOptionsBox.setFlat(True)
-        self.tabLayout.addWidget(self.basicOptionsBox)
         
-        self.scanMode = ComboBox("Scan Mode",False,self.basicOptionsBox,"combobox")
-        
-        self.resolution = ComboBox("Resolution",False,self.basicOptionsBox,"combobox")
-
-        self.showAdvancedButton = QButton(self.tabViewport,"showAdvancedButton")
-        self.showAdvancedButton.setText("More")
-        self.tabLayout.addWidget(self.showAdvancedButton)
-        
-
-        self.connect(self.showAdvancedButton,SIGNAL("released()"),self.showMore)
-
         self.opt = None
         
         self.tabWidget.insertTab(self.advancedTab,QString.fromLatin1(""))
 
-        self.basicTab = QWidget(self.tabWidget,"basicTab")
-        self.tabWidget.insertTab(self.basicTab,QString.fromLatin1(""))
-        
         self.languageChange()
         
         self.device = None
@@ -85,17 +85,11 @@ class Options(QWidget):
         for option in self.optionList:
             option.widget.updateState()
     
-    def showMore(self):
-        if self.opt.isShown():
-            self.opt.hide()
-        else:
-            self.opt.show()
-    
     def deviceSelected(self,no):
         self.clearOptions()
         if no > 0:
-            self.opt = QWidget(self.tabViewport)
-            self.tabLayout.addWidget(self.opt)
+            self.opt = QWidget(self.advancedTabViewport)
+            self.advancedTabLayout.addWidget(self.opt)
             self.optLayout = QVBoxLayout(self.opt)
             
             self.tmpVBox = QVBox(self.opt,"vbox")
@@ -144,6 +138,8 @@ class Options(QWidget):
                 o = Option(groupBox, option, self.device)
                 self.optionList.append(o)
                 self.connect(o.widget, PYSIGNAL("stateChanged"), self.updateOptions)
+        
+        self.opt.show()
 
         self.emit(PYSIGNAL("newDeviceSelected"),())
     
@@ -161,9 +157,8 @@ class Options(QWidget):
     def clearOptions(self):
         self.scanMode.setEnabled(False)
         self.resolution.setEnabled(False)
-        self.showAdvancedButton.setEnabled(False)
         if self.opt != None:
-            self.tabLayout.remove(self.opt)
+            self.advancedTabLayout.remove(self.opt)
             self.opt = None
             self.optLayout = None
             if self.device != None:
