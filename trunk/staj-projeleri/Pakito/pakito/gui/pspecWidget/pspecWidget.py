@@ -107,21 +107,20 @@ class PspecWidget(QWidget):
             
     def designWillOpen(self):
         qApp.setOverrideCursor(KCursor.workingCursor())
-        res = self.syncFromCode()
-        qApp.restoreOverrideCursor()
-
-        if not res:
-            KMessageBox.sorry(self, i18n("Specification is not valid or well-formed."), i18n("Invalid XML Code"))
+        try:
+            self.syncFromCode()            
+        except Exception, err:
+            qApp.restoreOverrideCursor()
+            KMessageBox.sorry(self, i18n("Specification is not valid or well-formed: %s" % err), i18n("Invalid XML Code"))
             self.pbDesign.setOn(False)
             self.pbCode.setOn(True)
-        else:
-            qApp.setOverrideCursor(KCursor.workingCursor())
-            self.fill()
-            self.widgetStack.raiseWidget(0)
-            self.pbCode.setOn(False)
-            self.pbDesign.setOn(True)
-            qApp.restoreOverrideCursor()
-
+            return
+        
+        self.fill()
+        self.widgetStack.raiseWidget(0)
+        self.pbCode.setOn(False)
+        self.pbDesign.setOn(True)
+        qApp.restoreOverrideCursor()
             
     def codeWillOpen(self):
         qApp.setOverrideCursor(KCursor.workingCursor())
@@ -135,24 +134,20 @@ class PspecWidget(QWidget):
     
     def syncFromCode(self):
         self.editor.save()
-        try:
-            self.pspec.read(self.editor.editedFile)
-        except:
-            return False
-        return True
-    
+        self.pspec.read(self.editor.editedFile)
+        
     def syncFromDesign(self):
         self.xmlUtil.write()
         
     def isSourceDownloaded(self):
         import os.path as path
         
-        file = str(self.sourcePage.sourceleURI.text())
+        file = str(self.sourcePage.leURI.text())
         if file.strip() == "":
-            return (False, None)
+            return None
         package = path.basename(file)
         loc = "/var/cache/pisi/archives/%s" % package
         if path.exists(loc):
-            return (True, loc)
+            return loc
         else:
-            return (False, None)        
+            return None      
