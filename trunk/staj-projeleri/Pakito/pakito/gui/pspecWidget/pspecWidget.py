@@ -108,7 +108,7 @@ class PspecWidget(QWidget):
     def designWillOpen(self):
         qApp.setOverrideCursor(KCursor.workingCursor())
         res = self.syncFromCode()
-        qApp.setOverrideCursor(KCursor.arrowCursor)
+        qApp.restoreOverrideCursor()
 
         if not res:
             KMessageBox.sorry(self, i18n("Specification is not valid or well-formed."), i18n("Invalid XML Code"))
@@ -120,7 +120,7 @@ class PspecWidget(QWidget):
             self.widgetStack.raiseWidget(0)
             self.pbCode.setOn(False)
             self.pbDesign.setOn(True)
-            qApp.setOverrideCursor(KCursor.arrowCursor)
+            qApp.restoreOverrideCursor()
 
             
     def codeWillOpen(self):
@@ -131,7 +131,7 @@ class PspecWidget(QWidget):
 
         self.syncFromDesign()
         self.editor.openFile(self.fileLocation)
-        qApp.setOverrideCursor(KCursor.arrowCursor)
+        qApp.restoreOverrideCursor()
     
     def syncFromCode(self):
         self.editor.save()
