@@ -183,8 +183,6 @@ class MainWindow(KParts.MainWindow):
             self.pspecTab.syncFromDesign()
         else:
             self.pspecTab.editor.save()
-        self.pisithread = PisiThread()
-#        self.pisithread.setDaemon(True)
         
     def disableOperations(self):
         self.actionFetch.setDisabled(True)
@@ -419,38 +417,38 @@ class MainWindow(KParts.MainWindow):
         
     def fetchSlot(self):        
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "fetch", self.pipeWriteEnd)
+        self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "fetch", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def unpackSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "unpack", self.pipeWriteEnd)    
+        self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "unpack", self.pipeWriteEnd)    
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def setupSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "setup", self.pipeWriteEnd)    
+        self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "setup", self.pipeWriteEnd)    
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def buildSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
+        self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def installSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "install", self.pipeWriteEnd)
+        self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "install", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def makePackageSlot(self):
         self.prepareBuild()
-        self.pisithread.setup(self.tempDir + "/pspec.xml", "buildpackages", self.pipeWriteEnd, self.realDir)    
+        self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "buildpackages", self.pipeWriteEnd, self.realDir)    
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
@@ -461,21 +459,20 @@ class MainWindow(KParts.MainWindow):
         if self.pspecTab.where() == "design":
             self.pspecTab.syncFromDesign()
             try:
-                self.pspec.read(self.pspecTab.fileLocation)
+                self.pspecTab.pspec.read(self.pspecTab.fileLocation)
                 KMessageBox.information(self, i18n("Pspec file is valid."), i18n("Valid File"))
-                return
-            except:
-                KMessageBox.sorry(self, i18n("Pspec file is not valid."), i18n("Invalid File"))
-                return
-        
-        if not self.pspecTab.syncFromCode():
-            KMessageBox.sorry(self, i18n("Pspec file is not valid."), i18n("Invalid File"))
+            except Exception, err:
+                KMessageBox.sorry(self, i18n("Pspec file is not valid: %s" % err), i18n("Invalid File"))
         else:
-            KMessageBox.information(self, i18n("Pspec file is valid."), i18n("Valid File"))
-    
+            try:
+                self.pspecTab.syncFromCode()
+                KMessageBox.information(self, i18n("Pspec file is valid."), i18n("Valid File"))
+            except Exception, err:
+                KMessageBox.sorry(self, i18n("Pspec file is not valid: %s" % err), i18n("Invalid File"))
+                
     def checkSHA1Slot(self):
-        down, loc = self.pspecTab.isSourceDownloaded()
-        if not down:
+        loc = self.pspecTab.isSourceDownloaded()
+        if not loc:
             KMessageBox.information(self, i18n("Please fetch the source first."))
             return
 #            ans = KMessageBox.questionYesNo(self, "Source must be downloaded first. Do you want to download now?", "Hmm")
@@ -552,7 +549,14 @@ class MainWindow(KParts.MainWindow):
         KMessageBox.information(self, str(i18n("File type is: \"%s\".\nThis will be set as the current file type.")) % ext, i18n("Type detected"))
         self.pspecTab.sourcePage.sourceleType.setText(ext)
     
-class PisiThread(QThread):
+class PisiThread(Thread):
+    def __init__(self, path, stage, pipe, pisiTo=None):
+        Thread.__init__(self)
+        self.path = path
+        self.stage = stage
+        self.output = pipe
+        self.pisiTo = pisiTo
+        self.setDaemon(True)
     
     def run(self):
          from cgi import escape
@@ -571,18 +575,13 @@ class PisiThread(QThread):
              # TODO: .pisi'nin yerini belirle
              command = "mv %s %s" % (str(os.getcwd() + "/*.pisi").replace(" ", "\ "),self.pisiTo.replace(" ", "\ "))
              os.system(command)
-
-    def setup(self, path, stage, pipe, pisiTo=None):
-        self.path = path
-        self.stage = stage
-        self.output = pipe
-        self.pisiTo = pisiTo
     
     def initPisi(self):
         ui = UI(self.output)
         opts = Options()
         opts.debug = True
-        pisi.api.init(database = True, write = False, options = opts, ui = ui, stdout = self.output, stderr = self.output, signal_handling = False)
+#        pisi.api.init(database = True, write = False, options = opts, ui = ui, stdout = self.output, stderr = self.output, signal_handling = False)
+        pisi.api.init(database = True, write = False, options = opts, ui = ui, stderr = self.output, signal_handling = False)
                 
 class UI(pisi.ui.UI):
     def __init__(self, out):
