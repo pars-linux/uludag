@@ -11,6 +11,7 @@ class HistoryDialog(HistoryDialogUI):
         self.niRelease.setValue(relValue)
         self.connect(self.btnOk, SIGNAL("clicked()"), self, SLOT("accept()"))
         self.connect(self.btnCancel, SIGNAL("clicked()"), self, SLOT("reject()"))
+        self.leVersion.setFocus()
         if release:
             self.niRelease.setValue(int(release[0]))
             self.dwDate.setDate(QDate.fromString(release[1], Qt.ISODate))

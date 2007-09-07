@@ -297,7 +297,7 @@ class MainWindow(KParts.MainWindow):
         except Exception, err:
             KMessageBox.sorry(self, i18n("pspec.xml cannot be parsed: %s" % str(err)), i18n("Invalid File"))
             self.closePacket()
-            qApp.setOverrideCursor(KCursor.arrowCursor)
+            qApp.restoreOverrideCursor()
             return          
         
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.tempDir, "actions.py"))
@@ -310,7 +310,7 @@ class MainWindow(KParts.MainWindow):
         self.connect(self.pspecTab, PYSIGNAL("changeName"), self.changePspecTab)     
         
         self.enableOperations()
-        qApp.setOverrideCursor(KCursor.arrowCursor)
+        qApp.restoreOverrideCursor()
     
     def save(self, all=False):
         if self.actionsTab == None or self.actionsTab == None:
@@ -455,12 +455,18 @@ class MainWindow(KParts.MainWindow):
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def addReleaseSlot(self):
-        pass
+        self.pspecTab.historyPage.slotAddHistory()
     
     def validatePspecSlot(self):
         if self.pspecTab.where() == "design":
-            KMessageBox.information(self, i18n("Pspec file is valid."), i18n("Valid File"))
-            return
+            self.pspecTab.syncFromDesign()
+            try:
+                self.pspec.read(self.pspecTab.fileLocation)
+                KMessageBox.information(self, i18n("Pspec file is valid."), i18n("Valid File"))
+                return
+            except:
+                KMessageBox.sorry(self, i18n("Pspec file is not valid."), i18n("Invalid File"))
+                return
         
         if not self.pspecTab.syncFromCode():
             KMessageBox.sorry(self, i18n("Pspec file is not valid."), i18n("Invalid File"))
