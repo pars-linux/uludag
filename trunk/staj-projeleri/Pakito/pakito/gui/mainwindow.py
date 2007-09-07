@@ -30,6 +30,9 @@ class MainWindow(KParts.MainWindow):
     """ Main window of the application """
     def __init__(self, *args):
         KParts.MainWindow.__init__(self, *args)
+        
+        print os.getpid()
+        
         iconloader = KGlobal.iconLoader()
         mainIcon = iconloader.loadIcon("pisikga", KIcon.Desktop)
         self.setIcon(mainIcon)
@@ -142,38 +145,11 @@ class MainWindow(KParts.MainWindow):
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
         self.showMaximized()
         self.currentOut = ""
-    
-    def doActions(self):                
-        # actions
-        
-        # (standard) file actions
-        self.actionNew = KStdAction.openNew(self.new, self.actionCollection())
-        self.actionOpen = KStdAction.open(self.open, self.actionCollection())
-        self.actionSave = KStdAction.save(self.save, self.actionCollection())
-        self.actionSave.setEnabled(False)
-#        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
-        self.actionClose = KStdAction.close(self.closePacket, self.actionCollection())
-        self.actionClose.setEnabled(False)
-        self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
 
-        # build actions        
-        self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection())
-        self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection())        
-        self.actionSetup = KAction(i18n("Setup"), "configure", KShortcut(), self.setupSlot, self.actionCollection())
-        self.actionBuild = KAction(i18n("Build"), "compfile", KShortcut(), self.buildSlot, self.actionCollection())
-        self.actionInstall = KAction(i18n("Install"), KShortcut(), self.installSlot, self.actionCollection())
-        self.actionMakePackage = KAction(i18n("Make Package"), "package", KShortcut(), self.makePackageSlot, self.actionCollection())
-        
-        #automation actions
-        self.actionAddRelease = KAction(i18n("Add Release"), "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection())
-        self.actionValidatePspec = KAction(i18n("Validate Pspec File"), "ok", KShortcut(), self.validatePspecSlot, self.actionCollection())
-        self.actionCheckSHA1 = KAction(i18n("Check SHA1"), KShortcut(), self.checkSHA1Slot, self.actionCollection())
-        self.actionComputeSHA1 = KAction(i18n("Compute SHA1"), "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection())
-        self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
-    
     def sockHandle(self, socket):
         currentOut = unicode(os.read(socket, 1000)).replace("\n", "<br>")
         self.teOutput.setText(unicode(self.teOutput.text() + currentOut))
+        
         # scroll down if necessary
         self.teOutput.setContentsPos(0, self.teOutput.contentsHeight())
         
@@ -481,7 +457,7 @@ class MainWindow(KParts.MainWindow):
 #            self.fetchSlot()
 #            self.pisithread.join()
         
-        old = str(self.pspecTab.sourcePage.sourceleSHA1.text())
+        old = str(self.pspecTab.sourcePage.leSHA1.text())
         if old.strip() == "":
             KMessageBox.information(self, i18n("SHA1 field must be entered for check."))
             return
@@ -499,8 +475,8 @@ class MainWindow(KParts.MainWindow):
 
     
     def computeSHA1Slot(self):
-        down, loc = self.pspecTab.isSourceDownloaded()
-        if not down:
+        loc = self.pspecTab.isSourceDownloaded()
+        if not loc:
             KMessageBox.information(self, i18n("Please fetch the source first."))
             return
 #            ans = KMessageBox.questionYesNo(self, "Source must be downloaded first. Do you want to download now?", "Hmm")
@@ -515,7 +491,7 @@ class MainWindow(KParts.MainWindow):
         temp.close()
         
         KMessageBox.information(self, str(i18n("SHA1 is %s.\n\nThis will be set as current SHA1.")) % new, i18n("SHA1 computed"))
-        self.pspecTab.sourcePage.sourceleSHA1.setText(new)
+        self.pspecTab.sourcePage.leSHA1.setText(new)
         
     def detectTypeSlot(self):
         
@@ -535,8 +511,8 @@ class MainWindow(KParts.MainWindow):
             else:
                 return "binary"
             
-        down, loc = self.pspecTab.isSourceDownloaded()
-        if not down:
+        loc = self.pspecTab.isSourceDownloaded()
+        if not loc:
             KMessageBox.information(self, i18n("Please fetch the source first."))
             return
 #            ans = KMessageBox.questionYesNo(self, "Source must be downloaded first. Do you want to download now?", "Hmm")
@@ -547,7 +523,35 @@ class MainWindow(KParts.MainWindow):
         
         ext = guessTypeByExtension(loc)
         KMessageBox.information(self, str(i18n("File type is: \"%s\".\nThis will be set as the current file type.")) % ext, i18n("Type detected"))
-        self.pspecTab.sourcePage.sourceleType.setText(ext)
+        self.pspecTab.sourcePage.cbType.setCurrentText(ext)
+    
+    def doActions(self):                
+        # actions
+        
+        # (standard) file actions
+        self.actionNew = KStdAction.openNew(self.new, self.actionCollection())
+        self.actionOpen = KStdAction.open(self.open, self.actionCollection())
+        self.actionSave = KStdAction.save(self.save, self.actionCollection())
+        self.actionSave.setEnabled(False)
+#        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
+        self.actionClose = KStdAction.close(self.closePacket, self.actionCollection())
+        self.actionClose.setEnabled(False)
+        self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
+
+        # build actions        
+        self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection())
+        self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection())        
+        self.actionSetup = KAction(i18n("Setup"), "configure", KShortcut(), self.setupSlot, self.actionCollection())
+        self.actionBuild = KAction(i18n("Build"), "compfile", KShortcut(), self.buildSlot, self.actionCollection())
+        self.actionInstall = KAction(i18n("Install"), KShortcut(), self.installSlot, self.actionCollection())
+        self.actionMakePackage = KAction(i18n("Make Package"), "package", KShortcut(), self.makePackageSlot, self.actionCollection())
+        
+        #automation actions
+        self.actionAddRelease = KAction(i18n("Add Release"), "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection())
+        self.actionValidatePspec = KAction(i18n("Validate Pspec File"), "ok", KShortcut(), self.validatePspecSlot, self.actionCollection())
+        self.actionCheckSHA1 = KAction(i18n("Check SHA1"), KShortcut(), self.checkSHA1Slot, self.actionCollection())
+        self.actionComputeSHA1 = KAction(i18n("Compute SHA1"), "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection())
+        self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
     
 class PisiThread(Thread):
     def __init__(self, path, stage, pipe, pisiTo=None):
@@ -556,6 +560,7 @@ class PisiThread(Thread):
         self.stage = stage
         self.output = pipe
         self.pisiTo = pisiTo
+        print os.getpid()
         self.setDaemon(True)
     
     def run(self):
@@ -614,8 +619,10 @@ class UI(pisi.ui.UI):
         return True
     
     def display_progress(self, **kwargs):
-        print kwargs
+#        self.display(str(kwargs), "darkgreen")
+#        print kwargs
         #TODO: display a progress bar
+        pass
     
 def cleanTabs(tw):
         for i in range(tw.count()):

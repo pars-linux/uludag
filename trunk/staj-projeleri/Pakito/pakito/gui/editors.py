@@ -22,7 +22,7 @@ class Editor(QWidget):
             
         #select first part
         for ptr in offers:
-            part = createReadWritePart(ptr.library(), self, ptr.name())#, "KTextEditor.Document")
+            part = createReadWritePart(ptr.library(), self, ptr.name())
             if part:
                 self.part = part
                 break
