@@ -2,6 +2,8 @@ from Crypto.Hash import MD5,SHA
 from cryptUtility import Cutil
 from fileList import StructMe
 
+import os
+
 class DigestMan(object):
     """ The class generates sha1 or md5 hashes of the files"""
     
@@ -9,7 +11,7 @@ class DigestMan(object):
         """ Some initialization stuff"""
         pass
     
-    def generate_hash(self,fname,tip):
+    def generate_hash(fname,tip):
         """ Returns the hash of the files even big ones"""
         if tip=="sha1":
             h=SHA.new()
@@ -62,7 +64,9 @@ class DigestMan(object):
         fl=StructMe(root_dir)
         files=fl.FileStructure()
         
-        print files
+        if root_dir.endswith('/'):
+            root_dir=root_dir[:-1]
+        #print files
         
         try :
             hash_file=open("".join([root_dir,".txt"]),"w")
@@ -72,15 +76,15 @@ class DigestMan(object):
             for f in files :
                 
                 buffer.append("".join([f,"\n"]))
-                chash=self.generate_hash(f, "sha1")
+                chash=DigestMan.generate_hash(f, "sha1")
                 buffer.append("".join([chash,"\n"]))
                 #hash_file.write("".join(["(",f,") = ",chash]))
             
             hash_file.writelines(buffer)    
                 
             hash_file.close()
-            print "All hashes written to file"
-            
+            print "All hashes written to file :","".join([root_dir,".txt"])
+            #print os.getcwd()
             return True
                 
         except IOError ,i:
@@ -94,4 +98,4 @@ if __name__=="__main__":
     d=DigestMan()
     #print d.generate_hash("/home/makkalot/Harun.Yahya.The.Secret.Of.The.Test.Bulgarian.mpg", "sha1")
     #print d.store_hash("svn")
-    print d.gen_buf_hash("Merhabalar")
+    #print d.gen_buf_hash("Merhabalar")

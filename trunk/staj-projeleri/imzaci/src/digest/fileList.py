@@ -1,7 +1,7 @@
 import os
 
 #The root of your directory to scan for md5
-TheRoot='svn'
+#TheRoot='svn'
 
 
 class StructMe(object):
@@ -9,7 +9,7 @@ class StructMe(object):
     #The constructor.
     def __init__(self,name):
         #empty for now
-        print "I'm empty for noww"
+        #print "I'm empty for noww"
         
         self.__name=name
         #print os.curdir(str)

@@ -1,7 +1,7 @@
 
 certInfo={
           "beginTag":"""<html><body>
-                    <h2 align="center"><b>Certificate Information</b></h2>
+                    <h2 align="center"><b>%s</b></h2>
                     <br /><br />""",
             
            "endTag":"""<br /><br /><br /></body></html>""",
@@ -77,5 +77,8 @@ certInfo={
                             </tr>
                             </tbody>
                             </table>
-                            """     
+                            """,
+                            
+            "chainInfo":"""<a href=\"%s\"><b>%s</b></a><br/>"""
+                             
           }
