@@ -1,4 +1,3 @@
-- Wiki sayfasındaki tabloda kodlaması yapılmamış uygulamaların kodlaması yapılacak özellikle pidgin, svn ve pisi için
 - pisi'nin aktif kullanıcının .proxy klasöründeki bir dosyadan proxy ayarlarını alması için bir yama yazılacak
-- network-applet gibi bir apllet yapılabilir
-- Kullanıcı ve şifre desteği eklenebilir.
+- network-applet gibi bir applet yapılabilir
+- Kullanıcı ve şifre desteği ekle, düz metin olması sorun olmaz sanırım. Zaten, örneğin, pidgin öyle tutuyor.
