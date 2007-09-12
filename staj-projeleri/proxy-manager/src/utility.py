@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-#
 # Copyright (C) 2006-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
@@ -29,29 +26,43 @@ def initProfiles():
     profiles[0:] = profile.parseConfig()
 
 def createModules():
+    """Import modules if they are necessary. For some modules the file that it
+    modifies must exist, but for some the file must be created by the module itself.
+    So, below there are some checks to determine whether the module must be imported,
+    or not."""
+    
+    pisi.api.init(write=False)
+    installed = pisi.api.list_installed()
     home_dir = os.path.expanduser("~/")
-    if "firefox" in installed or "thunderbird" in installed:
+    
+    # kdebase must be installed, hopefully, no need to check.
+    from apps.kde import KDE
+    modules.append(KDE())
+    if os.path.exists(home_dir + ".mozilla/firefox") or os.path.exists(home_dir + ".thunderbird"):
         from apps.mozilla import Mozilla
-        if os.exists(home_dir + ".mozilla/firefox"):
+        if os.path.exists(home_dir + ".mozilla/firefox"):
             modules.append(Mozilla(home_dir + ".mozilla/firefox/"))
-        if os.exists(home_dir + ".thunderbird"):
+        if os.path.exists(home_dir + ".thunderbird"):
             modules.append(Mozilla(home_dir + ".thunderbird/"))
-    if "amsn" in installed and os.exists(home_dir + ".amsn/config.xml"):
+    if os.path.exists(home_dir + ".amsn/config.xml"):
         from apps.amsn import AMSN
         modules.append(AMSN())
     if "aria2" in installed:
         from apps.aria2 import Aria2
         modules.append(Aria2())
-    if "kdebase" in installed:
-        from apps.kde import KDE
-        modules.append(KDE())
     if "gftp" in installed:
         from apps.gftp import Gftp
         modules.append(Gftp())
-    if "pidgin" in installed and os.exists(home_dir + ".purple/prefs.xml"):
+    if "pidgin" in installed and os.path.exists(home_dir + ".purple/prefs.xml"):
         from apps.pidgin import Pidgin
         modules.append(Pidgin())
-        
+    if "subversion" in installed and os.path.exists(home_dir + ".subversion/servers"):
+        from apps.svn import Svn
+        modules.append(Svn())
+    if "wget" in installed:
+        from apps.wget import Wget
+        modules.append(Wget())
+
 
 def changeProxy(prfl):
     if prfl.type == profile.direct:
