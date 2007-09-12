@@ -1,4 +1,4 @@
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -25,10 +25,10 @@ class AMSN(App):
             elif attribute.firstChild.nodeValue == "proxy":
                 self.proxy = value
 
-    def setGlobalProxy(self, ip, port=None):
-        self.setHTTPProxy(ip, port)
+    def setGlobalProxy(self, ip, port=None, user=None, pasw=None):
+        self.setHTTPProxy(ip, port, user, pasw)
     
-    def setHTTPProxy(self, ip, port=None):
+    def setHTTPProxy(self, ip, port=None, user=None, pasw=None):
         self.connectiontype.firstChild.nodeValue = "proxy"
         textValue = ip
         if port: textValue = textValue + " " + port

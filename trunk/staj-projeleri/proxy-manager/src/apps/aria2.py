@@ -1,4 +1,4 @@
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -23,17 +23,18 @@ class Aria2(App):
         i = 0
         self.hi = -1
         while len(self.lines) != i and self.hi == -1:
-            if self.lines[i].find("http-proxy") != -1:
+            if len(self.lines[i]) == 0 or self.lines[i][0] == ("#" or "\n"): pass
+            elif self.lines[i].find("http-proxy") != -1:
                 self.hi = i
             i += 1
         if self.hi == -1:
             self.lines.append("\n")
             self.hi = len(self.lines) - 1
     
-    def setGlobalProxy(self, ip, port=None):
-        self.setHTTPProxy(ip, port)
+    def setGlobalProxy(self, ip, port=None, user=None, pasw=None):
+        self.setHTTPProxy(ip, port, user, pasw)
 
-    def setHTTPProxy(self, ip, port=None):
+    def setHTTPProxy(self, ip, port=None, user=None, pasw=None):
         proxy = "http-proxy = " + ip
         if port: proxy += ":" + port
         else: proxy += ":3128"
