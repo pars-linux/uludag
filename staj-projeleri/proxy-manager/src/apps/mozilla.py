@@ -1,4 +1,4 @@
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -53,7 +53,8 @@ class Mozilla(App):
         si = spi = soi = sopi = ti = shi = -1
         
         while len(self.conf_lines) != i:
-            if hi == -1 and self.conf_lines[i].find(self.http) != -1: hi = i
+            if len(self.conf_lines[i]) == 0 or self.conf_lines[i][0] == ("#" or "\n"): pass
+            elif hi == -1 and self.conf_lines[i].find(self.http) != -1: hi = i
             elif hpi == -1 and self.conf_lines[i].find(self.http_port) != -1: hpi = i
             elif fi == -1 and self.conf_lines[i].find(self.ftp) != -1: fi = i
             elif fpi == -1 and self.conf_lines[i].find(self.ftp_port) != -1: fpi = i
@@ -73,8 +74,8 @@ class Mozilla(App):
         for i in indexes:
             if i != -1: del self.conf_lines[i]
         
-    ## a list-if system that eliminates conditions a they are met, so that performance improves?
-    def setGlobalProxy(self, ip, port=None):
+    
+    def setGlobalProxy(self, ip, port=None, user=None, pasw=None):
         if not port: port = "0"
         del self.lines[:]
         self.lines.append(self.start + self.http + "\", \"" + ip + "\");\n")
@@ -90,35 +91,40 @@ class Mozilla(App):
         self.lines.append(self.start + self.type + "\", 1);\n")
         self.lines.append(self.start + self.share + "\", true);\n")
         
-    def setHTTPProxy(self, ip, port=None):
+    def setHTTPProxy(self, ip, port=None, user=None, pasw=None):
+        if not port: port = "0"
         del self.lines[:]
         self.lines.append(self.start + self.http + "\", \"" + ip + "\");\n")
         self.lines.append(self.start + self.http_port + "\", " + port + ");\n")
         self.lines.append(self.start + self.type + "\", 1);\n")
         self.lines.append(self.start + self.share + "\", false);\n")
         
-    def setFTPProxy(self, ip, port=None):
+    def setFTPProxy(self, ip, port=None, user=None, pasw=None):
+        if not port: port = "0"
         del self.lines[:]
         self.lines.append( self.start + self.ftp + "\", \"" + ip + "\");\n")
         self.lines.append(self.start + self.ftp_port + "\", " + port + ");\n")
         self.lines.append(self.start + self.type + "\", 1);\n")
         self.lines.append(self.start + self.share + "\", false);\n")
         
-    def setGopherProxy(self, ip, port=None):
+    def setGopherProxy(self, ip, port=None, user=None, pasw=None):
+        if not port: port = "0"
         del self.lines[:]
         self.lines.append(self.start + self.gopher + "\", \"" + ip + "\");\n")
         self.lines.append(self.start + self.gopher_port + "\", " + port + ");\n")
         self.lines.append(self.start + self.type + "\", 1);\n")
         self.lines.append(self.start + self.share + "\", false);\n")
         
-    def setSSLProxy(self, ip, port=None):
+    def setSSLProxy(self, ip, port=None, user=None, pasw=None):
+        if not port: port = "0"
         del self.lines[:]
         self.lines.append(self.start + self.ssl + "\", \"" + ip + "\");\n")
         self.lines.append(self.start + self.ssl_port + "\", " + port + ");\n")
         self.lines.append(self.start + self.type + "\", 1);\n")
         self.lines.append(self.start + self.share + "\", false);\n")
         
-    def setSOCKSProxy(self, ip, port=None):
+    def setSOCKSProxy(self, ip, port=None, user=None, pasw=None):
+        if not port: port = "0"
         del self.lines[:]
         self.lines.append(self.start + self.socks + "\", \"" + ip + "\");\n")
         self.lines.append(self.start + self.socks_port + "\", " + port + ");\n")
@@ -139,20 +145,20 @@ class Mozilla(App):
         self.clean()
         self.conf_lines[len(self.conf_lines):] = self.lines
         confWrite = open(self.path, "w")
-        confWrite.writelines(self.conf_lines)
+        confWrite.writelines(self.lines)
         confWrite.close()
 
 
 ### FIXME: test kodunu sil
 ##from time import *
 ##print time()
-##a = Firefox()
+##a = Mozilla("/home/bertan/.mozilla/firefox/")
 ##a.setGlobalProxy("192.223.211.123")
-##a.setHTTPProxy("122.311.11.11", "123")
+##a.setHTTPProxy("122.311.11.11")
 ##a.setFTPProxy("122.311.11.11", "123")
-####a.setGopherProxy("122.311.11.11", "123")
-####a.setSSLProxy("122.311.11.11", "123")
-####a.setSOCKSProxy("122.311.11.11", "123")
+##a.setGopherProxy("122.311.11.11", "123")
+##a.setSSLProxy("122.311.11.11", "123")
+##a.setSOCKSProxy("122.311.11.11", "123")
 ##a.noProxy()
 ##a.close()
 ##print time()

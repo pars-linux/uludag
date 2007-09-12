@@ -13,22 +13,22 @@ class App:
     def __init__(self):
         pass
     
-    def setGlobalProxy(self, ip, port=None):
+    def setGlobalProxy(self, ip, port=None, user=None, pasw=None):
         return
     
-    def setHTTPProxy(self, ip, port=None):
+    def setHTTPProxy(self, ip, port=None, user=None, pasw=None):
         return
     
-    def setFTPProxy(self, ip, port=None):
+    def setFTPProxy(self, ip, port=None, user=None, pasw=None):
         return
     
-    def setGopherProxy(self, ip, port=None):
+    def setGopherProxy(self, ip, port=None, user=None, pasw=None):
         return
     
-    def setSSLProxy(self, ip, port=None):
+    def setSSLProxy(self, ip, port=None, user=None, pasw=None):
         return
     
-    def setSOCKSProxy(self, ip, port=None):
+    def setSOCKSProxy(self, ip, port=None, user=None, pasw=None):
         return
 
     def setPAC_URL(self, url):

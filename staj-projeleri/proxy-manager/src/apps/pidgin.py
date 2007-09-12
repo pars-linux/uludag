@@ -1,4 +1,4 @@
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -26,10 +26,10 @@ class Pidgin(App):
                             if pref3.getAttribute("name") == "port":
                                 self.port = pref3
 
-    def setGlobalProxy(self, ip, port=None):
-        self.setHTTPProxy(ip, port)
+    def setGlobalProxy(self, ip, port=None, user=None, pasw=None):
+        self.setHTTPProxy(ip, port, user, pasw)
     
-    def setHTTPProxy(self, ip, port=None):
+    def setHTTPProxy(self, ip, port=None, user=None, pasw=None):
         self.type.setAttribute("value", "http")
         self.host.setAttribute("value", ip)
         if port: self.port.setAttribute("value", "" + port)
