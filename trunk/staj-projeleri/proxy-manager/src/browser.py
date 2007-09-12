@@ -11,6 +11,8 @@
 from qt import *
 from kdecore import *
 from kdeui import *
+from khtml import *
+import locale
 
 from utility import *
 from profileHandler import *
@@ -27,6 +29,7 @@ class browser(QVBox):
         but = QToolButton(loadIconSet("add.png"), i18n("Add"), "lala", self.slotAdd, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+        but.setFocusPolicy(QWidget.TabFocus)
         self.new_but = but
         but = QToolButton(bar)
         but.setEnabled(False)
@@ -34,18 +37,22 @@ class browser(QVBox):
         but = QToolButton(loadIconSet("help.png"), i18n("Help"), "lala", self.slotHelp, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+        but.setFocusPolicy(QWidget.TabFocus)
         self.help_but = but
         
         initProfiles()
         createModules()
         self.prflview = ProfileView(self)
         
+        self.setTabOrder(self.new_but, self.help_but)
+        self.setTabOrder(self.help_but, self.prflview.item_group)
+        
     def slotAdd(self):
         profileHandler(self.prflview)
         
     def slotHelp(self):
-        # FIXME: prepare a help document
-        pass
+        self.helpwin = HelpDialog("proxy-manager", i18n("Proxy Manager Help"), self)
+        self.helpwin.show()
 
 class ProfileView(QScrollView):
     def __init__(self, parent):
@@ -76,7 +83,6 @@ class ProfileView(QScrollView):
         i = 0
         w = self.width()
         maxh = self.maxHeight()
-        # FIXME: add an index-value to "profile" class for sorting
         childs.sort(key=lambda x: x.prfl.type)
         for item in childs:
             item.is_odd = i % 2
@@ -224,6 +230,7 @@ class IconButton(QPushButton):
         self.myWidth = size.width() + 4
         self.myHeight = size.height() + 4
         self.resize(self.myWidth, self.myHeight)
+        self.setFocusPolicy(QWidget.NoFocus)
 
 class ProfileTipper(QToolTip):
     def maybeTip(self, point):
@@ -243,3 +250,21 @@ class ProfileTipper(QToolTip):
         tip += " <b>%s</b>" % unicode(prfl_item.prfl.name)
         tip += "</nobr>"
         self.tip(rect, tip)
+
+
+class HelpDialog(QDialog):
+    def __init__(self, name, title, parent=None):
+        QDialog.__init__(self, parent)
+        self.setCaption(title)
+        self.layout = QGridLayout(self)
+        self.htmlPart = KHTMLPart(self)
+        self.resize(500, 600)
+        self.layout.addWidget(self.htmlPart.view(), 1, 1)
+        
+        lang = locale.setlocale(locale.LC_MESSAGES)
+        if "_" in lang:
+            lang = lang.split("_", 1)[0]
+        url = locate("data", "%s/help/%s/main_help.html" % (name, lang))
+        if not os.path.exists(url):
+            url = locate("data", "%s/help/en/main_help.html" % name)
+        self.htmlPart.openURL(KURL(url))
