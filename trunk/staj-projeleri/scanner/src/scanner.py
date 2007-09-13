@@ -124,14 +124,24 @@ class ScanWindow(QMainWindow):
         if self.options.device != None:
             for option in self.options.optionList:
                 if option.deviceOption.is_settable() and option.deviceOption.is_active():
-                    if option.deviceOption.name == "tl-x":
-                        self.options.device.__setattr__("tl_x",ratio_tl_x * option.deviceOption.constraint[1])
-                    if option.deviceOption.name == "tl-y":
-                        self.options.device.__setattr__("tl_y",ratio_tl_y * option.deviceOption.constraint[1])
-                    if option.deviceOption.name == "br-x":
-                        self.options.device.__setattr__("br_x",ratio_br_x * option.deviceOption.constraint[1])
-                    if option.deviceOption.name == "br-y":
-                        self.options.device.__setattr__("br_y",ratio_br_y * option.deviceOption.constraint[1])
+                    if ratio_br_x == 0 and ratio_br_y == 0 and ratio_tl_x == 0 and ratio_tl_y == 0:
+                        if option.deviceOption.name == "tl-x":
+                            self.options.device.__setattr__("tl_x",option.deviceOption.constraint[0])
+                        if option.deviceOption.name == "tl-y":
+                            self.options.device.__setattr__("tl_y",option.deviceOption.constraint[0])
+                        if option.deviceOption.name == "br-x":
+                            self.options.device.__setattr__("br_x",option.deviceOption.constraint[1])
+                        if option.deviceOption.name == "br-y":
+                            self.options.device.__setattr__("br_y",option.deviceOption.constraint[1])
+                    else:
+                        if option.deviceOption.name == "tl-x":
+                            self.options.device.__setattr__("tl_x",option.deviceOption.constraint[0] + ratio_tl_x * (option.deviceOption.constraint[1]-option.deviceOption.constraint[0]))
+                        if option.deviceOption.name == "tl-y":
+                            self.options.device.__setattr__("tl_y",option.deviceOption.constraint[0] + ratio_tl_y * (option.deviceOption.constraint[1]-option.deviceOption.constraint[0]))
+                        if option.deviceOption.name == "br-x":
+                            self.options.device.__setattr__("br_x",option.deviceOption.constraint[0] + ratio_br_x * (option.deviceOption.constraint[1]-option.deviceOption.constraint[0]))
+                        if option.deviceOption.name == "br-y":
+                            self.options.device.__setattr__("br_y",option.deviceOption.constraint[0] + ratio_br_y * (option.deviceOption.constraint[1]-option.deviceOption.constraint[0]))
             self.options.updateOptions()
 
     def previewScan(self):

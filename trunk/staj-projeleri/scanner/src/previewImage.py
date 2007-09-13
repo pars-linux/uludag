@@ -134,15 +134,38 @@ class PreviewImage(QWidget):
                 self.tl_X = x
             elif self.move == Move.LEFT:
                 self.tl_X = x
+            if self.tl_X > self.br_X and self.tl_Y > self.br_Y:
+                self.tl_X, self.br_X = self.br_X, self.tl_X
+                self.tl_Y, self.br_Y = self.br_Y, self.tl_Y
+                if self.move == Move.BOTTOM_RIGHT:
+                    self.move = Move.TOP_LEFT
+                else:
+                    self.move = Move.BOTTOM_RIGHT
             if self.tl_X > self.br_X:
                 self.tl_X, self.br_X = self.br_X, self.tl_X
-                if self.move == Move.RIGHT:
+                if self.move == Move.BOTTOM_RIGHT:
+                    self.move = Move.BOTTOM_LEFT
+                elif self.move == Move.BOTTOM_LEFT:
+                    self.move = Move.BOTTOM_RIGHT
+                elif self.move == Move.TOP_RIGHT:
+                    self.move = Move.TOP_LEFT
+                elif self.move == Move.TOP_LEFT:
+                    self.move = Move.TOP_RIGHT
+                elif self.move == Move.RIGHT:
                     self.move = Move.LEFT
                 else:
                     self.move = Move.RIGHT
             if self.tl_Y > self.br_Y:
                 self.tl_Y, self.br_Y = self.br_Y, self.tl_Y
-                if self.move == Move.BOTTOM:
+                if self.move == Move.BOTTOM_RIGHT:
+                    self.move = Move.TOP_RIGHT
+                elif self.move == Move.TOP_RIGHT:
+                    self.move = Move.BOTTOM_RIGHT
+                elif self.move == Move.BOTTOM_LEFT:
+                    self.move = Move.TOP_LEFT
+                elif self.move == Move.TOP_LEFT:
+                    self.move = Move.BOTTOM_LEFT
+                elif self.move == Move.BOTTOM:
                     self.move = Move.TOP
                 else:
                     self.move = Move.BOTTOM
