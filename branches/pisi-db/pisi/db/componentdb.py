@@ -18,41 +18,33 @@ import piksemel
 
 import pisi
 import pisi.db.repodb
+import pisi.db.itembyrepo
 import pisi.component
 
 class ComponentDB(object):
 
     def __init__(self):
 
-        self.component_nodes = {}
+        component_nodes = {}
         self.repodb = pisi.db.repodb.RepoDB()
 
         for repo in self.repodb.list_repos():
             doc = self.repodb.get_repo_doc(repo)
-            self.component_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Component")))
+            component_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Component")))
             del doc
 
-    def has_component(self, name, repo):
-        return self.component_nodes.has_key(repo) and self.component_nodes[repo].has_key(name)
+        self.cdb = pisi.db.itembyrepo.ItemByRepo(component_nodes)
+
+    def has_component(self, name, repo = None):
+        return self.cdb.has_item(name, repo)
         
-    def get_component(self, component_name, repo):
+    def get_component(self, component_name, repo = None):
 
         if not self.has_component(component_name, repo):
             raise Exception(_('Component %s not found') % component_name)
 
         component = pisi.component.Component()
-        component.parse(self.component_nodes[repo][component_name])
-        
-        doc = self.repodb.get_repo_doc(repo)
-        for pkg in doc.tags("Package"):
-            if pkg.getTagData("PartOf") == component_name:
-                component.packages.append(pkg.getTagData("Name"))
-
-        for pkg in doc.tags("Source"):
-            if pkg.getTagData("PartOf") == component_name:
-                component.sources.append(pkg.getTagData("Name"))
-        del doc
-        
+        component.parse(self.cdb.get_item(component_name, repo))
         return component
 
     def get_packages(self, component_name, repo, walk=False):
@@ -63,9 +55,9 @@ class ComponentDB(object):
             raise Exception(_('Component %s not found') % component_name)
         
         if walk:
-            components = filter(lambda x:x.startswith(component_name), self.component_nodes[repo].keys())
+            components = filter(lambda x:x.startswith(component_name), self.cdb.get_item_keys())
         else:
-            components = self.component_nodes[repo].keys()
+            components = self.cdb.get_item_keys()
 
         doc = self.repodb.get_repo_doc(repo)
         for pkg in doc.tags("Package"):
@@ -74,9 +66,5 @@ class ComponentDB(object):
 
         return packages
 
-    def list_components(self, repo):
-
-        if not self.component_nodes.has_key(repo):
-            raise Exception(_('Repository %s does not exist.') % repo)
-
-        return self.component_nodes[repo].keys()
+    def list_components(self, repo=None):
+        return self.cdb.get_item_keys(repo)

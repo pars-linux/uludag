@@ -69,9 +69,9 @@ class PackageDB(object):
                 for dep in deps.tags("Dependency"):
                     revdeps.setdefault(dep.firstChild().data(), set()).add(name)
         return revdeps
-    
+
     def has_package(self, name, repo):
-        return self.__package_nodes.has_key(repo) and self.__package_nodes[repo].has_key(name)
+        self.__package_nodes.has_key(repo) and self.__package_nodes[repo].has_key(name)
 
     def get_package(self, name, repo):
         pkg, repo = self.get_package_repo(name, repo)
