@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-9"?>
+<yali xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="yalisema.xsd">
+	<language>tr</language>
+	<keymap>trq</keymap>
+	<root_password>1234</root_password>
+	<hostname>pardus</hostname>
+	<users>
+		<user autologin="yes">
+			<username>gokmen</username>
+			<realname>gokmen goksel</realname>
+			<password>123</password>
+			<groups>users,wheel</groups>
+		</user>
+		<user>
+			<username>zeynep</username>
+			<realname>zeynep sagar</realname>
+			<password>123456</password>
+			<groups>users,wheel,pnp</groups>
+		</user>
+	</users>
+	<partitioning type="manuel">
+		<partition type="pardus_root" format="true" ratio="40">hda1</partition>
+		<partition type="pardus_swap" format="true" ratio="20">hda2</partition>
+		<partition type="pardus_home" format="true" ratio="20">hda3</partition>
+		<partition type="other" format="true" ratio="20" fs_type="vfat" mountpoint="/depo">hda5</partition>
+	</partitioning>	
+</yali>
+			
+	
