@@ -77,7 +77,7 @@ class ScanResult(QDialog):
             format = None
             
             if len(tmp) == 2:
-                fileName, extension = tmp[0],tmp[1]
+                fileName, extension = tmp[0],str(tmp[1])
 
                 if extension.lower() == "jpg":
                     extension = "JPEG"

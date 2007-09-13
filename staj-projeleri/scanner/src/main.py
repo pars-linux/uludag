@@ -1,13 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main.ui'
-#
-# Created: Prş Eyl 6 10:01:20 2007
-#      by: The PyQt User Interface Compiler (pyuic) 3.17.3
-#
-# WARNING! All changes made in this file will be lost!
-
-
 import sys
 from qt import *
 import sane
@@ -54,7 +46,10 @@ class Main(QDialog):
                 radio.setText(device[1] + " " + device[2])
                 devicesLayout.addWidget(radio)
                 
-            radio.setOn(True)
+            try:
+                radio.setOn(True)
+            except:
+                pass
             
             MainLayout.addWidget(self.devicesGroup)
     

@@ -6,6 +6,8 @@ from options import *
 from toolbar import *
 from previewArea import *
 from scanresult import *
+from scanresultmulti import *
+from extractor import *
 
 class ScanWindow(QMainWindow):
     def __init__(self,parent = None,name = None,fl = 0):
@@ -164,8 +166,19 @@ class ScanWindow(QMainWindow):
             self.options.device.start()
     
             im = self.options.device.snap();
-     
-            s = ScanResult(im,self,"scanResult",1)
+            self.maxDiff = 20
+            self.aveRgb = 0x222625
+            self.minSize = 90000
+            self.enableExtract = True
+            if self.enableExtract:
+                extract(im,self.maxDiff,self.aveRgb,self.minSize)
+                s = ScanResultMulti(self,"scanResultMulti",1)
+                tmpImage = QImage()
+                while(nextImage(tmpImage)):
+                    s.addImage(tmpImage)
+            else:
+                s = ScanResult(im,self,"scanResult",1)
+            
             s.show()
      
             return
