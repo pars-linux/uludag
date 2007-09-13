@@ -24,10 +24,12 @@ class Repo:
     def __init__(self, indexuri):
         self.indexuri = indexuri
 
+medias = (cd, usb, remote, local) = range(4)
+
 class RepoDB(object):
 
     def __init__(self):
-        pass
+        self.__repoorder = self.__get_repoorder()
 
     def has_repo(self, name):
         return name in self.list_repos()
@@ -49,8 +51,27 @@ class RepoDB(object):
         urifile_path = pisi.util.join_path(ctx.config.index_dir(), name, "uri")
         uri = open(urifile_path, "w").write(repo_info.indexuri.get_uri())
 
-    def list_repos(self):
-        return os.listdir(ctx.config.index_dir())
-
     def remove_repo(self, name):
         pisi.util.clean_dir(os.path.join(ctx.config.index_dir(), name))
+
+    def list_repos(self):
+        order = []
+
+        #FIXME: get media order from pisi.conf
+        for m in ["cd", "usb", "remote", "local"]:
+            if self.__repoorder.has_key(m):
+                order.extend(self.__repoorder[m])
+
+        return order
+
+    def __get_repoorder(self):
+        repos_file = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.repos)
+        repos = piksemel.parse(repos_file)
+        order = {}
+
+        for r in repos.tags():
+            media = r.getTagData("Media")
+            name = r.getTagData("Name")
+            order.setdefault(media, []).append(name)
+
+        return order
