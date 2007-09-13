@@ -17,6 +17,14 @@
 			<password>123456</password>
 			<groups>users,wheel,pnp</groups>
 		</user>
+		<!-- Wrong usage; root is unique user name 
+		<user>
+			<username>root</username>
+			<realname>root user</realname>
+			<password>123456</password>
+			<groups>users,wheel,pnp</groups>
+		</user>
+		-->
 	</users>
 	<partitioning type="manuel">
 		<partition type="pardus_root" format="true" ratio="40">hda1</partition>
