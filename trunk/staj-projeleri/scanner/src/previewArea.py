@@ -9,7 +9,6 @@ class PreviewArea(QWidget):
         self.setMinimumSize(QSize(280,410))
         self.setMaximumSize(QSize(32767,32767))
         self.layout = QHBoxLayout(self)
-        self.setMouseTracking(True)
 
         self.scrollView1 = QScrollView(self,"scrollView1")
         self.layout.addWidget(self.scrollView1)
@@ -18,16 +17,6 @@ class PreviewArea(QWidget):
         self.scrollView1.addChild(self.previewImage)
 
         self.connect(self.previewImage,PYSIGNAL("needsReposition"),self.reposition)
-
-    def mouseMoveEvent(self,event):
-        if self.width()<event.x()+1:
-            self.scrollView1.scrollBy(5,0)
-        elif event.x()<=0:
-            self.scrollView1.scrollBy(-5,0)
-        if self.height()<event.y()+1:
-            self.scrollView1.scrollBy(0,5)
-        elif event.y<=0:
-            self.scrollView1.scrollBy(0,-5)
         
     def reposition(self,x,y):
         self.scrollView1.center(x,y)
