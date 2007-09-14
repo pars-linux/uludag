@@ -26,7 +26,7 @@
 		</user>
 		-->
 	</users>
-	<partitioning type="manuel">
+	<partitioning partitioning_type="manuel">
 		<partition partition_type="pardus_root" format="true" ratio="40">hda1</partition>
 		<partition partition_type="pardus_swap" format="true" ratio="20">hda2</partition>
 		<partition partition_type="pardus_home" format="true" ratio="20">hda3</partition>
