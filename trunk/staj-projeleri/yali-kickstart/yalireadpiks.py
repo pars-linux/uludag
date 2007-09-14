@@ -1,5 +1,5 @@
 import piksemel
-#import sys
+import sys
 
 class yaliKickstartData:
     language=None
