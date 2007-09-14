@@ -27,10 +27,10 @@
 		-->
 	</users>
 	<partitioning type="manuel">
-		<partition type="pardus_root" format="true" ratio="40">hda1</partition>
-		<partition type="pardus_swap" format="true" ratio="20">hda2</partition>
-		<partition type="pardus_home" format="true" ratio="20">hda3</partition>
-		<partition type="other" format="true" ratio="20" fs_type="vfat" mountpoint="/depo">hda5</partition>
+		<partition partition_type="pardus_root" format="true" ratio="40">hda1</partition>
+		<partition partition_type="pardus_swap" format="true" ratio="20">hda2</partition>
+		<partition partition_type="pardus_home" format="true" ratio="20">hda3</partition>
+		<partition partition_type="other" format="true" ratio="20" fs_type="vfat" mountpoint="/depo">hda5</partition>
 	</partitioning>	
 </yali>
 			
