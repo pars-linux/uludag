@@ -310,8 +310,8 @@
     [% product FILTER html %] ürününün [% name FILTER html %] adında bir bileşeni yok.
 
   [% ELSIF error == "customfield_nonexistent" %]
-    [% title = "Unknown Custom Field" %]
-    There is no custom field with the name '[% name FILTER html %]'.
+    [% title = "Bilinmeyen Özel Alan" %]
+    '[% name FILTER html %]' isminde bir özel alan yok.
 
   [% ELSIF error == "dependency_loop_multi" %]
     [% title = "Dependency Loop Detected" %]
