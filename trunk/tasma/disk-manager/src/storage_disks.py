@@ -12,9 +12,6 @@
 import glob
 import os
 
-class DeviceError(Exception):
-        pass
-
 default_options = {
     "vfat":     ("quiet", "shortname=mixed", "dmask=007", "fmask=117", "utf8", "gid=6"),
     "ext3":     ("noatime", ),
@@ -35,7 +32,7 @@ def getBlockDevices():
     """Returns a list of block devices attached to the system"""
 
     if not os.path.exists("/sys/block"):
-        raise DeviceError, "sysfs not found!"
+        return fail("sysfs not found!")
 
     devices = []
 
@@ -88,8 +85,6 @@ def getMountedPartitions():
 def doMount(device, mount_path=None):
     import subprocess
 
-    f = file('/dev/null', 'w')
-
     efestab = Fstab()
 
     if mount_path == None:
@@ -97,19 +92,23 @@ def doMount(device, mount_path=None):
 
     for line in getMountedPartitions():
         if device in line.split(' ')[0]:
-            return "already mounted partition"
+            return fail("already mounted partition")
         if mount_path in line.split(' ')[1]:
-            return "mount point already mounted to %s" % device
+            return fail("%s is already mounted to %s" % (device, mount_path))
 
     for i in efestab.entries:
         if i.device_node == device and i.mount_point == '/':
-            return "trying to mount root partition"
+            return fail("trying to mount root partition")
 
     if not os.path.exists(mount_path):
         os.makedirs(mount_path)
 
+    f = file('/dev/null', 'w')
+
     if subprocess.call(["mount", device, mount_path], stdout=f, stderr=f) != 0:
-        return "error mounting"
+        f.close()
+        return fail("error mounting")
+    f.close()
 
 def doUmount(device):
     import subprocess
@@ -119,16 +118,19 @@ def doUmount(device):
     for line in getMountedPartitions():
         if device == line.split(' ')[0]:
             if line.split(' ')[1] == '/':
-                return "trying to umount root partition"
+                return fail("trying to umount root partition")
             tmp = 1
 
     if tmp == 1:
+        f = file('/dev/null', 'w')
         if subprocess.call(["umount", device], stdout=f, stderr=f) == 0:
+            f.close()
             return None
         else:
-            return "error umounting"
+            f.close()
+            return fail("error umounting")
 
-    return "not mounted"
+    return fail("not mounted")
 
 def blockNameByLabel(label):
     path = os.path.join("/dev/disk/by-label/%s" % label)
@@ -167,9 +169,6 @@ class FstabEntry:
             self.pass_no
         )
 
-class FstabError(Exception):
-    pass
-
 class Fstab:
     comment = """
 # See the manpage fstab(5) for more information.
@@ -189,7 +188,7 @@ class Fstab:
                     assert(len(line.split()) == 6)
                     self.entries.append(FstabEntry(line))
                 except:
-                    raise FstabError, "Fstab syntax incorrect"
+                    fail("Fstab syntax incorrect")
 
     def __str__(self):
         return "\n".join(map(str, self.entries))
