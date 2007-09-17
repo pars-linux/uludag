@@ -624,7 +624,11 @@ def ConnectKMail():
     # Create a dcop object:
     client = DCOPClient()
     if not client.attach():
-        raise Exception, "Message cannot be added"
+        raise Exception, "Cannot connected to KMail"
+    # Keep this window on top:
+    kmail = DCOPObj("kmail", client, "kmail-mainwindow#1")
+    kmail.lower()
+    # Return KMailIface
     kmail = DCOPObj("kmail", client, "KMailIface")
     return kmail
 
