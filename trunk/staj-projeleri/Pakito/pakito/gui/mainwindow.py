@@ -12,6 +12,8 @@ from kdeui import *
 from kdecore import *
 from kparts import KParts
 from kfile import KFileDialog
+from kutils import *
+
 
 # System imports
 import os
@@ -25,14 +27,13 @@ import pisi.ui
 
 from pakito.gui.pspecWidget.pspecWidget import PspecWidget
 from pakito.gui.actionsWidget import ActionsWidget
+from pakito.gui.multitabwidget import MultiTabWidget
 
 class MainWindow(KParts.MainWindow):
     """ Main window of the application """
     def __init__(self, *args):
         KParts.MainWindow.__init__(self, *args)
-        
-        print os.getpid()
-        
+               
         iconloader = KGlobal.iconLoader()
         mainIcon = iconloader.loadIcon("pisikga", KIcon.Desktop)
         self.setIcon(mainIcon)
@@ -46,30 +47,25 @@ class MainWindow(KParts.MainWindow):
 #        self.toolBar.setLabel("Build Operations")
 	    
         # main area
-        self.mainLayout = QHBoxLayout(self.mainWidget, 6, 11)
-        self.mainSplitter = QSplitter(self.mainWidget)
-        self.mainSplitter.setOrientation(Qt.Vertical)
-        self.topSplitter = QSplitter(self.mainSplitter)
-        self.topSplitter.setOrientation(Qt.Horizontal)
-        self.mainLayout.addWidget(self.mainSplitter)
+        self.mainLayout = QVBoxLayout(self.mainWidget, 5, 5)
 
         #right tabs
-        self.twTabs = KTabWidget(self.topSplitter)
+        self.twTabs = KTabWidget(self.mainWidget)
+        self.mainLayout.addWidget(self.twTabs)
         self.addWelcome()
         
         # bottom output tabs
-        self.twBottomTabs = KTabWidget(self.mainSplitter)
-        self.twBottomTabs.setMaximumHeight(200)
-        self.twBottomTabs.setTabPosition(QTabWidget.Bottom)
-#        self.bottomTabWidget1 = QHBox(self.twBottomTabs)
-#        self.lvBottomTab = KListView(self.bottomTabWidget1)
-#        self.lvBottomTab.addColumn("Messages")
-#        self.twBottomTabs.addTab(self.bottomTabWidget1, "IDE Output")
+        self.twBottomTabs = MultiTabWidget(self.mainWidget, pos =KMultiTabBar.Bottom)
+        self.mainLayout.addWidget(self.twBottomTabs)
+        
+        
+#        self.twBottomTabs.appendTab(QPixmap(), 5, "PiSi Output")
+#        outputTab = self.twBottomTabs.tab(5)
         self.bottomTabWidget2 = QHBox(self.twBottomTabs)
         self.teOutput = KTextEdit(self.bottomTabWidget2)
         self.teOutput.setReadOnly(True)
         self.teOutput.setPaper(QBrush(QColor("white")))
-        self.twBottomTabs.addTab(self.bottomTabWidget2, i18n("IDE Output"))
+        self.twBottomTabs.addTab(self.bottomTabWidget2, iconloader.loadIcon("info", KIcon.Desktop), 5, "PiSi Output")
         
         self.doActions()
         
@@ -143,8 +139,12 @@ class MainWindow(KParts.MainWindow):
         self.pisithread = None
         
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
+        
+#        self.createGUI("pakitoui.rc")
+#        self.setXMLFile(rcfile)
+#        self.createShellGUI()
+
         self.showMaximized()
-        self.currentOut = ""
 
     def sockHandle(self, socket):
         currentOut = unicode(os.read(socket, 1000)).replace("\n", "<br>")
@@ -280,13 +280,15 @@ class MainWindow(KParts.MainWindow):
         self.twTabs.setCurrentPage(0)
         
         #connections
-        self.connect(self.actionsTab, PYSIGNAL("changeName"), self.changeActionsTab)
-        self.connect(self.pspecTab, PYSIGNAL("changeName"), self.changePspecTab)     
+#        self.connect(self.actionsTab, PYSIGNAL("changeName"), self.changeActionsTab)
+#        self.connect(self.pspecTab, PYSIGNAL("changeName"), self.changePspecTab)     
         
         self.enableOperations()
         qApp.restoreOverrideCursor()
+        
+#        self.createGUI(self.pspecTab.editor.part)
     
-    def save(self, all=False):
+    def save(self):
         if self.actionsTab == None or self.actionsTab == None:
             KMessageBox.sorry(self, i18n("There is no package to save. Create or Open a package first."), i18n("No package"))
             return
@@ -297,32 +299,32 @@ class MainWindow(KParts.MainWindow):
                 return
             self.realDir = unicode(packageDir)
             
-        if all == True:
-            self.changePspecTab(False)        
-            self.pspecTab.change = False
-            self.changeActionsTab(False)
-            self.actionsTab.change = False
-            
-            self.savePspec()
-            self.saveActions()
-            return
+#        if all == True:
+#        self.changePspecTab(False)        
+#        self.pspecTab.change = False
+#        self.changeActionsTab(False)
+#        self.actionsTab.change = False
         
-        if self.twTabs.currentPage() is self.pspecTab:
-            self.changePspecTab(False)
-            self.pspecTab.change = False
-            # real save process
-            self.savePspec()
-            return
+        self.savePspec()
+        self.saveActions()
+        return
         
-        if self.twTabs.currentPage() is self.actionsTab:
-            self.changeActionsTab(False)        
-            self.actionsTab.change = False
-            # real save process
-            self.saveActions()
-            return
-    
-    def saveAll(self):
-        self.save(all = True)
+#        if self.twTabs.currentPage() is self.pspecTab:
+#            self.changePspecTab(False)
+#            self.pspecTab.change = False
+#            # real save process
+#            self.savePspec()
+#            return
+#        
+#        if self.twTabs.currentPage() is self.actionsTab:
+#            self.changeActionsTab(False)        
+#            self.actionsTab.change = False
+#            # real save process
+#            self.saveActions()
+#            return
+#    
+#    def saveAll(self):
+#        self.save(all = True)
     
     def savePspec(self):
         if self.pspecTab.where() == "design":
@@ -346,23 +348,23 @@ class MainWindow(KParts.MainWindow):
 #        pisi.api.finalize()
         self.close()
     
-    def changeActionsTab(self, changed=True):
-        cur = self.twTabs.tabLabel(self.actionsTab)
-        if changed and cur[0] != "*":
-            self.twTabs.setTabLabel(self.actionsTab, "*" + cur)
-            return
-        if not changed and cur[0] == "*":
-            self.twTabs.setTabLabel(self.actionsTab, cur[1:])
-            
-    def changePspecTab(self, changed=True):
-        cur = self.twTabs.tabLabel(self.pspecTab)
-        if changed and cur[0] != "*":
-            self.twTabs.setTabLabel(self.pspecTab, "*" + cur)
-            return
-        
-        if not changed and cur[0] == "*":
-            self.twTabs.setTabLabel(self.pspecTab, cur[1:])
-            return
+#    def changeActionsTab(self, changed=True):
+#        cur = self.twTabs.tabLabel(self.actionsTab)
+#        if changed and cur[0] != "*":
+#            self.twTabs.setTabLabel(self.actionsTab, "*" + cur)
+#            return
+#        if not changed and cur[0] == "*":
+#            self.twTabs.setTabLabel(self.actionsTab, cur[1:])
+#            
+#    def changePspecTab(self, changed=True):
+#        cur = self.twTabs.tabLabel(self.pspecTab)
+#        if changed and cur[0] != "*":
+#            self.twTabs.setTabLabel(self.pspecTab, "*" + cur)
+#            return
+#        
+#        if not changed and cur[0] == "*":
+#            self.twTabs.setTabLabel(self.pspecTab, cur[1:])
+#            return
             
     def closePacket(self):
 #        if self.actionsTab and self.pspecTab:
@@ -560,7 +562,6 @@ class PisiThread(Thread):
         self.stage = stage
         self.output = pipe
         self.pisiTo = pisiTo
-        print os.getpid()
         self.setDaemon(True)
     
     def run(self):
