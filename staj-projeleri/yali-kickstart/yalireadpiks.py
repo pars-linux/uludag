@@ -1,35 +1,37 @@
-#!usr/bin/python
+#!/usr/bin/python
 #
 
 import piksemel
 import sys
 
 class yaliKickstartData:
-    language=None
-    keyData=None
-    rootPassword=None
-    hostname=None
-    users=[]
-    partitioning=[]
+    def __init__(self):
+        self.language=None
+        self.keyData=None
+        self.rootPassword=None
+        self.hostname=None
+        self.users=[]
+        self.partitioning=[]
 
-class yaliUser:
-    autologin=None
-    username=None
-    realname=None
-    password=None
-    groups=[]
+class yaliUser:	
+    def __init__(self):
+        self.autologin=None
+        self.username=None
+        self.realname=None
+        self.password=None
+        self.groups=[]
     
 class yaliPartition:
-    partitionType=None
-    format=None
-    ratio=None
-    disk=None
-    fsType=None
-    mountPoint=None
-    
-    
+    def __init__(self):
+        self.partitionType=None
+        self.format=None
+        self.ratio=None
+        self.disk=None
+        self.fsType=None
+        self.mountPoint=None
+
 def main(args):
-    doc=piksemel.parse(argv[1])
+    doc=piksemel.parse(sys.argv[1])
 
     data=yaliKickstartData()
     data.language=doc.getTagData("language")
@@ -39,7 +41,7 @@ def main(args):
 
     usrsTag=doc.getTag("users")
 
-    for p in usrsTag.tags(): #for each "user" tag
+    for p in usrsTag.tags():
         info=yaliUser()
         info.autologin=p.getAttribute("autologin")
         info.username=p.getTagData("username")
@@ -61,5 +63,5 @@ def main(args):
         partinfo.disk=q.firstChild().data()
         data.partitioning.append(partinfo)
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main(sys.argv)
