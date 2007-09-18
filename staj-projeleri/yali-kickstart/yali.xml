@@ -9,7 +9,7 @@
 			<username>gokmen</username>
 			<realname>gokmen goksel</realname>
 			<password>123</password>
-			<groups>users,wheel</groups>
+			<groups>audio,dialout,disk,pnp,pnpadmin,users,video,wheel</groups>
 		</user>
 		<user>
 			<username>zeynep</username>
