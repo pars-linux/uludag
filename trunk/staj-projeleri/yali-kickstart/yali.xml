@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-9"?>
 <yali xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="yalisema.xsd">
 	<language>tr</language>
-	<keymap>trq</keymap>
+	<keymap>trq,trq</keymap>
 	<root_password>1234</root_password>
 	<hostname>pardus</hostname>
 	<users>
