@@ -7,7 +7,7 @@ import sys
 class yaliKickstartData:
     def __init__(self):
         self.language=None
-        self.keyData=None
+        self.keyData=[]
         self.rootPassword=None
         self.hostname=None
         self.users=[]
@@ -35,7 +35,7 @@ def main(args):
 
     data=yaliKickstartData()
     data.language=doc.getTagData("language")
-    data.keyData=doc.getTagData("keymap")
+    data.keyData=doc.getTagData("keymap".split(",")
     data.rootPassword=doc.getTagData("root_password")
     data.hostname=doc.getTagData("hostname")
 
