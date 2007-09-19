@@ -2,6 +2,7 @@ body {
     background-image: url(resim/zemin.gif);
     background-repeat: repeat-x;
     margin-top: 10px;
+    background-color: white;
 }
 
 #container {
