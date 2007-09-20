@@ -15,7 +15,6 @@ from kfile import KFileDialog
 from kutils import *
 from kparts import createReadOnlyPart
 
-
 # System imports
 import os
 import shutil
@@ -48,13 +47,10 @@ class MainWindow(KParts.MainWindow):
         # main area
         self.mainWidget =  QSplitter(self)
         self.mainWidget.setOrientation(Qt.Vertical)
-#        self.mainWidget = QVBox(self)
         self.setCentralWidget(self.mainWidget)
-#        self.mainLayout = QVBoxLayout(self.mainWidget, 5, 5)
 
         #right tabs
         self.twTabs = KTabWidget(self.mainWidget)
-#        self.mainLayout.addWidget(self.twTabs)
         self.addWelcome()
         
         # bottom output tabs
@@ -217,11 +213,6 @@ class MainWindow(KParts.MainWindow):
         
 #        self.createGUI()
         
-        # do connections for text change event
-        self.connect(self.actionsTab, PYSIGNAL("changeName"), self.changeActionsTab)
-        self.connect(self.pspecTab, PYSIGNAL("changeName"), self.changePspecTab)
-     
-
         self.twTabs.addTab(self.pspecTab, i18n("Specification"))
         self.twTabs.addTab(self.actionsTab, i18n("Actions"))
         self.twTabs.setCurrentPage(0)
