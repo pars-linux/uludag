@@ -125,6 +125,14 @@ class InstallDB:
             self.config_pending.append(package)
             self.__write_config_pending()
 
+    def add_package(self, pkginfo):
+        self.installed_pkgs[pkginfo.name] = "%s-%s" % (pkginfo.version, pkginfo.release)
+
+    def remove_package(self, pkginfo):
+        if self.installed_pkgs.has_key(pkginfo.name):
+            del self.installed_pkgs[pkginfo.name]
+        self.clear_pending(pkginfo.name)
+
     def list_pending(self):
         return self.config_pending
 
