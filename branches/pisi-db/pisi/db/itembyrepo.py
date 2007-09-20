@@ -33,7 +33,18 @@ class ItemByRepo:
                 return True
 
         return False
-    
+
+    def which_repo(self, item):
+        repos = ctx.repodb.list_repos()
+        if repo:
+            repos = [repo]
+
+        for r in repos:
+            if self.dbobj.has_key(r) and self.dbobj[r].has_key(item):
+                return r
+
+        return Exception(_("Item not found"))
+
     def get_item_repo(self, item, repo=None):
         repos = ctx.repodb.list_repos()
         if repo:
@@ -62,5 +73,20 @@ class ItemByRepo:
 
             if self.dbobj.has_key(r):
                 items.extend(self.dbobj[r].keys())
+
+        return list(set(items))
+
+    def get_item_values(self, repo=None):
+        repos = ctx.repodb.list_repos()
+        if repo:
+            repos = [repo]
+
+        items = []
+
+        for r in repos:
+            if not self.has_repo(r):
+                raise Exception(_('Repository %s does not exist.') % repo)
+
+            items.extend(self.dbobj[r])
 
         return list(set(items))
