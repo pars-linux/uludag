@@ -109,6 +109,10 @@ class InstallDB:
                            ctime)
         return info
 
+    def pkg_dir(self, pkg, version, release):
+        return pisi.util.join_path(ctx.config.lib_dir(), 'package',
+                    pkg + '-' + version + '-' + release)
+
     # FIXME: notused is for pgraph.py:get_package
     def get_package(self, package, notused=None):
         metadata = pisi.metadata.MetaData()
@@ -125,7 +129,7 @@ class InstallDB:
         return self.config_pending
 
     def clear_pending(self, package):
-        if package not in self.config_pending:
+        if package in self.config_pending:
             self.config_pending.remove(package)
             self.__write_config_pending()
 
