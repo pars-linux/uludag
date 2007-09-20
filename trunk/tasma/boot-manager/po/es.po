@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-09 15:28+0300\n"
+"POT-Creation-Date: 2007-09-20 11:28+0300\n"
 "PO-Revision-Date: 2007-07-09 20:46-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -81,7 +81,7 @@ msgstr "Establecer como elección por defecto"
 msgid "There must be at least one Pardus entry."
 msgstr "Se requiere por lo menos una entrada de Pardus."
 
-#: src/mainview.py:247 src/mainview.py:527
+#: src/mainview.py:247 src/mainview.py:545
 msgid "Access Denied"
 msgstr "Acceso denegado"
 
@@ -101,7 +101,7 @@ msgstr ""
 "Esto es una entrada de núcleo (kenel) de Pardus.\n"
 "Desea desinstalarlo del sistema ?"
 
-#: src/mainview.py:255 src/mainview.py:404
+#: src/mainview.py:255 src/mainview.py:411
 msgid "Uninstall Kernel"
 msgstr "Desinstalar núcleo"
 
@@ -109,33 +109,36 @@ msgstr "Desinstalar núcleo"
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
-msgstr "Los siguientes núcleos (kernel) están disponibles en el sistema, pero no están en la lista de arranque:"
+msgstr ""
+"Los siguientes núcleos (kernel) están disponibles en el sistema, pero no "
+"están en la lista de arranque:"
 
-#: src/mainview.py:353
+#: src/mainview.py:354
 msgid "Add Boot Entry"
 msgstr "Agregar entrada de arranque"
 
-#: src/mainview.py:358
+#: src/mainview.py:359
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: src/mainview.py:366
+#: src/mainview.py:367
 msgid "Ok"
 msgstr "Ok"
 
-#: src/mainview.py:404
-msgid "Do you want to uninstall this kernel from the system?"
+#: src/mainview.py:411
+#, fuzzy
+msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Desea desinstalar éste núcleo (kernel) del sistema ?"
 
-#: src/mainview.py:463
+#: src/mainview.py:479
 msgid "Bootloader configuration changed by another application."
 msgstr "La configuración de arranque fue modificada por otro programa."
 
-#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
+#: src/mainview.py:533 src/mainview.py:538 src/mainview.py:540
 msgid "Failed"
 msgstr "Falló"
 
-#: src/mainview.py:527
+#: src/mainview.py:545
 msgid "You are not allowed to edit boot loader settings."
 msgstr "No tiene permisos para modificar la configuración de arranque."
 
@@ -147,3 +150,6 @@ msgstr "Editar entrada"
 msgid "Delete entry"
 msgstr "Eliminar entrada"
 
+#, fuzzy
+#~ msgid "Uninstall Kernel(s)"
+#~ msgstr "Desinstalar núcleo"

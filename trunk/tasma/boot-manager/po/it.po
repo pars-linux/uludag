@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-09 15:28+0300\n"
+"POT-Creation-Date: 2007-09-20 11:28+0300\n"
 "PO-Revision-Date: 2007-07-11 20:30+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -81,7 +81,7 @@ msgstr "Imposta come voce di avvio predefinita."
 msgid "There must be at least one Pardus entry."
 msgstr "Deve esserci almeno una voce di Pardus."
 
-#: src/mainview.py:247 src/mainview.py:527
+#: src/mainview.py:247 src/mainview.py:545
 msgid "Access Denied"
 msgstr "Accesso negato"
 
@@ -101,7 +101,7 @@ msgstr ""
 "Questa è la voce di un kernel Pardus.\n"
 "Desideri disinstallarlo dal sistema?"
 
-#: src/mainview.py:255 src/mainview.py:404
+#: src/mainview.py:255 src/mainview.py:411
 msgid "Uninstall Kernel"
 msgstr "Disinstalla kernel"
 
@@ -109,33 +109,38 @@ msgstr "Disinstalla kernel"
 msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
-msgstr "Questi kernel sono installati nel sistema ma non esistono nella lista del gestore di avvio:"
+msgstr ""
+"Questi kernel sono installati nel sistema ma non esistono nella lista del "
+"gestore di avvio:"
 
-#: src/mainview.py:353
+#: src/mainview.py:354
 msgid "Add Boot Entry"
 msgstr "Aggiungi voce di avvio"
 
-#: src/mainview.py:358
+#: src/mainview.py:359
 msgid "Uninstall"
 msgstr "Disinstalla"
 
-#: src/mainview.py:366
+#: src/mainview.py:367
 msgid "Ok"
 msgstr "OK"
 
-#: src/mainview.py:404
-msgid "Do you want to uninstall this kernel from the system?"
+#: src/mainview.py:411
+#, fuzzy
+msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Desideri disinstallare questo kernel dal sistema?"
 
-#: src/mainview.py:463
+#: src/mainview.py:479
 msgid "Bootloader configuration changed by another application."
-msgstr "La configurazione del gestore di avvio è stata modificata da un'altra applicazione."
+msgstr ""
+"La configurazione del gestore di avvio è stata modificata da un'altra "
+"applicazione."
 
-#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
+#: src/mainview.py:533 src/mainview.py:538 src/mainview.py:540
 msgid "Failed"
 msgstr "Errore"
 
-#: src/mainview.py:527
+#: src/mainview.py:545
 msgid "You are not allowed to edit boot loader settings."
 msgstr "Non hai i permessi necessari per modificare le impostazioni di avvio."
 
@@ -147,3 +152,6 @@ msgstr "Modifica voce"
 msgid "Delete entry"
 msgstr "Elimina voce"
 
+#, fuzzy
+#~ msgid "Uninstall Kernel(s)"
+#~ msgstr "Disinstalla kernel"
