@@ -54,6 +54,20 @@ class RepoDB(object):
     def remove_repo(self, name):
         pisi.util.clean_dir(os.path.join(ctx.config.index_dir(), name))
 
+    def get_source_repos(self):
+        repos = []
+        for r in self.list_repos():
+            if self.get_repo_doc(r).getTag("SpecFile"):
+                repos.append(r)
+        return repos
+
+    def get_binary_repos(self):
+        repos = []
+        for r in self.list_repos():
+            if not self.get_repo_doc(r).getTag("SpecFile"):
+                repos.append(r)
+        return repos
+
     def list_repos(self):
         order = []
 
