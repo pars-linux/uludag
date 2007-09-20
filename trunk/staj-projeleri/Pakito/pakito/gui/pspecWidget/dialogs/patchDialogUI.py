@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '../../../uis/dialogs/patchDialog/patchDialogUI.ui'
+# Form implementation generated from reading ui file '../../../../uis/pspecWidget/dialogs/patchDialogUI.ui'
 #
-# Created: Sal Eyl 4 15:39:21 2007
+# Created: Prş Eyl 20 12:32:42 2007
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -35,6 +35,8 @@ class PatchDialogUI(KDialog):
 
         self.niLevel = KIntNumInput(self,"niLevel")
         self.niLevel.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Fixed,0,0,self.niLevel.sizePolicy().hasHeightForWidth()))
+        self.niLevel.setMinValue(0)
+        self.niLevel.setMaxValue(20)
 
         PatchDialogUILayout.addWidget(self.niLevel,0,1)
 
@@ -81,7 +83,7 @@ class PatchDialogUI(KDialog):
 
         self.languageChange()
 
-        self.resize(QSize(374,112).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(398,123).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.setTabOrder(self.niLevel,self.cbType)
