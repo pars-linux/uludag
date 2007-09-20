@@ -37,7 +37,7 @@ class ComponentDB(object):
 
     def has_component(self, name, repo = None):
         return self.cdb.has_item(name, repo)
-        
+
     def get_component(self, component_name, repo = None):
 
         if not self.has_component(component_name, repo):
@@ -68,3 +68,21 @@ class ComponentDB(object):
 
     def list_components(self, repo=None):
         return self.cdb.get_item_keys(repo)
+
+    def get_union_comp(self, component_name):
+
+        component = self.get_component(component_name)
+
+        for repo in self.repodb.list_repos():
+            doc = self.repodb.get_repo_doc(repo)
+            for pkg in doc.tags("Package"):
+                if pkg.getTagData("PartOf") == component_name:
+                    component.packages.append(pkg.getTagData("Name"))
+
+            for pkg in doc.tags("Source"):
+                if pkg.getTagData("PartOf") == component_name:
+                    component.sources.append(pkg.getTagData("Name"))
+            del doc
+
+        return component
+    
