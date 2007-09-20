@@ -372,6 +372,7 @@ class widgetUnused(QWidget):
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotExit)
         self.connect(self.listKernels, SIGNAL("selectionChanged()"), self.slotKernels)
         
+        self.listBusy = False
         self.listUnused()
     
     def listUnused(self):
@@ -418,11 +419,13 @@ class widgetUnused(QWidget):
                 if item.isSelected():
                     versions.append(str(item.text()))
                 item = item.next()
-            for version in versions:
-                call_id = BOOT_REMOVE_UNUSED
-                if version == versions[-1]:
-                    call_id = BOOT_REMOVE_UNUSED_LAST
-                self.link.call("Boot.Loader.removeUnused", {"version": version}, id=call_id)
+            if len(versions):
+                self.listBusy = True
+                for version in versions:
+                    call_id = BOOT_REMOVE_UNUSED
+                    if version == versions[-1]:
+                        call_id = BOOT_REMOVE_UNUSED_LAST
+                    self.link.call("Boot.Loader.removeUnused", {"version": version}, id=call_id)
     
     def slotExit(self):
         self.parent.showScreen("Entries")
@@ -478,7 +481,7 @@ class widgetMain(QWidget):
                 if self.widgetEditEntry.entry and not self.widgetEditEntry.saved:
                     KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
                     self.widgetEditEntry.slotExit()
-            if reply.data == "entry":
+            if reply.data == "entry" and not self.widgetUnused.listBusy:
                 self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
         elif reply.command == "result":
             if reply.id == BOOT_ACCESS:
@@ -526,6 +529,7 @@ class widgetMain(QWidget):
                         self.widgetUnused.listKernels.insertItem(version)
                 self.widgetUnused.slotKernels()
             elif reply.id == BOOT_REMOVE_UNUSED_LAST:
+                self.widgetUnused.listBusy = False
                 self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
         elif reply.command == "fail":
             if reply.id == BOOT_SET_ENTRY:
