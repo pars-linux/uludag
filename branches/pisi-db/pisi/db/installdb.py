@@ -64,6 +64,7 @@ class InstallDB:
     def __init__(self):
         self.installed_db = self.__generate_installed_pkgs()
         self.confing_pending_db = self.__generate_config_pending()
+        self.rev_deps_db = self.__generate_revdeps()
 
     def __generate_installed_pkgs(self):
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
@@ -74,6 +75,21 @@ class InstallDB:
         if os.path.exists(pending_info_path):
             return open(pending_info_path, "r").read().split()
         return []
+
+    def __generate_revdeps(self):
+        revdeps = {}
+
+        for package in self.list_installed():
+            metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
+            meta_doc = piksemel.parse(metadata_xml)
+            name = meta_doc.getTag("Package").getTagData('Name')
+            deps = meta_doc.getTag("Package").getTag('RuntimeDependencies')
+            if deps:
+                for dep in deps.tags("Dependency"):
+                    revdeps.setdefault(dep.firstChild().data(), set()).add(name)
+            del meta_doc
+
+        return revdeps
 
     def list_installed(self):
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
@@ -111,6 +127,13 @@ class InstallDB:
                            pkg.distribution,
                            ctime)
         return info
+
+    def get_rev_deps(self, package):
+
+        if self.rev_deps_db.has_key(package):
+            return self.rev_deps_db[package]
+        
+        return []
 
     def pkg_dir(self, pkg, version, release):
         return pisi.util.join_path(ctx.config.lib_dir(), 'package',

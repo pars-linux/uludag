@@ -94,7 +94,7 @@ def plan_remove(A):
     while len(B) > 0:
         Bp = set()
         for x in B:
-            rev_deps = ctx.packagedb.get_rev_deps(x, pisi.db.installed)
+            rev_deps = ctx.installdb.get_rev_deps(x)
             for (rev_dep, depinfo) in rev_deps:
                 # we don't deal with uninstalled rev deps
                 # and unsatisfied dependencies (this is important, too)
