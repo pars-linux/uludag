@@ -13,6 +13,7 @@ from kdecore import *
 from kparts import KParts
 from kfile import KFileDialog
 from kutils import *
+from kparts import createReadOnlyPart
 
 
 # System imports
@@ -37,8 +38,6 @@ class MainWindow(KParts.MainWindow):
         iconloader = KGlobal.iconLoader()
         mainIcon = iconloader.loadIcon("pisikga", KIcon.Desktop)
         self.setIcon(mainIcon)
-        self.mainWidget =  QWidget(self)
-        self.setCentralWidget(self.mainWidget)
         self.pspecTab = None
         self.actionsTab = None
         self.tempDir = None
@@ -47,25 +46,29 @@ class MainWindow(KParts.MainWindow):
 #        self.toolBar.setLabel("Build Operations")
 	    
         # main area
-        self.mainLayout = QVBoxLayout(self.mainWidget, 5, 5)
+        self.mainWidget =  QSplitter(self)
+        self.mainWidget.setOrientation(Qt.Vertical)
+#        self.mainWidget = QVBox(self)
+        self.setCentralWidget(self.mainWidget)
+#        self.mainLayout = QVBoxLayout(self.mainWidget, 5, 5)
 
         #right tabs
         self.twTabs = KTabWidget(self.mainWidget)
-        self.mainLayout.addWidget(self.twTabs)
+#        self.mainLayout.addWidget(self.twTabs)
         self.addWelcome()
         
         # bottom output tabs
-        self.twBottomTabs = MultiTabWidget(self.mainWidget, pos =KMultiTabBar.Bottom)
-        self.mainLayout.addWidget(self.twBottomTabs)
+        self.twBottomTabs = MultiTabWidget(self.mainWidget, pos = KMultiTabBar.Bottom)
+#        self.mainWidget.setResizeMode(self.twBottomTabs, QSplitter.FollowSizeHint)
         
-        
-#        self.twBottomTabs.appendTab(QPixmap(), 5, "PiSi Output")
-#        outputTab = self.twBottomTabs.tab(5)
-        self.bottomTabWidget2 = QHBox(self.twBottomTabs)
-        self.teOutput = KTextEdit(self.bottomTabWidget2)
+        bottomLayout = QHBox()
+        self.teOutput = KTextEdit(bottomLayout)
         self.teOutput.setReadOnly(True)
         self.teOutput.setPaper(QBrush(QColor("white")))
-        self.twBottomTabs.addTab(self.bottomTabWidget2, iconloader.loadIcon("info", KIcon.Desktop), 5, "PiSi Output")
+        self.twBottomTabs.addTab(bottomLayout, iconloader.loadIcon("info", KIcon.Desktop), 0, "PiSi Output")
+        
+        part = createReadOnlyPart ("libkonsolepart", self)
+        self.twBottomTabs.addTab(part.widget(), iconloader.loadIcon("openterm", KIcon.Desktop), 1, "Console")
         
         self.doActions()
         
