@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>374</width>
-            <height>112</height>
+            <width>398</width>
+            <height>123</height>
         </rect>
     </property>
     <property name="caption">
@@ -62,6 +62,12 @@
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                 </sizepolicy>
+            </property>
+            <property name="minValue">
+                <number>0</number>
+            </property>
+            <property name="maxValue">
+                <number>20</number>
             </property>
         </widget>
         <widget class="QLabel" row="0" column="2">
