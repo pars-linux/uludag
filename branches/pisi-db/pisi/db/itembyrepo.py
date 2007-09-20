@@ -67,7 +67,7 @@ class ItemByRepo:
             items.extend(self.dbobj[r])
         return list(set(items))
 
-    def item_repos(repo)
+    def item_repos(self, repo=None):
         repos = ctx.repodb.list_repos()
         if repo:
             repos = [repo]
