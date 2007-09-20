@@ -103,17 +103,17 @@ Usage: info <package1> <package2> ... <packagen>
             self.print_pkginfo(metadata, files)
         else:
             if ctx.installdb.has_package(arg):
-                metadata, files, repo = pisi.api.info_name(arg, None)
+                metadata, files, repo = pisi.api.info_name(arg, True)
                 if self.options.short:
                     ctx.ui.info(_('[inst] '), noln=True)
                 else:
                     ctx.ui.info(_('Installed package:'))
-                self.print_pkginfo(metadata, files,pisi.db.installed)
+                self.print_pkginfo(metadata, files, pisi.db.installed)
             else:
                 ctx.ui.info(_("%s is not installed") % arg)
 
-            for repo in ctx.repodb.list_repos():
-                metadata, files, repo = pisi.api.info_name(arg, repo)
+            if ctx.packagedb.has_package(arg):
+                metadata, files, repo = pisi.api.info_name(arg, False)
                 if self.options.short:
                     ctx.ui.info(_('[repo] '), noln=True)
                 else:
