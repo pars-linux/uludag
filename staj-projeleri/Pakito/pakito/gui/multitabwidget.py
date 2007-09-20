@@ -25,6 +25,7 @@ class MultiTabWidget(QWidget):
         self.activeTabID = -1      
         self.bigSize = -1
         self.orientation = orient
+        self.setMinimumHeight(50)
         
     def addTab(self, widget, pix = None, id = -1, string = ""):
         if not pix:
@@ -41,38 +42,10 @@ class MultiTabWidget(QWidget):
         self.connect(tab, SIGNAL("clicked(int)"), self.tabClicked)
         
     def tabClicked(self, id):
-        but = self.tabWidget.tab(id)
-        if but.isOn():
-            self.stack.show()
-            self.stack.raiseWidget(id)
-            if self.activeTabID != -1:
-                self.tabWidget.tab(self.activeTabID).setOn(False)
-                self.tabWidget.setTab(self.activeTabID, False)
-            self.activeTabID = id
-            self.tabWidget.setTab(self.activeTabID, True)
-            
-            # size related stuff
-            if self.orientation == KMultiTabBar.Horizontal:
-                if self.bigSize == -1:
-                    self.bigSize = 200
-                self.setMaximumHeight(700)
-                self.resize(self.width(), self.bigSize)
-            else:
-                if self.bigSize == -1:
-                    self.bigSize = 200
-                self.setMaximumWidth(700)
-                self.resize(self.bigSize, self.width())
-                
+        if self.tabWidget.isTabRaised(id):
+            self.expandTab(id)
         else: #tab is closing
-            self.stack.hide()
-            self.tabWidget.setTab(id, False)
-            if self.orientation == KMultiTabBar.Horizontal:
-                self.bigSize = self.height()
-                self.setFixedHeight(self.tabWidget.tab(self.activeTabID).height() + 10)
-            else:
-                self.bigSize = self.width()
-                self.setFixedWidth(self.tabWidget.tab(self.activeTabID).width() + 10)
-            self.activeTabID = -1
+            self.shrinkTab(id)
             
     def setStyle(self, style):
         self.tabWidget.setStyle(style)
@@ -80,3 +53,33 @@ class MultiTabWidget(QWidget):
     def setPosition(self, pos):
         self.tabWidget.setPosition(pos)
             
+    def expandTab(self, id = 0):
+        self.stack.show()
+        self.stack.raiseWidget(id)
+        if self.activeTabID != -1:
+            self.tabWidget.tab(self.activeTabID).setOn(False) #raise the old activated button
+            self.tabWidget.setTab(self.activeTabID, False) #mark it as closed
+        self.activeTabID = id
+        self.tabWidget.setTab(self.activeTabID, True)
+        
+        # size related stuff
+        if self.bigSize == -1:
+                self.bigSize = 100
+        if self.orientation == KMultiTabBar.Horizontal:
+            self.setMaximumHeight(700)
+            self.setMinimumHeight(120)
+            self.resize(self.width(), self.bigSize)
+        else:
+            self.setMaximumWidth(700)
+            self.resize(self.bigSize, self.height())
+            
+    def shrinkTab(self, id):
+        self.stack.hide()
+        self.tabWidget.setTab(id, False)
+        if self.orientation == KMultiTabBar.Horizontal:
+            self.bigSize = self.height()
+            self.setFixedHeight(self.tabWidget.tab(self.activeTabID).height() + 10)
+        else:
+            self.bigSize = self.width()
+            self.setFixedWidth(self.tabWidget.tab(self.activeTabID).width() + 10)
+        self.activeTabID = -1

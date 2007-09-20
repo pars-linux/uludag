@@ -389,24 +389,28 @@ class MainWindow(KParts.MainWindow):
         
     def fetchSlot(self):        
         self.prepareBuild()
+        self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "fetch", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def unpackSlot(self):
         self.prepareBuild()
+        self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "unpack", self.pipeWriteEnd)    
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def setupSlot(self):
         self.prepareBuild()
+        self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "setup", self.pipeWriteEnd)    
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def buildSlot(self):
+        self.twBottomTabs.expandTab()
         self.prepareBuild()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
         self.pisithread.start()
@@ -414,12 +418,14 @@ class MainWindow(KParts.MainWindow):
     
     def installSlot(self):
         self.prepareBuild()
+        self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "install", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def makePackageSlot(self):
         self.prepareBuild()
+        self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "buildpackages", self.pipeWriteEnd, self.realDir)    
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
