@@ -45,7 +45,7 @@ class FilesDB(object):
         for f in files.list:
             self.filesdb[md5.new(f.path).digest()] = pkg
 
-    def remove_files(self, pkg, files):
+    def remove_files(self, files):
         for f in files:
             if self.filesdb.has_key(md5.new(f.path).digest()):
                 del self.filesdb[md5.new(f.path).digest()]
