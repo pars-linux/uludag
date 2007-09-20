@@ -62,22 +62,25 @@ class InstallInfo:
 class InstallDB:
 
     def __init__(self):
+        self.installed_db = self.__generate_installed_pkgs()
+        self.confing_pending_db = self.__generate_config_pending()
 
+    def __generate_installed_pkgs(self):
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
-        self.installed_pkgs = dict(map(lambda x:pisi.util.parse_package_name(x),
-                                       os.listdir(packages_path)))
+        return dict(map(lambda x:pisi.util.parse_package_name(x), os.listdir(packages_path)))
 
-        self.config_pending = []
+    def __generate_config_pending(self):
         pending_info_path = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.config_pending)
         if os.path.exists(pending_info_path):
-            self.config_pending = open(pending_info_path, "r").read().split()
+            return open(pending_info_path, "r").read().split()
+        return []
 
     def list_installed(self):
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
         return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(packages_path))
 
     def has_package(self, package):
-        return self.installed_pkgs.has_key(package)
+        return self.installed_db.has_key(package)
 
     def get_version(self, package):
         metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
@@ -121,24 +124,24 @@ class InstallDB:
         return metadata.package
 
     def mark_pending(self, package):
-        if package not in self.config_pending:
-            self.config_pending.append(package)
+        if package not in self.confing_pending_db:
+            self.confing_pending_db.append(package)
             self.__write_config_pending()
 
     def add_package(self, pkginfo):
-        self.installed_pkgs[pkginfo.name] = "%s-%s" % (pkginfo.version, pkginfo.release)
+        self.installed_db[pkginfo.name] = "%s-%s" % (pkginfo.version, pkginfo.release)
 
     def remove_package(self, pkginfo):
-        if self.installed_pkgs.has_key(pkginfo.name):
-            del self.installed_pkgs[pkginfo.name]
+        if self.installed_db.has_key(pkginfo.name):
+            del self.installed_db[pkginfo.name]
         self.clear_pending(pkginfo.name)
 
     def list_pending(self):
-        return self.config_pending
+        return self.confing_pending_db
 
     def clear_pending(self, package):
-        if package in self.config_pending:
-            self.config_pending.remove(package)
+        if package in self.confing_pending_db:
+            self.confing_pending_db.remove(package)
             self.__write_config_pending()
 
     def __write_config_pending(self):
@@ -148,7 +151,7 @@ class InstallDB:
 
         pending_info_file = os.path.join(pending_info_dir, ctx.const.config_pending)
         pending = open(pending_info_file, "w")
-        for pkg in set(self.config_pending):
+        for pkg in set(self.confing_pending_db):
             pending.write("%s\n" % pkg)
         pending.close()
 
@@ -156,7 +159,7 @@ class InstallDB:
 
         packages_path = os.path.join(ctx.config.lib_dir(), "package")
 
-        if self.installed_pkgs.has_key(package):
-            return os.path.join(packages_path, "%s-%s" % (package, self.installed_pkgs[package]))
+        if self.installed_db.has_key(package):
+            return os.path.join(packages_path, "%s-%s" % (package, self.installed_db[package]))
 
         raise Exception(_('Package %s is not installed') % package)
