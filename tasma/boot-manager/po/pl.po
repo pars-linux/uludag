@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-09 15:28+0300\n"
+"POT-Creation-Date: 2007-09-20 11:28+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -79,7 +79,7 @@ msgstr "Ustaw jako domyślne."
 msgid "There must be at least one Pardus entry."
 msgstr "Musi być co najmniej jeden wpis Pardusa."
 
-#: src/mainview.py:247 src/mainview.py:527
+#: src/mainview.py:247 src/mainview.py:545
 msgid "Access Denied"
 msgstr "Odmowa Dostępu"
 
@@ -99,7 +99,7 @@ msgstr ""
 "To jest wpis kernela Pardusa.\n"
 "Czy chcesz odinstalować go z systemu?"
 
-#: src/mainview.py:255 src/mainview.py:404
+#: src/mainview.py:255 src/mainview.py:411
 msgid "Uninstall Kernel"
 msgstr "Usuwanie Kernela"
 
@@ -108,34 +108,35 @@ msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
 msgstr ""
-"Te kernele są zainstalowane w systemie ale nie są wpisane w "
-"menedżerze rozruchu GRUB"
+"Te kernele są zainstalowane w systemie ale nie są wpisane w menedżerze "
+"rozruchu GRUB"
 
-#: src/mainview.py:353
+#: src/mainview.py:354
 msgid "Add Boot Entry"
 msgstr "Dodaj Wpis"
 
-#: src/mainview.py:358
+#: src/mainview.py:359
 msgid "Uninstall"
 msgstr "Usuń"
 
-#: src/mainview.py:366
+#: src/mainview.py:367
 msgid "Ok"
 msgstr "Tak"
 
-#: src/mainview.py:404
-msgid "Do you want to uninstall this kernel from the system?"
+#: src/mainview.py:411
+#, fuzzy
+msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Czy chcesz usunąć tego kernela z systemu?"
 
-#: src/mainview.py:463
+#: src/mainview.py:479
 msgid "Bootloader configuration changed by another application."
 msgstr "Konfiguracja menedżera GRUB zmieniona przez inną aplikację."
 
-#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
+#: src/mainview.py:533 src/mainview.py:538 src/mainview.py:540
 msgid "Failed"
 msgstr "Niepowodzenie"
 
-#: src/mainview.py:527
+#: src/mainview.py:545
 msgid "You are not allowed to edit boot loader settings."
 msgstr "Nie masz uprawnień do edycji ustawień menedżera rozruchowego"
 
@@ -146,6 +147,10 @@ msgstr "Edytuj wpis"
 #: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Skasuj wpis"
+
+#, fuzzy
+#~ msgid "Uninstall Kernel(s)"
+#~ msgstr "Usuwanie Kernela"
 
 #~ msgid "Unused kernels:"
 #~ msgstr "Nieużywane Kernele"

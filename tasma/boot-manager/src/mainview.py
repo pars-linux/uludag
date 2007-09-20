@@ -19,7 +19,7 @@ from ui_elements import *
 import comar
 
 BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY, \
-BOOT_SET_TIMEOUT, BOOT_UNUSED, BOOT_REMOVE_UNUSED = xrange(1, 9)
+BOOT_SET_TIMEOUT, BOOT_UNUSED, BOOT_REMOVE_UNUSED, BOOT_REMOVE_UNUSED_LAST = xrange(1, 10)
 
 class widgetEntryList(QWidget):
     def __init__(self, parent, comar_link):
@@ -347,6 +347,7 @@ class widgetUnused(QWidget):
         
         self.listKernels = QListBox(self)
         self.listKernels.setMinimumSize(100, 200)
+        self.listKernels.setSelectionMode(QListBox.Extended)
         layout.addMultiCellWidget(self.listKernels, 1, 4, 0, 0)
         
         self.buttonAdd = QPushButton(self)
@@ -369,20 +370,26 @@ class widgetUnused(QWidget):
         self.connect(self.buttonAdd, SIGNAL("clicked()"), self.slotAdd)
         self.connect(self.buttonRemove, SIGNAL("clicked()"), self.slotRemove)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotExit)
-        self.connect(self.listKernels, SIGNAL("currentChanged(QListBoxItem *)"), self.slotKernels)
+        self.connect(self.listKernels, SIGNAL("selectionChanged()"), self.slotKernels)
         
         self.listUnused()
     
     def listUnused(self):
         self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
     
-    def slotKernels(self, item):
-        if not item:
-            self.buttonAdd.setEnabled(False)
-            self.buttonRemove.setEnabled(False)
-        else:
+    def slotKernels(self):
+        item = self.listKernels.firstItem()
+        versions = []
+        while item:
+            if item.isSelected():
+                versions.append(str(item.text()))
+            item = item.next()
+        if len(versions):
             self.buttonAdd.setEnabled(True)
             self.buttonRemove.setEnabled(True)
+        else:
+            self.buttonAdd.setEnabled(False)
+            self.buttonRemove.setEnabled(False)
     
     def slotAdd(self):
         self.buttonAdd.setEnabled(False)
@@ -401,12 +408,21 @@ class widgetUnused(QWidget):
         self.parent.widgetEditEntry.editOptions.setText("root=%s" % root)
     
     def slotRemove(self):
-        confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall this kernel from the system?"), i18n("Uninstall Kernel"))
+        confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall selected kernel(s) from the system?"), i18n("Uninstall Kernel"))
         if confirm == KMessageBox.Yes:
             self.buttonAdd.setEnabled(False)
             self.buttonRemove.setEnabled(False)
-            version = str(self.listKernels.currentText())
-            self.link.call("Boot.Loader.removeUnused", {"version": version}, id=BOOT_REMOVE_UNUSED)
+            item = self.listKernels.firstItem()
+            versions = []
+            while item:
+                if item.isSelected():
+                    versions.append(str(item.text()))
+                item = item.next()
+            for version in versions:
+                call_id = BOOT_REMOVE_UNUSED
+                if version == versions[-1]:
+                    call_id = BOOT_REMOVE_UNUSED_LAST
+                self.link.call("Boot.Loader.removeUnused", {"version": version}, id=call_id)
     
     def slotExit(self):
         self.parent.showScreen("Entries")
@@ -508,7 +524,8 @@ class widgetMain(QWidget):
                 for version in reply.data.split("\n"):
                     if version.strip():
                         self.widgetUnused.listKernels.insertItem(version)
-            elif reply.id == BOOT_REMOVE_UNUSED:
+                self.widgetUnused.slotKernels()
+            elif reply.id == BOOT_REMOVE_UNUSED_LAST:
                 self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
         elif reply.command == "fail":
             if reply.id == BOOT_SET_ENTRY:

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-09 15:28+0300\n"
+"POT-Creation-Date: 2007-09-20 11:28+0300\n"
 "PO-Revision-Date: 2007-07-10 23:14+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
+">\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,7 +82,7 @@ msgstr "Kies als standaard opstartkeuze."
 msgid "There must be at least one Pardus entry."
 msgstr "Er moet tenminste één Pardus keuze zijn."
 
-#: src/mainview.py:247 src/mainview.py:527
+#: src/mainview.py:247 src/mainview.py:545
 msgid "Access Denied"
 msgstr "Toegang geweigerd"
 
@@ -101,7 +102,7 @@ msgstr ""
 "Er is een Pardus kernel keuze.\n"
 "Wilt u deze van het systeem verwijderen?"
 
-#: src/mainview.py:255 src/mainview.py:404
+#: src/mainview.py:255 src/mainview.py:411
 msgid "Uninstall Kernel"
 msgstr "Verwijder kernel"
 
@@ -110,34 +111,35 @@ msgid ""
 "These kernels are installed in the system but doesn't exist in boot loader "
 "list:"
 msgstr ""
-"Deze kernels zijn binnen het systeem geïnstalleerd, maar bestaan niet in de bootlader "
-"lijst:"
+"Deze kernels zijn binnen het systeem geïnstalleerd, maar bestaan niet in de "
+"bootlader lijst:"
 
-#: src/mainview.py:353
+#: src/mainview.py:354
 msgid "Add Boot Entry"
 msgstr "Boot keuze toevoegen"
 
-#: src/mainview.py:358
+#: src/mainview.py:359
 msgid "Uninstall"
 msgstr "Verwijder"
 
-#: src/mainview.py:366
+#: src/mainview.py:367
 msgid "Ok"
 msgstr "Ok"
 
-#: src/mainview.py:404
-msgid "Do you want to uninstall this kernel from the system?"
+#: src/mainview.py:411
+#, fuzzy
+msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Wilt u deze kernel van het systeem verwijderen?"
 
-#: src/mainview.py:463
+#: src/mainview.py:479
 msgid "Bootloader configuration changed by another application."
 msgstr "Opstart configuratie is veranderd door een andere applicatie."
 
-#: src/mainview.py:515 src/mainview.py:520 src/mainview.py:522
+#: src/mainview.py:533 src/mainview.py:538 src/mainview.py:540
 msgid "Failed"
 msgstr "Mislukt"
 
-#: src/mainview.py:527
+#: src/mainview.py:545
 msgid "You are not allowed to edit boot loader settings."
 msgstr "U mag de opstartinstellingen niet aanpassen."
 
@@ -149,3 +151,6 @@ msgstr "Bewerk keuze"
 msgid "Delete entry"
 msgstr "Verwijder keuze"
 
+#, fuzzy
+#~ msgid "Uninstall Kernel(s)"
+#~ msgstr "Verwijder kernel"
