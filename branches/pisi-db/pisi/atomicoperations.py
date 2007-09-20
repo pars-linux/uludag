@@ -404,14 +404,6 @@ class Install(AtomicOperation):
         if self.reinstall:
             self.remove_old.remove_db()
 
-        # installdb
-#         ctx.installdb.install(self.metadata.package.name,
-#                           self.metadata.package.version,
-#                           self.metadata.package.release,
-#                           self.metadata.package.build,
-#                           self.metadata.package.distribution,
-#                           config_later = self.config_later)
-
         ctx.installdb.mark_pending(self.config_later)
 
         # filesdb
@@ -419,7 +411,6 @@ class Install(AtomicOperation):
 
         # installed packages
         ctx.installdb.add_package(self.pkginfo)
-
 
 def install_single(pkg, upgrade = False):
     """install a single package from URI or ID"""
@@ -537,10 +528,11 @@ class Remove(AtomicOperation):
         util.clean_dir(self.package.pkg_dir())
 
     def remove_db(self):
-        ctx.installdb.remove(self.package_name)
-        ctx.filesdb.remove_files(self.files)
-        # FIXME: something goes wrong here, if we use ctx operations ends up with segmentation fault!
-        pisi.db.packagedb.remove_tracking_package(self.package_name)
+        ctx.installdb.remove_package(self.package_name)
+        ctx.filesdb.remove_files(self.files.list)
+# FIX:DB
+#         # FIXME: something goes wrong here, if we use ctx operations ends up with segmentation fault!
+#         pisi.db.packagedb.remove_tracking_package(self.package_name)
 
 
 def remove_single(package_name):
