@@ -17,7 +17,11 @@ import pisi
 import os
 
 def getPisiList(path):
-    return [l for l in os.listdir(path) if os.path.splitext(l)[1] == '.pisi']
+    pisi_list = []
+    for l in os.listdir(path):
+        if os.path.splitext(l)[1] == '.pisi':
+            pisi_list.append({"package_name":l})
+    return pisi_list
 
 def getRuntimeDeps(p):
     metadata = (pisi.package.Package(p)).get_metadata()
@@ -26,9 +30,10 @@ def getRuntimeDeps(p):
 def getPisiDict(path):
     # Returns a dictionary which contains the runtime dependencies
     # of the packages
-    d = {}
+    d = _d = {}
     for ps in getPisiList(path):
-        d[ps] = getRuntimeDeps(os.path.join(path, ps))
+        _d[ps["package_name"]] = getRuntimeDeps(os.path.join(path, ps["package_name"]))
+        d[ps["package_name"]] = map(lambda x: x.package, _d[ps["package_name"]])
 
     return d
 
