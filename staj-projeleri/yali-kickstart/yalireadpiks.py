@@ -47,7 +47,8 @@ def main(args):
         info.username=p.getTagData("username")
         info.realname=p.getTagData("realname")
         info.password=p.getTagData("password")
-        info.groups=p.getTagData("groups").split(",")
+        if(p.getTagData("groups")!=None):
+            info.groups=p.getTagData("groups").split(",")
         data.users.append(info)
     
     partitioning=doc.getTag("partitioning")
