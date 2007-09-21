@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Listing packages from the binary repo {{ repo_name }}</h3>
+    <h4>(path: {{ repo_path }})</h4>
+    <hr />
+    {% if pisi_list %}
+        <ul>
+        {% for p in pisi_list %}
+            <li>{{ p }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There's no PiSi packages in the repo!</p>
+    {% endif %}
+{% endblock %}
+
