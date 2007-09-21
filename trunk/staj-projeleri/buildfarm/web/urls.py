@@ -2,8 +2,7 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
     # Example:
-    # (r'^web/', include('web.foo.urls')),
-
+    (r'^ciftci/', include('web.ciftci.urls')),
     # Uncomment this for admin:
 #     (r'^admin/', include('django.contrib.admin.urls')),
 )

@@ -14,7 +14,7 @@ ADMINS = (
 )
 
 # Don't forget to define these!
-DOCUMENT_ROOT = ''
+DOCUMENT_ROOT = '/home/ozan/uludag/trunk/staj-projeleri/buildfarm/web'
 WEB_URL = ''
 
 MANAGERS = ADMINS

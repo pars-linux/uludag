@@ -33,7 +33,7 @@ class Repository(models.Model):
 
     def save(self):
     # Raise an exception.
-        if self.exists():
+        if os.path.exists(self.repo_path):
             super(Repository, self).save()
 
     def __str__(self):
