@@ -39,22 +39,6 @@ class Repository(models.Model):
     def __str__(self):
         return self.repo_name
 
-    def exists(self):
-        # Checks if the repo exists in the filesystem hierarch
-        return os.path.exists(self.repo_path)
-
-    def getPisiDict(self):
-        # Returns the list of pisi packages in the binary repo
-        d = {}
-        pisi_list = [l for l in os.listdir(self.repo_path)
-                       if os.path.splitext(l)[1] == '.pisi']
-        for p in pisi_list:
-            pisi_file = os.path.join(self.repo_path, p)
-            print pisi_file
-            d[p] = (pisi.package.Package(pisi_file).get_metadata()).package.runtimeDependencies
-
-        return d
-
 class Package(models.Model):
     # The package can be identified
     # 1. by its pspec.xml (parsed later) OR
