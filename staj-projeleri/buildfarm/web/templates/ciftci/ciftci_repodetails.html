@@ -7,7 +7,15 @@
     {% if pisi_list %}
         <ul>
         {% for p in pisi_list %}
-            <li>{{ p }}</li>
+            <li>{{ p.package_name }}
+            {% if p.deplist %}
+                <ul>
+                {% for d in p.deplist %}
+                <li>{{ d }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
         {% endfor %}
         </ul>
     {% else %}
