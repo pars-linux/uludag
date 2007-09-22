@@ -24,21 +24,21 @@
 Content-Type: text/plain
 From: [% Param('mailfrom') %]
 To: [% user.email %]
-Subject: [[% terms.Bugzilla %]] Your account [% user.login -%]
- is being impersonated
+Subject: [[% terms.Bugzilla %]] hesabınız [% user.login -%]
+ bir başkası tarafından taklit edildi
 X-Bugzilla-Type: admin
 
-    [%+ sudoer.identity %] has used the 'sudo' feature to access 
-[%+ terms.Bugzilla %] using your account.
+    [%+ sudoer.identity %] kullanıcısı 'sudo' özelliğinden yararlanarak,
+[%+ terms.Bugzilla %]'ya giriş için sizin hesabınızı kullandı.
 
 [% IF reason %]
-    [%+ sudoer.identity %] provided the following reason for doing this:
+    [%+ sudoer.identity %] kullanıcısı bu işlem için şu gerekçeyi gösterdi:
 
 [% reason FILTER wrap_comment %]
 [% ELSE %]
-    [%+ sudoer.identity %] did not provide a reason for doing this.
+    [%+ sudoer.identity %] kullanıcısı bu işlem için hiçbir gerekçe göstermedi.
 [% END %]
 
-    If you feel that this action was inappropriate, please contact 
-[%+ Param("maintainer") %].  For more information on this feature, 
-visit <[% Param("urlbase") %]page.cgi?id=sudo.html>.
+    Eğer yapılan işlemin uygunsuz olduğunu düşünüyorsanız, lütfen
+[%+ Param("maintainer") %] ile iletişime geçin. Bu özellik hakkında 
+daha ayrıntılı bilgi için <[% Param("urlbase") %]page.cgi?id=sudo.html> adresini ziyaret edin.
