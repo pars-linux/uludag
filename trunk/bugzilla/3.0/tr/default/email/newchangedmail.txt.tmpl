@@ -43,35 +43,35 @@ X-Bugzilla-Changed-Fields: [% changedfields %]
 [%+ diffs %]
 
 -- 
-Configure [% terms.bug %]mail: [% Param('urlbase') %]userprefs.cgi?tab=email
-------- You are receiving this mail because: -------
+[% terms.Bug %] kayıtları için e-posta ayarlarini düzenle: [% Param('urlbase') %]userprefs.cgi?tab=email
+------- Bu e-postayı alma sebebiniz:: -------
 [% FOREACH relationship = reasons %]
   [% SWITCH relationship %]
     [% CASE constants.REL_ASSIGNEE %]
-You are the assignee for the [% terms.bug %].
+Bu [% terms.bug %] için atanan kişisiniz.
     [% CASE constants.REL_REPORTER %]
-You reported the [% terms.bug %].
+Bu [% terms.bug %]yı siz bildirdiniz.
     [% CASE constants.REL_QA %]
-You are the QA contact for the [% terms.bug %].
+Bu [% terms.bug %]nın soru-cevap sorumlususunuz..
     [% CASE constants.REL_CC %]
-You are on the CC list for the [% terms.bug %].
+Bu [% terms.bug %]nın CC listesindesiniz.
     [% CASE constants.REL_VOTER %]
-You are a voter for the [% terms.bug %].
+Bu [% terms.bug %] için oy kullandınız.
     [% CASE constants.REL_GLOBAL_WATCHER %]
-You are watching all [% terms.bug %] changes.
+Bu [% terms.bug %] ile ilgili tüm değişiklikleri takip ediyorsunuz.
   [% END %]
 [% END %]
 [% FOREACH relationship = reasons_watch %]
   [% SWITCH relationship %]
     [% CASE constants.REL_ASSIGNEE %]
-You are watching the assignee of the [% terms.bug %].
+Bu [% terms.bug %] için atanan kişiyi takip ediyorsunuz.
     [% CASE constants.REL_REPORTER %]
-You are watching the reporter.
+Bu [% terms.bug %]yı bildiren kişiyi takip ediyorsunuz.
     [% CASE constants.REL_QA %]
-You are watching the QA contact of the [% terms.bug %].
+Bu [% terms.bug %]nın soru-cevap sorumlusunu takip ediyorsunuz.
     [% CASE constants.REL_CC %]
-You are watching someone on the CC list of the [% terms.bug %].
+Bu [% terms.bug %]nın CC listesindeki herhangi birini takip ediyorsunuz.
     [% CASE constants.REL_VOTER %]
-You are watching a voter for the [% terms.bug %].
+Bu [% terms.bug %]yı oylayanlardan birini takip ediyorsunuz.
   [% END %]
 [% END %]
