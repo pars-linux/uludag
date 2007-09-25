@@ -97,54 +97,52 @@ Usage: info <package1> <package2> ... <packagen>
 
 
     def info_package(self, arg):
+
         if arg.endswith(ctx.const.package_suffix):
             metadata, files = pisi.api.info_file(arg)
             ctx.ui.info(_('Package file: %s') % arg)
             self.print_pkginfo(metadata, files)
+            return
+
+        if ctx.installdb.has_package(arg):
+            metadata, files, repo = pisi.api.info_name(arg, True)
+
+            if self.options.files or self.options.files_path:
+                self.print_files(files)
+                return
+
+            if self.options.short:
+                ctx.ui.info(_('[inst] '), noln=True)
+            else:
+                ctx.ui.info(_('Installed package:'))
+                
+            self.print_metadata(metadata, ctx.installdb)
         else:
-            if ctx.installdb.has_package(arg):
-                metadata, files, repo = pisi.api.info_name(arg, True)
-                if self.options.short:
-                    ctx.ui.info(_('[inst] '), noln=True)
-                else:
-                    ctx.ui.info(_('Installed package:'))
-                self.print_pkginfo(metadata, files, pisi.db.installed)
+            ctx.ui.info(_("%s is not installed") % arg)
+
+        if ctx.packagedb.has_package(arg):
+            metadata, files, repo = pisi.api.info_name(arg, False)
+            if self.options.short:
+                ctx.ui.info(_('[repo] '), noln=True)
             else:
-                ctx.ui.info(_("%s is not installed") % arg)
+                ctx.ui.info(_('Package found in %s repository:') % repo)
+            self.print_metadata(metadata, ctx.packagedb)
+        else:
+            ctx.ui.info(_("%s is not found in repositories") % arg)
 
-            if ctx.packagedb.has_package(arg):
-                metadata, files, repo = pisi.api.info_name(arg, False)
-                if self.options.short:
-                    ctx.ui.info(_('[repo] '), noln=True)
-                else:
-                    ctx.ui.info(_('Package found in %s repository:') % repo)
-                self.print_pkginfo(metadata, files, pisi.db.repos)
+    def print_files(self, files):
+        files.list.sort(key = lambda x:x.path)
+        for fileinfo in files.list:
+            if self.options.files:
+                print fileinfo
             else:
-                ctx.ui.info(_("%s is not found in repositories") % arg)
+                print "/" + fileinfo.path
 
-
-    def print_pkginfo(self, metadata, files, repo = None):
+    def print_metadata(self, metadata, packagedb):
         if ctx.get_option('short'):
             pkg = metadata.package
             ctx.ui.info('%15s - %s' % (pkg.name, unicode(pkg.summary)))
         else:
             ctx.ui.info(unicode(metadata.package))
-            if repo:
-                # FIX:DB
-#                 revdeps =  [x[0] for x in
-#                             ctx.packagedb.get_rev_deps(metadata.package.name, repo)]
-                revdeps = []
-                print _('Reverse Dependencies:'), util.strlist(revdeps)
-        if self.options.files or self.options.files_path:
-            if files:
-                print _('\nFiles:')
-                files.list.sort(key = lambda x:x.path)
-                for fileinfo in files.list:
-                    if self.options.files:
-                        print fileinfo
-                    else:
-                        print "/" + fileinfo.path
-            else:
-                ctx.ui.warning(_('File information not available'))
-        if not self.options.short:
-            print
+            revdeps =  packagedb.get_rev_deps(metadata.package.name)
+            print _('Reverse Dependencies: %s\n') % util.strlist(revdeps)
