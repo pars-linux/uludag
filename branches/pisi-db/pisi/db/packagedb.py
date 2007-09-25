@@ -111,9 +111,7 @@ class PackageDB(object):
         return obsoletes
     
     def get_rev_deps(self, name, repo=None):
-        revdeps = []
-        map(lambda x:revdeps.extend(x), self.rvdb.get_item_values(repo))
-        return revdeps
+        return self.rvdb.get_item(name, repo)
 
     # replacesdb holds the info about the replaced packages (ex. gaim -> pidgin)
     def get_replaces(self, repo):
