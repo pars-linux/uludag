@@ -77,7 +77,7 @@ class partitionFunctions:
     def checkDiskSyntax(self):
         return re.match("[h,s]d(\D{1})[1-9]$",self.disk) 
 
-class yaliKickStart(yaliKickstartData):    
+class yaliKickStart():    
     def __init__(self):
         self.KeymapXList=["us","ara","be","bg","es","hr","cz","dk","ee","fi","fr","de","gr","hu","is","it","jp","mkd","no","pl","pt","br","ru","srp","sk","si","se","trq","trf","ua","vn","gb"]
         self.fileSystems=["swap","ext3","ntfs","reiserf","xfs"]
@@ -96,7 +96,9 @@ class yaliKickStart(yaliKickstartData):
         if self.total==100:
             return True
         return False
-   
+    def readData(self,kickstartFile):
+        self.filePath=kickstartFile
+        self.data=main(kickstartFile)
     def checkAllOptions(self):
         error=errors()
         otherFunct=otherFunctions(self.data.keyData)
