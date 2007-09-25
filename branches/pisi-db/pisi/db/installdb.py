@@ -154,10 +154,10 @@ class InstallDB:
     def add_package(self, pkginfo):
         self.installed_db[pkginfo.name] = "%s-%s" % (pkginfo.version, pkginfo.release)
 
-    def remove_package(self, pkginfo):
-        if self.installed_db.has_key(pkginfo.name):
-            del self.installed_db[pkginfo.name]
-        self.clear_pending(pkginfo.name)
+    def remove_package(self, package_name):
+        if self.installed_db.has_key(package_name):
+            del self.installed_db[package_name]
+        self.clear_pending(package_name)
 
     def list_pending(self):
         return self.confing_pending_db
