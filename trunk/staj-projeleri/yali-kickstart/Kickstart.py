@@ -69,7 +69,11 @@ class partitionFunctions:
             if element==self.fs:
                 return True
         return False
-    
+    def checkFileSystem2(self):
+        for element in yaliKickStart().fileSystems2:
+            if element == self.fs:
+                return True
+        return False
     def checkDiskSyntax(self):
         return re.match("[h,s]d(\D{1})[1-9]$",self.disk) 
 
@@ -77,6 +81,7 @@ class yaliKickStart(yaliKickstartData):
     def __init__(self):
         self.KeymapXList=["us","ara","be","bg","es","hr","cz","dk","ee","fi","fr","de","gr","hu","is","it","jp","mkd","no","pl","pt","br","ru","srp","sk","si","se","trq","trf","ua","vn","gb"]
         self.fileSystems=["swap","ext3","ntfs","reiserf","xfs"]
+        self.fileSystems2=["ext3","xfs"]
         self.defaultGroups=["audio","dialout","disk","pnp","pnpadmin","power","removable","users","video"]
         self.errorList=[]
         self.RatioList=[]
@@ -119,7 +124,10 @@ class yaliKickStart(yaliKickstartData):
             if error.Lang!=True:
                 for lang in getLangsWithKeymaps():
                     if(lang[0]==correctData.language):
-                        correctData.keyData=lang[1].X
+                        if(correctData.language=="tr"):
+                            correctData.keyData=lang[1][0].X
+                        else:
+                            correctData.keyData=lang[1].X
                         break
                 else:
                     error.Keymap=True
@@ -219,8 +227,7 @@ class yaliKickStart(yaliKickstartData):
                 else:
                     error.Root=True
                     self.errorList.append("Manuel Partitioning Error : \"pardus_root\" missing ")
-            
-                if(self.checkRatio!=True):
+                if(self.checkRatio()!=True):
                     error.TotalRatio=True
                     self.errorList.append(" Ratio Error : Total not equal to 100")
                 else:    
@@ -236,9 +243,14 @@ class yaliKickStart(yaliKickstartData):
                             if not (functPart.checkDiskSyntax()):
                                 errorPartition.Disk=True
                                 self.errorList.append(" Disk Error for %s: %s not valid"%(partition.partitionType,partition.disk))
-                            if not (functPart.checkFileSystem()):
-                                errorPartition.FsType=True
-                                self.errorList.append("File system Error for %s : %s not valid"%(partition.partitionType,partition.fsType))
+                            if (partition.partitionType!="other"):
+                                if not (functPart.checkFileSystem2()):
+                                    errorPartition.FsType=True
+                                    self.errorList.append("File system Error for %s : %s not valid"%(partition.partitionType,partition.fsType))
+                            else:
+                                if not (functPart.checkFileSystem()):
+                                    errorPartition.FsType=True
+                                    self.errorList.append("File system Error for %s : %s not valid"%(partition.partitionType,partition.fsType))
                             if  partition.mountPoint!=None  and not(re.search("[a-zA-Z0-9]",partition.mountPoint)) :
                                 errorPartition.MountPoint=True
                                 self.errorList.append("Mountpoint Error for %s : %s not valid"%(partition.partitionType,partition.mountPoint))
@@ -257,8 +269,5 @@ class yaliKickStart(yaliKickstartData):
             print self.errorList
             return correctData
         return self.errorList
+    
 
-
-instance=yaliKickStart()
-a=instance.getValues()
-print a
