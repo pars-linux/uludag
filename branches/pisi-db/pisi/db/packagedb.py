@@ -25,6 +25,7 @@ import piksemel
 
 import pisi.db
 import pisi.metadata
+import pisi.dependency
 import pisi.db.itembyrepo
 
 class PackageDB(object):
@@ -73,7 +74,7 @@ class PackageDB(object):
             deps = node.getTag('RuntimeDependencies')
             if deps:
                 for dep in deps.tags("Dependency"):
-                    revdeps.setdefault(dep.firstChild().data(), set()).add(name)
+                    revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep))
         return revdeps
 
     def has_package(self, name, repo=None):
@@ -111,7 +112,17 @@ class PackageDB(object):
         return obsoletes
     
     def get_rev_deps(self, name, repo=None):
-        return self.rvdb.get_item(name, repo)
+        
+        rev_deps = []
+        
+        for pkg, dep in self.rvdb.get_item(name, repo):
+            dependency = pisi.dependency.Dependency()
+            dependency.package = pkg
+            if dep.attributes():
+                dependency.__dict__[dep.attributes()[0]] = dep.getAttribute(dep.attributes()[0])
+            rev_deps.append((pkg, dependency))
+            
+        return rev_deps
 
     # replacesdb holds the info about the replaced packages (ex. gaim -> pidgin)
     def get_replaces(self, repo):
