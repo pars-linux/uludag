@@ -1,7 +1,8 @@
 body {
-	background-image: url('images/background.png');
-	background-repeat: no-repeat;
-	font-size: 9pt;
+    background-image: url('images/background.png');
+    background-repeat: no-repeat;
+    background-color: white;
+    font-size: 9pt;
 }
 
 body>h1 {
