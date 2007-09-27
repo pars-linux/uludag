@@ -99,36 +99,11 @@ Usage: info <package1> <package2> ... <packagen>
     def info_package(self, arg):
 
         if arg.endswith(ctx.const.package_suffix):
-            metadata, files = pisi.api.info_file(arg)
-            ctx.ui.info(_('Package file: %s') % arg)
-            self.print_pkginfo(metadata, files)
+            self.pisifile_info(arg)
             return
 
-        if ctx.installdb.has_package(arg):
-            metadata, files, repo = pisi.api.info_name(arg, True)
-
-            if self.options.files or self.options.files_path:
-                self.print_files(files)
-                return
-
-            if self.options.short:
-                ctx.ui.info(_('[inst] '), noln=True)
-            else:
-                ctx.ui.info(_('Installed package:'))
-                
-            self.print_metadata(metadata, ctx.installdb)
-        else:
-            ctx.ui.info(_("%s is not installed") % arg)
-
-        if ctx.packagedb.has_package(arg):
-            metadata, files, repo = pisi.api.info_name(arg, False)
-            if self.options.short:
-                ctx.ui.info(_('[repo] '), noln=True)
-            else:
-                ctx.ui.info(_('Package found in %s repository:') % repo)
-            self.print_metadata(metadata, ctx.packagedb)
-        else:
-            ctx.ui.info(_("%s is not found in repositories") % arg)
+        self.installdb_info(arg)
+        self.packagedb_info(arg)
 
     def print_files(self, files):
         files.list.sort(key = lambda x:x.path)
@@ -149,3 +124,35 @@ Usage: info <package1> <package2> ... <packagen>
             print _('Reverse Dependencies:'), util.strlist(revdeps)
             print
             
+    def pisifile_info(self, package):
+        metadata, files = pisi.api.info_file(package)
+        ctx.ui.info(_('Package file: %s') % package)
+        self.print_pkginfo(metadata, files)
+        
+    def installdb_info(self, package):
+        if ctx.installdb.has_package(package):
+            metadata, files, repo = pisi.api.info_name(package, True)
+
+            if self.options.files or self.options.files_path:
+                self.print_files(files)
+                return
+
+            if self.options.short:
+                ctx.ui.info(_('[inst] '), noln=True)
+            else:
+                ctx.ui.info(_('Installed package:'))
+                
+            self.print_metadata(metadata, ctx.installdb)
+        else:
+            ctx.ui.info(_("%s is not installed") % package)
+
+    def packagedb_info(self, package):
+        if ctx.packagedb.has_package(package):
+            metadata, files, repo = pisi.api.info_name(package, False)
+            if self.options.short:
+                ctx.ui.info(_('[repo] '), noln=True)
+            else:
+                ctx.ui.info(_('Package found in %s repository:') % repo)
+            self.print_metadata(metadata, ctx.packagedb)
+        else:
+            ctx.ui.info(_("%s is not found in repositories") % package)
