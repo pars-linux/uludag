@@ -95,11 +95,10 @@ def plan_remove(A):
         Bp = set()
         for x in B:
             rev_deps = ctx.installdb.get_rev_deps(x)
-            for rev_dep in rev_deps:
+            for (rev_dep, depinfo) in rev_deps:
                 # we don't deal with uninstalled rev deps
-                # and unsatisfied dependencies (this is important, too) - why
-                if ctx.installdb.has_package(rev_dep):
-#                   and dependency.installed_satisfies_dep(depinfo):
+                # and unsatisfied dependencies (this is important, too)
+                if ctx.installdb.has_package(rev_dep) and dependency.installed_satisfies_dep(depinfo):
                     if not rev_dep in G_f.vertices():
                         Bp.add(rev_dep)
                         G_f.add_plain_dep(rev_dep, x)

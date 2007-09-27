@@ -23,6 +23,7 @@ import piksemel
 # PiSi
 import pisi
 import pisi.context as ctx
+import pisi.dependency
 import pisi.files
 import pisi.util
 
@@ -86,7 +87,7 @@ class InstallDB:
             deps = meta_doc.getTag("Package").getTag('RuntimeDependencies')
             if deps:
                 for dep in deps.tags("Dependency"):
-                    revdeps.setdefault(dep.firstChild().data(), set()).add(name)
+                    revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep))
             del meta_doc
 
         return revdeps
@@ -128,12 +129,19 @@ class InstallDB:
                            ctime)
         return info
 
-    def get_rev_deps(self, package):
-
-        if self.rev_deps_db.has_key(package):
-            return self.rev_deps_db[package]
+    def get_rev_deps(self, name, repo=None):
         
-        return []
+        rev_deps = []
+
+        if self.rev_deps_db.has_key(name):
+            for pkg, dep in self.rev_deps_db[name]:
+                dependency = pisi.dependency.Dependency()
+                dependency.package = pkg
+                if dep.attributes():
+                    dependency.__dict__[dep.attributes()[0]] = dep.getAttribute(dep.attributes()[0])
+                rev_deps.append((pkg, dependency))
+            
+        return rev_deps
 
     def pkg_dir(self, pkg, version, release):
         return pisi.util.join_path(ctx.config.lib_dir(), 'package',
