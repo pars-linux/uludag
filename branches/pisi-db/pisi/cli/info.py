@@ -144,5 +144,8 @@ Usage: info <package1> <package2> ... <packagen>
             ctx.ui.info('%15s - %s' % (pkg.name, unicode(pkg.summary)))
         else:
             ctx.ui.info(unicode(metadata.package))
-            revdeps =  packagedb.get_rev_deps(metadata.package.name)
-            print _('Reverse Dependencies: %s\n') % util.strlist(revdeps)
+            
+            revdeps =  [name for name, dep in packagedb.get_rev_deps(metadata.package.name)]
+            print _('Reverse Dependencies:'), util.strlist(revdeps)
+            print
+            
