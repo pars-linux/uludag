@@ -112,16 +112,18 @@ class PackageDB(object):
         return obsoletes
     
     def get_rev_deps(self, name, repo=None):
-        
+        try:
+            rvdb = self.rvdb.get_item(name, repo)
+        except Exception: #FIXME: what exception could we catch here, replace with that.
+            return []
+
         rev_deps = []
-        
-        for pkg, dep in self.rvdb.get_item(name, repo):
+        for pkg, dep in rvdb:
             dependency = pisi.dependency.Dependency()
             dependency.package = pkg
             if dep.attributes():
                 dependency.__dict__[dep.attributes()[0]] = dep.getAttribute(dep.attributes()[0])
             rev_deps.append((pkg, dependency))
-            
         return rev_deps
 
     # replacesdb holds the info about the replaced packages (ex. gaim -> pidgin)
