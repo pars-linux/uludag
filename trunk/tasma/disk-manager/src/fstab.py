@@ -36,6 +36,8 @@ def getPartitionsOfDevice(device_path):
                     part_type = 'vfat'
                 elif part.fs_type.name == 'ntfs':
                     part_type = 'ntfs-3g'
+                elif part.fs_type.name == 'hfs+':
+                    part_type = 'hfsplus'
                 else:
                     part_type = part.fs_type.name
                 return (device_path + str(part.num), {"mount_point": '',
