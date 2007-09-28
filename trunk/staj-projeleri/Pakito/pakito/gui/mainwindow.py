@@ -223,7 +223,7 @@ class MainWindow(KParts.MainWindow):
         self.enableOperations()
         qApp.restoreOverrideCursor()
         
-#        self.createGUI(self.pspecTab.editor.part)
+        self.createGUI(self.pspecTab.editor.part)
     
 #    def eventFilter(self, obj, ev):
 #        try:
@@ -491,14 +491,14 @@ class MainWindow(KParts.MainWindow):
         # actions
         
         # (standard) file actions
-        self.actionNew = KStdAction.openNew(self.new, self.actionCollection())
-        self.actionOpen = KStdAction.open(self.open, self.actionCollection())
-        self.actionSave = KStdAction.save(self.save, self.actionCollection())
+        self.actionNew = KStdAction.openNew(self.new, self.actionCollection(), "actionNew")
+        self.actionOpen = KStdAction.open(self.open, self.actionCollection(), "actionOpen")
+        self.actionSave = KStdAction.save(self.save, self.actionCollection(), "actionSave")
         self.actionSave.setEnabled(False)
 #        self.actionSaveAll = KAction(i18n("Save All"), "save_all", KShortcut(), self.saveAll, self.actionCollection())
-        self.actionClose = KStdAction.close(self.closePacket, self.actionCollection())
+        self.actionClose = KStdAction.close(self.closePacket, self.actionCollection(), "actionClose")
         self.actionClose.setEnabled(False)
-        self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
+        self.actionExit = KStdAction.quit(self.exit, self.actionCollection(), "actionExit")
 
         # build actions        
         self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection(), "actionFetch")
