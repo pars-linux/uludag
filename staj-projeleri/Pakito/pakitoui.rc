@@ -1,6 +1,15 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 <kpartgui name="pakito" version="0.3">
 <MenuBar>
+  <Menu name="File">
+    <text>File</text>
+    <Action name="actionNew" />
+    <Action name="actionOpen" />
+    <Action name="actionSave" />
+    <Separator/>
+    <Action name="actionClose" />
+    <Action name="actionExit" />
+  </Menu>
   <Menu name="Operations">
     <text>O&amp;perations</text>
     <Action name="actionFetch" />
@@ -21,6 +30,12 @@
   </Menu>
 </MenuBar>
 
+<ToolBar name="File">
+    <text>File</text>
+    <Action name="actionNew" />
+    <Action name="actionOpen" />
+    <Action name="actionSave" />
+</ToolBar>
 <ToolBar name="Operations">
   <text>O&amp;perations</text>
   <Action name="actionFetch" />
