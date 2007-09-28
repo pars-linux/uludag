@@ -125,11 +125,11 @@ class PackageDB(object):
         return rev_deps
 
     # replacesdb holds the info about the replaced packages (ex. gaim -> pidgin)
-    def get_replaces(self, repo):
+    def get_replaces(self):
         pairs = {}
 
-        for pkg_name in self.__replaces[repo]:
-            replaces = self.get_package(pkg_name, repo).replaces
+        for pkg_name in self.rpdb.get_item_values():
+            replaces = self.get_package(pkg_name).replaces
             for r in replaces:
                 if pisi.replace.installed_package_replaced(r):
                     pairs[r.package] = pkg_name
