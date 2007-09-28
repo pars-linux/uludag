@@ -47,6 +47,7 @@ class MainWindow(KParts.MainWindow):
         # main area
         self.mainWidget =  QSplitter(self)
         self.mainWidget.setOrientation(Qt.Vertical)
+        self.mainWidget.setHandleWidth(4)
         self.setCentralWidget(self.mainWidget)
 
         #right tabs
@@ -55,7 +56,6 @@ class MainWindow(KParts.MainWindow):
         
         # bottom output tabs
         self.twBottomTabs = MultiTabWidget(self.mainWidget, pos = KMultiTabBar.Bottom)
-#        self.mainWidget.setResizeMode(self.twBottomTabs, QSplitter.FollowSizeHint)
         
         bottomLayout = QHBox()
         self.teOutput = KTextEdit(bottomLayout)
@@ -65,66 +65,9 @@ class MainWindow(KParts.MainWindow):
         
         part = createReadOnlyPart ("libkonsolepart", self)
         self.twBottomTabs.addTab(part.widget(), iconloader.loadIcon("openterm", KIcon.Desktop), 1, "Console")
+        self.connect(part, SIGNAL("destroyed()"), self.konsoleClosedSlot)
         
         self.doActions()
-        
-        # menubar popups
-        self.popupFile = KPopupMenu(self)
-        self.actionNew.plug(self.popupFile)
-        self.popupFile.insertSeparator()
-        self.actionOpen.plug(self.popupFile)
-        self.actionSave.plug(self.popupFile)
-#        self.actionSaveAll.plug(self.popupFile)
-        self.popupFile.insertSeparator()
-        self.actionClose.plug(self.popupFile)
-        self.actionExit.plug(self.popupFile)
-        
-        self.popupBuild = KPopupMenu(self)
-        self.actionFetch.plug(self.popupBuild)
-        self.actionUnpack.plug(self.popupBuild)
-        self.actionSetup.plug(self.popupBuild)
-        self.actionBuild.plug(self.popupBuild)
-        self.actionInstall.plug(self.popupBuild)
-        self.popupBuild.insertSeparator()
-        self.actionMakePackage.plug(self.popupBuild)
-        
-        popupAuto = KPopupMenu(self)
-        self.actionAddRelease.plug(popupAuto)
-        self.actionValidatePspec.plug(popupAuto)
-        self.actionCheckSHA1.plug(popupAuto)
-        self.actionComputeSHA1.plug(popupAuto)
-        self.actionDetectType.plug(popupAuto)
-        
-        self.menuBar().insertItem(i18n("File"), self.popupFile) # insertion
-        self.menuBar().insertItem(i18n("Build"), self.popupBuild) # insertion
-        self.menuBar().insertItem(i18n("Automation"), popupAuto)
-        self.menuBar().insertItem(i18n("Help"), self.helpMenu())
-        
-        # toolbar operations
-        toolbar = self.toolBar()
-#        toolbar.setIconText(KToolBar.IconTextBottom)
-        toolbar.setLabel(i18n("Main toolbar"))
-        self.actionNew.plug(toolbar)
-        self.actionOpen.plug(toolbar)
-        self.actionSave.plug(toolbar)
-#        self.actionSaveAll.plug(toolbar)
-        
-        # build toolbar
-#        buildToolbar = QToolBar(self)  
-        #TODO: Yeni bir toolbar yarat: KToolBar! Rrrrr
-        toolbar.insertLineSeparator(-1, -1)
-        self.actionFetch.plug(toolbar)
-        self.actionSetup.plug(toolbar)
-        self.actionBuild.plug(toolbar)
-        self.actionMakePackage.plug(toolbar)
-                
-        #automation toolbar
-        toolbar.insertLineSeparator(-1, -1)
-        self.actionAddRelease.plug(toolbar)
-        self.actionValidatePspec.plug(toolbar)
-        self.actionComputeSHA1.plug(toolbar)
-        self.actionDetectType.plug(toolbar)
-        
         self.disableOperations()
         
         #prepare pisi
@@ -139,9 +82,9 @@ class MainWindow(KParts.MainWindow):
         
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
         
-#        self.createGUI("pakitoui.rc")
-#        self.setXMLFile(rcfile)
-#        self.createShellGUI()
+#        self.createGUI(self.pspecTab.editor.part)
+        self.setXMLFile(os.getcwd() + "/pakitoui.rc")
+        self.createShellGUI()
 
         self.showMaximized()
 
@@ -282,6 +225,14 @@ class MainWindow(KParts.MainWindow):
         
 #        self.createGUI(self.pspecTab.editor.part)
     
+#    def eventFilter(self, obj, ev):
+#        try:
+#            if obj == self.pspecTab.editor and ev.type() == QEvent.MouseButtonPress:
+#                print "hedeeee"
+#        except:
+#            pass
+            
+    
     def save(self):
         if self.actionsTab == None or self.actionsTab == None:
             KMessageBox.sorry(self, i18n("There is no package to save. Create or Open a package first."), i18n("No package"))
@@ -387,6 +338,15 @@ class MainWindow(KParts.MainWindow):
 #        self.twTabs.addTab(QLabel("Welcome!", self.twTabs), "Welcome") # TODO: Düzgün bir Hoş geldiniz ekranı
         pass
         
+    def konsoleClosedSlot(self):
+        self.twBottomTabs.removeTab(1) #this must take Name as argument
+        
+        #generate new konsole
+        part = createReadOnlyPart ("libkonsolepart", self)
+        iconloader = KGlobal.iconLoader()
+        self.twBottomTabs.addTab(part.widget(), iconloader.loadIcon("openterm", KIcon.Desktop), 1, "Console")
+        self.connect(part, SIGNAL("destroyed()"), self.konsoleClosedSlot)
+    
     def fetchSlot(self):        
         self.prepareBuild()
         self.twBottomTabs.expandTab()
@@ -541,19 +501,19 @@ class MainWindow(KParts.MainWindow):
         self.actionExit = KStdAction.quit(self.exit, self.actionCollection())
 
         # build actions        
-        self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection())
-        self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection())        
-        self.actionSetup = KAction(i18n("Setup"), "configure", KShortcut(), self.setupSlot, self.actionCollection())
-        self.actionBuild = KAction(i18n("Build"), "compfile", KShortcut(), self.buildSlot, self.actionCollection())
-        self.actionInstall = KAction(i18n("Install"), KShortcut(), self.installSlot, self.actionCollection())
-        self.actionMakePackage = KAction(i18n("Make Package"), "package", KShortcut(), self.makePackageSlot, self.actionCollection())
+        self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection(), "actionFetch")
+        self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection(), "actionUnpack")        
+        self.actionSetup = KAction(i18n("Setup"), "configure", KShortcut(), self.setupSlot, self.actionCollection(), "actionSetup")
+        self.actionBuild = KAction(i18n("Build"), "compfile", KShortcut(), self.buildSlot, self.actionCollection(), "actionBuild")
+        self.actionInstall = KAction(i18n("Install"), KShortcut(), self.installSlot, self.actionCollection(), "actionInstall")
+        self.actionMakePackage = KAction(i18n("Make Package"), "package", KShortcut(), self.makePackageSlot, self.actionCollection(), "actionMakePackage")
         
         #automation actions
-        self.actionAddRelease = KAction(i18n("Add Release"), "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection())
-        self.actionValidatePspec = KAction(i18n("Validate Pspec File"), "ok", KShortcut(), self.validatePspecSlot, self.actionCollection())
-        self.actionCheckSHA1 = KAction(i18n("Check SHA1"), KShortcut(), self.checkSHA1Slot, self.actionCollection())
-        self.actionComputeSHA1 = KAction(i18n("Compute SHA1"), "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection())
-        self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection())
+        self.actionAddRelease = KAction(i18n("Add Release"), "edit_add", KShortcut(), self.addReleaseSlot, self.actionCollection(), "actionAddRelease")
+        self.actionValidatePspec = KAction(i18n("Validate Pspec File"), "ok", KShortcut(), self.validatePspecSlot, self.actionCollection(), "actionValidatePspec")
+        self.actionCheckSHA1 = KAction(i18n("Check SHA1"), KShortcut(), self.checkSHA1Slot, self.actionCollection(), "actionCheckSHA1")
+        self.actionComputeSHA1 = KAction(i18n("Compute SHA1"), "gear", KShortcut(), self.computeSHA1Slot, self.actionCollection(), "actionComputeSHA1")
+        self.actionDetectType = KAction(i18n("Detect File Type"), "filefind", KShortcut(), self.detectTypeSlot, self.actionCollection(), "actionDetectType")
     
 class PisiThread(Thread):
     def __init__(self, path, stage, pipe, pisiTo=None):

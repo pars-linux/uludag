@@ -1,0 +1,39 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="pakito" version="0.3">
+<MenuBar>
+  <Menu name="Operations">
+    <text>O&amp;perations</text>
+    <Action name="actionFetch" />
+    <Action name="actionUnpack" />
+    <Action name="actionSetup" />
+    <Action name="actionBuild" />
+    <Action name="actionInstall" />
+    <Separator/>
+    <Action name="actionMakePackage" />
+  </Menu>
+  <Menu name="Automation">
+    <text>A&amp;utomation</text>
+    <Action name="actionAddRelease" />
+    <Action name="actionValidatePspec" />
+    <Action name="actionCheckSHA1" />
+    <Action name="actionComputeSHA1" />
+    <Action name="actionDetectType" />
+  </Menu>
+</MenuBar>
+
+<ToolBar name="Operations">
+  <text>O&amp;perations</text>
+  <Action name="actionFetch" />
+  <Action name="actionSetup" />
+  <Action name="actionBuild" />
+  <Separator/>
+  <Action name="actionMakePackage" />
+</ToolBar>
+<ToolBar name="Automation">
+    <text>A&amp;utomation</text>
+    <Action name="actionAddRelease" />
+    <Action name="actionValidatePspec" />
+    <Action name="actionComputeSHA1" />
+    <Action name="actionDetectType" />
+</ToolBar>
+</kpartgui>
