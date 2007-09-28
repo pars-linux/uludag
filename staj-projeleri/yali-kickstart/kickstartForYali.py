@@ -3,7 +3,7 @@
 
 import re
 import sys
-from yali.yalireadpiks import *
+import yali.yalireadpiks as yaliReadPiks
 from yali.localedata import *
 from yali.users import *
 
@@ -112,13 +112,13 @@ class yaliKickStart:
         self.defaultGroups=["audio","dialout","disk","pnp","pnpadmin","power","removable","users","video"]
         self.errorList=[]
         self.RatioList=[]
-        self.correctData=yaliKickstartData()
+        self.correctData=yaliReadPiks.yaliKickstartData()
         self.total=0
 
     def readData(self,kickstartFile):
         self.filePath = kickstartFile
-        self.data = main(kickstartFile)
-    
+        self.data = yaliReadPiks.read(kickstartFile)
+
     def checkRatio(self):
         """ It checks partition ratios """
         for eachRatio in self.data.partitioning:
@@ -128,24 +128,19 @@ class yaliKickStart:
         if self.total==100:
             return True
         return False
-   
+
     def checkAllOptions(self):
         error=errors()
         otherFunct=otherFunctions(self.data.keyData.X)
-        
+
         ###language selection###
-        
-        
         if(locales.has_key(self.data.language)):
             self.correctData.language=self.data.language
         else:
             error.Lang=True
             self.errorList.append("Language Error: %s does not exist"%self.data.language)
-            
-            
-         ###keymap selection###
-        
-        
+
+        ###keymap selection###
         if(self.data.keyData.X):
             if (otherFunct.checkKeymapX()):
                 self.correctData.keyData.X=self.data.keyData.X
@@ -167,30 +162,21 @@ class yaliKickStart:
                 else:
                     error.Keymap=True
                     self.errorList.append("Keymap Error: Cannot associate Keymap for %s"%self.data.language)
-                        
-                        
+
         ###root password selection###
-        
-        
         if(len(self.data.rootPassword)<4):
             error.Root=True
             self.errorList.append("Root Password Error : Password is too short")
         else:
             self.correctData.rootPassword=self.data.rootPassword
-            
-            
+
         ###hostname selection###
-        
-        
         if(self.data.hostname):
             self.correctData.hostname=self.data.hostname
         else:
             self.correctData.hostname="pardus"
 
-
         ###users selections###
-
-    
         if(len(self.data.users)==0):
             error.Users=True
             self.errorList.append("User Error: No user entry")
@@ -231,11 +217,9 @@ class yaliKickStart:
         if (len(self.correctData.users)==0):
             error.Users=True
             self.errorList.append("User Error: No user added")
-        
-        
+
         ###partitioning selection###
-        
-        correctPart=yaliPartition()
+        correctPart=yaliReadPiks.yaliPartition()
         if(self.data.partitioningType=="auto" or self.data.partitioningType!="manuel"):
             self.correctData.partitioningType="auto"
             if(len(self.data.partitioning)!=1):
@@ -253,11 +237,10 @@ class yaliKickStart:
                     correctPart.ratio="100"
                     correctPart.disk=self.data.partitioning[0].disk
                     self.correctData.partitioning.append(correctPart)
-                    
-                             
+
         elif(self.data.partitioningType=="manuel"):
             self.correctData.partitioningType="manuel"
-    
+
             if(len(self.data.partitioning)==0):
                 error.Empty=True
                 self.errorList.append("Manuel Partitioning Error : No partition entry ")
@@ -311,5 +294,4 @@ class yaliKickStart:
         if self.checkFileValidity() == True:
             return self.correctData
         return self.errorList
-    
 
