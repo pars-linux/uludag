@@ -24,7 +24,7 @@ import pisi.conflict
 
 def reorder_base_packages(order):
     """system.base packages must be first in order"""
-    systembase = ctx.componentdb.get_union_comp('system.base').packages
+    systembase = ctx.componentdb.get_union_component('system.base').packages
 
     systembase_order = []
     nonbase_order = []
@@ -64,7 +64,7 @@ def expand_src_components(A):
     Ap = set()
     for x in A:
         if ctx.componentdb.has_component(x):
-            Ap = Ap.union(ctx.componentdb.get_union_comp(x).sources)
+            Ap = Ap.union(ctx.componentdb.get_union_component(x).sources)
         else:
             Ap.add(x)
     return Ap

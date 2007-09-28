@@ -71,7 +71,7 @@ Usage: info <package1> <package2> ... <packagen>
         if components:
             for name in components:
                 if ctx.componentdb.has_component(name):
-                    component = ctx.componentdb.get_union_comp(name)
+                    component = ctx.componentdb.get_union_component(name)
                     if self.options.xml:
                         index.add_component(component)
                     else:

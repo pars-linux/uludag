@@ -34,7 +34,7 @@ def remove(A, ignore_dep = False, ignore_safety = False):
 
     if not ctx.get_option('ignore_safety') and not ignore_safety:
         if ctx.componentdb.has_component('system.base'):
-            systembase = set(ctx.componentdb.get_union_comp('system.base').packages)
+            systembase = set(ctx.componentdb.get_union_component('system.base').packages)
             refused = A.intersection(systembase)
             if refused:
                 ctx.ui.warning(_('Safety switch: cannot remove the following packages in system.base: ') +
