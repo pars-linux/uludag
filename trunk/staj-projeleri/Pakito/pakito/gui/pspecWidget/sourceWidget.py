@@ -289,8 +289,14 @@ class sourceWidget(SourceWidgetUI):
         os.system("kfmclient exec %s" % self.filesDir + "/" + str(lvi.text(2)))
 
     def fill(self, source):
-        self.leName.setText(source.name)
-        self.leHomepage.setText(source.homepage)
+        if source.name:
+            self.leName.setText(source.name)
+        else:
+            self.leName.setText("")
+        if source.homepage:
+            self.leHomepage.setText(source.homepage)
+        else:
+            self.leHomepage.setText("")
         self.leLicense.setText(", ".join(source.license))
         self.leIsA.setText(", ".join(source.isA))
         self.lePackager.setText(source.packager.name)

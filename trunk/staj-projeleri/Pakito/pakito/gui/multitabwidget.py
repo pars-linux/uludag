@@ -7,9 +7,9 @@ class MultiTabWidget(QWidget):
     def __init__(self, parent = None, orient = KMultiTabBar.Horizontal, pos = KMultiTabBar.Top, name = None):
         QWidget.__init__(self, parent, name)
         if orient == KMultiTabBar.Horizontal:
-            layout = QVBoxLayout(self, 6, 6)
+            layout = QVBoxLayout(self, 3)
         else:
-            layout = QHBoxLayout(self, 6, 6)
+            layout = QHBoxLayout(self, 3)
         layout.setAutoAdd(True)
         if pos == KMultiTabBar.Top or pos == KMultiTabBar.Left:
             self.tabWidget = KMultiTabBar(orient, self)
@@ -35,17 +35,22 @@ class MultiTabWidget(QWidget):
         tab = self.tabWidget.tab(id)
         
         if self.orientation == KMultiTabBar.Horizontal:
-            self.setFixedHeight(tab.height()+10)
+            self.setFixedHeight(tab.height()+6)
         else:
-            self.setFixedWidth(tab.width()+10)
+            self.setFixedWidth(tab.width()+6)
         
         self.connect(tab, SIGNAL("clicked(int)"), self.tabClicked)
+        
+    def removeTab(self, id):
+        self.shrinkTab()
+        self.tabWidget.removeTab(id)
+        self.stack.removeWidget(self.stack.widget(id))
         
     def tabClicked(self, id):
         if self.tabWidget.isTabRaised(id):
             self.expandTab(id)
         else: #tab is closing
-            self.shrinkTab(id)
+            self.shrinkTab()
             
     def setStyle(self, style):
         self.tabWidget.setStyle(style)
@@ -73,9 +78,10 @@ class MultiTabWidget(QWidget):
             self.setMaximumWidth(700)
             self.resize(self.bigSize, self.height())
             
-    def shrinkTab(self, id):
+    def shrinkTab(self):
         self.stack.hide()
-        self.tabWidget.setTab(id, False)
+        if self.activeTabID != -1:
+            self.tabWidget.setTab(self.activeTabID, False)
         if self.orientation == KMultiTabBar.Horizontal:
             self.bigSize = self.height()
             self.setFixedHeight(self.tabWidget.tab(self.activeTabID).height() + 10)
