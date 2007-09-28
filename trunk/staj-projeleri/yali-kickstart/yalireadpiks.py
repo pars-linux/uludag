@@ -13,14 +13,14 @@ class yaliKickstartData:
         self.users=[]
         self.partitioning=[]
 
-class yaliUser:	
+class yaliUser:
     def __init__(self):
         self.autologin=None
         self.username=None
         self.realname=None
         self.password=None
         self.groups=[]
-    
+
 class yaliPartition:
     def __init__(self):
         self.partitionType=None
@@ -30,8 +30,8 @@ class yaliPartition:
         self.fsType=None
         self.mountPoint=None
 
-def main(args):
-    doc=piksemel.parse(sys.argv[1])
+def read(args):
+    doc=piksemel.parse(args)
 
     data=yaliKickstartData()
     data.language=doc.getTagData("language")
@@ -50,7 +50,7 @@ def main(args):
         if(p.getTagData("groups")!=None):
             info.groups=p.getTagData("groups").split(",")
         data.users.append(info)
-    
+
     partitioning=doc.getTag("partitioning")
     partitioningType=partitioning.getAttribute("partitioning_type")
 
@@ -64,5 +64,3 @@ def main(args):
         partinfo.disk=q.firstChild().data()
         data.partitioning.append(partinfo)
 
-if __name__ == "__main__":
-    main(sys.argv)
