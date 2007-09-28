@@ -30,10 +30,13 @@ class ComponentDB(object):
 
         for repo in self.repodb.list_repos():
             doc = self.repodb.get_repo_doc(repo)
-            component_nodes[repo] = dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Component")))
+            component_nodes[repo] = self.__generate_components(doc)
             del doc
 
         self.cdb = pisi.db.itembyrepo.ItemByRepo(component_nodes)
+
+    def __generate_components(self, doc):
+        return dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Component")))
 
     def has_component(self, name, repo = None):
         return self.cdb.has_item(name, repo)
