@@ -40,7 +40,6 @@ class SourceDB(object):
                 self.source_nodes[repo][src_name] = spec.toString()
                 for package in spec.tags("Package"):
                     self.pkgstosrc[repo][package.getTagData("Name")] = src_name
-            del doc
 
     def list_sources(self, repo):
         if self.source_nodes.has_key(repo):

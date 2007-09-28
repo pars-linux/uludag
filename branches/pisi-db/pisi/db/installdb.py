@@ -88,7 +88,6 @@ class InstallDB:
             if deps:
                 for dep in deps.tags("Dependency"):
                     revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep))
-            del meta_doc
 
         return revdeps
 
@@ -107,7 +106,6 @@ class InstallDB:
         build = meta_doc.getTag("Package").getTagData("Build")
         version = history.getTag("Update").getTagData("Version")
         release = history.getTag("Update").getAttribute("release")
-        del meta_doc
 
         return version, release, build and int(build)
 

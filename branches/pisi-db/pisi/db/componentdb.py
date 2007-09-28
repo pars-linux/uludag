@@ -31,7 +31,6 @@ class ComponentDB(object):
         for repo in self.repodb.list_repos():
             doc = self.repodb.get_repo_doc(repo)
             component_nodes[repo] = self.__generate_components(doc)
-            del doc
 
         self.cdb = pisi.db.itembyrepo.ItemByRepo(component_nodes)
 
@@ -85,7 +84,6 @@ class ComponentDB(object):
             for pkg in doc.tags("Source"):
                 if pkg.getTagData("PartOf") == component_name:
                     component.sources.append(pkg.getTagData("Name"))
-            del doc
 
         return component
     

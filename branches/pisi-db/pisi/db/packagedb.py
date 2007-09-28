@@ -45,7 +45,6 @@ class PackageDB(object):
             self.__revdeps[repo] = self.__generate_revdeps(doc)
             self.__obsoletes[repo] = self.__generate_obsoletes(doc)
             self.__replaces[repo] = self.__generate_replaces(doc)
-            del doc
 
         self.pdb = pisi.db.itembyrepo.ItemByRepo(self.__package_nodes)
         self.rvdb = pisi.db.itembyrepo.ItemByRepo(self.__revdeps)
@@ -93,7 +92,6 @@ class PackageDB(object):
         build = pkg_doc.getTagData("Build")
         version = history.getTag("Update").getTagData("Version")
         release = history.getTag("Update").getAttribute("release")
-        del pkg_doc
 
         return version, release, build and int(build)
 
