@@ -4,10 +4,11 @@
 from qt import *
 from kdecore import KGlobal, KIcon, i18n
 from kfile import KFileDialog
+import kdedesigner
 
 import os
 
-from comarDialogUI import COMARDialogUI
+from pakito.gui.pspecWidget.dialogs.comarDialogUI import COMARDialogUI
 
 class COMARDialog(COMARDialogUI):
     def __init__(self, parent = None, comar = None, name= None):

@@ -9,6 +9,8 @@ from pisi.dependency import Dependency
 from pisi.conflict import Conflict
 from pisi.replace import Replace
 
+import kdedesigner
+
 from pakito.gui.pspecWidget.historyWidgetUI import HistoryWidgetUI
 from pakito.gui.pspecWidget.dialogs.historyDialog import HistoryDialog
 

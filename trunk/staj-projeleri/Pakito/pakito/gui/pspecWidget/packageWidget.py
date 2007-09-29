@@ -12,6 +12,8 @@ from pisi.dependency import Dependency
 from pisi.conflict import Conflict
 from pisi.replace import Replace
 
+import kdedesigner
+
 from pakito.gui.pspecWidget.packageWidgetUI import PackageWidgetUI
 from pakito.gui.pspecWidget.dialogs.summaryDialog import SummaryDialog
 from pakito.gui.pspecWidget.dialogs.dependencyDialog import DependencyDialog

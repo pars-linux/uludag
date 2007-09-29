@@ -10,6 +10,8 @@ from pisi.dependency import Dependency
 import os
 import shutil
 
+import kdedesigner
+
 from pakito.gui.pspecWidget.sourceWidgetUI import SourceWidgetUI
 from pakito.gui.pspecWidget.dialogs.summaryDialog import SummaryDialog
 from pakito.gui.pspecWidget.dialogs.dependencyDialog import DependencyDialog

@@ -3,7 +3,9 @@
 
 from qt import *
 
-from fileDialogUI import FileDialogUI
+import kdedesigner
+
+from pakito.gui.pspecWidget.dialogs.fileDialogUI import FileDialogUI
 
 class FileDialog(FileDialogUI):
     def __init__(self, parent = None, file = None, name = None):

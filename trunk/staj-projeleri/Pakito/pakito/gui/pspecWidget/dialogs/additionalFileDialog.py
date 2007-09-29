@@ -4,10 +4,11 @@
 from qt import *
 from kdecore import KGlobal, KIcon, i18n
 from kfile import KFileDialog
+import kdedesigner
 
 import os
 
-from additionalFileDialogUI import AdditionalFileDialogUI
+from pakito.gui.pspecWidget.dialogs.additionalFileDialogUI import AdditionalFileDialogUI
 
 class AdditionalFileDialog(AdditionalFileDialogUI):
     def __init__(self, parent = None, file = None, name= None):
