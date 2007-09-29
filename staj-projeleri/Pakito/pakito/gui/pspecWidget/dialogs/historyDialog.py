@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 
 from qt import *
-from historyDialogUI import HistoryDialogUI
+
+import kdedesigner
+
+from pakito.gui.pspecWidget.dialogs.historyDialogUI import HistoryDialogUI
 
 class HistoryDialog(HistoryDialogUI):
     def __init__(self, parent = None, release = None, relValue = 1, name = None):

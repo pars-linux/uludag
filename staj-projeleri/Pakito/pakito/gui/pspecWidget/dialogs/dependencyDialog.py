@@ -3,7 +3,9 @@
 
 from qt import *
 
-from dependencyDialogUI import DependencyDialogUI
+import kdedesigner
+
+from pakito.gui.pspecWidget.dialogs.dependencyDialogUI import DependencyDialogUI
 
 class DependencyDialog(DependencyDialogUI):
     def __init__(self, dep = None, parent = None, title = None, secondLabel = None, name = None):

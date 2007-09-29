@@ -3,6 +3,7 @@
 from qt import *
 from kdeui import *
 from kdecore import KURL, KGlobal, KIcon, i18n
+import kdedesigner
 
 from pisi import specfile as spec
 

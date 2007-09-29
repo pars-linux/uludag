@@ -6,10 +6,12 @@ from kdeui import *
 from kdecore import i18n, KGlobal, KIcon
 from kfile import *
 
+import kdedesigner
+
 import os.path
 import shutil
 
-from patchDialogUI import PatchDialogUI
+from pakito.gui.pspecWidget.dialogs.patchDialogUI import PatchDialogUI
 
 class PatchDialog(PatchDialogUI):
     def __init__(self, parent = None, patch = None, name = None):

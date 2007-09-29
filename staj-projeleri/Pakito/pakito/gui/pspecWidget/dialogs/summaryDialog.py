@@ -3,8 +3,10 @@
 
 from qt import *
 
-from summaryDialogUI import SummaryDialogUI
-from summaryWidgetUI import SummaryWidgetUI
+import kdedesigner
+
+from pakito.gui.pspecWidget.dialogs.summaryDialogUI import SummaryDialogUI
+from pakito.gui.pspecWidget.dialogs.summaryWidgetUI import SummaryWidgetUI
 
 class SummaryDialog(SummaryDialogUI):
     def __init__(self, languages, activeLanguage = None, parent = None, name = None):
