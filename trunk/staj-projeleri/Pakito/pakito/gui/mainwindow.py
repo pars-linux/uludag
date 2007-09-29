@@ -223,7 +223,7 @@ class MainWindow(KParts.MainWindow):
         self.enableOperations()
         qApp.restoreOverrideCursor()
         
-        self.createGUI(self.pspecTab.editor.part)
+#        self.createGUI(self.pspecTab.editor.part)
     
 #    def eventFilter(self, obj, ev):
 #        try:
