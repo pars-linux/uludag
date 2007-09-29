@@ -2,7 +2,7 @@
 <kpartgui name="pakito" version="0.3">
 <MenuBar>
   <Menu name="File">
-    <text>File</text>
+    <text>&amp;File</text>
     <Action name="actionNew" />
     <Action name="actionOpen" />
     <Action name="actionSave" />
@@ -37,7 +37,7 @@
     <Action name="actionSave" />
 </ToolBar>
 <ToolBar name="Operations">
-  <text>O&amp;perations</text>
+  <text>Operations</text>
   <Action name="actionFetch" />
   <Action name="actionSetup" />
   <Action name="actionBuild" />
@@ -45,7 +45,7 @@
   <Action name="actionMakePackage" />
 </ToolBar>
 <ToolBar name="Automation">
-    <text>A&amp;utomation</text>
+    <text>Automation</text>
     <Action name="actionAddRelease" />
     <Action name="actionValidatePspec" />
     <Action name="actionComputeSHA1" />
