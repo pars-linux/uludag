@@ -28,6 +28,7 @@ import pisi.ui
 from pakito.gui.pspecWidget.pspecWidget import PspecWidget
 from pakito.gui.actionsWidget import ActionsWidget
 from pakito.gui.multitabwidget import MultiTabWidget
+from pakito.gui.optionsDialog import OptionsDialog
 
 class MainWindow(KParts.MainWindow):
     """ Main window of the application """
@@ -487,6 +488,10 @@ class MainWindow(KParts.MainWindow):
         KMessageBox.information(self, str(i18n("File type is: \"%s\".\nThis will be set as the current file type.")) % ext, i18n("Type detected"))
         self.pspecTab.sourcePage.cbType.setCurrentText(ext)
     
+    def slotSettings(self):
+        dia = OptionsDialog(self)
+        dia.exec_loop()
+    
     def doActions(self):                
         # actions
         
@@ -500,6 +505,9 @@ class MainWindow(KParts.MainWindow):
         self.actionClose.setEnabled(False)
         self.actionExit = KStdAction.quit(self.exit, self.actionCollection(), "actionExit")
 
+        #settings actions
+        self.actionSettings = KStdAction.preferences(self.slotSettings, self.actionCollection(), "actionSettings")
+        
         # build actions        
         self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection(), "actionFetch")
         self.actionUnpack = KAction(i18n("Unpack"), KShortcut(), self.unpackSlot, self.actionCollection(), "actionUnpack")        

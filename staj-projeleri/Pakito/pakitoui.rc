@@ -1,7 +1,7 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 <kpartgui name="pakito" version="0.3">
 <MenuBar>
-  <Menu name="File">
+  <Menu name="file">
     <text>&amp;File</text>
     <Action name="actionNew" />
     <Action name="actionOpen" />
@@ -10,7 +10,7 @@
     <Action name="actionClose" />
     <Action name="actionExit" />
   </Menu>
-  <Menu name="Operations">
+  <Menu name="operations">
     <text>O&amp;perations</text>
     <Action name="actionFetch" />
     <Action name="actionUnpack" />
@@ -20,7 +20,7 @@
     <Separator/>
     <Action name="actionMakePackage" />
   </Menu>
-  <Menu name="Automation">
+  <Menu name="automation">
     <text>A&amp;utomation</text>
     <Action name="actionAddRelease" />
     <Action name="actionValidatePspec" />
@@ -28,15 +28,19 @@
     <Action name="actionComputeSHA1" />
     <Action name="actionDetectType" />
   </Menu>
+  <Menu name="settings">
+      <text>&amp;Settings</text>
+      <Action name="actionSettings" />
+  </Menu>
 </MenuBar>
 
-<ToolBar name="File">
+<ToolBar name="file">
     <text>File</text>
     <Action name="actionNew" />
     <Action name="actionOpen" />
     <Action name="actionSave" />
 </ToolBar>
-<ToolBar name="Operations">
+<ToolBar name="operations">
   <text>Operations</text>
   <Action name="actionFetch" />
   <Action name="actionSetup" />
@@ -44,7 +48,7 @@
   <Separator/>
   <Action name="actionMakePackage" />
 </ToolBar>
-<ToolBar name="Automation">
+<ToolBar name="automation">
     <text>Automation</text>
     <Action name="actionAddRelease" />
     <Action name="actionValidatePspec" />
