@@ -36,7 +36,10 @@ app_data = [
 ("migration", ["migration/migration.py", "migration/wizard.py", "migration/applythread.py", "migration/migration.png"]),
 ("migration/gui", ["migration/gui/__init__.py", "migration/gui/dirview.py", "migration/gui/filespage.py", "migration/gui/help.py", "migration/gui/optionspage.py", "migration/gui/progresspage.py", "migration/gui/sidebar.py", "migration/gui/userpage.py"]),
 ("migration/utility", ["migration/utility/__init__.py", "migration/utility/account.py", "migration/utility/bookmark.py", "migration/utility/files.py", "migration/utility/info.py", "migration/utility/partition.py", "migration/utility/registry.py", "migration/utility/wall.py", "migration/utility/wall.py"]),
-("help", ["help/help.css"]), ("help/tr", ["help/tr/main_help.html"])
+("help", ["help/help.css"]),
+("help/tr", ["help/tr/main_help.html"]),
+("/usr/kde/3.5/share/applications/kde/", ["migration/migration.desktop"]),
+("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["migration/migration.png"])
 ]
 
 def make_dist():
