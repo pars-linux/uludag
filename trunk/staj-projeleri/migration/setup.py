@@ -15,7 +15,7 @@ import glob
 import shutil
 import kdedistutils
 
-version = "1.0_alpha"
+version = "0.8.1"
 
 distfiles = """
     README
