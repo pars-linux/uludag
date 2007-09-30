@@ -15,7 +15,7 @@ import glob
 import shutil
 import kdedistutils
 
-version = "0.8.1"
+version = "0.8.2"
 
 distfiles = """
     README
@@ -23,6 +23,7 @@ distfiles = """
     COPYING
     *.py
     migration/migration.png
+    migration/migration.desktop
     migration/*.py
     migration/gui/*.py
     migration/utility/*.py
