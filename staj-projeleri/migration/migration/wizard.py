@@ -10,6 +10,7 @@
 #
 
 import os
+import sys
 import thread
 
 # KDE-Qt Modules
@@ -132,7 +133,7 @@ class MigrationWizard(KWizard):
         if len(self.users) == 0:
             message = i18n("Migration tool couldn't find any old users in your computer. You can't use this aplication.")
             QMessageBox.critical(self, i18n("No User"), message, QMessageBox.Ok, QMessageBox.NoButton)
-            self.kapp.quit()
+            sys.exit()
         for user in self.users:
             part, parttype, username, userdir = user
             self.userpage.usersBox.insertItem("%s - %s (%s)" % (username, parttype, part))
