@@ -155,7 +155,7 @@ def plan_upgrade(A):
 
     packagedb = ctx.packagedb
 
-    G_f = pgraph.PGraph(packagedb)               # construct G_f
+    G_f = pgraph.PGraph(useinstalldb=False)               # construct G_f
 
     # find the "install closure" graph of G_f by package
     # set A using packagedb
