@@ -65,7 +65,7 @@ the package in graphviz format to 'pgraph.dot'.
                 repo = ctx.get_option('repository')
                 ctx.ui.info(_('Plotting packages in repository %s') % repo)
             else:
-                useinstalldb = False
+                packagedb = ctx.packagedb
             if self.args:
                 a = self.args
             else:
@@ -78,8 +78,8 @@ the package in graphviz format to 'pgraph.dot'.
                 # if A is empty, then graph all packages
                 ctx.ui.info(_('Plotting a graph of relations among all installed packages'))
                 a = ctx.installdb.list_installed()
-            useinstalldb = True
-        g = pisi.api.package_graph(a, useinstalldb,
+            packagedb = ctx.installdb
+        g = pisi.api.package_graph(a, packagedb,
                                    ignore_installed = ctx.get_option('ignore_installed'))
         g.write_graphviz(file(ctx.get_option('output'), 'w'))
         self.finalize()

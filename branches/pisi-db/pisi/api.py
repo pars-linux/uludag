@@ -159,7 +159,7 @@ def list_available(repo = None):
 def list_upgradable():
     return filter(pisi.operations.upgrade.is_upgradable, ctx.installdb.list_installed()) # FIX:DB ctx.packagedb.get_replaces().keys()
 
-def package_graph(A, useinstalldb = False, ignore_installed = False):
+def package_graph(A, packagedb, ignore_installed = False):
     """Construct a package relations graph.
     
     Graph will contain all dependencies of packages A, if ignore_installed
@@ -172,7 +172,7 @@ def package_graph(A, useinstalldb = False, ignore_installed = False):
     # try to construct a pisi graph of packages to
     # install / reinstall
 
-    G_f = pgraph.PGraph(useinstalldb)             # construct G_f
+    G_f = pgraph.PGraph(packagedb)             # construct G_f
 
     # find the "install closure" graph of G_f by package 
     # set A using packagedb
@@ -232,7 +232,7 @@ def generate_conflicts(A):
 
 def generate_pending_order(A):
     # returns pending package list in reverse topological order of dependency
-    G_f = pgraph.PGraph(useinstalldb=True) # construct G_f
+    G_f = pgraph.PGraph(ctx.installdb) # construct G_f
     for x in A:
         G_f.add_package(x)
     B = A

@@ -23,12 +23,9 @@ import graph
 
 class PGraph(graph.Digraph):
 
-    def __init__(self, useinstalldb=False):
+    def __init__(self, packagedb):
         super(PGraph, self).__init__()
-        if useinstalldb:
-            self.packagedb = ctx.installdb
-        else:
-            self.packagedb = ctx.packagedb
+        self.packagedb = packagedb
 
     def add_package(self, pkg):
         pkg1 = self.packagedb.get_package(pkg)
