@@ -149,10 +149,11 @@ class Install(AtomicOperation):
                 raise Error(_("%s package cannot be installed unless the dependencies are satisfied") %
                             self.pkginfo.name)
 
+        # FIXME: thirdparty db was not been used by the old db code either?
         # check if package is in database
         # If it is not, put it into 3rd party packagedb
-        if not ctx.packagedb.has_package(self.pkginfo.name):
-            ctx.packagedb.add_package(self.pkginfo, pisi.db.thirdparty)
+#         if not ctx.packagedb.has_package(self.pkginfo.name):
+#             ctx.packagedb.add_package(self.pkginfo, pisi.db.thirdparty)
 
         # If it is explicitly specified that package conflicts with this package and also
         # we passed check_conflicts tests in operations.py than this means a non-conflicting
