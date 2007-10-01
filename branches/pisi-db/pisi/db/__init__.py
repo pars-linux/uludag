@@ -10,5 +10,3 @@
 # Please read the COPYING file.
 #
 
-installed, thirdparty, repos, all = "DBNotExists", "DBNotExists", "DBNotExists", "DBNotExists"
-
