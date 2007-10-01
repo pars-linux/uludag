@@ -76,7 +76,7 @@ to be downloaded from a repository containing sources.
                                help=_("Do not constrain build process inside the build folder"))
 
     def add_steps_options(self):
-        group = OptionGroup(self.parser, _("build steps"))
+        group = optparse.OptionGroup(self.parser, _("build steps"))
         group.add_option("--fetch", dest="until", action="store_const",
                          const="fetch", help=_("Break build after fetching the source archive"))
         group.add_option("--unpack", dest="until", action="store_const",
