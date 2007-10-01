@@ -185,7 +185,7 @@ in the respective order to satisfy extra dependencies:
     if not ctx.get_option('ignore_package_conflicts'):
         conflicts = operations.helper.check_conflicts(order, packagedb)
         if conflicts:
-            operations.helper.remove_conflicting_packages(conflicts)
+            operations.remove.remove_conflicting_packages(conflicts)
     order.reverse()
     ctx.ui.info(_('Installation order: ') + util.strlist(order) )
 
@@ -228,5 +228,5 @@ def plan_install_pkg_names(A, ignore_package_conflicts = False):
     if not ctx.get_option('ignore_package_conflicts') and not ignore_package_conflicts:
         conflicts = operations.helper.check_conflicts(order, ctx.packagedb)
         if conflicts:
-            operations.helper.remove_conflicting_packages(conflicts)
+            operations.remove.remove_conflicting_packages(conflicts)
     return G_f, order
