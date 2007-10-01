@@ -328,10 +328,10 @@ def info_name(package_name, useinstalldb=False):
         files = None
     return metadata, files, repo
 
-def search_package_terms(terms, repo = pisi.db.all):
+def search_package_terms(terms, repo = None):
     return search_in_packages(terms, ctx.packagedb.list_packages(repo), repo)
 
-def search_in_packages(terms, packages, repo = pisi.db.all):
+def search_in_packages(terms, packages, repo = None):
 
     def search(package, term):
         term = unicode(term).lower()
