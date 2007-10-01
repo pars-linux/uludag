@@ -2,13 +2,40 @@
 
 import sys
 from qt import *
+from kdecore import *
+from kdeui import *
+from kfile import *
 import sane
 from scanner import *
 import pickle
 
-class Main(QDialog):
+#version = '0.1'
+#description = "Scanner Interface"
+
+#def loadIcon(name, group=KIcon.Desktop):
+    #return KGlobal.iconLoader().loadIcon(name, group)
+
+#def loadIconSet(name, group=KIcon.Desktop):
+        #return KGlobal.iconLoader().loadIconSet(name, group)
+
+#def AboutData():
+   #about_data = KAboutData(
+        #'scanner',
+        #'Scanner',
+        #version,
+        #description,
+        #KAboutData.License_GPL,
+        #'(C) 2007 UEKAE/TÜBİTAK',
+        #None,
+        #None,
+        #'blabla@pardus.org.tr')
+   #return about_data
+
+class Main(KDialog):
     def __init__(self,parent = None,name = None,modal = 0,fl = 0):
-        QDialog.__init__(self,parent,name,modal,fl)
+        KDialog.__init__(self,parent,name,modal,fl)
+	
+	#self.setIcon(loadIcon("scanner"))
 
         if not name:
             self.setName("Main")
@@ -127,11 +154,24 @@ class Main(QDialog):
         
 
 if __name__ == "__main__":
+    ##a = KApplication(sys.argv,"")
+    #about_data = AboutData()
+    #KCmdLineArgs.init(sys.argv,about_data)
+    #a = KUniqueApplication(True, True, True)
+    ##QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
+    #mainForm = Main()
+    #a.setMainWidget(mainForm)
+    #QObject.connect(a, SIGNAL("aboutToQuit()"), mainForm.quit)
+    ##QObject.connect(a, SIGNAL("aboutToQuit()"), a, SLOT("quit()"))
+    ##QObject.connect(a,SIGNAL("lastWindowClosed()"),mainForm.quit)
+    ##a.exec_loop()
+    #sys.exit(mainForm.exec_loop())
+    
     a = QApplication(sys.argv)
     QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
-    w = Main()
-    a.setMainWidget(w)
-    QObject.connect(a,SIGNAL("lastWindowClosed()"),w.quit)
+    mainForm = Main()
+    a.setMainWidget(mainForm)
+    QObject.connect(a,SIGNAL("lastWindowClosed()"),mainForm.quit)
     a.exec_loop()
 
 

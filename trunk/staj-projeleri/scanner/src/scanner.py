@@ -1,5 +1,8 @@
 import sys
 from qt import *
+from kdecore import *
+from kdeui import *
+from kfile import *
 import sane
 
 from options import *
@@ -8,18 +11,21 @@ from previewArea import *
 from scanresult import *
 from scanresultmulti import *
 from extractor import *
+from progress import *
+
+from scanthread import *
 
 class ScanWindow(QMainWindow):
     def __init__(self,parent = None,name = None,fl = 0):
         QMainWindow.__init__(self,parent,name,fl)
         
-        sane.init()
+        #sane.init()
         
         self.statusBar()
+	self.statusBar().message("Ready")
 
         if not name:
             self.setName("Scanner")
-
 
         self.setCentralWidget(QWidget(self,"qt_central_widget"))
 
@@ -46,6 +52,14 @@ class ScanWindow(QMainWindow):
         self.connect(self.toolbar.zoomoutButton,SIGNAL("released()"),self.previewArea.previewImage.zoomout)
 
         self.connect(self.previewArea.previewImage,PYSIGNAL("selectionCreated"),self.selectArea)
+	
+	self.progress = Progress(self.centralWidget())
+	#self.connect(self.options.device, PYSIGNAL("sigScanProgress"), self.progress.setProgress)
+	self.progress.setTotalSteps(0)
+	self.progress.hide()
+	
+	self.connect(self.progress,SIGNAL("canceled()"),self.stopScan)
+	
 
         self.helpContentsAction = QAction(self,"helpContentsAction")
         self.helpIndexAction = QAction(self,"helpIndexAction")
@@ -76,7 +90,7 @@ class ScanWindow(QMainWindow):
         sane.exit()
 
     def languageChange(self):
-        self.setCaption(self.__tr("Form1"))
+        self.setCaption(self.__tr("Scanner"))
         self.helpContentsAction.setText(self.__tr("Contents"))
         self.helpContentsAction.setMenuText(self.__tr("&Contents..."))
         self.helpContentsAction.setAccel(QString.null)
@@ -91,16 +105,16 @@ class ScanWindow(QMainWindow):
 
 
     def helpIndex(self):
-        print "Form1.helpIndex(): Not implemented yet"
+        print "Scanner.helpIndex(): Not implemented yet"
 
     def helpContents(self):
-        print "Form1.helpContents(): Not implemented yet"
+        print "Scanner.helpContents(): Not implemented yet"
 
     def helpAbout(self):
-        print "Form1.helpAbout(): Not implemented yet"
+	about = QMessageBox.about(self, "About", "Bu program Pardus staj projeleri kapsaminda hazirlanmistir." )
 
     def __tr(self,s,c = None):
-        return qApp.translate("Form1",s,c)
+        return qApp.translate("Scanner",s,c)
 
     def newDeviceSelected(self):
         self.toolbar.setEnabled(True)
@@ -119,7 +133,7 @@ class ScanWindow(QMainWindow):
         self.toolbar.setEnabled(False)
         self.previewArea.noImage()
         self.previewArea.setEnabled(False)
-
+	
     def selectArea(self,ratio_tl_x,ratio_tl_y,ratio_br_x,ratio_br_y):
         if self.options.device != None:
             for option in self.options.optionList:
@@ -146,7 +160,10 @@ class ScanWindow(QMainWindow):
 
     def previewScan(self):
         if self.options.device != None:
-            oldValues = self.options.getOptionValues()
+            qApp.processEvents()
+	    self.statusBar().message("Busy")
+	    self.progress.show()
+            self.oldValues = self.options.getOptionValues()
             
             for option in self.options.optionList:
                 if option.deviceOption.is_settable() and option.deviceOption.is_active():
@@ -163,19 +180,43 @@ class ScanWindow(QMainWindow):
                     if option.deviceOption.name == "br-y":
                         self.options.device.__setattr__("br_y",max(option.deviceOption.constraint))
                     
-            self.options.device.start()
-    
-            im = self.options.device.snap();
+            #self.options.device.start()
      
-            self.previewArea.previewImage.setImage(im)
+            #im = self.options.device.snap();
+     	    self.previewThread = PreviewThread(self, self.options.device)
+	    self.previewThread.start()
+	    #self.previewThread.work(self.options)
+            #self.previewArea.previewImage.setImage(im)
             
-            self.options.setOptionValues(oldValues)
+            #self.options.setOptionValues(oldValues)
+	    #self.statusBar().message("Ready")
+	    
+	    
+    def stopScan(self):
+	if self.options.device != None:
+		#self.options.device.cancel()
+		self.stopThread = StopThread(self, self.options.device)
+		self.stopThread.start()
+		#qApp.wakeUpGuiThread()
+		qApp.processEvents()
+		self.progress.setLabelText("<p align=\"center\">Stopping</p>")
+		#self.statusBar().message("Ready")
+		#self.progress.hide()
+		
+    def backToNormal(self):
+	self.progress.setLabelText("<p align=\"center\">Scanning in progress</p>")
+	self.statusBar().message("Ready")
+	self.progress.hide()
 
-    def startScan(self):
-        if self.options.device != None:
-            self.options.device.start()
-    
-            im = self.options.device.snap();
+    def customEvent(self,event):
+        if(event.type() == 1002):
+            self.createScanWindow(event.image)
+	if(event.type() == 1003):
+	    self.createPreview(event.image)
+	if(event.type() == 1004):
+	    self.backToNormal()
+	    
+    def createScanWindow(self, im):
             self.maxDiff = 20
             self.aveRgb = 0x222625
             self.minSize = 90000
@@ -188,7 +229,59 @@ class ScanWindow(QMainWindow):
                     s.addImage(tmpImage)
             else:
                 s = ScanResult(im,self,"scanResult",1)
+	    s.show()
+	    #self.progress.setProgress(100)
+	    self.progress.hide()
+	    self.statusBar().message("Ready")
+	    
+    def createPreview(self, im):
+            self.statusBar().message("Ready")
+	    self.progress.hide()
+	    self.previewArea.previewImage.setImage(im)
+            self.options.setOptionValues(self.oldValues)
+
+    def startScan(self):
+        if self.options.device != None:
+	    self.statusBar().message("Busy")
+	    qApp.processEvents()
+	    self.progress.show()
+	    #self.progress.setProgress(0)
+	    #self.hide()
+	    
+	    #self.options.device.start()
+            #im = self.options.device.snap()
+	    
+	    self.scanThread = ScanThread(self, self.options.device)
+	    self.scanThread.start()
+	    #self.scanThread.work(self.options)
+	    #while(self.worker.finished() == False):
+		#pass
+	    
+	    #im = self.scanThread.getImage()
+	    
+	    #qApp.processEvents()
+	    #qEventLoop.processEvents(AllEvents,500)
+	    
+	    
+	    
+            #self.maxDiff = 20
+            #self.aveRgb = 0x222625
+            #self.minSize = 90000
+            #self.enableExtract = True
+            #if self.enableExtract:
+                #extract(im,self.maxDiff,self.aveRgb,self.minSize)
+                #s = ScanResultMulti(self,"scanResultMulti",1)
+                #tmpImage = QImage()
+                #while(nextImage(tmpImage)):
+                    #s.addImage(tmpImage)
+            #else:
+                #s = ScanResult(im,self,"scanResult",1)
             
-            s.show()
+	    #self.progress.setProgress(100)
+            #s.show()
+	    #self.statusBar().message("Ready")
+	    #self.progress.reset()
+	    #self.show()
+	    #self.progress.hide()
      
-            return
+            #return
