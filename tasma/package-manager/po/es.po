@@ -1,4 +1,4 @@
-# translation of es.po to spanish
+# translation of es.po to español
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-26 18:36+0300\n"
-"PO-Revision-Date: 2007-05-27 19:47-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-09-30 20:24-0400\n"
+"Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
+"Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -101,8 +101,7 @@ msgstr "Paquetes seleccionados para remover:"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
+msgstr "Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
 
 #: src/BasketDialog.py:66
 msgid "Selected package(s) for install:"
@@ -113,7 +112,7 @@ msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
 msgstr ""
-"Dependencias requeridos de los paquetes seleccionados que se instalarán "
+"Dependencias requeridos de los paquetes seleccionados que serán instalados "
 "también:"
 
 #: src/BasketDialog.py:69
@@ -161,10 +160,8 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Aqui se puede ver los repositorios actuales de software con sus direcciones"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Aqui se pueden ver los repositorios actuales de software con sus direcciones"
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
@@ -181,8 +178,7 @@ msgstr "&Editar Repositorio"
 
 #: src/PreferencesDialog.py:197
 msgid "Click here to modify the name or address of a repository"
-msgstr ""
-"Presione aquí para modificar el nombre o la dirección de un repositorio"
+msgstr "Presione aquí para modificar el nombre o la dirección de un repositorio"
 
 #: src/PreferencesDialog.py:198
 msgid "&Remove Repository"
@@ -271,8 +267,7 @@ msgstr "&Usar cache en disco rígido para software descargado"
 
 #: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
-"Si marcado, se conservarán los archivos descargados en el cache del disco"
+msgstr "Si marcado, se conservarán los archivos descargados en el cache del disco"
 
 #: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -434,8 +429,7 @@ msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: src/package-manager.py:454 src/package-manager.py:462
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente están seleccionados <b>%1</b> paquetes con un tamaño total de <b>"
 "%2</b>"
@@ -443,8 +437,7 @@ msgstr ""
 # ...requeridas...
 #: src/package-manager.py:457
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-" y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
+msgstr " y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
 
 #: src/package-manager.py:459 src/package-manager.py:467
 msgid "in your basket."
@@ -481,8 +474,7 @@ msgstr "y <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
-"Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
+msgstr "Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
 
 #: src/package-manager.py:497 src/package-manager.py:507
 msgid "Conflict Error"
@@ -497,13 +489,12 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 en conflicto con: [%2]\n"
 
 #: src/package-manager.py:506
-#, fuzzy
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
-"Remover los siguientes paquetes conflictivos ?"
+"Remover los paquetes conflictivos ?"
 
 #: src/package-manager.py:521 src/package-manager.py:582
 #: src/package-manager.py:719
@@ -691,3 +682,4 @@ msgstr "&Nombre de Repositorio"
 #: src/RepoDialog.py:81
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Nombre de Repositorio, ej. <b>pardus-devel</b>"
+

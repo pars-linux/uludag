@@ -1,17 +1,18 @@
-# translation of es.po to spanish
+# translation of es.po to español
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Amine Chadly <amine.chadly@gmail.com>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
+# Klemens <click3d_at_linuxmail_org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-09-20 11:28+0300\n"
-"PO-Revision-Date: 2007-07-09 20:46-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-09-30 20:26-0400\n"
+"Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
+"Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -126,9 +127,8 @@ msgid "Ok"
 msgstr "Ok"
 
 #: src/mainview.py:411
-#, fuzzy
 msgid "Do you want to uninstall selected kernel(s) from the system?"
-msgstr "Desea desinstalar éste núcleo (kernel) del sistema ?"
+msgstr "Desea desinstalar los núcleos (kernel) seleccionados del sistema ?"
 
 #: src/mainview.py:479
 msgid "Bootloader configuration changed by another application."
@@ -150,6 +150,3 @@ msgstr "Editar entrada"
 msgid "Delete entry"
 msgstr "Eliminar entrada"
 
-#, fuzzy
-#~ msgid "Uninstall Kernel(s)"
-#~ msgstr "Desinstalar núcleo"
