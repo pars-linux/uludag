@@ -30,41 +30,40 @@ class SourceDB(object):
         repodb = pisi.db.repodb.RepoDB()
 
         for repo in repodb.list_repos():
-
-            self.__source_nodes[repo] = {}
-            self.__pkgstosrc[repo] = {}
-
             doc = repodb.get_repo_doc(repo)
-            for spec in doc.tags("SpecFile"):
-                src_name = spec.getTag("Source").getTagData("Name")
-                self.__source_nodes[repo][src_name] = spec.toString()
-                for package in spec.tags("Package"):
-                    self.__pkgstosrc[repo][package.getTagData("Name")] = src_name
+            self.__source_nodes[repo], self.__pkgstosrc[repo] = self.__generate_sources(doc)
 
-    def list_sources(self, repo):
-        if self.__source_nodes.has_key(repo):
-            return self.__source_nodes[repo].keys()
+        self.sdb = pisi.db.itembyrepo.ItemByRepo(self.__source_nodes)
+        self.psdb = pisi.db.itembyrepo.ItemByRepo(self.__pkgstosrc)
 
-        raise Exception(_('Repository %s does not exists.') % repo)
+    def __generate_sources(self, doc):
 
-    def has_spec(self, name, repo):
-        return self.__source_nodes.has_key(repo) and self.__source_nodes[repo].has_key(name)
+        sources = {}
+        pkgstosrc = {}
 
-    def get_spec(self, name, repo):
+        for spec in doc.tags("SpecFile"):
+            src_name = spec.getTag("Source").getTagData("Name")
+            sources[src_name] = spec.toString()
+            for package in spec.tags("Package"):
+                pkgstosrc[package.getTagData("Name")] = src_name
+        
+        return sources, pkgstosrc
+
+    def list_sources(self, repo=None):
+        return self.sdb.get_item_keys(repo)
+
+    def has_spec(self, name, repo=None):
+        return self.sdb.has_item(name, repo)
+
+    def get_spec(self, name, repo=None):
         spec, repo = self.get_spec_repo(name, repo)
         return spec
 
-    def get_spec_repo(self, name, repo):
-        if self.__source_nodes.has_key(repo):
-            if self.__source_nodes[repo].has_key(name):
-                spec = pisi.specfile.SpecFile()
-                spec.parse(self.__source_nodes[repo][name])
-                return spec, repo
+    def get_spec_repo(self, name, repo=None):
+        src, repo = self.sdb.get_item_repo(name, repo)
+        spec = pisi.specfile.SpecFile()
+        spec.parse(src)
+        return spec, repo
 
-        raise Exception(_('Source package %s not found.') % name)
-
-    def pkgtosrc(self, name, repo):
-        if self.__pkgstosrc.has_key(repo) and self.__pkgstosrc[repo].has_key(name):
-            return self.__pkgstosrc[repo][name]
-    
-
+    def pkgtosrc(self, name, repo=None):
+        return self.psdb.get_item(name, repo)
