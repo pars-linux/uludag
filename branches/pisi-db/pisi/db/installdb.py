@@ -134,7 +134,7 @@ class InstallDB:
         if self.rev_deps_db.has_key(name):
             for pkg, dep in self.rev_deps_db[name]:
                 dependency = pisi.dependency.Dependency()
-                dependency.package = pkg
+                dependency.package = name
                 if dep.attributes():
                     dependency.__dict__[dep.attributes()[0]] = dep.getAttribute(dep.attributes()[0])
                 rev_deps.append((pkg, dependency))
