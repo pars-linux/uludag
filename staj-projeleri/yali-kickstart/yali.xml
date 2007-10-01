@@ -2,13 +2,13 @@
 <yali xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="yalisema.xsd">
 	<language>tr</language>
 	<keymap>trq</keymap>
-	<root_password>1234</root_password>
-	<hostname>pardus</hostname>
+	<root_password>pardusman</root_password>
+	<hostname>pardus-kickstart</hostname>
 	<users>
 		<user autologin="yes">
 			<username>gokmen</username>
 			<realname>gokmen goksel</realname>
-			<password>123</password>
+			<password>1231111</password>
 			<groups>audio,dialout,disk,pnp,pnpadmin,users,video,wheel</groups>
 		</user>
 		<user>
@@ -26,12 +26,7 @@
 		</user>
 		-->
 	</users>
-	<partitioning partitioning_type="manuel">
-		<partition partition_type="pardus_root" format="true" ratio="40">hda1</partition>
-		<partition partition_type="pardus_swap" format="true" ratio="20">hda2</partition>
-		<partition partition_type="pardus_home" format="true" ratio="20">hda3</partition>
-		<partition partition_type="other" format="true" ratio="20" fs_type="vfat" mountpoint="/depo">hda5</partition>
-	</partitioning>	
+    <partitioning partitioning_type="auto">disk1</partitioning>
 </yali>
 			
 	
