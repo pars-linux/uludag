@@ -28,10 +28,6 @@
     <Action name="actionComputeSHA1" />
     <Action name="actionDetectType" />
   </Menu>
-  <Menu name="settings">
-      <text>&amp;Settings</text>
-      <Action name="actionSettings" />
-  </Menu>
 </MenuBar>
 
 <ToolBar name="file">
