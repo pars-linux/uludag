@@ -9,33 +9,35 @@ import sane
 from scanner import *
 import pickle
 
-#version = '0.1'
-#description = "Scanner Interface"
+version = '0.1'
+description = "Scanner Interface"
 
-#def loadIcon(name, group=KIcon.Desktop):
-    #return KGlobal.iconLoader().loadIcon(name, group)
+def loadIcon(name, group=KIcon.Desktop):
+    return KGlobal.iconLoader().loadIcon(name, group)
 
-#def loadIconSet(name, group=KIcon.Desktop):
-        #return KGlobal.iconLoader().loadIconSet(name, group)
+def loadIconSet(name, group=KIcon.Desktop):
+        return KGlobal.iconLoader().loadIconSet(name, group)
 
-#def AboutData():
-   #about_data = KAboutData(
-        #'scanner',
-        #'Scanner',
-        #version,
-        #description,
-        #KAboutData.License_GPL,
-        #'(C) 2007 UEKAE/TÜBİTAK',
-        #None,
-        #None,
-        #'blabla@pardus.org.tr')
-   #return about_data
+def AboutData():
+   about_data = KAboutData(
+        'scanner',
+        'Scanner',
+        version,
+        description,
+        KAboutData.License_GPL,
+        '(C) 2007 UEKAE/TÜBİTAK',
+        None,
+        None,
+        'bugzilla@pardus.org.tr')
+   about_data.addAuthor("Barış Can Daylık", "Main Developer", None)
+   about_data.addAuthor("Aslı Okur", "GUI Developer and Current Maintainer", "asliokur@yahoo.com")
+   return about_data
 
 class Main(KDialog):
     def __init__(self,parent = None,name = None,modal = 0,fl = 0):
         KDialog.__init__(self,parent,name,modal,fl)
-	
-	#self.setIcon(loadIcon("scanner"))
+	self.connect(kapp, SIGNAL("shutDown()"), self.slotQuit)
+	self.setIcon(loadIcon("scanner"))
 
         if not name:
             self.setName("Main")
@@ -120,6 +122,10 @@ class Main(KDialog):
             
         
 
+    def slotQuit(self):
+	#sane.exit()
+	self.deleteLater()
+        kapp.quit()
 
     def languageChange(self):
         self.setCaption(self.__tr("Please Select a Device"))
@@ -134,6 +140,7 @@ class Main(KDialog):
 
     def quit(self):
         sane.exit()
+	#self.queryExit()
         
     def openDevice(self,device = None):
         if device == None:
@@ -154,24 +161,25 @@ class Main(KDialog):
         
 
 if __name__ == "__main__":
-    ##a = KApplication(sys.argv,"")
-    #about_data = AboutData()
-    #KCmdLineArgs.init(sys.argv,about_data)
-    #a = KUniqueApplication(True, True, True)
-    ##QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
+    global kapp
+    #a = KApplication(sys.argv,"")
+    about_data = AboutData()
+    KCmdLineArgs.init(sys.argv,about_data)
+    kapp = KUniqueApplication(True, True, True)
+    #QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
+    mainForm = Main()
+    kapp.setMainWidget(mainForm)
+    #QObject.connect(a, SIGNAL("aboutToQuit()"), mainForm.quit)
+    #QObject.connect(a, SIGNAL("aboutToQuit()"), a, SLOT("quit()"))
+    #QObject.connect(a, SIGNAL("lastWindowClosed()"),mainForm.quit)
+    #a.exec_loop()
+    sys.exit(kapp.exec_loop())
+    
+    #a = QApplication(sys.argv)
+    #QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
     #mainForm = Main()
     #a.setMainWidget(mainForm)
-    #QObject.connect(a, SIGNAL("aboutToQuit()"), mainForm.quit)
-    ##QObject.connect(a, SIGNAL("aboutToQuit()"), a, SLOT("quit()"))
-    ##QObject.connect(a,SIGNAL("lastWindowClosed()"),mainForm.quit)
-    ##a.exec_loop()
-    #sys.exit(mainForm.exec_loop())
-    
-    a = QApplication(sys.argv)
-    QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
-    mainForm = Main()
-    a.setMainWidget(mainForm)
-    QObject.connect(a,SIGNAL("lastWindowClosed()"),mainForm.quit)
-    a.exec_loop()
+    #QObject.connect(a,SIGNAL("lastWindowClosed()"),mainForm.quit)
+    #a.exec_loop()
 
 
