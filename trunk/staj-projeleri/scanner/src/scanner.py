@@ -15,9 +15,9 @@ from progress import *
 
 from scanthread import *
 
-class ScanWindow(QMainWindow):
+class ScanWindow(KMainWindow):
     def __init__(self,parent = None,name = None,fl = 0):
-        QMainWindow.__init__(self,parent,name,fl)
+        KMainWindow.__init__(self,parent,name,fl)
         
         #sane.init()
         
@@ -60,19 +60,8 @@ class ScanWindow(QMainWindow):
 	
 	self.connect(self.progress,SIGNAL("canceled()"),self.stopScan)
 	
-
-        self.helpContentsAction = QAction(self,"helpContentsAction")
-        self.helpIndexAction = QAction(self,"helpIndexAction")
-        self.helpAboutAction = QAction(self,"helpAboutAction")
-
-        self.MenuBar = QMenuBar(self,"MenuBar")
-
-        self.helpMenu = QPopupMenu(self)
-        self.helpContentsAction.addTo(self.helpMenu)
-        self.helpIndexAction.addTo(self.helpMenu)
-        self.helpMenu.insertSeparator()
-        self.helpAboutAction.addTo(self.helpMenu)
-        self.MenuBar.insertItem(QString(""),self.helpMenu,1)
+	self.menuBar()
+	self.menuBar().insertItem(QString("Help"), self.helpMenu())
 
         self.noDeviceSelected()
 
@@ -81,37 +70,12 @@ class ScanWindow(QMainWindow):
         self.resize(QSize(744,588).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
-        self.connect(self.helpIndexAction,SIGNAL("activated()"),self.helpIndex)
-        self.connect(self.helpContentsAction,SIGNAL("activated()"),self.helpContents)
-        self.connect(self.helpAboutAction,SIGNAL("activated()"),self.helpAbout)
-
     def exit(self):
         print "exiting"
         sane.exit()
 
     def languageChange(self):
         self.setCaption(self.__tr("Scanner"))
-        self.helpContentsAction.setText(self.__tr("Contents"))
-        self.helpContentsAction.setMenuText(self.__tr("&Contents..."))
-        self.helpContentsAction.setAccel(QString.null)
-        self.helpIndexAction.setText(self.__tr("Index"))
-        self.helpIndexAction.setMenuText(self.__tr("&Index..."))
-        self.helpIndexAction.setAccel(QString.null)
-        self.helpAboutAction.setText(self.__tr("About"))
-        self.helpAboutAction.setMenuText(self.__tr("&About"))
-        self.helpAboutAction.setAccel(QString.null)
-        if self.MenuBar.findItem(1):
-            self.MenuBar.findItem(1).setText(self.__tr("&Help"))
-
-
-    def helpIndex(self):
-        print "Scanner.helpIndex(): Not implemented yet"
-
-    def helpContents(self):
-        print "Scanner.helpContents(): Not implemented yet"
-
-    def helpAbout(self):
-	about = QMessageBox.about(self, "About", "Bu program Pardus staj projeleri kapsaminda hazirlanmistir." )
 
     def __tr(self,s,c = None):
         return qApp.translate("Scanner",s,c)
