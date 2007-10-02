@@ -38,8 +38,7 @@ class yaliPartition:
         self.fsType=None
         self.mountPoint=None
 
-def main(args):
-    global data
+def read(args):
     doc=piksemel.parse(args)
     data=yaliKickstartData()
     data.language=doc.getTagData("language")
@@ -61,15 +60,20 @@ def main(args):
     
     partitioning=doc.getTag("partitioning")
     data.partitioningType=partitioning.getAttribute("partitioning_type")
-
-    for q in partitioning.tags():
-        partinfo=yaliPartition()
-        partinfo.partitionType=q.getAttribute("partition_type")
-        partinfo.format=q.getAttribute("format")
-        partinfo.ratio=q.getAttribute("ratio")
-        partinfo.fsType=q.getAttribute("fs_type")
-        partinfo.mountPoint=q.getAttribute("mountpoint")
-        partinfo.disk=q.firstChild().data()
-        data.partitioning.append(partinfo)
+    
+    if(data.partitioningType=="auto"):
+        autoPart=yaliPartition()
+        autoPart.disk=partitioning.firstChild().data()
+        data.partitioning.append(autoPart)
+        
+    else:
+        for q in partitioning.tags():
+            partinfo=yaliPartition()
+            partinfo.partitionType=q.getAttribute("partition_type")
+            partinfo.format=q.getAttribute("format")
+            partinfo.ratio=q.getAttribute("ratio")
+            partinfo.fsType=q.getAttribute("fs_type")
+            partinfo.mountPoint=q.getAttribute("mountpoint")
+            partinfo.disk=q.firstChild().data()
+            data.partitioning.append(partinfo)
     return data
-
