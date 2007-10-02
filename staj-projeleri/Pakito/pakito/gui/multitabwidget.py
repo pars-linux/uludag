@@ -3,7 +3,10 @@
 from qt import *
 from kutils import *
 
-class MultiTabWidget(QWidget):    
+SIZEOPENED = 110
+SIZECLOSED = 30
+
+class MultiTabWidget(QWidget):
     def __init__(self, parent = None, orient = KMultiTabBar.Horizontal, pos = KMultiTabBar.Top, name = None):
         QWidget.__init__(self, parent, name)
         if orient == KMultiTabBar.Horizontal:
@@ -25,7 +28,7 @@ class MultiTabWidget(QWidget):
         self.activeTabID = -1      
         self.bigSize = -1
         self.orientation = orient
-        self.setMinimumHeight(50)
+        self.setFixedHeight(SIZECLOSED)
         
     def addTab(self, widget, pix = None, id = -1, string = ""):
         if not pix:
@@ -33,12 +36,6 @@ class MultiTabWidget(QWidget):
         self.tabWidget.appendTab(pix, id, string)
         self.stack.addWidget(widget, id)
         tab = self.tabWidget.tab(id)
-        
-        if self.orientation == KMultiTabBar.Horizontal:
-            self.setFixedHeight(tab.height()+6)
-        else:
-            self.setFixedWidth(tab.width()+6)
-        
         self.connect(tab, SIGNAL("clicked(int)"), self.tabClicked)
         
     def removeTab(self, id):
@@ -71,12 +68,14 @@ class MultiTabWidget(QWidget):
         if self.bigSize == -1:
                 self.bigSize = 100
         if self.orientation == KMultiTabBar.Horizontal:
-            self.setMaximumHeight(700)
-            self.setMinimumHeight(120)
+            self.setMaximumHeight(500)
+            self.setMinimumHeight(110)
             self.resize(self.width(), self.bigSize)
         else:
-            self.setMaximumWidth(700)
+            self.setMaximumWidth(500)
+            self.setMinimumWidth(110)
             self.resize(self.bigSize, self.height())
+        self.updateGeometry()
             
     def shrinkTab(self):
         self.stack.hide()
@@ -84,8 +83,9 @@ class MultiTabWidget(QWidget):
             self.tabWidget.setTab(self.activeTabID, False)
         if self.orientation == KMultiTabBar.Horizontal:
             self.bigSize = self.height()
-            self.setFixedHeight(self.tabWidget.tab(self.activeTabID).height() + 10)
+            self.setFixedHeight(SIZECLOSED)
         else:
             self.bigSize = self.width()
-            self.setFixedWidth(self.tabWidget.tab(self.activeTabID).width() + 10)
+            self.setFixedWidth(SIZECLOSED)
         self.activeTabID = -1
+        self.updateGeometry()

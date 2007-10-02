@@ -22,7 +22,7 @@ from threading import Thread
 
 # PiSi imports
 import pisi.api
-from pisi.config import Options
+from pisi.config import Options 
 import pisi.ui
 
 from pakito.gui.pspecWidget.pspecWidget import PspecWidget
@@ -83,7 +83,6 @@ class MainWindow(KParts.MainWindow):
         
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
         
-#        self.createGUI(self.pspecTab.editor.part)
         self.setXMLFile(os.getcwd() + "/pakitoui.rc")
         self.createShellGUI()
 
@@ -207,9 +206,9 @@ class MainWindow(KParts.MainWindow):
         try:
             self.pspecTab = PspecWidget(self.twTabs, os.path.join(self.tempDir, "pspec.xml"))
         except Exception, err:
+            qApp.restoreOverrideCursor()
             KMessageBox.sorry(self, i18n("pspec.xml cannot be parsed: %s" % str(err)), i18n("Invalid File"))
             self.closePacket()
-            qApp.restoreOverrideCursor()
             return          
         
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.tempDir, "actions.py"))
@@ -492,6 +491,10 @@ class MainWindow(KParts.MainWindow):
         dia = OptionsDialog(self)
         dia.exec_loop()
     
+    def slotConfigureKeys(self):
+        KKeyDialog.configure(self.actionCollection())
+
+    
     def doActions(self):                
         # actions
         
@@ -506,7 +509,8 @@ class MainWindow(KParts.MainWindow):
         self.actionExit = KStdAction.quit(self.exit, self.actionCollection(), "actionExit")
 
         #settings actions
-        self.actionSettings = KStdAction.preferences(self.slotSettings, self.actionCollection(), "actionSettings")
+        KStdAction.keyBindings(self.slotConfigureKeys, self.actionCollection())
+        self.actionSettings = KStdAction.preferences(self.slotSettings, self.actionCollection())
         
         # build actions        
         self.actionFetch = KAction(i18n("Fetch"), "khtml_kget", KShortcut(), self.fetchSlot, self.actionCollection(), "actionFetch")
