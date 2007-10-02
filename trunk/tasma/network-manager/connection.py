@@ -523,11 +523,7 @@ class Settings(QWidget):
 
 
 class Window(QMainWindow):
-    mySingleInstance = None
     def __init__(self, parent, conn, link=None, new_conn=None):
-        if Window.mySingleInstance:
-            return None
-        Window.mySingleInstance = self
         QMainWindow.__init__(self, parent, " ", Qt.WType_Dialog)
         
         self.setCaption(i18n("Configure network connection"))
@@ -560,7 +556,3 @@ class Window(QMainWindow):
     def slotCancel(self):
         self.settings.cleanup()
         self.close(True)
-
-    def closeEvent(self, event):
-        QMainWindow.closeEvent(self, event)
-        Window.mySingleInstance = None

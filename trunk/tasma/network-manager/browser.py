@@ -82,6 +82,8 @@ class Connection(QWidget):
         self.view = view
         self.conn = conn
         
+        self.edit = None
+        
         self.mypix = icons.get_state(comlink.links[conn.script].type, conn.state)
         if self.conn.state in ("inaccessible", "unavailable"):
             self.mypix = KIconEffect().apply(self.mypix, KIconEffect.ToGray, 1, QColor(), False)
@@ -126,7 +128,10 @@ class Connection(QWidget):
             comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
     
     def slotEdit(self):
-        w = connection.Window(self.view.parent(), self.conn)
+        if self.edit and self.edit.isShown():
+            self.edit.setWindowState(Qt.WindowActive)
+        else:
+            self.edit = connection.Window(self.view.parent(), self.conn)
     
     def mouseDoubleClickEvent(self, event):
         self.slotEdit()
