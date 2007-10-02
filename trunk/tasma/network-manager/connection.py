@@ -464,6 +464,8 @@ class Settings(QWidget):
             id += 1
         if id > 1 or (self.conn and not self.conn.devname):
             self.devices_but.setEnabled(True)
+        if id == 1 and self.conn and (self.conn.devid != self.device_items[0][0]):
+            self.devices_but.setEnabled(True)
     
     def slotDeviceSelect(self, id):
         item = self.device_items[id]
