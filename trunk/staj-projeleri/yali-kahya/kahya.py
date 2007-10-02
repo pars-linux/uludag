@@ -41,24 +41,28 @@ class userFunctions:
         self.correctData = correctdata
 
     def checkAutologin(self):
+        """It verifies if another autologin user exists"""
         if(self.correctData.autoLoginUser):
             return False
         return True
 
     def checkValidity(self):
+        """It checks username format"""
         if self.username and re.search("[0-9a-zA-Z.?!_-]",self.username):
             return True
         return False
 
     def checkName(self):
+        """It verifies if the username already exists"""
         for usr in self.correctData.users:
             if(usr.username==self.username):
                 return True
         return False
 
     def checkGroups(self):
+        """It checks the groups validity"""
         for element in self.groups:
-            for group in yaliKickStart().defaultGroups:
+            for group in kahya().defaultGroups:
                 if (group==element or element=="wheel"):
                     break
             else:
@@ -71,12 +75,14 @@ class otherFunctions:
         self.keyX=keyX
 
     def checkKeymapX(self):
+        """It checks keymap validity"""
         for element in getKeymaps():
             if element.X==self.keyX:
                 return True
         return False 
 
     def findKeymap(self):
+        """It attaches console Keymap"""
         for element in getKeymaps():
             if element.X==self.keyX:
                 return element.console
@@ -87,12 +93,12 @@ class partitionFunctions:
         self.fs=fs
         self.disk=disk
     def checkFileSystem(self):
-        for element in yaliKickStart().fileSystems:
+        for element in kahya().fileSystems:
             if element==self.fs:
                 return True
         return False
     def checkFileSystem2(self):
-        for element in yaliKickStart().fileSystems2:
+        for element in kahya().fileSystems2:
             if element == self.fs:
                 return True
         return False
@@ -103,26 +109,19 @@ class partitionFunctions:
         return re.match("disk[0-9]$",self.disk) 
 
 
-    def convertDisk(self):
-        list={'a':'p0','b':'p1','c':'s0','d':'s1'}
-        self.letter=self.disk[2]
-        device=str(list[self.letter]+'p'+str(int(self.disk[3])-1))
-        print device
-        return device
-
-class yaliKickStart:
+class kahya:
     def __init__(self):
         self.fileSystems=["swap","ext3","ntfs","reiserf","xfs"]
         self.fileSystems2=["ext3","xfs"]
         self.defaultGroups=["audio","dialout","disk","pnp","pnpadmin","power","removable","users","video"]
         self.errorList=[]
         self.RatioList=[]
-        self.correctData=yaliReadPiks.yaliKickstartData()
+        self.correctData=yaliReadPiks.kahyaData()
         self.total=0
 
-    def readData(self,kickstartFile):
-        self.filePath = kickstartFile
-        self.data = yaliReadPiks.read(kickstartFile)
+    def readData(self,kahyaFile):
+        self.filePath = kahyaFile
+        self.data = yaliReadPiks.read(kahyaFile)
 
     def checkRatio(self):
         """ It checks partition ratios """
@@ -135,6 +134,7 @@ class yaliKickStart:
         return False
 
     def checkAllOptions(self):
+        """It checks all data entries and edits them"""
         error=errors()
         otherFunct=otherFunctions(self.data.keyData.X)
 
@@ -283,13 +283,13 @@ class yaliKickStart:
                                 errorPartition.MountPoint=True
                                 self.errorList.append("Mountpoint Error for %s : %s not valid"%(partition.partitionType,partition.mountPoint))
                             if(errorPartition.PartitionType!=True and errorPartition.Disk!=True and errorPartition.FsType!=True and errorPartition.MountPoint!=True):
-                                partition.disk=functPart.convertDisk()
                                 self.correctData.partitioning.append(partition)
 
         return self.errorList
 
     def checkFileValidity(self):
-        self.correctData=yaliReadPiks.yaliKickstartData()
+        """It reads the xml file and checks errors"""
+        self.correctData=yaliReadPiks.kahyaData()
         self.errorList=self.checkAllOptions()
         if(len(self.errorList)==0):
             return True
