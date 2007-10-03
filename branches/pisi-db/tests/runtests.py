@@ -11,8 +11,23 @@
 #
 
 import unittest
+import database
+
+from database.repodbtest import RepoDBTestCase
+from database.packagedbtest import PackageDBTestCase
+from database.sourcedbtest import SourceDBTestCase
+from database.installdbtest import InstallDBTestCase
+from database.componentdbtest import ComponentDBTestCase
+from database.filesdbtest import FilesDBTestCase
+from database.lazydbtest import LazyDBTestCase
+from database.itembyrepotest import ItemByRepoTestCase
 
 suite = unittest.TestSuite()
+
+# Database related test cases
+suite.addTests([LazyDBTestCase, RepoDBTestCase, ItemByRepoTestCase,
+                PackageDBTestCase, InstallDBTestCase, ComponentDBTestCase, 
+                FilesDBTestCase, SourceDBTestCase])
 
 if __name__ == '__main__':
     unittest.main()
