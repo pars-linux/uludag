@@ -107,7 +107,6 @@ def init(database = True, write = True,
     ctx.comar_sockname = comar_sockname
 
     # initialize repository databases
-    ctx.database = database
     if database:
         ctx.repodb = pisi.db.repodb.RepoDB()
         ctx.installdb = pisi.db.installdb.InstallDB()
