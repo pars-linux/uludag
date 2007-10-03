@@ -93,75 +93,57 @@ class ScanResultMulti(KDialog):
         saved = 0
         total = 0
         outputFormats = QImageIO.outputFormats()
-        fileDialog =  KFileDialog("","",self,"fileDialog", False)
-	fileDialog.setOperationMode(KFileDialog.Saving)
-	fileDialog.setFilter("*.png|PNG-Files")
-        fileDialog.setMode(KFile.Directory)
-        if fileDialog.exec_loop() == QDialog.Accepted :
-            directory = unicode(fileDialog.selectedFile())
-            
-            for item in self.items:
-                total+=1
-                fileName = unicode(item.text())
-            
-                tmp = fileName.rsplit('.',1)
-            
-                format = None
-            
-                if len(tmp) == 2:
-                    fileName, extension = tmp[0],tmp[1]
-
-                    if extension.lower() == "jpg":
-                        extension = "JPEG"
-                    
-                    if extension.upper() in outputFormats:
-                        format = extension.upper()
-                        fileName += "." + extension
-            
-                if format == None:
-                    format = "PNG"
-                    fileName += "."+format.lower()
-            
-                if self.pixmapLabel.pixmap().save(directory+"/"+fileName,str(format)):
-                    saved+=1
-                
-                KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
+	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files"
+	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
+	if (fileName != ""):
+		tmp = fileName.rsplit('.',1)
+		for item in self.items:
+			total+=1
+			#tmp = fileName.rsplit('.',1)
+			format = None
+			if len(tmp) == 1:
+				fileName = tmp[0]
+			if len(tmp) == 2:
+				fileName, extension = tmp[0],tmp[1]
+				if extension.lower() == "jpg":
+					format = "JPEG"
+				if extension.upper() in outputFormats:
+					format = extension.upper()
+					fileName += saved.__str__() + "." + extension
+			if format == None:
+				format = "PNG"
+				fileName += saved.__str__() + "." + format.lower()
+			if self.pixmapLabel.pixmap().save(fileName,str(format)):
+				saved+=1
+			
+		KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
                 
     def saveSelected(self):
         saved = 0
         total = 0
         outputFormats = QImageIO.outputFormats()
-        fileDialog =  KFileDialog("","",self,"fileDialog", False)
-	fileDialog.setOperationMode(KFileDialog.Saving)
-	fileDialog.setFilter("*.png|PNG-Files")
-        fileDialog.setMode(KFile.Directory)
-        if fileDialog.exec_loop() == QDialog.Accepted :
-            directory = unicode(fileDialog.selectedFile())
-            
-            for item in self.items:
-                if item.isSelected():
-                    total+=1
-                    fileName = unicode(item.text())
-                
-                    tmp = fileName.rsplit('.',1)
-                
-                    format = None
-                
-                    if len(tmp) == 2:
-                        fileName, extension = tmp[0],tmp[1]
-    
-                        if extension.lower() == "jpg":
-                            extension = "JPEG"
-                        
-                        if extension.upper() in outputFormats:
-                            format = extension.upper()
-                            fileName += "." + extension
-                
-                    if format == None:
-                        format = "PNG"
-                        fileName += "."+format.lower()
-                
-                    if self.pixmapLabel.pixmap().save(directory+"/"+fileName,str(format)):
-                        saved+=1
-                    
-            KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
+	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files"
+	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
+	if (fileName != ""):
+		tmp = fileName.rsplit('.',1)
+		for item in self.items:
+			if item.isSelected():
+				total+=1
+				#tmp = fileName.rsplit('.',1)
+				format = None
+				if len(tmp) == 1:
+					fileName = tmp[0]
+				if len(tmp) == 2:
+					fileName, extension = tmp[0],tmp[1]
+					if extension.lower() == "jpg":
+						format = "JPEG"
+					if extension.upper() in outputFormats:
+						format = extension.upper()
+						fileName += saved.__str__() + "." + extension
+				if format == None:
+					format = "PNG"
+					fileName += saved.__str__() + "." + format.lower()
+				if self.pixmapLabel.pixmap().save(fileName,str(format)):
+					saved+=1
+				
+		KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
