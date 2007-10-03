@@ -72,7 +72,7 @@ class InstallDB:
         return dict(map(lambda x:pisi.util.parse_package_name(x), os.listdir(packages_path)))
 
     def __generate_config_pending(self):
-        pending_info_path = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.config_pending)
+        pending_info_path = os.path.join(ctx.config.info_dir(), ctx.const.config_pending)
         if os.path.exists(pending_info_path):
             return open(pending_info_path, "r").read().split()
         return []
@@ -178,11 +178,7 @@ class InstallDB:
             self.__write_config_pending()
 
     def __write_config_pending(self):
-        pending_info_dir = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir)
-        if not os.path.exists(pending_info_dir):
-            os.makedirs(pending_info_dir)
-
-        pending_info_file = os.path.join(pending_info_dir, ctx.const.config_pending)
+        pending_info_file = os.path.join(ctx.config.info_dir(), ctx.const.config_pending)
         pending = open(pending_info_file, "w")
         for pkg in set(self.confing_pending_db):
             pending.write("%s\n" % pkg)

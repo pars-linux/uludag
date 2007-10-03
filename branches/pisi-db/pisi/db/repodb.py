@@ -71,14 +71,16 @@ class RepoOrder:
         return order
 
     def _update(self, doc):
-        repos_file = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.repos)
+        repos_file = os.path.join(ctx.config.info_dir(), ctx.const.repos)
         open(repos_file, "w").write("%s\n" % doc.toPrettyString())
         self.repos = self._get_repos()
 
     def _get_doc(self):
-        repos_file = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.repos)
+        repos_file = os.path.join(ctx.config.info_dir(), ctx.const.repos)
+        if not os.path.exists(repos_file):
+            return piksemel.newDocument("REPOS")
         return piksemel.parse(repos_file)
-
+    
     def _get_repos(self):
         repo_doc = self._get_doc()
         order = {}

@@ -51,7 +51,7 @@ class FilesDB(object):
                 del self.filesdb[md5.new(f.path).digest()]
 
     def destroy(self):
-        files_db = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.files_db)
+        files_db = os.path.join(ctx.config.info_dir(), ctx.const.files_db)
         if os.path.exists(files_db):
             os.unlink(files_db)
     
@@ -63,11 +63,7 @@ class FilesDB(object):
         if isinstance(self.filesdb, shelve.DbfilenameShelf):
             return
 
-        info_dir = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir)
-        if not os.path.exists(info_dir):
-            os.makedirs(info_dir)
-
-        files_db = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.files_db)
+        files_db = os.path.join(ctx.config.info_dir(), ctx.const.files_db)
 
         if not os.path.exists(files_db):
             flag = "n"

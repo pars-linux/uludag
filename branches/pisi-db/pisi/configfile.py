@@ -35,7 +35,7 @@
 #
 #[directories]
 #lib_dir = /var/lib/pisi
-#db_dir = /var/db/pisi
+#info_dir = "/var/lib/pisi/info"
 #archives_dir = /var/cache/pisi/archives
 #packages_dir = /var/cache/pisi/packages
 #compiled_packages_dir = "/var/cache/pisi/packages"
@@ -87,7 +87,7 @@ class DirectoriesDefaults:
     "Default values for [directories] section"
     lib_dir = "/var/lib/pisi"
     log_dir = "/var/log"
-    db_dir = "/var/db/pisi"
+    info_dir = "/var/lib/pisi/info"
     archives_dir = "/var/cache/pisi/archives"
     packages_dir = "/var/cache/pisi/packages"
     compiled_packages_dir = "/var/cache/pisi/packages"

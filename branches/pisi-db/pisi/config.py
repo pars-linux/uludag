@@ -92,8 +92,8 @@ class Config(object):
     def lib_dir(self):
         return self.subdir(self.values.dirs.lib_dir)
 
-    def db_dir(self):
-        return self.subdir(self.values.dirs.db_dir)
+    def info_dir(self):
+        return self.subdir(self.values.dirs.info_dir)
 
     def archives_dir(self):
         return self.subdir(self.values.dirs.archives_dir)
