@@ -27,10 +27,11 @@ import pisi.db
 import pisi.metadata
 import pisi.dependency
 import pisi.db.itembyrepo
+import pisi.db.lazydb as lazydb
 
-class PackageDB(object):
+class PackageDB(lazydb.LazyDB):
 
-    def __init__(self):
+    def init(self):
 
         self.__package_nodes = {} # Packages
         self.__revdeps = {}       # Reverse dependencies 

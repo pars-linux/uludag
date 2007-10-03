@@ -19,10 +19,11 @@ import piksemel
 
 import pisi
 import pisi.specfile
+import pisi.db.lazydb as lazydb
 
-class SourceDB(object):
+class SourceDB(lazydb.LazyDB):
 
-    def __init__(self):
+    def init(self):
 
         self.__source_nodes = {}
         self.__pkgstosrc = {}

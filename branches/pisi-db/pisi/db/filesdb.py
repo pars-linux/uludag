@@ -19,6 +19,7 @@ import md5
 
 import pisi
 import pisi.context as ctx
+import pisi.db.lazydb as lazydb
 
 # FIXME:
 # We could traverse through files.xml files of the packages to find the path and
@@ -26,9 +27,9 @@ import pisi.context as ctx
 # file conflict mechanism of pisi prevents this and needs a fast has_file function. 
 # So currently filesdb is the only db and we cant still get rid of rebuild-db :/
 
-class FilesDB(object):
+class FilesDB(lazydb.LazyDB):
 
-    def __init__(self):
+    def init(self):
         self.filesdb = {}
         self.__check_filesdb()
     

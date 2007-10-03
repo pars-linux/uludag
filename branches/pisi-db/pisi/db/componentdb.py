@@ -20,10 +20,11 @@ import pisi
 import pisi.db.repodb
 import pisi.db.itembyrepo
 import pisi.component
+import pisi.db.lazydb as lazydb
 
-class ComponentDB(object):
+class ComponentDB(lazydb.LazyDB):
 
-    def __init__(self):
+    def init(self):
 
         component_nodes = {}
         component_packages = {}

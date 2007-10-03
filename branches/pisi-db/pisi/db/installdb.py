@@ -26,6 +26,7 @@ import pisi.context as ctx
 import pisi.dependency
 import pisi.files
 import pisi.util
+import pisi.db.lazydb as lazydb
 
 class InstallDBError(pisi.Error):
     pass
@@ -60,9 +61,9 @@ class InstallInfo:
                                                           time_str)
         return s
 
-class InstallDB:
+class InstallDB(lazydb.LazyDB):
 
-    def __init__(self):
+    def init(self):
         self.installed_db = self.__generate_installed_pkgs()
         self.confing_pending_db = self.__generate_config_pending()
         self.rev_deps_db = self.__generate_revdeps()

@@ -19,6 +19,7 @@ import pisi.uri
 import pisi.util
 import pisi.index
 import pisi.context as ctx
+import pisi.db.lazydb as lazydb
 
 class Repo:
     def __init__(self, indexuri):
@@ -92,9 +93,9 @@ class RepoOrder:
 
         return order
 
-class RepoDB(object):
+class RepoDB(lazydb.LazyDB):
 
-    def __init__(self):
+    def init(self):
         self.repoorder = RepoOrder()
 
     def has_repo(self, name):
