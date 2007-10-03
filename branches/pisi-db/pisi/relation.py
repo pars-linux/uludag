@@ -31,7 +31,7 @@ class Relation:
     a_releaseFrom = [autoxml.String, autoxml.optional]
     a_releaseTo = [autoxml.String, autoxml.optional]
 
-    def satisfies_relation(self, pkg_name, version, release):
+    def satisfies_relation(self, version, release):
         ret = True
         v = pisi.version.Version(version)
         if self.version:
@@ -56,4 +56,4 @@ def installed_package_satisfies(relation):
     else:
         pkg = ctx.installdb.get_package(pkg_name)
         (version, release) = (pkg.version, pkg.release)
-        return relation.satisfies_relation(pkg_name, version, release)
+        return relation.satisfies_relation(version, release)

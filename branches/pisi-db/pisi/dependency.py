@@ -45,7 +45,7 @@ def dict_satisfies_dep(dict, depinfo):
     else:
         pkg = dict[pkg_name]
         (version, release) = (pkg.version, pkg.release)
-        return depinfo.satisfies_relation(pkg_name, version, release)
+        return depinfo.satisfies_relation(version, release)
 
 def installed_satisfies_dep(depinfo):
     """determine if a package in *repository* satisfies given
@@ -61,7 +61,7 @@ dependency spec"""
     else:
         pkg = ctx.packagedb.get_package(pkg_name)
         (version, release) = (pkg.version, pkg.release)
-        return depinfo.satisfies_relation(pkg_name, version, release)
+        return depinfo.satisfies_relation(version, release)
 
 def satisfies_dependencies(pkg, deps, sat = installed_satisfies_dep):
     for dep in deps:
