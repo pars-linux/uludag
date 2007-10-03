@@ -26,10 +26,74 @@ class Repo:
 
 medias = (cd, usb, remote, local) = range(4)
 
+class RepoOrder:
+
+    def __init__(self):
+        self.repos = self._get_repos() 
+
+    def add(self, repo_name, repo_url, repo_type="remote"):
+        repo_doc = self._get_doc()
+
+        try:
+            node = [x for x in repo_doc.tags("Repo")][-1]
+            repo_node = node.appendTag("Repo")
+        except IndexError:
+            repo_node = repo_doc.insertTag("Repo")
+        
+        name_node = repo_node.insertTag("Name")
+        name_node.insertData(repo_name)
+
+        url_node = repo_node.insertTag("Url")
+        url_node.insertData(repo_url)
+
+        media_node = repo_node.insertTag("Media")
+        media_node.insertData(repo_type)
+
+        self._update(repo_doc)
+
+    def remove(self, repo_name):
+        repo_doc = self._get_doc()
+
+        for r in repo_doc.tags("Repo"):
+            if r.getTagData("Name") == repo_name:
+                r.hide()
+
+        self._update(repo_doc)
+
+    def get_order(self):
+        order = []
+
+        #FIXME: get media order from pisi.conf
+        for m in ["cd", "usb", "remote", "local"]:
+            if self.repos.has_key(m):
+                order.extend(self.repos[m])
+
+        return order
+
+    def _update(self, doc):
+        repos_file = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.repos)
+        open(repos_file, "w").write("%s\n" % doc.toPrettyString())
+        self.repos = self._get_repos()
+
+    def _get_doc(self):
+        repos_file = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.repos)
+        return piksemel.parse(repos_file)
+
+    def _get_repos(self):
+        repo_doc = self._get_doc()
+        order = {}
+
+        for r in repo_doc.tags("Repo"):
+            media = r.getTagData("Media")
+            name = r.getTagData("Name")
+            order.setdefault(media, []).append(name)
+
+        return order
+
 class RepoDB(object):
 
     def __init__(self):
-        self.__repoorder = self.__get_repoorder()
+        self.repoorder = RepoOrder()
 
     def has_repo(self, name):
         return name in self.list_repos()
@@ -50,9 +114,11 @@ class RepoDB(object):
         os.makedirs(repo_path)
         urifile_path = pisi.util.join_path(ctx.config.index_dir(), name, "uri")
         uri = open(urifile_path, "w").write(repo_info.indexuri.get_uri())
+        self.repoorder.add(name, repo_info.indexuri.get_uri())
 
     def remove_repo(self, name):
         pisi.util.clean_dir(os.path.join(ctx.config.index_dir(), name))
+        self.repoorder.remove(name)
 
     def get_source_repos(self):
         repos = []
@@ -69,23 +135,4 @@ class RepoDB(object):
         return repos
 
     def list_repos(self):
-        order = []
-
-        #FIXME: get media order from pisi.conf
-        for m in ["cd", "usb", "remote", "local"]:
-            if self.__repoorder.has_key(m):
-                order.extend(self.__repoorder[m])
-
-        return order
-
-    def __get_repoorder(self):
-        repos_file = os.path.join(ctx.config.lib_dir(), ctx.const.info_dir, ctx.const.repos)
-        repos = piksemel.parse(repos_file)
-        order = {}
-
-        for r in repos.tags():
-            media = r.getTagData("Media")
-            name = r.getTagData("Name")
-            order.setdefault(media, []).append(name)
-
-        return order
+        return self.repoorder.get_order()
