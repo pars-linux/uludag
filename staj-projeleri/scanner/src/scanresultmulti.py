@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 
 from qt import *
+from kdecore import *
+from kdeui import *
+from kfile import *
 
 
-class ScanResultMulti(QDialog):
-    def __init__(self,parent = None,name = None,modal = 0,fl = 0):
-        QDialog.__init__(self,parent,name,modal,fl)
+class ScanResultMulti(KDialog):
+    def __init__(self,parent = None,name = None,modal = 1,fl = 0):
+        KDialog.__init__(self,parent,name,modal,fl)
 
         self.pixmaps = []
         self.items = []
@@ -65,8 +68,8 @@ class ScanResultMulti(QDialog):
 
     def languageChange(self):
         self.setCaption(self.__tr("Scan Result"))
-        self.saveAllButton.setText(self.__tr("Save All..."))
-        self.saveSelectedButton.setText(self.__tr("Save Selected..."))
+        self.saveAllButton.setText(self.__tr("Save All"))
+        self.saveSelectedButton.setText(self.__tr("Save Selected"))
         self.cancelButton.setText(self.__tr("Cancel"))
 
 
@@ -90,8 +93,10 @@ class ScanResultMulti(QDialog):
         saved = 0
         total = 0
         outputFormats = QImageIO.outputFormats()
-        fileDialog =  QFileDialog("~","",self,"fileDialog")
-        fileDialog.setMode(QFileDialog.Directory)
+        fileDialog =  KFileDialog("","",self,"fileDialog", False)
+	fileDialog.setOperationMode(KFileDialog.Saving)
+	fileDialog.setFilter("*.png|PNG-Files")
+        fileDialog.setMode(KFile.Directory)
         if fileDialog.exec_loop() == QDialog.Accepted :
             directory = unicode(fileDialog.selectedFile())
             
@@ -120,14 +125,16 @@ class ScanResultMulti(QDialog):
                 if self.pixmapLabel.pixmap().save(directory+"/"+fileName,str(format)):
                     saved+=1
                 
-                QMessageBox.information(self,"Save Result",repr(saved) +" of "+ repr(total) + " file(s) successfully saved.",QMessageBox.Ok)
+                KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
                 
     def saveSelected(self):
         saved = 0
         total = 0
         outputFormats = QImageIO.outputFormats()
-        fileDialog =  QFileDialog("~","",self,"fileDialog")
-        fileDialog.setMode(QFileDialog.Directory)
+        fileDialog =  KFileDialog("","",self,"fileDialog", False)
+	fileDialog.setOperationMode(KFileDialog.Saving)
+	fileDialog.setFilter("*.png|PNG-Files")
+        fileDialog.setMode(KFile.Directory)
         if fileDialog.exec_loop() == QDialog.Accepted :
             directory = unicode(fileDialog.selectedFile())
             
@@ -157,4 +164,4 @@ class ScanResultMulti(QDialog):
                     if self.pixmapLabel.pixmap().save(directory+"/"+fileName,str(format)):
                         saved+=1
                     
-            QMessageBox.information(self,"Save Result",repr(saved) +" of "+ repr(total) + " file(s) successfully saved.",QMessageBox.Ok)
+            KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
