@@ -118,14 +118,14 @@ class PisiCLI(object):
                     sys.exit(0)
                 elif 'help' in opts or 'h' in opts:
                     self.die()
-                raise Error(_('No command given'))
+                raise pisi.cli.Error(_('No command given'))
             cmd_name = args[0]
         except ParserError:
-            raise Error(_('Command line parsing error'))
+            raise pisi.cli.Error(_('Command line parsing error'))
 
         self.command = command.Command.get_command(cmd_name, args=orig_args)
         if not self.command:
-            raise Error(_("Unrecognized command: %s") % cmd_name)
+            raise pisi.cli.Error(_("Unrecognized command: %s") % cmd_name)
 
     def die(self):
         pisi.cli.printu('\n' + self.parser.format_help())
