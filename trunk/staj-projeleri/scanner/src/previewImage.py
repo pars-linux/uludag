@@ -242,11 +242,23 @@ class PreviewImage(QWidget):
         self.fit()
 
     def zoomactual(self):
-        self.scaleFactor = 1;
-        self.updateGeometry()
+	
+	width = qApp.desktop().width()
+	height = qApp.desktop().height()
+
+        widthImage = self.initImage.width()
+        heightImage = self.initImage.height()
+        
+        sc = float(width) / widthImage
+        if sc > float(height)/heightImage:
+            sc = float(height)/heightImage
+        
+        self.scaleFactor = sc
+	
+	self.updateGeometry()
         self.needsReposition = True
         self.update()
-
+	
     def zoomin(self):
         self.scaleFactor *= 1.1
         self.updateGeometry()

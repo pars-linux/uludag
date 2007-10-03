@@ -15,6 +15,11 @@ from progress import *
 
 from scanthread import *
 
+from toolbarimages import *
+
+def loadIcon(name, group=KIcon.MainToolbar):
+    return KGlobal.iconLoader().loadIcon(name, group)
+
 class ScanWindow(KMainWindow):
     def __init__(self,parent = None,name = None,fl = 0):
         KMainWindow.__init__(self,parent,name,fl)
@@ -36,20 +41,32 @@ class ScanWindow(KMainWindow):
         
         self.connect(self.options,PYSIGNAL("newDeviceSelected"),self.newDeviceSelected)
         self.connect(self.options,PYSIGNAL("noDeviceSelected"),self.noDeviceSelected)
+	
+	self.toolBar()
+	#self.toolBar().setBarPos(KToolBar.Left)
+	self.previewArea = PreviewArea(self.centralWidget())
 
-        self.toolbar = Toolbar(self.centralWidget())
-        self.hLayout.addWidget(self.toolbar)
+	self.toolBar().insertButton(loadIcon("scanner"), 1, SIGNAL("released()"), self.previewScan, True, "Preview")
+	self.toolBar().insertButton(loadIcon("scanner"), 2, SIGNAL("released()"), self.startScan, True, "Scan")
+	self.toolBar().insertButton(loadIcon("view_remove"), 3, SIGNAL("released()"), self.previewArea.previewImage.fit, True, "Fit Scan Area")
+	self.toolBar().insertButton(loadIcon("view_fit_window"), 4, SIGNAL("released()"), self.previewArea.previewImage.fitSelect, True, "Fit Selected Area")
+	self.toolBar().insertButton(loadIcon("viewmag+"), 5, SIGNAL("released()"), self.previewArea.previewImage.zoomin, True, "Zoom In")
+	self.toolBar().insertButton(loadIcon("viewmag1"), 6, SIGNAL("released()"), self.previewArea.previewImage.zoomactual, True, "Actual Size")
+	self.toolBar().insertButton(loadIcon("viewmag-"), 7, SIGNAL("released()"), self.previewArea.previewImage.zoomout, True, "Zoom Out")
 
-        self.previewArea = PreviewArea(self.centralWidget())
+        #self.toolbar = Toolbar(self.centralWidget())
+        #self.hLayout.addWidget(self.toolbar)
+
+        #self.previewArea = PreviewArea(self.centralWidget())
         self.hLayout.addWidget(self.previewArea)
 
-        self.connect(self.toolbar.previewButton,SIGNAL("released()"),self.previewScan)
-        self.connect(self.toolbar.scanButton,SIGNAL("released()"),self.startScan)
-        self.connect(self.toolbar.fitButton,SIGNAL("released()"),self.previewArea.previewImage.fit)
-        self.connect(self.toolbar.fitSelectButton,SIGNAL("released()"),self.previewArea.previewImage.fitSelect)
-        self.connect(self.toolbar.zoominButton,SIGNAL("released()"),self.previewArea.previewImage.zoomin)
-        self.connect(self.toolbar.actualSizeButton,SIGNAL("released()"),self.previewArea.previewImage.zoomactual)
-        self.connect(self.toolbar.zoomoutButton,SIGNAL("released()"),self.previewArea.previewImage.zoomout)
+        #self.connect(self.toolbar.previewButton,SIGNAL("released()"),self.previewScan)
+        #self.connect(self.toolbar.scanButton,SIGNAL("released()"),self.startScan)
+        #self.connect(self.toolbar.fitButton,SIGNAL("released()"),self.previewArea.previewImage.fit)
+        #self.connect(self.toolbar.fitSelectButton,SIGNAL("released()"),self.previewArea.previewImage.fitSelect)
+        #self.connect(self.toolbar.zoominButton,SIGNAL("released()"),self.previewArea.previewImage.zoomin)
+        #self.connect(self.toolbar.actualSizeButton,SIGNAL("released()"),self.previewArea.previewImage.zoomactual)
+        #self.connect(self.toolbar.zoomoutButton,SIGNAL("released()"),self.previewArea.previewImage.zoomout)
 
         self.connect(self.previewArea.previewImage,PYSIGNAL("selectionCreated"),self.selectArea)
 	
@@ -67,7 +84,7 @@ class ScanWindow(KMainWindow):
 
         self.languageChange()
 
-        self.resize(QSize(744,588).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(744,600).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
     def exit(self):
@@ -81,7 +98,8 @@ class ScanWindow(KMainWindow):
         return qApp.translate("Scanner",s,c)
 
     def newDeviceSelected(self):
-        self.toolbar.setEnabled(True)
+        #self.toolbar.setEnabled(True)
+	self.toolBar().setEnabled(True)
         self.previewArea.setEnabled(True)
         br_x = br_y = -1
         if self.options.device != None:
@@ -94,7 +112,8 @@ class ScanWindow(KMainWindow):
             self.previewArea.formEmptyImage(br_x,br_y)
 
     def noDeviceSelected(self):
-        self.toolbar.setEnabled(False)
+        #self.toolbar.setEnabled(False)
+	self.toolBar().setEnabled(False)
         self.previewArea.noImage()
         self.previewArea.setEnabled(False)
 	
