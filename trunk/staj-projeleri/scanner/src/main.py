@@ -30,7 +30,7 @@ def AboutData():
         None,
         'bugzilla@pardus.org.tr')
    about_data.addAuthor("Barış Can Daylık", "Main Developer", None)
-   about_data.addAuthor("Aslı Okur", "GUI Developer and Current Maintainer", "asliokur@yahoo.com")
+   about_data.addAuthor("Aslı Okur", "Developer and Current Maintainer", "asliokur@yahoo.com")
    return about_data
 
 class Main(KDialog):
@@ -106,7 +106,7 @@ class Main(KDialog):
             self.clearWState(Qt.WState_Polished)
     
             self.scanWindow = ScanWindow()
-            self.scanWindow.hide();
+            self.scanWindow.hide()
             
             self.connect(self.scanWindow.options,PYSIGNAL("newDeviceSelected"),self.showScanWindow)
         
@@ -116,7 +116,7 @@ class Main(KDialog):
             label = QLabel("Loading...",self,"label")
             MainLayout.addWidget(label)
             self.scanWindow = ScanWindow()
-            self.scanWindow.hide();
+            self.scanWindow.hide()
             self.connect(self.scanWindow.options,PYSIGNAL("newDeviceSelected"),self.showScanWindow)
             self.openDevice(device)
             
