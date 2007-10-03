@@ -119,7 +119,11 @@ class InstallDB:
         files_xml = os.path.join(self.__package_path(package), ctx.const.files_xml)
         ctime = pisi.util.creation_time(files_xml)
         pkg = self.get_package(package)
-        info = InstallInfo("i", 
+        state = "i"
+        if pkg.name in self.list_pending():
+            state = "ip"
+        
+        info = InstallInfo(state,
                            pkg.version,
                            pkg.release,
                            pkg.build,
