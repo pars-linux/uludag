@@ -6,6 +6,9 @@
 
 * If possible remove context from pisi
 
+* autoxml is hairy and not maintainable. If possible replace it with a simpler and 
+  faster xml objectifier implementation.
+
 * Tidy pisi.api to satisfy necessary functions
 
 * Write a new unit test suite
