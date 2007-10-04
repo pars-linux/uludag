@@ -37,7 +37,6 @@ ui = None # not now
 stdout = None
 stderr = None
 
-dbenv = None
 installdb = None
 packagedb = None
 repodb = None
@@ -55,10 +54,6 @@ initialized = False
 # places which need this, too.
 # this is needed in build process to clean after if something goes wrong.
 build_leftover = None
-
-#def register(_impl):
-#    """ Register a UI implementation"""
-#    ui = _impl
 
 def disable_keyboard_interrupts():
     sig and sig.disable_signal(signal.SIGINT)
