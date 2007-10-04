@@ -45,9 +45,14 @@ class ScanWindow(KMainWindow):
 	self.toolBar()
 	#self.toolBar().setBarPos(KToolBar.Left)
 	self.previewArea = PreviewArea(self.centralWidget())
-
-	self.toolBar().insertButton(loadIcon("scanner"), 1, SIGNAL("released()"), self.previewScan, True, "Preview")
-	self.toolBar().insertButton(loadIcon("scanner"), 2, SIGNAL("released()"), self.startScan, True, "Scan")
+	
+	self.image0 = QPixmap()
+        self.image0.loadFromData(image0_data,"PNG")
+        self.image1 = QPixmap()
+        self.image1.loadFromData(image1_data,"PNG")
+	
+	self.toolBar().insertButton(self.image0, 1, SIGNAL("released()"), self.previewScan, True, "Preview")
+	self.toolBar().insertButton(self.image1, 2, SIGNAL("released()"), self.startScan, True, "Scan")
 	self.toolBar().insertButton(loadIcon("view_remove"), 3, SIGNAL("released()"), self.previewArea.previewImage.fit, True, "Fit Scan Area")
 	self.toolBar().insertButton(loadIcon("view_fit_window"), 4, SIGNAL("released()"), self.previewArea.previewImage.fitSelect, True, "Fit Selected Area")
 	self.toolBar().insertButton(loadIcon("viewmag+"), 5, SIGNAL("released()"), self.previewArea.previewImage.zoomin, True, "Zoom In")

@@ -1,13 +1,13 @@
-Öncelikli:
-* KDE widgetları kullanılmalı (KApp, KToolBar, KFileDialog vb)
-* Toolbar için ikonlar ve tooltip gerekli
-* Save için dosya adı girilebilmeli, eski bir dosya varsa üzerine
-yazmamalı
-* Scan sırasında bir progress bar gösterilmeli
+TODO - updated:
 
-Bunları yaptıktan sonra kde-apps'a submit edebiliriz.
-
-Daha sonrası için:
-* scan ve save bir thread olarak çalışıp ui'yi serbest bırakmalı
-* başka? :)
++ KDE widgetları kullanılmalı (KApp, KToolBar, KFileDialog vb)
++ Toolbar için ikonlar ve tooltip gerekli
+ (Hala Scan ve Preview için Icon lazım)
++ Save için dosya adı girilebilmeli 
+- Eski bir dosya varsa üzerine yazmamalı
++ Scan sırasında bir progress bar gösterilmeli (Busy indicatorda sorun var)
++ scan ve save bir thread olarak çalışıp ui'yi serbest bırakmalı
+- Dil çevirisi yapılmalı
+- Cancel problemi çözülmeli
+- Program için resim ve ikon bulunmalı
 
