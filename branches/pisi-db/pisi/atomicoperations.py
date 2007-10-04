@@ -405,7 +405,8 @@ class Install(AtomicOperation):
         if self.reinstall:
             self.remove_old.remove_db()
 
-        ctx.installdb.mark_pending(self.config_later)
+        if self.config_later:
+            ctx.installdb.mark_pending(self.pkginfo.name)
 
         # filesdb
         ctx.filesdb.add_files(self.metadata.package.name, self.files)
