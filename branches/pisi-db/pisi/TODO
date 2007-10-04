@@ -1,0 +1,19 @@
+* Get rid of api.init and api.finalize... Instead provide specific set_ methods for 
+  very specific needs. set_io_streams, set_comar_socket... Most of the time default 
+  values are used
+
+* Create meaningful Exception classes. Remove "Error" exceptions
+
+* If possible remove context from pisi
+
+* Tidy pisi.api to satisfy necessary functions
+
+* Write a new unit test suite
+
+* Refactor code after unit tests are finished. Divide long functions. Rename 
+  necessary function and variable names (like A, B_C, D_, C) to understandable
+  ones
+
+* Add documentation to all module functions
+
+* Performance and memory usage optimizations
