@@ -97,16 +97,28 @@ class ScanResultMulti(KDialog):
     def saveFinished(self, total, saved):
 	    if total != 0:
 	    	KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
+	    self.setCaption(self.__tr("Scan Result"))
+	    self.saveAllButton.setEnabled(True)
+            self.saveSelectedButton.setEnabled(True)
+            self.cancelButton.setEnabled(True)
             
     def saveAll(self):
 	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files"
 	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
+	self.setCaption(self.__tr("Please Wait"))
+	self.saveAllButton.setEnabled(False)
+        self.saveSelectedButton.setEnabled(False)
+        self.cancelButton.setEnabled(False)
 	self.saveThread = SaveThread(self, fileName)
 	self.saveThread.start()
                 
     def saveSelected(self):
 	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files"
 	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
+	self.setCaption(self.__tr("Please Wait"))
+	self.saveAllButton.setEnabled(False)
+        self.saveSelectedButton.setEnabled(False)
+        self.cancelButton.setEnabled(False)
 	self.saveThread = SaveSelectedThread(self, fileName)
 	self.saveThread.start()
 	
