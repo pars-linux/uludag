@@ -15,49 +15,50 @@ import unittest
 class InstallDBTestCase(unittest.TestCase):
 
     def testGetPackage(self):
-        pass
+        assert False
 
     def testGetPackageWithMissingOrBrokenMetadata(self):
-        pass
+        assert False
 
     def testHasPackage(self):
-        pass
+        assert False
 
     def testListInstalled(self):
-        pass
+        assert False
 
     def testGetVersion(self):
-        pass
+        assert False
 
     def testGetFiles(self):
-        pass
+        assert False
 
     def testGetFilesWithMissingOrBrokenFilesData(self):
-        pass
+        assert False
 
     def testGetInfo(self):
-        pass
+        assert False
 
     def testGetReverseDependencies(self):
-        pass
+        assert False
 
     def testAddPackage(self):
-        pass
+        assert False
 
     def testAddSamePackage(self):
-        pass
+        assert False
 
     def testRemovePackage(self):
-        pass
+        assert False
 
     def testRemoveNonExistingPackage(self):
-        pass
+        assert False
 
     def testMarkPending(self):
-        pass
+        assert False
 
     def testListPending(self):
-        pass
+        assert False
 
     def testClearPending(self):
-        pass
+        assert False
+

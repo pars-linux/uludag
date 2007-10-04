@@ -15,7 +15,7 @@ import unittest
 class LazyDBTestCase(unittest.TestCase):
 
     def testDatabaseWithoutInit(self):
-        pass
+        assert False
 
     def testDatabaseMethodForcingInit(self):
-        pass
+        assert False

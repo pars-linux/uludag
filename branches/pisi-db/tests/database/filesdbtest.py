@@ -15,22 +15,23 @@ import unittest
 class FilesDBTestCase(unittest.TestCase):
 
     def testHasFile(self):
-        pass
+        assert False
 
     def testGetFile(self):
-        pass
+        assert False
 
     def testGetNonExistingFile(self):
-        pass
+        assert False
 
     def testAddFiles(self):
-        pass
+        assert False
 
     def testAddExistingFiles(self):
-        pass
+        assert False
 
     def testRemoveFiles(self):
-        pass
+        assert False
 
     def testRemoveNonExistingFiles(self):
-        pass
+        assert False
+

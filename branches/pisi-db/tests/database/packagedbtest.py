@@ -15,43 +15,43 @@ import unittest
 class PackageDBTestCase(unittest.TestCase):
 
     def testGetPackage(self):
-        pass
+        assert False
 
     def testGetPackageWithNoPackageRepository(self):
-        pass
+        assert False
 
     def testGetNonExistingPackage(self):
-        pass
+        assert False
 
     def testGetPackageFromGivenRepository(self):
-        pass
+        assert False
 
     def testGetPackageFromNonExistingRepo(self):
-        pass
+        assert False
 
     def testGetPackageWithMissingOrBrokenMetadata(self):
-        pass
+        assert False
 
     def testHasPackage(self):
-        pass
+        assert False
 
     def testGetVersion(self):
-        pass
+        assert False
 
     def testWhichRepo(self):
-        pass
+        assert False
 
     def testGetPackageAndRepository(self):
-        pass
+        assert False
 
     def testGetObsoletes(self):
-        pass
+        assert False
 
     def testGetReverseDependencies(self):
-        pass
+        assert False
 
     def testGetReplaces(self):
-        pass
+        assert False
 
     def testListPackages(self):
-        pass
+        assert False

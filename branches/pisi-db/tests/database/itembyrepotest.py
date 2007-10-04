@@ -15,31 +15,32 @@ import unittest
 class ItemByRepoTestCase(unittest.TestCase):
 
     def testHasRepository(self):
-        pass
+        assert False
 
     def testHasItem(self):
-        pass
+        assert False
 
     def testWhichRepo(self):
-        pass
+        assert False
 
     def testGetItemAndRepository(self):
-        pass
+        assert False
 
     def testGetItem(self):
-        pass
+        assert False
 
     def testGetNonExistingItem(self):
-        pass
+        assert False
 
     def testGetItemOfRepository(self):
-        pass
+        assert False
 
     def testGetItemFromNonExistingRepository(self):
-        pass
+        assert False
 
     def testGetItemKeys(self):
-        pass
+        assert False
 
     def testGetItemValues(self):
-        pass
+        assert False
+

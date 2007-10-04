@@ -15,28 +15,28 @@ import unittest
 class SourceDBTestCase(unittest.TestCase):
 
     def testListSources(self):
-        pass
+        assert False
 
     def testHasSpec(self):
-        pass
+        assert False
 
     def testGetSpec(self):
-        pass
+        assert False
 
     def testGetNonExistingSpec(self):
-        pass
+        assert False
 
     def testGetSpecOfRepository(self):
-        pass
+        assert False
 
     def testGetSpecAndRepository(self):
-        pass
+        assert False
 
     def testGetSourceFromPackage(self):
-        pass
+        assert False
 
     def testListSources(self):
-        pass
+        assert False
 
     def testListSourcesOfRepository(self):
-        pass
+        assert False

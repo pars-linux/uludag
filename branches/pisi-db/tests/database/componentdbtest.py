@@ -15,19 +15,20 @@ import unittest
 class ComponentDBTestCase(unittest.TestCase):
 
     def testHasComponent(self):
-        pass
+        assert False
 
     def testListComponents(self):
-        pass
+        assert False
 
     def testGetComponent(self):
-        pass
+        assert False
 
     def testGetUnionComponent(self):
-        pass
+        assert False
 
     def testGetPackages(self):
-        pass
+        assert False
 
     def testGetUnionPackages(self):
-        pass
+        assert False
+

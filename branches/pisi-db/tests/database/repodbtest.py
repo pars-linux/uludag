@@ -15,31 +15,31 @@ import unittest
 class RepoDBTestCase(unittest.TestCase):
 
     def testAddRepo(self):
-        pass
+        assert False
 
     def testRemoveRepo(self):
-        pass
+        assert False
 
     def testAddExistingRepo(self):
-        pass
+        assert False
 
     def testRemoveNonExistingRepo(self):
-        pass
+        assert False
 
     def testAddRemoveCycle(self):
-        pass
+        assert False
 
     def testListRepos(self):
-        pass
+        assert False
 
     def testGetSourceRepos(self):
-        pass
+        assert False
 
     def testGetBinaryRepos(self):
-        pass
+        assert False
 
     def testGetRepo(self):
-        pass
+        assert False
 
     def testRepoOrder(self):
-        pass
+        assert False
