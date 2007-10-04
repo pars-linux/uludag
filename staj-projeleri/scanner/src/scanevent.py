@@ -15,3 +15,10 @@ class PreviewEvent(QCustomEvent):
 class StopEvent(QCustomEvent):
     def __init__(self):
 	QCustomEvent.__init__(self,1004)
+	
+class SaveEvent(QCustomEvent):
+    def __init__(self, total, saved):
+	QCustomEvent.__init__(self,1005)
+	self.total = total
+	self.saved = saved
+	 
