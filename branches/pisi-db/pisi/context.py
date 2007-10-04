@@ -44,7 +44,6 @@ repodb = None
 sourcedb = None
 filesdb = None
 componentdb = None
-invidx = None
 
 comar = None
 comar_sockname = None
