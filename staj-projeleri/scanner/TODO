@@ -11,3 +11,17 @@ TODO - updated:
 - Cancel problemi çözülmeli
 - Program için resim ve ikon bulunmalı
 
+
+Artistanbul kooka'da aşağıdaki eksikleri gördüklerini belirttiler :)
+- Dikdörtgen olmayan seçimler de yapılabilmeli. Gazete dergiden makale aktarırken falan
+işe yarıyor. Genel bir path seçimi yerine basitçe birden fazla kare alan seçerek
+yapılabilir.
+- Tüm kağıdı tarayıp, kağıt siyah/beyaz, seçili alan renkli highlight edilmiş
+şekilde kalacak biçimde tarama.
+- Sağa sola döndürme.
+- Diapozitif dianegatif modları
+- Preview alanı pencere boyu değişince otomatik değişmiyor.
+
+Bir de bazen rastgele olarak resim yerine gürültü çıkıyor, biraz daha bakıp
+inceleyeceğim.
+
