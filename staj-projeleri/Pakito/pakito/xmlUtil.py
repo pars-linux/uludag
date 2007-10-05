@@ -8,20 +8,7 @@ commentString = "PakitoComment"
 class XmlUtil:
     """ class with comment support and some utilities"""
     def __init__(self, xmlFileName):
-        global commentString
-        
-        self.xmlFile = xmlFileName
-        xmlFile = open(xmlFileName)
-        
-        exp = re.compile("<!--(.*?)-->", re.S)
-        newPspec = re.sub(exp, r"<%s>\1</%s>" % (commentString, commentString), xmlFile.read())
-        newPspec = newPspec.replace("&", "&amp;")
-        
-        #TODO: escape all html chars. inside new comment tag
-        # and don't forget to revert before write
-        
-        xmlFile.close()
-        self.doc = piksemel.parseString(newPspec)
+        self.read(xmlFileName)
         
     def getTagByPath(self, *path):
         """ get tag by path. e.g getTagByPath("Source", "Packager", "Name") give the Name tag """
@@ -93,10 +80,20 @@ class XmlUtil:
         f = open(self.xmlFile, "w")
         f.write(newPspec)
         f.close()
-    
-    
-    
-    
-    
-    
+        
+    def read(self, xmlFileName = None):
+        if xmlFileName:
+            self.xmlFile = xmlFileName
+            
+        xmlFile = open(self.xmlFile)
+        
+        exp = re.compile("<!--(.*?)-->", re.S)
+        newPspec = re.sub(exp, r"<%s>\1</%s>" % (commentString, commentString), xmlFile.read())
+        newPspec = newPspec.replace("&", "&amp;")
+        
+        #TODO: escape all html chars. inside new comment tag
+        # and don't forget to revert before write
+        
+        xmlFile.close()
+        self.doc = piksemel.parseString(newPspec)
     
