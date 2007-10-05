@@ -34,4 +34,3 @@ class PreviewArea(QWidget):
     def resizeEvent(self, event):
 	if self.previewImage.fitted:
 	    self.previewImage.fit()
-	
