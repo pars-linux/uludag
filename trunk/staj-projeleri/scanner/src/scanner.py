@@ -71,7 +71,10 @@ class ScanWindow(KMainWindow):
 	self.menuBar()
 	self.menuBar().insertItem(QString("Help"), self.helpMenu())
 
-        self.noDeviceSelected()
+	# No Device Selected
+        self.toolBar().setEnabled(False)
+        self.previewArea.noImage()
+        self.previewArea.setEnabled(False)
 
         self.languageChange()
 
@@ -102,6 +105,7 @@ class ScanWindow(KMainWindow):
             self.previewArea.formEmptyImage(br_x,br_y)
 
     def noDeviceSelected(self):
+	KMessageBox.information(self,"There is either no device connected or no device selected","")
 	self.toolBar().setEnabled(False)
         self.previewArea.noImage()
         self.previewArea.setEnabled(False)
