@@ -19,8 +19,8 @@ class LazyDB:
             self.init()
             self.initialized = True
 
-        return self.__dict__[attr]
+        if not self.__dict__.has_key(attr):
+            raise AttributeError, attr
 
-    def __nonzero__(self):
-        return self.initialized
+        return self.__dict__[attr]
     
