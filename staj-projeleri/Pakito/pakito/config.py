@@ -11,11 +11,11 @@ class Config(KSimpleConfig):
         self.packagerEmail = ""
     
     def read(self):
-        self.setGroup("PackagerInformation")
+        self.setGroup("Packager Information")
         self.packagerName = self.readEntry("Packager Name", "")
         self.packagerEmail = self.readEntry("Packager Email", "")
         
     def write(self):
-        self.setGroup("PackagerInformation")
+        self.setGroup("Packager Information")
         self.writeEntry("Packager Name", self.packagerName)
         self.writeEntry("Packager Email", self.packagerEmail)
