@@ -13,6 +13,12 @@
 * autoxml is hairy and not maintainable. If possible replace it with a simpler and 
   faster xml objectifier implementation.
 
+* We need to update some state file during the pisi operation to implement a transaction
+  like system. And take some actions after last failure of pisi for some reason.
+
+* Messages in log file are not very helpful. Log messages overhaul needed. We need detailed
+  logging.
+
 * Tidy pisi.api to satisfy necessary functions
 
 * Write a new unit test suite
