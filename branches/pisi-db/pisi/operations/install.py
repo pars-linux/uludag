@@ -55,6 +55,10 @@ def install_pkg_names(A, reinstall = False):
                              util.strlist(d))
             A = Ap
 
+    for pkg in A:
+        if not ctx.packagedb.has_package(pkg):
+            raise Exception(_('Cannot find binary package: %s') % pkg)
+
     if len(A)==0:
         ctx.ui.info(_('No packages to install.'))
         return
