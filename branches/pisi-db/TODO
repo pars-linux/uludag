@@ -4,6 +4,10 @@
 
 * Create meaningful Exception classes. Remove "Error" exceptions
 
+* Humanized error messages after Exception work done
+
+* Pisi command outputs overhaul
+
 * If possible remove context from pisi
 
 * autoxml is hairy and not maintainable. If possible replace it with a simpler and 
