@@ -30,3 +30,8 @@ class PreviewArea(QWidget):
         self.previewImage.image = QImage()
         self.previewImage.updateGeometry()
         self.previewImage.repaint()
+	
+    def resizeEvent(self, event):
+	if self.previewImage.fitted:
+	    self.previewImage.fit()
+	

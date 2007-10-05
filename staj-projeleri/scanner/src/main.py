@@ -30,7 +30,7 @@ def AboutData():
         None,
         'bugzilla@pardus.org.tr')
    about_data.addAuthor("Barış Can Daylık", "Main Developer", None)
-   about_data.addAuthor("Aslı Okur", "Developer and Current Maintainer", "asliokur@yahoo.com")
+   about_data.addAuthor("Aslı Okur", "Developer and Current Maintainer", "asli.pardus@gmail.com")
    return about_data
 
 class Main(KDialog):
