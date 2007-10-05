@@ -136,6 +136,7 @@ class PspecWidget(QWidget):
     def syncFromCode(self):
         self.editor.save()
         self.pspec.read(self.editor.editedFile)
+        self.xmlUtil.read() #parse new changes made by editor
         
     def syncFromDesign(self):
         self.xmlUtil.write()

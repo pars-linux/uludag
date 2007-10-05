@@ -218,12 +218,12 @@
     </grid>
 </widget>
 <tabstops>
-    <tabstop>cbRelease</tabstop>
-    <tabstop>cbToFrom</tabstop>
-    <tabstop>leCondition</tabstop>
     <tabstop>leDependency</tabstop>
     <tabstop>btnOk</tabstop>
     <tabstop>btnCancel</tabstop>
+    <tabstop>cbRelease</tabstop>
+    <tabstop>cbToFrom</tabstop>
+    <tabstop>leCondition</tabstop>
     <tabstop>btnHelp</tabstop>
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>

@@ -27,8 +27,7 @@ class sourceWidget(SourceWidgetUI):
 
         self.lePackager.setPaletteForegroundColor(QColor("black"))
         self.lePackager.setPaletteBackgroundColor(QColor("white"))
-        #self.lePackager.setValidator(QRegExpValidator(QRegExp(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,4}$"), self))
-      
+              
         self.connect(self.pbAddSummary, SIGNAL("clicked()"), self.slotAddSummary)
         self.connect(self.pbRemoveSummary, SIGNAL("clicked()"), self.slotRemoveSummary)
         self.connect(self.pbBrowseSummary, SIGNAL("clicked()"), self.slotBrowseSummary)
