@@ -19,6 +19,7 @@ from kparts import createReadOnlyPart
 import os
 import shutil
 from threading import Thread
+import fcntl
 
 # PiSi imports
 import pisi.api
@@ -42,11 +43,10 @@ class MainWindow(KParts.MainWindow):
         self.actionsTab = None
         self.tempDir = None
         self.realDir = None
-#        self.toolBar = QToolBar(self)
-#        self.toolBar.setLabel("Build Operations")
+        self.pisithread = None
 	    
         # main area
-        self.mainWidget =  QSplitter(self)
+        self.mainWidget = QSplitter(self)
         self.mainWidget.setOrientation(Qt.Vertical)
         self.mainWidget.setHandleWidth(4)
         self.setCentralWidget(self.mainWidget)
@@ -71,18 +71,16 @@ class MainWindow(KParts.MainWindow):
         self.doActions()
         self.disableOperations()
         
-        #prepare pisi
-        import fcntl
-         
+        # get a pipe for OutputTab<-> PiSi communication
+        
         self.pipeReadEnd, self.pipeWriteEnd = os.pipe()
-        fcntl.fcntl(self.pipeReadEnd, fcntl.F_SETFL, os.O_NONBLOCK)
+        fcntl.fcntl(self.pipeReadEnd, fcntl.F_SETFL, os.O_NONBLOCK) #make it non-blocking to use qsocketnotifier 
         self.sockNotifier = QSocketNotifier(self.pipeReadEnd, QSocketNotifier.Read, self)
-        self.connect(self.sockNotifier, SIGNAL("activated(int)"), self.sockHandle)
-            
-        self.pisithread = None
+        self.connect(self.sockNotifier, SIGNAL("activated(int)"), self.sockHandle)        
         
         self.connect(qApp, SIGNAL("shutDown()"), self.exit)
         
+        #TODO: setup'ta kdedir'e konulcak, alttakine gerek kalmayacak
         self.setXMLFile(os.getcwd() + "/pakitoui.rc")
         self.createShellGUI()
 
@@ -488,12 +486,20 @@ class MainWindow(KParts.MainWindow):
         self.pspecTab.sourcePage.cbType.setCurrentText(ext)
     
     def slotSettings(self):
+        from pakito.config import Config
+        
         dia = OptionsDialog(self)
-        dia.exec_loop()
+        conf = Config()
+        conf.read()
+        dia.leName.setText(conf.packagerName)
+        dia.leEmail.setText(conf.packagerEmail)
+        if dia.exec_loop() == KDialog.Accepted:
+            conf.packagerName = dia.leName.text()
+            conf.packagerEmail = dia.leEmail.text()
+            conf.write()
     
     def slotConfigureKeys(self):
         KKeyDialog.configure(self.actionCollection())
-
     
     def doActions(self):                
         # actions

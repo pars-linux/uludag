@@ -11,4 +11,3 @@ class OptionsDialog(OptionsDialogUI):
         OptionsDialogUI.__init__(self, parent, name)
         self.connect(self.pbOk, SIGNAL("clicked()"), self, SLOT("accept()"))
         self.connect(self.pbCancel, SIGNAL("clicked()"), self, SLOT("reject()"))
-
