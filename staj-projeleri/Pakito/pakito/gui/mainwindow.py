@@ -30,6 +30,8 @@ from pakito.gui.pspecWidget.pspecWidget import PspecWidget
 from pakito.gui.actionsWidget import ActionsWidget
 from pakito.gui.multitabwidget import MultiTabWidget
 from pakito.gui.optionsDialog import OptionsDialog
+import pakito.templates 
+from pakito.config import Config
 
 class MainWindow(KParts.MainWindow):
     """ Main window of the application """
@@ -135,6 +137,7 @@ class MainWindow(KParts.MainWindow):
         self.actionSave.setEnabled(True)
         
     def new(self):
+        import datetime
         self.closePacket()
         
         tempDir = "/tmp/packager-%d/" % os.getpid()
@@ -142,11 +145,25 @@ class MainWindow(KParts.MainWindow):
         if not os.path.isdir(tempDir):
             os.mkdir(tempDir)
             
+        conf = Config()
+        conf.read()
         tempDir += "newPackage"
         os.mkdir(tempDir)
-        shutil.copyfile("pspec-template.xml", tempDir + "/pspec.xml")
-        shutil.copyfile("actions-template.py", tempDir + "/actions.py")
+        templateDict = {"package": "PackageName", "homepage": "http://www.pardus.org.tr",
+                 "packagername": conf.packagerName, "packageremail": conf.packagerEmail,
+                 "license": "GPL-2", "isa": "isA",
+                 "summary": "Summary", "description": "Description",
+                 "archivetype": "targz", "archiveuri": "URI",
+                 "archivesha1": "SHA1", "date": str(datetime.date.today()), "version": "1.0"}        
+        
         self.tempDir = tempDir
+        
+        f = open(tempDir + "/pspec.xml", "w")
+        f.write(pakito.templates.pspecTemplate % templateDict)
+        f.close()
+        f = open(tempDir + "/actions.py", "w")
+        f.write(pakito.templates.actionspyTemplate % templateDict)
+        f.close()
             
         #create tabs
         self.pspecTab = PspecWidget(self.twTabs, self.tempDir + "/pspec.xml")
