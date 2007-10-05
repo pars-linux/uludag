@@ -2,7 +2,6 @@ TODO - updated:
 
 + KDE widgetları kullanılmalı (KApp, KToolBar, KFileDialog vb)
 + Toolbar için ikonlar ve tooltip gerekli
- (Hala Scan ve Preview için Icon lazım)
 + Save için dosya adı girilebilmeli 
 - Eski bir dosya varsa üzerine yazmamalı
 + Scan sırasında bir progress bar gösterilmeli (Busy indicatorda sorun var)
@@ -20,7 +19,8 @@ yapılabilir.
 şekilde kalacak biçimde tarama.
 - Sağa sola döndürme.
 - Diapozitif dianegatif modları
-- Preview alanı pencere boyu değişince otomatik değişmiyor.
++ Preview alanı pencere boyu değişince otomatik değişmeli. (Sadece Fit Scan Area Modu
+açıkken otomatik değişiyor, diğer modlarda eskisi gibi)
 
 Bir de bazen rastgele olarak resim yerine gürültü çıkıyor, biraz daha bakıp
 inceleyeceğim.

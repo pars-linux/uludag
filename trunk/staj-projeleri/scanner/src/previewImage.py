@@ -25,6 +25,7 @@ class PreviewImage(QWidget):
         self.scaleFactor = 1
         self.selectionExists = False
         self.needsReposition = False
+	self.fitted = True
     
         self.pixmap = QPixmap(self.initImage.width(),self.initImage.height())
     
@@ -258,12 +259,14 @@ class PreviewImage(QWidget):
 	self.updateGeometry()
         self.needsReposition = True
         self.update()
+	self.fitted = False
 	
     def zoomin(self):
         self.scaleFactor *= 1.1
         self.updateGeometry()
         self.needsReposition = True
         self.update()
+	self.fitted = False
         
 
     def zoomout(self):
@@ -271,6 +274,7 @@ class PreviewImage(QWidget):
         self.updateGeometry()
         self.needsReposition = True
         self.update()
+	self.fitted = False
         
 
     def fitSelect(self):
@@ -281,16 +285,18 @@ class PreviewImage(QWidget):
             widthImage = self.br_X - self.tl_X
             heightImage = self.br_Y - self.tl_Y
             
-            sc = float(width) / widthImage
-            if sc > float(height)/heightImage:
-                sc = float(height)/heightImage
-            
-            self.scaleFactor = sc
-            
-            self.updateGeometry()
-            self.needsReposition = True
-            self.update()
-        
+	    self.fitted = False
+	    
+	    if (widthImage != 0):
+	        sc = float(width) / widthImage
+	        if(heightImage != 0):
+		    if sc > float(height)/heightImage:
+		        sc = float(height)/heightImage
+	        self.scaleFactor = sc
+ 
+                self.updateGeometry()
+                self.needsReposition = True
+                self.update()
 
     def fit(self):
         width = self.parent.width()
@@ -298,12 +304,13 @@ class PreviewImage(QWidget):
         
         widthImage = self.initImage.width()
         heightImage = self.initImage.height()
+	self.fitted = True
         
-        sc = float(width) / widthImage
-        if sc > float(height)/heightImage:
-            sc = float(height)/heightImage
-        
-        self.scaleFactor = sc
-        
-        self.update()
-        self.updateGeometry()
+	if (widthImage != 0):
+	    sc = float(width) / widthImage
+	    if(heightImage != 0):
+	        if sc > float(height)/heightImage:
+		    sc = float(height)/heightImage
+	    self.scaleFactor = sc
+            self.update()
+            self.updateGeometry()

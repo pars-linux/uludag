@@ -103,7 +103,13 @@ class ScanResultMulti(KDialog):
             self.cancelButton.setEnabled(True)
             
     def saveAll(self):
-	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files"
+	#output = QImageIO.outputFormats()
+	#temp = ""
+	#for i in output:
+		#temp += "*." + i + "\n"
+		##if i != output.getLast():
+			##temp += "\n"
+	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files"
 	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
 	self.setCaption(self.__tr("Please Wait"))
 	self.saveAllButton.setEnabled(False)
@@ -113,7 +119,7 @@ class ScanResultMulti(KDialog):
 	self.saveThread.start()
                 
     def saveSelected(self):
-	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files"
+	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files"
 	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
 	self.setCaption(self.__tr("Please Wait"))
 	self.saveAllButton.setEnabled(False)

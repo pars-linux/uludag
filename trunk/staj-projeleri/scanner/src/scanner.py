@@ -43,6 +43,7 @@ class ScanWindow(KMainWindow):
         self.connect(self.options,PYSIGNAL("noDeviceSelected"),self.noDeviceSelected)
 	
 	self.toolBar()
+	self.toolBar().setIconText(KToolBar.IconTextRight)
 	#self.toolBar().setBarPos(KToolBar.Left)
 	self.previewArea = PreviewArea(self.centralWidget())
 	
