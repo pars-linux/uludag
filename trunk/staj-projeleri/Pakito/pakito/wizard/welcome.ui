@@ -1,0 +1,60 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>WelcomePage</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>WelcomePage</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>751</width>
+            <height>135</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Welcome</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;h2&gt;Welcome to the Package Making Wizard!&lt;/h2&gt;</string>
+            </property>
+        </widget>
+        <spacer>
+            <property name="name">
+                <cstring>spacer3</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>40</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="text">
+                <string>This wizard will help you through the package making process, and will automate some tasks. 
+
+Now, you will be asked some questions about the package.</string>
+            </property>
+        </widget>
+    </vbox>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
