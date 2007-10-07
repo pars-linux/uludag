@@ -19,6 +19,8 @@ _ = __trans.ugettext
 import pisi.cli.command as command
 import pisi.context as ctx
 import pisi.util as util
+import pisi.api
+import pisi.db
 
 class ListAvailable(command.Command):
     """List available packages in the repositories
@@ -33,6 +35,8 @@ all repositories.
 
     def __init__(self, args):
         super(ListAvailable, self).__init__(args)
+        self.componentdb = pisi.db.componentdb.ComponentDB()
+        self.packagedb = pisi.db.packagedb.PackageDB()
 
     name = ("list-available", "la")
 
@@ -59,7 +63,7 @@ all repositories.
                 self.print_packages(arg)
         else:
             # print for all repos
-            for repo in ctx.repodb.list_repos():
+            for repo in pisi.api.list_repos():
                 ctx.ui.info(_("Repository : %s\n") % repo)
                 self.print_packages(repo)
         self.finalize()
@@ -68,13 +72,13 @@ all repositories.
 
         component = ctx.get_option('component')
         if component:
-            l = ctx.componentdb.get_packages(component, repo=repo, walk=True)
+            l = self.componentdb.get_packages(component, repo=repo, walk=True)
         else:
-            l = ctx.packagedb.list_packages(repo)
-        installed_list = ctx.installdb.list_installed()
+            l = list(pisi.api.list_available(repo))
+        installed_list = pisi.api.list_installed()
         l.sort()
         for p in l:
-            package = ctx.packagedb.get_package(p, repo)
+            package = self.packagedb.get_package(p, repo)
             if self.options.long:
                 ctx.ui.info(unicode(package))
             else:
