@@ -18,6 +18,7 @@ _ = __trans.ugettext
 
 import pisi.cli.command as command
 import pisi.context as ctx
+import pisi.db
 
 class SearchFile(command.Command):
     """Search for a file
@@ -30,6 +31,7 @@ Finds the installed package which contains the specified file.
 
     def __init__(self, args):
         super(SearchFile, self).__init__(args)
+        self.filesdb = pisi.db.filesdb.FilesDB()
 
     name = ("search-file", "sf")
 
@@ -41,14 +43,12 @@ Finds the installed package which contains the specified file.
                                default=False, help=_("Show only package name"))
         self.parser.add_option_group(group)
 
-    # what does exact mean? -- exa
-    @staticmethod
-    def search_exact(path):
+    def search_file(self, path):
         files = []
         path = path.lstrip('/') #FIXME: this shouldn't be necessary :/
 
-        if ctx.filesdb.has_file(path):
-            files.append(ctx.filesdb.get_file(path))
+        if self.filesdb.has_file(path):
+            files.append(self.filesdb.get_file(path))
 
         if files:
             for (pkg_name, file_path) in files:
@@ -78,6 +78,6 @@ Finds the installed package which contains the specified file.
             import os.path
             if os.path.exists(path):
                 path = os.path.realpath(path)
-            self.search_exact(path)
+            self.search_file(path)
 
         self.finalize()
