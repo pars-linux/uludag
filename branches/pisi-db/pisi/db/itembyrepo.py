@@ -14,31 +14,32 @@ import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
-import pisi.context as ctx
+import pisi.db
 
 class ItemByRepo:
     def __init__(self, dbobj):
         self.dbobj = dbobj
+        self.repodb = pisi.db.repodb.RepoDB()
 
     def has_repo(self, repo):
         return self.dbobj.has_key(repo)
 
     def has_item(self, item, repo=None):
-        for r in item_repos(repo):
+        for r in self.item_repos(repo):
             if self.dbobj.has_key(r) and self.dbobj[r].has_key(item):
                 return True
 
         return False
 
     def which_repo(self, item):
-        for r in ctx.repodb.list_repos():
+        for r in self.repodb.list_repos():
             if self.dbobj.has_key(r) and self.dbobj[r].has_key(item):
                 return r
 
         raise Exception(_("Item not found"))
 
     def get_item_repo(self, item, repo=None):
-        for r in item_repos(repo):
+        for r in self.item_repos(repo):
             if self.dbobj.has_key(r) and self.dbobj[r].has_key(item):
                 return self.dbobj[r][item], r
 
@@ -50,7 +51,7 @@ class ItemByRepo:
 
     def get_item_keys(self, repo=None):
         items = []
-        for r in item_repos(repo):
+        for r in self.item_repos(repo):
             if not self.has_repo(r):
                 raise Exception(_('Repository %s does not exist.') % repo)
 
@@ -61,14 +62,14 @@ class ItemByRepo:
 
     def get_item_values(self, repo=None):
         items = []
-        for r in item_repos(repo):
+        for r in self.item_repos(repo):
             if not self.has_repo(r):
                 raise Exception(_('Repository %s does not exist.') % repo)
             items.extend(self.dbobj[r])
         return list(set(items))
 
-def item_repos(repo=None):
-    repos = ctx.repodb.list_repos()
-    if repo:
-        repos = [repo]
-    return repos
+    def item_repos(self, repo=None):
+        repos = self.repodb.list_repos()
+        if repo:
+            repos = [repo]
+        return repos
