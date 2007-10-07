@@ -18,6 +18,7 @@ _ = __trans.ugettext
 
 import pisi.cli.command as command
 import pisi.context as ctx
+import pisi.db
 
 class ListSources(command.Command):
     """List available sources
@@ -30,6 +31,7 @@ Gives a brief list of sources published in the repositories.
 
     def __init__(self, args):
         super(ListSources, self).__init__(args)
+        self.sourcedb = pisi.db.sourcedb.SourceDB()
 
     name = ("list-sources", "ls")
 
@@ -43,10 +45,10 @@ Gives a brief list of sources published in the repositories.
 
         self.init(database = True, write = False)
 
-        l = ctx.sourcedb.list_sources()
+        l = self.sourcedb.list_sources()
         l.sort()
         for p in l:
-            sf, repo = ctx.sourcedb.get_spec_repo(p)
+            sf, repo = self.sourcedb.get_spec_repo(p)
             if self.options.long:
                 ctx.ui.info('[Repository: ' + repo + ']')
                 ctx.ui.info(unicode(sf.source))
