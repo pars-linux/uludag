@@ -53,7 +53,7 @@ If no packages are given, checks all installed packages.
         if component:
             #FIXME: pisi api is insufficient to do this
             from sets import Set as set
-            installed = ctx.installdb.list_installed()
+            installed = pisi.api.list_installed()
             component_pkgs = ctx.componentdb.get_union_packages(component, walk=True)
             pkgs = list(set(installed) & set(component_pkgs))
         elif self.args:

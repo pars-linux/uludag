@@ -20,6 +20,7 @@ import pisi.cli.command as command
 import pisi.context as ctx
 import pisi.util as util
 import pisi.api
+import pisi.db
 
 class Info(command.Command):
     """Display package information
@@ -32,6 +33,9 @@ Usage: info <package1> <package2> ... <packagen>
 
     def __init__(self, args):
         super(Info, self).__init__(args)
+        self.installdb = pisi.db.installdb.InstallDB()
+        self.componentdb = pisi.db.componentdb.ComponentDB()
+        self.packagedb = pisi.db.packagedb.PackageDB()
 
     name = ("info", None)
 
@@ -70,8 +74,8 @@ Usage: info <package1> <package2> ... <packagen>
         # info of components
         if components:
             for name in components:
-                if ctx.componentdb.has_component(name):
-                    component = ctx.componentdb.get_union_component(name)
+                if self.componentdb.has_component(name):
+                    component = self.componentdb.get_union_component(name)
                     if self.options.xml:
                         index.add_component(component)
                     else:
@@ -130,7 +134,7 @@ Usage: info <package1> <package2> ... <packagen>
         self.print_pkginfo(metadata, files)
         
     def installdb_info(self, package):
-        if ctx.installdb.has_package(package):
+        if self.installdb.has_package(package):
             metadata, files, repo = pisi.api.info_name(package, True)
 
             if self.options.files or self.options.files_path:
@@ -142,17 +146,17 @@ Usage: info <package1> <package2> ... <packagen>
             else:
                 ctx.ui.info(_('Installed package:'))
                 
-            self.print_metadata(metadata, ctx.installdb)
+            self.print_metadata(metadata, self.installdb)
         else:
             ctx.ui.info(_("%s is not installed") % package)
 
     def packagedb_info(self, package):
-        if ctx.packagedb.has_package(package):
+        if self.packagedb.has_package(package):
             metadata, files, repo = pisi.api.info_name(package, False)
             if self.options.short:
                 ctx.ui.info(_('[repo] '), noln=True)
             else:
                 ctx.ui.info(_('Package found in %s repository:') % repo)
-            self.print_metadata(metadata, ctx.packagedb)
+            self.print_metadata(metadata, self.packagedb)
         else:
             ctx.ui.info(_("%s is not found in repositories") % package)
