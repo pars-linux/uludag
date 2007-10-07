@@ -19,6 +19,7 @@ _ = __trans.ugettext
 import pisi.cli.command as command
 import pisi.context as ctx
 import pisi.api
+import pisi.db
 
 class ListUpgrades(command.Command):
     """List packages to be upgraded
@@ -31,6 +32,8 @@ Lists the packages that will be upgraded.
 
     def __init__(self, args):
         super(ListUpgrades, self).__init__(args)
+        self.componentdb = pisi.db.componentdb.ComponentDB()
+        self.installdb = pisi.db.installdb.InstallDB()
 
     name = ("list-upgrades", "lu")
 
@@ -55,7 +58,7 @@ Lists the packages that will be upgraded.
         if component:
             #FIXME: PiSi api is insufficient to do this
             from sets import Set as set
-            component_pkgs = ctx.componentdb.get_union_packages(component, walk=True)
+            component_pkgs = self.componentdb.get_union_packages(component, walk=True)
             upgradable_pkgs = list(set(upgradable_pkgs) & set(component_pkgs))
 
         if not upgradable_pkgs:
@@ -66,8 +69,8 @@ Lists the packages that will be upgraded.
             ctx.ui.info(_('Package Name     |St|   Version|  Rel.| Build|  Distro|             Date'))
             print         '========================================================================'
         for pkg in upgradable_pkgs:
-            package = ctx.installdb.get_package(pkg)
-            inst_info = ctx.installdb.get_info(pkg)
+            package = self.installdb.get_package(pkg)
+            inst_info = self.installdb.get_info(pkg)
             if self.options.long:
                 ctx.ui.info(package)
                 print inst_info
