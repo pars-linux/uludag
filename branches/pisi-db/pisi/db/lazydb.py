@@ -10,9 +10,16 @@
 # Please read the COPYING file.
 #
 
-class LazyDB:
+class Singleton(object):
+    def __new__(type):
+        if not '_the_instance' in type.__dict__:
+            type._the_instance = object.__new__(type)
+        return type._the_instance
+
+class LazyDB(Singleton):
     def __init__(self):
-        self.initialized = False
+        if not self.__dict__.has_key("initialized"):
+            self.initialized = False
     
     def __getattr__(self, attr):
         if not self.initialized:
@@ -23,4 +30,3 @@ class LazyDB:
             raise AttributeError, attr
 
         return self.__dict__[attr]
-    
