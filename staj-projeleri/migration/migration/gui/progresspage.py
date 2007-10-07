@@ -9,6 +9,8 @@
 # any later version.
 #
 
+import logging
+
 # KDE-Qt Modules
 from qt import *
 from kdecore import *
@@ -142,15 +144,15 @@ class Operation(QHBoxLayout):
         self.progress += steps
         if stat == ProgressPage.OK:
             if log:
-                print i18n("OK:"), log
+                logging.info(log)
             self.OKs += 1
         elif stat == ProgressPage.WARNING:
             if log:
-                print i18n("WARNING:"), log
+                logging.warning(log)
             self.warnings += 1
         elif stat == ProgressPage.ERROR:
             if log:
-                print i18n("ERROR:"), log.__class__, "(", log.__doc__, ") :", log
+                logging.error(log.__class__ + "(" + log.__doc__ + ") :" + log)
             self.errors += 1
         if self.progress >= self.steps:
             if self.errors > 0:

@@ -12,6 +12,7 @@
 import os
 import sys
 import thread
+import logging
 
 # KDE-Qt Modules
 from qt import *
@@ -38,7 +39,13 @@ class MigrationWizard(KWizard):
         self.kapp = app
         self.resize(700, 500)
         self.setCaption(i18n("Pardus Migration Tool"))
-        # TODO : load icon
+        # Start logging:
+        logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(levelname)-8s %(message)s',
+                        datefmt='%H:%M:%S',
+                        filename='/tmp/migration.log',
+                        filemode='w')
+        logging.info("Migration Tool Started")
         # i18n:
         self.nextButton().setText(i18n("Next"))
         self.backButton().setText(i18n("Back"))
@@ -133,6 +140,7 @@ class MigrationWizard(KWizard):
         if len(self.users) == 0:
             message = i18n("Migration tool couldn't find any old users in your computer. You can't use this aplication.")
             QMessageBox.critical(self, i18n("No User"), message, QMessageBox.Ok, QMessageBox.NoButton)
+            logging.error("No User")
             sys.exit()
         for user in self.users:
             part, parttype, username, userdir = user
@@ -147,6 +155,8 @@ class MigrationWizard(KWizard):
             self.sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
             self.sources = info.userInfo(self.sources)
             self.destinations = info.localInfo()
+            logging.debug("Sources: " + self.sources.__str__())
+            logging.debug("Destinations: " + self.destinations.__str__())
             # Update old settings page with the new one:
             self.removePage(self.optionspage)
             self.optionspage = OptionsPage(self.sources, self.destinations)
@@ -158,6 +168,7 @@ class MigrationWizard(KWizard):
             KWizard.next(self)
         elif self.currentPage() == self.optionspage:
             self.options = self.optionspage.getOptions()
+            logging.debug("Options: " + self.options.__str__())
             KWizard.next(self)
         elif self.currentPage() == self.filespage:
             # Update old progress page with the new one:
