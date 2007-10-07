@@ -33,7 +33,7 @@ import pisi.replace
 import pisi.conflict
 import pisi.component as component
 import pisi.util as util
-
+import pisi.db
 
 class Error(pisi.Error):
     pass
@@ -182,8 +182,9 @@ class Package:
     debug_package = False
 
     def runtimeDependencies(self):
+        componentdb = pisi.db.componentdb.ComponentDB()
         deps = self.packageDependencies
-        deps += [ ctx.componentdb.get_component[x].packages for x in self.componentDependencies ]
+        deps += [ componentdb.get_component[x].packages for x in self.componentDependencies ]
         return deps
 
     def pkg_dir(self):
