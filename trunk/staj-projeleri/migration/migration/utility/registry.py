@@ -114,9 +114,7 @@ class Key:
                 position = 4096 + dataindex + 4
                 data = self.data[position:(position + datasize)]
                 
-                mylist = data.split("\x00")
-                value = "".join(mylist)
-                dictionary[field] = value
+                dictionary[field] = data.decode("utf-16").replace("\x00","")
             
             if valtype == 4 and vk == "vk":     # valuetype = REG_DWORD
                 field = self.data[(position + 24):(position + 24 + namesize)]
