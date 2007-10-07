@@ -19,6 +19,7 @@ _ = __trans.ugettext
 import pisi.cli.command as command
 import pisi.context as ctx
 import pisi.api
+import pisi.db
 
 class ListInstalled(command.Command):
     """Print the list of all installed packages
@@ -30,6 +31,8 @@ Usage: list-installed
 
     def __init__(self, args):
         super(ListInstalled, self).__init__(args)
+        self.installdb = pisi.db.installdb.InstallDB()
+        self.componentdb = pisi.db.componentdb.ComponentDB()
 
     name = ("list-installed", "li")
 
@@ -48,13 +51,13 @@ Usage: list-installed
 
     def run(self):
         self.init(database = True, write = False)
-        installed = ctx.installdb.list_installed()
+        installed = self.installdb.list_installed()
 
         component = ctx.get_option('component')
         if component:
             #FIXME: pisi api is insufficient to do this
             from sets import Set as set
-            component_pkgs = ctx.componentdb.get_union_packages(component, walk=True)
+            component_pkgs = self.componentdb.get_union_packages(component, walk=True)
             installed = list(set(installed) & set(component_pkgs))
 
         installed.sort()
@@ -62,8 +65,8 @@ Usage: list-installed
             ctx.ui.info(_('Package Name     |St|   Version|  Rel.| Build|  Distro|             Date'))
             print         '========================================================================'
         for pkg in installed:
-            package = ctx.installdb.get_package(pkg)
-            inst_info = ctx.installdb.get_info(pkg)
+            package = self.installdb.get_package(pkg)
+            inst_info = self.installdb.get_info(pkg)
             if self.options.long:
                 ctx.ui.info(unicode(package))
                 ctx.ui.info(unicode(inst_info))
