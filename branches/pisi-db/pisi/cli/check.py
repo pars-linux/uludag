@@ -19,6 +19,7 @@ _ = __trans.ugettext
 import pisi.api
 import pisi.cli.command as command
 import pisi.context as ctx
+import pisi.db
 
 class Check(command.Command):
     """Verify installation
@@ -37,6 +38,8 @@ If no packages are given, checks all installed packages.
 
     def __init__(self, args):
         super(Check, self).__init__(args)
+        self.installdb = pisi.db.installdb.InstallDB()
+        self.componentdb = pisi.db.componentdb.ComponentDB()
 
     name = ("check", None)
 
@@ -54,17 +57,17 @@ If no packages are given, checks all installed packages.
             #FIXME: pisi api is insufficient to do this
             from sets import Set as set
             installed = pisi.api.list_installed()
-            component_pkgs = ctx.componentdb.get_union_packages(component, walk=True)
+            component_pkgs = self.componentdb.get_union_packages(component, walk=True)
             pkgs = list(set(installed) & set(component_pkgs))
         elif self.args:
             pkgs = self.args
         else:
             ctx.ui.info(_('Checking all installed packages'))
-            pkgs = ctx.installdb.list_installed()
+            pkgs = pisi.api.list_installed()
 
         for pkg in pkgs:
             ctx.ui.info(_('* Checking %s... ') % pkg, noln=True)
-            if ctx.installdb.has_package(pkg):
+            if self.installdb.has_package(pkg):
                 corrupt = pisi.api.check(pkg)
                 if corrupt:
                     ctx.ui.info(_('\nPackage %s is corrupt.') % pkg)
