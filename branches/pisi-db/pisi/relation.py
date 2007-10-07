@@ -15,8 +15,8 @@ __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
 import pisi
-import pisi.context as ctx
 import pisi.version
+import pisi.db
 import pisi.pxml.autoxml as autoxml
 
 class Relation:
@@ -50,10 +50,11 @@ class Relation:
         return ret
 
 def installed_package_satisfies(relation):
+    installdb = pisi.db.installdb.InstallDB()
     pkg_name = relation.package
-    if not ctx.installdb.has_package(pkg_name):
+    if not installdb.has_package(pkg_name):
         return False
     else:
-        pkg = ctx.installdb.get_package(pkg_name)
+        pkg = installdb.get_package(pkg_name)
         (version, release) = (pkg.version, pkg.release)
         return relation.satisfies_relation(version, release)
