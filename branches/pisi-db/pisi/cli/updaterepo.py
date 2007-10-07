@@ -53,7 +53,7 @@ If no repository is given, all repositories are updated.
         if self.args:
             repos = self.args
         else:
-            repos = ctx.repodb.list_repos()
+            repos = pisi.api.list_repos()
 
         for repo in repos:
             pisi.api.update_repo(repo, ctx.get_option('force'))
