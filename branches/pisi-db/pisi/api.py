@@ -143,6 +143,10 @@ def finalize():
         ctx.initialized = False
         ctx.enable_keyboard_interrupts()
 
+def list_pending():
+    """Return a set of configuration pending package names."""
+    return set(ctx.installdb.list_pending())
+
 def list_installed():
     """Return a set of installed package names."""
     return set(ctx.installdb.list_installed())

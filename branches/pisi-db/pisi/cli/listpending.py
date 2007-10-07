@@ -33,7 +33,7 @@ Lists packages waiting to be configured.
     def run(self):
         self.init(database = True, write = False)
 
-        A = ctx.installdb.list_pending()
+        A = pisi.api.list_pending()
         order = pisi.api.generate_pending_order(A)
 
         if len(order):
