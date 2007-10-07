@@ -19,6 +19,7 @@ _ = __trans.ugettext
 import pisi.cli.command as command
 import pisi.context as ctx
 import pisi.api
+import pisi.db
 
 class Remove(command.PackageOp):
     """Remove PiSi packages
@@ -34,6 +35,7 @@ expanded to package names.
 
     def __init__(self, args):
         super(Remove, self).__init__(args)
+        self.component = pisi.db.componentdb.ComponentDB()
 
     name = ("remove", "rm")
 
@@ -55,8 +57,8 @@ expanded to package names.
         packages = []
         if components:
             for name in components:
-                if ctx.componentdb.has_component(name):
-                    packages.extend(ctx.componentdb.get_union_packages(name, walk=True))
+                if self.componentdb.has_component(name):
+                    packages.extend(self.componentdb.get_union_packages(name, walk=True))
         packages.extend(self.args)
 
         pisi.api.remove(packages)
