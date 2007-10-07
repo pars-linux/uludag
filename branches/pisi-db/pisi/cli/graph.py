@@ -20,6 +20,7 @@ import pisi
 import pisi.api
 import pisi.cli.command as command
 import pisi.context as ctx
+import pisi.db
 
 class Graph(command.Command):
     """Graph package relations
@@ -61,24 +62,31 @@ the package in graphviz format to 'pgraph.dot'.
     def run(self):
         self.init(write=False)
         if not ctx.get_option('installed'):
+            # Graph from package database
+            packagedb = pisi.db.packagedb.PackageDB()
+
             if ctx.get_option('repository'):
                 repo = ctx.get_option('repository')
                 ctx.ui.info(_('Plotting packages in repository %s') % repo)
             else:
-                packagedb = ctx.packagedb
+                repo = None
+                ctx.ui.info(_('Plotting a graph of relations among all repository packages'))
+
             if self.args:
                 a = self.args
             else:
-                ctx.ui.info(_('Plotting a graph of relations among all repository packages'))
-                a = ctx.packagedb.list_packages(repo)
+                a = pisi.api.list_available(repo)
         else:
+            # Graph from installed packages database
+            packagedb = ctx.installdb
+
             if self.args:
                 a = self.args
             else:
                 # if A is empty, then graph all packages
                 ctx.ui.info(_('Plotting a graph of relations among all installed packages'))
-                a = ctx.installdb.list_installed()
-            packagedb = ctx.installdb
+                a = pisi.api.list_installed()
+
         g = pisi.api.package_graph(a, packagedb,
                                    ignore_installed = ctx.get_option('ignore_installed'))
         g.write_graphviz(file(ctx.get_option('output'), 'w'))

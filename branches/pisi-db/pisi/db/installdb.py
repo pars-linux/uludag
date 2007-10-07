@@ -150,8 +150,7 @@ class InstallDB(lazydb.LazyDB):
         return pisi.util.join_path(ctx.config.lib_dir(), 'package',
                     pkg + '-' + version + '-' + release)
 
-    # FIXME: notused is for pgraph.py:get_package
-    def get_package(self, package, notused=None):
+    def get_package(self, package):
         metadata = pisi.metadata.MetaData()
         metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
         metadata.read(metadata_xml)
