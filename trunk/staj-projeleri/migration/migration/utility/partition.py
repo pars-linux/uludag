@@ -10,6 +10,7 @@
 #
 
 import os
+import logging
 
 import registry
 
@@ -17,7 +18,12 @@ def getPartitions():
     "get all partitions in the form: '/mnt/hda9'"
     partitions=[]
     try:
+        f = open("/etc/fstab")
+        logging.debug("/etc/fstab :\n" + f.read())
+        f.close()
         f = open("/proc/mounts")
+        logging.debug("/proc/mounts :\n" + f.read())
+        f.seek(0)
     except:
         return []
     for line in f:
@@ -27,6 +33,9 @@ def getPartitions():
         mountdir = part[1]
         if os.access(mountdir, os.R_OK):
             partitions.append(mountdir)
+            logging.debug("access ok: " + mountdir)
+        else:
+            logging.debug("no access: " + mountdir)
     return partitions
 
 def isWindowsPart(partition):
@@ -34,7 +43,9 @@ def isWindowsPart(partition):
     possible_files=["boot.ini","command.com","bootmgr"]
     for a in possible_files:
         if os.path.exists(os.path.join(partition,a)):
+            logging.debug("windows part: " + partition)
             return True
+    logging.debug("not windows part: " + partition)
     return False
 
 def getWindowsUsers(partition):
@@ -47,15 +58,18 @@ def getWindowsUsers(partition):
         possiblehivefile = os.path.join(partition,possiblehivefile)
         if os.path.isfile(possiblehivefile):
             hivefile = possiblehivefile
+            logging.debug("registry exists: " + hivefile)
             break
     # If found, get users:
     if hivefile != "":
-        hive = registry.Hive(os.path.join(partition, hivefile))
+        hive = registry.Hive(hivefile)
         # Get profile list:
         try:
             key = hive.getKey("Microsoft\\Windows NT\\CurrentVersion\\ProfileList")
             subkeys = key.subKeys()
+            logging.debug("registry opened: " + hivefile)
         except:
+            logging.debug("registry cannot be opened: " + hivefile)
             return []
         # Control each profile:
         for subkey in subkeys:
@@ -67,19 +81,28 @@ def getWindowsUsers(partition):
             except:
                 continue
             if not (values.has_key("ProfileImagePath") and values.has_key("Flags")):
+                logging.debug("not a user: " + subkey)
                 continue
             path = values["ProfileImagePath"]
             if values["Flags"] == 0:
+                logging.debug("regular user: " + path)
                 path = path.split("\\",1)[1]
                 path = path.replace("\\", "/")
                 path = os.path.join(partition, path)
                 if os.path.isfile(os.path.join(path, "NTUSER.DAT")):
                     # User exists, append to list:
                     username = os.path.basename(path)
+                    logging.info("User Found: " + path)
                     if os.path.isfile(os.path.join(partition, "bootmgr")):
                         users.append((partition, "Windows Vista", username, path))
                     else:
                         users.append((partition, "Windows XP", username, path))
+                else:
+                    logging.debug("user registry does not exists: " + path)
+            else:
+                logging.debug("not a regular user: " + subkey)
+    else:
+        logging.debug("registry does not exists on: " + partition)
     return users
 
 def allUsers():

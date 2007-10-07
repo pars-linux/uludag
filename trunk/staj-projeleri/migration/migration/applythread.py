@@ -18,6 +18,7 @@ from kdeui import *
 import os
 import thread
 import time
+import logging
 
 # Special Modules
 import utility.wall
@@ -64,18 +65,18 @@ def run(wizard):
         try:
             bookmark.getFFBookmarks(wizard.options["Firefox Profile Path"])
         except:
-            print i18n("WARNING:"), i18n("Firefox bookmarks cannot be loaded.")
+            logging.warning(i18n("Firefox bookmarks cannot be loaded."))
         else:
-            print i18n("OK:"), i18n("Firefox bookmarks loaded.")
+            logging.info(i18n("Firefox bookmarks loaded."))
         wizard.progresspage.makeProgress(10)
     # Internet Explorer:
     if wizard.options.has_key("Favorites Path"):
         try:
             bookmark.getIEBookmarks(wizard.options["Favorites Path"])
         except:
-            print i18n("WARNING:"), i18n("Internet Explorer favorites cannot be loaded.")
+            logging.warning(i18n("Internet Explorer favorites cannot be loaded."))
         else:
-            print i18n("OK:"), i18n("Internet Explorer favorites loaded.")
+            logging.info(i18n("Internet Explorer favorites loaded."))
         wizard.progresspage.makeProgress(10)
     # Bookmarks:
     size = bookmark.size()
@@ -91,36 +92,36 @@ def run(wizard):
         try:
             account.getOEAccounts(wizard.options["Windows Mail Path"])
         except:
-            print i18n("WARNING:"), i18n("Windows Mail accounts cannot be loaded.")
+            logging.warning(i18n("Windows Mail accounts cannot be loaded."))
         else:
-            print i18n("OK:"), i18n("Windows Mail accounts loaded.")
+            logging.info(i18n("Windows Mail accounts loaded."))
         wizard.progresspage.makeProgress(15)
     # Thunderbird:
     if wizard.options.has_key("Thunderbird Profile Path"):
         try:
             account.getTBAccounts(wizard.options["Thunderbird Profile Path"])
         except:
-            print i18n("WARNING:"), i18n("Thunderbird accounts cannot be loaded.")
+            logging.warning(i18n("Thunderbird accounts cannot be loaded."))
         else:
-            print i18n("OK:"), i18n("Thunderbird accounts loaded.")
+            logging.info(i18n("Thunderbird accounts loaded."))
         wizard.progresspage.makeProgress(15)
     # MSN Messenger Accounts:
     if wizard.options.has_key("Contacts Path"):
         try:
             account.getMSNAccounts(wizard.options["Contacts Path"])
         except:
-            print i18n("WARNING:"), i18n("MSN accounts cannot be loaded.")
+            logging.warning(i18n("MSN accounts cannot be loaded."))
         else:
-            print i18n("OK:"), i18n("MSN accounts loaded.")
+            logging.info(i18n("MSN accounts loaded."))
         wizard.progresspage.makeProgress(5)
     # GTalk Accounts:
     if wizard.options.has_key("GTalk Key"):
         try:
             account.getGTalkAccounts(wizard.options["GTalk Key"])
         except:
-            print i18n("WARNING:"), i18n("GTalk accounts cannot be loaded.")
+            logging.warning(i18n("GTalk accounts cannot be loaded."))
         else:
-            print i18n("OK:"), i18n("GTalk accounts loaded.")
+            logging.info(i18n("GTalk accounts loaded."))
         wizard.progresspage.makeProgress(5)
     # Mail Accounts:
     size = account.accountSize(["POP3", "IMAP", "SMTP"])
