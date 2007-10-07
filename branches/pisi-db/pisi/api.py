@@ -182,7 +182,7 @@ def package_graph(A, packagedb, ignore_installed = False):
     while len(B) > 0:
         Bp = set()
         for x in B:
-            pkg = ctx.packagedb.get_package(x)
+            pkg = packagedb.get_package(x)
             #print pkg
             for dep in pkg.runtimeDependencies():
                 if ignore_installed:
