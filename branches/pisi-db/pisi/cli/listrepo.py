@@ -12,6 +12,7 @@
 
 import pisi.cli.command as command
 import pisi.context as ctx
+import pisi.db
 
 class ListRepo(command.Command):
     """List repositories
@@ -24,13 +25,15 @@ Lists currently tracked repositories.
 
     def __init__(self, args):
         super(ListRepo, self).__init__(args)
+        self.repodb = pisi.db.repodb.RepoDB()
 
     name = ("list-repo", "lr")
 
     def run(self):
 
         self.init(database = True, write = False)
-        for repo in ctx.repodb.list_repos():
+        for repo in self.repodb.list_repos():
             ctx.ui.info(repo)
-            print '  ', ctx.repodb.get_repo(repo).indexuri.get_uri()
+            #FIXME: repodb.get_repo(repo).indexuri.get_uri()??? ick!
+            print '  ', self.repodb.get_repo(repo).indexuri.get_uri()
         self.finalize()
