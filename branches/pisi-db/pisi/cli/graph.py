@@ -78,7 +78,7 @@ the package in graphviz format to 'pgraph.dot'.
                 a = pisi.api.list_available(repo)
         else:
             # Graph from installed packages database
-            packagedb = ctx.installdb
+            packagedb = pisi.db.installdb.InstallDB()
 
             if self.args:
                 a = self.args
