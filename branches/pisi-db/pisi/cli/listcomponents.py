@@ -18,6 +18,7 @@ _ = __trans.ugettext
 
 import pisi.cli.command as command
 import pisi.context as ctx
+import pisi.db
 
 class ListComponents(command.Command):
     """List available components
@@ -31,6 +32,7 @@ repositories.
 
     def __init__(self, args):
         super(ListComponents, self).__init__(args)
+        self.componentdb = pisi.db.componentdb.ComponentDB()
 
     name = ("list-components", "lc")
 
@@ -44,10 +46,10 @@ repositories.
 
         self.init(database = True, write = False)
 
-        l = ctx.componentdb.list_components()
+        l = self.componentdb.list_components()
         l.sort()
         for p in l:
-            component = ctx.componentdb.get_component(p)
+            component = self.componentdb.get_component(p)
             if self.options.long:
                 ctx.ui.info(unicode(component))
             else:
