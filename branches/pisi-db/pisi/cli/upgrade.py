@@ -19,6 +19,7 @@ _ = __trans.ugettext
 import pisi.cli.command as command
 import pisi.context as ctx
 import pisi.api
+import pisi.db
 
 class Upgrade(command.PackageOp):
     """Upgrade PiSi packages
@@ -42,6 +43,7 @@ expanded to package names.
 
     def __init__(self, args):
         super(Upgrade, self).__init__(args)
+        self.componentdb = pisi.db.componentdb.ComponentDB()
 
     name = ("upgrade", "up")
 
@@ -98,8 +100,8 @@ expanded to package names.
 
             if not match:
                 # match pattern in component names
-                for compare in fnmatch.filter(ctx.componentdb.list_components(), pattern):
-                    packages = packages - set(ctx.componentdb.get_union_packages(compare, walk=True))
+                for compare in fnmatch.filter(self.componentdb.list_components(), pattern):
+                    packages = packages - set(self.componentdb.get_union_packages(compare, walk=True))
 
         return list(packages)
 
@@ -112,7 +114,7 @@ expanded to package names.
 
         if not ctx.get_option('bypass_update_repo'):
             ctx.ui.info(_('Updating repositories'))
-            repos = ctx.repodb.list_repos()
+            repos = pisi.api.list_repos()
             for repo in repos:
                 pisi.api.update_repo(repo)
         else:
@@ -122,12 +124,12 @@ expanded to package names.
         packages = []
         if components:
             for name in components:
-                if ctx.componentdb.has_component(name):
-                    packages.extend(ctx.componentdb.get_union_packages(name, walk=True))
+                if self.componentdb.has_component(name):
+                    packages.extend(self.componentdb.get_union_packages(name, walk=True))
         packages.extend(self.args)
 
         if packages == []:
-            packages = ctx.installdb.list_installed()
+            packages = pisi.api.list_installed()
 
         if ctx.get_option('exclude_from'):
             packages = self.exclude_from(packages)
