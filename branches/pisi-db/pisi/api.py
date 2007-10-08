@@ -60,6 +60,9 @@ def set_io_streams(stdout=None, stderr=None)
     if stderr:
         ctx.stderr = stderr
 
+def set_comar_sockname(sockname):
+    ctx.comar_sockname = comar_sockname
+
 def init(database = True, write = True,
          options = pisi.config.Options(), ui = None, comar = True,
          stdout = None, stderr = None,
@@ -87,8 +90,6 @@ def init(database = True, write = True,
 
     # TODO: this is definitely not dynamic beyond this point!
     ctx.comar = comar and not ctx.config.get_option('ignore_comar')
-    # This is for YALI, used in comariface.py
-    ctx.comar_sockname = comar_sockname
 
     ctx.ui.debug('PiSi API initialized')
     ctx.initialized = True
