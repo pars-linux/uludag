@@ -21,10 +21,14 @@ import pisi.context as ctx
 import pisi.util as util
 import pisi.ui as ui
 import pisi.conflict
+import pisi.db
 
 def reorder_base_packages(order):
+
+    componentdb = pisi.db.componentdb.ComponentDB()
+    
     """system.base packages must be first in order"""
-    systembase = ctx.componentdb.get_union_component('system.base').packages
+    systembase = componentdb.get_union_component('system.base').packages
 
     systembase_order = []
     nonbase_order = []
@@ -61,10 +65,11 @@ def check_conflicts(order, packagedb):
     return list(C)
 
 def expand_src_components(A):
+    componentdb = pisi.db.componentdb.ComponentDB()
     Ap = set()
     for x in A:
-        if ctx.componentdb.has_component(x):
-            Ap = Ap.union(ctx.componentdb.get_union_component(x).sources)
+        if componentdb.has_component(x):
+            Ap = Ap.union(componentdb.get_union_component(x).sources)
         else:
             Ap.add(x)
     return Ap
@@ -72,11 +77,14 @@ def expand_src_components(A):
 def calculate_download_sizes(order):
     total_size = cached_size = 0
 
-    for pkg in [ctx.packagedb.get_package(name) for name in order]:
+    installdb = pisi.db.installdb.InstallDB()
+    packagedb = pisi.db.packagedb.PackageDB()
+
+    for pkg in [packagedb.get_package(name) for name in order]:
 
         delta = None
-        if ctx.installdb.has_package(pkg.name):
-            (version, release, build) = ctx.installdb.get_version(pkg.name)
+        if installdb.has_package(pkg.name):
+            (version, release, build) = installdb.get_version(pkg.name)
             delta = pkg.get_delta(buildFrom=build)
 
         if delta:
