@@ -18,7 +18,7 @@ def list_repository(request, repo_name):
             pack["deplist"] = dep_dict[pack["package_name"]]
     
     # Returns a rendered HTTP Response of the dictionary
-    return render_to_response('ciftci/ciftci_repodetails.html',
+    return render_to_response('ciftci/ciftci_repo.html',
                               {'pisi_list' : pisi_list,
                                'dep_dict'  : dep_dict,
                                'repo_name' : repo.repo_name,
