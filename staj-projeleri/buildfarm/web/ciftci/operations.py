@@ -21,6 +21,8 @@ def getPisiList(path):
     for l in os.listdir(path):
         if os.path.splitext(l)[1] == '.pisi':
             pisi_list.append({"package_name":l})
+
+    pisi_list.sort()
     return pisi_list
 
 def getRuntimeDeps(p):
@@ -36,12 +38,4 @@ def getPisiDict(path):
         d[ps["package_name"]] = map(lambda x: x.package, _d[ps["package_name"]])
 
     return d
-
-def output(d):
-    for x in d:
-        print "package : %s" % x
-        if d[x]:
-            for dep in d[x]:
-                print "\t=> %s versionFrom : %s" % (dep.package, str(dep.versionFrom))
-
 
