@@ -51,23 +51,14 @@ import pisi.signalhandler
 class Error(pisi.Error):
     pass
 
+def set_userinterface(ui):
+    ctx.ui = ui
+
 def init(database = True, write = True,
          options = pisi.config.Options(), ui = None, comar = True,
          stdout = None, stderr = None,
          comar_sockname = None,
          signal_handling = True):
-
-    # UI comes first
-
-    if ui is None:
-        # FIXME: api importing and using pisi.cli ????
-        import pisi.cli
-        if options:
-            ctx.ui = pisi.cli.CLI(options.debug, options.verbose)
-        else:
-            ctx.ui = pisi.cli.CLI()
-    else:
-        ctx.ui = ui
 
     # FIXME: something is wrong here... see __init__.py also. Why do we import pisi.api in __init__.py
     import pisi.config

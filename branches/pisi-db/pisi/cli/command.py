@@ -155,10 +155,13 @@ class Command(object):
     def init(self, database = True, write = True):
         """initialize PiSi components"""
 
-        # NB: command imports here or in the command class run fxns
-        import pisi.api
-        pisi.api.init(database = database, write = write, options = self.options,
-                      comar = self.comar)
+        if self.options:
+            ui = pisi.cli.CLI(self.options.debug, self.options.verbose)
+        else:
+            ui = pisi.cli.CLI()
+
+        pisi.api.set_userinterface(ui)
+        pisi.api.init(database = database, write = write, options = self.options, comar = self.comar)
 
     def get_name(self):
         return self.__class__.name
