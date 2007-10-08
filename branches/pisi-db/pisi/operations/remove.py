@@ -23,9 +23,13 @@ import pisi.dependency as dependency
 import pisi.pgraph as pgraph
 import pisi.util as util
 import pisi.ui as ui
+import pisi.db
 
 def remove(A, ignore_dep = False, ignore_safety = False):
     """remove set A of packages from system (A is a list of package names)"""
+
+    componentdb = pisi.db.componentdb.ComponentDB()
+    installdb = pisi.db.installdb.InstallDB()
 
     A = [str(x) for x in A]
 
@@ -33,8 +37,8 @@ def remove(A, ignore_dep = False, ignore_safety = False):
     A_0 = A = set(A)
 
     if not ctx.get_option('ignore_safety') and not ignore_safety:
-        if ctx.componentdb.has_component('system.base'):
-            systembase = set(ctx.componentdb.get_union_component('system.base').packages)
+        if componentdb.has_component('system.base'):
+            systembase = set(componentdb.get_union_component('system.base').packages)
             refused = A.intersection(systembase)
             if refused:
                 ctx.ui.warning(_('Safety switch: cannot remove the following packages in system.base: ') +
@@ -45,7 +49,7 @@ def remove(A, ignore_dep = False, ignore_safety = False):
 
     Ap = []
     for x in A:
-        if ctx.installdb.has_package(x):
+        if installdb.has_package(x):
             Ap.append(x)
         else:
             ctx.ui.info(_('Package %s does not exist. Cannot remove.') % x)
@@ -75,7 +79,7 @@ in the respective order to satisfy dependencies:
     ctx.ui.notify(ui.packagestogo, order = order)
 
     for x in order:
-        if ctx.installdb.has_package(x):
+        if installdb.has_package(x):
             atomicoperations.remove_single(x)
         else:
             ctx.ui.info(_('Package %s is not installed. Cannot remove.') % x)
@@ -84,7 +88,9 @@ def plan_remove(A):
     # try to construct a pisi graph of packages to
     # install / reinstall
 
-    G_f = pgraph.PGraph(ctx.installdb)               # construct G_f
+    installdb = pisi.db.installdb.InstallDB()
+
+    G_f = pgraph.PGraph(installdb)               # construct G_f
 
     # find the (install closure) graph of G_f by package
     # set A using packagedb
@@ -94,11 +100,11 @@ def plan_remove(A):
     while len(B) > 0:
         Bp = set()
         for x in B:
-            rev_deps = ctx.installdb.get_rev_deps(x)
+            rev_deps = installdb.get_rev_deps(x)
             for (rev_dep, depinfo) in rev_deps:
                 # we don't deal with uninstalled rev deps
                 # and unsatisfied dependencies (this is important, too)
-                if ctx.installdb.has_package(rev_dep) and dependency.installed_satisfies_dep(depinfo):
+                if installdb.has_package(rev_dep) and dependency.installed_satisfies_dep(depinfo):
                     if not rev_dep in G_f.vertices():
                         Bp.add(rev_dep)
                         G_f.add_plain_dep(rev_dep, x)
@@ -128,7 +134,10 @@ def remove_conflicting_packages(conflicts):
         raise Exception(_("Conflicts remain"))
 
 def remove_obsoleted_packages():
-    obsoletes = filter(ctx.installdb.has_package, ctx.packagedb.get_obsoletes())
+
+    installdb = pisi.db.installdb.InstallDB()
+    packagedb = pisi.db.packagedb.PackageDB()
+    obsoletes = filter(installdb.has_package, packagedb.get_obsoletes())
     if obsoletes:
         if remove(obsoletes, ignore_dep=True, ignore_safety=True):
             raise Exception(_("Obsoleted packages remaining"))
