@@ -18,7 +18,7 @@ import pisi.constants
 import pisi.signalhandler
 
 const = pisi.constants.Constants()
-sig = None
+sig = pisi.signalhandler.SignalHandler()
 
 config = None
 

@@ -85,9 +85,6 @@ def init(database = True, write = True,
     else:
         ctx.log = None
 
-    if signal_handling:
-        ctx.sig = pisi.signalhandler.SignalHandler()
-
     # TODO: this is definitely not dynamic beyond this point!
     ctx.comar = comar and not ctx.config.get_option('ignore_comar')
 
