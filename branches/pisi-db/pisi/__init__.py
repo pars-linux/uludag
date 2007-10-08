@@ -50,6 +50,24 @@ def init_logging():
         ctx.loghandler = handler
         ctx.log.setLevel(logging.DEBUG)
 
+def _cleanup():
+    """Close the database cleanly and do other cleanup."""
+    ctx.disable_keyboard_interrupts()
+    if ctx.log:
+        ctx.loghandler.flush()
+        ctx.log.removeHandler(ctx.loghandler)
+            
+    filesdb = pisi.db.filesdb.FilesDB()
+    filesdb.close()
+
+    if ctx.build_leftover and os.path.exists(ctx.build_leftover):
+        os.unlink(ctx.build_leftover)
+
+    ctx.ui.close()
+    ctx.enable_keyboard_interrupts()
+
+atexit.register(_cleanup)
+
 ctx.config = pisi.config.Config(pisi.config.Options())
+ctx.comar = not ctx.config.get_option('ignore_comar')
 init_logging()
-atexit.register(pisi.api._cleanup)

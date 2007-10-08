@@ -60,36 +60,14 @@ def set_io_streams(stdout=None, stderr=None):
     if stderr:
         ctx.stderr = stderr
 
+def set_comar(enable):
+    ctx.comar = enable
+
 def set_comar_sockname(sockname):
     ctx.comar_sockname = sockname
 
 def set_options(options):
     ctx.config = pisi.config.Config(options)
-
-def init(database = True, write = True,
-         options = pisi.config.Options(), ui = None, comar = True,
-         stdout = None, stderr = None,
-         comar_sockname = None,
-         signal_handling = True):
-
-    # TODO: this is definitely not dynamic beyond this point!
-    ctx.comar = comar and not ctx.config.get_option('ignore_comar')
-
-def _cleanup():
-    """Close the database cleanly and do other cleanup."""
-    ctx.disable_keyboard_interrupts()
-    if ctx.log:
-        ctx.loghandler.flush()
-        ctx.log.removeHandler(ctx.loghandler)
-            
-    filesdb = pisi.db.filesdb.FilesDB()
-    filesdb.close()
-
-    if ctx.build_leftover and os.path.exists(ctx.build_leftover):
-        os.unlink(ctx.build_leftover)
-
-    ctx.ui.close()
-    ctx.enable_keyboard_interrupts()
 
 def list_pending():
     """Return a set of configuration pending package names."""
@@ -419,6 +397,7 @@ def rebuild_repo(repo):
     else:
         raise Error(_('No repository named %s found.') % repo)
 
+# FIXME: rebuild_db is only here for filesdb and it really is ugly. we should not need any rebuild.
 def rebuild_db(files=False):
 
     filesdb = pisi.db.filesdb.FilesDB()
@@ -435,13 +414,17 @@ def rebuild_db(files=False):
     options = ctx.config.options
     ui = ctx.ui
     comar = ctx.comar
-    _cleanup()
+    pisi._cleanup()
 
     filesdb.destroy()
     filesdb.init()
 
+    # reinitialize everything
+    set_userinterface(ui)
+    set_options(options)
+    set_comar(comar)
+
     # construct new database
-    init(database=True, options=options, ui=ui, comar=comar)
     rebuild_filesdb()
 
 ############# FIXME: this was a quick fix. ##############################
