@@ -63,15 +63,14 @@ def set_io_streams(stdout=None, stderr=None):
 def set_comar_sockname(sockname):
     ctx.comar_sockname = sockname
 
+def set_options(options):
+    ctx.config = pisi.config.Config(options)
+
 def init(database = True, write = True,
          options = pisi.config.Options(), ui = None, comar = True,
          stdout = None, stderr = None,
          comar_sockname = None,
          signal_handling = True):
-
-    # FIXME: something is wrong here... see __init__.py also. Why do we import pisi.api in __init__.py
-    import pisi.config
-    ctx.config = pisi.config.Config(options)
 
     if os.access('%s/var/log' % ctx.config.log_dir(), os.W_OK):
         handler = logging.handlers.RotatingFileHandler('%s/var/log/pisi.log' % ctx.config.log_dir())

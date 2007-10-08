@@ -34,5 +34,8 @@ class Error(Exception):
     pass
 
 import pisi.api
+import pisi.config
+import pisi.context as ctx
 
+ctx.config = pisi.config.Config(pisi.config.Options())
 atexit.register(pisi.api._cleanup)

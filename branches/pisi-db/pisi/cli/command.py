@@ -161,6 +161,7 @@ class Command(object):
             ui = pisi.cli.CLI()
 
         pisi.api.set_userinterface(ui)
+        pisi.api.set_options(self.options)
         pisi.api.init(database = database, write = write, options = self.options, comar = self.comar)
 
     def get_name(self):
