@@ -37,13 +37,6 @@ ui = None # not now
 stdout = None
 stderr = None
 
-installdb = None
-packagedb = None
-repodb = None
-sourcedb = None
-filesdb = None
-componentdb = None
-
 comar = None
 comar_sockname = None
 
