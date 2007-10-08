@@ -12,7 +12,9 @@
 
 # PiSi version
 
+import os
 import atexit
+import logging
 
 __version__ = "1.1.5"
 
@@ -37,5 +39,17 @@ import pisi.api
 import pisi.config
 import pisi.context as ctx
 
+def init_logging():
+    log_dir = os.path.join(ctx.config.dest_dir(), ctx.config.log_dir())
+    if os.access(log_dir, os.W_OK):
+        handler = logging.handlers.RotatingFileHandler('%s/pisi.log' % log_dir)
+        formatter = logging.Formatter('%(asctime)-12s: %(levelname)-8s %(message)s')
+        handler.setFormatter(formatter)
+        ctx.log = logging.getLogger('pisi')
+        ctx.log.addHandler(handler)
+        ctx.loghandler = handler
+        ctx.log.setLevel(logging.DEBUG)
+
 ctx.config = pisi.config.Config(pisi.config.Options())
+init_logging()
 atexit.register(pisi.api._cleanup)

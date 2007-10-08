@@ -72,18 +72,6 @@ def init(database = True, write = True,
          comar_sockname = None,
          signal_handling = True):
 
-    if os.access('%s/var/log' % ctx.config.log_dir(), os.W_OK):
-        handler = logging.handlers.RotatingFileHandler('%s/var/log/pisi.log' % ctx.config.log_dir())
-        #handler.setLevel(logging.DEBUG)
-        formatter = logging.Formatter('%(asctime)-12s: %(levelname)-8s %(message)s')
-        handler.setFormatter(formatter)
-        ctx.log = logging.getLogger('pisi')
-        ctx.log.addHandler(handler)
-        ctx.loghandler = handler
-        ctx.log.setLevel(logging.DEBUG)
-    else:
-        ctx.log = None
-
     # TODO: this is definitely not dynamic beyond this point!
     ctx.comar = comar and not ctx.config.get_option('ignore_comar')
 
