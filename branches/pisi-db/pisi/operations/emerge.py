@@ -23,6 +23,7 @@ import pisi.util as util
 import pisi.atomicoperations as atomicoperations
 import pisi.dependency as dependency
 import pisi.ui as ui
+import pisi.db
 
 def emerge(A):
 
@@ -79,14 +80,16 @@ installed in the respective order to satisfy dependencies:
 
 def plan_emerge(A):
 
+    sourcedb = pisi.db.sourcedb.SourceDB()
+    
     # try to construct a pisi graph of packages to
     # install / reinstall
 
     G_f = pisi.graph.Digraph()
 
     def get_spec(name):
-        if ctx.sourcedb.has_spec(name):
-            return ctx.sourcedb.get_spec(name)
+        if sourcedb.has_spec(name):
+            return sourcedb.get_spec(name)
         else:
             raise Exception(_('Cannot find source package: %s') % name)
     def get_src(name):
@@ -95,10 +98,10 @@ def plan_emerge(A):
         if not str(src.name) in G_f.vertices():
             G_f.add_vertex(str(src.name), (src.version, src.release))
     def pkgtosrc(pkg):
-        return ctx.sourcedb.pkgtosrc(pkg)
+        return sourcedb.pkgtosrc(pkg)
 
     # setup first
-    #specfiles = [ ctx.sourcedb.get_source(x)[1] for x in A ]
+    #specfiles = [ sourcedb.get_source(x)[1] for x in A ]
     #pkgtosrc = {}
     B = A
 
