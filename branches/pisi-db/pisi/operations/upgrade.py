@@ -24,6 +24,7 @@ import pisi.atomicoperations as atomicoperations
 import pisi.operations as operations
 import pisi.util as util
 import pisi.dependency as dependency
+import pisi.db
 
 def upgrade(A):
     upgrade_pkg_names(A)
@@ -35,11 +36,14 @@ def upgrade_pkg_names(A = []):
     ignore_build = ctx.get_option('ignore_build_no')
     security_only = ctx.get_option('security_only')
 
-    replaces = ctx.packagedb.get_replaces()
+    packagedb = pisi.db.packagedb.PackageDB()
+    replaces = packagedb.get_replaces()
+
+    installdb = pisi.db.installdb.InstallDB()
 
     if not A:
         # if A is empty, then upgrade all packages
-        A = ctx.installdb.list_installed()
+        A = installdb.list_installed()
 
     A_0 = A = set(A)
 
@@ -57,12 +61,12 @@ def upgrade_pkg_names(A = []):
             Ap.append(replaces[x])
             continue
 
-        if not ctx.installdb.has_package(x):
+        if not installdb.has_package(x):
             ctx.ui.info(_('Package %s is not installed.') % x, True)
             continue
-        (version, release, build) = ctx.installdb.get_version(x)
-        if ctx.packagedb.has_package(x):
-            pkg = ctx.packagedb.get_package(x)
+        (version, release, build) = installdb.get_version(x)
+        if packagedb.has_package(x):
+            pkg = packagedb.get_package(x)
         else:
             ctx.ui.info(_('Package %s is not available in repositories.') % x, True)
             continue
@@ -102,12 +106,14 @@ def upgrade_pkg_names(A = []):
         G_f = None
         order = list(A)
 
+    componentdb = pisi.db.componentdb.ComponentDB()
+
     # Bug 4211
-    if ctx.componentdb.has_component('system.base'):
+    if componentdb.has_component('system.base'):
         order = operations.helper.reorder_base_packages(order)
 
     if not ctx.get_option('ignore_package_conflicts'):
-        conflicts = operations.helper.check_conflicts(order, ctx.packagedb)
+        conflicts = operations.helper.check_conflicts(order, packagedb)
 
     ctx.ui.info(_('The following packages will be upgraded: ') +
                 util.strlist(order))
@@ -153,9 +159,9 @@ def plan_upgrade(A):
     # try to construct a pisi graph of packages to
     # install / reinstall
 
-    packagedb = ctx.packagedb
+    packagedb = pisi.db.packagedb.PackageDB()
 
-    G_f = pgraph.PGraph(ctx.packagedb)               # construct G_f
+    G_f = pgraph.PGraph(packagedb)               # construct G_f
 
     # find the "install closure" graph of G_f by package
     # set A using packagedb
@@ -163,15 +169,15 @@ def plan_upgrade(A):
         G_f.add_package(x)
     B = A
 
-    # TODO: conflicts
-
+    installdb = pisi.db.installdb.InstallDB()
+    
     while len(B) > 0:
         Bp = set()
         for x in B:
             pkg = packagedb.get_package(x)
             for dep in pkg.runtimeDependencies():
                 # add packages that can be upgraded
-                if ctx.installdb.has_package(dep.package) and dependency.installed_satisfies_dep(dep):
+                if installdb.has_package(dep.package) and dependency.installed_satisfies_dep(dep):
                     continue
                 
                 if dependency.repo_satisfies_dep(dep):
@@ -193,7 +199,7 @@ def plan_upgrade(A):
             rev_deps = packagedb.get_rev_deps(x)
             for (rev_dep, depinfo) in rev_deps:
                 # add only installed but unsatisfied reverse dependencies
-                if ctx.installdb.has_package(rev_dep) and \
+                if installdb.has_package(rev_dep) and \
                         (not dependency.installed_satisfies_dep(depinfo)):
                     if not dependency.repo_satisfies_dep(depinfo):
                         raise Exception(_('Reverse dependency %s of %s cannot be satisfied') % (rev_dep, x))
@@ -209,11 +215,13 @@ def plan_upgrade(A):
     return G_f, order
 
 def upgrade_base(A = set(), ignore_package_conflicts = False):
+    installdb = pisi.db.installdb.InstallDB()
+    componentdb = pisi.db.componentdb.ComponentDB()
     ignore_build = ctx.get_option('ignore_build_no')
     if not ctx.get_option('ignore_safety'):
-        if ctx.componentdb.has_component('system.base'):
-            systembase = set(ctx.componentdb.get_union_component('system.base').packages)
-            extra_installs = filter(lambda x: not ctx.installdb.has_package(x), systembase - set(A))
+        if componentdb.has_component('system.base'):
+            systembase = set(componentdb.get_union_component('system.base').packages)
+            extra_installs = filter(lambda x: not installdb.has_package(x), systembase - set(A))
             if extra_installs:
                 ctx.ui.warning(_('Safety switch: Following packages in system.base will be installed: ') +
                                util.strlist(extra_installs))
@@ -231,13 +239,17 @@ def upgrade_base(A = set(), ignore_package_conflicts = False):
     return set()
 
 def is_upgradable(name, ignore_build = False):
-    if not ctx.installdb.has_package(name):
+
+    installdb = pisi.db.installdb.InstallDB()
+    packagedb = pisi.db.packagedb.PackageDB()
+
+    if not installdb.has_package(name):
         return False
 
-    (version, release, build) = ctx.installdb.get_version(name)
+    (version, release, build) = installdb.get_version(name)
 
     try:
-        pkg_version, pkg_release, pkg_build = ctx.packagedb.get_version(name, ctx.packagedb.which_repo(name))
+        pkg_version, pkg_release, pkg_build = packagedb.get_version(name, packagedb.which_repo(name))
     except KeyboardInterrupt:
         raise
     except Exception: #FIXME: what exception could we catch here, replace with that.
