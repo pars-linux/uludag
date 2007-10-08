@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Listing packages from the binary repo {{ repo_name }}</h3>
+    <h4>(path: {{ repo_path }})</h4>
+    <hr />
+    {% if pisi_list %}
+    <form name="transferForm" action="/transfer/" method="POST">
+        <table class="transferTable" cellspacing="0" cellpadding="0" border="0">
+        <tr class="title">
+            <td></td>
+            <td>Package Name</td>
+            <td>Package Dependencies</td>
+        </tr>
+            {% for p in pisi_list %}
+            <tr class="row1">
+                <td>
+                    <input type="checkbox" class="cbox" name="{{ p.package_name }}cbox" />
+                </td>
+                <td>{{ p.package_name }}</td>
+                <td>
+                    {% if p.deplist %}
+                        {% for d in p.deplist %}
+                            <input type="checkbox" name="{{ d }}" /> {{ d }}<br />
+                        {% endfor %}
+                    {% else %}
+                        This package doesn't have runtime dependencies.
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    <br />
+    <input type="submit" value="Transfer" name="submit" />
+    </form>
+    {% else %}
+        <p>There's no PiSi packages in the repo!</p>
+    {% endif %}
+{% endblock %}
+
