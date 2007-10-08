@@ -18,6 +18,7 @@ _ = __trans.ugettext
 
 import pisi.context as ctx
 import pisi.relation
+import pisi.db
 
 """ Dependency relation """
 class Dependency(pisi.relation.Relation):
@@ -55,11 +56,12 @@ dependency spec"""
 def repo_satisfies_dep(depinfo):
     """determine if a package in *repository* satisfies given
 dependency spec"""
+    packagedb = pisi.db.packagedb.PackageDB()
     pkg_name = depinfo.package
-    if not ctx.packagedb.has_package(pkg_name):
+    if not packagedb.has_package(pkg_name):
         return False
     else:
-        pkg = ctx.packagedb.get_package(pkg_name)
+        pkg = packagedb.get_package(pkg_name)
         (version, release) = (pkg.version, pkg.release)
         return depinfo.satisfies_relation(version, release)
 
@@ -72,13 +74,15 @@ def satisfies_dependencies(pkg, deps, sat = installed_satisfies_dep):
     return True
 
 def satisfies_runtime_deps(pkg):
-    deps = ctx.packagedb.get_package(pkg).runtimeDependencies()
+    packagedb = pisi.db.packagedb.PackageDB()
+    deps = packagedb.get_package(pkg).runtimeDependencies()
     return satisfies_dependencies(pkg, deps)
 
 def installable(pkg):
     """calculate if pkg name is installable currently
     which means it has to satisfy both install and runtime dependencies"""
-    if not ctx.packagedb.has_package(pkg):
+    packagedb = pisi.db.packagedb.PackageDB()
+    if not packagedb.has_package(pkg):
         ctx.ui.info(_("Package %s is not present in the package database") % pkg);
         return False
     elif satisfies_runtime_deps(pkg):
