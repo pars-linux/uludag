@@ -16,6 +16,7 @@ import signal
 
 import pisi.constants
 import pisi.signalhandler
+import pisi.ui
 
 const = pisi.constants.Constants()
 sig = pisi.signalhandler.SignalHandler()
@@ -31,7 +32,7 @@ def get_option(opt):
     return config and config.get_option(opt)
 
 # default UI is CLI
-ui = None # not now
+ui = pisi.ui.UI()
 
 # stdout, stderr for PiSi API
 stdout = None
