@@ -106,21 +106,6 @@ def init(database = True, write = True,
     # This is for YALI, used in comariface.py
     ctx.comar_sockname = comar_sockname
 
-    # initialize repository databases
-    if database:
-        ctx.repodb = pisi.db.repodb.RepoDB()
-        ctx.installdb = pisi.db.installdb.InstallDB()
-        ctx.filesdb = pisi.db.filesdb.FilesDB()
-        ctx.componentdb = pisi.db.componentdb.ComponentDB()
-        ctx.packagedb = pisi.db.packagedb.PackageDB()
-        ctx.sourcedb = pisi.db.sourcedb.SourceDB()
-    else:
-        ctx.repodb = None
-        ctx.installdb = None
-        ctx.filesdb = None
-        ctx.componentdb = None
-        ctx.packagedb = None
-        ctx.sourcedb = None
     ctx.ui.debug('PiSi API initialized')
     ctx.initialized = True
 
@@ -131,9 +116,9 @@ def finalize():
         if ctx.log:
             ctx.loghandler.flush()
             ctx.log.removeHandler(ctx.loghandler)
-
-        if ctx.filesdb:
-            ctx.filesdb.close()
+            
+        filesdb = pisi.db.filesdb.FilesDB()
+        filesdb.close()
 
         if ctx.build_leftover and os.path.exists(ctx.build_leftover):
             os.unlink(ctx.build_leftover)
@@ -145,22 +130,28 @@ def finalize():
 
 def list_pending():
     """Return a set of configuration pending package names."""
-    return set(ctx.installdb.list_pending())
+    installdb = pisi.db.installdb.InstallDB()
+    return set(installdb.list_pending())
 
 def list_installed():
     """Return a set of installed package names."""
-    return set(ctx.installdb.list_installed())
+    installdb = pisi.db.installdb.InstallDB()
+    return set(installdb.list_installed())
 
 def list_replaces(repo = None):
     """Returns a dict of the replaced packages."""
-    return ctx.packagedb.get_replaces(repo = repo)
+    packagedb = pisi.db.packagedb.PackageDB()
+    return packagedb.get_replaces(repo = repo)
 
 def list_available(repo = None):
     """Return a set of available package names."""
-    return set(ctx.packagedb.list_packages(repo = repo))
+    packagedb = pisi.db.packagedb.PackageDB()
+    return set(packagedb.list_packages(repo = repo))
 
 def list_upgradable():
-    return filter(pisi.operations.upgrade.is_upgradable, ctx.installdb.list_installed()) + ctx.packagedb.get_replaces().keys()
+    installdb = pisi.db.installdb.InstallDB()
+    packagedb = pisi.db.packagedb.PackageDB()
+    return filter(pisi.operations.upgrade.is_upgradable, installdb.list_installed()) + packagedb.get_replaces().keys()
 
 def package_graph(A, packagedb, ignore_installed = False):
     """Construct a package relations graph.
@@ -229,20 +220,21 @@ def generate_conflicts(A):
     # @conflicts_inorder: list of the conflicting packages _with each other_ in the to be installed list
     # @conflicting_pairs: dictionary that contains which package in the to be installed list conflicts
     #     with which packages
-
-    (conflicting_pkgs, conflicts_inorder, conflicting_pairs) = pisi.conflict.calculate_conflicts(A, ctx.packagedb)
+    packagedb = pisi.db.packagedb.PackageDB()
+    (conflicting_pkgs, conflicts_inorder, conflicting_pairs) = pisi.conflict.calculate_conflicts(A, packagedb)
     return (conflicting_pkgs, conflicts_inorder, conflicting_pairs)
 
 def generate_pending_order(A):
     # returns pending package list in reverse topological order of dependency
-    G_f = pgraph.PGraph(ctx.installdb) # construct G_f
+    installdb = pisi.db.installdb.InstallDB()
+    G_f = pgraph.PGraph(installdb) # construct G_f
     for x in A:
         G_f.add_package(x)
     B = A
     while len(B) > 0:
         Bp = set()
         for x in B:
-            pkg = ctx.installdb.get_package(x)
+            pkg = installdb.get_package(x)
             for dep in pkg.runtimeDependencies():
                 if dep.package in G_f.vertices():
                     G_f.add_dep(x, dep)
@@ -252,8 +244,9 @@ def generate_pending_order(A):
     order = G_f.topological_sort()
     order.reverse()
 
+    componentdb = pisi.db.componentdb.ComponentDB()
     # Bug 4211
-    if ctx.componentdb.has_component('system.base'):
+    if componentdb.has_component('system.base'):
         order = reorder_base_packages(order)
 
     return order
@@ -261,12 +254,13 @@ def generate_pending_order(A):
 def configure_pending():
     # start with pending packages
     # configure them in reverse topological order of dependency
-    A = ctx.installdb.list_pending()
+    installdb = pisi.db.installdb.InstallDB()
+    A = installdb.list_pending()
     order = generate_pending_order(A)
     try:
         for x in order:
-            if ctx.installdb.has_package(x):
-                pkginfo = ctx.installdb.get_package(x)
+            if installdb.has_package(x):
+                pkginfo = installdb.get_package(x)
                 pkgname = pisi.util.package_name(x, pkginfo.version,
                                         pkginfo.release,
                                         False,
@@ -287,7 +281,7 @@ def configure_pending():
                     pisi.util.join_path(pkg_path, ctx.const.files_xml),
                 )
                 ctx.ui.notify(pisi.ui.configured, package = pkginfo, files = None)
-            ctx.installdb.clear_pending(x)
+            installdb.clear_pending(x)
     except ImportError:
         raise Error(_("comar package is not fully installed"))
 
@@ -310,20 +304,22 @@ def info_file(package_fn):
 def info_name(package_name, useinstalldb=False):
     """Fetch package information for the given package."""
 
+    installdb = pisi.db.installdb.InstallDB()
+    packagedb = pisi.db.packagedb.PackageDB()
     if useinstalldb:
-        package = ctx.installdb.get_package(package_name)
+        package = installdb.get_package(package_name)
         repo = None
     else:
-        package, repo = ctx.packagedb.get_package_repo(package_name)
+        package, repo = packagedb.get_package_repo(package_name)
 
     metadata = pisi.metadata.MetaData()
     metadata.package = package
     #FIXME: get it from sourcedb if available
     metadata.source = None
     #TODO: fetch the files from server if possible (wow, you maniac -- future exa)
-    if useinstalldb and ctx.installdb.has_package(package.name):
+    if useinstalldb and installdb.has_package(package.name):
         try:
-            files = ctx.installdb.get_files(package.name)
+            files = installdb.get_files(package.name)
         except pisi.Error, e:
             ctx.ui.warning(e)
             files = None
@@ -332,7 +328,8 @@ def info_name(package_name, useinstalldb=False):
     return metadata, files, repo
 
 def search_package_terms(terms, repo = None):
-    return search_in_packages(terms, ctx.packagedb.list_packages(repo), repo)
+    packagedb = pisi.db.packagedb.PackageDB()
+    return search_in_packages(terms, packagedb.list_packages(repo), repo)
 
 def search_in_packages(terms, packages, repo = None):
 
@@ -343,9 +340,10 @@ def search_in_packages(terms, packages, repo = None):
                 term in unicode(package.description).lower():
             return True
 
+    packagedb = pisi.db.packagedb.PackageDB()
     found = []
     for name in packages:
-        pkg = ctx.packagedb.get_package(name, repo)
+        pkg = packagedb.get_package(name, repo)
         if terms == filter(lambda x:search(pkg, x), terms):
             found.append(name)
 
@@ -386,30 +384,34 @@ def index(dirs=None, output='pisi-index.xml', skip_sources=False, skip_signing=F
     ctx.ui.info(_('* Index file written'))
 
 def add_repo(name, indexuri, at = None):
-    if ctx.repodb.has_repo(name):
+    repodb = pisi.db.repodb.RepoDB()
+    if repodb.has_repo(name):
         raise Error(_('Repo %s already present.') % name)
     else:
         repo = pisi.db.repodb.Repo(pisi.uri.URI(indexuri))
-        ctx.repodb.add_repo(name, repo, at = at)
+        repodb.add_repo(name, repo, at = at)
         ctx.ui.info(_('Repo %s added to system.') % name)
 
 def remove_repo(name):
-    if ctx.repodb.has_repo(name):
-        ctx.repodb.remove_repo(name)
+    repodb = pisi.db.repodb.RepoDB()
+    if repodb.has_repo(name):
+        repodb.remove_repo(name)
         ctx.ui.info(_('Repo %s removed from system.') % name)
     else:
         ctx.ui.error(_('Repository %s does not exist. Cannot remove.')
                  % name)
 
 def list_repos():
-    return ctx.repodb.list_repos()
+    repodb = pisi.db.repodb.RepoDB()
+    return repodb.list_repos()
 
 def update_repo(repo, force=False):
     ctx.ui.info(_('* Updating repository: %s') % repo)
     ctx.ui.notify(pisi.ui.updatingrepo, name = repo)
+    repodb = pisi.db.repodb.RepoDB()
     index = pisi.index.Index()
-    if ctx.repodb.has_repo(repo):
-        repouri = ctx.repodb.get_repo(repo).indexuri.get_uri()
+    if repodb.has_repo(repo):
+        repouri = repodb.get_repo(repo).indexuri.get_uri()
         try:
             index.read_uri_of_repo(repouri, repo)
         except pisi.file.AlreadyHaveException, e:
@@ -437,8 +439,9 @@ def delete_cache():
 def rebuild_repo(repo):
     ctx.ui.info(_('* Rebuilding \'%s\' named repo... ') % repo)
 
-    if ctx.repodb.has_repo(repo):
-        repouri = pisi.uri.URI(ctx.repodb.get_repo(repo).indexuri.get_uri())
+    repodb = pisi.db.repodb.RepoDB()
+    if repodb.has_repo(repo):
+        repouri = pisi.uri.URI(repodb.get_repo(repo).indexuri.get_uri())
         indexname = repouri.filename()
         index = pisi.index.Index()
         indexpath = pisi.util.join_path(ctx.config.index_dir(), repo, indexname)
@@ -455,14 +458,17 @@ def rebuild_repo(repo):
 
 def rebuild_db(files=False):
 
+    filesdb = pisi.db.filesdb.FilesDB()
+    installdb = pisi.db.installdb.InstallDB()
+
     def rebuild_filesdb():
         for pkg in list_installed():
             ctx.ui.info(_('* Adding \'%s\' to db... ') % pkg, noln=True)
-            files = ctx.installdb.get_files(pkg)
-            ctx.filesdb.add_files(pkg, files)
+            files = installdb.get_files(pkg)
+            filesdb.add_files(pkg, files)
             ctx.ui.info(_('OK.'))
 
-    ctx.filesdb.destroy()
+    filesdb.destroy()
 
     # save parameters and shutdown pisi
     options = ctx.config.options
