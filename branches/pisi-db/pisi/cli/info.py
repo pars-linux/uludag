@@ -97,8 +97,6 @@ Usage: info <package1> <package2> ... <packagen>
             index.encode(index.rootNode(), errs)
             index.writexmlfile(sys.stdout)
             sys.stdout.write('\n')
-        self.finalize()
-
 
     def info_package(self, arg):
 

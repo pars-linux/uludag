@@ -64,7 +64,6 @@ NB: We support only local files (e.g., /a/b/c) and http:// URIs at the moment
                 except pisi.fetcher.FetchError:
                     ctx.ui.warning(_("%s repository could not be reached. Removing %s from system.") % (name, name))
                     pisi.api.remove_repo(name)
-            self.finalize()
         else:
             self.help()
             return

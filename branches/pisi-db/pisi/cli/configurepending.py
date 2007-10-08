@@ -44,4 +44,3 @@ configures those packages.
 
         self.init()
         pisi.api.configure_pending()
-        self.finalize()

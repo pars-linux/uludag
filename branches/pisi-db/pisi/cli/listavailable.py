@@ -66,7 +66,6 @@ all repositories.
             for repo in pisi.api.list_repos():
                 ctx.ui.info(_("Repository : %s\n") % repo)
                 self.print_packages(repo)
-        self.finalize()
 
     def print_packages(self, repo):
 

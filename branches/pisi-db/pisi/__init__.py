@@ -12,6 +12,8 @@
 
 # PiSi version
 
+import atexit
+
 __version__ = "1.1.5"
 
 __all__ = [ 'api', 'configfile', 'db']
@@ -33,3 +35,4 @@ class Error(Exception):
 
 import pisi.api
 
+atexit.register(pisi.api._cleanup)

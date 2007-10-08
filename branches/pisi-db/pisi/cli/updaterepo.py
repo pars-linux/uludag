@@ -57,4 +57,3 @@ If no repository is given, all repositories are updated.
 
         for repo in repos:
             pisi.api.update_repo(repo, ctx.get_option('force'))
-        self.finalize()

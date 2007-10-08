@@ -117,4 +117,3 @@ to be downloaded from a repository containing sources.
                 pisi.api.build_until(x, ctx.get_option('until'))
             else:
                 pisi.api.build(x)
-        self.finalize()

@@ -160,10 +160,6 @@ class Command(object):
         pisi.api.init(database = database, write = write, options = self.options,
                       comar = self.comar)
 
-    def finalize(self):
-        """do cleanup work for PiSi components"""
-        pisi.api.finalize()
-
     def get_name(self):
         return self.__class__.name
 
@@ -206,9 +202,6 @@ class PackageOp(Command):
 
     def init(self, database=True, write=True):
         super(PackageOp, self).init(database, write)
-
-    def finalize(self):
-        pisi.api.finalize()
 
 class PisiHelpFormatter(optparse.HelpFormatter):
     def __init__(self,

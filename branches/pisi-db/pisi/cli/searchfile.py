@@ -79,5 +79,3 @@ Finds the installed package which contains the specified file.
             if os.path.exists(path):
                 path = os.path.realpath(path)
             self.search_file(path)
-
-        self.finalize()

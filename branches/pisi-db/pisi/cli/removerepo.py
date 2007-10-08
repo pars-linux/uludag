@@ -33,7 +33,6 @@ Remove all repository information from the system.
             self.init()
             for repo in self.args:
                 pisi.api.remove_repo(repo)
-            self.finalize()
         else:
             self.help()
             return

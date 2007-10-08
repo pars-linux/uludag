@@ -36,4 +36,3 @@ Lists currently tracked repositories.
             ctx.ui.info(repo)
             #FIXME: repodb.get_repo(repo).indexuri.get_uri()??? ick!
             print '  ', self.repodb.get_repo(repo).indexuri.get_uri()
-        self.finalize()

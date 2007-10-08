@@ -58,4 +58,3 @@ Gives a brief list of sources published in the repositories.
                 #    p = util.colorize(p, 'cyan')
                 p = p + ' ' * max(0, 15 - lenp)
                 ctx.ui.info('%s - %s' % (sf.source.name, unicode(sf.source.summary)))
-        self.finalize()

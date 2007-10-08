@@ -90,4 +90,3 @@ the package in graphviz format to 'pgraph.dot'.
         g = pisi.api.package_graph(a, packagedb,
                                    ignore_installed = ctx.get_option('ignore_installed'))
         g.write_graphviz(file(ctx.get_option('output'), 'w'))
-        self.finalize()

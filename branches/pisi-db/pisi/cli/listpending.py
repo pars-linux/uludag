@@ -41,4 +41,3 @@ Lists packages waiting to be configured.
                 print p
         else:
             ctx.ui.info(_('There are no packages waiting to be configured'))
-        self.finalize()

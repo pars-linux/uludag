@@ -56,12 +56,6 @@ def init(database = True, write = True,
          stdout = None, stderr = None,
          comar_sockname = None,
          signal_handling = True):
-    """Initialize PiSi subsystem.
-    
-    You should call finalize() when your work is finished. Otherwise
-    you can left the database in a bad state.
-    
-    """
 
     # UI comes first
 
@@ -109,7 +103,7 @@ def init(database = True, write = True,
     ctx.ui.debug('PiSi API initialized')
     ctx.initialized = True
 
-def finalize():
+def _cleanup():
     """Close the database cleanly and do other cleanup."""
     if ctx.initialized:
         ctx.disable_keyboard_interrupts()
@@ -472,7 +466,7 @@ def rebuild_db(files=False):
     options = ctx.config.options
     ui = ctx.ui
     comar = ctx.comar
-    finalize()
+    _cleanup()
 
     filesdb.destroy()
     filesdb.init()

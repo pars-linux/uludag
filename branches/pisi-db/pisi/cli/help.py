@@ -46,8 +46,6 @@ If run without parameters, it prints the general help."""
             obj.help()
             ctx.ui.info('')
 
-        self.finalize()
-
 usage_text1 = _("""%prog [options] <command> [arguments]
 
 where <command> is one of:

@@ -139,4 +139,3 @@ expanded to package names.
             packages = self.exclude(packages, patterns)
 
         pisi.api.upgrade(packages)
-        self.finalize()

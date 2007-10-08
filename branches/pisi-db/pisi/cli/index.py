@@ -71,4 +71,3 @@ everything in a single index file.
             index(['.'], ctx.get_option('output'),
                   skip_sources = ctx.get_option('skip_sources'),
                   skip_signing = ctx.get_option('skip_signing'))
-        self.finalize()

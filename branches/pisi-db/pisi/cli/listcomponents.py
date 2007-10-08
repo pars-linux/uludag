@@ -58,4 +58,3 @@ repositories.
                 #    p = util.colorize(p, 'cyan')
                 p = p + ' ' * max(0, 15 - lenp)
                 ctx.ui.info('%s - %s ' % (component.name, unicode(component.summary)))
-        self.finalize()

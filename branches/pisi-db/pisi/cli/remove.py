@@ -62,4 +62,4 @@ expanded to package names.
         packages.extend(self.args)
 
         pisi.api.remove(packages)
-        self.finalize()
+        

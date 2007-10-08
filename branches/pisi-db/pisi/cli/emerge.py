@@ -64,4 +64,3 @@ You can also give the name of a component.
             ctx.config.options.output_dir = ctx.config.packages_dir()
 
         pisi.api.emerge(self.args)
-        self.finalize()

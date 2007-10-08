@@ -75,4 +75,3 @@ If no packages are given, checks all installed packages.
                     ctx.ui.info(_("OK"), verbose=False)
             else:
                 ctx.ui.info(_('Package %s not installed') % pkg)
-        self.finalize()

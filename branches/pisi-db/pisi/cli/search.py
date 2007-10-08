@@ -60,5 +60,3 @@ in summary, description, and package name fields.
         ctx.config.options.short = not ctx.config.options.long
         for pkg in r:
             self.info_package(pkg)
-
-        self.finalize()

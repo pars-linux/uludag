@@ -78,4 +78,3 @@ Lists the packages that will be upgraded.
                 ctx.ui.info('%-15s | %s ' % (package.name, inst_info.one_liner()))
             else:
                 ctx.ui.info('%15s - %s ' % (package.name, package.summary))
-        self.finalize()

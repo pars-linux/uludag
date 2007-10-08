@@ -65,5 +65,3 @@ and creates a delta pisi package with the changed files between two releases.
         newpackage = self.args[1]
 
         create_delta_package(oldpackage, newpackage)
-
-        self.finalize()

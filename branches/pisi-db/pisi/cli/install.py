@@ -79,4 +79,3 @@ expanded to package names.
         packages.extend(self.args)
 
         pisi.api.install(packages, ctx.get_option('reinstall'))
-        self.finalize()
