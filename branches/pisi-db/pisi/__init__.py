@@ -14,9 +14,6 @@
 
 __version__ = "1.1.5"
 
-__dbversion__ = "1.1.5"
-__filesdbversion__ = "1.0.5"         # yes, this is the real bottleneck
-
 __all__ = [ 'api', 'configfile', 'db']
 
 # FIXME: Exception shadows builtin Exception. This is no good.
@@ -36,5 +33,3 @@ class Error(Exception):
 
 import pisi.api
 
-# FIXME: can't do this due to name clashes in config and other singletons booo
-#pisi.api import *
