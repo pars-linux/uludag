@@ -32,10 +32,6 @@ def sig_handler(sig, frame):
         exit()
 
 def exit():
-    try:
-        pisi.api.finalize()
-    except KeyboardInterrupt: # raised pending interrupt
-        pass
     sys.exit(1)
 
 def handle_exception(exception, value, tb):
