@@ -39,11 +39,10 @@ import pisi.package
 import pisi.component as component
 import pisi.archive as archive
 import pisi.actionsapi.variables
-
+import pisi.db
 
 class Error(pisi.Error):
     pass
-
 
 # Helper Functions
 def get_file_type(path, pinfo_list, install_dir):
@@ -93,9 +92,11 @@ class Builder:
 
     @staticmethod
     def from_name(name):
+        repodb = pisi.db.repodb.RepoDB()
+        sourcedb = pisi.db.sourcedb.SourceDB()
         # download package and return an installer object
         # find package in repository
-        sf, reponame = ctx.sourcedb.get_spec_repo(name)
+        sf, reponame = sourcedb.get_spec_repo(name)
         src = sf.source
         if src:
 
@@ -103,7 +104,7 @@ class Builder:
             if src_uri.is_absolute_path():
                 src_path = str(src_uri)
             else:
-                repo = ctx.repodb.get_repo(reponame)
+                repo = repodb.get_repo(reponame)
                 #FIXME: don't use dirname to work on URLs
                 src_path = os.path.join(os.path.dirname(repo.indexuri.get_uri()),
                                         str(src_uri.path()))
@@ -137,6 +138,9 @@ class Builder:
         self.actionLocals = None
         self.actionGlobals = None
         self.srcDir = None
+
+        self.componentdb = pisi.db.componentdb.ComponentDB()
+        self.installdb = pisi.db.installdb.InstallDB()
 
     def set_spec_file(self, specuri):
         if not specuri.is_remote_file():
@@ -464,11 +468,11 @@ class Builder:
         build_deps = self.spec.source.buildDependencies
 
         if not ctx.get_option('ignore_safety'):
-            if ctx.componentdb.has_component('system.devel'):
+            if self.componentdb.has_component('system.devel'):
                 build_deps_names = set([x.package for x in build_deps])
-                devel_deps_names = set(ctx.componentdb.get_component('system.devel').packages)
+                devel_deps_names = set(self.componentdb.get_component('system.devel').packages)
                 extra_names = devel_deps_names - build_deps_names
-                extra_names = filter(lambda x: not ctx.installdb.has_package(x), extra_names)
+                extra_names = filter(lambda x: not self.installdb.has_package(x), extra_names)
                 if extra_names:
                     ctx.ui.warning(_('Safety switch: following extra packages in system.devel will be installed: ') +
                                pisi.util.strlist(extra_names))
