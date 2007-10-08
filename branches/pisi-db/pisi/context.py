@@ -31,7 +31,6 @@ def set_option(opt, val):
 def get_option(opt):
     return config and config.get_option(opt)
 
-# default UI is CLI
 ui = pisi.ui.UI()
 
 # stdout, stderr for PiSi API
