@@ -1,7 +1,3 @@
-* Get rid of api.init and api.finalize... Instead provide specific set_ methods for 
-  very specific needs. set_io_streams, set_comar_socket... Most of the time default 
-  values are used
-
 * Create meaningful Exception classes. Remove "Error" exceptions
 
 * Humanized error messages after Exception work done
