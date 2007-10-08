@@ -468,13 +468,14 @@ def rebuild_db(files=False):
             filesdb.add_files(pkg, files)
             ctx.ui.info(_('OK.'))
 
-    filesdb.destroy()
-
     # save parameters and shutdown pisi
     options = ctx.config.options
     ui = ctx.ui
     comar = ctx.comar
     finalize()
+
+    filesdb.destroy()
+    filesdb.init()
 
     # construct new database
     init(database=True, options=options, ui=ui, comar=comar)
