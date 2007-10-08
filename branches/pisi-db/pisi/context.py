@@ -40,8 +40,6 @@ stderr = None
 comar = None
 comar_sockname = None
 
-initialized = False
-
 # Bug #2879
 # FIXME: Maybe we can create a simple rollback mechanism. There are other
 # places which need this, too.

@@ -75,27 +75,21 @@ def init(database = True, write = True,
     # TODO: this is definitely not dynamic beyond this point!
     ctx.comar = comar and not ctx.config.get_option('ignore_comar')
 
-    ctx.ui.debug('PiSi API initialized')
-    ctx.initialized = True
-
 def _cleanup():
     """Close the database cleanly and do other cleanup."""
-    if ctx.initialized:
-        ctx.disable_keyboard_interrupts()
-        if ctx.log:
-            ctx.loghandler.flush()
-            ctx.log.removeHandler(ctx.loghandler)
+    ctx.disable_keyboard_interrupts()
+    if ctx.log:
+        ctx.loghandler.flush()
+        ctx.log.removeHandler(ctx.loghandler)
             
-        filesdb = pisi.db.filesdb.FilesDB()
-        filesdb.close()
+    filesdb = pisi.db.filesdb.FilesDB()
+    filesdb.close()
 
-        if ctx.build_leftover and os.path.exists(ctx.build_leftover):
-            os.unlink(ctx.build_leftover)
+    if ctx.build_leftover and os.path.exists(ctx.build_leftover):
+        os.unlink(ctx.build_leftover)
 
-        ctx.ui.debug('PiSi API finalized')
-        ctx.ui.close()
-        ctx.initialized = False
-        ctx.enable_keyboard_interrupts()
+    ctx.ui.close()
+    ctx.enable_keyboard_interrupts()
 
 def list_pending():
     """Return a set of configuration pending package names."""
