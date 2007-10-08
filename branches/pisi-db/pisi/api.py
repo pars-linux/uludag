@@ -54,7 +54,7 @@ class Error(pisi.Error):
 def set_userinterface(ui):
     ctx.ui = ui
 
-def set_io_streams(stdout=None, stderr=None)
+def set_io_streams(stdout=None, stderr=None):
     if stdout:
         ctx.stdout = stdout
     if stderr:
