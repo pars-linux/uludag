@@ -208,7 +208,7 @@ def plan_install_pkg_names(A, ignore_package_conflicts = False):
 
     packagedb = pisi.db.packagedb.PackageDB()
 
-    G_f = pgraph.PGraph(ctx.packagedb)               # construct G_f
+    G_f = pgraph.PGraph(packagedb)               # construct G_f
 
     # find the "install closure" graph of G_f by package
     # set A using packagedb
@@ -233,7 +233,7 @@ def plan_install_pkg_names(A, ignore_package_conflicts = False):
     order = G_f.topological_sort()
     order.reverse()
     if not ctx.get_option('ignore_package_conflicts') and not ignore_package_conflicts:
-        conflicts = operations.helper.check_conflicts(order, ctx.packagedb)
+        conflicts = operations.helper.check_conflicts(order, packagedb)
         if conflicts:
             operations.remove.remove_conflicting_packages(conflicts)
     return G_f, order
