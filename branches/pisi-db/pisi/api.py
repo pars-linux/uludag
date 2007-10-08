@@ -54,6 +54,12 @@ class Error(pisi.Error):
 def set_userinterface(ui):
     ctx.ui = ui
 
+def set_io_streams(stdout=None, stderr=None)
+    if stdout:
+        ctx.stdout = stdout
+    if stderr:
+        ctx.stderr = stderr
+
 def init(database = True, write = True,
          options = pisi.config.Options(), ui = None, comar = True,
          stdout = None, stderr = None,
@@ -75,13 +81,6 @@ def init(database = True, write = True,
         ctx.log.setLevel(logging.DEBUG)
     else:
         ctx.log = None
-
-    # If given define stdout and stderr. Needed by buildfarm currently
-    # but others can benefit from this too.
-    if stdout:
-        ctx.stdout = stdout
-    if stderr:
-        ctx.stderr = stderr
 
     if signal_handling:
         ctx.sig = pisi.signalhandler.SignalHandler()
