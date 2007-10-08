@@ -61,7 +61,7 @@ def set_io_streams(stdout=None, stderr=None):
         ctx.stderr = stderr
 
 def set_comar_sockname(sockname):
-    ctx.comar_sockname = comar_sockname
+    ctx.comar_sockname = sockname
 
 def init(database = True, write = True,
          options = pisi.config.Options(), ui = None, comar = True,
