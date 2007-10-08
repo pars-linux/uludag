@@ -24,6 +24,7 @@ import pisi.operations as operations
 import pisi.pgraph as pgraph
 import pisi.dependency as dependency
 import pisi.ui as ui
+import pisi.db
 
 def install(packages, reinstall = False, ignore_file_conflicts=False):
     """install a list of packages (either files/urls, or names)"""
@@ -42,13 +43,15 @@ def install_pkg_names(A, reinstall = False):
     the repository, trying to perform a minimum number of
     installs"""
 
+    installdb = pisi.db.installdb.InstallDB()
+
     A = [str(x) for x in A] #FIXME: why do we still get unicode input here? :/ -- exa
     # A was a list, remove duplicates
     A_0 = A = set(A)
 
     # filter packages that are already installed
     if not reinstall:
-        Ap = set(filter(lambda x: not ctx.installdb.has_package(x), A))
+        Ap = set(filter(lambda x: not installdb.has_package(x), A))
         d = A - Ap
         if len(d) > 0:
             ctx.ui.warning(_("The following package(s) are already installed and are not going to be installed again:\n") +
@@ -67,8 +70,10 @@ def install_pkg_names(A, reinstall = False):
         G_f = None
         order = list(A)
 
+    componentdb = pisi.db.componentdb.ComponentDB()
+
     # Bug 4211
-    if ctx.componentdb.has_component('system.base'):
+    if componentdb.has_component('system.base'):
         order = operations.helper.reorder_base_packages(order)
 
     if len(order) > 1:
@@ -201,6 +206,8 @@ def plan_install_pkg_names(A, ignore_package_conflicts = False):
     # try to construct a pisi graph of packages to
     # install / reinstall
 
+    packagedb = pisi.db.packagedb.PackageDB()
+
     G_f = pgraph.PGraph(ctx.packagedb)               # construct G_f
 
     # find the "install closure" graph of G_f by package
@@ -212,7 +219,7 @@ def plan_install_pkg_names(A, ignore_package_conflicts = False):
     while len(B) > 0:
         Bp = set()
         for x in B:
-            pkg = ctx.packagedb.get_package(x)
+            pkg = packagedb.get_package(x)
             for dep in pkg.runtimeDependencies():
                 ctx.ui.debug('checking %s' % str(dep))
                 # we don't deal with already *satisfied* dependencies
