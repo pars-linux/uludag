@@ -69,5 +69,4 @@ def _cleanup():
 atexit.register(_cleanup)
 
 ctx.config = pisi.config.Config(pisi.config.Options())
-ctx.comar = not ctx.config.get_option('ignore_comar')
 init_logging()

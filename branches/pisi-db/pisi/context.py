@@ -37,7 +37,7 @@ ui = pisi.ui.UI()
 stdout = None
 stderr = None
 
-comar = None
+comar = True
 comar_sockname = None
 
 # Bug #2879

@@ -162,7 +162,7 @@ class Command(object):
 
         pisi.api.set_userinterface(ui)
         pisi.api.set_options(self.options)
-        pisi.api.set_comar(self.comar)
+        pisi.api.set_comar(self.comar and not ctx.get_option('ignore_comar'))
 
     def get_name(self):
         return self.__class__.name
