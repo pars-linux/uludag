@@ -9,18 +9,13 @@ def list_repository(request, repo_name):
 
     # Gets the selected Repository instance
     repo = get_object_or_404(Repository, repo_name=repo_name)
-    
-    # Generates a package/dep(s) dictionary
-    pisi_list = op.getPisiList(repo.repo_path)
-    dep_dict = op.getPisiDict(repo.repo_path)
-    for pack in pisi_list:
-        if dep_dict[pack["package_name"]]:
-            pack["deplist"] = dep_dict[pack["package_name"]]
-    
+
+    # Gets the pisi packages dictionary
+    pisi_list = op.getPisiPackages(repo.repo_path)
+
     # Returns a rendered HTTP Response of the dictionary
     return render_to_response('ciftci/ciftci_repo.html',
                               {'pisi_list' : pisi_list,
-                               'dep_dict'  : dep_dict,
                                'repo_name' : repo.repo_name,
                                'repo_path' : repo.repo_path})
 
