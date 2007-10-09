@@ -32,15 +32,20 @@ def getRuntimeDeps(p):
 
 def isDepExists(path, name, versionFrom):
     # Searchs for the given name in the path
-    if versionFrom:
-        pattern = "%s-%s*" % (name, versionFrom)
-    else:
-        pattern = name + '*'
-
-    if fnmatch.filter(os.listdir(path), pattern):
+    if fnmatch.filter(os.listdir(path), name+'*'):
         return True
     else:
         return False
+
+def movePackage(name, sourcePath, destPath):
+    fileName = name + ".pisi"
+    try:
+        os.rename(os.path.join(sourcePath, fileName),\
+                  os.path.join(destPath, fileName))
+    except OSError:
+        return False
+
+    return True
 
 def getPisiPackages(path):
     pisi_list = getPisiList(path)
