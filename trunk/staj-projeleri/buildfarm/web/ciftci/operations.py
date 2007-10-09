@@ -19,12 +19,7 @@ import fnmatch
 
 def getPisiList(path):
     # Generates a list which includes a dictionary for each package
-    pisi_list = []
-    for l in filter(lambda s: s.endswith(".pisi"), os.listdir(path)):
-        pisi_list.append({"name":l})
-    
-    pisi_list.sort()
-    return pisi_list
+    return [{'name':p} for p in os.listdir(path) if p.endswith(".pisi")]
 
 def getRuntimeDeps(p):
     metadata = (pisi.package.Package(p)).get_metadata()
