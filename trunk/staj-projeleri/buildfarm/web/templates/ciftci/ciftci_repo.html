@@ -13,15 +13,16 @@
             <td>Package Dependencies</td>
         </tr>
             {% for p in pisi_list %}
-            <tr class="row1">
+            <tr class="{% cycle row1,row2 %}">
                 <td>
-                    <input type="checkbox" class="cbox" name="{{ p.package_name }}cbox" />
+                    <input type="checkbox" class="cbox" name="{{ p.name }}cbox" />
                 </td>
-                <td>{{ p.package_name }}</td>
+                <td>{{ p.name }}</td>
                 <td>
                     {% if p.deplist %}
                         {% for d in p.deplist %}
-                            <input type="checkbox" name="{{ d }}" /> {{ d }}<br />
+                        <input type="checkbox"{% if not d.exists %}disabled="disabled"{% endif %} name="{{ d.name }}" />
+                        {{ d.name }} (version from: {{ d.versionFrom }}) <br />
                         {% endfor %}
                     {% else %}
                         This package doesn't have runtime dependencies.
