@@ -105,7 +105,11 @@ class RepoDB(lazydb.LazyDB):
         repo = self.get_repo(repo_name)
         index = os.path.basename(repo.indexuri.get_uri())
         index_path = pisi.util.join_path(ctx.config.index_dir(), repo_name, index)
-        return piksemel.parse(index_path[:-4])
+
+        if index_path.endswith("bz2"):
+            index_path = index_path.split(".bz2")[0]
+
+        return piksemel.parse(index_path)
     
     def get_repo(self, repo):
         urifile_path = pisi.util.join_path(ctx.config.index_dir(), repo, "uri")
