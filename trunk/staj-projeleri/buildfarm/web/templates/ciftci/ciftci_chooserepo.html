@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Please choose the repositories that you want to synchronise : </h3>
+    <form name="chooseRepository" action="">
+        Select source repository : 
+        <select name="selectRepoSource">
+            {% for repo in repo_list %}
+                <option name="{{ repo }}">{{ repo }}</option>
+            {% endfor %}
+        </select><br /><br />
+        Select destination repository : 
+        <select name="selectDestSource">
+            {% for repo in repo_list %}
+                <option name="{{ repo }}">{{ repo }}</option>
+            {% endfor %}
+        </select>
+        <br /><br />
+        <input type="submit" value="Next step" />
+    </form>
+{% endblock %}
+
