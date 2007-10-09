@@ -128,10 +128,14 @@ class Connection(QWidget):
             comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
     
     def slotEdit(self):
-        if self.edit and self.edit.isShown():
-            self.edit.setWindowState(Qt.WindowActive)
-        else:
-            self.edit = connection.Window(self.view.parent(), self.conn)
+        if self.edit:
+            try:
+                if self.edit.isShown():
+                    self.edit.setWindowState(Qt.WindowActive)
+                    return
+            except RuntimeError:
+                pass
+        self.edit = connection.Window(self.view.parent(), self.conn)
     
     def mouseDoubleClickEvent(self, event):
         self.slotEdit()
