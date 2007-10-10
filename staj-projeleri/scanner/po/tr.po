@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-10 16:35+0300\n"
-"PO-Revision-Date: 2007-10-10 15:07+0300\n"
+"POT-Creation-Date: 2007-10-10 16:47+0300\n"
+"PO-Revision-Date: 2007-10-10 16:47+0300\n"
 "Last-Translator: Aslı Okur\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -112,6 +112,16 @@ msgstr "Hepsini Kaydet"
 #: src/scanresultmulti.py:74
 msgid "Save Selected"
 msgstr "Seçiliyi Kaydet"
+
+#: src/scanresultmulti.py:113 src/scanresultmulti.py:123
+msgid ""
+"*.png|PNG-Files\n"
+"*.JPEG *.jpg|JPEG-Files\n"
+"*.bmp|Bitmap-Files"
+msgstr ""
+"*.png|PNG-Dosyaları\n"
+"*.JPEG *.jpg|JPEG-Dosyaları\n"
+"*.bmp|Bitmap-Dosyaları"
 
 #: src/scanresultmulti.py:115 src/scanresultmulti.py:125 src/progress.py:18
 #: src/progress.py:41

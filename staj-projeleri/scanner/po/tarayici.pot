@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-10 16:35+0300\n"
+"POT-Creation-Date: 2007-10-10 16:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,6 +110,13 @@ msgstr ""
 
 #: src/scanresultmulti.py:74
 msgid "Save Selected"
+msgstr ""
+
+#: src/scanresultmulti.py:113 src/scanresultmulti.py:123
+msgid ""
+"*.png|PNG-Files\n"
+"*.JPEG *.jpg|JPEG-Files\n"
+"*.bmp|Bitmap-Files"
 msgstr ""
 
 #: src/scanresultmulti.py:115 src/scanresultmulti.py:125 src/progress.py:18
