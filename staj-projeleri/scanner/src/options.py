@@ -58,7 +58,7 @@ class Options(QWidget):
         
         self.deviceSelect = QComboBox(False,self.deviceSelectBox,"deviceSelect")
         
-        self.deviceSelect.insertItem("Select a Device")
+        self.deviceSelect.insertItem("None")
         
         for device in self.devices:
             self.deviceSelect.insertItem(device[1] + " " + device[2])

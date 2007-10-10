@@ -10,7 +10,8 @@ from scanner import *
 import pickle
 
 version = '0.1'
-description = "Scanner Interface"
+description = "Scanner Interface - An alternative for Kooka"
+long_description = "This program is developed by students during \nPardus Internship Program Summer 2007." 
 
 def loadIcon(name, group=KIcon.Desktop):
     return KGlobal.iconLoader().loadIcon(name, group)
@@ -26,7 +27,7 @@ def AboutData():
         description,
         KAboutData.License_GPL,
         '(C) 2007 UEKAE/TÜBİTAK',
-        None,
+        long_description,
         None,
         'bugzilla@pardus.org.tr')
    about_data.addAuthor("Barış Can Daylık", "Main Developer", None)
@@ -68,9 +69,12 @@ class Main(KDialog):
             self.devicesGroup.layout().setMargin(11)
             devicesLayout = QVBoxLayout(self.devicesGroup.layout())
             devicesLayout.setAlignment(Qt.AlignTop)
+	    
     
             for device in self.devices:
                 print device
+		#if not device in self.devices:
+		    #KMessageBox.information(self,"There is no device connected.\nApplication will close.","")
                 radio = QRadioButton(self.devicesGroup,"device")
                 radio.setText(device[1] + " " + device[2])
                 devicesLayout.addWidget(radio)
@@ -109,7 +113,6 @@ class Main(KDialog):
             self.scanWindow.hide()
             
             self.connect(self.scanWindow.options,PYSIGNAL("newDeviceSelected"),self.showScanWindow)
-        
             self.show()
         else:
             MainLayout = QVBoxLayout(self,11,6,"MainLayout")

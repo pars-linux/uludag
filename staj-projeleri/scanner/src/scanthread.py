@@ -15,10 +15,11 @@ class ScanThread(QThread):
 	
     def run(self):
 	self.device.start()
-	#self.emit(PYSIGNAL("sigScanProgress"),0)
+	#self.emit(PYSIGNAL("sigScanProgress"), 1)
 	self.image = self.device.snap()
-	
+	#self.emit(PYSIGNAL("sigScanProgress"), 100)
 	qApp.postEvent(self.parent,ScanEvent(self.image))
+	#self.parent.disconnect(self, PYSIGNAL("sigScanProgress"), self.parent.setProgress)
 	
     def getImage(self):
 	return self.image
