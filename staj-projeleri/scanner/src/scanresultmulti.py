@@ -5,6 +5,7 @@ from kdecore import *
 from kdeui import *
 from kfile import *
 from scanthread import *
+from utility import *
 
 
 class ScanResultMulti(KDialog):
@@ -68,14 +69,14 @@ class ScanResultMulti(KDialog):
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Scan Result"))
-        self.saveAllButton.setText(self.__tr("Save All"))
-        self.saveSelectedButton.setText(self.__tr("Save Selected"))
-        self.cancelButton.setText(self.__tr("Cancel"))
+        self.setCaption(i18n("Scan Result"))
+        self.saveAllButton.setText(i18n("Save All"))
+        self.saveSelectedButton.setText(i18n("Save Selected"))
+        self.cancelButton.setText(i18n("Cancel"))
 
 
-    def __tr(self,s,c = None):
-        return qApp.translate("ScanResultMulti",s,c)
+    #def __tr(self,s,c = None):
+        #return qApp.translate("ScanResultMulti",s,c)
     
     def addImage(self,image):
         if(not image.isNull()):
@@ -97,7 +98,7 @@ class ScanResultMulti(KDialog):
     def saveFinished(self, total, saved):
 	    if total != 0:
 	    	KMessageBox.information(self,repr(saved) +" of "+ repr(total) + " file(s) successfully saved.","Save Result")
-	    self.setCaption(self.__tr("Scan Result"))
+	    self.setCaption(i18n("Scan Result"))
 	    self.saveAllButton.setEnabled(True)
             self.saveSelectedButton.setEnabled(True)
             self.cancelButton.setEnabled(True)
@@ -111,7 +112,7 @@ class ScanResultMulti(KDialog):
 			##temp += "\n"
 	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files"
 	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
-	self.setCaption(self.__tr("Please Wait"))
+	self.setCaption(i18n("Please Wait"))
 	self.saveAllButton.setEnabled(False)
         self.saveSelectedButton.setEnabled(False)
         self.cancelButton.setEnabled(False)
@@ -121,7 +122,7 @@ class ScanResultMulti(KDialog):
     def saveSelected(self):
 	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files"
 	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
-	self.setCaption(self.__tr("Please Wait"))
+	self.setCaption(i18n("Please Wait"))
 	self.saveAllButton.setEnabled(False)
         self.saveSelectedButton.setEnabled(False)
         self.cancelButton.setEnabled(False)

@@ -6,6 +6,7 @@ from labeledline import *
 from option import *
 from optionsthread import *
 from combobox import *
+from utility import *
 
 
 class Options(QWidget):
@@ -31,13 +32,13 @@ class Options(QWidget):
         
         self.basicTab.addChild(self.basicTabViewport)
         
-        self.basicOptionsBox = QGroupBox(1,Qt.Horizontal,"Basic Options",self.basicTabViewport,"basicOptionsBox")
+        self.basicOptionsBox = QGroupBox(1,Qt.Horizontal,i18n("Basic Options"),self.basicTabViewport,"basicOptionsBox")
         self.basicOptionsBox.setFlat(True)
         self.basicTabLayout.addWidget(self.basicOptionsBox)
         
-        self.scanMode = ComboBox("Scan Mode",False,self.basicOptionsBox,"combobox")
+        self.scanMode = ComboBox(i18n("Scan Mode"),False,self.basicOptionsBox,"combobox")
         
-        self.resolution = ComboBox("Resolution",False,self.basicOptionsBox,"combobox")
+        self.resolution = ComboBox(i18n("Resolution"),False,self.basicOptionsBox,"combobox")
         
         self.tabWidget.insertTab(self.basicTab,QString.fromLatin1(""))
         
@@ -52,13 +53,13 @@ class Options(QWidget):
         
         self.devices = sane.get_devices()
         
-        self.deviceSelectBox = QGroupBox(1,Qt.Horizontal,"Devices",self.advancedTabViewport,"deviceSelectBox")
+        self.deviceSelectBox = QGroupBox(1,Qt.Horizontal,i18n("Devices"),self.advancedTabViewport,"deviceSelectBox")
         self.deviceSelectBox.setFlat(True)
         self.advancedTabLayout.addWidget(self.deviceSelectBox)
         
         self.deviceSelect = QComboBox(False,self.deviceSelectBox,"deviceSelect")
         
-        self.deviceSelect.insertItem("None")
+        self.deviceSelect.insertItem(i18n("None"))
         
         for device in self.devices:
             self.deviceSelect.insertItem(device[1] + " " + device[2])
@@ -74,11 +75,11 @@ class Options(QWidget):
         self.device = None
 
     def languageChange(self):
-        self.tabWidget.changeTab(self.advancedTab,self.__tr("Advanced Settings"))
-        self.tabWidget.changeTab(self.basicTab,self.__tr("Basic Settings"))
+        self.tabWidget.changeTab(self.advancedTab,i18n("Advanced Settings"))
+        self.tabWidget.changeTab(self.basicTab,i18n("Basic Settings"))
         
-    def __tr(self,s,c = None):
-        return qApp.translate("Form1",s,c)
+    #def __tr(self,s,c = None):
+        #return qApp.translate("Form1",s,c)
     
     def updateOptions(self):
         print "updating options"
@@ -93,7 +94,7 @@ class Options(QWidget):
             self.optLayout = QVBoxLayout(self.opt)
             
             self.tmpVBox = QVBox(self.opt,"vbox")
-            self.loadingLabel = QLabel("Loading...",self.tmpVBox,"loadingLabel")
+            self.loadingLabel = QLabel(i18n("Loading..."),self.tmpVBox,"loadingLabel")
             self.optLayout.addWidget(self.tmpVBox)
 
             self.opt.show()

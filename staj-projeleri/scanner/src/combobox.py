@@ -13,7 +13,7 @@ class ComboBox(QHBox):
     def __init__(self,title,rw,parent,name,option=None,device=None):
         QHBox.__init__(self,parent,name)
 
-        self.label = QLabel(title,self,title)
+        self.label = QLabel(title,self)
         self.comboBox = QComboBox(rw,self,name)
         self.option = option
         self.device = device

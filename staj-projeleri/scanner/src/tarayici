@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 import sys
@@ -8,6 +9,7 @@ from kfile import *
 import sane
 from scanner import *
 import pickle
+from utility import *
 
 version = '0.1'
 description = "Scanner Interface - An alternative for Kooka"
@@ -29,7 +31,7 @@ def AboutData():
         '(C) 2007 UEKAE/TÜBİTAK',
         long_description,
         None,
-        'bugzilla@pardus.org.tr')
+        'bugs@pardus.org.tr')
    about_data.addAuthor("Barış Can Daylık", "Main Developer", None)
    about_data.addAuthor("Aslı Okur", "Developer and Current Maintainer", "asli.pardus@gmail.com")
    return about_data
@@ -116,7 +118,7 @@ class Main(KDialog):
             self.show()
         else:
             MainLayout = QVBoxLayout(self,11,6,"MainLayout")
-            label = QLabel("Loading...",self,"label")
+            label = QLabel(i18n("Loading..."),self,"label")
             MainLayout.addWidget(label)
             self.scanWindow = ScanWindow()
             self.scanWindow.hide()
@@ -131,15 +133,15 @@ class Main(KDialog):
         kapp.quit()
 
     def languageChange(self):
-        self.setCaption(self.__tr("Please Select a Device"))
-        self.devicesGroup.setTitle(self.__tr("Select Device"))
-        self.setDefault.setText("Use as default.")
-        self.OKButton.setText(self.__tr("OK"))
-        self.cancelButton.setText(self.__tr("Cancel"))
+        self.setCaption(i18n("Please Select a Device"))
+        self.devicesGroup.setTitle(i18n("Select Device"))
+        self.setDefault.setText(i18n("Use as default."))
+        self.OKButton.setText(i18n(("OK")))
+        self.cancelButton.setText(i18n("Cancel"))
 
 
-    def __tr(self,s,c = None):
-        return qApp.translate("Main",s,c)
+    #def __tr(self,s,c = None):
+        #return qApp.translate("Main",s,c)
 
     def quit(self):
         sane.exit()

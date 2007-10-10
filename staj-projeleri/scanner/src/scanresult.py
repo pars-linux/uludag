@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from qt import *
-
+from utility import *
 
 class ScanResult(QDialog):
     def __init__(self,image,parent = None,name = None,modal = 0,fl = 0):
@@ -46,13 +46,13 @@ class ScanResult(QDialog):
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Scan Result"))
-        self.saveButton.setText(self.__tr("Save..."))
-        self.cancelButton.setText(self.__tr("Cancel"))
+        self.setCaption(i18n("Scan Result"))
+        self.saveButton.setText(i18n("Save..."))
+        self.cancelButton.setText(i18n("Cancel"))
 
 
-    def __tr(self,s,c = None):
-        return qApp.translate("ScanResult",s,c)
+    #def __tr(self,s,c = None):
+        #return qApp.translate("ScanResult",s,c)
 
 
     def save(self):
