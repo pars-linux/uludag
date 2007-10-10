@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-10 13:59+0300\n"
-"PO-Revision-Date: 2007-10-10 13:39+0300\n"
+"POT-Creation-Date: 2007-10-10 15:23+0300\n"
+"PO-Revision-Date: 2007-10-10 15:07+0300\n"
 "Last-Translator: Aslı Okur\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -99,11 +99,11 @@ msgstr "Meşgul"
 
 #: src/scanner.py:175
 msgid "<p align=\"center\">Stopping</p>"
-msgstr "Durduruluyor"
+msgstr "<p align=\"center\">Durduruluyor</p>"
 
 #: src/scanner.py:178 src/progress.py:19
 msgid "<p align=\"center\">Scanning in progress</p>"
-msgstr "Tarama işlemi sürdürülüyor"
+msgstr "<p align=\"center\">Tarama işlemi sürdürülüyor</p>"
 
 #: src/scanresultmulti.py:73
 msgid "Save All"
@@ -120,4 +120,4 @@ msgstr "Lütfen Bekleyin"
 
 #: src/progress.py:42
 msgid "<p align=\"center\">Scanning in progress.</p>"
-msgstr "Tarama işlemi sürdürülüyor."
+msgstr "<p align=\"center\">Tarama işlemi sürdürülüyor.</p>"

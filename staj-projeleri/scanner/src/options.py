@@ -1,6 +1,6 @@
 
 from qt import *
-
+from kdecore import *
 import sane
 from labeledline import *
 from option import *
