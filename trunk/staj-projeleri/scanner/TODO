@@ -8,11 +8,12 @@ TODO - updated:
 (Progressbar ve cancel'da SANE kaynaklı sorunlar var, onlar henüz çözülemediği için
 progressdialog kaldırıldı, en azından şimdilik ;))
 + scan ve save bir thread olarak çalışıp ui'yi serbest bırakmalı
-- I18N desteği
+/ I18N desteği
 - Cancel problemi çözülmeli
 - Program için isim ve ikon bulunmalı
 - FileDialog'a daha fazla format ve uzantıya göre daha akıllı çalışma desteği
-- Otomatik Po güncelleme ve kaynak paketi oluşturma (setup.py)
++ Otomatik Po güncelleme ve kaynak paketi oluşturma (setup.py)
+- problem: setup.py'ye geçtikten sonra program ikonu sadece ilk pencerede çıkmaya başladı.
 
 - Açılışta gelen diyalogda eğer cihaz yoksa boş bir seçim penceresi
 yerine, cihaz bulunamadı, olabilecek sorunlar, kabloyu takın vb gibi ufak
