@@ -110,8 +110,8 @@ class ScanResultMulti(KDialog):
 		#temp += "*." + i + "\n"
 		##if i != output.getLast():
 			##temp += "\n"
-	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files"
-	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
+	temp = i18n("*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files")
+	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,i18n("Save As")))
 	self.setCaption(i18n("Please Wait"))
 	self.saveAllButton.setEnabled(False)
         self.saveSelectedButton.setEnabled(False)
@@ -120,8 +120,8 @@ class ScanResultMulti(KDialog):
 	self.saveThread.start()
                 
     def saveSelected(self):
-	temp = "*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files"
-	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,"Save As"))
+	temp = i18n("*.png|PNG-Files\n*.JPEG *.jpg|JPEG-Files\n*.bmp|Bitmap-Files")
+	fileName = unicode(KFileDialog.getSaveFileName("",temp,self,i18n("Save As")))
 	self.setCaption(i18n("Please Wait"))
 	self.saveAllButton.setEnabled(False)
         self.saveSelectedButton.setEnabled(False)
