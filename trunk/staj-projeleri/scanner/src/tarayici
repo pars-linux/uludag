@@ -23,7 +23,7 @@ def loadIconSet(name, group=KIcon.Desktop):
 
 def AboutData():
    about_data = KAboutData(
-        'scanner',
+        'tarayici',
         'Scanner',
         version,
         description,
