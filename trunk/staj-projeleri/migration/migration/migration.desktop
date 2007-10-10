@@ -1,7 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Pardus Migration Tool
-Name[tr]=Pardus Göç Aracı
+Name=Migration
+Name[tr]=Migration
+GenericName=Pardus Migration Tool
+GenericName[tr]=Pardus Göç Aracı
 Exec=migration
 Icon=migration
 Type=Application
