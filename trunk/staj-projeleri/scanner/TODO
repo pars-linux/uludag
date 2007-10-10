@@ -4,12 +4,15 @@ TODO - updated:
 + Toolbar için ikonlar ve tooltip gerekli
 + Save için dosya adı girilebilmeli 
 - Eski bir dosya varsa üzerine yazmamalı
-+ Scan sırasında bir progress bar gösterilmeli (Busy indicatorda sorun var)
+? Scan sırasında bir progress bar gösterilmeli (Busy indicatorda sorun var)
+(Progressbar ve cancel'da SANE kaynaklı sorunlar var, onlar henüz çözülemediği için
+progressdialog kaldırıldı, en azından şimdilik ;))
 + scan ve save bir thread olarak çalışıp ui'yi serbest bırakmalı
-- Dil çevirisi yapılmalı
+- I18N desteği
 - Cancel problemi çözülmeli
-- Program için resim ve ikon bulunmalı
-
+- Program için isim ve ikon bulunmalı
+- FileDialog'a daha fazla format ve uzantıya göre daha akıllı çalışma desteği
+- Otomatik Po güncelleme ve kaynak paketi oluşturma (setup.py)
 
 Artistanbul kooka'da aşağıdaki eksikleri gördüklerini belirttiler :)
 - Dikdörtgen olmayan seçimler de yapılabilmeli. Gazete dergiden makale aktarırken falan

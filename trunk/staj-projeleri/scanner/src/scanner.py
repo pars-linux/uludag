@@ -4,6 +4,7 @@ from kdecore import *
 from kdeui import *
 from kfile import *
 import sane
+import time
 
 from options import *
 from previewArea import *
@@ -62,7 +63,9 @@ class ScanWindow(KMainWindow):
         self.connect(self.previewArea.previewImage,PYSIGNAL("selectionCreated"),self.selectArea)
 	
 	self.progress = Progress(self.centralWidget())
+	self.info = Info(self.centralWidget())
 	#self.connect(self.options.device, PYSIGNAL("sigScanProgress"), self.progress.setProgress)
+	#self.connect(self, SIGNAL("sigScanProgress()"), self.progress, SLOT("setProgress()"))
 	self.progress.setTotalSteps(0)
 	self.progress.hide()
 	
@@ -138,7 +141,9 @@ class ScanWindow(KMainWindow):
         if self.options.device != None:
             qApp.processEvents()
 	    self.statusBar().message("Busy")
-	    self.progress.show()
+	    #self.progress.show()
+	    self.info.show()
+	    qApp.setOverrideCursor(QCursor(Qt.WaitCursor))
             self.oldValues = self.options.getOptionValues()
             
             for option in self.options.optionList:
@@ -158,6 +163,7 @@ class ScanWindow(KMainWindow):
      	    
 	    self.previewThread = PreviewThread(self, self.options.device)
 	    self.previewThread.start()
+	    #self.progress.setProgress(0)
 	    
     def stopScan(self):
 	if self.options.device != None:
@@ -170,7 +176,9 @@ class ScanWindow(KMainWindow):
     def backToNormal(self):
 	self.progress.setLabelText("<p align=\"center\">Scanning in progress</p>")
 	self.statusBar().message("Ready")
+	self.progress.reset()
 	self.progress.hide()
+	qApp.restoreOverrideCursor()
 
     def customEvent(self,event):
         if(event.type() == 1002):
@@ -196,11 +204,15 @@ class ScanWindow(KMainWindow):
 	    s.show()
 	    #self.progress.setProgress(100)
 	    self.progress.hide()
+	    self.info.hide()
+	    qApp.restoreOverrideCursor()
 	    self.statusBar().message("Ready")
 	    
     def createPreview(self, im):
             self.statusBar().message("Ready")
 	    self.progress.hide()
+	    self.info.hide()
+	    qApp.restoreOverrideCursor()
 	    self.previewArea.previewImage.setImage(im)
             self.options.setOptionValues(self.oldValues)
 
@@ -208,6 +220,11 @@ class ScanWindow(KMainWindow):
         if self.options.device != None:
 	    self.statusBar().message("Busy")
 	    qApp.processEvents()
-	    self.progress.show()
+	    #self.progress.show()
+	    self.info.show()
+	    qApp.setOverrideCursor(QCursor(Qt.WaitCursor))
 	    self.scanThread = ScanThread(self, self.options.device)
+	    #self.connect(self.scanThread, PYSIGNAL("sigScanProgress"), self.progress, SLOT("setProgress(int)"))
 	    self.scanThread.start()
+	    #self.progress.setProgress(0)
+	    
