@@ -12,6 +12,7 @@ from scanresult import *
 from scanresultmulti import *
 from extractor import *
 from progress import *
+from utility import *
 
 from scanthread import *
 
@@ -25,7 +26,7 @@ class ScanWindow(KMainWindow):
         KMainWindow.__init__(self,parent,name,fl)
         
         self.statusBar()
-	self.statusBar().message("Ready")
+	self.statusBar().message(i18n("Ready"))
 
         if not name:
             self.setName("Scanner")
@@ -50,13 +51,13 @@ class ScanWindow(KMainWindow):
         self.image1 = QPixmap()
         self.image1.loadFromData(image1_data,"PNG")
 	
-	self.toolBar().insertButton(self.image0, 1, SIGNAL("released()"), self.previewScan, True, "Preview")
-	self.toolBar().insertButton(self.image1, 2, SIGNAL("released()"), self.startScan, True, "Scan")
-	self.toolBar().insertButton(loadIcon("view_remove"), 3, SIGNAL("released()"), self.previewArea.previewImage.fit, True, "Fit Scan Area")
-	self.toolBar().insertButton(loadIcon("view_fit_window"), 4, SIGNAL("released()"), self.previewArea.previewImage.fitSelect, True, "Fit Selected Area")
-	self.toolBar().insertButton(loadIcon("viewmag+"), 5, SIGNAL("released()"), self.previewArea.previewImage.zoomin, True, "Zoom In")
-	self.toolBar().insertButton(loadIcon("viewmag1"), 6, SIGNAL("released()"), self.previewArea.previewImage.zoomactual, True, "Actual Size")
-	self.toolBar().insertButton(loadIcon("viewmag-"), 7, SIGNAL("released()"), self.previewArea.previewImage.zoomout, True, "Zoom Out")
+	self.toolBar().insertButton(self.image0, 1, SIGNAL("released()"), self.previewScan, True, i18n("Preview"))
+	self.toolBar().insertButton(self.image1, 2, SIGNAL("released()"), self.startScan, True, i18n("Scan"))
+	self.toolBar().insertButton(loadIcon("view_remove"), 3, SIGNAL("released()"), self.previewArea.previewImage.fit, True, i18n("Fit Scan Area"))
+	self.toolBar().insertButton(loadIcon("view_fit_window"), 4, SIGNAL("released()"), self.previewArea.previewImage.fitSelect, True, i18n("Fit Selected Area"))
+	self.toolBar().insertButton(loadIcon("viewmag+"), 5, SIGNAL("released()"), self.previewArea.previewImage.zoomin, True, i18n("Zoom In"))
+	self.toolBar().insertButton(loadIcon("viewmag1"), 6, SIGNAL("released()"), self.previewArea.previewImage.zoomactual, True, i18n("Actual Size"))
+	self.toolBar().insertButton(loadIcon("viewmag-"), 7, SIGNAL("released()"), self.previewArea.previewImage.zoomout, True, i18n("Zoom Out"))
 
         self.hLayout.addWidget(self.previewArea)
 
@@ -72,7 +73,7 @@ class ScanWindow(KMainWindow):
 	self.connect(self.progress,SIGNAL("canceled()"),self.stopScan)
 	
 	self.menuBar()
-	self.menuBar().insertItem(QString("Help"), self.helpMenu())
+	self.menuBar().insertItem(QString(i18n("Help")), self.helpMenu())
 
 	# No Device Selected
         self.toolBar().setEnabled(False)
@@ -89,10 +90,10 @@ class ScanWindow(KMainWindow):
         sane.exit()
 
     def languageChange(self):
-        self.setCaption(self.__tr("Scanner"))
+        self.setCaption("Scanner")
 
-    def __tr(self,s,c = None):
-        return qApp.translate("Scanner",s,c)
+    #def __tr(self,s,c = None):
+        #return qApp.translate("Scanner",s,c)
 
     def newDeviceSelected(self):
 	self.toolBar().setEnabled(True)
@@ -108,7 +109,7 @@ class ScanWindow(KMainWindow):
             self.previewArea.formEmptyImage(br_x,br_y)
 
     def noDeviceSelected(self):
-	KMessageBox.information(self,"There is either no device connected or no device selected","")
+	KMessageBox.information(self,i18n("There is either no device connected or no device selected"),"")
 	self.toolBar().setEnabled(False)
         self.previewArea.noImage()
         self.previewArea.setEnabled(False)
@@ -140,7 +141,7 @@ class ScanWindow(KMainWindow):
     def previewScan(self):
         if self.options.device != None:
             qApp.processEvents()
-	    self.statusBar().message("Busy")
+	    self.statusBar().message(i18n("Busy"))
 	    #self.progress.show()
 	    self.info.show()
 	    qApp.setOverrideCursor(QCursor(Qt.WaitCursor))
@@ -171,11 +172,11 @@ class ScanWindow(KMainWindow):
 		self.stopThread.start()
 		#qApp.wakeUpGuiThread()
 		qApp.processEvents()
-		self.progress.setLabelText("<p align=\"center\">Stopping</p>")
+		self.progress.setLabelText(i18n("<p align=\"center\">Stopping</p>"))
 		
     def backToNormal(self):
-	self.progress.setLabelText("<p align=\"center\">Scanning in progress</p>")
-	self.statusBar().message("Ready")
+	self.progress.setLabelText(i18n("<p align=\"center\">Scanning in progress</p>"))
+	self.statusBar().message(i18n("Ready"))
 	self.progress.reset()
 	self.progress.hide()
 	qApp.restoreOverrideCursor()
@@ -206,10 +207,10 @@ class ScanWindow(KMainWindow):
 	    self.progress.hide()
 	    self.info.hide()
 	    qApp.restoreOverrideCursor()
-	    self.statusBar().message("Ready")
+	    self.statusBar().message(i18n("Ready"))
 	    
     def createPreview(self, im):
-            self.statusBar().message("Ready")
+            self.statusBar().message(i18n("Ready"))
 	    self.progress.hide()
 	    self.info.hide()
 	    qApp.restoreOverrideCursor()
@@ -218,7 +219,7 @@ class ScanWindow(KMainWindow):
 
     def startScan(self):
         if self.options.device != None:
-	    self.statusBar().message("Busy")
+	    self.statusBar().message(i18n("Busy"))
 	    qApp.processEvents()
 	    #self.progress.show()
 	    self.info.show()

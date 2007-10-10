@@ -1,5 +1,6 @@
 from qt import *
 from kdeui import *
+from utility import *
 
 class Progress(QProgressDialog):
     def __init__(self,parent = None,name = None,modal = 0,fl = 0):
@@ -14,12 +15,12 @@ class Progress(QProgressDialog):
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Please Wait"))
-        self.setLabelText(self.__tr("<p align=\"center\">Scanning in progress</p>"))
+        self.setCaption(i18n("Please Wait"))
+        self.setLabelText(i18n("<p align=\"center\">Scanning in progress</p>"))
 
 
-    def __tr(self,s,c = None):
-        return qApp.translate("Progress",s,c)
+    #def __tr(self,s,c = None):
+        #return qApp.translate("Progress",s,c)
 
 class Info(KDialog):
     def __init__(self,parent = None,name = None,modal = 0,fl = 0):
@@ -37,9 +38,9 @@ class Info(KDialog):
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Please Wait"))
-        self.textLabel1.setText(self.__tr("<p align=\"center\">Scanning in progress.</p>"))
+        self.setCaption(i18n("Please Wait"))
+        self.textLabel1.setText(i18n("<p align=\"center\">Scanning in progress.</p>"))
 
 
-    def __tr(self,s,c = None):
-        return qApp.translate("Information",s,c)
+    #def __tr(self,s,c = None):
+        #return qApp.translate("Information",s,c)
