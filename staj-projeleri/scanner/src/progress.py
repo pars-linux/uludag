@@ -23,7 +23,7 @@ class Progress(QProgressDialog):
         #return qApp.translate("Progress",s,c)
 
 class Info(KDialog):
-    def __init__(self,parent = None,name = None,modal = 0,fl = 0):
+    def __init__(self,parent = None,name = None,modal = 1,fl = 0):
         KDialog.__init__(self,parent,name,modal,fl)
 
         if not name:
