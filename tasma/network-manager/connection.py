@@ -56,9 +56,9 @@ class ScanItem(QListViewItem):
         self.remote = remote
         self.setText(2, remote)
         
-        mac = self.info.get("mac", None)
-        if mac:
-            self.setText(3, mac)
+        self.mac = self.info.get("mac", None)
+        if self.mac:
+            self.setText(3, self.mac)
     
     def signalIcon(self, signal):
         # FIXME: make this more pythonic
@@ -108,10 +108,11 @@ class Scanner(QPopupMenu):
         but = QPushButton(getIconSet("key_enter", KIcon.Small), i18n("Use"), hb)
         self.scan_use_but = but
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
-    
+
     def slotScanDouble(self, item):
         parent = self.parent
         parent.remote.setText(item.remote)
+        parent.apmac = item.mac
         if item.enc == "none":
             i = 0
         else:
@@ -155,6 +156,7 @@ class Settings(QWidget):
         self.conn = conn
         self.new_conn = new_conn
         
+        self.apmac = ''
         lay = QVBoxLayout(self, 3, 3)
         
         # Identification
@@ -262,6 +264,7 @@ class Settings(QWidget):
         comlink.queryDevices(link.script)
     
     def cleanup(self):
+        self.apmac = ''
         if self.scanpop:
             comlink.remote_hook.remove(self.scanpop.slotRemotes)
         comlink.device_hook.remove(self.slotDevices)
@@ -435,7 +438,7 @@ class Settings(QWidget):
         if "remote" in self.link.modes:
             remote = self.remote.text()
             if conn == None or remote != self.conn.remote:
-                script_object.setRemote(name=name, remote=remote)
+                script_object.setRemote(name=name, remote=remote, apmac=self.apmac)
         
         if "auth" in self.link.modes:
             i = self.auth_mode.currentItem()

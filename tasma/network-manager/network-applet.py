@@ -271,10 +271,14 @@ class Applet:
         self.trays = []
         self.mode = 0
         self.app = app
+        self.config = KConfig("network-appletrc")
+        self.config.setGroup("General")
+        self.checkAutoConnect()
         comlink.state_hook.append(self.updateIcons)
         app.connect(app, SIGNAL("shutDown()"), self.fixQuit)
     
     def fixQuit(self):
+        self.config.sync()
         for item in self.trays:
             item.deleteLater()
     
@@ -283,6 +287,9 @@ class Applet:
             return
         comlink.queryLinks()
         comlink.queryConnections()
+        self.resetViews()
+
+    def resetViews(self):
         if self.mode == 0:
             self.mode = -1
             self.noGroup(0)
@@ -294,13 +301,28 @@ class Applet:
         KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, menu).plug(menu)
         KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, menu).plug(menu)
         menu.insertSeparator(1)
+        self.autoConnect_mid = menu.insertItem(i18n("Connect Automatically"), self.toggleAutoConnect, 0, -1, 1)
+        menu.insertSeparator(1)
         device_mid = menu.insertItem(i18n("Icon Per Device"), self.deviceGroup, 0, -1, 1)
         single_mid = menu.insertItem(i18n("Single Icon"), self.noGroup, 0, -1, 1)
+       
+        menu.setItemChecked(self.autoConnect_mid, self.autoConnect)
         if self.mode == 0:
             menu.setItemChecked(single_mid, True)
         else:
             menu.setItemChecked(device_mid, True)
     
+    def checkAutoConnect(self):
+        self.autoConnect = self.config.readBoolEntry("AutoConnect",True)
+
+    def toggleAutoConnect(self):
+        if self.autoConnect:
+            self.config.writeEntry("AutoConnect", False)
+        else:
+            self.config.writeEntry("AutoConnect", True)
+        self.checkAutoConnect()
+        self.resetViews()
+
     def startManager(self):
         os.system("network-manager")
     
@@ -337,15 +359,14 @@ class Applet:
             tray.show()
             tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
             self.trays.append(tray)
-    
+
     def slotQuit(self):
         autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))
-        config = KConfig("network-appletrc")
-        config.setGroup("General")
         if autostart == KMessageBox.Yes:
-            config.writeEntry("AutoStart", "true")
+            self.config.writeEntry("AutoStart", True)
         elif autostart == KMessageBox.No:
-            config.writeEntry("AutoStart", "false")
+            self.config.writeEntry("AutoStart", False)
+        self.config.sync()
         self.app.quit()
 
 
@@ -403,7 +424,7 @@ class NetTray(KSystemTray):
     def __init__(self, parent, dev=None):
         KSystemTray.__init__(self)
         self.dcop = parent.app.dcopClient()
-
+        
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
