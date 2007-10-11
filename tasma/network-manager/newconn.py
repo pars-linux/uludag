@@ -19,11 +19,7 @@ from comariface import comlink
 
 
 class Window(QDialog):
-    myInstance = None
     def __init__(self, parent):
-        if Window.myInstance:
-            return None
-        Window.myInstance = self
         QDialog.__init__(self, parent)
         self.setMinimumSize(340, 340)
         self.resize(340, 340)
@@ -119,7 +115,6 @@ class Window(QDialog):
     
     def closeEvent(self, event):
         QDialog.closeEvent(self, event)
-        Window.myInstance = None
 
 def ask_for_new(parent):
     if len(comlink.links) == 0:
