@@ -51,11 +51,7 @@ class HLine(QHBox):
 
 
 class HelpDialog(QDialog):
-    myInstance = None
     def __init__(self, name, title, parent=None):
-        if HelpDialog.myInstance:
-            return None
-        HelpDialog.myInstance = self
         QDialog.__init__(self, parent)
         self.setCaption(title)
         self.layout = QGridLayout(self)
@@ -74,4 +70,3 @@ class HelpDialog(QDialog):
 
     def closeEvent(self, event):
         QDialog.closeEvent(self, event)
-        HelpDialog.myInstance = None
