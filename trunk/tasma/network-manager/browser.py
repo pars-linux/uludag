@@ -396,6 +396,9 @@ class Widget(QVBox):
         self.butConf.setUsesTextLabel(True)
         self.butConf.setTextPosition(self.butConf.BesideIcon)
         
+        self.helpwin = None
+        self.newconnwin = None
+        
         lab = QToolButton(bar)
         lab.setEnabled(False)
         bar.setStretchableWidget(lab)
@@ -421,7 +424,14 @@ class Widget(QVBox):
         comlink.checkAccess("setConnection")
     
     def slotCreate(self):
-        newconn.ask_for_new(self)
+        if self.newconnwin:
+            try:
+                if self.newconnwin.isShown():
+                    self.newconnwin.setWindowState(Qt.WindowActive)
+                    return
+            except RuntimeError:
+                pass
+        self.newconnwin = newconn.ask_for_new(self)
     
     def slotSettings(self):
         self.stack.hide()
@@ -429,6 +439,13 @@ class Widget(QVBox):
         self.stack.show()
     
     def slotHelp(self):
+        if self.helpwin:
+            try:
+                if self.helpwin.isShown():
+                    self.helpwin.setWindowState(Qt.WindowActive)
+                    return
+            except RuntimeError:
+                pass
         self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
     
     def setInterface(self):
