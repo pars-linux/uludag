@@ -123,3 +123,4 @@ def ask_for_new(parent):
             QMessageBox.Ok, QMessageBox.NoButton)
         return
     win = Window(parent)
+    return win
