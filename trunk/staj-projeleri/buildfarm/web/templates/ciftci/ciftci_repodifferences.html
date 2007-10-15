@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if pisi_list %}
+    <h3>Listing the differences of the repositories :</h3>
+    <ul>
+        <li>Source repository : {{ source_repo }}</li>
+        </li>Destination repository : {{ dest_repo }}</li>
+    </ul>
+    <h4>Here you can move the packages(with their dependencies) to the destination repository.</h4>
+    <hr />
+    <form name="transferForm" action="/transfer/" method="POST">
+        <table class="transferTable" cellspacing="0" cellpadding="0" border="0">
+        <tr class="title">
+            <td></td>
+            <td>Package Name</td>
+            <td>Package Dependencies</td>
+        </tr>
+            {% for p in pisi_list %}
+            <tr class="{% cycle row1,row2 %}">
+                <td>
+                    <input type="checkbox" class="cbox" name="{{ p.name }}cbox" />
+                </td>
+                <td>{{ p.name }}</td>
+                <td>
+                    {% if p.deplist %}
+                        {% for d in p.deplist %}
+                        <input type="checkbox"{% if not d.exists %}disabled="disabled"{% endif %} name="{{ d.name }}" />
+                        {{ d.name }} (version from: {{ d.versionFrom }}) <br />
+                        {% endfor %}
+                    {% else %}
+                        This package doesn't have runtime dependencies.
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    <br />
+    <input type="submit" value="Transfer" name="submit" />
+    </form>
+    {% else %}
+        <p>The destination repository {{ dest_repo }} contains all of the source repository {{ source_repo }}.</p>
+    {% endif %}
+{% endblock %}
+
