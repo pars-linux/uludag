@@ -17,9 +17,18 @@ import pisi
 import os
 import fnmatch
 
-def getPisiList(path):
-    # Generates a list which includes a dictionary for each package
-    return [{'name':p} for p in os.listdir(path) if p.endswith(".pisi")]
+def getDifferences(sourcePath, destPath):
+    # Returns the pisi packages which are in source but not in dest
+    pisi_list = [{'name':p} for p in os.listdir(sourcePath) \
+                if not os.path.exists(os.path.join(destPath, p)) and p.endswith(".pisi")]
+
+    for ps in pisi_list:
+        ps["deplist"] = []
+        for m in getRuntimeDeps(os.path.join(sourcePath, ps["name"])):
+            ps["deplist"].append({ "name": m.package,
+                                   "versionFrom" : m.versionFrom,
+                                   "exists" : isDepExists(sourcePath, m.package, m.versionFrom) })
+    return pisi_list
 
 def getRuntimeDeps(p):
     metadata = (pisi.package.Package(p)).get_metadata()
@@ -43,7 +52,7 @@ def movePackage(name, sourcePath, destPath):
     return True
 
 def getPisiPackages(path):
-    pisi_list = getPisiList(path)
+    pisi_list =  [{'name':p} for p in os.listdir(path) if p.endswith(".pisi")]
 
     for ps in pisi_list:
         ps["deplist"] = []
@@ -51,25 +60,5 @@ def getPisiPackages(path):
             ps["deplist"].append({ "name": m.package,
                                    "versionFrom" : m.versionFrom,
                                    "exists" : isDepExists(path, m.package, m.versionFrom) })
-    return pisi_list
-
-def old_getPisiDict(path):
-    # Returns a dictionary which contains the runtime dependencies
-    # of the packages
-    d = {}
-    for ps in getPisiList(path):
-        # ps is a dictionary which has only 'name' key
-        d[ps["name"]] = map(lambda x: x.package, getRuntimeDeps(os.path.join(path, ps["name"])))
-
-    return d
-
-def old_getPisiPackages(path):
-    pisi_list = getPisiList(path)
-    dep_dict = old_getPisiDict(path)
-
-    for p in pisi_list:
-        if dep_dict[p["name"]]:
-            p["deplist"] = dep_dict[p["name"]]
-
     return pisi_list
 
