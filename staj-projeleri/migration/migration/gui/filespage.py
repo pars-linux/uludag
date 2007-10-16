@@ -24,17 +24,20 @@ class FilesPage(QWidget):
         
         self.nothing = QRadioButton(self, "nothing")
         self.nothing.setText(i18n("Do Nothing"))
+        QToolTip.add(self.nothing, i18n("Does not use your old files. <br>You can still access them from their old location."))
         self.layout.addWidget(self.nothing)
         
         self.link = QRadioButton(self, "link")
         self.link.setText(i18n("Put links to my desktop"))
         self.link.setChecked(True)
+        QToolTip.add(self.link, i18n("Does not copy your files. Instead, it puts shortcuts of your existing folders to your desktop for easy access.<br> By this way, you can save disk space."))
         self.layout.addWidget(self.link)
         
         layout1 = QHBoxLayout(None, 0, 6, "layout1")
         
         self.copy = QRadioButton(self, "copy")
         self.copy.setText(i18n("Copy files to directory:"))
+        QToolTip.add(self.copy, i18n("Copies selected files to another directory of Pardus."))
         layout1.addWidget(self.copy)
         
         dst = os.path.expanduser("~/Desktop")
