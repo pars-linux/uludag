@@ -4,12 +4,14 @@
     {% if pisi_list %}
     <h3>Listing the differences of the repositories :</h3>
     <ul>
-        <li>Source repository : {{ source_repo }}</li>
-        </li>Destination repository : {{ dest_repo }}</li>
+        <li>Source repository : <strong>{{ source_repo.repo_name }}</strong>&nbsp;&nbsp;&nbsp;<em>{{ source_repo.repo_path }}</em></li>
+        <li>Destination repository : <strong>{{ dest_repo.repo_name }}</strong>&nbsp;&nbsp;&nbsp;<em>{{ dest_repo.repo_path }}</em></li>
     </ul>
     <h4>Here you can move the packages(with their dependencies) to the destination repository.</h4>
     <hr />
-    <form name="transferForm" action="/transfer/" method="POST">
+    <form name="transferForm" action="/ciftci/transfer/" method="POST">
+        <input type="hidden" name="source_repo" value="{{ source_repo.repo_name }}" />
+        <input type="hidden" name="dest_repo" value="{{ dest_repo.repo_name }}" />
         <table class="transferTable" cellspacing="0" cellpadding="0" border="0">
         <tr class="title">
             <td></td>
@@ -19,13 +21,13 @@
             {% for p in pisi_list %}
             <tr class="{% cycle row1,row2 %}">
                 <td>
-                    <input type="checkbox" class="cbox" name="{{ p.name }}cbox" />
+                    <input type="checkbox" class="cbox" name="{{ p.name }}_checkbox" />
                 </td>
                 <td>{{ p.name }}</td>
                 <td>
                     {% if p.deplist %}
                         {% for d in p.deplist %}
-                        <input type="checkbox"{% if not d.exists %}disabled="disabled"{% endif %} name="{{ d.name }}" />
+                        <input type="checkbox"{% if not d.exists %}disabled="disabled"{% endif %} name="{{ d.name }}_checkbox" />
                         {{ d.name }} (version from: {{ d.versionFrom }}) <br />
                         {% endfor %}
                     {% else %}
@@ -39,7 +41,7 @@
     <input type="submit" value="Transfer" name="submit" />
     </form>
     {% else %}
-        <p>The destination repository {{ dest_repo }} contains all of the source repository {{ source_repo }}.</p>
+        <p>The destination repository {{ dest_repo.repo_name }} contains all of the source repository {{ source_repo.repo_name }}.</p>
     {% endif %}
 {% endblock %}
 
