@@ -10,25 +10,64 @@
 # Please read the COPYING file.
 #
 
-import unittest
+import testcase
+import pisi
 
-class ComponentDBTestCase(unittest.TestCase):
+class ComponentDBTestCase(testcase.TestCase):
+
+    componentdb = pisi.db.componentdb.ComponentDB()
 
     def testHasComponent(self):
-        assert False
+        assert self.componentdb.has_component("system.base", "pardus-2007")
+        assert not self.componentdb.has_component("hede.hodo", "pardus-2007")
+        assert self.componentdb.has_component("applications.network", "contrib-2007")
+        assert not self.componentdb.has_component("hede.hodo", "contrib-2007")
+        assert self.componentdb.has_component("applications.network")
 
     def testListComponents(self):
-        assert False
+        assert set(self.componentdb.list_components("pardus-2007")) == set(["system", "system.base", 
+                                                                            "applications", "applications.network"])
+        assert set(self.componentdb.list_components("contrib-2007")) == set(["applications", "applications.util",
+                                                                             "applications.network"])
+        assert set(self.componentdb.list_components()) == set(["system", "system.base", 
+                                                               "applications", "applications.network",
+                                                               "applications.util"])
 
     def testGetComponent(self):
-        assert False
+        component = self.componentdb.get_component("applications.network")
+        assert component.name == "applications.network"
+        assert "ncftp" in component.packages
+        assert "lynx" not in component.packages
+
+        component = self.componentdb.get_component("applications.network", "contrib-2007")
+        assert component.name == "applications.network"
+        assert "lynx" in component.packages
+        assert "ncftp" not in component.packages
 
     def testGetUnionComponent(self):
-        assert False
+        component = self.componentdb.get_union_component("applications.network")
+        assert component.name == "applications.network"
+        assert "lynx" in component.packages
+        assert "ncftp" in component.packages
 
     def testGetPackages(self):
-        assert False
+        packages = self.componentdb.get_packages("applications.network")
+        assert "ncftp" in packages
+        assert "lynx" not in packages
+
+        packages = self.componentdb.get_packages("applications.network", "contrib-2007")
+        assert "lynx" in packages
+        assert "ncftp" not in packages
+
+        packages = self.componentdb.get_packages("applications", "contrib-2007", walk = True)
+        assert "cpulimit" and "lynx" in packages
+        assert "ncftp" not in packages
 
     def testGetUnionPackages(self):
-        assert False
+        packages = self.componentdb.get_union_packages("applications.network")
+        assert "ncftp" in packages
+        assert "lynx" in packages
+        assert "cpulimit" not in packages
 
+        packages = self.componentdb.get_union_packages("applications", walk = True)
+        assert "ncftp" and "lynx" and "cpulimit" in packages
