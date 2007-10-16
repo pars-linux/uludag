@@ -79,7 +79,7 @@ class OptionsPage(QWidget):
                 self.FFBookmarks.setText(i18n("Firefox bookmarks"))
                 self.FFBookmarks.setChecked(True)
                 QToolTip.add(self.FFBookmarks, i18n("Copies your old Firefox bookmarks to Firefox under Pardus."))
-            self.BookmarksLayout.addWidget(self.FFBookmarks)
+                self.BookmarksLayout.addWidget(self.FFBookmarks)
             # IE Bookmarks:
             if sources.has_key("Favorites Path"):
                 self.IEBookmarks = QCheckBox(self.Bookmarks, "IEBookmarks")
