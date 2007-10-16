@@ -22,19 +22,29 @@ def getDifferences(sourcePath, destPath):
     pisi_list = [{'name':p} for p in os.listdir(sourcePath) \
                 if not os.path.exists(os.path.join(destPath, p)) and p.endswith(".pisi")]
 
+    package_names = [ps['name'] for ps in pisi_list]
+
     for ps in pisi_list:
         ps["deplist"] = []
         for m in getRuntimeDeps(os.path.join(sourcePath, ps["name"])):
             ps["deplist"].append({ "name": m.package,
                                    "versionFrom" : m.versionFrom,
-                                   "exists" : isDepExists(sourcePath, m.package, m.versionFrom) })
+                                   "exists" : isDepExists(package_names, m.package, m.versionFrom) })
     return pisi_list
 
 def getRuntimeDeps(p):
     metadata = (pisi.package.Package(p)).get_metadata()
     return metadata.package.runtimeDependencies()
 
-def isDepExists(path, name, versionFrom):
+def isDepExists(pisiList, name, versionFrom):
+    for p in pisiList:
+        if p.startswith(name):
+            return True
+
+    return False
+
+
+def isDepExists2(path, name, versionFrom):
     # Searchs for the given name in the path
     if fnmatch.filter(os.listdir(path), name+'*'):
         return True
