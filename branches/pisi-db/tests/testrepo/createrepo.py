@@ -1,4 +1,5 @@
 import os
+import shutil
 import time
 
 pspecTemplate = """<?xml version="1.0" ?>
@@ -208,7 +209,6 @@ class Contrib2007Repo(Repository):
         pf = PackageFactory()
 
         self.packages = [
-
             # applications.network
             pf.getPackage("lynx", [], "applications.network"),
             pf.getPackage("ctorrent", ["openssl"], "applications.network"),
@@ -220,7 +220,23 @@ class Contrib2007Repo(Repository):
 
         Repository.create(self)
 
+class BuildFarm:
+    def create_index(self, repo):
+        binrepo = "%s-bin" % repo
+        shutil.copy("%s/distribution.xml" % repo, binrepo)
+        os.system("pisi index %s -o %s/pisi-index.xml" % (repo, repo))
+        os.system("pisi index %s -o %s/pisi-index.xml" % (binrepo, binrepo))
+
+    def build(self, repos):
+        for repo in repos:
+            binrepo = "%s-bin" % repo
+            os.mkdir(binrepo)
+            for root, dirs, files in os.walk(repo):
+                if "pspec.xml" in files:
+                    os.system("pisi build %s/%s -O %s" % (root, "pspec.xml", binrepo))
+            self.create_index(repo)
+
 if __name__ == "__main__":
     Pardus2007Repo().create()
     Contrib2007Repo().create()
-    
+    BuildFarm().build(["pardus-2007", "contrib-2007"])
