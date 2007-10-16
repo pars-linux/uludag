@@ -105,10 +105,18 @@ class Component:
         component_path = self.get_comp_path()
         if not os.path.exists(component_path):
             os.makedirs(component_path)
+
             cur_dir = os.getcwd()
+            cur_comp = ''
             for subcomp in self.name.split("."):
                 os.chdir(subcomp)
-                open("component.xml", "w").write(self.get_comp_template(self.name))
+
+                if not cur_comp:
+                    cur_comp = subcomp
+                else:
+                    cur_comp = ".".join([cur_comp, subcomp])
+
+                open("component.xml", "w").write(self.get_comp_template(cur_comp))
             os.chdir(cur_dir)
 
 class Package:
@@ -238,7 +246,7 @@ class BuildFarm:
         binrepo = "%s-bin" % repo
         shutil.copy("%s/distribution.xml" % repo, binrepo)
         os.system("pisi index %s --skip-signing -o %s/pisi-index.xml" % (repo, repo))
-        os.system("pisi index %s --skip-sources --skip-signing -o %s/pisi-index.xml" % (repo, binrepo))
+        os.system("pisi index --skip-sources --skip-signing -o %s/pisi-index.xml %s %s" % (binrepo, binrepo, repo))
 
     def build(self, repos):
         for repo in repos:
