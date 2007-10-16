@@ -11,18 +11,19 @@ def sync_repositories(request):
         selectDestSource = request.POST['selectDestSource']
 
     except KeyError:
-        # Redisplay the form.
+        # Can be caught if the from is modified before submitting..
         pass
-
     else:
-        source_path = get_object_or_404(Repository, repo_name=selectRepoSource).repo_path
-        dest_path = get_object_or_404(Repository, repo_name=selectDestSource).repo_path
+        source_repo = get_object_or_404(Repository, repo_name=selectRepoSource)
+        dest_repo = get_object_or_404(Repository, repo_name=selectDestSource)
 
         # Returns a list of packages(with deps) which are in source_path but not in dest_path
-        pisi_list = op.getDifferences(source_path, dest_path)
+        pisi_list = op.getDifferences(source_repo.repo_path, dest_repo.repo_path)
 
         return render_to_response('ciftci/ciftci_repodifferences.html',
-                                  {'pisi_list' : pisi_list})
+                                  {'pisi_list' : pisi_list,
+                                   'source_repo' : source_repo,
+                                   'dest_repo' : dest_repo})
 
 def list_repository(request, repo_name):
 
@@ -38,6 +39,14 @@ def list_repository(request, repo_name):
                                'repo_name' : repo.repo_name,
                                'repo_path' : repo.repo_path})
 
+def transfer_packages(request):
+    # Get hidden values which contains the source and dest repo's
+    source_repo = request.POST['source_repo']
+    dest_repo = request.POST['dest_repo']
+
+    # Get checked items list
+    checked_items = [p.split("_")[0] for p in request.POST.keys() if p.endswith("_checkbox")]
+    print checked_items
 
 def choose_repository(request):
 
