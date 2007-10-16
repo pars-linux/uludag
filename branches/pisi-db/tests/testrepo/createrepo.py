@@ -122,6 +122,38 @@ class Package:
         open("actions.py", "w").write(actionsTemplate % self.name)
         os.chdir(cur_dir)
 
+class PackageFactory:
+    def getPackage(self, name, runtimeDeps = [], component = "system.base"):
+        return Package(name, component, runtimeDeps)
+
+    def getPackageBundle(self, component, *packages):
+        pkgs = []
+        for pkg in packages:
+            pkgs.append(Package(pkg, component, []))
+        return pkgs
+
 if __name__ == "__main__":
-    pkg = Package("bash", "system.base", ["ali", "veli"])
-    pkg.create()
+
+    pf = PackageFactory()
+    
+    packages = [
+                # system.base
+                pf.getPackage("bash"),
+                pf.getPackage("curl", ["libidn", "zlib", "openssl"]),
+                pf.getPackage("shadow", ["db4","pam", "cracklib"]),
+                pf.getPackage("jpeg"),
+
+                # applications.network
+                pf.getPackage("ncftp", [], "applications.network"),
+                pf.getPackage("bogofilter", ["gsl"], "applications.network"),
+                pf.getPackage("gsl", [], "applications.network"),
+                ]
+
+    # system.base
+    packages.extend(pf.getPackageBundle("system.base", "libidn", "zlib", "openssl", "db", "pam", "cracklib"))
+
+    # applications.network
+    packages.extend(pf.getPackageBundle("applications.network", "ethtool", "nfdump"))
+
+    for pkg in packages:
+        pkg.create()
