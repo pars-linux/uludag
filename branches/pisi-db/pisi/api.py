@@ -206,8 +206,7 @@ def configure_pending():
                                         pkginfo.release,
                                         False,
                                         False)
-                pkg_path = pisi.util.join_path(ctx.config.lib_dir(),
-                                          'package', pkgname)
+                pkg_path = pisi.util.join_path(ctx.config.packages_dir(), pkgname)
                 m = pisi.metadata.MetaData()
                 metadata_path = pisi.util.join_path(pkg_path, ctx.const.metadata_xml)
                 m.read(metadata_path)

@@ -145,7 +145,7 @@ class Package:
                      + self.metadata.package.version + '-' \
                      + self.metadata.package.release
 
-        return os.path.join( ctx.config.lib_dir(), 'package', packageDir)
+        return os.path.join(ctx.config.packages_dir(), packageDir)
 
     def comar_dir(self):
         return os.path.join(self.pkg_dir(), ctx.const.comar_dir)

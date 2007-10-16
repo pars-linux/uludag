@@ -69,8 +69,7 @@ class InstallDB(lazydb.LazyDB):
         self.rev_deps_db = self.__generate_revdeps()
 
     def __generate_installed_pkgs(self):
-        packages_path = os.path.join(ctx.config.lib_dir(), "package")
-        return dict(map(lambda x:pisi.util.parse_package_name(x), os.listdir(packages_path)))
+        return dict(map(lambda x:pisi.util.parse_package_name(x), os.listdir(ctx.config.packages_dir())))
 
     def __generate_config_pending(self):
         pending_info_path = os.path.join(ctx.config.info_dir(), ctx.const.config_pending)
@@ -93,8 +92,7 @@ class InstallDB(lazydb.LazyDB):
         return revdeps
 
     def list_installed(self):
-        packages_path = os.path.join(ctx.config.lib_dir(), "package")
-        return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(packages_path))
+        return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(ctx.config.packages_dir()))
 
     def has_package(self, package):
         return self.installed_db.has_key(package)
@@ -147,8 +145,7 @@ class InstallDB(lazydb.LazyDB):
         return rev_deps
 
     def pkg_dir(self, pkg, version, release):
-        return pisi.util.join_path(ctx.config.lib_dir(), 'package',
-                    pkg + '-' + version + '-' + release)
+        return pisi.util.join_path(ctx.config.packages_dir(), pkg + '-' + version + '-' + release)
 
     def get_package(self, package):
         metadata = pisi.metadata.MetaData()
@@ -186,9 +183,7 @@ class InstallDB(lazydb.LazyDB):
 
     def __package_path(self, package):
 
-        packages_path = os.path.join(ctx.config.lib_dir(), "package")
-
         if self.installed_db.has_key(package):
-            return os.path.join(packages_path, "%s-%s" % (package, self.installed_db[package]))
+            return os.path.join(ctx.config.packages_dir(), "%s-%s" % (package, self.installed_db[package]))
 
         raise Exception(_('Package %s is not installed') % package)
