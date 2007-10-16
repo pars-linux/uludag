@@ -225,6 +225,7 @@ class Contrib2007Repo(Repository):
             pf.getPackage("lynx", [], "applications.network"),
             pf.getPackage("ctorrent", ["openssl"], "applications.network"),
             pf.getPackage("lft", ["libpcap"], "applications.network"),
+            pf.getPackage("libpcap", [], "applications.network"),
             ]
         
         # applications.util
