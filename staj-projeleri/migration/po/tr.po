@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-17 01:36+0300\n"
-"PO-Revision-Date: 2007-10-17 01:42+0300\n"
+"POT-Creation-Date: 2007-10-17 01:43+0300\n"
+"PO-Revision-Date: 2007-10-17 01:59+0300\n"
 "Last-Translator: Murat Ongan\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -248,7 +248,9 @@ msgstr "Internet Explorer sık kullanılanları"
 
 #: migration/gui/optionspage.py:88
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
-msgstr "Eski Internet Explorer sık kullanılanlarınızı Pardus altındaki Firefox'a kopyalar."
+msgstr ""
+"Eski Internet Explorer sık kullanılanlarınızı Pardus altındaki Firefox'a "
+"kopyalar."
 
 #: migration/gui/optionspage.py:93
 msgid "E-Mail and News Accounts"
@@ -260,7 +262,9 @@ msgstr "Windows Mail hesapları"
 
 #: migration/gui/optionspage.py:102 migration/gui/optionspage.py:109
 msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
-msgstr "Eski e-posta ve haber grubu hesaplarınızı KMail ve KNode uygulamalarına kopyalar."
+msgstr ""
+"Eski e-posta ve haber grubu hesaplarınızı KMail ve KNode uygulamalarına "
+"kopyalar."
 
 #: migration/gui/optionspage.py:107
 msgid "Thunderbird accounts"
@@ -272,7 +276,9 @@ msgstr "E-Posta hesaplarındaki mesajları da kopyala"
 
 #: migration/gui/optionspage.py:115
 msgid "Copies your e-mail messages to KMail from selected applications above."
-msgstr "Yukarıda seçtiğiniz uygulamalarda bulunan e-posta mesajlarını da KMail'e kopyalar."
+msgstr ""
+"Yukarıda seçtiğiniz uygulamalarda bulunan e-posta mesajlarını da KMail'e "
+"kopyalar."
 
 #: migration/gui/optionspage.py:127
 msgid "MSN accounts"
@@ -319,7 +325,9 @@ msgstr "Hiçbir şey yapma"
 msgid ""
 "Does not use your old files. <br>You can still access them from their old "
 "location."
-msgstr "Eski dosyalarınıza dokunmaz. <b>Eski konumlarından bunlara erişmeye devam edebilirsiniz."
+msgstr ""
+"Eski dosyalarınıza dokunmaz. <br>Eski konumlarından bunlara erişmeye devam "
+"edebilirsiniz."
 
 #: migration/gui/filespage.py:31
 msgid "Put links to my desktop"
@@ -330,7 +338,9 @@ msgid ""
 "Does not copy your files. Instead, it puts shortcuts of your existing "
 "folders to your desktop for easy access.<br> By this way, you can save disk "
 "space."
-msgstr "Dosyalarınızı kopyalamak yerine, masaüstünüze kısayollarını koyar. <br>Böylece disk alanı kazanmış olursunuz."
+msgstr ""
+"Dosyalarınızı kopyalamak yerine, masaüstünüze kısayollarını koyar. "
+"<br>Böylece disk alanı kazanmış olursunuz."
 
 #: migration/gui/filespage.py:39
 msgid "Copy files to directory:"

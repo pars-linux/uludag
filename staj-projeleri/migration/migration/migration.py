@@ -24,7 +24,7 @@ def main():
     about = KAboutData(
         "migration",
         I18N_NOOP("Migration Tool"),
-        "0.8.3",
+        "0.8.4",
         I18N_NOOP("A wizard to transfer files and settings from existing operating systems"),
         KAboutData.License_GPL,
         '(C) 2006-2007 UEKAE/TÜBİTAK',
