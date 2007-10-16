@@ -96,7 +96,7 @@ def calculate_download_sizes(order):
             pkg_hash = pkg.packageHash
             pkg_size = pkg.packageSize
 
-        path = util.join_path(ctx.config.packages_dir(), fn)
+        path = util.join_path(ctx.config.cached_packages_dir(), fn)
 
         # check the file and sha1sum to be sure it _is_ the cached package
         if os.path.exists(path) and util.sha1_file(path) == pkg_hash:

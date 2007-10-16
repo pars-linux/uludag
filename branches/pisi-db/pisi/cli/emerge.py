@@ -61,6 +61,6 @@ You can also give the name of a component.
             ctx.ui.info(_('Output directory: %s') % ctx.config.options.output_dir)
         else:
             ctx.ui.info(_('Outputting binary packages in the package cache.'))
-            ctx.config.options.output_dir = ctx.config.packages_dir()
+            ctx.config.options.output_dir = ctx.config.cached_packages_dir()
 
         pisi.api.emerge(self.args)

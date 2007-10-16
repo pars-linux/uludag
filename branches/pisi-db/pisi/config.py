@@ -98,8 +98,8 @@ class Config(object):
     def archives_dir(self):
         return self.subdir(self.values.dirs.archives_dir)
 
-    def packages_dir(self):
-        return self.subdir(self.values.dirs.packages_dir)
+    def cached_packages_dir(self):
+        return self.subdir(self.values.dirs.cached_packages_dir)
 
     def compiled_packages_dir(self):
         return self.subdir(self.values.dirs.compiled_packages_dir)

@@ -44,7 +44,7 @@ class Package:
         self.impl = archive.ArchiveZip(self.filepath, 'zip', mode)
 
     def fetch_remote_file(self, url):
-        dest = ctx.config.packages_dir()
+        dest = ctx.config.cached_packages_dir()
         self.filepath = os.path.join(dest, url.filename())
 
         if not os.path.exists(self.filepath):

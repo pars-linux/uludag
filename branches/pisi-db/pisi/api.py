@@ -373,7 +373,7 @@ def update_repo(repo, force=False):
         raise Error(_('No repository named %s found.') % repo)
 
 def delete_cache():
-    pisi.util.clean_dir(ctx.config.packages_dir())
+    pisi.util.clean_dir(ctx.config.cached_packages_dir())
     pisi.util.clean_dir(ctx.config.archives_dir())
     pisi.util.clean_dir(ctx.config.tmp_dir())
 
@@ -531,7 +531,7 @@ def clearCache(all=False):
             except exceptions.OSError:
                 pass
 
-    cacheDir = ctx.config.packages_dir()
+    cacheDir = ctx.config.cached_packages_dir()
 
     pkgList = map(lambda x: os.path.basename(x).split(".pisi")[0], glob.glob("%s/*.pisi" % cacheDir))
     if not all:
