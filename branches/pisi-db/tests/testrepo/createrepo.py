@@ -63,6 +63,18 @@ def install():
     pisitools.rename("/usr/bin/skeleton.py", "%s")
 """
 
+distributionTemplate = """
+<PISI>
+    <SourceName>%(sourcename)s</SourceName>
+    <Version>1.1</Version>
+    <Description xml:lang="tr">%(description)s</Description>
+    <Type>Core</Type>
+    <Obsoletes>
+        %(obsoletes)s
+    </Obsoletes>
+</PISI>
+"""
+
 class Component:
     def __init__(self, name):
         self.name = name
@@ -132,28 +144,61 @@ class PackageFactory:
             pkgs.append(Package(pkg, component, []))
         return pkgs
 
+class Repository:
+    def __init__(self, name, packages, obsoletes):
+        self.name = name
+        self.packages = packages
+        self.obsoletes = obsoletes
+
+    def get_dist_template(self):
+        obsoletes = ""
+        for obs in self.obsoletes:
+            obsoletes += "     <Package>%s</Package>\n" % obs
+            
+        return distributionTemplate % {"sourcename":self.name,
+                                       "description":self.name,
+                                       "obsoletes":obsoletes}
+
+    def create(self):
+        cur_dir = os.getcwd()
+        os.makedirs(self.name)
+        os.chdir(self.name)
+        open("distribution.xml", "w").write(self.get_dist_template())
+        
+        for pkg in self.packages:
+            pkg.create()
+
+        os.chdir(cur_dir)
+
+class Pardus2007Repo(Repository):
+    def __init__(self):
+        Repository.__init__(self, "pardus-2007", [], ["wengophone", "rar"])
+        
+    def create(self):
+
+        pf = PackageFactory()
+
+        self.packages = [
+            # system.base
+            pf.getPackage("bash"),
+            pf.getPackage("curl", ["libidn", "zlib", "openssl"]),
+            pf.getPackage("shadow", ["db4","pam", "cracklib"]),
+            pf.getPackage("jpeg"),
+            
+            # applications.network
+            pf.getPackage("ncftp", [], "applications.network"),
+            pf.getPackage("bogofilter", ["gsl"], "applications.network"),
+            pf.getPackage("gsl", [], "applications.network"),
+            ]
+        
+        # system.base
+        self.packages.extend(pf.getPackageBundle("system.base", "libidn", "zlib", "openssl", "db", "pam", "cracklib"))
+
+        # applications.network
+        self.packages.extend(pf.getPackageBundle("applications.network", "ethtool", "nfdump"))
+
+        Repository.create(self)
+
 if __name__ == "__main__":
-
-    pf = PackageFactory()
-    
-    packages = [
-                # system.base
-                pf.getPackage("bash"),
-                pf.getPackage("curl", ["libidn", "zlib", "openssl"]),
-                pf.getPackage("shadow", ["db4","pam", "cracklib"]),
-                pf.getPackage("jpeg"),
-
-                # applications.network
-                pf.getPackage("ncftp", [], "applications.network"),
-                pf.getPackage("bogofilter", ["gsl"], "applications.network"),
-                pf.getPackage("gsl", [], "applications.network"),
-                ]
-
-    # system.base
-    packages.extend(pf.getPackageBundle("system.base", "libidn", "zlib", "openssl", "db", "pam", "cracklib"))
-
-    # applications.network
-    packages.extend(pf.getPackageBundle("applications.network", "ethtool", "nfdump"))
-
-    for pkg in packages:
-        pkg.create()
+    repo = Pardus2007Repo()
+    repo.create()
