@@ -108,7 +108,7 @@ class Component:
             cur_dir = os.getcwd()
             for subcomp in self.name.split("."):
                 os.chdir(subcomp)
-                open("component.xml", "w").write(self.get_comp_template(subcomp))
+                open("component.xml", "w").write(self.get_comp_template(self.name))
             os.chdir(cur_dir)
 
 class Package:
@@ -237,8 +237,8 @@ class BuildFarm:
     def create_index(self, repo):
         binrepo = "%s-bin" % repo
         shutil.copy("%s/distribution.xml" % repo, binrepo)
-        os.system("pisi index %s -o %s/pisi-index.xml" % (repo, repo))
-        os.system("pisi index %s -o %s/pisi-index.xml" % (binrepo, binrepo))
+        os.system("pisi index %s --skip-signing -o %s/pisi-index.xml" % (repo, repo))
+        os.system("pisi index %s --skip-sources --skip-signing -o %s/pisi-index.xml" % (repo, binrepo))
 
     def build(self, repos):
         for repo in repos:
