@@ -199,6 +199,28 @@ class Pardus2007Repo(Repository):
 
         Repository.create(self)
 
+class Contrib2007Repo(Repository):
+    def __init__(self):
+        Repository.__init__(self, "contrib-2007", [], [])
+        
+    def create(self):
+
+        pf = PackageFactory()
+
+        self.packages = [
+
+            # applications.network
+            pf.getPackage("lynx", [], "applications.network"),
+            pf.getPackage("ctorrent", ["openssl"], "applications.network"),
+            pf.getPackage("lft", ["libpcap"], "applications.network"),
+            ]
+        
+        # applications.util
+        self.packages.extend(pf.getPackageBundle("applications.util", "iat", "rpl", "cpulimit"))
+
+        Repository.create(self)
+
 if __name__ == "__main__":
-    repo = Pardus2007Repo()
-    repo.create()
+    Pardus2007Repo().create()
+    Contrib2007Repo().create()
+    
