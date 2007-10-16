@@ -152,7 +152,7 @@ class Operation(QHBoxLayout):
             self.warnings += 1
         elif stat == ProgressPage.ERROR:
             if log:
-                logging.error(log.__class__ + "(" + log.__doc__ + ") :" + log)
+                logging.error(log)
             self.errors += 1
         if self.progress >= self.steps:
             if self.errors > 0:

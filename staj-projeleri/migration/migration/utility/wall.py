@@ -14,6 +14,7 @@ import shutil
 import ConfigParser
 
 from dcopext import DCOPClient, DCOPObj
+from qt import QString
 
 import registry
 
@@ -83,6 +84,6 @@ def setWallpaper(path):
         raise WallpaperError, "Wallpaper cannot be changed"
     # Set Wallpaper:
     background = DCOPObj("kdesktop", client, "KBackgroundIface")
-    ok, wallpaper = background.setWallpaper(newpath, 6)     # 6: Scaled
+    ok, wallpaper = background.setWallpaper(QString(unicode(newpath)), 6)     # 6: Scaled
     if not ok:
         raise WallpaperError, "Wallpaper cannot be changed"

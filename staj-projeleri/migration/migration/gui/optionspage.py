@@ -34,7 +34,7 @@ class OptionsPage(QWidget):
             # Thumbnail:
             self.newThumb = QLabel(self.wpGroup, "newThumb")
             if destinations.has_key("Wallpaper Path"):
-                newwp = QImage(destinations["Wallpaper Path"])
+                newwp = QImage(unicode(destinations["Wallpaper Path"]))
                 newwp = newwp.smoothScale(100, 100, QImage.ScaleMax)
                 pixmap = QPixmap(newwp)
                 self.newThumb.setPixmap(pixmap)
@@ -55,7 +55,7 @@ class OptionsPage(QWidget):
             self.wpLayout.addLayout(self.oldLayout)
             # Thumbnail:
             self.oldThumb = QLabel(self.wpGroup, "oldThumb")
-            oldwp = QImage(sources["Wallpaper Path"])
+            oldwp = QImage(unicode(sources["Wallpaper Path"]))
             oldwp = oldwp.smoothScale(100, 100, QImage.ScaleMax)
             pixmap = QPixmap(oldwp)
             self.oldThumb.setPixmap(pixmap)
