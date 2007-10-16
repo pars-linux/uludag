@@ -13,6 +13,7 @@ import os
 import tempfile
 import xml.dom.minidom
 
+from qt import QString
 from kdecore import KConfig, i18n
 from dcopext import DCOPClient, DCOPObj
 
@@ -642,7 +643,7 @@ def addMessage(folder, message, kmail=None):
             raise Exception, "Message cannot be added"
         kmail = DCOPObj("kmail", client, "KMailIface")
     # Add Message:
-    ok, status = kmail.dcopAddMessage(str(folder), message, "")
+    ok, status = kmail.dcopAddMessage(QString(folder), message, "")
     if not ok:
         raise DCOPError, "Can not connect to kmail with DCOP"
     elif status == -4:
