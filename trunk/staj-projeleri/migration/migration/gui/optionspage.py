@@ -47,6 +47,7 @@ class OptionsPage(QWidget):
                 self.newRadio.setText(i18n("Keep current wallpaper"))
             else:
                 self.newRadio.setText(i18n("Don't use wallpaper"))
+            QToolTip.add(self.newRadio, i18n("Does not change your wallpaper."))
             self.newRadio.setChecked(True)
             self.newLayout.addWidget(self.newRadio)
             # Old Wallpaper:
@@ -63,6 +64,7 @@ class OptionsPage(QWidget):
             # Radio Button:
             self.oldRadio = QRadioButton(self.wpGroup, "oldRadio")
             self.oldRadio.setText(i18n("Use my old wallpaper"))
+            QToolTip.add(self.oldRadio, i18n("Copies your old wallpaper to Pardus and sets it as new background image."))
             self.oldLayout.addWidget(self.oldRadio)
         # Bookmarks:
         if sources.has_key("Firefox Profile Path") or sources.has_key("Favorites Path"):
@@ -76,12 +78,14 @@ class OptionsPage(QWidget):
                 self.FFBookmarks = QCheckBox(self.Bookmarks, "FFBookmarks")
                 self.FFBookmarks.setText(i18n("Firefox bookmarks"))
                 self.FFBookmarks.setChecked(True)
-                self.BookmarksLayout.addWidget(self.FFBookmarks)
+                QToolTip.add(self.FFBookmarks, i18n("Copies your old Firefox bookmarks to Firefox under Pardus."))
+            self.BookmarksLayout.addWidget(self.FFBookmarks)
             # IE Bookmarks:
             if sources.has_key("Favorites Path"):
                 self.IEBookmarks = QCheckBox(self.Bookmarks, "IEBookmarks")
                 self.IEBookmarks.setText(i18n("Internet Explorer favorites"))
                 self.IEBookmarks.setChecked(True)
+                QToolTip.add(self.IEBookmarks, i18n("Copies your old Internet Explorer favorites to Firefox under Pardus."))
                 self.BookmarksLayout.addWidget(self.IEBookmarks)
         # Mail Accounts:
         if sources.has_key("Windows Mail Path") or sources.has_key("Thunderbird Profile Path"):
@@ -95,17 +99,20 @@ class OptionsPage(QWidget):
                 self.WinMail = QCheckBox(self.MailAccounts, "WinMail")
                 self.WinMail.setText(i18n("Windows Mail accounts"))
                 self.WinMail.setChecked(True)
+                QToolTip.add(self.WinMail, i18n("Copies your old mail and newsgroup accounts to KMail and KNode applications."))
                 self.MailAccountsLayout.addWidget(self.WinMail)
             # Thunderbird Accounts:
             if sources.has_key("Thunderbird Profile Path"):
                 self.TB = QCheckBox(self.MailAccounts, "TB")
                 self.TB.setText(i18n("Thunderbird accounts"))
                 self.TB.setChecked(True)
+                QToolTip.add(self.TB, i18n("Copies your old mail and newsgroup accounts to KMail and KNode applications."))
                 self.MailAccountsLayout.addWidget(self.TB)
             # E-Mails:
             self.mail = QCheckBox(self.MailAccounts, "mail")
             self.mail.setText(i18n("Copy e-mail messages from e-mail accounts"))
             self.mail.setChecked(True)
+            QToolTip.add(self.mail, i18n("Copies your e-mail messages to KMail from selected applications above."))
             self.MailAccountsLayout.addWidget(self.mail)
         # IM Accounts:
         if sources.has_key("Contacts Path") or sources.has_key("GTalk Key"):
@@ -119,12 +126,14 @@ class OptionsPage(QWidget):
                 self.MSN = QCheckBox(self.IMAccounts, "MSN")
                 self.MSN.setText(i18n("MSN accounts"))
                 self.MSN.setChecked(True)
+                QToolTip.add(self.MSN, i18n("Copies your MSN Messenger accounts to Kopete."))
                 self.IMAccountsLayout.addWidget(self.MSN)
             # GTalk Accounts:
             if sources.has_key("GTalk Key"):
                 self.GTalk = QCheckBox(self.IMAccounts, "GTalk")
                 self.GTalk.setText(i18n("GTalk accounts"))
                 self.GTalk.setChecked(True)
+                QToolTip.add(self.GTalk, i18n("Copies your GTalk accounts to Kopete."))
                 self.IMAccountsLayout.addWidget(self.GTalk)
         # Spacer:
         spacer = QSpacerItem(1,1,QSizePolicy.Minimum,QSizePolicy.Expanding)

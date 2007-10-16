@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-05 14:51+0300\n"
+"POT-Creation-Date: 2007-10-17 01:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,149 +16,135 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: migration/applythread.py:60 migration/gui/optionspage.py:26
+#: migration/applythread.py:61 migration/gui/optionspage.py:26
 msgid "Wallpaper"
 msgstr ""
 
-#: migration/applythread.py:67 migration/applythread.py:76
-#: migration/applythread.py:94 migration/applythread.py:103
-#: migration/applythread.py:112 migration/applythread.py:121
-#: migration/gui/progresspage.py:149
-msgid "WARNING:"
-msgstr ""
-
-#: migration/applythread.py:67
+#: migration/applythread.py:68
 msgid "Firefox bookmarks cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:69 migration/applythread.py:78
-#: migration/applythread.py:96 migration/applythread.py:105
-#: migration/applythread.py:114 migration/applythread.py:123
-#: migration/gui/progresspage.py:145
-msgid "OK:"
-msgstr ""
-
-#: migration/applythread.py:69
+#: migration/applythread.py:70
 msgid "Firefox bookmarks loaded."
 msgstr ""
 
-#: migration/applythread.py:76
+#: migration/applythread.py:77
 msgid "Internet Explorer favorites cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:78
+#: migration/applythread.py:79
 msgid "Internet Explorer favorites loaded."
 msgstr ""
 
-#: migration/applythread.py:85
+#: migration/applythread.py:86
 msgid "Firefox is open. Please close it first to continue..."
 msgstr ""
 
-#: migration/applythread.py:94
+#: migration/applythread.py:95
 msgid "Windows Mail accounts cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:96
+#: migration/applythread.py:97
 msgid "Windows Mail accounts loaded."
 msgstr ""
 
-#: migration/applythread.py:103
+#: migration/applythread.py:104
 msgid "Thunderbird accounts cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:105
+#: migration/applythread.py:106
 msgid "Thunderbird accounts loaded."
 msgstr ""
 
-#: migration/applythread.py:112
+#: migration/applythread.py:113
 msgid "MSN accounts cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:114
+#: migration/applythread.py:115
 msgid "MSN accounts loaded."
 msgstr ""
 
-#: migration/applythread.py:121
+#: migration/applythread.py:122
 msgid "GTalk accounts cannot be loaded."
 msgstr ""
 
-#: migration/applythread.py:123
+#: migration/applythread.py:124
 msgid "GTalk accounts loaded."
 msgstr ""
 
-#: migration/applythread.py:129
+#: migration/applythread.py:130
 msgid "E-Mail Accounts"
 msgstr ""
 
-#: migration/applythread.py:134
+#: migration/applythread.py:135
 msgid "E-Mail Messages"
 msgstr ""
 
-#: migration/applythread.py:139
+#: migration/applythread.py:140
 msgid "News Accounts"
 msgstr ""
 
-#: migration/applythread.py:144 migration/gui/optionspage.py:113
+#: migration/applythread.py:145 migration/gui/optionspage.py:120
 msgid "Instant Messenger Accounts"
 msgstr ""
 
-#: migration/applythread.py:149
+#: migration/applythread.py:150
 msgid "Desktop Links"
 msgstr ""
 
-#: migration/applythread.py:156
+#: migration/applythread.py:157
 #, python-format
 msgid "Folder '%s' cannot be created, please choose another folder!"
 msgstr ""
 
-#: migration/applythread.py:161
+#: migration/applythread.py:162
 #, python-format
 msgid ""
 "You don't have permission to write to folder '%s', please choose another "
 "folder!"
 msgstr ""
 
-#: migration/applythread.py:173
+#: migration/applythread.py:174
 #, python-format
 msgid ""
 "Total size of files you've chosen is %(size)d MB, but you have only %(free)d "
 "MB of free space!"
 msgstr ""
 
-#: migration/applythread.py:187
+#: migration/applythread.py:188
 msgid "Wallpaper changed."
 msgstr ""
 
-#: migration/applythread.py:196
+#: migration/applythread.py:197
 msgid "Bookmarks saved."
 msgstr ""
 
-#: migration/applythread.py:205
+#: migration/applythread.py:206
 msgid "Mail Accounts saved."
 msgstr ""
 
-#: migration/applythread.py:215
+#: migration/applythread.py:216
 msgid "Accounts saved."
 msgstr ""
 
-#: migration/applythread.py:224
+#: migration/applythread.py:225
 msgid "News Accounts saved."
 msgstr ""
 
-#: migration/applythread.py:233
+#: migration/applythread.py:234
 msgid "Instant Messenger Accounts saved."
 msgstr ""
 
-#: migration/applythread.py:239
+#: migration/applythread.py:240
 #, python-format
 msgid "Link '%s' created."
 msgstr ""
 
-#: migration/applythread.py:250
+#: migration/applythread.py:251
 msgid "Nothing done, because no option selected. You can close the wizard..."
 msgstr ""
 
-#: migration/applythread.py:252
+#: migration/applythread.py:253
 msgid "All operations completed. You can close the wizard..."
 msgstr ""
 
@@ -174,49 +160,49 @@ msgstr ""
 msgid "Developer and Current Maintainer"
 msgstr ""
 
-#: migration/wizard.py:39
+#: migration/wizard.py:41
 msgid "Pardus Migration Tool"
 msgstr ""
 
-#: migration/wizard.py:42
+#: migration/wizard.py:50
 msgid "Next"
 msgstr ""
 
-#: migration/wizard.py:44
+#: migration/wizard.py:52
 msgid "Finish"
 msgstr ""
 
-#: migration/wizard.py:49 migration/gui/sidebar.py:26
+#: migration/wizard.py:57 migration/gui/sidebar.py:26
 msgid "Selecting User"
 msgstr ""
 
-#: migration/wizard.py:53 migration/wizard.py:152 migration/gui/sidebar.py:26
+#: migration/wizard.py:61 migration/wizard.py:163 migration/gui/sidebar.py:26
 msgid "Selecting Options"
 msgstr ""
 
-#: migration/wizard.py:56 migration/wizard.py:156 migration/gui/sidebar.py:26
+#: migration/wizard.py:64 migration/wizard.py:167 migration/gui/sidebar.py:26
 msgid "Selecting Files"
 msgstr ""
 
-#: migration/wizard.py:59 migration/wizard.py:165 migration/gui/sidebar.py:26
+#: migration/wizard.py:67 migration/wizard.py:177 migration/gui/sidebar.py:26
 msgid "Applying Changes"
 msgstr ""
 
-#: migration/wizard.py:65
+#: migration/wizard.py:73
 msgid "Migration Tool Help"
 msgstr ""
 
-#: migration/wizard.py:125
+#: migration/wizard.py:133
 msgid "Step"
 msgstr ""
 
-#: migration/wizard.py:133
+#: migration/wizard.py:141
 msgid ""
 "Migration tool couldn't find any old users in your computer. You can't use "
 "this aplication."
 msgstr ""
 
-#: migration/wizard.py:134
+#: migration/wizard.py:142
 msgid "No User"
 msgstr ""
 
@@ -228,40 +214,74 @@ msgstr ""
 msgid "Don't use wallpaper"
 msgstr ""
 
-#: migration/gui/optionspage.py:65
+#: migration/gui/optionspage.py:50
+msgid "Does not change your wallpaper."
+msgstr ""
+
+#: migration/gui/optionspage.py:66
 msgid "Use my old wallpaper"
 msgstr ""
 
-#: migration/gui/optionspage.py:77
+#: migration/gui/optionspage.py:67
+msgid ""
+"Copies your old wallpaper to Pardus and sets it as new background image."
+msgstr ""
+
+#: migration/gui/optionspage.py:79
 msgid "Firefox bookmarks"
 msgstr ""
 
-#: migration/gui/optionspage.py:83
+#: migration/gui/optionspage.py:81
+msgid "Copies your old Firefox bookmarks to Firefox under Pardus."
+msgstr ""
+
+#: migration/gui/optionspage.py:86
 msgid "Internet Explorer favorites"
 msgstr ""
 
-#: migration/gui/optionspage.py:89
+#: migration/gui/optionspage.py:88
+msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
+msgstr ""
+
+#: migration/gui/optionspage.py:93
 msgid "E-Mail and News Accounts"
 msgstr ""
 
-#: migration/gui/optionspage.py:96
+#: migration/gui/optionspage.py:100
 msgid "Windows Mail accounts"
 msgstr ""
 
-#: migration/gui/optionspage.py:102
-msgid "Thunderbird accounts"
+#: migration/gui/optionspage.py:102 migration/gui/optionspage.py:109
+msgid ""
+"Copies your old mail and newsgroup accounts to KMail and KNode applications."
 msgstr ""
 
 #: migration/gui/optionspage.py:107
+msgid "Thunderbird accounts"
+msgstr ""
+
+#: migration/gui/optionspage.py:113
 msgid "Copy e-mail messages from e-mail accounts"
 msgstr ""
 
-#: migration/gui/optionspage.py:120
+#: migration/gui/optionspage.py:115
+msgid "Copies your e-mail messages to KMail from selected applications above."
+msgstr ""
+
+#: migration/gui/optionspage.py:127
 msgid "MSN accounts"
 msgstr ""
 
-#: migration/gui/optionspage.py:126
+#: migration/gui/optionspage.py:129
+msgid "Copies your MSN Messenger accounts to Kopete."
+msgstr ""
+
+#: migration/gui/optionspage.py:134
 msgid "GTalk accounts"
+msgstr ""
+
+#: migration/gui/optionspage.py:136
+msgid "Copies your GTalk accounts to Kopete."
 msgstr ""
 
 #: migration/gui/userpage.py:25
@@ -281,31 +301,48 @@ msgstr ""
 msgid "Do Nothing"
 msgstr ""
 
-#: migration/gui/filespage.py:30
+#: migration/gui/filespage.py:27
+msgid ""
+"Does not use your old files. <br>You can still access them from their old "
+"location."
+msgstr ""
+
+#: migration/gui/filespage.py:31
 msgid "Put links to my desktop"
 msgstr ""
 
-#: migration/gui/filespage.py:37
+#: migration/gui/filespage.py:33
+msgid ""
+"Does not copy your files. Instead, it puts shortcuts of your existing "
+"folders to your desktop for easy access.<br> By this way, you can save disk "
+"space."
+msgstr ""
+
+#: migration/gui/filespage.py:39
 msgid "Copy files to directory:"
 msgstr ""
 
-#: migration/gui/filespage.py:59
-msgid "My Documents"
-msgstr ""
-
-#: migration/gui/filespage.py:60
-msgid "Desktop"
-msgstr ""
-
-#: migration/gui/filespage.py:61
-msgid "My Music"
+#: migration/gui/filespage.py:40
+msgid "Copies selected files to another directory of Pardus."
 msgstr ""
 
 #: migration/gui/filespage.py:62
-msgid "My Pictures"
+msgid "My Documents"
 msgstr ""
 
 #: migration/gui/filespage.py:63
+msgid "Desktop"
+msgstr ""
+
+#: migration/gui/filespage.py:64
+msgid "My Music"
+msgstr ""
+
+#: migration/gui/filespage.py:65
+msgid "My Pictures"
+msgstr ""
+
+#: migration/gui/filespage.py:66
 msgid "My Video"
 msgstr ""
 
@@ -317,24 +354,20 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: migration/gui/progresspage.py:25
+#: migration/gui/progresspage.py:27
 msgid "Please wait while applying changes..."
 msgstr ""
 
-#: migration/gui/progresspage.py:33
+#: migration/gui/progresspage.py:35
 msgid "Prepare: "
 msgstr ""
 
-#: migration/gui/progresspage.py:39
+#: migration/gui/progresspage.py:41
 msgid "Apply: "
 msgstr ""
 
-#: migration/gui/progresspage.py:100
+#: migration/gui/progresspage.py:102
 msgid "Warning!"
-msgstr ""
-
-#: migration/gui/progresspage.py:153
-msgid "ERROR:"
 msgstr ""
 
 #: migration/utility/files.py:111
@@ -347,15 +380,15 @@ msgstr ""
 msgid "file '%s' copied"
 msgstr ""
 
-#: migration/utility/account.py:349
+#: migration/utility/account.py:348
 msgid "Migrated Folder"
 msgstr ""
 
-#: migration/utility/account.py:349
+#: migration/utility/account.py:348
 msgid "This messagebox is migrated using Pardus Migration Tool"
 msgstr ""
 
-#: migration/utility/account.py:382 migration/utility/account.py:401
+#: migration/utility/account.py:381 migration/utility/account.py:400
 #, python-format
 msgid "Message Box %s copied"
 msgstr ""
