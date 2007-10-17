@@ -11,11 +11,25 @@
 #
 
 import unittest
+import pisi.db.lazydb as lazydb
+
+class TestDB(lazydb.LazyDB):
+    
+    def init(self):
+        self.testfield = True
+
+    def getTestField(self):
+        return self.testfield
 
 class LazyDBTestCase(unittest.TestCase):
 
-    def testDatabaseWithoutInit(self):
-        assert False
-
     def testDatabaseMethodForcingInit(self):
-        assert False
+        db = TestDB()
+        db.getTestField()
+        assert db.__dict__.has_key("testfield")
+        del TestDB._the_instance
+
+    def testDatabaseWithoutInit(self):
+        db = TestDB()
+        assert not db.__dict__.has_key("testfield")
+        del TestDB._the_instance
