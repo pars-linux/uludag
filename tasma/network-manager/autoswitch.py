@@ -10,7 +10,7 @@ def parseReply(reply):
         _dict[key] = value
     return _dict
 
-def scanAndConnect():
+def scanAndConnect(force=False):
     link = comar.Link()
 
     # Get Wireless Devices
@@ -54,27 +54,17 @@ def scanAndConnect():
         if temp['remote'] in justEssIds:
             profiles.append(temp)
 
-    print "Possible Profiles :"
-    for profile in profiles:
-        print profile
-
-    print
-
-    print "Scan Results :"
-    for res in scanResults:
-        print res
-
-    print
-    
     # If there is one result let switch to it
     if len(profiles)==1:
         profile = profiles[0]['name']
-        print "Profile '%s' mathced." % profile
+        print "Profile '%s' matched." % profile
         # And also if it's not connected yet.
-        if profiles[0]['state']=='down':
+        if profiles[0]['state']=='down' or force:
             print "Connecting to '%s'..." % profile
             link.Net.Link['wireless-tools'].setState(name=profile,state='up')
         else:
             print "Already connected."
 
-scanAndConnect()
+if __name__=="__main__":
+    scanAndConnect()
+

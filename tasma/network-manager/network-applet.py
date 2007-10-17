@@ -17,6 +17,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import  dcopext
+import autoswitch
 
 I18N_NOOP = lambda x: x
 
@@ -312,15 +313,17 @@ class Applet:
         else:
             menu.setItemChecked(device_mid, True)
     
-    def checkAutoConnect(self):
+    def checkAutoConnect(self,force=False):
         self.autoConnect = self.config.readBoolEntry("AutoConnect",True)
+        if self.autoConnect:
+            autoswitch.scanAndConnect(force)
 
     def toggleAutoConnect(self):
         if self.autoConnect:
             self.config.writeEntry("AutoConnect", False)
         else:
             self.config.writeEntry("AutoConnect", True)
-        self.checkAutoConnect()
+        self.checkAutoConnect(self.autoConnect)
         self.resetViews()
 
     def startManager(self):

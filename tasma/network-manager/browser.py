@@ -17,6 +17,7 @@ import nameconf
 import connection
 import newconn
 import widgets
+import autoswitch
 from icons import icons, getIconSet
 from comariface import comlink
 
@@ -396,6 +397,11 @@ class Widget(QVBox):
         self.butConf.setUsesTextLabel(True)
         self.butConf.setTextPosition(self.butConf.BesideIcon)
         
+        self.butAutoConnect = QToolButton(getIconSet("connect_creating"), "", "lala", self.slotAutoConnect, bar)
+        self.butAutoConnect.setTextLabel(i18n("Scan and Connect"), False)
+        self.butAutoConnect.setUsesTextLabel(True)
+        self.butAutoConnect.setTextPosition(self.butAutoConnect.BesideIcon)
+
         self.helpwin = None
         self.newconnwin = None
         
@@ -423,6 +429,10 @@ class Widget(QVBox):
         comlink.denied_hook.append(self.setInterface)
         comlink.checkAccess("setConnection")
     
+    def slotAutoConnect(self):
+        # Force or not ?
+        autoswitch.scanAndConnect(force=True)
+
     def slotCreate(self):
         if self.newconnwin:
             try:
