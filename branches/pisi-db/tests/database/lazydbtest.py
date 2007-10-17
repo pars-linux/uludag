@@ -33,3 +33,9 @@ class LazyDBTestCase(unittest.TestCase):
         db = TestDB()
         assert not db.__dict__.has_key("testfield")
         del TestDB._the_instance
+
+    def testSingletonBehaviour(self):
+        db = TestDB()
+        db2 = TestDB()
+        assert id(db) == id(db2)
+        
