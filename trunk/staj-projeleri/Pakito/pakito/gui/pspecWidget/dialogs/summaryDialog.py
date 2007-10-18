@@ -37,8 +37,7 @@ class SummaryDialog(SummaryDialogUI):
     def getResult(self):
         ret = []
         for sum in self.summaries:
-            l = []
-            l.append(str(sum.leLanguage.text()))
+            l = [str(sum.leLanguage.text())]
             l.append(unicode(sum.leSummary.text()))
             l.append(unicode(sum.teDescription.text()))
             ret.append(l)

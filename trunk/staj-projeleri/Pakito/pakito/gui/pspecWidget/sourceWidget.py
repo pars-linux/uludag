@@ -77,7 +77,7 @@ class sourceWidget(SourceWidgetUI):
         self.lvSummary.setSorting(-1)
         self.lvBuildDep.setSorting(-1)
         self.lvPatches.setSorting(-1)
-
+        
         self.connect(self.leName, SIGNAL("textChanged(const QString &)"), self.slotNameChanged)
         self.connect(self.leHomepage, SIGNAL("textChanged(const QString &)"), self.slotHomepageChanged)
         self.connect(self.leLicense, SIGNAL("textChanged(const QString &)"), self.slotLicenseChanged)
@@ -88,7 +88,7 @@ class sourceWidget(SourceWidgetUI):
         self.connect(self.leURI, SIGNAL("textChanged(const QString &)"), self.slotArchiveChanged)
         self.connect(self.leSHA1, SIGNAL("textChanged(const QString &)"), self.slotArchiveChanged)
         self.connect(self.cbType, SIGNAL("activated(const QString &)"), self.slotArchiveChanged)
-        
+            
     def slotNameChanged(self, newOne):
         self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Name")
         
@@ -98,7 +98,6 @@ class sourceWidget(SourceWidgetUI):
     def slotLicenseChanged(self, newOne):
         while self.xmlUtil.deleteTagByPath("Source", "License"):
             pass
-        
         packagerNode = self.xmlUtil.getTagByPath("Source", "Packager")
         licenses = str(newOne).split(", ")
         licenses.reverse()
@@ -170,11 +169,15 @@ class sourceWidget(SourceWidgetUI):
         if dia.exec_loop() == QDialog.Rejected:
             return
         self.setSummaryList(dia.getResult())
+        self.syncSummary()
+        self.syncDescription()
 
     def slotRemoveSummary(self):
         lvi = self.lvSummary.selectedItem()
         if lvi:
-            self.lvSummary.takeItem(lvi) 
+            self.lvSummary.takeItem(lvi)
+            self.syncSummary() 
+            self.syncDescription()
 
     def slotAddSummary(self):
         sums = self.getSummaryList()
@@ -182,56 +185,71 @@ class sourceWidget(SourceWidgetUI):
         dialog = SummaryDialog(sums, parent = self)
         if dialog.exec_loop() == QDialog.Accepted:
             self.setSummaryList(dialog.getResult())
+            self.syncSummary()
+            self.syncDescription()
 
     def setSummaryList(self, l):
         self.lvSummary.clear()
         for sum in l:
-            lvi = KListViewItem(self.lvSummary, sum[0], sum[1], sum[2])
+            KListViewItem(self.lvSummary, sum[0], sum[1], sum[2])
 
     def getSummaryList(self):
         ret = []
         iterator = QListViewItemIterator(self.lvSummary)
         while iterator.current():
-            l = []
             lvi = iterator.current()
-            l.append(str(lvi.text(0)))
-            l.append(unicode(lvi.text(1)))
-            l.append(unicode(lvi.text(2)))
+            l = [str(lvi.text(0)), unicode(lvi.text(1)), unicode(lvi.text(2))]
             ret.append(l)
             iterator += 1
         return ret
     
-    def getBuildDepList(self):
-        ret = []
-        iterator = QListViewItemIterator(self.lvBuildDep)
-        while iterator.current():
-            l = []
-            lvi = iterator.current()
-            l.append(str(lvi.text(0)))
-            l.append(str(lvi.text(1)))
-            ret.append(l)
-            iterator += 1
-        return ret
-    
-    def setBuildDepList(self, l):
-        self.lvBuildDep.clear()
-        for dep in l:
-            cond = dep[0].split()
-            if len(cond) == 3:
-                lvi = KListViewItem(self.lvBuildDep, "%s %s %s" % tuple(cond), dep[1])
+    def syncSummary(self):
+        #synchronize xml tree with listview
+        summaries = self.getSummaryList()
+        while self.xmlUtil.deleteTagByPath("Source", "Summary"):
+            pass
+        isaNode = self.xmlUtil.getTagByPath("Source", "IsA")
+        summaries.reverse()
+        for sum in summaries:
+            if sum[0] == "en":
+#                d = {"xml:lang": sum[0]}
+#                self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1], **d)
+                self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1])
             else:
-                lvi = KListViewItem(self.lvBuildDep, "", dep[1])
-
+                #add to translations.xml
+                pass
+#                d = {"xml:lang": sum[0]}
+#                self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1], **d)
+            
+    def syncDescription(self):
+        descs = self.getSummaryList()
+        while self.xmlUtil.deleteTagByPath("Source", "Description"):
+            pass
+        
+        node = self.xmlUtil.getTagByPath("Source", "Summary")
+        descs.reverse()
+        for desc in descs:
+            if unicode(desc[2]).strip() == "":
+                continue 
+            if desc[0] == "en":
+                self.xmlUtil.addTagBelow(node, "Description", desc[2])
+            else:
+                #add to translations.xml
+                pass
+#                d = {"xml:lang": sum[0]}
+#                self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1], **d)
+            
+        
     def slotAddBuildDep(self):
         dia = DependencyDialog(parent = self)
         if dia.exec_loop() == QDialog.Accepted:
             cond, dep = dia.getResult()
-            lvi = KListViewItem(self.lvBuildDep, cond, dep)
+            KListViewItem(self.lvBuildDep, cond, dep)
 
     def slotRemoveBuildDep(self):
         lvi = self.lvBuildDep.selectedItem()
         if lvi:
-           self.lvBuildDep.takeItem(lvi)
+            self.lvBuildDep.takeItem(lvi)
 
     def slotBrowseBuildDep(self):
         lvi = self.lvBuildDep.selectedItem()
@@ -247,7 +265,7 @@ class sourceWidget(SourceWidgetUI):
         dia = PatchDialog(self)
         if dia.exec_loop() == QDialog.Accepted:
             res = dia.getResult()
-            lvi = KListViewItem(self.lvPatches, res[0], res[1], res[2])
+            KListViewItem(self.lvPatches, res[0], res[1], res[2])
             if not os.path.isdir(self.filesDir):
                 os.mkdir(self.filesDir)
             shutil.copyfile(res[3], self.filesDir + "/" + res[2])
@@ -311,7 +329,7 @@ class sourceWidget(SourceWidgetUI):
         self.leSHA1.setText(source.archive.sha1sum)
 
         self.lvSummary.clear()
-        for lang, sum in source.summary.iteritems(): #TODO: summary yok desc varsa?
+        for lang, sum in source.summary.iteritems():
             lvi = KListViewItem(self.lvSummary, lang, unicode(sum))
             if lang in source.description:
                 lvi.setText(2, unicode(source.description[lang]))
