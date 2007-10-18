@@ -35,7 +35,7 @@ def scanAndConnect(force=False):
         else:
             print 'No scan result'
             return
-    
+
     # Clear the queue
     link.read_cmd()
 
@@ -58,12 +58,17 @@ def scanAndConnect(force=False):
     if len(profiles)==1:
         profile = profiles[0]['name']
         print "Profile '%s' matched." % profile
-        # And also if it's not connected yet.
-        if profiles[0]['state']=='down' or force:
-            print "Connecting to '%s'..." % profile
-            link.Net.Link['wireless-tools'].setState(name=profile,state='up')
-        else:
-            print "Already connected."
+        connect(link,profiles[0],force)
+    else:
+        print "There is a lot of matched profile.."
+
+def connect(comLink,profile,force=False):
+    name = profile['name']
+    if profile['state']=='down' or force:
+        print "Connecting to '%s'..." % name
+        comLink.Net.Link['wireless-tools'].setState(name=name,state='up')
+    else:
+        print "Already connected to %s." % name
 
 if __name__=="__main__":
     scanAndConnect()
