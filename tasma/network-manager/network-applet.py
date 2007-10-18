@@ -289,6 +289,8 @@ class Applet:
         comlink.queryLinks()
         comlink.queryConnections()
         self.resetViews()
+        if self.autoConnect:
+            autoswitch.scanAndConnect()
 
     def resetViews(self):
         if self.mode == 0:
@@ -313,17 +315,15 @@ class Applet:
         else:
             menu.setItemChecked(device_mid, True)
     
-    def checkAutoConnect(self,force=False):
+    def checkAutoConnect(self):
         self.autoConnect = self.config.readBoolEntry("AutoConnect",True)
-        if self.autoConnect:
-            autoswitch.scanAndConnect(force)
 
     def toggleAutoConnect(self):
         if self.autoConnect:
             self.config.writeEntry("AutoConnect", False)
         else:
             self.config.writeEntry("AutoConnect", True)
-        self.checkAutoConnect(self.autoConnect)
+        self.checkAutoConnect()
         self.resetViews()
 
     def startManager(self):
