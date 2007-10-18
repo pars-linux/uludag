@@ -6,7 +6,7 @@ import re
 commentString = "PakitoComment"
 
 class XmlUtil:
-    """ class with comment support and some utilities"""
+    """ basic xml parsing class with comment keeping support using piksemel"""
     def __init__(self, xmlFileName):
         self.read(xmlFileName)
         
@@ -75,7 +75,7 @@ class XmlUtil:
     
     def write(self):
         """ write object tree to file """
-        exp = re.compile("<PakitoComment>(.*?)</PakitoComment>", re.S)
+        exp = re.compile("<%s>(.*?)</%s>" % (commentString, commentString), re.S)
         newPspec = re.sub(exp, r"<!--\1-->", self.doc.toPrettyString())
         f = open(self.xmlFile, "w")
         f.write(newPspec)
