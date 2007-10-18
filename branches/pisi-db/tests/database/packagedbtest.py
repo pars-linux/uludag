@@ -10,48 +10,61 @@
 # Please read the COPYING file.
 #
 
-import unittest
+import testcase
+import pisi
 
-class PackageDBTestCase(unittest.TestCase):
+class PackageDBTestCase(testcase.TestCase):
+    
+    packagedb = pisi.db.packagedb.PackageDB()
 
     def testGetPackage(self):
-        assert False
+        pkg = self.packagedb.get_package("ncftp", "pardus-2007")
+        assert pkg.name == "ncftp"
 
-    def testGetPackageWithNoPackageRepository(self):
-        assert False
+        pkg = self.packagedb.get_package("lynx", "contrib-2007")
+        assert pkg.name == "lynx"
 
-    def testGetNonExistingPackage(self):
-        assert False
-
-    def testGetPackageFromGivenRepository(self):
-        assert False
-
-    def testGetPackageFromNonExistingRepo(self):
-        assert False
-
-    def testGetPackageWithMissingOrBrokenMetadata(self):
-        assert False
+        pkg = self.packagedb.get_package("cpulimit")
+        assert pkg.name == "cpulimit"
 
     def testHasPackage(self):
-        assert False
+        assert self.packagedb.has_package("ncftp", "pardus-2007")
+        assert not self.packagedb.has_package("ncftp", "contrib-2007")
+        assert self.packagedb.has_package("lynx")
 
     def testGetVersion(self):
-        assert False
+        version, release, build = self.packagedb.get_version("lynx", "contrib-2007")
+        assert version == "0.3"
+        assert release == "1"
 
     def testWhichRepo(self):
-        assert False
+        assert self.packagedb.which_repo("lynx") == "contrib-2007"
 
     def testGetPackageAndRepository(self):
-        assert False
+        pkg, repo = self.packagedb.get_package_repo("cpulimit")
+        assert pkg.name == "cpulimit"
+        assert repo == "contrib-2007"
 
     def testGetObsoletes(self):
-        assert False
+        assert set(self.packagedb.get_obsoletes("pardus-2007")) == set(["wengophone", "rar"])
+        assert set(self.packagedb.get_obsoletes("contrib-2007")) == set(["xara"])
+        assert set(self.packagedb.get_obsoletes()) == set(["wengophone", "rar", "xara"])
 
     def testGetReverseDependencies(self):
-        assert False
+        pkg, dep = self.packagedb.get_rev_deps("openssl")[0]
+        assert pkg == "curl"
+        assert str(dep) == "openssl"
 
     def testGetReplaces(self):
-        assert False
+        # FIXME: update createrepo.py to generate replaces
+        assert not self.packagedb.get_replaces()
 
     def testListPackages(self):
-        assert False
+        assert set(self.packagedb.list_packages("pardus-2007")) == set(['nfdump', 'ethtool', 'ncftp', 
+                                                                        'libidn', 'zlib', 'db', 'openssl', 
+                                                                        'jpeg', 'pam', 'shadow', 'bogofilter', 
+                                                                        'curl', 'gsl', 'bash', 'cracklib'])
+
+        assert set(self.packagedb.list_packages("contrib-2007")) == set(['libpcap', 'ctorrent', 'lft', 'lynx', 
+                                                                         'iat', 'cpulimit', 'rpl'])
+        
