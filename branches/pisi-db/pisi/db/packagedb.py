@@ -106,9 +106,7 @@ class PackageDB(lazydb.LazyDB):
         return self.pdb.which_repo(name)
 
     def get_obsoletes(self, repo=None):
-        obsoletes = []
-        map(lambda x:obsoletes.extend(x), self.odb.get_item_values(repo))
-        return obsoletes
+        return self.odb.get_item_values(repo)
     
     def get_rev_deps(self, name, repo=None):
         try:
