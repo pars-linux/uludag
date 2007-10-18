@@ -14,8 +14,7 @@ pspecTemplate = u"""
         </Packager>
         <License>%(license)s</License>
         <IsA>%(isa)s</IsA>
-        <Summary xml:lang="en">%(summary)s</Summary>
-        <Description xml:lang="en">%(description)s</Description>
+        <Summary>%(summary)s</Summary>
         <Archive type="%(archivetype)s" sha1sum="%(archivesha1)s">%(archiveuri)s</Archive>
     </Source>
     <Package>
@@ -59,4 +58,14 @@ def build():
 def install():
     pass
 
+"""
+
+translationTemplate = u"""
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>%(source)s</Name>
+        <Summary xml:lang="%(lang)s">%(summary)s</Summary>
+    </Source>
+</PISI>
 """

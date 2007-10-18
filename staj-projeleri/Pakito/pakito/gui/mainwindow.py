@@ -46,7 +46,7 @@ class MainWindow(KParts.MainWindow):
         self.tempDir = None
         self.realDir = None
         self.pisithread = None
-	    
+   
         # main area
         self.mainWidget = QSplitter(self)
         self.mainWidget.setOrientation(Qt.Vertical)
@@ -91,6 +91,7 @@ class MainWindow(KParts.MainWindow):
     def sockHandle(self, socket):
         currentOut = unicode(os.read(socket, 1000)).replace("\n", "<br>")
         self.teOutput.setText(unicode(self.teOutput.text() + currentOut))
+        #this is not teOutput.append because, stream isn't splitted by new lines
         
         # scroll down if necessary
         self.teOutput.setContentsPos(0, self.teOutput.contentsHeight())
@@ -152,7 +153,7 @@ class MainWindow(KParts.MainWindow):
         templateDict = {"package": "PackageName", "homepage": "http://www.pardus.org.tr",
                  "packagername": conf.packagerName, "packageremail": conf.packagerEmail,
                  "license": "GPL-2", "isa": "isA",
-                 "summary": "Summary", "description": "Description",
+                 "summary": "Summary",
                  "archivetype": "targz", "archiveuri": "URI",
                  "archivesha1": "SHA1", "date": str(datetime.date.today()), "version": "1.0"}        
         

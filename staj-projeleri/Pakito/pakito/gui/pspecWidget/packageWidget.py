@@ -208,7 +208,7 @@ class packageWidget(QWidget):
         def setSummaryList(self, l):
             self.lvSummary.clear()
             for sum in l:
-                lvi = KListViewItem(self.lvSummary, sum[0], sum[1], sum[2])
+                KListViewItem(self.lvSummary, sum[0], sum[1], sum[2])
 
         def getSummaryList(self):
             ret = []
@@ -227,7 +227,7 @@ class packageWidget(QWidget):
             dia = DependencyDialog(parent = self, title = "Runtime Dependencies")
             if dia.exec_loop() == QDialog.Accepted:
                 cond, dep = dia.getResult()
-                lvi = KListViewItem(self.lvRuntimeDep, cond, dep)
+                KListViewItem(self.lvRuntimeDep, cond, dep)
 
         def slotRemoveRuntimeDep(self):
             lvi = self.lvRuntimeDep.selectedItem()
@@ -248,7 +248,7 @@ class packageWidget(QWidget):
             dia = DependencyDialog(parent = self, title = "Replaces", secondLabel = "Package:")
             if dia.exec_loop() == QDialog.Accepted:
                 cond, dep = dia.getResult()
-                lvi = KListViewItem(self.lvReplaces, cond, dep)
+                KListViewItem(self.lvReplaces, cond, dep)
 
         def slotRemoveReplaces(self):
             lvi = self.lvReplaces.selectedItem()
@@ -269,7 +269,7 @@ class packageWidget(QWidget):
             dia = DependencyDialog(parent = self, title = "Conflicts", secondLabel = "Package:")
             if dia.exec_loop() == QDialog.Accepted:
                 cond, dep = dia.getResult()
-                lvi = KListViewItem(self.lvConflicts, cond, dep)
+                KListViewItem(self.lvConflicts, cond, dep)
 
         def slotRemoveConflict(self):
             lvi = self.lvConflicts.selectedItem()
@@ -290,7 +290,7 @@ class packageWidget(QWidget):
             dia = FileDialog(parent = self)
             if dia.exec_loop() == QDialog.Accepted:
                 res = dia.getResult()
-                lvi = KListViewItem(self.lvFiles, res[0], res[1], res[2])
+                KListViewItem(self.lvFiles, res[0], res[1], res[2])
 
         def slotRemoveFile(self):
             lvi = self.lvFiles.selectedItem()
@@ -395,7 +395,7 @@ class packageWidget(QWidget):
                 
             # summary and descriptions
             self.lvSummary.clear()
-            for lang, sum in package.summary.iteritems(): #TODO: summary yok desc varsa?
+            for lang, sum in package.summary.iteritems():
                 lvi = KListViewItem(self.lvSummary, lang, unicode(sum))
                 if lang in package.description:
                     lvi.setText(2, unicode(package.description[lang]))
@@ -430,7 +430,7 @@ class packageWidget(QWidget):
                 
             # COMAR 
             self.lvCOMAR.clear()
-            for comar in package.providesComar:  #TODO: summary yok desc varsa?
+            for comar in package.providesComar:
                 lvi = KListViewItem(self.lvCOMAR, comar.om, comar.script) 
                  
     def __init__(self, parent, fileLoc, xmlUtil):
