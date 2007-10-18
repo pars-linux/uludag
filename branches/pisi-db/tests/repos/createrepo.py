@@ -222,7 +222,7 @@ class Pardus2007Repo(Repository):
 
 class Contrib2007Repo(Repository):
     def __init__(self):
-        Repository.__init__(self, "contrib-2007", [], [])
+        Repository.__init__(self, "contrib-2007", [], ["xara"])
         
     def create(self):
 
