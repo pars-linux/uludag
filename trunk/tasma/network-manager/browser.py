@@ -385,6 +385,9 @@ class Widget(QVBox):
         self.setMargin(6)
         self.setSpacing(6)
         
+        self.config = KConfig("network-appletrc")
+        self.config.setGroup("General")
+        
         bar = QToolBar("lala", None, self)
         
         self.butNew = QToolButton(getIconSet("add"), "", "lala", self.slotCreate, bar)
@@ -417,7 +420,10 @@ class Widget(QVBox):
         self.view = ConnectionView(self)
         
         self.stack = nameconf.Window(self)
-        
+        self.autoCheck = QCheckBox("Auto Connect",self)
+        self.connect(self.autoCheck, SIGNAL('clicked()'),self.setAutoConnect)
+        self.autoCheck.setOn(self.config.readBoolEntry("AutoConnect",True))
+
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
         comlink.config_hook.append(self.view.configUpdate)
@@ -428,6 +434,9 @@ class Widget(QVBox):
         
         comlink.denied_hook.append(self.setInterface)
         comlink.checkAccess("setConnection")
+    
+    def setAutoConnect(self):
+        self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
     
     def slotAutoConnect(self):
         # Force or not ?
