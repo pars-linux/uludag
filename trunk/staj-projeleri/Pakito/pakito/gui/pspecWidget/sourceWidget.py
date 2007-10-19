@@ -205,21 +205,38 @@ class sourceWidget(SourceWidgetUI):
     
     def syncSummary(self):
         #synchronize xml tree with listview
+        import pakito.xmlUtil
+        
         summaries = self.getSummaryList()
         while self.xmlUtil.deleteTagByPath("Source", "Summary"):
             pass
+        
+        transLoc = self.packageDir + "/translations.xml"
+        transXML = None
+        if os.path.isfile(transLoc):
+            transXML = pakito.xmlUtil.XmlUtil(transLoc)
+            while transXML.deleteTagByPath("Source", "Summary"):
+                pass
+            transXML.write()
+        
         isaNode = self.xmlUtil.getTagByPath("Source", "IsA")
         summaries.reverse()
         for sum in summaries:
-            if sum[0] == "en":
-#                d = {"xml:lang": sum[0]}
-#                self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1], **d)
+            if sum[0] == "en" or sum[0] == "":
                 self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1])
             else:
-                #add to translations.xml
-                pass
-#                d = {"xml:lang": sum[0]}
-#                self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1], **d)
+                #add to translations.xml                    
+                if not transXML:
+                    import pakito.templates
+                    f = open(transLoc, "w")
+                    f.write(pakito.templates.translationTemplate % {"source": self.leName.text(), "lang": sum[0], "summary": sum[1]})
+                    f.close()
+                    transXML = pakito.xmlUtil.XmlUtil(transLoc)
+                else:
+                    node = transXML.getTagByPath("Source", "Name")
+                    d = {"xml:lang": sum[0]}
+                    self.xmlUtil.addTagBelow(node, "Summary", sum[1], **d)
+                    transXML.write()
             
     def syncDescription(self):
         descs = self.getSummaryList()
@@ -328,13 +345,30 @@ class sourceWidget(SourceWidgetUI):
         self.cbType.setCurrentText(source.archive.type)
         self.leSHA1.setText(source.archive.sha1sum)
 
+        #summary and descriptions
         self.lvSummary.clear()
         for lang, sum in source.summary.iteritems():
             lvi = KListViewItem(self.lvSummary, lang, unicode(sum))
             if lang in source.description:
                 lvi.setText(2, unicode(source.description[lang]))
+        
+        transLoc = self.packageDir + "/translations.xml"
+        if os.path.isfile(transLoc):
+            #browse summaries at translations.xml and add to listview
+            import pakito.xmlUtil
+            xml = pakito.xmlUtil.XmlUtil(transLoc)
+            for node in xml.getTagListByPath("Source", "Summary"):
+                sumLang = xml.getAttributesOfTag(node)['xml:lang']
+                sum = xml.getDataOfTag(node)
+                lvi = KListViewItem(self.lvSummary, sumLang, unicode(sum))
+                for desc in xml.getTagListByPath("Source", "Description"):
+                    # search a description for this language
+                    descLang = xml.getAttributesOfTag(desc)['xml:lang']
+                    if sumLang == descLang:
+                        lvi.setText(2, unicode(xml.getDataOfTag(desc)))                
 
         self.lvBuildDep.clear()
+        
         for dep in source.buildDependencies:
             lvi = KListViewItem(self.lvBuildDep, getConstraint(dep), dep.package)
         

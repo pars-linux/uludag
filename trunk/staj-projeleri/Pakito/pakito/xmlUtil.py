@@ -40,6 +40,13 @@ class XmlUtil:
             data = data.next()
         return data.data()
     
+    def getAttributesOfTag(self, node):
+        """ returns a dictionary of attributes """
+        ret = {}
+        for attr in node.attributes():
+            ret[attr] = node.getAttribute(attr)
+        return ret
+    
     def setDataOfTag(self, node, newData):
         child = node.firstChild()
         if child:

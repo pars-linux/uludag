@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-pspecTemplate = u"""
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+pspecTemplate = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE PISI SYSTEM "http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd">
 
 <PISI>
@@ -35,8 +34,7 @@ pspecTemplate = u"""
 </PISI>
 """
 
-actionspyTemplate = u"""
-#!/usr/bin/python
+actionspyTemplate = u"""#!/usr/bin/python
 # -*- coding: utf-8 -*-·
 #
 # Copyright 2005 TUBITAK/UEKAE
@@ -60,8 +58,7 @@ def install():
 
 """
 
-translationTemplate = u"""
-<?xml version="1.0" ?>
+translationTemplate = u"""<?xml version="1.0" ?>
 <PISI>
     <Source>
         <Name>%(source)s</Name>
