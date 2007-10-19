@@ -237,12 +237,22 @@ class sourceWidget(SourceWidgetUI):
                     d = {"xml:lang": sum[0]}
                     self.xmlUtil.addTagBelow(node, "Summary", sum[1], **d)
                     transXML.write()
+        self.xmlUtil.write()
             
     def syncDescription(self):
         descs = self.getSummaryList()
         while self.xmlUtil.deleteTagByPath("Source", "Description"):
             pass
         
+        transLoc = self.packageDir + "/translations.xml"
+        transXML = None
+        if os.path.isfile(transLoc):
+            import pakito.xmlUtil
+            transXML = pakito.xmlUtil.XmlUtil(transLoc)
+            while transXML.deleteTagByPath("Source", "Description"):
+                pass
+            transXML.write()
+            
         node = self.xmlUtil.getTagByPath("Source", "Summary")
         descs.reverse()
         for desc in descs:
@@ -250,12 +260,13 @@ class sourceWidget(SourceWidgetUI):
                 continue 
             if desc[0] == "en":
                 self.xmlUtil.addTagBelow(node, "Description", desc[2])
+                self.xmlUtil.write()
             else:
-                #add to translations.xml
-                pass
-#                d = {"xml:lang": sum[0]}
-#                self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1], **d)
-            
+                node2 = transXML.getTagListByPath("Source", "Summary")[-1]
+                d = {"xml:lang": desc[0]}
+                self.xmlUtil.addTagBelow(node2, "Description", desc[2], **d)
+                transXML.write()
+        self.xmlUtil.write()
         
     def slotAddBuildDep(self):
         dia = DependencyDialog(parent = self)
