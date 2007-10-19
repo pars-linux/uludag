@@ -30,13 +30,13 @@
   </Menu>
 </MenuBar>
 
-<ToolBar name="file">
+<ToolBar name="file" iconText="icontextright">
     <text>File</text>
     <Action name="actionNew" />
     <Action name="actionOpen" />
     <Action name="actionSave" />
 </ToolBar>
-<ToolBar name="operations">
+<ToolBar name="operations" iconText="icontextright">
   <text>Operations</text>
   <Action name="actionFetch" />
   <Action name="actionSetup" />
@@ -44,7 +44,7 @@
   <Separator/>
   <Action name="actionMakePackage" />
 </ToolBar>
-<ToolBar name="automation">
+<ToolBar name="automation" iconText="icontextright">
     <text>Automation</text>
     <Action name="actionAddRelease" />
     <Action name="actionValidatePspec" />
