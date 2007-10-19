@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-17 01:43+0300\n"
-"PO-Revision-Date: 2007-10-01 21:00-0400\n"
+"PO-Revision-Date: 2007-10-18 19:41-0400\n"
 "Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,8 +41,7 @@ msgstr "Favoritos de Internet Explorer importados."
 
 #: migration/applythread.py:86
 msgid "Firefox is open. Please close it first to continue..."
-msgstr ""
-"Firefox se está ejecutando. Favor termine Firefox antes de continuar..."
+msgstr "Firefox se está ejecutando. Favor termine Firefox antes de continuar..."
 
 #: migration/applythread.py:95
 msgid "Windows Mail accounts cannot be loaded."
@@ -234,18 +233,16 @@ msgid "Don't use wallpaper"
 msgstr "No usar imagen de fondo de escritorio"
 
 #: migration/gui/optionspage.py:50
-#, fuzzy
 msgid "Does not change your wallpaper."
-msgstr "No usar imagen de fondo de escritorio"
+msgstr "No cambiar imagen de fondo de escritorio."
 
 #: migration/gui/optionspage.py:66
 msgid "Use my old wallpaper"
 msgstr "Usar mi imagen de fondo anterior"
 
 #: migration/gui/optionspage.py:67
-msgid ""
-"Copies your old wallpaper to Pardus and sets it as new background image."
-msgstr ""
+msgid "Copies your old wallpaper to Pardus and sets it as new background image."
+msgstr "Copia el fondo antiguo a Pardus y lo establece como imagen de fondo actual."
 
 #: migration/gui/optionspage.py:79
 msgid "Firefox bookmarks"
@@ -253,16 +250,15 @@ msgstr "Marcadores de Firefox"
 
 #: migration/gui/optionspage.py:81
 msgid "Copies your old Firefox bookmarks to Firefox under Pardus."
-msgstr ""
+msgstr "Copia sus favoritos de Firefox anteriores a Firefox en Pardus."
 
 #: migration/gui/optionspage.py:86
 msgid "Internet Explorer favorites"
 msgstr "Favoritos de Internet Explorer"
 
 #: migration/gui/optionspage.py:88
-#, fuzzy
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
-msgstr "Favoritos de Internet Explorer importados."
+msgstr "Copia los favoritos anteriores de Internet Explorer a Firefox en Pardus."
 
 #: migration/gui/optionspage.py:93
 msgid "E-Mail and News Accounts"
@@ -273,9 +269,8 @@ msgid "Windows Mail accounts"
 msgstr "Cuentas de correo Windows"
 
 #: migration/gui/optionspage.py:102 migration/gui/optionspage.py:109
-msgid ""
-"Copies your old mail and newsgroup accounts to KMail and KNode applications."
-msgstr ""
+msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
+msgstr "Copia sus cuentas antiguas de coreo y listas de noticias a las aplicaciones KMail y KNode."
 
 #: migration/gui/optionspage.py:107
 msgid "Thunderbird accounts"
@@ -286,9 +281,8 @@ msgid "Copy e-mail messages from e-mail accounts"
 msgstr "Copiar mensajes email"
 
 #: migration/gui/optionspage.py:115
-#, fuzzy
 msgid "Copies your e-mail messages to KMail from selected applications above."
-msgstr "Copiar mensajes email"
+msgstr "Copia mensajes email a KMail desde aplicaciones seleccionados arriba."
 
 #: migration/gui/optionspage.py:127
 msgid "MSN accounts"
@@ -296,16 +290,15 @@ msgstr "Cuentas MSN"
 
 #: migration/gui/optionspage.py:129
 msgid "Copies your MSN Messenger accounts to Kopete."
-msgstr ""
+msgstr "Copia sus cuentas del messenger MSN a Kopete."
 
 #: migration/gui/optionspage.py:134
 msgid "GTalk accounts"
 msgstr "Cuentas GTalk"
 
 #: migration/gui/optionspage.py:136
-#, fuzzy
 msgid "Copies your GTalk accounts to Kopete."
-msgstr "Cuentas de GTalk importados."
+msgstr "Copia sus cuentas de GTalk a Kopete."
 
 #: migration/gui/userpage.py:25
 msgid ""
@@ -335,7 +328,7 @@ msgstr "Hacer Nada"
 msgid ""
 "Does not use your old files. <br>You can still access them from their old "
 "location."
-msgstr ""
+msgstr "No está utilizando sus archivos antiguos. <br>Todavía puede continuar accederlos en su ubicación anterior."
 
 #: migration/gui/filespage.py:31
 msgid "Put links to my desktop"
@@ -346,7 +339,7 @@ msgid ""
 "Does not copy your files. Instead, it puts shortcuts of your existing "
 "folders to your desktop for easy access.<br> By this way, you can save disk "
 "space."
-msgstr ""
+msgstr "No copia sus archivos. Simplemente coloca accesos directos a sus directorios existentes en el escritorio.<br> De esta manera puede ahorrar espacio en disco."
 
 #: migration/gui/filespage.py:39
 msgid "Copy files to directory:"
@@ -354,7 +347,7 @@ msgstr "Copiar archivos a directorio:"
 
 #: migration/gui/filespage.py:40
 msgid "Copies selected files to another directory of Pardus."
-msgstr ""
+msgstr "Copia archivos seleccionados a otro directorio de Pardus."
 
 #: migration/gui/filespage.py:62
 msgid "My Documents"
@@ -416,19 +409,10 @@ msgstr "Directorio migrado"
 
 #: migration/utility/account.py:348
 msgid "This messagebox is migrated using Pardus Migration Tool"
-msgstr ""
-"Esta caja de mensaje fue migrado usando el asistente de migración de Pardus"
+msgstr "Esta caja de mensaje fue migrado usando el asistente de migración de Pardus"
 
 #: migration/utility/account.py:381 migration/utility/account.py:400
 #, python-format
 msgid "Message Box %s copied"
 msgstr "Caja de mensaje '%s' copiado"
 
-#~ msgid "WARNING:"
-#~ msgstr "ALERTA:"
-
-#~ msgid "OK:"
-#~ msgstr "OK:"
-
-#~ msgid "ERROR:"
-#~ msgstr "Error:"
