@@ -3,7 +3,7 @@
 import piksemel
 import re
 
-commentString = "PakitoComment"
+commentString = "XmlUtil"
 
 class XmlUtil:
     """ basic xml parsing class with comment keeping support using piksemel"""
@@ -18,6 +18,20 @@ class XmlUtil:
             if node == None:
                 return None
         return node
+    
+    def getTagListByPath(self, *path):
+        """ get tag(s) with given name by path, returns a list"""
+        lst = []
+        node = self.getTagByPath(*path)
+        if not node:
+            return None
+        lst.append(node)
+        node = node.nextTag()
+        while node:
+            if node.name() == path[-1]:
+                lst.append(node)
+            node = node.nextTag()
+        return lst        
     
     def getDataOfTag(self, node):
         """ get data of given node """
