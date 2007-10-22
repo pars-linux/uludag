@@ -10,36 +10,53 @@
 # Please read the COPYING file.
 #
 
-import unittest
+import testcase
+import pisi
 
-class RepoDBTestCase(unittest.TestCase):
+class RepoDBTestCase(testcase.TestCase):
 
-    def testAddRepo(self):
-        assert False
+    repodb = pisi.db.repodb.RepoDB()
 
-    def testRemoveRepo(self):
-        assert False
-
-    def testAddExistingRepo(self):
-        assert False
-
-    def testRemoveNonExistingRepo(self):
-        assert False
+    def testAddRemoveRepo(self):
+        assert "contrib-2007-src" not in self.repodb.list_repos()
+        repo = pisi.db.repodb.Repo(pisi.uri.URI("repos/contrib-2007/pisi-index.xml.bz2"))
+        self.repodb.add_repo("contrib-2007-src", repo)
+        assert "contrib-2007-src" in self.repodb.list_repos()
+        self.repodb.remove_repo("contrib-2007-src")
+        assert "contrib-2007" in self.repodb.list_repos()
+        assert "pardus-2007" in self.repodb.list_repos()
+        assert "contrib-2007-src" not in self.repodb.list_repos()
 
     def testAddRemoveCycle(self):
-        assert False
+        for r in range(30):
+            assert "test-repo" not in self.repodb.list_repos()
+            repo = pisi.db.repodb.Repo(pisi.uri.URI("http://test-repo/pisi-index.xml.bz2"))
+            self.repodb.add_repo("test-repo", repo)
+            assert "test-repo" in self.repodb.list_repos()
+            self.repodb.remove_repo("test-repo")
+
+        assert "test-repo" not in self.repodb.list_repos()
 
     def testListRepos(self):
-        assert False
+        assert set(self.repodb.list_repos()) == set(['pardus-2007', 'contrib-2007', 'pardus-2007-src'])
 
     def testGetSourceRepos(self):
-        assert False
+        assert set(self.repodb.get_source_repos()) == set(['pardus-2007-src'])
 
     def testGetBinaryRepos(self):
-        assert False
+        assert set(self.repodb.get_binary_repos()) == set(['pardus-2007', 'contrib-2007'])
 
     def testGetRepo(self):
-        assert False
+        repo = self.repodb.get_repo("pardus-2007")
+        uri = repo.indexuri
+        assert uri.get_uri() == "repos/pardus-2007-bin/pisi-index.xml.bz2"
 
     def testRepoOrder(self):
-        assert False
+        repoorder = pisi.db.repodb.RepoOrder()
+        assert repoorder.get_order() == ['pardus-2007', 'contrib-2007', 'pardus-2007-src']
+        
+        repoorder.add("test-repo", "http://test-repo/pisi-index.xml.bz2")
+        assert repoorder.get_order() == ['pardus-2007', 'contrib-2007', 'pardus-2007-src', 'test-repo']
+
+        repoorder.remove("test-repo")
+        assert repoorder.get_order() == ['pardus-2007', 'contrib-2007', 'pardus-2007-src']
