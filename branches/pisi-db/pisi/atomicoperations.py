@@ -176,7 +176,7 @@ class Install(AtomicOperation):
         if file_conflicts:
             file_conflicts_str = ""
             for (pkg, existing_file) in file_conflicts:
-                file_conflicts_str += _("/%s from %s package\n") % (existing_file.path, pkg)
+                file_conflicts_str += _("/%s from %s package\n") % (existing_file, pkg)
             msg = _('File conflicts:\n%s') % file_conflicts_str
             if self.ignore_file_conflicts:
                 ctx.ui.warning(msg)
