@@ -10,33 +10,40 @@
 # Please read the COPYING file.
 #
 
-import unittest
+import testcase
+import pisi
 
-class SourceDBTestCase(unittest.TestCase):
+class SourceDBTestCase(testcase.TestCase):
+    
+    sourcedb = pisi.db.sourcedb.SourceDB()
 
     def testListSources(self):
-        assert False
-
+        assert set(self.sourcedb.list_sources()) == set(['ethtool', 'nfdump', 'shadow', 'libidn', 
+                                                         'zlib', 'db', 'openssl', 'jpeg', 'gsl', 
+                                                         'curl', 'bogofilter', 'ncftp', 'pam', 
+                                                         'bash', 'cracklib'])
+    
     def testHasSpec(self):
-        assert False
+        assert self.sourcedb.has_spec("ethtool")
+        assert not self.sourcedb.has_spec("hedehodo")
 
     def testGetSpec(self):
-        assert False
-
-    def testGetNonExistingSpec(self):
-        assert False
+        spec = self.sourcedb.get_spec("ethtool")
+        assert spec.source.name == "ethtool"
+        assert spec.source.partOf == "applications.network"
 
     def testGetSpecOfRepository(self):
-        assert False
+        spec = self.sourcedb.get_spec("ethtool", "pardus-2007-src")
+        assert spec.source.name == "ethtool"
+        assert spec.source.partOf == "applications.network"
 
     def testGetSpecAndRepository(self):
-        assert False
+        spec, repo = self.sourcedb.get_spec_repo("ethtool")
+        assert spec.source.name == "ethtool"
+        assert spec.source.partOf == "applications.network"
+        assert repo == "pardus-2007-src"
 
     def testGetSourceFromPackage(self):
-        assert False
-
-    def testListSources(self):
-        assert False
-
-    def testListSourcesOfRepository(self):
-        assert False
+        # FIXME: Add multi package from source to createrepo.py
+        pkg = self.sourcedb.pkgtosrc("cracklib")
+        assert pkg == "cracklib"
