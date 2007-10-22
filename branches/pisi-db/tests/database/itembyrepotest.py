@@ -78,8 +78,3 @@ class ItemByRepoTestCase(testcase.TestCase):
         assert set(self.testdb.odb.get_list_item("pardus-2007")) == set(['rar', 'wengophone'])
         assert set(self.testdb.odb.get_list_item("contrib-2007")) == set(['xara'])
         assert set(self.testdb.odb.get_list_item()) == set(['rar', 'xara', 'wengophone'])
-        
-        
-        
-
-        
