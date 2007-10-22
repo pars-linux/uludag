@@ -106,7 +106,7 @@ class PackageDB(lazydb.LazyDB):
         return self.pdb.which_repo(name)
 
     def get_obsoletes(self, repo=None):
-        return self.odb.get_item_values(repo)
+        return self.odb.get_list_item(repo)
     
     def get_rev_deps(self, name, repo=None):
         try:
@@ -127,7 +127,7 @@ class PackageDB(lazydb.LazyDB):
     def get_replaces(self):
         pairs = {}
 
-        for pkg_name in self.rpdb.get_item_values():
+        for pkg_name in self.rpdb.get_list_item():
             replaces = self.get_package(pkg_name).replaces
             for r in replaces:
                 if pisi.replace.installed_package_replaced(r):

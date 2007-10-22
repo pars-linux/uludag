@@ -10,37 +10,76 @@
 # Please read the COPYING file.
 #
 
-import unittest
+import testcase
+import pisi.db.itembyrepo
 
-class ItemByRepoTestCase(unittest.TestCase):
+class TestDB:
+    def __init__(self):
+        self.packages = {}
+        self.obsoletes = {}
+
+        self.packages["pardus-2007"] = {"aggdraw":"package aggdraw",
+                                        "acpica":"package acpica"}
+        self.packages["contrib-2007"] = {"kdiff3":"package kdiff3",
+                                         "kmess":"package kmess"}
+
+        self.obsoletes["pardus-2007"] = ["wengophone", "rar"]
+        self.obsoletes["contrib-2007"] = ["xara"]
+
+        self.tdb = pisi.db.itembyrepo.ItemByRepo(self.packages)
+        self.odb = pisi.db.itembyrepo.ItemByRepo(self.obsoletes)
+
+class ItemByRepoTestCase(testcase.TestCase):
+
+    testdb = TestDB()
 
     def testHasRepository(self):
-        assert False
+        assert self.testdb.tdb.has_repo("pardus-2007")
+        assert self.testdb.tdb.has_repo("contrib-2007")
+        assert not self.testdb.tdb.has_repo("hedehodo")
 
     def testHasItem(self):
-        assert False
+        assert self.testdb.tdb.has_item("kdiff3", "contrib-2007")
+        assert not self.testdb.tdb.has_item("kdiff3", "pardus-2007")
+        assert self.testdb.tdb.has_item("acpica")
 
     def testWhichRepo(self):
-        assert False
+        assert self.testdb.tdb.which_repo("acpica") == "pardus-2007"
+        assert self.testdb.tdb.which_repo("kmess") == "contrib-2007"
 
     def testGetItemAndRepository(self):
-        assert False
+        pkg, repo = self.testdb.tdb.get_item_repo("acpica")
+        assert pkg == "package acpica"
+        assert repo == "pardus-2007"
+
+        pkg, repo = self.testdb.tdb.get_item_repo("kmess")
+        assert pkg == "package kmess"
+        assert repo == "contrib-2007"
 
     def testGetItem(self):
-        assert False
-
-    def testGetNonExistingItem(self):
-        assert False
+        assert self.testdb.tdb.get_item("acpica") == "package acpica"
+        assert self.testdb.tdb.get_item("kmess") == "package kmess"
 
     def testGetItemOfRepository(self):
-        assert False
-
-    def testGetItemFromNonExistingRepository(self):
-        assert False
+        assert self.testdb.tdb.get_item("acpica", "pardus-2007") == "package acpica"
+        assert self.testdb.tdb.get_item("kmess", "contrib-2007") == "package kmess"
 
     def testGetItemKeys(self):
-        assert False
+        assert set(self.testdb.tdb.get_item_keys("pardus-2007")) == set(["aggdraw", "acpica"])
+        assert set(self.testdb.tdb.get_item_keys("contrib-2007")) == set(["kdiff3", "kmess"])
+        assert set(self.testdb.tdb.get_item_keys()) == set(["kdiff3", "kmess", "aggdraw", "acpica"])
 
     def testGetItemValues(self):
-        assert False
+        assert set(self.testdb.tdb.get_item_values("pardus-2007")) == set(['package aggdraw', 'package acpica'])
+        assert set(self.testdb.tdb.get_item_values("contrib-2007")) == set(['package kdiff3', 'package kmess'])
+        assert set(self.testdb.tdb.get_item_values()) == set(['package aggdraw', 'package kdiff3', 'package kmess', 'package acpica'])
 
+    def testGetListItem(self):
+        assert set(self.testdb.odb.get_list_item("pardus-2007")) == set(['rar', 'wengophone'])
+        assert set(self.testdb.odb.get_list_item("contrib-2007")) == set(['xara'])
+        assert set(self.testdb.odb.get_list_item()) == set(['rar', 'xara', 'wengophone'])
+        
+        
+        
+
+        

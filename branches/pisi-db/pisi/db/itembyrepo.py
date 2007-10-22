@@ -65,7 +65,21 @@ class ItemByRepo:
         for r in self.item_repos(repo):
             if not self.has_repo(r):
                 raise Exception(_('Repository %s does not exist.') % repo)
-            items.extend(self.dbobj[r])
+
+            if self.dbobj.has_key(r):
+                items.extend(self.dbobj[r].values())
+
+        return list(set(items))
+
+    def get_list_item(self, repo=None):
+        items = []
+        for r in self.item_repos(repo):
+            if not self.has_repo(r):
+                raise Exception(_('Repository %s does not exist.') % repo)
+
+            if self.dbobj.has_key(r):
+                items.extend(self.dbobj[r])
+
         return list(set(items))
 
     def item_repos(self, repo=None):
