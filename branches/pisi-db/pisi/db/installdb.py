@@ -77,20 +77,21 @@ class InstallDB(lazydb.LazyDB):
             return open(pending_info_path, "r").read().split()
         return []
 
+    def __add_to_revdeps(self, package, revdeps):
+        metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
+        meta_doc = piksemel.parse(metadata_xml)
+        name = meta_doc.getTag("Package").getTagData('Name')
+        deps = meta_doc.getTag("Package").getTag('RuntimeDependencies')
+        if deps:
+            for dep in deps.tags("Dependency"):
+                revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep))
+
     def __generate_revdeps(self):
         revdeps = {}
-
         for package in self.list_installed():
-            metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
-            meta_doc = piksemel.parse(metadata_xml)
-            name = meta_doc.getTag("Package").getTagData('Name')
-            deps = meta_doc.getTag("Package").getTag('RuntimeDependencies')
-            if deps:
-                for dep in deps.tags("Dependency"):
-                    revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep))
-
+            self.__add_to_revdeps(package, revdeps)
         return revdeps
-
+        
     def list_installed(self):
         return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(ctx.config.packages_dir()))
 
@@ -130,7 +131,7 @@ class InstallDB(lazydb.LazyDB):
                            ctime)
         return info
 
-    def get_rev_deps(self, name, repo=None):
+    def get_rev_deps(self, name):
         
         rev_deps = []
 
@@ -160,7 +161,8 @@ class InstallDB(lazydb.LazyDB):
 
     def add_package(self, pkginfo):
         self.installed_db[pkginfo.name] = "%s-%s" % (pkginfo.version, pkginfo.release)
-
+        self.__add_to_revdeps(pkginfo.name, self.rev_deps_db)
+        
     def remove_package(self, package_name):
         if self.installed_db.has_key(package_name):
             del self.installed_db[package_name]
