@@ -21,6 +21,7 @@ from database.componentdbtest import ComponentDBTestCase
 from database.filesdbtest import FilesDBTestCase
 from database.lazydbtest import LazyDBTestCase
 from database.itembyrepotest import ItemByRepoTestCase
+from versiontest import VersionTestCase
 
 suite = unittest.TestSuite()
 
@@ -28,6 +29,9 @@ suite = unittest.TestSuite()
 suite.addTests([LazyDBTestCase, RepoDBTestCase, ItemByRepoTestCase,
                 PackageDBTestCase, InstallDBTestCase, ComponentDBTestCase, 
                 FilesDBTestCase, SourceDBTestCase])
+
+# Pisi class tests
+suite.addTests([VersionTestCase])
 
 if __name__ == '__main__':
     unittest.main()
