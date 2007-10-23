@@ -298,6 +298,8 @@ class QueueManager:
                         self.__removeBinaryPackageFromWorkDir__(p)
                     else:
                         self.removeFromWorkQueue(pspec)
+                        # delta
+                        #pisi.delta(oldBinaryPackages, newBinaryPackages)
                         self.__movePackages__(newBinaryPackages, oldBinaryPackages)
             finally:
                 pisi.finalize()
@@ -311,12 +313,10 @@ class QueueManager:
             self.locks["build"].unlock()
             return 3
         else:
+            self.locks["build"].unlock()
             # mailer.info(_("Queue finished without a problem!..."))
-            pass
+            return 0
         
-        self.locks["build"].unlock()
-        return 0
-    
     def buildIndex(self):
         
         try:
