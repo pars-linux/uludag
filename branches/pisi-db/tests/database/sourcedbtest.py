@@ -19,7 +19,7 @@ class SourceDBTestCase(testcase.TestCase):
 
     def testListSources(self):
         assert set(self.sourcedb.list_sources()) == set(['ethtool', 'nfdump', 'shadow', 'libidn', 
-                                                         'zlib', 'db', 'openssl', 'jpeg', 'gsl', 
+                                                         'zlib', 'db4', 'openssl', 'jpeg', 'gsl', 
                                                          'curl', 'bogofilter', 'ncftp', 'pam', 
                                                          'bash', 'cracklib'])
     

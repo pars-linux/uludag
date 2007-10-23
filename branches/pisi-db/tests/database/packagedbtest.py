@@ -61,7 +61,7 @@ class PackageDBTestCase(testcase.TestCase):
 
     def testListPackages(self):
         assert set(self.packagedb.list_packages("pardus-2007")) == set(['nfdump', 'ethtool', 'ncftp', 
-                                                                        'libidn', 'zlib', 'db', 'openssl', 
+                                                                        'libidn', 'zlib', 'db4', 'openssl', 
                                                                         'jpeg', 'pam', 'shadow', 'bogofilter', 
                                                                         'curl', 'gsl', 'bash', 'cracklib'])
 
