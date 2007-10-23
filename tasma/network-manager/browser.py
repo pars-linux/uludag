@@ -426,6 +426,7 @@ class Widget(QVBox):
 
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
+        comlink.nowifi_hook.append(self.disableAutoConnectButtons)
         comlink.config_hook.append(self.view.configUpdate)
         comlink.state_hook.append(self.view.stateUpdate)
         comlink.hotplug_hook.append(self.view.hotPlug)
@@ -434,13 +435,18 @@ class Widget(QVBox):
         
         comlink.denied_hook.append(self.setInterface)
         comlink.checkAccess("setConnection")
+        comlink.queryWifi()
     
     def setAutoConnect(self):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
     
     def slotAutoConnect(self):
-        # Force or not ?
         autoswitch.scanAndConnect(link=comlink.com,force=True)
+
+    def disableAutoConnectButtons(self):
+        print "No wifi profiles.."
+        self.butAutoConnect.hide()
+        self.autoCheck.hide()
 
     def slotCreate(self):
         if self.newconnwin:

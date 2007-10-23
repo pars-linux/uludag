@@ -274,7 +274,7 @@ class Applet:
         self.app = app
         self.config = KConfig("network-appletrc")
         self.config.setGroup("General")
-        self.checkAutoConnect()
+        self.autoConnect = self.config.readBoolEntry("AutoConnect",True)
         comlink.state_hook.append(self.updateIcons)
         app.connect(app, SIGNAL("shutDown()"), self.fixQuit)
     
@@ -315,9 +315,6 @@ class Applet:
     
     def scanAndConnect(self):
         os.system("network-manager --auto-connect")
-
-    def checkAutoConnect(self):
-        self.autoConnect = self.config.readBoolEntry("AutoConnect",True)
 
     def startManager(self):
         os.system("network-manager")
