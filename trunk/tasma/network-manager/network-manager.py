@@ -16,6 +16,7 @@ from kdecore import *
 from kdeui import *
 
 import browser
+import autoswitch
 from icons import icons, getIconSet
 
 def I18N_NOOP(x):
@@ -67,15 +68,19 @@ def create_network_manager(parent, name):
     kapp = KApplication.kApplication()
     return Module(parent, name)
 
-
 # Standalone
 def main():
     global kapp
     
     about = AboutData()
     KCmdLineArgs.init(sys.argv, about)
+    KCmdLineArgs.addCmdLineOptions ([("auto-connect", I18N_NOOP("Just try to connect automatically"))])
     KUniqueApplication.addCmdLineOptions()
-    
+    args = KCmdLineArgs.parsedArgs()
+    if args.isSet("auto-connect"):
+        autoswitch.scanAndConnect(force=True)
+        sys.exit()
+
     if not KUniqueApplication.start():
         print i18n("Network manager module is already started!")
         return
