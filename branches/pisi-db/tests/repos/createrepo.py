@@ -213,7 +213,7 @@ class Pardus2007Repo(Repository):
             ]
         
         # system.base
-        self.packages.extend(pf.getPackageBundle("system.base", "libidn", "zlib", "openssl", "db", "pam", "cracklib"))
+        self.packages.extend(pf.getPackageBundle("system.base", "libidn", "zlib", "openssl", "db4", "pam", "cracklib"))
 
         # applications.network
         self.packages.extend(pf.getPackageBundle("applications.network", "ethtool", "nfdump"))
