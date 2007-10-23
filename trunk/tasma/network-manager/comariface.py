@@ -16,7 +16,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-CONNLIST, CONNINFO, CONNINFO_AUTH, DEVICES, NAME_HOST, NAME_DNS, REMOTES = range(1, 8)
+CONNLIST, CONNINFO, CONNINFO_AUTH, DEVICES, NAME_HOST, NAME_DNS, REMOTES, CONNEXISTS = range(1, 9)
 
 
 class Hook:
@@ -30,11 +30,16 @@ class Hook:
         self.remote_hook = []
         self.hotplug_hook = []
         self.noconn_hook = []
+        self.nowifi_hook = []
+        self.denied_hook = []
         self.denied_hook = []
         self.warn_limited_access = False
     
     def emitNoConn(self):
         map(lambda x: x(), self.noconn_hook)
+    
+    def emitNoWifi(self):
+        map(lambda x: x(), self.nowifi_hook)
     
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
@@ -296,6 +301,10 @@ class ComarInterface(Hook):
         if reply.id == REMOTES:
             self.emitRemotes(reply.script, reply.data)
     
+        if reply.id == CONNEXISTS:
+            if reply.data == '':
+                self.emitNoWifi()
+
     def handleDenied(self, reply):
         self.emitDenied()
         if not self.warn_limited_access:
@@ -375,6 +384,9 @@ class ComarInterface(Hook):
     
     def queryRemotes(self, script, devid):
         self.com.Net.Link[script].scanRemote(device=devid, id=REMOTES)
+    
+    def queryWifi(self):
+        self.com.Net.Link['wireless-tools'].connections(id=CONNEXISTS)
     
     def uniqueName(self):
         base_name = str(i18n("new connection"))

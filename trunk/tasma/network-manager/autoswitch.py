@@ -61,6 +61,8 @@ def scanAndConnect(link=None,force=False):
         profile = profiles[0]['name']
         print "Profile '%s' matched." % profile
         connect(link,profiles[0],force)
+    elif not len(profiles):
+        print "There is no matched profile"
     else:
         print "There is a lot of matched profile.."
 
