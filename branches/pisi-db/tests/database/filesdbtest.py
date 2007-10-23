@@ -22,13 +22,15 @@ class FilesDBTestCase(testcase.TestCase):
         pisi.api.install(["ethtool"])
         assert self.filesdb.has_file("usr/bin/ethtool")
         pisi.api.remove(["ethtool"])
+        assert not self.filesdb.has_file("usr/bin/ethtool")
 
     def testGetFile(self):
         pisi.api.install(["ethtool"])
         pkg, path = self.filesdb.get_file("usr/bin/ethtool")
         assert pkg == "ethtool"
         assert path == "usr/bin/ethtool"
-        pisi.api.remove(["ethtool"]) 
+        pisi.api.remove(["ethtool"])
+        assert not self.filesdb.has_file("usr/bin/ethtool")
 
     def testAddRemoveFiles(self):
         fileinfo1 = pisi.files.FileInfo()
