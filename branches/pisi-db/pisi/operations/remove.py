@@ -41,7 +41,7 @@ def remove(A, ignore_dep = False, ignore_safety = False):
             systembase = set(componentdb.get_union_component('system.base').packages)
             refused = A.intersection(systembase)
             if refused:
-                ctx.ui.warning(_('Safety switch: cannot remove the following packages in system.base: ') +
+                raise pisi.Error(_('Safety switch: cannot remove the following packages in system.base: ') +
                                util.strlist(refused))
                 A = A - systembase
         else:
