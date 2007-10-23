@@ -401,7 +401,7 @@ class Widget(QVBox):
         self.butConf.setTextPosition(self.butConf.BesideIcon)
         
         self.butAutoConnect = QToolButton(getIconSet("connect_creating"), "", "lala", self.slotAutoConnect, bar)
-        self.butAutoConnect.setTextLabel(i18n("Scan and Connect"), False)
+        self.butAutoConnect.setTextLabel(i18n("Connect Automatically"), False)
         self.butAutoConnect.setUsesTextLabel(True)
         self.butAutoConnect.setTextPosition(self.butAutoConnect.BesideIcon)
 
@@ -420,7 +420,7 @@ class Widget(QVBox):
         self.view = ConnectionView(self)
         
         self.stack = nameconf.Window(self)
-        self.autoCheck = QCheckBox("Auto Connect",self)
+        self.autoCheck = QCheckBox(i18n("Try Auto Connect on startup"),self)
         self.connect(self.autoCheck, SIGNAL('clicked()'),self.setAutoConnect)
         self.autoCheck.setOn(self.config.readBoolEntry("AutoConnect",True))
 
