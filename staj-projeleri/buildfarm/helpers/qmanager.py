@@ -287,6 +287,7 @@ class QueueManager:
                 else:
                     try:
                         for p in newBinaryPackages:
+                            shutilCopy(os.path.join(config.workDir, p), config.binaryPath)
                             logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
                             pisi.install(os.path.join(config.workDir, p))
                     except Exception, e:
@@ -298,8 +299,11 @@ class QueueManager:
                         self.__removeBinaryPackageFromWorkDir__(p)
                     else:
                         self.removeFromWorkQueue(pspec)
-                        # delta
-                        #pisi.delta(oldBinaryPackages, newBinaryPackages)
+                        # Delta package support
+                        if oldBinaryPackages:
+                            pisi.delta(oldBinaryPackages, newBinaryPackages)
+
+                        # Move the packages
                         self.__movePackages__(newBinaryPackages, oldBinaryPackages)
             finally:
                 pisi.finalize()
@@ -347,7 +351,6 @@ class QueueManager:
         return 0
     
     def __movePackages__(self, newBinaryPackages, oldBinaryPackages):
-        # sanitaze input
         
         exists = os.path.exists
         join   = os.path.join
@@ -373,16 +376,16 @@ class QueueManager:
             if exists(join(config.workDir, package)):
                 copy(join(config.workDir, package), config.binaryPath)
                 remove(join(config.workDir, package))
-                
-        try:
-            newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
-        except AttributeError:
-            pass
+        
+        #try:
+        #    newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
+        #except AttributeError:
+        #    pass
     
-        try:
-            oldBinaryPackages = set(map(lambda x: os.path.basename(x), oldBinaryPackages))
-        except AttributeError:
-            pass
+        #try:
+        #    oldBinaryPackages = set(map(lambda x: os.path.basename(x), oldBinaryPackages))
+        #except AttributeError:
+        #    pass
     
         unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
         newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
