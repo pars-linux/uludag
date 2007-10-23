@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-29 16:40+0300\n"
+"POT-Creation-Date: 2007-10-23 16:12+0300\n"
 "PO-Revision-Date: 2007-05-31 00:29+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -17,92 +17,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: browser.py:49
-msgid "Name:"
-msgstr "Nom:"
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr "Crxéer une nouvelle conneion"
 
-#: browser.py:56 connection.py:206
-msgid "Authentication"
-msgstr "Authentification"
+#: newconn.py:31
+msgid "Select device:"
+msgstr "Sélectionner le périphérique:"
 
-#: browser.py:59 connection.py:297
-msgid "Address:"
-msgstr "Adresse"
+#: newconn.py:58
+msgid "Create"
+msgstr "Créer"
 
-#: browser.py:62 connection.py:334
-msgid "Automatic"
-msgstr "Automatiquement"
+#: newconn.py:113
+msgid "No suitable device found"
+msgstr "Aucun périphérique adéquat trouvé"
 
-#: browser.py:90
-msgid "Turn on/off connection"
-msgstr "Activer/Désactiver la connexion"
+#: newconn.py:121
+msgid "Install network packages!"
+msgstr "Installation des pacquets réseau!"
 
-#: browser.py:103
-msgid "Configure connection"
-msgstr "Configurer la connexion réseau"
-
-#: browser.py:106
-msgid "Delete connection"
-msgstr "Effacer la connexion"
-
-#: browser.py:124
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
+#: newconn.py:122
+msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
-"Dois je supprimer la \n"
-"la connexion \n"
-"'%s' ?"
-
-#: browser.py:125
-msgid "Delete connection?"
-msgstr "Supprimer la connexion ?"
-
-#: browser.py:205
-msgid "No device!"
-msgstr "Pas de périphérique!"
-
-#: browser.py:381 network-applet.py:456
-msgid "New connection"
-msgstr "Créer une connexion"
-
-#: browser.py:386 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "Configuration du service de nom"
-
-#: browser.py:423
-msgid "Network Connections Help"
-msgstr "Aide à propos des connexions réseaux"
-
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Ordinateur"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Nom d'hôte"
-
-#: nameconf.py:45 connection.py:325
-msgid "Name servers"
-msgstr "Serveurs de nom"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Activée"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Désactivée"
-
-#: nameconf.py:134
-msgid "Add Name Server"
-msgstr "Ajouter un serveur de nom"
-
-#: nameconf.py:135
-msgid "Name server:"
-msgstr "Serveur de nom:"
+"Aucun paquet contenant des scripts réseau COMAR n'ont été installé jusqu'à "
+"présent."
 
 #: connection.py:27
 msgid "Channel"
@@ -132,77 +71,85 @@ msgstr "Sonder de nouveau"
 msgid "Use"
 msgstr "Utiliser"
 
-#: connection.py:163
+#: connection.py:165
 msgid "Connection name:"
 msgstr "Nom de la connexion :"
 
-#: connection.py:170
+#: connection.py:172
 msgid "Connection"
 msgstr "Connexion"
 
-#: connection.py:176
+#: connection.py:178
 msgid "Device:"
 msgstr "Périphérique:"
 
-#: connection.py:181
+#: connection.py:183
 msgid "Select"
 msgstr "Sélectionner"
 
-#: connection.py:195
+#: connection.py:197
 msgid "Scan"
 msgstr "Sonder"
 
-#: connection.py:212
+#: connection.py:208 browser.py:57
+msgid "Authentication"
+msgstr "Authentification"
+
+#: connection.py:214
 msgid "Mode:"
 msgstr "Mode:"
 
-#: connection.py:220
+#: connection.py:222
 msgid "No authentication"
 msgstr "Pas d'authentification"
 
-#: connection.py:238 connection.py:249
+#: connection.py:240 connection.py:251
 msgid "Password:"
 msgstr "Mot de passe:"
 
-#: connection.py:246
+#: connection.py:248
 msgid "User name:"
 msgstr "Nom d'utlisateur"
 
-#: connection.py:278
+#: connection.py:281
 msgid "Network settings"
 msgstr "Paramètres réseau"
 
-#: connection.py:288
+#: connection.py:291
 msgid "Automatic query (DHCP)"
 msgstr "Requête automatique (DHCP)"
 
-#: connection.py:293
+#: connection.py:296
 msgid "Manual"
 msgstr "Manuel"
 
-#: connection.py:304 connection.py:321 connection.py:336
+#: connection.py:300 browser.py:60
+msgid "Address:"
+msgstr "Adresse"
+
+#: connection.py:307 connection.py:324 connection.py:339
 msgid "Custom"
 msgstr "Personnalisé"
 
-#: connection.py:309
+#: connection.py:312
 msgid "Net mask:"
 msgstr "Masque de réseau:"
 
-#: connection.py:316
+#: connection.py:319
 msgid "Gateway:"
 msgstr "Passerelle:"
 
-#: connection.py:527
+#: connection.py:328 nameconf.py:45
+msgid "Name servers"
+msgstr "Serveurs de nom"
+
+#: connection.py:337 browser.py:63
+msgid "Automatic"
+msgstr "Automatiquement"
+
+#: connection.py:532
 msgid "Configure network connection"
 msgstr "Configurer la connexion réseau"
-
-#: network-manager.py:33 network-manager.py:85
-msgid "Network Manager"
-msgstr "Gestionnaire réseau"
-
-#: network-manager.py:80
-msgid "Network manager module is already started!"
-msgstr "Le gestionnaire réseau est déjà en cours d'exécution!"
 
 #: comariface.py:166
 msgid "Waiting COMAR..."
@@ -210,9 +157,10 @@ msgstr "En attente de COMAR..."
 
 #: comariface.py:167
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "La connexion avec COMAR a été perdue, tentative de reconnexion en cours..."
+msgstr ""
+"La connexion avec COMAR a été perdue, tentative de reconnexion en cours..."
 
-#: comariface.py:186 comariface.py:203 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:113
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -229,53 +177,122 @@ msgstr "Vous n'êtes pas autorisé à changer les paramètres réseau."
 msgid "new connection"
 msgstr "Nouvelle connexion"
 
-#: newconn.py:26
-msgid "Create a new connection"
-msgstr "Crxéer une nouvelle conneion"
+#: browser.py:50
+msgid "Name:"
+msgstr "Nom:"
 
-#: newconn.py:31
-msgid "Select device:"
-msgstr "Sélectionner le périphérique:"
+#: browser.py:93
+msgid "Turn on/off connection"
+msgstr "Activer/Désactiver la connexion"
 
-#: newconn.py:58
-msgid "Create"
-msgstr "Créer"
+#: browser.py:106
+msgid "Configure connection"
+msgstr "Configurer la connexion réseau"
 
-#: newconn.py:112
-msgid "No suitable device found"
-msgstr "Aucun périphérique adéquat trouvé"
+#: browser.py:109
+msgid "Delete connection"
+msgstr "Effacer la connexion"
 
-#: newconn.py:118
-msgid "Install network packages!"
-msgstr "Installation des pacquets réseau!"
-
-#: newconn.py:119
-msgid "No package with COMAR network scripts are installed yet."
+#: browser.py:127
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
 msgstr ""
-"Aucun paquet contenant des scripts réseau COMAR n'ont été installé jusqu'à "
-"présent."
+"Dois je supprimer la \n"
+"la connexion \n"
+"'%s' ?"
 
-#: network-applet.py:293
+#: browser.py:128
+msgid "Delete connection?"
+msgstr "Supprimer la connexion ?"
+
+#: browser.py:215
+msgid "No device!"
+msgstr "Pas de périphérique!"
+
+#: browser.py:394 network-applet.py:494
+msgid "New connection"
+msgstr "Créer une connexion"
+
+#: browser.py:399 nameconf.py:28
+msgid "Name Service Settings"
+msgstr "Configuration du service de nom"
+
+#: browser.py:404 network-applet.py:306
+#, fuzzy
+msgid "Connect Automatically"
+msgstr "Automatiquement"
+
+#: browser.py:423
+msgid "Try Auto Connect on startup"
+msgstr ""
+
+#: browser.py:468
+msgid "Network Connections Help"
+msgstr "Aide à propos des connexions réseaux"
+
+#: network-manager.py:34 network-manager.py:90
+msgid "Network Manager"
+msgstr "Gestionnaire réseau"
+
+#: network-manager.py:77
+msgid "Just try to connect automatically"
+msgstr ""
+
+#: network-manager.py:85
+msgid "Network manager module is already started!"
+msgstr "Le gestionnaire réseau est déjà en cours d'exécution!"
+
+#: network-applet.py:304
 msgid "Firewall..."
 msgstr "Pare-feu..."
 
-#: network-applet.py:294
+#: network-applet.py:305
 msgid "Edit Connections..."
 msgstr "Éditer les connexions réseaux..."
 
-#: network-applet.py:296
+#: network-applet.py:308
 msgid "Icon Per Device"
 msgstr "Une icône par périphérique"
 
-#: network-applet.py:297
+#: network-applet.py:309
 msgid "Single Icon"
 msgstr "Une seule icône"
 
-#: network-applet.py:341
+#: network-applet.py:360
 msgid "Should network-applet start automatically when you login?"
 msgstr "Démarrer automatiquement l'applet réseau dès votre connexion ?"
 
-#: network-applet.py:491
+#: network-applet.py:529
 msgid "Network Applet"
 msgstr "Applet Réseau"
 
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Ordinateur"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Nom d'hôte"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Activée"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Désactivée"
+
+#: nameconf.py:134
+msgid "Add Name Server"
+msgstr "Ajouter un serveur de nom"
+
+#: nameconf.py:135
+msgid "Name server:"
+msgstr "Serveur de nom:"
+
+#, fuzzy
+#~ msgid "Scan and Connect..."
+#~ msgstr "Éditer les connexions réseaux..."

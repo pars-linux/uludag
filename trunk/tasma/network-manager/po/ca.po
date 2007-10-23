@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-29 16:40+0300\n"
+"POT-Creation-Date: 2007-10-23 16:12+0300\n"
 "PO-Revision-Date: 2007-04-02 17:31+0200\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -17,91 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: browser.py:49
-msgid "Name:"
-msgstr "Nom:"
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr "Crea una nova connexió"
 
-#: browser.py:56 connection.py:206
-msgid "Authentication"
-msgstr "Autenticació"
+#: newconn.py:31
+msgid "Select device:"
+msgstr "Tria un dispositiu:"
 
-#: browser.py:59 connection.py:297
-msgid "Address:"
-msgstr "Adreça:"
+#: newconn.py:58
+msgid "Create"
+msgstr "Crea"
 
-#: browser.py:62 connection.py:334
-msgid "Automatic"
-msgstr "Automàtic"
+#: newconn.py:113
+msgid "No suitable device found"
+msgstr "No hi ha cap dispositiu adequat"
 
-#: browser.py:90
-msgid "Turn on/off connection"
-msgstr "Connecta / Desconnecta"
+#: newconn.py:121
+msgid "Install network packages!"
+msgstr "Instal·la els paquets relatius a la xarxa"
 
-#: browser.py:103
-msgid "Configure connection"
-msgstr "Configura la connexió"
-
-#: browser.py:106
-msgid "Delete connection"
-msgstr "Esborra la connexió"
-
-#: browser.py:124
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
+#: newconn.py:122
+msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
-"Que vols que esborre la\n"
-"connexió '%s'?"
-
-#: browser.py:125
-msgid "Delete connection?"
-msgstr "Esborre la connexió?"
-
-#: browser.py:205
-msgid "No device!"
-msgstr "Ho sent. No hi ha cap dispositiu"
-
-#: browser.py:381 network-applet.py:456
-msgid "New connection"
-msgstr "Nova connexió"
-
-#: browser.py:386 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "Nom dels arranjaments del servei (DNS)"
-
-#: browser.py:423
-msgid "Network Connections Help"
-msgstr "Ajut per a la connexió de la xarxa"
-
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Ordinador"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Nom de l'ordinador amfitrió:"
-
-#: nameconf.py:45 connection.py:325
-msgid "Name servers"
-msgstr "Nom dels servidors"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Obert"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Tancat"
-
-#: nameconf.py:134
-msgid "Add Name Server"
-msgstr "Afegeix un nom de servidor"
-
-#: nameconf.py:135
-msgid "Name server:"
-msgstr "Nom del servidor:"
+"No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
 
 #: connection.py:27
 msgid "Channel"
@@ -132,77 +71,85 @@ msgstr "Explora una altra vegada"
 msgid "Use"
 msgstr "Fés-la servir"
 
-#: connection.py:163
+#: connection.py:165
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
 
-#: connection.py:170
+#: connection.py:172
 msgid "Connection"
 msgstr "Connexió"
 
-#: connection.py:176
+#: connection.py:178
 msgid "Device:"
 msgstr "Dispositiu:"
 
-#: connection.py:181
+#: connection.py:183
 msgid "Select"
 msgstr "Seleciona"
 
-#: connection.py:195
+#: connection.py:197
 msgid "Scan"
 msgstr "Explora"
 
-#: connection.py:212
+#: connection.py:208 browser.py:57
+msgid "Authentication"
+msgstr "Autenticació"
+
+#: connection.py:214
 msgid "Mode:"
 msgstr "Mode:"
 
-#: connection.py:220
+#: connection.py:222
 msgid "No authentication"
 msgstr "Sense autenticació"
 
-#: connection.py:238 connection.py:249
+#: connection.py:240 connection.py:251
 msgid "Password:"
 msgstr "Mot de pas:"
 
-#: connection.py:246
+#: connection.py:248
 msgid "User name:"
 msgstr "Nom d'usuari:"
 
-#: connection.py:278
+#: connection.py:281
 msgid "Network settings"
 msgstr "Arranjaments de la xarxa"
 
-#: connection.py:288
+#: connection.py:291
 msgid "Automatic query (DHCP)"
 msgstr "Protocol dinàmic (DHCP)"
 
-#: connection.py:293
+#: connection.py:296
 msgid "Manual"
 msgstr "Personalitzat"
 
-#: connection.py:304 connection.py:321 connection.py:336
+#: connection.py:300 browser.py:60
+msgid "Address:"
+msgstr "Adreça:"
+
+#: connection.py:307 connection.py:324 connection.py:339
 msgid "Custom"
 msgstr "A mida"
 
-#: connection.py:309
+#: connection.py:312
 msgid "Net mask:"
 msgstr "Màscara de xarxa:"
 
-#: connection.py:316
+#: connection.py:319
 msgid "Gateway:"
 msgstr "Portal d'enllaç:"
 
-#: connection.py:527
+#: connection.py:328 nameconf.py:45
+msgid "Name servers"
+msgstr "Nom dels servidors"
+
+#: connection.py:337 browser.py:63
+msgid "Automatic"
+msgstr "Automàtic"
+
+#: connection.py:532
 msgid "Configure network connection"
 msgstr "Configura la connexió de la xarxa"
-
-#: network-manager.py:33 network-manager.py:85
-msgid "Network Manager"
-msgstr "Arranjador de la xarxa"
-
-#: network-manager.py:80
-msgid "Network manager module is already started!"
-msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
 
 #: comariface.py:166
 msgid "Waiting COMAR..."
@@ -213,7 +160,7 @@ msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 "La connexió a COMAR s'ha tallat sense inesperadament. Mirem de reconnectar..."
 
-#: comariface.py:186 comariface.py:203 network-applet.py:111
+#: comariface.py:186 comariface.py:203 network-applet.py:113
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -230,53 +177,123 @@ msgstr ""
 msgid "new connection"
 msgstr "nova connexió"
 
-#: newconn.py:26
-msgid "Create a new connection"
-msgstr "Crea una nova connexió"
+#: browser.py:50
+msgid "Name:"
+msgstr "Nom:"
 
-#: newconn.py:31
-msgid "Select device:"
-msgstr "Tria un dispositiu:"
+#: browser.py:93
+msgid "Turn on/off connection"
+msgstr "Connecta / Desconnecta"
 
-#: newconn.py:58
-msgid "Create"
-msgstr "Crea"
+#: browser.py:106
+msgid "Configure connection"
+msgstr "Configura la connexió"
 
-#: newconn.py:112
-msgid "No suitable device found"
-msgstr "No hi ha cap dispositiu adequat"
+#: browser.py:109
+msgid "Delete connection"
+msgstr "Esborra la connexió"
 
-#: newconn.py:118
-msgid "Install network packages!"
-msgstr "Instal·la els paquets relatius a la xarxa"
-
-#: newconn.py:119
-msgid "No package with COMAR network scripts are installed yet."
+#: browser.py:127
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
 msgstr ""
-"No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
+"Que vols que esborre la\n"
+"connexió '%s'?"
 
-#: network-applet.py:293
+#: browser.py:128
+msgid "Delete connection?"
+msgstr "Esborre la connexió?"
+
+#: browser.py:215
+msgid "No device!"
+msgstr "Ho sent. No hi ha cap dispositiu"
+
+#: browser.py:394 network-applet.py:494
+msgid "New connection"
+msgstr "Nova connexió"
+
+#: browser.py:399 nameconf.py:28
+msgid "Name Service Settings"
+msgstr "Nom dels arranjaments del servei (DNS)"
+
+#: browser.py:404 network-applet.py:306
+#, fuzzy
+msgid "Connect Automatically"
+msgstr "Automàtic"
+
+#: browser.py:423
+msgid "Try Auto Connect on startup"
+msgstr ""
+
+#: browser.py:468
+msgid "Network Connections Help"
+msgstr "Ajut per a la connexió de la xarxa"
+
+#: network-manager.py:34 network-manager.py:90
+msgid "Network Manager"
+msgstr "Arranjador de la xarxa"
+
+#: network-manager.py:77
+msgid "Just try to connect automatically"
+msgstr ""
+
+#: network-manager.py:85
+msgid "Network manager module is already started!"
+msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
+
+#: network-applet.py:304
 msgid "Firewall..."
 msgstr "Tallafocs..."
 
-#: network-applet.py:294
+#: network-applet.py:305
 msgid "Edit Connections..."
 msgstr "Edita les connexions..."
 
-#: network-applet.py:296
+#: network-applet.py:308
 msgid "Icon Per Device"
 msgstr "Icona per dispositiu"
 
-#: network-applet.py:297
+#: network-applet.py:309
 msgid "Single Icon"
 msgstr "Icona simple"
 
-#: network-applet.py:341
+#: network-applet.py:360
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 "Que vols que el programa de gestió de xarxa s'engegue automàticament en "
 "entrar al sistema?"
 
-#: network-applet.py:491
+#: network-applet.py:529
 msgid "Network Applet"
 msgstr ""
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Ordinador"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Nom de l'ordinador amfitrió:"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Obert"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Tancat"
+
+#: nameconf.py:134
+msgid "Add Name Server"
+msgstr "Afegeix un nom de servidor"
+
+#: nameconf.py:135
+msgid "Name server:"
+msgstr "Nom del servidor:"
+
+#, fuzzy
+#~ msgid "Scan and Connect..."
+#~ msgstr "Edita les connexions..."

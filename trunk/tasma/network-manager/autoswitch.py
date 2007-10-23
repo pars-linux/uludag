@@ -16,7 +16,8 @@ def scanAndConnect(link=None,force=False):
 
     # Get Wireless Devices
     link.Net.Link['wireless-tools'].deviceList()
-    devices = link.read_cmd().data.split('\n')
+    res = link.read_cmd()
+    devices = res.data.split('\n')
 
     # If there is no device, go on
     if not len(devices):
@@ -29,7 +30,7 @@ def scanAndConnect(link=None,force=False):
         # Some times we need to scan twice to get all access points
         for x in range(2):
             link.Net.Link['wireless-tools'].scanRemote(device=dev)
-        temp = link.read_cmd()
+            temp = link.read_cmd()
         if temp.data:
             scanResults = map(lambda x: parseReply(x.split('\t')),temp.data.split('\n'))
             map(lambda x: justEssIds.append(x['remote']),scanResults)
@@ -37,19 +38,19 @@ def scanAndConnect(link=None,force=False):
             print 'No scan result'
             return
 
-    # Clear the queue
-    link.read_cmd()
-
     # Get profiles
     profiles = []
+    temp = None
 
     link.Net.Link['wireless-tools'].connections()
-    _profiles = link.read_cmd().data.split('\n')
+    res = link.read_cmd()
+    _profiles = res.data.split('\n')
     for profile in _profiles:
-
+        
         # Get profile details
         link.Net.Link['wireless-tools'].connectionInfo(name=profile)
-        temp = parseReply(link.read_cmd().data.split('\n'))
+        res = link.read_cmd()
+        temp = parseReply(res.data.split('\n'))
 
         # Add to list if in scanResults
         if temp['remote'] in justEssIds:

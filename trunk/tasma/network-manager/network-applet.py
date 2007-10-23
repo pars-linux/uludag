@@ -303,7 +303,7 @@ class Applet:
     def setMenu(self, menu):
         KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, menu).plug(menu)
         KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, menu).plug(menu)
-        KAction(i18n("Scan and Connect..."), "connect_creating", KShortcut.null(), self.scanAndConnect, menu).plug(menu)
+        KAction(i18n("Connect Automatically"), "connect_creating", KShortcut.null(), self.scanAndConnect, menu).plug(menu)
         menu.insertSeparator(1)
         device_mid = menu.insertItem(i18n("Icon Per Device"), self.deviceGroup, 0, -1, 1)
         single_mid = menu.insertItem(i18n("Single Icon"), self.noGroup, 0, -1, 1)
