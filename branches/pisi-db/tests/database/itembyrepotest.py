@@ -29,6 +29,16 @@ class TestDB:
         self.tdb = pisi.db.itembyrepo.ItemByRepo(self.packages)
         self.odb = pisi.db.itembyrepo.ItemByRepo(self.obsoletes)
 
+        # original item_repos in ItemByRepo uses repodb.list_repos
+        def item_repos(repo=None):
+            repos = ["pardus-2007", "contrib-2007"]
+            if repo:
+                repos = [repo]
+            return repos
+        
+        self.tdb.item_repos = item_repos
+        self.odb.item_repos = item_repos
+
 class ItemByRepoTestCase(testcase.TestCase):
 
     testdb = TestDB()
@@ -55,6 +65,12 @@ class ItemByRepoTestCase(testcase.TestCase):
         pkg, repo = self.testdb.tdb.get_item_repo("kmess")
         assert pkg == "package kmess"
         assert repo == "contrib-2007"
+
+    def testItemRepos(self):
+        db = pisi.db.itembyrepo.ItemByRepo({})
+        assert db.item_repos("caracal") == ["caracal"]
+        # repos were created by testcase.py
+        assert db.item_repos() == ['pardus-2007', 'contrib-2007', 'pardus-2007-src']
 
     def testGetItem(self):
         assert self.testdb.tdb.get_item("acpica") == "package acpica"
