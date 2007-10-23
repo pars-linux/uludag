@@ -10,8 +10,9 @@ def parseReply(reply):
         _dict[key] = value
     return _dict
 
-def scanAndConnect(force=False):
-    link = comar.Link()
+def scanAndConnect(link=None,force=False):
+    if not link:
+        link = comar.Link()
 
     # Get Wireless Devices
     link.Net.Link['wireless-tools'].deviceList()

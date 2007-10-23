@@ -440,7 +440,7 @@ class Widget(QVBox):
     
     def slotAutoConnect(self):
         # Force or not ?
-        autoswitch.scanAndConnect(force=True)
+        autoswitch.scanAndConnect(link=comlink.com,force=True)
 
     def slotCreate(self):
         if self.newconnwin:
