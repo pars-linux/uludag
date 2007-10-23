@@ -60,10 +60,18 @@ class PisiApi:
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
 
-        return (self.__newBinaryPackages, self.__oldBinaryPackages)
+        # Normalize paths
 
-    def delta(self, oldPackage, newPackage):
-        create_delta_package(oldPackage, newPackage)
+        return (set(map(lambda x: os.path.basename(x), self.__newBinaryPackages)), \
+                set(map(lambda x: os.path.basename(x), self.__oldBinaryPackages)))
+
+    def delta(self, oldBinaryPackages, newBinaryPackages):
+        ob = list(oldBinaryPackages)
+        nb = list(newBinaryPackages)
+
+        for p in zip(ob, nb):
+            create_delta_package(os.path.join(config.binaryPath,p[0]), \
+                                 os.path.join(config.binaryPath,p[1]))
 
     def install(self, p):
         a = []
