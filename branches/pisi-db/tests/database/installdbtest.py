@@ -10,55 +10,91 @@
 # Please read the COPYING file.
 #
 
-import unittest
+import testcase
+import pisi
 
-class InstallDBTestCase(unittest.TestCase):
+class InstallDBTestCase(testcase.TestCase):
+    
+    installdb = pisi.db.installdb.InstallDB()
 
     def testGetPackage(self):
-        assert False
-
-    def testGetPackageWithMissingOrBrokenMetadata(self):
-        assert False
+        pisi.api.install(["ethtool"])
+        pkg = self.installdb.get_package("ethtool")
+        assert type(pkg) == pisi.metadata.Package
+        assert pkg.name == "ethtool"
+        pisi.api.remove(["ethtool"])
 
     def testHasPackage(self):
-        assert False
+        pisi.api.install(["ethtool"])
+        assert not self.installdb.has_package("hedehodo")
+        assert self.installdb.has_package("ethtool")
+        pisi.api.remove(["ethtool"])
 
     def testListInstalled(self):
-        assert False
-
+        pisi.api.install(["ethtool"])
+        assert set(self.installdb.list_installed()) == set(['zlib', 'pam', 'shadow', 
+                                                            'jpeg', 'libidn', 'db4', 
+                                                            'cracklib', 'openssl', 
+                                                            'curl', 'bash', 'ethtool'])
+        pisi.api.remove(["ethtool"])
+        
     def testGetVersion(self):
-        assert False
+        pisi.api.install(["ethtool"])
+        version, release, build = self.installdb.get_version("zlib")
+        assert version == "0.3"
+        assert release == "1"
+        assert build == None
+        pisi.api.remove(["ethtool"])
 
     def testGetFiles(self):
-        assert False
-
-    def testGetFilesWithMissingOrBrokenFilesData(self):
-        assert False
+        pisi.api.install(["ethtool"])
+        files = self.installdb.get_files("ethtool")
+        assert files.list[0].path == "usr/bin/ethtool"
+        pisi.api.remove(["ethtool"])
 
     def testGetInfo(self):
-        assert False
-
+        pisi.api.install(["ethtool"])
+        info = self.installdb.get_info("ethtool")
+        assert info.__class__ == pisi.db.installdb.InstallInfo
+        assert info.distribution == "Pardus"
+        pisi.api.remove(["ethtool"])
+        
     def testGetReverseDependencies(self):
-        assert False
+        pisi.api.install(["ethtool"])
+        pisi.api.install(["ctorrent"])
 
-    def testAddPackage(self):
-        assert False
+        revdeps = self.installdb.get_rev_deps("openssl")
+        assert set(["ctorrent", "curl"]) == set(map(lambda x:x[0], revdeps))
 
-    def testAddSamePackage(self):
-        assert False
+        pisi.api.remove(["ctorrent"])
+        pisi.api.remove(["ethtool"])
 
-    def testRemovePackage(self):
-        assert False
+    def testAddRemovePackage(self):
+        pisi.api.install(["ctorrent"])
+        assert self.installdb.has_package("ctorrent")
+        assert not self.installdb.has_package("ethtool")
+        pisi.api.install(["ethtool"])
+        assert self.installdb.has_package("ctorrent")
+        assert self.installdb.has_package("ethtool")
+        pisi.api.remove(["ctorrent"])
+        pisi.api.remove(["ethtool"])
 
-    def testRemoveNonExistingPackage(self):
-        assert False
-
-    def testMarkPending(self):
-        assert False
-
-    def testListPending(self):
-        assert False
+    def testMarkListPending(self):
+        pisi.api.set_comar(False)
+        assert not self.installdb.has_package("ethtool")
+        pisi.api.install(["ethtool"])
+        assert "ethtool" in self.installdb.list_pending()
+        pisi.api.remove(["ethtool"])
+        assert "ethtool" not in self.installdb.list_pending()
+        pisi.api.set_comar(True)
 
     def testClearPending(self):
-        assert False
-
+        pisi.api.set_comar(False)
+        assert not self.installdb.has_package("ethtool")
+        pisi.api.install(["ethtool"])
+        assert "ethtool" in self.installdb.list_pending()
+        self.installdb.clear_pending("ethtool")
+        assert "ethtool" not in self.installdb.list_pending()
+        pisi.api.remove(["ethtool"])
+        assert "ethtool" not in self.installdb.list_pending()
+        pisi.api.set_comar(True)
