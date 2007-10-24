@@ -136,6 +136,78 @@ def list_upgradable():
     upgradable.extend(list_replaces())
     return upgradable
 
+def list_repos():
+    """
+    Return a list of the repositories -> list_of_strings
+    """
+    return pisi.db.repodb.RepoDB().list_repos()
+
+def get_install_order(packages):
+    """
+    Return a list of packages in the installation order with extra needed 
+    dependencies -> list_of_strings
+    @param packages: list of package names -> list_of_strings
+    """
+    install_order = pisi.operations.install.plan_install_pkg_names
+    i_graph, order = install_order(packages, ignore_package_conflicts=True)
+    return order
+
+def get_remove_order(packages):
+    """
+    Return a list of packages in the remove order -> list_of_strings
+    @param packages: list of package names -> list_of_strings
+    """
+    remove_order = pisi.operations.remove.plan_remove
+    i_graph, order = remove_order(packages)
+    return order
+
+def get_upgrade_order(packages):
+    """
+    Return a list of packages in the upgrade order with extra needed
+    dependencies -> list_of_strings
+    @param packages: list of package names -> list_of_strings
+    """
+    upgrade_order = pisi.operations.upgrade.plan_upgrade
+    i_graph, order = upgrade_order(packages)
+    return order
+
+def get_base_upgrade_order(packages):
+    """
+    Return a list of packages of the system.base component that needs to be upgraded 
+    or installed in install order -> list_of_strings
+    All the packages of the system.base component must be installed on the system
+    @param packages: list of package names -> list_of_strings
+    """
+    upgrade_order = pisi.operations.upgrade.upgrade_base
+    order = upgrade_order(packages, ignore_package_conflicts=True)
+    return list(order)
+
+def get_conflicts(packages):
+    """
+    Return a tuple of the conflicting packages information -> tuple
+    @param packages: list of package names -> list_of_strings
+
+    >>> (pkgs, within, pairs) = pisi.api.get_conflicts(packages)
+    >>>
+    >>> pkgs # list of packages that are installed and conflicts with the 
+             # given packages list -> list_of_strings
+    >>> [...]
+    >>> within # list of packages that already conflict with each other
+               # in the given packages list -> list_of_strings
+    >>> [...]
+    >>> pairs # dictionary of conflict information that contains which package in the
+              # given packages list conflicts with which of the installed packages
+              
+    >>> {'imlib2': <class pisi.conflict.Conflict>, 'valgrind': <class pisi.conflict.Conflict>, 
+    'libmp4v2':'<class pisi.conflict.Conflict>}
+
+    >>> print map(lambda c:str(pairs[c]), pairs)
+    >>> ['imblib', 'callgrind', 'faad2 release >= 3']
+    """
+    packagedb = pisi.db.packagedb.PackageDB()
+    (pkgs, within, pairs) = pisi.conflict.calculate_conflicts(packages, packagedb)
+    return (pkgs, within, pairs)
+
 def package_graph(A, packagedb, ignore_installed = False):
     """Construct a package relations graph.
     
@@ -171,41 +243,6 @@ def package_graph(A, packagedb, ignore_installed = False):
                 G_f.add_dep(x, dep)
         B = Bp
     return G_f
-
-def generate_install_order(A):
-    # returns the install order of the given install package list with any extra
-    # dependency that is also going to be installed
-    G_f, order = plan_install(A, ignore_package_conflicts = True)
-    return order
-
-def generate_remove_order(A):
-    # returns the remove order of the given removal package list with any extra
-    # reverse dependency that is also going to be removed
-    G_f, order = plan_remove(A)
-    return order
-
-def generate_upgrade_order(A):
-    # returns the upgrade order of the given upgrade package list with any needed extra
-    # dependency
-    G_f, order = plan_upgrade(A)
-    return order
-
-def generate_base_upgrade(A):
-    # all the packages of the system.base must be installed on the system.
-    # method returns the currently needed system.base component install and 
-    # upgrade needs
-    base = upgrade_base(A, ignore_package_conflicts = True)
-    return list(base)
-
-def generate_conflicts(A):
-    # returns the conflicting packages list of the to be installed packages.
-    # @conflicting_pkgs: conflicting and must be removed packages list to proceed
-    # @conflicts_inorder: list of the conflicting packages _with each other_ in the to be installed list
-    # @conflicting_pairs: dictionary that contains which package in the to be installed list conflicts
-    #     with which packages
-    packagedb = pisi.db.packagedb.PackageDB()
-    (conflicting_pkgs, conflicts_inorder, conflicting_pairs) = pisi.conflict.calculate_conflicts(A, packagedb)
-    return (conflicting_pkgs, conflicts_inorder, conflicting_pairs)
 
 def generate_pending_order(A):
     # returns pending package list in reverse topological order of dependency
@@ -384,10 +421,6 @@ def remove_repo(name):
         ctx.ui.error(_('Repository %s does not exist. Cannot remove.')
                  % name)
 
-def list_repos():
-    repodb = pisi.db.repodb.RepoDB()
-    return repodb.list_repos()
-
 def update_repo(repo, force=False):
     ctx.ui.info(_('* Updating repository: %s') % repo)
     ctx.ui.notify(pisi.ui.updatingrepo, name = repo)
@@ -491,18 +524,6 @@ def upgrade(*args, **kw):
 
 def emerge(*args, **kw):
     return pisi.operations.emerge.emerge(*args, **kw)
-
-def plan_install(*args, **kw):
-    return pisi.operations.install.plan_install_pkg_names(*args, **kw)
-
-def plan_remove(*args, **kw):
-    return pisi.operations.remove.plan_remove(*args, **kw)
-
-def plan_upgrade(*args, **kw):
-    return pisi.operations.upgrade.plan_upgrade(*args, **kw)
-
-def upgrade_base(*args, **kw):
-    return pisi.operations.upgrade.upgrade_base(*args, **kw)
 
 def calculate_conflicts(*args, **kw):
     return pisi.conflict.calculate_conflicts(*args, **kw)
