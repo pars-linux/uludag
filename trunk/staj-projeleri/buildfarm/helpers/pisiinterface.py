@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006,2007 TUBITAK/UEKAE
 # 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -60,20 +60,28 @@ class PisiApi:
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
 
-        # Normalize paths
+        # Normalize paths to file names
 
         return (set(map(lambda x: os.path.basename(x), self.__newBinaryPackages)), \
                 set(map(lambda x: os.path.basename(x), self.__oldBinaryPackages)))
 
     def delta(self, oldBinaryPackages, newBinaryPackages):
-        ob = list(oldBinaryPackages)
-        nb = list(newBinaryPackages)
+        # Sort the lists
+        oldBinaryPackages = sorted(oldBinaryPackages)
+        newBinaryPackages = sorted(newBinaryPackages)
 
-        for p in zip(ob, nb):
-            create_delta_package(os.path.join(config.binaryPath,p[0]), \
-                                 os.path.join(config.binaryPath,p[1]))
+        delta_packages = []
+        
+        for p in zip(oldBinaryPackages, newBinaryPackages):
+            # deltaPath = '/var/pisi/b-1-2.delta.pisi
+            deltaPath = create_delta_package(os.path.join(config.binaryPath, p[0]), \
+                                             os.path.join(config.workDir, p[1]))
+            delta_packages.append(deltaPath)
 
-    def install(self, p):
+        return delta_packages
+
+    def install(self, p, delta=False):
+        # if delta==True, install the related delta
         a = []
         a.append(p)
         pisi.api.install(a)
