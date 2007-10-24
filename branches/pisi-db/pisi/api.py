@@ -204,9 +204,7 @@ def get_conflicts(packages):
     >>> print map(lambda c:str(pairs[c]), pairs)
     >>> ['imblib', 'callgrind', 'faad2 release >= 3']
     """
-    packagedb = pisi.db.packagedb.PackageDB()
-    (pkgs, within, pairs) = pisi.conflict.calculate_conflicts(packages, packagedb)
-    return (pkgs, within, pairs)
+    return pisi.conflict.calculate_conflicts(packages, pisi.db.packagedb.PackageDB())
 
 def package_graph(A, packagedb, ignore_installed = False):
     """Construct a package relations graph.
