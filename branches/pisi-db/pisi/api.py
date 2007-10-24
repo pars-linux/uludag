@@ -10,7 +10,6 @@
 # Please read the COPYING file.
 
 import os
-import sys
 import logging
 import logging.handlers
 
@@ -34,7 +33,6 @@ import pisi.index
 import pisi.config
 import pisi.metadata
 import pisi.file
-import pisi.version
 import pisi.atomicoperations
 import pisi.operations.delta
 import pisi.operations.remove
@@ -44,7 +42,6 @@ import pisi.operations.helper
 import pisi.operations.emerge
 import pisi.operations.build
 import pisi.comariface
-import pisi.signalhandler
 
 def set_userinterface(ui):
     """ 
@@ -133,7 +130,6 @@ def list_upgradable():
     Return a list of packages that are upgraded in the repository -> list_of_strings
     """
     installdb = pisi.db.installdb.InstallDB()
-    packagedb = pisi.db.packagedb.PackageDB()
 
     upgradable = filter(pisi.operations.upgrade.is_upgradable, installdb.list_installed())
     # replaces packages can not pass is_upgradable test, so we add them 
@@ -227,6 +223,7 @@ def generate_pending_order(A):
                     G_f.add_dep(x, dep)
         B = Bp
     if ctx.get_option('debug'):
+        import sys
         G_f.write_graphviz(sys.stdout)
     order = G_f.topological_sort()
     order.reverse()
