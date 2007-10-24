@@ -9,8 +9,6 @@
 #
 # Please read the COPYING file.
 
-"""Top level PiSi interfaces. a facade to the entire PiSi system"""
-
 import os
 import sys
 import logging
@@ -52,47 +50,98 @@ class Error(pisi.Error):
     pass
 
 def set_userinterface(ui):
+    """ 
+    Set the user interface where the status information will be send
+    @param ui: User interface
+    """
     ctx.ui = ui
 
 def set_io_streams(stdout=None, stderr=None):
+    """ 
+    Set standart i/o streams
+    Used by Buildfarm
+    @param stdout: Standart output
+    @param stderr: Standart input
+    """
     if stdout:
         ctx.stdout = stdout
     if stderr:
         ctx.stderr = stderr
 
 def set_comar(enable):
+    """ 
+    Set comar usage 
+    False means no preremove and postinstall scripts will be run
+    @param enable: Flag indicating comar usage
+    """
     ctx.comar = enable
 
 def set_comar_sockname(sockname):
+    """ 
+    Set comar socket file
+    Used by YALI
+    @param sockname: Path to comar socket file
+    """
     ctx.comar_sockname = sockname
 
 def set_options(options):
+    """ 
+    Set various options of pisi
+    @param options: option set
+    
+           >>> options = pisi.config.Options()
+    
+           options.destdir  # pisi destination directory where operations will take effect
+           options.username # username that for reaching remote repository
+           options.password # password that for reaching remote repository
+           options.debug    # flag controlling debug output
+           options.verbose  # flag controlling verbosity of the output messages
+    """
     ctx.config = pisi.config.Config(options)
 
 def list_pending():
-    """Return a set of configuration pending package names."""
-    installdb = pisi.db.installdb.InstallDB()
-    return set(installdb.list_pending())
+    """
+    Return a list of configuration pending packages -> list_of_strings
+    """
+    return pisi.db.installdb.InstallDB().list_pending()
 
 def list_installed():
-    """Return a set of installed package names."""
-    installdb = pisi.db.installdb.InstallDB()
-    return set(installdb.list_installed())
+    """
+    Return a list of installed packages -> list_of_strings
+    """
+    return pisi.db.installdb.InstallDB().list_installed()
 
-def list_replaces(repo = None):
-    """Returns a dict of the replaced packages."""
-    packagedb = pisi.db.packagedb.PackageDB()
-    return packagedb.get_replaces(repo = repo)
+def list_replaces(repo=None):
+    """
+    Return a dictionary of the replaced packages in the given repository
+    @param repo: Repository of the replaced packages. If repo is None than returns
+    a dictionary of all the replaced packages in all the repositories
+    
+    {'gaim':'pidgin, 'actioncube':'assaultcube'}
+    
+    gaim replaced by pidgin and actioncube replaced by assaultcube
+    """
+    return pisi.db.packagedb.PackageDB().get_replaces(repo)
 
-def list_available(repo = None):
-    """Return a set of available package names."""
-    packagedb = pisi.db.packagedb.PackageDB()
-    return set(packagedb.list_packages(repo = repo))
+def list_available(repo=None):
+    """
+    Return a list of available packages in the given repository -> list_of_strings
+    @param repo: Repository of the packages. If repo is None than returns
+    a list of all the available packages in all the repositories
+    """
+    return pisi.db.packagedb.PackageDB().list_packages(repo)
 
 def list_upgradable():
+    """
+    Return a list of packages that are upgraded in the repository -> list_of_strings
+    """
     installdb = pisi.db.installdb.InstallDB()
     packagedb = pisi.db.packagedb.PackageDB()
-    return filter(pisi.operations.upgrade.is_upgradable, installdb.list_installed()) + packagedb.get_replaces().keys()
+
+    upgradable = filter(pisi.operations.upgrade.is_upgradable, installdb.list_installed())
+    # replaces packages can not pass is_upgradable test, so we add them 
+    upgradable.extend(list_replaces())
+    return upgradable
 
 def package_graph(A, packagedb, ignore_installed = False):
     """Construct a package relations graph.

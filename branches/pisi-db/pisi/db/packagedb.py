@@ -124,7 +124,7 @@ class PackageDB(lazydb.LazyDB):
         return rev_deps
 
     # replacesdb holds the info about the replaced packages (ex. gaim -> pidgin)
-    def get_replaces(self):
+    def get_replaces(self, repo=None):
         pairs = {}
 
         for pkg_name in self.rpdb.get_list_item():

@@ -73,7 +73,7 @@ all repositories.
         if component:
             l = self.componentdb.get_packages(component, repo=repo, walk=True)
         else:
-            l = list(pisi.api.list_available(repo))
+            l = pisi.api.list_available(repo)
         installed_list = pisi.api.list_installed()
         l.sort()
         for p in l:
