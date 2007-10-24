@@ -12,6 +12,7 @@ def parseReply(reply):
 
 def scanAndConnect(link=None,force=False):
     if not link:
+        # If no Comar link given, create one
         link = comar.Link()
 
     # Get Wireless Devices
@@ -46,15 +47,18 @@ def scanAndConnect(link=None,force=False):
     res = link.read_cmd()
     _profiles = res.data.split('\n')
     for profile in _profiles:
-        
-        # Get profile details
-        link.Net.Link['wireless-tools'].connectionInfo(name=profile)
-        res = link.read_cmd()
-        temp = parseReply(res.data.split('\n'))
+        try:
+            # Get profile details
+            link.Net.Link['wireless-tools'].connectionInfo(name=profile)
+            res = link.read_cmd()
+            temp = parseReply(res.data.split('\n'))
+        except:
+            pass
 
         # Add to list if in scanResults
-        if temp['remote'] in justEssIds:
-            profiles.append(temp)
+        if temp:
+            if temp['remote'] in justEssIds:
+                profiles.append(temp)
 
     # If there is one result let switch to it
     if len(profiles)==1:
