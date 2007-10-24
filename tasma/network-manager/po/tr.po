@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-23 16:12+0300\n"
+"POT-Creation-Date: 2007-10-24 16:51+0300\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -38,6 +38,21 @@ msgstr "Ağ programlarını kurun!"
 #: newconn.py:122
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
+
+#: autoswitch.py:75
+#, python-format
+msgid "Profile '%s' matched."
+msgstr "Profil '%s' bulundu."
+
+#: autoswitch.py:93
+#, python-format
+msgid "Connecting to '%s' ..."
+msgstr "'%s' profiline bağlanıyor..."
+
+#: autoswitch.py:96
+#, python-format
+msgid "Already connected to '%s'"
+msgstr "'%s' profiline bağlı."
 
 #: connection.py:27
 msgid "Channel"
@@ -147,15 +162,15 @@ msgstr "Otomatik"
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
-#: comariface.py:166
+#: comariface.py:171
 msgid "Waiting COMAR..."
 msgstr "ÇOMAR Bekleniyor..."
 
-#: comariface.py:167
+#: comariface.py:172
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "ÇOMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
 
-#: comariface.py:186 comariface.py:203 network-applet.py:113
+#: comariface.py:191 comariface.py:208 network-applet.py:113
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -163,11 +178,11 @@ msgstr ""
 "ÇOMAR bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı "
 "konsolu açıp 'service comar start' komutu ile çalıştırın."
 
-#: comariface.py:303
+#: comariface.py:312
 msgid "You are not allowed to change network settings."
 msgstr "Ağ ayarlarını değiştirme izniniz yok."
 
-#: comariface.py:380
+#: comariface.py:392
 msgid "new connection"
 msgstr "yeni bağlantı"
 
@@ -205,7 +220,7 @@ msgstr "Bağlantıyı sil?"
 msgid "No device!"
 msgstr "Aygıt yok!"
 
-#: browser.py:394 network-applet.py:494
+#: browser.py:394 network-applet.py:491
 msgid "New connection"
 msgstr "Yeni bağlantı"
 
@@ -221,7 +236,7 @@ msgstr "Otomatik Bağlan"
 msgid "Try Auto Connect on startup"
 msgstr "Açılışta Otomatik Bağlanmayı dene"
 
-#: browser.py:468
+#: browser.py:474
 msgid "Network Connections Help"
 msgstr "Ağ Bağlantıları Yardımı"
 
@@ -253,11 +268,11 @@ msgstr "Her Aygıtın Kendi Simgesi"
 msgid "Single Icon"
 msgstr "Tek Simge"
 
-#: network-applet.py:360
+#: network-applet.py:357
 msgid "Should network-applet start automatically when you login?"
 msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
 
-#: network-applet.py:529
+#: network-applet.py:526
 msgid "Network Applet"
 msgstr "Ağ Programcığı"
 

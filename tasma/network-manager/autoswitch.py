@@ -2,6 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import comar
+import pynotify
+
+import gettext
+gettext.bindtextdomain('network-manager', '/usr/kde/3.5/share/locale/')
+gettext.textdomain('network-manager')
+i18n = gettext.gettext
+
+pynotify.init('Network-Manager')
 
 def parseReply(reply):
     _dict = {}
@@ -14,6 +22,9 @@ def scanAndConnect(link=None,force=False):
     if not link:
         # If no Comar link given, create one
         link = comar.Link()
+
+    # Notification Messages
+    messages = []
 
     # Get Wireless Devices
     link.Net.Link['wireless-tools'].deviceList()
@@ -36,7 +47,7 @@ def scanAndConnect(link=None,force=False):
             scanResults = map(lambda x: parseReply(x.split('\t')),temp.data.split('\n'))
             map(lambda x: justEssIds.append(x['remote']),scanResults)
         else:
-            print 'No scan result'
+            messages.append('No scan result')
             return
 
     # Get profiles
@@ -63,20 +74,29 @@ def scanAndConnect(link=None,force=False):
     # If there is one result let switch to it
     if len(profiles)==1:
         profile = profiles[0]['name']
-        print "Profile '%s' matched." % profile
-        connect(link,profiles[0],force)
+        m = i18n("Profile '%s' matched.")
+        messages.append(m % profile)
+        messages.append(connect(link,profiles[0],force))
     elif not len(profiles):
-        print "There is no matched profile"
+        messages.append("There is no matched profile")
     else:
-        print "There is a lot of matched profile.."
+        messages.append("There is a lot of matched profile..")
+
+    # Show notification messages if exists
+    if len(messages)>0:
+        for message in messages:
+            _notify = pynotify.Notification(message)
+            _notify.show()
 
 def connect(comLink,profile,force=False):
     name = profile['name']
-    if profile['state']=='down' or force:
-        print "Connecting to '%s'..." % name
+    if not profile['state']=='up' or force:
         comLink.Net.Link['wireless-tools'].setState(name=name,state='up')
+        m = i18n("Connecting to '%s' ...")
+        return m % name
     else:
-        print "Already connected to %s." % name
+        m = i18n("Already connected to '%s'")
+        return m % name
 
 if __name__=="__main__":
     scanAndConnect()
