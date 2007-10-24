@@ -611,7 +611,7 @@ class Builder:
 
         metadata.package.distribution = ctx.config.values.general.distribution
         metadata.package.distributionRelease = ctx.config.values.general.distribution_release
-        metadata.package.architecture = "i686"
+        metadata.package.architecture = ctx.config.values.general.architecture
         metadata.package.packageFormat = ctx.get_option('package_format')
 
         size = 0
