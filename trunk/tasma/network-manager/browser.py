@@ -441,7 +441,7 @@ class Widget(QVBox):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
     
     def slotAutoConnect(self):
-        autoswitch.scanAndConnect(link=comlink.com,force=True)
+        autoswitch.scanAndConnect(force=True)
 
     def disableAutoConnectButtons(self):
         print "No wifi profiles.."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-23 16:12+0300\n"
+"POT-Creation-Date: 2007-10-24 16:51+0300\n"
 "PO-Revision-Date: 2007-05-31 00:29+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -42,6 +42,21 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 "Aucun paquet contenant des scripts réseau COMAR n'ont été installé jusqu'à "
 "présent."
+
+#: autoswitch.py:75
+#, python-format
+msgid "Profile '%s' matched."
+msgstr ""
+
+#: autoswitch.py:93
+#, fuzzy, python-format
+msgid "Connecting to '%s' ..."
+msgstr "Éditer les connexions réseaux..."
+
+#: autoswitch.py:96
+#, fuzzy, python-format
+msgid "Already connected to '%s'"
+msgstr "Éditer les connexions réseaux..."
 
 #: connection.py:27
 msgid "Channel"
@@ -151,16 +166,16 @@ msgstr "Automatiquement"
 msgid "Configure network connection"
 msgstr "Configurer la connexion réseau"
 
-#: comariface.py:166
+#: comariface.py:171
 msgid "Waiting COMAR..."
 msgstr "En attente de COMAR..."
 
-#: comariface.py:167
+#: comariface.py:172
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 "La connexion avec COMAR a été perdue, tentative de reconnexion en cours..."
 
-#: comariface.py:186 comariface.py:203 network-applet.py:113
+#: comariface.py:191 comariface.py:208 network-applet.py:113
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -169,11 +184,11 @@ msgstr ""
 "faire en lançant la commande 'service comar start' dans une invite de "
 "commande de l'administrateur."
 
-#: comariface.py:303
+#: comariface.py:312
 msgid "You are not allowed to change network settings."
 msgstr "Vous n'êtes pas autorisé à changer les paramètres réseau."
 
-#: comariface.py:380
+#: comariface.py:392
 msgid "new connection"
 msgstr "Nouvelle connexion"
 
@@ -212,7 +227,7 @@ msgstr "Supprimer la connexion ?"
 msgid "No device!"
 msgstr "Pas de périphérique!"
 
-#: browser.py:394 network-applet.py:494
+#: browser.py:394 network-applet.py:491
 msgid "New connection"
 msgstr "Créer une connexion"
 
@@ -229,7 +244,7 @@ msgstr "Automatiquement"
 msgid "Try Auto Connect on startup"
 msgstr ""
 
-#: browser.py:468
+#: browser.py:474
 msgid "Network Connections Help"
 msgstr "Aide à propos des connexions réseaux"
 
@@ -261,11 +276,11 @@ msgstr "Une icône par périphérique"
 msgid "Single Icon"
 msgstr "Une seule icône"
 
-#: network-applet.py:360
+#: network-applet.py:357
 msgid "Should network-applet start automatically when you login?"
 msgstr "Démarrer automatiquement l'applet réseau dès votre connexion ?"
 
-#: network-applet.py:529
+#: network-applet.py:526
 msgid "Network Applet"
 msgstr "Applet Réseau"
 

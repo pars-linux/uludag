@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-23 16:12+0300\n"
+"POT-Creation-Date: 2007-10-24 16:51+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Michał Środek <michal@srodek.info>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -40,6 +40,21 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 "Żadne pakiety ze skryptami sieciowymi managera COMAR nie są jeszcze "
 "zainstalowane."
+
+#: autoswitch.py:75
+#, python-format
+msgid "Profile '%s' matched."
+msgstr ""
+
+#: autoswitch.py:93
+#, fuzzy, python-format
+msgid "Connecting to '%s' ..."
+msgstr "Edytuj połączenia..."
+
+#: autoswitch.py:96
+#, fuzzy, python-format
+msgid "Already connected to '%s'"
+msgstr "Edytuj połączenia..."
 
 #: connection.py:27
 msgid "Channel"
@@ -149,17 +164,17 @@ msgstr "Automatycznie"
 msgid "Configure network connection"
 msgstr "Konfiguruj połączenie sieciowe"
 
-#: comariface.py:166
+#: comariface.py:171
 msgid "Waiting COMAR..."
 msgstr "Oczekiwanie na manager COMAR..."
 
-#: comariface.py:167
+#: comariface.py:172
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 "Połączenie z managerem COMAR niespodziewanie przerwane, próba ponownego "
 "połączenia..."
 
-#: comariface.py:186 comariface.py:203 network-applet.py:113
+#: comariface.py:191 comariface.py:208 network-applet.py:113
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -168,11 +183,11 @@ msgstr ""
 "powinieneśuruchomić go w konsoli(jako root) za pomocą polecenia 'service "
 "comar start'."
 
-#: comariface.py:303
+#: comariface.py:312
 msgid "You are not allowed to change network settings."
 msgstr "Nie masz uprawnień aby zmieniać ustawienia sieci."
 
-#: comariface.py:380
+#: comariface.py:392
 msgid "new connection"
 msgstr "nowe połączenie"
 
@@ -211,7 +226,7 @@ msgstr "Usunąć połączenie?"
 msgid "No device!"
 msgstr "Brak urządzenia!"
 
-#: browser.py:394 network-applet.py:494
+#: browser.py:394 network-applet.py:491
 msgid "New connection"
 msgstr "Nowe połączenie"
 
@@ -228,7 +243,7 @@ msgstr "Automatycznie"
 msgid "Try Auto Connect on startup"
 msgstr ""
 
-#: browser.py:468
+#: browser.py:474
 msgid "Network Connections Help"
 msgstr "Pomoc - połączenia sieciowe"
 
@@ -260,11 +275,11 @@ msgstr "Ikona Urządzenia"
 msgid "Single Icon"
 msgstr "Pojedyńcza Ikona"
 
-#: network-applet.py:360
+#: network-applet.py:357
 msgid "Should network-applet start automatically when you login?"
 msgstr "Uruchamiać aplet sieci automatycznie podczas logowania?"
 
-#: network-applet.py:529
+#: network-applet.py:526
 msgid "Network Applet"
 msgstr "Aplet Sieci"
 
