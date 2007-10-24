@@ -262,6 +262,7 @@ class QueueManager:
         logger.raw()
     
         for pspec in queue:
+            # Gets the packagename, creates a log file
             packagename = os.path.basename(os.path.dirname(pspec))
             build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
             logger.info(
@@ -273,13 +274,19 @@ class QueueManager:
                     )
                 )
             logger.raw()
-    
+
+            # Initialise PiSi API
             pisi = pisiinterface.PisiApi(config.workDir)
             pisi.init(stdout = build_output, stderr = build_output)
             try:
                 try:
+                    # Builds pspec and returns a tuple containing 2 lists
+                    # that contains new and old package names
+                    # e.g. newBinaryPackages=['package-1-2-1.pisi']
                     (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
                 except Exception, e:
+                    # Build Error
+                    # Transfers the pspec to the wait queue and logs the error
                     self.transferToWaitQueue(pspec)
                     errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
                     logger.error(errmsg)
@@ -287,7 +294,9 @@ class QueueManager:
                 else:
                     try:
                         for p in newBinaryPackages:
-                            shutilCopy(os.path.join(config.workDir, p), config.binaryPath)
+                            # For every new binary package generated, this snippet
+                            # installs them on the system.
+                            # TODO: Build delta packages and install them here
                             logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
                             pisi.install(os.path.join(config.workDir, p))
                     except Exception, e:
@@ -299,12 +308,14 @@ class QueueManager:
                         self.__removeBinaryPackageFromWorkDir__(p)
                     else:
                         self.removeFromWorkQueue(pspec)
-                        # Delta package support
+
+                        # Delta package generation
+                        deltaPackages = []
                         if oldBinaryPackages:
-                            pisi.delta(oldBinaryPackages, newBinaryPackages)
+                            deltaPackages = pisi.delta(oldBinaryPackages, newBinaryPackages)
 
                         # Move the packages
-                        self.__movePackages__(newBinaryPackages, oldBinaryPackages)
+                        self.__movePackages__(newBinaryPackages, oldBinaryPackages, deltaPackages)
             finally:
                 pisi.finalize()
     
@@ -350,7 +361,7 @@ class QueueManager:
         self.locks["build"].unlock()
         return 0
     
-    def __movePackages__(self, newBinaryPackages, oldBinaryPackages):
+    def __movePackages__(self, newBinaryPackages, oldBinaryPackages, deltaPackages):
         
         exists = os.path.exists
         join   = os.path.join
@@ -376,17 +387,13 @@ class QueueManager:
             if exists(join(config.workDir, package)):
                 copy(join(config.workDir, package), config.binaryPath)
                 remove(join(config.workDir, package))
+
+        def __moveDeltaPackage__(self, package):
+            logger.info(_("*** Delta package '%s' is processing") % (package))
+            if exists(package):
+                copy(package, config.deltaPath)
+                remove(package)
         
-        #try:
-        #    newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
-        #except AttributeError:
-        #    pass
-    
-        #try:
-        #    oldBinaryPackages = set(map(lambda x: os.path.basename(x), oldBinaryPackages))
-        #except AttributeError:
-        #    pass
-    
         unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
         newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
         oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
@@ -394,6 +401,7 @@ class QueueManager:
         logger.info(_("*** New binary package(s): %s") % newPackages)
         logger.info(_("*** Old binary package(s): %s") % oldPackages)
         logger.info(_("*** Unchanged binary package(s): %s") % unchangedPackages)
+        logger.info(_("*** Delta package(s) : %s") % deltaPackages)
     
         for package in newPackages:
             if package:
@@ -406,11 +414,13 @@ class QueueManager:
         for package in unchangedPackages:
             if package:
                 __moveUnchangedPackage__(self, package)
+
+        for package in deltaPackages:
+            if package:
+                __moveDeltaPackage__(self, package)
     
     def __removeBinaryPackageFromWorkDir__(self, package):
-        join   = os.path.join
-        remove = os.remove
-        remove(join(config.workDir, package))
+        os.remove(os.path.join(config.workDir, package))
     
     def __handle_exception__(self, exception, value, tb):
         s = cStringIO.StringIO()
