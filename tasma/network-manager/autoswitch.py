@@ -11,6 +11,8 @@ i18n = gettext.gettext
 
 pynotify.init('Network-Manager')
 
+FAIL,SUCCESS = pynotify.URGENCY_CRITICAL,pynotify.URGENCY_NORMAL
+
 def parseReply(reply):
     _dict = {}
     for node in reply:
@@ -18,13 +20,16 @@ def parseReply(reply):
         _dict[key] = value
     return _dict
 
+def notify(message,type=None):
+    _notify = pynotify.Notification(message)
+    if type:
+        _notify.set_urgency(type)
+    _notify.show()
+
 def scanAndConnect(link=None,force=False):
     if not link:
         # If no Comar link given, create one
         link = comar.Link()
-
-    # Notification Messages
-    messages = []
 
     # Get Wireless Devices
     link.Net.Link['wireless-tools'].deviceList()
@@ -47,7 +52,7 @@ def scanAndConnect(link=None,force=False):
             scanResults = map(lambda x: parseReply(x.split('\t')),temp.data.split('\n'))
             map(lambda x: justEssIds.append(x['remote']),scanResults)
         else:
-            messages.append('No scan result')
+            notify('No scan result',FAIL)
             return
 
     # Get profiles
@@ -71,32 +76,33 @@ def scanAndConnect(link=None,force=False):
             if temp['remote'] in justEssIds:
                 profiles.append(temp)
 
+    possibleProfile = None
     # If there is one result let switch to it
     if len(profiles)==1:
-        profile = profiles[0]['name']
-        m = i18n("Profile '%s' matched.")
-        messages.append(m % profile)
-        messages.append(connect(link,profiles[0],force))
+        possibleProfile = profiles[0]
     elif not len(profiles):
-        messages.append("There is no matched profile")
+        notify("There is no matched profile",FAIL)
     else:
-        messages.append("There is a lot of matched profile..")
+        for result in scanResults:
+            for profile in profiles:
+                if profile.has_key('apmac'):
+                    if profile['apmac']==result['mac'] and not possibleProfile:
+                        possibleProfile = profile
 
-    # Show notification messages if exists
-    if len(messages)>0:
-        for message in messages:
-            _notify = pynotify.Notification(message)
-            _notify.show()
+    if possibleProfile:
+        m = i18n("Profile '%s' matched.")
+        notify(m % possibleProfile['name'])
+        notify(connect(link,possibleProfile,force))
 
 def connect(comLink,profile,force=False):
-    name = profile['name']
+    profileName = profile['name']
     if not profile['state']=='up' or force:
-        comLink.Net.Link['wireless-tools'].setState(name=name,state='up')
+        comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
         m = i18n("Connecting to '%s' ...")
-        return m % name
+        return m % profileName
     else:
         m = i18n("Already connected to '%s'")
-        return m % name
+        return m % profileName
 
 if __name__=="__main__":
     scanAndConnect()
