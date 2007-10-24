@@ -46,9 +46,6 @@ import pisi.operations.build
 import pisi.comariface
 import pisi.signalhandler
 
-class Error(pisi.Error):
-    pass
-
 def set_userinterface(ui):
     """ 
     Set the user interface where the status information will be send
@@ -272,7 +269,7 @@ def configure_pending():
                 ctx.ui.notify(pisi.ui.configured, package = pkginfo, files = None)
             installdb.clear_pending(x)
     except ImportError:
-        raise Error(_("comar package is not fully installed"))
+        raise pisi.Error(_("comar package is not fully installed"))
 
 def info(package, installed = False):
     if package.endswith(ctx.const.package_suffix):
@@ -284,7 +281,7 @@ def info(package, installed = False):
 def info_file(package_fn):
 
     if not os.path.exists(package_fn):
-        raise Error (_('File %s not found') % package_fn)
+        raise pisi.Error (_('File %s not found') % package_fn)
 
     package = pisi.package.Package(package_fn)
     package.read()
@@ -375,7 +372,7 @@ def index(dirs=None, output='pisi-index.xml', skip_sources=False, skip_signing=F
 def add_repo(name, indexuri, at = None):
     repodb = pisi.db.repodb.RepoDB()
     if repodb.has_repo(name):
-        raise Error(_('Repo %s already present.') % name)
+        raise pisi.Error(_('Repo %s already present.') % name)
     else:
         repo = pisi.db.repodb.Repo(pisi.uri.URI(indexuri))
         repodb.add_repo(name, repo, at = at)
@@ -418,7 +415,7 @@ def update_repo(repo, force=False):
 
         ctx.ui.info(_('* Package database updated.'))
     else:
-        raise Error(_('No repository named %s found.') % repo)
+        raise pisi.Error(_('No repository named %s found.') % repo)
 
 def delete_cache():
     pisi.util.clean_dir(ctx.config.cached_packages_dir())
@@ -443,7 +440,7 @@ def rebuild_repo(repo):
             ctx.ui.warning(_("Input/Output error while reading %s: %s") % (indexpath, unicode(e)))
             return
     else:
-        raise Error(_('No repository named %s found.') % repo)
+        raise pisi.Error(_('No repository named %s found.') % repo)
 
 # FIXME: rebuild_db is only here for filesdb and it really is ugly. we should not need any rebuild.
 def rebuild_db(files=False):
