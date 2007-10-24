@@ -349,6 +349,8 @@ class Settings(QWidget):
             self.name.edit.setText(unicode(conn.name))
             if conn.devname:
                 self.device.setText(conn.devname)
+            if conn.apmac:
+                self.apmac = conn.apmac
             self.device_uid = self.conn.devid
             if "remote" in self.link.modes:
                 if conn.remote:

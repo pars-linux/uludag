@@ -90,6 +90,7 @@ class Connection(Hook):
         self.state = "unavailable"
         self.message = None
         self.net_mode = "auto"
+        self.apmac = None
         self.net_addr = None
         self.net_mask = None
         self.net_gate = None
@@ -126,6 +127,8 @@ class Connection(Hook):
                 self.dns_mode = value
             elif key == "nameserver":
                 self.dns_server = value
+            elif key == "apmac":
+                self.apmac = value
             elif key == "state":
                 if " " in value:
                     self.state, self.message = value.split(" ", 1)
