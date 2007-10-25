@@ -90,3 +90,26 @@ Buildfarm
 Below are the pisi modules used internally by Buildfarm.
 
 * api.create_delta_package
+
+PackageKit
+==========
+
+Below are the pisi modules used internally by PackageKit.
+
+* installdb.has_package
+* installdb.get_package
+* packagedb.has_package
+* packagedb.get_package
+* installdb.get_rev_deps
+* packagedb.get_rev_deps
+* installdb.get_package.runtimeDependencies
+* packagedb.get_package.runtimeDependencies
+* api.install
+* api.upgrade
+* api.remove
+* api.list_upgradable
+* api.update_repo 
+* api.list_repos
+* repodb.get_repo.indexuri.get_uri
+* version.Version
+* util.any
