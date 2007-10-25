@@ -42,6 +42,7 @@ def scanAndConnect(link=None,force=False):
 
     # Get current APs
     justEssIds = []
+    justMacAddr= []
     temp = None
     for dev in devices:
         # Some times we need to scan twice to get all access points
@@ -51,6 +52,7 @@ def scanAndConnect(link=None,force=False):
         if temp.data:
             scanResults = map(lambda x: parseReply(x.split('\t')),temp.data.split('\n'))
             map(lambda x: justEssIds.append(x['remote']),scanResults)
+            map(lambda x: justMacAddr.append(x['mac']),scanResults)
         else:
             notify('No scan result',FAIL)
             return
@@ -73,36 +75,36 @@ def scanAndConnect(link=None,force=False):
 
         # Add to list if in scanResults
         if temp:
-            if temp['remote'] in justEssIds:
+            if temp['remote'] in justEssIds\
+                    or temp.get('apmac','') in justMacAddr:
                 profiles.append(temp)
 
     possibleProfile = None
     # If there is one result let switch to it
     if len(profiles)==1:
         possibleProfile = profiles[0]
-    elif not len(profiles):
-        notify("There is no matched profile",FAIL)
     else:
         for result in scanResults:
             for profile in profiles:
-                if profile.has_key('apmac'):
-                    if profile['apmac']==result['mac'] and not possibleProfile:
+                    if profile.get('apmac','')==result['mac'] and not possibleProfile:
                         possibleProfile = profile
 
     if possibleProfile:
         m = i18n("Profile '%s' matched.")
         notify(m % possibleProfile['name'])
-        notify(connect(link,possibleProfile,force))
+        connect(link,possibleProfile,force)
+    else:
+        notify(i18n("There is no matched profile"),FAIL)
 
 def connect(comLink,profile,force=False):
     profileName = profile['name']
-    if not profile['state']=='up' or force:
+    if not profile['state'].startswith('up') or force:
         comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
         m = i18n("Connecting to '%s' ...")
-        return m % profileName
+        notify(m % profileName)
     else:
         m = i18n("Already connected to '%s'")
-        return m % profileName
+        notify(m % profileName)
 
 if __name__=="__main__":
     scanAndConnect()
