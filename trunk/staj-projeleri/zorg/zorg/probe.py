@@ -401,6 +401,13 @@ def xserverProbe(card):
     sec.set("Identifier", "Card0")
     sec.set("Driver", card.driver)
     sec.set("BusId", card.busId)
+
+    # Old nvidia driver does not enable this option
+    # by default. We need it to get possible modes
+    # supported by monitors.
+    if card.driver == "nvidia":
+        sec.options["UseEdidFreqs"] = xBool[True]
+
     p.sections.append(sec)
 
     sec = XorgSection("Screen")
