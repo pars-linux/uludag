@@ -363,12 +363,12 @@ def queryFglrxOutputs(device):
                 outs.append(info)
                 device.outputs[info[1]] = []
 
-        if "Primary Controller - " in line:
+        elif "Primary Controller - " in line:
             for out in outs:
                 if out[0] in line:
                     primary = out[1]
 
-        if "Secondary Controller - " in line:
+        elif "Secondary Controller - " in line:
             for out in outs:
                 if out[0] in line:
                     secondary = out[1]
