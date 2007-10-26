@@ -87,6 +87,18 @@ class ItemByRepo:
 
         return list(set(items))
 
+    def get_items_iter(self, repo=None):
+        for r in self.item_repos(repo):
+            if not self.has_repo(r):
+                raise Exception(_('Repository %s does not exist.') % repo)
+
+            if self.compressed:
+                for item in self.dbobj[r].keys():
+                    yield item, gzip.zlib.decompress(self.dbobj[r][item])
+            else:
+                for item in self.dbobj[r].keys():
+                    yield item, self.dbobj[r][item]
+        
     def item_repos(self, repo=None):
         repos = self.repodb.list_repos()
         if repo:

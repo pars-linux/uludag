@@ -17,6 +17,7 @@ we basically store everything in PackageInfo class
 yes, we are cheap
 """
 
+import re
 import gzip
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -85,6 +86,17 @@ class PackageDB(lazydb.LazyDB):
         pkg, repo = self.get_package_repo(name, repo)
         return pkg
 
+    def search_package(self, terms, lang="en", repo=None):
+        resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
+        redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
+        found = []
+        for name, xml in self.pdb.get_items_iter(repo):
+            if terms == filter(lambda term: re.compile(term, re.I).search(name) or \
+                                            re.compile(resum % (lang, term), re.I).search(xml) or \
+                                            re.compile(redesc % (lang, term), re.I).search(xml), terms):
+                found.append(name)
+        return found
+        
     def get_version(self, name, repo):
         if not self.has_package(name, repo):
             raise Exception(_('Package %s not found.') % name)

@@ -206,6 +206,20 @@ def get_conflicts(packages):
     """
     return pisi.conflict.calculate_conflicts(packages, pisi.db.packagedb.PackageDB())
 
+def search_package(terms, lang=None, repo=None):
+    """
+    Return a list of packages that contains all the given terms either in its name, summary or
+    description -> list_of_strings
+    @param terms: a list of terms used to search package -> list_of_strings
+    @param lang: language of the summary and description
+    @param repo: Repository of the packages. If repo is None than returns a list of all the packages 
+    in all the repositories that meets the search
+    """
+    packagedb = pisi.db.packagedb.PackageDB()
+    if not lang:
+        lang = pisi.pxml.autoxml.LocalText.get_lang()
+    return packagedb.search_package(terms, lang, repo)
+
 def package_graph(A, packagedb, ignore_installed = False):
     """Construct a package relations graph.
     
@@ -344,28 +358,6 @@ def info_name(package_name, useinstalldb=False):
     else:
         files = None
     return metadata, files, repo
-
-def search_package_terms(terms, repo = None):
-    packagedb = pisi.db.packagedb.PackageDB()
-    return search_in_packages(terms, packagedb.list_packages(repo), repo)
-
-def search_in_packages(terms, packages, repo = None):
-
-    def search(package, term):
-        term = unicode(term).lower()
-        if term in unicode(package.name).lower() or \
-                term in unicode(package.summary).lower() or \
-                term in unicode(package.description).lower():
-            return True
-
-    packagedb = pisi.db.packagedb.PackageDB()
-    found = []
-    for name in packages:
-        pkg = packagedb.get_package(name, repo)
-        if terms == filter(lambda x:search(pkg, x), terms):
-            found.append(name)
-
-    return found
 
 def check(package):
     md, files = info(package, True)

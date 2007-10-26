@@ -54,7 +54,7 @@ in summary, description, and package name fields.
             self.help()
             return
 
-        r = pisi.api.search_package_terms(self.args)
+        r = pisi.api.search_package(self.args)
         ctx.ui.info(_('%s packages found') % len(r))
 
         ctx.config.options.short = not ctx.config.options.long
