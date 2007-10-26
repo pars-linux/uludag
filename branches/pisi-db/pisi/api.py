@@ -132,7 +132,7 @@ def list_upgradable():
     installdb = pisi.db.installdb.InstallDB()
 
     upgradable = filter(pisi.operations.upgrade.is_upgradable, installdb.list_installed())
-    # replaces packages can not pass is_upgradable test, so we add them 
+    # replaced packages can not pass is_upgradable test, so we add them manually
     upgradable.extend(list_replaces())
     return upgradable
 
