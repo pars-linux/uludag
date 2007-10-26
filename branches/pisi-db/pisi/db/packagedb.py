@@ -17,6 +17,7 @@ we basically store everything in PackageInfo class
 yes, we are cheap
 """
 
+import gzip
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
@@ -47,7 +48,7 @@ class PackageDB(lazydb.LazyDB):
             self.__obsoletes[repo] = self.__generate_obsoletes(doc)
             self.__replaces[repo] = self.__generate_replaces(doc)
 
-        self.pdb = pisi.db.itembyrepo.ItemByRepo(self.__package_nodes)
+        self.pdb = pisi.db.itembyrepo.ItemByRepo(self.__package_nodes, compressed=True)
         self.rvdb = pisi.db.itembyrepo.ItemByRepo(self.__revdeps)
         self.odb = pisi.db.itembyrepo.ItemByRepo(self.__obsoletes)
         self.rpdb = pisi.db.itembyrepo.ItemByRepo(self.__replaces)
@@ -65,7 +66,7 @@ class PackageDB(lazydb.LazyDB):
         return map(lambda x: x.firstChild().data(), obsoletes.tags("Package"))
         
     def __generate_packages(self, doc):
-        return dict(map(lambda x: (x.getTagData("Name"), x.toString()), doc.tags("Package")))
+        return dict(map(lambda x: (x.getTagData("Name"), gzip.zlib.compress(x.toString())), doc.tags("Package")))
 
     def __generate_revdeps(self, doc):
         revdeps = {}

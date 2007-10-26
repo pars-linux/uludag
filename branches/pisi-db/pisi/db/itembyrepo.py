@@ -10,6 +10,7 @@
 # Please read the COPYING file.
 #
 
+import gzip
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
@@ -17,8 +18,9 @@ _ = __trans.ugettext
 import pisi.db
 
 class ItemByRepo:
-    def __init__(self, dbobj):
+    def __init__(self, dbobj, compressed=False):
         self.dbobj = dbobj
+        self.compressed = compressed
         self.repodb = pisi.db.repodb.RepoDB()
 
     def has_repo(self, repo):
@@ -41,7 +43,10 @@ class ItemByRepo:
     def get_item_repo(self, item, repo=None):
         for r in self.item_repos(repo):
             if self.dbobj.has_key(r) and self.dbobj[r].has_key(item):
-                return self.dbobj[r][item], r
+                if self.compressed:
+                    return gzip.zlib.decompress(self.dbobj[r][item]), r
+                else:
+                    return self.dbobj[r][item], r
 
         raise Exception(_("Repo item not found"))
 

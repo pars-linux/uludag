@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 #
 
-
+import gzip
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
@@ -34,7 +34,7 @@ class SourceDB(lazydb.LazyDB):
             doc = repodb.get_repo_doc(repo)
             self.__source_nodes[repo], self.__pkgstosrc[repo] = self.__generate_sources(doc)
 
-        self.sdb = pisi.db.itembyrepo.ItemByRepo(self.__source_nodes)
+        self.sdb = pisi.db.itembyrepo.ItemByRepo(self.__source_nodes, compressed=True)
         self.psdb = pisi.db.itembyrepo.ItemByRepo(self.__pkgstosrc)
 
     def __generate_sources(self, doc):
@@ -44,7 +44,7 @@ class SourceDB(lazydb.LazyDB):
 
         for spec in doc.tags("SpecFile"):
             src_name = spec.getTag("Source").getTagData("Name")
-            sources[src_name] = spec.toString()
+            sources[src_name] = gzip.zlib.compress(spec.toString())
             for package in spec.tags("Package"):
                 pkgstosrc[package.getTagData("Name")] = src_name
         
