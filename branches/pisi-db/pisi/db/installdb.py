@@ -84,7 +84,7 @@ class InstallDB(lazydb.LazyDB):
         deps = meta_doc.getTag("Package").getTag('RuntimeDependencies')
         if deps:
             for dep in deps.tags("Dependency"):
-                revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep))
+                revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep.toString()))
 
     def __generate_revdeps(self):
         revdeps = {}
@@ -137,10 +137,12 @@ class InstallDB(lazydb.LazyDB):
 
         if self.rev_deps_db.has_key(name):
             for pkg, dep in self.rev_deps_db[name]:
+                node = piksemel.parseString(dep)
                 dependency = pisi.dependency.Dependency()
-                dependency.package = name
-                if dep.attributes():
-                    dependency.__dict__[dep.attributes()[0]] = dep.getAttribute(dep.attributes()[0])
+                dependency.package = node.firstChild().data()
+                if node.attributes():
+                    attr = node.attributes()[0]
+                    dependency.__dict__[attr] = dep.getAttribute(attr)
                 rev_deps.append((pkg, dependency))
             
         return rev_deps

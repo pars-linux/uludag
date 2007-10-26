@@ -74,7 +74,7 @@ class PackageDB(lazydb.LazyDB):
             deps = node.getTag('RuntimeDependencies')
             if deps:
                 for dep in deps.tags("Dependency"):
-                    revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep))
+                    revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep.toString()))
         return revdeps
 
     def has_package(self, name, repo=None):
@@ -116,10 +116,12 @@ class PackageDB(lazydb.LazyDB):
 
         rev_deps = []
         for pkg, dep in rvdb:
+            node = piksemel.parseString(dep)
             dependency = pisi.dependency.Dependency()
-            dependency.package = name
-            if dep.attributes():
-                dependency.__dict__[dep.attributes()[0]] = dep.getAttribute(dep.attributes()[0])
+            dependency.package = node.firstChild().data()
+            if node.attributes():
+                attr = node.attributes()[0]
+                dependency.__dict__[attr] = node.getAttribute(attr)
             rev_deps.append((pkg, dependency))
         return rev_deps
 
