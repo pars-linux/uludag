@@ -89,7 +89,7 @@ class PackageDB(lazydb.LazyDB):
         if not self.has_package(name, repo):
             raise Exception(_('Package %s not found.') % name)
             
-        pkg_doc = piksemel.parseString(self.__package_nodes[repo][name])
+        pkg_doc = piksemel.parseString(self.pdb.get_item(name, repo))
         history = pkg_doc.getTag("History")
         build = pkg_doc.getTagData("Build")
         version = history.getTag("Update").getTagData("Version")
