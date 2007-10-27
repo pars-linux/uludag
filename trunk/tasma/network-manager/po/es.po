@@ -1,4 +1,4 @@
-# translation of es.po to spanish
+# translation of es.po to español
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-24 16:51+0300\n"
-"PO-Revision-Date: 2007-06-07 19:20-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2007-10-24 20:14-0300\n"
+"Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
+"Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: newconn.py:26
 msgid "Create a new connection"
-msgstr "Crear conexión nueva"
+msgstr "Crear una conexión nueva"
 
 #: newconn.py:31
 msgid "Select device:"
@@ -42,22 +42,23 @@ msgstr "Instalar paquetes de red!"
 
 #: newconn.py:122
 msgid "No package with COMAR network scripts are installed yet."
-msgstr "No se instalaron todavía paquetes con los script de red COMAR"
+msgstr "No se instalaron todavía paquetes con los scripts de red COMAR."
 
 #: autoswitch.py:75
 #, python-format
+# duda, favo revisar, ver el contexto
 msgid "Profile '%s' matched."
-msgstr ""
+msgstr "Perfil '%s' coincide."
 
 #: autoswitch.py:93
-#, fuzzy, python-format
+#, python-format
 msgid "Connecting to '%s' ..."
-msgstr "Editar conexiones..."
+msgstr "Conectando con '%s' ..."
 
 #: autoswitch.py:96
-#, fuzzy, python-format
+#, python-format
 msgid "Already connected to '%s'"
-msgstr "Editar conexiones..."
+msgstr "Ya conectado con '%s'"
 
 #: connection.py:27
 msgid "Channel"
@@ -75,7 +76,6 @@ msgstr "Protocolo"
 msgid "<hidden>"
 msgstr "<oculto>"
 
-# Resultado de búsqueda
 #: connection.py:88
 msgid "Scan results:"
 msgstr "Resultado de búsqueda:"
@@ -135,7 +135,7 @@ msgstr "Configuración de Red"
 
 #: connection.py:291
 msgid "Automatic query (DHCP)"
-msgstr "Asignación automatica (DHCP)"
+msgstr "Asignación automática (DHCP)"
 
 #: connection.py:296
 msgid "Manual"
@@ -153,7 +153,6 @@ msgstr "Personalizado"
 msgid "Net mask:"
 msgstr "Mascara de Red:"
 
-# Puerta de enlace (GW)
 #: connection.py:319
 msgid "Gateway:"
 msgstr "Puerta de enlace (GW):"
@@ -198,7 +197,6 @@ msgstr "nueva conexión"
 msgid "Name:"
 msgstr "Nombre:"
 
-# Conectar/Desconectar
 #: browser.py:93
 msgid "Turn on/off connection"
 msgstr "Conectar/Desconectar"
@@ -230,25 +228,21 @@ msgstr "Eliminar conexión ?"
 msgid "No device!"
 msgstr "No hay dispositivo !"
 
-# Nueva Conexión
 #: browser.py:394 network-applet.py:491
 msgid "New connection"
-msgstr "Conexión nueva"
+msgstr "Nueva Conexión"
 
-# Settings por "Configuración"?
-# Servidores de nombres (DNS)?
 #: browser.py:399 nameconf.py:28
 msgid "Name Service Settings"
 msgstr "Configuración de servidores de nombres (DNS)"
 
 #: browser.py:404 network-applet.py:306
-#, fuzzy
 msgid "Connect Automatically"
-msgstr "Automático"
+msgstr "Conectar automáticamente"
 
 #: browser.py:423
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Intentar conexión automática al iniciar el sistema"
 
 #: browser.py:474
 msgid "Network Connections Help"
@@ -260,7 +254,7 @@ msgstr "Administrador de Red"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
-msgstr ""
+msgstr "Intentar conexión automática"
 
 #: network-manager.py:85
 msgid "Network manager module is already started!"
@@ -286,8 +280,7 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:357
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 # Icono de la barra de tareas?
 # Icono de acceso rápido?
@@ -299,10 +292,9 @@ msgstr "Applet de Red"
 msgid "Computer"
 msgstr "Computadora"
 
-# Nombre de máquina (hostname)
 #: nameconf.py:41
 msgid "Host name:"
-msgstr "Nombre de maquina (hostname):"
+msgstr "Nombre de máquina (hostname):"
 
 #: nameconf.py:56
 msgid "Up"
@@ -312,16 +304,11 @@ msgstr "Activo"
 msgid "Down"
 msgstr "Inactivo"
 
-# ...de nombres
 #: nameconf.py:134
 msgid "Add Name Server"
 msgstr "Agregar Servidor de nombres"
 
-# ..de nombres
 #: nameconf.py:135
 msgid "Name server:"
 msgstr "Servidor de nombres:"
 
-#, fuzzy
-#~ msgid "Scan and Connect..."
-#~ msgstr "Editar conexiones..."
