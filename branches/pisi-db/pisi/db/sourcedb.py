@@ -21,7 +21,6 @@ import piksemel
 import pisi
 import pisi.specfile
 import pisi.db.lazydb as lazydb
-import pisi.pxml.autoxml as autoxml
 
 class SourceDB(lazydb.LazyDB):
 
@@ -62,9 +61,11 @@ class SourceDB(lazydb.LazyDB):
         spec, repo = self.get_spec_repo(name, repo)
         return spec
 
-    def search_spec(self, terms, lang=autoxml.LocalText.get_lang(), repo=None):
+    def search_spec(self, terms, lang=None, repo=None):
         resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
         redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
+        if not lang:
+            lang = pisi.pxml.autoxml.LocalText.get_lang()
         found = []
         for name, xml in self.sdb.get_items_iter(repo):
             if terms == filter(lambda term: re.compile(term, re.I).search(name) or \

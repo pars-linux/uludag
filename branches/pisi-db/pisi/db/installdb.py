@@ -23,7 +23,6 @@ import piksemel
 
 # PiSi
 import pisi
-import pisi.pxml.autoxml as autoxml
 import pisi.context as ctx
 import pisi.dependency
 import pisi.files
@@ -117,9 +116,11 @@ class InstallDB(lazydb.LazyDB):
         files.read(files_xml)
         return files
 
-    def search_package(self, terms, lang=autoxml.LocalText.get_lang()):
+    def search_package(self, terms, lang=None):
         resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
         redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
+        if not lang:
+            lang = pisi.pxml.autoxml.LocalText.get_lang()
         found = []
         for name in self.list_installed():
             xml = open(os.path.join(self.__package_path(name), ctx.const.metadata_xml)).read()
