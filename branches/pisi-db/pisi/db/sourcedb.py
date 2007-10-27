@@ -10,6 +10,7 @@
 # Please read the COPYING file.
 #
 
+import re
 import gzip
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
@@ -59,6 +60,17 @@ class SourceDB(lazydb.LazyDB):
     def get_spec(self, name, repo=None):
         spec, repo = self.get_spec_repo(name, repo)
         return spec
+
+    def search_spec(self, terms, lang="en", repo=None):
+        resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
+        redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
+        found = []
+        for name, xml in self.sdb.get_items_iter(repo):
+            if terms == filter(lambda term: re.compile(term, re.I).search(name) or \
+                                            re.compile(resum % (lang, term), re.I).search(xml) or \
+                                            re.compile(redesc % (lang, term), re.I).search(xml), terms):
+                found.append(name)
+        return found
 
     def get_spec_repo(self, name, repo=None):
         src, repo = self.sdb.get_item_repo(name, repo)
