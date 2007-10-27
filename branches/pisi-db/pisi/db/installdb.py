@@ -116,9 +116,11 @@ class InstallDB(lazydb.LazyDB):
         files.read(files_xml)
         return files
 
-    def search_package(self, terms, lang="en"):
+    def search_package(self, terms, lang=None):
         resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
         redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
+        if not lang:
+            lang = pisi.pxml.autoxml.LocalText.get_lang()
         found = []
         for name in self.list_installed():
             xml = open(os.path.join(self.__package_path(name), ctx.const.metadata_xml)).read()

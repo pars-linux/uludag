@@ -216,8 +216,6 @@ def search_package(terms, lang=None, repo=None):
     in all the repositories that meets the search
     """
     packagedb = pisi.db.packagedb.PackageDB()
-    if not lang:
-        lang = pisi.pxml.autoxml.LocalText.get_lang()
     return packagedb.search_package(terms, lang, repo)
 
 def package_graph(A, packagedb, ignore_installed = False):
