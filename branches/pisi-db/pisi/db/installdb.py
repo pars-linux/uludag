@@ -93,8 +93,8 @@ class InstallDB(lazydb.LazyDB):
         return revdeps
         
     def list_installed(self):
-        return map(lambda x:pisi.util.parse_package_name(x)[0], os.listdir(ctx.config.packages_dir()))
-
+        return self.installed_db.keys()
+ 
     def has_package(self, package):
         return self.installed_db.has_key(package)
 
