@@ -17,17 +17,19 @@ __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
 import pisi.cli.command as command
-import pisi.cli.info as info
 import pisi.context as ctx
-import pisi.api
+import pisi.db
 
-class Search(info.Info):
+class Search(command.Command):
     """Search packages
 
 Usage: search <term1> <term2> ... <termn>
 
 Finds a package containing specified search terms
 in summary, description, and package name fields.
+Default search is done in package database. Use
+options to search in install database or source
+database.
 """
     __metaclass__ = command.autocommand
 
@@ -38,12 +40,10 @@ in summary, description, and package name fields.
 
     def options(self):
         group = optparse.OptionGroup(self.parser, _("search options"))
-        super(Search, self).add_options(group)
-        group.remove_option("--component")
-        group.remove_option("--short")
-        group.remove_option("--xml")
-        group.add_option("-l", "--long", action="store_true",
-                               default=False, help=_("Show details"))
+        group.add_option("-i", "--installdb", action="store_true",
+                               default=False, help=_("Search in installdb"))
+        group.add_option("-s", "--sourcedb", action="store_true",
+                               default=False, help=_("Search in sourcedb"))
         self.parser.add_option_group(group)
 
     def run(self):
@@ -54,9 +54,18 @@ in summary, description, and package name fields.
             self.help()
             return
 
-        r = pisi.api.search_package(self.args)
-        ctx.ui.info(_('%s packages found') % len(r))
-
-        ctx.config.options.short = not ctx.config.options.long
-        for pkg in r:
-            self.info_package(pkg)
+        if ctx.get_option('installdb'):
+            installdb = pisi.db.installdb.InstallDB()
+            for pkg in installdb.search_package(self.args):
+                pkg_info = installdb.get_package(pkg)
+                print "%s - %s" % (pkg_info.name, pkg_info.summary)
+        elif ctx.get_option('sourcedb'):
+            sourcedb = pisi.db.sourcedb.SourceDB()
+            for spec in sourcedb.search_spec(self.args):
+                spec_info = sourcedb.get_spec(spec)
+                print "%s - %s" % (spec_info.source.name, spec_info.source.summary)
+        else:
+            packagedb = pisi.db.packagedb.PackageDB()
+            for pkg in packagedb.search_package(self.args):
+                pkg_info = packagedb.get_package(pkg)
+                print "%s - %s" % (pkg_info.name, pkg_info.summary)
