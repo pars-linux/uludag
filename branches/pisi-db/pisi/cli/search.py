@@ -40,6 +40,10 @@ database.
 
     def options(self):
         group = optparse.OptionGroup(self.parser, _("search options"))
+        group.add_option("-l", "--language", action="store",
+                               type="string", default=None, help=_('Summary and description language'))
+        group.add_option("-r", "--repository", action="store",
+                               type="string", default=None, help=_('Name of the source or package repository'))
         group.add_option("-i", "--installdb", action="store_true",
                                default=False, help=_("Search in installdb"))
         group.add_option("-s", "--sourcedb", action="store_true",
@@ -54,18 +58,30 @@ database.
             self.help()
             return
 
+        lang = ctx.get_option('language')
+        repo = ctx.get_option('repository')
+
         if ctx.get_option('installdb'):
-            installdb = pisi.db.installdb.InstallDB()
-            for pkg in installdb.search_package(self.args):
-                pkg_info = installdb.get_package(pkg)
-                print "%s - %s" % (pkg_info.name, pkg_info.summary)
+            db = pisi.db.installdb.InstallDB()
+            pkgs = db.search_package(self.args, lang)
+            get_info = db.get_package
+            get_name_sum = lambda pkg:(pkg.name, pkg.summary)
         elif ctx.get_option('sourcedb'):
-            sourcedb = pisi.db.sourcedb.SourceDB()
-            for spec in sourcedb.search_spec(self.args):
-                spec_info = sourcedb.get_spec(spec)
-                print "%s - %s" % (spec_info.source.name, spec_info.source.summary)
+            db = pisi.db.sourcedb.SourceDB()
+            pkgs = db.search_spec(self.args, lang, repo)
+            get_info = db.get_spec
+            get_name_sum = lambda pkg:(pkg.source.name, pkg.source.summary)
         else:
-            packagedb = pisi.db.packagedb.PackageDB()
-            for pkg in packagedb.search_package(self.args):
-                pkg_info = packagedb.get_package(pkg)
-                print "%s - %s" % (pkg_info.name, pkg_info.summary)
+            db = pisi.db.packagedb.PackageDB()
+            pkgs = db.search_package(self.args, lang, repo)
+            get_info = db.get_package
+            get_name_sum = lambda pkg:(pkg.name, pkg.summary)
+
+        for pkg in pkgs:
+            pkg_info = get_info(pkg)
+            name, summary = get_name_sum(pkg_info)
+            if lang and summary.has_key(lang):
+                print "%s - %s" % (name, summary[lang])
+            else:
+                print "%s - %s" % (name, summary)
+
