@@ -14,6 +14,7 @@
 #
 
 import os
+import re
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
@@ -114,6 +115,18 @@ class InstallDB(lazydb.LazyDB):
         files_xml = os.path.join(self.__package_path(package), ctx.const.files_xml)
         files.read(files_xml)
         return files
+
+    def search_package(self, terms, lang="en"):
+        resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
+        redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
+        found = []
+        for name in self.list_installed():
+            xml = open(os.path.join(self.__package_path(name), ctx.const.metadata_xml)).read()
+            if terms == filter(lambda term: re.compile(term, re.I).search(name) or \
+                                            re.compile(resum % (lang, term), re.I).search(xml) or \
+                                            re.compile(redesc % (lang, term), re.I).search(xml), terms):
+                found.append(name)
+        return found
 
     def get_info(self, package):
         files_xml = os.path.join(self.__package_path(package), ctx.const.files_xml)
