@@ -85,11 +85,6 @@ class ItemByRepoTestCase(testcase.TestCase):
         assert set(self.testdb.tdb.get_item_keys("contrib-2007")) == set(["kdiff3", "kmess"])
         assert set(self.testdb.tdb.get_item_keys()) == set(["kdiff3", "kmess", "aggdraw", "acpica"])
 
-    def testGetItemValues(self):
-        assert set(self.testdb.tdb.get_item_values("pardus-2007")) == set(['package aggdraw', 'package acpica'])
-        assert set(self.testdb.tdb.get_item_values("contrib-2007")) == set(['package kdiff3', 'package kmess'])
-        assert set(self.testdb.tdb.get_item_values()) == set(['package aggdraw', 'package kdiff3', 'package kmess', 'package acpica'])
-
     def testGetListItem(self):
         assert set(self.testdb.odb.get_list_item("pardus-2007")) == set(['rar', 'wengophone'])
         assert set(self.testdb.odb.get_list_item("contrib-2007")) == set(['xara'])
