@@ -408,7 +408,7 @@ def remove_repo(name):
         repodb.remove_repo(name)
         ctx.ui.info(_('Repo %s removed from system.') % name)
     else:
-        ctx.ui.error(_('Repository %s does not exist. Cannot remove.')
+        raise pisi.Error(_('Repository %s does not exist. Cannot remove.')
                  % name)
 
 def update_repo(repo, force=False):
