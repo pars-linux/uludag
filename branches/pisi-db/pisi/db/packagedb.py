@@ -30,6 +30,7 @@ import pisi.metadata
 import pisi.dependency
 import pisi.db.itembyrepo
 import pisi.db.lazydb as lazydb
+import pisi.pxml.autoxml as autoxml
 
 class PackageDB(lazydb.LazyDB):
 
@@ -86,11 +87,9 @@ class PackageDB(lazydb.LazyDB):
         pkg, repo = self.get_package_repo(name, repo)
         return pkg
 
-    def search_package(self, terms, lang=None, repo=None):
+    def search_package(self, terms, lang=autoxml.LocalText.get_lang(), repo=None):
         resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
         redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
-        if not lang:
-            lang = pisi.pxml.autoxml.LocalText.get_lang()
         found = []
         for name, xml in self.pdb.get_items_iter(repo):
             if terms == filter(lambda term: re.compile(term, re.I).search(name) or \
