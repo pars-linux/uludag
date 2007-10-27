@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Live 2007.2 Caracal caracal</Title>
+    <Title>Pardus Live 2007.3</Title>
     <WorkDir>/root/pardusman/LiveCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -565,6 +565,8 @@
         <Package>libogg</Package>
         <Package>liboil</Package>
         <Package>liboldX</Package>
+        <Package>libopensync</Package>
+        <Package>libpaper</Package>
         <Package>libpcap</Package>
         <Package>libpcre</Package>
         <Package>libperl</Package>
@@ -590,6 +592,7 @@
         <Package>libvorbis</Package>
         <Package>libwmf</Package>
         <Package>libwpd</Package>
+        <Package>libwpg</Package>
         <Package>libwww</Package>
         <Package>libxcb</Package>
         <Package>libxkbfile</Package>
@@ -744,9 +747,9 @@
         <Package>splash-theme</Package>
         <Package>splashutils</Package>
         <Package>splashutils-misc</Package>
+        <Package>sqlite</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
-        <Package>stlport</Package>
         <Package>strace</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
@@ -815,7 +818,6 @@
         <Package>xerces-c</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
-        <Package>xmlsec</Package>
         <Package>xorg-app</Package>
         <Package>xorg-data</Package>
         <Package>xorg-font</Package>
