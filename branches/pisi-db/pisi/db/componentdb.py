@@ -10,6 +10,7 @@
 # Please read the COPYING file.
 #
 
+import re
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
@@ -62,6 +63,21 @@ class ComponentDB(lazydb.LazyDB):
 
     def list_components(self, repo=None):
         return self.cdb.get_item_keys(repo)
+
+    def search_component(self, terms, lang=None, repo=None):
+        rename = '<LocalName xml:lang="%s">.*?%s.*?</LocalName>'
+        resum = '<Summary xml:lang="%s">.*?%s.*?</Summary>'
+        redesc = '<Description xml:lang="%s">.*?%s.*?</Description>'
+
+        if not lang:
+            lang = pisi.pxml.autoxml.LocalText.get_lang()
+        found = []
+        for name, xml in self.cdb.get_items_iter(repo):
+            if name not in found and terms == filter(lambda term: re.compile(rename % (lang, term), re.I).search(xml) or \
+                                                         re.compile(resum % (lang, term), re.I).search(xml) or \
+                                                         re.compile(redesc % (lang, term), re.I).search(xml), terms):
+                found.append(name)
+        return found
 
     # Returns the component in given repo or first found component in repo order if repo is None
     def get_component(self, component_name, repo = None):
