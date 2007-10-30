@@ -10,6 +10,9 @@
 # Please read the COPYING file.
 #
 
+import time
+import pisi.context as ctx
+
 class Singleton(object):
     def __new__(type):
         if not '_the_instance' in type.__dict__:
@@ -20,10 +23,16 @@ class LazyDB(Singleton):
     def __init__(self):
         if not self.__dict__.has_key("initialized"):
             self.initialized = False
+
+    def is_initialized(self):
+        return self.initialized
     
     def __getattr__(self, attr):
         if not self.initialized:
+            start = time.time()
             self.init()
+            end = time.time()
+            ctx.ui.debug("%s initialized in %s." % (self.__class__.__name__, end - start))
             self.initialized = True
 
         if not self.__dict__.has_key(attr):
