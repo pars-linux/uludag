@@ -51,8 +51,9 @@ class ComponentDB(lazydb.LazyDB):
 
     def __generate_sources(self, doc):
         components = {}
-        for pkg in doc.tags("Source"):
-            components.setdefault(pkg.getTagData("PartOf"), []).append(pkg.getTagData("Name"))
+        for spec in doc.tags("SpecFile"):
+            src = spec.getTag("Source")
+            components.setdefault(src.getTagData("PartOf"), []).append(src.getTagData("Name"))
         return components
  
     def __generate_components(self, doc):
