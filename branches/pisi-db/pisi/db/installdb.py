@@ -79,7 +79,7 @@ class InstallDB(lazydb.LazyDB):
         return []
 
     def __add_to_revdeps(self, package, revdeps):
-        metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
+        metadata_xml = os.path.join(self.package_path(package), ctx.const.metadata_xml)
         meta_doc = piksemel.parse(metadata_xml)
         name = meta_doc.getTag("Package").getTagData('Name')
         deps = meta_doc.getTag("Package").getTag('RuntimeDependencies')
@@ -100,7 +100,7 @@ class InstallDB(lazydb.LazyDB):
         return self.installed_db.has_key(package)
 
     def get_version(self, package):
-        metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
+        metadata_xml = os.path.join(self.package_path(package), ctx.const.metadata_xml)
 
         meta_doc = piksemel.parse(metadata_xml)
         history = meta_doc.getTag("Package").getTag("History")
@@ -112,7 +112,7 @@ class InstallDB(lazydb.LazyDB):
 
     def get_files(self, package):
         files = pisi.files.Files()
-        files_xml = os.path.join(self.__package_path(package), ctx.const.files_xml)
+        files_xml = os.path.join(self.package_path(package), ctx.const.files_xml)
         files.read(files_xml)
         return files
 
@@ -123,7 +123,7 @@ class InstallDB(lazydb.LazyDB):
             lang = pisi.pxml.autoxml.LocalText.get_lang()
         found = []
         for name in self.list_installed():
-            xml = open(os.path.join(self.__package_path(name), ctx.const.metadata_xml)).read()
+            xml = open(os.path.join(self.package_path(name), ctx.const.metadata_xml)).read()
             if terms == filter(lambda term: re.compile(term, re.I).search(name) or \
                                             re.compile(resum % (lang, term), re.I).search(xml) or \
                                             re.compile(redesc % (lang, term), re.I).search(xml), terms):
@@ -131,7 +131,7 @@ class InstallDB(lazydb.LazyDB):
         return found
 
     def get_info(self, package):
-        files_xml = os.path.join(self.__package_path(package), ctx.const.files_xml)
+        files_xml = os.path.join(self.package_path(package), ctx.const.files_xml)
         ctime = pisi.util.creation_time(files_xml)
         pkg = self.get_package(package)
         state = "i"
@@ -167,7 +167,7 @@ class InstallDB(lazydb.LazyDB):
 
     def get_package(self, package):
         metadata = pisi.metadata.MetaData()
-        metadata_xml = os.path.join(self.__package_path(package), ctx.const.metadata_xml)
+        metadata_xml = os.path.join(self.package_path(package), ctx.const.metadata_xml)
         metadata.read(metadata_xml)
         return metadata.package
 
@@ -200,7 +200,7 @@ class InstallDB(lazydb.LazyDB):
             pending.write("%s\n" % pkg)
         pending.close()
 
-    def __package_path(self, package):
+    def package_path(self, package):
 
         if self.installed_db.has_key(package):
             return os.path.join(ctx.config.packages_dir(), "%s-%s" % (package, self.installed_db[package]))

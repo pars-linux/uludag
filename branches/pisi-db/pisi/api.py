@@ -218,6 +218,23 @@ def search_package(terms, lang=None, repo=None):
     packagedb = pisi.db.packagedb.PackageDB()
     return packagedb.search_package(terms, lang, repo)
 
+def search_file(term):
+    """
+    Returns a tuple of package and matched files list that matches the files of the installed
+    packages -> list_of_tuples
+    @param term: used to search file -> list_of_strings
+
+    >>> files = pisi.api.search_file("kvm-")
+    
+    >>> print files
+
+    >>> [("kvm", (["lib/modules/2.6.18.8-86/extra/kvm-amd.ko","lib/modules/2.6.18.8-86/extra/kvm-intel.ko"])),]
+    """
+    filesdb = pisi.db.filesdb.FilesDB()
+    if term.startswith("/"): # FIXME: why? why?
+        term = term[1:]
+    return filesdb.search_file(term)
+
 def package_graph(A, packagedb, ignore_installed = False):
     """Construct a package relations graph.
     

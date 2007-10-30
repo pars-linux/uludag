@@ -14,6 +14,7 @@ __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
 import os
+import re
 import shelve
 import md5
 
@@ -38,7 +39,17 @@ class FilesDB(lazydb.LazyDB):
 
     def get_file(self, path):
         return self.filesdb[md5.new(path).digest()], path
-    
+
+    def search_file(self, term):
+        installdb = pisi.db.installdb.InstallDB()
+        found = []
+        for pkg in installdb.list_installed():
+            files_xml = open(os.path.join(installdb.package_path(pkg), ctx.const.files_xml)).read()
+            paths = re.compile('<Path>(.*?%s.*?)</Path>' % term, re.I).findall(files_xml)
+            if paths:
+                found.append((pkg, paths))
+        return found
+
     def add_files(self, pkg, files):
 
         self.__check_filesdb()

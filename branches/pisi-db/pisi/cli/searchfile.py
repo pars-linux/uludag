@@ -16,9 +16,9 @@ import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
 
-import pisi.cli.command as command
+import pisi
 import pisi.context as ctx
-import pisi.db
+import pisi.cli.command as command
 
 class SearchFile(command.Command):
     """Search for a file
@@ -31,7 +31,6 @@ Finds the installed package which contains the specified file.
 
     def __init__(self, args):
         super(SearchFile, self).__init__(args)
-        self.filesdb = pisi.db.filesdb.FilesDB()
 
     name = ("search-file", "sf")
 
@@ -44,23 +43,12 @@ Finds the installed package which contains the specified file.
         self.parser.add_option_group(group)
 
     def search_file(self, path):
-        files = []
-        path = path.lstrip('/') #FIXME: this shouldn't be necessary :/
+        found = pisi.api.search_file(path)
+        for pkg, files in found:
+            for pkg_file in files:
+                ctx.ui.info(_("Package %s has file /%s") % (pkg, pkg_file))
 
-        if self.filesdb.has_file(path):
-            files.append(self.filesdb.get_file(path))
-
-        if files:
-            for (pkg_name, file_path) in files:
-                if ctx.config.options.quiet:
-                    ctx.ui.info(pkg_name)
-                else:
-                    ctx.ui.info(_("Package %s has file %s") % (pkg_name, file_path))
-                    if ctx.config.options.long:
-                        pass
-#                         ctx.ui.info(_('Type: %s, Hash: %s') % (file_path.type,
-#                                                            file_path.hash))
-        else:
+        if not found:
             ctx.ui.error(_("Path '%s' does not belong to an installed package") % path)
 
     def run(self):
