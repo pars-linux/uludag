@@ -75,7 +75,7 @@ def scanAndConnect(link=None,force=False):
 
         # Add to list if in scanResults
         if temp:
-            if temp['remote'] in justEssIds\
+            if temp.get('remote','') in justEssIds\
                     or temp.get('apmac','') in justMacAddr:
                 profiles.append(temp)
 
