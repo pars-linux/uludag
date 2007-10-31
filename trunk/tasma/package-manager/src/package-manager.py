@@ -777,10 +777,16 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
             self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
 
-    def showErrorMessage(self, message, error=i18n("Error")):
+    def showErrorMessage(self, message, error=None):
+        #bug: 6479
+        #if error=i18n("Error") is written above, it isn't translated
+        if not error:
+            error=i18n("Error")
         KMessageBox.error(self, message, error)
 
-    def showConfirmMessage(self, message, error=i18n("Confirm")):
+    def showConfirmMessage(self, message, error=None):
+        if not error:
+            error=i18n("Confirm")
         return KMessageBox.questionYesNo(self, message, error)
 
     def reloadPisi(self):
