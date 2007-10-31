@@ -41,12 +41,19 @@ def list_repository(request, repo_name):
 
 def transfer_packages(request):
     # Get hidden values which contains the source and dest repo's
-    source_repo = request.POST['source_repo']
-    dest_repo = request.POST['dest_repo']
+    source_repo = get_object_or_404(Repository, repo_name=request.POST['source_repo'])
+    dest_repo = get_object_or_404(Repository, repo_name=request.POST['dest_repo'])
 
     # Get checked items list
+    # Problem : The dependencies have only the name('PyQt' not 'PyQt-3.17-2-21.pisi')
     checked_items = [p.split("_")[0] for p in request.POST.keys() if p.endswith("_checkbox")]
-    print checked_items
+    for p in checked_items:
+        # hacky
+        if p.endswith(".pisi"):
+            print p
+            op.movePackage(p, source_repo.repo_path, dest_repo.repo_path)
+
+    # return render_to_response('ciftci/ciftci_transferresult.html'
 
 def choose_repository(request):
 
