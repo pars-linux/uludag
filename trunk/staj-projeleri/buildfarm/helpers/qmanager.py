@@ -284,6 +284,17 @@ class QueueManager:
                     # that contains new and old package names
                     # e.g. newBinaryPackages=['package-1-2-1.pisi']
                     (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
+                    
+                    # Delta package generation
+                    deltaPackages = []
+                    if oldBinaryPackages:
+                        deltaPackages = pisi.delta(oldBinaryPackages, newBinaryPackages)
+                        packagesToInstall = deltaPackages[:]
+                    else:
+                        packagesToInstall = list(newBinaryPackages)
+
+                    logger.info("packagesToInstall[]: %s" % packagesToInstall)
+
                 except Exception, e:
                     # Build Error
                     # Transfers the pspec to the wait queue and logs the error
@@ -293,10 +304,10 @@ class QueueManager:
                     # mailer.error(errmsg, pspec)
                 else:
                     try:
-                        for p in newBinaryPackages:
+                        for p in packagesToInstall:
                             # For every new binary package generated, this snippet
                             # installs them on the system.
-                            # TODO: Build delta packages and install them here
+                            # TODO: Install delta packages here
                             logger.info(_("Installing: %s" % os.path.join(config.workDir, p)))
                             pisi.install(os.path.join(config.workDir, p))
                     except Exception, e:
@@ -308,11 +319,6 @@ class QueueManager:
                         self.__removeBinaryPackageFromWorkDir__(p)
                     else:
                         self.removeFromWorkQueue(pspec)
-
-                        # Delta package generation
-                        deltaPackages = []
-                        if oldBinaryPackages:
-                            deltaPackages = pisi.delta(oldBinaryPackages, newBinaryPackages)
 
                         # Move the packages
                         self.__movePackages__(newBinaryPackages, oldBinaryPackages, deltaPackages)
