@@ -22,6 +22,7 @@ def getDifferences(sourcePath, destPath):
     pisi_list = [{'name':p} for p in os.listdir(sourcePath) \
                 if not os.path.exists(os.path.join(destPath, p)) and p.endswith(".pisi")]
 
+    # Get only the package names
     package_names = [ps['name'] for ps in pisi_list]
 
     for ps in pisi_list:
@@ -29,7 +30,8 @@ def getDifferences(sourcePath, destPath):
         for m in getRuntimeDeps(os.path.join(sourcePath, ps["name"])):
             ps["deplist"].append({ "name": m.package,
                                    "versionFrom" : m.versionFrom,
-                                   "exists" : isDepExists(package_names, m.package, m.versionFrom) })
+                                   "exists" : isDepExists(package_names, m.package, m.versionFrom),
+                                   "mandatory" : isDepMandatory(package_names, m.package, m.versionFrom) })
     return pisi_list
 
 def getRuntimeDeps(p):
@@ -37,22 +39,22 @@ def getRuntimeDeps(p):
     return metadata.package.runtimeDependencies()
 
 def isDepExists(pisiList, name, versionFrom):
+    # Checks if the dependency exists in the diff list
     for p in pisiList:
         if p.startswith(name):
             return True
 
     return False
 
-
-def isDepExists2(path, name, versionFrom):
-    # Searchs for the given name in the path
-    if fnmatch.filter(os.listdir(path), name+'*'):
+def isDepMandatory(pisiList, depName, versionFrom):
+    l = fnmatch.filter(pisiList, depName+"-*")
+    if l and versionFrom:
         return True
     else:
         return False
 
-def movePackage(name, sourcePath, destPath):
-    fileName = name + ".pisi"
+def movePackage(fileName, sourcePath, destPath):
+
     try:
         os.rename(os.path.join(sourcePath, fileName),\
                   os.path.join(destPath, fileName))
