@@ -3,7 +3,6 @@
 
 import comar
 import pynotify
-
 import gettext
 gettext.bindtextdomain('network-manager', '/usr/kde/3.5/share/locale/')
 gettext.textdomain('network-manager')
@@ -20,13 +19,17 @@ def parseReply(reply):
         _dict[key] = value
     return _dict
 
-def notify(message,type=None):
+def notify(message,type=None,cancel=None,timeout=None):
     _notify = pynotify.Notification(message)
     if type:
         _notify.set_urgency(type)
+    if cancel:
+        _notify.add_action('cancel', i18n("Cancel"), cancel)
+    if timeout:
+        _notify.set_timeout(timeout)
     _notify.show()
 
-def scanAndConnect(link=None,force=False):
+def scanAndConnect(link=None,force=True):
     if not link:
         # If no Comar link given, create one
         link = comar.Link()
@@ -54,7 +57,7 @@ def scanAndConnect(link=None,force=False):
             map(lambda x: justEssIds.append(x['remote']),scanResults)
             map(lambda x: justMacAddr.append(x['mac']),scanResults)
         else:
-            notify('No scan result',FAIL)
+            notify(i18n("No scan result"),FAIL)
             return
 
     # Get profiles
@@ -92,16 +95,17 @@ def scanAndConnect(link=None,force=False):
     if possibleProfile:
         m = i18n("Profile '%s' matched.")
         notify(m % possibleProfile['name'])
-        connect(link,possibleProfile,force)
+        connect(possibleProfile,force)
     else:
         notify(i18n("There is no matched profile"),FAIL)
 
-def connect(comLink,profile,force=False):
+def connect(profile,force=False):
+    comLink = comar.Link()
     profileName = profile['name']
     if not profile['state'].startswith('up') or force:
-        comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
         m = i18n("Connecting to '%s' ...")
         notify(m % profileName)
+        comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
     else:
         m = i18n("Already connected to '%s'")
         notify(m % profileName)
