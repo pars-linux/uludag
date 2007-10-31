@@ -36,7 +36,6 @@ import Settings
 from Icons import *
 import LocaleData
 import HelpDialog
-import PackageCache
 
 # Pisi
 import pisi
@@ -98,7 +97,6 @@ class MainApplicationWidget(QWidget):
         self.command = None
         self.state = install_state
         self.basket = Basket.Basket()
-        self.packageCache = PackageCache.PackageCache()
 
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
@@ -214,7 +212,6 @@ class MainApplicationWidget(QWidget):
         self.basketAction.setEnabled(False)
         self.operateAction.setEnabled(False)
         self.searchLine.clear()
-        self.packageCache.clearCache()
         self.parent.showNewAction.setChecked(False)
         self.parent.showInstalledAction.setChecked(False)
         self.parent.showUpgradeAction.setEnabled(True)
@@ -269,7 +266,6 @@ class MainApplicationWidget(QWidget):
         self.parent.showInstalledAction.setChecked(False)
         ##
 
-        self.packageCache.clearCache()
         upgradables = pisi.api.list_upgradable()
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
@@ -640,12 +636,6 @@ class MainApplicationWidget(QWidget):
         self.componentsList.clear()
         self.componentDict.clear()
 
-        if self.packageCache.isEmpty() and packages:
-            if self.state == remove_state:
-                self.packageCache.populateCache(packages, pisi.itembyrepodb.installed)
-            else:
-                self.packageCache.populateCache(packages, None)
-        
         cdb = pisi.context.componentdb
         componentNames = [cname for cname in cdb.list_components() if cdb.get_component(cname).visibleTo == 'user']
 
@@ -841,7 +831,7 @@ class MainApplicationWidget(QWidget):
     def searchPackage(self):
         query = unicode(self.searchLine.text())
         if query:
-            result = self.packageCache.searchInPackages(query.split())
+            result = map(lambda x:x[0], pisi.api.search_package(query.split()))
             self.createSearchResults(result)
         else:
             self.timer.stop()
