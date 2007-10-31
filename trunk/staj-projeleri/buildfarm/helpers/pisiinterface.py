@@ -73,15 +73,15 @@ class PisiApi:
         delta_packages = []
         
         for p in zip(oldBinaryPackages, newBinaryPackages):
-            # deltaPath = '/var/pisi/b-1-2.delta.pisi
+            # deltaPath = '/var/pisi/b-1-2.delta.pisi'
             deltaPath = create_delta_package(os.path.join(config.binaryPath, p[0]), \
                                              os.path.join(config.workDir, p[1]))
             delta_packages.append(deltaPath)
 
+        logger.info(_("Created delta package(s): %s") % delta_packages)
         return delta_packages
 
-    def install(self, p, delta=False):
-        # if delta==True, install the related delta
+    def install(self, p):
         a = []
         a.append(p)
         pisi.api.install(a)
