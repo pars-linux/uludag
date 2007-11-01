@@ -218,6 +218,18 @@ def search_package(terms, lang=None, repo=None):
     packagedb = pisi.db.packagedb.PackageDB()
     return packagedb.search_package(terms, lang, repo)
 
+def search_source(terms, lang=None, repo=None):
+    """
+    Return a list of source packages that contains all the given terms either in its name, summary or
+    description -> list_of_strings
+    @param terms: a list of terms used to search source package -> list_of_strings
+    @param lang: language of the summary and description
+    @param repo: Repository of the source packages. If repo is None than returns a list of all the source 
+    packages in all the repositories that meets the search
+    """
+    sourcedb = pisi.db.sourcedb.SourceDB()
+    return sourcedb.search_spec(terms, lang, repo)
+
 def search_file(term):
     """
     Returns a tuple of package and matched files list that matches the files of the installed
