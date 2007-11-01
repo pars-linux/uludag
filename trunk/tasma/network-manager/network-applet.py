@@ -454,6 +454,8 @@ class NetTray(KSystemTray):
         incr = 0
         if pt.y() < screen.screenGeometry().height()/2 and pt.y()<self.height():
             incr = self.width()
+        elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
+            incr = 0
         else:
             incr = self.width() / 2
         return {'x':pt.x() + self.height()/2, 'y':pt.y() + incr}
