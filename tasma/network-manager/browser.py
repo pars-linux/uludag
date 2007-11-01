@@ -423,6 +423,7 @@ class Widget(QVBox):
         self.autoCheck = QCheckBox(i18n("Try Auto Connect on startup"),self)
         self.connect(self.autoCheck, SIGNAL('clicked()'),self.setAutoConnect)
         self.autoCheck.setOn(self.config.readBoolEntry("AutoConnect",True))
+        self.autoSwitch = autoswitch.autoSwitch(notifier=False)
 
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
@@ -441,7 +442,7 @@ class Widget(QVBox):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
     
     def slotAutoConnect(self):
-        autoswitch.scanAndConnect(force=True)
+        self.autoSwitch.scanAndConnect(force=True)
 
     def disableAutoConnectButtons(self):
         print "No wifi profiles.."

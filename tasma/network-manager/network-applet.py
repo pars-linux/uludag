@@ -18,6 +18,7 @@ from kdecore import *
 from kdeui import *
 import  dcopext
 import autoswitch
+import pynotify
 
 I18N_NOOP = lambda x: x
 
@@ -275,9 +276,23 @@ class Applet:
         self.config = KConfig("network-appletrc")
         self.config.setGroup("General")
         self.autoConnect = self.config.readBoolEntry("AutoConnect",True)
+        self.notifier = False
         comlink.state_hook.append(self.updateIcons)
+        self.delayTimer = QTimer()
         app.connect(app, SIGNAL("shutDown()"), self.fixQuit)
-    
+        app.connect(self.delayTimer, SIGNAL("timeout()"), self.createNotifier)
+
+    def createNotifier(self,dry=False):
+        pynotify.init("network-applet")
+        self.autoSwitch = autoswitch.autoSwitch()
+        self.notifier = pynotify.Notification("Network Manager")
+        pos = self.trays[0].getPos()
+        self.notifier.set_hint("x",pos['x'])
+        self.notifier.set_hint("y",pos['y'])
+        self.autoSwitch.setNotifier(self.notifier)
+        if self.autoConnect and not dry:
+            self.autoSwitch.scanAndConnect(force=False)
+
     def fixQuit(self):
         self.config.sync()
         for item in self.trays:
@@ -290,7 +305,7 @@ class Applet:
         comlink.queryConnections()
         self.resetViews()
         if self.autoConnect:
-            self.scanAndConnect()
+            self.delayTimer.start(1000, True)
 
     def resetViews(self):
         if self.mode == 0:
@@ -314,7 +329,12 @@ class Applet:
             menu.setItemChecked(device_mid, True)
     
     def scanAndConnect(self):
-        os.system("network-manager --auto-connect")
+        if not self.notifier:
+            self.createNotifier(dry=True)
+        pos = self.trays[0].getPos()
+        self.notifier.set_hint("x",pos['x'])
+        self.notifier.set_hint("y",pos['y'])
+        self.autoSwitch.scanAndConnect()
 
     def startManager(self):
         os.system("network-manager")
@@ -428,6 +448,10 @@ class NetTray(KSystemTray):
             QToolTip.add(self, dev.devname)
         self.updateIcon()
 
+    def getPos(self):
+        pt = self.mapToGlobal(QPoint(0,0))
+        return {'x':pt.x() + self.height()/2, 'y':pt.y() + self.width()/2}
+
     def updateNetworkStatus(self, status):
         kded = dcopext.DCOPApp("kded", self.dcop)
         kded.networkstatus.setNetworkStatus("COMARNetworkStatus", status)
@@ -517,7 +541,6 @@ class NetTray(KSystemTray):
         else:
             comlink.com.Net.Link[conn.script].setState(name=conn.name, state="up")
         self.popup = None
-
 
 def main():
     KLocale.setMainCatalogue("network-manager")

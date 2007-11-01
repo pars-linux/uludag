@@ -78,7 +78,8 @@ def main():
     KUniqueApplication.addCmdLineOptions()
     args = KCmdLineArgs.parsedArgs()
     if args.isSet("auto-connect"):
-        autoswitch.scanAndConnect(force=True)
+        autoSwitch = autoswitch.autoSwitch(notifier = False)
+        autoSwitch.scanAndConnect(force=True)
         sys.exit()
 
     if not KUniqueApplication.start():

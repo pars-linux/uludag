@@ -4,11 +4,10 @@
 import comar
 import pynotify
 import gettext
+
 gettext.bindtextdomain('network-manager', '/usr/kde/3.5/share/locale/')
 gettext.textdomain('network-manager')
 i18n = gettext.gettext
-
-pynotify.init('Network-Manager')
 
 FAIL,SUCCESS = pynotify.URGENCY_CRITICAL,pynotify.URGENCY_NORMAL
 
@@ -19,97 +18,118 @@ def parseReply(reply):
         _dict[key] = value
     return _dict
 
-def notify(message,type=None,cancel=None,timeout=None):
-    _notify = pynotify.Notification(message)
-    if type:
-        _notify.set_urgency(type)
-    if cancel:
-        _notify.add_action('cancel', i18n("Cancel"), cancel)
-    if timeout:
-        _notify.set_timeout(timeout)
-    _notify.show()
-
-def scanAndConnect(link=None,force=True):
-    if not link:
-        # If no Comar link given, create one
-        link = comar.Link()
-
-    # Get Wireless Devices
-    link.Net.Link['wireless-tools'].deviceList()
-    res = link.read_cmd()
-    devices = res.data.split('\n')
-
-    # If there is no device, go on
-    if not len(devices):
-        return
-
-    # Get current APs
-    justEssIds = []
-    justMacAddr= []
-    temp = None
-    for dev in devices:
-        # Some times we need to scan twice to get all access points
-        for x in range(2):
-            link.Net.Link['wireless-tools'].scanRemote(device=dev)
-            temp = link.read_cmd()
-        if temp.data:
-            scanResults = map(lambda x: parseReply(x.split('\t')),temp.data.split('\n'))
-            map(lambda x: justEssIds.append(x['remote']),scanResults)
-            map(lambda x: justMacAddr.append(x['mac']),scanResults)
+class autoSwitch:
+    def __init__(self,notifier=True,comarLink=None):
+        self.notifier = False
+        if notifier:
+            if pynotify.init('Network-Manager'):
+                self.notifier = pynotify
+        if not comarLink:
+            self.comarLink = comar.Link()
         else:
-            notify(i18n("No scan result"),FAIL)
+            self.comarLink = comarLink
+
+    def setNotifier(self,notifier):
+        self.notifier = notifier
+
+    def notify(self,message,mtype=None,cancel=None,timeout=None):
+        if not self.notifier:
+            print message
+            return
+        if type(self.notifier)==pynotify.Notification:
+            _notify = self.notifier
+            _notify.clear_actions()
+            _notify.update(i18n("Network Manager"),message)
+        else:
+            _notify = self.notifier.Notification(i18n("Network Manager"),message)
+        if mtype:
+            _notify.set_urgency(mtype)
+        if cancel:
+            _notify.add_action('cancel', i18n("Cancel"), cancel)
+        if timeout:
+            _notify.set_timeout(timeout)
+        _notify.show()
+
+    def scanAndConnect(self,force=True):
+        link = self.comarLink
+
+        # Get Wireless Devices
+        link.Net.Link['wireless-tools'].deviceList()
+        res = link.read_cmd()
+        devices = res.data.split('\n')
+
+        # If there is no device, go on
+        if not len(devices):
             return
 
-    # Get profiles
-    profiles = []
-    temp = None
+        # Get current APs
+        justEssIds = [ ]
+        justMacAddr= [ ]
+        temp = None
+        for dev in devices:
+            # Some times we need to scan twice to get all access points
+            for x in range(2):
+                link.Net.Link['wireless-tools'].scanRemote(device=dev)
+                temp = link.read_cmd()
+            if temp.data:
+                scanResults = map(lambda x: parseReply(x.split('\t')),temp.data.split('\n'))
+                map(lambda x: justEssIds.append(x['remote']),scanResults)
+                map(lambda x: justMacAddr.append(x['mac']),scanResults)
+            else:
+                notify(i18n("No scan result"),FAIL)
+                return
 
-    link.Net.Link['wireless-tools'].connections()
-    res = link.read_cmd()
-    _profiles = res.data.split('\n')
-    for profile in _profiles:
-        try:
-            # Get profile details
-            link.Net.Link['wireless-tools'].connectionInfo(name=profile)
-            res = link.read_cmd()
-            temp = parseReply(res.data.split('\n'))
-        except:
-            pass
+        # Get profiles
+        profiles = [ ]
+        temp = None
 
-        # Add to list if in scanResults
-        if temp:
-            if temp.get('remote','') in justEssIds\
-                    or temp.get('apmac','') in justMacAddr:
-                profiles.append(temp)
+        link.Net.Link['wireless-tools'].connections()
+        res = link.read_cmd()
+        _profiles = res.data.split('\n')
+        for profile in _profiles:
+            try:
+                # Get profile details
+                link.Net.Link['wireless-tools'].connectionInfo(name=profile)
+                res = link.read_cmd()
+                temp = parseReply(res.data.split('\n'))
+            except:
+                pass
 
-    possibleProfile = None
-    # If there is one result let switch to it
-    if len(profiles)==1:
-        possibleProfile = profiles[0]
-    else:
-        for result in scanResults:
-            for profile in profiles:
-                    if profile.get('apmac','')==result['mac'] and not possibleProfile:
-                        possibleProfile = profile
+            # Add to list if in scanResults
+            if temp:
+                if temp.get('remote','') in justEssIds\
+                        or temp.get('apmac','') in justMacAddr:
+                    profiles.append(temp)
 
-    if possibleProfile:
-        m = i18n("Profile '%s' matched.")
-        notify(m % possibleProfile['name'])
-        connect(possibleProfile,force)
-    else:
-        notify(i18n("There is no matched profile"),FAIL)
+        possibleProfile = None
+        # If there is one result let switch to it
+        if len(profiles)==1:
+            possibleProfile = profiles[0]
+        else:
+            for result in scanResults:
+                for profile in profiles:
+                        if profile.get('apmac','')==result['mac'] and not possibleProfile:
+                            possibleProfile = profile
 
-def connect(profile,force=False):
-    comLink = comar.Link()
-    profileName = profile['name']
-    if not profile['state'].startswith('up') or force:
-        m = i18n("Connecting to '%s' ...")
-        notify(m % profileName)
-        comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
-    else:
-        m = i18n("Already connected to '%s'")
-        notify(m % profileName)
+        if possibleProfile:
+            m = i18n("Profile '%s' matched.")
+            self.notify(m % possibleProfile['name'])
+            self.connect(possibleProfile,force)
+        else:
+            self.notify(i18n("There is no matched profile"),FAIL)
+
+    def connect(self,profile,force=False):
+        comLink = comar.Link()
+        profileName = profile['name']
+        if not profile['state'].startswith('up') or force:
+            m = i18n("Connecting to '%s' ...")
+            self.notify(m % profileName)
+            comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
+        else:
+            m = i18n("Already connected to '%s'")
+            self.notify(m % profileName)
 
 if __name__=="__main__":
-    scanAndConnect()
+    netClient = autoSwitch()
+    netClient.scanAndConnect()
 
