@@ -450,7 +450,13 @@ class NetTray(KSystemTray):
 
     def getPos(self):
         pt = self.mapToGlobal(QPoint(0,0))
-        return {'x':pt.x() + self.height()/2, 'y':pt.y() + self.width()/2}
+        screen = QDesktopWidget()
+        incr = 0
+        if pt.y() < screen.screenGeometry().height()/2 and pt.y()<self.height():
+            incr = self.width()
+        else:
+            incr = self.width() / 2
+        return {'x':pt.x() + self.height()/2, 'y':pt.y() + incr}
 
     def updateNetworkStatus(self, status):
         kded = dcopext.DCOPApp("kded", self.dcop)

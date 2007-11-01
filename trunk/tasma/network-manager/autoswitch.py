@@ -76,7 +76,7 @@ class autoSwitch:
                 map(lambda x: justEssIds.append(x['remote']),scanResults)
                 map(lambda x: justMacAddr.append(x['mac']),scanResults)
             else:
-                notify(i18n("No scan result"),FAIL)
+                self.notify(i18n("No scan result"),FAIL)
                 return
 
         # Get profiles
