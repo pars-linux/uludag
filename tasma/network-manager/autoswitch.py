@@ -21,6 +21,7 @@ def parseReply(reply):
 class autoSwitch:
     def __init__(self,notifier=True,comarLink=None):
         self.notifier = False
+        self.iconPath = ''
         if notifier:
             if pynotify.init('Network-Manager'):
                 self.notifier = pynotify
@@ -29,8 +30,9 @@ class autoSwitch:
         else:
             self.comarLink = comarLink
 
-    def setNotifier(self,notifier):
+    def setNotifier(self,notifier,iconPath):
         self.notifier = notifier
+        self.iconPath = str(iconPath)
 
     def notify(self,message,mtype=None,cancel=None,timeout=None):
         if not self.notifier:
@@ -39,7 +41,7 @@ class autoSwitch:
         if type(self.notifier)==pynotify.Notification:
             _notify = self.notifier
             _notify.clear_actions()
-            _notify.update(i18n("Network Manager"),message)
+            _notify.update(i18n("Network Manager"),message,self.iconPath)
         else:
             _notify = self.notifier.Notification(i18n("Network Manager"),message)
         if mtype:
