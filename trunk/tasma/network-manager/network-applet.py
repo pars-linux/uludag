@@ -286,10 +286,11 @@ class Applet:
         pynotify.init("network-applet")
         self.autoSwitch = autoswitch.autoSwitch()
         self.notifier = pynotify.Notification("Network Manager")
+        iconPath = KGlobal.iconLoader().iconPath("network", KIcon.Desktop, True)
         pos = self.trays[0].getPos()
         self.notifier.set_hint("x",pos['x'])
         self.notifier.set_hint("y",pos['y'])
-        self.autoSwitch.setNotifier(self.notifier)
+        self.autoSwitch.setNotifier(self.notifier,iconPath)
         if self.autoConnect and not dry:
             self.autoSwitch.scanAndConnect(force=False)
 
