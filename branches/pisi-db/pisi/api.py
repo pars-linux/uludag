@@ -230,6 +230,18 @@ def search_source(terms, lang=None, repo=None):
     sourcedb = pisi.db.sourcedb.SourceDB()
     return sourcedb.search_spec(terms, lang, repo)
 
+def search_component(terms, lang=None, repo=None):
+    """
+    Return a list of components that contains all the given terms either in its name, summary or
+    description -> list_of_strings
+    @param terms: a list of terms used to search components -> list_of_strings
+    @param lang: language of the summary and description
+    @param repo: Repository of the components. If repo is None than returns a list of all the components 
+    in all the repositories that meets the search
+    """
+    componentdb = pisi.db.componentdb.ComponentDB()
+    return componentdb.search_component(terms, lang, repo)
+
 def search_file(term):
     """
     Returns a tuple of package and matched files list that matches the files of the installed
