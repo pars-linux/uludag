@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-24 16:51+0300\n"
+"POT-Creation-Date: 2007-11-02 16:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,19 +40,32 @@ msgstr ""
 msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 
-#: autoswitch.py:75
-#, python-format
-msgid "Profile '%s' matched."
+#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
+#: network-manager.py:91
+msgid "Network Manager"
 msgstr ""
 
-#: autoswitch.py:93
-#, python-format
-msgid "Connecting to '%s' ..."
+#: autoswitch.py:81
+msgid "No scan result"
 msgstr ""
 
-#: autoswitch.py:96
+#: autoswitch.py:117
 #, python-format
-msgid "Already connected to '%s'"
+msgid "Profile <b>%s</b> matched."
+msgstr ""
+
+#: autoswitch.py:121
+msgid "There is no matched profile"
+msgstr ""
+
+#: autoswitch.py:127
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr ""
+
+#: autoswitch.py:131
+#, python-format
+msgid "Already connected to <b>%s</b>"
 msgstr ""
 
 #: connection.py:27
@@ -159,29 +172,29 @@ msgstr ""
 msgid "Automatic"
 msgstr ""
 
-#: connection.py:532
+#: connection.py:534
 msgid "Configure network connection"
 msgstr ""
 
-#: comariface.py:171
+#: comariface.py:174
 msgid "Waiting COMAR..."
 msgstr ""
 
-#: comariface.py:172
+#: comariface.py:175
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 
-#: comariface.py:191 comariface.py:208 network-applet.py:113
+#: comariface.py:194 comariface.py:211 network-applet.py:114
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
 msgstr ""
 
-#: comariface.py:312
+#: comariface.py:315
 msgid "You are not allowed to change network settings."
 msgstr ""
 
-#: comariface.py:392
+#: comariface.py:395
 msgid "new connection"
 msgstr ""
 
@@ -217,7 +230,7 @@ msgstr ""
 msgid "No device!"
 msgstr ""
 
-#: browser.py:394 network-applet.py:491
+#: browser.py:394 network-applet.py:541
 msgid "New connection"
 msgstr ""
 
@@ -225,7 +238,7 @@ msgstr ""
 msgid "Name Service Settings"
 msgstr ""
 
-#: browser.py:404 network-applet.py:306
+#: browser.py:404 network-applet.py:324
 msgid "Connect Automatically"
 msgstr ""
 
@@ -233,43 +246,43 @@ msgstr ""
 msgid "Try Auto Connect on startup"
 msgstr ""
 
-#: browser.py:474
+#: browser.py:475
 msgid "Network Connections Help"
-msgstr ""
-
-#: network-manager.py:34 network-manager.py:90
-msgid "Network Manager"
 msgstr ""
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
 msgstr ""
 
-#: network-manager.py:85
+#: network-manager.py:86
 msgid "Network manager module is already started!"
 msgstr ""
 
-#: network-applet.py:304
+#: network-applet.py:322
 msgid "Firewall..."
 msgstr ""
 
-#: network-applet.py:305
+#: network-applet.py:323
 msgid "Edit Connections..."
 msgstr ""
 
-#: network-applet.py:308
+#: network-applet.py:326
+msgid "Show Notifications"
+msgstr ""
+
+#: network-applet.py:328
 msgid "Icon Per Device"
 msgstr ""
 
-#: network-applet.py:309
+#: network-applet.py:329
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:357
+#: network-applet.py:395
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 
-#: network-applet.py:526
+#: network-applet.py:575
 msgid "Network Applet"
 msgstr ""
 

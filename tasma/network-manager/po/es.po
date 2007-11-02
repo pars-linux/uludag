@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-24 16:51+0300\n"
+"POT-Creation-Date: 2007-11-02 16:52+0200\n"
 "PO-Revision-Date: 2007-10-24 20:14-0300\n"
 "Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
 "Language-Team: español <es@li.org>\n"
@@ -44,20 +44,34 @@ msgstr "Instalar paquetes de red!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "No se instalaron todavía paquetes con los scripts de red COMAR."
 
-#: autoswitch.py:75
-#, python-format
+#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
+#: network-manager.py:91
+msgid "Network Manager"
+msgstr "Administrador de Red"
+
+#: autoswitch.py:81
+#, fuzzy
+msgid "No scan result"
+msgstr "Resultado de búsqueda:"
+
 # duda, favo revisar, ver el contexto
-msgid "Profile '%s' matched."
+#: autoswitch.py:117
+#, fuzzy, python-format
+msgid "Profile <b>%s</b> matched."
 msgstr "Perfil '%s' coincide."
 
-#: autoswitch.py:93
-#, python-format
-msgid "Connecting to '%s' ..."
+#: autoswitch.py:121
+msgid "There is no matched profile"
+msgstr ""
+
+#: autoswitch.py:127
+#, fuzzy, python-format
+msgid "Connecting to <b>%s</b> ..."
 msgstr "Conectando con '%s' ..."
 
-#: autoswitch.py:96
-#, python-format
-msgid "Already connected to '%s'"
+#: autoswitch.py:131
+#, fuzzy, python-format
+msgid "Already connected to <b>%s</b>"
 msgstr "Ya conectado con '%s'"
 
 #: connection.py:27
@@ -165,19 +179,19 @@ msgstr "Servidores de Nombres"
 msgid "Automatic"
 msgstr "Automático"
 
-#: connection.py:532
+#: connection.py:534
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
-#: comariface.py:171
+#: comariface.py:174
 msgid "Waiting COMAR..."
 msgstr "Esperando COMAR..."
 
-#: comariface.py:172
+#: comariface.py:175
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "Conexión con COMAR cerrada inesperadamente, intentando reconectar..."
 
-#: comariface.py:191 comariface.py:208 network-applet.py:113
+#: comariface.py:194 comariface.py:211 network-applet.py:114
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -185,11 +199,11 @@ msgstr ""
 "No posible conectar con COMAR! Si no se está ejecutando lo debería iniciar "
 "con el comando 'service comar start' desde una consola de root."
 
-#: comariface.py:312
+#: comariface.py:315
 msgid "You are not allowed to change network settings."
 msgstr "No tiene permisos para modificar la configuración de red."
 
-#: comariface.py:392
+#: comariface.py:395
 msgid "new connection"
 msgstr "nueva conexión"
 
@@ -228,7 +242,7 @@ msgstr "Eliminar conexión ?"
 msgid "No device!"
 msgstr "No hay dispositivo !"
 
-#: browser.py:394 network-applet.py:491
+#: browser.py:394 network-applet.py:541
 msgid "New connection"
 msgstr "Nueva Conexión"
 
@@ -236,7 +250,7 @@ msgstr "Nueva Conexión"
 msgid "Name Service Settings"
 msgstr "Configuración de servidores de nombres (DNS)"
 
-#: browser.py:404 network-applet.py:306
+#: browser.py:404 network-applet.py:324
 msgid "Connect Automatically"
 msgstr "Conectar automáticamente"
 
@@ -244,47 +258,48 @@ msgstr "Conectar automáticamente"
 msgid "Try Auto Connect on startup"
 msgstr "Intentar conexión automática al iniciar el sistema"
 
-#: browser.py:474
+#: browser.py:475
 msgid "Network Connections Help"
 msgstr "Ayuda de conexión de red"
-
-#: network-manager.py:34 network-manager.py:90
-msgid "Network Manager"
-msgstr "Administrador de Red"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
 msgstr "Intentar conexión automática"
 
-#: network-manager.py:85
+#: network-manager.py:86
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está iniciado!"
 
-#: network-applet.py:304
+#: network-applet.py:322
 msgid "Firewall..."
 msgstr "Cortafuegos..."
 
-#: network-applet.py:305
+#: network-applet.py:323
 msgid "Edit Connections..."
 msgstr "Editar conexiones..."
 
+#: network-applet.py:326
+msgid "Show Notifications"
+msgstr ""
+
 # i translated as "for EACH" device
-#: network-applet.py:308
+#: network-applet.py:328
 msgid "Icon Per Device"
 msgstr "Ícono por cada dispositivo"
 
-#: network-applet.py:309
+#: network-applet.py:329
 msgid "Single Icon"
 msgstr "Ícono único"
 
 # Icono de la barra de tareas?
-#: network-applet.py:357
+#: network-applet.py:395
 msgid "Should network-applet start automatically when you login?"
-msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr ""
+"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 # Icono de la barra de tareas?
 # Icono de acceso rápido?
-#: network-applet.py:526
+#: network-applet.py:575
 msgid "Network Applet"
 msgstr "Applet de Red"
 
@@ -311,4 +326,3 @@ msgstr "Agregar Servidor de nombres"
 #: nameconf.py:135
 msgid "Name server:"
 msgstr "Servidor de nombres:"
-

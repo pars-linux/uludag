@@ -114,7 +114,7 @@ class autoSwitch:
                             possibleProfile = profile
 
         if possibleProfile:
-            m = i18n("Profile '%s' matched.")
+            m = i18n("Profile <b>%s</b> matched.")
             self.notify(m % possibleProfile['name'])
             self.connect(possibleProfile,force)
         else:
@@ -124,11 +124,11 @@ class autoSwitch:
         comLink = comar.Link()
         profileName = profile['name']
         if not profile['state'].startswith('up') or force:
-            m = i18n("Connecting to '%s' ...")
+            m = i18n("Connecting to <b>%s</b> ...")
             self.notify(m % profileName)
             comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
         else:
-            m = i18n("Already connected to '%s'")
+            m = i18n("Already connected to <b>%s</b>")
             self.notify(m % profileName)
 
 if __name__=="__main__":
