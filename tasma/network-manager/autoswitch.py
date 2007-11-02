@@ -30,7 +30,7 @@ class autoSwitch:
         else:
             self.comarLink = comarLink
 
-    def setNotifier(self,notifier,iconPath):
+    def setNotifier(self,notifier,iconPath=None):
         self.notifier = notifier
         self.iconPath = str(iconPath)
 

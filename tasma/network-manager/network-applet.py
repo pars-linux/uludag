@@ -276,6 +276,7 @@ class Applet:
         self.config = KConfig("network-appletrc")
         self.config.setGroup("General")
         self.autoConnect = self.config.readBoolEntry("AutoConnect",True)
+        self.showNotifications = self.config.readBoolEntry("ShowNotifications",True)
         self.notifier = False
         comlink.state_hook.append(self.updateIcons)
         self.delayTimer = QTimer()
@@ -284,13 +285,14 @@ class Applet:
 
     def createNotifier(self,dry=False):
         pynotify.init("network-applet")
-        self.autoSwitch = autoswitch.autoSwitch()
-        self.notifier = pynotify.Notification("Network Manager")
-        iconPath = KGlobal.iconLoader().iconPath("network", KIcon.Desktop, True)
-        pos = self.trays[0].getPos()
-        self.notifier.set_hint("x",pos['x'])
-        self.notifier.set_hint("y",pos['y'])
-        self.autoSwitch.setNotifier(self.notifier,iconPath)
+        self.autoSwitch = autoswitch.autoSwitch(notifier=False)
+        if self.showNotifications:
+            self.notifier = pynotify.Notification("Network Manager")
+            iconPath = KGlobal.iconLoader().iconPath("network", KIcon.Desktop, True)
+            pos = self.trays[0].getPos()
+            self.notifier.set_hint("x",pos['x'])
+            self.notifier.set_hint("y",pos['y'])
+            self.autoSwitch.setNotifier(self.notifier,iconPath)
         if self.autoConnect and not dry:
             self.autoSwitch.scanAndConnect(force=False)
 
@@ -321,6 +323,8 @@ class Applet:
         KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, menu).plug(menu)
         KAction(i18n("Connect Automatically"), "connect_creating", KShortcut.null(), self.scanAndConnect, menu).plug(menu)
         menu.insertSeparator(1)
+        show_notify = menu.insertItem(i18n("Show Notifications"), self.setNotify, 0, -1, 1)
+        menu.insertSeparator(1)
         device_mid = menu.insertItem(i18n("Icon Per Device"), self.deviceGroup, 0, -1, 1)
         single_mid = menu.insertItem(i18n("Single Icon"), self.noGroup, 0, -1, 1)
        
@@ -328,13 +332,17 @@ class Applet:
             menu.setItemChecked(single_mid, True)
         else:
             menu.setItemChecked(device_mid, True)
-    
+
+        if self.showNotifications:
+            menu.setItemChecked(show_notify, True)
+
     def scanAndConnect(self):
-        if not self.notifier:
+        if not self.notifier and self.showNotifications:
             self.createNotifier(dry=True)
-        pos = self.trays[0].getPos()
-        self.notifier.set_hint("x",pos['x'])
-        self.notifier.set_hint("y",pos['y'])
+        if self.showNotifications:
+            pos = self.trays[0].getPos()
+            self.notifier.set_hint("x",pos['x'])
+            self.notifier.set_hint("y",pos['y'])
         self.autoSwitch.scanAndConnect()
 
     def startManager(self):
@@ -353,6 +361,15 @@ class Applet:
         for item in self.trays:
             item.updateIcon()
     
+    def setNotify(self, id):
+        if self.showNotifications:
+            self.config.writeEntry("ShowNotifications", False)
+            self.autoSwitch.setNotifier(False)
+        else:
+            self.config.writeEntry("ShowNotifications", True)
+        self.showNotifications = self.config.readBoolEntry("ShowNotifications",True)
+        self.resetViews()
+
     def noGroup(self, id):
         if self.mode == 0:
             return
