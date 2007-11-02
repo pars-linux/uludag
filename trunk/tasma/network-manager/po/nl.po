@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-24 16:51+0300\n"
+"POT-Creation-Date: 2007-11-02 16:52+0200\n"
 "PO-Revision-Date: 2007-06-03 22:17+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -45,19 +45,33 @@ msgstr "Installeer netwerkpakketten!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Geen pakket met COMAR netwerkscripts is geïnstalleerd."
 
-#: autoswitch.py:75
+#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
+#: network-manager.py:91
+msgid "Network Manager"
+msgstr "Netwerkbeheer"
+
+#: autoswitch.py:81
+#, fuzzy
+msgid "No scan result"
+msgstr "Scan resultaten:"
+
+#: autoswitch.py:117
 #, python-format
-msgid "Profile '%s' matched."
+msgid "Profile <b>%s</b> matched."
 msgstr ""
 
-#: autoswitch.py:93
+#: autoswitch.py:121
+msgid "There is no matched profile"
+msgstr ""
+
+#: autoswitch.py:127
 #, fuzzy, python-format
-msgid "Connecting to '%s' ..."
+msgid "Connecting to <b>%s</b> ..."
 msgstr "Bewerk verbindingen..."
 
-#: autoswitch.py:96
+#: autoswitch.py:131
 #, fuzzy, python-format
-msgid "Already connected to '%s'"
+msgid "Already connected to <b>%s</b>"
 msgstr "Bewerk verbindingen..."
 
 #: connection.py:27
@@ -166,21 +180,21 @@ msgid "Automatic"
 msgstr "Automatisch"
 
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:532
+#: connection.py:534
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
 
-#: comariface.py:171
+#: comariface.py:174
 msgid "Waiting COMAR..."
 msgstr "Wachten COMAR..."
 
-#: comariface.py:172
+#: comariface.py:175
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 "Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
 "verbinden..."
 
-#: comariface.py:191 comariface.py:208 network-applet.py:113
+#: comariface.py:194 comariface.py:211 network-applet.py:114
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -188,11 +202,11 @@ msgstr ""
 "Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
 "starten met het commando 'service comar start' in de root console."
 
-#: comariface.py:312
+#: comariface.py:315
 msgid "You are not allowed to change network settings."
 msgstr "U mag de netwerkinstellingen niet aanpassen."
 
-#: comariface.py:392
+#: comariface.py:395
 msgid "new connection"
 msgstr "nieuwe verbinding"
 
@@ -236,7 +250,7 @@ msgstr "Verbinding verwijderen?"
 msgid "No device!"
 msgstr "Geen apparaat!"
 
-#: browser.py:394 network-applet.py:491
+#: browser.py:394 network-applet.py:541
 msgid "New connection"
 msgstr "Nieuwe verbinding"
 
@@ -244,7 +258,7 @@ msgstr "Nieuwe verbinding"
 msgid "Name Service Settings"
 msgstr "Naam dienst instellingen"
 
-#: browser.py:404 network-applet.py:306
+#: browser.py:404 network-applet.py:324
 #, fuzzy
 msgid "Connect Automatically"
 msgstr "Automatisch"
@@ -253,43 +267,43 @@ msgstr "Automatisch"
 msgid "Try Auto Connect on startup"
 msgstr ""
 
-#: browser.py:474
+#: browser.py:475
 msgid "Network Connections Help"
 msgstr "Netwerkverbindingen hulp"
-
-#: network-manager.py:34 network-manager.py:90
-msgid "Network Manager"
-msgstr "Netwerkbeheer"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
 msgstr ""
 
-#: network-manager.py:85
+#: network-manager.py:86
 msgid "Network manager module is already started!"
 msgstr "Netwerkbeheer module is al opgestart!"
 
-#: network-applet.py:304
+#: network-applet.py:322
 msgid "Firewall..."
 msgstr "Firewall..."
 
-#: network-applet.py:305
+#: network-applet.py:323
 msgid "Edit Connections..."
 msgstr "Bewerk verbindingen..."
 
-#: network-applet.py:308
+#: network-applet.py:326
+msgid "Show Notifications"
+msgstr ""
+
+#: network-applet.py:328
 msgid "Icon Per Device"
 msgstr "Icoon per apparaat"
 
-#: network-applet.py:309
+#: network-applet.py:329
 msgid "Single Icon"
 msgstr "Enkel icoon"
 
-#: network-applet.py:357
+#: network-applet.py:395
 msgid "Should network-applet start automatically when you login?"
 msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
 
-#: network-applet.py:526
+#: network-applet.py:575
 msgid "Network Applet"
 msgstr "Netwerk-applet"
 

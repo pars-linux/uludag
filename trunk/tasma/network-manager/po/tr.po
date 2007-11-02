@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-24 16:51+0300\n"
+"POT-Creation-Date: 2007-11-02 16:52+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -39,20 +39,33 @@ msgstr "Ağ programlarını kurun!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
 
-#: autoswitch.py:75
-#, python-format
-msgid "Profile '%s' matched."
-msgstr "Profil '%s' bulundu."
+#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
+#: network-manager.py:91
+msgid "Network Manager"
+msgstr "Ağ Yöneticisi"
 
-#: autoswitch.py:93
-#, python-format
-msgid "Connecting to '%s' ..."
-msgstr "'%s' profiline bağlanıyor..."
+#: autoswitch.py:81
+msgid "No scan result"
+msgstr "Herhangi bir ağ bulunamadı"
 
-#: autoswitch.py:96
+#: autoswitch.py:117
 #, python-format
-msgid "Already connected to '%s'"
-msgstr "'%s' profiline bağlı."
+msgid "Profile <b>%s</b> matched."
+msgstr "Profil <b>%s</b> bulundu."
+
+#: autoswitch.py:121
+msgid "There is no matched profile"
+msgstr "Eşleşen bir profil bulunamadı"
+
+#: autoswitch.py:127
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "<b>%s</b> profiline bağlanıyor..."
+
+#: autoswitch.py:131
+#, python-format
+msgid "Already connected to <b>%s</b>"
+msgstr "<b>%s</b> profiline bağlı."
 
 #: connection.py:27
 msgid "Channel"
@@ -158,19 +171,19 @@ msgstr "İsim sunucuları"
 msgid "Automatic"
 msgstr "Otomatik"
 
-#: connection.py:532
+#: connection.py:534
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
-#: comariface.py:171
+#: comariface.py:174
 msgid "Waiting COMAR..."
 msgstr "ÇOMAR Bekleniyor..."
 
-#: comariface.py:172
+#: comariface.py:175
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr "ÇOMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
 
-#: comariface.py:191 comariface.py:208 network-applet.py:113
+#: comariface.py:194 comariface.py:211 network-applet.py:114
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -178,11 +191,11 @@ msgstr ""
 "ÇOMAR bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı "
 "konsolu açıp 'service comar start' komutu ile çalıştırın."
 
-#: comariface.py:312
+#: comariface.py:315
 msgid "You are not allowed to change network settings."
 msgstr "Ağ ayarlarını değiştirme izniniz yok."
 
-#: comariface.py:392
+#: comariface.py:395
 msgid "new connection"
 msgstr "yeni bağlantı"
 
@@ -220,7 +233,7 @@ msgstr "Bağlantıyı sil?"
 msgid "No device!"
 msgstr "Aygıt yok!"
 
-#: browser.py:394 network-applet.py:491
+#: browser.py:394 network-applet.py:541
 msgid "New connection"
 msgstr "Yeni bağlantı"
 
@@ -228,7 +241,7 @@ msgstr "Yeni bağlantı"
 msgid "Name Service Settings"
 msgstr "İsim Servisi Ayarları"
 
-#: browser.py:404 network-applet.py:306
+#: browser.py:404 network-applet.py:324
 msgid "Connect Automatically"
 msgstr "Otomatik Bağlan"
 
@@ -236,43 +249,43 @@ msgstr "Otomatik Bağlan"
 msgid "Try Auto Connect on startup"
 msgstr "Açılışta Otomatik Bağlanmayı dene"
 
-#: browser.py:474
+#: browser.py:475
 msgid "Network Connections Help"
 msgstr "Ağ Bağlantıları Yardımı"
-
-#: network-manager.py:34 network-manager.py:90
-msgid "Network Manager"
-msgstr "Ağ Yöneticisi"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
 msgstr "Sadece otomatik bağlanmayı dene"
 
-#: network-manager.py:85
+#: network-manager.py:86
 msgid "Network manager module is already started!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
-#: network-applet.py:304
+#: network-applet.py:322
 msgid "Firewall..."
 msgstr "Güvenlik Duvarı..."
 
-#: network-applet.py:305
+#: network-applet.py:323
 msgid "Edit Connections..."
 msgstr "Bağlantıları Düzenle..."
 
-#: network-applet.py:308
+#: network-applet.py:326
+msgid "Show Notifications"
+msgstr "Uyarıları Göster"
+
+#: network-applet.py:328
 msgid "Icon Per Device"
 msgstr "Her Aygıtın Kendi Simgesi"
 
-#: network-applet.py:309
+#: network-applet.py:329
 msgid "Single Icon"
 msgstr "Tek Simge"
 
-#: network-applet.py:357
+#: network-applet.py:395
 msgid "Should network-applet start automatically when you login?"
 msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
 
-#: network-applet.py:526
+#: network-applet.py:575
 msgid "Network Applet"
 msgstr "Ağ Programcığı"
 

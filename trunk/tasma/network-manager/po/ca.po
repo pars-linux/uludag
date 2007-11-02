@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-24 16:51+0300\n"
+"POT-Creation-Date: 2007-11-02 16:52+0200\n"
 "PO-Revision-Date: 2007-04-02 17:31+0200\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -42,19 +42,33 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 "No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
 
-#: autoswitch.py:75
+#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
+#: network-manager.py:91
+msgid "Network Manager"
+msgstr "Arranjador de la xarxa"
+
+#: autoswitch.py:81
+#, fuzzy
+msgid "No scan result"
+msgstr "Resultats de l'exploració:"
+
+#: autoswitch.py:117
 #, python-format
-msgid "Profile '%s' matched."
+msgid "Profile <b>%s</b> matched."
 msgstr ""
 
-#: autoswitch.py:93
+#: autoswitch.py:121
+msgid "There is no matched profile"
+msgstr ""
+
+#: autoswitch.py:127
 #, fuzzy, python-format
-msgid "Connecting to '%s' ..."
+msgid "Connecting to <b>%s</b> ..."
 msgstr "Edita les connexions..."
 
-#: autoswitch.py:96
+#: autoswitch.py:131
 #, fuzzy, python-format
-msgid "Already connected to '%s'"
+msgid "Already connected to <b>%s</b>"
 msgstr "Edita les connexions..."
 
 #: connection.py:27
@@ -162,20 +176,20 @@ msgstr "Nom dels servidors"
 msgid "Automatic"
 msgstr "Automàtic"
 
-#: connection.py:532
+#: connection.py:534
 msgid "Configure network connection"
 msgstr "Configura la connexió de la xarxa"
 
-#: comariface.py:171
+#: comariface.py:174
 msgid "Waiting COMAR..."
 msgstr "Cal esperar el servei de COMAR..."
 
-#: comariface.py:172
+#: comariface.py:175
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
 msgstr ""
 "La connexió a COMAR s'ha tallat sense inesperadament. Mirem de reconnectar..."
 
-#: comariface.py:191 comariface.py:208 network-applet.py:113
+#: comariface.py:194 comariface.py:211 network-applet.py:114
 msgid ""
 "Cannot connect to the COMAR! If it is not running you should start it with "
 "the 'service comar start' command in a root console."
@@ -184,11 +198,11 @@ msgstr ""
 "engear amb el comandament 'service comar start' com a arrel d'ençà d'una "
 "terminal"
 
-#: comariface.py:312
+#: comariface.py:315
 msgid "You are not allowed to change network settings."
 msgstr ""
 
-#: comariface.py:392
+#: comariface.py:395
 msgid "new connection"
 msgstr "nova connexió"
 
@@ -226,7 +240,7 @@ msgstr "Esborre la connexió?"
 msgid "No device!"
 msgstr "Ho sent. No hi ha cap dispositiu"
 
-#: browser.py:394 network-applet.py:491
+#: browser.py:394 network-applet.py:541
 msgid "New connection"
 msgstr "Nova connexió"
 
@@ -234,7 +248,7 @@ msgstr "Nova connexió"
 msgid "Name Service Settings"
 msgstr "Nom dels arranjaments del servei (DNS)"
 
-#: browser.py:404 network-applet.py:306
+#: browser.py:404 network-applet.py:324
 #, fuzzy
 msgid "Connect Automatically"
 msgstr "Automàtic"
@@ -243,45 +257,45 @@ msgstr "Automàtic"
 msgid "Try Auto Connect on startup"
 msgstr ""
 
-#: browser.py:474
+#: browser.py:475
 msgid "Network Connections Help"
 msgstr "Ajut per a la connexió de la xarxa"
-
-#: network-manager.py:34 network-manager.py:90
-msgid "Network Manager"
-msgstr "Arranjador de la xarxa"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
 msgstr ""
 
-#: network-manager.py:85
+#: network-manager.py:86
 msgid "Network manager module is already started!"
 msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
 
-#: network-applet.py:304
+#: network-applet.py:322
 msgid "Firewall..."
 msgstr "Tallafocs..."
 
-#: network-applet.py:305
+#: network-applet.py:323
 msgid "Edit Connections..."
 msgstr "Edita les connexions..."
 
-#: network-applet.py:308
+#: network-applet.py:326
+msgid "Show Notifications"
+msgstr ""
+
+#: network-applet.py:328
 msgid "Icon Per Device"
 msgstr "Icona per dispositiu"
 
-#: network-applet.py:309
+#: network-applet.py:329
 msgid "Single Icon"
 msgstr "Icona simple"
 
-#: network-applet.py:357
+#: network-applet.py:395
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 "Que vols que el programa de gestió de xarxa s'engegue automàticament en "
 "entrar al sistema?"
 
-#: network-applet.py:526
+#: network-applet.py:575
 msgid "Network Applet"
 msgstr ""
 
