@@ -1,0 +1,12 @@
+FILE(REMOVE
+"authdialog.moc"
+"authdialogui.cpp"
+"authdialogui.moc.cpp"
+"authdialogui.h"
+"policykit-kde.pdb"
+"policykit-kde"
+"CMakeFiles/policykit-kde.dir/authdialog.o"
+"CMakeFiles/policykit-kde.dir/main.o"
+"CMakeFiles/policykit-kde.dir/authdialogui.o"
+"CMakeFiles/policykit-kde.dir/authdialogui.moc.o"
+)
