@@ -12,6 +12,7 @@
 
 import optparse
 
+import os
 import gettext
 __trans = gettext.translation('pisi', fallback=True)
 _ = __trans.ugettext
@@ -74,13 +75,10 @@ expanded to package names.
 
         self.parser.add_option_group(group)
 
-    def exclude_from(self, packages):
-        import os
-
+    def exclude_from(self, packages, exfrom):
         patterns = []
-        f = ctx.get_option('exclude_from')
-        if os.path.exists(f):
-            for line in open(f, "r").readlines():
+        if os.path.exists(exfrom):
+            for line in open(exfrom, "r").readlines():
                 if not line.startswith('#') and not line == '\n':
                     patterns.append(line.strip())
             if patterns:
@@ -131,11 +129,13 @@ expanded to package names.
         if packages == []:
             packages = pisi.api.list_installed()
 
+        if os.path.exists(ctx.const.blacklist):
+            packages = self.exclude_from(packages, ctx.const.blacklist)
+
         if ctx.get_option('exclude_from'):
-            packages = self.exclude_from(packages)
+            packages = self.exclude_from(packages, ctx.get_option('exclude_from'))
 
         if ctx.get_option('exclude'):
-            patterns = ctx.get_option('exclude')
-            packages = self.exclude(packages, patterns)
+            packages = self.exclude(packages, ctx.get_option('exclude'))
 
         pisi.api.upgrade(packages)
