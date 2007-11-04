@@ -7,6 +7,7 @@
 #include "kglobal.h"
 #include "kiconloader.h"
 #include "kcombobox.h"
+#include "kpushbutton.h"
 
 /* 
  *  Constructs a AuthDialog which is a child of 'parent', with the 
@@ -20,6 +21,8 @@ AuthDialog::AuthDialog( QWidget* parent,  const char* name, bool modal, WFlags f
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
+    pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
+    pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
 
     cbUsers->hide();
 }
@@ -34,7 +37,7 @@ AuthDialog::~AuthDialog()
 
 void AuthDialog::setHeader(const QString &header)
 {
-    lblHeader->setText(header);
+    lblHeader->setText("<h3>" + header + "</h3>");
 }
 
 void AuthDialog::setContent(const QString &msg)
@@ -42,3 +45,12 @@ void AuthDialog::setContent(const QString &msg)
     lblContent->setText(msg);
 }
 
+void AuthDialog::showUsersCombo()
+{
+    cbUsers->show();
+}
+
+void AuthDialog::hideUsersCombo()
+{
+    cbUsers->hide();
+}
