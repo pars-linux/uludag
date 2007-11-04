@@ -12,6 +12,8 @@ public:
 
     void setContent(const QString &);
     void setHeader(const QString &);
+    void showUsersCombo();
+    void hideUsersCombo();
 
 };
 
