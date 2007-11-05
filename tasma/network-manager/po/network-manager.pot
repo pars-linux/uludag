@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-02 16:52+0200\n"
+"POT-Creation-Date: 2007-11-05 16:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91
+#: network-manager.py:91 network-applet.py:538
 msgid "Network Manager"
 msgstr ""
 
@@ -230,7 +230,7 @@ msgstr ""
 msgid "No device!"
 msgstr ""
 
-#: browser.py:394 network-applet.py:541
+#: browser.py:394 network-applet.py:570
 msgid "New connection"
 msgstr ""
 
@@ -238,7 +238,7 @@ msgstr ""
 msgid "Name Service Settings"
 msgstr ""
 
-#: browser.py:404 network-applet.py:324
+#: browser.py:404 network-applet.py:329
 msgid "Connect Automatically"
 msgstr ""
 
@@ -258,31 +258,52 @@ msgstr ""
 msgid "Network manager module is already started!"
 msgstr ""
 
-#: network-applet.py:322
+#: network-applet.py:327
 msgid "Firewall..."
 msgstr ""
 
-#: network-applet.py:323
+#: network-applet.py:328
 msgid "Edit Connections..."
 msgstr ""
 
-#: network-applet.py:326
+#: network-applet.py:331
 msgid "Show Notifications"
 msgstr ""
 
-#: network-applet.py:328
+#: network-applet.py:333
 msgid "Icon Per Device"
 msgstr ""
 
-#: network-applet.py:329
+#: network-applet.py:334
 msgid "Single Icon"
 msgstr ""
 
-#: network-applet.py:395
+#: network-applet.py:401
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 
-#: network-applet.py:575
+#: network-applet.py:514
+#, python-format
+msgid "Connecting to <b>%s</b>"
+msgstr ""
+
+#: network-applet.py:519
+#, python-format
+msgid "Connected to <b>%s</b>"
+msgstr ""
+
+#: network-applet.py:525
+#, python-format
+msgid ""
+"Connection failed \n"
+"<b>%s</b>"
+msgstr ""
+
+#: network-applet.py:527
+msgid "You are offline now"
+msgstr ""
+
+#: network-applet.py:604
 msgid "Network Applet"
 msgstr ""
 
