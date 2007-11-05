@@ -234,9 +234,12 @@ comlink = Comlink()
 
 
 class Icons:
-    def _pix(self, name):
-        img = QImage(locate("data", "network-manager/" + name))
+    def _pix(self, name, justGetPath=False):
+        path= locate("data", "network-manager/" + name)
+        img = QImage(path)
         img = img.smoothScale(24, 24)
+        if justGetPath:
+            return path
         return QPixmap(img)
     
     def load_icons(self):
@@ -264,6 +267,8 @@ class Icons:
             state = "down"
         return self.iconmap.get("%s-%s" % (type, state))
 
+    def getPath(self,icon):
+        return KGlobal.iconLoader().iconPath(icon, KIcon.Desktop, True)
 
 icons = Icons()
 
@@ -359,12 +364,13 @@ class Applet:
     
     def updateIcons(self):
         for item in self.trays:
-            item.updateIcon()
+            item.updateIcon(self.notifier)
     
     def setNotify(self, id):
         if self.showNotifications:
             self.config.writeEntry("ShowNotifications", False)
             self.autoSwitch.setNotifier(False)
+            self.notifier.close()
         else:
             self.config.writeEntry("ShowNotifications", True)
         self.showNotifications = self.config.readBoolEntry("ShowNotifications",True)
@@ -464,6 +470,7 @@ class NetTray(KSystemTray):
         self.dev = dev
         if dev:
             QToolTip.add(self, dev.devname)
+        self.notifier = parent.notifier
         self.updateIcon()
 
     def getPos(self):
@@ -471,7 +478,7 @@ class NetTray(KSystemTray):
         screen = QDesktopWidget()
         incr = 0
         if pt.y() < screen.screenGeometry().height()/2 and pt.y()<self.height():
-            incr = self.width()
+            incr = self.width() - 4
         elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
             incr = 0
         else:
@@ -482,7 +489,9 @@ class NetTray(KSystemTray):
         kded = dcopext.DCOPApp("kded", self.dcop)
         kded.networkstatus.setNetworkStatus("COMARNetworkStatus", status)
 
-    def updateIcon(self):
+    def updateIcon(self,notifier=None):
+        if notifier:
+            self.notifier = notifier
         if self.dev:
             for conn in self.dev.connections.values():
                 script = conn.script
@@ -496,19 +505,39 @@ class NetTray(KSystemTray):
                     return
         else:
             script = "net-tools"
+            lastMessage = None
             for dev in comlink.devices.values():
                 for conn in dev.connections.values():
+                    if not conn.message == None:
+                        lastMessage = conn.message
                     if conn.state == "connecting":
+                        self.notify(str(i18n("Connecting to <b>%s</b>" % conn.name)),"connect_creating")
                         self.setPixmap(icons.get_state(script, "connecting"))
                         self.updateNetworkStatus(self.Establishing)
                         return
                     elif conn.state == "up":
+                        self.notify(str(i18n("Connected to <b>%s</b>" % conn.name)),"connect_established")
                         self.setPixmap(icons.get_state(script, "up"))
                         self.updateNetworkStatus(self.Online)
                         return
+
+        if lastMessage:
+            self.notify(str(i18n("Connection failed \n<b>%s</b>" % lastMessage)),"connect_no")
+        else:
+            self.notify(str(i18n("You are offline now")),"connect_no")
         self.setPixmap(icons.get_state(script, "down"))
         self.updateNetworkStatus(self.Offline)
-    
+
+    def notify(self,message,icon=None):
+        if self.notifier and self.applet.showNotifications:
+            if icon:
+                icon = str(icons.getPath(icon))
+            else:
+                icon = str(icons.getPath('network'))
+            self.notifier.clear_actions()
+            self.notifier.update(str(i18n("Network Manager")),message,icon)
+            self.notifier.show()
+
     def appendConns(self, menu, dev, idx):
         conn_keys = dev.connections.keys()
         conn_keys.sort(reverse=True)

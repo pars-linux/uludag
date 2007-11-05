@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-02 16:52+0200\n"
+"POT-Creation-Date: 2007-11-05 16:20+0200\n"
 "PO-Revision-Date: 2007-04-02 17:31+0200\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -43,7 +43,7 @@ msgstr ""
 "No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91
+#: network-manager.py:91 network-applet.py:538
 msgid "Network Manager"
 msgstr "Arranjador de la xarxa"
 
@@ -240,7 +240,7 @@ msgstr "Esborre la connexió?"
 msgid "No device!"
 msgstr "Ho sent. No hi ha cap dispositiu"
 
-#: browser.py:394 network-applet.py:541
+#: browser.py:394 network-applet.py:570
 msgid "New connection"
 msgstr "Nova connexió"
 
@@ -248,7 +248,7 @@ msgstr "Nova connexió"
 msgid "Name Service Settings"
 msgstr "Nom dels arranjaments del servei (DNS)"
 
-#: browser.py:404 network-applet.py:324
+#: browser.py:404 network-applet.py:329
 #, fuzzy
 msgid "Connect Automatically"
 msgstr "Automàtic"
@@ -269,33 +269,54 @@ msgstr ""
 msgid "Network manager module is already started!"
 msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
 
-#: network-applet.py:322
+#: network-applet.py:327
 msgid "Firewall..."
 msgstr "Tallafocs..."
 
-#: network-applet.py:323
+#: network-applet.py:328
 msgid "Edit Connections..."
 msgstr "Edita les connexions..."
 
-#: network-applet.py:326
+#: network-applet.py:331
 msgid "Show Notifications"
 msgstr ""
 
-#: network-applet.py:328
+#: network-applet.py:333
 msgid "Icon Per Device"
 msgstr "Icona per dispositiu"
 
-#: network-applet.py:329
+#: network-applet.py:334
 msgid "Single Icon"
 msgstr "Icona simple"
 
-#: network-applet.py:395
+#: network-applet.py:401
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
 "Que vols que el programa de gestió de xarxa s'engegue automàticament en "
 "entrar al sistema?"
 
-#: network-applet.py:575
+#: network-applet.py:514
+#, fuzzy, python-format
+msgid "Connecting to <b>%s</b>"
+msgstr "Edita les connexions..."
+
+#: network-applet.py:519
+#, fuzzy, python-format
+msgid "Connected to <b>%s</b>"
+msgstr "Edita les connexions..."
+
+#: network-applet.py:525
+#, fuzzy, python-format
+msgid ""
+"Connection failed \n"
+"<b>%s</b>"
+msgstr "Edita les connexions..."
+
+#: network-applet.py:527
+msgid "You are offline now"
+msgstr ""
+
+#: network-applet.py:604
 msgid "Network Applet"
 msgstr ""
 

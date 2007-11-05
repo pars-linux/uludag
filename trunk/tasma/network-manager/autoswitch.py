@@ -23,7 +23,7 @@ class autoSwitch:
         self.notifier = False
         self.iconPath = ''
         if notifier:
-            if pynotify.init('Network-Manager'):
+            if pynotify.init('autoswitch'):
                 self.notifier = pynotify
         if not comarLink:
             self.comarLink = comar.Link()
