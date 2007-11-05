@@ -5,6 +5,7 @@
 #include <kapplication.h>
 
 #include "authdialog.h"
+#include "policykitkde.h"
 
 int main (int argc, char *argv[])
 {
@@ -16,12 +17,6 @@ int main (int argc, char *argv[])
 
     KApplication app;
 
-    AuthDialog dia;
-    dia.setHeader(QString("deneme"));
-    dia.setContent(QString("blah blah blah!"));
-    app.setMainWidget(&dia);
-
-    dia.exec();
-
+    PolicyKitKDE pkKDE;
     return app.exec();
 }
