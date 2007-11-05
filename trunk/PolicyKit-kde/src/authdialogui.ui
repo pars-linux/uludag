@@ -28,7 +28,7 @@
         <property name="resizeMode">
             <enum>Minimum</enum>
         </property>
-        <widget class="QLayoutWidget" row="5" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -105,7 +105,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="5" colspan="1">
+        <widget class="QLayoutWidget" row="0" column="0" rowspan="4" colspan="1">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -163,55 +163,17 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QCheckBox" row="3" column="1">
-            <property name="name">
-                <cstring>cbRemember</cstring>
-            </property>
-            <property name="text">
-                <string>Remember authorization</string>
-            </property>
-        </widget>
-        <widget class="QLayoutWidget" row="4" column="1">
-            <property name="name">
-                <cstring>layout4_2</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer4</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Fixed</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>16</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cbSession</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="text">
-                        <string>For this session only</string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
         <widget class="KComboBox" row="1" column="1">
+            <item>
+                <property name="text">
+                    <string>Select User...</string>
+                </property>
+            </item>
             <property name="name">
                 <cstring>cbUsers</cstring>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Select a user...</string>
             </property>
         </widget>
         <widget class="QLayoutWidget" row="0" column="1">
@@ -230,7 +192,7 @@
                         <string>&lt;h3&gt;&lt;b&gt;Header is here! &lt;/b&gt;&lt;/h3&gt;</string>
                     </property>
                     <property name="alignment">
-                        <set>AlignTop|AlignLeft</set>
+                        <set>WordBreak|AlignTop|AlignLeft</set>
                     </property>
                 </widget>
                 <widget class="QLabel">
@@ -243,6 +205,62 @@
                     <property name="alignment">
                         <set>WordBreak|AlignTop|AlignLeft</set>
                     </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="3" column="1">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>cbRemember</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Remember authorization</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layoutSession</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer4</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Fixed</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>16</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>cbSession</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>For this session only</string>
+                            </property>
+                        </widget>
+                    </hbox>
                 </widget>
             </vbox>
         </widget>
