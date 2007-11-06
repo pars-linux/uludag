@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-05 16:20+0200\n"
+"POT-Creation-Date: 2007-11-06 12:19+0200\n"
 "PO-Revision-Date: 2007-06-19 16:21+0300\n"
 "Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
 "Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91 network-applet.py:538
+#: network-manager.py:91 network-applet.py:539 network-applet.py:551
 msgid "Network Manager"
 msgstr "Netzwerk-Manager"
 
@@ -69,7 +69,7 @@ msgstr "Verbindungen bearbeiten..."
 
 #: autoswitch.py:131
 #, fuzzy, python-format
-msgid "Already connected to <b>%s</b>"
+msgid "Connected to <b>%s</b>"
 msgstr "Verbindungen bearbeiten..."
 
 #: connection.py:27
@@ -242,7 +242,7 @@ msgstr "Verbindung löschen?"
 msgid "No device!"
 msgstr "Kein Gerät!"
 
-#: browser.py:394 network-applet.py:570
+#: browser.py:394 network-applet.py:583
 msgid "New connection"
 msgstr "Neue Verbindung"
 
@@ -296,28 +296,28 @@ msgid "Should network-applet start automatically when you login?"
 msgstr ""
 "Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
 
-#: network-applet.py:514
-#, fuzzy, python-format
-msgid "Connecting to <b>%s</b>"
+#: network-applet.py:516
+#, fuzzy
+msgid "Connecting to <b>%1</b> ..."
 msgstr "Verbindungen bearbeiten..."
 
-#: network-applet.py:519
-#, fuzzy, python-format
-msgid "Connected to <b>%s</b>"
-msgstr "Verbindungen bearbeiten..."
-
-#: network-applet.py:525
-#, fuzzy, python-format
-msgid ""
-"Connection failed \n"
-"<b>%s</b>"
+#: network-applet.py:521
+#, fuzzy
+msgid "Connected to <b>%1</b>"
 msgstr "Verbindungen bearbeiten..."
 
 #: network-applet.py:527
+#, fuzzy
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr "Verbindungen bearbeiten..."
+
+#: network-applet.py:529
 msgid "You are offline now"
 msgstr ""
 
-#: network-applet.py:604
+#: network-applet.py:617
 msgid "Network Applet"
 msgstr "Netzwerk Applet"
 
@@ -344,6 +344,14 @@ msgstr "Name-Server hinzufügen"
 #: nameconf.py:135
 msgid "Name server:"
 msgstr "Name-Server:"
+
+#, fuzzy
+#~ msgid "Already connected to <b>%s</b>"
+#~ msgstr "Verbindungen bearbeiten..."
+
+#, fuzzy
+#~ msgid "Connecting to <b>%s</b>"
+#~ msgstr "Verbindungen bearbeiten..."
 
 #, fuzzy
 #~ msgid "Scan and Connect..."

@@ -461,7 +461,7 @@ class NetTray(KSystemTray):
     def __init__(self, parent, dev=None):
         KSystemTray.__init__(self)
         self.dcop = parent.app.dcopClient()
-        
+        self.warnNotifier = None
         self.setPixmap(self.loadIcon("network"))
         menu = self.contextMenu()
         parent.setMenu(menu)
@@ -471,6 +471,7 @@ class NetTray(KSystemTray):
         if dev:
             QToolTip.add(self, dev.devname)
         self.notifier = parent.notifier
+        self.lastMessage = None
         self.updateIcon()
 
     def getPos(self):
@@ -489,6 +490,7 @@ class NetTray(KSystemTray):
         kded = dcopext.DCOPApp("kded", self.dcop)
         kded.networkstatus.setNetworkStatus("COMARNetworkStatus", status)
 
+
     def updateIcon(self,notifier=None):
         if notifier:
             self.notifier = notifier
@@ -505,36 +507,47 @@ class NetTray(KSystemTray):
                     return
         else:
             script = "net-tools"
-            lastMessage = None
+            self.lastMessage = None
             for dev in comlink.devices.values():
                 for conn in dev.connections.values():
                     if not conn.message == None:
-                        lastMessage = conn.message
+                        self.lastMessage = conn.message
                     if conn.state == "connecting":
-                        self.notify(str(i18n("Connecting to <b>%s</b>" % conn.name)),"connect_creating")
+                        self.notify(str(i18n("Connecting to <b>%1</b> ...").arg(conn.name)),"connect_creating")
                         self.setPixmap(icons.get_state(script, "connecting"))
                         self.updateNetworkStatus(self.Establishing)
                         return
                     elif conn.state == "up":
-                        self.notify(str(i18n("Connected to <b>%s</b>" % conn.name)),"connect_established")
+                        self.notify(str(i18n("Connected to <b>%1</b>").arg(conn.name)),"connect_established")
                         self.setPixmap(icons.get_state(script, "up"))
                         self.updateNetworkStatus(self.Online)
                         return
 
-        if lastMessage:
-            self.notify(str(i18n("Connection failed \n<b>%s</b>" % lastMessage)),"connect_no")
+        if self.lastMessage:
+            self.notify(str(i18n("Connection failed \n<b>%1</b>").arg(unicode(self.lastMessage))),"connect_no",True)
         else:
             self.notify(str(i18n("You are offline now")),"connect_no")
         self.setPixmap(icons.get_state(script, "down"))
         self.updateNetworkStatus(self.Offline)
 
-    def notify(self,message,icon=None):
+    def notify(self,message,icon='network',warning=False):
         if self.notifier and self.applet.showNotifications:
-            if icon:
-                icon = str(icons.getPath(icon))
+            icon = str(icons.getPath(icon))
+            if warning:
+                self.notifier.close()
+                if not self.warnNotifier:
+                    self.warnNotifier = pynotify.Notification(str(i18n("Network Manager")),message,icon)
+                self.notifier = self.warnNotifier 
+                self.notifier.set_urgency(pynotify.URGENCY_CRITICAL)
             else:
-                icon = str(icons.getPath('network'))
+                if self.warnNotifier:
+                    self.warnNotifier.close()
+                self.notifier = self.applet.notifier
+            pos = self.getPos()
+            self.notifier.set_hint("x",pos['x'])
+            self.notifier.set_hint("y",pos['y'])
             self.notifier.clear_actions()
+            self.notifier.set_timeout(4500)
             self.notifier.update(str(i18n("Network Manager")),message,icon)
             self.notifier.show()
 

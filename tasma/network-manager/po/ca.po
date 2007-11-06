@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-05 16:20+0200\n"
+"POT-Creation-Date: 2007-11-06 12:19+0200\n"
 "PO-Revision-Date: 2007-04-02 17:31+0200\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -43,7 +43,7 @@ msgstr ""
 "No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91 network-applet.py:538
+#: network-manager.py:91 network-applet.py:539 network-applet.py:551
 msgid "Network Manager"
 msgstr "Arranjador de la xarxa"
 
@@ -68,7 +68,7 @@ msgstr "Edita les connexions..."
 
 #: autoswitch.py:131
 #, fuzzy, python-format
-msgid "Already connected to <b>%s</b>"
+msgid "Connected to <b>%s</b>"
 msgstr "Edita les connexions..."
 
 #: connection.py:27
@@ -240,7 +240,7 @@ msgstr "Esborre la connexió?"
 msgid "No device!"
 msgstr "Ho sent. No hi ha cap dispositiu"
 
-#: browser.py:394 network-applet.py:570
+#: browser.py:394 network-applet.py:583
 msgid "New connection"
 msgstr "Nova connexió"
 
@@ -295,28 +295,28 @@ msgstr ""
 "Que vols que el programa de gestió de xarxa s'engegue automàticament en "
 "entrar al sistema?"
 
-#: network-applet.py:514
-#, fuzzy, python-format
-msgid "Connecting to <b>%s</b>"
+#: network-applet.py:516
+#, fuzzy
+msgid "Connecting to <b>%1</b> ..."
 msgstr "Edita les connexions..."
 
-#: network-applet.py:519
-#, fuzzy, python-format
-msgid "Connected to <b>%s</b>"
-msgstr "Edita les connexions..."
-
-#: network-applet.py:525
-#, fuzzy, python-format
-msgid ""
-"Connection failed \n"
-"<b>%s</b>"
+#: network-applet.py:521
+#, fuzzy
+msgid "Connected to <b>%1</b>"
 msgstr "Edita les connexions..."
 
 #: network-applet.py:527
+#, fuzzy
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr "Edita les connexions..."
+
+#: network-applet.py:529
 msgid "You are offline now"
 msgstr ""
 
-#: network-applet.py:604
+#: network-applet.py:617
 msgid "Network Applet"
 msgstr ""
 
@@ -343,6 +343,14 @@ msgstr "Afegeix un nom de servidor"
 #: nameconf.py:135
 msgid "Name server:"
 msgstr "Nom del servidor:"
+
+#, fuzzy
+#~ msgid "Already connected to <b>%s</b>"
+#~ msgstr "Edita les connexions..."
+
+#, fuzzy
+#~ msgid "Connecting to <b>%s</b>"
+#~ msgstr "Edita les connexions..."
 
 #, fuzzy
 #~ msgid "Scan and Connect..."
