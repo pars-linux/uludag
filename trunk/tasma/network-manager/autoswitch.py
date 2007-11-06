@@ -128,7 +128,7 @@ class autoSwitch:
             self.notify(m % profileName)
             comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
         else:
-            m = i18n("Already connected to <b>%s</b>")
+            m = i18n("Connected to <b>%s</b>")
             self.notify(m % profileName)
 
 if __name__=="__main__":

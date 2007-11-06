@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-05 16:20+0200\n"
+"POT-Creation-Date: 2007-11-06 12:19+0200\n"
 "PO-Revision-Date: 2007-07-11 20:18+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "COMAR."
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91 network-applet.py:538
+#: network-manager.py:91 network-applet.py:539 network-applet.py:551
 msgid "Network Manager"
 msgstr "Gestore della rete"
 
@@ -69,7 +69,7 @@ msgstr "Modifica connessioni..."
 
 #: autoswitch.py:131
 #, fuzzy, python-format
-msgid "Already connected to <b>%s</b>"
+msgid "Connected to <b>%s</b>"
 msgstr "Modifica connessioni..."
 
 #: connection.py:27
@@ -240,7 +240,7 @@ msgstr "Eliminazione connessione"
 msgid "No device!"
 msgstr "Nessun dispositivo!"
 
-#: browser.py:394 network-applet.py:570
+#: browser.py:394 network-applet.py:583
 msgid "New connection"
 msgstr "Nuova connessione"
 
@@ -293,28 +293,28 @@ msgstr "Icona singola"
 msgid "Should network-applet start automatically when you login?"
 msgstr "Desideri avviare l'applet di rete automaticamente al login?"
 
-#: network-applet.py:514
-#, fuzzy, python-format
-msgid "Connecting to <b>%s</b>"
+#: network-applet.py:516
+#, fuzzy
+msgid "Connecting to <b>%1</b> ..."
 msgstr "Modifica connessioni..."
 
-#: network-applet.py:519
-#, fuzzy, python-format
-msgid "Connected to <b>%s</b>"
-msgstr "Modifica connessioni..."
-
-#: network-applet.py:525
-#, fuzzy, python-format
-msgid ""
-"Connection failed \n"
-"<b>%s</b>"
+#: network-applet.py:521
+#, fuzzy
+msgid "Connected to <b>%1</b>"
 msgstr "Modifica connessioni..."
 
 #: network-applet.py:527
+#, fuzzy
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr "Modifica connessioni..."
+
+#: network-applet.py:529
 msgid "You are offline now"
 msgstr ""
 
-#: network-applet.py:604
+#: network-applet.py:617
 msgid "Network Applet"
 msgstr "Applet di rete"
 
@@ -341,6 +341,14 @@ msgstr "Aggiungi server dei nomi"
 #: nameconf.py:135
 msgid "Name server:"
 msgstr "Server dei nomi (DNS):"
+
+#, fuzzy
+#~ msgid "Already connected to <b>%s</b>"
+#~ msgstr "Modifica connessioni..."
+
+#, fuzzy
+#~ msgid "Connecting to <b>%s</b>"
+#~ msgstr "Modifica connessioni..."
 
 #, fuzzy
 #~ msgid "Scan and Connect..."

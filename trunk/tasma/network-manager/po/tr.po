@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-05 16:20+0200\n"
+"POT-Creation-Date: 2007-11-06 12:19+0200\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -40,7 +40,7 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91 network-applet.py:538
+#: network-manager.py:91 network-applet.py:539 network-applet.py:551
 msgid "Network Manager"
 msgstr "Ağ Yöneticisi"
 
@@ -64,8 +64,8 @@ msgstr "<b>%s</b> profiline bağlanıyor..."
 
 #: autoswitch.py:131
 #, python-format
-msgid "Already connected to <b>%s</b>"
-msgstr "<b>%s</b> profiline bağlı."
+msgid "Connected to <b>%s</b>"
+msgstr "<b>%s</b> profiline bağlandı"
 
 #: connection.py:27
 msgid "Channel"
@@ -233,7 +233,7 @@ msgstr "Bağlantıyı sil?"
 msgid "No device!"
 msgstr "Aygıt yok!"
 
-#: browser.py:394 network-applet.py:570
+#: browser.py:394 network-applet.py:583
 msgid "New connection"
 msgstr "Yeni bağlantı"
 
@@ -285,29 +285,27 @@ msgstr "Tek Simge"
 msgid "Should network-applet start automatically when you login?"
 msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
 
-#: network-applet.py:514
-#, python-format
-msgid "Connecting to <b>%s</b>"
-msgstr "<b>%s</b> profiline bağlanıyor..."
+#: network-applet.py:516
+msgid "Connecting to <b>%1</b> ..."
+msgstr "<b>%1</b> profiline bağlanıyor..."
 
-#: network-applet.py:519
-#, python-format
-msgid "Connected to <b>%s</b>"
-msgstr "<b>%s</b> profiline bağlandı"
-
-#: network-applet.py:525
-#, python-format
-msgid ""
-"Connection failed \n"
-"<b>%s</b>"
-msgstr "Bağlantı başarısız \n"
-"<b>%s</b>"
+#: network-applet.py:521
+msgid "Connected to <b>%1</b>"
+msgstr "<b>%1</b> profiline bağlandı"
 
 #: network-applet.py:527
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr ""
+"Bağlantı başarısız \n"
+"<b>%1</b>"
+
+#: network-applet.py:529
 msgid "You are offline now"
 msgstr "Şu anda bağlı değilsiniz"
 
-#: network-applet.py:604
+#: network-applet.py:617
 msgid "Network Applet"
 msgstr "Ağ Programcığı"
 

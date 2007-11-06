@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-05 16:20+0200\n"
+"POT-Creation-Date: 2007-11-06 12:19+0200\n"
 "PO-Revision-Date: 2007-05-31 00:29+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "présent."
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91 network-applet.py:538
+#: network-manager.py:91 network-applet.py:539 network-applet.py:551
 msgid "Network Manager"
 msgstr "Gestionnaire réseau"
 
@@ -69,7 +69,7 @@ msgstr "Éditer les connexions réseaux..."
 
 #: autoswitch.py:131
 #, fuzzy, python-format
-msgid "Already connected to <b>%s</b>"
+msgid "Connected to <b>%s</b>"
 msgstr "Éditer les connexions réseaux..."
 
 #: connection.py:27
@@ -241,7 +241,7 @@ msgstr "Supprimer la connexion ?"
 msgid "No device!"
 msgstr "Pas de périphérique!"
 
-#: browser.py:394 network-applet.py:570
+#: browser.py:394 network-applet.py:583
 msgid "New connection"
 msgstr "Créer une connexion"
 
@@ -294,28 +294,28 @@ msgstr "Une seule icône"
 msgid "Should network-applet start automatically when you login?"
 msgstr "Démarrer automatiquement l'applet réseau dès votre connexion ?"
 
-#: network-applet.py:514
-#, fuzzy, python-format
-msgid "Connecting to <b>%s</b>"
+#: network-applet.py:516
+#, fuzzy
+msgid "Connecting to <b>%1</b> ..."
 msgstr "Éditer les connexions réseaux..."
 
-#: network-applet.py:519
-#, fuzzy, python-format
-msgid "Connected to <b>%s</b>"
-msgstr "Éditer les connexions réseaux..."
-
-#: network-applet.py:525
-#, fuzzy, python-format
-msgid ""
-"Connection failed \n"
-"<b>%s</b>"
+#: network-applet.py:521
+#, fuzzy
+msgid "Connected to <b>%1</b>"
 msgstr "Éditer les connexions réseaux..."
 
 #: network-applet.py:527
+#, fuzzy
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr "Éditer les connexions réseaux..."
+
+#: network-applet.py:529
 msgid "You are offline now"
 msgstr ""
 
-#: network-applet.py:604
+#: network-applet.py:617
 msgid "Network Applet"
 msgstr "Applet Réseau"
 
@@ -342,6 +342,14 @@ msgstr "Ajouter un serveur de nom"
 #: nameconf.py:135
 msgid "Name server:"
 msgstr "Serveur de nom:"
+
+#, fuzzy
+#~ msgid "Already connected to <b>%s</b>"
+#~ msgstr "Éditer les connexions réseaux..."
+
+#, fuzzy
+#~ msgid "Connecting to <b>%s</b>"
+#~ msgstr "Éditer les connexions réseaux..."
 
 #, fuzzy
 #~ msgid "Scan and Connect..."
