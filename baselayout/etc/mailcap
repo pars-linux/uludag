@@ -90,6 +90,7 @@ image/*; gwenview '%s'; -n "$DISPLAY"
 application/illustrator; gimp '%s'; -n "$DISPLAY"
 
 # Text
+plain/text; kwrite '%s'; -n "$DISPLAY"
 text/*; kwrite '%s'; -n "$DISPLAY"
 application/txt; kwrite '%s'; -n "$DISPLAY"
 
