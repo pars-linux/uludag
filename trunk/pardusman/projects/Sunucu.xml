@@ -130,6 +130,7 @@
         <Package>splash-theme</Package>
         <Package>splashutils</Package>
         <Package>splashutils-misc</Package>
+        <Package>sqlite</Package>
         <Package>sqlite2</Package>
         <Package>subversion</Package>
         <Package>swig</Package>

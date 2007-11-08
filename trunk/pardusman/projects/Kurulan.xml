@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2007.3</Title>
+    <Title>Pardus 2007.3 Beta</Title>
     <WorkDir>/root/pardusman/InstallCD/</WorkDir>
     <ReleaseFiles>/root/CD-image/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/pardusman/pisi-index.xml.bz2">
@@ -52,7 +52,6 @@
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>freealut</SelectedPackage>
-        <SelectedPackage>frozen-bubble</SelectedPackage>
         <SelectedPackage>ftp</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gle</SelectedPackage>
@@ -206,16 +205,13 @@
         <Package>915resolution</Package>
         <Package>DirectFB</Package>
         <Package>IO-Socket-SSL</Package>
-        <Package>Locale-gettext</Package>
         <Package>Net-SSLeay</Package>
         <Package>PolicyKit</Package>
         <Package>PyKDE</Package>
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
-        <Package>SDL-Perl</Package>
         <Package>XML-Parser</Package>
         <Package>Xaw3d</Package>
-        <Package>YAML</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>accessrunner-firmware</Package>
@@ -370,7 +366,6 @@
         <Package>foomatic-filters</Package>
         <Package>freealut</Package>
         <Package>freetype</Package>
-        <Package>frozen-bubble</Package>
         <Package>ftp</Package>
         <Package>fuse</Package>
         <Package>fxload</Package>
@@ -596,6 +591,7 @@
         <Package>libmtp</Package>
         <Package>libnfsidmap</Package>
         <Package>libnjb</Package>
+        <Package>libnotify</Package>
         <Package>libogg</Package>
         <Package>liboil</Package>
         <Package>liboldX</Package>
@@ -611,6 +607,7 @@
         <Package>librsvg</Package>
         <Package>libsamplerate</Package>
         <Package>libsdl</Package>
+        <Package>libsexy</Package>
         <Package>libsigc++</Package>
         <Package>libsmbios</Package>
         <Package>libsndfile</Package>
@@ -625,6 +622,7 @@
         <Package>libvisual-plugins</Package>
         <Package>libvorbis</Package>
         <Package>libwmf</Package>
+        <Package>libwnck</Package>
         <Package>libwpd</Package>
         <Package>libwpg</Package>
         <Package>libwww</Package>
@@ -686,6 +684,8 @@
         <Package>nfs-utils</Package>
         <Package>nmap</Package>
         <Package>normalize</Package>
+        <Package>notification-daemon</Package>
+        <Package>notify-python</Package>
         <Package>nspr</Package>
         <Package>nss</Package>
         <Package>nss-mdns</Package>
@@ -761,13 +761,10 @@
         <Package>schedutils</Package>
         <Package>scons</Package>
         <Package>screen</Package>
-        <Package>sdl-gfx</Package>
         <Package>sdl-image</Package>
         <Package>sdl-mixer</Package>
         <Package>sdl-net</Package>
-        <Package>sdl-pango</Package>
         <Package>sdl-sound</Package>
-        <Package>sdl-ttf</Package>
         <Package>sdljump</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
