@@ -363,6 +363,8 @@ class Applet:
             tray = []
     
     def updateIcons(self):
+        if not self.notifier and self.showNotifications:
+            self.createNotifier(dry=True)
         for item in self.trays:
             item.updateIcon(self.notifier)
     
