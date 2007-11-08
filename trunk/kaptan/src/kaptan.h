@@ -13,6 +13,7 @@
 #define KAPTAN_H
 
 #include <kwizard.h>
+#include <kprocess.h>
 #include <comar.h>
 
 class KLocale;
@@ -38,6 +39,7 @@ protected:
 
 public slots:
     void aboutToQuit();
+    void migration(KProcess*, char*, int);
 
 private:
     KLocale *locale;
