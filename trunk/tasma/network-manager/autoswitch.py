@@ -89,7 +89,13 @@ class autoSwitch:
 
         link.Net.Link['wireless-tools'].connections()
         res = link.read_cmd()
-        _profiles = res.data.split('\n')
+        _profiles = res.data
+
+        # also if no profile go on again ...
+        if _profiles == '':
+            return
+        _profiles = _profiles.split('\n')
+        
         for profile in _profiles:
             try:
                 # Get profile details
