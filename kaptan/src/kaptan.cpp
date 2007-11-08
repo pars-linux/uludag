@@ -14,6 +14,8 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kpushbutton.h>
+#include <kmessagebox.h>
+#include <kprocess.h>
 #include <qcombobox.h>
 
 #include "welcome.h"
@@ -74,6 +76,12 @@ Kaptan::Kaptan(QWidget *parent, const char *name)
     addPage( goodbye, i18n("Congratulations"));
     setHelpEnabled(KWizard::page(i), false);
 
+    // migration tool integration
+    KProcess *mig = new KProcess();
+    *mig << locate("exe", "migration-users");
+    connect(mig, SIGNAL(receivedStdout(KProcess *, char *, int)), this, SLOT(migration(KProcess *, char *, int)));
+    mig->start(KProcess::DontCare, KProcess::Stdout);
+
     setFinishEnabled(KWizard::page(i), true);
 
     locale = new KLocale("kaptan");
@@ -132,6 +140,21 @@ void Kaptan::next()
         package->apply();
 
     KWizard::next();
+}
+
+void Kaptan::migration(KProcess* mig, char* buffer, int buflen)
+{
+    int migrationUsers;
+    sscanf(buffer, "%d", &migrationUsers);
+    if (migrationUsers>0)
+    {
+        if (KMessageBox::questionYesNo(this, tr2i18n("An existing operating system is found on your computer. Do you want to migrate files and settings from there?")) == QMessageBox::Yes)
+        {
+            KProcess migration;
+            migration << locate("exe", "migration");
+            migration.start(KProcess::DontCare);
+        }
+    }
 }
 
 #include "kaptan.moc"
