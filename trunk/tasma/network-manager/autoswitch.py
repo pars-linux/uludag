@@ -58,11 +58,13 @@ class autoSwitch:
         # Get Wireless Devices
         link.Net.Link['wireless-tools'].deviceList()
         res = link.read_cmd()
-        devices = res.data.split('\n')
+        devices = res.data
 
-        # If there is no device, go on
-        if not len(devices):
+        # If there is no wi-fi device, go on
+        if devices == '':
             return
+
+        devices = devices.split('\n')
 
         # Get current APs
         justEssIds = [ ]
