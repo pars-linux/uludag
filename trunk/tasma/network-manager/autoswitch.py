@@ -27,6 +27,7 @@ class autoSwitch:
                 self.notifier = pynotify
         if not comarLink:
             self.comarLink = comar.Link()
+            self.comarLink.localize()
         else:
             self.comarLink = comarLink
 
@@ -52,7 +53,7 @@ class autoSwitch:
             _notify.set_timeout(timeout)
         _notify.show()
 
-    def scanAndConnect(self,force=True):
+    def scanAndConnect(self,force=True,parentComarLink=None):
         link = self.comarLink
 
         # Get Wireless Devices
@@ -95,7 +96,7 @@ class autoSwitch:
         if _profiles == '':
             return
         _profiles = _profiles.split('\n')
-        
+
         for profile in _profiles:
             try:
                 # Get profile details
@@ -124,20 +125,18 @@ class autoSwitch:
         if possibleProfile:
             m = i18n("Profile <b>%s</b> matched.")
             self.notify(m % possibleProfile['name'])
-            self.connect(possibleProfile,force)
+            self.connect(possibleProfile,force,parentComarLink)
         else:
             self.notify(i18n("There is no matched profile"),FAIL)
 
-    def connect(self,profile,force=False):
-        comLink = comar.Link()
+    def connect(self,profile,force=False,comLink=None):
+        if not comLink:
+            comLink = comar.Link()
         profileName = profile['name']
         if not profile['state'].startswith('up') or force:
             m = i18n("Connecting to <b>%s</b> ...")
             self.notify(m % profileName)
             comLink.Net.Link['wireless-tools'].setState(name=profileName,state='up')
-        else:
-            m = i18n("Connected to <b>%s</b>")
-            self.notify(m % profileName)
 
 if __name__=="__main__":
     netClient = autoSwitch()
