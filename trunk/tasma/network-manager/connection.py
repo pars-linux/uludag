@@ -439,7 +439,7 @@ class Settings(QWidget):
         
         if "remote" in self.link.modes:
             remote = self.remote.text()
-            if conn == None or remote != self.conn.remote:
+            if conn == None or remote != self.conn.remote or flag:
                 script_object.setRemote(name=name, remote=remote, apmac=self.apmac)
         
         if "auth" in self.link.modes:
