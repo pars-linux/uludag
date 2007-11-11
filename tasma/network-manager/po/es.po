@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-06 12:19+0200\n"
-"PO-Revision-Date: 2007-11-04 11:16-0300\n"
+"PO-Revision-Date: 2007-11-10 16:07-0300\n"
 "Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
 "Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,9 +69,10 @@ msgid "Connecting to <b>%s</b> ..."
 msgstr "Conectando con <b>%s</b> ..."
 
 #: autoswitch.py:131
-#, fuzzy, python-format
+#, python-format
+# duda: con o "a", depende del contexto
 msgid "Connected to <b>%s</b>"
-msgstr "Conectando con <b>%s</b> ..."
+msgstr "Conectado con <b>%s</b> "
 
 #: connection.py:27
 msgid "Channel"
@@ -293,29 +294,28 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:401
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:516
-#, fuzzy
 msgid "Connecting to <b>%1</b> ..."
 msgstr "Conectando con <b>%s</b> ..."
 
 #: network-applet.py:521
-#, fuzzy
 msgid "Connected to <b>%1</b>"
-msgstr "Conectando con <b>%s</b> ..."
+msgstr "Conectado con <b>%s</b>"
 
 #: network-applet.py:527
-#, fuzzy
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
-msgstr "Conectando con <b>%s</b> ..."
+msgstr ""
+"Conexión fallado\n"
+"<b>%1</b>"
 
 #: network-applet.py:529
+# duda: favor revisar
 msgid "You are offline now"
-msgstr ""
+msgstr "Ud. se encuentra ahora fuera de línea"
 
 # Icono de la barra de tareas?
 # Icono de acceso rápido?
@@ -347,9 +347,3 @@ msgstr "Agregar Servidor de nombres"
 msgid "Name server:"
 msgstr "Servidor de nombres:"
 
-#~ msgid "Already connected to <b>%s</b>"
-#~ msgstr "Ya conectado con <b>%s</b>"
-
-#, fuzzy
-#~ msgid "Connecting to <b>%s</b>"
-#~ msgstr "Conectando con <b>%s</b> ..."
