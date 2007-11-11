@@ -515,12 +515,12 @@ class NetTray(KSystemTray):
                     if not conn.message == None:
                         self.lastMessage = conn.message
                     if conn.state == "connecting":
-                        self.notify(str(i18n("Connecting to <b>%1</b> ...").arg(conn.name)),"connect_creating")
+                        self.notify(str(i18n("Connecting to <b>%1</b> ...").arg(unicode(conn.name))),"connect_creating")
                         self.setPixmap(icons.get_state(script, "connecting"))
                         self.updateNetworkStatus(self.Establishing)
                         return
                     elif conn.state == "up":
-                        self.notify(str(i18n("Connected to <b>%1</b>").arg(conn.name)),"connect_established")
+                        self.notify(str(i18n("Connected to <b>%1</b>").arg(unicode(conn.name))),"connect_established")
                         self.setPixmap(icons.get_state(script, "up"))
                         self.updateNetworkStatus(self.Online)
                         return
@@ -539,7 +539,8 @@ class NetTray(KSystemTray):
                 self.notifier.close()
                 if not self.warnNotifier:
                     self.warnNotifier = pynotify.Notification(str(i18n("Network Manager")),message,icon)
-                self.notifier = self.warnNotifier 
+                self.notifier = self.warnNotifier
+                self.notifier.close()
                 self.notifier.set_urgency(pynotify.URGENCY_CRITICAL)
             else:
                 if self.warnNotifier:
