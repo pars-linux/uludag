@@ -14,7 +14,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="package-manager",
-    version="1.1.1",
+    version="1.1.2",
     author="Faik Uygur",
     author_email="faik@pardus.org.tr",
     url="http://www.pardus.org.tr/projeler/pisi/index.html",
