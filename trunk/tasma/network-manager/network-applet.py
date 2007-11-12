@@ -299,7 +299,7 @@ class Applet:
             self.notifier.set_hint("y",pos['y'])
             self.autoSwitch.setNotifier(self.notifier,iconPath)
         if self.autoConnect and not dry:
-            self.autoSwitch.scanAndConnect(force=False,parentComarLink=comlink.com)
+            self.autoSwitch.scanAndConnect(force=False)
 
     def fixQuit(self):
         self.config.sync()
@@ -348,7 +348,7 @@ class Applet:
             pos = self.trays[0].getPos()
             self.notifier.set_hint("x",pos['x'])
             self.notifier.set_hint("y",pos['y'])
-        self.autoSwitch.scanAndConnect(parentComarLink=comlink.com)
+        self.autoSwitch.scanAndConnect()
 
     def startManager(self):
         os.system("network-manager")
@@ -546,6 +546,7 @@ class NetTray(KSystemTray):
                 if self.warnNotifier:
                     self.warnNotifier.close()
                 self.notifier = self.applet.notifier
+                self.notifier.set_urgency(pynotify.URGENCY_NORMAL)
             pos = self.getPos()
             self.notifier.set_hint("x",pos['x'])
             self.notifier.set_hint("y",pos['y'])

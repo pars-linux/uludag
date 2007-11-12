@@ -349,12 +349,14 @@ class Settings(QWidget):
             self.name.edit.setText(unicode(conn.name))
             if conn.devname:
                 self.device.setText(conn.devname)
-            if conn.apmac:
-                self.apmac = conn.apmac
             self.device_uid = self.conn.devid
             if "remote" in self.link.modes:
                 if conn.remote:
                     self.remote.setText(conn.remote)
+                    if conn.apmac:
+                        self.apmac = conn.apmac
+                    else:
+                        self.apmac = ''
             if "net" in self.link.modes:
                 if conn.net_mode == "auto":
                     self.r1.setChecked(True)
