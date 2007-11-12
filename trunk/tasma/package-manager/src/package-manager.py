@@ -46,7 +46,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP("GUI for PiSi package manager")
-version = "1.1.1"
+version = "1.1.2"
 unremovable_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE','pisi', 'package-manager'])
 (install_state, remove_state, upgrade_state) = range(3)
 
@@ -56,7 +56,8 @@ def AboutData():
     about_data = KAboutData("package-manager", I18N_NOOP("Package Manager"), version, description, KAboutData.License_GPL,
                             "(C) 2005, 2006, 2007 UEKAE/TÜBİTAK", None, None)
 
-    about_data.addAuthor("Faik Uygur", I18N_NOOP("Developer and Current Maintainer"), "faik@pardus.org.tr")
+    about_data.addAuthor("Gökçen Eraslan", I18N_NOOP("Developer and Current Maintainer"), "gokcen@pardus.org.tr")
+    about_data.addAuthor("Faik Uygur", I18N_NOOP("Developer"), "faik@pardus.org.tr")
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Original Author"), "ismail@pardus.org.tr")
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
