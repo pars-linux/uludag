@@ -35,7 +35,7 @@ class autoSwitch:
         self.notifier = notifier
         self.iconPath = str(iconPath)
 
-    def notify(self,message,mtype=None,cancel=None,timeout=None):
+    def notify(self,message,mtype=SUCCESS,cancel=None,timeout=None):
         if not self.notifier:
             print message
             return
