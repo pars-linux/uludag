@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-06 12:19+0200\n"
-"PO-Revision-Date: 2007-06-03 22:17+0200\n"
+"PO-Revision-Date: 2007-11-12 20:16+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -51,28 +51,27 @@ msgid "Network Manager"
 msgstr "Netwerkbeheer"
 
 #: autoswitch.py:81
-#, fuzzy
 msgid "No scan result"
-msgstr "Scan resultaten:"
+msgstr "Geen scan resultaten"
 
 #: autoswitch.py:117
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr ""
+msgstr "Profiel <b>%s</b> komt overeen."
 
 #: autoswitch.py:121
 msgid "There is no matched profile"
-msgstr ""
+msgstr "Er is geen profiel dat overeen komt"
 
 #: autoswitch.py:127
-#, fuzzy, python-format
+#, python-format
 msgid "Connecting to <b>%s</b> ..."
-msgstr "Bewerk verbindingen..."
+msgstr "Verbinding maken met <b>%s</b> ..."
 
 #: autoswitch.py:131
-#, fuzzy, python-format
+#, python-format
 msgid "Connected to <b>%s</b>"
-msgstr "Bewerk verbindingen..."
+msgstr "Verbonden met <b>%s</b>"
 
 #: connection.py:27
 msgid "Channel"
@@ -259,13 +258,12 @@ msgid "Name Service Settings"
 msgstr "Naam dienst instellingen"
 
 #: browser.py:404 network-applet.py:329
-#, fuzzy
 msgid "Connect Automatically"
-msgstr "Automatisch"
+msgstr "Automatisch verbinden"
 
 #: browser.py:423
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Probeer automatisch te verbinden bij opstarten"
 
 #: browser.py:475
 msgid "Network Connections Help"
@@ -273,7 +271,7 @@ msgstr "Netwerkverbindingen hulp"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
-msgstr ""
+msgstr "Probeer automatisch te verbinden"
 
 #: network-manager.py:86
 msgid "Network manager module is already started!"
@@ -289,7 +287,7 @@ msgstr "Bewerk verbindingen..."
 
 #: network-applet.py:331
 msgid "Show Notifications"
-msgstr ""
+msgstr "Toon berichten"
 
 #: network-applet.py:333
 msgid "Icon Per Device"
@@ -304,25 +302,24 @@ msgid "Should network-applet start automatically when you login?"
 msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
 
 #: network-applet.py:516
-#, fuzzy
 msgid "Connecting to <b>%1</b> ..."
-msgstr "Bewerk verbindingen..."
+msgstr "Verbinden met <b>%1</b> ..."
 
 #: network-applet.py:521
-#, fuzzy
 msgid "Connected to <b>%1</b>"
-msgstr "Bewerk verbindingen..."
+msgstr "Verboden met <b>%1</b>"
 
 #: network-applet.py:527
-#, fuzzy
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
-msgstr "Bewerk verbindingen..."
+msgstr ""
+"Verbinden mislukt\n"
+"<b>%1</b>"
 
 #: network-applet.py:529
 msgid "You are offline now"
-msgstr ""
+msgstr "U bent nu offline"
 
 #: network-applet.py:617
 msgid "Network Applet"
@@ -354,14 +351,3 @@ msgstr "Voeg naamserver toe"
 msgid "Name server:"
 msgstr "Naamserver:"
 
-#, fuzzy
-#~ msgid "Already connected to <b>%s</b>"
-#~ msgstr "Bewerk verbindingen..."
-
-#, fuzzy
-#~ msgid "Connecting to <b>%s</b>"
-#~ msgstr "Bewerk verbindingen..."
-
-#, fuzzy
-#~ msgid "Scan and Connect..."
-#~ msgstr "Bewerk verbindingen..."
