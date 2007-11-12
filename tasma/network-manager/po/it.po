@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-06 12:19+0200\n"
-"PO-Revision-Date: 2007-07-11 20:18+0200\n"
+"PO-Revision-Date: 2007-11-12 20:40+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -49,28 +49,27 @@ msgid "Network Manager"
 msgstr "Gestore della rete"
 
 #: autoswitch.py:81
-#, fuzzy
 msgid "No scan result"
-msgstr "Risultati scansione:"
+msgstr "Nessun risultato dalla scansione"
 
 #: autoswitch.py:117
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr ""
+msgstr "Il profilo <b>%s</b> corrisponde."
 
 #: autoswitch.py:121
 msgid "There is no matched profile"
-msgstr ""
+msgstr "Nessun profilo corrispondente"
 
 #: autoswitch.py:127
-#, fuzzy, python-format
+#, python-format
 msgid "Connecting to <b>%s</b> ..."
-msgstr "Modifica connessioni..."
+msgstr "Connessione a <b>%s</b> ..."
 
 #: autoswitch.py:131
-#, fuzzy, python-format
+#, python-format
 msgid "Connected to <b>%s</b>"
-msgstr "Modifica connessioni..."
+msgstr "Conesso a <b>%s</b>"
 
 #: connection.py:27
 msgid "Channel"
@@ -249,13 +248,12 @@ msgid "Name Service Settings"
 msgstr "Impostazioni dei server dei nomi (DNS)"
 
 #: browser.py:404 network-applet.py:329
-#, fuzzy
 msgid "Connect Automatically"
-msgstr "Automatico"
+msgstr "Connessione automatica"
 
 #: browser.py:423
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Prova a connetterti in automatico all'avvio"
 
 #: browser.py:475
 msgid "Network Connections Help"
@@ -263,7 +261,7 @@ msgstr "Aiuto sulle connessioni di rete"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
-msgstr ""
+msgstr "Prova semplicemente a connetterti automaticamente"
 
 #: network-manager.py:86
 msgid "Network manager module is already started!"
@@ -279,7 +277,7 @@ msgstr "Modifica connessioni..."
 
 #: network-applet.py:331
 msgid "Show Notifications"
-msgstr ""
+msgstr "Mostra notifiche"
 
 #: network-applet.py:333
 msgid "Icon Per Device"
@@ -294,25 +292,24 @@ msgid "Should network-applet start automatically when you login?"
 msgstr "Desideri avviare l'applet di rete automaticamente al login?"
 
 #: network-applet.py:516
-#, fuzzy
 msgid "Connecting to <b>%1</b> ..."
-msgstr "Modifica connessioni..."
+msgstr "Connessione a <b>%1</b> ..."
 
 #: network-applet.py:521
-#, fuzzy
 msgid "Connected to <b>%1</b>"
-msgstr "Modifica connessioni..."
+msgstr "Connesso a <b>%1</b>"
 
 #: network-applet.py:527
-#, fuzzy
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
-msgstr "Modifica connessioni..."
+msgstr ""
+"Connessione fallita \n"
+"<b>%1</b>"
 
 #: network-applet.py:529
 msgid "You are offline now"
-msgstr ""
+msgstr "Sei attualmente non in linea"
 
 #: network-applet.py:617
 msgid "Network Applet"
@@ -342,14 +339,3 @@ msgstr "Aggiungi server dei nomi"
 msgid "Name server:"
 msgstr "Server dei nomi (DNS):"
 
-#, fuzzy
-#~ msgid "Already connected to <b>%s</b>"
-#~ msgstr "Modifica connessioni..."
-
-#, fuzzy
-#~ msgid "Connecting to <b>%s</b>"
-#~ msgstr "Modifica connessioni..."
-
-#, fuzzy
-#~ msgid "Scan and Connect..."
-#~ msgstr "Modifica connessioni..."
