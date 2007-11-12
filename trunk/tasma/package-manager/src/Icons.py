@@ -30,7 +30,7 @@ def getIconPath(icon, group=KIcon.Desktop):
         return iconPath
 
 def loadIconSet(name, group=KIcon.Toolbar):
-    return KGlobal.iconLoader().loadIconSet(name, group)
+    return KGlobal.iconLoader().loadIconSet(name, group, 0, False)
 
 def getIconSize():
     KGlobal.config().setGroup("DesktopIcons")
