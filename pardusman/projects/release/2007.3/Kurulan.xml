@@ -119,6 +119,7 @@
         <SelectedPackage>ksudoku</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
+        <SelectedPackage>linux-uvc</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
         <SelectedPackage>logrotate</SelectedPackage>
@@ -246,6 +247,7 @@
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
         <Package>atk</Package>
+        <Package>atl1</Package>
         <Package>atmel-firmware</Package>
         <Package>attr</Package>
         <Package>audiofile</Package>
