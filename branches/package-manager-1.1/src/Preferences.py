@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 
 # KDE/Qt imports
-from kdecore import i18n
+from kdecore import i18n, KIcon
 from kdeui import *
 from qt import *
 
@@ -19,12 +19,24 @@ import HelpDialog
 import PreferencesDialog
 import RepoDialog
 import Settings
+import Icons
 
 import pisi
 
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
         PreferencesDialog.PreferencesDialog.__init__(self, parent)
+        
+        #add icons to buttons
+        self.addButton.setIconSet(Icons.loadIconSet("add", KIcon.Small))
+        self.editButton.setIconSet(Icons.loadIconSet("configure", KIcon.Small))
+        self.removeButton.setIconSet(Icons.loadIconSet("remove", KIcon.Small))
+        self.moveUpButton.setIconSet(Icons.loadIconSet("up", KIcon.Small))
+        self.moveDownButton.setIconSet(Icons.loadIconSet("down", KIcon.Small))
+        self.buttonOk.setIconSet(Icons.loadIconSet("ok", KIcon.Small))
+        self.buttonCancel.setIconSet(Icons.loadIconSet("cancel", KIcon.Small))
+        self.buttonHelp.setIconSet(Icons.loadIconSet("help1", KIcon.Small))
+
         self.parent = parent
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
         self.connect(self.editButton, SIGNAL("clicked()"), self.editRepo)
