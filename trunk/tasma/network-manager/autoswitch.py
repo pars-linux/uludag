@@ -65,7 +65,7 @@ class autoSwitch:
         if devices == '':
             return
 
-        devices = devices.split()
+        devices = devices.split('\n')
         # Get current APs
         justEssIds = [ ]
         justMacAddr= [ ]
