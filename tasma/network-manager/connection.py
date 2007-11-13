@@ -353,10 +353,10 @@ class Settings(QWidget):
             if "remote" in self.link.modes:
                 if conn.remote:
                     self.remote.setText(conn.remote)
-                    if conn.apmac:
-                        self.apmac = conn.apmac
-                    else:
-                        self.apmac = ''
+                if conn.apmac:
+                    self.apmac = conn.apmac
+                else:
+                    self.apmac = ''
             if "net" in self.link.modes:
                 if conn.net_mode == "auto":
                     self.r1.setChecked(True)
