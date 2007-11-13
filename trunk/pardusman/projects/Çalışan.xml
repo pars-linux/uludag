@@ -117,6 +117,7 @@
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>kvm</SelectedPackage>
         <SelectedPackage>lbreakout2</SelectedPackage>
+        <SelectedPackage>linux-uvc</SelectedPackage>
         <SelectedPackage>lipstik</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
         <SelectedPackage>lsof</SelectedPackage>
@@ -232,6 +233,7 @@
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
         <Package>atk</Package>
+        <Package>atl1</Package>
         <Package>atmel-firmware</Package>
         <Package>attr</Package>
         <Package>audiofile</Package>
@@ -599,6 +601,7 @@
         <Package>libxml2</Package>
         <Package>libxslt</Package>
         <Package>linux-atm</Package>
+        <Package>linux-uvc</Package>
         <Package>lipstik</Package>
         <Package>lirc</Package>
         <Package>lirc-drivers</Package>
