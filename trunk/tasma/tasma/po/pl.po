@@ -2,12 +2,11 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: tasma\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-07 09:56+0300\n"
+"POT-Creation-Date: 2006-11-26 21:00+0200\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -73,8 +72,8 @@ msgid ""
 "start a configuration module by clicking (or double clicking) its icon."
 msgstr ""
 "Dla lepszej czytelności moduły pogrupowane są w kategorie. Wybierz kategorię "
-"po lewej by zobaczyć listę modułów tej kategorii. Wystarczy że klikniesz na ikonę modułu "
-"by go uruchomić."
+"po lewej by zobaczyć listę modułów tej kategorii. Wystarczy że klikniesz na "
+"ikonę modułu by go uruchomić."
 
 #: src/main.cpp:62
 msgid "TASMA - Pardus Configuration Center"

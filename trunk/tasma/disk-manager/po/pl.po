@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-07 09:56+0300\n"
+"POT-Creation-Date: 2007-06-20 20:03+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -54,7 +53,8 @@ msgstr "Pokaż Partycje Systemowe"
 
 #: src/diskform.py:142
 msgid "To update disk changes the manager must run as root"
-msgstr "By zapisać zmiany menedżer dysków musi działać z poziomu użytkownika root"
+msgstr ""
+"By zapisać zmiany menedżer dysków musi działać z poziomu użytkownika root"
 
 #: src/disk-manager.py:121
 msgid "User not in disk group !"

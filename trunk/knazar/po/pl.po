@@ -1,4 +1,5 @@
-﻿
+
+
 msgid ""
 msgstr ""
 "Project-Id-Version: knazar\n"

@@ -2,7 +2,7 @@
 # This file is put in the public domain.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -41,7 +41,8 @@ msgstr "Mój Komputer"
 
 #: sysinfo.cpp:105
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Katalogi, Dyski, Nośniki Wymienne, Informacje Systemowe i wiele więcej..."
+msgstr ""
+"Katalogi, Dyski, Nośniki Wymienne, Informacje Systemowe i wiele więcej..."
 
 #: sysinfo.cpp:113
 msgid "Common Folders"
