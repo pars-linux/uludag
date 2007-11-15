@@ -47,3 +47,12 @@ class SourceDBTestCase(testcase.TestCase):
         # FIXME: Add multi package from source to createrepo.py
         pkg = self.sourcedb.pkgtosrc("cracklib")
         assert pkg == "cracklib"
+
+    def testSearchPackage(self):
+        packages = self.sourcedb.search_spec(["open", "ssl"])
+        assert set(["openssl"]) == set(packages)
+
+        packages = self.sourcedb.search_spec(["bogo", "filter"], repo="pardus-2007-src")
+        assert set(["bogofilter"]) == set(packages)
+
+

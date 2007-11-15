@@ -71,3 +71,13 @@ class ComponentDBTestCase(testcase.TestCase):
 
         packages = self.componentdb.get_union_packages("applications", walk = True)
         assert "ncftp" and "lynx" and "cpulimit" in packages
+
+    def testSearchComponent(self):
+        packages = self.componentdb.search_component(["applic"])
+        assert set(packages) == set(['applications', 'applications.network', 'applications.util'])
+
+        packages = self.componentdb.search_component(["system", "base"], repo="pardus-2007")
+        assert set(packages) == set(["system.base"])
+
+        packages = self.componentdb.search_component(["system", "base"], repo="contrib-2007")
+        assert not packages

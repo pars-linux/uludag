@@ -67,4 +67,10 @@ class PackageDBTestCase(testcase.TestCase):
 
         assert set(self.packagedb.list_packages("contrib-2007")) == set(['libpcap', 'ctorrent', 'lft', 'lynx', 
                                                                          'iat', 'cpulimit', 'rpl'])
-        
+
+    def testSearchPackage(self):
+        packages = self.packagedb.search_package(["bogo", "filter"])
+        packages = ["bogofilter"]
+
+        packages = self.packagedb.search_package(["cpu", "limit"], repo="contrib-2007")
+        packages = ["cpulimit"]

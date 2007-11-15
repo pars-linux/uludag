@@ -59,3 +59,10 @@ class FilesDBTestCase(testcase.TestCase):
         assert not self.filesdb.has_file("etc/pisi/pisi.conf")
         assert not self.filesdb.has_file("etc/pisi/mirrors.conf")
         
+    def testSearchFile(self):
+        assert not self.filesdb.search_file("ethtool")
+        pisi.api.install(["ethtool"])
+        found = self.filesdb.search_file("ethtool")
+        pkg, files = found[0]
+        assert set(files) == set(['usr/bin/ethtool'])
+        pisi.api.remove(["ethtool"])

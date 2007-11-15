@@ -98,3 +98,14 @@ class InstallDBTestCase(testcase.TestCase):
         pisi.api.remove(["ethtool"])
         assert "ethtool" not in self.installdb.list_pending()
         pisi.api.set_comar(True)
+
+    def testSearchPackage(self):
+        pisi.api.set_comar(False)
+
+        assert not self.installdb.has_package("ethtool")
+        assert not self.installdb.search_package(["ethtool"])
+        pisi.api.install(["ethtool"])
+        assert self.installdb.search_package(["et", "tool", "h"]) == ["ethtool"]
+        pisi.api.remove(["ethtool"])
+
+        pisi.api.set_comar(True)
