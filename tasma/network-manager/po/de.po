@@ -1,3 +1,4 @@
+# translation of de.po to Deutsch
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -5,14 +6,15 @@
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Muhammed Ölcerman <oelcerman@fussballkreis.org>, 2007.
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-06 12:19+0200\n"
-"PO-Revision-Date: 2007-06-19 16:21+0300\n"
-"Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
-"Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
+"PO-Revision-Date: 2007-11-17 01:13+0200\n"
+"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,8 +42,7 @@ msgstr "Netzwerk-Pakete installieren!"
 
 #: newconn.py:122
 msgid "No package with COMAR network scripts are installed yet."
-msgstr ""
-"Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
+msgstr "Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
 
 #: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
 #: network-manager.py:91 network-applet.py:539 network-applet.py:551
@@ -49,28 +50,27 @@ msgid "Network Manager"
 msgstr "Netzwerk-Manager"
 
 #: autoswitch.py:81
-#, fuzzy
 msgid "No scan result"
-msgstr "Suchergebnisse:"
+msgstr "Keine Suchergebnisse"
 
 #: autoswitch.py:117
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr ""
+msgstr "Profile <b>%s</b> zusammengestellt."
 
 #: autoswitch.py:121
 msgid "There is no matched profile"
-msgstr ""
+msgstr "Es gibt keine zusammenpassende Profile"
 
 #: autoswitch.py:127
-#, fuzzy, python-format
+#, python-format
 msgid "Connecting to <b>%s</b> ..."
-msgstr "Verbindungen bearbeiten..."
+msgstr "Verbindungsaufbau zu <b>%s</b> ..."
 
 #: autoswitch.py:131
-#, fuzzy, python-format
+#, python-format
 msgid "Connected to <b>%s</b>"
-msgstr "Verbindungen bearbeiten..."
+msgstr "Verbunden mit <b>%s</b>"
 
 #: connection.py:27
 msgid "Channel"
@@ -118,7 +118,7 @@ msgstr "Auswählen"
 
 #: connection.py:197
 msgid "Scan"
-msgstr "Scannen"
+msgstr "Suchen"
 
 #: connection.py:208 browser.py:57
 msgid "Authentication"
@@ -251,21 +251,20 @@ msgid "Name Service Settings"
 msgstr "Name Service Einstellungen"
 
 #: browser.py:404 network-applet.py:329
-#, fuzzy
 msgid "Connect Automatically"
-msgstr "Automatisch"
+msgstr "Automatisch verbinden"
 
 #: browser.py:423
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Automatische Verbindungsherstellung beim Systemstart versuchen"
 
 #: browser.py:475
 msgid "Network Connections Help"
-msgstr "Netzwerkverbindungen Hilfe"
+msgstr "Netzwerkverbindungen-Hilfe"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
-msgstr ""
+msgstr "Eine Verbindung versuchen automatisch herzustellen"
 
 #: network-manager.py:86
 msgid "Network manager module is already started!"
@@ -281,7 +280,7 @@ msgstr "Verbindungen bearbeiten..."
 
 #: network-applet.py:331
 msgid "Show Notifications"
-msgstr ""
+msgstr "Meldungen anzeigen"
 
 #: network-applet.py:333
 msgid "Icon Per Device"
@@ -293,29 +292,27 @@ msgstr "Einzelnes Symbol"
 
 #: network-applet.py:401
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
+msgstr "Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
 
 #: network-applet.py:516
-#, fuzzy
 msgid "Connecting to <b>%1</b> ..."
-msgstr "Verbindungen bearbeiten..."
+msgstr "Verbindungsaufbau zu <b>%1</b> ..."
 
 #: network-applet.py:521
-#, fuzzy
 msgid "Connected to <b>%1</b>"
-msgstr "Verbindungen bearbeiten..."
+msgstr "Verbunden mit <b>%1</b>"
 
 #: network-applet.py:527
-#, fuzzy
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
-msgstr "Verbindungen bearbeiten..."
+msgstr ""
+"Verbindung fehlgeschlagen \n"
+"<b>%1</b>"
 
 #: network-applet.py:529
 msgid "You are offline now"
-msgstr ""
+msgstr "Sie sind momentan offline"
 
 #: network-applet.py:617
 msgid "Network Applet"
@@ -345,14 +342,3 @@ msgstr "Name-Server hinzufügen"
 msgid "Name server:"
 msgstr "Name-Server:"
 
-#, fuzzy
-#~ msgid "Already connected to <b>%s</b>"
-#~ msgstr "Verbindungen bearbeiten..."
-
-#, fuzzy
-#~ msgid "Connecting to <b>%s</b>"
-#~ msgstr "Verbindungen bearbeiten..."
-
-#, fuzzy
-#~ msgid "Scan and Connect..."
-#~ msgstr "Verbindungen bearbeiten..."
