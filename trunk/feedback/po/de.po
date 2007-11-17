@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-17 10:48+0200\n"
-"PO-Revision-Date: 2006-12-11 22:56+0200\n"
-"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"PO-Revision-Date: 2007-11-17 14:14+0200\n"
+"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,11 +26,11 @@ msgstr "Feedback-Assistent"
 
 #: src/usagedlg.py:71
 msgid "At home"
-msgstr "Privat"
+msgstr "Zu Hause"
 
 #: src/usagedlg.py:72
 msgid "At work"
-msgstr "Beruflich"
+msgstr "Auf der Arbeit"
 
 #: src/usagedlg.py:73
 msgid "At school"
@@ -41,7 +42,7 @@ msgstr "<p align=\"right\">(Sie können mehrere Punkte auswählen)</p>"
 
 #: src/usagedlg.py:75
 msgid "<b>Step 3 of 7</b>"
-msgstr "<b>Step 3 von 7</b>"
+msgstr "<b>Schritt 3 von 7</b>"
 
 #: src/usagedlg.py:76
 msgid "<h2>Where do you use Pardus?</h2>"
@@ -49,7 +50,7 @@ msgstr "<h2>Wo setzen Sie Pardus ein?</h2>"
 
 #: src/questiondlg.py:255
 msgid "Very satisfying. Pardus fulfils my requirements"
-msgstr "Zufriedenstellend. Pardus erfüllt meine Anforderungen."
+msgstr "Sehr zufriedenstellend. Pardus erfüllt meine Anforderungen."
 
 #: src/questiondlg.py:256
 msgid "Good, however it lacks some capabilities"
@@ -65,15 +66,15 @@ msgstr "<h2>In wie fern erfüllt Pardus Ihre Anforderungen?</h2>"
 
 #: src/questiondlg.py:259
 msgid "<b>Step 4 of 7</b>"
-msgstr "<b>Step 4 von 7</b>"
+msgstr "<b>Schritt 4 von 7</b>"
 
 #: src/hardwareinfodlg.py:239
 msgid "&Do not send my computer's hardware information"
-msgstr "Sende von meinem Computer keine Hardware Informationen."
+msgstr "Sende keine Hardware-Informationen von meinem Computer."
 
 #: src/hardwareinfodlg.py:240
 msgid "<b>Step 7 of 7</b>"
-msgstr "<b>Step 7 von 7</b>"
+msgstr "<b>Schritt 7 von 7</b>"
 
 #: src/hardwareinfodlg.py:241
 msgid ""
@@ -87,13 +88,13 @@ msgid ""
 "\n"
 "<b>Note that we will not collect any of your personal documents.</b>"
 msgstr ""
-"<h2>Computer information</h2>\n"
+"<h2>Computer-Information</h2>\n"
 "<p>\n"
-"Pardus Hardware CollectInfo Assistent erfasst jetzt Informationen \n"
+"Pardus Hardware CollectInfo-Assistent erfasst jetzt Informationen \n"
 "von Ihrer Hardware, einschliesslich CPU, Arbeitsspeicher und \n"
 "Netzwerkkarten. Diese Informationen werden im Auftrag von Pardus \n"
-"zum Zweck für mehr Stabilität und Sicherheit an das Pardus \n"
-"Entwicklungszentrum gesendet. Sie benötigen einen Internetzugang \n"
+"zum Zweck für mehr Stabilität und Sicherheit an das \n"
+"Pardus-Entwicklungszentrum gesendet. Sie benötigen einen Internetzugang, \n"
 "um diesen Vorgang abzuschliessen. \n"
 "\n"
 "<b>Anmerkung: Es werden keine persönlichen Daten übermittelt.</b>"
@@ -107,12 +108,12 @@ msgid ""
 "(Ease of installation and use, capability of software,\n"
 "general quality, adoptability, suitability to requirements, etc)"
 msgstr ""
-"(Benutzerfreundliche Installation und Benutzung,kompatible Software,\n"
-"allgemeine Qualität, Integrierbar, geeignet für die Anforderungen, etc.)"
+"(Einfache Installation und Benutzung der kompatiblen Software,\n"
+"allgemeine Qualität, Integrierbarkeit, geeignet für die Anforderungen, etc.)"
 
 #: src/opiniondlg.py:62
 msgid "<b>Step 5 of 7</b>"
-msgstr "<b>Step 5 von 7</b>"
+msgstr "<b>Schritt 5 von 7</b>"
 
 #: src/experiencedlg.py:144
 msgid "Experienced system administrator"
@@ -120,15 +121,15 @@ msgstr "Erfahrener Systemadministrator"
 
 #: src/experiencedlg.py:145
 msgid "New user"
-msgstr "Neuer Benutzer"
+msgstr "Erstanwender"
 
 #: src/experiencedlg.py:146
 msgid "Home/office productivity user"
-msgstr "Privat- / Büroanwender"
+msgstr "Heim-/Büroanwender"
 
 #: src/experiencedlg.py:147
 msgid "Experienced user"
-msgstr "Erfahrener Benutzer"
+msgstr "Erfahrener Anwender"
 
 #: src/experiencedlg.py:148
 msgid "<h2>What is your experience level?</h2>"
@@ -136,7 +137,7 @@ msgstr "<h2>Wie würden Sie Ihre Kenntnisse einstufen?</h2>"
 
 #: src/experiencedlg.py:149
 msgid "<b>Step 1 of 7</b>"
-msgstr "<b>Step 1 von 7</b>"
+msgstr "<b>Schritt 1 von 7</b>"
 
 #: src/goodbyedlg.py:233
 msgid ""
@@ -147,10 +148,10 @@ msgid ""
 "Thank you for your support to Pardus operating system."
 msgstr ""
 "<h2>Vielen Dank</h2>\n"
-"Wir haben alle für die Pardus Entwickler notwendigen \n"
-"Informationen erfasst, um diese an die Pardus Entwickler zu \n"
+"Wir haben alle für die Pardus-Entwickler notwendigen \n"
+"Informationen erfasst, um diese an die Pardus-Entwickler zu senden. \n"
 "<p>\n"
-"Vielen Dank für Ihre Unterstützung an das Pardus Betribssystem."
+"Vielen Dank für Ihre Unterstützung an das Pardus-Betribssystem."
 
 #: src/welcomedlg.py:231
 msgid ""
@@ -164,24 +165,24 @@ msgid ""
 "Please click on \"Forward\" button for the next step.\n"
 "<p>"
 msgstr ""
-"<h2>Willkommen bei Pardus</h2>\n"
+"<h2>Willkommen zuPardus</h2>\n"
 "\n"
-"Mit diesem Feedback Assistent können Sie ihre Anregungen an die Pardus \n"
-"Entwickler schicken und dabei Pardus helfen, das beste Linux der Welt zu "
+"Mit diesem Feedback-Assistent können Sie ihre Anregungen an die \n"
+"Pardus-Entwickler schicken und dabei Pardus helfen, das beste Linux der Welt zu "
 "werden.\n"
 "\n"
 "<p>\n"
-"Ihre Anregungen / Unterstützung beschleunigt die Entwicklung des Pardus. \n"
-"Bitte betätigen Sie die Taste  \"Weiter\" um fortzufahren.\n"
+"Die Informationen, die Sie hier angeben werden, werden die Pardus-Entwicklung beschleunigen. \n"
+"Bitte klicken Sie auf \"Weiter\", um fortzufahren.\n"
 "<p>"
 
 #: src/purposedlg.py:84
 msgid "Feedback wizard"
-msgstr "Feedback Assistent"
+msgstr "Feedback-Assistent"
 
 #: src/purposedlg.py:86
 msgid "Daily use"
-msgstr "Tägliche Verwendung"
+msgstr "Alltagsgebrauch"
 
 #: src/purposedlg.py:87
 msgid "It's my hobby"
@@ -209,7 +210,7 @@ msgstr "<h2>Warum benutzen Sie  Pardus?</h2>"
 
 #: src/purposedlg.py:94
 msgid "<b>Step 2 of 7</b>"
-msgstr "<b>Step 2 von 7</b>"
+msgstr "<b>Schritt 2 von 7</b>"
 
 #: src/feedback.py:77
 msgid "Welcome"
@@ -237,11 +238,11 @@ msgstr "Meinungen"
 
 #: src/feedback.py:95
 msgid "Personal Info"
-msgstr "Persönliches Info"
+msgstr "Persönliche Informationen"
 
 #: src/feedback.py:98
 msgid "Hardware Info"
-msgstr "Hardware Info"
+msgstr "Hardwar-Informationen"
 
 #: src/feedback.py:101
 msgid "Uploading"
@@ -253,7 +254,7 @@ msgstr "Auf Wiedersehen!"
 
 #: src/feedback.py:166
 msgid "Collecting hardware information..."
-msgstr "Hardware Informationen werden erfasst..."
+msgstr "Hardware-Informationen werden erfasst..."
 
 #: src/feedback.py:176 src/feedback.py:250
 msgid "<font color=\"#008800\">Done</font><br>\n"
@@ -339,5 +340,5 @@ msgstr "Nehmen Sie mich in die Pardus-Verteilerliste auf"
 
 #: src/personalinfodlg.py:251
 msgid "<b>Step 6 of 7</b>"
-msgstr "<b>Step 6 von 7</b>"
+msgstr "<b>Schritt 6 von 7</b>"
 
