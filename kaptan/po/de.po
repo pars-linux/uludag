@@ -1,16 +1,16 @@
 # translation of de.po to Deutsch
-# Copyright (C) 2006 Free Software Foundation, Inc.
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-26 03:25+0300\n"
-"PO-Revision-Date: 2006-12-12 21:53+0200\n"
-"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
-"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-"
-"translation-de>\n"
+"PO-Revision-Date: 2007-11-17 02:13+0200\n"
+"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,11 +72,8 @@ msgstr "<big>Am Laden...</big>"
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:7 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid ""
-"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
-msgstr ""
-"<center>Sie sind fertig!  Sie können nun mit der Anwendung von <b>Pardus</b> "
-"Linux anfangen</center>"
+msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgstr "<center> Sie haben Kapatan-Desktop erfolgreich abgeschlossen!  Sie können nun mit der Anwendung von <b>Pardus</b> anfangen</center>"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
 #: rc.cpp:42 ../src/mousedlg.cpp:118
@@ -121,7 +118,7 @@ msgid ""
 "Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
 "some eye candy styles for you."
 msgstr ""
-"Hier können Sie ein Stil für Ihre Arbeitsfläche auswählen. <b>Pardus</b> "
+"Hier können Sie ein <b>Stil</b> für Ihren Desktop auswählen. <b>Pardus</b> "
 "bietet Ihnen einige blickfangende Stile an."
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/wallpaperdlg.ui line 27
@@ -151,7 +148,7 @@ msgstr ""
 
 #: ../src/main.cpp:18
 msgid "Kaptan Desktop"
-msgstr "Kaptan Desktop"
+msgstr "Kaptan-Desktop"
 
 #: ../src/mouse.cpp:32
 msgid "Left handed"
@@ -159,17 +156,17 @@ msgstr "Linkshändig"
 
 #: ../src/kaptan.cpp:46
 msgid "Mouse Setup"
-msgstr "Mauskonfiguration"
+msgstr "Maus-Konfiguration"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/mousedlg.ui line 16
 #: rc.cpp:36 ../src/mousedlg.cpp:116
 #, no-c-format
 msgid "MouseSetupDlg"
-msgstr "MauskonfigurationDlg"
+msgstr "Maus-KonfigurationDlg"
 
 #: ../src/kaptan.cpp:61
 msgid "Network Setup"
-msgstr "Netzwerkkonfiguration"
+msgstr "Netzwerk-Konfiguration"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/packagedlg.ui line 35
 #: rc.cpp:59 ../src/kaptan.cpp:71 ../src/packagedlg.cpp:101
@@ -208,7 +205,7 @@ msgstr "Stil"
 
 #: ../src/kaptan.cpp:50
 msgid "Style Setup"
-msgstr "Stilkonfiguration"
+msgstr "Stil-Konfiguration"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/styledlg.ui line 62
 #: rc.cpp:87 ../src/styledlg.cpp:98
@@ -245,10 +242,11 @@ msgstr "Hintergrundbild"
 
 #: ../src/kaptan.cpp:54
 msgid "Wallpaper Setup"
-msgstr "Hintergrundbildkonfiguration"
+msgstr "HintergrundbilKonfiguration"
 
 #. i18n: file /home/caglar/svn/uludag/trunk/kaptan/po/../src/welcomedlg.ui line 16
 #: rc.cpp:10 ../src/kaptan.cpp:42 ../src/welcomedlg.cpp:65
 #, no-c-format
 msgid "Welcome"
 msgstr "Willkommen"
+
