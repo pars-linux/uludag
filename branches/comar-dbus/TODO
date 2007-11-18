@@ -1,0 +1,14 @@
+Main:
+- Stop running after # seconds with no operations
+
+CSL
+- Check model/application/method existance
+- Unicode strings
+
+DBus:
+- PolicyKit support
+- Introspection (model.xml)
+- Signals
+
+Documentation
+- Method argument/reply limitations
