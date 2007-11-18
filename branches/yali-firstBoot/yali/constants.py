@@ -55,7 +55,7 @@ consts.data_dir = "/usr/share/yali"
 consts.mnt_dir = "/mnt"
 
 # new system will be installed directly into this target directory
-consts.target_dir = join(consts.mnt_dir, "target")
+consts.target_dir = "/"
 
 # log file for storing after installation
 consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
@@ -64,7 +64,7 @@ consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
 consts.source_dir = join(consts.mnt_dir, "cdrom")
 
 # comar socket path
-consts.comar_socket_file = consts.target_dir + "/var/run/comar.socket"
+consts.comar_socket_file = join(consts.target_dir,"/var/run/comar.socket")
 
 # swap file path
 consts.swap_file_name = ".swap"

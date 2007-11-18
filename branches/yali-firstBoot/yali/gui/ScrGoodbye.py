@@ -41,11 +41,9 @@ class Widget(QWidget, ScreenWidget):
 
     help = _('''
 <font size="+2">Congratulations</font>
-
-
 <font size="+1">
 <p>
-You have successfully installed Pardus, a very easy to use desktop system on
+You have successfully setup your Pardus, a very easy to use desktop system on
 your machine. Now you can start playing with your system and stay productive
 all the time.
 </p>
@@ -96,33 +94,9 @@ don't you?
         self.info.show()
         self.info.setAlignment(QLabel.AlignCenter)
 
-        try:
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
-            yali.sysutils.umount(ctx.consts.target_dir + "/home")
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir))
-            yali.sysutils.umount(ctx.consts.target_dir)
-        except:
-            ctx.debugger.log("Umount Failed.")
-            pass
-        
-        w = RebootWidget(self)
-
-        ctx.debugger.log("Show reboot dialog.")
-        self.dialog = WarningDialog(w, self)
-        self.dialog.exec_loop()
-
-        ctx.debugger.log("Trying to eject the CD.")
-        # remove cd...
-        yali.sysutils.eject_cdrom()
-
         ctx.debugger.log("Yali, fastreboot calling..")
-        
-        # store log content
-        if ctx.debugEnabled:
-            open(ctx.consts.log_file,"w").write(str(ctx.debugger.traceback.plainLogs))
-        
-        time.sleep(4)
-        yali.sysutils.fastreboot()
+        time.sleep(2)
+        os.system("/sbin/reboot")
 
     # process pending actions defined in other screens.
     def processPendingActions(self):
@@ -171,82 +145,15 @@ don't you?
             ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
             return True
 
-        def writeConsoleData():
-            yali.localeutils.write_keymap(ctx.installData.keyData.console)
-            ctx.debugger.log("Keymap stored.")
-            return True
-
-        def migrateXorgConf():
-            yali.postinstall.migrate_xorg_conf(ctx.installData.keyData.X)
-            ctx.debugger.log("xorg.conf merged.")
-            return True
+        # def writeConsoleData():
+        #     yali.localeutils.write_keymap(ctx.installData.keyData.console)
+        #     ctx.debugger.log("Keymap stored.")
+        #     return True
 
         steps = [{"text":_("Trying to connect COMAR Daemon..."),"operation":connectToComar},
                  {"text":_("Setting Hostname..."),"operation":setHostName},
                  {"text":_("Setting Root Password..."),"operation":setRootPassword},
-                 {"text":_("Adding Users..."),"operation":addUsers},
-                 {"text":_("Writing Console Data..."),"operation":writeConsoleData},
-                 {"text":_("Migrating X.org Configuration..."),"operation":migrateXorgConf},
-                 {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
-
+                 {"text":_("Adding Users..."),"operation":addUsers}]
+                 # {"text":_("Writing Console Data..."),"operation":writeConsoleData},
         self.steps.setOperations(steps)
 
-    def installBootloader(self):
-        ctx.debugger.log("Bootloader is installing...")
-        loader = yali.bootloader.BootLoader()
-        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
-                                                                  partrequest.mountRequestType)
-        _ins_part = root_part_req.partition().getPath()
-        loader.write_grub_conf(_ins_part,ctx.installData.bootLoaderDev)
-
-        # Check for windows partitions.
-        for d in yali.storage.devices:
-            for p in d.getPartitions():
-                fs = p.getFSName()
-                if fs in ("ntfs", "fat32"):
-                    if is_windows_boot(p.getPath(), fs):
-                        win_fs = fs
-                        win_dev = basename(p.getDevicePath())
-                        win_root = basename(p.getPath())
-                        loader.grub_conf_append_win(ctx.installData.bootLoaderDev,
-                                                    win_dev,
-                                                    win_root,
-                                                    win_fs)
-                        continue
-
-        # finally install it
-        loader.install_grub(ctx.installData.bootLoaderDev)
-        ctx.debugger.log("Bootloader installed.")
-
-class RebootWidget(QWidget):
-
-    def __init__(self, *args):
-        QWidget.__init__(self, *args)
-
-        l = QVBoxLayout(self)
-        l.setSpacing(20)
-        l.setMargin(10)
-
-        warning = QLabel(self)
-        warning.setText(_('''<b>
-<p>Press Reboot button to restart your system.</p>
-</b>
-'''))
-
-        self.reboot = QPushButton(self)
-        self.reboot.setText(_("Reboot"))
-
-        buttons = QHBoxLayout(self)
-        buttons.setSpacing(10)
-        buttons.addStretch(1)
-        buttons.addWidget(self.reboot)
-
-        l.addWidget(warning)
-        l.addLayout(buttons)
-
-
-        self.connect(self.reboot, SIGNAL("clicked()"),
-                     self.slotReboot)
-
-    def slotReboot(self):
-        self.emit(PYSIGNAL("signalOK"), ())

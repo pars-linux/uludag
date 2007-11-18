@@ -31,16 +31,12 @@ from yali.gui.debugger import DebuggerAspect
 import YaliWindow
 # screens
 import ScrWelcome
-import ScrCheckCD
-import ScrKeyboard
-import ScrPartitionAuto
-import ScrPartitionManual
-import ScrInstall
+
+# We may need that in the future.
+# import ScrKeyboard
 import ScrAdmin
 import ScrUsers
-import ScrBootloader
 import ScrGoodbye
-import ScrKahyaCheck
 
 ##
 # Runner creates main GUI components for installation...
@@ -52,22 +48,17 @@ class Runner:
     def __init__(self):
 
         _all_stages = [
-            {'num': 1, 'text': _("Basic setup")},
-            {'num': 2, 'text': _("Prepare for install")},
-            {'num': 3, 'text': _("Install system")}
+            {'num': 1, 'text': _("License Agreement")},
+            {'num': 2, 'text': _("Basic setup")},
+            {'num': 3, 'text': _("Bootup the new system")}
             ]
 
         _all_screens = [
-             {'stage': 1, 'module': ScrKahyaCheck},
              {'stage': 1, 'module': ScrWelcome},
-             {'stage': 1, 'module': ScrCheckCD},
-             {'stage': 1, 'module': ScrKeyboard},
-             {'stage': 1, 'module': ScrAdmin},
-             {'stage': 1, 'module': ScrUsers},
-             {'stage': 2, 'module': ScrPartitionAuto},
-             {'stage': 2, 'module': ScrPartitionManual},
-             {'stage': 2, 'module': ScrBootloader},
-             {'stage': 3, 'module': ScrInstall},
+             # We may need that in the future.
+             # {'stage': 1, 'module': ScrKeyboard},
+             {'stage': 2, 'module': ScrAdmin},
+             {'stage': 2, 'module': ScrUsers},
              {'stage': 3, 'module': ScrGoodbye}
              ]
 

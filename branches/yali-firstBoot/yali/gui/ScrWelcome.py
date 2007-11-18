@@ -29,7 +29,6 @@ class Widget(WelcomeWidget, ScreenWidget):
 
     help = _('''
 <font size="+2">Welcome!</font>
-
 <font size="+1">
 <p>Welcome to Pardus, your new and practical desktop with a handful 
 of applications tailored to your needs. With Pardus, you can 
@@ -37,15 +36,11 @@ connect to internet, read your e-mails online, work with
 documents, listen to music and play DVDs. Its advanced yet
 easy interface will let you be more productive and efficient.
 </p>
-
 <p>
-This software will install Pardus on your computer,
-without disrupting your previous documents and settings. However,
-we advise you to make a backup before proceeding. 
+This software will setup users in Pardus on your computer.
 </p>
 <p>
-The installer will identify your system's hardware and configure
-it according to your needs. You will note the arrow keys on the
+You will note the arrow keys on the
 bottom of the screen: Use them to advance to next screen.
 </p>
 <p>
