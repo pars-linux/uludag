@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-06 12:19+0200\n"
-"PO-Revision-Date: 2007-05-31 00:29+0200\n"
+"PO-Revision-Date: 2007-11-18 03:02+0100\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: newconn.py:26
 msgid "Create a new connection"
-msgstr "Crxéer une nouvelle conneion"
+msgstr "Créer une nouvelle connexion"
 
 #: newconn.py:31
 msgid "Select device:"
@@ -35,7 +35,7 @@ msgstr "Aucun périphérique adéquat trouvé"
 
 #: newconn.py:121
 msgid "Install network packages!"
-msgstr "Installation des pacquets réseau!"
+msgstr "Installation des paquets réseau!"
 
 #: newconn.py:122
 msgid "No package with COMAR network scripts are installed yet."
@@ -49,28 +49,27 @@ msgid "Network Manager"
 msgstr "Gestionnaire réseau"
 
 #: autoswitch.py:81
-#, fuzzy
 msgid "No scan result"
-msgstr "Résultats du sondage:"
+msgstr "Résultat de balayage infructueux."
 
 #: autoswitch.py:117
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr ""
+msgstr "Le profil <b>%s</b> correspond."
 
 #: autoswitch.py:121
 msgid "There is no matched profile"
-msgstr ""
+msgstr "Aucun profil ne correspond."
 
 #: autoswitch.py:127
-#, fuzzy, python-format
+#, python-format
 msgid "Connecting to <b>%s</b> ..."
-msgstr "Éditer les connexions réseaux..."
+msgstr "Connexion à <b>%s</b> en cours..."
 
 #: autoswitch.py:131
-#, fuzzy, python-format
+#, python-format
 msgid "Connected to <b>%s</b>"
-msgstr "Éditer les connexions réseaux..."
+msgstr "Connecté à <b>%s</b>."
 
 #: connection.py:27
 msgid "Channel"
@@ -138,7 +137,7 @@ msgstr "Mot de passe:"
 
 #: connection.py:248
 msgid "User name:"
-msgstr "Nom d'utlisateur"
+msgstr "Nom d'utilisateur"
 
 #: connection.py:281
 msgid "Network settings"
@@ -186,8 +185,7 @@ msgstr "En attente de COMAR..."
 
 #: comariface.py:175
 msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr ""
-"La connexion avec COMAR a été perdue, tentative de reconnexion en cours..."
+msgstr "La connexion avec COMAR a été perdue, tentative de reconnexion en cours..."
 
 #: comariface.py:194 comariface.py:211 network-applet.py:114
 msgid ""
@@ -250,13 +248,12 @@ msgid "Name Service Settings"
 msgstr "Configuration du service de nom"
 
 #: browser.py:404 network-applet.py:329
-#, fuzzy
 msgid "Connect Automatically"
-msgstr "Automatiquement"
+msgstr "Se connecter automatiquement"
 
 #: browser.py:423
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Essayer de se connecter automatiquement au démarrage."
 
 #: browser.py:475
 msgid "Network Connections Help"
@@ -264,7 +261,7 @@ msgstr "Aide à propos des connexions réseaux"
 
 #: network-manager.py:77
 msgid "Just try to connect automatically"
-msgstr ""
+msgstr "Juste essayer de se connecter automatiquement."
 
 #: network-manager.py:86
 msgid "Network manager module is already started!"
@@ -280,7 +277,7 @@ msgstr "Éditer les connexions réseaux..."
 
 #: network-applet.py:331
 msgid "Show Notifications"
-msgstr ""
+msgstr "Montrer les notifications"
 
 #: network-applet.py:333
 msgid "Icon Per Device"
@@ -295,25 +292,24 @@ msgid "Should network-applet start automatically when you login?"
 msgstr "Démarrer automatiquement l'applet réseau dès votre connexion ?"
 
 #: network-applet.py:516
-#, fuzzy
 msgid "Connecting to <b>%1</b> ..."
-msgstr "Éditer les connexions réseaux..."
+msgstr "Connexion à <b>%1</b> en cours..."
 
 #: network-applet.py:521
-#, fuzzy
 msgid "Connected to <b>%1</b>"
-msgstr "Éditer les connexions réseaux..."
+msgstr "Connecté à <b>%1</b>"
 
 #: network-applet.py:527
-#, fuzzy
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
-msgstr "Éditer les connexions réseaux..."
+msgstr ""
+"La connexion a échoué\n"
+"<b>%1</b>"
 
 #: network-applet.py:529
 msgid "You are offline now"
-msgstr ""
+msgstr "Vous êtes actuellement hors ligne."
 
 #: network-applet.py:617
 msgid "Network Applet"
@@ -343,14 +339,3 @@ msgstr "Ajouter un serveur de nom"
 msgid "Name server:"
 msgstr "Serveur de nom:"
 
-#, fuzzy
-#~ msgid "Already connected to <b>%s</b>"
-#~ msgstr "Éditer les connexions réseaux..."
-
-#, fuzzy
-#~ msgid "Connecting to <b>%s</b>"
-#~ msgstr "Éditer les connexions réseaux..."
-
-#, fuzzy
-#~ msgid "Scan and Connect..."
-#~ msgstr "Éditer les connexions réseaux..."
