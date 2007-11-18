@@ -1,24 +1,28 @@
+# translation of PLSA-tr.po to Türkçe
 # PLSA Publisher.
 # Copyright (C) 2006 TÜBİTAK/UEKAE
 # This file is distributed under the same license as the PLSA package.
-# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
 #
+# Bahadır Kandemir <bahadir@pardus.org.tr>, 2006.
+# Necmettin <necmettin.begiter@gmail.com>, 2007.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PLSA 1.0\n"
+"Project-Id-Version: PLSA-tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-05 16:50+0200\n"
-"PO-Revision-Date: 2006-09-13 12:06+0300\n"
-"Last-Translator: Bahadır Kandemir <bahadir@pardus.org.tr>\n"
-"Language-Team: Turkish\n"
+"PO-Revision-Date: 2007-11-18 15:12+0200\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: plsa/__init__.py:112
-#, fuzzy, python-format
+#, python-format
 msgid "Pardus Linux Security Advisory %s-%s"
-msgstr "Pardus Linux Güvenlik Bildirisi"
+msgstr "Pardus Linux Güvenlik Bildirisi %s-%s"
 
 #: plsa/__init__.py:113
 msgid "security@pardus.org.tr"
@@ -42,7 +46,7 @@ msgstr "Önem"
 
 #: plsa/__init__.py:120
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #: plsa/__init__.py:132 plsa/__init__.py:133
 msgid "Summary"
@@ -108,3 +112,4 @@ msgstr "%s dosyası okunamadı."
 #: plsa-cli:67
 msgid "XML file has errors:"
 msgstr "XML dosyası hatalı:"
+
