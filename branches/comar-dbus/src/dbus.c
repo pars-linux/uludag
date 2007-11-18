@@ -135,26 +135,6 @@ dbus_listen()
 
     log_info("Listening for DBus method calls\n");
 
-    // PolicyKit test
-    /*
-    gboolean is_allowed;
-    gboolean is_temporary;
-    LibPolKitContext *ctx = libpolkit_new_context(conn);
-    int check = libpolkit_is_uid_allowed_for_privilege(ctx, "tr.org.pardus.comar", "bahadir", "comar-test", NULL, &is_allowed, &is_temporary, NULL);
-    printf("LIBPOLKIT_RESULT_OK = %d\n", LIBPOLKIT_RESULT_OK);
-    printf("LIBPOLKIT_RESULT_ERROR = %d\n", LIBPOLKIT_RESULT_ERROR);
-    printf("LIBPOLKIT_RESULT_INVALID_CONTEXT = %d\n", LIBPOLKIT_RESULT_INVALID_CONTEXT);
-    printf("LIBPOLKIT_RESULT_NOT_PRIVILEGED = %d\n", LIBPOLKIT_RESULT_NOT_PRIVILEGED);
-    printf("LIBPOLKIT_RESULT_NO_SUCH_PRIVILEGE = %d\n", LIBPOLKIT_RESULT_NO_SUCH_PRIVILEGE);
-    printf("LIBPOLKIT_RESULT_NO_SUCH_USER = %d\n", LIBPOLKIT_RESULT_NO_SUCH_USER);
-    printf("----------------------\n");
-    printf("PolicyKit result: %d\n", check);
-    printf("PolicyKit allowed: %d\n", is_allowed);
-    printf("PolicyKit temp: %d\n", is_temporary);
-    libpolkit_free_context(ctx);
-    */
-    // PolicyKit test
-
     while (1) {
         dbus_connection_read_write(conn, 0);
         msg = dbus_connection_pop_message(conn);
