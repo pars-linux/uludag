@@ -146,7 +146,7 @@
                      [% " disabled"
                         IF !bless_group_ids.grep("^$q.shared_with_group.id\$").0
                      %]>
-              <label for="force_[% q.id FILTER html %]">Add to footer</label>
+              <label for="force_[% q.id FILTER html %]">Sayfa altlığına ekle</label>
             [% END %]
           </td>
         [% END %]
@@ -154,13 +154,13 @@
     [% END %]
   </table>
 [% IF user.can_bless %]
-  <p>Note that for every search that has the "Add to footer" selected, a
-     link to the shared search is added to the footer of every user that is
-     a direct member of the group at the time you click Submit Changes.</p>
+  <p>"Değişiklikleri Gönder"e bastığınızda, "Sayfa altlığına ekle" seçili 
+     olan her aramanın, paylaşılan aramanın bağlantısını (link) grubun 
+     direkt üyesi olan her kullanıcının sayfa altlığına ekleyeceğine dikkat ediniz.</p>
 [% END %]
 </blockquote>
 
-<p>Bu kaydedilmiş ve başkaları ile paylaşılan aramaları kullanabilirsiniz:</p>
+<p>Kaydedilmiş ve başkaları ile paylaşılan şu aramaları kullanabilirsiniz:</p>
 
 <blockquote>
   <table border="1" cellpadding="3">  
@@ -175,7 +175,7 @@
         Çalıştır
       </th>
       <th>
-        Alt Kısımda
+        Sayfa Altlığında 
         Göster
       </th>
     </tr>
