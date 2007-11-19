@@ -602,6 +602,8 @@ class NetTray(KSystemTray):
                 else:
                     y = pt.y() - h
                 self.popup.move(self.popup.x(), y)
+        elif event.button() == event.MidButton:
+            self.applet.scanAndConnect()
         else:
             KSystemTray.mousePressEvent(self, event)
     
