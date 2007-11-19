@@ -19,16 +19,9 @@ _ = __trans.ugettext
 
 import comar
 import time
-import yali.sysutils
 import yali.users
-import yali.localeutils
-import yali.postinstall
-import yali.bootloader
-import yali.storage
-import yali.partitionrequest as partrequest
-import yali.partitiontype as parttype
+#import yali.localeutils
 from os.path import basename
-from yali.sysutils import is_windows_boot
 from yali.gui.ScreenWidget import ScreenWidget
 from yali.gui.YaliDialog import WarningDialog
 from yali.gui.YaliSteps import YaliSteps
@@ -82,7 +75,6 @@ don't you?
         vbox.addWidget(self.info)
 
     def shown(self):
-        from os.path import basename
         ctx.debugger.log("%s loaded" % basename(__file__))
         ctx.screens.disablePrev()
         self.processPendingActions()
