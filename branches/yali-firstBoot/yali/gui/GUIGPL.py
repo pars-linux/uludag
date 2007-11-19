@@ -51,13 +51,13 @@ class Widget(QTextView):
 
 
     def find_license_file(self):
-        f = join(ctx.consts.source_dir,
-                 "license/license-" + ctx.consts.lang + ".txt")
+        f = join(ctx.consts.data_dir,
+                 "data/license/license-" + ctx.consts.lang + ".txt")
         if not exists(f):
             # TODO: log that license translation is not present.
-            f = join(ctx.consts.source_dir,
-                     "license/license-en.txt")
-            
+            f = join(ctx.consts.data_dir,
+                     "data/license/license-en.txt")
+
         if exists(f):
             return f
         else:

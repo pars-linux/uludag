@@ -43,7 +43,15 @@ def user_faces():
     return glob.glob(p)
 
 def data_files():
-    p = "yali/data/*.xml"
+    p = "yali/data/*.txt"
+    return glob.glob(p)
+
+def rel_notes():
+    p = "yali/data/release-notes/*.html"
+    return glob.glob(p)
+
+def licences():
+    p = "yali/data/licence/*.txt"
     return glob.glob(p)
 
 def getRevision():
@@ -177,7 +185,9 @@ setup(name="yali",
       data_files = [('/usr/share/yali/pics', gui_pics()),
                     ('/usr/share/yali/slideshow', gui_slidepics()),
                     ('/usr/share/yali/user_faces', user_faces()),
-                    ('/usr/share/yali/data', data_files())],
+                    ('/usr/share/yali/data', data_files()),
+                    ('/usr/share/yali/data/release-notes', rel_notes()),
+                    ('/usr/share/yali/data/licence', licences())],
       scripts = ['yali-bin'],
       ext_modules = [Extension('yali._sysutils',
                                sources = ['yali/_sysutils.c'],
