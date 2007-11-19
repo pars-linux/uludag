@@ -130,6 +130,11 @@ don't you?
                     u.setAutoLogin()
             return True
 
+        def setKdeBase():
+            global comarLink
+            comarLink.System.Service["kdebase"].setState(state="on")
+            comarLink.System.Service["yali"].setState(state="off")
+
         def setRootPassword():
             global comarLink
             comarLink.User.Manager.setUser(uid=0,
@@ -145,7 +150,8 @@ don't you?
         steps = [{"text":_("Trying to connect COMAR Daemon..."),"operation":connectToComar},
                  {"text":_("Setting Hostname..."),"operation":setHostName},
                  {"text":_("Setting Root Password..."),"operation":setRootPassword},
-                 {"text":_("Adding Users..."),"operation":addUsers}]
+                 {"text":_("Adding Users..."),"operation":addUsers},
+                 {"text":_("Setting up KdeBase..."),"operation":setKdeBase}]
                  # {"text":_("Writing Console Data..."),"operation":writeConsoleData},
         self.steps.setOperations(steps)
 
