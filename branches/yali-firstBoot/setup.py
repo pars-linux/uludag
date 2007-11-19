@@ -50,8 +50,8 @@ def rel_notes():
     p = "yali/data/release-notes/*.html"
     return glob.glob(p)
 
-def licences():
-    p = "yali/data/licence/*.txt"
+def license():
+    p = "yali/data/license/*.txt"
     return glob.glob(p)
 
 def getRevision():
@@ -187,7 +187,7 @@ setup(name="yali",
                     ('/usr/share/yali/user_faces', user_faces()),
                     ('/usr/share/yali/data', data_files()),
                     ('/usr/share/yali/data/release-notes', rel_notes()),
-                    ('/usr/share/yali/data/licence', licences())],
+                    ('/usr/share/yali/data/license', license())],
       scripts = ['yali-bin'],
       ext_modules = [Extension('yali._sysutils',
                                sources = ['yali/_sysutils.c'],
