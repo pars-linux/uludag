@@ -72,34 +72,34 @@ py_call_method(const char *model, const char *path, const char *method, PyObject
 }
 
 // PyObject -> DBusMessage translation
-static char *
+static char
 dbus_py_get_signature(PyObject *obj)
 {
     if (PyString_Check(obj)) {
-        return "s";
+        return 's';
     }
     else if (PyBool_Check(obj)) {
-        return "b";
+        return 'b';
     }
     else if (PyInt_Check(obj)) {
-        return "i";
+        return 'i';
     }
     else if (PyLong_Check(obj)) {
-        return "l";
+        return 'l';
     }
     else if (PyFloat_Check(obj)) {
-        return "d";
+        return 'd';
     }
     else if (PyTuple_Check(obj)) {
-        return "v";
+        return 'v';
     }
     else if (PyList_Check(obj)) {
-        return "a";
+        return 'a';
     }
     else if (PyDict_Check(obj)) {
-        return "D";
+        return 'D';
     }
-    return "?";
+    return '?';
 }
 
 void
@@ -120,16 +120,15 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
     DBusMessageIter sub, sub2;
     PyObject *item;
     PyObject *key, *value;
-    const char *sign = dbus_py_get_signature(obj);
-    char *sign_sub;
-    const char*sign_sub1, *sign_sub2;
+    const char sign = dbus_py_get_signature(obj);
+    char sign_sub[5];
     int size;
-    int i;
+    int i = 0;
 
     const dbus_int32_t array[] = {};
     const dbus_int32_t *v_ARRAY = array;
 
-    switch (sign[0]) {
+    switch (sign) {
         case 's':
             p.s = PyString_AsString(obj);
             e = dbus_message_iter_append_basic(iter, DBUS_TYPE_STRING, &p.s);
@@ -154,11 +153,11 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             size = PyList_Size(obj);
             // Find content signature
             if (size == 0) {
-                sign_sub = "s";
+                snprintf(sign_sub, 2, "s\0");
             }
             else {
                 item = PyList_GetItem(obj, 0);
-                sign_sub = dbus_py_get_signature(item);
+                snprintf(sign_sub, 2, "%c\0", dbus_py_get_signature(item));
             }
             e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_sub, &sub);
             if (!e) break;
@@ -180,24 +179,18 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             break;
         case 'D':
             size = PyDict_Size(obj);
-            char sign_dict[5];
             // Find content signature
             if (size == 0) {
-                snprintf(sign_dict, 5, "{ss}\0");
+                snprintf(sign_sub, 5, "{ss}\0");
             }
             else {
-                // Signature of first key
-                item = PyList_GetItem(PyDict_Keys(obj), 0);
-                sign_sub1 = dbus_py_get_signature(item);
-                // Signature of key's value
-                item = PyDict_GetItem(obj, item);
-                sign_sub2 = dbus_py_get_signature(item);
-                // Generate content signature
-                snprintf(sign_dict, 5, "{%s%s}\0", sign_sub1, sign_sub2);
+                i = 0; // Go to first index
+                PyDict_Next(obj, &i, &key, &value);
+                snprintf(sign_sub, 5, "{%c%c}\0", dbus_py_get_signature(key), dbus_py_get_signature(value));
             }
-            e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_dict, &sub);
+            e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_sub, &sub);
             if (!e) break;
-            i = 0;
+            i = 0; // Go to first index
             while (PyDict_Next(obj, &i, &key, &value)) {
                 dbus_message_iter_open_container(&sub, DBUS_TYPE_DICT_ENTRY, NULL, &sub2);
                 dbus_py_export(&sub2, key);

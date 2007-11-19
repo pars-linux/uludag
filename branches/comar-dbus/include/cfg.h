@@ -9,6 +9,7 @@
 
 #define VERSION "2.0"
 
+extern char *cfg_bus_name;
 extern char *cfg_data_dir;
 extern int cfg_log_console;
 extern int cfg_log_file;

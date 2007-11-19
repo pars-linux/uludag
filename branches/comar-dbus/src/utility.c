@@ -94,7 +94,7 @@ check_path_format(const char *path)
 }
 
 char *
-str_lshift(char *str, int num)
+str_lshift(const char *str, int num)
 {
     char *new_str, *t, *t2;
     int size;

@@ -17,6 +17,7 @@
 #include "cfg.h"
 
 // Global options
+char *cfg_bus_name = "tr.org.pardus.comar";
 char *cfg_data_dir = "/var/db/comar";
 int cfg_log_console = 0;
 int cfg_log_file = 1;

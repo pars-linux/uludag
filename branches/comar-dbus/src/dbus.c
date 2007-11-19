@@ -10,9 +10,9 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <dbus/dbus.h>
-#include <libpolkit/libpolkit.h>
 #include <Python.h>
 
+#include "cfg.h"
 #include "csl.h"
 #include "log.h"
 #include "utility.h"
@@ -123,7 +123,7 @@ dbus_listen()
         exit(1);
     }
 
-    ret = dbus_bus_request_name(conn, "tr.org.pardus.comar", DBUS_NAME_FLAG_REPLACE_EXISTING , &err);
+    ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING , &err);
     if (dbus_error_is_set(&err)) {
         log_error("DBus: Name Error (%s)\n", err.message);
         dbus_error_free(&err);
@@ -133,18 +133,18 @@ dbus_listen()
         exit(1);
     }
 
-    log_info("Listening for DBus method calls\n");
+    log_info("DBus: listening %s\n", cfg_bus_name);
 
     while (1) {
         dbus_connection_read_write(conn, 0);
         msg = dbus_connection_pop_message(conn);
 
         if (NULL == msg) {
-            proc_listen(&p, &size, 0);
+            proc_listen(&p, &size, 1);
             continue;
         }
 
-        if (dbus_message_has_destination(msg, "tr.org.pardus.comar")) {
+        if (dbus_message_has_destination(msg, cfg_bus_name)) {
             proc_dbus_call(dbus_method_call, msg, conn, "ComarDBusJob");
         }
     }
