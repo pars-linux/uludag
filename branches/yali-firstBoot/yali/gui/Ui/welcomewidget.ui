@@ -100,7 +100,7 @@
                 <cstring>disclamer</cstring>
             </property>
             <property name="text">
-                <string>All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other software have their corresponding licenses. By installing or using Pardus, you agree to accept them. Do you want to continue?</string>
+                <string>All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other software have their corresponding licenses. For using Pardus, you agree to accept them. Do you want to continue?</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignTop</set>
