@@ -96,7 +96,7 @@ document.write('<input type="button" value="Tüm İletileri Etkisizleştir" oncl
         value="1"
         [% " checked" IF 
                   mail.${constants.REL_ANY}.${constants.EVT_REQUESTED_FLAG} %]>
-      <label for="[% prefname %]">İşaretlediğim bir hatay onaylandığında bana e-posta gönder</label>
+      <label for="[% prefname %]">İşaretlediğim bir hata onaylandığında bana e-posta gönder</label>
       <br>
     </td>
   </tr>
@@ -104,9 +104,9 @@ document.write('<input type="button" value="Tüm İletileri Etkisizleştir" oncl
   <tr>
     <td width="150"></td>
     <td>
-      You are watching all [% terms.bugs %]. To be removed from this role,
-      contact
-      <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a>.
+      Tüm [% terms.bugs %]ı takip ediyorsunuz. Bu görevden ayrılmak için,
+      <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a>
+      adresiyle iletişime geçin.
     </td>
   </tr>
 [% END %]
@@ -133,7 +133,7 @@ document.write('<input type="button" value="Tüm İletileri Etkisizleştir" oncl
     { id = constants.EVT_KEYWORD,
       description = "Anahtar kelime alanları değiştiğinde" },
     { id = constants.EVT_CC,
-      description = "CC alanı değiştiğinde" },
+      description = "Karbon kopya alanı değiştiğinde" },
     { id = constants.EVT_DEPEND_BLOCK,
       description = "Bağımlılık ağacı değiştiğinde" },
     { id = constants.EVT_OTHER,
@@ -269,7 +269,7 @@ document.write('<input type="button" value="Tüm İletileri Etkisizleştir" oncl
 
 <p>
 Bir kullanıcıyı izliyorsanız, bu e-posta almak için onun ayakkabıları içinde  
-beklemek gibidir. E-posta <u>sizin</u>, [% terms.bug %]'ya <u>onların</u> 
+beklemek gibidir. E-posta <u>sizin</u>, [% terms.bug %]ya <u>onların</u> 
 ilişkisiyle (ör: Atanan) ilgili tercihlerinize göre gönderilir ya da  
 gönderilmez.
 </p>
@@ -291,7 +291,7 @@ Aşağıdaki listedeki herkesi izliyorsunuz:
 [% END %]
 </p>
 
-<p><a name="new_watched_by_you" id="new_watched_by_you">Bu kullanıcıları izleme listeme ekle (virgülle ayrılmış liste)</a>:
+<p><a name="new_watched_by_you" id="new_watched_by_you">Bu kullanıcıları izleme listeme ekle (birbirlerinden virgülle ayırın)</a>:
   <input size="60" name="new_watchedusers" value="">
 </p>            
 
