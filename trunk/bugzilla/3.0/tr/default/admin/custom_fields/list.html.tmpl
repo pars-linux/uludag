@@ -20,37 +20,37 @@
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% PROCESS global/header.html.tmpl title = "Custom Fields" %]
+[% PROCESS global/header.html.tmpl title = "Değiştirilebilir Alanlar" %]
 
 [% columns = [
      {
        name => "name"
-       heading => "Edit custom field..."
+       heading => "... değiştirilebilir alanını düzenle"
        contentlink => "editfields.cgi?action=edit&amp;name=%%name%%"
      },
      {
        name => "description"
-       heading => "Description"
+       heading => "Açıklama"
      },
      {
        name => "sortkey"
-       heading => "Sortkey"
+       heading => "Sıralama anahtarı"
      },
      {
        name => "type"
-       heading => "Type"
+       heading => "Tip"
      },
      {
        name => "enter_bug"
-       heading => "Editable on $terms.Bug Creation"
+       heading => "$terms.Bug oluşturulurken düzenlenebilir"
      },
      {
        name => "mailhead"
-       heading => "In ${terms.Bug}mail on $terms.Bug Creation"
+       heading => "${terms.Bug} oluşturulurken epostaya dahil edilir"
      },
      {
        name => "obsolete"
-       heading => "Is Obsolete"
+       heading => "Eski/Geçersiz"
      }
    ]
 %]
@@ -78,7 +78,7 @@
 %]
 
 <p>
-  <a href="editfields.cgi?action=add">Add a new custom field</a>
+  <a href="editfields.cgi?action=add">Yeni bir değiştirilebilir alan oluştur</a>
 </p>
 
 [% PROCESS global/footer.html.tmpl %]
