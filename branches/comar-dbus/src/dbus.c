@@ -15,6 +15,7 @@
 #include "cfg.h"
 #include "csl.h"
 #include "log.h"
+#include "process.h"
 #include "utility.h"
 
 
@@ -53,52 +54,52 @@ log_exception(DBusMessage *msg, DBusConnection *conn)
 }
 
 static void
-dbus_method_call(DBusMessage* msg, DBusConnection* conn)
+dbus_method_call()
 {
-    DBusMessage* reply;
+    DBusMessage *reply;
     DBusMessageIter iter;
     dbus_uint32_t serial = 0;
     PyObject *obj, *ret;
 
-    const char *model = dbus_message_get_interface(msg);
-    const char *path = dbus_message_get_path(msg);
-    const char *method = dbus_message_get_member(msg);
+    const char *model = dbus_message_get_interface(my_proc.bus_msg);
+    const char *path = dbus_message_get_path(my_proc.bus_msg);
+    const char *method = dbus_message_get_member(my_proc.bus_msg);
 
     if (!check_model_format(model)) {
         log_error("Invalid model: %s\n", model);
-        reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Invalid model");
+        reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid model");
     }
     else if (!check_path_format(path)) {
         log_error("Invalid application\n");
-        reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Invalid application");
+        reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid application");
     }
     else {
+        reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "done");
         Py_Initialize();
 
-        obj = dbus_py_import(msg);
+        obj = dbus_py_import(my_proc.bus_msg);
         log_debug(LOG_JOB, "Calling %s.%s (%s)\n", model, method, path);
         ret = py_call_method(model, path, method, obj);
 
         if (ret == NULL) {
-            reply = log_exception(msg, conn);
+            reply = log_exception(my_proc.bus_msg, my_proc.bus_conn);
         }
         else {
-            reply = dbus_message_new_method_return(msg);
+            reply = dbus_message_new_method_return(my_proc.bus_msg);
             dbus_message_iter_init_append(reply, &iter);
             dbus_py_export(&iter, ret);
         }
         Py_Finalize();
     }
 
-    if (!dbus_connection_send(conn, reply, &serial)) {
+    if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
         log_error("DBus: Out Of Memory!\n");
         exit(1);
     }
 
-    dbus_connection_flush(conn);
+    dbus_connection_flush(my_proc.bus_conn);
 
     dbus_message_unref(reply);
-    dbus_message_unref(msg);
 }
 
 void
@@ -107,8 +108,8 @@ dbus_listen()
     struct ProcChild *p;
     int size;
 
-    DBusMessage* msg;
-    DBusConnection* conn;
+    DBusConnection *conn;
+    DBusMessage *msg;
     DBusError err;
     int ret;
 
@@ -145,7 +146,7 @@ dbus_listen()
         }
 
         if (dbus_message_has_destination(msg, cfg_bus_name)) {
-            proc_dbus_call(dbus_method_call, msg, conn, "ComarDBusJob");
+            proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
         }
     }
 }

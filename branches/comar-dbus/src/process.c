@@ -84,7 +84,7 @@ proc_init(int argc, char *argv[], const char *name)
 }
 
 static struct ProcChild *
-add_child(pid_t pid, int to, int from, const char *desc)
+add_child(pid_t pid, int to, int from, const char *desc, DBusMessage *bus_msg)
 {
     int i;
 
@@ -104,6 +104,7 @@ add_child(pid_t pid, int to, int from, const char *desc)
     my_proc.children[i].to = to;
     my_proc.children[i].pid = pid;
     my_proc.children[i].desc = desc;
+    my_proc.children[i].bus_msg = bus_msg;
     ++my_proc.nr_children;
     return &my_proc.children[i];
 }
@@ -115,6 +116,9 @@ rem_child(int nr)
     waitpid(my_proc.children[nr].pid, &status, 0);
     close(my_proc.children[nr].to);
     close(my_proc.children[nr].from);
+    if (my_proc.children[nr].bus_msg != NULL) {
+        dbus_message_unref(my_proc.children[nr].bus_msg);
+    }
     --my_proc.nr_children;
     if (0 == my_proc.nr_children) return;
     (my_proc.children)[nr] = (my_proc.children)[my_proc.nr_children];
@@ -179,8 +183,8 @@ stop_children(void)
 void
 proc_finish(void)
 {
-    log_debug(LOG_PROC, "%s process %d ended\n", my_proc.desc, getpid());
     if (my_proc.nr_children) stop_children();
+    log_debug(LOG_PROC, "%s process %d ended\n", my_proc.desc, getpid());
     exit(0);
 }
 
@@ -193,55 +197,8 @@ proc_check_shutdown(void)
     }
 }
 
-struct ProcChild*
-proc_dbus_call(void (*child_func)(DBusMessage*, DBusConnection*), DBusMessage *msg, DBusConnection *conn, const char *desc)
-{
-    pid_t pid;
-    int fdr[2], fdw[2];
-    int i;
-
-    pipe(fdr);
-    pipe(fdw);
-    pid = fork();
-    if (pid == -1) return NULL;
-
-    if (pid == 0) {
-        // new child process starts
-        // we have to close unneeded pipes inherited from the parent
-        if (my_proc.parent.to != -1) close(my_proc.parent.to);
-        if (my_proc.parent.from != -1) close(my_proc.parent.from);
-        for (i = 0; i < my_proc.nr_children; i++) {
-            close(my_proc.children[i].to);
-            close(my_proc.children[i].from);
-        }
-        close(fdw[1]);
-        close(fdr[0]);
-        // stop parent's pipes from propagating through an exec()
-        fcntl(fdw[0], F_SETFD, FD_CLOEXEC);
-        fcntl(fdr[1], F_SETFD, FD_CLOEXEC);
-        // now setup our own data
-        memset(&my_proc, 0, sizeof(struct Proc));
-        my_proc.parent.from = fdw[0];
-        my_proc.parent.to = fdr[1];
-        my_proc.parent.pid = getppid();
-        my_proc.desc = desc;
-        handle_signals();
-        set_my_name(desc);
-        log_debug(LOG_PROC, "%s process %d started\n", desc, getpid());
-        // finally jump to the real function
-        child_func(msg, conn);
-        proc_finish();
-        while (1) {} // to keep gcc happy
-    } else {
-        // parent process continues
-        close(fdw[0]);
-        close(fdr[1]);
-        return add_child(pid, fdw[1], fdr[0], desc);
-    }
-}
-
 struct ProcChild *
-proc_fork(void (*child_func)(void), const char *desc)
+proc_fork(void (*child_func)(void), const char *desc, DBusConnection *bus_conn, DBusMessage *bus_msg)
 {
     pid_t pid;
     int fdr[2], fdw[2];
@@ -272,6 +229,8 @@ proc_fork(void (*child_func)(void), const char *desc)
         my_proc.parent.to = fdr[1];
         my_proc.parent.pid = getppid();
         my_proc.desc = desc;
+        my_proc.bus_conn = bus_conn;
+        my_proc.bus_msg = bus_msg;
         handle_signals();
         set_my_name(desc);
         log_debug(LOG_PROC, "%s process %d started\n", desc, getpid());
@@ -283,7 +242,7 @@ proc_fork(void (*child_func)(void), const char *desc)
         // parent process continues
         close(fdw[0]);
         close(fdr[1]);
-        return add_child(pid, fdw[1], fdr[0], desc);
+        return add_child(pid, fdw[1], fdr[0], desc, bus_msg);
     }
 }
 

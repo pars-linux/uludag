@@ -40,7 +40,7 @@ main(int argc, char *argv[])
 
     log_start();
 
-    proc_fork(dbus_listen, "ComarDBus");
+    proc_fork(dbus_listen, "ComarDBus", NULL, NULL);
     while (1) {
         if (shutdown_activated) {
             proc_finish();
