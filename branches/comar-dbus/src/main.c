@@ -30,19 +30,19 @@ main(int argc, char *argv[])
     textdomain("comar");
 
     cfg_init(argc, argv);
-    if (getuid() != 0) {
-        puts(_("This program is a system service and should not be started by users."));
+
+    if (cfg_bus_type == DBUS_BUS_SYSTEM && getuid() != 0) {
+        puts(_("System service should be started as root."));
         exit(1);
     }
 
-    cfg_init(argc, argv);
     proc_init(argc, argv, "Comar");
 
     log_start();
 
     proc_fork(dbus_listen, "ComarDBus", NULL, NULL);
     while (1) {
-        if (shutdown_activated) {
+        if (shutdown_activated || my_proc.nr_children == 0) {
             proc_finish();
         }
         proc_listen(&p, &size, -1);

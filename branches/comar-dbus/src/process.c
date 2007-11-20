@@ -13,7 +13,9 @@
 #include <sys/time.h>
 #include <fcntl.h>
 #include <dbus/dbus.h>
+#include <time.h>
 
+#include "cfg.h"
 #include "log.h"
 #include "process.h"
 
@@ -21,6 +23,7 @@ struct Proc my_proc;
 int shutdown_activated = 0;
 static char *name_addr;
 static size_t name_size;
+static time_t time_lastaction = 0;
 
 static void
 handle_sigterm(int signum)
@@ -62,6 +65,18 @@ set_my_name(const char *name)
     }
 }
 
+int
+proc_check_idle()
+{
+    if (cfg_bus_type == DBUS_BUS_SYSTEM) {
+        return 0;
+    }
+    if (my_proc.nr_children == 0 && time_lastaction != 0 && difftime(time(0), time_lastaction) > cfg_idle_shutdown) {
+        return 1;
+    }
+    return 0;
+}
+
 void
 proc_init(int argc, char *argv[], const char *name)
 {
@@ -81,6 +96,7 @@ proc_init(int argc, char *argv[], const char *name)
     my_proc.children = calloc(8, sizeof(struct ProcChild));
     handle_signals();
     set_my_name(my_proc.desc);
+    time_lastaction = time(0);
 }
 
 static struct ProcChild *
@@ -116,6 +132,7 @@ rem_child(int nr)
     waitpid(my_proc.children[nr].pid, &status, 0);
     close(my_proc.children[nr].to);
     close(my_proc.children[nr].from);
+    time_lastaction = time(0);
     if (my_proc.children[nr].bus_msg != NULL) {
         dbus_message_unref(my_proc.children[nr].bus_msg);
     }

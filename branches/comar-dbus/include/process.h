@@ -37,3 +37,4 @@ int proc_listen(struct ProcChild **senderp, size_t *sizep, int timeout);
 void proc_check_shutdown(void);
 struct ProcChild *proc_fork(void (*child_func)(void), const char *desc, DBusConnection *bus_conn, DBusMessage *bus_msg);
 void proc_finish(void);
+int proc_check_idle(void);

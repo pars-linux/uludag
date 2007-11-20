@@ -1,13 +1,11 @@
-Main:
-- Stop running after # seconds with no operations
-
 CSL
+- model.xml
 - Check model/application/method existance
 - Unicode strings
 
 DBus:
 - PolicyKit support
-- Introspection (model.xml)
+- Introspection
 - Signals
 
 Documentation

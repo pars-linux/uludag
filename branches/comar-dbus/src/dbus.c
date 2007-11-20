@@ -93,7 +93,7 @@ dbus_method_call()
     }
 
     if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
-        log_error("DBus: Out Of Memory!\n");
+        log_error("Out Of Memory!\n");
         exit(1);
     }
 
@@ -114,31 +114,36 @@ dbus_listen()
     int ret;
 
     dbus_error_init(&err);
-    conn = dbus_bus_get(DBUS_BUS_SYSTEM, &err);
+    conn = dbus_bus_get(cfg_bus_type, &err);
     if (dbus_error_is_set(&err)) {
-        log_error("DBus: Connection Error (%s)\n", err.message);
+        log_error("Connection Error (%s)\n", err.message);
         dbus_error_free(&err);
     }
     if (NULL == conn) {
-        log_error("DBus: Connection Null\n");
+        log_error("Connection Null\n");
         exit(1);
     }
 
     ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING , &err);
     if (dbus_error_is_set(&err)) {
-        log_error("DBus: Name Error (%s)\n", err.message);
+        log_error("Name Error (%s)\n", err.message);
         dbus_error_free(&err);
     }
     if (DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER != ret) {
-        log_error("DBus: Not Primary Owner (%d)\n", ret);
+        log_error("Not Primary Owner (%d)\n", ret);
         exit(1);
     }
 
-    log_info("DBus: listening %s\n", cfg_bus_name);
+    log_info("Listening on %s...\n", cfg_bus_name);
 
     while (1) {
         dbus_connection_read_write(conn, 0);
         msg = dbus_connection_pop_message(conn);
+
+        if (proc_check_idle() == 1) {
+            log_info("Service was idle for %d second(s), closing daemon...\n", cfg_idle_shutdown);
+            break;
+        }
 
         if (NULL == msg) {
             proc_listen(&p, &size, 1);
