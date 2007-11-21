@@ -26,6 +26,7 @@ TARGET_LINK_LIBRARIES(tasma ${QT_QT_LIBRARY} kdecore kdeui kutils)
 INSTALL_TARGETS(/bin tasma)
 INSTALL_FILES(/share/applications/kde FILES tasma.desktop)
 INSTALL_FILES(/share/apps/tasma FILES tasmaui.rc)
+INSTALL_FILES(/share/doc/HTML/tr FILES ../docs/index.html)
 
 KDE3_INSTALL_ICONS(hicolor)
 
