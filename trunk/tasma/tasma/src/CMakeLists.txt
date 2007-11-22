@@ -23,10 +23,10 @@ KDE3_AUTOMOC(${tasma_sources})
 KDE3_ADD_EXECUTABLE(tasma ${tasma_sources})
 TARGET_LINK_LIBRARIES(tasma ${QT_QT_LIBRARY} kdecore kdeui kutils)
 
-INSTALL_TARGETS(/bin tasma)
-INSTALL_FILES(/share/applications/kde FILES tasma.desktop)
-INSTALL_FILES(/share/apps/tasma FILES tasmaui.rc)
-INSTALL_FILES(/share/doc/HTML/tr FILES ../docs/index.html)
+INSTALL(TARGETS tasma DESTINATION bin)
+INSTALL(FILES tasma.desktop DESTINATION share/applications/kde)
+INSTALL(FILES tasmaui.rc DESTINATION share/apps/tasma)
+INSTALL(FILES ../docs/index.html DESTINATION share/doc/HTML/tr/tasma)
 
 KDE3_INSTALL_ICONS(hicolor)
 
