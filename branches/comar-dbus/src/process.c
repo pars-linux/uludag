@@ -290,7 +290,7 @@ proc_setup_fds(fd_set *fds)
 }
 
 static int
-proc_select_fds(fd_set *fds, int max, struct ProcChild **senderp, size_t *sizep, int timeout)
+proc_select_fds(fd_set *fds, int max, struct ProcChild **senderp, size_t *sizep, int timeout_sec, int timeout_usec)
 {
     unsigned int ipc;
     struct timeval tv, *tvptr;
@@ -298,9 +298,9 @@ proc_select_fds(fd_set *fds, int max, struct ProcChild **senderp, size_t *sizep,
     int len;
     int i;
 
-    tv.tv_sec = timeout;
-    tv.tv_usec = 0;
-    if (timeout != -1) tvptr = &tv; else tvptr = NULL;
+    tv.tv_sec = timeout_sec;
+    tv.tv_usec = timeout_usec;
+    if (timeout_sec != -1) tvptr = &tv; else tvptr = NULL;
 
     if (select(max, fds, NULL, NULL, tvptr) > 0) {
         sock = my_proc.parent.from;
@@ -340,12 +340,12 @@ proc_select_fds(fd_set *fds, int max, struct ProcChild **senderp, size_t *sizep,
 }
 
 int
-proc_listen(struct ProcChild **senderp, size_t *sizep, int timeout)
+proc_listen(struct ProcChild **senderp, size_t *sizep, int timeout_sec, int timeout_usec)
 {
     fd_set fds;
     int max;
 
     max = proc_setup_fds(&fds);
 
-    return proc_select_fds(&fds, max, senderp, sizep, timeout);
+    return proc_select_fds(&fds, max, senderp, sizep, timeout_sec, timeout_usec);
 }

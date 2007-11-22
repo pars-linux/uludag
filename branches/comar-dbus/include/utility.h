@@ -8,6 +8,6 @@
 */
 
 unsigned char *load_file(const char *fname, int *sizeptr);
-int check_model_format(const char *model);
+int check_interface_format(const char *interface);
 int check_path_format(const char *path);
-char *get_script_path(const char *model, const char *path);
+char *get_script_path(const char *interface, const char *path);

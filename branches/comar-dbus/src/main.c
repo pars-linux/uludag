@@ -45,6 +45,6 @@ main(int argc, char *argv[])
         if (shutdown_activated || my_proc.nr_children == 0) {
             proc_finish();
         }
-        proc_listen(&p, &size, -1);
+        proc_listen(&p, &size, -1, 0);
     }
 }
