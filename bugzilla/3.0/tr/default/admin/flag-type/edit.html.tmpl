@@ -25,19 +25,21 @@
 [% PROCESS "global/js-products.html.tmpl" %]
 
 [% IF type.target_type == "bug" %]
-  [% title = BLOCK %]Create Flag Type for [% terms.Bugs %][% END %]
+  [% title = BLOCK %][% terms.Bugs %] için Bayrak Tipi Oluştur[% END %]
   [% typeLabelLowerPlural = BLOCK %][% terms.bugs %][% END %]
+  [% typeLabelLowerPluralGenitive = BLOCK %][% terms.bugs %]ın[% END %]
   [% typeLabelLowerSingular = BLOCK %][% terms.bug %][% END %]
 [% ELSE %]
-  [% title = "Create Flag Type for Attachments" %]
-  [% typeLabelLowerPlural = BLOCK %]attachments[% END %]
-  [% typeLabelLowerSingular = BLOCK %]attachment[% END %]
+  [% title = "Eklentiler için Bayrak Tipi Oluştur" %]
+  [% typeLabelLowerPlural = BLOCK %]eklentiler[% END %]
+  [% typeLabelLowerPluralGenitive = BLOCK %]eklentilerin[% END %]
+  [% typeLabelLowerSingular = BLOCK %]eklenti[% END %]
 [% END %]
 
 [% IF last_action == "copy" %]
-  [% title = BLOCK %]Create Flag Type Based on [% type.name FILTER html %][% END %]
+  [% title = BLOCK %][% type.name FILTER html %] Tipini Temel Alan Bir Bayrak Oluştur[% END %]
 [% ELSIF last_action == "edit" %]
-  [% title = BLOCK %]Edit Flag Type [% type.name FILTER html %][% END %]
+  [% title = BLOCK %]Bayrak Tipini Düzenle [% type.name FILTER html %][% END %]
 [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -64,22 +66,22 @@
 
   [%# Add a hidden button at the top of the form so that the user pressing "return"
     # really submit the form, as expected. %]
-  <input type="submit" id="commit" value="Submit" style="display: none;">
+  <input type="submit" id="commit" value="Gönder" style="display: none;">
 
   <table id="form" cellspacing="0" cellpadding="4" border="0">
     <tr>
-      <th>Name:</th>
+      <th>İsim:</th>
       <td>
-        a short name identifying this type<br>
+        bu tipi tanımlayan kısa bir isim<br>
         <input type="text" name="name" value="[% type.name FILTER html %]"
                size="50" maxlength="50">
       </td>
     </tr>
 
     <tr>
-      <th>Description:</th>
+      <th>Açıklama:</th>
       <td>
-        a comprehensive description of this type<br>
+        bu tipin detaylı bir açıklaması<br>
         [% INCLUDE global/textarea.html.tmpl
           name           = 'description'
           minrows        = 4
@@ -90,16 +92,16 @@
     </tr>
 
     <tr>
-      <th>Category:</th>
+      <th>Sınıf:</th>
 
       <td>
-        the products/components to which [% typeLabelLowerPlural %] must
-        (inclusions) or must not (exclusions) belong in order for users
-        to be able to set flags of this type for them
+        Kullanıcıların, bu tipten bayrakları işaretleyebilmesi için 
+        [% typeLabelLowerPluralGenitive %] ait (dahil) olması ve olmaması (hariç) 
+        gereken ürünler/bileşenler
         <table>
           <tr>
             <td style="vertical-align: top;">
-              <b>Product/Component:</b><br>
+              <b>Ürün/Bileşen:</b><br>
               <select name="product" onchange="selectProduct(this.form, 'product', 'component', '__Any__');">
                 <option value="">__Any__</option>
                 [% FOREACH prod = products %]
@@ -116,18 +118,18 @@
                           [% comp FILTER html %]</option>
                 [% END %]
               </select><br>
-              <input type="submit" name="categoryAction-include" value="Include">
-              <input type="submit" name="categoryAction-exclude" value="Exclude">
+              <input type="submit" name="categoryAction-include" value="Dahil et">
+              <input type="submit" name="categoryAction-exclude" value="Hariç tut">
             </td>
             <td style="vertical-align: top;">
-              <b>Inclusions:</b><br>
+              <b>Dahil edilenler:</b><br>
               [% PROCESS "global/select-menu.html.tmpl" name="inclusion_to_remove" multiple="1" size="7" options=type.inclusions %]<br>
-              <input type="submit" name="categoryAction-removeInclusion" value="Remove Inclusion">
+              <input type="submit" name="categoryAction-removeInclusion" value="Dahil Edilme Durumunu Sil">
             </td>
             <td style="vertical-align: top;">
-              <b>Exclusions:</b><br>
+              <b>Hariç tutulanlar:</b><br>
               [% PROCESS "global/select-menu.html.tmpl" name="exclusion_to_remove" multiple="1" size="7" options=type.exclusions %]<br>
-              <input type="submit" name="categoryAction-removeExclusion" value="Remove Exclusion">
+              <input type="submit" name="categoryAction-removeExclusion" value="Hariç Tutulma Durumunu Sil">
             </td>
           </tr>
         </table>
@@ -135,12 +137,12 @@
     </tr>
 
     <tr>
-      <th>Sort Key:</th>
+      <th>Sıralama Anahtarı:</th>
       <td>
-        a number between 1 and 32767 by which this type will be sorted
-        when displayed to users in a list; ignore if you don't care
-        what order the types appear in or if you want them to appear
-        in alphabetical order<br>
+        bir listede kullanıcılara gösterileceği zaman bu tipi sıralamada 
+        kullanılacak 1 ile 32767 arasında bir sayı; eğer tiplerin hangi 
+        sırada görüntülendiğini önemsemiyorsanız veya alfabetik olarak 
+        sıralanmalarını istiyorsanız bunu gözardı edebilirsiniz<br>
         <input type="text" name="sortkey" value="[% type.sortkey || 1 %]" size="5" maxlength="5">
       </td>
     </tr>
@@ -149,7 +151,7 @@
       <th>&nbsp;</th>
       <td>
         <input type="checkbox" name="is_active" [% "checked" IF type.is_active || !type.is_active.defined %]>
-        active (flags of this type appear in the UI and can be set)
+        aktif (bu tipteki bayraklar arayüzde görünür ve ayarlanabilir)
       </td>
     </tr>
 
@@ -157,20 +159,21 @@
       <th>&nbsp;</th>
       <td>
         <input type="checkbox" name="is_requestable" [% "checked" IF type.is_requestable || !type.is_requestable.defined %]>
-        requestable (users can ask for flags of this type to be set)
+        istenebilir (kullanıcılar bu tiptetik bayrakların ayarlanmasını isteyebilirler)
       </td>
     </tr>
 
     <tr>
-      <th>CC List:</th>
+      <th>Karbon Kopya Listesi:</th>
       <td>
-        if requestable, who should get carbon copied on email notification of requests.
-        This is a comma-separated list of full e-mail addresses which do not
-        need to be [% terms.Bugzilla %] logins.
+        eğer istenebilir durumdaysa, istekler için e-posta bildirimi gönderildiğinde,
+        kimlere karbon kopya gitmeli
+        Bu alan, [% terms.Bugzilla%] kullanıcısı olması gerekmeyen e-posta 
+        adreslerinin virgülle ayrılmış bir listesidir.
         [% IF Param('emailsuffix') %]
-          Note that the configured emailsuffix
-          <kbd>[% Param('emailsuffix') %]</kbd> will <em>not</em> be appended
-          to these addresses, so you should add it explicitly if so desired.
+          Bu adreslere ayarlanmış olan <kbd>[% Param('emailsuffix') %]</kbd> 
+          e-posta sonekinin eklen<em>me</em>yeceğine dikkat ediniz; arzu 
+          ederseniz kendiniz eklemelisiniz.
         [% END %]<br>
         <input type="text" name="cc_list" value="[% type.cc_list FILTER html %]" size="80" maxlength="200">
       </td>
@@ -180,7 +183,8 @@
       <th>&nbsp;</th>
       <td>
         <input type="checkbox" name="is_requesteeble" [% "checked" IF type.is_requesteeble || !type.is_requesteeble.defined %]>
-        specifically requestable (users can ask specific other users to set flags of this type as opposed to just asking the wind)
+        özel olarak istenebilir (kullanıcılar genele sormak yerine başka 
+        kullanıcılardan bu tipteki bayrakları ayarlamalarını isteyebilirler)
       </td>
     </tr>
 
@@ -188,25 +192,28 @@
       <th>&nbsp;</th>
       <td>
         <input type="checkbox" name="is_multiplicable" [% "checked" IF type.is_multiplicable || !type.is_multiplicable.defined %]>
-        multiplicable (multiple flags of this type can be set on the same [% typeLabelLowerSingular %])
+        çoklanabilir (aynı [% typeLabelLowerSingular%] içinde bu tipte birden fazla 
+        bayrak ayarlanabilir)
       </td>
     </tr>
 
     <tr>
-      <th>Grant Group:</th>
+      <th>İzin Grubu:</th>
       <td>
-        the group allowed to grant/deny flags of this type
-        (to allow all users to grant/deny these flags, select no group)<br>
+        bu tipteki bayrakları onaylamasına/reddetmesine izin verilen grup
+        (tüm kullanıcıların bu bayrakları onaylamasını/reddetmesini istiyorsanız, 
+        grup seçmeyin)<br>
         [% PROCESS select selname = "grant_group" %]
       </td>
     </tr>
 
     <tr>
-      <th>Request Group:</th>
+      <th>İstek grubu:</th>
       <td>
-        if flags of this type are requestable, the group allowed to request them
-        (to allow all users to request these flags, select no group)<br>
-        Note that the request group alone has no effect if the grant group is not defined!<br>
+        eğer bu tipteki bayraklar istenebilirse, onları istemesine izin verilen grup
+        (tüm kullanıcıların bu bayrağı isteyebilmesine izin vermek için, grup 
+        seçmeyin)<br>
+        Eğer izin grubu belirlenmezse istek grubunun anlamsız olduğunu unutmayın.<br>
         [% PROCESS select selname = "request_group" %]
       </td>
     </tr>
@@ -215,8 +222,8 @@
       <th></th>
       <td>
         <input type="submit" id="save" value="
-          [%- IF (last_action == "enter" || last_action == "copy") %]Create
-          [%- ELSE %]Save Changes
+          [%- IF (last_action == "enter" || last_action == "copy") %]Oluştur
+          [%- ELSE %]Değişiklikleri Kaydet
           [%- END %]">
       </td>
     </tr>
