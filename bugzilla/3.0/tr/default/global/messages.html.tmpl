@@ -74,16 +74,14 @@
         [% END %]
         [% IF groups_added_to.size %]
           <li>
-            The account has been added to the
-            [%+ groups_added_to.join(', ') FILTER html %]
-            group[% 's' IF groups_added_to.size > 1 %].
+            Kullanıcı hesabı [%+ groups_added_to.join(', ') FILTER html %] 
+            grubuna eklendi.
           </li>
         [% END %]
         [% IF groups_removed_from.size %]
           <li>
-            The account has been removed from the
-            [%+ groups_removed_from.join(', ') FILTER html %]
-            group[% 's' IF groups_removed_from.size > 1 %].
+            Kullanıcı hesabı [%+ groups_added_to.join(', ') FILTER html %] 
+            grubundan silindi.
           </li>
         [% END %]
         [% IF groups_granted_rights_to_bless.size %]
@@ -102,9 +100,9 @@
         [% END %]
       </ul>
     [% ELSE %]
-      [% title = "User $otheruser.login not changed" %]
-      You didn't request any changes to the user's account
-      [%+ otheruser.login FILTER html %].
+      [% title = "$otheruser.login kullanıcısına ait bilgiler değiştirilmedi" %]
+      [%+ otheruser.login FILTER html %] kullanıcısına ait hesap
+         için herhangi bir değişiklik isteğinde bulunmadınız.
     [% END %]
 
   [% ELSIF message_tag == "account_deleted" %]
