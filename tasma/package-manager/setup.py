@@ -21,17 +21,47 @@ kdedistutils.setup(
     min_kde_version = "3.5.2",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/package-manager.py', 'src/Commander.py','src/Progress.py','src/ProgressDialog.ui',
-                        'src/PreferencesDialog.ui','src/Preferences.py','src/pisianime.gif','src/CommonText.py',
-                        'src/RepoDialog.ui','src/HelpDialog.py','src/ComarIface.py','help', 'src/CustomEventListener.py',
-                        'src/Basket.py','src/animation.js','src/layout.css','src/package-managerui.rc',
-                        'src/Tray.py','src/BalloonMessage.py', 'src/BasketDialog.py', 'src/Settings.py',
-                        'src/Icons.py', 'src/LocaleData.py', 'src/PmDcop.py', 'src/pm-install.py', 'src/PackageCache.py',
-                        ("/usr/kde/3.5/share/applications/kde/",["src/packagemanager.desktop"]),
-                        ("/usr/kde/3.5/share/applnk/.hidden/",["src/packagemanager-helper.desktop"]),
-                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps",["src/package-manager.png"]),
-                        ("/usr/kde/3.5/share/mimelnk/application/",["src/x-pisi.desktop"]),
-                        ("/usr/kde/3.5/share/applications/kde/",["src/tasmamanager.desktop"])],
+    application_data = [
+                        # sources
+                        'src/package-manager.py', 
+                        'src/Commander.py',
+                        'src/Progress.py',
+                        'src/Preferences.py',
+                        'src/CommonText.py',
+                        'src/HelpDialog.py',
+                        'src/ComarIface.py',
+                        'src/Tray.py',
+                        'src/BalloonMessage.py',
+                        'src/BasketDialog.py',
+                        'src/Settings.py',
+                        'src/Icons.py',
+                        'src/LocaleData.py',
+                        'src/PmDcop.py',
+                        'src/pm-install.py',
+                        'src/CustomEventListener.py',
+                        'src/Basket.py',
+                        'src/PackageCache.py',
+
+                        # ui files
+                        'src/ProgressDialog.ui',
+                        'src/PreferencesDialog.ui',
+                        'src/RepoDialog.ui',
+
+                        # data
+                        'help',
+                        'data/pisianime.gif',
+                        'data/animation.js',
+                        'data/layout.css',
+                        'data/package-managerui.rc',
+                        ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["data/package-manager.png"]),
+
+                        # desktop files
+                        ("/usr/kde/3.5/share/applications/kde/", ["data/packagemanager.desktop"]),
+                        ("/usr/kde/3.5/share/applnk/.hidden/", ["data/packagemanager-helper.desktop"]),
+                        ("/usr/kde/3.5/share/mimelnk/application/", ["data/x-pisi.desktop"]),
+                        ("/usr/kde/3.5/share/applications/kde/", ["data/tasmamanager.desktop"])
+    ],
+
     executable_links = [('package-manager','package-manager.py'), ('pm-install','pm-install.py')],
     i18n = ('po',['src']),
     )
