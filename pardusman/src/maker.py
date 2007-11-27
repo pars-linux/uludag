@@ -61,7 +61,8 @@ def generate_grub_conf(project, kernel, initramfs):
     dict["kernel"] = kernel
     dict["initramfs"] = initramfs
     dict["title"] = project.title
-    
+    dict["exparams"] = project.exparams
+
     path = os.path.join(image_dir, "usr/share/grub/templates")
     dest = os.path.join(iso_dir, "boot/grub")
     for name in os.listdir(path):

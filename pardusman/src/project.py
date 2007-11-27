@@ -102,6 +102,7 @@ class Project:
         self.selected_components = []
         self.selected_packages = []
         self.all_packages = []
+        self.exparams = ''
     
     def open(self, filename):
         try:
@@ -122,6 +123,7 @@ class Project:
         self.media = doc.getAttribute("media")
         self.work_dir = doc.getTagData("WorkDir")
         self.release_files = doc.getTagData("ReleaseFiles")
+        self.exparams = doc.getTagData("ExtraParameters")
         
         paksel = doc.getTag("PackageSelection")
         if paksel:
@@ -145,6 +147,8 @@ class Project:
             doc.insertTag("WorkDir").insertData(self.work_dir)
         if self.release_files:
             doc.insertTag("ReleaseFiles").insertData(self.release_files)
+        if self.exparams:
+            doc.insertTag("ExtraParameters").insertData(self.exparams)
         if self.repo_uri:
             paks = doc.insertTag("PackageSelection")
             paks.setAttribute("repo_uri", self.repo_uri)
