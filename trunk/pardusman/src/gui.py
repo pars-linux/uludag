@@ -144,18 +144,27 @@ class ProjectWindow(KMainWindow):
         but = QPushButton("...", hb2)
         self.connect(but, SIGNAL("clicked()"), self.selectFiles)
         grid.addWidget(hb2, 3, 1)
-        
-        lab = QLabel(_("Type:"), box)
+
+        lab = QLabel(_("Extra Parameters:"), box)
         grid.addWidget(lab, 4, 0, Qt.AlignRight)
+        self.exparams = QLineEdit(box)
+        QToolTip.add(
+            self.exparams,
+            _("This parameters will add to the install media's GRUB")
+        )
+        grid.addWidget(self.exparams, 4, 1)
+
+        lab = QLabel(_("Type:"), box)
+        grid.addWidget(lab, 5, 0, Qt.AlignRight)
         self.project_type = QHButtonGroup(box)
         QRadioButton(_("Installation"), self.project_type)
         QRadioButton(_("Live system"), self.project_type)
-        grid.addWidget(self.project_type, 4, 1)
+        grid.addWidget(self.project_type, 5, 1)
         
         lab = QLabel(_("Media:"), box)
-        grid.addWidget(lab, 5, 0, Qt.AlignRight)
+        grid.addWidget(lab, 6, 0, Qt.AlignRight)
         self.project_media = QComboBox(False, box)
-        grid.addWidget(self.project_media, 5, 1)
+        grid.addWidget(self.project_media, 6, 1)
         
         self.media_types = [
             ("cd", 700, _("CD (700 MB)"), "cdrom_unmount"),
@@ -288,6 +297,11 @@ class ProjectWindow(KMainWindow):
             self.project.release_files = tmp
         else:
             self.project.release_files = None
+        tmp = unicode(self.exparams.text())
+        if tmp:
+            self.project.exparams = tmp
+        else:
+            self.project.exparams = None
         tmp = unicode(self.work_dir.text())
         if tmp:
             self.project.work_dir = tmp
@@ -320,6 +334,11 @@ class ProjectWindow(KMainWindow):
         else:
             tmp = ""
         self.release_files.setText(tmp)
+        if self.project.exparams:
+            tmp = unicode(self.project.exparams)
+        else:
+            tmp = ""
+        self.exparams.setText(tmp)
         if self.project.work_dir:
             tmp = unicode(self.project.work_dir)
         else:
