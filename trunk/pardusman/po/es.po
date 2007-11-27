@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-21 14:01+0200\n"
+"POT-Creation-Date: 2007-11-27 13:36+0200\n"
 "PO-Revision-Date: 2007-05-27 18:20-0400\n"
 "Last-Translator: klemens <click3d at linuxmail org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -19,86 +19,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: browser.py:36
-msgid "Version:"
-msgstr "Versión:"
-
-#: browser.py:38
+#: src/project.py:112
 #, python-format
-msgid "%s, release %s, build %s"
-msgstr "%s, release %s, build %s"
+msgid "Project file '%s' does not exists!"
+msgstr "Archivo de proyecto '%s' no existe!"
 
-#: browser.py:41
-msgid "Component:"
-msgstr "Componente:"
+#: src/project.py:115
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr "No es un archivo de proyecto Pardusman, xml inválido !"
 
-#: browser.py:46
-msgid "Homepage:"
-msgstr "Página web:"
+#: src/project.py:117
+msgid "Not a Pardusman project file"
+msgstr "No es un archivo de proyecto Pardusman"
 
-#: browser.py:54
-msgid "Summary:"
-msgstr "Resumen:"
-
-#: browser.py:61
-msgid "Description:"
-msgstr "Descripción:"
-
-#: browser.py:73
-msgid "Depends on:"
-msgstr "Depende de:"
-
-#: browser.py:78
-msgid "Depended by:"
-msgstr "Requerido por:"
-
-#: browser.py:206
-#, python-format
-msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
-msgstr "Total %d paquetes, %s bytes comprimido, %s bytes ïnstalado."
-
-#: browser.py:215
-msgid "Component"
-msgstr "Componente"
-
-#: browser.py:226
-msgid "Search:"
-msgstr "Buscar:"
-
-#: browser.py:230
-msgid "Package"
-msgstr "Paquete"
-
-#: browser.py:231
-msgid "Archive Size"
-msgstr "Tamaño comprimido"
-
-#: browser.py:232
-msgid "Installed Size"
-msgstr "Tamaño instalado"
-
-#: browser.py:303
-msgid "No packages selected."
-msgstr "Ningún paquete seleccionado."
-
-#: browser.py:308
-#, python-format
-msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
-msgstr "%d paquetes seleccionados, tamaño %s bytes comprimido, %s bytes instalado."
-
-#: browser.py:334
-msgid "Use selected packages"
-msgstr "Usar paquetes seleccionados"
-
-#: gui.py:80
+#: src/gui.py:81
 msgid "&Open"
 msgstr "&Abrir"
 
-#: gui.py:82
+#: src/gui.py:83
 msgid "Save &as..."
 msgstr "G&uardar como..."
 
-#: gui.py:97
+#: src/gui.py:98
 msgid ""
 "Pardusman says:\n"
 "\n"
@@ -110,19 +52,19 @@ msgstr ""
 "  Los ganadores no usan drogas!  \n"
 " "
 
-#: gui.py:103
+#: src/gui.py:104
 msgid "Title:"
 msgstr "Título:"
 
-#: gui.py:108
+#: src/gui.py:109
 msgid "Title of distribution media, used in grub menu."
 msgstr "Título del medio de distribución, en el menu de grub."
 
-#: gui.py:112
+#: src/gui.py:113
 msgid "Work folder:"
 msgstr "Directorio de trabajo:"
 
-#: gui.py:119
+#: src/gui.py:120
 msgid ""
 "This folder holds local repository cache\n"
 "and temporary files generated during the\n"
@@ -132,11 +74,11 @@ msgstr ""
 "y archivos temporarios generados durante\n"
 "el proceso de construcción de la imagen ISO."
 
-#: gui.py:125
+#: src/gui.py:126
 msgid "Repository:"
 msgstr "Repositorio:"
 
-#: gui.py:130
+#: src/gui.py:131
 msgid ""
 "PiSi package repository of the distribution.\n"
 "Must be a URL pointing to the repository index\n"
@@ -146,11 +88,11 @@ msgstr ""
 "Debe ser una URL apuntando al archivo de índice \n"
 "del repositorio (ej. pisi-index.xml.bz2)."
 
-#: gui.py:134
+#: src/gui.py:135
 msgid "Release files:"
 msgstr "Archivos de release:"
 
-#: gui.py:141
+#: src/gui.py:142
 msgid ""
 "Content of this folder is copied\n"
 "onto the root folder of CD."
@@ -158,126 +100,191 @@ msgstr ""
 "El contenido de este directorio se\n"
 "copiará al directorio raíz del CD."
 
-#: gui.py:147
+#: src/gui.py:148
+msgid "Extra Parameters:"
+msgstr ""
+
+#: src/gui.py:153
+msgid "This parameters will add to the install media's GRUB"
+msgstr ""
+
+#: src/gui.py:157
 msgid "Type:"
 msgstr "Tipo:"
 
-#: gui.py:150
+#: src/gui.py:160
 msgid "Installation"
 msgstr "Instalación"
 
-#: gui.py:151
+#: src/gui.py:161
 msgid "Live system"
 msgstr "Sistema booteable"
 
-#: gui.py:154
+#: src/gui.py:164
 msgid "Media:"
 msgstr "Medio:"
 
-#: gui.py:160
+#: src/gui.py:170
 msgid "CD (700 MB)"
 msgstr "CD (700 MB)"
 
-#: gui.py:161
+#: src/gui.py:171
 msgid "DVD (4.2 GB)"
 msgstr "DVD (4.2 GB)"
 
-#: gui.py:162
+#: src/gui.py:172
 msgid "FlashDisk (1 GB)"
 msgstr "FlashDisk (1 GB)"
 
-#: gui.py:163
+#: src/gui.py:173
 msgid "Custom size"
 msgstr "Tamaño personalizado"
 
-#: gui.py:171
+#: src/gui.py:181
 msgid "Update Repo"
 msgstr "Actualizar repo"
 
-#: gui.py:174
+#: src/gui.py:184
 msgid "Select packages"
 msgstr "Seleccionar paquetes"
 
-#: gui.py:177
+#: src/gui.py:187
 msgid "Make ISO"
 msgstr "Generar ISO"
 
-#: gui.py:210
+#: src/gui.py:220
 msgid "Select release files folder"
 msgstr "Seleccionar directorio de archivos de release"
 
-#: gui.py:221
+#: src/gui.py:231
 msgid "Select folder for temporary files and cache"
 msgstr "Seleccionar directorio para archivos temporales y cache"
 
-#: gui.py:241
-msgid "Project directory does not exist."
-msgstr "Directorio de proyecto no existe."
-
-#: gui.py:244
+#: src/gui.py:250
 msgid "Release files directory does not exist."
 msgstr "Directorio de archivos de release no existe."
 
-#: gui.py:285
+#: src/gui.py:293
 msgid "Project title not given."
 msgstr "Falta título del proyecto."
 
-#: gui.py:292
-msgid "Release files directory not given."
-msgstr "Directorio para archivos de release no ingresado."
-
-#: gui.py:299
+#: src/gui.py:310
 msgid "Project directory not given."
 msgstr "Directorio de proyecto no ingresado."
 
-#: gui.py:306
+#: src/gui.py:317
 msgid "Repository address not given."
 msgstr "Dirección de repositorio no ingresado."
 
-#: gui.py:344
+#: src/gui.py:360
 #, python-format
 msgid "%s - Pardusman"
 msgstr "%s - Pardusman"
 
-#: gui.py:346
+#: src/gui.py:362
 msgid "New project - Pardusman"
 msgstr "Nuevo proyecto - Pardusman"
 
-#: gui.py:350
+#: src/gui.py:366
 msgid "Select a project..."
 msgstr "Elegir un proyecto..."
 
-#: gui.py:361
+#: src/gui.py:377
+#, python-format
 msgid "Project '%s' opened."
 msgstr "Proyecto '%s' abierto."
 
-#: gui.py:368
+#: src/gui.py:384
 msgid "Saved."
 msgstr "Guardado."
 
-#: gui.py:373
+#: src/gui.py:389
 msgid "Save project as..."
 msgstr "Guardar proyecto como.."
 
-#: gui.py:382
+#: src/gui.py:398
 #, python-format
 msgid "Project saved as '%s'."
 msgstr "Proyecto guardado como '%s'."
 
-#: gui.py:386
+#: src/gui.py:402
 msgid "Pardus distribution media maker"
 msgstr "Creador de medio para distribución Pardus"
 
-#: project.py:112
+#: src/browser.py:34
+msgid "Version:"
+msgstr "Versión:"
+
+#: src/browser.py:36
 #, python-format
-msgid "Project file '%s' does not exists!"
-msgstr "Archivo de proyecto '%s' no existe!"
+msgid "%s, release %s, build %s"
+msgstr "%s, release %s, build %s"
 
-#: project.py:115
-msgid "Not a Pardusman project file, invalid xml!"
-msgstr "No es un archivo de proyecto Pardusman, xml inválido !"
+#: src/browser.py:39
+msgid "Component:"
+msgstr "Componente:"
 
-#: project.py:117
-msgid "Not a Pardusman project file"
-msgstr "No es un archivo de proyecto Pardusman"
+#: src/browser.py:44
+msgid "Homepage:"
+msgstr "Página web:"
 
+#: src/browser.py:52
+msgid "Summary:"
+msgstr "Resumen:"
+
+#: src/browser.py:59
+msgid "Description:"
+msgstr "Descripción:"
+
+#: src/browser.py:71
+msgid "Depends on:"
+msgstr "Depende de:"
+
+#: src/browser.py:76
+msgid "Depended by:"
+msgstr "Requerido por:"
+
+#: src/browser.py:204
+#, python-format
+msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
+msgstr "Total %d paquetes, %s bytes comprimido, %s bytes ïnstalado."
+
+#: src/browser.py:213
+msgid "Component"
+msgstr "Componente"
+
+#: src/browser.py:224
+msgid "Search:"
+msgstr "Buscar:"
+
+#: src/browser.py:228
+msgid "Package"
+msgstr "Paquete"
+
+#: src/browser.py:229
+msgid "Archive Size"
+msgstr "Tamaño comprimido"
+
+#: src/browser.py:230
+msgid "Installed Size"
+msgstr "Tamaño instalado"
+
+#: src/browser.py:299
+msgid "No packages selected."
+msgstr "Ningún paquete seleccionado."
+
+#: src/browser.py:304
+#, python-format
+msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
+msgstr ""
+"%d paquetes seleccionados, tamaño %s bytes comprimido, %s bytes instalado."
+
+#: src/browser.py:330
+msgid "Use selected packages"
+msgstr "Usar paquetes seleccionados"
+
+#~ msgid "Project directory does not exist."
+#~ msgstr "Directorio de proyecto no existe."
+
+#~ msgid "Release files directory not given."
+#~ msgstr "Directorio para archivos de release no ingresado."

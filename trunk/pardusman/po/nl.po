@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-21 14:01+0200\n"
+"POT-Creation-Date: 2007-11-27 13:36+0200\n"
 "PO-Revision-Date: 2007-02-25 21:04+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -18,86 +18,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: browser.py:36
-msgid "Version:"
-msgstr "Versie:"
-
-#: browser.py:38
+#: src/project.py:112
 #, python-format
-msgid "%s, release %s, build %s"
-msgstr "%s, release %s, bouw %s"
+msgid "Project file '%s' does not exists!"
+msgstr "Project bestand '%s' bestaat niet!"
 
-#: browser.py:41
-msgid "Component:"
-msgstr "Component:"
+#: src/project.py:115
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr "Geen Pardusman project bestand, ongeldige xml!"
 
-#: browser.py:46
-msgid "Homepage:"
-msgstr "Homepage:"
+#: src/project.py:117
+msgid "Not a Pardusman project file"
+msgstr "Geen Pardusman project bestand"
 
-#: browser.py:54
-msgid "Summary:"
-msgstr "Samenvatting:"
-
-#: browser.py:61
-msgid "Description:"
-msgstr "Beschrijving:"
-
-#: browser.py:73
-msgid "Depends on:"
-msgstr "Afhankelijk van:"
-
-#: browser.py:78
-msgid "Depended by:"
-msgstr "Afhankelijkheid door:"
-
-#: browser.py:206
-#, python-format
-msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
-msgstr "Totaal van %d pakketten, %s bytes gecomprimeerd, %s bytes geïnstalleerd."
-
-#: browser.py:215
-msgid "Component"
-msgstr "Component"
-
-#: browser.py:226
-msgid "Search:"
-msgstr "Zoek:"
-
-#: browser.py:230
-msgid "Package"
-msgstr "Pakket"
-
-#: browser.py:231
-msgid "Archive Size"
-msgstr "Archiefgrootte"
-
-#: browser.py:232
-msgid "Installed Size"
-msgstr "Geïnstalleerde grootte"
-
-#: browser.py:303
-msgid "No packages selected."
-msgstr "Geen pakketten geïnstalleerd."
-
-#: browser.py:308
-#, python-format
-msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
-msgstr "%d pakketten geselecteerd, %s bytes archiefgrootte, %s bytes geïnstalleerde grootte."
-
-#: browser.py:334
-msgid "Use selected packages"
-msgstr "Gebruik geselecteerde pakketten"
-
-#: gui.py:80
+#: src/gui.py:81
 msgid "&Open"
 msgstr "&Open"
 
-#: gui.py:82
+#: src/gui.py:83
 msgid "Save &as..."
 msgstr "Opslaan &als..."
 
-#: gui.py:97
+#: src/gui.py:98
 msgid ""
 "Pardusman says:\n"
 "\n"
@@ -109,19 +51,19 @@ msgstr ""
 "  De winnaars gebruiken niet van de drugs!  \n"
 " "
 
-#: gui.py:103
+#: src/gui.py:104
 msgid "Title:"
 msgstr "Titel:"
 
-#: gui.py:108
+#: src/gui.py:109
 msgid "Title of distribution media, used in grub menu."
 msgstr "Titel van distributie medium, gebruikt in het grub menu."
 
-#: gui.py:112
+#: src/gui.py:113
 msgid "Work folder:"
 msgstr "Werkmap:"
 
-#: gui.py:119
+#: src/gui.py:120
 msgid ""
 "This folder holds local repository cache\n"
 "and temporary files generated during the\n"
@@ -131,11 +73,11 @@ msgstr ""
 "en tijdelijke bestanden welk gegenereerd zijn\n"
 " tijdens het maken van de ISO."
 
-#: gui.py:125
+#: src/gui.py:126
 msgid "Repository:"
 msgstr "Repository:"
 
-#: gui.py:130
+#: src/gui.py:131
 msgid ""
 "PiSi package repository of the distribution.\n"
 "Must be a URL pointing to the repository index\n"
@@ -145,11 +87,11 @@ msgstr ""
 "Moet een URL zijn welk verwijst naar het repository\n"
 "index bestand (bijv. pisi-index.xml.bz2)."
 
-#: gui.py:134
+#: src/gui.py:135
 msgid "Release files:"
 msgstr "Release bestanden:"
 
-#: gui.py:141
+#: src/gui.py:142
 msgid ""
 "Content of this folder is copied\n"
 "onto the root folder of CD."
@@ -157,126 +99,193 @@ msgstr ""
 "Inhoud van deze map is gekopieerd\n"
 "naar de root map van de CD."
 
-#: gui.py:147
+#: src/gui.py:148
+msgid "Extra Parameters:"
+msgstr ""
+
+#: src/gui.py:153
+msgid "This parameters will add to the install media's GRUB"
+msgstr ""
+
+#: src/gui.py:157
 msgid "Type:"
 msgstr "Type:"
 
-#: gui.py:150
+#: src/gui.py:160
 msgid "Installation"
 msgstr "Installatie"
 
-#: gui.py:151
+#: src/gui.py:161
 msgid "Live system"
 msgstr "Live systeem"
 
-#: gui.py:154
+#: src/gui.py:164
 msgid "Media:"
 msgstr "Medium:"
 
-#: gui.py:160
+#: src/gui.py:170
 msgid "CD (700 MB)"
 msgstr "CD (700 MB)"
 
-#: gui.py:161
+#: src/gui.py:171
 msgid "DVD (4.2 GB)"
 msgstr "DVD (4.2 GB)"
 
-#: gui.py:162
+#: src/gui.py:172
 msgid "FlashDisk (1 GB)"
 msgstr "FlashDisk (1 GB)"
 
-#: gui.py:163
+#: src/gui.py:173
 msgid "Custom size"
 msgstr "Aangepaste grootte"
 
-#: gui.py:171
+#: src/gui.py:181
 msgid "Update Repo"
 msgstr "Update repo"
 
-#: gui.py:174
+#: src/gui.py:184
 msgid "Select packages"
 msgstr "Selecteer pakketten"
 
-#: gui.py:177
+#: src/gui.py:187
 msgid "Make ISO"
 msgstr "Maak ISO"
 
-#: gui.py:210
+#: src/gui.py:220
 msgid "Select release files folder"
 msgstr "Selecteer release bestanden map"
 
-#: gui.py:221
+#: src/gui.py:231
 msgid "Select folder for temporary files and cache"
 msgstr "Selecteer map voor tijdelijke bestanden en cache"
 
-#: gui.py:241
-msgid "Project directory does not exist."
-msgstr "Project directory bestaat niet."
-
-#: gui.py:244
+#: src/gui.py:250
 msgid "Release files directory does not exist."
 msgstr "Release bestanden bestaan niet."
 
-#: gui.py:285
+#: src/gui.py:293
 msgid "Project title not given."
 msgstr "Geen titel aan project gegeven."
 
-#: gui.py:292
-msgid "Release files directory not given."
-msgstr "Release bestanden map niet opgegeven."
-
-#: gui.py:299
+#: src/gui.py:310
 msgid "Project directory not given."
 msgstr "Project directory niet opgegeven."
 
-#: gui.py:306
+#: src/gui.py:317
 msgid "Repository address not given."
 msgstr "Repository adres niet opgegeven."
 
-#: gui.py:344
+#: src/gui.py:360
 #, python-format
 msgid "%s - Pardusman"
 msgstr "%s - Pardusman"
 
-#: gui.py:346
+#: src/gui.py:362
 msgid "New project - Pardusman"
 msgstr "Nieuw project - Pardusman"
 
-#: gui.py:350
+#: src/gui.py:366
 msgid "Select a project..."
 msgstr "Selecteer een project..."
 
-#: gui.py:361
+#: src/gui.py:377
+#, python-format
 msgid "Project '%s' opened."
 msgstr "Project '%s' geopend."
 
-#: gui.py:368
+#: src/gui.py:384
 msgid "Saved."
 msgstr "Opgeslagen."
 
-#: gui.py:373
+#: src/gui.py:389
 msgid "Save project as..."
 msgstr "Project opslaan als.."
 
-#: gui.py:382
+#: src/gui.py:398
 #, python-format
 msgid "Project saved as '%s'."
 msgstr "Project opgeslagen als '%s'."
 
-#: gui.py:386
+#: src/gui.py:402
 msgid "Pardus distribution media maker"
 msgstr "Pardus distributie media maker"
 
-#: project.py:112
+#: src/browser.py:34
+msgid "Version:"
+msgstr "Versie:"
+
+#: src/browser.py:36
 #, python-format
-msgid "Project file '%s' does not exists!"
-msgstr "Project bestand '%s' bestaat niet!"
+msgid "%s, release %s, build %s"
+msgstr "%s, release %s, bouw %s"
 
-#: project.py:115
-msgid "Not a Pardusman project file, invalid xml!"
-msgstr "Geen Pardusman project bestand, ongeldige xml!"
+#: src/browser.py:39
+msgid "Component:"
+msgstr "Component:"
 
-#: project.py:117
-msgid "Not a Pardusman project file"
-msgstr "Geen Pardusman project bestand"
+#: src/browser.py:44
+msgid "Homepage:"
+msgstr "Homepage:"
 
+#: src/browser.py:52
+msgid "Summary:"
+msgstr "Samenvatting:"
+
+#: src/browser.py:59
+msgid "Description:"
+msgstr "Beschrijving:"
+
+#: src/browser.py:71
+msgid "Depends on:"
+msgstr "Afhankelijk van:"
+
+#: src/browser.py:76
+msgid "Depended by:"
+msgstr "Afhankelijkheid door:"
+
+#: src/browser.py:204
+#, python-format
+msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
+msgstr ""
+"Totaal van %d pakketten, %s bytes gecomprimeerd, %s bytes geïnstalleerd."
+
+#: src/browser.py:213
+msgid "Component"
+msgstr "Component"
+
+#: src/browser.py:224
+msgid "Search:"
+msgstr "Zoek:"
+
+#: src/browser.py:228
+msgid "Package"
+msgstr "Pakket"
+
+#: src/browser.py:229
+msgid "Archive Size"
+msgstr "Archiefgrootte"
+
+#: src/browser.py:230
+msgid "Installed Size"
+msgstr "Geïnstalleerde grootte"
+
+#: src/browser.py:299
+msgid "No packages selected."
+msgstr "Geen pakketten geïnstalleerd."
+
+#: src/browser.py:304
+#, python-format
+msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
+msgstr ""
+"%d pakketten geselecteerd, %s bytes archiefgrootte, %s bytes geïnstalleerde "
+"grootte."
+
+#: src/browser.py:330
+msgid "Use selected packages"
+msgstr "Gebruik geselecteerde pakketten"
+
+#~ msgid "Project directory does not exist."
+#~ msgstr "Project directory bestaat niet."
+
+#~ msgid "Release files directory not given."
+#~ msgstr "Release bestanden map niet opgegeven."
