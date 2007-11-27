@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pardusman-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-21 14:01+0200\n"
+"POT-Creation-Date: 2007-11-27 13:36+0200\n"
 "PO-Revision-Date: 2007-11-18 15:12+0200\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -19,86 +19,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: browser.py:36
-msgid "Version:"
-msgstr "Sürüm:"
-
-#: browser.py:38
+#: src/project.py:112
 #, python-format
-msgid "%s, release %s, build %s"
-msgstr "%s, sürüm %s, inşa %s"
+msgid "Project file '%s' does not exists!"
+msgstr "Proje dosyası '%s' mevcut değil!"
 
-#: browser.py:41
-msgid "Component:"
-msgstr "Bileşen:"
+#: src/project.py:115
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr "Pardusman proje dosyası değil, geçersiz xml!"
 
-#: browser.py:46
-msgid "Homepage:"
-msgstr "Anasayfa:"
+#: src/project.py:117
+msgid "Not a Pardusman project file"
+msgstr "Pardusman proje dosyası değil"
 
-#: browser.py:54
-msgid "Summary:"
-msgstr "Özet:"
-
-#: browser.py:61
-msgid "Description:"
-msgstr "Açıklama:"
-
-#: browser.py:73
-msgid "Depends on:"
-msgstr "Bağımlılıklar:"
-
-#: browser.py:78
-msgid "Depended by:"
-msgstr "Buna bağımlı olanlar:"
-
-#: browser.py:206
-#, python-format
-msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
-msgstr "Toplam %d paket, sıkıştırılmış olarak %s byte, kurulu olarak %s byte."
-
-#: browser.py:215
-msgid "Component"
-msgstr "Bileşen"
-
-#: browser.py:226
-msgid "Search:"
-msgstr "Ara:"
-
-#: browser.py:230
-msgid "Package"
-msgstr "Paket"
-
-#: browser.py:231
-msgid "Archive Size"
-msgstr "Arşiv Boyutu"
-
-#: browser.py:232
-msgid "Installed Size"
-msgstr "Kurulu Boyut"
-
-#: browser.py:303
-msgid "No packages selected."
-msgstr "Paket seçilmedi."
-
-#: browser.py:308
-#, python-format
-msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
-msgstr "%d paket seçildi, sıkıştırılmış olarak %s byte, kurulu olarak %s byte."
-
-#: browser.py:334
-msgid "Use selected packages"
-msgstr "Seçilenleri Kullan"
-
-#: gui.py:80
+#: src/gui.py:81
 msgid "&Open"
 msgstr "&Aç"
 
-#: gui.py:82
+#: src/gui.py:83
 msgid "Save &as..."
 msgstr "&Farklı kaydet..."
 
-#: gui.py:97
+#: src/gui.py:98
 msgid ""
 "Pardusman says:\n"
 "\n"
@@ -111,19 +53,19 @@ msgstr ""
 "falan...\n"
 " "
 
-#: gui.py:103
+#: src/gui.py:104
 msgid "Title:"
 msgstr "Başlık:"
 
-#: gui.py:108
+#: src/gui.py:109
 msgid "Title of distribution media, used in grub menu."
 msgstr "Grub menüsünde kullanılacak başlık."
 
-#: gui.py:112
+#: src/gui.py:113
 msgid "Work folder:"
 msgstr "Çalışma dizini:"
 
-#: gui.py:119
+#: src/gui.py:120
 msgid ""
 "This folder holds local repository cache\n"
 "and temporary files generated during the\n"
@@ -133,11 +75,11 @@ msgstr ""
 "yerel kopyalarının ve geçici dosyaların\n"
 "oluşturulduğu yerdir."
 
-#: gui.py:125
+#: src/gui.py:126
 msgid "Repository:"
 msgstr "Paket deposu:"
 
-#: gui.py:130
+#: src/gui.py:131
 msgid ""
 "PiSi package repository of the distribution.\n"
 "Must be a URL pointing to the repository index\n"
@@ -147,11 +89,11 @@ msgstr ""
 "Depo endeks dosyasına (pisi-index.xml.bz2)\n"
 "işaret eden bir URL olmalıdır."
 
-#: gui.py:134
+#: src/gui.py:135
 msgid "Release files:"
 msgstr "Sürüm dosyaları:"
 
-#: gui.py:141
+#: src/gui.py:142
 msgid ""
 "Content of this folder is copied\n"
 "onto the root folder of CD."
@@ -159,126 +101,190 @@ msgstr ""
 "Bu dizindeki dosyalar, CD'nin kök\n"
 "dizinine kopyalanır."
 
-#: gui.py:147
+#: src/gui.py:148
+msgid "Extra Parameters:"
+msgstr "Ek parametreler:"
+
+#: src/gui.py:153
+msgid "This parameters will add to the install media's GRUB"
+msgstr "Bu parametreler GRUB'a eklenecektir."
+
+#: src/gui.py:157
 msgid "Type:"
 msgstr "Tür:"
 
-#: gui.py:150
+#: src/gui.py:160
 msgid "Installation"
 msgstr "Kurulum"
 
-#: gui.py:151
+#: src/gui.py:161
 msgid "Live system"
 msgstr "Çalışan sistem"
 
-#: gui.py:154
+#: src/gui.py:164
 msgid "Media:"
 msgstr "Ortam:"
 
-#: gui.py:160
+#: src/gui.py:170
 msgid "CD (700 MB)"
 msgstr "CD (700 MB)"
 
-#: gui.py:161
+#: src/gui.py:171
 msgid "DVD (4.2 GB)"
 msgstr "DVD (4.2 GB)"
 
-#: gui.py:162
+#: src/gui.py:172
 msgid "FlashDisk (1 GB)"
 msgstr "FlashDisk (1 GB)"
 
-#: gui.py:163
+#: src/gui.py:173
 msgid "Custom size"
 msgstr "Diğer"
 
-#: gui.py:171
+#: src/gui.py:181
 msgid "Update Repo"
 msgstr "Güncelle"
 
-#: gui.py:174
+#: src/gui.py:184
 msgid "Select packages"
 msgstr "Paket seç"
 
-#: gui.py:177
+#: src/gui.py:187
 msgid "Make ISO"
 msgstr "ISO oluştur"
 
-#: gui.py:210
+#: src/gui.py:220
 msgid "Select release files folder"
 msgstr "Sürüm dosyaları dizinini belirtin"
 
-#: gui.py:221
+#: src/gui.py:231
 msgid "Select folder for temporary files and cache"
 msgstr "Geçici dosya ve önbellek için dizin seçin"
 
-#: gui.py:241
-msgid "Project directory does not exist."
-msgstr "Proje dizini mevcut değil."
-
-#: gui.py:244
+#: src/gui.py:250
 msgid "Release files directory does not exist."
 msgstr "Sürüm dosyaları dizini mevcut değil."
 
-#: gui.py:285
+#: src/gui.py:293
 msgid "Project title not given."
 msgstr "Proje başlığı belirtilmemiş."
 
-#: gui.py:292
-msgid "Release files directory not given."
-msgstr "Sürüm dosyaları dizini belirtilmemiş."
-
-#: gui.py:299
+#: src/gui.py:310
 msgid "Project directory not given."
 msgstr "Proje dizini belirtilmemiş."
 
-#: gui.py:306
+#: src/gui.py:317
 msgid "Repository address not given."
 msgstr "Depo adresi belirtilmemiş."
 
-#: gui.py:344
+#: src/gui.py:360
 #, python-format
 msgid "%s - Pardusman"
 msgstr "%s - Pardusman"
 
-#: gui.py:346
+#: src/gui.py:362
 msgid "New project - Pardusman"
 msgstr "Yeni proje - Pardusman"
 
-#: gui.py:350
+#: src/gui.py:366
 msgid "Select a project..."
 msgstr "Proje seçin..."
 
-#: gui.py:361
+#: src/gui.py:377
+#, python-format
 msgid "Project '%s' opened."
 msgstr "'%s' projesi açıldı."
 
-#: gui.py:368
+#: src/gui.py:384
 msgid "Saved."
 msgstr "Kayıt edildi."
 
-#: gui.py:373
+#: src/gui.py:389
 msgid "Save project as..."
 msgstr "Projeyi farklı kaydet..."
 
-#: gui.py:382
+#: src/gui.py:398
 #, python-format
 msgid "Project saved as '%s'."
 msgstr "Proje '%s' olarak kayıt edildi."
 
-#: gui.py:386
+#: src/gui.py:402
 msgid "Pardus distribution media maker"
 msgstr "Pardus dağıtım ortamı oluşturucusu"
 
-#: project.py:112
+#: src/browser.py:34
+msgid "Version:"
+msgstr "Sürüm:"
+
+#: src/browser.py:36
 #, python-format
-msgid "Project file '%s' does not exists!"
-msgstr "Proje dosyası '%s' mevcut değil!"
+msgid "%s, release %s, build %s"
+msgstr "%s, sürüm %s, inşa %s"
 
-#: project.py:115
-msgid "Not a Pardusman project file, invalid xml!"
-msgstr "Pardusman proje dosyası değil, geçersiz xml!"
+#: src/browser.py:39
+msgid "Component:"
+msgstr "Bileşen:"
 
-#: project.py:117
-msgid "Not a Pardusman project file"
-msgstr "Pardusman proje dosyası değil"
+#: src/browser.py:44
+msgid "Homepage:"
+msgstr "Anasayfa:"
 
+#: src/browser.py:52
+msgid "Summary:"
+msgstr "Özet:"
+
+#: src/browser.py:59
+msgid "Description:"
+msgstr "Açıklama:"
+
+#: src/browser.py:71
+msgid "Depends on:"
+msgstr "Bağımlılıklar:"
+
+#: src/browser.py:76
+msgid "Depended by:"
+msgstr "Buna bağımlı olanlar:"
+
+#: src/browser.py:204
+#, python-format
+msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
+msgstr "Toplam %d paket, sıkıştırılmış olarak %s byte, kurulu olarak %s byte."
+
+#: src/browser.py:213
+msgid "Component"
+msgstr "Bileşen"
+
+#: src/browser.py:224
+msgid "Search:"
+msgstr "Ara:"
+
+#: src/browser.py:228
+msgid "Package"
+msgstr "Paket"
+
+#: src/browser.py:229
+msgid "Archive Size"
+msgstr "Arşiv Boyutu"
+
+#: src/browser.py:230
+msgid "Installed Size"
+msgstr "Kurulu Boyut"
+
+#: src/browser.py:299
+msgid "No packages selected."
+msgstr "Paket seçilmedi."
+
+#: src/browser.py:304
+#, python-format
+msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
+msgstr "%d paket seçildi, sıkıştırılmış olarak %s byte, kurulu olarak %s byte."
+
+#: src/browser.py:330
+msgid "Use selected packages"
+msgstr "Seçilenleri Kullan"
+
+#~ msgid "Project directory does not exist."
+#~ msgstr "Proje dizini mevcut değil."
+
+#~ msgid "Release files directory not given."
+#~ msgstr "Sürüm dosyaları dizini belirtilmemiş."
