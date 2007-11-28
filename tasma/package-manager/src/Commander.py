@@ -30,9 +30,6 @@ class Commander(QObject):
         except:
             parent.showErrorMessage("Cannot connect to Comar daemon")
 
-        # Init the database
-        pisi.api.init(database=True, write=False)
-
     def wait_comar(self):
         self.comar.notifier.setEnabled(False)
         import socket, time
@@ -111,7 +108,7 @@ class Commander(QObject):
                 self.parent.showErrorMessage(unicode(reply.data))
 
             # if an error occured communicating with comar and components are not ready we should warn
-            if not pisi.context.componentdb.list_components():
+            if not pisi.db.componentdb.ComponentDB().list_components():
                 self.parent.repoNotReady()
         else:
             # paranoia
@@ -158,16 +155,16 @@ class Commander(QObject):
         return list(pisi.api.list_installed())
 
     def listNewPackages(self):
-        return list(pisi.api.list_available() - pisi.api.list_installed() - set(pisi.api.list_replaces().values()))
-
+        return list((set(pisi.api.list_available()) - set(pisi.api.list_installed())) - set(pisi.api.list_replaces().values()))
+    
     def packageGraph(self,list,ignoreInstalled=True):
         return pisi.api.package_graph(list, ignoreInstalled)
 
     def getRepoList(self):
-        return pisi.context.repodb.list()
+        return pisi.db.repodb.RepoDB().list_repos()
 
     def getRepoUri(self,repoName):
-        return pisi.api.ctx.repodb.get_repo(repoName).indexuri.get_uri()
+        return pisi.db.repodb.RepoDB().get_repo(repoName).indexuri.get_uri()
 
     def cancel(self):
         self.comar.cancel()

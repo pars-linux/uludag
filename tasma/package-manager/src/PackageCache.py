@@ -28,9 +28,14 @@ class PackageCache:
     def isEmpty(self):
         return not self.packages
 
-    def populateCache(self, packages, repo=None):
+    def populateCache(self, packages, inInstalled = False):
+        if inInstalled:
+            db = pisi.db.installdb.InstallDB()
+        else:
+            db = pisi.db.packagedb.PackageDB()
+
         for pkg_name in packages:
-            package = pisi.context.packagedb.get_package(pkg_name, repo)
+            package = db.get_package(pkg_name)
             self.packages.append(Package(package.name, package.summary, package.description))
 
     def searchInPackages(self, terms):
