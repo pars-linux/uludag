@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-28 09:19+0200\n"
+"POT-Creation-Date: 2007-11-28 09:43+0200\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -17,121 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: yali/gui/Ui/autopartwidget.py:83 yali/gui/Ui/bootloaderwidget.py:95
-#: yali/gui/Ui/checkcdwidget.py:74 yali/gui/Ui/keyboardwidget.py:66
-#: yali/gui/Ui/kickerwidget.py:34 yali/gui/Ui/parteditbuttons.py:46
-#: yali/gui/Ui/parteditwidget.py:87 yali/gui/Ui/partlistwidget.py:92
-#: yali/gui/Ui/rootpasswidget.py:127 yali/gui/Ui/setupuserswidget.py:149
-#: yali/gui/Ui/welcomewidget.py:95
+#: yali/gui/Ui/keyboardwidget.py:66 yali/gui/Ui/rootpasswidget.py:127
+#: yali/gui/Ui/setupuserswidget.py:149 yali/gui/Ui/welcomewidget.py:95
 msgid "Form1"
 msgstr "Form1"
 
-#: yali/gui/Ui/autopartwidget.py:84
-msgid ""
-"<font size=\"+1\"><b>Select the partitioning method:</b></font>\n"
-"\n"
-"<p>Below, you can select an hard disk for automatic partitioning.\n"
-"Selected disk will be used for Pardus installation.</p>\n"
-"\n"
-"<p><font color=\"#FF6D19\"><b><u>WARNING:</u></b>\n"
-"Automatic partitioning will use your entire disk for Pardus installation.\n"
-"All data on the selected disk will be lost!</font></p>"
-msgstr ""
-"<font size=\"+1\"><b>Selecione o método de particionamento:</b></font>\n"
-"\n"
-"<p>Abaixo, você pode selecionar um disco rígido para particionamento "
-"automático.\n"
-"Selecione o disco que será usado para a instalação do Pardus.</p>\n"
-"\n"
-"<p><font color=\"#FF6D19\"><b><u>ATENÇÃO:</u></b>\n"
-"Particionamento automático usará todo o disco para a instalação do Pardus.\n"
-"Todos os dados no disco selecionado serão perdidos!</font></p>"
-
-#: yali/gui/Ui/autopartwidget.py:92
-msgid "&nbsp;"
-msgstr "&nbsp;"
-
-#: yali/gui/Ui/autopartwidget.py:94
-msgid "No, I'll partition my disk manually."
-msgstr "Não, eu particionarei meu disco manualmente."
-
-#: yali/gui/Ui/autopartwidget.py:95
-msgid "Yes, automatically partition and format selected disk!"
-msgstr "Sim, particione e formate automaticamente o disco selecionado!"
-
-#: yali/gui/Ui/bootloaderwidget.py:96
-msgid ""
-"<b>Do you want to write boot loader (GRUB) to your hard disk's master boot "
-"record?</b>\n"
-"\n"
-"<p>You need a boot loader to boot your Pardus system.</p>\n"
-"\n"
-"<p>If you don't install a boot loader or choose to install to root "
-"partition, you will have to configure your other operating system's loader  "
-"(if you have one installed) to start \n"
-"your newly installed Pardus.</p>"
-msgstr ""
-"<b>Você que escrever o carregador de boot (GRUB) na MBR do seu disco rígido?"
-"</b>\n"
-"\n"
-"<p>Você precisa de um carregador de boot para o seu sistema Pardus.</p>\n"
-"\n"
-"<p>Se você não instalar um carregador de boot ou escolher instalá-lo na "
-"partição raiz, você terá de configurar seu outro carregador de sistema "
-"operacional (se tiver um instalado) para iniciar seu novo Pardus instalado.</"
-"p>"
-
-#: yali/gui/Ui/bootloaderwidget.py:102
-msgid "Where do you want to install the bootloader?"
-msgstr "Onde você quer instalar o carregador do boot?"
-
-#: yali/gui/Ui/bootloaderwidget.py:103
-msgid "Install to first bootable disk (recommended)"
-msgstr ""
-
-#: yali/gui/Ui/bootloaderwidget.py:104
-#, fuzzy
-msgid "Install to Pardus installed partition"
-msgstr "Instalar na partição raiz"
-
-#: yali/gui/Ui/bootloaderwidget.py:105
-msgid "Install to selected disk belove"
-msgstr ""
-
-#: yali/gui/Ui/bootloaderwidget.py:106
-msgid "Select the disk you to install bootloader:"
-msgstr "Selecione o disco que você instalará o carregador de boot:"
-
-#: yali/gui/Ui/bootloaderwidget.py:107
-msgid "Don't install bootloader"
-msgstr "Não instalar carregador de boot"
-
-#: yali/gui/Ui/checkcdwidget.py:75 yali/gui/Ui/installwidget.py:54
 #: yali/gui/Ui/keyboardwidget.py:67 yali/gui/Ui/welcomewidget.py:96
 msgid "pix"
 msgstr "pix"
-
-#: yali/gui/Ui/checkcdwidget.py:76
-msgid ""
-"You can check the integrity of the packages in installation CD. Although "
-"this is an optional step, we encourage you to do it to avoid any errors in "
-"installation."
-msgstr ""
-"Você pode checar a integridade dos pacotes no CD de instalação. Embora esta "
-"seja um passo opcional, nós o encorajamos a fazê-lo para evitar quaisquer "
-"erros na instalação."
-
-#: yali/gui/Ui/checkcdwidget.py:77
-msgid "Check CD Integrity"
-msgstr "Checar Integridade do CD"
-
-#: yali/gui/Ui/installwidget.py:52
-msgid "Form3"
-msgstr "Form3"
-
-#: yali/gui/Ui/installwidget.py:53
-msgid "Installing Package: "
-msgstr "Instalando Pacote: "
 
 #: yali/gui/Ui/keyboardwidget.py:68
 msgid "Select the keyboard layout of your choice."
@@ -140,86 +33,6 @@ msgstr "Selecione o layout de teclado de sua escolha."
 #: yali/gui/Ui/keyboardwidget.py:69
 msgid "Test selected keyboard:"
 msgstr "Testar teclado selecionado:"
-
-#: yali/gui/Ui/parteditbuttons.py:47 yali/gui/YaliDialog.py:153
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: yali/gui/Ui/parteditbuttons.py:48
-msgid "Apply"
-msgstr "Aplicar"
-
-#: yali/gui/Ui/parteditwidget.py:88
-msgid "Size (MB):"
-msgstr "Tamanho (MB):"
-
-#: yali/gui/Ui/parteditwidget.py:89
-msgid "Use available free space"
-msgstr "Usar espaço livre disponível"
-
-#: yali/gui/Ui/parteditwidget.py:91
-msgid "Format this partition"
-msgstr "Formatar esta partição"
-
-#: yali/gui/Ui/parteditwidget.py:93
-msgid " What do you want to store in this partition? "
-msgstr " O que você quer armazenar nesta partição? "
-
-#: yali/gui/Ui/parteditwidget.py:94
-msgid "Pardus system files (mandatory)"
-msgstr "Arquivos de sistema do Pardus (obrigatório)"
-
-#: yali/gui/Ui/parteditwidget.py:95
-msgid "User files (optional)"
-msgstr "Arquivos do usuário (opcional)"
-
-#: yali/gui/Ui/parteditwidget.py:96
-msgid "Swap space (optional)"
-msgstr "Espaço de troca (opcional)"
-
-#: yali/gui/Ui/partlistwidget.py:47 yali/gui/Ui/partlistwidget.py:96
-msgid "Device"
-msgstr "Dispositivo"
-
-#: yali/gui/Ui/partlistwidget.py:48 yali/gui/Ui/partlistwidget.py:97
-msgid "Size"
-msgstr "Tamanho"
-
-#: yali/gui/Ui/partlistwidget.py:49 yali/gui/Ui/partlistwidget.py:98
-msgid "Partition Type"
-msgstr "Tipo da Partição"
-
-#: yali/gui/Ui/partlistwidget.py:50 yali/gui/Ui/partlistwidget.py:99
-msgid "Filesystem"
-msgstr "Sistema de arquivos"
-
-#: yali/gui/Ui/partlistwidget.py:51 yali/gui/Ui/partlistwidget.py:100
-msgid "Format?"
-msgstr "Formatar?"
-
-#: yali/gui/Ui/partlistwidget.py:93
-msgid "Create New Partition"
-msgstr "Criar Nova Partição"
-
-#: yali/gui/Ui/partlistwidget.py:94 yali/gui/PartListImpl.py:240
-msgid "Delete Selected Partition"
-msgstr "Deletar Partição Selecionada"
-
-#: yali/gui/Ui/partlistwidget.py:95
-msgid "Partitions:"
-msgstr "Partições:"
-
-#: yali/gui/Ui/partlistwidget.py:101
-msgid "Reset All Changes"
-msgstr "Resetar Todas as Mudanças"
-
-#: yali/gui/Ui/partlistwidget.py:102
-msgid "Resize"
-msgstr "Redimensionar"
-
-#: yali/gui/Ui/partlistwidget.py:103
-msgid "Edit"
-msgstr "Editar"
 
 #: yali/gui/Ui/rootpasswidget.py:130
 msgid "System administrator password:"
@@ -355,8 +168,7 @@ msgstr "O tamanho do 'Instalar Raiz' deve ser maior que %s MB."
 msgid "ntfsresize check failed! Won't proceed action!"
 msgstr "A checagem ntfsresize falhou! Não procederá a ação!"
 
-#: yali/gui/PartListImpl.py:87 yali/gui/ScrBootloader.py:69
-#: yali/gui/ScrKahyaCheck.py:87 yali/gui/ScrPartitionAuto.py:68
+#: yali/gui/PartListImpl.py:87
 msgid "Can't find a storage device!"
 msgstr "Não é possível achar um dispositivo de armazenamento!"
 
@@ -382,6 +194,10 @@ msgstr "Partição %d"
 #: yali/gui/PartListImpl.py:211
 msgid "Delete All Partitions"
 msgstr "Deletar Todas as Partições"
+
+#: yali/gui/PartListImpl.py:240
+msgid "Delete Selected Partition"
+msgstr "Deletar Partição Selecionada"
 
 #: yali/gui/PartListImpl.py:312
 msgid "Can't get partition info from partition request!"
@@ -493,126 +309,6 @@ msgid "<font color=\"#FF6D19\">Hostname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Nome do host contém caracteres inválidos!</font>"
 
-#: yali/gui/ScrBootloader.py:36
-msgid ""
-"\n"
-"<font size=\"+2\">Boot loader setup</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>\n"
-"Linux makes use of GRUB boot loader, which\n"
-"can boot the operating system of your taste\n"
-"during the start up. \n"
-"</p>\n"
-"<p>\n"
-"If you have more than one operating system,\n"
-"you can choose which operating system to \n"
-"boot also.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Please refer to Pardus Installing and Using \n"
-"Guide for more information about GRUB boot \n"
-"loader.\n"
-"</p>\n"
-"</font>\n"
-msgstr ""
-"\n"
-"<font size=\"+2\">Configuração do carregador de boot</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>\n"
-"Linux usa o carregador de boot GRUB, o qual\n"
-"pode iniciar o sistema operacional de seu gosto\n"
-"durante a inicialização. \n"
-"</p>\n"
-"<p>\n"
-"Se você possui mais de um sistema opracional,\n"
-"você também pode selecionar qual sistema operacional \n"
-"iniciar.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Por favor, refira-se ao Guia de Uso e Instalação \n"
-"do Pardus para mais informações sobre o carregador \n"
-"de boot GRUB.\n"
-"</p>\n"
-"</font>\n"
-
-#: yali/gui/ScrBootloader.py:168
-msgid ""
-"<b>\n"
-"<p>This action will use your entire disk for Pardus installation and\n"
-"all your present data on the selected disk will be lost.</p>\n"
-"\n"
-"<p>After being sure you had your backup this is generally a safe\n"
-"and easy way to install Pardus.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>Esta ação usará todo o disco para a instalação do Pardus e\n"
-"todo seus dados presentes no disco selecionado serão perdidos.</p>\n"
-"\n"
-"<p>Depois de estar certo que você tem seu backup, isto é geralmente\n"
-"uma forma segura e fácil de instalar o Pardus.</p>\n"
-"</b>\n"
-
-#: yali/gui/ScrBootloader.py:183
-msgid "Please wait while formatting!"
-msgstr "Por favor, espere a formatação!"
-
-#: yali/gui/ScrCheckCD.py:28
-msgid ""
-"\n"
-"<font size=\"+2\">Check CD Integrity!</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>In this screen, you can check the integrity of the packages in "
-"installation CD.\n"
-"</p>\n"
-"\n"
-msgstr ""
-"\n"
-"<font size=\"+2\">Checar Integridade do CD!</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>Nesta tela, você pode checar a integridade dos pacotes no CD de "
-"instalação.\n"
-"</p>\n"
-"\n"
-
-#: yali/gui/ScrCheckCD.py:48
-msgid "Check Failed"
-msgstr "Checagem Falhou"
-
-#: yali/gui/ScrCheckCD.py:57
-msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FF6D19\">Por favor, espere a checagem do CD.</font>"
-
-#: yali/gui/ScrCheckCD.py:75
-msgid ""
-"<font color=\"#257216\">Check succeeded. You can proceed to the next screen."
-"</font>"
-msgstr ""
-"<font color=\"#257216\">Checagem sucedida. Você pode prosseguir para a "
-"próxima tela.</font>"
-
-#: yali/gui/ScrCheckCD.py:99
-msgid ""
-"<b>\n"
-"<p>Integrity check for packages failed. It seems that installation CD is "
-"broken.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>Checagem de integridade dos pacotes falhou. Parece que o CD de instaação "
-"está corrompido.</p>\n"
-"</b>\n"
-
-#: yali/gui/ScrCheckCD.py:105
-msgid "Reboot"
-msgstr "Reiniciar"
-
 #: yali/gui/ScrGoodbye.py:35
 #, fuzzy
 msgid ""
@@ -676,90 +372,6 @@ msgstr ""
 msgid "Setting up KdeBase..."
 msgstr ""
 
-#: yali/gui/ScrInstall.py:53
-msgid ""
-"\n"
-"<font size=\"+2\">Installation started</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"\n"
-"<p>\n"
-"Pardus is now being installed on your hard disk. \n"
-"</p>\n"
-"\n"
-"<p>\n"
-"The duration of this operation depends on the \n"
-"capability and power of your system. Meanwhile,\n"
-"you can enjoy some visual elements showing \n"
-"the distinctive properties of Pardus, your \n"
-"new operating system.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Have fun!\n"
-"</p>\n"
-"</font>\n"
-msgstr ""
-"\n"
-"<font size=\"+2\">Instalação iniciada</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"\n"
-"<p>\n"
-"Pardus está agora sendo instalado no seu disco rígido. \n"
-"</p>\n"
-"\n"
-"<p>\n"
-"A duração desta operação depende na \n"
-"capacidade e poder do seu sistema. Por enquanto, \n"
-"você pode apreciar alguns elementos visuais \n"
-"mostrando as propriedades distintas do Pardus, seu \n"
-"novo sistema operacional.\n"
-"</p>\n"
-"\n"
-"<p>\n"
-"Divirta-se!\n"
-"</p>\n"
-"</font>\n"
-
-#: yali/gui/ScrInstall.py:110 yali/gui/ScrInstall.py:130
-#, python-format
-msgid "Installing: %s<br>%s"
-msgstr "Instalando: %s<br>%s"
-
-#: yali/gui/ScrInstall.py:116 yali/gui/ScrInstall.py:136
-#, python-format
-msgid "Configuring package: %s"
-msgstr "Configurando pacote: %s"
-
-#: yali/gui/ScrInstall.py:192
-msgid "Configuring packages for your system!"
-msgstr "Configurando pacotes para o seu sistema!"
-
-#: yali/gui/ScrInstall.py:230
-#, python-format
-msgid ""
-"An error during the installation of packages occured.\n"
-"\n"
-"This is possibly a broken Pardus CD or CD-ROM drive.\n"
-"\n"
-"Error:\n"
-"%s\n"
-msgstr ""
-"Um erro ocorreu durante a instalação dos pacotes.\n"
-"\n"
-"Possivelmente o drive de CD-ROM está quebrou o CD do Pardus corrompido.\n"
-"\n"
-"Erro:\n"
-"%s\n"
-
-#: yali/gui/ScrKahyaCheck.py:53
-msgid ""
-"\n"
-"<font size=\"+2\">Kicker Check !</font>\n"
-"<p> Some help messages </p>\n"
-msgstr ""
-
 #: yali/gui/ScrKeyboard.py:30
 msgid ""
 "\n"
@@ -781,158 +393,6 @@ msgstr ""
 "lista.\n"
 "</p>\n"
 "</font>\n"
-
-#: yali/gui/ScrPartitionAuto.py:36
-msgid ""
-"\n"
-"<font size=\"+2\">Automatic Partitioning</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>\n"
-"Pardus can be installed on a variety of hardware. You can install Pardus\n"
-"on an empty disk or hard disk partition. <b>An installation will "
-"automatically\n"
-"destroy the previously saved information on selected partitions. </b>\n"
-"</p>\n"
-"<p>\n"
-"Automatic partitioning use your entire disk for Pardus installation. From \n"
-"this screen you can select to automatically partition one of you disks, or\n"
-"you can skip this screen and try manual partitioning.\n"
-"</p>\n"
-"<p>\n"
-"Please refer to Pardus Installing and Using Guide for more information\n"
-"about disk partitioning.\n"
-"</p>\n"
-"</font>\n"
-msgstr ""
-"\n"
-"<font size=\"+2\">Particionamento Automático</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>\n"
-"Pardus pode ser instalado em vários hardwares. Você pode instalar Pardus\n"
-"num disco vazio ou numa partição de disco rídigo. <b>Uma instalação "
-"automaticamente\n"
-"destruirá informações salvas anteriormente nas partições selecionadas. </b>\n"
-"</p>\n"
-"<p>\n"
-"Particionamento automático usa todo o seu disco para a instalação do "
-"Pardus. \n"
-"A partir desta tela você pode selecionar para particionar automaticamente "
-"um\n"
-"de seus discos ou você pode pular esta tela e tentar o particionamento "
-"manual.\n"
-"</p>\n"
-"<p>\n"
-"Por favor, refira-se ao Guia de Uso e Instalação do Pardus para mais "
-"informações\n"
-"sobre particionamento de disco.\n"
-"</p>\n"
-"</font>\n"
-
-#: yali/gui/ScrPartitionAuto.py:79
-#, python-format
-msgid ""
-"It seems that you don't have the required disk space (min. %s) for Pardus "
-"installation."
-msgstr ""
-
-#: yali/gui/ScrPartitionManual.py:34
-#, fuzzy
-msgid ""
-"\n"
-"<font size=\"+2\">Partitioning your hard disk</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>\n"
-"Pardus can be installed on a variety of hardware. You can install Pardus\n"
-"on an empty disk or hard disk partition. <b>An installation will "
-"automatically\n"
-"destroy the previously saved information on selected partitions. </b>\n"
-"</p>\n"
-"<p>\n"
-"In order to use Pardus, you must create one Linux filesystem (for the \n"
-"system files), which is mandatory and a swap space \n"
-"(for improved performance), which is optional. This swap space \n"
-"is used whenever system needs more memory, but the system lacks it.\n"
-"We advise you to allocate at least 4 GBs of hard disk area and \n"
-"swap space (between 500 MB - 2 GB, according to your needs) for \n"
-"convenience. A Linux partition size less than 3.5 GB is not allowed.\n"
-"You may also optionally use another disk partition for storing \n"
-"user files.\n"
-"</p>\n"
-"<p>\n"
-"You need to format a Linux partition, if it's used for the first time.\n"
-"You can enable 'Use available free space' option, if the hard disk's \n"
-"remaining space is to be used automatically.\n"
-"</p>\n"
-"<p>\n"
-"The partition table shows the device, size, partition type and\n"
-"filesystem information. If the partition will be formatted during\n"
-"Pardus installation stage, then the corresponding 'Format' \n"
-"column will be enabled.\n"
-"</p>\n"
-"<p>\n"
-"Please refer to Pardus Installing and Using Guide for more information\n"
-"about disk partitioning.\n"
-"</p>\n"
-"</font>\n"
-msgstr ""
-"\n"
-"<font size=\"+2\">Particionamento do seu disco rígido</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>\n"
-"Pardus pode ser instalado em vários hardwares. Você pode instalar Pardus\n"
-"num disco vazio ou numa partição de disco rígido. <b>Uma instalação "
-"automaticamente\n"
-"destruirá informações salvas anteriormente nas partições selecionadas. </b>\n"
-"</p>\n"
-"<p>\n"
-"Para usar o Pardus, você deve criar um sistema de arquivos Linux (para os \n"
-"arquivos de sistema), o qual é obrigatório e um espaço de troca \n"
-"(para melhorar o desempenho), a qual é opcional. \n"
-"Nós o recomendamos alocar ao menos 4 GBs de área no disco rígido e \n"
-"um espaço de troca (entre 500 MB - 2 GB, de acordo com suas necessidades) "
-"por \n"
-"conveniência. Uma partição Linux menor que 3.5 GB não é permitida.\n"
-"Você pode também opcionalmente usar outra partição de disco para armazenar \n"
-"os arquivos dos usuários.\n"
-"</p>\n"
-"<p>\n"
-"Você precisa formatar uma partição Linux, se utilizada pela primeira vez.\n"
-"Você pode habilitar a opção 'Usar espaço livre disponível', se o espaço "
-"restante \n"
-"do disco rígido for usado automaticamente.\n"
-"</p>\n"
-"<p>\n"
-"A tabela de partição mostra informações sobre o dispositivo, tamanho,\n"
-"tipo de partição e sistema de arquivos. Se a partição será formatada\n"
-"durante o estágio de instalação, então a coluna 'Formatar' correspondente\n"
-"será habilitada.\n"
-"</p>\n"
-"<p>\n"
-"Por favor, refira-se ao Guia de Uso e Instalação do Pardus para mais "
-"informações\n"
-"sobre particionamento de disco.\n"
-"</p>\n"
-"</font>\n"
-
-#: yali/gui/ScrPartitionManual.py:118
-msgid "Create Partition"
-msgstr "Criar Partição"
-
-#: yali/gui/ScrPartitionManual.py:123
-msgid "Delete Partition"
-msgstr "Deletar Partição"
-
-#: yali/gui/ScrPartitionManual.py:128
-msgid "Edit Partition"
-msgstr "Editar Partição"
-
-#: yali/gui/ScrPartitionManual.py:133
-msgid "Resize Partition"
-msgstr "Redimensionar Partição"
 
 #: yali/gui/ScrUsers.py:32
 msgid ""
@@ -1080,13 +540,13 @@ msgstr ""
 "seu sistema, formatando a partição selecionada.</p>\n"
 "</b>\n"
 
+#: yali/gui/YaliDialog.py:153
+msgid "Cancel"
+msgstr "Cancelar"
+
 #: yali/gui/YaliDialog.py:156
 msgid "O.K. Go Ahead"
 msgstr "O.K. Seguir Adiante"
-
-#: yali/bootloader.py:170 yali/bootloader.py:175
-msgid "Windows"
-msgstr "Janelas"
 
 #: yali/__init__.py:65
 msgid "Backtrace:"
@@ -1249,25 +709,487 @@ msgstr "Galês"
 msgid "English (GB)"
 msgstr "Inglês"
 
-#: yali/partition.py:35
-msgid "unknown"
-msgstr "desconhecido"
+#~ msgid ""
+#~ "<font size=\"+1\"><b>Select the partitioning method:</b></font>\n"
+#~ "\n"
+#~ "<p>Below, you can select an hard disk for automatic partitioning.\n"
+#~ "Selected disk will be used for Pardus installation.</p>\n"
+#~ "\n"
+#~ "<p><font color=\"#FF6D19\"><b><u>WARNING:</u></b>\n"
+#~ "Automatic partitioning will use your entire disk for Pardus "
+#~ "installation.\n"
+#~ "All data on the selected disk will be lost!</font></p>"
+#~ msgstr ""
+#~ "<font size=\"+1\"><b>Selecione o método de particionamento:</b></font>\n"
+#~ "\n"
+#~ "<p>Abaixo, você pode selecionar um disco rígido para particionamento "
+#~ "automático.\n"
+#~ "Selecione o disco que será usado para a instalação do Pardus.</p>\n"
+#~ "\n"
+#~ "<p><font color=\"#FF6D19\"><b><u>ATENÇÃO:</u></b>\n"
+#~ "Particionamento automático usará todo o disco para a instalação do "
+#~ "Pardus.\n"
+#~ "Todos os dados no disco selecionado serão perdidos!</font></p>"
 
-#: yali/partition.py:180
-msgid "free space"
-msgstr "espaço livre"
+#~ msgid "&nbsp;"
+#~ msgstr "&nbsp;"
 
-#: yali/partitiontype.py:49
-msgid "Install Root"
-msgstr "Instalar Raiz"
+#~ msgid "No, I'll partition my disk manually."
+#~ msgstr "Não, eu particionarei meu disco manualmente."
 
-#: yali/partitiontype.py:58
-msgid "Users' Files"
-msgstr "Arquivos do Usuário"
+#~ msgid "Yes, automatically partition and format selected disk!"
+#~ msgstr "Sim, particione e formate automaticamente o disco selecionado!"
 
-#: yali/partitiontype.py:67
-msgid "Swap"
-msgstr "Troca"
+#~ msgid ""
+#~ "<b>Do you want to write boot loader (GRUB) to your hard disk's master "
+#~ "boot record?</b>\n"
+#~ "\n"
+#~ "<p>You need a boot loader to boot your Pardus system.</p>\n"
+#~ "\n"
+#~ "<p>If you don't install a boot loader or choose to install to root "
+#~ "partition, you will have to configure your other operating system's "
+#~ "loader  (if you have one installed) to start \n"
+#~ "your newly installed Pardus.</p>"
+#~ msgstr ""
+#~ "<b>Você que escrever o carregador de boot (GRUB) na MBR do seu disco "
+#~ "rígido?</b>\n"
+#~ "\n"
+#~ "<p>Você precisa de um carregador de boot para o seu sistema Pardus.</p>\n"
+#~ "\n"
+#~ "<p>Se você não instalar um carregador de boot ou escolher instalá-lo na "
+#~ "partição raiz, você terá de configurar seu outro carregador de sistema "
+#~ "operacional (se tiver um instalado) para iniciar seu novo Pardus "
+#~ "instalado.</p>"
+
+#~ msgid "Where do you want to install the bootloader?"
+#~ msgstr "Onde você quer instalar o carregador do boot?"
+
+#, fuzzy
+#~ msgid "Install to Pardus installed partition"
+#~ msgstr "Instalar na partição raiz"
+
+#~ msgid "Select the disk you to install bootloader:"
+#~ msgstr "Selecione o disco que você instalará o carregador de boot:"
+
+#~ msgid "Don't install bootloader"
+#~ msgstr "Não instalar carregador de boot"
+
+#~ msgid ""
+#~ "You can check the integrity of the packages in installation CD. Although "
+#~ "this is an optional step, we encourage you to do it to avoid any errors "
+#~ "in installation."
+#~ msgstr ""
+#~ "Você pode checar a integridade dos pacotes no CD de instalação. Embora "
+#~ "esta seja um passo opcional, nós o encorajamos a fazê-lo para evitar "
+#~ "quaisquer erros na instalação."
+
+#~ msgid "Check CD Integrity"
+#~ msgstr "Checar Integridade do CD"
+
+#~ msgid "Form3"
+#~ msgstr "Form3"
+
+#~ msgid "Installing Package: "
+#~ msgstr "Instalando Pacote: "
+
+#~ msgid "Apply"
+#~ msgstr "Aplicar"
+
+#~ msgid "Size (MB):"
+#~ msgstr "Tamanho (MB):"
+
+#~ msgid "Use available free space"
+#~ msgstr "Usar espaço livre disponível"
+
+#~ msgid "Format this partition"
+#~ msgstr "Formatar esta partição"
+
+#~ msgid " What do you want to store in this partition? "
+#~ msgstr " O que você quer armazenar nesta partição? "
+
+#~ msgid "Pardus system files (mandatory)"
+#~ msgstr "Arquivos de sistema do Pardus (obrigatório)"
+
+#~ msgid "User files (optional)"
+#~ msgstr "Arquivos do usuário (opcional)"
+
+#~ msgid "Swap space (optional)"
+#~ msgstr "Espaço de troca (opcional)"
+
+#~ msgid "Device"
+#~ msgstr "Dispositivo"
+
+#~ msgid "Size"
+#~ msgstr "Tamanho"
+
+#~ msgid "Partition Type"
+#~ msgstr "Tipo da Partição"
+
+#~ msgid "Filesystem"
+#~ msgstr "Sistema de arquivos"
+
+#~ msgid "Format?"
+#~ msgstr "Formatar?"
+
+#~ msgid "Create New Partition"
+#~ msgstr "Criar Nova Partição"
+
+#~ msgid "Partitions:"
+#~ msgstr "Partições:"
+
+#~ msgid "Reset All Changes"
+#~ msgstr "Resetar Todas as Mudanças"
+
+#~ msgid "Resize"
+#~ msgstr "Redimensionar"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Boot loader setup</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Linux makes use of GRUB boot loader, which\n"
+#~ "can boot the operating system of your taste\n"
+#~ "during the start up. \n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "If you have more than one operating system,\n"
+#~ "you can choose which operating system to \n"
+#~ "boot also.\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Please refer to Pardus Installing and Using \n"
+#~ "Guide for more information about GRUB boot \n"
+#~ "loader.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Configuração do carregador de boot</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Linux usa o carregador de boot GRUB, o qual\n"
+#~ "pode iniciar o sistema operacional de seu gosto\n"
+#~ "durante a inicialização. \n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Se você possui mais de um sistema opracional,\n"
+#~ "você também pode selecionar qual sistema operacional \n"
+#~ "iniciar.\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Por favor, refira-se ao Guia de Uso e Instalação \n"
+#~ "do Pardus para mais informações sobre o carregador \n"
+#~ "de boot GRUB.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+
+#~ msgid ""
+#~ "<b>\n"
+#~ "<p>This action will use your entire disk for Pardus installation and\n"
+#~ "all your present data on the selected disk will be lost.</p>\n"
+#~ "\n"
+#~ "<p>After being sure you had your backup this is generally a safe\n"
+#~ "and easy way to install Pardus.</p>\n"
+#~ "</b>\n"
+#~ msgstr ""
+#~ "<b>\n"
+#~ "<p>Esta ação usará todo o disco para a instalação do Pardus e\n"
+#~ "todo seus dados presentes no disco selecionado serão perdidos.</p>\n"
+#~ "\n"
+#~ "<p>Depois de estar certo que você tem seu backup, isto é geralmente\n"
+#~ "uma forma segura e fácil de instalar o Pardus.</p>\n"
+#~ "</b>\n"
+
+#~ msgid "Please wait while formatting!"
+#~ msgstr "Por favor, espere a formatação!"
+
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Check CD Integrity!</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>In this screen, you can check the integrity of the packages in "
+#~ "installation CD.\n"
+#~ "</p>\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Checar Integridade do CD!</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>Nesta tela, você pode checar a integridade dos pacotes no CD de "
+#~ "instalação.\n"
+#~ "</p>\n"
+#~ "\n"
+
+#~ msgid "Check Failed"
+#~ msgstr "Checagem Falhou"
+
+#~ msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
+#~ msgstr "<font color=\"#FF6D19\">Por favor, espere a checagem do CD.</font>"
+
+#~ msgid ""
+#~ "<font color=\"#257216\">Check succeeded. You can proceed to the next "
+#~ "screen.</font>"
+#~ msgstr ""
+#~ "<font color=\"#257216\">Checagem sucedida. Você pode prosseguir para a "
+#~ "próxima tela.</font>"
+
+#~ msgid ""
+#~ "<b>\n"
+#~ "<p>Integrity check for packages failed. It seems that installation CD is "
+#~ "broken.</p>\n"
+#~ "</b>\n"
+#~ msgstr ""
+#~ "<b>\n"
+#~ "<p>Checagem de integridade dos pacotes falhou. Parece que o CD de "
+#~ "instaação está corrompido.</p>\n"
+#~ "</b>\n"
+
+#~ msgid "Reboot"
+#~ msgstr "Reiniciar"
+
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Installation started</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Pardus is now being installed on your hard disk. \n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "The duration of this operation depends on the \n"
+#~ "capability and power of your system. Meanwhile,\n"
+#~ "you can enjoy some visual elements showing \n"
+#~ "the distinctive properties of Pardus, your \n"
+#~ "new operating system.\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Have fun!\n"
+#~ "</p>\n"
+#~ "</font>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Instalação iniciada</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Pardus está agora sendo instalado no seu disco rígido. \n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "A duração desta operação depende na \n"
+#~ "capacidade e poder do seu sistema. Por enquanto, \n"
+#~ "você pode apreciar alguns elementos visuais \n"
+#~ "mostrando as propriedades distintas do Pardus, seu \n"
+#~ "novo sistema operacional.\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Divirta-se!\n"
+#~ "</p>\n"
+#~ "</font>\n"
+
+#~ msgid "Installing: %s<br>%s"
+#~ msgstr "Instalando: %s<br>%s"
+
+#~ msgid "Configuring package: %s"
+#~ msgstr "Configurando pacote: %s"
+
+#~ msgid "Configuring packages for your system!"
+#~ msgstr "Configurando pacotes para o seu sistema!"
+
+#~ msgid ""
+#~ "An error during the installation of packages occured.\n"
+#~ "\n"
+#~ "This is possibly a broken Pardus CD or CD-ROM drive.\n"
+#~ "\n"
+#~ "Error:\n"
+#~ "%s\n"
+#~ msgstr ""
+#~ "Um erro ocorreu durante a instalação dos pacotes.\n"
+#~ "\n"
+#~ "Possivelmente o drive de CD-ROM está quebrou o CD do Pardus corrompido.\n"
+#~ "\n"
+#~ "Erro:\n"
+#~ "%s\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Automatic Partitioning</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus can be installed on a variety of hardware. You can install Pardus\n"
+#~ "on an empty disk or hard disk partition. <b>An installation will "
+#~ "automatically\n"
+#~ "destroy the previously saved information on selected partitions. </b>\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Automatic partitioning use your entire disk for Pardus installation. "
+#~ "From \n"
+#~ "this screen you can select to automatically partition one of you disks, "
+#~ "or\n"
+#~ "you can skip this screen and try manual partitioning.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Please refer to Pardus Installing and Using Guide for more information\n"
+#~ "about disk partitioning.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Particionamento Automático</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus pode ser instalado em vários hardwares. Você pode instalar Pardus\n"
+#~ "num disco vazio ou numa partição de disco rídigo. <b>Uma instalação "
+#~ "automaticamente\n"
+#~ "destruirá informações salvas anteriormente nas partições selecionadas. </"
+#~ "b>\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Particionamento automático usa todo o seu disco para a instalação do "
+#~ "Pardus. \n"
+#~ "A partir desta tela você pode selecionar para particionar automaticamente "
+#~ "um\n"
+#~ "de seus discos ou você pode pular esta tela e tentar o particionamento "
+#~ "manual.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Por favor, refira-se ao Guia de Uso e Instalação do Pardus para mais "
+#~ "informações\n"
+#~ "sobre particionamento de disco.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Partitioning your hard disk</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus can be installed on a variety of hardware. You can install Pardus\n"
+#~ "on an empty disk or hard disk partition. <b>An installation will "
+#~ "automatically\n"
+#~ "destroy the previously saved information on selected partitions. </b>\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "In order to use Pardus, you must create one Linux filesystem (for the \n"
+#~ "system files), which is mandatory and a swap space \n"
+#~ "(for improved performance), which is optional. This swap space \n"
+#~ "is used whenever system needs more memory, but the system lacks it.\n"
+#~ "We advise you to allocate at least 4 GBs of hard disk area and \n"
+#~ "swap space (between 500 MB - 2 GB, according to your needs) for \n"
+#~ "convenience. A Linux partition size less than 3.5 GB is not allowed.\n"
+#~ "You may also optionally use another disk partition for storing \n"
+#~ "user files.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "You need to format a Linux partition, if it's used for the first time.\n"
+#~ "You can enable 'Use available free space' option, if the hard disk's \n"
+#~ "remaining space is to be used automatically.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "The partition table shows the device, size, partition type and\n"
+#~ "filesystem information. If the partition will be formatted during\n"
+#~ "Pardus installation stage, then the corresponding 'Format' \n"
+#~ "column will be enabled.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Please refer to Pardus Installing and Using Guide for more information\n"
+#~ "about disk partitioning.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Particionamento do seu disco rígido</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus pode ser instalado em vários hardwares. Você pode instalar Pardus\n"
+#~ "num disco vazio ou numa partição de disco rígido. <b>Uma instalação "
+#~ "automaticamente\n"
+#~ "destruirá informações salvas anteriormente nas partições selecionadas. </"
+#~ "b>\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Para usar o Pardus, você deve criar um sistema de arquivos Linux (para "
+#~ "os \n"
+#~ "arquivos de sistema), o qual é obrigatório e um espaço de troca \n"
+#~ "(para melhorar o desempenho), a qual é opcional. \n"
+#~ "Nós o recomendamos alocar ao menos 4 GBs de área no disco rígido e \n"
+#~ "um espaço de troca (entre 500 MB - 2 GB, de acordo com suas necessidades) "
+#~ "por \n"
+#~ "conveniência. Uma partição Linux menor que 3.5 GB não é permitida.\n"
+#~ "Você pode também opcionalmente usar outra partição de disco para "
+#~ "armazenar \n"
+#~ "os arquivos dos usuários.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Você precisa formatar uma partição Linux, se utilizada pela primeira "
+#~ "vez.\n"
+#~ "Você pode habilitar a opção 'Usar espaço livre disponível', se o espaço "
+#~ "restante \n"
+#~ "do disco rígido for usado automaticamente.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "A tabela de partição mostra informações sobre o dispositivo, tamanho,\n"
+#~ "tipo de partição e sistema de arquivos. Se a partição será formatada\n"
+#~ "durante o estágio de instalação, então a coluna 'Formatar' "
+#~ "correspondente\n"
+#~ "será habilitada.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Por favor, refira-se ao Guia de Uso e Instalação do Pardus para mais "
+#~ "informações\n"
+#~ "sobre particionamento de disco.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+
+#~ msgid "Create Partition"
+#~ msgstr "Criar Partição"
+
+#~ msgid "Delete Partition"
+#~ msgstr "Deletar Partição"
+
+#~ msgid "Edit Partition"
+#~ msgstr "Editar Partição"
+
+#~ msgid "Resize Partition"
+#~ msgstr "Redimensionar Partição"
+
+#~ msgid "Windows"
+#~ msgstr "Janelas"
+
+#~ msgid "unknown"
+#~ msgstr "desconhecido"
+
+#~ msgid "free space"
+#~ msgstr "espaço livre"
+
+#~ msgid "Install Root"
+#~ msgstr "Instalar Raiz"
+
+#~ msgid "Users' Files"
+#~ msgstr "Arquivos do Usuário"
+
+#~ msgid "Swap"
+#~ msgstr "Troca"
 
 #~ msgid "Prepare for install"
 #~ msgstr "Preparar para instalar"
