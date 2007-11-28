@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-13 11:43+0200\n"
+"POT-Creation-Date: 2007-11-28 09:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -269,15 +269,15 @@ msgstr ""
 #: yali/gui/Ui/welcomewidget.py:97
 msgid ""
 "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
-"software have their corresponding licenses. By installing or using Pardus, "
-"you agree to accept them. Do you want to continue?"
+"software have their corresponding licenses. For using Pardus, you agree to "
+"accept them. Do you want to continue?"
 msgstr ""
 
 #: yali/gui/Ui/welcomewidget.py:98
 msgid "Read GPL"
 msgstr ""
 
-#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:173
+#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:164
 msgid "Reboot System!"
 msgstr ""
 
@@ -368,23 +368,23 @@ msgstr ""
 msgid "YES"
 msgstr ""
 
-#: yali/gui/runner.py:55
+#: yali/gui/runner.py:51
+msgid "License Agreement"
+msgstr ""
+
+#: yali/gui/runner.py:52
 msgid "Basic setup"
 msgstr ""
 
-#: yali/gui/runner.py:56
-msgid "Prepare for install"
+#: yali/gui/runner.py:53
+msgid "Bootup the new system"
 msgstr ""
 
-#: yali/gui/runner.py:57
-msgid "Install system"
-msgstr ""
-
-#: yali/gui/runner.py:138
+#: yali/gui/runner.py:129
 msgid "Error!"
 msgstr ""
 
-#: yali/gui/runner.py:168
+#: yali/gui/runner.py:159
 msgid "Unhandled error occured!"
 msgstr ""
 
@@ -507,19 +507,17 @@ msgid ""
 "</b>\n"
 msgstr ""
 
-#: yali/gui/ScrCheckCD.py:105 yali/gui/ScrGoodbye.py:237
+#: yali/gui/ScrCheckCD.py:105
 msgid "Reboot"
 msgstr ""
 
-#: yali/gui/ScrGoodbye.py:42
+#: yali/gui/ScrGoodbye.py:35
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
-"\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"You have successfully installed Pardus, a very easy to use desktop system "
+"You have successfully setup your Pardus, a very easy to use desktop system "
 "on\n"
 "your machine. Now you can start playing with your system and stay "
 "productive\n"
@@ -532,45 +530,30 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali/gui/ScrGoodbye.py:69
+#: yali/gui/ScrGoodbye.py:60
 msgid ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Rebooting system. Please wait!</"
 "font></b>"
 msgstr ""
 
-#: yali/gui/ScrGoodbye.py:184
+#: yali/gui/ScrGoodbye.py:150
 msgid "Trying to connect COMAR Daemon..."
 msgstr ""
 
-#: yali/gui/ScrGoodbye.py:185
+#: yali/gui/ScrGoodbye.py:151
 msgid "Setting Hostname..."
 msgstr ""
 
-#: yali/gui/ScrGoodbye.py:186
+#: yali/gui/ScrGoodbye.py:152
 msgid "Setting Root Password..."
 msgstr ""
 
-#: yali/gui/ScrGoodbye.py:187
+#: yali/gui/ScrGoodbye.py:153
 msgid "Adding Users..."
 msgstr ""
 
-#: yali/gui/ScrGoodbye.py:188
-msgid "Writing Console Data..."
-msgstr ""
-
-#: yali/gui/ScrGoodbye.py:189
-msgid "Migrating X.org Configuration..."
-msgstr ""
-
-#: yali/gui/ScrGoodbye.py:190
-msgid "Installing BootLoader..."
-msgstr ""
-
-#: yali/gui/ScrGoodbye.py:231
-msgid ""
-"<b>\n"
-"<p>Press Reboot button to restart your system.</p>\n"
-"</b>\n"
+#: yali/gui/ScrGoodbye.py:154
+msgid "Setting up KdeBase..."
 msgstr ""
 
 #: yali/gui/ScrInstall.py:53
@@ -793,7 +776,6 @@ msgstr ""
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome!</font>\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>Welcome to Pardus, your new and practical desktop with a handful \n"
 "of applications tailored to your needs. With Pardus, you can \n"
@@ -801,15 +783,11 @@ msgid ""
 "documents, listen to music and play DVDs. Its advanced yet\n"
 "easy interface will let you be more productive and efficient.\n"
 "</p>\n"
-"\n"
 "<p>\n"
-"This software will install Pardus on your computer,\n"
-"without disrupting your previous documents and settings. However,\n"
-"we advise you to make a backup before proceeding. \n"
+"This software will setup users in Pardus on your computer.\n"
 "</p>\n"
 "<p>\n"
-"The installer will identify your system's hardware and configure\n"
-"it according to your needs. You will note the arrow keys on the\n"
+"You will note the arrow keys on the\n"
 "bottom of the screen: Use them to advance to next screen.\n"
 "</p>\n"
 "<p>\n"
@@ -838,7 +816,7 @@ msgstr ""
 msgid "Windows"
 msgstr ""
 
-#: yali/__init__.py:67
+#: yali/__init__.py:65
 msgid "Backtrace:"
 msgstr ""
 

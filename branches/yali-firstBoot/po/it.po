@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-13 11:43+0200\n"
+"POT-Creation-Date: 2007-11-28 09:19+0200\n"
 "PO-Revision-Date: 2007-11-12 20:52+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -294,10 +294,11 @@ msgid "Auto Login Disabled"
 msgstr "Login automatico disattivato"
 
 #: yali/gui/Ui/welcomewidget.py:97
+#, fuzzy
 msgid ""
 "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
-"software have their corresponding licenses. By installing or using Pardus, "
-"you agree to accept them. Do you want to continue?"
+"software have their corresponding licenses. For using Pardus, you agree to "
+"accept them. Do you want to continue?"
 msgstr ""
 "Tutto il software sviluppato da TUBITAK/UEKAE è coperto da GNU/GPL. Gli "
 "altri software sono coperti dalle rispettive licenze. Installando o "
@@ -307,7 +308,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Leggi licenza GPL"
 
-#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:173
+#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:164
 msgid "Reboot System!"
 msgstr "Riavvia il sistema!"
 
@@ -399,23 +400,23 @@ msgstr "Formattazione in corso!"
 msgid "YES"
 msgstr "SI"
 
-#: yali/gui/runner.py:55
+#: yali/gui/runner.py:51
+msgid "License Agreement"
+msgstr ""
+
+#: yali/gui/runner.py:52
 msgid "Basic setup"
 msgstr "Configurazione di base"
 
-#: yali/gui/runner.py:56
-msgid "Prepare for install"
-msgstr "Preparazione dell'installazione"
+#: yali/gui/runner.py:53
+msgid "Bootup the new system"
+msgstr ""
 
-#: yali/gui/runner.py:57
-msgid "Install system"
-msgstr "Installazione del sistema"
-
-#: yali/gui/runner.py:138
+#: yali/gui/runner.py:129
 msgid "Error!"
 msgstr "Errore!"
 
-#: yali/gui/runner.py:168
+#: yali/gui/runner.py:159
 msgid "Unhandled error occured!"
 msgstr "C'è stato un errore non gestito!"
 
@@ -610,19 +611,18 @@ msgstr ""
 "installazione abbia dei problemi.</p>\n"
 "</b>\n"
 
-#: yali/gui/ScrCheckCD.py:105 yali/gui/ScrGoodbye.py:237
+#: yali/gui/ScrCheckCD.py:105
 msgid "Reboot"
 msgstr "Riavvia"
 
-#: yali/gui/ScrGoodbye.py:42
+#: yali/gui/ScrGoodbye.py:35
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
-"\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"You have successfully installed Pardus, a very easy to use desktop system "
+"You have successfully setup your Pardus, a very easy to use desktop system "
 "on\n"
 "your machine. Now you can start playing with your system and stay "
 "productive\n"
@@ -651,7 +651,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrGoodbye.py:69
+#: yali/gui/ScrGoodbye.py:60
 msgid ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Rebooting system. Please wait!</"
 "font></b>"
@@ -659,40 +659,26 @@ msgstr ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Riavvio del sistema in corso, "
 "attendere prego</font></b>"
 
-#: yali/gui/ScrGoodbye.py:184
+#: yali/gui/ScrGoodbye.py:150
 msgid "Trying to connect COMAR Daemon..."
 msgstr "Tentativo di connessione al demone COMAR..."
 
-#: yali/gui/ScrGoodbye.py:185
+#: yali/gui/ScrGoodbye.py:151
 msgid "Setting Hostname..."
 msgstr "Impostazione nome host..."
 
-#: yali/gui/ScrGoodbye.py:186
+#: yali/gui/ScrGoodbye.py:152
 msgid "Setting Root Password..."
 msgstr "Impostazione della password di root..."
 
-#: yali/gui/ScrGoodbye.py:187
+#: yali/gui/ScrGoodbye.py:153
 msgid "Adding Users..."
 msgstr "Aggiunta utenti..."
 
-#: yali/gui/ScrGoodbye.py:188
-msgid "Writing Console Data..."
-msgstr "Scrittura dati console..."
-
-#: yali/gui/ScrGoodbye.py:189
-msgid "Migrating X.org Configuration..."
-msgstr "Migrazione della configurazione di X.org..."
-
-#: yali/gui/ScrGoodbye.py:190
-msgid "Installing BootLoader..."
-msgstr "Installazione del bootloader..."
-
-#: yali/gui/ScrGoodbye.py:231
-msgid ""
-"<b>\n"
-"<p>Press Reboot button to restart your system.</p>\n"
-"</b>\n"
-msgstr ""
+#: yali/gui/ScrGoodbye.py:154
+#, fuzzy
+msgid "Setting up KdeBase..."
+msgstr "Impostazione nome host..."
 
 #: yali/gui/ScrInstall.py:53
 msgid ""
@@ -1054,10 +1040,10 @@ msgid "Update User"
 msgstr "Aggiorna utente"
 
 #: yali/gui/ScrWelcome.py:30
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome!</font>\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>Welcome to Pardus, your new and practical desktop with a handful \n"
 "of applications tailored to your needs. With Pardus, you can \n"
@@ -1065,15 +1051,11 @@ msgid ""
 "documents, listen to music and play DVDs. Its advanced yet\n"
 "easy interface will let you be more productive and efficient.\n"
 "</p>\n"
-"\n"
 "<p>\n"
-"This software will install Pardus on your computer,\n"
-"without disrupting your previous documents and settings. However,\n"
-"we advise you to make a backup before proceeding. \n"
+"This software will setup users in Pardus on your computer.\n"
 "</p>\n"
 "<p>\n"
-"The installer will identify your system's hardware and configure\n"
-"it according to your needs. You will note the arrow keys on the\n"
+"You will note the arrow keys on the\n"
 "bottom of the screen: Use them to advance to next screen.\n"
 "</p>\n"
 "<p>\n"
@@ -1134,7 +1116,7 @@ msgstr "Va bene, prosegui"
 msgid "Windows"
 msgstr "Windows"
 
-#: yali/__init__.py:67
+#: yali/__init__.py:65
 msgid "Backtrace:"
 msgstr "Backtrace:"
 
@@ -1313,6 +1295,21 @@ msgstr "File degli utenti"
 #: yali/partitiontype.py:67
 msgid "Swap"
 msgstr "Swap"
+
+#~ msgid "Prepare for install"
+#~ msgstr "Preparazione dell'installazione"
+
+#~ msgid "Install system"
+#~ msgstr "Installazione del sistema"
+
+#~ msgid "Writing Console Data..."
+#~ msgstr "Scrittura dati console..."
+
+#~ msgid "Migrating X.org Configuration..."
+#~ msgstr "Migrazione della configurazione di X.org..."
+
+#~ msgid "Installing BootLoader..."
+#~ msgstr "Installazione del bootloader..."
 
 #~ msgid ""
 #~ "<b>\n"

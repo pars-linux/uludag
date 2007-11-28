@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-13 11:43+0200\n"
+"POT-Creation-Date: 2007-11-28 09:19+0200\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
-"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -295,19 +295,19 @@ msgstr "Otomatik Giriş Kapalı"
 #: yali/gui/Ui/welcomewidget.py:97
 msgid ""
 "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
-"software have their corresponding licenses. By installing or using Pardus, "
-"you agree to accept them. Do you want to continue?"
+"software have their corresponding licenses. For using Pardus, you agree to "
+"accept them. Do you want to continue?"
 msgstr ""
 "TÜBİTAK/UEKAE tarafından geliştirilen tüm Pardus yazılımları GNU/GPL ile "
 "lisanslanmıştır. Diğer yazılımlar ise kendi lisanslarına sahiptir. Pardus'u "
-"yüklemek için bu lisansları kabul etmeniz gerekmektedir. Devam etmek istiyor "
+"kullanmak için bu lisansları kabul etmeniz gerekmektedir. Devam etmek istiyor "
 "musunuz?"
 
 #: yali/gui/Ui/welcomewidget.py:98
 msgid "Read GPL"
 msgstr "GPL Metnini Oku"
 
-#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:173
+#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:164
 msgid "Reboot System!"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -352,7 +352,8 @@ msgstr "'Sistem Dosyaları' bölümü en az %s MB olmalı."
 
 #: yali/gui/PartEditImpl.py:285
 msgid "ntfsresize check failed! Won't proceed action!"
-msgstr "NTFS yeniden boyutlandırma kontrolü başarısız! İşlem gerçekleştirilmeyecek!"
+msgstr ""
+"NTFS yeniden boyutlandırma kontrolü başarısız! İşlem gerçekleştirilmeyecek!"
 
 #: yali/gui/PartListImpl.py:87 yali/gui/ScrBootloader.py:69
 #: yali/gui/ScrKahyaCheck.py:87 yali/gui/ScrPartitionAuto.py:68
@@ -398,23 +399,23 @@ msgstr "Biçimlendiriliyor!"
 msgid "YES"
 msgstr "EVET"
 
-#: yali/gui/runner.py:55
+#: yali/gui/runner.py:51
+msgid "License Agreement"
+msgstr "Lisans Anlaşması"
+
+#: yali/gui/runner.py:52
 msgid "Basic setup"
 msgstr "Temel yapılandırma"
 
-#: yali/gui/runner.py:56
-msgid "Prepare for install"
-msgstr "Kurulum için hazırlık"
+#: yali/gui/runner.py:53
+msgid "Bootup the new system"
+msgstr "Yeni sistemi başlat"
 
-#: yali/gui/runner.py:57
-msgid "Install system"
-msgstr "Sistem kurulumu"
-
-#: yali/gui/runner.py:138
+#: yali/gui/runner.py:129
 msgid "Error!"
 msgstr "Hata!"
 
-#: yali/gui/runner.py:168
+#: yali/gui/runner.py:159
 msgid "Unhandled error occured!"
 msgstr "Bir hata oluştu!"
 
@@ -487,7 +488,8 @@ msgstr "<font color=\"#FF6D19\">Parolalar aynı değil!</font>"
 
 #: yali/gui/ScrAdmin.py:133
 msgid "<font color=\"#FF6D19\">Hostname contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Makine adı geçersiz karakterler içeriyor!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Makine adı geçersiz karakterler içeriyor!</font>"
 
 #: yali/gui/ScrBootloader.py:36
 msgid ""
@@ -606,19 +608,17 @@ msgstr ""
 "bir kurulum CD'si ile tekrar deneyiniz.</p>\n"
 "</b>\n"
 
-#: yali/gui/ScrCheckCD.py:105 yali/gui/ScrGoodbye.py:237
+#: yali/gui/ScrCheckCD.py:105
 msgid "Reboot"
 msgstr "Sistemi Yeniden Başlat!"
 
-#: yali/gui/ScrGoodbye.py:42
+#: yali/gui/ScrGoodbye.py:35
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
-"\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"You have successfully installed Pardus, a very easy to use desktop system "
+"You have successfully setup your Pardus, a very easy to use desktop system "
 "on\n"
 "your machine. Now you can start playing with your system and stay "
 "productive\n"
@@ -634,20 +634,19 @@ msgstr ""
 "<font size=\"+2\">Tebrikler!</font>\n"
 "\n"
 "<font size=\"+1\">\n"
-"<p><b>Tebrikler, Pardus kurulumunu başarıyla tamamladınız.</b></p>\n"
+"<p><b>Tebrikler, Pardus'u kullanmak için gerekli ön ayarları başarıyla tamamladınız.</b></p>\n"
 "<p>\n"
-"Tüm işlemleri başarıyla tamamlayarak kolay kullanımlı Pardus'u \n"
-"sisteme kurdunuz. Şimdi bilgisayarınızla çalışmaya başlayabilir \n"
+"Şimdi bilgisayarınızla çalışmaya başlayabilir \n"
 "ve her zaman hızlı, güvenli ve kararlı olan Pardus masaüstünün \n"
 "tadını çıkartabilirsiniz.\n"
 "</p>\n"
 "<P>\n"
-"İleri düğmesine tıklayarak kurulumu bitirin. Sisteme giriş için \n"
+"İleri düğmesine tıklayarak son ayarlamalarınızı bitirin. Sisteme giriş için \n"
 "verdiğiniz parolayı lütfen unutmayın. \n"
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrGoodbye.py:69
+#: yali/gui/ScrGoodbye.py:60
 msgid ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Rebooting system. Please wait!</"
 "font></b>"
@@ -655,43 +654,25 @@ msgstr ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Sistem yeniden başlatılıyor. Lütfen "
 "bekleyin!</font></b>"
 
-#: yali/gui/ScrGoodbye.py:184
+#: yali/gui/ScrGoodbye.py:150
 msgid "Trying to connect COMAR Daemon..."
 msgstr "COMAR sunucusunu bağlamaya çalışıyor..."
 
-#: yali/gui/ScrGoodbye.py:185
+#: yali/gui/ScrGoodbye.py:151
 msgid "Setting Hostname..."
 msgstr "Sunucu adı ayarlanıyor..."
 
-#: yali/gui/ScrGoodbye.py:186
+#: yali/gui/ScrGoodbye.py:152
 msgid "Setting Root Password..."
 msgstr "Root parolası ayarlanıyor..."
 
-#: yali/gui/ScrGoodbye.py:187
+#: yali/gui/ScrGoodbye.py:153
 msgid "Adding Users..."
 msgstr "Kullanıcılar ekleniyor..."
 
-#: yali/gui/ScrGoodbye.py:188
-msgid "Writing Console Data..."
-msgstr "Konsol verisi yazılıyor..."
-
-#: yali/gui/ScrGoodbye.py:189
-msgid "Migrating X.org Configuration..."
-msgstr "X.org yapılandırması aktarılıyor..."
-
-#: yali/gui/ScrGoodbye.py:190
-msgid "Installing BootLoader..."
-msgstr "Açılış yöneticisi yükleniyor..."
-
-#: yali/gui/ScrGoodbye.py:231
-msgid ""
-"<b>\n"
-"<p>Press Reboot button to restart your system.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>Bilgisayarınızı yeniden başlatmak için 'Sistemi Yeniden Başlat!' düğmesine tıklayın.</p>\n"
-"</b>\n"
+#: yali/gui/ScrGoodbye.py:154
+msgid "Setting up KdeBase..."
+msgstr "KdeBase ayarlanıyor..."
 
 #: yali/gui/ScrInstall.py:53
 msgid ""
@@ -848,8 +829,7 @@ msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
 "installation."
 msgstr ""
-"Görünüşe göre Pardus kurulumu için yeterli disk boşluğunuz yok "
-"(en az %s)."
+"Görünüşe göre Pardus kurulumu için yeterli disk boşluğunuz yok (en az %s)."
 
 #: yali/gui/ScrPartitionManual.py:34
 msgid ""
@@ -1026,7 +1006,8 @@ msgstr ""
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
-msgstr "<font color=\"#FF6D19\">Kullanıcı adınızı parola olarak kullanmayın.</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Kullanıcı adınızı parola olarak kullanmayın.</font>"
 
 #: yali/gui/ScrUsers.py:196
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
@@ -1036,7 +1017,8 @@ msgstr ""
 
 #: yali/gui/ScrUsers.py:200
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Kullanıcı adı geçersiz karakterler içeriyor!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Kullanıcı adı geçersiz karakterler içeriyor!</font>"
 
 #: yali/gui/ScrUsers.py:204
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
@@ -1052,7 +1034,6 @@ msgstr "Kullanıcıyı Güncelle"
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome!</font>\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>Welcome to Pardus, your new and practical desktop with a handful \n"
 "of applications tailored to your needs. With Pardus, you can \n"
@@ -1060,15 +1041,11 @@ msgid ""
 "documents, listen to music and play DVDs. Its advanced yet\n"
 "easy interface will let you be more productive and efficient.\n"
 "</p>\n"
-"\n"
 "<p>\n"
-"This software will install Pardus on your computer,\n"
-"without disrupting your previous documents and settings. However,\n"
-"we advise you to make a backup before proceeding. \n"
+"This software will setup users in Pardus on your computer.\n"
 "</p>\n"
 "<p>\n"
-"The installer will identify your system's hardware and configure\n"
-"it according to your needs. You will note the arrow keys on the\n"
+"You will note the arrow keys on the\n"
 "bottom of the screen: Use them to advance to next screen.\n"
 "</p>\n"
 "<p>\n"
@@ -1088,17 +1065,9 @@ msgstr ""
 "Pardus'un gelişmiş ve aynı zamanda basit arayüzü yardımıyla\n"
 "verimlilikte hız tanımayacaksınız.\n"
 "</p>\n"
-"\n"
 "<p>\n"
-"Sadece 6 tıklamayla tamamlanan kurulum sistemi, Pardus'u bilgisayarınıza\n"
-"kurarak bu işletim sistemiyle tanışmanızı sağlayacaktır. Kurulumdan\n"
-"önce, kullandığınız doküman ve ayarları farklı bir ortama yedeklemeniz\n"
-"önerilir. \n"
-"</p>\n"
-"<p>\n"
-"Bu kurulum sistemi donanımınızı başarıyla tanıyacak ve gereksinimlerinize\n"
-"uygun şekilde ayarlayacaktır. Pencerenin en altındaki yön tuşları,\n"
-"ileri ve geri gitmenizi sağlarken işlemleri hem klavye, hem de\n"
+"Bu uygulama ile Pardus'u kullanmak için yetkili kullanıcılarınızı tanımlayabileceksiniz\n"
+"Pencerenin en altındaki yön tuşları,ileri ve geri gitmenizi sağlarken işlemleri hem klavye, hem de\n"
 "fareyle yapabileceksiniz.\n"
 "</p>\n"
 "<p>\n"
@@ -1130,7 +1099,7 @@ msgstr "Tamam. Devam Et"
 msgid "Windows"
 msgstr "Windows"
 
-#: yali/__init__.py:67
+#: yali/__init__.py:65
 msgid "Backtrace:"
 msgstr "Geri İz:"
 
@@ -1310,3 +1279,27 @@ msgstr "Kullanıcı Dosyaları"
 msgid "Swap"
 msgstr "Takas"
 
+#~ msgid "Prepare for install"
+#~ msgstr "Kurulum için hazırlık"
+
+#~ msgid "Install system"
+#~ msgstr "Sistem kurulumu"
+
+#~ msgid "Writing Console Data..."
+#~ msgstr "Konsol verisi yazılıyor..."
+
+#~ msgid "Migrating X.org Configuration..."
+#~ msgstr "X.org yapılandırması aktarılıyor..."
+
+#~ msgid "Installing BootLoader..."
+#~ msgstr "Açılış yöneticisi yükleniyor..."
+
+#~ msgid ""
+#~ "<b>\n"
+#~ "<p>Press Reboot button to restart your system.</p>\n"
+#~ "</b>\n"
+#~ msgstr ""
+#~ "<b>\n"
+#~ "<p>Bilgisayarınızı yeniden başlatmak için 'Sistemi Yeniden Başlat!' "
+#~ "düğmesine tıklayın.</p>\n"
+#~ "</b>\n"
