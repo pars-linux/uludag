@@ -21,8 +21,6 @@ import yali.gui.installdata
 # singletons from yali.*
 from yali.constants import consts
 from yali.options import options
-from yali.partitionrequest import partrequests
-
 
 # bind some constant values
 # There are more values defined in yali/constants.py!

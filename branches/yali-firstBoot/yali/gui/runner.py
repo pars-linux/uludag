@@ -31,12 +31,12 @@ from yali.gui.debugger import DebuggerAspect
 import YaliWindow
 # screens
 import ScrWelcome
-
-# We may need that in the future.
-# import ScrKeyboard
 import ScrAdmin
 import ScrUsers
 import ScrGoodbye
+
+# We may need that in the future.
+# import ScrKeyboard
 
 ##
 # Runner creates main GUI components for installation...
