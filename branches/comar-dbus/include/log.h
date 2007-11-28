@@ -7,11 +7,13 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-#define LOG_PROC 1
-#define LOG_DB 2
-#define LOG_JOB 4
-#define LOG_PERF 8
-#define LOG_ALL 0xffffffff
+enum LOG {
+    LOG_CALL = 0,
+    LOG_PROC,
+    LOG_DBUS,
+    LOG_PERF,
+    LOG_FULL
+};
 
 void log_start(void);
 void log_error(const char *fmt, ...);

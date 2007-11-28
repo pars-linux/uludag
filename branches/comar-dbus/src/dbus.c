@@ -65,26 +65,32 @@ dbus_method_call()
     const char *path = dbus_message_get_path(my_proc.bus_msg);
     const char *method = dbus_message_get_member(my_proc.bus_msg);
 
+    dbus_bool_t no_reply = dbus_message_get_no_reply(my_proc.bus_msg);
+
     if (!check_interface_format(interface)) {
         log_error("Invalid interface: %s\n", interface);
-        reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid interface");
+        if (!no_reply) {
+            reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid interface");
+        }
     }
     else if (!check_path_format(path)) {
         log_error("Invalid application\n");
-        reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid application");
+        if (!no_reply) {
+            reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid application");
+        }
     }
     else {
-        reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "done");
         Py_Initialize();
 
         obj = dbus_py_import(my_proc.bus_msg);
-        log_debug(LOG_JOB, "Calling %s.%s (%s)\n", interface, method, path);
+        obj = PyList_GetItem(obj, 0);
+        log_debug(LOG_CALL, "Calling %s.%s (%s)\n", interface, method, path);
         ret = py_call_method(interface, path, method, obj);
 
         if (ret == NULL) {
             reply = log_exception(my_proc.bus_msg, my_proc.bus_conn);
         }
-        else {
+        else if (!no_reply) {
             reply = dbus_message_new_method_return(my_proc.bus_msg);
             dbus_message_iter_init_append(reply, &iter);
             dbus_py_export(&iter, ret);
@@ -92,14 +98,14 @@ dbus_method_call()
         Py_Finalize();
     }
 
-    if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
-        log_error("Out Of Memory!\n");
-        exit(1);
+    if (!no_reply) {
+        if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
+            log_error("Out Of Memory!\n");
+            exit(1);
+        }
+        dbus_connection_flush(my_proc.bus_conn);
+        dbus_message_unref(reply);
     }
-
-    dbus_connection_flush(my_proc.bus_conn);
-
-    dbus_message_unref(reply);
 }
 
 void
@@ -113,6 +119,7 @@ dbus_listen()
     DBusError err;
     int ret;
     const char *unique_name;
+    PyObject *args;
 
     dbus_error_init(&err);
     conn = dbus_bus_get(cfg_bus_type, &err);
@@ -152,20 +159,23 @@ dbus_listen()
             continue;
         }
 
-        log_debug(LOG_ALL, "Destination: %s\n", dbus_message_get_destination(msg));
-        log_debug(LOG_ALL, "Interface: %s\n", dbus_message_get_interface(msg));
-        log_debug(LOG_ALL, "Method: %s\n", dbus_message_get_member(msg));
-
-        if (dbus_message_has_interface(msg, "org.freedesktop.DBus")) {
-            // Do nothing
-        }
-        else if (dbus_message_has_interface(msg, "org.freedesktop.DBus.Introspectable")) {
-            if (dbus_message_has_member(msg, "Introspect")) {
-                // Give introspection
-            }
-        }
-        else {
-            proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
+        switch (dbus_message_get_type(msg)) {
+            case DBUS_MESSAGE_TYPE_METHOD_CALL:
+                log_debug(LOG_DBUS, "Caught message call: %s.%s\n", dbus_message_get_interface(msg), dbus_message_get_member(msg));
+                if (dbus_message_has_interface(msg, "org.freedesktop.DBus.Introspectable")) {
+                    if (dbus_message_has_member(msg, "Introspect")) {
+                        // Give introspection
+                    }
+                }
+                else if (dbus_message_get_type(msg) == DBUS_MESSAGE_TYPE_METHOD_CALL) {
+                    proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
+                }
+                break;
+            case DBUS_MESSAGE_TYPE_SIGNAL:
+                args = dbus_py_import(msg);
+                log_debug(LOG_DBUS, "Caught signal: %s.%s\n", dbus_message_get_interface(msg), dbus_message_get_member(msg));
+                log_debug(LOG_DBUS, "Signal arguments: %s\n", PyString_AsString(PyObject_Repr(args)));
+                break;
         }
     }
 }

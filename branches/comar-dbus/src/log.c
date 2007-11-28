@@ -124,7 +124,7 @@ log_debug(int subsys, const char *fmt, ...)
 {
     va_list ap;
 
-    if ((cfg_log_flags & subsys) == 0)
+    if (cfg_log_level < subsys)
         return;
 
     va_start(ap, fmt);

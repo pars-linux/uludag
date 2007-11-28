@@ -15,6 +15,18 @@
 #include "log.h"
 #include "utility.h"
 
+int
+py_in_tuple(PyObject *tuple, PyObject *item)
+{
+    int i;
+    for (i = 0; i < PyTuple_Size(tuple); i++) {
+        if (strcmp(PyString_AsString(item), PyString_AsString(PyTuple_GetItem(tuple, i))) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 //! Call model's method with given arguments
 PyObject *
 py_call_method(const char *model, const char *path, const char *method, PyObject *args)
@@ -23,8 +35,13 @@ py_call_method(const char *model, const char *path, const char *method, PyObject
     Call model's method with given arguments.
     @return Returns PyObject returned by model's method.
     */
-    PyObject *pCode, *pModule, *pDict, *pFunc, *pValue, *pStr;
+    PyObject *pCode, *pModule, *pDict, *pFunc, *pReturn, *pStr;
+    PyObject *argNames, *pArgs, *pkArgs;
+    PyObject *pKey, *pValue, *pItem;
+    PyObject *pFuncCode;
     node *n;
+    int arg_count;
+    int i;
 
     char *script_path = get_script_path(model, path);
     char *code = load_file(script_path, NULL);
@@ -61,14 +78,31 @@ py_call_method(const char *model, const char *path, const char *method, PyObject
         return NULL;
     }
 
-    pValue = PyObject_CallObject(pFunc, PyList_AsTuple(args));
+    pFuncCode = PyObject_GetAttrString(pFunc, "func_code");
+    arg_count = PyInt_AsLong(PyObject_GetAttrString(pFuncCode, "co_argcount"));
+    argNames = PyObject_GetAttrString(pFuncCode, "co_varnames");
+    argNames = PyTuple_GetSlice(argNames, 0, arg_count);
 
-    if (!pValue) {
+    pArgs = PyTuple_New(0);
+    pkArgs = PyDict_New();
+
+    for (i = 0; i < PyTuple_Size(args); i++) {
+        pKey = PyTuple_GetItem(PyTuple_GetItem(args, i), 0);
+        pValue = PyTuple_GetItem(PyTuple_GetItem(args, i), 1);
+        if (!py_in_tuple(argNames, pKey)) {
+            continue;
+        }
+        PyDict_SetItem(pkArgs, pKey, pValue);
+    }
+
+    pReturn = PyObject_Call(pFunc, pArgs, pkArgs);
+
+    if (!pReturn) {
         Py_DECREF(pModule);
         return NULL;
     }
     Py_DECREF(pModule);
-    return pValue;
+    return pReturn;
 }
 
 // PyObject -> DBusMessage translation

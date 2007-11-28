@@ -25,20 +25,20 @@ int cfg_bus_type = DBUS_BUS_SYSTEM;
 int cfg_idle_shutdown = 30;
 int cfg_log_console = 0;
 int cfg_log_file = 1;
+int cfg_log_level = 1;
 char *cfg_log_file_name = "/var/log/comar.log";
-int cfg_log_flags = 0;
 
 // Log flags
 static struct logflag_struct {
     const char *flag;
     int value;
 } logflags[] = {
+    { "call", LOG_CALL },
     { "proc", LOG_PROC },
-    { "db", LOG_DB },
-    { "job", LOG_JOB },
+    { "dbus", LOG_DBUS },
     { "perf", LOG_PERF },
-    { "all", LOG_ALL },
-    { "full", LOG_ALL },
+    { "all", LOG_FULL },
+    { "full", LOG_FULL },
     { NULL, 0 }
 };
 
@@ -65,7 +65,7 @@ print_usage(void)
         "Pardus configuration manager.\n"
         " -d, --datadir [DIR] Data storage directory.\n"
         "                     (default is %s)\n"
-        " -g, --debug [FLAGS] Enable debug output.\n"
+        " -g, --debug [LEVEL] Set debug level.\n"
         " -t, --type   [TYPE] DBus service type (system or session).\n"
         "                     (default is system)\n"
         " -i, --idle   [SECS] Shutdown after [SECS] seconds with no action.\n"
@@ -108,7 +108,7 @@ cfg_init(int argc, char *argv[])
             case 'g':
                 for (j = 0; logflags[j].flag; ++j) {
                     if (strstr(optarg, logflags[j].flag))
-                        cfg_log_flags |= logflags[j].value;
+                        cfg_log_level = logflags[j].value;
                 }
                 break;
             case 'i':
