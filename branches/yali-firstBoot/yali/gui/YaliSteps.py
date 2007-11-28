@@ -42,7 +42,6 @@ class YaliSteps(QWidget):
         for item in self.items:
             if not item.status:
                 item.runOperation()
-                time.sleep(0.5)
 
 class stepItem:
     def __init__(self,parent,text,operation):
@@ -72,10 +71,9 @@ class stepItem:
         self.textLabel.setText("<b>%s</b>" % self.text)
         qApp.processEvents()
         self.pixmapLabel.setPixmap(self.parent.iconWorking)
-        qApp.processEvents()
         self.status = self.operation()
-        qApp.processEvents()
         self.textLabel.setText(self.text)
+        ctx.debugger.log("Running : %s" % self.text)
         if self.status:
             self.pixmapLabel.setPixmap(self.parent.iconDone)
         else:
