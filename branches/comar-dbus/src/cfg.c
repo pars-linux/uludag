@@ -25,8 +25,8 @@ int cfg_bus_type = DBUS_BUS_SYSTEM;
 int cfg_idle_shutdown = 30;
 int cfg_log_console = 0;
 int cfg_log_file = 1;
-int cfg_log_level = 1;
 char *cfg_log_file_name = "/var/log/comar.log";
+int cfg_log_level = 0;
 
 // Log flags
 static struct logflag_struct {

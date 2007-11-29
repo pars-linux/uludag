@@ -174,7 +174,6 @@ dbus_listen()
             case DBUS_MESSAGE_TYPE_SIGNAL:
                 args = dbus_py_import(msg);
                 log_debug(LOG_DBUS, "Caught signal: %s.%s\n", dbus_message_get_interface(msg), dbus_message_get_member(msg));
-                log_debug(LOG_DBUS, "Signal arguments: %s\n", PyString_AsString(PyObject_Repr(args)));
                 break;
         }
     }
