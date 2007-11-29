@@ -26,22 +26,6 @@ import browser
 def _(x):
     return unicode(i18n(x))
 
-
-class Console(KTextEdit):
-    def __init__(self, parent):
-        KTextEdit.__init__(self, parent)
-        self.setTextFormat(self.LogText)
-    
-    def info(self, msg):
-        self.append(unicode(msg))
-    
-    def state(self, msg):
-        self.append("<font color=blue>%s</font>" % unicode(msg))
-    
-    def error(self, msg):
-        self.append("<font color=red>%s</font>" % unicode(msg))
-
-
 class Progress:
     def __init__(self, win):
         self.win = win
@@ -69,7 +53,7 @@ class Progress:
 class ProjectWindow(KMainWindow):
     def __init__(self):
         KMainWindow.__init__(self)
-        self.setMinimumSize(560, 440)
+        self.setMinimumSize(560, 240)
         self.project_file = None
         self.updateCaption()
         pman = QPixmap(locate("data", "pardusman/logo.png"))
@@ -188,7 +172,7 @@ class ProjectWindow(KMainWindow):
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
         
-        self.console = Console(vb)
+        self.console = self.statusBar()
         
         self.setCentralWidget(vb)
         
@@ -369,19 +353,19 @@ class ProjectWindow(KMainWindow):
             name = unicode(name)
         err = self.project.open(name)
         if err:
-            self.console.error("%s\n" % err)
+            self.console.message("%s" % err)
             return
         self.project_file = name
         self.project2ui()
         self.updateCaption()
-        self.console.state(_("Project '%s' opened.") % name)
+        self.console.message(_("Project '%s' opened.") % name)
     
     def saveProject(self):
         if self.project_file:
             if not self.ui2project():
                 return
             self.project.save(self.project_file)
-            self.console.state(_("Saved."))
+            self.console.message(_("Saved."))
         else:
             self.saveAsProject()
     
@@ -395,7 +379,7 @@ class ProjectWindow(KMainWindow):
         self.project.save(name)
         self.project_file = name
         self.updateCaption()
-        self.console.state(_("Project saved as '%s'.") % name)
+        self.console.message(_("Project saved as '%s'.") % name)
 
 
 def gui_main(args, project_file):
