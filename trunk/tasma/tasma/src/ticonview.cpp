@@ -136,7 +136,7 @@ void TIconView::contentsMousePressEvent(QMouseEvent* event)
     }
   KIconView::contentsMousePressEvent(event);
 }
-
+/*
 void TIconView::contentsMouseMoveEvent(QMouseEvent* event)
 {
   if(event->state() && LeftButton)
@@ -147,8 +147,8 @@ void TIconView::contentsMouseMoveEvent(QMouseEvent* event)
     }
   // This creates a mouse pointer problem don't do this
   //KIconView::contentsMouseMoveEvent(event);
-}
-
+} //this event causes crashing. commented but no feature lack yet.
+*/ 
 void TIconView::startDrag()
 {
   if(dragItem)
@@ -166,7 +166,7 @@ TIconView::~TIconView()
 
 void TIconView::keyPressEvent(QKeyEvent* event)
 {
-  if( event->key() & Qt::Key_Return || event->key() & Qt::Key_Enter )
+  if( (event->key() ==  Qt::Key_Return) || (event->key() == Qt::Key_Enter) )
     slotItemSelected(currentItem());
 
   QIconView::keyPressEvent(event);
