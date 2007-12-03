@@ -82,14 +82,15 @@ class DetailWindow(QDialog):
 
 
 class Component(QCheckListItem):
-    def __init__(self, browser, comp):
+    def __init__(self, browser, comp, packages):
         self.browser = browser
         self.comp = comp
-        QCheckListItem.__init__(self, browser.comps, comp.name, QCheckListItem.CheckBox)
+        self.packages = packages
+        QCheckListItem.__init__(self, browser.comps, comp, QCheckListItem.CheckBox)
     
     def stateChange(self, bool):
         packages = self.browser.packages
-        for name in self.comp.packages:
+        for name in self.packages:
             packages[name].stateChange(bool)
         
         self.browser.list.triggerUpdate()
@@ -249,7 +250,7 @@ class BrowserWidget(QVBox):
             self.packages[name] = Package(self, repo.packages[name])
         self.components = {}
         for name in repo.components:
-            self.components[name] = Component(self, repo.components[name])
+            self.components[name] = Component(self, name, repo.components[name])
         self.nr_paks = 0
         self.total = 0
         self.total_zip = 0
@@ -264,7 +265,7 @@ class BrowserWidget(QVBox):
         item = self.comps.firstChild()
         while item:
             if item.isOn():
-                comps.append(item.comp.name)
+                comps.append(item.comp)
             item = item.nextSibling()
         
         selpaks = []
@@ -281,7 +282,7 @@ class BrowserWidget(QVBox):
         for name in components:
             item = self.comps.firstChild()
             while item:
-                if item.comp.name == name:
+                if item.comp == name:
                     item.setState(QCheckListItem.On)
                     break
                 item = item.nextSibling()
