@@ -118,7 +118,6 @@ class Repository:
         self.inst_size = 0
         self.packages = {}
         self.components = {}
-        self.distribution = None
     
     def parse_index(self, console=None, update_repo=False):
         path = fetch_uri(self.base_uri, self.cache_dir, self.index_name, console, update_repo)
@@ -129,15 +128,12 @@ class Repository:
             doc = piksemel.parseString(data)
         else:
             doc = piksemel.parse(path)
-        self.distribution = doc.getTag('Distribution')
         for tag in doc.tags('Package'):
             p = Package(tag)
             self.packages[p.name] = p
             self.size += p.size
             self.inst_size += p.inst_size
-        for tag in doc.tags('Component'):
-            c = Component(tag)
-            self.components[c.name] = c
+            self.components[p.component] = []
         for name in self.packages:
             p = self.packages[name]
             for name2 in p.depends:
@@ -146,7 +142,7 @@ class Repository:
                 else:
                     print "Error: package %s depends on non existing package %s" % (p.name, name2)
             if self.components.has_key(p.component):
-                self.components[p.component].packages.append(p.name)
+                self.components[p.component].append(p.name)
         from pisi.graph import Digraph, CycleException
         dep_graph = Digraph()
         for name in self.packages:
@@ -162,11 +158,8 @@ class Repository:
     
     def make_index(self, package_list):
         doc = piksemel.newDocument("PISI")
-        doc.insertNode(self.distribution)
         for name in package_list:
             doc.insertNode(self.packages[name].node)
-        for name in self.components:
-            doc.insertNode(self.components[name].node)
         return doc.toPrettyString()
     
     def make_local_repo(self, path, package_list):
@@ -201,7 +194,7 @@ class Repository:
                 collect(item)
         collect(package_name)
         if self.components.has_key("system.base"):
-            for item in self.components["system.base"].packages:
+            for item in self.components["system.base"]:
                 deps.add(item)
                 collect(item)
         return deps

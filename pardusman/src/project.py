@@ -209,7 +209,7 @@ class Project:
             for dep in p.depends:
                 collect(dep)
         for component in self.selected_components:
-            for package in repo.components[component].packages:
+            for package in repo.components[component]:
                 collect(package)
         for package in self.selected_packages:
             collect(package)
