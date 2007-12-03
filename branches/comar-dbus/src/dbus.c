@@ -54,6 +54,20 @@ log_exception(DBusMessage *msg, DBusConnection *conn)
 }
 
 static void
+dbus_send(DBusConnection *conn, DBusMessage *reply)
+{
+    dbus_uint32_t serial = 0;
+
+    if (!dbus_connection_send(conn, reply, &serial)) {
+        log_error("Out Of Memory!\n");
+        exit(1);
+    }
+
+    dbus_connection_flush(conn);
+    dbus_message_unref(reply);
+}
+
+static void
 dbus_method_call()
 {
     DBusMessage *reply;
@@ -61,31 +75,35 @@ dbus_method_call()
     dbus_uint32_t serial = 0;
     PyObject *obj, *ret;
 
+    struct timeval time_start, time_end;
+    unsigned long msec;
+
     const char *interface = dbus_message_get_interface(my_proc.bus_msg);
     const char *path = dbus_message_get_path(my_proc.bus_msg);
     const char *method = dbus_message_get_member(my_proc.bus_msg);
 
     dbus_bool_t no_reply = dbus_message_get_no_reply(my_proc.bus_msg);
 
-    if (!check_interface_format(interface)) {
-        log_error("Invalid interface: %s\n", interface);
+    Py_Initialize();
+
+    obj = dbus_py_import(my_proc.bus_msg);
+    obj = PyList_GetItem(obj, 0);
+
+    if (!py_check_args(obj)) {
+        log_error("%s.%s() argument format is not valid.\n", interface, method);
         if (!no_reply) {
-            reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid interface");
-        }
-    }
-    else if (!check_path_format(path)) {
-        log_error("Invalid application\n");
-        if (!no_reply) {
-            reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Invalid application");
+            reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Argument format not valid");
         }
     }
     else {
-        Py_Initialize();
+        log_debug(LOG_CALL, "Executing %s.%s (%s)\n", interface, method, path);
 
-        obj = dbus_py_import(my_proc.bus_msg);
-        obj = PyList_GetItem(obj, 0);
-        log_debug(LOG_CALL, "Calling %s.%s (%s)\n", interface, method, path);
+        gettimeofday(&time_start, NULL);
         ret = py_call_method(interface, path, method, obj);
+        gettimeofday(&time_end, NULL);
+        msec = time_diff(&time_start, &time_end);
+
+        log_debug(LOG_PERF, "Execution took %.3f seconds\n", (float) msec / 1000);
 
         if (ret == NULL) {
             reply = log_exception(my_proc.bus_msg, my_proc.bus_conn);
@@ -95,8 +113,9 @@ dbus_method_call()
             dbus_message_iter_init_append(reply, &iter);
             dbus_py_export(&iter, ret);
         }
-        Py_Finalize();
     }
+
+    Py_Finalize();
 
     if (!no_reply) {
         if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
@@ -115,8 +134,10 @@ dbus_listen()
     int size;
 
     DBusConnection *conn;
-    DBusMessage *msg;
+    DBusMessage *msg, *reply;
+    DBusMessageIter iter;
     DBusError err;
+    dbus_uint32_t serial = 0;
     int ret;
     const char *unique_name;
     PyObject *args;
@@ -132,7 +153,7 @@ dbus_listen()
         exit(1);
     }
 
-    ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING , &err);
+    ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Name Error (%s)\n", err.message);
         dbus_error_free(&err);
@@ -144,6 +165,8 @@ dbus_listen()
 
     unique_name = dbus_bus_get_unique_name(conn);
     log_info("Listening on %s (%s)...\n", cfg_bus_name, unique_name);
+
+    const char *introspection = load_file("/home/bahadir/repos/works/comar-dbus/introspection.xml", NULL);
 
     while (1) {
         dbus_connection_read_write(conn, 0);
@@ -159,21 +182,53 @@ dbus_listen()
             continue;
         }
 
+        const char *sender = dbus_message_get_sender(msg);
+        const char *interface = dbus_message_get_interface(msg);
+        const char *path = dbus_message_get_path(msg);
+        const char *method = dbus_message_get_member(msg);
+        dbus_bool_t no_reply = dbus_message_get_no_reply(msg);
+
         switch (dbus_message_get_type(msg)) {
             case DBUS_MESSAGE_TYPE_METHOD_CALL:
-                log_debug(LOG_DBUS, "Caught message call: %s.%s\n", dbus_message_get_interface(msg), dbus_message_get_member(msg));
+                log_debug(LOG_DBUS, "DBus method call [%s.%s] from [%s]\n", interface, method, sender);
                 if (dbus_message_has_interface(msg, "org.freedesktop.DBus.Introspectable")) {
                     if (dbus_message_has_member(msg, "Introspect")) {
-                        // Give introspection
+                        // FIXME: Give introspection
                     }
                 }
                 else if (dbus_message_get_type(msg) == DBUS_MESSAGE_TYPE_METHOD_CALL) {
-                    proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
+                    if (!check_interface_format(interface)) {
+                        log_error("Invalid interface: %s\n", interface);
+                        if (!no_reply) {
+                            reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Invalid interface");
+                            dbus_send(conn, reply);
+                        }
+                    }
+                    else if (!check_path_format(path)) {
+                        log_error("Invalid object path: %s\n", path);
+                        if (!no_reply) {
+                            reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Invalid object path");
+                            dbus_send(conn, reply);
+                        }
+                    }
+                    else {
+                        char *script_path = get_script_path(interface, path);
+                        if (!check_file(script_path)) {
+                            log_error("Interface/object path does not exist.\n", interface, path);
+                            if (!no_reply) {
+                                reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Interface/object path does not exist.");
+                                dbus_send(conn, reply);
+                            }
+                        }
+                        else {
+                            proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
+                        }
+                        free(script_path);
+                    }
                 }
                 break;
             case DBUS_MESSAGE_TYPE_SIGNAL:
-                args = dbus_py_import(msg);
-                log_debug(LOG_DBUS, "Caught signal: %s.%s\n", dbus_message_get_interface(msg), dbus_message_get_member(msg));
+                log_debug(LOG_DBUS, "DBus signal [%s.%s] from [%s]\n", interface, method, sender);
                 break;
         }
     }

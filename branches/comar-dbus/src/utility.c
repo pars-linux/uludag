@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <time.h>
 #include <sys/stat.h>
 
 #include "cfg.h"
@@ -19,6 +20,13 @@
 const char *valid_app_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+";
 const char *valid_interface_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.";
 const char *path_prefix = "/package/";
+
+int
+check_file(const char *fname)
+{
+    struct stat fs;
+    return (stat(fname, &fs) == 0);
+}
 
 unsigned char *
 load_file(const char *fname, int *sizeptr)
@@ -68,6 +76,10 @@ check_interface_format(const char *interface)
 {
     int i;
 
+    if (interface == NULL) {
+        return 0;
+    }
+
     for (i = 0; i < strlen(interface); i++) {
         if (!in_str(interface[i], valid_interface_chars)) {
             return 0;
@@ -80,6 +92,10 @@ int
 check_path_format(const char *path)
 {
     int i;
+
+    if (path == NULL) {
+        return 0;
+    }
 
     if (strncmp(path, path_prefix, strlen(path_prefix))) {
         return 0;
@@ -139,4 +155,14 @@ get_script_path(const char *interface, const char *path)
     free(app);
     free(model);
     return realpath;
+}
+
+unsigned long
+time_diff(struct timeval *start, struct timeval *end)
+{
+    unsigned long msec;
+
+    msec = (end->tv_sec * 1000) + (end->tv_usec / 1000);
+    msec -= (start->tv_sec * 1000) + (start->tv_usec / 1000);
+    return msec;
 }

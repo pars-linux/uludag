@@ -7,7 +7,9 @@
 ** option) any later version. Please read the COPYING file.
 */
 
+int check_file(const char *fname);
 unsigned char *load_file(const char *fname, int *sizeptr);
 int check_interface_format(const char *interface);
 int check_path_format(const char *path);
 char *get_script_path(const char *interface, const char *path);
+unsigned long time_diff(struct timeval *start, struct timeval *end);
