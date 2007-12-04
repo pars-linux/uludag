@@ -72,6 +72,9 @@ class widgetMain(QWidget):
 
         self.connect(applyButton, SIGNAL("clicked()"), self.slotApply)
 
+        if not os.access(xorg_conf, os.W_OK):
+            applyButton.setDisabled(True)
+
         self.modeList = modeList
         self.depthList = depthList
 
