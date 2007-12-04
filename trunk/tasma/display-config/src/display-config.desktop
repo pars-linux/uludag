@@ -16,6 +16,6 @@ X-KDE-Library=display-config
 X-KDE-FactoryName=display_config
 X-KDE-RootOnly=true
 Type=Application
-Icon=display_config
+Icon=randr
 Exec=display-config
 Categories=QT;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
