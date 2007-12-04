@@ -27,30 +27,6 @@ py_in_tuple(PyObject *tuple, PyObject *item)
     return 0;
 }
 
-int
-py_check_args(PyObject *tuple)
-{
-    PyObject *pItem, *pKey;
-    int i;
-
-    if (!PyTuple_Check(tuple)) {
-        return 0;
-    }
-
-    for (i == 0; i < PyTuple_Size(tuple); i++) {
-        pItem = PyTuple_GetItem(tuple, i);
-        if (!PyTuple_Check(pItem) || PyTuple_Size(pItem) != 2) {
-            return 0;
-        }
-        pKey = PyTuple_GetItem(pItem, 0);
-        if (!PyString_Check(pKey)) {
-            return 0;
-        }
-    }
-
-    return 1;
-}
-
 //! Call model's method with given arguments
 PyObject *
 py_call_method(const char *model, const char *path, const char *method, PyObject *args)
@@ -102,22 +78,8 @@ py_call_method(const char *model, const char *path, const char *method, PyObject
         return NULL;
     }
 
-    pFuncCode = PyObject_GetAttrString(pFunc, "func_code");
-    arg_count = PyInt_AsLong(PyObject_GetAttrString(pFuncCode, "co_argcount"));
-    argNames = PyObject_GetAttrString(pFuncCode, "co_varnames");
-    argNames = PyTuple_GetSlice(argNames, 0, arg_count);
-
-    pArgs = PyTuple_New(0);
+    pArgs = PyList_AsTuple(args);
     pkArgs = PyDict_New();
-
-    for (i = 0; i < PyTuple_Size(args); i++) {
-        pKey = PyTuple_GetItem(PyTuple_GetItem(args, i), 0);
-        pValue = PyTuple_GetItem(PyTuple_GetItem(args, i), 1);
-        if (!py_in_tuple(argNames, pKey)) {
-            continue;
-        }
-        PyDict_SetItem(pkArgs, pKey, pValue);
-    }
 
     pReturn = PyObject_Call(pFunc, pArgs, pkArgs);
 

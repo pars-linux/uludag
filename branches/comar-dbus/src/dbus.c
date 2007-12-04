@@ -87,32 +87,26 @@ dbus_method_call()
     Py_Initialize();
 
     obj = dbus_py_import(my_proc.bus_msg);
-    obj = PyList_GetItem(obj, 0);
 
-    if (!py_check_args(obj)) {
-        log_error("%s.%s() argument format is not valid.\n", interface, method);
-        if (!no_reply) {
-            reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, "Argument format not valid");
-        }
+    gettimeofday(&time_start, NULL);
+    ret = py_call_method(interface, path, method, obj);
+    gettimeofday(&time_end, NULL);
+    msec = time_diff(&time_start, &time_end);
+
+    if (msec / 1000 > 60) {
+        log_info("Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
     }
     else {
-        log_debug(LOG_CALL, "Executing %s.%s (%s)\n", interface, method, path);
+        log_debug(LOG_PERF, "Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
+    }
 
-        gettimeofday(&time_start, NULL);
-        ret = py_call_method(interface, path, method, obj);
-        gettimeofday(&time_end, NULL);
-        msec = time_diff(&time_start, &time_end);
-
-        log_debug(LOG_PERF, "Execution took %.3f seconds\n", (float) msec / 1000);
-
-        if (ret == NULL) {
-            reply = log_exception(my_proc.bus_msg, my_proc.bus_conn);
-        }
-        else if (!no_reply) {
-            reply = dbus_message_new_method_return(my_proc.bus_msg);
-            dbus_message_iter_init_append(reply, &iter);
-            dbus_py_export(&iter, ret);
-        }
+    if (ret == NULL) {
+        reply = log_exception(my_proc.bus_msg, my_proc.bus_conn);
+    }
+    else if (!no_reply) {
+        reply = dbus_message_new_method_return(my_proc.bus_msg);
+        dbus_message_iter_init_append(reply, &iter);
+        dbus_py_export(&iter, ret);
     }
 
     Py_Finalize();
@@ -165,8 +159,6 @@ dbus_listen()
 
     unique_name = dbus_bus_get_unique_name(conn);
     log_info("Listening on %s (%s)...\n", cfg_bus_name, unique_name);
-
-    const char *introspection = load_file("/home/bahadir/repos/works/comar-dbus/introspection.xml", NULL);
 
     while (1) {
         dbus_connection_read_write(conn, 0);

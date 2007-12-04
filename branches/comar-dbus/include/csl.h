@@ -13,4 +13,3 @@
 PyObject *py_call_method(const char *model, const char *app, const char *method, PyObject *args);
 PyObject *dbus_py_import(DBusMessage *msg);
 void dbus_py_export(DBusMessageIter *iter, PyObject *obj);
-int py_check_args(PyObject *tuple);
