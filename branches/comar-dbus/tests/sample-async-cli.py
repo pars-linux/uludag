@@ -20,7 +20,7 @@ def main():
         iface.postInstall(*args, **kwargs)
         time.sleep(0.5) # don't flood
 
-    test(1, 2)
+    test(1)
 
     loop = gobject.MainLoop()
     loop.run()

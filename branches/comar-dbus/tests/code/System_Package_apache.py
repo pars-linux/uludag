@@ -4,6 +4,6 @@
 import random
 import time
 
-def postInstall(a, b=2.0):
+def postInstall(a):
     time.sleep(random.randint(1, 3))
-    return "a: %s\nb: %s" % (repr(a), repr(b))
+    return "You said: '%s'" % a

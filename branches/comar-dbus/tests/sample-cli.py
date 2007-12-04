@@ -13,8 +13,8 @@ def main():
         except Exception, e:
             print e
 
+    test(1)
     test(1, [1, 2, 3])
-    test(1, [1, 2, 3], 1)
 
 
 if __name__ == '__main__':
