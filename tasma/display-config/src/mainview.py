@@ -42,9 +42,10 @@ modes = (
 class widgetMain(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
+        vb = QVBoxLayout(self, 6, 6, "mainLayout")
 
         if not os.access(xorg_conf, os.R_OK):
-            QLabel(i18n("Unable to read configuration."), self)
+            vb.addWidget(QLabel(i18n("Unable to read configuration."), self))
             return
 
         modeLabel = QLabel(i18n("Resolution:"), self)
@@ -59,8 +60,6 @@ class widgetMain(QWidget):
         depthList.insertItem(i18n("High Color (16 bit)"))
 
         applyButton = QPushButton(i18n("Apply"), self)
-
-        vb = QVBoxLayout(self, 6, 6, "mainLayout")
 
         vb.addWidget(modeLabel)
         vb.addWidget(modeList)
