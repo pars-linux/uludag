@@ -75,6 +75,6 @@ kdedistutils.setup(
     license = "GPL",
     application_data = app_data,
     executable_links = [('display-config','display-config.py')],
-    i18n = ('po', ['.']),
+    i18n = ('po', ['src']),
     kcontrol_modules = [ ('src/display-config.desktop','src/display-config.py')],
 )
