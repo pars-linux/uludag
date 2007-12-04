@@ -79,7 +79,11 @@ class widgetMain(QWidget):
 
     def readConfig(self):
         p = parser.XorgParser()
-        p.parseFile(xorg_conf)
+        try:
+            p.parseFile(xorg_conf)
+        except IOError:
+            QMessageBox.critical(self, i18n("Error"), i18n("Unable to read configuration."))
+            sys.exit(1)
 
         screenSec = p.getSections("Screen")[0]
         depth = screenSec.get("DefaultDepth", 0, 16)
@@ -98,7 +102,11 @@ class widgetMain(QWidget):
 
     def writeConfig(self):
         p = parser.XorgParser()
-        p.parseFile(xorg_conf)
+        try:
+            p.parseFile(xorg_conf)
+        except IOError:
+            QMessageBox.critical(self, i18n("Error"), i18n("Unable to read configuration."))
+            sys.exit(1)
 
         mode = str(self.modeList.currentText())
 
@@ -125,7 +133,11 @@ class widgetMain(QWidget):
 
         displaySec.set("Modes", mode, "800x600", "640x480")
 
-        open(xorg_conf, "w").write(p.toString())
+        try:
+            open(xorg_conf, "w").write(p.toString())
+        except IOError:
+            QMessageBox.critical(self, i18n("Error"), i18n("Unable to save configuration."))
+            sys.exit(1)
 
     def slotApply(self):
         self.writeConfig()
