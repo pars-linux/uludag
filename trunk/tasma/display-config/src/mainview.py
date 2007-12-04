@@ -15,7 +15,7 @@ from kdeui import *
 
 import sys
 
-import parser
+import xorgparser
 from utility import *
 
 xorg_conf = "/etc/X11/xorg.conf"
@@ -78,7 +78,7 @@ class widgetMain(QWidget):
         self.readConfig()
 
     def readConfig(self):
-        p = parser.XorgParser()
+        p = xorgparser.XorgParser()
         try:
             p.parseFile(xorg_conf)
         except IOError:
@@ -101,7 +101,7 @@ class widgetMain(QWidget):
         self.modeList.setCurrentText(mode)
 
     def writeConfig(self):
-        p = parser.XorgParser()
+        p = xorgparser.XorgParser()
         try:
             p.parseFile(xorg_conf)
         except IOError:

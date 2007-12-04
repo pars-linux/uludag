@@ -57,7 +57,7 @@ class Module(KCModule):
 
 
 # KCModule factory
-def create_display_manager(parent, name):
+def create_display_config(parent, name):
     global kapp
 
     kapp = KApplication.kApplication()
