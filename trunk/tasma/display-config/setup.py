@@ -67,8 +67,8 @@ app_data = [
 kdedistutils.setup(
     name="display-config",
     version=version,
-    author="Developer",
-    author_email="user@pardus.org.tr",
+    author="Fatih Aşıcı",
+    author_email="fatih@pardus.org.tr",
     url="http://www.pardus.org.tr/",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
