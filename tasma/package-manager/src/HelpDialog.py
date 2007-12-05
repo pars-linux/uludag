@@ -22,9 +22,9 @@ help_files = {
     PREFERENCES:"preferences_help.html"
     }
 
-class HelpDialog(QDialog):
+class HelpDialog(KDialog):
     def __init__(self, parent, help):
-        QDialog.__init__(self, parent)
+        KDialog.__init__(self, parent)
         self.setCaption(i18n("Package Manager Help"))
         self.layout = QGridLayout(self)
         self.htmlPart = KHTMLPart(self)
