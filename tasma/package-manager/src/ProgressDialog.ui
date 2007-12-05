@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>ProgressDialog</class>
-<widget class="QDialog">
+<widget class="KDialog">
     <property name="name">
         <cstring>ProgressDialog</cstring>
     </property>
