@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 import sys
-sys.path.append("./yali/gui")
-sys.path.append("../yali/gui")
+sys.path.append("./yali4/gui")
+sys.path.append("../yali4/gui")
 from qt import *
 
 

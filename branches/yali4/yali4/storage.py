@@ -26,11 +26,11 @@ import glob
 import struct
 import binascii
 
-from yali.parteddata import *
-from yali.partition import Partition, FreeSpace
-from yali.exception import YaliError, YaliException
-import yali.sysutils as sysutils
-import yali.filesystem
+from yali4.parteddata import *
+from yali4.partition import Partition, FreeSpace
+from yali4.exception import YaliError, YaliException
+import yali4.sysutils as sysutils
+import yali4.filesystem
 
 class DeviceError(YaliError):
     pass
@@ -344,9 +344,9 @@ class Device:
 
         if isinstance(fs, str):
             # a string... get the corresponding FileSystem object
-            fs = yali.filesystem.get_filesystem(fs)
+            fs = yali4.filesystem.get_filesystem(fs)
 
-        if isinstance(fs, yali.filesystem.FileSystem):
+        if isinstance(fs, yali4.filesystem.FileSystem):
             fs = fs.getFSType()
         else:
             fs = None
@@ -420,9 +420,9 @@ class Device:
 
         if isinstance(fs, str):
             # a string... get the corresponding FileSystem object
-            fs = yali.filesystem.get_filesystem(fs)
+            fs = yali4.filesystem.get_filesystem(fs)
 
-        if not isinstance(fs, yali.filesystem.FileSystem):
+        if not isinstance(fs, yali4.filesystem.FileSystem):
             raise DeviceError, "filesystem is None, can't resize"
 
         print dir(fs)

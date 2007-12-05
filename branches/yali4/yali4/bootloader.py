@@ -14,16 +14,16 @@ import os
 import glob
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-from yali.exception import *
-from yali.constants import consts
-import yali.sysutils
-import yali.partitiontype as parttype
-import yali.partitionrequest as request
-from yali.partitionrequest import partrequests
-import yali.gui.context as ctx
+from yali4.exception import *
+from yali4.constants import consts
+import yali4.sysutils
+import yali4.partitiontype as parttype
+import yali4.partitionrequest as request
+from yali4.partitionrequest import partrequests
+import yali4.gui.context as ctx
 
 grub_conf_tmp = """\
 default 0
@@ -185,7 +185,7 @@ class BootLoader:
         if not grub_install_root.startswith("/dev/"):
             grub_install_root = "/dev/%s" % grub_install_root
 
-        cmd = "%s --root-directory=%s %s" % (yali.sysutils.find_executable("grub-install"),
+        cmd = "%s --root-directory=%s %s" % (yali4.sysutils.find_executable("grub-install"),
                                              consts.target_dir,
                                              grub_install_root)
         if os.system(cmd) != 0:

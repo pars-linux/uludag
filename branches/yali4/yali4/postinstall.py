@@ -14,7 +14,7 @@ import os
 import shutil
 import grp
 
-from yali.constants import consts
+from yali4.constants import consts
 
 # necessary things after a full install
 

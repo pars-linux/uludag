@@ -13,12 +13,12 @@
 import os
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 import parted
-import yali.parteddata as parteddata
-import yali.filesystem
+import yali4.parteddata as parteddata
+import yali4.filesystem
 
 
 ##
@@ -44,7 +44,7 @@ class Partition:
         return self._fs_ready
 
     def setFileSystemType(self, fs_type):
-        if isinstance(fs_type, yali.filesystem.FileSystem):
+        if isinstance(fs_type, yali4.filesystem.FileSystem):
             fs_type = fs_type.getFSType()
 
         self._partition.set_system(fs_type)
@@ -129,7 +129,7 @@ class Partition:
         return self._fsname
 
     def getFSLabel(self):
-        fs = yali.filesystem.get_filesystem(self.getFSName())
+        fs = yali4.filesystem.get_filesystem(self.getFSName())
         try:
             return fs.getLabel(self)
         except AttributeError, e:

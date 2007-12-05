@@ -17,7 +17,7 @@
 # 'preparation before install', 'system installation' and 'basic
 # setup'. Each stage can have different number of screens though...
 
-from yali.exception import YaliError, YaliException
+from yali4.exception import YaliError, YaliException
 
 class Steps:
 

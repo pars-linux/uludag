@@ -22,10 +22,10 @@ import string
 import parted
 import math
 
-from yali.exception import *
-import yali.sysutils as sysutils
-import yali.parteddata as parteddata
-import yali.storage
+from yali4.exception import *
+import yali4.sysutils as sysutils
+import yali4.parteddata as parteddata
+import yali4.storage
 
 class FSError(YaliError):
     pass
@@ -104,10 +104,10 @@ class FileSystem:
     ##
     # check label for existence.
     def labelExists(self, label):
-        if not yali.storage.devices:
-            yali.storage.init_devices()
+        if not yali4.storage.devices:
+            yali4.storage.init_devices()
 
-        for dev in yali.storage.devices:
+        for dev in yali4.storage.devices:
             for part in dev.getPartitions():
                 if label == part.getFSLabel():
                     return True

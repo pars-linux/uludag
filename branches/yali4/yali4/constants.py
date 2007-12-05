@@ -50,7 +50,7 @@ consts = Constants()
 
 consts.pardus_version = file("/etc/pardus-release").readlines()[0].strip()
 
-consts.data_dir = "/usr/share/yali"
+consts.data_dir = "/usr/share/yali4"
 
 consts.mnt_dir = "/mnt"
 

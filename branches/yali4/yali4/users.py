@@ -18,7 +18,7 @@ import md5
 import os
 
 from string import ascii_letters, digits
-from yali.constants import consts
+from yali4.constants import consts
 
 # a set of User instances waiting...
 # we'll add these users at the last step of the installation.

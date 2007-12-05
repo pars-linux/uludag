@@ -139,7 +139,7 @@ class YaliUninstall(Command):
             print "removing: ", data_dir
             shutil.rmtree(data_dir)
 
-i18n_domain = "yali"
+i18n_domain = "yali4"
 i18n_languages = ["tr",
                   "nl",
                   "it",

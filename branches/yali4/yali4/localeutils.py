@@ -12,18 +12,18 @@
 
 import os
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.localedata
-from yali.constants import consts
+import yali4.localedata
+from yali4.constants import consts
 
 def write_locale_from_cmdline():
     locale_file_path = os.path.join(consts.target_dir, "etc/env.d/03locale")
     f = open(locale_file_path, "w")
 
-    f.write("LANG=%s\n" % yali.localedata.locales[consts.lang]["locale"])
-    f.write("LC_ALL=%s\n" % yali.localedata.locales[consts.lang]["locale"])
+    f.write("LANG=%s\n" % yali4.localedata.locales[consts.lang]["locale"])
+    f.write("LC_ALL=%s\n" % yali4.localedata.locales[consts.lang]["locale"])
 
 def set_keymap(keymap):
     os.system("setxkbmap -layout %s" % keymap)

@@ -15,10 +15,10 @@
 import parted
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.filesystem
+import yali4.filesystem
 
 class PartitionType:
 
@@ -38,11 +38,11 @@ class __PartitionType(PartitionType):
         # check cmdline for reiserfs support
         cmdline = open("/proc/cmdline", "r").read()
         if cmdline.find("enable_reiserfs") >= 0:
-            self.filesystem = yali.filesystem.ReiserFileSystem()
+            self.filesystem = yali4.filesystem.ReiserFileSystem()
         elif cmdline.find("enable_xfs") >= 0:
-            self.filesystem = yali.filesystem.XFSFileSystem()
+            self.filesystem = yali4.filesystem.XFSFileSystem()
         else:
-            self.filesystem = yali.filesystem.Ext3FileSystem()
+            self.filesystem = yali4.filesystem.Ext3FileSystem()
 
 
 class RootPartitionType(__PartitionType):
@@ -65,7 +65,7 @@ class HomePartitionType(__PartitionType):
 
 class SwapPartitionType(PartitionType):
     name = _("Swap")
-    filesystem = yali.filesystem.SwapFileSystem()
+    filesystem = yali4.filesystem.SwapFileSystem()
     mountpoint = None
     mountoptions = "sw"
     parted_type = parted.PARTITION_PRIMARY

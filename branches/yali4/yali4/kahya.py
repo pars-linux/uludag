@@ -3,9 +3,9 @@
 
 import re
 import sys
-import yali.yalireadpiks as yaliReadPiks
-from yali.localedata import *
-from yali.users import *
+import yali4.yalireadpiks as yaliReadPiks
+from yali4.localedata import *
+from yali4.users import *
 
 class userErrors:
     def __init__(self):

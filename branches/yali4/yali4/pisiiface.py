@@ -22,8 +22,8 @@ import pisi.config
 import pisi.util
 import pisi.context as ctx
 
-import yali.postinstall
-from yali.constants import consts
+import yali4.postinstall
+from yali4.constants import consts
 
 def initialize(ui, with_comar=False):
 
