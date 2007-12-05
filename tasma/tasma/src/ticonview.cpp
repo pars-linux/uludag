@@ -179,6 +179,13 @@ TIconViewItem::TIconViewItem( TIconView *parent, const QString& text,
   _moduleinfo = moduleinfo;
 }
 
+void TIconView::focusInEvent ( QFocusEvent* event ) {
+
+  if(event->reason() == QFocusEvent::Tab)
+    setSelected(firstItem(), true);
+
+}
+
 KCModuleInfo* TIconViewItem::moduleinfo() const
 {
   assert(_moduleinfo != NULL);
