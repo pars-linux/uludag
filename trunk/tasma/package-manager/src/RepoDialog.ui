@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>RepoDialog</class>
-<widget class="QDialog">
+<widget class="KDialog">
     <property name="name">
         <cstring>RepoDialog</cstring>
     </property>
