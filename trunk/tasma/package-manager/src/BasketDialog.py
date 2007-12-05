@@ -15,6 +15,7 @@ import string
 from sets import Set as set
 from qt import *
 from kdecore import *
+from kdeui import KCursor
 from khtml import *
 
 import pisi
@@ -45,9 +46,9 @@ class SelectEventListener(DOM.EventListener):
         except Exception, e:
             print e
 
-class BasketDialog(QDialog):
+class BasketDialog(KDialog):
     def __init__(self, parent, basket):
-        QDialog.__init__(self,parent,str(i18n("Basket")),True)
+        KDialog.__init__(self,parent,str(i18n("Basket")),True)
         self.parent = parent
         self.basket = basket
         self.totalSize = 0
@@ -133,9 +134,9 @@ class BasketDialog(QDialog):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def updateTotals(self):
-        self.setCursor(Qt.waitCursor)
+        self.setCursor(KCursor.waitCursor)
         self.createExtraPackagesList()
-        self.setCursor(Qt.arrowCursor)
+        self.setCursor(KCursor.arrowCursor)
 
     def createSelectedPackagesList(self):
         self.createHTML(self.basket.packages, self.pkgHtmlPart, True)

@@ -170,7 +170,7 @@ class Commander(QObject):
         self.comar.cancel()
 
     def checkConflicts(self, packages):
-        return pisi.api.generate_conflicts(packages)
+        return pisi.api.get_conflicts(packages)
 
     def inProgress(self):
         return self.comar.com_lock.locked()

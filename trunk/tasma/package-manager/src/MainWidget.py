@@ -139,14 +139,13 @@ class MainApplicationWidget(QWidget):
 
         self.settings = Settings.Settings(kapp.config())
 
-        #self.lazyLoadComponentList()
-
     def lazyLoadComponentList(self):
         self.parent.tray.updateTrayIcon()
  
         if self.componentsReady():
             self.installState()
 
+            #TODO: Fix this
             #global packageToInstall
             #if packageToInstall:
             #    self.installPackage(unicode(packageToInstall))
@@ -182,18 +181,33 @@ class MainApplicationWidget(QWidget):
         self.parent.showUpgradeAction.setChecked(False)
 
     def installState(self, reset=True):
+        # set mouse to waiting icon
         kapp.setOverrideCursor(KCursor.waitCursor)
+
+        # uncheck buttons, clear search line, empty cache
         if reset:
             self.resetState()
+
+        # check the "Show New Packages" button
         self.parent.showNewAction.setChecked(True)
         self.processEvents()
+
+        # ask pisi to get available packages
         packages = self.command.listNewPackages()
+
         self.state = install_state
+
+        # prepare components' listview on the left side
         self.createComponentList(packages)
+
         self.operateAction.setText(i18n("Install Package(s)"))
         self.operateAction.setIconSet(loadIconSet("ok"))
         self.basket.setState(self.state)
+
+        # set last selected component and so, trigger HTML creator to create right side (packages)
+        # (selects first component if it is the first time)
         self.setLastSelected()
+
         self.updateStatusBar()
         kapp.restoreOverrideCursor()
 
