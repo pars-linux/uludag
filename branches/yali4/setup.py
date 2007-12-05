@@ -22,28 +22,28 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 from distutils.spawn import find_executable, spawn
 
-import yali
+import yali4
 
-YALI_VERSION = yali.__version__
+YALI_VERSION = yali4.__version__
 
 def qt_ui_files():
-    p = "yali/gui/Ui/*.ui"
+    p = "yali4/gui/Ui/*.ui"
     return glob.glob(p)
 
 def gui_pics():
-    p = "yali/gui/pics"
+    p = "yali4/gui/pics"
     return glob.glob(p + "/*.png")
 
 def gui_slidepics():
-    p = "yali/gui/pics/slideshow/*.png"
+    p = "yali4/gui/pics/slideshow/*.png"
     return glob.glob(p)
 
 def user_faces():
-    p = "yali/user_faces/*.png"
+    p = "yali4/user_faces/*.png"
     return glob.glob(p)
 
 def data_files():
-    p = "yali/data/*.xml"
+    p = "yali4/data/*.xml"
     return glob.glob(p)
 
 def getRevision():
@@ -76,7 +76,7 @@ class YaliBuild(build):
         py_file = py_file_name(ui_file)
         # lines in reverse order
         lines =  ["_ = __trans.ugettext",
-                 "__trans = gettext.translation('yali', fallback=True)\n",
+                 "__trans = gettext.translation('yali4', fallback=True)\n",
                  "import gettext\n"]
         f = open(py_file, "r").readlines()
         for l in lines:
@@ -88,10 +88,10 @@ class YaliBuild(build):
 
     def compile_ui(self, ui_file):
         pyqt_configuration = pyqtconfig.Configuration()
-        pyuic_exe = find_executable('pyuic', pyqt_configuration.default_bin_dir)
+        pyuic_exe = find_executable('pyuic4', pyqt_configuration.default_bin_dir)
         if not pyuic_exe:
             # Search on the $Path.
-            pyuic_exe = find_executable('pyuic')
+            pyuic_exe = find_executable('pyuic4')
 
         cmd = [pyuic_exe, ui_file, '-o']
         cmd.append(py_file_name(ui_file))
@@ -129,12 +129,12 @@ class YaliUninstall(Command):
         pass
 
     def run(self):
-        yali_dir = os.path.join(get_python_lib(), "yali")
+        yali_dir = os.path.join(get_python_lib(), "yali4")
         if os.path.exists(yali_dir):
             print "removing: ", yali_dir
             shutil.rmtree(yali_dir)
 
-        data_dir = "/usr/share/yali"
+        data_dir = "/usr/share/yali4"
         if os.path.exists(data_dir):
             print "removing: ", data_dir
             shutil.rmtree(data_dir)
@@ -164,7 +164,7 @@ class I18nInstall(install):
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
 
-setup(name="yali",
+setup(name="yali4",
       version= getVersion(),
       description="YALI (Yet Another Linux Installer)",
       long_description="Pardus System Installer.",
@@ -172,15 +172,15 @@ setup(name="yali",
       author="Pardus Developers",
       author_email="yali@pardus.org.tr",
       url="http://www.pardus.org.tr/eng/yali/",
-      packages = ['yali', 'yali.gui', 'yali.gui.Ui'],
+      packages = ['yali4', 'yali4.gui', 'yali4.gui.Ui'],
       package_dir = {'': ''},
-      data_files = [('/usr/share/yali/pics', gui_pics()),
-                    ('/usr/share/yali/slideshow', gui_slidepics()),
-                    ('/usr/share/yali/user_faces', user_faces()),
-                    ('/usr/share/yali/data', data_files())],
-      scripts = ['yali-bin'],
-      ext_modules = [Extension('yali._sysutils',
-                               sources = ['yali/_sysutils.c'],
+      data_files = [('/usr/share/yali4/pics', gui_pics()),
+                    ('/usr/share/yali4/slideshow', gui_slidepics()),
+                    ('/usr/share/yali4/user_faces', user_faces()),
+                    ('/usr/share/yali4/data', data_files())],
+      scripts = ['yali4-bin'],
+      ext_modules = [Extension('yali4._sysutils',
+                               sources = ['yali4/_sysutils.c'],
                                libraries = ["ext2fs"],
                                extra_compile_args = ['-Wall'])],
       cmdclass = {

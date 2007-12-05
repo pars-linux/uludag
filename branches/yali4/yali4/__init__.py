@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 #
 
-__version__ = "1.1.7"
+__version__ = "2.0"
 
 import sys
 import exceptions
@@ -18,18 +18,18 @@ import traceback
 import cStringIO
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 import pisi
-from yali.exception import *
+from yali4.exception import *
 
 def default_runner():
-    import yali.gui.runner
+    import yali4.gui.runner
 
     sys.excepthook = exception_handler
 
-    return yali.gui.runner.Runner()
+    return yali4.gui.runner.Runner()
 
 exception_normal, exception_fatal, \
     exception_pisi, exception_informational, \
@@ -68,5 +68,5 @@ def exception_handler(exception, value, tb):
 
     sio.seek(0)
 
-    import yali.gui.runner
-    yali.gui.runner.showException(exception_type, unicode(sio.read()))
+    import yali4.gui.runner
+    yali4.gui.runner.showException(exception_type, unicode(sio.read()))
