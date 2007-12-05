@@ -22,6 +22,7 @@ class CustomEventListener(DOM.EventListener):
     def handleEvent(self,event):
         target = event.target().nodeName().string()
         try:
+            #if checkbox is clicked, add/remove package to/from basket
             if target == "INPUT":
                 inputElement = DOM.HTMLInputElement(event.target())
                 name = inputElement.name().string()

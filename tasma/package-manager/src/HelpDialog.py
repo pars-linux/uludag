@@ -13,6 +13,7 @@ import os
 from qt import *
 from kdecore import locate, i18n, KURL
 from khtml import KHTMLPart
+from kdeui import KDialog
 from LocaleData import getKDELocale
 
 (MAINAPP, PREFERENCES) = (1, 2)
