@@ -15,7 +15,7 @@ import string
 from sets import Set as set
 from qt import *
 from kdecore import *
-from kdeui import KCursor
+from kdeui import KCursor, KDialog
 from khtml import *
 
 import pisi

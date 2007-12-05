@@ -11,7 +11,6 @@
 # Please read the COPYING file.
 
 # System
-import re
 import sys
 import string
 
@@ -19,7 +18,6 @@ import string
 from qt import *
 from kdecore import *
 from kdeui import *
-from khtml import *
 from kio import *
 import kdedesigner
 
@@ -31,12 +29,13 @@ import PackageCache
 from Icons import *
 import Preferences
 import Commander
-import CustomEventListener
 import Tray
 import Settings
 import LocaleData
 import HelpDialog
 from Component import *
+from SpecialList import *
+import Globals
 
 # Pisi
 import pisi
@@ -46,11 +45,9 @@ import pisi
 unremovable_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE','pisi', 'package-manager'])
 
 class MainApplicationWidget(QWidget):
-    def __init__(self, parent=None, application=None):
+    def __init__(self, parent=None):
         QWidget.__init__(self, parent)
         self.parent = parent
-        global kapp
-        kapp = application
         self.progressDialog = Progress.Progress(self)
 
         self.componentDict = {}
@@ -87,21 +84,11 @@ class MainApplicationWidget(QWidget):
 
         self.timer = QTimer(self)
 
-        self.htmlPart = KHTMLPart(self.rightLayout)
+        # list of packages on the right side
+        self.specialList = SpecialList(self.rightLayout)
 
         self.componentsList = KListView(self.leftLayout)
         self.componentsList.setFullWidth(True)
-
-        # Read javascript
-        js = file(str(locate("data","package-manager/animation.js"))).read()
-        js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
-        js = re.sub("#3c8839", KGlobalSettings.baseColor().name(), js)
-        self.javascript = re.sub("#533359",KGlobalSettings.highlightColor().name(), js)
-
-        # Read Css
-        cssFile = file(str(locate("data","package-manager/layout.css"))).read()
-        self.css = cssFile
-
         self.componentsList.addColumn(i18n("Components"))
 
         self.leftLayout.setMargin(2)
@@ -115,12 +102,11 @@ class MainApplicationWidget(QWidget):
         self.layout.setColStretch(2,6)
 
         self.connect(self.componentsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
-        self.connect(self.htmlPart,SIGNAL("completed()"),self.registerEventListener)
-        self.connect(self.searchLine,SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
+        self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
-        self.connect(self.clearButton,SIGNAL("clicked()"),self.searchLine, SLOT("clear()"))
-        self.connect(self.basketAction,SIGNAL("clicked()"),self.showBasket)
-        self.connect(self.operateAction,SIGNAL("clicked()"),self.takeAction)
+        self.connect(self.clearButton, SIGNAL("clicked()"),self.searchLine, SLOT("clear()"))
+        self.connect(self.basketAction, SIGNAL("clicked()"),self.showBasket)
+        self.connect(self.operateAction, SIGNAL("clicked()"),self.takeAction)
 
         self.command = Commander.Commander(self)
 
@@ -134,10 +120,9 @@ class MainApplicationWidget(QWidget):
         self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
         self.tipper = ComponentTipper(self)
-        self.htmlPart.view().setFocus()
         self.show()
 
-        self.settings = Settings.Settings(kapp.config())
+        self.settings = Settings.Settings(Globals.config())
 
     def lazyLoadComponentList(self):
         self.parent.tray.updateTrayIcon()
@@ -156,8 +141,7 @@ class MainApplicationWidget(QWidget):
             self.updateCheck()
 
     def processEvents(self):
-        global kapp
-        kapp.processEvents(QEventLoop.ExcludeUserInput)
+        Globals.processEvents()
 
     def componentsReady(self):
         if not pisi.db.componentdb.ComponentDB().list_components(): # Repo metadata empty
@@ -180,9 +164,11 @@ class MainApplicationWidget(QWidget):
         self.parent.showUpgradeAction.setEnabled(True)
         self.parent.showUpgradeAction.setChecked(False)
 
+    # executed at start and when 'Show New Packages' is clicked
     def installState(self, reset=True):
+
         # set mouse to waiting icon
-        kapp.setOverrideCursor(KCursor.waitCursor)
+        Globals.setWaitCursor()
 
         # uncheck buttons, clear search line, empty cache
         if reset:
@@ -204,15 +190,16 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setIconSet(loadIconSet("ok"))
         self.basket.setState(self.state)
 
-        # set last selected component and so, trigger HTML creator to create right side (packages)
+        # set last selected component and so, trigger SpecialList to create right side (packages)
         # (selects first component if it is the first time)
         self.setLastSelected()
 
         self.updateStatusBar()
-        kapp.restoreOverrideCursor()
+        Globals.setNormalCursor()
 
+    # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
-        kapp.setOverrideCursor(KCursor.waitCursor)
+        Globals.setWaitCursor()
         if reset:
             self.resetState()
         self.parent.showInstalledAction.setChecked(True)
@@ -225,10 +212,22 @@ class MainApplicationWidget(QWidget):
         self.basket.setState(self.state)
         self.setLastSelected()
         self.updateStatusBar()
-        kapp.restoreOverrideCursor()
+        Globals.setNormalCursor()
+
+    # Executed when 'Show Upgradable Packages' is clicked
+    def updateCheck(self):
+        self.resetState()
+        self.state = upgrade_state
+        self.parent.showUpgradeAction.setChecked(True)
+        self.parent.showUpgradeAction.setEnabled(False)
+        self.processEvents()
+        self.progressDialog.hideStatus(True)
+        self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
+        self.progressDialog.show()
+        self.command.startUpdate()
 
     def upgradeState(self):
-        kapp.setOverrideCursor(KCursor.waitCursor)
+        Globals.setWaitCursor()
 
         # TODO:
         # If package-manager is opened while tray is updating-repo; progress dialog is
@@ -254,146 +253,7 @@ class MainApplicationWidget(QWidget):
 
         self.basket.setState(self.state)
         self.updateStatusBar()
-        kapp.restoreOverrideCursor()
-
-    def clearPackageList(self):
-        self.htmlPart.view().setContentsPos(0, 0)
-        self.htmlPart.begin()
-        self.htmlPart.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        </head>
-        <body/>
-        ''')
-        self.htmlPart.end()
-
-    def createHTML(self,packages,part=None):
-        head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        '''
-
-        if not part:
-            part = self.htmlPart
-
-        kapp.setOverrideCursor(KCursor.waitCursor)
-        part.view().setContentsPos(0, 0)
-        part.begin()
-        part.write(head)
-        part.write("<style type=\"text/css\">%s</style>" % self.css)
-        part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
-        part.write("</head><body>")
-
-        if set(packages) - set(self.basket.packages):
-            part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
-        else:
-            part.write('''<font size="-2"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></font>''')
-
-        part.write(self.createHTMLForPackages(packages))
-        part.end()
-        kapp.restoreOverrideCursor()
-
-    def createHTMLForPackages(self,packages):
-        result = ""
-        template ='''
-        <!-- package start -->
-        <div>
-        <!-- checkbox --> %s <!-- checkbox -->
-        <div class="package_title" style="%s" id="package_t%d" onclick="showHideContent(this)">
-        <img src="%s" style="float:left;" width="%dpx" height="%dpx">
-        <b>%s</b><br><span style="color:#303030">%s</span><br>
-        </div>
-        <div class="package_info" style="%s" id="package_i%d">
-        <div style="margin-left:25px;" class="package_info_content" id="package_ic%d">
-        <p><b>%s</b>
-        %s<br>
-        <b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b>%s<br><b>%s</b><a href=\"%s\">%s</a>
-        </p>
-        </div>
-        </div>
-        </div>
-        <!-- package end -->
-        '''
-
-        index = 0
-        titleStyle = ""
-        style = ""
-        packages.sort(key=string.lower)
-        pdb = pisi.db.packagedb.PackageDB()
-
-        alternativeColor = KGlobalSettings.alternateBackgroundColor().name()
-        baseColor = KGlobalSettings.baseColor().name()
-
-        for app in packages:
-            if index % 2 == 0:
-                style = "background-color:%s" % alternativeColor
-            else:
-                style = "background-color:%s" % baseColor
-            titleStyle = style
-
-            size = 0L
-            if self.state == remove_state:
-                # first try to locate package information from repository databases
-                try:
-                    package, repo = pdb.get_package_repo(app)
-                #TODO: Handle "Repo item not found" type of exceptions only
-                except:
-                    # if it fails use provided information directly
-                    #package = pdb.get_package(app, pisi.itembyrepodb.installed)
-                    package = pisi.db.installdb.InstallDB().get_package(app)
-                    repo = i18n("N\A")
-                size = package.installedSize
-            else:
-                package, repo = pdb.get_package_repo(app)
-                size = package.packageSize
-
-            desc = package.description
-            summary = package.summary
-            version = package.version
-            iconPath = getIconPath(package.icon)
-
-            if package.source:
-                homepage = package.source.homepage
-            else:
-                homepage = i18n("N\A")
-
-            if size:
-                tpl = pisi.util.human_readable_size(size)
-                size = "%.0f %s" % (tpl[0], tpl[1])
-            else:
-                size = i18n("N\A")
-
-            if app in self.basket.packages:
-                titleStyle = "background-color:#678DB2"
-                checkState = "checked"
-            else:
-                checkState = ""
-
-            curindex = index + 1
-            if self.state == remove_state and app in unremovable_packages:
-                checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
-                           disabled %s name="%s id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
-            else:
-                checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
-                           %s onclick="changeBackgroundColor(this)" name="%s" id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
-
-            iconSize = getIconSize()
-            result += template % (checkbox, titleStyle,curindex,iconPath,iconSize,iconSize,app,summary,style,curindex,curindex,
-                                  i18n("Description: "), desc,
-                                  i18n("Version: "), version,
-                                  i18n("Repository: "), repo,
-                                  i18n("Package Size: "), size,
-                                  i18n("Homepage: "), homepage,homepage)
-            index += 1
-
-        return result
-
-    def registerEventListener(self):
-        self.eventListener = CustomEventListener.CustomEventListener(self)
-        node = self.htmlPart.document().getElementsByTagName(DOM.DOMString("body")).item(0)
-        node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
+        Globals.setNormalCursor()
 
     def setLastSelected(self):
         item = self.componentsList.firstChild()
@@ -416,14 +276,14 @@ class MainApplicationWidget(QWidget):
         return item
 
     def refreshComponentList(self, item):
-        kapp.setOverrideCursor(KCursor.waitCursor)
+        Globals.setWaitCursor()
         try:
-            self.createHTML(self.componentDict[item].packages)
+            self.specialList.createList(self.componentDict[item].packages)
             self.lastSelectedComponent = self.componentDict[item].name
         # initialization and search state listview items are not components
         except KeyError:
             pass
-        kapp.restoreOverrideCursor()
+        Globals.setNormalCursor()
 
     def updateStatusBar(self):
         def humanReadableSize(size):
@@ -432,9 +292,9 @@ class MainApplicationWidget(QWidget):
                 return "0 B"
             return "%.1f %s" % (tpl[0], tpl[1])
 
-        kapp.setOverrideCursor(KCursor.waitCursor)
+        Globals.setWaitCursor()
         self.basket.update()
-        kapp.restoreOverrideCursor()
+        Globals.setNormalCursor()
 
         if not self.basket.packages:
             text = i18n("Currently your basket is empty.")
@@ -687,7 +547,7 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.componentsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        self.createHTML(packages)
+        self.specialList.createList(packages)
         self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
     def displayProgress(self, data):
@@ -841,17 +701,6 @@ class MainApplicationWidget(QWidget):
         QWidget.show(self)
         if self.command and self.command.inProgress():
             self.progressDialog.show()
-
-    def updateCheck(self):
-        self.resetState()
-        self.state = upgrade_state
-        self.parent.showUpgradeAction.setChecked(True)
-        self.parent.showUpgradeAction.setEnabled(False)
-        self.processEvents()
-        self.progressDialog.hideStatus(True)
-        self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
-        self.progressDialog.show()
-        self.command.startUpdate()
 
     def trayUpdateCheck(self, repo = None, forced = False):
         # timer interval check should not be run if package-manager is not hidden.

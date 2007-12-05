@@ -19,9 +19,10 @@ from kdecore import *
 from kdeui import *
 from kio import *
 import kdedesigner
-import PmDcop
 
 # Local imports
+import PmDcop
+import Globals
 from MainWidget import *
 import Settings
 
@@ -57,7 +58,7 @@ class MainApplication(KMainWindow):
         self.aboutus = KAboutApplication(self)
         self.helpWidget = None
 
-        self.mainwidget = MainApplicationWidget(self, application=kapp)
+        self.mainwidget = MainApplicationWidget(self)
         self.setCentralWidget(self.mainwidget)
 
         self.setupMenu()
@@ -145,6 +146,9 @@ def main():
         return
 
     kapp = KUniqueApplication(True, True, True)
+
+    # pass reference to Globals module, so KApplication can be reached when needed
+    Globals.init(kapp)
 
     args = KCmdLineArgs.parsedArgs()
     if args.isSet("install"):
