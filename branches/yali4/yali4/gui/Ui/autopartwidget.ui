@@ -1,226 +1,208 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>AutoPartWidget</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>AutoPartWidget</cstring>
+<ui version="4.0" stdsetdef="1" >
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>AutoPartWidget</class>
+  <widget class="QWidget" name="AutoPartWidget" >
+    <property name="geometry" >
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>575</width>
+        <height>439</height>
+      </rect>
     </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>575</width>
-            <height>439</height>
-        </rect>
+    <property name="windowTitle" >
+      <string>Form1</string>
     </property>
-    <property name="caption">
-        <string>Form1</string>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <spacer row="3" column="0">
-            <property name="name">
-                <cstring>spacer3_3</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>40</width>
-                    <height>20</height>
-                </size>
-            </property>
+    <layout class="QGridLayout" >
+      <item row="3" column="0" >
+        <spacer name="spacer3_3" >
+          <property name="sizeHint" >
+            <size>
+              <width>40</width>
+              <height>20</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+          </property>
         </spacer>
-        <spacer row="3" column="4">
-            <property name="name">
-                <cstring>spacer3_2</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>40</width>
-                    <height>20</height>
-                </size>
-            </property>
+      </item>
+      <item row="3" column="4" >
+        <spacer name="spacer3_2" >
+          <property name="sizeHint" >
+            <size>
+              <width>40</width>
+              <height>20</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+          </property>
         </spacer>
-        <spacer row="2" column="2">
-            <property name="name">
-                <cstring>spacer1</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Fixed</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>31</height>
-                </size>
-            </property>
+      </item>
+      <item row="2" column="2" >
+        <spacer name="spacer1" >
+          <property name="sizeHint" >
+            <size>
+              <width>20</width>
+              <height>31</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+          </property>
         </spacer>
-        <spacer row="0" column="2">
-            <property name="name">
-                <cstring>spacer2</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>16</height>
-                </size>
-            </property>
+      </item>
+      <item row="0" column="2" >
+        <spacer name="spacer2" >
+          <property name="sizeHint" >
+            <size>
+              <width>20</width>
+              <height>16</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+          </property>
         </spacer>
-        <spacer row="1" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>spacer4</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>60</width>
-                    <height>20</height>
-                </size>
-            </property>
+      </item>
+      <item rowspan="1" row="1" column="0" colspan="2" >
+        <spacer name="spacer4" >
+          <property name="sizeHint" >
+            <size>
+              <width>60</width>
+              <height>20</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+          </property>
         </spacer>
-        <spacer row="1" column="3" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>spacer3</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>60</width>
-                    <height>20</height>
-                </size>
-            </property>
+      </item>
+      <item rowspan="1" row="1" column="3" colspan="2" >
+        <spacer name="spacer3" >
+          <property name="sizeHint" >
+            <size>
+              <width>60</width>
+              <height>20</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+          </property>
         </spacer>
-        <widget class="QLabel" row="1" column="2">
-            <property name="name">
-                <cstring>textLabel1</cstring>
-            </property>
-            <property name="text">
-                <string>&lt;font size="+1"&gt;&lt;b&gt;Select the partitioning method:&lt;/b&gt;&lt;/font&gt;
+      </item>
+      <item row="1" column="2" >
+        <widget class="QLabel" name="textLabel1" >
+          <property name="text" >
+            <string>&lt;font size="+1">&lt;b>Select the partitioning method:&lt;/b>&lt;/font>
 
-&lt;p&gt;Below, you can select an hard disk for automatic partitioning.
-Selected disk will be used for Pardus installation.&lt;/p&gt;
+&lt;p>Below, you can select an hard disk for automatic partitioning.
+Selected disk will be used for Pardus installation.&lt;/p>
 
-&lt;p&gt;&lt;font color="#FF6D19"&gt;&lt;b&gt;&lt;u&gt;WARNING:&lt;/u&gt;&lt;/b&gt;
+&lt;p>&lt;font color="#FF6D19">&lt;b>&lt;u>WARNING:&lt;/u>&lt;/b>
 Automatic partitioning will use your entire disk for Pardus installation.
-All data on the selected disk will be lost!&lt;/font&gt;&lt;/p&gt;</string>
-            </property>
-            <property name="alignment">
-                <set>WordBreak|AlignTop</set>
-            </property>
+All data on the selected disk will be lost!&lt;/font>&lt;/p></string>
+          </property>
+          <property name="alignment" >
+            <set>Qt::AlignTop</set>
+          </property>
+          <property name="wordWrap" >
+            <bool>true</bool>
+          </property>
         </widget>
-        <spacer row="5" column="2">
-            <property name="name">
-                <cstring>spacer12</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>16</height>
-                </size>
-            </property>
+      </item>
+      <item row="5" column="2" >
+        <spacer name="spacer12" >
+          <property name="sizeHint" >
+            <size>
+              <width>20</width>
+              <height>16</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+          </property>
         </spacer>
-        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="5">
-            <property name="name">
-                <cstring>info</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;nbsp;</string>
-            </property>
-            <property name="textFormat">
-                <enum>RichText</enum>
-            </property>
-            <property name="alignment">
-                <set>WordBreak|AlignCenter</set>
-            </property>
+      </item>
+      <item rowspan="1" row="4" column="0" colspan="5" >
+        <widget class="QLabel" name="info" >
+          <property name="text" >
+            <string>&amp;nbsp;</string>
+          </property>
+          <property name="textFormat" >
+            <enum>Qt::RichText</enum>
+          </property>
+          <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap" >
+            <bool>true</bool>
+          </property>
         </widget>
-        <widget class="QLayoutWidget" row="3" column="1" rowspan="1" colspan="3">
-            <property name="name">
-                <cstring>layout7</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QListBox">
-                    <property name="name">
-                        <cstring>device_list</cstring>
+      </item>
+      <item rowspan="1" row="3" column="1" colspan="3" >
+        <layout class="QVBoxLayout" >
+          <item>
+            <widget class="Q3ListBox" name="device_list" >
+              <property name="frameShadow" >
+                <enum>QFrame::Plain</enum>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="Q3ButtonGroup" name="buttonGroup" >
+              <property name="frameShape" >
+                <enum>Q3GroupBox::NoFrame</enum>
+              </property>
+              <property name="title" >
+                <string/>
+              </property>
+              <layout class="QGridLayout" >
+                <item row="1" column="0" >
+                  <widget class="QRadioButton" name="manual" >
+                    <property name="text" >
+                      <string>No, I'll partition my disk manually.</string>
                     </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
+                  </widget>
+                </item>
+                <item row="0" column="0" >
+                  <widget class="QRadioButton" name="accept_auto" >
+                    <property name="text" >
+                      <string>Yes, automatically partition and format selected disk!</string>
                     </property>
-                </widget>
-                <widget class="QButtonGroup">
-                    <property name="name">
-                        <cstring>buttonGroup</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="title">
-                        <string></string>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QRadioButton" row="1" column="0">
-                            <property name="name">
-                                <cstring>manual</cstring>
-                            </property>
-                            <property name="text">
-                                <string>No, I'll partition my disk manually.</string>
-                            </property>
-                        </widget>
-                        <widget class="QRadioButton" row="0" column="0">
-                            <property name="name">
-                                <cstring>accept_auto</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Yes, automatically partition and format selected disk!</string>
-                            </property>
-                        </widget>
-                    </grid>
-                </widget>
-            </vbox>
-        </widget>
-    </grid>
-</widget>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+                  </widget>
+                </item>
+              </layout>
+            </widget>
+          </item>
+        </layout>
+      </item>
+    </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+</ui>
