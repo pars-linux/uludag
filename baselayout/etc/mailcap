@@ -6,6 +6,7 @@
 application/x-pisi; pm-install '%s'; -n "$DISPLAY"
 application/gzip; ark '%s'; -n "$DISPLAY"
 application/x-gzip; ark '%s'; -n "$DISPLAY"
+application/gzipped-patch; ark '%s'; -n "$DISPLAY"
 application/zip; ark '%s'; -n "$DISPLAY"
 application/x-zip; ark '%s'; -n "$DISPLAY"
 application/tar; ark '%s'; -n "$DISPLAY"
