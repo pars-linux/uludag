@@ -11,6 +11,7 @@
 
 from qt import *
 from kdecore import *
+from kdeui import KMessageBox
 
 import connection
 import widgets
@@ -118,9 +119,7 @@ class Window(QDialog):
 
 def ask_for_new(parent):
     if len(comlink.links) == 0:
-        QMessageBox.warning(parent, i18n("Install network packages!"),
-            i18n("No package with COMAR network scripts are installed yet."),
-            QMessageBox.Ok, QMessageBox.NoButton)
+        KMessageBox.sorry(parent, i18n("No package with COMAR network scripts are installed yet."), i18n("Install network packages!"))
         return
     win = Window(parent)
     return win
