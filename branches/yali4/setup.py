@@ -82,7 +82,8 @@ class YaliBuild(build):
         for l in lines:
             f.insert(1, l)
         x = open(py_file, "w")
-        keyword = "QtGui.QApplication.translates"
+        keyword = "QtGui.QApplication.translate"
+        # FIXME its not suitable..
         for l in f:
             if not l.find(keyword)==-1:
                 core = l[l.find(keyword):-1]
