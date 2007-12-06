@@ -119,7 +119,7 @@ class diskForm(mainForm):
 
         # Check users group if s/he not in disk group
         if not os.getgroups().__contains__(grp.getgrnam("disk")[2]):
-            QMessageBox(i18n("Error"),i18n("User not in disk group !"),QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
+            KMessageBox.sorry(self,i18n("User not in disk group !"), i18n("Error"))
             self.disableAll()
         else:
             try:
@@ -132,8 +132,7 @@ class diskForm(mainForm):
             except:
                 self.label_warn.setText(i18n("File /etc/fstab is not correct, please fix it manually."))
                 self.label_warn.show()
-                QMessageBox(i18n("Error"),i18n("File /etc/fstab is not correct, please fix it manually."),
-                                          QMessageBox.Warning,QMessageBox.Ok,0,0,self).exec_loop()
+                KMessageBox.sorry(self, i18n("File /etc/fstab is not correct, please fix it manually."), i18n("Error"))
                 self.disableAll()
 
         # Connections
@@ -269,10 +268,13 @@ class diskForm(mainForm):
                         mounteds = getMounteds()
                         if (action=='umount' and partition['partition_name'] in mounteds) or (action=='mount' and partition['partition_name'] not in mounteds):
                             if not runQuiet([action,partition['partition_name']])==0:
-                                self.showInfo(i18n("Error"),i18n("%s for %s failure !!" % (action,partition['partition_name'])),QMessageBox.Warning)
+                                self.showInfo(i18n("Error"),i18n("%s for %s failure !!" % (action,partition['partition_name'])), "warning")
 
-    def showInfo(self,title,msg,type=QMessageBox.Information):
-        QMessageBox(title,msg,type,QMessageBox.Ok,0,0,self).show()
+    def showInfo(self,title,msg,type="info"):
+        if type == "info":
+            KMessageBox.information(self, msg, title)
+        else:
+            KMessageBox.sorry(self, msg, title)
 
     def fillDiskList(self):
         self.frame_detail.hide()
