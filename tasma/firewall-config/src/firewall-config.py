@@ -124,7 +124,7 @@ class dialogRule(dialog.dialogRule):
         if checkPortFormat(str(self.linePorts.text())):
             dialog.dialogRule.accept(self)
         else:
-            QMessageBox.critical(self, i18n('Error'), i18n('Invalid port range.'))
+            KMessageBox.sorry(self, i18n('Invalid port range.'), i18n('Error'))
 
     def exec_loop(self):
         if dialog.dialogRule.exec_loop(self):
