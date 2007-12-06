@@ -13,7 +13,7 @@ import os
 import re
 import glob
 import shutil
-import pyqtconfig
+from PyQt4 import pyqtconfig
 from distutils.core import setup, Extension
 from distutils.sysconfig import get_python_lib
 from distutils.cmd import Command
@@ -82,8 +82,12 @@ class YaliBuild(build):
         for l in lines:
             f.insert(1, l)
         x = open(py_file, "w")
+        keyword = "QtGui.QApplication.translates"
         for l in f:
-            l = l.replace("self.__tr", "_")
+            if not l.find(keyword)==-1:
+                core = l[l.find(keyword):-1]
+                text = core.split(',')[1].strip()
+                l = l.replace(core,"_(%s)" % text)
             x.write(l)
 
     def compile_ui(self, ui_file):
