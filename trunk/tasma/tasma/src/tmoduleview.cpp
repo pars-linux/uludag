@@ -48,6 +48,8 @@ TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon
   // Name of the desktop file
   _filename = filename.section('/',-1);
 
+  parentInner = parent;
+
   QVBoxLayout *vbox = new QVBoxLayout( this, 3 );
   QHBoxLayout *header = new QHBoxLayout( vbox, 5 );
 
@@ -164,7 +166,7 @@ void TModuleView::runAsRoot()
   *_proc << "-n"; // Don't keep password.
   *_proc << QString("kcmshell %1 --embed %2 --lang %3").arg(_filename).arg(_embedWidget->winId()).arg(KGlobal::locale()->language());
 
-  connect(_proc, SIGNAL(processExited(KProcess*)), this, SLOT(killRootProcess()));
+     connect(_proc, SIGNAL(processExited(KProcess*)), parentInner, SLOT(backToCategory()));
 
   if ( !_proc->start(KProcess::NotifyOnExit) )
     {
