@@ -86,6 +86,7 @@ class TModuleView : public QWidget
   QVBox *_embedFrame;
   QString _filename;
   QLabel *_icon, *_moduleName;
+  QWidget *parentInner;
 };
 
 #endif // T_MODULE_VIEW_H
