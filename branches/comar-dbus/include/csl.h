@@ -10,6 +10,6 @@
 #include <dbus/dbus.h>
 #include <Python.h>
 
-PyObject *py_call_method(const char *model, const char *app, const char *method, PyObject *args);
+int py_call_method(const char *app, const char *model, const char *method, PyObject *args, PyObject **result);
 PyObject *dbus_py_import(DBusMessage *msg);
-void dbus_py_export(DBusMessageIter *iter, PyObject *obj);
+int dbus_py_export(DBusMessageIter *iter, PyObject *obj);

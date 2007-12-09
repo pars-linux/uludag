@@ -10,12 +10,13 @@
 #define VERSION "2.0"
 
 extern char *cfg_bus_name;
+extern char *cfg_config_dir;
 extern char *cfg_data_dir;
 extern int cfg_bus_type;
 extern int cfg_idle_shutdown;
 extern int cfg_log_console;
 extern int cfg_log_file;
 extern char *cfg_log_file_name;
-extern int cfg_log_level;
+extern int cfg_log_flags;
 
 void cfg_init(int argc, char *argv[]);

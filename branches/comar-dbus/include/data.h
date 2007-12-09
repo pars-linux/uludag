@@ -7,12 +7,11 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-#define LOG_DBUS 1
-#define LOG_PROC 2
-#define LOG_PERF 4
-#define LOG_FULL 0xffffffff
-
-void log_start(void);
-void log_error(const char *fmt, ...);
-void log_info(const char *fmt, ...);
-void log_debug(int subsys, const char *fmt, ...);
+int db_init(void);
+int db_get_models(char *app, char **bufferp);
+int db_register_model(char *app, char *model);
+int db_remove_model(char *app, char *model);
+int db_get_apps(char **bufferp);
+int db_remove_app(char *app);
+int db_check_app(char *app);
+int db_check_model(char *app, char *model);

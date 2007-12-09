@@ -20,20 +20,20 @@
 
 // Global options
 char *cfg_bus_name = "tr.org.pardus.comar";
+char *cfg_config_dir = "/etc/comar";
 char *cfg_data_dir = "/var/db/comar";
 int cfg_bus_type = DBUS_BUS_SYSTEM;
 int cfg_idle_shutdown = 30;
 int cfg_log_console = 0;
 int cfg_log_file = 1;
 char *cfg_log_file_name = "/var/log/comar.log";
-int cfg_log_level = 0;
+int cfg_log_flags = 0;
 
 // Log flags
 static struct logflag_struct {
     const char *flag;
     int value;
 } logflags[] = {
-    { "call", LOG_CALL },
     { "proc", LOG_PROC },
     { "dbus", LOG_DBUS },
     { "perf", LOG_PERF },
@@ -44,6 +44,7 @@ static struct logflag_struct {
 
 // Command line options
 static struct option longopts[] = {
+    { "configdir", required_argument, NULL, 'c' },
     { "datadir", required_argument, NULL, 'd' },
     { "debug", required_argument, NULL, 'g' },
     { "idle", required_argument, NULL, 'i' },
@@ -54,7 +55,7 @@ static struct option longopts[] = {
     { NULL, 0, NULL, 0 }
 };
 
-static char *shortopts = "d:g:i:pt:hv";
+static char *shortopts = "c:d:g:i:pt:hv";
 
 // Help message
 static void
@@ -63,17 +64,21 @@ print_usage(void)
     printf(
         _("Usage: comar [OPTIONS]\n"
         "Pardus configuration manager.\n"
-        " -d, --datadir [DIR] Data storage directory.\n"
-        "                     (default is %s)\n"
-        " -g, --debug [LEVEL] Set debug level.\n"
-        " -t, --type   [TYPE] DBus service type (system or session).\n"
-        "                     (default is system)\n"
-        " -i, --idle   [SECS] Shutdown after [SECS] seconds with no action.\n"
-        "                     (Only works with session type, default is %d)\n"
-        " -p, --print         Print debug messages to console.\n"
-        " -h, --help          Print this text and exit.\n"
-        " -v, --version       Print version and exit.\n"
+        " -c, --configdir [DIR] Configuration directory.\n"
+        "                       (default is %s)\n"
+        " -d, --datadir   [DIR] Data storage directory.\n"
+        "                       (default is %s)\n"
+        " -g, --debug    [FLAG] Set debug flag.\n"
+        "                       (Flags: dbus, proc, perf, full)\n"
+        " -t, --type     [TYPE] DBus service type (system or session).\n"
+        "                       (default is system)\n"
+        " -i, --idle     [SECS] Shutdown after [SECS] seconds with no action.\n"
+        "                       (Only works with session type, default is %d)\n"
+        " -p, --print           Print debug messages to console.\n"
+        " -h, --help            Print this text and exit.\n"
+        " -v, --version         Print version and exit.\n"
         "Report bugs to http://bugs.pardus.org.tr\n"),
+        cfg_config_dir,
         cfg_data_dir,
         cfg_idle_shutdown
     );
@@ -102,13 +107,16 @@ cfg_init(int argc, char *argv[])
 
     while ((c = getopt_long(argc, argv, shortopts, longopts, &i)) != -1) {
         switch (c) {
+            case 'c':
+                cfg_config_dir = strdup(optarg);
+                break;
             case 'd':
                 cfg_data_dir = strdup(optarg);
                 break;
             case 'g':
                 for (j = 0; logflags[j].flag; ++j) {
                     if (strstr(optarg, logflags[j].flag))
-                        cfg_log_level = logflags[j].value;
+                        cfg_log_flags |= logflags[j].value;
                 }
                 break;
             case 'i':

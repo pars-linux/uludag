@@ -28,74 +28,80 @@ py_in_tuple(PyObject *tuple, PyObject *item)
 }
 
 //! Call model's method with given arguments
-PyObject *
-py_call_method(const char *model, const char *path, const char *method, PyObject *args)
+int
+py_call_method(const char *app, const char *model, const char *method, PyObject *args, PyObject **ret)
 {
     /*!
     Call model's method with given arguments.
-    @return Returns PyObject returned by model's method.
+    @return Returns 0 on success
+                    1 on IO errors (missing file, etc.)
+                    2 on exceptions
     */
-    PyObject *pCode, *pModule, *pDict, *pFunc, *pReturn, *pStr;
+    PyObject *pCode, *pModule, *pDict, *pFunc, *pStr;
     PyObject *argNames, *pArgs, *pkArgs;
     PyObject *pKey, *pValue, *pItem;
     PyObject *pFuncCode;
+    PyMethodDef *meth;
     node *n;
     int arg_count;
     int i;
 
-    char *script_path = get_script_path(model, path);
+    char *script_path = get_script_path(app, model);
     char *code = load_file(script_path, NULL);
     free(script_path);
 
-    n = PyParser_SimpleParseString(code, Py_file_input);
-    free(code);
-    if (!n) {
-        return NULL;
+    if (!code) {
+        return 1;
     }
 
-    pCode = (PyObject *) PyNode_Compile(n, "lala");
-    PyNode_Free(n);
+    pCode = Py_CompileString(code, "<script.py>", Py_file_input);
     if (!pCode) {
-        return NULL;
+        return 2;
     }
 
     pModule = PyImport_ExecCodeModule("csl", pCode);
     Py_DECREF(pCode);
 
     if (!pModule || !PyModule_Check(pModule)) {
-        return NULL;
+        return 2;
     }
 
     pDict = PyModule_GetDict(pModule);
     if (!pDict) {
         Py_DECREF(pModule);
-        return NULL;
+        return 2;
     }
 
     pFunc = PyDict_GetItemString(pDict, method);
     if (!pFunc || !PyCallable_Check(pFunc)) {
+        PyErr_SetString(PyExc_NameError, "Unknown function.");
         Py_DECREF(pModule);
-        return NULL;
+        return 2;
     }
 
     pArgs = PyList_AsTuple(args);
     pkArgs = PyDict_New();
 
-    pReturn = PyObject_Call(pFunc, pArgs, pkArgs);
+    *ret = PyObject_Call(pFunc, pArgs, pkArgs);
 
-    if (!pReturn) {
+    if (!*ret) {
         Py_DECREF(pModule);
-        return NULL;
+        return 2;
     }
+
     Py_DECREF(pModule);
-    return pReturn;
+    return 0;
 }
 
 // PyObject -> DBusMessage translation
+
 static char
 dbus_py_get_signature(PyObject *obj)
 {
-    if (PyString_Check(obj)) {
+    if (obj == Py_None) {
+        return 'n';
+    }
+    else if (PyString_Check(obj)) {
         return 's';
     }
     else if (PyBool_Check(obj)) {
@@ -111,7 +117,7 @@ dbus_py_get_signature(PyObject *obj)
         return 'd';
     }
     else if (PyTuple_Check(obj)) {
-        return 'v';
+        return 'r';
     }
     else if (PyList_Check(obj)) {
         return 'a';
@@ -122,7 +128,90 @@ dbus_py_get_signature(PyObject *obj)
     return '?';
 }
 
-void
+static char *
+dbus_py_get_object_signature(PyObject *obj)
+{
+    int i;
+    int size;
+    char *sign_content, *sign_subcontent;
+    char sign, sign_sub;
+    PyObject *item, *item2;
+
+    sign = dbus_py_get_signature(obj);
+
+    switch (sign) {
+        case 's':
+        case 'b':
+        case 'i':
+        case 'l':
+        case 'd':
+            size = 2;
+            sign_content = malloc(size);
+            snprintf(sign_content, size, "%c\0", sign);
+            return sign_content;
+        case 'n':
+            size = 2;
+            sign_content = malloc(size);
+            snprintf(sign_content, size, "s\0");
+            return sign_content;
+        case 'a':
+            if (PyList_Size(obj) > 0) {
+                item = PyList_GetItem(obj, 0);
+            }
+            else {
+                item = PyString_FromString("");
+            }
+            sign_subcontent = dbus_py_get_object_signature(item);
+            if (!sign_subcontent) {
+                return NULL;
+            }
+            size = 2 + strlen(sign_subcontent);
+            sign_content = malloc(size);
+            snprintf(sign_content, size, "a%s\0", sign_subcontent);
+            free(sign_subcontent);
+            return sign_content;
+        case 'r':
+            size = 3;
+            sign_content = malloc(size);
+            snprintf(sign_content, size, "(\0");
+            for (i = 0; i < PyTuple_Size(obj); i++) {
+                item = PyTuple_GetItem(obj, i);
+                sign_subcontent = dbus_py_get_object_signature(item);
+                if (!sign_subcontent) {
+                    free(sign_content);
+                    return NULL;
+                }
+                size = size + strlen(sign_subcontent);
+                sign_content = realloc(sign_content, size);
+                strncat(sign_content, sign_subcontent, size);
+                free(sign_subcontent);
+            }
+            strncat(sign_content, ")", 1);
+            return sign_content;
+        case 'D':
+            if (PyDict_Size(obj) > 0) {
+            i = 0;
+                PyDict_Next(obj, &i, &item, &item2);
+            }
+            else {
+                item = PyString_FromString("");
+                item2 = PyString_FromString("");
+            }
+            sign_subcontent = dbus_py_get_object_signature(item2);
+            if (!sign_subcontent) {
+                return NULL;
+            }
+            size = 4 + strlen(sign_subcontent);
+            sign_content = malloc(size);
+            snprintf(sign_content, size, "{%c%s}\0", dbus_py_get_signature(item), sign_subcontent);
+            free(sign_subcontent);
+            return sign_content;
+        default:
+            return NULL;
+    }
+}
+
+int
 dbus_py_export(DBusMessageIter *iter, PyObject *obj)
 {
     union {
@@ -140,13 +229,18 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
     DBusMessageIter sub, sub2;
     PyObject *item;
     PyObject *key, *value;
-    const char sign = dbus_py_get_signature(obj);
-    char sign_sub[5];
     int size;
     int i = 0;
+    int invalid = 0;
+
+    char sign;
+    char *sign_container, *sign_sub;
+    int sign_size;
 
     const dbus_int32_t array[] = {};
     const dbus_int32_t *v_ARRAY = array;
+
+    sign = dbus_py_get_signature(obj);
 
     switch (sign) {
         case 's':
@@ -170,45 +264,50 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             e = dbus_message_iter_append_basic(iter, DBUS_TYPE_DOUBLE, &p.d);
             break;
         case 'a':
-            size = PyList_Size(obj);
-            // Find content signature
-            if (size == 0) {
-                snprintf(sign_sub, 2, "s\0");
+            sign_container = dbus_py_get_object_signature(obj);
+            if (!sign_container) {
+                PyErr_SetString(PyExc_TypeError, "Array returned by function contains unknown data type.");
+                return 0;
+            }
+            sign_sub = (char *) str_lshift(sign_container, 1);
+            if (sign_sub[0] == '{') {
+                // If content is a dictionary, container signature 'a' must be included.
+                e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_container, &sub);
             }
             else {
-                item = PyList_GetItem(obj, 0);
-                snprintf(sign_sub, 2, "%c\0", dbus_py_get_signature(item));
+                e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_sub, &sub);
             }
-            e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_sub, &sub);
+            free(sign_sub);
+            free(sign_container);
             if (!e) break;
-            for (i = 0; i < size; i++) {
+            for (i = 0; i < PyList_Size(obj); i++) {
                 item = PyList_GetItem(obj, i);
                 dbus_py_export(&sub, item);
             }
             dbus_message_iter_close_container(iter, &sub);
             break;
-        case 'v':
-            size = PyTuple_Size(obj);
+        case 'r':
+            sign_container = dbus_py_get_object_signature(obj);
+            if (!sign_container) {
+                PyErr_SetString(PyExc_TypeError, "Tuple returned by function contains unknown data type.");
+                return 0;
+            }
             e = dbus_message_iter_open_container(iter, DBUS_TYPE_STRUCT, NULL, &sub);
             if (!e) break;
-            for (i = 0; i < size; i++) {
+            for (i = 0; i < PyTuple_Size(obj); i++) {
                 item = PyTuple_GetItem(obj, i);
                 dbus_py_export(&sub, item);
             }
             dbus_message_iter_close_container(iter, &sub);
             break;
         case 'D':
-            size = PyDict_Size(obj);
-            // Find content signature
-            if (size == 0) {
-                snprintf(sign_sub, 5, "{ss}\0");
+            sign_container = dbus_py_get_object_signature(obj);
+            if (!sign_container) {
+                PyErr_SetString(PyExc_TypeError, "Dictionary returned by function contains unknown data type.");
+                return 0;
             }
-            else {
-                i = 0; // Go to first index
-                PyDict_Next(obj, &i, &key, &value);
-                snprintf(sign_sub, 5, "{%c%c}\0", dbus_py_get_signature(key), dbus_py_get_signature(value));
-            }
-            e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_sub, &sub);
+            e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_container, &sub);
+            free(sign_container);
             if (!e) break;
             i = 0; // Go to first index
             while (PyDict_Next(obj, &i, &key, &value)) {
@@ -219,14 +318,21 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             }
             dbus_message_iter_close_container(iter, &sub);
             break;
+        case 'n':
+            p.s = "";
+            e = dbus_message_iter_append_basic(iter, DBUS_TYPE_STRING, &p.s);
+            break;
         default:
-            log_error("Unknown data type returned by function: %s\n", sign);
+            PyErr_SetString(PyExc_TypeError, "Unknown data type returned by function.");
+            return 0;
     }
     // FIXME - cleanup?
     if (!e) {
         log_error("DBus: Out Of Memory!\n");
         exit(1);
     }
+
+    return 1;
 }
 
 
@@ -295,11 +401,6 @@ dbus_py_get_item(DBusMessageIter* iter)
             dbus_message_iter_get_basic(iter, &obj.b);
             ret = (long)obj.b == 1 ? Py_True : Py_False;
             break;
-        case DBUS_TYPE_BYTE:
-        case DBUS_TYPE_SIGNATURE:
-        case DBUS_TYPE_OBJECT_PATH:
-            // FIXME
-            break;
         case DBUS_TYPE_DICT_ENTRY:
             break;
         case DBUS_TYPE_ARRAY:
@@ -320,10 +421,11 @@ dbus_py_get_item(DBusMessageIter* iter)
             dbus_message_iter_recurse(iter, &sub);
             ret = PyList_AsTuple(dbus_py_get_list(&sub));
             break;
+        case DBUS_TYPE_BYTE:
+        case DBUS_TYPE_SIGNATURE:
+        case DBUS_TYPE_OBJECT_PATH:
         case DBUS_TYPE_VARIANT:
-            dbus_message_iter_recurse(iter, &sub);
-            dbus_message_iter_recurse(&sub, &sub);
-            ret = PyList_AsTuple(dbus_py_get_list(&sub));
+            // FIXME
             break;
     }
     return ret;

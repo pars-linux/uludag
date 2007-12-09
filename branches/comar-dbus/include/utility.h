@@ -7,9 +7,14 @@
 ** option) any later version. Please read the COPYING file.
 */
 
+#include <sys/time.h>
+
 int check_file(const char *fname);
 unsigned char *load_file(const char *fname, int *sizeptr);
-int check_interface_format(const char *interface);
-int check_path_format(const char *path);
+int check_model_name(const char *model);
+int check_app_name(const char *app);
 char *get_script_path(const char *interface, const char *path);
+char *get_xml_path(const char *model);
 unsigned long time_diff(struct timeval *start, struct timeval *end);
+char *str_replace(const char *str, const char old, const char new);
+char *str_lshift(const char *str, int num);

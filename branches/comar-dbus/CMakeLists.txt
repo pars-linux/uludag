@@ -12,12 +12,15 @@ link_libraries(python2.4
                dbus-1
                gobject-2.0
                glib-2.0
-               polkit)
+               db)
 
 add_executable(comar-dbus src/main.c
                           src/cfg.c
                           src/csl.c
+                          src/data.c
                           src/dbus.c
+                          src/iksemel.c
                           src/log.c
                           src/process.c
-                          src/utility.c)
+                          src/utility.c
+                          src/xml.c)

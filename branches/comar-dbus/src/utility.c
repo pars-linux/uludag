@@ -18,7 +18,7 @@
 #include "utility.h"
 
 const char *valid_app_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+";
-const char *valid_interface_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.";
+const char *valid_model_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.";
 const char *path_prefix = "/package/";
 
 int
@@ -72,16 +72,16 @@ in_str(const char chr, const char *str)
 }
 
 int
-check_interface_format(const char *interface)
+check_model_name(const char *model)
 {
     int i;
 
-    if (interface == NULL) {
+    if (model == NULL) {
         return 0;
     }
 
-    for (i = 0; i < strlen(interface); i++) {
-        if (!in_str(interface[i], valid_interface_chars)) {
+    for (i = 0; i < strlen(model); i++) {
+        if (!in_str(model[i], valid_model_chars)) {
             return 0;
         }
     }
@@ -89,20 +89,16 @@ check_interface_format(const char *interface)
 }
 
 int
-check_path_format(const char *path)
+check_app_name(const char *app)
 {
     int i;
 
-    if (path == NULL) {
+    if (app == NULL) {
         return 0;
     }
 
-    if (strncmp(path, path_prefix, strlen(path_prefix))) {
-        return 0;
-    }
-
-    for (i = strlen(path_prefix); i < strlen(path); i++) {
-        if (!in_str(path[i], valid_app_chars)) {
+    for (i = 0; i < strlen(app); i++) {
+        if (!in_str(app[i], valid_app_chars)) {
             return 0;
         }
     }
@@ -114,46 +110,66 @@ str_lshift(const char *str, int num)
 {
     char *new_str, *old_str, *t, *t2;
     int size;
-    old_str = strdup(str);
 
-    size = strlen(old_str) - num + 1;
+    size = strlen(str) - num + 1;
     new_str = malloc(size);
 
-    for (t = old_str + num, t2 = new_str; *t != '\0'; t++, t2++) {
+    for (t = (char *) str + num, t2 = new_str; *t != '\0'; t++, t2++) {
         *t2 = *t;
     }
     *t2 = '\0';
-
-    free(old_str);
 
     return new_str;
 }
 
 char *
-get_script_path(const char *interface, const char *path)
+str_replace(const char *str, const char old, const char new)
 {
-    char *realpath, *model, *app, *t, *t2;
+    char *new_str, *t, *t2;
     int size;
 
-    model = strdup(interface);
+    new_str = strdup(str);
 
-    // Get application name from object path
-    app = str_lshift(path, strlen(path_prefix));
-
-    size = strlen(cfg_data_dir) + 6 + strlen(model) + 1 + strlen(app) + 4;
-    realpath = malloc(size);
-
-    // Get model name from interface
-    for (t = model; *t != '\0'; t++) {
-        if (*t == '.') {
-            *t = '_';
+    for (t = new_str; *t != '\0'; t++) {
+        if (*t == old) {
+            *t = new;
         }
     }
 
+    return new_str;
+}
+
+char *
+get_xml_path(const char *model)
+{
+    char *realpath, *model_escaped, *t, *t2;
+    int size;
+
+    size = strlen(cfg_config_dir) + 1 + strlen("introspections") + 1 + strlen(model) + 5;
+    realpath = malloc(size);
+
+    model_escaped = (char *) str_replace(model, '.', '_');
+
     // Generate script path
-    snprintf(realpath, size, "%s/code/%s_%s.py", cfg_data_dir, model, app);
-    free(app);
-    free(model);
+    snprintf(realpath, size, "%s/introspections/%s.xml\0", cfg_config_dir, model_escaped);
+    free(model_escaped);
+    return realpath;
+}
+
+char *
+get_script_path(const char *app, const char *model)
+{
+    char *realpath, *model_escaped, *t, *t2;
+    int size;
+
+    size = strlen(cfg_data_dir) + 1 + strlen("code") + 1 + strlen(model) + 1 + strlen(app) + 4;
+    realpath = malloc(size);
+
+    model_escaped = (char *) str_replace(model, '.', '_');
+
+    // Generate script path
+    snprintf(realpath, size, "%s/code/%s_%s.py\0", cfg_data_dir, model_escaped, app);
+    free(model_escaped);
     return realpath;
 }
 

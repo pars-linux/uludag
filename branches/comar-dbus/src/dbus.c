@@ -14,13 +14,37 @@
 
 #include "cfg.h"
 #include "csl.h"
+#include "iksemel.h"
 #include "log.h"
 #include "process.h"
 #include "utility.h"
+#include "xml.h"
 
+static void
+dbus_send(DBusMessage *reply)
+{
+    dbus_uint32_t serial = 0;
 
-static DBusMessage *
-log_exception(DBusMessage *msg, DBusConnection *conn)
+    if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
+        log_error("Out Of Memory!\n");
+        exit(1);
+    }
+
+    dbus_connection_flush(my_proc.bus_conn);
+    dbus_message_unref(reply);
+}
+
+static void
+dbus_reply_error(char *str)
+{
+    if (dbus_message_get_no_reply(my_proc.bus_msg)) return;
+
+    DBusMessage *reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, str);
+    dbus_send(reply);
+}
+
+static void
+log_exception()
 {
     PyObject *pType;
     PyObject *pValue;
@@ -31,7 +55,7 @@ log_exception(DBusMessage *msg, DBusConnection *conn)
 
     PyErr_Fetch(&pType, &pValue, &pTrace);
     if (!pType) {
-        log_error("csl.c log_exception() called when there isn't an exception\n");
+        log_error("log_exception() called when there isn't an exception\n");
         return;
     }
 
@@ -49,22 +73,38 @@ log_exception(DBusMessage *msg, DBusConnection *conn)
         if (tmp) lineno = PyInt_AsLong(tmp);
     }
 
-    log_error("Python Exception [%s] in (%s,%s,%ld): %s\n", eStr, dbus_message_get_interface(msg), dbus_message_get_path(msg), lineno, vStr);
-    return dbus_message_new_error(msg, DBUS_ERROR_FAILED, vStr);
+    log_error("Python Exception [%s] in (%s,%s,%ld): %s\n", eStr, dbus_message_get_interface(my_proc.bus_msg), dbus_message_get_path(my_proc.bus_msg), lineno, vStr);
+
+    dbus_reply_error(vStr);
 }
 
 static void
-dbus_send(DBusConnection *conn, DBusMessage *reply)
+dbus_reply_object(PyObject *obj)
 {
-    dbus_uint32_t serial = 0;
+    if (dbus_message_get_no_reply(my_proc.bus_msg)) return;
 
-    if (!dbus_connection_send(conn, reply, &serial)) {
-        log_error("Out Of Memory!\n");
-        exit(1);
+    DBusMessage *reply;
+    DBusMessageIter iter;
+
+    reply = dbus_message_new_method_return(my_proc.bus_msg);
+    dbus_message_iter_init_append(reply, &iter);
+    if (!dbus_py_export(&iter, obj)) {
+        log_exception();
     }
+    dbus_send(reply);
+}
 
-    dbus_connection_flush(conn);
-    dbus_message_unref(reply);
+static void
+dbus_reply_str(char *str)
+{
+    if (dbus_message_get_no_reply(my_proc.bus_msg)) return;
+
+    DBusMessage *reply;
+    DBusMessageIter iter;
+    reply = dbus_message_new_method_return(my_proc.bus_msg);
+    dbus_message_iter_init_append(reply, &iter);
+    dbus_message_iter_append_basic(&iter, DBUS_TYPE_STRING, &str);
+    dbus_send(reply);
 }
 
 static void
@@ -72,8 +112,10 @@ dbus_method_call()
 {
     DBusMessage *reply;
     DBusMessageIter iter;
-    dbus_uint32_t serial = 0;
-    PyObject *obj, *ret;
+    PyObject *obj, *result;
+    int ret;
+
+    int size;
 
     struct timeval time_start, time_end;
     unsigned long msec;
@@ -82,42 +124,87 @@ dbus_method_call()
     const char *path = dbus_message_get_path(my_proc.bus_msg);
     const char *method = dbus_message_get_member(my_proc.bus_msg);
 
-    dbus_bool_t no_reply = dbus_message_get_no_reply(my_proc.bus_msg);
+    if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
+        if (strcmp(path, "/") == 0) {
+            char *intros;
+            xml_export_nodes("package", &intros);
+            dbus_reply_str(intros);
+            free(intros);
+        }
+        else if (strcmp(path, "/package") == 0) {
+            char *intros;
+            xml_export_apps(&intros);
 
-    Py_Initialize();
+            dbus_reply_str(intros);
+            free(intros);
+        }
+        else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
+            char *app = (char *) str_lshift(path, strlen("/package/"));
+            if (!db_check_app(app)) {
+                log_error("Invalid application '%s'\n", app);
+                dbus_reply_error("Invalid application");
+            }
+            else {
+                char *intros;
+                xml_export_interfaces(app, &intros);
+                dbus_reply_str(intros);
+                free(intros);
+            }
+            free(app);
+        }
+        else {
+            log_error("Invalid object path '%s'\n", path);
+            dbus_reply_error("Invalid object path");
+        }
+    }
+    else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
+        if (strncmp(path, "/package/", strlen("/package/")) == 0) {
+            char *app = (char *) str_lshift(path, strlen("/package/"));
+            char *model = (char *) str_lshift(interface, strlen(cfg_bus_name) + 1);
 
-    obj = dbus_py_import(my_proc.bus_msg);
+            if (db_check_model(app, model)) {
+                Py_Initialize();
 
-    gettimeofday(&time_start, NULL);
-    ret = py_call_method(interface, path, method, obj);
-    gettimeofday(&time_end, NULL);
-    msec = time_diff(&time_start, &time_end);
+                obj = dbus_py_import(my_proc.bus_msg);
 
-    if (msec / 1000 > 60) {
-        log_info("Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
+                gettimeofday(&time_start, NULL);
+                ret = py_call_method(app, model, method, obj, &result);
+                gettimeofday(&time_end, NULL);
+                msec = time_diff(&time_start, &time_end);
+
+                if (ret == 1) {
+                    log_error("Missing code for '%s/%s'\n", model, app);
+                    dbus_reply_error("Internal error, unable to find code.");
+                }
+                else if (ret == 2) {
+                    log_exception();
+                }
+                else {
+                    if (msec / 1000 > 60) {
+                        log_info("Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
+                    }
+                    else {
+                        log_debug(LOG_PERF, "Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
+                    }
+                    dbus_reply_object(result);
+                }
+
+                Py_Finalize();
+            }
+            else {
+                log_error("Invalid application or model '%s/%s'\n", model, app);
+                dbus_reply_error("Invalid application or model");
+            }
+            free(app);
+            free(model);
+        }
+        else {
+            log_error("Invalid object path '%s'\n", path);
+            dbus_reply_error("Invalid object path");
+        }
     }
     else {
-        log_debug(LOG_PERF, "Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
-    }
-
-    if (ret == NULL) {
-        reply = log_exception(my_proc.bus_msg, my_proc.bus_conn);
-    }
-    else if (!no_reply) {
-        reply = dbus_message_new_method_return(my_proc.bus_msg);
-        dbus_message_iter_init_append(reply, &iter);
-        dbus_py_export(&iter, ret);
-    }
-
-    Py_Finalize();
-
-    if (!no_reply) {
-        if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
-            log_error("Out Of Memory!\n");
-            exit(1);
-        }
-        dbus_connection_flush(my_proc.bus_conn);
-        dbus_message_unref(reply);
+        dbus_reply_error("Invalid interface");
     }
 }
 
@@ -128,13 +215,10 @@ dbus_listen()
     int size;
 
     DBusConnection *conn;
-    DBusMessage *msg, *reply;
-    DBusMessageIter iter;
+    DBusMessage *msg;
     DBusError err;
-    dbus_uint32_t serial = 0;
     int ret;
     const char *unique_name;
-    PyObject *args;
 
     dbus_error_init(&err);
     conn = dbus_bus_get(cfg_bus_type, &err);
@@ -178,46 +262,11 @@ dbus_listen()
         const char *interface = dbus_message_get_interface(msg);
         const char *path = dbus_message_get_path(msg);
         const char *method = dbus_message_get_member(msg);
-        dbus_bool_t no_reply = dbus_message_get_no_reply(msg);
 
         switch (dbus_message_get_type(msg)) {
             case DBUS_MESSAGE_TYPE_METHOD_CALL:
                 log_debug(LOG_DBUS, "DBus method call [%s.%s] from [%s]\n", interface, method, sender);
-                if (dbus_message_has_interface(msg, "org.freedesktop.DBus.Introspectable")) {
-                    if (dbus_message_has_member(msg, "Introspect")) {
-                        // FIXME: Give introspection
-                    }
-                }
-                else if (dbus_message_get_type(msg) == DBUS_MESSAGE_TYPE_METHOD_CALL) {
-                    if (!check_interface_format(interface)) {
-                        log_error("Invalid interface: %s\n", interface);
-                        if (!no_reply) {
-                            reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Invalid interface");
-                            dbus_send(conn, reply);
-                        }
-                    }
-                    else if (!check_path_format(path)) {
-                        log_error("Invalid object path: %s\n", path);
-                        if (!no_reply) {
-                            reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Invalid object path");
-                            dbus_send(conn, reply);
-                        }
-                    }
-                    else {
-                        char *script_path = get_script_path(interface, path);
-                        if (!check_file(script_path)) {
-                            log_error("Interface/object path does not exist.\n", interface, path);
-                            if (!no_reply) {
-                                reply = dbus_message_new_error(msg, DBUS_ERROR_FAILED, "Interface/object path does not exist.");
-                                dbus_send(conn, reply);
-                            }
-                        }
-                        else {
-                            proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
-                        }
-                        free(script_path);
-                    }
-                }
+                proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
                 break;
             case DBUS_MESSAGE_TYPE_SIGNAL:
                 log_debug(LOG_DBUS, "DBus signal [%s.%s] from [%s]\n", interface, method, sender);

@@ -7,12 +7,8 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-#define LOG_DBUS 1
-#define LOG_PROC 2
-#define LOG_PERF 4
-#define LOG_FULL 0xffffffff
+int xml_export_nodes(char *nodes, char **bufferp);
 
-void log_start(void);
-void log_error(const char *fmt, ...);
-void log_info(const char *fmt, ...);
-void log_debug(int subsys, const char *fmt, ...);
+int xml_export_apps(char **bufferp);
+
+int xml_export_interfaces(char *app, char **intros);

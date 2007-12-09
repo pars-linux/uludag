@@ -12,6 +12,7 @@
 #include <dbus/dbus.h>
 
 #include "cfg.h"
+#include "data.h"
 #include "dbus.h"
 #include "i18n.h"
 #include "log.h"
@@ -39,7 +40,13 @@ main(int argc, char *argv[])
         exit(1);
     }
 
-    // Initialize
+    // Initialize DB
+    if (db_init() != 0) {
+        puts(_("Database is corrupt."));
+        exit(1);
+    }
+
+    // Initialize main process
     proc_init(argc, argv, "Comar");
 
     // Start logging

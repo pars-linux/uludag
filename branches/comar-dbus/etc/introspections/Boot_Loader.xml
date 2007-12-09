@@ -1,0 +1,40 @@
+<interface name="tr.org.pardus.comar.Boot.Loader">
+    <method name="listSystems">
+        <arg name="systems" type="{s(sasas)}" direction="out"/>
+    </method>
+    <method name="getOptions">
+        <arg name="options" type="{ss}" direction="out"/>
+    </method>
+    <method name="setOption">
+        <arg name="option" type="s" direction="in"/>
+        <arg name="value" type="s" direction="in"/>
+    </method>
+    <method name="listEntries">
+        <arg name="entries" type="a{ss}" direction="out"/>
+    </method>
+    <method name="updateKernelEntry">
+        <arg name="version" type="s" direction="in"/>
+        <arg name="root" type="s" direction="in"/>
+    </method>
+    <method name="setEntry">
+        <arg name="title" type="s" direction="in"/>
+        <arg name="os_type" type="s" direction="in"/>
+        <arg name="root" type="s" direction="in"/>
+        <arg name="kernel" type="s" direction="in"/>
+        <arg name="initrd" type="s" direction="in"/>
+        <arg name="options" type="s" direction="in"/>
+        <arg name="default" type="s" direction="in"/>
+        <arg name="index" type="i" direction="in"/>
+    </method>
+    <method name="removeEntry">
+        <arg name="index" type="i" direction="in"/>
+        <arg name="title" type="s" direction="in"/>
+        <arg name="uninstall" type="b" direction="in"/>
+    </method>
+    <method name="listUnused">
+        <arg name="versions" type="as" direction="out"/>
+    </method>
+    <method name="removeUnused">
+        <arg name="version" type="s" direction="in"/>
+    </method>
+</interface>

@@ -55,6 +55,7 @@ log_print(const char *fmt, va_list ap, int error)
 
     if (cfg_log_console) {
         pidstamp(stdout);
+        if (error) printf("Error: ");
         vprintf(fmt, ap);
     }
 
@@ -124,7 +125,7 @@ log_debug(int subsys, const char *fmt, ...)
 {
     va_list ap;
 
-    if (cfg_log_level < subsys)
+    if ((cfg_log_flags & subsys) == 0)
         return;
 
     va_start(ap, fmt);
