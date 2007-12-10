@@ -75,21 +75,22 @@ class YaliBuild(build):
 
         py_file = py_file_name(ui_file)
         # lines in reverse order
-        lines =  ["_ = __trans.ugettext",
-                 "__trans = gettext.translation('yali4', fallback=True)\n",
-                 "import gettext\n"]
+        lines =  ["\n_ = __trans.ugettext\n",
+                  "\n__trans = gettext.translation('yali4', fallback=True)",
+                  "\nimport gettext"]
         f = open(py_file, "r").readlines()
         for l in lines:
             f.insert(1, l)
         x = open(py_file, "w")
-        keyword = "QtGui.QApplication.translate"
-        # FIXME its not suitable..
+        keyStart = "QtGui.QApplication.translate"
+        keyEnd = ", None, QtGui.QApplication.UnicodeUTF8)"
         for l in f:
-            if not l.find(keyword)==-1:
-                core = l[l.find(keyword):-1]
-                text = core.split(',')[1].strip()
-                l = l.replace(core,"_(%s)" % text)
-            x.write(l)
+            if not l.find(keyStart)==-1:
+                z = "%s(_(" % l.split("(")[0]
+                y = l.split(",")[0]+', '
+                l = l.replace(y,z)
+            l = l.replace(keyEnd,")")
+        x.write(l)
 
     def compile_ui(self, ui_file):
         pyqt_configuration = pyqtconfig.Configuration()
