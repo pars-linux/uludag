@@ -21,44 +21,44 @@ class CustomEventListener(DOM.EventListener):
 
     def handleEvent(self,event):
         target = event.target().nodeName().string()
-        try:
-            #if checkbox is clicked, add/remove package to/from basket
-            if target == "INPUT":
-                inputElement = DOM.HTMLInputElement(event.target())
-                name = inputElement.name().string()
-                checked = inputElement.checked()
-                if checked:
-                    if name not in self.parent.basket.packages:
-                        self.parent.basket.add(name)
+        #try:
+        #if checkbox is clicked, add/remove package to/from basket
+        if target == "INPUT":
+            inputElement = DOM.HTMLInputElement(event.target())
+            name = inputElement.name().string()
+            checked = inputElement.checked()
+            if checked:
+                if name not in self.parent.basket.packages:
+                    self.parent.basket.add(name)
+            else:
+                self.parent.basket.remove(name)
+
+            self.parent.updateButtons()
+            if not self.selectingAll:
+                self.parent.updateStatusBar()
+
+        elif target == "A":
+            link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
+            if link == "#selectall":
+                document = self.parent.part.document()
+                nodeList = document.getElementsByTagName(DOM.DOMString("input"))
+
+                state = event.target().firstChild().nodeValue().string()
+                reverseSelection = False
+                if state == i18n("Select all packages in this category"):
+                    event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Reverse package selections")))
                 else:
-                    self.parent.basket.remove(name)
+                    reverseSelection = True
+                    event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Select all packages in this category")))
 
-                self.parent.updateButtons()
-                if not self.selectingAll:
-                    self.parent.updateStatusBar()
-
-            elif target == "A":
-                link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
-                if link == "#selectall":
-                    document = self.parent.htmlPart.document()
-                    nodeList = document.getElementsByTagName(DOM.DOMString("input"))
-
-                    state = event.target().firstChild().nodeValue().string()
-                    reverseSelection = False
-                    if state == i18n("Select all packages in this category"):
-                        event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Reverse package selections")))
-                    else:
-                        reverseSelection = True
-                        event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Select all packages in this category")))
-
-                    self.selectingAll = True
-                    for i in range(0,nodeList.length()):
-                        element = DOM.HTMLInputElement(nodeList.item(i))
-                        if reverseSelection or not element.checked():
-                            element.click()
-                    self.selectingAll = False
-                    self.parent.updateStatusBar()
-                else:
-                    KRun.runURL(KURL(link),"text/html",False,False);
-        except Exception, e:
-            print e
+                self.selectingAll = True
+                for i in range(0,nodeList.length()):
+                    element = DOM.HTMLInputElement(nodeList.item(i))
+                    if reverseSelection or not element.checked():
+                        element.click()
+                self.selectingAll = False
+                self.parent.updateStatusBar()
+            else:
+                KRun.runURL(KURL(link),"text/html",False,False);
+        #except Exception, e:
+            #print e

@@ -11,32 +11,63 @@
 # Please read the COPYING file
 
 import pisi
+from kdecore import i18n
+import Icons
 
 class Package:
-    def __init__(self, name, summary, description):
+    def __init__(self, name, summary, description, version, icon_path, size, homepage, repo):
         self.name = name
         self.summary = summary
         self.description = description
+        self.version = version
+        self.icon_path = icon_path
+        self.size = self._sizer(size)
+        self.homepage = homepage
+        self.repo = repo
+    
+    def _sizer(self, size):
+        if size:
+            tpl = pisi.util.human_readable_size(size)
+            return "%.0f %s" % (tpl[0], tpl[1])
+        else:
+            return i18n("N\A")
 
 class PackageCache:
     def __init__(self):
-        self.packages = []
+        self.packages = {}
 
     def clearCache(self):
-        self.packages = []
+        self.packages.clear()
 
     def isEmpty(self):
         return not self.packages
 
     def populateCache(self, packages, inInstalled = False):
-        if inInstalled:
-            db = pisi.db.installdb.InstallDB()
-        else:
-            db = pisi.db.packagedb.PackageDB()
-
         for pkg_name in packages:
-            package = db.get_package(pkg_name)
-            self.packages.append(Package(package.name, package.summary, package.description))
+            if inInstalled:
+                try:
+                    package, repo = pisi.db.packagedb.PackageDB().get_package_repo(pkg_name)
+                except:
+                    package = pisi.db.installdb.InstallDB().get_package(pkg_name)
+                    repo = i18n("N\A")
+                size = package.installedSize
+            else:
+                package, repo = pisi.db.packagedb.PackageDB().get_package_repo(pkg_name)
+                size = package.packageSize
+
+            if package.source:
+                homepage = package.source.homepage
+            else:
+                homepage = i18n("N\A")
+
+            self.packages[package.name] = (Package(package.name,
+                                          package.summary,
+                                          package.description,
+                                          package.version,
+                                          Icons.getIconPath(package.icon),
+                                          size,
+                                          homepage,
+                                          repo))
 
     def searchInPackages(self, terms):
         def search(package, term):
