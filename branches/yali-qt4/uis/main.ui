@@ -14,7 +14,7 @@
   </property>
   <property name="styleSheet" >
    <string>#YaliMain {
-    background-image:url('pics/background.png')
+    background-image:url('/usr/share/yali4/pics/background.png')
 }
 
 QFrame#mainContentFrame {
@@ -22,7 +22,7 @@ QFrame#mainContentFrame {
      border-width: 2px;
      border-radius: 14px;
      border-color: beige;
-     background-image:url('pics/trans.png');
+     background-image:url('/usr/share/yali4/pics/trans.png');
 }
 
 QTextBrowser#helpContent {
@@ -32,7 +32,7 @@ QTextBrowser#helpContent {
      border-bottom-right-radius:8px;
      border-color: beige;
      border-left:none;
-     background-image:url('pics/helpBack.png');
+     background-image:url('/usr/share/yali4/pics/helpBack.png');
      padding:5px;
      padding-top:7px;
 }
@@ -124,7 +124,7 @@ p, li { white-space: pre-wrap; }
       <item>
        <widget class="QLabel" name="label_4" >
         <property name="pixmap" >
-         <pixmap>pics/logo.png</pixmap>
+         <pixmap>../../../../../../usr/share/yali4/pics/logo.png</pixmap>
         </property>
         <property name="scaledContents" >
          <bool>false</bool>
