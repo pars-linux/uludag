@@ -12,7 +12,6 @@
 
 # System
 import sys
-import string
 
 # PyQt/PyKDE
 from qt import *
@@ -278,8 +277,13 @@ class MainApplicationWidget(QWidget):
     def refreshComponentList(self, item):
         Globals.setWaitCursor()
         try:
-            self.specialList.createList(self.componentDict[item].packages)
-            self.lastSelectedComponent = self.componentDict[item].name
+            # fetch packages including metadata from cache 
+            packagesWithMeta = [self.packageCache.packages[package] for package in self.componentDict[item].packages]
+            if self.state == remove_state:
+                self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
+            else:
+                self.specialList.createList(packagesWithMeta, selected = self.basket.packages)
+                self.lastSelectedComponent = self.componentDict[item].name
         # initialization and search state listview items are not components
         except KeyError:
             pass
@@ -411,7 +415,6 @@ class MainApplicationWidget(QWidget):
         return False
 
     def takeAction(self):
-
         if not self.confirmAction():
             return
 
@@ -467,21 +470,22 @@ class MainApplicationWidget(QWidget):
             self.componentsList.takeItem(item)
             self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
+    #create a component list from given package list
     def createComponentList(self, packages, allComponent=False):
 
+        # filter for selecting only apps with gui
         def appGuiFilter(pkg_name):
-            idb = pisi.db.installdb.InstallDB()
             if self.state == remove_state:
-                package = idb.get_package(pkg_name)
+                package = pisi.db.installdb.InstallDB().get_package(pkg_name)
                 return "app:gui" in package.isA
             elif self.state == install_state:
-                package = pdb.get_package(pkg_name)
+                package = pisi.db.packagedb.PackageDB().get_package(pkg_name)
                 return "app:gui" in package.isA
 
-        # Components
         self.componentsList.clear()
         self.componentDict.clear()
 
+        # populate package cache for accessing package metadata quickly
         if self.packageCache.isEmpty() and packages:
             if self.state == remove_state:
                 self.packageCache.populateCache(packages, inInstalled = True)
@@ -489,18 +493,25 @@ class MainApplicationWidget(QWidget):
                 self.packageCache.populateCache(packages)
         
         cdb = pisi.db.componentdb.ComponentDB()
+
+        # eliminate components that are not visible to users. This is achieved by a tag in component.xmls
         componentNames = [cname for cname in cdb.list_components() if cdb.get_component(cname).visibleTo == 'user']
 
         showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
 
+        # this list is required to find 'Others' group, that is group of packages not belong to any component
         componentPackages = []
         for componentName in componentNames:
+            # just check the component existance
             try:
                 component = cdb.get_union_component(componentName)
             except pisi.component.Error:
                 continue
 
+            # get all packages of the component
             compPkgs = cdb.get_union_packages(componentName, walk=True)
+
+            # find which packages belong to this component
             component_packages = list(set(packages).intersection(compPkgs))
             componentPackages += component_packages
 
@@ -508,6 +519,7 @@ class MainApplicationWidget(QWidget):
                     component_packages = filter(appGuiFilter, component_packages)
 
             if len(component_packages):
+                # create ListView item for component
                 item = KListViewItem(self.componentsList)
                 if component.localName:
                     name = component.localName
@@ -521,6 +533,8 @@ class MainApplicationWidget(QWidget):
 
                 item.setText(0,u"%s (%s)" % (name, len(component_packages)))
                 item.setPixmap(0, KGlobal.iconLoader().loadIcon(icon, KIcon.Desktop,KIcon.SizeMedium))
+
+                # create component object that has a list of its own packages and a summary
                 self.componentDict[item] = Component(name, component_packages, component.summary)
 
         # Rest of the packages
@@ -547,7 +561,11 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.componentsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        self.specialList.createList(packages)
+        packagesWithMeta = [self.packageCache.packages[package] for package in self.componentDict[item].packages]
+        if self.state == remove_state:
+            self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
+        else:
+            self.specialList.createList(packagesWithMeta, selected = self.basket.packages)
         self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
     def displayProgress(self, data):
@@ -574,7 +592,7 @@ class MainApplicationWidget(QWidget):
                 self.progressDialog.updateTotalDownloaded(pkgDownSize=data[5], pkgTotalSize=data[6])
                 self.progressDialog.updateTotalOperationPercent()
 
-    def pisiNotify(self,data):
+    def pisiNotify(self, data):
         data = data.split(",")
         operation = data[0]
 

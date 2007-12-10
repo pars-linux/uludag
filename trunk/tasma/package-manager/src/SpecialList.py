@@ -11,9 +11,11 @@ from khtml import *
 
 import pisi
 import re
+import string
 
 import Globals
 import CustomEventListener
+from Icons import *
 
 class SpecialList:
     def __init__(self, parent):
@@ -34,7 +36,7 @@ class SpecialList:
         QObject.connect(self.part, SIGNAL("completed()"), self.registerEventListener)
     
     def registerEventListener(self):
-        self.eventListener = CustomEventListener.CustomEventListener(self)
+        self.eventListener = CustomEventListener.CustomEventListener(self.parent)
         node = self.part.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
@@ -50,7 +52,7 @@ class SpecialList:
         ''')
         self.part.end()
 
-    def createList(self,packages,part=None):
+    def createList(self, packages, part = None, selected = [], disabled = []):
         head =  '''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
         <html>
         <head>
@@ -60,6 +62,9 @@ class SpecialList:
         if not part:
             part = self.part
 
+        self.selected = selected
+        self.disabled = disabled
+
         Globals.setWaitCursor()
         part.view().setContentsPos(0, 0)
         part.begin()
@@ -68,7 +73,7 @@ class SpecialList:
         part.write("<script language=\"JavaScript\">%s</script>" % self.javascript)
         part.write("</head><body>")
 
-        if set(packages) - set(self.basket.packages):
+        if set(packages) - set(selected):
             part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
         else:
             part.write('''<font size="-2"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></font>''')
@@ -77,7 +82,7 @@ class SpecialList:
         part.end()
         Globals.setNormalCursor()
 
-    def createListForPackages(self,packages):
+    def createListForPackages(self, packages):
         result = ""
         template ='''
         <!-- package start -->
@@ -102,8 +107,9 @@ class SpecialList:
         index = 0
         titleStyle = ""
         style = ""
-        packages.sort(key=string.lower)
-        pdb = pisi.db.packagedb.PackageDB()
+
+        #TODO: fix
+        #packages.sort(cmp = lambda x, y: cmp(x.name.lower(), y.name.lower()), key=string.lower)
 
         alternativeColor = KGlobalSettings.alternateBackgroundColor().name()
         baseColor = KGlobalSettings.baseColor().name()
@@ -115,46 +121,14 @@ class SpecialList:
                 style = "background-color:%s" % baseColor
             titleStyle = style
 
-            size = 0L
-            if self.state == remove_state:
-                # first try to locate package information from repository databases
-                try:
-                    package, repo = pdb.get_package_repo(app)
-                #TODO: Handle "Repo item not found" type of exceptions only
-                except:
-                    # if it fails use provided information directly
-                    #package = pdb.get_package(app, pisi.itembyrepodb.installed)
-                    package = pisi.db.installdb.InstallDB().get_package(app)
-                    repo = i18n("N\A")
-                size = package.installedSize
-            else:
-                package, repo = pdb.get_package_repo(app)
-                size = package.packageSize
-
-            desc = package.description
-            summary = package.summary
-            version = package.version
-            iconPath = getIconPath(package.icon)
-
-            if package.source:
-                homepage = package.source.homepage
-            else:
-                homepage = i18n("N\A")
-
-            if size:
-                tpl = pisi.util.human_readable_size(size)
-                size = "%.0f %s" % (tpl[0], tpl[1])
-            else:
-                size = i18n("N\A")
-
-            if app in self.basket.packages:
+            if app.name in self.selected:
                 titleStyle = "background-color:#678DB2"
                 checkState = "checked"
             else:
                 checkState = ""
 
             curindex = index + 1
-            if self.state == remove_state and app in unremovable_packages:
+            if app.name in self.disabled:
                 checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
                            disabled %s name="%s id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
             else:
@@ -162,12 +136,12 @@ class SpecialList:
                            %s onclick="changeBackgroundColor(this)" name="%s" id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
 
             iconSize = getIconSize()
-            result += template % (checkbox, titleStyle,curindex,iconPath,iconSize,iconSize,app,summary,style,curindex,curindex,
-                                  i18n("Description: "), desc,
-                                  i18n("Version: "), version,
-                                  i18n("Repository: "), repo,
-                                  i18n("Package Size: "), size,
-                                  i18n("Homepage: "), homepage,homepage)
+            result += template % (checkbox, titleStyle, curindex, app.icon_path, iconSize, iconSize, app.name, app.summary, style, curindex, curindex,
+                                  i18n("Description: "), app.description,
+                                  i18n("Version: "), app.version,
+                                  i18n("Repository: "), app.repo,
+                                  i18n("Package Size: "), app.size,
+                                  i18n("Homepage: "), app.homepage, app.homepage)
             index += 1
 
         return result
