@@ -94,6 +94,7 @@ application/illustrator; gimp '%s'; -n "$DISPLAY"
 plain/text; kwrite '%s'; -n "$DISPLAY"
 text/*; kwrite '%s'; -n "$DISPLAY"
 application/txt; kwrite '%s'; -n "$DISPLAY"
+application/x-shellscript; kwrite '%s'; -n "$DISPLAY"
 
 # CHM
 application/chm; kchmviewer '%s'; -n "$DISPLAY"
