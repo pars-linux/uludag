@@ -1,121 +1,54 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>AutoPartWidget</class>
-  <widget class="QWidget" name="AutoPartWidget" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>575</width>
-        <height>439</height>
-      </rect>
-    </property>
-    <property name="windowTitle" >
-      <string>Form1</string>
-    </property>
-    <layout class="QGridLayout" >
-      <item row="3" column="0" >
-        <spacer name="spacer3_3" >
-          <property name="sizeHint" >
-            <size>
-              <width>40</width>
-              <height>20</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-          </property>
-        </spacer>
-      </item>
-      <item row="3" column="4" >
-        <spacer name="spacer3_2" >
-          <property name="sizeHint" >
-            <size>
-              <width>40</width>
-              <height>20</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-          </property>
-        </spacer>
-      </item>
-      <item row="2" column="2" >
-        <spacer name="spacer1" >
-          <property name="sizeHint" >
-            <size>
-              <width>20</width>
-              <height>31</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-          </property>
-        </spacer>
-      </item>
-      <item row="0" column="2" >
-        <spacer name="spacer2" >
-          <property name="sizeHint" >
-            <size>
-              <width>20</width>
-              <height>16</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-          </property>
-        </spacer>
-      </item>
-      <item rowspan="1" row="1" column="0" colspan="2" >
-        <spacer name="spacer4" >
-          <property name="sizeHint" >
-            <size>
-              <width>60</width>
-              <height>20</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-          </property>
-        </spacer>
-      </item>
-      <item rowspan="1" row="1" column="3" colspan="2" >
-        <spacer name="spacer3" >
-          <property name="sizeHint" >
-            <size>
-              <width>60</width>
-              <height>20</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-          </property>
-        </spacer>
-      </item>
-      <item row="1" column="2" >
-        <widget class="QLabel" name="textLabel1" >
-          <property name="text" >
-            <string>&lt;font size="+1">&lt;b>Select the partitioning method:&lt;/b>&lt;/font>
+<ui version="4.0" >
+ <class>AutoPartWidget</class>
+ <widget class="QWidget" name="AutoPartWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>605</width>
+    <height>478</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form1</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="2" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>16</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0" colspan="2" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>60</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2" >
+    <widget class="QLabel" name="textLabel1" >
+     <property name="text" >
+      <string>&lt;font size="+1">&lt;b>Select the partitioning method:&lt;/b>&lt;/font>
 
 &lt;p>Below, you can select an hard disk for automatic partitioning.
 Selected disk will be used for Pardus installation.&lt;/p>
@@ -123,86 +56,150 @@ Selected disk will be used for Pardus installation.&lt;/p>
 &lt;p>&lt;font color="#FF6D19">&lt;b>&lt;u>WARNING:&lt;/u>&lt;/b>
 Automatic partitioning will use your entire disk for Pardus installation.
 All data on the selected disk will be lost!&lt;/font>&lt;/p></string>
-          </property>
-          <property name="alignment" >
-            <set>Qt::AlignTop</set>
-          </property>
-          <property name="wordWrap" >
-            <bool>true</bool>
-          </property>
-        </widget>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3" colspan="2" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>60</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="2" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>31</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item rowspan="2" row="3" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1" colspan="3" >
+    <widget class="QListView" name="device_list" />
+   </item>
+   <item rowspan="2" row="3" column="4" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="1" colspan="3" >
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="styleSheet" >
+      <string>border:none;</string>
+     </property>
+     <property name="title" >
+      <string/>
+     </property>
+     <property name="flat" >
+      <bool>false</bool>
+     </property>
+     <property name="checkable" >
+      <bool>false</bool>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <widget class="QRadioButton" name="accept_auto" >
+        <property name="text" >
+         <string>Yes, automatically partition and format selected disk!</string>
+        </property>
+       </widget>
       </item>
-      <item row="5" column="2" >
-        <spacer name="spacer12" >
-          <property name="sizeHint" >
-            <size>
-              <width>20</width>
-              <height>16</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-          </property>
-        </spacer>
+      <item row="1" column="0" >
+       <widget class="QRadioButton" name="manual" >
+        <property name="text" >
+         <string>No, I'll partition my disk manually.</string>
+        </property>
+       </widget>
       </item>
-      <item rowspan="1" row="4" column="0" colspan="5" >
-        <widget class="QLabel" name="info" >
-          <property name="text" >
-            <string>&amp;nbsp;</string>
-          </property>
-          <property name="textFormat" >
-            <enum>Qt::RichText</enum>
-          </property>
-          <property name="alignment" >
-            <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap" >
-            <bool>true</bool>
-          </property>
-        </widget>
-      </item>
-      <item rowspan="1" row="3" column="1" colspan="3" >
-        <layout class="QVBoxLayout" >
-          <item>
-            <widget class="Q3ListBox" name="device_list" >
-              <property name="frameShadow" >
-                <enum>QFrame::Plain</enum>
-              </property>
-            </widget>
-          </item>
-          <item>
-            <widget class="Q3ButtonGroup" name="buttonGroup" >
-              <property name="frameShape" >
-                <enum>Q3GroupBox::NoFrame</enum>
-              </property>
-              <property name="title" >
-                <string/>
-              </property>
-              <layout class="QGridLayout" >
-                <item row="1" column="0" >
-                  <widget class="QRadioButton" name="manual" >
-                    <property name="text" >
-                      <string>No, I'll partition my disk manually.</string>
-                    </property>
-                  </widget>
-                </item>
-                <item row="0" column="0" >
-                  <widget class="QRadioButton" name="accept_auto" >
-                    <property name="text" >
-                      <string>Yes, automatically partition and format selected disk!</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </widget>
-          </item>
-        </layout>
-      </item>
-    </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="5" >
+    <widget class="QLabel" name="info" >
+     <property name="text" >
+      <string>&amp;nbsp;</string>
+     </property>
+     <property name="textFormat" >
+      <enum>Qt::RichText</enum>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>16</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
 </ui>
