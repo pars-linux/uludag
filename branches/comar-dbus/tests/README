@@ -1,2 +1,2 @@
 - execute run.sh as root to start Comar
-- execute register.py to register example scripts.
+- execute register.sh to register example scripts.
