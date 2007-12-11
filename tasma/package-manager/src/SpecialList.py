@@ -8,6 +8,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 from khtml import *
+from kio import KRun
 
 import pisi
 import re
@@ -17,12 +18,14 @@ import Globals
 import CustomEventListener
 from Icons import *
 
-class SpecialList:
+class SpecialList(QObject):
     def __init__(self, parent):
+        QObject.__init__(self)
         self.parent = parent
         self.part = KHTMLPart(self.parent)
         self.part.view().setFocus()
-        
+        self.selectingAll = False
+
         # Read javascript
         js = file(str(locate("data","package-manager/animation.js"))).read()
         js = re.sub("#3cBB39", KGlobalSettings.alternateBackgroundColor().name(), js)
@@ -33,12 +36,31 @@ class SpecialList:
         cssFile = file(str(locate("data","package-manager/layout.css"))).read()
         self.css = cssFile
 
-        QObject.connect(self.part, SIGNAL("completed()"), self.registerEventListener)
-    
+        self.connect(self.part, SIGNAL("completed()"), self.registerEventListener)
+
     def registerEventListener(self):
-        self.eventListener = CustomEventListener.CustomEventListener(self.parent)
+        self.eventListener = CustomEventListener.CustomEventListener(self)
         node = self.part.document().getElementsByTagName(DOM.DOMString("body")).item(0)
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
+
+    def slotCheckboxClicked(self, itemName, checked):
+        if not self.selectingAll:
+            self.emit(PYSIGNAL("checkboxClicked"), (itemName, checked))
+
+    def slotHomepageClicked(self, link):
+        KRun.runURL(KURL(link),"text/html",False,False);
+
+    def slotSelectAll(self, reverse):
+        document = self.part.document()
+        nodeList = document.getElementsByTagName(DOM.DOMString("input"))
+
+        self.selectingAll = True
+        for i in range(0,nodeList.length()):
+            element = DOM.HTMLInputElement(nodeList.item(i))
+            if reverse or not element.checked():
+                element.click()
+        self.selectingAll = False
+        #self.parent.updateStatusBar()
 
     def clear(self):
         self.part.view().setContentsPos(0, 0)
@@ -108,8 +130,7 @@ class SpecialList:
         titleStyle = ""
         style = ""
 
-        #TODO: fix
-        #packages.sort(cmp = lambda x, y: cmp(x.name.lower(), y.name.lower()), key=string.lower)
+        packages.sort(key=string.lower)
 
         alternativeColor = KGlobalSettings.alternateBackgroundColor().name()
         baseColor = KGlobalSettings.baseColor().name()

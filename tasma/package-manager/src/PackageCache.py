@@ -24,13 +24,19 @@ class Package:
         self.size = self._sizer(size)
         self.homepage = homepage
         self.repo = repo
-    
+
     def _sizer(self, size):
         if size:
             tpl = pisi.util.human_readable_size(size)
             return "%.0f %s" % (tpl[0], tpl[1])
         else:
             return i18n("N\A")
+
+    def __str__(self):
+        return self.name
+
+    def lower(self):
+        return self.name.lower()
 
 class PackageCache:
     def __init__(self):
