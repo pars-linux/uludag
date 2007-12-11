@@ -107,6 +107,8 @@ class MainApplicationWidget(QWidget):
         self.connect(self.basketAction, SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction, SIGNAL("clicked()"),self.takeAction)
 
+        self.connect(self.specialList, PYSIGNAL("checkboxClicked"), self.packageClicked)
+
         self.command = Commander.Commander(self)
 
         self.delayTimer = QTimer(self)
@@ -122,6 +124,16 @@ class MainApplicationWidget(QWidget):
         self.show()
 
         self.settings = Settings.Settings(Globals.config())
+
+    def packageClicked(self, itemName, checked):
+        if checked:
+            if itemName not in self.basket.packages:
+                self.basket.add(itemName)
+        else:
+            self.basket.remove(itemName)
+
+        self.updateButtons()
+        self.updateStatusBar()
 
     def lazyLoadComponentList(self):
         self.parent.tray.updateTrayIcon()

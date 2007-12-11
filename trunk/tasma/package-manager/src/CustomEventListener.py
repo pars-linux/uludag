@@ -10,39 +10,29 @@
 # Please read the COPYING file.
 
 from khtml import DOM
-from kdecore import i18n, KURL
-from kio import KRun
+from kdecore import i18n
 
 class CustomEventListener(DOM.EventListener):
     def __init__(self, parent):
         DOM.EventListener.__init__(self)
         self.parent = parent
-        self.selectingAll = False
+        #self.selectingAll = False
 
     def handleEvent(self,event):
         target = event.target().nodeName().string()
         #try:
-        #if checkbox is clicked, add/remove package to/from basket
+        #if checkbox is clicked, call SpecialList's slot
         if target == "INPUT":
             inputElement = DOM.HTMLInputElement(event.target())
             name = inputElement.name().string()
             checked = inputElement.checked()
-            if checked:
-                if name not in self.parent.basket.packages:
-                    self.parent.basket.add(name)
-            else:
-                self.parent.basket.remove(name)
 
-            self.parent.updateButtons()
-            if not self.selectingAll:
-                self.parent.updateStatusBar()
+            # call parent to handle click event (in fact, parent emits this as a signal and its parent handles the signal)
+            self.parent.slotCheckboxClicked(name, checked)
 
         elif target == "A":
             link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
             if link == "#selectall":
-                document = self.parent.part.document()
-                nodeList = document.getElementsByTagName(DOM.DOMString("input"))
-
                 state = event.target().firstChild().nodeValue().string()
                 reverseSelection = False
                 if state == i18n("Select all packages in this category"):
@@ -51,14 +41,9 @@ class CustomEventListener(DOM.EventListener):
                     reverseSelection = True
                     event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Select all packages in this category")))
 
-                self.selectingAll = True
-                for i in range(0,nodeList.length()):
-                    element = DOM.HTMLInputElement(nodeList.item(i))
-                    if reverseSelection or not element.checked():
-                        element.click()
-                self.selectingAll = False
-                self.parent.updateStatusBar()
+                # let the list do the rest
+                self.parent.slotSelectAll(reverseSelection)
             else:
-                KRun.runURL(KURL(link),"text/html",False,False);
+                self.parent.slotHomepageClicked(link)
         #except Exception, e:
-            #print e
+            #print "KHTML Exception: " + str(e)
