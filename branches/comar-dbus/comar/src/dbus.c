@@ -36,7 +36,7 @@ dbus_send(DBusMessage *reply)
 }
 
 void
-dbus_signal(char *path, char *interface, char *name, PyObject *obj)
+dbus_signal(const char *path, const char *interface, const char *name, PyObject *obj)
 {
     DBusMessage *msg;
     DBusMessageIter iter;
@@ -123,7 +123,7 @@ dbus_reply_str(char *str)
 }
 
 static void
-dbus_introspection(const char *path)
+dbus_introspection_methods(const char *path)
 {
     char *intros, *app;
 
@@ -183,15 +183,22 @@ dbus_comar_methods(const char *method)
         Py_Finalize();
     }
     else if (strcmp(method, "listApplicationModels") == 0) {
+        Py_Initialize();
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
         db_get_models(app, &models);
-        Py_Initialize();
-        result = py_str_split(models, '|');
-        dbus_reply_object(result);
+        if (models == NULL) {
+            log_error("No such application: '%s'\n", app);
+            dbus_reply_error("No such application");
+        }
+        else {
+            result = py_str_split(models, '|');
+            dbus_reply_object(result);
+        }
         Py_Finalize();
     }
     else if (strcmp(method, "register") == 0) {
+        Py_Initialize();
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
         model = PyString_AsString(PyList_GetItem(args, 1));
@@ -202,7 +209,6 @@ dbus_comar_methods(const char *method)
             dbus_reply_error("No such model.");
         }
         else {
-            Py_Initialize();
             if (py_compile(script) != 0) {
                 log_error("Not a valid Python script: '%s'\n", script);
                 dbus_reply_error("Not a valid Python script.");
@@ -213,23 +219,29 @@ dbus_comar_methods(const char *method)
                 db_register_model(app, model);
                 dbus_reply_object(Py_True);
             }
-            Py_Finalize();
         }
+        Py_Finalize();
     }
     else if (strcmp(method, "remove") == 0) {
+        Py_Initialize();
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
         db_get_models(app, &models);
 
-        db_remove_app(app);
-
-        Py_Initialize();
-        list = py_str_split(models, '|');
-        for (i = 0; i < PyList_Size(list); i++) {
-            script = get_script_path(app, PyString_AsString(PyList_GetItem(list, i)));
-            unlink(script);
+        if (models == NULL) {
+            log_error("No such application: '%s'\n", app);
+            dbus_reply_error("No such application");
         }
-        dbus_reply_object(Py_True);
+        else {
+            db_remove_app(app);
+
+            list = py_str_split(models, '|');
+            for (i = 0; i < PyList_Size(list); i++) {
+                script = get_script_path(app, PyString_AsString(PyList_GetItem(list, i)));
+                unlink(script);
+            }
+            dbus_reply_object(Py_True);
+        }
         Py_Finalize();
     }
     else {
@@ -291,7 +303,7 @@ dbus_method_call()
     gettimeofday(&time_start, NULL);
 
     if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
-        dbus_introspection(path);
+        dbus_introspection_methods(path);
     }
     else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
         if (strcmp(path, "/system") == 0 && strcmp(interface, cfg_bus_name) == 0) {

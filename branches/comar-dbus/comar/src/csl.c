@@ -21,8 +21,8 @@
 static PyObject *
 c_script(PyObject *self, PyObject *args)
 {
-    char *path = dbus_message_get_path(my_proc.bus_msg);
-    char *app = strsub(path, strlen("/package/"), 0);
+    const char *path = dbus_message_get_path(my_proc.bus_msg);
+    const char *app = strsub(path, strlen("/package/"), 0);
     return PyString_FromString(app);
 }
 
@@ -81,7 +81,7 @@ static PyObject *
 c_notify(PyObject *self, PyObject *args)
 {
     PyObject *item, *tuple, *result;
-    char *interface, *path, *method, *msg;
+    const char *interface, *path, *method, *msg;
 
     if (!PyArg_ParseTuple(args, "ss", &method, &msg))
         return NULL;

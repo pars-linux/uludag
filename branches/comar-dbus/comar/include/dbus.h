@@ -11,7 +11,7 @@
 #include <Python.h>
 
 void dbus_send(DBusMessage *reply);
-void dbus_signal(char *path, char *interface, char *name, PyObject *obj);
+void dbus_signal(const char *path, const char *interface, const char *name, PyObject *obj);
 void dbus_method_call(DBusMessage* msg, DBusConnection* conn);
 void dbus_listen();
 void dbus_app_methods(const char *interface, const char *path, const char *method);

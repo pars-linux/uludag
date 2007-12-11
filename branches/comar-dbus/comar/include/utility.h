@@ -9,8 +9,8 @@
 
 #include <sys/time.h>
 
-char *strsub(char *str, int start, int end);
-char *strrep(char *str, char old, char new);
+char *strsub(const char *str, int start, int end);
+char *strrep(const char *str, char old, char new);
 
 int check_file(const char *fname);
 unsigned char *load_file(const char *fname, int *sizeptr);

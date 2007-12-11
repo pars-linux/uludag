@@ -21,7 +21,7 @@ const char *valid_app_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvw
 const char *valid_model_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.";
 
 char *
-strsub(char *str, int start, int end)
+strsub(const char *str, int start, int end)
 {
     if (start < 0) {
         start = strlen(str) + start;
@@ -41,7 +41,7 @@ strsub(char *str, int start, int end)
 
     char *new_src, *t;
     new_src = malloc(end - start + 2);
-    for (t = str + start; t < str + end; t++) {
+    for (t = (char *) str + start; t < str + end; t++) {
         new_src[t - (str + start)] = *t;
     }
     new_src[t - (str + start)] = '\0';
@@ -49,7 +49,7 @@ strsub(char *str, int start, int end)
 }
 
 char *
-strrep(char *str, char old, char new)
+strrep(const char *str, char old, char new)
 {
     char *new_str, *t;
 
