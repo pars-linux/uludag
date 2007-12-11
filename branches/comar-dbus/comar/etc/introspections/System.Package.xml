@@ -7,4 +7,10 @@
     </method>
     <method name="preRemove">
     </method>
+    <signal name="Installed">
+        <arg name="package" type="s"/>
+    </signal>
+    <signal name="Removed">
+        <arg name="package" type="s"/>
+    </signal>
 </interface>

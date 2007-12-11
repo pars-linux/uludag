@@ -17,6 +17,7 @@
 #include "csl.h"
 #include "iksemel.h"
 #include "log.h"
+#include "model.h"
 #include "process.h"
 #include "utility.h"
 #include "xml.h"
@@ -170,20 +171,14 @@ dbus_comar_methods(const char *method)
 
     if (strcmp(method, "listApplications") == 0) {
         db_get_apps(&apps);
-        Py_Initialize();
         result = py_str_split(apps, '|');
         dbus_reply_object(result);
-        Py_Finalize();
     }
     else if (strcmp(method, "listModels") == 0) {
-        // TODO: List models
-        Py_Initialize();
-        result = py_str_split("", '|');
+        result = py_str_split(model_list, '|');
         dbus_reply_object(result);
-        Py_Finalize();
     }
     else if (strcmp(method, "listApplicationModels") == 0) {
-        Py_Initialize();
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
         db_get_models(app, &models);
@@ -195,16 +190,14 @@ dbus_comar_methods(const char *method)
             result = py_str_split(models, '|');
             dbus_reply_object(result);
         }
-        Py_Finalize();
     }
     else if (strcmp(method, "register") == 0) {
-        Py_Initialize();
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
         model = PyString_AsString(PyList_GetItem(args, 1));
         script = PyString_AsString(PyList_GetItem(args, 2));
 
-        if (!check_file(get_xml_path(model))) {
+        if (!str_in_list(model, '|', model_list) != 0) {
             log_error("No such model: '%s'\n", model);
             dbus_reply_error("No such model.");
         }
@@ -220,10 +213,8 @@ dbus_comar_methods(const char *method)
                 dbus_reply_object(Py_True);
             }
         }
-        Py_Finalize();
     }
     else if (strcmp(method, "remove") == 0) {
-        Py_Initialize();
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
         db_get_models(app, &models);
@@ -242,7 +233,6 @@ dbus_comar_methods(const char *method)
             }
             dbus_reply_object(Py_True);
         }
-        Py_Finalize();
     }
     else {
         log_error("Unknown method: '%s'\n", method);
@@ -262,8 +252,6 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
     char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
 
     if (db_check_model(app, model)) {
-        Py_Initialize();
-
         args = PyList_AsTuple(dbus_py_import(my_proc.bus_msg));
         ret = py_call_method(app, model, method, args, &result);
 
@@ -277,8 +265,6 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
         else {
             dbus_reply_object(result);
         }
-
-        Py_Finalize();
     }
     else {
         log_error("Invalid application or model '%s/%s'\n", model, app);
@@ -302,8 +288,13 @@ dbus_method_call()
 
     gettimeofday(&time_start, NULL);
 
+    csl_init();
+
     if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
         dbus_introspection_methods(path);
+    }
+    else if (strcmp(interface, "org.freedesktop.DBus.Peer") == 0) {
+        // dbus_peer_methods(path);
     }
     else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
         if (strcmp(path, "/system") == 0 && strcmp(interface, cfg_bus_name) == 0) {
@@ -329,6 +320,8 @@ dbus_method_call()
     else {
         log_debug(LOG_PERF, "Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
     }
+
+    csl_end();
 }
 
 void

@@ -22,5 +22,6 @@ add_executable(comar-dbus src/main.c
                           src/iksemel.c
                           src/log.c
                           src/process.c
+                          src/model.c
                           src/utility.c
                           src/xml.c)

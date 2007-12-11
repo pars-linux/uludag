@@ -18,6 +18,18 @@
 #include "process.h"
 #include "utility.h"
 
+void
+csl_init()
+{
+    Py_Initialize();
+}
+
+void
+csl_end()
+{
+    Py_Finalize();
+}
+
 static PyObject *
 c_script(PyObject *self, PyObject *args)
 {
@@ -123,6 +135,11 @@ PyObject *
 py_str_split(char *str, char delimiter)
 {
     PyObject *result = PyList_New(0);
+
+    if (str == NULL) {
+        return result;
+    }
+
     char *t, *s;
     t = strdup(str);
     for (; t; t = s) {
@@ -131,7 +148,9 @@ py_str_split(char *str, char delimiter)
             *s = '\0';
             ++s;
         }
-        PyList_Append(result, PyString_FromString(t));
+        if (strlen(t) > 0) {
+            PyList_Append(result, PyString_FromString(t));
+        }
     }
     free(str);
     return result;

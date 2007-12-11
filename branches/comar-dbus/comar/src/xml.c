@@ -48,8 +48,8 @@ int
 xml_export_interfaces(char *app, char **intros)
 {
     int size;
-    char *models;
-    char *model_xml;
+    char *models, *model_xml, *xml_path;
+
     db_get_models(app, &models);
 
     size = strlen("<node></node>") + 1;
@@ -65,7 +65,9 @@ xml_export_interfaces(char *app, char **intros)
             ++s;
         }
 
-        model_xml = (char*) load_file(get_xml_path(t), NULL);
+        xml_path = get_xml_path(t);
+        model_xml = (char*) load_file(xml_path, NULL);
+        free(xml_path);
 
         if (model_xml == NULL) {
             log_error("Missing introspection data for '%s'\n", t);
@@ -88,13 +90,15 @@ int
 xml_export_system(char **intros)
 {
     int size;
-    char *model_xml;
+    char *model_xml, *xml_path;
 
     size = strlen("<node></node>") + 1;
     *intros = malloc(size);
     snprintf(*intros, 7, "<node>\0");
 
-    model_xml = (char*) load_file(get_xml_path("Comar"), NULL);
+    xml_path = get_xml_path("Comar");
+    model_xml = (char*) load_file(xml_path, NULL);
+    free(xml_path);
 
     if (model_xml == NULL) {
         log_error("Missing introspection data for 'Comar'\n");

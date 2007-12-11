@@ -16,6 +16,7 @@
 #include "dbus.h"
 #include "i18n.h"
 #include "log.h"
+#include "model.h"
 #include "process.h"
 
 int
@@ -37,6 +38,12 @@ main(int argc, char *argv[])
     // Only root can register system bus
     if (cfg_bus_type == DBUS_BUS_SYSTEM && getuid() != 0) {
         puts(_("System service should be started as root."));
+        exit(1);
+    }
+
+    // Load models
+    if (model_init() != 0) {
+        puts(_("Unable to load models."));
         exit(1);
     }
 

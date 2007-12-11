@@ -10,6 +10,9 @@
 #include <dbus/dbus.h>
 #include <Python.h>
 
+void csl_init();
+void csl_end();
+
 int py_compile(const char *script_path);
 int py_call_method(const char *app, const char *model, const char *method, PyObject *args, PyObject **result);
 PyObject *dbus_py_import(DBusMessage *msg);
