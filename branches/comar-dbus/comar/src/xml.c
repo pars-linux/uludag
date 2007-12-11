@@ -20,8 +20,9 @@ xml_export_nodes(char *nodes, char **bufferp)
     xml = iks_new("node");
 
     char *t, *s;
-    for (t = nodes; t; t = s) {
-        s = strchr(t, '/');
+    t = strdup(nodes);
+    for (; t; t = s) {
+        s = strchr(t, '|');
         if (s) {
             *s = '\0';
             ++s;
@@ -56,8 +57,9 @@ xml_export_interfaces(char *app, char **intros)
     snprintf(*intros, 7, "<node>\0");
 
     char *t, *s;
-    for (t = models; t; t = s) {
-        s = strchr(t, '/');
+    t = strdup(models);
+    for (; t; t = s) {
+        s = strchr(t, '|');
         if (s) {
             *s = '\0';
             ++s;
@@ -77,6 +79,33 @@ xml_export_interfaces(char *app, char **intros)
     }
 
     free(models);
+    strncat(*intros, "</node>", 7);
+
+    return 0;
+}
+
+int
+xml_export_system(char **intros)
+{
+    int size;
+    char *model_xml;
+
+    size = strlen("<node></node>") + 1;
+    *intros = malloc(size);
+    snprintf(*intros, 7, "<node>\0");
+
+    model_xml = (char*) load_file(get_xml_path("Comar"), NULL);
+
+    if (model_xml == NULL) {
+        log_error("Missing introspection data for 'Comar'\n");
+        return 1;
+    }
+
+    size = size + strlen(model_xml);
+    *intros = (char *) realloc(*intros, size);
+    strncat(*intros, model_xml, strlen(model_xml));
+    free(model_xml);
+
     strncat(*intros, "</node>", 7);
 
     return 0;

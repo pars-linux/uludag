@@ -9,12 +9,15 @@
 
 #include <sys/time.h>
 
+char *strsub(char *str, int start, int end);
+char *strrep(char *str, char old, char new);
+
 int check_file(const char *fname);
 unsigned char *load_file(const char *fname, int *sizeptr);
+int save_file(const char *fname, const char *buffer, size_t size);
+
 int check_model_name(const char *model);
 int check_app_name(const char *app);
 char *get_script_path(const char *interface, const char *path);
 char *get_xml_path(const char *model);
 unsigned long time_diff(struct timeval *start, struct timeval *end);
-char *str_replace(const char *str, const char old, const char new);
-char *str_lshift(const char *str, int num);

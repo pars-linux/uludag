@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <dbus/dbus.h>
+#include <unistd.h>
 #include <Python.h>
 
 #include "cfg.h"
@@ -20,7 +21,7 @@
 #include "utility.h"
 #include "xml.h"
 
-static void
+void
 dbus_send(DBusMessage *reply)
 {
     dbus_uint32_t serial = 0;
@@ -32,6 +33,20 @@ dbus_send(DBusMessage *reply)
 
     dbus_connection_flush(my_proc.bus_conn);
     dbus_message_unref(reply);
+}
+
+void
+dbus_signal(char *path, char *interface, char *name, PyObject *obj)
+{
+    DBusMessage *msg;
+    DBusMessageIter iter;
+    dbus_uint32_t serial = 0;
+
+    msg = dbus_message_new_signal(path, interface, name);
+    dbus_message_iter_init_append(msg, &iter);
+    dbus_py_export(&iter, obj);
+
+    dbus_send(msg);
 }
 
 static void
@@ -108,14 +123,163 @@ dbus_reply_str(char *str)
 }
 
 static void
-dbus_method_call()
+dbus_introspection(const char *path)
+{
+    char *intros, *app;
+
+    if (strcmp(path, "/") == 0) {
+        xml_export_nodes("system|package", &intros);
+        dbus_reply_str(intros);
+        free(intros);
+    }
+    else if (strcmp(path, "/system") == 0) {
+        xml_export_system(&intros);
+        dbus_reply_str(intros);
+        free(intros);
+    }
+    else if (strcmp(path, "/package") == 0) {
+        xml_export_apps(&intros);
+        dbus_reply_str(intros);
+        free(intros);
+    }
+    else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
+        app = (char *) strsub(path, strlen("/package/"), 0);
+        if (!db_check_app(app)) {
+            log_error("No such application: '%s'\n", app);
+            dbus_reply_error("No such application");
+        }
+        else {
+            xml_export_interfaces(app, &intros);
+            dbus_reply_str(intros);
+            free(intros);
+        }
+        free(app);
+    }
+    else {
+        log_error("Invalid object path '%s'\n", path);
+        dbus_reply_error("Invalid object path");
+    }
+}
+
+static void
+dbus_comar_methods(const char *method)
+{
+    PyObject *args, *result, *list;
+    char *app, *model, *script, *apps, *models, *code;
+    int i;
+
+    if (strcmp(method, "listApplications") == 0) {
+        db_get_apps(&apps);
+        Py_Initialize();
+        result = py_str_split(apps, '|');
+        dbus_reply_object(result);
+        Py_Finalize();
+    }
+    else if (strcmp(method, "listModels") == 0) {
+        // TODO: List models
+        Py_Initialize();
+        result = py_str_split("", '|');
+        dbus_reply_object(result);
+        Py_Finalize();
+    }
+    else if (strcmp(method, "listApplicationModels") == 0) {
+        args = dbus_py_import(my_proc.bus_msg);
+        app = PyString_AsString(PyList_GetItem(args, 0));
+        db_get_models(app, &models);
+        Py_Initialize();
+        result = py_str_split(models, '|');
+        dbus_reply_object(result);
+        Py_Finalize();
+    }
+    else if (strcmp(method, "register") == 0) {
+        args = dbus_py_import(my_proc.bus_msg);
+        app = PyString_AsString(PyList_GetItem(args, 0));
+        model = PyString_AsString(PyList_GetItem(args, 1));
+        script = PyString_AsString(PyList_GetItem(args, 2));
+
+        if (!check_file(get_xml_path(model))) {
+            log_error("No such model: '%s'\n", model);
+            dbus_reply_error("No such model.");
+        }
+        else {
+            Py_Initialize();
+            if (py_compile(script) != 0) {
+                log_error("Not a valid Python script: '%s'\n", script);
+                dbus_reply_error("Not a valid Python script.");
+            }
+            else {
+                code = load_file(script, NULL);
+                save_file(get_script_path(app, model), code, strlen(code));
+                db_register_model(app, model);
+                dbus_reply_object(Py_True);
+            }
+            Py_Finalize();
+        }
+    }
+    else if (strcmp(method, "remove") == 0) {
+        args = dbus_py_import(my_proc.bus_msg);
+        app = PyString_AsString(PyList_GetItem(args, 0));
+        db_get_models(app, &models);
+
+        db_remove_app(app);
+
+        Py_Initialize();
+        list = py_str_split(models, '|');
+        for (i = 0; i < PyList_Size(list); i++) {
+            script = get_script_path(app, PyString_AsString(PyList_GetItem(list, i)));
+            unlink(script);
+        }
+        dbus_reply_object(Py_True);
+        Py_Finalize();
+    }
+    else {
+        log_error("Unknown method: '%s'\n", method);
+        dbus_reply_error("Unknown method");
+    }
+}
+
+void
+dbus_app_methods(const char *interface, const char *path, const char *method)
 {
     DBusMessage *reply;
     DBusMessageIter iter;
-    PyObject *obj, *result;
+    PyObject *args, *result;
     int ret;
 
-    int size;
+    char *app = (char *) strsub(path, strlen("/package/"), 0);
+    char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
+
+    if (db_check_model(app, model)) {
+        Py_Initialize();
+
+        args = PyList_AsTuple(dbus_py_import(my_proc.bus_msg));
+        ret = py_call_method(app, model, method, args, &result);
+
+        if (ret == 1) {
+            log_error("Unable to find code for '%s/%s'\n", model, app);
+            dbus_reply_error("Internal error, unable to find script.");
+        }
+        else if (ret == 2) {
+            log_exception();
+        }
+        else {
+            dbus_reply_object(result);
+        }
+
+        Py_Finalize();
+    }
+    else {
+        log_error("Invalid application or model '%s/%s'\n", model, app);
+        dbus_reply_error("Invalid application or model");
+    }
+    free(app);
+    free(model);
+}
+
+static void
+dbus_method_call()
+{
+    char *app, *model;
 
     struct timeval time_start, time_end;
     unsigned long msec;
@@ -124,79 +288,17 @@ dbus_method_call()
     const char *path = dbus_message_get_path(my_proc.bus_msg);
     const char *method = dbus_message_get_member(my_proc.bus_msg);
 
-    if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
-        if (strcmp(path, "/") == 0) {
-            char *intros;
-            xml_export_nodes("package", &intros);
-            dbus_reply_str(intros);
-            free(intros);
-        }
-        else if (strcmp(path, "/package") == 0) {
-            char *intros;
-            xml_export_apps(&intros);
+    gettimeofday(&time_start, NULL);
 
-            dbus_reply_str(intros);
-            free(intros);
-        }
-        else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
-            char *app = (char *) str_lshift(path, strlen("/package/"));
-            if (!db_check_app(app)) {
-                log_error("Invalid application '%s'\n", app);
-                dbus_reply_error("Invalid application");
-            }
-            else {
-                char *intros;
-                xml_export_interfaces(app, &intros);
-                dbus_reply_str(intros);
-                free(intros);
-            }
-            free(app);
-        }
-        else {
-            log_error("Invalid object path '%s'\n", path);
-            dbus_reply_error("Invalid object path");
-        }
+    if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
+        dbus_introspection(path);
     }
     else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
-        if (strncmp(path, "/package/", strlen("/package/")) == 0) {
-            char *app = (char *) str_lshift(path, strlen("/package/"));
-            char *model = (char *) str_lshift(interface, strlen(cfg_bus_name) + 1);
-
-            if (db_check_model(app, model)) {
-                Py_Initialize();
-
-                obj = dbus_py_import(my_proc.bus_msg);
-
-                gettimeofday(&time_start, NULL);
-                ret = py_call_method(app, model, method, obj, &result);
-                gettimeofday(&time_end, NULL);
-                msec = time_diff(&time_start, &time_end);
-
-                if (ret == 1) {
-                    log_error("Missing code for '%s/%s'\n", model, app);
-                    dbus_reply_error("Internal error, unable to find code.");
-                }
-                else if (ret == 2) {
-                    log_exception();
-                }
-                else {
-                    if (msec / 1000 > 60) {
-                        log_info("Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
-                    }
-                    else {
-                        log_debug(LOG_PERF, "Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
-                    }
-                    dbus_reply_object(result);
-                }
-
-                Py_Finalize();
-            }
-            else {
-                log_error("Invalid application or model '%s/%s'\n", model, app);
-                dbus_reply_error("Invalid application or model");
-            }
-            free(app);
-            free(model);
+        if (strcmp(path, "/system") == 0 && strcmp(interface, cfg_bus_name) == 0) {
+            dbus_comar_methods(method);
+        }
+        else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
+            dbus_app_methods(interface, path, method);
         }
         else {
             log_error("Invalid object path '%s'\n", path);
@@ -205,6 +307,15 @@ dbus_method_call()
     }
     else {
         dbus_reply_error("Invalid interface");
+    }
+
+    gettimeofday(&time_end, NULL);
+    msec = time_diff(&time_start, &time_end);
+    if (msec / 1000 > 60) {
+        log_info("Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
+    }
+    else {
+        log_debug(LOG_PERF, "Execution of %s.%s (%s) took %.3f seconds\n", interface, method, path, (float) msec / 1000);
     }
 }
 

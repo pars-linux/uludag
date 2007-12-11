@@ -11,9 +11,131 @@
 #include <Python.h>
 #include <node.h>
 
+#include "csl.h"
 #include "cfg.h"
+#include "dbus.h"
 #include "log.h"
+#include "process.h"
 #include "utility.h"
+
+static PyObject *
+c_script(PyObject *self, PyObject *args)
+{
+    char *path = dbus_message_get_path(my_proc.bus_msg);
+    char *app = strsub(path, strlen("/package/"), 0);
+    return PyString_FromString(app);
+}
+
+static PyObject *
+c_call(PyObject *self, PyObject *args)
+{
+    PyObject *tuple, *result;
+    char *app, *model, *method;
+    int ret, i;
+
+    if (PyTuple_Size(args) < 3) {
+        PyErr_SetString(PyExc_TypeError, "call() takes at least 3 arguments");
+        return NULL;
+    }
+    else if (PyTuple_Size(args) > 4) {
+        PyErr_SetString(PyExc_TypeError, "call() takes at most 4 arguments");
+        return NULL;
+    }
+
+    for (i = 0; i < PyTuple_Size(args); i++) {
+        if ((i < 3 && !PyString_Check(PyTuple_GetItem(args, i))) || (i == 3 && !PyTuple_Check(PyTuple_GetItem(args, i)))) {
+            PyErr_SetString(PyExc_TypeError, "call() takes three string arguments and an optional tuple.");
+            return NULL;
+        }
+    }
+
+    app = PyString_AsString(PyTuple_GetItem(args, 0));
+    model = PyString_AsString(PyTuple_GetItem(args, 1));
+    method = PyString_AsString(PyTuple_GetItem(args, 2));
+
+    if (PyTuple_Size(args) == 4) {
+        tuple = PyTuple_GetItem(args, 3);
+    }
+    else {
+        tuple = PyTuple_New(0);
+    }
+
+    if (db_check_model(app, model)) {
+        ret = py_call_method(app, model, method, tuple, &result);
+
+        if (ret == 0) {
+            return result;
+        }
+        else if (ret == 1) {
+            PyErr_SetString(PyExc_Exception, "Internal error, unable to find script.");
+        }
+        return NULL;
+    }
+    else {
+        PyErr_SetString(PyExc_Exception, "Invalid application or model.");
+        return NULL;
+    }
+}
+
+static PyObject *
+c_notify(PyObject *self, PyObject *args)
+{
+    PyObject *item, *tuple, *result;
+    char *interface, *path, *method, *msg;
+
+    if (!PyArg_ParseTuple(args, "ss", &method, &msg))
+        return NULL;
+
+    path = dbus_message_get_path(my_proc.bus_msg);
+    interface = dbus_message_get_interface(my_proc.bus_msg);
+
+    dbus_signal(path, interface, method, PyString_FromString(msg));
+
+    Py_INCREF(Py_None);
+    return Py_None;
+}
+
+static PyObject *
+c_fail(PyObject *self, PyObject *args)
+{
+    const char *errstr;
+    size_t size;
+
+    if (!PyArg_ParseTuple(args, "s#", &errstr, &size)) {
+        return NULL;
+    }
+
+    PyErr_SetString(PyExc_Exception, PyString_AsString(PyTuple_GetItem(args, 0)));
+    return NULL;
+}
+
+static PyMethodDef methods[] = {
+    { "script", c_script, METH_NOARGS, "Return package name" },
+    { "call", c_call, METH_VARARGS, "Make a syncronous comar call" },
+    { "notify", c_notify, METH_VARARGS, "Emits a signal" },
+    { "fail", c_fail, METH_VARARGS, "Abort script" },
+    //{ "_", c_i18n, METH_VARARGS, "Return localized text from a dictionary" },
+    { NULL, NULL, 0, NULL }
+};
+
+
+PyObject *
+py_str_split(char *str, char delimiter)
+{
+    PyObject *result = PyList_New(0);
+    char *t, *s;
+    t = strdup(str);
+    for (; t; t = s) {
+        s = strchr(t, '|');
+        if (s) {
+            *s = '\0';
+            ++s;
+        }
+        PyList_Append(result, PyString_FromString(t));
+    }
+    free(str);
+    return result;
+}
 
 int
 py_in_tuple(PyObject *tuple, PyObject *item)
@@ -24,6 +146,24 @@ py_in_tuple(PyObject *tuple, PyObject *item)
             return 1;
         }
     }
+    return 0;
+}
+
+int
+py_compile(const char *script_path)
+{
+    PyObject *pCode;
+    char *code = load_file(script_path, NULL);
+    if (!code) {
+        return 1;
+    }
+
+    pCode = Py_CompileString(code, "<script.py>", Py_file_input);
+    free(code);
+    if (!pCode) {
+        return 2;
+    }
+
     return 0;
 }
 
@@ -38,13 +178,12 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
                     2 on exceptions
     */
     PyObject *pCode, *pModule, *pDict, *pFunc, *pStr;
-    PyObject *argNames, *pArgs, *pkArgs;
+    PyObject *argNames, *pkArgs;
     PyObject *pKey, *pValue, *pItem;
     PyObject *pFuncCode;
     PyMethodDef *meth;
     node *n;
-    int arg_count;
-    int i;
+    int i, e;
 
     char *script_path = get_script_path(app, model);
     char *code = load_file(script_path, NULL);
@@ -54,7 +193,15 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
         return 1;
     }
 
+    pModule = PyImport_AddModule("__builtin__");
+    pDict = PyModule_GetDict(pModule);
+    for (meth = methods; meth->ml_name; meth++) {
+        pCode = PyCFunction_New(meth, NULL);
+        PyDict_SetItemString(pDict, meth->ml_name, pCode);
+    }
+
     pCode = Py_CompileString(code, "<script.py>", Py_file_input);
+    free(code);
     if (!pCode) {
         return 2;
     }
@@ -74,15 +221,18 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
 
     pFunc = PyDict_GetItemString(pDict, method);
     if (!pFunc || !PyCallable_Check(pFunc)) {
-        PyErr_SetString(PyExc_NameError, "Unknown function.");
         Py_DECREF(pModule);
+        PyErr_SetString(PyExc_NameError, "Unknown method.");
         return 2;
     }
 
-    pArgs = PyList_AsTuple(args);
+    if (!PyTuple_Check(args)) {
+        PyErr_SetString(PyExc_TypeError, "Arguments must be passed as tuple.");
+        return 2;
+    }
     pkArgs = PyDict_New();
 
-    *ret = PyObject_Call(pFunc, pArgs, pkArgs);
+    *ret = PyObject_Call(pFunc, args, pkArgs);
 
     if (!*ret) {
         Py_DECREF(pModule);
@@ -128,9 +278,14 @@ dbus_py_get_signature(PyObject *obj)
     return '?';
 }
 
-static char *
+char *
 dbus_py_get_object_signature(PyObject *obj)
 {
+    /*!
+    Returns signature of a Python object.
+    If style is 0, returns DBus signature, else Python signature
+    @return signature
+    */
     int i;
     int size;
     char *sign_content, *sign_subcontent;
@@ -269,7 +424,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
                 PyErr_SetString(PyExc_TypeError, "Array returned by function contains unknown data type.");
                 return 0;
             }
-            sign_sub = (char *) str_lshift(sign_container, 1);
+            sign_sub = (char *) strsub(sign_container, 1, 0);
             if (sign_sub[0] == '{') {
                 // If content is a dictionary, container signature 'a' must be included.
                 e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_container, &sub);
@@ -337,11 +492,6 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
 
 
 // DBusMessageIter -> PyObject translation
-PyObject *
-dbus_py_get_list(DBusMessageIter *iter);
-
-PyObject *
-dbus_py_get_dict(DBusMessageIter *iter);
 
 PyObject *
 dbus_py_get_item(DBusMessageIter* iter)

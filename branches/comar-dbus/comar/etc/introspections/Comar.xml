@@ -1,0 +1,22 @@
+<interface name="tr.org.pardus.comar">
+    <method name="register">
+        <arg name="application" type="s" direction="in"/>
+        <arg name="model" type="s" direction="in"/>
+        <arg name="file" type="s" direction="in"/>
+        <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="remove">
+        <arg name="application" type="s" direction="in"/>
+        <arg name="result" type="b" direction="out"/>
+    </method>
+    <method name="listApplications">
+        <arg name="applications" type="as" direction="out"/>
+    </method>
+    <method name="listModels">
+        <arg name="models" type="as" direction="out"/>
+    </method>
+    <method name="listApplicationModels">
+        <arg name="application" type="s" direction="in"/>
+        <arg name="models" type="as" direction="out"/>
+    </method>
+</interface>

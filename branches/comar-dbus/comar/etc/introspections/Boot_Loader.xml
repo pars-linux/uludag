@@ -37,4 +37,7 @@
     <method name="removeUnused">
         <arg name="version" type="s" direction="in"/>
     </method>
+    <signal name="Changed">
+        <arg name="changed_item" type="s"/>
+    </signal>
 </interface>

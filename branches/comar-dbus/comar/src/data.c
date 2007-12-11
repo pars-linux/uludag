@@ -44,10 +44,10 @@ db_init(void)
         // FIXME: check perms and owner
     }
 
-    size = strlen(cfg_data_dir) + 11;
+    size = strlen(cfg_data_dir) + 6;
     char *code_dir = malloc(size);
     if (!code_dir) return -3;
-    snprintf(code_dir, size, "%s/code", cfg_data_dir);
+    snprintf(code_dir, size, "%s/code\0", cfg_data_dir);
     if (stat(code_dir, &fs) != 0) {
         if (0 != mkdir(code_dir, S_IRWXU)) {
             log_error("Cannot create code dir '%s'\n", code_dir);
@@ -225,7 +225,7 @@ key_have_item(DB *db, const char *key, const char *item)
     t = strdup(old);
     if (!t) return -1;
     for (; t; t = s) {
-        s = strchr(t, '/');
+        s = strchr(t, '|');
         if (s) {
             *s = '\0';
             ++s;
@@ -269,7 +269,7 @@ append_item(DB *db, const char *key, const char *item)
     len = strlen(old) + 1 + strlen(item) + 1;
     data = malloc(len);
     if (!data) return -1;
-    snprintf(data, len, "%s/%s", old, item);
+    snprintf(data, len, "%s|%s", old, item);
 
     e = put_data(db, key, data, strlen(data) + 1);
     if (e) return -1;
@@ -303,6 +303,8 @@ db_remove_app(char *app)
 
     if (open_env(&db, APP_DB)) goto out;
 
+    del_data(db.app, app);
+
     list = get_data(db.app, "__apps__", NULL, &e);
 
     if (list) {
@@ -310,11 +312,11 @@ db_remove_app(char *app)
         int sa = strlen(app);
         k = strstr(list, app);
         if (k) {
-            if (k[sa] == '/') ++sa;
+            if (k[sa] == '|') ++sa;
             memmove(k, k + sa, strlen(k) - sa + 1);
             sa = strlen(list);
             if (sa > 0) {
-                if (list[sa-1] == '/') list[sa-1] = '\0';
+                if (list[sa-1] == '|') list[sa-1] = '\0';
             }
             e = put_data(db.app, "__apps__", list, strlen(list) + 1);
             if (e) goto out;
@@ -344,11 +346,11 @@ db_remove_model(char *app, char *model)
         int sa = strlen(model);
         k = strstr(list, model);
         if (k) {
-            if (k[sa] == '/') ++sa;
+            if (k[sa] == '|') ++sa;
             memmove(k, k + sa, strlen(k) - sa + 1);
             sa = strlen(list);
             if (sa > 0) {
-                if (list[sa-1] == '/') list[sa-1] = '\0';
+                if (list[sa-1] == '|') list[sa-1] = '\0';
             }
             e = put_data(db.app, app, list, strlen(list) + 1);
             if (e) goto out;

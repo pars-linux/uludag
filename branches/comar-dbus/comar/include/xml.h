@@ -8,7 +8,6 @@
 */
 
 int xml_export_nodes(char *nodes, char **bufferp);
-
 int xml_export_apps(char **bufferp);
-
 int xml_export_interfaces(char *app, char **intros);
+int xml_export_system(char **intros);

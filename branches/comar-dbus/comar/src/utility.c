@@ -19,7 +19,50 @@
 
 const char *valid_app_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+";
 const char *valid_model_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.";
-const char *path_prefix = "/package/";
+
+char *
+strsub(char *str, int start, int end)
+{
+    if (start < 0) {
+        start = strlen(str) + start;
+    }
+    else if (start > strlen(str)) {
+        end = strlen(str);
+    }
+    if (end == 0) {
+        end = strlen(str);
+    }
+    else if (end < 0) {
+        end = strlen(str) + end;
+    }
+    else if (end > strlen(str)) {
+        end = strlen(str);
+    }
+
+    char *new_src, *t;
+    new_src = malloc(end - start + 2);
+    for (t = str + start; t < str + end; t++) {
+        new_src[t - (str + start)] = *t;
+    }
+    new_src[t - (str + start)] = '\0';
+    return new_src;
+}
+
+char *
+strrep(char *str, char old, char new)
+{
+    char *new_str, *t;
+
+    new_str = strdup(str);
+
+    for (t = new_str; *t != '\0'; t++) {
+        if (*t == old) {
+            *t = new;
+        }
+    }
+
+    return new_str;
+}
 
 int
 check_file(const char *fname)
@@ -59,15 +102,23 @@ load_file(const char *fname, int *sizeptr)
 }
 
 int
-in_str(const char chr, const char *str)
+save_file(const char *fname, const char *buffer, size_t size)
 {
-    int i;
+    /*!
+    @return Returns -1 if file could not be opened for binary writing \n
+    Returns -2 if file could not be written to disc or buffer is empty \n
+    Returns 0 on success
+    */
 
-    for (i = 0; i < strlen(str); i++) {
-        if (str[i] == chr) {
-            return 1;
-        }
+    FILE *f;
+
+    f = fopen(fname, "wb");
+    if (!f) return -1;
+    if (fwrite(buffer, size, 1, f) < 1) {
+        fclose(f);
+        return -2;
     }
+    fclose(f);
     return 0;
 }
 
@@ -81,7 +132,7 @@ check_model_name(const char *model)
     }
 
     for (i = 0; i < strlen(model); i++) {
-        if (!in_str(model[i], valid_model_chars)) {
+        if (strchr(valid_model_chars, model[i]) == NULL) {
             return 0;
         }
     }
@@ -98,45 +149,11 @@ check_app_name(const char *app)
     }
 
     for (i = 0; i < strlen(app); i++) {
-        if (!in_str(app[i], valid_app_chars)) {
+        if (strchr(valid_model_chars, app[i]) == NULL) {
             return 0;
         }
     }
     return 1;
-}
-
-char *
-str_lshift(const char *str, int num)
-{
-    char *new_str, *old_str, *t, *t2;
-    int size;
-
-    size = strlen(str) - num + 1;
-    new_str = malloc(size);
-
-    for (t = (char *) str + num, t2 = new_str; *t != '\0'; t++, t2++) {
-        *t2 = *t;
-    }
-    *t2 = '\0';
-
-    return new_str;
-}
-
-char *
-str_replace(const char *str, const char old, const char new)
-{
-    char *new_str, *t, *t2;
-    int size;
-
-    new_str = strdup(str);
-
-    for (t = new_str; *t != '\0'; t++) {
-        if (*t == old) {
-            *t = new;
-        }
-    }
-
-    return new_str;
 }
 
 char *
@@ -148,7 +165,7 @@ get_xml_path(const char *model)
     size = strlen(cfg_config_dir) + 1 + strlen("introspections") + 1 + strlen(model) + 5;
     realpath = malloc(size);
 
-    model_escaped = (char *) str_replace(model, '.', '_');
+    model_escaped = (char *) strrep(model, '.', '_');
 
     // Generate script path
     snprintf(realpath, size, "%s/introspections/%s.xml\0", cfg_config_dir, model_escaped);
@@ -165,7 +182,7 @@ get_script_path(const char *app, const char *model)
     size = strlen(cfg_data_dir) + 1 + strlen("code") + 1 + strlen(model) + 1 + strlen(app) + 4;
     realpath = malloc(size);
 
-    model_escaped = (char *) str_replace(model, '.', '_');
+    model_escaped = (char *) strrep(model, '.', '_');
 
     // Generate script path
     snprintf(realpath, size, "%s/code/%s_%s.py\0", cfg_data_dir, model_escaped, app);
