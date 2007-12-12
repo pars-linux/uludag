@@ -48,10 +48,12 @@ static void
 log_print(const char *fmt, va_list ap, int error)
 {
     /*!
-    Writes log to file (cfg_log_file_name) or stdout according to cfg_log_* options
-    comar version, process id, timestamp and errors(if any) are written
-    \sa cfg.c
-    */
+     * Writes log to file (cfg_log_file_name) or stdout according to cfg_log_* options.
+     *
+     * @fmt Format string
+     * @ap Argument list
+     * @error 1 if this is an error message
+     */
 
     if (cfg_log_console) {
         pidstamp(stdout);
@@ -91,9 +93,9 @@ void
 log_error(const char *fmt, ...)
 {
     /*!
-    Same as log_info, if this function is called instead, writes
-    information as an 'error' to log file
-    */
+     * Same as log_info, if this function is called instead, writes
+     * information as an 'error' to log file
+     */
 
     va_list ap;
 
@@ -107,10 +109,11 @@ void
 log_info(const char *fmt, ...)
 {
     /*!
-    Prints log info of variable arguments with log_print function.
-    Console or file usage depends on cfg_log_* options
-    \sa log_print cfg.c
-    */
+     * Prints log info of variable arguments with log_print function.
+     * Console or file usage depends on cfg_log_* options
+     *
+     * @fmt Format string
+     */
 
     va_list ap;
 
@@ -123,6 +126,14 @@ log_info(const char *fmt, ...)
 void
 log_debug(int subsys, const char *fmt, ...)
 {
+    /*!
+     * Same as log_info. If debug level doesn't match cfg_log_*
+     * options, does nothing.
+     *
+     * @subsys Debug level
+     * @fmt Format string
+     */
+
     va_list ap;
 
     if ((cfg_log_flags & subsys) == 0)
