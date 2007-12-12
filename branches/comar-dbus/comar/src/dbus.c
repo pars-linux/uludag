@@ -21,9 +21,16 @@
 #include "process.h"
 #include "utility.h"
 
+//! Sends message to client
 void
 dbus_send(DBusMessage *reply)
 {
+    /*
+     * Sends DBus message to client.
+     *
+     * @reply DBus message to be sent
+     */
+
     dbus_uint32_t serial = 0;
 
     if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
@@ -35,9 +42,19 @@ dbus_send(DBusMessage *reply)
     dbus_message_unref(reply);
 }
 
+//! Emits a signal
 void
 dbus_signal(const char *path, const char *interface, const char *name, PyObject *obj)
 {
+    /*
+     * Emits a DBus signal.
+     * 
+     * @path Object path
+     * @interface Interface
+     * @name Signal name
+     * @obj Arguments (Python object)
+     */
+
     DBusMessage *msg;
     DBusMessageIter iter;
     dbus_uint32_t serial = 0;
@@ -49,18 +66,31 @@ dbus_signal(const char *path, const char *interface, const char *name, PyObject 
     dbus_send(msg);
 }
 
+//! Creates an error message and sends
 static void
 dbus_reply_error(char *str)
 {
+    /*
+     * Creates an error message and sends to client. Does nothing if client
+     * ignores reply.
+     *
+     * @str Message
+     */
+
     if (dbus_message_get_no_reply(my_proc.bus_msg)) return;
 
     DBusMessage *reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, str);
     dbus_send(reply);
 }
 
+//! Logs a Python exception
 static void
 log_exception()
 {
+    /*
+     * Logs a Python exception and sends reply to the client.
+     */
+
     PyObject *pType;
     PyObject *pValue;
     PyObject *pTrace;
@@ -93,9 +123,17 @@ log_exception()
     dbus_reply_error(vStr);
 }
 
+//! Creates a message from Python object and sends
 static void
 dbus_reply_object(PyObject *obj)
 {
+    /*
+     * Creates a DBus message from Python object and sends to client. 
+     * Does nothing if client ignores reply.
+     *
+     * @obj Python object
+     */
+
     if (dbus_message_get_no_reply(my_proc.bus_msg)) return;
 
     DBusMessage *reply;
@@ -109,9 +147,17 @@ dbus_reply_object(PyObject *obj)
     dbus_send(reply);
 }
 
+//! Creates a message and sends
 static void
 dbus_reply_str(char *str)
 {
+    /*
+     * Creates a DBus message from string and sends to client.
+     * Does nothing if client ignores reply.
+     *
+     * @str Message
+     */
+
     if (dbus_message_get_no_reply(my_proc.bus_msg)) return;
 
     DBusMessage *reply;
@@ -122,9 +168,16 @@ dbus_reply_str(char *str)
     dbus_send(reply);
 }
 
+//! Creates introspection for given object path
 static void
 dbus_introspection_methods(const char *path)
 {
+    /*
+     * Creates introspection XML for given object path and sends to client.
+     *
+     * @path Object path
+     */
+
     if (strcmp(path, "/") == 0) {
         iks *xml = iks_new("node");
 
@@ -197,9 +250,22 @@ dbus_introspection_methods(const char *path)
     }
 }
 
+//! Replies messages made to COMAR core interface
 static void
 dbus_comar_methods(const char *method)
 {
+    /*
+     * Replies messages made to COMAR core interface.
+     * Methods in COMAR core are:
+     *     listApplications()
+     *     listModels()
+     *     listApplicationModels(app)
+     *     register(app, model, script)
+     *     remove(app)
+     *
+     * @method Method
+     */
+
     PyObject *args, *result;
     char *app, *model, *script, *apps, *models, *code;
     int i;
@@ -304,9 +370,19 @@ dbus_comar_methods(const char *method)
     }
 }
 
+//! Replies messages made to registered application models
 void
 dbus_app_methods(const char *interface, const char *path, const char *method)
 {
+    /*
+     * Replies messages made to registered application models.
+     * Extracts method arguments from DBus Message (reachable via my_proc.bus_msg)
+     *
+     * @interface Interface
+     * @path Object path
+     * @method Method
+     */
+
     DBusMessage *reply;
     DBusMessageIter iter;
     PyObject *args, *result;
@@ -338,9 +414,18 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
     free(model);
 }
 
+//! Forked function that handles method calls
 static void
 dbus_method_call()
 {
+    /*
+     * This function handles method calls.
+     *
+     * DBus connection is reacable via my_proc.bus_conn
+     * DBus message is reacable via my_proc.bus_msg
+     *
+     */
+
     char *app, *model;
 
     struct timeval time_start, time_end;
@@ -388,9 +473,15 @@ dbus_method_call()
     csl_end();
 }
 
+//! Starts a server and listens for calls/signals
 void
 dbus_listen()
 {
+    /*
+     * Starts a DBus server and listens for calls and signals.
+     * Forks "dbus_method_call" when a method call is fetched.
+     */
+
     struct ProcChild *p;
     int size;
 
