@@ -47,15 +47,45 @@ class MainApplicationWidget(QWidget):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
         self.parent = parent
-        self.progressDialog = Progress.Progress(self)
 
+        self.progressDialog = Progress.Progress(self)
         self.componentDict = {}
         self.lastSelectedComponent = None
         self.command = None
         self.state = install_state
         self.basket = Basket.Basket()
         self.packageCache = PackageCache.PackageCache()
+        self.command = Commander.Commander(self)
+        self.settings = Settings.Settings(Globals.config())
 
+        # set up timers
+        self.timer = QTimer(self)
+        self.delayTimer = QTimer(self)
+
+        self.setupInterface()
+        self.setupConnections()
+
+        self.delayTimer.start(500, True)
+
+        # inform user for the delay...
+        item = KListViewItem(self.componentsList)
+        item.setText(0,i18n("Loading Package List..."))
+        self.componentsList.setSelected(self.componentsList.firstChild(),True)
+        self.tipper = ComponentTipper(self)
+
+        self.show()
+
+    def packageClicked(self, itemName, checked):
+        if checked:
+            if itemName not in self.basket.packages:
+                self.basket.add(itemName)
+        else:
+            self.basket.remove(itemName)
+
+        self.updateButtons()
+        self.updateStatusBar()
+
+    def setupInterface(self):
         self.layout = QGridLayout(self)
         self.leftLayout = QVBox(self)
         self.rightLayout = QVBox(self)
@@ -81,8 +111,6 @@ class MainApplicationWidget(QWidget):
         self.operateAction.setIconSet(loadIconSet("ok"))
         self.operateAction.setEnabled(False)
 
-        self.timer = QTimer(self)
-
         # list of packages on the right side
         self.specialList = SpecialList(self.rightLayout)
 
@@ -100,40 +128,15 @@ class MainApplicationWidget(QWidget):
         self.layout.setColStretch(1,2)
         self.layout.setColStretch(2,6)
 
+    def setupConnections(self):
         self.connect(self.componentsList,SIGNAL("selectionChanged(QListViewItem *)"),self.refreshComponentList)
         self.connect(self.searchLine, SIGNAL("textChanged(const QString&)"),self.searchStringChanged)
         self.connect(self.timer, SIGNAL("timeout()"), self.searchPackage)
         self.connect(self.clearButton, SIGNAL("clicked()"),self.searchLine, SLOT("clear()"))
         self.connect(self.basketAction, SIGNAL("clicked()"),self.showBasket)
         self.connect(self.operateAction, SIGNAL("clicked()"),self.takeAction)
-
         self.connect(self.specialList, PYSIGNAL("checkboxClicked"), self.packageClicked)
-
-        self.command = Commander.Commander(self)
-
-        self.delayTimer = QTimer(self)
         self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadComponentList)
-        self.delayTimer.start(500, True)
-
-        # inform user for the delay...
-        item = KListViewItem(self.componentsList)
-        item.setText(0,i18n("Loading Package List..."))
-        self.componentsList.setSelected(self.componentsList.firstChild(),True)
-
-        self.tipper = ComponentTipper(self)
-        self.show()
-
-        self.settings = Settings.Settings(Globals.config())
-
-    def packageClicked(self, itemName, checked):
-        if checked:
-            if itemName not in self.basket.packages:
-                self.basket.add(itemName)
-        else:
-            self.basket.remove(itemName)
-
-        self.updateButtons()
-        self.updateStatusBar()
 
     def lazyLoadComponentList(self):
         self.parent.tray.updateTrayIcon()
@@ -164,6 +167,7 @@ class MainApplicationWidget(QWidget):
         KMessageBox.error(self, i18n("Package-manager needs to update package database. You need a network connection to update."),
                           i18n("Package database is empty"))
 
+    # clear cache, basket, search line...
     def resetState(self):
         self.basket.empty()
         self.basketAction.setEnabled(False)
@@ -484,7 +488,6 @@ class MainApplicationWidget(QWidget):
 
     #create a component list from given package list
     def createComponentList(self, packages, allComponent=False):
-
         # filter for selecting only apps with gui
         def appGuiFilter(pkg_name):
             if self.state == remove_state:

@@ -60,6 +60,8 @@ class SpecialList(QObject):
             if reverse or not element.checked():
                 element.click()
         self.selectingAll = False
+
+        #TODO: Fix this
         #self.parent.updateStatusBar()
 
     def clear(self):

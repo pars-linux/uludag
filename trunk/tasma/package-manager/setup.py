@@ -41,6 +41,10 @@ kdedistutils.setup(
                         'src/CustomEventListener.py',
                         'src/Basket.py',
                         'src/PackageCache.py',
+                        'src/MainWidget.py',
+                        'src/Globals.py',
+                        'src/Debug.py',
+                        'src/SpecialList.py',
 
                         # ui files
                         'src/ProgressDialog.ui',
