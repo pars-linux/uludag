@@ -64,6 +64,7 @@ class Commander(QObject):
             return
 
         if reply.command == "notify":
+            print "Comar notify received"
             (notification, script, data) = (reply.notify, reply.script, reply.data)
             data = unicode(data)
             if notification == "System.Manager.error":
@@ -85,14 +86,17 @@ class Commander(QObject):
         # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
         # some misbehaviour is seen, comar.log is always there to look.
         elif reply.command == "error":
+            print "Comar error received"
             self.comar.com_lock.unlock()
             self.parent.finished("System.Manager.cancelled")
             return
         elif reply.command == "denied":
+            print "Comar denied received"
             self.comar.com_lock.unlock()
             self.parent.finished("System.Manager.cancelled")
             self.parent.showErrorMessage(i18n("You do not have permission to do this operation."))
         elif reply.command == "fail":
+            print "Comar fail received"
             if reply.data == "System.Manager.cancelled":
                 self.comar.com_lock.unlock()
                 self.parent.finished(reply.data)

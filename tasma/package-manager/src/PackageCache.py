@@ -84,7 +84,7 @@ class PackageCache:
                 return True
 
         found = []
-        for pkg in self.packages:
+        for pkg in self.packages.values():
             if terms == filter(lambda x:search(pkg, x), terms):
                 found.append(pkg.name)
 
