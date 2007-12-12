@@ -38,6 +38,7 @@ c_script(PyObject *self, PyObject *args)
 {
     /*!
      * This method can be used in CSL scripts to get script's owner.
+     *
      * @return Owner of the running CSL script.
      */
 
@@ -53,6 +54,7 @@ c_call(PyObject *self, PyObject *args)
     /*!
      * This method can be used in CSL scripts to call Comar methods
      * internally.
+     *
      * @return Called method's reply
      */
 
@@ -170,6 +172,8 @@ int
 py_compile(const char *script_path)
 {
     /*!
+     * Checks CSL script for errors.
+     *
      * @script_path Absolute or relative path of the CSL script.
      * @return 0 on success, 1 on IO errors (missing file, etc.), 2 on script error
      */
@@ -195,6 +199,7 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
 {
     /*!
      * Calls model's method with given arguments.
+     *
      * @app Application name
      * @model Model
      * @method Method
@@ -275,6 +280,7 @@ dbus_py_get_signature(PyObject *obj)
 {
     /*!
      * This method can be used to get type of given Python object.
+     *
      * @obj Python object
      * @return Signature
      */
@@ -315,6 +321,7 @@ dbus_py_get_object_signature(PyObject *obj)
 {
     /*!
      * Returns signature of a Python object including it's content.
+     *
      * @obj Python object
      * @return Signature, or NULL on error
      */
@@ -405,6 +412,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
 {
     /*!
      * Converts a Python object to DBus fotmat.
+     *
      * @iter Iterator to append message to
      * @obj Python object
      * @return 0 on success, 1 on error
@@ -536,6 +544,7 @@ dbus_py_get_item(DBusMessageIter* iter)
 {
     /*!
      * Converts a DBus argument to Python object.
+     *
      * @iter Iterator to append message to
      * @return Python object
      */
@@ -631,6 +640,7 @@ dbus_py_get_dict(DBusMessageIter *iter)
 {
     /*!
      * Converts a dictionary entry array to Python dictionary.
+     *
      * @iter Iterator to get object from
      * @return Python object, or NULL on error
      */
@@ -673,6 +683,7 @@ dbus_py_get_list(DBusMessageIter *iter)
 {
     /*
      * Converts an array to Python list
+     *
      * @iter Iterator to get object from
      * @return Python object, or NULL on error
      */
@@ -693,6 +704,7 @@ dbus_py_import(DBusMessage *msg)
 {
     /*!
      * Extracts arguments of a DBus message and converts it to a Python object
+     *
      * @msg DBus message to get objects from
      * @return Python object
      */
