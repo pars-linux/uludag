@@ -25,11 +25,9 @@ int
 db_init(void)
 {
     /*!
-    Checks comar db directory and db format, creates if not exists.
-    Also checks code/lock file
-    @return Returns 0 on success, \n Returns -1 on error, \n Returns -2 if db type is not app or model \n
-    Returns -3 if code/lock name is not set ( either theres something wrong with data dir,
-    or memory allocation error )
+     * Checks Comar DB directory, creates if not exists.
+     *
+     * @return 0 on success, -1 on error,
     */
 
     struct stat fs;
@@ -72,13 +70,13 @@ static int
 open_database(DB_ENV *env, DB **dbp, const char *name)
 {
     /*!
-    Creates a DB structure that is the handle for a Berkeley DB database
-    and opens it as a standalone, sorted - balanced tree structured DB.
-    env is the environment, and dbp is db type ( model, app, code or profile )
-    with 'name' file name
-    @return Returns -1 if can not create database \n
-    Returns -2 if can not open database \n
-    Returns 0 otherwise \n
+     * Creates a DB structure that is the handle for a Berkeley DB database
+     * and opens it as a standalone, sorted - balanced tree structured DB.
+     *
+     * @env The environment
+     * @dbp DB type
+     * @name File name
+     * @return 0 on success, -1 if can not create database, -2 if can not open database.
     */
 
     int e;
@@ -99,20 +97,21 @@ open_database(DB_ENV *env, DB **dbp, const char *name)
     return 0;
 }
 
-//! Create and open DB_ENV
+//! Creates and open DB_ENV
 static int
 open_env(struct databases *db, int which)
 {
     /*!
-    Creates DB_ENV structure with db_home directory set to
-    comar db dir. After creating enviroment, opens database
-    with created env and specified DB type (type is 'which' in this case)
-    @return Returns -1 if can not create database environment \n
-    Returns -2 if can not open database environment. \n
-    Returns -3 if which is a model db, and db could not be created or opened \n
-    Returns -4 if which is a app db, and db could not be created or opened \n
-    Returns 0 otherwise
-    */
+     * Creates DB_ENV structure with db_home directory set to
+     * comar db dir. After creating enviroment, opens database
+     * with created env and specified DB type (type is 'which' in this case)
+     *
+     * @db Database
+     * @which DB type
+     * @return 0 on success, -1 if can not create database environment,
+     * -2 if can not open database environment, -3 if db could not be created 
+     * or opened.
+     */
 
     int e;
 
@@ -134,16 +133,20 @@ open_env(struct databases *db, int which)
     }
 
     if (which & APP_DB) {
-        if (open_database(db->env, &db->app, "app.db")) return -4;
+        if (open_database(db->env, &db->app, "app.db")) return -3;
     }
 
     return 0;
 }
 
-//! Close created databases and environment of db
+//! Closes created databases and environment of db
 static void
 close_env(struct databases *db)
 {
+    /*
+     * @db Database
+     */
+
     if (db->app) db->app->close(db->app, 0);
     db->env->close(db->env, 0);
 }
@@ -152,7 +155,16 @@ close_env(struct databases *db)
 static char *
 get_data(DB *db, const char *name, size_t *sizep, int *errorp)
 {
-    /*! \param errorp Error number returned */    
+    /*!
+     * Fetches and returns the record called 'name' from database 'db'
+     *
+     * @db Database
+     * @name Key
+     * @sizep Size pointer of the value, if requested
+     * @errorp Error pointer, if requested
+     * @return Keys' value, or NULL if not found
+     */
+
     DBT pair[2];
 
     memset(&pair[0], 0, sizeof(DBT) * 2);
@@ -168,17 +180,20 @@ get_data(DB *db, const char *name, size_t *sizep, int *errorp)
     return NULL;
 }
 
-//! Put data to a database
+//! Puts data to a database
 static int
 put_data(DB *db, const char *name, const char *data, size_t size)
 {
     /*!
-    Puts "name and 'size of name'" as first pair, and
-    "data and size" as second pair to DB. \n
-    DBT is key/data pair structure of berkeley db
-    @return This function can return a non-zero error for errors specified for \n
-    other Berkeley DB and C library or system functions. or DB_RUNRECOVERY
-    */
+     * Puts "name and 'size of name'" as first pair, and
+     * "data and size" as second pair to DB.
+     *
+     * @db Database
+     * @name Key
+     * @data Value
+     * @size Size
+     * @return 0 on success, non-zero on error
+     */
 
     DBT pair[2];
 
@@ -190,11 +205,18 @@ put_data(DB *db, const char *name, const char *data, size_t size)
     return db->put(db, NULL, &pair[0], &pair[1], 0);
 }
 
-//! Delete name from database
+//! Deletes name from database
 static int
 del_data(DB *db, const char *name)
 {
-    /*! @return Returns error number \sa put_data */    
+    /*!
+     * Deletes a key from database
+     *
+     * @db Database
+     * @name Key
+     * @return 0 on success, non-zero on error
+     */
+
     DBT key;
 
     memset(&key, 0, sizeof(DBT));
@@ -203,9 +225,18 @@ del_data(DB *db, const char *name)
     return db->del(db, NULL, &key, 0);
 }
 
+//! Says if database have that key
 static int
 have_key(DB *db, const char *key)
 {
+    /*!
+     * Says if database have that key
+     *
+     * @db Database
+     * @key Key
+     * @return 1 if true, 0 if false
+     */
+
     char *old, *t, *s;
     int e;
 
@@ -214,9 +245,19 @@ have_key(DB *db, const char *key)
     return old != NULL;
 }
 
+//! Says if key have that item in it's value
 static int
 key_have_item(DB *db, const char *key, const char *item)
 {
+    /*!
+     * Says if key have that item in it's value
+     *
+     * @db Database
+     * @key Key
+     * @item Item
+     * @return 1 if true, 0 if false
+     */
+
     char *old, *t, *s;
     int e;
 
@@ -238,15 +279,17 @@ key_have_item(DB *db, const char *key, const char *item)
     return 0;
 }
 
-//! Append an item to db
+//! Appends an item to db
 static int
 append_item(DB *db, const char *key, const char *item)
 {
     /*!
-    If theres no such record, put it in db
-    @return If item is already in db returns -1 \n
-    Returns 0 normally
-    */
+     * Appends an item to db
+     * @db Database
+     * @key Key
+     * @item Item
+     * @return 0 on success, non-zero on error
+     */
 
     char *old;
     char *data;
@@ -277,35 +320,54 @@ append_item(DB *db, const char *key, const char *item)
     return 0;
 }
 
+//! Registers an application model
 int
 db_register_model(char *app, char *model)
 {
+    /*
+     * Appends application to index "__app__", and model to app's index.
+     *
+     * @app Application
+     * @model Model
+     * @return 0 on success, non-zero on error
+     */
+
     struct databases db;
-    int e, ret = -1;
+    int ret = 0;
 
     if (open_env(&db, APP_DB)) goto out;
 
-    e = append_item(db.app, app, model);
-    e = append_item(db.app, "__apps__", app);
+    ret = append_item(db.app, app, model);
+    if (ret) goto out;
+    ret = append_item(db.app, "__apps__", app);
 
 out:
     close_env(&db);
     return ret;
 }
 
+//! Removes application
 int
 db_remove_app(char *app)
 {
+    /*
+     * Removes application from index "__app__" and remove app's index.
+     *
+     * @app Application
+     * @return 0 on success, non-zero on error
+     */
+
     struct databases db;
     char *list;
-    int e, ret = -1;
+    int ret = 0;
     int no;
 
     if (open_env(&db, APP_DB)) goto out;
 
     del_data(db.app, app);
 
-    list = get_data(db.app, "__apps__", NULL, &e);
+    list = get_data(db.app, "__apps__", NULL, &ret);
+    if (ret) goto out;
 
     if (list) {
         char *k;
@@ -318,8 +380,8 @@ db_remove_app(char *app)
             if (sa > 0) {
                 if (list[sa-1] == '|') list[sa-1] = '\0';
             }
-            e = put_data(db.app, "__apps__", list, strlen(list) + 1);
-            if (e) goto out;
+            ret = put_data(db.app, "__apps__", list, strlen(list) + 1);
+            if (ret) goto out;
         }
     }
     free(list);
@@ -329,17 +391,27 @@ out:
 }
 
 
+//! Removes model from application
 int
 db_remove_model(char *app, char *model)
 {
+    /*
+     * Removes model from app's index.
+     *
+     * @app Application
+     * @model Model
+     * @return 0 on success, non-zero on error
+     */
+
     struct databases db;
     char *list;
-    int e, ret = -1;
+    int ret = 0;
     int no;
 
     if (open_env(&db, APP_DB)) goto out;
 
-    list = get_data(db.app, app, NULL, &e);
+    list = get_data(db.app, app, NULL, &ret);
+    if (ret) goto out;
 
     if (list) {
         char *k;
@@ -352,8 +424,8 @@ db_remove_model(char *app, char *model)
             if (sa > 0) {
                 if (list[sa-1] == '|') list[sa-1] = '\0';
             }
-            e = put_data(db.app, app, list, strlen(list) + 1);
-            if (e) goto out;
+            ret = put_data(db.app, app, list, strlen(list) + 1);
+            if (ret) goto out;
         }
     }
     free(list);
@@ -362,53 +434,69 @@ out:
     return ret;
 }
 
+//! Returns installed applications
 int
 db_get_apps(char **bufferp)
 {
+    /*
+     * Exports installed application list.
+     *
+     * @bufferp Pointer to contain list
+     * @return 0 on success, non-zero on error
+     */
+
     struct databases db;
-    int e, ret = -1;
+    int ret = -1;
 
     if (open_env(&db, APP_DB)) goto out;
 
-    *bufferp = get_data(db.app, "__apps__", NULL, &e);
-    if (e) goto out; // error
+    *bufferp = get_data(db.app, "__apps__", NULL, &ret);
 
-    ret = 0;
 out:
     close_env(&db);
     return ret;
 }
 
+//! Returns application's models
 int
 db_get_models(char *app, char **bufferp)
 {
-    /*!
-    Fetches data of node 'node_no' and writes it to bufferp
-    @return Returns -1 on error, 0 otherwise
-    */
+    /*
+     * Exports application's models.
+     *
+     * @bufferp Pointer to contain list
+     * @return 0 on success, non-zero on error
+     */
+
     struct databases db;
-    int e, ret = -1;
+    int ret = -1;
 
     if (open_env(&db, APP_DB)) goto out;
 
-    *bufferp = get_data(db.app, app, NULL, &e);
-    if (e) goto out; // error
+    *bufferp = get_data(db.app, app, NULL, &ret);
 
-    ret = 0;
 out:
     close_env(&db);
     return ret;
 }
 
+//! Checks if application is registered
 int
 db_check_app(char *app)
 {
+    /*
+     * Checks if application is registered.
+     *
+     * @app Application
+     * @return 1 if true, 0 if false
+     */
+
     if (!check_app_name(app)) {
         return 0;
     }
 
     struct databases db;
-    int e, ret;
+    int ret = 0;
 
     if (open_env(&db, APP_DB)) goto out;
 
@@ -418,15 +506,24 @@ out:
     return ret;
 }
 
+//! Check if application has model
 int
 db_check_model(char *app, char *model)
 {
+    /*
+     * Check if application has model
+     *
+     * @app Application
+     * @model Model
+     * @return 1 if true, 0 if false
+     */
+
     if (!check_app_name(app) || !check_model_name(model)) {
         return 0;
     }
 
     struct databases db;
-    int e, ret;
+    int ret = 0;
 
     if (open_env(&db, APP_DB)) goto out;
 
