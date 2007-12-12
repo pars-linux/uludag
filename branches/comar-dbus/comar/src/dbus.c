@@ -103,7 +103,7 @@ dbus_reply_object(PyObject *obj)
 
     reply = dbus_message_new_method_return(my_proc.bus_msg);
     dbus_message_iter_init_append(reply, &iter);
-    if (!dbus_py_export(&iter, obj)) {
+    if (dbus_py_export(&iter, obj) != 0) {
         log_exception();
     }
     dbus_send(reply);

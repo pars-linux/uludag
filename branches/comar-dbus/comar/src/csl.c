@@ -18,29 +18,44 @@
 #include "process.h"
 #include "utility.h"
 
+//! Initializes Python VM
 void
 csl_init()
 {
     Py_Initialize();
 }
 
+//! Finalizes Python VM
 void
 csl_end()
 {
     Py_Finalize();
 }
 
+//! CSL method: script()
 static PyObject *
 c_script(PyObject *self, PyObject *args)
 {
+    /*!
+     * This method can be used in CSL scripts to get script's owner.
+     * @return Owner of the running CSL script.
+     */
+
     const char *path = dbus_message_get_path(my_proc.bus_msg);
     const char *app = strsub(path, strlen("/package/"), 0);
     return PyString_FromString(app);
 }
 
+//! CSL method: call(app, model, method, (arg0, arg1, ...))
 static PyObject *
 c_call(PyObject *self, PyObject *args)
 {
+    /*!
+     * This method can be used in CSL scripts to call Comar methods
+     * internally.
+     * @return Called method's reply
+     */
+
     PyObject *tuple, *result;
     char *app, *model, *method;
     int ret, i;
@@ -89,9 +104,14 @@ c_call(PyObject *self, PyObject *args)
     }
 }
 
+//! CSL method: notify(signal, message)
 static PyObject *
 c_notify(PyObject *self, PyObject *args)
 {
+    /*!
+     * This method can be used in CSL scripts to emit DBus signals.
+     */
+
     PyObject *item, *tuple, *result;
     const char *interface, *path, *method, *msg;
 
@@ -116,9 +136,14 @@ c_notify(PyObject *self, PyObject *args)
     }
 }
 
+//! CSL method: fail(message)
 static PyObject *
 c_fail(PyObject *self, PyObject *args)
 {
+    /*!
+     * This method can be used in CSL scripts to raise exceptions.
+     */
+
     const char *errstr;
     size_t size;
 
@@ -130,6 +155,7 @@ c_fail(PyObject *self, PyObject *args)
     return NULL;
 }
 
+//! CSL methods
 static PyMethodDef methods[] = {
     { "script", c_script, METH_NOARGS, "Return package name" },
     { "call", c_call, METH_VARARGS, "Make a syncronous comar call" },
@@ -139,9 +165,15 @@ static PyMethodDef methods[] = {
     { NULL, NULL, 0, NULL }
 };
 
+//! Checks CSL script for errors.
 int
 py_compile(const char *script_path)
 {
+    /*!
+     * @script_path Absolute or relative path of the CSL script.
+     * @return 0 on success, 1 on IO errors (missing file, etc.), 2 on script error
+     */
+
     PyObject *pCode;
     char *code = load_file(script_path, NULL);
     if (!code) {
@@ -157,16 +189,20 @@ py_compile(const char *script_path)
     return 0;
 }
 
-//! Call model's method with given arguments
+//! Calls model's method with given arguments
 int
 py_call_method(const char *app, const char *model, const char *method, PyObject *args, PyObject **ret)
 {
     /*!
-    Call model's method with given arguments.
-    @return Returns 0 on success
-                    1 on IO errors (missing file, etc.)
-                    2 on exceptions
-    */
+     * Calls model's method with given arguments.
+     * @app Application name
+     * @model Model
+     * @method Method
+     * @args Arguments in tuple
+     * @ret Value returned by method.
+     * @return 0 on success, 1 on IO errors (missing file, etc.), 2 on script error
+     */
+
     PyObject *pCode, *pModule, *pDict, *pFunc, *pStr;
     PyObject *argNames, *pkArgs;
     PyObject *pKey, *pValue, *pItem;
@@ -233,11 +269,16 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
     return 0;
 }
 
-// PyObject -> DBusMessage translation
-
+//! Returns DBus signature of a Python object
 static char
 dbus_py_get_signature(PyObject *obj)
 {
+    /*!
+     * This method can be used to get type of given Python object.
+     * @obj Python object
+     * @return Signature
+     */
+
     if (obj == Py_None) {
         return 'n';
     }
@@ -268,14 +309,16 @@ dbus_py_get_signature(PyObject *obj)
     return '?';
 }
 
+//! Returns DBus signature of a Python object including it's content.
 char *
 dbus_py_get_object_signature(PyObject *obj)
 {
     /*!
-    Returns signature of a Python object.
-    If style is 0, returns DBus signature, else Python signature
-    @return signature
-    */
+     * Returns signature of a Python object including it's content.
+     * @obj Python object
+     * @return Signature, or NULL on error
+     */
+
     int i;
     int size;
     char *sign_content, *sign_subcontent;
@@ -356,9 +399,17 @@ dbus_py_get_object_signature(PyObject *obj)
     }
 }
 
+//! Converts a Python object to DBus format.
 int
 dbus_py_export(DBusMessageIter *iter, PyObject *obj)
 {
+    /*!
+     * Converts a Python object to DBus fotmat.
+     * @iter Iterator to append message to
+     * @obj Python object
+     * @return 0 on success, 1 on error
+     */
+
     union {
         const char *s;
         unsigned char y;
@@ -376,7 +427,6 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
     PyObject *key, *value;
     int size;
     int i = 0;
-    int invalid = 0;
 
     char sign;
     char *sign_container, *sign_sub;
@@ -412,7 +462,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             sign_container = dbus_py_get_object_signature(obj);
             if (!sign_container) {
                 PyErr_SetString(PyExc_TypeError, "Array returned by function contains unknown data type.");
-                return 0;
+                return 1;
             }
             sign_sub = (char *) strsub(sign_container, 1, 0);
             if (sign_sub[0] == '{') {
@@ -435,7 +485,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             sign_container = dbus_py_get_object_signature(obj);
             if (!sign_container) {
                 PyErr_SetString(PyExc_TypeError, "Tuple returned by function contains unknown data type.");
-                return 0;
+                return 1;
             }
             e = dbus_message_iter_open_container(iter, DBUS_TYPE_STRUCT, NULL, &sub);
             if (!e) break;
@@ -449,7 +499,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             sign_container = dbus_py_get_object_signature(obj);
             if (!sign_container) {
                 PyErr_SetString(PyExc_TypeError, "Dictionary returned by function contains unknown data type.");
-                return 0;
+                return 1;
             }
             e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_container, &sub);
             free(sign_container);
@@ -469,7 +519,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             break;
         default:
             PyErr_SetString(PyExc_TypeError, "Unknown data type returned by function.");
-            return 0;
+            return 1;
     }
     // FIXME - cleanup?
     if (!e) {
@@ -477,15 +527,19 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
         exit(1);
     }
 
-    return 1;
+    return 0;
 }
 
-
-// DBusMessageIter -> PyObject translation
-
+//! Converts a DBus argument to Python object
 PyObject *
 dbus_py_get_item(DBusMessageIter* iter)
 {
+    /*!
+     * Converts a DBus argument to Python object.
+     * @iter Iterator to append message to
+     * @return Python object
+     */
+
     union {
         const char *s;
         unsigned char y;
@@ -571,9 +625,16 @@ dbus_py_get_item(DBusMessageIter* iter)
     return ret;
 }
 
+//! Converts a dictionary entry array to Python dictionary
 PyObject *
 dbus_py_get_dict(DBusMessageIter *iter)
 {
+    /*!
+     * Converts a dictionary entry array to Python dictionary.
+     * @iter Iterator to get object from
+     * @return Python object, or NULL on error
+     */
+
     int type;
     PyObject *ret = PyDict_New();
     while (dbus_message_iter_get_arg_type(iter) == DBUS_TYPE_DICT_ENTRY) {
@@ -606,9 +667,16 @@ dbus_py_get_dict(DBusMessageIter *iter)
     return ret;
 }
 
+//! Converts an array to Python list
 PyObject *
 dbus_py_get_list(DBusMessageIter *iter)
 {
+    /*
+     * Converts an array to Python list
+     * @iter Iterator to get object from
+     * @return Python object, or NULL on error
+     */
+
     int type;
     PyObject *ret = PyList_New(0);
 
@@ -619,9 +687,16 @@ dbus_py_get_list(DBusMessageIter *iter)
     return ret;
 }
 
+//! Converts DBus message's arguments to Python object
 PyObject *
 dbus_py_import(DBusMessage *msg)
 {
+    /*!
+     * Extracts arguments of a DBus message and converts it to a Python object
+     * @msg DBus message to get objects from
+     * @return Python object
+     */
+
     DBusMessageIter iter;
     dbus_message_iter_init(msg, &iter);
     return dbus_py_get_list(&iter);
