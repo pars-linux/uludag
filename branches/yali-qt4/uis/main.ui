@@ -337,14 +337,14 @@ p, li { white-space: pre-wrap; }
         <item>
          <layout class="QHBoxLayout" >
           <item>
-           <widget class="QPushButton" name="pushButton_3" >
+           <widget class="QPushButton" name="releaseNotes" >
             <property name="text" >
              <string>Release Notes</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4" >
+           <widget class="QPushButton" name="cancelSetup" >
             <property name="text" >
              <string>Cancel Setup</string>
             </property>

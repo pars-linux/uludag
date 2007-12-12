@@ -11,18 +11,22 @@
 # Please read the COPYING file.
 
 import sys
-from PyQt4 import QtCore, QtGui
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 from uis.main import Ui_YaliMain
 
-class yali4MainUi(QtGui.QWidget):
-    def __init__(self, parent=None):
-        QtGui.QWidget.__init__(self, parent)
-        self.ui = Ui_YaliMain()
-        self.ui.setupUi(self)
+class yali4MainUi(Ui_YaliMain):
+    def __init__(self):
+        self.ui = QtGui.QWidget()
+        self.setupUi(self.ui)
+        QObject.connect(self.buttonNext,SIGNAL("clicked()"),self.slotNext)
+
+    def slotNext(self):
+        print "Yattaa !!"
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     YaliMain = yali4MainUi()
-    YaliMain.show()
+    YaliMain.ui.show()
     sys.exit(app.exec_())
 
