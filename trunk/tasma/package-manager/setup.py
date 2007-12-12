@@ -45,6 +45,7 @@ kdedistutils.setup(
                         'src/Globals.py',
                         'src/Debug.py',
                         'src/SpecialList.py',
+                        'src/Component.py',
 
                         # ui files
                         'src/ProgressDialog.ui',
