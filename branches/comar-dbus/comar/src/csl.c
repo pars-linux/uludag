@@ -72,7 +72,7 @@ c_call(PyObject *self, PyObject *args)
         tuple = PyTuple_New(0);
     }
 
-    if (db_check_model(app, model)) {
+    if (db_check_model(app, model) && model_lookup_method(model, method) != -1) {
         ret = py_call_method(app, model, method, tuple, &result);
 
         if (ret == 0) {
@@ -84,7 +84,7 @@ c_call(PyObject *self, PyObject *args)
         return NULL;
     }
     else {
-        PyErr_SetString(PyExc_Exception, "Invalid application or model.");
+        PyErr_SetString(PyExc_Exception, "Invalid application, model or method.");
         return NULL;
     }
 }
@@ -101,10 +101,19 @@ c_notify(PyObject *self, PyObject *args)
     path = dbus_message_get_path(my_proc.bus_msg);
     interface = dbus_message_get_interface(my_proc.bus_msg);
 
-    dbus_signal(path, interface, method, PyString_FromString(msg));
+    char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
 
-    Py_INCREF(Py_None);
-    return Py_None;
+    if (model_lookup_signal(model, method) != -1) {
+        dbus_signal(path, interface, method, PyString_FromString(msg));
+        free(model);
+        Py_INCREF(Py_None);
+        return Py_None;
+    }
+    else {
+        free(model);
+        PyErr_SetString(PyExc_Exception, "Invalid application, model or method.");
+        return NULL;
+    }
 }
 
 static PyObject *
@@ -129,44 +138,6 @@ static PyMethodDef methods[] = {
     //{ "_", c_i18n, METH_VARARGS, "Return localized text from a dictionary" },
     { NULL, NULL, 0, NULL }
 };
-
-
-PyObject *
-py_str_split(char *str, char delimiter)
-{
-    PyObject *result = PyList_New(0);
-
-    if (str == NULL) {
-        return result;
-    }
-
-    char *t, *s;
-    t = strdup(str);
-    for (; t; t = s) {
-        s = strchr(t, '|');
-        if (s) {
-            *s = '\0';
-            ++s;
-        }
-        if (strlen(t) > 0) {
-            PyList_Append(result, PyString_FromString(t));
-        }
-    }
-    free(str);
-    return result;
-}
-
-int
-py_in_tuple(PyObject *tuple, PyObject *item)
-{
-    int i;
-    for (i = 0; i < PyTuple_Size(tuple); i++) {
-        if (strcmp(PyString_AsString(item), PyString_AsString(PyTuple_GetItem(tuple, i))) == 0) {
-            return 1;
-        }
-    }
-    return 0;
-}
 
 int
 py_compile(const char *script_path)

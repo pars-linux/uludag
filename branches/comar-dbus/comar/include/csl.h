@@ -17,7 +17,6 @@ int py_compile(const char *script_path);
 int py_call_method(const char *app, const char *model, const char *method, PyObject *args, PyObject **result);
 PyObject *dbus_py_import(DBusMessage *msg);
 int dbus_py_export(DBusMessageIter *iter, PyObject *obj);
-PyObject *py_str_split(char *str, char delimiter);
 
 PyObject *dbus_py_get_list(DBusMessageIter *iter);
 PyObject *dbus_py_get_dict(DBusMessageIter *iter);

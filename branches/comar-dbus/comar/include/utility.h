@@ -19,7 +19,4 @@ int save_file(const char *fname, const char *buffer, size_t size);
 int check_model_name(const char *model);
 int check_app_name(const char *app);
 char *get_script_path(const char *interface, const char *path);
-char *get_xml_path(const char *model);
 unsigned long time_diff(struct timeval *start, struct timeval *end);
-
-int str_in_list(const char *item, char delim, const char *list);

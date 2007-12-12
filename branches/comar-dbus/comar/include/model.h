@@ -7,5 +7,12 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-extern char *model_list;
+#include "iksemel.h"
+
+extern iks *model_xml;
+
+int model_lookup_interface(const char *iface);
+int model_lookup_method(const char *iface, const char *method);
+int model_lookup_signal(const char *iface, const char *signal);
+int model_get_iks(char *iface, iks **parent);
 int model_init();

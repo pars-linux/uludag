@@ -20,7 +20,6 @@
 #include "model.h"
 #include "process.h"
 #include "utility.h"
-#include "xml.h"
 
 void
 dbus_send(DBusMessage *reply)
@@ -126,33 +125,69 @@ dbus_reply_str(char *str)
 static void
 dbus_introspection_methods(const char *path)
 {
-    char *intros, *app;
-
     if (strcmp(path, "/") == 0) {
-        xml_export_nodes("system|package", &intros);
-        dbus_reply_str(intros);
-        free(intros);
+        iks *xml = iks_new("node");
+
+        // package node contains applications and models
+        iks_insert_attrib(iks_insert(xml, "node"), "name", "package");
+
+        // system node contains Comar methods (register, remove, ...)
+        iks_insert_attrib(iks_insert(xml, "node"), "name", "system");
+
+        dbus_reply_str(iks_string(NULL, xml));
+        iks_delete(xml);
     }
     else if (strcmp(path, "/system") == 0) {
-        xml_export_system(&intros);
-        dbus_reply_str(intros);
-        free(intros);
+        iks *xml = iks_new("node");
+        model_get_iks("Comar", &xml);
+        dbus_reply_str(iks_string(NULL, xml));
+        iks_delete(xml);
     }
     else if (strcmp(path, "/package") == 0) {
-        xml_export_apps(&intros);
-        dbus_reply_str(intros);
-        free(intros);
+        char *apps;
+        db_get_apps(&apps);
+        if (apps == NULL) {
+            dbus_reply_str("<node/>");;
+        }
+        else {
+            iks *xml = iks_new("node");
+            char *pch = strtok(apps, "|");
+            while (pch != NULL) {
+                if (strlen(pch) > 0) {
+                    iks_insert_attrib(iks_insert(xml, "node"), "name", pch);
+                }
+                pch = strtok(NULL, "|");
+            }
+            dbus_reply_str(iks_string(NULL, xml));
+            iks_delete(xml);
+            free(apps);
+        }
     }
     else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
-        app = (char *) strsub(path, strlen("/package/"), 0);
+        char *app = (char *) strsub(path, strlen("/package/"), 0);
         if (!db_check_app(app)) {
             log_error("No such application: '%s'\n", app);
             dbus_reply_error("No such application");
         }
         else {
-            xml_export_interfaces(app, &intros);
-            dbus_reply_str(intros);
-            free(intros);
+            char *models;
+            db_get_models(app, &models);
+            if (models == NULL) {
+                dbus_reply_str("<node/>");;
+            }
+            else {
+                iks *xml = iks_new("node");
+                char *pch = strtok(models, "|");
+                while (pch != NULL) {
+                    if (strlen(pch) > 0) {
+                        model_get_iks(pch, &xml);
+                    }
+                    pch = strtok(NULL, "|");
+                }
+                dbus_reply_str(iks_string(NULL, xml));
+                iks_delete(xml);
+                free(models);
+            }
         }
         free(app);
     }
@@ -165,30 +200,55 @@ dbus_introspection_methods(const char *path)
 static void
 dbus_comar_methods(const char *method)
 {
-    PyObject *args, *result, *list;
+    PyObject *args, *result;
     char *app, *model, *script, *apps, *models, *code;
     int i;
 
     if (strcmp(method, "listApplications") == 0) {
         db_get_apps(&apps);
-        result = py_str_split(apps, '|');
+        result = PyList_New(0);
+        if (apps != NULL) {
+            char *pch = strtok(apps, "|");
+            while (pch != NULL) {
+                if (strlen(pch) > 0) {
+                    PyList_Append(result, PyString_FromString(pch));
+                }
+                pch = strtok(NULL, "|");
+            }
+            free(apps);
+        }
         dbus_reply_object(result);
     }
     else if (strcmp(method, "listModels") == 0) {
-        result = py_str_split(model_list, '|');
+        result = PyList_New(0);
+        iks *obj;
+        for (obj = iks_first_tag(model_xml); obj; obj = iks_next_tag(obj)) {
+            if (iks_strcmp(iks_find_attrib(obj, "name"), "Comar") == 0) {
+                continue;
+            }
+            PyList_Append(result, PyString_FromString(iks_find_attrib(obj, "name")));
+        }
         dbus_reply_object(result);
     }
     else if (strcmp(method, "listApplicationModels") == 0) {
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
         db_get_models(app, &models);
-        if (models == NULL) {
-            log_error("No such application: '%s'\n", app);
-            dbus_reply_error("No such application");
+        if (models != NULL) {
+            result = PyList_New(0);
+            char *pch = strtok(models, "|");
+            while (pch != NULL) {
+                if (strlen(pch) > 0) {
+                    PyList_Append(result, PyString_FromString(pch));
+                }
+                pch = strtok(NULL, "|");
+            }
+            dbus_reply_object(result);
+            free(models);
         }
         else {
-            result = py_str_split(models, '|');
-            dbus_reply_object(result);
+            log_error("No such application: '%s'\n", app);
+            dbus_reply_error("No such application");
         }
     }
     else if (strcmp(method, "register") == 0) {
@@ -197,7 +257,7 @@ dbus_comar_methods(const char *method)
         model = PyString_AsString(PyList_GetItem(args, 1));
         script = PyString_AsString(PyList_GetItem(args, 2));
 
-        if (!str_in_list(model, '|', model_list) != 0) {
+        if (model_lookup_interface(model) == -1) {
             log_error("No such model: '%s'\n", model);
             dbus_reply_error("No such model.");
         }
@@ -226,11 +286,15 @@ dbus_comar_methods(const char *method)
         else {
             db_remove_app(app);
 
-            list = py_str_split(models, '|');
-            for (i = 0; i < PyList_Size(list); i++) {
-                script = get_script_path(app, PyString_AsString(PyList_GetItem(list, i)));
-                unlink(script);
+            char *pch = strtok(models, "|");
+            while (pch != NULL) {
+                if (strlen(pch) > 0) {
+                    script = get_script_path(app, pch);
+                    unlink(script);
+                }
+                pch = strtok(NULL, "|");
             }
+
             dbus_reply_object(Py_True);
         }
     }
@@ -251,12 +315,12 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
     char *app = (char *) strsub(path, strlen("/package/"), 0);
     char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
 
-    if (db_check_model(app, model)) {
+    if (db_check_model(app, model) && model_lookup_method(model, method) != -1) {
         args = PyList_AsTuple(dbus_py_import(my_proc.bus_msg));
         ret = py_call_method(app, model, method, args, &result);
 
         if (ret == 1) {
-            log_error("Unable to find code for '%s/%s'\n", model, app);
+            log_error("Unable to find: %s (%s)\n", model, app);
             dbus_reply_error("Internal error, unable to find script.");
         }
         else if (ret == 2) {
@@ -267,8 +331,8 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
         }
     }
     else {
-        log_error("Invalid application or model '%s/%s'\n", model, app);
-        dbus_reply_error("Invalid application or model");
+        log_error("Invalid application, model or method: %s.%s (%s)\n", model, method, app);
+        dbus_reply_error("Invalid application, model or method.");
     }
     free(app);
     free(model);

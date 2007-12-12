@@ -157,20 +157,6 @@ check_app_name(const char *app)
 }
 
 char *
-get_xml_path(const char *model)
-{
-    char *realpath;
-    int size;
-
-    size = strlen(cfg_config_dir) + 1 + strlen("introspections") + 1 + strlen(model) + 5;
-    realpath = malloc(size);
-
-    // Generate script path
-    snprintf(realpath, size, "%s/introspections/%s.xml\0", cfg_config_dir, model);
-    return realpath;
-}
-
-char *
 get_script_path(const char *app, const char *model)
 {
     char *realpath, *model_escaped, *t, *t2;
@@ -195,25 +181,4 @@ time_diff(struct timeval *start, struct timeval *end)
     msec = (end->tv_sec * 1000) + (end->tv_usec / 1000);
     msec -= (start->tv_sec * 1000) + (start->tv_usec / 1000);
     return msec;
-}
-
-int
-str_in_list(const char *item, char delim, const char *list)
-{
-    char *t, *s;
-
-    t = strdup(list);
-    if (!t) return -1;
-    for (; t; t = s) {
-        s = strchr(t, delim);
-        if (s) {
-            *s = '\0';
-            ++s;
-        }
-        if (strcmp(t, item) == 0) {
-            return 1;
-        }
-    }
-
-    return 0;
 }

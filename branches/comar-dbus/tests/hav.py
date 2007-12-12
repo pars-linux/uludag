@@ -14,6 +14,7 @@ Commands:
   %(name)s call <app> <model> <method> [args]
   %(name)s list [app]
   %(name)s listen
+  %(name)s models
   %(name)s register <app> <model> <script>
   %(name)s remove <app>
 ''' % {'name': sys.argv[0]}
@@ -97,6 +98,9 @@ def main():
                 return 1
             if iface.remove(app):
                 print "Removing %s" % app
+        elif cmd == "models":
+            for model in iface.listModels():
+                print model
         else:
             printUsage()
             return 1

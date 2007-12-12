@@ -43,7 +43,7 @@ main(int argc, char *argv[])
 
     // Load models
     if (model_init() != 0) {
-        puts(_("Unable to load models."));
+        puts(_("Unable to load model.xml."));
         exit(1);
     }
 
