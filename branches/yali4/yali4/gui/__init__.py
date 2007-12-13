@@ -10,5 +10,5 @@
 # Please read the COPYING file.
 #
 
-import yali
-__version__ = yali.__version__
+import yali4
+__version__ = yali4.__version__

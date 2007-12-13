@@ -101,7 +101,7 @@ class YaliBuild(build):
 
         cmd = [pyuic_exe, ui_file, '-o']
         cmd.append(py_file_name(ui_file))
-        spawn(cmd)
+        os.system(' '.join(cmd))
 
     def run(self):
         for f in qt_ui_files():

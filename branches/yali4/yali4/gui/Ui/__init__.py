@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005, TUBITAK/UEKAE
+# Copyright (C) 2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -10,8 +10,8 @@
 # Please read the COPYING file.
 #
 
-import yali
-__version__ = yali.__version__
+import yali4
+__version__ = yali4.__version__
 
 
 

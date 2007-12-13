@@ -49,8 +49,8 @@
     <layout class="QVBoxLayout" >
      <item>
       <widget class="QLabel" name="pix" >
-       <property name="text" >
-        <string>pix</string>
+       <property name="pixmap" >
+        <pixmap resource="data.qrc" >:/pics/installcd.png</pixmap>
        </property>
        <property name="alignment" >
         <set>Qt::AlignCenter</set>
@@ -186,6 +186,8 @@
  </widget>
  <layoutdefault spacing="6" margin="11" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <resources/>
+ <resources>
+  <include location="data.qrc" />
+ </resources>
  <connections/>
 </ui>
