@@ -14,14 +14,17 @@
 #include "iksemel.h"
 #include "utility.h"
 
+//! Model introspection
 iks *model_xml;
 
+//! Node types
 enum {
     N_INTERFACE,
     N_METHOD,
     N_SIGNAL
 };
 
+//! Node structure
 struct node {
     const char *path;
     const char *method;
@@ -33,14 +36,30 @@ struct node {
 
 #define TABLE_SIZE 367
 
+//! Node table
 static struct node **node_table;
+
+//! Node
 static struct node *nodes;
+
+//! Paths
 static char *paths;
+
+//! Number of nodes
 int model_nr_nodes;
 
+//! Prepares node tables
 static int
 prepare_tables(int max_nodes, size_t str_size)
 {
+    /*!
+     * Prepares node tables
+     *
+     * @max_nodes Number of nodes
+     * @str_size Length of string fields
+     * @return 0 on success, -1 on error
+     */
+
     nodes = calloc(max_nodes, sizeof(struct node));
     node_table = calloc(TABLE_SIZE, sizeof(struct node *));
     paths = malloc(str_size);
@@ -48,11 +67,21 @@ prepare_tables(int max_nodes, size_t str_size)
     return 0;
 }
 
+//! Path
 static char *path_ptr = NULL;
 
+//! Builds node path
 static char *
 build_path(iks *o, iks *m)
 {
+    /*!
+     * Builds node path from model node and method node
+     *
+     * @o Model node
+     * @m Method node
+     * @return Path
+     */
+
     if (path_ptr) {
         path_ptr += strlen(path_ptr) + 1;
     } else {
@@ -71,9 +100,18 @@ build_path(iks *o, iks *m)
     return path_ptr;
 }
 
+//! Hash method
 static unsigned int
 hash_string(const unsigned char *str, int len)
 {
+    /*!
+     * Hash method
+     *
+     * @str String
+     * @len Length
+     * @return Hash
+     */
+
     unsigned int h = 0, i;
 
     for (i = 0; i < len; i++) {
@@ -82,9 +120,16 @@ hash_string(const unsigned char *str, int len)
     return h;
 }
 
+//! Looks up interface in node table
 int
 model_lookup_interface(const char *iface)
 {
+    /*!
+     * Looks up interface in node table.
+     * @iface Interface
+     * @return Node index on success, -1 on error
+     */
+
     struct node *n;
     int val;
 
@@ -97,9 +142,17 @@ model_lookup_interface(const char *iface)
     return -1;
 }
 
+//! Looks up method in node table
 int
 model_lookup_method(const char *iface, const char *method)
 {
+    /*!
+     * Looks up method in node table.
+     * @iface Interface
+     * @method Method
+     * @return Node index on success, -1 on error
+     */
+
     struct node *n;
     int val, size;
     char *path;
@@ -119,9 +172,17 @@ model_lookup_method(const char *iface, const char *method)
     return -1;
 }
 
+//! Looks up signal in node table
 int
 model_lookup_signal(const char *iface, const char *signal)
 {
+    /*!
+     * Looks up signal in node table.
+     * @iface Interface
+     * @signal Signal
+     * @return Node index on success, -1 on error
+     */
+
     struct node *n;
     int val, size;
     char *path;
@@ -141,12 +202,17 @@ model_lookup_signal(const char *iface, const char *signal)
     return -1;
 }
 
+//! Adds node to table
 static int
 add_node(int parent_no, const char *path, int type)
 {
     /*!
-    parent_no is depth of node. adds node with path and type (method)
-    to node table
+     * Adds node to node table.
+     *
+     * @parent_no Parent node
+     * @path Path
+     * @type Node type
+     * @return Node index
     */
 
     struct node *n;
@@ -173,9 +239,17 @@ add_node(int parent_no, const char *path, int type)
     return n->no;
 }
 
+//! Imports model file
 static int
 model_import(const char *model_file)
 {
+    /*!
+     * Imports model file to node table.
+     *
+     * @model_file File to import
+     * @return 0 on success, -1 on error
+     */
+
     iks *grp, *obj, *met;
     size_t size = 0;
     size_t obj_size, met_size;
@@ -261,9 +335,18 @@ model_import(const char *model_file)
     return 0;
 }
 
+//! Imports path's interfaces and appends to parent node
 int
 model_get_iks(char *path, iks **parent)
 {
+    /*!
+     * Imports path's interfaces and appends to parent node.
+     *
+     * @path Model name
+     * @parent Parent XML node pointer
+     * @return 0 on success, non-zero on error
+     */
+
     iks *obj, *new;
     for (obj = iks_first_tag(model_xml); obj; obj = iks_next_tag(obj)) {
         if (iks_strcmp(iks_find_attrib(obj, "name"), path) == 0) {
@@ -284,6 +367,7 @@ model_get_iks(char *path, iks **parent)
     return 0;
 }
 
+//! Initializes model node table
 int
 model_init()
 {

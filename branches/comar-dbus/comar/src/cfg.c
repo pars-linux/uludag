@@ -18,18 +18,34 @@
 #include "log.h"
 #include "utility.h"
 
-// Global options
+//! Bus name
 char *cfg_bus_name = "tr.org.pardus.comar";
+
+//! Configuration directory
 char *cfg_config_dir = "/etc/comar";
+
+//! Data directory
 char *cfg_data_dir = "/var/db/comar";
+
+//! Bus type (system or session)
 int cfg_bus_type = DBUS_BUS_SYSTEM;
+
+//! Max idle time to shutdown session service
 int cfg_idle_shutdown = 30;
+
+//! Print log messages to console?
 int cfg_log_console = 0;
+
+//! Save log messages?
 int cfg_log_file = 1;
+
+//! Log file
 char *cfg_log_file_name = "/var/log/comar.log";
+
+//! Log debug flags
 int cfg_log_flags = 0;
 
-// Log flags
+//! Debug flags
 static struct logflag_struct {
     const char *flag;
     int value;
@@ -42,7 +58,7 @@ static struct logflag_struct {
     { NULL, 0 }
 };
 
-// Command line options
+//! Command line options
 static struct option longopts[] = {
     { "configdir", required_argument, NULL, 'c' },
     { "datadir", required_argument, NULL, 'd' },
@@ -55,9 +71,10 @@ static struct option longopts[] = {
     { NULL, 0, NULL, 0 }
 };
 
+//! Short options
 static char *shortopts = "c:d:g:i:pt:hv";
 
-// Help message
+//! Help message
 static void
 print_usage(void)
 {
@@ -84,7 +101,7 @@ print_usage(void)
     );
 }
 
-// Version
+//! Version message
 static void
 print_version(void)
 {
@@ -99,10 +116,17 @@ print_version(void)
     );
 }
 
-// Parse command line options
+//! Parses command line options
 void
 cfg_init(int argc, char *argv[])
 {
+    /*!
+     * Parses command line options and sets cfg_* variables if requested.
+     *
+     * @argc Number of arguments
+     * @argc Array of arguments
+     */
+
     int c, i, j;
 
     while ((c = getopt_long(argc, argv, shortopts, longopts, &i)) != -1) {
@@ -127,6 +151,7 @@ cfg_init(int argc, char *argv[])
                 break;
             case 'p':
                 cfg_log_console = 1;
+                cfg_log_file = 0;
                 break;
             case 't':
                 if (strcmp(optarg, "session") == 0) {

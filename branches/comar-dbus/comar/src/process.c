@@ -19,18 +19,29 @@
 #include "log.h"
 #include "process.h"
 
+//! Struct that holds active process' information
 struct Proc my_proc;
+
+//! Whether a shutdown has been requested
 int shutdown_activated = 0;
+
+//! Process name
 static char *name_addr;
+
+//! Size of process name
 static size_t name_size;
+
+//! Last time that a call has been made or completed
 static time_t time_lastaction = 0;
 
+//! Signal handler
 static void
 handle_sigterm(int signum)
 {
     shutdown_activated = 1;
 }
 
+//! Activates signal handling
 static void
 handle_signals(void)
 {
@@ -51,18 +62,34 @@ handle_signals(void)
     sigaction(SIGPIPE, &ign, NULL);
 }
 
+//! Sets process name
 static void
 set_my_name(const char *name)
 {
+    /*!
+     * Sets new process name. Variables must be initialized with
+     * proc_init() before using this function.
+     *
+     * @name Process name
+     */
+
     if (strlen(name) + 1 < name_size) {
         memset(name_addr, 0, name_size);
         strcpy(name_addr, name);
     }
 }
 
+//! Tests whether process is idle
 int
 proc_check_idle()
 {
+    /*!
+     * Tests whether process id idle. This function will return
+     * 0 if cfg_bus_type is "system"
+     *
+     * @return 1 if true, 0 if false
+     */
+
     if (cfg_bus_type == DBUS_BUS_SYSTEM) {
         return 0;
     }
@@ -72,9 +99,19 @@ proc_check_idle()
     return 0;
 }
 
+//! Initializes main process
 void
 proc_init(int argc, char *argv[], const char *name)
 {
+    /*!
+     * Initializes main process. Gets name address, size, and
+     * initializes signal handler.
+     *
+     * @argc Number of arguments
+     * @argv Array of arguments
+     * @name Process name
+     */
+
     int i;
 
     name_addr = argv[0];
@@ -94,9 +131,20 @@ proc_init(int argc, char *argv[], const char *name)
     time_lastaction = time(0);
 }
 
+//! Appends child process' information to parent's info table
 static struct ProcChild *
 add_child(pid_t pid, int to, int from, const char *desc, DBusMessage *bus_msg)
 {
+    /*!
+     * Appends child process' information to parent's info table.
+     *
+     * @pid Process ID
+     * @to Input FD
+     * @from Output FD
+     * @desc Process description
+     * @return ProcChild node
+     */
+
     int i;
 
     i = my_proc.nr_children;
@@ -120,9 +168,16 @@ add_child(pid_t pid, int to, int from, const char *desc, DBusMessage *bus_msg)
     return &my_proc.children[i];
 }
 
+//! Removes child process' information from parent's info table
 static void
 rem_child(int nr)
 {
+    /*!
+     * Removes child process' information from parent's info table
+     *
+     * @nr Index
+     */
+
     int status;
     waitpid(my_proc.children[nr].pid, &status, 0);
     close(my_proc.children[nr].to);
@@ -136,9 +191,14 @@ rem_child(int nr)
     (my_proc.children)[nr] = (my_proc.children)[my_proc.nr_children];
 }
 
+//! Stops all children processes
 static void
 stop_children(void)
 {
+    /*!
+     * Stops all children processes.
+     */
+
     struct timeval start;
     struct timeval cur;
     struct timeval tv;
@@ -192,14 +252,20 @@ stop_children(void)
     }
 }
 
+//! Ends a process
 void
 proc_finish(void)
 {
+    /*!
+     * End a process and it's children.
+     */
+
     if (my_proc.nr_children) stop_children();
     log_debug(LOG_PROC, "%s process %d ended\n", my_proc.desc, getpid());
     exit(0);
 }
 
+//! Ends process if a shutdown is requested
 void
 proc_check_shutdown(void)
 {
@@ -209,9 +275,20 @@ proc_check_shutdown(void)
     }
 }
 
+//! Forks a function
 struct ProcChild *
 proc_fork(void (*child_func)(void), const char *desc, DBusConnection *bus_conn, DBusMessage *bus_msg)
 {
+    /*
+     * Forks a function.
+     *
+     * @child_func Function to be forked
+     * @desc Process description
+     * @bus_conn Related DBus connection, if there's one
+     * @bus_msg Related DBus message, if there's one
+     * @return ProcChild node
+     */
+
     pid_t pid;
     int fdr[2], fdw[2];
     int i;
@@ -258,9 +335,17 @@ proc_fork(void (*child_func)(void), const char *desc, DBusConnection *bus_conn, 
     }
 }
 
+//! Gets active process' parent and children FD's
 static int
 proc_setup_fds(fd_set *fds)
 {
+    /*!
+     * Gets active process' parent and children FD's
+     *
+     * @fds File descriptor set pointer
+     * @return Number of file descriptors
+     */
+
     int sock;
     int i;
     int max = 0;
@@ -284,9 +369,22 @@ proc_setup_fds(fd_set *fds)
     return ++max;
 }
 
+//! Waits for incoming messages and remove children or kill process if required
 static int
 proc_select_fds(fd_set *fds, int max, struct ProcChild **senderp, size_t *sizep, int timeout_sec, int timeout_usec)
 {
+    /*!
+     * Waits for incoming messages and remove children or kill process if required
+     *
+     * @fds File descriptor set
+     * @max Number of FDSs
+     * @sender Parent process' pointer
+     * @sizep Size pointer
+     * @timeout_sec Timeout in seconds
+     * @timeout_usec Timeout in miliseconds
+     * @return 1 if there's a message, 0 else
+     */
+
     unsigned int ipc;
     struct timeval tv, *tvptr;
     int sock;
@@ -334,9 +432,21 @@ proc_select_fds(fd_set *fds, int max, struct ProcChild **senderp, size_t *sizep,
     return 0;
 }
 
+//! Listen for incoming messages to active process.
 int
 proc_listen(struct ProcChild **senderp, size_t *sizep, int timeout_sec, int timeout_usec)
 {
+    /*!
+     * Gets active process' parent and children FD's then waits for
+     * incoming messages and remove children or kill process if required.
+     *
+     * @sender Parent process' pointer
+     * @sizep Size pointer
+     * @timeout_sec Timeout in seconds
+     * @timeout_usec Timeout in miliseconds
+     * @return 1 if there's a message, 0 else
+     */
+
     fd_set fds;
     int max;
 

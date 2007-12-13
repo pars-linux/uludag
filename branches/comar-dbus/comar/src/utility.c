@@ -20,9 +20,19 @@
 const char *valid_app_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+";
 const char *valid_model_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.";
 
+//! Returns part of a string
 char *
 strsub(const char *str, int start, int end)
 {
+    /*!
+     * Returns part of a string.
+     *
+     * @str String
+     * @start Where to start
+     * @end Where to end
+     * @return Requested part
+     */
+
     if (start < 0) {
         start = strlen(str) + start;
     }
@@ -48,9 +58,19 @@ strsub(const char *str, int start, int end)
     return new_src;
 }
 
+//! Replaces chars in a string
 char *
 strrep(const char *str, char old, char new)
 {
+    /*!
+     * Replaces chars in a string.
+     *
+     * @str String
+     * @old Char to be replaced
+     * @new Char to be replaced with
+     * @return Replaced value
+     */
+
     char *new_str, *t;
 
     new_str = strdup(str);
@@ -64,16 +84,33 @@ strrep(const char *str, char old, char new)
     return new_str;
 }
 
+//! Test whether a path exists
 int
 check_file(const char *fname)
 {
+    /*!
+     * Test whether a file path exists.
+     *
+     * @fname File name
+     * @return 1 if true, 0 if false
+     */
+
     struct stat fs;
     return (stat(fname, &fs) == 0);
 }
 
+//! Returns content of a file
 unsigned char *
 load_file(const char *fname, int *sizeptr)
 {
+    /*!
+     * Returns content of a file.
+     *
+     * @fname File name
+     * @sizeptr Size pointer of file content
+     * @return File content
+     */
+
     FILE *f;
     struct stat fs;
     size_t size;
@@ -101,13 +138,17 @@ load_file(const char *fname, int *sizeptr)
     return data;
 }
 
+//! Saves file content
 int
 save_file(const char *fname, const char *buffer, size_t size)
 {
     /*!
-    @return Returns -1 if file could not be opened for binary writing \n
-    Returns -2 if file could not be written to disc or buffer is empty \n
-    Returns 0 on success
+     * Saves file content.
+     *
+     * @fname File name
+     * @buffer File content
+     * @size Size
+     * @return 0 on success, -1 on file open error, -2 on write error.
     */
 
     FILE *f;
@@ -122,9 +163,17 @@ save_file(const char *fname, const char *buffer, size_t size)
     return 0;
 }
 
+//! Tests whether a model name is valid
 int
 check_model_name(const char *model)
 {
+    /*!
+     * Tests whether a model name is valid
+     *
+     * @model Model
+     * @return 1 if true, 0 if false
+     */
+
     int i;
 
     if (model == NULL) {
@@ -139,9 +188,17 @@ check_model_name(const char *model)
     return 1;
 }
 
+//! Tests whether an application name is valid
 int
 check_app_name(const char *app)
 {
+    /*!
+     * Tests whether an application name is valid
+     *
+     * @app Application
+     * @return 1 if true, 0 if false
+     */
+
     int i;
 
     if (app == NULL) {
@@ -156,9 +213,18 @@ check_app_name(const char *app)
     return 1;
 }
 
+//! Returns script path of a registered application&model pair
 char *
 get_script_path(const char *app, const char *model)
 {
+    /*!
+     * Returns script path of a registered application&model pair
+     *
+     * @app Application
+     * @model Model
+     * @return Script path
+     */
+
     char *realpath, *model_escaped, *t, *t2;
     int size;
 
@@ -173,9 +239,17 @@ get_script_path(const char *app, const char *model)
     return realpath;
 }
 
+//! Returns difference between to time values.
 unsigned long
 time_diff(struct timeval *start, struct timeval *end)
 {
+    /*!
+     * Returns difference between to time values.
+     *
+     * @start Start time
+     * @end End time
+     */
+
     unsigned long msec;
 
     msec = (end->tv_sec * 1000) + (end->tv_usec / 1000);
