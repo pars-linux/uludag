@@ -14,7 +14,7 @@
   </property>
   <property name="styleSheet" >
    <string>#YaliMain {
-    background-image:url('/usr/share/yali4/pics/background.png')
+    background-image:url(':/pics/background.png')
 }
 
 QStackedWidget#mainStack {
@@ -22,7 +22,7 @@ QStackedWidget#mainStack {
      border-width: 2px;
      border-radius: 14px;
      border-color: beige;
-     background-image:url('/usr/share/yali4/pics/trans.png');
+     background-image:url(':/pics/trans.png');
 }
 
 QTextBrowser#helpContent {
@@ -32,9 +32,14 @@ QTextBrowser#helpContent {
      border-bottom-right-radius:8px;
      border-color: beige;
      border-left:none;
-     background-image:url('/usr/share/yali4/pics/helpBack.png');
+     background-image:url(':/pics/helpBack.png');
      padding:5px;
      padding-top:7px;
+}
+
+QLineEdit,QListView {
+	border: 2px solid #FF7308;
+	border-radius:4px;
 }
 
 QPushButton {
@@ -49,9 +54,13 @@ QPushButton {
      color:#FFF;
 }
 
-QPushButton:pressed {
+QPushButton:hover:pressed {
      background-color: rgb(224, 0, 0);
      border-style: inset;
+} 
+
+QPushButton:hover {
+     background-color:#FFA322;
 } 
 
 #buttonNext {
@@ -66,6 +75,19 @@ QPushButton:pressed {
      border-bottom-right-radius:none;
 	 border-right-width: 1px;
 	 min-width: 3em;
+}
+
+QProgressBar {
+     border: 2px solid white;
+     border-radius: 5px;
+	text-align: center;
+	color:#FF7308;
+	font:12px bold;
+}
+
+QProgressBar::chunk {
+     background-color: #970000;
+     width: 20px;
 }</string>
   </property>
   <layout class="QGridLayout" >
@@ -87,7 +109,7 @@ QPushButton:pressed {
       <item>
        <layout class="QVBoxLayout" >
         <item>
-         <widget class="QLabel" name="label" >
+         <widget class="QLabel" name="screenName" >
           <property name="text" >
            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
@@ -100,7 +122,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_2" >
+         <widget class="QLabel" name="screenDescription" >
           <property name="text" >
            <string>Details about the screen</string>
           </property>

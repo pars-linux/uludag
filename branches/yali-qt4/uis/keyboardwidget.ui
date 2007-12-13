@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>417</width>
-    <height>315</height>
+    <height>395</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -48,7 +48,10 @@
    <item row="1" column="1" >
     <widget class="QLabel" name="pix" >
      <property name="text" >
-      <string>pix</string>
+      <string/>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="data.qrc" >:/pics/keyboards.png</pixmap>
      </property>
      <property name="alignment" >
       <set>Qt::AlignCenter</set>
@@ -124,6 +127,8 @@
  </widget>
  <layoutdefault spacing="6" margin="11" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <resources/>
+ <resources>
+  <include location="data.qrc" />
+ </resources>
  <connections/>
 </ui>
