@@ -17,7 +17,7 @@ lines =  ["\n_ = __trans.ugettext\n",
           "\nimport gettext"]
 
 def qt_ui_files():
-    p = "uis/*.ui"
+    p = "gui/ui/*.ui"
     return glob.glob(p)
 
 def py_file_name(ui_file):
@@ -47,5 +47,5 @@ def compile_ui(ui_file):
 
 for f in qt_ui_files():
     compile_ui(f)
-    os.system("pyrcc4 uis/data.qrc -o data_rc.py")
+    os.system("pyrcc4 gui/ui/data.qrc -o data_rc.py")
 

@@ -13,11 +13,11 @@
 import sys
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from uis.main import Ui_YaliMain
-from uis.welcomewidget import *
-from uis.checkcdwidget import *
-from uis.keyboardwidget import *
-from uis.autopartwidget import *
+from gui.ui.main import Ui_YaliMain
+from gui.ui.welcomewidget import *
+from gui.ui.checkcdwidget import *
+from gui.ui.keyboardwidget import *
+from gui.ui.autopartwidget import *
 
 screens = [Ui_WelcomeWidget,
            Ui_CheckCDWidget,
