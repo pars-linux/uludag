@@ -124,7 +124,7 @@ p, li { white-space: pre-wrap; }
       <item>
        <widget class="QLabel" name="label_4" >
         <property name="pixmap" >
-         <pixmap>/usr/share/yali4/pics/logo.png</pixmap>
+         <pixmap resource="data.qrc" >:/pics/logo.png</pixmap>
         </property>
         <property name="scaledContents" >
          <bool>false</bool>
@@ -315,6 +315,8 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="data.qrc" />
+ </resources>
  <connections/>
 </ui>

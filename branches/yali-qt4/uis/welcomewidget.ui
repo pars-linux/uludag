@@ -48,7 +48,10 @@
    <item row="1" column="2" >
     <widget class="QLabel" name="pix" >
      <property name="text" >
-      <string>pix</string>
+      <string/>
+     </property>
+     <property name="pixmap" >
+      <pixmap resource="data.qrc" >:/pics/welcome.png</pixmap>
      </property>
      <property name="wordWrap" >
       <bool>false</bool>
@@ -227,6 +230,8 @@
   <tabstop>gplButton</tabstop>
   <tabstop>rebootButton</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="data.qrc" />
+ </resources>
  <connections/>
 </ui>

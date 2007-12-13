@@ -47,4 +47,5 @@ def compile_ui(ui_file):
 
 for f in qt_ui_files():
     compile_ui(f)
+    os.system("pyrcc4 uis/data.qrc -o data_rc.py")
 
