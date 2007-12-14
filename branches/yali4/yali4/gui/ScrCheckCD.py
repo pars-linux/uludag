@@ -10,21 +10,23 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
 import pisi.ui
-import yali.pisiiface
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.Ui.checkcdwidget import CheckCDWidget
-import yali.gui.context as ctx
-from yali.gui.YaliDialog import Dialog
+import yali4.pisiiface
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.checkcdwidget import Ui_CheckCDWidget
+import yali4.gui.context as ctx
+#from yali4.gui.YaliDialog import Dialog
 
-class Widget(CheckCDWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Check your media')
+    desc = _('To ignore media corruptions you can check your media integrity..')
     help = _('''
 <font size="+2">Check CD Integrity!</font>
 
@@ -35,51 +37,50 @@ class Widget(CheckCDWidget, ScreenWidget):
 ''')
 
     def __init__(self, *args):
-        apply(CheckCDWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_CheckCDWidget()
+        self.ui.setupUi(self)
 
-        self.pix.setPixmap(ctx.iconfactory.newPixmap("installcd"))
-
-        self.connect(self.checkButton, SIGNAL("clicked()"),
+        self.connect(self.ui.checkButton, SIGNAL("clicked()"),
                      self.slotCheckCD)
 
     def showError(self):
+        pass
         # make a release notes dialog
-        r = ErrorWidget(self)
-        d = Dialog(_("Check Failed"), r, self)
-        d.resize(300,200)
-        d.exec_loop()
+        # r = ErrorWidget(self)
+        # d = Dialog(_("Check Failed"), r, self)
+        # d.resize(300,200)
+        # d.exec_loop()
 
 
     def slotCheckCD(self):
-        ctx.screens.disableNext()
-        ctx.screens.disablePrev()
-        self.checkButton.setEnabled(False)
-        self.checkLabel.setText(_('<font color="#FF6D19">Please wait while checking CD.</font>'))
-        ctx.screens.processEvents()
-        
-        yali.pisiiface.initialize(ui=PisiUI())
-        yali.pisiiface.add_cd_repo()
+        ctx.mainScreen.disableNext()
+        ctx.mainScreen.disableBack()
+        self.ui.checkButton.setEnabled(False)
+        self.ui.checkLabel.setText(_('<font color="#FF6D19">Please wait while checking CD.</font>'))
+        yali4.pisiiface.initialize(ui=PisiUI())
+        yali4.pisiiface.add_cd_repo()
 
-        pkg_names = yali.pisiiface.get_available()
-        self.progressBar.setTotalSteps(len(pkg_names))
+        pkg_names = yali4.pisiiface.get_available()
+        self.ui.progressBar.setTotalSteps(len(pkg_names))
         cur = 0
         for pkg_name in pkg_names:
             cur += 1
-            if yali.pisiiface.check_package_hash(pkg_name):
-                self.progressBar.setProgress(cur)
+            if yali4.pisiiface.check_package_hash(pkg_name):
+                self.ui.progressBar.setProgress(cur)
             else:
-                yali.pisiiface.finalize()
-                self.showError()
-        yali.pisiiface.finalize() 
+                yali4.pisiiface.finalize()
+                #self.showError()
+        yali4.pisiiface.finalize() 
 
-        self.checkLabel.setText(_('<font color="#257216">Check succeeded. You can proceed to the next screen.</font>'))
-        self.checkLabel.setAlignment(QLabel.SingleLine | QLabel.AlignCenter)
-        ctx.screens.enableNext()
-        ctx.screens.enablePrev()
+        self.ui.checkLabel.setText(_('<font color="#257216">Check succeeded. You can proceed to the next screen.</font>'))
+        ctx.mainScreen.enableNext()
+        ctx.mainScreen.enableBack()
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
+        pass
+        #from os.path import basename
+        #ctx.debugger.log("%s loaded" % basename(__file__))
 
 class PisiUI(pisi.ui.UI):
     def notify(self, event, **keywords):
@@ -87,6 +88,7 @@ class PisiUI(pisi.ui.UI):
     def display_progress(self, operation, percent, info, **keywords):
         pass
 
+"""
 class ErrorWidget(QWidget):
     def __init__(self, *args):
         QWidget.__init__(self, *args)
@@ -120,3 +122,6 @@ class ErrorWidget(QWidget):
 
     def slotReboot(self):
         self.emit(PYSIGNAL("signalOK"), ())
+
+"""
+

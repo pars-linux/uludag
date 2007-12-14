@@ -21,6 +21,10 @@ _ = __trans.ugettext
 from yali4.gui.Ui.main import Ui_YaliMain
 import yali4.gui.context as ctx
 
+# Aspect oriented huh ;)
+from pyaspects.weaver import *
+from yali4.gui.aspects import *
+
 ##
 # Widget for YaliWindow (you can call it MainWindow too ;).
 class Widget(Ui_YaliMain):
@@ -31,10 +35,6 @@ class Widget(Ui_YaliMain):
 
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
-        #QObject.connect(ctx.screens, PYSIGNAL("nextButtonDisabled"), self.slotNextDisabled)
-        #QObject.connect(ctx.screens, PYSIGNAL("prevButtonDisabled"), self.slotPrevDisabled)
-        #QObject.connect(ctx.screens, PYSIGNAL("nextButtonEnabled"), self.slotNextEnabled)
-        #QObject.connect(ctx.screens, PYSIGNAL("prevButtonEnabled"), self.slotPrevEnabled)
 
     def getCur(self,d):
         new   = self.mainStack.currentIndex() + d
@@ -52,6 +52,7 @@ class Widget(Ui_YaliMain):
     def stackMove(self,new):
         self.mainStack.setCurrentIndex(new)
         _w = self.mainStack.currentWidget()
+        _w.shown()
         self.screenName.setText(_w.title)
         self.screenDescription.setText(_w.desc)
         self.helpContent.setText(_w.help)
@@ -62,20 +63,26 @@ class Widget(Ui_YaliMain):
         self.mainStack.removeWidget(self.page)
         for screen in screens:
             _scr = screen.Widget()
+
+            # enable navigation buttons before shown
+            weave_object_method(enableNavButtonsAspect, _scr, "shown")
+            # disable navigation buttons before the execute.
+            weave_object_method(disableNavButtonsAspect, _scr, "execute")
+
             self.mainStack.addWidget(_scr)
         self.stackMove(0)
 
     # Enable/Disable buttons
-    def slotNextDisabled(self):
+    def disableNext(self):
         self.buttonNext.setEnabled(False)
 
-    def slotPrevDisabled(self):
+    def disableBack(self):
         self.buttonBack.setEnabled(False)
 
-    def slotNextEnabled(self):
+    def enableNext(self):
         self.buttonNext.setEnabled(True)
 
-    def slotPrevEnabled(self):
+    def enableBack(self):
         self.buttonBack.setEnabled(True)
 
 """

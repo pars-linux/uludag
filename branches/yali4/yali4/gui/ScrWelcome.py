@@ -62,16 +62,16 @@ Have a fruitful experience with Pardus!
         self.ui.setupUi(self)
         self.ui.rebootButton.setEnabled(False)
 
-        QObject.connect(self.ui.not_accept, SIGNAL("toggled(bool)"),
+        self.connect(self.ui.not_accept, SIGNAL("toggled(bool)"),
                      self.slotNotAcceptToggled)
 
-        QObject.connect(self.ui.accept, SIGNAL("toggled(bool)"),
+        self.connect(self.ui.accept, SIGNAL("toggled(bool)"),
                      self.slotAcceptToggled)
 
-        QObject.connect(self.ui.rebootButton, SIGNAL("clicked()"),
+        self.connect(self.ui.rebootButton, SIGNAL("clicked()"),
                      self.slotReboot)
 
-        QObject.connect(self.ui.gplButton, SIGNAL("clicked()"),
+        self.connect(self.ui.gplButton, SIGNAL("clicked()"),
                      self.showGPL)
 
     def slotAcceptToggled(self, b):
@@ -84,12 +84,10 @@ Have a fruitful experience with Pardus!
 
     def __enable_next(self, b):
         if b:
-            #ctx.screens.enableNext()
-            print "Huballa"
+            ctx.mainScreen.enableNext()
             self.ui.rebootButton.setEnabled(False)
         else:
-            #ctx.screens.disableNext()
-            print "HuballaDS"
+            ctx.mainScreen.disableNext()
             self.ui.rebootButton.setEnabled(True)
 
     def showGPL(self):
@@ -101,13 +99,11 @@ Have a fruitful experience with Pardus!
         #d.exec_loop()
 
     def slotReboot(self):
-        yali.sysutils.fastreboot()
+        yali4.sysutils.fastreboot()
 
     def shown(self):
-        #ctx.screens.disablePrev()
+        ctx.mainScreen.disableBack()
         if self.ui.accept.isChecked():
-            print "Accepted.."
-            #ctx.screens.enableNext()
+            ctx.mainScreen.enableNext()
         else:
-            print "Boing.."
-            #ctx.screens.disableNext()
+            ctx.mainScreen.disableNext()

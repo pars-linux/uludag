@@ -13,7 +13,7 @@
 
 from pyaspects.meta import MetaAspect
 
-import yali.gui.context as ctx
+import yali4.gui.context as ctx
 
 ##
 # Disables navigation buttons before method.
@@ -23,8 +23,8 @@ class DisableNavButtonsAspect:
     name = "disableNavButtons"
 
     def before(self, wobj, data, *args, **kwargs):
-        ctx.screens.disableNext()
-        ctx.screens.disablePrev()
+        ctx.mainScreen.disableNext()
+        ctx.mainScreen.disableBack()
 
     def after(self, wobj, data, *args, **kwargs):
         pass
@@ -39,8 +39,8 @@ class EnableNavButtonsAspect:
     name = "enableNavButtons"
 
     def before(self, wobj, data, *args, **kwargs):
-        ctx.screens.enableNext()
-        ctx.screens.enablePrev()
+        ctx.mainScreen.enableNext()
+        ctx.mainScreen.enableBack()
 
     def after(self, wobj, data, *args, **kwargs):
         pass

@@ -11,22 +11,25 @@
 #
 
 import os
-from qt import *
 
 import gettext
 __trans = gettext.translation('yali', fallback=True)
 _ = __trans.ugettext
 
-import yali.localedata
-import yali.localeutils
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.Ui.keyboardwidget import KeyboardWidget
-import yali.gui.context as ctx
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
+import yali4.localedata
+import yali4.localeutils
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.keyboardwidget import Ui_KeyboardWidget
+import yali4.gui.context as ctx
 
 ##
 # Keyboard setup screen
-class Widget(KeyboardWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Set your keyboard layout')
+    desc = _('Use your keyboard layout..')
     help = _('''
 <font size="+2">Keyboard Setup</font>
 
@@ -38,58 +41,50 @@ Depending on your hardware or choice select a keyboard layout from the list.
 ''')
 
     def __init__(self, *args):
-        apply(KeyboardWidget.__init__, (self,) + args)
-        self.pix.setPixmap(ctx.iconfactory.newPixmap("keyboards"))
-
-        self.keyboard_list.setPaletteBackgroundColor(ctx.consts.bg_color)
-        self.keyboard_list.setPaletteForegroundColor(ctx.consts.fg_color)
-
-        f = self.keyboard_list.font()
-        f.setBold(True)
-        self.keyboard_list.setFont(f)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_KeyboardWidget()
+        self.ui.setupUi(self)
 
         # iterate over keyboard list and set default
-        #
-        # TODO: re-visit this module and clean this code. there is way
-        # to much iteration in here.
         defaultitem = None
-        for (lang, keymap) in yali.localedata.getLangsWithKeymaps():
+        for (lang, keymap) in yali4.localedata.getLangsWithKeymaps():
             if isinstance(keymap, list):
                 for k in keymap:
-                    ki = KeyboardItem(self.keyboard_list, k)
+                    ki = KeyboardItem(self.ui.keyboard_list, k)
                     if ctx.consts.lang == lang and not defaultitem:
                         defaultitem = ki
             else:
-                ki = KeyboardItem(self.keyboard_list, keymap)
+                ki = KeyboardItem(self.ui.keyboard_list, keymap)
                 if ctx.consts.lang == lang and not defaultitem:
                     defaultitem = ki
 
-        self.keyboard_list.sort()
-        self.keyboard_list.setSelected(defaultitem, True)
+        self.ui.keyboard_list.sortItems(Qt.AscendingOrder)
+        self.ui.keyboard_list.setCurrentItem(defaultitem)
         self.slotLayoutChanged(defaultitem)
 
-        self.connect(self.keyboard_list, SIGNAL("selectionChanged(QListBoxItem*)"),
-                     self.slotLayoutChanged)
+        QObject.connect(self.ui.keyboard_list, SIGNAL("currentItemChanged(QListWidgetItem*, QListWidgetItem*)"),
+                self.slotLayoutChanged)
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
+        print "Screen keyboard Loaded ..."
+        #from os.path import basename
+        #ctx.debugger.log("%s loaded" % basename(__file__))
 
     def execute(self):
-        keydata = self.keyboard_list.selectedItem().getData()
+        keydata = self.ui.keyboard_list.selectedItem().getData()
         ctx.installData.keyData = keydata
         return True
 
-    def slotLayoutChanged(self, i):
-        keydata = i.getData()
-        yali.localeutils.set_keymap(keydata.X)
+    def slotLayoutChanged(self,i,y=None):
+        if not i==y:
+            keydata = i.getData()
+            yali4.localeutils.set_keymap(keydata.X)
 
-
-class KeyboardItem(QListBoxText):
+class KeyboardItem(QtGui.QListWidgetItem):
 
     def __init__(self, parent, keydata):
         text = "%s" %(keydata.translation)
-        apply(QListBoxText.__init__, (self,parent,text))
+        QtGui.QListWidgetItem.__init__(self,text,parent)
         self._keydata = keydata
 
     def getData(self):

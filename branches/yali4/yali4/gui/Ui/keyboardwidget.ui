@@ -88,7 +88,7 @@
     </widget>
    </item>
    <item row="3" column="1" >
-    <widget class="QListView" name="keyboard_list" />
+    <widget class="QListWidget" name="keyboard_list" />
    </item>
    <item row="4" column="1" >
     <layout class="QHBoxLayout" >

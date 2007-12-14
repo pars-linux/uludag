@@ -32,8 +32,8 @@ from pyaspects.weaver import *
 import YaliWindow
 # screens
 import ScrWelcome
-#import ScrCheckCD
-#import ScrKeyboard
+import ScrCheckCD
+import ScrKeyboard
 #import ScrPartitionAuto
 #import ScrPartitionManual
 #import ScrInstall
@@ -52,7 +52,11 @@ class Runner:
 
     def __init__(self):
 
-        _all_screens = [ScrWelcome]
+        _all_screens = [
+                        ScrWelcome,
+                        ScrCheckCD,
+                        ScrKeyboard
+                       ]
 
         """
         _all_stages = [
@@ -101,6 +105,8 @@ class Runner:
         # add stages
         # for stg in _all_stages:
         #     ctx.stages.addStage(stg['num'], stg['text'])
+
+        ctx.mainScreen = self._window
 
         self._window.createWidgets(_all_screens)
         # add screens
