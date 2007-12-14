@@ -724,10 +724,7 @@ class MainApplicationWidget(QWidget):
             self.refreshState(reset=False)
 
     def showPreferences(self):
-        try:
-            self.pref
-        except AttributeError:
-            self.pref = Preferences.Preferences(self)
+        self.pref = Preferences.Preferences(self)
         self.pref.show()
 
     def show(self):
