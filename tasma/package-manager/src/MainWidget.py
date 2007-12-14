@@ -394,7 +394,6 @@ class MainApplicationWidget(QWidget):
 
 
     def confirmAction(self):
-
         message = None
         if self.state == install_state:
             message = QString(i18n("<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>.")).arg(len(self.basket.packages))
@@ -576,7 +575,7 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.componentsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        packagesWithMeta = [self.packageCache.packages[package] for package in self.componentDict[item].packages]
+        packagesWithMeta = [self.packageCache.packages[package] for package in packages]
         if self.state == remove_state:
             self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
         else:
