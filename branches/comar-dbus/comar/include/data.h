@@ -8,10 +8,10 @@
 */
 
 int db_init(void);
-int db_get_models(char *app, char **bufferp);
-int db_register_model(char *app, char *model);
-int db_remove_model(char *app, char *model);
 int db_get_apps(char **bufferp);
+int db_get_app_models(char *app, char **bufferp);
+int db_get_model_apps(char *model, char **bufferp);
+int db_register_model(char *app, char *model);
 int db_remove_app(char *app);
 int db_check_app(char *app);
 int db_check_model(char *app, char *model);

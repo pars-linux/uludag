@@ -16,6 +16,10 @@
         <method name="listModels">
             <arg name="models" type="as" direction="out"/>
         </method>
+        <method name="listModelApplications">
+            <arg name="model" type="s" direction="in"/>
+            <arg name="applications" type="as" direction="out"/>
+        </method>
         <method name="listApplicationModels">
             <arg name="application" type="s" direction="in"/>
             <arg name="models" type="as" direction="out"/>

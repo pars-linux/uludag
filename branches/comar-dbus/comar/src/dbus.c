@@ -224,7 +224,7 @@ dbus_introspection_methods(const char *path)
         }
         else {
             char *models;
-            db_get_models(app, &models);
+            db_get_app_models(app, &models);
             if (models == NULL) {
                 dbus_reply_str("<node/>");;
             }
@@ -296,10 +296,31 @@ dbus_comar_methods(const char *method)
         }
         dbus_reply_object(result);
     }
+    else if (strcmp(method, "listModelApplications") == 0) {
+        args = dbus_py_import(my_proc.bus_msg);
+        model = PyString_AsString(PyList_GetItem(args, 0));
+        db_get_model_apps(model, &apps);
+        if (apps != NULL) {
+            result = PyList_New(0);
+            char *pch = strtok(apps, "|");
+            while (pch != NULL) {
+                if (strlen(pch) > 0) {
+                    PyList_Append(result, PyString_FromString(pch));
+                }
+                pch = strtok(NULL, "|");
+            }
+            dbus_reply_object(result);
+            free(apps);
+        }
+        else {
+            log_error("No such model: '%s'\n", model);
+            dbus_reply_error("No such model");
+        }
+    }
     else if (strcmp(method, "listApplicationModels") == 0) {
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
-        db_get_models(app, &models);
+        db_get_app_models(app, &models);
         if (models != NULL) {
             result = PyList_New(0);
             char *pch = strtok(models, "|");
@@ -343,7 +364,7 @@ dbus_comar_methods(const char *method)
     else if (strcmp(method, "remove") == 0) {
         args = dbus_py_import(my_proc.bus_msg);
         app = PyString_AsString(PyList_GetItem(args, 0));
-        db_get_models(app, &models);
+        db_get_app_models(app, &models);
 
         if (models == NULL) {
             log_error("No such application: '%s'\n", app);
@@ -527,6 +548,11 @@ dbus_listen()
         if (NULL == msg) {
             proc_listen(&p, &size, 0, 500);
             continue;
+        }
+
+        if (shutdown_activated) {
+            model_free();
+            break;
         }
 
         const char *sender = dbus_message_get_sender(msg);

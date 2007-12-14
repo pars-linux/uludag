@@ -61,9 +61,11 @@ db_init(void)
 struct databases {
     DB_ENV *env;
     DB *app;
+    DB *model;
 };
 
 #define APP_DB 1
+#define MODEL_DB 2
 
 //! Open a database
 static int
@@ -109,8 +111,9 @@ open_env(struct databases *db, int which)
      * @db Database
      * @which DB type
      * @return 0 on success, -1 if can not create database environment,
-     * -2 if can not open database environment, -3 if db could not be created 
-     * or opened.
+     * -2 if can not open database environment, -3 if application db
+     * could not be created or opened, -4 if model db could not be
+     * created or opened.
      */
 
     int e;
@@ -136,6 +139,10 @@ open_env(struct databases *db, int which)
         if (open_database(db->env, &db->app, "app.db")) return -3;
     }
 
+    if (which & MODEL_DB) {
+        if (open_database(db->env, &db->model, "model.db")) return -4;
+    }
+
     return 0;
 }
 
@@ -148,6 +155,7 @@ close_env(struct databases *db)
      */
 
     if (db->app) db->app->close(db->app, 0);
+    if (db->model) db->model->close(db->model, 0);
     db->env->close(db->env, 0);
 }
 
@@ -335,11 +343,15 @@ db_register_model(char *app, char *model)
     struct databases db;
     int ret = 0;
 
-    if (open_env(&db, APP_DB)) goto out;
+    if (open_env(&db, APP_DB | MODEL_DB)) goto out;
 
     ret = append_item(db.app, app, model);
     if (ret) goto out;
     ret = append_item(db.app, "__apps__", app);
+    if (ret) goto out;
+
+    ret = append_item(db.model, model, app);
+    if (ret) goto out;
 
 out:
     close_env(&db);
@@ -358,77 +370,67 @@ db_remove_app(char *app)
      */
 
     struct databases db;
-    char *list;
+    char *list, *list2, *t, *s;
     int ret = 0;
     int no;
 
-    if (open_env(&db, APP_DB)) goto out;
-
-    del_data(db.app, app);
-
-    list = get_data(db.app, "__apps__", NULL, &ret);
-    if (ret) goto out;
-
-    if (list) {
-        char *k;
-        int sa = strlen(app);
-        k = strstr(list, app);
-        if (k) {
-            if (k[sa] == '|') ++sa;
-            memmove(k, k + sa, strlen(k) - sa + 1);
-            sa = strlen(list);
-            if (sa > 0) {
-                if (list[sa-1] == '|') list[sa-1] = '\0';
-            }
-            ret = put_data(db.app, "__apps__", list, strlen(list) + 1);
-            if (ret) goto out;
-        }
-    }
-    free(list);
-out:
-    close_env(&db);
-    return ret;
-}
-
-
-//! Removes model from application
-int
-db_remove_model(char *app, char *model)
-{
-    /*
-     * Removes model from app's index.
-     *
-     * @app Application
-     * @model Model
-     * @return 0 on success, non-zero on error
-     */
-
-    struct databases db;
-    char *list;
-    int ret = 0;
-    int no;
-
-    if (open_env(&db, APP_DB)) goto out;
+    if (open_env(&db, APP_DB | MODEL_DB)) goto out;
 
     list = get_data(db.app, app, NULL, &ret);
+    if (!list) goto out;
+
+    // iterate over app's models
+    for (t = list; t; t = s) {
+        s = strchr(t, '/');
+        if (s) {
+            *s = '\0';
+            ++s;
+        }
+
+        // remove app from model's application list in model.db
+        list2 = get_data(db.model, t, NULL, &ret);
+        if (list2) {
+            char *k;
+            int sa = strlen(app);
+            k = strstr(list2, app);
+            if (k) {
+                if (k[sa] == '|') ++sa;
+                memmove(k, k + sa, strlen(k) - sa + 1);
+                sa = strlen(list2);
+                if (sa > 0) {
+                    if (list2[sa-1] == '|')
+                        list2[sa-1] = '\0';
+                }
+                ret = put_data(db.model, t, list2, strlen(list2) + 1);
+                if (ret) goto out;
+            }
+        }
+        free(list2);
+
+        // remove app from application list in app.db
+        list2 = get_data(db.app, t, NULL, &ret);
+        if (list2) {
+            char *k;
+            int sa = strlen(app);
+            k = strstr(list2, app);
+            if (k) {
+                if (k[sa] == '|') ++sa;
+                memmove(k, k + sa, strlen(k) - sa + 1);
+                sa = strlen(list2);
+                if (sa > 0) {
+                    if (list2[sa-1] == '|')
+                        list2[sa-1] = '\0';
+                }
+                ret = put_data(db.app, t, list2, strlen(list2) + 1);
+                if (ret) goto out;
+            }
+        }
+        free(list2);
+    }
+
+    ret = del_data(db.app, app);
     if (ret) goto out;
 
-    if (list) {
-        char *k;
-        int sa = strlen(model);
-        k = strstr(list, model);
-        if (k) {
-            if (k[sa] == '|') ++sa;
-            memmove(k, k + sa, strlen(k) - sa + 1);
-            sa = strlen(list);
-            if (sa > 0) {
-                if (list[sa-1] == '|') list[sa-1] = '\0';
-            }
-            ret = put_data(db.app, app, list, strlen(list) + 1);
-            if (ret) goto out;
-        }
-    }
-    free(list);
 out:
     close_env(&db);
     return ret;
@@ -459,11 +461,12 @@ out:
 
 //! Returns application's models
 int
-db_get_models(char *app, char **bufferp)
+db_get_app_models(char *app, char **bufferp)
 {
     /*
      * Exports application's models.
      *
+     * @app Application
      * @bufferp Pointer to contain list
      * @return 0 on success, non-zero on error
      */
@@ -474,6 +477,30 @@ db_get_models(char *app, char **bufferp)
     if (open_env(&db, APP_DB)) goto out;
 
     *bufferp = get_data(db.app, app, NULL, &ret);
+
+out:
+    close_env(&db);
+    return ret;
+}
+
+//! Returns application have specified model
+int
+db_get_model_apps(char *model, char **bufferp)
+{
+    /*
+     * Exports applications that have specified model.
+     *
+     * @model Model
+     * @bufferp Pointer to contain list
+     * @return 0 on success, non-zero on error
+     */
+
+    struct databases db;
+    int ret = -1;
+
+    if (open_env(&db, MODEL_DB)) goto out;
+
+    *bufferp = get_data(db.model, model, NULL, &ret);
 
 out:
     close_env(&db);
