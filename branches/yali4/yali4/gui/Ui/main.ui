@@ -1,0 +1,345 @@
+<ui version="4.0" >
+ <class>YaliMain</class>
+ <widget class="QWidget" name="YaliMain" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>884</width>
+    <height>617</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Yali4</string>
+  </property>
+  <property name="styleSheet" >
+   <string>#YaliMain {
+       background-image:url(':/gui/pics/background.png')
+}
+
+QStackedWidget#mainStack {
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 14px;
+     border-color: beige;
+     background-image:url(':/gui/pics/trans.png');
+}
+
+QTextBrowser#helpContent {
+     border-style: outset;
+     border-width: 2px;
+     border-top-right-radius:8px;
+     border-bottom-right-radius:8px;
+     border-color: beige;
+     border-left:none;
+     background-image:url(':/gui/pics/helpBack.png');
+     padding:5px;
+     padding-top:7px;
+	 font: 8px;
+}
+
+QLineEdit,QListView {
+	border: 2px solid #FF7308;
+	border-radius:4px;
+}
+
+QPushButton {
+     background-color: #FF7308;
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 8px;
+     border-color: beige;
+     font: 12px;
+     min-width: 5em;
+     padding:6px;
+     color:#FFF;
+}
+
+QPushButton:hover:pressed {
+     background-color: rgb(224, 0, 0);
+     border-style: inset;
+} 
+
+QPushButton:hover {
+     background-color:#FFA322;
+} 
+
+#buttonNext {
+	 border-top-left-radius:none;
+     border-bottom-left-radius:none;
+	 border-left-width: 1px;
+	 min-width: 3em;
+}
+
+#buttonBack {
+	 border-top-right-radius:none;
+     border-bottom-right-radius:none;
+	 border-right-width: 1px;
+	 min-width: 3em;
+}
+
+QProgressBar {
+     border: 2px solid white;
+     border-radius: 5px;
+	text-align: center;
+	color:#FF7308;
+	font:12px bold;
+}
+
+QProgressBar::chunk {
+     background-color: #970000;
+     width: 20px;
+}</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" >
+    <widget class="QFrame" name="frame_4" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" >
+      <item>
+       <layout class="QVBoxLayout" >
+        <item>
+         <widget class="QLabel" name="screenName" >
+          <property name="styleSheet" >
+           <string>font:bold 22px;
+color:white;
+</string>
+          </property>
+          <property name="text" >
+           <string>Screen Name</string>
+          </property>
+          <property name="textFormat" >
+           <enum>Qt::RichText</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="screenDescription" >
+          <property name="styleSheet" >
+           <string>color:white;
+</string>
+          </property>
+          <property name="text" >
+           <string>Details about the screen</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4" >
+        <property name="pixmap" >
+         <pixmap/>
+        </property>
+        <property name="scaledContents" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <layout class="QVBoxLayout" >
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="spacing" >
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QStackedWidget" name="mainStack" >
+         <property name="currentIndex" >
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="page" />
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="helpContentFrame" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>280</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape" >
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow" >
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" >
+          <property name="leftMargin" >
+           <number>0</number>
+          </property>
+          <property name="topMargin" >
+           <number>0</number>
+          </property>
+          <property name="rightMargin" >
+           <number>0</number>
+          </property>
+          <property name="bottomMargin" >
+           <number>0</number>
+          </property>
+          <property name="horizontalSpacing" >
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing" >
+           <number>0</number>
+          </property>
+          <item row="0" column="0" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0" >
+           <widget class="QTextBrowser" name="helpContent" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_3" >
+       <property name="frameShape" >
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" >
+        <property name="leftMargin" >
+         <number>9</number>
+        </property>
+        <property name="rightMargin" >
+         <number>22</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" >
+          <item>
+           <widget class="QPushButton" name="releaseNotes" >
+            <property name="text" >
+             <string>Release Notes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="cancelSetup" >
+            <property name="text" >
+             <string>Cancel Setup</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" >
+          <property name="spacing" >
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="buttonBack" >
+            <property name="text" >
+             <string>«</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonNext" >
+            <property name="text" >
+             <string>»</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="data.qrc" />
+ </resources>
+ <connections/>
+</ui>
