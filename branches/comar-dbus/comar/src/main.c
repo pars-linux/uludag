@@ -64,6 +64,7 @@ main(int argc, char *argv[])
 
     while (1) {
         if (shutdown_activated || my_proc.nr_children == 0) {
+            model_free();
             proc_finish();
         }
         proc_listen(&p, &size, -1, 0);

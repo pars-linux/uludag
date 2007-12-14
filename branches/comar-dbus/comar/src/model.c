@@ -330,8 +330,6 @@ model_import(const char *model_file)
         }
     }
 
-    // Free xml
-
     return 0;
 }
 
@@ -382,4 +380,14 @@ model_init()
     free(model_file);
 
     return ret;
+}
+
+//! Frees model node table, model_xml, ...
+void
+model_free()
+{
+    iks_delete(model_xml);
+    free(nodes);
+    free(node_table);
+    free(paths);
 }

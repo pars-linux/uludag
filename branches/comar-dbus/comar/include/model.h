@@ -16,3 +16,4 @@ int model_lookup_method(const char *iface, const char *method);
 int model_lookup_signal(const char *iface, const char *signal);
 int model_get_iks(char *iface, iks **parent);
 int model_init();
+void model_free();
