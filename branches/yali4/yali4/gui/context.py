@@ -11,17 +11,16 @@
 #
 
 from os.path import join
-from qt import *
 
-import yali.gui.stages
-import yali.gui.screens
-import yali.gui.iconfactory
-import yali.gui.installdata
+# import yali4.gui.stages
+# import yali4.gui.screens
+# import yali4.gui.iconfactory
+from yali4.gui import installdata
 
 # singletons from yali.*
-from yali.constants import consts
-from yali.options import options
-from yali.partitionrequest import partrequests
+from yali4.constants import consts
+from yali4.options import options
+from yali4.partitionrequest import partrequests
 
 
 # bind some constant values
@@ -31,21 +30,21 @@ consts.slidepics_dir = join(consts.data_dir, "slideshow")
 consts.helps_dir = join(consts.data_dir, "helps")
 
 # colors
-consts.bg_color = QColor(255,255,255)
-consts.fg_color = QColor(0,0,0)
-consts.border_color = QColor(150, 150, 150)
+# consts.bg_color = QColor(255,255,255)
+# consts.fg_color = QColor(0,0,0)
+# consts.border_color = QColor(150, 150, 150)
 
-stages = yali.gui.stages.Stages()
-screens = yali.gui.screens.Screens()
+# stages = yali.gui.stages.Stages()
+# screens = yali.gui.screens.Screens()
 
 debugger = None
 debugEnabled = False
 
 # install data
-installData = yali.gui.installdata.InstallData()
+installData = installdata.InstallData()
 
 # icon factory
-iconfactory = yali.gui.iconfactory.IconFactory(consts.pics_dir)
+# iconfactory = yali.gui.iconfactory.IconFactory(consts.pics_dir)
 
 # auto partitioning
 use_autopart = False

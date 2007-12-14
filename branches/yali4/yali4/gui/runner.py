@@ -12,35 +12,36 @@
 
 
 import sys
-from qt import *
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 
-import yali
-import yali.sysutils
-import yali.gui.context as ctx
+import yali4
+import yali4.sysutils
+import yali4.gui.context as ctx
 from pyaspects.weaver import *
-from yali.gui.aspects import *
-from yali.gui.YaliDialog import Dialog
-from yali.gui.debugger import Debugger
-from yali.gui.debugger import DebuggerAspect
+#from yali4.gui.aspects import *
+#from yali4.gui.YaliDialog import Dialog
+#from yali4.gui.debugger import Debugger
+#from yali4.gui.debugger import DebuggerAspect
 
 import YaliWindow
 # screens
-import ScrWelcome
-import ScrCheckCD
-import ScrKeyboard
-import ScrPartitionAuto
-import ScrPartitionManual
-import ScrInstall
-import ScrAdmin
-import ScrUsers
-import ScrBootloader
-import ScrGoodbye
-import ScrKahyaCheck
+#import ScrWelcome
+#import ScrCheckCD
+#import ScrKeyboard
+#import ScrPartitionAuto
+#import ScrPartitionManual
+#import ScrInstall
+#import ScrAdmin
+#import ScrUsers
+#import ScrBootloader
+#import ScrGoodbye
+#import ScrKahyaCheck
 
 ##
 # Runner creates main GUI components for installation...
@@ -50,7 +51,7 @@ class Runner:
     _app = None
 
     def __init__(self):
-
+        """
         _all_stages = [
             {'num': 1, 'text': _("Basic setup")},
             {'num': 2, 'text': _("Prepare for install")},
@@ -70,74 +71,76 @@ class Runner:
              {'stage': 3, 'module': ScrInstall},
              {'stage': 3, 'module': ScrGoodbye}
              ]
+        """
 
-        self._app = QApplication(sys.argv)
+        self._app = QtGui.QApplication(sys.argv)
         self._window = YaliWindow.Widget()
 
         # check for oemInstall
-        if yali.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
+        if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
             ctx.options.kahyaFile = ctx.consts.firstBootFile
 
         # default style and font
-        self._app.setStyle("Windows")
-        f = QFont("Bitstream Vera Sans", 10);
-        self._window.setFont(f)
+        # self._app.setStyle("Windows")
+        # f = QFont("Bitstream Vera Sans", 10);
+        # self._window.setFont(f)
 
         # visual debugger
-        ctx.debugger = Debugger()
+        # ctx.debugger = Debugger()
 
         # visual debug mode
-        if ctx.options.debug == True or yali.sysutils.checkYaliParams(param="debug"):
-            ctx.debugEnabled = True
-            ctx.debugger.showWindow()
+        # if ctx.options.debug == True or yali.sysutils.checkYaliParams(param="debug"):
+        #     ctx.debugEnabled = True
+        #     ctx.debugger.showWindow()
 
-        ctx.debugger.log("Yali Started")
+        # ctx.debugger.log("Yali Started")
 
         # add stages
-        for stg in _all_stages:
-            ctx.stages.addStage(stg['num'], stg['text'])
+        # for stg in _all_stages:
+        #     ctx.stages.addStage(stg['num'], stg['text'])
 
         # add screens
-        num = 0
-        for scr in _all_screens:
-            w = scr['module'].Widget()
+        # num = 0
+        # for scr in _all_screens:
+        #     w = scr['module'].Widget()
 
-            if ctx.options.debug == True or yali.sysutils.checkYaliParams(param="debug"):
-                # debug all screens.
-                weave_all_object_methods(ctx.debugger.aspect, w)
+        #     if ctx.options.debug == True or yali.sysutils.checkYaliParams(param="debug"):
+        #         # debug all screens.
+        #         weave_all_object_methods(ctx.debugger.aspect, w)
 
-            # enable navigation buttons before shown
-            weave_object_method(enableNavButtonsAspect, w, "shown")
+        #     # enable navigation buttons before shown
+        #     weave_object_method(enableNavButtonsAspect, w, "shown")
 
-            # disable navigation buttons before the execute.
-            weave_object_method(disableNavButtonsAspect, w, "execute")
+        #     # disable navigation buttons before the execute.
+        #     weave_object_method(disableNavButtonsAspect, w, "execute")
 
-            num += 1
-            ctx.screens.addScreen(num, scr['stage'], w)
+        #     num += 1
+        #     ctx.screens.addScreen(num, scr['stage'], w)
 
-        self._app.connect(self._app, SIGNAL("lastWindowClosed()"),
-                          self._app, SLOT("quit()"))
+        QObject.connect(self._app, SIGNAL("lastWindowClosed()"),
+                        self._app, SLOT("quit()"))
 
-        self._app.connect(ctx.screens, PYSIGNAL("signalCurrent"),
-                          ctx.stages.slotScreenChanged)
+        # QObject.connect(ctx.screens, PYSIGNAL("signalCurrent"),
+        #                 ctx.stages.slotScreenChanged)
 
-        self._app.connect(ctx.screens, PYSIGNAL("signalProcessEvents"),
-                          self._app.processEvents)
+        # QObject.connect(ctx.screens, PYSIGNAL("signalProcessEvents"),
+        #                 self._app.processEvents)
 
         # set the current screen and stage to 1 at startup...
-        ctx.stages.setCurrent(1)
-        ctx.screens.setCurrent(1)
-        ctx.screens.next()
+        # ctx.stages.setCurrent(1)
+        # ctx.screens.setCurrent(1)
+        # ctx.screens.next()
 
     ##
     # Fire up the interface.
     def run(self):
-        self._window.show()
+        self._window.ui.show()
         # We want it to be a full-screen window.
-        self._window.resize(self._app.desktop().size())
-        self._window.move(0,0)
-        self._app.exec_loop()
+        self._window.ui.resize(self._app.desktop().size())
+        self._window.ui.move(0,0)
+        self._app.exec_()
 
+"""
 def showException(ex_type, tb):
     title = _("Error!")
 
@@ -196,4 +199,4 @@ class ErrorWidget(QWidget):
             pass
         yali.sysutils.umount(ctx.consts.target_dir)
         yali.sysutils.fastreboot()
-
+"""

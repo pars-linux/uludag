@@ -10,8 +10,8 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-from yali.steps import Steps
+# from qt import *
+from yali4.steps import Steps
 
 ##
 # Stages of installation.

@@ -11,92 +11,69 @@
 #
 
 from os.path import join
-from qt import *
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.gui.context as ctx
+from yali4.gui.Ui.main import Ui_YaliMain
+import yali4.gui.context as ctx
 
-import GUITop
-import GUIContentStack
-import GUIHelp
-import GUIBottom
+screens = []
 
 ##
 # Widget for YaliWindow (you can call it MainWindow too ;).
-class Widget(QMainWindow):
+class Widget(Ui_YaliMain):
+    def __init__(self):
+        self.ui = QtGui.QWidget()
+        self.setupUi(self.ui)
+        self.createWidgets()
+        self.mainStack.setCurrentIndex(0)
 
-    def __init__(self, *args):
-        apply(QMainWindow.__init__, (self,) + args)
+        QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
+        QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
+        #QObject.connect(ctx.screens, PYSIGNAL("nextButtonDisabled"), self.slotNextDisabled)
+        #QObject.connect(ctx.screens, PYSIGNAL("prevButtonDisabled"), self.slotPrevDisabled)
+        #QObject.connect(ctx.screens, PYSIGNAL("nextButtonEnabled"), self.slotNextEnabled)
+        #QObject.connect(ctx.screens, PYSIGNAL("prevButtonEnabled"), self.slotPrevEnabled)
 
-        self.topWidget = GUITop.Widget(self)
-        self.contentWidget = GUIContentStack.Widget(self)
-        self.helpWidget = GUIHelp.Widget(self)
-        self.bottomWidget = GUIBottom.Widget(self)
+    def slotNext(self):
+        self.stackMove(+1)
 
-        # Place the widgets using layouts and yada, yada, yada...
-        self.__setUpWidgets()
+    def slotBack(self):
+        self.stackMove(-1)
 
-        self.connect(self, PYSIGNAL("signalWindowSize"),
-                     self.topWidget.slotResize)
-        self.connect(self, PYSIGNAL("signalWindowSize"),
-                     self.bottomWidget.slotResize)
-        self.connect(self, PYSIGNAL("signalWindowSize"),
-                     self.helpWidget.slotResize)
-        self.connect(ctx.screens, PYSIGNAL("nextButtonDisabled"),
-                     self.slotNextDisabled)
-        self.connect(ctx.screens, PYSIGNAL("prevButtonDisabled"),
-                     self.slotPrevDisabled)
-        self.connect(ctx.screens, PYSIGNAL("nextButtonEnabled"),
-                     self.slotNextEnabled)
-        self.connect(ctx.screens, PYSIGNAL("prevButtonEnabled"),
-                     self.slotPrevEnabled)
+    def stackMove(self,d):
+        new   = self.mainStack.currentIndex() + d
+        total = self.mainStack.count()
+        if new < 0: new = 0
+        if new > total: new = total
+        self.mainStack.setCurrentIndex(new)
 
-        self.setPaletteBackgroundColor(ctx.consts.bg_color)
-        self.setPaletteForegroundColor(ctx.consts.fg_color)
-
-        self.setTabOrder(self.contentWidget, self.helpWidget)
-        self.setTabOrder(self.helpWidget, self.bottomWidget)
-
-    ##
-    # set up the main window layout...
-    def __setUpWidgets(self):
-
-        main = QVBoxLayout(self)
-        main.addWidget(self.topWidget)
-
-        center = QHBoxLayout()
-        left_spacer = QSpacerItem(20,20, QSizePolicy.Fixed, QSizePolicy.Fixed)
-        center.addItem(left_spacer)
-        center.addWidget(self.contentWidget)
-        center.addWidget(self.helpWidget)
-        right_spacer = QSpacerItem(20,20, QSizePolicy.Fixed, QSizePolicy.Fixed)
-        center.addItem(right_spacer)
-
-        main.addLayout(center)
-        main.addWidget(self.bottomWidget)
+    def createWidgets(self):
+        self.mainStack.removeWidget(self.page)
+        for screen in screens:
+            _q = QtGui.QWidget()
+            _w = screen()
+            _w.setupUi(_q)
+            self.mainStack.addWidget(_q)
 
     # Enable/Disable buttons
     def slotNextDisabled(self):
-        self.bottomWidget.nextButton.setEnabled(False)
+        self.buttonNext.setEnabled(False)
 
     def slotPrevDisabled(self):
-        self.bottomWidget.prevButton.setEnabled(False)
+        self.buttonBack.setEnabled(False)
 
     def slotNextEnabled(self):
-        self.bottomWidget.nextButton.setEnabled(True)
+        self.buttonNext.setEnabled(True)
 
     def slotPrevEnabled(self):
-        self.bottomWidget.prevButton.setEnabled(True)
+        self.buttonBack.setEnabled(True)
 
-    ##
-    # resizeEvent notifies others..
-    # @param e(QResizeEvent): Qt resize event
-    def resizeEvent(self, e):
-        self.emit(PYSIGNAL("signalWindowSize"), (self, e.size()))
-
+"""
     count = 0
     def mousePressEvent(self, e):
         if not e.globalX() and not e.globalY():
@@ -105,7 +82,6 @@ class Widget(QMainWindow):
             if self.count > 10:
                 OiEvent2(self)
                 self.count = 0
-
 
 class OiEvent(QMainWindow):
     def __init__(self, parent):
@@ -193,3 +169,4 @@ class OiEvent2(QMainWindow):
             self.y -= 1
         
         self.move(self.x, self.y)
+"""

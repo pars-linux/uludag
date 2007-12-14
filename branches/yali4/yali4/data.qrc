@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>gui/pics/admin.png</file>
+        <file>gui/pics/background.png</file>
+        <file>gui/pics/goodbye.png</file>
+        <file>gui/pics/helpBack.png</file>
+        <file>gui/pics/installcd.png</file>
+        <file>gui/pics/keyboards.png</file>
+        <file>gui/pics/logo.png</file>
+        <file>gui/pics/oi.png</file>
+        <file>gui/pics/oi2.png</file>
+        <file>gui/pics/trans.png</file>
+        <file>gui/pics/welcome.png</file>
+    </qresource>
+</RCC>

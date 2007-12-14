@@ -10,10 +10,8 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-
 import context as ctx
-from yali.steps import Steps
+from yali4.steps import Steps
 
 ##
 # Screens...

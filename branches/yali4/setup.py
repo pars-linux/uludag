@@ -72,7 +72,6 @@ class YaliBuild(build):
 
     def add_gettext_support(self, ui_file):
         # hacky, too hacky. but works...
-
         py_file = py_file_name(ui_file)
         # lines in reverse order
         lines =  ["\n_ = __trans.ugettext\n",
@@ -90,7 +89,8 @@ class YaliBuild(build):
                 y = l.split(",")[0]+', '
                 l = l.replace(y,z)
             l = l.replace(keyEnd,")")
-        x.write(l)
+            l = l.replace("data_rc","yali4.data_rc")
+            x.write(l)
 
     def compile_ui(self, ui_file):
         pyqt_configuration = pyqtconfig.Configuration()
@@ -107,7 +107,7 @@ class YaliBuild(build):
         for f in qt_ui_files():
             self.compile_ui(f)
             self.add_gettext_support(f)
-
+        os.system("pyrcc4 yali4/data.qrc -o yali4/data_rc.py")
         build.run(self)
 
 ##
