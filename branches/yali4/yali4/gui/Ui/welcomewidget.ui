@@ -51,7 +51,7 @@
       <string/>
      </property>
      <property name="pixmap" >
-      <pixmap resource="data.qrc" >:/pics/welcome.png</pixmap>
+        <pixmap resource="data.qrc" >:/gui/pics/welcome.png</pixmap>
      </property>
      <property name="wordWrap" >
       <bool>false</bool>

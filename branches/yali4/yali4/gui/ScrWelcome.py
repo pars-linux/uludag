@@ -10,23 +10,25 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.sysutils
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.Ui.welcomewidget import WelcomeWidget
-import yali.gui.context as ctx
-from yali.gui.YaliDialog import Dialog
-import GUIGPL
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
+import yali4.sysutils
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.welcomewidget import Ui_WelcomeWidget
+import yali4.gui.context as ctx
+#from yali4.gui.YaliDialog import Dialog
+#import GUIGPL
 
 ##
 # Welcome screen is the first screen to be shown.
-class Widget(WelcomeWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Welcome !! ')
+    desc = _('Screen description...')
     help = _('''
 <font size="+2">Welcome!</font>
 
@@ -55,20 +57,21 @@ Have a fruitful experience with Pardus!
 ''')
 
     def __init__(self, *args):
-        apply(WelcomeWidget.__init__, (self,) + args)
-        self.rebootButton.setEnabled(False)
-        self.pix.setPixmap(ctx.iconfactory.newPixmap("welcome"))
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_WelcomeWidget()
+        self.ui.setupUi(self)
+        self.ui.rebootButton.setEnabled(False)
 
-        self.connect(self.not_accept, SIGNAL("toggled(bool)"),
+        QObject.connect(self.ui.not_accept, SIGNAL("toggled(bool)"),
                      self.slotNotAcceptToggled)
 
-        self.connect(self.accept, SIGNAL("toggled(bool)"),
+        QObject.connect(self.ui.accept, SIGNAL("toggled(bool)"),
                      self.slotAcceptToggled)
 
-        self.connect(self.rebootButton, SIGNAL("clicked()"),
+        QObject.connect(self.ui.rebootButton, SIGNAL("clicked()"),
                      self.slotReboot)
 
-        self.connect(self.gplButton, SIGNAL("clicked()"),
+        QObject.connect(self.ui.gplButton, SIGNAL("clicked()"),
                      self.showGPL)
 
     def slotAcceptToggled(self, b):
@@ -78,28 +81,33 @@ Have a fruitful experience with Pardus!
     def slotNotAcceptToggled(self, b):
         if b:
             self.__enable_next(False)
-    
+
     def __enable_next(self, b):
         if b:
-            ctx.screens.enableNext()
-            self.rebootButton.setEnabled(False)
+            #ctx.screens.enableNext()
+            print "Huballa"
+            self.ui.rebootButton.setEnabled(False)
         else:
-            ctx.screens.disableNext()
-            self.rebootButton.setEnabled(True)
+            #ctx.screens.disableNext()
+            print "HuballaDS"
+            self.ui.rebootButton.setEnabled(True)
 
     def showGPL(self):
+        pass
         # make a release notes dialog
-        r = GUIGPL.Widget(self)
-        d = Dialog("GPL", r, self)
-        d.resize(500,400)
-        d.exec_loop()
+        #r = GUIGPL.Widget(self)
+        #d = Dialog("GPL", r, self)
+        #d.resize(500,400)
+        #d.exec_loop()
 
     def slotReboot(self):
         yali.sysutils.fastreboot()
 
     def shown(self):
-        ctx.screens.disablePrev()
-        if self.accept.isChecked():
-            ctx.screens.enableNext()
+        #ctx.screens.disablePrev()
+        if self.ui.accept.isChecked():
+            print "Accepted.."
+            #ctx.screens.enableNext()
         else:
-            ctx.screens.disableNext()
+            print "Boing.."
+            #ctx.screens.disableNext()

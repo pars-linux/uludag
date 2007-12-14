@@ -21,16 +21,13 @@ _ = __trans.ugettext
 from yali4.gui.Ui.main import Ui_YaliMain
 import yali4.gui.context as ctx
 
-screens = []
-
 ##
 # Widget for YaliWindow (you can call it MainWindow too ;).
 class Widget(Ui_YaliMain):
     def __init__(self):
         self.ui = QtGui.QWidget()
         self.setupUi(self.ui)
-        self.createWidgets()
-        self.mainStack.setCurrentIndex(0)
+        self.screenData = None
 
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
@@ -39,26 +36,34 @@ class Widget(Ui_YaliMain):
         #QObject.connect(ctx.screens, PYSIGNAL("nextButtonEnabled"), self.slotNextEnabled)
         #QObject.connect(ctx.screens, PYSIGNAL("prevButtonEnabled"), self.slotPrevEnabled)
 
-    def slotNext(self):
-        self.stackMove(+1)
-
-    def slotBack(self):
-        self.stackMove(-1)
-
-    def stackMove(self,d):
+    def getCur(self,d):
         new   = self.mainStack.currentIndex() + d
         total = self.mainStack.count()
         if new < 0: new = 0
         if new > total: new = total
-        self.mainStack.setCurrentIndex(new)
+        return new
 
-    def createWidgets(self):
+    def slotNext(self):
+        self.stackMove(self.getCur(+1))
+
+    def slotBack(self):
+        self.stackMove(self.getCur(-1))
+
+    def stackMove(self,new):
+        self.mainStack.setCurrentIndex(new)
+        _w = self.mainStack.currentWidget()
+        self.screenName.setText(_w.title)
+        self.screenDescription.setText(_w.desc)
+        self.helpContent.setText(_w.help)
+
+    def createWidgets(self,screens=[]):
+        if not self.screenData:
+            self.screenData = screens
         self.mainStack.removeWidget(self.page)
         for screen in screens:
-            _q = QtGui.QWidget()
-            _w = screen()
-            _w.setupUi(_q)
-            self.mainStack.addWidget(_q)
+            _scr = screen.Widget()
+            self.mainStack.addWidget(_scr)
+        self.stackMove(0)
 
     # Enable/Disable buttons
     def slotNextDisabled(self):

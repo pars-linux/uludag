@@ -31,7 +31,7 @@ from pyaspects.weaver import *
 
 import YaliWindow
 # screens
-#import ScrWelcome
+import ScrWelcome
 #import ScrCheckCD
 #import ScrKeyboard
 #import ScrPartitionAuto
@@ -51,6 +51,9 @@ class Runner:
     _app = None
 
     def __init__(self):
+
+        _all_screens = [ScrWelcome]
+
         """
         _all_stages = [
             {'num': 1, 'text': _("Basic setup")},
@@ -99,6 +102,7 @@ class Runner:
         # for stg in _all_stages:
         #     ctx.stages.addStage(stg['num'], stg['text'])
 
+        self._window.createWidgets(_all_screens)
         # add screens
         # num = 0
         # for scr in _all_screens:
@@ -136,8 +140,8 @@ class Runner:
     def run(self):
         self._window.ui.show()
         # We want it to be a full-screen window.
-        self._window.ui.resize(self._app.desktop().size())
-        self._window.ui.move(0,0)
+        # self._window.ui.resize(self._app.desktop().size())
+        # self._window.ui.move(0,0)
         self._app.exec_()
 
 """
