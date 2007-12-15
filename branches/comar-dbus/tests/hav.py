@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import sys
 
 try:
@@ -105,6 +106,7 @@ def main():
             except IndexError:
                 printUsage()
                 return 1
+            script = os.path.realpath(script)
             if iface.register(app, model, script):
                 print 'Registering %s/%s' % (model, app)
         elif cmd == 'remove':
