@@ -22,10 +22,10 @@
 char *cfg_bus_name = "tr.org.pardus.comar";
 
 //! Configuration directory
-char *cfg_config_dir = "/etc/comar";
+char *cfg_config_dir = CONFIG_DIR;
 
 //! Data directory
-char *cfg_data_dir = "/var/db/comar";
+char *cfg_data_dir = DATA_DIR;
 
 //! Bus type (system or session)
 int cfg_bus_type = DBUS_BUS_SYSTEM;
@@ -40,7 +40,7 @@ int cfg_log_console = 0;
 int cfg_log_file = 1;
 
 //! Log file
-char *cfg_log_file_name = "/var/log/comar.log";
+char *cfg_log_file_name = LOG_FILE;
 
 //! Log debug flags
 int cfg_log_flags = 0;
@@ -76,10 +76,10 @@ static char *shortopts = "c:d:g:i:pt:hv";
 
 //! Help message
 static void
-print_usage(void)
+print_usage(const char *name)
 {
     printf(
-        _("Usage: comar [OPTIONS]\n"
+        _("Usage: %s [OPTIONS]\n"
         "Pardus configuration manager.\n"
         " -c, --configdir [DIR] Configuration directory.\n"
         "                       (default is %s)\n"
@@ -95,6 +95,7 @@ print_usage(void)
         " -h, --help            Print this text and exit.\n"
         " -v, --version         Print version and exit.\n"
         "Report bugs to http://bugs.pardus.org.tr\n"),
+        name,
         cfg_config_dir,
         cfg_data_dir,
         cfg_idle_shutdown
@@ -162,7 +163,7 @@ cfg_init(int argc, char *argv[])
                 }
                 break;
             case 'h':
-                print_usage();
+                print_usage(argv[0]);
                 exit(0);
             case 'v':
                 print_version();

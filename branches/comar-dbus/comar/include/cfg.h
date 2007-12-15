@@ -7,8 +7,6 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-#define VERSION "2.0"
-
 extern char *cfg_bus_name;
 extern char *cfg_config_dir;
 extern char *cfg_data_dir;
