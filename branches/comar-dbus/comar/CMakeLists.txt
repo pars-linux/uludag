@@ -45,11 +45,11 @@ add_executable(comar src/main.c
                      src/utility.c)
 
 install(PROGRAMS comar
-        DESTINATION usr/bin
+        DESTINATION /usr/bin
         RENAME ${APP_NAME})
 install(FILES etc/model.xml
-        DESTINATION etc/${APP_NAME})
+        DESTINATION /etc/${APP_NAME})
 install(FILES
         etc/comar.conf
-        DESTINATION etc/dbus-1/system.d
+        DESTINATION /etc/dbus-1/system.d
         RENAME ${APP_NAME}.conf)
