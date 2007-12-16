@@ -7,7 +7,6 @@ from qt import *
 
 from d_light import d_light
 
-
 class dbusEvent(QThread):
     def run(self):
         while 1:
@@ -35,14 +34,14 @@ class mainWidget(QWidget):
         box.addWidget(self.textMessages)
 
         # register signal handler
-        d_light.registerSignal("type='signal'", self.handleSignal)
+        d_light.registerSignal("type='signal'", self.handleSignal, d_light.BUS_SYSTEM)
 
         self.connect(self.buttonCall, SIGNAL('clicked()'), self.slotClicked)
 
         self.resize(500, 300)
 
     def slotClicked(self):
-        d_light.call("tr.org.pardus.comar", "/system", "tr.org.pardus.comar", "listApplications", (), self.handleClick)
+        d_light.call("tr.org.pardus.comar", "/system", "tr.org.pardus.comar", "listApplications", (), self.handleClick, d_light.BUS_SYSTEM)
 
     def handleSignal(self, *args):
         self.textMessages.append("Recieved Signal : %s" % repr(args))
