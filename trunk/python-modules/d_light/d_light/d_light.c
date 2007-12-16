@@ -14,10 +14,10 @@
 #include "trans.h"
 
 
-DBusConnection *conn;
-DBusMessage *msg;
-PyObject *signalHooks;
-PyObject *methodHooks;
+DBusConnection *conn = NULL;
+DBusMessage *msg = NULL;
+PyObject *signalHooks = NULL;
+PyObject *methodHooks = NULL;
 
 PyObject *
 light_init(PyObject *self, PyObject *args)
@@ -52,7 +52,7 @@ light_registerSignal(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    if (!PyList_Check(signalHooks)) {
+    if (!conn) {
         PyErr_SetString(PyExc_Exception, "run init() first.");
         return NULL;
     }
@@ -84,7 +84,7 @@ light_call(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    if (!PyList_Check(signalHooks)) {
+    if (!conn) {
         PyErr_SetString(PyExc_Exception, "run init() first.");
         return NULL;
     }
@@ -114,7 +114,7 @@ light_fetch(PyObject *self, PyObject *args)
     int i;
     PyObject *obj;
 
-    if (!PyList_Check(signalHooks)) {
+    if (!conn) {
         PyErr_SetString(PyExc_Exception, "run init() first.");
         return NULL;
     }
@@ -131,7 +131,7 @@ light_exec(PyObject *self, PyObject *args)
 {
     PyObject *obj;
 
-    if (!PyList_Check(signalHooks)) {
+    if (!conn) {
         PyErr_SetString(PyExc_Exception, "run init() first.");
         return NULL;
     }
