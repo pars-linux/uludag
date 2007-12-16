@@ -14,6 +14,9 @@
 
 #include "trans.h"
 
+#define TYPES_BASIC "sbidln"
+#define TYPES_CONTAINER "arD"
+
 char *
 strsub(const char *str, int start, int end)
 {
@@ -257,7 +260,6 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             else {
                 e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_sub, &sub);
             }
-            free(sign_sub);
             free(sign_container);
             if (!e) break;
             for (i = 0; i < PyList_Size(obj); i++) {
@@ -268,6 +270,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
                 }
                 dbus_py_export(&sub, item);
             }
+            free(sign_sub);
             dbus_message_iter_close_container(iter, &sub);
             break;
         case 'r':
@@ -297,6 +300,13 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
                 PyErr_SetString(PyExc_TypeError, "Dictionary returned by function contains unknown data type.");
                 return 1;
             }
+            if (strstr(TYPES_BASIC, sign_sub) == NULL) {
+                PyErr_SetString(PyExc_TypeError, "Dictionary keys must be single typed.");
+                free(sign_sub);
+                free(sign_sub2);
+                free(sign_container);
+                return 1;
+            }
             e = dbus_message_iter_open_container(iter, DBUS_TYPE_ARRAY, sign_container, &sub);
             free(sign_container);
             if (!e) break;
@@ -304,10 +314,14 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             while (PyDict_Next(obj, &i, &key, &value)) {
                 if (strcmp(sign_sub, dbus_py_get_object_signature(key)) != 0) {
                     PyErr_SetString(PyExc_TypeError, "All keys of the dictionary must have same type.");
+                    free(sign_sub);
+                    free(sign_sub2);
                     return 1;
                 }
                 if (strcmp(sign_sub2, dbus_py_get_object_signature(value)) != 0) {
                     PyErr_SetString(PyExc_TypeError, "All values in the dictionary must have same type.");
+                    free(sign_sub);
+                    free(sign_sub2);
                     return 1;
                 }
                 dbus_message_iter_open_container(&sub, DBUS_TYPE_DICT_ENTRY, NULL, &sub2);
@@ -316,6 +330,8 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
                 dbus_message_iter_close_container(&sub, &sub2);
             }
             dbus_message_iter_close_container(iter, &sub);
+            free(sign_sub);
+            free(sign_sub2);
             break;
         case 'n':
             p.s = "";
