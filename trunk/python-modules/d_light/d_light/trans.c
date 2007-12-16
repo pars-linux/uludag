@@ -267,21 +267,23 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             dbus_message_iter_close_container(iter, &sub);
             break;
         case 'r':
+            // Empty tuples not allowed
+            if (PyTuple_Size(obj) == 0) {
+                PyErr_SetString(PyExc_TypeError, "Empty tuples not allowed.");
+                return 1;
+            }
             sign_container = dbus_py_get_object_signature(obj);
             if (!sign_container) {
                 PyErr_SetString(PyExc_TypeError, "Tuple returned by function contains unknown data type.");
                 return 1;
             }
-            // Empty tuples not allowed
-            if (PyTuple_Size(obj) > 0) {
-                e = dbus_message_iter_open_container(iter, DBUS_TYPE_STRUCT, NULL, &sub);
-                if (!e) break;
-                for (i = 0; i < PyTuple_Size(obj); i++) {
-                    item = PyTuple_GetItem(obj, i);
-                    dbus_py_export(&sub, item);
-                }
-                dbus_message_iter_close_container(iter, &sub);
+            e = dbus_message_iter_open_container(iter, DBUS_TYPE_STRUCT, NULL, &sub);
+            if (!e) break;
+            for (i = 0; i < PyTuple_Size(obj); i++) {
+                item = PyTuple_GetItem(obj, i);
+                dbus_py_export(&sub, item);
             }
+            dbus_message_iter_close_container(iter, &sub);
             break;
         case 'D':
             sign_container = dbus_py_get_object_signature(obj);
