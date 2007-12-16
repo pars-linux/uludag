@@ -100,7 +100,7 @@ light_call(PyObject *self, PyObject *args)
 {
     char *dest, *path, *interface, *method;
     PyObject *obj, *callback;
-    int bustype;
+    int bustype, i;
     DBusMessage *msg;
     dbus_uint32_t serial = 0;
     dbus_bool_t sent;
@@ -119,8 +119,10 @@ light_call(PyObject *self, PyObject *args)
         if (PyTuple_Size(obj) > 0) {
             DBusMessageIter iter;
             dbus_message_iter_init_append(msg, &iter);
-            if (dbus_py_export(&iter, obj) != 0) {
-                return NULL;
+            for (i = 0; i < PyTuple_Size(obj); i++) {
+                if (dbus_py_export(&iter, PyTuple_GetItem(obj, i)) != 0) {
+                    return NULL;
+                }
             }
         }
     }
