@@ -77,7 +77,6 @@ light_call(PyObject *self, PyObject *args)
     char *dest, *path, *interface, *method;
     PyObject *obj, *callback;
     DBusMessage *msg;
-    DBusMessageIter iter;
     dbus_uint32_t serial = 0;
 
     if (!PyArg_ParseTuple(args, "ssssOO", &dest, &path, &interface, &method, &obj, &callback)) {
@@ -90,8 +89,17 @@ light_call(PyObject *self, PyObject *args)
     }
 
     msg = dbus_message_new_method_call(dest, path, interface, method);
-    dbus_message_iter_init_append(msg, &iter);
-    if (dbus_py_export(&iter, obj) != 0) {
+    if (PyTuple_Check(obj)) {
+        if (PyTuple_Size(obj) > 0) {
+            DBusMessageIter iter;
+            dbus_message_iter_init_append(msg, &iter);
+            if (dbus_py_export(&iter, obj) != 0) {
+                return NULL;
+            }
+        }
+    }
+    else {
+        PyErr_SetString(PyExc_Exception, "Arguments must be passed as a tuple.");
         return NULL;
     }
 
