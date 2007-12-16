@@ -214,7 +214,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
     int i = 0;
 
     char sign;
-    char *sign_container, *sign_sub;
+    char *sign_container, *sign_sub, *sign_sub2;
     int sign_size;
 
     const dbus_int32_t array[] = {};
@@ -262,6 +262,10 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             if (!e) break;
             for (i = 0; i < PyList_Size(obj); i++) {
                 item = PyList_GetItem(obj, i);
+                if (strcmp(sign_sub, dbus_py_get_object_signature(item)) != 0) {
+                    PyErr_SetString(PyExc_TypeError, "All elements in the list must have same type.");
+                    return 1;
+                }
                 dbus_py_export(&sub, item);
             }
             dbus_message_iter_close_container(iter, &sub);
@@ -287,6 +291,8 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             break;
         case 'D':
             sign_container = dbus_py_get_object_signature(obj);
+            sign_sub = (char *) strsub(sign_container, 1, 2);
+            sign_sub2 = (char *) strsub(sign_container, 2, -1);
             if (!sign_container) {
                 PyErr_SetString(PyExc_TypeError, "Dictionary returned by function contains unknown data type.");
                 return 1;
@@ -296,6 +302,14 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             if (!e) break;
             i = 0; // Go to first index
             while (PyDict_Next(obj, &i, &key, &value)) {
+                if (strcmp(sign_sub, dbus_py_get_object_signature(key)) != 0) {
+                    PyErr_SetString(PyExc_TypeError, "All keys of the dictionary must have same type.");
+                    return 1;
+                }
+                if (strcmp(sign_sub2, dbus_py_get_object_signature(value)) != 0) {
+                    PyErr_SetString(PyExc_TypeError, "All values in the dictionary must have same type.");
+                    return 1;
+                }
                 dbus_message_iter_open_container(&sub, DBUS_TYPE_DICT_ENTRY, NULL, &sub2);
                 dbus_py_export(&sub2, key);
                 dbus_py_export(&sub2, value);
