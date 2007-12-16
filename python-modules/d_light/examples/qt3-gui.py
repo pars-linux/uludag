@@ -9,10 +9,6 @@ from d_light import d_light
 
 
 class dbusEvent(QThread):
-    def __init__(self, parent):
-        QThread.__init__(self)
-        self.parent = parent
-
     def run(self):
         while 1:
             d_light.fetch()
@@ -26,7 +22,7 @@ class mainWidget(QWidget):
 
         # DBus
         d_light.init()
-        self.thread = dbusEvent(self)
+        self.thread = dbusEvent()
         self.thread.start()
 
         box = QVBoxLayout(self)
