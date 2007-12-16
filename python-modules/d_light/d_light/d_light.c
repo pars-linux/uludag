@@ -167,11 +167,11 @@ out:
 }
 
 static PyMethodDef light_methods[] = {
-    {"init",  (PyCFunction)light_init, METH_NOARGS, ""},
-    {"fetch",  (PyCFunction)light_fetch, METH_NOARGS, ""},
-    {"exec_",  (PyCFunction)light_exec, METH_NOARGS, ""},
-    {"registerSignal",  (PyCFunction)light_registerSignal, METH_VARARGS, ""},
-    {"call",  (PyCFunction)light_call, METH_VARARGS, ""},
+    {"init",  (PyCFunction)light_init, METH_NOARGS, "init()\n  Initializes d_light."},
+    {"fetch",  (PyCFunction)light_fetch, METH_NOARGS, "fetch()\n  Fetches a message from DBus message queue."},
+    {"exec_",  (PyCFunction)light_exec, METH_NOARGS, "exec_()\n  Processes fetched message."},
+    {"registerSignal",  (PyCFunction)light_registerSignal, METH_VARARGS, "registerSignal(rule, callbackFunc)\n  Registers a new signal callback function."},
+    {"call",  (PyCFunction)light_call, METH_VARARGS, "call(dest, path, iface, method, args_tuple, callbackFunc)\n  Makes an asynchronous method call"},
     {NULL, NULL}
 };
 
