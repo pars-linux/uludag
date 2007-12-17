@@ -14,7 +14,10 @@
 #include <time.h>
 #include <sys/stat.h>
 
+#ifndef D_LIGHT
 #include "cfg.h"
+#endif
+
 #include "utility.h"
 
 const char *valid_app_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+";
@@ -83,6 +86,8 @@ strrep(const char *str, char old, char new)
 
     return new_str;
 }
+
+#ifndef STR_UTILS
 
 //! Test whether a path exists
 int
@@ -256,3 +261,5 @@ time_diff(struct timeval *start, struct timeval *end)
     msec -= (start->tv_sec * 1000) + (start->tv_usec / 1000);
     return msec;
 }
+
+#endif

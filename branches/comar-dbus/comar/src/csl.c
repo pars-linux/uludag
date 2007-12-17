@@ -12,14 +12,20 @@
 #include <node.h>
 
 #include "csl.h"
+#include "utility.h"
+
+#ifndef D_LIGHT
 #include "cfg.h"
 #include "dbus.h"
 #include "log.h"
 #include "process.h"
-#include "utility.h"
+#endif
 
 #define TYPES_BASIC "sbidln"
 #define TYPES_CONTAINER "arD"
+
+
+#ifndef D_LIGHT
 
 //! Initializes Python VM
 void
@@ -276,6 +282,8 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
     Py_DECREF(pModule);
     return 0;
 }
+
+#endif
 
 //! Returns DBus signature of a Python object
 static char
@@ -563,8 +571,8 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
     }
     // FIXME - cleanup?
     if (!e) {
-        log_error("DBus: Out Of Memory!\n");
-        exit(1);
+        PyErr_SetString(PyExc_Exception, "No memory");
+        return 1;
     }
 
     return 0;
