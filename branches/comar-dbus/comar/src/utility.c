@@ -87,7 +87,7 @@ strrep(const char *str, char old, char new)
     return new_str;
 }
 
-#ifndef STR_UTILS
+#ifndef D_LIGHT
 
 //! Test whether a path exists
 int
