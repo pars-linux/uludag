@@ -254,12 +254,12 @@
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType" >
-      <enum>QSizePolicy::Expanding</enum>
+      <enum>QSizePolicy::Fixed</enum>
      </property>
      <property name="sizeHint" >
       <size>
-       <width>88</width>
-       <height>91</height>
+       <width>20</width>
+       <height>20</height>
       </size>
      </property>
     </spacer>

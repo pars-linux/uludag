@@ -28,7 +28,7 @@ import GUIGPL
 # Welcome screen is the first screen to be shown.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Welcome !! ')
-    desc = _('Screen description...')
+    desc = _('Welcome to the Pardus installer..')
     help = _('''
 <font size="+2">Welcome!</font>
 

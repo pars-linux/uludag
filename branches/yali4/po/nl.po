@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-28 09:09+0200\n"
+"POT-Creation-Date: 2007-12-17 17:30+0200\n"
 "PO-Revision-Date: 2007-11-13 19:53+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -20,16 +20,15 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: yali/gui/Ui/autopartwidget.py:83 yali/gui/Ui/bootloaderwidget.py:95
-#: yali/gui/Ui/checkcdwidget.py:74 yali/gui/Ui/keyboardwidget.py:66
-#: yali/gui/Ui/kickerwidget.py:34 yali/gui/Ui/parteditbuttons.py:46
-#: yali/gui/Ui/parteditwidget.py:87 yali/gui/Ui/partlistwidget.py:92
-#: yali/gui/Ui/rootpasswidget.py:127 yali/gui/Ui/setupuserswidget.py:149
-#: yali/gui/Ui/welcomewidget.py:95
+#: yali4/gui/Ui/autopartwidget.py:83 yali4/gui/Ui/bootloaderwidget.py:90
+#: yali4/gui/Ui/checkcdwidget.py:85 yali4/gui/Ui/keyboardwidget.py:69
+#: yali4/gui/Ui/kickerwidget.py:27 yali4/gui/Ui/parteditbuttons.py:48
+#: yali4/gui/Ui/parteditwidget.py:93 yali4/gui/Ui/rootpasswidget.py:148
+#: yali4/gui/Ui/setupuserswidget.py:159 yali4/gui/Ui/welcomewidget.py:109
 msgid "Form1"
 msgstr "Form1"
 
-#: yali/gui/Ui/autopartwidget.py:84
+#: yali4/gui/Ui/autopartwidget.py:84
 msgid ""
 "<font size=\"+1\"><b>Select the partitioning method:</b></font>\n"
 "\n"
@@ -52,20 +51,20 @@ msgstr ""
 "Pardus-installatie.\n"
 "Alle gegevens op deze schijf zullen verloren gaan!</font></p>"
 
-#: yali/gui/Ui/autopartwidget.py:92
-msgid "&nbsp;"
-msgstr "&nbsp;"
-
-#: yali/gui/Ui/autopartwidget.py:94
-msgid "No, I'll partition my disk manually."
-msgstr "Nee, ik wil mijn schijf handmatig partitioneren."
-
-#: yali/gui/Ui/autopartwidget.py:95
+#: yali4/gui/Ui/autopartwidget.py:93
 msgid "Yes, automatically partition and format selected disk!"
 msgstr ""
 "Ja, automatisch partitioneren en formatteren van de geselecteerde schijf!"
 
-#: yali/gui/Ui/bootloaderwidget.py:96
+#: yali4/gui/Ui/autopartwidget.py:94
+msgid "No, I'll partition my disk manually."
+msgstr "Nee, ik wil mijn schijf handmatig partitioneren."
+
+#: yali4/gui/Ui/autopartwidget.py:95
+msgid "&nbsp;"
+msgstr "&nbsp;"
+
+#: yali4/gui/Ui/bootloaderwidget.py:91
 msgid ""
 "<b>Do you want to write boot loader (GRUB) to your hard disk's master boot "
 "record?</b>\n"
@@ -87,36 +86,32 @@ msgstr ""
 "besturingssysteem (indien geïnstalleerd) te configureren om  het nieuw "
 "geïnstalleerde Pardus te kunnen starten.</p>"
 
-#: yali/gui/Ui/bootloaderwidget.py:102
-msgid "Where do you want to install the bootloader?"
+#: yali4/gui/Ui/bootloaderwidget.py:97
+#, fuzzy
+msgid "Where do you want to install the bootlader ?"
 msgstr "Waar wilt u de bootloader installeren?"
 
-#: yali/gui/Ui/bootloaderwidget.py:103
+#: yali4/gui/Ui/bootloaderwidget.py:98
 msgid "Install to first bootable disk (recommended)"
 msgstr "Installeer op de eerste bootbare schijf (aangeraden)"
 
-#: yali/gui/Ui/bootloaderwidget.py:104
+#: yali4/gui/Ui/bootloaderwidget.py:99
 msgid "Install to Pardus installed partition"
 msgstr "Installeer op de partitie waar Pardus op staat"
 
-#: yali/gui/Ui/bootloaderwidget.py:105
+#: yali4/gui/Ui/bootloaderwidget.py:100
 msgid "Install to selected disk belove"
 msgstr "Installeer op geselecteerde schijf"
 
-#: yali/gui/Ui/bootloaderwidget.py:106
+#: yali4/gui/Ui/bootloaderwidget.py:101
 msgid "Select the disk you to install bootloader:"
 msgstr "Selecteer de schijf waar u de bootloader op wilt installeren:"
 
-#: yali/gui/Ui/bootloaderwidget.py:107
+#: yali4/gui/Ui/bootloaderwidget.py:102
 msgid "Don't install bootloader"
 msgstr "Installeer geen bootloader"
 
-#: yali/gui/Ui/checkcdwidget.py:75 yali/gui/Ui/installwidget.py:54
-#: yali/gui/Ui/keyboardwidget.py:67 yali/gui/Ui/welcomewidget.py:96
-msgid "pix"
-msgstr "pix"
-
-#: yali/gui/Ui/checkcdwidget.py:76
+#: yali4/gui/Ui/checkcdwidget.py:86
 msgid ""
 "You can check the integrity of the packages in installation CD. Although "
 "this is an optional step, we encourage you to do it to avoid any errors in "
@@ -126,115 +121,113 @@ msgstr ""
 "Ondanks dat deze stap optioneel is, raden we het u aan om fouten tijdens de "
 "installatie te vermijden."
 
-#: yali/gui/Ui/checkcdwidget.py:77
+#: yali4/gui/Ui/checkcdwidget.py:87
 msgid "Check CD Integrity"
 msgstr "Controleer CD integriteit"
 
-#: yali/gui/Ui/installwidget.py:52
+#: yali4/gui/Ui/dialog.py:60
+msgid "TextLabel"
+msgstr ""
+
+#: yali4/gui/Ui/dialog.py:62
+msgid "X"
+msgstr ""
+
+#: yali4/gui/Ui/installwidget.py:57
 msgid "Form3"
 msgstr "Form3"
 
-#: yali/gui/Ui/installwidget.py:53
+#: yali4/gui/Ui/installwidget.py:58
+msgid "pix"
+msgstr "pix"
+
+#: yali4/gui/Ui/installwidget.py:59
 msgid "Installing Package: "
 msgstr "Installeren pakket: "
 
-#: yali/gui/Ui/keyboardwidget.py:68
+#: yali4/gui/Ui/keyboardwidget.py:70
 msgid "Select the keyboard layout of your choice."
 msgstr "Selecteer uw toetenbordindeling."
 
-#: yali/gui/Ui/keyboardwidget.py:69
+#: yali4/gui/Ui/keyboardwidget.py:71
 msgid "Test selected keyboard:"
 msgstr "Test geselecteerd toetsenbord:"
 
-#: yali/gui/Ui/parteditbuttons.py:47 yali/gui/YaliDialog.py:153
+#: yali4/gui/Ui/main.py:158
+msgid "Yali4"
+msgstr ""
+
+#: yali4/gui/Ui/main.py:237
+msgid "Screen Name"
+msgstr ""
+
+#: yali4/gui/Ui/main.py:239
+msgid "Details about the screen"
+msgstr ""
+
+#: yali4/gui/Ui/main.py:240 yali4/gui/GUIBottom.py:102
+#: yali4/gui/GUIBottom.py:152
+msgid "Release Notes"
+msgstr "Uitgavenotities"
+
+#: yali4/gui/Ui/main.py:241
+#, fuzzy
+msgid "Cancel Setup"
+msgstr "Annuleren"
+
+#: yali4/gui/Ui/main.py:242
+msgid "«"
+msgstr ""
+
+#: yali4/gui/Ui/main.py:243
+msgid "»"
+msgstr ""
+
+#: yali4/gui/Ui/parteditbuttons.py:49 yali4/gui/YaliDialog.py:127
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: yali/gui/Ui/parteditbuttons.py:48
+#: yali4/gui/Ui/parteditbuttons.py:50
 msgid "Apply"
 msgstr "Toepassen"
 
-#: yali/gui/Ui/parteditwidget.py:88
-msgid "Size (MB):"
-msgstr "Grootte (MB):"
-
-#: yali/gui/Ui/parteditwidget.py:89
-msgid "Use available free space"
-msgstr "Gebruik beschikbare vrije ruimte"
-
-#: yali/gui/Ui/parteditwidget.py:91
-msgid "Format this partition"
-msgstr "Formatteer deze partitie"
-
-#: yali/gui/Ui/parteditwidget.py:93
+#: yali4/gui/Ui/parteditwidget.py:94
 msgid " What do you want to store in this partition? "
 msgstr " Wat wilt u in deze partitie opslaan? "
 
-#: yali/gui/Ui/parteditwidget.py:94
+#: yali4/gui/Ui/parteditwidget.py:95
 msgid "Pardus system files (mandatory)"
 msgstr "Pardus systeembestanden (vereist)"
 
-#: yali/gui/Ui/parteditwidget.py:95
+#: yali4/gui/Ui/parteditwidget.py:96
 msgid "User files (optional)"
 msgstr "Gebruikersbestanden (optioneel)"
 
-#: yali/gui/Ui/parteditwidget.py:96
+#: yali4/gui/Ui/parteditwidget.py:97
 msgid "Swap space (optional)"
 msgstr "Swapruimte (optioneel)"
 
-#: yali/gui/Ui/partlistwidget.py:47 yali/gui/Ui/partlistwidget.py:96
-msgid "Device"
-msgstr "Station"
+#: yali4/gui/Ui/parteditwidget.py:98
+msgid "Size (MB):"
+msgstr "Grootte (MB):"
 
-#: yali/gui/Ui/partlistwidget.py:48 yali/gui/Ui/partlistwidget.py:97
-msgid "Size"
-msgstr "Grootte"
+#: yali4/gui/Ui/parteditwidget.py:99
+msgid "Use available free space"
+msgstr "Gebruik beschikbare vrije ruimte"
 
-#: yali/gui/Ui/partlistwidget.py:49 yali/gui/Ui/partlistwidget.py:98
-msgid "Partition Type"
-msgstr "Partitietype"
+#: yali4/gui/Ui/parteditwidget.py:100
+msgid "Format this partition"
+msgstr "Formatteer deze partitie"
 
-#: yali/gui/Ui/partlistwidget.py:50 yali/gui/Ui/partlistwidget.py:99
-msgid "Filesystem"
-msgstr "Bestandssysteem"
-
-#: yali/gui/Ui/partlistwidget.py:51 yali/gui/Ui/partlistwidget.py:100
-msgid "Format?"
-msgstr "Formatteren?"
-
-#: yali/gui/Ui/partlistwidget.py:93
-msgid "Create New Partition"
-msgstr "Maak nieuwe partitie"
-
-#: yali/gui/Ui/partlistwidget.py:94 yali/gui/PartListImpl.py:240
-msgid "Delete Selected Partition"
-msgstr "Verwijder geselecteerde partitie"
-
-#: yali/gui/Ui/partlistwidget.py:95
-msgid "Partitions:"
-msgstr "Partities:"
-
-#: yali/gui/Ui/partlistwidget.py:101
-msgid "Reset All Changes"
-msgstr "Alle wijzigingen ongedaan maken"
-
-#: yali/gui/Ui/partlistwidget.py:102
-msgid "Resize"
-msgstr "Grootte aanpassen"
-
-#: yali/gui/Ui/partlistwidget.py:103
-msgid "Edit"
-msgstr "Bewerken"
-
-#: yali/gui/Ui/rootpasswidget.py:130
+#: yali4/gui/Ui/rootpasswidget.py:149
 msgid "System administrator password:"
 msgstr "Wachtwoord systeembeheerder:"
 
-#: yali/gui/Ui/rootpasswidget.py:131
+#: yali4/gui/Ui/rootpasswidget.py:150
 msgid "System administrator password (again):"
 msgstr "Wachtwoord systeembeheerder (nogmaals):"
 
-#: yali/gui/Ui/rootpasswidget.py:133
+#: yali4/gui/Ui/rootpasswidget.py:151
 msgid ""
 "<p align=\"left\">System administrator user (root) handles important system "
 "maintanence tasks. Please give password for this special user and do not "
@@ -246,59 +239,59 @@ msgstr ""
 "gebruiker, en vergeet het wachtwoord niet! Uit veiligheids overwegingen "
 "wordt het afgeraden het wachtwoord ergens op te schrijven. </p>"
 
-#: yali/gui/Ui/rootpasswidget.py:134
+#: yali4/gui/Ui/rootpasswidget.py:152
 msgid "Hostname:"
 msgstr "Hostnaam:"
 
-#: yali/gui/Ui/rootpasswidget.py:135
+#: yali4/gui/Ui/rootpasswidget.py:153
 msgid "pardus"
 msgstr "pardus"
 
-#: yali/gui/Ui/setupuserswidget.py:152
+#: yali4/gui/Ui/setupuserswidget.py:160
 msgid "New User"
 msgstr "Nieuwe gebruiker:"
 
-#: yali/gui/Ui/setupuserswidget.py:153
+#: yali4/gui/Ui/setupuserswidget.py:161
 msgid "User Name:"
 msgstr "Gebruikersnaam:"
 
-#: yali/gui/Ui/setupuserswidget.py:154
-msgid "Password (again):"
-msgstr "Wachtwoord (nogmaals):"
-
-#: yali/gui/Ui/setupuserswidget.py:155
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: yali/gui/Ui/setupuserswidget.py:156
+#: yali4/gui/Ui/setupuserswidget.py:162
 msgid "Real Name:"
 msgstr "Echte naam:"
 
-#: yali/gui/Ui/setupuserswidget.py:157
-msgid "Give administrator privileges to this user"
-msgstr "Geef administror rechten aan deze gebruiker"
+#: yali4/gui/Ui/setupuserswidget.py:163
+msgid "Password:"
+msgstr "Wachtwoord:"
 
-#: yali/gui/Ui/setupuserswidget.py:158 yali/gui/ScrUsers.py:188
+#: yali4/gui/Ui/setupuserswidget.py:164
+msgid "Password (again):"
+msgstr "Wachtwoord (nogmaals):"
+
+#: yali4/gui/Ui/setupuserswidget.py:165 yali4/gui/ScrUsers.py:188
 msgid "Create User"
 msgstr "Maak gebruiker"
 
-#: yali/gui/Ui/setupuserswidget.py:160
+#: yali4/gui/Ui/setupuserswidget.py:166
+msgid "Give administrator privileges to this user"
+msgstr "Geef administror rechten aan deze gebruiker"
+
+#: yali4/gui/Ui/setupuserswidget.py:167
 msgid "Users:"
 msgstr "Gebruikers:"
 
-#: yali/gui/Ui/setupuserswidget.py:161
+#: yali4/gui/Ui/setupuserswidget.py:168
 msgid "Delete Selected User"
 msgstr "Verwijder geselecteerde gebruiker"
 
-#: yali/gui/Ui/setupuserswidget.py:162
+#: yali4/gui/Ui/setupuserswidget.py:169
 msgid "Auto Login User :"
 msgstr "Automatisch inloggen gebruiker:"
 
-#: yali/gui/Ui/setupuserswidget.py:164
+#: yali4/gui/Ui/setupuserswidget.py:170
 msgid "Auto Login Disabled"
 msgstr "Automatisch inloggen uitgeschakeld"
 
-#: yali/gui/Ui/welcomewidget.py:97
+#: yali4/gui/Ui/welcomewidget.py:110
 msgid ""
 "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
 "software have their corresponding licenses. By installing or using Pardus, "
@@ -308,122 +301,110 @@ msgstr ""
 "Andere software hebben gelijke licenties. Door installeren of gebruik maken "
 "van Pardus, stemt u toe deze voowaarden te accepteren. Wilt u doorgaan?"
 
-#: yali/gui/Ui/welcomewidget.py:98
+#: yali4/gui/Ui/welcomewidget.py:111
 msgid "Read GPL"
 msgstr "Lees de GPL"
 
-#: yali/gui/Ui/welcomewidget.py:99 yali/gui/runner.py:177
+#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:159
 msgid "Reboot System!"
 msgstr "Herstart systeem!"
 
-#: yali/gui/Ui/welcomewidget.py:101
+#: yali4/gui/Ui/welcomewidget.py:114
 msgid "Accept!"
 msgstr "Accepteren!"
 
-#: yali/gui/Ui/welcomewidget.py:102
+#: yali4/gui/Ui/welcomewidget.py:115
 msgid "Don't Accept!"
 msgstr "Verwerpen!"
 
-#: yali/gui/debugger.py:25
+#: yali4/gui/debugger.py:25
 msgid "Debug"
 msgstr "Debug"
 
-#: yali/gui/GUIBottom.py:102 yali/gui/GUIBottom.py:152
-msgid "Release Notes"
-msgstr "Uitgavenotities"
-
-#: yali/gui/GUIGPL.py:64
+#: yali4/gui/GUIGPL.py:66
 msgid "Can't open License file!"
 msgstr "Kan het licentiebestand niet openen!"
 
-#: yali/gui/PartEditImpl.py:108
+#: yali4/gui/PartEditImpl.py:108
 #, python-format
 msgid "You are going to delete all partitions on device '%s'"
 msgstr "U staat op het punt alle partities te verwijderen op station '%s'"
 
-#: yali/gui/PartEditImpl.py:120
+#: yali4/gui/PartEditImpl.py:120
 #, python-format
 msgid "You are going to delete partition '%s' on device '%s'!"
 msgstr "U staat op het punt partitie '%s' te verwijderen op station '%s'!"
 
-#: yali/gui/PartEditImpl.py:167
+#: yali4/gui/PartEditImpl.py:167
 msgid "You must select a partition type from the list below."
 msgstr "Selecteer in onderstaande lijst een partitie type."
 
-#: yali/gui/PartEditImpl.py:181 yali/gui/PartEditImpl.py:205
+#: yali4/gui/PartEditImpl.py:181 yali4/gui/PartEditImpl.py:205
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "De grootte van de hoofdpartitie dient groter te zijn dan %s MB."
 
-#: yali/gui/PartEditImpl.py:285
+#: yali4/gui/PartEditImpl.py:285
 msgid "ntfsresize check failed! Won't proceed action!"
 msgstr "ntfsresize contrôle mislukt! Ga niet verder!"
 
-#: yali/gui/PartListImpl.py:87 yali/gui/ScrBootloader.py:69
-#: yali/gui/ScrKahyaCheck.py:87 yali/gui/ScrPartitionAuto.py:68
+#: yali4/gui/PartListImpl.py:87 yali4/gui/ScrBootloader.py:69
+#: yali4/gui/ScrKahyaCheck.py:87 yali4/gui/ScrPartitionAuto.py:68
 msgid "Can't find a storage device!"
 msgstr "Kan geen opslagapparaat vinden!"
 
-#: yali/gui/PartListImpl.py:111
+#: yali4/gui/PartListImpl.py:111
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB beschikbaar"
 
-#: yali/gui/PartListImpl.py:113
+#: yali4/gui/PartListImpl.py:113
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB beschikbaar"
 
-#: yali/gui/PartListImpl.py:138
+#: yali4/gui/PartListImpl.py:138
 msgid "Extended"
 msgstr "Uitgebreid"
 
-#: yali/gui/PartListImpl.py:166
+#: yali4/gui/PartListImpl.py:166
 #, python-format
 msgid "Partition %d"
 msgstr "Partitie %d"
 
-#: yali/gui/PartListImpl.py:211
+#: yali4/gui/PartListImpl.py:211
 msgid "Delete All Partitions"
 msgstr "Verwijder alle partities"
 
-#: yali/gui/PartListImpl.py:312
+#: yali4/gui/PartListImpl.py:240
+msgid "Delete Selected Partition"
+msgstr "Verwijder geselecteerde partitie"
+
+#: yali4/gui/PartListImpl.py:312
 msgid "Can't get partition info from partition request!"
 msgstr "Kan geen partitie informatie krijgen op uw verzoek!"
 
-#: yali/gui/PartListImpl.py:314
+#: yali4/gui/PartListImpl.py:314
 msgid " req.partition() is None. May be a zombie request!"
 msgstr " req.partition() is geen. Mischien een zombie verzoek!"
 
-#: yali/gui/PartListImpl.py:322
+#: yali4/gui/PartListImpl.py:322
 msgid "Formatting!"
 msgstr "Formatteren!"
 
-#: yali/gui/PartListImpl.py:324
+#: yali4/gui/PartListImpl.py:324
 msgid "YES"
 msgstr "JA"
 
-#: yali/gui/runner.py:55
-msgid "Basic setup"
-msgstr "Basisopzet"
-
-#: yali/gui/runner.py:56
-msgid "Prepare for install"
-msgstr "Installatie voorbereiden"
-
-#: yali/gui/runner.py:57
-msgid "Install system"
-msgstr "Systeem installeren"
-
-#: yali/gui/runner.py:142
+#: yali4/gui/runner.py:125
 msgid "Error!"
 msgstr "Fout!"
 
-#: yali/gui/runner.py:172
+#: yali4/gui/runner.py:154
 msgid "Unhandled error occured!"
 msgstr "Fout opgetreden!"
 
-#: yali/gui/ScrAdmin.py:30
+#: yali4/gui/ScrAdmin.py:30
 msgid ""
 "\n"
 "<font size=\"+2\">System administrator password and hostname</font>\n"
@@ -479,24 +460,24 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrAdmin.py:92 yali/gui/ScrUsers.py:141
+#: yali4/gui/ScrAdmin.py:92 yali4/gui/ScrUsers.py:141
 msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
 msgstr "<font color=\"#FF6D19\">Caps Lock staat aan!</font>"
 
-#: yali/gui/ScrAdmin.py:107 yali/gui/ScrUsers.py:165
+#: yali4/gui/ScrAdmin.py:107 yali4/gui/ScrUsers.py:165
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
 msgstr "<font color=\"#FF6D19\">Wachtwoord is te kort!</font>"
 
-#: yali/gui/ScrAdmin.py:117 yali/gui/ScrUsers.py:160
+#: yali4/gui/ScrAdmin.py:117 yali4/gui/ScrUsers.py:160
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
 msgstr "<font color=\"#FF6D19\">De wachtwoorden komen niet overeen!</font>"
 
-#: yali/gui/ScrAdmin.py:133
+#: yali4/gui/ScrAdmin.py:133
 msgid "<font color=\"#FF6D19\">Hostname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">De hostnaam bevat niet toegestane tekens!</font>"
 
-#: yali/gui/ScrBootloader.py:36
+#: yali4/gui/ScrBootloader.py:36
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -539,7 +520,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrBootloader.py:168
+#: yali4/gui/ScrBootloader.py:168
 msgid ""
 "<b>\n"
 "<p>This action will use your entire disk for Pardus installation and\n"
@@ -558,11 +539,19 @@ msgstr ""
 "Pardus te installeren.</p>\n"
 "</b>\n"
 
-#: yali/gui/ScrBootloader.py:183
+#: yali4/gui/ScrBootloader.py:183
 msgid "Please wait while formatting!"
 msgstr "Ogenblik geduld tijdens het formatteren!"
 
-#: yali/gui/ScrCheckCD.py:28
+#: yali4/gui/ScrCheckCD.py:29
+msgid "Check your media"
+msgstr ""
+
+#: yali4/gui/ScrCheckCD.py:30
+msgid "To ignore media corruptions you can check your media integrity.."
+msgstr ""
+
+#: yali4/gui/ScrCheckCD.py:31
 msgid ""
 "\n"
 "<font size=\"+2\">Check CD Integrity!</font>\n"
@@ -581,17 +570,17 @@ msgstr ""
 "controleren.\n"
 "</p>\n"
 
-#: yali/gui/ScrCheckCD.py:48
+#: yali4/gui/ScrCheckCD.py:51
 msgid "Check Failed"
 msgstr "Controle mislukt"
 
-#: yali/gui/ScrCheckCD.py:57
+#: yali4/gui/ScrCheckCD.py:59
 msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Ogenblik geduld wanneer de CD gecontrolleerd wordt.</"
 "font>"
 
-#: yali/gui/ScrCheckCD.py:75
+#: yali4/gui/ScrCheckCD.py:75
 msgid ""
 "<font color=\"#257216\">Check succeeded. You can proceed to the next screen."
 "</font>"
@@ -599,7 +588,7 @@ msgstr ""
 "<font color=\"#257216\">Controle succesvol. U kunt doorgaan naar het "
 "volgende scherm.</font>"
 
-#: yali/gui/ScrCheckCD.py:99
+#: yali4/gui/ScrCheckCD.py:99
 msgid ""
 "<b>\n"
 "<p>Integrity check for packages failed. It seems that installation CD is "
@@ -611,11 +600,11 @@ msgstr ""
 "installatie CD defect is.</p>\n"
 "</b>\n"
 
-#: yali/gui/ScrCheckCD.py:105 yali/gui/ScrGoodbye.py:248
+#: yali4/gui/ScrCheckCD.py:111 yali4/gui/ScrGoodbye.py:248
 msgid "Reboot"
 msgstr "Herstart"
 
-#: yali/gui/ScrGoodbye.py:42
+#: yali4/gui/ScrGoodbye.py:42
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
@@ -652,7 +641,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrGoodbye.py:69
+#: yali4/gui/ScrGoodbye.py:69
 msgid ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Rebooting system. Please wait!</"
 "font></b>"
@@ -660,40 +649,40 @@ msgstr ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Herstarten systeem. moment geduld!</"
 "font></b>"
 
-#: yali/gui/ScrGoodbye.py:194
+#: yali4/gui/ScrGoodbye.py:194
 msgid "Trying to connect COMAR Daemon..."
 msgstr "Proberen verbinding te maken met COMAR deamon..."
 
-#: yali/gui/ScrGoodbye.py:195
+#: yali4/gui/ScrGoodbye.py:195
 msgid "Setting Hostname..."
 msgstr "Hostnaam instellen..."
 
-#: yali/gui/ScrGoodbye.py:196
+#: yali4/gui/ScrGoodbye.py:196
 msgid "Setting Root Password..."
 msgstr "Root wachtwoord instellen..."
 
-#: yali/gui/ScrGoodbye.py:197
+#: yali4/gui/ScrGoodbye.py:197
 msgid "Adding Users..."
 msgstr "Gebruikers toevoegen..."
 
-#: yali/gui/ScrGoodbye.py:198
+#: yali4/gui/ScrGoodbye.py:198
 msgid "Writing Console Data..."
 msgstr "Schrijf console gegevens..."
 
-#: yali/gui/ScrGoodbye.py:199
+#: yali4/gui/ScrGoodbye.py:199
 msgid "Migrating X.org Configuration..."
 msgstr "Migreren X.org configureren..."
 
-#: yali/gui/ScrGoodbye.py:200
+#: yali4/gui/ScrGoodbye.py:200
 #, fuzzy
 msgid "Setting misc. package configurations..."
 msgstr "Migreren X.org configureren..."
 
-#: yali/gui/ScrGoodbye.py:201
+#: yali4/gui/ScrGoodbye.py:201
 msgid "Installing BootLoader..."
 msgstr "Installeren bootlader..."
 
-#: yali/gui/ScrGoodbye.py:242
+#: yali4/gui/ScrGoodbye.py:242
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
@@ -703,7 +692,7 @@ msgstr ""
 "<p>Druk op de Reboot knop om uw systeem te herstarten.</p>\n"
 "</b>\n"
 
-#: yali/gui/ScrInstall.py:53
+#: yali4/gui/ScrInstall.py:53
 msgid ""
 "\n"
 "<font size=\"+2\">Installation started</font>\n"
@@ -745,21 +734,21 @@ msgstr ""
 "Veel plezier!\n"
 "</font>\n"
 
-#: yali/gui/ScrInstall.py:110 yali/gui/ScrInstall.py:130
+#: yali4/gui/ScrInstall.py:110 yali4/gui/ScrInstall.py:130
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Installeren: %s<br>%s"
 
-#: yali/gui/ScrInstall.py:116 yali/gui/ScrInstall.py:136
+#: yali4/gui/ScrInstall.py:116 yali4/gui/ScrInstall.py:136
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Configureren pakket: %s"
 
-#: yali/gui/ScrInstall.py:192
+#: yali4/gui/ScrInstall.py:192
 msgid "Configuring packages for your system!"
 msgstr "Configureren pakketten voor uw systeem!"
 
-#: yali/gui/ScrInstall.py:230
+#: yali4/gui/ScrInstall.py:230
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -776,7 +765,7 @@ msgstr ""
 "Fout:\n"
 "%s\n"
 
-#: yali/gui/ScrKahyaCheck.py:53
+#: yali4/gui/ScrKahyaCheck.py:53
 msgid ""
 "\n"
 "<font size=\"+2\">Kicker Check !</font>\n"
@@ -786,7 +775,16 @@ msgstr ""
 "<font size=\"+2\">Kicker controle !</font>\n"
 "<p>Enkele help boodschappen </p>\n"
 
-#: yali/gui/ScrKeyboard.py:30
+#: yali4/gui/ScrKeyboard.py:31
+#, fuzzy
+msgid "Set your keyboard layout"
+msgstr "Selecteer uw toetenbordindeling."
+
+#: yali4/gui/ScrKeyboard.py:32
+msgid "Use your keyboard layout.."
+msgstr ""
+
+#: yali4/gui/ScrKeyboard.py:33
 msgid ""
 "\n"
 "<font size=\"+2\">Keyboard Setup</font>\n"
@@ -807,7 +805,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrPartitionAuto.py:36
+#: yali4/gui/ScrPartitionAuto.py:36
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -854,7 +852,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrPartitionAuto.py:79
+#: yali4/gui/ScrPartitionAuto.py:79
 #, python-format
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
@@ -862,7 +860,7 @@ msgid ""
 msgstr ""
 "U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
 
-#: yali/gui/ScrPartitionManual.py:34
+#: yali4/gui/ScrPartitionManual.py:34
 msgid ""
 "\n"
 "<font size=\"+2\">Partitioning your hard disk</font>\n"
@@ -943,23 +941,23 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrPartitionManual.py:118
+#: yali4/gui/ScrPartitionManual.py:118
 msgid "Create Partition"
 msgstr "Maak partitie"
 
-#: yali/gui/ScrPartitionManual.py:123
+#: yali4/gui/ScrPartitionManual.py:123
 msgid "Delete Partition"
 msgstr "Verwijder partitie"
 
-#: yali/gui/ScrPartitionManual.py:128
+#: yali4/gui/ScrPartitionManual.py:128
 msgid "Edit Partition"
 msgstr "Bewerk partitie"
 
-#: yali/gui/ScrPartitionManual.py:133
+#: yali4/gui/ScrPartitionManual.py:133
 msgid "Resize Partition"
 msgstr "Aanpassen partitiegrootte"
 
-#: yali/gui/ScrUsers.py:32
+#: yali4/gui/ScrUsers.py:32
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -1000,7 +998,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/ScrUsers.py:108
+#: yali4/gui/ScrUsers.py:108
 msgid ""
 "<b>\n"
 "<p>You have not defined an administrator!</p>\n"
@@ -1026,35 +1024,44 @@ msgstr ""
 "naar het volgende scherm te gaan.</p>\n"
 "</b>\n"
 
-#: yali/gui/ScrUsers.py:155
+#: yali4/gui/ScrUsers.py:155
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
 msgstr ""
 "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
 
-#: yali/gui/ScrUsers.py:196
+#: yali4/gui/ScrUsers.py:196
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Deze gebruikersnaam bestaat al, Kies een andere!</"
 "font>"
 
-#: yali/gui/ScrUsers.py:200
+#: yali4/gui/ScrUsers.py:200
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">De gebruikersnaam bevat niet toegestane tekens.</"
 "font>"
 
-#: yali/gui/ScrUsers.py:204
+#: yali4/gui/ScrUsers.py:204
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
 
-#: yali/gui/ScrUsers.py:259
+#: yali4/gui/ScrUsers.py:259
 msgid "Update User"
 msgstr "Update gebruiker"
 
-#: yali/gui/ScrWelcome.py:30
+#: yali4/gui/ScrWelcome.py:30
+msgid "Welcome !! "
+msgstr ""
+
+#: yali4/gui/ScrWelcome.py:31
+#, fuzzy
+msgid "Welcome to the Pardus installer.."
+msgstr "Installeer op de partitie waar Pardus op staat"
+
+#: yali4/gui/ScrWelcome.py:32
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome!</font>\n"
@@ -1108,11 +1115,11 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali/gui/YaliDialog.py:122
+#: yali4/gui/YaliDialog.py:96
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: yali/gui/YaliDialog.py:146
+#: yali4/gui/YaliDialog.py:120
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on\n"
@@ -1125,190 +1132,229 @@ msgstr ""
 "formatteren.</p>\n"
 "</b>\n"
 
-#: yali/gui/YaliDialog.py:156
+#: yali4/gui/YaliDialog.py:130
 msgid "O.K. Go Ahead"
 msgstr "O.K. Ga verder"
 
-#: yali/bootloader.py:170 yali/bootloader.py:175
+#: yali4/bootloader.py:170 yali4/bootloader.py:175
 msgid "Windows"
 msgstr "Windows"
 
-#: yali/__init__.py:65
+#: yali4/__init__.py:65
 msgid "Backtrace:"
 msgstr "Terugloop:"
 
-#: yali/localedata.py:85 yali/localedata.py:86
+#: yali4/localedata.py:85 yali4/localedata.py:86
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
-#: yali/localedata.py:94 yali/localedata.py:95
+#: yali4/localedata.py:94 yali4/localedata.py:95
 msgid "Arabic"
 msgstr "Arabisch"
 
-#: yali/localedata.py:103 yali/localedata.py:104
+#: yali4/localedata.py:103 yali4/localedata.py:104
 msgid "Belgium"
 msgstr "België"
 
-#: yali/localedata.py:112 yali/localedata.py:113
+#: yali4/localedata.py:112 yali4/localedata.py:113
 msgid "Bulgarian"
 msgstr "Bulgaars"
 
-#: yali/localedata.py:121 yali/localedata.py:122
+#: yali4/localedata.py:121 yali4/localedata.py:122
 msgid "Catalan"
 msgstr "Catalaans"
 
-#: yali/localedata.py:130 yali/localedata.py:131
+#: yali4/localedata.py:130 yali4/localedata.py:131
 msgid "Croatian"
 msgstr "Kroatisch"
 
-#: yali/localedata.py:139 yali/localedata.py:140
+#: yali4/localedata.py:139 yali4/localedata.py:140
 msgid "Czech"
 msgstr "Tsjechisch"
 
-#: yali/localedata.py:148 yali/localedata.py:149
+#: yali4/localedata.py:148 yali4/localedata.py:149
 msgid "Danish"
 msgstr "Deens"
 
-#: yali/localedata.py:157
+#: yali4/localedata.py:157
 msgid "Dutch"
 msgstr "Nederlands"
 
-#: yali/localedata.py:160
+#: yali4/localedata.py:160
 msgid "Dutch (US)"
 msgstr "Nederlands (US)"
 
-#: yali/localedata.py:168 yali/localedata.py:169
+#: yali4/localedata.py:168 yali4/localedata.py:169
 msgid "English"
 msgstr "Engels"
 
-#: yali/localedata.py:177 yali/localedata.py:178
+#: yali4/localedata.py:177 yali4/localedata.py:178
 msgid "Estonian"
 msgstr "Estonisch"
 
-#: yali/localedata.py:186 yali/localedata.py:187
+#: yali4/localedata.py:186 yali4/localedata.py:187
 msgid "Finnish"
 msgstr "Fins"
 
-#: yali/localedata.py:195 yali/localedata.py:196
+#: yali4/localedata.py:195 yali4/localedata.py:196
 msgid "French"
 msgstr "Frans"
 
-#: yali/localedata.py:204 yali/localedata.py:205
+#: yali4/localedata.py:204 yali4/localedata.py:205
 msgid "German"
 msgstr "Duits"
 
-#: yali/localedata.py:213 yali/localedata.py:214
+#: yali4/localedata.py:213 yali4/localedata.py:214
 msgid "Greek"
 msgstr "Grieks"
 
-#: yali/localedata.py:222 yali/localedata.py:223
+#: yali4/localedata.py:222 yali4/localedata.py:223
 msgid "Hungarian"
 msgstr "Hongaars"
 
-#: yali/localedata.py:231 yali/localedata.py:232
+#: yali4/localedata.py:231 yali4/localedata.py:232
 msgid "Icelandic"
 msgstr "IJslands"
 
-#: yali/localedata.py:240 yali/localedata.py:241
+#: yali4/localedata.py:240 yali4/localedata.py:241
 msgid "Italian"
 msgstr "Italiaans"
 
-#: yali/localedata.py:249 yali/localedata.py:250
+#: yali4/localedata.py:249 yali4/localedata.py:250
 msgid "Japanese"
 msgstr "Japans"
 
-#: yali/localedata.py:258 yali/localedata.py:259
+#: yali4/localedata.py:258 yali4/localedata.py:259
 msgid "Macedonian"
 msgstr "Macedonisch"
 
-#: yali/localedata.py:267 yali/localedata.py:268
+#: yali4/localedata.py:267 yali4/localedata.py:268
 msgid "Malayalam"
 msgstr "Malayas"
 
-#: yali/localedata.py:276 yali/localedata.py:277
+#: yali4/localedata.py:276 yali4/localedata.py:277
 msgid "Norwegian"
 msgstr "Noors"
 
-#: yali/localedata.py:285 yali/localedata.py:286
+#: yali4/localedata.py:285 yali4/localedata.py:286
 msgid "Polish"
 msgstr "Pools"
 
-#: yali/localedata.py:294 yali/localedata.py:295
+#: yali4/localedata.py:294 yali4/localedata.py:295
 msgid "Portuguese"
 msgstr "Portugees"
 
-#: yali/localedata.py:303 yali/localedata.py:304
+#: yali4/localedata.py:303 yali4/localedata.py:304
 msgid "Brazilian"
 msgstr "Braziliaans"
 
-#: yali/localedata.py:312 yali/localedata.py:313
+#: yali4/localedata.py:312 yali4/localedata.py:313
 msgid "Russian"
 msgstr "Russisch"
 
-#: yali/localedata.py:321 yali/localedata.py:322
+#: yali4/localedata.py:321 yali4/localedata.py:322
 msgid "Serbian"
 msgstr "Siberisch"
 
-#: yali/localedata.py:330 yali/localedata.py:331
+#: yali4/localedata.py:330 yali4/localedata.py:331
 msgid "Slovak"
 msgstr "Slowaaks"
 
-#: yali/localedata.py:339 yali/localedata.py:340
+#: yali4/localedata.py:339 yali4/localedata.py:340
 msgid "Slovenian"
 msgstr "Sloveens"
 
-#: yali/localedata.py:348 yali/localedata.py:349
+#: yali4/localedata.py:348 yali4/localedata.py:349
 msgid "Spanish"
 msgstr "Spaans"
 
-#: yali/localedata.py:357 yali/localedata.py:358
+#: yali4/localedata.py:357 yali4/localedata.py:358
 msgid "Swedish"
 msgstr "Zweeds"
 
-#: yali/localedata.py:366
+#: yali4/localedata.py:366
 msgid "Turkish"
 msgstr "Turks"
 
-#: yali/localedata.py:367
+#: yali4/localedata.py:367
 msgid "Turkish Q"
 msgstr "Turks Q"
 
-#: yali/localedata.py:368
+#: yali4/localedata.py:368
 msgid "Turkish F"
 msgstr "Turks F"
 
-#: yali/localedata.py:376 yali/localedata.py:377
+#: yali4/localedata.py:376 yali4/localedata.py:377
 msgid "Ukrainian"
 msgstr "Oekraïens"
 
-#: yali/localedata.py:385 yali/localedata.py:386
+#: yali4/localedata.py:385 yali4/localedata.py:386
 msgid "Vietnamese"
 msgstr "Vietnamees"
 
-#: yali/localedata.py:394
+#: yali4/localedata.py:394
 msgid "Welsh"
 msgstr "Wales"
 
-#: yali/localedata.py:395
+#: yali4/localedata.py:395
 msgid "English (GB)"
 msgstr "Engels (GB)"
 
-#: yali/partition.py:35
+#: yali4/partition.py:35
 msgid "unknown"
 msgstr "onbekend"
 
-#: yali/partition.py:180
+#: yali4/partition.py:180
 msgid "free space"
 msgstr "vrije ruimte"
 
-#: yali/partitiontype.py:49
+#: yali4/partitiontype.py:49
 msgid "Install Root"
 msgstr "Installeer root"
 
-#: yali/partitiontype.py:58
+#: yali4/partitiontype.py:58
 msgid "Users' Files"
 msgstr "Gebruikersbestanden"
 
-#: yali/partitiontype.py:67
+#: yali4/partitiontype.py:67
 msgid "Swap"
 msgstr "Swap"
+
+#~ msgid "Device"
+#~ msgstr "Station"
+
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#~ msgid "Partition Type"
+#~ msgstr "Partitietype"
+
+#~ msgid "Filesystem"
+#~ msgstr "Bestandssysteem"
+
+#~ msgid "Format?"
+#~ msgstr "Formatteren?"
+
+#~ msgid "Create New Partition"
+#~ msgstr "Maak nieuwe partitie"
+
+#~ msgid "Partitions:"
+#~ msgstr "Partities:"
+
+#~ msgid "Reset All Changes"
+#~ msgstr "Alle wijzigingen ongedaan maken"
+
+#~ msgid "Resize"
+#~ msgstr "Grootte aanpassen"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Basic setup"
+#~ msgstr "Basisopzet"
+
+#~ msgid "Prepare for install"
+#~ msgstr "Installatie voorbereiden"
+
+#~ msgid "Install system"
+#~ msgstr "Systeem installeren"
