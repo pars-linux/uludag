@@ -480,7 +480,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
         case 'a':
             sign_container = dbus_py_get_object_signature(obj);
             if (!sign_container) {
-                PyErr_SetString(PyExc_TypeError, "Array returned by function contains unknown data type.");
+                PyErr_SetString(PyExc_TypeError, "Array contains unknown data type.");
                 return 1;
             }
             sign_sub = (char *) strsub(sign_container, 1, 0);
@@ -508,7 +508,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
         case 'r':
             sign_container = dbus_py_get_object_signature(obj);
             if (!sign_container) {
-                PyErr_SetString(PyExc_TypeError, "Tuple returned by function contains unknown data type.");
+                PyErr_SetString(PyExc_TypeError, "Tuple contains unknown data type.");
                 return 1;
             }
             e = dbus_message_iter_open_container(iter, DBUS_TYPE_STRUCT, NULL, &sub);
@@ -525,7 +525,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             sign_sub = (char *) strsub(sign_container, 1, 2);
             sign_sub2 = (char *) strsub(sign_container, 2, -1);
             if (!sign_container) {
-                PyErr_SetString(PyExc_TypeError, "Dictionary returned by function contains unknown data type.");
+                PyErr_SetString(PyExc_TypeError, "Dictionary contains unknown data type.");
                 return 1;
             }
             if (strstr(TYPES_BASIC, sign_sub) == NULL) {
@@ -566,7 +566,7 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             e = dbus_message_iter_append_basic(iter, DBUS_TYPE_STRING, &p.s);
             break;
         default:
-            PyErr_SetString(PyExc_TypeError, "Unknown data type returned by function.");
+            PyErr_SetString(PyExc_TypeError, "Unknown data type");
             return 1;
     }
     // FIXME - cleanup?
@@ -664,10 +664,14 @@ dbus_py_get_item(DBusMessageIter* iter)
             dbus_message_iter_recurse(iter, &sub);
             ret = PyList_AsTuple(dbus_py_get_list(&sub));
             break;
+        case DBUS_TYPE_VARIANT:
+            dbus_message_iter_recurse(iter, &sub);
+            type = dbus_message_iter_get_arg_type(&sub);
+            ret = dbus_py_get_item(&sub);
+            break;
         case DBUS_TYPE_BYTE:
         case DBUS_TYPE_SIGNATURE:
         case DBUS_TYPE_OBJECT_PATH:
-        case DBUS_TYPE_VARIANT:
             // FIXME
             break;
     }
