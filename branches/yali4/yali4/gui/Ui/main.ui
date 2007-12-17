@@ -60,7 +60,7 @@ QPushButton:hover:pressed {
      border-style: inset;
 } 
 
-QPushButton:hover {
+QPushButton:hover, QPushButton:focus {
      background-color:#FFA322;
 } 
 

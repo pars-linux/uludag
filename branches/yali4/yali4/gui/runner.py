@@ -172,10 +172,5 @@ class ErrorWidget(QtGui.QWidget):
                      self.slotReboot)
 
     def slotReboot(self):
-        try:
-            yali4.sysutils.umount(ctx.consts.target_dir + "/home")
-        except:
-            pass
-        yali4.sysutils.umount(ctx.consts.target_dir)
-        yali4.sysutils.fastreboot()
+        yali4.sysutils.reboot()
 

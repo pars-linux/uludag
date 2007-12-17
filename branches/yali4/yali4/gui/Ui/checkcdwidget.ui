@@ -50,7 +50,7 @@
      <item>
       <widget class="QLabel" name="pix" >
        <property name="pixmap" >
-        <pixmap resource="data.qrc" >:/pics/installcd.png</pixmap>
+        <pixmap resource="../../data.qrc" >:/gui/pics/installcd.png</pixmap>
        </property>
        <property name="alignment" >
         <set>Qt::AlignCenter</set>
@@ -187,7 +187,7 @@
  <layoutdefault spacing="6" margin="11" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <resources>
-  <include location="data.qrc" />
+  <include location="../../data.qrc" />
  </resources>
  <connections/>
 </ui>
