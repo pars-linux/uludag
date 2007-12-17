@@ -13,7 +13,7 @@
    <string>Form1</string>
   </property>
   <layout class="QGridLayout" >
-   <item row="0" column="2" >
+   <item row="0" column="3" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
@@ -29,7 +29,7 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" colspan="2" >
+   <item row="1" column="0" colspan="3" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -45,20 +45,20 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="2" >
+   <item row="1" column="3" >
     <widget class="QLabel" name="pix" >
      <property name="text" >
       <string/>
      </property>
      <property name="pixmap" >
-        <pixmap resource="data.qrc" >:/gui/pics/welcome.png</pixmap>
+      <pixmap resource="../../data.qrc" >:/gui/pics/welcome.png</pixmap>
      </property>
      <property name="wordWrap" >
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="1" column="3" colspan="2" >
+   <item row="1" column="4" colspan="3" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -74,7 +74,7 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="2" >
+   <item row="2" column="3" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
@@ -90,7 +90,23 @@
      </property>
     </spacer>
    </item>
-   <item row="3" column="0" colspan="5" >
+   <item row="3" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1" colspan="5" >
     <widget class="QLabel" name="disclamer" >
      <property name="text" >
       <string>All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other software have their corresponding licenses. By installing or using Pardus, you agree to accept them. Do you want to continue?</string>
@@ -103,7 +119,23 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0" >
+   <item row="3" column="6" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="0" colspan="2" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -119,7 +151,7 @@
      </property>
     </spacer>
    </item>
-   <item row="4" column="1" colspan="3" >
+   <item row="4" column="2" colspan="3" >
     <layout class="QGridLayout" >
      <property name="horizontalSpacing" >
       <number>10</number>
@@ -140,6 +172,9 @@
            <height>0</height>
           </size>
          </property>
+         <property name="focusPolicy" >
+          <enum>Qt::TabFocus</enum>
+         </property>
          <property name="text" >
           <string>Read GPL</string>
          </property>
@@ -152,6 +187,9 @@
            <width>130</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="focusPolicy" >
+          <enum>Qt::TabFocus</enum>
          </property>
          <property name="text" >
           <string>Reboot System!</string>
@@ -171,6 +209,9 @@
        <layout class="QHBoxLayout" >
         <item>
          <widget class="QRadioButton" name="accept" >
+          <property name="focusPolicy" >
+           <enum>Qt::TabFocus</enum>
+          </property>
           <property name="text" >
            <string>Accept!</string>
           </property>
@@ -178,6 +219,9 @@
         </item>
         <item>
          <widget class="QRadioButton" name="not_accept" >
+          <property name="focusPolicy" >
+           <enum>Qt::TabFocus</enum>
+          </property>
           <property name="text" >
            <string>Don't Accept!</string>
           </property>
@@ -188,7 +232,7 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="4" >
+   <item row="4" column="5" colspan="2" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -204,7 +248,7 @@
      </property>
     </spacer>
    </item>
-   <item row="5" column="2" >
+   <item row="5" column="3" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
@@ -231,7 +275,7 @@
   <tabstop>rebootButton</tabstop>
  </tabstops>
  <resources>
-  <include location="data.qrc" />
+  <include location="../../data.qrc" />
  </resources>
  <connections/>
 </ui>
