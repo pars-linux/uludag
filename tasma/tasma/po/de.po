@@ -1,16 +1,18 @@
+# translation of de.po to Deutsch
 # translation of de.po to
 # This file is put in the public domain.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-11-26 21:00+0200\n"
-"PO-Revision-Date: 2007-08-21 00:17+0100\n"
-"Last-Translator: Gökhan Akca <goekhanakca@web.de>\n"
-"Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
+"PO-Revision-Date: 2007-12-17 03:44+0200\n"
+"Last-Translator: Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -207,6 +209,6 @@ msgid ""
 "Your names"
 msgstr ""
 "_:NAMEN VON DEN ÜBERSETZERN\n"
-"Mustafa Muhammed Ölcerman\n"
+"Mustafa Ölcerman\n"
 "Aytekin Gülen"
 
