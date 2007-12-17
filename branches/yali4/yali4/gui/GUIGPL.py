@@ -13,36 +13,36 @@
 
 from os.path import join, exists
 import codecs
-from qt import *
+
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-
-import yali.gui.context as ctx
-from yali.gui.GUIException import *
-
+import yali4.gui.context as ctx
+#from yali4.gui.GUIException import *
 
 ##
 # Help widget
-class Widget(QTextView):
+class Widget(QTextBrowser):
 
     def __init__(self, *args):
-        apply(QTextView.__init__, (self,) + args)
+        apply(QTextBrowser.__init__, (self,) + args)
 
         self.setSizePolicy( QSizePolicy(QSizePolicy.Preferred,
                                         QSizePolicy.Expanding))
-        self.setPaletteBackgroundColor(ctx.consts.bg_color)
+        # self.setPaletteBackgroundColor(ctx.consts.bg_color)
 
         # don't show links in 
-        self.setLinkUnderline(False)
-        palette = self.palette()
-        active_colors = palette.active()
-        active_colors.setColor(active_colors.Link, ctx.consts.fg_color)
-        palette.setActive(active_colors)
-        palette.setInactive(active_colors)
-        self.setPalette(palette)
+        # self.setLinkUnderline(False)
+        # palette = self.palette()
+        # active_colors = palette.active()
+        # active_colors.setColor(active_colors.Link, ctx.consts.fg_color)
+        # palette.setActive(active_colors)
+        # palette.setInactive(active_colors)
+        # self.setPalette(palette)
 
         try:
             self.setText(codecs.open(self.find_license_file(), "r", "UTF-8").read())
@@ -57,8 +57,10 @@ class Widget(QTextView):
             # TODO: log that license translation is not present.
             f = join(ctx.consts.source_dir,
                      "license/license-en.txt")
-            
+
         if exists(f):
             return f
         else:
+            # For testing. Dont forget to remove ..
+            return "/home/rat/pardus/uludag/CD-image/CD-image-version-2007.3/license/license-tr.txt"
             raise GUIException, _("Can't open License file!")

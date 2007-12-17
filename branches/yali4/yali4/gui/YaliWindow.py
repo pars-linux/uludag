@@ -43,6 +43,10 @@ class Widget(Ui_YaliMain):
         if new > total: new = total
         return new
 
+    def setCurrent(self,cur=None):
+        if cur:
+            self.mainStack.setCurrentIndex(cur)
+
     def slotNext(self):
         self.stackMove(self.getCur(+1))
 
@@ -84,6 +88,10 @@ class Widget(Ui_YaliMain):
 
     def enableBack(self):
         self.buttonBack.setEnabled(True)
+
+    # processEvents
+    def processEvents(self):
+        QObject.emit(self.ui,SIGNAL("signalProcessEvents"))
 
 """
     count = 0

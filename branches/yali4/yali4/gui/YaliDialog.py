@@ -10,23 +10,43 @@
 # Please read the COPYING file.
 #
 
-from qt import *
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.gui.context as ctx
+import yali4.gui.context as ctx
 
-class Title(QLabel):
+class windowTitle(QtGui.QFrame):
     def __init__(self, *args):
-        QLabel.__init__(self, *args)
+        QtGui.QFrame.__init__(self, *args)
+        self.setMaximumSize(QSize(9999999,26))
+        self.setObjectName("windowTitle")
+        self.hboxlayout = QtGui.QHBoxLayout(self)
+        self.hboxlayout.setSpacing(0)
+        self.hboxlayout.setContentsMargins(0,0,4,0)
 
-        self.setAlignment(QLabel.AlignCenter)
-        self.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Maximum,0,0,self.sizePolicy().hasHeightForWidth()))
+        self.label = QtGui.QLabel(self)
+        self.label.setObjectName("label")
+        self.label.setStyleSheet("padding-left:4px; font:bold 11px")
+
+        self.hboxlayout.addWidget(self.label)
+
+        spacerItem = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
+        self.hboxlayout.addItem(spacerItem)
+
+        self.pushButton = QtGui.QPushButton(self)
+        self.pushButton.setFocusPolicy(Qt.NoFocus)
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton.setStyleSheet("font:bold;")
+        self.pushButton.setText("X")
+
+        self.hboxlayout.addWidget(self.pushButton)
 
         self.move = 0
-        self.mainwidget = self.parent().parent()
+        self.mainwidget = self.parent()
 
     def mousePressEvent(self, event):
         self.move = 1
@@ -35,10 +55,10 @@ class Title(QLabel):
         wpos = self.mainwidget.mapToGlobal(QPoint(0,0))
         self.w_x = wpos.x()
         self.w_y = wpos.y()
-    
+
     def mouseReleaseEvent(self, event):
         self.move = 0
-    
+
     def mouseMoveEvent(self, event):
         if self.move:
             pos = event.globalPos()
@@ -47,73 +67,27 @@ class Title(QLabel):
             newpos.setY(self.w_y + pos.y() - self.start_y)
             self.mainwidget.move(newpos)
 
-class Button(QLabel):
-    def __init__(self,buttonImage, *args):
-        QLabel.__init__(self, *args)
-        self.pix = buttonImage
-        self.setPixmap(ctx.iconfactory.newPixmap(buttonImage))
-        self.setFixedWidth(18)
+class Dialog(QtGui.QDialog):
+    def __init__(self, t, w, parent):
+        QtGui.QDialog.__init__(self, parent)
 
-    def mousePressEvent(self, e):
-        self.emit(PYSIGNAL("signalClicked"), ())
+        self.gridlayout = QtGui.QGridLayout(self)
+        self.gridlayout.setMargin(0)
+        self.gridlayout.setSpacing(0)
+        self.gridlayout.setObjectName("gridlayout")
 
-    def toggleImage(self,alternateButtonImage=None):
-        if alternateButtonImage:
-            img = alternateButtonImage
-        else:
-            img = self.pix
-        self.setPixmap(ctx.iconfactory.newPixmap(img))
+        self.windowTitle = windowTitle(self)
+        self.windowTitle.label.setText(t)
 
-class Dialog(QDialog):
-    def __init__(self, t, w, parent,extraButtons = False):
-        QDialog.__init__(self, parent)
-        
-        self.minimized = False
-        self.firstHeight = self.height()
-        
-        l = QHBoxLayout(self)
-        frame = QFrame(self)
-        frame.setMinimumHeight(20)
-        frame.setPaletteBackgroundColor(ctx.consts.border_color)
-        frame.setFrameStyle(frame.PopupPanel|frame.Plain)
-        l.addWidget(frame)
-        
-        layout = QGridLayout(frame, 1, 1, 1, 1)
-        layout.setMargin(2)
-        
-        w.reparent(frame, 0, QPoint(0,0), True)
-        w.setPaletteBackgroundColor(ctx.consts.bg_color)
-        w.setPaletteForegroundColor(ctx.consts.fg_color)
+        self.gridlayout.addWidget(self.windowTitle,0,0,1,1)
 
-        hbox = QHBoxLayout(frame)
-        title = Title('<font size="+1"><b>%s</b></font>' % t, frame)
-        close = Button("cross",frame)
-        
-        hbox.addWidget(title)
-        
-        if extraButtons:
-            minimize = Button("minimize",frame)
-            hbox.addWidget(minimize)
-            self.connect(minimize, PYSIGNAL("signalClicked"),
-                         self.doMinimize)
-        hbox.addWidget(close)
+        self.content = w
+        self.gridlayout.addWidget(self.content,1,0,1,1)
 
-        layout.addLayout(hbox, 0, 0)
-        layout.addWidget(w, 1, 0)
+        QObject.connect(self.windowTitle.pushButton,SIGNAL("clicked()"),self.reject)
+        QMetaObject.connectSlotsByName(self)
 
-        self.connect(close, PYSIGNAL("signalClicked"),
-                     self.reject)
-        
-        
-    def doMinimize(self):
-        if self.minimized:
-            self.resize(self.width(),self.firstHeight)
-            self.sender().toggleImage()
-            self.minimized=False
-        else:
-            self.resize(self.width(),0)
-            self.sender().toggleImage("minimized")
-            self.minimized=True
+        self.setStyleSheet("QFrame#windowTitle {background-color:white;border:1px solid #CCC;border-radius:4px;}")
 
 class WarningDialog(Dialog):
 
@@ -132,16 +106,16 @@ class WarningDialog(Dialog):
     def slotCancel(self):
         self.done(0)
 
-class WarningWidget(QWidget):
+class WarningWidget(QtGui.QWidget):
 
     def __init__(self, *args):
-        QWidget.__init__(self, *args)
+        QtGui.Widget.__init__(self, *args)
 
-        l = QVBoxLayout(self)
+        l = QtGui.QVBoxLayout(self)
         l.setSpacing(20)
         l.setMargin(10)
 
-        self.warning = QLabel(self)
+        self.warning = QtGui.QLabel(self)
 
         self.warning.setText(_('''<b>
 <p>This action will start installing Pardus on
@@ -149,13 +123,13 @@ your system formatting the selected partition.</p>
 </b>
 '''))
 
-        self.cancel = QPushButton(self)
+        self.cancel = QtGui.PushButton(self)
         self.cancel.setText(_("Cancel"))
 
-        self.ok = QPushButton(self)
+        self.ok = QtGui.PushButton(self)
         self.ok.setText(_("O.K. Go Ahead"))
 
-        buttons = QHBoxLayout(self)
+        buttons = QtGui.QHBoxLayout(self)
         buttons.setSpacing(10)
         buttons.addStretch(1)
         buttons.addWidget(self.cancel)
@@ -163,7 +137,6 @@ your system formatting the selected partition.</p>
 
         l.addWidget(self.warning)
         l.addLayout(buttons)
-
 
         self.connect(self.ok, SIGNAL("clicked()"),
                      self.slotOK)
@@ -178,3 +151,5 @@ your system formatting the selected partition.</p>
 
     def slotCancel(self):
         self.emit(PYSIGNAL("signalCancel"), ())
+
+

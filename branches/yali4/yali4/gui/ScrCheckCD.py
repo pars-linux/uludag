@@ -22,7 +22,7 @@ import yali4.pisiiface
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.checkcdwidget import Ui_CheckCDWidget
 import yali4.gui.context as ctx
-#from yali4.gui.YaliDialog import Dialog
+from yali4.gui.YaliDialog import Dialog
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Check your media')
@@ -45,12 +45,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
                      self.slotCheckCD)
 
     def showError(self):
-        pass
-        # make a release notes dialog
-        # r = ErrorWidget(self)
-        # d = Dialog(_("Check Failed"), r, self)
-        # d.resize(300,200)
-        # d.exec_loop()
+        r = ErrorWidget(self)
+        d = Dialog(_("Check Failed"), r, self)
+        d.resize(300,200)
+        d.exec_loop()
 
 
     def slotCheckCD(self):

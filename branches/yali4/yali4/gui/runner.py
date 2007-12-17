@@ -19,13 +19,11 @@ import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-
 import yali4
 import yali4.sysutils
 import yali4.gui.context as ctx
-from pyaspects.weaver import *
-#from yali4.gui.aspects import *
-#from yali4.gui.YaliDialog import Dialog
+from yali4.gui.YaliDialog import Dialog
+
 #from yali4.gui.debugger import Debugger
 #from yali4.gui.debugger import DebuggerAspect
 
@@ -87,11 +85,6 @@ class Runner:
         if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
             ctx.options.kahyaFile = ctx.consts.firstBootFile
 
-        # default style and font
-        # self._app.setStyle("Windows")
-        # f = QFont("Bitstream Vera Sans", 10);
-        # self._window.setFont(f)
-
         # visual debugger
         # ctx.debugger = Debugger()
 
@@ -109,37 +102,14 @@ class Runner:
         ctx.mainScreen = self._window
 
         self._window.createWidgets(_all_screens)
-        # add screens
-        # num = 0
-        # for scr in _all_screens:
-        #     w = scr['module'].Widget()
-
-        #     if ctx.options.debug == True or yali.sysutils.checkYaliParams(param="debug"):
-        #         # debug all screens.
-        #         weave_all_object_methods(ctx.debugger.aspect, w)
-
-        #     # enable navigation buttons before shown
-        #     weave_object_method(enableNavButtonsAspect, w, "shown")
-
-        #     # disable navigation buttons before the execute.
-        #     weave_object_method(disableNavButtonsAspect, w, "execute")
-
-        #     num += 1
-        #     ctx.screens.addScreen(num, scr['stage'], w)
-
         QObject.connect(self._app, SIGNAL("lastWindowClosed()"),
                         self._app, SLOT("quit()"))
 
-        # QObject.connect(ctx.screens, PYSIGNAL("signalCurrent"),
-        #                 ctx.stages.slotScreenChanged)
+        QObject.connect(ctx.mainScreen.ui, SIGNAL("signalProcessEvents"),
+                        self._app.processEvents)
 
-        # QObject.connect(ctx.screens, PYSIGNAL("signalProcessEvents"),
-        #                 self._app.processEvents)
-
-        # set the current screen and stage to 1 at startup...
-        # ctx.stages.setCurrent(1)
-        # ctx.screens.setCurrent(1)
-        # ctx.screens.next()
+        # set the current screen ...
+        ctx.mainScreen.setCurrent(0)
 
     ##
     # Fire up the interface.
@@ -150,51 +120,50 @@ class Runner:
         # self._window.ui.move(0,0)
         self._app.exec_()
 
-"""
+
 def showException(ex_type, tb):
     title = _("Error!")
 
-    if ex_type in (yali.exception_fatal, yali.exception_pisi):
+    if ex_type in (yali4.exception_fatal, yali4.exception_pisi):
         w = ErrorWidget(tb)
     else:
         w = ExceptionWidget(tb)
     d = Dialog(title, w, None)
     d.resize(500,400)
-    d.exec_loop()
+    d.exec_()
 
-
-class ExceptionWidget(QWidget):
+class ExceptionWidget(QtGui.QWidget):
     def __init__(self, tb_text, *args):
-        apply(QWidget.__init__, (self,) + args)
+        apply(QtGui.QWidget.__init__, (self,) + args)
 
-        info = QLabel(self)
+        info = QtGui.QLabel(self)
         info.setText("Unhandled exception occured!")
-        traceback = QTextView(self)
+        traceback = QtGui.QTextBrowser(self)
         traceback.setText(tb_text)
 
-        l = QVBoxLayout(self)
+        l = QtGui.QVBoxLayout(self)
         l.setSpacing(10)
         l.addWidget(info)
         l.addWidget(traceback)
 
-class ErrorWidget(QWidget):
+class ErrorWidget(QtGui.QWidget):
     def __init__(self, tb_text, *args):
-        apply(QWidget.__init__, (self,) + args)
+        apply(QtGui.QWidget.__init__, (self,) + args)
 
-        info = QLabel(self)
+        info = QtGui.QLabel(self)
         info.setText(_("Unhandled error occured!"))
-        traceback = QTextView(self)
+        traceback = QtGui.QTextBrowser(self)
         traceback.setText(tb_text)
 
-        reboot_button = QPushButton(self)
+        reboot_button = QtGui.QPushButton(self)
         reboot_button.setText(_("Reboot System!"))
 
-        l = QVBoxLayout(self)
+        l = QtGui.QVBoxLayout(self)
         l.setSpacing(10)
         l.addWidget(info)
         l.addWidget(traceback)
 
-        b = QHBoxLayout(l)
+        b = QtGui.QHBoxLayout(l)
         b.setMargin(5)
         b.addStretch(1)
         b.addWidget(reboot_button)
@@ -204,9 +173,9 @@ class ErrorWidget(QWidget):
 
     def slotReboot(self):
         try:
-            yali.sysutils.umount(ctx.consts.target_dir + "/home")
+            yali4.sysutils.umount(ctx.consts.target_dir + "/home")
         except:
             pass
-        yali.sysutils.umount(ctx.consts.target_dir)
-        yali.sysutils.fastreboot()
-"""
+        yali4.sysutils.umount(ctx.consts.target_dir)
+        yali4.sysutils.fastreboot()
+

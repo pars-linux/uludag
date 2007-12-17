@@ -21,8 +21,8 @@ import yali4.sysutils
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.welcomewidget import Ui_WelcomeWidget
 import yali4.gui.context as ctx
-#from yali4.gui.YaliDialog import Dialog
-#import GUIGPL
+from yali4.gui.YaliDialog import Dialog
+import GUIGPL
 
 ##
 # Welcome screen is the first screen to be shown.
@@ -74,6 +74,8 @@ Have a fruitful experience with Pardus!
         self.connect(self.ui.gplButton, SIGNAL("clicked()"),
                      self.showGPL)
 
+        ctx.mainScreen.processEvents()
+
     def slotAcceptToggled(self, b):
         if b:
             self.__enable_next(True)
@@ -91,12 +93,11 @@ Have a fruitful experience with Pardus!
             self.ui.rebootButton.setEnabled(True)
 
     def showGPL(self):
-        pass
         # make a release notes dialog
-        #r = GUIGPL.Widget(self)
-        #d = Dialog("GPL", r, self)
-        #d.resize(500,400)
-        #d.exec_loop()
+        r = GUIGPL.Widget(self)
+        d = Dialog("GPL", r, self)
+        d.resize(500,400)
+        d.exec_()
 
     def slotReboot(self):
         yali4.sysutils.fastreboot()
