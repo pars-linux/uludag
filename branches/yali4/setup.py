@@ -83,8 +83,9 @@ class YaliBuild(build):
         x = open(py_file, "w")
         keyStart = "QtGui.QApplication.translate"
         keyEnd = ", None, QtGui.QApplication.UnicodeUTF8)"
+        styleKey = "setStyleSheet"
         for l in f:
-            if not l.find(keyStart)==-1:
+            if not l.find(keyStart)==-1 and l.find(styleKey)==-1:
                 z = "%s(_(" % l.split("(")[0]
                 y = l.split(",")[0]+', '
                 l = l.replace(y,z)
