@@ -7,13 +7,14 @@
 # Faik Uygur <faik@pardus.org.tr>, 2007.
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
+# Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-26 16:27+0200\n"
-"PO-Revision-Date: 2007-11-11 06:02+0200\n"
-"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"PO-Revision-Date: 2007-12-17 03:38+0200\n"
+"Last-Translator: Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,10 +90,8 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
@@ -144,8 +143,7 @@ msgstr "&Nur Desktop-Anwendungen anzeigen"
 
 #: src/PreferencesDialog.py:206
 msgid "If checked, then pisi will only show desktop applications"
-msgstr ""
-"Wenn diese Auswahl getroffen ist, wird PiSi nur Desktop-Anwendungen anzeigen"
+msgstr "Wenn diese Auswahl getroffen ist, wird PiSi nur Desktop-Anwendungen anzeigen"
 
 #: src/PreferencesDialog.py:207
 msgid "Enable &periodic update check"
@@ -243,8 +241,7 @@ msgstr "Zum Entfernen ausgewählte(s) Paket(e):"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
 
 #: src/BasketDialog.py:66
 msgid "Selected package(s) for install:"
@@ -254,8 +251,7 @@ msgstr "Ausgewählte(s) Paket(e) für die Installation:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
 #: src/BasketDialog.py:69
 msgid "Selected package(s) for upgrade:"
@@ -347,8 +343,7 @@ msgstr "<b>Depot-Anderungen werden vorgenommen</b>"
 
 #: src/Preferences.py:249
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+msgstr "Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -404,7 +399,7 @@ msgstr "Entwickler und aktueller Betreuer"
 
 #: src/package-manager.py:61
 msgid "Developer"
-msgstr ""
+msgstr "Entwickler"
 
 #: src/package-manager.py:62
 msgid "Original Author"
@@ -489,9 +484,8 @@ msgid "Version: "
 msgstr "Version: "
 
 #: src/package-manager.py:416
-#, fuzzy
 msgid "Repository: "
-msgstr "Depot-Bezeichnung"
+msgstr "Depot: "
 
 #: src/package-manager.py:417
 msgid "Package Size: "
@@ -510,10 +504,8 @@ msgid "Currently your basket is empty."
 msgstr "Momentan ist Ihr Korb leer."
 
 #: src/package-manager.py:473 src/package-manager.py:481
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Momentan ausgewählte Pakete:<b>%1</b> mit einer Gesamtgrösse von <b>%2</b> "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Momentan ausgewählte Pakete:<b>%1</b> mit einer Gesamtgrösse von <b>%2</b> "
 
 #: src/package-manager.py:476
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
@@ -548,13 +540,12 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 Konflikte mit: [%2]\n"
 
 #: src/package-manager.py:525
-#, fuzzy
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
 msgstr ""
 "\n"
-"Folgende widerstreitende Pakete vom System entfernen?"
+"Folgende widerstreitende Pakete entfernen?"
 
 #: src/package-manager.py:540 src/package-manager.py:601
 #: src/package-manager.py:738
@@ -591,8 +582,7 @@ msgstr ""
 
 #: src/package-manager.py:561
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr ""
-"<br><br>Insgesamt <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
+msgstr "<br><br>Insgesamt <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
 
 #: src/package-manager.py:564
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -670,3 +660,4 @@ msgstr "Hauptfenster beim Starten anzeigen"
 #: src/package-manager.py:1014
 msgid "Package Manager is already running!"
 msgstr "Paket-Manager wird bereits ausgeführt!"
+
