@@ -181,7 +181,7 @@ light_fetch(PyObject *self, PyObject *args)
 PyObject *
 light_exec(PyObject *self, PyObject *args)
 {
-    PyObject *obj;
+    PyObject *pArgs, *pkArgs;
     dbus_uint32_t serial;
     int i;
 
@@ -191,23 +191,41 @@ light_exec(PyObject *self, PyObject *args)
     }
 
     if (msg_sys) {
-        serial = dbus_message_get_reply_serial(msg_sys);
+        pkArgs = PyDict_New();
+
+        if (dbus_message_get_sender(msg_sys)) {
+            PyDict_SetItemString(pkArgs, "sender", PyString_FromString(dbus_message_get_sender(msg_sys)));
+        }
+        if (dbus_message_get_destination(msg_sys)) {
+            PyDict_SetItemString(pkArgs, "destination", PyString_FromString(dbus_message_get_destination(msg_sys)));
+        }
+        if (dbus_message_get_path(msg_sys)) {
+            PyDict_SetItemString(pkArgs, "object_path", PyString_FromString(dbus_message_get_path(msg_sys)));
+        }
+        if (dbus_message_get_interface(msg_sys)) {
+            PyDict_SetItemString(pkArgs, "interface", PyString_FromString(dbus_message_get_interface(msg_sys)));
+        }
+        if (dbus_message_get_member(msg_sys)) {
+            PyDict_SetItemString(pkArgs, "member", PyString_FromString(dbus_message_get_member(msg_sys)));
+        }
 
         switch (dbus_message_get_type(msg_sys)) {
             case DBUS_MESSAGE_TYPE_METHOD_RETURN:
-                obj = PyList_AsTuple(dbus_py_import(msg_sys));
+                serial = dbus_message_get_reply_serial(msg_sys);
+                PyDict_SetItemString(pkArgs, "serial", PyInt_FromLong((long) serial));
+                pArgs = PyList_AsTuple(dbus_py_import(msg_sys));
                 if (PyDict_GetItem(methodHooks_sys, PyLong_FromLong((long) serial))) {
-                    PyObject_CallObject(PyDict_GetItem(methodHooks_sys, PyLong_FromLong((long) serial)), obj);
+                    PyObject_Call(PyDict_GetItem(methodHooks_sys, PyLong_FromLong((long) serial)), pArgs, pkArgs);
                     PyDict_DelItem(methodHooks_sys, PyLong_FromLong((long) serial));
                 }
-                Py_DECREF(obj);
+                Py_DECREF(pArgs);
                 break;
             case DBUS_MESSAGE_TYPE_SIGNAL:
-                obj = PyList_AsTuple(dbus_py_import(msg_sys));
+                pArgs = PyList_AsTuple(dbus_py_import(msg_sys));
                 for (i = 0; i < PyList_Size(signalHooks_sys); i++) {
-                    PyObject_CallObject(PyList_GetItem(signalHooks_sys, i), obj);
+                    PyObject_Call(PyList_GetItem(signalHooks_sys, i), pArgs, pkArgs);
                 }
-                Py_DECREF(obj);
+                Py_DECREF(pArgs);
                 break;
         }
 
@@ -215,23 +233,41 @@ light_exec(PyObject *self, PyObject *args)
     }
 
     if (msg_ses) {
-        serial = dbus_message_get_reply_serial(msg_ses);
+        pkArgs = PyDict_New();
+
+        if (dbus_message_get_sender(msg_ses)) {
+            PyDict_SetItemString(pkArgs, "sender", PyString_FromString(dbus_message_get_sender(msg_sys)));
+        }
+        if (dbus_message_get_destination(msg_ses)) {
+            PyDict_SetItemString(pkArgs, "destination", PyString_FromString(dbus_message_get_destination(msg_ses)));
+        }
+        if (dbus_message_get_path(msg_ses)) {
+            PyDict_SetItemString(pkArgs, "object_path", PyString_FromString(dbus_message_get_path(msg_ses)));
+        }
+        if (dbus_message_get_interface(msg_ses)) {
+            PyDict_SetItemString(pkArgs, "interface", PyString_FromString(dbus_message_get_interface(msg_ses)));
+        }
+        if (dbus_message_get_member(msg_ses)) {
+            PyDict_SetItemString(pkArgs, "member", PyString_FromString(dbus_message_get_member(msg_ses)));
+        }
 
         switch (dbus_message_get_type(msg_ses)) {
             case DBUS_MESSAGE_TYPE_METHOD_RETURN:
-                obj = PyList_AsTuple(dbus_py_import(msg_ses));
+                serial = dbus_message_get_reply_serial(msg_ses);
+                PyDict_SetItemString(pkArgs, "serial", PyInt_FromLong((long) serial));
+                pArgs = PyList_AsTuple(dbus_py_import(msg_ses));
                 if (PyDict_GetItem(methodHooks_ses, PyLong_FromLong((long) serial))) {
-                    PyObject_CallObject(PyDict_GetItem(methodHooks_ses, PyLong_FromLong((long) serial)), obj);
+                    PyObject_Call(PyDict_GetItem(methodHooks_ses, PyLong_FromLong((long) serial)), pArgs, pkArgs);
                     PyDict_DelItem(methodHooks_ses, PyLong_FromLong((long) serial));
                 }
-                Py_DECREF(obj);
+                Py_DECREF(pArgs);
                 break;
             case DBUS_MESSAGE_TYPE_SIGNAL:
-                obj = PyList_AsTuple(dbus_py_import(msg_ses));
+                pArgs = PyList_AsTuple(dbus_py_import(msg_ses));
                 for (i = 0; i < PyList_Size(signalHooks_ses); i++) {
-                    PyObject_CallObject(PyList_GetItem(signalHooks_ses, i), obj);
+                    PyObject_Call(PyList_GetItem(signalHooks_ses, i), pArgs, pkArgs);
                 }
-                Py_DECREF(obj);
+                Py_DECREF(pArgs);
                 break;
         }
 
