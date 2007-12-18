@@ -10,23 +10,25 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-
 import gettext
 __trans = gettext.translation('yali', fallback=True)
 _ = __trans.ugettext
 
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.Ui.rootpasswidget import RootPassWidget
-import yali.users
-import yali.sysutils
-import yali.gui.context as ctx
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.rootpasswidget import Ui_RootPassWidget
+import yali4.users
+import yali4.sysutils
+import yali4.gui.context as ctx
 import pardus.xorg
 
 ##
 # Root password widget
-class Widget(RootPassWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Set Administrator')
+    desc = _('Admins has important rights on the system..')
     help = _('''
 <font size="+2">System administrator password and hostname</font>
 
@@ -53,94 +55,94 @@ Click Next button to proceed.
 ''')
 
     def __init__(self, *args):
-        apply(RootPassWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_RootPassWidget()
+        self.ui.setupUi(self)
 
         self.host_valid = True
         self.pass_valid = False
 
-        self.pix.setPixmap(ctx.iconfactory.newPixmap("admin"))
-        self.pass_error.setText("")
-        self.host_error.setText("")
+        self.ui.pass_error.setText("")
+        self.ui.host_error.setText("")
 
-        self.connect(self.pass1, SIGNAL("textChanged(const QString &)"),
+        self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
-        self.connect(self.pass2, SIGNAL("textChanged(const QString &)"),
+        self.connect(self.ui.pass2, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
 
-        self.connect(self.pass2, SIGNAL("returnPressed()"),
+        self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
 
-        self.connect(self.hostname, SIGNAL("textChanged(const QString &)"),
+        self.connect(self.ui.hostname, SIGNAL("textChanged(const QString &)"),
                      self.slotHostnameChanged)
 
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
+        # from os.path import basename
+        # ctx.debugger.log("%s loaded" % basename(__file__))
         self.setNext()
         self.checkCapsLock()
-        self.pass1.setFocus()
+        self.ui.pass1.setFocus()
 
     def execute(self):
-        ctx.installData.rootPassword = self.pass1.text().ascii()
-        ctx.installData.hostName = self.hostname.text().ascii()
+        ctx.installData.rootPassword = self.ui.pass1.text().toAscii()
+        ctx.installData.hostName = self.ui.hostname.text().toAscii()
         return True
 
     def checkCapsLock(self):
         if pardus.xorg.capslock.isOn():
-            self.caps_error.setText(
+            self.ui.caps_error.setText(
                 _('<font color="#FF6D19">Caps Lock is on!</font>'))
         else:
-            self.caps_error.setText("")
+            self.ui.caps_error.setText("")
 
     def keyReleaseEvent(self, e):
         self.checkCapsLock()
 
     def slotTextChanged(self):
 
-        p1 = self.pass1.text()
-        p2 = self.pass2.text()
+        p1 = self.ui.pass1.text()
+        p2 = self.ui.pass2.text()
 
         if p1 == p2 and p1:
             if len(p1)<4:
-                self.pass_error.setText(
+                self.ui.pass_error.setText(
                     _('<font color="#FF6D19">Password is too short!</font>'))
-                self.pass_error.setAlignment(QLabel.AlignCenter)
                 self.pass_valid = False
             else:
-                self.pass_error.setText("")
+                self.ui.pass_error.setText("")
                 self.pass_valid = True
         else:
             self.pass_valid = False
             if p2:
-                self.pass_error.setText(
+                self.ui.pass_error.setText(
                     _('<font color="#FF6D19">Passwords do not match!</font>'))
-                self.pass_error.setAlignment(QLabel.AlignCenter)
         self.setNext()
 
     ##
     # check hostname validity
     def slotHostnameChanged(self, string):
 
-        if not string.ascii():
+        if not string.toAscii():
             self.host_valid = False
             self.setNext()
             return
 
-        self.host_valid = yali.sysutils.text_is_valid(string.ascii())
+        self.host_valid = yali4.sysutils.text_is_valid(string.toAscii())
 
         if not self.host_valid:
-            self.host_error.setText(_('<font color="#FF6D19">Hostname contains invalid characters!</font>'))
+            self.ui.host_error.setText(_('<font color="#FF6D19">Hostname contains invalid characters!</font>'))
         else:
-            self.host_error.setText("")
+            self.ui.host_error.setText("")
         self.setNext()
 
     def setNext(self):
         if self.host_valid and self.pass_valid:
-            ctx.screens.enableNext()
+            ctx.mainScreen.enableNext()
         else:
-            ctx.screens.disableNext()
+            ctx.mainScreen.disableNext()
 
     def slotReturnPressed(self):
-        if ctx.screens.isNextEnabled():
-            ctx.screens.next()
+        if ctx.mainScreen.isNextEnabled():
+            ctx.mainScreen.slotNext()
+

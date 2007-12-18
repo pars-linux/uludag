@@ -32,10 +32,10 @@ import YaliWindow
 import ScrWelcome
 import ScrCheckCD
 import ScrKeyboard
+import ScrAdmin
 #import ScrPartitionAuto
 #import ScrPartitionManual
 #import ScrInstall
-#import ScrAdmin
 #import ScrUsers
 #import ScrBootloader
 #import ScrGoodbye
@@ -53,7 +53,8 @@ class Runner:
         _all_screens = [
                         ScrWelcome,
                         ScrCheckCD,
-                        ScrKeyboard
+                        ScrKeyboard,
+                        ScrAdmin
                        ]
 
         """
@@ -84,6 +85,10 @@ class Runner:
         # check for oemInstall
         if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
             ctx.options.kahyaFile = ctx.consts.firstBootFile
+
+        # font = QtGui.QFont()
+        # font.setFamily("Droid Sans")
+        # self._app.setFont(font)
 
         # visual debugger
         # ctx.debugger = Debugger()

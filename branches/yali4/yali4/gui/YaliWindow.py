@@ -89,6 +89,12 @@ class Widget(Ui_YaliMain):
     def enableBack(self):
         self.buttonBack.setEnabled(True)
 
+    def isNextEnabled(self):
+        return self.buttonNext.isEnabled()
+
+    def isBackEnabled(self):
+        return self.buttonBack.isEnabled()
+
     # processEvents
     def processEvents(self):
         QObject.emit(self.ui,SIGNAL("signalProcessEvents"))
