@@ -78,14 +78,21 @@ log_print(const char *fmt, va_list ap, int error)
 }
 
 //! Log starter. Permissions of log file are set here
-void
+int
 log_start(void)
 {
+    if (cfg_log_file && 0 != access(cfg_log_file_name, W_OK)) {
+        printf("Cannot write log file '%s'\n", cfg_log_file_name);
+        return -1;
+    }
+
     log_info("COMAR v%s\n", VERSION);
     if (cfg_log_file) {
         // make sure log is not readable by ordinary users
         chmod(cfg_log_file_name, S_IRUSR | S_IWUSR);
     }
+
+    return 0;
 }
 
 //! Error logging

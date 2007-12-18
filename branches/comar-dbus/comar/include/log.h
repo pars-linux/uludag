@@ -12,7 +12,7 @@
 #define LOG_PERF 4
 #define LOG_FULL 0xffffffff
 
-void log_start(void);
+int log_start(void);
 void log_error(const char *fmt, ...);
 void log_info(const char *fmt, ...);
 void log_debug(int subsys, const char *fmt, ...);

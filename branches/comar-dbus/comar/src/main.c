@@ -41,23 +41,23 @@ main(int argc, char *argv[])
         exit(1);
     }
 
+    // Initialize main process
+    proc_init(argc, argv, "Comar");
+
+    // Start logging
+    if (log_start() != 0) {
+        exit(1);
+    }
+
     // Load models
     if (model_init() != 0) {
-        puts(_("Unable to load model.xml."));
         exit(1);
     }
 
     // Initialize DB
     if (db_init() != 0) {
-        puts(_("Database is corrupt."));
         exit(1);
     }
-
-    // Initialize main process
-    proc_init(argc, argv, "Comar");
-
-    // Start logging
-    log_start();
 
     // Listen for DBus calls
     proc_fork(dbus_listen, "ComarDBus", NULL, NULL);
