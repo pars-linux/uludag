@@ -95,9 +95,9 @@ class WarningDialog(Dialog):
         self.warning_widget = w
         Dialog.__init__(self, _("Warning"), self.warning_widget, parent)
 
-        self.connect(self.warning_widget, PYSIGNAL("signalOK"),
+        self.connect(self.warning_widget, SIGNAL("signalOK"),
                      self.slotOK)
-        self.connect(self.warning_widget, PYSIGNAL("signalCancel"),
+        self.connect(self.warning_widget, SIGNAL("signalCancel"),
                      self.slotCancel)
 
     def slotOK(self):
@@ -109,24 +109,24 @@ class WarningDialog(Dialog):
 class WarningWidget(QtGui.QWidget):
 
     def __init__(self, *args):
-        QtGui.Widget.__init__(self, *args)
+        QtGui.QWidget.__init__(self, *args)
 
         l = QtGui.QVBoxLayout(self)
         l.setSpacing(20)
         l.setMargin(10)
 
         self.warning = QtGui.QLabel(self)
-
+        self.warning.setScaledContents(True)
         self.warning.setText(_('''<b>
 <p>This action will start installing Pardus on
 your system formatting the selected partition.</p>
 </b>
 '''))
 
-        self.cancel = QtGui.PushButton(self)
+        self.cancel = QtGui.QPushButton(self)
         self.cancel.setText(_("Cancel"))
 
-        self.ok = QtGui.PushButton(self)
+        self.ok = QtGui.QPushButton(self)
         self.ok.setText(_("O.K. Go Ahead"))
 
         buttons = QtGui.QHBoxLayout(self)
@@ -147,9 +147,9 @@ your system formatting the selected partition.</p>
         self.warning.setText(msg)
 
     def slotOK(self):
-        self.emit(PYSIGNAL("signalOK"), ())
+        self.emit(SIGNAL("signalOK"), ())
 
     def slotCancel(self):
-        self.emit(PYSIGNAL("signalCancel"), ())
+        self.emit(SIGNAL("signalCancel"), ())
 
 

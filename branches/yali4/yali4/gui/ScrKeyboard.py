@@ -71,7 +71,7 @@ Depending on your hardware or choice select a keyboard layout from the list.
         #ctx.debugger.log("%s loaded" % basename(__file__))
 
     def execute(self):
-        keydata = self.ui.keyboard_list.selectedItem().getData()
+        keydata = self.ui.keyboard_list.currentItem().getData()
         ctx.installData.keyData = keydata
         return True
 

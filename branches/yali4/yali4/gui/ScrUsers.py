@@ -135,7 +135,6 @@ go to next screen.</p>
         for i in range(self.ui.userList.count()):
             u = self.ui.userList.item(i).getUser()
             ctx.installData.users.append(u)
-
             yali4.users.pending_users.append(u)
             # ctx.debugger.log("USER::%s"%u.username)
 

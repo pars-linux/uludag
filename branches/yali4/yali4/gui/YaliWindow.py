@@ -48,6 +48,8 @@ class Widget(Ui_YaliMain):
             self.stackMove(cur)
 
     def slotNext(self):
+        _w = self.mainStack.currentWidget()
+        _w.execute()
         self.stackMove(self.getCur(+1))
 
     def slotBack(self):
