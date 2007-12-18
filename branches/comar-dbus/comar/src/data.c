@@ -381,7 +381,7 @@ db_remove_app(char *app)
 
     // iterate over app's models
     for (t = list; t; t = s) {
-        s = strchr(t, '/');
+        s = strchr(t, '|');
         if (s) {
             *s = '\0';
             ++s;
@@ -406,27 +406,28 @@ db_remove_app(char *app)
             }
         }
         free(list2);
-
-        // remove app from application list in app.db
-        list2 = get_data(db.app, t, NULL, &ret);
-        if (list2) {
-            char *k;
-            int sa = strlen(app);
-            k = strstr(list2, app);
-            if (k) {
-                if (k[sa] == '|') ++sa;
-                memmove(k, k + sa, strlen(k) - sa + 1);
-                sa = strlen(list2);
-                if (sa > 0) {
-                    if (list2[sa-1] == '|')
-                        list2[sa-1] = '\0';
-                }
-                ret = put_data(db.app, t, list2, strlen(list2) + 1);
-                if (ret) goto out;
-            }
-        }
-        free(list2);
     }
+    free(list);
+
+    // remove app from application list in app.db
+    list = get_data(db.app, "__apps__", NULL, &ret);
+    if (list) {
+        char *k;
+        int sa = strlen(app);
+        k = strstr(list, app);
+        if (k) {
+            if (k[sa] == '|') ++sa;
+            memmove(k, k + sa, strlen(k) - sa + 1);
+            sa = strlen(list);
+            if (sa > 0) {
+                if (list[sa-1] == '|')
+                    list[sa-1] = '\0';
+            }
+            ret = put_data(db.app, "__apps__", list, strlen(list) + 1);
+            if (ret) goto out;
+        }
+    }
+    free(list);
 
     ret = del_data(db.app, app);
     if (ret) goto out;
