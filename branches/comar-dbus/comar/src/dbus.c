@@ -70,7 +70,7 @@ dbus_signal(const char *path, const char *interface, const char *name, PyObject 
 
 //! Creates an error message and sends
 static void
-dbus_reply_error(char *str)
+dbus_reply_error(char *class, char *name, char *str)
 {
     /*
      * Creates an error message and sends to client. Does nothing if client
@@ -81,8 +81,16 @@ dbus_reply_error(char *str)
 
     if (dbus_message_get_no_reply(my_proc.bus_msg)) return;
 
-    DBusMessage *reply = dbus_message_new_error(my_proc.bus_msg, DBUS_ERROR_FAILED, str);
+    char *err_name;
+    int size;
+
+    size = strlen(cfg_bus_name) + 1 + strlen(class) + 1 + strlen(name) + 1;
+    err_name = malloc(size);
+    snprintf(err_name, size, "%s.%s.%s\0", cfg_bus_name, class, name);
+
+    DBusMessage *reply = dbus_message_new_error(my_proc.bus_msg, err_name, str);
     dbus_send(reply);
+    free(err_name);
 }
 
 //! Logs a Python exception
@@ -122,7 +130,7 @@ log_exception()
 
     log_error("Python Exception [%s] in (%s,%s,%ld): %s\n", eStr, dbus_message_get_interface(my_proc.bus_msg), dbus_message_get_path(my_proc.bus_msg), lineno, vStr);
 
-    dbus_reply_error(vStr);
+    dbus_reply_error("python", eStr, vStr);
 }
 
 //! Creates a message from Python object and sends
@@ -239,7 +247,7 @@ dbus_introspection_methods(const char *path)
         char *app = (char *) strsub(path, strlen("/package/"), 0);
         if (!db_check_app(app)) {
             log_error("No such application: '%s'\n", app);
-            dbus_reply_error("No such application");
+            dbus_reply_error("db", "noapp", "No such application.");
         }
         else {
             char *models;
@@ -274,8 +282,8 @@ dbus_introspection_methods(const char *path)
         free(app);
     }
     else {
-        log_error("Invalid object path '%s'\n", path);
-        dbus_reply_error("Invalid object path");
+        log_error("Unknown object path '%s'\n", path);
+        dbus_reply_error("dbus", "unknownpath", "Object path unknown.");
     }
 }
 
@@ -342,8 +350,8 @@ dbus_comar_methods(const char *method)
             free(apps);
         }
         else {
-            log_error("No such model: '%s'\n", model);
-            dbus_reply_error("No such model");
+            log_error("Unknown model: '%s'\n", model);
+            dbus_reply_error("db", "nomodel", "Model unknown.");
         }
     }
     else if (strcmp(method, "listApplicationModels") == 0) {
@@ -363,8 +371,8 @@ dbus_comar_methods(const char *method)
             free(models);
         }
         else {
-            log_error("No such application: '%s'\n", app);
-            dbus_reply_error("No such application");
+            log_error("Unknown application: '%s'\n", app);
+            dbus_reply_error("db", "noapp", "Application unknown.");
         }
     }
     else if (strcmp(method, "register") == 0) {
@@ -375,12 +383,12 @@ dbus_comar_methods(const char *method)
 
         if (model_lookup_interface(model) == -1) {
             log_error("No such model: '%s'\n", model);
-            dbus_reply_error("No such model.");
+            dbus_reply_error("db", "nomodel", "No such model.");
         }
         else {
             if (py_compile(script) != 0) {
                 log_error("Not a valid Python script: '%s'\n", script);
-                dbus_reply_error("Not a valid Python script.");
+                dbus_reply_error("python", "SyntaxError", "Not a valid Python script.");
             }
             else {
                 code = load_file(script, NULL);
@@ -398,8 +406,8 @@ dbus_comar_methods(const char *method)
         db_get_app_models(app, &models);
 
         if (models == NULL) {
-            log_error("No such application: '%s'\n", app);
-            dbus_reply_error("No such application");
+            log_error("Unknown application: '%s'\n", app);
+            dbus_reply_error("db", "noapp", "Unknown application");
         }
         else {
             db_remove_app(app);
@@ -419,7 +427,7 @@ dbus_comar_methods(const char *method)
     }
     else {
         log_error("Unknown method: '%s'\n", method);
-        dbus_reply_error("Unknown method");
+        dbus_reply_error("dbus", "unknownmethod", "Unknown method");
     }
 }
 
@@ -444,13 +452,21 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
     char *app = (char *) strsub(path, strlen("/package/"), 0);
     char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
 
-    if (db_check_model(app, model) && model_lookup_method(model, method) != -1) {
+    if (!db_check_model(app, model)) {
+        log_error("Application interface doesn't exist: %s (%s)\n", model, app);
+        dbus_reply_error("dbus", "unknownmodel", "Application interface doesn't exist.");
+    }
+    else if (model_lookup_method(model, method) == -1) {
+        log_error("Unknown method: %s.%s\n", model, method);
+        dbus_reply_error("dbus", "unknownmethod", "Unknown method.");
+    }
+    else {
         args = PyList_AsTuple(dbus_py_import(my_proc.bus_msg));
         ret = py_call_method(app, model, method, args, &result);
 
         if (ret == 1) {
             log_error("Unable to find: %s (%s)\n", model, app);
-            dbus_reply_error("Internal error, unable to find script.");
+            dbus_reply_error("core", "internal", "Unable to find script.");
         }
         else if (ret == 2) {
             log_exception();
@@ -458,10 +474,6 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
         else {
             dbus_reply_object(result);
         }
-    }
-    else {
-        log_error("Invalid application, model or method: %s.%s (%s)\n", model, method, app);
-        dbus_reply_error("Invalid application, model or method.");
     }
     free(app);
     free(model);
@@ -506,12 +518,12 @@ dbus_method_call()
             dbus_app_methods(interface, path, method);
         }
         else {
-            log_error("Invalid object path '%s'\n", path);
-            dbus_reply_error("Invalid object path");
+            log_error("Unknown object path '%s'\n", path);
+            dbus_reply_error("dbus", "unknownpath", "Unknown object path");
         }
     }
     else {
-        dbus_reply_error("Invalid interface");
+        dbus_reply_error("dbus", "unknownmodel", "Unknown interface");
     }
 
     gettimeofday(&time_end, NULL);
