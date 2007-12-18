@@ -10,25 +10,27 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-import os
-from yali.constants import consts
-
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.users
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.Ui.setupuserswidget import SetupUsersWidget
-from yali.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
-import yali.gui.context as ctx
+import os
+import yali4.users
 import pardus.xorg
+import yali4.gui.context as ctx
+
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+from yali4.constants import consts
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.setupuserswidget import Ui_SetupUsersWidget
+from yali4.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
 
 ##
 # Partitioning screen.
-class Widget(SetupUsersWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Set Users')
+    desc = _('Create users to use Pardus..')
     help = _('''
 <font size="+2">User setup</font>
 
@@ -50,55 +52,59 @@ Click Next button to proceed.
 ''')
 
     def __init__(self, *args):
-        apply(SetupUsersWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_SetupUsersWidget()
+        self.ui.setupUi(self)
 
-        self.pix.setPixmap(ctx.iconfactory.newPixmap("users"))
-        self.pass_error.setText("")
         self.edititemindex = None
+        self.ui.pass_error.setText("")
 
         # User Icons
-        self.normalUserIcon = ctx.iconfactory.newPixmap("user_normal")
-        self.superUserIcon = ctx.iconfactory.newPixmap("user_root")
+        self.normalUserIcon = QtGui.QPixmap(":/gui/pics/user_normal.png")
+        self.superUserIcon = QtGui.QPixmap(":/gui/pics/user_root.png")
 
         # KDE AutoLogin
         self.autoLoginUser = ""
 
         # Give Admin Privileges default
-        self.admin.setChecked(True)
+        self.ui.admin.setChecked(True)
 
-        self.createButton.setEnabled(False)
+        # Set disabled the create Button
+        self.ui.createButton.setEnabled(False)
 
-        self.connect(self.pass1, SIGNAL("textChanged(const QString &)"),
+        # Connections
+        self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
-        self.connect(self.pass2, SIGNAL("textChanged(const QString &)"),
+        self.connect(self.ui.pass2, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
-        self.connect(self.username, SIGNAL("textChanged(const QString &)"),
+        self.connect(self.ui.username, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
-        self.connect(self.createButton, SIGNAL("clicked()"),
+        self.connect(self.ui.createButton, SIGNAL("clicked()"),
                      self.slotCreateUser)
-        self.connect(self.deleteButton, SIGNAL("clicked()"),
+        self.connect(self.ui.deleteButton, SIGNAL("clicked()"),
                      self.slotDeleteUser)
-        self.connect(self.userList, SIGNAL("doubleClicked(QListBoxItem*)"),
+        self.connect(self.ui.userList, SIGNAL("doubleClicked(QListBoxItem*)"),
                      self.slotEditUser)
-        self.connect(self.pass2, SIGNAL("returnPressed()"),
+        self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
-        self.checkUsers()
+
+        #self.checkUsers()
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
+        # from os.path import basename
+        # ctx.debugger.log("%s loaded" % basename(__file__))
 
         ctx.installData.users = []
         ctx.installData.autoLoginUser = None
 
         self.checkUsers()
         self.checkCapsLock()
-        self.username.setFocus()
+        self.ui.username.setFocus()
 
     def execute(self):
         isAdminSet = False
-        for i in range(self.userList.count()):
-            u = self.userList.item(i).getUser()
+        for i in range(self.ui.userList.count()):
+            u = self.ui.userList.item(i).getUser()
             if "wheel" in u.groups:
                 isAdminSet = True
 
@@ -116,99 +122,95 @@ go to next screen.</p>
 </b>
 '''))
             self.dialog = WarningDialog(w, self)
-            if not self.dialog.exec_loop():
-                ctx.screens.enablePrev()
-                ctx.screens.enableNext()
+            if not self.dialog.exec_():
+                ctx.mainScreen.enableBack()
+                ctx.mainScreen.enableNext()
                 return False
 
         # reset and fill pending_users
-        yali.users.reset_pending_users()
+        yali4.users.reset_pending_users()
 
-        ctx.installData.autoLoginUser = str(self.autoLogin.currentText())
+        ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
 
-        for i in range(self.userList.count()):
-            u = self.userList.item(i).getUser()
+        for i in range(self.ui.userList.count()):
+            u = self.ui.userList.item(i).getUser()
             ctx.installData.users.append(u)
 
-            yali.users.pending_users.append(u)
-            ctx.debugger.log("USER::%s"%u.username)
+            yali4.users.pending_users.append(u)
+            # ctx.debugger.log("USER::%s"%u.username)
 
         return True
 
     def checkCapsLock(self):
         if pardus.xorg.capslock.isOn():
-            self.caps_error.setText(
+            self.ui.caps_error.setText(
                 _('<font color="#FF6D19">Caps Lock is on!</font>'))
         else:
-            self.caps_error.setText("")
+            self.ui.caps_error.setText("")
 
     def keyReleaseEvent(self, e):
         self.checkCapsLock()
 
     def slotTextChanged(self):
+        p1 = self.ui.pass1.text()
+        p2 = self.ui.pass2.text()
 
-        p1 = self.pass1.text()
-        p2 = self.pass2.text()
-
-        if not p1 == '' and (p1 == self.username.text() or p1 == self.realname.text()):
-            self.pass_error.setText(
+        if not p1 == '' and (p1 == self.ui.username.text() or p1 == self.ui.realname.text()):
+            self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Don\'t use your user name or name as a password.</font>'))
-            self.pass_error.setAlignment(QLabel.AlignCenter)
-            return self.createButton.setEnabled(False)
+            return self.ui.createButton.setEnabled(False)
         elif p2 != p1 and p2:
-            self.pass_error.setText(
+            self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Passwords do not match!</font>'))
-            self.pass_error.setAlignment(QLabel.AlignCenter)
-            return self.createButton.setEnabled(False)
+            return self.ui.createButton.setEnabled(False)
         elif len(p1) == len(p2) and len(p2) < 4 and not p1=='':
-            self.pass_error.setText(
+            self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Password is too short!</font>'))
-            self.pass_error.setAlignment(QLabel.AlignCenter)
-            return self.createButton.setEnabled(False)
+            return self.ui.createButton.setEnabled(False)
         else:
-            self.pass_error.setText("")
+            self.ui.pass_error.setText("")
 
-        if self.username.text() and p1 and p2:
-            self.createButton.setEnabled(True)
+        if self.ui.username.text() and p1 and p2:
+            self.ui.createButton.setEnabled(True)
         else:
-            self.createButton.setEnabled(False)
+            self.ui.createButton.setEnabled(False)
 
     def slotCreateUser(self):
-        u = yali.users.User()
-        u.username = self.username.text().ascii()
+        u = yali4.users.User()
+        u.username = self.ui.username.text().toAscii()
         # ignore last character. see bug #887
-        u.realname = unicode(self.realname.text().utf8().data())[:-1]
-        u.passwd = self.pass1.text().ascii()
+        u.realname = unicode(self.ui.realname.text())
+        u.passwd = self.ui.pass1.text().toAscii()
         u.groups = ["users", "pnp", "pnpadmin", "removable", "disk", "audio", "video", "power", "dialout"]
         pix = self.normalUserIcon
-        if self.admin.isOn():
+        if self.ui.admin.isChecked():
             u.groups.append("wheel")
             pix = self.superUserIcon
 
-        self.createButton.setText(_("Create User"))
+        self.ui.createButton.setText(_("Create User"))
 
-        existsInList = [i for i in range(self.userList.count())
-                        if self.userList.item(i).getUser().username == u.username]
+        existsInList = [i for i in range(self.ui.userList.count())
+                        if self.ui.userList.item(i).getUser().username == u.username]
 
         # check user validity
         if u.exists() or (existsInList and self.edititemindex == None):
-            self.pass_error.setText(
+            self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Username exists, choose another one!</font>'))
             return
         elif not u.usernameIsValid():
-            self.pass_error.setText(
+            self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Username contains invalid characters!</font>'))
             return
         elif not u.realnameIsValid():
-            self.pass_error.setText(
+            self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Realname contains invalid characters!</font>'))
             return
 
-        updateItem = None
+        RupdateItem = None
 
         try:
-            self.userList.removeItem(self.edititemindex)
-            self.autoLogin.removeItem(self.edititemindex + 1)
+            self.ui.userList.removeItem(self.edititemindex)
+            self.ui.autoLogin.removeItem(self.edititemindex + 1)
         except:
             updateItem = self.edititemindex
             # nothing wrong. just adding a new user...
@@ -216,77 +218,79 @@ go to next screen.</p>
 
         self.edititemindex = None
 
-        i = UserItem(self.userList, pix, user = u)
+        i = UserItem(self.ui.userList, pix, user = u)
 
         # add user to auto-login list.
-        self.autoLogin.insertItem(u.username)
+        self.ui.autoLogin.addItem(QString(u.username))
 
         if updateItem:
-            self.autoLogin.setCurrentItem(self.autoLogin.count())
+            self.ui.autoLogin.setCurrentItem(self.ui.autoLogin.count())
 
         # clear form
         self.resetWidgets()
 
-        ctx.debugger.log("slotCreateUser :: user '%s (%s)' added/updated" % (u.realname,u.username))
-        ctx.debugger.log("slotCreateUser :: user groups are %s" % str(','.join(u.groups)))
+        # ctx.debugger.log("slotCreateUser :: user '%s (%s)' added/updated" % (u.realname,u.username))
+        # ctx.debugger.log("slotCreateUser :: user groups are %s" % str(','.join(u.groups)))
 
         # give focus to username widget for a new user. #3280
-        self.username.setFocus()
+        self.ui.username.setFocus()
         self.checkUsers()
 
     def slotDeleteUser(self):
-        if self.userList.currentItem()==self.edititemindex:
+        if self.ui.userList.currentRow()==self.edititemindex:
             self.resetWidgets()
-            self.autoLogin.setCurrentItem(0)
-        self.autoLogin.removeItem(self.userList.currentItem() + 1)
-        self.userList.removeItem(self.userList.currentItem())
+            self.ui.autoLogin.setCurrentRow(0)
+        self.ui.autoLogin.removeItem(self.ui.userList.currentRow() + 1)
+        self.ui.userList.removeItem(self.ui.userList.currentRow())
         self.checkUsers()
 
     def slotEditUser(self, item):
         u = item.getUser()
 
-        self.username.setText(u.username)
-        self.realname.setText(u.realname)
-        self.pass1.setText(u.passwd)
-        self.pass2.setText(u.passwd)
+        self.ui.username.setText(u.username)
+        self.ui.realname.setText(u.realname)
+        self.ui.pass1.setText(u.passwd)
+        self.ui.pass2.setText(u.passwd)
 
         if "wheel" in u.groups:
-            self.admin.setChecked(True)
+            self.ui.admin.setChecked(True)
         else:
-            self.admin.setChecked(False)
+            self.ui.admin.setChecked(False)
 
-        self.edititemindex = self.userList.currentItem()
-        self.createButton.setText(_("Update User"))
+        self.edititemindex = self.ui.userList.currentItem()
+        self.ui.createButton.setText(_("Update User"))
 
     def checkUsers(self):
-        if self.userList.count():
-            self.deleteButton.setEnabled(True)
-            self.autoLogin.setEnabled(True)
-            ctx.screens.enableNext()
+        if self.ui.userList.count():
+            self.ui.deleteButton.setEnabled(True)
+            self.ui.autoLogin.setEnabled(True)
+            ctx.mainScreen.enableNext()
         else:
-            # there is no user in list, there is nobody to delete
-            self.deleteButton.setEnabled(False)
-            self.autoLogin.setEnabled(False)
-            ctx.screens.disableNext()
+            # there is no user in list so noting to delete
+            self.ui.deleteButton.setEnabled(False)
+            self.ui.autoLogin.setEnabled(False)
+            ctx.mainScreen.disableNext()
 
     def resetWidgets(self):
         # clear all
-        self.username.clear()
-        self.realname.clear()
-        self.pass1.clear()
-        self.pass2.clear()
-        self.admin.setChecked(False)
-        self.createButton.setEnabled(False)
+        self.ui.username.clear()
+        self.ui.realname.clear()
+        self.ui.pass1.clear()
+        self.ui.pass2.clear()
+        self.ui.admin.setChecked(False)
+        self.ui.createButton.setEnabled(False)
 
     def slotReturnPressed(self):
         self.slotCreateUser()
 
-class UserItem(QListBoxPixmap):
+class UserItem(QtGui.QListWidgetItem):
 
     ##
     # @param user (yali.users.User)
     def __init__(self, parent, pix, user):
-        apply(QListBoxPixmap.__init__, (self,parent,pix,user.username))
+        _pix = QtGui.QIcon(pix)
+        _user= QString(user.username)
+        QtGui.QListWidgetItem.__init__(self,_pix,_user,parent)
         self._user = user
 
     def getUser(self):

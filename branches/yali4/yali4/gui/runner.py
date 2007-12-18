@@ -33,10 +33,11 @@ import ScrWelcome
 import ScrCheckCD
 import ScrKeyboard
 import ScrAdmin
+import ScrUsers
+
 #import ScrPartitionAuto
 #import ScrPartitionManual
 #import ScrInstall
-#import ScrUsers
 #import ScrBootloader
 #import ScrGoodbye
 #import ScrKahyaCheck
@@ -54,7 +55,8 @@ class Runner:
                         ScrWelcome,
                         ScrCheckCD,
                         ScrKeyboard,
-                        ScrAdmin
+                        ScrAdmin,
+                        ScrUsers
                        ]
 
         """
