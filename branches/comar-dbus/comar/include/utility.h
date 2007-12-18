@@ -7,17 +7,13 @@
 ** option) any later version. Please read the COPYING file.
 */
 
+#include <sys/time.h>
+
 char *strsub(const char *str, int start, int end);
 char *strrep(const char *str, char old, char new);
 
-#ifndef D_LIGHT
-#include <sys/time.h>
 int check_file(const char *fname);
 unsigned char *load_file(const char *fname, int *sizeptr);
 int save_file(const char *fname, const char *buffer, size_t size);
 
-int check_model_name(const char *model);
-int check_app_name(const char *app);
-char *get_script_path(const char *interface, const char *path);
 unsigned long time_diff(struct timeval *start, struct timeval *end);
-#endif

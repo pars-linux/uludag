@@ -20,6 +20,9 @@
 #include "log.h"
 #include "utility.h"
 
+#define CHARS_APP "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+"
+#define CHARS_MODEL "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz."
+
 //! Database init function
 int
 db_init(void)
@@ -328,6 +331,32 @@ append_item(DB *db, const char *key, const char *item)
     return 0;
 }
 
+//! Returns script path of a registered application&model pair
+char *
+get_script_path(const char *app, const char *model)
+{
+    /*!
+     * Returns script path of a registered application&model pair
+     *
+     * @app Application
+     * @model Model
+     * @return Script path
+     */
+
+    char *realpath, *model_escaped, *t, *t2;
+    int size;
+
+    size = strlen(cfg_data_dir) + 1 + strlen("code") + 1 + strlen(model) + 1 + strlen(app) + 4;
+    realpath = malloc(size);
+
+    model_escaped = (char *) strrep(model, '.', '_');
+
+    // Generate script path
+    snprintf(realpath, size, "%s/code/%s_%s.py\0", cfg_data_dir, model_escaped, app);
+    free(model_escaped);
+    return realpath;
+}
+
 //! Registers an application model
 int
 db_register_model(char *app, char *model)
@@ -507,6 +536,57 @@ out:
     close_env(&db);
     return ret;
 }
+
+//! Tests whether a model name is valid
+static int
+check_model_name(const char *model)
+{
+    /*!
+     * Tests whether a model name is valid
+     *
+     * @model Model
+     * @return 1 if true, 0 if false
+     */
+
+    int i;
+
+    if (model == NULL) {
+        return 0;
+    }
+
+    for (i = 0; i < strlen(model); i++) {
+        if (strchr(CHARS_MODEL, model[i]) == NULL) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+//! Tests whether an application name is valid
+static int
+check_app_name(const char *app)
+{
+    /*!
+     * Tests whether an application name is valid
+     *
+     * @app Application
+     * @return 1 if true, 0 if false
+     */
+
+    int i;
+
+    if (app == NULL) {
+        return 0;
+    }
+
+    for (i = 0; i < strlen(app); i++) {
+        if (strchr(CHARS_APP, app[i]) == NULL) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 
 //! Checks if application is registered
 int

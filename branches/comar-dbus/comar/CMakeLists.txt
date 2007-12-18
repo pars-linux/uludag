@@ -41,6 +41,7 @@ add_executable(comar src/main.c
                      src/iksemel.c
                      src/log.c
                      src/process.c
+                     src/pydbus.c
                      src/model.c
                      src/utility.c)
 

@@ -15,3 +15,5 @@ int db_register_model(char *app, char *model);
 int db_remove_app(char *app);
 int db_check_app(char *app);
 int db_check_model(char *app, char *model);
+
+char *get_script_path(const char *interface, const char *path);

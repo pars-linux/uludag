@@ -352,7 +352,7 @@ model_get_iks(char *path, iks **parent)
             if (strcmp(path, "Comar") == 0) {
                 iks_insert_attrib(new, "name", cfg_bus_name);
             }
-            else {
+            else if (strncmp(path, "org.freedesktop.", strlen("org.freedesktop.")) != 0) {
                 int size = strlen(cfg_bus_name) + 1 + strlen(path) + 1;
                 char *name = malloc(size);
                 snprintf(name, size, "%s.%s\0", cfg_bus_name, path);

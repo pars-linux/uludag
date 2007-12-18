@@ -14,14 +14,7 @@
 #include <time.h>
 #include <sys/stat.h>
 
-#ifndef D_LIGHT
-#include "cfg.h"
-#endif
-
 #include "utility.h"
-
-const char *valid_app_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+";
-const char *valid_model_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.";
 
 //! Returns part of a string
 char *
@@ -86,8 +79,6 @@ strrep(const char *str, char old, char new)
 
     return new_str;
 }
-
-#ifndef D_LIGHT
 
 //! Test whether a path exists
 int
@@ -168,82 +159,6 @@ save_file(const char *fname, const char *buffer, size_t size)
     return 0;
 }
 
-//! Tests whether a model name is valid
-int
-check_model_name(const char *model)
-{
-    /*!
-     * Tests whether a model name is valid
-     *
-     * @model Model
-     * @return 1 if true, 0 if false
-     */
-
-    int i;
-
-    if (model == NULL) {
-        return 0;
-    }
-
-    for (i = 0; i < strlen(model); i++) {
-        if (strchr(valid_model_chars, model[i]) == NULL) {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-//! Tests whether an application name is valid
-int
-check_app_name(const char *app)
-{
-    /*!
-     * Tests whether an application name is valid
-     *
-     * @app Application
-     * @return 1 if true, 0 if false
-     */
-
-    int i;
-
-    if (app == NULL) {
-        return 0;
-    }
-
-    for (i = 0; i < strlen(app); i++) {
-        if (strchr(valid_model_chars, app[i]) == NULL) {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-//! Returns script path of a registered application&model pair
-char *
-get_script_path(const char *app, const char *model)
-{
-    /*!
-     * Returns script path of a registered application&model pair
-     *
-     * @app Application
-     * @model Model
-     * @return Script path
-     */
-
-    char *realpath, *model_escaped, *t, *t2;
-    int size;
-
-    size = strlen(cfg_data_dir) + 1 + strlen("code") + 1 + strlen(model) + 1 + strlen(app) + 4;
-    realpath = malloc(size);
-
-    model_escaped = (char *) strrep(model, '.', '_');
-
-    // Generate script path
-    snprintf(realpath, size, "%s/code/%s_%s.py\0", cfg_data_dir, model_escaped, app);
-    free(model_escaped);
-    return realpath;
-}
-
 //! Returns difference between to time values.
 unsigned long
 time_diff(struct timeval *start, struct timeval *end)
@@ -261,5 +176,3 @@ time_diff(struct timeval *start, struct timeval *end)
     msec -= (start->tv_sec * 1000) + (start->tv_usec / 1000);
     return msec;
 }
-
-#endif

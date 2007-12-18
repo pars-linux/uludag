@@ -15,10 +15,12 @@
 
 #include "cfg.h"
 #include "csl.h"
+#include "data.h"
 #include "iksemel.h"
 #include "log.h"
 #include "model.h"
 #include "process.h"
+#include "pydbus.h"
 #include "utility.h"
 
 //! Sends message to client
@@ -187,12 +189,19 @@ dbus_introspection_methods(const char *path)
         // system node contains Comar methods (register, remove, ...)
         iks_insert_attrib(iks_insert(xml, "node"), "name", "system");
 
+        // add standard interfaces
+        model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
+
         dbus_reply_str(iks_string(NULL, xml));
         iks_delete(xml);
     }
     else if (strcmp(path, "/system") == 0) {
         iks *xml = iks_new("node");
         model_get_iks("Comar", &xml);
+
+        // add standard interfaces
+        model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
+
         dbus_reply_str(iks_string(NULL, xml));
         iks_delete(xml);
     }
@@ -200,7 +209,13 @@ dbus_introspection_methods(const char *path)
         char *apps;
         db_get_apps(&apps);
         if (apps == NULL) {
-            dbus_reply_str("<node/>");;
+            iks *xml = iks_new("node");
+
+            // add standard interfaces
+            model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
+
+            dbus_reply_str(iks_string(NULL, xml));
+            iks_delete(xml);
         }
         else {
             iks *xml = iks_new("node");
@@ -211,6 +226,10 @@ dbus_introspection_methods(const char *path)
                 }
                 pch = strtok(NULL, "|");
             }
+
+            // add standard interfaces
+            model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
+
             dbus_reply_str(iks_string(NULL, xml));
             iks_delete(xml);
             free(apps);
@@ -226,7 +245,13 @@ dbus_introspection_methods(const char *path)
             char *models;
             db_get_app_models(app, &models);
             if (models == NULL) {
-                dbus_reply_str("<node/>");;
+                iks *xml = iks_new("node");
+
+                // add standard interfaces
+                model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
+
+                dbus_reply_str(iks_string(NULL, xml));
+                iks_delete(xml);
             }
             else {
                 iks *xml = iks_new("node");
@@ -237,6 +262,10 @@ dbus_introspection_methods(const char *path)
                     }
                     pch = strtok(NULL, "|");
                 }
+
+                // add standard interfaces
+                model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
+
                 dbus_reply_str(iks_string(NULL, xml));
                 iks_delete(xml);
                 free(models);
@@ -355,7 +384,9 @@ dbus_comar_methods(const char *method)
             }
             else {
                 code = load_file(script, NULL);
-                save_file(get_script_path(app, model), code, strlen(code));
+                script = get_script_path(app, model);
+                save_file(script, code, strlen(code));
+                free(script);
                 db_register_model(app, model);
                 dbus_reply_object(Py_True);
             }
@@ -378,6 +409,7 @@ dbus_comar_methods(const char *method)
                 if (strlen(pch) > 0) {
                     script = get_script_path(app, pch);
                     unlink(script);
+                    //free(script);
                 }
                 pch = strtok(NULL, "|");
             }
