@@ -187,8 +187,6 @@ go to next screen.</p>
             u.groups.append("wheel")
             pix = self.superUserIcon
 
-        self.ui.createButton.setText(_("Create User"))
-
         existsInList = [i for i in range(self.ui.userList.count())
                         if self.ui.userList.item(i).getUser().username == u.username]
 
@@ -206,10 +204,11 @@ go to next screen.</p>
                 _('<font color="#FF6D19">Realname contains invalid characters!</font>'))
             return
 
-        RupdateItem = None
+        self.ui.createButton.setText(_("Create User"))
+        updateItem = None
 
         try:
-            self.ui.userList.removeItem(self.edititemindex)
+            self.ui.userList.takeItem(self.edititemindex)
             self.ui.autoLogin.removeItem(self.edititemindex + 1)
         except:
             updateItem = self.edititemindex
@@ -224,7 +223,7 @@ go to next screen.</p>
         self.ui.autoLogin.addItem(QString(u.username))
 
         if updateItem:
-            self.ui.autoLogin.setCurrentItem(self.ui.autoLogin.count())
+            self.ui.autoLogin.setCurrentIndex(self.ui.autoLogin.count())
 
         # clear form
         self.resetWidgets()
@@ -239,7 +238,7 @@ go to next screen.</p>
     def slotDeleteUser(self):
         if self.ui.userList.currentRow()==self.edititemindex:
             self.resetWidgets()
-            self.ui.autoLogin.setCurrentRow(0)
+            self.ui.autoLogin.setCurrentIndex(0)
         _cur = self.ui.userList.currentRow()
         self.ui.userList.takeItem(_cur)
         self.ui.autoLogin.removeItem(_cur + 1)
@@ -258,7 +257,7 @@ go to next screen.</p>
         else:
             self.ui.admin.setChecked(False)
 
-        self.edititemindex = self.ui.userList.currentItem()
+        self.edititemindex = self.ui.userList.currentRow()
         self.ui.createButton.setText(_("Update User"))
 
     def checkUsers(self):
