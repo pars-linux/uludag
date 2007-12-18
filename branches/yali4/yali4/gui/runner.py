@@ -116,7 +116,7 @@ class Runner:
                         self._app.processEvents)
 
         # set the current screen ...
-        ctx.mainScreen.setCurrent(0)
+        ctx.mainScreen.setCurrent(ctx.options.startupScreen)
 
     ##
     # Fire up the interface.

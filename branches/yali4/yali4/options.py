@@ -26,6 +26,8 @@ class Options(object):
                           help="only show the result")
         parser.add_option("-k", "--kahyaFile", dest="kahyaFile",
                           help="Run with Kahya file", metavar="FILE")
+        parser.add_option("-s", "--startFrom", dest="startupScreen",
+                          help="Start from the given screen (num)", type="int", default=0)
         self.options, self.args = parser.parse_args()
 
     def __getattr__(self, name):

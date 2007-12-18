@@ -83,7 +83,7 @@ Click Next button to proceed.
                      self.slotCreateUser)
         self.connect(self.ui.deleteButton, SIGNAL("clicked()"),
                      self.slotDeleteUser)
-        self.connect(self.ui.userList, SIGNAL("doubleClicked(QListBoxItem*)"),
+        self.connect(self.ui.userList, SIGNAL("itemDoubleClicked(QListWidgetItem*)"),
                      self.slotEditUser)
         self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
@@ -240,17 +240,18 @@ go to next screen.</p>
         if self.ui.userList.currentRow()==self.edititemindex:
             self.resetWidgets()
             self.ui.autoLogin.setCurrentRow(0)
-        self.ui.autoLogin.removeItem(self.ui.userList.currentRow() + 1)
-        self.ui.userList.removeItem(self.ui.userList.currentRow())
+        _cur = self.ui.userList.currentRow()
+        self.ui.userList.takeItem(_cur)
+        self.ui.autoLogin.removeItem(_cur + 1)
         self.checkUsers()
 
     def slotEditUser(self, item):
         u = item.getUser()
 
-        self.ui.username.setText(u.username)
-        self.ui.realname.setText(u.realname)
-        self.ui.pass1.setText(u.passwd)
-        self.ui.pass2.setText(u.passwd)
+        self.ui.username.setText(QString(u.username))
+        self.ui.realname.setText(QString(u.realname))
+        self.ui.pass1.setText(QString(u.passwd))
+        self.ui.pass2.setText(QString(u.passwd))
 
         if "wheel" in u.groups:
             self.ui.admin.setChecked(True)
