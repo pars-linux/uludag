@@ -223,7 +223,7 @@ go to next screen.</p>
         self.ui.autoLogin.addItem(QString(u.username))
 
         if updateItem:
-            self.ui.autoLogin.setCurrentIndex(self.ui.autoLogin.count() - 1)
+            self.ui.autoLogin.setCurrentIndex(self.ui.autoLogin.count())
 
         # clear form
         self.resetWidgets()
