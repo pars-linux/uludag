@@ -62,8 +62,8 @@ Click Next button to proceed.
         self.host_valid = True
         self.pass_valid = False
 
-        self.ui.pass_error.setText("")
-        self.ui.host_error.setText("")
+        self.ui.pass_error.setText(" ")
+        self.ui.host_error.setText(" ")
 
         self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
@@ -94,7 +94,7 @@ Click Next button to proceed.
             self.ui.caps_error.setText(
                 _('<font color="#FF6D19">Caps Lock is on!</font>'))
         else:
-            self.ui.caps_error.setText("")
+            self.ui.caps_error.setText(" ")
 
     def keyReleaseEvent(self, e):
         self.checkCapsLock()
@@ -110,7 +110,7 @@ Click Next button to proceed.
                     _('<font color="#FF6D19">Password is too short!</font>'))
                 self.pass_valid = False
             else:
-                self.ui.pass_error.setText("")
+                self.ui.pass_error.setText(" ")
                 self.pass_valid = True
         else:
             self.pass_valid = False
@@ -133,7 +133,7 @@ Click Next button to proceed.
         if not self.host_valid:
             self.ui.host_error.setText(_('<font color="#FF6D19">Hostname contains invalid characters!</font>'))
         else:
-            self.ui.host_error.setText("")
+            self.ui.host_error.setText(" ")
         self.setNext()
 
     def setNext(self):
