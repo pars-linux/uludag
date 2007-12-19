@@ -10,29 +10,31 @@
 # Please read the COPYING file.
 #
 
-import time
-from qt import *
-
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
-import yali.storage
-import yali.partitionrequest as request
-import yali.partitiontype as parttype
-import yali.parteddata as parteddata
+import time
+import yali4.storage
+import yali4.partitionrequest as request
+import yali4.partitiontype as parttype
+import yali4.parteddata as parteddata
 
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.Ui.autopartwidget import AutoPartWidget
-from yali.gui.YaliDialog import WarningDialog
-from yali.gui.InformationWindow import InformationWindow
-from yali.gui.GUIException import *
-import yali.gui.context as ctx
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.autopartwidget import Ui_AutoPartWidget
+from yali4.gui.YaliDialog import WarningDialog
+#from yali4.gui.InformationWindow import InformationWindow
+from yali4.gui.GUIException import *
+import yali4.gui.context as ctx
 
-
-class Widget(AutoPartWidget, ScreenWidget):
-
+##
+# Partition Choice Widget
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Choose Partitioning')
+    desc = _('Auto or Manual partitioning..')
     help = _('''
 <font size="+2">Automatic Partitioning</font>
 
@@ -55,42 +57,37 @@ about disk partitioning.
 ''')
 
     def __init__(self, *args):
-        apply(AutoPartWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_AutoPartWidget()
+        self.ui.setupUi(self)
 
         self.device = None
         self.enable_next = False
 
-        self.device_list.setPaletteBackgroundColor(ctx.consts.bg_color)
-        self.device_list.setPaletteForegroundColor(ctx.consts.fg_color)
-
         # initialize all storage devices
-        if not yali.storage.init_devices():
+        if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
         # fill device list
-        for dev in yali.storage.devices:
+        for dev in yali4.storage.devices:
             if dev.getTotalMB() >= ctx.consts.min_root_size:
-                DeviceItem(self.device_list, dev)
+                DeviceItem(self.ui.device_list, dev)
 
         # select the first disk by default
-        self.device_list.setSelected(0, True)
+        self.ui.device_list.setCurrentRow(0)
 
-        if not self.device_list.count():
+        if not self.ui.device_list.count():
             raise YaliExceptionInfo, _("It seems that you don't have the required disk space (min. %s) for Pardus installation." % ctx.consts.min_root_size)
 
-        self.connect(self.accept_auto, SIGNAL("clicked()"),
+        self.connect(self.ui.accept_auto, SIGNAL("clicked()"),
                      self.slotSelectAuto)
-        self.connect(self.manual, SIGNAL("clicked()"),
+        self.connect(self.ui.manual, SIGNAL("clicked()"),
                      self.slotSelectManual)
-
-        self.connect(self.device_list, SIGNAL("selectionChanged(QListBoxItem*)"),
+        self.connect(self.ui.device_list, SIGNAL("itemChanged(QListWidgetItem*)"),
                      self.slotDeviceChanged)
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
-        ctx.screens.disableNext()
-
+        ctx.mainScreen.disableNext()
         self.updateUI()
 
     def execute(self):
@@ -112,7 +109,7 @@ about disk partitioning.
 
     def slotSelectAuto(self):
         self.enable_next = True
-        self.device = self.device_list.selectedItem().getDevice()
+        self.device = self.ui.device_list.currentItem().getDevice()
         self.updateUI()
 
     def slotSelectManual(self):
@@ -121,18 +118,16 @@ about disk partitioning.
 
     def updateUI(self):
         if self.enable_next:
-            ctx.screens.enableNext()
+            ctx.mainScreen.enableNext()
         else:
-            ctx.screens.disableNext()
+            ctx.mainScreen.disableNext()
 
-
-class DeviceItem(QListBoxText):
-
+class DeviceItem(QtGui.QListWidgetItem):
     def __init__(self, parent, dev):
         text = u"%s - %s (%s)" %(dev.getModel(),
                                 dev.getName(),
                                 dev.getSizeStr())
-        apply(QListBoxText.__init__, (self,parent,text))
+        QtGui.QListWidgetItem.__init__(self,text,parent)
         self._dev = dev
 
     def getDevice(self):

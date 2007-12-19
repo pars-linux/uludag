@@ -34,8 +34,8 @@ import ScrCheckCD
 import ScrKeyboard
 import ScrAdmin
 import ScrUsers
+import ScrPartitionAuto
 
-#import ScrPartitionAuto
 #import ScrPartitionManual
 #import ScrInstall
 #import ScrBootloader
@@ -56,7 +56,8 @@ class Runner:
                         ScrCheckCD,
                         ScrKeyboard,
                         ScrAdmin,
-                        ScrUsers
+                        ScrUsers,
+                        ScrPartitionAuto
                        ]
 
         """
