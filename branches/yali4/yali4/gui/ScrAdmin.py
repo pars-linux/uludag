@@ -78,8 +78,7 @@ Click Next button to proceed.
 
 
     def shown(self):
-        # from os.path import basename
-        # ctx.debugger.log("%s loaded" % basename(__file__))
+        ctx.debugger.log("Admin loaded")
         self.setNext()
         self.checkCapsLock()
         self.ui.pass1.setFocus()

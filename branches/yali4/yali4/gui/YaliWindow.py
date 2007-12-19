@@ -32,9 +32,17 @@ class Widget(Ui_YaliMain):
         self.ui = QtGui.QWidget()
         self.setupUi(self.ui)
         self.screenData = None
+        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
 
+        QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
+
+    def toggleDebug(self):
+        if ctx.debugger.isVisible():
+            ctx.debugger.hideWindow()
+        else:
+            ctx.debugger.showWindow()
 
     def getCur(self,d):
         new   = self.mainStack.currentIndex() + d
@@ -71,9 +79,8 @@ class Widget(Ui_YaliMain):
             _scr = screen.Widget()
 
             if ctx.options.debug == True or yali4.sysutils.checkYaliParams(param="debug"):
-                 # debug all screens.
-                 weave_all_object_methods(ctx.debugger.aspect, _scr)
-                 weave_all_object_methods(ctx.debugger.aspect, _scr.ui)
+                # debug all screens.
+                weave_all_object_methods(ctx.debugger.aspect, _scr)
 
             # enable navigation buttons before shown
             weave_object_method(enableNavButtonsAspect, _scr, "shown")

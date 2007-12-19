@@ -27,17 +27,40 @@ class Debugger:
     def __init__(self,showTimeStamp=True):
         title = _("Debug")
         self.debugWidget = QtGui.QWidget()
+        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.debugWidget)
+        QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
+
         self.traceback = DebugContainer(self.debugWidget,showTimeStamp)
+        self.loglevel = QtGui.QComboBox(self.debugWidget)
+        self.loglevel.addItem("0 : All Messages")
+        self.loglevel.addItem("1 : Developer Messages")
+        QObject.connect(self.loglevel, SIGNAL("currentIndexChanged(int)"),self.loglevelChanged)
 
         l = QtGui.QVBoxLayout(self.debugWidget)
+        l.addWidget(self.loglevel)
         l.addWidget(self.traceback)
 
         self.window = Dialog(title,self.debugWidget)
         self.window.resize(500,400)
         self.aspect = DebuggerAspect(self)
 
+    def loglevelChanged(self,newLevel):
+        self.traceback.level = newLevel
+
     def showWindow(self):
         self.window.show()
+
+    def hideWindow(self):
+        self.window.hide()
+
+    def isVisible(self):
+        return self.window.isVisible()
+
+    def toggleDebug(self):
+        if self.isVisible():
+            self.hideWindow()
+        else:
+            self.showWindow()
 
     def log(self,log,type=1,indent=0):
         if ctx.debugEnabled:
@@ -52,18 +75,22 @@ class DebugContainer(QtGui.QTextBrowser):
         self.setOverwriteMode(True)
         self.plainLogs = ''
         self.indent = 0
+        self.level = 0
 
     def add(self,log,type,indent):
         if indent==+1:
             self.indent += indent
+
+        _indent = " "+"»"*self.indent
         if type==1:
             self.plainLogs += "%s\n" % log
             log = "<b>%s</b>" % log
-        if self.showTimeStamp:
+            _indent = ""
+
+        if self.level==0 or type==self.level:
             _now = time.strftime("%H:%M:%S", time.localtime())
-            self.append(unicode("%s : %s %s" % (_now,"»"*self.indent,log)))
-        else:
-            self.append(unicode(log))
+            self.append(unicode("%s :%s %s" % (_now,_indent,log)))
+
         if indent==-1:
             self.indent += indent
 
