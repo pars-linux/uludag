@@ -57,3 +57,7 @@ install(FILES
         etc/comar.conf
         DESTINATION /etc/dbus-1/system.d
         RENAME ${APP_NAME}.conf)
+install(DIRECTORY
+        etc/policy
+        DESTINATION /usr/share/PolicyKit
+        PATTERN ".svn" EXCLUDE)

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+
+<policyconfig>
+  <action id="tr.org.pardus.comar.boot.loader.listsystems">
+    <description>List systems supported by boot loader</description>
+    <message>System policy prevents listing systems.</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.getoptions">
+    <description>List boot loader options.</description>
+    <message>System policy prevents listing options.</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.listentries">
+    <description>List boot loader entries.</description>
+    <message>System policy prevents listing entries.</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.listunused">
+    <description>List unused kernels.</description>
+    <message>System policy prevents listing unused kernels.</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.setoption">
+    <description>Set boot loader option.</description>
+    <message>System policy prevents setting option.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.updatekernelentry">
+    <description>Update kernel release on specified partition.</description>
+    <message>System policy prevents updating kernel.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.setentry">
+    <description>Add new entry to boot loader or change existing one.</description>
+    <message>System policy prevents adding or changing entry.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.removeentry">
+    <description>Remove entry from boot loader.</description>
+    <message>System policy prevents removing entry.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.boot.loader.removeunused">
+    <description>Remove unused kernel from system.</description>
+    <message>System policy prevents removing unused kernels.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+</policyconfig>

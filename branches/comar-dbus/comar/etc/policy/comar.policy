@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+
+<policyconfig>
+  <action id="tr.org.pardus.comar.register">
+    <description>Register new scripts</description>
+    <message>System policy prevents registering scripts.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>no</allow_active>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.remove">
+    <description>Remove application</description>
+    <message>System policy prevents removing applications.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>no</allow_active>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.listapplications">
+    <description>List applications</description>
+    <message>...</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.listmodels">
+    <description>List models</description>
+    <message>...</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.listapplicationmodels">
+    <description>List application models</description>
+    <message>...</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+  <action id="tr.org.pardus.comar.listmodelapplications">
+    <description>List model applications</description>
+    <message>...</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+    </defaults>
+  </action>
+</policyconfig>
