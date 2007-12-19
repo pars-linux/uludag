@@ -53,6 +53,7 @@ static struct logflag_struct {
     { "proc", LOG_PROC },
     { "dbus", LOG_DBUS },
     { "perf", LOG_PERF },
+    { "policy", LOG_PLCY },
     { "all", LOG_FULL },
     { "full", LOG_FULL },
     { NULL, 0 }

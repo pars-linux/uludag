@@ -16,7 +16,9 @@ Gerekenler:
 
 - Standart inşa araçları (gcc, binutils, vs)
 - Linux kernel 2.6.x
-- DBus
+- DBus 1.1.2
+- PolicyKit 0.7
+- ConsoleKit 0.2
 - Python 2.4
 - Berkeley DB
 - cmake

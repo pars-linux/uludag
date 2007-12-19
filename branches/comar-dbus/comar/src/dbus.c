@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <dbus/dbus.h>
+#include <polkit-dbus/polkit-dbus.h>
 #include <unistd.h>
 #include <Python.h>
 
@@ -19,6 +20,7 @@
 #include "iksemel.h"
 #include "log.h"
 #include "model.h"
+#include "policy.h"
 #include "process.h"
 #include "pydbus.h"
 #include "utility.h"
@@ -479,6 +481,48 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
     free(model);
 }
 
+//! Checks if sender is allowed to call specified method
+static int
+dbus_policy_check(const char *sender, const char *interface, const char *method)
+{
+    /*!
+     *
+     * @sener Bus name of the sender
+     * @interface Interface
+     * @method Method
+     * @return 1 if access granted, 0 if access denied
+     */
+
+    PolKitResult polkit_result;
+
+    if (policy_check(sender, interface, method, &polkit_result)) {
+        log_debug(LOG_PLCY, "PolicyKit: %s [%s.%s] = %s\n", sender, interface, method, polkit_result_to_string_representation(polkit_result));
+        switch (polkit_result) {
+            case POLKIT_RESULT_YES:
+                return 1;
+            case POLKIT_RESULT_NO:
+                dbus_reply_error("policy", "no", "Access denied.");
+                return 0;
+            case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH:
+            case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
+            case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS:
+            case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_ONE_SHOT:
+                dbus_reply_error("policy", "auth_admin", "Access denied, but can be granted via admin auth.");
+                return 0;
+            case POLKIT_RESULT_ONLY_VIA_SELF_AUTH:
+            case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION:
+            case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS:
+            case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_ONE_SHOT:
+                dbus_reply_error("policy", "auth_self", "Access denied, but can be granted via self auth.");
+                return 0;
+        }
+    }
+    else {
+        dbus_reply_error("core", "internal", "Unable to query PolicyKit");
+        return 0;
+    }
+}
+
 //! Forked function that handles method calls
 static void
 dbus_method_call()
@@ -499,6 +543,7 @@ dbus_method_call()
     const char *interface = dbus_message_get_interface(my_proc.bus_msg);
     const char *path = dbus_message_get_path(my_proc.bus_msg);
     const char *method = dbus_message_get_member(my_proc.bus_msg);
+    const char *sender = dbus_message_get_sender(my_proc.bus_msg);
 
     gettimeofday(&time_start, NULL);
 
@@ -511,15 +556,17 @@ dbus_method_call()
         // dbus_peer_methods(path);
     }
     else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
-        if (strcmp(path, "/system") == 0 && strcmp(interface, cfg_bus_name) == 0) {
-            dbus_comar_methods(method);
-        }
-        else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
-            dbus_app_methods(interface, path, method);
-        }
-        else {
-            log_error("Unknown object path '%s'\n", path);
-            dbus_reply_error("dbus", "unknownpath", "Unknown object path");
+        if (dbus_policy_check(sender, interface, method)) {
+            if (strcmp(path, "/system") == 0 && strcmp(interface, cfg_bus_name) == 0) {
+                dbus_comar_methods(method);
+            }
+            else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
+                dbus_app_methods(interface, path, method);
+            }
+            else {
+                log_error("Unknown object path '%s'\n", path);
+                dbus_reply_error("dbus", "unknownpath", "Unknown object path");
+            }
         }
     }
     else {

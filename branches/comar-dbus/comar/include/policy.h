@@ -7,13 +7,6 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-#define LOG_DBUS 1
-#define LOG_PROC 2
-#define LOG_PLCY 4
-#define LOG_PERF 8
-#define LOG_FULL 0xffffffff
+#include <polkit-dbus/polkit-dbus.h>
 
-int log_start(void);
-void log_error(const char *fmt, ...);
-void log_info(const char *fmt, ...);
-void log_debug(int subsys, const char *fmt, ...);
+int policy_check(const char *sender, const char *interface, const char *method, PolKitResult *result);
