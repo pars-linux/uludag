@@ -7,12 +7,12 @@
 ** option) any later version. Please read the COPYING file.
 */
 
+#include <Python.h>
 #include <stdlib.h>
 #include <sys/time.h>
 #include <dbus/dbus.h>
 #include <polkit-dbus/polkit-dbus.h>
 #include <unistd.h>
-#include <Python.h>
 
 #include "cfg.h"
 #include "csl.h"

@@ -7,8 +7,8 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-#include <stdlib.h>
 #include <Python.h>
+#include <stdlib.h>
 
 #include "cfg.h"
 #include "iksemel.h"

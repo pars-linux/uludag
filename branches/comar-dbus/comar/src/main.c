@@ -7,6 +7,7 @@
 ** option) any later version. Please read the COPYING file.
 */
 
+#include <Python.h>
 #include <stdlib.h>
 #include <sys/time.h>
 #include <dbus/dbus.h>
