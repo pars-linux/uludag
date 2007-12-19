@@ -9,6 +9,8 @@
     <message>System policy prevents listing systems.</message>
     <defaults>
       <allow_any>yes</allow_any>
+      <allow_active>yes</allow_active>
+      <allow_inactive>yes</allow_inactive>
     </defaults>
   </action>
   <action id="tr.org.pardus.comar.boot.loader.getoptions">
@@ -16,6 +18,8 @@
     <message>System policy prevents listing options.</message>
     <defaults>
       <allow_any>yes</allow_any>
+      <allow_active>yes</allow_active>
+      <allow_inactive>yes</allow_inactive>
     </defaults>
   </action>
   <action id="tr.org.pardus.comar.boot.loader.listentries">
@@ -23,6 +27,8 @@
     <message>System policy prevents listing entries.</message>
     <defaults>
       <allow_any>yes</allow_any>
+      <allow_active>yes</allow_active>
+      <allow_inactive>yes</allow_inactive>
     </defaults>
   </action>
   <action id="tr.org.pardus.comar.boot.loader.listunused">
@@ -30,6 +36,8 @@
     <message>System policy prevents listing unused kernels.</message>
     <defaults>
       <allow_any>yes</allow_any>
+      <allow_active>yes</allow_active>
+      <allow_inactive>yes</allow_inactive>
     </defaults>
   </action>
   <action id="tr.org.pardus.comar.boot.loader.setoption">
