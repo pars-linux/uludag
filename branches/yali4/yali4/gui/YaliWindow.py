@@ -70,12 +70,19 @@ class Widget(Ui_YaliMain):
         for screen in screens:
             _scr = screen.Widget()
 
+            if ctx.options.debug == True or yali4.sysutils.checkYaliParams(param="debug"):
+                 # debug all screens.
+                 weave_all_object_methods(ctx.debugger.aspect, _scr)
+                 weave_all_object_methods(ctx.debugger.aspect, _scr.ui)
+
             # enable navigation buttons before shown
             weave_object_method(enableNavButtonsAspect, _scr, "shown")
             # disable navigation buttons before the execute.
             weave_object_method(disableNavButtonsAspect, _scr, "execute")
 
             self.mainStack.addWidget(_scr)
+
+        weave_all_object_methods(ctx.debugger.aspect, self)
         self.stackMove(0)
 
     # Enable/Disable buttons

@@ -68,7 +68,7 @@ class windowTitle(QtGui.QFrame):
             self.mainwidget.move(newpos)
 
 class Dialog(QtGui.QDialog):
-    def __init__(self, t, w, parent):
+    def __init__(self, t, w, parent=None):
         QtGui.QDialog.__init__(self, parent)
 
         self.gridlayout = QtGui.QGridLayout(self)

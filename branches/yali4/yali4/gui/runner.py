@@ -24,8 +24,8 @@ import yali4.sysutils
 import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
 
-#from yali4.gui.debugger import Debugger
-#from yali4.gui.debugger import DebuggerAspect
+from yali4.gui.debugger import Debugger
+from yali4.gui.debugger import DebuggerAspect
 
 import YaliWindow
 # screens
@@ -93,14 +93,14 @@ class Runner:
         # self._app.setFont(font)
 
         # visual debugger
-        # ctx.debugger = Debugger()
+        ctx.debugger = Debugger()
 
         # visual debug mode
-        # if ctx.options.debug == True or yali.sysutils.checkYaliParams(param="debug"):
-        #     ctx.debugEnabled = True
-        #     ctx.debugger.showWindow()
+        if ctx.options.debug == True or yali4.sysutils.checkYaliParams(param="debug"):
+            ctx.debugEnabled = True
+            ctx.debugger.showWindow()
 
-        # ctx.debugger.log("Yali Started")
+        ctx.debugger.log("Yali Started")
 
         # add stages
         # for stg in _all_stages:

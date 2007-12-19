@@ -10,58 +10,62 @@
 # Please read the COPYING file.
 #
 
-from qt import *
 from pyaspects.meta import MetaAspect
-import yali.gui.context as ctx
+import yali4.gui.context as ctx
+import time
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-from yali.gui.YaliDialog import Dialog
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
+from yali4.gui.YaliDialog import Dialog
 
 class Debugger:
-    def __init__(self,showLineNumbers=True):
+    def __init__(self,showTimeStamp=True):
         title = _("Debug")
-        self.debugWidget = QWidget()
-        self.traceback = DebugContainer(self.debugWidget,showLineNumbers)
+        self.debugWidget = QtGui.QWidget()
+        self.traceback = DebugContainer(self.debugWidget,showTimeStamp)
 
-        l = QVBoxLayout(self.debugWidget)
+        l = QtGui.QVBoxLayout(self.debugWidget)
         l.addWidget(self.traceback)
 
-        self.window = Dialog(title,self.debugWidget,None,extraButtons=True)
+        self.window = Dialog(title,self.debugWidget)
         self.window.resize(500,400)
         self.aspect = DebuggerAspect(self)
 
     def showWindow(self):
         self.window.show()
 
-    def log(self,log,type=1):
+    def log(self,log,type=1,indent=0):
         if ctx.debugEnabled:
-            self.traceback.add(unicode(log),type)
+            self.traceback.add(unicode(log),type,indent)
 
-class DebugContainer(QTextEdit):
-    def __init__(self, parent, showLineNumbers=True):
-        QTextEdit.__init__(self, parent)
-
-        f = QFont( "Bitstream Vera Sans Mono", 11);
-        self.setFont(f)
-
-        self.showLineNumbers = showLineNumbers
+class DebugContainer(QtGui.QTextBrowser):
+    def __init__(self, parent, showTimeStamp=True):
+        QtGui.QTextBrowser.__init__(self, parent)
+        self.setStyleSheet("font-size:8pt;font-family:\"Envy Code R\";")
+        self.showTimeStamp = showTimeStamp
         self.setReadOnly(True)
         self.setOverwriteMode(True)
         self.plainLogs = ''
-        self.line = 0
+        self.indent = 0
 
-    def add(self,log,type):
+    def add(self,log,type,indent):
+        if indent==+1:
+            self.indent += indent
         if type==1:
             self.plainLogs += "%s\n" % log
             log = "<b>%s</b>" % log
-        if self.showLineNumbers:
-            self.append(unicode("<b>%d :</b> %s" % (self.line,log)))
-            self.line +=1
+        if self.showTimeStamp:
+            _now = time.strftime("%H:%M:%S", time.localtime())
+            self.append(unicode("%s : %s %s" % (_now,"»"*self.indent,log)))
         else:
             self.append(unicode(log))
+        if indent==-1:
+            self.indent += indent
 
 class DebuggerAspect:
     __metaclass__ = MetaAspect
@@ -72,11 +76,12 @@ class DebuggerAspect:
 
     def before(self, wobj, data, *args, **kwargs):
         met_name = data['original_method_name']
-        fun_str = "%s (args: %s -- kwargs: %s)" % (met_name, args, kwargs)
-        self.out.log("Entering function: %s\n" % fun_str,0)
-
+        class_ = str(data['__class__'])[8:-2]
+        fun_str = "%s%s from %s" % (met_name, args, class_)
+        self.out.log("call, %s" % fun_str,0,+1)
 
     def after(self, wobj, data, *args, **kwargs):
         met_name = data['original_method_name']
-        fun_str = "%s (args: %s -- kwargs: %s)" % (met_name, args, kwargs)
-        self.out.log("Left function: %s\n" % fun_str,0)
+        fun_str = "%s%s" % (met_name, args)
+        self.out.log("left, %s" % fun_str,0,-1)
+
