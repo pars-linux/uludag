@@ -60,34 +60,16 @@ c_call(PyObject *self, PyObject *args)
      * @return Called method's reply
      */
 
-    PyObject *tuple, *result;
+    PyObject *tuple = NULL;
+    PyObject *result;
     char *app, *model, *method;
     int ret, i;
 
-    if (PyTuple_Size(args) < 3) {
-        PyErr_SetString(PyExc_TypeError, "call() takes at least 3 arguments");
+    if (!PyArg_ParseTuple(args, "sss|O", &app, &model, &method, &tuple))
         return NULL;
-    }
-    else if (PyTuple_Size(args) > 4) {
-        PyErr_SetString(PyExc_TypeError, "call() takes at most 4 arguments");
-        return NULL;
-    }
 
-    for (i = 0; i < PyTuple_Size(args); i++) {
-        if ((i < 3 && !PyString_Check(PyTuple_GetItem(args, i))) || (i == 3 && !PyTuple_Check(PyTuple_GetItem(args, i)))) {
-            PyErr_SetString(PyExc_TypeError, "call() takes three string arguments and an optional tuple.");
-            return NULL;
-        }
-    }
 
-    app = PyString_AsString(PyTuple_GetItem(args, 0));
-    model = PyString_AsString(PyTuple_GetItem(args, 1));
-    method = PyString_AsString(PyTuple_GetItem(args, 2));
-
-    if (PyTuple_Size(args) == 4) {
-        tuple = PyTuple_GetItem(args, 3);
-    }
-    else {
+    if (!tuple) {
         tuple = PyTuple_New(0);
     }
 
