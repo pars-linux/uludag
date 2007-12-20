@@ -1,63 +1,101 @@
-project(comar-dbus)
+PROJECT (comar-dbus)
 
 # Application name
-set(APP_NAME "comar")
-set(APP_SUFFIX "dbus")
+SET (APP_NAME "comar")
+SET (APP_SUFFIX "dbus")
 
 # Version string
-set(VERSION_MAJOR "2")
-set(VERSION_MINOR "0")
-set(VERSION_PATCH "0")
-set(VERSION_SUFFIX "svn")
+SET (VERSION_MAJOR "2")
+SET (VERSION_MINOR "0")
+SET (VERSION_PATCH "0")
 
-set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
-if(VERSION_SUFFIX)
-   set(VERSION "${VERSION}-${VERSION_SUFFIX}")
-endif(VERSION_SUFFIX)
+# Uncomment this for production releases.
+SET (VERSION_SUFFIX "svn")
 
-if(APP_SUFFIX)
-   set(APP_NAME "${APP_NAME}-${APP_SUFFIX}")
-endif(APP_SUFFIX)
+# Append version suffix, if specified
+SET (VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
+IF (VERSION_SUFFIX)
+   SET (VERSION "${VERSION}_${VERSION_SUFFIX}")
+ENDIF (VERSION_SUFFIX)
 
-add_definitions(-D'VERSION="${VERSION}"'
-                -D'CONFIG_DIR="/etc/${APP_NAME}"'
-                -D'DATA_DIR="/var/db/${APP_NAME}"'
-                -D'LOG_FILE="/var/log/${APP_NAME}.log"')
+# Append name suffix, if specified
+IF (APP_SUFFIX)
+   SET (APP_NAME "${APP_NAME}-${APP_SUFFIX}")
+ENDIF (APP_SUFFIX)
 
-include_directories(include/
-                    /usr/include/python2.4
-                    /usr/include/dbus-1.0
-                    /usr/lib/dbus-1.0/include
-                    /usr/include/PolicyKit)
+# Define version, config dir, data dir and log file.
+ADD_DEFINITIONS (-D'VERSION="${VERSION}"'
+                 -D'CONFIG_DIR="/etc/${APP_NAME}"'
+                 -D'DATA_DIR="/var/db/${APP_NAME}"'
+                 -D'LOG_FILE="/var/log/${APP_NAME}.log"')
 
-link_libraries(python2.4
-               dbus-1
-               polkit-dbus
-               db)
+# Set standard sources
+SET (SOURCES src/main.c
+             src/cfg.c
+             src/csl.c
+             src/data.c
+             src/dbus.c
+             src/iksemel.c
+             src/log.c
+             src/process.c
+             src/pydbus.c
+             src/model.c
+             src/utility.c)
 
-add_executable(comar src/main.c
-                     src/cfg.c
-                     src/csl.c
-                     src/data.c
-                     src/dbus.c
-                     src/iksemel.c
-                     src/log.c
-                     src/policy.c
-                     src/process.c
-                     src/pydbus.c
-                     src/model.c
-                     src/utility.c)
+# Set standard libraries
+SET (LIBS python2.4
+          dbus-1
+          db)
 
-install(PROGRAMS comar
-        DESTINATION /usr/bin
-        RENAME ${APP_NAME})
-install(FILES etc/model.xml
-        DESTINATION /etc/${APP_NAME})
-install(FILES
-        etc/comar.conf
-        DESTINATION /etc/dbus-1/system.d
-        RENAME ${APP_NAME}.conf)
-install(DIRECTORY
-        etc/policy
-        DESTINATION /usr/share/PolicyKit
-        PATTERN ".svn" EXCLUDE)
+# Include standard headers
+INCLUDE_DIRECTORIES (include/
+                     /usr/include/python2.4
+                     /usr/include/dbus-1.0
+                     /usr/lib/dbus-1.0/include)
+
+# Load CMAKE modules
+SET (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules/")
+
+# Check if system has PolicyKit
+# PK is not a required dependency in SVN builds.
+IF (VERSION_SUFFIX STREQUAL "svn")
+    FIND_PACKAGE (PolicyKit)
+ELSE (VERSION_SUFFIX STREQUAL "svn")
+    FIND_PACKAGE (PolicyKit REQUIRED)
+ENDIF (VERSION_SUFFIX STREQUAL "svn")
+
+# If PK is installed, enable PK support
+IF (HAVE_POLICYKIT)
+    SET (SOURCES ${SOURCES} src/policy.c)
+    SET (LIBS ${LIBS} polkit-dbus)
+    INCLUDE_DIRECTORIES (/usr/include/PolicyKit)
+ENDIF (HAVE_POLICYKIT)
+
+# Compile comar from specified sources
+ADD_EXECUTABLE (comar ${SOURCES})
+
+# Link comar to specified libraries
+TARGET_LINK_LIBRARIES(comar ${LIBS} )
+
+# Install comar to /usr/bin/<app-name>
+INSTALL (PROGRAMS comar
+         DESTINATION /usr/bin
+         RENAME ${APP_NAME})
+
+# Install model file under /etc/<app-name>/
+INSTALL (FILES etc/model.xml
+         DESTINATION /etc/${APP_NAME})
+
+# Install comar system bus configuration under /etc/dbus-1/system.d/
+INSTALL (FILES
+         etc/comar.conf
+         DESTINATION /etc/dbus-1/system.d
+         RENAME ${APP_NAME}.conf)
+
+# Install PK policies
+IF (HAVE_POLICYKIT)
+    INSTALL (DIRECTORY
+             etc/policy
+             DESTINATION /usr/share/PolicyKit
+             PATTERN ".svn" EXCLUDE)
+ENDIF (HAVE_POLICYKIT)
