@@ -69,6 +69,7 @@ IF (HAVE_POLICYKIT)
     SET (SOURCES ${SOURCES} src/policy.c)
     SET (LIBS ${LIBS} polkit-dbus)
     INCLUDE_DIRECTORIES (/usr/include/PolicyKit)
+    ADD_DEFINITIONS (-D'HAVE_POLICYKIT')
 ENDIF (HAVE_POLICYKIT)
 
 # Compile comar from specified sources
