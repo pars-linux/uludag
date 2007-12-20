@@ -11,7 +11,6 @@ from d_light import BUS_SYSTEM, BUS_SESSION
 class DLoop(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
-        d_light.init()
 
     def run(self):
         while 1:

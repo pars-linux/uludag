@@ -25,34 +25,33 @@ PyObject *signalHooks_ses = NULL;
 PyObject *methodHooks_ses = NULL;
 DBusMessage *msg_ses = NULL;
 
-PyObject *
-light_init(PyObject *self, PyObject *args)
+static int
+light_init_sys()
 {
     DBusError err;
-
-    methodHooks_sys = PyDict_New();
-    signalHooks_sys = PyList_New(0);
-
-    methodHooks_ses = PyDict_New();
-    signalHooks_ses = PyList_New(0);
 
     dbus_error_init(&err);
     conn_sys = dbus_bus_get(DBUS_BUS_SYSTEM, &err);
     if (dbus_error_is_set(&err)) {
         PyErr_SetString(PyExc_Exception, err.message);
         dbus_error_free(&err);
-        return NULL;
+        return -1;
     }
+    return 0;
+}
+
+static int
+light_init_ses()
+{
+    DBusError err;
 
     conn_ses = dbus_bus_get(DBUS_BUS_SESSION, &err);
     if (dbus_error_is_set(&err)) {
         PyErr_SetString(PyExc_Exception, err.message);
         dbus_error_free(&err);
-        return NULL;
+        return -1;
     }
-
-    Py_INCREF(Py_None);
-    return Py_None;
+    return 0;
 }
 
 PyObject *
@@ -67,11 +66,6 @@ light_registerSignal(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    if (!conn_sys) {
-        PyErr_SetString(PyExc_Exception, "run init() first.");
-        return NULL;
-    }
-
     if (bustype == 0) {
         PyList_Append(signalHooks_sys, callback);
     }
@@ -81,9 +75,11 @@ light_registerSignal(PyObject *self, PyObject *args)
 
     dbus_error_init(&err);
     if (bustype == 0) {
+        if (light_init_sys() != 0) return NULL;
         dbus_bus_add_match(conn_sys, rule, &err);
     }
     else {
+        if (light_init_ses() != 0) return NULL;
         dbus_bus_add_match(conn_ses, rule, &err);
     }
     if (dbus_error_is_set(&err)) {
@@ -109,11 +105,6 @@ light_call_block(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    if (!conn_sys) {
-        PyErr_SetString(PyExc_Exception, "run init() first.");
-        return NULL;
-    }
-
     msg = dbus_message_new_method_call(dest, path, interface, method);
     if (PyTuple_Check(obj)) {
         if (PyTuple_Size(obj) > 0) {
@@ -133,9 +124,11 @@ light_call_block(PyObject *self, PyObject *args)
 
     dbus_error_init(&err);
     if (bustype == 0) {
+        if (light_init_sys() != 0) return NULL;
         reply = dbus_connection_send_with_reply_and_block(conn_sys, msg, timeout, &err);
     }
     else {
+        if (light_init_ses() != 0) return NULL;
         reply = dbus_connection_send_with_reply_and_block(conn_ses, msg, timeout, &err);
     }
     if (dbus_error_is_set(&err)) {
@@ -161,11 +154,6 @@ light_call(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    if (!conn_sys) {
-        PyErr_SetString(PyExc_Exception, "run init() first.");
-        return NULL;
-    }
-
     msg = dbus_message_new_method_call(dest, path, interface, method);
     if (PyTuple_Check(obj)) {
         if (PyTuple_Size(obj) > 0) {
@@ -184,16 +172,17 @@ light_call(PyObject *self, PyObject *args)
     }
 
     if (bustype == 0) {
+        if (light_init_sys() != 0) return NULL;
         sent = dbus_connection_send(conn_sys, msg, &serial);
     }
     else {
+        if (light_init_ses() != 0) return NULL;
         sent = dbus_connection_send(conn_ses, msg, &serial);
     }
     if (!sent) {
         PyErr_SetString(PyExc_Exception, "out of memory");
         return NULL;
     }
-
 
     if (bustype == 0) {
        PyDict_SetItem(methodHooks_sys, PyLong_FromLong((long) serial), callback);
@@ -211,19 +200,14 @@ light_call(PyObject *self, PyObject *args)
 PyObject *
 light_fetch(PyObject *self, PyObject *args)
 {
-    int i;
-    PyObject *obj;
-
-    if (!conn_sys) {
-        PyErr_SetString(PyExc_Exception, "run init() first.");
-        return NULL;
+    if (conn_sys) {
+        dbus_connection_read_write(conn_sys, 0);
+        msg_sys = dbus_connection_pop_message(conn_sys);
     }
-
-    dbus_connection_read_write(conn_sys, 0);
-    msg_sys = dbus_connection_pop_message(conn_sys);
-
-    dbus_connection_read_write(conn_ses, 0);
-    msg_ses = dbus_connection_pop_message(conn_ses);
+    if (conn_ses) {
+        dbus_connection_read_write(conn_ses, 0);
+        msg_ses = dbus_connection_pop_message(conn_ses);
+    }
 
     Py_INCREF(Py_None);
     return Py_None;
@@ -235,11 +219,6 @@ light_exec(PyObject *self, PyObject *args)
     PyObject *pArgs, *pkArgs;
     dbus_uint32_t serial;
     int i;
-
-    if (!conn_sys) {
-        PyErr_SetString(PyExc_Exception, "run init() first.");
-        return NULL;
-    }
 
     if (msg_sys) {
         pkArgs = PyDict_New();
@@ -330,7 +309,6 @@ light_exec(PyObject *self, PyObject *args)
 }
 
 static PyMethodDef light_methods[] = {
-    {"init",  (PyCFunction)light_init, METH_NOARGS, "init()\n  Initializes d_light."},
     {"fetch",  (PyCFunction)light_fetch, METH_NOARGS, "fetch()\n  Fetches a message from DBus message queue."},
     {"exec_",  (PyCFunction)light_exec, METH_NOARGS, "exec_()\n  Processes fetched message."},
     {"registerSignal",  (PyCFunction)light_registerSignal, METH_VARARGS, "registerSignal(rule, callbackFunc, bustype)\n  Registers a new signal callback function.\n bustype can be BUS_SESSION or BUS_SYSTEM"},
@@ -344,6 +322,12 @@ PyMODINIT_FUNC
 initd_light(void)
 {
     PyObject *m;
+
+    methodHooks_sys = PyDict_New();
+    signalHooks_sys = PyList_New(0);
+
+    methodHooks_ses = PyDict_New();
+    signalHooks_ses = PyList_New(0);
 
     m = Py_InitModule("d_light", light_methods);
     PyModule_AddObject(m, "BUS_SYSTEM", PyInt_FromLong((long) 0));
