@@ -97,6 +97,57 @@ light_registerSignal(PyObject *self, PyObject *args)
 }
 
 PyObject *
+light_call_block(PyObject *self, PyObject *args)
+{
+    char *dest, *path, *interface, *method;
+    PyObject *obj;
+    int bustype, i, timeout;
+    DBusMessage *msg, *reply;
+    DBusError err;
+
+    if (!PyArg_ParseTuple(args, "ssssOii", &dest, &path, &interface, &method, &obj, &bustype, &timeout)) {
+        return NULL;
+    }
+
+    if (!conn_sys) {
+        PyErr_SetString(PyExc_Exception, "run init() first.");
+        return NULL;
+    }
+
+    msg = dbus_message_new_method_call(dest, path, interface, method);
+    if (PyTuple_Check(obj)) {
+        if (PyTuple_Size(obj) > 0) {
+            DBusMessageIter iter;
+            dbus_message_iter_init_append(msg, &iter);
+            for (i = 0; i < PyTuple_Size(obj); i++) {
+                if (dbus_py_export(&iter, PyTuple_GetItem(obj, i)) != 0) {
+                    return NULL;
+                }
+            }
+        }
+    }
+    else {
+        PyErr_SetString(PyExc_Exception, "Arguments must be passed as a tuple.");
+        return NULL;
+    }
+
+    dbus_error_init(&err);
+    if (bustype == 0) {
+        reply = dbus_connection_send_with_reply_and_block(conn_sys, msg, timeout, &err);
+    }
+    else {
+        reply = dbus_connection_send_with_reply_and_block(conn_ses, msg, timeout, &err);
+    }
+    if (dbus_error_is_set(&err)) {
+        PyErr_SetString(PyExc_Exception, err.message);
+        return NULL;
+    }
+
+    return PyList_AsTuple(dbus_py_import(reply));
+}
+
+
+PyObject *
 light_call(PyObject *self, PyObject *args)
 {
     char *dest, *path, *interface, *method;
@@ -284,6 +335,7 @@ static PyMethodDef light_methods[] = {
     {"exec_",  (PyCFunction)light_exec, METH_NOARGS, "exec_()\n  Processes fetched message."},
     {"registerSignal",  (PyCFunction)light_registerSignal, METH_VARARGS, "registerSignal(rule, callbackFunc, bustype)\n  Registers a new signal callback function.\n bustype can be BUS_SESSION or BUS_SYSTEM"},
     {"call",  (PyCFunction)light_call, METH_VARARGS, "call(dest, path, iface, method, args_tuple, callbackFunc, bustype)\n  Makes an asynchronous method call\n bustype can be BUS_SESSION or BUS_SYSTEM"},
+    {"call_blocking",  (PyCFunction)light_call_block, METH_VARARGS, "call_blocking(dest, path, iface, method, args_tuple, bustype, timeout)\n  Makes a synchronous method call and returns reply.\n bustype can be BUS_SESSION or BUS_SYSTEM"},
     {NULL, NULL}
 };
 

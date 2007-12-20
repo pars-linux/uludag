@@ -22,5 +22,8 @@ class DLoop(threading.Thread):
     def call(self, dest, path,iface, method, args, callbackFunc, bustype):
         d_light.call(dest, path, iface, method, args, callbackFunc, bustype)
 
+    def call_blocking(self, dest, path,iface, method, args, bustype, timeout):
+        return d_light.call_blocking(dest, path, iface, method, args, bustype, timeout)
+
     def register(self, rule, callbackFunc, bustype):
         d_light.registerSignal(rule, callbackFunc, bustype)
