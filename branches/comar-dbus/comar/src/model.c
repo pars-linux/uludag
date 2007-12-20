@@ -27,7 +27,6 @@ enum {
 //! Node structure
 struct node {
     const char *path;
-    const char *method;
     struct node *next;
     int parent_no;
     int type;
@@ -221,13 +220,6 @@ add_node(int parent_no, const char *path, int type)
 
     n = &nodes[model_nr_nodes];
     n->path = path;
-    if (type == N_METHOD) {
-        n->method = path + len;
-        while (n->method[-1] != '.')
-            --n->method;
-    } else {
-        n->method = NULL;
-    }
     n->parent_no = parent_no;
     n->type = type;
     n->no = model_nr_nodes++;
