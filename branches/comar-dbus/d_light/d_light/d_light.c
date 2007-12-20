@@ -236,7 +236,7 @@ light_exec(PyObject *self, PyObject *args)
         pkArgs = PyDict_New();
 
         if (dbus_message_get_sender(msg_ses)) {
-            PyDict_SetItemString(pkArgs, "sender", PyString_FromString(dbus_message_get_sender(msg_sys)));
+            PyDict_SetItemString(pkArgs, "sender", PyString_FromString(dbus_message_get_sender(msg_ses)));
         }
         if (dbus_message_get_destination(msg_ses)) {
             PyDict_SetItemString(pkArgs, "destination", PyString_FromString(dbus_message_get_destination(msg_ses)));
