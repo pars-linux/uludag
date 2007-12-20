@@ -330,7 +330,7 @@ dbus_comar_methods(const char *method)
         result = PyList_New(0);
         iks *obj;
         for (obj = iks_first_tag(model_xml); obj; obj = iks_next_tag(obj)) {
-            if (iks_strcmp(iks_find_attrib(obj, "name"), "Comar") == 0) {
+            if (iks_strcmp(iks_find_attrib(obj, "name"), "Comar") == 0 || iks_strncmp(iks_find_attrib(obj, "name"), "org.freedesktop.", strlen("org.freedesktop.")) == 0) {
                 continue;
             }
             PyList_Append(result, PyString_FromString(iks_find_attrib(obj, "name")));
