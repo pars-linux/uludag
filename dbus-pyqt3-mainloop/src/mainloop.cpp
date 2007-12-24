@@ -1,6 +1,5 @@
 
 #include <dbus/dbus-python.h>
-
 #include <qapplication.h>
 #include <qevent.h>
 #include <qmetaobject.h>
@@ -10,7 +9,7 @@
 #include "mainloop.h"
 
 QDBusConnectionPrivate::QDBusConnectionPrivate(QObject *parent)
-    : QObject(parent), ref(1), connection(0), dispatcher(0)
+    : QObject(parent), ref(1), dispatcher(0)
 {
 //    static const int msgType = registerMessageMetaType();
 //    Q_UNUSED(msgType);
@@ -36,14 +35,16 @@ void QDBusConnectionPrivate::scheduleDispatch()
 
 void QDBusConnectionPrivate::dispatch()
 {
-//    if (mode == ClientMode)
-//    {
-        if (dbus_connection_dispatch(connection) != DBUS_DISPATCH_DATA_REMAINS)
+    DBusConnection *con;
+
+    for (con = connections.first(); con; con = connections.next())
+    {
+        if (dbus_connection_dispatch(con) != DBUS_DISPATCH_DATA_REMAINS)
         {
             // stop dispatch timer
             dispatcher->stop();
         }
-//    }
+    }
 }
 void QDBusConnectionPrivate::flush()
 {
@@ -98,14 +99,21 @@ void QDBusConnectionPrivate::timerEvent(QTimerEvent *e)
 
 void QDBusConnectionPrivate::socketWrite(int fd)
 {
-    // FIXME-QT4 QHashIterator<int, QDBusConnectionPrivate::Watcher> it(watchers);
     WatcherHash::const_iterator it = watchers.find(fd);
-    if (it != watchers.end()) {
+
+    if (it != watchers.end()) 
+    {
         const WatcherList& list = *it;
-        for (WatcherList::const_iterator wit = list.begin(); wit != list.end(); ++wit) {
-            if ((*wit).write && (*wit).write->isEnabled()) {
+
+        for (WatcherList::const_iterator wit = list.begin(); wit != list.end(); ++wit) 
+        {
+            if ((*wit).write && (*wit).write->isEnabled()) 
+            {
+                (*wit).write->setEnabled(false);
                 if (!dbus_watch_handle((*wit).watch, DBUS_WATCH_WRITABLE))
                     qDebug("OUT OF MEM");
+                (*wit).write->setEnabled(true);
+                break;
             }
         }
     }
@@ -113,18 +121,25 @@ void QDBusConnectionPrivate::socketWrite(int fd)
 
 void QDBusConnectionPrivate::socketRead(int fd)
 {
-    // FIXME-QT4 QHashIterator<int, QDBusConnectionPrivate::Watcher> it(watchers);
     WatcherHash::const_iterator it = watchers.find(fd);
-    if (it != watchers.end()) {
+
+    if (it != watchers.end()) 
+    {
         const WatcherList& list = *it;
-        for (WatcherList::const_iterator wit = list.begin(); wit != list.end(); ++wit) {
-            if ((*wit).read && (*wit).read->isEnabled()) {
+
+        for (WatcherList::const_iterator wit = list.begin(); wit != list.end(); ++wit) 
+        {
+            if ((*wit).read && (*wit).read->isEnabled()) 
+            {
+                (*wit).read->setEnabled(false);
                 if (!dbus_watch_handle((*wit).watch, DBUS_WATCH_READABLE))
                     qDebug("OUT OF MEM");
+                (*wit).read->setEnabled(true);
+                break;
             }
         }
     }
-    //if (mode == ClientMode)
+
     scheduleDispatch();
 }
 
@@ -350,7 +365,7 @@ static dbus_bool_t dbus_qt_conn(DBusConnection *conn, void *data)
 
     QDBusConnectionPrivate *hlp = reinterpret_cast<QDBusConnectionPrivate *>(data);
 
-    hlp->connection = conn;
+    hlp->connections.append(conn);
 
     if (!dbus_connection_set_watch_functions(conn, qDBusAddWatch, qDBusRemoveWatch, qDBusToggleWatch, data, 0))
         rc = false;
