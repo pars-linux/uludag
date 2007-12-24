@@ -21,10 +21,10 @@ def emit_signal():
    object.emitHelloSignal(dbus_interface="com.example.TestService")
 
    # exit after waiting a short time for the signal
-   print "Emitter called. Quiting after 2 seconds..."
+   print "Emitter called. Quiting..."
 
    global app
-   QTimer.singleShot(2000, app.quit)
+   QTimer.singleShot(1000, app.quit)
 
    return False
 
@@ -50,8 +50,8 @@ if __name__ == '__main__':
 
     bus.add_signal_receiver(catchall_hello_signals_handler, dbus_interface = "com.example.TestService", signal_name = "HelloSignal")
 
-    print "After 5 seconds, emitter will be called..."
-    QTimer.singleShot(5000, emit_signal)
+    print "After 2 seconds, emitter will be called..."
+    QTimer.singleShot(2000, emit_signal)
 
     global app
     app = QApplication(sys.argv) 
