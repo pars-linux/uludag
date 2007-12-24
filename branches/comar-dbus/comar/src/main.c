@@ -62,13 +62,22 @@ main(int argc, char *argv[])
         exit(1);
     }
 
+init_children:
+
     // Listen for DBus calls
     proc_fork(dbus_listen, "ComarDBus", NULL, NULL);
 
     while (1) {
-        if (shutdown_activated || my_proc.nr_children == 0) {
-            model_free();
-            proc_finish();
+        if (my_proc.nr_children == 0) {
+            if (shutdown_activated) {
+                model_free();
+                proc_finish();
+            }
+            else {
+                log_info("DBus connection is lost. Waiting 3 seconds and trying again...\n");
+                sleep(3);
+                goto init_children;
+            }
         }
         proc_listen(&p, &size, -1, 0);
     }

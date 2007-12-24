@@ -41,7 +41,7 @@ dbus_send(DBusMessage *reply)
 
     if (!dbus_connection_send(my_proc.bus_conn, reply, &serial)) {
         log_error("Out Of Memory!\n");
-        exit(1);
+        proc_finish();
     }
 
     dbus_connection_flush(my_proc.bus_conn);
@@ -616,20 +616,14 @@ dbus_listen()
     if (dbus_error_is_set(&err)) {
         log_error("Connection Error (%s)\n", err.message);
         dbus_error_free(&err);
-    }
-    if (NULL == conn) {
-        log_error("Connection Null\n");
-        exit(1);
+        proc_finish();
     }
 
     ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Name Error (%s)\n", err.message);
         dbus_error_free(&err);
-    }
-    if (DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER != ret) {
-        log_error("Not Primary Owner (%d)\n", ret);
-        exit(1);
+        proc_finish();
     }
 
     unique_name = dbus_bus_get_unique_name(conn);
@@ -641,17 +635,17 @@ dbus_listen()
 
         if (proc_check_idle() == 1) {
             log_info("Service was idle for %d second(s), closing daemon...\n", cfg_idle_shutdown);
-            break;
+            return;
+        }
+
+        if (shutdown_activated) {
+            log_info("Shutdown requested.\n");
+            return;
         }
 
         if (NULL == msg) {
             proc_listen(&p, &size, 0, 500);
             continue;
-        }
-
-        if (shutdown_activated) {
-            model_free();
-            break;
         }
 
         const char *sender = dbus_message_get_sender(msg);
