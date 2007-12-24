@@ -11,11 +11,6 @@
 QDBusConnectionPrivate::QDBusConnectionPrivate(QObject *parent)
     : QObject(parent), ref(1), dispatcher(0)
 {
-//    static const int msgType = registerMessageMetaType();
-//    Q_UNUSED(msgType);
-
-//    dbus_error_init(&error);
-
     dispatcher = new QTimer(this);
     QObject::connect(dispatcher, SIGNAL(timeout()), this, SLOT(dispatch()));
 }
@@ -403,7 +398,6 @@ static dbus_bool_t dbus_qt_srv(DBusServer *srv, void *data)
 
 //////////////////// PYTHON ///////////////////////////////
 
-
 PyDoc_STRVAR(DBusQtMainLoop__doc__,
 "DBusQtMainLoop([set_as_default=False]) -> NativeMainLoop\n"
 "\n"
@@ -470,7 +464,6 @@ static PyMethodDef module_functions[] = {
     DBusQtMainLoop__doc__},
     {0, 0, 0, 0}
 };
-
 
 // The module entry point.
 PyMODINIT_FUNC initqt3()
