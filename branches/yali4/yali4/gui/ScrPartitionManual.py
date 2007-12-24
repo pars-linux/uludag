@@ -10,27 +10,29 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.gui.context as ctx
-import yali.partitionrequest as request
-import yali.partitiontype as parttype
-from yali.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
-from yali.gui.InformationWindow import InformationWindow
-from yali.gui.GUIException import *
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.PartListImpl import PartList
-from yali.gui.PartEditImpl import PartEdit, \
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
+import yali4.gui.context as ctx
+import yali4.partitionrequest as request
+import yali4.partitiontype as parttype
+from yali4.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
+#from yali4.gui.InformationWindow import InformationWindow
+from yali4.gui.GUIException import *
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.PartListImpl import PartList
+from yali4.gui.PartEditImpl import PartEdit, \
     editState, createState, deleteState, resizeState
 
 ##
 # Partitioning screen.
-class Widget(QWidget, ScreenWidget):
-
+class Widget(QGui.QWidget, ScreenWidget):
+    title = _('Manual Partitioning')
+    desc = _('You can easily configure your partitions..')
     help = _('''
 <font size="+2">Partitioning your hard disk</font>
 
@@ -71,7 +73,7 @@ about disk partitioning.
 
 
     def __init__(self, *args):
-        apply(QWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
 
         self.partlist = PartList(self)
         self.partedit = PartEdit(self)

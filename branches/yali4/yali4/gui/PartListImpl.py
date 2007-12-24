@@ -12,29 +12,30 @@
 
 
 import time
-from qt import *
+
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.storage
-import yali.filesystem as filesystem
-import yali.partitionrequest as request
-import yali.partitiontype as parttype
-import yali.parteddata as parteddata
+import yali4.storage
+import yali4.filesystem as filesystem
+import yali4.partitionrequest as request
+import yali4.partitiontype as parttype
+import yali4.parteddata as parteddata
 
-import yali.gui.context as ctx
-from yali.gui.Ui.partlistwidget import PartListWidget
-from yali.gui.GUIException import *
+import yali4.gui.context as ctx
+from yali4.gui.Ui.partlistwidget import Ui_PartListWidget
+from yali4.gui.GUIException import *
 
-class PartList(PartListWidget):
+class PartList(QtGui.QWidget):
 
     def __init__(self, *args):
-        apply(PartListWidget.__init__, (self,) + args)
-
-        self.list.setPaletteBackgroundColor(ctx.consts.bg_color)
-        self.list.setPaletteForegroundColor(ctx.consts.fg_color)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_PartListWidget()
+        self.ui.setupUi(self)
 
         # bug (feature in fact) 1049: we select the first found swap
         # partition as our swap partition. But if one is selected
@@ -42,63 +43,62 @@ class PartList(PartListWidget):
         self.autoSwapSelected = False
 
         # disable sorting
-        self.list.setSorting(-1)
+        self.ui.list.setSorting(-1)
 
         self.devs = []
         self.initDevices()
 
-        self.connect(self.list, SIGNAL("selectionChanged()"),
+        self.connect(self.ui.list, SIGNAL("selectionChanged()"),
                      self.slotItemSelected)
-        self.connect(self.createButton, SIGNAL("clicked()"),
+        self.connect(self.ui.createButton, SIGNAL("clicked()"),
                      self.slotCreateClicked)
-        self.connect(self.deleteButton, SIGNAL("clicked()"),
+        self.connect(self.ui.deleteButton, SIGNAL("clicked()"),
                      self.slotDeleteClicked)
-        self.connect(self.editButton, SIGNAL("clicked()"),
+        self.connect(self.ui.editButton, SIGNAL("clicked()"),
                      self.slotEditClicked)
-        self.connect(self.resizeButton, SIGNAL("clicked()"),
+        self.connect(self.ui.resizeButton, SIGNAL("clicked()"),
                      self.slotResizeClicked)
 
-        self.connect(self.resetButton, SIGNAL("clicked()"),
+        self.connect(self.ui.resetButton, SIGNAL("clicked()"),
                      self.resetChanges)
 
-        self.connect(self.list, SIGNAL("collapsed(QListViewItem*)"),
+        self.connect(self.ui.list, SIGNAL("collapsed(QListViewItem*)"),
                      self.slotListCollapsed)
 
-        self.connect(self.list, SIGNAL("doubleClicked(QListViewItem*, const QPoint&, int)"),
+        self.connect(self.ui.list, SIGNAL("doubleClicked(QListViewItem*, const QPoint&, int)"),
                      self.slotListDoubleClicked)
 
     def update(self):
-        self.list.clear()
+        self.ui.list.clear()
 
         for dev in self.devs:
             self.addDevice(dev)
 
-        self.createButton.setEnabled(False)
-        self.deleteButton.setEnabled(False)
-        self.editButton.setEnabled(False)
-        self.resizeButton.setEnabled(False)
+        self.ui.createButton.setEnabled(False)
+        self.ui.deleteButton.setEnabled(False)
+        self.ui.editButton.setEnabled(False)
+        self.ui.resizeButton.setEnabled(False)
 
         self.showPartitionRequests()
         self.checkRootPartRequest()
 
     def initDevices(self):
         # initialize all storage devices
-        if not yali.storage.init_devices():
+        if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
         # for consistency list devices in reverse order.
-        self.devs = [i for i in yali.storage.devices]
+        self.devs = [i for i in yali4.storage.devices]
         self.devs.reverse()
 
     def resetChanges(self):
-        yali.storage.clear_devices()
+        yali4.storage.clear_devices()
         self.initDevices()
         ctx.partrequests.remove_all()
         self.update()
 
-
     def devices_commit(self):
-        for dev in yali.storage.devices:
+        for dev in yali4.storage.devices:
             dev.commit()
 
         # wait for udev to create device nodes
@@ -120,7 +120,7 @@ class PartList(PartListWidget):
         else:
             size_str = dev.getSizeStr()
 
-        d = PartListItem(self.list, devstr,
+        d = PartListItem(self.ui.list, devstr,
                          size_str)
         d.setData(dev)
 
@@ -139,34 +139,18 @@ class PartList(PartListWidget):
                              size_str)
             e.setData(ext)
 
-#
-# Don't show free space as a new item on GUI #
-#
-#            freespace = ext.getFreeMB()
-#            if freespace:
-#                f = PartListItem(e,
-#                                 _("Free"),
-#                                 str(freespace))
-#                # freespace's data is extended partition. we'll use it later on...
-#                f.setData(ext)
-
-
         # add partitions on device
         for part in dev.getOrderedPartitionList():
             parent_item = d
-
             if part.isExtended():
                 continue
-
             elif part.getType() == parteddata.freeSpaceType:
                 # Don't show free space as a new item on GUI #
                 #name = _("Free")
                 continue
-
             name = _("Partition %d") % part.getMinor()
             if part.isLogical():
                 parent_item = e
-
             p = PartListItem(parent_item,
                              name,
                              part.getSizeStr(),
@@ -178,37 +162,34 @@ class PartList(PartListWidget):
             if part.getFSName() == "linux-swap(new)" and not self.autoSwapSelected:
                 ctx.partrequests.append(
                     request.MountRequest(part, parttype.swap))
-
                 ctx.partrequests.append(
                     request.FormatRequest(part, parttype.swap))
-
                 ctx.partrequests.append(
                     request.LabelRequest(part, parttype.swap))
-
                 self.autoSwapSelected = True
 
-        self.list.setOpen(d, True)
+        self.ui.list.setOpen(d, True)
         try:
-            self.list.setOpen(e, True)
+            self.ui.list.setOpen(e, True)
         except:
             # no extended partition...
             pass
 
     def slotItemSelected(self):
-        item = self.list.currentItem()
+        item = self.ui.list.currentItem()
         d = item.getData()
         t = d.getType()
 
         if t == parteddata.deviceType:
             if d.getFreeMB() > 0 and d.primaryAvailable():
-                self.createButton.setEnabled(True)
+                self.ui.createButton.setEnabled(True)
             else:
-                self.createButton.setEnabled(False)
-            self.deleteButton.setEnabled(True)
-            self.resizeButton.setEnabled(False)
-            self.editButton.setEnabled(False)
+                self.ui.createButton.setEnabled(False)
+            self.ui.deleteButton.setEnabled(True)
+            self.ui.resizeButton.setEnabled(False)
+            self.ui.editButton.setEnabled(False)
 
-            self.deleteButton.setText(_("Delete All Partitions"))
+            self.ui.deleteButton.setText(_("Delete All Partitions"))
 
         elif t == parteddata.partitionType:
 
@@ -221,50 +202,45 @@ class PartList(PartListWidget):
             # if partition has a format request, don't try to resize it (#5391)
             if ctx.partrequests.searchPartAndReqType(d, request.formatRequestType):
                 resizeable = False
-            self.resizeButton.setEnabled(resizeable)
-
+            self.ui.resizeButton.setEnabled(resizeable)
 
             if d.isExtended():
                 if d.getFreeMB() > 0:
-                    self.createButton.setEnabled(True)
+                    self.ui.createButton.setEnabled(True)
             else:
-                self.createButton.setEnabled(False)
+                self.ui.createButton.setEnabled(False)
 
-
-            self.deleteButton.setEnabled(True)
-
+            self.ui.deleteButton.setEnabled(True)
 
             if not d.isExtended(): # don't edit extended partititons
-                self.editButton.setEnabled(True)
+                self.ui.editButton.setEnabled(True)
 
-            self.deleteButton.setText(_("Delete Selected Partition"))
+            self.ui.deleteButton.setText(_("Delete Selected Partition"))
 
         elif t == parteddata.freeSpaceType:
             if d.getDevice().primaryAvailable():
-                self.createButton.setEnabled(True)
-            self.deleteButton.setEnabled(False)
-            self.resizeButton.setEnabled(False)
-            self.editButton.setEnabled(False)
-            
+                self.ui.createButton.setEnabled(True)
+            self.ui.deleteButton.setEnabled(False)
+            self.ui.resizeButton.setEnabled(False)
+            self.ui.editButton.setEnabled(False)
 
-        self.emit(PYSIGNAL("signalSelectionChanged"), ())
+        self.emit(SIGNAL("signalSelectionChanged"), ())
 
     def slotCreateClicked(self):
-        item = self.list.currentItem()
-        self.emit(PYSIGNAL("signalCreate"), (self, item.getData()) )
+        item = self.ui.list.currentItem()
+        self.emit(SIGNAL("signalCreate"), (self, item.getData()) )
 
     def slotDeleteClicked(self):
-        item = self.list.currentItem()
-        self.emit(PYSIGNAL("signalDelete"), (self, item.getData()) )
+        item = self.ui.list.currentItem()
+        self.emit(SIGNAL("signalDelete"), (self, item.getData()) )
 
     def slotResizeClicked(self):
-        item = self.list.currentItem()
-        self.emit(PYSIGNAL("signalResize"), (self, item.getData()) )
+        item = self.ui.list.currentItem()
+        self.emit(SIGNAL("signalResize"), (self, item.getData()) )
 
     def slotEditClicked(self):
-        item = self.list.currentItem()
-        self.emit(PYSIGNAL("signalEdit"), (self, item.getData()) )
-
+        item = self.ui.list.currentItem()
+        self.emit(SIGNAL("signalEdit"), (self, item.getData()) )
 
     def slotListDoubleClicked(self, item, point, c):
         try:
@@ -279,7 +255,7 @@ class PartList(PartListWidget):
                 self.slotEditClicked()
 
     def slotListCollapsed(self, item):
-        self.list.setOpen(item, True)
+        self.ui.list.setOpen(item, True)
 
     ##
     # iterate over listview and look for a partition
@@ -289,7 +265,7 @@ class PartList(PartListWidget):
         if not part:
             return -1
 
-        iterator = QListViewItemIterator(self.list)
+        iterator = QListViewItemIterator(self.ui.list)
         current = iterator.current()
 
         while current:
@@ -328,13 +304,12 @@ class PartList(PartListWidget):
 
 
     def checkRootPartRequest(self):
-        ctx.screens.disableNext()
+        ctx.mainScreen.disableNext()
 
         for req in ctx.partrequests:
             if req.partitionType() == parttype.root:
                 # root partition type. can enable next
-                ctx.screens.enableNext()
-
+                ctx.mainScreen.enableNext()
 
 ##
 # Partition List Data stores additional information for partitions.

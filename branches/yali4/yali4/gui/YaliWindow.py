@@ -18,6 +18,7 @@ import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
+import yali4.sysutils
 from yali4.gui.Ui.main import Ui_YaliMain
 import yali4.gui.context as ctx
 
