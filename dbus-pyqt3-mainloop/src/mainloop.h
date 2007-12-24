@@ -7,18 +7,18 @@
 #include <qvaluelist.h>
 
 #include <dbus/dbus.h>
-#include "qdbusatomic.h"
 
 class QSocketNotifier;
 class QTimer;
 class QTimerEvent;
 
-//typedef struct DBusConnection;
-//typedef struct DBusServer;
+typedef struct DBusConnection;
+typedef struct DBusServer;
 
 class QDBusConnectionPrivate: public QObject
 {
     Q_OBJECT
+
 public:
     QDBusConnectionPrivate(QObject *parent = 0);
     ~QDBusConnectionPrivate();
@@ -34,13 +34,8 @@ public slots:
     void dispatch();
 
 public:
-    enum ConnectionMode { InvalidMode, ServerMode, ClientMode };
-
-    Atomic ref;
-    DBusConnection *connection;
 
     QTimer* dispatcher;
-    void flush();
 
     struct Watcher
     {
@@ -52,8 +47,10 @@ public:
 
     typedef QValueList<Watcher> WatcherList;
     WatcherList removedWatches;
+
     typedef QMap<int, WatcherList> WatcherHash;
     WatcherHash watchers;
+
     typedef QPtrList<DBusConnection>Connections;
     Connections connections;
 
