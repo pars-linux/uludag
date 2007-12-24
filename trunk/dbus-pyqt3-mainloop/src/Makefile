@@ -1,6 +1,6 @@
 TARGET = qt3.so
 OFILES = mainloop.o moc_mainloop.o
-HFILES =  mainloop.h qdbusatomic.h
+HFILES =  mainloop.h
 
 CXX = g++
 LINK = g++

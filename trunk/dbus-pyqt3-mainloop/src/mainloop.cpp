@@ -9,10 +9,12 @@
 #include "mainloop.h"
 
 QDBusConnectionPrivate::QDBusConnectionPrivate(QObject *parent)
-    : QObject(parent), ref(1), dispatcher(0)
+    : QObject(parent), dispatcher(0)
 {
     dispatcher = new QTimer(this);
     QObject::connect(dispatcher, SIGNAL(timeout()), this, SLOT(dispatch()));
+
+    connections.setAutoDelete(true);
 }
 
 QDBusConnectionPrivate::~QDBusConnectionPrivate()
@@ -40,12 +42,6 @@ void QDBusConnectionPrivate::dispatch()
             dispatcher->stop();
         }
     }
-}
-void QDBusConnectionPrivate::flush()
-{
-    if (!connection) return;
-
-    dbus_connection_flush(connection);
 }
 
 void QDBusConnectionPrivate::purgeRemovedWatches()
@@ -118,7 +114,7 @@ void QDBusConnectionPrivate::socketRead(int fd)
 {
     WatcherHash::const_iterator it = watchers.find(fd);
 
-    if (it != watchers.end()) 
+    if (it != watchers.end())
     {
         const WatcherList& list = *it;
 
@@ -345,8 +341,9 @@ static void wakeup_main(void *data)
     // This all seems to work (with responses coming at the same time as with
     // GLib) but it doesn't seem right.  In effect this is being used as a
     // polling function and the QSocketNotifiers never get fired.
-    if (dbus_connection_get_dispatch_status(hlp->connection) == DBUS_DISPATCH_DATA_REMAINS)
-        hlp->scheduleDispatch();
+    //if (dbus_connection_get_dispatch_status(hlp->connection) == DBUS_DISPATCH_DATA_REMAINS)
+
+    hlp->scheduleDispatch();
 }
 
 
