@@ -42,6 +42,9 @@ int cfg_log_file = 1;
 //! Log file
 char *cfg_log_file_name = LOG_FILE;
 
+//! PID file
+char *cfg_pid_name = PID_FILE;
+
 //! Log debug flags
 int cfg_log_flags = 0;
 

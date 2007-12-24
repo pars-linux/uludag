@@ -43,7 +43,9 @@ main(int argc, char *argv[])
     }
 
     // Initialize main process
-    proc_init(argc, argv, "Comar");
+    if (proc_init(argc, argv, "Comar") != 0) {
+        exit(1);
+    }
 
     // Start logging
     if (log_start() != 0) {

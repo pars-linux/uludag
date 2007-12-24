@@ -32,7 +32,7 @@ struct Proc {
 extern struct Proc my_proc;
 extern int shutdown_activated;
 
-void proc_init(int argc, char *argv[], const char *name);
+int proc_init(int argc, char *argv[], const char *name);
 int proc_listen(struct ProcChild **senderp, size_t *sizep, int timeout_sec, int timeout_usec);
 void proc_check_shutdown(void);
 struct ProcChild *proc_fork(void (*child_func)(void), const char *desc, DBusConnection *bus_conn, DBusMessage *bus_msg);

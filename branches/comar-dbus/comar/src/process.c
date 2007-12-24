@@ -100,12 +100,13 @@ proc_check_idle()
 }
 
 //! Initializes main process
-void
+int
 proc_init(int argc, char *argv[], const char *name)
 {
     /*!
      * Initializes main process. Gets name address, size, and
-     * initializes signal handler.
+     * initializes signal handler. Creates pidfile if bus type
+     * is system.
      *
      * @argc Number of arguments
      * @argv Array of arguments
@@ -129,6 +130,20 @@ proc_init(int argc, char *argv[], const char *name)
     handle_signals();
     set_my_name(my_proc.desc);
     time_lastaction = time(0);
+
+    if (cfg_bus_type == DBUS_BUS_SYSTEM) {
+        FILE *f = fopen(cfg_pid_name, "w");
+        if (f) {
+            fprintf(f, "%d", getpid());
+            fclose(f);
+        }
+        else {
+            printf("Can't create pid file '%s'\n", cfg_pid_name);
+            return 1;
+        }
+    }
+
+    return 0;
 }
 
 //! Appends child process' information to parent's info table

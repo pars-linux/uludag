@@ -27,6 +27,7 @@ ENDIF (APP_SUFFIX)
 ADD_DEFINITIONS (-D'VERSION="${VERSION}"'
                  -D'CONFIG_DIR="/etc/${APP_NAME}"'
                  -D'DATA_DIR="/var/db/${APP_NAME}"'
+                 -D'PID_FILE="/var/run/${APP_NAME}.pid"'
                  -D'LOG_FILE="/var/log/${APP_NAME}.log"')
 
 # Set standard sources
