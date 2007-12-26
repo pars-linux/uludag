@@ -49,7 +49,10 @@ class MainApplicationWidget(QWidget):
         self.parent = parent
 
         self.progressDialog = Progress.Progress(self)
+        
+        # Keys of this dict. are Components Listview's items, and values are component object about the item
         self.componentDict = {}
+
         self.lastSelectedComponent = None
         self.command = None
         self.state = install_state
