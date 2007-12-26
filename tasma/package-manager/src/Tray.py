@@ -76,6 +76,7 @@ class Tray(KSystemTray):
             if interval:
                 self.timer.start(interval)
 
+    # Executed when 'Update' is clicked on Tray
     def checkUpdate(self, repo = None, forced = False):
         manager = self.parent.mainwidget
         # timer interval check should not be run if any command is in progress

@@ -55,7 +55,7 @@ class SpecialList(QObject):
         nodeList = document.getElementsByTagName(DOM.DOMString("input"))
 
         self.selectingAll = True
-        for i in range(0,nodeList.length()):
+        for i in range(0, nodeList.length()):
             element = DOM.HTMLInputElement(nodeList.item(i))
             if reverse or not element.checked():
                 element.click()

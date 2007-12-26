@@ -49,7 +49,7 @@ class MainApplicationWidget(QWidget):
         self.parent = parent
 
         self.progressDialog = Progress.Progress(self)
-        
+
         # Keys of this dict. are Components Listview's items, and values are component object about the item
         self.componentDict = {}
 
@@ -224,7 +224,7 @@ class MainApplicationWidget(QWidget):
         self.processEvents()
         packages = self.command.listPackages()
         self.state = remove_state
-        self.createComponentList(packages)
+        self.createComponentList(packages, True)
         self.operateAction.setText(i18n("Remove Package(s)"))
         self.operateAction.setIconSet(loadIconSet("no"))
         self.basket.setState(self.state)
