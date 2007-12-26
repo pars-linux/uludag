@@ -39,7 +39,6 @@ if __name__ == '__main__':
 
     except dbus.DBusException:
         traceback.print_exc()
-        print usage
         sys.exit(1)
 
     bus.add_signal_receiver(catchall_hello_signals_handler, dbus_interface = "com.example.TestService", signal_name = "HelloSignal")

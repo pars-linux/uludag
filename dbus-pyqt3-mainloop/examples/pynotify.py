@@ -33,10 +33,10 @@ def emit_signal():
         global notifyid
         notifyid = iface.Notify("pynotify", # application name
                      0,               # replaces id
-                     "file:///usr/share/icons/Tulliana-2.0/64x64/actions/ok.png",             # icon
+                     "", #icon path like file:///usr/share/icons/Tulliana-2.0/64x64/actions/ok.png",
                      "Summary",         # header of notification
                      "Body",            # message of notification
-                     ["Dugme", "Dugme","Dugme2","Dugme2" ], # list of buttons as pairs of identifier and title
+                     ["ButtonDescription1", "Button1","ButtonDescription2","Button2" ], # list of buttons as pairs of identifier and title
                      {"category": "im", "urgency": dbus.Byte(1), "x": 500, "y": 500},  # hints like category, urgency, coordinate of notification (x,y)
                      10000)             # timeout in msec
 
@@ -51,7 +51,6 @@ def emit_signal():
         sys.exit(1)
 
 if __name__ == '__main__':
-
     global loop
     loop = QApplication(sys.argv)
 
