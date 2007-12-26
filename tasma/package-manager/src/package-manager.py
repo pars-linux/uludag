@@ -72,7 +72,6 @@ class MainApplication(KMainWindow):
             if self.mainwidget.settings.getBoolValue(Settings.general, "UpdateCheck"):
                 interval = self.mainwidget.settings.getNumValue(Settings.general, "UpdateCheckInterval")
                 self.tray.updateInterval(interval)
-
             self.tray.show()
 
         self.connect(self.tray, SIGNAL("quitSelected()"), self.slotQuit)
@@ -99,7 +98,6 @@ class MainApplication(KMainWindow):
 
         self.quitAction = KStdAction.quit(self.slotQuit, self.actionCollection())
         self.settingsAction = KStdAction.preferences(self.mainwidget.showPreferences, self.actionCollection())
-
         self.showInstalledAction = KToggleAction(i18n("Show Installed Packages"),"package",KShortcut.null(),
                                                  self.mainwidget.removeState,self.actionCollection(),
                                                  "show_installed_action")
