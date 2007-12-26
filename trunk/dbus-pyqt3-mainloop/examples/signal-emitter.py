@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 
-usage = """Usage:
-python example-signal-emitter.py &
-python example-signal-recipient.py
-python example-signal-recipient.py --exit-service
-"""
-
 import gobject
 
 import dbus
