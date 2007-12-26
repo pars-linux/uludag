@@ -31,13 +31,13 @@ def emit_signal():
         object.connect_to_signal("ActionInvoked", click_handler, dbus_interface="org.freedesktop.Notifications")
 
         global notifyid
-        notifyid = iface.Notify("package-manager", # application name
-                     123,               # id
-                     "aaa",             # icon
+        notifyid = iface.Notify("pynotify", # application name
+                     0,               # replaces id
+                     "file:///usr/share/icons/Tulliana-2.0/64x64/actions/ok.png",             # icon
                      "Summary",         # header of notification
                      "Body",            # message of notification
                      ["Dugme", "Dugme","Dugme2","Dugme2" ], # list of buttons as pairs of identifier and title
-                     [],                # hints 
+                     {"category": "im", "urgency": dbus.Byte(1), "x": 500, "y": 500},  # hints like category, urgency, coordinate of notification (x,y)
                      10000)             # timeout in msec
 
         print "Notify() invoked...\n Notifyid: %s" % notifyid
@@ -47,7 +47,7 @@ def emit_signal():
 
     except dbus.DBusException:
         traceback.print_exc()
-        print usage
+        loop.quit()
         sys.exit(1)
 
 if __name__ == '__main__':
