@@ -297,9 +297,9 @@ QProgressBar::chunk {
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="cancelSetup" >
+           <widget class="QPushButton" name="toggleHelp" >
             <property name="text" >
-             <string>Cancel Setup</string>
+             <string>Hide Help</string>
             </property>
            </widget>
           </item>

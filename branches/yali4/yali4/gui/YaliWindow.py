@@ -38,6 +38,13 @@ class Widget(Ui_YaliMain):
         QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
+        QObject.connect(self.toggleHelp, SIGNAL("clicked()"), self.slotToggleHelp)
+
+    def slotToggleHelp(self):
+        if self.helpContent.isVisible():
+            self.helpContent.hide()
+        else:
+            self.helpContent.show()
 
     def toggleDebug(self):
         if ctx.debugger.isVisible():
