@@ -16,34 +16,33 @@ class CustomEventListener(DOM.EventListener):
     def __init__(self, parent):
         DOM.EventListener.__init__(self)
         self.parent = parent
-        #self.selectingAll = False
 
     def handleEvent(self,event):
         target = event.target().nodeName().string()
-        #try:
-        #if checkbox is clicked, call SpecialList's slot
-        if target == "INPUT":
-            inputElement = DOM.HTMLInputElement(event.target())
-            name = inputElement.name().string()
-            checked = inputElement.checked()
+        try:
+            #if checkbox is clicked, call SpecialList's slot
+            if target == "INPUT":
+                inputElement = DOM.HTMLInputElement(event.target())
+                name = inputElement.name().string()
+                checked = inputElement.checked()
 
-            # call parent to handle click event (in fact, parent emits this as a signal and its parent handles the signal)
-            self.parent.slotCheckboxClicked(name, checked)
+                # call parent to handle click event (in fact, parent emits this as a signal and its parent handles the signal)
+                self.parent.slotCheckboxClicked(name, checked)
 
-        elif target == "A":
-            link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
-            if link == "#selectall":
-                state = event.target().firstChild().nodeValue().string()
-                reverseSelection = False
-                if state == i18n("Select all packages in this category"):
-                    event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Reverse package selections")))
+            elif target == "A":
+                link = event.target().attributes().getNamedItem(DOM.DOMString("href")).nodeValue().string()
+                if link == "#selectall":
+                    state = event.target().firstChild().nodeValue().string()
+                    reverseSelection = False
+                    if state == i18n("Select all packages in this category"):
+                        event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Reverse package selections")))
+                    else:
+                        reverseSelection = True
+                        event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Select all packages in this category")))
+
+                    # let the list do the rest
+                    self.parent.slotSelectAll(reverseSelection)
                 else:
-                    reverseSelection = True
-                    event.target().firstChild().setNodeValue(DOM.DOMString(i18n("Select all packages in this category")))
-
-                # let the list do the rest
-                self.parent.slotSelectAll(reverseSelection)
-            else:
-                self.parent.slotHomepageClicked(link)
-        #except Exception, e:
-            #print "KHTML Exception: " + str(e)
+                    self.parent.slotHomepageClicked(link)
+        except Exception, e:
+            print "Exception: " + str(e)
