@@ -9,11 +9,15 @@ import dbus.mainloop.qt3
 from qt import *
 
 def click_handler(id, title):
-    print "Clicked: %s" % title
+    global notifyid
 
-    print "Quiting successfully."
-    global loop
-    loop.quit()
+    # if the notification is the one that we created
+    if notifyid == id:
+        print "Clicked: %d, %s" % (id, title)
+
+        print "Quiting successfully."
+        global loop
+        loop.quit()
 
 def emit_signal():
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
@@ -26,8 +30,17 @@ def emit_signal():
         #object.connect_to_signal("NotificationClosed", click_handler, dbus_interface="org.freedesktop.Notifications")
         object.connect_to_signal("ActionInvoked", click_handler, dbus_interface="org.freedesktop.Notifications")
 
-        iface.Notify("package-manager", 123, "aaa", "Summary", "Body", ["Dugme", "Dugme","Dugme2","Dugme2" ], [], 10000)
-        print "Notify() invoked..."
+        global notifyid
+        notifyid = iface.Notify("package-manager", # application name
+                     123,               # id
+                     "aaa",             # icon
+                     "Summary",         # header of notification
+                     "Body",            # message of notification
+                     ["Dugme", "Dugme","Dugme2","Dugme2" ], # list of buttons as pairs of identifier and title
+                     [],                # hints 
+                     10000)             # timeout in msec
+
+        print "Notify() invoked...\n Notifyid: %s" % notifyid
 
         global loop
         QTimer.singleShot(5000, loop.quit)
@@ -38,7 +51,6 @@ def emit_signal():
         sys.exit(1)
 
 if __name__ == '__main__':
-
 
     global loop
     loop = QApplication(sys.argv)
