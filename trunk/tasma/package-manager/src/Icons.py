@@ -13,8 +13,8 @@
 import os
 from kdecore import KGlobal, KIcon
 
-def loadIcon(name, group=KIcon.Desktop):
-    return KGlobal.iconLoader().loadIcon(name, group)
+def loadIcon(name, group=KIcon.Desktop, size=0):
+    return KGlobal.iconLoader().loadIcon(name, group, size)
 
 def getIconPath(icon, group=KIcon.Desktop):
     packageIconPath = KGlobal.iconLoader().iconPath("package", group)
