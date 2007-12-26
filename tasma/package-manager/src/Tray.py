@@ -18,7 +18,8 @@ from kdecore import *
 
 import pisi
 
-from BalloonMessage import *
+from Notifier import *
+from Icons import *
 
 ID_TRAY_INTERVAL_CHECK=30
 
@@ -60,11 +61,12 @@ class Tray(KSystemTray):
         if not len(upgrades) or not newUpgrades:
             return
 
-        icon = KGlobal.iconLoader().loadIcon("package-manager", KIcon.Desktop, 48)
+        icon = getIconPath("package-manager")
         message = i18n("There are <b>%1</b> updates available!").arg(len(upgrades))
-        self.popup = BalloonMessage(self, icon, message)
+        header = i18n("Updates Available!")
+
         pos = self.mapToGlobal(self.pos())
-        self.popup.setAnchor(pos)
+        self.popup = Notifier(self, icon, header, message, (pos.x(), pos.y()))
         self.popup.show()
 
     def updateInterval(self, min):
