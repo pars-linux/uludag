@@ -518,7 +518,7 @@ def connectionInfo(name=None):
 
 def getAuthentication(name):
     dev = Dev(name, True)
-    return (name, dev.authmode, dev.user, dev.password)
+    return (dev.authmode, dev.user, dev.password)
 
 def kernelEvent(data):
     type, dir = data.split("@", 1)

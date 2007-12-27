@@ -138,13 +138,17 @@
             <arg name="state" type="s" direction="in"/>
         </method>
         <method name="connections">
-            <arg name="connections" type="as" direction="in"/>
+            <arg name="connections" type="as" direction="out"/>
         </method>
         <method name="connectionInfo">
             <arg name="name" type="s" direction="in"/>
+            <arg name="info" type="{ss}" direction="out"/>
         </method>
         <method name="getAuthentication">
             <arg name="name" type="s" direction="in"/>
+            <arg name="mode" type="s" direction="out"/>
+            <arg name="username" type="s" direction="out"/>
+            <arg name="password" type="s" direction="out"/>
         </method>
         <method name="kernelEvent">
             <arg name="data" type="s" direction="in"/>

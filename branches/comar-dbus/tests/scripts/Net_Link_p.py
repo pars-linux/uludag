@@ -409,4 +409,4 @@ def connectionInfo(name=None):
 
 def getAuthentication(name):
     dev = Dev(name)
-    return (name, dev.authmode, dev.user, dev.password)
+    return (dev.authmode, dev.user, dev.password)
