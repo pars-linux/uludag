@@ -23,7 +23,7 @@ class Notifier:
         except dbus.DBusException:
             traceback.print_exc()
 
-        if not pos:
+        if not pos or pos[0] < 0 or pos[1] < 0:
             self.hints = {}
         else:
             self.hints= {"x": pos[0], "y": pos[1]}
@@ -33,12 +33,11 @@ class Notifier:
         self.msg = msg
 
     def show(self):
-        self.notifyid = self.iface.Notify("package-manager", # application name
-                         0,               # replaces id
+        self.notifyid = self.iface.Notify("package-manager",
+                         0,
                          "file://%s" % self.icon,
-                         self.header,         # header of notification
-                         self.msg,            # message of notification
-                         ["showupdates", str(i18n("Show Updates")), "ignore", str(i18n("Ignore"))], # list of buttons as pairs of identifier and title
+                         unicode(self.header),
+                         unicode(self.msg),
+                         ["showupdates", unicode(i18n("Show Updates")), "ignore", unicode(i18n("Ignore"))],
                          self.hints,
                          0)
-

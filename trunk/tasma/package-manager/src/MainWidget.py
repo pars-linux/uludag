@@ -216,14 +216,6 @@ class MainApplicationWidget(QWidget):
         self.updateStatusBar()
         Globals.setNormalCursor()
 
-#############################
-
-        icon = str(getIconPath("package-manager"))
-        message = str(i18n("There are <b>%1</b> updates available!").arg(5))
-        header = str(i18n("Updates Available!"))
-        self.popup = Notifier(icon, header, message)
-        self.popup.show()
-
     # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
         Globals.setWaitCursor()
