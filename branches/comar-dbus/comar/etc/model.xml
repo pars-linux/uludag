@@ -272,4 +272,23 @@
             <arg name="kernel_version" type="s" direction="in"/>
         </method>
     </interface>
+    <interface name="Net.Stack">
+        <method name="getNameServers">
+            <arg name="servers" type="as" direction="out"/>
+        </method>
+        <method name="setNameServers">
+            <arg name="nameservers" type="as" direction="in"/>
+            <arg name="searchdomain" type="s" direction="in"/>
+        </method>
+        <method name="useNameServers">
+            <arg name="nameservers" type="as" direction="in"/>
+            <arg name="searchdomain" type="s" direction="in"/>
+        </method>
+        <method name="getHostName">
+            <arg name="hostname" type="as" direction="out"/>
+        </method>
+        <method name="setHostName">
+            <arg name="hostname" type="as" direction="in"/>
+        </method>
+    </interface>
 </comarModel>
