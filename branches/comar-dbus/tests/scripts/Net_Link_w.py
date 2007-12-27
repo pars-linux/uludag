@@ -315,11 +315,8 @@ class Dev:
                 srvs = []
         else:
             srvs = [ self.nameserver ]
-        # This should be replaced with internal call at some point
-        import comar
-        com = comar.Link()
-        com.Net.Stack.useNameServers(nameservers="\n".join(srvs), searchdomain=self.ifc.autoNameSearch())
-        com.read_cmd()
+        # Use nameservers
+        call("baselayout", "Net.Stack", "useNameServers", (srvs, self.ifc.autoNameSearch()))
     
     def up(self):
         ifc = self.ifc
