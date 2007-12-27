@@ -20,7 +20,7 @@
 #include "log.h"
 #include "utility.h"
 
-#define CHARS_APP "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+"
+#define CHARS_APP "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_"
 #define CHARS_MODEL "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz."
 
 //! Database init function

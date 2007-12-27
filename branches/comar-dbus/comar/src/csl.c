@@ -147,7 +147,6 @@ static PyMethodDef methods[] = {
     { "call", c_call, METH_VARARGS, "Make a syncronous comar call" },
     { "notify", c_notify, METH_VARARGS, "Emits a signal" },
     { "fail", c_fail, METH_VARARGS, "Abort script" },
-    //{ "_", c_i18n, METH_VARARGS, "Return localized text from a dictionary" },
     { NULL, NULL, 0, NULL }
 };
 
