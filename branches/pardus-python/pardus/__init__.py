@@ -12,11 +12,16 @@
 
 __version__ = "0.2"
 
-__all__ = ["dirutils",
+__all__ = ["csapi",
+           "deviceutils",
            "diskutils",
            "fileutils",
            "grubutils",
+           "iniutils",
+           "netutils",
+           "netfilterutils",
            "procutils",
+           "shellutils",
            "strutils",
            "sysutils",
            "xorg"]
