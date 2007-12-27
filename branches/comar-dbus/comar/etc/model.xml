@@ -229,4 +229,47 @@
             <arg name="zone" type="s" direction="out"/>
         </method>
     </interface>
+    <interface name="Boot.Modules">
+        <method name="listAvailable">
+            <arg name="modules" type="as" direction="out"/>
+        </method>
+        <method name="listLoaded">
+            <arg name="modules" type="a{ss}" direction="out"/>
+        </method>
+        <method name="setOptions">
+            <arg name="module" type="s" direction="in"/>
+            <arg name="options" type="s" direction="in"/>
+        </method>
+        <method name="load">
+            <arg name="module" type="s" direction="in"/>
+            <arg name="options" type="s" direction="in"/>
+        </method>
+        <method name="unload">
+            <arg name="module" type="s" direction="in"/>
+        </method>
+        <method name="listAutoload">
+            <arg name="kernel_version" type="s" direction="in"/>
+            <arg name="modules" type="as" direction="out"/>
+        </method>
+        <method name="addAutoload">
+            <arg name="module" type="s" direction="in"/>
+            <arg name="kernel_version" type="s" direction="in"/>
+        </method>
+        <method name="removeAutoload">
+            <arg name="module" type="s" direction="in"/>
+            <arg name="kernel_version" type="s" direction="in"/>
+        </method>
+        <method name="listBlacklist">
+            <arg name="modules" type="as" direction="out"/>
+        </method>
+        <method name="addBlacklist">
+            <arg name="module" type="s" direction="in"/>
+        </method>
+        <method name="removeBlacklist">
+            <arg name="module" type="s" direction="in"/>
+        </method>
+        <method name="updateModules">
+            <arg name="kernel_version" type="s" direction="in"/>
+        </method>
+    </interface>
 </comarModel>
