@@ -10,6 +10,8 @@
 
 ./hav.py register net_tools Net.Link scripts/Net_Link_n.py
 
+./hav.py register ppp Net.Link scripts/Net_Link_p.py
+
 ./hav.py register baselayout Net.Stack scripts/Net_Stack.py
 
 ./hav.py register baselayout User.Manager scripts/User_Manager.py
