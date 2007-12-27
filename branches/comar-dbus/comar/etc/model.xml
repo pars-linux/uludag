@@ -1,4 +1,9 @@
 <comarModel>
+    <interface name="org.freedesktop.DBus.Introspectable">
+        <method name="introspect">
+            <arg name="xml_data" type="s" direction="out"/>
+        </method>
+    </interface>
     <interface name="Comar">
         <method name="register">
             <arg name="application" type="s" direction="in"/>
