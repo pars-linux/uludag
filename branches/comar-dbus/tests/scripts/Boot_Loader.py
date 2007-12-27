@@ -2,13 +2,12 @@ import os
 import os.path
 import shutil
 
-import pardus.diskutils
-
-from comar.utility import FileLock
+from pardus.diskutils import EDD
+from pardus.fileutils import FileLock
+from pardus.grubutils import grubEntry, grubCommand, grubConf
 
 # FIXME: Move this back into CSL parser
 _ = lambda x: x["tr"]
-
 
 # l10n
 
@@ -96,202 +95,6 @@ SYSTEMS = {
 
 # Grub parser
 
-class grubCommand:
-    """Grub menu command"""
-    
-    def __init__(self, key, options=[], value=""):
-        self.key = key
-        self.options = options
-        self.value = value
-    
-    def __str__(self):
-        if self.options:
-            return "%s %s %s" % (self.key, " ".join(self.options), self.value)
-        else:
-            return "%s %s" % (self.key, self.value)
-
-class grubEntry:
-    """Grub menu entry"""
-    
-    def __init__(self, title):
-        self.title = title
-        self.commands = []
-    
-    def listCommands(self):
-        """Returns list of commands used in entry"""
-        return map(lambda x: x.key, self.commands)
-    
-    def setCommand(self, key, value, opts=[], append=False):
-        """Adds a new command to entry. Optional append argument allows addition of multiple commands like 'map'."""
-        if not append:
-            self.unsetCommand(key)
-        self.commands.append(grubCommand(key, opts, value))
-    
-    def getCommand(self, key, only_last=True):
-        """Returns command object. If only_last is False, returns a list of commands named 'key'."""
-        commands = filter(lambda x: x.key == key, self.commands)
-        if only_last:
-            try:
-                return commands[-1]
-            except IndexError:
-                return None
-        return commands
-    
-    def unsetCommand(self, key):
-        """Removes 'key' from commands."""
-        self.commands = filter(lambda x: x.key != key, self.commands)
-    
-    def __str__(self):
-        conf = []
-        conf.append("title %s" % self.title)
-        for command in self.commands:
-            conf.append(str(command))
-        return "\n".join(conf)
-
-class grubConf:
-    """Grub configuration class."""
-    
-    def __init__(self):
-        self.options = {}
-        self.entries = []
-        self.header = []
-        self.index = 0
-    
-    def setHeader(self, header):
-        """Sets grub.conf header"""
-        self.header = header.split("\n")
-    
-    def __parseLine__(self, line):
-        """Parses single grub.conf line and returns a tupple of key, value and options."""
-        line = line.strip()
-        try:
-            key, data = line.split(" ", 1)
-        except ValueError:
-            key = line
-            data = ""
-        
-        key = key.strip(" =")
-        data = data.strip(" =")
-        
-        options = []
-        values = []
-        
-        option = True
-        for x in data.split():
-            if option and x.startswith("--"):
-                options.append(x)
-            else:
-                values.append(x)
-                option = False
-        
-        return key, " ".join(values), options
-
-    def parseConf(self, filename):
-        """Parses a grub.conf file"""
-        self.options = {}
-        self.entries = []
-        
-        option = True
-        entry = None
-        
-        for line in file(filename):
-            if not line.strip():
-                continue
-            key, value, opts = self.__parseLine__(line)
-            
-            if key == "title":
-                option = False
-                if entry:
-                    self.entries.append(entry)
-                    entry = None
-            
-            if option:
-                self.options[key] = value
-            else:
-                if key == "title":
-                    entry = grubEntry(value)
-                else:
-                    entry.setCommand(key, value, opts, append=True)
-        
-        if entry:
-            self.entries.append(entry)
-        
-        default = os.path.join(os.path.dirname(filename), "default")
-        if os.path.exists(default):
-            try:
-                self.index = int(file(default).read().split("\0")[0])
-            except ValueError:
-                self.index = 0
-    
-    def getSavedIndex(self):
-        """Return last booted entry index."""
-        return self.index
-    
-    def __str__(self):
-        conf = []
-        if self.header:
-            for h in self.header:
-                conf.append("# %s" % h)
-            conf.append("")
-        if self.options:
-            for key, value in self.options.iteritems():
-                line = "%s %s" % (key, value)
-                conf.append(line)
-            conf.append("")
-        for index, entry in enumerate(self.entries):
-            if entry.getCommand("savedefault"):
-                entry.setCommand("savedefault", str(index))
-            conf.append(str(entry))
-            conf.append("")
-        return "\n".join(conf)
-    
-    def write(self, filename):
-        """Writes grub configuration to file."""
-        file(filename, "w").write(str(self))
-    
-    def listOptions(self):
-        """Returns list of options."""
-        return self.options.keys()
-    
-    def setOption(self, key, value):
-        """Sets an option."""
-        self.options[key] = value
-    
-    def unsetOption(self, key):
-        """Unsets an option."""
-        del self.options[key]
-    
-    def getOption(self, key, default=""):
-        """Returns value of an option."""
-        return self.options.get(key, default)
-    
-    def getAllOptions(self):
-        """Returns all options."""
-        return ["%s %s" % (key, value) for key, value in self.options.items()]
-    
-    def listEntries(self):
-        """Returns a list of entries."""
-        return map(lambda x: x.title, self.entries)
-    
-    def addEntry(self, entry, index=-1):
-        """Adds an entry object."""
-        if index == -1:
-            self.entries.append(entry)
-        else:
-            self.entries.insert(index, entry)
-    
-    def getEntry(self, index):
-        """Returns an entry object."""
-        return self.entries[index]
-    
-    def indexOf(self, entry):
-        """Returns index of an entry object."""
-        return self.entries.index(entry)
-    
-    def removeEntry(self, entry):
-        """Removes an entry object."""
-        self.entries.remove(entry)
-
 class grubParser:
     def __init__(self, _dir, write=False, timeout=-1):
         self.dir = _dir
@@ -337,7 +140,7 @@ def getDeviceMap():
     import subprocess
     subprocess.call(["/sbin/modprobe", "edd"])
     
-    edd = pardus.diskutils.EDD()
+    edd = EDD()
     mbr_list = edd.list_mbr_signatures()
     edd_list = edd.list_edd_signatures()
     
@@ -676,7 +479,6 @@ def setOption(option, value):
         grub.config.setOption("splashimage", "%s%s" % (root_grub, value))
     grub.release()
     notify("Changed", "option")
-    return True
 
 def listEntries():
     grub = grubParser(GRUB_DIR, write=False, timeout=TIMEOUT)
@@ -775,7 +577,6 @@ def updateKernelEntry(version, root):
     
     grub.release()
     notify("Changed", "entry")
-    return True
 
 def removeEntry(index, title, uninstall):
     grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
@@ -794,7 +595,7 @@ def removeEntry(index, title, uninstall):
                 default_entry = grub.config.entries[default]
         if uninstall == "yes":
             os_entry = parseGrubEntry(entry)
-            if os_entry["os_type"]in ["linux", "xen"] and os_entry["root"] == getRoot():
+            if os_entry["os_type"] in ["linux", "xen"] and os_entry["root"] == getRoot():
                 kernel_version = os_entry["kernel"].split("kernel-")[1]
                 removeKernel(kernel_version)
         grub.config.removeEntry(entry)
@@ -806,7 +607,6 @@ def removeEntry(index, title, uninstall):
         notify("Changed", "entry")
     else:
         fail(FAIL_NOENTRY)
-    return True
 
 def listUnused():
     grub = grubParser(GRUB_DIR, write=False, timeout=TIMEOUT)
@@ -838,7 +638,6 @@ def removeUnused(version):
     if not version or version not in listUnused():
         fail(FAIL_KERNEL_IN_USE % version)
     removeKernel(version)
-    return
 
 def setEntry(title, os_type, root, kernel, initrd, options, default, index):
     grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
@@ -866,4 +665,3 @@ def setEntry(title, os_type, root, kernel, initrd, options, default, index):
     
     grub.release()
     notify("Changed", "entry")
-    return True
