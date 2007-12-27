@@ -58,15 +58,18 @@ class Tray(KSystemTray):
         upgrades = pisi.api.list_upgradable()
         newUpgrades = set(upgrades) - set(self.lastUpgrades)
         self.lastUpgrades = upgrades
-        if not len(upgrades) or not newUpgrades:
-            return
+        #if not len(upgrades) or not newUpgrades:
+        #    return
 
         icon = getIconPath("package-manager")
-        message = i18n("There are <b>%1</b> updates available!").arg(len(upgrades))
+        print icon
+        #message = i18n("There are <b>%1</b> updates available!").arg(len(upgrades))
+        # TESTING
+        message = i18n("There are <b>%1</b> updates available!").arg(5)
         header = i18n("Updates Available!")
 
         pos = self.mapToGlobal(self.pos())
-        self.popup = Notifier(self, icon, header, message, (pos.x(), pos.y()))
+        self.popup = Notifier(icon, header, message, (pos.x(), pos.y()))
         self.popup.show()
 
     def updateInterval(self, min):
