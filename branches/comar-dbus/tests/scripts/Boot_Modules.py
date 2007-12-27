@@ -15,6 +15,8 @@ TIMEOUT = 5.0
 
 # l10n
 
+_ = lambda x: x["tr"]
+
 FAIL_TIMEOUT = _({
     "en": "Request timed out. Try again later.",
     "tr": "Talep zaman aşımına uğradı. Daha sonra tekrar deneyin.",
