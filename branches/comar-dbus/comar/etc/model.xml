@@ -159,4 +159,51 @@
             <arg name="changed_item" type="s"/>
         </signal>
     </interface>
+    <interface name="User.Manager">
+        <method name="userList">
+            <arg name="users" type="a(iss)" direction="out"/>
+        </method>
+        <method name="userInfo">
+            <arg name="uid" type="i" direction="in"/>
+            <arg name="name" type="s" direction="out"/>
+            <arg name="realname" type="s" direction="out"/>
+            <arg name="gid" type="i" direction="out"/>
+            <arg name="homedir" type="s" direction="out"/>
+            <arg name="shell" type="s" direction="out"/>
+            <arg name="groups" type="as" direction="out"/>
+        </method>
+        <method name="addUser">
+            <arg name="uid" type="i" direction="in"/>
+            <arg name="name" type="s" direction="in"/>
+            <arg name="realname" type="s" direction="in"/>
+            <arg name="homedir" type="s" direction="in"/>
+            <arg name="shell" type="s" direction="in"/>
+            <arg name="password" type="s" direction="in"/>
+            <arg name="groups" type="as" direction="in"/>
+            <arg name="uid" type="i" direction="out"/>
+        </method>
+        <method name="setUser">
+            <arg name="uid" type="i" direction="in"/>
+            <arg name="realname" type="s" direction="in"/>
+            <arg name="homedir" type="s" direction="in"/>
+            <arg name="shell" type="s" direction="in"/>
+            <arg name="password" type="s" direction="in"/>
+            <arg name="groups" type="as" direction="in"/>
+        </method>
+        <method name="deleteUser">
+            <arg name="uid" type="i" direction="in"/>
+            <arg name="deletefiles" type="b" direction="in"/>
+        </method>
+        <method name="groupList">
+            <arg name="groups" type="a(is)" direction="out"/>
+        </method>
+        <method name="addGroup">
+            <arg name="gid" type="i" direction="in"/>
+            <arg name="name" type="s" direction="in"/>
+            <arg name="gid" type="i" direction="out"/>
+        </method>
+        <method name="deleteGroup">
+            <arg name="gid" type="i" direction="in"/>
+        </method>
+    </interface>
 </comarModel>
