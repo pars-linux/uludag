@@ -89,4 +89,74 @@
             <arg name="package" type="s"/>
         </signal>
     </interface>
+    <interface name="Net.Link">
+        <method name="linkInfo">
+            <arg name="info" type="{ss}" direction="out"/>
+        </method>
+        <method name="deviceList">
+            <arg name="devices" type="{ss}" direction="out"/>
+        </method>
+        <method name="scanRemote">
+            <arg name="device" type="s" direction="in"/>
+            <arg name="remotes" type="a{ss}" direction="out"/>
+        </method>
+        <method name="setConnection">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="device" type="s" direction="in"/>
+            <arg name="new" type="b" direction="out"/>
+        </method>
+        <method name="deleteConnection">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="new" type="b" direction="out"/>
+        </method>
+        <method name="setAddress">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="mode" type="s" direction="in"/>
+            <arg name="address" type="s" direction="in"/>
+            <arg name="mask" type="s" direction="in"/>
+            <arg name="gateway" type="s" direction="in"/>
+        </method>
+        <method name="setRemote">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="remote" type="s" direction="in"/>
+            <arg name="apmac" type="s" direction="in"/>
+        </method>
+        <method name="setNameService">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="namemode" type="s" direction="in"/>
+            <arg name="nameserver" type="s" direction="in"/>
+        </method>
+        <method name="setAuthentication">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="authmode" type="s" direction="in"/>
+            <arg name="user" type="s" direction="in"/>
+            <arg name="password" type="s" direction="in"/>
+            <arg name="key" type="s" direction="in"/>
+        </method>
+        <method name="setState">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="state" type="s" direction="in"/>
+        </method>
+        <method name="connections">
+            <arg name="connections" type="as" direction="in"/>
+        </method>
+        <method name="connectionInfo">
+            <arg name="name" type="s" direction="in"/>
+        </method>
+        <method name="getAuthentication">
+            <arg name="name" type="s" direction="in"/>
+        </method>
+        <method name="kernelEvent">
+            <arg name="data" type="s" direction="in"/>
+        </method>
+        <signal name="connectionChanged">
+            <arg name="changed_item" type="s"/>
+        </signal>
+        <signal name="stateChanged">
+            <arg name="changed_item" type="s"/>
+        </signal>
+        <signal name="deviceChanged">
+            <arg name="changed_item" type="s"/>
+        </signal>
+    </interface>
 </comarModel>
