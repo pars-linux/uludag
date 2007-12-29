@@ -28,7 +28,7 @@ def main():
     bus = dbus.SystemBus()
 
     try:
-        object = bus.get_object('tr.org.pardus.comar', '/system', introspect=False)
+        object = bus.get_object('tr.org.pardus.comar', '/', introspect=False)
         iface = dbus.Interface(object, 'tr.org.pardus.comar')
     except dbus.exceptions.DBusException, e:
         print 'Error:'
