@@ -198,21 +198,11 @@ dbus_introspection_methods(const char *path)
         // package node contains applications and models
         iks_insert_attrib(iks_insert(xml, "node"), "name", "package");
 
-        // system node contains Comar methods (register, remove, ...)
-        iks_insert_attrib(iks_insert(xml, "node"), "name", "system");
-
         // add standard interfaces
         model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
 
-        dbus_reply_str(iks_string(NULL, xml));
-        iks_delete(xml);
-    }
-    else if (strcmp(path, "/system") == 0) {
-        iks *xml = iks_new("node");
+        // add core interface
         model_get_iks("Comar", &xml);
-
-        // add standard interfaces
-        model_get_iks("org.freedesktop.DBus.Introspectable", &xml);
 
         dbus_reply_str(iks_string(NULL, xml));
         iks_delete(xml);
@@ -563,7 +553,7 @@ dbus_method_call()
         #ifdef HAVE_POLICYKIT
         if (dbus_policy_check(sender, interface, method)) {
         #endif
-            if (strcmp(path, "/system") == 0 && strcmp(interface, cfg_bus_name) == 0) {
+            if (strcmp(path, "/") == 0 && strcmp(interface, cfg_bus_name) == 0) {
                 dbus_comar_methods(method);
             }
             else if (strncmp(path, "/package/", strlen("/package/")) == 0) {
