@@ -331,7 +331,7 @@ def deviceList():
     iflist = {}
     for dev in modem_devices:
         if os.path.exists(dev):
-            iflist"modem:%s" % dev] =_device_info(dev)
+            iflist["modem:%s" % dev] =_device_info(dev)
     return iflist
 
 def scanRemote():
