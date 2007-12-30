@@ -1,5 +1,0 @@
-!default keycodes for most common notebooks (except for meteksan a4 harita metots)
-
-keycode 176 = XF86AudioRaiseVolume
-keycode 174 = XF86AudioLowerVolume
-keycode 160 = XF86AudioMute
