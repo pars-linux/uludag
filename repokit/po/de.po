@@ -1,17 +1,19 @@
+# translation of de.po to Deutsch
 # translation of de.po to
 # translation of repokit.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-02-20 20:48+0200\n"
-"PO-Revision-Date: 2007-06-19 17:10+0300\n"
-"Last-Translator: Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
-"Language-Team:  <http://liste.uludag.org.tr/pardus-translation-de/>\n"
+"PO-Revision-Date: 2007-12-31 06:17+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,11 +68,11 @@ msgstr "Laufzeit-Abhängigkeiten"
 
 #: src/repostats.py:316
 msgid "Required by (for building)"
-msgstr ""
+msgstr "Benötigt von (for building)"
 
 #: src/repostats.py:318
 msgid "Required by (for runtime)"
-msgstr ""
+msgstr "Benötigt von (für Laufzeit)"
 
 #: src/repostats.py:329
 #, python-format
@@ -113,7 +115,7 @@ msgstr "Aktionen"
 
 #: src/repostats.py:378
 msgid "Build files"
-msgstr ""
+msgstr "Build-Dateien"
 
 #: src/repostats.py:380
 msgid "Bug reports"
@@ -129,7 +131,7 @@ msgstr "Release Verlauf"
 
 #: src/repostats.py:385
 msgid "Patches"
-msgstr ""
+msgstr "Patches"
 
 #: src/repostats.py:423 src/repostats.py:580
 msgid "Packager"
@@ -137,7 +139,7 @@ msgstr "Paketler"
 
 #: src/repostats.py:430
 msgid "Maintained packages:"
-msgstr ""
+msgstr "Gewartete Pakete:"
 
 #: src/repostats.py:437
 msgid "Package updates:"
@@ -149,6 +151,8 @@ msgid ""
 "Cannot parse '%s':\n"
 "%s\n"
 msgstr ""
+"Kann nicht geparst werden '%s':\n"
+"%s\n"
 
 #: src/repostats.py:534
 msgid "Number of source packages"
@@ -176,23 +180,23 @@ msgstr "Installierte Grösse der Pakete"
 
 #: src/repostats.py:553
 msgid "Most patched:"
-msgstr ""
+msgstr "Am meisten gepatcht\t"
 
 #: src/repostats.py:563
 msgid "Longest build scripts:"
-msgstr ""
+msgstr "Längstes Build-Skript:"
 
 #: src/repostats.py:573
 msgid "Total file sizes by file type:"
-msgstr ""
+msgstr "Gesamte Dateigröße bei Dateitypen:"
 
 #: src/repostats.py:581
 msgid "Package count"
-msgstr ""
+msgstr "Paket-Anzahl"
 
 #: src/repostats.py:586
 msgid "Packagers (by package count)"
-msgstr ""
+msgstr "Paketler (bei Paket-Anzahl)"
 
 #: src/repostats.py:589
 msgid "Packagers (by name)"
@@ -208,15 +212,15 @@ msgstr "Zusammenfassung"
 
 #: src/repostats.py:608
 msgid "Scanning source repository...\n"
-msgstr ""
+msgstr "Quell-Depots werden gescannt...\n"
 
 #: src/repostats.py:612
 msgid "Scanning binary packages...\n"
-msgstr ""
+msgstr "Binär-Pakete werden gescannt...\n"
 
 #: src/repostats.py:626
 msgid "Usage: repostats.py [OPTIONS] source-repo-path [binary-repo-path]\n"
-msgstr ""
+msgstr "Anwendung: repostats.py [OPTIONEN] source-repo-path [binäre Depot-Pfadangabe]\n"
 
 #: src/repostats.py:627
 msgid "HTML output directory."
