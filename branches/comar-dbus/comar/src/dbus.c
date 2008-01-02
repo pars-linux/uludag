@@ -543,11 +543,11 @@ dbus_method_call()
 
     csl_init();
 
-    if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
-        dbus_introspection_methods(path);
+    if (!interface || !path || !method) {
+        dbus_reply_error("dbus", "missing", "Missing interface, path or method.");
     }
-    else if (strcmp(interface, "org.freedesktop.DBus.Peer") == 0) {
-        // dbus_peer_methods(path);
+    else if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
+        dbus_introspection_methods(path);
     }
     else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
         #ifdef HAVE_POLICYKIT
