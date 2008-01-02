@@ -79,7 +79,7 @@ class DiskList(QtGui.QWidget):
     def addDevice(self, dev):
 
         def sizePix(mb,total):
-            return (self.toolBox.width() * total) / mb
+            return (self.toolBox.width() * mb) / total
 
         def sizeStr(mb):
             if mb > 1024:
@@ -124,18 +124,9 @@ class DiskList(QtGui.QWidget):
                 #name = _("Free")
                 continue
             name = _("Partition %d") % part.getMinor()
-            parent_item.addPartition(name,part)
+            parent_item.addPartition(name,part,sizePix(part.getMB(),dev.getTotalMB()))
 
-            # use the first found "linux-swap" partition as swap (# 1049)
-            if part.getFSName() == "linux-swap(new)" and not self.autoSwapSelected:
-                ctx.partrequests.append(
-                    request.MountRequest(part, parttype.swap))
-                ctx.partrequests.append(
-                    request.FormatRequest(part, parttype.swap))
-                ctx.partrequests.append(
-                    request.LabelRequest(part, parttype.swap))
-                self.autoSwapSelected = True
-
+        d.updateSizes()
 
 class DiskItem(QtGui.QWidget):
     # storage.Device or partition.Partition
@@ -158,18 +149,15 @@ class DiskItem(QtGui.QWidget):
         self.partitions = []
         self.name = name
 
-    def addPartition(self,name=None,data=None):
+    def addPartition(self,name=None,data=None,_size=None):
         partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
         partition.setStyleSheet("background-color:lightblue")
-        partition.setMinimumSize(QSize(100,0))
         partition.setFocusPolicy(Qt.NoFocus)
-
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Fixed)
+        partition.setSizePolicy(sizePolicy)
         self.splinter.addWidget(partition)
-
-        policy = partition.sizePolicy();
-        policy.setHorizontalStretch(100);
-        partition.setSizePolicy(policy);
-        self.partitions.append({"name":name,"data":data})
+        self.partitions.append({"name":name,"data":data,"size":_size})
+        ctx.debugger.log("Current Size : %s" % partition.width())
         #{"size":part.getSizeStr(),
         # "installType":"",
         # "filesystem":part.getFSName()}
@@ -179,6 +167,13 @@ class DiskItem(QtGui.QWidget):
 
     def getData(self):
         return self._data
+
+    def updateSizes(self):
+        i=0
+        for part in self.partitions:
+            self.splinter.widget(i).resize(part['size'],0)
+            self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
+            i+=1
 
 if __name__ == "__main__":
     import sys
