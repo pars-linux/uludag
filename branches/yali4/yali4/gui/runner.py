@@ -35,8 +35,8 @@ import ScrKeyboard
 import ScrAdmin
 import ScrUsers
 import ScrPartitionAuto
+import ScrPartitionManual
 
-#import ScrPartitionManual
 #import ScrInstall
 #import ScrBootloader
 #import ScrGoodbye
@@ -57,7 +57,8 @@ class Runner:
                         ScrKeyboard,
                         ScrAdmin,
                         ScrUsers,
-                        ScrPartitionAuto
+                        ScrPartitionAuto,
+                        ScrPartitionManual
                        ]
 
         """

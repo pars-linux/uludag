@@ -239,7 +239,7 @@ class Device:
             else: return 1
 
         l = self.getPartitions()
-        l.sort(comp)
+        l.sort(comp,reverse=True)
         return l
 
     ##

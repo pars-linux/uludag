@@ -23,14 +23,15 @@ import yali4.partitiontype as parttype
 from yali4.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
 #from yali4.gui.InformationWindow import InformationWindow
 from yali4.gui.GUIException import *
+from yali4.gui.DiskWidgets import *
 from yali4.gui.ScreenWidget import ScreenWidget
-from yali4.gui.PartListImpl import PartList
-from yali4.gui.PartEditImpl import PartEdit, \
-    editState, createState, deleteState, resizeState
+#from yali4.gui.PartListImpl import PartList
+#from yali4.gui.PartEditImpl import PartEdit, \
+#    editState, createState, deleteState, resizeState
 
 ##
 # Partitioning screen.
-class Widget(QGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Manual Partitioning')
     desc = _('You can easily configure your partitions..')
     help = _('''
@@ -75,14 +76,15 @@ about disk partitioning.
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
 
-        self.partlist = PartList(self)
-        self.partedit = PartEdit(self)
-        self.partedit.hide()
+        self.partlist = DiskList(self)
+
         self.dialog = None
 
-        vbox = QVBoxLayout(self)
+        vbox = QtGui.QVBoxLayout(self)
         vbox.addWidget(self.partlist)
+        self.partlist.show()
 
+        """
         self.connect(self.partlist, PYSIGNAL("signalCreate"),
                      self.slotCreatePart)
 
@@ -100,12 +102,10 @@ about disk partitioning.
 
         self.connect(self.partedit, PYSIGNAL("signalCanceled"),
                      self.slotCanceled)
-
+        """
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
-        ctx.screens.disableNext()
+        ctx.mainScreen.disableNext()
         self.partlist.update()
 
     ##
@@ -115,6 +115,7 @@ about disk partitioning.
         ctx.screens.processEvents()
         return True
 
+    """
     def slotCreatePart(self, parent, d):
         self.partedit.setState(createState, d)
         self.dialog = Dialog(_("Create Partition"), self.partedit, self)
@@ -141,5 +142,7 @@ about disk partitioning.
 
     def slotCanceled(self):
         self.dialog.reject()
+
+    """
 
 

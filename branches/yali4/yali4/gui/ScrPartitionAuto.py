@@ -93,14 +93,14 @@ about disk partitioning.
     def execute(self):
         ctx.installData.autoPartDev = None
 
-        if self.accept_auto.isChecked():
+        if self.ui.accept_auto.isChecked():
             ctx.installData.autoPartDev = self.device
             ctx.debugger.log("Automatic Partition selected..")
 
             # skip next screen()
             # We pass the Manual Partitioning screen
-            num = ctx.screens.getCurrentIndex() + 1
-            ctx.screens.goToScreen(num)
+            num = ctx.mainScreen.getCurrentIndex() + 1
+            ctx.mainScreen.goToScreen(num)
 
         return True
 
