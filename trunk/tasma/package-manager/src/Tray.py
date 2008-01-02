@@ -24,7 +24,7 @@ from Icons import *
 ID_TRAY_INTERVAL_CHECK=30
 
 class Tray(KSystemTray):
-    def __init__(self, parent=None):
+    def __init__(self, parent):
         KSystemTray.__init__(self, parent)
         self.parent = parent
         self.icon = self.loadIcon("package-manager")
@@ -44,7 +44,10 @@ class Tray(KSystemTray):
         self.popupMenu.insertSeparator()
         self.id = self.popupMenu.insertItem(i18n("All"))
 
+        self.notifier = Notifier()
+
         self.connect(self.popupMenu, SIGNAL("activated(int)"), self.slotUpdateRepo)
+        self.connect(self.notifier, PYSIGNAL("showUpgrades"), self.showUpgrades)
 
     def slotUpdateRepo(self, id):
         if id == self.id:
@@ -68,9 +71,24 @@ class Tray(KSystemTray):
         message = i18n("There are <b>%1</b> updates available!").arg(5)
         header = i18n("Updates Available!")
 
-        pos = self.mapToGlobal(self.pos())
-        self.popup = Notifier(icon, header, message, (pos.x(), pos.y()))
-        self.popup.show()
+        self.notifier.show(icon, header, message, self.getPos())
+
+    def showUpgrades(self):
+        self.parent.mainwidget.trayUpgradeSwitch()
+        self.parent.show()
+
+    def getPos(self):
+        pt = self.mapToGlobal(QPoint(0,0))
+        print "mapToGlobal(): %d, %d" % (pt.x(), pt.y())
+        screen = QDesktopWidget()
+        incr = 0
+        if pt.y() < screen.screenGeometry().height()/2 and pt.y() < self.height():
+            incr = self.width() - 4
+        elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
+            incr = 0
+        else:
+            incr = self.width() / 2
+        return (pt.x() + self.height()/2, pt.y() + incr)
 
     def updateInterval(self, min):
         # minutes to milliseconds conversion
