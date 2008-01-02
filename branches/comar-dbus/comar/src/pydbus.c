@@ -339,7 +339,13 @@ dbus_py_get_item(DBusMessageIter* iter)
     int type = dbus_message_iter_get_arg_type(iter);
 
     switch (type) {
+        case DBUS_TYPE_BYTE:
+            dbus_message_iter_get_basic(iter, &obj.y);
+            ret = Py_BuildValue("i", (int)obj.y);
+            break;
         case DBUS_TYPE_STRING:
+        case DBUS_TYPE_OBJECT_PATH:
+        case DBUS_TYPE_SIGNATURE:
             dbus_message_iter_get_basic(iter, &obj.s);
             ret = Py_BuildValue("s", obj.s);
             // ret = Py_BuildValue("N", PyUnicode_DecodeUTF8(obj.s, strlen(obj.s), NULL));
@@ -384,9 +390,6 @@ dbus_py_get_item(DBusMessageIter* iter)
                 dbus_message_iter_recurse(iter, &sub);
                 ret = dbus_py_get_dict(&sub);
             }
-            else if (type == DBUS_TYPE_BYTE) {
-                // FIXME
-            }
             else {
                 dbus_message_iter_recurse(iter, &sub);
                 ret = dbus_py_get_list(&sub);
@@ -400,11 +403,6 @@ dbus_py_get_item(DBusMessageIter* iter)
             dbus_message_iter_recurse(iter, &sub);
             type = dbus_message_iter_get_arg_type(&sub);
             ret = dbus_py_get_item(&sub);
-            break;
-        case DBUS_TYPE_BYTE:
-        case DBUS_TYPE_SIGNATURE:
-        case DBUS_TYPE_OBJECT_PATH:
-            // FIXME
             break;
     }
     return ret;
