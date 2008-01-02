@@ -61,14 +61,11 @@ class Tray(KSystemTray):
         upgrades = pisi.api.list_upgradable()
         newUpgrades = set(upgrades) - set(self.lastUpgrades)
         self.lastUpgrades = upgrades
-        #if not len(upgrades) or not newUpgrades:
-        #    return
+        if not len(upgrades) or not newUpgrades:
+            return
 
         icon = getIconPath("package-manager")
-        print icon
-        #message = i18n("There are <b>%1</b> updates available!").arg(len(upgrades))
-        # TESTING
-        message = i18n("There are <b>%1</b> updates available!").arg(5)
+        message = i18n("There are <b>%1</b> updates available!").arg(len(upgrades))
         header = i18n("Updates Available!")
 
         self.notifier.show(icon, header, message, self.getPos())
@@ -79,7 +76,6 @@ class Tray(KSystemTray):
 
     def getPos(self):
         pt = self.mapToGlobal(QPoint(0,0))
-        print "mapToGlobal(): %d, %d" % (pt.x(), pt.y())
         screen = QDesktopWidget()
         incr = 0
         if pt.y() < screen.screenGeometry().height()/2 and pt.y() < self.height():
