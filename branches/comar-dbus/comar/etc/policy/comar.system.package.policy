@@ -8,6 +8,7 @@
     <description>Execute post install script of a package</description>
     <message>System policy prevents executing post install script.</message>
     <defaults>
+      <allow_any>no</allow_any>
       <allow_inactive>no</allow_inactive>
       <allow_active>no</allow_active>
     </defaults>
@@ -16,6 +17,7 @@
     <description>Execute pre remove script of a package</description>
     <message>System policy prevents executing pre remove script.</message>
     <defaults>
+      <allow_any>no</allow_any>
       <allow_inactive>no</allow_inactive>
       <allow_active>no</allow_active>
     </defaults>

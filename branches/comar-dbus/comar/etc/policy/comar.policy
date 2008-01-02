@@ -8,16 +8,18 @@
     <description>Register new scripts</description>
     <message>System policy prevents registering scripts.</message>
     <defaults>
-      <allow_inactive>no</allow_inactive>
-      <allow_active>no</allow_active>
+      <allow_any>yes</allow_any>
+      <allow_active>yes</allow_active>
+      <allow_inactive>yes</allow_inactive>
     </defaults>
   </action>
   <action id="tr.org.pardus.comar.remove">
     <description>Remove application</description>
     <message>System policy prevents removing applications.</message>
     <defaults>
-      <allow_inactive>no</allow_inactive>
-      <allow_active>no</allow_active>
+      <allow_any>yes</allow_any>
+      <allow_active>yes</allow_active>
+      <allow_inactive>yes</allow_inactive>
     </defaults>
   </action>
   <action id="tr.org.pardus.comar.listapplications">

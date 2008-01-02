@@ -37,7 +37,7 @@
         <method name="getOptions">
             <arg name="options" type="{ss}" direction="out"/>
         </method>
-        <method name="setOption">
+        <method name="setOption" access_label="set">
             <arg name="option" type="s" direction="in"/>
             <arg name="value" type="s" direction="in"/>
         </method>
@@ -48,7 +48,7 @@
             <arg name="version" type="s" direction="in"/>
             <arg name="root" type="s" direction="in"/>
         </method>
-        <method name="setEntry">
+        <method name="setEntry" access_label="set">
             <arg name="title" type="s" direction="in"/>
             <arg name="os_type" type="s" direction="in"/>
             <arg name="root" type="s" direction="in"/>
@@ -90,17 +90,17 @@
         </signal>
     </interface>
     <interface name="Net.Link">
-        <method name="linkInfo">
+        <method name="linkInfo" access_label="get">
             <arg name="info" type="{ss}" direction="out"/>
         </method>
-        <method name="deviceList">
+        <method name="deviceList" access_label="get">
             <arg name="devices" type="{ss}" direction="out"/>
         </method>
         <method name="scanRemote">
             <arg name="device" type="s" direction="in"/>
             <arg name="remotes" type="a{ss}" direction="out"/>
         </method>
-        <method name="setConnection">
+        <method name="setConnection" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="device" type="s" direction="in"/>
             <arg name="new" type="b" direction="out"/>
@@ -109,42 +109,42 @@
             <arg name="name" type="s" direction="in"/>
             <arg name="new" type="b" direction="out"/>
         </method>
-        <method name="setAddress">
+        <method name="setAddress" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="mode" type="s" direction="in"/>
             <arg name="address" type="s" direction="in"/>
             <arg name="mask" type="s" direction="in"/>
             <arg name="gateway" type="s" direction="in"/>
         </method>
-        <method name="setRemote">
+        <method name="setRemote" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="remote" type="s" direction="in"/>
             <arg name="apmac" type="s" direction="in"/>
         </method>
-        <method name="setNameService">
+        <method name="setNameService" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="namemode" type="s" direction="in"/>
             <arg name="nameserver" type="s" direction="in"/>
         </method>
-        <method name="setAuthentication">
+        <method name="setAuthentication" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="authmode" type="s" direction="in"/>
             <arg name="user" type="s" direction="in"/>
             <arg name="password" type="s" direction="in"/>
             <arg name="key" type="s" direction="in"/>
         </method>
-        <method name="setState">
+        <method name="setState" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="state" type="s" direction="in"/>
         </method>
-        <method name="connections">
+        <method name="connections" access_label="get">
             <arg name="connections" type="as" direction="out"/>
         </method>
-        <method name="connectionInfo">
+        <method name="connectionInfo" access_label="get">
             <arg name="name" type="s" direction="in"/>
             <arg name="info" type="{ss}" direction="out"/>
         </method>
-        <method name="getAuthentication">
+        <method name="getAuthentication" access_label="get">
             <arg name="name" type="s" direction="in"/>
             <arg name="mode" type="s" direction="out"/>
             <arg name="username" type="s" direction="out"/>
@@ -164,10 +164,10 @@
         </signal>
     </interface>
     <interface name="User.Manager">
-        <method name="userList">
+        <method name="userList" access_label="get">
             <arg name="users" type="a(iss)" direction="out"/>
         </method>
-        <method name="userInfo">
+        <method name="userInfo" access_label="get">
             <arg name="uid" type="i" direction="in"/>
             <arg name="name" type="s" direction="out"/>
             <arg name="realname" type="s" direction="out"/>
@@ -198,7 +198,7 @@
             <arg name="uid" type="i" direction="in"/>
             <arg name="deletefiles" type="b" direction="in"/>
         </method>
-        <method name="groupList">
+        <method name="groupList" access_label="get">
             <arg name="groups" type="a(is)" direction="out"/>
         </method>
         <method name="addGroup">
@@ -211,7 +211,7 @@
         </method>
     </interface>
     <interface name="Time.Clock">
-        <method name="setDate">
+        <method name="setDate" access_label="set">
             <arg name="year" type="i" direction="in"/>
             <arg name="month" type="i" direction="in"/>
             <arg name="day" type="i" direction="in"/>
@@ -219,25 +219,25 @@
             <arg name="minute" type="i" direction="in"/>
             <arg name="second" type="i" direction="in"/>
         </method>
-        <method name="getDate">
+        <method name="getDate" access_label="get">
             <arg name="date" type="s" direction="out"/>
         </method>
         <method name="loadFromHW">
         </method>
         <method name="saveToHW">
         </method>
-        <method name="setTimeZone">
+        <method name="setTimeZone" access_label="set">
             <arg name="zone" type="s" direction="in"/>
         </method>
-        <method name="getTimeZone">
+        <method name="getTimeZone" access_label="get">
             <arg name="zone" type="s" direction="out"/>
         </method>
     </interface>
     <interface name="Boot.Modules">
-        <method name="listAvailable">
+        <method name="listAvailable" access_label="get">
             <arg name="modules" type="as" direction="out"/>
         </method>
-        <method name="listLoaded">
+        <method name="listLoaded" access_label="get">
             <arg name="modules" type="a{ss}" direction="out"/>
         </method>
         <method name="setOptions">
@@ -251,25 +251,25 @@
         <method name="unload">
             <arg name="module" type="s" direction="in"/>
         </method>
-        <method name="listAutoload">
+        <method name="listAutoload" access_label="get">
             <arg name="kernel_version" type="s" direction="in"/>
             <arg name="modules" type="as" direction="out"/>
         </method>
-        <method name="addAutoload">
+        <method name="addAutoload" access_label="editautoload">
             <arg name="module" type="s" direction="in"/>
             <arg name="kernel_version" type="s" direction="in"/>
         </method>
-        <method name="removeAutoload">
+        <method name="removeAutoload" access_label="editautoload">
             <arg name="module" type="s" direction="in"/>
             <arg name="kernel_version" type="s" direction="in"/>
         </method>
-        <method name="listBlacklist">
+        <method name="listBlacklist" access_label="get">
             <arg name="modules" type="as" direction="out"/>
         </method>
-        <method name="addBlacklist">
+        <method name="addBlacklist" access_label="editblacklist">
             <arg name="module" type="s" direction="in"/>
         </method>
-        <method name="removeBlacklist">
+        <method name="removeBlacklist" access_label="editblacklist">
             <arg name="module" type="s" direction="in"/>
         </method>
         <method name="updateModules">
@@ -277,21 +277,21 @@
         </method>
     </interface>
     <interface name="Net.Stack">
-        <method name="getNameServers">
+        <method name="getNameServers" access_label="get">
             <arg name="servers" type="as" direction="out"/>
         </method>
-        <method name="setNameServers">
+        <method name="setNameServers" access_label="set">
             <arg name="nameservers" type="as" direction="in"/>
             <arg name="searchdomain" type="s" direction="in"/>
         </method>
-        <method name="useNameServers">
+        <method name="useNameServers" access_label="set">
             <arg name="nameservers" type="as" direction="in"/>
             <arg name="searchdomain" type="s" direction="in"/>
         </method>
-        <method name="getHostName">
+        <method name="getHostName" access_label="get">
             <arg name="hostname" type="as" direction="out"/>
         </method>
-        <method name="setHostName">
+        <method name="setHostName" access_label="set">
             <arg name="hostname" type="as" direction="in"/>
         </method>
     </interface>
