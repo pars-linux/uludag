@@ -74,9 +74,6 @@ class MainApplication(KMainWindow):
                 self.tray.updateInterval(interval)
             self.tray.show()
 
-        #TESTING...
-        self.tray.showPopup()
-
         self.connect(self.tray, SIGNAL("quitSelected()"), self.slotQuit)
         self.connect(kapp, SIGNAL("shutDown()"), self.slotQuit)
 

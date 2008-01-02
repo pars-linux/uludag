@@ -216,6 +216,9 @@ class MainApplicationWidget(QWidget):
         self.updateStatusBar()
         Globals.setNormalCursor()
 
+        #TESTING
+        self.parent.tray.showPopup()
+
     # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
         Globals.setWaitCursor()
@@ -747,7 +750,7 @@ class MainApplicationWidget(QWidget):
         id = 0
         if not forced:
             id = Tray.ID_TRAY_INTERVAL_CHECK
-            
+
         self.command.startUpdate(repo, id)
         # update repo command is given by the user
         if forced and not self.parent.isHidden():
