@@ -213,7 +213,7 @@ static dbus_bool_t qDBusAddWatch(DBusWatch *watch, void *data)
     QDBusConnectionPrivate *d = static_cast<QDBusConnectionPrivate *>(data);
 
     int flags = dbus_watch_get_flags(watch);
-    int fd = dbus_watch_get_fd(watch);
+    int fd = dbus_watch_get_unix_fd(watch);
 
     QDBusConnectionPrivate::Watcher watcher;
     if (flags & DBUS_WATCH_READABLE) {
@@ -256,7 +256,7 @@ static void qDBusRemoveWatch(DBusWatch *watch, void *data)
     //qDebug("remove watch");
 
     QDBusConnectionPrivate *d = static_cast<QDBusConnectionPrivate *>(data);
-    int fd = dbus_watch_get_fd(watch);
+    int fd = dbus_watch_get_unix_fd(watch);
 
     QDBusConnectionPrivate::WatcherHash::iterator it = d->watchers.find(fd);
     if (it != d->watchers.end())
@@ -299,7 +299,7 @@ static void qDBusToggleWatch(DBusWatch *watch, void *data)
     //qDebug("toggle watch");
 
     QDBusConnectionPrivate *d = static_cast<QDBusConnectionPrivate *>(data);
-    int fd = dbus_watch_get_fd(watch);
+    int fd = dbus_watch_get_unix_fd(watch);
 
     QDBusConnectionPrivate::WatcherHash::iterator it = d->watchers.find(fd);
     if (it != d->watchers.end()) {
@@ -312,7 +312,7 @@ static void qDBusToggleWatch(DBusWatch *watch, void *data)
                 int flags = dbus_watch_get_flags(watch);
 
 //                 qDebug("toggle watch %d to %d (write: %d, read: %d)",
-//                         dbus_watch_get_fd(watch), enabled,
+//                         dbus_watch_get_unix_fd(watch), enabled,
 //                         flags & DBUS_WATCH_WRITABLE, flags & DBUS_WATCH_READABLE);
 
                 if (flags & DBUS_WATCH_READABLE && (*wit).read)
