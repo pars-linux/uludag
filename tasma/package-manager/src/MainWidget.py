@@ -216,9 +216,6 @@ class MainApplicationWidget(QWidget):
         self.updateStatusBar()
         Globals.setNormalCursor()
 
-        #TESTING
-        self.parent.tray.showPopup()
-
     # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
         Globals.setWaitCursor()
