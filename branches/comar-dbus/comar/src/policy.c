@@ -14,7 +14,10 @@
 #include <dbus/dbus.h>
 #include <polkit-dbus/polkit-dbus.h>
 
+#include "cfg.h"
 #include "policy.h"
+#include "model.h"
+#include "utility.h"
 
 //! Check if sender is allowed to call method
 int
@@ -36,8 +39,8 @@ policy_check(const char *sender, const char *interface, const char *method, PolK
     PolKitAction *polkit_act;
     PolKitError *perr;
     uid_t uid;
-    int size;
-    char *action, *t;
+    int size, node_no;
+    char *action, *access_label = NULL, *model, *t;
 
     *result = (PolKitResult) POLKIT_RESULT_NO;
 
@@ -65,10 +68,26 @@ policy_check(const char *sender, const char *interface, const char *method, PolK
         return 1;
     }
 
-    // action = interface.method
-    size = strlen(interface) + 1 + strlen(method) + 1;
-    action = malloc(size);
-    snprintf(action, size, "%s.%s\0", interface, method);
+    model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
+    node_no = model_lookup_method(model, method);
+    free(model);
+
+    if (node_no > -1) {
+        access_label = model_get_method_access_label(node_no);
+    }
+
+    if (access_label) {
+        // action = interface.access_label
+        size = strlen(interface) + 1 + strlen(access_label) + 1;
+        action = malloc(size);
+        snprintf(action, size, "%s.%s\0", interface, access_label);
+    }
+    else {
+        // action = interface.method
+        size = strlen(interface) + 1 + strlen(method) + 1;
+        action = malloc(size);
+        snprintf(action, size, "%s.%s\0", interface, method);
+    }
 
     for (t = action; *t != '\0'; t++) {
         *t = tolower(*t);

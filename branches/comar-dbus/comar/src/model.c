@@ -29,6 +29,7 @@ struct node {
     const char *path;
     struct node *next;
     int parent_no;
+    char *access_label;
     int type;
     int no;
 };
@@ -171,6 +172,16 @@ model_lookup_method(const char *iface, const char *method)
     return -1;
 }
 
+//! Return the access keyword of node numbered 'node_no'
+char *
+model_get_method_access_label(int node_no)
+{
+    struct node *n;
+
+    n = &nodes[node_no];
+    return n->access_label;
+}
+
 //! Looks up signal in node table
 int
 model_lookup_signal(const char *iface, const char *signal)
@@ -203,7 +214,7 @@ model_lookup_signal(const char *iface, const char *signal)
 
 //! Adds node to table
 static int
-add_node(int parent_no, const char *path, int type)
+add_node(int parent_no, const char *path, char *label, int type)
 {
     /*!
      * Adds node to node table.
@@ -223,6 +234,7 @@ add_node(int parent_no, const char *path, int type)
     n->parent_no = parent_no;
     n->type = type;
     n->no = model_nr_nodes++;
+    n->access_label = label;
 
     val = hash_string(path, len) % TABLE_SIZE;
     n->next = node_table[val];
@@ -311,13 +323,20 @@ model_import(const char *model_file)
         if (iks_strcmp(iks_find_attrib(obj, "name"), "Comar") == 0) {
             continue;
         }
-        obj_no = add_node(-1, build_path(obj, NULL), N_INTERFACE);
+        obj_no = add_node(-1, build_path(obj, NULL), "", N_INTERFACE);
         for (met = iks_first_tag(obj); met; met = iks_next_tag(met)) {
             if (iks_strcmp(iks_name(met), "method") == 0) {
-                add_node(obj_no, build_path(obj, met), N_METHOD);
+                char *label = iks_find_attrib(met, "access_label");
+                if (label) {
+                    iks_insert_attrib(met, "access_label", NULL);
+                }
+                else {
+                    label = iks_find_attrib(met, "name");
+                }
+                add_node(obj_no, build_path(obj, met), label, N_METHOD);
             }
             else if (iks_strcmp(iks_name(met), "signal") == 0) {
-                add_node(obj_no, build_path(obj, met), N_SIGNAL);
+                add_node(obj_no, build_path(obj, met), "", N_SIGNAL);
             }
         }
     }
