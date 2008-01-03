@@ -36,8 +36,8 @@ main(int argc, char *argv[])
     // Parse commandline options
     cfg_init(argc, argv);
 
-    // Only root can register system bus
-    if (cfg_bus_type == DBUS_BUS_SYSTEM && getuid() != 0) {
+    // Only root can register bus
+    if (getuid() != 0) {
         puts(_("System service should be started as root."));
         exit(1);
     }
@@ -65,20 +65,15 @@ main(int argc, char *argv[])
 init_children:
 
     // Listen for DBus calls
-    proc_fork(dbus_listen, "ComarBus", NULL, NULL);
+    dbus_listen();
 
-    while (1) {
-        if (my_proc.nr_children == 0) {
-            if (shutdown_activated) {
-                model_free();
-                proc_finish();
-            }
-            else {
-                log_info("DBus connection is lost. Waiting 3 seconds and trying again...\n");
-                sleep(3);
-                goto init_children;
-            }
-        }
-        proc_listen(&p, &size, -1, 0);
+    if (shutdown_activated) {
+        model_free();
+        proc_finish();
+    }
+    else {
+        log_info("DBus connection is lost. Waiting 3 seconds and trying again...\n");
+        sleep(3);
+        goto init_children;
     }
 }

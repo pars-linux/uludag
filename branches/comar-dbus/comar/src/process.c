@@ -84,15 +84,11 @@ int
 proc_check_idle()
 {
     /*!
-     * Tests whether process id idle. This function will return
-     * 0 if cfg_bus_type is "system"
+     * Tests whether process id idle.
      *
      * @return 1 if true, 0 if false
      */
 
-    if (cfg_bus_type == DBUS_BUS_SYSTEM) {
-        return 0;
-    }
     if (my_proc.nr_children == 0 && time_lastaction != 0 && difftime(time(0), time_lastaction) > cfg_idle_shutdown) {
         return 1;
     }
@@ -131,16 +127,14 @@ proc_init(int argc, char *argv[], const char *name)
     set_my_name(my_proc.desc);
     time_lastaction = time(0);
 
-    if (cfg_bus_type == DBUS_BUS_SYSTEM) {
-        FILE *f = fopen(cfg_pid_name, "w");
-        if (f) {
-            fprintf(f, "%d", getpid());
-            fclose(f);
-        }
-        else {
-            printf("Can't create pid file '%s'\n", cfg_pid_name);
-            return 1;
-        }
+    FILE *f = fopen(cfg_pid_name, "w");
+    if (f) {
+        fprintf(f, "%d", getpid());
+        fclose(f);
+    }
+    else {
+        printf("Can't create pid file '%s'\n", cfg_pid_name);
+        return 1;
     }
 
     return 0;

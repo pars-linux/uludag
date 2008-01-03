@@ -27,9 +27,6 @@ char *cfg_config_dir = CONFIG_DIR;
 //! Data directory
 char *cfg_data_dir = DATA_DIR;
 
-//! Bus type (system or session)
-int cfg_bus_type = DBUS_BUS_SYSTEM;
-
 //! Max idle time to shutdown session service
 int cfg_idle_shutdown = 30;
 
@@ -69,14 +66,13 @@ static struct option longopts[] = {
     { "debug", required_argument, NULL, 'g' },
     { "idle", required_argument, NULL, 'i' },
     { "print", 0, NULL, 'p' },
-    { "type", required_argument, NULL, 't' },
     { "help", 0, NULL, 'h' },
     { "version", 0, NULL, 'v' },
     { NULL, 0, NULL, 0 }
 };
 
 //! Short options
-static char *shortopts = "c:d:g:i:pt:hv";
+static char *shortopts = "c:d:g:i:phv";
 
 //! Help message
 static void
@@ -91,10 +87,8 @@ print_usage(const char *name)
         "                       (default is %s)\n"
         " -g, --debug    [FLAG] Set debug flag.\n"
         "                       (Flags: dbus, proc, perf, full)\n"
-        " -t, --type     [TYPE] DBus service type (system or session).\n"
-        "                       (default is system)\n"
         " -i, --idle     [SECS] Shutdown after [SECS] seconds with no action.\n"
-        "                       (Only works with session type, default is %d)\n"
+        "                       (Default is %d)\n"
         " -p, --print           Print debug messages to console.\n"
         " -h, --help            Print this text and exit.\n"
         " -v, --version         Print version and exit.\n"
@@ -157,14 +151,6 @@ cfg_init(int argc, char *argv[])
             case 'p':
                 cfg_log_console = 1;
                 cfg_log_file = 0;
-                break;
-            case 't':
-                if (strcmp(optarg, "session") == 0) {
-                    cfg_bus_type = DBUS_BUS_SESSION;
-                }
-                else {
-                    cfg_bus_type = DBUS_BUS_SYSTEM;
-                }
                 break;
             case 'h':
                 print_usage(argv[0]);

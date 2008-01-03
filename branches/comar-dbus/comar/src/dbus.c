@@ -594,18 +594,19 @@ dbus_listen()
     const char *unique_name;
 
     dbus_error_init(&err);
-    conn = dbus_bus_get(cfg_bus_type, &err);
+    conn = dbus_bus_get(DBUS_BUS_SYSTEM, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Connection Error (%s)\n", err.message);
         dbus_error_free(&err);
-        proc_finish();
+        return;
     }
 
     ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Name Error (%s)\n", err.message);
         dbus_error_free(&err);
-        proc_finish();
+        dbus_connection_unref(conn);
+        return;
     }
 
     unique_name = dbus_bus_get_unique_name(conn);
@@ -617,12 +618,13 @@ dbus_listen()
 
         if (proc_check_idle() == 1) {
             log_info("Service was idle for %d second(s), closing daemon...\n", cfg_idle_shutdown);
-            return;
+            shutdown_activated = 1;
+            break;
         }
 
         if (shutdown_activated) {
             log_info("Shutdown requested.\n");
-            return;
+            break;
         }
 
         if (NULL == msg) {
@@ -645,4 +647,5 @@ dbus_listen()
                 break;
         }
     }
+    dbus_connection_unref(conn);
 }
