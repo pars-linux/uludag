@@ -150,6 +150,10 @@
             <arg name="username" type="s" direction="out"/>
             <arg name="password" type="s" direction="out"/>
         </method>
+        <method name="getState" access_label="get">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="state" type="s" direction="out"/>
+        </method>
         <method name="kernelEvent">
             <arg name="data" type="s" direction="in"/>
         </method>
