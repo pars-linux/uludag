@@ -17,7 +17,7 @@ import fcntl
 import md5
 import random
 
-from pardus.filelock import FileLock
+from pardus.fileutils import FileLock
 
 _ = lambda x: x["en"]
 

@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from pardus.filelock import FileLock
+from pardus.fileutils import FileLock
 
 # Config
 
