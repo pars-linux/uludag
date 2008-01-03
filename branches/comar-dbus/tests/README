@@ -14,12 +14,6 @@ Build & Install
   cd test/
 
 
-Run
----
-
-  sudo ./service.py start
-
-
 Register Scripts
 ----------------
 
@@ -30,8 +24,3 @@ View Debug Log
 --------------
 
   sudo tail -f /var/log/comar-dbus.log
-
-
-Stop
-----
-  sudo ./service.py stop
