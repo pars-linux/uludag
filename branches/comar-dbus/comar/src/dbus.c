@@ -23,9 +23,7 @@
 #include "pydbus.h"
 #include "utility.h"
 
-#ifdef HAVE_POLICYKIT
 #include "policy.h"
-#endif
 
 //! Sends message to client
 void
@@ -473,7 +471,6 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
     free(model);
 }
 
-#ifdef HAVE_POLICYKIT
 //! Checks if sender is allowed to call specified method
 static int
 dbus_policy_check(const char *sender, const char *interface, const char *method)
@@ -515,7 +512,6 @@ dbus_policy_check(const char *sender, const char *interface, const char *method)
         return 0;
     }
 }
-#endif
 
 //! Forked function that handles method calls
 static void
@@ -550,9 +546,7 @@ dbus_method_call()
         dbus_introspection_methods(path);
     }
     else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
-        #ifdef HAVE_POLICYKIT
         if (dbus_policy_check(sender, interface, method)) {
-        #endif
             if (strcmp(path, "/") == 0 && strcmp(interface, cfg_bus_name) == 0) {
                 dbus_comar_methods(method);
             }
@@ -563,9 +557,7 @@ dbus_method_call()
                 log_error("Unknown object path '%s'\n", path);
                 dbus_reply_error("dbus", "unknownpath", "Unknown object path");
             }
-        #ifdef HAVE_POLICYKIT
         }
-        #endif
     }
     else {
         dbus_reply_error("dbus", "unknownmodel", "Unknown interface");

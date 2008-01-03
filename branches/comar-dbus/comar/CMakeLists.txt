@@ -40,19 +40,22 @@ SET (SOURCES src/main.c
              src/log.c
              src/process.c
              src/pydbus.c
+             src/policy.c
              src/model.c
              src/utility.c)
 
 # Set standard libraries
 SET (LIBS python2.4
           dbus-1
+          polkit-dbus
           db)
 
 # Include standard headers
 INCLUDE_DIRECTORIES (include/
                      /usr/include/python2.4
                      /usr/include/dbus-1.0
-                     /usr/lib/dbus-1.0/include)
+                     /usr/lib/dbus-1.0/include
+                     /usr/include/PolicyKit)
 
 # Load CMAKE modules
 SET (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules/")
@@ -60,14 +63,6 @@ SET (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules/")
 # Check if system has PolicyKit
 # PK is not a required dependency in SVN builds.
 FIND_PACKAGE (PolicyKit REQUIRED)
-
-# If PK is installed, enable PK support
-IF (HAVE_POLICYKIT)
-    SET (SOURCES ${SOURCES} src/policy.c)
-    SET (LIBS ${LIBS} polkit-dbus)
-    INCLUDE_DIRECTORIES (/usr/include/PolicyKit)
-    ADD_DEFINITIONS (-D'HAVE_POLICYKIT')
-ENDIF (HAVE_POLICYKIT)
 
 # Compile comar from specified sources
 ADD_EXECUTABLE (comar ${SOURCES})
@@ -96,9 +91,7 @@ INSTALL (FILES
          DESTINATION /usr/share/dbus-1/system-services/)
 
 # Install PK policies
-IF (HAVE_POLICYKIT)
-    INSTALL (DIRECTORY
-             etc/policy
-             DESTINATION /usr/share/PolicyKit
-             PATTERN ".svn" EXCLUDE)
-ENDIF (HAVE_POLICYKIT)
+INSTALL (DIRECTORY
+        etc/policy
+        DESTINATION /usr/share/PolicyKit
+        PATTERN ".svn" EXCLUDE)
