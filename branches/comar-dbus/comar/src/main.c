@@ -65,7 +65,7 @@ main(int argc, char *argv[])
 init_children:
 
     // Listen for DBus calls
-    proc_fork(dbus_listen, "ComarDBus", NULL, NULL);
+    proc_fork(dbus_listen, "ComarBus", NULL, NULL);
 
     while (1) {
         if (my_proc.nr_children == 0) {

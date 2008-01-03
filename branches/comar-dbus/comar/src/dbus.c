@@ -489,7 +489,7 @@ dbus_policy_check(const char *sender, const char *interface, const char *method)
     PolKitResult polkit_result;
 
     if (policy_check(sender, interface, method, &polkit_result)) {
-        log_debug(LOG_PLCY, "PolicyKit: %s [%s.%s] = %s\n", sender, interface, method, polkit_result_to_string_representation(polkit_result));
+        log_debug(LOG_PLCY, "PolicyKit: %s.%s = %s\n", interface, method, polkit_result_to_string_representation(polkit_result));
         switch (polkit_result) {
             case POLKIT_RESULT_YES:
                 return 1;
@@ -646,7 +646,7 @@ dbus_listen()
         switch (dbus_message_get_type(msg)) {
             case DBUS_MESSAGE_TYPE_METHOD_CALL:
                 log_debug(LOG_DBUS, "DBus method call [%s.%s] from [%s]\n", interface, method, sender);
-                proc_fork(dbus_method_call, "ComarDBusJob", conn, msg);
+                proc_fork(dbus_method_call, "ComarJob", conn, msg);
                 break;
             case DBUS_MESSAGE_TYPE_SIGNAL:
                 log_debug(LOG_DBUS, "DBus signal [%s.%s] from [%s]\n", interface, method, sender);

@@ -37,10 +37,18 @@ timestamp(FILE *f)
 static void
 pidstamp(FILE *f)
 {
-    if (strlen(my_proc.desc) <= 5)
+    if (strlen(my_proc.desc) <= 5) {
         fprintf(f, "(%s-%d) ", my_proc.desc, getpid());
-    else
-        fprintf(f, "(%s-%d) ", my_proc.desc + 5, getpid());
+    }
+    else {
+        if (my_proc.bus_msg) {
+            const char *sender = dbus_message_get_sender(my_proc.bus_msg);
+            fprintf(f, "(%s-%d) [bus%s] ", my_proc.desc + 5, getpid(), sender);
+        }
+        else {
+            fprintf(f, "(%s-%d) ", my_proc.desc + 5, getpid());
+        }
+    }
 }
 
 //! Print log
