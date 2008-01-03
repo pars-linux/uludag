@@ -90,6 +90,11 @@ INSTALL (FILES
          DESTINATION /etc/dbus-1/system.d
          RENAME ${APP_NAME}.conf)
 
+# Install comar service activation under /usr/share/dbus-1/system-services/
+INSTALL (FILES
+         etc/tr.org.pardus.comar.service
+         DESTINATION /usr/share/dbus-1/system-services/)
+
 # Install PK policies
 IF (HAVE_POLICYKIT)
     INSTALL (DIRECTORY
