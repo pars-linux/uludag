@@ -546,7 +546,7 @@ class UserStack(QVBox):
         self.guide.op_start(i18n("Adding user..."))
         uid = 0;
         def addUser():
-            return self.link.addUser(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_password.text(), self.u_home.text(), self.u_shell.text(), self.u_groups.text().split(","))
+            return self.link.addUser(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
         try:
             uid = addUser()
         except DBusException, e:
