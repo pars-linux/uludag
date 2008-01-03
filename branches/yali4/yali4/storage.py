@@ -138,10 +138,10 @@ class Device:
     # get device capacity in MBs
     # @returns: long
     def getTotalMB(self):
-        return long(self.getTotalBytes() / MEGABYTE)
+        return long(round(self.getTotalBytes() / MEGABYTE))
 
     def getTotalGB(self):
-        return long(self.getTotalBytes() / GIGABYTE)
+        return long(round(self.getTotalBytes() / GIGABYTE))
 
     ##
     # get device capacity string

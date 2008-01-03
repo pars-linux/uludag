@@ -86,7 +86,7 @@ class DiskList(QtGui.QWidget):
 
         def sizeStr(mb):
             if mb > 1024:
-                return _("%0.1f GB free") % long(mb/1024.0)
+                return _("%0.1f GB free") % long(round(mb/1024.0))
             else:
                 return _("%d MB free") % mb
 
@@ -157,14 +157,9 @@ class DiskItem(QtGui.QWidget):
         partition.setStyleSheet("background-color:lightblue")
         partition.setFocusPolicy(Qt.NoFocus)
         partition.setToolTip(_("<b>Device:</b> %s \n<b>Size:</b> %s \n<b>FileSystem:</b> %s") % (data.getPath(),data.getSizeStr(),data.getFSName()))
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Fixed)
-        #partition.setSizePolicy(sizePolicy)
         self.splinter.addWidget(partition)
         self.partitions.append({"name":name,"data":data,"size":_size})
         ctx.debugger.log("Current Size : %s" % partition.width())
-        #{"size":part.getSizeStr(),
-        # "installType":"",
-        # "filesystem":part.getFSName()}
 
     def setData(self, d):
         self._data = d
@@ -181,23 +176,4 @@ class DiskItem(QtGui.QWidget):
             self.splinter.widget(i).resize(part['size'],0)
             self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
             i+=1
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    diskList = DiskList()
-
-    disk1 = DiskItem("/dev/sda")
-    disk1.addPartition("/dev/sda1",{"size":"50GB"})
-    disk1.addPartition("/dev/sda2",{"size":"50GB"})
-    diskList.addDisk(disk1)
-
-    disk2 = DiskItem("/dev/sdb")
-    disk2.addPartition("/dev/sdb1",{"size":"10GB"})
-    disk2.addPartition("/dev/sdb2",{"size":"50GB"})
-    disk2.addPartition("/dev/sdb3",{"size":"10GB"})
-    diskList.addDisk(disk2)
-
-    diskList.show()
-    sys.exit(app.exec_())
 
