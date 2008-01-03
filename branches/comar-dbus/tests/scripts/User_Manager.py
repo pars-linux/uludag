@@ -303,7 +303,7 @@ def userInfo(uid):
         ret = ()
     return ret
 
-def addUser(name, password, uid, realname, homedir, shell, groups):
+def addUser(uid, name, realname, homedir, shell, password, groups):
     if not realname:
         realname = ""
     if not homedir:
