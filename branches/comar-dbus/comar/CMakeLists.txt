@@ -59,11 +59,7 @@ SET (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules/")
 
 # Check if system has PolicyKit
 # PK is not a required dependency in SVN builds.
-IF (VERSION_SUFFIX STREQUAL "svn")
-    FIND_PACKAGE (PolicyKit)
-ELSE (VERSION_SUFFIX STREQUAL "svn")
-    FIND_PACKAGE (PolicyKit REQUIRED)
-ENDIF (VERSION_SUFFIX STREQUAL "svn")
+FIND_PACKAGE (PolicyKit REQUIRED)
 
 # If PK is installed, enable PK support
 IF (HAVE_POLICYKIT)
