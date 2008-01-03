@@ -30,7 +30,7 @@ from yali4.gui.GUIException import *
 class DiskList(QtGui.QWidget):
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(QRect(0,0,620,80).size()).expandedTo(self.minimumSizeHint()))
         self.setStyleSheet("""
             QToolBox::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                         stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
@@ -79,7 +79,10 @@ class DiskList(QtGui.QWidget):
     def addDevice(self, dev):
 
         def sizePix(mb,total):
-            return (self.toolBox.width() * mb) / total
+            _p = (self.toolBox.width() * mb) / total
+            if _p<=1:
+                return 5
+            return _p - 5
 
         def sizeStr(mb):
             if mb > 1024:
@@ -137,8 +140,8 @@ class DiskItem(QtGui.QWidget):
         self.layout = QtGui.QGridLayout(self)
         self.layout.setContentsMargins(1,0,1,0)
         self.diskGroup = QtGui.QGroupBox(self)
-        self.diskGroup.setMinimumSize(QSize(570,70))
-        self.diskGroup.setMaximumSize(QSize(570,70))
+        self.diskGroup.setMinimumSize(QSize(590,70))
+        self.diskGroup.setMaximumSize(QSize(590,70))
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
         self.gridlayout.setMargin(0)
         self.gridlayout.setSpacing(0)
@@ -153,8 +156,9 @@ class DiskItem(QtGui.QWidget):
         partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
         partition.setStyleSheet("background-color:lightblue")
         partition.setFocusPolicy(Qt.NoFocus)
+        partition.setToolTip(_("<b>Device:</b> %s \n<b>Size:</b> %s \n<b>FileSystem:</b> %s") % (data.getPath(),data.getSizeStr(),data.getFSName()))
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Fixed)
-        partition.setSizePolicy(sizePolicy)
+        #partition.setSizePolicy(sizePolicy)
         self.splinter.addWidget(partition)
         self.partitions.append({"name":name,"data":data,"size":_size})
         ctx.debugger.log("Current Size : %s" % partition.width())
@@ -171,6 +175,9 @@ class DiskItem(QtGui.QWidget):
     def updateSizes(self):
         i=0
         for part in self.partitions:
+            _h = self.splinter.handle(i)
+            _h.setEnabled(False)
+            self.splinter.setCollapsible(i,False)
             self.splinter.widget(i).resize(part['size'],0)
             self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
             i+=1
