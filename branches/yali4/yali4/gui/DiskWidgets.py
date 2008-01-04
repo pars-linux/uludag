@@ -120,7 +120,6 @@ class DiskList(QtGui.QWidget):
         # add partitions on device
         for part in dev.getOrderedPartitionList():
             parent_item = d
-            
             """
             if part.isExtended():
                 continue
@@ -131,6 +130,7 @@ class DiskList(QtGui.QWidget):
                 continue
             """
             name = _("Partition %d") % part.getMinor()
+            ctx.debugger.log("Partition added with %s mb" % part.getMB())
             parent_item.addPartition(name,part,sizePix(part.getMB(),dev.getTotalMB()))
 
         d.updateSizes()

@@ -77,7 +77,7 @@ class Device:
         self._device = None
         self._model = ""
         self._disk = None
-        self._partitions = {}
+        self._partitions = []
         self._disklabel = ""
         self._length = 0       # total sectors
         self._sector_size = 0
@@ -107,7 +107,7 @@ class Device:
     ##
     # clear and re-fill partitions dict.
     def update(self):
-        self._partitions.clear()
+        self._partitions = []
 
         part = self._disk.next_partition()
         while part:
@@ -175,7 +175,7 @@ class Device:
     # get partitions from disk
     # @returns: [Partition]
     def getPartitions(self):
-        return self._partitions.values()
+        return self._partitions
 
     ##
     # get a partition by number
@@ -183,8 +183,10 @@ class Device:
     #
     # @returns: Partition
     def getPartition(self, num):
-        return self._partitions[num]
-
+        for part in self._partitions:
+            if part._minor == num:
+                return part
+        return None
 
     ##
     # check if the device has an extended partition
@@ -372,10 +374,8 @@ class Device:
     #
     # @returns: Partition
     def __addToPartitionsDict(self, part, fs_ready=True):
-
         geom = part.geom
         part_mb = long((geom.end - geom.start + 1) * self._sector_size / MEGABYTE)
-        # print geom.start," -- ",geom.end
         if part.num >= 1:
             fs_name = ""
             if part.fs_type:
@@ -383,20 +383,19 @@ class Device:
             elif part.type & parted.PARTITION_EXTENDED:
                 fs_name = "extended"
 
-            self._partitions[part.num] = Partition(self, part,
-                                                   part.num,
-                                                   part_mb,
-                                                   geom.start,
-                                                   geom.end,
-                                                   fs_name,
-                                                   fs_ready)
+            self._partitions.append(Partition(self, part,
+                                                    part.num,
+                                                    part_mb,
+                                                    geom.start,
+                                                    geom.end,
+                                                    fs_name,
+                                                    fs_ready))
 
-# Don't use FreeSpace!
-#         elif part.type & parted.PARTITION_FREESPACE:
-#             self._partitions[-1] = FreeSpace(self, part,
-#                                              part_mb,
-#                                              part.geom.start,
-#                                              part.geom.end)
+        elif part.type & parted.PARTITION_FREESPACE and part_mb >= 10:
+            self._partitions.append(FreeSpace(self, part,
+                                                    part_mb,
+                                                    part.geom.start,
+                                                    part.geom.end))
         return part
 
     ##
