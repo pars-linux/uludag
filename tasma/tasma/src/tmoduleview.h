@@ -20,6 +20,7 @@
 #define T_MODULE_VIEW_H
 
 #include <qscrollview.h>
+#include <qxembed.h>
 
 class KProcess;
 class KCModule;
@@ -27,9 +28,9 @@ class KPushButton;
 class KSeparator;
 class QVBoxLayout;
 class QLabel;
-class QXEmbed;
 class QVBox;
 class QVBoxLayout;
+class QWidgetStack;
 
 class ContentWidget : public QWidget
 {
@@ -75,6 +76,7 @@ class TModuleView : public QWidget
   void contentChanged( bool state );
   void runAsRoot();
   void killRootProcess();
+  void embedded();
 
  private:
   TMContent *contentView;
@@ -82,11 +84,23 @@ class TModuleView : public QWidget
   KPushButton *_apply, *_reset, *_default, *_back, *_runAsRoot;
   KProcess *_proc;
   QXEmbed *_embedWidget;
+  QWidgetStack *_embedStack;
   QVBoxLayout *_embedLayout;
   QVBox *_embedFrame;
   QString _filename;
   QLabel *_icon, *_moduleName;
   QWidget *parentInner;
+};
+
+class TModuleViewEmbed : public QXEmbed
+{
+Q_OBJECT
+
+ public:
+ TModuleViewEmbed( QWidget* w ) : QXEmbed( w ) {}
+  virtual void windowChanged( WId w ) { if( w ) emit windowEmbedded( w ); }
+ signals:
+  void windowEmbedded( WId w );
 };
 
 #endif // T_MODULE_VIEW_H

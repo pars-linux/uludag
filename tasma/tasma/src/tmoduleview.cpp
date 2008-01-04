@@ -26,6 +26,7 @@
 #include <qscrollview.h>
 #include <qvbox.h>
 #include <qxembed.h>
+#include <qwidgetstack.h>
 
 #include <kprocess.h>
 #include <kpushbutton.h>
@@ -41,7 +42,7 @@
 
 TModuleView::TModuleView( QWidget *parent, KCModule* module, const QString& icon_path, const QString& text, const QString& filename,
                           bool needsRootPrivileges )
-  : QWidget( parent ), _proc(0L), _embedWidget(0L), _embedLayout(0L)
+  : QWidget( parent ), _proc(0L), _embedWidget(0L), _embedLayout(0L), _embedStack(0L)
 {
   contentView = new TMContent( this, module );
 
@@ -134,6 +135,7 @@ void TModuleView::runAsRoot()
   delete _proc;
   delete _embedWidget;
   delete _embedLayout;
+  delete _embedStack;
 
   _embedLayout = new QVBoxLayout(parentWidget());
   _embedFrame = new QVBox(parentWidget());
@@ -144,14 +146,18 @@ void TModuleView::runAsRoot()
   _embedFrame->setLineWidth( 2 );
   _embedFrame->setMidLineWidth( 2 );
   _embedLayout->addWidget(_embedFrame,1);
-  _embedWidget = new QXEmbed(_embedFrame);
+  // cannot reparent anything else inside QXEmbed, so put the busy label separately
+  _embedStack = new QWidgetStack(_embedFrame);
+  _embedWidget = new TModuleViewEmbed(_embedStack);
   hide();
   _embedFrame->show();
-  QLabel *_busy = new QLabel(i18n("<big>Loading...</big>"), _embedWidget);
+  QLabel *_busy = new QLabel(i18n("<big>Loading...</big>"), _embedStack);
   _busy->setAlignment(AlignCenter);
   _busy->setTextFormat(RichText);
   _busy->setGeometry(0,0, width(), height());
   _busy->show();
+  _embedStack->raiseWidget(_busy);
+  connect(_embedWidget, SIGNAL(windowEmbedded(WId)), SLOT(embedded()));
 
   // run the process
   QString kdesu = KStandardDirs::findExe("kdesu");
@@ -183,12 +189,20 @@ void TModuleView::killRootProcess()
   delete _embedWidget;
   _embedWidget = 0;
 
+  delete _embedStack;
+  _embedStack = 0;
+
   delete _proc;
   _proc = 0;
 
   delete _embedLayout;
   _embedLayout = 0;
 
+}
+
+void TModuleView::embedded()
+{
+  _embedStack->raiseWidget(_embedWidget); // put it above the busy label
 }
 
 void TModuleView::resetClicked()
