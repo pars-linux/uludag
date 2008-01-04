@@ -89,7 +89,8 @@ QProgressBar {
 QProgressBar::chunk {
      background-color: #970000;
      width: 20px;
-}</string>
+}
+</string>
   </property>
   <layout class="QGridLayout" >
    <property name="topMargin" >

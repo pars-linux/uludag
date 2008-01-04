@@ -111,6 +111,8 @@ class Partition:
     ##
     # partition path (eg. /dev/sda1)
     def getPath(self):
+        if self._parted_type == parteddata.freeSpaceType:
+            return "N/A"
         if self.getDevicePath().find("cciss") > 0:
             # HP Smart array controller
             return "%sp%d" %(self.getDevicePath(), self.getMinor())

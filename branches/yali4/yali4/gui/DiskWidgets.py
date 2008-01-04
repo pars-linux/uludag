@@ -24,13 +24,14 @@ import yali4.partitiontype as parttype
 import yali4.parteddata as parteddata
 
 import yali4.gui.context as ctx
-from yali4.gui.Ui.partlistwidget import Ui_PartListWidget
+from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 
 class DiskList(QtGui.QWidget):
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
+        self.setAutoFillBackground(False)
         self.setStyleSheet("""
             QToolBox::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                         stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
@@ -40,9 +41,15 @@ class DiskList(QtGui.QWidget):
             QRadioButton:checked { border:3px solid #777 }
             QSplitter::handle { background-color:white; }
         """)
-        self.gridlayout = QtGui.QGridLayout(self)
+        vbox = QtGui.QVBoxLayout(self)
+
         self.toolBox = QtGui.QToolBox(self)
-        self.gridlayout.addWidget(self.toolBox,0,0,1,1)
+        self.toolBox.setAutoFillBackground(False)
+
+        self.partEdit = PartEdit()
+
+        vbox.addWidget(self.toolBox)
+        vbox.addWidget(self.partEdit)
         self.initDevices()
 
     def addDisk(self,dw):
@@ -102,34 +109,15 @@ class DiskList(QtGui.QWidget):
         d.setData(dev)
         self.addDisk(d)
 
-        # than add extended partition to reparent logical ones
-        # fixme
-        if dev.hasExtendedPartition() and 1==0:
-            ext = dev.getExtendedPartition()
-            free_ext = ext.getFreeMB()
-            if free_ext:
-                size_str = ext.getSizeStr() + "  (%s)" % sizeStr(free_ext)
-            else:
-                size_str = ext.getSizeStr()
-
-            e = PartListItem(d,
-                             _("Extended"),
-                             size_str)
-            e.setData(ext)
-
         # add partitions on device
         for part in dev.getOrderedPartitionList():
             parent_item = d
-            """
             if part.isExtended():
                 continue
-            elif part.getType() == parteddata.freeSpaceType:
-                # Don't show free space as a new item on GUI #
-                #name = _("Free")
-                ctx.debugger.log("Free Type")
-                continue
-            """
-            name = _("Partition %d") % part.getMinor()
+            if part.getMinor() != -1:
+                name = _("Partition %d") % part.getMinor()
+            else:
+                name = _("Free Space")
             ctx.debugger.log("Partition added with %s mb" % part.getMB())
             parent_item.addPartition(name,part,sizePix(part.getMB(),dev.getTotalMB()))
 
@@ -141,26 +129,36 @@ class DiskItem(QtGui.QWidget):
 
     def __init__(self, name):
         QtGui.QWidget.__init__(self,None)
+        self.setAutoFillBackground(False)
+
         self.layout = QtGui.QGridLayout(self)
-        self.layout.setContentsMargins(1,0,1,0)
+        self.layout.setContentsMargins(1,1,1,1)
+
         self.diskGroup = QtGui.QGroupBox(self)
         self.diskGroup.setMinimumSize(QSize(570,70))
-        self.diskGroup.setMaximumSize(QSize(570,70))
+        self.diskGroup.setMaximumSize(QSize(2280,70))
+        self.setMaximumSize(QSize(2280,80))
+
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
         self.gridlayout.setMargin(0)
         self.gridlayout.setSpacing(0)
+
         self.splinter = QtGui.QSplitter(Qt.Horizontal,self.diskGroup)
         self.splinter.setHandleWidth(2)
+
         self.gridlayout.addWidget(self.splinter,0,0,1,1)
         self.layout.addWidget(self.diskGroup)
+
         self.partitions = []
         self.name = name
 
     def addPartition(self,name=None,data=None,_size=None):
         partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
-        partition.setStyleSheet("background-color:lightblue")
         partition.setFocusPolicy(Qt.NoFocus)
-        partition.setToolTip(_("<b>Device:</b> %s \n<b>Size:</b> %s \n<b>FileSystem:</b> %s") % (data.getPath(),data.getSizeStr(),data.getFSName()))
+        partition.setStyleSheet("background-color:lightblue")
+        partition.setToolTip(_("""<b>Path:</b> %s<br>
+        <b>Size:</b> %s<br>
+        <b>FileSystem:</b> %s""") % (data.getPath(),data.getSizeStr(),data.getFSName()))
         self.splinter.addWidget(partition)
         self.partitions.append({"name":name,"data":data,"size":_size})
         ctx.debugger.log("Current Size : %s" % partition.width())
@@ -177,7 +175,15 @@ class DiskItem(QtGui.QWidget):
             _h = self.splinter.handle(i)
             _h.setEnabled(False)
             self.splinter.setCollapsible(i,False)
-            self.splinter.widget(i).resize(part['size'],0)
-            self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
+            self.splinter.widget(i).resize(part['size'],70)
+            self.splinter.widget(i).setMinimumSize(QSize(part['size'],50))
+            if part['size'] == 5:
+                self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
             i+=1
+
+class PartEdit(QtGui.QWidget):
+    def __init__(self, *args):
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_PartEdit()
+        self.ui.setupUi(self)
 
