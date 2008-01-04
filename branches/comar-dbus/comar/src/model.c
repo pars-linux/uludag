@@ -11,6 +11,7 @@
 #include <stdlib.h>
 
 #include "cfg.h"
+#include "log.h"
 #include "iksemel.h"
 #include "utility.h"
 
@@ -159,7 +160,8 @@ model_lookup_method(const char *iface, const char *method)
 
     size = strlen(iface) + 1 + strlen(method) + 1;
     path = malloc(size);
-    snprintf(path, size, "%s.%s\0", iface, method);
+    snprintf(path, size, "%s.%s", iface, method);
+    path[size - 1] = '\0';
 
     val = hash_string(path, strlen(path)) % TABLE_SIZE;
     for (n = node_table[val]; n; n = n->next) {
@@ -199,7 +201,8 @@ model_lookup_signal(const char *iface, const char *signal)
 
     size = strlen(iface) + 1 + strlen(signal) + 1;
     path = malloc(size);
-    snprintf(path, size, "%s.%s\0", iface, signal);
+    snprintf(path, size, "%s.%s", iface, signal);
+    path[size - 1] = '\0';
 
     val = hash_string(path, strlen(path)) % TABLE_SIZE;
     for (n = node_table[val]; n; n = n->next) {
@@ -254,7 +257,7 @@ model_import(const char *model_file)
      * @return 0 on success, -1 on error
      */
 
-    iks *grp, *obj, *met;
+    iks *obj, *met;
     size_t size = 0;
     size_t obj_size, met_size;
     int obj_no;
@@ -366,7 +369,8 @@ model_get_iks(char *path, iks **parent)
             else if (strncmp(path, "org.freedesktop.", strlen("org.freedesktop.")) != 0) {
                 int size = strlen(cfg_bus_name) + 1 + strlen(path) + 1;
                 char *name = malloc(size);
-                snprintf(name, size, "%s.%s\0", cfg_bus_name, path);
+                snprintf(name, size, "%s.%s", cfg_bus_name, path);
+                name[size - 1] = '\0';
                 iks_insert_attrib(new, "name", name);
                 free(name);
             }
@@ -385,7 +389,8 @@ model_init()
 
     size = strlen(cfg_config_dir) + 1 + strlen("model.xml") + 1;
     model_file = malloc(size);
-    snprintf(model_file, size, "%s/model.xml\0", cfg_config_dir);
+    snprintf(model_file, size, "%s/model.xml", cfg_config_dir);
+    model_file[size - 1] = '\0';
 
     ret = model_import(model_file);
     free(model_file);

@@ -61,7 +61,6 @@ dbus_signal(const char *path, const char *interface, const char *name, PyObject 
 
     DBusMessage *msg;
     DBusMessageIter iter;
-    dbus_uint32_t serial = 0;
 
     msg = dbus_message_new_signal(path, interface, name);
     dbus_message_iter_init_append(msg, &iter);
@@ -88,7 +87,8 @@ dbus_reply_error(char *class, char *name, char *str)
 
     size = strlen(cfg_bus_name) + 1 + strlen(class) + 1 + strlen(name) + 1;
     err_name = malloc(size);
-    snprintf(err_name, size, "%s.%s.%s\0", cfg_bus_name, class, name);
+    snprintf(err_name, size, "%s.%s.%s", cfg_bus_name, class, name);
+    err_name[size - 1] = '\0';
 
     DBusMessage *reply = dbus_message_new_error(my_proc.bus_msg, err_name, str);
     dbus_send(reply);
@@ -297,7 +297,6 @@ dbus_comar_methods(const char *method)
 
     PyObject *args, *result;
     char *app, *model, *script, *apps, *models, *code;
-    int i;
 
     if (strcmp(method, "listApplications") == 0) {
         db_get_apps(&apps);
@@ -436,8 +435,6 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
      * @method Method
      */
 
-    DBusMessage *reply;
-    DBusMessageIter iter;
     PyObject *args, *result;
     int ret;
 
@@ -489,7 +486,9 @@ dbus_policy_check(const char *sender, const char *interface, const char *method)
         log_debug(LOG_PLCY, "PolicyKit: %s.%s = %s\n", interface, method, polkit_result_to_string_representation(polkit_result));
         switch (polkit_result) {
             case POLKIT_RESULT_YES:
+            case POLKIT_RESULT_N_RESULTS:
                 return 1;
+            case POLKIT_RESULT_UNKNOWN:
             case POLKIT_RESULT_NO:
                 dbus_reply_error("policy", "no", "Access denied.");
                 return 0;
@@ -507,10 +506,8 @@ dbus_policy_check(const char *sender, const char *interface, const char *method)
                 return 0;
         }
     }
-    else {
-        dbus_reply_error("core", "internal", "Unable to query PolicyKit");
-        return 0;
-    }
+    dbus_reply_error("core", "internal", "Unable to query PolicyKit");
+    return 0;
 }
 
 //! Forked function that handles method calls
@@ -524,8 +521,6 @@ dbus_method_call()
      * DBus message is reacable via my_proc.bus_msg
      *
      */
-
-    char *app, *model;
 
     struct timeval time_start, time_end;
     unsigned long msec;
@@ -634,7 +629,7 @@ dbus_listen()
 
         const char *sender = dbus_message_get_sender(msg);
         const char *interface = dbus_message_get_interface(msg);
-        const char *path = dbus_message_get_path(msg);
+        //const char *path = dbus_message_get_path(msg);
         const char *method = dbus_message_get_member(msg);
 
         switch (dbus_message_get_type(msg)) {

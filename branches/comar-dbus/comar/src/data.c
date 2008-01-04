@@ -51,7 +51,8 @@ db_init(void)
     size = strlen(cfg_data_dir) + 6;
     char *code_dir = malloc(size);
     if (!code_dir) return -3;
-    snprintf(code_dir, size, "%s/code\0", cfg_data_dir);
+    snprintf(code_dir, size, "%s/code", cfg_data_dir);
+    code_dir[size -1] = '\0';
     if (stat(code_dir, &fs) != 0) {
         if (0 != mkdir(code_dir, S_IRWXU)) {
             log_error("Cannot create code dir '%s'\n", code_dir);
@@ -257,7 +258,7 @@ have_key(DB *db, const char *key)
      * @return 1 if true, 0 if false
      */
 
-    char *old, *t, *s;
+    char *old;
     int e;
 
     old = get_data(db, key, NULL, &e);
@@ -352,7 +353,7 @@ get_script_path(const char *app, const char *model)
      * @return Script path
      */
 
-    char *realpath, *model_escaped, *t, *t2;
+    char *realpath, *model_escaped;
     int size;
 
     size = strlen(cfg_data_dir) + 1 + strlen("code") + 1 + strlen(model) + 1 + strlen(app) + 4;
@@ -361,7 +362,8 @@ get_script_path(const char *app, const char *model)
     model_escaped = (char *) strrep(model, '.', '_');
 
     // Generate script path
-    snprintf(realpath, size, "%s/code/%s_%s.py\0", cfg_data_dir, model_escaped, app);
+    snprintf(realpath, size, "%s/code/%s_%s.py", cfg_data_dir, model_escaped, app);
+    realpath[size - 1] = '\0';
     free(model_escaped);
     return realpath;
 }
@@ -410,7 +412,6 @@ db_remove_app(char *app)
     struct databases db;
     char *list, *list2, *t, *s;
     int ret = 0;
-    int no;
 
     if (open_env(&db, APP_DB | MODEL_DB)) goto out;
 

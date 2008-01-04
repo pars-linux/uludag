@@ -23,9 +23,6 @@
 int
 main(int argc, char *argv[])
 {
-    struct ProcChild *p;
-    int size;
-
     // l10n
     setlocale(LC_MESSAGES, "");
     bindtextdomain("comar", "/usr/share/locale");
@@ -62,18 +59,15 @@ main(int argc, char *argv[])
         exit(1);
     }
 
-init_children:
-
-    // Listen for DBus calls
-    dbus_listen();
-
-    if (shutdown_activated) {
-        model_free();
-        proc_finish();
+    while(!shutdown_activated) {
+        // Listen for DBus calls
+        dbus_listen();
+        log_info("DBus connection is lost. Waiting 5 seconds and trying again...\n");
+        sleep(5);
     }
-    else {
-        log_info("DBus connection is lost. Waiting 3 seconds and trying again...\n");
-        sleep(3);
-        goto init_children;
-    }
+
+    model_free();
+    proc_finish();
+
+    return 0;
 }

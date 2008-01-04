@@ -72,7 +72,7 @@ dbus_py_get_object_signature(PyObject *obj)
     int i;
     int size;
     char *sign_content, *sign_subcontent;
-    char sign, sign_sub;
+    char sign;
     PyObject *item, *item2;
 
     sign = dbus_py_get_signature(obj);
@@ -85,12 +85,14 @@ dbus_py_get_object_signature(PyObject *obj)
         case 'd':
             size = 2;
             sign_content = malloc(size);
-            snprintf(sign_content, size, "%c\0", sign);
+            snprintf(sign_content, size, "%c", sign);
+            sign_content[size - 1] = '\0';
             return sign_content;
         case 'n':
             size = 2;
             sign_content = malloc(size);
-            snprintf(sign_content, size, "s\0");
+            snprintf(sign_content, size, "s");
+            sign_content[size - 1] = '\0';
             return sign_content;
         case 'a':
             if (PyList_Size(obj) > 0) {
@@ -105,13 +107,15 @@ dbus_py_get_object_signature(PyObject *obj)
             }
             size = 2 + strlen(sign_subcontent);
             sign_content = malloc(size);
-            snprintf(sign_content, size, "a%s\0", sign_subcontent);
+            snprintf(sign_content, size, "a%s", sign_subcontent);
+            sign_content[size - 1] = '\0';
             free(sign_subcontent);
             return sign_content;
         case 'r':
             size = 3;
             sign_content = malloc(size);
-            snprintf(sign_content, size, "(\0");
+            snprintf(sign_content, size, "(");
+            sign_content[size - 1] = '\0';
             for (i = 0; i < PyTuple_Size(obj); i++) {
                 item = PyTuple_GetItem(obj, i);
                 sign_subcontent = dbus_py_get_object_signature(item);
@@ -141,7 +145,8 @@ dbus_py_get_object_signature(PyObject *obj)
             }
             size = 4 + strlen(sign_subcontent);
             sign_content = malloc(size);
-            snprintf(sign_content, size, "{%c%s}\0", dbus_py_get_signature(item), sign_subcontent);
+            snprintf(sign_content, size, "{%c%s}", dbus_py_get_signature(item), sign_subcontent);
+            sign_content[size - 1] = '\0';
             free(sign_subcontent);
             return sign_content;
         default:
@@ -176,15 +181,10 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
     DBusMessageIter sub, sub2;
     PyObject *item;
     PyObject *key, *value;
-    int size;
     int i = 0;
 
     char sign;
     char *sign_container, *sign_sub, *sign_sub2;
-    int sign_size;
-
-    const dbus_int32_t array[] = {};
-    const dbus_int32_t *v_ARRAY = array;
 
     sign = dbus_py_get_signature(obj);
 
@@ -334,8 +334,8 @@ dbus_py_get_item(DBusMessageIter* iter)
         dbus_int64_t i64;
     } obj;
 
-    PyObject *ret;
-    DBusMessageIter sub, entries;
+    PyObject *ret = 0;
+    DBusMessageIter sub;
     int type = dbus_message_iter_get_arg_type(iter);
 
     switch (type) {
@@ -419,7 +419,6 @@ dbus_py_get_dict(DBusMessageIter *iter)
      * @return Python object, or NULL on error
      */
 
-    int type;
     PyObject *ret = PyDict_New();
     while (dbus_message_iter_get_arg_type(iter) == DBUS_TYPE_DICT_ENTRY) {
         PyObject *key = NULL;

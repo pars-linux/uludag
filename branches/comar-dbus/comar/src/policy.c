@@ -7,14 +7,17 @@
 ** option) any later version. Please read the COPYING file.
 */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <sys/time.h>
+#include <string.h>
 #include <unistd.h>
 #include <dbus/dbus.h>
 #include <polkit-dbus/polkit-dbus.h>
 
 #include "cfg.h"
+#include "log.h"
 #include "policy.h"
 #include "model.h"
 #include "utility.h"
@@ -80,13 +83,15 @@ policy_check(const char *sender, const char *interface, const char *method, PolK
         // action = interface.access_label
         size = strlen(interface) + 1 + strlen(access_label) + 1;
         action = malloc(size);
-        snprintf(action, size, "%s.%s\0", interface, access_label);
+        snprintf(action, size, "%s.%s", interface, access_label);
+        action[size - 1] = '\0';
     }
     else {
         // action = interface.method
         size = strlen(interface) + 1 + strlen(method) + 1;
         action = malloc(size);
-        snprintf(action, size, "%s.%s\0", interface, method);
+        snprintf(action, size, "%s.%s", interface, method);
+        action[size - 1] = '\0';
     }
 
     for (t = action; *t != '\0'; t++) {

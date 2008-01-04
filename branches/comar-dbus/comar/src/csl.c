@@ -19,6 +19,7 @@
 #include "process.h"
 #include "pydbus.h"
 #include "utility.h"
+#include "model.h"
 
 //! Initializes Python VM
 void
@@ -63,7 +64,7 @@ c_call(PyObject *self, PyObject *args)
     PyObject *tuple = NULL;
     PyObject *result;
     char *app, *model, *method;
-    int ret, i;
+    int ret;
 
     if (!PyArg_ParseTuple(args, "sss|O", &app, &model, &method, &tuple))
         return NULL;
@@ -97,8 +98,6 @@ c_notify(PyObject *self, PyObject *args)
     /*!
      * This method can be used in CSL scripts to emit DBus signals.
      */
-
-    PyObject *item, *tuple, *result;
     const char *interface, *path, *method, *msg;
 
     if (!PyArg_ParseTuple(args, "ss", &method, &msg))
@@ -191,13 +190,9 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
      * @return 0 on success, 1 on IO errors (missing file, etc.), 2 on script error
      */
 
-    PyObject *pCode, *pModule, *pDict, *pFunc, *pStr;
-    PyObject *argNames, *pkArgs;
-    PyObject *pKey, *pValue, *pItem;
-    PyObject *pFuncCode;
+    PyObject *pCode, *pModule, *pDict, *pFunc;
+    PyObject *pkArgs;
     PyMethodDef *meth;
-    node *n;
-    int i, e;
 
     char *script_path = get_script_path(app, model);
     char *code = load_file(script_path, NULL);
