@@ -298,6 +298,9 @@ QProgressBar::chunk {
          <layout class="QHBoxLayout" >
           <item>
            <widget class="QPushButton" name="releaseNotes" >
+            <property name="focusPolicy" >
+             <enum>Qt::TabFocus</enum>
+            </property>
             <property name="text" >
              <string>Release Notes</string>
             </property>
@@ -305,6 +308,9 @@ QProgressBar::chunk {
           </item>
           <item>
            <widget class="QPushButton" name="toggleHelp" >
+            <property name="focusPolicy" >
+             <enum>Qt::TabFocus</enum>
+            </property>
             <property name="text" >
              <string>Hide Help</string>
             </property>
@@ -332,6 +338,9 @@ QProgressBar::chunk {
           </property>
           <item>
            <widget class="QPushButton" name="buttonBack" >
+            <property name="focusPolicy" >
+             <enum>Qt::TabFocus</enum>
+            </property>
             <property name="text" >
              <string>«</string>
             </property>
@@ -339,6 +348,9 @@ QProgressBar::chunk {
           </item>
           <item>
            <widget class="QPushButton" name="buttonNext" >
+            <property name="focusPolicy" >
+             <enum>Qt::TabFocus</enum>
+            </property>
             <property name="text" >
              <string>»</string>
             </property>

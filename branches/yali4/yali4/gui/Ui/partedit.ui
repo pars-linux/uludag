@@ -26,7 +26,7 @@
        <property name="maximumSize" >
         <size>
          <width>16777215</width>
-         <height>150</height>
+         <height>170</height>
         </size>
        </property>
        <property name="title" >
@@ -171,6 +171,9 @@
           </item>
           <item row="2" column="2" >
            <widget class="QSpinBox" name="partitionSize" >
+            <property name="suffix" >
+             <string> MB</string>
+            </property>
             <property name="minimum" >
              <number>20</number>
             </property>
@@ -209,6 +212,26 @@
            <widget class="QCheckBox" name="formatCheck" >
             <property name="text" >
              <string>Yes, Format this partition</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" >
+           <widget class="QLabel" name="label_7" >
+            <property name="font" >
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text" >
+             <string>File System :</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2" >
+           <widget class="QLabel" name="fileSystem" >
+            <property name="text" >
+             <string/>
             </property>
            </widget>
           </item>

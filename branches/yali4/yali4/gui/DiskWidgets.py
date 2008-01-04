@@ -28,27 +28,33 @@ from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 
 class DiskList(QtGui.QWidget):
-    def __init__(self, *args):
+    def __init__(self, partEdit, *args):
         QtGui.QWidget.__init__(self,None)
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
         self.setAutoFillBackground(False)
+        self.diskCount = 1
+        self.partEdit = partEdit
         self.setStyleSheet("""
-            QTabWidget::pane { border-top: 2px solid #C2C7CB; }
+            QTabWidget::pane { border-radius: 4px;
+                               border: 2px solid #FFFFFF;
+                               background-image:url(':/gui/pics/trans.png'); }
             QTabWidget::tab-bar { left: 5px; }
             QTabBar::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                        stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
                                                        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
                            border: 2px solid #C4C4C3;
-                           border-bottom-color: #C2C7CB;
+                           border-bottom-color: #FFFFFF;
                            border-top-left-radius: 4px;
                            border-top-right-radius: 4px;
                            min-width: 8ex;
-                           padding: 2px; }
+                           padding: 2px;
+                           padding-left:4px;
+                           padding-right:4px;}
             QTabBar::tab:selected,
             QTabBar::tab:hover { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                              stop: 0 #fafafa, stop: 0.4 #f4f4f4,
                                                              stop: 0.5 #e7e7e7, stop: 1.0 #fafafa); }
-            QTabBar::tab:selected { border-color: #9B9B9B; border-bottom-color: #C2C7CB; }
+            QTabBar::tab:selected { border-color: #FFFFFF; border-bottom-color: #FFFFFF; }
             QTabBar::tab:!selected { margin-top: 2px; }
             QRadioButton::indicator { width:1px;height:1px;border-color:white; }
             QRadioButton:checked { border:3px solid #777;border-radius:4px; }
@@ -63,10 +69,17 @@ class DiskList(QtGui.QWidget):
         self.partEdit = PartEdit()
         self.vbox.addWidget(self.toolBox)
         self.vbox.addWidget(self.partEdit)
+
+        self.connect(self.toolBox,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
         self.initDevices()
+
+    def updatePartEdit(self, dw):
+        dw.updatePartEdit()
 
     def addDisk(self,dw):
         self.toolBox.addTab(dw,dw.name)
+        self.toolBox.setTabToolTip(self.toolBox.count()-1,"%s - %s" % (dw.model,dw.name))
+        self.diskCount+=1
 
     def update(self):
 
@@ -111,14 +124,14 @@ class DiskList(QtGui.QWidget):
                 return _("%d MB free") % mb
 
         # add the device to the list
-        devstr = u"%s (%s)" % (dev.getModel(), dev.getName())
+        devstr = u"Disk %d (%s)" % (self.diskCount, dev.getName())
         freespace = dev.getFreeMB()
         if freespace:
             size_str = dev.getSizeStr() + "  (%s)" % sizeStr(freespace)
         else:
             size_str = dev.getSizeStr()
 
-        d = DiskItem("%s - %s" % (devstr,size_str))
+        d = DiskItem("%s - %s" % (devstr,size_str),dev.getModel(),self.partEdit)
         d.setData(dev)
         self.addDisk(d)
 
@@ -140,7 +153,7 @@ class DiskItem(QtGui.QWidget):
     # storage.Device or partition.Partition
     _data = None
 
-    def __init__(self, name):
+    def __init__(self, name, model, partEdit):
         QtGui.QWidget.__init__(self,None)
         self.setAutoFillBackground(False)
 
@@ -166,6 +179,8 @@ class DiskItem(QtGui.QWidget):
 
         self.partitions = []
         self.name = name
+        self.model = model
+        self.partEdit = partEdit
 
     def addPartition(self,name=None,data=None,_size=None):
 
@@ -187,7 +202,18 @@ class DiskItem(QtGui.QWidget):
         <b>FileSystem:</b> %s""") % (data.getPath(),data.getSizeStr(),data.getFSName()))
         self.splinter.addWidget(partition)
         self.partitions.append({"name":name,"data":data,"size":_size})
-        ctx.debugger.log("Current Size : %s" % partition.width())
+        self.connect(partition,QtCore.SIGNAL("clicked()"),self.updatePartEdit)
+
+    def updatePartEdit(self):
+        i=0
+        for part in self.partitions:
+            if self.splinter.widget(i).isChecked():
+                self.partEdit.ui.devicePath.setText(part["data"].getPath())
+                self.partEdit.ui.fileSystem.setText(part["data"].getFSName())
+                self.partEdit.ui.partitionSize.setMaximum(part["data"].getMB())
+                self.partEdit.ui.partitionSize.setValue(part["data"].getMB())
+                self.partEdit.ui.deviceGroup.setTitle(part["name"])
+            i+=1
 
     def setData(self, d):
         self._data = d
@@ -206,6 +232,8 @@ class DiskItem(QtGui.QWidget):
             if part['size'] == 5:
                 self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
             i+=1
+        self.splinter.widget(0).setChecked(True)
+        self.updatePartEdit()
 
 class PartEdit(QtGui.QWidget):
     def __init__(self, *args):

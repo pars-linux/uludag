@@ -76,14 +76,14 @@ about disk partitioning.
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
 
-        self.partList = DiskList(self)
         self.partEdit = PartEdit(self)
+        self.partList = DiskList(self.partEdit,self)
         self.dialog = None
 
         vbox = QtGui.QVBoxLayout(self)
         vbox.addWidget(self.partList)
         self.partList.show()
-        
+
         """
         self.connect(self.partlist, PYSIGNAL("signalCreate"),
                      self.slotCreatePart)
