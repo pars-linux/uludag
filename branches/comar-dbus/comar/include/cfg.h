@@ -10,7 +10,7 @@
 extern char *cfg_bus_name;
 extern char *cfg_config_dir;
 extern char *cfg_data_dir;
-extern int cfg_idle_shutdown;
+extern int cfg_timeout;
 extern int cfg_log_console;
 extern int cfg_log_file;
 extern char *cfg_log_file_name;

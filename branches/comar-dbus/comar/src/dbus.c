@@ -617,7 +617,7 @@ dbus_listen()
         msg = dbus_connection_pop_message(conn);
 
         if (proc_check_idle() == 1) {
-            log_info("Service was idle for %d second(s), closing daemon...\n", cfg_idle_shutdown);
+            log_info("Service was idle for %d second(s), closing daemon...\n", cfg_timeout);
             shutdown_activated = 1;
             break;
         }

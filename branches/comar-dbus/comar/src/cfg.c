@@ -28,7 +28,7 @@ char *cfg_config_dir = CONFIG_DIR;
 char *cfg_data_dir = DATA_DIR;
 
 //! Max idle time to shutdown session service
-int cfg_idle_shutdown = 30;
+int cfg_timeout = 60;
 
 //! Print log messages to console?
 int cfg_log_console = 0;
@@ -64,7 +64,7 @@ static struct option longopts[] = {
     { "configdir", required_argument, NULL, 'c' },
     { "datadir", required_argument, NULL, 'd' },
     { "debug", required_argument, NULL, 'g' },
-    { "idle", required_argument, NULL, 'i' },
+    { "timeout", required_argument, NULL, 't' },
     { "print", 0, NULL, 'p' },
     { "help", 0, NULL, 'h' },
     { "version", 0, NULL, 'v' },
@@ -72,7 +72,7 @@ static struct option longopts[] = {
 };
 
 //! Short options
-static char *shortopts = "c:d:g:i:phv";
+static char *shortopts = "c:d:g:t:phv";
 
 //! Help message
 static void
@@ -87,8 +87,8 @@ print_usage(const char *name)
         "                       (default is %s)\n"
         " -g, --debug    [FLAG] Set debug flag.\n"
         "                       (Flags: dbus, proc, perf, full)\n"
-        " -i, --idle     [SECS] Shutdown after [SECS] seconds with no action.\n"
-        "                       (Default is %d)\n"
+        " -t, --timeout  [SECS] Shutdown after [SECS] seconds with no action.\n"
+        "                       (Default is %d, 0 disables timeout)\n"
         " -p, --print           Print debug messages to console.\n"
         " -h, --help            Print this text and exit.\n"
         " -v, --version         Print version and exit.\n"
@@ -96,7 +96,7 @@ print_usage(const char *name)
         name,
         cfg_config_dir,
         cfg_data_dir,
-        cfg_idle_shutdown
+        cfg_timeout
     );
 }
 
@@ -142,11 +142,8 @@ cfg_init(int argc, char *argv[])
                         cfg_log_flags |= logflags[j].value;
                 }
                 break;
-            case 'i':
-                cfg_idle_shutdown = strtol(optarg, NULL, 0);
-                if (cfg_idle_shutdown == 0) {
-                    cfg_idle_shutdown = 30;
-                }
+            case 't':
+                cfg_timeout = strtol(optarg, NULL, 0);
                 break;
             case 'p':
                 cfg_log_console = 1;

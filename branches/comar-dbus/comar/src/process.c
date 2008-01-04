@@ -73,6 +73,10 @@ set_my_name(const char *name)
      * @name Process name
      */
 
+    if (my_proc.parent.from == -1) {
+        return;
+    }
+
     if (strlen(name) + 1 < name_size) {
         memset(name_addr, 0, name_size);
         strcpy(name_addr, name);
@@ -89,7 +93,11 @@ proc_check_idle()
      * @return 1 if true, 0 if false
      */
 
-    if (my_proc.nr_children == 0 && time_lastaction != 0 && difftime(time(0), time_lastaction) > cfg_idle_shutdown) {
+    if (cfg_timeout == 0) {
+        return 0;
+    }
+
+    if (my_proc.nr_children == 0 && time_lastaction != 0 && difftime(time(0), time_lastaction) > cfg_timeout) {
         return 1;
     }
     return 0;
