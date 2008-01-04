@@ -46,6 +46,15 @@ void TCategoryView::setCategory( const QString& path, const QString& icon, const
   _title->setText( title );
 
   _iconview->setCategory( path );
+
+   this->path=path;
+}
+
+void TCategoryView::isExtraSelected(bool isChecked){
+
+_iconview->showExtras=isChecked;
+_iconview->setCategory( this->path );
+
 }
 
 CategoryTitle::CategoryTitle( TCategoryView *view )

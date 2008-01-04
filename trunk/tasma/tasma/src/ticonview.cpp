@@ -31,7 +31,6 @@
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kprocess.h>
-
 #include "ticonview.h"
 
 TIconView::TIconView( QWidget *parent, const char* name )
@@ -48,6 +47,8 @@ TIconView::TIconView( QWidget *parent, const char* name )
   QFont f = font();
   f.setWeight( QFont::Bold );
   setFont( f );
+  
+  showExtras = false;
 
   connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( slotItemSelected( QIconViewItem* ) ) );
 
@@ -76,9 +77,18 @@ void TIconView::setCategory( const QString& path )
           KCModuleInfo *minfo = new KCModuleInfo(
                                                  static_cast<KService*>(  p ) );
 
+          if (showExtras == false)
+            {
+              KSimpleConfig cfg(minfo->fileName());
+
+              cfg.setDesktopGroup();
+              if ( cfg.readEntry("Categories").contains("X-KDE-tasma-advanced") )
+                continue;
+            }
+
           if (  minfo->icon() )
-            _icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
-          _item = new TIconViewItem( this,
+         	_icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
+                _item = new TIconViewItem( this,
                                      minfo->moduleName(),
                                      _icon, minfo );
 

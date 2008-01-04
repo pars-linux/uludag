@@ -13,7 +13,8 @@
 #define T_CATEGORY_VIEW_H
 
 #include <qframe.h>
-
+#include "tasmamainwin.h"
+#include "tmodulecategorylist.h"
 class TCategoryView;
 class TIconView;
 class QLabel;
@@ -39,13 +40,17 @@ class TCategoryView : public QFrame
   virtual ~TCategoryView();
 
   void setCategory( const QString& path, const QString& icon, const QString& caption );
-
- signals:
+  
+  public slots:
+  void isExtraSelected(bool);
+  
+  signals:
   void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
-
+  
  private:
   CategoryTitle *_title;
   TIconView *_iconview;
+  QString path;
 };
 
 #endif // T_CATEGORY_VIEW_H

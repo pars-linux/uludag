@@ -32,6 +32,7 @@ class TModuleCategoryList;
 class TModuleView;
 class TCategoryView;
 class AboutView;
+class KToggleAction;
 
 class TasmaMainWin : public KMainWindow
 {
@@ -62,6 +63,7 @@ class TasmaMainWin : public KMainWindow
   TCategoryView *_categoryview;
   AboutView *_about;
   KAction *_about_module;
+  KToggleAction *_extra_modules;
   KCModule *_currentModule;
   QListViewItem *_currentCategory;
 
