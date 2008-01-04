@@ -13,7 +13,6 @@ class QTimer;
 class QTimerEvent;
 
 typedef struct DBusConnection;
-typedef struct DBusServer;
 
 class QDBusConnectionPrivate: public QObject
 {
