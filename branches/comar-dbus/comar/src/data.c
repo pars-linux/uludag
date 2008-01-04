@@ -56,16 +56,19 @@ db_init(void)
     if (stat(code_dir, &fs) != 0) {
         if (0 != mkdir(code_dir, S_IRWXU)) {
             log_error("Cannot create code dir '%s'\n", code_dir);
+            free(code_dir);
             return -1;
         }
     }
     else {
         if (0 != access(code_dir, W_OK)) {
             log_error("Cannot write code dir '%s'\n", code_dir);
+            free(code_dir);
             return -1;
         }
     }
 
+    free(code_dir);
     // FIXME: check and recover db files
     return 0;
 }
