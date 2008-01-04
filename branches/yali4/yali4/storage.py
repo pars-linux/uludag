@@ -374,8 +374,8 @@ class Device:
     def __addToPartitionsDict(self, part, fs_ready=True):
 
         geom = part.geom
-        part_mb = long(
-            (geom.end - geom.start + 1) * self._sector_size / MEGABYTE)
+        part_mb = long((geom.end - geom.start + 1) * self._sector_size / MEGABYTE)
+        # print geom.start," -- ",geom.end
         if part.num >= 1:
             fs_name = ""
             if part.fs_type:

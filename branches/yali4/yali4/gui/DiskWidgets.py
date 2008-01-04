@@ -30,7 +30,7 @@ from yali4.gui.GUIException import *
 class DiskList(QtGui.QWidget):
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.resize(QSize(QRect(0,0,620,80).size()).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
         self.setStyleSheet("""
             QToolBox::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                         stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
@@ -120,12 +120,16 @@ class DiskList(QtGui.QWidget):
         # add partitions on device
         for part in dev.getOrderedPartitionList():
             parent_item = d
+            
+            """
             if part.isExtended():
                 continue
             elif part.getType() == parteddata.freeSpaceType:
                 # Don't show free space as a new item on GUI #
                 #name = _("Free")
+                ctx.debugger.log("Free Type")
                 continue
+            """
             name = _("Partition %d") % part.getMinor()
             parent_item.addPartition(name,part,sizePix(part.getMB(),dev.getTotalMB()))
 
@@ -140,8 +144,8 @@ class DiskItem(QtGui.QWidget):
         self.layout = QtGui.QGridLayout(self)
         self.layout.setContentsMargins(1,0,1,0)
         self.diskGroup = QtGui.QGroupBox(self)
-        self.diskGroup.setMinimumSize(QSize(590,70))
-        self.diskGroup.setMaximumSize(QSize(590,70))
+        self.diskGroup.setMinimumSize(QSize(570,70))
+        self.diskGroup.setMaximumSize(QSize(570,70))
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
         self.gridlayout.setMargin(0)
         self.gridlayout.setSpacing(0)
