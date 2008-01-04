@@ -49,6 +49,9 @@ class DiskList(QtGui.QWidget):
         self.partEdit = PartEdit()
 
         vbox.addWidget(self.toolBox)
+        spacerItem = QtGui.QSpacerItem(552,16,QtGui.QSizePolicy.Minimum,QtGui.QSizePolicy.Minimum)
+        self.gridlayout.addItem(spacerItem,0,0,1,1)
+
         vbox.addWidget(self.partEdit)
         self.initDevices()
 
