@@ -390,7 +390,7 @@ def scanRemote(device):
 
 def setConnection(name, device):
     d = DB.getDB(name)
-    changed =  d and d.has_key("device")
+    changed = d and d.has_key("device")
     d["device"] = device
     DB.setDB(name, d)
     if changed:
