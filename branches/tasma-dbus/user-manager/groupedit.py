@@ -119,7 +119,7 @@ class Guide(QWidget):
 
 
 class GroupStack(QVBox):
-    def __init__(self, parent, link):
+    def __init__(self, parent):
         QVBox.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)
@@ -158,8 +158,6 @@ class GroupStack(QVBox):
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
         
         self.guide.buttons = hb
-        
-        self.link = link
     
     def slotAdd(self):
         if self.guide.check():
@@ -167,7 +165,8 @@ class GroupStack(QVBox):
         
         self.guide.op_start(i18n("Adding group..."))
         def addGroup():
-            self.link.addGroup(self.g_id.text(), self.g_name.text())
+            bus = activateComar()
+            bus.addGroup(self.g_id.text(), self.g_name.text())
         try:
             addGroup()
         except DBusException, e:

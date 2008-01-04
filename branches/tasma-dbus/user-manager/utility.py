@@ -12,12 +12,22 @@
 import locale
 import os
 import string
+import sys
 
 from qt import *
 from kdecore import *
 from khtml import *
 
 import dbus
+
+def activateComar():
+    try:
+        bus = dbus.SystemBus()
+        obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout", introspect=False)
+        return dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.User.Manager")
+    except dbus.DBusException:
+        KMessageBox.sorry(None, i18n("Cannot activate COMAR! DBus server not responding or COMAR service is not installed."))
+        sys.exit(0)
 
 def obtainAuthorization(app, action):
     bus = dbus.SessionBus()

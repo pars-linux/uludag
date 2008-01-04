@@ -16,7 +16,7 @@ from kdeui import *
 
 from utility import getIconSet
 from utility import HelpDialog
-from utility import obtainAuthorization
+from utility import obtainAuthorization, activateComar
 
 from dbus import DBusException
 
@@ -66,7 +66,7 @@ class GroupItem(QListViewItem):
 
 
 class BrowseStack(QVBox):
-    def __init__(self, parent, link):
+    def __init__(self, parent):
         QWidget.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)
@@ -121,9 +121,9 @@ class BrowseStack(QVBox):
         tab.addTab(self.users, getIconSet("personal.png", KIcon.Small), i18n("Users"))
         tab.addTab(self.groups, getIconSet("kuser.png", KIcon.Small), i18n("Groups"))
         
-        self.link = link
-        link.userList(reply_handler=self.comarUsers, error_handler=self.comarError)
-        link.groupList(reply_handler=self.comarGroups, error_handler=self.comarError)
+        bus = activateComar()
+        bus.userList(reply_handler=self.comarUsers, error_handler=self.comarError)
+        bus.groupList(reply_handler=self.comarGroups, error_handler=self.comarError)
         
         # Access control
         self.can_access = True
@@ -151,7 +151,8 @@ class BrowseStack(QVBox):
                 )
                 if ret == KMessageBox.Yes:
                     def deleteUser():
-                        self.link.deleteUser(item.uid, True)
+                        bus = activateComar()
+                        bus.deleteUser(item.uid, True)
                     try:
                         deleteUser()
                     except DBusException, e:
@@ -164,7 +165,8 @@ class BrowseStack(QVBox):
                     self.userModified(item.uid)
                 if ret == KMessageBox.No:
                     def deleteUser():
-                        self.link.deleteUser(item.uid, False)
+                        bus = activateComar()
+                        bus.deleteUser(item.uid, False)
                     try:
                         deleteUser()
                     except DBusException, e:
@@ -189,7 +191,8 @@ class BrowseStack(QVBox):
                     KStdGuiItem.cancel()
                 ):
                     def deleteGroup():
-                        self.link.deleteGroup(item.gid)
+                        bus = activateComar()
+                        bus.deleteGroup(item.gid)
                     try:
                         deleteGroup()
                     except DBusException, e:

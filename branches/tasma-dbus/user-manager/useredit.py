@@ -412,7 +412,7 @@ class Guide(QWidget):
 
 
 class UserStack(QVBox):
-    def __init__(self, parent, link, edit=False):
+    def __init__(self, parent, edit=False):
         QVBox.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)
@@ -482,8 +482,6 @@ class UserStack(QVBox):
         self.guide.ok_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
-        
-        self.link = link
     
     def checkAdd(self):
        return self.guide.check()
@@ -525,7 +523,8 @@ class UserStack(QVBox):
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
             def setUser():
-                self.link.setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"].split(","))
+                bus = activateComar()
+                bus.setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"].split(","))
             try:
                 setUser()
             except DBusException, e:
@@ -546,7 +545,8 @@ class UserStack(QVBox):
         self.guide.op_start(i18n("Adding user..."))
         uid = 0;
         def addUser():
-            return self.link.addUser(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
+            bus = activateComar()
+            return bus.addUser(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
         try:
             uid = addUser()
         except DBusException, e:
