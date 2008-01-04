@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 #
 
-from yali.exception import *
+from yali4.exception import *
 
 class GUIError(YaliError):
     pass
