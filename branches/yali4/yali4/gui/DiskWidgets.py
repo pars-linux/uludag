@@ -66,7 +66,6 @@ class DiskList(QtGui.QWidget):
 
     def addDisk(self,dw):
         self.toolBox.addTab(dw,dw.name)
-        #self.vbox.addWidget(dw)
 
     def update(self):
 
@@ -144,13 +143,11 @@ class DiskItem(QtGui.QWidget):
         QtGui.QWidget.__init__(self,None)
         self.setAutoFillBackground(False)
 
-        self.layout = QtGui.QGridLayout(self)
-        self.layout.setContentsMargins(1,1,1,1)
+        self.layout = QtGui.QVBoxLayout(self)
 
         self.diskGroup = QtGui.QGroupBox(self)
         self.diskGroup.setMinimumSize(QSize(570,70))
         self.diskGroup.setMaximumSize(QSize(2280,70))
-        #self.diskGroup.setTitle("Dev Sda")
         self.setMaximumSize(QSize(2280,80))
 
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
@@ -161,6 +158,9 @@ class DiskItem(QtGui.QWidget):
         self.splinter.setHandleWidth(2)
 
         self.gridlayout.addWidget(self.splinter,0,0,1,1)
+
+        spacerItem = QtGui.QSpacerItem(20,40,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Expanding)
+        self.layout.addItem(spacerItem)
         self.layout.addWidget(self.diskGroup)
 
         self.partitions = []
