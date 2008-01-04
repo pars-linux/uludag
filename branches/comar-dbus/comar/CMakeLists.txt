@@ -15,7 +15,7 @@ SET (VERSION_SUFFIX "svn")
 # src/dbus.c: In function `dbus_comar_methods':
 # src/dbus.c:390: warning: dereferencing type-punned pointer will break strict-aliasing rules
 # src/dbus.c:416: warning: dereferencing type-punned pointer will break strict-aliasing rules
-SET (FLAGS "-g -O0 -Werror -Wcast-align -Wno-uninitialized -Wall -fno-strict-aliasing -fprofile-arcs -ftest-coverage")
+SET (FLAGS "-g -O0 -Werror -Wcast-align -Wno-uninitialized -Wall -fno-strict-aliasing") # -fprofile-arcs -ftest-coverage")
 SET (CMAKE_C_FLAGS "${FLAGS}")
 
 # Append version suffix, if specified
