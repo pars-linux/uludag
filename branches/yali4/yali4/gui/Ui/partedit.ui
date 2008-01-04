@@ -14,108 +14,26 @@
   </property>
   <layout class="QGridLayout" >
    <item row="0" column="0" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" >
-      <size>
-       <width>552</width>
-       <height>16</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="0" >
-    <widget class="QGroupBox" name="deviceGroup" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="title" >
-      <string>Partition 1 on FUJISTU - /dev/sda1</string>
-     </property>
-     <layout class="QGridLayout" >
-      <item row="0" column="0" >
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType" >
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>16</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="1" >
-       <widget class="QLabel" name="label_5" >
-        <property name="text" >
-         <string/>
-        </property>
-        <property name="pixmap" >
-         <pixmap resource="../../data.qrc" >:/gui/pics/hdd_unmount.png</pixmap>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2" >
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType" >
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>16</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="3" >
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QGroupBox" name="deviceGroup" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="title" >
+        <string>Partition 1 on FUJISTU - /dev/sda1</string>
+       </property>
        <layout class="QGridLayout" >
         <item row="0" column="0" >
-         <widget class="QLabel" name="label" >
-          <property name="font" >
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text" >
-           <string>Device :</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2" colspan="2" >
-         <widget class="QLabel" name="devicePath" >
-          <property name="text" >
-           <string>/dev/sda1</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" >
-         <widget class="QLabel" name="label_2" >
-          <property name="font" >
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text" >
-           <string>Use :</string>
-          </property>
-         </widget>
-        </item>
-        <item rowspan="2" row="1" column="1" >
          <spacer>
           <property name="orientation" >
            <enum>Qt::Horizontal</enum>
@@ -131,152 +49,231 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="2" colspan="2" >
-         <widget class="QComboBox" name="formatType" >
-          <property name="minimumSize" >
+        <item row="0" column="1" >
+         <widget class="QLabel" name="label_5" >
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="pixmap" >
+           <pixmap resource="../../data.qrc" >:/gui/pics/hdd_unmount.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" >
            <size>
-            <width>300</width>
-            <height>0</height>
+            <width>16</width>
+            <height>20</height>
            </size>
           </property>
-          <item>
-           <property name="text" >
-            <string>as Pardus System Files (mandatory)</string>
-           </property>
+         </spacer>
+        </item>
+        <item row="0" column="3" >
+         <layout class="QGridLayout" >
+          <item row="0" column="0" >
+           <widget class="QLabel" name="label" >
+            <property name="font" >
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text" >
+             <string>Device :</string>
+            </property>
+           </widget>
           </item>
-          <item>
-           <property name="text" >
-            <string>as User Files (optional)</string>
-           </property>
+          <item row="0" column="2" colspan="2" >
+           <widget class="QLabel" name="devicePath" >
+            <property name="text" >
+             <string>/dev/sda1</string>
+            </property>
+           </widget>
           </item>
-          <item>
-           <property name="text" >
-            <string>as Swap Space (optional)</string>
-           </property>
+          <item row="1" column="0" >
+           <widget class="QLabel" name="label_2" >
+            <property name="font" >
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text" >
+             <string>Use :</string>
+            </property>
+           </widget>
           </item>
-          <item>
-           <property name="text" >
-            <string>as Storage Area</string>
-           </property>
+          <item rowspan="2" row="1" column="1" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>16</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
-         </widget>
+          <item row="1" column="2" colspan="2" >
+           <widget class="QComboBox" name="formatType" >
+            <property name="minimumSize" >
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text" >
+              <string>as Pardus System Files (mandatory)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>as User Files (optional)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>as Swap Space (optional)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>as Storage Area</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <widget class="QLabel" name="label_4" >
+            <property name="font" >
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text" >
+             <string>Size :</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2" >
+           <widget class="QSpinBox" name="partitionSize" >
+            <property name="minimum" >
+             <number>20</number>
+            </property>
+            <property name="maximum" >
+             <number>100</number>
+            </property>
+            <property name="singleStep" >
+             <number>50</number>
+            </property>
+            <property name="value" >
+             <number>20</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3" >
+           <widget class="QCheckBox" name="useAvail" >
+            <property name="text" >
+             <string>Use avaliable</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" >
+           <widget class="QLabel" name="label_3" >
+            <property name="font" >
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text" >
+             <string>Format :</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2" colspan="2" >
+           <widget class="QCheckBox" name="formatCheck" >
+            <property name="text" >
+             <string>Yes, Format this partition</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
-        <item row="2" column="0" >
-         <widget class="QLabel" name="label_4" >
-          <property name="font" >
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
+        <item row="0" column="4" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
           </property>
-          <property name="text" >
-           <string>Size :</string>
+          <property name="sizeHint" >
+           <size>
+            <width>151</width>
+            <height>20</height>
+           </size>
           </property>
-         </widget>
-        </item>
-        <item row="2" column="2" >
-         <widget class="QSpinBox" name="partitionSize" >
-          <property name="minimum" >
-           <number>20</number>
-          </property>
-          <property name="maximum" >
-           <number>100</number>
-          </property>
-          <property name="singleStep" >
-           <number>50</number>
-          </property>
-          <property name="value" >
-           <number>20</number>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="3" >
-         <widget class="QCheckBox" name="useAvail" >
-          <property name="text" >
-           <string>Use avaliable</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0" >
-         <widget class="QLabel" name="label_3" >
-          <property name="font" >
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text" >
-           <string>Format :</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="2" colspan="2" >
-         <widget class="QCheckBox" name="formatCheck" >
-          <property name="text" >
-           <string>Yes, Format this partition</string>
-          </property>
-         </widget>
+         </spacer>
         </item>
        </layout>
-      </item>
-      <item row="0" column="4" >
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>151</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="2" column="0" >
-    <layout class="QHBoxLayout" >
-     <item>
-      <widget class="QLabel" name="label_6" >
-       <property name="styleSheet" >
-        <string>color:green;</string>
-       </property>
-       <property name="text" >
-        <string>Changes will be applied when you finish..</string>
-       </property>
       </widget>
      </item>
      <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="deletePartition" >
-       <property name="styleSheet" >
-        <string>background-color:red;
+      <layout class="QHBoxLayout" >
+       <item>
+        <widget class="QLabel" name="label_6" >
+         <property name="styleSheet" >
+          <string>color:green;</string>
+         </property>
+         <property name="text" >
+          <string>Changes will be applied when you finish..</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="deletePartition" >
+         <property name="styleSheet" >
+          <string>background-color:red;
 color:white;</string>
-       </property>
-       <property name="text" >
-        <string>Delete This Partition</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="applyTheChanges" >
-       <property name="text" >
-        <string>Apply</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text" >
+          <string>Delete This Partition</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="applyTheChanges" >
+         <property name="text" >
+          <string>Apply</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>

@@ -58,6 +58,7 @@ class DiskList(QtGui.QWidget):
 
         self.toolBox = QtGui.QTabWidget(self)
         self.toolBox.setAutoFillBackground(False)
+        self.toolBox.setFocusPolicy(Qt.NoFocus)
 
         self.partEdit = PartEdit()
         self.vbox.addWidget(self.toolBox)
@@ -148,7 +149,6 @@ class DiskItem(QtGui.QWidget):
         self.diskGroup = QtGui.QGroupBox(self)
         self.diskGroup.setMinimumSize(QSize(570,70))
         self.diskGroup.setMaximumSize(QSize(2280,70))
-        self.setMaximumSize(QSize(2280,80))
 
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
         self.gridlayout.setMargin(0)
@@ -162,14 +162,26 @@ class DiskItem(QtGui.QWidget):
         spacerItem = QtGui.QSpacerItem(20,40,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Expanding)
         self.layout.addItem(spacerItem)
         self.layout.addWidget(self.diskGroup)
+        self.layout.addItem(spacerItem)
 
         self.partitions = []
         self.name = name
 
     def addPartition(self,name=None,data=None,_size=None):
+
+        def color(fs_type):
+            colors = {"fat32":"#18D918",
+                      "hfs+" :"#C0A39E",
+                      "fat16":"#00FF00",
+                      "ext3" :"#7590AE",
+                      "ext2" :"#9DB8D2"}
+            if colors.has_key(fs_type):
+                return colors[fs_type]
+            return "#A9A9A9"
+
         partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
-        partition.setStyleSheet("background-color:lightblue")
+        partition.setStyleSheet("background-color:%s" % color(data.getFSName()))
         partition.setToolTip(_("""<b>Path:</b> %s<br>
         <b>Size:</b> %s<br>
         <b>FileSystem:</b> %s""") % (data.getPath(),data.getSizeStr(),data.getFSName()))

@@ -155,7 +155,7 @@ class FileSystem:
 
         if not self.isImplemented():
             e = "%s file system is not fully implemented." %(self.name())
-        
+
         if e:
             raise YaliException, e
 
