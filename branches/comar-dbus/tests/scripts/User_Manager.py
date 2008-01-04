@@ -403,7 +403,7 @@ def deleteUser(uid, deletefiles):
         db.set_groups(u.name, [])
         del db.users[uid]
         db.sync()
-        if deletefiles == "true":
+        if deletefiles:
             os.system('rm -rf "%s"' % home)
 
 def groupList():
