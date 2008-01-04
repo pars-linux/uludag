@@ -33,30 +33,40 @@ class DiskList(QtGui.QWidget):
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
         self.setAutoFillBackground(False)
         self.setStyleSheet("""
-            QToolBox::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                                        stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                                        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-                            border-radius: 5px; }
+            QTabWidget::pane { border-top: 2px solid #C2C7CB; }
+            QTabWidget::tab-bar { left: 5px; }
+            QTabBar::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                                       stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                                       stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+                           border: 2px solid #C4C4C3;
+                           border-bottom-color: #C2C7CB;
+                           border-top-left-radius: 4px;
+                           border-top-right-radius: 4px;
+                           min-width: 8ex;
+                           padding: 2px; }
+            QTabBar::tab:selected,
+            QTabBar::tab:hover { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                                             stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                                             stop: 0.5 #e7e7e7, stop: 1.0 #fafafa); }
+            QTabBar::tab:selected { border-color: #9B9B9B; border-bottom-color: #C2C7CB; }
+            QTabBar::tab:!selected { margin-top: 2px; }
             QRadioButton::indicator { width:1px;height:1px;border-color:white; }
-            QRadioButton:checked { border:3px solid #777 }
+            QRadioButton:checked { border:3px solid #777;border-radius:4px; }
             QSplitter::handle { background-color:white; }
         """)
-        vbox = QtGui.QVBoxLayout(self)
+        self.vbox = QtGui.QVBoxLayout(self)
 
-        self.toolBox = QtGui.QToolBox(self)
+        self.toolBox = QtGui.QTabWidget(self)
         self.toolBox.setAutoFillBackground(False)
 
         self.partEdit = PartEdit()
-
-        vbox.addWidget(self.toolBox)
-        spacerItem = QtGui.QSpacerItem(552,16,QtGui.QSizePolicy.Minimum,QtGui.QSizePolicy.Minimum)
-        self.gridlayout.addItem(spacerItem,0,0,1,1)
-
-        vbox.addWidget(self.partEdit)
+        self.vbox.addWidget(self.toolBox)
+        self.vbox.addWidget(self.partEdit)
         self.initDevices()
 
     def addDisk(self,dw):
-        self.toolBox.addItem(dw,dw.name)
+        self.toolBox.addTab(dw,dw.name)
+        #self.vbox.addWidget(dw)
 
     def update(self):
 
@@ -140,6 +150,7 @@ class DiskItem(QtGui.QWidget):
         self.diskGroup = QtGui.QGroupBox(self)
         self.diskGroup.setMinimumSize(QSize(570,70))
         self.diskGroup.setMaximumSize(QSize(2280,70))
+        #self.diskGroup.setTitle("Dev Sda")
         self.setMaximumSize(QSize(2280,80))
 
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
