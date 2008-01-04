@@ -29,12 +29,14 @@ class TestObject(dbus.service.Object):
         loop.quit()
 
 if __name__ == '__main__':
+    # we should create QApplication before DBus mainloop
+    loop = QApplication(sys.argv)
+
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
 
     session_bus = dbus.SessionBus()
     name = dbus.service.BusName('com.example.TestService', session_bus)
     object = TestObject(session_bus)
 
-    loop = QApplication(sys.argv)
     print "Running example signal emitter service."
     sys.exit(loop.exec_loop())
