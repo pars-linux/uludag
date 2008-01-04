@@ -387,7 +387,7 @@ dbus_comar_methods(const char *method)
                 save_file(script, code, strlen(code));
                 free(script);
                 db_register_model(app, model);
-                dbus_reply_object(Py_True);
+                dbus_reply_object(PyBool_FromLong(1));
             }
         }
     }
@@ -413,7 +413,7 @@ dbus_comar_methods(const char *method)
                 pch = strtok(NULL, "|");
             }
 
-            dbus_reply_object(Py_True);
+            dbus_reply_object(PyBool_FromLong(1));
         }
     }
     else {

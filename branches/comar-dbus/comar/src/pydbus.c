@@ -380,7 +380,7 @@ dbus_py_get_item(DBusMessageIter* iter)
             break;
         case DBUS_TYPE_BOOLEAN:
             dbus_message_iter_get_basic(iter, &obj.b);
-            ret = (long)obj.b == 1 ? Py_True : Py_False;
+            ret = (long)obj.b == 1 ? PyBool_FromLong(1) : PyBool_FromLong(0);
             break;
         case DBUS_TYPE_DICT_ENTRY:
             break;
