@@ -4,5 +4,9 @@
     <Menu name="help">
         <Action name="help_about_module" append="about_merge"/>
     </Menu>
+    <Menu name="settings">
+	<text>Settings</text> 
+	<Action name="tasma-extra"/>
+    </Menu>
 </MenuBar>
 </kpartgui>

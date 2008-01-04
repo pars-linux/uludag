@@ -50,11 +50,13 @@ class TIconView : public KIconView
 
   void setCategory( const QString& path );
 
+  bool showExtras;
+
  signals:
-  void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
+    void signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool);
 
  protected slots:
-  void slotItemSelected( QIconViewItem* item );
+    void slotItemSelected( QIconViewItem* item );
 
  protected:
     virtual void keyPressEvent(QKeyEvent *event);

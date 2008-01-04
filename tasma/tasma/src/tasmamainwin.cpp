@@ -28,6 +28,7 @@
 #include "tmodulegroup.h"
 #include "tmodulecategorylist.h"
 #include "tmoduleview.h"
+#include "ticonview.h"
 #include "tasmamainwin.h"
 #include "tasmamainwin.moc"
 
@@ -66,6 +67,8 @@ TasmaMainWin::TasmaMainWin( const char* name )
     connect( _categoryview, SIGNAL( signalModuleSelected( KCModule*, const QString&, const QString&, const QString&, bool ) ),
              this, SLOT( moduleSelected( KCModule*, const QString&, const QString&, const QString&, bool ) ) );
 
+    connect(_extra_modules, SIGNAL(toggled(bool)), _categoryview, SLOT(isExtraSelected(bool)));
+
     setCentralWidget( _hbox );
 }
 
@@ -77,10 +80,13 @@ void TasmaMainWin::setupActions()
 {
   KStdAction::quit( this,  SLOT( close() ),  actionCollection() );
 
+  _extra_modules = new KToggleAction( i18n("&Show Extra Modules"), 0, actionCollection(),"tasma-extra");
+  _extra_modules->setChecked(false);
+
   _about_module = new KAction( i18n( "About Current Module" ), 0,
                                this, SLOT( aboutModule() ), actionCollection(),
                                "help_about_module" );
-
+  _about_module->setWhatsThis ( i18n( "Displays Information About Current Module" ) );
   _about_module->setEnabled( false );
 
   createGUI( "tasmaui.rc" );
