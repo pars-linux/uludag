@@ -125,6 +125,9 @@ class Runner:
         self._window.ui.show()
         # We want it to be a full-screen window.
         # self._window.ui.resize(self._app.desktop().size())
+
+        # For testing..
+        self._window.ui.resize(QSize(800,600))
         # self._window.ui.move(0,0)
         self._app.exec_()
 

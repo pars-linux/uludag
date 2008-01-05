@@ -91,7 +91,8 @@ class DiskList(QtGui.QWidget):
         self.diskCount+=1
 
     def update(self):
-
+        _cur = self.toolBox.currentIndex()
+        if _cur==-1: _cur = 0
         self.toolBox.clear()
         self.diskCount = 1
 
@@ -99,6 +100,8 @@ class DiskList(QtGui.QWidget):
             ctx.debugger.log("Device Found %s" % dev.getModel())
             self.addDevice(dev)
 
+        self.toolBox.setCurrentIndex(_cur)
+        self.updatePartEdit(self.toolBox.widget(_cur))
         self.checkRootPartRequest()
 
     def checkRootPartRequest(self):
@@ -208,7 +211,7 @@ class DiskItem(QtGui.QWidget):
                       "ext2" :"#9DB8D2"}
             if colors.has_key(fs_type):
                 return colors[fs_type]
-            return "#A9A9A9"
+            return "#FFF79E"
 
         partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
@@ -224,12 +227,9 @@ class DiskItem(QtGui.QWidget):
         i=0
         for part in self.partitions:
             if self.splinter.widget(i).isChecked():
-                self.partEdit.currentPart = part["data"]
-                self.partEdit.ui.devicePath.setText(part["data"].getPath())
-                self.partEdit.ui.fileSystem.setText(part["data"].getFSName())
-                self.partEdit.ui.partitionSize.setMaximum(part["data"].getMB())
-                self.partEdit.ui.partitionSize.setValue(part["data"].getMB())
                 self.partEdit.ui.deviceGroup.setTitle(part["name"])
+                self.partEdit.currentPart = part["data"]
+                self.partEdit.updateContent()
             i+=1
 
     def setData(self, d):
@@ -245,12 +245,13 @@ class DiskItem(QtGui.QWidget):
             _h.setEnabled(False)
             self.splinter.setCollapsible(i,False)
             self.splinter.widget(i).resize(part['size'],70)
-            self.splinter.widget(i).setMinimumSize(QSize(part['size'],50))
             if part['size'] == 8:
+                self.splinter.widget(i).setMinimumSize(QSize(part['size'],50))
                 self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
+            else:
+                self.splinter.widget(i).setMinimumSize(QSize(part['size']-20,50))
             i+=1
         self.splinter.widget(0).setChecked(True)
-        self.updatePartEdit()
 
 class PartEdit(QtGui.QWidget):
 
@@ -260,4 +261,14 @@ class PartEdit(QtGui.QWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_PartEdit()
         self.ui.setupUi(self)
+
+    def updateContent(self):
+        part = self.currentPart
+        self.ui.deletePartition.setVisible(True)
+        if part._parted_type == parteddata.freeSpaceType:
+            self.ui.deletePartition.setVisible(False)
+        self.ui.devicePath.setText(part.getPath())
+        self.ui.fileSystem.setText(part.getFSName())
+        self.ui.partitionSize.setMaximum(part.getMB())
+        self.ui.partitionSize.setValue(part.getMB())
 
