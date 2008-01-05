@@ -78,31 +78,10 @@ about disk partitioning.
 
         self.partEdit = PartEdit(self)
         self.partList = DiskList(self.partEdit,self)
-        self.dialog = None
 
         vbox = QtGui.QVBoxLayout(self)
         vbox.addWidget(self.partList)
         self.partList.show()
-
-        """
-        self.connect(self.partlist, PYSIGNAL("signalCreate"),
-                     self.slotCreatePart)
-
-        self.connect(self.partlist, PYSIGNAL("signalDelete"),
-                     self.slotDeletePart)
-
-        self.connect(self.partlist, PYSIGNAL("signalEdit"),
-                     self.slotEditPart)
-
-        self.connect(self.partlist, PYSIGNAL("signalResize"),
-                     self.slotResizePart)
-
-        self.connect(self.partedit, PYSIGNAL("signalApplied"),
-                     self.slotApplied)
-
-        self.connect(self.partedit, PYSIGNAL("signalCanceled"),
-                     self.slotCanceled)
-        """
 
     def shown(self):
         ctx.mainScreen.disableNext()
@@ -114,35 +93,4 @@ about disk partitioning.
         ctx.debugger.log("Manual Partitioning selected...")
         ctx.screens.processEvents()
         return True
-
-    """
-    def slotCreatePart(self, parent, d):
-        self.partedit.setState(createState, d)
-        self.dialog = Dialog(_("Create Partition"), self.partedit, self)
-        self.dialog.exec_loop()
-
-    def slotDeletePart(self, parent, d):
-        self.partedit.setState(deleteState, d)
-        self.dialog = Dialog(_("Delete Partition"), self.partedit, self)
-        self.dialog.exec_loop()
-
-    def slotEditPart(self, parent, d):
-        self.partedit.setState(editState, d)
-        self.dialog = Dialog(_("Edit Partition"), self.partedit, self)
-        self.dialog.exec_loop()
-
-    def slotResizePart(self, parent, d):
-        self.partedit.setState(resizeState, d)
-        self.dialog = Dialog(_("Resize Partition"), self.partedit, self)
-        self.dialog.exec_loop()
-
-    def slotApplied(self):
-        self.dialog.done(0)
-        self.partlist.update()
-
-    def slotCanceled(self):
-        self.dialog.reject()
-
-    """
-
 

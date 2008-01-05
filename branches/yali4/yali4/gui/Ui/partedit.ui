@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>570</width>
+    <width>584</width>
     <height>279</height>
    </rect>
   </property>
@@ -134,6 +134,11 @@
               <height>0</height>
              </size>
             </property>
+            <item>
+             <property name="text" >
+              <string/>
+             </property>
+            </item>
             <item>
              <property name="text" >
               <string>as Pardus System Files (mandatory)</string>

@@ -71,7 +71,16 @@ class DiskList(QtGui.QWidget):
         self.vbox.addWidget(self.partEdit)
 
         self.connect(self.toolBox,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
+        self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.initDevices()
+
+    def slotDeletePart(self):
+        dev = self.partEdit.currentPart.getDevice()
+        dev.deletePartition(self.partEdit.currentPart)
+        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.mountRequestType)
+        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.formatRequestType)
+        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.labelRequestType)
+        self.update()
 
     def updatePartEdit(self, dw):
         dw.updatePartEdit()
@@ -83,15 +92,22 @@ class DiskList(QtGui.QWidget):
 
     def update(self):
 
-        #FIXME
-        #self.clearList()
+        self.toolBox.clear()
+        self.diskCount = 1
 
         for dev in self.devs:
-            ctx.debugger.log("Device Found %s" % dev)
+            ctx.debugger.log("Device Found %s" % dev.getModel())
             self.addDevice(dev)
 
-        # self.showPartitionRequests()
-        # self.checkRootPartRequest()
+        self.checkRootPartRequest()
+
+    def checkRootPartRequest(self):
+        ctx.mainScreen.disableNext()
+
+        for req in ctx.partrequests:
+            if req.partitionType() == parttype.root:
+                # root partition type. can enable next
+                ctx.mainScreen.enableNext()
 
     def initDevices(self):
         self.devs = []
@@ -106,16 +122,16 @@ class DiskList(QtGui.QWidget):
     def resetChanges(self):
         yali4.storage.clear_devices()
         self.initDevices()
-        #ctx.partrequests.remove_all()
-        #self.update()
+        ctx.partrequests.remove_all()
+        self.update()
 
     def addDevice(self, dev):
 
         def sizePix(mb,total):
             _p = (self.toolBox.width() * mb) / total
             if _p<=1:
-                return 5
-            return _p - 5
+                return 8
+            return _p - 8
 
         def sizeStr(mb):
             if mb > 1024:
@@ -208,6 +224,7 @@ class DiskItem(QtGui.QWidget):
         i=0
         for part in self.partitions:
             if self.splinter.widget(i).isChecked():
+                self.partEdit.currentPart = part["data"]
                 self.partEdit.ui.devicePath.setText(part["data"].getPath())
                 self.partEdit.ui.fileSystem.setText(part["data"].getFSName())
                 self.partEdit.ui.partitionSize.setMaximum(part["data"].getMB())
@@ -229,13 +246,16 @@ class DiskItem(QtGui.QWidget):
             self.splinter.setCollapsible(i,False)
             self.splinter.widget(i).resize(part['size'],70)
             self.splinter.widget(i).setMinimumSize(QSize(part['size'],50))
-            if part['size'] == 5:
+            if part['size'] == 8:
                 self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
             i+=1
         self.splinter.widget(0).setChecked(True)
         self.updatePartEdit()
 
 class PartEdit(QtGui.QWidget):
+
+    currentPart = None
+
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_PartEdit()
