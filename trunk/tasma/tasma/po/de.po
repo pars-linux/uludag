@@ -5,13 +5,14 @@
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 16:45+0200\n"
-"PO-Revision-Date: 2007-12-17 03:44+0200\n"
-"Last-Translator: Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>\n"
+"PO-Revision-Date: 2008-01-05 07:50+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,16 +33,15 @@ msgstr "&Zurücksetzen"
 
 #: src/tasmamainwin.cpp:83
 msgid "&Show Extra Modules"
-msgstr ""
+msgstr "Extra Module An&zeigen"
 
 #: modules/tasmatv/tasmatv.cpp:42
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
 msgstr "(c) 2005-2006, TUBITAK - UEKAE"
 
 #: src/main.cpp:64
-#, fuzzy
 msgid "(c) 2005-2007, TUBITAK - UEKAE"
-msgstr "(c) 2005-2006, TUBITAK - UEKAE"
+msgstr "(c) 2005-2007, TUBITAK - UEKAE"
 
 #: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:51
 #, no-c-format
@@ -79,14 +79,12 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #: src/main.cpp:66
-#, fuzzy
 msgid "Developer"
-msgstr "Die KDE-Entwickler"
+msgstr "Entwickler"
 
 #: src/tasmamainwin.cpp:89
-#, fuzzy
 msgid "Displays Information About Current Module"
-msgstr "Über das aktuelle Modul"
+msgstr "Zeigt Informationen über das akutelle Modul an"
 
 #: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:48
 #, no-c-format
@@ -167,7 +165,7 @@ msgstr "Radio-Karte"
 #: rc.cpp:3
 #, no-c-format
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:45
 msgid "Size"
@@ -182,15 +180,14 @@ msgid "TASMA Tv Card Configuration Module"
 msgstr "TASMA TV-Karte-Konfigurationsmodul"
 
 #: src/aboutview.cpp:88
-#, fuzzy
 msgid ""
 "TASMA is a configuration application for Pardus Operating System. You can "
 "tweak the systems default configuration settings by using the modules "
 "presented in TASMA. "
 msgstr ""
-"TASMA ist ein Konfigurationsprogramm für das Pardus Betriebssystem. Durch "
-"die Verwendung des Moduls in TASMA, können Sie die Systemvoreinstellungen "
-"optimieren."
+"TASMA ist eine Konfigurationsapplikation für das Pardus Betriebssystem. Durch "
+"die Verwendung der Module, die in TASMA aufgeführt werden, können Sie die "
+"Systemvoreinstellungen optimieren."
 
 #: modules/tasmatv/tvconfigui.cpp:149 rc.cpp:21
 #, no-c-format
@@ -220,8 +217,7 @@ msgid ""
 "Your emails"
 msgstr ""
 "_:EMAIL VON DEN ÜBERSETZERN\n"
-"mustafa.oelcerman@fk-koeln.de\n"
-"aytekguelen@yahoo.de"
+"m.oelcerman@pardus-linux.de"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -229,8 +225,5 @@ msgid ""
 "Your names"
 msgstr ""
 "_:NAMEN VON DEN ÜBERSETZERN\n"
-"Mustafa Ölcerman\n"
-"Aytekin Gülen"
+"Mustafa Ölcerman"
 
-#~ msgid "(c) 2005, TUBITAK - UEKAE"
-#~ msgstr "(c) 2005, TUBITAK - UEKAE"
