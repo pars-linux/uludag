@@ -17,6 +17,7 @@ import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
+import parted
 import yali4.storage
 import yali4.filesystem as filesystem
 import yali4.partitionrequest as request
@@ -27,7 +28,14 @@ import yali4.gui.context as ctx
 from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 
+partitonTypes = {0:None,
+                 1:parttype.root,
+                 2:parttype.home,
+                 3:parttype.swap,
+                 4:None}
+
 class DiskList(QtGui.QWidget):
+
     def __init__(self, partEdit, *args):
         QtGui.QWidget.__init__(self,None)
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
@@ -71,17 +79,14 @@ class DiskList(QtGui.QWidget):
         self.vbox.addWidget(self.partEdit)
 
         self.connect(self.toolBox,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
+        self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
+        self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
         self.initDevices()
 
-    def slotDeletePart(self):
-        dev = self.partEdit.currentPart.getDevice()
-        dev.deletePartition(self.partEdit.currentPart)
-        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.mountRequestType)
-        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.formatRequestType)
-        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.labelRequestType)
-        self.update()
-
+    ##
+    # GUI Operations
+    #
     def updatePartEdit(self, dw):
         dw.updatePartEdit()
 
@@ -111,6 +116,17 @@ class DiskList(QtGui.QWidget):
             if req.partitionType() == parttype.root:
                 # root partition type. can enable next
                 ctx.mainScreen.enableNext()
+
+    def formatTypeChanged(self, cur):
+        if cur == 1:
+            if self.partEdit.ui.partitionSize.maximum() < ctx.consts.min_root_size:
+                self.partEdit.ui.formatType.setCurrentIndex(0)
+                self.partEdit.ui.information.setText(
+                        _("'Install Root' size must be larger than %s MB.") % (ctx.consts.min_root_size))
+            else:
+                self.partEdit.ui.partitionSize.setMinimum(ctx.consts.min_root_size)
+        else:
+            self.partEdit.ui.information.setText("")
 
     def initDevices(self):
         self.devs = []
@@ -167,6 +183,72 @@ class DiskList(QtGui.QWidget):
             parent_item.addPartition(name,part,sizePix(part.getMB(),dev.getTotalMB()))
 
         d.updateSizes()
+
+    ##
+    # Partition Operations
+    #
+
+    def slotDeletePart(self):
+        """Creates delete request for selected partition"""
+        dev = self.partEdit.currentPart.getDevice()
+        dev.deletePartition(self.partEdit.currentPart)
+        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.mountRequestType)
+        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.formatRequestType)
+        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.labelRequestType)
+        self.update()
+
+    def slotApplyPartitionChanges(self):
+        """Creates requests for changes in selected partition"""
+
+        t = partitonTypes[self.partEdit.ui.formatType.currentIndex()]
+
+        def edit_requests(partition):
+            """edit partition. just set the filesystem and flags."""
+            if self.partEdit.ui.formatCheck.isChecked():
+                __d = partition.getDevice()
+                flags = t.parted_flags
+                if (parted.PARTITION_BOOT in flags) and __d.hasBootablePartition():
+                    flags = list(set(flags) - set([parted.PARTITION_BOOT]))
+                partition.setPartedFlags(flags)
+                partition.setFileSystemType(t.filesystem)
+
+            try:
+                ctx.partrequests.append(
+                    request.MountRequest(partition, t))
+
+                ctx.partrequests.append(
+                    request.LabelRequest(partition, t))
+
+                if self.partEdit.ui.formatCheck.isChecked():
+                    ctx.partrequests.append(
+                        request.FormatRequest(partition, t))
+#                else:
+                    # remove previous format requests for partition (if
+                    # there are any)
+#                    ctx.partrequests.removeRequest(
+#                        partition, request.formatRequestType)
+            except request.RequestException, e:
+                self.partEdit.ui.information.setText("%s" % e)
+                self.warning.show()
+                return False
+
+            return True
+
+        if not t:
+            return False
+
+        partition = self.partEdit.currentPart
+
+        # This is a new partition request
+        if partition._parted_type == parteddata.freeSpaceType:
+            device = partition.getDevice()
+            size = self.partEdit.ui.partitionSize.value()
+            type = parteddata.PARTITION_PRIMARY
+            device.addPartition(type, t.filesystem, size, t.parted_flags)
+            #partition = device.getPartition(p.num)
+            #if not edit_requests(partition):
+            #    return False
+            self.update()
 
 class DiskItem(QtGui.QWidget):
     # storage.Device or partition.Partition
@@ -271,4 +353,7 @@ class PartEdit(QtGui.QWidget):
         self.ui.fileSystem.setText(part.getFSName())
         self.ui.partitionSize.setMaximum(part.getMB())
         self.ui.partitionSize.setValue(part.getMB())
+        self.ui.formatType.setCurrentIndex(0)
+        self.ui.information.setText("")
+        self.ui.partitionSize.setMinimum(0)
 

@@ -261,9 +261,9 @@
      <item>
       <layout class="QHBoxLayout" >
        <item>
-        <widget class="QLabel" name="label_6" >
+        <widget class="QLabel" name="information" >
          <property name="styleSheet" >
-          <string>color:green;</string>
+          <string/>
          </property>
          <property name="text" >
           <string>Changes will be applied when you finish..</string>
