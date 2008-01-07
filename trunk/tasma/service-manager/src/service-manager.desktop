@@ -23,3 +23,5 @@ X-Tasma-Fork=true
 Type=Application
 Exec=service-manager
 Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Comment=Service Management Interface
+Comment[tr]=Servis Yönetim Arabirimi

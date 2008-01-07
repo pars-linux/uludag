@@ -23,3 +23,5 @@ X-KDE-RootOnly=true
 Type=Application
 Exec=disk-manager
 Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Comment=Disk Manager
+Comment[tr]=Disk Yönetim Arayüzü
