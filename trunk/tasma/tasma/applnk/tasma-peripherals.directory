@@ -8,3 +8,5 @@ Name[de]=Peripheriegeräte
 Name[pt_BR]=Periféricos
 Name[it]=Periferiche
 Icon=input_devices_settings
+Comment=Settings about peripherals like mouse or screen
+Comment[tr]=Klavye, fare gibi çevre birimleri için ayarlar

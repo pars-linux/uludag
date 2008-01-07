@@ -47,6 +47,7 @@ class TasmaMainWin : public KMainWindow
 
  protected slots:
   void categorySelected( QListViewItem *category ); // group/category selected
+  void showCategoryToolTip( QListViewItem *category );
   void moduleSelected( KCModule *module,
                        const QString& icon_path,
                        const QString& text,
