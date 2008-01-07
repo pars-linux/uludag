@@ -26,6 +26,7 @@ TModuleGroup::TModuleGroup( KListView *parent, const QString &text,
     _path = group->relPath();
     _icon = group->icon();
     _caption = group->caption();
+    _comment = group->comment();
   }
 
   setPixmap( 0, pix );
@@ -51,3 +52,7 @@ QString TModuleGroup::caption() const
   return _caption;
 }
 
+QString TModuleGroup::comment() const
+{
+  return _comment;
+}

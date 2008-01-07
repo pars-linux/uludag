@@ -29,6 +29,7 @@
 #include "tmodulecategorylist.h"
 #include "tmoduleview.h"
 #include "ticonview.h"
+#include "tlistviewtooltip.h"
 #include "tasmamainwin.h"
 #include "tasmamainwin.moc"
 
@@ -49,6 +50,8 @@ TasmaMainWin::TasmaMainWin( const char* name )
              this, SLOT( categorySelected( QListViewItem* ) ) );
     connect( _index, SIGNAL( clicked( QListViewItem* ) ),
              this, SLOT( categorySelected( QListViewItem* ) ) );
+    connect( _index, SIGNAL( onItem( QListViewItem* ) ),
+             this, SLOT( showCategoryToolTip( QListViewItem* ) ) );
 
     // central widget
     _wstack = new QWidgetStack( _hbox );
@@ -116,6 +119,9 @@ void TasmaMainWin::categorySelected( QListViewItem* category )
   _wstack->raiseWidget( _categoryview );
   _categoryview->setCategory( _mg->path(), _mg->icon(), _mg->caption() );
 
+
+    
+
   // set the current category
   _currentCategory = category;
 
@@ -155,4 +161,11 @@ void TasmaMainWin::aboutModule()
 {
   KAboutApplication about( _currentModule->aboutData() );
   about.exec();
+}
+
+void TasmaMainWin::showCategoryToolTip( QListViewItem* category )
+{
+  TModuleGroup *_mg = static_cast<TModuleGroup*>( category );
+  QToolTip::remove(_index);
+  new TListViewToolTip(_index , _mg->comment());
 }

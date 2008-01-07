@@ -33,11 +33,13 @@ class TModuleGroup : public KListViewItem
   QString path() const;
   QString icon() const;
   QString caption() const;
+  QString comment() const;
 
  private:
   QString _path;
   QString _icon;
   QString _caption;
+  QString _comment;
 };
 
 #endif // T_MODULE_GROUP_H

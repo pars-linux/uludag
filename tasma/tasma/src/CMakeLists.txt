@@ -16,6 +16,7 @@ SET(
   tmoduleview.cpp
   aboutview.cpp
   tasmamainwin.cpp
+  tlistviewtooltip.cpp
 )
 
 KDE3_AUTOMOC(${tasma_sources})
