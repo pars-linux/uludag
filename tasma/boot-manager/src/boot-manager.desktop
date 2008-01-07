@@ -18,3 +18,5 @@ X-Tasma-Fork=true
 Type=Application
 Exec=boot-manager
 Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Comment=Boot-Manager
+Comment[tr]=Açılış Yöneticisi

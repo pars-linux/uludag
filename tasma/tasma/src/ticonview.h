@@ -18,24 +18,29 @@
 #define T_ICON_VIEW_H
 
 #include <kiconview.h>
+#include <qtooltip.h>
+#include <qlabel.h>
 
 class KCModule;
 class KCModuleInfo;
 class TIconView;
+class QLabel;
 
 class TIconViewItem : public KIconViewItem
 {
 
  public:
   TIconViewItem( TIconView *parent, const QString& text,
-                 const QPixmap& icon, KCModuleInfo* moduleinfo);
+                 const QPixmap& icon, KCModuleInfo* moduleinfo, QString itemComment);
 
   ~TIconViewItem();
 
   KCModuleInfo* moduleinfo() const;
+  QString comment;
 
  private:
   KCModuleInfo* _moduleinfo;
+
 
 };
 
@@ -58,6 +63,10 @@ class TIconView : public KIconView
  protected slots:
     void slotItemSelected( QIconViewItem* item );
 
+ private slots:
+     void showToolTip( QIconViewItem *item );
+     void removeToolTip();
+
  protected:
     virtual void keyPressEvent(QKeyEvent *event);
     virtual void contentsMouseDoubleClickEvent (QMouseEvent *event);
@@ -72,6 +81,8 @@ class TIconView : public KIconView
   TIconViewItem* dragItem;
 
   void startDrag();
+  QLabel *toolTip;
+
 
 };
 

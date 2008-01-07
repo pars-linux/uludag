@@ -47,10 +47,15 @@ TIconView::TIconView( QWidget *parent, const char* name )
   QFont f = font();
   f.setWeight( QFont::Bold );
   setFont( f );
-  
+
+  setShowToolTips( false );
+
   showExtras = false;
+  toolTip = 0;
 
   connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( slotItemSelected( QIconViewItem* ) ) );
+  connect( this, SIGNAL( onItem( QIconViewItem* ) ), SLOT( showToolTip( QIconViewItem* ) ) );
+  connect( this, SIGNAL( onViewport() ),  SLOT( removeToolTip() ) );
 
 }
 
@@ -90,8 +95,7 @@ void TIconView::setCategory( const QString& path )
          	_icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
                 _item = new TIconViewItem( this,
                                      minfo->moduleName(),
-                                     _icon, minfo );
-
+                                     _icon, minfo , minfo->comment());
         } // ignore second level subGroups!
     }
   list.clear();
@@ -172,6 +176,7 @@ void TIconView::startDrag()
 
 TIconView::~TIconView()
 {
+   removeToolTip();
 }
 
 void TIconView::keyPressEvent(QKeyEvent* event)
@@ -183,10 +188,12 @@ void TIconView::keyPressEvent(QKeyEvent* event)
 }
 
 TIconViewItem::TIconViewItem( TIconView *parent, const QString& text,
-                              const QPixmap& icon, KCModuleInfo* moduleinfo)
+                              const QPixmap& icon, KCModuleInfo* moduleinfo, QString itemComment)
   : KIconViewItem( parent, text, icon )
 {
   _moduleinfo = moduleinfo;
+   comment = itemComment;
+
 }
 
 void TIconView::focusInEvent ( QFocusEvent* event ) {
@@ -205,6 +212,43 @@ KCModuleInfo* TIconViewItem::moduleinfo() const
 TIconViewItem::~TIconViewItem()
 {
   delete _moduleinfo;
+}
+
+void TIconView::showToolTip( QIconViewItem *item ){
+
+  TIconViewItem *_item = static_cast<TIconViewItem*>( item );
+
+    delete toolTip;
+    toolTip = 0;
+
+    if ( !item )
+	return;
+
+	toolTip = new QLabel( QString::fromUtf8(" %1 ").arg(_item->comment), 0,
+			      "myToolTip",
+			      WStyle_StaysOnTop | WStyle_Customize | WStyle_NoBorder | WStyle_Tool | WX11BypassWM );
+	toolTip->setFrameStyle( QFrame::Plain | QFrame::Box );
+	toolTip->setLineWidth( 1 );
+	toolTip->setAlignment( AlignLeft | AlignTop );
+	toolTip->move( QCursor::pos() + QPoint( 4, 4 ) );
+	toolTip->adjustSize();
+	QRect screen = QApplication::desktop()->screenGeometry(
+			QApplication::desktop()->screenNumber(QCursor::pos()));
+	if (toolTip->x()+toolTip->width() > screen.right()) {
+		toolTip->move(toolTip->x()+screen.right()-toolTip->x()-toolTip->width(), toolTip->y());
+	}
+	if (toolTip->y()+toolTip->height() > screen.bottom()) {
+		toolTip->move(toolTip->x(), screen.bottom()-toolTip->y()-toolTip->height()+toolTip->y());
+	}
+	toolTip->setFont( QToolTip::font() );
+	toolTip->setPalette( QToolTip::palette(), true );
+	toolTip->show();
+    
+
+}
+void TIconView::removeToolTip(){
+    delete toolTip;
+    toolTip = 0;
 }
 
 #include "ticonview.moc"

@@ -15,3 +15,5 @@ Type=Application
 Icon=kuser
 Exec=user-manager
 Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Comment=User Manager
+Comment[tr]=Kullanıcı Yöneticisi

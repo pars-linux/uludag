@@ -21,3 +21,5 @@ Type=Application
 Icon=randr
 Exec=display-config
 Categories=QT;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Comment=Display Configuration
+Comment[tr]=Görüntü Yapılandırması

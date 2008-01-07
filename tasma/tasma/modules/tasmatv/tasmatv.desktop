@@ -19,3 +19,5 @@ Name[pt_BR]=Configuração da Placa de TV
 
 Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-sound
 
+Comment=Tv Card Configuration
+Comment[tr]=Tv Kartı Yapılandırması
