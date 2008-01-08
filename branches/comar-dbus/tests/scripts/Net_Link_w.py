@@ -53,7 +53,7 @@ from pardus import netutils
 from pardus import iniutils
 
 # Open connection db
-DB = iniutils.iniDB("/etc/netlink/wireless-tools")
+DB = iniutils.iniDB("/etc/network/wireless-tools")
 
 # From </usr/include/wireless.h>
 SIOCSIWMODE = 0x8B06    # set the operation mode
@@ -275,7 +275,7 @@ def stopSameDev(myname, myuid):
         if myuid != dev.uid:
             continue
         
-        notify("stateChanged", name + "\ndown")
+        notify("stateChanged", (name, "down", ""))
         if dev.state == "up":
             d = DB.getDB(name)
             d["state"] = "down"
@@ -321,12 +321,12 @@ class Dev:
     def up(self):
         ifc = self.ifc
         wifi = Wireless(ifc)
-        notify("stateChanged", self.name + "\nconnecting")
+        notify("stateChanged", (self.name, "connecting", ""))
         if self.remote:
             wifi.setSSID(self.remote)
         err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, ssid=self.remote)
         if err:
-            notify("stateChanged", self.name + "\ninaccessible " + err)
+            notify("stateChanged", (self.name, "inaccessible", err))
             fail("auth failed")
         if self.mode == "manual":
             ifc.setAddress(self.address, self.mask)
@@ -335,16 +335,16 @@ class Dev:
                 route = netutils.Route()
                 route.setDefault(self.gateway)
                 self.dns()
-            notify("stateChanged", self.name + "\nup")
+            notify("stateChanged", (self.name, "up", self.address))
         else:
             ifc.up()
             ret = ifc.startAuto()
             if ret == 0 and ifc.isUp():
                 self.dns()
                 addr = ifc.getAddress()[0]
-                notify("stateChanged", self.name + "\nup " + unicode(addr))
+                notify("stateChanged", (self.name, "up", unicode(addr)))
             else:
-                notify("stateChanged", self.name + "\ninaccessible " + _(dhcp_fail_msg))
+                notify("stateChanged", (self.name, "inaccessible",  _(dhcp_fail_msg)))
                 fail("DHCP failed")
     
     def down(self):
@@ -355,7 +355,7 @@ class Dev:
         if self.authmode != "" and self.authmode != "none":
             wifi.setEncryption("none", None, None, None)
         ifc.down()
-        notify("stateChanged", self.name + "\ndown")
+        notify("stateChanged", (self.name, "down", ""))
 
 
 # Net.Link API
@@ -394,16 +394,16 @@ def setConnection(name, device):
     d["device"] = device
     DB.setDB(name, d)
     if changed:
-        notify("connectionChanged", "configured " + name)
+        notify("connectionChanged", ("configured", name))
     else:
-        notify("connectionChanged", "added " + name)
+        notify("connectionChanged", ("added", name))
 
 def deleteConnection(name):
     dev = Dev(name, True)
     if dev.ifc and dev.state == "up":
         dev.down()
     DB.remDB(name)
-    notify("connectionChanged", "deleted " + name)
+    notify("connectionChanged", ("deleted", name))
 
 def setAddress(name, mode, address, mask, gateway):
     dev = Dev(name)
@@ -417,14 +417,14 @@ def setAddress(name, mode, address, mask, gateway):
     d["mask"] = mask
     d["gateway"] = gateway
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
 
 def setRemote(name, remote, apmac):
     d = DB.getDB(name)
     d["remote"] = remote
     d["apmac"] = apmac
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
 
 def setNameService(name, namemode, nameserver):
     if not namemode in ("default", "auto", "custom"):
@@ -433,7 +433,7 @@ def setNameService(name, namemode, nameserver):
     d["namemode"] = namemode
     d["nameserver"] = nameserver
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
 
 def setAuthentication(name, authmode, user, password, key):
     d = DB.getDB(name)
@@ -442,7 +442,11 @@ def setAuthentication(name, authmode, user, password, key):
     d["password"] = password
     d["key"] = key
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
+
+def getState(name):
+    d = DB.getDB(name)
+    return d.get("state", "down")
 
 def setState(name, state):
     dev = Dev(name)
@@ -532,7 +536,7 @@ def kernelEvent(data):
         if not ifc.isWireless():
             return
         devuid = ifc.deviceUID()
-        notify("deviceChanged", "added wifi %s %s" % (devuid, netutils.deviceName(devuid)))
+        notify("deviceChanged", ("added", "wifi", devuid, netutils.deviceName(devuid)))
         conns = DB.listDB()
         for conn in conns:
             dev = Dev(conn)
@@ -542,7 +546,7 @@ def kernelEvent(data):
                     return
                 flag = 0
         if flag:
-            notify("deviceChanged", "new wifi %s %s" % (devuid, netutils.deviceName(devuid)))
+            notify("deviceChanged", ("new", "wifi", devuid, netutils.deviceName(devuid)))
 
     elif type == "remove":
         conns = DB.listDB()
@@ -551,5 +555,5 @@ def kernelEvent(data):
             # FIXME: ifc is not enough here :(
             if dev.ifc and dev.ifc.name == devname:
                 if dev.state == "up":
-                    notify("stateChanged", dev.name + "\ninaccessible " + "Device removed")
-        notify("deviceChanged", "removed wifi %s" % devname)
+                    notify("stateChanged", (dev.name, "inaccessible", "Device removed"))
+        notify("deviceChanged", ("removed", "wifi", devname, ""))
