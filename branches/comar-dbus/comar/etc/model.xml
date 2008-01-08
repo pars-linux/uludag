@@ -40,6 +40,7 @@
         <method name="setOption" access_label="set">
             <arg name="option" type="s" direction="in"/>
             <arg name="value" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="listEntries">
             <arg name="entries" type="a{ss}" direction="out"/>
@@ -47,6 +48,7 @@
         <method name="updateKernelEntry">
             <arg name="version" type="s" direction="in"/>
             <arg name="root" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setEntry" access_label="set">
             <arg name="title" type="s" direction="in"/>
@@ -57,17 +59,20 @@
             <arg name="options" type="s" direction="in"/>
             <arg name="default" type="s" direction="in"/>
             <arg name="index" type="i" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="removeEntry">
             <arg name="index" type="i" direction="in"/>
             <arg name="title" type="s" direction="in"/>
             <arg name="uninstall" type="b" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="listUnused">
             <arg name="versions" type="as" direction="out"/>
         </method>
         <method name="removeUnused">
             <arg name="version" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <signal name="Changed">
             <arg name="changed_item" type="s"/>
@@ -79,8 +84,10 @@
             <arg name="fromRelease" type="s" direction="in"/>
             <arg name="toVersion" type="s" direction="in"/>
             <arg name="toRelease" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="preRemove">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <signal name="Installed">
             <arg name="package" type="s"/>
@@ -105,9 +112,8 @@
             <arg name="device" type="s" direction="in"/>
             <arg name="new" type="b" direction="out"/>
         </method>
-        <method name="deleteConnection">
+        <method name="deleteConnection" access_label="set">
             <arg name="name" type="s" direction="in"/>
-            <arg name="new" type="b" direction="out"/>
         </method>
         <method name="setAddress" access_label="set">
             <arg name="name" type="s" direction="in"/>
@@ -115,16 +121,19 @@
             <arg name="address" type="s" direction="in"/>
             <arg name="mask" type="s" direction="in"/>
             <arg name="gateway" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setRemote" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="remote" type="s" direction="in"/>
             <arg name="apmac" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setNameService" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="namemode" type="s" direction="in"/>
             <arg name="nameserver" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setAuthentication" access_label="set">
             <arg name="name" type="s" direction="in"/>
@@ -132,10 +141,16 @@
             <arg name="user" type="s" direction="in"/>
             <arg name="password" type="s" direction="in"/>
             <arg name="key" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setState" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="state" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="getState" access_label="get">
+            <arg name="name" type="s" direction="in"/>
+            <arg name="state" type="s" direction="out"/>
         </method>
         <method name="connections" access_label="get">
             <arg name="connections" type="as" direction="out"/>
@@ -150,21 +165,24 @@
             <arg name="username" type="s" direction="out"/>
             <arg name="password" type="s" direction="out"/>
         </method>
-        <method name="getState" access_label="get">
-            <arg name="name" type="s" direction="in"/>
-            <arg name="state" type="s" direction="out"/>
-        </method>
         <method name="kernelEvent">
             <arg name="data" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <signal name="connectionChanged">
-            <arg name="changed_item" type="s"/>
+            <arg name="operation" type="s"/>
+            <arg name="profile" type="s"/>
         </signal>
         <signal name="stateChanged">
-            <arg name="changed_item" type="s"/>
+            <arg name="profile" type="s"/>
+            <arg name="state" type="s"/>
+            <arg name="address_or_msg" type="s"/>
         </signal>
         <signal name="deviceChanged">
-            <arg name="changed_item" type="s"/>
+            <arg name="action" type="s"/>
+            <arg name="type" type="s"/>
+            <arg name="device_id" type="s"/>
+            <arg name="device_name" type="s"/>
         </signal>
     </interface>
     <interface name="User.Manager">
@@ -197,10 +215,12 @@
             <arg name="shell" type="s" direction="in"/>
             <arg name="password" type="s" direction="in"/>
             <arg name="groups" type="as" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="deleteUser">
             <arg name="uid" type="i" direction="in"/>
             <arg name="deletefiles" type="b" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="groupList" access_label="get">
             <arg name="groups" type="a(is)" direction="out"/>
@@ -212,6 +232,7 @@
         </method>
         <method name="deleteGroup">
             <arg name="gid" type="i" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
     </interface>
     <interface name="Time.Clock">
@@ -222,13 +243,16 @@
             <arg name="hour" type="i" direction="in"/>
             <arg name="minute" type="i" direction="in"/>
             <arg name="second" type="i" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="getDate" access_label="get">
             <arg name="date" type="s" direction="out"/>
         </method>
         <method name="loadFromHW">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="saveToHW">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setTimeZone" access_label="set">
             <arg name="zone" type="s" direction="in"/>
@@ -247,13 +271,16 @@
         <method name="setOptions">
             <arg name="module" type="s" direction="in"/>
             <arg name="options" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="load">
             <arg name="module" type="s" direction="in"/>
             <arg name="options" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="unload">
             <arg name="module" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="listAutoload" access_label="get">
             <arg name="kernel_version" type="s" direction="in"/>
@@ -262,22 +289,27 @@
         <method name="addAutoload" access_label="editautoload">
             <arg name="module" type="s" direction="in"/>
             <arg name="kernel_version" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="removeAutoload" access_label="editautoload">
             <arg name="module" type="s" direction="in"/>
             <arg name="kernel_version" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="listBlacklist" access_label="get">
             <arg name="modules" type="as" direction="out"/>
         </method>
         <method name="addBlacklist" access_label="editblacklist">
             <arg name="module" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="removeBlacklist" access_label="editblacklist">
             <arg name="module" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="updateModules">
             <arg name="kernel_version" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
     </interface>
     <interface name="Net.Stack">
@@ -287,16 +319,19 @@
         <method name="setNameServers" access_label="set">
             <arg name="nameservers" type="as" direction="in"/>
             <arg name="searchdomain" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="useNameServers" access_label="set">
             <arg name="nameservers" type="as" direction="in"/>
             <arg name="searchdomain" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="getHostName" access_label="get">
-            <arg name="hostname" type="as" direction="out"/>
+            <arg name="hostname" type="s" direction="out"/>
         </method>
         <method name="setHostName" access_label="set">
-            <arg name="hostname" type="as" direction="in"/>
+            <arg name="hostname" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
     </interface>
 </comarModel>

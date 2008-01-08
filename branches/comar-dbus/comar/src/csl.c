@@ -98,9 +98,10 @@ c_notify(PyObject *self, PyObject *args)
     /*!
      * This method can be used in CSL scripts to emit DBus signals.
      */
-    const char *interface, *path, *method, *msg;
+    const char *interface, *path, *method;
+    PyObject *tuple;
 
-    if (!PyArg_ParseTuple(args, "ss", &method, &msg))
+    if (!PyArg_ParseTuple(args, "sO", &method, &tuple))
         return NULL;
 
     path = dbus_message_get_path(my_proc.bus_msg);
@@ -109,7 +110,7 @@ c_notify(PyObject *self, PyObject *args)
     char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
 
     if (model_lookup_signal(model, method) != -1) {
-        dbus_signal(path, interface, method, PyString_FromString(msg));
+        dbus_signal(path, interface, method, tuple);
         free(model);
         Py_INCREF(Py_None);
         return Py_None;

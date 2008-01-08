@@ -299,8 +299,8 @@ model_import(const char *model_file)
 
                     iks *arg;
                     for (arg = iks_first_tag(met); arg; arg = iks_next_tag(arg)) {
-                        if (iks_strcmp(iks_name(arg), "arg") != 0) {
-                            log_error("Bad XML: method/signal may contain <arg> only\n");
+                        if (iks_strcmp(iks_name(arg), "arg") != 0 && iks_strcmp(iks_name(arg), "annotation") != 0) {
+                            log_error("Bad XML: method/signal may contain <arg> or <annotation> only\n");
                             return -1;
                         }
                     }
