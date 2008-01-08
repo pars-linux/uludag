@@ -16,48 +16,43 @@ import os
 import ConfigParser
 
 class iniDB:
-    def __init__(self, db_dir):
-        self.db_dir = db_dir
+    def __init__(self, db_file):
+        try:
+            print os.path.basename(db_file)
+            os.makedirs(os.path.dirname(db_file))
+        except OSError:
+            pass
+        if not os.path.exists(db_file):
+            fp = file(db_file, "w")
+            fp.write()
+            fp.close()
+        self.db_file = db_file
+        self.cp = ConfigParser.ConfigParser()
+        self.cp.read(db_file)
 
     def listDB(self):
-        return os.listdir(self.db_dir)
+        profiles = self.cp.sections()
+        if "general" in profiles:
+            profiles.remove("general")
+        return profiles
 
     def getDB(self, name):
         dct = {}
-        try:
-            os.makedirs(self.db_dir)
-        except OSError:
-            pass
-        db_file = os.path.join(self.db_dir, name)
-        if os.path.exists(db_file):
-            cp = ConfigParser.ConfigParser()
-            cp.read(db_file)
-            if "general" in cp.sections():
-                dct = dict(cp.items("general"))
+        if name in self.cp.sections():
+            dct = dict(self.cp.items(name))
         return dct
 
     def setDB(self, name, dct):
-        try:
-            os.makedirs(self.db_dir)
-        except OSError:
-            pass
-        db_file = os.path.join(self.db_dir, name)
-        cp = ConfigParser.ConfigParser()
         for key, value in dct.iteritems():
             if value:
-                if "general" not in cp.sections():
-                    cp.add_section("general")
-                cp.set("general", key, value)
-            elif "general" in cp.sections():
-                cp.remove_option("general", key)
-        fp = open(db_file, "w")
-        cp.write(fp)
+                if name not in self.cp.sections():
+                    self.cp.add_section(name)
+                self.cp.set(name, key, value)
+            elif name in self.cp.sections():
+                self.cp.remove_option(name, key)
+        fp = open(self.db_file, "w")
+        self.cp.write(fp)
         fp.close()
 
     def remDB(self, name):
-        try:
-            os.makedirs(self.db_dir)
-        except OSError:
-            pass
-        db_file = os.path.join(self.db_dir, name)
-        os.unlink(db_file)
+        self.cp.remove_section(name)
