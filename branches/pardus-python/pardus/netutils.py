@@ -18,6 +18,7 @@ import fcntl
 import struct
 import glob
 import subprocess
+import time
 import pardus.csapi
 from pardus.deviceutils import idsQuery
 
@@ -319,3 +320,22 @@ class Route:
             pardus.csapi.changeroute(SIOCADDRT, gw, dst, mask)
         except:
             pass
+
+def waitNet(timeout=20):
+    """Wait until an interface connects or timeout expires."""
+    while timeout > 0:
+        upInterfaces = []
+        for iface in interfaces():
+            if iface.name == 'lo':
+                continue
+            if iface.isUp():
+                try:
+                    address, mask = iface.getAddress()
+                except TypeError:
+                    continue
+                upInterfaces.append(iface)
+        if len(upInterfaces):
+            return True
+        time.sleep(0.2)
+        timeout -= 0.2
+    return False
