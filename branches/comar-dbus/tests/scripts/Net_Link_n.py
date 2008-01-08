@@ -32,7 +32,7 @@ from pardus import netutils
 from pardus import iniutils
 
 # Open connection db
-DB = iniutils.iniDB("/etc/netlink/net-tools")
+DB = iniutils.iniDB("/etc/network/net-tools")
 
 # Internal functions
 
@@ -51,7 +51,7 @@ def stopSameDev(myname, myuid):
         if myuid != dev.uid:
             continue
         
-        notify("stateChanged", name + "\ndown")
+        notify("stateChanged", (name, "down", ""))
         if dev.state == "up":
             d = DB.getDB(name)
             d["state"] = "down"
@@ -103,16 +103,16 @@ class Dev:
                 route = netutils.Route()
                 route.setDefault(self.gateway)
                 self.dns()
-            notify("stateChanged", self.name + "\nup")
+            notify("stateChanged", (self.name, "up", self.address))
         else:
-            notify("stateChanged", self.name + "\nconnecting")
+            notify("stateChanged", (self.name, "connecting", ""))
             ret = ifc.startAuto()
             if ret == 0 and ifc.isUp():
                 self.dns()
                 addr = ifc.getAddress()[0]
-                notify("stateChanged", self.name + "\nup " + unicode(addr))
+                notify("stateChanged", (self.name, "up", unicode(addr)))
             else:
-                notify("stateChanged", self.name + "\ninaccessible " + _(dhcp_fail_msg))
+                notify("stateChanged", (self.name, "inaccessible", _(dhcp_fail_msg)))
                 fail("DHCP failed")
         ifc.setMTU(self.mtu)
     
@@ -121,7 +121,7 @@ class Dev:
         if self.mode != "manual":
             ifc.stopAuto()
         ifc.down()
-        notify("Net.Link.stateChanged", self.name + "\ndown")
+        notify("stateChanged", (self.name, "down", ""))
 
 
 # Net.Link API
@@ -152,16 +152,16 @@ def setConnection(name, device):
     d["device"] = device
     DB.setDB(name, d)
     if changed:
-        notify("connectionChanged", "configured " + name)
+        notify("connectionChanged", ("configured", name))
     else:
-        notify("connectionChanged", "added " + name)
+        notify("connectionChanged", ("added", name))
 
 def deleteConnection(name):
     dev = Dev(name)
     if dev.ifc and dev.state == "up":
         dev.down()
     DB.remDB(name)
-    notify("connectionChanged", "deleted " + name)
+    notify("connectionChanged", ("deleted", name))
 
 def setAddress(name, mode, address, mask, gateway):
     dev = Dev(name)
@@ -175,7 +175,7 @@ def setAddress(name, mode, address, mask, gateway):
     d["mask"] = mask
     d["gateway"] = gateway
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
 
 def setRemote(name, remote):
     fail("Not supported")
@@ -190,7 +190,11 @@ def setNameService(name, namemode, nameserver):
     d["namemode"] = namemode
     d["nameserver"] = nameserver
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
+
+def getState(name):
+    d = DB.getDB(name)
+    return d.get("state", "down")
 
 def setState(name, state):
     dev = Dev(name)
@@ -252,6 +256,9 @@ def connectionInfo(name=None):
     d["state"] = state
     return d
 
+def getAuthentication(name):
+    return ("", "", "")
+
 def kernelEvent(data):
     type, dir = data.split("@", 1)
     if not dir.startswith("/class/net/"):
@@ -264,7 +271,7 @@ def kernelEvent(data):
         if ifc.isWireless():
             return
         devuid = ifc.deviceUID()
-        notify("deviceChanged", "added net %s %s" % (devuid, netutils.deviceName(devuid)))
+        notify("deviceChanged", ("add", "net", devuid, netutils.deviceName(devuid)))
         conns = DB.listDB()
         for conn in conns:
             dev = Dev(conn)
@@ -274,7 +281,7 @@ def kernelEvent(data):
                     return
                 flag = 0
         if flag:
-            notify("deviceChanged", "new net %s %s" % (devuid, netutils.deviceName(devuid)))
+            notify("deviceChanged", ("new", "net", devuid, netutils.deviceName(devuid)))
     
     elif type == "remove":
         conns = DB.listDB()
@@ -283,5 +290,5 @@ def kernelEvent(data):
             # FIXME: dev.ifc is not enough :(
             if dev.ifc and dev.ifc.name == devname:
                 if dev.state == "up":
-                    notify("stateChanged", dev.name + "\ninaccessible " + "Device removed")
-        notify("deviceChanged", "removed net %s" % devname)
+                    notify("stateChanged", (dev.name, "inaccessible", "Device removed"))
+        notify("deviceChanged", ("removed", "net", devname, ""))
