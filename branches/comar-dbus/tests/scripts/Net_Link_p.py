@@ -95,7 +95,7 @@ from pardus.csapi import atoi
 from pardus import iniutils
 
 # Open connection db
-DB = iniutils.iniDB("/etc/netlink/ppp")
+DB = iniutils.iniDB("/etc/network/ppp")
 
 
 class Dialup:
@@ -303,16 +303,16 @@ class Dev:
         dial = Dialup()
         
         if self.remote and self.user and self.password and self.dev:
-            notify("stateChanged", self.name + "\nconnecting")
+            notify("stateChanged", (self.name, "connecting"))
             
             dial.dial(self.remote, self.user, self.password, "115200", "1", self.dev)
             
-            notify("stateChanged", self.name + "\nup")
+            notify("stateChanged", (self.name, "up"))
     
     def down(self):
         dial = Dialup()
         dial.stopPPPD(self.dev)
-        notify("stateChanged", self.name + "\ndown")
+        notify("stateChanged", (self.name, "down"))
 
 
 #
@@ -343,9 +343,9 @@ def setConnection(name, device):
     d["device"] = device
     DB.setDB(name, d)
     if changed:
-        notify("connectionChanged", "configured " + name)
+        notify("connectionChanged", ("configured", name))
     else:
-        notify("connectionChanged", "added " + name)
+        notify("connectionChanged", ("added", name))
 
 def deleteConnection(name=None):
     dev = Dev(name)
@@ -362,7 +362,7 @@ def setRemote(name, remote, apmac):
     d["remote"] = remote
     d["apmac"] = apmac
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
 
 def setAuthentication(name, authmode, user, password, key):
     d = DB.getDB(name)
@@ -371,7 +371,11 @@ def setAuthentication(name, authmode, user, password, key):
     d["password"] = password
     d["key"] = key
     DB.setDB(name, d)
-    notify("connectionChanged", "configured " + name)
+    notify("connectionChanged", ("configured", name))
+
+def getState(name):
+    d = DB.getDB(name)
+    return d.get("state", "down")
 
 def setState(name, state):
     dev = Dev(name)
