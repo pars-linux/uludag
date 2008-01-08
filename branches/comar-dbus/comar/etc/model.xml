@@ -143,7 +143,7 @@
             <arg name="key" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
-        <method name="setState" access_label="set">
+        <method name="setState">
             <arg name="name" type="s" direction="in"/>
             <arg name="state" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
