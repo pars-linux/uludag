@@ -50,8 +50,10 @@ def init_devices(force = False):
     for dev_path in devs:
         d = Device(dev_path)
         devices.append(d)
+
     # devices are appended in reverse order
-    devices.reverse()
+    # In VBOX vice versa !?
+    # devices.reverse()
 
     if devices:
         return True
@@ -300,7 +302,7 @@ class Device:
     # @param type: parted partition type (eg. parted.PARTITION_PRIMARY)
     # @param fs: filesystem.FileSystem or file system name (like "ext3")
     # @param size_mb: size of the partition in MBs.
-    def addPartition(self, type, fs, size_mb, flags = []):
+    def addPartition(self, part, type, fs, size_mb, flags = []):
         size = int(size_mb * MEGABYTE / self._sector_size)
 
         # Don't set bootable flag if there is already a bootable
@@ -308,7 +310,6 @@ class Device:
         if (parted.PARTITION_BOOT in flags) and self.hasBootablePartition():
             flags = list(set(flags) - set([parted.PARTITION_BOOT]))
 
-        part = self._disk.next_partition()
         while part:
             geom = part.geom
 

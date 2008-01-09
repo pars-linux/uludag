@@ -148,7 +148,7 @@ class DiskList(QtGui.QWidget):
 
         def sizePix(mb,total):
             _p = (self.toolBox.width() * mb) / total
-            if _p<=1:
+            if _p<=8:
                 return 8
             return _p - 8
 
@@ -213,15 +213,10 @@ class DiskList(QtGui.QWidget):
                 partition.setFileSystemType(t.filesystem)
 
             try:
-                ctx.partrequests.append(
-                    request.MountRequest(partition, t))
-
-                ctx.partrequests.append(
-                    request.LabelRequest(partition, t))
-
+                ctx.partrequests.append(request.MountRequest(partition, t))
+                ctx.partrequests.append(request.LabelRequest(partition, t))
                 if self.partEdit.ui.formatCheck.isChecked():
-                    ctx.partrequests.append(
-                        request.FormatRequest(partition, t))
+                    ctx.partrequests.append(request.FormatRequest(partition, t))
 #                else:
                     # remove previous format requests for partition (if
                     # there are any)
@@ -244,7 +239,7 @@ class DiskList(QtGui.QWidget):
             device = partition.getDevice()
             size = self.partEdit.ui.partitionSize.value()
             type = parteddata.PARTITION_PRIMARY
-            device.addPartition(type, t.filesystem, size, t.parted_flags)
+            device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
             #partition = device.getPartition(p.num)
             #if not edit_requests(partition):
             #    return False
@@ -290,7 +285,8 @@ class DiskItem(QtGui.QWidget):
                       "hfs+" :"#C0A39E",
                       "fat16":"#00FF00",
                       "ext3" :"#7590AE",
-                      "ext2" :"#9DB8D2"}
+                      "ext2" :"#9DB8D2",
+                      "linux-swap(new)":"#C1665A"}
             if colors.has_key(fs_type):
                 return colors[fs_type]
             return "#FFF79E"
@@ -327,7 +323,7 @@ class DiskItem(QtGui.QWidget):
             _h.setEnabled(False)
             self.splinter.setCollapsible(i,False)
             self.splinter.widget(i).resize(part['size'],70)
-            if part['size'] == 8:
+            if part['size'] <= 8:
                 self.splinter.widget(i).setMinimumSize(QSize(part['size'],50))
                 self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
             else:
