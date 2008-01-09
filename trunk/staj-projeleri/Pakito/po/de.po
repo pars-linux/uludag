@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-08-15 18:49+0300\n"
-"PO-Revision-Date: 2008-01-08 20:15+0200\n"
+"PO-Revision-Date: 2008-01-09 19:07+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: packager.py:12 packager.py:19
 msgid "Packager"
-msgstr ""
+msgstr "Paket-Ersteller"
 
 #: packager.py:12
 msgid "A tool for accelerating package making process"
-msgstr ""
+msgstr "Ein Tool für die Beschleinigung des Paketerstellungsprozesses"
 
 #: gui/mainwindow.py:72
 msgid "IDE Output"
@@ -62,7 +62,7 @@ msgstr "Release hinzufügen"
 
 #: gui/mainwindow.py:94
 msgid "Validate Pspec File"
-msgstr ""
+msgstr "Pspec-Datei validieren"
 
 #: gui/mainwindow.py:95
 msgid "Check SHA1"
@@ -70,7 +70,7 @@ msgstr "SHA1 überprüfen"
 
 #: gui/mainwindow.py:96
 msgid "Compute SHA1"
-msgstr ""
+msgstr "SHA1 berechnen"
 
 #: gui/mainwindow.py:97
 msgid "Detect File Type"
@@ -78,16 +78,16 @@ msgstr "Dateityp ermitteln"
 
 #: gui/mainwindow.py:128
 msgid "Automation"
-msgstr ""
+msgstr "Automatisierung"
 
 #: gui/mainwindow.py:134
 msgid "Main toolbar"
-msgstr ""
+msgstr "Hauptsymbolleiste"
 
 #: gui/mainwindow.py:170
 #, python-format
 msgid "Error during PiSi initialization: %s"
-msgstr ""
+msgstr "Es ist ein Fehler während der PiSi-Initialisierung aufgetreten: %s"
 
 #: gui/mainwindow.py:236 gui/mainwindow.py:290
 msgid "Specification"
@@ -111,15 +111,15 @@ msgstr "Keine actions.py gefunden."
 
 #: gui/mainwindow.py:286
 msgid "Invalid file"
-msgstr ""
+msgstr "Ungültige Datei"
 
 #: gui/mainwindow.py:286
 msgid "pspec.xml is not valid or well-formed."
-msgstr ""
+msgstr "pspec.xml ist ungültig oder nicht wohlgeformt."
 
 #: gui/mainwindow.py:302
 msgid "There is no package to save. Create or Open a package first."
-msgstr ""
+msgstr "Es gibt kein Paket zum speichern. Erstellen oder öffnen Sie zuerst ein Paket."
 
 #: gui/mainwindow.py:302
 msgid "No package"
@@ -127,7 +127,7 @@ msgstr "Kein Paket"
 
 #: gui/mainwindow.py:308
 msgid "Select PiSi Source Package Directory"
-msgstr ""
+msgstr "PiSi-Quellpaketverzeichnis"
 
 #: gui/mainwindow.py:439 gui/widgets.py:660 gui/widgets.py:738
 #: gui/widgets.py:740 gui/widgets.py:742 gui/widgets.py:757 gui/widgets.py:759
@@ -163,27 +163,27 @@ msgstr "Typ"
 
 #: gui/mainwindow.py:462 gui/mainwindow.py:468
 msgid "Pspec file is valid."
-msgstr ""
+msgstr "Pspec-Datei ist gültig."
 
 #: gui/mainwindow.py:462 gui/mainwindow.py:468
 msgid "Valid File"
-msgstr ""
+msgstr "Gültige Datei"
 
 #: gui/mainwindow.py:466
 msgid "Pspec file is not valid."
-msgstr ""
+msgstr "Pspec-Datei ist ungültig."
 
 #: gui/mainwindow.py:466
 msgid "Invalid File"
-msgstr ""
+msgstr "Gültige Datei"
 
 #: gui/mainwindow.py:473 gui/mainwindow.py:500 gui/mainwindow.py:521
 msgid "Please fetch the source first."
-msgstr ""
+msgstr "Bitte zuerst die Quelle abrufen."
 
 #: gui/mainwindow.py:483
 msgid "SHA1 field must be entered for check."
-msgstr ""
+msgstr "SHA1-Feld muss für die Prüfung ausgefüllt sein."
 
 #: gui/mainwindow.py:492
 #, python-format
@@ -192,18 +192,21 @@ msgid ""
 "\n"
 "Valid one is %s"
 msgstr ""
+"Aktuelle SHA1 (%s) ist ungültig.\n"
+"\n"
+"Gültig ist folgende %s"
 
 #: gui/mainwindow.py:492
 msgid "Invalid SHA1"
-msgstr ""
+msgstr "Ungültige SHA1"
 
 #: gui/mainwindow.py:494
 msgid "Current SHA1 is valid."
-msgstr ""
+msgstr "Aktuelle SHA1 ist gültig."
 
 #: gui/mainwindow.py:494
 msgid "Valid SHA1"
-msgstr ""
+msgstr "Gültige SHA1"
 
 #: gui/mainwindow.py:513
 #, python-format
@@ -212,10 +215,13 @@ msgid ""
 "\n"
 "This will be set as current SHA1."
 msgstr ""
+"SHA1 ist %s.\n"
+"\n"
+"Diese wird als aktuelle SHA1 festgelegt."
 
 #: gui/mainwindow.py:513
 msgid "SHA1 computed"
-msgstr ""
+msgstr "SHA1 berechnet"
 
 #: gui/mainwindow.py:533
 #, python-format
@@ -223,6 +229,8 @@ msgid ""
 "File type is: \"%s\".\n"
 "This will be set as the current file type."
 msgstr ""
+"Dateityp ist: \"%s\".\n"
+"Dieser wird als aktueller Dateityp festgelegt."
 
 #: gui/mainwindow.py:533
 msgid "Type detected"
@@ -234,6 +242,9 @@ msgid ""
 "=> <b>Succesfully finished.</b>\n"
 "\n"
 msgstr ""
+"\n"
+"=> <b>Erfolgreich beendet.</b>\n"
+"\n"
 
 #: gui/mainwindow.py:544
 #, python-format
@@ -242,6 +253,9 @@ msgid ""
 "<font color=\"red\">*** Error: %s</font>\n"
 "\n"
 msgstr ""
+"\n"
+"<font color=\"red\">*** Fehler: %s</font>\n"
+"\n"
 
 #: gui/widgets.py:26
 msgid "Design"
@@ -253,7 +267,7 @@ msgstr "Code"
 
 #: gui/widgets.py:59
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 #: gui/widgets.py:60
 msgid "Package(s)"
@@ -261,19 +275,19 @@ msgstr "Paket(e)"
 
 #: gui/widgets.py:61
 msgid "History"
-msgstr ""
+msgstr "Verlauf"
 
 #: gui/widgets.py:119
 msgid "Specification is not valid or well-formed."
-msgstr ""
+msgstr "Die Spezifikation ist ungültig oder nicht wohlgeformt."
 
 #: gui/widgets.py:119
 msgid "Invalid XML Code"
-msgstr ""
+msgstr "Ungültiger XML-Code"
 
 #: gui/widgets.py:169
 msgid "Error during syncronisation"
-msgstr ""
+msgstr "Fehler während der Synchronisation aufgetreten"
 
 #: gui/widgets.py:203 gui/widgets.py:385
 msgid "General"
@@ -293,15 +307,15 @@ msgstr "Lizenz:"
 
 #: gui/widgets.py:213 gui/widgets.py:394
 msgid "Is a:"
-msgstr ""
+msgstr "Ist ein:"
 
 #: gui/widgets.py:214 gui/widgets.py:395
 msgid "Part of:"
-msgstr ""
+msgstr "Teil von:"
 
 #: gui/widgets.py:215
 msgid "Packager:"
-msgstr ""
+msgstr "Paket-Ersteller:"
 
 #: gui/widgets.py:252
 msgid "URI:"
@@ -333,19 +347,19 @@ msgstr "Zusammenfassung & Beschreibung"
 
 #: gui/widgets.py:271 gui/widgets.py:428 gui/widgets.py:440
 msgid "Condition"
-msgstr ""
+msgstr "Bedingung"
 
 #: gui/widgets.py:271 gui/widgets.py:428
 msgid "Dependency"
-msgstr ""
+msgstr "Abhängigkeit"
 
 #: gui/widgets.py:272
 msgid "Build Dependencies"
-msgstr ""
+msgstr "Build-Abhängigkeiten"
 
 #: gui/widgets.py:275
 msgid "Level"
-msgstr ""
+msgstr "Level"
 
 #: gui/widgets.py:275
 msgid "Patch"
@@ -353,15 +367,15 @@ msgstr "Patch"
 
 #: gui/widgets.py:276
 msgid "Patches"
-msgstr ""
+msgstr "Patches"
 
 #: gui/widgets.py:319
 msgid "Source name must be filled."
-msgstr ""
+msgstr "Quellname muss ausgefüllt sein."
 
 #: gui/widgets.py:429
 msgid "Runtime Dependencies"
-msgstr ""
+msgstr "Laufzeit-Abhängigkeiten"
 
 #: gui/widgets.py:432
 msgid "Permanent?"
@@ -369,7 +383,7 @@ msgstr "Permanent?"
 
 #: gui/widgets.py:432
 msgid "Path"
-msgstr ""
+msgstr "Pfad"
 
 #: gui/widgets.py:436
 msgid "Owner"
@@ -381,11 +395,11 @@ msgstr "Berechitigung"
 
 #: gui/widgets.py:436
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
 #: gui/widgets.py:437
 msgid "Additional Files"
-msgstr ""
+msgstr "Zusätzliche Dateien"
 
 #: gui/widgets.py:440
 msgid "Package"
@@ -397,7 +411,7 @@ msgstr "Konflikte"
 
 #: gui/widgets.py:444
 msgid "Provides"
-msgstr ""
+msgstr "Unterstützt"
 
 #: gui/widgets.py:444
 msgid "Script"
