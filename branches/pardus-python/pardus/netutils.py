@@ -322,7 +322,6 @@ class Route:
             pass
 
 def waitNet(timeout=20):
-    """Wait until an interface connects or timeout expires."""
     while timeout > 0:
         upInterfaces = []
         for iface in interfaces():
