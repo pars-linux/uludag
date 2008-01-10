@@ -307,11 +307,17 @@ class Dev:
             
             dial.dial(self.remote, self.user, self.password, "115200", "1", self.dev)
             
+            d = DB.getDB(self.name)
+            d["state"] = "up"
+            DB.setDB(self.name, d)
             notify("stateChanged", (self.name, "up"))
     
     def down(self):
         dial = Dialup()
         dial.stopPPPD(self.dev)
+        d = DB.getDB(self.name)
+        d["state"] = "down"
+        DB.setDB(self.name, d)
         notify("stateChanged", (self.name, "down"))
 
 
@@ -339,7 +345,7 @@ def scanRemote():
 
 def setConnection(name, device):
     d = DB.getDB(name)
-    changed = d and d.has_key("device")
+    changed = "device" in d
     d["device"] = device
     DB.setDB(name, d)
     if changed:
@@ -390,10 +396,6 @@ def setState(name, state):
     else:
         if dev.state == "up":
             dev.down()
-    
-    d = DB.getDB(name)
-    d["state"] = state
-    DB.setDB(name, d)
 
 def connections():
     return DB.listDB()
