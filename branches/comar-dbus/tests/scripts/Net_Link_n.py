@@ -103,6 +103,9 @@ class Dev:
                 route = netutils.Route()
                 route.setDefault(self.gateway)
                 self.dns()
+            d = DB.getDB(self.name)
+            d["state"] = "up"
+            DB.setDB(self.name, d)
             notify("stateChanged", (self.name, "up", self.address))
         else:
             notify("stateChanged", (self.name, "connecting", ""))
@@ -110,6 +113,9 @@ class Dev:
             if ret == 0 and ifc.isUp():
                 self.dns()
                 addr = ifc.getAddress()[0]
+                d = DB.getDB(self.name)
+                d["state"] = "up"
+                DB.setDB(self.name, d)
                 notify("stateChanged", (self.name, "up", unicode(addr)))
             else:
                 notify("stateChanged", (self.name, "inaccessible", _(dhcp_fail_msg)))
@@ -121,6 +127,9 @@ class Dev:
         if self.mode != "manual":
             ifc.stopAuto()
         ifc.down()
+        d = DB.getDB(self.name)
+        d["state"] = "down"
+        DB.setDB(self.name, d)
         notify("stateChanged", (self.name, "down", ""))
 
 
@@ -148,7 +157,7 @@ def scanRemote():
 
 def setConnection(name, device):
     d = DB.getDB(name)
-    changed = d and d.has_key("device")
+    changed = "device" in d
     d["device"] = device
     DB.setDB(name, d)
     if changed:
@@ -209,10 +218,6 @@ def setState(name, state):
         dev.up()
     else:
         dev.down()
-    
-    d = DB.getDB(name)
-    d["state"] = state
-    DB.setDB(name, d)
 
 def connections():
     return DB.listDB()
