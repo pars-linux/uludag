@@ -82,6 +82,7 @@ class DiskList(QtGui.QWidget):
         self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
+        self.connect(self.partEdit.ui.resetAllChanges,QtCore.SIGNAL("clicked()"),self.resetChanges)
         self.initDevices()
 
     ##
@@ -118,7 +119,8 @@ class DiskList(QtGui.QWidget):
                 ctx.mainScreen.enableNext()
 
     def formatTypeChanged(self, cur):
-        if cur == 100:
+        # index 1 is Pardus' root partition..
+        if cur == 1:
             if self.partEdit.ui.partitionSize.maximum() < ctx.consts.min_root_size:
                 self.partEdit.ui.formatType.setCurrentIndex(0)
                 self.partEdit.ui.information.setText(
@@ -200,6 +202,9 @@ class DiskList(QtGui.QWidget):
 
         t = partitonTypes[self.partEdit.ui.formatType.currentIndex()]
 
+        if not t:
+            return False
+
         def edit_requests(partition):
             """edit partition. just set the filesystem and flags."""
             if self.partEdit.ui.formatCheck.isChecked():
@@ -222,11 +227,7 @@ class DiskList(QtGui.QWidget):
                 self.partEdit.ui.information.setText("%s" % e)
                 self.warning.show()
                 return False
-
             return True
-
-        if not t:
-            return False
 
         partition = self.partEdit.currentPart
 
