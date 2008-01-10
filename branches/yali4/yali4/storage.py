@@ -52,8 +52,7 @@ def init_devices(force = False):
         devices.append(d)
 
     # devices are appended in reverse order
-    # In VBOX vice versa !?
-    # devices.reverse()
+    devices.reverse()
 
     if devices:
         return True
@@ -335,7 +334,6 @@ class Device:
         size = int(size_mb * MEGABYTE / self._sector_size)
         self.addPartitionStartEnd(type, fs, start, start + size)
 
-        
     ##
     # Add (create) a new partition to the device from start to end.
     #
@@ -355,12 +353,12 @@ class Device:
             fs = None
 
         constraint = self._disk.dev.constraint_any()
-        newp = self._disk.partition_new (type, fs, start, end)
+        newp = self._disk.partition_new(type, fs, start, end)
         for flag in flags:
             newp.set_flag(flag, 1)
 
         try:
-            self._disk.add_partition (newp, constraint)
+            self._disk.add_partition(newp, constraint)
         except parted.error, e:
             raise DeviceError, e
 

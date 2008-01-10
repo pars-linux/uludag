@@ -134,9 +134,7 @@ class DiskList(QtGui.QWidget):
         if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
-        # for consistency list devices in reverse order.
         self.devs = [i for i in yali4.storage.devices]
-        self.devs.reverse()
 
     def resetChanges(self):
         yali4.storage.clear_devices()
@@ -240,6 +238,7 @@ class DiskList(QtGui.QWidget):
             size = self.partEdit.ui.partitionSize.value()
             type = parteddata.PARTITION_PRIMARY
             device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
+            device.update()
             #partition = device.getPartition(p.num)
             #if not edit_requests(partition):
             #    return False
