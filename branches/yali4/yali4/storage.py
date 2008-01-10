@@ -203,9 +203,10 @@ class Device:
     def hasBootablePartition(self):
         flag = parted.PARTITION_BOOT
         for p in self.getPartitions():
-            ped = p.getPartition()
-            if ped.is_flag_available(flag) and ped.get_flag(flag):
-                return True
+            if not p._parted_type == freeSpaceType:
+                ped = p.getPartition()
+                if ped.is_flag_available(flag) and ped.get_flag(flag):
+                    return True
         return False
 
     ##
@@ -264,7 +265,6 @@ class Device:
             return size
         else:
             return 0
-    
 
     def getLargestContinuousFreeMB(self):
         bytes = self.__pedPartitionBytes(self.__getLargestFreePedPartition())
@@ -298,6 +298,7 @@ class Device:
 
     ##
     # Add (create) a new partition to the device
+    # @param part: parted partition; must be parted.PARTITION_FREESPACE
     # @param type: parted partition type (eg. parted.PARTITION_PRIMARY)
     # @param fs: filesystem.FileSystem or file system name (like "ext3")
     # @param size_mb: size of the partition in MBs.
@@ -309,24 +310,18 @@ class Device:
         if (parted.PARTITION_BOOT in flags) and self.hasBootablePartition():
             flags = list(set(flags) - set([parted.PARTITION_BOOT]))
 
-        while part:
-            geom = part.geom
+        geom = part.geom
 
-            # creating a primary partition
-            if part.type & parted.PARTITION_FREESPACE \
-                    and geom.length >= size:
+        # creating a primary partition
+        if part.type & parted.PARTITION_FREESPACE and geom.length >= size:
+            return self.addPartitionStartEnd(type,
+                                             fs,
+                                             geom.start,
+                                             geom.start + size,
+                                             flags)
 
-                return self.addPartitionStartEnd(type,
-                                                 fs,
-                                                 geom.start,
-                                                 geom.start + size,
-                                                 flags)
-
-            part = self._disk.next_partition(part)
-
-        raise DeviceError, ("Not enough free space on %s to create "
-                            "new partition" % self.getPath())
-
+        # if you are here and then we have some problems..
+        raise DeviceError, ("Not enough free space on %s to create new partition" % self.getPath())
 
     ##
     # add a partition starting from a given geom...

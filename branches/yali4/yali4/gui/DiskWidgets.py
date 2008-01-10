@@ -118,7 +118,7 @@ class DiskList(QtGui.QWidget):
                 ctx.mainScreen.enableNext()
 
     def formatTypeChanged(self, cur):
-        if cur == 1:
+        if cur == 100:
             if self.partEdit.ui.partitionSize.maximum() < ctx.consts.min_root_size:
                 self.partEdit.ui.formatType.setCurrentIndex(0)
                 self.partEdit.ui.information.setText(
@@ -209,17 +209,15 @@ class DiskList(QtGui.QWidget):
                     flags = list(set(flags) - set([parted.PARTITION_BOOT]))
                 partition.setPartedFlags(flags)
                 partition.setFileSystemType(t.filesystem)
-
             try:
                 ctx.partrequests.append(request.MountRequest(partition, t))
                 ctx.partrequests.append(request.LabelRequest(partition, t))
                 if self.partEdit.ui.formatCheck.isChecked():
                     ctx.partrequests.append(request.FormatRequest(partition, t))
-#                else:
+                else:
                     # remove previous format requests for partition (if
                     # there are any)
-#                    ctx.partrequests.removeRequest(
-#                        partition, request.formatRequestType)
+                    ctx.partrequests.removeRequest(partition, request.formatRequestType)
             except request.RequestException, e:
                 self.partEdit.ui.information.setText("%s" % e)
                 self.warning.show()
@@ -237,12 +235,13 @@ class DiskList(QtGui.QWidget):
             device = partition.getDevice()
             size = self.partEdit.ui.partitionSize.value()
             type = parteddata.PARTITION_PRIMARY
-            device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
+            p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
             device.update()
-            #partition = device.getPartition(p.num)
-            #if not edit_requests(partition):
-            #    return False
             self.update()
+
+            partition = device.getPartition(p.num)
+            if not edit_requests(partition):
+                return False
 
 class DiskItem(QtGui.QWidget):
     # storage.Device or partition.Partition
@@ -346,8 +345,8 @@ class PartEdit(QtGui.QWidget):
             self.ui.deletePartition.setVisible(False)
         self.ui.devicePath.setText(part.getPath())
         self.ui.fileSystem.setText(part.getFSName())
-        self.ui.partitionSize.setMaximum(part.getMB())
-        self.ui.partitionSize.setValue(part.getMB())
+        self.ui.partitionSize.setMaximum(part.getMB()-1)
+        self.ui.partitionSize.setValue(part.getMB()-1)
         self.ui.formatType.setCurrentIndex(0)
         self.ui.information.setText("")
         self.ui.partitionSize.setMinimum(0)
