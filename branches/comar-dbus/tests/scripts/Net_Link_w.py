@@ -212,7 +212,8 @@ class Wireless:
         if mode == "wep":
             os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
         elif mode == "wepascii":
-            os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (ifc.name, password))
+            #os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (ifc.name, password))
+            os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
         elif mode == "wpa-psk":
             if not have_supplicant:
                 return _(no_supplicant_msg)
@@ -232,7 +233,7 @@ class Wireless:
             ret = peap.authenticate(username, password)
             if not ret:
                 return _(wpa_fail_msg)
-        return None
+        return ""
     
     def getBitrate(self, ifname):
         # Note for UI coder, KILO is not 2^10 in wireless tools world
@@ -335,6 +336,9 @@ class Dev:
                 route = netutils.Route()
                 route.setDefault(self.gateway)
                 self.dns()
+            d = DB.getDB(self.name)
+            d["state"] = "up"
+            DB.setDB(self.name, d)
             notify("stateChanged", (self.name, "up", self.address))
         else:
             ifc.up()
@@ -342,7 +346,10 @@ class Dev:
             if ret == 0 and ifc.isUp():
                 self.dns()
                 addr = ifc.getAddress()[0]
-                notify("stateChanged", (self.name, "up", unicode(addr)))
+                d = DB.getDB(self.name)
+                d["state"] = "up"
+                DB.setDB(self.name, d)
+                notify("stateChanged", (self.name, "up", addr))
             else:
                 notify("stateChanged", (self.name, "inaccessible",  _(dhcp_fail_msg)))
                 fail("DHCP failed")
@@ -355,6 +362,9 @@ class Dev:
         if self.authmode != "" and self.authmode != "none":
             wifi.setEncryption("none", None, None, None)
         ifc.down()
+        d = DB.getDB(self.name)
+        d["state"] = "down"
+        DB.setDB(self.name, d)
         notify("stateChanged", (self.name, "down", ""))
 
 
@@ -390,7 +400,7 @@ def scanRemote(device):
 
 def setConnection(name, device):
     d = DB.getDB(name)
-    changed = d and d.has_key("device")
+    changed = "device" in d
     d["device"] = device
     DB.setDB(name, d)
     if changed:
@@ -461,10 +471,6 @@ def setState(name, state):
         dev.up()
     else:
         dev.down()
-    
-    d = DB.getDB(name)
-    d["state"] = state
-    DB.setDB(name, d)
 
 def connections():
     return DB.listDB()
