@@ -15,20 +15,35 @@
 import os
 import ConfigParser
 
+from pardus.fileutils import FileLock
+
 class iniDB:
     def __init__(self, db_file):
         try:
-            print os.path.basename(db_file)
             os.makedirs(os.path.dirname(db_file))
         except OSError:
             pass
-        if not os.path.exists(db_file):
-            fp = file(db_file, "w")
-            fp.write()
-            fp.close()
         self.db_file = db_file
+        self.lock_file = os.path.join(os.path.dirname(db_file), '.%s' % os.path.basename(db_file))
+        if not os.path.exists(db_file):
+            self.__writelock()
+            file(db_file, "w").close()
+            self.__unlock()
+        self.__readlock()
         self.cp = ConfigParser.ConfigParser()
         self.cp.read(db_file)
+        self.__unlock()
+
+    def __writelock(self):
+        self.fl = FileLock(self.lock_file)
+        self.fl.lock(shared=False)
+
+    def __readlock(self):
+        self.fl = FileLock(self.lock_file)
+        self.fl.lock(shared=True)
+
+    def __unlock(self):
+        self.fl.unlock()
 
     def listDB(self):
         profiles = self.cp.sections()
@@ -50,9 +65,16 @@ class iniDB:
                 self.cp.set(name, key, value)
             elif name in self.cp.sections():
                 self.cp.remove_option(name, key)
+        self.__writelock()
         fp = open(self.db_file, "w")
         self.cp.write(fp)
         fp.close()
+        self.__unlock()
 
     def remDB(self, name):
         self.cp.remove_section(name)
+        self.__writelock()
+        fp = open(self.db_file, "w")
+        self.cp.write(fp)
+        fp.close()
+        self.__unlock()
