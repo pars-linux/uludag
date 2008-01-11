@@ -37,6 +37,7 @@ void QDBusConnectionPrivate::dispatch()
     for (con = connections.first(); con; con = connections.next())
     {
         while (dbus_connection_dispatch(con) == DBUS_DISPATCH_DATA_REMAINS);
+        dispatcher->stop();
     }
 }
 
