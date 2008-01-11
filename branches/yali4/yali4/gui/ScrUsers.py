@@ -58,7 +58,11 @@ Click Next button to proceed.
         self.ui.setupUi(self)
 
         self.edititemindex = None
-        self.ui.pass_error.setText("")
+
+        self.ui.pass_error.setVisible(False)
+        self.ui.caps_error.setVisible(False)
+
+        self.ui.caps_error.setText(_('<font color="#FF6D19">Caps Lock is on!</font>'))
 
         # User Icons
         self.normalUserIcon = QtGui.QPixmap(":/gui/pics/user_normal.png")
@@ -143,10 +147,9 @@ go to next screen.</p>
 
     def checkCapsLock(self):
         if pardus.xorg.capslock.isOn():
-            self.ui.caps_error.setText(
-                _('<font color="#FF6D19">Caps Lock is on!</font>'))
+            self.ui.caps_error.setVisible(True)
         else:
-            self.ui.caps_error.setText("")
+            self.ui.caps_error.setVisible(False)
 
     def keyReleaseEvent(self, e):
         self.checkCapsLock()
@@ -158,17 +161,20 @@ go to next screen.</p>
         if not p1 == '' and (p1 == self.ui.username.text() or p1 == self.ui.realname.text()):
             self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Don\'t use your user name or name as a password.</font>'))
+            self.ui.pass_error.setVisible(True)
             return self.ui.createButton.setEnabled(False)
         elif p2 != p1 and p2:
             self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Passwords do not match!</font>'))
+            self.ui.pass_error.setVisible(True)
             return self.ui.createButton.setEnabled(False)
         elif len(p1) == len(p2) and len(p2) < 4 and not p1=='':
             self.ui.pass_error.setText(
                 _('<font color="#FF6D19">Password is too short!</font>'))
+            self.ui.pass_error.setVisible(True)
             return self.ui.createButton.setEnabled(False)
         else:
-            self.ui.pass_error.setText("")
+            self.ui.pass_error.setVisible(False)
 
         if self.ui.username.text() and p1 and p2:
             self.ui.createButton.setEnabled(True)
