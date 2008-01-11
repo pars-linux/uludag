@@ -14,6 +14,10 @@
 # Abstract class for screen widgets
 class ScreenWidget:
 
+    title = ""
+    desc = ""
+    icon = None
+
     def shown(self):
         pass
 

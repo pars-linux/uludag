@@ -77,6 +77,7 @@ class Widget(Ui_YaliMain):
         _w.shown()
         self.screenName.setText(_w.title)
         self.screenDescription.setText(_w.desc)
+        self.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
         self.helpContent.setText(_w.help)
 
     def createWidgets(self,screens=[]):

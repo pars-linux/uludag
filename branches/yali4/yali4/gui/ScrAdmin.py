@@ -29,6 +29,7 @@ import pardus.xorg
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Set Administrator')
     desc = _('Admins has important rights on the system..')
+    icon = "iconAdmin"
     help = _('''
 <font size="+2">System administrator password and hostname</font>
 

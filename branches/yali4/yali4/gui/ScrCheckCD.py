@@ -28,6 +28,7 @@ from yali4.gui.YaliDialog import Dialog
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Check your media')
     desc = _('To ignore media corruptions you can check your media integrity..')
+    icon = "iconCD"
     help = _('''
 <font size="+2">Check CD Integrity!</font>
 

@@ -34,6 +34,7 @@ from yali4.gui.ScreenWidget import ScreenWidget
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Manual Partitioning')
     desc = _('You can easily configure your partitions..')
+    icon = "iconPartition"
     help = _('''
 <font size="+2">Partitioning your hard disk</font>
 
