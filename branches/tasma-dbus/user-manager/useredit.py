@@ -17,8 +17,6 @@ from kdeui import *
 
 from utility import *
 
-from dbus import DBusException
-
 
 class UID:
     def __init__(self, stack, w, grid, edit=False):
@@ -417,6 +415,8 @@ class UserStack(QVBox):
         self.setMargin(6)
         self.setSpacing(6)
         
+        self.mainwidget = parent
+        
         w = QWidget(self)
         hb = QHBoxLayout(w)
         hb.setMargin(6)
@@ -503,9 +503,7 @@ class UserStack(QVBox):
         tmp = self.u_groups.text()
         tmpA = set(tmp.split(","))
         tmpB = set(dict["groups"])
-        if tmpA == tmpB:
-            dict["groups"] = ""
-        else:
+        if tmpA != tmpB:
             if int(dict["uid"]) == os.getuid() and not "wheel" in tmpA and "wheel" in tmpB:
                 ret = KMessageBox.warningContinueCancel(
                     self,
@@ -518,46 +516,36 @@ class UserStack(QVBox):
         
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
-            def setUser():
-                bus = activateComar()
-                bus.setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
-            try:
-                setUser()
-            except DBusException, e:
-                if obtainAuthorization(self, "tr.org.pardus.comar.user.manager.setuser"):
-                    setUser()
-                else:
-                    msg = "%s\n\n(%s)" % (e.args[0], e.get_dbus_name())
-                    KMessageBox.error(self, msg, i18n("Error"))
-                    self.parent().slotCancel()
-                    return
-            self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
-            self.parent().slotCancel()
+            
+            def userDone(uid):
+                self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
+                self.parent().slotCancel()
+            def userCancel():
+                self.parent().slotCancel()
+            
+            ch = self.mainwidget.callMethod("setUser", "tr.org.pardus.comar.user.manager.setuser")
+            ch.registerDone(userDone)
+            ch.registerCancel(userCancel)
+            ch.registerError(userCancel)
+            ch.call(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
     
     def slotAdd(self):
         if self.checkAdd():
             return
         
         self.guide.op_start(i18n("Adding user..."))
-        uid = 0;
-        def addUser():
-            bus = activateComar()
-            return bus.addUser(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
-        try:
-            uid = addUser()
-        except DBusException, e:
-            if obtainAuthorization(self, "tr.org.pardus.comar.user.manager.adduser"):
-                uid = addUser()
-            else:
-                msg = "%s\n\n(%s)" % (e.args[0], e.get_dbus_name())
-                KMessageBox.error(self, msg, i18n("Error"))
-                self.parent().slotCancel()
-                return
-        self.parent().browse.userModified(uid, self.u_name.text(), self.u_realname.text())
-        self.parent().slotCancel()
-    
-    def slotError(self, *args, **kwargs):
-        pass
+        
+        def userDone(uid):
+            self.parent().browse.userModified(uid, self.u_name.text(), self.u_realname.text())
+            self.parent().slotCancel()
+        def userCancel():
+            self.parent().slotCancel()
+        
+        ch = self.mainwidget.callMethod("addUser", "tr.org.pardus.comar.user.manager.adduser")
+        ch.registerDone(userDone)
+        ch.registerCancel(userCancel)
+        ch.registerError(userCancel)
+        ch.call(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
     
     def reset(self):
         self.u_id.setText("auto")
@@ -581,20 +569,23 @@ class UserStack(QVBox):
         self.reset()
         self.editdict = None
         self.guide.op_start(i18n("Getting user information..."))
-        bus = activateComar()
-        nick, name, gid, homedir, shell, groups = bus.userInfo(uid)
 
-        dict = {}
-        self.u_id.setText(str(uid))
-        dict["uid"] = uid
-        self.u_name.setText(nick)
-        self.u_realname.setText(name)
-        dict["realname"] = name
-        self.u_home.setText(homedir)
-        self.u_shell.setText(shell)
-        dict["shell"] = shell
-        self.u_groups.setText(groups)
-        dict["groups"] = groups
-        self.editdict = dict
-        dict["password"] = ""
-        self.guide.op_end()
+        def userInfo(nick, name, gid, homedir, shell, groups):
+            dict = {}
+            self.u_id.setText(str(uid))
+            dict["uid"] = uid
+            self.u_name.setText(nick)
+            self.u_realname.setText(name)
+            dict["realname"] = name
+            self.u_home.setText(homedir)
+            self.u_shell.setText(shell)
+            dict["shell"] = shell
+            self.u_groups.setText(groups)
+            dict["groups"] = groups
+            dict["password"] = ""
+            self.editdict = dict
+            self.guide.op_end()
+
+        ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
+        ch.registerDone(userInfo)
+        ch.call(uid)

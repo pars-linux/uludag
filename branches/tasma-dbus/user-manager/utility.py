@@ -20,21 +20,6 @@ from khtml import *
 
 import dbus
 
-def activateComar():
-    try:
-        bus = dbus.SystemBus()
-        obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout", introspect=False)
-        return dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.User.Manager")
-    except dbus.DBusException:
-        KMessageBox.sorry(None, i18n("Cannot activate COMAR! DBus server not responding or COMAR service is not installed."))
-        sys.exit(0)
-
-def obtainAuthorization(app, action):
-    bus = dbus.SessionBus()
-    obj = bus.get_object("org.gnome.PolicyKit", "/")
-    iface = dbus.Interface(obj, "org.freedesktop.PolicyKit.AuthenticationAgent")
-    return iface.ObtainAuthorization(action, app.winId(), os.getpid())
-
 def I18N_NOOP(str):
     return str
 

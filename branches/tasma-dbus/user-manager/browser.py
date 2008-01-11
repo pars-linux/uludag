@@ -16,10 +16,6 @@ from kdeui import *
 
 from utility import getIconSet
 from utility import HelpDialog
-from utility import obtainAuthorization, activateComar
-
-from dbus import DBusException
-
 
 class UserItem(QListViewItem):
     def __init__(self, parent, uid, nick, name):
@@ -71,6 +67,8 @@ class BrowseStack(QVBox):
         self.setMargin(6)
         self.setSpacing(6)
         
+        self.mainwidget = parent
+        
         bar = QToolBar("lala", None, self)
         but = QToolButton(getIconSet("add.png"), i18n("Add"), "lala", parent.slotAdd, bar)
         but.setUsesTextLabel(True)
@@ -121,12 +119,14 @@ class BrowseStack(QVBox):
         tab.addTab(self.users, getIconSet("personal.png", KIcon.Small), i18n("Users"))
         tab.addTab(self.groups, getIconSet("kuser.png", KIcon.Small), i18n("Groups"))
         
-        bus = activateComar()
-        bus.userList(reply_handler=self.comarUsers, error_handler=self.comarError)
-        bus.groupList(reply_handler=self.comarGroups, error_handler=self.comarError)
+        ch = self.mainwidget.callMethod("userList", "tr.org.pardus.comar.user.manager.get")
+        ch.registerDone(self.comarUsers)
+        ch.call()
         
-        # Access control
-        self.can_access = True
+        ch2 = self.mainwidget.callMethod("groupList", "tr.org.pardus.comar.user.manager.get")
+        ch2.registerDone(self.comarGroups)
+        ch2.call()
+        
         self.showControls()
         
         self.slotSelect()
@@ -150,33 +150,17 @@ class BrowseStack(QVBox):
                     KGuiItem(i18n("Delete user"), "remove"),
                 )
                 if ret == KMessageBox.Yes:
-                    def deleteUser():
-                        bus = activateComar()
-                        bus.deleteUser(item.uid, True)
-                    try:
-                        deleteUser()
-                    except DBusException, e:
-                        if obtainAuthorization(self, "tr.org.pardus.comar.user.manager.deleteuser"):
-                            deleteUser()
-                        else:
-                            _type, _msg = e.split(":", 1)
-                            KMessageBox.error(self, _msg, _type)
-                            return
-                    self.userModified(item.uid)
+                    def deleteDone():
+                        self.userModified(item.uid)
+                    ch = self.mainwidget.callMethod("deleteUser", "tr.org.pardus.comar.user.manager.deleteuser")
+                    ch.registerDone(deleteDone)
+                    ch.call(item.uid, True)
                 if ret == KMessageBox.No:
-                    def deleteUser():
-                        bus = activateComar()
-                        bus.deleteUser(item.uid, False)
-                    try:
-                        deleteUser()
-                    except DBusException, e:
-                        if obtainAuthorization(self, "tr.org.pardus.comar.user.manager.deleteuser"):
-                            deleteUser()
-                        else:
-                            msg = "%s\n\n(%s)" % (e.args[0], e.get_dbus_name())
-                            KMessageBox.error(self, msg, i18n("Error"))
-                            return
-                    self.userModified(item.uid)
+                    def deleteDone():
+                        self.userModified(item.uid)
+                    ch = self.mainwidget.callMethod("deleteUser", "tr.org.pardus.comar.user.manager.deleteuser")
+                    ch.registerDone(deleteDone)
+                    ch.call(item.uid, False)
         else:
             item = self.groups.selectedItem()
             if item:
@@ -190,23 +174,13 @@ class BrowseStack(QVBox):
                     KGuiItem(i18n("Delete Group"), "remove"),
                     KStdGuiItem.cancel()
                 ):
-                    def deleteGroup():
-                        bus = activateComar()
-                        bus.deleteGroup(item.gid)
-                    try:
-                        deleteGroup()
-                    except DBusException, e:
-                        if obtainAuthorization(self, "tr.org.pardus.comar.user.manager.deletegroup"):
-                            deleteGroup()
-                        else:
-                            msg = "%s\n\n(%s)" % (e.args[0], e.get_dbus_name())
-                            KMessageBox.error(self, msg, i18n("Error"))
-                            return
-                    self.groupModified(item.gid)
+                    def deleteDone():
+                        self.groupModified(item.gid)
+                    ch = self.mainwidget.callMethod("deleteGroup", "tr.org.pardus.comar.user.manager.deletegroup")
+                    ch.registerDone(deleteDone)
+                    ch.call(item.gid)
     
     def slotSelect(self):
-        if not self.can_access:
-            return
         bool = False
         bool2 = False
         if self.tab.currentPageIndex() == 0:
@@ -224,8 +198,7 @@ class BrowseStack(QVBox):
         self.delete_but.setEnabled(bool2)
     
     def slotDouble(self, item, point, col):
-        if self.can_access:
-            self.parent().slotEdit()
+        self.parent().slotEdit()
     
     def slotTabChanged(self, w):
         self.slotSelect()
@@ -242,9 +215,6 @@ class BrowseStack(QVBox):
                 item.setVisible(on)
             item = item.nextSibling()
         self.slotSelect()
-    
-    def comarError(self, *args, **kwargs):
-        pass
     
     def comarUsers(self, users):
         for uid, nick, name in users:
@@ -283,13 +253,6 @@ class BrowseStack(QVBox):
                     self.groups.takeItem(item)
                     return
                 item = item.nextSibling()
-    
-    def slotAccessReply(self, reply):
-        if reply.command == "result":
-            self.can_access = True
-            self.showControls()
-        else:
-            KMessageBox.error(self, i18n("You are not allowed to manage user settings."), i18n("Access Denied"))
     
     def hideControls(self):
         self.new_but.setEnabled(False)

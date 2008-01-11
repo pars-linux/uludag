@@ -124,6 +124,8 @@ class GroupStack(QVBox):
         self.setMargin(6)
         self.setSpacing(6)
         
+        self.mainwidget = parent
+        
         lab = QLabel(u"<big><b>%s</b></big>" % i18n("Enter Information For New Group"), self)
         
         hb = QHBox(self)
@@ -164,21 +166,18 @@ class GroupStack(QVBox):
             return
         
         self.guide.op_start(i18n("Adding group..."))
-        def addGroup():
-            bus = activateComar()
-            bus.addGroup(self.g_id.text(), self.g_name.text())
-        try:
-            addGroup()
-        except DBusException, e:
-            if obtainAuthorization(self, "tr.org.pardus.comar.user.manager.adduser"):
-                addGroup()
-            else:
-                msg = "%s\n\n(%s)" % (e.args[0], e.get_dbus_name())
-                KMessageBox.error(self, msg, i18n("Error"))
-                self.parent().slotCancel()
-                return
-        self.parent().browse.groupModified(int(self.g_id.text()), self.g_name.text())
-        self.parent().slotCancel()
+        
+        def groupDone(uid):
+            self.parent().browse.groupModified(int(self.g_id.text()), self.g_name.text())
+            self.parent().slotCancel()
+        def groupCancel():
+            self.parent().slotCancel()
+        
+        ch = self.mainwidget.callMethod("addGroup", "tr.org.pardus.comar.user.manager.adduser")
+        ch.registerDone(groupDone)
+        ch.registerError(groupCancel)
+        ch.registerCancel(groupCancel)
+        ch.call(self.g_id.text(), self.g_name.text())
     
     def startAdd(self):
         self.g_id.setText("auto")

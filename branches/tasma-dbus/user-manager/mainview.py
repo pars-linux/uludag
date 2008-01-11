@@ -19,15 +19,49 @@ import browser
 import useredit
 import groupedit
 from utility import *
+from handler import CallHandler
+
+import dbus
 
 
 class UserManager(QWidgetStack):
     def __init__(self, parent):
         QWidgetStack.__init__(self, parent)
+        
+        if not self.setupBusses():
+            sys.exit(1)
+        
         self.browse = browser.BrowseStack(self)
         self.user = useredit.UserStack(self)
         self.useredit = useredit.UserStack(self, edit=True)
         self.group = groupedit.GroupStack(self)
+    
+    def setupBusses(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException:
+            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            return False
+        return True
+    
+    def callMethod(self, method, action):
+        ch = CallHandler("baselayout", "User.Manager", method,
+                         action,
+                         self.winId(),
+                         self.busSys, self.busSes)
+        ch.registerError(self.comarError)
+        ch.registerAuthError(self.comarError)
+        ch.registerDBusError(self.busError)
+        return ch
+    
+    def busError(self, exception):
+        print exception
+        self.setupBusses()
+    
+    def comarError(self, exception):
+        print "Error"
+        print exception
     
     def slotCancel(self):
         self.raiseWidget(self.browse)
