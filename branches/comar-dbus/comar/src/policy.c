@@ -41,8 +41,7 @@ policy_check(const char *sender, const char *interface, const char *method, PolK
     PolKitCaller *polkit_clr;
     PolKitAction *polkit_act;
     PolKitError *perr;
-    uid_t uid;
-    int size, node_no;
+    int size, node_no, uid = -1;
     char *action, *access_label = NULL, *model, *t;
 
     *result = (PolKitResult) POLKIT_RESULT_NO;
@@ -56,6 +55,18 @@ policy_check(const char *sender, const char *interface, const char *method, PolK
         return 0;
     }
 
+    // If UID is 0, don't query PolicyKit
+    uid = dbus_bus_get_unix_user(conn, sender, &err);
+    if (dbus_error_is_set(&err)) {
+        log_error("Unable to get caller UID: %s\n", err.message);
+        dbus_error_free(&err);
+        return 0;
+    }
+    if (uid == 0) {
+        *result = (PolKitResult) POLKIT_RESULT_YES;
+        return 1;
+    }
+
     polkit_ctx = polkit_context_new();
     if (!polkit_context_init(polkit_ctx, &perr)) {
         log_error("Unable to initialize PK context: %s\n", polkit_error_get_error_message(perr));
@@ -64,11 +75,10 @@ policy_check(const char *sender, const char *interface, const char *method, PolK
     }
 
     polkit_clr = polkit_caller_new_from_dbus_name(conn, sender, &err);
-
-    polkit_caller_get_uid(polkit_clr, &uid);
-    if (uid == 0) {
-        *result = (PolKitResult) POLKIT_RESULT_YES;
-        return 1;
+    if (dbus_error_is_set(&err)) {
+        log_error("Unable to get caller info: %s\n", err.message);
+        dbus_error_free(&err);
+        return 0;
     }
 
     model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
