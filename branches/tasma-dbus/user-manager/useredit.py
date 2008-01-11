@@ -492,23 +492,19 @@ class UserStack(QVBox):
         
         dict = self.editdict.copy()
         tmp = self.u_realname.text()
-        if tmp == dict["realname"]:
-            del dict["realname"]
-        else:
+        if tmp:
             dict["realname"] = tmp
         tmp = self.u_password.text()
         if tmp:
             dict["password"] = tmp
         tmp = self.u_shell.text()
-        if tmp == dict["shell"]:
-            del dict["shell"]
-        else:
+        if tmp:
             dict["shell"] = tmp
         tmp = self.u_groups.text()
         tmpA = set(tmp.split(","))
-        tmpB = set(dict["groups"].split(","))
+        tmpB = set(dict["groups"])
         if tmpA == tmpB:
-            del dict["groups"]
+            dict["groups"] = ""
         else:
             if int(dict["uid"]) == os.getuid() and not "wheel" in tmpA and "wheel" in tmpB:
                 ret = KMessageBox.warningContinueCancel(
@@ -524,7 +520,7 @@ class UserStack(QVBox):
             self.guide.op_start(i18n("Changing user information..."))
             def setUser():
                 bus = activateComar()
-                bus.setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"].split(","))
+                bus.setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
             try:
                 setUser()
             except DBusException, e:
@@ -535,7 +531,7 @@ class UserStack(QVBox):
                     KMessageBox.error(self, msg, i18n("Error"))
                     self.parent().slotCancel()
                     return
-            self.parent().browse.userModified(int(dict["uid"]), realname=tmp)
+            self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
             self.parent().slotCancel()
     
     def slotAdd(self):
@@ -600,4 +596,5 @@ class UserStack(QVBox):
         self.u_groups.setText(groups)
         dict["groups"] = groups
         self.editdict = dict
+        dict["password"] = ""
         self.guide.op_end()
