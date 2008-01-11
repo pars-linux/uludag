@@ -585,7 +585,8 @@ class UserStack(QVBox):
         self.reset()
         self.editdict = None
         self.guide.op_start(i18n("Getting user information..."))
-        nick, name, gid, homedir, shell, groups = self.link.userInfo(uid)
+        bus = activateComar()
+        nick, name, gid, homedir, shell, groups = bus.userInfo(uid)
 
         dict = {}
         self.u_id.setText(str(uid))
