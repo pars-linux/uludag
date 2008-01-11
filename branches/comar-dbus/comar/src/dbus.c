@@ -152,10 +152,20 @@ dbus_reply_object(PyObject *obj)
     DBusMessageIter iter;
 
     reply = dbus_message_new_method_return(my_proc.bus_msg);
-    if (obj != Py_None) {
         dbus_message_iter_init_append(reply, &iter);
-        if (dbus_py_export(&iter, obj) != 0) {
-            log_exception();
+    if (obj != Py_None) {
+        if (PyTuple_Check(obj)) {
+            int i;
+            for (i = 0; i < PyTuple_Size(obj); i++) {
+                if (dbus_py_export(&iter, PyTuple_GetItem(obj, i)) != 0) {
+                    log_exception();
+                }
+            }
+        }
+        else {
+            if (dbus_py_export(&iter, obj) != 0) {
+                log_exception();
+            }
         }
     }
     dbus_send(reply);
