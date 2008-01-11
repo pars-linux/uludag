@@ -63,8 +63,11 @@ Click Next button to proceed.
         self.host_valid = True
         self.pass_valid = False
 
-        self.ui.pass_error.setText(" ")
-        self.ui.host_error.setText(" ")
+        self.ui.pass_error.setVisible(False)
+        self.ui.host_error.setVisible(False)
+        self.ui.caps_error.setVisible(False)
+
+        self.ui.caps_error.setText(_('<font color="#FF6D19">Caps Lock is on!</font>'))
 
         self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
@@ -76,7 +79,6 @@ Click Next button to proceed.
 
         self.connect(self.ui.hostname, SIGNAL("textChanged(const QString &)"),
                      self.slotHostnameChanged)
-
 
     def shown(self):
         ctx.debugger.log("Admin loaded")
@@ -91,10 +93,9 @@ Click Next button to proceed.
 
     def checkCapsLock(self):
         if pardus.xorg.capslock.isOn():
-            self.ui.caps_error.setText(
-                _('<font color="#FF6D19">Caps Lock is on!</font>'))
+            self.ui.caps_error.setVisible(True)
         else:
-            self.ui.caps_error.setText(" ")
+            self.ui.caps_error.setVisible(False)
 
     def keyReleaseEvent(self, e):
         self.checkCapsLock()
@@ -106,17 +107,18 @@ Click Next button to proceed.
 
         if p1 == p2 and p1:
             if len(p1)<4:
-                self.ui.pass_error.setText(
-                    _('<font color="#FF6D19">Password is too short!</font>'))
+                self.ui.pass_error.setText(_('<font color="#FF6D19">Password is too short!</font>'))
+                self.ui.pass_error.setVisible(True)
                 self.pass_valid = False
             else:
-                self.ui.pass_error.setText(" ")
+                self.ui.pass_error.setVisible(False)
                 self.pass_valid = True
         else:
             self.pass_valid = False
             if p2:
-                self.ui.pass_error.setText(
-                    _('<font color="#FF6D19">Passwords do not match!</font>'))
+                self.ui.pass_error.setText(_('<font color="#FF6D19">Passwords do not match!</font>'))
+                self.ui.pass_error.setVisible(True)
+
         self.setNext()
 
     ##
@@ -131,9 +133,10 @@ Click Next button to proceed.
         self.host_valid = yali4.sysutils.text_is_valid(string.toAscii())
 
         if not self.host_valid:
+            self.ui.host_error.setVisible(True)
             self.ui.host_error.setText(_('<font color="#FF6D19">Hostname contains invalid characters!</font>'))
         else:
-            self.ui.host_error.setText(" ")
+            self.ui.host_error.setVisible(False)
         self.setNext()
 
     def setNext(self):

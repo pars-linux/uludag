@@ -172,6 +172,9 @@
    </item>
    <item row="2" column="1" >
     <widget class="QLabel" name="pass_error" >
+     <property name="styleSheet" >
+      <string>border-radius:8px;background-color:white;</string>
+     </property>
      <property name="text" >
       <string/>
      </property>
@@ -188,6 +191,9 @@
    </item>
    <item row="3" column="1" >
     <widget class="QLabel" name="caps_error" >
+     <property name="styleSheet" >
+      <string>border-radius:8px;background-color:white;</string>
+     </property>
      <property name="text" >
       <string/>
      </property>
