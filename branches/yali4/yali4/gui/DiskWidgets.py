@@ -148,7 +148,7 @@ class DiskList(QtGui.QWidget):
 
         def sizePix(mb,total):
             _p = (self.toolBox.width() * mb) / total
-            if _p<=8:
+            if _p<=16:
                 return 8
             return _p - 8
 
