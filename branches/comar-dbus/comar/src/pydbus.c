@@ -28,10 +28,7 @@ dbus_py_get_signature(PyObject *obj)
      * @return Signature
      */
 
-    if (obj == Py_None) {
-        return 'n';
-    }
-    else if (PyString_Check(obj)) {
+    if (PyString_Check(obj)) {
         return 's';
     }
     else if (PyBool_Check(obj)) {
@@ -86,12 +83,6 @@ dbus_py_get_object_signature(PyObject *obj)
             size = 2;
             sign_content = malloc(size);
             snprintf(sign_content, size, "%c", sign);
-            sign_content[size - 1] = '\0';
-            return sign_content;
-        case 'n':
-            size = 2;
-            sign_content = malloc(size);
-            snprintf(sign_content, size, "s");
             sign_content[size - 1] = '\0';
             return sign_content;
         case 'a':
@@ -292,10 +283,6 @@ dbus_py_export(DBusMessageIter *iter, PyObject *obj)
             dbus_message_iter_close_container(iter, &sub);
             free(sign_sub);
             free(sign_sub2);
-            break;
-        case 'n':
-            p.s = "";
-            e = dbus_message_iter_append_basic(iter, DBUS_TYPE_STRING, &p.s);
             break;
         default:
             PyErr_SetString(PyExc_TypeError, "Unknown data type");

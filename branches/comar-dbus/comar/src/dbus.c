@@ -152,9 +152,11 @@ dbus_reply_object(PyObject *obj)
     DBusMessageIter iter;
 
     reply = dbus_message_new_method_return(my_proc.bus_msg);
-    dbus_message_iter_init_append(reply, &iter);
-    if (dbus_py_export(&iter, obj) != 0) {
-        log_exception();
+    if (obj != Py_None) {
+        dbus_message_iter_init_append(reply, &iter);
+        if (dbus_py_export(&iter, obj) != 0) {
+            log_exception();
+        }
     }
     dbus_send(reply);
 }
