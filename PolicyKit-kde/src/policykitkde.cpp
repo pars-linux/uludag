@@ -1,8 +1,9 @@
-// Qt DBUS includes
-#include "../dbus-qt3-backport/dbus/qdbusconnection.h"
-#include "policykitkde.h"
+#include "qdbusconnection.h"
 
-#define POLICYKITKDE_BUSNAME "org.kde.PoliyKit"
+#include "policykitkde.h"
+#include "service.h"
+
+#define POLICYKITKDE_BUSNAME "org.freedesktop.PolicyKit.AuthenticationAgent"
 
 PolicyKitKDE::PolicyKitKDE()
 {
@@ -21,6 +22,8 @@ PolicyKitKDE::PolicyKitKDE()
     {
         qDebug("Requesting name '%s' successfull", POLICYKITKDE_BUSNAME);
     }
+
+    PolicyService *service = new PolicyService(connection);
 
 }
 

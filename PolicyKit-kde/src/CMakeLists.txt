@@ -5,16 +5,21 @@ FIND_PACKAGE(KDE3 REQUIRED)
 
 # add definitions, library directories and header directories for KDE and QT
 ADD_DEFINITIONS(${QT_DEFINITIONS} ${KDE3_DEFINITIONS})
+
 LINK_DIRECTORIES(${KDE3_LIB_DIR} dbus-qt3-backport)
+
 INCLUDE_DIRECTORIES(${KDE3_INCLUDE_DIR} ${QT_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
-    /usr/include/dbus-1.0/qt3 /usr/include/dbus-1.0 /usr/lib/dbus-1.0/include)
+    /usr/include/dbus-1.0/qt3 /usr/include/dbus-1.0 /usr/lib/dbus-1.0/include
+    ${CMAKE_SOURCE_DIR}/dbus-qt3-backport
+    ${CMAKE_SOURCE_DIR}/dbus-qt3-backport/dbus)
 
 # specify sources
 SET (
     sources
     authdialog.cpp
     policykitkde.cpp
+    service.cpp
     main.cpp
     )
 
