@@ -20,16 +20,9 @@ SET (
     qdbusserver.cpp
     )
 
-SET ( mocs qdbusserver.moc qdbusconnection.moc qdbusproxy.moc )
-
-ADD_CUSTOM_COMMAND(
-    OUTPUT ${mocs}
-    COMMAND ${QT_MOC_EXECUTABLE} ARGS -o qdbusserver.moc ${CMAKE_CURRENT_SOURCE_DIR}/dbus/qdbusserver.h
-    COMMAND ${QT_MOC_EXECUTABLE} ARGS -o qdbusconnection.moc ${CMAKE_CURRENT_SOURCE_DIR}/qdbusconnection_p.h
-    COMMAND ${QT_MOC_EXECUTABLE} ARGS -o qdbusproxy.moc ${CMAKE_CURRENT_SOURCE_DIR}/dbus/qdbusproxy.h
-    )
-
-ADD_CUSTOM_TARGET(moc_target ALL DEPENDS ${mocs})
+ADD_CUSTOM_TARGET(moc_target ALL ${QT_MOC_EXECUTABLE} -o qdbusserver.moc ${CMAKE_CURRENT_SOURCE_DIR}/dbus/qdbusserver.h
+    COMMAND ${QT_MOC_EXECUTABLE} -o qdbusconnection.moc ${CMAKE_CURRENT_SOURCE_DIR}/qdbusconnection_p.h
+    COMMAND ${QT_MOC_EXECUTABLE} -o qdbusproxy.moc ${CMAKE_CURRENT_SOURCE_DIR}/dbus/qdbusproxy.h)
 
 ADD_LIBRARY(dbus-1-qt3 SHARED ${dbus_sources})
 
