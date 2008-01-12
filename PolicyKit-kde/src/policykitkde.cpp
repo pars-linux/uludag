@@ -1,15 +1,12 @@
 // Qt DBUS includes
-#include <dbus/qdbusdatalist.h>
-#include <dbus/qdbuserror.h>
-#include <dbus/qdbusmessage.h>
-
+#include "../dbus-qt3-backport/dbus/qdbusconnection.h"
 #include "policykitkde.h"
 
 #define POLICYKITKDE_BUSNAME "org.kde.PoliyKit"
 
 PolicyKitKDE::PolicyKitKDE()
 {
-    QDBusConnection connection = QDBusConnection::sessionBus();
+    QDBusConnection connection = QDBusConnection::addConnection(QDBusConnection::SessionBus);
     if (!connection.isConnected())
         qFatal("Cannot connect to session bus");
 
@@ -24,7 +21,6 @@ PolicyKitKDE::PolicyKitKDE()
     {
         qDebug("Requesting name '%s' successfull", POLICYKITKDE_BUSNAME);
     }
-
 
 }
 
