@@ -84,7 +84,7 @@
  *
  *   // return false to let D-BUS send a standard error message that the method is unknown
  *
- *   bool TestService::handleMethod(const QDBusMessage& message)
+ *   bool TestService::handleMethodCall(const QDBusMessage& message)
  *   {
  *       if (message.interface() != "org.example.Sort") return false;
  *
