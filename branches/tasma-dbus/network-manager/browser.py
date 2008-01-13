@@ -117,16 +117,32 @@ class Connection(QWidget):
         if self.ignore_signal:
             return
         dev = self.parent()
+        state = "down"
         if on:
-            comlink.com.Net.Link[self.conn.script].setState(name=self.conn.name, state="up")
-        else:
-            comlink.com.Net.Link[self.conn.script].setState(name=self.conn.name, state="down")
+            state = "up"
+        
+        def done():
+            self.view.setEnabled(True)
+        
+        def cancel():
+            self.updateState()
+            self.view.setEnabled(True)
+        
+        self.view.setEnabled(False)
+        ch = comlink.callHandler(self.conn.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link.setstate")
+        ch.registerDone(done)
+        ch.registerCancel(cancel)
+        ch.registerError(cancel)
+        ch.registerDBusError(cancel)
+        ch.registerAuthError(cancel)
+        ch.call(self.conn.name, state)
     
     def slotDelete(self):
         conn = self.conn
         m = i18n("Should I delete the\n'%s'\nconnection?")
         if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % conn.name, i18n("Delete connection?")):
-            comlink.com.Net.Link[conn.script].deleteConnection(name=conn.name)
+            ch = comlink.callHandler(self.conn.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.deleteconnection")
+            ch.call(conn.name)
     
     def slotEdit(self):
         if self.edit:
@@ -423,8 +439,8 @@ class Widget(QVBox):
         self.autoCheck = QCheckBox(i18n("Try Auto Connect on startup"),self)
         self.connect(self.autoCheck, SIGNAL('clicked()'),self.setAutoConnect)
         self.autoCheck.setOn(self.config.readBoolEntry("AutoConnect",True))
-        self.autoSwitch = autoswitch.autoSwitch(notifier=False)
-
+        self.autoSwitch = autoswitch.autoSwitch(comlink, notifier=False)
+        
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
         comlink.nowifi_hook.append(self.disableAutoConnectButtons)
@@ -432,11 +448,9 @@ class Widget(QVBox):
         comlink.state_hook.append(self.view.stateUpdate)
         comlink.hotplug_hook.append(self.view.hotPlug)
         comlink.noconn_hook.append(self.slotCreate)
-        comlink.connect()
         
-        comlink.denied_hook.append(self.setInterface)
-        comlink.checkAccess("setConnection")
-        comlink.queryWifi()
+        for script in comlink.links:
+            comlink.queryConnections(script)
     
     def setAutoConnect(self):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())

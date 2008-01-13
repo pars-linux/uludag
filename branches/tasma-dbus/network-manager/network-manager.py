@@ -15,9 +15,9 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-import browser
-import autoswitch
 from icons import icons, getIconSet
+
+from dbus.mainloop.qt3 import DBusQtMainLoop
 
 def I18N_NOOP(x):
     return x
@@ -42,6 +42,9 @@ def AboutData():
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
     icons.load_icons()
+    # Import module after setting DBus mainloop
+    # This module makes async. calls on startup
+    import browser
     self.mainwidget = browser.Widget(self)
     toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
     toplayout.addWidget(self.mainwidget)
@@ -77,17 +80,30 @@ def main():
     KCmdLineArgs.addCmdLineOptions ([("auto-connect", I18N_NOOP("Just try to connect automatically"))])
     KUniqueApplication.addCmdLineOptions()
     args = KCmdLineArgs.parsedArgs()
+    
+    """
     if args.isSet("auto-connect"):
+        # Import module after setting DBus mainloop
+        # This module makes async. calls on startup
+        import autoswitch
         autoSwitch = autoswitch.autoSwitch(notifier = False)
         autoSwitch.scanAndConnect(force=True)
         sys.exit()
-
+    """
+    
     if not KUniqueApplication.start():
         print i18n("Network manager module is already started!")
         return
     
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
+    
+    DBusQtMainLoop(set_as_default=True)
+    
+    # PolicyKit Agent requires window ID
+    from comariface import comlink
+    comlink.winID = win.winId()
+    
     win.setCaption(i18n("Network Manager"))
     win.setMinimumSize(500, 440)
     win.resize(620, 440)

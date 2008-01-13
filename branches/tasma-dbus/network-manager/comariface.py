@@ -11,10 +11,12 @@
 
 import sys
 import time
-import comar
 from qt import *
 from kdecore import *
 from kdeui import *
+
+import dbus
+from handler import CallHandler
 
 CONNLIST, CONNINFO, CONNINFO_AUTH, DEVICES, NAME_HOST, NAME_DNS, REMOTES, CONNEXISTS = range(1, 9)
 
@@ -105,8 +107,7 @@ class Connection(Hook):
         self.first_time = True
     
     def parse(self, data):
-        for line in data.split("\n"):
-            key, value = line.split("=", 1)
+        for key, value in data.iteritems():
             if key == "name":
                 self.name = value
             elif key == "device_id":
@@ -146,8 +147,7 @@ class Link:
         self.script = script
         self.remote_name = None
         self.auth_modes = []
-        for line in data.split("\n"):
-            key, value = line.split("=", 1)
+        for key, value in data.iteritems():
             if key == "type":
                 self.type = value
             elif key == "name":
@@ -161,235 +161,214 @@ class Link:
                 self.remote_name = value
 
 
-class ComarInterface(Hook):
+class DBusInterface(Hook):
     def __init__(self):
         Hook.__init__(self)
-        self.com = None
+        self.busSys = None
+        self.busSes = None
         self.links = {}
         self.connections = {}
         self.name_host = None
         self.name_dns = None
+        
+        self.first_time = True
+        self.nr_queried = 0
+        self.nr_conns = 0
+        self.winID = None
+        
+        self.openBus()
+        self.setup()
     
-    def waitComar(self):
-        dia = KProgressDialog(None, "lala", i18n("Waiting COMAR..."),
-            i18n("Connection to the COMAR unexpectedly closed, trying to reconnect..."), True)
+    def openBus(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException, exception:
+            self.errorDBus(exception)
+    
+    def callHandler(self, script, model, method, action):
+        ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
+        ch.registerError(self.error)
+        ch.registerDBusError(self.errorDBus)
+        ch.registerAuthError(self.errorDBus)
+        return ch
+    
+    def call(self, script, model, method, *args):
+        obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
+        iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.%s" % model)
+        func = getattr(iface, method)
+        return func(*args)
+    
+    def callSys(self, method, *args):
+        obj = self.busSys.get_object("tr.org.pardus.comar", "/")
+        iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar")
+        func = getattr(iface, method)
+        return func(*args)
+    
+    def error(self, exception):
+        print exception
+        pass
+    
+    def errorDBus(self, exception):
+        dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
         dia.progressBar().setTotalSteps(50)
         dia.progressBar().setTextEnabled(False)
         dia.show()
         start = time.time()
         while time.time() < start + 5:
-            try:
-                self.com = comar.Link()
+            if self.openBus():
                 dia.close()
-                self.setupComar(False)
+                self.setup()
                 return
-            except comar.CannotConnect:
-                pass
             if dia.wasCancelled():
                 break
             percent = (time.time() - start) * 10
             dia.progressBar().setProgress(percent)
             qApp.processEvents(100)
         dia.close()
-        KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
+        KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
         KApplication.kApplication().quit()
     
-    def setupComar(self, first_time=True):
-        self.com.localize()
+    def setup(self, first_time=True):
         if first_time:
             self.queryLinks()
-        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
-        self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
-        self.askNotifications()
-        if first_time:
-            self.queryConnections()
-    
-    def connect(self):
-        try:
-            self.com = comar.Link()
-        except comar.CannotConnect:
-            KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
-            sys.exit(0)
-        self.setupComar()
-    
-    def slotComar(self, sock):
-        try:
-            reply = self.com.read_cmd()
-        except comar.LinkClosed:
-            self.notifier = None
-            self.waitComar()
-            return
-        
-        if reply.command == "result":
-            self.handleReply(reply)
-        elif reply.command == "denied":
-            self.handleDenied(reply)
-        elif reply.command == "notify":
-            self.handleNotify(reply)
-        elif reply.command == "start":
-            pass
-        elif reply.command == "end":
-            if reply.id == CONNLIST:
-                if self.nr_queried == 0:
-                    self.emitNoConn()
-        else:
-            # FIXME: handle errors
-            print reply
-    
-    def handleReply(self, reply):
-        if reply.id == CONNLIST:
-            if reply.data != "":
-                for name in reply.data.split("\n"):
-                    self.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
-                self.nr_queried += 1
-        
-        if reply.id == CONNINFO:
-            modes = comlink.links[reply.script].modes
-            conn = Connection(reply.script, reply.data)
-            old_conn = self.getConn(reply.script, conn.name)
-            if old_conn:
-                old_conn.parse(reply.data)
-                if "auth" in modes:
-                    comlink.com.Net.Link[old_conn.script].getAuthentication(name=old_conn.name, id=CONNINFO_AUTH)
-                    old_conn.got_auth = False
-                else:
-                    self.emitConfig(old_conn)
-                return
-            self.connections[conn.hash] = conn
-            if "auth" in modes:
-                comlink.com.Net.Link[conn.script].getAuthentication(name=conn.name, id=CONNINFO_AUTH)
-                conn.got_auth = False
-            else:
-                conn.first_time = False
-                self.emitNew(conn)
-        
-        if reply.id == CONNINFO_AUTH:
-            name, type = reply.data.split("\n", 1)
-            conn = self.getConn(reply.script, name)
-            if not conn:
-                return
-            if "\n" in type:
-                type, rest = type.split("\n", 1)
-            conn.auth_mode = type
-            if type != "none":
-                link = self.links[reply.script]
-                for mode in link.auth_modes:
-                    if mode.id == type:
-                        if mode.type == "pass":
-                            conn.auth_pass = rest.strip("\n")
-                        elif mode.type == "login":
-                            conn.auth_user, conn.auth_pass = rest.split("\n")
-                        break
-            if not conn.got_auth:
-                conn.got_auth = True
-                if conn.first_time:
-                    conn.first_time = False
-                    self.emitNew(conn)
-                else:
-                    self.emitConfig(conn)
-        
-        if reply.id == DEVICES:
-            self.emitDevices(reply.script, reply.data)
-        
-        if reply.id == NAME_HOST:
-            self.name_host = reply.data
-            if self.name_host and self.name_dns:
-                self.emitName(self.name_host, self.name_dns)
-        
-        if reply.id == NAME_DNS:
-            self.name_dns = reply.data
-            if self.name_host and self.name_dns:
-                self.emitName(self.name_host, self.name_dns)
-        
-        if reply.id == REMOTES:
-            self.emitRemotes(reply.script, reply.data)
-    
-        if reply.id == CONNEXISTS:
-            if reply.data == '':
-                self.emitNoWifi()
 
-    def handleDenied(self, reply):
-        self.emitDenied()
-        if not self.warn_limited_access:
-            self.warn_limited_access = True
-            KMessageBox.sorry(None, i18n("You are not allowed to change network settings."))
-    
-    def handleNotify(self, reply):
-        if reply.notify == "Net.Link.connectionChanged":
-            what, name = reply.data.split(" ", 1)
+    def handleSignals(self, *args, **kwargs):
+        path = kwargs["path"]
+        signal = kwargs["signal"]
+        if not path.startswith("/package/"):
+            return
+        script = path[9:]
+        if signal == "connectionChanged":
+            what, profile = args
             if what == "added":
-                self.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
+                ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
+                ch.registerDone(self.handleConnectionInfo, script)
+                ch.call(profile)
             elif what == "deleted":
-                conn = self.getConn(reply.script, name)
+                conn = self.getConn(script, profile)
                 if conn:
                     self.emitDelete(conn)
                     del self.connections[conn.hash]
             elif what == "configured":
-                conn = self.getConn(reply.script, name)
+                conn = self.getConn(script, profile)
                 if conn:
-                    comlink.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
+                    ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
+                    ch.registerDone(self.handleConnectionInfo, script)
+                    ch.call(profile)
         
-        elif reply.notify == "Net.Link.stateChanged":
-            name, state = reply.data.split("\n", 1)
-            conn = self.getConn(reply.script, name)
+        elif signal == "stateChanged":
+            profile, state, msg = args
+            conn = self.getConn(script, profile)
             if conn:
-                msg = None
-                if " " in state:
-                    state, msg = state.split(" ", 1)
                 conn.message = msg
                 conn.state = state
                 self.emitState(conn)
         
-        elif reply.notify == "Net.Link.deviceChanged":
-            type, rest = reply.data.split(" ", 1)
+        elif signal == "deviceChanged":
+            what, type, devid, devname = args
             if type == "new":
-                type, uid, info = rest.split(" ", 2)
                 self.emitHotplug(uid, info)
     
     def getConn(self, script, name):
         hash = Connection.hash(script, name)
         return self.connections.get(hash, None)
     
-    def checkAccess(self, method, id=0):
-        self.com.can_access("Net.Link.%s" % method, id=id)
-    
-    def askNotifications(self):
-        self.com.ask_notify("Net.Link.deviceChanged")
-        self.com.ask_notify("Net.Link.connectionChanged")
-        self.com.ask_notify("Net.Link.stateChanged")
+    def listenSignals(self):
+        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Link", member_keyword="signal", path_keyword="path")
     
     def queryLinks(self):
-        self.com.Net.Link.linkInfo()
-        multiple = False
-        while True:
-            reply = self.com.read_cmd()
-            if reply.command == "start":
-                multiple = True
-            if not multiple or reply.command == "end":
-                break
-            if reply.command == "result":
-                try:
-                    self.links[reply.script] = Link(reply.script, reply.data)
-                except ValueError:
-                    # background compat hack
-                    pass
+        for script in self.callSys("listModelApplications", "Net.Link"):
+            info = self.call(script, "Net.Link", "linkInfo")
+            self.links[script] = Link(script, info)
     
-    def queryNames(self):
-        self.com.Net.Stack.getHostNames(id=NAME_HOST)
-        self.com.Net.Stack.getNameServers(id=NAME_DNS)
+    def queryNames(self): 
+        def handlerHost(host):
+            self.name_host = host
+            if self.name_dns:
+                self.emitName(self.name_host, self.name_dns)
+        def handlerDNS(dns):
+            self.name_dns = dns
+            if self.name_host:
+                self.emitName(self.name_host, self.name_dns)
+        
+        ch = self.callHandler("baselayout", "Net.Stack", "getHostName", "tr.org.pardus.comar.net.stack.get")
+        ch.registerDone(handlerHost)
+        ch.call()
+        
+        ch2 = self.callHandler("baselayout", "Net.Stack", "getNameServers", "tr.org.pardus.comar.net.stack.get")
+        ch2.registerDone(handlerDNS)
+        ch2.call()
     
-    def queryConnections(self):
-        self.com.Net.Link.connections(id=CONNLIST)
-        self.nr_queried = 0
+    def handleConnectionInfo(self, script, info):
+        def handler(conn, mode, username, password):
+            conn.got_auth = True
+            conn.auth_mode = mode
+            conn.auth_user = username
+            conn.auth_pass = password
+            if conn.first_time:
+                conn.first_time = False
+                self.emitNew(conn)
+            else:
+                self.emitConfig(conn)
+        
+        modes = comlink.links[script].modes
+        conn = Connection(script, info)
+        old_conn = self.getConn(script, conn.name)
+        if old_conn:
+            old_conn.parse(info)
+            if "auth" in modes:
+                ch = self.callHandler(script, "Net.Link", "getAuthentication", "tr.org.pardus.comar.net.link.get")
+                ch.registerDone(handler, old_conn)
+                ch.call(old_conn.name)
+            else:
+                self.emitConfig(old_conn)
+            return
+        self.connections[conn.hash] = conn
+        if "auth" in modes:
+            ch = self.callHandler(script, "Net.Link", "getAuthentication", "tr.org.pardus.comar.net.link.get")
+            ch.registerDone(handler, conn)
+            ch.call(conn.name)
+        else:
+            conn.first_time = False
+            self.emitNew(conn)
+        
+        if self.first_time:
+            # After all connections' information fetched...
+            if self.nr_queried == len(self.links) and self.nr_conns == len(self.connections):
+                self.first_time = False
+                # check wireless profiles
+                connections = [hash for hash, conn in self.connections.iteritems() if conn.script == "wireless_tools"]
+                if not len(connections):
+                    self.emitNoWifi()
+                # get signals
+                self.listenSignals()
+    
+    def queryConnections(self, script):
+        def handler(profiles):
+            self.nr_queried += 1
+            for profile in profiles:
+                self.nr_conns += 1
+                _ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
+                _ch.registerDone(self.handleConnectionInfo, script)
+                _ch.call(profile)
+        ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
+        ch.registerDone(handler)
+        ch.call()
     
     def queryDevices(self, script):
-        self.com.Net.Link[script].deviceList(id=DEVICES)
+        def handler(info):
+            self.emitDevices(script, info)
+        ch = self.callHandler(script, "Net.Link", "deviceList", "tr.org.pardus.comar.net.link.get")
+        ch.registerDone(handler)
+        ch.call()
     
     def queryRemotes(self, script, devid):
-        self.com.Net.Link[script].scanRemote(device=devid, id=REMOTES)
-    
-    def queryWifi(self):
-        self.com.Net.Link['wireless-tools'].connections(id=CONNEXISTS)
+        def handler(info):
+            self.emitRemotes(script, info)
+        ch = self.callHandler(script, "Net.Link", "scanRemote", "tr.org.pardus.comar.net.link.get")
+        ch.registerDone(handler)
+        ch.call(devid)
     
     def uniqueName(self):
         base_name = str(i18n("new connection"))
@@ -406,5 +385,4 @@ class ComarInterface(Hook):
             name = base_name + " " + str(id)
             id += 1
 
-
-comlink = ComarInterface()
+comlink = DBusInterface()

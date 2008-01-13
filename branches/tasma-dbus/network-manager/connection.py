@@ -34,8 +34,7 @@ class ScanItem(QListViewItem):
     def __init__(self, parent, data):
         QListViewItem.__init__(self, parent)
         self.info = {}
-        for param in data.split("\t"):
-            key, value = param.split("=", 1)
+        for key, value in data.iteritems():
             self.info[key] = value
         
         enc = self.info.get("encryption", "none")
@@ -142,9 +141,8 @@ class Scanner(QPopupMenu):
         if self.parent.link.script != script:
             return
         self.view.clear()
-        if not remotes == "":
-            for remote in remotes.split("\n"):
-                ScanItem(self.view, remote)
+        for remote in remotes:
+            ScanItem(self.view, remote)
 
 
 class Settings(QWidget):
@@ -206,7 +204,7 @@ class Settings(QWidget):
         # Authentication
         if "auth" in link.modes:
             line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1")
-            lay.addSpacing(12)
+            lay.addSpacing(6)
             lay.addWidget(line)
             grid = QGridLayout(3, 2)
             lay.addLayout(grid)
@@ -235,16 +233,17 @@ class Settings(QWidget):
             lab = QLabel("", self)
             self.auth_stack.addWidget(lab, 0)
             
-            hb = QHBox(self)
-            hb.setSpacing(6)
-            QLabel(i18n("Password:"), hb)
-            self.auth_passphrase = QLineEdit(hb)
+            w = QWidget(self)
+            grid3 = QGridLayout(w, 2, 2, 0, 6)
+            grid3.addWidget(QLabel(i18n("Password:"), w), 0, 0, Qt.AlignRight)
+            self.auth_passphrase = QLineEdit(w)
             self.auth_passphrase.setEchoMode(QLineEdit.Password)
-            self.auth_stack.addWidget(hb, 1)
-            
+            grid3.addWidget(self.auth_passphrase, 0, 1)
+            self.auth_stack.addWidget(w, 1)
+
             if flag == 1:
                 w = QWidget(self)
-                grid3 = QGridLayout(w, 2, 2, 6)
+                grid3 = QGridLayout(w, 2, 2, 0, 6)
                 grid3.addWidget(QLabel(i18n("User name:"), w), 0, 0, Qt.AlignRight)
                 self.auth_user = QLineEdit(w)
                 grid3.addWidget(self.auth_user, 0, 1)
@@ -403,60 +402,77 @@ class Settings(QWidget):
     
     def useValues(self):
         name = str(self.name.edit.text())
-        
-        if "net" in self.link.modes:
-            address = self.address.text()
-            netmask = self.netmask.text()
-            gateway = self.gateway.text()
-            if self.r1.isChecked():
-                mode = "auto"
-                address = ""
-                netmask = ""
-                gateway = ""
-            else:
-                mode = "manual"
-        
         conn = self.conn
-        script_object = comlink.com.Net.Link[self.link.script]
-        flag = False
         
+        def saveConnection(set_conn):
+            if set_conn:
+                # create connection / update device
+                comlink.call(self.link.script, "Net.Link", "setConnection", name, self.device_uid)
+            if "net" in self.link.modes:
+                # set address
+                address = str(self.address.text())
+                netmask = str(self.netmask.text())
+                gateway = str(self.gateway.text())
+                if self.r1.isChecked():
+                    mode = "auto"
+                    address = ""
+                    netmask = ""
+                    gateway = ""
+                else:
+                    mode = "manual"
+                comlink.call(self.link.script, "Net.Link", "setAddress", name, mode, address, netmask, gateway)
+                # set name servers
+                nameserver = ""
+                if self.dns1.isChecked():
+                    namemode = "default"
+                elif self.dns2.isChecked():
+                    namemode = "auto"
+                elif self.dns3.isChecked():
+                    namemode = "custom"
+                    nameserver = str(self.dns_text.text())
+                comlink.call(self.link.script, "Net.Link", "setNameService", name, namemode, nameserver)
+            if "remote" in self.link.modes:
+                # set remote address
+                remote = str(self.remote.text())
+                comlink.call(self.link.script, "Net.Link", "setRemote", name, remote, self.apmac)
+            if "auth" in self.link.modes:
+                i = self.auth_mode.currentItem()
+                if i == 0:
+                    comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "")
+                else:
+                    mode = self.link.auth_modes[i-1]
+                    if mode.type == "pass":
+                        pw = unicode(self.auth_passphrase.text())
+                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw)
+                    elif mode.type == "login":
+                        u = unicode(self.auth_user.text())
+                        pw = unicode(self.auth_password.text())
+                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw)
+            # close dialog
+            self.parent().setEnabled(True)
+            self.cleanup()
+            self.parent().parent().close(True)
+        
+        def cancel():
+            self.parent().setEnabled(True)
+        
+        self.parent().setEnabled(False)
         if conn and conn.name != name:
-            script_object.deleteConnection(name=conn.name)
-            flag = True
-        
-        if flag or conn == None or self.device_uid != conn.devid:
-            script_object.setConnection(name=name, device=self.device_uid)
-        
-        if "net" in self.link.modes:
-            script_object.setAddress(name=name, mode=mode, address=address, mask=netmask, gateway=gateway)
-            nameserver = ""
-            if self.dns1.isChecked():
-                namemode = "default"
-            elif self.dns2.isChecked():
-                namemode = "auto"
-            elif self.dns3.isChecked():
-                namemode = "custom"
-                nameserver = self.dns_text.text()
-            script_object.setNameService(name=name, namemode=namemode, nameserver=nameserver)
-        
-        if "remote" in self.link.modes:
-            remote = self.remote.text()
-            if conn == None or remote != self.conn.remote or flag:
-                script_object.setRemote(name=name, remote=remote, apmac=self.apmac)
-        
-        if "auth" in self.link.modes:
-            i = self.auth_mode.currentItem()
-            if i == 0:
-                script_object.setAuthentication(name=name, authmode="none", user="", password="")
-            else:
-                mode = self.link.auth_modes[i-1]
-                if mode.type == "pass":
-                    pw = unicode(self.auth_passphrase.text())
-                    script_object.setAuthentication(name=name, authmode=mode.id, user="", password=pw)
-                elif mode.type == "login":
-                    u = unicode(self.auth_user.text())
-                    pw = unicode(self.auth_password.text())
-                    script_object.setAuthentication(name=name, authmode=mode.id, user=u, password=pw)
+            ch = comlink.callHandler(self.link.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.set")
+            ch.registerDone(saveConnection, True)
+            ch.registerCancel(cancel)
+            ch.registerError(cancel)
+            ch.registerDBusError(cancel)
+            ch.registerAuthError(cancel)
+            ch.call(conn.name)
+        else:
+            ch = comlink.callHandler(self.link.script, "Net.Link", "setConnection", "tr.org.pardus.comar.net.link.set")
+            ch.registerDone(saveConnection, False)
+            ch.registerCancel(cancel)
+            ch.registerError(cancel)
+            ch.registerDBusError(cancel)
+            ch.registerAuthError(cancel)
+            ch.call(name, self.device_uid)
     
     def slotDevices(self, script, devices):
         if script != self.link.script:
@@ -464,8 +480,7 @@ class Settings(QWidget):
         self.devices.clear()
         self.device_items = []
         id = 0
-        for item in devices.split("\n"):
-            uid, info = item.split(" ", 1)
+        for uid, info in devices.iteritems():
             self.device_items.append((uid, info))
             self.devices.insertItem(info, id)
             id += 1
@@ -557,8 +572,6 @@ class Window(QMainWindow):
     
     def slotAccept(self):
         self.settings.useValues()
-        self.settings.cleanup()
-        self.close(True)
     
     def slotCancel(self):
         self.settings.cleanup()

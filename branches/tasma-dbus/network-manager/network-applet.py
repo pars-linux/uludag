@@ -12,13 +12,16 @@
 import os
 import sys
 import time
-import comar
 from qt import *
 from kdecore import *
 from kdeui import *
 import  dcopext
 import autoswitch
 import pynotify
+
+import dbus
+from dbus.mainloop.qt3 import DBusQtMainLoop
+from handler import CallHandler
 
 I18N_NOOP = lambda x: x
 
@@ -40,6 +43,10 @@ class Device:
 
 
 class Connection:
+    @staticmethod
+    def hash(script, name):
+        return unicode("%s %s" % (script, name))
+    
     def __init__(self, script, data):
         self.mid = -1
         self.device = None
@@ -48,17 +55,18 @@ class Connection:
         self.devid = None
         self.devname = None
         self.remote = None
+        self.apmac = None
         self.state = "unavailable"
         self.message = None
         self.net_mode = "auto"
         self.net_addr = None
         self.net_gateway = None
         self.parse(data)
+        self.hash = self.hash(self.script, self.name)
         self.menu_name = unicode(self.name)
     
     def parse(self, data):
-        for line in data.split("\n"):
-            key, value = line.split("=", 1)
+        for key, value in data.iteritems():
             if key == "name":
                 self.name = value
             elif key == "device_id":
@@ -67,6 +75,8 @@ class Connection:
                 self.devname = value
             elif key == "remote":
                 self.remote = value
+            elif key == "apmac":
+                self.apmac = value
             elif key == "net_mode":
                 self.net_mode = value
             elif key == "net_address":
@@ -84,8 +94,7 @@ class Link:
     def __init__(self, script, data):
         self.script = script
         self.remote_name = None
-        for line in data.split("\n"):
-            key, value = line.split("=", 1)
+        for key, value in data.iteritems():
             if key == "type":
                 self.type = value
             elif key == "name":
@@ -96,117 +105,97 @@ class Link:
                 self.remote_name = value
 
 
-class Comlink:
+class DBusInterface:
     def __init__(self):
         self.state_hook = []
+        self.connections = {}
         self.devices = {}
         self.links = {}
+        
+        self.first_time = True
+        self.nr_queried = 0
+        self.nr_conns = 0
+        self.winID = None
+        
+        self.openBus()
+        self.setup()
     
-    def connect(self):
+    def openBus(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException, exception:
+            self.errorDBus(exception)
+    
+    def callHandler(self, script, model, method, action):
+        ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
+        ch.registerError(self.error)
+        ch.registerDBusError(self.errorDBus)
+        ch.registerAuthError(self.errorDBus)
+        return ch
+    
+    def call(self, script, model, method, *args):
+        obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
+        iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.%s" % model)
+        func = getattr(iface, method)
+        return func(*args)
+    
+    def callSys(self, method, *args):
+        obj = self.busSys.get_object("tr.org.pardus.comar", "/")
+        iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar")
+        func = getattr(iface, method)
+        return func(*args)
+    
+    def error(self, exception):
+        print exception
+        pass
+    
+    def errorDBus(self, exception):
+        dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
+        dia.progressBar().setTotalSteps(50)
+        dia.progressBar().setTextEnabled(False)
+        dia.show()
         start = time.time()
         while time.time() < start + 5:
-            try:
-                self.com = comar.Link()
-                self.com.localize()
-                return True
-            except comar.CannotConnect:
-                pass
-        KMessageBox.sorry(None, i18n("Cannot connect to the COMAR! If it is not running you should start it with the 'service comar start' command in a root console."))
-        KApplication.kApplication().quit()
-        return False
-    
-    def setupComar(self):
-        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
-        self.notifier.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
-        self.com.ask_notify("Net.Link.stateChanged")
-        self.com.ask_notify("Net.Link.connectionChanged")
-    
-    def queryConnections(self):
-        self.setupComar()
-        self.com.Net.Link.connections(id=CONNLIST)
-    
-    def queryLinks(self):
-        self.com.Net.Link.linkInfo()
-        multiple = False
-        while True:
-            reply = self.com.read_cmd()
-            if reply.command == "start":
-                multiple = True
-            if not multiple or reply.command == "end":
-                break
-            if reply.command == "result":
-                try:
-                    self.links[reply.script] = Link(reply.script, reply.data)
-                except ValueError:
-                    # background compat hack
-                    pass
-    
-    def slotComar(self, sock):
-        try:
-            reply = self.com.read_cmd()
-        except comar.LinkClosed:
-            self.notifier = None
-            if self.connect():
-                self.setupComar()
-            return
-        if reply.command == "result":
-            self.handleReply(reply)
-        elif reply.command == "notify":
-            self.handleNotify(reply)
-        else:
-            print reply
-    
-    def handleReply(self, reply):
-        if reply.id == CONNLIST:
-            if reply.data != "":
-                for name in reply.data.split("\n"):
-                    self.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
-        
-        elif reply.id == CONNINFO:
-            conn = Connection(reply.script, reply.data)
-            old_conn = self.getConn(reply.script, conn.name)
-            if old_conn:
-                if old_conn.devid != conn.devid:
-                    dev = self.devices.get(old_conn.devid, None)
-                    if dev:
-                        del dev.connections[old_conn.name]
-                        if len(dev.connections) == 0:
-                            del self.devices[dev.devid]
-                    dev = self.devices.get(conn.devid, None)
-                    if not dev:
-                        dev = Device(conn.devid, conn.devname)
-                        self.devices[conn.devid] = dev
-                    dev.connections[conn.name] = conn
-                else:
-                    old_conn.parse(reply.data)
-                map(lambda x: x(), self.state_hook)
+            if self.openBus():
+                dia.close()
+                self.setup()
                 return
-            dev = self.devices.get(conn.devid, None)
-            if not dev:
-                dev = Device(conn.devid, conn.devname)
-                self.devices[conn.devid] = dev
-            dev.connections[conn.name] = conn
-            conn.device = dev
-            map(lambda x: x(), self.state_hook)
+            if dia.wasCancelled():
+                break
+            percent = (time.time() - start) * 10
+            dia.progressBar().setProgress(percent)
+            qApp.processEvents(100)
+        dia.close()
+        KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
+        KApplication.kApplication().quit()
     
-    def handleNotify(self, reply):
-        if reply.notify == "Net.Link.stateChanged":
-            name, state = reply.data.split("\n", 1)
-            conn = self.getConn(reply.script, name)
+    def setup(self, first_time=True):
+        if first_time:
+            self.queryLinks()
+    
+    def handleSignals(self, *args, **kwargs):
+        path = kwargs["path"]
+        signal = kwargs["signal"]
+        if not path.startswith("/package/"):
+            return
+        script = path[9:]
+
+        if signal == "stateChanged":
+            profile, state, msg = args
+            conn = self.getConn(script, profile)
             if conn:
-                msg = None
-                if " " in state:
-                    state, msg = state.split(" ", 1)
                 conn.message = msg
                 conn.state = state
                 map(lambda x: x(), self.state_hook)
-        
-        elif reply.notify == "Net.Link.connectionChanged":
-            what, name = reply.data.split(" ", 1)
+        elif signal == "connectionChanged":
+            what, profle = args
             if what == "added" or what == "configured":
-                self.com.Net.Link[reply.script].connectionInfo(name=name, id=CONNINFO)
+                ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
+                ch.registerDone(self.handleConnectionInfo, script)
+                ch.call(profile)
             elif what == "deleted":
-                conn = self.getConn(reply.script, name)
+                conn = self.getConn(script, profile)
                 if conn:
                     dev = self.devices.get(conn.devid, None)
                     if dev:
@@ -215,12 +204,72 @@ class Comlink:
                             del self.devices[dev.devid]
                     map(lambda x: x(), self.state_hook)
     
+    def listenSignals(self):
+        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Link", member_keyword="signal", path_keyword="path")
+    
+    def queryLinks(self):
+        for script in self.callSys("listModelApplications", "Net.Link"):
+            info = self.call(script, "Net.Link", "linkInfo")
+            self.links[script] = Link(script, info)
+    
+    def handleConnectionInfo(self, script, info):
+        conn = Connection(script, info)
+        old_conn = self.getConn(script, conn.name)
+        if old_conn:
+            if old_conn.devid != conn.devid:
+                dev = self.devices.get(old_conn.devid, None)
+                if dev:
+                    del dev.connections[old_conn.name]
+                    if len(dev.connections) == 0:
+                        del self.devices[dev.devid]
+                dev = self.devices.get(conn.devid, None)
+                if not dev:
+                    dev = Device(conn.devid, conn.devname)
+                    self.devices[conn.devid] = dev
+                dev.connections[conn.name] = conn
+            else:
+                old_conn.parse(data)
+            map(lambda x: x(), self.state_hook)
+            return
+        dev = self.devices.get(conn.devid, None)
+        if not dev:
+            dev = Device(conn.devid, conn.devname)
+            self.devices[conn.devid] = dev
+        self.connections[conn.hash] = conn
+        dev.connections[conn.name] = conn
+        conn.device = dev
+        map(lambda x: x(), self.state_hook)
+        
+        if self.first_time:
+            # After all connections' information fetched...
+            if self.nr_queried == len(self.links) and self.nr_conns == len(self.connections):
+                self.first_time = False
+                self.listenSignals()
+    
+    def queryConnections(self, script):
+        def handler(profiles):
+            self.nr_queried += 1
+            for profile in profiles:
+                self.nr_conns += 1
+                _ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
+                _ch.registerDone(self.handleConnectionInfo, script)
+                _ch.call(profile)
+        ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
+        ch.registerDone(handler)
+        ch.call()
+    
+    """
     def getConn(self, script, name):
         for dev in self.devices.values():
             for conn in dev.connections.values():
                 if conn.script == script and conn.name == name:
                     return conn
         return None
+    """
+    
+    def getConn(self, script, name):
+        hash = Connection.hash(script, name)
+        return self.connections.get(hash, None)
     
     def getConnById(self, mid):
         for dev in self.devices.values():
@@ -228,9 +277,6 @@ class Comlink:
                 if conn.mid == mid:
                     return conn
         return None
-
-
-comlink = Comlink()
 
 
 class Icons:
@@ -290,14 +336,14 @@ class Applet:
 
     def createNotifier(self,dry=False):
         pynotify.init("network-applet")
-        self.autoSwitch = autoswitch.autoSwitch(notifier=False)
+        self.autoSwitch = autoswitch.autoSwitch(comlink, notifier=False)
         if self.showNotifications:
             self.notifier = pynotify.Notification("Network Manager")
             iconPath = KGlobal.iconLoader().iconPath("network", KIcon.Desktop, True)
             pos = self.trays[0].getPos()
             self.notifier.set_hint("x",pos['x'])
             self.notifier.set_hint("y",pos['y'])
-            self.autoSwitch.setNotifier(self.notifier,iconPath)
+            self.autoSwitch.setNotifier(self.notifier, iconPath)
         if self.autoConnect and not dry:
             self.autoSwitch.scanAndConnect(force=False)
 
@@ -307,10 +353,8 @@ class Applet:
             item.deleteLater()
     
     def start(self):
-        if not comlink.connect():
-            return
-        comlink.queryLinks()
-        comlink.queryConnections()
+        for script in comlink.links:
+            comlink.queryConnections(script)
         self.resetViews()
         if self.autoConnect:
             self.delayTimer.start(1000, True)
@@ -387,6 +431,7 @@ class Applet:
         tray.show()
         tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
         self.trays = [tray]
+        comlink.winID = tray.winId()
 
     def deviceGroup(self, id):
         if self.mode == 1:
@@ -398,6 +443,7 @@ class Applet:
             tray.show()
             tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
             self.trays.append(tray)
+        comlink.winID = trays[0].winId()
 
     def slotQuit(self):
         autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))
@@ -611,9 +657,11 @@ class NetTray(KSystemTray):
         menu = self.contextMenu()
         conn = comlink.getConnById(mid)
         if conn.state in ("up", "connecting", "inaccessible"):
-            comlink.com.Net.Link[conn.script].setState(name=conn.name, state="down")
+            state = "down"
         else:
-            comlink.com.Net.Link[conn.script].setState(name=conn.name, state="up")
+            state = "up"
+        ch = comlink.callHandler(conn.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link.setstate")
+        ch.call(conn.name, state)
         self.popup = None
 
 def main():
@@ -632,6 +680,13 @@ def main():
     KCmdLineArgs.init(sys.argv, about)
     KUniqueApplication.addCmdLineOptions()
     app = KUniqueApplication(True, True, True)
+    
+    DBusQtMainLoop(set_as_default=True)
+    
+    # PolicyKit Agent requires window ID
+    global comlink
+    comlink = DBusInterface()
+    
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     icons.load_icons()
     applet = Applet(app)

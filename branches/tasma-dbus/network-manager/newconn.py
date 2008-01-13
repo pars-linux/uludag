@@ -11,7 +11,6 @@
 
 from qt import *
 from kdecore import *
-from kdeui import KMessageBox
 
 import connection
 import widgets
@@ -106,9 +105,8 @@ class Window(QDialog):
             item = item.nextSibling()
         if not parent:
             return
-        if devices != "":
-            for device in devices.split("\n"):
-                uid, info = device.split(" ", 1)
+        if len (devices):
+            for uid, info in devices.iteritems():
                 item = QListViewItem(parent, "", info, uid)
         else:
             item = QListViewItem(parent, "", i18n("No suitable device found"))
@@ -119,7 +117,9 @@ class Window(QDialog):
 
 def ask_for_new(parent):
     if len(comlink.links) == 0:
-        KMessageBox.sorry(parent, i18n("No package with COMAR network scripts are installed yet."), i18n("Install network packages!"))
+        QMessageBox.warning(parent, i18n("Install network packages!"),
+            i18n("No package with COMAR network scripts are installed yet."),
+            QMessageBox.Ok, QMessageBox.NoButton)
         return
     win = Window(parent)
     return win

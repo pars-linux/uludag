@@ -86,17 +86,51 @@ class Window(QDialog):
     
     def accept(self):
         host = str(self.host.text())
-        if self.old_host != host:
-            comlink.com.Net.Stack.setHostNames(hostnames=host)
-        item = self.dns.firstItem()
         dns = []
+        
+        item = self.dns.firstItem()
         while item:
             dns.append(str(item.text()))
             item = item.next()
-        dns = "\n".join(dns)
+        
+        self.done = 0
+        def handler():
+            self.done += 1
+            if self.done == 2:
+                self.setEnabled(True)
+                QDialog.accept(self)
+        
+        def cancel():
+            self.setEnabled(True)
+        
+        if self.old_host != host:
+            self.setEnabled(False)
+            ch = comlink.callHandler("baselayout", "Net.Stack", "setHostName", "tr.org.pardus.comar.net.stack.set")
+            ch.registerDone(handler)
+            ch.registerCancel(cancel)
+            ch.registerError(cancel)
+            ch.registerDBusError(cancel)
+            ch.registerAuthError(cancel)
+            ch.call(host)
+        else:
+            self.done += 1
+        
         if self.old_dns != dns:
-            comlink.com.Net.Stack.setNameServers(nameservers=dns)
-        QDialog.accept(self)
+            self.setEnabled(False)
+            ch = comlink.callHandler("baselayout", "Net.Stack", "setNameServers", "tr.org.pardus.comar.net.stack.set")
+            ch.registerDone(handler)
+            ch.registerCancel(cancel)
+            ch.registerError(cancel)
+            ch.registerDBusError(cancel)
+            ch.registerAuthError(cancel)
+            ch.call(dns)
+        else:
+            self.done += 1
+        
+        if self.done == 2:
+            self.setEnabled(True)
+            QDialog.accept(self)
+        
     
     def reject(self):
         QDialog.reject(self)
@@ -150,7 +184,7 @@ class Window(QDialog):
     
     def slotName(self, hostname, servers):
         self.dns.clear()
-        self.old_dns = servers.split("\n")
+        self.old_dns = servers
         for item in self.old_dns:
             self.dns.insertItem(item)
         
