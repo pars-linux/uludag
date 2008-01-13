@@ -174,6 +174,7 @@ class DBusInterface(Hook):
         self.first_time = True
         self.nr_queried = 0
         self.nr_conns = 0
+        self.nr_empty = 0
         self.winID = None
         
         self.openBus()
@@ -312,7 +313,7 @@ class DBusInterface(Hook):
             else:
                 self.emitConfig(conn)
         
-        modes = comlink.links[script].modes
+        modes = self.links[script].modes
         conn = Connection(script, info)
         old_conn = self.getConn(script, conn.name)
         if old_conn:
@@ -352,6 +353,14 @@ class DBusInterface(Hook):
                 _ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
                 _ch.registerDone(self.handleConnectionInfo, script)
                 _ch.call(profile)
+            if not len(profiles):
+                self.nr_empty += 1
+                if script == 'wireless_tools':
+                    self.emitNoWifi()
+                # if no connections present, start listening for signals now
+                if self.nr_queried == self.nr_empty:
+                    # get signals
+                    self.listenSignals()
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()
