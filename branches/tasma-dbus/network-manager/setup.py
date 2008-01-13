@@ -58,6 +58,7 @@ app_data = [
     'network-applet.py',
     'browser.py',
     'autoswitch.py',
+    'handler.py',
     'connection.py',
     'widgets.py',
     'newconn.py',
