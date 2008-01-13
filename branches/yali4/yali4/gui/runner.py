@@ -122,13 +122,14 @@ class Runner:
     ##
     # Fire up the interface.
     def run(self):
-        self._window.ui.show()
-        # We want it to be a full-screen window.
-        # self._window.ui.resize(self._app.desktop().size())
 
         # Use default theme;
         # if you use KDE4 it takes its theme settings so our works looks ugly :)
         self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
+
+        self._window.ui.show()
+        # We want it to be a full-screen window.
+        # self._window.ui.resize(self._app.desktop().size())
 
         # For testing..
         self._window.ui.resize(QSize(800,600))

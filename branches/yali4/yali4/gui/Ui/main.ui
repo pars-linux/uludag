@@ -14,7 +14,7 @@
   </property>
   <property name="styleSheet" >
    <string>#YaliMain {
-       background-image:url(':/gui/pics/background2.png')
+       background-image:url(':/gui/pics/background3.jpg')
 }
 
 QStackedWidget#mainStack {
