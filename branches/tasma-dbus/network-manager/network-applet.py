@@ -189,7 +189,7 @@ class DBusInterface:
                 conn.state = state
                 map(lambda x: x(), self.state_hook)
         elif signal == "connectionChanged":
-            what, profle = args
+            what, profile = args
             if what == "added" or what == "configured":
                 ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
                 ch.registerDone(self.handleConnectionInfo, script)
