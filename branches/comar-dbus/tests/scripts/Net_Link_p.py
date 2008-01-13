@@ -296,8 +296,8 @@ class Dev:
         self.state = _get(dict, "state", "down")
         self.remote = _get(dict, "remote", None)
         self.authmode = _get(dict, "authmode", "none")
-        self.user = _get(dict, "user", None)
-        self.password = _get(dict, "password", None)
+        self.user = _get(dict, "user", "")
+        self.password = _get(dict, "password", "")
     
     def up(self):
         dial = Dialup()
@@ -358,7 +358,7 @@ def deleteConnection(name=None):
     if dev.dev and dev.state == "up":
         dev.down()
     DB.remDB(name)
-    notify("connectionChanged", "deleted " + name)
+    notify("connectionChanged", ("deleted", name))
 
 def setAddress(name=None, mode=None, address=None, mask=None, gateway=None):
     fail("Not supported")
