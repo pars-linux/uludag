@@ -18,7 +18,7 @@ import ConfigParser
 from pardus.fileutils import FileLock
 
 class iniDB:
-    def __init__(self, db_file):
+    def __init__(self, db_file, db_mode=0600):
         try:
             os.makedirs(os.path.dirname(db_file))
         except OSError:
@@ -28,6 +28,7 @@ class iniDB:
         if not os.path.exists(db_file):
             self.__writelock()
             file(db_file, "w").close()
+            os.chmod(db_file, db_mode)
             self.__unlock()
         self.__readlock()
         self.cp = ConfigParser.ConfigParser()
