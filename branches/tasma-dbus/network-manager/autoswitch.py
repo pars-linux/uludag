@@ -69,7 +69,7 @@ class autoSwitch:
                 # try to connect
                 possibleProfile = None
                 if len(profiles) == 1:
-                    possibleProfile = profiles
+                    possibleProfile = profiles[0]
                 else:
                     for mac in justMacAddr:
                         for profile in profiles:
