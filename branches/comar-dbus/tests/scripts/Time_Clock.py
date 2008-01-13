@@ -55,6 +55,8 @@ def setDate(year=None, month=None, day=None, hour=None, minute=None, second=None
     csapi.settimeofday(time.mktime(new))
 
 def getDate():
+    import time
+    time.sleep(60)
     return time.strftime("%Y %m %d %H %M %S %Z")
 
 def saveToHW():

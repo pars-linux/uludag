@@ -370,12 +370,11 @@ def setRemote(name, remote, apmac):
     DB.setDB(name, d)
     notify("connectionChanged", ("configured", name))
 
-def setAuthentication(name, authmode, user, password, key):
+def setAuthentication(name, authmode, user, password):
     d = DB.getDB(name)
     d["authmode"] = authmode
     d["user"] = user
     d["password"] = password
-    d["key"] = key
     DB.setDB(name, d)
     notify("connectionChanged", ("configured", name))
 
