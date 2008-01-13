@@ -126,6 +126,10 @@ class Runner:
         # We want it to be a full-screen window.
         # self._window.ui.resize(self._app.desktop().size())
 
+        # Use default theme;
+        # if you use KDE4 it takes its theme settings so our works looks ugly :)
+        self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
+
         # For testing..
         self._window.ui.resize(QSize(800,600))
         # self._window.ui.move(0,0)
