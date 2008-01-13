@@ -443,7 +443,7 @@ class Applet:
             tray.show()
             tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
             self.trays.append(tray)
-        comlink.winID = trays[0].winId()
+        comlink.winID = self.trays[0].winId()
 
     def slotQuit(self):
         autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))
