@@ -44,8 +44,7 @@ class DiskList(QtGui.QWidget):
         self.partEdit = partEdit
         self.setStyleSheet("""
             QTabWidget::pane { border-radius: 4px;
-                               border: 2px solid #FFFFFF;
-                               background-image:url(':/gui/pics/trans.png'); }
+                               border: 2px solid #FFFFFF; }
             QTabWidget::tab-bar { left: 5px; }
             QTabBar::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                        stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
@@ -255,8 +254,8 @@ class DiskItem(QtGui.QWidget):
         self.layout = QtGui.QVBoxLayout(self)
 
         self.diskGroup = QtGui.QGroupBox(self)
-        self.diskGroup.setMinimumSize(QSize(570,70))
-        self.diskGroup.setMaximumSize(QSize(2280,70))
+        self.diskGroup.setMinimumSize(QSize(570,120))
+        self.diskGroup.setMaximumSize(QSize(2280,120))
 
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
         self.gridlayout.setMargin(0)
@@ -292,7 +291,10 @@ class DiskItem(QtGui.QWidget):
 
         partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
-        partition.setStyleSheet("background-color:%s" % color(data.getFSName()))
+        if data._parted_type == parteddata.freeSpaceType:
+            partition.setStyleSheet("background-image:none;")
+        else:
+            partition.setStyleSheet("background-color:%s" % color(data.getFSName()))
         partition.setToolTip(_("""<b>Path:</b> %s<br>
         <b>Size:</b> %s<br>
         <b>FileSystem:</b> %s""") % (data.getPath(),data.getSizeStr(),data.getFSName()))
@@ -323,10 +325,10 @@ class DiskItem(QtGui.QWidget):
             self.splinter.setCollapsible(i,False)
             self.splinter.widget(i).resize(part['size'],70)
             if part['size'] <= 8:
-                self.splinter.widget(i).setMinimumSize(QSize(part['size'],50))
-                self.splinter.widget(i).setMaximumSize(QSize(part['size'],70))
+                self.splinter.widget(i).setMinimumSize(QSize(part['size'],100))
+                self.splinter.widget(i).setMaximumSize(QSize(part['size'],120))
             else:
-                self.splinter.widget(i).setMinimumSize(QSize(part['size']-20,50))
+                self.splinter.widget(i).setMinimumSize(QSize(part['size']-20,100))
             i+=1
         self.splinter.widget(0).setChecked(True)
 

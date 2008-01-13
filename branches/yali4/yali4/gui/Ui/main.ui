@@ -39,12 +39,12 @@ QTextBrowser#helpContent {
 }
 
 QLineEdit,QListView {
-	border: 2px solid #FF7308;
+	border: 2px solid #0B2958;
 	border-radius:4px;
 }
 
 QPushButton {
-     background-color: #FF7308;
+     background-color: #0B2958;
      border-style: outset;
      border-width: 2px;
      border-radius: 8px;
@@ -56,12 +56,12 @@ QPushButton {
 }
 
 QPushButton:hover:pressed {
-     background-color: rgb(224, 0, 0);
+     background-color: #316EAB;
      border-style: inset;
 } 
 
 QPushButton:hover, QPushButton:focus {
-     background-color:#FFA322;
+     background-color:#316EAB;
 } 
 
 #buttonNext {
@@ -82,7 +82,7 @@ QProgressBar {
      border: 2px solid white;
      border-radius: 5px;
 	text-align: center;
-	color:#FF7308;
+	color:#0B2958;
 	font:12px bold;
 }
 
