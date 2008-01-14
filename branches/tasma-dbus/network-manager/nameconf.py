@@ -100,6 +100,9 @@ class Window(QDialog):
                 self.setEnabled(True)
                 QDialog.accept(self)
         
+        def error(exception):
+            self.setEnabled(True)
+        
         def cancel():
             self.setEnabled(True)
         
@@ -108,9 +111,9 @@ class Window(QDialog):
             ch = comlink.callHandler("baselayout", "Net.Stack", "setHostName", "tr.org.pardus.comar.net.stack.set")
             ch.registerDone(handler)
             ch.registerCancel(cancel)
-            ch.registerError(cancel)
-            ch.registerDBusError(cancel)
-            ch.registerAuthError(cancel)
+            ch.registerError(error)
+            ch.registerDBusError(error)
+            ch.registerAuthError(error)
             ch.call(host)
         else:
             self.done += 1

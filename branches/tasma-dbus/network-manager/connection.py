@@ -453,6 +453,9 @@ class Settings(QWidget):
             self.cleanup()
             self.parent().parent().close(True)
         
+        def error(exception):
+            self.parent().setEnabled(True)
+        
         def cancel():
             self.parent().setEnabled(True)
         
@@ -461,17 +464,17 @@ class Settings(QWidget):
             ch = comlink.callHandler(self.link.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.set")
             ch.registerDone(saveConnection, True)
             ch.registerCancel(cancel)
-            ch.registerError(cancel)
-            ch.registerDBusError(cancel)
-            ch.registerAuthError(cancel)
+            ch.registerError(error)
+            ch.registerDBusError(error)
+            ch.registerAuthError(error)
             ch.call(conn.name)
         else:
             ch = comlink.callHandler(self.link.script, "Net.Link", "setConnection", "tr.org.pardus.comar.net.link.set")
             ch.registerDone(saveConnection, False)
             ch.registerCancel(cancel)
-            ch.registerError(cancel)
-            ch.registerDBusError(cancel)
-            ch.registerAuthError(cancel)
+            ch.registerError(error)
+            ch.registerDBusError(error)
+            ch.registerAuthError(error)
             ch.call(name, self.device_uid)
     
     def slotDevices(self, script, devices):
