@@ -28,7 +28,7 @@ dbus_py_get_signature(PyObject *obj)
      * @return Signature
      */
 
-    if (PyString_Check(obj)) {
+    if (PyString_Check(obj) || PyUnicode_Check(obj)) {
         return 's';
     }
     else if (PyBool_Check(obj)) {
