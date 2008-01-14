@@ -252,7 +252,8 @@ class DBusInterface:
                 dev.connections[conn.name] = conn
             else:
                 old_conn.parse(info)
-            map(lambda x: x(), self.state_hook)
+            if self.first_time:
+                map(lambda x: x(), self.state_hook)
             return
         dev = self.devices.get(conn.devid, None)
         if not dev:
@@ -261,9 +262,8 @@ class DBusInterface:
         self.connections[conn.hash] = conn
         dev.connections[conn.name] = conn
         conn.device = dev
-        map(lambda x: x(), self.state_hook)
-        
         if self.first_time:
+            map(lambda x: x(), self.state_hook)
             # After all connections' information fetched...
             if self.nr_queried == len(self.links) and self.nr_conns == len(self.connections):
                 self.first_time = False
@@ -281,20 +281,13 @@ class DBusInterface:
                 self.nr_empty += 1
                 # if no connections present, start listening for signals now
                 if self.nr_queried == self.nr_empty:
-                    # get signals
-                    self.listenSignals()
+                    if self.first_time:
+                        self.first_time = False
+                        # get signals
+                        self.listenSignals()
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()
-    
-    """
-    def getConn(self, script, name):
-        for dev in self.devices.values():
-            for conn in dev.connections.values():
-                if conn.script == script and conn.name == name:
-                    return conn
-        return None
-    """
     
     def getConn(self, script, name):
         hash = Connection.hash(script, name)
