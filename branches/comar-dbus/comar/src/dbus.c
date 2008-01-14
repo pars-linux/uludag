@@ -19,11 +19,10 @@
 #include "iksemel.h"
 #include "log.h"
 #include "model.h"
+#include "policy.h"
 #include "process.h"
 #include "pydbus.h"
 #include "utility.h"
-
-#include "policy.h"
 
 //! Sends message to client
 void
@@ -44,29 +43,6 @@ dbus_send(DBusMessage *reply)
 
     dbus_connection_flush(my_proc.bus_conn);
     dbus_message_unref(reply);
-}
-
-//! Emits a signal
-void
-dbus_signal(const char *path, const char *interface, const char *name, PyObject *obj)
-{
-    /*
-     * Emits a DBus signal.
-     * 
-     * @path Object path
-     * @interface Interface
-     * @name Signal name
-     * @obj Arguments (Python object)
-     */
-
-    DBusMessage *msg;
-    DBusMessageIter iter;
-
-    msg = dbus_message_new_signal(path, interface, name);
-    dbus_message_iter_init_append(msg, &iter);
-    dbus_py_export(&iter, obj);
-
-    dbus_send(msg);
 }
 
 //! Creates an error message and sends
@@ -135,6 +111,43 @@ log_exception()
     dbus_reply_error("python", eStr, vStr);
 }
 
+//! Emits a signal
+void
+dbus_signal(const char *path, const char *interface, const char *name, PyObject *obj)
+{
+    /*
+     * Emits a DBus signal.
+     * 
+     * @path Object path
+     * @interface Interface
+     * @name Signal name
+     * @obj Arguments (Python object)
+     */
+
+    DBusMessage *msg;
+    DBusMessageIter iter;
+
+    msg = dbus_message_new_signal(path, interface, name);
+    dbus_message_iter_init_append(msg, &iter);
+    if (obj != Py_None) {
+        if (PyTuple_Check(obj)) {
+            int i;
+            for (i = 0; i < PyTuple_Size(obj); i++) {
+                if (dbus_py_export(&iter, PyTuple_GetItem(obj, i)) != 0) {
+                    log_exception();
+                }
+            }
+        }
+        else {
+            if (dbus_py_export(&iter, obj) != 0) {
+                log_exception();
+            }
+        }
+    }
+
+    dbus_send(msg);
+}
+
 //! Creates a message from Python object and sends
 static void
 dbus_reply_object(PyObject *obj)
@@ -152,7 +165,7 @@ dbus_reply_object(PyObject *obj)
     DBusMessageIter iter;
 
     reply = dbus_message_new_method_return(my_proc.bus_msg);
-        dbus_message_iter_init_append(reply, &iter);
+    dbus_message_iter_init_append(reply, &iter);
     if (obj != Py_None) {
         if (PyTuple_Check(obj)) {
             int i;
