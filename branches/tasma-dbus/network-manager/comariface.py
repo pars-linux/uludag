@@ -359,8 +359,10 @@ class DBusInterface(Hook):
                     self.emitNoWifi()
                 # if no connections present, start listening for signals now
                 if self.nr_queried == self.nr_empty:
-                    # get signals
-                    self.listenSignals()
+                    if self.first_time:
+                        self.first_time = False
+                        # get signals
+                        self.listenSignals()
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()

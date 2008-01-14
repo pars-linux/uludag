@@ -115,6 +115,7 @@ class DBusInterface:
         self.first_time = True
         self.nr_queried = 0
         self.nr_conns = 0
+        self.nr_empty = 0
         self.winID = None
         
         self.openBus()
@@ -228,7 +229,7 @@ class DBusInterface:
                     self.devices[conn.devid] = dev
                 dev.connections[conn.name] = conn
             else:
-                old_conn.parse(data)
+                old_conn.parse(info)
             map(lambda x: x(), self.state_hook)
             return
         dev = self.devices.get(conn.devid, None)
@@ -254,6 +255,12 @@ class DBusInterface:
                 _ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
                 _ch.registerDone(self.handleConnectionInfo, script)
                 _ch.call(profile)
+            if not len(profiles):
+                self.nr_empty += 1
+                # if no connections present, start listening for signals now
+                if self.nr_queried == self.nr_empty:
+                    # get signals
+                    self.listenSignals()
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()

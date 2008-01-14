@@ -459,7 +459,7 @@ class Widget(QVBox):
         self.autoSwitch.scanAndConnect(force=True)
 
     def disableAutoConnectButtons(self):
-        print "No wifi profiles.."
+        #print "No wifi profiles.."
         self.butAutoConnect.hide()
         self.autoCheck.hide()
 
