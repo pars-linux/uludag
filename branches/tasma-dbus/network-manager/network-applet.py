@@ -280,7 +280,7 @@ class DBusInterface:
             if not len(profiles):
                 self.nr_empty += 1
                 # if no connections present, start listening for signals now
-                if self.nr_queried == self.nr_empty:
+                if len(self.links) == self.nr_empty:
                     if self.first_time:
                         self.first_time = False
                         # get signals

@@ -377,7 +377,7 @@ class DBusInterface(Hook):
                 if script == 'wireless_tools':
                     self.emitNoWifi()
                 # if no connections present, start listening for signals now
-                if self.nr_queried == self.nr_empty:
+                if len(self.links) == self.nr_empty:
                     if self.first_time:
                         self.first_time = False
                         # get signals
