@@ -112,14 +112,18 @@ class DBusInterface:
         self.devices = {}
         self.links = {}
         
+        self.dia = None
+        self.busSys = None
+        self.busSes = None
+        
         self.first_time = True
         self.nr_queried = 0
         self.nr_conns = 0
         self.nr_empty = 0
         self.winID = None
         
-        self.openBus()
-        self.setup()
+        if self.openBus():
+            self.setup()
     
     def openBus(self):
         try:
@@ -127,6 +131,8 @@ class DBusInterface:
             self.busSes = dbus.SessionBus()
         except dbus.DBusException, exception:
             self.errorDBus(exception)
+            return False
+        return True
     
     def callHandler(self, script, model, method, action):
         ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
@@ -136,40 +142,54 @@ class DBusInterface:
         return ch
     
     def call(self, script, model, method, *args):
-        obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
-        iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.%s" % model)
-        func = getattr(iface, method)
-        return func(*args)
+        try:
+            obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
+            iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.%s" % model)
+        except dbus.DBusException, exception:
+            self.errorDBus(exception)
+            return
+        try:
+            func = getattr(iface, method)
+            return func(*args)
+        except dbus.DBusException, exception:
+            self.error(exception)
     
     def callSys(self, method, *args):
-        obj = self.busSys.get_object("tr.org.pardus.comar", "/")
-        iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar")
-        func = getattr(iface, method)
-        return func(*args)
+        try:
+            obj = self.busSys.get_object("tr.org.pardus.comar", "/")
+            iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar")
+        except dbus.DBusException, exception:
+            self.errorDBus(exception)
+        try:
+            func = getattr(iface, method)
+            return func(*args)
+        except dbus.DBusException, exception:
+            self.error(exception)
     
     def error(self, exception):
         print exception
-        pass
     
     def errorDBus(self, exception):
-        dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
-        dia.progressBar().setTotalSteps(50)
-        dia.progressBar().setTextEnabled(False)
-        dia.show()
+        if self.dia:
+            return
+        self.dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
+        self.dia.progressBar().setTotalSteps(50)
+        self.dia.progressBar().setTextEnabled(False)
+        self.dia.show()
         start = time.time()
         while time.time() < start + 5:
             if self.openBus():
-                dia.close()
+                self.dia.close()
                 self.setup()
                 return
-            if dia.wasCancelled():
+            if self.dia.wasCancelled():
                 break
             percent = (time.time() - start) * 10
-            dia.progressBar().setProgress(percent)
+            self.dia.progressBar().setProgress(percent)
             qApp.processEvents(100)
-        dia.close()
+        self.dia.close()
         KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
-        KApplication.kApplication().quit()
+        sys.exit()
     
     def setup(self, first_time=True):
         if first_time:
@@ -209,9 +229,11 @@ class DBusInterface:
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Link", member_keyword="signal", path_keyword="path")
     
     def queryLinks(self):
-        for script in self.callSys("listModelApplications", "Net.Link"):
-            info = self.call(script, "Net.Link", "linkInfo")
-            self.links[script] = Link(script, info)
+        scripts = self.callSys("listModelApplications", "Net.Link")
+        if scripts:
+            for script in scripts:
+                info = self.call(script, "Net.Link", "linkInfo")
+                self.links[script] = Link(script, info)
     
     def handleConnectionInfo(self, script, info):
         conn = Connection(script, info)
