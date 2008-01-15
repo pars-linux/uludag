@@ -88,6 +88,9 @@ about disk partitioning.
         ctx.mainScreen.disableNext()
         self.partList.update()
 
+    def update(self):
+        self.partList.update()
+
     ##
     # do the work and run requested actions on partitions.
     def execute(self):

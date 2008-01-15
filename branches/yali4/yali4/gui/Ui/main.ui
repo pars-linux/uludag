@@ -14,7 +14,7 @@
   </property>
   <property name="styleSheet" >
    <string>#YaliMain {
-       background-image:url(':/gui/pics/background3.jpg')
+       background-image:url(':/gui/pics/background.png')
 }
 
 QStackedWidget#mainStack {
@@ -252,7 +252,7 @@ QProgressBar::chunk {
             </property>
             <property name="sizeHint" >
              <size>
-              <width>20</width>
+              <width>0</width>
               <height>20</height>
              </size>
             </property>
@@ -284,7 +284,7 @@ QProgressBar::chunk {
             </property>
             <property name="sizeHint" >
              <size>
-              <width>20</width>
+              <width>0</width>
               <height>20</height>
              </size>
             </property>
@@ -328,7 +328,7 @@ QProgressBar::chunk {
              <enum>Qt::TabFocus</enum>
             </property>
             <property name="text" >
-             <string>Hide Help</string>
+             <string>Toggle Help</string>
             </property>
            </widget>
           </item>

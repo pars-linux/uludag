@@ -26,3 +26,7 @@ class ScreenWidget:
 
     def backCheck(self):
         return True
+
+    def update(self):
+        pass
+

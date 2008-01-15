@@ -34,7 +34,7 @@ class Widget(Ui_YaliMain):
         self.setupUi(self.ui)
         self.screenData = None
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
-
+        self.helpContent.setVisible(False)
         QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
@@ -45,6 +45,8 @@ class Widget(Ui_YaliMain):
             self.helpContent.hide()
         else:
             self.helpContent.show()
+        _w = self.mainStack.currentWidget()
+        _w.update()
 
     def toggleDebug(self):
         if ctx.debugger.isVisible():
