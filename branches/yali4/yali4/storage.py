@@ -227,6 +227,27 @@ class Device:
                 l.append(p)
         return l
 
+    ##
+    # get logical partitions on device
+    # @returns: [Partition]
+    def getLogicalPartitions(self):
+        l = []
+        for p in self.getPartitions():
+            if p._partition.type == parted.PARTITION_LOGICAL:
+                l.append(p)
+        return l
+
+    ##
+    # get number of primary partitions on device
+    # @returns: Number
+    def numberOfLogicalPartitions(self):
+        return len(self.getLogicalPartitions())
+
+    ##
+    # get number of primary partitions on device
+    # @returns: Number
+    def numberOfPrimaryPartitions(self):
+        return len(self.getPrimaryPartitions())
 
     ##
     # get the partition list in an order
@@ -312,8 +333,8 @@ class Device:
 
         geom = part.geom
 
-        # creating a primary partition
-        if part.type & parted.PARTITION_FREESPACE and geom.length >= size:
+        # creating a partition
+        if geom.length >= size:
             return self.addPartitionStartEnd(type,
                                              fs,
                                              geom.start,
