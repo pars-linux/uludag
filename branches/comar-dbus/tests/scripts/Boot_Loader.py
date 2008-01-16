@@ -131,7 +131,7 @@ def parseVersion(version):
     """Parses a kernel filename and returns kernel version and suffix. Raises ParseError"""
     import re
     try:
-        k_version, x, x, k_suffix = re.findall("kernel-(([0-9\.]+)-([0-9]+))(-.*)?", version)[0]
+        k_version, x, x, k_suffix = re.findall("kernel-(([a-z0-9\._]+)-([0-9]+))(-.*)?", version)[0]
     except IndexError:
         raise ParseError
     return k_version, k_suffix
