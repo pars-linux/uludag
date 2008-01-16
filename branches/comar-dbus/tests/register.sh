@@ -17,3 +17,5 @@
 ./hav.py register baselayout User.Manager scripts/User_Manager.py
 
 ./hav.py register util_linux Time.Clock scripts/Time_Clock.py
+
+./hav.py register python System.PackageHandler scripts/System_PackageHandler.py
