@@ -96,6 +96,18 @@
             <arg name="package" type="s"/>
         </signal>
     </interface>
+    <interface name="System.PackageHandler">
+        <method name="setupPackage">
+            <arg name="metapath" type="s" direction="in"/>
+            <arg name="filepath" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="cleanupPackage">
+            <arg name="metapath" type="s" direction="in"/>
+            <arg name="filepath" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+    </interface>
     <interface name="Net.Link">
         <method name="linkInfo" access_label="get">
             <arg name="info" type="{ss}" direction="out"/>
@@ -140,7 +152,6 @@
             <arg name="authmode" type="s" direction="in"/>
             <arg name="user" type="s" direction="in"/>
             <arg name="password" type="s" direction="in"/>
-            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setState">
