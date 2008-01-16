@@ -20,9 +20,6 @@
 #include "log.h"
 #include "utility.h"
 
-#define CHARS_APP "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_"
-#define CHARS_MODEL "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz."
-
 //! Database init function
 int
 db_init(void)
@@ -550,57 +547,6 @@ out:
     return ret;
 }
 
-//! Tests whether a model name is valid
-static int
-check_model_name(const char *model)
-{
-    /*!
-     * Tests whether a model name is valid
-     *
-     * @model Model
-     * @return 1 if true, 0 if false
-     */
-
-    int i;
-
-    if (model == NULL) {
-        return 0;
-    }
-
-    for (i = 0; i < strlen(model); i++) {
-        if (strchr(CHARS_MODEL, model[i]) == NULL) {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-//! Tests whether an application name is valid
-static int
-check_app_name(const char *app)
-{
-    /*!
-     * Tests whether an application name is valid
-     *
-     * @app Application
-     * @return 1 if true, 0 if false
-     */
-
-    int i;
-
-    if (app == NULL) {
-        return 0;
-    }
-
-    for (i = 0; i < strlen(app); i++) {
-        if (strchr(CHARS_APP, app[i]) == NULL) {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-
 //! Checks if application is registered
 int
 db_check_app(char *app)
@@ -611,10 +557,6 @@ db_check_app(char *app)
      * @app Application
      * @return 1 if true, 0 if false
      */
-
-    if (!check_app_name(app)) {
-        return 0;
-    }
 
     struct databases db;
     int ret = 0;
@@ -638,10 +580,6 @@ db_check_model(char *app, char *model)
      * @model Model
      * @return 1 if true, 0 if false
      */
-
-    if (!check_app_name(app) || !check_model_name(model)) {
-        return 0;
-    }
 
     struct databases db;
     int ret = 0;
