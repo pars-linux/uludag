@@ -3,14 +3,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Amine Chadly <amine.chadly@gmail.com>, 2007.
+# Amine Chadly <amine.chadly@gmail.com>, 2007, 2008.
 # Faik Uygur <faik@pardus.org.tr>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-26 16:27+0200\n"
-"PO-Revision-Date: 2007-07-31 22:57+0200\n"
+"PO-Revision-Date: 2008-01-16 22:08+0100\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -68,8 +68,7 @@ msgstr "Impossible de se connecter au démon Comar"
 
 #: src/Commander.py:97
 msgid "You do not have permission to do this operation."
-msgstr ""
-"Vous n'avez pas les droits suffisants permettant de réaliser cette opération."
+msgstr "Vous n'avez pas les droits suffisants permettant de réaliser cette opération."
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
 msgid "Repository Name"
@@ -88,8 +87,7 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr ""
 "Vous pouvez accéder aux dépôts courants et à l'adresse qui leur correspond "
 "ici"
@@ -199,8 +197,7 @@ msgstr "&Utiliser un cache disque dur pour les logiciels téléchargés"
 
 #: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
-"si cochée, les paquets téléchargé seront conservé dans le cache disque dur"
+msgstr "si cochée, les paquets téléchargé seront conservé dans le cache disque dur"
 
 #: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -348,8 +345,7 @@ msgstr "<b>Application des Changements du Dépôt</b>"
 
 #: src/Preferences.py:249
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Tous les paquets situés dans le cache vont être supprimés. En êtes vous sûr ?"
+msgstr "Tous les paquets situés dans le cache vont être supprimés. En êtes vous sûr ?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -405,7 +401,7 @@ msgstr "Développeur et responsable actuel"
 
 #: src/package-manager.py:61
 msgid "Developer"
-msgstr ""
+msgstr "Développeur"
 
 #: src/package-manager.py:62
 msgid "Original Author"
@@ -491,9 +487,8 @@ msgid "Version: "
 msgstr "Version : "
 
 #: src/package-manager.py:416
-#, fuzzy
 msgid "Repository: "
-msgstr "Nom de dépôt"
+msgstr "Dépôt : "
 
 #: src/package-manager.py:417
 msgid "Package Size: "
@@ -512,16 +507,14 @@ msgid "Currently your basket is empty."
 msgstr "Votre panier est actuellement vide."
 
 #: src/package-manager.py:473 src/package-manager.py:481
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille "
 "cumulée de <b>%2</b>"
 
 #: src/package-manager.py:476
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-"avec <b>%3</b> dépendances supplémentaires de taille cumulée de <b>%4</b>"
+msgstr "avec <b>%3</b> dépendances supplémentaires de taille cumulée de <b>%4</b>"
 
 #: src/package-manager.py:478 src/package-manager.py:486
 msgid "in your basket."
@@ -552,13 +545,12 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 est en conflit avec [%2]\n"
 
 #: src/package-manager.py:525
-#, fuzzy
 msgid ""
 "\n"
 "Remove the following conflicting packages?"
 msgstr ""
 "\n"
-"Supprimer du système les paquets en conflit suivants ?"
+"Supprimer les paquets en conflit suivants ?"
 
 #: src/package-manager.py:540 src/package-manager.py:601
 #: src/package-manager.py:738
@@ -672,3 +664,4 @@ msgstr "Afficher la fenêtre principale au démarrage"
 #: src/package-manager.py:1014
 msgid "Package Manager is already running!"
 msgstr "Le gestionnaire de paquet et déjà en cours d'exécution !"
+
