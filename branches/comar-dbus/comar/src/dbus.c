@@ -352,6 +352,11 @@ dbus_comar_methods(const char *method)
     else if (strcmp(method, "listModelApplications") == 0) {
         args = dbus_py_import(my_proc.bus_msg);
         model = PyString_AsString(PyList_GetItem(args, 0));
+        if (model_lookup_interface(model) == -1) {
+            log_error("No such model: '%s'\n", model);
+            dbus_reply_error("db", "nomodel", "No such model.");
+            return;
+        }
         db_get_model_apps(model, &apps);
         if (apps != NULL) {
             result = PyList_New(0);
@@ -366,8 +371,8 @@ dbus_comar_methods(const char *method)
             free(apps);
         }
         else {
-            log_error("Unknown model: '%s'\n", model);
-            dbus_reply_error("db", "nomodel", "Model unknown.");
+            result = PyList_New(0);
+            dbus_reply_object(result);
         }
     }
     else if (strcmp(method, "listApplicationModels") == 0) {
