@@ -1,15 +1,15 @@
 # translation of fr.po to French
-# Copyright (C) 2007 Free Software Foundation, Inc.
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
 #
-# Amine Chadly <amine.chadly@gmail.com>, 2007.
+# Amine Chadly <amine.chadly@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 16:45+0200\n"
-"PO-Revision-Date: 2007-03-10 14:34+0200\n"
+"PO-Revision-Date: 2008-01-16 22:14+0100\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,16 +29,15 @@ msgstr "&Remise à zéro"
 
 #: src/tasmamainwin.cpp:83
 msgid "&Show Extra Modules"
-msgstr ""
+msgstr "&Montrer les modules supplémentaires"
 
 #: modules/tasmatv/tasmatv.cpp:42
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
 msgstr "(c) 2005-2006, TUBITAK - UEKAE"
 
 #: src/main.cpp:64
-#, fuzzy
 msgid "(c) 2005-2007, TUBITAK - UEKAE"
-msgstr "(c) 2005-2006, TUBITAK - UEKAE"
+msgstr "(c) 2005-2007, TUBITAK - UEKAE"
 
 #: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:51
 #, no-c-format
@@ -76,19 +75,17 @@ msgid "Description"
 msgstr "Description"
 
 #: src/main.cpp:66
-#, fuzzy
 msgid "Developer"
-msgstr "Développeurs KDE"
+msgstr "Développeur"
 
 #: src/tasmamainwin.cpp:89
-#, fuzzy
 msgid "Displays Information About Current Module"
-msgstr "À propos du module courant"
+msgstr "Affiche des informations concernant le module courant"
 
 #: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:48
 #, no-c-format
 msgid "Do not use PLL"
-msgstr "Ne pas utilser le PLL"
+msgstr "Ne pas utiliser le PLL"
 
 #: src/aboutview.cpp:99
 msgid ""
@@ -163,7 +160,7 @@ msgstr "Carte Radio"
 #: rc.cpp:3
 #, no-c-format
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:45
 msgid "Size"
@@ -178,15 +175,13 @@ msgid "TASMA Tv Card Configuration Module"
 msgstr "Module de Configuration de Carte Tv TASMA"
 
 #: src/aboutview.cpp:88
-#, fuzzy
 msgid ""
 "TASMA is a configuration application for Pardus Operating System. You can "
 "tweak the systems default configuration settings by using the modules "
 "presented in TASMA. "
 msgstr ""
-"TASMA est une application de configuration du Système d'Exploitation Pardus. "
-"Vous pouver bricoler les configurations par défaut du système en utilisant "
-"les différents modules de TASMA."
+"TASMA est une application de configuration du Système d'exploitation Pardus. "
+"En utilisant les différents modules de TASMA, vous pouver bricoler les configurations par défaut du système "
 
 #: modules/tasmatv/tvconfigui.cpp:149 rc.cpp:21
 #, no-c-format
@@ -222,5 +217,3 @@ msgid ""
 "Your names"
 msgstr "Amine Chadly"
 
-#~ msgid "(c) 2005, TUBITAK - UEKAE"
-#~ msgstr "(c) 2005, TUBITAK - UEKAE"
