@@ -392,8 +392,8 @@ dbus_comar_methods(const char *method)
             free(models);
         }
         else {
-            log_error("Unknown application: '%s'\n", app);
-            dbus_reply_error("db", "noapp", "Application unknown.");
+            result = PyList_New(0);
+            dbus_reply_object(result);
         }
     }
     else if (strcmp(method, "register") == 0) {
