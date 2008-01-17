@@ -56,6 +56,7 @@ app_data = [
     'user-manager.py',
     'mainview.py',
     'browser.py',
+    'handler.py',
     'useredit.py',
     'groupedit.py',
     'utility.py',
