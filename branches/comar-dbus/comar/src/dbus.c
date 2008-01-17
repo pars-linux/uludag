@@ -61,9 +61,9 @@ dbus_reply_error(char *class, char *name, char *str)
     char *err_name;
     int size;
 
-    size = strlen(cfg_bus_name) + 1 + strlen(class) + 1 + strlen(name) + 1;
+    size = strlen(cfg_bus_interface) + 1 + strlen(class) + 1 + strlen(name) + 1;
     err_name = malloc(size);
-    snprintf(err_name, size, "%s.%s.%s", cfg_bus_name, class, name);
+    snprintf(err_name, size, "%s.%s.%s", cfg_bus_interface, class, name);
     err_name[size - 1] = '\0';
 
     DBusMessage *reply = dbus_message_new_error(my_proc.bus_msg, err_name, str);
@@ -469,7 +469,7 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
     int ret;
 
     char *app = (char *) strsub(path, strlen("/package/"), 0);
-    char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
+    char *model = (char *) strsub(interface, strlen(cfg_bus_interface) + 1, 0);
 
     if (!db_check_model(app, model)) {
         log_error("Application interface doesn't exist: %s (%s)\n", model, app);
@@ -570,9 +570,9 @@ dbus_method_call()
     else if (strcmp(interface, "org.freedesktop.DBus.Introspectable") == 0) {
         dbus_introspection_methods(path);
     }
-    else if (strncmp(interface, cfg_bus_name, strlen(cfg_bus_name)) == 0) {
+    else if (strncmp(interface, cfg_bus_interface, strlen(cfg_bus_interface)) == 0) {
         if (dbus_policy_check(sender, interface, method)) {
-            if (strcmp(path, "/") == 0 && strcmp(interface, cfg_bus_name) == 0) {
+            if (strcmp(path, "/") == 0 && strcmp(interface, cfg_bus_interface) == 0) {
                 dbus_comar_methods(method);
             }
             else if (strncmp(path, "/package/", strlen("/package/")) == 0) {

@@ -81,7 +81,7 @@ policy_check(const char *sender, const char *interface, const char *method, PolK
         return 0;
     }
 
-    model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
+    model = (char *) strsub(interface, strlen(cfg_bus_interface) + 1, 0);
     node_no = model_lookup_method(model, method);
     free(model);
 

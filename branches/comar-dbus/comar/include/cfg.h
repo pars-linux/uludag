@@ -8,6 +8,7 @@
 */
 
 extern char *cfg_bus_name;
+extern char *cfg_bus_interface;
 extern char *cfg_config_dir;
 extern char *cfg_data_dir;
 extern int cfg_timeout;

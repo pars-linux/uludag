@@ -107,7 +107,7 @@ c_notify(PyObject *self, PyObject *args)
     path = dbus_message_get_path(my_proc.bus_msg);
     interface = dbus_message_get_interface(my_proc.bus_msg);
 
-    char *model = (char *) strsub(interface, strlen(cfg_bus_name) + 1, 0);
+    char *model = (char *) strsub(interface, strlen(cfg_bus_interface) + 1, 0);
 
     if (model_lookup_signal(model, method) != -1) {
         dbus_signal(path, interface, method, tuple);

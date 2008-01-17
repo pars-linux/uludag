@@ -21,6 +21,9 @@
 //! Bus name
 char *cfg_bus_name = "tr.org.pardus.comar";
 
+//! Interface prefix
+char *cfg_bus_interface = "tr.org.pardus.comar";
+
 //! Configuration directory
 char *cfg_config_dir = CONFIG_DIR;
 
@@ -61,6 +64,7 @@ static struct logflag_struct {
 
 //! Command line options
 static struct option longopts[] = {
+    { "busname", required_argument, NULL, 'b' },
     { "configdir", required_argument, NULL, 'c' },
     { "datadir", required_argument, NULL, 'd' },
     { "debug", required_argument, NULL, 'g' },
@@ -72,7 +76,7 @@ static struct option longopts[] = {
 };
 
 //! Short options
-static char *shortopts = "c:d:g:t:phv";
+static char *shortopts = "b:c:d:g:t:phv";
 
 //! Help message
 static void
@@ -81,6 +85,8 @@ print_usage(const char *name)
     printf(
         _("Usage: %s [OPTIONS]\n"
         "Pardus configuration manager.\n"
+        " -b, --busname  [NAME] Bus address.\n"
+        "                       (default is %s)\n"
         " -c, --configdir [DIR] Configuration directory.\n"
         "                       (default is %s)\n"
         " -d, --datadir   [DIR] Data storage directory.\n"
@@ -94,6 +100,7 @@ print_usage(const char *name)
         " -v, --version         Print version and exit.\n"
         "Report bugs to http://bugs.pardus.org.tr\n"),
         name,
+        cfg_bus_name,
         cfg_config_dir,
         cfg_data_dir,
         cfg_timeout
@@ -130,6 +137,9 @@ cfg_init(int argc, char *argv[])
 
     while ((c = getopt_long(argc, argv, shortopts, longopts, &i)) != -1) {
         switch (c) {
+            case 'b':
+                cfg_bus_name = strdup(optarg);
+                break;
             case 'c':
                 cfg_config_dir = strdup(optarg);
                 break;

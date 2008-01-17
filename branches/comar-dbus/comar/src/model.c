@@ -364,12 +364,12 @@ model_get_iks(char *path, iks **parent)
         if (iks_strcmp(iks_find_attrib(obj, "name"), path) == 0) {
             new = iks_copy(obj);
             if (strcmp(path, "Comar") == 0) {
-                iks_insert_attrib(new, "name", cfg_bus_name);
+                iks_insert_attrib(new, "name", cfg_bus_interface);
             }
             else if (strncmp(path, "org.freedesktop.", strlen("org.freedesktop.")) != 0) {
-                int size = strlen(cfg_bus_name) + 1 + strlen(path) + 1;
+                int size = strlen(cfg_bus_interface) + 1 + strlen(path) + 1;
                 char *name = malloc(size);
-                snprintf(name, size, "%s.%s", cfg_bus_name, path);
+                snprintf(name, size, "%s.%s", cfg_bus_interface, path);
                 name[size - 1] = '\0';
                 iks_insert_attrib(new, "name", name);
                 free(name);
