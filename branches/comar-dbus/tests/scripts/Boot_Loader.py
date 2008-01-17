@@ -75,6 +75,11 @@ FAIL_KERNEL_IN_USE = _({
     "tr": "Çekirdek kullanılıyor ya da yüklü değil: '%s'",
 })
 
+FAIL_KERNEL_VERSION = _({
+    "en": "Kernel version must be in version-release(-suffix) format.",
+    "tr": "Kernel sürümü version-release(-suffix) formatında olmalı.",
+})
+
 # Grub parser configuration
 
 BOOT_DIR = "/boot"
@@ -503,7 +508,10 @@ def updateKernelEntry(version, root):
     if root == "":
         root = getRoot()
     
-    new_version, new_suffix = parseVersion("kernel-%s" % version)
+    try:
+        new_version, new_suffix = parseVersion("kernel-%s" % version)
+    except ParseError:
+        fail(FAIL_KERNEL_VERSION)
     
     # Find Pardus kernels
     entries = []
@@ -516,6 +524,7 @@ def updateKernelEntry(version, root):
             try:
                 k_version, k_suffix = parseVersion(kernel)
             except ParseError:
+                # Not a Pardus kernel, continue
                 continue
             if k_suffix == new_suffix:
                 entries.append(entry)
