@@ -427,8 +427,7 @@ dbus_comar_methods(const char *method)
         db_get_app_models(app, &models);
 
         if (models == NULL) {
-            log_error("Unknown application: '%s'\n", app);
-            dbus_reply_error("db", "noapp", "Unknown application");
+            dbus_reply_object(PyBool_FromLong(0));
         }
         else {
             db_remove_app(app);
