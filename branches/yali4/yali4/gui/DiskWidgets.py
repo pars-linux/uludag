@@ -233,7 +233,7 @@ class DiskList(QtGui.QWidget):
         if partition._parted_type == parteddata.freeSpaceType:
             device = partition.getDevice()
             type = parteddata.PARTITION_PRIMARY
-            if device.numberOfPrimaryPartitions() == 3 or partition._partition.type == parteddata.PARTITION_LOGICAL:
+            if device.numberOfPrimaryPartitions() == 3 or partition._partition.type & parteddata.PARTITION_LOGICAL:
                 # if three primary partitions exists on disk
                 # we must create new extended one or use existed
                 # for other logical partitions
