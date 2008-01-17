@@ -3,46 +3,6 @@
 
 <policyconfig>
 
-    <action id="tr.org.pardus.comar.boot.loader.listsystems">
-        <description>List systems supported by boot loader</description>
-        <message>System policy prevents listing systems.</message>
-        <defaults>
-            <allow_any>yes</allow_any>
-            <allow_active>yes</allow_active>
-            <allow_inactive>yes</allow_inactive>
-        </defaults>
-    </action>
-
-    <action id="tr.org.pardus.comar.boot.loader.getoptions">
-        <description>List boot loader options.</description>
-        <message>System policy prevents listing options.</message>
-        <defaults>
-            <allow_any>yes</allow_any>
-            <allow_active>yes</allow_active>
-            <allow_inactive>yes</allow_inactive>
-        </defaults>
-    </action>
-
-    <action id="tr.org.pardus.comar.boot.loader.listentries">
-        <description>List boot loader entries.</description>
-        <message>System policy prevents listing entries.</message>
-        <defaults>
-            <allow_any>yes</allow_any>
-            <allow_active>yes</allow_active>
-            <allow_inactive>yes</allow_inactive>
-        </defaults>
-    </action>
-
-    <action id="tr.org.pardus.comar.boot.loader.listunused">
-        <description>List unused kernels.</description>
-        <message>System policy prevents listing unused kernels.</message>
-        <defaults>
-            <allow_any>yes</allow_any>
-            <allow_active>yes</allow_active>
-            <allow_inactive>yes</allow_inactive>
-        </defaults>
-    </action>
-
     <action id="tr.org.pardus.comar.boot.loader.updatekernelentry">
         <description>Update kernel release on specified partition.</description>
         <message>System policy prevents updating kernel.</message>
@@ -81,6 +41,15 @@
             <allow_any>auth_admin_keep_session</allow_any>
             <allow_active>auth_admin_keep_session</allow_active>
             <allow_inactive>auth_admin_keep_session</allow_inactive>
+        </defaults>
+    </action>
+    <action id="tr.org.pardus.comar.boot.loader.get">
+        <description>View boot loader options and list entries.</description>
+        <message>System policy prevents viewing bootloader settings.</message>
+        <defaults>
+            <allow_any>yes</allow_any>
+            <allow_active>yes</allow_active>
+            <allow_inactive>yes</allow_inactive>
         </defaults>
     </action>
 </policyconfig>

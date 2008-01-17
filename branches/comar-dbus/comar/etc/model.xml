@@ -31,10 +31,10 @@
         </method>
     </interface>
     <interface name="Boot.Loader">
-        <method name="listSystems">
+        <method name="listSystems" access_label="get">
             <arg name="systems" type="{s(sasas)}" direction="out"/>
         </method>
-        <method name="getOptions">
+        <method name="getOptions" access_label="get">
             <arg name="options" type="{ss}" direction="out"/>
         </method>
         <method name="setOption" access_label="set">
@@ -42,7 +42,7 @@
             <arg name="value" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
-        <method name="listEntries">
+        <method name="listEntries" access_label="get">
             <arg name="entries" type="a{ss}" direction="out"/>
         </method>
         <method name="updateKernelEntry">
@@ -67,7 +67,7 @@
             <arg name="uninstall" type="b" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
-        <method name="listUnused">
+        <method name="listUnused" access_label="get">
             <arg name="versions" type="as" direction="out"/>
         </method>
         <method name="removeUnused">
