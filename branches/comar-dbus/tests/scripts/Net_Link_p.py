@@ -303,14 +303,14 @@ class Dev:
         dial = Dialup()
         
         if self.remote and self.user and self.password and self.dev:
-            notify("stateChanged", (self.name, "connecting"))
+            notify("Net.Link", "stateChanged", (self.name, "connecting"))
             
             dial.dial(self.remote, self.user, self.password, "115200", "1", self.dev)
             
             d = DB.getDB(self.name)
             d["state"] = "up"
             DB.setDB(self.name, d)
-            notify("stateChanged", (self.name, "up"))
+            notify("Net.Link", "stateChanged", (self.name, "up"))
     
     def down(self):
         dial = Dialup()
@@ -318,7 +318,7 @@ class Dev:
         d = DB.getDB(self.name)
         d["state"] = "down"
         DB.setDB(self.name, d)
-        notify("stateChanged", (self.name, "down"))
+        notify("Net.Link", "stateChanged", (self.name, "down"))
 
 
 #
@@ -349,16 +349,16 @@ def setConnection(name, device):
     d["device"] = device
     DB.setDB(name, d)
     if changed:
-        notify("connectionChanged", ("configured", name))
+        notify("Net.Link", "connectionChanged", ("configured", name))
     else:
-        notify("connectionChanged", ("added", name))
+        notify("Net.Link", "connectionChanged", ("added", name))
 
 def deleteConnection(name=None):
     dev = Dev(name)
     if dev.dev and dev.state == "up":
         dev.down()
     DB.remDB(name)
-    notify("connectionChanged", ("deleted", name))
+    notify("Net.Link", "connectionChanged", ("deleted", name))
 
 def setAddress(name=None, mode=None, address=None, mask=None, gateway=None):
     fail("Not supported")
@@ -368,7 +368,7 @@ def setRemote(name, remote, apmac):
     d["remote"] = remote
     d["apmac"] = apmac
     DB.setDB(name, d)
-    notify("connectionChanged", ("configured", name))
+    notify("Net.Link", "connectionChanged", ("configured", name))
 
 def setAuthentication(name, authmode, user, password):
     d = DB.getDB(name)
@@ -376,7 +376,7 @@ def setAuthentication(name, authmode, user, password):
     d["user"] = user
     d["password"] = password
     DB.setDB(name, d)
-    notify("connectionChanged", ("configured", name))
+    notify("Net.Link", "connectionChanged", ("configured", name))
 
 def getState(name):
     d = DB.getDB(name)

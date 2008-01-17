@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 def postInstall(fromVersion, fromRelease, toVersion, toRelease):
-    notify("Installed", script())
+    notify("System.Package", "Installed", script())
     return True
 
 def preRemove():
-    notify("Removed", script())
+    notify("System.Package", "Removed", script())
     return True

@@ -51,7 +51,7 @@ def stopSameDev(myname, myuid):
         if myuid != dev.uid:
             continue
         
-        notify("stateChanged", (name, "down", ""))
+        notify("Net.Link", "stateChanged", (name, "down", ""))
         if dev.state == "up":
             d = DB.getDB(name)
             d["state"] = "down"
@@ -106,9 +106,9 @@ class Dev:
             d = DB.getDB(self.name)
             d["state"] = "up"
             DB.setDB(self.name, d)
-            notify("stateChanged", (self.name, "up", self.address))
+            notify("Net.Link", "stateChanged", (self.name, "up", self.address))
         else:
-            notify("stateChanged", (self.name, "connecting", ""))
+            notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
             ret = ifc.startAuto()
             if ret == 0 and ifc.isUp():
                 self.dns()
@@ -116,9 +116,9 @@ class Dev:
                 d = DB.getDB(self.name)
                 d["state"] = "up"
                 DB.setDB(self.name, d)
-                notify("stateChanged", (self.name, "up", unicode(addr)))
+                notify("Net.Link", "stateChanged", (self.name, "up", unicode(addr)))
             else:
-                notify("stateChanged", (self.name, "inaccessible", _(dhcp_fail_msg)))
+                notify("Net.Link", "stateChanged", (self.name, "inaccessible", _(dhcp_fail_msg)))
                 fail("DHCP failed")
         ifc.setMTU(self.mtu)
     
@@ -130,7 +130,7 @@ class Dev:
         d = DB.getDB(self.name)
         d["state"] = "down"
         DB.setDB(self.name, d)
-        notify("stateChanged", (self.name, "down", ""))
+        notify("Net.Link", "stateChanged", (self.name, "down", ""))
 
 
 # Net.Link API
@@ -161,16 +161,16 @@ def setConnection(name, device):
     d["device"] = device
     DB.setDB(name, d)
     if changed:
-        notify("connectionChanged", ("configured", name))
+        notify("Net.Link", "connectionChanged", ("configured", name))
     else:
-        notify("connectionChanged", ("added", name))
+        notify("Net.Link", "connectionChanged", ("added", name))
 
 def deleteConnection(name):
     dev = Dev(name)
     if dev.ifc and dev.state == "up":
         dev.down()
     DB.remDB(name)
-    notify("connectionChanged", ("deleted", name))
+    notify("Net.Link", "connectionChanged", ("deleted", name))
 
 def setAddress(name, mode, address, mask, gateway):
     dev = Dev(name)
@@ -184,7 +184,7 @@ def setAddress(name, mode, address, mask, gateway):
     d["mask"] = mask
     d["gateway"] = gateway
     DB.setDB(name, d)
-    notify("connectionChanged", ("configured", name))
+    notify("Net.Link", "connectionChanged", ("configured", name))
 
 def setRemote(name, remote):
     fail("Not supported")
@@ -199,7 +199,7 @@ def setNameService(name, namemode, nameserver):
     d["namemode"] = namemode
     d["nameserver"] = nameserver
     DB.setDB(name, d)
-    notify("connectionChanged", ("configured", name))
+    notify("Net.Link", "connectionChanged", ("configured", name))
 
 def getState(name):
     d = DB.getDB(name)
@@ -276,7 +276,7 @@ def kernelEvent(data):
         if ifc.isWireless():
             return
         devuid = ifc.deviceUID()
-        notify("deviceChanged", ("add", "net", devuid, netutils.deviceName(devuid)))
+        notify("Net.Link", "deviceChanged", ("add", "net", devuid, netutils.deviceName(devuid)))
         conns = DB.listDB()
         for conn in conns:
             dev = Dev(conn)
@@ -286,7 +286,7 @@ def kernelEvent(data):
                     return
                 flag = 0
         if flag:
-            notify("deviceChanged", ("new", "net", devuid, netutils.deviceName(devuid)))
+            notify("Net.Link", "deviceChanged", ("new", "net", devuid, netutils.deviceName(devuid)))
     
     elif type == "remove":
         conns = DB.listDB()
@@ -295,5 +295,5 @@ def kernelEvent(data):
             # FIXME: dev.ifc is not enough :(
             if dev.ifc and dev.ifc.name == devname:
                 if dev.state == "up":
-                    notify("stateChanged", (dev.name, "inaccessible", "Device removed"))
-        notify("deviceChanged", ("removed", "net", devname, ""))
+                    notify("Net.Link", "stateChanged", (dev.name, "inaccessible", "Device removed"))
+        notify("Net.Link", "deviceChanged", ("removed", "net", devname, ""))

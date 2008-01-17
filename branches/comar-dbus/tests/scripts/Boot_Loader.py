@@ -483,7 +483,7 @@ def setOption(option, value):
         root_grub = grubAddress(root)
         grub.config.setOption("splashimage", "%s%s" % (root_grub, value))
     grub.release()
-    notify("Changed", "option")
+    notify("Boot.Loader", "Changed", "option")
 
 def listEntries():
     grub = grubParser(GRUB_DIR, write=False, timeout=TIMEOUT)
@@ -585,7 +585,7 @@ def updateKernelEntry(version, root):
         grub.config.setOption("default", updated_index)
     
     grub.release()
-    notify("Changed", "entry")
+    notify("Boot.Loader", "Changed", "entry")
 
 def removeEntry(index, title, uninstall):
     grub = grubParser(GRUB_DIR, write=True, timeout=TIMEOUT)
@@ -613,7 +613,7 @@ def removeEntry(index, title, uninstall):
         else:
             grub.config.setOption("default", "0")
         grub.release()
-        notify("Changed", "entry")
+        notify("Boot.Loader", "Changed", "entry")
     else:
         fail(FAIL_NOENTRY)
 
@@ -673,4 +673,4 @@ def setEntry(title, os_type, root, kernel, initrd, options, default, index):
             grub.config.setOption("default", "0")
     
     grub.release()
-    notify("Changed", "entry")
+    notify("Boot.Loader", "Changed", "entry")
