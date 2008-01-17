@@ -458,6 +458,7 @@ class Widget(QVBox):
     
     def setAutoConnect(self):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
+        self.config.sync()
     
     def slotAutoConnect(self):
         self.autoSwitch.scanAndConnect(force=True)
