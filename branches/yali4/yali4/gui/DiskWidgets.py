@@ -233,22 +233,24 @@ class DiskList(QtGui.QWidget):
         if partition._parted_type == parteddata.freeSpaceType:
             device = partition.getDevice()
             type = parteddata.PARTITION_PRIMARY
-            if device.numberOfPrimaryPartitions() == 3 or partition._partition.type & parteddata.PARTITION_LOGICAL:
-                # if three primary partitions exists on disk
-                # we must create new extended one or use existed
-                # for other logical partitions
-                extendedPartition = device.getExtendedPartition()
-                if not extendedPartition:
-                    ctx.debugger.log("There is no extended partition, Yalı will create new one")
-                    type = parteddata.PARTITION_EXTENDED
-                    p = device.addPartition(partition._partition, type, None, partition.getMB(), t.parted_flags)
-                    partition = device.getPartition(p.num)
-                    ctx.debugger.log("Yalı created new extended partition as number of %d " % p.num)
-                else:
-                    ctx.debugger.log("Extended partition found (%d),Yalı will use it." % extendedPartition._partition.num)
+            size = self.partEdit.ui.partitionSize.value()
+            extendedPartition = device.getExtendedPartition()
+
+            if device.numberOfPrimaryPartitions() == 3 and size+1==partition.getMB():
+                type = parteddata.PARTITION_PRIMARY
+            elif device.numberOfPrimaryPartitions() == 3 and extendedPartition == None:
+                # if three primary partitions exists on disk and no more extendedPartition
+                # we must create new extended one for other logical partitions
+                ctx.debugger.log("There is no extended partition, Yalı will create new one")
+                type = parteddata.PARTITION_EXTENDED
+                p = device.addPartition(partition._partition, type, None, partition.getMB(), t.parted_flags)
+                partition = device.getPartition(p.num)
+                ctx.debugger.log("Yalı created new extended partition as number of %d " % p.num)
                 type = parteddata.PARTITION_LOGICAL
 
-            size = self.partEdit.ui.partitionSize.value()
+            if extendedPartition and partition._partition.type & parteddata.PARTITION_LOGICAL:
+                type = parteddata.PARTITION_LOGICAL
+
             p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
             device.update()
             self.update()

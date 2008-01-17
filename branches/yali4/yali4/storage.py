@@ -380,7 +380,6 @@ class Device:
 
         return self.__addToPartitionsDict(newp, fs_ready=False)
 
-
     ##
     # (internal function)
     # add partition to the partitions dictionary

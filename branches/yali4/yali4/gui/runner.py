@@ -178,11 +178,7 @@ class ErrorWidget(QtGui.QWidget):
         l.setSpacing(10)
         l.addWidget(info)
         l.addWidget(traceback)
-
-        b = QtGui.QHBoxLayout(l)
-        b.setMargin(5)
-        b.addStretch(1)
-        b.addWidget(reboot_button)
+        l.addWidget(reboot_button)
 
         self.connect(reboot_button, SIGNAL("clicked()"),
                      self.slotReboot)
