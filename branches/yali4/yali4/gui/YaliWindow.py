@@ -34,7 +34,11 @@ class Widget(Ui_YaliMain):
         self.setupUi(self.ui)
         self.screenData = None
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
-        self.helpContent.setVisible(False)
+
+        # Dont need help as default
+        self.slotToggleHelp()
+
+        # Main Slots
         QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
@@ -45,6 +49,11 @@ class Widget(Ui_YaliMain):
             self.helpContent.hide()
         else:
             self.helpContent.show()
+
+        # Call the current widget's update method when help content toggled.
+        QTimer.singleShot(1, self.updateCurrent)
+
+    def updateCurrent(self):
         _w = self.mainStack.currentWidget()
         _w.update()
 

@@ -145,12 +145,6 @@ class DiskList(QtGui.QWidget):
 
     def addDevice(self, dev):
 
-        def sizePix(mb,total):
-            _p = (self.toolBox.width() * mb) / total
-            if _p<=28:
-                return 8
-            return _p - 8
-
         def sizeStr(mb):
             if mb > 1024:
                 return _("%0.1f GB free") % long(round(mb/1024.0))
@@ -165,13 +159,12 @@ class DiskList(QtGui.QWidget):
         else:
             size_str = dev.getSizeStr()
 
-        d = DiskItem("%s - %s" % (devstr,size_str),dev.getModel(),self.partEdit)
-        d.setData(dev)
-        self.addDisk(d)
+        diskItem = DiskItem("%s - %s" % (devstr,size_str),dev.getModel(),self.partEdit,dev.getTotalMB())
+        diskItem.setData(dev)
+        self.addDisk(diskItem)
 
         # add partitions on device
         for part in dev.getOrderedPartitionList():
-            parent_item = d
             if part.isExtended():
                 continue
             if part.getMinor() != -1:
@@ -179,9 +172,9 @@ class DiskList(QtGui.QWidget):
             else:
                 name = _("Free Space")
             ctx.debugger.log("Partition added with %s mb" % part.getMB())
-            parent_item.addPartition(name,part,sizePix(part.getMB(),dev.getTotalMB()))
+            diskItem.addPartition(name,part)
 
-        d.updateSizes()
+        diskItem.updateSizes(self.toolBox.width())
 
     ##
     # Partition Operations
@@ -268,7 +261,7 @@ class DiskItem(QtGui.QWidget):
     # storage.Device or partition.Partition
     _data = None
 
-    def __init__(self, name, model, partEdit):
+    def __init__(self, name, model, partEdit, totalSize):
         QtGui.QWidget.__init__(self,None)
         self.setAutoFillBackground(False)
 
@@ -295,9 +288,10 @@ class DiskItem(QtGui.QWidget):
         self.partitions = []
         self.name = name
         self.model = model
+        self.totalSize = totalSize
         self.partEdit = partEdit
 
-    def addPartition(self,name=None,data=None,_size=None):
+    def addPartition(self,name=None,data=None):
 
         def color(fs_type):
             colors = {"fat32":"#18D918",
@@ -320,7 +314,7 @@ class DiskItem(QtGui.QWidget):
         <b>Size:</b> %s<br>
         <b>FileSystem:</b> %s""") % (data.getPath(),data.getSizeStr(),data.getFSName()))
         self.splinter.addWidget(partition)
-        self.partitions.append({"name":name,"data":data,"size":_size})
+        self.partitions.append({"name":name,"data":data})
         self.connect(partition,QtCore.SIGNAL("clicked()"),self.updatePartEdit)
 
     def updatePartEdit(self):
@@ -338,20 +332,30 @@ class DiskItem(QtGui.QWidget):
     def getData(self):
         return self._data
 
-    def updateSizes(self):
+    def updateSizes(self,toolBoxWidth):
         i=0
         for part in self.partitions:
             _h = self.splinter.handle(i)
             _h.setEnabled(False)
             self.splinter.setCollapsible(i,False)
-            self.splinter.widget(i).resize(part['size'],70)
-            if part['size'] <= 8:
-                self.splinter.widget(i).setMinimumSize(QSize(part['size'],90))
-                self.splinter.widget(i).setMaximumSize(QSize(part['size'],100))
+
+            _size = self.sizePix(part['data'].getMB(),toolBoxWidth)
+            _widget = self.splinter.widget(i)
+            _widget.resize(_size,70)
+            if _size <= 8:
+                _widget.setMinimumSize(QSize(_size,90))
+                _widget.setMaximumSize(QSize(_size,100))
             else:
-                self.splinter.widget(i).setMinimumSize(QSize(part['size']-20,90))
+                _widget.setMaximumSize(QSize(_size,100))
+
             i+=1
         self.splinter.widget(0).setChecked(True)
+
+    def sizePix(self,mb,toolBoxWidth):
+        _p = (toolBoxWidth * mb) / self.totalSize
+        if _p <= 8:
+            return 8
+        return _p
 
 class PartEdit(QtGui.QWidget):
 
