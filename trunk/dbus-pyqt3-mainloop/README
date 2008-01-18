@@ -1,1 +1,3 @@
-Since QApplication instance is used by dbus-mainloop, QApplication should be created BEFORE the dbus-mainloop.
+Known issue(s):
+
+* Since QApplication instance is used by dbus-mainloop, QApplication should be created BEFORE the dbus-mainloop.
