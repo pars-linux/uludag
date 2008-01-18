@@ -3,7 +3,6 @@ PROJECT (dbus-pyqt3-mainloop)
 FIND_PACKAGE(Qt3 REQUIRED)
 FIND_PACKAGE(PythonLibs REQUIRED)
 
-# add definitions, library directories and header directories for KDE and QT
 ADD_DEFINITIONS(${QT_DEFINITIONS})
 LINK_DIRECTORIES(${QT_QT_LIBRARY})
 INCLUDE_DIRECTORIES(${QT_INCLUDE_DIR}
