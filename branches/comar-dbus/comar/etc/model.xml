@@ -345,4 +345,30 @@
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
     </interface>
+    <interface name="System.Service">
+        <method name="ready" access_label="set">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="start" access_label="set">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="stop" access_label="set">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="reload" access_label="set">
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="setState" access_label="get">
+            <arg name="state" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="info" access_label="get">
+            <arg name="description" type="s" direction="out"/>
+            <arg name="status" type="s" direction="out"/>
+        </method>
+        <signal name="Changed">
+            <arg name="service" type="s"/>
+            <arg name="state" type="s"/>
+        </signal>
+    </interface>
 </comarModel>
