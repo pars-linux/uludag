@@ -1,0 +1,32 @@
+PROJECT (dbus-pyqt3-mainloop)
+
+FIND_PACKAGE(Qt3 REQUIRED)
+
+# add definitions, library directories and header directories for KDE and QT
+ADD_DEFINITIONS(${QT_DEFINITIONS})
+LINK_DIRECTORIES(${QT_QT_LIBRARY})
+INCLUDE_DIRECTORIES(${QT_INCLUDE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+
+INCLUDE_DIRECTORIES(${QT_INCLUDE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    /usr/include/dbus-1.0
+    /usr/lib/dbus-1.0/include
+    /usr/include/python2.4)
+
+SET (sources mainloop.cpp)
+
+# we have to create moc file manually. Why? Because, QT_WRAP_CPP doesn't seem to work.
+ADD_CUSTOM_TARGET(and_god_created_cmake ALL ${QT_MOC_EXECUTABLE} -o ${CMAKE_SOURCE_DIR}/mainloop.moc ${CMAKE_SOURCE_DIR}/mainloop.h)
+
+ADD_LIBRARY(qt3 SHARED ${sources})
+
+# we don't want the name 'libqt3.so'
+SET_TARGET_PROPERTIES(qt3
+                      PROPERTIES PREFIX ""
+                      IMPORT_PREFIX "")
+
+TARGET_LINK_LIBRARIES(qt3
+                      ${QT_LIBRARIES}
+                      dbus-1)

@@ -468,3 +468,5 @@ PyMODINIT_FUNC initqt3()
 
     Py_InitModule("qt3", module_functions);
 }
+
+#include "mainloop.moc"
