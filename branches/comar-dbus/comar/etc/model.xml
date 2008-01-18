@@ -345,6 +345,30 @@
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
     </interface>
+    <interface name="Net.Filter">
+        <method name="setRule">
+            <arg name="rule" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="getRules">
+            <arg name="rules" type="as" direction="out"/>
+        </method>
+        <method name="setProfile">
+            <arg name="profile" type="s" direction="in"/>
+            <arg name="save_filter" type="s" direction="in"/>
+            <arg name="save_mangle" type="s" direction="in"/>
+            <arg name="save_nat" type="s" direction="in"/>
+            <arg name="save_raw" type="s" direction="in"/>
+            <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
+        </method>
+        <method name="getProfile">
+            <arg name="profile" type="s" direction="out"/>
+            <arg name="save_filter" type="s" direction="out"/>
+            <arg name="save_mangle" type="s" direction="out"/>
+            <arg name="save_nat" type="s" direction="out"/>
+            <arg name="save_raw" type="s" direction="out"/>
+        </method>
+    </interface>
     <interface name="System.Service">
         <method name="ready" access_label="set">
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
