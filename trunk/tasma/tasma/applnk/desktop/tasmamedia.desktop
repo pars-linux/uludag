@@ -186,4 +186,4 @@ Keywords[vi]=lưu trữ,ổ,usb,cdrom,thiết bị
 Keywords[zh_CN]=storage,media,usb,cdrom,device,存储,介质,设备
 Keywords[zh_TW]=storage,media,usb,cdrom,device,儲存,媒體,光碟機,裝置
 
-Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals;X-KDE-tasma-advanced
+Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals;X-KDE-tasma-extra

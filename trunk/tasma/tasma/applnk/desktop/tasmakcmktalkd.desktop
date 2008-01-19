@@ -203,4 +203,4 @@ Keywords[zh_HK]=talk,announcement,client,sound,answering,mail,caller,banner,forw
 Keywords[zh_TW]=talk,announcement,client,sound,answering,mail,caller,banner,forward,destination,聊天,公佈,客戶端,聲音,答覆,郵件,呼叫者,目的地
 Keywords[zu]=khuluma,isaziso,umthengi,umsindo,iyaphendula,iposi,umbizi,ibhodi elinomyalezo,phambili,indawo ophikekelekuyo
 
-Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network;X-KDE-tasma-advanced
+Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network;X-KDE-tasma-extra

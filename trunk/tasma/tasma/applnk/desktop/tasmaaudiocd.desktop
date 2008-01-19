@@ -174,4 +174,4 @@ Keywords[tr]=Ses CD,CD,Ogg,Vorbis,Kodlama,CDDA,Bitrate
 Keywords[uk]=Аудіо-КД,КД,Ogg,Vorbis,кодування,CDDA,частота вибірки
 Keywords[zh_CN]=音频 CD,CD,Ogg,Vorbis,编码,CDDA,Bitrate
 
-Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound;X-KDE-tasma-advanced
+Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound;X-KDE-tasma-extra

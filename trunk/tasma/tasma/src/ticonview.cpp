@@ -87,7 +87,7 @@ void TIconView::setCategory( const QString& path )
               KSimpleConfig cfg(minfo->fileName());
 
               cfg.setDesktopGroup();
-              if ( cfg.readEntry("Categories").contains("X-KDE-tasma-advanced") )
+              if ( cfg.readEntry("Categories").contains("X-KDE-tasma-extra") )
                 continue;
             }
 

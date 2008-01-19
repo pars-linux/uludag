@@ -8,7 +8,6 @@ MimeType=print/manager
 
 X-KDE-ModuleType=Library
 X-KDE-Library=printmgr
-X-KDE-RootOnly=true
 X-KDE-HasReadOnlyMode=true
 
 Name=Printers

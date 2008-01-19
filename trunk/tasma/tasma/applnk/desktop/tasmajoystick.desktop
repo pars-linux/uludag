@@ -165,4 +165,4 @@ X-KDE-FactoryName=kcm_joystick
 X-KDE-Library=joystick
 X-KDE-Test-Module=true
 Icon=joystick
-Categories=Qt;KDE;X-KDE-settings-hardware;X-KDE-tasma-peripherals;X-KDE-tasma-advanced
+Categories=Qt;KDE;X-KDE-settings-hardware;X-KDE-tasma-peripherals;X-KDE-tasma-extra

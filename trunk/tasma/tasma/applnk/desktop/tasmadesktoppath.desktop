@@ -215,4 +215,4 @@ Keywords[vi]=konqueror,trình quản lý tập tin,đường dẫn,màn hình n�
 Keywords[zh_CN]=konqueror,filemanager,paths,desktop,directories,autostart,文件管理器,路径,桌面,目录,自动启动
 Keywords[zh_TW]=konqueror,filemanager,paths,desktop,directories,autostart,征服家,檔案管理程式,路徑,桌面,目錄,自動啟動
 
-Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-desktop;X-KDE-tasma-advanced
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-desktop;X-KDE-tasma-extra
