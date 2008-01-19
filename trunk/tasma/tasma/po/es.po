@@ -1,18 +1,19 @@
-# translation of es.po to spanish
+# translation of es.po to Spanish
 # translation of es.po to
 # This file is put in the public domain.
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
+# Klemens Haeckel <click3d at linuxmail dot org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 16:45+0200\n"
-"PO-Revision-Date: 2007-05-27 19:13-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2008-01-19 18:33-0300\n"
+"Last-Translator: Klemens Haeckel <click3d at linuxmail dot org>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,16 +33,15 @@ msgstr "&Reset"
 
 #: src/tasmamainwin.cpp:83
 msgid "&Show Extra Modules"
-msgstr ""
+msgstr "&Mostrar Módulos adicionales"
 
 #: modules/tasmatv/tasmatv.cpp:42
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
 msgstr "(c) 2005 - 2006, TUBITAK - UEKAE"
 
 #: src/main.cpp:64
-#, fuzzy
 msgid "(c) 2005-2007, TUBITAK - UEKAE"
-msgstr "(c) 2005 - 2006, TUBITAK - UEKAE"
+msgstr "(c) 2005 - 2007, TUBITAK - UEKAE"
 
 #: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:51
 #, no-c-format
@@ -79,14 +79,12 @@ msgid "Description"
 msgstr "Descripción"
 
 #: src/main.cpp:66
-#, fuzzy
 msgid "Developer"
-msgstr "Desarolladores KDE"
+msgstr "Desarollador"
 
 #: src/tasmamainwin.cpp:89
-#, fuzzy
 msgid "Displays Information About Current Module"
-msgstr "Acerca del Módulo actual"
+msgstr "Información sobre el módulo actual"
 
 #: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:48
 #, no-c-format
@@ -166,7 +164,7 @@ msgstr "Tarjeta de Radio"
 #: rc.cpp:3
 #, no-c-format
 msgid "Settings"
-msgstr ""
+msgstr "Preferencias"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:45
 msgid "Size"
@@ -181,14 +179,13 @@ msgid "TASMA Tv Card Configuration Module"
 msgstr "TASMA Módulo de configuración de tarjeta TV"
 
 #: src/aboutview.cpp:88
-#, fuzzy
 msgid ""
 "TASMA is a configuration application for Pardus Operating System. You can "
 "tweak the systems default configuration settings by using the modules "
 "presented in TASMA. "
 msgstr ""
 "TASMA es un programa para la configuración del Sistema Operativo Pardus. "
-"Puede ajustar las configuraciones del sistema usando los módulos presentados "
+"Puede ajustar las configuraciones por defecto del sistema usando los módulos presentados "
 "en TASMA. "
 
 # Sintonizador?
@@ -230,5 +227,3 @@ msgstr ""
 "_: Traductores\n"
 "Klemens Häckel Christian Faure"
 
-#~ msgid "(c) 2005, TUBITAK - UEKAE"
-#~ msgstr "(c) 2005, TUBITAK - UEKAE"
