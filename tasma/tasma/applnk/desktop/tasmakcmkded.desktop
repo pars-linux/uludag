@@ -226,4 +226,4 @@ Keywords[zh_CN]=KDED,Daemon,Services,守护程序,服务
 Keywords[zh_TW]=KDED,Daemon,Services,伺服程式,服務
 Keywords[zu]=KDED,Daemon,Imisebenzi
 
-Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop;X-KDE-tasma-advanced
+Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop;X-KDE-tasma-extra

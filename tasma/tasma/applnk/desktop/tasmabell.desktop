@@ -4,7 +4,7 @@ Exec=kcmshell bell
 Icon=bell
 Type=Application
 DocPath=kcontrol/bell/index.html
-Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound;X-KDE-tasma-advanced
+Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound;X-KDE-tasma-extra
 
 
 X-KDE-Library=bell
