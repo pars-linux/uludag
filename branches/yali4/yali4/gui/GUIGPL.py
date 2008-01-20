@@ -22,7 +22,7 @@ __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 import yali4.gui.context as ctx
-#from yali4.gui.GUIException import *
+from yali4.gui.GUIException import *
 
 ##
 # Help widget
@@ -48,7 +48,6 @@ class Widget(QTextBrowser):
             self.setText(codecs.open(self.find_license_file(), "r", "UTF-8").read())
         except Exception, e:
             raise GUIException, e
-
 
     def find_license_file(self):
         f = join(ctx.consts.source_dir,

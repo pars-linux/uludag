@@ -126,8 +126,11 @@ class DiskList(QtGui.QWidget):
                         _("'Install Root' size must be larger than %s MB.") % (ctx.consts.min_root_size))
             else:
                 self.partEdit.ui.partitionSize.setMinimum(ctx.consts.min_root_size)
+                self.partEdit.ui.partitionSlider.setMinimum(ctx.consts.min_root_size)
         else:
             self.partEdit.ui.information.setText("")
+            self.partEdit.ui.partitionSize.setMinimum(10)
+            self.partEdit.ui.partitionSlider.setMinimum(10)
 
     def initDevices(self):
         self.devs = []
@@ -376,8 +379,10 @@ class PartEdit(QtGui.QWidget):
         self.ui.devicePath.setText(part.getPath())
         self.ui.fileSystem.setText(part.getFSName())
         self.ui.partitionSize.setMaximum(part.getMB()-1)
+        self.ui.partitionSlider.setMaximum(part.getMB()-1)
         self.ui.partitionSize.setValue(part.getMB()-1)
         self.ui.formatType.setCurrentIndex(0)
         self.ui.information.setText("")
-        self.ui.partitionSize.setMinimum(0)
+        self.ui.partitionSize.setMinimum(10)
+        self.ui.partitionSlider.setMinimum(10)
 
