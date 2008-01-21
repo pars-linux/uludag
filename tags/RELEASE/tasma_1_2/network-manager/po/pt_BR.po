@@ -1,0 +1,352 @@
+# Translation of pt_BR.po to Brazilian Portuguese
+# Copyright (C) 2006 TUBITAK/UEKAE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Pedro Leite <pedro.leite@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: pt_BR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-06 12:19+0200\n"
+"PO-Revision-Date: 2007-02-28 23:13-0300\n"
+"Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
+"listinfo/pardus-translation-ptbr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr "Criar uma nova conexão"
+
+#: newconn.py:31
+msgid "Select device:"
+msgstr "Selecionar dispositivo:"
+
+#: newconn.py:58
+msgid "Create"
+msgstr "Criar"
+
+#: newconn.py:113
+msgid "No suitable device found"
+msgstr "Nenhum dispositivo apropriado encontrado"
+
+#: newconn.py:121
+msgid "Install network packages!"
+msgstr "Instalar pacotes de rede!"
+
+#: newconn.py:122
+msgid "No package with COMAR network scripts are installed yet."
+msgstr "Nenhum pacote com os scripts de rede COMAR estão instalados ainda."
+
+#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
+#: network-manager.py:91 network-applet.py:539 network-applet.py:551
+msgid "Network Manager"
+msgstr "Gerenciador de Rede"
+
+#: autoswitch.py:81
+#, fuzzy
+msgid "No scan result"
+msgstr "Resultado da examinação:"
+
+#: autoswitch.py:117
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr ""
+
+#: autoswitch.py:121
+msgid "There is no matched profile"
+msgstr ""
+
+#: autoswitch.py:127
+#, fuzzy, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "Editar conexões..."
+
+#: autoswitch.py:131
+#, fuzzy, python-format
+msgid "Connected to <b>%s</b>"
+msgstr "Editar conexões..."
+
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+#, fuzzy
+msgid "Mode"
+msgstr "Modo:"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:55
+msgid "<hidden>"
+msgstr "<escondido>"
+
+#: connection.py:88
+msgid "Scan results:"
+msgstr "Resultado da examinação:"
+
+#: connection.py:106
+msgid "Scan again"
+msgstr "Examinar de novo"
+
+#: connection.py:108
+msgid "Use"
+msgstr "Usar"
+
+#: connection.py:165
+msgid "Connection name:"
+msgstr "Nome da conexão:"
+
+#: connection.py:172
+msgid "Connection"
+msgstr "Conexão"
+
+#: connection.py:178
+msgid "Device:"
+msgstr "Dispositivo:"
+
+#: connection.py:183
+msgid "Select"
+msgstr "Selecionar"
+
+#: connection.py:197
+msgid "Scan"
+msgstr "Examinar"
+
+#: connection.py:208 browser.py:57
+msgid "Authentication"
+msgstr "Autenticação"
+
+#: connection.py:214
+msgid "Mode:"
+msgstr "Modo:"
+
+#: connection.py:222
+msgid "No authentication"
+msgstr "Sem autenticação"
+
+#: connection.py:240 connection.py:251
+msgid "Password:"
+msgstr "Senha:"
+
+#: connection.py:248
+msgid "User name:"
+msgstr "Nome do usuário:"
+
+#: connection.py:281
+msgid "Network settings"
+msgstr "Preferências de rede"
+
+#: connection.py:291
+msgid "Automatic query (DHCP)"
+msgstr "Consulta automática (DHCP)"
+
+#: connection.py:296
+msgid "Manual"
+msgstr "Manual"
+
+#: connection.py:300 browser.py:60
+msgid "Address:"
+msgstr "Endereço:"
+
+#: connection.py:307 connection.py:324 connection.py:339
+msgid "Custom"
+msgstr "Personalizado"
+
+#: connection.py:312
+msgid "Net mask:"
+msgstr "Máscara de rede:"
+
+#: connection.py:319
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#: connection.py:328 nameconf.py:45
+msgid "Name servers"
+msgstr "Servidores de nome"
+
+#: connection.py:337 browser.py:63
+msgid "Automatic"
+msgstr "Automático"
+
+#: connection.py:534
+msgid "Configure network connection"
+msgstr "Configurar conexão de rede"
+
+#: comariface.py:174
+msgid "Waiting COMAR..."
+msgstr "Esperando COMAR..."
+
+#: comariface.py:175
+msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+msgstr "Conexão com COMAR fechou inesperadamente, tentando reconectar-se..."
+
+#: comariface.py:194 comariface.py:211 network-applet.py:114
+msgid ""
+"Cannot connect to the COMAR! If it is not running you should start it with "
+"the 'service comar start' command in a root console."
+msgstr ""
+"Não é possível se conectar ao COMAR! Se ele não estiver executando você deve "
+"iniciá-lo com o comando 'service comar start' num console como root."
+
+#: comariface.py:315
+msgid "You are not allowed to change network settings."
+msgstr ""
+
+#: comariface.py:395
+msgid "new connection"
+msgstr "nova conexão"
+
+#: browser.py:50
+msgid "Name:"
+msgstr "Nome:"
+
+#: browser.py:93
+msgid "Turn on/off connection"
+msgstr "Conectar/Disconectar"
+
+#: browser.py:106
+msgid "Configure connection"
+msgstr "Configurar conexão"
+
+#: browser.py:109
+msgid "Delete connection"
+msgstr "Deletar conexão"
+
+#: browser.py:127
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"Devo deletar a conexão\n"
+"'%s'?"
+
+#: browser.py:128
+msgid "Delete connection?"
+msgstr "Deletar conexão?"
+
+#: browser.py:215
+msgid "No device!"
+msgstr "Nenhum dispositivo!"
+
+#: browser.py:394 network-applet.py:583
+msgid "New connection"
+msgstr "Nova conexão"
+
+#: browser.py:399 nameconf.py:28
+msgid "Name Service Settings"
+msgstr "Preferências do Serviço de Nomes"
+
+#: browser.py:404 network-applet.py:329
+#, fuzzy
+msgid "Connect Automatically"
+msgstr "Automático"
+
+#: browser.py:423
+msgid "Try Auto Connect on startup"
+msgstr ""
+
+#: browser.py:475
+msgid "Network Connections Help"
+msgstr "Ajuda de Conexões de Rede"
+
+#: network-manager.py:77
+msgid "Just try to connect automatically"
+msgstr ""
+
+#: network-manager.py:86
+msgid "Network manager module is already started!"
+msgstr "O módulo do Gerenciador de rede já está iniciado!"
+
+#: network-applet.py:327
+msgid "Firewall..."
+msgstr "Firewall..."
+
+#: network-applet.py:328
+msgid "Edit Connections..."
+msgstr "Editar conexões..."
+
+#: network-applet.py:331
+msgid "Show Notifications"
+msgstr ""
+
+#: network-applet.py:333
+msgid "Icon Per Device"
+msgstr "Ícone Por Dispositivo"
+
+#: network-applet.py:334
+msgid "Single Icon"
+msgstr "Ícone Único"
+
+#: network-applet.py:401
+msgid "Should network-applet start automatically when you login?"
+msgstr "O applet de rede deve iniciar automaticamente quando você se logar?"
+
+#: network-applet.py:516
+#, fuzzy
+msgid "Connecting to <b>%1</b> ..."
+msgstr "Editar conexões..."
+
+#: network-applet.py:521
+#, fuzzy
+msgid "Connected to <b>%1</b>"
+msgstr "Editar conexões..."
+
+#: network-applet.py:527
+#, fuzzy
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr "Editar conexões..."
+
+#: network-applet.py:529
+msgid "You are offline now"
+msgstr ""
+
+#: network-applet.py:617
+msgid "Network Applet"
+msgstr "Applet de Rede"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Computador"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Nome do host:"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Acima"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Abaixo"
+
+#: nameconf.py:134
+msgid "Add Name Server"
+msgstr "Adicionar um Servidor de Nomes"
+
+#: nameconf.py:135
+msgid "Name server:"
+msgstr "Servidor de nomes:"
+
+#, fuzzy
+#~ msgid "Already connected to <b>%s</b>"
+#~ msgstr "Editar conexões..."
+
+#, fuzzy
+#~ msgid "Connecting to <b>%s</b>"
+#~ msgstr "Editar conexões..."
+
+#, fuzzy
+#~ msgid "Scan and Connect..."
+#~ msgstr "Editar conexões..."

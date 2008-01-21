@@ -1,0 +1,26 @@
+<PISI>
+    <Update>
+        <Name>Asla pes etme</Name>
+        <Summary>Sıkı bir update oldu, hede sorunu çok başımızı ağrıttı.</Summary>
+        <Date>2007-02-30</Date>
+        <Detail>update-pack-2007-2.xml</Detail>
+        <Stats>
+            <Total>17</Total>
+            <Security>3</Security>
+            <Bug>7</Bug>
+            <New>2</New>
+            <Removed>1</Removed>
+        </Stats>
+    </Update>
+    <Update>
+        <Name>Herşey çok güzel olacak</Name>
+        <Summary>Sorun yok, herşey kontrol altında</Summary>
+        <Date>2007-01-12</Date>
+        <Detail>update-pack-2007-1.xml</Detail>
+        <Stats>
+            <Total>8</Total>
+            <Security>2</Security>
+            <Bug>3</Bug>
+        </Stats>
+    </Update>
+</PISI>

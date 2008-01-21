@@ -1,0 +1,121 @@
+
+
+msgid ""
+msgstr ""
+"Project-Id-Version: service-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-17 10:48+0200\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/service-manager.py:30 src/service-manager.py:82
+#: src/service_manager.py:108
+msgid "Service Manager"
+msgstr "Menedżer Usług"
+
+#: src/service-manager.py:76
+msgid "Service Manager is already started!"
+msgstr "Menedżer Usług już działa!"
+
+#: src/sm_mainview.py:161
+msgid "You are not allowed to do this operation."
+msgstr "Nie masz uprawnień dla tej operacji"
+
+#: src/sm_mainview.py:161
+msgid "Access Denied"
+msgstr "Odmowa Dostępu"
+
+#: src/sm_mainview.py:165
+msgid "COMAR script execution failed."
+msgstr "Błąd wykonywania skryptu COMARa"
+
+#: src/sm_mainview.py:165
+msgid "Script Error"
+msgstr "Bład Skryptu"
+
+#: src/sm_mainview.py:171
+msgid "Unable to start service"
+msgstr "Nie mogę uruchomić usługi"
+
+#: src/sm_mainview.py:174
+msgid "Unable to stop service"
+msgstr "Nie mogę zatrzymać usługi"
+
+#: src/sm_mainview.py:178
+msgid "Unable to restart service"
+msgstr "Nie mogę zrestartować usługi"
+
+#: src/sm_mainview.py:211 src/service_manager.py:112
+msgid "Select a service from list."
+msgstr "Wybierz usługę z listy."
+
+#: src/sm_mainview.py:218 src/service_manager.py:114
+#: src/service_manager.py:116
+msgid "Start"
+msgstr "Uruchom"
+
+#: src/sm_mainview.py:220
+msgid "Restart"
+msgstr "Zrestartuj"
+
+#: src/sm_mainview.py:226
+#, python-format
+msgid "%s is running."
+msgstr "% działa"
+
+#: src/sm_mainview.py:230
+#, python-format
+msgid "%s is not running."
+msgstr "% nie działa"
+
+#: src/sm_mainview.py:295
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"Jeżeli zatrzymasz tą usługę możesz mieć problemy.\n"
+"Czy na pewno chcesz zatrzymać tą usługę?"
+
+#: src/sm_mainview.py:299
+msgid ""
+"If you disable this service, you may have problems.\n"
+"Are you sure you want to do this?"
+msgstr ""
+"Jeżeli wyłączysz tą usługę możesz mieć problemy.\n"
+"Czy na pewno chcesz zatrzymać tą usługę?"
+
+#: src/service_manager.py:91 src/service_manager.py:121
+msgid "1"
+msgstr "1"
+
+#: src/service_manager.py:92 src/service_manager.py:122
+msgid "Service"
+msgstr "Usługa"
+
+#: src/service_manager.py:93 src/service_manager.py:123
+msgid "Run on Startup"
+msgstr "Uruchom przy starcie systemu"
+
+#: src/service_manager.py:94 src/service_manager.py:124
+msgid "Package"
+msgstr "Pakiet"
+
+#: src/service_manager.py:110
+msgid "Run on startup."
+msgstr "Uruchom na starcie systemu."
+
+#: src/service_manager.py:111
+msgid "Don't run on startup."
+msgstr "Nie uruchamiaj na starcie systemu"
+
+#: src/service_manager.py:119
+msgid "&List servers only."
+msgstr "&Listuj tylko serwery."
+
+#: src/service_manager.py:120
+msgid "Alt+L"
+msgstr "Alt+L"
