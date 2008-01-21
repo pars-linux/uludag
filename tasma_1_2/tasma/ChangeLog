@@ -1,0 +1,13 @@
+2006-11-26 İsmail Dönmez <ismail@pardus.org.tr>
+    * Ported to CMake
+
+2005-01-27 Barış Metin <baris@uludag.org.tr>
+	* Added comarrpc and a (non-working) test module.
+	* Released version 0.1
+
+2005-02-07 Barış Metin <baris@uludag.org.tr>
+	* Tasma now shows aboutData() of current module, if provided by module.
+
+2005-02-15 Barış Metin <baris@uludag.org.tr>
+	* Added tasmanet.
+	* Released version 0.2
