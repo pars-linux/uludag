@@ -92,7 +92,7 @@ void TIconView::setCategory( const QString& path )
             }
 
           if (  minfo->icon() )
-         	_icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
+                _icon = DesktopIcon(  minfo->icon(),  KIcon::SizeLarge );
                 _item = new TIconViewItem( this,
                                      minfo->moduleName(),
                                      _icon, minfo , minfo->comment());
@@ -157,7 +157,7 @@ void TIconView::contentsMouseMoveEvent(QMouseEvent* event)
     {
       int distance = (event->pos() - dragPos).manhattanLength();
       if(distance > QApplication::startDragDistance())
-	startDrag();
+    startDrag();
     }
   // This creates a mouse pointer problem don't do this
   //KIconView::contentsMouseMoveEvent(event);
@@ -222,28 +222,31 @@ void TIconView::showToolTip( QIconViewItem *item ){
     toolTip = 0;
 
     if ( !item )
-	return;
+    return;
 
-	toolTip = new QLabel( QString::fromUtf8(" %1 ").arg(_item->comment), 0,
-			      "myToolTip",
-			      WStyle_StaysOnTop | WStyle_Customize | WStyle_NoBorder | WStyle_Tool | WX11BypassWM );
-	toolTip->setFrameStyle( QFrame::Plain | QFrame::Box );
-	toolTip->setLineWidth( 1 );
-	toolTip->setAlignment( AlignLeft | AlignTop );
-	toolTip->move( QCursor::pos() + QPoint( 4, 4 ) );
-	toolTip->adjustSize();
-	QRect screen = QApplication::desktop()->screenGeometry(
-			QApplication::desktop()->screenNumber(QCursor::pos()));
-	if (toolTip->x()+toolTip->width() > screen.right()) {
-		toolTip->move(toolTip->x()+screen.right()-toolTip->x()-toolTip->width(), toolTip->y());
-	}
-	if (toolTip->y()+toolTip->height() > screen.bottom()) {
-		toolTip->move(toolTip->x(), screen.bottom()-toolTip->y()-toolTip->height()+toolTip->y());
-	}
-	toolTip->setFont( QToolTip::font() );
-	toolTip->setPalette( QToolTip::palette(), true );
-	toolTip->show();
-    
+    if(! _item->comment)
+        return;
+
+    toolTip = new QLabel( QString::fromUtf8(" %1 ").arg(_item->comment), 0,
+                  "tasma",
+                  WStyle_StaysOnTop | WStyle_Customize | WStyle_NoBorder | WStyle_Tool | WX11BypassWM );
+    toolTip->setFrameStyle( QFrame::Plain | QFrame::Box );
+    toolTip->setLineWidth( 1 );
+    toolTip->setAlignment( AlignLeft | AlignTop );
+    toolTip->move( QCursor::pos() + QPoint( 4, 4 ) );
+    toolTip->adjustSize();
+    QRect screen = QApplication::desktop()->screenGeometry(
+        QApplication::desktop()->screenNumber(QCursor::pos()));
+    if (toolTip->x()+toolTip->width() > screen.right()) {
+        toolTip->move(toolTip->x()+screen.right()-toolTip->x()-toolTip->width(), toolTip->y());
+    }
+    if (toolTip->y()+toolTip->height() > screen.bottom()) {
+        toolTip->move(toolTip->x(), screen.bottom()-toolTip->y()-toolTip->height()+toolTip->y());
+    }
+    toolTip->setFont( QToolTip::font() );
+    toolTip->setPalette( QToolTip::palette(), true );
+    toolTip->show();
+
 
 }
 void TIconView::removeToolTip(){
