@@ -86,7 +86,6 @@ about disk partitioning.
 
     def shown(self):
         ctx.mainScreen.disableNext()
-        self.partList.update()
 
     def update(self):
         self.partList.update()

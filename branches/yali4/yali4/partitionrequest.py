@@ -33,7 +33,7 @@ class RequestList(list):
     ##
     # apply all requests
     def applyAll(self):
-        
+
         # first apply format requests
         for r in self.searchReqTypeIterate(formatRequestType):
             r.applyRequest()
@@ -93,12 +93,12 @@ class RequestList(list):
     # @return: [Partition]
     #
     # @param p: Partition (defined in partition.py)
-    # @param t: request Type (eg. formatRequestType)        
+    # @param t: request Type (eg. formatRequestType)
     def searchPartAndReqType(self, p, rt):
         req = [x for x in self.searchPartAndReqTypeIterate(p, rt)]
         return req
 
-    
+
     ##
     # Iterator function searches for a request 
     # by request type

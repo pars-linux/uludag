@@ -171,6 +171,11 @@ class DiskList(QtGui.QWidget):
                 continue
             if part.getMinor() != -1:
                 name = _("Partition %d") % part.getMinor()
+                if part.isFileSystemReady():
+                    try:
+                        name = part.getFSLabel() or name
+                    except:
+                        pass
             else:
                 name = _("Free Space")
             ctx.debugger.log("Partition added with %s mb" % part.getMB())
@@ -242,11 +247,7 @@ class DiskList(QtGui.QWidget):
             type = parteddata.PARTITION_PRIMARY
             extendedPartition = device.getExtendedPartition()
 
-            if device.numberOfPrimaryPartitions() == 3 and size+1==partition.getMB():
-                # We can use Primary
-                type = parteddata.PARTITION_PRIMARY
-
-            elif device.numberOfPrimaryPartitions() == 3 and extendedPartition == None:
+            if device.numberOfPrimaryPartitions() >= 1 and not extendedPartition:
                 # if three primary partitions exists on disk and no more extendedPartition
                 # we must create new extended one for other logical partitions
                 ctx.debugger.log("There is no extended partition, Yalı will create new one")
@@ -260,6 +261,8 @@ class DiskList(QtGui.QWidget):
 
             if extendedPartition and partition._partition.type & parteddata.PARTITION_LOGICAL:
                 type = parteddata.PARTITION_LOGICAL
+            elif partition._partition.num == 1:
+                type = parteddata.PARTITION_PRIMARY
 
             # Let's create the partition
             p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
