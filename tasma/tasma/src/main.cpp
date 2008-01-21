@@ -61,7 +61,7 @@ int main( int argc, char *argv[] )
   KLocale::setMainCatalogue( "tasma" );
   KAboutData aboutData( "tasma", I18N_NOOP( "TASMA - Pardus Configuration Center" ), "1.2",
                         I18N_NOOP( "Pardus Configuration Center" ), KAboutData::License_GPL,
-                        I18N_NOOP( "(c) 2005-2007, TUBITAK - UEKAE" ) );
+                        I18N_NOOP( "(c) 2005-2008, TUBITAK - UEKAE" ) );
   aboutData.addAuthor( "Pınar Yanardağ", I18N_NOOP( "Current Maintainer" ), "pinar@pardus.org.tr" );
   aboutData.addAuthor( "İsmail Dönmez", I18N_NOOP( "Developer" ), "ismail@pardus.org.tr" );
   aboutData.addAuthor( "Barış Metin", I18N_NOOP( "Old Maintainer & Original Author" ), "baris@pardus.org.tr" );
