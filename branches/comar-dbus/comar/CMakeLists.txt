@@ -2,7 +2,7 @@ PROJECT (comar-dbus)
 
 # Application name
 SET (APP_NAME "comar")
-SET (APP_SUFFIX "dbus")
+SET (APP_SUFFIX "2")
 
 # Version string
 SET (VERSION_MAJOR "2")
@@ -22,7 +22,7 @@ ENDIF (VERSION_SUFFIX)
 
 # Append name suffix, if specified
 IF (APP_SUFFIX)
-   SET (APP_NAME "${APP_NAME}-${APP_SUFFIX}")
+   SET (APP_NAME "${APP_NAME}${APP_SUFFIX}")
 ENDIF (APP_SUFFIX)
 
 # Define version, config dir, data dir and log file.
