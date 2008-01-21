@@ -239,6 +239,7 @@ class DiskList(QtGui.QWidget):
 
         # Get selected Partition and the other informations from GUI
         partition = self.partEdit.currentPart
+        partitionNum = self.partEdit.currentPartNum
         device = partition.getDevice()
         size = self.partEdit.ui.partitionSize.value()
 
@@ -247,7 +248,9 @@ class DiskList(QtGui.QWidget):
             type = parteddata.PARTITION_PRIMARY
             extendedPartition = device.getExtendedPartition()
 
-            if device.numberOfPrimaryPartitions() >= 1 and not extendedPartition:
+            if partitionNum == 0:
+                type = parteddata.PARTITION_PRIMARY
+            elif device.numberOfPrimaryPartitions() >= 1 and not extendedPartition:
                 # if three primary partitions exists on disk and no more extendedPartition
                 # we must create new extended one for other logical partitions
                 ctx.debugger.log("There is no extended partition, Yalı will create new one")
@@ -261,8 +264,6 @@ class DiskList(QtGui.QWidget):
 
             if extendedPartition and partition._partition.type & parteddata.PARTITION_LOGICAL:
                 type = parteddata.PARTITION_LOGICAL
-            elif partition._partition.num == 1:
-                type = parteddata.PARTITION_PRIMARY
 
             # Let's create the partition
             p = device.addPartition(partition._partition, type, t.filesystem, size, t.parted_flags)
@@ -343,6 +344,7 @@ class DiskItem(QtGui.QWidget):
             if self.splinter.widget(i).isChecked():
                 self.partEdit.ui.deviceGroup.setTitle(part["name"])
                 self.partEdit.currentPart = part["data"]
+                self.partEdit.currentPartNum = i
                 self.partEdit.updateContent()
             i+=1
 
@@ -380,6 +382,7 @@ class DiskItem(QtGui.QWidget):
 class PartEdit(QtGui.QWidget):
 
     currentPart = None
+    currentPartNum = 0
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
