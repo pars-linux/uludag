@@ -489,6 +489,10 @@ dbus_app_methods(const char *interface, const char *path, const char *method)
         else if (ret == 2) {
             log_exception();
         }
+        else if (ret == 3) {
+            log_error("Unable to find '%s' method in script: %s (%s)\n", method, model, app);
+            dbus_reply_error("python", "missing", "Method is not defined in script.");
+        }
         else {
             dbus_reply_object(result);
         }

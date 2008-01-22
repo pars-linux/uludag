@@ -192,7 +192,7 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
      * @method Method
      * @args Arguments in tuple
      * @ret Value returned by method.
-     * @return 0 on success, 1 on IO errors (missing file, etc.), 2 on script error
+     * @return 0 on success, 1 on IO errors (missing file, etc.), 2 on script error, 3 method is missing.
      */
 
     PyObject *pCode, *pModule, *pDict, *pFunc;
@@ -236,8 +236,7 @@ py_call_method(const char *app, const char *model, const char *method, PyObject 
     pFunc = PyDict_GetItemString(pDict, method);
     if (!pFunc || !PyCallable_Check(pFunc)) {
         Py_DECREF(pModule);
-        PyErr_SetString(PyExc_NameError, "Unknown method.");
-        return 2;
+        return 3;
     }
 
     if (!PyTuple_Check(args)) {
