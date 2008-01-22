@@ -38,16 +38,15 @@ def iter_slide_pics():
     g = glob.glob(ctx.consts.slidepics_dir + "/*.png")
     g.sort()
     for p in g:
-        pics.append(QPixmap(p))
+        pics.append(QtGui.QPixmap(p))
 
     while True:
         for pic in pics:
             yield pic
 
-
 ##
 # Partitioning screen.
-class Widget(InstallWidget, ScreenWidget):
+class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Installing system..')
     desc = _('Installing approximately 30 minutes depending on hardware..')
     icon = "iconInstall"
@@ -97,8 +96,8 @@ Have fun!
         self.pkg_installer = PkgInstaller(self)
         self.pkg_installer.start()
 
-        ctx.screens.disableNext()
-        ctx.screens.disablePrev()
+        ctx.mainScreen.disableNext()
+        ctx.mainScreen.disableBack()
 
         # start 30 seconds
         self.timer.start(1000 * 30)
@@ -150,7 +149,7 @@ Have fun!
             self.installError(err)
 
     def slotChangePix(self):
-        self.pix.setPixmap(self.iter_pics.next())
+        self.ui.pix.setPixmap(self.iter_pics.next())
 
     def execute(self):
         # fill fstab
