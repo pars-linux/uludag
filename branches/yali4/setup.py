@@ -34,6 +34,14 @@ def gui_pics():
     p = "yali4/gui/pics"
     return glob.glob(p + "/*.png")
 
+def theme_pics():
+    p = "yali4/images"
+    return glob.glob(p + "/*.png")
+
+def themes():
+    p = "yali4/qss"
+    return glob.glob(p + "/*.qss")
+
 def gui_slidepics():
     p = "yali4/gui/pics/slideshow/*.png"
     return glob.glob(p)
@@ -184,6 +192,8 @@ setup(name="yali4",
       data_files = [('/usr/share/yali4/pics', gui_pics()),
                     ('/usr/share/yali4/slideshow', gui_slidepics()),
                     ('/usr/share/yali4/user_faces', user_faces()),
+                    ('/usr/share/yali4/images', theme_pics()),
+                    ('/usr/share/yali4/qss', themes()),
                     ('/usr/share/yali4/data', data_files())],
       scripts = ['yali4-bin'],
       ext_modules = [Extension('yali4._sysutils',
