@@ -18,8 +18,6 @@ from kdeui import *
 import mainview
 from utility import *
 
-import dbus.mainloop.qt3
-
 mod_name = 'Boot Manager'
 mod_app = 'boot-manager'
 mod_version = '0.3.3'
@@ -82,9 +80,6 @@ def main():
         return
 
     kapp = KUniqueApplication(True, True, True)
-    
-    dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
-    
     win = QDialog()
     win.setCaption(i18n('Boot Manager'))
     win.resize(QSize(500, 400).expandedTo(win.minimumSizeHint()))
