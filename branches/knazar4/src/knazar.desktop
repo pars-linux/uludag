@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KNazar
+Name[tr_TR]=KNazar
+Name[de]=KNazar
+Name[pt_BR]=KNazar
+Name[nl]=KNazar
+Exec=knazar
+Icon=knazar
+Type=Application
+Comment=Protects From Harmfull Looks!
+Comment[tr_TR]=Kem gözlerden korur!
+Comment[de]=Schützt vor bösen Blicken!
+Comment[pt_BR]=Protege contra mal olhados!
+Comment[nl]=Beschermt tegen kwade blikken!
