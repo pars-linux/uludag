@@ -648,7 +648,8 @@ dbus_listen()
 
     while (1) {
         // non blocking read of the next available message
-        dbus_connection_read_write_dispatch(conn, 0);
+        // dbus_connection_read_write_dispatch(conn, 0);
+        dbus_connection_read_write_dispatch(conn, 500);
         msg = dbus_connection_pop_message(conn);
 
         if (proc_check_idle() == 1) {
