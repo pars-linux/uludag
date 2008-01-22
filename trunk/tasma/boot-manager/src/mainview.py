@@ -16,17 +16,17 @@ from kdeui import *
 from utility import *
 from ui_elements import *
 
-import comar
+import dbus
+import time
+from handler import CallHandler
 
 BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY, \
 BOOT_SET_TIMEOUT, BOOT_UNUSED, BOOT_REMOVE_UNUSED, BOOT_REMOVE_UNUSED_LAST = xrange(1, 10)
 
 class widgetEntryList(QWidget):
-    def __init__(self, parent, comar_link):
+    def __init__(self, parent):
         QWidget.__init__(self, parent)
         self.parent = parent
-        
-        self.link = comar_link
         
         layout = QGridLayout(self, 1, 1, 6, 6)
         
@@ -71,7 +71,6 @@ class widgetEntryList(QWidget):
         self.spinTimeout = QSpinBox(self)
         self.spinTimeout.setMinValue(3)
         self.spinTimeout.setMaxValue(30)
-        self.spinTimeout.setEnabled(False)
         layout.addWidget(self.spinTimeout, 2, 3)
         
         self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
@@ -80,24 +79,27 @@ class widgetEntryList(QWidget):
         self.init()
         
     def init(self):
-        if self.parent.can_access:
-            self.toolbar.setEnabled(True)
-            self.listEntries.viewport().setEnabled(True)
-            self.checkSaved.setEnabled(True)
-        else:
-            self.toolbar.setEnabled(False)
-            self.listEntries.viewport().setEnabled(False)
-            self.checkSaved.setEnabled(False)
+        self.toolbar.setEnabled(True)
+        self.listEntries.viewport().setEnabled(True)
+        self.checkSaved.setEnabled(True)
     
     def slotCheckSaved(self):
+        def handler():
+            self.parent.queryEntries()
+        ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
+        ch.registerDone(handler)
         if self.checkSaved.isChecked():
-            self.link.call("Boot.Loader.setOptions", {"default": "saved"})
+            ch.call("default", "saved")
         else:
-            self.link.call("Boot.Loader.setOptions", {"default": "0"})
+            ch.call("default", "0")
     
     def slotTimeoutChanged(self, value):
+        def handler():
+            self.spinTimeout.setEnabled(True)
         self.spinTimeout.setEnabled(False)
-        self.link.call("Boot.Loader.setOptions", {"timeout": value}, id=BOOT_SET_TIMEOUT)
+        ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
+        ch.registerDone(handler)
+        ch.call("timeout", str(value))
     
     def slotAddEntry(self):
         self.parent.widgetEditEntry.newEntry()
@@ -109,12 +111,11 @@ class widgetEntryList(QWidget):
         pass
 
 class widgetEditEntry(QWidget):
-    def __init__(self, parent, comar_link):
+    def __init__(self, parent):
         QWidget.__init__(self, parent)
         self.parent = parent
         self.systems = self.parent.systems
         
-        self.link = comar_link
         self.saved = False
         self.fields = {}
         
@@ -256,12 +257,9 @@ class widgetEditEntry(QWidget):
                     if confirm_uninstall == KMessageBox.Yes:
                         uninstall = "yes"
             self.parent.widgetEntries.listEntries.setEnabled(False)
-            args = {
-                "index": index,
-                "title": title,
-                "uninstall": uninstall,
-            }
-            self.link.call("Boot.Loader.removeEntry", args)
+
+            ch = self.parent.callMethod("removeEntry", "tr.org.pardus.comar.boot.loader.removeentry")
+            ch.call(index, title, uninstall)
     
     def resetEntry(self):
         self.entry = None
@@ -312,9 +310,14 @@ class widgetEditEntry(QWidget):
         os_type = self.listSystem.getSelected()
         
         args = {
-            "os_type": os_type,
             "title": unicode(self.editTitle.text()),
+            "os_type": os_type,
+            "root": "",
+            "kernel": "",
+            "initrd": "",
+            "options": "",
             "default": default,
+            "index": -1,
         }
         
         for label in self.fields:
@@ -323,21 +326,33 @@ class widgetEditEntry(QWidget):
                 args[label] = value
         
         if self.entry:
-            args["index"] = self.entry["index"]
+            args["index"] = int(self.entry["index"])
         
         self.saved = True
-        self.link.call("Boot.Loader.setEntry", args, id=BOOT_SET_ENTRY)
+        
+        def handlerError(exception):
+            self.parent.widgetEditEntry.saved = False
+            KMessageBox.error(self, unicode(exception), i18n("Failed"))
+            self.parent.widgetEditEntry.buttonOK.setEnabled(True)
+        def handler():
+            self.parent.widgetEditEntry.saved = False
+            self.parent.queryEntries()
+            self.parent.widgetEditEntry.slotExit()
+        ch = self.parent.callMethod("setEntry", "tr.org.pardus.comar.boot.loader.set")
+        ch.registerDone(handler)
+        ch.registerError(handlerError)
+        ch.call(args["title"], args["os_type"], args["root"], args["kernel"], args["initrd"], args["options"], args["default"], args["index"])
     
     def slotExit(self):
         self.resetEntry()
         self.parent.showScreen("Entries")
 
 class widgetUnused(QWidget):
-    def __init__(self, parent, comar_link):
+    def __init__(self, parent):
         QWidget.__init__(self, parent)
         self.parent = parent
         
-        self.link = comar_link
+       # self.link = comar_link
         
         layout = QGridLayout(self, 1, 1, 11, 6)
         
@@ -376,7 +391,15 @@ class widgetUnused(QWidget):
         self.listUnused()
     
     def listUnused(self):
-        self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
+        def handler(versions):
+            self.listKernels.clear()
+            for version in versions:
+                if version.strip():
+                    self.listKernels.insertItem(version)
+            self.slotKernels()
+        ch = self.parent.callMethod("listUnused", "tr.org.pardus.comar.boot.loader.get")
+        ch.registerDone(handler)
+        ch.call()
     
     def slotKernels(self):
         item = self.listKernels.firstItem()
@@ -421,11 +444,14 @@ class widgetUnused(QWidget):
                 item = item.next()
             if len(versions):
                 self.listBusy = True
+                def handler(isLast=False):
+                    if isLast:
+                        self.listBusy = False
+                        self.listUnused()
                 for version in versions:
-                    call_id = BOOT_REMOVE_UNUSED
-                    if version == versions[-1]:
-                        call_id = BOOT_REMOVE_UNUSED_LAST
-                    self.link.call("Boot.Loader.removeUnused", {"version": version}, id=call_id)
+                    ch = self.parent.callMethod("removeUnused", "tr.org.pardus.comar.boot.loader.removeunused")
+                    ch.registerDone(handler, version == versions[-1])
+                    ch.call(version)
     
     def slotExit(self):
         self.parent.showScreen("Entries")
@@ -434,116 +460,144 @@ class widgetMain(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
         
-        link = comar.Link()
-        link.localize()
-        self.link = link
-        self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
-        self.connect(self.notifier, SIGNAL("activated(int)"), self.slotComar)
+        #self.link = None
+        self.dia = None
+        
+        if not self.openBus():
+            sys.exit(1)
         
         self.entries = []
         self.options = {}
         self.systems = {}
         self.screens = []
-        self.can_access = False
         
         layout = QGridLayout(self, 1, 1, 0, 0)
         self.stack = QWidgetStack(self)
         layout.addWidget(self.stack, 0, 0)
         
-        self.widgetEntries = widgetEntryList(self, self.link)
+        self.widgetEntries = widgetEntryList(self)
         self.stack.addWidget(self.widgetEntries)
         self.screens.append("Entries")
         
-        self.widgetEditEntry = widgetEditEntry(self, self.link)
+        self.widgetEditEntry = widgetEditEntry(self)
         self.stack.addWidget(self.widgetEditEntry)
         self.screens.append("EditEntry")
         
-        self.widgetUnused = widgetUnused(self, self.link)
+        self.widgetUnused = widgetUnused(self)
         self.stack.addWidget(self.widgetUnused)
         self.screens.append("Unused")
         
-        self.link.ask_notify("Boot.Loader.changed")
-        self.link.can_access("Boot.Loader.setEntry", id=BOOT_ACCESS)
-        self.link.call("Boot.Loader.getOptions", id=BOOT_OPTIONS)
-        self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-        self.link.call("Boot.Loader.listSystems", id=BOOT_SYSTEMS)
+        self.setup()
+    
+    def openBus(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException:
+            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            return False
+        return True
+    
+    def setup(self):
+        self.queryOptions()
+        self.querySystems()
+        self.queryEntries()
+        self.listenSignals()
+    
+    def callMethod(self, method, action):
+        ch = CallHandler("grub", "Boot.Loader", method,
+                         action,
+                         self.winId(),
+                         self.busSys, self.busSes)
+        ch.registerError(self.comarError)
+        ch.registerAuthError(self.comarError)
+        ch.registerDBusError(self.busError)
+        return ch
+    
+    def busError(self, exception):
+        if self.dia:
+            return
+        self.dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
+        self.dia.progressBar().setTotalSteps(50)
+        self.dia.progressBar().setTextEnabled(False)
+        self.dia.show()
+        start = time.time()
+        while time.time() < start + 5:
+            if self.openBus():
+                self.dia.close()
+                self.setup()
+                return
+            if self.dia.wasCancelled():
+                break
+            percent = (time.time() - start) * 10
+            self.dia.progressBar().setProgress(percent)
+            qApp.processEvents(100)
+        self.dia.close()
+        KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
+        sys.exit()
+    
+    def comarError(self, exception):
+        print "Error"
+        print exception
+    
+    def listenSignals(self):
+        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Boot.Loader", member_keyword="signal", path_keyword="path")
+    
+    def handleSignals(self, *args, **kwargs):
+        path = kwargs["path"]
+        signal = kwargs["signal"]
+        if not path.startswith("/package/"):
+            return
+        if signal == "Changed":
+            if args[0]== "entry":
+                self.queryEntries()
+                if self.widgetEditEntry.entry and not self.widgetEditEntry.saved:
+                    KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
+                    self.widgetEditEntry.slotExit()
+                if not self.widgetUnused.listBusy:
+                    self.widgetUnused.listUnused()
+
     
     def showScreen(self, label):
         screen = self.screens.index(label)
         self.stack.raiseWidget(screen)
     
-    def slotComar(self, sock):
-        reply = self.link.read_cmd()
-        if reply.command == "notify":
-            self.widgetEntries.listEntries.setEnabled(False)
-            if reply.data in ["entry", "option"]:
-                self.link.call("Boot.Loader.listEntries", id=BOOT_ENTRIES)
-                if self.widgetEditEntry.entry and not self.widgetEditEntry.saved:
-                    KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
-                    self.widgetEditEntry.slotExit()
-            if reply.data == "entry" and not self.widgetUnused.listBusy:
-                self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
-        elif reply.command == "result":
-            if reply.id == BOOT_ACCESS:
-                self.can_access = True
-                self.widgetEntries.init()
-            elif reply.id == BOOT_ENTRIES:
-                self.widgetEntries.listEntries.clear()
-                self.entries = []
-                for entry in reply.data.split("\n\n"):
-                    entry = dict([x.split(" ", 1) for x in entry.split("\n")])
-                    index = int(entry["index"])
-                    pardus = entry["os_type"] == "linux" and getRoot() == entry["root"]
-                    self.entries.append(entry)
-                    item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), entry["root"],  pardus, entry)
-                self.widgetEntries.listEntries.setEnabled(True)
-            elif reply.id == BOOT_SYSTEMS:
-                self.systems = {}
-                for system in reply.data.split("\n"):
-                    name, value = system.split(" ", 1)
-                    label, fields = value.split(",", 1)
-                    self.systems[name] = (label, fields.split(","))
-            elif reply.id == BOOT_OPTIONS:
-                for option in reply.data.split("\n"):
-                    key, value = option.split(" ", 1)
-                    self.options[key] = value
-                # Default entry
-                if self.options["default"] == "saved":
-                    self.widgetEntries.checkSaved.setChecked(True)
-                # Timeout
-                timeout = int(self.options["timeout"])
-                self.widgetEntries.spinTimeout.setValue(timeout)
-                if self.can_access:
-                    self.widgetEntries.spinTimeout.setEnabled(True)
-            elif reply.id == BOOT_SET_ENTRY:
-                self.widgetEditEntry.saved = False
-                self.widgetEntries.listEntries.setEnabled(False)
-                self.widgetEditEntry.slotExit()
-            elif reply.id == BOOT_SET_TIMEOUT:
-                if self.can_access:
-                    self.widgetEntries.spinTimeout.setEnabled(True)
-            elif reply.id == BOOT_UNUSED:
-                self.widgetUnused.listKernels.clear()
-                for version in reply.data.split("\n"):
-                    if version.strip():
-                        self.widgetUnused.listKernels.insertItem(version)
-                self.widgetUnused.slotKernels()
-            elif reply.id == BOOT_REMOVE_UNUSED_LAST:
-                self.widgetUnused.listBusy = False
-                self.link.call("Boot.Loader.listUnused", id=BOOT_UNUSED)
-        elif reply.command == "fail":
-            if reply.id == BOOT_SET_ENTRY:
-                self.widgetEditEntry.saved = False
-                KMessageBox.error(self, unicode(reply.data), i18n("Failed"))
-                self.widgetEditEntry.buttonOK.setEnabled(True)
-            elif reply.id == BOOT_SET_TIMEOUT:
-                if self.can_access:
-                    self.widgetEntries.spinTimeout.setEnabled(True)
-                KMessageBox.error(self, unicode(reply.data), i18n("Failed"))
-            else:
-                KMessageBox.error(self, "%s failed: %s" % (reply.id, unicode(reply.data)), i18n("Failed"))
-        elif reply.command == "denied":
-            if reply.id == BOOT_ACCESS:
-                self.can_access = False
-                self.widgetEntries.init()
-                KMessageBox.error(self, i18n("You are not allowed to edit boot loader settings."), i18n("Access Denied"))
+    def queryOptions(self):
+        def handler(options):
+            for key, value in options.iteritems():
+                self.options[key] = value
+            # Default entry
+            if self.options["default"] == "saved":
+                print self.options
+                self.widgetEntries.checkSaved.setChecked(True)
+            # Timeout
+            timeout = int(self.options["timeout"])
+            self.widgetEntries.spinTimeout.setValue(timeout)
+        ch = self.callMethod("getOptions", "tr.org.pardus.comar.boot.loader.get")
+        ch.registerDone(handler)
+        ch.call()
+    
+    def querySystems(self):
+        def handler(systems):
+            self.systems = {}
+            for name, info in systems.iteritems():
+                label, fields_req, fields_opt = info
+                fields = fields_req + fields_opt
+                self.systems[name] = (label, fields)
+        ch = self.callMethod("listSystems", "tr.org.pardus.comar.boot.loader.get")
+        ch.registerDone(handler)
+        ch.call()
+    
+    def queryEntries(self):
+        def handler(entries):
+            self.widgetEntries.listEntries.clear()
+            self.entries = []
+            for entry in entries:
+                index = int(entry["index"])
+                pardus = entry["os_type"] == "linux" and getRoot() == entry["root"]
+                self.entries.append(entry)
+                item = self.widgetEntries.listEntries.add(self.widgetEditEntry, index, unicode(entry["title"]), entry["root"],  pardus, entry)
+        self.widgetEntries.listEntries.setEnabled(True)
+        ch = self.callMethod("listEntries", "tr.org.pardus.comar.boot.loader.get")
+        ch.registerDone(handler)
+        ch.call()
