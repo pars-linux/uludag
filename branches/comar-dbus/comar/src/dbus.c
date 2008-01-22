@@ -618,19 +618,25 @@ dbus_listen()
     const char *unique_name;
 
     dbus_error_init(&err);
-    conn = dbus_bus_get(DBUS_BUS_SYSTEM, &err);
+    // conn = dbus_bus_get(DBUS_BUS_SYSTEM, &err);
+    conn = dbus_connection_open_private(cfg_bus_socket, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Connection Error (%s)\n", err.message);
         dbus_error_free(&err);
         return;
     }
 
+    if (!dbus_bus_register(conn, &err)) {
+        log_error("Register Error (%s)\n", err.message);
+        dbus_error_free(&err);
+        goto out;
+    }
+
     ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Name Error (%s)\n", err.message);
         dbus_error_free(&err);
-        dbus_connection_unref(conn);
-        return;
+        goto out;
     }
 
     unique_name = dbus_bus_get_unique_name(conn);
@@ -671,5 +677,8 @@ dbus_listen()
                 break;
         }
     }
+
+out:
+    dbus_connection_close(conn);
     dbus_connection_unref(conn);
 }

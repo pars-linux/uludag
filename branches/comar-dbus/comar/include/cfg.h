@@ -7,6 +7,7 @@
 ** option) any later version. Please read the COPYING file.
 */
 
+extern char *cfg_bus_socket;
 extern char *cfg_bus_name;
 extern char *cfg_bus_interface;
 extern char *cfg_config_dir;

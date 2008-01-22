@@ -18,6 +18,9 @@
 #include "log.h"
 #include "utility.h"
 
+//! Bus socket
+char *cfg_bus_socket = "unix:path=/var/run/dbus/system_bus_socket";
+
 //! Bus name
 char *cfg_bus_name = "tr.org.pardus.comar";
 
@@ -68,6 +71,7 @@ static struct option longopts[] = {
     { "configdir", required_argument, NULL, 'c' },
     { "datadir", required_argument, NULL, 'd' },
     { "debug", required_argument, NULL, 'g' },
+    { "socket", required_argument, NULL, 's' },
     { "timeout", required_argument, NULL, 't' },
     { "print", 0, NULL, 'p' },
     { "help", 0, NULL, 'h' },
@@ -76,7 +80,7 @@ static struct option longopts[] = {
 };
 
 //! Short options
-static char *shortopts = "b:c:d:g:t:phv";
+static char *shortopts = "b:c:d:g:s:t:phv";
 
 //! Help message
 static void
@@ -93,6 +97,8 @@ print_usage(const char *name)
         "                       (default is %s)\n"
         " -g, --debug    [FLAG] Set debug flag.\n"
         "                       (Flags: dbus, proc, perf, full)\n"
+        " -s, --socket   [SOCK] DBus socket address.\n"
+        "                       (Default is %s)\n"
         " -t, --timeout  [SECS] Shutdown after [SECS] seconds with no action.\n"
         "                       (Default is %d, 0 disables timeout)\n"
         " -p, --print           Print debug messages to console.\n"
@@ -103,6 +109,7 @@ print_usage(const char *name)
         cfg_bus_name,
         cfg_config_dir,
         cfg_data_dir,
+        cfg_bus_socket,
         cfg_timeout
     );
 }
@@ -151,6 +158,9 @@ cfg_init(int argc, char *argv[])
                     if (strstr(optarg, logflags[j].flag))
                         cfg_log_flags |= logflags[j].value;
                 }
+                break;
+            case 's':
+                cfg_bus_socket = strdup(optarg);
                 break;
             case 't':
                 cfg_timeout = strtol(optarg, NULL, 0);
