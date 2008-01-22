@@ -66,6 +66,7 @@ app_data = [
     'src/icons/windows.png',
     'src/icons/other.png',
     'src/utility.py',
+    'src/handler.py',
     'src/ui_elements.py',
     'src/boot-manager.desktop',
     'src/help',
