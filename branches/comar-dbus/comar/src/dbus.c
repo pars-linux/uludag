@@ -503,7 +503,7 @@ dbus_policy_check(const char *sender, const char *interface, const char *method)
 {
     /*!
      *
-     * @sener Bus name of the sender
+     * @sender Bus name of the sender
      * @interface Interface
      * @method Method
      * @return 1 if access granted, 0 if access denied
