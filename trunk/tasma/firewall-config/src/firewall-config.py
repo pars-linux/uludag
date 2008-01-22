@@ -21,12 +21,14 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
+import dbus.mainloop.qt3
+
 # UI
 import firewall
 import dialog
 
-# COMAR
-import comar
+# Dbus
+import dbus
 
 # Rules
 import rules
@@ -431,6 +433,8 @@ class MainApplication(programbase):
 # This is the entry point used when running this module outside of kcontrol.
 def main():
     global kapp
+    
+    dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv, about_data)
