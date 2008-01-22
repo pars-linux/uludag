@@ -28,7 +28,9 @@ class PartitionType:
     # is equal
     # @param rhs: PartitionType
     def __eq__(self, rhs):
-        return self.filesystem == rhs.filesystem
+        if rhs:
+            return self.filesystem == rhs.filesystem
+        return False
 
 ##
 # not an intuitive name but need group home and root :(

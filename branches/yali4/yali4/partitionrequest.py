@@ -199,7 +199,7 @@ class RequestList(list):
     # remove a request
     def remove(self, i):
         list.remove(self, i)
-        
+
 
     ##
     # remove all requests
@@ -248,7 +248,7 @@ class PartRequest:
     # set the partition to apply request
     def setPartition(self, partition):
         self._partition = partition
-    
+
     ##
     # get partition
     def partition(self):
@@ -328,7 +328,7 @@ class MountRequest(PartRequest):
             os.mkdir(target)
 
         yali4.sysutils.mount(source, target, filesystem)
-        
+
         mtab_entry = "%s %s %s rw 0 0\n" % (source,
                                             target,
                                             filesystem)
@@ -336,7 +336,6 @@ class MountRequest(PartRequest):
         #FIXME: use logging system
 #        print mtab_entry
 
-        
         PartRequest.applyRequest(self)
 
 
@@ -359,7 +358,7 @@ class SwapFileRequest(PartRequest):
             yali4.sysutils.swap_as_file(consts.swap_file_path, 300)
         else:
             yali4.sysutils.swap_as_file(consts.swap_file_path, 600)
-        
+
         PartRequest.applyRequest(self)
 
 

@@ -222,14 +222,14 @@ class DiskList(QtGui.QWidget):
                 partition.setPartedFlags(flags)
                 partition.setFileSystemType(t.filesystem)
             try:
-                ctx.partrequests.append(request.MountRequest(partition, t))
-                ctx.partrequests.append(request.LabelRequest(partition, t))
-
                 if self.partEdit.ui.formatCheck.isChecked():
                     ctx.partrequests.append(request.FormatRequest(partition, t))
                 else:
                     # remove previous format requests for partition (if there are any)
                     ctx.partrequests.removeRequest(partition, request.formatRequestType)
+
+                ctx.partrequests.append(request.MountRequest(partition, t))
+                ctx.partrequests.append(request.LabelRequest(partition, t))
 
             except request.RequestException, e:
                 self.partEdit.ui.information.setText("%s" % e)
@@ -379,6 +379,18 @@ class DiskItem(QtGui.QWidget):
             return 8
         return _p
 
+
+def getPartitionType(part):
+    """ Get partition type from request list """
+    for pt in partitonTypes.values():
+
+        # We use MountRequest type for search keyword 
+        # which is 1 defined in partitionrequest.py
+        req = ctx.partrequests.searchPartTypeAndReqType(pt, 1)
+        if req:
+            if req.partition() == part:
+                return pt
+
 class PartEdit(QtGui.QWidget):
 
     currentPart = None
@@ -392,6 +404,9 @@ class PartEdit(QtGui.QWidget):
     def updateContent(self):
         part = self.currentPart
         self.ui.deletePartition.setVisible(True)
+
+        print getPartitionType(part)
+
         if part._parted_type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
             self.ui.partitionSize.setEnabled(True)

@@ -36,7 +36,6 @@ class Partition:
         self._parted_type = parteddata.partitionType
         self._fs_ready = fs_ready
 
-
     def getFormatted(self):
         return self.isFileSystemReady()
 
