@@ -603,6 +603,27 @@ dbus_method_call()
     csl_end();
 }
 
+//! Message handler
+static DBusHandlerResult
+dbus_handler(DBusConnection *conn, DBusMessage *msg, void *data)
+{
+    const char *sender = dbus_message_get_sender(msg);
+    const char *interface = dbus_message_get_interface(msg);
+    const char *method = dbus_message_get_member(msg);
+
+    switch (dbus_message_get_type(msg)) {
+        case DBUS_MESSAGE_TYPE_METHOD_CALL:
+            log_debug(LOG_DBUS, "DBus method call [%s.%s] from [%s]\n", interface, method, sender);
+            proc_fork(dbus_method_call, "ComarJob", conn, msg);
+            break;
+        case DBUS_MESSAGE_TYPE_SIGNAL:
+            log_debug(LOG_DBUS, "DBus signal [%s.%s] from [%s]\n", interface, method, sender);
+            break;
+    }
+
+    return DBUS_HANDLER_RESULT_HANDLED;
+}
+
 //! Starts a server and listens for calls/signals
 void
 dbus_listen()
@@ -616,13 +637,10 @@ dbus_listen()
     int size;
 
     DBusConnection *conn;
-    DBusMessage *msg;
     DBusError err;
-    int ret;
     const char *unique_name;
 
     dbus_error_init(&err);
-    // conn = dbus_bus_get(DBUS_BUS_SYSTEM, &err);
     conn = dbus_connection_open_private(cfg_bus_socket, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Connection Error (%s)\n", err.message);
@@ -636,7 +654,7 @@ dbus_listen()
         goto out;
     }
 
-    ret = dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING, &err);
+    dbus_bus_request_name(conn, cfg_bus_name, DBUS_NAME_FLAG_REPLACE_EXISTING, &err);
     if (dbus_error_is_set(&err)) {
         log_error("Name Error (%s)\n", err.message);
         dbus_error_free(&err);
@@ -646,10 +664,15 @@ dbus_listen()
     unique_name = dbus_bus_get_unique_name(conn);
     log_info("Listening on %s (%s)...\n", cfg_bus_name, unique_name);
 
+    dbus_connection_add_filter(conn, dbus_handler, NULL, NULL);
+
     while (1) {
         // non blocking read of the next available message
         dbus_connection_read_write_dispatch(conn, 0);
-        msg = dbus_connection_pop_message(conn);
+
+        while (dbus_connection_dispatch(conn) == DBUS_DISPATCH_DATA_REMAINS);
+
+        proc_listen(&p, &size, 0, 500);
 
         if (proc_check_idle() == 1) {
             log_info("Service was idle for %d second(s), closing daemon...\n", cfg_timeout);
@@ -660,26 +683,6 @@ dbus_listen()
         if (shutdown_activated) {
             log_info("Shutdown requested.\n");
             break;
-        }
-
-        if (NULL == msg) {
-            proc_listen(&p, &size, 0, 500);
-            continue;
-        }
-
-        const char *sender = dbus_message_get_sender(msg);
-        const char *interface = dbus_message_get_interface(msg);
-        //const char *path = dbus_message_get_path(msg);
-        const char *method = dbus_message_get_member(msg);
-
-        switch (dbus_message_get_type(msg)) {
-            case DBUS_MESSAGE_TYPE_METHOD_CALL:
-                log_debug(LOG_DBUS, "DBus method call [%s.%s] from [%s]\n", interface, method, sender);
-                proc_fork(dbus_method_call, "ComarJob", conn, msg);
-                break;
-            case DBUS_MESSAGE_TYPE_SIGNAL:
-                log_debug(LOG_DBUS, "DBus signal [%s.%s] from [%s]\n", interface, method, sender);
-                break;
         }
     }
 
