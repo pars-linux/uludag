@@ -16,25 +16,41 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include <KUniqueApplication>
+#include <KAboutApplicationDialog>
 #include <KAboutData>
+#include <KAction>
 #include <KCmdLineArgs>
+#include <KMenu>
 #include <KSystemTrayIcon>
+#include <KUniqueApplication>
 
 int main (int argc, char *argv[])
 {
-KAboutData aboutData(
-    "knazar", 0,
-    ki18n("knazar"), KNAZAR_VERSION,
-    ki18n("KDE Nazar Application"),
-    KAboutData::License_GPL_V2,
-    ki18n("Copyright (c) 2008 TUBITAK/UEKAE"));
-KCmdLineArgs::init(argc, argv, &aboutData);
+    KAboutData aboutData(
+        "knazar", 0,
+        ki18n("knazar"), KNAZAR_VERSION,
+        ki18n("KDE Nazar Application"),
+        KAboutData::License_GPL_V2,
+        ki18n("Copyright (c) 2005 - 2008 TUBITAK/UEKAE"),
+        ki18n(""),
+        "http://www.pardus.org.tr",
+        "bilgi@pardus.org.tr");
+    aboutData.addAuthor(ki18n("S. Çağlar Onur"), ki18n("Author"), "caglar@pardus.org.tr");
+    aboutData.addAuthor(ki18n("Uğur Çetin"), ki18n("KDE4 porter"), "jnmbk@users.sourceforge.net");
+    KCmdLineArgs::init(argc, argv, &aboutData);
 
-if (!KUniqueApplication::start())
-    return 0;
-KUniqueApplication app;
-KSystemTrayIcon icon("knazar");
-icon.show();
-return app.exec();
+    if (!KUniqueApplication::start())
+        return 0;
+    KUniqueApplication app;
+
+    //TODO: move following codes to knazar.cpp
+    KSystemTrayIcon icon("knazar");
+    KAction aboutAction("about", &icon);
+    aboutAction.setText(i18n("About KNazar"));
+    KAboutApplicationDialog aboutApplicationDialog(&aboutData);
+    aboutAction.connect(&aboutAction, SIGNAL(triggered(bool)), &aboutApplicationDialog, SLOT(show()));
+    icon.contextMenu()->addAction(&aboutAction);
+    icon.show();
+
+    return app.exec();
 }
