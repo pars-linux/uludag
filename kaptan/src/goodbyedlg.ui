@@ -40,7 +40,7 @@
                 <cstring>tasmaButton</cstring>
             </property>
             <property name="text">
-                <string>Start Tasma</string>
+                <string>Start Pardus Configuration Center (Tasma)</string>
             </property>
         </widget>
         <widget class="QLabel" row="1" column="0">
