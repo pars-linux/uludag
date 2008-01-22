@@ -647,7 +647,8 @@ dbus_listen()
     log_info("Listening on %s (%s)...\n", cfg_bus_name, unique_name);
 
     while (1) {
-        dbus_connection_read_write(conn, 0);
+        // non blocking read of the next available message
+        dbus_connection_read_write_dispatch(conn, 0);
         msg = dbus_connection_pop_message(conn);
 
         if (proc_check_idle() == 1) {
