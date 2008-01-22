@@ -668,7 +668,7 @@ dbus_listen()
 
     while (1) {
         // non blocking read of the next available message
-        dbus_connection_read_write_dispatch(conn, 0);
+        dbus_connection_read_write_dispatch(conn, 500);
 
         while (dbus_connection_dispatch(conn) == DBUS_DISPATCH_DATA_REMAINS);
 
