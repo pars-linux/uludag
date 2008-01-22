@@ -1,0 +1,6 @@
+* port to KDE4
+** Use cmake instead of scons
+** use KSystemTrayIcon and its own baloon
+** add DBUS support
+** add install instructions in cmake lists
+** update language files

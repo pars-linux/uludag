@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005, 2007 by TUBITAK/UEKAE                                   *
+ *   Copyright (C) 2005 - 2008 by TUBITAK/UEKAE                            *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -16,43 +16,25 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
+#include <KUniqueApplication>
+#include <KAboutData>
+#include <KCmdLineArgs>
+#include <KSystemTrayIcon>
 
-#include "knazar.h"
-
-#include <kuniqueapplication.h>
-#include <kaboutdata.h>
-#include <kcmdlineargs.h>
-#include <klocale.h>
-
-static const char description[] = I18N_NOOP("KDE Nazar Application");
-
-static const char version[] = "0.2";
-
-static KCmdLineOptions options[] =
+int main (int argc, char *argv[])
 {
-	KCmdLineLastOption
-};
+KAboutData aboutData(
+    "knazar", 0,
+    ki18n("knazar"), KNAZAR_VERSION,
+    ki18n("KDE Nazar Application"),
+    KAboutData::License_GPL_V2,
+    ki18n("Copyright (c) 2008 TUBITAK/UEKAE"));
+KCmdLineArgs::init(argc, argv, &aboutData);
 
-int main(int argc, char **argv)
-{
-	KAboutData about("knazar", I18N_NOOP("knazar"), version, description,
-	KAboutData::License_GPL, "(C) 2005, 2007 TUBITAK/UEKAE", 0, 0, "bilgi@pardus.org.tr");
-	about.addAuthor( "S.Çağlar Onur", 0, "caglar@pardus.org.tr" );
-
-	KCmdLineArgs::init(argc, argv, &about);
-	KCmdLineArgs::addCmdLineOptions( options );
-
-	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-
-	KUniqueApplication app;
-
-	knazar *mainWin = new knazar();
-
-	app.setMainWidget( mainWin );
-	mainWin->show();
-
-	args->clear();
-
-	return app.exec();
+if (!KUniqueApplication::start())
+    return 0;
+KUniqueApplication app;
+KSystemTrayIcon icon("knazar");
+icon.show();
+return app.exec();
 }
-
