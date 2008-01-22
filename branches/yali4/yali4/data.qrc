@@ -14,6 +14,7 @@
         <file>gui/pics/iconDone.png</file>
         <file>gui/pics/iconFailed.png</file>
         <file>gui/pics/iconFree.png</file>
+        <file>gui/pics/iconInstall.png</file>
         <file>gui/pics/iconKeyboard.png</file>
         <file>gui/pics/iconPartition.png</file>
         <file>gui/pics/iconUser.png</file>
@@ -58,6 +59,5 @@
         <file>images/spinup_pressed.png</file>
         <file>images/up_arrow.png</file>
         <file>images/up_arrow_disabled.png</file>
-        <file>qss/pagefold.qss</file>
     </qresource>
 </RCC>

@@ -10,27 +10,27 @@
 # Please read the COPYING file.
 #
 
-import glob
 import os
-from os.path import join
-from qt import *
+import glob
 
 import gettext
 __trans = gettext.translation('yali', fallback=True)
 _ = __trans.ugettext
 
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
 import pisi.ui
 
-import yali.pisiiface
-import yali.fstab
-import yali.postinstall
-import yali.sysutils
-import yali.localeutils
-import yali.partitionrequest as request
-from yali.gui.Ui.installwidget import InstallWidget
-from yali.gui.ScreenWidget import ScreenWidget
-import yali.gui.context as ctx
-
+import yali4.pisiiface
+import yali4.fstab
+import yali4.postinstall
+import yali4.sysutils
+import yali4.localeutils
+import yali4.partitionrequest as request
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.installwidget import Ui_InstallWidget
+import yali4.gui.context as ctx
 
 def iter_slide_pics():
     # load all pics
@@ -45,11 +45,12 @@ def iter_slide_pics():
             yield pic
 
 
-
 ##
 # Partitioning screen.
 class Widget(InstallWidget, ScreenWidget):
-
+    title = _('Installing system..')
+    desc = _('Installing approximately 30 minutes depending on hardware..')
+    icon = "iconInstall"
     help = _('''
 <font size="+2">Installation started</font>
 
@@ -74,11 +75,12 @@ Have fun!
 ''')
 
     def __init__(self, *args):
-        apply(InstallWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_InstallWidget()
+        self.ui.setupUi(self)
 
         self.timer = QTimer(self)
-        self.connect(self.timer, SIGNAL("timeout()"),
-                     self.slotChangePix)
+        QObject.connect(self.timer, SIGNAL("timeout()"),self.slotChangePix)
 
         self.iter_pics = iter_slide_pics()
 
@@ -91,10 +93,6 @@ Have fun!
 
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
-        # initialize pisi
-
         # start installer thread
         self.pkg_installer = PkgInstaller(self)
         self.pkg_installer.start()
@@ -118,7 +116,6 @@ Have fun!
             self.cur += 1
             self.progress.setProgress(self.cur)
             ctx.screens.processEvents()
-
 
     def customEvent(self, qevent):
         # User+1: pisi events
@@ -157,7 +154,7 @@ Have fun!
 
     def execute(self):
         # fill fstab
-        fstab = yali.fstab.Fstab()
+        fstab = yali4.fstab.Fstab()
         for req in ctx.partrequests:
             req_type = req.requestType()
             if req_type == request.mountRequestType:
@@ -170,41 +167,41 @@ Have fun!
                 # TODO: consider merging mountoptions in filesystem.py
                 opts = ",".join([pt.filesystem.mountOptions(), pt.mountoptions])
 
-                e = yali.fstab.FstabEntry(path, mountpoint, fs, opts)
+                e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
                 fstab.insert(e)
             elif req_type == request.swapFileRequestType:
                 path = "/" + ctx.consts.swap_file_name
                 mountpoint = "none"
                 fs = "swap"
                 opts = "sw"
-                e = yali.fstab.FstabEntry(path, mountpoint, fs, opts)
+                e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
                 fstab.insert(e)
 
         fstab.close()
 
         # Configure Pending...
         # run baselayout's postinstall first
-        yali.postinstall.initbaselayout()
+        yali4.postinstall.initbaselayout()
         # postscripts depend on 03locale...
-        yali.localeutils.write_locale_from_cmdline()
+        yali4.localeutils.write_locale_from_cmdline()
 
-        yali.sysutils.chroot_comar() # run comar in chroot
+        yali4.sysutils.chroot_comar() # run comar in chroot
         self.info.setText(_("Configuring packages for your system!"))
         # re-initialize pisi with comar this time.
         ui = PisiUI_NoThread(notify_widget = self)
-        yali.pisiiface.initialize(ui=ui, with_comar=True)
+        yali4.pisiiface.initialize(ui=ui, with_comar=True)
         # show progress
         self.cur = 0
         self.progress.setProgress(self.cur)
-        self.total = yali.pisiiface.get_pending_len()
+        self.total = yali4.pisiiface.get_pending_len()
         self.progress.setTotalSteps(self.total)
         # run all pending...
-        yali.pisiiface.configure_pending()
-        ctx.debugger.log("execute :: yali.pisiiface.configure_pending() called")
+        yali4.pisiiface.configure_pending()
+        ctx.debugger.log("execute :: yali4.pisiiface.configure_pending() called")
 
         # Remove cd repository and install add real
-        yali.pisiiface.switch_to_pardus_repo()
-        yali.pisiiface.finalize()
+        yali4.pisiiface.switch_to_pardus_repo()
+        yali4.pisiiface.finalize()
 
         # stop slide show
         self.timer.stop()
@@ -215,7 +212,7 @@ Have fun!
         if self.hasErrors:
             return
 
-        yali.pisiiface.finalize()
+        yali4.pisiiface.finalize()
 
         # trigger next screen. will activate execute()
         ctx.screens.next()
@@ -223,8 +220,8 @@ Have fun!
 
     def installError(self, e):
         #self.info.setText(str(e))
-        import yali
-        import yali.gui.runner
+        import yali4
+        import yali4.gui.runner
 
         self.hasErrors = True
         err_str = _('''An error during the installation of packages occured.
@@ -235,7 +232,7 @@ Error:
 %s
 ''') % str(e)
 
-        yali.gui.runner.showException(yali.exception_fatal, err_str)
+        yali4.gui.runner.showException(yali4.exception_fatal, err_str)
 
 class PkgInstaller(QThread):
 
@@ -247,24 +244,24 @@ class PkgInstaller(QThread):
     def run(self):
         ui = PisiUI(self._widget)
 
-        yali.pisiiface.initialize(ui)
+        yali4.pisiiface.initialize(ui)
 
         # if exists use remote source repo
         # otherwise use cd as repo
         if ctx.installData.repoAddr:
-            yali.pisiiface.add_remote_repo(ctx.installData.repoName,ctx.installData.repoAddr)
+            yali4.pisiiface.add_remote_repo(ctx.installData.repoName,ctx.installData.repoAddr)
         else:
-            yali.pisiiface.add_cd_repo()
+            yali4.pisiiface.add_cd_repo()
 
         # show progress
-        total = yali.pisiiface.get_available_len()
+        total = yali4.pisiiface.get_available_len()
         # User+2: set total steps
         qevent = QCustomEvent(QEvent.User+2)
         qevent.setData(total)
         QApplication.postEvent(self._widget, qevent)
 
         try:
-            yali.pisiiface.install_all()
+            yali4.pisiiface.install_all()
         except Exception, e:
             # User+10: error
             qevent = QCustomEvent(QEvent.User+10)
