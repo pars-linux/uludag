@@ -568,7 +568,6 @@ class widgetMain(QWidget):
                 self.options[key] = value
             # Default entry
             if self.options["default"] == "saved":
-                print self.options
                 self.widgetEntries.checkSaved.setChecked(True)
             # Timeout
             timeout = int(self.options["timeout"])
