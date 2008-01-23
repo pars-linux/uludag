@@ -153,6 +153,7 @@ class DiskList(QtGui.QWidget):
             else:
                 return _("%d MB free") % mb
 
+
         # add the device to the list
         devstr = u"Disk %d (%s)" % (self.diskCount, dev.getName())
         freespace = dev.getFreeMB()
@@ -314,23 +315,46 @@ class DiskItem(QtGui.QWidget):
 
     def addPartition(self,name=None,data=None):
 
-        def color(fs_type):
-            colors = {"fat32":"#18D918",
-                      "hfs+" :"#C0A39E",
-                      "fat16":"#00FF00",
-                      "ext3" :"#7590AE",
-                      "ext2" :"#9DB8D2",
-                      "linux-swap(new)":"#C1665A"}
-            if colors.has_key(fs_type):
-                return colors[fs_type]
-            return "#FFF79E"
+        def getFSMeta(fs_type):
+
+            metaTypes = {"fat32":{"bgcolor":"#18D918",
+                                  "fgcolor":"#000000",
+                                  "icon"   :"windows"},
+                         "hfs+" :{"bgcolor":"#C0A39E",
+                                  "fgcolor":"#000000",
+                                  "icon"   :"other"},
+                         "fat16":{"bgcolor":"#00FF00",
+                                  "fgcolor":"#000000",
+                                  "icon"   :"windows"},
+                         "ext3" :{"bgcolor":"#7590AE",
+                                  "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"},
+                         "ext2" :{"bgcolor":"#9DB8D2",
+                                  "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"},
+               "linux-swap(new)":{"bgcolor":"#C1665A",
+                                  "fgcolor":"#FFFFFF",
+                                  "icon"   :"linux"}}
+            if metaTypes.has_key(fs_type):
+                return metaTypes[fs_type]
+
+            return {"bgcolor":"#FFF79E",
+                    "fgcolor":"#000000",
+                    "icon"   :"other"}
 
         partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
         if data._parted_type == parteddata.freeSpaceType:
             partition.setStyleSheet("background-image:none;")
         else:
-            partition.setStyleSheet("background-color:%s;" % color(data.getFSName()))
+            meta = getFSMeta(data.getFSName())
+            if getPartitionType(data):
+                icon = "parduspart"
+            else:
+                icon = meta["icon"]
+            partition.setIcon(QtGui.QIcon(":/gui/pics/%s.png" % icon))
+            partition.setIconSize(QSize(32,32))
+            partition.setStyleSheet("background-color:%s;color:%s" % (meta["bgcolor"],meta["fgcolor"]))
         partition.setToolTip(_("""<b>Path:</b> %s<br>
         <b>Size:</b> %s<br>
         <b>FileSystem:</b> %s""") % (data.getPath(),data.getSizeStr(),data.getFSName()))
@@ -404,8 +428,6 @@ class PartEdit(QtGui.QWidget):
     def updateContent(self):
         part = self.currentPart
         self.ui.deletePartition.setVisible(True)
-
-        print getPartitionType(part)
 
         if part._parted_type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
