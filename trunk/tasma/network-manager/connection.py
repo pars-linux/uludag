@@ -152,7 +152,6 @@ class Scanner(QPopupMenu):
         if self.parent.link.script != script:
             return
         self.view.clear()
-        remotes = ""
         if not remotes == "":
             for remote in remotes.split("\n"):
                 ScanItem(self.view, remote)
