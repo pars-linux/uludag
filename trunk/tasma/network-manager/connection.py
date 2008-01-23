@@ -20,7 +20,7 @@ from comariface import comlink
 class WirelessTipper(QToolTip):
     def maybeTip(self, point):
         item = self.list.itemAt(point)
-        if item:
+        if item and item.info:
             self.tip(self.list.itemRect(item),
                 "<nobr>%s: %s</nobr><br><nobr>%s: %s</nobr><br><nobr>%s: %s</nobr>" %
                     (
@@ -116,6 +116,9 @@ class Scanner(QPopupMenu):
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
 
     def slotScanDouble(self, item):
+        if not item.info:
+            return
+        
         parent = self.parent
         parent.remote.setText(item.remote)
         parent.apmac = item.mac
@@ -149,6 +152,7 @@ class Scanner(QPopupMenu):
         if self.parent.link.script != script:
             return
         self.view.clear()
+        remotes = ""
         if not remotes == "":
             for remote in remotes.split("\n"):
                 ScanItem(self.view, remote)
