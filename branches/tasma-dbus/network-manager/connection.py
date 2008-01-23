@@ -20,7 +20,7 @@ from comariface import comlink
 class WirelessTipper(QToolTip):
     def maybeTip(self, point):
         item = self.list.itemAt(point)
-        if item:
+        if item and item.info:
             self.tip(self.list.itemRect(item),
                 "<nobr>%s: %s</nobr><br><nobr>%s: %s</nobr><br><nobr>%s: %s</nobr>" %
                     (
@@ -34,6 +34,11 @@ class ScanItem(QListViewItem):
     def __init__(self, parent, data):
         QListViewItem.__init__(self, parent)
         self.info = {}
+        
+        if not data:
+            self.setText(0, i18n("No remotes found."))
+            return
+        
         for key, value in data.iteritems():
             self.info[key] = value
         
@@ -109,6 +114,9 @@ class Scanner(QPopupMenu):
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
 
     def slotScanDouble(self, item):
+        if not item.info:
+            return
+        
         parent = self.parent
         parent.remote.setText(item.remote)
         parent.apmac = item.mac
@@ -126,7 +134,8 @@ class Scanner(QPopupMenu):
     
     def slotScanSelect(self):
         item = self.view.selectedItem()
-        self.scan_use_but.setEnabled(item != None)
+        if item.info:
+            self.scan_use_but.setEnabled(item != None)
     
     def slotScanUse(self):
         item = self.view.selectedItem()
@@ -141,8 +150,11 @@ class Scanner(QPopupMenu):
         if self.parent.link.script != script:
             return
         self.view.clear()
-        for remote in remotes:
-            ScanItem(self.view, remote)
+        if remotes:
+            for remote in remotes:
+                ScanItem(self.view, remote)
+        else:
+            ScanItem(self.view, None)
 
 
 class Settings(QWidget):
