@@ -453,6 +453,13 @@ class PartEdit(QtGui.QWidget):
     def updateContent(self):
         part = self.currentPart
         self.ui.deletePartition.setVisible(True)
+        self.ui.formatType.setCurrentIndex(0)
+
+        partitionType = getPartitionType(part)
+        if partitionType:
+            for i,j in partitionTypes.items():
+                if j == partitionType:
+                    self.ui.formatType.setCurrentIndex(i)
 
         if part._parted_type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
@@ -466,7 +473,6 @@ class PartEdit(QtGui.QWidget):
         self.ui.partitionSize.setMaximum(part.getMB()-1)
         self.ui.partitionSlider.setMaximum(part.getMB()-1)
         self.ui.partitionSize.setValue(part.getMB()-1)
-        self.ui.formatType.setCurrentIndex(0)
         self.ui.information.setText("")
         self.ui.partitionSize.setMinimum(10)
         self.ui.partitionSlider.setMinimum(10)
