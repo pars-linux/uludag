@@ -16,13 +16,12 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include <KAboutApplicationDialog>
+
 #include <KAboutData>
-#include <KAction>
 #include <KCmdLineArgs>
-#include <KMenu>
-#include <KSystemTrayIcon>
 #include <KUniqueApplication>
+
+#include "knazar.h"
 
 int main (int argc, char *argv[])
 {
@@ -42,14 +41,9 @@ int main (int argc, char *argv[])
     if (!KUniqueApplication::start())
         return 0;
     KUniqueApplication app;
+    app.setQuitOnLastWindowClosed(false);
 
-    //TODO: move following codes to knazar.cpp
-    KSystemTrayIcon icon("knazar");
-    KAction aboutAction("about", &icon);
-    aboutAction.setText(i18n("About KNazar"));
-    KAboutApplicationDialog aboutApplicationDialog(&aboutData);
-    aboutAction.connect(&aboutAction, SIGNAL(triggered(bool)), &aboutApplicationDialog, SLOT(show()));
-    icon.contextMenu()->addAction(&aboutAction);
+    Knazar icon(&aboutData);
     icon.show();
 
     return app.exec();

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005, 2007 by TUBITAK/UEKAE                                   *
+ *   Copyright (C) 2005 - 2008 by TUBITAK/UEKAE                            *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,120 +17,92 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+#include <KLocalizedString>
+#include <KMenu>
+#include <KMessageBox>
+#include <QIcon>
 
 #include "knazar.h"
+#include "knazaradaptor.h"
 
-#include <kglobal.h>
-#include <klocale.h>
-#include <kiconloader.h>
-#include <kmessagebox.h>
-#include <kpopupmenu.h>
-#include <kaction.h>
-#include <dcopclient.h>
-#include <kapp.h>
-#include <kiconeffect.h>
-#include <kwin.h>
-#include <kprocess.h>
-
-
-#include <qimage.h>
-#include <qtooltip.h>
-#include <qtimer.h>
-
-#include "knazarballoon.h"
-
-knazar::knazar()
-    : DCOPObject( "DCOPNazarIface" ), KSystemTray( 0, "knazar" )
+Knazar::Knazar(KAboutData *aboutData)
+    : KSystemTrayIcon("knazar")
 {
-	// Insert TrayIcon
-	trayIcon = KSystemTray::loadIcon( "knazar" );
-	setPixmap( trayIcon );
+    new KnazarAdaptor(this);
+    QDBusConnection dbus = QDBusConnection::sessionBus();
+    dbus.registerObject("/", this);
 
-	// Initialize and Register KNazar DCOP Interface so any KDE program can make Nazar easily
-	if ( !kapp->dcopClient()->isRegistered() )
-	{
-		kapp->dcopClient()->registerAs( "knazar" );
-		kapp->dcopClient()->setDefaultObject( objId() );
-	}
+    aboutApplicationDialog = new KAboutApplicationDialog(aboutData);
 
+    //Initialize actions
+    actionAbout = new KAction(KIcon("help-about"), i18n("About KNazar"), this);
+    actionProtect = new KAction(KIcon("flag-blue"), i18n("Protect"), this);
+    actionRelease = new KAction(KIcon("flag-red"), i18n("Release"), this);
 
-	// Build PopupMenu
-	KPopupMenu* menu = contextMenu();
+    // Connect actions
+    connect(actionAbout, SIGNAL(triggered(bool)), aboutApplicationDialog, SLOT(show()));
+    connect(actionProtect, SIGNAL(triggered(bool)), this, SLOT(protect_from_harmfull_looks()));
+    connect(actionRelease, SIGNAL(triggered(bool)), this, SLOT(release_the_protection()));
 
-	( new KAction( i18n( "Protect" ), "ledgreen", 0, this, SLOT( protect_from_harmfull_looks() ), this ) )->plug( menu );
-	( new KAction( i18n( "Release" ), "ledred", 0, this, SLOT( release_the_protection() ), this ) )->plug( menu );
-	menu->insertSeparator();
-	( new KAction( i18n( "About" ), "about", 0, this, SLOT( about() ), this ) )->plug( menu );
+    // Add them to menu
+    contextMenu()->addAction(actionProtect);
+    contextMenu()->addAction(actionRelease);
+    contextMenu()->addAction(actionAbout);
 
-	// Initialize variables
-	protection_working = true;
-	number_of_attacks = defated_attacks = 0;
-	QToolTip::add( this, i18n( "knazar - No Harmfull look allowed!" ));
+    // Initialize variables
+    protection_working = true;
+    number_of_attacks = defated_attacks = 0;
+    setToolTip(i18n( "knazar - No Harmfull look allowed!" ));
+    normalIcon = icon();
+    grayIcon.addPixmap(icon().pixmap(22, 22, QIcon::Disabled));
 }
 
 // Slots
-void knazar::protect_from_harmfull_looks()
+void Knazar::protect_from_harmfull_looks()
 {
-	if ( !is_protecting() )
-	{
-		KMessageBox::information( 0, i18n( "KNazar is starting to protect your Pardus Linux from harmfull looks..." ));
+    if (!is_protecting())
+    {
+        KMessageBox::information(0, i18n( "KNazar is starting to protect your Pardus Linux from harmfull looks..." ));
 
-		setPixmap( trayIcon );
-		protection_working = true;
-		QToolTip::add( this, i18n( "knazar - No Harmfull look allowed!" ));
-	}
+        setIcon(normalIcon);
+        protection_working = true;
+        setToolTip(i18n("knazar - No Harmfull look allowed!"));
+    }
 }
 
-void knazar::release_the_protection()
+void Knazar::release_the_protection()
 {
+    if ( is_protecting() )
+    {
+        KMessageBox::sorry( 0, i18n( "KNazar is stoping to protect your Pardus Linux from harmfull looks..." ));
 
-	if ( is_protecting() )
-	{
-		KMessageBox::sorry( 0, i18n( "KNazar is stoping to protect your Pardus Linux from harmfull looks..." ));
+        // Convert trayIcon to gray
+        setIcon(grayIcon);
 
-		// Convert trayIcon to gray
-		QImage iconImage = trayIcon.convertToImage();
-		KIconEffect::toGray( iconImage, 0.90 );
-		QPixmap convertedTrayIcon;
-		convertedTrayIcon.convertFromImage( iconImage );
-
-		setPixmap( convertedTrayIcon );
-		protection_working = false;
-		QToolTip::add( this, i18n( "knazar - You are completely demilitarized..." ));
-	}
+        protection_working = false;
+        setToolTip(i18n( "knazar - You are completely demilitarized..." ));
+    }
 }
 
-void knazar::send_nazar()
+void Knazar::send_nazar()
 {
-	++number_of_attacks;
+    ++number_of_attacks;
 
-	if ( is_protecting() )
-	{
-		++defated_attacks;
-		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar Received and eliminated successfuly</b></nobr><br><nobr></nobr></qt>" ), QString::null );
-	}
-	else
-		balloon = new KNazarBalloon( i18n( "<qt><nobr><b>Nazar Received and it HARMED!</b></nobr><br><nobr></nobr></qt>" ), QString::null );
-	
-	balloon->setAnchor( mapToGlobal( pos() ));
-	balloon->show();
-	
-	KWin::setOnAllDesktops( balloon->winId(), true );
-	
-	QToolTip::add(this, i18n( "knazar - %1 attacks received so far, %2 are defated and %3 are received...")
-					.arg( number_of_attacks)
-					.arg( defated_attacks )
-					.arg( number_of_attacks - defated_attacks ));
+    if ( is_protecting() )
+    {
+        ++defated_attacks;
+        showMessage(i18n("Nazar eliminated"), i18n("<qt><nobr><b>Nazar Received and eliminated successfuly</b></nobr><br><nobr></nobr></qt>"));
+    }
+    else
+        showMessage(i18n("Nazar harmed"), i18n("<qt><nobr><b>Nazar Received and it HARMED!</b></nobr><br><nobr></nobr></qt>"), QSystemTrayIcon::Critical);
+
+    setToolTip(i18n("knazar - %1 attacks received so far, %2 are defated and %3 are received...")
+                    .arg(number_of_attacks)
+                    .arg(defated_attacks)
+                    .arg(number_of_attacks - defated_attacks ));
 }
 
-bool knazar::is_protecting()
+bool Knazar::is_protecting()
 {
-	return protection_working;
+    return protection_working;
 }
-
-void knazar::about()
-{
-	KMessageBox::information( 0, i18n( "KNazar is a usefull part of the Pardus Linux" ));
-}
-
-#include "knazar.moc"

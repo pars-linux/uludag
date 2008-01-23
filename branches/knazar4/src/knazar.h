@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005, 2007 by TUBITAK/UEKAE                                   *
+ *   Copyright (C) 2005 - 2008 by TUBITAK/UEKAE                            *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,31 +17,36 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef _KNAZAR_H_
-#define _KNAZAR_H_
+#ifndef KNAZAR_H
+#define KNAZAR_H
 
-#include <ksystemtray.h>
-#include <qpixmap.h>
-#include "knazardcop.h"
+#include <KAboutApplicationDialog>
+#include <KAction>
+#include <KSystemTrayIcon>
 
-class KNazarBalloon;
-
-class knazar : public KSystemTray, virtual public DCOPNazarIface
+class Knazar : public KSystemTrayIcon
 {
-	Q_OBJECT
+    Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "tr.org.pardus.knazar")
+
 public:
-	knazar();
-public slots:
-	void protect_from_harmfull_looks();
-	void release_the_protection();
-	bool is_protecting();
-	void send_nazar();
-	void about();
+    Knazar(KAboutData *aboutData);
+
 private:
-	QPixmap trayIcon;
-	bool protection_working;
-	int number_of_attacks, defated_attacks;
-	KNazarBalloon * balloon;
+    bool protection_working;
+    int number_of_attacks, defated_attacks;
+    KAction *actionAbout;
+    KAction *actionProtect;
+    KAction *actionRelease;
+    KAboutApplicationDialog *aboutApplicationDialog;
+    QIcon normalIcon;
+    QIcon grayIcon;
+
+public slots:
+    void protect_from_harmfull_looks();
+    void release_the_protection();
+    bool is_protecting();
+    void send_nazar();
 };
 
 #endif
