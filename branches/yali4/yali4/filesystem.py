@@ -47,6 +47,8 @@ def get_filesystem(name):
         return ReiserFileSystem()
     elif name == "xfs":
         return XFSFileSystem()
+    elif name == "vfat":
+        return FatFileSystem()
 
     return None
 
@@ -63,7 +65,6 @@ class FileSystem:
 
     def __init__(self):
         self.readSupportedFilesystems()
-
         self._fs_type = parted.file_system_type_get(self._name)
 
     ##
@@ -522,7 +523,7 @@ class NTFSFileSystem(FileSystem):
 # fat file system
 class FatFileSystem(FileSystem):
 
-    _name = "vfat"
+    _name = "fat32"
     _mountoptions = "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6"
 
     def __init__(self):
@@ -546,7 +547,7 @@ class FatFileSystem(FileSystem):
         p = os.popen(cmd)
         o = p.readlines()
         if p.close():
-            raise YaliException, "vfat format failed: %s" % partition.getPath()
+            raise YaliException, "fat32 format failed: %s" % partition.getPath()
 
     def getLabel(self, partition):
         cmd_path = sysutils.find_executable("dosfslabel")
@@ -555,7 +556,12 @@ class FatFileSystem(FileSystem):
             raise FSError, e 
 
         cmd = "%s %s" % (cmd_path, partition.getPath())
-        return sysutils.e2fslabel(partition.getPath())
+        p = os.popen(cmd)
+        label = p.read()
+        p.close()
+        if not label == '':
+            return label.strip(' \n')
+        return False
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
