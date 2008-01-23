@@ -28,7 +28,7 @@ import yali4.gui.context as ctx
 from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 
-partitonTypes = {0:None,
+partitionTypes = {0:None,
                  1:parttype.root,
                  2:parttype.home,
                  3:parttype.swap,
@@ -126,10 +126,13 @@ class DiskList(QtGui.QWidget):
             else:
                 self.partEdit.ui.partitionSize.setMinimum(ctx.consts.min_root_size)
                 self.partEdit.ui.partitionSlider.setMinimum(ctx.consts.min_root_size)
+                self.partEdit.ui.formatCheck.setChecked(True)
+                self.partEdit.ui.formatCheck.setEnabled(False)
         else:
             self.partEdit.ui.information.setText("")
             self.partEdit.ui.partitionSize.setMinimum(10)
             self.partEdit.ui.partitionSlider.setMinimum(10)
+            self.partEdit.ui.formatCheck.setEnabled(True)
 
     def initDevices(self):
         self.devs = []
@@ -147,12 +150,12 @@ class DiskList(QtGui.QWidget):
 
     def addDevice(self, dev):
 
+        # get the size as human readable
         def sizeStr(mb):
             if mb > 1024:
                 return _("%0.1f GB free") % long(round(mb/1024.0))
             else:
                 return _("%d MB free") % mb
-
 
         # add the device to the list
         devstr = u"Disk %d (%s)" % (self.diskCount, dev.getName())
@@ -168,6 +171,7 @@ class DiskList(QtGui.QWidget):
 
         # add partitions on device
         for part in dev.getOrderedPartitionList():
+            # we dont need to show fu..in extended partition
             if part.isExtended():
                 continue
             if part.getMinor() != -1:
@@ -206,7 +210,7 @@ class DiskList(QtGui.QWidget):
     def slotApplyPartitionChanges(self):
         """Creates requests for changes in selected partition"""
 
-        t = partitonTypes[self.partEdit.ui.formatType.currentIndex()]
+        t = partitionTypes[self.partEdit.ui.formatType.currentIndex()]
 
         if not t:
             return False
@@ -249,9 +253,21 @@ class DiskList(QtGui.QWidget):
             type = parteddata.PARTITION_PRIMARY
             extendedPartition = device.getExtendedPartition()
 
+            # GPT Disk tables doesnt support extended partitions
+            # so we need to reach maximum limit with primary partitions
+            if device._disk.type.name == "gpt":
+                min_primary = 4
+                if device.numberOfPrimaryPartitions() == 4:
+                    # FIXME Change this with information dialog !
+                    print _("GPT Disk tables does not support for extended partitions.\n" \
+                            "You need to delete one of primary partition on your disk table !")
+                    return
+            else:
+                min_primary = 1
+
             if partitionNum == 0:
                 type = parteddata.PARTITION_PRIMARY
-            elif device.numberOfPrimaryPartitions() >= 1 and not extendedPartition:
+            elif device.numberOfPrimaryPartitions() >= min_primary and not extendedPartition:
                 # if three primary partitions exists on disk and no more extendedPartition
                 # we must create new extended one for other logical partitions
                 ctx.debugger.log("There is no extended partition, Yalı will create new one")
@@ -342,13 +358,22 @@ class DiskItem(QtGui.QWidget):
                     "fgcolor":"#000000",
                     "icon"   :"other"}
 
-        partition = QtGui.QRadioButton("%s\n%s" % (name,data.getSizeStr()),self.diskGroup)
+        partitionType = getPartitionType(data)
+        _name = name
+        if partitionType:
+            if partitionType == partitionTypes[1]:
+                _name += "\n%s" % _("Pardus will install here")
+            elif partitionType == partitionTypes[2]:
+                _name += "\n%s" % _("User files will store here")
+            elif partitionType == partitionTypes[3]:
+                _name += "\n%s" % _("Swap will be here")
+        partition = QtGui.QRadioButton("%s\n%s" % (_name,data.getSizeStr()),self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
         if data._parted_type == parteddata.freeSpaceType:
             partition.setStyleSheet("background-image:none;")
         else:
             meta = getFSMeta(data.getFSName())
-            if getPartitionType(data):
+            if partitionType:
                 icon = "parduspart"
             else:
                 icon = meta["icon"]
@@ -406,7 +431,7 @@ class DiskItem(QtGui.QWidget):
 
 def getPartitionType(part):
     """ Get partition type from request list """
-    for pt in partitonTypes.values():
+    for pt in partitionTypes.values():
 
         # We use MountRequest type for search keyword 
         # which is 1 defined in partitionrequest.py
