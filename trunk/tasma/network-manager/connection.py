@@ -33,7 +33,13 @@ class WirelessTipper(QToolTip):
 class ScanItem(QListViewItem):
     def __init__(self, parent, data):
         QListViewItem.__init__(self, parent)
+        
         self.info = {}
+        
+        if not data:
+            self.setText(0, i18n("No remotes found"))
+            return
+        
         for param in data.split("\t"):
             key, value = param.split("=", 1)
             self.info[key] = value
@@ -127,7 +133,8 @@ class Scanner(QPopupMenu):
     
     def slotScanSelect(self):
         item = self.view.selectedItem()
-        self.scan_use_but.setEnabled(item != None)
+        if item.info:
+            self.scan_use_but.setEnabled(item != None)
     
     def slotScanUse(self):
         item = self.view.selectedItem()
@@ -145,6 +152,8 @@ class Scanner(QPopupMenu):
         if not remotes == "":
             for remote in remotes.split("\n"):
                 ScanItem(self.view, remote)
+        else:
+            ScanItem(self.view, None)
 
 
 class Settings(QWidget):
