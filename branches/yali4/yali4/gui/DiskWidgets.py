@@ -117,22 +117,29 @@ class DiskList(QtGui.QWidget):
                 ctx.mainScreen.enableNext()
 
     def formatTypeChanged(self, cur):
+
+        def forceToFormat():
+            self.partEdit.ui.formatCheck.setChecked(True)
+            self.partEdit.ui.formatCheck.setEnabled(False)
+
         # index 1 is Pardus' root partition..
         if cur == 1:
-            if self.partEdit.ui.partitionSize.maximum() < ctx.consts.min_root_size:
+            if self.partEdit.ui.partitionSize.maximum() < ctx.consts.min_root_size and not self.partEdit.isPartitionUsed:
                 self.partEdit.ui.formatType.setCurrentIndex(0)
                 self.partEdit.ui.information.setText(
                         _("'Install Root' size must be larger than %s MB.") % (ctx.consts.min_root_size))
             else:
                 self.partEdit.ui.partitionSize.setMinimum(ctx.consts.min_root_size)
                 self.partEdit.ui.partitionSlider.setMinimum(ctx.consts.min_root_size)
-                self.partEdit.ui.formatCheck.setChecked(True)
-                self.partEdit.ui.formatCheck.setEnabled(False)
+                forceToFormat()
         else:
             self.partEdit.ui.information.setText("")
             self.partEdit.ui.partitionSize.setMinimum(10)
             self.partEdit.ui.partitionSlider.setMinimum(10)
             self.partEdit.ui.formatCheck.setEnabled(True)
+
+        if cur == 3:
+            forceToFormat()
 
     def initDevices(self):
         self.devs = []
@@ -429,13 +436,13 @@ class DiskItem(QtGui.QWidget):
         return _p
 
 
-def getPartitionType(part):
+def getPartitionType(part,rt=1):
     """ Get partition type from request list """
     for pt in partitionTypes.values():
 
         # We use MountRequest type for search keyword 
-        # which is 1 defined in partitionrequest.py
-        req = ctx.partrequests.searchPartTypeAndReqType(pt, 1)
+        # which is 1, defined in partitionrequest.py
+        req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
         if req:
             if req.partition() == part:
                 return pt
@@ -444,6 +451,7 @@ class PartEdit(QtGui.QWidget):
 
     currentPart = None
     currentPartNum = 0
+    isPartitionUsed = False
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
@@ -454,12 +462,7 @@ class PartEdit(QtGui.QWidget):
         part = self.currentPart
         self.ui.deletePartition.setVisible(True)
         self.ui.formatType.setCurrentIndex(0)
-
-        partitionType = getPartitionType(part)
-        if partitionType:
-            for i,j in partitionTypes.items():
-                if j == partitionType:
-                    self.ui.formatType.setCurrentIndex(i)
+        self.ui.formatCheck.setChecked(False)
 
         if part._parted_type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
@@ -468,6 +471,7 @@ class PartEdit(QtGui.QWidget):
         else:
             self.ui.partitionSize.setEnabled(False)
             self.ui.partitionSlider.setEnabled(False)
+
         self.ui.devicePath.setText(part.getPath())
         self.ui.fileSystem.setText(part.getFSName())
         self.ui.partitionSize.setMaximum(part.getMB()-1)
@@ -476,4 +480,18 @@ class PartEdit(QtGui.QWidget):
         self.ui.information.setText("")
         self.ui.partitionSize.setMinimum(10)
         self.ui.partitionSlider.setMinimum(10)
+
+        # We must select formatType after GUI update
+        partitionType = getPartitionType(part)
+        if partitionType:
+            self.isPartitionUsed = True
+            for i,j in partitionTypes.items():
+                if j == partitionType:
+                    self.ui.formatType.setCurrentIndex(i)
+        else:
+            self.isPartitionUsed = False
+
+        isFormatChecked = getPartitionType(part,0)
+        if isFormatChecked:
+            self.ui.formatCheck.setChecked(True)
 
