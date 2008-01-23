@@ -32,7 +32,7 @@ int main (int argc, char *argv[])
         ki18n("KDE Nazar Application"),
         KAboutData::License_GPL_V2,
         ki18n("Copyright (c) 2005 - 2008 TUBITAK/UEKAE"),
-        ki18n(""),
+        ki18n("KNazar is a usefull part of the Pardus Linux"),
         "http://www.pardus.org.tr",
         "bilgi@pardus.org.tr");
     aboutData.addAuthor(ki18n("S. Çağlar Onur"), ki18n("Author"), "caglar@pardus.org.tr");
