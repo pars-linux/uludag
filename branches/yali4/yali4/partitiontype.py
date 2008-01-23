@@ -88,3 +88,5 @@ class ArchivePartitionType(PartitionType):
 root = RootPartitionType()
 home = HomePartitionType()
 swap = SwapPartitionType()
+archive = ArchivePartitionType()
+

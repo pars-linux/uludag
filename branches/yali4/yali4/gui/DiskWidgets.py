@@ -32,7 +32,7 @@ partitionTypes = {0:None,
                  1:parttype.root,
                  2:parttype.home,
                  3:parttype.swap,
-                 4:None}
+                 4:parttype.archive}
 
 class DiskList(QtGui.QWidget):
 
@@ -366,15 +366,22 @@ class DiskItem(QtGui.QWidget):
                     "icon"   :"other"}
 
         partitionType = getPartitionType(data)
-        _name = name
+        _name = ''
+        _mpoint = ''
         if partitionType:
             if partitionType == partitionTypes[1]:
-                _name += "\n%s" % _("Pardus will install here")
+                _name += "\n" + _("Pardus will install here")
+                _mpoint= "[ / ]"
             elif partitionType == partitionTypes[2]:
-                _name += "\n%s" % _("User files will store here")
+                _name += "\n" +_("User files will store here")
+                _mpoint= "[ /home ]"
             elif partitionType == partitionTypes[3]:
-                _name += "\n%s" % _("Swap will be here")
-        partition = QtGui.QRadioButton("%s\n%s" % (_name,data.getSizeStr()),self.diskGroup)
+                _name += "\n" +_("Swap will be here")
+                _mpoint= "[ swap ]"
+            elif partitionType == partitionTypes[4]:
+                _name += "\n" +_("Backup or archive files will store here")
+                _mpoint= "[ /archive ]"
+        partition = QtGui.QRadioButton("%s%s\n%s %s" % (name, _name, data.getSizeStr(), _mpoint), self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
         if data._parted_type == parteddata.freeSpaceType:
             partition.setStyleSheet("background-image:none;")
@@ -389,7 +396,7 @@ class DiskItem(QtGui.QWidget):
             partition.setStyleSheet("background-color:%s;color:%s" % (meta["bgcolor"],meta["fgcolor"]))
         partition.setToolTip(_("""<b>Path:</b> %s<br>
         <b>Size:</b> %s<br>
-        <b>FileSystem:</b> %s""") % (data.getPath(),data.getSizeStr(),data.getFSName()))
+        <b>FileSystem:</b> %s%s""") % (data.getPath(),data.getSizeStr(),data.getFSName(),_name.replace("\n","<br>")))
         self.splinter.addWidget(partition)
         self.partitions.append({"name":name,"data":data})
         self.connect(partition,QtCore.SIGNAL("clicked()"),self.updatePartEdit)

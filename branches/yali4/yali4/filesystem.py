@@ -47,7 +47,7 @@ def get_filesystem(name):
         return ReiserFileSystem()
     elif name == "xfs":
         return XFSFileSystem()
-    elif name == "vfat":
+    elif name == "fat32":
         return FatFileSystem()
 
     return None
