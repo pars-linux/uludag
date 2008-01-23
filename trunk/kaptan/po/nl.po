@@ -3,14 +3,15 @@
 #
 # Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-22 10:46+0200\n"
-"PO-Revision-Date: 2007-06-17 01:15+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"PO-Revision-Date: 2008-01-23 06:12+0100\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,8 +70,7 @@ msgstr ""
 #. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:88 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid ""
-"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
 msgstr "<center>Gereed! Vanaf nu kunt u <b>Pardus</b> gaan gebruiken</center>"
 
 #. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/mousedlg.ui line 58
@@ -165,7 +165,7 @@ msgstr "Toon in systeemvak"
 #: rc.cpp:85 ../src/goodbyedlg.cpp:66
 #, no-c-format
 msgid "Start Pardus Configuration Center (Tasma)"
-msgstr ""
+msgstr "Start het Pardus configuratie centrum (Tasma)"
 
 #. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 16
 #. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 38
@@ -212,32 +212,3 @@ msgstr "Achtergrond"
 msgid "Welcome"
 msgstr "Welkom"
 
-#~ msgid "<big>Loading...</big>"
-#~ msgstr "<big>Laden...</big>"
-
-#~ msgid "Congratulations"
-#~ msgstr "Gefeliciteerd"
-
-#~ msgid "Kaptan Desktop"
-#~ msgstr "Kaptan Desktop"
-
-#~ msgid "Left handed"
-#~ msgstr "Linkshandig"
-
-#~ msgid "Mouse Setup"
-#~ msgstr "Muis instellen"
-
-#~ msgid "Network Setup"
-#~ msgstr "Netwerk instellen"
-
-#~ msgid "Right handed"
-#~ msgstr "Rechtshandig"
-
-#~ msgid "Start Tasma"
-#~ msgstr "Start Tasma"
-
-#~ msgid "Style Setup"
-#~ msgstr "Stijl instellen"
-
-#~ msgid "Wallpaper Setup"
-#~ msgstr "Achtergrond instellen"
