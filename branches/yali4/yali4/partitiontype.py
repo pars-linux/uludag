@@ -75,6 +75,16 @@ class SwapPartitionType(PartitionType):
     label = "PARDUS_SWAP"
 
 
+class ArchivePartitionType(PartitionType):
+    name = _("Archive Partition")
+    filesystem = yali4.filesystem.FatFileSystem()
+    mountpoint = "/archive"
+    mountoptions = "noatime"
+    parted_type = parted.PARTITION_PRIMARY
+    parted_flags = [ ]
+    label = "ARCHIVE"
+
+
 root = RootPartitionType()
 home = HomePartitionType()
 swap = SwapPartitionType()

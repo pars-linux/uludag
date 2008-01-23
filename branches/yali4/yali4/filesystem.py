@@ -100,7 +100,7 @@ class FileSystem:
     # set label for filesystem
     def setLabel(self, partition, label):
         return False
-    
+
     ##
     # check label for existence.
     def labelExists(self, label):
@@ -137,7 +137,7 @@ class FileSystem:
 
         # append swap manually
         self._filesystems.append("swap")
-        
+
 
     ##
     # chek if file system is supported by kernel
@@ -262,16 +262,16 @@ class Ext3FileSystem(FileSystem):
         if not cmd_path:
             e = "Command not found to format %s filesystem" %(self.name())
             raise FSError, e 
-        
+
         cmd = "%s %s %sM" % (cmd_path, partition.getPath(), str(size_mb)) 
-        
+
         try:
             p = os.popen(cmd)
             p.close()
         except:
             return False
         return True
-       
+
     def getLabel(self, partition):
         return sysutils.e2fslabel(partition.getPath())
 
@@ -291,7 +291,7 @@ class Ext3FileSystem(FileSystem):
 class ReiserFileSystem(FileSystem):
 
     _name = "reiserfs"
-    
+
     def __init__(self):
         FileSystem.__init__(self)
         self.setImplemented(True)
@@ -300,7 +300,7 @@ class ReiserFileSystem(FileSystem):
         self.preFormat(partition)
 
         cmd_path = sysutils.find_executable("mkreiserfs")
-        
+
         if not cmd_path:
             e = "Command not found to format %s filesystem" %(self.name())
             raise FSError, e
@@ -356,14 +356,13 @@ class ReiserFileSystem(FileSystem):
         except:
             return False
         return True
-        
 
 ##
 # xfs
 class XFSFileSystem(FileSystem):
 
     _name = "xfs"
-    
+
     def __init__(self):
         FileSystem.__init__(self)
         self.setImplemented(True)
@@ -372,7 +371,7 @@ class XFSFileSystem(FileSystem):
         self.preFormat(partition)
 
         cmd_path = sysutils.find_executable("mkfs.xfs")
-        
+
         if not cmd_path:
             e = "Command not found to format %s filesystem" %(self.name())
             raise FSError, e
@@ -510,7 +509,7 @@ class NTFSFileSystem(FileSystem):
 
         cmd = "/usr/sbin/ntfsresize -f -i %s" % partition.getPath()
         lines = os.popen(cmd).readlines()
-        
+
         MB = parteddata.MEGABYTE
         _min = 0
         for l in lines:
@@ -518,3 +517,55 @@ class NTFSFileSystem(FileSystem):
                 _min = int(l.split()[4]) / MB + 140
 
         return _min
+
+##
+# fat file system
+class FatFileSystem(FileSystem):
+
+    _name = "vfat"
+    _mountoptions = "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6"
+
+    def __init__(self):
+        FileSystem.__init__(self)
+        self.setImplemented(True)
+
+        # I will do it later
+        self.setResizeable(False)
+
+    def format(self, partition):
+        self.preFormat(partition)
+
+        cmd_path = sysutils.find_executable("mkfs.vfat")
+
+        if not cmd_path:
+            e = "Command not found to format %s filesystem" %(self.name())
+            raise FSError, e
+
+        cmd = "%s %s" %(cmd_path,partition.getPath())
+
+        p = os.popen(cmd)
+        o = p.readlines()
+        if p.close():
+            raise YaliException, "vfat format failed: %s" % partition.getPath()
+
+    def getLabel(self, partition):
+        cmd_path = sysutils.find_executable("dosfslabel")
+        if not cmd_path:
+            e = "Command not found to get label for %s filesystem" %(self.name())
+            raise FSError, e 
+
+        cmd = "%s %s" % (cmd_path, partition.getPath())
+        return sysutils.e2fslabel(partition.getPath())
+
+    def setLabel(self, partition, label):
+        label = self.availableLabel(label)
+        cmd_path = sysutils.find_executable("dosfslabel")
+        cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
+        try:
+            p = os.popen(cmd)
+            p.close()
+        except:
+            return False
+        return True
+
+
