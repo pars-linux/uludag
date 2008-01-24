@@ -82,3 +82,13 @@ del item
 node = doc.insertData("\n    ")
 node.appendTag("a").appendData("\n")
 assert(doc.toString() == doc_xml)
+
+# setData test
+doc = iks.newDocument("a")
+x = doc.insertTag("b")
+x.insertTag("lala")
+y = x.insertTag("bibi")
+y.prependData("hodo")
+assert(x.toString() == "<b><lala/>hodo<bibi/></b>")
+x.setData("merhaba")
+assert(x.toString() == "<b>merhaba</b>")

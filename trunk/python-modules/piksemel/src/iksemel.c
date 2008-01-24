@@ -1210,6 +1210,24 @@ iks_insert_cdata (iks *x, const char *data, size_t len)
 }
 
 iks *
+iks_set_cdata(iks *x, const char *data, size_t len)
+{
+	iks *y;
+
+	if (!x || !data) return NULL;
+	if (len == 0) len = strlen(data);
+
+	while (1) {
+		y = iks_child(x);
+		if (!y) break;
+		iks_hide(y);
+	}
+
+	y = iks_insert_cdata(x, data, len);
+	return y;
+}
+
+iks *
 iks_prepend_cdata(iks *x, const char *data, size_t len)
 {
 	iks *y;
