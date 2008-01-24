@@ -47,6 +47,7 @@ Knazar::Knazar(KAboutData *aboutData)
     // Add them to menu
     contextMenu()->addAction(actionProtect);
     contextMenu()->addAction(actionRelease);
+    contextMenu()->addSeparator();
     contextMenu()->addAction(actionAbout);
 
     // Initialize variables

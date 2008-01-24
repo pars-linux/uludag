@@ -1,4 +1,3 @@
 * port to KDE4
 ** prepare new kcrash patch
-** add install instructions in cmake lists
 ** update language files
