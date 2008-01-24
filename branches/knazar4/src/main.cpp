@@ -36,6 +36,7 @@ int main (int argc, char *argv[])
         "bilgi@pardus.org.tr");
     aboutData.addAuthor(ki18n("S. Çağlar Onur"), ki18n("Author"), "caglar@pardus.org.tr");
     aboutData.addAuthor(ki18n("Uğur Çetin"), ki18n("KDE4 porter"), "jnmbk@users.sourceforge.net");
+    aboutData.setTranslator(ki18nc("NAME OF TRANSLATORS","Your names"), ki18nc("EMAIL OF TRANSLATORS","Your emails"));
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     if (!KUniqueApplication::start())
