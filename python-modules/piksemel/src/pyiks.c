@@ -1,5 +1,5 @@
 /*
-** Copyright (c) 2005, TUBITAK/UEKAE
+** Copyright (c) 2005-2008 TUBITAK/UEKAE
 **
 ** This program is free software; you can redistribute it and/or modify it
 ** under the terms of the GNU General Public License as published by the
@@ -157,6 +157,7 @@ static PyObject *Node_insertData(Node *self, PyObject *args);
 static PyObject *Node_prependData(Node *self, PyObject *args);
 static PyObject *Node_appendSiblingData(Node *self, PyObject *args);
 static PyObject *Node_insertNode(Node *self, PyObject *args);
+static PyObject *Node_setData(Node *self, PyObject *args);
 static PyObject *Node_hide(Node *self, PyObject *args);
 
 static PyMethodDef Node_methods[] = {
@@ -168,6 +169,8 @@ static PyMethodDef Node_methods[] = {
 	  "Return tag name." },
 	{ "data", (PyCFunction)Node_data, METH_NOARGS,
 	  "Return node's character data." },
+	{ "setData", (PyCFunction)Node_setData, METH_VARARGS,
+	  "Set character data child of the tag." },
 	{ "attributes", (PyCFunction)Node_attributes, METH_NOARGS,
 	  "Return node's attribute names." },
 	{ "getAttribute", (PyCFunction)Node_getAttribute, METH_VARARGS,
@@ -468,6 +471,25 @@ Node_setAttribute(Node *self, PyObject *args)
 
 	Py_INCREF(Py_None);
 	return Py_None;
+}
+
+static PyObject *
+Node_setData(Node *self, PyObject *args)
+{
+    char *data;
+
+    if (iks_type(self->node) != IKS_TAG) {
+        PyErr_SetNone(NotTag);
+        return NULL;
+    }
+
+    if (!PyArg_ParseTuple(args, "s", &data))
+        return NULL;
+
+    iks_set_cdata(self->node, data, 0);
+
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
 static PyObject *

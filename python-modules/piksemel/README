@@ -155,6 +155,11 @@ Returns the newly created tag node object.
 Inserts given character data to the child nodes. Returns the newly
 created data node object.
 
+* setData(data)
+
+Deletes given tag's current child nodes, then inserts the data as
+its child.
+
 * insertNode(node)
 
 Inserts given node tree to the child nodes. Returns the newly created
