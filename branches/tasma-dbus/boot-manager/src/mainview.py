@@ -74,10 +74,16 @@ class widgetEntryList(QWidget):
         layout.addWidget(self.spinTimeout, 2, 3)
         
         self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
-        self.connect(self.spinTimeout, SIGNAL("valueChanged(int)"), self.slotTimeoutChanged)
+        self.setTimeoutSlot(True)
         
         self.init()
         
+    def setTimeoutSlot(self, active):
+        if active:
+            self.connect(self.spinTimeout, SIGNAL("valueChanged(int)"), self.slotTimeoutChanged)
+        else:
+            self.disconnect(self.spinTimeout, SIGNAL("valueChanged(int)"), self.slotTimeoutChanged)
+    
     def init(self):
         self.toolbar.setEnabled(True)
         self.listEntries.viewport().setEnabled(True)
@@ -86,7 +92,15 @@ class widgetEntryList(QWidget):
     def slotCheckSaved(self):
         def handler():
             self.parent.queryEntries()
+        def cancel():
+            default = self.parent.options["default"]
+            self.checkSaved.setChecked(default == 'saved')
+        def error(exception):
+            cancel()
         ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
+        ch.registerAuthError(error)
+        ch.registerDBusError(error)
+        ch.registerCancel(cancel)
         ch.registerDone(handler)
         if self.checkSaved.isChecked():
             ch.call("default", "saved")
@@ -96,8 +110,15 @@ class widgetEntryList(QWidget):
     def slotTimeoutChanged(self, value):
         def handler():
             self.spinTimeout.setEnabled(True)
+        def cancel():
+            handler()
+        def error(exception):
+            handler()
         self.spinTimeout.setEnabled(False)
         ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
+        ch.registerAuthError(error)
+        ch.registerDBusError(error)
+        ch.registerCancel(cancel)
         ch.registerDone(handler)
         ch.call("timeout", str(value))
     
@@ -571,7 +592,9 @@ class widgetMain(QWidget):
                 self.widgetEntries.checkSaved.setChecked(True)
             # Timeout
             timeout = int(self.options["timeout"])
+            self.widgetEntries.setTimeoutSlot(False)
             self.widgetEntries.spinTimeout.setValue(timeout)
+            self.widgetEntries.setTimeoutSlot(True)
         ch = self.callMethod("getOptions", "tr.org.pardus.comar.boot.loader.get")
         ch.registerDone(handler)
         ch.call()
