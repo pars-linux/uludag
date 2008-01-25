@@ -1,15 +1,16 @@
 # translation of de.po to Deutsch
-# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
+# Copyright (C) 2006, 2007, 2008 Free Software Foundation, Inc.
 #
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-22 10:46+0200\n"
-"PO-Revision-Date: 2007-11-17 02:13+0200\n"
-"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"PO-Revision-Date: 2008-01-25 11:27+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,8 +69,7 @@ msgstr ""
 #. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/goodbyedlg.ui line 51
 #: rc.cpp:88 ../src/goodbyedlg.cpp:67
 #, no-c-format
-msgid ""
-"<center>You have finished!  Now you can start using <b>Pardus</b></center>"
+msgid "<center>You have finished!  Now you can start using <b>Pardus</b></center>"
 msgstr ""
 "<center> Sie haben Kapatan-Desktop erfolgreich abgeschlossen!  Sie können "
 "nun mit der Anwendung von <b>Pardus</b> anfangen</center>"
@@ -169,7 +169,7 @@ msgstr "Im Systemabschnitt in der Taskleiste anzeigen"
 #: rc.cpp:85 ../src/goodbyedlg.cpp:66
 #, no-c-format
 msgid "Start Pardus Configuration Center (Tasma)"
-msgstr ""
+msgstr "Pardus Konfigurationszentrum (Tasma) starten"
 
 #. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 16
 #. i18n: file /home/gokcen/repos/uludag/trunk/kaptan/po/../src/styledlg.ui line 38
@@ -217,32 +217,3 @@ msgstr "Hintergrundbild"
 msgid "Welcome"
 msgstr "Willkommen"
 
-#~ msgid "<big>Loading...</big>"
-#~ msgstr "<big>Am Laden...</big>"
-
-#~ msgid "Congratulations"
-#~ msgstr "Gratulation"
-
-#~ msgid "Kaptan Desktop"
-#~ msgstr "Kaptan-Desktop"
-
-#~ msgid "Left handed"
-#~ msgstr "Linkshändig"
-
-#~ msgid "Mouse Setup"
-#~ msgstr "Maus-Konfiguration"
-
-#~ msgid "Network Setup"
-#~ msgstr "Netzwerk-Konfiguration"
-
-#~ msgid "Right handed"
-#~ msgstr "Rechtshändig"
-
-#~ msgid "Start Tasma"
-#~ msgstr "Tasma starten"
-
-#~ msgid "Style Setup"
-#~ msgstr "Stil-Konfiguration"
-
-#~ msgid "Wallpaper Setup"
-#~ msgstr "HintergrundbilKonfiguration"
