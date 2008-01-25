@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>227</height>
+    <width>702</width>
+    <height>301</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -24,7 +24,7 @@
      <property name="maximumSize" >
       <size>
        <width>16777215</width>
-       <height>170</height>
+       <height>200</height>
       </size>
      </property>
      <property name="autoFillBackground" >
@@ -37,31 +37,116 @@
       <string>Partition 1 on FUJISTU - /dev/sda1</string>
      </property>
      <layout class="QGridLayout" >
-      <item row="0" column="0" >
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType" >
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>28</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
       <item row="0" column="1" >
-       <widget class="QLabel" name="label_5" >
-        <property name="text" >
-         <string/>
+       <layout class="QGridLayout" >
+        <property name="verticalSpacing" >
+         <number>0</number>
         </property>
-        <property name="pixmap" >
-         <pixmap resource="../../data.qrc" >:/gui/pics/hdd_unmount.png</pixmap>
-        </property>
-       </widget>
+        <item row="0" column="0" colspan="3" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>140</width>
+            <height>25</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>33</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1" >
+         <widget class="QLabel" name="label_5" >
+          <property name="text" >
+           <string/>
+          </property>
+          <property name="pixmap" >
+           <pixmap resource="../../data.qrc" >:/gui/pics/hdd_unmount.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>33</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0" colspan="3" >
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>140</width>
+            <height>24</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0" colspan="3" >
+         <layout class="QHBoxLayout" >
+          <item>
+           <widget class="QPushButton" name="deletePartition" >
+            <property name="minimumSize" >
+             <size>
+              <width>0</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="styleSheet" >
+             <string/>
+            </property>
+            <property name="text" >
+             <string>Delete Partition</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>1</width>
+              <height>25</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </item>
       <item row="0" column="2" >
        <spacer>
@@ -73,13 +158,13 @@
         </property>
         <property name="sizeHint" >
          <size>
-          <width>28</width>
+          <width>12</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
-      <item rowspan="2" row="0" column="3" >
+      <item row="0" column="3" >
        <layout class="QGridLayout" >
         <item row="0" column="0" >
          <widget class="QLabel" name="label" >
@@ -124,7 +209,7 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2" colspan="3" >
+        <item row="1" column="2" colspan="2" >
          <widget class="QComboBox" name="formatType" >
           <property name="minimumSize" >
            <size>
@@ -195,13 +280,6 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="4" >
-         <widget class="QCheckBox" name="useAvail" >
-          <property name="text" >
-           <string>Use avaliable</string>
-          </property>
-         </widget>
-        </item>
         <item row="3" column="0" >
          <widget class="QLabel" name="label_3" >
           <property name="font" >
@@ -212,7 +290,7 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="2" colspan="3" >
+        <item row="3" column="2" colspan="2" >
          <widget class="QCheckBox" name="formatCheck" >
           <property name="text" >
            <string>Yes, Format this partition</string>
@@ -229,12 +307,46 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="2" >
-         <widget class="QLabel" name="fileSystem" >
-          <property name="text" >
-           <string/>
-          </property>
-         </widget>
+        <item row="4" column="2" colspan="2" >
+         <layout class="QHBoxLayout" >
+          <item>
+           <widget class="QLabel" name="fileSystem" >
+            <property name="text" >
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>0</width>
+              <height>29</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="fileSystemBox" >
+            <item>
+             <property name="text" >
+              <string>Ext3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Fat 32</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -245,27 +357,27 @@
         </property>
         <property name="sizeHint" >
          <size>
-          <width>40</width>
+          <width>91</width>
           <height>20</height>
          </size>
         </property>
        </spacer>
       </item>
-      <item row="1" column="0" colspan="3" >
-       <widget class="QPushButton" name="deletePartition" >
-        <property name="minimumSize" >
+      <item row="0" column="0" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
          <size>
-          <width>0</width>
-          <height>25</height>
+          <width>12</width>
+          <height>20</height>
          </size>
         </property>
-        <property name="styleSheet" >
-         <string/>
-        </property>
-        <property name="text" >
-         <string>Delete Partition</string>
-        </property>
-       </widget>
+       </spacer>
       </item>
      </layout>
      <widget class="QLabel" name="label_6" >
@@ -355,12 +467,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>413</x>
-     <y>98</y>
+     <x>489</x>
+     <y>148</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>461</x>
-     <y>101</y>
+     <x>567</x>
+     <y>150</y>
     </hint>
    </hints>
   </connection>
@@ -371,12 +483,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>488</x>
-     <y>106</y>
+     <x>567</x>
+     <y>150</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>388</x>
-     <y>101</y>
+     <x>489</x>
+     <y>148</y>
     </hint>
    </hints>
   </connection>

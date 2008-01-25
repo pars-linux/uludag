@@ -74,6 +74,7 @@ class DiskList(QtGui.QWidget):
         self.toolBox.setFocusPolicy(Qt.NoFocus)
 
         self.partEdit = PartEdit()
+        self.partEdit.ui.fileSystemBox.setVisible(False)
         self.vbox.addWidget(self.toolBox)
         self.vbox.addWidget(self.partEdit)
 
@@ -140,6 +141,15 @@ class DiskList(QtGui.QWidget):
 
         if cur == 3:
             forceToFormat()
+
+        if cur == 4:
+            forceToFormat()
+            self.partEdit.ui.fileSystem.setVisible(False)
+            self.partEdit.ui.fileSystemBox.setVisible(True)
+        else:
+            self.partEdit.ui.fileSystem.setVisible(True)
+            self.partEdit.ui.fileSystemBox.setVisible(False)
+
 
     def initDevices(self):
         self.devs = []
@@ -218,6 +228,11 @@ class DiskList(QtGui.QWidget):
         """Creates requests for changes in selected partition"""
 
         t = partitionTypes[self.partEdit.ui.formatType.currentIndex()]
+        if t == parttype.archive:
+            if self.partEdit.ui.fileSystemBox.currentIndex() == 1:
+                t.setFileSystem("fat32")
+            else:
+                t.setFileSystem("ext3")
 
         if not t:
             return False
@@ -380,7 +395,7 @@ class DiskItem(QtGui.QWidget):
                 _mpoint= "[ swap ]"
             elif partitionType == partitionTypes[4]:
                 _name += "\n" +_("Backup or archive files will store here")
-                _mpoint= "[ /archive ]"
+                _mpoint= "[ /mnt/archive ]"
         partition = QtGui.QRadioButton("%s%s\n%s %s" % (name, _name, data.getSizeStr(), _mpoint), self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
         if data._parted_type == parteddata.freeSpaceType:

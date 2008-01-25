@@ -74,16 +74,20 @@ class SwapPartitionType(PartitionType):
     parted_flags = []
     label = "PARDUS_SWAP"
 
-
 class ArchivePartitionType(PartitionType):
     name = _("Archive Partition")
-    filesystem = yali4.filesystem.FatFileSystem()
-    mountpoint = "/archive"
+    filesystem = yali4.filesystem.Ext3FileSystem()
+    mountpoint = "/mnt/archive"
     mountoptions = "noatime"
     parted_type = parted.PARTITION_PRIMARY
     parted_flags = [ ]
     label = "ARCHIVE"
 
+    def setFileSystem(self, filesystem):
+        if filesystem == "fat32":
+            self.filesystem = yali4.filesystem.FatFileSystem()
+        elif filesystem == "ext3":
+            self.filesystem = yali4.filesystem.Ext3FileSystem()
 
 root = RootPartitionType()
 home = HomePartitionType()
