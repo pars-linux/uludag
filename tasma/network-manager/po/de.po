@@ -7,13 +7,14 @@
 # Mustafa Muhammed Ölcerman <oelcerman@fussballkreis.org>, 2007.
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-23 14:51+0200\n"
-"PO-Revision-Date: 2007-11-17 01:13+0200\n"
-"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"PO-Revision-Date: 2008-01-25 11:44+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -129,7 +130,7 @@ msgstr "Protokoll"
 
 #: connection.py:40
 msgid "No remotes found"
-msgstr ""
+msgstr "Keine Verbindungspunkte gefunden"
 
 #: connection.py:61
 msgid "<hidden>"
@@ -269,8 +270,7 @@ msgstr "Kein geeignetes Gerät gefunden"
 
 #: newconn.py:122
 msgid "No package with COMAR network scripts are installed yet."
-msgstr ""
-"Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
+msgstr "Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
 
 #: newconn.py:122
 msgid "Install network packages!"
@@ -316,8 +316,7 @@ msgstr "Einzelnes Symbol"
 
 #: network-applet.py:403
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
+msgstr "Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
 
 #: network-applet.py:518
 msgid "Connecting to <b>%1</b> ..."
@@ -343,5 +342,3 @@ msgstr "Sie sind momentan offline"
 msgid "Network Applet"
 msgstr "Netzwerk Applet"
 
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "Verbunden mit <b>%s</b>"
