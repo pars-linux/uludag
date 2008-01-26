@@ -2,7 +2,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: knazar 0.0.1\n"
+"Project-Id-Version: KNazar 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-01-30 19:05+0000\n"
 "PO-Revision-Date: 2005-01-30 19:05+0000\n"
@@ -29,20 +29,20 @@ msgid "About"
 msgstr "Hakkında"
 
 #: knazar.cpp:67 knazar.cpp:83
-msgid "knazar - No Harmfull look allowed!"
-msgstr "knazar - Kem gözlere izin verilmiyor!"
+msgid "KNazar - No harmful look allowed!"
+msgstr "KNazar - Kem gözlere izin verilmiyor!"
 
 #: knazar.cpp:79
-msgid "KNazar is starting to protect your Pardus Linux from harmfull looks..."
+msgid "KNazar is starting to protect your Pardus Linux from harmful looks..."
 msgstr "KNazar Pardus Linux'u kem gözlerden korumaya başlıyor..."
 
 #: knazar.cpp:92
-msgid "KNazar is stoping to protect your Pardus Linux from harmfull looks..."
+msgid "KNazar is stopping to protect your Pardus Linux from harmful looks..."
 msgstr "KNazar Pardus Linux'u kem gözlerden korumayı BIRAKIYOR..."
 
 #: knazar.cpp:102
-msgid "knazar - You are completely demilitarized..."
-msgstr "knazar - Tamamen silahsızsınız..."
+msgid "KNazar - You are completely demilitarized..."
+msgstr "KNazar - Tamamen silahsızsınız..."
 
 #: knazar.cpp:113
 msgid ""
@@ -61,9 +61,9 @@ msgstr ""
 
 #: knazar.cpp:123
 msgid ""
-"knazar - %1 attacks received so far, %2 are defated and %3 are received..."
+"KNazar - %1 attacks received so far, %2 are defated and %3 are received..."
 msgstr ""
-"knazar - Şimdiye kadar %1 atak oldu, %2 tanesinden etkilenilmedi, %3 tanesi ise hazırlıksız yakaladı..."
+"KNazar - Şimdiye kadar %1 atak oldu, %2 tanesinden etkilenilmedi, %3 tanesi ise hazırlıksız yakaladı..."
 
 #: knazar.cpp:131
 msgid "KNazar is a usefull part of the Pardus Linux"

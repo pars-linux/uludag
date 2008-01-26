@@ -31,13 +31,13 @@ int main (int argc, char *argv[])
         ki18n("KDE Nazar Application"),
         KAboutData::License_GPL_V2,
         ki18n("Copyright (c) 2005 - 2008 TUBITAK/UEKAE"),
-        ki18n("KNazar is a usefull part of the Pardus Linux"),
+        ki18n("KNazar is a useful part of the Pardus Linux"),
         "http://www.pardus.org.tr",
         "bilgi@pardus.org.tr");
     aboutData.addAuthor(ki18n("S. Çağlar Onur"), ki18n("Author"), "caglar@pardus.org.tr");
-    aboutData.addAuthor(ki18n("Uğur Çetin"), ki18n("KDE4 porter"), "jnmbk@users.sourceforge.net");
-    aboutData.addCredit(ki18n("Serdar Soytetir"), ki18n("knazar icon"), "tulliana@gmail.com");
-    aboutData.setTranslator(ki18nc("NAME OF TRANSLATORS","Your names"), ki18nc("EMAIL OF TRANSLATORS","Your emails"));
+    aboutData.addAuthor(ki18n("Uğur Çetin"), ki18n("KDE4 Porter"), "jnmbk@users.sourceforge.net");
+    aboutData.addCredit(ki18n("Serdar Soytetir"), ki18n("KNazar Icon"), "tulliana@gmail.com");
+    aboutData.setTranslator(ki18nc("NAME OF TRANSLATORS", "Your names"), ki18nc("EMAIL OF TRANSLATORS", "Your emails"));
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     if (!KUniqueApplication::start())

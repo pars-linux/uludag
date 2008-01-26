@@ -43,7 +43,7 @@ private:
     QIcon grayIcon;
 
 public slots:
-    void protect_from_harmfull_looks();
+    void protect_from_harmful_looks();
     void release_the_protection();
     bool is_protecting();
     void send_nazar();

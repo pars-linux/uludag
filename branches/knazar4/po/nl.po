@@ -34,20 +34,20 @@ msgid "About"
 msgstr "Over"
 
 #: knazar.cpp:67 knazar.cpp:83
-msgid "knazar - No Harmfull look allowed!"
-msgstr "knazar - Geen schadelijke blik toegestaan!"
+msgid "KNazar - No harmful look allowed!"
+msgstr "KNazar - Geen schadelijke blik toegestaan!"
 
 #: knazar.cpp:79
-msgid "KNazar is starting to protect your Pardus Linux from harmfull looks..."
+msgid "KNazar is starting to protect your Pardus Linux from harmful looks..."
 msgstr "KNazar start om uw Pardus Linux te beschermen tegen schadelijke blikken..."
 
 #: knazar.cpp:92
-msgid "KNazar is stoping to protect your Pardus Linux from harmfull looks..."
+msgid "KNazar is stopping to protect your Pardus Linux from harmful looks..."
 msgstr "KNazar stopt uw Pardus Linux te beschermen tegen schadelijke blikken..."
 
 #: knazar.cpp:102
-msgid "knazar - You are completely demilitarized..."
-msgstr "knazar - U bent volledig ontwapend..."
+msgid "KNazar - You are completely demilitarized..."
+msgstr "KNazar - U bent volledig ontwapend..."
 
 #: knazar.cpp:113
 msgid ""
@@ -64,8 +64,8 @@ msgstr ""
 
 
 #: knazar.cpp:123
-msgid "knazar - %1 attacks received so far, %2 are defated and %3 are received..."
-msgstr "knazar - Tot dusver %1 aanvallen ontvangen, %2 zijn afgeweerd en %3 zijn ontvangen..."
+msgid "KNazar - %1 attacks received so far, %2 are defated and %3 are received..."
+msgstr "KNazar - Tot dusver %1 aanvallen ontvangen, %2 zijn afgeweerd en %3 zijn ontvangen..."
 
 #: knazar.cpp:131
 msgid "KNazar is a usefull part of the Pardus Linux"
