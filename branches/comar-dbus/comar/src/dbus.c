@@ -9,7 +9,7 @@
 
 #include <Python.h>
 #include <stdlib.h>
-#include <sys/time.h>
+#include <sys/poll.h>
 #include <dbus/dbus.h>
 #include <unistd.h>
 
@@ -23,6 +23,14 @@
 #include "process.h"
 #include "pydbus.h"
 #include "utility.h"
+
+#define MAX_CHILDREN 1000
+#define MAX_WATCHES 10
+#define MAX_FDS (MAX_CHILDREN + MAX_WATCHES)
+
+static struct pollfd pollfds[MAX_WATCHES];
+static DBusWatch *watches[MAX_WATCHES];
+static int n_watches = 0;
 
 //! Sends message to client
 void
@@ -605,7 +613,7 @@ dbus_method_call()
 
 //! Message handler
 static DBusHandlerResult
-dbus_handler(DBusConnection *conn, DBusMessage *msg, void *data)
+filter_func(DBusConnection *conn, DBusMessage *msg, void *data)
 {
     const char *sender = dbus_message_get_sender(msg);
     const char *interface = dbus_message_get_interface(msg);
@@ -624,6 +632,76 @@ dbus_handler(DBusConnection *conn, DBusMessage *msg, void *data)
     return DBUS_HANDLER_RESULT_HANDLED;
 }
 
+
+static void fd_handler(DBusConnection *conn, short events, DBusWatch *watch)
+{
+    unsigned int flags = 0;
+
+    if (events & POLLIN)
+        flags |= DBUS_WATCH_READABLE;
+    if (events & POLLOUT)
+        flags |= DBUS_WATCH_WRITABLE;
+    if (events & POLLHUP)
+        flags |= DBUS_WATCH_HANGUP;
+    if (events & POLLERR)
+        flags |= DBUS_WATCH_ERROR;
+
+    while (!dbus_watch_handle(watch, flags)) {
+        printf("dbus_watch_handle needs more memory\n");
+        sleep(1);
+    }
+
+    dbus_connection_ref(conn);
+    while (dbus_connection_dispatch(conn) == DBUS_DISPATCH_DATA_REMAINS);
+    dbus_connection_unref(conn);
+}
+
+static dbus_bool_t add_watch(DBusWatch *watch, void *data)
+{
+    short cond = POLLHUP | POLLERR;
+    int fd;
+    unsigned int flags;
+
+    //printf("add watch %p\n", (void*)watch);
+    fd = dbus_watch_get_unix_fd(watch);
+    flags = dbus_watch_get_flags(watch);
+
+    if (flags & DBUS_WATCH_READABLE)
+        cond |= POLLIN;
+    if (flags & DBUS_WATCH_WRITABLE)
+        cond |= POLLOUT;
+
+    pollfds[n_watches].fd = fd;
+    pollfds[n_watches].events = cond;
+    watches[n_watches] = watch;
+    ++n_watches;
+
+    return 1;
+}
+
+static void remove_watch(DBusWatch *watch, void *data)
+{
+    int i, found = 0;
+
+    // printf("remove watch %p\n", (void*)watch);
+    for (i = 0; i < n_watches; ++i) {
+        if (watches[i] == watch) {
+            found = 1;
+            break;
+        }
+    }
+    if (!found) {
+        printf("watch %p not found\n", (void*)watch);
+        return;
+    }
+
+    memset(&pollfds[i], 0, sizeof(pollfds[i]));
+    watches[i] = NULL;
+
+    if (i == n_watches && n_watches > 0) --n_watches;
+}
+
+
 //! Starts a server and listens for calls/signals
 void
 dbus_listen()
@@ -632,9 +710,6 @@ dbus_listen()
      * Starts a DBus server and listens for calls and signals.
      * Forks "dbus_method_call" when a method call is fetched.
      */
-
-    struct ProcChild *p;
-    int size;
 
     DBusConnection *conn;
     DBusError err;
@@ -661,28 +736,93 @@ dbus_listen()
         goto out;
     }
 
+    if (!dbus_connection_set_watch_functions(conn, add_watch, remove_watch, NULL, NULL, NULL)) {
+        log_error("dbus_connection_set_watch_functions failed\n");
+        goto out;
+    }
+
+    if (!dbus_connection_add_filter(conn, filter_func, NULL, NULL)) {
+        log_error("Failed to register signal handler callback\n");
+        goto out;
+    }
+
+    dbus_bus_add_match(conn, "type='method_call'", NULL);
+
     unique_name = dbus_bus_get_unique_name(conn);
     log_info("Listening on %s (%s)...\n", cfg_bus_name, unique_name);
 
-    dbus_connection_add_filter(conn, dbus_handler, NULL, NULL);
-
     while (1) {
-        // non blocking read of the next available message
-        dbus_connection_read_write_dispatch(conn, 500);
+        struct pollfd fds[MAX_FDS];
+        DBusWatch *watch[MAX_WATCHES];
+        int nfds, i, sock, ipc, len, nfds_w, nfds_c, ret;
 
-        while (dbus_connection_dispatch(conn) == DBUS_DISPATCH_DATA_REMAINS);
+        nfds = 0;
+        for (i = 0; i < n_watches; i++) {
+            if (pollfds[i].fd == 0 || !dbus_watch_get_enabled(watches[i])) {
+                continue;
+            }
 
-        proc_listen(&p, &size, 0, 500);
+            fds[nfds].fd = pollfds[i].fd;
+            fds[nfds].events = pollfds[i].events;
+            fds[nfds].revents = 0;
+            watch[nfds] = watches[i];
+            nfds++;
+            if (i > MAX_WATCHES) {
+                printf("ERR: %d watches reached\n", MAX_WATCHES);
+                break;
+            }
+        }
+        nfds_w = nfds;
 
-        if (proc_check_idle() == 1) {
-            log_info("Service was idle for %d second(s), closing daemon...\n", cfg_timeout);
-            shutdown_activated = 1;
+        for (i = 0; i < my_proc.nr_children; i++) {
+            sock = my_proc.children[i].from;
+            fds[nfds].fd = sock;
+            fds[nfds].events = POLLIN | POLLOUT | POLLHUP | POLLERR;
+            fds[nfds].revents = 0;
+            nfds++;
+            if (i > MAX_CHILDREN) {
+                printf("ERR: %d children reached\n", MAX_CHILDREN);
+                break;
+            }
+        }
+        nfds_c = nfds - nfds_w;
+
+        if (cfg_timeout == 0) {
+            ret = poll(fds, nfds, -1);
+        }
+        else {
+            ret = poll(fds, nfds, cfg_timeout * 1000);
+        }
+        if (ret == 0) {
+            if (cfg_timeout != 0 && my_proc.nr_children == 0) {
+                log_info("Service was idle for more than %d second(s), closing daemon...\n", cfg_timeout);
+                shutdown_activated = 1;
+                break;
+            }
+            continue;
+        }
+        else if (ret < 0) {
+            if (shutdown_activated) {
+                log_info("Shutdown requested.\n");
+            }
+            else {
+                perror("Poll");
+            }
             break;
         }
 
-        if (shutdown_activated) {
-            log_info("Shutdown requested.\n");
-            break;
+        for (i = 0; i < nfds_c; i++) {
+            sock = my_proc.children[i].from;
+            len = read(sock, &ipc, sizeof(ipc));
+            if (len != sizeof(ipc)) {
+                rem_child(i);
+            }
+        }
+
+        for (i = 0; i < nfds_w; i++) {
+            if (fds[i].revents) {
+                fd_handler(conn, fds[i].revents, watch[i]);
+            }
         }
     }
 

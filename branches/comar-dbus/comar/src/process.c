@@ -36,9 +36,6 @@ static char *name_addr;
 //! Size of process name
 static size_t name_size;
 
-//! Last time that a call has been made or completed
-static time_t time_lastaction = 0;
-
 //! Signal handler
 static void
 handle_sigterm(int signum)
@@ -88,26 +85,6 @@ set_my_name(const char *name)
     }
 }
 
-//! Tests whether process is idle
-int
-proc_check_idle()
-{
-    /*!
-     * Tests whether process id idle.
-     *
-     * @return 1 if true, 0 if false
-     */
-
-    if (cfg_timeout == 0) {
-        return 0;
-    }
-
-    if (my_proc.nr_children == 0 && time_lastaction != 0 && difftime(time(0), time_lastaction) > cfg_timeout) {
-        return 1;
-    }
-    return 0;
-}
-
 //! Initializes main process
 int
 proc_init(int argc, char *argv[], const char *name)
@@ -138,7 +115,6 @@ proc_init(int argc, char *argv[], const char *name)
     my_proc.children = calloc(8, sizeof(struct ProcChild));
     handle_signals();
     set_my_name(my_proc.desc);
-    time_lastaction = time(0);
 
     FILE *f = fopen(cfg_pid_name, "w");
     if (f) {
@@ -155,7 +131,7 @@ proc_init(int argc, char *argv[], const char *name)
 
 //! Appends child process' information to parent's info table
 static struct ProcChild *
-add_child(pid_t pid, int to, int from, const char *desc, DBusMessage *bus_msg)
+add_child(pid_t pid, int to, int from, const char *desc)
 {
     /*!
      * Appends child process' information to parent's info table.
@@ -185,13 +161,12 @@ add_child(pid_t pid, int to, int from, const char *desc, DBusMessage *bus_msg)
     my_proc.children[i].to = to;
     my_proc.children[i].pid = pid;
     my_proc.children[i].desc = desc;
-    my_proc.children[i].bus_msg = bus_msg;
     ++my_proc.nr_children;
     return &my_proc.children[i];
 }
 
 //! Removes child process' information from parent's info table
-static void
+void
 rem_child(int nr)
 {
     /*!
@@ -204,10 +179,6 @@ rem_child(int nr)
     waitpid(my_proc.children[nr].pid, &status, 0);
     close(my_proc.children[nr].to);
     close(my_proc.children[nr].from);
-    time_lastaction = time(0);
-    if (my_proc.children[nr].bus_msg != NULL) {
-        dbus_message_unref(my_proc.children[nr].bus_msg);
-    }
     --my_proc.nr_children;
     if (0 == my_proc.nr_children) return;
     (my_proc.children)[nr] = (my_proc.children)[my_proc.nr_children];
@@ -353,7 +324,7 @@ proc_fork(void (*child_func)(void), const char *desc, DBusConnection *bus_conn, 
         // parent process continues
         close(fdw[0]);
         close(fdr[1]);
-        return add_child(pid, fdw[1], fdr[0], desc, bus_msg);
+        return add_child(pid, fdw[1], fdr[0], desc);
     }
 }
 

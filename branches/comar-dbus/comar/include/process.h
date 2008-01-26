@@ -13,7 +13,6 @@ struct ProcChild {
     int from;
     int to;
     pid_t pid;
-    DBusMessage *bus_msg;
     const char *desc;
 };
 
@@ -34,7 +33,6 @@ extern int shutdown_activated;
 
 int proc_init(int argc, char *argv[], const char *name);
 int proc_listen(struct ProcChild **senderp, size_t *sizep, int timeout_sec, int timeout_usec);
-void proc_check_shutdown(void);
 struct ProcChild *proc_fork(void (*child_func)(void), const char *desc, DBusConnection *bus_conn, DBusMessage *bus_msg);
+void rem_child(int nr);
 void proc_finish(void);
-int proc_check_idle(void);
