@@ -95,6 +95,6 @@ about disk partitioning.
     # do the work and run requested actions on partitions.
     def execute(self):
         ctx.debugger.log("Manual Partitioning selected...")
-        ctx.screens.processEvents()
+        ctx.mainScreen.processEvents()
         return True
 

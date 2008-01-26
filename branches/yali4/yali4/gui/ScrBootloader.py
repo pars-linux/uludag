@@ -10,29 +10,34 @@
 # Please read the COPYING file.
 #
 
-from os.path import basename
-from qt import *
 
 import gettext
 __trans = gettext.translation('yali', fallback=True)
 _ = __trans.ugettext
 
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
 import time
-import yali.storage
-import yali.bootloader
-import yali.partitionrequest as request
-import yali.partitiontype as parttype
-from yali.gui.Ui.bootloaderwidget import BootLoaderWidget
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.YaliDialog import WarningDialog, WarningWidget
-from yali.gui.InformationWindow import InformationWindow
-from yali.gui.GUIException import *
-import yali.gui.context as ctx
+from os.path import basename
+
+import yali4.storage
+import yali4.bootloader
+import yali4.partitionrequest as request
+import yali4.partitiontype as parttype
+
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
+from yali4.gui.YaliDialog import WarningDialog, WarningWidget
+#from yali4.gui.InformationWindow import InformationWindow
+from yali4.gui.GUIException import *
+import yali4.gui.context as ctx
 
 ##
 # BootLoader screen.
-class Widget(BootLoaderWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Bootloader Choice')
+    desc = _('Configure the system boot..')
     help = _('''
 <font size="+2">Boot loader setup</font>
 
@@ -57,65 +62,62 @@ loader.
 ''')
 
     def __init__(self, *args):
-        apply(BootLoaderWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_BootLoaderWidget()
+        self.ui.setupUi(self)
 
-        self.device_list.setPaletteBackgroundColor(ctx.consts.bg_color)
-        self.device_list.setPaletteForegroundColor(ctx.consts.fg_color)
-
-        self.installFirstMBR.setChecked(True)
+        self.ui.installFirstMBR.setChecked(True)
 
         # initialize all storage devices
-        if not yali.storage.init_devices():
+        if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
 
-        if len(yali.storage.devices) > 1:
+        if len(yali4.storage.devices) > 1:
             self.device_list_state = True
             # fill device list
-            for dev in yali.storage.devices:
-                DeviceItem(self.device_list, dev)
+            for dev in yali4.storage.devices:
+                DeviceItem(self.ui.device_list, dev)
             # select the first disk by default
-            self.device_list.setSelected(0, True)
+            self.ui.device_list.setCurrentRow(0)
             # be sure first is selected device
-            self.device = self.device_list.item(0).getDevice()
+            self.device = self.ui.device_list.item(0).getDevice()
         else:
             # don't show device list if we have just one disk
-            self.installMBR.hide()
+            self.ui.installMBR.hide()
             self.device_list_state = False
-            self.device_list.hide()
-            self.select_disk_label.hide()
+            self.ui.device_list.hide()
+            self.ui.select_disk_label.hide()
 
-            self.device = yali.storage.devices[0]
+            self.device = yali4.storage.devices[0]
 
-        self.connect(self.buttonGroup, SIGNAL("clicked(int)"),
+        self.connect(self.ui.buttonGroup, SIGNAL("clicked(int)"),
                      self.slotInstallLoader)
-        self.connect(self.device_list, SIGNAL("selectionChanged(QListBoxItem*)"),
+        self.connect(self.ui.device_list, SIGNAL("selectionChanged(QListBoxItem*)"),
                      self.slotDeviceChanged)
-        self.connect(self.device_list, SIGNAL("clicked()"),
+        self.connect(self.ui.device_list, SIGNAL("clicked()"),
                      self.slotSelect)
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
         if ctx.autoInstall:
-            ctx.screens.next()
+            ctx.mainScreen.next()
 
     def backCheck(self):
         # we need to go partition auto screen, not manual ;)
-        num = ctx.screens.getCurrentIndex() - 2
-        ctx.screens.goToScreen(num)
+        num = ctx.mainScreen.mainStack.getCurrentIndex() - 2
+        ctx.mainScreen.stackMove(num)
         return False
 
     def slotSelect(self):
-        self.installMBR.setChecked(True)
+        self.ui.installMBR.setChecked(True)
 
     def slotInstallLoader(self, b):
-        if self.installMBR.isChecked():
-            self.device_list.setEnabled(True)
-            self.device_list.setSelected(0,True)
+        if self.ui.installMBR.isChecked():
+            self.ui.device_list.setEnabled(True)
+            self.ui.device_list.setSelected(0,True)
         else:
-            self.device_list.setEnabled(False)
-            self.device_list.setSelected(self.device_list.selectedItem(),False)
+            self.ui.device_list.setEnabled(False)
+            self.ui.device_list.setSelected(self.ui.device_list.selectedItem(),False)
 
     def slotDeviceChanged(self, i):
         self.device = i.getDevice()
@@ -175,13 +177,13 @@ and easy way to install Pardus.</p>
 '''))
         if not ctx.autoInstall:
             self.dialog = WarningDialog(w, self)
-            if not self.dialog.exec_loop():
+            if not self.dialog.exec_():
                 # disabled by weaver
-                ctx.screens.enablePrev()
+                ctx.mainScreen.enableBack()
                 return False
 
-        info_window = InformationWindow(self, _("Please wait while formatting!"))
-        ctx.screens.processEvents()
+        #info_window = InformationWindow(self, _("Please wait while formatting!"))
+        ctx.mainScreen.processEvents()
 
         # We should do partitioning operations in here.
 
@@ -195,14 +197,14 @@ and easy way to install Pardus.</p>
 
         # Manual Partitioning
         else:
-            for dev in yali.storage.devices:
+            for dev in yali4.storage.devices:
                 dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
             self.checkSwap()
             ctx.partrequests.applyAll()
 
-        info_window.close()
+        #info_window.close()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
@@ -215,12 +217,11 @@ and easy way to install Pardus.</p>
         elif self.installMBR.isChecked():
             ctx.installData.bootLoaderDev = basename(self.device.getPath())
         else:
-            if len(yali.storage.devices) > 1:
-                self.orderedDiskList = yali.storage.getOrderedDiskList()
+            if len(yali4.storage.devices) > 1:
+                self.orderedDiskList = yali4.storage.getOrderedDiskList()
                 ctx.installData.bootLoaderDev = basename(self.orderedDiskList[0])
             else:
-                ctx.installData.bootLoaderDev = str(filter(lambda u: u.isalpha(),
-                                                    basename(root_part_req.partition().getPath())))
+                ctx.installData.bootLoaderDev = str(basename(root_part_req.partition().getPath()))
 
         _ins_part = root_part_req.partition().getPath()
 
@@ -229,16 +230,14 @@ and easy way to install Pardus.</p>
 
         return True
 
-class DeviceItem(QListBoxText):
-
+class DeviceItem(QtGui.QListWidgetItem):
     def __init__(self, parent, dev):
         text = u"%s - %s (%s)" %(dev.getModel(),
                                 dev.getName(),
                                 dev.getSizeStr())
-        apply(QListBoxText.__init__, (self,parent,text))
+        QtGui.QListWidgetItem.__init__(self,text,parent)
         self._dev = dev
 
     def getDevice(self):
         return self._dev
-
 
