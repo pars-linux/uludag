@@ -50,13 +50,6 @@ class Widget(Ui_YaliMain):
         else:
             self.helpContent.show()
 
-        # Call the current widget's update method when help content toggled.
-        QTimer.singleShot(1, self.updateCurrent)
-
-    def updateCurrent(self):
-        _w = self.mainStack.currentWidget()
-        _w.update()
-
     def toggleDebug(self):
         if ctx.debugger.isVisible():
             ctx.debugger.hideWindow()

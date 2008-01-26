@@ -43,13 +43,12 @@ class DiskList(QtGui.QWidget):
         self.diskCount = 1
         self.partEdit = partEdit
         self.setStyleSheet("""
-            QTabWidget::pane { border-radius: 4px;
-                               border: 2px solid #FFFFFF; }
+            QTabWidget::pane { border-top: 2px solid #FFFFFF; }
             QTabWidget::tab-bar { left: 5px; }
             QTabBar::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                        stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
                                                        stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-                           border: 2px solid #C4C4C3;
+                           border-top: 2px solid #C4C4C3;
                            border-bottom-color: #FFFFFF;
                            border-top-left-radius: 4px;
                            border-top-right-radius: 4px;
@@ -83,7 +82,12 @@ class DiskList(QtGui.QWidget):
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
         self.connect(self.partEdit.ui.resetAllChanges,QtCore.SIGNAL("clicked()"),self.resetChanges)
+        self.connect(self.partEdit, SIGNAL("updateTheList"),self.update)
+
         self.initDevices()
+
+    def resizeEvent(self,event):
+        self.update()
 
     ##
     # GUI Operations
@@ -324,12 +328,24 @@ class DiskItem(QtGui.QWidget):
     def __init__(self, name, model, partEdit, totalSize):
         QtGui.QWidget.__init__(self,None)
         self.setAutoFillBackground(False)
+        self.setAttribute(Qt.WA_AlwaysShowToolTips)
 
-        self.layout = QtGui.QVBoxLayout(self)
+        self.vboxlayout = QtGui.QVBoxLayout(self)
+        spacerItem = QtGui.QSpacerItem(20,40,QtGui.QSizePolicy.Minimum,QtGui.QSizePolicy.Expanding)
+        self.vboxlayout.addItem(spacerItem)
+
+        self.hboxlayout = QtGui.QHBoxLayout()
+        spacerItem1 = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
+        self.hboxlayout.addItem(spacerItem1)
+
+        self.deleteAllPartitions = QtGui.QPushButton(_("Delete All Partitions"),self)
+        self.hboxlayout.addWidget(self.deleteAllPartitions)
+        self.vboxlayout.addLayout(self.hboxlayout)
 
         self.diskGroup = QtGui.QGroupBox(self)
         self.diskGroup.setMinimumSize(QSize(570,100))
         self.diskGroup.setMaximumSize(QSize(2280,100))
+        self.vboxlayout.addWidget(self.diskGroup)
 
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
         self.gridlayout.setMargin(0)
@@ -340,10 +356,10 @@ class DiskItem(QtGui.QWidget):
 
         self.gridlayout.addWidget(self.splinter,0,0,1,1)
 
-        spacerItem = QtGui.QSpacerItem(20,40,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Expanding)
-        self.layout.addItem(spacerItem)
-        self.layout.addWidget(self.diskGroup)
-        self.layout.addItem(spacerItem)
+        spacerItem2 = QtGui.QSpacerItem(20,40,QtGui.QSizePolicy.Minimum,QtGui.QSizePolicy.Expanding)
+        self.vboxlayout.addItem(spacerItem2)
+
+        self.connect(self.deleteAllPartitions,QtCore.SIGNAL("clicked()"),self.deleteAll)
 
         self.partitions = []
         self.name = name
@@ -425,6 +441,10 @@ class DiskItem(QtGui.QWidget):
                 self.partEdit.currentPartNum = i
                 self.partEdit.updateContent()
             i+=1
+
+    def deleteAll(self):
+        self._data.deleteAllPartitions()
+        QObject.emit(self.partEdit,SIGNAL("updateTheList"))
 
     def setData(self, d):
         self._data = d
