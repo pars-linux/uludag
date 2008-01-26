@@ -49,15 +49,15 @@ msgstr "knazar - Você está completamente desmilitarizado..."
 
 #: knazar.cpp:113
 msgid ""
-"<qt><nobr><b>Nazar Received and eliminated successfuly</b></nobr><br><nobr></"
-"nobr></qt>"
+"Nazar Received and eliminated successfuly"
+
 msgstr ""
-"<qt><nobr><b>Nazar recebido e eliminado com sucesso</b></nobr><br><nobr></"
-"nobr></qt>"
+"Nazar recebido e eliminado com sucesso"
+
 
 #: knazar.cpp:116
-msgid "<qt><nobr><b>Nazar Received and it HARMED!</b></nobr><br><nobr></nobr></qt>"
-msgstr "<qt><nobr><b>Nazar recebido e ele causou DANO!</b></nobr><br><nobr></nobr></qt>"
+msgid "Nazar Received and it HARMED!"
+msgstr "Nazar recebido e ele causou DANO!"
 
 #: knazar.cpp:123
 msgid "knazar - %1 attacks received so far, %2 are defated and %3 are received..."

@@ -92,10 +92,10 @@ void Knazar::send_nazar()
     if ( is_protecting() )
     {
         ++defated_attacks;
-        showMessage(i18n("Nazar eliminated"), i18n("<qt><nobr><b>Nazar Received and eliminated successfuly</b></nobr><br><nobr></nobr></qt>"));
+        showMessage(i18n("Nazar eliminated"), i18n("Nazar Received and eliminated successfuly"));
     }
     else
-        showMessage(i18n("Nazar harmed"), i18n("<qt><nobr><b>Nazar Received and it HARMED!</b></nobr><br><nobr></nobr></qt>"), QSystemTrayIcon::Critical);
+        showMessage(i18n("Nazar harmed"), i18n("Nazar Received and it HARMED!"), QSystemTrayIcon::Critical);
 
     setToolTip(i18n("knazar - %1 attacks received so far, %2 are defated and %3 are received...")
                     .arg(number_of_attacks)
