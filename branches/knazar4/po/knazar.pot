@@ -1,76 +1,116 @@
 # SOME DESCRIPTIVE TITLE.
-# This file is put in the public domain.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-30 19:17+0000\n"
+"Report-Msgid-Bugs-To: http://bugs.pardus.org.tr\n"
+"POT-Creation-Date: 2008-01-26 15:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: knazarballoon.cpp:59
-msgid "OK"
+#: knazar.cpp:38
+msgid "About KNazar"
 msgstr ""
 
-#: knazar.cpp:59
+#: knazar.cpp:39
 msgid "Protect"
 msgstr ""
 
-#: knazar.cpp:60
+#: knazar.cpp:40
 msgid "Release"
 msgstr ""
 
-#: knazar.cpp:62
-msgid "About"
+#: knazar.cpp:56 knazar.cpp:70
+msgid "KNazar - No harmful look allowed!"
 msgstr ""
 
-#: knazar.cpp:67 knazar.cpp:83
-msgid "knazar - No Harmfull look allowed!"
+#: knazar.cpp:66
+msgid "KNazar is starting to protect your Pardus Linux from harmful looks..."
 msgstr ""
 
-#: knazar.cpp:79
-msgid "KNazar is starting to protect your Pardus Linux from harmfull looks..."
+#: knazar.cpp:78
+msgid "KNazar is stopping to protect your Pardus Linux from harmful looks..."
 msgstr ""
 
-#: knazar.cpp:92
-msgid "KNazar is stoping to protect your Pardus Linux from harmfull looks..."
+#: knazar.cpp:84
+msgid "KNazar - You are completely demilitarized..."
 msgstr ""
 
-#: knazar.cpp:102
-msgid "knazar - You are completely demilitarized..."
+#: knazar.cpp:95
+msgid "Nazar eliminated"
 msgstr ""
 
-#: knazar.cpp:113
+#: knazar.cpp:95
+msgid "Nazar Received and eliminated successfuly"
+msgstr ""
+
+#: knazar.cpp:98
+msgid "Nazar harmed"
+msgstr ""
+
+#: knazar.cpp:98
+msgid "Nazar Received and it HARMED!"
+msgstr ""
+
+#: knazar.cpp:100
 msgid ""
-"<qt><nobr><b>Nazar Received and eliminated successfuly</b></nobr><br><nobr></"
-"nobr></qt>"
-msgstr ""
-
-#: knazar.cpp:116
-msgid ""
-"<qt><nobr><b>Nazar Received and it HARMED!</b></nobr><br><nobr></nobr></qt>"
-msgstr ""
-
-#: knazar.cpp:123
-msgid ""
-"knazar - %1 attacks received so far, %2 are defated and %3 are received..."
-msgstr ""
-
-#: knazar.cpp:131
-msgid "KNazar is a usefull part of the Pardus Linux"
+"KNazar - %1 attacks received so far, %2 are defated and %3 are received..."
 msgstr ""
 
 #: main.cpp:30
+msgid "knazar"
+msgstr ""
+
+#: main.cpp:31
 msgid "KDE Nazar Application"
 msgstr ""
 
-#: main.cpp:41
-msgid "knazar"
+#: main.cpp:33
+msgid "Copyright (c) 2005 - 2008 TUBITAK/UEKAE"
+msgstr ""
+
+#: main.cpp:34
+msgid "KNazar is a useful part of the Pardus Linux"
+msgstr ""
+
+#: main.cpp:37
+msgid "S. Çağlar Onur"
+msgstr ""
+
+#: main.cpp:37
+msgid "Author"
+msgstr ""
+
+#: main.cpp:38
+msgid "Uğur Çetin"
+msgstr ""
+
+#: main.cpp:38
+msgid "KDE4 Porter"
+msgstr ""
+
+#: main.cpp:39
+msgid "Serdar Soytetir"
+msgstr ""
+
+#: main.cpp:39
+msgid "KNazar Icon"
+msgstr ""
+
+#: main.cpp:40
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: main.cpp:40
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
