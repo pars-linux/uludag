@@ -30,7 +30,7 @@ Knazar::Knazar(KAboutData *aboutData)
 {
     new KnazarAdaptor(this);
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    dbus.registerObject("/", this);
+    dbus.registerObject("/KNazar", this);
 
     aboutApplicationDialog = new KAboutApplicationDialog(aboutData);
 
