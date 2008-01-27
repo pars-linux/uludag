@@ -9,7 +9,7 @@ from zorg.parser import *
 from zorg.utils import *
 from zorg import modeline
 
-xdriverlist = "/usr/lib/X11/xdriverlist"
+DriversDB = "/usr/lib/X11/DriversDB"
 MonitorsDB = "/usr/lib/X11/MonitorsDB"
 
 driver_path = "/usr/lib/xorg/modules/drivers"
@@ -134,7 +134,7 @@ def queryDevice(dev):
         availableDrivers = listAvailableDrivers()
         driverPackages = listDriverPackages()
 
-        for line in loadFile(xdriverlist):
+        for line in loadFile(DriversDB):
             if line.startswith(dev.vendorId + dev.deviceId):
                 dev.driverlist = line.rstrip("\n").split(" ")[1:]
 
