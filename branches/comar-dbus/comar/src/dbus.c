@@ -812,10 +812,12 @@ dbus_listen()
         }
 
         for (i = 0; i < nfds_c; i++) {
-            sock = my_proc.children[i].from;
-            len = read(sock, &ipc, sizeof(ipc));
-            if (len != sizeof(ipc)) {
-                rem_child(i);
+            if (fds[nfds_w + i].revents) {
+                sock = my_proc.children[i].from;
+                len = read(sock, &ipc, sizeof(ipc));
+                if (len != sizeof(ipc)) {
+                    rem_child(i);
+                }
             }
         }
 
