@@ -11,3 +11,4 @@ if __name__ == "__main__":
     iface = dbus.Interface(object, "tr.org.pardus.comar")
 
     iface.register("atidrivers", "Xorg.Driver", os.path.abspath("xorg.driver_fglrx.py"))
+    iface.register("nvidiaold", "Xorg.Driver", os.path.abspath("xorg.driver_nvidia_old.py"))
