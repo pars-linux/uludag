@@ -13,7 +13,7 @@ DriversDB = "/usr/lib/X11/DriversDB"
 MonitorsDB = "/usr/lib/X11/MonitorsDB"
 
 driver_path = "/usr/lib/xorg/modules/drivers"
-xkb_path = "/usr/share/X11/xkb/symbols/pc"
+xkb_path = "/usr/share/X11/xkb/symbols"
 
 sysdir = "/sys/bus/pci/devices/"
 
