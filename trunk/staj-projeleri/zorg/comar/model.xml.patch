@@ -1,52 +1,17 @@
---- /etc/comar/model.xml.orig	2007-07-06 11:28:35.000000000 +0300
-+++ /etc/comar/model.xml	2007-07-07 13:09:27.000000000 +0300
-@@ -205,6 +205,49 @@
- <group name="Storage">
- </group>
- 
-+<group name="Xorg">
-+	<class name="Display">
-+		<method name="autoConfigure"/>
-+		<method name="safeConfigure"/>
-+		<method name="listCards"/>
-+		<method name="setCardOptions">
-+			<argument>cardId</argument>
-+			<argument>options</argument>
-+		</method>
-+		<method name="cardInfo">
-+			<argument>cardId</argument>
-+		</method>
-+		<method name="listMonitors">
-+			<argument>cardId</argument>
-+		</method>
-+		<method name="monitorInfo">
-+			<argument>monitorId</argument>
-+		</method>
-+		<method name="addMonitor">
-+			<argument>monitorData</argument>
-+		</method>
-+		<method name="removeMonitor">
-+			<argument>monitorId</argument>
-+		</method>
-+		<method name="probeMonitors"/>
-+		<method name="installINF"/>
-+		<method name="screenInfo">
-+			<argument>screenNumber</argument>
-+		</method>
-+		<method name="setScreen">
-+			<argument>screenNumber</argument>
-+			<argument>cardId</argument>
-+			<argument>monitorId</argument>
-+			<argument>mode</argument>
-+		</method>
-+		<method name="updateOpenGL">
-+			<argument>implementation</argument>
-+			<argument>withHeaders</argument>
-+		</method>
-+	</class>
-+	<class name="Input">
-+	</class>
-+</group>
- 
- <group name="Time">
- <class name="Clock">
+Index: model.xml
+===================================================================
+--- model.xml	(revision 16729)
++++ model.xml	(working copy)
+@@ -395,4 +395,12 @@
+             <arg name="state" type="s"/>
+         </signal>
+     </interface>
++    <interface name="Xorg.Driver">
++        <method name="enable"/>
++        <method name="disable"/>
++        <method name="probe">
++            <arg name="device" type="ss" direction="in"/>
++            <arg name="result" type="ss" direction="out"/>
++        </method>
++    </interface>
+ </comarModel>
