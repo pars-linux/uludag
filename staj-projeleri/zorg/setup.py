@@ -10,11 +10,12 @@ setup(name="zorg",
       description="Python Modules for zorg",
       license="GNU GPL2",
       url="http://www.pardus.org.tr/",
-      packages = ['zorg'],
+      packages = ["zorg"],
       ext_modules = [Extension("zorg.ddc",
                                sources=["zorg/ddc/ddc.c",
                                         "zorg/ddc/vbe.c",
                                         "zorg/ddc/vesamode.c"],
                                libraries=["x86"])],
-      scripts = ["zorg-cli"]
+      scripts = ["zorg-cli"],
+      data_files = [("/usr/lib/X11", ["data/DriversDB"])]
       )
