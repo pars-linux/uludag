@@ -96,6 +96,20 @@ def listAvailableDrivers(d = driver_path):
                     a.append(drv[:-7])
     return a
 
+def listDriverPackages():
+    import dbus
+
+    try:
+        bus = dbus.SystemBus()
+        object = bus.get_object("tr.org.pardus.comar", "/", introspect=False)
+        iface = dbus.Interface(object, "tr.org.pardus.comar")
+
+    except dbus.exceptions.DBusException, e:
+        print "Error: %s" % e
+        return []
+
+    return iface.listModelApplications("Xorg.Driver")
+
 def queryPCI(vendor, device):
     f = file("/usr/share/misc/pci.ids")
     flag = 0
@@ -118,12 +132,25 @@ def queryDevice(dev):
 
     if not dev.driver:
         availableDrivers = listAvailableDrivers()
+        driverPackages = listDriverPackages()
 
         for line in loadFile(xdriverlist):
             if line.startswith(dev.vendorId + dev.deviceId):
-                drv = line.rstrip("\n").split(" ")[1]
-                if drv in availableDrivers:
-                    dev.driver = drv
+                dev.driverlist = line.rstrip("\n").split(" ")[1].split(",")
+
+                for drv in dev.driverlist:
+                    if "@" in drv:
+                        drvname, drvpackage = drv.split("@", 1)
+                        if drvpackage in driverPackages:
+                            dev.driver = drvname
+                            dev.package = drvpackage
+                            break
+
+                    elif drv in availableDrivers:
+                        dev.driver = drv
+                        break
+
+                break
 
     # if could not find driver from driverlist try X -configure
     if not dev.driver:
