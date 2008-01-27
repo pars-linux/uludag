@@ -231,6 +231,7 @@ def queryOutputs(device):
         queryFglrxOutputs(device)
     else:
         device.monitors = findMonitors(device, 0, 1)
+        device.outputs["default"] = device.monitors[0].res
 
 def queryRandrOutputs(device):
     lines = xserverProbe(device)
