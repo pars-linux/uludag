@@ -71,7 +71,10 @@ class Device:
 
         self.id = "%s:%s@%s" % (self.vendorId, self.deviceId, self.busId)
 
+        self.driverlist = ["vesa"]          # List of drivers which supports this device
         self.driver = None
+        self.package = "xorg-server"        # This is needed to support drivers coming from separate packages.
+
         self.vendorName = "Unknown Vendor"
         self.boardName = "Unknown Board"
 
