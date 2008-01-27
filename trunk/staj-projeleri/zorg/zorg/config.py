@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
+import os
+
 import piksemel
 from csapi import atoi
 
 from zorg.parser import *
 from zorg.hwdata import *
 
-xorgConf = "/etc/X11/xorg.conf"
+xorgConf = "/etc/X11/xorg2.conf"
 
 class XConfig:
     def __init__(self):
@@ -278,6 +280,111 @@ class XConfig:
 
         self._parser.sections.append(sec)
 
+def saveXorgConfig(card):
+    parser = XorgParser()
+
+    secModule = XorgSection("Module")
+    secdri = XorgSection("dri")
+    secFiles = XorgSection("Files")
+    secFlags = XorgSection("ServerFlags")
+    secDevice = XorgSection("Device")
+    secScr = XorgSection("Screen")
+    secLay = XorgSection("ServerLayout")
+
+    parser.sections = [
+        secModule,
+        secdri,
+        secFiles,
+        secFlags,
+        secLay,
+        secScr,
+        secDevice
+    ]
+
+    extmod = XorgSection("extmod")
+    extmod.options = {"omit xfree86-dga" : unquoted()}
+    secModule.sections = [extmod]
+
+    secdri.set("Mode", unquoted("0666"))
+
+    secFiles.set("RgbPath", "/usr/lib/X11/rgb")
+    fontPaths = (
+        "/usr/share/fonts/misc/",
+        "/usr/share/fonts/dejavu/",
+        "/usr/share/fonts/TTF/",
+        "/usr/share/fonts/freefont/",
+        "/usr/share/fonts/TrueType/",
+        "/usr/share/fonts/corefonts",
+        "/usr/share/fonts/Speedo/",
+        "/usr/share/fonts/Type1/",
+        "/usr/share/fonts/100dpi/",
+        "/usr/share/fonts/75dpi/",
+        "/usr/share/fonts/encodings/",
+    )
+    for fontPath in fontPaths:
+        secFiles.add("FontPath", fontPath)
+
+    secFlags.options = {
+        "AllowEmptyInput" : "true",
+        "AllowMouseOpenFail" : "true",
+        "BlankTime" : "0",
+        "StandbyTime" : "0",
+        "SuspendTime" : "0",
+        "OffTime" : "0"
+    }
+
+    info = card.getDict()
+
+    #secDevice.set("Screen", screenNumber)
+    secDevice.set("Identifier", "VideoCard")
+    secDevice.set("Driver", card.driver)
+    #secDevice.set("VendorName", dev.vendorName)
+    #secDevice.set("BoardName", dev.boardName)
+    secDevice.set("BusId", info["bus-id"])
+    secDevice.options.update(card.driver_options)
+
+    flags = card.probe_result["flags"].split(",")
+
+    for output in card.active_outputs:
+        identifier = "Monitor[%s]" % output
+        secDevice.options["Monitor-%s" % output] = identifier
+
+        monSec = XorgSection("Monitor")
+        parser.sections.append(monSec)
+        monSec.set("Identifier", identifier)
+
+        if card.monitor_settings.has_key("%s-hsync" % output):
+            monSec.set("HorizSync", unquoted(card.monitor_settings["%s-hsync" % output]))
+
+        if card.monitor_settings.has_key("%s-vref" % output):
+            monSec.set("VertRefresh", unquoted(card.monitor_settings["%s-vref" % output]))
+
+        if "randr12" in flags:
+            monSec.options["PreferredMode"] = card.modes[output]
+            monSec.options["Enabled"] = "true"
+
+    secScr.set("Identifier", "Screen")
+    secScr.set("Device", "VideoCard")
+    secScr.set("Monitor", "Monitor[%s]" % card.active_outputs[0])
+    secScr.set("DefaultDepth", card.depth)
+
+    subsec = XorgSection("Display")
+    subsec.set("Depth", card.depth)
+
+    if "no-modes-line" not in flags:
+        output = card.active_outputs[0]
+        modes = card.modes[output].split(",")
+        subsec.set("Modes", *modes)
+
+    secScr.sections = [subsec]
+
+    secLay.set("Identifier", "Layout")
+    secLay.set("Screen", "Screen")
+
+    f = open(xorgConf, "w")
+    f.write(parser.toString())
+    f.close()
+
 def addTag(p, name, data):
     t = p.insertTag(name)
     t.insertData(data)
@@ -287,8 +394,6 @@ class ZorgConfig:
     zorgConfig = "config.xml"
 
     def __init__(self):
-        import os
-
         if not os.path.exists(self.zorgConfigDir):
             os.mkdir(self.zorgConfigDir, 0755)
 
@@ -494,3 +599,79 @@ class ZorgConfig:
         f = file(self.configFile, "w")
         f.write(self.doc.toPrettyString())
         f.close()
+
+
+zorgConfigDir = "/var/lib/zorg"
+zorgConfig = "zconfig.xml"
+
+def getDeviceInfo(busId):
+    pass
+
+def saveDeviceInfo(card):
+    if not os.path.exists(zorgConfigDir):
+        os.mkdir(zorgConfigDir, 0755)
+
+    configFile = os.path.join(zorgConfigDir, zorgConfig)
+
+    try:
+        doc = piksemel.parse(configFile)
+    except OSError:
+        doc = piksemel.newDocument("ZORG")
+
+    info = card.getDict()
+
+    for tag in doc.tags("Card"):
+        if tag.getAttribute("busId") == info["bus-id"]:
+            tag.hide()
+            break
+
+    cardTag = doc.insertTag("Card")
+    cardTag.setAttribute("busId", info["bus-id"])
+
+    addTag(cardTag, "VendorId", card.vendor_id)
+    addTag(cardTag, "ProductId", card.product_id)
+
+    drivers = cardTag.insertTag("Drivers")
+    for driver in card.driverlist:
+        if "@" in driver:
+            drv, pkg = driver.split("@", 1)
+        else:
+            drv = driver
+            pkg = "xorg-video"
+
+        d = drivers.insertTag("Driver")
+        d.setAttribute("package", pkg)
+        d.insertData(drv)
+
+    probeResult = cardTag.insertTag("ProbeResult")
+    for key, value in card.probe_result.items():
+        t = probeResult.insertTag("Value")
+        t.setAttribute("key", key)
+        t.insertData(value)
+
+    config = cardTag.insertTag("ActiveConfig")
+
+    driver = config.insertTag("Driver")
+    driver.setAttribute("package", card.package)
+    driver.insertData(card.driver)
+
+    addTag(config, "Depth", card.depth)
+
+    outName = card.active_outputs[0]
+    outMode = card.modes[outName]
+    output = config.insertTag("Output")
+    output.setAttribute("mode", outMode)
+    output.insertData(outName)
+
+    addTag(config, "DesktopSetup", card.desktop_setup)
+
+    if card.desktop_setup != "single":
+        outName = card.active_outputs[1]
+        outMode = card.modes[outName]
+        output = config.insertTag("SecondOutput")
+        output.setAttribute("mode", outMode)
+        output.insertData(outName)
+
+    f = file(configFile, "w")
+    f.write(doc.toPrettyString())
+    f.close()

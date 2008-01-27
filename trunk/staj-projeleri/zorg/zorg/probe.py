@@ -2,6 +2,7 @@
 
 import os
 import re
+import dbus
 import struct
 
 from zorg.hwdata import *
@@ -47,6 +48,109 @@ class PCIDevice:
         data = self._readConfig(offset, 2)
 
         return struct.unpack("h", data)[0]
+
+class VideoDevice:
+    def __init__(self, bus):
+        busId = tuple(int(x, 16) for x in bus.replace(".",":").split(":"))[1:4]
+
+        self.bus = busId
+
+        self.vendor_id = lremove(pciInfo(bus, "vendor"), "0x").lower()
+        self.product_id = lremove(pciInfo(bus, "device"), "0x").lower()
+
+        self.driverlist = ["vesa"]
+        self.depthlist = ["16", "24"]
+        self.driver = "vesa"
+        self.package = "xorg-video"
+
+        self.probe_result = {"flags" : ""}
+
+        self.active_outputs = ["default"]
+        self.modes = {"default" : "800x600"}
+        self.depth = "16"
+        self.desktop_setup = "single"
+
+        self.driver_options = {}
+        self.monitor_settings = {}
+
+    def getDict(self):
+        info = {
+            "bus-id" : "PCI:%d:%d:%d" % self.bus,
+            "driver" : self.driver,
+            "depth" : self.depth,
+            "desktop-setup" : self.desktop_setup,
+            "active-outputs" : ",".join(self.active_outputs),
+        }
+
+        for output, mode in self.modes.items():
+            info["%s-mode" % output] = mode
+
+        return info
+
+    def query(self):
+        bus = dbus.SystemBus()
+
+        try:
+            object = bus.get_object("tr.org.pardus.comar", "/", introspect=False)
+            iface = dbus.Interface(object, "tr.org.pardus.comar")
+
+        except dbus.exceptions.DBusException, e:
+            print "Error: %s" % e
+            return []
+
+        driverPackages = iface.listModelApplications("Xorg.Driver")
+        availableDrivers = listAvailableDrivers()
+        driver = None
+
+        for line in loadFile(DriversDB):
+            if line.startswith(self.vendor_id + self.product_id):
+                self.driverlist = line.rstrip("\n").split(" ")[1:]
+
+                for drv in self.driverlist:
+                    if "@" in drv:
+                        drvname, drvpackage = drv.split("@", 1)
+                        if drvpackage.replace("-", "_") in driverPackages:
+                            driver = drvname
+                            self.package = drvpackage
+                            break
+
+                    elif drv in availableDrivers:
+                        driver = drv
+                        break
+
+                break
+
+        # if could not find driver from driverlist try X -configure
+        if not driver:
+            print "Running X server to query driver..."
+            ret = run("/usr/bin/X", ":99", "-configure", "-logfile", "/var/log/xlog")
+            if ret == 0:
+                home = os.getenv("HOME", "")
+                p = XorgParser()
+                p.parseFile(home + "/xorg.conf.new")
+                unlink(home + "/xorg.conf.new")
+                sec = p.getSections("Device")
+                if sec:
+                    driver = sec[0].get("Driver")
+                    if driver not in self.driverlist:
+                        self.driverlist.append(driver)
+
+                    print "Driver reported by X server is %s." % driver
+
+        if driver:
+            self.driver = driver
+
+        app = self.package.replace("-", "_")
+        object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
+        iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Driver")
+
+        iface.enable()
+        self.probe_result = iface.probe(self.getDict())
+
+        self.depthlist = self.probe_result["depths"].split(",")
+        self.depth = self.depthlist[0]
+
+        #flags = self.probe_result["flags"].split(",")
 
 def pciInfo(dev, attr):
     return sysValue(sysdir, dev, attr)
@@ -177,6 +281,57 @@ def queryDevice(dev):
     # If driver supports RandR 1.2, we will use a different probe method.
     if dev.driver in randr12_drivers:
         dev.randr12 = True
+
+def getPrimaryCard():
+    devices = []
+    bridges = []
+
+    for dev in os.listdir(sysdir):
+        device = PCIDevice(dev)
+        device.class_ = int(pciInfo(dev, "class")[:6], 16)
+        devices.append(device)
+
+        if device.class_ == PCI_CLASS_BRIDGE_PCI:
+            bridges.append(device)
+
+    for dev in devices:
+        for bridge in bridges:
+            dev_path = os.path.join(sysdir, bridge.name, dev.name)
+            if os.path.exists(dev_path):
+                dev.bridge = bridge
+
+    primaryBus = None
+    for dev in devices:
+        if (dev.class_ >> 8) != PCI_BASE_CLASS_DISPLAY:
+            continue
+
+        vga_routed = True
+        bridge = dev.bridge
+        while bridge:
+            bridge_ctl = bridge.readConfigWord(PCI_BRIDGE_CONTROL)
+
+            if not (bridge_ctl & PCI_BRIDGE_CTL_VGA):
+                vga_routed = False
+                break
+
+            bridge = bridge.bridge
+
+        if vga_routed:
+            pci_cmd = dev.readConfigWord(PCI_COMMAND)
+
+            if pci_cmd & (PCI_COMMAND_IO | PCI_COMMAND_MEMORY):
+                primaryBus = dev.name
+                break
+
+    # Just to ensure that we have picked a device. Normally,
+    # primaryBus might not be None here.
+    if primaryBus is None:
+        for dev in devices:
+            if (dev.class_ >> 8) == PCI_BASE_CLASS_DISPLAY:
+                primaryBus = dev.name
+                break
+
+    return primaryBus
 
 def findVideoCards():
     """ Finds video cards. Result is a list of Device objects. """
@@ -426,7 +581,7 @@ def queryFglrxOutputs(device):
 def xserverProbe(card):
     dev = {
             "driver":   card.driver,
-            "busID":    card.busId
+            "bus-id":    card.busId
         }
 
     # Old nvidia driver does not enable this option
@@ -447,7 +602,7 @@ def XProbe(dev):
     sec = XorgSection("Device")
     sec.set("Identifier", "Card0")
     sec.set("Driver", dev["driver"])
-    sec.set("BusId", dev["busID"])
+    sec.set("BusId", dev["bus-id"])
 
     if dev.has_key("driver-options"):
         sec.options.update(dev["driver-options"])
