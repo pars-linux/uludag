@@ -185,8 +185,10 @@ class XConfig:
         sec.set("Identifier", mon.identifier)
         sec.set("VendorName", mon.vendorname)
         sec.set("ModelName", mon.modelname)
-        sec.set("HorizSync", mon.hsync_min, unquoted("-"), mon.hsync_max)
-        sec.set("VertRefresh", mon.vref_min, unquoted("-"), mon.vref_max)
+
+        if mon.hsync_min:
+            sec.set("HorizSync", mon.hsync_min, unquoted("-"), mon.hsync_max)
+            sec.set("VertRefresh", mon.vref_min, unquoted("-"), mon.vref_max)
 
         self._parser.sections.append(sec)
         return sec
@@ -201,7 +203,7 @@ class XConfig:
 
         subsec = XorgSection("Display")
         subsec.set("Depth", scr.depth)
-        if not scr.device.randr12:
+        if scr.res != "auto":
             subsec.set("Modes", *scr.modes)
 
         sec.sections = [subsec]
@@ -221,6 +223,12 @@ class XConfig:
         secScr = self._addScreen(screen)
 
         self._priScreen = screen
+
+        if dev.randr12 and dev.configuredOutputs:
+            out = dev.configuredOutputs[0]
+            secDev.options["Monitor-%s" % out] = secMon.identifier
+            secMon.options["Enable"] = xBool(True)
+            secMon.options["PreferredMode"] = screen.res
 
     def setSecondaryScreen(self, screen):
         #TODO: If nvidia module is used, use its own options to set 2nd screen.
@@ -311,8 +319,12 @@ class ZorgConfig:
 
         outputsTag = tag.getTag("Outputs")
         for output in outputsTag.tags("Output"):
-            out = output.firstChild().data()
+            out = output.getAttribute("name")
+
             card.outputs[out] = []
+            modes = output.getTag("Modes")
+            for mode in modes.tags("Mode"):
+                card.outputs[out].append(mode.firstChild().data())
 
         return card
 
@@ -379,8 +391,13 @@ class ZorgConfig:
             addTag(mons, "Monitor", mon.id)
 
         outs = tag.insertTag("Outputs")
-        for out in card.outputs.keys():
-            addTag(outs, "Output", out)
+        for out, reslist in card.outputs.items():
+            t = outs.insertTag("Output")
+            t.setAttribute("name", out)
+
+            modes = t.insertTag("Modes")
+            for res in reslist:
+                addTag(modes, "Mode", res)
 
     def monitors(self):
         monitorList = []
