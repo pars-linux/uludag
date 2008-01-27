@@ -397,17 +397,33 @@ def queryFglrxOutputs(device):
                     device.outputs[parsingModesFor].append(mode)
 
 def xserverProbe(card):
-    p = XorgParser()
-    sec = XorgSection("Device")
-    sec.set("Identifier", "Card0")
-    sec.set("Driver", card.driver)
-    sec.set("BusId", card.busId)
+    dev = {
+            "driver":   card.driver,
+            "busID":    card.busId
+        }
 
     # Old nvidia driver does not enable this option
     # by default. We need it to get possible modes
     # supported by monitors.
     if card.driver == "nvidia":
-        sec.options["UseEdidFreqs"] = xBool[True]
+        dev["driver-options"] = {
+                "UseEdidFreqs" : "1"
+            }
+
+    if card.driver == "fglrx":
+        dev["depth"] = "24"
+
+    return XProbe(dev)
+
+def XProbe(dev):
+    p = XorgParser()
+    sec = XorgSection("Device")
+    sec.set("Identifier", "Card0")
+    sec.set("Driver", dev["driver"])
+    sec.set("BusId", dev["busID"])
+
+    if dev.has_key("driver-options"):
+        sec.options.update(dev["driver-options"])
 
     p.sections.append(sec)
 
@@ -415,8 +431,8 @@ def xserverProbe(card):
     sec.set("Identifier", "Screen0")
     sec.set("Device", "Card0")
 
-    if card.driver == "fglrx":
-        sec.set("DefaultDepth", unquoted("24"))
+    if dev.has_key("depth"):
+        sec.set("DefaultDepth", unquoted(dev["depth"]))
 
     p.sections.append(sec)
 
