@@ -76,6 +76,7 @@ class Device:
         self.boardName = "Unknown Board"
 
         self.outputs = {}
+        self.configuredOutputs = []
         self.monitors = []
         self.tvStandards = []
 
