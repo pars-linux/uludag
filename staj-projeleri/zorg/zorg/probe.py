@@ -136,7 +136,7 @@ def queryDevice(dev):
 
         for line in loadFile(xdriverlist):
             if line.startswith(dev.vendorId + dev.deviceId):
-                dev.driverlist = line.rstrip("\n").split(" ")[1].split(",")
+                dev.driverlist = line.rstrip("\n").split(" ")[1:]
 
                 for drv in dev.driverlist:
                     if "@" in drv:
