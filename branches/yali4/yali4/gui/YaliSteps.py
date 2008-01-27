@@ -10,26 +10,31 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import time
-import yali.gui.context as ctx
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
-class YaliSteps(QWidget):
+import time
+import yali4.gui.context as ctx
+
+def pix(name):
+    return QtGui.QPixmap(":/gui/pics/%s.png" % name)
+
+class YaliSteps(QtGui.QWidget):
     def __init__(self, *args):
-        QWidget.__init__(self, *args)
+        QtGui.QWidget.__init__(self, *args)
 
         # poor man's status icons =)
-        self.iconFree      = ctx.iconfactory.newPixmap("iconFree")
-        self.iconWorking   = ctx.iconfactory.newPixmap("iconWorking")
-        self.iconDone      = ctx.iconfactory.newPixmap("iconDone")
-        self.iconFailed    = ctx.iconfactory.newPixmap("iconFailed")
+        # No no no; I'm rich now :-p
+        self.iconFree      = pix("iconFree")
+        self.iconWorking   = pix("iconWorking")
+        self.iconDone      = pix("iconDone")
+        self.iconFailed    = pix("iconFailed")
 
-        self.StepsLayout = QVBoxLayout(self)
+        self.StepsLayout = QtGui.QVBoxLayout(self)
         self.items = []
 
     def setOperations(self, stepItems):
@@ -51,9 +56,9 @@ class stepItem:
         self.operation = operation
         self.status = False
 
-        self.mainLayout = QHBoxLayout(None)
+        self.mainLayout = QtGui.QHBoxLayout(None)
 
-        self.pixmapLabel = QLabel(parent,"StatusPixmap")
+        self.pixmapLabel = QtGui.QLabel(parent,"StatusPixmap")
         self.pixmapLabel.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,
                                                    QSizePolicy.Fixed,0,0,
                                                    self.pixmapLabel.sizePolicy().hasHeightForWidth()))
@@ -61,7 +66,7 @@ class stepItem:
         self.pixmapLabel.setScaledContents(1)
         self.mainLayout.addWidget(self.pixmapLabel)
 
-        self.textLabel = QLabel(parent)
+        self.textLabel = QtGui.QLabel(parent)
         #self.textLabel.setText(text)
         self.mainLayout.addWidget(self.textLabel)
 

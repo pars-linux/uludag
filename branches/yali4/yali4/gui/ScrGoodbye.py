@@ -11,34 +11,37 @@
 #
 
 import os
-from qt import *
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
+
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
 
 import comar
 import time
-import yali.sysutils
-import yali.users
-import yali.localeutils
-import yali.postinstall
-import yali.bootloader
-import yali.storage
-import yali.partitionrequest as partrequest
-import yali.partitiontype as parttype
+import yali4.sysutils
+import yali4.users
+import yali4.localeutils
+import yali4.postinstall
+import yali4.bootloader
+import yali4.storage
+import yali4.partitionrequest as partrequest
+import yali4.partitiontype as parttype
 from os.path import basename
-from yali.sysutils import is_windows_boot
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.YaliDialog import WarningDialog
-from yali.gui.YaliSteps import YaliSteps
-from yali.constants import consts
-import yali.gui.context as ctx
+from yali4.sysutils import is_windows_boot
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.YaliDialog import WarningDialog
+from yali4.gui.YaliSteps import YaliSteps
+from yali4.constants import consts
+import yali4.gui.context as ctx
 
 ##
 # Goodbye screen
-class Widget(QWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Goodbye from YALI')
+    desc = _('Enjoy your freash Pardus !..')
     help = _('''
 <font size="+2">Congratulations</font>
 
@@ -57,50 +60,49 @@ don't you?
 ''')
 
     def __init__(self, *args):
-        apply(QWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_KeyboardWidget()
+        self.ui.setupUi(self)
 
-        img = QLabel(self)
-        img.setPixmap(ctx.iconfactory.newPixmap("goodbye"))
+        #img = QLabel(self)
+        #img.setPixmap(ctx.iconfactory.newPixmap("goodbye"))
 
         self.steps = YaliSteps(self)
 
-        self.info = QLabel(self)
+        self.info = QtGui.QLabel(self)
         self.info.setText(
             _('<b><font size="+2" color="#FF6D19">Rebooting system. Please wait!</font></b>'))
         self.info.hide()
         self.info.setAlignment(QLabel.AlignCenter|QLabel.AlignTop)
         self.info.setMinimumSize(QSize(0,50))
 
-        vbox = QVBoxLayout(self)
+        vbox = QtGui.QVBoxLayout(self)
         vbox.addStretch(1)
 
-        hbox = QHBoxLayout(vbox)
+        hbox = QtGui.QHBoxLayout(vbox)
         hbox.addStretch(1)
-        #FIXME Where is the steps layout ??
-        hbox.addWidget(img)
+        # hbox.addWidget(img)
         hbox.addStretch(1)
 
         vbox.addStretch(1)
         vbox.addWidget(self.info)
 
     def shown(self):
-        from os.path import basename
-        ctx.debugger.log("%s loaded" % basename(__file__))
-        ctx.screens.disablePrev()
+        ctx.mainScreen.disableBack()
         self.processPendingActions()
         self.steps.slotRunOperations()
 
     def execute(self):
-        ctx.screens.disableNext()
+        ctx.mainScreen.disableNext()
 
         self.info.show()
         self.info.setAlignment(QLabel.AlignCenter)
 
         try:
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
-            yali.sysutils.umount(ctx.consts.target_dir + "/home")
+            yali4.sysutils.umount(ctx.consts.target_dir + "/home")
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir))
-            yali.sysutils.umount(ctx.consts.target_dir)
+            yali4.sysutils.umount(ctx.consts.target_dir)
         except:
             ctx.debugger.log("Umount Failed.")
             pass
@@ -113,7 +115,7 @@ don't you?
 
         ctx.debugger.log("Trying to eject the CD.")
         # remove cd...
-        yali.sysutils.eject_cdrom()
+        yali4.sysutils.eject_cdrom()
 
         ctx.debugger.log("Yali, fastreboot calling..")
 
@@ -122,7 +124,7 @@ don't you?
             open(ctx.consts.log_file,"w").write(str(ctx.debugger.traceback.plainLogs))
 
         time.sleep(4)
-        yali.sysutils.fastreboot()
+        yali4.sysutils.fastreboot()
 
     # process pending actions defined in other screens.
     def processPendingActions(self):
@@ -151,7 +153,7 @@ don't you?
 
         def addUsers():
             global comarLink
-            for u in yali.users.pending_users:
+            for u in yali4.users.pending_users:
                 ctx.debugger.log("User %s adding to system" % u.username)
                 comarLink.User.Manager.addUser(name=u.username,
                                                password=u.passwd,
@@ -172,18 +174,18 @@ don't you?
             return True
 
         def writeConsoleData():
-            yali.localeutils.write_keymap(ctx.installData.keyData.console)
+            yali4.localeutils.write_keymap(ctx.installData.keyData.console)
             ctx.debugger.log("Keymap stored.")
             return True
 
         def migrateXorgConf():
-            yali.postinstall.migrate_xorg_conf(ctx.installData.keyData.X)
+            yali4.postinstall.migrate_xorg_conf(ctx.installData.keyData.X)
             ctx.debugger.log("xorg.conf merged.")
             return True
 
         def setPackages():
             global comarLink
-            if yali.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
+            if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
                 ctx.debugger.log("OemInstall selected.")
                 comarLink.System.Service["kdebase"].setState(state="off")
                 ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
@@ -204,14 +206,14 @@ don't you?
 
     def installBootloader(self):
         ctx.debugger.log("Bootloader is installing...")
-        loader = yali.bootloader.BootLoader()
+        loader = yali4.bootloader.BootLoader()
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   partrequest.mountRequestType)
         _ins_part = root_part_req.partition().getPath()
         loader.write_grub_conf(_ins_part,ctx.installData.bootLoaderDev)
 
         # Check for windows partitions.
-        for d in yali.storage.devices:
+        for d in yali4.storage.devices:
             for p in d.getPartitions():
                 fs = p.getFSName()
                 if fs in ("ntfs", "fat32"):
@@ -229,25 +231,25 @@ don't you?
         loader.install_grub(ctx.installData.bootLoaderDev)
         ctx.debugger.log("Bootloader installed.")
 
-class RebootWidget(QWidget):
+class RebootWidget(QtGui.QWidget):
 
     def __init__(self, *args):
-        QWidget.__init__(self, *args)
+        QtGui.QWidget.__init__(self, *args)
 
-        l = QVBoxLayout(self)
+        l = QtGui.QVBoxLayout(self)
         l.setSpacing(20)
         l.setMargin(10)
 
-        warning = QLabel(self)
+        warning = QtGui.QLabel(self)
         warning.setText(_('''<b>
 <p>Press Reboot button to restart your system.</p>
 </b>
 '''))
 
-        self.reboot = QPushButton(self)
+        self.reboot = QtGui.QPushButton(self)
         self.reboot.setText(_("Reboot"))
 
-        buttons = QHBoxLayout(self)
+        buttons = QtGui.QHBoxLayout(self)
         buttons.setSpacing(10)
         buttons.addStretch(1)
         buttons.addWidget(self.reboot)
@@ -255,9 +257,9 @@ class RebootWidget(QWidget):
         l.addWidget(warning)
         l.addLayout(buttons)
 
-
         self.connect(self.reboot, SIGNAL("clicked()"),
                      self.slotReboot)
 
     def slotReboot(self):
         self.emit(PYSIGNAL("signalOK"), ())
+
