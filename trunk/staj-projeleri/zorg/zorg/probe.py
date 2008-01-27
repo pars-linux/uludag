@@ -166,9 +166,9 @@ def queryDevice(dev):
                 dev.driver = sec[0].get("Driver")
                 print "Driver reported by X server is %s." % dev.driver
 
-    # use nvidia if nv is found
-    if (dev.driver == "nv") and ("nvidia" in availableDrivers):
-        dev.driver = "nvidia"
+    ## use nvidia if nv is found
+    #if (dev.driver == "nv") and ("nvidia" in availableDrivers):
+    #    dev.driver = "nvidia"
 
     # In case we can't parse or find xorg.conf.new
     if not dev.driver:
