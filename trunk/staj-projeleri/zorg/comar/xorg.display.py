@@ -16,12 +16,12 @@ def autoConfigure():
         queryDevice(dev)
         queryOutputs(dev)
 
-    monitor = None
-    if device.monitors:
-        if len(device.monitors) > 1 and not device.monitors[0].probed:
-            monitor = device.monitors[1]
-        else:
-            monitor = device.monitors[0]
+    if dev.monitors:
+        monitor = dev.monitors[0]
+    else:
+        monitor = Monitor()
+        monitor.id = "PNP"
+        monitor.res[0] = "auto"
 
     screen = Screen(device, monitor)
     #screen.number = 0
