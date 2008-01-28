@@ -16,6 +16,7 @@ import os
 
 import pisi.api
 import pisi.fetcher
+from pisi.delta import create_delta_package
 
 """ BuildFarm Modules """
 import config
@@ -51,8 +52,8 @@ class PisiApi:
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
         if not os.path.exists(pspec):
-            logger.error(_("'%s' is not exists!") % (pspec))
-            raise _("'%s' is not exists!") % pspec
+            logger.error(_("'%s' does not exist!") % (pspec))
+            raise _("'%s' is does not exist!") % pspec
 
         logger.info(_("BUILD called for %s") % (pspec)) 
 
@@ -62,6 +63,21 @@ class PisiApi:
         self.__oldBinaryPackages += __oldBinaryPackages
 
         return (self.__newBinaryPackages, self.__oldBinaryPackages)
+
+    def delta(self, oldBinaryPackages, newBinaryPackages):
+        # Sort the lists
+        oldBinaryPackages = sorted(oldBinaryPackages)
+        newBinaryPackages = sorted(newBinaryPackages)
+
+        delta_packages = []
+
+        for p in zip(oldBinaryPackages, newBinaryPackages):
+            deltaPath = create_delta_package(os.path.join(config.binaryPath, p[0]), \
+                                             os.path.join(config.workDir, p[1]))
+            delta_packages.append(deltaPath)
+
+        logger.info(_("Created delta package(s): %s" % delta_packages))
+        return delta_packages
 
     def install(self, p):
         a = []
