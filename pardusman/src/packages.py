@@ -118,8 +118,7 @@ class Repository:
         self.inst_size = 0
         self.packages = {}
         self.components = {}
-        self.indexpath = None
-    
+
     def parse_index(self, console=None, update_repo=False):
         path = fetch_uri(self.base_uri, self.cache_dir, self.index_name, console, update_repo)
         if path.endswith(".bz2"):
