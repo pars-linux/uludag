@@ -54,7 +54,7 @@ def send(message, pspec = "", type = ""):
 
     packagename=os.path.basename(os.path.dirname(pspec))
     last_log = "".join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
-    
+
     message = templates.get(type) % {'log'      : wrap(last_log),
                                  'recipientName': ' ve '.join(recipientsName),
                                  'mailTo'       : ', '.join(recipientsEmail),
@@ -65,7 +65,7 @@ def send(message, pspec = "", type = ""):
                                  'pspec'        : pspec,
                                  'type'         : type,
                                  'packagename'  : packagename}
-    
+
     print message
 
     # timeout value in seconds

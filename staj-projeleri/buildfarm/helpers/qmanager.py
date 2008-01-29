@@ -33,32 +33,32 @@ __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
 class QueueManager:
-    
+
     def __init__(self):
-        
+
         self.locks = {"waitQueue" : FileLock("%s/.waitqueue.lock" % config.workDir),
                       "workQueue" : FileLock("%s/.workqueue.lock" % config.workDir),
                       "build"     : FileLock("%s/.build.lock" % config.workDir)}
-        
+
         self.workQueue = []
         self.waitQueue = []
-        
+
         self.__checkQueues__()
-        
+
     def __del__(self):
         self.__serialize__(self.waitQueue, "waitQueue")
         self.__serialize__(self.workQueue, "workQueue")
-        
+
     def __checkQueues__(self):
         # If waitQueue contains some packages, this method
         # moves them to the workQueue and calls dependency resolver on it.
         self.__deserialize__(self.workQueue, "workQueue")
         self.__deserialize__(self.waitQueue, "waitQueue")
-        
+
         if len(self.waitQueue):
             self.workQueue += self.waitQueue
             self.waitQueue = []
-            
+
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolveDependencies()
         self.__del__()
 
@@ -88,15 +88,15 @@ class QueueManager:
                 queueName.append(line.strip("\n"))
         queue.close()
         self.locks[fileName].unlock()
-    
+
     def __initWorkQueueFromFile__(self):
         self.workQueue = []
         self.__deserialize__(self.workQueue, "workQueue")
-        
+
     def __initWaitQueueFromFile__(self):
         self.waitQueue = []
         self.__deserialize__(self.waitQueue, "waitQueue")
-        
+
     def __tryToLock__(self, depth):
         # find the caller info
         # if the request to this function from stack depth 'depth'
@@ -167,7 +167,7 @@ class QueueManager:
             if not os.path.isfile(os.path.join(config.localPspecRepo, pspec)):
                 self.locks['build'].unlock()
                 return 2
-            
+
         self.__initWorkQueueFromFile__()
         if not self.workQueue.__contains__(pspec):
             self.workQueue.append(pspec)
@@ -211,9 +211,9 @@ class QueueManager:
         if lock == 0:
             self.locks['build'].unlock()
         return 2
-    
+
     def buildArchive(self, dirname, filename, d, username=""):
-        
+
         def extractArchive(filename, d):
             from subprocess import call
             dir = os.path.join(config.remoteWorkDir, username)
@@ -223,44 +223,44 @@ class QueueManager:
             f = open(filename, "wb")
             f.write(d.data)
             f.close()
-            
+
             return call(["tar", "xvjf", filename])
-        
+
         # Returns 0 if successful
         print extractArchive(filename, d)
         getPspecList(dirname)
-        
+
         return True
-    
+
     def buildPackages(self):
         # Return values are interpreted by the client
         # 0: Successful
         # 1: Buildfarm is busy
         # 2: Empty work queue
         # 3: Finished with errors
-        
+
         try:
             self.locks["build"].lock(timeout=0)
         except:
             return 1
-        
+
         sys.excepthook = self.__handle_exception__
 
         self.__checkQueues__()
         queue = shallowCopy(self.getWorkQueue())
-    
+
         if len(queue) == 0:
             logger.info(_("Work queue is empty..."))
             self.locks["build"].unlock()
             return 2
-        
+
         logger.raw(_("QUEUE"))
         logger.info(_("Work Queue: %s") % (queue))
         sortedQueue = queue[:]
         sortedQueue.sort()
         # mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
         logger.raw()
-    
+
         for pspec in queue:
             # Gets the packagename, creates a log file
             packagename = os.path.basename(os.path.dirname(pspec))
@@ -284,7 +284,7 @@ class QueueManager:
                     # that contains new and old package names
                     # e.g. newBinaryPackages=['package-1-2-1.pisi']
                     (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
-                    
+
                     # Delta package generation
                     deltaPackages = []
                     if oldBinaryPackages:
@@ -324,11 +324,11 @@ class QueueManager:
                         self.__movePackages__(newBinaryPackages, oldBinaryPackages, deltaPackages)
             finally:
                 pisi.finalize()
-    
+
         logger.raw(_("QUEUE"))
         logger.info(_("Wait Queue: %s") % (self.getWaitQueue()))
         logger.info(_("Work Queue: %s") % (self.getWorkQueue()))
-    
+
         if self.getWaitQueue():
             # mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n") % "\n".join(self.getWaitQueue()))
             self.locks["build"].unlock()
@@ -337,57 +337,57 @@ class QueueManager:
             self.locks["build"].unlock()
             # mailer.info(_("Queue finished without a problem!..."))
             return 0
-        
+
     def buildIndex(self):
-        
+
         try:
             self.locks["build"].lock(timeout=0)
         except:
             return 1
-        
+
         logger.raw()
         logger.info(_("Generating PiSi Index..."))
-    
+
         current = os.getcwd()
         os.chdir(config.binaryPath)
         os.system("/usr/bin/pisi index %s %s --skip-signing --skip-sources" % (config.localPspecRepo, config.binaryPath))
         logger.info(_("PiSi Index generated..."))
-    
+
         #FIXME: will be enabled after some internal tests
         #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
-    
+
         # Check packages containing binaries and libraries broken by any package update
         os.system("/usr/bin/revdep-rebuild --force")
         # FIXME: if there is any broken package,  mail /root/.revdep-rebuild.4_names file
-    
+
         os.chdir(current)
-    
+
         # FIXME: handle indexing errors
-        
+
         self.locks["build"].unlock()
         return 0
-    
+
     def __movePackages__(self, newBinaryPackages, oldBinaryPackages, deltaPackages):
-        
+
         exists = os.path.exists
         join   = os.path.join
         remove = os.remove
         copy   = shutilCopy
-    
+
         def __moveOldPackage__(self, package):
             logger.info(_("*** Old package '%s' is processing") % (package))
             if exists(join(config.binaryPath, package)):
                 remove(join(config.binaryPath, package))
-    
+
             if exists(join(config.workDir, package)):
                 remove(join(config.workDir, package))
-    
+
         def __moveNewPackage__(self, package):
             logger.info(_("*** New package '%s' is processing") % (package))
             if exists(join(config.workDir, package)):
                 copy(join(config.workDir, package), config.binaryPath)
                 remove(join(config.workDir, package))
-    
+
         def __moveUnchangedPackage__(self, package):
             logger.info(_("*** Unchanged package '%s' is processing") % (package))
             if exists(join(config.workDir, package)):
@@ -399,24 +399,24 @@ class QueueManager:
             if exists(package):
                 copy(package, config.deltaPath)
                 remove(package)
-        
+
         unchangedPackages = set(newBinaryPackages).intersection(set(oldBinaryPackages))
         newPackages = set(newBinaryPackages) - set(oldBinaryPackages)
         oldPackages = set(oldBinaryPackages) - set(unchangedPackages)
-    
+
         logger.info(_("*** New binary package(s): %s") % newPackages)
         logger.info(_("*** Old binary package(s): %s") % oldPackages)
         logger.info(_("*** Unchanged binary package(s): %s") % unchangedPackages)
         logger.info(_("*** Delta package(s) : %s") % deltaPackages)
-    
+
         for package in newPackages:
             if package:
                 __moveNewPackage__(self, package)
-    
+
         for package in oldPackages:
             if package:
                 __moveOldPackage__(self, package)
-    
+
         for package in unchangedPackages:
             if package:
                 __moveUnchangedPackage__(self, package)
@@ -424,15 +424,15 @@ class QueueManager:
         for package in deltaPackages:
             if package:
                 __moveDeltaPackage__(self, package)
-    
+
     def __removeBinaryPackageFromWorkDir__(self, package):
         os.remove(os.path.join(config.workDir, package))
-    
+
     def __handle_exception__(self, exception, value, tb):
         s = cStringIO.StringIO()
         traceback.print_tb(tb, file = s)
         s.seek(0)
-    
+
         logger.error(str(exception))
         logger.error(str(value))
         logger.error(s.read())

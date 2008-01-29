@@ -66,12 +66,13 @@ class PisiApi:
                 set(map(lambda x: os.path.basename(x), self.__oldBinaryPackages)))
 
     def delta(self, oldBinaryPackages, newBinaryPackages):
+
         # Sort the lists
         oldBinaryPackages = sorted(oldBinaryPackages)
         newBinaryPackages = sorted(newBinaryPackages)
 
         delta_packages = []
-        
+
         for p in zip(oldBinaryPackages, newBinaryPackages):
             # deltaPath = '/var/pisi/b-1-2.delta.pisi'
             deltaPath = create_delta_package(os.path.join(config.binaryPath, p[0]), \

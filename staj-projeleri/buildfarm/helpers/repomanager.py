@@ -109,21 +109,21 @@ class RepositoryManager:
                 queue.write("%s\n" % pspec)
             queue.close()
         return updatedpspecfiles + newpspecfiles
-    
+
     # configure source and dest
     def sync(self, source="./pardus-2007-test", dest="./pardus-2007", sendMail=False):
-        
+
         diff = []
         for i in os.listdir(source):
             if not os.path.exists(dest + "/" + i):
                 # os.system("cp %s/%s %s/%s" % (source, i, dest, i))
                 # os.system("pisi index /root/2007 pardus-2007 --skip-signing --skip-sources")
                 diff.append(i)
-        
+
         diff.sort()
-        
+
         if sendMail:
             mailer.sync(_("The packages listed below will be added \
 to the stable repository tonight if all the developers are OK :\n\n%s") % "\n".join(diff))
-        
+
         return diff

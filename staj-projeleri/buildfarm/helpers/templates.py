@@ -118,7 +118,7 @@ Cc: %(ccList)s
 Subject: [buildfarm] Güncellemeler
 Content-Type: text/plain;
             charset="utf-8"
-            
+
 Hello,
 
 %(message)s
