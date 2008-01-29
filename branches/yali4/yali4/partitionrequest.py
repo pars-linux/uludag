@@ -324,8 +324,9 @@ class MountRequest(PartRequest):
         target = consts.target_dir + pt.mountpoint
         filesystem = self.partition().getFSName()
 
+        # print ">>>>>>",target
         if not os.path.isdir(target):
-            os.mkdir(target)
+            os.makedirs(target)
 
         yali4.sysutils.mount(source, target, filesystem)
 
@@ -333,8 +334,7 @@ class MountRequest(PartRequest):
                                             target,
                                             filesystem)
         open("/etc/mtab", "a").write(mtab_entry)
-        #FIXME: use logging system
-#        print mtab_entry
+        # print mtab_entry
 
         PartRequest.applyRequest(self)
 

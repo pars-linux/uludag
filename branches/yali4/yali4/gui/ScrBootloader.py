@@ -210,11 +210,11 @@ and easy way to install Pardus.</p>
                                                                   request.mountRequestType)
 
         # install_dev
-        if self.noInstall.isChecked():
+        if self.ui.noInstall.isChecked():
             ctx.installData.bootLoaderDev = None
-        elif self.installPart.isChecked():
+        elif self.ui.installPart.isChecked():
             ctx.installData.bootLoaderDev = basename(root_part_req.partition().getPath())
-        elif self.installMBR.isChecked():
+        elif self.ui.installMBR.isChecked():
             ctx.installData.bootLoaderDev = basename(self.device.getPath())
         else:
             if len(yali4.storage.devices) > 1:

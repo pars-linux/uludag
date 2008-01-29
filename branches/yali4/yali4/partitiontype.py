@@ -80,7 +80,7 @@ class ArchivePartitionType(PartitionType):
     mountpoint = "/mnt/archive"
     mountoptions = "noatime"
     parted_type = parted.PARTITION_PRIMARY
-    parted_flags = [ ]
+    parted_flags = []
     label = "ARCHIVE"
 
     def setFileSystem(self, filesystem):

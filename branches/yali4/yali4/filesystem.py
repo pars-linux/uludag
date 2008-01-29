@@ -139,6 +139,9 @@ class FileSystem:
         # append swap manually
         self._filesystems.append("swap")
 
+        # append vfat manually
+        self._filesystems.append("fat32")
+
 
     ##
     # chek if file system is supported by kernel
