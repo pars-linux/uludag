@@ -12,25 +12,60 @@
 
 """procutils module provides basic process utilities."""
 
+import os
+import time
+import socket
 import subprocess
 
+from pardus.fileutils import FileLock
 
-def capture(*cmd):
-    """Capture output of the command without running a shell"""
-    a = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    return a.communicate()
+def synchronized(func):
+    """Syncronize method call with a per method lock.
+    
+    This decorator makes sure that only one instance of the script's
+    method run in any given time.
+    """
+    class Handler:
+        def handler(self, *args, **kwargs):
+            lock = FileLock("/var/run/comar-%s-%s.lock" % (script()[0], self.myfunc.__name__))
+            lock.lock()
+            self.myfunc(*args, **kwargs)
+            lock.unlock()
+    h = Handler()
+    h.myfunc = func
+    return h.handler
+
+class execReply(int):
+    def __init__(self, value):
+        int.__init__(self, value)
+        self.stdout = None
+        self.stderr = None
 
 def run(*cmd):
-    """Run a command without running a shell, only output errors"""
-    f = file("/dev/null", "w")
-    return subprocess.call(cmd, stdout=f)
+    """Run a command without running a shell"""
+    command = []
+    if len(cmd) == 1:
+        if isinstance(cmd[0], basestring):
+            command = cmd[0].split()
+        else:
+            command = cmd[0]
+    else:
+        command = cmd
+    proc = subprocess.Popen(command, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+    reply = execReply(proc.wait())
+    reply.stdout, reply.stderr = proc.communicate()
+    return reply
 
-def run_full(*cmd):
-    """Run a command without running a shell, with full output"""
-    return subprocess.call(cmd)
-
-def run_quiet(*cmd):
-    """Run the command without running a shell and no output"""
-    f = file("/dev/null", "w")
-    return subprocess.call(cmd, stdout=f, stderr=f)
-
+def waitBus(unix_name, timeout=5, wait=0.1, stream=True):
+    if stream:
+        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    else:
+        sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
+    while timeout > 0:
+        try:
+            sock.connect(unix_name)
+            return True
+        except:
+            timeout -= wait
+        time.sleep(wait)
+    return False
