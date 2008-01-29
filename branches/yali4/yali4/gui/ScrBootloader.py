@@ -12,7 +12,7 @@
 
 
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 from PyQt4 import QtGui
