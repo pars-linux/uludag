@@ -35,6 +35,20 @@ csl_end()
     Py_Finalize();
 }
 
+static PyObject *
+c_i18n(PyObject *self, PyObject *args)
+{
+    PyObject *dict;
+    PyObject *ret;
+
+    if (!PyArg_ParseTuple(args, "O!", &PyDict_Type, &dict))
+        return NULL;
+
+    ret = PyDict_GetItemString(dict, "en");
+    Py_INCREF(ret);
+    return ret;
+}
+
 //! CSL method: script()
 static PyObject *
 c_script(PyObject *self, PyObject *args)
@@ -148,6 +162,7 @@ c_fail(PyObject *self, PyObject *args)
 //! CSL methods
 static PyMethodDef methods[] = {
     { "script", c_script, METH_NOARGS, "Return package name" },
+    { "_", c_i18n, METH_VARARGS, "Return localized text from a dictionary" },
     { "call", c_call, METH_VARARGS, "Make a syncronous comar call" },
     { "notify", c_notify, METH_VARARGS, "Emits a signal" },
     { "fail", c_fail, METH_VARARGS, "Abort script" },
