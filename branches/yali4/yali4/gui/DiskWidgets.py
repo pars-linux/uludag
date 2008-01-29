@@ -284,9 +284,10 @@ class DiskList(QtGui.QWidget):
             if device._disk.type.name == "gpt":
                 min_primary = 4
                 if device.numberOfPrimaryPartitions() == 4:
-                    # FIXME Change this with information dialog !
-                    print _("GPT Disk tables does not support for extended partitions.\n" \
-                            "You need to delete one of primary partition on your disk table !")
+                    QtGui.QMessageBox.information(self,
+                                                  "Too many primary partition !", 
+                                                _("GPT Disk tables does not support for extended partitions.\n" \
+                                                  "You need to delete one of primary partition from your disk table !"))
                     return
             else:
                 min_primary = 1
