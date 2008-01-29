@@ -9,8 +9,6 @@
 # option) any later version. Please read the COPYING file.
 #
 
-_ = lambda x: x["en"]
-
 name_msg = {
     "en": "Wireless network",
     "tr": "Kablosuz ağlar"

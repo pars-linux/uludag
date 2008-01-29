@@ -11,8 +11,6 @@
 # Please read the COPYING file.
 #
 
-_ = lambda x: x["en"]
-
 name_msg = {
     "en": "Dialup network",
     "tr": "Çevirmeli ağlar"

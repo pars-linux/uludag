@@ -19,8 +19,6 @@ import random
 
 from pardus.fileutils import FileLock
 
-_ = lambda x: x["en"]
-
 # messages
 
 invalid_username_msg = {

@@ -6,9 +6,6 @@ from pardus.diskutils import EDD
 from pardus.fileutils import FileLock
 from pardus.grubutils import grubEntry, grubCommand, grubConf
 
-# FIXME: Move this back into CSL parser
-_ = lambda x: x["tr"]
-
 # l10n
 
 FAIL_TIMEOUT = _({
