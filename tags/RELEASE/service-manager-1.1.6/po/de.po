@@ -1,0 +1,129 @@
+# translation of de.po to Deutsch
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-07 21:36+0200\n"
+"PO-Revision-Date: 2006-12-10 21:25+0200\n"
+"Last-Translator: Mustafa M. Ölcerman <oelcerman@fussballkreis.org>\n"
+"Language-Team: Deutsch <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/service-manager.py:55
+#: src/service-manager.py:350
+#: src/mainform.py:97
+msgid "Service Manager"
+msgstr "Dienst-Manager"
+
+#: src/service-manager.py:185
+msgid "You are not allowed to do this operation."
+msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
+
+#: src/service-manager.py:185
+msgid "Access Denied"
+msgstr "Zugang verweigert"
+
+#: src/service-manager.py:187
+msgid "COMAR script execution failed."
+msgstr "COMAR Skriptausführung ist fehlgeschlagen."
+
+#: src/service-manager.py:187
+msgid "Script Error"
+msgstr "Skriptfehler"
+
+#: src/service-manager.py:192
+msgid "Unable to start service."
+msgstr "Dienst kann nicht gestartet werden."
+
+#: src/service-manager.py:192
+#: src/service-manager.py:195
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: src/service-manager.py:195
+msgid "Unable to stop service."
+msgstr "Dienst kann nicht angehalten werden."
+
+#: src/service-manager.py:224
+#: src/mainform.py:101
+msgid "Select a service from list."
+msgstr "Wählen Sie ein Dienst aus der Liste aus."
+
+#: src/service-manager.py:232
+#: src/mainform.py:103
+msgid "Start"
+msgstr "Start"
+
+#: src/service-manager.py:237
+#, python-format
+msgid "%s is running."
+msgstr "%s gestartet."
+
+#: src/service-manager.py:240
+#, python-format
+msgid "%s is not running."
+msgstr "%s angehalten."
+
+#: src/service-manager.py:242
+msgid "Execute startup script"
+msgstr "Startskript ausführen"
+
+#: src/service-manager.py:243
+msgid "Execuete shutdown script"
+msgstr "Herunterfahrskript ausführen"
+
+#: src/service-manager.py:307
+msgid ""
+"If you stop this service, you may have problems.\n"
+"Are you sure you want to stop this service?"
+msgstr ""
+"Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
+"Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
+
+#: src/service-manager.py:345
+msgid "Service Manager is already running!"
+msgstr "Dienst-Manager wird bereits ausgeführt!"
+
+#: src/mainform.py:82
+#: src/mainform.py:108
+msgid "1"
+msgstr "1"
+
+#: src/mainform.py:83
+#: src/mainform.py:109
+msgid "Service"
+msgstr "Dienst"
+
+#: src/mainform.py:84
+#: src/mainform.py:110
+msgid "Run on Startup"
+msgstr "Automatisch starten"
+
+#: src/mainform.py:85
+#: src/mainform.py:111
+msgid "Package"
+msgstr "Paket"
+
+#: src/mainform.py:99
+msgid "Run on startup."
+msgstr "Automatisch starten"
+
+#: src/mainform.py:100
+msgid "Don't run on startup."
+msgstr "Nicht automatisch starten."
+
+#: src/mainform.py:106
+msgid "&List servers only."
+msgstr "&Liste nur die Server auf."
+
+#: src/mainform.py:107
+msgid "Alt+L"
+msgstr "Alt+L"
+
