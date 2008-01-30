@@ -6,7 +6,7 @@ from PyQt4 import QtCore, QtGui
 class DiskList(QtGui.QWidget):
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.resize(QtCore.QSize(QtCore.QRect(0,0,778,100).size()).expandedTo(self.minimumSizeHint()))
+        self.resize(QtCore.QSize(QtCore.QRect(0,0,598,100).size()).expandedTo(self.minimumSizeHint()))
         self.setStyleSheet("""
             QToolBox::tab { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                         stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
@@ -26,14 +26,16 @@ class DiskList(QtGui.QWidget):
 class DiskWidget(QtGui.QWidget):
     def __init__(self, name):
         QtGui.QWidget.__init__(self,None)
-        self.resize(QtCore.QSize(QtCore.QRect(0,0,778,80).size()).expandedTo(self.minimumSizeHint()))
         self.layout = QtGui.QGridLayout(self)
+        self.layout.setContentsMargins(1,0,1,0)
         self.diskGroup = QtGui.QGroupBox(self)
-        self.diskGroup.setMinimumSize(QtCore.QSize(0,50))
+        self.diskGroup.setMinimumSize(QtCore.QSize(570,70))
+        self.diskGroup.setMaximumSize(QtCore.QSize(570,70))
         self.gridlayout = QtGui.QGridLayout(self.diskGroup)
         self.gridlayout.setMargin(0)
         self.gridlayout.setSpacing(0)
         self.splinter = QtGui.QSplitter(QtCore.Qt.Horizontal,self.diskGroup)
+        self.splinter.setHandleWidth(2)
         self.gridlayout.addWidget(self.splinter,0,0,1,1)
         self.layout.addWidget(self.diskGroup)
         self.partitions = []
@@ -42,13 +44,18 @@ class DiskWidget(QtGui.QWidget):
     def addPartition(self,name=None,data=None):
         partition = QtGui.QRadioButton("%s\n55.3 GB" % name,self.diskGroup)
         partition.setStyleSheet("background-color:lightblue")
+        partition.setMinimumSize(QtCore.QSize(100,0))
         partition.setFocusPolicy(QtCore.Qt.NoFocus)
         self.splinter.addWidget(partition)
+        policy = partition.sizePolicy();
+        policy.setHorizontalStretch(100);
+        partition.setSizePolicy(policy);
         self.partitions.append({"name":name,"data":data})
 
 if __name__ == "__main__":
     import sys
     app = QtGui.QApplication(sys.argv)
+    app.setStyle(QtGui.QStyleFactory.create('Plastique'))
     diskList = DiskList()
 
     disk1 = DiskWidget("/dev/sda")
