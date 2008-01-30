@@ -1,0 +1,157 @@
+# translation of it.po to Italian
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrea Decorte <adecorte@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: it\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-20 11:28+0300\n"
+"PO-Revision-Date: 2007-07-11 20:30+0200\n"
+"Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
+"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/boot-manager.py:30 src/boot-manager.py:84
+msgid "Boot Manager"
+msgstr "Gestore di avvio"
+
+#: src/boot-manager.py:37
+msgid "Developer and Current Maintainer"
+msgstr "Sviluppatore e manutentore corrente"
+
+#: src/boot-manager.py:38
+msgid "Contributions to Boot.Loader model."
+msgstr "Contributi al modello Boot.Loader."
+
+#: src/boot-manager.py:79
+msgid "Boot Manager is already started!"
+msgstr "Il gestore di avvio è già in esecuzione!"
+
+#: src/mainview.py:36
+msgid "New Entry"
+msgstr "Nuova voce"
+
+#: src/mainview.py:41
+msgid "Unused Kernels"
+msgstr "Kernel inutilizzati"
+
+#: src/mainview.py:61
+msgid "Remember last booted entry."
+msgstr "Ricorda la voce scelta all'ultimo avvio."
+
+#: src/mainview.py:68
+msgid "Timeout:"
+msgstr "Attesa:"
+
+#: src/mainview.py:124
+msgid "Title:"
+msgstr "Titolo:"
+
+#: src/mainview.py:132
+msgid "System:"
+msgstr "Sistema:"
+
+#: src/mainview.py:142
+msgid "Root:"
+msgstr "Radice:"
+
+#: src/mainview.py:151
+msgid "Kernel:"
+msgstr "Kernel:"
+
+#: src/mainview.py:160
+msgid "Kernel Parameters:"
+msgstr "Parametri kernel:"
+
+#: src/mainview.py:169
+msgid "Initial Ramdisk:"
+msgstr "Ramdisk iniziale:"
+
+#: src/mainview.py:178
+msgid "Set as default boot entry."
+msgstr "Imposta come voce di avvio predefinita."
+
+#: src/mainview.py:247
+msgid "There must be at least one Pardus entry."
+msgstr "Deve esserci almeno una voce di Pardus."
+
+#: src/mainview.py:247 src/mainview.py:545
+msgid "Access Denied"
+msgstr "Accesso negato"
+
+#: src/mainview.py:249
+msgid "Are you sure you want to remove this entry?"
+msgstr "Sei sicuro di voler eliminare questa voce?"
+
+#: src/mainview.py:249
+msgid "Delete Entry"
+msgstr "Elimina voce"
+
+#: src/mainview.py:255
+msgid ""
+"This is a Pardus kernel entry.\n"
+"Do you want to uninstall it from the system?"
+msgstr ""
+"Questa è la voce di un kernel Pardus.\n"
+"Desideri disinstallarlo dal sistema?"
+
+#: src/mainview.py:255 src/mainview.py:411
+msgid "Uninstall Kernel"
+msgstr "Disinstalla kernel"
+
+#: src/mainview.py:345
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
+msgstr ""
+"Questi kernel sono installati nel sistema ma non esistono nella lista del "
+"gestore di avvio:"
+
+#: src/mainview.py:354
+msgid "Add Boot Entry"
+msgstr "Aggiungi voce di avvio"
+
+#: src/mainview.py:359
+msgid "Uninstall"
+msgstr "Disinstalla"
+
+#: src/mainview.py:367
+msgid "Ok"
+msgstr "OK"
+
+#: src/mainview.py:411
+#, fuzzy
+msgid "Do you want to uninstall selected kernel(s) from the system?"
+msgstr "Desideri disinstallare questo kernel dal sistema?"
+
+#: src/mainview.py:479
+msgid "Bootloader configuration changed by another application."
+msgstr ""
+"La configurazione del gestore di avvio è stata modificata da un'altra "
+"applicazione."
+
+#: src/mainview.py:533 src/mainview.py:538 src/mainview.py:540
+msgid "Failed"
+msgstr "Errore"
+
+#: src/mainview.py:545
+msgid "You are not allowed to edit boot loader settings."
+msgstr "Non hai i permessi necessari per modificare le impostazioni di avvio."
+
+#: src/ui_elements.py:91
+msgid "Edit entry"
+msgstr "Modifica voce"
+
+#: src/ui_elements.py:95
+msgid "Delete entry"
+msgstr "Elimina voce"
+
+#, fuzzy
+#~ msgid "Uninstall Kernel(s)"
+#~ msgstr "Disinstalla kernel"
