@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-21 19:34+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/boot-manager.py:30 src/boot-manager.py:84
+msgid "Boot Manager"
+msgstr ""
+
+#: src/boot-manager.py:37
+msgid "Developer and Current Maintainer"
+msgstr ""
+
+#: src/boot-manager.py:38
+msgid "Contributions to Boot.Loader model."
+msgstr ""
+
+#: src/boot-manager.py:79
+msgid "Boot Manager is already started!"
+msgstr ""
+
+#: src/mainview.py:35
+msgid "New Entry"
+msgstr ""
+
+#: src/mainview.py:55
+msgid "Remember last booted entry."
+msgstr ""
+
+#: src/mainview.py:62
+msgid "Timeout:"
+msgstr ""
+
+#: src/mainview.py:115
+msgid "Title:"
+msgstr ""
+
+#: src/mainview.py:123
+msgid "System:"
+msgstr ""
+
+#: src/mainview.py:133
+msgid "Root:"
+msgstr ""
+
+#: src/mainview.py:142
+msgid "Kernel:"
+msgstr ""
+
+#: src/mainview.py:151
+msgid "Kernel Parameters:"
+msgstr ""
+
+#: src/mainview.py:160
+msgid "Initial Ramdisk:"
+msgstr ""
+
+#: src/mainview.py:169
+msgid "Set as default boot entry."
+msgstr ""
+
+#: src/mainview.py:233
+msgid "There must be at least one Pardus entry."
+msgstr ""
+
+#: src/mainview.py:233 src/mainview.py:411
+msgid "Access Denied"
+msgstr ""
+
+#: src/mainview.py:235
+msgid "Are you sure you want to remove this entry?"
+msgstr ""
+
+#: src/mainview.py:235
+msgid "Delete Entry"
+msgstr ""
+
+#: src/mainview.py:358
+msgid "Bootloader configuration changed by another application."
+msgstr ""
+
+#: src/mainview.py:400 src/mainview.py:404 src/mainview.py:406
+msgid "Failed"
+msgstr ""
+
+#: src/mainview.py:411
+msgid "You are not allowed to edit boot loader settings."
+msgstr ""
+
+#: src/ui_elements.py:91
+msgid "Edit entry"
+msgstr ""
+
+#: src/ui_elements.py:95
+msgid "Delete entry"
+msgstr ""
