@@ -754,7 +754,7 @@ dbus_listen()
     while (1) {
         struct pollfd fds[MAX_FDS];
         DBusWatch *watch[MAX_WATCHES];
-        int nfds, i, sock, ipc, len, nfds_w, nfds_c, ret;
+        int nfds, nfds_w, nfds_c, ret, i, j;
 
         nfds = 0;
         for (i = 0; i < n_watches; i++) {
@@ -775,9 +775,8 @@ dbus_listen()
         nfds_w = nfds;
 
         for (i = 0; i < my_proc.nr_children; i++) {
-            sock = my_proc.children[i].from;
-            fds[nfds].fd = sock;
-            fds[nfds].events = POLLIN | POLLOUT | POLLHUP | POLLERR;
+            fds[nfds].fd = my_proc.children[i].from;
+            fds[nfds].events = 0;
             fds[nfds].revents = 0;
             nfds++;
             if (i > MAX_CHILDREN) {
@@ -812,11 +811,12 @@ dbus_listen()
         }
 
         for (i = 0; i < nfds_c; i++) {
-            if (fds[nfds_w + i].revents) {
-                sock = my_proc.children[i].from;
-                len = read(sock, &ipc, sizeof(ipc));
-                if (len != sizeof(ipc)) {
-                    rem_child(i);
+            for (j = 0; j < my_proc.nr_children; j++) {
+                if (my_proc.children[j].from == fds[nfds_w + i].fd) {
+                    if (fds[nfds_w + i].revents) {
+                        rem_child(j);
+                    }
+                    break;
                 }
             }
         }
