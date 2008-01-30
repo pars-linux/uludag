@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-01-23 16:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: connection.py:32
+msgid "No authentication"
+msgstr ""
+
+#: connection.py:37
+msgid "Passphrase:"
+msgstr ""
+
+#: connection.py:45
+msgid "Login"
+msgstr ""
+
+#: connection.py:50 connection.py:237
+msgid "Name:"
+msgstr ""
+
+#: connection.py:60
+msgid "Password:"
+msgstr ""
+
+#: connection.py:66
+msgid "Key"
+msgstr ""
+
+#: connection.py:112
+msgid "Network:"
+msgstr ""
+
+#: connection.py:122
+msgid "Automatic query (DHCP)"
+msgstr ""
+
+#: connection.py:126
+msgid "Manual"
+msgstr ""
+
+#: connection.py:130
+msgid "Address:"
+msgstr ""
+
+#: connection.py:136
+msgid "Net mask:"
+msgstr ""
+
+#: connection.py:141
+msgid "Gateway:"
+msgstr ""
+
+#: connection.py:202 connection.py:209
+msgid "Device:"
+msgstr ""
+
+#: connection.py:223
+msgid "Scan"
+msgstr ""
+
+#: connection.py:254
+msgid "Configure network connection"
+msgstr ""
+
+#: connection.py:266
+msgid "Basic"
+msgstr ""
+
+#: connection.py:270 mainwin.py:106
+msgid "Connect"
+msgstr ""
+
+#: connection.py:272
+msgid "Accept"
+msgstr ""
+
+#: connection.py:291
+msgid "Phone number"
+msgstr ""
+
+#: connection.py:300
+msgid "No device"
+msgstr ""
+
+#: connection.py:402
+msgid "Authentication"
+msgstr ""
+
+#: mainwin.py:51
+msgid "Active"
+msgstr ""
+
+#: mainwin.py:53
+msgid "Inactive"
+msgstr ""
+
+#: mainwin.py:89
+msgid "Network connections:"
+msgstr ""
+
+#: mainwin.py:91
+msgid "Settings"
+msgstr ""
+
+#: mainwin.py:100
+msgid "Create"
+msgstr ""
+
+#: mainwin.py:108
+msgid "Disconnect"
+msgstr ""
+
+#: mainwin.py:128
+msgid "Unconfigured"
+msgstr ""
+
+#: mainwin.py:258
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+
+#: mainwin.py:261
+msgid "Delete connection?"
+msgstr ""
+
+#: net_kga.py:23
+msgid "Network connections"
+msgstr ""
+
+#: net_kga.py:52
+msgid "Network Connections"
+msgstr ""
+
+#: net_kga.py:114
+msgid "Network KGA is already running!"
+msgstr ""
+
+#: links.py:63
+msgid "Connection types"
+msgstr ""
+
+#: links.py:69
+msgid "Select a connection type:"
+msgstr ""
+
+#: links.py:77
+msgid "Create connection"
+msgstr ""
+
+#: links.py:85 links.py:116
+msgid "new connection"
+msgstr ""
+
+#: links.py:110
+msgid "Install network packages!"
+msgstr ""
+
+#: links.py:111
+msgid "No package with COMAR network scripts are installed yet."
+msgstr ""
+
+#: stack.py:25
+msgid "Network Settings"
+msgstr ""
+
+#: stack.py:33
+msgid "Computer"
+msgstr ""
+
+#: stack.py:37
+msgid "Host name:"
+msgstr ""
+
+#: stack.py:40
+msgid "Name servers"
+msgstr ""
+
+#: stack.py:84
+msgid "Add Name Server"
+msgstr ""
+
+#: stack.py:84
+msgid "Name server:"
+msgstr ""
