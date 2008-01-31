@@ -58,6 +58,7 @@ def send(message, pspec = "", type = ""):
                                  'mailTo'       : ', '.join(recipientsEmail),
                                  'ccList'       : ', '.join(config.ccList),
                                  'mailFrom'     : config.mailFrom,
+                                 'announceAddr' : config.announceAddr,
                                  'subject'      : pspec or type,
                                  'message'      : wrap(message),
                                  'pspec'        : pspec,
@@ -81,7 +82,7 @@ def send(message, pspec = "", type = ""):
             return
 
     if type == "announce":
-        smtpresult = session.sendmail(config.mailFrom, "gelistirici@pardus.org.tr" , message)
+        smtpresult = session.sendmail(config.mailFrom, config.announceAddr , message)
     else:
         smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, message)
 

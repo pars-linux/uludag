@@ -113,7 +113,7 @@ Happy hacking!
 
 announce_message = """\
 From: Pardus Buildfarm  <%(mailFrom)s>
-To: gelistirici@pardus.org.tr
+To: %(announceAddr)s
 Subject: [buildfarm] [REPORT] New packages in -testing repository
 Content-Type: text/plain;
             charset="utf-8"
