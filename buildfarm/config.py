@@ -20,6 +20,7 @@ logFile          = "/var/cache/pisi/buildfarm.log"
 
 #information for mailer module.
 mailFrom         = "buildfarm@pardus.org.tr"
+announceAddr     = "gelistirici@pardus.org.tr"
 ccList           = []
 smtpServer       = "mail.pardus.org.tr"
 useSmtpAuth      = False
