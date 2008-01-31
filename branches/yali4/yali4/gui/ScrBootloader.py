@@ -179,8 +179,6 @@ and easy way to install Pardus.</p>
 
         ctx.mainScreen.processEvents()
 
-        requestThread = ApplyAllRequestThread()
-
         # We should do partitioning operations in here.
 
         # Auto Partitioning
@@ -194,11 +192,15 @@ and easy way to install Pardus.</p>
         # Manual Partitioning
         else:
             ctx.debugger.log("Format Operation Started")
-            requestThread.start()
-            while not ctx.requestsCompleted:
+            for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
-                time.sleep(0.1)
+                dev.commit()
+            # wait for udev to create device nodes
+            time.sleep(2)
+            ctx.mainScreen.processEvents()
+            ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
+            ctx.mainScreen.processEvents()
             self.checkSwap()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
@@ -236,17 +238,3 @@ class DeviceItem(QtGui.QListWidgetItem):
     def getDevice(self):
         return self._dev
 
-
-from threading import Thread
-
-class ApplyAllRequestThread(Thread):
-
-    def run(self):
-        # wait..
-        time.sleep(0.01)
-        for dev in yali4.storage.devices:
-            dev.commit()
-        # wait for udev to create device nodes
-        time.sleep(2)
-        ctx.partrequests.applyAll()
-        ctx.requestsCompleted = True
