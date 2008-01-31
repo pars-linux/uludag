@@ -25,7 +25,7 @@ class ScreenWidget:
         return True
 
     def backCheck(self):
-        return True
+        return False
 
     def update(self):
         pass

@@ -100,8 +100,7 @@ about disk partitioning.
 
             # skip next screen()
             # We pass the Manual Partitioning screen
-            num = ctx.mainScreen.getCurrentIndex() + 1
-            ctx.mainScreen.goToScreen(num)
+            ctx.mainScreen.moveInc = 2
 
         return True
 

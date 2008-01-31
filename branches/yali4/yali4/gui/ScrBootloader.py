@@ -72,7 +72,6 @@ loader.
         if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
-
         if len(yali4.storage.devices) > 1:
             self.device_list_state = True
             # fill device list
@@ -98,15 +97,10 @@ loader.
         self.connect(self.ui.device_list, SIGNAL("clicked()"),
                      self.slotSelect)
 
-    def shown(self):
-        if ctx.autoInstall:
-            ctx.mainScreen.next()
-
     def backCheck(self):
         # we need to go partition auto screen, not manual ;)
-        num = ctx.mainScreen.mainStack.getCurrentIndex() - 2
-        ctx.mainScreen.stackMove(num)
-        return False
+        ctx.mainScreen.moveInc = 2
+        return True
 
     def slotSelect(self):
         self.ui.installMBR.setChecked(True)
