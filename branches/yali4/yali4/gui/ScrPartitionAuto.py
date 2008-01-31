@@ -30,6 +30,9 @@ from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 
+# Auto Partition Methods
+methodUseAvail, methodEraseAll = range(2)
+
 ##
 # Partition Choice Widget
 class Widget(QtGui.QWidget, ScreenWidget):
@@ -80,12 +83,10 @@ about disk partitioning.
         if not self.ui.device_list.count():
             raise YaliExceptionInfo, _("It seems that you don't have the required disk space (min. %s) for Pardus installation." % ctx.consts.min_root_size)
 
-        self.connect(self.ui.accept_auto, SIGNAL("clicked()"),
-                     self.slotSelectAuto)
-        self.connect(self.ui.manual, SIGNAL("clicked()"),
-                     self.slotSelectManual)
-        self.connect(self.ui.device_list, SIGNAL("itemChanged(QListWidgetItem*)"),
-                     self.slotDeviceChanged)
+        self.connect(self.ui.accept_auto_1, SIGNAL("clicked()"),self.slotSelectAuto)
+        self.connect(self.ui.accept_auto_2, SIGNAL("clicked()"),self.slotSelectAuto)
+        self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
+        self.connect(self.ui.device_list, SIGNAL("itemChanged(QListWidgetItem*)"),self.slotDeviceChanged)
 
     def shown(self):
         ctx.mainScreen.disableNext()
@@ -94,10 +95,11 @@ about disk partitioning.
     def execute(self):
         ctx.installData.autoPartDev = None
 
-        if self.ui.accept_auto.isChecked():
+        if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
             ctx.installData.autoPartDev = self.device
             ctx.debugger.log("Automatic Partition selected..")
-
+            if self.ui.accept_auto_2.isChecked():
+                ctx.installData.autoPartMethod = methodEraseAll
             # skip next screen()
             # We pass the Manual Partitioning screen
             ctx.mainScreen.moveInc = 2

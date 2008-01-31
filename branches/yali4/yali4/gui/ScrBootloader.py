@@ -19,6 +19,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 import time
+import thread
 from os.path import basename
 
 import yali4.storage
@@ -176,8 +177,9 @@ and easy way to install Pardus.</p>
                 ctx.mainScreen.enableBack()
                 return False
 
-        #info_window = InformationWindow(self, _("Please wait while formatting!"))
         ctx.mainScreen.processEvents()
+
+        requestThread = ApplyAllRequestThread()
 
         # We should do partitioning operations in here.
 
@@ -185,20 +187,19 @@ and easy way to install Pardus.</p>
         if ctx.installData.autoPartDev:
             ctx.partrequests.remove_all()
             ctx.use_autopart = True
-            self.autopartDevice()
+            # self.autopartDevice()
             time.sleep(1)
-            ctx.partrequests.applyAll()
+            #ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:
-            for dev in yali4.storage.devices:
-                dev.commit()
-            # wait for udev to create device nodes
-            time.sleep(2)
+            ctx.debugger.log("Format Operation Started")
+            requestThread.start()
+            while not ctx.requestsCompleted:
+                ctx.mainScreen.processEvents()
+                time.sleep(0.1)
+            ctx.debugger.log("Format Operation Finished")
             self.checkSwap()
-            ctx.partrequests.applyAll()
-
-        #info_window.close()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
@@ -235,3 +236,17 @@ class DeviceItem(QtGui.QListWidgetItem):
     def getDevice(self):
         return self._dev
 
+
+from threading import Thread
+
+class ApplyAllRequestThread(Thread):
+
+    def run(self):
+        # wait..
+        time.sleep(0.01)
+        for dev in yali4.storage.devices:
+            dev.commit()
+        # wait for udev to create device nodes
+        time.sleep(2)
+        ctx.partrequests.applyAll()
+        ctx.requestsCompleted = True

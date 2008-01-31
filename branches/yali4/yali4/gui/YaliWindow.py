@@ -77,7 +77,7 @@ class Widget(Ui_YaliMain):
 
     def slotBack(self):
         _w = self.mainStack.currentWidget()
-        _w.backChec()
+        _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
 

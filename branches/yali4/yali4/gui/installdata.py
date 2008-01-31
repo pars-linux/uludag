@@ -10,6 +10,9 @@
 # Please read the COPYING file.
 #
 
+# Auto Partition Methods
+methodUseAvail, methodEraseAll = range(2)
+
 class InstallData:
     keyData = None
     rootPassword = None
@@ -17,6 +20,8 @@ class InstallData:
     users = []
     autoLoginUser = None
     autoPartDev = None
+    autoPartMethod = methodUseAvail
     bootLoaderDev = None
     repoAddr = None
     useYaliFirstBoot = False
+

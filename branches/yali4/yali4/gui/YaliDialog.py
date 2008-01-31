@@ -87,7 +87,7 @@ class Dialog(QtGui.QDialog):
         QObject.connect(self.windowTitle.pushButton,SIGNAL("clicked()"),self.reject)
         QMetaObject.connectSlotsByName(self)
 
-        self.setStyleSheet("QFrame#windowTitle {background-color:white;border:1px solid #CCC;border-radius:4px;}")
+        self.setStyleSheet("QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}")
 
 class WarningDialog(Dialog):
 
@@ -151,5 +151,11 @@ your system formatting the selected partition.</p>
 
     def slotCancel(self):
         self.emit(SIGNAL("signalCancel"), ())
+
+
+class InformationWindow(QtGui.QWidget):
+
+    def __init__(self, *args):
+        pass
 
 

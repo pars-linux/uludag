@@ -18,6 +18,8 @@ from yali4.constants import consts
 from yali4.options import options
 from yali4.partitionrequest import partrequests
 
+# lock for format request
+requestsCompleted = False
 
 # bind some constant values
 # There are more values defined in yali/constants.py!
