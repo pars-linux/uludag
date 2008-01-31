@@ -48,7 +48,8 @@ def send(message, pspec = "", type = ""):
         recipientsEmail.append(specFile.source.packager.email)
 
     templates = {"error": tmpl.error_message,
-                 "info" : tmpl.info_message}
+                 "info" : tmpl.info_message,
+                 "announce" : tmpl.announce_message}
 
     packagename=os.path.basename(os.path.dirname(pspec))
     last_log = "".join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
@@ -79,10 +80,16 @@ def send(message, pspec = "", type = ""):
             logger.error("E-posta gönderimi gerçekleştirilemedi: Kimlik doğrulama başarısız.")
             return
 
-    smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, message)
+    if type == "announce":
+        smtpresult = session.sendmail(config.mailFrom, "gelistirici@pardus.org.tr" , message)
+    else:
+        smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, message)
 
 def error(message, pspec):
     send(message, pspec, type = "error")
 
 def info(message):
     send(message, type = "info")
+
+def announce(message):
+    send(message, type = "announce")
