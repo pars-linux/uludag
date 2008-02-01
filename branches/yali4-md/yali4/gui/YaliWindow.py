@@ -35,6 +35,8 @@ class Widget(Ui_YaliMain):
         self.screenData = None
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
 
+        self.moveInc = 1
+
         # Dont need help as default
         self.slotToggleHelp()
 
@@ -70,10 +72,14 @@ class Widget(Ui_YaliMain):
     def slotNext(self):
         _w = self.mainStack.currentWidget()
         _w.execute()
-        self.stackMove(self.getCur(+1))
+        self.stackMove(self.getCur(self.moveInc))
+        self.moveInc = 1
 
     def slotBack(self):
-        self.stackMove(self.getCur(-1))
+        _w = self.mainStack.currentWidget()
+        _w.backCheck()
+        self.stackMove(self.getCur(self.moveInc * -1))
+        self.moveInc = 1
 
     def stackMove(self,new):
         self.mainStack.setCurrentIndex(new)
