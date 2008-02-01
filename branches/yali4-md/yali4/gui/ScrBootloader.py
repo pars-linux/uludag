@@ -19,6 +19,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 import time
+import thread
 from os.path import basename
 
 import yali4.storage
@@ -72,7 +73,6 @@ loader.
         if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
-
         if len(yali4.storage.devices) > 1:
             self.device_list_state = True
             # fill device list
@@ -98,15 +98,10 @@ loader.
         self.connect(self.ui.device_list, SIGNAL("clicked()"),
                      self.slotSelect)
 
-    def shown(self):
-        if ctx.autoInstall:
-            ctx.mainScreen.next()
-
     def backCheck(self):
         # we need to go partition auto screen, not manual ;)
-        num = ctx.mainScreen.mainStack.getCurrentIndex() - 2
-        ctx.mainScreen.stackMove(num)
-        return False
+        ctx.mainScreen.moveInc = 2
+        return True
 
     def slotSelect(self):
         self.ui.installMBR.setChecked(True)
@@ -182,7 +177,6 @@ and easy way to install Pardus.</p>
                 ctx.mainScreen.enableBack()
                 return False
 
-        #info_window = InformationWindow(self, _("Please wait while formatting!"))
         ctx.mainScreen.processEvents()
 
         # We should do partitioning operations in here.
@@ -191,20 +185,23 @@ and easy way to install Pardus.</p>
         if ctx.installData.autoPartDev:
             ctx.partrequests.remove_all()
             ctx.use_autopart = True
-            self.autopartDevice()
+            # self.autopartDevice()
             time.sleep(1)
-            ctx.partrequests.applyAll()
+            #ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:
+            ctx.debugger.log("Format Operation Started")
             for dev in yali4.storage.devices:
+                ctx.mainScreen.processEvents()
                 dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
-            self.checkSwap()
+            ctx.mainScreen.processEvents()
             ctx.partrequests.applyAll()
-
-        #info_window.close()
+            ctx.debugger.log("Format Operation Finished")
+            ctx.mainScreen.processEvents()
+            self.checkSwap()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
