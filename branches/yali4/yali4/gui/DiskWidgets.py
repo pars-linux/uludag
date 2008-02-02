@@ -68,6 +68,7 @@ class DiskList(QtGui.QWidget):
         """)
         self.vbox = QtGui.QVBoxLayout(self)
 
+        # FIXME this is a tabwidget not a toolbox, use tabWidget instead
         self.toolBox = QtGui.QTabWidget(self)
         self.toolBox.setAutoFillBackground(False)
         self.toolBox.setFocusPolicy(Qt.NoFocus)
@@ -92,6 +93,7 @@ class DiskList(QtGui.QWidget):
     ##
     # GUI Operations
     #
+    # FIXME infinite loop here
     def updatePartEdit(self, dw):
         dw.updatePartEdit()
 
@@ -247,7 +249,7 @@ class DiskList(QtGui.QWidget):
                 disk = partition.getDevice()
                 flags = t.parted_flags
 
-                # There must only one bootable partition on disk
+                # There must be only one bootable partition on disk
                 if (parted.PARTITION_BOOT in flags) and disk.hasBootablePartition():
                     flags = list(set(flags) - set([parted.PARTITION_BOOT]))
                 partition.setPartedFlags(flags)
