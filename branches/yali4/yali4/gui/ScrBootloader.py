@@ -29,8 +29,7 @@ import yali4.partitiontype as parttype
 
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
-from yali4.gui.YaliDialog import WarningDialog, WarningWidget
-#from yali4.gui.InformationWindow import InformationWindow
+from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 
@@ -178,16 +177,19 @@ and easy way to install Pardus.</p>
                 return False
 
         ctx.mainScreen.processEvents()
+        info = InformationWindow(_("Writing disk tables ..."))
 
         # We should do partitioning operations in here.
 
         # Auto Partitioning
         if ctx.installData.autoPartDev:
+            info.show()
             ctx.partrequests.remove_all()
             ctx.use_autopart = True
-            # self.autopartDevice()
-            time.sleep(1)
-            #ctx.partrequests.applyAll()
+            self.autopartDevice()
+            time.sleep(2)
+            info.updateMessage(_("Formatting ..."))
+            ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:
@@ -197,11 +199,14 @@ and easy way to install Pardus.</p>
                 dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
+            info.updateMessage(_("Formatting ..."))
             ctx.mainScreen.processEvents()
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
             ctx.mainScreen.processEvents()
             self.checkSwap()
+
+        info.close()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)

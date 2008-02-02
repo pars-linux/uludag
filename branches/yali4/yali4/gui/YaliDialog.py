@@ -153,9 +153,14 @@ your system formatting the selected partition.</p>
         self.emit(SIGNAL("signalCancel"), ())
 
 
-class InformationWindow(QtGui.QWidget):
+class InformationWindow(QtGui.QSplashScreen):
 
-    def __init__(self, *args):
-        pass
+    def __init__(self, message):
+        Pix = QtGui.QPixmap(':/gui/pics/working.png')
+        QtGui.QSplashScreen.__init__(self, ctx.mainScreen.ui, Pix)
+        self.updateMessage(message)
+        ctx.mainScreen.processEvents()
 
+    def updateMessage(self, message):
+        self.showMessage(message,Qt.AlignBottom | Qt.AlignHCenter)
 
