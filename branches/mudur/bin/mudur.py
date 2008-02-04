@@ -479,7 +479,7 @@ def startServices(extras=None):
         except dbus.DBusException:
             ui.error(_("Cannot connect to DBus, services won't be started"))
             return
-        
+
         # Almost everything depends on logger, so start manually
         try:
             startService("sysklogd", bus)
@@ -528,7 +528,7 @@ def stopServices():
             bus = dbus.SystemBus()
         except dbus.DBusException:
             return
-        
+
         for service in getServices(False, bus):
             try:
                 stopService(service, bus)
@@ -584,14 +584,14 @@ def setupUdev():
     for link in devlinks:
         if not os.path.lexists(link[0]):
             os.symlink(link[1], link[0])
-    
+
     ui.info(_("Starting udev"))
-    
+
     if config.kernel_ge("2.6.16"):
         # disable uevent helper, udevd listens to netlink
         write("/sys/kernel/uevent_helper", " ")
         run("/sbin/udevd", "--daemon")
-        
+
         ui.info(_("Populating /dev"))
 
         # create needed queue directory
@@ -605,14 +605,14 @@ def setupUdev():
         # no netlink support in old kernels
         write("/proc/sys/kernel/hotplug", "/sbin/udevsend")
         run("/sbin/udevstart")
-    
+
     # NOTE: handle lvm here when used by pardus
-    
+
 def checkRoot():
     if not config.get("livecd"):
         ui.info(_("Remounting root filesystem read-only"))
         run("/bin/mount", "-n", "-o", "remount,ro", "/")
-        
+
         ent = config.get_mount("/")
         if config.get("forcefsck") or (len(ent) > 5 and ent[5] != "0"):
             if config.get("forcefsck"):
@@ -1010,66 +1010,66 @@ setTranslation()
 if sys.argv[1] == "sysinit":
     ui.info(_("Mounting /sys"))
     mount("/sys", "-t sysfs sysfs /sys")
-    
+
     setupUdev()
-    
+
     ui.info(_("Mounting /dev/pts"))
     mount("/dev/pts", "-t devpts -o gid=5,mode=0620 devpts /dev/pts")
-    
+
     # Set kernel console log level for cleaner boot
     # only panic messages will be printed
     run("/bin/dmesg", "-n", "1")
-    
+
     checkRoot()
     setHostname()
-    
+
     modules()
-    
+
     checkFS()
     localMount()
-    
+
     hdparm()
-    
+
     setClock()
-    
+
     setSystemLanguage()
-    
+
     # better performance for SMP systems, /var/run must be mounted rw before this
     if os.path.exists("/usr/sbin/irqbalance"):
         run("/usr/sbin/irqbalance")
-    
+
     # when we exit this runlevel, init will write a boot record to utmp
     write("/var/run/utmp", "")
     touch("/var/log/wtmp")
-    run("/usr/bin/chgrp", "utmp", "/var/run/utmp", "/var/log/wtmp")
-    run("/usr/bin/chmod", "0664", "/var/run/utmp", "/var/log/wtmp")
+    run("/bin/chgrp", "utmp", "/var/run/utmp", "/var/log/wtmp")
+    run("/bin/chmod", "0664", "/var/run/utmp", "/var/log/wtmp")
 
 elif sys.argv[1] == "boot":
     ui.info(_("Setting up localhost"))
     run("/sbin/ifconfig", "lo", "127.0.0.1", "up")
     run("/sbin/route", "add", "-net", "127.0.0.0", "netmask", "255.0.0.0",
         "gw", "127.0.0.1", "dev", "lo")
-    
+
     run("/sbin/sysctl", "-q", "-p", "/etc/sysctl.conf")
-    
+
     cleanupVar()
 
     if mdirdate("/etc/env.d") > mdate("/etc/profile.env"):
         ui.info(_("Updating environment variables"))
         run("/sbin/update-environment")
-    
+
     cleanupTmp()
-    
+
     startComar()
 
     ttyUnicode()
-    
+
     remoteMount(old_handler)
-    
+
 elif sys.argv[1] == "default":
     if not config.get("safe") and os.path.exists("/etc/conf.d/local.start"):
         run("/bin/bash", "/etc/conf.d/local.start")
-    
+
     ui.info(_("Triggering udev events which are failed during a previous run"))
     # Trigger only the events which are failed during a previous run.
     run("/sbin/udevadm", "trigger", "--retry-failed")
