@@ -194,6 +194,7 @@ and easy way to install Pardus.</p>
         # Manual Partitioning
         else:
             ctx.debugger.log("Format Operation Started")
+            info.show()
             for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
                 dev.commit()
