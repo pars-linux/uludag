@@ -27,7 +27,7 @@ def synchronized(func):
     """
     class Handler:
         def handler(self, *args, **kwargs):
-            lock = FileLock("/var/run/comar-%s-%s.lock" % (script()[0], self.myfunc.__name__))
+            lock = FileLock("/var/run/comar-%s-%s.lock" % (script(), self.myfunc.__name__))
             lock.lock()
             self.myfunc(*args, **kwargs)
             lock.unlock()
