@@ -26,16 +26,14 @@ from pardus.procutils import *
 
 # utility functions
 
-def is_on():
-    return "off"
-
-def loadConfig():
+def loadConfig(filename=None):
     conf = {}
-    try:
-        from csl import serviceConf
-    except ImportError:
-        serviceConf = script()[0]
-    filename = "/etc/conf.d/%s" % serviceConf
+    if not filename:
+        try:
+            from csl import serviceConf
+        except ImportError:
+            serviceConf = script()[0]
+        filename = "/etc/conf.d/%s" % serviceConf
     if not os.path.exists(filename):
         return conf
     for line in file(filename):
@@ -47,6 +45,19 @@ def loadConfig():
                 value = value[1:-1]
             conf[key] = value
     return conf
+
+def is_on():
+    state = "off"
+    try:
+        from csl import serviceDefault
+        state = serviceDefault
+    except:
+        pass
+    config = loadConfig("/etc/conf.d/mudur")
+    services = config.get("services", "").split()
+    if script() in services:
+        state = "on"
+    return state
 
 def loadEnvironment():
     basePath = "/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:"
@@ -90,7 +101,10 @@ def startDependencies(*services):
     Arguments are service names.
     """
     for service in services:
-        call(service, "System.Service", "start")
+        try:
+            call(service, "System.Service", "start")
+        except:
+            pass
 
 # Service control utilities
 
@@ -372,7 +386,7 @@ def info():
                 state = "stopped"
     except:
         pass
-    return "\n".join([serviceType, state, serviceDesc])
+    return serviceType, serviceDesc, state
 
 def ready():
     if is_on() == "on":
@@ -382,4 +396,18 @@ def ready():
 def setState(state=None):
     if state != "on" and state != "off":
         fail("Unknown state '%s'" % state)
+    
+    config = loadConfig("/etc/conf.d/mudur")
+    services = set(config.get("services", "").split())
+    
+    if state == "on":
+        services.add(script())
+    elif script() in services:
+        services.remove(script())
+    
+    import re
+    content = file("/etc/conf.d/mudur").read()
+    content = re.sub("services\s*=.*", "services = %s" % " ".join(services), content)
+    file("/etc/conf.d/mudur", "w").write(content)
+    
     notify("System.Service", "Changed", (script(), state))
