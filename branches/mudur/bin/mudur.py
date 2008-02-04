@@ -1058,8 +1058,6 @@ elif sys.argv[1] == "boot":
         ui.info(_("Updating environment variables"))
         run("/sbin/update-environment")
     
-    resetConPerms()
-    
     cleanupTmp()
     
     startComar()
