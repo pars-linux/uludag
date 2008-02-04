@@ -231,7 +231,7 @@ class ProjectWindow(KMainWindow):
         if not self.ui2project():
             return
         if self.project.release_files and not os.path.exists(self.project.release_files):
-            self.console.error(_("Release files directory does not exist."))
+            self.console.message(_("Release files directory does not exist."))
             return
         return True
     
@@ -274,7 +274,7 @@ class ProjectWindow(KMainWindow):
             self.project.title = tmp
         else:
             self.project.title = None
-            self.console.error(_("Project title not given."))
+            self.console.message(_("Project title not given."))
             return
         tmp = unicode(self.release_files.text())
         if tmp:
@@ -291,14 +291,14 @@ class ProjectWindow(KMainWindow):
             self.project.work_dir = tmp
         else:
             self.project.work_dir = None
-            self.console.error(_("Project directory not given."))
+            self.console.message(_("Project directory not given."))
             return
         tmp = unicode(self.repo_uri.text())
         if tmp:
             self.project.repo_uri = tmp
         else:
             self.project.repo_uri = None
-            self.console.error(_("Repository address not given."))
+            self.console.message(_("Repository address not given."))
             return
         if self.project_type.selectedId() == 0:
             self.project.type = "install"

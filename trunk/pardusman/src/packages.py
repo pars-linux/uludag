@@ -161,18 +161,6 @@ class Repository:
         for name in package_list:
             doc.insertNode(self.packages[name].node)
 
-        # since new PiSi (pisi-db) needs component info in index file, we need to copy it from original index that user specified
-        indexpath = fetch_uri(self.base_uri, self.cache_dir, self.index_name, None, False)
-        if indexpath.endswith(".bz2"):
-            import bz2
-            data = file(indexpath).read()
-            data = bz2.decompress(data)
-            doc_index = piksemel.parseString(data)
-        else:
-            doc_index = piksemel.parse(indexpath)
-        for comp_node in doc_index.tags("Component"):
-            doc.insertNode(comp_node)
-
         return doc.toPrettyString()
 
     def make_local_repo(self, path, package_list):
