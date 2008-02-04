@@ -113,17 +113,17 @@ def format_service_list(services, use_color=True):
         print line
 
 def startService(service, bus):
-    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service)
+    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service, introspect=False)
     print _("Starting %s..." % service)
     obj.start(dbus_interface="tr.org.pardus.comar.System.Service")
 
 def stopService(service, bus):
-    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service)
+    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service, introspect=False)
     print _("Stopping %s..." % service)
     obj.stop(dbus_interface="tr.org.pardus.comar.System.Service")
 
 def setServiceState(service, state, bus):
-    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service)
+    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service, introspect=False)
     obj.setState(state, dbus_interface="tr.org.pardus.comar.System.Service")
     if state == "on":
         print _("Service '%s' will be auto started.") % service
@@ -131,16 +131,16 @@ def setServiceState(service, state, bus):
         print _("Service '%s' won't be auto started.") % service
 
 def reloadService(service, bus):
-    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service)
+    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service, introspect=False)
     print _("Reloading %s..." % service)
     obj.reload(dbus_interface="tr.org.pardus.comar.System.Service")
 
 def getServiceInfo(service, bus):
-    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service)
+    obj = bus.get_object("tr.org.pardus.comar", "/package/%s" % service, introspect=False)
     return obj.info(dbus_interface="tr.org.pardus.comar.System.Service")
 
 def getServices(bus):
-    obj = bus.get_object("tr.org.pardus.comar", "/")
+    obj = bus.get_object("tr.org.pardus.comar", "/", introspect=False)
     return obj.listModelApplications("System.Service", dbus_interface="tr.org.pardus.comar")
 
 def list_services(use_color=True):
