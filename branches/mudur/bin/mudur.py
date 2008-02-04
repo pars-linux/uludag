@@ -493,8 +493,8 @@ def startServices(extras=None):
                     pass
             return
         # Give login screen a headstart
-        #if config.get("head_start"):
-        #    startService(config.get("head_start"), bus, detach=True)
+        if config.get("head_start"):
+            startService(config.get("head_start"), bus, detach=True)
         if not config.get("safe"):
             for service in getServices(True, bus):
                 startService(str(service), bus, detach=True)
