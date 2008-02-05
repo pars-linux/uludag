@@ -15,7 +15,7 @@ import string
 from sets import Set as set
 from qt import *
 from kdecore import *
-from kdeui import KCursor, KDialog
+from kdeui import KCursor, KDialog, KPushButton
 from khtml import *
 
 import pisi
@@ -82,12 +82,12 @@ class BasketDialog(KDialog):
         spacer = QSpacerItem(121, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         layout.addItem(spacer, 5, 0)
 
-        self.updateBasketButton = QPushButton(self)
+        self.updateBasketButton = KPushButton(self)
         self.updateBasketButton.setText(i18n("Update Basket"))
         self.updateBasketButton.setIconSet(loadIconSet("package"))
         layout.addWidget(self.updateBasketButton, 5, 1)
 
-        self.applyButton = QPushButton(self)
+        self.applyButton = KPushButton(self)
         self.applyButton.setText(parent.operateAction.text())
         icon = parent.operateAction.iconSet()
         #Fix 6893
