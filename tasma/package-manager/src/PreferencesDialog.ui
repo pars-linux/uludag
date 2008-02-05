@@ -36,7 +36,7 @@
                 <property name="spacing">
                     <number>6</number>
                 </property>
-                <widget class="QPushButton">
+                <widget class="KPushButton">
                     <property name="name">
                         <cstring>buttonHelp</cstring>
                     </property>
@@ -67,7 +67,7 @@
                         </size>
                     </property>
                 </spacer>
-                <widget class="QPushButton">
+                <widget class="KPushButton">
                     <property name="name">
                         <cstring>buttonOk</cstring>
                     </property>
@@ -84,7 +84,7 @@
                         <bool>true</bool>
                     </property>
                 </widget>
-                <widget class="QPushButton">
+                <widget class="KPushButton">
                     <property name="name">
                         <cstring>buttonCancel</cstring>
                     </property>
@@ -368,7 +368,7 @@
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QPushButton" row="1" column="0">
+                            <widget class="KPushButton" row="1" column="0">
                                 <property name="name">
                                     <cstring>clearCacheButton</cstring>
                                 </property>
