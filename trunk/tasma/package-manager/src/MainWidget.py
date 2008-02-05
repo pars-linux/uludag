@@ -226,7 +226,7 @@ class MainApplicationWidget(QWidget):
         self.processEvents()
         packages = self.command.listPackages()
         self.state = remove_state
-        self.createComponentList(packages, True)
+        self.createComponentList(packages)
         self.operateAction.setText(i18n("Remove Package(s)"))
         self.operateAction.setIconSet(loadIconSet("no"))
         self.basket.setState(self.state)
@@ -657,6 +657,11 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
             self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
 
+    def showWarningMessage(self, message, warning=None):
+        if not warning:
+            warning=i18n("Warning")
+        KMessageBox.sorry(self, message, warning)
+
     def showErrorMessage(self, message, error=None):
         #bug: 6479
         #if error=i18n("Error") is written above, it isn't translated
@@ -680,6 +685,7 @@ class MainApplicationWidget(QWidget):
     def finished(self, command=None):
         # when pisi db version is upgraded, reload is needed before init
         packages = self.basket.packages + self.basket.extraPackages
+        print "in finished(): command=%s" % command
         if command == "System.Manager.updatePackage" and "pisi" in packages:
             self.reloadPisi()
 
