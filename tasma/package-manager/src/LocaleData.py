@@ -38,5 +38,5 @@ def setSystemLocale():
     else:
         systemlocale = "en_US.UTF-8"
 
-    Globals.debug(i18n("Setting system locale to '%s' to let PiSi work in this KDE locale." % systemlocale))
+    Globals.debug("Setting system locale to '%s' to let PiSi work in this KDE locale." % systemlocale)
     locale.setlocale(locale.LC_ALL, systemlocale)
