@@ -70,9 +70,9 @@ class MainApplication(KMainWindow):
         self.tray = Tray.Tray(self)
         if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
             if self.mainwidget.settings.getBoolValue(Settings.general, "UpdateCheck"):
-                Globals.debug(i18n("Update check option is set." % interval))
+                Globals.debug("Update check option is set.")
                 interval = self.mainwidget.settings.getNumValue(Settings.general, "UpdateCheckInterval")
-                Globals.debug(i18n("Update check will start in %s minute(s)" % interval))
+                Globals.debug("Update check will start in %s minute(s)" % interval)
                 self.tray.updateInterval(interval)
             self.tray.show()
 
@@ -85,7 +85,7 @@ class MainApplication(KMainWindow):
 
     def closeEvent(self, closeEvent):
         if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
-            Globals.debug(i18n("Minimizing to system tray."))
+            Globals.debug("Minimizing to system tray.")
             self.hide()
         else:
             self.slotQuit()
@@ -93,7 +93,7 @@ class MainApplication(KMainWindow):
     def slotQuit(self):
         # Don't know why but without this, after exiting package-manager, crash occurs. This may be a workaround or a PyQt bug.
         self.mainwidget.deleteLater()
-        Globals.debug(i18n("package-manager is quiting."))
+        Globals.debug("package-manager is quiting.")
         kapp.quit()
 
     def setupMenu(self):
@@ -163,15 +163,15 @@ def main():
 
     # pass reference to Globals module, so KApplication can be reached when needed
     Globals.init(kapp, debug)
-    Globals.debug(i18n("package-manager started."))
+    Globals.debug("package-manager started.")
 
     myapp = MainApplication()
     if not myapp.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
-        Globals.debug(i18n("SystemTray option is not set, showing main window."))
+        Globals.debug("SystemTray option is not set, showing main window.")
         myapp.show()
     else:
         if args.isSet("show-mainwindow"):
-            Globals.debug(i18n("--show-mainwindow option is set. Showing main window."))
+            Globals.debug("--show-mainwindow option is set. Showing main window.")
             myapp.show()
 
     kapp.setMainWidget(myapp)
