@@ -51,11 +51,22 @@ class PackageCache:
     def populateCache(self, packages, inInstalled = False):
         for pkg_name in packages:
             if inInstalled:
+                packageInstalled = pisi.db.installdb.InstallDB().get_package(pkg_name)
                 try:
-                    package, repo = pisi.db.packagedb.PackageDB().get_package_repo(pkg_name)
+                    packageInRepo, repoOfPackage = pisi.db.packagedb.PackageDB().get_package_repo(pkg_name)
+                    # if package is in both packagedb and installdb, then think that if they are same. If not, this means package is installed manually
+                    if packageInRepo.version != packageInstalled.version or \
+                            packageInRepo.release != packageInstalled.release or \
+                            packageInRepo.build != packageInstalled.build:
+                        package = packageInstalled
+                        repo = i18n("N\A")
+                    else:
+                        package = packageInRepo
+                        repo = repoOfPackage
                 except:
-                    package = pisi.db.installdb.InstallDB().get_package(pkg_name)
+                    # this means PackageDB exception, so package is installed manually
                     repo = i18n("N\A")
+
                 size = package.installedSize
             else:
                 package, repo = pisi.db.packagedb.PackageDB().get_package_repo(pkg_name)
