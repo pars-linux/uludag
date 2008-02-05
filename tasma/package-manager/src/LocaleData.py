@@ -13,7 +13,7 @@
 import locale
 import Globals
 
-from kdecore import KGlobal, i18n
+from kdecore import KGlobal
 
 locales = {
     "tr" : "tr_TR.UTF8",
