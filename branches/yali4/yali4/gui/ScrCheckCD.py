@@ -60,14 +60,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.checkLabel.setText(_('<font color="#FF6D19">Please wait while checking CD.</font>'))
         yali4.pisiiface.initialize(ui=PisiUI())
         yali4.pisiiface.add_cd_repo()
+        ctx.mainScreen.proceesEvents()
 
         pkg_names = yali4.pisiiface.get_available()
-        self.ui.progressBar.setTotalSteps(len(pkg_names))
+        self.ui.progressBar.setMaximum(len(pkg_names))
         cur = 0
         for pkg_name in pkg_names:
             cur += 1
             if yali4.pisiiface.check_package_hash(pkg_name):
-                self.ui.progressBar.setProgress(cur)
+                self.ui.progressBar.setValue(cur)
             else:
                 yali4.pisiiface.finalize()
                 self.showError()
