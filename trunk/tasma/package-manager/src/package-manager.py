@@ -70,7 +70,9 @@ class MainApplication(KMainWindow):
         self.tray = Tray.Tray(self)
         if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
             if self.mainwidget.settings.getBoolValue(Settings.general, "UpdateCheck"):
+                Globals.debug(i18n("Update check option is set." % interval))
                 interval = self.mainwidget.settings.getNumValue(Settings.general, "UpdateCheckInterval")
+                Globals.debug(i18n("Update check will start in %s minute(s)" % interval))
                 self.tray.updateInterval(interval)
             self.tray.show()
 
@@ -83,6 +85,7 @@ class MainApplication(KMainWindow):
 
     def closeEvent(self, closeEvent):
         if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
+            Globals.debug(i18n("Minimizing to system tray."))
             self.hide()
         else:
             self.slotQuit()
@@ -90,6 +93,7 @@ class MainApplication(KMainWindow):
     def slotQuit(self):
         # Don't know why but without this, after exiting package-manager, crash occurs. This may be a workaround or a PyQt bug.
         self.mainwidget.deleteLater()
+        Globals.debug(i18n("package-manager is quiting."))
         kapp.quit()
 
     def setupMenu(self):
@@ -137,16 +141,16 @@ def main():
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
-    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")), ("show-mainwindow", I18N_NOOP("Show main window on startup"))])
+    KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),
+                                     ("show-mainwindow", I18N_NOOP("Show main window on startup")),
+                                     ("debug", I18N_NOOP("Show debug output"))])
 
     if not KUniqueApplication.start():
         print i18n("Package Manager is already running!")
         return
 
     kapp = KUniqueApplication(True, True, True)
-
-    # pass reference to Globals module, so KApplication can be reached when needed
-    Globals.init(kapp)
+    debug = False
 
     args = KCmdLineArgs.parsedArgs()
     if args.isSet("install"):
@@ -154,11 +158,20 @@ def main():
     else:
         packageToInstall = None
 
+    if args.isSet("debug"):
+         debug = True
+
+    # pass reference to Globals module, so KApplication can be reached when needed
+    Globals.init(kapp, debug)
+    Globals.debug(i18n("package-manager started."))
+
     myapp = MainApplication()
     if not myapp.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
+        Globals.debug(i18n("SystemTray option is not set, showing main window."))
         myapp.show()
     else:
         if args.isSet("show-mainwindow"):
+            Globals.debug(i18n("--show-mainwindow option is set. Showing main window."))
             myapp.show()
 
     kapp.setMainWidget(myapp)
