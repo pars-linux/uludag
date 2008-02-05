@@ -89,7 +89,10 @@ class BasketDialog(KDialog):
 
         self.applyButton = QPushButton(self)
         self.applyButton.setText(parent.operateAction.text())
-        self.applyButton.setIconSet(loadIconSet("reload"))
+        icon = parent.operateAction.iconSet()
+        #Fix 6893
+        if icon:
+            self.applyButton.setIconSet(icon)
         layout.addWidget(self.applyButton, 5, 2)
 
         self.connect(self.updateBasketButton, SIGNAL('clicked()'), self.updateBasket)
