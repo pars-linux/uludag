@@ -123,6 +123,7 @@ loader.
         # first delete partitions on device
         dev.deleteAllPartitions()
         dev.commit()
+        ctx.mainScreen.processEvents()
 
         p = dev.addPartition(None,
                              parttype.root.parted_type,
@@ -133,6 +134,7 @@ loader.
 
         # create the partition
         dev.commit()
+        ctx.mainScreen.processEvents()
 
         # make partition requests
         ctx.partrequests.append(request.MountRequest(p, parttype.root))
@@ -186,11 +188,13 @@ and easy way to install Pardus.</p>
         # Auto Partitioning
         if ctx.installData.autoPartDev:
             info.show()
+            ctx.mainScreen.processEvents()
             ctx.partrequests.remove_all()
             ctx.use_autopart = True
             self.autopartDevice()
             time.sleep(2)
             info.updateMessage(_("Formatting ..."))
+            ctx.mainScreen.processEvents()
             ctx.partrequests.applyAll()
 
         # Manual Partitioning
