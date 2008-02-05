@@ -60,6 +60,11 @@ class Partition:
         return self._partition.type == parted.PARTITION_LOGICAL
 
     ##
+    # check if partition is logical
+    def isFreespace(self):
+        return self._partition.type == parted.PARTITION_FREESPACE
+
+    ##
     # check if partition is extended
     def isExtended(self):
         return self._partition.type == parted.PARTITION_EXTENDED

@@ -86,7 +86,7 @@ about disk partitioning.
         self.connect(self.ui.accept_auto_1, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.accept_auto_2, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
-        self.connect(self.ui.device_list, SIGNAL("itemChanged(QListWidgetItem*)"),self.slotDeviceChanged)
+        self.connect(self.ui.device_list, SIGNAL("currentRowChanged(int)"),self.slotDeviceChanged)
 
     def shown(self):
         ctx.mainScreen.disableNext()
@@ -98,6 +98,7 @@ about disk partitioning.
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
             ctx.installData.autoPartDev = self.device
             ctx.debugger.log("Automatic Partition selected..")
+            ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.device.getPath())
             if self.ui.accept_auto_2.isChecked():
                 ctx.installData.autoPartMethod = methodEraseAll
             # skip next screen()
@@ -107,7 +108,7 @@ about disk partitioning.
         return True
 
     def slotDeviceChanged(self, i):
-        self.device = i.getDevice()
+        self.device = self.ui.device_list.item(i).getDevice()
 
     def slotSelectAuto(self):
         self.enable_next = True

@@ -98,8 +98,9 @@ loader.
                      self.slotSelect)
 
     def backCheck(self):
-        # we need to go partition auto screen, not manual ;)
-        ctx.mainScreen.moveInc = 2
+        if ctx.autoInstall:
+            # we need to go partition auto screen, not manual ;)
+            ctx.mainScreen.moveInc = 2
         return True
 
     def slotSelect(self):
@@ -123,7 +124,8 @@ loader.
         dev.deleteAllPartitions()
         dev.commit()
 
-        p = dev.addPartition(parttype.root.parted_type,
+        p = dev.addPartition(None,
+                             parttype.root.parted_type,
                              parttype.root.filesystem,
                              dev.getFreeMB(),
                              parttype.root.parted_flags)
