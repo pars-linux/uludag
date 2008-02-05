@@ -219,6 +219,7 @@ class MainApplicationWidget(QWidget):
     # Executed when 'Show Installed Packages' is clicked
     def removeState(self, reset=True):
         Globals.setWaitCursor()
+
         if reset:
             self.resetState()
         self.parent.showInstalledAction.setChecked(True)
@@ -231,6 +232,7 @@ class MainApplicationWidget(QWidget):
         self.basket.setState(self.state)
         self.setLastSelected()
         self.updateStatusBar()
+
         Globals.setNormalCursor()
 
     # Executed when 'Show Upgradable Packages' is clicked
