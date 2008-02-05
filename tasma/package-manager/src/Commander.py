@@ -80,6 +80,11 @@ class Commander(QObject):
                 self.parent.finished(data)
             elif notification == "System.Manager.updatingRepo":
                 pass
+            elif notification == "System.Manager.warning":
+                self.comar.com_lock.unlock()
+                self.parent.showWarningMessage(data)
+                self.parent.resetState()
+                self.parent.refreshState()
             else:
                 print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
         # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
@@ -156,7 +161,7 @@ class Commander(QObject):
 
     def listNewPackages(self):
         return list((set(pisi.api.list_available()) - set(pisi.api.list_installed())) - set(pisi.api.list_replaces().values()))
-    
+
     def packageGraph(self,list,ignoreInstalled=True):
         return pisi.api.package_graph(list, ignoreInstalled)
 
