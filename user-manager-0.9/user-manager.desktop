@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=User Manager
+Name[tr]=Kullanıcı Yöneticisi
+Name[nl]=Toevoegen en verwijderen van gebruiker
+Name[es]=Agregar y Eliminar Usuario
+Name[de]=Benutzer Hinzufügen und Entfernen
+X-KDE-ModuleType=Library
+X-KDE-Library=user-manager
+X-KDE-FactoryName=user_manager
+X-Tasma-Fork=true
+Type=Application
+Icon=kuser
+Exec=user-manager
+Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
