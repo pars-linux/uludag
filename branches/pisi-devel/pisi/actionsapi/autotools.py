@@ -57,6 +57,11 @@ class RunTimeError(pisi.actionsapi.Error):
 def configure(parameters = ''):
     '''configure source with given parameters = "--with-nls --with-libusb --with-something-usefull"'''
 
+    # Fixup old libtool
+    if can_access_file('ltmain.sh'):
+        print _('Updating old build system')
+        autoreconf("-fi")
+
     if can_access_file('configure'):
         gnuconfig_update()
 
