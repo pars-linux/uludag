@@ -11,7 +11,9 @@
 # Please read the COPYING file
 
 import locale
-from kdecore import KGlobal
+import Globals
+
+from kdecore import KGlobal, i18n
 
 locales = {
     "tr" : "tr_TR.UTF8",
@@ -36,4 +38,5 @@ def setSystemLocale():
     else:
         systemlocale = "en_US.UTF-8"
 
+    Globals.debug(i18n("Setting system locale to '%s' to let PiSi work in this KDE locale." % systemlocale))
     locale.setlocale(locale.LC_ALL, systemlocale)
