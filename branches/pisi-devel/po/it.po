@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"POT-Creation-Date: 2008-02-05 09:56+EET\n"
+"POT-Creation-Date: 2008-02-05 11:05+EET\n"
 "PO-Revision-Date: 2007-07-11 21:08+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -70,58 +70,54 @@ msgstr ""
 "Includi per favore anche il file config.log nella segnalazione di bug:\n"
 "%s/config.log"
 
-#: pisi/actionsapi/autotools.py:62
-msgid "Updating old build system"
-msgstr ""
-
-#: pisi/actionsapi/autotools.py:83 pisi/actionsapi/autotools.py:93
+#: pisi/actionsapi/autotools.py:78 pisi/actionsapi/autotools.py:88
 #: pisi/actionsapi/cmaketools.py:65 pisi/actionsapi/kde.py:65
 #: pisi/actionsapi/perlmodules.py:54 pisi/actionsapi/perlmodules.py:57
 msgid "Configure failed."
 msgstr "Configure fallito."
 
-#: pisi/actionsapi/autotools.py:85 pisi/actionsapi/autotools.py:95
+#: pisi/actionsapi/autotools.py:80 pisi/actionsapi/autotools.py:90
 #: pisi/actionsapi/kde.py:67
 msgid "No configure script found."
 msgstr "Nessun script configure trovato."
 
-#: pisi/actionsapi/autotools.py:104 pisi/actionsapi/cmaketools.py:73
+#: pisi/actionsapi/autotools.py:99 pisi/actionsapi/cmaketools.py:73
 #: pisi/actionsapi/kde.py:72 pisi/actionsapi/perlmodules.py:63
 #: pisi/actionsapi/perlmodules.py:72 pisi/actionsapi/pythonmodules.py:49
 #: pisi/actionsapi/scons.py:39
 msgid "Make failed."
 msgstr "Make fallito."
 
-#: pisi/actionsapi/autotools.py:132 pisi/actionsapi/autotools.py:143
+#: pisi/actionsapi/autotools.py:127 pisi/actionsapi/autotools.py:138
 #: pisi/actionsapi/cmaketools.py:103 pisi/actionsapi/cmaketools.py:113
 #: pisi/actionsapi/kde.py:79 pisi/actionsapi/pythonmodules.py:54
 #: pisi/actionsapi/scons.py:43
 msgid "Install failed."
 msgstr "Install fallito."
 
-#: pisi/actionsapi/autotools.py:136 pisi/actionsapi/autotools.py:147
+#: pisi/actionsapi/autotools.py:131 pisi/actionsapi/autotools.py:142
 #: pisi/actionsapi/cmaketools.py:75 pisi/actionsapi/cmaketools.py:107
 #: pisi/actionsapi/cmaketools.py:117 pisi/actionsapi/kde.py:81
 msgid "No Makefile found."
 msgstr "File makefile non trovato."
 
-#: pisi/actionsapi/autotools.py:152
+#: pisi/actionsapi/autotools.py:147
 msgid "Running aclocal failed."
 msgstr "Esecuzione di aclocal fallita."
 
-#: pisi/actionsapi/autotools.py:157
+#: pisi/actionsapi/autotools.py:152
 msgid "Running autoconf failed."
 msgstr "Esecuzione di autoconf fallita."
 
-#: pisi/actionsapi/autotools.py:162
+#: pisi/actionsapi/autotools.py:157
 msgid "Running autoreconf failed."
 msgstr "Esecuzione di autoreconf fallita."
 
-#: pisi/actionsapi/autotools.py:167
+#: pisi/actionsapi/autotools.py:162
 msgid "Running automake failed."
 msgstr "Esecuzione di automake fallita."
 
-#: pisi/actionsapi/autotools.py:172
+#: pisi/actionsapi/autotools.py:167
 msgid "Running autoheader failed."
 msgstr "Esecuzione di autoheader fallita."
 
