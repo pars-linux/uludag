@@ -10,10 +10,16 @@
 #
 # Please read the COPYING file.
 
+# QT & KDE Modules
 from qt import *
+from kdecore import *
+from kdeui import *
+import kdedesigner
+
+import welcome
 
 import sys
-from main import kaptanUi
+from Welcomedlg import kaptanUi
 
 
 if __name__ == "__main__":
