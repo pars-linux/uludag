@@ -1,0 +1,2 @@
+* Needs python, python-dbus and pyqt3 (and cmake to build)
+* "cmake . && make" to build, and "make install" as root to install
