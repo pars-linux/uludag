@@ -108,12 +108,12 @@ Have fun!
                     p.name, p.summary))
             ctx.debugger.log("slotNotify :: %s installing" % p.name)
             self.cur += 1
-            self.progress.setProgress(self.cur)
+            self.progress.setValue(self.cur)
         elif event == pisi.ui.configuring:
             self.info.setText(_("Configuring package: %s") % p.name)
             ctx.debugger.log("slotNotify :: %s configuring" % p.name)
             self.cur += 1
-            self.progress.setProgress(self.cur)
+            self.progress.setValue(self.cur)
             ctx.screens.processEvents()
 
     def customEvent(self, qevent):
@@ -127,17 +127,17 @@ Have fun!
                         p.name, p.summary))
                 ctx.debugger.log("customEvent :: %s installed" % p.name)
                 self.cur += 1
-                self.progress.setProgress(self.cur)
+                self.progress.setValue(self.cur)
             elif event == pisi.ui.configuring:
                 self.info.setText(_("Configuring package: %s") % p.name)
                 ctx.debugger.log("customEvent :: %s configured" % p.name)
                 self.cur += 1
-                self.progress.setProgress(self.cur)
+                self.progress.setValue(self.cur)
 
         # User+2: set progress
         elif qevent.type() == QEvent.User+2:
             total = qevent.data()
-            self.progress.setTotalSteps(total)
+            self.progress.setMaximum(total)
 
         # User+3: finished
         elif qevent.type() == QEvent.User+3:
@@ -305,3 +305,4 @@ class PisiUI_NoThread(QObject, pisi.ui.UI):
 
     def display_progress(self, operation, percent, info, **keywords):
         pass
+
