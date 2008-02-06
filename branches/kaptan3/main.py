@@ -1,12 +1,14 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'main.ui'
 #
-# Created: Çrş Şub 6 01:57:12 2008
-#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
+# Copyright (C) 2005,2008 TUBITAK/UEKAE
 #
-# WARNING! All changes made in this file will be lost!
-
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+#
+# Please read the COPYING file.
 
 from qt import *
 
