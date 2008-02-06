@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 # Copyright 1999-2005 Gentoo Foundation
 #
 # This program is free software; you can redistribute it and/or modify it under
@@ -277,8 +277,8 @@ class Device:
         # (OK not really ;)
         size_parts = 8
         for p in self.getPartitions():
-            # don't count logical parts
-            if not p.isLogical():
+            # don't count logical parts and free spaces
+            if not p.isLogical() and not p.isFreespace():
                 size_parts += p.getMB()
 
         size = size_total - size_parts
@@ -324,13 +324,16 @@ class Device:
     # @param fs: filesystem.FileSystem or file system name (like "ext3")
     # @param size_mb: size of the partition in MBs.
     def addPartition(self, part, type, fs, size_mb, flags = []):
-        size = int(size_mb * MEGABYTE / self._sector_size)
 
         # Don't set bootable flag if there is already a bootable
         # partition in this disk. See bug #2217
         if (parted.PARTITION_BOOT in flags) and self.hasBootablePartition():
             flags = list(set(flags) - set([parted.PARTITION_BOOT]))
 
+        if not part:
+            part = self.__getLargestFreePedPartition()
+
+        size = int(size_mb * MEGABYTE / self._sector_size)
         geom = part.geom
 
         # creating a partition

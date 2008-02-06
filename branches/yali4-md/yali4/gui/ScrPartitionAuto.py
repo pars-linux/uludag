@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -81,15 +81,17 @@ about disk partitioning.
         self.ui.device_list.setCurrentRow(0)
 
         if not self.ui.device_list.count():
-            raise YaliExceptionInfo, _("It seems that you don't have the required disk space (min. %s) for Pardus installation." % ctx.consts.min_root_size)
+            raise YaliExceptionInfo, _("It seems that you don't have the required disk space "
+                                       "(min. %s) for Pardus installation." % ctx.consts.min_root_size)
 
         self.connect(self.ui.accept_auto_1, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.accept_auto_2, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
-        self.connect(self.ui.device_list, SIGNAL("itemChanged(QListWidgetItem*)"),self.slotDeviceChanged)
+        self.connect(self.ui.device_list, SIGNAL("currentRowChanged(int)"),self.slotDeviceChanged)
 
     def shown(self):
-        ctx.mainScreen.disableNext()
+        # bu gereksiz, alttaki overrides.
+        # ctx.mainScreen.disableNext()
         self.updateUI()
 
     def execute(self):
@@ -98,6 +100,7 @@ about disk partitioning.
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
             ctx.installData.autoPartDev = self.device
             ctx.debugger.log("Automatic Partition selected..")
+            ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.device.getPath())
             if self.ui.accept_auto_2.isChecked():
                 ctx.installData.autoPartMethod = methodEraseAll
             # skip next screen()
@@ -107,7 +110,7 @@ about disk partitioning.
         return True
 
     def slotDeviceChanged(self, i):
-        self.device = i.getDevice()
+        self.device = self.ui.device_list.item(i).getDevice()
 
     def slotSelectAuto(self):
         self.enable_next = True

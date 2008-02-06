@@ -29,8 +29,7 @@ import yali4.partitiontype as parttype
 
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
-from yali4.gui.YaliDialog import WarningDialog, WarningWidget
-#from yali4.gui.InformationWindow import InformationWindow
+from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 
@@ -99,8 +98,9 @@ loader.
                      self.slotSelect)
 
     def backCheck(self):
-        # we need to go partition auto screen, not manual ;)
-        ctx.mainScreen.moveInc = 2
+        if ctx.autoInstall:
+            # we need to go partition auto screen, not manual ;)
+            ctx.mainScreen.moveInc = 2
         return True
 
     def slotSelect(self):
@@ -123,8 +123,10 @@ loader.
         # first delete partitions on device
         dev.deleteAllPartitions()
         dev.commit()
+        ctx.mainScreen.processEvents()
 
-        p = dev.addPartition(parttype.root.parted_type,
+        p = dev.addPartition(None,
+                             parttype.root.parted_type,
                              parttype.root.filesystem,
                              dev.getFreeMB(),
                              parttype.root.parted_flags)
@@ -132,6 +134,7 @@ loader.
 
         # create the partition
         dev.commit()
+        ctx.mainScreen.processEvents()
 
         # make partition requests
         ctx.partrequests.append(request.MountRequest(p, parttype.root))
@@ -178,30 +181,39 @@ and easy way to install Pardus.</p>
                 return False
 
         ctx.mainScreen.processEvents()
+        info = InformationWindow(_("Writing disk tables ..."))
 
         # We should do partitioning operations in here.
 
         # Auto Partitioning
         if ctx.installData.autoPartDev:
+            info.show()
+            ctx.mainScreen.processEvents()
             ctx.partrequests.remove_all()
             ctx.use_autopart = True
-            # self.autopartDevice()
-            time.sleep(1)
-            #ctx.partrequests.applyAll()
+            self.autopartDevice()
+            time.sleep(2)
+            info.updateMessage(_("Formatting ..."))
+            ctx.mainScreen.processEvents()
+            ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:
             ctx.debugger.log("Format Operation Started")
+            info.show()
             for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
                 dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
+            info.updateMessage(_("Formatting ..."))
             ctx.mainScreen.processEvents()
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
             ctx.mainScreen.processEvents()
             self.checkSwap()
+
+        info.close()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)

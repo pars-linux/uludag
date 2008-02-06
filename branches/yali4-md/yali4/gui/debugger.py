@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2007, TUBITAK/UEKAE
+# Copyright (C) 2008 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -24,13 +24,13 @@ from PyQt4.QtCore import *
 from yali4.gui.YaliDialog import Dialog
 
 class Debugger:
-    def __init__(self,showTimeStamp=True):
+    def __init__(self, showTimeStamp=True):
         title = _("Debug")
         self.debugWidget = QtGui.QWidget()
-        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.debugWidget)
+        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2), self.debugWidget)
         QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
 
-        self.traceback = DebugContainer(self.debugWidget,showTimeStamp)
+        self.traceback = DebugContainer(self.debugWidget, showTimeStamp)
         self.loglevel = QtGui.QComboBox(self.debugWidget)
         self.loglevel.addItem("0 : All Messages")
         self.loglevel.addItem("1 : Developer Messages")
@@ -40,8 +40,8 @@ class Debugger:
         l.addWidget(self.loglevel)
         l.addWidget(self.traceback)
 
-        self.window = Dialog(title,self.debugWidget)
-        self.window.resize(500,400)
+        self.window = Dialog(title, self.debugWidget)
+        self.window.resize(500, 400)
         self.aspect = DebuggerAspect(self)
 
     def loglevelChanged(self,newLevel):

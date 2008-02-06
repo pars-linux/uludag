@@ -60,6 +60,4 @@ class Widget(QTextBrowser):
         if exists(f):
             return f
         else:
-            # For testing. Dont forget to remove ..
-            return "/home/rat/pardus/uludag/CD-image/CD-image-version-2007.3/license/license-tr.txt"
             raise GUIException, _("Can't open License file!")

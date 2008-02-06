@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -36,12 +36,13 @@ partitionTypes = {0:None,
 
 class DiskList(QtGui.QWidget):
 
-    def __init__(self, partEdit, *args):
+    def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
         self.setAutoFillBackground(False)
         self.diskCount = 1
-        self.partEdit = partEdit
+        # we override this above, unnecessary
+        # self.partEdit = partEdit
         self.setStyleSheet("""
             QTabWidget::pane { border-top: 2px solid #FFFFFF; }
             QTabWidget::tab-bar { left: 5px; }
@@ -68,16 +69,16 @@ class DiskList(QtGui.QWidget):
         """)
         self.vbox = QtGui.QVBoxLayout(self)
 
-        self.toolBox = QtGui.QTabWidget(self)
-        self.toolBox.setAutoFillBackground(False)
-        self.toolBox.setFocusPolicy(Qt.NoFocus)
+        self.tabWidget = QtGui.QTabWidget(self)
+        self.tabWidget.setAutoFillBackground(False)
+        self.tabWidget.setFocusPolicy(Qt.NoFocus)
 
         self.partEdit = PartEdit()
         self.partEdit.ui.fileSystemBox.setVisible(False)
-        self.vbox.addWidget(self.toolBox)
+        self.vbox.addWidget(self.tabWidget)
         self.vbox.addWidget(self.partEdit)
 
-        self.connect(self.toolBox,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
+        self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
         self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
@@ -92,26 +93,33 @@ class DiskList(QtGui.QWidget):
     ##
     # GUI Operations
     #
-    def updatePartEdit(self, dw):
-        dw.updatePartEdit()
+    def updatePartEdit(self, tw):
+        # tw is DiskItem object, placed in our tab widgets
+        tw.updatePartEdit()
 
+    # add the DiskItem object to tabwidget
+    # and increase disk count
     def addDisk(self,dw):
-        self.toolBox.addTab(dw,dw.name)
-        self.toolBox.setTabToolTip(self.toolBox.count()-1,"%s - %s" % (dw.model,dw.name))
+        # QWidget page, QString label
+        self.tabWidget.addTab(dw,dw.name)
+        self.tabWidget.setTabToolTip(self.tabWidget.count()-1,"%s - %s" % (dw.model,dw.name))
         self.diskCount+=1
 
+    # clears and refills the tabwidget with devices found in storage.devices
     def update(self):
-        _cur = self.toolBox.currentIndex()
+        _cur = self.tabWidget.currentIndex()
         if _cur==-1: _cur = 0
-        self.toolBox.clear()
+        self.tabWidget.clear()
         self.diskCount = 1
 
         for dev in self.devs:
             ctx.debugger.log("Device Found %s" % dev.getModel())
+            # add Device objects representing block devices
+            # @see storage.py global devices[] and Device
             self.addDevice(dev)
 
-        self.toolBox.setCurrentIndex(_cur)
-        self.updatePartEdit(self.toolBox.widget(_cur))
+        self.tabWidget.setCurrentIndex(_cur)
+        self.updatePartEdit(self.tabWidget.widget(_cur))
         self.checkRootPartRequest()
 
     def checkRootPartRequest(self):
@@ -121,6 +129,8 @@ class DiskList(QtGui.QWidget):
                 # root partition type. can enable next
                 ctx.mainScreen.enableNext()
 
+    # sets the options for selected partition type
+    # cur is the new index of combobox
     def formatTypeChanged(self, cur):
 
         def forceToFormat():
@@ -154,10 +164,10 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.fileSystem.setVisible(True)
             self.partEdit.ui.fileSystemBox.setVisible(False)
 
-
+    # initialize all storage devices
+    # @see storage.py
     def initDevices(self):
         self.devs = []
-        # initialize all storage devices
         if not yali4.storage.init_devices():
             raise GUIException, _("Can't find a storage device!")
 
@@ -170,7 +180,6 @@ class DiskList(QtGui.QWidget):
         self.update()
 
     def addDevice(self, dev):
-
         # get the size as human readable
         def sizeStr(mb):
             if mb > 1024:
@@ -190,11 +199,13 @@ class DiskList(QtGui.QWidget):
         diskItem.setData(dev)
         self.addDisk(diskItem)
 
+        # adding the tabwidget page is done
         # add partitions on device
         for part in dev.getOrderedPartitionList():
-            # we dont need to show fu..in extended partition
+            # we dont show extended partition
             if part.isExtended():
                 continue
+            # if minor is -1, its freespace
             if part.getMinor() != -1:
                 name = _("Partition %d") % part.getMinor()
                 if part.isFileSystemReady():
@@ -207,7 +218,7 @@ class DiskList(QtGui.QWidget):
             ctx.debugger.log("Partition added with %s mb" % part.getMB())
             diskItem.addPartition(name,part)
 
-        diskItem.updateSizes(self.toolBox.width())
+        diskItem.updateSizes(self.tabWidget.width())
 
     ##
     # Partition Operations
@@ -216,6 +227,7 @@ class DiskList(QtGui.QWidget):
     def slotDeletePart(self):
         """Creates delete request for selected partition"""
         dev = self.partEdit.currentPart.getDevice()
+        # bu doğrudan parted'a gönderiyor ?
         dev.deletePartition(self.partEdit.currentPart)
 
         # check for last logical partition
@@ -232,6 +244,7 @@ class DiskList(QtGui.QWidget):
         """Creates requests for changes in selected partition"""
 
         t = partitionTypes[self.partEdit.ui.formatType.currentIndex()]
+        # file system type is available on archive partitions
         if t == parttype.archive:
             if self.partEdit.ui.fileSystemBox.currentIndex() == 1:
                 t.setFileSystem("fat32")
@@ -247,7 +260,7 @@ class DiskList(QtGui.QWidget):
                 disk = partition.getDevice()
                 flags = t.parted_flags
 
-                # There must only one bootable partition on disk
+                # There must be only one bootable partition on disk
                 if (parted.PARTITION_BOOT in flags) and disk.hasBootablePartition():
                     flags = list(set(flags) - set([parted.PARTITION_BOOT]))
                 partition.setPartedFlags(flags)
@@ -339,6 +352,11 @@ class DiskItem(QtGui.QWidget):
         spacerItem1 = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
         self.hboxlayout.addItem(spacerItem1)
 
+        self.raidPushButton = QtGui.QPushButton(_("RAID"), self)
+        self.hboxlayout.addWidget(self.raidPushButton)
+        self.lvmPushButton = QtGui.QPushButton(_("LVM"), self)
+        self.hboxlayout.addWidget(self.lvmPushButton)
+
         self.deleteAllPartitions = QtGui.QPushButton(_("Delete All Partitions"),self)
         self.hboxlayout.addWidget(self.deleteAllPartitions)
         self.vboxlayout.addLayout(self.hboxlayout)
@@ -361,13 +379,22 @@ class DiskItem(QtGui.QWidget):
         self.vboxlayout.addItem(spacerItem2)
 
         self.connect(self.deleteAllPartitions,QtCore.SIGNAL("clicked()"),self.deleteAll)
+        self.connect(self.raidPushButton, QtCore.SIGNAL("clicked()"),self.slotRaid)
+        self.connect(self.lvmPushButton, QtCore.SIGNAL("clicked()"),self.slotLvm)
 
+        # this containts dictionary type members as we fill the list
+        # ex: {"name":name, "data":data} where data is Partition type object
+        # @see partition.py
         self.partitions = []
+
         self.name = name
         self.model = model
         self.totalSize = totalSize
         self.partEdit = partEdit
 
+    # data is Partition type object and name is label for partition
+    # like "Free Space" or "Partition /dev/hda1"
+    # @see partition.py
     def addPartition(self,name=None,data=None):
 
         def getFSMeta(fs_type):
@@ -433,6 +460,7 @@ class DiskItem(QtGui.QWidget):
         self.partitions.append({"name":name,"data":data})
         self.connect(partition,QtCore.SIGNAL("clicked()"),self.updatePartEdit)
 
+    # updates partEdit's content due to checked partition
     def updatePartEdit(self):
         i=0
         for part in self.partitions:
@@ -453,14 +481,14 @@ class DiskItem(QtGui.QWidget):
     def getData(self):
         return self._data
 
-    def updateSizes(self,toolBoxWidth):
+    def updateSizes(self,tabWidgetWidth):
         i=0
         for part in self.partitions:
             _h = self.splinter.handle(i)
             _h.setEnabled(False)
             self.splinter.setCollapsible(i,False)
 
-            _size = self.sizePix(part['data'].getMB(),toolBoxWidth)
+            _size = self.sizePix(part['data'].getMB(),tabWidgetWidth)
             _widget = self.splinter.widget(i)
             _widget.resize(_size,70)
             if _size <= 8:
@@ -472,18 +500,29 @@ class DiskItem(QtGui.QWidget):
             i+=1
         self.splinter.widget(0).setChecked(True)
 
-    def sizePix(self,mb,toolBoxWidth):
-        _p = (toolBoxWidth * mb) / self.totalSize
+    def sizePix(self,mb,tabWidgetWidth):
+        _p = (tabWidgetWidth * mb) / self.totalSize
         if _p <= 8:
             return 8
         return _p
 
+    def slotLvm(self):
+        pass
 
+    def slotRaid(self):
+        pass
+
+
+# part is Partition type object, and rt is request type
+# @return Returns
 def getPartitionType(part,rt=1):
     """ Get partition type from request list """
+    # pt are objects derived from PartitionType class
+    # like RootPartitionType or SwapPartitionType objects
+    # @see partitiontype.py
     for pt in partitionTypes.values():
 
-        # We use MountRequest type for search keyword 
+        # We use MountRequest type for search keyword
         # which is 1, defined in partitionrequest.py
         req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
         if req:

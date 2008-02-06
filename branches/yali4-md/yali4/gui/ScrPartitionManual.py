@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -77,8 +77,9 @@ about disk partitioning.
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
 
-        self.partEdit = PartEdit(self)
-        self.partList = DiskList(self.partEdit,self)
+        # dont need this
+        # self.partEdit = PartEdit(self)
+        self.partList = DiskList(self)
 
         vbox = QtGui.QVBoxLayout(self)
         vbox.addWidget(self.partList)

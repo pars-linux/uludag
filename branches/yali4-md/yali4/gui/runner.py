@@ -85,6 +85,9 @@ class Runner:
         """
 
         self._app = QtGui.QApplication(sys.argv)
+
+        # main application window, widgets in  _all_screens
+        # are created here
         self._window = YaliWindow.Widget()
 
         # check for oemInstall
@@ -135,7 +138,7 @@ class Runner:
 
         # For testing..
         self._window.ui.resize(QSize(800,600))
-        # self._window.ui.move(0,0)
+        self._window.ui.move(0,0)
         self._app.exec_()
 
 

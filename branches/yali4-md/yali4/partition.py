@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -58,6 +58,11 @@ class Partition:
     # check if partition is logical
     def isLogical(self):
         return self._partition.type == parted.PARTITION_LOGICAL
+
+    ##
+    # check if partition is logical
+    def isFreespace(self):
+        return self._partition.type == parted.PARTITION_FREESPACE
 
     ##
     # check if partition is extended
