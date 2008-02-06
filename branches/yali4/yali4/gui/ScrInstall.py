@@ -32,6 +32,8 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 import yali4.gui.context as ctx
 
+EventPisi, EventSetProgress, EventError, EventFinished = range(1,5)
+
 def iter_slide_pics():
     # load all pics
     pics = []
@@ -102,51 +104,50 @@ Have fun!
         # start 30 seconds
         self.timer.start(1000 * 30)
 
-    def slotNotify(self, parent, event, p):
+    def slotNotify(self, event, p):
         if event == pisi.ui.installing:
-            self.info.setText(_("Installing: %s<br>%s") % (
-                    p.name, p.summary))
+            self.ui.info.setText(_("Installing: %s<br>%s") % ( p.name, p.summary))
             ctx.debugger.log("slotNotify :: %s installing" % p.name)
             self.cur += 1
-            self.progress.setValue(self.cur)
+            self.ui.progress.setValue(self.cur)
         elif event == pisi.ui.configuring:
-            self.info.setText(_("Configuring package: %s") % p.name)
+            self.ui.info.setText(_("Configuring package: %s") % p.name)
             ctx.debugger.log("slotNotify :: %s configuring" % p.name)
             self.cur += 1
-            self.progress.setValue(self.cur)
-            ctx.screens.processEvents()
+            self.ui.progress.setValue(self.cur)
+        ctx.mainScreen.processEvents()
 
     def customEvent(self, qevent):
-        # User+1: pisi events
-        if qevent.type() == QEvent.User+1:
+         # User+1: pisi events
+         if qevent.eventType() == EventPisi:
 
-            p, event = qevent.data()
+             p, event = qevent.data()
 
-            if event == pisi.ui.installing:
-                self.info.setText(_("Installing: %s<br>%s") % (
-                        p.name, p.summary))
-                ctx.debugger.log("customEvent :: %s installed" % p.name)
-                self.cur += 1
-                self.progress.setValue(self.cur)
-            elif event == pisi.ui.configuring:
-                self.info.setText(_("Configuring package: %s") % p.name)
-                ctx.debugger.log("customEvent :: %s configured" % p.name)
-                self.cur += 1
-                self.progress.setValue(self.cur)
+             if event == pisi.ui.installing:
+                 self.ui.info.setText(_("Installing: %s<br>%s") % (
+                         p.name, p.summary))
+                 ctx.debugger.log("customEvent :: %s installed" % p.name)
+                 self.cur += 1
+                 self.ui.progress.setValue(self.cur)
+             elif event == pisi.ui.configuring:
+                 self.ui.info.setText(_("Configuring package: %s") % p.name)
+                 ctx.debugger.log("customEvent :: %s configured" % p.name)
+                 self.cur += 1
+                 self.ui.progress.setValue(self.cur)
 
-        # User+2: set progress
-        elif qevent.type() == QEvent.User+2:
-            total = qevent.data()
-            self.progress.setMaximum(total)
+         # User+2: set progress
+         elif qevent.eventType() == EventSetProgress:
+             total = qevent.data()
+             self.ui.progress.setMaximum(total)
 
-        # User+3: finished
-        elif qevent.type() == QEvent.User+3:
-            self.finished()
+         # User+3: finished
+         elif qevent.eventType() == EventFinished:
+             self.finished()
 
-        # User+10: error
-        elif qevent.type() == QEvent.User+10:
-            err = qevent.data()
-            self.installError(err)
+         # User+10: error
+         elif qevent.eventType() == EventError:
+             err = qevent.data()
+             self.installError(err)
 
     def slotChangePix(self):
         self.ui.pix.setPixmap(self.iter_pics.next())
@@ -214,7 +215,7 @@ Have fun!
         yali4.pisiiface.finalize()
 
         # trigger next screen. will activate execute()
-        ctx.screens.next()
+        ctx.mainScreen.next()
 
 
     def installError(self, e):
@@ -236,17 +237,19 @@ Error:
 class PkgInstaller(QThread):
 
     def __init__(self, widget):
+        print "PkgInstaller started."
         QThread.__init__(self)
         self._widget = widget
 
-
     def run(self):
-        ui = PisiUI(self._widget)
+        print "PkgInstaller is running."
+        ui = PisiUI_NoThread(self._widget)
 
         yali4.pisiiface.initialize(ui)
 
         # if exists use remote source repo
         # otherwise use cd as repo
+        print "Repo adding.."
         if ctx.installData.repoAddr:
             yali4.pisiiface.add_remote_repo(ctx.installData.repoName,ctx.installData.repoAddr)
         else:
@@ -254,55 +257,54 @@ class PkgInstaller(QThread):
 
         # show progress
         total = yali4.pisiiface.get_available_len()
-        # User+2: set total steps
-        qevent = QCustomEvent(QEvent.User+2)
+
+        qevent = PisiEvent(QEvent.User, EventSetProgress)
         qevent.setData(total)
-        QApplication.postEvent(self._widget, qevent)
+        QCoreApplication.postEvent(self._widget, qevent)
+
+        print "Found %d packages in repo.." % total
 
         try:
             yali4.pisiiface.install_all()
         except Exception, e:
             # User+10: error
-            qevent = QCustomEvent(QEvent.User+10)
+            qevent = PisiEvent(QEvent.User, EventError)
             qevent.setData(e)
-            QApplication.postEvent(self._widget, qevent)
+            QCoreApplication.postEvent(self._widget, qevent)
 
-        # User+3: finished
-        qevent = QCustomEvent(QEvent.User+3)
-        QApplication.postEvent(self._widget, qevent)
-
-
-class PisiUI(pisi.ui.UI):
-
-    def __init__(self, notify_widget, *args):
-        pisi.ui.UI.__init__(self)
-        self._notify_widget = notify_widget
-
-    def notify(self, event, **keywords):
-        if event == pisi.ui.installing or event == pisi.ui.configuring:
-            # User+1: pisi notify
-            qevent = QCustomEvent(QEvent.User+1)
-            data = [keywords['package'], event]
-            qevent.setData(data)
-            QApplication.postEvent(self._notify_widget, qevent)
-
-    def display_progress(self, operation, percent, info, **keywords):
-        pass
+        qevent = PisiEvent(QEvent.User, EventFinished)
+        QCoreApplication.postEvent(self._widget, qevent)
 
 
-class PisiUI_NoThread(QObject, pisi.ui.UI):
+class PisiUI_NoThread(QObject,pisi.ui.UI):
 
-    def __init__(self, notify_widget, *args):
+    def __init__(self, widget, *args):
         pisi.ui.UI.__init__(self)
         apply(QObject.__init__, (self,) + args)
-        self.connect(self, PYSIGNAL("signalNotify"),
-                     notify_widget.slotNotify)
+        self.w = widget
 
     def notify(self, event, **keywords):
         if event == pisi.ui.installing or event == pisi.ui.configuring:
-            self.emit(PYSIGNAL("signalNotify"),
-                      (self, event, keywords['package']))
+            qevent = PisiEvent(QEvent.User, EventPisi)
+            data = [keywords['package'], event]
+            qevent.setData(data)
+            QCoreApplication.postEvent(self.w, qevent)
 
     def display_progress(self, operation, percent, info, **keywords):
         pass
+
+class PisiEvent(QEvent):
+
+    def __init__(self, _, event):
+        QEvent.__init__(self, _)
+        self.event = event
+
+    def eventType(self):
+        return self.event
+
+    def setData(self,data):
+        self._data = data
+
+    def data(self):
+        return self._data
 
