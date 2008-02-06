@@ -1,0 +1,5 @@
+** 0.2:
+	- [FIXED] Connecting more than one bus doesn't work properly
+
+** 0.1: 
+	- Initial release
