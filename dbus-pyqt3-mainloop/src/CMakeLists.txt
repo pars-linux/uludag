@@ -1,5 +1,3 @@
-PROJECT (dbus-pyqt3-mainloop)
-
 FIND_PACKAGE(Qt3 REQUIRED)
 FIND_PACKAGE(PythonLibs REQUIRED)
 
@@ -18,8 +16,10 @@ INCLUDE_DIRECTORIES(${QT_INCLUDE_DIR}
 SET (sources mainloop.cpp)
 
 # we have to create moc file manually. Why? Because, QT_WRAP_CPP doesn't work
-# and we don't want to use FindKDE3.cmake module's KDE3_AUTOMOC
-ADD_CUSTOM_TARGET(and_god_created_cmake ALL ${QT_MOC_EXECUTABLE} -o ${CMAKE_SOURCE_DIR}/mainloop.moc ${CMAKE_SOURCE_DIR}/mainloop.h)
+# and we don't want to use FindKDE3.cmake module's KDE3_AUTOMOC for a qt
+# library
+ADD_CUSTOM_TARGET(and_god_created_cmake ALL ${QT_MOC_EXECUTABLE} -o
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainloop.moc ${CMAKE_CURRENT_SOURCE_DIR}/mainloop.h)
 
 ADD_LIBRARY(qt3 SHARED ${sources})
 
