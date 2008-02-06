@@ -122,6 +122,7 @@ class MainApplication(KMainWindow):
         self.menuBar().insertItem(i18n("&Settings"), settingsMenu,1,1)
 
     def showHelp(self):
+        Globals.debug("Showing help window.")
         helpwin = HelpDialog.HelpDialog(self, HelpDialog.MAINAPP)
         helpwin.show()
 
@@ -153,17 +154,19 @@ def main():
     debug = False
 
     args = KCmdLineArgs.parsedArgs()
+
+    # pass references to Globals module, so they can be reached everywhere when needed
+    Globals.init(kapp, debug)
+    Globals.debug("package-manager started.")
+
     if args.isSet("install"):
         packageToInstall = args.getOption("install")
+        Globals.setPackageToInstall(packageToInstall)
     else:
         packageToInstall = None
 
     if args.isSet("debug"):
          debug = True
-
-    # pass reference to Globals module, so KApplication can be reached when needed
-    Globals.init(kapp, debug)
-    Globals.debug("package-manager started.")
 
     myapp = MainApplication()
     if not myapp.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
