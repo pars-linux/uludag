@@ -5,7 +5,7 @@ import sys
 
 ''' Gettext Support '''
 import gettext
-__trans = gettext.translation('PyWireless', fallback=True)
+__trans = gettext.translation('PyNotify', fallback=True)
 _  =  __trans.ugettext
 
 ''' PyQt and PyKDE Modules'''
@@ -81,7 +81,7 @@ if __name__ == '__main__':
     trayWindow = SystemTray(None, appName)
 
     app.setMainWidget(trayWindow)
-    
+
     # Create D-Bus mainloop
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
 
@@ -105,3 +105,4 @@ if __name__ == '__main__':
 
     ''' Enter main loop '''
     sys.exit(app.exec_loop())
+
