@@ -9,6 +9,7 @@ from Debug import Debug
 # global KApplication reference for setting cursor type
 app = None
 debugger = None
+packageToInstall = None
 
 def init(application, debug = False):
     global app
@@ -33,6 +34,10 @@ def config():
     if app:
         return app.config()
     return None
+
+def setPackageToInstall(pack):
+    global packageToInstall
+    packageToInstall = pack
 
 def processEvents():
     if app:

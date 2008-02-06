@@ -148,13 +148,11 @@ class MainApplicationWidget(QWidget):
         if self.componentsReady():
             self.installState()
 
-            #TODO: Fix this
-            #global packageToInstall
-            #if packageToInstall:
-            #    self.installPackage(unicode(packageToInstall))
-            #    self.progressDialog.show()
+            if Globals.packageToInstall:
+                self.installPackage(unicode(Globals.packageToInstall))
+                self.progressDialog.show()
                 # KWin forces to raise it even though the parent is hidden, QWidget does not.
-            #    KWin.raiseWindow(self.progressDialog.winId())
+                KWin.raiseWindow(self.progressDialog.winId())
         else:
             self.updateCheck()
 
