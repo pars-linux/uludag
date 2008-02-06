@@ -32,7 +32,7 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 import yali4.gui.context as ctx
 
-EventPisi, EventSetProgress, EventError, EventFinished = range(1,5)
+EventPisi, EventSetProgress, EventError, EventFinished, EventPackageInstallFinished = range(1,6)
 
 def iter_slide_pics():
     # load all pics
@@ -92,7 +92,6 @@ Have fun!
         self.cur = 0
         self.hasErrors = False
 
-
     def shown(self):
         # start installer thread
         self.pkg_installer = PkgInstaller(self)
@@ -104,55 +103,49 @@ Have fun!
         # start 30 seconds
         self.timer.start(1000 * 30)
 
-    def slotNotify(self, event, p):
-        if event == pisi.ui.installing:
-            self.ui.info.setText(_("Installing: %s<br>%s") % ( p.name, p.summary))
-            ctx.debugger.log("slotNotify :: %s installing" % p.name)
-            self.cur += 1
-            self.ui.progress.setValue(self.cur)
-        elif event == pisi.ui.configuring:
-            self.ui.info.setText(_("Configuring package: %s") % p.name)
-            ctx.debugger.log("slotNotify :: %s configuring" % p.name)
-            self.cur += 1
-            self.ui.progress.setValue(self.cur)
-        ctx.mainScreen.processEvents()
-
     def customEvent(self, qevent):
-         # User+1: pisi events
-         if qevent.eventType() == EventPisi:
 
-             p, event = qevent.data()
+        # EventPisi
+        if qevent.eventType() == EventPisi:
+            p, event = qevent.data()
 
-             if event == pisi.ui.installing:
-                 self.ui.info.setText(_("Installing: %s<br>%s") % (
-                         p.name, p.summary))
-                 ctx.debugger.log("customEvent :: %s installed" % p.name)
-                 self.cur += 1
-                 self.ui.progress.setValue(self.cur)
-             elif event == pisi.ui.configuring:
-                 self.ui.info.setText(_("Configuring package: %s") % p.name)
-                 ctx.debugger.log("customEvent :: %s configured" % p.name)
-                 self.cur += 1
-                 self.ui.progress.setValue(self.cur)
+            if event == pisi.ui.installing:
+                self.ui.info.setText(_("Installing: %s<br>%s") % (p.name, p.summary))
+                ctx.debugger.log("customEvent :: %s installed" % p.name)
+                self.cur += 1
+                self.ui.progress.setValue(self.cur)
+            elif event == pisi.ui.configuring:
+                self.ui.info.setText(_("Configuring package: %s") % p.name)
+                ctx.debugger.log("customEvent :: %s configured" % p.name)
+                self.cur += 1
+                self.ui.progress.setValue(self.cur)
 
-         # User+2: set progress
-         elif qevent.eventType() == EventSetProgress:
-             total = qevent.data()
-             self.ui.progress.setMaximum(total)
+        # EventSetProgress
+        elif qevent.eventType() == EventSetProgress:
+            total = qevent.data()
+            self.ui.progress.setMaximum(total)
 
-         # User+3: finished
-         elif qevent.eventType() == EventFinished:
-             self.finished()
+        # EventPackageInstallFinished
+        elif qevent.eventType() == EventPackageInstallFinished:
+            self.packageInstallFinished()
 
-         # User+10: error
-         elif qevent.eventType() == EventError:
-             err = qevent.data()
-             self.installError(err)
+        # EventError
+        elif qevent.eventType() == EventError:
+            err = qevent.data()
+            self.installError(err)
+
+        # EventAllFinished
+        elif qevent.eventType() == EventAllFinished:
+            self.finished()
 
     def slotChangePix(self):
         self.ui.pix.setPixmap(self.iter_pics.next())
 
-    def execute(self):
+    def packageInstallFinished(self):
+
+        yali4.pisiiface.finalize()
+        self.cur = 0
+
         # fill fstab
         fstab = yali4.fstab.Fstab()
         for req in ctx.partrequests:
@@ -180,29 +173,22 @@ Have fun!
         fstab.close()
 
         # Configure Pending...
+
         # run baselayout's postinstall first
         yali4.postinstall.initbaselayout()
+
         # postscripts depend on 03locale...
         yali4.localeutils.write_locale_from_cmdline()
 
-        yali4.sysutils.chroot_comar() # run comar in chroot
-        self.info.setText(_("Configuring packages for your system!"))
-        # re-initialize pisi with comar this time.
-        ui = PisiUI_NoThread(notify_widget = self)
-        yali4.pisiiface.initialize(ui=ui, with_comar=True)
-        # show progress
-        self.cur = 0
-        self.progress.setProgress(self.cur)
-        self.total = yali4.pisiiface.get_pending_len()
-        self.progress.setTotalSteps(self.total)
-        # run all pending...
-        yali4.pisiiface.configure_pending()
-        ctx.debugger.log("execute :: yali4.pisiiface.configure_pending() called")
+        # run comar in chroot
+        yali4.sysutils.chroot_comar() 
 
-        # Remove cd repository and install add real
-        yali4.pisiiface.switch_to_pardus_repo()
-        yali4.pisiiface.finalize()
+        self.ui.info.setText(_("Configuring packages for your system!"))
+        # start configurator thread
+        self.pkg_configurator = PkgConfigurator(self)
+        self.pkg_configurator.start()
 
+    def execute(self):
         # stop slide show
         self.timer.stop()
 
@@ -215,7 +201,7 @@ Have fun!
         yali4.pisiiface.finalize()
 
         # trigger next screen. will activate execute()
-        ctx.mainScreen.next()
+        ctx.mainScreen.slotNext()
 
 
     def installError(self, e):
@@ -237,19 +223,19 @@ Error:
 class PkgInstaller(QThread):
 
     def __init__(self, widget):
-        print "PkgInstaller started."
+        ctx.debugger.log("PkgInstaller started.")
         QThread.__init__(self)
         self._widget = widget
 
     def run(self):
-        print "PkgInstaller is running."
-        ui = PisiUI_NoThread(self._widget)
+        ctx.debugger.log("PkgInstaller is running.")
+        ui = PisiUI(self._widget)
 
         yali4.pisiiface.initialize(ui)
 
         # if exists use remote source repo
         # otherwise use cd as repo
-        print "Repo adding.."
+        ctx.debugger.log("CD Repo adding..")
         if ctx.installData.repoAddr:
             yali4.pisiiface.add_remote_repo(ctx.installData.repoName,ctx.installData.repoAddr)
         else:
@@ -262,7 +248,7 @@ class PkgInstaller(QThread):
         qevent.setData(total)
         QCoreApplication.postEvent(self._widget, qevent)
 
-        print "Found %d packages in repo.." % total
+        ctx.debugger.log("Found %d packages in repo.." % total)
 
         try:
             yali4.pisiiface.install_all()
@@ -272,11 +258,46 @@ class PkgInstaller(QThread):
             qevent.setData(e)
             QCoreApplication.postEvent(self._widget, qevent)
 
-        qevent = PisiEvent(QEvent.User, EventFinished)
+        # Package Install finished lets configure them
+        qevent = PisiEvent(QEvent.User, EventPackageInstallFinished)
         QCoreApplication.postEvent(self._widget, qevent)
 
+class PkgConfigurator(QThread):
 
-class PisiUI_NoThread(QObject,pisi.ui.UI):
+    def __init__(self, widget):
+        ctx.debugger.log("PkgConfigurator started.")
+        QThread.__init__(self)
+        self._widget = widget
+
+    def run(self):
+        ctx.debugger.log("PkgConfigurator is running.")
+        ui = PisiUI(self._widget)
+
+        yali4.pisiiface.initialize(ui=ui, with_comar=True)
+
+        total = yali4.pisiiface.get_pending_len()
+        qevent = PisiEvent(QEvent.User, EventSetProgress)
+        qevent.setData(total)
+        QCoreApplication.postEvent(self._widget, qevent)
+
+        try:
+            # run all pending...
+            yali4.pisiiface.configure_pending()
+            ctx.debugger.log("execute :: yali4.pisiiface.configure_pending() called")
+        except Exception, e:
+            # User+10: error
+            qevent = PisiEvent(QEvent.User, EventError)
+            qevent.setData(e)
+            QCoreApplication.postEvent(self._widget, qevent)
+
+        # Remove cd repository and install add real
+        yali4.pisiiface.switch_to_pardus_repo()
+        yali4.pisiiface.finalize()
+
+        qevent = PisiEvent(QEvent.User, EventAllFinished)
+        QCoreApplication.postEvent(self._widget, qevent)
+
+class PisiUI(QObject,pisi.ui.UI):
 
     def __init__(self, widget, *args):
         pisi.ui.UI.__init__(self)
