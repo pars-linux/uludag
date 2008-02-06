@@ -18,28 +18,23 @@ class CallHandler:
     Usage:
       ch = CallHandler("baselayout", "User.Manager", "addUser", "polkit.action" windowID, SystemBus, SessionBus)
 
-      # Exec func1() on success:
-      # (Message reply will be passed to function)
-      ch.registerDone(func1)
+      # Exec func1([arg1, arg2, ...], method_reply) on success:
+      ch.registerDone(func1, [arg1, arg2, ...])
 
-      # Exec func2() if user cancels authentication:
-      # (No arguments will be passed to function)
-      ch.registerCancel(func2)
+      # Exec func2([arg1, arg2, ...]) if user cancels authentication:
+      ch.registerCancel(func2, {arg1, arg2 ...])
 
-      # Exec func3() if method return error:
-      # (Exception is passed to function)
-      ch.registerError(func3)
+      # Exec func3([arg1, arg2, ...], exception) if method return error:
+      ch.registerError(func3, [arg1, arg2, ...])
 
-      # Exec func4() if PolicyKit returns error:
-      # (Exception is passed to function)
-      ch.registerError(func4)
+      # Exec func4([arg1, arg2, ...], exception) if PolicyKit returns error:
+      ch.registerError(func4, [arg1, arg2, ...])
 
-      # Exec func5() if DBus connection error occures:
-      # (Exception is passed to function)
-      ch.registerError(func5)
+      # Exec func5([arg1, arg2, ...], exception) if DBus connection error occures:
+      ch.registerError(func5, [arg1, arg2, ...])
 
       # Run
-      ch.call(arg1, arg2, ...)
+      ch.call(method_arg1, method_arg2, ...)
     """
 
     def __init__(self, package, model, method, action, windowID, busSys=None, busSes=None):
@@ -52,30 +47,30 @@ class CallHandler:
         self.method = method
         self.action = action
         self.args = None
-        self.handleDone = []
-        self.handleCancel = []
-        self.handleError = []
-        self.handleAuthError = []
-        self.handleDBusError = []
+        self.handleDone = {}
+        self.handleCancel = {}
+        self.handleError = {}
+        self.handleAuthError = {}
+        self.handleDBusError = {}
         if not self.busSys:
             self.busSys = dbus.SystemBus()
         if not self.busSes:
             self.busSes = dbus.SessionBus()
     
-    def registerDone(self, func):
-        self.handleDone.append(func)
+    def registerDone(self, func, *args):
+        self.handleDone[func] = args
     
-    def registerCancel(self, func):
-        self.handleCancel.append(func)
+    def registerCancel(self, func, *args):
+        self.handleCancel[func] = args
     
-    def registerError(self, func):
-        self.handleError.append(func)
+    def registerError(self, func, *args):
+        self.handleError[func] = args
     
-    def registerAuthError(self, func):
-        self.handleAuthError.append(func)
+    def registerAuthError(self, func, *args):
+        self.handleAuthError[func] = args
     
-    def registerDBusError(self, func):
-        self.handleDBusError.append(func)
+    def registerDBusError(self, func, *args):
+        self.handleDBusError[func] = args
     
     def call(self, *args):
         self.args = args
@@ -91,46 +86,53 @@ class CallHandler:
             obj = self.busSys.get_object(self.dest, self.path, introspect=False)
             return dbus.Interface(obj, dbus_interface=self.iface)
         except dbus.DBusException, e:
-            for func in self.handleDBusError:
-                func(e)
+            for func, args in self.handleDBusError.iteritems():
+                args = list(args)
+                args.append(e)
+                func(*args)
     
     def __handleReply(self, *args):
-        for func in self.handleDone:
-            func(*args)
+        for func, _args in self.handleDone.iteritems():
+            args = list(args)
+            _args = list(_args)
+            _args.extend(args)
+            func(*_args)
     
     def __handleError(self, exception):
         name = exception._dbus_error_name
-        name = name.split(self.dest)[1]
+        if name.startswith(self.dest):
+            name = name.split(self.dest)[1]
         if name.startswith(".policy.auth"):
             self.__obtainAuth()
         else:
-            for func in self.handleError:
-                func(exception)
+            for func, args in self.handleError.iteritems():
+                args = list(args)
+                args.append(exception)
+                func(*args)
     
     def __getAuthIface(self):
         try:
             obj = self.busSes.get_object("org.gnome.PolicyKit", "/")
             return dbus.Interface(obj, "org.freedesktop.PolicyKit.AuthenticationAgent")
         except dbus.DBusException, e:
-            for func in self.handleDBusError:
-                func(e)
+            for func, args in self.handleDBusError.iteritems():
+                args = list(args)
+                args.append(e)
+                func(*args)
     
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        #iface.ObtainAuthorization(self.action, self.window, os.getpid(), reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError)
-        if iface.ObtainAuthorization(self.action, self.window, os.getpid()):
-            self.__call()
-        else:
-            for func in self.handleCancel:
-                func()
+        iface.ObtainAuthorization(self.action, self.window, os.getpid(), reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError)
     
     def __handleAuthReply(self, granted):
         if granted:
             self.__call()
         else:
-            for func in self.handleCancel:
-                func()
+            for func, args in self.handleCancel.iteritems():
+                func(*args)
     
     def __handleAuthError(self, exception):
-        for func in self.handleAuthError:
-            func(exception)
+        for func, args in self.handleAuthError.iteritems():
+            args = list(args)
+            args.append(exception)
+            func(*args)

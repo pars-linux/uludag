@@ -63,9 +63,6 @@ consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
 # packages (and maybe others) will be in this source (cdrom) directory
 consts.source_dir = join(consts.mnt_dir, "cdrom")
 
-# comar socket path
-consts.comar_socket_file = consts.target_dir + "/var/run/comar.socket"
-
 # swap file path
 consts.swap_file_name = ".swap"
 consts.swap_file_path = join(consts.target_dir, 
