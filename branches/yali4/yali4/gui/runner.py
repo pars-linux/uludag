@@ -38,7 +38,7 @@ import ScrPartitionAuto
 import ScrPartitionManual
 import ScrBootloader
 import ScrInstall
-#import ScrGoodbye
+import ScrGoodbye
 #import ScrKahyaCheck
 
 ##
@@ -59,7 +59,8 @@ class Runner:
                         ScrPartitionAuto,
                         ScrPartitionManual,
                         ScrBootloader,
-                        ScrInstall
+                        ScrInstall,
+                        ScrGoodbye
                        ]
 
         """

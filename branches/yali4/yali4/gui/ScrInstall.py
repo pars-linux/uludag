@@ -32,7 +32,7 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 import yali4.gui.context as ctx
 
-EventPisi, EventSetProgress, EventError, EventFinished, EventPackageInstallFinished = range(1,6)
+EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished = range(1,6)
 
 def iter_slide_pics():
     # load all pics

@@ -34,6 +34,7 @@ from yali4.sysutils import is_windows_boot
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.YaliSteps import YaliSteps
+from yali4.gui.Ui.goodbyewidget import Ui_GoodByeWidget
 from yali4.constants import consts
 import yali4.gui.context as ctx
 
@@ -61,31 +62,13 @@ don't you?
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.ui = Ui_KeyboardWidget()
+        self.ui = Ui_GoodByeWidget()
         self.ui.setupUi(self)
 
-        #img = QLabel(self)
-        #img.setPixmap(ctx.iconfactory.newPixmap("goodbye"))
+        self.steps = YaliSteps()
 
-        self.steps = YaliSteps(self)
-
-        self.info = QtGui.QLabel(self)
-        self.info.setText(
-            _('<b><font size="+2" color="#FF6D19">Rebooting system. Please wait!</font></b>'))
-        self.info.hide()
-        self.info.setAlignment(QLabel.AlignCenter|QLabel.AlignTop)
-        self.info.setMinimumSize(QSize(0,50))
-
-        vbox = QtGui.QVBoxLayout(self)
-        vbox.addStretch(1)
-
-        hbox = QtGui.QHBoxLayout(vbox)
-        hbox.addStretch(1)
-        # hbox.addWidget(img)
-        hbox.addStretch(1)
-
-        vbox.addStretch(1)
-        vbox.addWidget(self.info)
+        self.ui.info.setText(_('<b><font size="+2" color="#FF6D19">Rebooting system. Please wait!</font></b>'))
+        self.ui.info.hide()
 
     def shown(self):
         ctx.mainScreen.disableBack()
@@ -95,8 +78,7 @@ don't you?
     def execute(self):
         ctx.mainScreen.disableNext()
 
-        self.info.show()
-        self.info.setAlignment(QLabel.AlignCenter)
+        self.ui.info.show()
 
         try:
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
@@ -193,14 +175,14 @@ don't you?
                 ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
             return True
 
-        steps = [{"text":_("Trying to connect COMAR Daemon..."),"operation":connectToComar},
-                 {"text":_("Setting Hostname..."),"operation":setHostName},
-                 {"text":_("Setting Root Password..."),"operation":setRootPassword},
-                 {"text":_("Adding Users..."),"operation":addUsers},
-                 {"text":_("Writing Console Data..."),"operation":writeConsoleData},
-                 {"text":_("Migrating X.org Configuration..."),"operation":migrateXorgConf},
-                 {"text":_("Setting misc. package configurations..."),"operation":setPackages},
-                 {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
+        steps = [{"text":"Trying to connect COMAR Daemon...","operation":connectToComar},
+                 {"text":"Setting Hostname...","operation":setHostName},
+                 {"text":"Setting Root Password...","operation":setRootPassword},
+                 {"text":"Adding Users...","operation":addUsers},
+                 {"text":"Writing Console Data...","operation":writeConsoleData},
+                 {"text":"Migrating X.org Configuration...","operation":migrateXorgConf},
+                 {"text":"Setting misc. package configurations...","operation":setPackages},
+                 {"text":"Installing BootLoader...","operation":self.installBootloader}]
 
         self.steps.setOperations(steps)
 
