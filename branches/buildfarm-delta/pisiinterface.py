@@ -75,8 +75,8 @@ class PisiApi:
                 set(map(lambda x: os.path.basename(x), self.__oldBinaryPackages)))
 
     def delta(self, oldBinaryPackages, newBinaryPackages):
-        # Create dictionary
-        self._createIsoDictionary("/home/ozan/playground/dist/isopackages")
+        # Create dictionary from 2007.3 ISO package list
+        self._createIsoDictionary("data/packages-2007.3")
 
         # Sort the lists
         oldBinaryPackages = sorted(oldBinaryPackages)
@@ -116,5 +116,7 @@ class PisiApi:
     def install(self, p):
         a = []
         a.append(p)
+
         # Set ignore_file_conflicts here
         pisi.api.install(a, ignore_file_conflicts=self.options.ignore_file_conflicts)
+
