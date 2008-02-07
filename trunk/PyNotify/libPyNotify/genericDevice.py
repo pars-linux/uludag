@@ -16,6 +16,7 @@ class genericDevice:
 
     capabilitiesMap = {
         'ac_adapter' : genericActions.popupDialog,
+        'access_control' : '',
         'alsa' : '',
         'battery' : '',
         'block' : '',
@@ -76,8 +77,11 @@ class genericDevice:
             return
 
         for i in self.info_capabilities:
-            if self.capabilitiesMap[i] != '':
-                self.capabilitiesMap[i](self.genericActions, self, 'Device Added To System', "added to system...")
+            try:
+                if self.capabilitiesMap[i] != '':
+                    self.capabilitiesMap[i](self.genericActions, self, 'Device Added To System', "added to system...")
+            except KeyError:
+                pass
 
     def deviceRemoved(self):
         # Popup for only devices has capabilities
