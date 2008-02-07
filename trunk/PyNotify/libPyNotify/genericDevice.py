@@ -88,8 +88,11 @@ class genericDevice:
             return
 
         for i in self.info_capabilities:
-            if self.capabilitiesMap[i] != '':
-                self.capabilitiesMap[i](self.genericActions, self, 'Device Removed From System', "removed from system...")
+            try:
+                if self.capabilitiesMap[i] != '':
+                    self.capabilitiesMap[i](self.genericActions, self, 'Device Removed From System', "removed from system...")
+            except KeyError:
+                pass
 
     def propertyModified(self, udi, msg):
         print 'property=%s %s' % (udi, msg)
