@@ -16,7 +16,6 @@ class genericDevice:
 
     capabilitiesMap = {
         'ac_adapter' : genericActions.popupDialog,
-        'access_control' : '',
         'alsa' : '',
         'battery' : '',
         'block' : '',
