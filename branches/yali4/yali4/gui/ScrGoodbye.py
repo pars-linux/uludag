@@ -93,7 +93,7 @@ don't you?
 
         ctx.debugger.log("Show reboot dialog.")
         self.dialog = WarningDialog(w, self)
-        self.dialog.exec_loop()
+        self.dialog.exec_()
 
         ctx.debugger.log("Trying to eject the CD.")
         # remove cd...
@@ -187,6 +187,10 @@ don't you?
         self.steps.setOperations(steps)
 
     def installBootloader(self):
+        if not ctx.installData.bootLoaderDev:
+            ctx.debugger.log("Dont install bootloader selected; skipping.")
+            return
+
         ctx.debugger.log("Bootloader is installing...")
         loader = yali4.bootloader.BootLoader()
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,

@@ -60,7 +60,7 @@ class DiskList(QtGui.QWidget):
             QTabBar::tab:hover { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                              stop: 0 #fafafa, stop: 0.4 #f4f4f4,
                                                              stop: 0.5 #e7e7e7, stop: 1.0 #fafafa); }
-            QTabBar::tab:selected { border-color: #FFFFFF; border-bottom-color: #FFFFFF; }
+            QTabBar::tab:selected { border-color: #CCC; border-bottom-color: #FFFFFF; }
             QTabBar::tab:!selected { margin-top: 2px; }
             QRadioButton::indicator { width:1px;height:1px;border-color:white; }
             QRadioButton:checked { border:3px solid #777;border-radius:4px; }
@@ -68,17 +68,16 @@ class DiskList(QtGui.QWidget):
         """)
         self.vbox = QtGui.QVBoxLayout(self)
 
-        # FIXME this is a tabwidget not a toolbox, use tabWidget instead
-        self.toolBox = QtGui.QTabWidget(self)
-        self.toolBox.setAutoFillBackground(False)
-        self.toolBox.setFocusPolicy(Qt.NoFocus)
+        self.tabWidget = QtGui.QTabWidget(self)
+        self.tabWidget.setAutoFillBackground(False)
+        self.tabWidget.setFocusPolicy(Qt.NoFocus)
 
         self.partEdit = PartEdit()
         self.partEdit.ui.fileSystemBox.setVisible(False)
-        self.vbox.addWidget(self.toolBox)
+        self.vbox.addWidget(self.tabWidget)
         self.vbox.addWidget(self.partEdit)
 
-        self.connect(self.toolBox,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
+        self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
         self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
@@ -93,27 +92,26 @@ class DiskList(QtGui.QWidget):
     ##
     # GUI Operations
     #
-    # FIXME infinite loop here
     def updatePartEdit(self, dw):
         dw.updatePartEdit()
 
     def addDisk(self,dw):
-        self.toolBox.addTab(dw,dw.name)
-        self.toolBox.setTabToolTip(self.toolBox.count()-1,"%s - %s" % (dw.model,dw.name))
+        self.tabWidget.addTab(dw,dw.name)
+        self.tabWidget.setTabToolTip(self.tabWidget.count()-1,"%s - %s" % (dw.model,dw.name))
         self.diskCount+=1
 
     def update(self):
-        _cur = self.toolBox.currentIndex()
+        _cur = self.tabWidget.currentIndex()
         if _cur==-1: _cur = 0
-        self.toolBox.clear()
+        self.tabWidget.clear()
         self.diskCount = 1
 
         for dev in self.devs:
             ctx.debugger.log("Device Found %s" % dev.getModel())
             self.addDevice(dev)
 
-        self.toolBox.setCurrentIndex(_cur)
-        self.updatePartEdit(self.toolBox.widget(_cur))
+        self.tabWidget.setCurrentIndex(_cur)
+        self.updatePartEdit(self.tabWidget.widget(_cur))
         self.checkRootPartRequest()
 
     def checkRootPartRequest(self):
@@ -145,6 +143,11 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.partitionSlider.setMinimum(10)
             self.partEdit.ui.formatCheck.setEnabled(True)
 
+        if cur == 2:
+            # if selected partition has different fs for userspace, forceToFormat
+            if not self.partEdit.currentPart.getFSName() in ["ext3","reiserfs","xfs"]:
+                forceToFormat()
+
         if cur == 3:
             forceToFormat()
 
@@ -156,6 +159,9 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.fileSystem.setVisible(True)
             self.partEdit.ui.fileSystemBox.setVisible(False)
 
+        # if selected partition is freespace no matter what we have to format.
+        if self.partEdit.currentPart.isFreespace():
+            forceToFormat()
 
     def initDevices(self):
         self.devs = []
@@ -209,7 +215,7 @@ class DiskList(QtGui.QWidget):
             ctx.debugger.log("Partition added with %s mb" % part.getMB())
             diskItem.addPartition(name,part)
 
-        diskItem.updateSizes(self.toolBox.width())
+        diskItem.updateSizes(self.tabWidget.width())
 
     ##
     # Partition Operations
@@ -287,7 +293,7 @@ class DiskList(QtGui.QWidget):
                 min_primary = 4
                 if device.numberOfPrimaryPartitions() == 4:
                     QtGui.QMessageBox.information(self,
-                                                  "Too many primary partition !", 
+                                                _("Too many primary partition !"), 
                                                 _("GPT Disk tables does not support for extended partitions.\n" \
                                                   "You need to delete one of primary partition from your disk table !"))
                     return
@@ -446,6 +452,10 @@ class DiskItem(QtGui.QWidget):
             i+=1
 
     def deleteAll(self):
+        for p in self._data.getPartitions():
+            ctx.partrequests.removeRequest(p, request.mountRequestType)
+            ctx.partrequests.removeRequest(p, request.formatRequestType)
+            ctx.partrequests.removeRequest(p, request.labelRequestType)
         self._data.deleteAllPartitions()
         QObject.emit(self.partEdit,SIGNAL("updateTheList"))
 

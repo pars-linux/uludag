@@ -21,13 +21,9 @@ import yali4.gui.context as ctx
 import yali4.partitionrequest as request
 import yali4.partitiontype as parttype
 from yali4.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
-#from yali4.gui.InformationWindow import InformationWindow
 from yali4.gui.GUIException import *
 from yali4.gui.DiskWidgets import *
 from yali4.gui.ScreenWidget import ScreenWidget
-#from yali4.gui.PartListImpl import PartList
-#from yali4.gui.PartEditImpl import PartEdit, \
-#    editState, createState, deleteState, resizeState
 
 ##
 # Partitioning screen.
@@ -82,11 +78,9 @@ about disk partitioning.
 
         vbox = QtGui.QVBoxLayout(self)
         vbox.addWidget(self.partList)
-        self.partList.show()
 
     def shown(self):
         ctx.mainScreen.disableNext()
-        self.partList.update()
 
     def update(self):
         self.partList.update()

@@ -14,6 +14,10 @@
 
 import os
 
+import gettext
+__trans = gettext.translation('yali4', fallback=True)
+_ = __trans.ugettext
+
 from yali4.exception import *
 from yali4.constants import consts
 import yali4.partitiontype as parttype
@@ -175,7 +179,7 @@ class RequestList(list):
         # RequestList stores only one request for a requestType() -
         # partitionType() pair.
         if found:
-            e = "There is a request with the same partitionType() and requestType()."
+            e = _("There is a request for the same Partition Type.")
             raise RequestException, e
 
         list.append(self, req)
