@@ -19,7 +19,7 @@ import dbus.mainloop.qt3
 
 ''' libPyNotify '''
 from libPyNotify.genericDevice import genericDevice
-from libPyNotify.genericActions import genericActions
+from libPyNotify.iconFinder import setIconFinder
 
 class SystemTray(KSystemTray):
     def __init__(self, *args):
@@ -43,7 +43,6 @@ class SystemTray(KSystemTray):
     def slotQuit(self):
         self.deleteLater()
         app.quit()
-
 
 
 def deviceAdded(udi):
@@ -93,6 +92,9 @@ if __name__ == '__main__':
     systemBus = dbus.SystemBus()
     dbusService = systemBus.get_object(serviceName, interfaceName)
     halInterface = dbus.Interface(dbusService, managerName)
+
+    # Set icon finder from KDE
+    setIconFinder(lambda icon: str(trayWindow.icons.iconPath(icon, KIcon.Desktop)))
 
     # Generate Global Device List
     allDevices = {}

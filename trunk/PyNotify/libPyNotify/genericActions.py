@@ -6,8 +6,9 @@ import statvfs
 import inspect
 
 class genericActions:
-    def __init__(self):
-        pass
+    def __init__(self, iconFinder):
+        ''' Icon finder for popups '''
+        self.iconFinder = iconFinder
 
     def popupDialog(self, device, subject, content, urgency = pynotify.URGENCY_NORMAL, timeout = pynotify.EXPIRES_DEFAULT):
         ''' Popups notification dialog '''
@@ -24,9 +25,10 @@ class genericActions:
             print '--------------------------------------------'
 
         pynotify.init(device.udi)
+        icon = self.iconFinder(device.info_category)
         n = pynotify.Notification(subject, '<b>%s</b> %s'
                                   % (device.info_product, content),
-                                  'file:///home/caglar/workspace/PyNotify/icons/%s.png' % device.info_category)
+                                  icon)
 
         n.set_urgency(urgency)
         n.set_timeout(timeout)
@@ -39,7 +41,7 @@ class genericActions:
             n.set_timeout(3)
             n.set_urgency(pynotify.URGENCY_NORMAL)
             n.clear_actions() 
-            n.update('Trash emptied', 'Trash deleted', 'file:///home/caglar/workspace/PyNotify/icons/trashcan_empty.png')
+            n.update('Trash emptied', 'Trash deleted', self.iconFinder("trashcan_empty"))
             n.show()
 
         def ignoreAction(n, action):
@@ -52,7 +54,7 @@ class genericActions:
             pynotify.init('diskFull')
             n = pynotify.Notification('Low disk space',
                               'You can free up some disk space by emptying the trash can.',
-                              'file:///home/caglar/workspace/PyNotify/icons/trashcan_full.png')
+                              self.iconFinder('trashcan_full'))
 
             n.set_urgency(pynotify.URGENCY_CRITICAL)
             n.set_timeout(0)

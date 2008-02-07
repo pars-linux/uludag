@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import dbus
+
 from genericActions import genericActions
+from iconFinder import iconFinder
 
 class genericDevice:
     ''' Base class for a generic HAL device '''
@@ -57,7 +59,7 @@ class genericDevice:
         self.udi = udi
         self.device = systemBus.get_object(serviceName, self.udi)
         self.deviceInterface = dbus.Interface(self.device, managerName)
-        self.genericActions = genericActions()
+        self.genericActions = genericActions(iconFinder())
 
         for key in self.deviceInterface.GetAllProperties():
             setattr(self, key.replace('.', "_"), self.deviceInterface.GetProperty(key))
