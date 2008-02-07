@@ -76,6 +76,10 @@ if __name__ == '__main__':
 
     ''' Use KUniqueApplication and initialize'''
     gettext.install(appName)
+    if not KUniqueApplication.start():
+        print _("PyNotify is already running!")
+        sys.exit(1)
+
     app = KUniqueApplication(True, True, True)
     trayWindow = SystemTray(None, appName)
 
