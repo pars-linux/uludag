@@ -59,7 +59,7 @@ your newly installed Pardus.&lt;/p></string>
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType" >
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::MinimumExpanding</enum>
      </property>
      <property name="sizeHint" >
       <size>
@@ -117,7 +117,7 @@ your newly installed Pardus.&lt;/p></string>
         <item>
          <widget class="QLabel" name="select_disk_label" >
           <property name="text" >
-           <string>Select the disk you to install bootloader:</string>
+           <string>Select the disk to install bootloader:</string>
           </property>
           <property name="wordWrap" >
            <bool>false</bool>

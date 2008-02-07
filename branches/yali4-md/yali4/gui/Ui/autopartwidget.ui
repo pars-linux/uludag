@@ -101,59 +101,55 @@ p, li { white-space: pre-wrap; }
      </property>
      <layout class="QGridLayout" >
       <item row="0" column="0" >
-       <layout class="QVBoxLayout" >
-        <item>
-         <widget class="QRadioButton" name="accept_auto" >
-          <property name="font" >
-           <font/>
-          </property>
-          <property name="text" >
-           <string>Automatically partition and format selected disk!</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_2" >
-          <property name="text" >
-           <string>....</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radioButton" >
-          <property name="font" >
-           <font/>
-          </property>
-          <property name="text" >
-           <string>Automatically partition try to use free space or resize current partitions</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_3" >
-          <property name="text" >
-           <string>....</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="manual" >
-          <property name="font" >
-           <font/>
-          </property>
-          <property name="text" >
-           <string>No, I'll partition my disk manually.</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_4" >
-          <property name="text" >
-           <string>....</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QRadioButton" name="accept_auto_1" >
+        <property name="font" >
+         <font/>
+        </property>
+        <property name="text" >
+         <string>Automatically partition try to use free space or resize current partitions</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="label_2" >
+        <property name="text" >
+         <string>....</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QRadioButton" name="accept_auto_2" >
+        <property name="font" >
+         <font/>
+        </property>
+        <property name="text" >
+         <string>Automatically partition and format selected disk!</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>....</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" >
+       <widget class="QRadioButton" name="manual" >
+        <property name="font" >
+         <font/>
+        </property>
+        <property name="text" >
+         <string>No, I'll partition my disk manually.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" >
+       <widget class="QLabel" name="label_4" >
+        <property name="text" >
+         <string>....</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -197,7 +193,7 @@ p, li { white-space: pre-wrap; }
      </property>
     </widget>
    </item>
-   <item row="6" column="1" >
+   <item row="5" column="1" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>

@@ -61,7 +61,7 @@ class DiskList(QtGui.QWidget):
             QTabBar::tab:hover { background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                                              stop: 0 #fafafa, stop: 0.4 #f4f4f4,
                                                              stop: 0.5 #e7e7e7, stop: 1.0 #fafafa); }
-            QTabBar::tab:selected { border-color: #FFFFFF; border-bottom-color: #FFFFFF; }
+            QTabBar::tab:selected { border-color: #CCC; border-bottom-color: #FFFFFF; }
             QTabBar::tab:!selected { margin-top: 2px; }
             QRadioButton::indicator { width:1px;height:1px;border-color:white; }
             QRadioButton:checked { border:3px solid #777;border-radius:4px; }
@@ -93,9 +93,9 @@ class DiskList(QtGui.QWidget):
     ##
     # GUI Operations
     #
-    def updatePartEdit(self, tw):
-        # tw is DiskItem object, placed in our tab widgets
-        tw.updatePartEdit()
+    def updatePartEdit(self, dw):
+        # dw is DiskItem object, placed in our tab widgets
+        dw.updatePartEdit()
 
     # add the DiskItem object to tabwidget
     # and increase disk count
@@ -153,6 +153,11 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.partitionSlider.setMinimum(10)
             self.partEdit.ui.formatCheck.setEnabled(True)
 
+        if cur == 2:
+            # if selected partition has different fs for userspace, forceToFormat
+            if not self.partEdit.currentPart.getFSName() in ["ext3","reiserfs","xfs"]:
+                forceToFormat()
+
         if cur == 3:
             forceToFormat()
 
@@ -163,6 +168,10 @@ class DiskList(QtGui.QWidget):
         else:
             self.partEdit.ui.fileSystem.setVisible(True)
             self.partEdit.ui.fileSystemBox.setVisible(False)
+
+        # if selected partition is freespace no matter what we have to format.
+        if self.partEdit.currentPart.isFreespace():
+            forceToFormat()
 
     # initialize all storage devices
     # @see storage.py
@@ -298,7 +307,7 @@ class DiskList(QtGui.QWidget):
                 min_primary = 4
                 if device.numberOfPrimaryPartitions() == 4:
                     QtGui.QMessageBox.information(self,
-                                                  "Too many primary partition !", 
+                                                _("Too many primary partition !"), 
                                                 _("GPT Disk tables does not support for extended partitions.\n" \
                                                   "You need to delete one of primary partition from your disk table !"))
                     return
@@ -472,6 +481,10 @@ class DiskItem(QtGui.QWidget):
             i+=1
 
     def deleteAll(self):
+        for p in self._data.getPartitions():
+            ctx.partrequests.removeRequest(p, request.mountRequestType)
+            ctx.partrequests.removeRequest(p, request.formatRequestType)
+            ctx.partrequests.removeRequest(p, request.labelRequestType)
         self._data.deleteAllPartitions()
         QObject.emit(self.partEdit,SIGNAL("updateTheList"))
 
