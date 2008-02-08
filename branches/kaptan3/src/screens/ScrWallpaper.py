@@ -16,12 +16,12 @@ from kdeui import *
 import kdedesigner
 
 from screens.Screen import ScreenWidget
-from screens.welcomedlg import WelcomeWidget
+from screens.wallpaperdlg import WallpaperWidget
 
-class Widget(WelcomeWidget, ScreenWidget):
+class Widget(WallpaperWidget, ScreenWidget):
 
     def __init__(self, *args):
-        apply(WelcomeWidget.__init__, (self,) + args)
+        apply(WallpaperWidget.__init__, (self,) + args)
 
     def shown(self):
         pass

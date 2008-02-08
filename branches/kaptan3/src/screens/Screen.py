@@ -12,7 +12,7 @@
 
 ##
 # Abstract class for screen widgets
-class Screen:
+class ScreenWidget:
 
     def shown(self):
         pass

@@ -1,5 +1,5 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>Form2</class>
+<class>WallpaperWidget</class>
 <widget class="QWidget">
     <property name="name">
         <cstring>Form2</cstring>
