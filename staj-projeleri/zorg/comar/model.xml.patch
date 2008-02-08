@@ -1,17 +1,38 @@
-Index: model.xml
+Index: etc/model.xml
 ===================================================================
---- model.xml	(revision 16729)
-+++ model.xml	(working copy)
-@@ -395,4 +395,12 @@
+--- etc/model.xml	(revision 16951)
++++ etc/model.xml	(working copy)
+@@ -395,4 +395,33 @@
              <arg name="state" type="s"/>
          </signal>
      </interface>
++    <interface name="Xorg.Display">
++        <method name="initialConfig"/>
++        <method name="safeConfig"/>
++        <method name="activeDeviceID">
++            <arg name="result" type="s" direction="out"/>
++        </method>
++        <method name="changeDriver">
++            <arg name="busId" type="s" direction="in"/>
++            <arg name="driver" type="s" direction="in"/>
++        </method>
++        <method name="setupScreens">
++            <arg name="busId" type="s" direction="in"/>
++            <arg name="options" type="ss" direction="in"/>
++            <arg name="firstScreen" type="ss" direction="in"/>
++            <arg name="secondScreen" type="ss" direction="in"/>
++        </method>
++    </interface>
 +    <interface name="Xorg.Driver">
 +        <method name="enable"/>
 +        <method name="disable"/>
 +        <method name="probe">
 +            <arg name="device" type="ss" direction="in"/>
 +            <arg name="result" type="ss" direction="out"/>
++        </method>
++        <method name="getOptions">
++            <arg name="device" type="ss" direction="in"/>
++            <arg name="options" type="ss" direction="out"/>
 +        </method>
 +    </interface>
  </comarModel>
