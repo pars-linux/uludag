@@ -28,6 +28,10 @@ import yali4.gui.context as ctx
 from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 
+import yali4.raid
+import yali4.partedutils
+import yali4.mdutils
+
 partitionTypes = {0:None,
                  1:parttype.root,
                  2:parttype.home,

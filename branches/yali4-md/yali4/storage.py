@@ -25,6 +25,8 @@ import os
 import glob
 import struct
 import binascii
+import raid
+import partedutils
 
 from yali4.parteddata import *
 from yali4.partition import Partition, FreeSpace
@@ -37,33 +39,61 @@ class DeviceError(YaliError):
 
 # all storage devices
 devices = []
+# list of software raid devices
+mdList = []
+# devices that are members of a raid device
+raidMembers = []
 
 ##
 # initialize all devices and fill devices list
 def init_devices(force = False):
     global devices
+    global mdList
+    global raidMembers
 
     if devices and not force:
         return True
 
-    devs = detect_all()
+    # this keeps the raid devices that wont be added to device list
+    # because they're part of a software raid
+    restricteds = []
+
+    # all devices including raid devices
+    devs = detect_devices()
+
+    # find software raid devices and exclude their members from global device list
+    for i in devs:
+        if os.path.exists("/sys/block/%s/md" % i.split('/')[-1:][0]):
+            for root, dirs, files in os.walk("/sys/block/%s/slaves" % i.split('/')[-1:][0]):
+                for name in dirs:
+                    # append members of raid to restricteds
+                    restricteds.append("/dev/%s" % name)
+
     for dev_path in devs:
-        d = Device(dev_path)
-        devices.append(d)
+        # dont put raid members to devices, we only want top level devices
+        if dev_path in restricteds:
+            continue
+        else:
+            d = Device(dev_path)
+            devices.append(d)
 
     # devices are appended in reverse order
     devices.reverse()
+    raidMembers = restricteds
 
     if devices:
         return True
-
     return False
 
 def clear_devices():
     global devices
+    global mdList
+    global raidMembers
+    raidMembers = []
     devices = []
+    mdList = []
 
-##
+#
 # Class representing a partitionable storage
 class Device:
 
@@ -114,6 +144,13 @@ class Device:
         while part:
             self.__addToPartitionsDict(part)
             part = self._disk.next_partition(part)
+
+    ##
+    # @return Returns if dev is part of a software raid
+    def isPartOfRaid(dev):
+        if dev in raidMembers:
+            return True
+        return False
 
     ##
     # do we have room for another primary partition?
@@ -533,8 +570,8 @@ def getOrderedDiskList():
     return sortedList
 
 ##
-# Return a list of block devices in system
-def detect_all():
+# Return a list of block devices in system, including raid devices
+def detect_devices():
 
     # Check for sysfs. Only works for >2.6 kernels.
     if not os.path.exists("/sys/bus"):
@@ -543,20 +580,7 @@ def detect_all():
     if not os.path.exists("/proc/partitions"):
         raise DeviceError, "/proc/partitions not found!"
 
-    partitions = []
-    for line in open("/proc/partitions"):
-        entry = line.split()
-
-        if not entry:
-            continue
-        if not entry[0].isdigit() and not entry[1].isdigit():
-            continue
-
-        major = int(entry[0])
-        minor = int(entry[1])
-        device = "/dev/" + entry[3]
-
-        partitions.append((major, minor, device))
+    partitions = detect_partitions_and_devices()
 
     _devices = []
     # Scan sysfs for the device types.
@@ -576,3 +600,24 @@ def detect_all():
                 _devices.append(record[2])
 
     return _devices
+
+##
+#@return Returns a list of partitions found in /proc/partitions
+def detect_partitions_and_devices():
+    partitions = []
+    for line in open("/proc/partitions"):
+        entry = line.split()
+
+        if not entry:
+            continue
+        if not entry[0].isdigit() and not entry[1].isdigit():
+            continue
+
+        major = int(entry[0])
+        minor = int(entry[1])
+        device = "/dev/" + entry[3]
+
+        partitions.append((major, minor, device))
+    return partitions
+
+

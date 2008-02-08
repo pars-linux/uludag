@@ -56,10 +56,14 @@ def get_raid_partitions(disk):
                          and part.get_flag( parted.PARTITION_RAID ) == 1)
     return filter_partitions(disk, func)
 
-# returns raid info for drive ( ex: /dev/hdc5 )
-def _getRaidInfo(drive):
+# returns raid info for drives
+# if its raidDevice itself, instead of members, call with raidDevice=True
+def _getRaidInfo(drive, raidDevice=False):
     try:
-        lines = mdutils._mdadm("-E", drive)
+        if raidDevice:
+            lines = mdutils._mdadm("--detail", drive)
+        else:
+            lines = mdutils._mdadm("-E", drive)
     except mdutils.MdadmError:
         ei = sys.exc_info()
         ei[1].name = drive

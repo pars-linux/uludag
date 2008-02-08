@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008, TUBITAK/UEKAE
+# Copyright (C) 2008 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -53,7 +53,8 @@ def scanForRaid():
     raidDevices = {}
 
     if not yali4.storage.devices:
-        yali4.storage.init_devices()
+        if not yali4.storage.init_devices():
+            print "no devices attached"
     devs = yali4.storage.devices
 
     for d in devs:
@@ -66,7 +67,8 @@ def scanForRaid():
         except:
             pass
 
-        # now parts is a list of raid partitions on disk d like 'hdc5','hdc6' ..
+        # now parts is a list of raid partitions on disk d
+        # that have the raid partition flag
         for dev in parts:
             try:
                 # get the superblock from raid device
@@ -80,8 +82,8 @@ def scanForRaid():
                 (knownLevel, knownDisks, knownMinor, knownDevices) = raidSets[raidSet]
 
                 if knownLevel != level or knownDisks != totalDisks or knownMinor != mdMinor:
-                    print " raid set inconsistency for md%d: "\
-                          "all drives in this raid set do not ",\
+                    print " raid set inconsistency for md%d: " \
+                          "all drives in this raid set do not " \
                           "agree on raid parameters. Skipping raid device" % mdMinor
                     continue
 
@@ -94,9 +96,9 @@ def scanForRaid():
             if raidDevices.has_key( mdMinor ):
                 if( raidDevices[mdMinor] != raidSet ):
                     print "raid set inconsistency for md%d: "\
-                      "found members of multiple raid sets "\
-                      "that claims to be md%d. Using only the first "\
-                      "array found.", mdMinor, mdMinor
+                          "found members of multiple raid sets "\
+                          "that claims to be md%d. Using only the first "\
+                          "array found." % (mdMinor, mdMinor)
                     continue
             else:
                 raidDevices[mdMinor] = raidSet
@@ -106,9 +108,9 @@ def scanForRaid():
     for key in raidSets.keys():
         (level, totalDisks, mdMinor, devices) = raidSets[key]
         if len(devices) < totalDisks:
-            print "missing components of raid device md%d. The "\
-                  "raid device needs %d drive(s) and only %d (was/were) "\
-                  "found. This raid device will not be started.", mdMinor, totalDisks, len(devices)
+            print "missing components of raid device md%d.\n The " \
+                  "raid device needs %d drive(s) and only %d (was/were) " \
+                  "found. \nThis raid device will not be started." % (mdMinor, totalDisks, len(devices))
             continue
         raidList.append((mdMinor, devices, level, totalDisks))
 
@@ -116,17 +118,22 @@ def scanForRaid():
 
 def startAllRaid():
     """ Start raid on raid devices, returns same struct as scanForRaid """
+    global mdList
     rc = []
-    mdList = scanForRaid()
-    for mdDevice, deviceList, level, numActive in mdList:
+    rl = yali4.storage.mdList
+    if not rl:
+        rl = scanForRaid()
+    for mdDevice, deviceList, level, numActive in rl:
         devName = "md%d" % (mdDevice,)
         mdutils.raidstart(devName, deviceList[0])
         rc.append((devName, deviceList, level, numActive))
     return rc
 
-def stopAllRaid(mdList):
+def stopAllRaid():
     """ Stop all raid devices in tuple mdList """
-    for dev, devices, level, numActive in mdList:
+    global mdList
+    rl = yali4.storage.mdList
+    for dev, devices, level, numActive in rl:
         mdutils.raidstop(dev)
 
 def isRaid10(raidlevel):
@@ -192,5 +199,20 @@ def get_raid_max_spares(raidlevel, nummembers):
     else:
         raise ValueError, "invalid raidlevel in get_raid_max_spares"
 
+def register_raid_device(mdname, newdevices, newlevel, newnumActive):
+    """ Register a new RAID device in storage.mdList """
+    for dev, devices, level, numActive in storage.mdList:
+        if mdname == dev:
+            if (devices!=newdevices or level!=newlevel or numActive!=newnumActive):
+                raise ValueError, "%s is already in the mdlist!" %(mdname,)
+            else:
+                return
+    storage.mdList.append((mdname, newdevices[:], newlevel, newnumActive))
 
+def lookup_raid_device(mdname):
+    """ Return requested RAID device information """
+    for dev, devices, level, numActive in storage.mdList:
+        if mdname == dev:
+            return (dev, devices, level, numActive)
+    raise KeyError, "md device not found"
 
