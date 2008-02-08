@@ -16,11 +16,9 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
-import welcome
-
-import sys
 from Welcomedlg import kaptanUi
 
+import sys
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

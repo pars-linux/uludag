@@ -1,0 +1,69 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Form2</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>Form2</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>766</width>
+            <height>642</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Wallpaper</string>
+    </property>
+    <widget class="KListView">
+        <column>
+            <property name="text">
+                <string>Thumbnails</string>
+            </property>
+            <property name="clickable">
+                <bool>true</bool>
+            </property>
+            <property name="resizable">
+                <bool>false</bool>
+            </property>
+        </column>
+        <property name="name">
+            <cstring>kListView1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>41</y>
+                <width>471</width>
+                <height>300</height>
+            </rect>
+        </property>
+        <property name="fullWidth">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>checkBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>350</y>
+                <width>441</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
+        </property>
+        <property name="text">
+            <string>Don't change wallpaper</string>
+        </property>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>klistview.h</includehint>
+</includehints>
+</UI>
