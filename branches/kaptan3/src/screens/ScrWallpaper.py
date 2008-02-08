@@ -19,6 +19,8 @@ from screens.Screen import ScreenWidget
 from screens.wallpaperdlg import WallpaperWidget
 
 class Widget(WallpaperWidget, ScreenWidget):
+    title = "Set your Wallpaper !"
+    desc = "Enjoy with wonderful backgrounds..."
 
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)

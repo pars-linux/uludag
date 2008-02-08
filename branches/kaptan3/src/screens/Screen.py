@@ -13,6 +13,8 @@
 ##
 # Abstract class for screen widgets
 class ScreenWidget:
+    title = "Kaptan"
+    desc = "The ultimate welcome screen"
 
     def shown(self):
         pass

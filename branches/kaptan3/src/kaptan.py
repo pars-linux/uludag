@@ -53,7 +53,11 @@ class Kaptan(kaptanUi):
         if where<=0:where = 1
         if where>=len(avail_screens):where = len(avail_screens)
         self.pageStack.raiseWidget(where)
-        self.pageStack.visibleWidget().shown()
+        _w = self.pageStack.visibleWidget()
+        self.pageTitle.setText(_w.title)
+        self.pageDesc.setText(_w.desc)
+        _w.shown()
+
 
     def slotNext(self):
         self.stackMove(self.getCurrent() + 1)
