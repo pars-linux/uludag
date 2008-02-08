@@ -6,8 +6,8 @@
     </property>
     <property name="geometry">
         <rect>
-            <x>33</x>
-            <y>71</y>
+            <x>0</x>
+            <y>23</y>
             <width>700</width>
             <height>500</height>
         </rect>
@@ -23,6 +23,13 @@
             <width>700</width>
             <height>500</height>
         </size>
+    </property>
+    <property name="paletteBackgroundColor">
+        <color>
+            <red>205</red>
+            <green>195</green>
+            <blue>205</blue>
+        </color>
     </property>
     <property name="caption">
         <string>Kaptan Welcome Wizard</string>
@@ -175,6 +182,9 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
+                <property name="spacing">
+                    <number>0</number>
+                </property>
                 <widget class="QLayoutWidget">
                     <property name="name">
                         <cstring>layoutSteps</cstring>
@@ -182,6 +192,12 @@
                     <vbox>
                         <property name="name">
                             <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>0</number>
                         </property>
                         <spacer>
                             <property name="name">
@@ -202,7 +218,7 @@
                         </spacer>
                         <widget class="QLabel">
                             <property name="name">
-                                <cstring>steps</cstring>
+                                <cstring>stepsPanel</cstring>
                             </property>
                             <property name="sizePolicy">
                                 <sizepolicy>
@@ -234,21 +250,13 @@
                                 </font>
                             </property>
                             <property name="text">
-                                <string>» &lt;b&gt;Welcome&lt;/b&gt;&lt;br&gt;
-» Mouse&lt;br&gt;
-» Style &lt;br&gt;
-» Wallpaper &lt;br&gt;
-» Camera &lt;br&gt;
-» Network &lt;br&gt;
-» Package &lt;br&gt;
-» Summary &lt;br&gt;
-» Goodbye &lt;br&gt;</string>
+                                <string></string>
                             </property>
                             <property name="alignment">
-                                <set>WordBreak|AlignTop</set>
+                                <set>AlignTop</set>
                             </property>
                             <property name="indent">
-                                <number>8</number>
+                                <number>10</number>
                             </property>
                         </widget>
                         <spacer>

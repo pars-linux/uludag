@@ -8,73 +8,190 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>766</width>
-            <height>642</height>
+            <width>524</width>
+            <height>365</height>
         </rect>
+    </property>
+    <property name="paletteBackgroundColor">
+        <color>
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+        </color>
     </property>
     <property name="caption">
         <string>Welcome</string>
     </property>
-    <widget class="QLabel">
+    <grid>
         <property name="name">
-            <cstring>textLabel2</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>60</x>
-                <y>70</y>
-                <width>241</width>
-                <height>161</height>
-            </rect>
-        </property>
-        <property name="backgroundMode">
-            <enum>PaletteHighlightedText</enum>
-        </property>
-        <property name="text">
-            <string>&lt;b&gt;Pardus&lt;/b&gt; is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; with acquiring the strong ideas, architecture and code of other distributions; with a custom configuration framework which has the ability to evolve into an autonomous system; for simplifying the installation and usage of the computers.</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>pixmapLabel1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>330</x>
-                <y>172</y>
-                <width>211</width>
-                <height>201</height>
-            </rect>
-        </property>
-        <property name="backgroundMode">
-            <enum>PaletteHighlightedText</enum>
-        </property>
-        <property name="pixmap">
-            <pixmap>image0</pixmap>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>60</x>
-                <y>250</y>
-                <width>250</width>
-                <height>130</height>
-            </rect>
-        </property>
-        <property name="backgroundMode">
-            <enum>PaletteHighlightedText</enum>
-        </property>
-        <property name="text">
-            <string>This application, called &lt;b&gt;Kaptan Desktop&lt;/b&gt;, will help you with your basic but sufficient setup for your &lt;b&gt;Pardus&lt;/b&gt; desktop in a quick manner. This application will also set some default configuration for a better desktop :).</string>
-        </property>
-    </widget>
+        <widget class="QLayoutWidget" row="1" column="1">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>PaletteHighlightedText</enum>
+                    </property>
+                    <property name="text">
+                        <string>This application, called &lt;b&gt;Kaptan Desktop&lt;/b&gt;, will help you with your basic but sufficient setup for your &lt;b&gt;Pardus&lt;/b&gt; desktop in a quick manner. This application will also set some default configuration for a better desktop :).</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="backgroundMode">
+                        <enum>PaletteHighlightedText</enum>
+                    </property>
+                    <property name="text">
+                        <string>&lt;b&gt;Pardus&lt;/b&gt; is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; with acquiring the strong ideas, architecture and code of other distributions; with a custom configuration framework which has the ability to evolve into an autonomous system; for simplifying the installation and usage of the computers.</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="1" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>layout6</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer4</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Fixed</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>21</width>
+                                    <height>70</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>pixmapLabel1</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="backgroundMode">
+                                <enum>PaletteHighlightedText</enum>
+                            </property>
+                            <property name="pixmap">
+                                <pixmap>image0</pixmap>
+                            </property>
+                            <property name="scaledContents">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+            </grid>
+        </widget>
+        <spacer row="0" column="1">
+            <property name="name">
+                <cstring>spacer5</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>31</width>
+                    <height>51</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="2" column="1">
+            <property name="name">
+                <cstring>spacer8</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>31</width>
+                    <height>81</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>spacer6</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>111</width>
+                    <height>41</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="1" column="2">
+            <property name="name">
+                <cstring>spacer7</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>91</width>
+                    <height>21</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
 </widget>
 <images>
     <image name="image0">

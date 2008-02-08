@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2008, TUBITAK/UEKAE
@@ -9,21 +8,15 @@
 # any later version.
 #
 # Please read the COPYING file.
+#
 
-# QT & KDE Modules
-from qt import *
-from kdecore import *
-from kdeui import *
-import kdedesigner
+##
+# Abstract class for screen widgets
+class Screen:
 
-from Welcomedlg import kaptanUi
+    def shown(self):
+        pass
 
-import sys
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    f = kaptanUi()
-    f.show()
-    app.setMainWidget(f)
-    app.exec_loop()
+    def execute(self):
+        pass
 
