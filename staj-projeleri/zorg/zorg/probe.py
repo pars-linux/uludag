@@ -160,7 +160,12 @@ class VideoDevice:
         object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
         iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Driver")
 
-        self.driver_options = iface.getOptions(self.getDict())
+        self.driver_options = {}
+        driver_options = iface.getOptions(self.getDict())
+
+        # Keys and values must be a str object in order to be quoted by parser.
+        for k, v in driver_options.items():
+            self.driver_options[str(k)] = str(v)
 
 def pciInfo(dev, attr):
     return sysValue(sysdir, dev, attr)
