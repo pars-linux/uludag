@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import dbus.types
+
 trueList = ("1", "on", "true", "yes", "enable")
 falseList = ("0", "off", "false", "no", "disable")
 
@@ -57,7 +59,7 @@ class XorgEntry:
 def entryFormat(values):
     s = ""
     for v in values:
-        if type(v) == str:
+        if type(v) in (str, unicode, dbus.types.String):
             s += ' "%s"' % v
         else:
             s += " %s" % v
