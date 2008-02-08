@@ -42,12 +42,10 @@ class PisiApi:
 
     def init(self, stdout, stderr):
         logger.info(_("Initialising PiSi API..."))
-        # FIXME: pisi-devel has no init
         pisi.api.init(options = self.options, stdout = stdout, stderr = stderr)
 
     def finalize(self):
         logger.info(_("Finalising PiSi API"))
-        # FIXME: pisi-devel has no finalize
         pisi.api.finalize()
 
     def build(self, pspec):
