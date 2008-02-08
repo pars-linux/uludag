@@ -6,6 +6,25 @@ from zorg.config import *
 from zorg.probe import *
 from zorg.utils import *
 
+def selectOutput(device):
+    output = ""
+    mode = ""
+
+    outs = device.probe_result["outputs"].split(",")
+    for out in outs:
+        modes = device.probe_result.get("%s-modes" % out, "").split(",")
+        if modes:
+            output = out
+            mode = modes[0]
+            break
+
+    if not output:
+        output = outs[0]
+        mode = "800x600"
+
+    device.active_outputs = [output]
+    device.modes[output] = mode
+
 def initialConfig():
     bus = getPrimaryCard()
 
@@ -15,6 +34,7 @@ def initialConfig():
         return
 
     device.query()
+    selectOutput(device)
 
     saveXorgConfig(device)
     saveDeviceInfo(device)
