@@ -122,7 +122,64 @@ def addTag(p, name, data):
     t.insertData(data)
 
 def getDeviceInfo(busId):
-    pass
+    configFile = os.path.join(zorgConfigDir, zorgConfig)
+    if not os.path.exists(configFile):
+        return
+
+    doc = piksemel.parse(configFile)
+
+    cardTag = None
+    for tag in doc.tags("Card"):
+        if tag.getAttribute("busId") == busId:
+            cardTag = tag
+            break
+
+    if not cardTag:
+        return
+
+    device = VideoDevice(busId=busId)
+
+    driversTag = cardTag.getTag("Drivers")
+    drivers = []
+    for tag in driversTag.tags("Driver"):
+        drvname = tag.firstChild().data()
+        drvpackage = tag.getAttribute("package")
+        if drvpackage != "xorg-video":
+            drvname += "@%s" % drvpackage
+
+        drivers.append(drvname)
+
+    probeResultTag = cardTag.getTag("ProbeResult")
+    probeResult = {}
+    for tag in probeResultTag.tags("Value"):
+        key = tag.getAttribute("key")
+        value = tag.firstChild().data()
+        probeResult[key] = value
+
+    activeConfigTag = cardTag.getTag("ActiveConfig")
+
+    driverTag = activeConfigTag.getTag("Driver")
+    device.driver = driverTag.firstChild().data()
+    device.package = driverTag.getAttribute("package")
+
+    device.depth = activeConfigTag.getTagData("Depth")
+
+    activeOutputs = []
+    modes = {}
+    for tag in activeConfigTag.tags("Output"):
+        name = tag.firstChild().data()
+        mode = tag.getAttribute("mode")
+        activeOutputs.append(name)
+        modes[name] = mode
+
+    device.desktop_setup = activeConfigTag.getTagData("DesktopSetup")
+
+    device.driverlist = drivers
+    device.probe_result = probeResult
+    device.active_outputs = activeOutputs
+    device.modes = modes
+
+    return device
 
 def saveDeviceInfo(card):
     if not os.path.exists(zorgConfigDir):
@@ -145,8 +202,8 @@ def saveDeviceInfo(card):
     cardTag = doc.insertTag("Card")
     cardTag.setAttribute("busId", info["bus-id"])
 
-    addTag(cardTag, "VendorId", card.vendor_id)
-    addTag(cardTag, "ProductId", card.product_id)
+    #addTag(cardTag, "VendorId", card.vendor_id)
+    #addTag(cardTag, "ProductId", card.product_id)
 
     drivers = cardTag.insertTag("Drivers")
     for driver in card.driverlist:
