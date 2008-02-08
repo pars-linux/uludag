@@ -80,7 +80,6 @@ def saveXorgConfig(card):
 
     for output in card.active_outputs:
         identifier = "Monitor[%s]" % output
-        secDevice.options["Monitor-%s" % output] = identifier
 
         monSec = XorgSection("Monitor")
         parser.sections.append(monSec)
@@ -93,6 +92,7 @@ def saveXorgConfig(card):
             monSec.set("VertRefresh", unquoted(card.monitor_settings["%s-vref" % output]))
 
         if "randr12" in flags:
+            secDevice.options["Monitor-%s" % output] = identifier
             monSec.options["PreferredMode"] = card.modes[output]
             monSec.options["Enabled"] = "true"
 
@@ -154,7 +154,11 @@ def getDeviceInfo(busId):
     probeResult = {}
     for tag in probeResultTag.tags("Value"):
         key = tag.getAttribute("key")
-        value = tag.firstChild().data()
+        child = tag.firstChild()
+        if child:
+            value = child.data()
+        else:
+            value = ""
         probeResult[key] = value
 
     activeConfigTag = cardTag.getTag("ActiveConfig")
@@ -222,7 +226,8 @@ def saveDeviceInfo(card):
     for key, value in card.probe_result.items():
         t = probeResult.insertTag("Value")
         t.setAttribute("key", key)
-        t.insertData(value)
+        if value:
+            t.insertData(value)
 
     config = cardTag.insertTag("ActiveConfig")
 
