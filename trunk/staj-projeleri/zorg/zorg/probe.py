@@ -50,20 +50,22 @@ class PCIDevice:
         return struct.unpack("h", data)[0]
 
 class VideoDevice:
-    def __init__(self, bus):
-        busId = tuple(int(x, 16) for x in bus.replace(".",":").split(":"))[1:4]
+    def __init__(self, deviceDir=None, busId=None):
+        if deviceDir:
+            self.bus = tuple(int(x, 16) for x in deviceDir.replace(".",":").split(":"))[1:4]
+        else:
+            self.bus = tuple(int(x) for x in busId.split(":")[1:4])
+            deviceDir = "0000:%02x:%02x.%x" % self.bus
 
-        self.bus = busId
-
-        self.vendor_id = lremove(pciInfo(bus, "vendor"), "0x").lower()
-        self.product_id = lremove(pciInfo(bus, "device"), "0x").lower()
+        self.vendor_id = lremove(pciInfo(deviceDir, "vendor"), "0x").lower()
+        self.product_id = lremove(pciInfo(deviceDir, "device"), "0x").lower()
 
         self.driverlist = ["vesa"]
-        self.depthlist = ["16", "24"]
+        #self.depthlist = ["16", "24"]
         self.driver = "vesa"
         self.package = "xorg-video"
 
-        self.probe_result = {"flags" : ""}
+        self.probe_result = {"flags" : "", "depths" : "16,24"}
 
         self.active_outputs = ["default"]
         self.modes = {"default" : "800x600"}
@@ -147,10 +149,18 @@ class VideoDevice:
         iface.enable()
         self.probe_result = iface.probe(self.getDict())
 
-        self.depthlist = self.probe_result["depths"].split(",")
-        self.depth = self.depthlist[0]
+        depthlist = self.probe_result["depths"].split(",")
+        self.depth = depthlist[0]
 
         #flags = self.probe_result["flags"].split(",")
+
+    def requestDriverOptions(self):
+        bus = dbus.SystemBus()
+        app = self.package.replace("-", "_")
+        object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
+        iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Driver")
+
+        self.driver_options = iface.getOptions(self.getDict())
 
 def pciInfo(dev, attr):
     return sysValue(sysdir, dev, attr)
