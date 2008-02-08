@@ -7,6 +7,7 @@ from csapi import atoi
 
 from zorg.parser import *
 from zorg.hwdata import *
+from zorg.probe import VideoDevice
 
 xorgConf = "/etc/X11/xorg2.conf"
 zorgConfigDir = "/var/lib/zorg"
