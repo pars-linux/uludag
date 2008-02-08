@@ -37,18 +37,14 @@ class PisiApi:
         # FIXME: Band-aid for a while...
         self.options.ignore_sandbox = True
 
+        # Set API options
+        pisi.api.set_options(self.options)
+
+        # Set IO streams
+        pisi.api.set_io_streams(stdout=stdout, stderr=stderr)
+
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
-
-    def init(self, stdout, stderr):
-        logger.info(_("Initialising PiSi API..."))
-        # FIXME: pisi-devel has no init
-        pisi.api.init(options = self.options, stdout = stdout, stderr = stderr)
-
-    def finalize(self):
-        logger.info(_("Finalising PiSi API"))
-        # FIXME: pisi-devel has no finalize
-        pisi.api.finalize()
 
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)

@@ -65,8 +65,7 @@ def buildPackages():
         logger.raw()
 
         # This is here because farm captures the build output
-        pisi = pisiinterface.PisiApi(config.workDir)
-        pisi.init(stdout = build_output, stderr = build_output)
+        pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = config.workDir)
         try:
             try:
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
@@ -93,7 +92,7 @@ def buildPackages():
                     movePackages(newBinaryPackages, oldBinaryPackages)
                     packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
         finally:
-            pisi.finalize()
+            pass
 
     logger.raw(_("QUEUE"))
     logger.info(_("Wait Queue: %s") % (qmgr.waitQueue))
