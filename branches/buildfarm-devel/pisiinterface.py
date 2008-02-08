@@ -28,7 +28,7 @@ _  =  __trans.ugettext
 
 class PisiApi:
 
-    def __init__(self, outputDir = config.workDir):
+    def __init__(self, stdout=None, stderr=None, outputDir = config.workDir):
         import pisi.config
         self.options = pisi.config.Options()
         self.options.output_dir = outputDir
