@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -13,6 +13,7 @@
 # sysutils module provides basic system utilities
 
 import os
+import subprocess
 from string import ascii_letters
 from string import digits
 from pardus.sysutils import find_executable
@@ -147,6 +148,38 @@ def reboot():
     umount(ctx.consts.target_dir)
     fastreboot()
 
+## Run an external program and capture standard out.
+# @param command The command to run.
+# @param argv A list of arguments.
+# @param stdin The file descriptor to read stdin from.
+# @param stderr The file descriptor to redirect stderr to.
+# @param root The directory to chroot to before running command.
+# @return The output of command from stdout.
+def execWithCapture(command, argv, stdin = 0, stderr = 2, root ='/'):
+    argv = list(argv)
+
+    if type(stdin) == type("string"):
+        if os.access(stdin, os.R_OK):
+            stdin = open(stdin)
+        else:
+            stdin = 0
+
+    if type(stderr) == type("string"):
+        stderr = open(stderr, "w")
+
+    try:
+        pipe = subprocess.Popen([command] + argv, stdin = stdin,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT,
+                                cwd=root)
+    except OSError, ( errno, msg ):
+        raise RuntimeError, "Error running " + command + ": " + msg
+
+    rc = pipe.stdout.read()
+    pipe.wait()
+    return rc
+
+
 import re
 import string
 
@@ -180,4 +213,5 @@ class TimeZoneList:
             timeZone = string.strip(fields[2])
             entry = TimeZoneEntry(code, timeZone)
             self.entries.append(entry)
+
 
