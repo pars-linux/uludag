@@ -32,6 +32,7 @@ import YaliWindow
 import ScrWelcome
 import ScrCheckCD
 import ScrKeyboard
+import ScrDateTime
 import ScrAdmin
 import ScrUsers
 import ScrPartitionAuto
@@ -54,6 +55,7 @@ class Runner:
                         ScrWelcome,
                         ScrCheckCD,
                         ScrKeyboard,
+                        ScrDateTime,
                         ScrUsers,
                         ScrAdmin,
                         ScrPartitionAuto,

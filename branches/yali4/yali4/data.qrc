@@ -12,6 +12,7 @@
         <file>gui/pics/iconBootloader.png</file>
         <file>gui/pics/iconCD.png</file>
         <file>gui/pics/iconDone.png</file>
+        <file>gui/pics/iconDate.png</file>
         <file>gui/pics/iconFailed.png</file>
         <file>gui/pics/iconFree.png</file>
         <file>gui/pics/iconInstall.png</file>
