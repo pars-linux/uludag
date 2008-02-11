@@ -8,11 +8,16 @@ ADD_DEFINITIONS(${QT_DEFINITIONS} ${KDE3_DEFINITIONS})
 
 LINK_DIRECTORIES(${KDE3_LIB_DIR} dbus-qt3-backport)
 
-INCLUDE_DIRECTORIES(${KDE3_INCLUDE_DIR} ${QT_INCLUDE_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}
-    /usr/include/dbus-1.0/qt3 /usr/include/dbus-1.0 /usr/lib/dbus-1.0/include
+INCLUDE_DIRECTORIES(${KDE3_INCLUDE_DIR} 
+    ${QT_INCLUDE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    /usr/include/dbus-1.0/qt3
+    /usr/include/dbus-1.0
+    /usr/lib/dbus-1.0/include
     ${CMAKE_SOURCE_DIR}/dbus-qt3-backport
-    ${CMAKE_SOURCE_DIR}/dbus-qt3-backport/dbus)
+    ${CMAKE_SOURCE_DIR}/dbus-qt3-backport/dbus
+    /usr/include/PolicyKit)
 
 # specify sources
 SET (
@@ -21,6 +26,7 @@ SET (
     policykitkde.cpp
     service.cpp
     main.cpp
+    debug.cpp
     )
 
 # moc files will be created automatically
@@ -33,4 +39,11 @@ KDE3_ADD_UI_FILES(sources authdialogui.ui)
 KDE3_ADD_EXECUTABLE(policykit-kde ${sources})
 
 # link executabel with kde libraries
-TARGET_LINK_LIBRARIES(policykit-kde ${QT_AND_KDECORE_LIBS} kdeui dbus-1 dbus-1-qt3)
+TARGET_LINK_LIBRARIES(policykit-kde
+                      ${QT_AND_KDECORE_LIBS}
+                      kdeui
+                      dbus-1
+                      dbus-1-qt3
+                      polkit
+                      polkit-dbus)
+
