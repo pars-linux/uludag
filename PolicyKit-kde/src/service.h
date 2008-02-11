@@ -1,7 +1,8 @@
+#ifndef SERVICE_H
+#define SERVICE_H
+
 #include "qdbusconnection.h"
 #include "qdbusobject.h"
-
-class QStringList;
 
 class PolicyService: public QDBusObjectBase
 {
@@ -14,11 +15,10 @@ protected:
     bool handleIntrospect(const QDBusMessage& message);
     bool handleObtainAuthorization(const QDBusMessage& message);
     void sendDBusError(const QDBusMessage& message, const QString& errortype, const QString& errorstr = "org.freedesktop.DBus.Error.InvalidSignature");
+    bool obtainAuthorization(const QString& actionId, const uint wid, const uint pid);
 
 private:
     QDBusConnection m_connection;
-
-private:
-    QStringList sortStrings(const QStringList& list);
 };
 
+#endif

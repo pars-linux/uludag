@@ -1,18 +1,26 @@
-#include <qstringlist.h>
 #include <qvariant.h>
 
+//policykit header
+#include <polkit/polkit.h>
+#include <polkit-dbus/polkit-dbus.h>
+
+//backport headers
 #include "qdbuserror.h"
 #include "qdbusmessage.h"
 
 #include "service.h"
+#include "authdialog.h"
+#include "debug.h"
 
 PolicyService::PolicyService(const QDBusConnection& connection) : m_connection(connection)
 {
+    Debug::printDebug("Registering object: /");
     m_connection.registerObject("/", this);
 }
 
 PolicyService::~PolicyService()
 {
+    Debug::printDebug("Unregistering object: /");
     m_connection.unregisterObject("/");
 }
 
@@ -47,10 +55,9 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
 
 void PolicyService::sendDBusError(const QDBusMessage& message, const QString& errorstr, const QString& errortype)
 {
-        QDBusError error(errortype, errorstr);
+        Debug::printError(QString("Method call error:%s  Interface:'%s' Method:'%s'").arg(errorstr).arg(message.interface()).arg(message.member()));
 
-        qDebug("message: %s, error:%s", errorstr.ascii(), errortype.ascii());
-        qWarning("Method call error:%s  Interface:%s Method:%s", errorstr.ascii(), message.interface().ascii(), message.member().ascii());
+        QDBusError error(errortype, errorstr);
         QDBusMessage reply = QDBusMessage::methodError(message, error);
 
         m_connection.send(reply);
@@ -83,6 +90,7 @@ bool PolicyService::handleIntrospect(const QDBusMessage& message)
 "   </interface>\n"
 "</node>";
 
+    Debug::printDebug("Handling introspect() call");
     reply << QVariant(introspection);
     m_connection.send(reply);
 
@@ -93,9 +101,105 @@ bool PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 {
     QDBusMessage reply = QDBusMessage::methodReply(message);
 
-    reply << QVariant(true);
+    Debug::printDebug("Handling obtainAuthorization() call");
+
+    bool auth = obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt());
+    reply << QVariant(auth);
+
     m_connection.send(reply);
 
     return true;
 }
 
+bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
+{
+    PolKitError *error = NULL;
+
+    PolKitContext* context = polkit_context_new();
+    if (!polkit_context_init (context, &error))
+    {
+        if (polkit_error_is_set(error))
+        {
+            Debug::printError(QString("Could not initialize polkit: %s").arg(polkit_error_get_error_message(error)));
+        }
+        else
+            Debug::printError("Could not initialize polkit.");
+
+        return false;
+    }
+
+    PolKitAction *action = polkit_action_new();
+    if (action == NULL)
+    {
+        Debug::printError("Could not create new action.");
+        return false;
+    }
+
+    polkit_bool_t setActionResult = polkit_action_set_action_id(action, actionId.ascii());
+    if (!setActionResult)
+    {
+        Debug::printError("Could not set actionid.");
+        return false;
+    }
+
+    Debug::printDebug("Getting policy cache...");
+    PolKitPolicyCache *cache = polkit_context_get_policy_cache(context);
+    if (cache == NULL)
+    {
+        Debug::printWarning("Could not get policy cache.");
+    //    return false;
+    }
+
+    Debug::printDebug("Getting policy cache entry for an action...");
+    PolKitPolicyFileEntry *entry = polkit_policy_cache_get_entry(cache, action);
+    if (entry == NULL)
+    {
+        Debug::printWarning("Could not get policy entry for action.");
+    //    return false;
+    }
+
+    Debug::printDebug("Getting action message...");
+    const char *message = polkit_policy_file_entry_get_action_message(entry);
+    if (message == NULL)
+    {
+        Debug::printWarning("Could not get action message for action.");
+    //    return false;
+    }
+    else
+    {
+        Debug::printDebug(QString("Message of action: %s").arg(message));
+    }
+
+    DBusError dbuserror;
+    dbus_error_init (&dbuserror);
+    DBusConnection *bus = dbus_bus_get (DBUS_BUS_SYSTEM, &dbuserror);
+    if (bus == NULL) 
+    {
+        Debug::printError("Could not connect to system bus.");
+        return false;
+    }
+
+    PolKitCaller *caller = polkit_caller_new_from_pid(bus, pid, &dbuserror);
+    if (caller == NULL)
+    {
+        QDBusError *qerror = new QDBusError((const DBusError *)&dbuserror);
+        Debug::printError(QString("Could not define caller from pid: %s").arg(qerror->message()));
+        return false;
+    }
+
+    PolKitResult polkitresult;
+
+    polkitresult = polkit_context_is_caller_authorized(context, action, caller, false, &error);
+    if (polkit_error_is_set (error))
+    {
+        Debug::printError("Could not determine if caller is authorized for this action.");
+        return false;
+    }
+
+    //TODO: Determine AdminAuthType, user, group...
+
+    AuthDialog* dia = new AuthDialog("Action message: " + QString(message), polkit_result_to_string_representation(polkitresult), polkitresult);
+    dia->show();
+
+    return false;
+}

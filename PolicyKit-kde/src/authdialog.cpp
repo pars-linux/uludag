@@ -1,13 +1,17 @@
 #include "authdialog.h"
 #include "authdialog.moc"
 
-#include "qlabel.h"
-#include "qstring.h"
+#include <qlabel.h>
+#include <qstring.h>
+#include <qnamespace.h>
+#include <qcheckbox.h>
 
-#include "kglobal.h"
-#include "kiconloader.h"
-#include "kcombobox.h"
-#include "kpushbutton.h"
+#include <kglobal.h>
+#include <klocale.h>
+#include <kiconloader.h>
+#include <kcombobox.h>
+#include <kpushbutton.h>
+#include <kpassdlg.h>
 
 /* 
  *  Constructs a AuthDialog which is a child of 'parent', with the 
@@ -16,8 +20,10 @@
  *  The dialog will by default be modeless, unless you set 'modal' to
  *  TRUE to construct a modal dialog.
  */
-AuthDialog::AuthDialog( QWidget* parent,  const char* name, bool modal, WFlags fl )
-    : AuthDialogUI( parent, name, modal, fl )
+AuthDialog::AuthDialog( const QString &header,
+            const QString &message,
+            PolKitResult type)
+    : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
@@ -25,14 +31,14 @@ AuthDialog::AuthDialog( QWidget* parent,  const char* name, bool modal, WFlags f
     pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
 
     cbUsers->hide();
+
+    setType(type);
+    setHeader(header);
+    setContent(message);
 }
 
-/*  
- *  Destroys the object and frees any allocated resources
- */
 AuthDialog::~AuthDialog()
 {
-    // no need to delete child widgets, Qt does it all for us
 }
 
 void AuthDialog::setHeader(const QString &header)
@@ -53,4 +59,50 @@ void AuthDialog::showUsersCombo()
 void AuthDialog::hideUsersCombo()
 {
     cbUsers->hide();
+}
+
+void AuthDialog::setPasswordFor(bool set, const QString& user)
+{
+    if (set)
+        lblPassword->setText(i18n("Password for root") + ":");
+    else if (user)
+        lblPassword->setText(i18n("Password for user(%1)").arg(user) + ":");
+    else
+        lblPassword->setText(i18n("Password") + ":");
+}
+
+const char* AuthDialog::getPass()
+{
+    return pePassword->password();
+}
+
+void AuthDialog::setType(PolKitResult res)
+{
+    if (res == POLKIT_RESULT_UNKNOWN || \
+            res == POLKIT_RESULT_NO || \
+            res == POLKIT_RESULT_YES || \
+            res == POLKIT_RESULT_N_RESULTS )
+    {
+        qWarning("Unexpected PolkitResult type sent. Ignoring.");
+        return;
+    }
+
+    if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || \
+            res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || \
+            res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS)
+        setPasswordFor(true);
+
+    if (res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH || \
+            res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION || \
+            res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS)
+        setPasswordFor(false);
+
+    if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH)
+    {
+        cbRemember->hide();
+        cbSession->hide();
+    }
+
+    if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
+        cbRemember->hide();
 }
