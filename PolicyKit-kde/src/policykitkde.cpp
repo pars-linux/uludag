@@ -1,7 +1,11 @@
+#include <qapplication.h>
+#include <qstring.h>
+
 #include "qdbusconnection.h"
 
 #include "policykitkde.h"
 #include "service.h"
+#include "debug.h"
 
 PolicyKitKDE::PolicyKitKDE()
 {
@@ -10,19 +14,19 @@ PolicyKitKDE::PolicyKitKDE()
 
     QDBusConnection connection = QDBusConnection::addConnection(QDBusConnection::SessionBus);
     if (!connection.isConnected())
-        qFatal("Cannot connect to session bus.");
+    {
+        Debug::printError("Could not connect to session bus.");
+        qApp->quit();
+    }
 
     // try to get a specific service name
     if (!connection.requestName(POLICYKITKDE_BUSNAME))
     {
-        qWarning("Requesting name '%s' failed. "
-                 "Will only be addressable through unique name '%s'",
-                 POLICYKITKDE_BUSNAME, connection.uniqueName().local8Bit().data());
+        Debug::printWarning(QString("Requesting name '%s' failed. "
+                 "Will only be addressable through unique name '%s'").arg(POLICYKITKDE_BUSNAME).arg(connection.uniqueName()));
     }
     else
-    {
-        qDebug("DEBUG: Requesting name '%s' successfull", POLICYKITKDE_BUSNAME);
-    }
+        Debug::printDebug(QString("Requesting name %s successfull").arg(POLICYKITKDE_BUSNAME));
 
     service = new PolicyService(connection);
 }
