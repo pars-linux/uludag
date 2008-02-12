@@ -116,6 +116,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     PolKitError *error = NULL;
 
     PolKitContext* context = polkit_context_new();
+    polkit_context_set_load_descriptions(context);
     if (!polkit_context_init (context, &error))
     {
         if (polkit_error_is_set(error))
