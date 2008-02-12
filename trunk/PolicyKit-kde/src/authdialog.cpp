@@ -11,7 +11,7 @@
 #include <kiconloader.h>
 #include <kcombobox.h>
 #include <kpushbutton.h>
-#include <kpassdlg.h>
+#include <klineedit.h>
 
 #include "debug.h"
 
@@ -113,7 +113,7 @@ void AuthDialog::setPasswordFor(bool set, const QString& user)
 
 const char* AuthDialog::getPass()
 {
-    return pePassword->password();
+    return lePassword->text();
 }
 
 void AuthDialog::setType(PolKitResult res)
