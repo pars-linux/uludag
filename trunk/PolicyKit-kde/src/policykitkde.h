@@ -14,7 +14,6 @@ public:
 
 private:
     PolicyService *service;
-
 };
 
 #endif
