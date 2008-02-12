@@ -21,12 +21,9 @@ PolicyKitKDE::PolicyKitKDE()
 
     // try to get a specific service name
     if (!connection.requestName(POLICYKITKDE_BUSNAME))
-    {
-        Debug::printWarning(QString("Requesting name '%s' failed. "
-                 "Will only be addressable through unique name '%s'").arg(POLICYKITKDE_BUSNAME).arg(connection.uniqueName()));
-    }
+        Debug::printWarning(QString("Requesting name '%1' failed. Will only be addressable through unique name '%2'").arg(POLICYKITKDE_BUSNAME).arg(connection.uniqueName()));
     else
-        Debug::printDebug(QString("Requesting name %s successfull").arg(POLICYKITKDE_BUSNAME));
+        Debug::printDebug(QString("Requesting name '%1' successfull").arg(POLICYKITKDE_BUSNAME));
 
     service = new PolicyService(connection);
 }
