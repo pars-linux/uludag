@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -179,5 +179,39 @@ def execWithCapture(command, argv, stdin = 0, stderr = 2, root ='/'):
     pipe.wait()
     return rc
 
+
+import re
+import string
+
+# Based on RedHat's ZoneTab class
+class TimeZoneEntry:
+    def __init__(self, code=None, timeZone=None):
+        self.code = code
+        self.timeZone = timeZone
+
+class TimeZoneList:
+    def __init__(self, fromFile='/usr/share/zoneinfo/zone.tab'):
+        self.entries = []
+        self.readTimeZone(fromFile)
+
+    def getEntries(self):
+        return self.entries
+
+    def readTimeZone(self, fn):
+        f = open(fn, 'r')
+        comment = re.compile("^#")
+        while 1:
+            line = f.readline()
+            if not line:
+                break
+            if comment.search(line):
+                continue
+            fields = string.split(line, '\t')
+            if len(fields) < 3:
+                continue
+            code = fields[0]
+            timeZone = string.strip(fields[2])
+            entry = TimeZoneEntry(code, timeZone)
+            self.entries.append(entry)
 
 

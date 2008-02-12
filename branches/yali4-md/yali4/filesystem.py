@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005 - 2008 TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 # Copyright 2001 - 2004 Red Hat, Inc.
 #
 # This program is free software; you can redistribute it and/or modify it under
@@ -31,7 +31,6 @@ class FSError(YaliError):
     pass
 
 
-
 def get_filesystem(name):
 
     # Hardcoding available filesystems like this is TOO
@@ -49,6 +48,10 @@ def get_filesystem(name):
         return XFSFileSystem()
     elif name == "fat32":
         return FatFileSystem()
+    elif name == "software raid":
+        return RaidFileSystem()
+    elif name == "ext2":
+        return RaidFileSystem()
 
     return None
 
@@ -176,7 +179,6 @@ class FileSystem:
     def isImplemented(self):
         return self._implemented
 
-
     ##
     # set if filesystem is resizeable
     def setResizeable(self, bool):
@@ -187,7 +189,19 @@ class FileSystem:
     def isResizeable(self):
         return self._resizeable
 
+##
+# for dummy raid members
+class RaidFileSystem(FileSystem):
+    _name = "ext2"
 
+    def __init__(self):
+        FileSystem.__init__(self)
+
+    def format(self, partition):
+        pass
+        
+        
+        
 ##
 # ext3 file system
 class Ext3FileSystem(FileSystem):

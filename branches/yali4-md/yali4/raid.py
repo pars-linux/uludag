@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008 TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
+# Copyright 2001 - 2004 Red Hat, Inc.
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -34,10 +35,9 @@ def getRaidLevels():
 
 availRaidLevels = getRaidLevels()
 
-import parted
-import partedutils
-import os
-import mdutils
+import parted, os
+import yali4.partedutils
+import yali4.mdutils
 import yali4.storage
 
 # these arches can have their /boot on RAID
@@ -53,17 +53,21 @@ def scanForRaid():
     raidDevices = {}
 
     if not yali4.storage.devices:
+        print "device list empty, calling yali4.storage.init_devices()"
         if not yali4.storage.init_devices():
-            print "no devices attached"
+            print "no devices returned from storage"
     devs = yali4.storage.devices
+    print "devices on system are: ", 
+    for i in devs:
+        print " ", i._path,
 
     for d in devs:
         # scan for Device objects
         parts = []
         try:
-            raidParts = partedutils.get_raid_partitions(d._disk)
+            raidParts = yali4.partedutils.get_raid_partitions(d._disk)
             for part in raidParts:
-                parts.append(partedutils.get_partition_name(part))
+                parts.append(yali4.partedutils.get_partition_name(part))
         except:
             pass
 
@@ -72,7 +76,7 @@ def scanForRaid():
         for dev in parts:
             try:
                 # get the superblock from raid device
-                (major, minor, raidSet, level, nrDisks, totalDisks, mdMinor) = mdutils.raidsbFromDevice("/dev/%s"%dev)
+                (major, minor, raidSet, level, nrDisks, totalDisks, mdMinor) = yali4.mdutils.raidsbFromDevice("/dev/%s"%dev)
             except ValueError:
                 # cant be part of raid set
                 print "reading raid sb failed for %s", dev
@@ -118,23 +122,25 @@ def scanForRaid():
 
 def startAllRaid():
     """ Start raid on raid devices, returns same struct as scanForRaid """
-    global mdList
     rc = []
     rl = yali4.storage.mdList
     if not rl:
         rl = scanForRaid()
     for mdDevice, deviceList, level, numActive in rl:
         devName = "md%d" % (mdDevice,)
-        mdutils.raidstart(devName, deviceList[0])
+        yali4.mdutils.raidstart(devName, deviceList[0])
         rc.append((devName, deviceList, level, numActive))
+    yali4.storage.mdList = rl
     return rc
 
 def stopAllRaid():
     """ Stop all raid devices in tuple mdList """
-    global mdList
     rl = yali4.storage.mdList
+    if not rl:
+        print "scanning raidlist"
+        rl = scanForRaid()
     for dev, devices, level, numActive in rl:
-        mdutils.raidstop(dev)
+        yali4.mdutils.raidstop("md%s"%dev)
 
 def isRaid10(raidlevel):
     """ Return whether raidlevel is a valid descriptor of RAID10. """
@@ -201,18 +207,12 @@ def get_raid_max_spares(raidlevel, nummembers):
 
 def register_raid_device(mdname, newdevices, newlevel, newnumActive):
     """ Register a new RAID device in storage.mdList """
-    for dev, devices, level, numActive in storage.mdList:
+    for dev, devices, level, numActive in yali4.storage.mdList:
         if mdname == dev:
             if (devices!=newdevices or level!=newlevel or numActive!=newnumActive):
                 raise ValueError, "%s is already in the mdlist!" %(mdname,)
             else:
                 return
-    storage.mdList.append((mdname, newdevices[:], newlevel, newnumActive))
+    yali4.storage.mdList.append((mdname, newdevices[:], newlevel, newnumActive))
 
-def lookup_raid_device(mdname):
-    """ Return requested RAID device information """
-    for dev, devices, level, numActive in storage.mdList:
-        if mdname == dev:
-            return (dev, devices, level, numActive)
-    raise KeyError, "md device not found"
 

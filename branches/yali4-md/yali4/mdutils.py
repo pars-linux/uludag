@@ -10,11 +10,11 @@
 # Please read the COPYING file.
 #
 
-from sysutils import execWithCapture
+from yali4.sysutils import execWithCapture
 import sys
 import os
 import string
-import partedutils
+import yali4.partedutils
 
 mdadmOutput = "/tmp/mdadmout"
 raidCount = {}
@@ -61,7 +61,7 @@ def _mdadm(*args):
 # @return A tuple of contents of the RAID superblock, or ValueError.
 def raidsbFromDevice(device):
     try:
-        info = partedutils._getRaidInfo(device)
+        info = yali4.partedutils._getRaidInfo(device)
         return (info['major'], info['minor'], info['uuid'], info['level'],
                 info['nrDisks'], info['totalDisks'], info['mdMinor'])
     except:
@@ -96,7 +96,7 @@ def raidstart(mdDevice, aMember):
     else:
         minor = int(mdDevice[2:])
     try:
-        info = partedutils._getRaidInfo(mbrInode)
+        info = yali4.partedutils._getRaidInfo(mbrInode)
         if info.has_key('mdMinor'):
             minor = info['mdMinor']
         _startRaid( mdInode, minor, info['uuid'])

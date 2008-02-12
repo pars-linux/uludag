@@ -36,7 +36,8 @@ partitionTypes = {0:None,
                  1:parttype.root,
                  2:parttype.home,
                  3:parttype.swap,
-                 4:parttype.archive}
+                 4:parttype.archive,
+                 5:parttype.raid}
 
 class DiskList(QtGui.QWidget):
 
@@ -104,6 +105,7 @@ class DiskList(QtGui.QWidget):
     # add the DiskItem object to tabwidget
     # and increase disk count
     def addDisk(self,dw):
+        print "Inside addDisk, adding disk : ", self.tabWidget.count()-1, "%s - %s" % (dw.model,dw.name)
         # QWidget page, QString label
         self.tabWidget.addTab(dw,dw.name)
         self.tabWidget.setTabToolTip(self.tabWidget.count()-1,"%s - %s" % (dw.model,dw.name))
@@ -114,10 +116,12 @@ class DiskList(QtGui.QWidget):
         _cur = self.tabWidget.currentIndex()
         if _cur==-1: _cur = 0
         self.tabWidget.clear()
+        print "cleared the tabwidget"
         self.diskCount = 1
 
         for dev in self.devs:
             ctx.debugger.log("Device Found %s" % dev.getModel())
+            print "device found %s" % dev.getModel()
             # add Device objects representing block devices
             # @see storage.py global devices[] and Device
             self.addDevice(dev)
@@ -181,10 +185,13 @@ class DiskList(QtGui.QWidget):
     # @see storage.py
     def initDevices(self):
         self.devs = []
-        if not yali4.storage.init_devices():
-            raise GUIException, _("Can't find a storage device!")
+        if not yali4.storage.devices:
+            "diskwidgets, init"
+            if not yali4.storage.init_devices():
+                raise GUIException, _("Can't find a storage device!")
 
         self.devs = [i for i in yali4.storage.devices]
+        print self.devs
 
     def resetChanges(self):
         yali4.storage.clear_devices()
@@ -194,6 +201,7 @@ class DiskList(QtGui.QWidget):
 
     def addDevice(self, dev):
         # get the size as human readable
+        print "in addDevice %s " % dev._path
         def sizeStr(mb):
             if mb > 1024:
                 return _("%0.1f GB free") % long(round(mb/1024.0))
@@ -202,6 +210,7 @@ class DiskList(QtGui.QWidget):
 
         # add the device to the list
         devstr = u"Disk %d (%s)" % (self.diskCount, dev.getName())
+
         freespace = dev.getFreeMB()
         if freespace:
             size_str = dev.getSizeStr() + "  (%s)" % sizeStr(freespace)
@@ -214,22 +223,35 @@ class DiskList(QtGui.QWidget):
 
         # adding the tabwidget page is done
         # add partitions on device
-        for part in dev.getOrderedPartitionList():
-            # we dont show extended partition
-            if part.isExtended():
-                continue
-            # if minor is -1, its freespace
-            if part.getMinor() != -1:
-                name = _("Partition %d") % part.getMinor()
-                if part.isFileSystemReady():
-                    try:
-                        name = part.getFSLabel() or name
-                    except:
-                        pass
-            else:
-                name = _("Free Space")
-            ctx.debugger.log("Partition added with %s mb" % part.getMB())
-            diskItem.addPartition(name,part)
+        print "now will work with partitions of ", dev._path
+        if dev.isRaid():
+            memList = dev.getRaidMembers()
+            if memList:
+                for i in memList:
+                    diskItem.addPartition(i)
+        else:
+            for part in dev.getOrderedPartitionList():
+                print "Partition: ", part.getPath()
+                # we dont show extended partition
+                if part.isExtended():
+                    print "%s is extended, skip it" % part.getPath()
+                    continue
+                # if minor is -1, its freespace
+                if part.getMinor() != -1:
+                    name = _("Partition %d") % part.getMinor()
+                    if part.isFileSystemReady():
+                        try:
+                            print "File system ready for %s " % part.getPath()
+                            name = part.getFSLabel() or name
+                        except:
+                            pass
+                else:
+                    print "found a freespace : ", part.getPath()
+                    name = _("Free Space")
+                
+                ctx.debugger.log("Partition added with %s mb" % part.getMB())
+                print "(gui) partition added with %s mb" % part.getMB()
+                diskItem.addPartition(name,part)
 
         diskItem.updateSizes(self.tabWidget.width())
 
@@ -353,6 +375,7 @@ class DiskItem(QtGui.QWidget):
     _data = None
 
     def __init__(self, name, model, partEdit, totalSize):
+        print "initing DiskItem for %s, model: %s, total size: %d" % (name, model, totalSize)
         QtGui.QWidget.__init__(self,None)
         self.setAutoFillBackground(False)
         self.setAttribute(Qt.WA_AlwaysShowToolTips)
@@ -364,11 +387,6 @@ class DiskItem(QtGui.QWidget):
         self.hboxlayout = QtGui.QHBoxLayout()
         spacerItem1 = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
         self.hboxlayout.addItem(spacerItem1)
-
-        self.raidPushButton = QtGui.QPushButton(_("RAID"), self)
-        self.hboxlayout.addWidget(self.raidPushButton)
-        self.lvmPushButton = QtGui.QPushButton(_("LVM"), self)
-        self.hboxlayout.addWidget(self.lvmPushButton)
 
         self.deleteAllPartitions = QtGui.QPushButton(_("Delete All Partitions"),self)
         self.hboxlayout.addWidget(self.deleteAllPartitions)
@@ -392,8 +410,6 @@ class DiskItem(QtGui.QWidget):
         self.vboxlayout.addItem(spacerItem2)
 
         self.connect(self.deleteAllPartitions,QtCore.SIGNAL("clicked()"),self.deleteAll)
-        self.connect(self.raidPushButton, QtCore.SIGNAL("clicked()"),self.slotRaid)
-        self.connect(self.lvmPushButton, QtCore.SIGNAL("clicked()"),self.slotLvm)
 
         # this containts dictionary type members as we fill the list
         # ex: {"name":name, "data":data} where data is Partition type object
@@ -404,8 +420,10 @@ class DiskItem(QtGui.QWidget):
         self.model = model
         self.totalSize = totalSize
         self.partEdit = partEdit
+        
+        print "End of constructer of DiskItem for %s" % name
 
-    # data is Partition type object and name is label for partition
+    # @param data is Partition type object and @param name is label for partition
     # like "Free Space" or "Partition /dev/hda1"
     # @see partition.py
     def addPartition(self,name=None,data=None):
@@ -429,7 +447,10 @@ class DiskItem(QtGui.QWidget):
                                   "icon"   :"linux"},
                "linux-swap(new)":{"bgcolor":"#C1665A",
                                   "fgcolor":"#FFFFFF",
-                                  "icon"   :"linux"}}
+                                  "icon"   :"linux"},
+               "software raid":{"bgcolor":"#000000",
+                                "fgcolor":"#999999",
+                                "icon"   :"other"}}
             if metaTypes.has_key(fs_type):
                 return metaTypes[fs_type]
 
@@ -437,7 +458,29 @@ class DiskItem(QtGui.QWidget):
                     "fgcolor":"#000000",
                     "icon"   :"other"}
 
+        print "inside diskItem.addPartition"
+        print "trying to add : %s" % name
+        
+        if not data:
+            _name = "\n" + _("Software Raid Partition")
+            _mpoint = "[]"
+            
+            partition = QtGui.QRadioButton("%s%s" % (name, _name), self.diskGroup)
+            partition.setFocusPolicy(Qt.NoFocus)
+            meta = getFSMeta("software raid")
+            icon = meta["icon"]
+            
+            partition.setIcon(QtGui.QIcon(":/gui/pics/%s.png" % icon))
+            partition.setIconSize(QSize(32,32))
+            partition.setStyleSheet("background-color:%s;color:%s" % (meta["bgcolor"],meta["fgcolor"]))
+            
+            self.splinter.addWidget(partition)
+            return
+        
         partitionType = getPartitionType(data)
+        print "BREAK POINT"
+        print "partitionType is : ", partitionType
+        
         _name = ''
         _mpoint = ''
         if partitionType:
@@ -453,6 +496,10 @@ class DiskItem(QtGui.QWidget):
             elif partitionType == partitionTypes[4]:
                 _name += "\n" +_("Backup or archive files will store here")
                 _mpoint= "[ /mnt/archive ]"
+            elif partitionType == partitionTypes[5]:
+                _name += "\n" +_("A Software Raid Partition")
+                _mpoint= "[]"
+
         partition = QtGui.QRadioButton("%s%s\n%s %s" % (name, _name, data.getSizeStr(), _mpoint), self.diskGroup)
         partition.setFocusPolicy(Qt.NoFocus)
         if data._parted_type == parteddata.freeSpaceType:
@@ -537,14 +584,19 @@ def getPartitionType(part,rt=1):
     # pt are objects derived from PartitionType class
     # like RootPartitionType or SwapPartitionType objects
     # @see partitiontype.py
+    print "inside getPartitionType"
     for pt in partitionTypes.values():
+        print "iterating over partitiontypes :"
 
         # We use MountRequest type for search keyword
         # which is 1, defined in partitionrequest.py
         req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
         if req:
+            print "request ok from searchPartTypeAndReqType for : ", pt.name
             if req.partition() == part:
+                print "req.partition == part"
                 return pt
+    return None
 
 class PartEdit(QtGui.QWidget):
 

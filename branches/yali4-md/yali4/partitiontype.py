@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -89,8 +89,68 @@ class ArchivePartitionType(PartitionType):
         elif filesystem == "ext3":
             self.filesystem = yali4.filesystem.Ext3FileSystem()
 
+##
+# mountpoint'e göre custom partition oluştur.
+class CustomPartitionType(PartitionType):
+    def __init__(self, name, mountpoint, mountoptions, parted_type, 
+                 parted_flags, filesystem=None, label=None):
+        self.name = name
+        if filesystem:
+            self.filesystem = filesystem
+        self.mountpoint = mountpoint
+        self.parted_type = parted_type
+        self.parted_flags = parted_flags
+        if label:
+            self.label = label
+        else:
+            self.label = "ARCHIVE"
+            
+
+class RaidPartitionType(PartitionType):
+    def __init__(self, raidminor=None, raidlevel = None, raidmembers = None,
+                 raidspares = None, chunksize = None, isdummy = True):
+        self.name = _("Software RAID")
+        self.filesystem = yali4.filesystem.RaidFileSystem()
+        self.mountpoint = None
+        self.mountoptions = None
+        self.parted_type = parted.PARTITION_RAID
+        self.parted_flags = []
+        self.label = "SOFTWARE_RAID"
+        
+        self._isdummy = isdummy
+        self._raidminor = raidminor
+        # we dont need this for dummy raid partitions
+        if not isdummy:
+            self._raidlevel = raidlevel
+            self._raidmembers = raidmembers
+            self._raidspares = raidspares
+            self._chunksize = chunksize
+        
+    def sanityCheck(self):
+        minmembers = yali4.raid.get_raid_min_members(self._raidlevel)
+        if len(self._raidmembers) < minmembers:
+            return _("A Raid device of type %s "
+                     "requires at least %s members.") % (self._raidlevel,
+                                                         minmembers)
+                     
+        if len(self._raidmembers) > 27:
+            return "Raid devices are limited to 27 members"
+        
+        if self._raidspares:
+            if (len(self._raidmembers) - self._raidspares) < minmembers:
+                return _("This Raid device can have a maximum of %s spares. "
+                         "To have more spares, you should add more members "
+                         "to raid device.") % ( len(self._raidmembers) - minmembers )
+        
+        return None
+    
+    def getMinor(self):
+        return self._raidminor
+
+
 root = RootPartitionType()
 home = HomePartitionType()
 swap = SwapPartitionType()
 archive = ArchivePartitionType()
+raid = RaidPartitionType()
 

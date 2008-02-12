@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -26,6 +26,7 @@ import yali4.filesystem
 class Partition:
 
     def __init__(self, device, parted_part, minor, mb, start, end, fs_name, fs_ready=True):
+        print "inside constructer of Partition object, for %s%d " % (device._path, minor)
         self._device = device
         self._partition = parted_part
         self._minor = minor
@@ -68,7 +69,10 @@ class Partition:
     # check if partition is extended
     def isExtended(self):
         return self._partition.type == parted.PARTITION_EXTENDED
-
+    
+    # later
+    def isRaid(self):
+        return self._partition.type == parted.PARTITION_RAID
 
     ##
     # get freespace on extended partition
@@ -177,6 +181,7 @@ class Partition:
 class FreeSpace(Partition):
 
     def __init__(self, device, parted_part, mb, start, end):
+        print "Creating a freespace Partition for %s%d" % (device._path, parted_part.num)
         Partition.__init__(self, device,
                            parted_part,
                            -1,

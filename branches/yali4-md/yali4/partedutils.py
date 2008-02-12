@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008 TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -14,8 +14,9 @@ import os, sys
 import string
 import os.path
 import subprocess
-import mdutils
 import parted
+
+import yali4.mdutils
 
 def get_partition_name(partition):
     """ Return the device name for the PedPartition partition """
@@ -61,10 +62,10 @@ def get_raid_partitions(disk):
 def _getRaidInfo(drive, raidDevice=False):
     try:
         if raidDevice:
-            lines = mdutils._mdadm("--detail", drive)
+            lines = yali4.mdutils._mdadm("--detail", drive)
         else:
-            lines = mdutils._mdadm("-E", drive)
-    except mdutils.MdadmError:
+            lines = yali4.mdutils._mdadm("-E", drive)
+    except yali4.mdutils.MdadmError:
         ei = sys.exc_info()
         ei[1].name = drive
         raise ei[0], ei[1], ei[2]

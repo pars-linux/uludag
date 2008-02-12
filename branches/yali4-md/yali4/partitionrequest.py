@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -22,13 +22,15 @@ from yali4.exception import *
 from yali4.constants import consts
 import yali4.partitiontype as parttype
 import yali4.sysutils
+import yali4.raid
 
 class RequestException(YaliException):
     pass
 
 # poor man's enum ;)
 formatRequestType, mountRequestType, \
-    swapFileRequestType, labelRequestType = range(4)
+    swapFileRequestType, labelRequestType, \
+    raidRequestType = range(5)
 
 ##
 # requests object holds the list of requests
@@ -155,33 +157,51 @@ class RequestList(list):
     # @param pt: Partition Type (defined in partitiontype.py)
     # @param rt: Request Type
     def searchPartTypeAndReqType(self, pt, rt):
-        req = [x for x in self.searchPartTypeAndReqTypeIterate(pt, rt)]
-        # this should give (at most) one result
-        # cause we are storing one request for a partitionType()
-        assert(len(req) <= 1)
-
-        if not req:
-            return None
-        else:
-            # return the only request found.
-            return req.pop()
-
+        reqList = []
+        for x in self.searchPartTypeAndReqTypeIterate(pt, rt):
+            # if request type is a custom request type
+            # we'll allow multiple pt/rt instances
+            reqList.append(x)
+            if ( x.requestType() in range(4) ):
+                # this should give (at most) one result
+                # cause we are storing one request for a partitionType()
+                assert(len(reqList) <= 1)
+        if reqList:
+            return reqList
+        return None
 
     ##
     # add/append a request
     def append(self, req):
+        # whats this for ?
         self.removeRequest(req.partition(), req.requestType())
 
         rt = req.requestType()
         pt = req.partitionType()
         found = self.searchPartTypeAndReqType(pt, rt)
 
-        # RequestList stores only one request for a requestType() -
+        # FIXME RequestList stores only one request for a requestType() -
         # partitionType() pair.
         if found:
-            e = _("There is a request for the same Partition Type.")
-            raise RequestException, e
-
+            if ( rt in range(4) ):
+                # request - type pair that should exist once
+                e = _("There is a request for the same Partition Type.")
+                raise RequestException, e
+            for request in found:
+                # now request is a request on a custom or raid partition type
+                if request.partitionType().mountpoint:
+                    # has a mount point
+                    if request.partitionType().mountpoint == pt.mountpoint:
+                        # there's already a partition request for that mount point
+                        e = _("There is a request for that Mount Point.")
+                        raise RequestException, e
+                else:
+                    if rt == raidRequestType:
+                        # this is a raidPartitionRequest, all found request should be raid requests
+                        if pt.getMinor() == request.partitionType().getMinor():
+                            e = _("There is a Raid request for that partition")
+                            raise RequestException, e                        
+                    
         list.append(self, req)
 
 
@@ -386,7 +406,42 @@ class LabelRequest(PartRequest):
 
         PartRequest.applyRequest(self)
 
+##
+# raid partition request
+class RaidRequest(PartRequest):
+    
+    def __init__(self, partition, part_type):
+        
+        PartRequest.__init__(self)
+        self.setPartition(partition)
+        self.setPartitionType(part_type)
+        self.setRequestType(raidRequestType)
+        
+    def applyRequest(self):
+        pass
+        # PartRequest.applyRequest(self)
+    
 
+##
+# @param drive is the drive to remove
+# @param start is the start sector of deleted partition
+# @param end is the end sector of deleted partition
+class DeletePartitionRequest:
+    """ A preexisting partition which will be removed """
+    def __init__(self, drive, start, end):
+        
+        self.drive = drive
+        self.start = start
+        self.end = end
+        
+
+class DeleteRaidRequest:
+    """ A preexisting Raid device which will be removed """
+    def __init__(self, minor):
+        
+        self.minor = minor
+        
+    
 # partition requests singleton.
 partrequests = RequestList()
 

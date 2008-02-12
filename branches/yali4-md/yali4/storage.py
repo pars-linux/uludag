@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 # Copyright 1999-2005 Gentoo Foundation
 #
 # This program is free software; you can redistribute it and/or modify it under
@@ -25,8 +25,6 @@ import os
 import glob
 import struct
 import binascii
-import raid
-import partedutils
 
 from yali4.parteddata import *
 from yali4.partition import Partition, FreeSpace
@@ -52,34 +50,42 @@ def init_devices(force = False):
     global raidMembers
 
     if devices and not force:
+        print "inited before, run with force=True"
         return True
 
-    # this keeps the raid devices that wont be added to device list
-    # because they're part of a software raid
     restricteds = []
+    devices = []
 
     # all devices including raid devices
     devs = detect_devices()
 
     # find software raid devices and exclude their members from global device list
     for i in devs:
-        if os.path.exists("/sys/block/%s/md" % i.split('/')[-1:][0]):
-            for root, dirs, files in os.walk("/sys/block/%s/slaves" % i.split('/')[-1:][0]):
+        md = i.split('/')[-1:][0]
+        if os.path.exists("/sys/block/%s/md" % md):
+            for root, dirs, files in os.walk("/sys/block/%s/slaves" % md):
                 for name in dirs:
                     # append members of raid to restricteds
                     restricteds.append("/dev/%s" % name)
+            raidMembers.append((i, restricteds,
+                                open("/sys/block/%s/md/level" % md).read().strip(), len(restricteds)))
+            restricteds = []
 
     for dev_path in devs:
-        # dont put raid members to devices, we only want top level devices
-        if dev_path in restricteds:
-            continue
-        else:
+        check = True
+        # dont put raid members to devices
+        for rm in raidMembers:
+            if dev_path in rm[1]:
+                check = False
+        if check:
             d = Device(dev_path)
             devices.append(d)
 
     # devices are appended in reverse order
     devices.reverse()
-    raidMembers = restricteds
+    
+    print devices
+    print raidMembers
 
     if devices:
         return True
@@ -113,10 +119,22 @@ class Device:
         self._length = 0       # total sectors
         self._sector_size = 0
         self._parted_type = deviceType
+        self._isRaid = False
+        self._raidMembers = []
+        global raidMembers
 
+        for i in raidMembers:
+            if device_path == i[0]:
+                print "init raid %s" % device_path
+                self._isRaid = True
+                self._raidMembers = i[1]
+        
         dev = parted.PedDevice.get(device_path)
 
-        self._model = dev.model
+        if self._isRaid:
+            self._model = "software raid"
+        else:
+            self._model = dev.model
         self._length = dev.length
         self._sector_size = dev.sector_size
 
@@ -125,6 +143,7 @@ class Device:
             self._disk = parted.PedDisk.new(dev)
         except:
             label = archinfo[self._arch]["disklabel"]
+            # PedDiskType object disk_type
             disk_type = parted.disk_type_get(label)
             self._disk = self._dev.disk_new_fresh(disk_type)
 
@@ -132,24 +151,70 @@ class Device:
 
         self._path = device_path
 
-        self.update()
+        if not self._isRaid:
+            print "init %s" % device_path
+            self.update()
 
-
+    ##
+    # print summary for device
+    def printSummary(self):
+        print "%s için özet: (debug) " % self._path
+        if self._isRaid:
+            print "%s bir raid device" % self._path,
+            print "üyeleri: ", self._raidMembers
+        else:
+            print "%s raid device degil" % self._path
+        print "%s'nin modeli : " % self._path, self._model
+        print "%s'nin uzunluğu : " % self._path, self._length
+        print "%s'nin sektör büyüklüğü : " % self._path, self._sector_size
+        print "%s'nin disk etiketi : " % self._path, self._disklabel
+        
     ##
     # clear and re-fill partitions dict.
     def update(self):
         self._partitions = []
+        print "updating partitions of ", self._path
 
+        #if self.isRaid():
+        #    return
         part = self._disk.next_partition()
+        
         while part:
-            self.__addToPartitionsDict(part)
+            if part.num >= 1:
+                if not self.isPartOfRaid("%s%d" % (self._path, part.num)):
+                    self.__addToPartitionsDict(part)
             part = self._disk.next_partition(part)
 
     ##
-    # @return Returns if dev is part of a software raid
-    def isPartOfRaid(dev):
-        if dev in raidMembers:
-            return True
+    # @return Returns if part is a RAID type partition
+    # @param part is a Partition object
+    def isPartitionRaidType(self, part):
+        flag = parted.PARTITION_RAID
+        if not part._parted_type == freeSpaceType:
+            ped = part.getPartition()
+            if ped.is_flag_available(flag) and ped.get_flag(flag):
+                return True
+        return False
+    
+    ##
+    # @return Returns raid type partitions of device
+    def getRaidTypePartitions(self):
+        flag = parted.PARTITION_RAID
+        raidParts = []
+ 
+        for p in self.getPartitions():
+            if not p._parted_type == freeSpaceType:
+                ped = p.getPartition()
+                if ped.is_flag_available(flag) and ped.get_flag(flag):
+                    raidParts.append(p)
+        return raidParts
+    
+    ##
+    # Checks if path is in global raidMembers list
+    def isPartOfRaid(self, path):
+        for i in raidMembers:
+            if path in i[1]:
+                return True
         return False
 
     ##
@@ -162,7 +227,12 @@ class Device:
             return False
         return True
 
-
+    def getRaidMembers(self):
+        return self._raidMembers
+    
+    def isRaid(self):
+        return self._isRaid
+    
     def getType(self):
         return self._parted_type
 
@@ -427,14 +497,22 @@ class Device:
     #
     # @returns: Partition
     def __addToPartitionsDict(self, part, fs_ready=True):
+        print "[inside] addToPartitionsDict for : %s%d " % (self._path, part.num)
         geom = part.geom
         part_mb = long((geom.end - geom.start + 1) * self._sector_size / MEGABYTE)
+        print part_mb
         if part.num >= 1:
             fs_name = ""
             if part.fs_type:
                 fs_name = part.fs_type.name
+                print "setting fs_name to :", fs_name
             elif part.type & parted.PARTITION_EXTENDED:
                 fs_name = "extended"
+                print "settings fs_name to :", fs_name
+            elif part.type & parted.PARTITION_RAID:
+                print "setting fs_name to software raid"
+                fs_name = "software raid"
+                fs_ready = False
 
             self._partitions.append(Partition(self, part,
                                                     part.num,
