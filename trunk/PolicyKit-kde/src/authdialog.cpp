@@ -13,6 +13,8 @@
 #include <kpushbutton.h>
 #include <kpassdlg.h>
 
+#include "debug.h"
+
 /* 
  *  Constructs a AuthDialog which is a child of 'parent', with the 
  *  name 'name' and widget flags set to 'f' 
@@ -21,8 +23,24 @@
  *  TRUE to construct a modal dialog.
  */
 AuthDialog::AuthDialog( const QString &header,
-            const QString &message,
             PolKitResult type)
+    : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
+{
+    KIconLoader* iconloader = KGlobal::iconLoader();
+    lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
+    pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
+    pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
+
+    cbUsers->hide();
+
+    setType(type);
+    setHeader(header);
+    setContent();
+}
+
+AuthDialog::AuthDialog( const QString &header,
+            PolKitResult type,
+            const QString &message)
     : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
@@ -50,6 +68,28 @@ void AuthDialog::setContent(const QString &msg)
 {
     lblContent->setText(msg);
 }
+
+// set content according to m_type, that is a PolKitResult 
+void AuthDialog::setContent()
+{
+    QString msg;
+    switch(m_type)
+    {
+        //TODO: Authentication as one of the users below...
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH:
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS:
+            msg = i18n("An application is attempting to perform an action that requires privileges."
+                    "Authentication as the super user is required to perform this action.");
+            break;
+        default:
+            msg = i18n("An application is attempting to perform an action that requires privileges."
+                    "Authentication is required to perform this action.");
+
+    }
+    lblContent->setText(msg);
+}
+
 
 void AuthDialog::showUsersCombo()
 {
@@ -83,7 +123,7 @@ void AuthDialog::setType(PolKitResult res)
             res == POLKIT_RESULT_YES || \
             res == POLKIT_RESULT_N_RESULTS )
     {
-        qWarning("Unexpected PolkitResult type sent. Ignoring.");
+        Debug::printWarning("Unexpected PolkitResult type sent. Ignoring.");
         return;
     }
 
@@ -105,4 +145,6 @@ void AuthDialog::setType(PolKitResult res)
 
     if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
         cbRemember->hide();
+
+    m_type = res;
 }

@@ -10,18 +10,20 @@ class AuthDialog : public AuthDialogUI
     Q_OBJECT
 
 public:
-    AuthDialog( const QString &header = "", const QString& message = "", PolKitResult type = POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH);
+    AuthDialog( const QString &header, PolKitResult type);
+    AuthDialog( const QString &header, PolKitResult type, const QString& message);
     ~AuthDialog();
     const char* getPass();
     void setType(PolKitResult type);
     void setContent(const QString &);
+    void setContent();
     void setHeader(const QString &);
 
 private:
     void showUsersCombo();
     void hideUsersCombo();
     void setPasswordFor(bool set, const QString& user = NULL);
-
+    PolKitResult m_type;
 };
 
 #endif // AUTHDIALOG_H

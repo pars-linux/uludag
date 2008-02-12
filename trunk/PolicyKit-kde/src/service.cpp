@@ -55,7 +55,7 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
 
 void PolicyService::sendDBusError(const QDBusMessage& message, const QString& errorstr, const QString& errortype)
 {
-        Debug::printError(QString("Method call error:%s  Interface:'%s' Method:'%s'").arg(errorstr).arg(message.interface()).arg(message.member()));
+        Debug::printError(QString("Method call error:'%1'  Interface:'%2' Method:'%3'").arg(errorstr).arg(message.interface()).arg(message.member()));
 
         QDBusError error(errortype, errorstr);
         QDBusMessage reply = QDBusMessage::methodError(message, error);
@@ -121,7 +121,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     {
         if (polkit_error_is_set(error))
         {
-            Debug::printError(QString("Could not initialize polkit: %s").arg(polkit_error_get_error_message(error)));
+            Debug::printError(QString("Could not initialize polkit: %1").arg(polkit_error_get_error_message(error)));
         }
         else
             Debug::printError("Could not initialize polkit.");
@@ -168,7 +168,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     }
     else
     {
-        Debug::printDebug(QString("Message of action: %s").arg(message));
+        Debug::printDebug(QString("Message of action: '%1'").arg(message));
     }
 
     DBusError dbuserror;
@@ -184,7 +184,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     if (caller == NULL)
     {
         QDBusError *qerror = new QDBusError((const DBusError *)&dbuserror);
-        Debug::printError(QString("Could not define caller from pid: %s").arg(qerror->message()));
+        Debug::printError(QString("Could not define caller from pid: %1").arg(qerror->message()));
         return false;
     }
 
@@ -199,7 +199,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 
     //TODO: Determine AdminAuthType, user, group...
 
-    AuthDialog* dia = new AuthDialog("Action message: " + QString(message), polkit_result_to_string_representation(polkitresult), polkitresult);
+    AuthDialog* dia = new AuthDialog(message, polkitresult);
     dia->show();
 
     return false;
