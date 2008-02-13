@@ -1,7 +1,5 @@
 #!/bin/sh
 
-./hav.py register mysql System.Package scripts/System_Package.py
-
 ./hav.py register grub Boot.Loader scripts/Boot_Loader.py
 
 ./hav.py register module_init_tools Boot.Modules scripts/Boot_Modules.py
@@ -17,5 +15,3 @@
 ./hav.py register baselayout User.Manager scripts/User_Manager.py
 
 ./hav.py register util_linux Time.Clock scripts/Time_Clock.py
-
-./hav.py register python System.PackageHandler scripts/System_PackageHandler.py
