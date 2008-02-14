@@ -26,6 +26,8 @@ PolicyService::~PolicyService()
 
 bool PolicyService::handleMethodCall(const QDBusMessage& message)
 {
+    Debug::printDebug(QString("DBus method called: '%1'").arg(message.member()));
+
     if (message.interface() == "org.freedesktop.DBus.Introspectable" && message.member() == "Introspect")
     {
         if (message.count() != 0)
@@ -50,6 +52,7 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
             return handleObtainAuthorization(message);
     }
 
+    Debug::printWarning(QString("No such DBus method: '%1'").arg(message.member()));
     return false;
 }
 
@@ -90,7 +93,7 @@ bool PolicyService::handleIntrospect(const QDBusMessage& message)
 "   </interface>\n"
 "</node>";
 
-    Debug::printDebug("Handling introspect() call");
+    Debug::printDebug("Handling introspect() call.");
     reply << QVariant(introspection);
     m_connection.send(reply);
 
@@ -101,7 +104,7 @@ bool PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 {
     QDBusMessage reply = QDBusMessage::methodReply(message);
 
-    Debug::printDebug("Handling obtainAuthorization() call");
+    Debug::printDebug("Handling obtainAuthorization() call.");
 
     bool auth = obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt());
     reply << QVariant(auth);
