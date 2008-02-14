@@ -28,9 +28,10 @@ import screens.ScrWallpaper as ScrWallpaper
 avail_screens = [ScrWelcome,
                  ScrWallpaper]
 
-mod_name = 'Hede Manager'
-mod_app = 'hede-manager'
-mod_version = '0.1'
+
+mod_app = "Kaptan"
+mod_name = "Kaptan"
+mod_version = "3.0"
 
 class Kaptan(kaptanUi):
 
@@ -38,6 +39,7 @@ class Kaptan(kaptanUi):
         apply(kaptanUi.__init__, (self,) + args)
         self.connect(self.buttonNext, SIGNAL("clicked()"),self.slotNext)
         self.connect(self.buttonBack, SIGNAL("clicked()"),self.slotBack)
+        self.connect(self.buttonCancel, SIGNAL("clicked()"),self.slotExit)
         self.initialize()
 
     def initialize(self):
@@ -64,6 +66,9 @@ class Kaptan(kaptanUi):
 
     def slotBack(self):
         self.stackMove(self.getCurrent() - 1)
+
+    def slotExit(self):
+        sys.exit(1)
 
 def AboutData():
     return KAboutData(
