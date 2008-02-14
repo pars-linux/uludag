@@ -26,13 +26,12 @@ AuthDialog::AuthDialog( const QString &header,
             PolKitResult type)
     : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
 {
-    if (res == POLKIT_RESULT_UNKNOWN || \
-            res == POLKIT_RESULT_NO || \
-            res == POLKIT_RESULT_YES || \
-            res == POLKIT_RESULT_N_RESULTS )
+    if (type == POLKIT_RESULT_UNKNOWN || \
+            type == POLKIT_RESULT_NO || \
+            type == POLKIT_RESULT_YES || \
+            type == POLKIT_RESULT_N_RESULTS )
     {
-        QString msg = QString("Unexpected PolkitResult type sent: '%1'. Ignoring.").arg(polkit_result_to_string_representation(res));
-        Debug::printWarning(msg);
+        QString msg = QString("Unexpected PolkitResult type sent: '%1'. Ignoring.").arg(polkit_result_to_string_representation(type));
         //TODO: Create exception classes
         throw msg;
     }

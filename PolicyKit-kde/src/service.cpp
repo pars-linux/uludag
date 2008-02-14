@@ -205,7 +205,10 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         dia->show();
     }
     catch (QString exc)
+    {
+        Debug::printError(exc);
         return false;
+    }
 
     // check again if user is authorized
     polkitresult = polkit_context_is_caller_authorized(context, action, caller, false, &error);
@@ -213,6 +216,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     {
         Debug::printError("Could not determine if caller is authorized for this action.");
         return false;
+    }
 
     return false;
 }

@@ -38,6 +38,10 @@ KDE3_ADD_UI_FILES(sources authdialogui.ui)
 # build executable named policykit-kde
 KDE3_ADD_EXECUTABLE(policykit-kde ${sources})
 
+#set exception flag
+SET_TARGET_PROPERTIES(policykit-kde
+                    PROPERTIES COMPILE_FLAGS -fexceptions)
+
 # link executabel with kde libraries
 TARGET_LINK_LIBRARIES(policykit-kde
                       ${QT_AND_KDECORE_LIBS}
@@ -46,4 +50,3 @@ TARGET_LINK_LIBRARIES(policykit-kde
                       dbus-1-qt3
                       polkit
                       polkit-dbus)
-
