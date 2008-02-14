@@ -14,6 +14,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
+#import kconfig
 
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
@@ -26,6 +27,21 @@ class Widget(PackageWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
+        self.applySettings()
+
+    def applySettings(self):
+
+        config = KConfig("package-managerrc")
+        config.setGroup("General")
+        config.writeEntry("SystemTray", True)
+        config.writeEntry("UpdateCheck", True)
+        config.writeEntry("UpdateCheckInterval", 2 * 60)
+        config.sync();
+
+        proc = KProcess()
+        proc << locate("exe", "package-manager")
+        proc.start(KProcess.DontCare)
+
 
     def shown(self):
         pass

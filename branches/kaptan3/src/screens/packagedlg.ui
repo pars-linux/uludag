@@ -25,210 +25,320 @@
     <property name="caption">
         <string>Package</string>
     </property>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>50</x>
-                <y>30</y>
-                <width>205</width>
-                <height>80</height>
-            </rect>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>ParentOrigin</enum>
-        </property>
-        <property name="text">
-            <string>Something about package manager
-and pop-up. Bla bla.</string>
-        </property>
-    </widget>
     <widget class="QLayoutWidget">
         <property name="name">
-            <cstring>layout17</cstring>
+            <cstring>layout34</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>51</x>
-                <y>121</y>
-                <width>430</width>
-                <height>260</height>
+                <x>40</x>
+                <y>20</y>
+                <width>441</width>
+                <height>361</height>
             </rect>
         </property>
         <vbox>
             <property name="name">
                 <cstring>unnamed</cstring>
             </property>
-            <widget class="QGroupBox">
+            <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>groupBox3</cstring>
+                    <cstring>layout33</cstring>
                 </property>
-                <property name="backgroundOrigin">
-                    <enum>ParentOrigin</enum>
-                </property>
-                <property name="title">
-                    <string>Updates</string>
-                </property>
-                <widget class="QLayoutWidget">
+                <hbox>
                     <property name="name">
-                        <cstring>layout9</cstring>
+                        <cstring>unnamed</cstring>
                     </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>10</x>
-                            <y>20</y>
-                            <width>330</width>
-                            <height>90</height>
-                        </rect>
-                    </property>
-                    <vbox>
+                    <widget class="QLabel">
                         <property name="name">
-                            <cstring>unnamed</cstring>
+                            <cstring>textPackage</cstring>
                         </property>
-                        <widget class="QCheckBox">
-                            <property name="name">
-                                <cstring>checkBox1</cstring>
-                            </property>
-                            <property name="backgroundOrigin">
-                                <enum>ParentOrigin</enum>
-                            </property>
-                            <property name="text">
-                                <string>Show in system tray</string>
-                            </property>
-                        </widget>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>0</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="backgroundMode">
+                            <enum>PaletteHighlightedText</enum>
+                        </property>
+                        <property name="paletteBackgroundColor">
+                            <color>
+                                <red>255</red>
+                                <green>255</green>
+                                <blue>255</blue>
+                            </color>
+                        </property>
+                        <property name="backgroundOrigin">
+                            <enum>ParentOrigin</enum>
+                        </property>
+                        <property name="text">
+                            <string>&lt;b&gt;Package-manager&lt;/b&gt; is the graphical front-end of &lt;b&gt;PiSi&lt;/b&gt;. You can easily install new programs and upgrade your system and also can see new upgrades of the programs periodically  from the system tray with package manager.</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>imagePackagePopUp</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>0</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="pixmap">
+                            <pixmap>image1</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                            <bool>true</bool>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>tooltipPisiPopup</string>
+                            <comment>Pisi Pop-Up Baloon</comment>
+                        </property>
+                    </widget>
+                </hbox>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout17</cstring>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBoxUpdates</cstring>
+                        </property>
+                        <property name="paletteBackgroundColor">
+                            <color>
+                                <red>255</red>
+                                <green>255</green>
+                                <blue>255</blue>
+                            </color>
+                        </property>
+                        <property name="backgroundOrigin">
+                            <enum>WindowOrigin</enum>
+                        </property>
+                        <property name="title">
+                            <string>Updates</string>
+                        </property>
                         <widget class="QLayoutWidget">
                             <property name="name">
-                                <cstring>layout8</cstring>
+                                <cstring>layout9</cstring>
                             </property>
-                            <hbox>
+                            <property name="geometry">
+                                <rect>
+                                    <x>20</x>
+                                    <y>20</y>
+                                    <width>380</width>
+                                    <height>90</height>
+                                </rect>
+                            </property>
+                            <property name="paletteBackgroundColor">
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                            <vbox>
                                 <property name="name">
                                     <cstring>unnamed</cstring>
                                 </property>
-                                <spacer>
-                                    <property name="name">
-                                        <cstring>spacer2</cstring>
-                                    </property>
-                                    <property name="orientation">
-                                        <enum>Horizontal</enum>
-                                    </property>
-                                    <property name="sizeType">
-                                        <enum>Fixed</enum>
-                                    </property>
-                                    <property name="sizeHint">
-                                        <size>
-                                            <width>16</width>
-                                            <height>14</height>
-                                        </size>
-                                    </property>
-                                </spacer>
                                 <widget class="QCheckBox">
                                     <property name="name">
-                                        <cstring>checkBox2</cstring>
+                                        <cstring>checkBoxSysTray</cstring>
+                                    </property>
+                                    <property name="paletteBackgroundColor">
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
                                     </property>
                                     <property name="backgroundOrigin">
-                                        <enum>ParentOrigin</enum>
+                                        <enum>WindowOrigin</enum>
                                     </property>
                                     <property name="text">
-                                        <string>Check updates automatically for every</string>
+                                        <string>Show in system tray</string>
                                     </property>
                                 </widget>
-                                <widget class="QSpinBox">
+                                <widget class="QLayoutWidget">
                                     <property name="name">
-                                        <cstring>spinBox2</cstring>
+                                        <cstring>layout8</cstring>
+                                    </property>
+                                    <property name="paletteBackgroundColor">
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                    </property>
+                                    <hbox>
+                                        <property name="name">
+                                            <cstring>unnamed</cstring>
+                                        </property>
+                                        <spacer>
+                                            <property name="name">
+                                                <cstring>spacer2</cstring>
+                                            </property>
+                                            <property name="orientation">
+                                                <enum>Horizontal</enum>
+                                            </property>
+                                            <property name="sizeType">
+                                                <enum>Fixed</enum>
+                                            </property>
+                                            <property name="sizeHint">
+                                                <size>
+                                                    <width>16</width>
+                                                    <height>16</height>
+                                                </size>
+                                            </property>
+                                        </spacer>
+                                        <widget class="QCheckBox">
+                                            <property name="name">
+                                                <cstring>checkBoxCheckTime</cstring>
+                                            </property>
+                                            <property name="paletteBackgroundColor">
+                                                <color>
+                                                    <red>255</red>
+                                                    <green>255</green>
+                                                    <blue>255</blue>
+                                                </color>
+                                            </property>
+                                            <property name="backgroundOrigin">
+                                                <enum>WindowOrigin</enum>
+                                            </property>
+                                            <property name="text">
+                                                <string>Check updates automatically for every</string>
+                                            </property>
+                                        </widget>
+                                        <widget class="QSpinBox">
+                                            <property name="name">
+                                                <cstring>spinBoxCheckTime</cstring>
+                                            </property>
+                                            <property name="paletteBackgroundColor">
+                                                <color>
+                                                    <red>255</red>
+                                                    <green>255</green>
+                                                    <blue>255</blue>
+                                                </color>
+                                            </property>
+                                        </widget>
+                                    </hbox>
+                                </widget>
+                            </vbox>
+                        </widget>
+                    </widget>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBoxRepo</cstring>
+                        </property>
+                        <property name="paletteBackgroundColor">
+                            <color>
+                                <red>255</red>
+                                <green>255</green>
+                                <blue>255</blue>
+                            </color>
+                        </property>
+                        <property name="backgroundOrigin">
+                            <enum>WindowOrigin</enum>
+                        </property>
+                        <property name="title">
+                            <string>Repo</string>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>layout10</cstring>
+                            </property>
+                            <property name="geometry">
+                                <rect>
+                                    <x>20</x>
+                                    <y>20</y>
+                                    <width>290</width>
+                                    <height>80</height>
+                                </rect>
+                            </property>
+                            <property name="paletteBackgroundColor">
+                                <color>
+                                    <red>255</red>
+                                    <green>255</green>
+                                    <blue>255</blue>
+                                </color>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>textLabelContrib</cstring>
+                                    </property>
+                                    <property name="paletteBackgroundColor">
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                    </property>
+                                    <property name="backgroundOrigin">
+                                        <enum>WindowOrigin</enum>
+                                    </property>
+                                    <property name="text">
+                                        <string>Contrib repo bla bla.</string>
                                     </property>
                                 </widget>
-                            </hbox>
+                                <widget class="QCheckBox">
+                                    <property name="name">
+                                        <cstring>checkBoxContrib</cstring>
+                                    </property>
+                                    <property name="paletteBackgroundColor">
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>255</blue>
+                                        </color>
+                                    </property>
+                                    <property name="backgroundOrigin">
+                                        <enum>WindowOrigin</enum>
+                                    </property>
+                                    <property name="text">
+                                        <string>Add contrib repo</string>
+                                    </property>
+                                </widget>
+                            </vbox>
                         </widget>
-                    </vbox>
-                </widget>
-            </widget>
-            <widget class="QGroupBox">
-                <property name="name">
-                    <cstring>groupBox2</cstring>
-                </property>
-                <property name="backgroundOrigin">
-                    <enum>ParentOrigin</enum>
-                </property>
-                <property name="title">
-                    <string>Repo</string>
-                </property>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout10</cstring>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>10</x>
-                            <y>20</y>
-                            <width>290</width>
-                            <height>80</height>
-                        </rect>
-                    </property>
-                    <vbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>textLabel2</cstring>
-                            </property>
-                            <property name="backgroundOrigin">
-                                <enum>WindowOrigin</enum>
-                            </property>
-                            <property name="text">
-                                <string>Contrib repo bla bla.</string>
-                            </property>
-                        </widget>
-                        <widget class="QCheckBox">
-                            <property name="name">
-                                <cstring>checkBox5</cstring>
-                            </property>
-                            <property name="backgroundOrigin">
-                                <enum>ParentOrigin</enum>
-                            </property>
-                            <property name="text">
-                                <string>Add contrib repo</string>
-                            </property>
-                        </widget>
-                    </vbox>
-                </widget>
+                    </widget>
+                </vbox>
             </widget>
         </vbox>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>pixmapLabel1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>280</x>
-                <y>30</y>
-                <width>200</width>
-                <height>75</height>
-            </rect>
-        </property>
-        <property name="pixmap">
-            <pixmap>image1</pixmap>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
     </widget>
 </widget>
 <images>
     <image name="image0">
-        <data format="XPM.GZ" length="213135">789ceddac16a23e91940d17d3f8568ef9aa09931699321e41106b20c842ce42a59b66577f74c268b10f2ee51a9d4b67cf30025f039428b0f6cf8c0b77fff72d70f9f567ffbeb2fab4f3f7cf8e7ef9bdf1f86d570bff96df569fcd7f3f3bffffe8fbffce7c3c7cfd77f5afdf1c71f573ffdbcfae9e31f3e7cdcac86d5d5300ed7c3388d57d3387e1eaec7cfd3b83e8d37f3f8f5346ee7f1f9386e0fe3761af7f3385ecfe3ed69bc99c7c769dcde8c37db9b69fc368fdbeb797c388edbc378fce2e134decce3afa771338f4fd37877b3dddc1dbf773c8ddb79bc9fc7bbeb79fc721a6fe671771cef0ee3dd346e4fe3661eef4ee3dd3caeafd69bb3f7ed306eef782776f70f8f6f7ffe9be33f98f5eb6bffa487f767d89f37703c275e0ad98f4b6fc732eef7af27c59b7362587a339633bc3d27e6429e774bafc592beecffef3eb15f7a2716b67dcc7de276e98d58dee39bfbc4d7a5d7e1026c9fcfef13ee121c7c39bb4ff8c4c1d1f0729f70bfe464fffd3ee14f559c8ca773c231c18bfd7c9f785a7a0f2ec7309f134bafc12539de27fceae0cce3f1318ea5b7e0923c1c9fd6597a0b2ec9f1a9334fd17066a709eaf878269cd104a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa0344169829a9ad82dbd049764373571bff4165c92716ae2dbd25b70491ea6261e97de824b723b35b1597a0b2ec8763d35b1fe75e93db81c4f57c77362bff41e5c8efd7c4e5cf9e4c1c9b8de1ccf89b5838293fd663e2736eb61e955b80cc3663ddf270e51f8edc1c16e6a61be4fac5d33993c4f2d7c3f2736fe70c5e133c7cb39b199ea10c5bb773b75f07a9f38bc9edd29deb5ddd7b98397fbc4f1edd3c73b366cbe7770764e1c5efb71e9cd58c6b87fade0f53e31bff7feefe31d7ada9f37f0f69c983f817c1b3d79f55e6c77e3c3feedcf7ffdf1bf7ffef03f2ef2ab32</data>
+        <data format="XPM.GZ" length="213045">789ceddacb6a24051480e17d9ea249ed06e9b9a883203e82e0521017954ea5d31d66a3e342c477377d49a6f3abeb2ac8f7f5ea0c040ee4e7741593b76f563ffff4e3eacddbabdf3f8f9f779bd5e67efc6df5e6f68f4f9ffefce5d71ffebabafef6c377ab6fdebd5bbdff7af5fefaababeb71b5590db7d3ed783b1dc6e1304e1f6fc7e9e3615c9fc7e934ee4fe3f4e134de1cc7e9713cfeecee3c7e3c8d9bf3389ec6fbc378f7711aef8e3ffb701ea7d3b83d8d771f4ee3ed71bc7bfc87bbc3389dc7f134de9dc7bbd3b81e5e7cc69bcded74c7ebb0bd5f0f2f7fffc331ebf5c56727875767da0f970dbcbc13c366eef598c7fdf83f77e266eecd98cffebfeec4b89d7b2de6f430fcfb4e789078e5a62177629c7b23e637bcbc13ae04e74bf174273c4bf0e8e1e24e78e3e068ff7c2786b9576129c6a73bb19b7b139662f37427e65e84e5184e77c299e0d9fe7427bc87f2c5e94eccbd054b726cc28b28178edf1d1e27b8b039fe51d6dc5bb024dbe35fe6cdbd054b72fc4bcfb997605934416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509a20a64313dbb9b76049b68726eee7de8225d91c9a58cfbd054bb23f3431ccbd054b321e9a18a7b9d76039a6f5f1bbe366ee3d588edd70bc13be3c78369eeec4e0cd83b3cdfa7427d6e3dc9bb014c3d39d58efe75e8565b8199eefc4fa61ee655882eda185f39d1806efa31c1e302fee84770f0e495cde099782d395b8b8138f97c233c5abb63d77707127bc7dbc6e374f155cde89c36733f766cc63377ca9e0c59d383c55f8bf8fd767da0d970de44e1c9f2bd69bade7cd5762daeef6f9fdafaffffefeea1fb0cb83ed</data>
     </image>
     <image name="image1">
-        <data format="XPM.GZ" length="36430">789ced9d5953a33b8f80efcfafe83aba3b35e52ffb525373119a3d010261cdd45cc87612b61008610953f3df47b62403dd8170d24d739a2fe57287e7b564cb96e4d70979e97ffdf5e5b0b9f1e5af7ffd713dc2d189fbe28e71f8e52f7fd3ef8ffffb7ffeeb7ffff83397c97c2917bfe42b992fb93fffe38f3ff1e68bfb02994a2881612f703693cd08ef2a67339107912b5422fb5ae05c2694d8be2d5c10ae47ae262e0b5772d5c8d5c0f96cce31e33d733e23ed3bc2857c368e17fbcf5795e146b8c26cb4bd52888c2361c7edb89738f6ef37980b19695f0f5cc812f3f877c205915f53e6feed6e628cfa4b9151e5f141b8c26c169459de1e08bb22fbe39ab998e1fe2172315770329f8bc43cde8ab2e89f3127fd5a621eafa1ccf2f62e716c872be1a2f4bf2f5c65061319b5ddb695a5bfadc4dcbeaf5c62fbee84a53f535516fd96b2c8ef0a7b19ff4859e4579459de8a7da52acfdf8d0397d27cdcb9b08c679a89b9ffa2b0f4efeb89b95de44b596e874c629e4f4d59ec5f1496f58183c4bc3e87ca25d68feb554af3f3abccda3f6c09abfebd32eb434558e7a3edb29ef62131eb6f2b97f3513e2bacf3dd5016fdb5c4bc9e4e99f5fd327359e6ef8681cbf982e4abf3cce40fce57694feb772f2cf63babcce3f94361b1cf1c2bf378b09498e7975566fb6c2eb18df26366b5d73c2466fd7365d1df491cf5d1086b7c4362ce9f9cb2ac6f27318f9f17567f1c2bb33c96992b126f96e56dcac73eb3ced71c31abfd501256fbb612b3fca2b2d8e712f3fcacb0d867d695653dfa89a3bcd7fec41e385496f99412477917f52b79cd6fd763d6fcb22566b5df2c0b6b3cec294bff3e31db7fa25ce1f91584351e32cad2becf5c117f434f59da2f8565bdb09298e713f3a562f315bedfb9067341ee6fbec35ccaca7cebc2ba3f758535ff4e9565fe37cc65cd971361590f3c674ef6b9c4d13edb55aeb0bf6e8535ffdb8963bbf9aaccf2b8a95c2d4479d5177f625e99d7cb45f96a21cdbfcb5cacf2fdd03d30d37af07eb0c2acf3734658f63b73c55cd1fc1b08cbf8bea5cce3db0565b61745bf2afad05216f95a625eaf1365d6b73eb18bfd49ffd5a2e87712b37e5999e55dcc9faa2be9fed760ae68beae098bbffc3eb3da6372c2329edf49cced89793cbbaa8cd17e3f14967c30f9c4bc1e5d65d1bf5116fd05612ff3db54e67617e3050b45394f79cb5cca8abfaf8465fe2e232cfb99bb652e4bbc3b6056ffda2273f2df576599cfa9b0ce674599edc39ab0dadf5416ffdac471fe664f99f54d8919d51f4bca125f6d658cfa7e24acfe192bb3bc8bfe4257f4727fbc642eebfe3010d6f8df62d678f15e58f63380c4bc1f1d33eb7ab9a2b0e6f3a932dbe30f84653dfc11b3ced7169465bd169579bed81096f9199547e9ef217194871365d6b7b7ca96f5af853b128f57cadceee27ad8701c8fef57dc0db39effbc612ecbfee24ac2b2bfba2c7345ee2f0e99abb27ff826b3da8b07ca3cbebf13eec87cdb89d9de8a32cbe390d9e6a4bfafca1c5ff654d9fad87e295c12f9bab2c83b659677319fad2f6579bf7517cc65394f1ab6d757e43ce87bcc3a5f77cdacf1eaaacae23f6957fbfd96b2d8d35316fb5158ecc523656eb74bcaae18edcb08a3c8af26e6f51c2ab33cf6853bb2ffc47874458a07beff56849dc4c712331dc7797d0e984b45c9bf91b0e6e32e7359f62b5b65ae487e82654eebb5ccacf6fb46625eaf81b0d86b2e13b37f33ca3c3f2fed4ed6174689797fea2b737cd9afcab23ed5c471bdfd89b0fa632731db97579678ed28b3be8bfba9f365ddcf1798f57ceab87faff9e01db3daebc7cad27f4b58c63717cadc0eabca62ff95b0ac273695a5bf8232cb9b91b0e49f2f24e6f9c4f3a9a778e1cf3b5c87b9a2fbed1a7355ce53665558ce5bb0c8acfef35966b5dfb584c53e7810167bec7a62ce870d651ffd67c7893b517f93d9cbfa412331eb5f2ab33e2e278efafe5e58d7379798f547ca221ff3d7770af2f9902b33978bf279c62d33ca79d99d315bd9fffc5766b50fbbcadcbf3917d6f1f794397eed9932cbdb65e54e29f6b72d8cacef379545ff5a99e54d4558f2cbc578e8940a4ee6b7c65cf632bf03669b93fdf18ed9497ebb5361c967bfc29cecd955967c2e0a8bbf4d5659da2f12c776f0ca62bfe87724bfcd59621eef5459fc7fa8ccfa769038ae27de0acb7ae33831fbe34299e57d3c5f743a15c97f9f634ef6b799d51e8bcaac6f7ac29acf19658977506679180a4b3edbba32cb9b96b2cc6743b91be70b0bc2b29ea6acccfa2eee1fdd12c537df2f72cc15896f5867d6f874f7c2baffac31277b06c2d2bf5f4accf3595666fb309bb81bf5ebcc5df19f3f5316ffef2ab3be3d4accfa1d61594fb848ccfeeb2b4bfef494b93f17fdd7ed523ef07a1c25e6fcd8662e66a47d9559d7cbed0bebfbbb3d61c927576346fdbce590d9eaf96993d9c979d16c08cb7e0267ca723f3c67f6727f0114d6fb19fbafdb95fd068bcabc5efe5858d6cbf8c4bc5ee7ca128f495ed6bb2b8c227fa32cebabf228f24eb82bfb1f2a8b7f6d626e0765f6cff6287197d9c0f6685efe29857d66d058633fda9679e12279825ae639f3f1457c628d238f689de7cc8716bd9f3c66ca3c673ebab04f68f59fe6c9d38af39cf9d525f9c44eca94e73913cafcf567bdbec127f0429eccebfbd478d79eec1bf5c9d3b3d7bcfcc232e1cef0c427f6c363e7dfb37ee795273e819fe4f979f9fbc54ef6c92b67af797dff6a5ff0c994b3d7bcbc6379c92761f7fae878f9f7ad76924fe667af8f2d2ff8e42d672f6f3a2fb475a9ad3b557f5e5faa76a24f60aa377be6d89c98537346bd74cdb9e99b0b33a0ebde5c9a2b3334d76f8b8979995060924fde70f61a991b736beeccbd199b0753330be6ab59344b66d9ac9855b366d6a7e87f74ed4a79ab7cfdbb6bf577b30d5ff0c9b4b357df34cc86d9345ba669b6cd0e79a56576cd9ed9370774fdd01cc5ddebe5d28e3b5fcf64a68cc3e5512a6b72266f0a948f688aa644fd9427ca674d65caf88558df1abbd56faf8079b3ee4b7379b9c0449f84ddeb355f660000c182030f1de8420f8e831e9cc0299cc139f4e1e2357d18d01ee7e012ae4c88d9728c438ec5107f1d18d2d54e8ce33ad175e4a037849129c00ddcd2cf77706f8e619cfaed503f83a0070f249f8dba75ba16a2c3cb183a568176d750e9be48b23ec976a88772ec4fafb3bd35ba5e8ffdb04d8e7ca2b942d76141f4b4bd2339c86de5d8c7421823ea4dcb95893e997af6eac35758842558263f78588155d523afacc1ba79209fbca20f75184383ee4921fe72b0416bbb095bb40a0368d26a1e133f701cc31534603b72ca15d88116b5ec869c81bdd4e73e1cd0da15542fc4321cc211edae086dc8d0ce1ac6a2de2197f2a4475a1b908fe314a0485695204396a5ebd277995a2a6419f76db47f233904550aee266ca6f625ca61346708886441952229c858538a5138b5cc94272374e8b1c3d2d8c59e6ae2319ee029dad7f5f10ccfa182fd38b36dbc801b441c50bdc42b1cd25a3b89e5188fcf62cbe3356cc5f8bb843b1ce14d8a65435178abf1cf7a786bea78175730c6346c53ced1589a2738c47bba528db263927da05a33edc7ebd2f71d5d5fc0afcf6d62bbc21c542fb517c9839ee6d88003da638bb848324b944b8e3cf4867bca4c7932a0b8db99f409337965195770758a7e95eccb537e57e35a66cd19ed4a0d1823503e64a01d64685d16700de9b440abda4de336c9dff514bfe3d0ae7d521ffba6f0a8273159e5b6281fc62ad2cf9a2719d2e89ad1d3987f7e9d0bae53dfb7580ff102c3d877c89523eae99cfb67bdc7766ca0854b92d930c13363a3f7a4379d4867ca931e2c99d6f7fe806338c60ddcc4e1ebfa14e98fafb467e0164593a74c37a64bb32fc01536711b2a90a5087521e3b119f3ab4fbbde1dde85fb09ee909167d84ab9b760aa784d319ef42856c31807d45623afdcf25850a2b81d62f0791d16a08dbbd4a2b25be69bebd2f71edcd3ee34fca6ef0ced78fba17fd57b62b3a7fb5d38bf9ee33e8d9d633b48aff5eabafe409ee02a74e33e75002778a8fec0236c6306b3b497e51e63f997952c0e6845367ff9b8934a0507744f79fdecf94a99254f308f05f249114b58c60a9fb9b04a37913cb62d58c41cdd27dfe3ecfe5aee2d84dca29f7ef1b82fd932e13dcd9beb2c7962ad75214fc25323b61b763138b63d7b6c4feca9457b66cfa7bc3f989757cb2c79020ddb37bbe4954358c50e2cdb0b3bb097f6ca0eedb51dd99b7056fde858fd9deb4ce72e3a65581f4ec078487bd5adbdb3f7760cabe4916b3cb00f1f7037f95465a67397335d5bb30bf6ab5db44b76d9ae981decd855fab76dd7ecfa47c7d9ef5e67cc13b475d8b7b48761d70e28433670d96eda2ddb30fd5922635e9e9619f3c49b6bdb3419b36e16ecb6eddb1ddbb2bb74fe6b63639e271f932738b67b2683ced4ec3eed6067f692762dba93d88ee9d339f8c323edf72e33e649f8d4b9660fa163b7cd2e9d8a8fe84edf22da310ff1375d1f1e6bbf739df17ee2cc916ddb0cbd23c95a209f9cd91c74c1d1092c6fdffe7b8979995866cb13bb678bb66433a665cbb682c7b062afe8e71bbabb54dd5b7e4730af3f3d4fa0e1c0219db332ced25da4e71c9ee091a985e7fbddcc9ff3cc0b9719ef27ce2cbb9e3b7627eed49db973d777176ee02edd950b9f84ff0362ed77aeb3be3f71d76ee46edcadbb73f76eec1e5ccd2db8af6ed12d99f937c47eb0cc7aee72cb6ec5adba35b7eeeaaee136dca6db724db7ed764ce5a3e3ec77af33e749cbedba3db74f65d51db84377e4dae491b6cbc46f7acdcb0f9459f304862eeb72d12b7b2e4f3e618f145c71baeebcbe5e67cd132ae7aee4cad12b214f82472a662b7ef76a5e7ea8ccfc3e9e73a5ea8d8790271ebdf5eef13b51f33a7bfd813c89c5ae7bef3bbeeb7ba6f776ad7979adfc489e480ddf192ccfbf4bfff3ea8fe6c9bcfcfcf213f2645ee779f2e9cb3c4ffe7975e63ce9420e1ecce8b35473ee8f7fc5dcdef29d9e59f3c49ff8537fe6cfa9f63fc5ebc593ef1eefc4b9bdcb38d80fdfaf7f9f3cf1e149464fb1e543f90caf6ef9f9dcde699c73537caf3c81913c4bf5596adda7f8f597ef370ee4c827ef9927f1b96bf2fd8cafd8f457a14e97f7c31f19e74daf1efbcfe7f606bdfc0ce3fcea3ca9fb6b5cc43b04dc361d68fb4b927a2566fc081ba14e8f2fb89a70ad9d7e1e9965b88203ac539f3426b53c95cbbc2d861ff30446fee63b5b6fe377e50bfeee49ccd7fe7e9ef8fb77cc9331d51b1ae3498507189b5e8c8533d7a20cb8f1c350b146d7b3a6eb5af49a375dbb4e1dd4ccc03f904fa8866ff0514b4665b185e7d0c2b5c7eb7045fdd7e1120df5df854bb835f9d0b78c3b460c9ff0d0b9a68b4d18fbf02cdb1a2e906ec1b57c0d2ad80c63fa0533205ea098697e6b3bfd9b7eefe3ddf773f35f8325684972e017a92cd1b8263c3307431cfa6568995eb0df1ce3d0646033e8d01cebdff5b3f2ae79129ea37d56e3fa92f526637a61b5a3d554c9e6f06413c2916b85df78d1d51c1c21b24748eed2af9a9c5f6359738123f2de3eadf393eb344307fbd0868df0bc26adda205ce371e34f3d7369c3937455f24ac95c92f603d958f2eb7811e2e4c998758a0fffaded542f5f9b1bcdabe137fc26d9b24f16b7213c4d7a83161efc0d9ef92d7f4d6dde5c983c2e51a61e924e1b6bd1dbcffaa11de45df32446d3934aeb90a351c3b36405dfa47a43d98d21c6fd8d6d871a7ebb42b40d2dbfe337a34c333c5b0845bf1374c1a8ecb7d7c36afb1679a8c1edfcbc228f4bab3cf0bb26a76358ea95f2a4e1f770a0728f6352dc7c63b7d4c16b730b95c7253bd629678b34bb3234fd7a9837c54b812cb8800dbf8ff734cb63bb4ef9ba3e619cecafcd13ca8e2dac914ff629cbfbb4a334a0ca311e9f3147b2f8203c55ed0f299a6ad0d03ca13daf425135782afbfd757f443bc6b51f71bbcac6fc1c4201d16f8567394963c91c539e35b0660b86c637c714d73dc8c67db1c1f93b290f60f4646e76920c8f6bf294ad6ddaa58869273c3459da49db3436e526fd5b8232d9ba8b23797aeeefe789fd9979127ecb45f17d4a73aa538c6cc9df6ac8c438a5f8264b6bf1b54db19aa13b6696e2f6c2effa1bdad396ccc533d9efaed3c968487b5186db5536caafd3be4579856b3c0669f830be6dd27d19fd268dbaa963867e5fc893cb6979c2e3d26885700f143bb3762fec58be11e64c338e73a61cba9f3c8ecf4dcd93d9fe8e84c6127ea6fa4d9efc405f3e4fbb5ce185b6e2d43c99edef48702cd9cf559ee5c9fb8d539c2d4fdef237bc3e739e98befc2f17ef51a7e5c9c4bfdf253e9992273483f04ea4fe696aef314f6084e3f71a075bfc372d5ecf92893e81697942bd37c37be64f53af9efc4dae779c1bde4e59d717f364fe9bc68f2abafe137df286b3d7bcfee48a8feb3fc927f3bf34fcebcbd3d59fec13d9bf3e3a76fe7dea8b7f1b7d7e5ff998f2edbabfea1398fe5e655e7fb0befa7f6dbcea990f8fa54f58ec4bff5fd0749f3cbbf3cfcb4f29afaff3dff1c9bcfc9af2e7fffde71fff0feb9591fe</data>
+        <data format="XPM.GZ" length="37678">789ced9d595363b99280dffb5754b4de3a2674bd2f31310f2c66358bc1ac13f3905a8e0d3660c02cf6c4fcf749293305d5804db98aa69beb50285cdf91944ae5229de3e2c0bffef876bcbbf5ed8f7ffd763b84e199fd66bb70f3ed0f77777131faeffff9affffdedf7422ef7ad5afe562ad7be157eff8fdf7e87ed6ff69bcad54209ac0a81f3b97c8e392f9ccf45be8e5cc312d98f021772a1c4f613e612f36ee4ba309c31d70af538fe3470315fa815f3b1bdc76ca91d5ac4c51cb1e2fec512f7bf895c2f58627f4c2cedea9199e5eb3de1128ddf62e6f1669898f4e3f6528ee5ef072e85f949bf3a31b6937e63666ef7ebc2349f7d480c713e13194a39d627c72cf2f7996bc47a5198c6db25665b267f3689cb2c4fc5f9ca859265f98dc4713c148479fc02711abf9298e6bb11a6fe7633716c5743e632afef8eb94eacca91218dbf484cf2b57025b62b606679765598f5dd6566f9702dccf2ef85499eb96576ac4f5598fb9f0973ff2de24a9ded17f5af1444be6e2526fdae8569bc1d2726fd1c33cfa75462d2e788b892e7f5e9c4b15d2f08937c3865667ba85262d2a7214cf3bb7ee4641fbf462cf2fd8130cbbf606679d011a676dd4e4ced4bcc6c0fb520ccf6b08949bfa170b518c72b66b1c7be308fef27a6f179611aef5788abacbff381abc512ef07b6488cf144fbc10d71b2ef23b3e87f284cf27c8999f5d35d618ed78dc4a4dfb230e9a75ac4a29f1e27a6fe2bc25513edd167667b9bf3c4945fbbc22cbf9b98c61b66b6b73914a6fe86f5ad71bca9416493f4cf09b3fc4562d15fb51353ff0d619adfde09d7c8bf1933af077c62b2e7b230cf97faf37a6e99793d5ae693f53412c7fe5ee4f17a7c4b98fbaf278efd5d8cbf5a51f607db14e6fd618758f4f785c4a4cfa930c9d72bcc92ff77c2bc9e9130d9c76866d6cfee0ab3fd80b89667fb54124779ea5c98faab5b66d6c76c26a6f5c678af99129fb796e419d97fdc03b3ecbf6566897f5a0ffa97f78f1b665eaf3f6266fbda82708dd66f89457fbb26cced8bcc120fc5c4e4df5b66d93f6a8963bb5e122679e64cb86ea3bc1133eb675685c97e2eb6d74bc51addbfb831b1d8cbd589cb753a9fdd0571254ffb8bab31cbfe2cedbc5fe83362f1371c13a7f56d0a737cdc304bbc1c08d74b71fc2a33af47d585b9bf25ae737c589798ecbf2eccf2587e5de66f27a6fe7bc2644f17cfdbbaadc8fe4afa58890f7bcccce789de22aef1fea1af99793e5f6696f8f1c2341f90beb6cef1631e84493f5d6266792a9798daf785499e490c71fdbecfccf6f6bb8969be47611a6f0f8579fc2233c7bb1d0853bb8bfe07f43fefa75bc4e25fbb4d2ceb536bc2accf2a33af0f361353fce485c99ff65c98e6b7bdc4517f5f63e6f9f5796292d7162679ea4c98e4996a62f28ff4e7f5ebb2308dd747c2345ef3fc20f1f8284cfdfd8099d7e7886d99efbfdd32b3a3f3ded17cb692e776c7ccf1e9b699797f7796b89aa7fdcee588253e5d9559f66766f18f3d11e6fde38099ed67dbc26c6f192ff1712bccf178419cecb125ccf66b24a6fe2d61f6c7b6b0a17c1e32733ce851621abf284cfd758519d8dfb5c4b47ff685693da62e4ce34dc6ec393f0e84a9ddc5f3c094aab25f1a66d91f7689d3fe6f99e53c1c13a7fc3b65e6765f14a6765f214ef6ec08933efe9a99ede10f9979bd7ec8ecc91ea69698da1f84c9feb0416c0ad4ae6f85d93f4561e3221f09db721cbfc65c61ff38611ebf274cfd5dbcdf360e1f37e3f3bba37657c9f379d565e6fb1b07c455897f9adfd5e4fe798759ee77589eaccf8c84497fcffdd37a73c2bcdfec0b537f1830f37ae03031f9b32b4cebd30566e0f9af13937d4ac2d4df5c32b3be2efadb962bbc3fd823e21ae7bb7e6096fb7d4d2cf1e2f2cc72de65cc9c1fbe4e2cebf597ccbc3ebf9d98f45d10267d9561e6f5c14a628aaf13665e8f1e24a6fdb628ccf9b7244cf2fd19b165fd6039711c9f758569bccd84d99ecdc4e46fd6d74a3c5e2526795e98f53915a6f12efacf8678a5fbab5366cbf17b435cae73fc6e1057eabcbf9f24a676b297abcafe4efab8f47c43fa38393f3cad37c5935f6266fbfaa630e99f01b1d8cf5512d37e7823ccf65b10a6f5ea4b66b687be484cf6ec318bbfc7c2bc7fdf0b3bca8721b3e8972526fbc6fb01572e95e8fb3c774b5ce5f350af11d7e579bc462cf9eb3bc4a2afbf4f1ce55b10267dfc39b3e4e34098c76f248ee3555398c6ab636689df5e62da1fd784b9ff01b1637bc34962ea5f1066fdee98251eef1353ff8ab0f3d15e71bf723ed9afc4ccdf975a66d92ff43a719defdf35c9f720cf6bdc2ef1911966b6075499e57c6c24267b5f09937e70492ceb57cb89495e5798f2d72a615f89fdf79879ff81bc30b59b3e33ebe7a27f7ca55ae67cd3c4920fb6ce2ce7c332b1cce70e99d9deba2f4cf3673631e9ff20ccfa7866dedfed2831d9675198fa5b9338da2beb30cb797525ccfbaf4e4cf15016a6f17044ec653f5c494cfd4f84697ed86116fbee25a6fe396192efe2fda1f725cbf176475c759caf647f6f0a7c7f794e6c79fff724cf8b7d329d98ec5961e6f5c27962b2c705b1ac4f1713d3f82b61cebf8e30e96f2f85b3b87e5d65e6f5ea9e30e7a34d1cc79bb130c933796192a7ee99793d46e667ff9aae30f75f65e6f5a98630cdef62bc6415cc673a7f8ac435795ed865e678cf1cb1d843e799797d5e09937cb3234cfa186066fd754798fa672a715c8f3e10e6f52c31b3feba9e98ecdf1266fb6f1267e2afbbc4b1bf77c29c5fc7c23cde33f37ae05198da5d7c1ec9328c57b25f3331c52fe99b9573dc3e24167bba356639bf5bcc1cef6e5d98cff355e2baf8e79218e4fbb71362c3f7e79aec9f59797ee1feb23fe96d62c7fb9772cc7cffa2ae84797f95fe72bfdd6396f39aec9389fffc0233fb0b4a89295ec9df99f8475f25a6f10d61deaf3785b32cb60333fb473713c7f16a4798c6eb43611aaf33668937274cfd7d6aa7fcf25e98e3b19798e419e68ce559619e1f1253bbac3f2379ad61e28c785efe4e857ca6018bfa6c5de6850ae549f4492c9fadcfbc249f286dd02352e739f3a945ce93a74c99e7cc6797e493e779f2bcda79cefcd525f944bd9629f39cf98cf29d4fdeca9579fdf5d5068b4ff6c9eb27cabc7c7879e56478e613f5e9b1f3ef595f78e5f973fc2ff2fcbcfc78516ffae4f363e6dfb7c21b3e9972ef352f1f58d4049f7c76bcfcfb56f59a4fe627cae796377cf29e7b2fa7fd1b6d19b66553c7cfeb5b155ef3c93b32a5a3bbfa4c9feb1e3ef558ddd717fa525fe175a707fa5adfe8dbf7c5c4bcbc2cafe7c93beebd86fa4edfeb07fda8477aac17f4a25ed2cbbaa157f4aa5ed3eb7a63caf8cfae194652a8efedbff9e25af3c374b36ff864dabdd785ded2db7a47efea96ded3fbbaad0ff4a13ec20c39c6eb27fa143366d2f81cae09741eb3ea3db15348ff2aea922eeb4a945ed53594537fb57f51e929f357627d67ecaa17f65033668132d3fb4cf0c9245f1694554e7995a98eeaaa3375ae7a619ceaab0b75a9aed400ad3661bcba5637daa85b1576c94cddc538a4580cf197a97b8c611fe3b8a9bd7a881cc6dde31e59518f6a84ff1eab05dd558b49ae57776a298c53cbd8af18c76ea2ec70b635790e99ab82bb6ba8782e625f97fa7a7da51a519e5c277d5770670ee39aac93514fb982d7d52a8f9376cf3918db50ae897dc21cefc895d77d32f544b9506b6a5d6da84df443077dd29471e8952db5ad97d5cec468d9552db587160dbe3f57fbaaad0ed4219e5257ea08add9453ea6385643b5a74e22a75c51a72a872df990332ae5902aaa922a4bfc076f2b5015555535fc571d34eeb23817867c1b67963ce900e831048b0dc142f8d9e70c3ad07dba4e05ce544b77e19c6583c8971c821ef4e1022e53fb087318e04a6fc000bb5c632401dcc02d0cd5bbee6a67ca93a12ac21ddc536f7880c7a7b1308231dc4e1e0f0bb0084bb01c5776020df5082bb08a750dd661033663bf18c721aebe8b2d074db888f177abc6b005db299643368c24fe691cece826ec460bc69846ef3e84b9244f70ae967a805eecbb877df7b1b675eee93acb1ee3f50338fc5e27d22bac41c6493b1cc1125e3986135582235d8553ec93c35c33aafa9e3365a63cb9c247ceb3d7bf63863c14a03879bc5210ce051763ac0c15bc7feb603eb430aeaa7a00b5189b03b44209f0bc40ab5a99571d195c588a5f0ff52799067345579ec6514c8639b07662ff32c67ad53c9d270308df977f17f3df5fa7628cee186b1c0c74492d45d9a17715f7ca3ecb8fe39eda61888f7f18996adf7838012f6792c93e2c4faa6a603a2ffda10f55cf74cd194cb9efc2487ffaac843d034feca63987beb6ea1e5733343dd3c74c5218a1c65c040efdcd25ee7a63d80de789b9c2785c308324f300aea1a9734fe33056431c97b0ad0dd7614c9c2bc3b8ddc09cdc30d76ad5dc985b6ce1be419fefaf936c33540bd0574b7f923d083b5e94cfe39eda31dec6b86319e3cd1d5c9b7bd203f9e1a3f2048a06772bb4ff48f5cd984f929e59308b66496d9a65d3307ffdb7664558c593e8e02f9ff795627027c63365f2bde784324b9e9855b316b2c2ac9b0db349f75ca669b6f0fab6199b1db38be7e847ddbfbf752fb71a72eb079e393e5897579e69de5d67c913d3327b3133f64ddb1ce883e89f0573a8f7cd91d98107bc479efc7c302f13cb2c7982a7d6c81c636e9ca8a639c5dd2a67f2a6608aa664caa662aac64e1e3faf93eb4cf75d606a665f1f86a7137d60ea56ebb655164cd91a33b2363ea5cfcbcc65a6fb2ea36d787bcd66b663bbd6d8337b6e4e6d0ff7ae6ddbc767aebf41acfd93eb6c7982a50e602f4c031eeca56ada2bc8db81bdb637fae2c7e3625ebe2f33e6893399bdd505b8d38b76681af6cededb07fb88cfc0c3799e7c529e54ed481973a317ecd82ed8453ce117ed925d366d7d813ef9f448fb679719f3247c23be601baa6be3d33bde0bd7ed3dd28a1eebde47c7d157af33e689d5a776d5aed975bb6176c2f790f6ce3cc2c86edaa6ddfaf1c89897e765b63cb123bb6d77ecae6dd93dbbaf7ab66d0ff0df8778ba1cd9e3cf8eb37f7a9d2d4fe0c49ed853bccfdab5396bcd82cddb8259c0a794a22dd9f26cd1312f52667d3ed12bb662abb666eb4e43d92907ce38eb9cf33af7d971f64fafb33e9fb8cc755cd79db973d7737d77e12edd951bb86b77a3e73f21f69365d6fb2e65dcad1bba3b77ef1edca31bb9b15b708b6ec92d9b95cf8eb37f7a9d394f1a6ec5adba35b78e9ed9709baee9b6d0235b6e1b4ab3c4c6bc3c9599f3e4deedb85dd742afb4dc9edb678fb4ddc1f4b1f33ab9cefc7d17b84377e48e63ae9ca04f82474e5d6ef6ff5d9b1729333fc753aee45dc115639e94c2efe99afc735df3fabe3a7b9e5081aeabba9aab7bede76faefca2f23379c2d5a97bfe79c3bf418c7d85fab379322fbfbefc823c99d7799e7cf932cf93bf5f9d394facb957cbea582debe157f834de3f5b9bdafba879def3333db3e68937f1d7f2865fed987d854fa59f7ef6d85cc5b57dc83c26bc65f84179e23bf87ce830b69cdaf91a9fbefbfdda3e661ee3f594b70e66cf1358e677a9be4add7495b4079c7ddc3ce65e4f7d07e5a7f2c4a2efad87593f4dcf9f63ed4defeffb3f33cfbb3e1dee2adfaded1de3ca3f3e0f9e5b537f02ee97e6c9a6bf8453d835e7fe4a7ba861bc5d4e8a193ff0d7a14e8f2f357c790d6ae9df437fa386aa648225714e6c79de4fbf2f869ff204d7062f74bd0d3f2b6f6a7ef8744dadfc789ef8bb0fcc93fbf8e99e57bcaf68e94e88055d740d3c3301e31babddc2eb45ed5c033fcbda4117f01a94fc030c430d3fc1073ebc134b7dcd001655ce3f3e5d8fef5c5d410dfa1a63186a6aa4cb4136cd0b1ec25bad1dbcb771a6a75afec184bf8c74005e575cc38f74d78fe39c8f7e0179516ff8f19f75476b2d3dcb93176bd37dd47d00b7daa264f0cbbe81f3968db25bba0303bf82faaaa0bf6ac3861ec4f7609cdd8aefe17c27072a1f7a9e40fc8eeb5955358cf94cf77501f5446beb4c85776d01367c0796c2db66e895f0097e555561853c82fd067e4d97fc3af7dd802dd7008095e7d775e637f15a4ded87773a7d472da9a779c3cf3655d50d4632c0b5e941a66e6080d6593617e8c90646a643c99b34a75298c5eecfbae31c3793d686f337fd96d23a03ab6a3a6734cefb08b7e1ed5758f0db7e07db9a7ec3ef420e967d0bc7e4a0fd528ee97f749ef8ec79452b8637c906ea5057fc5e7c077685621cdb5ba186f781f19e70df58dfc69d758ffbe5c0f97618ab40fabebc8ed67e400f355996c80df2c21b8ce7d88fe7c01df110af0cfd11ac4a3f7f1ce6b423bf07c33febcdf564d2dad21a500f5cc5955f4399a7ea0867c375ab22589ff31b6adfe7a1851eef4257054d5eca287ee879f23296aabe006d8c45d00373a95a30841ec5387b67df17435cf9926f435bed499ea86358c29dbafcbcefcbebbe823bc6a51f50bbf40dd5f7d1fa03bf8dbb0b603e367417f3ecc457717f0c79dbc5b8ee80f23599f3650ec47af96c6deab53e34af3e879ab9093ba75ac19db0a48bb893e6d003213717750dce3097ce610bf57845c63bf244fdca3cc11901e3fb5c5f1a853152e7f7c54d8c538c6fd4b41d3ebdc2581de0b353d178b8ca7017c0b3671477f142eafbe2badac153a396296a17b9a162dc0ed002153ca1688e0db513e76f8473c38e705ff734279e3351ee6b79924d599bcceb1ba616ce40e2cc6436ec58bea9aff024add19a51a78dd7e7c9dcb4f3843c30639e286dbf54bdfc556bcbbc5dcdb237da3ad3f2e4759fbc334fd4d72a7817fd57acad3aed3c79d327537f87d757ce93acdb1a7ed43ce1f74a4cb4ed249f4ccb944bbc1f7778ffedf05cf80a9f9decd9dac2ddf3c7cc832764677a96bce69377fc0eaf4dd30bcfcc5fa6f69efd4eae0f5c1bec4cb1eb9b7932ff9fc6cf2a13f364fe7f8d7f7db54ff67ffdef69bde34c99975f5a9e5bffadbf71a6e7bf0fe2afac6ffe6ef4f9b9f239e5cf769fe81335fd59655e7fb2bef23750def3f719e7a7cb879437ff26d68ffccdcc20675e7f459d6ce7f9df31fdfb95dfffef3f7ffb7f19708c7c</data>
     </image>
 </images>
 <tabstops>
-    <tabstop>checkBox1</tabstop>
-    <tabstop>checkBox2</tabstop>
-    <tabstop>spinBox2</tabstop>
+    <tabstop>checkBoxSysTray</tabstop>
+    <tabstop>checkBoxCheckTime</tabstop>
+    <tabstop>spinBoxCheckTime</tabstop>
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
