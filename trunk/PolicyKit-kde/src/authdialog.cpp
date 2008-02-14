@@ -26,6 +26,17 @@ AuthDialog::AuthDialog( const QString &header,
             PolKitResult type)
     : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
 {
+    if (res == POLKIT_RESULT_UNKNOWN || \
+            res == POLKIT_RESULT_NO || \
+            res == POLKIT_RESULT_YES || \
+            res == POLKIT_RESULT_N_RESULTS )
+    {
+        QString msg = QString("Unexpected PolkitResult type sent: '%1'. Ignoring.").arg(polkit_result_to_string_representation(res));
+        Debug::printWarning(msg);
+        //TODO: Create exception classes
+        throw msg;
+    }
+
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
     pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
@@ -118,15 +129,6 @@ const char* AuthDialog::getPass()
 
 void AuthDialog::setType(PolKitResult res)
 {
-    if (res == POLKIT_RESULT_UNKNOWN || \
-            res == POLKIT_RESULT_NO || \
-            res == POLKIT_RESULT_YES || \
-            res == POLKIT_RESULT_N_RESULTS )
-    {
-        Debug::printWarning("Unexpected PolkitResult type sent. Ignoring.");
-        return;
-    }
-
     if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || \
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || \
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS)
