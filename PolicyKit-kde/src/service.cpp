@@ -209,7 +209,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     }
     catch (QString exc)
     {
-        Debug::printError(exc);
+        Debug::printWarning(exc);
         return false;
     }
 
