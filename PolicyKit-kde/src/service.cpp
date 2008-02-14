@@ -199,8 +199,20 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 
     //TODO: Determine AdminAuthType, user, group...
 
-    AuthDialog* dia = new AuthDialog(message, polkitresult);
-    dia->show();
+    try
+    {
+        AuthDialog* dia = new AuthDialog(message, polkitresult);
+        dia->show();
+    }
+    catch (QString exc)
+        return false;
+
+    // check again if user is authorized
+    polkitresult = polkit_context_is_caller_authorized(context, action, caller, false, &error);
+    if (polkit_error_is_set (error))
+    {
+        Debug::printError("Could not determine if caller is authorized for this action.");
+        return false;
 
     return false;
 }
