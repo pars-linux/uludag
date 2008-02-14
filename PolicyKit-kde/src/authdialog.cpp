@@ -90,11 +90,11 @@ void AuthDialog::setContent()
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS:
             msg = i18n("An application is attempting to perform an action that requires privileges."
-                    "Authentication as the super user is required to perform this action.");
+                    " Authentication as the super user is required to perform this action.");
             break;
         default:
             msg = i18n("An application is attempting to perform an action that requires privileges."
-                    "Authentication is required to perform this action.");
+                    " Authentication is required to perform this action.");
 
     }
     lblContent->setText(msg);
