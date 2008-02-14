@@ -24,9 +24,11 @@ from screens.kaptanMain import kaptanUi
 # Screens
 import screens.ScrWelcome as ScrWelcome
 import screens.ScrWallpaper as ScrWallpaper
+import screens.ScrPackage as ScrPackage
 
 avail_screens = [ScrWelcome,
-                 ScrWallpaper]
+                 ScrWallpaper,
+                 ScrPackage]
 
 
 mod_app = "Kaptan"
