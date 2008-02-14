@@ -185,14 +185,14 @@ def get_raid_max_spares(raidlevel, nummembers):
     else:
         raise ValueError, "invalid raidlevel in get_raid_max_spares"
 
-def register_raid_device(mdname, newdevices, newlevel, newnumActive):
-    """ Register a new RAID device in storage.mdList """
-    for dev, devices, level, numActive in yali4.storage.mdList:
-        if mdname == dev:
-            if (devices!=newdevices or level!=newlevel or numActive!=newnumActive):
-                raise ValueError, "%s is already in the mdlist!" %(mdname,)
-            else:
-                return
-    yali4.storage.mdList.append((mdname, newdevices[:], newlevel, newnumActive))
 
-
+def lookup_raid_device(mdname, raidList=None):
+    """ Return raid device information """
+    if not raidList:
+        rl = scanForRaid()
+    else:
+        rl = raidList
+    for dev, devices, level, numActive in rl:
+        if mdname == "md%d"%dev:
+            return (dev, devices, level, numActive)
+    raise KeyError, "md device not found"

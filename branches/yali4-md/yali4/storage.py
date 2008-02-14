@@ -42,6 +42,8 @@ devices = []
 mdList = []
 # devices that are members of a raid device
 raidMembers = []
+# list of raid majors
+usedMajors = {}
 
 ##
 # initialize all devices and fill devices list
@@ -105,39 +107,43 @@ class Device:
         self._sector_size = 0
         self._parted_type = deviceType
         self._isRaid = False
-        self._raidMembers = []
         global raidMembers
 
-        for i in raidMembers:
-            if device_path == i[0]:
+        for mdDevice, deviceList, level, numActive in raidMembers:
+            if device_path == "/dev/md%d"%mdDevice:
                 print "init raid %s" % device_path
                 self._isRaid = True
-                self._raidMembers = i[1]
+                self._raidMembers = deviceList
+                self._raidLevel = level
+                self._raidActiveNum = numActive
+                self._raidSpares = 0
+                self._raidChunksize = 64
+                self._raidMinor = mdDevice
+                self._raidIsSetup = False
         
-        dev = parted.PedDevice.get(device_path)
+        self._dev = parted.PedDevice.get(device_path)
 
         if self._isRaid:
             self._model = "software raid"
         else:
-            self._model = dev.model
-        self._length = dev.length
-        self._sector_size = dev.sector_size
+            self._model = self._dev.model
+        self._length = self._dev.length
+        self._sector_size = self._dev.sector_size
 
-        self._dev = dev
         try:
-            self._disk = parted.PedDisk.new(dev)
+            self._disk = parted.PedDisk.new(self._dev)
         except:
             label = archinfo[self._arch]["disklabel"]
-            # PedDiskType object disk_type
             disk_type = parted.disk_type_get(label)
             self._disk = self._dev.disk_new_fresh(disk_type)
 
         self._disklabel = self._disk.type.name
-
         self._path = device_path
 
-        if not self._isRaid:
-            print "init %s" % device_path
+        if self._isRaid:
+            self.raidSanityCheck()
+            # self.update()
+        else:
             self.update()
 
     ##
@@ -201,7 +207,71 @@ class Device:
             if path in i[1]:
                 return True
         return False
-
+    
+    def setChunkSize(self, num):
+        # FIXME
+        if len(self._raidMembers) < num:
+            raise RuntimeError, ("you requested more spare devices "
+                                 "than online devices !")
+    
+    def setLevel(self, level):
+        if yali4.raid.isRaid5(level):
+            if len(self._raidMembers) - self._raidSpares < 3:
+                raise RuntimeError, ("RAID 5 requires at least 3 online members")
+        self._raidLevel = level
+        
+    def raidSanityCheck(self):
+        pass
+    
+    def raidMdadmLine(self):
+        global raidMembers
+        try:
+            (dev, devices, level, numActive) = yali4.raid.lookup_raid_device(self._raidMinor, raidMembers)
+        except KeyError, e:
+            print e
+            devices = []
+            
+        for d in devices:
+            try:
+                (major, minor, uuid, level, nrDisks, totalDisks, mdMinor) = \
+                    yali4.mdutils.raidsbFromDevice(self._path)
+                return "ARRAY %s level=%s num-devices=%d uuid=%s\n"\
+                        % (self._path, self._raidLevel, len(self._raidMembers) - self._raidSpares, uuid)
+            except ValueError:
+                pass
+            
+        return "ARRAY %s super-minor=%s\n" % (self._path, self._raidMinor)
+    
+    def register_raid_device(mdname, newdevices, newlevel, newnumActive):
+        """ Register a new RAID device """
+        global raidMembers
+        for dev, devices, level, numActive in raidMembers:
+            if mdname == dev:
+                if (devices!=newdevices or level!=newlevel or numActive!=newnumActive):
+                    raise ValueError, "%s is already in the mdlist!" %(mdname,)
+            
+        raidMembers.append((mdname, newdevices[:], newlevel, newnumActive))
+    
+    def raidSetupDevice(self):
+        
+        if not self.raidIsSetup:
+            args = ["--create", "%s" % (self._path,),
+                    "--run", "--chunk=%s" % (self._raidChunksize,),
+                    "--level=%s" % (self._raidLevel,),
+                    "--raid-devices=%s" % ( str(len(self._raidMembers) - self._raidSpares),)]
+            if self._raidSpares > 0:
+                args.append("--spare-devices=%s" % (self._raidSpares,),)
+            
+            args.extend(self._raidMembers)
+            print "Running : %s " % (["mdadm"] + args,)
+            print yali4.sysutils.execWithCapture("mdadm", args)
+        
+            self.registerRaidDevice(self._raidMinor, self._raidMembers[:],
+                                self._raidLevel, len(self._raidMembers) - self._raidSpares)
+            self.raidIsSetup = True
+        else:
+            yali4.mdutils.raidStart(self._path.split('/')[-1][0])
+    
     ##
     # do we have room for another primary partition?
     # @returns: boolean
