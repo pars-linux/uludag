@@ -11,7 +11,7 @@ public:
     virtual ~PolicyService();
 
 protected:
-    virtual bool handleMethodCall(const QDBusMessage& message);
+    bool handleMethodCall(const QDBusMessage& message);
     bool handleIntrospect(const QDBusMessage& message);
     bool handleObtainAuthorization(const QDBusMessage& message);
     void sendDBusError(const QDBusMessage& message, const QString& errortype, const QString& errorstr = "org.freedesktop.DBus.Error.InvalidSignature");
