@@ -479,7 +479,6 @@ class DiskItem(QtGui.QWidget):
         
         partitionType = getPartitionType(data)
         print "BREAK POINT"
-        print "partitionType is : ", partitionType
         
         _name = ''
         _mpoint = ''
@@ -586,13 +585,10 @@ def getPartitionType(part,rt=1):
     # @see partitiontype.py
     print "inside getPartitionType"
     for pt in partitionTypes.values():
-        print "iterating over partitiontypes :"
-
         # We use MountRequest type for search keyword
         # which is 1, defined in partitionrequest.py
         req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
         if req:
-            print "request ok from searchPartTypeAndReqType for : ", pt.name
             if req.partition() == part:
                 print "req.partition == part"
                 return pt

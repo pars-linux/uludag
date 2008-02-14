@@ -90,63 +90,73 @@ class ArchivePartitionType(PartitionType):
             self.filesystem = yali4.filesystem.Ext3FileSystem()
 
 ##
-# mountpoint'e göre custom partition oluştur.
-class CustomPartitionType(PartitionType):
-    def __init__(self, name, mountpoint, mountoptions, parted_type, 
-                 parted_flags, filesystem=None, label=None):
+#
+class CustomPartitionType(__PartitionType):
+    def __init__(self, name=None, parted_type=None, parted_flags=None, \
+                 filesystem=None, label=None, mountpoint=None, mountoptions=None):
+
         self.name = name
         if filesystem:
             self.filesystem = filesystem
         self.mountpoint = mountpoint
+        self.mountoptions = mountoptions
         self.parted_type = parted_type
         self.parted_flags = parted_flags
-        if label:
-            self.label = label
-        else:
-            self.label = "ARCHIVE"
-            
+        self.label = label
 
-class RaidPartitionType(PartitionType):
-    def __init__(self, raidminor=None, raidlevel = None, raidmembers = None,
-                 raidspares = None, chunksize = None, isdummy = True):
+    def setName(self, name):
+        self.name = name
+        
+    def setMountPoint(self, mp):
+        self.mountpoint = mp
+        
+    def setMountOptions(self, mo):
+        self.mountoptions = mo
+        
+    def setFileSystem(self, fs):
+        self.filesystem = filesystem
+        
+    def setLabel(self, label):
+        self.label = label
+        
+    def setPartedFlags(self, flags):
+        self.parted_flags = flags
+        
+    def setPartedType(self, pt):
+        self.parted_type = pt
+        
+    def getName(self):
+        return self.name
+        
+    def getMountPoint(self):
+        return self.mountpoint
+        
+    def getMountOptions(self):
+        return self.mountoptions
+        
+    def getFileSystem(self):
+        return self.filesystem
+        
+    def getLabel(self):
+        return self.label
+        
+    def getPartedFlags(self):
+        return self.parted_flags
+        
+    def getPartedType(self):
+        return self.parted_type
+        
+##            
+# A partition that will be part of a raid
+class RaidPartitionType(CustomPartitionType):
+    def __init__(self):
         self.name = _("Software RAID")
-        self.filesystem = yali4.filesystem.RaidFileSystem()
-        self.mountpoint = None
-        self.mountoptions = None
-        self.parted_type = parted.PARTITION_RAID
         self.parted_flags = []
-        self.label = "SOFTWARE_RAID"
         
-        self._isdummy = isdummy
-        self._raidminor = raidminor
-        # we dont need this for dummy raid partitions
-        if not isdummy:
-            self._raidlevel = raidlevel
-            self._raidmembers = raidmembers
-            self._raidspares = raidspares
-            self._chunksize = chunksize
-        
-    def sanityCheck(self):
-        minmembers = yali4.raid.get_raid_min_members(self._raidlevel)
-        if len(self._raidmembers) < minmembers:
-            return _("A Raid device of type %s "
-                     "requires at least %s members.") % (self._raidlevel,
-                                                         minmembers)
-                     
-        if len(self._raidmembers) > 27:
-            return "Raid devices are limited to 27 members"
-        
-        if self._raidspares:
-            if (len(self._raidmembers) - self._raidspares) < minmembers:
-                return _("This Raid device can have a maximum of %s spares. "
-                         "To have more spares, you should add more members "
-                         "to raid device.") % ( len(self._raidmembers) - minmembers )
-        
-        return None
-    
-    def getMinor(self):
-        return self._raidminor
-
+        CustomPartitionType.__init__(self, self.name, parted.PARTITION_RAID,
+                                     self.parted_flags, yali4.filesystem.RaidFileSystem(),
+                                     "SOFTWARE_RAID" )
+     
 
 root = RootPartitionType()
 home = HomePartitionType()

@@ -44,47 +44,38 @@ import yali4.storage
 # only raid1 works for boot partitions
 raidBootArches = [ "x86", "amd64", "ppc" ]
 
-
 def scanForRaid():
     """ Scans for raid devices on drives list.
         Returns the tuple ( mdMinor, devices, level, totalDisks )
     """
     raidSets = {}
     raidDevices = {}
-
-    if not yali4.storage.devices:
-        print "device list empty, calling yali4.storage.init_devices()"
-        if not yali4.storage.init_devices():
-            print "no devices returned from storage"
-    devs = yali4.storage.devices
-    print "devices on system are: ", 
+     
+    devs = yali4.storage.detect_devices()
+    
     for i in devs:
-        print " ", i._path,
-
-    for d in devs:
-        # scan for Device objects
+        dev = parted.PedDevice.get(i)
+        disk = parted.PedDisk.new(dev)
+        
         parts = []
+        
         try:
-            raidParts = yali4.partedutils.get_raid_partitions(d._disk)
+            raidParts = yali4.partedutils.get_raid_partitions(disk)
             for part in raidParts:
                 parts.append(yali4.partedutils.get_partition_name(part))
         except:
             pass
-
-        # now parts is a list of raid partitions on disk d
-        # that have the raid partition flag
+        
         for dev in parts:
             try:
-                # get the superblock from raid device
                 (major, minor, raidSet, level, nrDisks, totalDisks, mdMinor) = yali4.mdutils.raidsbFromDevice("/dev/%s"%dev)
             except ValueError:
-                # cant be part of raid set
-                print "reading raid sb failed for %s", dev
+                print "reading raid superblock failed for %s", dev
                 continue
-
+            
             if raidSets.has_key(raidSet):
                 (knownLevel, knownDisks, knownMinor, knownDevices) = raidSets[raidSet]
-
+                
                 if knownLevel != level or knownDisks != totalDisks or knownMinor != mdMinor:
                     print " raid set inconsistency for md%d: " \
                           "all drives in this raid set do not " \
@@ -93,10 +84,9 @@ def scanForRaid():
 
                 knownDevices.append(dev)
                 raidSets[raidSet] = (knownLevel, knownDisks, knownMinor, knownDevices)
-
             else:
                 raidSets[raidSet] = (level, totalDisks, mdMinor, [dev,])
-
+                
             if raidDevices.has_key( mdMinor ):
                 if( raidDevices[mdMinor] != raidSet ):
                     print "raid set inconsistency for md%d: "\
@@ -120,27 +110,17 @@ def scanForRaid():
 
     return raidList
 
-def startAllRaid():
-    """ Start raid on raid devices, returns same struct as scanForRaid """
-    rc = []
-    rl = yali4.storage.mdList
-    if not rl:
-        rl = scanForRaid()
-    for mdDevice, deviceList, level, numActive in rl:
-        devName = "md%d" % (mdDevice,)
-        yali4.mdutils.raidstart(devName, deviceList[0])
-        rc.append((devName, deviceList, level, numActive))
-    yali4.storage.mdList = rl
-    return rc
+def startAllRaid(dev_list=None):
+    """ Give a startraid on raid devices """
+    if dev_list:
+        for mdDevice, deviceList, level, numActive in dev_list:
+            yali4.mdutils.raidstart("md%d"%mdDevice, deviceList[0])
 
-def stopAllRaid():
-    """ Stop all raid devices in tuple mdList """
-    rl = yali4.storage.mdList
-    if not rl:
-        print "scanning raidlist"
-        rl = scanForRaid()
-    for dev, devices, level, numActive in rl:
-        yali4.mdutils.raidstop("md%s"%dev)
+def stopAllRaid(dev_list=None):
+    """ Stop all raid devices in tuple dev_list """
+    if dev_list:
+        for dev, devices, level, numActive in dev_list:
+            yali4.mdutils.raidstop(dev.split('/')[-1:][0])
 
 def isRaid10(raidlevel):
     """ Return whether raidlevel is a valid descriptor of RAID10. """

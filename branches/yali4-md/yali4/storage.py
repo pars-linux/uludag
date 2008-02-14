@@ -31,6 +31,7 @@ from yali4.partition import Partition, FreeSpace
 from yali4.exception import YaliError, YaliException
 import yali4.sysutils as sysutils
 import yali4.filesystem
+import yali4.raid
 
 class DeviceError(YaliError):
     pass
@@ -53,39 +54,23 @@ def init_devices(force = False):
         print "inited before, run with force=True"
         return True
 
-    restricteds = []
     devices = []
-
-    # all devices including raid devices
+    
+    # all devices from /sys/block
     devs = detect_devices()
 
-    # find software raid devices and exclude their members from global device list
-    for i in devs:
-        md = i.split('/')[-1:][0]
-        if os.path.exists("/sys/block/%s/md" % md):
-            for root, dirs, files in os.walk("/sys/block/%s/slaves" % md):
-                for name in dirs:
-                    # append members of raid to restricteds
-                    restricteds.append("/dev/%s" % name)
-            raidMembers.append((i, restricteds,
-                                open("/sys/block/%s/md/level" % md).read().strip(), len(restricteds)))
-            restricteds = []
+    raidMembers = yali4.raid.scanForRaid()
 
+    print "starting raid devices"
+    yali4.raid.startAllRaid(raidMembers)
+
+    for rm in raidMembers:
+        devs = set(devs) - set(rm[1])
     for dev_path in devs:
-        check = True
-        # dont put raid members to devices
-        for rm in raidMembers:
-            if dev_path in rm[1]:
-                check = False
-        if check:
-            d = Device(dev_path)
-            devices.append(d)
+        devices.append(Device(dev_path))
 
     # devices are appended in reverse order
     devices.reverse()
-    
-    print devices
-    print raidMembers
 
     if devices:
         return True
@@ -698,4 +683,10 @@ def detect_partitions_and_devices():
         partitions.append((major, minor, device))
     return partitions
 
-
+##
+# create mdadm.conf file from active arrays
+def createMdadmConf():
+    activeArrays = sysutils.execWithCapture("mdadm", ["--detail", "--scan"])
+    if len(activeArrays) != 0:
+        return "# mdadm.conf created by YALI \nDEVICE partitions \nMAILADDR root \n%s" % activeArrays
+    return

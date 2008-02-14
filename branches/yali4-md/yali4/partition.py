@@ -26,7 +26,6 @@ import yali4.filesystem
 class Partition:
 
     def __init__(self, device, parted_part, minor, mb, start, end, fs_name, fs_ready=True):
-        print "inside constructer of Partition object, for %s%d " % (device._path, minor)
         self._device = device
         self._partition = parted_part
         self._minor = minor

@@ -26,6 +26,7 @@ from yali4.exception import *
 import yali4.sysutils as sysutils
 import yali4.parteddata as parteddata
 import yali4.storage
+import yali4.raid
 
 class FSError(YaliError):
     pass
@@ -193,13 +194,18 @@ class FileSystem:
 # for dummy raid members
 class RaidFileSystem(FileSystem):
     _name = "ext2"
+    _mountoptions = None
 
     def __init__(self):
         FileSystem.__init__(self)
-
-    def format(self, partition):
-        pass
         
+        self.name ="software RAID"
+        if len(yali4.raid.availRaidLevels) != 0:
+            self.setImplemented(True)
+        
+    def format(self, partition):
+        # dont need this
+        pass
         
         
 ##

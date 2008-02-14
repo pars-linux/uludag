@@ -59,9 +59,9 @@ def _mdadm(*args):
 # @param The full path to a RAID device name to check.
 # This device node must already exist.
 # @return A tuple of contents of the RAID superblock, or ValueError.
-def raidsbFromDevice(device):
+def raidsbFromDevice(device, raidDevice=False):
     try:
-        info = yali4.partedutils._getRaidInfo(device)
+        info = yali4.partedutils._getRaidInfo(device, raidDevice)
         return (info['major'], info['minor'], info['uuid'], info['level'],
                 info['nrDisks'], info['totalDisks'], info['mdMinor'])
     except:
