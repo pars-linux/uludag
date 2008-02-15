@@ -1,0 +1,30 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell kcmnotify
+Icon=knotify
+Type=Application
+DocPath=kcontrol/kcmnotify/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=knotify
+X-KDE-ParentApp=tasma
+
+Name=System Notifications
+Name[tr]=Sistem Bildirimleri
+Name[nl]=Systeemnotificaties
+Name[es]=Notificaciones del Sistema
+Name[de]=Systemmeldungen
+
+Comment=System Notification Configuration
+Comment[tr]=Sistem Bildirimi Yapılandırması
+Comment[nl]=Instellingen van de systeemnotificatie
+Comment[es]=Configuración de notificaciones del sistema
+Comment[de]=Systemmeldung Konfiguration
+
+Keywords=System sounds,Audio,Sound,Notify,Alerts,Notification
+Keywords[tr]=Sistem sesleri,Ses,Bildir,Alarmlar,Bildirme
+Keywords[nl]=systeemgeluiden,audio,geluid,waarschuwingen,geluidssignaal,notificatie
+Keywords[es]=Sonidos del sistema,Audio,Sonido,Notificación,Alertas,Notificar
+Keywords[de]=System-Sounds,Audio,Sound,Melden,Alarmsignale,Meldung,
+
+Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound

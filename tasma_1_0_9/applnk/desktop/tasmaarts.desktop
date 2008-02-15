@@ -1,0 +1,25 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell arts
+Icon=arts
+Type=Application
+DocPath=kcontrol/arts/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=arts
+X-KDE-Init=arts
+X-KDE-ParentApp=tasma
+
+Name=Sound System
+Name[tr]=Ses Sistemi
+Name[nl]=Geluidssysteem
+
+Comment=Sound System Configuration
+Comment[tr]=Ses Sistemi Yapılandırması
+Comment[nl]=Geluidssysteem instellen
+
+Keywords=aRts,Sound Server,artsd,Audio,Sound,startup,network transparency,transparency,priority,duplex,full duplex,response time,Mixer,Volume,KMix,Mix,login,MIDI,synthesizer,music
+Keywords[tr]=aRts,Ses Sunucu,artsd,Ses,Ses,Başlangıç,ağ geçirgenliği,geçirgenlik,öncelik,dubleks,tam dubleks,karşılık süresi,MIDI,karıştırıcı,Kmix
+Keywords[nl]=aRts,sound server,artsd,audio,sound,geluidsserver,geluid,opstarten,netwerk ,netwerktransparantie,priority,prioriteit,duplex,full duplex,response time,responstijd,volume,KMix,kanalen,login,aanmelden,synthesizer,muziek,mixer,midi,
+
+Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound

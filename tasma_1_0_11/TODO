@@ -1,0 +1,14 @@
+
+** Forking from kde **
+
+- forking kcontrol modules... we need to fork and "restructure"/"rewrite?"
+  some of kcontrol modules. 
+
+** Other coding issues **
+
+- some kind of help system. showing a modules descriptive information (help)
+  is a must!
+
+** Graphical Requirements **
+
+- some of the (missing/ugly)icons for configuration modules must be changed.

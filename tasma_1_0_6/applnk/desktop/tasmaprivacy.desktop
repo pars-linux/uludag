@@ -1,0 +1,21 @@
+[Desktop Entry]
+Icon=trashcan_empty
+Encoding=UTF-8
+
+Comment=Privacy - a kcontrol module to clean unwanted traces the user leaves on the system
+Comment[tr]=Gizlilik - kullanıcının sistemde bıraktığı iztenilmeyen izlemeleri temizleyen kcontrol modülü
+
+Exec=kcmshell privacy
+
+Keywords=Privacy,privacy
+Keywords[tr]=gizlilik
+
+Name=Privacy
+Name[tr]=Gizlilik
+
+Terminal=false
+Type=Application
+X-KDE-FactoryName=privacy
+X-KDE-Library=privacy
+X-KDE-ModuleType=Library
+Categories=Qt;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount
