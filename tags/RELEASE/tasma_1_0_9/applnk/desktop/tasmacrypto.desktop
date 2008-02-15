@@ -1,0 +1,23 @@
+[Desktop Entry]
+Encoding=UTF-8
+Icon=encrypted
+Type=Application
+Exec=kcmshell crypto
+DocPath=kcontrol/crypto/index.html
+X-KDE-ModuleType=Library
+X-KDE-Library=crypto
+X-KDE-ParentApp=tasma
+
+Name=Crypto
+Name[tr]=Şifreleme
+Name[nl]=Cryptografie
+
+Comment=Configure SSL, manage certificates, and other cryptography settings
+Comment[tr]=SSL,sertifika,sertifika ayarları,diğer şifreleme ayarları
+Comment[nl]=Hier kunt u SSL, certificatenbeheer en andere cryptografische instellingen wijzigen
+
+Keywords=Crypto,Krypto,Cryptography,encryption,SSL,https,certificates,ciphers,TLS,secure,security
+Keywords[tr]=Şifre,şifreleme,şifrebilim,SSL,https,sertifika,TLS,güvenlik,güvenli
+Keywords[nl]=crypto,krypto,cryptografie,encryptie,ssl,https,certificaten,ciphers,tls,beveiliging,veilig,codering,gecodeerd,versleuteling
+
+Categories=Qt;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount

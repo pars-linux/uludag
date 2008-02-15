@@ -1,0 +1,33 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+DocPath=kcontrol/proxy/index.html
+Icon=proxy
+Exec=kcmshell proxy
+
+X-KDE-ModuleType=Library
+X-KDE-Library=kio
+X-KDE-FactoryName=proxy
+X-KDE-ParentApp=tasma
+
+Name=Proxy
+Name[tr]=Vekil Sunucu
+Name[es]=Proxy
+Name[de]=Proxy
+Name[pt_BR]=Proxy
+
+Comment=Configure the proxy servers used
+Comment[tr]=Vekil sunucularını yapılandırır
+Comment[nl]=Hier kunt u de Proxy-servers instellen
+Comment[es]=Configuración del servidor proxy
+Comment[de]=Proxy-Server konfigurieren
+Comment[pt_BR]=Configurar os servidores proxy utilizados
+
+Keywords=Proxy,Proxy server,Firewall,Squid,proxy
+Keywords[tr]=Vekil,Vekil sunucu,Güvenlik duvarı,Squid,proxy
+Keywords[nl]=proxy,proxy server,firewall,squid
+Keywords[es]=proxy,servidor proxy server,firewall,cortafuegos,squid
+Keywords[de]=Proxy,Proxy-Server,Firewall,Squid,Proxy
+Keywords[pt_BR]=Proxy,Servidor proxy,Firewall,Squid,proxy
+
+Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network

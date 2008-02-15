@@ -1,0 +1,24 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=kcmshell clock
+Icon=date
+DocPath=kcontrol/clock/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=clock
+X-KDE-ParentApp=tasma
+
+Name=Date & Time
+Name[tr]=Tarih ve Saat
+Name[nl]=Datum en Tijd
+
+Comment=Date and time settings
+Comment[tr]=Tarih ve saat ayarları
+Comment[nl]=Instellen van datum en tijd
+
+Keywords=clock,date,time,time zone
+Keywords[tr]=tarih,saat,saat dilimi,zaman,zaman dilimi
+Keywords[nl]=datum,tijd,tijdszone,klok
+
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-localization

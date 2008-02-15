@@ -1,0 +1,25 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell screensaver
+Icon=kscreensaver
+Type=Application
+DocPath=kcontrol/screensaver/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=screensaver
+X-KDE-FactoryName=screensaver
+X-KDE-ParentApp=tasma
+
+Name=Screen Saver
+Name[tr]=Ekran Koruyucusu
+Name[nl]=Schermbeveiliging
+
+Comment=Screen Saver Settings
+Comment[tr]=Ekran Koruyucusu Ayarları
+Comment[nl]=Schermbeveiliging instellen
+
+Keywords=screensavers,Priority
+Keywords[tr]=ekran koruyucular,Öncelik,ekran koruyucusu,ekran koruyucuları
+Keywords[nl]=screensavers,schermbeveiliging,prioriteit,schermvergrendeling
+
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
