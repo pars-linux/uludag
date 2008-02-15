@@ -1,0 +1,142 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>PackageDlg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>PackageDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>600</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>pix_package</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="2" column="0">
+            <property name="name">
+                <cstring>packageSettingsGroup</cstring>
+            </property>
+            <property name="title">
+                <string>Package Manager</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLayoutWidget" row="1" column="0">
+                            <property name="name">
+                                <cstring>layout2</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>Spacer6</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Fixed</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>20</width>
+                                            <height>16</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                                <widget class="QCheckBox">
+                                    <property name="name">
+                                        <cstring>checkUpdate</cstring>
+                                    </property>
+                                    <property name="enabled">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="text">
+                                        <string>Check updates automatically for every</string>
+                                    </property>
+                                </widget>
+                                <widget class="QSpinBox">
+                                    <property name="name">
+                                        <cstring>updateInterval</cstring>
+                                    </property>
+                                    <property name="enabled">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="acceptDrops">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="prefix">
+                                        <string></string>
+                                    </property>
+                                    <property name="suffix">
+                                        <string> hours</string>
+                                    </property>
+                                    <property name="buttonSymbols">
+                                        <enum>UpDownArrows</enum>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>168</number>
+                                    </property>
+                                    <property name="minValue">
+                                        <number>1</number>
+                                    </property>
+                                    <property name="value">
+                                        <number>12</number>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QCheckBox" row="0" column="0">
+                            <property name="name">
+                                <cstring>showTray</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Show in system tray</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>packageLabel</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Package-manager&lt;/b&gt; is the graphical front-end of &lt;b&gt;PiSi&lt;/b&gt;. With package-manager you can easily install new programs and upgrade your system. But also can work in the system tray and periodically checks new upgrades of the programs that are installed on your system.</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter</set>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,169 @@
+# translation of kaptan.po to Nederlands
+# This file is put in the public domain.
+#
+# Willem Gielen <w.gielen@gmail.com>, 2006.
+# Rinse de Vries <rinsedevries@kde.nl>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kaptan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-12-07 20:00+0200\n"
+"PO-Revision-Date: 2006-08-21 21:12+0300\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#. i18n: file goodbyedlg.ui line 32
+#: goodbyedlg.cpp:63 rc.cpp:3
+#, no-c-format
+msgid "pix_goodbye"
+msgstr "pix_goodbye"
+
+#. i18n: file goodbyedlg.ui line 64
+#: goodbyedlg.cpp:64 rc.cpp:6
+#, no-c-format
+msgid ""
+"<center>\n"
+"You have finished!  Now you can start using Pardus Linux<br>\n"
+"<a href=\"#tasma\">If you want to change more settings click here to start "
+"<b>Tasma</b></a>\n"
+"</center>"
+msgstr ""
+"<center>\n"
+"U bent klaar! Vanaf nu kunt u Pardus Linux gaan gebruiken<br>\n"
+"<a href=\"#tasma\">Als u meer instellingen wilt veranderen, klik dan hier om "
+"<b>Tasma</b> op te starten.</a>\n"
+"</center>"
+
+#: kaptan.cpp:37
+msgid "Welcome"
+msgstr "Welkom"
+
+#: kaptan.cpp:41
+msgid "Mouse Setup"
+msgstr "Muis"
+
+#: kaptan.cpp:45
+msgid "Wallpaper Setup"
+msgstr "Bureaubladachtergrond"
+
+#: kaptan.cpp:49
+msgid "Congratulations"
+msgstr "Gefeliciteerd"
+
+#: main.cpp:18
+msgid "Kaptan Desktop"
+msgstr "Kaptan Desktop"
+
+#. i18n: file mousesetupdlg.ui line 24
+#: mousesetupdlg.cpp:92 rc.cpp:12
+#, no-c-format
+msgid ""
+"If you are left-handed, you may prefer to swap the functions of the left and "
+"right buttons on your pointing device by choosing the 'Left handed' option "
+"below. If your pointing device has more than two buttons, only those that "
+"function as the left and right buttons are affected. For example, if you "
+"have a tree-button mouse, the middle buttons is unaffected."
+msgstr "Als u linkshandig bent, dan kunt u de knoppen van uw aanwijsapparaat omwisselen met onderstaande optie. Als uw aanwijsapparaat meer dan twee knoppen heeft, dan zal dit alleen effect hebben op de linker en rechter muisknop. Bijv. als u een drieknops-muis hebt, dan verandert er niets aan de middelste muisknop."
+
+#. i18n: file mousesetupdlg.ui line 55
+#: mousesetupdlg.cpp:93 rc.cpp:15
+#, no-c-format
+msgid "Button Order"
+msgstr "Knopvolgorde"
+
+#. i18n: file mousesetupdlg.ui line 106
+#: mousesetupdlg.cpp:94 rc.cpp:18
+#, no-c-format
+msgid "Righ&t handed"
+msgstr "Rech&tshandig"
+
+#. i18n: file mousesetupdlg.ui line 117
+#: mousesetupdlg.cpp:95 rc.cpp:21
+#, no-c-format
+msgid "Le&ft handed"
+msgstr "Lin&kshandig"
+
+#. i18n: file wallpaperdlg.ui line 16
+#: rc.cpp:24 wallpaperdlg.cpp:92
+#, no-c-format
+msgid "WallpaperDlg"
+msgstr "BureaubladDIg"
+
+#. i18n: file wallpaperdlg.ui line 44
+#: rc.cpp:27 wallpaperdlg.cpp:93
+#, no-c-format
+msgid ""
+"Here, you can select a wallpaper for your desktop background. Pardus "
+"provides eye candy wallpapers, you can select one of them, as you wish :)."
+msgstr ""
+"Hier kunt u een achtergrond voor uw bureaublad kiezen. Pardus voorziet u "
+"van oogstrelende achtergronden, waarvan u er één kunt selecteren."
+
+#. i18n: file wallpaperdlg.ui line 55
+#: rc.cpp:30 wallpaperdlg.cpp:94
+#, no-c-format
+msgid "Wallpaper :"
+msgstr "Achtergrond:"
+
+#. i18n: file wallpaperdlg.ui line 87
+#: rc.cpp:33 wallpaperdlg.cpp:95
+#, no-c-format
+msgid "Preview :"
+msgstr "Voorbeeld:"
+
+#. i18n: file wallpaperdlg.ui line 110
+#: rc.cpp:36 wallpaperdlg.cpp:96
+#, no-c-format
+msgid "pix_wallpaper"
+msgstr "pix_wallpaper"
+
+#. i18n: file wallpaperdlg.ui line 120
+#: rc.cpp:39 wallpaperdlg.cpp:97
+#, no-c-format
+msgid "Don't change desktop background!"
+msgstr "De achtergrond niet veranderen!"
+
+#. i18n: file wallpaperdlg.ui line 145
+#: rc.cpp:42 wallpaperdlg.cpp:98
+#, no-c-format
+msgid "&Test Wallpaper"
+msgstr "Achtergrond &testen"
+
+#. i18n: file welcomedlg.ui line 41
+#: rc.cpp:48 welcomedlg.cpp:72
+#, no-c-format
+msgid "pix_pardus"
+msgstr "pix_pardus"
+
+#. i18n: file welcomedlg.ui line 49
+#: rc.cpp:51 welcomedlg.cpp:73
+#, no-c-format
+msgid ""
+"Uludag project is a GNU/Linux distribution, targeting at computer literate "
+"users' basic desktop needs; with acquiring the strong ideas, architecture "
+"and code of other distributions; with a custom configuration framework which "
+"has the ability to evolve into an autonomous system; for simplifying the "
+"installation and usage of the computers."
+msgstr "Het Uludag-project is een GNU/Linux-distributie die zich richt op computergebruikers met gemiddelde ervaring die behoefte hebben aan een eenvoudig systeem. Dit doel wordt bereikt door de goede ideeën, architectuur en code van andere distributies te combineren met een eigen configuratieraamwerk. Dit raamwerk heeft de potentie om te evoluëren in een autonoom systeem dat het installeren en gebruiken van computers sterk zal vereenvoudigen."
+
+#. i18n: file welcomedlg.ui line 72
+#: rc.cpp:54 welcomedlg.cpp:74
+#, no-c-format
+msgid "pix_kaptan"
+msgstr "pix_kaptan"
+
+#. i18n: file welcomedlg.ui line 86
+#: rc.cpp:57 welcomedlg.cpp:75
+#, no-c-format
+msgid ""
+"This application, called <b>Kaptan Desktop</b>, will help you with your "
+"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
+"This application will also set some default configuration for a better "
+"desktop :)."
+msgstr "Dit programma, genaamd <b>Kaptan Desktop</b>, zal u helpen om uw <b>Pardus</b>-desktop in enkele eenvoudige stappen in te stellen."
+
