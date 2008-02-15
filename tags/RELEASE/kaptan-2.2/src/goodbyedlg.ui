@@ -1,0 +1,57 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>GoodbyeDlg</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>GoodbyeDlg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>600</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>pix_goodbye</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>7</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="0">
+            <property name="name">
+                <cstring>tasmaButton</cstring>
+            </property>
+            <property name="text">
+                <string>Start Tasma</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>goodbyeLabel</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;center&gt;You have finished!  Now you can start using &lt;b&gt;Pardus&lt;/b&gt;&lt;/center&gt;</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
