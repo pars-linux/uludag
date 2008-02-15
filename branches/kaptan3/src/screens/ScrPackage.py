@@ -14,20 +14,28 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
-#import kconfig
 
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
 
 class Widget(PackageWidget, ScreenWidget):
-    
+
     # title and description at the top of the dialog window
     title = "Package Manager"
     desc = "Configure package manager settings..."
 
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
-        self.applySettings()
+        self.checkBoxSysTray.connect(self.checkBoxSysTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
+        print self.checkBoxSysTray.isOn()
+
+    def enableCheckTime(self):
+        if self.checkBoxSysTray.isOn():
+            self.checkBoxCheckTime.setEnabled(True)
+            self.spinBoxCheckTime.setEnabled(True)
+        else:
+            self.checkBoxCheckTime.setEnabled(False)
+            self.spinBoxCheckTime.setEnabled(False)
 
     def applySettings(self):
 
