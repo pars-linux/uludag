@@ -20,39 +20,47 @@ from screens.packagedlg import PackageWidget
 
 class Widget(PackageWidget, ScreenWidget):
 
+    #TODO: Contrib depo ekleme hedesi yapilacak. Ama policykit, dbus ne alemde aboo
+
     # title and description at the top of the dialog window
     title = "Package Manager"
     desc = "Configure package manager settings..."
 
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
-        self.checkBoxSysTray.connect(self.checkBoxSysTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
-        print self.checkBoxSysTray.isOn()
+        self.showTray.connect(self.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
+        self.checkUpdate.connect(self.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected);
 
     def enableCheckTime(self):
-        if self.checkBoxSysTray.isOn():
-            self.checkBoxCheckTime.setEnabled(True)
-            self.spinBoxCheckTime.setEnabled(True)
+        if self.showTray.isOn():
+            self.checkUpdate.setEnabled(True)
+            self.updateInterval.setEnabled(self.checkUpdate.isChecked() and self.showTray.isChecked())
         else:
-            self.checkBoxCheckTime.setEnabled(False)
-            self.spinBoxCheckTime.setEnabled(False)
+            self.checkUpdate.setEnabled(False)
+            self.updateInterval.setEnabled(False)
+
+    def updateSelected(self):
+        if self.checkUpdate.isOn():
+            self.updateInterval.setEnabled(True)
+        else:
+            self.updateInterval.setEnabled(False)
 
     def applySettings(self):
 
         config = KConfig("package-managerrc")
         config.setGroup("General")
-        config.writeEntry("SystemTray", True)
-        config.writeEntry("UpdateCheck", True)
-        config.writeEntry("UpdateCheckInterval", 2 * 60)
+        config.writeEntry("SystemTray", self.showTray.isChecked())
+        config.writeEntry("UpdateCheck", self.checkUpdate.isChecked())
+        config.writeEntry("UpdateCheckInterval", self.updateInterval.value() * 60)
         config.sync();
 
-        proc = KProcess()
-        proc << locate("exe", "package-manager")
-        proc.start(KProcess.DontCare)
-
+        if self.showTray.isChecked():
+            proc = KProcess()
+            proc << locate("exe", "package-manager")
+            proc.start(KProcess.DontCare)
 
     def shown(self):
-        pass
+        self.applySettings()
 
     def execute(self):
         return True
