@@ -5,16 +5,14 @@ TODO List
 / In progress
 + Accomplished
 
-Before 2007.3:
-    + Add KNode Accounts
-    ? migrate identities to kmail
-    + Find a way to migrate e-mails (copy mbox file, use python mailbox module, use kmail dcop interface) -> get messages by hand and add them with dcop
-    + Check SMTP Authentication Type (Thunderbird, OE, KMail)
-    + Copy e-mail messages
-    - Make package (where should i put archive file?)
-    - Remove bugs
+Before 2008:
+    - Firefox 3 support
+    - Opera support
+    - Outlook & OE support
+    - Change logo
+    - Find a way to migrate fonts
     - Update help file
-    - Find an application name and logo
+    - Make project webpage
 
 General:
     + User help pages
