@@ -58,7 +58,8 @@ class Widget(PackageWidget, ScreenWidget):
             proc = KProcess()
             proc << locate("exe", "package-manager")
             proc.start(KProcess.DontCare)
-
+    
+    #TODO: su applySettings hadisesi kaptan kapatildiktan sonra acilsin.
     def shown(self):
         self.applySettings()
 
