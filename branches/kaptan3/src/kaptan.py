@@ -25,10 +25,20 @@ from screens.kaptanMain import kaptanUi
 import screens.ScrWelcome as ScrWelcome
 import screens.ScrWallpaper as ScrWallpaper
 import screens.ScrPackage as ScrPackage
+import screens.ScrMouse as ScrMouse
+import screens.ScrNetwork as ScrNetwork
+import screens.ScrPanel as ScrPanel
+import screens.ScrSummary as ScrSummary
+import screens.ScrGoodbye as ScrGoodbye
 
 avail_screens = [ScrWelcome,
+                 ScrMouse,
+                 ScrPanel,
                  ScrWallpaper,
-                 ScrPackage]
+                 ScrNetwork,
+                 ScrPackage,
+                 ScrSummary,
+                 ScrGoodbye]
 
 
 mod_app = "Kaptan"
