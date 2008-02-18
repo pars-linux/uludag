@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE greeter SYSTEM "greeter.dtd">
+<greeter>
+
+<!-- arkaplan -->
+<item type="pixmap">
+	<normal file="background.jpg"/>
+	<pos x="0" y="0" width="100%" height="100%"/>
+</item>
+
+<!-- makina adı -->
+<item type="rect">
+	<pos anchor="nw" x="0" y="%50" width="box" height="box"/>
+	<box orientation="vertical" xpadding="0" ypadding="0">
+		<item type="label">
+			<normal color="#9fafbf" font="Serif Bold 28"/>
+			<text>&lt; %h &gt;</text>
+		</item>
+	</box>
+</item>
+
+<!-- saat -->
+<item type="label" id="clock">
+	<normal color="#8f9faf" font="Sans 16"/>
+	<pos anchor="nw" x="5" y="%55"/>
+	<text>%c</text>
+</item>
+
+<!-- sistem butonları
+
+kdm fix edilene kadar disabled
+
+<item type="rect" id="language_button" button="true">
+    <pos y="%72" x="%60" anchor="nw" width="22" height="22"/>
+    <normal file="language.png" tint="#dddddd"/>
+    <prelight file="language.png"/>
+    <active file="language.png" tint="#ff0000"/>
+</item>
+
+-->
+
+<item type="pixmap" id="shutdown_button" button="true">
+    <pos y="%76" x="%48" anchor="nw" width="64" height="64"/>
+    <normal file="exit.png" tint="#dddddd"/>
+    <prelight file="exit.png"/>
+    <active file="exit.png" tint="#e07070"/>
+</item>
+
+<item type="label">
+    <pos x="%53" y="%78" anchor="nw" width="100%" height="100%"/>
+    <normal color="#F0E0D0" font="Sans Bold 22"/>
+    <stock type="quit"/>
+</item>
+
+<!-- kullanıcı listesi -->
+<item type="rect" id="userlist">
+  <pos anchor="nw" x="%68" y="%55" height="250" width="200"/>
+</item>
+
+<!-- kullanıcı ve parola alanları -->
+<item type="rect">
+	<pos anchor="nw" x="%45" y="%61" height="box" width="box"/>
+	<box orientation="vertical" homogeneous="false" spacing="10">
+		<pos height="box" width="box"/>
+		<item type="rect">
+			<pos anchor="w" height="box" width="box"/>
+			<box orientation="vertical" spacing="10">
+	            <!-- kullanıcı adı sorusu -->
+				<item type="label">
+					<normal color="#FFFFFF" font="Sans Bold 11"/>
+					<stock type="username-label"/>
+				</item>
+				<!-- kullanıcı adı giriş yeri -->
+				<item type="entry" id="user-entry">
+                    <pos width="140" height="22"/>
+				</item>
+				<!-- parola sorusu -->
+				<item type="label">
+					<normal color="#FFFFFF" font="Sans Bold 11"/>
+					<stock type="password-label"/>
+				</item>
+				<!-- parola giriş yeri -->
+				<item type="entry" id="pw-entry">
+                    <pos width="140" height="22"/>
+				</item>
+			</box>
+		</item>
+	</box>
+</item>
+
+<!-- hata mesajı -->
+<item type="label" id="pam-error">
+	<pos anchor="c" x="%50" y="72%"/>
+	<normal color="#FFFFFF" font="Sans Bold 18"/>
+</item>
+
+<!-- capslock uyarısı -->
+<item type="rect" id="caps-lock-warning">
+	<normal color="#252525" alpha="0.5"/>
+	<pos anchor="nw" x="%1" y="77%" width="box" height="box"/>
+	<box orientation="vertical" xpadding="6" ypadding="6">
+		<item type="label">
+			<normal color="#ffffff" font="Sans Bold 12"/>
+			<pos anchor="nw" x="0" y="0"/>
+			<stock type="caps-lock-warning"/>
+		</item>
+	</box>
+</item>
+
+
+</greeter>
