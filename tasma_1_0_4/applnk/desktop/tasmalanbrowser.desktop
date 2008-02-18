@@ -1,0 +1,20 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Icon=samba
+Exec=kcmshell lanbrowser
+
+X-KDE-ModuleType=Library
+X-KDE-Library=kio
+X-KDE-FactoryName=lanbrowser
+
+Name=Local Network Browsing
+Name[tr]=Yerel Ağ Tarama
+
+Comment=Setup lisa, reslisa and the ioslaves
+Comment[tr]=lisa, reslisa ve ioslaves kurulumu
+
+Keywords=samba,smb,windows,network
+Keywords[tr]=samba,smb,windows,ağ
+
+Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network
