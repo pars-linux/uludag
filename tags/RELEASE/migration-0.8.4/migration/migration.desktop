@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Migration
+Name[tr]=Migration
+GenericName=Pardus Migration Tool
+GenericName[tr]=Pardus Göç Aracı
+Exec=migration
+Icon=migration
+Type=Application
+Comment=A wizard to transfer files and settings from existing operating systems
+Comment[tr]=Eski işletim sistemlerinizden dosya ve ayarlarınızı aktarmanızı sağlayan bir sihirbaz
+Categories=Qt;KDE;System
