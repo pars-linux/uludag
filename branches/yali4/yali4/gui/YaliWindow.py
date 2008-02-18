@@ -33,8 +33,10 @@ class Widget(Ui_YaliMain):
         self.ui = QtGui.QWidget()
         self.setupUi(self.ui)
         self.screenData = None
+        # shortcut to open debug window
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
         self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
+        # move one step at a time
         self.moveInc = 1
 
         # Dont need help as default
@@ -46,51 +48,62 @@ class Widget(Ui_YaliMain):
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
         QObject.connect(self.toggleHelp, SIGNAL("clicked()"), self.slotToggleHelp)
 
+    # show/hide help text
     def slotToggleHelp(self):
         if self.helpContent.isVisible():
             self.helpContent.hide()
         else:
             self.helpContent.show()
-
+    
+    # show/hide debug window
     def toggleDebug(self):
         if ctx.debugger.isVisible():
             ctx.debugger.hideWindow()
         else:
             ctx.debugger.showWindow()
 
-    def getCur(self,d):
+    # returns the id of current stack
+    def getCur(self, d):
         new   = self.mainStack.currentIndex() + d
         total = self.mainStack.count()
         if new < 0: new = 0
         if new > total: new = total
         return new
 
-    def setCurrent(self,cur=None):
-        if cur:
-            self.stackMove(cur)
+    # move to id numbered step
+    def setCurrent(self, id=None):
+        if id:
+            self.stackMove(id)
 
+    # execute next step
     def slotNext(self):
         _w = self.mainStack.currentWidget()
         _w.execute()
         self.stackMove(self.getCur(self.moveInc))
         self.moveInc = 1
 
+    # execute previous step
     def slotBack(self):
         _w = self.mainStack.currentWidget()
         _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
 
-    def stackMove(self,new):
-        self.mainStack.setCurrentIndex(new)
+    # move to id numbered stack
+    def stackMove(self, id):
+        self.mainStack.setCurrentIndex(id)
         _w = self.mainStack.currentWidget()
+        # shown functions contain necessary instructions before
+        # showing a stack ( updating gui, disabling some buttons etc. )
         _w.shown()
         self.screenName.setText(_w.title)
         self.screenDescription.setText(_w.desc)
         self.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
         self.helpContent.setText(_w.help)
 
-    def createWidgets(self,screens=[]):
+    # create all widgets and add inside stack
+    # see runner.py/_all_screens for the list
+    def createWidgets(self, screens=[]):
         if not self.screenData:
             self.screenData = screens
         self.mainStack.removeWidget(self.page)
