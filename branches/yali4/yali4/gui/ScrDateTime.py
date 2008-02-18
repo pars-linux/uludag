@@ -17,14 +17,11 @@ _ = __trans.ugettext
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-import pisi.ui
-import yali4.pisiiface
+import os
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.datetimewidget import Ui_DateTimeWidget
 import yali4.gui.context as ctx
 from yali4.sysutils import TimeZoneList
-
-from yali4.gui.YaliDialog import Dialog
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Set your timezone')
@@ -44,13 +41,58 @@ It is important to use correct settings.
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_DateTimeWidget()
         self.ui.setupUi(self)
+        self.timer = QTimer(self)
+        self.fromTimeUpdater = True
+
+        # fill in the timezone list
         zom = TimeZoneList()
         zoneList = [ x.timeZone for x in zom.getEntries() ]
+        zoneList.sort()
         for zone in zoneList:
             self.ui.timeZoneList.addItem(QString(zone))
 
+        self.connect(self.ui.timeHours, SIGNAL("valueChanged(int)"),self.timerStop)
+        self.connect(self.ui.timeMinutes, SIGNAL("valueChanged(int)"),self.timerStop)
+        self.connect(self.ui.timeSeconds, SIGNAL("valueChanged(int)"),self.timerStop)
+        self.connect(self.timer, SIGNAL("timeout()"),self.updateClock)
+
+    def timerStop(self,i):
+        if self.fromTimeUpdater:
+            return
+        self.ui.timeHours.setPrefix('')
+        self.ui.timeMinutes.setPrefix('')
+        self.ui.timeSeconds.setPrefix('')
+        self.timer.stop()
+
+    def updateClock(self):
+
+        def sw(w,n):
+            w.setValue(n)
+            if n<10:
+                w.setPrefix('0')
+            else:
+                w.setPrefix('')
+
+        cur = QTime.currentTime()
+
+        self.fromTimeUpdater = True
+        sw(self.ui.timeHours,cur.hour())
+        sw(self.ui.timeMinutes,cur.minute())
+        sw(self.ui.timeSeconds,cur.second())
+        self.fromTimeUpdater = False
+
     def shown(self):
-        pass
-        #from os.path import basename
-        #ctx.debugger.log("%s loaded" % basename(__file__))
+        self.timer.start(1000)
+
+    def execute(self):
+        date = self.ui.calendarWidget.selectedDate()
+        args = "%02d%02d%02d%02d%04d.%02d" % (date.month(), date.day(),
+                                              self.ui.timeHours.value(), self.ui.timeMinutes.value(),
+                                              date.year(), self.ui.timeSeconds.value())
+        # Set current date and time
+        os.system("date %s" % args)
+        self.timer.stop()
+
+        # Sync date time with hardware
+        os.system("hwclock --systohc")
 

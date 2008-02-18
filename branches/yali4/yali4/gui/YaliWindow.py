@@ -34,7 +34,7 @@ class Widget(Ui_YaliMain):
         self.setupUi(self.ui)
         self.screenData = None
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
-
+        self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
         self.moveInc = 1
 
         # Dont need help as default
