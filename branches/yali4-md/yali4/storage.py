@@ -27,7 +27,7 @@ import struct
 import binascii
 
 from yali4.parteddata import *
-from yali4.partition import Partition, FreeSpace
+from yali4.partition import Partition, FreeSpace, RaidPartition
 from yali4.exception import YaliError, YaliException
 import yali4.sysutils as sysutils
 import yali4.filesystem
@@ -61,16 +61,18 @@ def init_devices(force = False):
     # all devices from /sys/block
     devs = detect_devices()
 
+    # raid devices and their members in (mdNum, [members list], level, activeNum) form
     raidMembers = yali4.raid.scanForRaid()
 
     print "starting raid devices"
     yali4.raid.startAllRaid(raidMembers)
 
+    # exclude raid members from devices list
     for rm in raidMembers:
-        devs = set(devs) - set(rm[1])
+        devs = list(set(devs) - set(rm[1]))
     for dev_path in devs:
         devices.append(Device(dev_path))
-
+        
     # devices are appended in reverse order
     devices.reverse()
 
@@ -80,11 +82,7 @@ def init_devices(force = False):
 
 def clear_devices():
     global devices
-    global mdList
-    global raidMembers
-    raidMembers = []
     devices = []
-    mdList = []
 
 #
 # Class representing a partitionable storage
@@ -142,38 +140,20 @@ class Device:
 
         if self._isRaid:
             self.raidSanityCheck()
-            # self.update()
         else:
             self.update()
 
-    ##
-    # print summary for device
-    def printSummary(self):
-        print "%s için özet: (debug) " % self._path
-        if self._isRaid:
-            print "%s bir raid device" % self._path,
-            print "üyeleri: ", self._raidMembers
-        else:
-            print "%s raid device degil" % self._path
-        print "%s'nin modeli : " % self._path, self._model
-        print "%s'nin uzunluğu : " % self._path, self._length
-        print "%s'nin sektör büyüklüğü : " % self._path, self._sector_size
-        print "%s'nin disk etiketi : " % self._path, self._disklabel
-        
     ##
     # clear and re-fill partitions dict.
     def update(self):
         self._partitions = []
         print "updating partitions of ", self._path
 
-        #if self.isRaid():
-        #    return
         part = self._disk.next_partition()
         
         while part:
             if part.num >= 1:
-                if not self.isPartOfRaid("%s%d" % (self._path, part.num)):
-                    self.__addToPartitionsDict(part)
+                self.__addToPartitionsDict(part)
             part = self._disk.next_partition(part)
 
     ##
@@ -201,10 +181,11 @@ class Device:
         return raidParts
     
     ##
-    # Checks if path is in global raidMembers list
+    # Checks if path (/dev/hda3) is in global raidMembers list
     def isPartOfRaid(self, path):
+        global raidMembers
         for i in raidMembers:
-            if path in i[1]:
+            if path.split('/')[-1:][0] in i[1]:
                 return True
         return False
     
@@ -213,6 +194,7 @@ class Device:
         if len(self._raidMembers) < num:
             raise RuntimeError, ("you requested more spare devices "
                                  "than online devices !")
+        self._raidChunksize = num
     
     def setLevel(self, level):
         if yali4.raid.isRaid5(level):
@@ -552,22 +534,27 @@ class Device:
     #
     # @returns: Partition
     def __addToPartitionsDict(self, part, fs_ready=True):
-        print "[inside] addToPartitionsDict for : %s%d " % (self._path, part.num)
+        global raidMembers
         geom = part.geom
         part_mb = long((geom.end - geom.start + 1) * self._sector_size / MEGABYTE)
-        print part_mb
+
         if part.num >= 1:
             fs_name = ""
-            if part.fs_type:
-                fs_name = part.fs_type.name
-                print "setting fs_name to :", fs_name
-            elif part.type & parted.PARTITION_EXTENDED:
-                fs_name = "extended"
-                print "settings fs_name to :", fs_name
-            elif part.type & parted.PARTITION_RAID:
-                print "setting fs_name to software raid"
+            if part.is_flag_available(parted.PARTITION_RAID) and part.get_flag(parted.PARTITION_RAID):
                 fs_name = "software raid"
                 fs_ready = False
+                self._partitions.append(RaidPartition(self, part,
+                                                      part.num,
+                                                      part_mb,
+                                                      geom.start,
+                                                      geom.end,
+                                                      fs_name,
+                                                      fs_ready))
+                return part
+            if part.fs_type:
+                fs_name = part.fs_type.name
+            elif part.type & parted.PARTITION_EXTENDED:
+                fs_name = "extended"
 
             self._partitions.append(Partition(self, part,
                                                     part.num,
@@ -760,3 +747,9 @@ def createMdadmConf():
     if len(activeArrays) != 0:
         return "# mdadm.conf created by YALI \nDEVICE partitions \nMAILADDR root \n%s" % activeArrays
     return
+
+def isPartOfRaid(path):
+    for i in raidMembers:
+        if path.split('/')[-1:][0] in i[1]:
+            return True
+    return False

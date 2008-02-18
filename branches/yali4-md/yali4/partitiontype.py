@@ -48,6 +48,7 @@ class __PartitionType(PartitionType):
 
 
 class RootPartitionType(__PartitionType):
+    parttype = "root"
     name = _("Install Root")
     mountpoint = "/"
     mountoptions = "noatime"
@@ -57,6 +58,7 @@ class RootPartitionType(__PartitionType):
 
 
 class HomePartitionType(__PartitionType):
+    parttype = "home"
     name = _("Users' Files")
     mountpoint = "/home"
     mountoptions = "noatime"
@@ -66,6 +68,7 @@ class HomePartitionType(__PartitionType):
 
 
 class SwapPartitionType(PartitionType):
+    parttype = "swap"
     name = _("Swap")
     filesystem = yali4.filesystem.SwapFileSystem()
     mountpoint = None
@@ -75,6 +78,7 @@ class SwapPartitionType(PartitionType):
     label = "PARDUS_SWAP"
 
 class ArchivePartitionType(PartitionType):
+    parttype = "archive"
     name = _("Archive Partition")
     filesystem = yali4.filesystem.Ext3FileSystem()
     mountpoint = "/mnt/archive"
@@ -92,6 +96,8 @@ class ArchivePartitionType(PartitionType):
 ##
 #
 class CustomPartitionType(__PartitionType):
+    parttype = "custom"
+    
     def __init__(self, name=None, parted_type=None, parted_flags=None, \
                  filesystem=None, label=None, mountpoint=None, mountoptions=None):
 
@@ -149,9 +155,10 @@ class CustomPartitionType(__PartitionType):
 ##            
 # A partition that will be part of a raid
 class RaidPartitionType(CustomPartitionType):
+    parttype = "raid"
     def __init__(self):
         self.name = _("Software RAID")
-        self.parted_flags = []
+        self.parted_flags = [ parted.PARTITION_RAID ]
         
         CustomPartitionType.__init__(self, self.name, parted.PARTITION_RAID,
                                      self.parted_flags, yali4.filesystem.RaidFileSystem(),
@@ -162,5 +169,5 @@ root = RootPartitionType()
 home = HomePartitionType()
 swap = SwapPartitionType()
 archive = ArchivePartitionType()
-raid = RaidPartitionType()
+
 

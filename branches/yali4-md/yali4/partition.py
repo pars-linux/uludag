@@ -71,7 +71,7 @@ class Partition:
     
     # later
     def isRaid(self):
-        return self._partition.type == parted.PARTITION_RAID
+        return self._partition.is_flag_available(parted.PARTITION_RAID) and self._partition.get_flag(parted.PARTITION_RAID)
 
     ##
     # get freespace on extended partition
@@ -98,7 +98,9 @@ class Partition:
 
     def getType(self):
         return self._parted_type
-
+    
+    def setType(self, type):
+        self._parted_type = type
 
     ##
     # get parted partition
@@ -174,6 +176,17 @@ class Partition:
     def __eq__(self, rhs):
 #        return self.getPath() == rhs.getPath()
         return self.getStart() == rhs.getStart() and self.getEnd() == rhs.getEnd()
+
+
+##
+# Raid Partition ( member )
+class RaidPartition(Partition):
+    def __init__(self, device, parted_part, minor, mb, start, end, fs_name="software raid", fs_ready=False):
+        
+        Partition.__init__(self, device, parted_part, minor, mb, start, end, fs_name)
+        
+        self._parted_type = parteddata.raidPartitionType
+        
 
 ##
 # Class representing free space within a Device object

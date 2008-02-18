@@ -35,4 +35,4 @@ PARTITION_PRIMARY = parted.PARTITION_PRIMARY
 PARTITION_EXTENDED = parted.PARTITION_EXTENDED
 PARTITION_LOGICAL = parted.PARTITION_LOGICAL
 
-deviceType, partitionType, freeSpaceType = range(3)
+deviceType, partitionType, freeSpaceType, raidPartitionType = range(4)

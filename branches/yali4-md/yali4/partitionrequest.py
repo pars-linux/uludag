@@ -166,9 +166,7 @@ class RequestList(list):
                 # this should give (at most) one result
                 # cause we are storing one request for a partitionType()
                 assert(len(reqList) <= 1)
-        if reqList:
-            return reqList
-        return None
+        return reqList
 
     ##
     # add/append a request
@@ -180,27 +178,23 @@ class RequestList(list):
         pt = req.partitionType()
         found = self.searchPartTypeAndReqType(pt, rt)
 
-        # FIXME RequestList stores only one request for a requestType() -
-        # partitionType() pair.
+        # RequestList stores only one request for a 
+        # requestType() - partitionType() pair for root, home and swap partitions
+        # RequestList stores one request for a partition
+        
         if found:
-            if ( rt in range(4) ):
+            # deneme
+            if ( pt.parttype in ["root", "home", "swap", "archive"] ):
                 # request - type pair that should exist once
-                e = _("There is a request for the same Partition Type.")
+                e = _("There is already this request for %s partition" % pt.parttype)
                 raise RequestException, e
             for request in found:
-                # now request is a request on a custom or raid partition type
-                if request.partitionType().mountpoint:
-                    # has a mount point
-                    if request.partitionType().mountpoint == pt.mountpoint:
-                        # there's already a partition request for that mount point
-                        e = _("There is a request for that Mount Point.")
-                        raise RequestException, e
-                else:
-                    if rt == raidRequestType:
-                        # this is a raidPartitionRequest, all found request should be raid requests
-                        if pt.getMinor() == request.partitionType().getMinor():
-                            e = _("There is a Raid request for that partition")
-                            raise RequestException, e                        
+                # now check if there's the same request for this partition
+                # example, a format request on a partition
+                f = searchPartAndReqType(req.partition(), rt)
+                if f:
+                    e = _("There is already this request for this partition")
+                    raise RequestException, e
                     
         list.append(self, req)
 
