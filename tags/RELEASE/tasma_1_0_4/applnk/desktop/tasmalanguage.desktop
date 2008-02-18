@@ -1,0 +1,22 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell language
+Icon=locale
+Type=Application
+DocPath=kcontrol/language/index.html
+
+X-KDE-ModuleType=Library
+X-KDE-Library=locale
+X-KDE-FactoryName=locale
+X-KDE-ParentApp=tasma
+
+Name=Country/Region & Language
+Name[tr]=Ülke/Bölge ve Dil
+
+Comment=Language, numeric, and time settings for your particular region
+Comment[tr]=Bölgenize özgü dil, sayı ve zaman ayarları
+
+Keywords=language,translation,number format,currency,time,date,formats,locale,Country,charsets,character sets,Decimal symbol,Thousands separator,symbol,separator,sign,positive,negative,fractional digits,week,week start
+Keywords[tr]=dil,çeviri,sayı biçimi,para,saat,tarih,biçimler,yerel,ülke,karakter kümeleri, ondalık sembolü,binler ayıracı,sembol,ayırıcı,işaret,pozitif,negatif,ondalık basamaklar,hafta,hafta başı
+
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization
