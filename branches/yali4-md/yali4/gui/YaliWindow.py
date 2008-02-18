@@ -34,8 +34,8 @@ class Widget(Ui_YaliMain):
         self.setupUi(self.ui)
         self.screenData = None
         # shortcut to open debug window
-        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2), self.ui)
-
+        self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
+        self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
         # move one step at a time
         self.moveInc = 1
 
@@ -54,7 +54,7 @@ class Widget(Ui_YaliMain):
             self.helpContent.hide()
         else:
             self.helpContent.show()
-
+    
     # show/hide debug window
     def toggleDebug(self):
         if ctx.debugger.isVisible():
@@ -145,10 +145,7 @@ class Widget(Ui_YaliMain):
 
     # processEvents
     def processEvents(self):
-        # this is connected to QApplication's processEvents (see runner.py) which processes
-        # all pending events for the calling thread according to the specified
-        # flags until there are no more events to process.
-        QObject.emit(self.ui, SIGNAL("signalProcessEvents"))
+        QObject.emit(self.ui,SIGNAL("signalProcessEvents"))
 
 """
     count = 0

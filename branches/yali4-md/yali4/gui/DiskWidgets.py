@@ -255,7 +255,6 @@ class DiskList(QtGui.QWidget):
     def slotDeletePart(self):
         """Creates delete request for selected partition"""
         dev = self.partEdit.currentPart.getDevice()
-        # bu doğrudan parted'a gönderiyor ?
         dev.deletePartition(self.partEdit.currentPart)
 
         # check for last logical partition
@@ -424,6 +423,9 @@ class DiskItem(QtGui.QWidget):
             metaTypes = {"fat32":{"bgcolor":"#18D918",
                                   "fgcolor":"#000000",
                                   "icon"   :"windows"},
+                         "ntfs" :{"bgcolor":"#18D918",
+                                  "fgcolor":"#000000",
+                                  "icon"   :"windows"},
                          "hfs+" :{"bgcolor":"#C0A39E",
                                   "fgcolor":"#000000",
                                   "icon"   :"other"},
@@ -449,6 +451,7 @@ class DiskItem(QtGui.QWidget):
                     "fgcolor":"#000000",
                     "icon"   :"other"}
         
+        # Get Partition Info
         partitionType = getPartitionType(data)
         
         _name = ''
@@ -458,20 +461,24 @@ class DiskItem(QtGui.QWidget):
                 _name += "\n" + _("Pardus will install here")
                 _mpoint= "[ / ]"
             elif partitionType == partitionTypes[2]:
-                _name += "\n" +_("User files will store here")
+                _name += "\n" + _("User files will store here")
                 _mpoint= "[ /home ]"
             elif partitionType == partitionTypes[3]:
-                _name += "\n" +_("Swap will be here")
+                _name += "\n" + _("Swap will be here")
                 _mpoint= "[ swap ]"
             elif partitionType == partitionTypes[4]:
-                _name += "\n" +_("Backup or archive files will store here")
+                _name += "\n" + _("Backup or archive files will store here")
                 _mpoint= "[ /mnt/archive ]"
             elif partitionType == partitionTypes[5]:
-                _name += "\n" +_("A Software Raid Partition")
+                _name += "\n" + _("A Software Raid Partition")
                 _mpoint= ""
 
+        # Create partition
         partition = QtGui.QRadioButton("%s%s\n%s %s" % (name, _name, data.getSizeStr(), _mpoint), self.diskGroup)
+
+        # Modify partition
         partition.setFocusPolicy(Qt.NoFocus)
+
         if data._parted_type == parteddata.freeSpaceType:
             partition.setStyleSheet("background-image:none;")
         else:
@@ -483,9 +490,12 @@ class DiskItem(QtGui.QWidget):
             partition.setIcon(QtGui.QIcon(":/gui/pics/%s.png" % icon))
             partition.setIconSize(QSize(32,32))
             partition.setStyleSheet("background-color:%s;color:%s" % (meta["bgcolor"],meta["fgcolor"]))
+
         partition.setToolTip(_("""<b>Path:</b> %s<br>
         <b>Size:</b> %s<br>
         <b>FileSystem:</b> %s%s""") % (data.getPath(),data.getSizeStr(),data.getFSName(),_name.replace("\n","<br>")))
+
+        # Add it to the disk
         self.splinter.addWidget(partition)
         self.partitions.append({"name":name,"data":data})
         self.connect(partition,QtCore.SIGNAL("clicked()"),self.updatePartEdit)

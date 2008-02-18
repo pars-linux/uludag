@@ -63,7 +63,7 @@ Depending on your hardware or choice select a keyboard layout from the list.
         self.ui.keyboard_list.setCurrentItem(defaultitem)
         self.slotLayoutChanged(defaultitem)
 
-        QObject.connect(self.ui.keyboard_list, SIGNAL("currentItemChanged(QListWidgetItem*, QListWidgetItem*)"),
+        self.connect(self.ui.keyboard_list, SIGNAL("currentItemChanged(QListWidgetItem*, QListWidgetItem*)"),
                 self.slotLayoutChanged)
 
     def execute(self):
