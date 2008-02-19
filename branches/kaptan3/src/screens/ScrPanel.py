@@ -11,6 +11,7 @@
 #
 
 from qt import *
+import qtxml
 from kdecore import *
 from kdeui import *
 import kdedesigner
@@ -23,9 +24,75 @@ class Widget(PanelWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = "Configure your panel !"
     desc = "Select the one you like..."
-
+    selectedStyle= QString()
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
+
+        # Common Pardus settings for all themes
+
+        config = KConfig("kdeglobals")
+        config.setGroup("KDE")
+        config.writeEntry("ShowIconsOnPushButtons", True)
+        config.writeEntry("EffectAnimateCombo", True)
+        config.sync()
+
+        KGlobal.dirs().addResourceType("themes", KStandardDirs.kde_default("data") + "kaptan/themes/")
+
+        themes = QStringList(KGlobal.dirs().findAllResources("themes", "*.xml", True))
+        themes.sort
+
+        for i in themes:
+            self.styleBox.insertItem(QFileInfo(i).baseName())
+
+        self.connect(self.styleBox, SIGNAL("activated(int)"), self.styleSelected)
+        #self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
+        self.connect(self.styleButton, SIGNAL("clicked()"), self.testStyle)
+        self.styleBox.setCurrentItem(0)
+
+
+    def testStyle(self):
+        dom = qtxml.QDomDocument()
+        file = QFile(self.selectedStyle)
+        file.open(IO_ReadOnly)
+        dom.setContent(file.readAll())
+        file.close()
+
+        client = DCOPClient(kapp.dcopClient())
+        if not client.isAttached():
+            client.attach()
+
+        kwinConf = KConfig("kwinrc")
+        kwinConf.setGroup("Style")
+
+        KWin =  qtxml.QDomElement
+        KWin = dom.elementsByTagName("kwin").item(0).toElement()
+
+        kwinConf.writeEntry("PluginLib", getProperty(KWin, "PluginLib", "value"))
+        kwinConf.sync()
+        
+        client.send("kwin", "KWinInterface", "reconfigure()", "")
+
+
+    def kickoffSelected(self):
+        pass
+
+    def styleSelected(self, item):
+        name = QString(self.styleBox.text(item))
+        
+        previewPath = QString
+        
+        previewPath = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + ".preview.png"
+        print previewPath
+
+
+        xmlFile = QString
+        xmlFile = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + ".xml"
+
+        if QFile.exists(previewPath):
+            self.pix_style.setPixmap(QPixmap(previewPath))
+            self.selectedStyle = xmlFile
+
+
 
     def shown(self):
         pass
