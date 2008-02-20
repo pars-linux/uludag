@@ -15,8 +15,6 @@ import os
 workDir          = "/var/pisi/"
 outputDir        = "/var/cache/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
-deltaPath        = binaryPath
-pardus2007       = "/mnt/sda5/mudur/pardus-2007/"
 localPspecRepo   = "%s/2007" % os.getcwd()
 logFile          = "/var/cache/pisi/buildfarm.log"
 
