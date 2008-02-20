@@ -125,6 +125,9 @@ def buildPackages():
     os.system("/usr/bin/revdep-rebuild --force")
     # FIXME: if there is any broken package,  mail /root/.revdep-rebuild.4_names file
 
+    # Sweeet november, try to find duplicate packages in config.binaryPath
+    os.system("for i in `ls`; do echo ${i/-[0-9]*/}; done | uniq -d")
+
     os.chdir(current)
 
     # FIXME: Use fcntl.funlock
