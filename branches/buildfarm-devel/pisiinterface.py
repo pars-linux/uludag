@@ -15,7 +15,6 @@
 import os
 
 import pisi.api
-import pisi.fetcher
 
 """ BuildFarm Modules """
 import config
@@ -57,8 +56,8 @@ class PisiApi:
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
         if not os.path.exists(pspec):
-            logger.error(_("'%s' is not exists!") % (pspec))
-            raise _("'%s' is not exists!") % pspec
+            logger.error(_("'%s' does not exist!") % (pspec))
+            raise _("'%s' does not exist!") % pspec
 
         logger.info(_("BUILD called for %s") % (pspec)) 
 
@@ -72,4 +71,5 @@ class PisiApi:
     def install(self, p):
         a = []
         a.append(p)
-        pisi.api.install(a)
+        pisi.api.install(a, ignore_file_conflicts=self.options.ignore_file_conflicts)
+
