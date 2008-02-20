@@ -29,6 +29,7 @@ class HistoryDB(lazydb.LazyDB):
     def __generate_history(self):
         logs = os.listdir(ctx.config.history_dir())
         logs.sort()
+        logs.reverse()
         return logs
 
     def create_history(self, operation):
@@ -45,10 +46,27 @@ class HistoryDB(lazydb.LazyDB):
     def update_history(self):
         self.history.update()
 
-    def get_last(self, count=0):
-        if not count or count > len(self.__logs):
-            count = len(self.__logs)
+    def get_operation(self, operation):
+        for log in self.__logs:
+            if log.startswith("%03d_" % operation):
+                hist = pisi.history.History(os.path.join(ctx.config.history_dir(), log))
+                return hist.operation
+        return None
 
-        for log in self.__logs[-count:]:
+    def get_till_operation(self, operation):
+        if not filter(lambda x:x.startswith("%03d_" % operation), self.__logs):
+            return
+
+        for log in self.__logs:
+            if log.startswith("%03d_" % operation):
+                return
+
             hist = pisi.history.History(os.path.join(ctx.config.history_dir(), log))
+            yield hist.operation
+
+    def get_last(self, count=0):
+        count = count or len(self.__logs)
+        for log in self.__logs[:count]:
+            hist = pisi.history.History(os.path.join(ctx.config.history_dir(), log))
+            hist.operation.no = int(log.split("_")[0])
             yield hist.operation

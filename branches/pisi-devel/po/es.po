@@ -1,22 +1,470 @@
-# translation of es.po to español
+# translation of es.po to Spanish
 # translation of es.po to
 # Copyright (C) YEAR ORGANIZATION
 #
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
+# Klemens Haeckel <click3d at linuxmail dot org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"POT-Creation-Date: 2008-02-05 11:05+EET\n"
-"PO-Revision-Date: 2007-11-25 20:52-0300\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team: español <es@li.org>\n"
+"POT-Creation-Date: 2008-01-31 16:42+EET\n"
+"PO-Revision-Date: 2008-02-17 07:50-0300\n"
+"Last-Translator: Klemens Haeckel <click3d at linuxmail dot org>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: KBabel 1.11.4\n"
+
+# ...Optik; ver http:....
+# "Parser" por "analizador de sintaxis"?
+# analizador?
+#: /usr/lib/python2.4/optparse.py:1
+msgid ""
+"optparse - a powerful, extensible, and easy-to-use option parser.\n"
+"\n"
+"By Greg Ward <gward@python.net>\n"
+"\n"
+"Originally distributed as Optik; see http://optik.sourceforge.net/ .\n"
+"\n"
+"If you have problems with this module, please do not file bugs,\n"
+"patches, or feature requests with Python; instead, use Optik's\n"
+"SourceForge project page:\n"
+"  http://sourceforge.net/projects/optik\n"
+"\n"
+"For support, use the optik-users@lists.sourceforge.net mailing list\n"
+"(http://lists.sourceforge.net/lists/listinfo/optik-users).\n"
+msgstr ""
+"optparse - un analizador de opciones, fácil de usar pero potente y "
+"ampliable.\n"
+"\n"
+"Por Greg Ward <gward@python.net>\n"
+"\n"
+"Distribuido originalmente como Optik; ver http://optik.sourceforge.net/ .\n"
+"\n"
+"Si tiene problemas con éste módulo, no envíe reportes de fallas,\n"
+"parches, o propuestas de mejora con Python. Por favor use la página \n"
+"del proyecto Optik en SourceForge:\n"
+"  http://sourceforge.net/projects/optik\n"
+"\n"
+"Para soporte use la lista de correo optik-users@lists.sourceforge.net\n"
+"(http://lists.sourceforge.net/lists/listinfo/optik-users).\n"
+
+#: /usr/lib/python2.4/optparse.py:93
+msgid ""
+"\n"
+"    Raised if an Option instance is created with invalid or\n"
+"    inconsistent arguments.\n"
+"    "
+msgstr ""
+"\n"
+"    Producido si una instancia de Option es creada con argumentos\n"
+"    inválidos o inconsistentes.\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:109
+msgid ""
+"\n"
+"    Raised if conflicting options are added to an OptionParser.\n"
+"    "
+msgstr ""
+"\n"
+"    Producido si al OptionParser se agregan opciones conflictivas.\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:114
+msgid ""
+"\n"
+"    Raised if an invalid option value is encountered on the command\n"
+"    line.\n"
+"    "
+msgstr ""
+"\n"
+"    Producido si se encuentra una opción inválida en la línea\n"
+"    de comando.\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:120
+msgid ""
+"\n"
+"    Raised if an invalid or ambiguous option is seen on the command-line.\n"
+"    "
+msgstr ""
+"\n"
+"    Producido si se encuentra una opción inválida o ambigua en \n"
+"    la línea de comando.\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:298
+msgid "Return a comma-separated list of option strings & metavariables."
+msgstr ""
+"Devolver una lista separada por comas, de cadenas de opciones y meta-"
+"variables."
+
+#: /usr/lib/python2.4/optparse.py:317
+msgid ""
+"Format help with indented section bodies.\n"
+"    "
+msgstr ""
+"Formato de ayuda con indentación de secciones.\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:329 pisi/cli/command.py:225
+msgid "usage: %s\n"
+msgstr "uso: %s\n"
+
+#: /usr/lib/python2.4/optparse.py:336
+msgid ""
+"Format help with underlined section headers.\n"
+"    "
+msgstr ""
+"Formato de ayuda con cabeceras de secciones subrayadas.\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:348
+msgid "Usage"
+msgstr "Uso"
+
+#: /usr/lib/python2.4/optparse.py:354
+msgid "integer"
+msgstr "Entero"
+
+#: /usr/lib/python2.4/optparse.py:355
+msgid "long integer"
+msgstr "Entero largo"
+
+#: /usr/lib/python2.4/optparse.py:356
+msgid "floating-point"
+msgstr "Punto-flotante"
+
+#: /usr/lib/python2.4/optparse.py:357
+msgid "complex"
+msgstr "Complejo"
+
+#: /usr/lib/python2.4/optparse.py:365
+msgid "option %s: invalid %s value: %r"
+msgstr "opción %s: valor %s inválido: %r"
+
+#: /usr/lib/python2.4/optparse.py:373
+msgid "option %s: invalid choice: %r (choose from %s)"
+msgstr "opción %s: selección inválida: %r (seleccione de %s)"
+
+#: /usr/lib/python2.4/optparse.py:382
+msgid ""
+"\n"
+"    Instance attributes:\n"
+"      _short_opts : [string]\n"
+"      _long_opts : [string]\n"
+"\n"
+"      action : string\n"
+"      type : string\n"
+"      dest : string\n"
+"      default : any\n"
+"      nargs : int\n"
+"      const : any\n"
+"      choices : [string]\n"
+"      callback : function\n"
+"      callback_args : (any*)\n"
+"      callback_kwargs : { string : any }\n"
+"      help : string\n"
+"      metavar : string\n"
+"    "
+msgstr ""
+"\n"
+"    Atributos de Instancias:\n"
+"      _short_opts : [string]\n"
+"      _long_opts : [string]\n"
+"\n"
+"      action : string\n"
+"      type : string\n"
+"      dest : string\n"
+"      default : any\n"
+"      nargs : int\n"
+"      const : any\n"
+"      choices : [string]\n"
+"      callback : function\n"
+"      callback_args : (any*)\n"
+"      callback_kwargs : { string : any }\n"
+"      help : string\n"
+"      metavar : string\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:781
+msgid ""
+"\n"
+"        Update the option values from an arbitrary dictionary, but only\n"
+"        use keys from dict that already have a corresponding attribute\n"
+"        in self.  Any keys in dict without a corresponding attribute\n"
+"        are silently ignored.\n"
+"        "
+msgstr ""
+"\n"
+"        Actualice los valores de opciones de cualquier diccionario, pero "
+"solamente\n"
+"        use claves del diccionario que ya tienen un atributo "
+"correspondiente\n"
+"        en si mismo. Cualquier clave en diccionario sin atributo "
+"correspondiente se \n"
+"        va a ignorar silenciosamante.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:794
+msgid ""
+"\n"
+"        Update the option values from an arbitrary dictionary,\n"
+"        using all keys from the dictionary regardless of whether\n"
+"        they have a corresponding attribute in self or not.\n"
+"        "
+msgstr ""
+"\n"
+"       Actualice los valores de opciones de cualquier diccionario, \n"
+"        usando todas las claves del diccionario sin importar si \n"
+"        tienen un atributo correspondiente o no.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:926
+msgid ""
+"add_option(Option)\n"
+"           add_option(opt_str, ..., kwarg=val, ...)\n"
+"        "
+msgstr ""
+"add_option(Option)\n"
+"           add_option(opt_str, ..., kwarg=val, ...)\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1138
+msgid "show this help message and exit"
+msgstr "Mostrar este mensaje de ayuda y salir"
+
+#: /usr/lib/python2.4/optparse.py:1143
+msgid "show program's version number and exit"
+msgstr "Mostrar número de versión del programa y salir"
+
+#: /usr/lib/python2.4/optparse.py:1166
+msgid "%prog [options]"
+msgstr "%prog [opciones]"
+
+#: /usr/lib/python2.4/optparse.py:1246
+msgid ""
+"\n"
+"        parse_args(args : [string] = sys.argv[1:],\n"
+"                   values : Values = None)\n"
+"        -> (values : Values, args : [string])\n"
+"\n"
+"        Parse the command-line options found in 'args' (default:\n"
+"        sys.argv[1:]).  Any errors result in a call to 'error()', which\n"
+"        by default prints the usage message to stderr and calls\n"
+"        sys.exit() with an error message.  On success returns a pair\n"
+"        (values, args) where 'values' is an Values instance (with all\n"
+"        your option values) and 'args' is the list of arguments left\n"
+"        over after parsing options.\n"
+"        "
+msgstr ""
+"\n"
+"        parse_args(args : [string] = sys.argv[1:],\n"
+"                   values : Values = None)\n"
+"        -> (values : Values, args : [string])\n"
+"\n"
+"        Analiza las opciones de línea de comando encontrados en "
+"'args' (default:\n"
+"        sys.argv[1:]).  Cualquier error produce una llamada a 'error()', "
+"que\n"
+"        por defecto imprime el mensaje de uso a la salida stderr y llama\n"
+"        sys.exit() con un mensaje de error. Si exitoso devuelve un par\n"
+"        (values, args) donde 'values' es una instancia de Values (con todos\n"
+"        los valores de las opciones que le fueron pasadas) y 'args' es la "
+"lista de argumentos \n"
+"        que quedan luego de analizar las opciones.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1285
+msgid ""
+"\n"
+"        check_values(values : Values, args : [string])\n"
+"        -> (values : Values, args : [string])\n"
+"\n"
+"        Check that the supplied option values and leftover arguments are\n"
+"        valid.  Returns the option values and leftover arguments\n"
+"        (possibly adjusted, possibly completely new -- whatever you\n"
+"        like).  Default implementation just returns the passed-in\n"
+"        values; subclasses may override as desired.\n"
+"        "
+msgstr ""
+"\n"
+"        check_values(values : Values, args : [string])\n"
+"        -> (values : Values, args : [string])\n"
+"\n"
+"        Verifica la validez de los valores de las opciones indicadas y de "
+"los\n"
+"        argumentos sobrantes. Devuelve los valores de opciones y argumentos "
+"sobrantes\n"
+"        (posiblemente corregidos, completamente nuevos -- como le parezca\n"
+"        mejor).  La implementación predeterminada simplemente devuelve los "
+"valores que se\n"
+"         le pasaron; las subclases se pueden sobreescribir.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1298
+msgid ""
+"_process_args(largs : [string],\n"
+"                         rargs : [string],\n"
+"                         values : Values)\n"
+"\n"
+"        Process command-line arguments and populate 'values', consuming\n"
+"        options and arguments from 'rargs'.  If 'allow_interspersed_args' "
+"is\n"
+"        false, stop at the first non-option argument.  If true, accumulate "
+"any\n"
+"        interspersed non-option arguments in 'largs'.\n"
+"        "
+msgstr ""
+"_process_args(largs : [string],\n"
+"                         rargs : [string],\n"
+"                         values : Values)\n"
+"\n"
+"        Procesa argumentos de línea de comando y carga 'values', "
+"consumiendo\n"
+"        opciones y argumentos de 'args'.  Si 'allow_interspersed_args' es\n"
+"        falso, para con el primer argumento que no es una opción.  Si "
+"verdadero, acumula los\n"
+"        argumentos intermedios que no son opciones en 'largs'.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1349
+msgid ""
+"_match_long_opt(opt : string) -> string\n"
+"\n"
+"        Determine which long option string 'opt' matches, ie. which one\n"
+"        it is an unambiguous abbrevation for.  Raises BadOptionError if\n"
+"        'opt' doesn't unambiguously match any long option string.\n"
+"        "
+msgstr ""
+"_match_long_opt(opt : string) -> string\n"
+"\n"
+"        Determina con cual opción de cadena larga concuerda la cadena 'opt', "
+"o sea que, para cual\n"
+"        de ellos es una abreviatura no ambigua. Produce BadOptionError si\n"
+"        'opt' no coincide de manera no-ambigua con uno de las opciones de "
+"cadena larga.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1376 /usr/lib/python2.4/optparse.py:1415
+msgid "%s option requires an argument"
+msgstr "la opción %s requiere un argumento"
+
+#: /usr/lib/python2.4/optparse.py:1378 /usr/lib/python2.4/optparse.py:1417
+msgid "%s option requires %d arguments"
+msgstr "la opción %s requiere %d argumentos"
+
+#: /usr/lib/python2.4/optparse.py:1387
+msgid "%s option does not take a value"
+msgstr "la opción %s no toma un valor"
+
+#: /usr/lib/python2.4/optparse.py:1404 /usr/lib/python2.4/optparse.py:1558
+msgid "no such option: %s"
+msgstr "no existe la opción: %s"
+
+# alguna mejor idea para "retornar" ?
+#: /usr/lib/python2.4/optparse.py:1454
+msgid ""
+"error(msg : string)\n"
+"\n"
+"        Print a usage message incorporating 'msg' to stderr and exit.\n"
+"        If you override this in a subclass, it should not return -- it\n"
+"        should either exit or raise an exception.\n"
+"        "
+msgstr ""
+"error(msg : string)\n"
+"\n"
+"        Imprime un mensaje incluyendo 'msg' hacia la salida stderr y sale.\n"
+"        Si lo sobreescribe en una subclase no debería retornar -- \n"
+"        sino debería o salir o producir una excepción.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1471
+msgid ""
+"print_usage(file : file = stdout)\n"
+"\n"
+"        Print the usage message for the current program (self.usage) to\n"
+"        'file' (default stdout).  Any occurence of the string \"%prog\" in\n"
+"        self.usage is replaced with the name of the current program\n"
+"        (basename of sys.argv[0]).  Does nothing if self.usage is empty\n"
+"        or not defined.\n"
+"        "
+msgstr ""
+"print_usage(file : file = stdout)\n"
+"\n"
+"        Imprime el mensaje de uso para el programa actual (self.usage) a\n"
+"        'file' (por defecto stdout).  Cualquier ocurrencia de la cadena \"%"
+"prog\" en\n"
+"        self.usage es reemplazado por el nombre del programa actual\n"
+"        (nombre de base de sys.argv[0]). No hace nada si self.usage está "
+"vacío\n"
+"        o no definido.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1489
+msgid ""
+"print_version(file : file = stdout)\n"
+"\n"
+"        Print the version message for this program (self.version) to\n"
+"        'file' (default stdout).  As with print_usage(), any occurence\n"
+"        of \"%prog\" in self.version is replaced by the current program's\n"
+"        name.  Does nothing if self.version is empty or undefined.\n"
+"        "
+msgstr ""
+"print_version(file : file = stdout)\n"
+"\n"
+"        Imprime el mensaje de versión del programa actual (self.version) a\n"
+"        'file' (por defecto a stdout). Similar a print_usage(), cualquier "
+"ocurrencia\n"
+"        de \"%prog\" en self.version es reemplazado por el nombre del "
+"programa\n"
+"        actual. No hace nada si self.version está vacío o no definido.\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1504
+msgid "options"
+msgstr "opciones"
+
+#: /usr/lib/python2.4/optparse.py:1528
+msgid ""
+"print_help(file : file = stdout)\n"
+"\n"
+"        Print an extended help message, listing all options and any\n"
+"        help text provided with them, to 'file' (default stdout).\n"
+"        "
+msgstr ""
+"print_help(file : file = stdout)\n"
+"\n"
+"        Imprime un mensaje de ayuda extensa, listando todas las opciones y\n"
+"        los textos de ayuda que vienen con ellos, a 'file' (por defecto a "
+"stdout).\n"
+"        "
+
+#: /usr/lib/python2.4/optparse.py:1541
+msgid ""
+"_match_abbrev(s : string, wordmap : {string : Option}) -> string\n"
+"\n"
+"    Return the string key in 'wordmap' for which 's' is an unambiguous\n"
+"    abbreviation.  If 's' is found to be ambiguous or doesn't match any of\n"
+"    'words', raise BadOptionError.\n"
+"    "
+msgstr ""
+"_match_abbrev(s : string, wordmap : {string : Option}) -> string\n"
+"\n"
+"    Devuelve la cadena clave en 'wordmap' para la cual 's' es una "
+"abreviatura\n"
+"    no-ambigua.  Si 's' resulta ser ambiguo o no concuerda con ninguno de \n"
+"    'words', produce BadOptionError.\n"
+"    "
+
+#: /usr/lib/python2.4/optparse.py:1562
+msgid "ambiguous option: %s (%s?)"
+msgstr "opción ambigua: %s (%s?)"
 
 #: pisi-cli:42
 msgid "Keyboard Interrupt: Exiting..."
@@ -64,7 +512,7 @@ msgstr "Registro:"
 msgid "Use --debug to see a traceback."
 msgstr "Use --debug para ver registro."
 
-#: pisi/actionsapi/autotools.py:37 pisi/actionsapi/cmaketools.py:36
+#: pisi/actionsapi/autotools.py:36 pisi/actionsapi/cmaketools.py:36
 msgid ""
 "Please attach the config.log to your bug report:\n"
 "%s/config.log"
@@ -72,54 +520,54 @@ msgstr ""
 "Favor anexe config.log al reporte de falla:\n"
 "%s/config.log"
 
-#: pisi/actionsapi/autotools.py:78 pisi/actionsapi/autotools.py:88
+#: pisi/actionsapi/autotools.py:76 pisi/actionsapi/autotools.py:86
 #: pisi/actionsapi/cmaketools.py:65 pisi/actionsapi/kde.py:65
 #: pisi/actionsapi/perlmodules.py:54 pisi/actionsapi/perlmodules.py:57
 msgid "Configure failed."
 msgstr "Configuración fallada."
 
-#: pisi/actionsapi/autotools.py:80 pisi/actionsapi/autotools.py:90
+#: pisi/actionsapi/autotools.py:78 pisi/actionsapi/autotools.py:88
 #: pisi/actionsapi/kde.py:67
 msgid "No configure script found."
 msgstr "Script de configuración no encontrado."
 
-#: pisi/actionsapi/autotools.py:99 pisi/actionsapi/cmaketools.py:73
+#: pisi/actionsapi/autotools.py:97 pisi/actionsapi/cmaketools.py:73
 #: pisi/actionsapi/kde.py:72 pisi/actionsapi/perlmodules.py:63
 #: pisi/actionsapi/perlmodules.py:72 pisi/actionsapi/pythonmodules.py:49
 #: pisi/actionsapi/scons.py:39
 msgid "Make failed."
 msgstr "Falló Make."
 
-#: pisi/actionsapi/autotools.py:127 pisi/actionsapi/autotools.py:138
+#: pisi/actionsapi/autotools.py:125 pisi/actionsapi/autotools.py:136
 #: pisi/actionsapi/cmaketools.py:103 pisi/actionsapi/cmaketools.py:113
 #: pisi/actionsapi/kde.py:79 pisi/actionsapi/pythonmodules.py:54
 #: pisi/actionsapi/scons.py:43
 msgid "Install failed."
 msgstr "Falló Install"
 
-#: pisi/actionsapi/autotools.py:131 pisi/actionsapi/autotools.py:142
+#: pisi/actionsapi/autotools.py:129 pisi/actionsapi/autotools.py:140
 #: pisi/actionsapi/cmaketools.py:75 pisi/actionsapi/cmaketools.py:107
 #: pisi/actionsapi/cmaketools.py:117 pisi/actionsapi/kde.py:81
 msgid "No Makefile found."
 msgstr "Archivo para 'make' no encontrado."
 
-#: pisi/actionsapi/autotools.py:147
+#: pisi/actionsapi/autotools.py:145
 msgid "Running aclocal failed."
 msgstr "Falló ejecución de aclocal."
 
-#: pisi/actionsapi/autotools.py:152
+#: pisi/actionsapi/autotools.py:150
 msgid "Running autoconf failed."
 msgstr "Falló ejecución de autoconf."
 
-#: pisi/actionsapi/autotools.py:157
+#: pisi/actionsapi/autotools.py:155
 msgid "Running autoreconf failed."
 msgstr "Falló ejecución de autoreconf."
 
-#: pisi/actionsapi/autotools.py:162
+#: pisi/actionsapi/autotools.py:160
 msgid "Running automake failed."
 msgstr "Falló ejecución de automake."
 
-#: pisi/actionsapi/autotools.py:167
+#: pisi/actionsapi/autotools.py:165
 msgid "Running autoheader failed."
 msgstr "Falló ejecución de autoheader."
 
@@ -319,7 +767,7 @@ msgstr "* Actualizando repositorio: %s"
 
 #: pisi/api.py:492
 msgid "%s repository information is up-to-date."
-msgstr ""
+msgstr "Información de repositorio %s está actualizado."
 
 # what do You mean here with "at any rate" ? ok, got it, but will think of better spanish translation. it is not yet in here.
 #: pisi/api.py:494
@@ -455,8 +903,7 @@ msgid "Not removing conflicted file : %s"
 msgstr "Archivo conflictivo: %s no eliminado "
 
 #: pisi/atomicoperations.py:529
-msgid ""
-"Installed file %s is not exists on system [Probably you manually deleted]"
+msgid "Installed file %s is not exists on system [Probably you manually deleted]"
 msgstr ""
 "Archivo instalado %s no existe en el sistema [Probablemente eliminado "
 "manualmente]"
@@ -552,8 +999,7 @@ msgstr "Crear un paquete estático con archivos ar"
 
 # asi lo entiendo, favor verificar
 #: pisi/cli/build.py:70
-msgid ""
-"Do not install build dependencies, fail if a build dependency is present"
+msgid "Do not install build dependencies, fail if a build dependency is present"
 msgstr ""
 "No instalar dependencias de build, producir una falla si una dependencia de "
 "build es necesaria"
@@ -711,10 +1157,6 @@ msgstr "Omitir al agente de configuración comar"
 msgid "Do not perform any action, just show what would be done"
 msgstr "No hacer nada, solamente mostrar lo que se haría"
 
-#: pisi/cli/command.py:225
-msgid "usage: %s\n"
-msgstr "uso: %s\n"
-
 #: pisi/cli/configurepending.py:39
 msgid "configure-pending options"
 msgstr "Opciones de configure-pending"
@@ -766,8 +1208,7 @@ msgstr "Ploteando paquetes de repositorio %s"
 
 #: pisi/cli/graph.py:73
 msgid "Plotting a graph of relations among all repository packages"
-msgstr ""
-"Ploteando un gráfico de relaciones entre todos los paquetes en repositorio"
+msgstr "Ploteando un gráfico de relaciones entre todos los paquetes en repositorio"
 
 #: pisi/cli/graph.py:87
 msgid "Plotting a graph of relations among all installed packages"
@@ -936,10 +1377,8 @@ msgstr "Mostrar detalles de instalación"
 
 # I suppose here the position is important too ! Should be the same ok as in english
 #: pisi/cli/listinstalled.py:65 pisi/cli/listupgrades.py:69
-msgid ""
-"Package Name     |St|   Version|  Rel.| Build|  Distro|             Date"
-msgstr ""
-"Nombre Paquete   |St|   Versión|  Rel.| Build|  Distro|            Fecha"
+msgid "Package Name     |St|   Version|  Rel.| Build|  Distro|             Date"
+msgstr "Nombre Paquete   |St|   Versión|  Rel.| Build|  Distro|            Fecha"
 
 #: pisi/cli/listpending.py:43
 msgid "There are no packages waiting to be configured"
@@ -1372,8 +1811,7 @@ msgstr "Generando paquete fuente PiSi: %s"
 
 #: pisi/operations/build.py:234
 msgid "IceCream detected. Make sure your daemon is up and running..."
-msgstr ""
-"IceCream detectado. Asegúrese que el demónio está activo y funcionando..."
+msgstr "IceCream detectado. Asegúrese que el demónio está activo y funcionando..."
 
 #: pisi/operations/build.py:239
 msgid "CCache detected..."
@@ -1455,8 +1893,7 @@ msgstr "no posible llamar función desde acciones: %s"
 
 # did I get "safety switch" right (in this context)?
 #: pisi/operations/build.py:482
-msgid ""
-"Safety switch: following extra packages in system.devel will be installed: "
+msgid "Safety switch: following extra packages in system.devel will be installed: "
 msgstr ""
 "Verificación de seguridad: Se instalarán los siguientes paquetes adicionales "
 "en system.devel:"
@@ -1467,8 +1904,7 @@ msgstr "Verificación de seguridad: system.devel ya está instalado"
 
 #: pisi/operations/build.py:489
 msgid "Safety switch: the component system.devel cannot be found"
-msgstr ""
-"Verificación de seguridad: No posible encontrar el componente system.devel"
+msgstr "Verificación de seguridad: No posible encontrar el componente system.devel"
 
 # satisfechas - entiendo que se refiere a librerias necesarias para hacer el proceso build
 # quizá hay mejor manera de decirlo en español
@@ -1522,8 +1958,7 @@ msgstr "(no se encontró build anterior, estableciendo número de build a 1.)"
 
 #: pisi/operations/build.py:769
 msgid "(old package lacks a build no, setting build no to 1.)"
-msgstr ""
-"(paquete antiguo no tiene número de build, seteando número de build a 1.)"
+msgstr "(paquete antiguo no tiene número de build, seteando número de build a 1.)"
 
 #: pisi/operations/build.py:772
 msgid "There are changes, incrementing build no to %d"
@@ -1572,8 +2007,7 @@ msgstr "Archivos abandonados en carpeta de instalación (%s):"
 
 # revisa este por favor
 #: pisi/operations/build.py:932
-msgid ""
-"All of the files under the install dir (%s) has been collected by package(s)"
+msgid "All of the files under the install dir (%s) has been collected by package(s)"
 msgstr ""
 "Todos los archivos de la carpeta de instalación (%s) se juntaron en los "
 "paquetes"
@@ -1652,8 +2086,7 @@ msgstr "Conflictos continúan"
 msgid ""
 "The following package(s) are already installed and are not going to be "
 "installed again:\n"
-msgstr ""
-"Los siguientes paquetes ya están instalados y no se instalarán de nuevo:\n"
+msgstr "Los siguientes paquetes ya están instalados y no se instalarán de nuevo:\n"
 
 #: pisi/operations/install.py:50 pisi/operations/install.py:157
 msgid "No packages to install."
@@ -1673,8 +2106,7 @@ msgstr "Tamaño total de paquete(s): %.2f %s"
 
 #: pisi/operations/install.py:96
 msgid "Mixing file names and package names not supported yet."
-msgstr ""
-"Mezclando nombres de archivos y nombres de paquetes actualmente no soportado."
+msgstr "Mezclando nombres de archivos y nombres de paquetes actualmente no soportado."
 
 #: pisi/operations/install.py:136 pisi/operations/install.py:145
 msgid "External dependencies not satisfied"
@@ -1705,8 +2137,7 @@ msgstr ""
 # should this say in english ? "Safety switch: the component cannot be found in system.base" ?? (i did in spanish like this)
 #: pisi/operations/remove.py:48 pisi/operations/upgrade.py:238
 msgid "Safety switch: the component system.base cannot be found"
-msgstr ""
-"Verificación de seguridad: No posible encontrar el componente system.base: "
+msgstr "Verificación de seguridad: No posible encontrar el componente system.base: "
 
 #: pisi/operations/remove.py:55
 msgid "Package %s does not exist. Cannot remove."
@@ -2013,9 +2444,8 @@ msgid "strip command failed for file '%s'!"
 msgstr "comando strip falló para archivo '%s'!"
 
 #: pisi/util.py:533
-#, fuzzy
 msgid "chrpath command failed for file '%s'!"
-msgstr "comando strip falló para archivo '%s'!"
+msgstr "comando chrpath falló para archivo '%s'!"
 
 #: pisi/util.py:540
 msgid "objcopy (keep-debug) command failed for file '%s'!"
@@ -2046,8 +2476,7 @@ msgstr ""
 "%s\n"
 
 #: scripts/repostats.py:371
-msgid ""
-"Developer '%s <%s>' has another mail address '%s' in source package '%s'"
+msgid "Developer '%s <%s>' has another mail address '%s' in source package '%s'"
 msgstr ""
 "Desarrollador '%s <%s>' tiene otra dirección email '%s' en archivo fuente '%"
 "s'"
@@ -2076,424 +2505,3 @@ msgstr "Buscando en repositorio de fuentes...\n"
 msgid "Scanning binary packages...\n"
 msgstr "Buscando paquetes binarios...\n"
 
-# ...Optik; ver http:....
-# "Parser" por "analizador de sintaxis"?
-# analizador?
-#~ msgid ""
-#~ "optparse - a powerful, extensible, and easy-to-use option parser.\n"
-#~ "\n"
-#~ "By Greg Ward <gward@python.net>\n"
-#~ "\n"
-#~ "Originally distributed as Optik; see http://optik.sourceforge.net/ .\n"
-#~ "\n"
-#~ "If you have problems with this module, please do not file bugs,\n"
-#~ "patches, or feature requests with Python; instead, use Optik's\n"
-#~ "SourceForge project page:\n"
-#~ "  http://sourceforge.net/projects/optik\n"
-#~ "\n"
-#~ "For support, use the optik-users@lists.sourceforge.net mailing list\n"
-#~ "(http://lists.sourceforge.net/lists/listinfo/optik-users).\n"
-#~ msgstr ""
-#~ "optparse - un analizador de opciones, fácil de usar pero potente y "
-#~ "ampliable.\n"
-#~ "\n"
-#~ "Por Greg Ward <gward@python.net>\n"
-#~ "\n"
-#~ "Distribuido originalmente como Optik; ver http://optik.sourceforge."
-#~ "net/ .\n"
-#~ "\n"
-#~ "Si tiene problemas con éste módulo, no envíe reportes de fallas,\n"
-#~ "parches, o propuestas de mejora con Python. Por favor use la página \n"
-#~ "del proyecto Optik en SourceForge:\n"
-#~ "  http://sourceforge.net/projects/optik\n"
-#~ "\n"
-#~ "Para soporte use la lista de correo optik-users@lists.sourceforge.net\n"
-#~ "(http://lists.sourceforge.net/lists/listinfo/optik-users).\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "    Raised if an Option instance is created with invalid or\n"
-#~ "    inconsistent arguments.\n"
-#~ "    "
-#~ msgstr ""
-#~ "\n"
-#~ "    Producido si una instancia de Option es creada con argumentos\n"
-#~ "    inválidos o inconsistentes.\n"
-#~ "    "
-
-#~ msgid ""
-#~ "\n"
-#~ "    Raised if conflicting options are added to an OptionParser.\n"
-#~ "    "
-#~ msgstr ""
-#~ "\n"
-#~ "    Producido si al OptionParser se agregan opciones conflictivas.\n"
-#~ "    "
-
-#~ msgid ""
-#~ "\n"
-#~ "    Raised if an invalid option value is encountered on the command\n"
-#~ "    line.\n"
-#~ "    "
-#~ msgstr ""
-#~ "\n"
-#~ "    Producido si se encuentra una opción inválida en la línea\n"
-#~ "    de comando.\n"
-#~ "    "
-
-#~ msgid ""
-#~ "\n"
-#~ "    Raised if an invalid or ambiguous option is seen on the command-"
-#~ "line.\n"
-#~ "    "
-#~ msgstr ""
-#~ "\n"
-#~ "    Producido si se encuentra una opción inválida o ambigua en \n"
-#~ "    la línea de comando.\n"
-#~ "    "
-
-#~ msgid "Return a comma-separated list of option strings & metavariables."
-#~ msgstr ""
-#~ "Devolver una lista separada por comas, de cadenas de opciones y meta-"
-#~ "variables."
-
-#~ msgid ""
-#~ "Format help with indented section bodies.\n"
-#~ "    "
-#~ msgstr ""
-#~ "Formato de ayuda con indentación de secciones.\n"
-#~ "    "
-
-#~ msgid ""
-#~ "Format help with underlined section headers.\n"
-#~ "    "
-#~ msgstr ""
-#~ "Formato de ayuda con cabeceras de secciones subrayadas.\n"
-#~ "    "
-
-#~ msgid "Usage"
-#~ msgstr "Uso"
-
-#~ msgid "integer"
-#~ msgstr "Entero"
-
-#~ msgid "long integer"
-#~ msgstr "Entero largo"
-
-#~ msgid "floating-point"
-#~ msgstr "Punto-flotante"
-
-#~ msgid "complex"
-#~ msgstr "Complejo"
-
-#~ msgid "option %s: invalid %s value: %r"
-#~ msgstr "opción %s: valor %s inválido: %r"
-
-#~ msgid "option %s: invalid choice: %r (choose from %s)"
-#~ msgstr "opción %s: selección inválida: %r (seleccione de %s)"
-
-#~ msgid ""
-#~ "\n"
-#~ "    Instance attributes:\n"
-#~ "      _short_opts : [string]\n"
-#~ "      _long_opts : [string]\n"
-#~ "\n"
-#~ "      action : string\n"
-#~ "      type : string\n"
-#~ "      dest : string\n"
-#~ "      default : any\n"
-#~ "      nargs : int\n"
-#~ "      const : any\n"
-#~ "      choices : [string]\n"
-#~ "      callback : function\n"
-#~ "      callback_args : (any*)\n"
-#~ "      callback_kwargs : { string : any }\n"
-#~ "      help : string\n"
-#~ "      metavar : string\n"
-#~ "    "
-#~ msgstr ""
-#~ "\n"
-#~ "    Atributos de Instancias:\n"
-#~ "      _short_opts : [string]\n"
-#~ "      _long_opts : [string]\n"
-#~ "\n"
-#~ "      action : string\n"
-#~ "      type : string\n"
-#~ "      dest : string\n"
-#~ "      default : any\n"
-#~ "      nargs : int\n"
-#~ "      const : any\n"
-#~ "      choices : [string]\n"
-#~ "      callback : function\n"
-#~ "      callback_args : (any*)\n"
-#~ "      callback_kwargs : { string : any }\n"
-#~ "      help : string\n"
-#~ "      metavar : string\n"
-#~ "    "
-
-#~ msgid ""
-#~ "\n"
-#~ "        Update the option values from an arbitrary dictionary, but only\n"
-#~ "        use keys from dict that already have a corresponding attribute\n"
-#~ "        in self.  Any keys in dict without a corresponding attribute\n"
-#~ "        are silently ignored.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "        Actualice los valores de opciones de cualquier diccionario, pero "
-#~ "solamente\n"
-#~ "        use claves del diccionario que ya tienen un atributo "
-#~ "correspondiente\n"
-#~ "        en si mismo. Cualquier clave en diccionario sin atributo "
-#~ "correspondiente se \n"
-#~ "        va a ignorar silenciosamante.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "        Update the option values from an arbitrary dictionary,\n"
-#~ "        using all keys from the dictionary regardless of whether\n"
-#~ "        they have a corresponding attribute in self or not.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "       Actualice los valores de opciones de cualquier diccionario, \n"
-#~ "        usando todas las claves del diccionario sin importar si \n"
-#~ "        tienen un atributo correspondiente o no.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "add_option(Option)\n"
-#~ "           add_option(opt_str, ..., kwarg=val, ...)\n"
-#~ "        "
-#~ msgstr ""
-#~ "add_option(Option)\n"
-#~ "           add_option(opt_str, ..., kwarg=val, ...)\n"
-#~ "        "
-
-#~ msgid "show this help message and exit"
-#~ msgstr "Mostrar este mensaje de ayuda y salir"
-
-#~ msgid "show program's version number and exit"
-#~ msgstr "Mostrar número de versión del programa y salir"
-
-#~ msgid "%prog [options]"
-#~ msgstr "%prog [opciones]"
-
-#~ msgid ""
-#~ "\n"
-#~ "        parse_args(args : [string] = sys.argv[1:],\n"
-#~ "                   values : Values = None)\n"
-#~ "        -> (values : Values, args : [string])\n"
-#~ "\n"
-#~ "        Parse the command-line options found in 'args' (default:\n"
-#~ "        sys.argv[1:]).  Any errors result in a call to 'error()', which\n"
-#~ "        by default prints the usage message to stderr and calls\n"
-#~ "        sys.exit() with an error message.  On success returns a pair\n"
-#~ "        (values, args) where 'values' is an Values instance (with all\n"
-#~ "        your option values) and 'args' is the list of arguments left\n"
-#~ "        over after parsing options.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "        parse_args(args : [string] = sys.argv[1:],\n"
-#~ "                   values : Values = None)\n"
-#~ "        -> (values : Values, args : [string])\n"
-#~ "\n"
-#~ "        Analiza las opciones de línea de comando encontrados en "
-#~ "'args' (default:\n"
-#~ "        sys.argv[1:]).  Cualquier error produce una llamada a 'error()', "
-#~ "que\n"
-#~ "        por defecto imprime el mensaje de uso a la salida stderr y llama\n"
-#~ "        sys.exit() con un mensaje de error. Si exitoso devuelve un par\n"
-#~ "        (values, args) donde 'values' es una instancia de Values (con "
-#~ "todos\n"
-#~ "        los valores de las opciones que le fueron pasadas) y 'args' es la "
-#~ "lista de argumentos \n"
-#~ "        que quedan luego de analizar las opciones.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "\n"
-#~ "        check_values(values : Values, args : [string])\n"
-#~ "        -> (values : Values, args : [string])\n"
-#~ "\n"
-#~ "        Check that the supplied option values and leftover arguments are\n"
-#~ "        valid.  Returns the option values and leftover arguments\n"
-#~ "        (possibly adjusted, possibly completely new -- whatever you\n"
-#~ "        like).  Default implementation just returns the passed-in\n"
-#~ "        values; subclasses may override as desired.\n"
-#~ "        "
-#~ msgstr ""
-#~ "\n"
-#~ "        check_values(values : Values, args : [string])\n"
-#~ "        -> (values : Values, args : [string])\n"
-#~ "\n"
-#~ "        Verifica la validez de los valores de las opciones indicadas y de "
-#~ "los\n"
-#~ "        argumentos sobrantes. Devuelve los valores de opciones y "
-#~ "argumentos sobrantes\n"
-#~ "        (posiblemente corregidos, completamente nuevos -- como le "
-#~ "parezca\n"
-#~ "        mejor).  La implementación predeterminada simplemente devuelve "
-#~ "los valores que se\n"
-#~ "         le pasaron; las subclases se pueden sobreescribir.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "_process_args(largs : [string],\n"
-#~ "                         rargs : [string],\n"
-#~ "                         values : Values)\n"
-#~ "\n"
-#~ "        Process command-line arguments and populate 'values', consuming\n"
-#~ "        options and arguments from 'rargs'.  If 'allow_interspersed_args' "
-#~ "is\n"
-#~ "        false, stop at the first non-option argument.  If true, "
-#~ "accumulate any\n"
-#~ "        interspersed non-option arguments in 'largs'.\n"
-#~ "        "
-#~ msgstr ""
-#~ "_process_args(largs : [string],\n"
-#~ "                         rargs : [string],\n"
-#~ "                         values : Values)\n"
-#~ "\n"
-#~ "        Procesa argumentos de línea de comando y carga 'values', "
-#~ "consumiendo\n"
-#~ "        opciones y argumentos de 'args'.  Si 'allow_interspersed_args' "
-#~ "es\n"
-#~ "        falso, para con el primer argumento que no es una opción.  Si "
-#~ "verdadero, acumula los\n"
-#~ "        argumentos intermedios que no son opciones en 'largs'.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "_match_long_opt(opt : string) -> string\n"
-#~ "\n"
-#~ "        Determine which long option string 'opt' matches, ie. which one\n"
-#~ "        it is an unambiguous abbrevation for.  Raises BadOptionError if\n"
-#~ "        'opt' doesn't unambiguously match any long option string.\n"
-#~ "        "
-#~ msgstr ""
-#~ "_match_long_opt(opt : string) -> string\n"
-#~ "\n"
-#~ "        Determina con cual opción de cadena larga concuerda la cadena "
-#~ "'opt', o sea que, para cual\n"
-#~ "        de ellos es una abreviatura no ambigua. Produce BadOptionError "
-#~ "si\n"
-#~ "        'opt' no coincide de manera no-ambigua con uno de las opciones de "
-#~ "cadena larga.\n"
-#~ "        "
-
-#~ msgid "%s option requires an argument"
-#~ msgstr "la opción %s requiere un argumento"
-
-#~ msgid "%s option requires %d arguments"
-#~ msgstr "la opción %s requiere %d argumentos"
-
-#~ msgid "%s option does not take a value"
-#~ msgstr "la opción %s no toma un valor"
-
-#~ msgid "no such option: %s"
-#~ msgstr "no existe la opción: %s"
-
-# alguna mejor idea para "retornar" ?
-#~ msgid ""
-#~ "error(msg : string)\n"
-#~ "\n"
-#~ "        Print a usage message incorporating 'msg' to stderr and exit.\n"
-#~ "        If you override this in a subclass, it should not return -- it\n"
-#~ "        should either exit or raise an exception.\n"
-#~ "        "
-#~ msgstr ""
-#~ "error(msg : string)\n"
-#~ "\n"
-#~ "        Imprime un mensaje incluyendo 'msg' hacia la salida stderr y "
-#~ "sale.\n"
-#~ "        Si lo sobreescribe en una subclase no debería retornar -- \n"
-#~ "        sino debería o salir o producir una excepción.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "print_usage(file : file = stdout)\n"
-#~ "\n"
-#~ "        Print the usage message for the current program (self.usage) to\n"
-#~ "        'file' (default stdout).  Any occurence of the string \"%prog\" "
-#~ "in\n"
-#~ "        self.usage is replaced with the name of the current program\n"
-#~ "        (basename of sys.argv[0]).  Does nothing if self.usage is empty\n"
-#~ "        or not defined.\n"
-#~ "        "
-#~ msgstr ""
-#~ "print_usage(file : file = stdout)\n"
-#~ "\n"
-#~ "        Imprime el mensaje de uso para el programa actual (self.usage) a\n"
-#~ "        'file' (por defecto stdout).  Cualquier ocurrencia de la cadena "
-#~ "\"%prog\" en\n"
-#~ "        self.usage es reemplazado por el nombre del programa actual\n"
-#~ "        (nombre de base de sys.argv[0]). No hace nada si self.usage está "
-#~ "vacío\n"
-#~ "        o no definido.\n"
-#~ "        "
-
-#~ msgid ""
-#~ "print_version(file : file = stdout)\n"
-#~ "\n"
-#~ "        Print the version message for this program (self.version) to\n"
-#~ "        'file' (default stdout).  As with print_usage(), any occurence\n"
-#~ "        of \"%prog\" in self.version is replaced by the current "
-#~ "program's\n"
-#~ "        name.  Does nothing if self.version is empty or undefined.\n"
-#~ "        "
-#~ msgstr ""
-#~ "print_version(file : file = stdout)\n"
-#~ "\n"
-#~ "        Imprime el mensaje de versión del programa actual (self.version) "
-#~ "a\n"
-#~ "        'file' (por defecto a stdout). Similar a print_usage(), cualquier "
-#~ "ocurrencia\n"
-#~ "        de \"%prog\" en self.version es reemplazado por el nombre del "
-#~ "programa\n"
-#~ "        actual. No hace nada si self.version está vacío o no definido.\n"
-#~ "        "
-
-#~ msgid "options"
-#~ msgstr "opciones"
-
-#~ msgid ""
-#~ "print_help(file : file = stdout)\n"
-#~ "\n"
-#~ "        Print an extended help message, listing all options and any\n"
-#~ "        help text provided with them, to 'file' (default stdout).\n"
-#~ "        "
-#~ msgstr ""
-#~ "print_help(file : file = stdout)\n"
-#~ "\n"
-#~ "        Imprime un mensaje de ayuda extensa, listando todas las opciones "
-#~ "y\n"
-#~ "        los textos de ayuda que vienen con ellos, a 'file' (por defecto a "
-#~ "stdout).\n"
-#~ "        "
-
-#~ msgid ""
-#~ "_match_abbrev(s : string, wordmap : {string : Option}) -> string\n"
-#~ "\n"
-#~ "    Return the string key in 'wordmap' for which 's' is an unambiguous\n"
-#~ "    abbreviation.  If 's' is found to be ambiguous or doesn't match any "
-#~ "of\n"
-#~ "    'words', raise BadOptionError.\n"
-#~ "    "
-#~ msgstr ""
-#~ "_match_abbrev(s : string, wordmap : {string : Option}) -> string\n"
-#~ "\n"
-#~ "    Devuelve la cadena clave en 'wordmap' para la cual 's' es una "
-#~ "abreviatura\n"
-#~ "    no-ambigua.  Si 's' resulta ser ambiguo o no concuerda con ninguno "
-#~ "de \n"
-#~ "    'words', produce BadOptionError.\n"
-#~ "    "
-
-#~ msgid "ambiguous option: %s (%s?)"
-#~ msgstr "opción ambigua: %s (%s?)"
-
-#~ msgid "No updates available for repository %s."
-#~ msgstr "No hay actualizaciones disponibles para repositorio %s."
