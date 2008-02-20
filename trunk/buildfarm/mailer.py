@@ -36,7 +36,7 @@ def send(message, pspec = "", type = ""):
                        word),
                       message.split(" "))
 
-    if not config.useSmtpAuth and (not config.smtpUser or not config.smtpPassword):
+    if config.useSmtpAuth and (not config.smtpUser or not config.smtpPassword):
         logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
         return
 
