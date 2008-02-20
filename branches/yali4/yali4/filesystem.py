@@ -417,7 +417,7 @@ class XFSFileSystem(FileSystem):
 # linux-swap
 class SwapFileSystem(FileSystem):
 
-    _name = "linux-swap(new)"
+    _name = "linux-swap"
 
     def __init__(self):
         FileSystem.__init__(self)
