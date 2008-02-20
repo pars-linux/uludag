@@ -13,6 +13,7 @@
 
 # Standart Python Modules
 import os
+import glob
 
 # Pisi API
 import pisi.api
@@ -55,6 +56,9 @@ class PisiApi:
         # Set UI
         pisi.api.set_userinterface(CLI())
 
+        # Create dictionary from 2007.3 ISO package list
+        self._createIsoDictionary("data/packages-2007.3")
+
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
 
@@ -65,6 +69,23 @@ class PisiApi:
         for l in lines:
             name = l.rstrip(".pisi\n").rsplit("-", 3)[0]
             self.isoPackages[name] = l.rstrip("\n")
+
+    def _getPreviousBuild(self, package):
+        # Returns the previous build with buildno < buildno(package) (nearest one)
+        package = package.rstrip(".pisi\n").rsplit("-", 3)
+        searchedBuild = int(package[3])-1
+        retval = None
+        foundPackages = None
+        while not foundPackages and searchedBuild > 0:
+            #logger.info("searching for build %s" % str(searchedBuild))
+            foundPackages = glob.glob("%s-*-*-%s.pisi" % (os.path.join(config.binaryPath, package[0]), searchedBuild))
+            if foundPackages:
+                retval = os.path.basename(foundPackages[0])
+            else:
+                searchedBuild = searchedBuild - 1
+
+        #logger.info("retval from _getPreviousBuild() : %s" % str(retval))
+        return retval
 
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
@@ -84,9 +105,6 @@ class PisiApi:
                 set(map(lambda x: os.path.basename(x), self.__oldBinaryPackages)))
 
     def delta(self, oldBinaryPackages, newBinaryPackages):
-        # Create dictionary from 2007.3 ISO package list
-        self._createIsoDictionary("data/packages-2007.3")
-
         # Sort the lists
         oldBinaryPackages = sorted(oldBinaryPackages)
         newBinaryPackages = sorted(newBinaryPackages)
@@ -94,32 +112,33 @@ class PisiApi:
         delta_packages = []
 
         for pl in zip(oldBinaryPackages, newBinaryPackages):
-            if pl[0]:
-                # Cached packages dir contains the previous build of the package, so create delta.
-                logger.info(_("Building delta between %s(previous build) and %s." % (pl[0], pl[1])))
-                delta_packages.append(create_delta_package(os.path.join(config.binaryPath, pl[0]), \
-                                                           os.path.join(config.workDir, pl[1])))
 
-            # Parse the name, version, release and buildno informations of the new package
-            p_list = os.path.basename(pl[1]).rstrip(".pisi").rsplit("-", 3)
-            name = p_list[0]
-            version = p_list[1]
-            release = p_list[2]
-            build = p_list[3]
+            # Parse the name of the new package
+            name = os.path.basename(pl[1]).rstrip(".pisi").rsplit("-", 3)[0]
 
-            # ISO build may be equal to the previous build of the package so it's unnecessary
-            # to rebuild the same delta.
-            if self.isoPackages.has_key(name) and self.isoPackages[name] != pl[0]:
-                # FIXME : replace config.pardus2007 with /var/cache/pisi/packages when moved into buildfarm machine
+            # full path of the new package, e.g : /var/pisi/traceroute-2.7.7-8-9.pisi
+            p = os.path.join(config.workDir, pl[1])
 
-                # full path of the new binary package, e.g : /var/pisi/traceroute-2.7.7-8-9.pisi
-                p = os.path.join(config.workDir, pl[1])
-                logger.info("building delta between %s(latest iso build) and %s..\n" % (self.isoPackages[name], p))
+            # If ISO contains this package, build a delta between iso build and new build
+            if self.isoPackages.has_key(name):
+                logger.info("building delta package between %s[iso] and %s..\n" % (self.isoPackages[name], pl[1]))
 
                 # build delta between ISO build and current build
-                delta_packages.append(create_delta_package(os.path.join(config.pardus2007, self.isoPackages[name]), p))
+                delta_packages.append(create_delta_package(os.path.join(config.binaryPath, self.isoPackages[name]), p))
 
-        logger.info(_("Created delta package(s): %s" % str(delta_packages)))
+            if pl[0] and pl[0] != self.isoPackages.get(name):
+                # Cached packages dir contains the old build b of the package, so create a delta.
+                logger.info(_("Building delta between %s[previous build] and %s." % (pl[0], pl[1])))
+                delta_packages.append(create_delta_package(os.path.join(config.binaryPath, pl[0]), p))
+
+            # Search for the precedent build, (b-1).
+            previous = self._getPreviousBuild(pl[0])
+
+            if previous and previous != self.isoPackages.get(name):
+                # Found build (b-1).
+                logger.info(_("Building delta package between %s[more previous] and %s." % (previous, pl[1])))
+                delta_packages.append(create_delta_package(os.path.join(config.binaryPath, previous), p))
+
         return delta_packages
 
     def install(self, p):
