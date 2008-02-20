@@ -16,24 +16,23 @@ import grp
 
 from yali4.constants import consts
 
+def cp(s, d):
+    src = os.path.join(consts.target_dir, s)
+    dst = os.path.join(consts.target_dir, d)
+    shutil.copyfile(src, dst)
+
+def touch(f, m=0644):
+    f = os.path.join(consts.target_dir, f)
+    open(f, "w", m).close()
+
+def chgrp(f, group):
+    f = os.path.join(consts.target_dir, f)
+    gid = int(grp.getgrnam(group)[2])
+    os.chown(f, 0, gid)
+
 # necessary things after a full install
 
 def initbaselayout():
-
-    def cp(s, d):
-        src = os.path.join(consts.target_dir, s)
-        dst = os.path.join(consts.target_dir, d)
-        shutil.copyfile(src, dst)
-
-    def touch(f, m=0644):
-        f = os.path.join(consts.target_dir, f)
-        open(f, "w", m).close()
-
-    def chgrp(f, group):
-        f = os.path.join(consts.target_dir, f)
-        gid = int(grp.getgrnam(group)[2])
-        os.chown(f, 0, gid)
-
     # create /etc/hosts
     cp("usr/share/baselayout/hosts", "etc/hosts")
 
@@ -58,6 +57,10 @@ def initbaselayout():
     # create needed device nodes
     os.system("/usr/bin/mknod %s/dev/console c 5 1" % consts.target_dir)
     os.system("/usr/bin/mknod %s/dev/null c 1 3" % consts.target_dir)
+
+def setTimeZone():
+    cp("usr/share/zoneinfo/%s" % ctx.installdata.timezone, "etc/localtime")
+    return True
 
 def migrate_xorg_conf(keymap="trq"):
     # copy xorg.conf.

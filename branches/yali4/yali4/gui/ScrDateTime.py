@@ -49,36 +49,36 @@ It is important to use correct settings.
         zoneList = [ x.timeZone for x in zom.getEntries() ]
         zoneList.sort()
         for zone in zoneList:
-            self.ui.timeZoneList.addItem(QString(zone))
+            if zone == ctx.installData.timezone:
+                self.currentZone = QtGui.QListWidgetItem(zone)
+                self.ui.timeZoneList.addItem(self.currentZone)
+            else:
+                self.ui.timeZoneList.addItem(QtGui.QListWidgetItem(zone))
 
-        self.connect(self.ui.timeHours, SIGNAL("valueChanged(int)"),self.timerStop)
-        self.connect(self.ui.timeMinutes, SIGNAL("valueChanged(int)"),self.timerStop)
-        self.connect(self.ui.timeSeconds, SIGNAL("valueChanged(int)"),self.timerStop)
+        # Widget connections
+        self.connect(self.ui.timeHours, SIGNAL("timeChanged(QTime)"),self.timerStop)
+        self.connect(self.ui.timeMinutes, SIGNAL("timeChanged(QTime)"),self.timerStop)
+        self.connect(self.ui.timeSeconds, SIGNAL("timeChanged(QTime)"),self.timerStop)
         self.connect(self.timer, SIGNAL("timeout()"),self.updateClock)
+
+        # Select the timeZone
+        self.ui.timeZoneList.setCurrentItem(self.currentZone)
 
     def timerStop(self,i):
         if self.fromTimeUpdater:
             return
-        self.ui.timeHours.setPrefix('')
-        self.ui.timeMinutes.setPrefix('')
-        self.ui.timeSeconds.setPrefix('')
+        # Human action detected; stop the timer.
         self.timer.stop()
 
     def updateClock(self):
 
-        def sw(w,n):
-            w.setValue(n)
-            if n<10:
-                w.setPrefix('0')
-            else:
-                w.setPrefix('')
-
+        # What time is it ?
         cur = QTime.currentTime()
 
         self.fromTimeUpdater = True
-        sw(self.ui.timeHours,cur.hour())
-        sw(self.ui.timeMinutes,cur.minute())
-        sw(self.ui.timeSeconds,cur.second())
+        self.ui.timeHours.setTime(cur)
+        self.ui.timeMinutes.setTime(cur)
+        self.ui.timeSeconds.setTime(cur)
         self.fromTimeUpdater = False
 
     def shown(self):
@@ -87,12 +87,16 @@ It is important to use correct settings.
     def execute(self):
         date = self.ui.calendarWidget.selectedDate()
         args = "%02d%02d%02d%02d%04d.%02d" % (date.month(), date.day(),
-                                              self.ui.timeHours.value(), self.ui.timeMinutes.value(),
-                                              date.year(), self.ui.timeSeconds.value())
+                                              self.ui.timeHours.time().hour(), self.ui.timeMinutes.time().minute(),
+                                              date.year(), self.ui.timeSeconds.time().second())
         # Set current date and time
         os.system("date %s" % args)
         self.timer.stop()
 
         # Sync date time with hardware
         os.system("hwclock --systohc")
+
+        # Store time zone selection we will set it in processPending actions.
+        ctx.installData.timezone = self.ui.timeZoneList.currentItem().text()
+        ctx.debugger.log("Time zone selected as %s " % ctx.installData.timezone)
 

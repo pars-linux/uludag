@@ -177,6 +177,7 @@ don't you?
 
         steps = [{"text":"Trying to connect COMAR Daemon...","operation":connectToComar},
                  {"text":"Setting Hostname...","operation":setHostName},
+                 {"text":"Setting TimeZone...","operation":yali4.postinstall.setTimeZone},
                  {"text":"Setting Root Password...","operation":setRootPassword},
                  {"text":"Adding Users...","operation":addUsers},
                  {"text":"Writing Console Data...","operation":writeConsoleData},

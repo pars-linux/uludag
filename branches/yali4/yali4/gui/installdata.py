@@ -24,4 +24,5 @@ class InstallData:
     bootLoaderDev = None
     repoAddr = None
     useYaliFirstBoot = False
+    timezone = "Europe/Istanbul"
 
