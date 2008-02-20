@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>652</width>
-            <height>463</height>
+            <width>528</width>
+            <height>399</height>
         </rect>
     </property>
     <property name="paletteBackgroundColor">
@@ -25,85 +25,71 @@
     <property name="caption">
         <string>Panel</string>
     </property>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>styleLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>30</y>
+                <width>460</width>
+                <height>60</height>
+            </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="text">
+            <string>Here, you can select a &lt;b&gt;style &lt;/b&gt;for your desktop. &lt;b&gt;Pardus&lt;/b&gt; provides some eye candy styles for you.</string>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+    </widget>
     <widget class="QGroupBox">
         <property name="name">
             <cstring>styleSettingsGroup</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>20</x>
-                <y>170</y>
-                <width>480</width>
-                <height>200</height>
+                <x>40</x>
+                <y>90</y>
+                <width>460</width>
+                <height>300</height>
             </rect>
         </property>
         <property name="backgroundOrigin">
             <enum>ParentOrigin</enum>
         </property>
+        <property name="frameShape">
+            <enum>TabWidgetPanel</enum>
+        </property>
+        <property name="lineWidth">
+            <number>2</number>
+        </property>
         <property name="title">
             <string>Style</string>
         </property>
-        <spacer>
-            <property name="name">
-                <cstring>spacerLeft</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>251</width>
-                    <height>20</height>
-                </size>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>12</x>
-                    <y>73</y>
-                    <width>251</width>
-                    <height>20</height>
-                </rect>
-            </property>
-        </spacer>
-        <spacer>
-            <property name="name">
-                <cstring>spacerRight</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>251</width>
-                    <height>20</height>
-                </size>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>277</x>
-                    <y>73</y>
-                    <width>251</width>
-                    <height>20</height>
-                </rect>
-            </property>
-        </spacer>
         <widget class="QLabel">
             <property name="name">
                 <cstring>pix_style</cstring>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>269</x>
-                    <y>73</y>
-                    <width>16</width>
-                    <height>20</height>
+                    <x>20</x>
+                    <y>70</y>
+                    <width>340</width>
+                    <height>190</height>
                 </rect>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>4</hsizetype>
+                    <vsizetype>4</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
             </property>
             <property name="maximumSize">
                 <size>
@@ -124,15 +110,44 @@
                 <set>AlignCenter</set>
             </property>
         </widget>
+        <widget class="QComboBox">
+            <property name="name">
+                <cstring>styleBox</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>30</y>
+                    <width>250</width>
+                    <height>21</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>styleButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>290</x>
+                    <y>30</y>
+                    <width>70</width>
+                    <height>23</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Apply</string>
+            </property>
+        </widget>
         <widget class="QCheckBox">
             <property name="name">
                 <cstring>checkKickoff</cstring>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>10</x>
-                    <y>40</y>
-                    <width>440</width>
+                    <x>20</x>
+                    <y>260</y>
+                    <width>330</width>
                     <height>30</height>
                 </rect>
             </property>
@@ -143,57 +158,6 @@
                 <string>Use enhanced Kickoff style menu</string>
             </property>
         </widget>
-        <widget class="QPushButton">
-            <property name="name">
-                <cstring>styleButton</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>11</x>
-                    <y>100</y>
-                    <width>430</width>
-                    <height>23</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Test Style</string>
-            </property>
-        </widget>
-        <widget class="QComboBox">
-            <property name="name">
-                <cstring>styleBox</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>11</x>
-                    <y>20</y>
-                    <width>430</width>
-                    <height>21</height>
-                </rect>
-            </property>
-        </widget>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>styleLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>30</y>
-                <width>470</width>
-                <height>110</height>
-            </rect>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>ParentOrigin</enum>
-        </property>
-        <property name="text">
-            <string>Here, you can select a &lt;b&gt;style &lt;/b&gt;for your desktop. &lt;b&gt;Pardus&lt;/b&gt; provides some eye candy styles for you.</string>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
     </widget>
 </widget>
 <images>

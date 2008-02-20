@@ -53,7 +53,7 @@ class Widget(PanelWidget, ScreenWidget):
         self.connect(self.styleButton, SIGNAL("clicked()"), self.testStyle)
 
         self.styleBox.setCurrentItem(0)
-        #self.emit(self.styleSelected(0))
+        self.styleSelected(0)
 
 
     def testStyle(self):
@@ -77,9 +77,7 @@ class Widget(PanelWidget, ScreenWidget):
         Kicker = qtxml.QDomElement
         Kicker = dom.elementsByTagName("kicker").item(0).toElement()
 
-        if  self.checkKickoff.isChecked():
-            print self.checkKickoff.isChecked()
-            kickerConf.writeEntry("LegacyKMenu",not self.checkKickoff.isChecked())
+        kickerConf.writeEntry("LegacyKMenu",not self.checkKickoff.isChecked())
         kickerConf.writeEntry("Transparent", self.getProperty(Kicker, "Transparent", "value"))
         kickerConf.writeEntry("SizePercentage", self.getProperty(Kicker, "SizePercentage", "value"))
         kickerConf.writeEntry("CustomSize", self.getProperty(Kicker, "CustomSize", "value"))
@@ -136,7 +134,7 @@ class Widget(PanelWidget, ScreenWidget):
         name = QString(self.styleBox.text(item))
         previewPath = QString
 
-        if self.checkKickoff.isChecked:
+        if self.checkKickoff.isChecked():
             previewPath = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + "_kickoff.preview.png"
         else:
             previewPath = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + ".preview.png"
