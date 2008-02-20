@@ -70,14 +70,14 @@ class PisiApi:
         pspec = os.path.join(config.localPspecRepo, pspec)
         if not os.path.exists(pspec):
             logger.error(_("'%s' does not exist!") % (pspec))
-            raise _("'%s' is does not exist!") % pspec
+            raise _("'%s' does not exist!") % pspec
 
         logger.info(_("BUILD called for %s") % (pspec)) 
 
         __newBinaryPackages, __oldBinaryPackages = pisi.api.build(pspec)
         logger.info(_("Created package(s): %s") % (__newBinaryPackages))
-        self.__newBinaryPackages += _newBinaryPackages
-        self.__oldBinaryPackages += _oldBinaryPackages
+        self.__newBinaryPackages += __newBinaryPackages
+        self.__oldBinaryPackages += __oldBinaryPackages
 
         # Normalize paths to file names
         return (set(map(lambda x: os.path.basename(x), self.__newBinaryPackages)), \
