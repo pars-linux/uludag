@@ -28,7 +28,7 @@ __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
 
 class CLI(pisi.ui.UI):
-    # FIXME: cli/__init__.py
+    # FIXME: cli/__init__.py is weird!
     def confirm(self, msg):
         # return True for all cases, somehow "yes_all" is not working!
         return True
@@ -74,10 +74,10 @@ class PisiApi:
 
         logger.info(_("BUILD called for %s") % (pspec)) 
 
-        (newBinaryPackages, oldBinaryPackages) = pisi.api.build(pspec)
-        logger.info(_("Created package(s): %s") % (newBinaryPackages))
-        self.__newBinaryPackages += newBinaryPackages
-        self.__oldBinaryPackages += oldBinaryPackages
+        __newBinaryPackages, __oldBinaryPackages = pisi.api.build(pspec)
+        logger.info(_("Created package(s): %s") % (__newBinaryPackages))
+        self.__newBinaryPackages += _newBinaryPackages
+        self.__oldBinaryPackages += _oldBinaryPackages
 
         # Normalize paths to file names
         return (set(map(lambda x: os.path.basename(x), self.__newBinaryPackages)), \

@@ -36,9 +36,9 @@ def send(message, pspec = "", type = ""):
                        word),
                       message.split(" "))
 
-    if config.useSmtpAuth and (not config.smtpUser or not config.smtpPassword):
-            logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
-            return
+    if not config.useSmtpAuth and (not config.smtpUser or not config.smtpPassword):
+        logger.info("Herhangi bir SMTP kullanıcı ve parolası çifti tanımlanmadığı için e-posta gönderilmiyor.")
+        return
 
     recipientsName, recipientsEmail = [], []
     if pspec:
@@ -48,7 +48,8 @@ def send(message, pspec = "", type = ""):
         recipientsEmail.append(specFile.source.packager.email)
 
     templates = {"error": tmpl.error_message,
-                 "info" : tmpl.info_message}
+                 "info" : tmpl.info_message,
+                 "announce" : tmpl.announce_message}
 
     packagename=os.path.basename(os.path.dirname(pspec))
     last_log = "".join(open(config.logFile).readlines()[-20:]) # FIXME: woohooo, what's this ;)
@@ -57,6 +58,7 @@ def send(message, pspec = "", type = ""):
                                  'mailTo'       : ', '.join(recipientsEmail),
                                  'ccList'       : ', '.join(config.ccList),
                                  'mailFrom'     : config.mailFrom,
+                                 'announceAddr' : config.announceAddr,
                                  'subject'      : pspec or type,
                                  'message'      : wrap(message),
                                  'pspec'        : pspec,
@@ -79,10 +81,16 @@ def send(message, pspec = "", type = ""):
             logger.error("E-posta gönderimi gerçekleştirilemedi: Kimlik doğrulama başarısız.")
             return
 
-    smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, message)
+    if type == "announce":
+        smtpresult = session.sendmail(config.mailFrom, config.announceAddr , message)
+    else:
+        smtpresult = session.sendmail(config.mailFrom, recipientsEmail + config.ccList, message)
 
 def error(message, pspec):
     send(message, pspec, type = "error")
 
 def info(message):
     send(message, type = "info")
+
+def announce(message):
+    send(message, type = "announce")

@@ -110,3 +110,19 @@ This message is sent from Pardus buildfarm. Please do not reply as it is automat
 %(message)s
 Happy hacking!
 """
+
+announce_message = """\
+From: Pardus Buildfarm  <%(mailFrom)s>
+To: %(announceAddr)s
+Subject: [buildfarm] [REPORT] New packages in -testing repository
+Content-Type: text/plain;
+            charset="utf-8"
+
+Hello,
+
+This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
+
+%(message)s
+
+Happy hacking!
+"""
