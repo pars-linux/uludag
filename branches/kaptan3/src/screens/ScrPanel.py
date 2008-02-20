@@ -26,51 +26,60 @@ class Widget(PanelWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = "Configure your panel !"
     desc = "Select the one you like..."
+
     selectedStyle= QString()
-    testedStyle = 0
+
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
 
         # Common Pardus settings for all themes
-
         config = KConfig("kdeglobals")
         config.setGroup("KDE")
         config.writeEntry("ShowIconsOnPushButtons", True)
         config.writeEntry("EffectAnimateCombo", True)
         config.sync()
 
+        #add kaptan themes into resource pool
         KGlobal.dirs().addResourceType("themes", KStandardDirs.kde_default("data") + "kaptan/themes/")
 
         themes = QStringList(KGlobal.dirs().findAllResources("themes", "*.xml", True))
         themes.sort
 
-        for i in themes:
-            self.styleBox.insertItem(QFileInfo(i).baseName())
+        for thumbnail in themes:
+            self.styleBox.insertItem(QFileInfo(thumbnail).baseName())
 
         self.connect(self.styleBox, SIGNAL("activated(int)"), self.styleSelected)
-        #self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
+        self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
         self.connect(self.styleButton, SIGNAL("clicked()"), self.testStyle)
+
         self.styleBox.setCurrentItem(0)
+        #self.emit(self.styleSelected(0))
 
 
     def testStyle(self):
+
+        #read entire xml into DOM tree
         dom = qtxml.QDomDocument()
         file = QFile(self.selectedStyle)
         file.open(IO_ReadOnly)
         dom.setContent(file.readAll())
         file.close()
 
+        #attach to dcop
         client = kdecore.KApplication.dcopClient()
-        #if not client.isAttached():
-        client.attach()
+        if not client.isAttached():
+            client.attach()
 
+        #kicker settings
         kickerConf = KConfig("kickerrc")
         kickerConf.setGroup("General")
 
         Kicker = qtxml.QDomElement
         Kicker = dom.elementsByTagName("kicker").item(0).toElement()
 
-        # kickerConf.writeEntry("LegacyKMenu", checkKickoff.isChecked())
+        if  self.checkKickoff.isChecked():
+            print self.checkKickoff.isChecked()
+            kickerConf.writeEntry("LegacyKMenu",not self.checkKickoff.isChecked())
         kickerConf.writeEntry("Transparent", self.getProperty(Kicker, "Transparent", "value"))
         kickerConf.writeEntry("SizePercentage", self.getProperty(Kicker, "SizePercentage", "value"))
         kickerConf.writeEntry("CustomSize", self.getProperty(Kicker, "CustomSize", "value"))
@@ -78,8 +87,10 @@ class Widget(PanelWidget, ScreenWidget):
         kickerConf.writeEntry("Alignment", self.getProperty(Kicker, "Alignment", "value"))
         kickerConf.sync()
 
+        #restart kicker
         client.send("kicker", "kicker", "restart()", "")
 
+        #kwin settings
         kwinConf = KConfig("kwinrc")
         kwinConf.setGroup("Style")
 
@@ -88,11 +99,12 @@ class Widget(PanelWidget, ScreenWidget):
 
         kwinConf.writeEntry("PluginLib", self.getProperty(KWin, "PluginLib", "value"))
         kwinConf.sync()
-        
-        client.send("kwin", "KWinInterface", "reconfigure()", "")
-    
-        globalConf = KConfig("kdeglobals")
 
+        #restart kwin
+        client.send("kwin", "KWinInterface", "reconfigure()", "")
+        
+        #widget settings
+        globalConf = KConfig("kdeglobals")
         globalConf.setGroup("General")
 
         Widget = qtxml.QDomElement
@@ -105,23 +117,29 @@ class Widget(PanelWidget, ScreenWidget):
         
 
     def getProperty(self, parent,tag, attr):
+        
         pList = qtxml.QDomNodeList
         pList = parent.elementsByTagName(tag)
-        if pList.count():
+        
+        if  pList.count():
             return  pList.item(0).toElement().attribute(attr)
         else:
             return
 
     
     def kickoffSelected(self):
-        pass
+        
+        self.styleSelected(self.styleBox.currentItem())
 
     def styleSelected(self, item):
+
         name = QString(self.styleBox.text(item))
-        
         previewPath = QString
-        
-        previewPath = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + ".preview.png"
+
+        if self.checkKickoff.isChecked:
+            previewPath = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + "_kickoff.preview.png"
+        else:
+            previewPath = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + ".preview.png"
 
         xmlFile = QString
         xmlFile = KGlobal.dirs().findResourceDir("themes", "/" ) + name + "/" + name + ".xml"
@@ -129,6 +147,8 @@ class Widget(PanelWidget, ScreenWidget):
         if QFile.exists(previewPath):
             self.pix_style.setPixmap(QPixmap(previewPath))
             self.selectedStyle = xmlFile
+        else:
+            return
 
 
 
