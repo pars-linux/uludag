@@ -72,7 +72,6 @@ def buildPackages():
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
 
                 # Delta package generation using delta interface
-                deltaPackages = []
                 deltaPackages = pisi.delta(oldBinaryPackages, newBinaryPackages)
 
             except Exception, e:
@@ -163,7 +162,9 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
     def moveOldPackage(package):
         logger.info(_("*** Old package '%s' is processing") % (package))
         if exists(join(config.binaryPath, package)):
-            remove(join(config.binaryPath, package))
+            #FIXME: uncomment this on buildfarm machine, modify pisiinterface.py
+            #remove(join(config.binaryPath, package))
+            pass
 
         if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
@@ -183,7 +184,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
     def moveDeltaPackage(package):
         logger.info(_("*** Delta package '%s' is processing") % (package))
         if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.deltaPath)
+            copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
     for package in newPackages:
