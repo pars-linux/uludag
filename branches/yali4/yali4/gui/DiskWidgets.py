@@ -398,7 +398,7 @@ class DiskItem(QtGui.QWidget):
                          "ext2" :{"bgcolor":"#9DB8D2",
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
-               "linux-swap(new)":{"bgcolor":"#C1665A",
+                   "linux-swap" :{"bgcolor":"#C1665A",
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"}}
 
