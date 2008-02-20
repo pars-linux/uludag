@@ -43,7 +43,7 @@ class Widget(PanelWidget, ScreenWidget):
         KGlobal.dirs().addResourceType("themes", KStandardDirs.kde_default("data") + "kaptan/themes/")
 
         themes = QStringList(KGlobal.dirs().findAllResources("themes", "*.xml", True))
-        themes.sort
+        themes.sort()
 
         for thumbnail in themes:
             self.styleBox.insertItem(QFileInfo(thumbnail).baseName())
