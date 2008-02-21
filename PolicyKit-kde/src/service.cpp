@@ -1,4 +1,5 @@
 #include <qvariant.h>
+#include <qsocketnotifier.h>
 
 //policykit header
 #include <polkit/polkit.h>
@@ -12,10 +13,45 @@
 #include "authdialog.h"
 #include "debug.h"
 
-PolicyService::PolicyService(const QDBusConnection& connection) : m_connection(connection)
+PolicyService::PolicyService(QDBusConnection *sessionBus): m_sessionBus(sessionBus), m_systemBus(QDBusConnection::addConnection(QDBusConnection::SystemBus))
 {
+
     Debug::printDebug("Registering object: /");
-    m_connection.registerObject("/", this);
+    m_sessionBus.registerObject("/", this);
+
+    //TODO: handle name owner changed signal
+
+    m_context = polkit_context_new();
+    if (m_context == NULL)
+    {
+        QString msg("Could not get a new PolKitContext.");
+        Debug::printError(msg);
+        throw msg;
+    }
+
+    polkit_context_set_load_descriptions(context);
+
+    //TODO: polkit_context_set_config_changed
+    //TODO: polkit_context_set_io_watch_functions
+
+    polkit_context_set_io_watch_functions (context, polkit_add_watch, polkit_remove_watch);
+
+
+    if (!polkit_context_init (context, &error))
+    {
+        QString msg("Could not initialize PolKitContext");
+        if (polkit_error_is_set(error))
+        {
+            Debug::printError(msg + ": " + polkit_error_get_error_message(error));
+        }
+        else
+            Debug::printError(msg);
+
+        throw msg;
+    }
+
+    //TODO: add kill_timer
+
 }
 
 PolicyService::~PolicyService()
@@ -54,6 +90,12 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
 
     Debug::printWarning(QString("No such DBus method: '%1'").arg(message.member()));
     return false;
+}
+
+void slotBusNameOwnerChanged(const QDBusMessage& msg)
+{
+    //TODO: exit if not busy
+    Debug::printWarning(QString("Session bus name owner changed.").arg(message.member()));
 }
 
 void PolicyService::sendDBusError(const QDBusMessage& message, const QString& errorstr, const QString& errortype)
@@ -117,20 +159,6 @@ bool PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
 {
     PolKitError *error = NULL;
-
-    PolKitContext* context = polkit_context_new();
-    polkit_context_set_load_descriptions(context);
-    if (!polkit_context_init (context, &error))
-    {
-        if (polkit_error_is_set(error))
-        {
-            Debug::printError(QString("Could not initialize polkit: %1").arg(polkit_error_get_error_message(error)));
-        }
-        else
-            Debug::printError("Could not initialize polkit.");
-
-        return false;
-    }
 
     PolKitAction *action = polkit_action_new();
     if (action == NULL)
@@ -222,4 +250,29 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     }
 
     return false;
+}
+
+/////////// PolKit IO watch functions ////////////////
+
+extern "C" {static int polkit_add_watch(PolKitContext *context, int fd);}
+static int polkit_add_watch(PolKitContext *context, int fd)
+{
+    //TODO: delete notify
+
+    QSocketNotifier *notify = new QSocketNotifier(fd, QSocketNotifier::Read);
+    notify->connect(notify, SIGNAL(activated(int)), SLOT(polkit_watch_have_data(PolKitContext *, int)));
+
+    return 0;
+}
+
+extern "C" {static void polkit_remove_watch(PolKitContext *context, int fd);}
+static void polkit_remove_watch(PolKitContext *context, int fd)
+{
+}
+
+extern "C" {static void polkit_watch_have_data(PolKitContext *context, int fd);}
+static void polkit_watch_have_data(PolKitContext *context, int fd)
+{
+    //TODO: check data
+    polkit_context_io_func (context, fd);
 }

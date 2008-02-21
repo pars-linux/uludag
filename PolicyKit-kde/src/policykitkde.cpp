@@ -9,10 +9,8 @@
 
 PolicyKitKDE::PolicyKitKDE()
 {
-    //TODO: Reset environment
-    //Check for root user
-
     QDBusConnection connection = QDBusConnection::addConnection(QDBusConnection::SessionBus);
+
     if (!connection.isConnected())
     {
         Debug::printError("Could not connect to session bus.");
