@@ -26,6 +26,7 @@ class Widget(MouseWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(MouseWidget.__init__, (self,) + args)
+        self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
 
     def shown(self):
         pass
@@ -33,3 +34,9 @@ class Widget(MouseWidget, ScreenWidget):
     def execute(self):
         return True
 
+    def setClickBehaviour(self):
+        config = KConfig("kdeglobals")
+        config.setGroup("KDE")
+        config.writeEntry("SingleClick", self.singleClick.isChecked())
+        config.sync()
+        KIPC.sendMessageAll(KIPC.SettingsChanged, KApplication.SETTINGS_MOUSE)

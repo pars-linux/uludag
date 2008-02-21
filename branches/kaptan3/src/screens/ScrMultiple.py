@@ -25,7 +25,7 @@ class Widget(MultipleWidget, ScreenWidget):
     title = "Multiple Desktops"
     desc = "Configure virtual desktops.."
     #for simplicity, multiple desktops are limited to 4.
-    maxDesktops = 4
+    maxDesktops = 8
 
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
