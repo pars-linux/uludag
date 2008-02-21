@@ -66,28 +66,6 @@ class Runner:
                         ScrGoodbye
                        ]
 
-        """
-        _all_stages = [
-            {'num': 1, 'text': _("Basic setup")},
-            {'num': 2, 'text': _("Prepare for install")},
-            {'num': 3, 'text': _("Install system")}
-            ]
-
-        _all_screens = [
-             {'stage': 1, 'module': ScrKahyaCheck},
-             {'stage': 1, 'module': ScrWelcome},
-             {'stage': 1, 'module': ScrCheckCD},
-             {'stage': 1, 'module': ScrKeyboard},
-             {'stage': 1, 'module': ScrAdmin},
-             {'stage': 1, 'module': ScrUsers},
-             {'stage': 2, 'module': ScrPartitionAuto},
-             {'stage': 2, 'module': ScrPartitionManual},
-             {'stage': 2, 'module': ScrBootloader},
-             {'stage': 3, 'module': ScrInstall},
-             {'stage': 3, 'module': ScrGoodbye}
-             ]
-        """
-
         self._app = QtGui.QApplication(sys.argv)
         self._window = YaliWindow.Widget()
 
@@ -109,10 +87,6 @@ class Runner:
 
         ctx.debugger.log("Yali Started")
 
-        # add stages
-        # for stg in _all_stages:
-        #     ctx.stages.addStage(stg['num'], stg['text'])
-
         ctx.mainScreen = self._window
 
         self._window.createWidgets(_all_screens)
@@ -130,10 +104,11 @@ class Runner:
     def run(self):
 
         # Use default theme;
-        # if you use KDE4 it takes its theme settings so our works looks ugly :)
+        # if you use different Qt4 theme our works looks ugly :)
         self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
 
         self._window.ui.show()
+
         # We want it to be a full-screen window.
         # self._window.ui.resize(self._app.desktop().size())
 

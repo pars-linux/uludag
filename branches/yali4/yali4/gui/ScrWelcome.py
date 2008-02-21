@@ -93,7 +93,7 @@ Have a fruitful experience with Pardus!
             self.ui.rebootButton.setEnabled(True)
 
     def showGPL(self):
-        # make a release notes dialog
+        # make a GPL dialog
         r = GUIGPL.Widget(self)
         d = Dialog("GPL", r, self)
         d.resize(500,400)

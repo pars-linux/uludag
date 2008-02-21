@@ -78,11 +78,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         ctx.mainScreen.enableNext()
         ctx.mainScreen.enableBack()
 
-    def shown(self):
-        pass
-        #from os.path import basename
-        #ctx.debugger.log("%s loaded" % basename(__file__))
-
 class PisiUI(pisi.ui.UI):
     def notify(self, event, **keywords):
         pass

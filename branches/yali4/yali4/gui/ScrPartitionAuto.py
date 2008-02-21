@@ -97,6 +97,7 @@ about disk partitioning.
 
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
             ctx.installData.autoPartDev = self.device
+            ctx.autoInstall = True
             ctx.debugger.log("Automatic Partition selected..")
             ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.device.getPath())
             if self.ui.accept_auto_2.isChecked():

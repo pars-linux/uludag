@@ -138,3 +138,4 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         ctx.mainScreen.disableBack()
         ctx.mainScreen.disableNext()
+

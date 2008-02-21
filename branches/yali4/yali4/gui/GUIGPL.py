@@ -10,7 +10,6 @@
 # Please read the COPYING file.
 #
 
-
 from os.path import join, exists
 import codecs
 
@@ -25,7 +24,7 @@ import yali4.gui.context as ctx
 from yali4.gui.GUIException import *
 
 ##
-# Help widget
+# GPL widget
 class Widget(QTextBrowser):
 
     def __init__(self, *args):
@@ -33,16 +32,6 @@ class Widget(QTextBrowser):
 
         self.setSizePolicy( QSizePolicy(QSizePolicy.Preferred,
                                         QSizePolicy.Expanding))
-        # self.setPaletteBackgroundColor(ctx.consts.bg_color)
-
-        # don't show links in 
-        # self.setLinkUnderline(False)
-        # palette = self.palette()
-        # active_colors = palette.active()
-        # active_colors.setColor(active_colors.Link, ctx.consts.fg_color)
-        # palette.setActive(active_colors)
-        # palette.setInactive(active_colors)
-        # self.setPalette(palette)
 
         try:
             self.setText(codecs.open(self.find_license_file(), "r", "UTF-8").read())
