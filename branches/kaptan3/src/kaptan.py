@@ -30,10 +30,11 @@ import screens.ScrNetwork as ScrNetwork
 import screens.ScrPanel as ScrPanel
 import screens.ScrSummary as ScrSummary
 import screens.ScrGoodbye as ScrGoodbye
-
+import screens.ScrMultiple as ScrMultiple
 avail_screens = [ScrWelcome,
                  ScrMouse,
                  ScrPanel,
+                 ScrMultiple,
                  ScrWallpaper,
                  ScrNetwork,
                  ScrPackage,
