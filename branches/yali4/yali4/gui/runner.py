@@ -29,6 +29,7 @@ from yali4.gui.debugger import DebuggerAspect
 
 import YaliWindow
 # screens
+import ScrKahyaCheck
 import ScrWelcome
 import ScrCheckCD
 import ScrKeyboard
@@ -40,7 +41,6 @@ import ScrPartitionManual
 import ScrBootloader
 import ScrInstall
 import ScrGoodbye
-#import ScrKahyaCheck
 
 ##
 # Runner creates main GUI components for installation...
@@ -52,6 +52,7 @@ class Runner:
     def __init__(self):
 
         _all_screens = [
+                        ScrKahyaCheck,
                         ScrWelcome,
                         ScrCheckCD,
                         ScrKeyboard,

@@ -54,7 +54,7 @@ class Widget(Ui_YaliMain):
             self.helpContent.hide()
         else:
             self.helpContent.show()
-    
+
     # show/hide debug window
     def toggleDebug(self):
         if ctx.debugger.isVisible():
@@ -93,13 +93,13 @@ class Widget(Ui_YaliMain):
     def stackMove(self, id):
         self.mainStack.setCurrentIndex(id)
         _w = self.mainStack.currentWidget()
-        # shown functions contain necessary instructions before
-        # showing a stack ( updating gui, disabling some buttons etc. )
-        _w.shown()
         self.screenName.setText(_w.title)
         self.screenDescription.setText(_w.desc)
         self.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
         self.helpContent.setText(_w.help)
+        # shown functions contain necessary instructions before
+        # showing a stack ( updating gui, disabling some buttons etc. )
+        _w.shown()
 
     # create all widgets and add inside stack
     # see runner.py/_all_screens for the list
