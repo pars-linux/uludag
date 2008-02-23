@@ -25,25 +25,6 @@
     <property name="caption">
         <string>Mouse</string>
     </property>
-    <widget class="QCheckBox">
-        <property name="name">
-            <cstring>checkBox4</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>60</x>
-                <y>340</y>
-                <width>291</width>
-                <height>21</height>
-            </rect>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>ParentOrigin</enum>
-        </property>
-        <property name="text">
-            <string>Reverse scroll</string>
-        </property>
-    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>mouseLabel</cstring>
@@ -220,6 +201,25 @@
         </property>
         <property name="scaledContents">
             <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QCheckBox">
+        <property name="name">
+            <cstring>checkReverse</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>60</x>
+                <y>340</y>
+                <width>291</width>
+                <height>21</height>
+            </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="text">
+            <string>Reverse scroll</string>
         </property>
     </widget>
 </widget>

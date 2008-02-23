@@ -33,6 +33,7 @@ class Widget(MouseWidget, ScreenWidget):
         self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_rh.png")))
         self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
         self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
+        self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
 
     def shown(self):
         pass
@@ -76,13 +77,22 @@ class Widget(MouseWidget, ScreenWidget):
                 if map[pos] == 4 or map[pos] == 5:
                     break
 
-            #check reverse
-        
+        if pos < num_buttons -1:
+            if self.checkReverse.isChecked():
+                map[pos], map[pos+1]= 5,4
+            else:
+                map[pos], map[pos+1]= 4,5
+
         display.Display().set_pointer_mapping(map)
 
         config = KConfig("kcminputrc")
         config.setGroup("Mouse")
-        config.writeEntry("MouseButtonMapping", QString("RightHanded"))
+        if handed == RIGHT_HANDED:
+            config.writeEntry("MouseButtonMapping", QString("RightHanded"))
+        else:
+            config.writeEntry("MouseButtonMapping", QString("LeftHanded"))
+
+        config.writeEntry("ReverseScrollPolarity", self.checkReverse.isChecked())
         config.sync()
         KIPC.sendMessageAll(KIPC.SettingsChanged, KApplication.SETTINGS_MOUSE)
 
