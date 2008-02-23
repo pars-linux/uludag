@@ -175,34 +175,6 @@
             </widget>
         </grid>
     </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>pix_mouse</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>280</x>
-                <y>30</y>
-                <width>190</width>
-                <height>110</height>
-            </rect>
-        </property>
-        <property name="minimumSize">
-            <size>
-                <width>190</width>
-                <height>100</height>
-            </size>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>ParentOrigin</enum>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
     <widget class="QCheckBox">
         <property name="name">
             <cstring>checkReverse</cstring>
@@ -220,6 +192,34 @@
         </property>
         <property name="text">
             <string>Reverse scroll</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>pix_mouse</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>280</x>
+                <y>30</y>
+                <width>145</width>
+                <height>110</height>
+            </rect>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>145</width>
+                <height>100</height>
+            </size>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
         </property>
     </widget>
 </widget>
