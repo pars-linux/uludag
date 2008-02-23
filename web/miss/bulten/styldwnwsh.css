@@ -2,12 +2,11 @@
 /* CSS Document */
 body {
 	margin-left: 0px;
-	margin-top: 0px;
+	margin-top: 10px;
 	margin-right: 0px;
 	margin-bottom: 0px;
-	background-repeat: repeat-y;
-	background-image: url(images/bg.png);
-	background-position:center;
+	background-repeat: repeat-x;
+	background-image: url(../resim/zemin.gif);
 }
 body,td,th {
 	font-family: Tahoma,Arial, Helvetica, sans-serif;
