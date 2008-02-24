@@ -21,6 +21,10 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.paneldlg import PanelWidget
 
+summary = {"sum":""}
+summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["desc"] = "Panel"
+
 class Widget(PanelWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -50,13 +54,13 @@ class Widget(PanelWidget, ScreenWidget):
 
         self.connect(self.styleBox, SIGNAL("activated(int)"), self.styleSelected)
         self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
-        self.connect(self.styleButton, SIGNAL("clicked()"), self.testStyle)
+        self.connect(self.styleButton, SIGNAL("clicked()"), self.applyStyle)
 
         self.styleBox.setCurrentItem(0)
         self.styleSelected(0)
 
 
-    def testStyle(self):
+    def applyStyle(self):
 
         #read entire xml into DOM tree
         dom = qtxml.QDomDocument()
@@ -148,11 +152,12 @@ class Widget(PanelWidget, ScreenWidget):
         else:
             return
 
-
-
     def shown(self):
         pass
 
     def execute(self):
-        return True
+        summary["sum"] = self.styleBox.currentText()
+        #TODO: find a way to control if these choices don't change after clicking apply.
+        if self.checkKickoff.isChecked():
+            summary["sum"] += ", Kickoff Menu"
 
