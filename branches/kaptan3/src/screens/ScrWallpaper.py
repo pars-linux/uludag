@@ -31,6 +31,12 @@ summary = {"sum":""}
 summary["pic"] = "kaptan/pics/mouse_rh.png"
 summary["desc"] = "Wallpaper"
 
+#create a dcopclient for wallpaper
+dcopclient = kdecore.KApplication.dcopClient()
+dcopclient.registerAs("changewp")
+dcopapp = dcopext.DCOPApp("kdesktop", dcopclient)
+current =  dcopapp.KBackgroundIface.currentWallpaper(1)[1]
+
 class Widget(WallpaperWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -42,6 +48,16 @@ class Widget(WallpaperWidget, ScreenWidget):
 
         self.wallpaperList = {}
         lst = {}
+        
+        #set the wallpaper which has been using before kaptan started.
+        #TODO: but should find a better name than "current wallpaper"
+        #maybe a better and shorter word and means like "the wallpaper before kaptan started"?
+        if current:
+            wallpaperTitle = "Current Wallpaper"
+            wallpaperFile = current
+            
+            self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
+            self.wallpaperList[wallpaperTitle]= wallpaperFile
 
         #get .desktop files from global resources
         lst= KGlobal.dirs().findAllResources("wallpaper", "*.desktop", False , True )
@@ -74,14 +90,9 @@ class Widget(WallpaperWidget, ScreenWidget):
 
     def setWallpaper(self):#TODO: current wallpaperi listenin en basinda gostersin. 
         #change wallpaper
-        dcopclient = kdecore.KApplication.dcopClient()
-        dcopclient.registerAs("changewp")
-        dcopapp = dcopext.DCOPApp("kdesktop", dcopclient)
-        #current = dcopapp.KBackgroundIface.currentWallpaper(1)[1]
         selectedWallpaper = self.wallpaperList[str(self.listWallpaper.currentItem().text(0))]
         dcopapp.KBackgroundIface.setWallpaper(selectedWallpaper, 6)
-        pass
-
+        
     def listWallpaperItem(self, itemText, file):
         item = KListViewItem(self.listWallpaper,"file")
         item.setText(0,i18n(itemText))
