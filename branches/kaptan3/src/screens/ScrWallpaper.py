@@ -27,6 +27,10 @@ from desktopparser import DesktopParser
 from screens.Screen import ScreenWidget
 from screens.wallpaperdlg import WallpaperWidget
 
+summary = {"sum":""}
+summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["desc"] = "Wallpaper"
+
 class Widget(WallpaperWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -83,5 +87,5 @@ class Widget(WallpaperWidget, ScreenWidget):
         item.setText(0,i18n(itemText))
         item.setPixmap(0,QPixmap(QImage(file).smoothScale(150,150, QImage.ScaleMin)))
     def execute(self):
-        return True
-
+        summary["sum"] = self.listWallpaper.currentItem().text(0)
+        
