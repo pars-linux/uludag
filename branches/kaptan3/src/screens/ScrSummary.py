@@ -17,6 +17,9 @@ import kdedesigner
 
 from screens.Screen import ScreenWidget
 from screens.summarydlg import SummaryWidget
+import screens.ScrMouse as ScrMouse
+
+summaryScreens = [ScrMouse]
 
 class Widget(SummaryWidget, ScreenWidget):
 
@@ -26,9 +29,17 @@ class Widget(SummaryWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(SummaryWidget.__init__, (self,) + args)
+        for screen in summaryScreens:
+            item = KListViewItem(self.listSummary,screen.summary["desc"])
+            image =  QPixmap(locate("data",screen.summary["pic"]))
+            item.setPixmap(0,image)
+
 
     def shown(self):
-        pass
+        item = self.listSummary.firstChild()
+        for screen in summaryScreens:
+            item.setText(1,screen.summary["sum"])
+            item = item.nextSibling()
 
     def execute(self):
         return True

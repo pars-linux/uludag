@@ -75,6 +75,8 @@ class Kaptan(kaptanUi):
 
 
     def slotNext(self):
+        _w = self.pageStack.visibleWidget()
+        _w.execute()
         self.stackMove(self.getCurrent() + 1)
 
     def slotBack(self):

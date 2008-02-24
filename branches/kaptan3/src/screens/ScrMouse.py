@@ -22,6 +22,10 @@ from screens.mousedlg import MouseWidget
 
 RIGHT_HANDED, LEFT_HANDED = range(2)
 
+summary = {"sum":""}
+summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["desc"] = "Mouse"
+
 class Widget(MouseWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -39,7 +43,17 @@ class Widget(MouseWidget, ScreenWidget):
         pass
 
     def execute(self):
-        return True
+
+        if self.singleClick.isChecked():
+            summary["sum"]="Single Click"
+        else:
+            summary["sum"]="Double Click"
+        if self.rightHanded.isChecked():
+            summary["sum"] += ", Right Handed"
+        else:
+            summary["sum"] += ", Left Handed"
+        if self.checkReverse.isChecked():
+            summary["sum"] += ", Reverse Scrolling"
 
     def setClickBehaviour(self):
         config = KConfig("kdeglobals")
