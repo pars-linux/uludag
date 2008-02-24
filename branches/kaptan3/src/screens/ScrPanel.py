@@ -61,6 +61,10 @@ class Widget(PanelWidget, ScreenWidget):
 
 
     def applyStyle(self):
+        
+        #normally this assignment should be in execute(), but for 
+        #controlling panel values after applying it's in here.
+        summary["sum"] = self.styleBox.currentText()
 
         #read entire xml into DOM tree
         dom = qtxml.QDomDocument()
@@ -156,8 +160,6 @@ class Widget(PanelWidget, ScreenWidget):
         pass
 
     def execute(self):
-        summary["sum"] = self.styleBox.currentText()
-        #TODO: find a way to control if these choices don't change after clicking apply.
         if self.checkKickoff.isChecked():
             summary["sum"] += ", Kickoff Menu"
 
