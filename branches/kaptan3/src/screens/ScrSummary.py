@@ -20,8 +20,9 @@ from screens.summarydlg import SummaryWidget
 import screens.ScrMouse as ScrMouse
 import screens.ScrWallpaper as ScrWallpaper
 import screens.ScrPanel as ScrPanel
+import screens.ScrMultiple as ScrMultiple
 
-summaryScreens = [ScrMouse, ScrWallpaper, ScrPanel]
+summaryScreens = [ScrMouse, ScrMultiple, ScrPanel, ScrWallpaper]
 
 class Widget(SummaryWidget, ScreenWidget):
 

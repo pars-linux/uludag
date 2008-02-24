@@ -19,6 +19,11 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.multipledlg import MultipleWidget
 
+summary = {"sum":""}
+summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["desc"] = "Multiple Desktops"
+
+
 class Widget(MultipleWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -48,5 +53,8 @@ class Widget(MultipleWidget, ScreenWidget):
         pass
 
     def execute(self):
-        return True
+        summary["sum"] = str(self.numInput.value())
+        if self.mouseWheel.isChecked():
+            summary["sum"] += ", Wheel Switches Workspace"
+
 
