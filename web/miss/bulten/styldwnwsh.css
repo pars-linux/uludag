@@ -14,7 +14,6 @@ body,td,th {
 	color: #7b7b7b;
 }
 .contain {
-	width: 580px;
 	float: left;
 	margin: 0px;
 	padding: 0px;
@@ -29,7 +28,7 @@ body,td,th {
 	font-size: 9px;
 	color: #d7d7d7;
 	padding-top: 0px;
-	padding-bottom: 12px;
+	padding-bottom: 6px;
 }
 .short {
 	float: left;
@@ -41,7 +40,7 @@ body,td,th {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: bold;
-	color: #00a4f0;
+	color: #156FA5;
 	line-height: 16px;
 	display: block;
 	height: 50px;
@@ -60,6 +59,7 @@ body,td,th {
 	margin: 0px;
 	padding: 0px;
 	display: block;
+	color: #999999;
 }
 
 .contain .header {
@@ -95,7 +95,7 @@ body,td,th {
 }
 
 .contain .news .newsSee h1 {
-	color: #00A4F0;
+	color: #156FA5;
 	font-size: 20px;
 	line-height: 20px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -147,7 +147,7 @@ body,td,th {
 	line-height: 13px;
 	color: #7b7b7b;
 	display: block;
-	width: 572px;
+	width: 882px;
 	float: left;
 	margin-left: 6px;
 	margin-right: 2px;
@@ -166,7 +166,7 @@ body,td,th {
 }
 
 .contain .news .newsAll h1 {
-	color: #00A4F0;
+	color: #156FA5;
 	font-size: 20px;
 	line-height: 20px;
 	font-family: Arial, Helvetica, sans-serif;
