@@ -373,6 +373,9 @@
                     <property name="margin">
                         <number>0</number>
                     </property>
+                    <property name="showSortIndicator">
+                        <bool>true</bool>
+                    </property>
                     <property name="itemMargin">
                         <number>5</number>
                     </property>

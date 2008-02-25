@@ -58,7 +58,14 @@ class Widget(WallpaperWidget, ScreenWidget):
             
             self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
             self.wallpaperList[wallpaperTitle]= wallpaperFile
-
+        #if there's no wallpaper
+        else:
+            wallpaperTitle = "No Wallpaper"
+            wallpaperFile = "kaptan/pics/no-wallpaper.jpg"
+            
+            self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
+            self.wallpaperList[wallpaperTitle]= wallpaperFile
+        
         #get .desktop files from global resources
         lst= KGlobal.dirs().findAllResources("wallpaper", "*.desktop", False , True )
         #TODO: maybe we can show wallpapers which haven't got .desktop files?
@@ -94,9 +101,16 @@ class Widget(WallpaperWidget, ScreenWidget):
         dcopapp.KBackgroundIface.setWallpaper(selectedWallpaper, 6)
         
     def listWallpaperItem(self, itemText, file):
-        item = KListViewItem(self.listWallpaper,"file")
-        item.setText(0,i18n(itemText))
-        item.setPixmap(0,QPixmap(QImage(file).smoothScale(150,150, QImage.ScaleMin)))
+        if file == QImage(current):
+            item = KListViewItem(self.listWallpaper,"file")
+            item.setText(0,i18n(itemText))
+            item.setPixmap(0,QPixmap(QImage(file).smoothScale(150,150, QImage.ScaleMin)))
+            #self.listWallpaper.insertItem(item) #it seems doesn't work (o_O)
+        else:
+            item = KListViewItem(self.listWallpaper,"file")
+            item.setText(0,i18n(itemText))
+            item.setPixmap(0,QPixmap(QImage(file).smoothScale(150,150, QImage.ScaleMin)))
+
     def execute(self):
         summary["sum"] = self.listWallpaper.currentItem().text(0)
         
