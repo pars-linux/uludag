@@ -35,7 +35,7 @@ class Widget(PanelWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
-
+        
         # Common Pardus settings for all themes
         config = KConfig("kdeglobals")
         config.setGroup("KDE")
@@ -55,6 +55,9 @@ class Widget(PanelWidget, ScreenWidget):
         self.connect(self.styleBox, SIGNAL("activated(int)"), self.styleSelected)
         self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
         self.connect(self.styleButton, SIGNAL("clicked()"), self.applyStyle)
+
+        #if no panel chosen, then write defaults
+        summary["sum"] = self.styleBox.currentText()
 
         self.styleBox.setCurrentItem(0)
         self.styleSelected(0)
