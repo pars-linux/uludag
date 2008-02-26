@@ -69,7 +69,7 @@ class windowTitle(QtGui.QFrame):
 
 class Dialog(QtGui.QDialog):
     def __init__(self, t, w, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+        QtGui.QDialog.__init__(self, ctx.mainScreen.ui)
 
         self.gridlayout = QtGui.QGridLayout(self)
         self.gridlayout.setMargin(0)
@@ -87,7 +87,10 @@ class Dialog(QtGui.QDialog):
         QObject.connect(self.windowTitle.pushButton,SIGNAL("clicked()"),self.reject)
         QMetaObject.connectSlotsByName(self)
 
-        self.setStyleSheet("QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}")
+        self.setStyleSheet("""
+            QDialog { background-image:url(':/gui/pics/transBlack.png'); }
+            QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}
+        """)
 
 class WarningDialog(Dialog):
 
@@ -163,7 +166,7 @@ class InformationWindow(QtGui.QWidget):
         self.setStyleSheet("""
             QLabel { border: 1px solid #CCC;
                      border-radius: 4px;
-                     background-image:url(':/gui/pics/trans.png');}
+                     background-image:url(':/gui/pics/transBlack.png');}
             QLabel#message { border: 2px solid #AAA;
                              background-color:#FFFFFF }
         """)
