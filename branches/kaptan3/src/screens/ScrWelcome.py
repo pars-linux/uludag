@@ -22,6 +22,9 @@ class Widget(WelcomeWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(WelcomeWidget.__init__, (self,) + args)
+        #set background image
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+        self.pixWelcome.setPixmap(QPixmap(locate("data", "kaptan/pics/kaptan_welcome.png")))
 
     def shown(self):
         pass

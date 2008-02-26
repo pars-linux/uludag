@@ -20,7 +20,7 @@ from screens.Screen import ScreenWidget
 from screens.multipledlg import MultipleWidget
 
 summary = {"sum":""}
-summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["pic"] = "kaptan/pics/multipleSummary.png"
 summary["desc"] = "Multiple Desktops"
 
 
@@ -34,6 +34,9 @@ class Widget(MultipleWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
+        #set background image
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+        self.pixMultiple.setPixmap(QPixmap(locate("data", "kaptan/pics/multiple.png")))
         self.numInput.setRange(1, self.maxDesktops , 1, True)
         self.connect(self.numInput, SIGNAL("valueChanged(int)"), self.changed)
         self.connect(self.mouseWheel, SIGNAL("toggled(bool)"),self.clicked)

@@ -26,6 +26,8 @@ class Widget(GoodbyeWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(GoodbyeWidget.__init__, (self,) + args)
+        #set background image
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 
     def shown(self):
         pass

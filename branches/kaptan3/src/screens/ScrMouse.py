@@ -23,7 +23,7 @@ from screens.mousedlg import MouseWidget
 RIGHT_HANDED, LEFT_HANDED = range(2)
 
 summary = {"sum":""}
-summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["pic"] = "kaptan/pics/mouseSummary.png"
 summary["desc"] = "Mouse"
 
 class Widget(MouseWidget, ScreenWidget):
@@ -35,6 +35,7 @@ class Widget(MouseWidget, ScreenWidget):
     def __init__(self, *args):
         apply(MouseWidget.__init__, (self,) + args)
         self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_rh.png")))
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
         self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
         self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)

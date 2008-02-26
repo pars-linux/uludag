@@ -22,7 +22,7 @@ from screens.Screen import ScreenWidget
 from screens.paneldlg import PanelWidget
 
 summary = {"sum":""}
-summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["pic"] = "kaptan/pics/defaultSummary.png"
 summary["desc"] = "Panel"
 
 class Widget(PanelWidget, ScreenWidget):
@@ -35,7 +35,8 @@ class Widget(PanelWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
-        
+        #set background image
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         # Common Pardus settings for all themes
         config = KConfig("kdeglobals")
         config.setGroup("KDE")

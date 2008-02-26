@@ -28,7 +28,7 @@ from screens.Screen import ScreenWidget
 from screens.wallpaperdlg import WallpaperWidget
 
 summary = {"sum":""}
-summary["pic"] = "kaptan/pics/mouse_rh.png"
+summary["pic"] = "kaptan/pics/wallpaperSummary.png"
 summary["desc"] = "Wallpaper"
 
 #create a dcopclient for wallpaper
@@ -45,7 +45,8 @@ class Widget(WallpaperWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
-
+        #set background image
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.wallpaperList = {}
         lst = {}
         

@@ -28,6 +28,9 @@ class Widget(PackageWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
+        #set background image
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+        self.pixPackage.setPixmap(QPixmap(locate("data", "kaptan/pics/package.png")))
         self.showTray.connect(self.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
         self.checkUpdate.connect(self.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected);
 
