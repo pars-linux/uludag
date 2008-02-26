@@ -101,17 +101,16 @@ class Widget(MouseWidget, ScreenWidget):
                 map[0],map[2] = 1,3
             else:
                 map[0],map[2] = 3,1
-        if num_buttons >=5:
-            pos = 0
-            for pos in range(num_buttons):
-                if map[pos] == 4 or map[pos] == 5:
-                    break
-
-        if pos < num_buttons -1:
-            if self.checkReverse.isChecked():
-                map[pos], map[pos+1]= 5,4
-            else:
-                map[pos], map[pos+1]= 4,5
+            if num_buttons >=5:
+                pos = 0
+                for pos in range(num_buttons):
+                    if map[pos] == 4 or map[pos] == 5:
+                        break
+                if pos < num_buttons -1:
+                    if self.checkReverse.isChecked():
+                        map[pos], map[pos+1]= 5,4
+                    else:
+                        map[pos], map[pos+1]= 4,5
 
         display.Display().set_pointer_mapping(map)
 
