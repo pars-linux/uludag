@@ -27,11 +27,17 @@ summaryScreens = [ScrMouse, ScrMultiple, ScrPanel, ScrWallpaper]
 class Widget(SummaryWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
-    title = "You have finished !"
-    desc = "See your summary.."
+    title = i18n("You have finished !")
+    desc = i18n("See your summary..")
 
     def __init__(self, *args):
         apply(SummaryWidget.__init__, (self,) + args)
+
+        #set texts
+        self.setCaption(i18n("Summary"))
+        self.listSummary.header().setLabel(0,i18n("Component"))
+        self.listSummary.header().setLabel(1,i18n("Choice"))
+
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         for screen in summaryScreens:

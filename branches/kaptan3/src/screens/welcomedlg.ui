@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Welcome</string>
+        <string></string>
     </property>
     <grid>
         <property name="name">
@@ -49,9 +49,6 @@
                             <blue>255</blue>
                         </color>
                     </property>
-                    <property name="text">
-                        <string>This application, called &lt;b&gt;Kaptan Desktop&lt;/b&gt;, will help you with your basic but sufficient setup for your &lt;b&gt;Pardus&lt;/b&gt; desktop in a quick manner. This application will also set some default configuration for a better desktop :).</string>
-                    </property>
                 </widget>
                 <widget class="QLabel" row="0" column="0">
                     <property name="name">
@@ -74,9 +71,6 @@
                             <green>255</green>
                             <blue>255</blue>
                         </color>
-                    </property>
-                    <property name="text">
-                        <string>&lt;b&gt;Pardus&lt;/b&gt; is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; with acquiring the strong ideas, architecture and code of other distributions; with a custom configuration framework which has the ability to evolve into an autonomous system; for simplifying the installation and usage of the computers.</string>
                     </property>
                 </widget>
                 <widget class="QLayoutWidget" row="0" column="1" rowspan="2" colspan="1">

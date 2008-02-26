@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Summary</string>
+        <string></string>
     </property>
     <widget class="QLabel">
         <property name="name">
@@ -49,7 +49,7 @@
     <widget class="KListView">
         <column>
             <property name="text">
-                <string>Component</string>
+                <string></string>
             </property>
             <property name="clickable">
                 <bool>false</bool>
@@ -60,7 +60,7 @@
         </column>
         <column>
             <property name="text">
-                <string>Choice</string>
+                <string></string>
             </property>
             <property name="clickable">
                 <bool>false</bool>
@@ -373,10 +373,6 @@
         </property>
         <property name="fullWidth">
             <bool>true</bool>
-        </property>
-        <property name="toolTip" stdset="0">
-            <string>toolTip</string>
-            <comment>Select wallpaper</comment>
         </property>
     </widget>
 </widget>

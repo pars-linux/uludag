@@ -22,7 +22,13 @@ class Widget(WelcomeWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(WelcomeWidget.__init__, (self,) + args)
-        #set background image
+
+        #set texts
+        self.setCaption(i18n("Welcome"))
+        self.textLabel1.setText(i18n("This application, called <b>Kaptan Desktop</b>, will help you with your basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. This application will also set some default configuration for a better desktop :)."))
+        self.textLabel2.setText(i18n("<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; with acquiring the strong ideas, architecture and code of other distributions; with a custom configuration framework which has the ability to evolve into an autonomous system; for simplifying the installation and usage of the computers."))
+
+        #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pixWelcome.setPixmap(QPixmap(locate("data", "kaptan/pics/kaptan_welcome.png")))
 
