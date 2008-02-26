@@ -19,13 +19,14 @@ from screens.Screen import ScreenWidget
 from screens.networkdlg import NetworkWidget
 
 class Widget(NetworkWidget, ScreenWidget):
-    
+
     # title and description at the top of the dialog window
     title = "Network Manager"
     desc = "Configure network settings..."
 
     def __init__(self, *args):
         apply(NetworkWidget.__init__, (self,) + args)
+
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 

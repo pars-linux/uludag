@@ -21,10 +21,10 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.paneldlg import PanelWidget
 
-#set summary picture and description
-summary = {"sum":""}
-summary["pic"] = "kaptan/pics/defaultSummary.png"
-summary["desc"] = i18n("Panel")
+# set summary picture and description
+summary = {"sum" : "",
+           "pic" : "kaptan/pics/defaultSummary.png",
+           "desc": i18n("Panel")}
 
 class Widget(PanelWidget, ScreenWidget):
 
@@ -37,7 +37,7 @@ class Widget(PanelWidget, ScreenWidget):
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
 
-        #set texts
+        # set texts
         self.setCaption(i18n("Panel"))
         self.styleLabel.setText(i18n("Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides some eye candy styles for you."))
         self.styleSettingsGroup.setTitle(i18n("Style"))
@@ -45,22 +45,22 @@ class Widget(PanelWidget, ScreenWidget):
         self.styleButton.setText(i18n("Apply"))
         self.checkKickoff.setText(i18n("Use enhanced Kickoff style menu"))
 
-        #set images
+        # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 
-        #set signals
+        # set signals
         self.connect(self.styleBox, SIGNAL("activated(int)"), self.styleSelected)
         self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
         self.connect(self.styleButton, SIGNAL("clicked()"), self.applyStyle)
 
-        #common Pardus settings for all themes
+        # common Pardus settings for all themes
         config = KConfig("kdeglobals")
         config.setGroup("KDE")
         config.writeEntry("ShowIconsOnPushButtons", True)
         config.writeEntry("EffectAnimateCombo", True)
         config.sync()
 
-        #add kaptan themes into resource pool
+        # add kaptan themes into resource pool
         KGlobal.dirs().addResourceType("themes", KStandardDirs.kde_default("data") + "kaptan/themes/")
 
         themes = QStringList(KGlobal.dirs().findAllResources("themes", "*.xml", True))
@@ -68,8 +68,8 @@ class Widget(PanelWidget, ScreenWidget):
 
         for thumbnail in themes:
             self.styleBox.insertItem(QFileInfo(thumbnail).baseName())
-        
-        #if no panel chosen, then write defaults
+
+        # if no panel chosen, then write defaults
         summary["sum"] = self.styleBox.currentText()
 
         self.styleBox.setCurrentItem(0)
@@ -77,9 +77,9 @@ class Widget(PanelWidget, ScreenWidget):
 
 
     def applyStyle(self):
-        
-        #normally this assignment should be in execute(), but for 
-        #controlling panel values after applying it's in here.
+
+        # normally this assignment should be in execute(), but for 
+        # controlling panel values after applying it's in here.
         summary["sum"] = self.styleBox.currentText()
 
         #read entire xml into DOM tree
@@ -89,12 +89,12 @@ class Widget(PanelWidget, ScreenWidget):
         dom.setContent(file.readAll())
         file.close()
 
-        #attach to dcop
+        # attach to dcop
         client = kdecore.KApplication.dcopClient()
         if not client.isAttached():
             client.attach()
 
-        #kicker settings
+        # kicker settings
         kickerConf = KConfig("kickerrc")
         kickerConf.setGroup("General")
 
@@ -109,10 +109,10 @@ class Widget(PanelWidget, ScreenWidget):
         kickerConf.writeEntry("Alignment", self.getProperty(Kicker, "Alignment", "value"))
         kickerConf.sync()
 
-        #restart kicker
+        # restart kicker
         client.send("kicker", "kicker", "restart()", "")
 
-        #kwin settings
+        # kwin settings
         kwinConf = KConfig("kwinrc")
         kwinConf.setGroup("Style")
 
@@ -122,10 +122,10 @@ class Widget(PanelWidget, ScreenWidget):
         kwinConf.writeEntry("PluginLib", self.getProperty(KWin, "PluginLib", "value"))
         kwinConf.sync()
 
-        #restart kwin
+        # restart kwin
         client.send("kwin", "KWinInterface", "reconfigure()", "")
-        
-        #widget settings
+
+        # widget settings
         globalConf = KConfig("kdeglobals")
         globalConf.setGroup("General")
 
@@ -134,27 +134,24 @@ class Widget(PanelWidget, ScreenWidget):
 
         globalConf.writeEntry("widgetStyle", self.getProperty(Widget, "widgetStyle", "value"))
         globalConf.sync()
-    
+
         KIPC.sendMessageAll(KIPC.StyleChanged)
-        
+
 
     def getProperty(self, parent,tag, attr):
-        
         pList = qtxml.QDomNodeList
         pList = parent.elementsByTagName(tag)
-        
+
         if  pList.count():
             return  pList.item(0).toElement().attribute(attr)
         else:
             return
 
-    
+
     def kickoffSelected(self):
-        
         self.styleSelected(self.styleBox.currentItem())
 
     def styleSelected(self, item):
-
         name = QString(self.styleBox.text(item))
         previewPath = QString
 

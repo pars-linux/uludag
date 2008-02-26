@@ -20,18 +20,19 @@ import kdecore
 import dcopext
 import sys
 
-#parser for .desktop files
+# parser for .desktop files
 from desktopparser import DesktopParser
 
-#import gui's
+# import gui's
 from screens.Screen import ScreenWidget
 from screens.wallpaperdlg import WallpaperWidget
 
-summary = {"sum":""}
-summary["pic"] = "kaptan/pics/wallpaperSummary.png"
-summary["desc"] = "Wallpaper"
+# set summary picture and description
+summary = {"sum" : "",
+           "pic" : "kaptan/pics/wallpaperSummary.png",
+           "desc": i18n("Wallpaper")}
 
-#create a dcopclient for wallpaper
+# create a dcopclient for wallpaper
 dcopclient = kdecore.KApplication.dcopClient()
 dcopclient.registerAs("changewp")
 dcopapp = dcopext.DCOPApp("kdesktop", dcopclient)
@@ -45,30 +46,32 @@ class Widget(WallpaperWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
+
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.wallpaperList = {}
         lst = {}
-        
-        #set the wallpaper which has been using before kaptan started.
-        #TODO: but should find a better name than "current wallpaper"
-        #maybe a better and shorter word and means like "the wallpaper before kaptan started"?
+
+        # set the wallpaper which has been using before kaptan started.
+        # TODO: but should find a better name than "current wallpaper"
+        # maybe a better and shorter word and means like "the wallpaper before kaptan started"?
         if current:
             wallpaperTitle = "Current Wallpaper"
             wallpaperFile = current
-            
+
             self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
             self.wallpaperList[wallpaperTitle]= wallpaperFile
         #if there's no wallpaper
         else:
             wallpaperTitle = "No Wallpaper"
             wallpaperFile = "kaptan/pics/no-wallpaper.jpg"
-            
+
             self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
             self.wallpaperList[wallpaperTitle]= wallpaperFile
-        
-        #get .desktop files from global resources
+
+        # get .desktop files from global resources
         lst= KGlobal.dirs().findAllResources("wallpaper", "*.desktop", False , True )
+
         #TODO: maybe we can show wallpapers which haven't got .desktop files?
         #TODO: show wallpapers depend on resolution
         for desktopFiles in lst:
@@ -100,7 +103,7 @@ class Widget(WallpaperWidget, ScreenWidget):
         #change wallpaper
         selectedWallpaper = self.wallpaperList[str(self.listWallpaper.currentItem().text(0))]
         dcopapp.KBackgroundIface.setWallpaper(selectedWallpaper, 6)
-        
+
     def listWallpaperItem(self, itemText, file):
         if file == QImage(current):
             item = KListViewItem(self.listWallpaper,"file")
@@ -114,4 +117,4 @@ class Widget(WallpaperWidget, ScreenWidget):
 
     def execute(self):
         summary["sum"] = self.listWallpaper.currentItem().text(0)
-        
+

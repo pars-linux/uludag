@@ -33,13 +33,14 @@ class Widget(SummaryWidget, ScreenWidget):
     def __init__(self, *args):
         apply(SummaryWidget.__init__, (self,) + args)
 
-        #set texts
+        # set texts
         self.setCaption(i18n("Summary"))
         self.listSummary.header().setLabel(0,i18n("Component"))
         self.listSummary.header().setLabel(1,i18n("Choice"))
 
-        #set background image
+        # set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+
         for screen in summaryScreens:
             item = KListViewItem(self.listSummary,screen.summary["desc"])
             image =  QPixmap(locate("data",screen.summary["pic"]))
@@ -47,6 +48,7 @@ class Widget(SummaryWidget, ScreenWidget):
 
     def shown(self):
         item = self.listSummary.firstChild()
+
         for screen in summaryScreens:
             item.setText(1,screen.summary["sum"])
             item = item.nextSibling()

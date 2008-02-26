@@ -19,11 +19,10 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.multipledlg import MultipleWidget
 
-#set summary picture and description
-summary = {"sum":""}
-summary["pic"] = "kaptan/pics/multipleSummary.png"
-summary["desc"] = i18n("Multiple Desktops")
-
+# set summary picture and description
+summary = {"sum" : "",
+           "pic" : "kaptan/pics/multipleSummary.png",
+           "desc": i18n("Multiple Desktops")}
 
 class Widget(MultipleWidget, ScreenWidget):
 
@@ -31,29 +30,30 @@ class Widget(MultipleWidget, ScreenWidget):
     title = i18n("Multiple Desktops")
     desc = i18n("Configure virtual desktops..")
 
-    #for simplicity, multiple desktops are limited to 8
+    # for simplicity, multiple desktops are limited to 8
     maxDesktops = 8
-    #min value of desktops started from 1
+
+    # min value of desktops started from 1
     minDesktop = 1
 
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
-        
-        #set start value of desktops
+
+        # set start value of desktops
         self.numInput.setValue(self.minDesktop)
 
-        #set images
+        # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pixMultiple.setPixmap(QPixmap(locate("data", "kaptan/pics/multiple.png")))
         self.numInput.setRange(1, self.maxDesktops , 1, True)
 
-        #set texts
+        # set texts
         self.setCaption(i18n("Multiple"))
         self.multipleText.setText(i18n("<p>In this module, you can configure how many virtual desktops you want and how these should be labeled.</p>"))
         self.mouseWheel.setText(i18n("Mouse wheel over desktop background switches desktop."))
         self.numInput.setSuffix(i18n(" Desktop(s)"))
 
-        #set signals
+        # set signals
         self.connect(self.numInput, SIGNAL("valueChanged(int)"), self.changed)
         self.connect(self.mouseWheel, SIGNAL("toggled(bool)"),self.clicked)
 

@@ -26,13 +26,13 @@
     </property>
     <property name="paletteBackgroundColor">
         <color>
-            <red>218</red>
-            <green>218</green>
-            <blue>218</blue>
+            <red>239</red>
+            <green>239</green>
+            <blue>239</blue>
         </color>
     </property>
     <property name="caption">
-        <string></string>
+        <string>kaptanUi</string>
     </property>
     <property name="icon">
         <pixmap>image0</pixmap>
@@ -233,14 +233,13 @@
                             </property>
                             <property name="paletteBackgroundColor">
                                 <color>
-                                    <red>218</red>
-                                    <green>218</green>
-                                    <blue>218</blue>
+                                    <red>239</red>
+                                    <green>239</green>
+                                    <blue>239</blue>
                                 </color>
                             </property>
                             <property name="font">
                                 <font>
-                                    <pointsize>10</pointsize>
                                 </font>
                             </property>
                             <property name="text">
@@ -284,9 +283,9 @@
                     </property>
                     <property name="paletteBackgroundColor">
                         <color>
-                            <red>218</red>
-                            <green>218</green>
-                            <blue>218</blue>
+                            <red>239</red>
+                            <green>239</green>
+                            <blue>239</blue>
                         </color>
                     </property>
                     <widget class="QWidget">

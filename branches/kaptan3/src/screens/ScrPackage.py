@@ -18,28 +18,28 @@ import kdedesigner
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
 
-#set summary picture and description
-summary = {"sum":""}
-summary["pic"] = "kaptan/pics/packageSummary.png"
-summary["desc"] = i18n("Package Manager")
+# set summary picture and description
+summary = {"sum" : "",
+           "pic" : "kaptan/pics/packageSummary.png",
+           "desc": i18n("Package Manager")}
 
 class Widget(PackageWidget, ScreenWidget):
 
-    #TODO: Contrib depo ekleme hedesi yapilacak. Ama policykit, dbus ne alemde aboo
+    #TODO: Add contrib depo
 
     # title and description at the top of the dialog window
     title = i18n("Package Manager")
     desc = i18n("Configure package manager settings...")
 
-    #min update time
+    # min update time
     updateTime = 12
 
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
-        
+
         #set updateTime
         self.updateInterval.setValue(self.updateTime)
-        
+
         #set texts
         self.setCaption(i18n("Package"))
         self.textPackage.setText(i18n("<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can easily install new programs and upgrade your system and also can see new upgrades of the programs periodically  from the system tray with package manager."))
@@ -73,7 +73,6 @@ class Widget(PackageWidget, ScreenWidget):
             self.updateInterval.setEnabled(False)
 
     def applySettings(self):
-
         config = KConfig("package-managerrc")
         config.setGroup("General")
         config.writeEntry("SystemTray", self.showTray.isChecked())
@@ -85,8 +84,7 @@ class Widget(PackageWidget, ScreenWidget):
             proc = KProcess()
             proc << locate("exe", "package-manager")
             proc.start(KProcess.DontCare)
-    
-    #TODO: su applySettings hadisesi kaptan kapatildiktan sonra acilsin.
+
     def shown(self):
         self.applySettings()
 
