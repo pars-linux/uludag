@@ -19,6 +19,7 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.multipledlg import MultipleWidget
 
+#set summary picture and description
 summary = {"sum":""}
 summary["pic"] = "kaptan/pics/multipleSummary.png"
 summary["desc"] = "Multiple Desktops"
@@ -27,17 +28,27 @@ summary["desc"] = "Multiple Desktops"
 class Widget(MultipleWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
-    title = "Multiple Desktops"
-    desc = "Configure virtual desktops.."
-    #for simplicity, multiple desktops are limited to 4.
+    title = i18n("Multiple Desktops")
+    desc = i18n("Configure virtual desktops..")
+
+    #for simplicity, multiple desktops are limited to 8
     maxDesktops = 8
 
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
-        #set background image
+
+        #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pixMultiple.setPixmap(QPixmap(locate("data", "kaptan/pics/multiple.png")))
         self.numInput.setRange(1, self.maxDesktops , 1, True)
+
+        #set texts
+        self.setCaption(i18n("Multiple"))
+        self.multipleText.setText(i18n("<p>In this module, you can configure how many virtual desktops you want and how these should be labeled.</p>"))
+        self.mouseWheel.setText(i18n("Mouse wheel over desktop background switches desktop."))
+        self.numInput.setSuffix(i18n(" Desktop(s)"))
+
+        #set signals
         self.connect(self.numInput, SIGNAL("valueChanged(int)"), self.changed)
         self.connect(self.mouseWheel, SIGNAL("toggled(bool)"),self.clicked)
 
@@ -56,8 +67,8 @@ class Widget(MultipleWidget, ScreenWidget):
         pass
 
     def execute(self):
-        summary["sum"] = str(self.numInput.value())
+        summary["sum"] = str(self.numInput.value()) + i18n(" desktop(s)")
         if self.mouseWheel.isChecked():
-            summary["sum"] += ", Wheel Switches Workspace"
+            summary["sum"] += i18n(", Wheel Switches Workspace")
 
 
