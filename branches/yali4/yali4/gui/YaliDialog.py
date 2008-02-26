@@ -153,14 +153,34 @@ your system formatting the selected partition.</p>
         self.emit(SIGNAL("signalCancel"), ())
 
 
-class InformationWindow(QtGui.QSplashScreen):
+class InformationWindow(QtGui.QWidget):
 
     def __init__(self, message):
         Pix = QtGui.QPixmap(':/gui/pics/working.png')
-        QtGui.QSplashScreen.__init__(self, ctx.mainScreen.ui, Pix)
+        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        self.setObjectName("InfoWin")
+        self.resize(300,200)
+        self.setStyleSheet("""
+            QLabel { border: 1px solid #CCC;
+                     border-radius: 4px;
+                     background-image:url(':/gui/pics/trans.png');}
+        """)
+        self.gridlayout = QtGui.QGridLayout(self)
+
+        self.label = QtGui.QLabel(self)
+        self.label.setMaximumSize(QSize(16777215,30))
+        self.label.setAlignment(Qt.AlignCenter)
+        self.gridlayout.addWidget(self.label,1,0,1,1)
+
+        self.pix = QtGui.QLabel(self)
+        self.pix.setAlignment(Qt.AlignCenter)
+        self.pix.setPixmap(Pix)
+        self.gridlayout.addWidget(self.pix,0,0,1,1)
         self.updateMessage(message)
-        ctx.mainScreen.processEvents()
 
     def updateMessage(self, message):
-        self.showMessage(message,Qt.AlignBottom | Qt.AlignHCenter)
+        self.move(ctx.mainScreen.ui.width()/2 - self.width()/2 - 20,
+                  ctx.mainScreen.ui.height()/2 - self.height()/2 - 30)
+        self.label.setText(message)
+
 

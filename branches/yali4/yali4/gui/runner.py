@@ -23,6 +23,7 @@ import yali4
 import yali4.sysutils
 import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
+#from yali4.gui.YaliDialog import InformationWindow
 
 from yali4.gui.debugger import Debugger
 from yali4.gui.debugger import DebuggerAspect
@@ -107,13 +108,13 @@ class Runner:
         # if you use different Qt4 theme our works looks ugly :)
         self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
 
+        # We want it to be a full-screen window.
+        self._window.ui.resize(self._app.desktop().size())
+        
         self._window.ui.show()
 
-        # We want it to be a full-screen window.
-        # self._window.ui.resize(self._app.desktop().size())
-
         # For testing..
-        self._window.ui.resize(QSize(800,600))
+        #self._window.ui.resize(QSize(800,600))
         # self._window.ui.move(0,0)
         self._app.exec_()
 
