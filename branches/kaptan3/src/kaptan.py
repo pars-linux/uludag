@@ -50,6 +50,12 @@ class Kaptan(kaptanUi):
 
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
+        #set images
+        self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
+        self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+        self.pageIcon.setPixmap(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
+
+        #set signals
         self.connect(self.buttonNext, SIGNAL("clicked()"),self.slotNext)
         self.connect(self.buttonBack, SIGNAL("clicked()"),self.slotBack)
         self.connect(self.buttonCancel, SIGNAL("clicked()"),self.slotExit)

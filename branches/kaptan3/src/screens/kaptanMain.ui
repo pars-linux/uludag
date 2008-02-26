@@ -70,9 +70,6 @@
                     <property name="text">
                         <string></string>
                     </property>
-                    <property name="pixmap">
-                        <pixmap>image1</pixmap>
-                    </property>
                 </widget>
                 <widget class="QLayoutWidget">
                     <property name="name">
@@ -218,7 +215,7 @@
                         </spacer>
                         <widget class="QLabel">
                             <property name="name">
-                                <cstring>stepsPanel</cstring>
+                                <cstring>pixSteps</cstring>
                             </property>
                             <property name="sizePolicy">
                                 <sizepolicy>
@@ -236,13 +233,10 @@
                             </property>
                             <property name="paletteBackgroundColor">
                                 <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
+                                    <red>218</red>
+                                    <green>218</green>
+                                    <blue>218</blue>
                                 </color>
-                            </property>
-                            <property name="paletteBackgroundPixmap">
-                                <pixmap>image2</pixmap>
                             </property>
                             <property name="font">
                                 <font>
@@ -290,266 +284,10 @@
                     </property>
                     <property name="paletteBackgroundColor">
                         <color>
-                            <red>238</red>
-                            <green>238</green>
-                            <blue>238</blue>
+                            <red>218</red>
+                            <green>218</green>
+                            <blue>218</blue>
                         </color>
-                    </property>
-                    <property name="paletteBackgroundPixmap">
-                        <pixmap>image3</pixmap>
-                    </property>
-                    <property name="palette">
-                        <palette>
-                            <active>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>238</red>
-                                    <green>238</green>
-                                    <blue>238</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>246</red>
-                                    <green>246</green>
-                                    <blue>246</blue>
-                                </color>
-                                <color>
-                                    <red>119</red>
-                                    <green>119</green>
-                                    <blue>119</blue>
-                                </color>
-                                <color>
-                                    <red>158</red>
-                                    <green>158</green>
-                                    <blue>158</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>238</red>
-                                    <green>238</green>
-                                    <blue>238</blue>
-                                </color>
-                                <pixmap>image3</pixmap>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>128</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                            </active>
-                            <disabled>
-                                <color>
-                                    <red>128</red>
-                                    <green>128</green>
-                                    <blue>128</blue>
-                                </color>
-                                <color>
-                                    <red>238</red>
-                                    <green>238</green>
-                                    <blue>238</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>119</red>
-                                    <green>119</green>
-                                    <blue>119</blue>
-                                </color>
-                                <color>
-                                    <red>158</red>
-                                    <green>158</green>
-                                    <blue>158</blue>
-                                </color>
-                                <color>
-                                    <red>128</red>
-                                    <green>128</green>
-                                    <blue>128</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>128</red>
-                                    <green>128</green>
-                                    <blue>128</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>238</red>
-                                    <green>238</green>
-                                    <blue>238</blue>
-                                </color>
-                                <pixmap>image3</pixmap>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>128</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>238</blue>
-                                </color>
-                                <color>
-                                    <red>82</red>
-                                    <green>24</green>
-                                    <blue>139</blue>
-                                </color>
-                            </disabled>
-                            <inactive>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>238</red>
-                                    <green>238</green>
-                                    <blue>238</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>119</red>
-                                    <green>119</green>
-                                    <blue>119</blue>
-                                </color>
-                                <color>
-                                    <red>158</red>
-                                    <green>158</green>
-                                    <blue>158</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>238</red>
-                                    <green>238</green>
-                                    <blue>238</blue>
-                                </color>
-                                <pixmap>image3</pixmap>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>0</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>128</blue>
-                                </color>
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                                <color>
-                                    <red>0</red>
-                                    <green>0</green>
-                                    <blue>238</blue>
-                                </color>
-                                <color>
-                                    <red>82</red>
-                                    <green>24</green>
-                                    <blue>139</blue>
-                                </color>
-                            </inactive>
-                        </palette>
                     </property>
                     <widget class="QWidget">
                         <property name="name">
@@ -566,16 +304,7 @@
 </widget>
 <images>
     <image name="image0">
-        <data format="PNG" length="657">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000025849444154388d8d934148936118c77fd917bdd20e9fd5c1d1824f28d860189f51a814b5dd1ad141b183d1c52594e2c94307ab43e54d0942a24021c1795127412c085c44a89d5ce4a828d9e761e4a2c93788f24dbe783ac848c702ff97e781f7f9fff83f3cbc8808ff51c8b2ac292b608d014794523b1e450411d96a2ab44f19aabba7af67554424f739275d57bbb240c76e008196e69699f9f49c8888486eabc8a688bcfff527742cf4183808d4940135dbddca5027db3ada2ea5330d443b7b597ae312bf3344f4729c74315333d13dd1010481433ba26c53ade93393042312199c9391c473994f7d95faf39da22c5b4cd31cae5c61470220a07c2a98eb1b63e8423d6db4b2f025c95a3241e7591ba5d409e028b0bf6cd82322d4d6d6a2b52614b647476edc8bbbf947282fc2e0ec30bd5603ce713ff17094b1d206c9a9c9a74edec9b8dfdd87c0bf04ca671e001a13b3b7693715259d24d1e247fb35b702f0313f83fdee152815344d7f63d9670068ad01edad159cd578dfcca9449d4bc884a5fc24517b8084b7462cd0c4b5bb57c8bccd8c835e2e03ca095a819b76d88e393e97981525b9bac8f00b874426456ca38994b340c88ea27c3403a72baf500f8495a1ce61a8ebfd17ed9ff2725aa6fb6222e323224fba64f44c4f1e43b52943858186ca2b1480acf6f46b3c9dc0e01b4686f6ee7ea87320e227e5a556f074527b3a0b38952b6cd7a65bd24502515849811583acc62de9f52ab35501bf9da2bbce6a1ac20a0a69b02238c55271b700163f1592ceb2e9b1e882b2b9ff60f047a1c4b36ab3d57e23c05e6530601d363fd49b6a5919c4abf94484bf90b7285b179b4cf00000000049454e44ae426082</data>
-    </image>
-    <image name="image1">
-        <data format="PNG" length="2675">89504e470d0a1a0a0000000d49484452000000300000003008060000005702f98700000a3a494441546881d599714c9ce77dc73f6e6eebcb76dadeabc8f692b1e945c2abcf231ab868e22c4f33c895dc73aab6245ecb21a4196a6d862e6d86232d3b5b5372b035c368f3c4ad72c4b57203c994615722c01f4eb1a3cc87338703ab19b6e57847e4660725d9dd8d90e3ade3f6bb3fdec3318931878d4bf7955e3dfaddfb3ccffbfd3ecff3fb3dbfe7b94d9258099b366d5af1dd2a7808f82ab015f829300a0c03d7d7d2c99db82dc17317e456c3266017b007b0810f81df00de01de58f7af495af1b90b7c16f837e0673d953d0a3fd9ae443421abd8143007fc35f0ebebc1ed26c77512f06bc0e340ca344d450e87954ee7742b82bb820204bc06ecf8651210004600d5eeaa9596f35e86de63bdb26d5bc03cf00fc06f6fa4002ff0b7c07b56b1a5aeeeae9599df82e495a49a9b9a97666302f8d24608f813600cd0d09787347571aa20f2cb7045f26ff10bf839d00394fc220478816780f76ddb96626be7fd71b41e6895e131045c0082f75bc0d380420da1554757d7a5f8e951d7be76e7ea4383434bb3310ffcd1fd12f019e052707770d9c773b99c745d8a1c0eabfe91a0cc525b145b371fc3b2655ab6fc157e353785d417ebbdad88c4f9842ccb12f04ff74b8005fc57fc68fce64707fafb34b47b4046b125c3ee1115b51aea4fab677054ba26f58e489a93bafa87643f1217e50161d9b26d5bc9e353d2c5e522f211eab9fb25e001a0cff01a524aea7ab64b18a6a8ac95b5b75df6beb0aca6a4467f949424a5e797c7d3da277b64352565358565ee0a09cb2fbbd4564fb44792d4bcbf79c9171ebd9f3e600309cbb264155b326bead5752c2d7b5f58f6d1a4aa0e44a4b4a494a47969e07c3e3aa5a5d15392d5d0aeaea329d9fbc2f24753326a82b2ed2eb5ee6f5d0aabdf5eab136f5a8128b06232b7053809f8adbdad185e1f382166dfedc4b8e180e3607a0cb28e836918804391d764c671c06360f84c0ce32018fde038bcfd7214b2598018d0869bfcdd14b01a3eb56a8d4fe2323068780cb293e7c8be7292ecb9c73892ada3ce84e18630c1cd26f1fd11827e8b134d11022506273edf867f611a26cf30fb4a1db3ff5ec2ec5b9380016e08fdd6ade40bc61a9710c0d78059d36b2add99d6e8e090bb4c7277c8216e413a9592d252d7d311d5efad97e135042c024781e242b9ddad0fd402d9aa8a2af9b7f835f0d2c01dc926ce2734159b52efb1db87cea98b53b24b6d056a024b42e2b87e765f04140317ac524bba2605aaab64790db53fd1eeb2b9ee167dc7fbd4dcd4acde63bd0aed0d29d4e03e811d01859f0c2b994f3b7aa2bdaaaaf0cbf41a52bf14e98cc8300c01a770cf0f0509588b0f34007f38f1dc4526b21769f1b4d1d114205c3ac1b6cd659ca81fa6aeb68ee877629c9b9c84ef81619a4cbf354d496919c3cf8c3293cdd0d2fa0db6fab7623f9f61a229405f4519d16c8c437f7388b6036de0e1f3c0d70b2555a8001ff0675595554c7b2fb1ede1ad449d282d5e1fbe3f7e94892f6ce5b11f3ee656f438f8bd0efd0b1d907d1b9c194ebf1865cfe39f03a0c4ef87ec0cdbff6a16f61da1736191664f0b136f4c70e4e92304aa03007f8e7b2c5d37013b80cae017ebd95eb39d47ffb4919977a61936003b043555e4bafb687cb888e1bfebc1340c4eff733f659e0cfd0d1d4cfc4b3b63cff551b6304968722be1863a7c3bdae16c37616f1b5bbbca28cbfa9978fb22c3cf8c02fc3e6ec6bb3a0af4811eabd492e6dcecb1b6dc52d7be5ae978bbd22f85a5644ab9c1b094ee52aabf5d807aff32a860a52d7fa929cda5a55311e95a44b99361e95a2adf2ea2be27eb35b5bb4a7edb92ae48a3a746e52ff70b38b65e3e60003b8e941f81ab70e9cd494a8a0d1a2b5ae04113dfce76b81aa368473bfc304be6c5316ccba4e52b116ccb87e93539f4cd3d90dd0e9771eb5d8eb9ed2e43634533dff540afddcea1e73ba8db59b774d5f0d94226a0909df801e045c36bee0d3584987ce30cc1cd26f5d57eb6bd97a5e39d190cc300e0cc9bd3184611279a822c3e685054d1c6cc1bdd948c5fe2e0a569c20f5a44f32382070e969790d95c82efc7195a5e3e875135c0ecf461468646706e381d920eafaaa0c025f410f003e0678002b6a5daea2ad5eeac55fc6842ad4fb42bb07340f535b6bb5c0623d2b59474ba4bb9e880aab6f835b07b40a186662562536a3ed0aaa1ce5155555769a0ba4b91bd01f92d5366b125e003200278d67b1f780ab86197fb35f55452038343524e8a8f252449bdfd030a54d84a465ba5f9b4341856a421207f855fba92af775d8a9fcf97630969dedd0f6a77dfbcb110f0f7850cee5a057c0b7082bb82d29cbbc36a5ed269e533cd512927351f6855c0b61469aad5e8ce1e056a0252324f362de9d42df5d3f9f67951e991b44caf29e04c7ec6d745c0af00bbf1f0d3e0eea0342fc5c7e2cb48dc2c4fc7a5ebee8836ef6f9565d94a77e734753129e5f2ef6fd7eed4a834ef0e4aee686e29a5f83ef0c07a08781c78cbb2dc1097389f70ef7dc6f4d132b89eb7e7a5a19151e5c6a4fabd218d3e1b57edce5a25a209f51eef93d252fcb5f827dbe724bda69bcb31de1d177003682844c06a51e805e06b86616cb24a2d7c5e1f866150525c82e133303c06d9050767d121939d81852c068b3837a0bea185c90b938c9d19a1acb48c2c06a66952e4f56114b9e704c363907ddf61319b21bb90c5711c32d90cb3b3b300df96f4d46a41683501bf03f881cf01a5c0efe126759f064a0c7828f14880c9cd3e1a6bdb61e604fc6e231dcf1fe4d0ee30272e7f976dde0c130b3e1efd4a98e11f74b2c70e117d3d4a5b751bdbfff11b9cbb3abb08bc09bc0bcce49fabc0cb9232f72ae0b63f03bf0a7cc9f0f0af0387439bf63c51c5e2ab0e45952d5c7cb98393af5fc2711c5a8013a68f833bfc2cfa4c8aaa5be0420c6a0c1877687ce6055e387be92cee6df6270e3377e2b6ac528161f4e3f003b9f4d1016924222553d24b6e9aa091887425e9da7369e964444ae6ed64cab5af241528b704bc7037dcd6924aac843490eb3edb0dd56d64c6a3500d99d7a3b0a585c5ff8c41b541e6d56ea86c24331e73df8f47a1ba859973511cb79fb97be0704f021680b9faf781f128beea3618275f4629aa6c8371276fc796bfbf10a3c4df4cc63dccff64a3042c02a9c3efcdc01687c50beec8de9c89f13bdba75fe96636eb00fcf74609f839301b5a00c6a1e87623bd927d01ea1e6ec1b901406aa30400fca4d371e0c316160b1cf9cc78142a5b88bdd2096ee2f63f1b29607671c161227b84a29a0246fe161f089686c893ffdf8d14907afbbd2cdbb20e8be3b1c27da0123ace74831bc93ed84801ef020cdf70dc4d6a0d3ed0e8aeff05dcbf61374cc01cf041dd3b5977872dc4072e44a1bc91af5f9d06d781ef6909ddcb4e0cf09bc0ab55e596bbd30e7e6cc7bd5d994eabef897a19eee1e52fee96dbdd9cc8564208f830b4d3ef92bff5f6219952faa47bfb901b8c487369c59f6d966d9902fe03f8ad5f06011ea01350608b25f58f4ab176e947c98fcae3edd26b0985f7066499a670b3cd6dab75fc8b12b084fdc014f0a1e93564790d59e647a5e141b861f3246e22b82ad6e340b316019f06be80fb17d11fe4eda5ce3f85ebf067817ee052a10256c31d05fc7fc0ff01368ea663344765920000000049454e44ae426082</data>
-    </image>
-    <image name="image2">
-        <data format="XPM.GZ" length="52605">789cedd6bd6a1b411846e15e57b1683b11d6969da809b90443ca4048b1de1f49166e12bb0821f79e9dd995a2c4d39c6aa63867ab176178f8842cdd6caa2f9f1faacdcdeac74bfb72ecaaeed07eaf36fdebf3f3cfafdf3efd5aadb71f6eabfbf7b7d5f6bedaaedfadd67dd555753ff46d3f84598739ecfa76d885d92c7398e730cfe16e9e4f710ed3abf16f8ff39c5e8db35de66e9e8f618ed318e3df9ee639decdf310e738cd31ccfd3277f31c97d9ceb35be638cfa6fefbb48f5d21c5e336cbd3e6d65c7775b321b7e5df2e37ab8b791b97ce37abc7dc92ff5b6e56ef7343deb4dcacb4b7b23bdfacc9cd48146fd6e756a48a372beaffd8b978b3dc8864f166b911c9e217746e44b2f85b21372259fce95164ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca78ca7841b6cf8d48166487dc88644176cc8d4816644fb911c982accf8d4816644d9b5b912adeaccead48156f569778b478b3a63fe576bc6dbe5953e08760b95981b4e566d3d54afb26b8dcace90bfb2ab8dc6c7acafa885edd2c3ec75329bf3cd6bf3faefe0044bbdf67</data>
-    </image>
-    <image name="image3">
-        <data format="XPM.GZ" length="212954">789ceddacd8a23550086e17d5f45e8ec1aa919076d05f112049782b8a84aa5d1c56cc67121e2bddb49a5bb93575d5720cf93d5d91dc8cb47e5e7ddc3e6a71f7fd83cbcbbfbfdf3f8f9b7dd66f7ebf869f330fff1f1e39f3ffff2fd5f77f75f7ff876f3d5fbf79b6f365fde7f7177bfdfec36dbfdd1e1b83d1c9f1ef7fba7c7c371588e4f1f96e3783a3e2ec7f9787c7a3e3e1d8ed3e9382ec7dde9f8b41c87edc56b9ca61db7639a2fdfffed31bee1ed35e8e1064de37903973b312be2560dffb3138ab861f37fedc4b0f6ad58d7fcaf9d90c4cd9bb313e3da17627df3c54e58099e5decc4da97e13a9ced844f1c1ccdaf3b31af7d15aec5f0b213668217a79df080c9ab79d90933c1ab69d989b5afc135d96a82988fffae58fb165c934913d4f16f577046139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509aa034416982d204a5094a139426284d509a20a64313e3dab7e09a1c9b98d7be05d7643c34b15ffb165c93e1d0c430ad7d0daec7b43dee84070a5e0dcb4e6cd7be0757631a969d1886b56fc2b518f7a79df044c162dabeecc4de50707468e1b4135bdf51b03b3c609eedc45e143c2771be139682ddb894f0ba139e296ede70eae06d277cfab86dd34b05173be17b8adb358d6f155cecc4e1a9c256dca069386fe07227964f207efeb825d3345cbeffc3fddfdfddfd039275c9cb</data>
+        <data format="PNG" length="637">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000024449444154388d8d92514853511cc63fd60d4fb4e0503edc91c1150cee604897225c05e5a5879088b8b21e26be4c04b3ecc52062d98b450fe643a050e008612b586b50a8bdb41985f9d234484d566c123eec616e83682d29be1e4470eb567e2fe7c0f97f3fbef3f10749fc456e4dd39e680d5a08c07e2144d5234990dcb8d468a75044776f5fef0a4966d219063a030b007cdb0134785bbc4f6792099224331b07d749a6f9cbdde4be0f602f00c726c0b1d52d1471d8f259e792f3064cff2564df005d37efc2bcd085e4ea5bc764f7a40f800e605f55942dda259d320ebd95adc3298e4426b8982c533de5a7d00c4a2987fff78583aaaa2e15460b4ccd2db21c2187ee8d906532d019a0aaaa2f011c00505705d86cd8ed31c652a119c6aeb77166608cde269513a7bd1cbc68b11c0a73f0f6108d43c643592faffcd18170cadd009a471f5f46bb14c8964298f4ba90735570a30198fd1c82f97e1a104297d2d56cd7419dac97d1c5f114c3d11833e309c6062c16a6320c4727c8b932ad33ad04440f80e3b5098e01b866788cb679258b0ebd1da1e5290cbfc8627436828eef26221fa7e0364c08275a001cad4da002f008459c84227afacf1adff83ac1585f1b190d930f028c9d08ae42119650840740e3bf36714fff7923c364904ca7c8e7fde49720ad16ed95dd263a6add00d68ba54a1e4d16b0f008d0fdc0bb0a8aa5ca9acdac2de047365f5cc3721c3822809538a05bc8e64bf9ed0230bb9c8b173f35fec4741190266eddb9fa3557c233bb59bb0e0060875010d4eae5922ac507a1a0cbce4712bf0139ce4ce0b983513b0000000049454e44ae426082</data>
     </image>
 </images>
 <tabstops>
