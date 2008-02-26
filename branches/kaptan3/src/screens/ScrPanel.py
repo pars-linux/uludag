@@ -21,23 +21,39 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.paneldlg import PanelWidget
 
+#set summary picture and description
 summary = {"sum":""}
 summary["pic"] = "kaptan/pics/defaultSummary.png"
-summary["desc"] = "Panel"
+summary["desc"] = i18n("Panel")
 
 class Widget(PanelWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
-    title = "Configure your panel !"
-    desc = "Select the one you like..."
+    title = i18n("Configure your panel !")
+    desc = i18n("Select the one you like...")
 
     selectedStyle= QString()
 
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
-        #set background image
+
+        #set texts
+        self.setCaption(i18n("Panel"))
+        self.styleLabel.setText(i18n("Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides some eye candy styles for you."))
+        self.styleSettingsGroup.setTitle(i18n("Style"))
+        self.pix_style.setText(QString.null)
+        self.styleButton.setText(i18n("Apply"))
+        self.checkKickoff.setText(i18n("Use enhanced Kickoff style menu"))
+
+        #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
-        # Common Pardus settings for all themes
+
+        #set signals
+        self.connect(self.styleBox, SIGNAL("activated(int)"), self.styleSelected)
+        self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
+        self.connect(self.styleButton, SIGNAL("clicked()"), self.applyStyle)
+
+        #common Pardus settings for all themes
         config = KConfig("kdeglobals")
         config.setGroup("KDE")
         config.writeEntry("ShowIconsOnPushButtons", True)
@@ -52,11 +68,7 @@ class Widget(PanelWidget, ScreenWidget):
 
         for thumbnail in themes:
             self.styleBox.insertItem(QFileInfo(thumbnail).baseName())
-
-        self.connect(self.styleBox, SIGNAL("activated(int)"), self.styleSelected)
-        self.connect(self.checkKickoff, SIGNAL("clicked()"), self.kickoffSelected)
-        self.connect(self.styleButton, SIGNAL("clicked()"), self.applyStyle)
-
+        
         #if no panel chosen, then write defaults
         summary["sum"] = self.styleBox.currentText()
 
@@ -165,5 +177,5 @@ class Widget(PanelWidget, ScreenWidget):
 
     def execute(self):
         if self.checkKickoff.isChecked():
-            summary["sum"] += ", Kickoff Menu"
+            summary["sum"] += i18n(", Kickoff Menu")
 

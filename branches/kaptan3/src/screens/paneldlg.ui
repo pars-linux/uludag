@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Panel</string>
+        <string></string>
     </property>
     <widget class="QLabel">
         <property name="name">
@@ -29,9 +29,6 @@
         </property>
         <property name="backgroundOrigin">
             <enum>ParentOrigin</enum>
-        </property>
-        <property name="text">
-            <string>Here, you can select a &lt;b&gt;style &lt;/b&gt;for your desktop. &lt;b&gt;Pardus&lt;/b&gt; provides some eye candy styles for you.</string>
         </property>
         <property name="alignment">
             <set>WordBreak|AlignTop</set>
@@ -59,7 +56,7 @@
             <number>2</number>
         </property>
         <property name="title">
-            <string>Style</string>
+            <string></string>
         </property>
         <widget class="QLabel">
             <property name="name">
@@ -126,7 +123,7 @@
                 </rect>
             </property>
             <property name="text">
-                <string>Apply</string>
+                <string></string>
             </property>
         </widget>
         <widget class="QCheckBox">
@@ -145,7 +142,7 @@
                 <enum>ParentOrigin</enum>
             </property>
             <property name="text">
-                <string>Use enhanced Kickoff style menu</string>
+                <string></string>
             </property>
         </widget>
     </widget>
