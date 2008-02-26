@@ -16,26 +16,41 @@ from kdeui import *
 import kdedesigner
 from Xlib import display
 
-
 from screens.Screen import ScreenWidget
 from screens.mousedlg import MouseWidget
 
 RIGHT_HANDED, LEFT_HANDED = range(2)
 
+#set summary picture and description
 summary = {"sum":""}
 summary["pic"] = "kaptan/pics/mouseSummary.png"
-summary["desc"] = "Mouse"
+summary["desc"] = i18n("Mouse")
 
 class Widget(MouseWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
-    title = "Mouse Settings"
-    desc = "Configure your mouse"
+    title = i18n("Mouse Settings")
+    desc = i18n("Configure your mouse")
 
     def __init__(self, *args):
         apply(MouseWidget.__init__, (self,) + args)
+        
+        #set images
         self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_rh.png")))
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+        
+        #set texts
+        self.setCaption(i18n("Mouse"))
+        self.checkReverse.setText(i18n("Reverse scroll"))
+        self.mouseLabel.setText(i18n("<p align=\"left\">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device bu choosing the \"Left handed\" option below. You can also select default click behaviour.</p>"))
+        self.buttonOrderGroup.setTitle(i18n("Button Order"))
+        self.leftHanded.setText(i18n("Left Hand"))
+        self.rightHanded.setText(i18n("Right Hand"))
+        self.clickSettingsGroup.setTitle(i18n("Click behaviour"))
+        self.singleClick.setText(i18n("&Single-click to open files and folders"))
+        self.doubleClick.setText(i18n("Dou&ble-click to open files and folders (select icons on first click)"))
+
+        #set signals
         self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
         self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
         self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
@@ -44,17 +59,16 @@ class Widget(MouseWidget, ScreenWidget):
         pass
 
     def execute(self):
-
         if self.singleClick.isChecked():
-            summary["sum"]="Single Click"
+            summary["sum"]= i18n("Single Click")
         else:
-            summary["sum"]="Double Click"
+            summary["sum"]= i18n("Double Click")
         if self.rightHanded.isChecked():
-            summary["sum"] += ", Right Handed"
+            summary["sum"] += i18n(", Right Handed")
         else:
-            summary["sum"] += ", Left Handed"
+            summary["sum"] += i18n(", Left Handed")
         if self.checkReverse.isChecked():
-            summary["sum"] += ", Reverse Scrolling"
+            summary["sum"] += i18n(", Reverse Scrolling")
 
     def setClickBehaviour(self):
         config = KConfig("kdeglobals")
@@ -65,6 +79,7 @@ class Widget(MouseWidget, ScreenWidget):
 
     def setHandedness(self, item):
         map = {}
+
         if self.rightHanded.isChecked():
             handed = RIGHT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_rh.png")))
