@@ -32,7 +32,7 @@
         </color>
     </property>
     <property name="caption">
-        <string>Kaptan Welcome Wizard</string>
+        <string></string>
     </property>
     <property name="icon">
         <pixmap>image0</pixmap>
@@ -96,7 +96,7 @@
                                 </font>
                             </property>
                             <property name="text">
-                                <string>Welcome</string>
+                                <string></string>
                             </property>
                         </widget>
                         <widget class="QLabel">
@@ -104,7 +104,7 @@
                                 <cstring>pageDesc</cstring>
                             </property>
                             <property name="text">
-                                <string>Welcome to Kaptan Wizard :)</string>
+                                <string></string>
                             </property>
                         </widget>
                     </vbox>
@@ -124,10 +124,10 @@
                         <cstring>buttonCancel</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Cancel</string>
+                        <string></string>
                     </property>
                     <property name="accel">
-                        <string>Alt+C</string>
+                        <string></string>
                     </property>
                 </widget>
                 <spacer>
@@ -152,10 +152,10 @@
                         <cstring>buttonBack</cstring>
                     </property>
                     <property name="text">
-                        <string>&lt; &amp;Back</string>
+                        <string></string>
                     </property>
                     <property name="accel">
-                        <string>Alt+B</string>
+                        <string></string>
                     </property>
                 </widget>
                 <widget class="QPushButton">
@@ -163,10 +163,10 @@
                         <cstring>buttonNext</cstring>
                     </property>
                     <property name="text">
-                        <string>&amp;Next &gt;</string>
+                        <string></string>
                     </property>
                     <property name="accel">
-                        <string>Alt+N</string>
+                        <string></string>
                     </property>
                 </widget>
             </hbox>

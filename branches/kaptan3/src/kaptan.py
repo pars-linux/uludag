@@ -54,7 +54,12 @@ class Kaptan(kaptanUi):
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
         self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pageIcon.setPixmap(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
-
+        #set texts
+        self.pageTitle.setText(i18n("Welcome"))
+        self.pageDesc.setText(i18n("Welcome to Kaptan Wizard :)"))
+        self.buttonCancel.setText(i18n("&Cancel"))
+        self.buttonBack.setText(i18n("« &Back"))
+        self.buttonNext.setText(i18n("&Next »"))
         #set signals
         self.connect(self.buttonNext, SIGNAL("clicked()"),self.slotNext)
         self.connect(self.buttonBack, SIGNAL("clicked()"),self.slotBack)
@@ -112,10 +117,13 @@ if __name__ == "__main__":
     KUniqueApplication.addCmdLineOptions()
 
     if not KUniqueApplication.start():
-        print 'Kaptan is already running!'
+        print i18n('Kaptan is already running!')
+        #return
 
     kapp = KUniqueApplication(True, True, True)
     kaptan = Kaptan()
+    kaptan.setCaption(i18n('Kaptan Welcome Wizard'))
+    kaptan.setIcon(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
     kaptan.show()
     kapp.setMainWidget(kaptan)
     sys.exit(kapp.exec_loop())
