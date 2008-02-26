@@ -18,17 +18,41 @@ import kdedesigner
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
 
+#set summary picture and description
+summary = {"sum":""}
+summary["pic"] = "kaptan/pics/packageSummary.png"
+summary["desc"] = i18n("Package Manager")
+
 class Widget(PackageWidget, ScreenWidget):
 
     #TODO: Contrib depo ekleme hedesi yapilacak. Ama policykit, dbus ne alemde aboo
 
     # title and description at the top of the dialog window
-    title = "Package Manager"
-    desc = "Configure package manager settings..."
+    title = i18n("Package Manager")
+    desc = i18n("Configure package manager settings...")
+
+    #min update time
+    updateTime = 12
 
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
-        #set background image
+        
+        #set updateTime
+        self.updateInterval.setValue(self.updateTime)
+        
+        #set texts
+        self.setCaption(i18n("Package"))
+        self.textPackage.setText(i18n("<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can easily install new programs and upgrade your system and also can see new upgrades of the programs periodically  from the system tray with package manager."))
+        QToolTip.add(self.pixPackage,i18n("tooltipPisiPopup","Pisi Pop-Up Baloon"))
+        self.groupBoxUpdates.setTitle(i18n("Updates"))
+        self.showTray.setText(i18n("Show in system tray"))
+        self.checkUpdate.setText(i18n("Check updates automatically for every"))
+        self.updateInterval.setSuffix(i18n(" hours"))
+        self.groupBoxRepo.setTitle(i18n("Repo"))
+        self.textLabelContrib.setText(i18n("Contrib repo bla bla."))
+        self.checkBoxContrib.setText(i18n("Add contrib repo"))
+
+        #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pixPackage.setPixmap(QPixmap(locate("data", "kaptan/pics/package.png")))
         self.showTray.connect(self.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)

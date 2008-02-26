@@ -22,7 +22,7 @@ from screens.multipledlg import MultipleWidget
 #set summary picture and description
 summary = {"sum":""}
 summary["pic"] = "kaptan/pics/multipleSummary.png"
-summary["desc"] = "Multiple Desktops"
+summary["desc"] = i18n("Multiple Desktops")
 
 
 class Widget(MultipleWidget, ScreenWidget):
@@ -33,9 +33,14 @@ class Widget(MultipleWidget, ScreenWidget):
 
     #for simplicity, multiple desktops are limited to 8
     maxDesktops = 8
+    #min value of desktops started from 1
+    minDesktop = 1
 
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
+        
+        #set start value of desktops
+        self.numInput.setValue(self.minDesktop)
 
         #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))

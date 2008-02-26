@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string>Package</string>
+        <string></string>
     </property>
     <widget class="QLayoutWidget">
         <property name="name">
@@ -56,16 +56,13 @@
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>255</red>
-                                <green>255</green>
-                                <blue>255</blue>
+                                <red>239</red>
+                                <green>239</green>
+                                <blue>239</blue>
                             </color>
                         </property>
                         <property name="backgroundOrigin">
-                            <enum>ParentOrigin</enum>
-                        </property>
-                        <property name="text">
-                            <string>&lt;b&gt;Package-manager&lt;/b&gt; is the graphical front-end of &lt;b&gt;PiSi&lt;/b&gt;. You can easily install new programs and upgrade your system and also can see new upgrades of the programs periodically  from the system tray with package manager.</string>
+                            <enum>WidgetOrigin</enum>
                         </property>
                     </widget>
                     <widget class="QLabel">
@@ -120,7 +117,7 @@
                             <enum>WindowOrigin</enum>
                         </property>
                         <property name="title">
-                            <string>Updates</string>
+                            <string></string>
                         </property>
                         <widget class="QLayoutWidget">
                             <property name="name">
@@ -160,7 +157,7 @@
                                         <enum>WindowOrigin</enum>
                                     </property>
                                     <property name="text">
-                                        <string>Show in system tray</string>
+                                        <string></string>
                                     </property>
                                 </widget>
                                 <widget class="QLayoutWidget">
@@ -213,7 +210,7 @@
                                                 <enum>WindowOrigin</enum>
                                             </property>
                                             <property name="text">
-                                                <string>Check updates automatically for every</string>
+                                                <string></string>
                                             </property>
                                         </widget>
                                         <widget class="QSpinBox">
@@ -231,10 +228,7 @@
                                                 </color>
                                             </property>
                                             <property name="suffix">
-                                                <string> hours</string>
-                                            </property>
-                                            <property name="value">
-                                                <number>12</number>
+                                                <string></string>
                                             </property>
                                         </widget>
                                     </hbox>
@@ -297,7 +291,7 @@
                                         <enum>WindowOrigin</enum>
                                     </property>
                                     <property name="text">
-                                        <string>Contrib repo bla bla.</string>
+                                        <string></string>
                                     </property>
                                 </widget>
                                 <widget class="QCheckBox">
@@ -315,7 +309,7 @@
                                         <enum>WindowOrigin</enum>
                                     </property>
                                     <property name="text">
-                                        <string>Add contrib repo</string>
+                                        <string></string>
                                     </property>
                                 </widget>
                             </vbox>
