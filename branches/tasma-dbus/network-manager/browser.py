@@ -121,25 +121,10 @@ class Connection(QWidget):
         if on:
             state = "up"
         
-        def done():
-            self.view.setEnabled(True)
-        
-        def error(exception):
-            self.updateState()
-            self.view.setEnabled(True)
-        
-        def cancel():
-            self.updateState()
-            self.view.setEnabled(True)
-        
         self.view.setEnabled(False)
         ch = comlink.callHandler(self.conn.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link.setstate")
-        ch.registerDone(done)
-        ch.registerCancel(cancel)
-        ch.registerError(error)
-        ch.registerDBusError(error)
-        ch.registerAuthError(error)
-        ch.call(self.conn.name, state)
+        ch.callNoReply(self.conn.name, state)
+        self.view.setEnabled(True)
     
     def slotDelete(self):
         conn = self.conn

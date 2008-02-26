@@ -47,6 +47,7 @@ class CallHandler:
         self.method = method
         self.action = action
         self.args = None
+        self.ignore_reply = False
         self.handleDone = {}
         self.handleCancel = {}
         self.handleError = {}
@@ -72,6 +73,11 @@ class CallHandler:
     def registerDBusError(self, func, *args):
         self.handleDBusError[func] = args
     
+    def callNoReply(self, *args):
+        self.args = args
+        self.ignore_reply = True
+        self.__call()
+    
     def call(self, *args):
         self.args = args
         self.__call()
@@ -79,7 +85,10 @@ class CallHandler:
     def __call(self):
         iface = self.__getIface()
         method = getattr(iface, self.method)
-        method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
+        if self.ignore_reply:
+            method(ignore_reply=self.ignore_reply, *self.args)
+        else:
+            method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
     
     def __getIface(self):
         try:
