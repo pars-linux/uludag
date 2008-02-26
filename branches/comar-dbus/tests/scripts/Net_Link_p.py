@@ -93,7 +93,7 @@ from pardus.csapi import atoi
 from pardus import iniutils
 
 # Open connection db
-DB = iniutils.iniDB("/etc/network/ppp")
+DB = iniutils.iniDB(os.path.join("/etc/network", script()))
 
 
 class Dialup:

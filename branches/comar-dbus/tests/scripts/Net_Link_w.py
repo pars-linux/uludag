@@ -51,7 +51,7 @@ from pardus import netutils
 from pardus import iniutils
 
 # Open connection db
-DB = iniutils.iniDB("/etc/network/wireless-tools")
+DB = iniutils.iniDB(os.path.join("/etc/network", script()))
 
 # From </usr/include/wireless.h>
 SIOCSIWMODE = 0x8B06    # set the operation mode

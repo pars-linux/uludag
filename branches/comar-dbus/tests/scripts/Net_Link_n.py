@@ -30,7 +30,7 @@ from pardus import netutils
 from pardus import iniutils
 
 # Open connection db
-DB = iniutils.iniDB("/etc/network/net-tools")
+DB = iniutils.iniDB(os.path.join("/etc/network", script()))
 
 # Internal functions
 
