@@ -78,6 +78,7 @@ class Runner:
         # font.setFamily("Droid Sans")
         # self._app.setFont(font)
 
+        ctx.mainScreen = self._window
 
         # visual debugger
         ctx.debugger = Debugger()
@@ -87,8 +88,6 @@ class Runner:
             ctx.debugEnabled = True
 
         ctx.debugger.log("Yali Started")
-
-        ctx.mainScreen = self._window
 
         self._window.createWidgets(_all_screens)
         QObject.connect(self._app, SIGNAL("lastWindowClosed()"),

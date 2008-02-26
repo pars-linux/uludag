@@ -159,17 +159,20 @@ class InformationWindow(QtGui.QWidget):
         Pix = QtGui.QPixmap(':/gui/pics/working.png')
         QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
         self.setObjectName("InfoWin")
-        self.resize(300,200)
+        self.resize(280,200)
         self.setStyleSheet("""
             QLabel { border: 1px solid #CCC;
                      border-radius: 4px;
                      background-image:url(':/gui/pics/trans.png');}
+            QLabel#message { border: 2px solid #AAA;
+                             background-color:#FFFFFF }
         """)
         self.gridlayout = QtGui.QGridLayout(self)
 
         self.label = QtGui.QLabel(self)
         self.label.setMaximumSize(QSize(16777215,30))
         self.label.setAlignment(Qt.AlignCenter)
+        self.label.setObjectName("message")
         self.gridlayout.addWidget(self.label,1,0,1,1)
 
         self.pix = QtGui.QLabel(self)
