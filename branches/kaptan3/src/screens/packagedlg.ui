@@ -13,7 +13,7 @@
         </rect>
     </property>
     <property name="caption">
-        <string></string>
+        <string>PackageWidget</string>
     </property>
     <widget class="QLayoutWidget">
         <property name="name">
@@ -56,9 +56,9 @@
                         </property>
                         <property name="paletteBackgroundColor">
                             <color>
-                                <red>239</red>
-                                <green>239</green>
-                                <blue>239</blue>
+                                <red>255</red>
+                                <green>255</green>
+                                <blue>255</blue>
                             </color>
                         </property>
                         <property name="backgroundOrigin">

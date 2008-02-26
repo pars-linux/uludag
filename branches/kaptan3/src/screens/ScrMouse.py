@@ -81,7 +81,7 @@ class Widget(MouseWidget, ScreenWidget):
         KIPC.sendMessageAll(KIPC.SettingsChanged, KApplication.SETTINGS_MOUSE)
 
     def setHandedness(self, item):
-        map = {}
+        mapMouse = {}
 
         if self.rightHanded.isChecked():
             handed = RIGHT_HANDED
@@ -90,35 +90,35 @@ class Widget(MouseWidget, ScreenWidget):
             handed = LEFT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_lh.png")))
 
-        map = display.Display().get_pointer_mapping()
-        num_buttons = len(map)
+        mapMouse = display.Display().get_pointer_mapping()
+        num_buttons = len(mapMouse)
 
         if num_buttons == 1:
-            map[0] = 1
+            mapMouse[0] = 1
         elif num_buttons == 2:
             if handed == RIGHT_HANDED:
-                map[0], map[1] = 1, 3
+                mapMouse[0], mapMouse[1] = 1, 3
             else:
-                map[0], map[1] = 3, 1
+                mapMouse[0], mapMouse[1] = 3, 1
         else:
             if handed == RIGHT_HANDED:
-                map[0], map[2] = 1, 3
+                mapMouse[0], mapMouse[2] = 1, 3
             else:
-                map[0], map[2] = 3, 1
+                mapMouse[0], mapMouse[2] = 3, 1
 
             if num_buttons >= 5:
                 pos = 0
                 for pos in range(num_buttons):
-                    if map[pos] == 4 or map[pos] == 5:
+                    if mapMouse[pos] == 4 or mapMouse[pos] == 5:
                         break
 
                 if pos < num_buttons -1:
                     if self.checkReverse.isChecked():
-                        map[pos], map[pos + 1] = 5, 4
+                        mapMouse[pos], mapMouse[pos + 1] = 5, 4
                     else:
-                        map[pos], map[pos + 1] = 4, 5
+                        mapMouse[pos], mapMouse[pos + 1] = 4, 5
 
-        display.Display().set_pointer_mapping(map)
+        display.Display().set_pointer_mapping(mapMouse)
 
         config = KConfig("kcminputrc")
         config.setGroup("Mouse")

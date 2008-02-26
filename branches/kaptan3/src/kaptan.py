@@ -31,6 +31,8 @@ import screens.ScrPanel as ScrPanel
 import screens.ScrSummary as ScrSummary
 import screens.ScrGoodbye as ScrGoodbye
 import screens.ScrMultiple as ScrMultiple
+
+#set avaiable screens
 avail_screens = [ScrWelcome,
                  ScrMouse,
                  ScrPanel,
@@ -42,6 +44,19 @@ avail_screens = [ScrWelcome,
                  ScrGoodbye]
 
 
+
+# set left panel
+stepContents = {ScrWelcome: "Welcome",
+                ScrMouse : "Mouse",
+                ScrPanel : "Panel",
+                ScrMultiple : "Multiple",
+                ScrWallpaper : "Wallpaper",
+                ScrNetwork : "Network",
+                ScrPackage : "Package",
+                ScrSummary : "Summary",
+                ScrGoodbye : "Goodbye"
+                }
+
 mod_app = "Kaptan"
 mod_name = "Kaptan"
 mod_version = "3.0"
@@ -50,17 +65,20 @@ class Kaptan(kaptanUi):
 
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
+
         #set images
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
         self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pageIcon.setPixmap(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
-        #set texts
+
+        # set texts
         self.pageTitle.setText(i18n("Welcome"))
         self.pageDesc.setText(i18n("Welcome to Kaptan Wizard :)"))
         self.buttonCancel.setText(i18n("&Cancel"))
         self.buttonBack.setText(i18n("« &Back"))
         self.buttonNext.setText(i18n("&Next »"))
-        #set signals
+
+        # set signals
         self.connect(self.buttonNext, SIGNAL("clicked()"),self.slotNext)
         self.connect(self.buttonBack, SIGNAL("clicked()"),self.slotBack)
         self.connect(self.buttonCancel, SIGNAL("clicked()"),self.slotExit)
@@ -76,8 +94,11 @@ class Kaptan(kaptanUi):
         return self.pageStack.id(self.pageStack.visibleWidget())
 
     def stackMove(self,where):
-        if where<=0:where = 1
-        if where>=len(avail_screens):where = len(avail_screens)
+        if where<=0:
+            where = 1
+        if where>=len(avail_screens):
+            where = len(avail_screens)
+
         self.pageStack.raiseWidget(where)
         _w = self.pageStack.visibleWidget()
         self.pageTitle.setText(_w.title)
@@ -118,7 +139,7 @@ if __name__ == "__main__":
 
     if not KUniqueApplication.start():
         print i18n('Kaptan is already running!')
-        #return
+        sys.exit(1)
 
     kapp = KUniqueApplication(True, True, True)
     kaptan = Kaptan()
