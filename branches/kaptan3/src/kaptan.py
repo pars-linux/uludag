@@ -44,18 +44,7 @@ avail_screens = [ScrWelcome,
                  ScrGoodbye]
 
 
-
-# set left panel
-stepContents = {ScrWelcome: "Welcome",
-                ScrMouse : "Mouse",
-                ScrPanel : "Panel",
-                ScrMultiple : "Multiple",
-                ScrWallpaper : "Wallpaper",
-                ScrNetwork : "Network",
-                ScrPackage : "Package",
-                ScrSummary : "Summary",
-                ScrGoodbye : "Goodbye"
-                }
+screenId = {}
 
 mod_app = "Kaptan"
 mod_name = "Kaptan"
@@ -85,9 +74,18 @@ class Kaptan(kaptanUi):
         self.initialize()
 
     def initialize(self):
+        leftPanel = ""
         for screen in avail_screens:
             _w = screen.Widget()
             self.pageStack.addWidget(_w)
+            sId = self.pageStack.id(_w)
+            sCaption = screen.Widget().caption()
+            screenId[sId] = sCaption
+            if sId == 1:
+                leftPanel += "<b>" + unicode("» ") + sCaption + "</b><br>"
+            else:
+                leftPanel += unicode("» ") + sCaption+ "<br>"
+        self.pixSteps.setText(leftPanel)
         self.pageStack.raiseWidget(1)
 
     def getCurrent(self):
@@ -105,10 +103,18 @@ class Kaptan(kaptanUi):
         self.pageDesc.setText(_w.desc)
         _w.shown()
 
-
     def slotNext(self):
         _w = self.pageStack.visibleWidget()
         _w.execute()
+        hede = ""
+        for sId in screenId:
+            if  sId < len(screenId):
+                if sId == self.getCurrent():
+                    hede+= "<b>" + unicode("» ") + screenId[sId+1] + "</b><br>"
+                else:
+                    hede+=  unicode("» ") + screenId[sId +1] + "<br>"
+
+        self.pixSteps.setText(hede)
         self.stackMove(self.getCurrent() + 1)
 
     def slotBack(self):
