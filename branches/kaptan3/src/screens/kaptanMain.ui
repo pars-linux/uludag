@@ -7,7 +7,7 @@
     <property name="geometry">
         <rect>
             <x>0</x>
-            <y>0</y>
+            <y>49</y>
             <width>700</width>
             <height>500</height>
         </rect>
@@ -37,272 +37,316 @@
     <property name="icon">
         <pixmap>image0</pixmap>
     </property>
-    <grid>
+    <widget class="QLayoutWidget">
         <property name="name">
-            <cstring>unnamed</cstring>
+            <cstring>layoutTop</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>0</y>
+                <width>678</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <hbox>
             <property name="name">
-                <cstring>layoutTop</cstring>
+                <cstring>unnamed</cstring>
             </property>
-            <hbox>
+            <widget class="QLabel">
                 <property name="name">
-                    <cstring>unnamed</cstring>
+                    <cstring>pageIcon</cstring>
                 </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>pageIcon</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>0</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                        <size>
-                            <width>48</width>
-                            <height>48</height>
-                        </size>
-                    </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                </widget>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layoutDesc</cstring>
-                    </property>
-                    <vbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <property name="margin">
-                            <number>0</number>
-                        </property>
-                        <property name="spacing">
-                            <number>0</number>
-                        </property>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>pageTitle</cstring>
-                            </property>
-                            <property name="font">
-                                <font>
-                                    <pointsize>12</pointsize>
-                                    <bold>1</bold>
-                                </font>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>pageDesc</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                        </widget>
-                    </vbox>
-                </widget>
-            </hbox>
-        </widget>
-        <widget class="QLayoutWidget" row="2" column="0">
-            <property name="name">
-                <cstring>layoutBottom</cstring>
-            </property>
-            <hbox>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>0</hsizetype>
+                        <vsizetype>0</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                    <size>
+                        <width>48</width>
+                        <height>48</height>
+                    </size>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+            </widget>
+            <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>unnamed</cstring>
+                    <cstring>layoutDesc</cstring>
                 </property>
-                <widget class="QPushButton">
+                <vbox>
                     <property name="name">
-                        <cstring>buttonCancel</cstring>
+                        <cstring>unnamed</cstring>
                     </property>
-                    <property name="text">
-                        <string></string>
+                    <property name="margin">
+                        <number>0</number>
                     </property>
-                    <property name="accel">
-                        <string></string>
+                    <property name="spacing">
+                        <number>0</number>
                     </property>
-                </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacerBottom</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>341</width>
-                            <height>21</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>buttonBack</cstring>
-                    </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
-                </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>buttonNext</cstring>
-                    </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                    <property name="accel">
-                        <string></string>
-                    </property>
-                </widget>
-            </hbox>
-        </widget>
-        <widget class="QLayoutWidget" row="1" column="0">
-            <property name="name">
-                <cstring>layoutMiddle</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <property name="spacing">
-                    <number>0</number>
-                </property>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layoutSteps</cstring>
-                    </property>
-                    <vbox>
+                    <widget class="QLabel">
                         <property name="name">
-                            <cstring>unnamed</cstring>
+                            <cstring>pageTitle</cstring>
                         </property>
-                        <property name="margin">
-                            <number>0</number>
+                        <property name="font">
+                            <font>
+                                <pointsize>12</pointsize>
+                                <bold>1</bold>
+                            </font>
                         </property>
-                        <property name="spacing">
-                            <number>0</number>
+                        <property name="text">
+                            <string></string>
                         </property>
-                        <spacer>
-                            <property name="name">
-                                <cstring>spacerLeftTop</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Vertical</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>Fixed</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>41</width>
-                                    <height>30</height>
-                                </size>
-                            </property>
-                        </spacer>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>pixSteps</cstring>
-                            </property>
-                            <property name="sizePolicy">
-                                <sizepolicy>
-                                    <hsizetype>0</hsizetype>
-                                    <vsizetype>5</vsizetype>
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                </sizepolicy>
-                            </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <width>150</width>
-                                    <height>0</height>
-                                </size>
-                            </property>
-                            <property name="paletteBackgroundColor">
-                                <color>
-                                    <red>239</red>
-                                    <green>239</green>
-                                    <blue>239</blue>
-                                </color>
-                            </property>
-                            <property name="font">
-                                <font>
-                                </font>
-                            </property>
-                            <property name="textFormat">
-                                <enum>PlainText</enum>
-                            </property>
-                            <property name="scaledContents">
-                                <bool>true</bool>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignTop</set>
-                            </property>
-                            <property name="indent">
-                                <number>10</number>
-                            </property>
-                        </widget>
-                        <spacer>
-                            <property name="name">
-                                <cstring>spacerLeftBottom</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Vertical</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>Fixed</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>41</width>
-                                    <height>30</height>
-                                </size>
-                            </property>
-                        </spacer>
-                    </vbox>
-                </widget>
-                <widget class="QWidgetStack">
-                    <property name="name">
-                        <cstring>pageStack</cstring>
-                    </property>
-                    <property name="minimumSize">
-                        <size>
-                            <width>500</width>
-                            <height>400</height>
-                        </size>
-                    </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>239</red>
-                            <green>239</green>
-                            <blue>239</blue>
-                        </color>
-                    </property>
-                    <widget class="QWidget">
-                        <property name="name">
-                            <cstring>WStackPage</cstring>
-                        </property>
-                        <attribute name="id">
-                            <number>0</number>
-                        </attribute>
                     </widget>
-                </widget>
-            </hbox>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>pageDesc</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </hbox>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layoutSteps</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>50</y>
+                <width>152</width>
+                <height>400</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="spacing">
+                <number>0</number>
+            </property>
+            <spacer>
+                <property name="name">
+                    <cstring>spacerLeftTop</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Fixed</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>41</width>
+                        <height>30</height>
+                    </size>
+                </property>
+            </spacer>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>pixSteps</cstring>
+                </property>
+                <property name="sizePolicy">
+                    <sizepolicy>
+                        <hsizetype>0</hsizetype>
+                        <vsizetype>5</vsizetype>
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                    </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                    <size>
+                        <width>150</width>
+                        <height>0</height>
+                    </size>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>239</red>
+                        <green>239</green>
+                        <blue>239</blue>
+                    </color>
+                </property>
+                <property name="font">
+                    <font>
+                    </font>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+                <property name="textFormat">
+                    <enum>AutoText</enum>
+                </property>
+                <property name="scaledContents">
+                    <bool>true</bool>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop</set>
+                </property>
+                <property name="indent">
+                    <number>10</number>
+                </property>
+            </widget>
+            <spacer>
+                <property name="name">
+                    <cstring>spacerLeftBottom</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Fixed</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>41</width>
+                        <height>30</height>
+                    </size>
+                </property>
+            </spacer>
+        </vbox>
+    </widget>
+    <widget class="QWidgetStack">
+        <property name="name">
+            <cstring>pageStack</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>50</y>
+                <width>524</width>
+                <height>400</height>
+            </rect>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>500</width>
+                <height>400</height>
+            </size>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>239</red>
+                <green>239</green>
+                <blue>239</blue>
+            </color>
+        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>WStackPage</cstring>
+            </property>
+            <attribute name="id">
+                <number>0</number>
+            </attribute>
         </widget>
-    </grid>
+    </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout80</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>450</y>
+                <width>672</width>
+                <height>57</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout52</cstring>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QPushButton" row="0" column="0">
+                        <property name="name">
+                            <cstring>buttonCancel</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="accel">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="0" column="3">
+                        <property name="name">
+                            <cstring>buttonNext</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="accel">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="0" column="2">
+                        <property name="name">
+                            <cstring>buttonBack</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="accel">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <spacer row="0" column="1">
+                        <property name="name">
+                            <cstring>spacerBottom</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>461</width>
+                                <height>21</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </grid>
+            </widget>
+            <spacer>
+                <property name="name">
+                    <cstring>spacer86</cstring>
+                </property>
+                <property name="orientation">
+                    <enum>Vertical</enum>
+                </property>
+                <property name="sizeType">
+                    <enum>Expanding</enum>
+                </property>
+                <property name="sizeHint">
+                    <size>
+                        <width>20</width>
+                        <height>21</height>
+                    </size>
+                </property>
+            </spacer>
+        </vbox>
+    </widget>
 </widget>
 <images>
     <image name="image0">
