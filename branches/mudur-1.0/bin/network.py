@@ -257,6 +257,10 @@ def listProfiles(args=None):
     links = queryLinks(com)
     profiles = queryProfiles(com)
 
+    if not len(profiles):
+        print _("No profiles present.")
+        return []
+
     profiles.sort(key=lambda x: x.devname + x.name)     #profiles are sorted by device_name + name
 
     name_title = "" # _("Profile")
