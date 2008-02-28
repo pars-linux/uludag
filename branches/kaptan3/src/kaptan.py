@@ -55,10 +55,17 @@ class Kaptan(kaptanUi):
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
 
-        #set images
+        # set images
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
         self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pageIcon.setPixmap(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
+
+        # set button icons
+        loader = KGlobal.iconLoader()
+        self.buttonNext.setIconSet(QIconSet(loader.loadIcon("forward", KIcon.Small)))
+        self.buttonBack.setIconSet(QIconSet(loader.loadIcon("back", KIcon.Small)))
+        self.buttonCancel.setIconSet(QIconSet(loader.loadIcon("cancel", KIcon.Small)))
+        self.buttonFinish.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
 
         # set texts
         self.pageTitle.setText(i18n("Welcome"))
