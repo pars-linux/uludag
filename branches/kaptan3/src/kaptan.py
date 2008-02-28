@@ -66,11 +66,18 @@ class Kaptan(kaptanUi):
         self.buttonCancel.setText(i18n("&Cancel"))
         self.buttonBack.setText(i18n("« &Back"))
         self.buttonNext.setText(i18n("&Next »"))
+        self.buttonFinish.setText(i18n("Finish"))
+
+        # hide back and finish buttons
+        self.buttonFinish.hide()
+        self.buttonBack.hide()
 
         # set signals
         self.connect(self.buttonNext, SIGNAL("clicked()"),self.slotNext)
         self.connect(self.buttonBack, SIGNAL("clicked()"),self.slotBack)
         self.connect(self.buttonCancel, SIGNAL("clicked()"),self.slotExit)
+        self.connect(self.buttonFinish, SIGNAL("clicked()"),self.slotExit)
+
         self.initialize()
 
     def initialize(self):
@@ -81,10 +88,12 @@ class Kaptan(kaptanUi):
             sId = self.pageStack.id(_w)
             sCaption = screen.Widget().caption()
             screenId[sId] = sCaption
+
             if sId == 1:
-                leftPanel += "<b>" + unicode("» ") + sCaption + "</b><br>"
+                leftPanel += self.putBold(sCaption)
             else:
-                leftPanel += unicode("» ") + sCaption+ "<br>"
+                leftPanel += self.putBr(sCaption)
+
         self.pixSteps.setText(leftPanel)
         self.pageStack.raiseWidget(1)
 
@@ -103,21 +112,56 @@ class Kaptan(kaptanUi):
         self.pageDesc.setText(_w.desc)
         _w.shown()
 
+        if self.getCurrent() == 1:
+            self.buttonBack
+
+        # hide next and show finish buttons on last screen
+        if self.getCurrent() == len(screenId):
+            self.buttonNext.hide()
+            self.buttonFinish.show()
+        else:
+            self.buttonNext.show()
+            self.buttonFinish.hide()
+
+        # hide back button on first screen
+        if self.getCurrent() == 1:
+            self.buttonBack.hide()
+        else:
+            self.buttonBack.show()
+
     def slotNext(self):
         _w = self.pageStack.visibleWidget()
         _w.execute()
-        hede = ""
+        stepBatch = ""
+        stepBatch += self.putBr(screenId[1])
+
         for sId in screenId:
             if  sId < len(screenId):
                 if sId == self.getCurrent():
-                    hede+= "<b>" + unicode("» ") + screenId[sId+1] + "</b><br>"
+                    stepBatch+= self.putBold(screenId[sId+1])
                 else:
-                    hede+=  unicode("» ") + screenId[sId +1] + "<br>"
+                    stepBatch+= self.putBr(screenId[sId +1])
 
-        self.pixSteps.setText(hede)
+        self.pixSteps.setText(stepBatch)
         self.stackMove(self.getCurrent() + 1)
 
+    def putBr(self, item):
+        return unicode("» ") + item + "<br>"
+
+    def putBold(self, item):
+        return "<b>" + unicode("» ") + item + "</b><br>"
+
     def slotBack(self):
+        stepBatch = ""
+        for sId in screenId:
+            if  sId <= len(screenId) and not sId == 1:
+                if sId == self.getCurrent():
+                    stepBatch+= self.putBold(screenId[sId - 1])
+                else:
+                    stepBatch+= self.putBr(screenId[sId - 1])
+        stepBatch+= self.putBr(screenId[len(screenId)])
+        self.pixSteps.setText(stepBatch)
+
         self.stackMove(self.getCurrent() - 1)
 
     def slotExit(self):

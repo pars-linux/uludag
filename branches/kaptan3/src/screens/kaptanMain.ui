@@ -7,7 +7,7 @@
     <property name="geometry">
         <rect>
             <x>0</x>
-            <y>49</y>
+            <y>0</y>
             <width>700</width>
             <height>500</height>
         </rect>
@@ -254,13 +254,13 @@
     </widget>
     <widget class="QLayoutWidget">
         <property name="name">
-            <cstring>layout80</cstring>
+            <cstring>layout7</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>10</x>
+                <x>12</x>
                 <y>450</y>
-                <width>672</width>
+                <width>670</width>
                 <height>57</height>
             </rect>
         </property>
@@ -270,7 +270,7 @@
             </property>
             <widget class="QLayoutWidget">
                 <property name="name">
-                    <cstring>layout52</cstring>
+                    <cstring>layout6</cstring>
                 </property>
                 <grid>
                     <property name="name">
@@ -321,11 +321,22 @@
                         </property>
                         <property name="sizeHint">
                             <size>
-                                <width>461</width>
+                                <width>470</width>
                                 <height>21</height>
                             </size>
                         </property>
                     </spacer>
+                    <widget class="QPushButton" row="0" column="4">
+                        <property name="name">
+                            <cstring>buttonFinish</cstring>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                        <property name="accel">
+                            <string></string>
+                        </property>
+                    </widget>
                 </grid>
             </widget>
             <spacer>
@@ -341,7 +352,7 @@
                 <property name="sizeHint">
                     <size>
                         <width>20</width>
-                        <height>21</height>
+                        <height>26</height>
                     </size>
                 </property>
             </spacer>
@@ -350,7 +361,7 @@
 </widget>
 <images>
     <image name="image0">
-        <data format="PNG" length="634">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000024149444154388d8d92514853511cc63fd60d4f6470a83d5c69c10d0c36b8489720b60a6ad243ac88b8b21e26becc04b3ec650f115610ab27db83e0a0200bc9f96073500841b515c9ac174bd2a948dcf910cb87c906912e29be1e4470eb567e2fe7c0f97f3fbef3f10749fc451e4dd39e682e6d00c05e2144d52349905cbfd468bb5044475777d722495a0b16c36de11900c1ad005c3eaf6f349b49932469ad1f5c2369f197a7d1730fc06e008e0d8063b35b28e2901934cf663efad01cba84afe340fbcdbb683edf8ecce28423dd910e027003d85315659376c87a9982db4f7f5f8efd89315a6f49f54488423328a58cfdef0b0754559d5d89af70f2438e4c90bd7dfde41a196e0b5355d55700f601a8ab026c34ecd18d07b9c14926af0538796b88be4695e9933e462f9ae46092d13bbd340e1a8fa4535ef9a303512f7702688a3dbe80162930578c23ed6b40bea182eb2e20331f4760ea3520845bca8626bb0eeaa4538e58891c8746922c24b24cde30b9f2a2c0a19131f213699ef213109d008ed6263802e0aaa11b8109cca1556f417c2685d8f33c62e303685d3d8dc4f4283c4633443dbc000ed7265001e84211c7a188cec819e33b27b24c7607c85492bc1fe6d8b1e81728c2148ad001ecffd726ee8a9c332c667a482b473e8b90851e9a5eed8ddd263a6add00d64ae54a11ee1030f510d0c3c0fb0a4ae5cab2cdac2de047be585ac6cc30e015c0e761400f215f2c17b70ac0bbf9a5d46adef3132f4b803380dbd1cbdf96ca786a376bd701006c130a7a34a79c55a598160adaed7c24f11bffe34da4b7a981980000000049454e44ae426082</data>
+        <data format="PNG" length="632">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000023f49444154388d8d925f4853511cc7bfac1b9ec8e0503edc91c10d0c1c0cd92588ad84dae82156445c590f9a2f5b8229f6e243c4faf3a03ead3d040e0a125f5c0f6b0ac9c097bc063583684e484d22aea12112d30d225a567c7b10c1ad5bf97d3907ceeffbe17bbefc40127f914bd3b4275abd3604e0b010a2e29124486e5daab45728a2a3aba7eb23495aef2d86dbc3730042bb01d4fbbcbed1ac394992a4b5757093e4327fb91a5c0f001c04e0d8063876ba85228e1b21e3a2990f20d0da8de20b2072e71e029723303f4c3bb21dd910804600872aa2ecd03e592bc7d0e8a73f61713099e1ea34a99e69a5d0744a29e3fffbc23155551798207333f364928cdd1f244986dbc35455f5198023006a2a00db0dbbdcfa232b39cff4cd20e707d2f435a8cc9ef5b1ef9a412633ec1b8851f7e8c3b24e5effa303512bf70368ea1fbe821629905f8b63dae7c43b6719b7ea01732e0e63760a10a2514a67935d0735b24ea65653164752696ea4724cdf3648738323a90cb9401ae7fc0444278053d5094e02b8a1bbf5a0f963066d9e16c4f38f119f5842ff54026ddfce23991f854b0f40d4c20be044750215805b28e23414d1d97b41ffcad739a67b82e478867c18e66473ec1314610845b8011cfdd7261ee8bda45b34a3e4b2458ef7929fa334bcda73bb4d7454bb016c164be502dc11e04d02f074032fcb2896caeb36b3b680ef4b85e23a66878066012c0e019e30960aa5c26e0178b5b8368615fd27268a806aa0ffeed52f6b253cb59bb5eb0000f6080551ad4e2ea852bc150a22763e92f80ddd584e548dc5a9ff0000000049454e44ae426082</data>
     </image>
 </images>
 <tabstops>
