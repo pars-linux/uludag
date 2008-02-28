@@ -154,25 +154,24 @@ go to next screen.</p>
     def keyReleaseEvent(self, e):
         self.checkCapsLock()
 
+    def showError(self,message):
+        self.ui.pass_error.setText(message)
+        self.ui.pass_error.setVisible(True)
+        self.ui.createButton.setEnabled(False)
+
     def slotTextChanged(self):
         p1 = self.ui.pass1.text()
         p2 = self.ui.pass2.text()
 
         if not p1 == '' and (p1 == self.ui.username.text() or p1 == self.ui.realname.text()):
-            self.ui.pass_error.setText(
-                _('<font color="#FF6D19">Don\'t use your user name or name as a password.</font>'))
-            self.ui.pass_error.setVisible(True)
-            return self.ui.createButton.setEnabled(False)
+            self.showError(_('<font color="#FF6D19">Don\'t use your user name or name as a password.</font>'))
+            return
         elif p2 != p1 and p2:
-            self.ui.pass_error.setText(
-                _('<font color="#FF6D19">Passwords do not match!</font>'))
-            self.ui.pass_error.setVisible(True)
-            return self.ui.createButton.setEnabled(False)
+            self.showError(_('<font color="#FF6D19">Passwords do not match!</font>'))
+            return
         elif len(p1) == len(p2) and len(p2) < 4 and not p1=='':
-            self.ui.pass_error.setText(
-                _('<font color="#FF6D19">Password is too short!</font>'))
-            self.ui.pass_error.setVisible(True)
-            return self.ui.createButton.setEnabled(False)
+            self.showError(_('<font color="#FF6D19">Password is too short!</font>'))
+            return
         else:
             self.ui.pass_error.setVisible(False)
 
@@ -198,16 +197,13 @@ go to next screen.</p>
 
         # check user validity
         if u.exists() or (existsInList and self.edititemindex == None):
-            self.ui.pass_error.setText(
-                _('<font color="#FF6D19">Username exists, choose another one!</font>'))
+            self.showError(_('<font color="#FF6D19">Username exists, choose another one!</font>'))
             return
         elif not u.usernameIsValid():
-            self.ui.pass_error.setText(
-                _('<font color="#FF6D19">Username contains invalid characters!</font>'))
+            self.showError(_('<font color="#FF6D19">Username contains invalid characters!</font>'))
             return
         elif not u.realnameIsValid():
-            self.ui.pass_error.setText(
-                _('<font color="#FF6D19">Realname contains invalid characters!</font>'))
+            self.showError(_('<font color="#FF6D19">Realname contains invalid characters!</font>'))
             return
 
         self.ui.createButton.setText(_("Create User"))
@@ -234,8 +230,8 @@ go to next screen.</p>
         # clear form
         self.resetWidgets()
 
-        # ctx.debugger.log("slotCreateUser :: user '%s (%s)' added/updated" % (u.realname,u.username))
-        # ctx.debugger.log("slotCreateUser :: user groups are %s" % str(','.join(u.groups)))
+        ctx.debugger.log("slotCreateUser :: user '%s (%s)' added/updated" % (u.realname,u.username))
+        ctx.debugger.log("slotCreateUser :: user groups are %s" % str(','.join(u.groups)))
 
         # give focus to username widget for a new user. #3280
         self.ui.username.setFocus()

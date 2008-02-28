@@ -73,15 +73,14 @@ Click Next button to proceed.
                      self.slotTextChanged)
         self.connect(self.ui.pass2, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
-
         self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
-
         self.connect(self.ui.hostname, SIGNAL("textChanged(const QString &)"),
                      self.slotHostnameChanged)
 
     def shown(self):
-        ctx.debugger.log("Admin loaded")
+        # Use first added user's name as machine name
+        self.ui.hostname.setText("%s-pardus" % yali4.users.pending_users[0].username)
         self.setNext()
         self.checkCapsLock()
         self.ui.pass1.setFocus()
