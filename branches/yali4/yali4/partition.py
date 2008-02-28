@@ -20,7 +20,6 @@ import parted
 import yali4.parteddata as parteddata
 import yali4.filesystem
 
-
 ##
 # Class representing a single partition within a Device object
 class Partition:
@@ -48,7 +47,6 @@ class Partition:
 
         self._partition.set_system(fs_type)
 
-
     def setPartedFlags(self, flags):
         for flag in flags:
             if self._partition.is_flag_available(flag):
@@ -69,7 +67,6 @@ class Partition:
     def isExtended(self):
         return self._partition.type == parted.PARTITION_EXTENDED
 
-
     ##
     # get freespace on extended partition
     def getFreeBytes(self):
@@ -88,14 +85,11 @@ class Partition:
 
         return total_bytes - size
 
-
     def getFreeMB(self):
         return long(self.getFreeBytes() / parteddata.MEGABYTE)
 
-
     def getType(self):
         return self._parted_type
-
 
     ##
     # get parted partition
@@ -133,6 +127,13 @@ class Partition:
 
     def getFSName(self):
         return self._fsname
+
+    def isResizeable(self):
+        fs = yali4.filesystem.get_filesystem(self.getFSName())
+        try:
+            return fs.isResizeable()
+        except AttributeError, e:
+            return False
 
     def getFSLabel(self):
         fs = yali4.filesystem.get_filesystem(self.getFSName())

@@ -90,7 +90,20 @@ about disk partitioning.
 
     def shown(self):
         ctx.mainScreen.disableNext()
+        self.scanPartitions()
         self.updateUI()
+
+    def scanPartitions(self):
+        ctx.debugger.log("Disk analyze started.")
+        ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
+        for dev in yali4.storage.devices:
+            ctx.debugger.log("In disk %s, %d mb is free." % (dev.getPath(), dev.getLargestContinuousFreeMB()))
+            for part in dev.getOrderedPartitionList():
+                ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
+                if part.isResizeable():
+                    ctx.debugger.log("This partition is resizable")
+                else:
+                    ctx.debugger.log("This partition is not resizable")
 
     def execute(self):
         ctx.installData.autoPartDev = None

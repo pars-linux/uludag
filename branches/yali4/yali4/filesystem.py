@@ -176,7 +176,6 @@ class FileSystem:
     def isImplemented(self):
         return self._implemented
 
-
     ##
     # set if filesystem is resizeable
     def setResizeable(self, bool):

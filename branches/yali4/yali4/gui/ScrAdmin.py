@@ -79,8 +79,11 @@ Click Next button to proceed.
                      self.slotHostnameChanged)
 
     def shown(self):
-        # Use first added user's name as machine name
-        self.ui.hostname.setText("%s-pardus" % yali4.users.pending_users[0].username)
+        try:
+            # Use first added user's name as machine name
+            self.ui.hostname.setText("%s-pardus" % yali4.users.pending_users[0].username)
+        except:
+            pass
         self.setNext()
         self.checkCapsLock()
         self.ui.pass1.setFocus()

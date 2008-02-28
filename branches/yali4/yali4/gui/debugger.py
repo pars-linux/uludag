@@ -32,8 +32,8 @@ class Debugger:
 
         self.traceback = DebugContainer(self.debugWidget,showTimeStamp)
         self.loglevel = QtGui.QComboBox(self.debugWidget)
-        self.loglevel.addItem("0 : All Messages")
-        self.loglevel.addItem("1 : Developer Messages")
+        self.loglevel.addItem("0 : Developer Messages")
+        self.loglevel.addItem("1 : All Messages")
         QObject.connect(self.loglevel, SIGNAL("currentIndexChanged(int)"),self.loglevelChanged)
 
         l = QtGui.QVBoxLayout(self.debugWidget)
@@ -62,7 +62,7 @@ class Debugger:
         else:
             self.showWindow()
 
-    def log(self,log,type=1,indent=0):
+    def log(self,log,type=0,indent=0):
         if ctx.debugEnabled:
             self.traceback.add(unicode(log),type,indent)
 
@@ -82,12 +82,12 @@ class DebugContainer(QtGui.QTextBrowser):
             self.indent += indent
 
         _indent = " "+"»"*self.indent
-        if type==1:
+        if type==0:
             self.plainLogs += "%s\n" % log
             log = "<b>%s</b>" % log
             _indent = ""
 
-        if self.level==0 or type==self.level:
+        if self.level==1 or type==self.level:
             _now = time.strftime("%H:%M:%S", time.localtime())
             self.append(unicode("%s :%s %s" % (_now,_indent,log)))
 
@@ -105,10 +105,10 @@ class DebuggerAspect:
         met_name = data['original_method_name']
         class_ = str(data['__class__'])[8:-2]
         fun_str = "%s%s from %s" % (met_name, args, class_)
-        self.out.log("call, %s" % fun_str,0,+1)
+        self.out.log("call, %s" % fun_str,1,+1)
 
     def after(self, wobj, data, *args, **kwargs):
         met_name = data['original_method_name']
         fun_str = "%s%s" % (met_name, args)
-        self.out.log("left, %s" % fun_str,0,-1)
+        self.out.log("left, %s" % fun_str,1,-1)
 
