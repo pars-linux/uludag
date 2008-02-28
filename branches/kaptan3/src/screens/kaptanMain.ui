@@ -34,9 +34,6 @@
     <property name="caption">
         <string>kaptanUi</string>
     </property>
-    <property name="icon">
-        <pixmap>image0</pixmap>
-    </property>
     <widget class="QLayoutWidget">
         <property name="name">
             <cstring>layoutTop</cstring>
@@ -69,6 +66,12 @@
                     <size>
                         <width>48</width>
                         <height>48</height>
+                    </size>
+                </property>
+                <property name="maximumSize">
+                    <size>
+                        <width>48</width>
+                        <height>32767</height>
                     </size>
                 </property>
                 <property name="text">
@@ -359,11 +362,6 @@
         </vbox>
     </widget>
 </widget>
-<images>
-    <image name="image0">
-        <data format="PNG" length="632">89504e470d0a1a0a0000000d49484452000000100000001008060000001ff3ff610000023f49444154388d8d925f4853511cc7bfac1b9ec8e0503edc91c10d0c1c0cd92588ad84dae82156445c590f9a2f5b8229f6e243c4faf3a03ead3d040e0a125f5c0f6b0ac9c097bc063583684e484d22aea12112d30d225a567c7b10c1ad5bf97d3907ceeffbe17bbefc40127f914bd3b4275abd3604e0b010a2e29124486e5daab45728a2a3aba7eb23495aef2d86dbc3730042bb01d4fbbcbed1ac394992a4b5757093e4327fb91a5c0f001c04e0d8063876ba85228e1b21e3a2990f20d0da8de20b2072e71e029723303f4c3bb21dd910804600872aa2ecd03e592bc7d0e8a73f61713099e1ea34a99e69a5d0744a29e3fffbc23155551798207333f364928cdd1f244986dbc35455f5198023006a2a00db0dbbdcfa232b39cff4cd20e707d2f435a8cc9ef5b1ef9a412633ec1b8851f7e8c3b24e5effa303512bf70368ea1fbe821629905f8b63dae7c43b6719b7ea01732e0e63760a10a2514a67935d0735b24ea65653164752696ea4724cdf3648738323a90cb9401ae7fc0444278053d5094e02b8a1bbf5a0f963066d9e16c4f38f119f5842ff54026ddfce23991f854b0f40d4c20be044750215805b28e23414d1d97b41ffcad739a67b82e478867c18e66473ec1314610845b8011cfdd7261ee8bda45b34a3e4b2458ef7929fa334bcda73bb4d7454bb016c164be502dc11e04d02f074032fcb2896caeb36b3b680ef4b85e23a66878066012c0e019e30960aa5c26e0178b5b8368615fd27268a806aa0ffeed52f6b253cb59bb5eb0000f6080551ad4e2ea852bc150a22763e92f80ddd584e548dc5a9ff0000000049454e44ae426082</data>
-    </image>
-</images>
 <tabstops>
     <tabstop>buttonNext</tabstop>
     <tabstop>buttonBack</tabstop>
