@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-06 09:42+0300\n"
+"POT-Creation-Date: 2008-02-28 13:58+0200\n"
 "PO-Revision-Date: 2007-11-12 20:53+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -107,7 +107,8 @@ msgstr "Opnieuw aankoppelen root bestandssysteem als lezen/schrijven"
 
 #: bin/mudur.py:579
 msgid "Root filesystem could not be mounted read/write :("
-msgstr "Root bestandssysteem kon niet aangekoppeld worden als 'lezen/schrijven' :("
+msgstr ""
+"Root bestandssysteem kon niet aangekoppeld worden als 'lezen/schrijven' :("
 
 #: bin/mudur.py:622
 #, python-format
@@ -132,7 +133,8 @@ msgstr "Fouten in het bestandssysteem gecorrigeerd"
 
 #: bin/mudur.py:670
 msgid "Fsck could not correct all errors, manual repair needed"
-msgstr "Fsck kon niet alle problemen oplossen. Handmatige reparatie is vereist."
+msgstr ""
+"Fsck kon niet alle problemen oplossen. Handmatige reparatie is vereist."
 
 #: bin/mudur.py:683
 msgid "Mounting USB filesystem"
@@ -156,7 +158,8 @@ msgstr "Aankoppelen bestandssystemen op afstand (CTRL-C stopt pogen)"
 
 #: bin/mudur.py:725
 msgid "Mounting skipped with CTRL-C, remote shares are not accessible!"
-msgstr "Aankoppelen overgeslagen met CTRL-C, delen op afstand is niet toegankelijk!"
+msgstr ""
+"Aankoppelen overgeslagen met CTRL-C, delen op afstand is niet toegankelijk!"
 
 #: bin/mudur.py:738
 msgid "Setting disk parameters"
@@ -356,7 +359,8 @@ msgstr ""
 #: bin/network.py:40
 #, python-format
 msgid "Limit excess, please enter a valid number: ( interval: 0 < entry < %s )"
-msgstr "Limiteer gebruik, geef een valide getal: ( interval: 0 < trefwoord < %s )"
+msgstr ""
+"Limiteer gebruik, geef een valide getal: ( interval: 0 < trefwoord < %s )"
 
 #: bin/network.py:139
 #, python-format
@@ -425,92 +429,97 @@ msgstr "Gevonden: %(essid)s [%(quality)s]"
 msgid "[encrypted]"
 msgstr "[versleuteld]"
 
-#: bin/network.py:327
+#: bin/network.py:261
+#, fuzzy
+msgid "No profiles present."
+msgstr "Naam van te verwijderen profiel "
+
+#: bin/network.py:335
 msgid "Enter new connection name"
 msgstr "Geef naam nieuwe verbinding"
 
-#: bin/network.py:331
+#: bin/network.py:339
 msgid "Select connection type:"
 msgstr "Selecteer verbindingstype:"
 
-#: bin/network.py:349
+#: bin/network.py:357
 #, python-format
 msgid "Device '%s' selected."
 msgstr "Apparaat '%s' geselecteerd."
 
-#: bin/network.py:351
+#: bin/network.py:359
 msgid "No avaible device for this type of connection"
 msgstr "Geen apparaten voorhanden voor dit type verbinding"
 
-#: bin/network.py:354
+#: bin/network.py:362
 msgid "Select connection device:"
 msgstr "Selecteer verbindingsapparaat:"
 
-#: bin/network.py:369
+#: bin/network.py:377
 msgid "Enter manually"
 msgstr "Handmatig invoeren"
 
-#: bin/network.py:370
+#: bin/network.py:378
 msgid "Scan"
 msgstr "Scan"
 
-#: bin/network.py:397
+#: bin/network.py:405
 msgid "Network settings:"
 msgstr "Netwerkinstellingen:"
 
-#: bin/network.py:400
+#: bin/network.py:408
 msgid "Automatic query (DHCP)"
 msgstr "Automatische opvragen (DHCP)"
 
-#: bin/network.py:401
+#: bin/network.py:409
 msgid "Manual configuration"
 msgstr "Handmatig configureren"
 
-#: bin/network.py:406
+#: bin/network.py:414
 msgid "IP Address"
 msgstr "IP adres"
 
-#: bin/network.py:407
+#: bin/network.py:415
 msgid "Network mask"
 msgstr "Netwerkmasker"
 
-#: bin/network.py:408
+#: bin/network.py:416
 msgid "Gateway"
 msgstr "Poort"
 
-#: bin/network.py:416
+#: bin/network.py:424
 msgid "Choose authentication type:"
 msgstr "Kies aanmeld type:"
 
-#: bin/network.py:426 bin/network.py:429
+#: bin/network.py:434 bin/network.py:437
 msgid "Enter password "
 msgstr "Geef wachtwoord "
 
-#: bin/network.py:428
+#: bin/network.py:436
 msgid "Enter user name "
 msgstr "Geef gebruikersnaam "
 
-#: bin/network.py:446
+#: bin/network.py:454
 msgid "Profiles :"
 msgstr "Profielen :"
 
-#: bin/network.py:448
+#: bin/network.py:456
 msgid "Name of profile to delete "
 msgstr "Naam van te verwijderen profiel "
 
-#: bin/network.py:450
+#: bin/network.py:458
 msgid "Please enter a valid profile name "
 msgstr "Geef een geldige profiel naam "
 
-#: bin/network.py:465
+#: bin/network.py:473
 msgid "Enter name of profile"
 msgstr "Geef de naam van een profiel"
 
-#: bin/network.py:482
+#: bin/network.py:490
 msgid "No such profile"
 msgstr "Profiel onbekend"
 
-#: bin/network.py:486
+#: bin/network.py:494
 msgid ""
 "usage: network <command> <arguments>\n"
 "where command is:\n"
@@ -532,7 +541,6 @@ msgstr ""
 " up           Opgegeven verbinding verbinden\n"
 " down         Opgegeven verbinding verbreken"
 
-#: bin/network.py:518
+#: bin/network.py:526
 msgid "Cancelled"
 msgstr "Geannuleerd"
-

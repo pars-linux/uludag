@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-06 09:42+0300\n"
+"POT-Creation-Date: 2008-02-28 13:58+0200\n"
 "PO-Revision-Date: 2007-12-31 05:54+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -23,7 +23,8 @@ msgstr ""
 
 #: bin/mudur.py:163
 msgid "Cannot write mudur.log, read-only file system"
-msgstr "Mudur.log kann nicht beschrieben werden, Dateisystem nur mit Lesezugriff"
+msgstr ""
+"Mudur.log kann nicht beschrieben werden, Dateisystem nur mit Lesezugriff"
 
 #: bin/mudur.py:309
 msgid "Cannot find /etc/pardus-release"
@@ -112,7 +113,8 @@ msgstr "Root Dateisystem wird neu mit Lese-/Schreibzugriff gemountet"
 
 #: bin/mudur.py:579
 msgid "Root filesystem could not be mounted read/write :("
-msgstr "Root Dateisystem konnte nicht mit Lese-/Schreibzugriff gemountet werden :("
+msgstr ""
+"Root Dateisystem konnte nicht mit Lese-/Schreibzugriff gemountet werden :("
 
 #: bin/mudur.py:622
 #, python-format
@@ -137,7 +139,8 @@ msgstr "Dateisystem Fehler korrigiert"
 
 #: bin/mudur.py:670
 msgid "Fsck could not correct all errors, manual repair needed"
-msgstr "Fsck konnte nicht alle Fehler beheben, eine manuelle Behebung ist nötig"
+msgstr ""
+"Fsck konnte nicht alle Fehler beheben, eine manuelle Behebung ist nötig"
 
 #: bin/mudur.py:683
 msgid "Mounting USB filesystem"
@@ -161,7 +164,8 @@ msgstr "Remote-Dateisysteme werden gemountet (STRG-C stoppt den Versuch)"
 
 #: bin/mudur.py:725
 msgid "Mounting skipped with CTRL-C, remote shares are not accessible!"
-msgstr "Mounten mit STRG-C übersprungen, Remote-Freigaben sind nicht zugänglich!"
+msgstr ""
+"Mounten mit STRG-C übersprungen, Remote-Freigaben sind nicht zugänglich!"
 
 #: bin/mudur.py:738
 msgid "Setting disk parameters"
@@ -173,7 +177,9 @@ msgstr "Systemuhr wird von der Hardwareuhr gesetzt"
 
 #: bin/mudur.py:771
 msgid "Failed to adjust systematic drift of the hardware clock"
-msgstr "Abgleichung der systematischen Abweichung von der Hardware-Uhr ist fehlgeschlagen"
+msgstr ""
+"Abgleichung der systematischen Abweichung von der Hardware-Uhr ist "
+"fehlgeschlagen"
 
 #: bin/mudur.py:775
 msgid "Failed to set system clock to hardware clock"
@@ -237,7 +243,8 @@ msgstr "Umgebungsvariablen werden aktualisiert"
 
 #: bin/mudur.py:1049
 msgid "Trying initiate a warm reboot (skipping BIOS with kexec kernel)"
-msgstr "Wird versucht, ein Warmstart zu beginnen (überspringe BIOS mit kexec kernel)"
+msgstr ""
+"Wird versucht, ein Warmstart zu beginnen (überspringe BIOS mit kexec kernel)"
 
 #: bin/service.py:33
 msgid "You dont have permission to do this operation."
@@ -360,7 +367,9 @@ msgstr ""
 #: bin/network.py:40
 #, python-format
 msgid "Limit excess, please enter a valid number: ( interval: 0 < entry < %s )"
-msgstr "Überschuß begrenzen, bitte geben Sie eine gültige Zahl ein: ( Intervall: 0 < Eintrag < %s )"
+msgstr ""
+"Überschuß begrenzen, bitte geben Sie eine gültige Zahl ein: ( Intervall: 0 < "
+"Eintrag < %s )"
 
 #: bin/network.py:139
 #, python-format
@@ -429,92 +438,97 @@ msgstr "Gefunden: %(essid)s [%(quality)s]"
 msgid "[encrypted]"
 msgstr "[verschlüsselt]"
 
-#: bin/network.py:327
+#: bin/network.py:261
+#, fuzzy
+msgid "No profiles present."
+msgstr "Name des zulöschenden Profils"
+
+#: bin/network.py:335
 msgid "Enter new connection name"
 msgstr "Namen der neuen Verbindung eingeben"
 
-#: bin/network.py:331
+#: bin/network.py:339
 msgid "Select connection type:"
 msgstr "Verbindungstyp wählen:"
 
-#: bin/network.py:349
+#: bin/network.py:357
 #, python-format
 msgid "Device '%s' selected."
 msgstr "Dienst '%s' gewählt."
 
-#: bin/network.py:351
+#: bin/network.py:359
 msgid "No avaible device for this type of connection"
 msgstr "Kein verfügbares Gerät für derartige Verbindung"
 
-#: bin/network.py:354
+#: bin/network.py:362
 msgid "Select connection device:"
 msgstr "Verbindungsgerät auswählen:"
 
-#: bin/network.py:369
+#: bin/network.py:377
 msgid "Enter manually"
 msgstr "Manuelle Eingabe"
 
-#: bin/network.py:370
+#: bin/network.py:378
 msgid "Scan"
 msgstr "Scannen"
 
-#: bin/network.py:397
+#: bin/network.py:405
 msgid "Network settings:"
 msgstr "Netzwerk-Einstellungen:"
 
-#: bin/network.py:400
+#: bin/network.py:408
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: bin/network.py:401
+#: bin/network.py:409
 msgid "Manual configuration"
 msgstr "Manuelle Konfiguration"
 
-#: bin/network.py:406
+#: bin/network.py:414
 msgid "IP Address"
 msgstr "IP-Adresse"
 
-#: bin/network.py:407
+#: bin/network.py:415
 msgid "Network mask"
 msgstr "Netzwerkmaske"
 
-#: bin/network.py:408
+#: bin/network.py:416
 msgid "Gateway"
 msgstr "Gateway"
 
-#: bin/network.py:416
+#: bin/network.py:424
 msgid "Choose authentication type:"
 msgstr "Authentifizierungs-Typ auswählen:"
 
-#: bin/network.py:426 bin/network.py:429
+#: bin/network.py:434 bin/network.py:437
 msgid "Enter password "
 msgstr "Passwort eingeben"
 
-#: bin/network.py:428
+#: bin/network.py:436
 msgid "Enter user name "
 msgstr "Benutzernamen eingeben"
 
-#: bin/network.py:446
+#: bin/network.py:454
 msgid "Profiles :"
 msgstr "Profile :"
 
-#: bin/network.py:448
+#: bin/network.py:456
 msgid "Name of profile to delete "
 msgstr "Name des zulöschenden Profils"
 
-#: bin/network.py:450
+#: bin/network.py:458
 msgid "Please enter a valid profile name "
 msgstr "Bitte geben Sie einen gültigen Profilnamen"
 
-#: bin/network.py:465
+#: bin/network.py:473
 msgid "Enter name of profile"
 msgstr "Namen des Profils eingeben"
 
-#: bin/network.py:482
+#: bin/network.py:490
 msgid "No such profile"
 msgstr "Kein derartiges Profil"
 
-#: bin/network.py:486
+#: bin/network.py:494
 msgid ""
 "usage: network <command> <arguments>\n"
 "where command is:\n"
@@ -536,7 +550,6 @@ msgstr ""
 " up           Gegebene Verbindung verbinden\n"
 " down         Gegebene Verbindung trennen"
 
-#: bin/network.py:518
+#: bin/network.py:526
 msgid "Cancelled"
 msgstr "Abgebrochen"
-

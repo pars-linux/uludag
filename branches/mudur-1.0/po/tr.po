@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-06 09:42+0300\n"
+"POT-Creation-Date: 2008-02-28 13:58+0200\n"
 "PO-Revision-Date: 2006-03-06 16:05+0200\n"
 "Last-Translator: Görkem Çetin <gorkem@pardus.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -431,92 +431,96 @@ msgstr "Bulundu: %(essid)s [%(quality)s]"
 msgid "[encrypted]"
 msgstr "[şifrelenmiş]"
 
-#: bin/network.py:327
+#: bin/network.py:261
+msgid "No profiles present."
+msgstr "Tanımlı profil yok."
+
+#: bin/network.py:335
 msgid "Enter new connection name"
 msgstr "Yeni bağlantı ismi girin"
 
-#: bin/network.py:331
+#: bin/network.py:339
 msgid "Select connection type:"
 msgstr "Bağlantı tipi seçin:"
 
-#: bin/network.py:349
+#: bin/network.py:357
 #, python-format
 msgid "Device '%s' selected."
 msgstr "Aygıt '%s' seçildi."
 
-#: bin/network.py:351
+#: bin/network.py:359
 msgid "No avaible device for this type of connection"
 msgstr "Bu bağlantı tipine ilişkin aygıt bulunmamaktadır"
 
-#: bin/network.py:354
+#: bin/network.py:362
 msgid "Select connection device:"
 msgstr "Bağlantı aygıtı seçin:"
 
-#: bin/network.py:369
+#: bin/network.py:377
 msgid "Enter manually"
 msgstr "Elle gir"
 
-#: bin/network.py:370
+#: bin/network.py:378
 msgid "Scan"
 msgstr "Tara"
 
-#: bin/network.py:397
+#: bin/network.py:405
 msgid "Network settings:"
 msgstr "Ağ ayarları:"
 
-#: bin/network.py:400
+#: bin/network.py:408
 msgid "Automatic query (DHCP)"
 msgstr "Otomatik bulma (DHCP)"
 
-#: bin/network.py:401
+#: bin/network.py:409
 msgid "Manual configuration"
 msgstr "Elle ayarlama"
 
-#: bin/network.py:406
+#: bin/network.py:414
 msgid "IP Address"
 msgstr "IP Adresi"
 
-#: bin/network.py:407
+#: bin/network.py:415
 msgid "Network mask"
 msgstr "Ağ maskesi"
 
-#: bin/network.py:408
+#: bin/network.py:416
 msgid "Gateway"
 msgstr "Ağ geçidi"
 
-#: bin/network.py:416
+#: bin/network.py:424
 msgid "Choose authentication type:"
 msgstr "Kimlik doğrulama tipi seçin:"
 
-#: bin/network.py:426 bin/network.py:429
+#: bin/network.py:434 bin/network.py:437
 msgid "Enter password "
 msgstr "Şifre girin:"
 
-#: bin/network.py:428
+#: bin/network.py:436
 msgid "Enter user name "
 msgstr "Kullanıcı adı girin:"
 
-#: bin/network.py:446
+#: bin/network.py:454
 msgid "Profiles :"
 msgstr "Profiller :"
 
-#: bin/network.py:448
+#: bin/network.py:456
 msgid "Name of profile to delete "
 msgstr "Silmek istediğiniz profil adını girin:"
 
-#: bin/network.py:450
+#: bin/network.py:458
 msgid "Please enter a valid profile name "
 msgstr "Lütfen geçerli bir profil ismi girin"
 
-#: bin/network.py:465
+#: bin/network.py:473
 msgid "Enter name of profile"
 msgstr "Profil ismi girin:"
 
-#: bin/network.py:482
+#: bin/network.py:490
 msgid "No such profile"
 msgstr "Böyle bir profil bulunmamaktadır"
 
-#: bin/network.py:486
+#: bin/network.py:494
 msgid ""
 "usage: network <command> <arguments>\n"
 "where command is:\n"
@@ -538,6 +542,6 @@ msgstr ""
 " up           Verilen bağlantıyı aç\n"
 " down         Verilen bağlantıyı kapa"
 
-#: bin/network.py:518
+#: bin/network.py:526
 msgid "Cancelled"
 msgstr "İptal edildi"
