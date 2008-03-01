@@ -102,6 +102,7 @@ about disk partitioning.
                 ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
                 if part.isResizeable():
                     ctx.debugger.log("This partition is resizable")
+                    ctx.debugger.log("It can resizable to %s " % part.getMinResizeMB())
                 else:
                     ctx.debugger.log("This partition is not resizable")
 
@@ -118,7 +119,6 @@ about disk partitioning.
             # skip next screen()
             # We pass the Manual Partitioning screen
             ctx.mainScreen.moveInc = 2
-
         return True
 
     def slotDeviceChanged(self, i):

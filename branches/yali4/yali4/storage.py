@@ -310,8 +310,10 @@ class Device:
 
 
     def __pedPartitionBytes(self, ped_part):
-        return long(ped_part.geom.length *
-                    self._sector_size)
+        if ped_part:
+            return long(ped_part.geom.length *
+                        self._sector_size)
+        return 0
 
     ###############################
     # Partition mangling routines #

@@ -142,6 +142,13 @@ class Partition:
         except AttributeError, e:
             return None
 
+    def getMinResizeMB(self):
+        fs = yali4.filesystem.get_filesystem(self.getFSName())
+        try:
+            return fs.minResizeMB(self)
+        except AttributeError, e:
+            return None
+
     def getStart(self):
         return self._start
 
