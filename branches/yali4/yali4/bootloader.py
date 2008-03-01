@@ -58,11 +58,15 @@ chainloader +1
 
 
 class BootLoader:
+    """ Bootloader Operations 
+        Default bootlader is GRUB """
     def __init__(self):
         self.device_map = os.path.join(consts.target_dir, "boot/grub/device.map")
         self.grub_conf = os.path.join(consts.target_dir, "boot/grub/grub.conf")
 
     def _find_grub_dev(self, dev_path):
+        """ Returns the GRUB device from given dev_path
+            It uses GRUB's deviceMap"""
         if dev_path.find("cciss") > 0:
             # HP Smart array controller (something like /dev/cciss/c0d0p1)
             dev_name = os.path.basename(dev_path)[:-2]
@@ -78,6 +82,7 @@ class BootLoader:
                 return d[1:-1]
 
     def _find_hd0(self):
+        """ Returns first disk from deviceMap """
         for l in open(self.device_map).readlines():
             if l.find("hd0") >= 0:
                 l = l.split()
@@ -86,6 +91,8 @@ class BootLoader:
                 return d
 
     def write_grub_conf(self, install_root_path,install_dev):
+        """ Check configurations and write grub.conf to the installed system.
+            Default path is /mnt/target/boot/grub.conf """
         if not install_dev.startswith("/dev/"):
             install_dev = "/dev/%s" % install_dev
 
@@ -113,15 +120,19 @@ class BootLoader:
         grub_root = ",".join([_grb, minor])
 
         def find_boot_kernel():
+            """ Returns the installed kernel version """
             d = os.path.join(consts.target_dir, "boot")
             k = glob.glob(d + "/kernel-*")
             return os.path.basename(k[0])
 
         def find_initramfs_name(bk):
+            """ Returns the installed initramfs name """
             ver = bk[len("kernel-"):]
             return "initramfs-%s" % ver
 
         def boot_parameters(root):
+            """ Returns kernel parameters from cmd_line.
+                It also cleans unnecessary options """
             s = []
             # Get parameters from cmdline.
             for i in [x for x in open("/proc/cmdline", "r").read().split() if not x.startswith("init=") and not x.startswith("xorg=") and not x.startswith("yali=") and not x.startswith(ctx.consts.kahyaParam)]:
@@ -158,6 +169,7 @@ class BootLoader:
         open(self.grub_conf, "w").write(s)
 
     def grub_conf_append_win(self, install_dev, win_dev, win_root, win_fs):
+        """ Appends Windows Partitions to the GRUB Conf """
         grub_dev = self._find_grub_dev(win_dev)
         minor = str(int(filter(lambda u: u.isdigit(), win_root)) -1)
         grub_root = ",".join([grub_dev, minor])
@@ -179,6 +191,7 @@ class BootLoader:
         open(self.grub_conf, "a").write(s)
 
     def install_grub(self, grub_install_root=None):
+        """ Install GRUB to the given device or partition """
         # grub installation is always hd0 (http://liste.pardus.org.tr/gelistirici/2007-March/005725.html)
         # if not explicitly defined...
 

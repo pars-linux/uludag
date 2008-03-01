@@ -17,7 +17,7 @@ import locale
 from os.path import join
 
 class _constant:
-    "Constant members implementation"
+    """ Constant members implementation """
     class ConstError(TypeError):
         pass
 
@@ -34,7 +34,7 @@ class _constant:
         raise NameError, name
 
 class Constants:
-
+    """ YALI's Constants """
     __c = _constant()
 
     def __getattr__(self, attr):

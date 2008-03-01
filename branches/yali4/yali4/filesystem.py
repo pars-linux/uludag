@@ -30,10 +30,8 @@ import yali4.storage
 class FSError(YaliError):
     pass
 
-
-
 def get_filesystem(name):
-
+    """ Returns filesystem implementation for given filesystem name """
     # Hardcoding available filesystems like this is TOO
     # dirty... should revisit this module (and others using this)
     # later on.
@@ -52,10 +50,8 @@ def get_filesystem(name):
 
     return None
 
-##
-# abstract file system class
 class FileSystem:
-
+    """ Abstract fileSystem class for other implementations """
     _name = None
     _filesystems = []
     _implemented = False
@@ -67,9 +63,9 @@ class FileSystem:
         self.readSupportedFilesystems()
         self._fs_type = parted.file_system_type_get(self._name)
 
-    ##
-    # Open partition
     def openPartition(self, partition):
+        """ Checks if partition exists or not;
+            If not,it causes YaliException """
         try:
             fd = os.open(partition.getPath(), os.O_RDONLY)
             return fd
@@ -77,34 +73,28 @@ class FileSystem:
             err = "error opening partition %s: %s" % (partition.getPath(), e)
             raise YaliException, err
 
-    ##
-    # get file system name
     def name(self):
+        """ Get file system name """
         return self._name
 
-    ##
-    # get default mount options for file system
     def mountOptions(self):
+        """ Get default mount options for file system """
         return self._mountoptions
 
-    ##
-    # get parted filesystem type.
     def getFSType(self):
+        """ Get parted filesystem type """
         return self._fs_type
 
-    ##
-    # read filesystem label and return
     def getLabel(self, partition):
+        """ Read filesystem label and return """
         return None
 
-    ##
-    # set label for filesystem
     def setLabel(self, partition, label):
+        """ Set label for filesystem """
         return False
 
-    ##
-    # check label for existence.
     def labelExists(self, label):
+        """ Check label for existence """
         if not yali4.storage.devices:
             yali4.storage.init_devices()
 
@@ -115,9 +105,8 @@ class FileSystem:
 
         return False
 
-    ##
-    # check if label is available and try to find one if not
     def availableLabel(self, label):
+        """ Check if label is available and try to find one if not """
         count = 1
         new_label = label
         while self.labelExists(new_label):
@@ -125,9 +114,8 @@ class FileSystem:
             count += 1
         return new_label
 
-    ##
-    # check the supported file systems by kernel
     def readSupportedFilesystems(self):
+        """ Check the supported file systems by kernel """
         f = open("/proc/filesystems", 'r')
         for line in f.readlines():
             line = line.split()
@@ -142,17 +130,14 @@ class FileSystem:
         # append vfat manually
         self._filesystems.append("fat32")
 
-
-    ##
-    # chek if file system is supported by kernel
     def isSupported(self):
+        """ Check if file system is supported by kernel """
         if self.name() in self._filesystems:
             return True
         return False
 
-    ##
-    # necessary checks before formatting
     def preFormat(self, partition):
+        """ Necessary checks before formatting """
         e = ""
         if not self.isSupported():
             e = "%s file system is not supported by kernel." %(self.name())
@@ -166,30 +151,24 @@ class FileSystem:
         #FIXME: use logging system
         print "format %s: %s" %(partition.getPath(), self.name())
 
-    ##
-    # set if file system is implemented
     def setImplemented(self, bool):
+        """ Set if file system is implemented """
         self._implemented = bool
 
-    ##
-    # check if filesystem is implemented
     def isImplemented(self):
+        """ Check if filesystem is implemented """
         return self._implemented
 
-    ##
-    # set if filesystem is resizeable
     def setResizeable(self, bool):
+        """ Set if filesystem is resizeable """
         self._resizeable = bool
 
-    ##
-    # check if filesystem is resizeable
     def isResizeable(self):
+        """ Check if filesystem is resizeable """
         return self._resizeable
 
-
-##
-# ext3 file system
 class Ext3FileSystem(FileSystem):
+    """ Implementation of ext3 file system """
 
     _name = "ext3"
     _mountoptions = "defaults,user_xattr"
@@ -200,6 +179,7 @@ class Ext3FileSystem(FileSystem):
         self.setResizeable(True)
 
     def format(self, partition):
+        """ Format the given partition """
         self.preFormat(partition)
 
         cmd_path = sysutils.find_executable("mke2fs")
@@ -227,6 +207,7 @@ class Ext3FileSystem(FileSystem):
         self.tune2fs(partition)
 
     def tune2fs(self, partition):
+        """ Runs tune2fs for given partition """
         cmd_path = sysutils.find_executable("tune2fs")
         if not cmd_path:
             e = "Command not found to tune the filesystem"
@@ -240,8 +221,8 @@ class Ext3FileSystem(FileSystem):
         if p.close():
             raise YaliException, "tune2fs tuning failed: %s" % partition.getPath()
 
-
     def minResizeMB(self, partition):
+        """ Get minimum resize size (mb) for given partition """
         cmd_path = sysutils.find_executable("dumpe2fs")
 
         if not cmd_path:
@@ -257,6 +238,7 @@ class Ext3FileSystem(FileSystem):
         return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
 
     def resize(self, size_mb, partition):
+        """ Resize given partition as given size """
         if size_mb < self.minResizeMB(partition):
             return False
 
