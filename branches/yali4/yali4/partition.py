@@ -128,10 +128,10 @@ class Partition:
     def getFSName(self):
         return self._fsname
 
-    def isResizeable(self):
+    def isResizable(self):
         fs = yali4.filesystem.get_filesystem(self.getFSName())
         try:
-            return fs.isResizeable()
+            return fs.isResizable()
         except AttributeError, e:
             return False
 

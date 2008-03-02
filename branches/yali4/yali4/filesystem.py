@@ -55,7 +55,7 @@ class FileSystem:
     _name = None
     _filesystems = []
     _implemented = False
-    _resizeable = False
+    _resizable = False
     _mountoptions = "defaults"
     _fs_type = None  # parted fs type
 
@@ -159,13 +159,13 @@ class FileSystem:
         """ Check if filesystem is implemented """
         return self._implemented
 
-    def setResizeable(self, bool):
-        """ Set if filesystem is resizeable """
-        self._resizeable = bool
+    def setResizable(self, bool):
+        """ Set if filesystem is resizable """
+        self._resizable = bool
 
-    def isResizeable(self):
-        """ Check if filesystem is resizeable """
-        return self._resizeable
+    def isResizable(self):
+        """ Check if filesystem is resizable """
+        return self._resizable
 
 class Ext3FileSystem(FileSystem):
     """ Implementation of ext3 file system """
@@ -176,7 +176,7 @@ class Ext3FileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
         self.setImplemented(True)
-        self.setResizeable(True)
+        self.setResizable(True)
 
     def format(self, partition):
         """ Format the given partition """
@@ -461,7 +461,7 @@ class NTFSFileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
 
-        self.setResizeable(True)
+        self.setResizable(True)
 
     def check_resize(self, size_mb, partition):
         #don't do anything, just check
@@ -515,7 +515,7 @@ class FatFileSystem(FileSystem):
         self.setImplemented(True)
 
         # I will do it later
-        self.setResizeable(False)
+        self.setResizable(False)
 
     def format(self, partition):
         self.preFormat(partition)

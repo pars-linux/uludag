@@ -83,6 +83,7 @@ about disk partitioning.
         if not self.ui.device_list.count():
             raise YaliExceptionInfo, _("It seems that you don't have the required disk space (min. %s) for Pardus installation." % ctx.consts.min_root_size)
 
+        self.scanPartitions()
         self.connect(self.ui.accept_auto_1, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.accept_auto_2, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
@@ -90,19 +91,28 @@ about disk partitioning.
 
     def shown(self):
         ctx.mainScreen.disableNext()
-        self.scanPartitions()
         self.updateUI()
 
     def scanPartitions(self):
+        self.resizablePartitions = []
+        self.resizableDisks = []
         ctx.debugger.log("Disk analyze started.")
         ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
         for dev in yali4.storage.devices:
             ctx.debugger.log("In disk %s, %d mb is free." % (dev.getPath(), dev.getLargestContinuousFreeMB()))
             for part in dev.getOrderedPartitionList():
                 ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
-                if part.isResizeable():
-                    ctx.debugger.log("This partition is resizable")
-                    ctx.debugger.log("It can resizable to %s " % part.getMinResizeMB())
+                if part.isResizable():
+                    minSize = part.getMinResizeMB()
+                    possibleFreeSize = part.getMB() - minSize
+                    ctx.debugger.log(" - This partition is resizable")
+                    ctx.debugger.log(" - Total size of this partition is %.2f" % part.getMB())
+                    ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
+                    ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
+                    self.resizablePartitions.append(part)
+                    if possibleFreeSize+100 > ctx.consts.min_root_size:
+                        if dev not in self.resizableDisks:
+                            self.resizableDisks.append(dev)
                 else:
                     ctx.debugger.log("This partition is not resizable")
 
