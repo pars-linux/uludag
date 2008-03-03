@@ -517,7 +517,7 @@ class UserStack(QVBox):
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
             
-            def userDone(uid):
+            def userDone():
                 self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
                 self.parent().slotCancel()
             def userCancel():
