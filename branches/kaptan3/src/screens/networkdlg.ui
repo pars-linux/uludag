@@ -15,35 +15,32 @@
     <property name="caption">
         <string>Network</string>
     </property>
-    <widget class="QFrame">
+    <grid>
         <property name="name">
-            <cstring>networkFrame</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>40</y>
-                <width>470</width>
-                <height>310</height>
-            </rect>
-        </property>
-        <property name="paletteBackgroundColor">
-            <color>
-                <red>255</red>
-                <green>255</green>
-                <blue>255</blue>
-            </color>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>WindowOrigin</enum>
-        </property>
-        <property name="frameShape">
-            <enum>NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Raised</enum>
-        </property>
-    </widget>
+        <widget class="QFrame" row="0" column="0">
+            <property name="name">
+                <cstring>networkFrame</cstring>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WindowOrigin</enum>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+    </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

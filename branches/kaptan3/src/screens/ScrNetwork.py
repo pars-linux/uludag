@@ -26,12 +26,18 @@ class Widget(NetworkWidget, ScreenWidget):
 
     def __init__(self, *args):
         apply(NetworkWidget.__init__, (self,) + args)
-
+        self.embedded = QXEmbed(self.networkFrame)
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 
     def shown(self):
-        pass
+        proc = QProcess()
+        proc.addArgument("kcmshell")
+        proc.addArgument("--embed-proxy")
+        proc.addArgument(QString.number(self.embedded.winId()))
+        proc.addArgument("network-manager")
+        code = proc.start()
+        self.embedded.resize(510,380)
 
     def execute(self):
         return True
