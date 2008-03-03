@@ -512,7 +512,7 @@ class UserStack(QVBox):
                 )
                 if ret == KMessageBox.Cancel:
                     return
-            dict["groups"] = tmp
+            dict["groups"] = tmp.split(",")
         
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
