@@ -380,7 +380,6 @@ def setUser(uid, realname, homedir, shell, password, groups):
             u.password = shadowCrypt(password)
         if groups:
             # FIXME: check main group
-            groups = groups.split(",")
             for item in groups:
                 checkGroupName(item)
             db.set_groups(u.name, groups)
