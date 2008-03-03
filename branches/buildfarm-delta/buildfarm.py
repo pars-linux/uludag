@@ -72,7 +72,15 @@ def buildPackages():
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
 
                 # Delta package generation using delta interface
-                deltaPackages = pisi.delta(oldBinaryPackages, newBinaryPackages)
+                (deltasToInstall, deltaPackages) = pisi.delta(oldBinaryPackages, newBinaryPackages)
+
+                if deltasToInstall:
+                    packagesToInstall = deltasToInstall
+                else:
+                    packagesToInstall = newBinaryPackages
+
+                # Merge the lists
+                deltaPackages = deltaPackages + deltasToInstall
 
             except Exception, e:
                 qmgr.transferToWaitQueue(pspec)
@@ -82,7 +90,7 @@ def buildPackages():
             else:
                 try:
                     # TODO : Install delta packages here
-                    for p in newBinaryPackages:
+                    for p in packagesToInstall:
                         logger.info("Installing: %s" % os.path.join(config.workDir, p))
                         pisi.install(os.path.join(config.workDir, p))
                 except Exception, e:
