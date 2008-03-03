@@ -89,7 +89,6 @@ def buildPackages():
                 #mailer.error(errmsg, pspec)
             else:
                 try:
-                    # TODO : Install delta packages here
                     for p in packagesToInstall:
                         logger.info("Installing: %s" % os.path.join(config.workDir, p))
                         pisi.install(os.path.join(config.workDir, p))

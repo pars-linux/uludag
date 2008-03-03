@@ -114,6 +114,7 @@ class PisiApi:
         delta_packages = []
 
         for pl in zip(oldBinaryPackages, newBinaryPackages):
+            # zip() returns [] if oldBinaryPackages is empty.
 
             # Parse the name of the new package
             name = os.path.basename(pl[1]).rstrip(".pisi").rsplit("-", 3)[0]
@@ -127,13 +128,12 @@ class PisiApi:
                 logger.info(_("Building delta between %s[previous build] and %s." % (pl[0], pl[1])))
                 deltas_to_install.append(create_delta_package(os.path.join(config.binaryPath, pl[0]), p))
 
-            if pl[0] and pl[0] != self.isoPackages.get(name):
-                logger.info("building delta package between %s[iso] and %s..\n" % (self.isoPackages[name], pl[1]))
-
+            if self.isoPackages.has_key(name) and self.isoPackages[name] != pl[0]:
                 # build delta between ISO build and current build
+                logger.info("building delta package between %s[iso] and %s..\n" % (self.isoPackages[name], pl[1]))
                 delta_packages.append(create_delta_package(os.path.join(config.binaryPath, self.isoPackages[name]), p))
 
-            # Search for the precedent build, (b-1).
+            # Search for a precedent build, (b-1).
             previous = self._getPreviousBuild(pl[0])
 
             if previous and previous != self.isoPackages.get(name):
