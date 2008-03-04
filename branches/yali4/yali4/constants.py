@@ -41,7 +41,7 @@ class Constants:
         return getattr(self.__c, attr)
 
     def __setattr__(self, attr, value):
-        ±²setattr(self.__c, attr, value)
+        setattr(self.__c, attr, value)
 
     def __delattr__(self, attr):
         delattr(self.__c, attr)
