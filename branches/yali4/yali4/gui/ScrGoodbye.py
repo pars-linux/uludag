@@ -117,7 +117,7 @@ don't you?
             for i in range(20):
                 try:
                     ctx.debugger.log("trying to start dbus..")
-                    bus = dbus.bus.BusConnection(address_or_type=consts=dbus_socket_file)
+                    bus = dbus.bus.BusConnection(address_or_type=consts.dbus_socket_file)
                     break
                 except dbus.DBusException:
                     time.sleep(1)

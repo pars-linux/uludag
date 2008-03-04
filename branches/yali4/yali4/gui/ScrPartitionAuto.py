@@ -26,7 +26,6 @@ import yali4.parteddata as parteddata
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.autopartwidget import Ui_AutoPartWidget
 from yali4.gui.YaliDialog import WarningDialog
-#from yali4.gui.InformationWindow import InformationWindow
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 
@@ -100,13 +99,15 @@ about disk partitioning.
         ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
         for dev in yali4.storage.devices:
             ctx.debugger.log("In disk %s, %d mb is free." % (dev.getPath(), dev.getLargestContinuousFreeMB()))
+            if dev.getLargestContinuousFreeMB() > ctx.consts.min_root_size + 100:
+                self.resizableDisks.append(dev)
             for part in dev.getOrderedPartitionList():
                 ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
                 if part.isResizable():
                     minSize = part.getMinResizeMB()
                     possibleFreeSize = part.getMB() - minSize
                     ctx.debugger.log(" - This partition is resizable")
-                    ctx.debugger.log(" - Total size of this partition is %.2f" % part.getMB())
+                    ctx.debugger.log(" - Total size of this partition is %.2f MB" % part.getMB())
                     ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
                     ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
                     self.resizablePartitions.append(part)
