@@ -39,6 +39,22 @@
             <property name="frameShadow">
                 <enum>Raised</enum>
             </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>busy</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>49</x>
+                        <y>49</y>
+                        <width>401</width>
+                        <height>251</height>
+                    </rect>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+            </widget>
         </widget>
     </grid>
 </widget>

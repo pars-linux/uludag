@@ -59,8 +59,8 @@ app_data = [
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['pics/cr128-app-kaptan.png']),
     ('/usr/kde/3.5/share/apps/kaptan/pics', ['pics/middleWithCorner.png']),
     ('/usr/kde/3.5/share/apps/kaptan/pics', ['pics/leftWithCorner.png']),
-    'pics/pardus.png',
-    'src/kaptan.desktop',
+    #'pics/pardus.png',
+    #'src/kaptan.desktop',
 ]
 
 kdedistutils.setup(
@@ -69,11 +69,10 @@ kdedistutils.setup(
     author="Pinar Yanardag",
     author_email="pinar@pardus.org.tr",
     url="http://www.pardus.org.tr/",
-    min_kde_version = "3.5.0",
-    min_qt_version = "3.3.5",
+    #min_kde_version = "3.5.0",
+    #min_qt_version = "3.3.5",
     license = "GPL",
     application_data = app_data,
     executable_links = [('kaptan', 'kaptan.py')],
     i18n = ('po', ['src']),
-    kcontrol_modules = [ ('src/kaptan.desktop', 'src/kaptan.py')],
 )

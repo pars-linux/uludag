@@ -24,21 +24,38 @@ class Widget(NetworkWidget, ScreenWidget):
     title = "Network Manager"
     desc = "Configure network settings..."
 
+    running = False
+    proc = QProcess()
+
     def __init__(self, *args):
         apply(NetworkWidget.__init__, (self,) + args)
+
         self.embedded = QXEmbed(self.networkFrame)
+        self.embedded.resize(500,370)
+
+        self.busy.setText(i18n("<big>Loading...</big>"))
+
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 
     def shown(self):
-        proc = QProcess()
-        proc.addArgument("kcmshell")
-        proc.addArgument("--embed-proxy")
-        proc.addArgument(QString.number(self.embedded.winId()))
-        proc.addArgument("network-manager")
-        code = proc.start()
-        self.embedded.resize(510,380)
+        if self.proc.isRunning():
+            self.proc.kill()
+            self.running = False
+
+        if not self.running:
+            self.proc.addArgument("kcmshell")
+            self.proc.addArgument("--embed-proxy")
+            self.proc.addArgument(QString.number(self.embedded.winId()))
+            self.proc.addArgument("network-manager")
+
+            code = self.proc.start()
+            self.running = True
+
+            self.connect(self.proc, SIGNAL("processExited()"),  self.endProcess)
+
+    def endProcess(self):
+        self.running = False
 
     def execute(self):
-        return True
-
+        self.proc.kill()
