@@ -180,8 +180,8 @@ Have fun!
         # postscripts depend on 03locale...
         yali4.localeutils.write_locale_from_cmdline()
 
-        # run comar in chroot
-        yali4.sysutils.chroot_comar() 
+        # run dbus in chroot
+        yali4.sysutils.chroot_dbus() 
 
         self.ui.info.setText(_("Configuring packages for your system!"))
         # start configurator thread

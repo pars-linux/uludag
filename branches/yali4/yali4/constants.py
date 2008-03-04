@@ -41,7 +41,7 @@ class Constants:
         return getattr(self.__c, attr)
 
     def __setattr__(self, attr, value):
-        setattr(self.__c, attr, value)
+        ±²setattr(self.__c, attr, value)
 
     def __delattr__(self, attr):
         delattr(self.__c, attr)
@@ -63,8 +63,8 @@ consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
 # packages (and maybe others) will be in this source (cdrom) directory
 consts.source_dir = join(consts.mnt_dir, "cdrom")
 
-# comar socket path
-consts.comar_socket_file = consts.target_dir + "/var/run/comar.socket"
+# dbus socket path
+consts.dbus_socket_file = consts.target_dir + "/var/run/dbus/system_bus_socket"
 
 # swap file path
 consts.swap_file_name = ".swap"

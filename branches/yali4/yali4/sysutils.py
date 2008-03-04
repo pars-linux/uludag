@@ -23,8 +23,8 @@ from yali4._sysutils import *
 from yali4.constants import consts
 
 ##
-# run comar daemon in chroot
-def chroot_comar():
+# run dbus daemon in chroot
+def chroot_dbus():
 
     # FIXME: use mount module (needs options support)
     tgt = os.path.join(consts.target_dir, "dev")
@@ -40,7 +40,7 @@ def chroot_comar():
         os.system("/sbin/ldconfig")
         os.system("/sbin/update-environment")
         os.environ["PATH"]="/bin:/sbin:/usr/bin:/usr/sbin"
-        os.execve("/bin/service", ["/bin/service", "comar", "start"], os.environ)
+        os.execve("/bin/service", ["/bin/service", "dbus", "start"], os.environ)
 
 def checkYaliParams(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split()]:
