@@ -46,7 +46,7 @@ avail_screens = [ScrWelcome,
 
 screenId = {}
 
-mod_app = "Kaptan"
+mod_app = "kaptan"
 mod_name = "Kaptan"
 mod_version = "3.0"
 

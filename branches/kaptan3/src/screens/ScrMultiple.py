@@ -21,7 +21,7 @@ from screens.multipledlg import MultipleWidget
 
 # set summary picture and description
 summary = {"sum" : "",
-           "pic" : "kaptan/pics/multipleSummary.png",
+           "pic" : "kaptan/pics/summary/multipleSummary.png",
            "desc": i18n("Multiple Desktops")}
 
 class Widget(MultipleWidget, ScreenWidget):

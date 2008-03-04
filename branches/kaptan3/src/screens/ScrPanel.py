@@ -23,7 +23,7 @@ from screens.paneldlg import PanelWidget
 
 # set summary picture and description
 summary = {"sum" : "",
-           "pic" : "kaptan/pics/defaultSummary.png",
+           "pic" : "kaptan/pics/summary/defaultSummary.png",
            "desc": i18n("Panel")}
 
 class Widget(PanelWidget, ScreenWidget):

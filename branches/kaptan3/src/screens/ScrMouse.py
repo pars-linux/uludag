@@ -23,7 +23,7 @@ RIGHT_HANDED, LEFT_HANDED = range(2)
 
 # set summary picture and description
 summary = {"sum" : "",
-           "pic" : "kaptan/pics/mouseSummary.png",
+           "pic" : "kaptan/pics/summary/mouseSummary.png",
            "desc": i18n("Mouse")}
 
 class Widget(MouseWidget, ScreenWidget):
