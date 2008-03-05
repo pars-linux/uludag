@@ -14,6 +14,7 @@
 # Standart Python Modules
 import os
 import glob
+import cPickle
 
 # Pisi API
 import pisi.api
@@ -44,6 +45,8 @@ class PisiApi:
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
 
+        self.isoPackages = None
+
         # FIXME: Band-aid for a while...
         self.options.ignore_sandbox = True
 
@@ -56,19 +59,12 @@ class PisiApi:
         # Set UI
         pisi.api.set_userinterface(CLI())
 
-        # Create dictionary from 2007.3 ISO package list
-        self._createIsoDictionary("data/packages-2007.3")
+        # Unpickle dictionary from data/
+        if not self.isoPackages:
+            self.isoPackages = cPickle.Unpickler(open("data/2007-3.db", "rb")).load()
 
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
-
-    def _createIsoDictionary(self, packageList):
-        self.isoPackages = {}
-        lines = open(packageList, "r").readlines()
-
-        for l in lines:
-            name = l.rstrip(".pisi\n").rsplit("-", 3)[0]
-            self.isoPackages[name] = l.rstrip("\n")
 
     def _getPreviousBuild(self, package):
         # Returns the previous build with buildno < buildno(package) (nearest one)
