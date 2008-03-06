@@ -79,6 +79,7 @@ class Runner:
         # self._app.setFont(font)
 
         ctx.mainScreen = self._window
+        ctx.mainApp = self._app
 
         # visual debugger
         ctx.debugger = Debugger()

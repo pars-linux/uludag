@@ -155,7 +155,7 @@ go to next screen.</p>
         self.checkCapsLock()
 
     def showError(self,message):
-        self.ui.pass_error.setText(message)
+        self.ui.pass_error.setText("<center>%s</center>" % message)
         self.ui.pass_error.setVisible(True)
         self.ui.createButton.setEnabled(False)
 
