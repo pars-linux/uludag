@@ -442,7 +442,6 @@ class Device:
         if not isinstance(fs, yali4.filesystem.FileSystem):
             raise DeviceError, "filesystem is None, can't resize"
 
-        print dir(fs)
         if not fs.resize(size_mb, part):
             raise DeviceError, "fs.resize ERROR"
 

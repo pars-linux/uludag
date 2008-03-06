@@ -22,7 +22,7 @@ from yali4.gui.Ui.partresize import Ui_PartResizeWidget
 
 class ResizeWidget(QtGui.QWidget):
 
-    def __init__(self):
+    def __init__(self, dev, part):
         QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
         self.ui = Ui_PartResizeWidget()
         self.ui.setupUi(self)
@@ -52,6 +52,18 @@ class ResizeWidget(QtGui.QWidget):
                     background-image: url(:/gui/pics/trans.png); 
                 }
         """)
-        self.resize(ctx.mainApp.desktop().size())
+        self.resize(ctx.mainScreen.ui.size())
+        self.dev = dev
+        self.part = part
+        minSize = self.part.getMinResizeMB()
+        maxSize = self.part.getMB()
+        self.ui.resizeMB.setMaximum(maxSize)
+        self.ui.resizeMBSlider.setMaximum(maxSize)
+        self.ui.resizeMB.setMinimum(minSize)
+        self.ui.resizeMBSlider.setMinimum(minSize)
         self.connect(self.ui.cancelButton, SIGNAL("clicked()"), self.hide)
+        self.connect(self.ui.resizeButton, SIGNAL("clicked()"), self.slotResize)
 
+    def slotResize(self):
+        ctx.debugger.log("Resize started on partition %s " % self.part.getPath())
+        self.dev.resizePartition(self.part._fsname, int(self.ui.resizeMB.value()),self.part)

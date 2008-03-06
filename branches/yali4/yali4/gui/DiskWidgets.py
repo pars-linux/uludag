@@ -239,8 +239,11 @@ class DiskList(QtGui.QWidget):
         self.update()
 
     def slotResizePart(self):
-        aa = ResizeWidget()
-        aa.show()
+        """Asks for resize for selected partition"""
+        dev = self.partEdit.currentPart.getDevice()
+        part = self.partEdit.currentPart
+        resizeWidget = ResizeWidget(dev, part)
+        resizeWidget.show()
 
     def slotApplyPartitionChanges(self):
         """Creates requests for changes in selected partition"""
