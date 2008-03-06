@@ -16,6 +16,8 @@ from kdeui import *
 import kdedesigner
 from Xlib import display
 
+import pynotify
+
 from screens.Screen import ScreenWidget
 from screens.mousedlg import MouseWidget
 
@@ -31,6 +33,8 @@ class Widget(MouseWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = i18n("Mouse Settings")
     desc = i18n("Configure your mouse")
+
+    pynotify.init("Mouse Settings")
 
     def __init__(self, *args):
         apply(MouseWidget.__init__, (self, ) + args)
@@ -86,9 +90,12 @@ class Widget(MouseWidget, ScreenWidget):
         if self.rightHanded.isChecked():
             handed = RIGHT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_rh.png")))
+            pynotify.Notification("Mouse Settings", "Mouse is Right Handed now.").show()
+
         else:
             handed = LEFT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_lh.png")))
+            pynotify.Notification("Mouse Settings", "Mouse is Left Handed now.").show()
 
         mapMouse = display.Display().get_pointer_mapping()
         num_buttons = len(mapMouse)

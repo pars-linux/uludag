@@ -71,8 +71,8 @@ class Kaptan(kaptanUi):
         self.pageTitle.setText(i18n("Welcome"))
         self.pageDesc.setText(i18n("Welcome to Kaptan Wizard :)"))
         self.buttonCancel.setText(i18n("&Cancel"))
-        self.buttonBack.setText(i18n("« &Back"))
-        self.buttonNext.setText(i18n("&Next »"))
+        self.buttonBack.setText(i18n("&Back"))
+        self.buttonNext.setText(i18n("&Next"))
         self.buttonFinish.setText(i18n("Finish"))
 
         # hide back and finish buttons
