@@ -32,6 +32,9 @@ def run(cmd, ignore_error=False):
 
 def chroot_comar(image_dir):
     if os.fork() == 0:
+        # Workaround for creating ISO's on 2007 with PiSi 2.*
+        # Create non-existing /var/db directory before running COMAR
+        os.makedirs(os.path.join(image_dir, "var/db"), 0700)
         os.chroot(image_dir)
         subprocess.call(["/sbin/start-stop-daemon", "--start", "-b", "--pidfile", "/var/run/comar.pid", "--make-pidfile", "--exec", "/usr/bin/comar"])
         sys.exit(0)
