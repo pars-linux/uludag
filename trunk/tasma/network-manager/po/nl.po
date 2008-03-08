@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-23 14:51+0200\n"
-"PO-Revision-Date: 2008-03-08 21:25+0100\n"
+"PO-Revision-Date: 2008-03-08 21:27+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -137,7 +137,7 @@ msgstr "Protocol"
 
 #: connection.py:40
 msgid "No remotes found"
-msgstr "Geen contact gevonden"
+msgstr "Geen contacten gevonden"
 
 #: connection.py:61
 msgid "<hidden>"
