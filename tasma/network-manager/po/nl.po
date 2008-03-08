@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the net-kga package.
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
-# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 msgid ""
@@ -11,10 +11,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-23 14:51+0200\n"
-"PO-Revision-Date: 2008-01-07 22:09+0100\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"PO-Revision-Date: 2008-03-08 21:25+0100\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -138,7 +137,7 @@ msgstr "Protocol"
 
 #: connection.py:40
 msgid "No remotes found"
-msgstr ""
+msgstr "Geen contact gevonden"
 
 #: connection.py:61
 msgid "<hidden>"
@@ -352,5 +351,3 @@ msgstr "U bent nu offline"
 msgid "Network Applet"
 msgstr "Netwerk-applet"
 
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "Verbonden met <b>%s</b>"
