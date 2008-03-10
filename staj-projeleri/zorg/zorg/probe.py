@@ -19,6 +19,8 @@ sysdir = "/sys/bus/pci/devices/"
 
 lcd_drivers = ["nv", "nvidia", "ati", "via", "i810",
                "intel", "sis", "savage", "neomagic"]
+truecolor_cards = ["i810", "intel", "nv", "radeon"]
+
 
 # from pci/header.h
 PCI_COMMAND             = 0x04
@@ -151,6 +153,20 @@ class VideoDevice:
         iface.enable()
         self.probe_result = iface.probe(self.getDict())
 
+        if self.probe_result is None:
+            self.probe_result = {
+                "flags":        "",
+                "outputs":      "default",
+                "tv-standards": ""
+                }
+
+            if self.driver in truecolor_cards:
+                self.probe_result["depths"] = "24,16"
+            else:
+                self.probe_result["depths"] = "16,24"
+
+            queryMonitor(self)
+
         depthlist = self.probe_result["depths"].split(",")
         self.depth = depthlist[0]
 
@@ -261,46 +277,6 @@ def getPrimaryCard():
 
     return primaryBus
 
-def queryRandrOutputs(device):
-    lines = xserverProbe(device)
-    if not lines:
-        return
-
-    findOutput = re.compile("^.*: Output (\S+) (.*)$")
-    outStates = ("connected", "disconnected", "enabled by config file")
-
-    parsingModesFor = ""
-
-    for line in lines:
-        if "Output" in line:
-            matched = findOutput.match(line)
-            if matched:
-                name, state = matched.groups()
-                if device.outputs.has_key(name) or not state in outStates:
-                    continue
-                else:
-                    device.outputs[name] = []
-
-        elif "Printing probed modes for output" in line:
-            name = line.rsplit(None, 1)[-1]
-            if device.outputs.has_key(name) and not device.outputs[name]:
-                parsingModesFor = name
-
-        elif parsingModesFor:
-            fields = line.split()
-            if "Modeline" in fields:
-                modeWithRate = fields[fields.index("Modeline") + 1]
-                mode, rate = modeWithRate.rsplit("x", 1)
-                mode = mode.strip('"')
-
-                if not mode in device.outputs[parsingModesFor]:
-                    device.outputs[parsingModesFor].append(mode)
-            else:
-                parsingModesFor = ""
-
-        elif "TV standards supported by chip:" in line:
-            device.tvStandards = line.strip().rsplit(": ", 1)[1].split()
-
 def queryNvidiaOutputs(device):
     lines = xserverProbe(device)
     if not lines:
@@ -362,68 +338,6 @@ def queryNvidiaOutputs(device):
                 else:
                     parsingModesFor = ""
 
-def queryFglrxOutputs(device):
-    lines = xserverProbe(device)
-    if not lines:
-        return
-
-    device.tvStandards = [
-            "NTSC-M",       "NTSC-JPN", "NTSC-N",      "PAL-B",
-            "PAL-COMB-N",   "PAL-D",    "PAL-G",       "PAL-H",
-            "PAL-I",        "PAL-K",    "PAL-K1",      "PAL-L",
-            "PAL-M",        "PAL-N",    "PAL-SECAM-D", "PAL-SECAM-K",
-            "PAL-SECAM-K1", "PAL-SECAM-L"
-        ]
-
-    outInfo = re.compile(r".*: Connected Display\d+: (.+) \[(.+)\].*")
-    modeCount = re.compile(r".*: Total of \d+ modes found for .* display.*")
-    modeLine = re.compile(r".*: Modeline \"(.*)\" *.*")
-
-    primary = ""
-    secondary = ""
-    outs = []
-    parsingModesFor = ""
-
-    for line in lines:
-        if "Connected Display" in line:
-            matched = outInfo.match(line)
-            if matched:
-                info = matched.groups()
-                outs.append(info)
-                device.outputs[info[1]] = []
-
-        elif "Primary Controller - " in line:
-            for out in outs:
-                if out[0] in line:
-                    primary = out[1]
-
-        elif "Secondary Controller - " in line:
-            for out in outs:
-                if out[0] in line:
-                    secondary = out[1]
-
-        elif "modes found for primary display" in line:
-            matched = modeCount.match(line)
-            if matched:
-                parsingModesFor = primary
-
-        elif "modes found for secondary display" in line:
-            matched = modeCount.match(line)
-            if matched:
-                parsingModesFor = secondary
-
-        elif parsingModesFor:
-            if "Display dimensions" in line \
-                    or "DPI" in line:
-                parsingModesFor = ""
-                continue
-
-            matched = modeLine.match(line)
-            if matched:
-                mode = matched.groups()[0]
-                if not mode in device.outputs[parsingModesFor]:
-                    device.outputs[parsingModesFor].append(mode)
-
 def xserverProbe(card):
     dev = {
             "driver":   card.driver,
@@ -476,30 +390,19 @@ def XProbe(dev):
     return file("/var/log/xlog").readlines()
 
 def queryDDC(adapter=0):
-    mon = Monitor()
-
     from zorg import ddc
     edid = ddc.query(adapter)
 
     if not edid or not edid["eisa_id"]:
-        #mon.probed = False
-        #return mon
-        return DefaultMonitor()
-    else:
-        mon.probed = True
-
-    mon.eisaid = edid["eisa_id"]
-    mon.digital = edid["input_digital"]
+        return
 
     if edid["version"] != 1 and edid["revision"] != 3:
-        return mon
+        return #defaults
 
     detailed = edid["detailed_timing"]
 
-    mon.hsync_min, mon.hsync_max = detailed["hsync_range"]
-    mon.vref_min, mon.vref_max = detailed["vref_range"]
-
-    mon.modelines = "" # TODO: Write modelines if needed
+    hsync_min, hsync_max = detailed["hsync_range"]
+    vref_min, vref_max = detailed["vref_range"]
 
     # FIXME: When subsystem is ready, review these.
 
@@ -516,9 +419,9 @@ def queryDDC(adapter=0):
 
     res.sort(reverse=True)
 
-    mon.res[:0] = ["%dx%d" % (x, y) for x, y in res]
+    res[:0] = ["%dx%d" % (x, y) for x, y in res]
 
-    if mon.hsync_max == 0 or mon.vref_max == 0:
+    if hsync_max == 0 or vref_max == 0:
         hfreqs = vfreqs = []
         for w, h, vfreq in modes:
             vals = {
@@ -533,20 +436,32 @@ def queryDDC(adapter=0):
         if len(hfreqs) > 2 and len(vfreqs) > 2:
             hfreqs.sort()
             vfreqs.sort()
-            mon.hsync_min, mon.hsync_max = hfreqs[0], hfreqs[-1]
-            mon.vref_min, mon.vref_max = vfreqs[0], vfreqs[-1]
+            hsync_min, hsync_max = hfreqs[0], hfreqs[-1]
+            vref_min, vref_max = vfreqs[0], vfreqs[-1]
 
+    if hsync_max == 0 or vref_max == 0:
+        hsync_min, hsync_max = 31.5, 50
+        vref_min, vref_max = 50, 70
 
-    for m in mon.modelines:
-        t = m[m.find("ModeLine"):].split()[1].strip('"')
-        if t not in mon.res:
-            mon.res[:0] = [t]
+    if edid["eisa_id"]:
+        for line in loadFile(MonitorsDB):
+            l = line.split(";")
+            if edid["eisa_id"].upper() == l[2].strip().upper():
+                hsync_min, hsync_max = map(float, l[3].strip().split("-"))
+                vref_min, vref_max = map(float, l[4].strip().split("-"))
+                break
 
-    return mon
+    result = [
+            "%s-%s" % (hsync_min, hsync_max),
+            "%s-%s" % (vref_min, vref_max),
+            res
+            ]
 
-def queryPanel(mon, card):
-    #if xisrunning():
-    #    return
+    return result
+
+def queryPanel(card):
+    panel_w = 0
+    panel_h = 0
 
     p = XorgParser()
     sec = XorgSection("Device")
@@ -593,61 +508,39 @@ def queryPanel(mon, card):
         for p in patterns:
             if p in line:
                 b = line[line.find(p)+len(p):]
-                mon.panel_w = atoi(b)
+                panel_w = atoi(b)
                 b = b[b.find("x")+1:]
-                mon.panel_h = atoi(b)
+                panel_h = atoi(b)
                 break
     f.close()
 
-    # modelines stuff
-    #if not mon.eisaid:
-    #    if mon.panel_h and mon_panel_w:
-    #        #mon.modelines = calcModeLine(mon.panel_w, mon.panel_h, 60)
-    #        mon.res[:0] = ["%dx%d" % (mon.panel_w, mon.panel_h)]
+    if panel_w or panel_h:
+        print "Panel size reported by X server is %dx%d." % (panel_w, panel_h)
 
-    if mon.panel_w or mon.panel_h:
-        print "Panel size reported by X server is %dx%d." % (mon.panel_w, mon.panel_h)
+    if panel_w > 800 and panel_h > 600:
+        return "%dx%d" % (panel_w, panel_h)
+    else:
+        return
 
-    if mon.panel_w > 800 and mon.panel_h > 600:
-        panel_res = "%dx%d" % (mon.panel_w, mon.panel_h)
-        if mon.res[0] != panel_res:
-            mon.res[:0] = ["%dx%d" % (mon.panel_w, mon.panel_h)]
-        #if not mon.eisaid:
-            # FIXME: add modelines here
+def queryMonitor(device):
+    result = queryDDC()
+    if not result:
+        result = queryDDC(1)
 
-def findMonitors(card, *adapters):
-    monitors = []
-    digitalMonitor = None
+    if result:
+        hsync, vref, modes = result
+    else:
+        hsync, vref = "31.5-50", "50-70"
+        modes = ["800x600", "640x480"]
 
-    for adapter in adapters:
-        mon = queryDDC(adapter)
+    # check lcd panel
+    if device.driver in lcd_drivers:
+        panel_mode = queryPanel(device)
+        if panel_mode:
+            result[2][:0] = panel_mode
 
-        # defaults for the case where ddc fails
-        if mon.hsync_min == 0 or mon.vref_min == 0:
-            mon.hsync_min = 31.5
-            mon.hsync_max = 50
-            mon.vref_min = 50
-            mon.vref_max = 70
-
-        if mon.eisaid:
-            mon.id = "EISA_%s" % mon.eisaid
-            for line in loadFile(MonitorsDB):
-                l = line.split(";")
-                if mon.eisaid == l[2].strip().upper():
-                    mon.vendorname = l[0].lstrip()
-                    mon.modelname = l[1].lstrip()
-                    mon.hsync_min, mon.hsync_max = map(float, l[3].strip().split("-"))
-                    mon.vref_min, mon.vref_max = map(float, l[4].strip().split("-"))
-
-        # check lcd panel
-        #if mon.digital and (card.driver in lcd_drivers):
-        if card.driver in lcd_drivers:
-            digitalMonitor = mon
-
-        card.monitors.append(mon)
-        monitors.append(mon)
-
-    if digitalMonitor:
-        queryPanel(digitalMonitor, card)
-
-    return monitors
+    device.monitor_settings = {
+            "default-hsync":    hsync,
+            "default-vref":     vref,
+            "default-modes":    ",".join(modes)
+            }
