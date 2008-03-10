@@ -72,8 +72,9 @@ class autoSwitch:
         temp = None
         for dev in devices:
             # Some times we need to scan twice to get all access points
+            dev_id, dev_desc = dev.split(' ',1)
             for x in range(2):
-                link.Net.Link['wireless-tools'].scanRemote(device=dev)
+                link.Net.Link['wireless-tools'].scanRemote(device=dev_id)
                 temp = link.read_cmd()
             if temp.data:
                 scanResults = map(lambda x: parseReply(x.split('\t')),temp.data.split('\n'))
