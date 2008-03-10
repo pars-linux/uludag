@@ -5,62 +5,6 @@ lcd_drivers = ["nv", "nvidia", "ati", "via", "i810",
                "intel", "sis", "savage", "neomagic"]
 randr12_drivers = ["ati", "intel"]
 
-opengl_impl = {
-    "fglrx"     : "ati",
-    "nvidia"    : "nvidia"
-}
-
-default_kmap = "trq"
-
-synapticsOptions = {
-    "Protocol" : "auto-dev",
-    # "Device" : "/dev/input/mouse0",
-    "LeftEdge" : "1700",
-    "RightEdge" : "5300",
-    "TopEdge" : "1700",
-    "BottomEdge" : "4200",
-    "FingerLow" : "25",
-    "FingerHigh" : "30",
-    "MaxTapTime" : "180",
-    "MaxTapMove" : "220",
-    "VertScrollDelta" : "100",
-    "MinSpeed" : "0.09",
-    "MaxSpeed" : "0.18",
-    "AccelFactor" : "0.0015",
-    "SHMConfig" : "true",
-    # Option     "ClickTime" : "0"
-}
-
-alpsOptions = {
-    "Protocol" : "auto-dev",
-    "LeftEdge" : "130",
-    "RightEdge" : "840",
-    "TopEdge" : "130",
-    "BottomEdge" : "640",
-    "FingerLow" : "7",
-    "FingerHigh" : "8",
-    "MaxTapTime" : "300",
-    "MaxTapMove" : "110",
-    "EmulateMidButtonTime" : "75",
-    "VertScrollDelta" : "20",
-    "HorizScrollDelta" : "20",
-    "MinSpeed" : "0.60",
-    "MaxSpeed" : "1.10",
-    "AccelFactor" : "0.030",
-    "EdgeMotionMinSpeed" : "200",
-    "EdgeMotionMaxSpeed" : "200",
-    "UpDownScrolling" : "1",
-    "CircularScrolling" : "1",
-    "CircScrollDelta" : "0.1",
-    "CircScrollTrigger" : "2",
-    "SHMConfig" : "true",
-    "Emulate3Buttons" : "true",
-    # "ClickTime" : "0"
-}
-
-touchpadDevices = {"synaptics" : synapticsOptions,
-                   "alps"      : alpsOptions}
-
 class Device:
     def __init__(self, busId="", vendorId="", deviceId=""):
         self.identifier = None
@@ -150,6 +94,3 @@ class Screen:
                 self.modes = self.monitor.res[i:]
             else:
                 self.modes[:0] = [self.res]
-
-def driver2opengl(driver):
-    return opengl_impl.get(driver, "xorg-x11")

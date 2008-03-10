@@ -10,12 +10,11 @@
 # Please read the COPYING file.
 #
 
-__version__ = "0.1"
+__version__ = "0.90"
 
 __all__ = ["config",
            "ddc",
            "modeline",
-           "opengl",
            "parser",
            "probe",
            "utils"]

@@ -165,20 +165,6 @@ class VideoDevice:
 def pciInfo(dev, attr):
     return sysValue(sysdir, dev, attr)
 
-def queryTouchpad():
-    try:
-        a = file("/proc/bus/input/devices")
-        for line in a.readlines():
-            # Frequently check if kernel does not break anything
-            if "SynPS/2" in line:
-                return "synaptics"
-            elif "AlpsPS/2" in line:
-                return "alps"
-        a.close()
-    except:
-        pass
-    return ""
-
 def getKeymapList():
     return os.listdir(xkb_path)
 
