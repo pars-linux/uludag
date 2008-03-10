@@ -1,2 +1,3 @@
 recursive-include zorg/ddc *.h
+include data/DriversDB
 include COPYING README TODO
