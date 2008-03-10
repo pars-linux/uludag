@@ -4,7 +4,6 @@
 from distutils.core import setup, Extension
 import zorg
 
-
 setup(name="zorg",
       version=zorg.versionString(),
       description="Python Modules for zorg",
@@ -17,5 +16,6 @@ setup(name="zorg",
                                         "zorg/ddc/vesamode.c"],
                                libraries=["x86"])],
       #scripts = ["zorg-cli"],
-      data_files = [("/usr/lib/X11", ["data/DriversDB"])]
+      scripts = ["inf2mondb"],
+      data_files = [("/usr/lib/X11", ["data/DriversDB", "data/MonitorsDB"])]
       )
