@@ -5,7 +5,6 @@ import re
 import dbus
 import struct
 
-from zorg.hwdata import *
 from zorg.parser import *
 from zorg.utils import *
 from zorg import modeline
@@ -17,6 +16,9 @@ driver_path = "/usr/lib/xorg/modules/drivers"
 xkb_path = "/usr/share/X11/xkb/symbols"
 
 sysdir = "/sys/bus/pci/devices/"
+
+lcd_drivers = ["nv", "nvidia", "ati", "via", "i810",
+               "intel", "sis", "savage", "neomagic"]
 
 # from pci/header.h
 PCI_COMMAND             = 0x04
