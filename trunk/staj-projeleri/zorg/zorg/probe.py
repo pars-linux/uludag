@@ -168,25 +168,6 @@ def pciInfo(dev, attr):
 def getKeymapList():
     return os.listdir(xkb_path)
 
-def queryKeymap():
-    # Fallback is trq
-    kmap = default_kmap
-    keymap_file = "/etc/mudur/keymap"
-    try:
-        if os.path.exists(keymap_file):
-            kmap = file(keymap_file).read().strip().rstrip("\n")
-    except:
-        pass
-
-    # workaround for pt_BR and some latin1 variants
-    if "-" in kmap:
-        kmap = kmap.split("-", 1)[0]
-
-    if not kmap in getKeymapList():
-        kmap = default_kmap
-
-    return kmap
-
 def listAvailableDrivers(d = driver_path):
     a = []
     if os.path.exists(d):
@@ -226,57 +207,6 @@ def queryPCI(vendor, device):
             elif not line.startswith("#"):
                 flag = 0
     return None, None
-
-def queryDevice(dev):
-    dev.vendorName, dev.boardName = queryPCI(dev.vendorId, dev.deviceId)
-
-    if not dev.driver:
-        availableDrivers = listAvailableDrivers()
-        driverPackages = listDriverPackages()
-
-        for line in loadFile(DriversDB):
-            if line.startswith(dev.vendorId + dev.deviceId):
-                dev.driverlist = line.rstrip("\n").split(" ")[1:]
-
-                for drv in dev.driverlist:
-                    if "@" in drv:
-                        drvname, drvpackage = drv.split("@", 1)
-                        if drvpackage in driverPackages:
-                            dev.driver = drvname
-                            dev.package = drvpackage
-                            break
-
-                    elif drv in availableDrivers:
-                        dev.driver = drv
-                        break
-
-                break
-
-    # if could not find driver from driverlist try X -configure
-    if not dev.driver:
-        print "Running X server to query driver..."
-        ret = run("/usr/bin/X", ":99", "-configure", "-logfile", "/var/log/xlog")
-        if ret == 0:
-            home = os.getenv("HOME", "")
-            p = XorgParser()
-            p.parseFile(home + "/xorg.conf.new")
-            unlink(home + "/xorg.conf.new")
-            sec = p.getSections("Device")
-            if sec:
-                dev.driver = sec[0].get("Driver")
-                print "Driver reported by X server is %s." % dev.driver
-
-    ## use nvidia if nv is found
-    #if (dev.driver == "nv") and ("nvidia" in availableDrivers):
-    #    dev.driver = "nvidia"
-
-    # In case we can't parse or find xorg.conf.new
-    if not dev.driver:
-        dev.driver = "vesa"
-
-    # If driver supports RandR 1.2, we will use a different probe method.
-    if dev.driver in randr12_drivers:
-        dev.randr12 = True
 
 def getPrimaryCard():
     devices = []
@@ -328,88 +258,6 @@ def getPrimaryCard():
                 break
 
     return primaryBus
-
-def findVideoCards():
-    """ Finds video cards. Result is a list of Device objects. """
-    cards = []
-
-    pbus = getPrimaryBus()
-    if pbus:
-        vendorId = lremove(pciInfo(pbus, "vendor"), "0x")
-        deviceId = lremove(pciInfo(pbus, "device"), "0x")
-        busId = tuple(int(x, 16) for x in pbus.replace(".",":").split(":"))[1:4]
-
-        card = Device("PCI:%d:%d:%d" % busId, vendorId, deviceId)
-        cards.append(card)
-
-    if len(cards):
-        return cards
-    else:
-        # This machine might be a terminal server with no video cards.
-        # We start X and leave the decision to the user.
-        return None
-
-def getPrimaryBus():
-    devices = []
-    bridges = []
-
-    for dev in os.listdir(sysdir):
-        device = PCIDevice(dev)
-        device.class_ = int(pciInfo(dev, "class")[:6], 16)
-        devices.append(device)
-
-        if device.class_ == PCI_CLASS_BRIDGE_PCI:
-            bridges.append(device)
-
-    for dev in devices:
-        for bridge in bridges:
-            dev_path = os.path.join(sysdir, bridge.name, dev.name)
-            if os.path.exists(dev_path):
-                dev.bridge = bridge
-
-    primaryBus = None
-    for dev in devices:
-        if (dev.class_ >> 8) != PCI_BASE_CLASS_DISPLAY:
-            continue
-
-        vga_routed = True
-        bridge = dev.bridge
-        while bridge:
-            bridge_ctl = bridge.readConfigWord(PCI_BRIDGE_CONTROL)
-
-            if not (bridge_ctl & PCI_BRIDGE_CTL_VGA):
-                vga_routed = False
-                break
-
-            bridge = bridge.bridge
-
-        if vga_routed:
-            pci_cmd = dev.readConfigWord(PCI_COMMAND)
-
-            if pci_cmd & (PCI_COMMAND_IO | PCI_COMMAND_MEMORY):
-                primaryBus = dev.name
-                break
-
-    # Just to ensure that we have picked a device. Normally,
-    # primaryBus might not be None here.
-    if primaryBus is None:
-        for dev in devices:
-            if (dev.class_ >> 8) == PCI_BASE_CLASS_DISPLAY:
-                primaryBus = dev.name
-                break
-
-    return primaryBus
-
-def queryOutputs(device):
-    if device.randr12:
-        queryRandrOutputs(device)
-    elif device.driver == "nvidia":
-        queryNvidiaOutputs(device)
-    elif device.driver == "fglrx":
-        queryFglrxOutputs(device)
-    else:
-        device.monitors = findMonitors(device, 0, 1)
-        device.outputs["default"] = device.monitors[0].res
 
 def queryRandrOutputs(device):
     lines = xserverProbe(device)
