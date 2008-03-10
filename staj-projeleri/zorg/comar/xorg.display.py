@@ -76,7 +76,7 @@ def setupScreens(busId, options, firstScreen, secondScreen):
 
     dsetup = options.get("desktop-setup", "single")
 
-    if dsetup not in ("single", "mirror", "horizontal", "vertical"):
+    if dsetup not in ("single", "clone", "horizontal", "vertical"):
         return
 
     device.desktop_setup = dsetup

@@ -16,6 +16,6 @@ setup(name="zorg",
                                         "zorg/ddc/vbe.c",
                                         "zorg/ddc/vesamode.c"],
                                libraries=["x86"])],
-      scripts = ["zorg-cli"],
+      #scripts = ["zorg-cli"],
       data_files = [("/usr/lib/X11", ["data/DriversDB"])]
       )
