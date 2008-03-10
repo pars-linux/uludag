@@ -5,9 +5,21 @@ import subprocess
 import time
 import sha
 
-from csapi import atoi
-
 xorg_lock = "/tmp/.X0-lock"
+
+def atoi(s):
+    # python's int() borks when given non integer characters
+    t = ""
+    for c in s.lstrip():
+        if c in "0123456789":
+            t += c
+        else:
+            break
+    try:
+        ret = int(t)
+    except:
+        ret = 0
+    return ret
 
 def unlink(path):
     try:

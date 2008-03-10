@@ -3,7 +3,6 @@
 import os
 
 import piksemel
-from csapi import atoi
 
 from zorg.parser import *
 from zorg.hwdata import *
