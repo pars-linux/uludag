@@ -10,6 +10,8 @@
 # Please read the COPYING file.
 #
 
+import os
+import sys
 import optparse
 
 import gettext
@@ -22,7 +24,7 @@ import pisi.db
 import pisi.context as ctx
 import pisi.cli.command as command
 
-class History(command.Command):
+class History(command.PackageOp):
     """History of pisi operations
 
 Usage: history
@@ -48,13 +50,18 @@ Lists previous operations."""
                          help=_("Output only the last n operations"))
         group.add_option("-s", "--snapshot", action="store_true", default=False,
                          help=_("Take snapshot of the current system"))
+        group.add_option("-t", "--takeback", action="store", type="int", default=-1,
+                         help=_("Takeback to the state after the given operation finished"))
 
     def take_snapshot(self):
         pisi.api.snapshot()
 
+    def takeback(self, operation):
+        pisi.api.takeback(operation)
+
     def print_history(self):
         for operation in self.historydb.get_last(ctx.get_option('last')):
-            print _("Operation #%03d: %s") % (operation.no, operation.type)
+            print _("Operation #%d: %s") % (operation.no, operation.type)
             print _("Date: %s %s") % (operation.date, operation.time)
             print
 
@@ -62,13 +69,25 @@ Lists previous operations."""
                 print _("    * There are %d packages in this snapshot.") % len(operation.packages)
             else:
                 for pkg in operation.packages:
-                    print "    *", pkg
+                    print "    *",  pkg
             print
+
+    def redirect_output(self):
+        if os.isatty(sys.stdout.fileno()):
+            output = os.popen("less","w")
+            sys.stdout =  sys.stderr = output
 
     def run(self):
         self.init(database = False, write = False)
-
+        ctx.set_option('ignore_build_no', True)
         if ctx.get_option('snapshot'):
             self.take_snapshot()
-        else:
-            self.print_history()
+            return
+        elif ctx.get_option('takeback'):
+            opno = ctx.get_option('takeback')
+            if opno != -1:
+                self.takeback(opno)
+                return
+
+        self.redirect_output()
+        self.print_history()

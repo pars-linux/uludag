@@ -28,15 +28,18 @@ class SourceDB(lazydb.LazyDB):
 
         self.__source_nodes = {}
         self.__pkgstosrc = {}
+        self.__revdeps = {}
 
         repodb = pisi.db.repodb.RepoDB()
 
         for repo in repodb.list_repos():
             doc = repodb.get_repo_doc(repo)
             self.__source_nodes[repo], self.__pkgstosrc[repo] = self.__generate_sources(doc)
+            self.__revdeps[repo] = self.__generate_revdeps(doc)
 
         self.sdb = pisi.db.itembyrepo.ItemByRepo(self.__source_nodes, compressed=True)
         self.psdb = pisi.db.itembyrepo.ItemByRepo(self.__pkgstosrc)
+        self.rvdb = pisi.db.itembyrepo.ItemByRepo(self.__revdeps)
 
     def __generate_sources(self, doc):
 
@@ -51,8 +54,25 @@ class SourceDB(lazydb.LazyDB):
         
         return sources, pkgstosrc
 
+    def __generate_revdeps(self, doc):
+        revdeps = {}
+        for spec in doc.tags("SpecFile"):
+            name = spec.getTag("Source").getTagData("Name")
+            deps = spec.getTag("Source").getTag("BuildDependencies")
+            if deps:
+                for dep in deps.tags("Dependency"):
+                    revdeps.setdefault(dep.firstChild().data(), set()).add((name, dep.toString()))
+        return revdeps
+
     def list_sources(self, repo=None):
         return self.sdb.get_item_keys(repo)
+
+    def which_repo(self, name):
+        return self.sdb.which_repo(self.pkgtosrc(name))
+
+    def which_source_repo(self, name):
+        source = self.pkgtosrc(name)
+        return source, self.sdb.which_repo(source)
 
     def has_spec(self, name, repo=None):
         return self.sdb.has_item(name, repo)
@@ -82,3 +102,20 @@ class SourceDB(lazydb.LazyDB):
 
     def pkgtosrc(self, name, repo=None):
         return self.psdb.get_item(name, repo)
+
+    def get_rev_deps(self, name, repo=None):
+        try:
+            rvdb = self.rvdb.get_item(name, repo)
+        except Exception: #FIXME: what exception could we catch here, replace with that.
+            return []
+
+        rev_deps = []
+        for pkg, dep in rvdb:
+            node = piksemel.parseString(dep)
+            dependency = pisi.dependency.Dependency()
+            dependency.package = node.firstChild().data()
+            if node.attributes():
+                attr = node.attributes()[0]
+                dependency.__dict__[attr] = node.getAttribute(attr)
+            rev_deps.append((pkg, dependency))
+        return rev_deps
