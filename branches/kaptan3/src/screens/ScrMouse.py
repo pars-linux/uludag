@@ -90,12 +90,13 @@ class Widget(MouseWidget, ScreenWidget):
         if self.rightHanded.isChecked():
             handed = RIGHT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_rh.png")))
-            pynotify.Notification("Mouse Settings", "Mouse is Right Handed now.").show()
+            pynotify.Notification("Mouse Settings", str(i18n("Mouse is Right Handed now."))).show()
 
         else:
             handed = LEFT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_lh.png")))
-            pynotify.Notification("Mouse Settings", "Mouse is Left Handed now.").show()
+            pynotify.Notification("Mouse Settings", str(i18n("Mouse is Left Handed now."))).show()
+
 
         mapMouse = display.Display().get_pointer_mapping()
         num_buttons = len(mapMouse)
