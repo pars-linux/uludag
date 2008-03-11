@@ -178,7 +178,6 @@ msgid "TASMA Tv Card Configuration Module"
 msgstr "TASMA - TV Kartı Yapılandırma Aracı"
 
 #: src/aboutview.cpp:88
-#, fuzzy
 msgid ""
 "TASMA is a configuration application for Pardus Operating System. You can "
 "tweak the systems default configuration settings by using the modules "
