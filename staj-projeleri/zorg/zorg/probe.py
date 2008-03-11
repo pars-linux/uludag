@@ -113,8 +113,8 @@ class VideoDevice:
                 self.driverlist = line.rstrip("\n").split(" ")[1:]
 
                 for drv in self.driverlist:
-                    if "@" in drv:
-                        drvname, drvpackage = drv.split("@", 1)
+                    if ":" in drv:
+                        drvname, drvpackage = drv.split(":", 1)
                         if drvpackage.replace("-", "_") in driverPackages:
                             driver = drvname
                             self.package = drvpackage

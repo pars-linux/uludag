@@ -7,7 +7,7 @@ import piksemel
 from zorg.parser import *
 from zorg.probe import VideoDevice
 
-xorgConf = "/etc/X11/xorg2.conf"
+xorgConf = "/etc/X11/xorg.conf"
 zorgConfigDir = "/var/lib/zorg"
 zorgConfig = "config.xml"
 
@@ -144,7 +144,7 @@ def getDeviceInfo(busId):
         drvname = tag.firstChild().data()
         drvpackage = tag.getAttribute("package")
         if drvpackage != "xorg-video":
-            drvname += "@%s" % drvpackage
+            drvname += ":%s" % drvpackage
 
         drivers.append(drvname)
 
@@ -210,8 +210,8 @@ def saveDeviceInfo(card):
 
     drivers = cardTag.insertTag("Drivers")
     for driver in card.driverlist:
-        if "@" in driver:
-            drv, pkg = driver.split("@", 1)
+        if ":" in driver:
+            drv, pkg = driver.split(":", 1)
         else:
             drv = driver
             pkg = "xorg-video"
