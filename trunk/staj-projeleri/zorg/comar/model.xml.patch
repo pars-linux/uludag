@@ -1,14 +1,21 @@
 Index: etc/model.xml
 ===================================================================
---- etc/model.xml	(revision 16951)
+--- etc/model.xml	(revision 17370)
 +++ etc/model.xml	(working copy)
-@@ -395,4 +395,33 @@
+@@ -398,4 +398,40 @@
              <arg name="state" type="s"/>
          </signal>
      </interface>
 +    <interface name="Xorg.Display">
-+        <method name="initialConfig"/>
-+        <method name="safeConfig"/>
++        <method name="ready">
++            <arg name="result" type="b" direction="out"/>
++        </method>
++        <method name="initialConfig">
++            <arg name="result" type="b" direction="out"/>
++        </method>
++        <method name="safeConfig">
++            <arg name="result" type="b" direction="out"/>
++        </method>
 +        <method name="activeDeviceID">
 +            <arg name="result" type="s" direction="out"/>
 +        </method>
