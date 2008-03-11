@@ -48,6 +48,16 @@ def getDate():
 def getChecksum(_data):
     return sha.sha(_data).hexdigest()
 
+def getKernelOpt(cmdopt=None):
+    if cmdopt:
+        for cmd in "".join(loadFile("/proc/cmdline")).split():
+            if cmd.startswith("%s=" % cmdopt):
+                return cmd[len(cmdopt)+1:].split(",")
+    else:
+        return "".join(loadFile("/proc/cmdline")).split()
+
+    return ""
+
 def capture(*cmd):
     a = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return a.communicate()
