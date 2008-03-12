@@ -27,12 +27,41 @@ class Widget(GoodbyeWidget, ScreenWidget):
     def __init__(self, *args):
         apply(GoodbyeWidget.__init__, (self,) + args)
 
-        #set background image
+        # set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+
+        # set signals
+        self.connect(self.buttonMigration, SIGNAL("clicked()"), self.startMigration)
+        self.connect(self.buttonTasma, SIGNAL("clicked()"), self.startTasma)
+        self.connect(self.buttonFeedback, SIGNAL("clicked()"), self.startFeedback)
+        self.connect(self.buttonHelp, SIGNAL("clicked()"), self.startHelp)
+
 
     def shown(self):
         pass
 
     def execute(self):
         return True
+
+    def startMigration(self):
+        self.proc = QProcess()
+        self.proc.addArgument("migration")
+        self.proc.start()
+
+    def startTasma(self):
+        self.proc = QProcess()
+        self.proc.addArgument("tasma")
+        self.proc.start()
+
+    def startFeedback(self):
+        self.proc = QProcess()
+        self.proc.addArgument("feedback")
+        self.proc.start()
+    
+    def startHelp(self):
+        self.proc = QProcess()
+        self.proc.addArgument("firefox")
+        self.proc.addArgument("http://www.pardus.org.tr/eng/contact.html")
+        self.proc.start()
+    
 
