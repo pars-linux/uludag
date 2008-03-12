@@ -55,14 +55,16 @@ class Widget(MouseWidget, ScreenWidget):
         self.doubleClick.setText(i18n("Dou&ble-click to open files and folders (select icons on first click)"))
 
         # set signals
-        self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
-        self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
-        self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
+        #self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
+        #self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
+        #self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
 
     def shown(self):
         pass
 
     def execute(self):
+        self.setHandedness(RIGHT_HANDED)
+
         if self.singleClick.isChecked():
             summary["sum"]= i18n("Single Click")
         else:
@@ -90,12 +92,10 @@ class Widget(MouseWidget, ScreenWidget):
         if self.rightHanded.isChecked():
             handed = RIGHT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_rh.png")))
-            pynotify.Notification("Mouse Settings", str(i18n("Mouse is Right Handed now."))).show()
 
         else:
             handed = LEFT_HANDED
             self.pix_mouse.setPixmap(QPixmap(locate("data", "kaptan/pics/mouse_lh.png")))
-            pynotify.Notification("Mouse Settings", str(i18n("Mouse is Left Handed now."))).show()
 
 
         mapMouse = display.Display().get_pointer_mapping()

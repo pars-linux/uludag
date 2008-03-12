@@ -33,6 +33,8 @@ class Widget(PanelWidget, ScreenWidget):
     desc = i18n("Select the one you like...")
 
     selectedStyle= QString()
+    lastPanel = ""
+    lastKick = ""
 
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
@@ -42,7 +44,7 @@ class Widget(PanelWidget, ScreenWidget):
         self.styleLabel.setText(i18n("Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides some eye candy styles for you."))
         self.styleSettingsGroup.setTitle(i18n("Style"))
         self.pix_style.setText(QString.null)
-        self.styleButton.setText(i18n("Apply"))
+        self.styleButton.setText(i18n("Preview"))
         self.checkKickoff.setText(i18n("Use enhanced Kickoff style menu"))
 
         # set images
@@ -80,7 +82,9 @@ class Widget(PanelWidget, ScreenWidget):
 
         # normally this assignment should be in execute(), but for 
         # controlling panel values after applying it's in here.
-        summary["sum"] = self.styleBox.currentText()
+        self.lastPanel = self.styleBox.currentText()
+        summary["sum"] = self.lastPanel
+        self.lastKick = self.checkKickoff.isChecked()
 
         #read entire xml into DOM tree
         dom = qtxml.QDomDocument()
@@ -175,4 +179,8 @@ class Widget(PanelWidget, ScreenWidget):
     def execute(self):
         if self.checkKickoff.isChecked():
             summary["sum"] += i18n(", Kickoff Menu")
+
+        #if value changed after pressing to try button, then apply settings again. 
+        #if not self.styleBox.currentText() == self.lastPanel:
+        self.applyStyle()
 
