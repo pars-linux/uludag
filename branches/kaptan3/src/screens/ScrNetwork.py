@@ -31,7 +31,7 @@ class Widget(NetworkWidget, ScreenWidget):
         apply(NetworkWidget.__init__, (self,) + args)
 
         self.embedded = QXEmbed(self.networkFrame)
-        self.embedded.resize(500,370)
+        self.embedded.resize(490,350)
 
         self.busy.setText(i18n("<big>Loading...</big>"))
 
