@@ -25,17 +25,18 @@ class yaliUser:
         self.realname=None
         self.password=None
         self.groups=[]
- 
+
 class Keymap:
     def __init__(self):
         self.console = None
         self.X = None
         self.translation = None
-   
+
 class yaliPartition:
     def __init__(self):
         self.partitionType=None
         self.format=None
+        self.formatType="useAvail"
         self.ratio=None
         self.disk=None
         self.fsType=None
