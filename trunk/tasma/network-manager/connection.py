@@ -37,7 +37,9 @@ class ScanItem(QListViewItem):
         self.info = {}
         
         if not data:
-            self.setText(0, i18n("No remotes found"))
+            self.setPixmap(0, getIconSet("remove", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
+            self.setText(1, "")
+            self.setText(2, i18n("No remotes found"))
             return
         
         for param in data.split("\t"):
