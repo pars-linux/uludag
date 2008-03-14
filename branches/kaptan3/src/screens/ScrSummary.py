@@ -35,8 +35,7 @@ class Widget(SummaryWidget, ScreenWidget):
 
         # set texts
         self.setCaption(i18n("Summary"))
-        self.listSummary.header().setLabel(0,i18n("Component"))
-        self.listSummary.header().setLabel(1,i18n("Choice"))
+        self.listSummary.header().setLabel(0,i18n("Summary"))
 
         # set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))

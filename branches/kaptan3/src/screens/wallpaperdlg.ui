@@ -96,6 +96,12 @@
                     <property name="minimumSize">
                         <size>
                             <width>450</width>
+                            <height>330</height>
+                        </size>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>450</width>
                             <height>300</height>
                         </size>
                     </property>
