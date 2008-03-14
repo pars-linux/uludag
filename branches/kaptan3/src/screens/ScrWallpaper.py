@@ -22,6 +22,7 @@ import sys
 
 # parser for .desktop files
 from desktopparser import DesktopParser
+import ConfigParser
 
 # import gui's
 from screens.Screen import ScreenWidget
@@ -44,9 +45,10 @@ class Widget(WallpaperWidget, ScreenWidget):
     title = "Set your Wallpaper !"
     desc = "Enjoy with wonderful backgrounds..."
 
+    
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
-
+        
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.wallpaperList = {}
@@ -56,7 +58,7 @@ class Widget(WallpaperWidget, ScreenWidget):
         # TODO: but should find a better name than "current wallpaper"
         # maybe a better and shorter word and means like "the wallpaper before kaptan started"?
         if current:
-            wallpaperTitle = "Current Wallpaper"
+            wallpaperTitle = "0 -Current Wallpaper"
             wallpaperFile = current
 
             self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))

@@ -78,7 +78,7 @@ class Widget(PackageWidget, ScreenWidget):
         config.writeEntry("SystemTray", self.showTray.isChecked())
         config.writeEntry("UpdateCheck", self.checkUpdate.isChecked())
         config.writeEntry("UpdateCheckInterval", self.updateInterval.value() * 60)
-        config.sync();
+        config.sync()
 
         if self.showTray.isChecked():
             proc = KProcess()
@@ -86,8 +86,10 @@ class Widget(PackageWidget, ScreenWidget):
             proc.start(KProcess.DontCare)
 
     def shown(self):
-        self.applySettings()
+        #self.applySettings()
+        pass
 
     def execute(self):
-        return True
+        #return True
+        self.applySettings()
 

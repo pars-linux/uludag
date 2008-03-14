@@ -39,8 +39,10 @@ class Widget(SummaryWidget, ScreenWidget):
 
         # set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+
     def shown(self):
-        item = self.listSummary.firstChild()
+
+        self.listSummary.clear()
 
         for screen in summaryScreens:
             item = KListViewItem(self.listSummary,screen.summary["desc"])
