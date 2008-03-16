@@ -36,6 +36,56 @@ class Bookmark:
         else:
             mainnode.appendChild(headernode)
     
+    def getOperaBookmarks(self, path):
+        "Gets Opera Bookmarks from a opera6.adr file"
+        # open file:
+        filename = os.path.join(path, "opera6.adr")
+        bookmarkfile = open(filename)
+        # create main node:
+        groupnode = self.document.createElement("group")
+        headernode = self.document.createElement("header")
+        textnode = self.document.createTextNode("Opera Bookmarks")
+        groupnode.appendChild(headernode)
+        headernode.appendChild(textnode)
+        self.document.documentElement.appendChild(groupnode)
+        # parse file:
+        nodetype = None
+        nodename = None
+        nodeurl = None
+        for line in bookmarkfile:
+            line = line.strip()
+            if not line:
+                if nodetype == "FOLDER":
+                    newgroup = self.document.createElement("group")
+                    headernode = self.document.createElement("header")
+                    textnode = self.document.createTextNode(nodename)
+                    newgroup.appendChild(headernode)
+                    headernode.appendChild(textnode)
+                    groupnode.appendChild(newgroup)
+                    groupnode = newgroup
+                elif nodetype == "URL":
+                    newnode = self.document.createElement("bookmark")
+                    namenode = self.document.createElement("name")
+                    textnode = self.document.createTextNode(nodename)
+                    namenode.appendChild(textnode)
+                    newnode.appendChild(namenode)
+                    urlnode = self.document.createElement("url")
+                    textnode = self.document.createTextNode(nodeurl)
+                    urlnode.appendChild(textnode)
+                    newnode.appendChild(urlnode)
+                    groupnode.appendChild(newnode)
+                nodetype = None
+                nodename = None
+                nodeurl = None
+            elif line.startswith("#"):
+                nodetype = line.replace("#","",1)
+            elif line.startswith("NAME="):
+                nodename = line.replace("NAME=","",1)
+            elif line.startswith("URL="):
+                nodeurl = line.replace("URL=","",1)
+            elif line == "-":
+                groupnode = groupnode.parentNode
+    
     def getIEBookmarks(self, directory):
         "Gets IE Bookmarks from a Favourites directory"
         def searchDirectory(directory, document, node):

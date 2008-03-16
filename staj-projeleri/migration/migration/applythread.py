@@ -33,6 +33,8 @@ def run(wizard):
         wizard.progresspage.addProgress(3, 1)
     if wizard.options.has_key("Firefox Profile Path"):
         wizard.progresspage.addProgress(10, 1)
+    if wizard.options.has_key("Opera Profile Path"):
+        wizard.progresspage.addProgress(10, 1)
     if wizard.options.has_key("Favorites Path"):
         wizard.progresspage.addProgress(10, 1)
     if wizard.options.has_key("GTalk Key"):
@@ -68,6 +70,15 @@ def run(wizard):
             logging.warning(i18n("Firefox bookmarks cannot be loaded."))
         else:
             logging.info(i18n("Firefox bookmarks loaded."))
+        wizard.progresspage.makeProgress(10)
+    # Opera:
+    if wizard.options.has_key("Opera Profile Path"):
+        try:
+            bookmark.getOperaBookmarks(wizard.options["Opera Profile Path"])
+        except:
+            logging.warning(i18n("Opera bookmarks cannot be loaded."))
+        else:
+            logging.info(i18n("Opera bookmarks loaded."))
         wizard.progresspage.makeProgress(10)
     # Internet Explorer:
     if wizard.options.has_key("Favorites Path"):
