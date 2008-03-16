@@ -33,14 +33,12 @@ class OptionsPage(QWidget):
             self.wpLayout.addLayout(self.newLayout)
             # Thumbnail:
             self.newThumb = QLabel(self.wpGroup, "newThumb")
+            self.newLayout.addWidget(self.newThumb)
             if destinations.has_key("Wallpaper Path"):
                 newwp = QImage(unicode(destinations["Wallpaper Path"]))
                 newwp = newwp.smoothScale(100, 100, QImage.ScaleMax)
                 pixmap = QPixmap(newwp)
                 self.newThumb.setPixmap(pixmap)
-                self.newLayout.addWidget(self.newThumb)
-            else:
-                self.newLayout.addSpacing(100)
             # Radio Button:
             self.newRadio = QRadioButton(self.wpGroup, "newRadio")
             if destinations.has_key("Wallpaper Path"):
@@ -80,6 +78,13 @@ class OptionsPage(QWidget):
                 self.FFBookmarks.setChecked(True)
                 QToolTip.add(self.FFBookmarks, i18n("Copies your old Firefox bookmarks to Firefox under Pardus."))
                 self.BookmarksLayout.addWidget(self.FFBookmarks)
+            # Opera Bookmarks:
+            if sources.has_key("Opera Profile Path"):
+                self.OperaBookmarks = QCheckBox(self.Bookmarks, "OperaBookmarks")
+                self.OperaBookmarks.setText(i18n("Opera bookmarks"))
+                self.OperaBookmarks.setChecked(True)
+                QToolTip.add(self.OperaBookmarks, i18n("Copies your old Opera bookmarks to Firefox under Pardus."))
+                self.BookmarksLayout.addWidget(self.OperaBookmarks)
             # IE Bookmarks:
             if sources.has_key("Favorites Path"):
                 self.IEBookmarks = QCheckBox(self.Bookmarks, "IEBookmarks")
@@ -149,6 +154,7 @@ class OptionsPage(QWidget):
         # Add selected optional items:
         items = [("IEBookmarks", "Favorites Path"),
                  ("FFBookmarks", "Firefox Profile Path"),
+                 ("OperaBookmarks", "Opera Profile Path"),
                  ("oldRadio", "Wallpaper Path"),
                  ("WinMail", "Windows Mail Path"),
                  ("TB", "Thunderbird Profile Path"),
