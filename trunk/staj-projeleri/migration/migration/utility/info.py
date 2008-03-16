@@ -26,7 +26,7 @@ def localInfo():
     home = os.path.expanduser("~")
     destinations = {"Home Path":home}
     # Find user wallpaper:
-    wallpaper = wall.getKDEWallpaper()
+    wallpaper = wall.getLocalWallpaper()
     if wallpaper:
         destinations["Wallpaper Path"] = wallpaper
     # Firefox:
@@ -55,21 +55,25 @@ def windowsInfo(sources):
                 if os.path.isdir(value):
                     sources["%s Path" % field] = value
     # Find user wallpaper:
-    wallpaper = wall.getWindowsWallpaper(sources["Partition"], hive)
+    wallpaper = wall.getWindowsWallpaper(sources.get("Partition", None), hive)
     if wallpaper:
         sources["Wallpaper Path"] = wallpaper
     # Firefox:
-    possiblepath = os.path.join(sources["AppData Path"], "Mozilla/Firefox")
+    possiblepath = os.path.join(sources.get("AppData Path", None), "Mozilla/Firefox")
     profilepath = getMozillaProfile(possiblepath)
     if profilepath:
         sources["Firefox Profile Path"] = profilepath
+    # Opera:
+    possiblepath = os.path.join(sources.get("AppData Path", None), "Opera/Opera/profile")
+    if os.path.isdir(possiblepath):
+        sources["Opera Profile Path"] = possiblepath
     # Thunderbird:
-    possiblepath = os.path.join(sources["AppData Path"], "Thunderbird")
+    possiblepath = os.path.join(sources.get("AppData Path", None), "Thunderbird")
     profilepath = getMozillaProfile(possiblepath)
     if profilepath:
         sources["Thunderbird Profile Path"] = profilepath
     # Messenger Contacts:
-    possiblepath = os.path.join(sources["Home Path"], "Contacts")
+    possiblepath = os.path.join(sources.get("Home Path", None), "Contacts")
     if os.path.isdir(possiblepath):
         sources["Contacts Path"] = possiblepath
     # Google Talk:

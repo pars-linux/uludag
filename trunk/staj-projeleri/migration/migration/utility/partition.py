@@ -84,23 +84,19 @@ def getWindowsUsers(partition):
                 logging.debug("not a user: " + subkey)
                 continue
             path = values["ProfileImagePath"]
-            if values["Flags"] == 0:
-                logging.debug("regular user: " + path)
-                path = path.split("\\",1)[1]
-                path = path.replace("\\", "/")
-                path = os.path.join(partition, path)
-                if os.path.isfile(os.path.join(path, "NTUSER.DAT")):
-                    # User exists, append to list:
-                    username = os.path.basename(path)
-                    logging.info("User Found: " + path)
-                    if os.path.isfile(os.path.join(partition, "bootmgr")):
-                        users.append((partition, "Windows Vista", username, path))
-                    else:
-                        users.append((partition, "Windows XP", username, path))
+            path = path.split("\\",1)[1]
+            path = path.replace("\\", "/")
+            path = os.path.join(partition, path)
+            if os.path.isfile(os.path.join(path, "NTUSER.DAT")):
+                # User exists, append to list:
+                username = os.path.basename(path)
+                logging.info("User Found: " + path)
+                if os.path.isfile(os.path.join(partition, "bootmgr")):
+                    users.append((partition, "Windows Vista", username, path))
                 else:
-                    logging.debug("user registry does not exists: " + path)
+                    users.append((partition, "Windows XP", username, path))
             else:
-                logging.debug("not a regular user: " + subkey)
+                logging.debug("user registry does not exists: " + path)
     else:
         logging.debug("registry does not exists on: " + partition)
     return users

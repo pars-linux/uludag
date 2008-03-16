@@ -48,6 +48,20 @@ def getKDEWallpaper():
         return wallpaper
     else:
         return None
+def getLocalWallpaper():
+    "Returns local wallpaper using dcop"
+    # Create a dcop object:
+    client = DCOPClient()
+    if not client.attach():
+        return None
+    # Get Wallpaper:
+    background = DCOPObj("kdesktop", client, "KBackgroundIface")
+    ok, wallpaper = background.currentWallpaper(0)
+    if ok:
+        return wallpaper
+    else:
+        return None
+
 
 def getWindowsWallpaper(partition, hive):
     "Returns windows wallpaper path using user registry hive"
