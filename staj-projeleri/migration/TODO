@@ -6,9 +6,9 @@ TODO List
 + Accomplished
 
 Before 2008:
+    + Opera support
     - Firefox 3 support
-    - Opera support
-    - Outlook & OE support
+    ? Outlook & OE support (hard to do and maintain)
     - Change logo
     - Find a way to migrate fonts
     - Update help file
