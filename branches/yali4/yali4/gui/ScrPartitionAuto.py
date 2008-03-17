@@ -89,6 +89,18 @@ about disk partitioning.
         self.connect(self.ui.device_list, SIGNAL("currentRowChanged(int)"),self.slotDeviceChanged)
 
     def shown(self):
+        def sortBySize(x,y):
+            if x["newSize"]>y["newSize"]:return -1
+            elif x["newSize"]==y["newSize"]: return 0
+            return 1
+        self.res = []
+        self.resizablePartitions.sort(sortBySize)
+        for partition in self.resizablePartitions:
+            if partition["newSize"] / 2 >= ctx.consts.min_root_size:
+                self.res.append(partition["partition"])
+        if len(self.res) == 0:
+            self.ui.accept_auto_1.setEnabled(False)
+            self.ui.accept_auto_2.toggle()
         ctx.mainScreen.disableNext()
         self.updateUI()
 
@@ -110,7 +122,7 @@ about disk partitioning.
                     ctx.debugger.log(" - Total size of this partition is %.2f MB" % part.getMB())
                     ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
                     ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
-                    self.resizablePartitions.append(part)
+                    self.resizablePartitions.append({"partition":part,"newSize":possibleFreeSize})
                     if possibleFreeSize+100 > ctx.consts.min_root_size:
                         if dev not in self.resizableDisks:
                             self.resizableDisks.append(dev)
