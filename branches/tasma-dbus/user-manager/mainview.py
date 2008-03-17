@@ -56,12 +56,11 @@ class UserManager(QWidgetStack):
         return ch
     
     def busError(self, exception):
-        print exception
+        KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
         self.setupBusses()
     
     def comarError(self, exception):
-        print "Error"
-        print exception
+        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
     
     def slotCancel(self):
         self.raiseWidget(self.browse)
