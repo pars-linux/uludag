@@ -558,8 +558,7 @@ class widgetMain(QWidget):
         sys.exit()
     
     def comarError(self, exception):
-        print "Error"
-        print exception
+        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
     
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Boot.Loader", member_keyword="signal", path_keyword="path")
