@@ -49,6 +49,7 @@ class Widget(WallpaperWidget, ScreenWidget):
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
         
+        self.listWallpaper.setSorting(-1)
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.wallpaperList = {}
@@ -58,7 +59,7 @@ class Widget(WallpaperWidget, ScreenWidget):
         # TODO: but should find a better name than "current wallpaper"
         # maybe a better and shorter word and means like "the wallpaper before kaptan started"?
         if current:
-            wallpaperTitle = "0 -Current Wallpaper"
+            wallpaperTitle = "Current Wallpaper"
             wallpaperFile = current
 
             self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
@@ -111,7 +112,7 @@ class Widget(WallpaperWidget, ScreenWidget):
             item = KListViewItem(self.listWallpaper,"file")
             item.setText(0,i18n(itemText))
             item.setPixmap(0,QPixmap(QImage(file).smoothScale(150,150, QImage.ScaleMin)))
-            #self.listWallpaper.insertItem(item) #it seems doesn't work (o_O)
+            self.listWallpaper.insertItem(item) #it seems doesn't work (o_O)
         else:
             item = KListViewItem(self.listWallpaper,"file")
             item.setText(0,i18n(itemText))

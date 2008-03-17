@@ -31,18 +31,19 @@ class Widget(NetworkWidget, ScreenWidget):
         apply(NetworkWidget.__init__, (self,) + args)
 
         self.embedded = QXEmbed(self.networkFrame)
-        self.embedded.resize(490,350)
+        self.embedded.resize(500,350)
 
         self.busy.setText(i18n("<big>Loading...</big>"))
 
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 
-    def shown(self):
+    def __del__(self):
         if self.proc.isRunning():
             self.proc.kill()
             self.running = False
 
+    def shown(self):
         if not self.running:
             self.proc.addArgument("kcmshell")
             self.proc.addArgument("--embed-proxy")
@@ -58,4 +59,6 @@ class Widget(NetworkWidget, ScreenWidget):
         self.running = False
 
     def execute(self):
-        self.proc.kill()
+        pass
+
+
