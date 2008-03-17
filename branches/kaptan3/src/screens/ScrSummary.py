@@ -29,6 +29,7 @@ class Widget(SummaryWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = i18n("You have finished !")
     desc = i18n("See your summary..")
+    icon = "kaptan/pics/summary/summary.png"
 
     def __init__(self, *args):
         apply(SummaryWidget.__init__, (self,) + args)

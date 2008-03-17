@@ -31,6 +31,7 @@ class Widget(PanelWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = i18n("Configure your panel !")
     desc = i18n("Select the one you like...")
+    icon = summary["pic"]
 
     selectedStyle= QString()
     lastPanel = ""

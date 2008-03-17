@@ -30,6 +30,7 @@ class Widget(PackageWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = i18n("Package Manager")
     desc = i18n("Configure package manager settings...")
+    icon = summary["pic"]
 
     # min update time
     updateTime = 12

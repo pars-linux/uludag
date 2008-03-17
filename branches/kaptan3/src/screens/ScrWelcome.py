@@ -20,6 +20,11 @@ from screens.welcomedlg import WelcomeWidget
 
 class Widget(WelcomeWidget, ScreenWidget):
 
+    title = i18n("Welcome")
+    desc = i18n("Welcome to Kaptan Wizard :)")
+    icon = "kaptan/pics/summary/welcome.png"
+
+
     def __init__(self, *args):
         apply(WelcomeWidget.__init__, (self,) + args)
 

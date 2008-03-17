@@ -44,6 +44,7 @@ class Widget(WallpaperWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = "Set your Wallpaper !"
     desc = "Enjoy with wonderful backgrounds..."
+    icon = summary["pic"]
 
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)

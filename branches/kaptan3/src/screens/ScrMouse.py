@@ -33,8 +33,7 @@ class Widget(MouseWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = i18n("Mouse Settings")
     desc = i18n("Configure your mouse")
-
-    pynotify.init("Mouse Settings")
+    icon = summary["pic"]
 
     def __init__(self, *args):
         apply(MouseWidget.__init__, (self, ) + args)

@@ -29,6 +29,7 @@ class Widget(MultipleWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = i18n("Multiple Desktops")
     desc = i18n("Configure virtual desktops..")
+    icon = summary["pic"]
 
     # for simplicity, multiple desktops are limited to 8
     maxDesktops = 8
