@@ -117,7 +117,6 @@ class CallHandler:
     
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        #iface.ObtainAuthorization(self.action, self.window, os.getpid(), reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError)
         if iface.ObtainAuthorization(self.action, self.window, os.getpid()):
             self.__call()
         else:
