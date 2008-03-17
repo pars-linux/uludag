@@ -6,6 +6,7 @@ import piksemel
 
 from zorg.parser import *
 from zorg.probe import VideoDevice
+from zorg.utils import atoi
 
 xorgConf = "/etc/X11/xorg.conf"
 zorgConfigDir = "/var/lib/zorg"
@@ -97,10 +98,10 @@ def saveXorgConfig(card):
     secScr.set("Identifier", "Screen")
     secScr.set("Device", "VideoCard")
     secScr.set("Monitor", "Monitor[%s]" % card.active_outputs[0])
-    secScr.set("DefaultDepth", card.depth)
+    secScr.set("DefaultDepth", atoi(card.depth))
 
     subsec = XorgSection("Display")
-    subsec.set("Depth", card.depth)
+    subsec.set("Depth", atoi(card.depth))
 
     if "no-modes-line" not in flags:
         output = card.active_outputs[0]
