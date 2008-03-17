@@ -25,8 +25,11 @@ import kdedesigner
 import firewall
 import dialog
 
-# COMAR
-import comar
+# DBus
+import dbus
+import dbus.mainloop.qt3
+
+from handler import CallHandler
 
 # Rules
 import rules
@@ -35,7 +38,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP('Pardus Firewall Graphical User Interface')
-version = '1.6.6'
+version = '2.0.0'
 
 def AboutData():
     global version, description
@@ -205,16 +208,7 @@ class MainApplication(programbase):
         mainwidget.pushNewRule.setPixmap(loadIcon('add.png', size=32))
 
         # COMAR
-        self.comar = comar.Link()
-        self.notifier = QSocketNotifier(self.comar.sock.fileno(), QSocketNotifier.Read)
-        self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
-
-        # COMAR - Notify List
-        self.comar.ask_notify('Net.Filter.changed', id=1)
-
-        # Access Control
-        self.wheel = False
-        self.comar.can_access('System.Service.setState', id=10)
+        self.setupBusses()
 
         # Signals
         self.connect(mainwidget.pushStatus, SIGNAL('clicked()'), self.slotStatus)
@@ -223,14 +217,91 @@ class MainApplication(programbase):
         self.connect(mainwidget.pushApply, SIGNAL('clicked()'), self.slotApply)
         self.connect(mainwidget.pushNewRule, SIGNAL('clicked()'), self.slotDialog)
 
-        # Get FW state
-        self.comar.call('Net.Filter.getProfile', id=4)
+        # Init
+        self.getState()
+        self.getProfile()
+        self.getRules()
 
-        self.comar.call('Net.Filter.getState', id=3)
+    def setupBusses(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException:
+            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            return False
+        return True
+
+    def handleSignals(self, *args, **kwargs):
+        path = kwargs["path"]
+        signal = kwargs["signal"]
+        if not path.startswith("/package/"):
+            return
+        script = path[9:]
+        print script, signal
+
+    def listenSignals(self):
+        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Filter", member_keyword="signal", path_keyword="path")
+
+    def callMethod(self, method, action, model="Net.Filter"):
+        ch = CallHandler("iptables", model, method,
+                         action,
+                         self.winId(),
+                         self.busSys, self.busSes)
+        ch.registerError(self.comarError)
+        ch.registerAuthError(self.comarError)
+        ch.registerDBusError(self.busError)
+        return ch
+
+    def busError(self, exception):
+        KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
+        self.setupBusses()
+
+    def comarError(self, exception):
+        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
 
     def slotChanged(self):
         if not standalone:
             self.changed()
+        return
+
+    def getState(self):
+        def handleState(_type, _desc, _state):
+            self.state = "off"
+            if _state in ["on", "started"]:
+                self.state = "on"
+                mainwidget.pushStatus.setEnabled(True)
+                mainwidget.frameIncoming.setEnabled(True)
+                mainwidget.frameAdvanced.setEnabled(True)
+                mainwidget.pushNewRule.setEnabled(True)
+        ch = self.callMethod("info", "tr.org.pardus.comar.system.service.get", "System.Service")
+        ch.registerDone(handleState)
+        ch.call()
+
+    def getProfile(self):
+        def handleProfile(profile, save_filter, save_nat, save_mangle, save_raw):
+            self.profile = {
+                'profile': profile,
+                'save_filter': save_filter,
+                'save_mangle': save_nat,
+                'save_nat': save_mangle,
+                'save_raw': save_raw,
+            }
+        ch = self.callMethod("getProfile", "tr.org.pardus.comar.net.filter.get")
+        ch.registerDone(handleProfile)
+        ch.call()
+
+    def getRules(self):
+        def handleRules(rules):
+            self.emptyRules()
+            for rule in rules:
+                if not len(rule):
+                    continue
+                table, rule = rule.split(' ', 1)
+                self.rules[table].append(rule)
+            self.updateRules()
+        ch = self.callMethod("getRules", "tr.org.pardus.comar.net.filter.get")
+        ch.registerDone(handleRules)
+        ch.call()
 
     def setState(self, state):
         self.state = state
@@ -271,10 +342,9 @@ class MainApplication(programbase):
                 chk.show()
                 self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
 
-            if self.wheel:
-                mainwidget.frameIncoming.setEnabled(True)
-                mainwidget.frameAdvanced.setEnabled(True)
-                mainwidget.pushNewRule.setEnabled(True)
+            mainwidget.frameIncoming.setEnabled(True)
+            mainwidget.frameAdvanced.setEnabled(True)
+            mainwidget.pushNewRule.setEnabled(True)
         else:
             mainwidget.frameIncoming.setEnabled(False)
             mainwidget.frameAdvanced.setEnabled(False)
@@ -296,8 +366,7 @@ class MainApplication(programbase):
             info = reply.data.split('\n')
             if info[0] == 'state':
                 self.setState(info[1])
-                if self.wheel:
-                    mainwidget.pushStatus.setEnabled(True)
+                mainwidget.pushStatus.setEnabled(True)
             elif info[0] == 'profile':
                 self.profile = {
                     'profile': info[1],
@@ -319,8 +388,7 @@ class MainApplication(programbase):
             elif reply.id == 3:
                 # Get State
                 self.setState(reply.data)
-                if self.wheel:
-                    mainwidget.pushStatus.setEnabled(True)
+                mainwidget.pushStatus.setEnabled(True)
             elif reply.id == 4:
                 # Get Profile
                 info = reply.data.split('\n')
@@ -332,7 +400,6 @@ class MainApplication(programbase):
                     'save_raw': info[4],
                 }
             elif reply.id == 10:
-                self.wheel = True
                 mainwidget.pushStatus.setEnabled(True)
                 mainwidget.frameIncoming.setEnabled(True)
                 mainwidget.frameAdvanced.setEnabled(True)
@@ -431,6 +498,8 @@ class MainApplication(programbase):
 # This is the entry point used when running this module outside of kcontrol.
 def main():
     global kapp
+
+    dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
 
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv, about_data)
