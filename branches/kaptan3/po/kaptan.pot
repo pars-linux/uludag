@@ -1,0 +1,374 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-18 16:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/kaptan.py:72 src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
+msgid "Welcome"
+msgstr ""
+
+#: src/kaptan.py:73 src/screens/ScrWelcome.py:24
+msgid "Welcome to Kaptan Wizard :)"
+msgstr ""
+
+#: src/kaptan.py:75
+msgid "&Back"
+msgstr ""
+
+#: src/kaptan.py:76
+msgid "&Next"
+msgstr ""
+
+#: src/kaptan.py:77
+msgid "Finish"
+msgstr ""
+
+#: src/kaptan.py:201
+msgid "Kaptan is already running!"
+msgstr ""
+
+#: src/kaptan.py:206
+msgid "Kaptan Welcome Wizard"
+msgstr ""
+
+#: src/screens/welcomedlg.py:62
+msgid "WelcomeWidget"
+msgstr ""
+
+#: src/screens/ScrSummary.py:30
+msgid "You have finished !"
+msgstr ""
+
+#: src/screens/ScrSummary.py:31
+msgid "See your summary.."
+msgstr ""
+
+#: src/screens/ScrSummary.py:38 src/screens/ScrSummary.py:39
+msgid "Summary"
+msgstr ""
+
+#: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:123
+msgid "Thumbnails"
+msgstr ""
+
+#: src/screens/wallpaperdlg.py:122 src/screens/ScrWallpaper.py:34
+msgid "Wallpaper"
+msgstr ""
+
+#: src/screens/wallpaperdlg.py:124
+msgid "toolTip"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:907
+msgid "Goodbye"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:908
+msgid ""
+"<p>Congratulations! You have finished all steps. You can now continue using "
+"Pardus and try applications below.</p>"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:909
+msgid "Migration Tool"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:910 src/screens/goodbyedlg.py:913
+#: src/screens/goodbyedlg.py:917 src/screens/goodbyedlg.py:920
+msgid "Start"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:911
+msgid ""
+"<p>A wizard to transfer files and settings from existing operating systems "
+"(e.g. Windows) to Pardus.</p>"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:912
+msgid "Tasma"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:914
+msgid ""
+"<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:915
+msgid "Feedback"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:916
+msgid ""
+"<p>A small wizard that you can send your messages to Pardus developers and "
+"help Pardus be the best Linux in the world.</p>"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:918
+msgid "User Groups and Help Pages"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:919
+msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
+msgstr ""
+
+#: src/screens/paneldlg.py:85
+msgid "PanelWidget"
+msgstr ""
+
+#: src/screens/mousedlg.py:105
+msgid "MouseWidget"
+msgstr ""
+
+#: src/screens/ScrPanel.py:27 src/screens/ScrPanel.py:42
+msgid "Panel"
+msgstr ""
+
+#: src/screens/ScrPanel.py:32
+msgid "Configure your panel !"
+msgstr ""
+
+#: src/screens/ScrPanel.py:33
+msgid "Select the one you like..."
+msgstr ""
+
+#: src/screens/ScrPanel.py:43
+msgid ""
+"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
+"some eye candy styles for you."
+msgstr ""
+
+#: src/screens/ScrPanel.py:44
+msgid "Style"
+msgstr ""
+
+#: src/screens/ScrPanel.py:46
+msgid "Preview"
+msgstr ""
+
+#: src/screens/ScrPanel.py:47
+msgid "Use enhanced Kickoff style menu"
+msgstr ""
+
+#: src/screens/ScrPanel.py:179
+msgid ", Kickoff Menu"
+msgstr ""
+
+#: src/screens/packagedlg.py:114
+msgid "PackageWidget"
+msgstr ""
+
+#: src/screens/packagedlg.py:119 src/screens/ScrPackage.py:47
+msgid "tooltipPisiPopup"
+msgstr ""
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr ""
+
+#: src/screens/kaptanMain.py:117
+msgid "kaptanUi"
+msgstr ""
+
+#: src/screens/multipledlg.py:127
+msgid "MultipleWidget"
+msgstr ""
+
+#: src/screens/ScrWallpaper.py:54
+msgid "Show all resolutions."
+msgstr ""
+
+#: src/screens/ScrWallpaper.py:57
+msgid "Old Wallpaper"
+msgstr ""
+
+#: src/screens/ScrWallpaper.py:58
+msgid "No Wallpaper"
+msgstr ""
+
+#: src/screens/summarydlg.py:119
+msgid "SummaryWidget"
+msgstr ""
+
+#: src/screens/ScrMouse.py:29 src/screens/ScrMouse.py:46
+msgid "Mouse"
+msgstr ""
+
+#: src/screens/ScrMouse.py:34
+msgid "Mouse Settings"
+msgstr ""
+
+#: src/screens/ScrMouse.py:35
+msgid "Configure your mouse"
+msgstr ""
+
+#: src/screens/ScrMouse.py:47
+msgid "Reverse scroll"
+msgstr ""
+
+#: src/screens/ScrMouse.py:48
+msgid ""
+"<p align=\"left\">If you are left-handed, you may prefer to swap the "
+"functions on the left and right buttons on your pointing device bu choosing "
+"the \"Left handed\" option below. You can also select default click "
+"behaviour.</p>"
+msgstr ""
+
+#: src/screens/ScrMouse.py:49
+msgid "Button Order"
+msgstr ""
+
+#: src/screens/ScrMouse.py:50
+msgid "Left Hand"
+msgstr ""
+
+#: src/screens/ScrMouse.py:51
+msgid "Right Hand"
+msgstr ""
+
+#: src/screens/ScrMouse.py:52
+msgid "Click behaviour"
+msgstr ""
+
+#: src/screens/ScrMouse.py:53
+msgid "&Single-click to open files and folders"
+msgstr ""
+
+#: src/screens/ScrMouse.py:54
+msgid "Dou&ble-click to open files and folders (select icons on first click)"
+msgstr ""
+
+#: src/screens/ScrMouse.py:68
+msgid "Single Click"
+msgstr ""
+
+#: src/screens/ScrMouse.py:70
+msgid "Double Click"
+msgstr ""
+
+#: src/screens/ScrMouse.py:73
+msgid ", Right Handed"
+msgstr ""
+
+#: src/screens/ScrMouse.py:75
+msgid ", Left Handed"
+msgstr ""
+
+#: src/screens/ScrMouse.py:78
+msgid ", Reverse Scrolling"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:25 src/screens/ScrMultiple.py:30
+msgid "Multiple Desktops"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:31
+msgid "Configure virtual desktops.."
+msgstr ""
+
+#: src/screens/ScrMultiple.py:52
+msgid "Multiple"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:53
+msgid ""
+"<p>In this module, you can configure how many virtual desktops you want and "
+"how these should be labeled.</p>"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:54
+msgid "Mouse wheel over desktop background switches desktop."
+msgstr ""
+
+#: src/screens/ScrMultiple.py:55
+msgid " Desktop(s)"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:76
+msgid " desktop(s)"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:78
+msgid ", Wheel Switches Workspace"
+msgstr ""
+
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr ""
+
+#: src/screens/ScrPackage.py:24 src/screens/ScrPackage.py:31
+msgid "Package Manager"
+msgstr ""
+
+#: src/screens/ScrPackage.py:32
+msgid "Configure package manager settings..."
+msgstr ""
+
+#: src/screens/ScrPackage.py:45
+msgid "Package"
+msgstr ""
+
+#: src/screens/ScrPackage.py:46
+msgid ""
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically  from the system tray with package "
+"manager."
+msgstr ""
+
+#: src/screens/ScrPackage.py:48
+msgid "Updates"
+msgstr ""
+
+#: src/screens/ScrPackage.py:49
+msgid "Show in system tray"
+msgstr ""
+
+#: src/screens/ScrPackage.py:50
+msgid "Check updates automatically for every"
+msgstr ""
+
+#: src/screens/ScrPackage.py:51
+msgid " hours"
+msgstr ""
+
+#: src/screens/ScrPackage.py:52
+msgid "Repo"
+msgstr ""
+
+#: src/screens/ScrPackage.py:53
+msgid "Contrib repo bla bla."
+msgstr ""
+
+#: src/screens/ScrPackage.py:54
+msgid "Add contrib repo"
+msgstr ""
+
+#: src/screens/ScrWelcome.py:33
+msgid ""
+"This application, called <b>Kaptan Desktop</b>, will help you with your "
+"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
+"This application will also set some default configuration for a better "
+"desktop :)."
+msgstr ""
+
+#: src/screens/ScrWelcome.py:34
+msgid ""
+"<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate "
+"users' basic desktop needs; with acquiring the strong ideas, architecture "
+"and code of other distributions; with a custom configuration framework which "
+"has the ability to evolve into an autonomous system; for simplifying the "
+"installation and usage of the computers."
+msgstr ""

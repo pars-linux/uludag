@@ -54,7 +54,7 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.checkAllWallpapers.setText(i18n("Show all resolutions."))
         self.listWallpaper.setSorting(-1)
 
-        self.currentText = str(i18n("Old Wallpaper"))
+        self.currentText = QString(i18n("Old Wallpaper"))
         self.noneText = str(i18n("No Wallpaper"))
         self.nonePic = "kaptan/pics/no-wallpaper.png"
         self.wallpaperList = {}
