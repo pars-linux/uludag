@@ -46,16 +46,25 @@ class Widget(WallpaperWidget, ScreenWidget):
     desc = "Enjoy with wonderful backgrounds..."
     icon = summary["pic"]
 
+    
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
+
+        self.isWide = False
+
+        rect =  QApplication.desktop().screenGeometry()
+        if float(rect.width())/float(rect.height()) >=  1.6:
+            self.isWide = True
+        else:
+            self.isWide = False
 
         self.listWallpaper.setSorting(-1)
 
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.wallpaperList = {}
+        self.allWallpaperList = {}
         lst = {}
-
 
         # get .desktop files from global resources
         lst= KGlobal.dirs().findAllResources("wallpaper", "*.desktop", False , True )
@@ -69,6 +78,8 @@ class Widget(WallpaperWidget, ScreenWidget):
                 parser = DesktopParser()
                 parser.read(str(desktopFiles))
                 try:
+                    #there must have been a Resolution=Wide tag in wallpaper file.
+                    resolution =  parser.get_locale('Wallpaper', 'Resolution', '')
                     wallpaperTitle = parser.get_locale('Wallpaper', 'Name', '')
                     #maybe show author too?
                     #wallpaperAuthor = parser.get_locale('Wallpaper', 'Author', '')
@@ -76,8 +87,9 @@ class Widget(WallpaperWidget, ScreenWidget):
                     #TODO: don't hardcode the path. strip or sth.
                     wallpaperFile = "/usr/kde/3.5/share/wallpapers/"+wallpaperFile
                     #dict titles and file names
-                    self.wallpaperList[wallpaperTitle] = wallpaperFile
-                    #self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
+                    if self.isWide == True and resolution == "Wide":
+                        self.wallpaperList[wallpaperTitle] = wallpaperFile
+                    self.allWallpaperList[wallpaperTitle] = wallpaperFile
                 except ConfigParser.NoOptionError:
                     #if option doesn't exist, skip.
                     pass

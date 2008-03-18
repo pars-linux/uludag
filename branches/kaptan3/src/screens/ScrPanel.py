@@ -34,8 +34,6 @@ class Widget(PanelWidget, ScreenWidget):
     icon = summary["pic"]
 
     selectedStyle= QString()
-    lastPanel = ""
-    lastKick = ""
 
     def __init__(self, *args):
         apply(PanelWidget.__init__, (self,) + args)
@@ -85,7 +83,6 @@ class Widget(PanelWidget, ScreenWidget):
         # controlling panel values after applying it's in here.
         self.lastPanel = self.styleBox.currentText()
         summary["sum"] = self.lastPanel
-        self.lastKick = self.checkKickoff.isChecked()
 
         #read entire xml into DOM tree
         dom = qtxml.QDomDocument()
@@ -182,6 +179,5 @@ class Widget(PanelWidget, ScreenWidget):
             summary["sum"] += i18n(", Kickoff Menu")
 
         #if value changed after pressing to try button, then apply settings again. 
-        #if not self.styleBox.currentText() == self.lastPanel:
         self.applyStyle()
 

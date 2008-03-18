@@ -55,10 +55,11 @@ class Kaptan(kaptanUi):
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
 
+        icon = "kaptan/pics/default_icon.png"
+
         # set images
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
         self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
-        self.pageIcon.setPixmap(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
 
         # set button icons
         loader = KGlobal.iconLoader()
@@ -117,6 +118,8 @@ class Kaptan(kaptanUi):
         _w = self.pageStack.visibleWidget()
         self.pageTitle.setText(_w.title)
         self.pageDesc.setText(_w.desc)
+        self.pageIcon.setPixmap(QPixmap(locate("data", _w.icon)))
+
         _w.shown()
 
         if self.getCurrent() == 1:
