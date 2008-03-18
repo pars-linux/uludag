@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'welcomedlg.ui'
+# Form implementation generated from reading ui file 'src/welcomedlg.ui'
 #
-# Created: Cum Kas 3 15:24:30 2006
-#      by: The PyQt User Interface Compiler (pyuic) 3-snapshot-20061006
+# Created: Sal Mar 18 16:24:53 2008
+#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'experiencedlg.ui'
+# Form implementation generated from reading ui file 'src/experiencedlg.ui'
 #
-# Created: Paz Tem 9 09:41:14 2006
-#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
+# Created: Sal Mar 18 16:24:53 2008
+#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -95,26 +95,6 @@ class ExperienceDlg(QDialog):
         self.setIcon(self.image0)
 
 
-        self.experiencebuttonGroup = QButtonGroup(self,"experiencebuttonGroup")
-        self.experiencebuttonGroup.setGeometry(QRect(170,110,400,140))
-
-        self.questionFour = QRadioButton(self.experiencebuttonGroup,"questionFour")
-        self.questionFour.setGeometry(QRect(20,110,318,19))
-        self.experiencebuttonGroup.insert( self.questionFour,3)
-
-        self.questionOne = QRadioButton(self.experiencebuttonGroup,"questionOne")
-        self.questionOne.setGeometry(QRect(20,20,318,19))
-        self.questionOne.setChecked(1)
-        self.experiencebuttonGroup.insert( self.questionOne,1)
-
-        self.questionTwo = QRadioButton(self.experiencebuttonGroup,"questionTwo")
-        self.questionTwo.setGeometry(QRect(20,50,318,19))
-        self.experiencebuttonGroup.insert( self.questionTwo,0)
-
-        self.questionThree = QRadioButton(self.experiencebuttonGroup,"questionThree")
-        self.questionThree.setGeometry(QRect(20,80,318,19))
-        self.experiencebuttonGroup.insert( self.questionThree,4)
-
         self.experienceLabel = QLabel(self,"experienceLabel")
         self.experienceLabel.setGeometry(QRect(170,60,420,40))
         experienceLabel_font = QFont(self.experienceLabel.font())
@@ -132,6 +112,35 @@ class ExperienceDlg(QDialog):
         self.experiencePixmap.setGeometry(QRect(-5,0,142,290))
         self.experiencePixmap.setScaledContents(1)
 
+        self.experiencebuttonGroup = QButtonGroup(self,"experiencebuttonGroup")
+        self.experiencebuttonGroup.setGeometry(QRect(170,110,410,150))
+        self.experiencebuttonGroup.setColumnLayout(0,Qt.Vertical)
+        self.experiencebuttonGroup.layout().setSpacing(6)
+        self.experiencebuttonGroup.layout().setMargin(11)
+        experiencebuttonGroupLayout = QGridLayout(self.experiencebuttonGroup.layout())
+        experiencebuttonGroupLayout.setAlignment(Qt.AlignTop)
+
+        self.questionFour = QRadioButton(self.experiencebuttonGroup,"questionFour")
+        self.experiencebuttonGroup.insert( self.questionFour,3)
+
+        experiencebuttonGroupLayout.addWidget(self.questionFour,3,0)
+
+        self.questionThree = QRadioButton(self.experiencebuttonGroup,"questionThree")
+        self.experiencebuttonGroup.insert( self.questionThree,4)
+
+        experiencebuttonGroupLayout.addWidget(self.questionThree,2,0)
+
+        self.questionTwo = QRadioButton(self.experiencebuttonGroup,"questionTwo")
+        self.experiencebuttonGroup.insert( self.questionTwo,0)
+
+        experiencebuttonGroupLayout.addWidget(self.questionTwo,1,0)
+
+        self.questionOne = QRadioButton(self.experiencebuttonGroup,"questionOne")
+        self.questionOne.setChecked(1)
+        self.experiencebuttonGroup.insert( self.questionOne,1)
+
+        experiencebuttonGroupLayout.addWidget(self.questionOne,0,0)
+
         self.languageChange()
 
         self.resize(QSize(619,287).expandedTo(self.minimumSizeHint()))
@@ -140,11 +149,11 @@ class ExperienceDlg(QDialog):
 
     def languageChange(self):
         self.setCaption(i18n("Feedback Wizard"))
-        self.experiencebuttonGroup.setTitle(QString.null)
-        self.questionFour.setText(i18n("Experienced system administrator"))
-        self.questionOne.setText(i18n("New user"))
-        self.questionTwo.setText(i18n("Home/office productivity user"))
-        self.questionThree.setText(i18n("Experienced user"))
         self.experienceLabel.setText(i18n("<h2>What is your experience level?</h2>"))
         self.stepLabel.setText(i18n("<b>Step 1 of 7</b>"))
+        self.experiencebuttonGroup.setTitle(QString.null)
+        self.questionFour.setText(i18n("Experienced system administrator"))
+        self.questionThree.setText(i18n("Experienced user"))
+        self.questionTwo.setText(i18n("Home/office productivity user"))
+        self.questionOne.setText(i18n("New user"))
 

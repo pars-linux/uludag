@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'hardwareinfodlg.ui'
+# Form implementation generated from reading ui file 'src/hardwareinfodlg.ui'
 #
-# Created: Cts Kas 25 07:24:03 2006
-#      by: The PyQt User Interface Compiler (pyuic) 3.17
+# Created: Sal Mar 18 16:24:53 2008
+#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -210,23 +210,28 @@ class HardwareInfoDlg(QWidget):
         self.setIcon(self.image0)
 
 
-        self.hardwareInfoBox = QCheckBox(self,"hardwareInfoBox")
-        self.hardwareInfoBox.setGeometry(QRect(230,240,340,20))
-
         self.hardwareInfoPixmap = QLabel(self,"hardwareInfoPixmap")
         self.hardwareInfoPixmap.setGeometry(QRect(-5,0,142,290))
+        self.hardwareInfoPixmap.setMaximumSize(QSize(142,290))
         self.hardwareInfoPixmap.setScaledContents(1)
 
         self.stepLabel = QLabel(self,"stepLabel")
         self.stepLabel.setGeometry(QRect(160,20,100,21))
         self.stepLabel.setPaletteForegroundColor(QColor(77,77,77))
 
-        self.hardwareInfoLabel = QLabel(self,"hardwareInfoLabel")
-        self.hardwareInfoLabel.setGeometry(QRect(170,60,420,150))
+        LayoutWidget = QWidget(self,"layout8")
+        LayoutWidget.setGeometry(QRect(160,60,420,200))
+        layout8 = QVBoxLayout(LayoutWidget,11,6,"layout8")
+
+        self.hardwareInfoLabel = QLabel(LayoutWidget,"hardwareInfoLabel")
         hardwareInfoLabel_font = QFont(self.hardwareInfoLabel.font())
         self.hardwareInfoLabel.setFont(hardwareInfoLabel_font)
         self.hardwareInfoLabel.setTextFormat(QLabel.RichText)
         self.hardwareInfoLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
+        layout8.addWidget(self.hardwareInfoLabel)
+
+        self.hardwareInfoBox = QCheckBox(LayoutWidget,"hardwareInfoBox")
+        layout8.addWidget(self.hardwareInfoBox)
 
         self.languageChange()
 
@@ -236,7 +241,6 @@ class HardwareInfoDlg(QWidget):
 
     def languageChange(self):
         self.setCaption(i18n("Feedback Wizard"))
-        self.hardwareInfoBox.setText(i18n("&Do not send my computer's hardware information"))
         self.stepLabel.setText(i18n("<b>Step 7 of 7</b>"))
         self.hardwareInfoLabel.setText(i18n("<h2>Computer information</h2>\n"
 "<p>\n"
@@ -247,4 +251,6 @@ class HardwareInfoDlg(QWidget):
 "access for this operation to complete. \n"
 "\n"
 "<b>Note that we will not collect any of your personal documents.</b>"))
+        self.hardwareInfoBox.setText(i18n("&Do not send my computer's hardware information"))
+        self.hardwareInfoBox.setAccel(QKeySequence(i18n("Alt+D")))
 

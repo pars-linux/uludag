@@ -34,7 +34,6 @@ from opiniondlg import OpinionDlg
 from personalinfodlg import PersonalInfoDlg
 from hardwareinfodlg import HardwareInfoDlg
 from upload import UploadDlg
-from goodbyedlg import GoodbyeDlg
 
 # JSON
 from simplejson import dumps as json_encode
@@ -100,12 +99,8 @@ class Form(KWizard):
         self.pageUploadDlg = UploadDlg()
         self.addPage(self.pageUploadDlg, i18n("Uploading"))
 
-        self.pageGoodbyeDlg  = GoodbyeDlg()
-        self.addPage(self.pageGoodbyeDlg, i18n("Goodbye!"))
-
         # Pixmaps
         self.pageExperienceDlg.experiencePixmap.setPixmap(self.image_feedback)
-        self.pageGoodbyeDlg.goodbyePixmap.setPixmap(self.image_feedback)
         self.pageHardwareInfoDlg.hardwareInfoPixmap.setPixmap(self.image_feedback)
         self.pageOpinionDlg.opinionPixmap.setPixmap(self.image_feedback)
         self.pageHardwareInfoDlg.hardwareInfoPixmap.setPixmap(self.image_feedback)
@@ -124,15 +119,14 @@ class Form(KWizard):
         for i in range(self.pageCount()):
             # No help button
             self.setHelpEnabled(self.page(i), 0)
+
         
         self.pageUploadDlg.buttonRetry.hide()
         QObject.connect(self.pageUploadDlg.buttonRetry, SIGNAL("clicked()"), self.button_retry_clicked)
-        
+
         # Buttons on last 2 pages
         self.setBackEnabled(self.pageUploadDlg, 0)
-        self.setNextEnabled(self.pageUploadDlg, 0)
-        self.setBackEnabled(self.pageGoodbyeDlg, 0)
-        self.setFinishEnabled(self.pageGoodbyeDlg, 1)
+        self.setFinishEnabled(self.pageUploadDlg, 1)
 
     def __tr(self,s,c = None):
         return qApp.translate("Feedback",s,c)
@@ -140,12 +134,13 @@ class Form(KWizard):
     def next_clicked(self):
         if self.currentPage() == self.pageUploadDlg:
             thread_up.start()
+        if self.currentPage() == self.pageHardwareInfoDlg:
+            self.nextButton().setText(i18n("Send"))
 
     def button_retry_clicked(self):
         self.pageUploadDlg.buttonRetry.hide()
         self.pageUploadDlg.labelStatus.setText("")
         self.thread_up.start()
-        
 
 class thread_upload(QThread):
     def run(self):
@@ -244,7 +239,7 @@ class thread_upload(QThread):
             return
 
         if s == "0":
-            text += i18n("<font color=\"#008800\">Done</font><br>\n")
+            text += i18n("<font color=\"#008800\">Done</font><br><br><h2>Thank You!</h2> We have collected all necessary information in order to send to Pardus developers. <p>Thank you for your support to Pardus operating system.</p>\n")
             w.pageUploadDlg.labelStatus.setText(text)
             w.setNextEnabled(w.pageUploadDlg, 1)
         else:

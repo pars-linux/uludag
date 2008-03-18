@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'upload.ui'
+# Form implementation generated from reading ui file 'src/upload.ui'
 #
-# Created: Paz Tem 9 09:41:15 2006
-#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
+# Created: Sal Mar 18 16:24:53 2008
+#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -213,27 +213,27 @@ class UploadDlg(QWidget):
         self.setIcon(self.image0)
 
 
+        self.buttonRetry = QPushButton(self,"buttonRetry")
+        self.buttonRetry.setGeometry(QRect(174,247,120,31))
+        self.buttonRetry.setOn(0)
+
         self.hardwareInfoLabel = QLabel(self,"hardwareInfoLabel")
-        self.hardwareInfoLabel.setGeometry(QRect(171,61,428,26))
+        self.hardwareInfoLabel.setGeometry(QRect(170,30,370,26))
         hardwareInfoLabel_font = QFont(self.hardwareInfoLabel.font())
         self.hardwareInfoLabel.setFont(hardwareInfoLabel_font)
         self.hardwareInfoLabel.setTextFormat(QLabel.RichText)
         self.hardwareInfoLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
 
+        self.hardwareInfoPixmap = QLabel(self,"hardwareInfoPixmap")
+        self.hardwareInfoPixmap.setGeometry(QRect(0,0,142,290))
+        self.hardwareInfoPixmap.setScaledContents(1)
+
         self.labelStatus = QLabel(self,"labelStatus")
-        self.labelStatus.setGeometry(QRect(178,90,420,150))
+        self.labelStatus.setGeometry(QRect(170,70,420,170))
         labelStatus_font = QFont(self.labelStatus.font())
         self.labelStatus.setFont(labelStatus_font)
         self.labelStatus.setTextFormat(QLabel.RichText)
         self.labelStatus.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
-
-        self.buttonRetry = QPushButton(self,"buttonRetry")
-        self.buttonRetry.setGeometry(QRect(174,247,120,31))
-        self.buttonRetry.setOn(0)
-
-        self.hardwareInfoPixmap = QLabel(self,"hardwareInfoPixmap")
-        self.hardwareInfoPixmap.setGeometry(QRect(-5,0,142,290))
-        self.hardwareInfoPixmap.setScaledContents(1)
 
         self.languageChange()
 
@@ -243,6 +243,6 @@ class UploadDlg(QWidget):
 
     def languageChange(self):
         self.setCaption(i18n("Feedback Wizard"))
-        self.hardwareInfoLabel.setText(i18n("<h2>Upload</h2>"))
         self.buttonRetry.setText(i18n("Retry"))
+        self.hardwareInfoLabel.setText(i18n("<h2>Upload</h2>"))
 

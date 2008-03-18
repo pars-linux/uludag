@@ -15,64 +15,6 @@
     <property name="caption">
         <string>Feedback Wizard</string>
     </property>
-    <widget class="QButtonGroup">
-        <property name="name">
-            <cstring>usagebuttonGroup</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>170</x>
-                <y>130</y>
-                <width>400</width>
-                <height>120</height>
-            </rect>
-        </property>
-        <property name="title">
-            <string></string>
-        </property>
-        <widget class="QLayoutWidget">
-            <property name="name">
-                <cstring>layout</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>18</x>
-                    <y>11</y>
-                    <width>160</width>
-                    <height>100</height>
-                </rect>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>usagecheckBoxOne</cstring>
-                    </property>
-                    <property name="text">
-                        <string>At home</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>usagecheckBoxTwo</cstring>
-                    </property>
-                    <property name="text">
-                        <string>At work</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>usagecheckBoxThree</cstring>
-                    </property>
-                    <property name="text">
-                        <string>At school</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>usageMiniLabel</cstring>
@@ -159,6 +101,51 @@
         <property name="alignment">
             <set>WordBreak|AlignTop</set>
         </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>usagebuttonGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>130</y>
+                <width>400</width>
+                <height>130</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string></string>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QCheckBox" row="0" column="0">
+                <property name="name">
+                    <cstring>usagecheckBoxOne</cstring>
+                </property>
+                <property name="text">
+                    <string>At home</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox" row="1" column="0">
+                <property name="name">
+                    <cstring>usagecheckBoxTwo</cstring>
+                </property>
+                <property name="text">
+                    <string>At work</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox" row="2" column="0">
+                <property name="name">
+                    <cstring>usagecheckBoxThree</cstring>
+                </property>
+                <property name="text">
+                    <string>At school</string>
+                </property>
+            </widget>
+        </grid>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>

@@ -20,89 +20,19 @@
     </property>
     <widget class="QLabel">
         <property name="name">
-            <cstring>hardwareInfoLabel</cstring>
+            <cstring>hardwareInfoPixmap</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>171</x>
-                <y>61</y>
-                <width>428</width>
-                <height>70</height>
+                <x>-5</x>
+                <y>0</y>
+                <width>142</width>
+                <height>290</height>
             </rect>
         </property>
-        <property name="font">
-            <font>
-            </font>
+        <property name="scaledContents">
+            <bool>true</bool>
         </property>
-        <property name="text">
-            <string>&lt;h2&gt;Your personal information (optional)&lt;/h2&gt;
-You can submit your e-mail address for inclusion in our low traffic
-announces.</string>
-        </property>
-        <property name="textFormat">
-            <enum>RichText</enum>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>hardwareInfoLabel_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>180</x>
-                <y>150</y>
-                <width>48</width>
-                <height>22</height>
-            </rect>
-        </property>
-        <property name="font">
-            <font>
-            </font>
-        </property>
-        <property name="text">
-            <string>E-mail:</string>
-        </property>
-        <property name="textFormat">
-            <enum>RichText</enum>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout5</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>190</x>
-                <y>200</y>
-                <width>400</width>
-                <height>60</height>
-            </rect>
-        </property>
-        <vbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <widget class="QCheckBox">
-                <property name="name">
-                    <cstring>CheckBoxAnnounce</cstring>
-                </property>
-                <property name="text">
-                    <string>Add me to your Pardus announce list</string>
-                </property>
-                <property name="accel">
-                    <string></string>
-                </property>
-                <property name="checked">
-                    <bool>true</bool>
-                </property>
-            </widget>
-        </vbox>
     </widget>
     <widget class="QLabel">
         <property name="name">
@@ -127,33 +57,107 @@ announces.</string>
             <string>&lt;b&gt;Step 6 of 7&lt;/b&gt;</string>
         </property>
     </widget>
+    <widget class="QLayoutWidget">
+        <property name="name">
+            <cstring>layout16</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>150</y>
+                <width>350</width>
+                <height>100</height>
+            </rect>
+        </property>
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout15</cstring>
+                </property>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLineEdit" row="0" column="1">
+                        <property name="name">
+                            <cstring>lineEmail</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>hardwareInfoLabel_2</cstring>
+                        </property>
+                        <property name="font">
+                            <font>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>E-mail:</string>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
+                        </property>
+                        <property name="alignment">
+                            <set>WordBreak|AlignTop</set>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QLayoutWidget">
+                <property name="name">
+                    <cstring>layout5</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>CheckBoxAnnounce</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Add me to your Pardus announce list</string>
+                        </property>
+                        <property name="accel">
+                            <string></string>
+                        </property>
+                        <property name="checked">
+                            <bool>true</bool>
+                        </property>
+                    </widget>
+                </vbox>
+            </widget>
+        </vbox>
+    </widget>
     <widget class="QLabel">
         <property name="name">
-            <cstring>hardwareInfoPixmap</cstring>
+            <cstring>hardwareInfoLabel</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>-5</x>
-                <y>0</y>
-                <width>142</width>
-                <height>290</height>
+                <x>170</x>
+                <y>60</y>
+                <width>370</width>
+                <height>70</height>
             </rect>
         </property>
-        <property name="scaledContents">
-            <bool>true</bool>
+        <property name="font">
+            <font>
+            </font>
         </property>
-    </widget>
-    <widget class="QLineEdit">
-        <property name="name">
-            <cstring>lineEmail</cstring>
+        <property name="text">
+            <string>&lt;h2&gt;Your personal information (optional)&lt;/h2&gt;
+You can submit your e-mail address for inclusion in our low traffic
+announces.</string>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>245</x>
-                <y>150</y>
-                <width>300</width>
-                <height>22</height>
-            </rect>
+        <property name="textFormat">
+            <enum>RichText</enum>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
         </property>
     </widget>
 </widget>

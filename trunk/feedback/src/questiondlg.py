@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'questiondlg.ui'
+# Form implementation generated from reading ui file 'src/questiondlg.ui'
 #
-# Created: Paz Tem 9 09:41:15 2006
-#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
+# Created: Sal Mar 18 16:24:53 2008
+#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -210,22 +210,6 @@ class QuestionDlg(QWidget):
         self.setIcon(self.image0)
 
 
-        self.buttonGroup = QButtonGroup(self,"buttonGroup")
-        self.buttonGroup.setGeometry(QRect(170,130,400,110))
-
-        self.questionOne = QRadioButton(self.buttonGroup,"questionOne")
-        self.questionOne.setGeometry(QRect(21,15,343,19))
-        self.questionOne.setChecked(1)
-        self.buttonGroup.insert( self.questionOne,0)
-
-        self.questionTwo = QRadioButton(self.buttonGroup,"questionTwo")
-        self.questionTwo.setGeometry(QRect(21,45,343,19))
-        self.buttonGroup.insert( self.questionTwo,1)
-
-        self.questionThree = QRadioButton(self.buttonGroup,"questionThree")
-        self.questionThree.setGeometry(QRect(21,75,343,19))
-        self.buttonGroup.insert( self.questionThree,2)
-
         self.questionLabel = QLabel(self,"questionLabel")
         self.questionLabel.setGeometry(QRect(170,60,420,40))
         questionLabel_font = QFont(self.questionLabel.font())
@@ -243,6 +227,30 @@ class QuestionDlg(QWidget):
         self.questionPixmap.setGeometry(QRect(-5,0,142,290))
         self.questionPixmap.setScaledContents(1)
 
+        self.buttonGroup = QButtonGroup(self,"buttonGroup")
+        self.buttonGroup.setGeometry(QRect(170,130,400,120))
+        self.buttonGroup.setColumnLayout(0,Qt.Vertical)
+        self.buttonGroup.layout().setSpacing(6)
+        self.buttonGroup.layout().setMargin(11)
+        buttonGroupLayout = QGridLayout(self.buttonGroup.layout())
+        buttonGroupLayout.setAlignment(Qt.AlignTop)
+
+        self.questionOne = QRadioButton(self.buttonGroup,"questionOne")
+        self.questionOne.setChecked(1)
+        self.buttonGroup.insert( self.questionOne,0)
+
+        buttonGroupLayout.addWidget(self.questionOne,0,0)
+
+        self.questionThree = QRadioButton(self.buttonGroup,"questionThree")
+        self.buttonGroup.insert( self.questionThree,2)
+
+        buttonGroupLayout.addWidget(self.questionThree,2,0)
+
+        self.questionTwo = QRadioButton(self.buttonGroup,"questionTwo")
+        self.buttonGroup.insert( self.questionTwo,1)
+
+        buttonGroupLayout.addWidget(self.questionTwo,1,0)
+
         self.languageChange()
 
         self.resize(QSize(619,287).expandedTo(self.minimumSizeHint()))
@@ -251,10 +259,10 @@ class QuestionDlg(QWidget):
 
     def languageChange(self):
         self.setCaption(i18n("Feedback Wizard"))
-        self.buttonGroup.setTitle(QString.null)
-        self.questionOne.setText(i18n("Very satisfying. Pardus fulfils my requirements"))
-        self.questionTwo.setText(i18n("Good, however it lacks some capabilities"))
-        self.questionThree.setText(i18n("It does not meet my requirements"))
         self.questionLabel.setText(i18n("<h2>How does Pardus fit your needs?</h2>"))
         self.stepLabel.setText(i18n("<b>Step 4 of 7</b>"))
+        self.buttonGroup.setTitle(QString.null)
+        self.questionOne.setText(i18n("Very satisfying. Pardus fulfils my requirements"))
+        self.questionThree.setText(i18n("It does not meet my requirements"))
+        self.questionTwo.setText(i18n("Good, however it lacks some capabilities"))
 

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'usagedlg.ui'
+# Form implementation generated from reading ui file 'src/usagedlg.ui'
 #
-# Created: Paz Tem 9 09:41:15 2006
-#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
+# Created: Sal Mar 18 16:24:53 2008
+#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -22,22 +22,6 @@ class UsageDlg(QDialog):
             self.setName("UsageDlg")
 
 
-
-        self.usagebuttonGroup = QButtonGroup(self,"usagebuttonGroup")
-        self.usagebuttonGroup.setGeometry(QRect(170,130,400,120))
-
-        LayoutWidget = QWidget(self.usagebuttonGroup,"layout")
-        LayoutWidget.setGeometry(QRect(18,11,160,100))
-        layout = QVBoxLayout(LayoutWidget,11,6,"layout")
-
-        self.usagecheckBoxOne = QCheckBox(LayoutWidget,"usagecheckBoxOne")
-        layout.addWidget(self.usagecheckBoxOne)
-
-        self.usagecheckBoxTwo = QCheckBox(LayoutWidget,"usagecheckBoxTwo")
-        layout.addWidget(self.usagecheckBoxTwo)
-
-        self.usagecheckBoxThree = QCheckBox(LayoutWidget,"usagecheckBoxThree")
-        layout.addWidget(self.usagecheckBoxThree)
 
         self.usageMiniLabel = QLabel(self,"usageMiniLabel")
         self.usageMiniLabel.setGeometry(QRect(300,100,270,24))
@@ -59,6 +43,26 @@ class UsageDlg(QDialog):
         self.usageLabel.setTextFormat(QLabel.RichText)
         self.usageLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
 
+        self.usagebuttonGroup = QButtonGroup(self,"usagebuttonGroup")
+        self.usagebuttonGroup.setGeometry(QRect(170,130,400,130))
+        self.usagebuttonGroup.setColumnLayout(0,Qt.Vertical)
+        self.usagebuttonGroup.layout().setSpacing(6)
+        self.usagebuttonGroup.layout().setMargin(11)
+        usagebuttonGroupLayout = QGridLayout(self.usagebuttonGroup.layout())
+        usagebuttonGroupLayout.setAlignment(Qt.AlignTop)
+
+        self.usagecheckBoxOne = QCheckBox(self.usagebuttonGroup,"usagecheckBoxOne")
+
+        usagebuttonGroupLayout.addWidget(self.usagecheckBoxOne,0,0)
+
+        self.usagecheckBoxTwo = QCheckBox(self.usagebuttonGroup,"usagecheckBoxTwo")
+
+        usagebuttonGroupLayout.addWidget(self.usagecheckBoxTwo,1,0)
+
+        self.usagecheckBoxThree = QCheckBox(self.usagebuttonGroup,"usagecheckBoxThree")
+
+        usagebuttonGroupLayout.addWidget(self.usagecheckBoxThree,2,0)
+
         self.languageChange()
 
         self.resize(QSize(619,286).expandedTo(self.minimumSizeHint()))
@@ -67,11 +71,11 @@ class UsageDlg(QDialog):
 
     def languageChange(self):
         self.setCaption(i18n("Feedback Wizard"))
+        self.usageMiniLabel.setText(i18n("<p align=\"right\">(You can click on multiple items)</p>"))
+        self.stepLabel.setText(i18n("<b>Step 3 of 7</b>"))
+        self.usageLabel.setText(i18n("<h2>Where do you use Pardus?</h2>"))
         self.usagebuttonGroup.setTitle(QString.null)
         self.usagecheckBoxOne.setText(i18n("At home"))
         self.usagecheckBoxTwo.setText(i18n("At work"))
         self.usagecheckBoxThree.setText(i18n("At school"))
-        self.usageMiniLabel.setText(i18n("<p align=\"right\">(You can click on multiple items)</p>"))
-        self.stepLabel.setText(i18n("<b>Step 3 of 7</b>"))
-        self.usageLabel.setText(i18n("<h2>Where do you use Pardus?</h2>"))
 
