@@ -20,7 +20,6 @@ for lang in ["tr", "nl", "de", "es", "pt_BR", "it","fr","ca", "pl"]:
 		"Service Manager": REAL_PATH + "tasma/service-manager/po/%s.po" % lang,
 		"User Manager": REAL_PATH + "tasma/user-manager/po/%s.po" % lang,
 		"PiSi": REAL_PATH + "pisi/po/%s.po" % lang,
-		"ÇOMAR": REAL_PATH + "comar/comar/po/%s.po" % lang,
 		"Müdür": REAL_PATH + "comar/mudur/po/%s.po" % lang,
 		"Sysinfo": REAL_PATH + "sysinfo/po/%s/kio_sysinfo.po" % lang,
 		"YALI": REAL_PATH + "yali/po/%s.po" % lang,
