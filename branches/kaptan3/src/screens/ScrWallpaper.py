@@ -54,6 +54,7 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.isWide = False
 
         rect =  QApplication.desktop().screenGeometry()
+
         if float(rect.width())/float(rect.height()) >=  1.6:
             self.isWide = True
         else:
@@ -90,11 +91,10 @@ class Widget(WallpaperWidget, ScreenWidget):
 
                     #TODO: don't hardcode the path. strip or sth.
                     wallpaperFile = "/usr/kde/3.5/share/wallpapers/"+wallpaperFile
-
                     #dict titles and file names
                     if self.isWide == True and resolution == "Wide":
                         self.wideWallpapers[wallpaperTitle] = wallpaperFile
-                    elif self.isWide == False:
+                    elif self.isWide == False and not resolution:
                         self.normalWallpapers[wallpaperTitle] = wallpaperFile
 
                     self.wallpaperList[wallpaperTitle] = wallpaperFile
@@ -108,22 +108,21 @@ class Widget(WallpaperWidget, ScreenWidget):
             self.sortAndList(self.normalWallpapers)
 
         # set the wallpaper which has been using before kaptan started.
-        if current:
-            wallpaperTitle = "Current Wallpaper"
-            wallpaperFile = current
-
-            self.wallpaperList[wallpaperTitle]= wallpaperFile
-            self.listWallpaperItem(wallpaperTitle, QImage(wallpaperFile))
-        #if there's no wallpaper
-        else:
-            wallpaperTitle = "No Wallpaper"
-            wallpaperFile = "kaptan/pics/no-wallpaper.png"
-
-            self.wallpaperList[wallpaperTitle]= wallpaperFile
-
-        self.listWallpaper.setSelected(self.listWallpaper.firstChild(),True)
+        self.setCurrentWallpaper()
         self.listWallpaper.connect(self.listWallpaper, SIGNAL("selectionChanged()"), self.setWallpaper)
         self.checkAllWallpapers.connect(self.checkAllWallpapers, SIGNAL("toggled(bool)"), self.showAllWallpapers)
+
+    def setCurrentWallpaper(self):
+        if current:
+            if not "Current Wallpaper" in self.wallpaperList:
+                self.listWallpaperItem("Current Wallpaper", QImage(current))
+            self.wallpaperList["Current Wallpaper"] = current
+        else:
+            wallpaperFile = "kaptan/pics/no-wallpaper.png"
+            self.listWallpaperItem("No Wallpaper", current)
+            self.wallpaperList["No Wallpaper"]= wallpaperFile
+
+        self.listWallpaper.setSelected(self.listWallpaper.firstChild(),True)
 
     def sortAndList(self, specList):
         self.sortedWallpapers = self.dictSort(specList)
@@ -133,8 +132,16 @@ class Widget(WallpaperWidget, ScreenWidget):
             self.listWallpaperItem(i, QImage(specList[i]))
 
     def showAllWallpapers(self):
-        self.listWallpaper.clear()
-        self.sortAndList(self.wallpaperList)
+        if self.checkAllWallpapers.isChecked():
+            self.listWallpaper.clear()
+            self.sortAndList(self.wallpaperList)
+        else:
+            self.listWallpaper.clear()
+            if self.isWide:
+                self.sortAndList(self.wideWallpapers)
+            else:
+                self.sortAndList(self.normalWallpapers)
+        self.setCurrentWallpaper()
 
     def dictSort(self, wallDict):
         keys = wallDict.keys()
