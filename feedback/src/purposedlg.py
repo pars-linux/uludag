@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'purposedlg.ui'
+# Form implementation generated from reading ui file 'src/purposedlg.ui'
 #
-# Created: Paz Tem 9 09:41:15 2006
-#      by: The PyQt User Interface Compiler (pyuic) snapshot-20060407
+# Created: Sal Mar 18 16:24:53 2008
+#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -23,8 +23,30 @@ class PurposeDlg(QDialog):
 
 
 
+        self.purposePixmap = QLabel(self,"purposePixmap")
+        self.purposePixmap.setGeometry(QRect(-5,0,142,290))
+        self.purposePixmap.setFrameShape(QLabel.NoFrame)
+        self.purposePixmap.setFrameShadow(QLabel.Plain)
+        self.purposePixmap.setScaledContents(1)
+
+        self.stepLabel = QLabel(self,"stepLabel")
+        self.stepLabel.setGeometry(QRect(160,20,100,21))
+        self.stepLabel.setPaletteForegroundColor(QColor(77,77,77))
+        self.stepLabel.setFrameShape(QLabel.NoFrame)
+        self.stepLabel.setFrameShadow(QLabel.Plain)
+
+        self.purposeMiniLabel = QLabel(self,"purposeMiniLabel")
+        self.purposeMiniLabel.setGeometry(QRect(310,100,260,20))
+
+        self.purposeLabel = QLabel(self,"purposeLabel")
+        self.purposeLabel.setGeometry(QRect(160,60,420,40))
+        purposeLabel_font = QFont(self.purposeLabel.font())
+        self.purposeLabel.setFont(purposeLabel_font)
+        self.purposeLabel.setTextFormat(QLabel.RichText)
+        self.purposeLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
+
         self.buttonGroup = QButtonGroup(self,"buttonGroup")
-        self.buttonGroup.setGeometry(QRect(170,130,400,120))
+        self.buttonGroup.setGeometry(QRect(160,130,410,120))
 
         LayoutWidget = QWidget(self.buttonGroup,"layout6")
         LayoutWidget.setGeometry(QRect(16,11,370,100))
@@ -54,26 +76,6 @@ class PurposeDlg(QDialog):
         layout18_2.addWidget(self.checkBoxEdu)
         layout6.addLayout(layout18_2)
 
-        self.purposeMiniLabel = QLabel(self,"purposeMiniLabel")
-        self.purposeMiniLabel.setGeometry(QRect(310,100,260,20))
-
-        self.purposeLabel = QLabel(self,"purposeLabel")
-        self.purposeLabel.setGeometry(QRect(170,60,420,40))
-        purposeLabel_font = QFont(self.purposeLabel.font())
-        self.purposeLabel.setFont(purposeLabel_font)
-        self.purposeLabel.setTextFormat(QLabel.RichText)
-        self.purposeLabel.setAlignment(QLabel.WordBreak | QLabel.AlignTop)
-
-        self.stepLabel = QLabel(self,"stepLabel")
-        self.stepLabel.setGeometry(QRect(160,20,100,21))
-        self.stepLabel.setPaletteForegroundColor(QColor(77,77,77))
-        self.stepLabel.setFrameShape(QLabel.NoFrame)
-        self.stepLabel.setFrameShadow(QLabel.Plain)
-
-        self.purposePixmap = QLabel(self,"purposePixmap")
-        self.purposePixmap.setGeometry(QRect(-5,0,142,290))
-        self.purposePixmap.setScaledContents(1)
-
         self.languageChange()
 
         self.resize(QSize(620,286).expandedTo(self.minimumSizeHint()))
@@ -82,6 +84,9 @@ class PurposeDlg(QDialog):
 
     def languageChange(self):
         self.setCaption(i18n("Feedback wizard"))
+        self.stepLabel.setText(i18n("<b>Step 2 of 7</b>"))
+        self.purposeMiniLabel.setText(i18n("<p align=\"right\">(You can click on multiple items)</p>"))
+        self.purposeLabel.setText(i18n("<h2>Why do you use Pardus?</h2>"))
         self.buttonGroup.setTitle(QString.null)
         self.checkBoxDaily.setText(i18n("Daily use"))
         self.checkBoxHobby.setText(i18n("It's my hobby"))
@@ -89,7 +94,4 @@ class PurposeDlg(QDialog):
         self.checkBoxBus.setText(i18n("For business"))
         self.checkBoxEnt.setText(i18n("Entertainment purposes"))
         self.checkBoxEdu.setText(i18n("Educational purposes"))
-        self.purposeMiniLabel.setText(i18n("<p align=\"right\">(You can click on multiple items)</p>"))
-        self.purposeLabel.setText(i18n("<h2>Why do you use Pardus?</h2>"))
-        self.stepLabel.setText(i18n("<b>Step 2 of 7</b>"))
 

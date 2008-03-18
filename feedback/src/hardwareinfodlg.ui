@@ -18,22 +18,6 @@
     <property name="icon">
         <pixmap>image0</pixmap>
     </property>
-    <widget class="QCheckBox">
-        <property name="name">
-            <cstring>hardwareInfoBox</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>230</x>
-                <y>240</y>
-                <width>340</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&amp;Do not send my computer's hardware information</string>
-        </property>
-    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>hardwareInfoPixmap</cstring>
@@ -45,6 +29,12 @@
                 <width>142</width>
                 <height>290</height>
             </rect>
+        </property>
+        <property name="maximumSize">
+            <size>
+                <width>142</width>
+                <height>290</height>
+            </size>
         </property>
         <property name="scaledContents">
             <bool>true</bool>
@@ -73,24 +63,32 @@
             <string>&lt;b&gt;Step 7 of 7&lt;/b&gt;</string>
         </property>
     </widget>
-    <widget class="QLabel">
+    <widget class="QLayoutWidget">
         <property name="name">
-            <cstring>hardwareInfoLabel</cstring>
+            <cstring>layout8</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>170</x>
+                <x>160</x>
                 <y>60</y>
                 <width>420</width>
-                <height>150</height>
+                <height>200</height>
             </rect>
         </property>
-        <property name="font">
-            <font>
-            </font>
-        </property>
-        <property name="text">
-            <string>&lt;h2&gt;Computer information&lt;/h2&gt;
+        <vbox>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QLabel">
+                <property name="name">
+                    <cstring>hardwareInfoLabel</cstring>
+                </property>
+                <property name="font">
+                    <font>
+                    </font>
+                </property>
+                <property name="text">
+                    <string>&lt;h2&gt;Computer information&lt;/h2&gt;
 &lt;p&gt;
 Pardus Hardware CollectInfo Wizard will now gather information from
 your hardware, including CPU, memory and network cards. This 
@@ -99,13 +97,26 @@ build more stable and secure Pardus. You will need an internet
 access for this operation to complete. 
 
 &lt;b&gt;Note that we will not collect any of your personal documents.&lt;/b&gt;</string>
-        </property>
-        <property name="textFormat">
-            <enum>RichText</enum>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
+                </property>
+                <property name="textFormat">
+                    <enum>RichText</enum>
+                </property>
+                <property name="alignment">
+                    <set>WordBreak|AlignTop</set>
+                </property>
+            </widget>
+            <widget class="QCheckBox">
+                <property name="name">
+                    <cstring>hardwareInfoBox</cstring>
+                </property>
+                <property name="text">
+                    <string>&amp;Do not send my computer's hardware information</string>
+                </property>
+                <property name="accel">
+                    <string>Alt+D</string>
+                </property>
+            </widget>
+        </vbox>
     </widget>
 </widget>
 <images>

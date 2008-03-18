@@ -18,101 +18,6 @@
     <property name="icon">
         <pixmap>image0</pixmap>
     </property>
-    <widget class="QButtonGroup">
-        <property name="name">
-            <cstring>experiencebuttonGroup</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>170</x>
-                <y>110</y>
-                <width>400</width>
-                <height>140</height>
-            </rect>
-        </property>
-        <property name="title">
-            <string></string>
-        </property>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>questionFour</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>110</y>
-                    <width>318</width>
-                    <height>19</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Experienced system administrator</string>
-            </property>
-            <property name="buttonGroupId">
-                <number>3</number>
-            </property>
-        </widget>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>questionOne</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>20</y>
-                    <width>318</width>
-                    <height>19</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>New user</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-            <property name="buttonGroupId">
-                <number>1</number>
-            </property>
-        </widget>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>questionTwo</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>50</y>
-                    <width>318</width>
-                    <height>19</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Home/office productivity user</string>
-            </property>
-            <property name="buttonGroupId">
-                <number>0</number>
-            </property>
-        </widget>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>questionThree</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>80</y>
-                    <width>318</width>
-                    <height>19</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Experienced user</string>
-            </property>
-            <property name="buttonGroupId">
-                <number>4</number>
-            </property>
-        </widget>
-    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>experienceLabel</cstring>
@@ -183,6 +88,74 @@
         <property name="scaledContents">
             <bool>true</bool>
         </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>experiencebuttonGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>110</y>
+                <width>410</width>
+                <height>150</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string></string>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QRadioButton" row="3" column="0">
+                <property name="name">
+                    <cstring>questionFour</cstring>
+                </property>
+                <property name="text">
+                    <string>Experienced system administrator</string>
+                </property>
+                <property name="buttonGroupId">
+                    <number>3</number>
+                </property>
+            </widget>
+            <widget class="QRadioButton" row="2" column="0">
+                <property name="name">
+                    <cstring>questionThree</cstring>
+                </property>
+                <property name="text">
+                    <string>Experienced user</string>
+                </property>
+                <property name="buttonGroupId">
+                    <number>4</number>
+                </property>
+            </widget>
+            <widget class="QRadioButton" row="1" column="0">
+                <property name="name">
+                    <cstring>questionTwo</cstring>
+                </property>
+                <property name="text">
+                    <string>Home/office productivity user</string>
+                </property>
+                <property name="buttonGroupId">
+                    <number>0</number>
+                </property>
+            </widget>
+            <widget class="QRadioButton" row="0" column="0">
+                <property name="name">
+                    <cstring>questionOne</cstring>
+                </property>
+                <property name="text">
+                    <string>New user</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+                <property name="buttonGroupId">
+                    <number>1</number>
+                </property>
+            </widget>
+        </grid>
     </widget>
 </widget>
 <images>

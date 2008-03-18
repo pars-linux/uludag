@@ -18,82 +18,6 @@
     <property name="icon">
         <pixmap>image0</pixmap>
     </property>
-    <widget class="QButtonGroup">
-        <property name="name">
-            <cstring>buttonGroup</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>170</x>
-                <y>130</y>
-                <width>400</width>
-                <height>110</height>
-            </rect>
-        </property>
-        <property name="title">
-            <string></string>
-        </property>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>questionOne</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>21</x>
-                    <y>15</y>
-                    <width>343</width>
-                    <height>19</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Very satisfying. Pardus fulfils my requirements</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-            <property name="buttonGroupId">
-                <number>0</number>
-            </property>
-        </widget>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>questionTwo</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>21</x>
-                    <y>45</y>
-                    <width>343</width>
-                    <height>19</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>Good, however it lacks some capabilities</string>
-            </property>
-            <property name="buttonGroupId">
-                <number>1</number>
-            </property>
-        </widget>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>questionThree</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>21</x>
-                    <y>75</y>
-                    <width>343</width>
-                    <height>19</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>It does not meet my requirements</string>
-            </property>
-            <property name="buttonGroupId">
-                <number>2</number>
-            </property>
-        </widget>
-    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>questionLabel</cstring>
@@ -164,6 +88,63 @@
         <property name="scaledContents">
             <bool>true</bool>
         </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>170</x>
+                <y>130</y>
+                <width>400</width>
+                <height>120</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string></string>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QRadioButton" row="0" column="0">
+                <property name="name">
+                    <cstring>questionOne</cstring>
+                </property>
+                <property name="text">
+                    <string>Very satisfying. Pardus fulfils my requirements</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+                <property name="buttonGroupId">
+                    <number>0</number>
+                </property>
+            </widget>
+            <widget class="QRadioButton" row="2" column="0">
+                <property name="name">
+                    <cstring>questionThree</cstring>
+                </property>
+                <property name="text">
+                    <string>It does not meet my requirements</string>
+                </property>
+                <property name="buttonGroupId">
+                    <number>2</number>
+                </property>
+            </widget>
+            <widget class="QRadioButton" row="1" column="0">
+                <property name="name">
+                    <cstring>questionTwo</cstring>
+                </property>
+                <property name="text">
+                    <string>Good, however it lacks some capabilities</string>
+                </property>
+                <property name="buttonGroupId">
+                    <number>1</number>
+                </property>
+            </widget>
+        </grid>
     </widget>
 </widget>
 <images>
