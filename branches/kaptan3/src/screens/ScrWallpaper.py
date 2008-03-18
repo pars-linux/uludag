@@ -46,9 +46,10 @@ class Widget(WallpaperWidget, ScreenWidget):
     desc = "Enjoy with wonderful backgrounds..."
     icon = summary["pic"]
 
-    
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
+
+        self.checkAllWallpapers.setText(i18n("Show all resolutions."))
 
         self.isWide = False
 
@@ -63,7 +64,8 @@ class Widget(WallpaperWidget, ScreenWidget):
         #set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.wallpaperList = {}
-        self.allWallpaperList = {}
+        self.wideWallpapers = {}
+        self.normalWallpapers = {}
         lst = {}
 
         # get .desktop files from global resources
@@ -80,25 +82,30 @@ class Widget(WallpaperWidget, ScreenWidget):
                 try:
                     #there must have been a Resolution=Wide tag in wallpaper file.
                     resolution =  parser.get_locale('Wallpaper', 'Resolution', '')
+                except ConfigParser.NoOptionError:
+                    resolution = False
+                try:
                     wallpaperTitle = parser.get_locale('Wallpaper', 'Name', '')
-                    #maybe show author too?
-                    #wallpaperAuthor = parser.get_locale('Wallpaper', 'Author', '')
                     wallpaperFile = parser.get_locale('Wallpaper', 'File','')
+
                     #TODO: don't hardcode the path. strip or sth.
                     wallpaperFile = "/usr/kde/3.5/share/wallpapers/"+wallpaperFile
+
                     #dict titles and file names
                     if self.isWide == True and resolution == "Wide":
-                        self.wallpaperList[wallpaperTitle] = wallpaperFile
-                    self.allWallpaperList[wallpaperTitle] = wallpaperFile
+                        self.wideWallpapers[wallpaperTitle] = wallpaperFile
+                    elif self.isWide == False:
+                        self.normalWallpapers[wallpaperTitle] = wallpaperFile
+
+                    self.wallpaperList[wallpaperTitle] = wallpaperFile
                 except ConfigParser.NoOptionError:
                     #if option doesn't exist, skip.
                     pass
 
-        self.sortedWallpapers = self.dictSort(self.wallpaperList)
-        self.sortedWallpapers.reverse()
-
-        for i in self.sortedWallpapers:
-            self.listWallpaperItem(i, QImage(self.wallpaperList[i]))
+        if self.isWide == True:
+            self.sortAndList(self.wideWallpapers)
+        else:
+            self.sortAndList(self.normalWallpapers)
 
         # set the wallpaper which has been using before kaptan started.
         if current:
@@ -116,6 +123,18 @@ class Widget(WallpaperWidget, ScreenWidget):
 
         self.listWallpaper.setSelected(self.listWallpaper.firstChild(),True)
         self.listWallpaper.connect(self.listWallpaper, SIGNAL("selectionChanged()"), self.setWallpaper)
+        self.checkAllWallpapers.connect(self.checkAllWallpapers, SIGNAL("toggled(bool)"), self.showAllWallpapers)
+
+    def sortAndList(self, specList):
+        self.sortedWallpapers = self.dictSort(specList)
+        self.sortedWallpapers.reverse()
+
+        for i in self.sortedWallpapers:
+            self.listWallpaperItem(i, QImage(specList[i]))
+
+    def showAllWallpapers(self):
+        self.listWallpaper.clear()
+        self.sortAndList(self.wallpaperList)
 
     def dictSort(self, wallDict):
         keys = wallDict.keys()
