@@ -55,7 +55,7 @@
                 <enum>ParentOrigin</enum>
             </property>
             <property name="frameShape">
-                <enum>TabWidgetPanel</enum>
+                <enum>NoFrame</enum>
             </property>
             <property name="lineWidth">
                 <number>2</number>

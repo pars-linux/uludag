@@ -180,13 +180,6 @@
             <property name="name">
                 <cstring>numInput</cstring>
             </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>246</red>
-                    <green>246</green>
-                    <blue>246</blue>
-                </color>
-            </property>
             <property name="backgroundOrigin">
                 <enum>AncestorOrigin</enum>
             </property>

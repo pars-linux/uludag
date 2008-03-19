@@ -41,7 +41,7 @@ class Widget(PanelWidget, ScreenWidget):
         # set texts
         self.setCaption(i18n("Panel"))
         self.styleLabel.setText(i18n("Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides some eye candy styles for you."))
-        self.styleSettingsGroup.setTitle(i18n("Style"))
+        #self.styleSettingsGroup.setTitle(i18n("Style"))
         self.pix_style.setText(QString.null)
         self.styleButton.setText(i18n("Preview"))
         self.checkKickoff.setText(i18n("Use enhanced Kickoff style menu"))
