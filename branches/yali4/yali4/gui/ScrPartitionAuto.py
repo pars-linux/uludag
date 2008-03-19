@@ -82,13 +82,13 @@ about disk partitioning.
         if not self.ui.device_list.count():
             raise YaliExceptionInfo, _("It seems that you don't have the required disk space (min. %s) for Pardus installation." % ctx.consts.min_root_size)
 
-        self.scanPartitions()
         self.connect(self.ui.accept_auto_1, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.accept_auto_2, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
         self.connect(self.ui.device_list, SIGNAL("currentRowChanged(int)"),self.slotDeviceChanged)
 
     def shown(self):
+        self.scanPartitions()
         def sortBySize(x,y):
             if x["newSize"]>y["newSize"]:return -1
             elif x["newSize"]==y["newSize"]: return 0

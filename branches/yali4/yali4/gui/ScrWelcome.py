@@ -73,7 +73,6 @@ Have a fruitful experience with Pardus!
 
         self.connect(self.ui.gplButton, SIGNAL("clicked()"),
                      self.showGPL)
-        ctx.mainScreen.processEvents()
 
     def slotAcceptToggled(self, b):
         if b:
@@ -107,3 +106,4 @@ Have a fruitful experience with Pardus!
             ctx.mainScreen.enableNext()
         else:
             ctx.mainScreen.disableNext()
+        ctx.mainScreen.processEvents()

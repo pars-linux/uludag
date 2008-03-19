@@ -109,7 +109,10 @@ class DiskList(QtGui.QWidget):
         self.diskCount = 1
 
         for dev in self.devs:
-            ctx.debugger.log("Device Found %s" % dev.getModel())
+            try:
+                ctx.debugger.log("Device Found %s" % dev.getModel())
+            except:
+                pass
             self.addDevice(dev)
 
         self.tabWidget.setCurrentIndex(_cur)

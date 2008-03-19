@@ -10,7 +10,6 @@
 # Please read the COPYING file.
 #
 
-
 import sys
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -23,12 +22,13 @@ import yali4
 import yali4.sysutils
 import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
-#from yali4.gui.YaliDialog import InformationWindow
 
 from yali4.gui.debugger import Debugger
 from yali4.gui.debugger import DebuggerAspect
 
+# mainScreen
 import YaliWindow
+
 # screens
 import ScrKahyaCheck
 import ScrWelcome
