@@ -107,7 +107,7 @@
                         <cstring>checkKickoff</cstring>
                     </property>
                     <property name="backgroundOrigin">
-                        <enum>ParentOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>

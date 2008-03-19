@@ -416,6 +416,9 @@
             <property name="name">
                 <cstring>checkAllWallpapers</cstring>
             </property>
+            <property name="backgroundOrigin">
+                <enum>AncestorOrigin</enum>
+            </property>
             <property name="text">
                 <string></string>
             </property>

@@ -28,7 +28,7 @@ import screens.ScrPackage as ScrPackage
 import screens.ScrMouse as ScrMouse
 import screens.ScrNetwork as ScrNetwork
 import screens.ScrPanel as ScrPanel
-import screens.ScrSummary as ScrSummary
+#import screens.ScrSummary as ScrSummary
 import screens.ScrGoodbye as ScrGoodbye
 import screens.ScrMultiple as ScrMultiple
 
@@ -40,7 +40,6 @@ avail_screens = [ScrWelcome,
                  ScrWallpaper,
                  ScrNetwork,
                  ScrPackage,
-                 ScrSummary,
                  ScrGoodbye]
 
 

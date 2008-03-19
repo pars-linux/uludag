@@ -23,15 +23,8 @@
             <property name="name">
                 <cstring>networkFrame</cstring>
             </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
             <property name="backgroundOrigin">
-                <enum>WindowOrigin</enum>
+                <enum>ParentOrigin</enum>
             </property>
             <property name="frameShape">
                 <enum>NoFrame</enum>
@@ -50,6 +43,9 @@
                         <width>401</width>
                         <height>251</height>
                     </rect>
+                </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
                 </property>
                 <property name="textFormat">
                     <enum>RichText</enum>

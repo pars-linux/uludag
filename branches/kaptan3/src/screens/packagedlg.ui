@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <spacer row="0" column="1">
+        <spacer row="0" column="2">
             <property name="name">
                 <cstring>spacer80</cstring>
             </property>
@@ -36,7 +36,7 @@
                 </size>
             </property>
         </spacer>
-        <spacer row="4" column="1">
+        <spacer row="4" column="2">
             <property name="name">
                 <cstring>spacer81</cstring>
             </property>
@@ -53,19 +53,12 @@
                 </size>
             </property>
         </spacer>
-        <widget class="QGroupBox" row="2" column="1">
+        <widget class="QGroupBox" row="2" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>groupBoxUpdates</cstring>
             </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
             <property name="backgroundOrigin">
-                <enum>WindowOrigin</enum>
+                <enum>AncestorOrigin</enum>
             </property>
             <property name="title">
                 <string></string>
@@ -78,15 +71,8 @@
                     <property name="name">
                         <cstring>showTray</cstring>
                     </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
                     <property name="backgroundOrigin">
-                        <enum>WindowOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -131,15 +117,8 @@
                             <property name="enabled">
                                 <bool>false</bool>
                             </property>
-                            <property name="paletteBackgroundColor">
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
-                            </property>
                             <property name="backgroundOrigin">
-                                <enum>WindowOrigin</enum>
+                                <enum>AncestorOrigin</enum>
                             </property>
                             <property name="text">
                                 <string></string>
@@ -152,12 +131,8 @@
                             <property name="enabled">
                                 <bool>false</bool>
                             </property>
-                            <property name="paletteBackgroundColor">
-                                <color>
-                                    <red>255</red>
-                                    <green>255</green>
-                                    <blue>255</blue>
-                                </color>
+                            <property name="backgroundOrigin">
+                                <enum>WindowOrigin</enum>
                             </property>
                             <property name="suffix">
                                 <string></string>
@@ -187,18 +162,8 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="backgroundMode">
-                        <enum>PaletteHighlightedText</enum>
-                    </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
                     <property name="backgroundOrigin">
-                        <enum>WidgetOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                 </widget>
                 <widget class="QLabel">
@@ -223,19 +188,12 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QGroupBox" row="3" column="1">
+        <widget class="QGroupBox" row="3" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>groupBoxRepo</cstring>
             </property>
-            <property name="paletteBackgroundColor">
-                <color>
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
             <property name="backgroundOrigin">
-                <enum>WindowOrigin</enum>
+                <enum>AncestorOrigin</enum>
             </property>
             <property name="title">
                 <string></string>
@@ -248,15 +206,8 @@
                     <property name="name">
                         <cstring>textLabelContrib</cstring>
                     </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
                     <property name="backgroundOrigin">
-                        <enum>WindowOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -266,15 +217,8 @@
                     <property name="name">
                         <cstring>checkBoxContrib</cstring>
                     </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
                     <property name="backgroundOrigin">
-                        <enum>WindowOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -282,7 +226,7 @@
                 </widget>
             </vbox>
         </widget>
-        <spacer row="2" column="2">
+        <spacer row="2" column="3">
             <property name="name">
                 <cstring>spacer108</cstring>
             </property>

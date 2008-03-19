@@ -43,7 +43,7 @@
                 </size>
             </property>
         </spacer>
-        <spacer row="1" column="0" rowspan="2" colspan="1">
+        <spacer row="1" column="0">
             <property name="name">
                 <cstring>spacer112</cstring>
             </property>
@@ -51,11 +51,11 @@
                 <enum>Horizontal</enum>
             </property>
             <property name="sizeType">
-                <enum>Expanding</enum>
+                <enum>Fixed</enum>
             </property>
             <property name="sizeHint">
                 <size>
-                    <width>21</width>
+                    <width>50</width>
                     <height>20</height>
                 </size>
             </property>
@@ -79,7 +79,7 @@
                         <cstring>doubleClick</cstring>
                     </property>
                     <property name="backgroundOrigin">
-                        <enum>ParentOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -96,7 +96,7 @@
                         <cstring>singleClick</cstring>
                     </property>
                     <property name="backgroundOrigin">
-                        <enum>ParentOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -157,7 +157,7 @@
                         <cstring>rightHanded</cstring>
                     </property>
                     <property name="backgroundOrigin">
-                        <enum>ParentOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -174,7 +174,7 @@
                         <cstring>leftHanded</cstring>
                     </property>
                     <property name="backgroundOrigin">
-                        <enum>ParentOrigin</enum>
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -208,15 +208,8 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
-                    <property name="backgroundMode">
-                        <enum>PaletteHighlightedText</enum>
-                    </property>
-                    <property name="paletteBackgroundColor">
-                        <color>
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
+                    <property name="backgroundOrigin">
+                        <enum>AncestorOrigin</enum>
                     </property>
                     <property name="text">
                         <string></string>
@@ -228,13 +221,13 @@
                     </property>
                     <property name="minimumSize">
                         <size>
-                            <width>130</width>
+                            <width>120</width>
                             <height>100</height>
                         </size>
                     </property>
                     <property name="maximumSize">
                         <size>
-                            <width>145</width>
+                            <width>120</width>
                             <height>100</height>
                         </size>
                     </property>
@@ -258,11 +251,11 @@
                 <enum>Horizontal</enum>
             </property>
             <property name="sizeType">
-                <enum>Expanding</enum>
+                <enum>Fixed</enum>
             </property>
             <property name="sizeHint">
                 <size>
-                    <width>31</width>
+                    <width>50</width>
                     <height>20</height>
                 </size>
             </property>
