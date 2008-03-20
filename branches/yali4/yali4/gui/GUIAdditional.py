@@ -23,10 +23,11 @@ from yali4.gui.Ui.autopartquestion import Ui_autoPartQuestion
 
 class ResizeWidget(QtGui.QWidget):
 
-    def __init__(self, dev, part):
+    def __init__(self, dev, part, rootWidget):
         QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
         self.ui = Ui_PartResizeWidget()
         self.ui.setupUi(self)
+        self.rootWidget = rootWidget
         self.setStyleSheet("""
                 QSlider::groove:horizontal {
                      border: 1px solid #999999;
@@ -68,6 +69,8 @@ class ResizeWidget(QtGui.QWidget):
     def slotResize(self):
         ctx.debugger.log("Resize started on partition %s " % self.part.getPath())
         self.dev.resizePartition(self.part._fsname, int(self.ui.resizeMB.value()),self.part)
+        self.rootWidget.update()
+        self.hide()
 
 class AutoPartQuestionWidget(QtGui.QWidget):
 

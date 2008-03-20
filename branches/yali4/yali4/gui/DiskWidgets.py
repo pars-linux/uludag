@@ -245,7 +245,7 @@ class DiskList(QtGui.QWidget):
         """Asks for resize for selected partition"""
         dev = self.partEdit.currentPart.getDevice()
         part = self.partEdit.currentPart
-        resizeWidget = ResizeWidget(dev, part)
+        resizeWidget = ResizeWidget(dev, part, self)
         resizeWidget.show()
 
     def slotApplyPartitionChanges(self):
