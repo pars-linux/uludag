@@ -80,9 +80,10 @@ class Widget(Ui_YaliMain):
             self.stackMove(id)
 
     # execute next step
-    def slotNext(self):
-        _w = self.mainStack.currentWidget()
-        _w.execute()
+    def slotNext(self,dryRun=False):
+        if not dryRun:
+            _w = self.mainStack.currentWidget()
+            _w.execute()
         self.stackMove(self.getCur(self.moveInc))
         self.moveInc = 1
 

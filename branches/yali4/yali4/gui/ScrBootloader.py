@@ -33,6 +33,9 @@ from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 
+# Auto Partition Methods
+methodUseAvail, methodEraseAll = range(2)
+
 ##
 # BootLoader screen.
 class Widget(QtGui.QWidget, ScreenWidget):
@@ -184,18 +187,24 @@ and easy way to install Pardus.</p>
         info = InformationWindow(_("Writing disk tables ..."))
 
         # We should do partitioning operations in here.
+        if ctx.options.dryRun == True:
+            ctx.debugger.log("dryRun activated Yali stopped")
+            return
 
         # Auto Partitioning
         if ctx.installData.autoPartDev:
-            info.show()
-            ctx.mainScreen.processEvents()
-            ctx.partrequests.remove_all()
-            ctx.use_autopart = True
-            self.autopartDevice()
-            time.sleep(2)
-            info.updateMessage(_("Formatting ..."))
-            ctx.mainScreen.processEvents()
-            ctx.partrequests.applyAll()
+            if ctx.installData.autoPartMethod == methodEraseAll:
+                info.show()
+                ctx.mainScreen.processEvents()
+                ctx.partrequests.remove_all()
+                ctx.use_autopart = True
+                self.autopartDevice()
+                time.sleep(2)
+                info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
+                ctx.partrequests.applyAll()
+            elif ctx.installData.autoPartMethod == methodUseAvail:
+                pass
 
         # Manual Partitioning
         else:

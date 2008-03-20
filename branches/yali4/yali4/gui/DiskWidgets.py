@@ -27,7 +27,7 @@ import yali4.parteddata as parteddata
 import yali4.gui.context as ctx
 from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
-from yali4.gui.GUIAdditional import *
+from yali4.gui.GUIAdditional import ResizeWidget
 
 partitionTypes = {0:None,
                  1:parttype.root,

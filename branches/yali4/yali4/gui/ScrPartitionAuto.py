@@ -25,6 +25,7 @@ import yali4.parteddata as parteddata
 
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.autopartwidget import Ui_AutoPartWidget
+from yali4.gui.GUIAdditional import AutoPartQuestionWidget
 from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
@@ -93,14 +94,16 @@ about disk partitioning.
             if x["newSize"]>y["newSize"]:return -1
             elif x["newSize"]==y["newSize"]: return 0
             return 1
-        self.res = []
+        self.arp = []
         self.resizablePartitions.sort(sortBySize)
         for partition in self.resizablePartitions:
             if partition["newSize"] / 2 >= ctx.consts.min_root_size:
-                self.res.append(partition["partition"])
-        if len(self.res) == 0:
+                self.arp.append(partition["partition"])
+        if len(self.arp) == 0:
             self.ui.accept_auto_1.setEnabled(False)
             self.ui.accept_auto_2.toggle()
+        elif len(self.arp) == 1:
+            self.autoPartPartition = self.arp[0]
         ctx.mainScreen.disableNext()
         self.updateUI()
 
@@ -133,16 +136,27 @@ about disk partitioning.
         ctx.installData.autoPartDev = None
 
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
-            ctx.installData.autoPartDev = self.device
-            ctx.autoInstall = True
-            ctx.debugger.log("Automatic Partition selected..")
-            ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.device.getPath())
-            if self.ui.accept_auto_2.isChecked():
-                ctx.installData.autoPartMethod = methodEraseAll
-            # skip next screen()
-            # We pass the Manual Partitioning screen
-            ctx.mainScreen.moveInc = 2
+            if self.ui.accept_auto_1.isChecked() and len(self.arp) > 1:
+                question = AutoPartQuestionWidget(self)
+                question.show()
+                ctx.mainScreen.moveInc = 0
+            else:
+                self.execute_()
         return True
+
+    def execute_(self,move=False):
+        ctx.installData.autoPartDev = self.device
+        ctx.installData.autoPartPartition = self.autoPartPartition
+        ctx.autoInstall = True
+        ctx.debugger.log("Automatic Partition selected..")
+        ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.device.getPath())
+        if self.ui.accept_auto_2.isChecked():
+            ctx.installData.autoPartMethod = methodEraseAll
+        # skip next screen()
+        # We pass the Manual Partitioning screen
+        ctx.mainScreen.moveInc = 2
+        if move:
+            ctx.mainScreen.slotNext(dryRun=True)
 
     def slotDeviceChanged(self, i):
         self.device = self.ui.device_list.item(i).getDevice()

@@ -19,6 +19,7 @@ _ = __trans.ugettext
 
 import yali4.gui.context as ctx
 from yali4.gui.Ui.partresize import Ui_PartResizeWidget
+from yali4.gui.Ui.autopartquestion import Ui_autoPartQuestion
 
 class ResizeWidget(QtGui.QWidget):
 
@@ -67,3 +68,28 @@ class ResizeWidget(QtGui.QWidget):
     def slotResize(self):
         ctx.debugger.log("Resize started on partition %s " % self.part.getPath())
         self.dev.resizePartition(self.part._fsname, int(self.ui.resizeMB.value()),self.part)
+
+class AutoPartQuestionWidget(QtGui.QWidget):
+
+    def __init__(self, rootWidget):
+        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        self.ui = Ui_autoPartQuestion()
+        self.ui.setupUi(self)
+        self.setStyleSheet("""
+                QFrame#mainFrame {
+                    background-image: url(:/gui/pics/transBlack.png);
+                    border: 1px solid #BBB;
+                    border-radius:8px;
+                }
+                QWidget#autoPartQuestion {
+                    background-image: url(:/gui/pics/trans.png); 
+                }
+        """)
+        self.rootWidget = rootWidget
+        self.resize(ctx.mainScreen.ui.size())
+        self.connect(self.ui.useSelectedButton, SIGNAL("clicked()"), self.slotUseSelected)
+
+    def slotUseSelected(self):
+        self.rootWidget.execute_(True)
+        self.hide()
+
