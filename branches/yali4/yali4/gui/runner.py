@@ -52,19 +52,19 @@ class Runner:
 
     def __init__(self):
 
-        _all_screens = [
-                        ScrKahyaCheck,
-                        ScrWelcome,
-                        ScrCheckCD,
-                        ScrKeyboard,
-                        ScrDateTime,
-                        ScrUsers,
-                        ScrAdmin,
-                        ScrPartitionAuto,
-                        ScrPartitionManual,
-                        ScrBootloader,
-                        ScrInstall,
-                        ScrGoodbye
+        _all_screens = [                        # Numbers can be used with -s paramter
+                        ScrKahyaCheck,          # 00
+                        ScrWelcome,             # 01
+                        ScrCheckCD,             # 02
+                        ScrKeyboard,            # 03
+                        ScrDateTime,            # 04
+                        ScrUsers,               # 05
+                        ScrAdmin,               # 06
+                        ScrPartitionAuto,       # 07
+                        ScrPartitionManual,     # 08
+                        ScrBootloader,          # 09
+                        ScrInstall,             # 10
+                        ScrGoodbye              # 11
                        ]
 
         self._app = QtGui.QApplication(sys.argv)

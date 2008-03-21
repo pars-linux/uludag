@@ -67,10 +67,11 @@ class Debugger:
             self.traceback.add(unicode(log),type,indent)
 
 class DebugContainer(QtGui.QTextBrowser):
-    def __init__(self, parent, showTimeStamp=True):
+    def __init__(self, parent, showTimeStamp=True, sysoutEnabled=True):
         QtGui.QTextBrowser.__init__(self, parent)
         self.setStyleSheet("font-size:8pt;font-family:\"Envy Code R\";")
         self.showTimeStamp = showTimeStamp
+        self.sysoutEnabled = sysoutEnabled
         self.setReadOnly(True)
         self.setOverwriteMode(True)
         self.plainLogs = ''
@@ -80,15 +81,16 @@ class DebugContainer(QtGui.QTextBrowser):
     def add(self,log,type,indent):
         if indent==+1:
             self.indent += indent
-
+        _now = time.strftime("%H:%M:%S", time.localtime())
         _indent = " "+"»"*self.indent
         if type==0:
             self.plainLogs += "%s\n" % log
+            if self.sysoutEnabled:
+                print "YALI - %s : %s" % (_now,log)
             log = "<b>%s</b>" % log
             _indent = ""
 
         if self.level==1 or type==self.level:
-            _now = time.strftime("%H:%M:%S", time.localtime())
             self.append(unicode("%s :%s %s" % (_now,_indent,log)))
 
         if indent==-1:

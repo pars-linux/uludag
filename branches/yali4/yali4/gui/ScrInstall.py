@@ -32,7 +32,7 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 import yali4.gui.context as ctx
 
-EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished = range(1,6)
+EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished = range(1001,1006)
 
 def iter_slide_pics():
     # load all pics
@@ -94,7 +94,9 @@ Have fun!
 
     def shown(self):
         # start installer thread
+        ctx.debugger.log("PkgInstaller is creating...")
         self.pkg_installer = PkgInstaller(self)
+        ctx.debugger.log("Calling PkgInstaller.start...")
         self.pkg_installer.start()
 
         ctx.mainScreen.disableNext()
@@ -243,9 +245,11 @@ class PkgInstaller(QThread):
 
         # show progress
         total = yali4.pisiiface.get_available_len()
-
+        ctx.debugger.log("Creating PisiEvent..")
         qevent = PisiEvent(QEvent.User, EventSetProgress)
+        ctx.debugger.log("Setting data on just created PisiEvent (EventSetProgress)..")
         qevent.setData(total)
+        ctx.debugger.log("Posting PisiEvent to the widget..")
         QCoreApplication.postEvent(self._widget, qevent)
 
         ctx.debugger.log("Found %d packages in repo.." % total)
