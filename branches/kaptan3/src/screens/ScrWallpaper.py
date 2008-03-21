@@ -58,8 +58,8 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.noneText = str(i18n("No Wallpaper"))
         self.nonePic = "kaptan/pics/no-wallpaper.png"
         self.wallpaperList = {}
-        self.wideWallpapers = {}
-        self.normalWallpapers = {}
+        self.ultimateList = []
+        self.wideList = {}
         lst = {}
 
         #detect screen size
@@ -91,86 +91,84 @@ class Widget(WallpaperWidget, ScreenWidget):
                     wallpaperFile = "/usr/kde/3.5/share/wallpapers/"+wallpaperFile
                     #dict titles and file names
                     #get wide wallpapers
-                    if self.isWide == True and resolution == "Wide":
-                        self.wideWallpapers[wallpaperTitle] = wallpaperFile 
+                    if resolution == "Wide":
+                        self.wideList[wallpaperFile] = wallpaperTitle
                     #get normal size wallpapers
-                    elif self.isWide == False and not resolution:
-                        self.normalWallpapers[wallpaperTitle] = wallpaperFile
-                    #gather all wallpapers
-                    self.wallpaperList[wallpaperTitle] = wallpaperFile
+                    self.wallpaperList[wallpaperFile] = wallpaperTitle
+
                 except ConfigParser.NoOptionError:
                     #if option doesn't exist, skip.
                     pass
 
+        self.sortedWallpaperList = self.dictSort(self.wallpaperList)
+
+        for i in self.sortedWallpaperList:
+            for wallpaperFile, wallpaperTitle in self.wallpaperList.items():
+                if wallpaperTitle == i:
+                    item = KListViewItem(self.listWallpaper, "file", str(wallpaperFile))
+                    file = QImage(wallpaperFile)
+                    item.setText(0,wallpaperTitle)
+                    item.setPixmap(0,QPixmap(QImage(wallpaperFile).smoothScale(150,150, QImage.ScaleMin)))
+
+                    if wallpaperFile in self.wallpaperList.keys():
+                        if wallpaperFile in self.wideList.keys():
+                            self.ultimateList.append({ "Wide": item })
+                    #get normal size wallpapers
+                    else:
+                        self.ultimateList.append({"Normal": item})
+
         if self.isWide == True:
-            self.sortAndList(self.wideWallpapers)
+            self.hideNormals()
         else:
-            self.sortAndList(self.normalWallpapers)
+            self.hideWides()
 
         self.listWallpaper.setSelected(self.listWallpaper.firstChild(),True)
         self.listWallpaper.connect(self.listWallpaper, SIGNAL("selectionChanged()"), self.setWallpaper)
         self.checkAllWallpapers.connect(self.checkAllWallpapers, SIGNAL("toggled(bool)"), self.showAllWallpapers)
 
-    def setCurrentWallpaper(self):
-        if current:
-            self.listWallpaperItem(self.currentText, QImage(current))
-            self.wallpaperList["Current Wallpaper"] = current
-            if "Current Wallpaper" in self.wallpaperList:
-                self.wallpaperList.pop("Current Wallpaper")
-
-        else:
-            wallpaperFile = "kaptan/pics/no-wallpaper.png"
-            self.listWallpaperItem("No Wallpaper", current)
-            self.wallpaperList["No Wallpaper"]= wallpaperFile
-
-    def sortAndList(self, specList):
-        self.sortedWallpapers = self.dictSort(specList)
-        self.sortedWallpapers.reverse()
-        if current:
-            specList[self.currentText] = current
-            self.wallpaperList[self.currentText] = current
-            if self.currentText in self.sortedWallpapers:
-                self.sortedWallpapers.remove(self.currentText)
-            self.sortedWallpapers.append(self.currentText)
-        else:
-            specList[self.noneText] = self.nonePic
-            self.wallpaperList[self.noneText] = self.nonePic
-            if self.noneText in self.sortedWallpapers:
-                self.sortedWallpapers.remove(self.noneText)
-            self.sortedWallpapers.append(self.noneText)
-
-        for i in self.sortedWallpapers:
-            self.listWallpaperItem(i, QImage(specList[i]))
-
     def showAllWallpapers(self):
         if self.checkAllWallpapers.isChecked():
-            self.listWallpaper.clear()
-            self.sortAndList(self.wallpaperList)
+            self.showAll()
         else:
-            self.listWallpaper.clear()
-            if self.isWide:
-                self.sortAndList(self.wideWallpapers)
+            if self.isWide == True:
+                self.hideNormals()
             else:
-                self.sortAndList(self.normalWallpapers)
+                self.hideWides()
+
+    def showAll(self):
+        for i in self.ultimateList:
+            for p in i.values():
+                p.setVisible(True)
+
+    def hideNormals(self):
+        for i in self.ultimateList:
+            for p, s in  i.items():
+                if p == "Normal":
+                    s.setVisible(False)
+
+    def hideWides(self):
+        for i in self.ultimateList:
+            for p, s in  i.items():
+                if p == "Wide":
+                    s.setVisible(False)
 
     def dictSort(self, wallDict):
-        keys = wallDict.keys()
-        keys.sort()
-        return keys
+        vals = wallDict.values()
+        vals.sort()
+        vals.reverse()
+        return vals
 
     def shown(self):
         pass
 
     def setWallpaper(self):
         #change wallpaper
-        selectedWallpaper = self.wallpaperList[str(self.listWallpaper.currentItem().text(0))]
-        dcopapp.KBackgroundIface.setWallpaper(selectedWallpaper, 6)
-
-    def listWallpaperItem(self, itemText, file):
-        item = KListViewItem(self.listWallpaper,"file")
-        item.setText(0,itemText)
-        item.setPixmap(0,QPixmap(QImage(file).smoothScale(150,150, QImage.ScaleMin)))
+        for i in self.wallpaperList.values():
+            if i == self.listWallpaper.currentItem().text(0):
+                selectedWallpaper = self.listWallpaper.currentItem().key(1,True)
+                dcopapp.KBackgroundIface.setWallpaper(selectedWallpaper, 6)
 
     def execute(self):
-        summary["sum"] = self.listWallpaper.currentItem().text(0)
+        #summary["sum"] = self.listWallpaper.currentItem().text(0)
+        pass
 
