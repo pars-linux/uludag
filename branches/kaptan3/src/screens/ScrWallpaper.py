@@ -114,8 +114,8 @@ class Widget(WallpaperWidget, ScreenWidget):
                         if wallpaperFile in self.wideList.keys():
                             self.ultimateList.append({ "Wide": item })
                     #get normal size wallpapers
-                    else:
-                        self.ultimateList.append({"Normal": item})
+                        else:
+                            self.ultimateList.append({"Normal": item})
 
         if self.isWide == True:
             self.hideNormals()
