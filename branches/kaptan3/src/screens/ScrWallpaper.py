@@ -116,6 +116,12 @@ class Widget(WallpaperWidget, ScreenWidget):
                     #get normal size wallpapers
                         else:
                             self.ultimateList.append({"Normal": item})
+        if current:
+            self.wallpaperList[current] = self.currentText
+            item = KListViewItem(self.listWallpaper, "file", str(current))
+            file = QImage(current)
+            item.setText(0,self.currentText)
+            item.setPixmap(0,QPixmap(QImage(current).smoothScale(150,150, QImage.ScaleMin))) 
 
         if self.isWide == True:
             self.hideNormals()
