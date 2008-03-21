@@ -121,7 +121,14 @@ class Widget(WallpaperWidget, ScreenWidget):
             item = KListViewItem(self.listWallpaper, "file", str(current))
             file = QImage(current)
             item.setText(0,self.currentText)
-            item.setPixmap(0,QPixmap(QImage(current).smoothScale(150,150, QImage.ScaleMin))) 
+            item.setPixmap(0,QPixmap(QImage(current).smoothScale(150,150, QImage.ScaleMin)))
+
+        else:
+            self.wallpaperList[self.nonePic] = self.noneText
+            item = KListViewItem(self.listWallpaper, "file", str(self.nonePic))
+            file = QImage(self.nonePic)
+            item.setText(0,self.noneText)
+            item.setPixmap(0,QPixmap(QImage(self.nonePic).smoothScale(150,150, QImage.ScaleMin)))
 
         if self.isWide == True:
             self.hideNormals()
