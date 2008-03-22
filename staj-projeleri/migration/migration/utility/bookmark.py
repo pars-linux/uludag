@@ -13,6 +13,7 @@ import xml.dom.minidom
 import HTMLParser
 import ConfigParser
 import os
+from pysqlite2 import dbapi2 as sqlite
 
 class Bookmark:
     def __init__(self):
@@ -125,12 +126,28 @@ class Bookmark:
         searchDirectory(directory, self.document, groupnode)
     
     def setFFBookmarks(self, path):
+        "Adds bookmarks to firefox"
+        if os.path.lexists(os.path.join(path, "lock")):
+            raise Exception, "Firefox is in use. Bookmarks cannot be saved."
+        filepath = os.path.join(path, "places.sqlite")
+        if os.path.exists(filepath):
+            self.setFF3Bookmarks(filepath)
+            return
+        filenpath = os.path.join(path, "bookmarks.html")
+        if os.path.exists(filepath):
+            self.setFF2Bookmarks(filepath)
+            return
+        raise Exception, "Bookmark file cannot be found."
+        
+    def setFF2Bookmarks(self, filepath):
+        "Adds bookmarks to firefox using bookmarks.html file"
         def getText(nodelist):
             rc = ""
             for node in nodelist:
                 if node.nodeType == node.TEXT_NODE:
                     rc = rc + node.data
             return rc
+        
         def handleNode(node):
             data = ""
             if node.tagName == "bookmarks":
@@ -149,10 +166,8 @@ class Bookmark:
                 url = node.getElementsByTagName("url")[0]
                 data += "<DT><A HREF=\"%s\">%s</A>\n" % (getText(url.childNodes), getText(name.childNodes))
             return data
-        if os.path.lexists(os.path.join(path, "lock")):
-            raise Exception, "Firefox is in use. Bookmarks cannot be saved."
-        filename = os.path.join(path, "bookmarks.html")
-        bookmarkfile = open(filename)
+        
+        bookmarkfile = open(filepath)
         data = bookmarkfile.read()
         bookmarkfile.close()
         pairs = data.rsplit("</DL>",1)
@@ -160,6 +175,69 @@ class Bookmark:
         bookmarkfile = open(filename, "w")
         bookmarkfile.write(pairs[0] + data + "</DL>" + pairs[1])
         bookmarkfile.close()
+    
+    def setFF3Bookmarks(self, databasepath):
+        "Adds bookmarks to firefox using places.sqlite database"
+        def getText(nodelist):
+            rc = ""
+            for node in nodelist:
+                if node.nodeType == node.TEXT_NODE:
+                    rc = rc + node.data
+            return rc
+        
+        def handleNode(node, c, parentid, position):
+            if node.tagName == "bookmarks":
+                # Handle children:
+                children = node.childNodes
+                for child in children:
+                    handleNode(child, c, parentid, position)
+                    position += 1
+            elif node.tagName == "group":
+                # Get group title:
+                header = node.getElementsByTagName("header")[0]
+                title = getText(header.childNodes)
+                # Add group:
+                c.execute("INSERT INTO moz_bookmarks ('type', 'parent', 'position', 'title') VALUES (2, ?, ?, ?)", (parentid, position, title))
+                parentid = c.lastrowid
+                if not parentid:    # Hack for lastrowid error
+                    result = c.execute("SELECT max(id) FROM moz_bookmarks")
+                    parentid = result.fetchone()[0]
+                # Handle children:
+                children = node.childNodes
+                position = 0
+                for child in children:
+                    handleNode(child, c, parentid, position)
+                    position += 1
+            elif node.tagName == "bookmark":
+                # Get title and url:
+                namenode = node.getElementsByTagName("name")[0]
+                urlnode = node.getElementsByTagName("url")[0]
+                title = getText(namenode.childNodes)
+                url = getText(urlnode.childNodes)
+                # Add bookmark:
+                result = c.execute("SELECT id FROM moz_places WHERE url=?", (url,)).fetchone()
+                if result:
+                    fk = result[0]
+                else:
+                    c.execute("INSERT INTO moz_places ('url','title') VALUES (?, ?)", (url, title))
+                    fk = c.lastrowid
+                c.execute("INSERT INTO moz_bookmarks ('type', 'fk', 'parent', 'position', 'title') VALUES (1, ?, ?, ?, ?)", (fk, parentid, position, title))
+                
+        # Connect to database:
+        conn = sqlite.connect(databasepath, 5.0)
+        c = conn.cursor()
+        # Find the maximum position:
+        result = c.execute("SELECT max(position) FROM moz_bookmarks WHERE parent=2")
+        maxpos = result.fetchone()[0]
+        if maxpos:
+            newpos = maxpos+1
+        else:
+            newpos = 0
+        # Hande bookmarks:
+        data = handleNode(self.document.documentElement, c, 2, newpos)
+        # Close database:
+        conn.commit()
+        c.close()
     
     def saveXML(self, filename):
         "Saves Bookmarks to an XML file"
