@@ -120,6 +120,20 @@ class widgetMain(formMain):
         self.connect(self.radioAutoRun, SIGNAL('clicked()'), self.slotOn)
         self.connect(self.radioNoAutoRun, SIGNAL('clicked()'), self.slotOff)
 
+        self.connect(self.listServices, SIGNAL('doubleClicked(QListViewItem*)'), self.slotDoubleClicked)
+
+    # start or stop service when the item is double clicked
+    def slotDoubleClicked(self, item):
+        # if it's not started
+        if not item.state:
+            self.comar.call_package('System.Service.start', item.package, id=SERVICE_START)
+            item.setState(True)
+            self.updateItemStatus(item)
+        else:
+            self.comar.call_package('System.Service.stop', item.package, id=SERVICE_STOP)
+            item.setState(False)
+            self.updateItemStatus(item)
+
     def slotComar(self, sock):
         reply = self.comar.read_cmd()
         if reply.command == 'notify':
