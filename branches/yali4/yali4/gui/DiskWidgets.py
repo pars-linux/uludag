@@ -30,19 +30,18 @@ from yali4.gui.GUIException import *
 from yali4.gui.GUIAdditional import ResizeWidget
 
 partitionTypes = {0:None,
-                 1:parttype.root,
-                 2:parttype.home,
-                 3:parttype.swap,
-                 4:parttype.archive}
+                  1:parttype.root,
+                  2:parttype.home,
+                  3:parttype.swap,
+                  4:parttype.archive}
 
 class DiskList(QtGui.QWidget):
 
-    def __init__(self, partEdit, *args):
+    def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
         self.setAutoFillBackground(False)
         self.diskCount = 1
-        self.partEdit = partEdit
         self.setStyleSheet("""
             QTabWidget::pane { border-top: 2px solid #FFFFFF; }
             QTabWidget::tab-bar { left: 5px; }
