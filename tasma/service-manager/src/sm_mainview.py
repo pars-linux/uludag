@@ -127,11 +127,9 @@ class widgetMain(formMain):
         # if it's not started
         if not item.state:
             self.comar.call_package('System.Service.start', item.package, id=SERVICE_START)
-            item.setState(True)
             self.updateItemStatus(item)
         else:
             self.comar.call_package('System.Service.stop', item.package, id=SERVICE_STOP)
-            item.setState(False)
             self.updateItemStatus(item)
 
     def slotComar(self, sock):
