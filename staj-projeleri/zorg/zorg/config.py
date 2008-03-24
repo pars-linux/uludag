@@ -92,7 +92,8 @@ def saveXorgConfig(card):
 
         if "randr12" in flags:
             secDevice.options["Monitor-%s" % output] = identifier
-            monSec.options["PreferredMode"] = card.modes[output]
+            if card.modes[output]:
+                monSec.options["PreferredMode"] = card.modes[output]
             monSec.options["Enabled"] = "true"
 
     secScr.set("Identifier", "Screen")
