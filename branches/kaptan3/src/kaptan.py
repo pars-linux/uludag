@@ -181,6 +181,15 @@ class Kaptan(kaptanUi):
         if event.key() == Qt.Key_Escape:
             self.slotExit()
 
+    def __del__(self):
+        """
+        if ScrPackage.isUpdateOn == True:
+            proc = KProcess()
+            proc << locate("exe", "package-manager")
+            proc.start(KProcess.DontCare)
+        """
+        pass
+
 def AboutData():
     return KAboutData(
         mod_app,

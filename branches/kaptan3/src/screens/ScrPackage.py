@@ -23,6 +23,8 @@ summary = {"sum" : "",
            "pic" : "kaptan/pics/icons/package.png",
            "desc": i18n("Package Manager")}
 
+isUpdateOn = False
+
 class Widget(PackageWidget, ScreenWidget):
 
     #TODO: Add contrib depo
@@ -50,8 +52,11 @@ class Widget(PackageWidget, ScreenWidget):
         self.checkUpdate.setText(i18n("Check updates automatically for every"))
         self.updateInterval.setSuffix(i18n(" hours"))
         self.groupBoxRepo.setTitle(i18n("Repo"))
-        self.textLabelContrib.setText(i18n("Contrib repo bla bla."))
+        self.textLabelContrib.setText(i18n("Contrib repo includes extra packages."))
         self.checkBoxContrib.setText(i18n("Add contrib repo"))
+
+        #policykit olana kadar enabled
+        self.checkBoxContrib.setEnabled(False)
 
         #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
@@ -82,9 +87,8 @@ class Widget(PackageWidget, ScreenWidget):
         config.sync()
 
         if self.showTray.isChecked():
-            proc = KProcess()
-            proc << locate("exe", "package-manager")
-            proc.start(KProcess.DontCare)
+            global isUpdateOn 
+            isUpdateOn = True
 
     def shown(self):
         #self.applySettings()
