@@ -59,6 +59,7 @@ class Kaptan(kaptanUi):
         # set images
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
         self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+        self.pageIcon.setPixmap(QPixmap(locate("data", icon)))
 
         # set button icons
         loader = KGlobal.iconLoader()
