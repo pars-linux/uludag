@@ -62,7 +62,7 @@ class Widget(PanelWidget, ScreenWidget):
         config.sync()
 
         # add kaptan themes into resource pool
-        KGlobal.dirs().addResourceType("themes", KStandardDirs.kde_default("data") + "kaptan/themes/")
+        KGlobal.dirs().addResourceType("themes", KStandardDirs.kde_default("data") + "kaptan/pics/themes/")
 
         themes = QStringList(KGlobal.dirs().findAllResources("themes", "*.xml", True))
         themes.sort()
