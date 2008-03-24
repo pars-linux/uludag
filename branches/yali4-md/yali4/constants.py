@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -17,7 +17,7 @@ import locale
 from os.path import join
 
 class _constant:
-    "Constant members implementation"
+    """ Constant members implementation """
     class ConstError(TypeError):
         pass
 
@@ -34,7 +34,7 @@ class _constant:
         raise NameError, name
 
 class Constants:
-
+    """ YALI's Constants """
     __c = _constant()
 
     def __getattr__(self, attr):
@@ -63,8 +63,8 @@ consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
 # packages (and maybe others) will be in this source (cdrom) directory
 consts.source_dir = join(consts.mnt_dir, "cdrom")
 
-# comar socket path
-consts.comar_socket_file = consts.target_dir + "/var/run/comar.socket"
+# dbus socket path
+consts.dbus_socket_file = consts.target_dir + "/var/run/dbus/system_bus_socket"
 
 # swap file path
 consts.swap_file_name = ".swap"

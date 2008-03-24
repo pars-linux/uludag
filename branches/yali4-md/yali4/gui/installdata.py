@@ -20,8 +20,10 @@ class InstallData:
     users = []
     autoLoginUser = None
     autoPartDev = None
+    autoPartPartition = None
     autoPartMethod = methodUseAvail
     bootLoaderDev = None
     repoAddr = None
     useYaliFirstBoot = False
+    timezone = "Europe/Istanbul"
 

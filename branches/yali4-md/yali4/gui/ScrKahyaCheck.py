@@ -10,19 +10,20 @@
 # Please read the COPYING file.
 #
 
-from qt import *
-
 import gettext
-__trans = gettext.translation('yali', fallback=True)
+__trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
-import yali.sysutils
-from yali.gui.ScreenWidget import ScreenWidget
-from yali.gui.Ui.kickerwidget import KickerWidget
-import yali.gui.context as ctx
-from yali.gui.YaliDialog import Dialog
-from yali.kahya import kahya
-import yali.storage
+from PyQt4 import QtGui
+from PyQt4.QtCore import *
+
+import yali4.sysutils
+from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.Ui.kickerwidget import Ui_KickerWidget
+import yali4.gui.context as ctx
+from yali4.gui.YaliDialog import Dialog
+from yali4.kahya import kahya
+import yali4.storage
 
 def loadFile(path):
     """Read contents of a file"""
@@ -48,15 +49,21 @@ def kahyaExists():
 
 ##
 # Welcome screen is the first screen to be shown.
-class Widget(KickerWidget, ScreenWidget):
-
+class Widget(QtGui.QWidget, ScreenWidget):
+    title = _('Kahya is working...')
+    desc = _('Kahya will automatically install your system..')
     help = _('''
 <font size="+2">Kicker Check !</font>
 <p> Some help messages </p>
 ''')
 
     def __init__(self, *args):
-        apply(KickerWidget.__init__, (self,) + args)
+        QtGui.QWidget.__init__(self,None)
+        self.ui = Ui_KickerWidget()
+        self.ui.setupUi(self)
+
+    def shown(self):
+        ctx.mainScreen.slotNext()
 
     def execute(self):
         if not kahyaExists():
@@ -83,11 +90,11 @@ class Widget(KickerWidget, ScreenWidget):
 
                 # find usable storage devices
                 # initialize all storage devices
-                if not yali.storage.init_devices():
+                if not yali4.storage.init_devices():
                     raise GUIException, _("Can't find a storage device!")
 
                 devices = []
-                for dev in yali.storage.devices:
+                for dev in yali4.storage.devices:
                     if dev.getTotalMB() >= ctx.consts.min_root_size:
                         devices.append(dev)
 
@@ -116,18 +123,19 @@ class Widget(KickerWidget, ScreenWidget):
                 # multi types
                 for user in correctData.users:
                     ctx.installData.users.append(user)
-                    yali.users.pending_users.append(user)
+                    yali4.users.pending_users.append(user)
                     ctx.debugger.log("USER    : %s " % user.username)
 
                 if ctx.options.dryRun == True:
                     ctx.debugger.log("dryRun activated Yali stopped")
                 else:
                     # Bootloader Screen is 9
-                    ctx.screens.goToScreen(9)
+                    ctx.mainScreen.setCurrent(9)
             else:
                 ctx.debugger.log("This kahya file is not correct !!")
                 wrongData = yaliKahya.getValues()
                 ctx.debugger.log("".join(wrongData))
 
-        ctx.screens.disablePrev()
-        ctx.screens.disableNext()
+        ctx.mainScreen.disableBack()
+        ctx.mainScreen.disableNext()
+

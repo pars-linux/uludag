@@ -33,13 +33,13 @@ class FSError(YaliError):
 
 
 def get_filesystem(name):
-
+    """ Returns filesystem implementation for given filesystem name """
     # Hardcoding available filesystems like this is TOO
     # dirty... should revisit this module (and others using this)
     # later on.
     if name == "ext3":
         return Ext3FileSystem()
-    elif name == "swap" or name == "linux-swap(new)":
+    elif name == "swap" or name == "linux-swap":
         return SwapFileSystem()
     elif name == "ntfs":
         return NTFSFileSystem()
@@ -59,11 +59,11 @@ def get_filesystem(name):
 ##
 # abstract file system class
 class FileSystem:
-
+    """ Abstract fileSystem class for other implementations """
     _name = None
     _filesystems = []
     _implemented = False
-    _resizeable = False
+    _resizable = False
     _mountoptions = "defaults"
     _fs_type = None  # parted fs type
 
@@ -74,6 +74,8 @@ class FileSystem:
     ##
     # Open partition
     def openPartition(self, partition):
+        """ Checks if partition exists or not;
+             If not,it causes YaliException """
         try:
             fd = os.open(partition.getPath(), os.O_RDONLY)
             return fd
@@ -181,14 +183,14 @@ class FileSystem:
         return self._implemented
 
     ##
-    # set if filesystem is resizeable
-    def setResizeable(self, bool):
-        self._resizeable = bool
+    # set if filesystem is resizable
+    def setResizable(self, bool):
+        self._resizable = bool
 
     ##
-    # check if filesystem is resizeable
-    def isResizeable(self):
-        return self._resizeable
+    # check if filesystem is resizable
+    def isResizable(self):
+        return self._resizable
 
 ##
 # for dummy raid members
@@ -218,7 +220,7 @@ class Ext3FileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
         self.setImplemented(True)
-        self.setResizeable(True)
+        self.setResizable(True)
 
     def format(self, partition):
         self.preFormat(partition)
@@ -437,7 +439,7 @@ class XFSFileSystem(FileSystem):
 # linux-swap
 class SwapFileSystem(FileSystem):
 
-    _name = "linux-swap(new)"
+    _name = "linux-swap"
 
     def __init__(self):
         FileSystem.__init__(self)
@@ -500,7 +502,7 @@ class NTFSFileSystem(FileSystem):
     def __init__(self):
         FileSystem.__init__(self)
 
-        self.setResizeable(True)
+        self.setResizable(True)
 
     def check_resize(self, size_mb, partition):
         #don't do anything, just check
@@ -554,7 +556,7 @@ class FatFileSystem(FileSystem):
         self.setImplemented(True)
 
         # I will do it later
-        self.setResizeable(False)
+        self.setResizable(False)
 
     def format(self, partition):
         self.preFormat(partition)

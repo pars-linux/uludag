@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -32,7 +32,7 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 import yali4.gui.context as ctx
 
-EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished = range(1,6)
+EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished = range(1001,1006)
 
 def iter_slide_pics():
     # load all pics
@@ -50,7 +50,7 @@ def iter_slide_pics():
 # Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Installing system..')
-    desc = _('Installation takes approximately 30 minutes depending on your hardware..')
+    desc = _('Installing approximately 30 minutes depending on hardware..')
     icon = "iconInstall"
     help = _('''
 <font size="+2">Installation started</font>
@@ -94,7 +94,9 @@ Have fun!
 
     def shown(self):
         # start installer thread
+        ctx.debugger.log("PkgInstaller is creating...")
         self.pkg_installer = PkgInstaller(self)
+        ctx.debugger.log("Calling PkgInstaller.start...")
         self.pkg_installer.start()
 
         ctx.mainScreen.disableNext()
@@ -180,8 +182,8 @@ Have fun!
         # postscripts depend on 03locale...
         yali4.localeutils.write_locale_from_cmdline()
 
-        # run comar in chroot
-        yali4.sysutils.chroot_comar() 
+        # run dbus in chroot
+        yali4.sysutils.chroot_dbus() 
 
         self.ui.info.setText(_("Configuring packages for your system!"))
         # start configurator thread
@@ -243,9 +245,11 @@ class PkgInstaller(QThread):
 
         # show progress
         total = yali4.pisiiface.get_available_len()
-
+        ctx.debugger.log("Creating PisiEvent..")
         qevent = PisiEvent(QEvent.User, EventSetProgress)
+        ctx.debugger.log("Setting data on just created PisiEvent (EventSetProgress)..")
         qevent.setData(total)
+        ctx.debugger.log("Posting PisiEvent to the widget..")
         QCoreApplication.postEvent(self._widget, qevent)
 
         ctx.debugger.log("Found %d packages in repo.." % total)

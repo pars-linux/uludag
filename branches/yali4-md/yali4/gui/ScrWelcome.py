@@ -74,8 +74,6 @@ Have a fruitful experience with Pardus!
         self.connect(self.ui.gplButton, SIGNAL("clicked()"),
                      self.showGPL)
 
-        ctx.mainScreen.processEvents()
-
     def slotAcceptToggled(self, b):
         if b:
             self.__enable_next(True)
@@ -93,7 +91,7 @@ Have a fruitful experience with Pardus!
             self.ui.rebootButton.setEnabled(True)
 
     def showGPL(self):
-        # make a release notes dialog
+        # make a GPL dialog
         r = GUIGPL.Widget(self)
         d = Dialog("GPL", r, self)
         d.resize(500,400)
@@ -108,3 +106,4 @@ Have a fruitful experience with Pardus!
             ctx.mainScreen.enableNext()
         else:
             ctx.mainScreen.disableNext()
+        ctx.mainScreen.processEvents()

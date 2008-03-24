@@ -138,11 +138,25 @@ class Partition:
 
     def getFSName(self):
         return self._fsname
+    
+    def isResizable(self):
+        fs = yali4.filesystem.get_filesystem(self.getFSName())
+        try:
+            return fs.isResizable()
+        except AttributeError, e:
+            return False
 
     def getFSLabel(self):
         fs = yali4.filesystem.get_filesystem(self.getFSName())
         try:
             return fs.getLabel(self)
+        except AttributeError, e:
+            return None
+        
+    def getMinResizeMB(self):
+        fs = yali4.filesystem.get_filesystem(self.getFSName())
+        try:
+            return fs.minResizeMB(self)
         except AttributeError, e:
             return None
 
@@ -181,12 +195,17 @@ class Partition:
 ##
 # Raid Partition ( member )
 class RaidPartition(Partition):
-    def __init__(self, device, parted_part, minor, mb, start, end, fs_name="software raid", fs_ready=False):
-        
-        Partition.__init__(self, device, parted_part, minor, mb, start, end, fs_name)
-        
+    def __init__(self, device, parted_part, minor, mb, start, end):
+        Partition.__init__(self, device,
+                           parted_part,
+                           minor,
+                           mb,
+                           start,
+                           end,
+                           "software raid",
+                           fs_ready=False)
+
         self._parted_type = parteddata.raidPartitionType
-        
 
 ##
 # Class representing free space within a Device object

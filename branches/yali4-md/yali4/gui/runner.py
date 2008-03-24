@@ -10,7 +10,6 @@
 # Please read the COPYING file.
 #
 
-
 import sys
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -27,11 +26,15 @@ from yali4.gui.YaliDialog import Dialog
 from yali4.gui.debugger import Debugger
 from yali4.gui.debugger import DebuggerAspect
 
+# mainScreen
 import YaliWindow
+
 # screens
+import ScrKahyaCheck
 import ScrWelcome
 import ScrCheckCD
 import ScrKeyboard
+import ScrDateTime
 import ScrAdmin
 import ScrUsers
 import ScrPartitionAuto
@@ -39,7 +42,6 @@ import ScrPartitionManual
 import ScrBootloader
 import ScrInstall
 import ScrGoodbye
-#import ScrKahyaCheck
 
 ##
 # Runner creates main GUI components for installation...
@@ -50,40 +52,20 @@ class Runner:
 
     def __init__(self):
 
-        _all_screens = [
-                        ScrWelcome,
-                        ScrCheckCD,
-                        ScrKeyboard,
-                        ScrUsers,
-                        ScrAdmin,
-                        ScrPartitionAuto,
-                        ScrPartitionManual,
-                        ScrBootloader,
-                        ScrInstall,
-                        ScrGoodbye
-                       ]
-
-        """
-        _all_stages = [
-            {'num': 1, 'text': _("Basic setup")},
-            {'num': 2, 'text': _("Prepare for install")},
-            {'num': 3, 'text': _("Install system")}
-            ]
-
-        _all_screens = [
-             {'stage': 1, 'module': ScrKahyaCheck},
-             {'stage': 1, 'module': ScrWelcome},
-             {'stage': 1, 'module': ScrCheckCD},
-             {'stage': 1, 'module': ScrKeyboard},
-             {'stage': 1, 'module': ScrAdmin},
-             {'stage': 1, 'module': ScrUsers},
-             {'stage': 2, 'module': ScrPartitionAuto},
-             {'stage': 2, 'module': ScrPartitionManual},
-             {'stage': 2, 'module': ScrBootloader},
-             {'stage': 3, 'module': ScrInstall},
-             {'stage': 3, 'module': ScrGoodbye}
-             ]
-        """
+        _all_screens = [                       # Numbers can be used with -s paramter
+                        ScrKahyaCheck,         # 00
+                        ScrWelcome,            # 01
+                        ScrCheckCD,            # 02
+                        ScrKeyboard,           # 03
+                        ScrDateTime,           # 04
+                        ScrUsers,              # 05
+                        ScrAdmin,              # 06
+                        ScrPartitionAuto,      # 07
+                        ScrPartitionManual,    # 08
+                        ScrBootloader,         # 09
+                        ScrInstall,            # 10
+                        ScrGoodbye             # 11
+                        ]
 
         self._app = QtGui.QApplication(sys.argv)
 
@@ -99,6 +81,7 @@ class Runner:
         # font.setFamily("Droid Sans")
         # self._app.setFont(font)
 
+        ctx.mainScreen = self._window
 
         # visual debugger
         ctx.debugger = Debugger()
@@ -108,12 +91,6 @@ class Runner:
             ctx.debugEnabled = True
 
         ctx.debugger.log("Yali Started")
-
-        # add stages
-        # for stg in _all_stages:
-        #     ctx.stages.addStage(stg['num'], stg['text'])
-
-        ctx.mainScreen = self._window
 
         self._window.createWidgets(_all_screens)
         QObject.connect(self._app, SIGNAL("lastWindowClosed()"),
@@ -130,7 +107,7 @@ class Runner:
     def run(self):
 
         # Use default theme;
-        # if you use KDE4 it takes its theme settings so our works looks ugly :)
+        # if you use different Qt4 theme our works looks ugly :)
         self._app.setStyle(QtGui.QStyleFactory.create('Plastique'))
 
         self._window.ui.show()

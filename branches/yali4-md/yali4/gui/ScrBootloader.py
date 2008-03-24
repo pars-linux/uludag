@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -32,6 +32,9 @@ from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
 from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
+
+# Auto Partition Methods
+methodUseAvail, methodEraseAll = range(2)
 
 ##
 # BootLoader screen.
@@ -106,7 +109,6 @@ loader.
     def slotSelect(self):
         self.ui.installMBR.setChecked(True)
 
-    # enable/disable ListWidget
     def slotInstallLoader(self, b):
         if self.ui.installMBR.isChecked():
             self.ui.device_list.setEnabled(True)
@@ -185,18 +187,24 @@ and easy way to install Pardus.</p>
         info = InformationWindow(_("Writing disk tables ..."))
 
         # We should do partitioning operations in here.
+        if ctx.options.dryRun == True:
+            ctx.debugger.log("dryRun activated Yali stopped")
+            return
 
         # Auto Partitioning
         if ctx.installData.autoPartDev:
-            info.show()
-            ctx.mainScreen.processEvents()
-            ctx.partrequests.remove_all()
-            ctx.use_autopart = True
-            self.autopartDevice()
-            time.sleep(2)
-            info.updateMessage(_("Formatting ..."))
-            ctx.mainScreen.processEvents()
-            ctx.partrequests.applyAll()
+            if ctx.installData.autoPartMethod == methodEraseAll:
+                info.show()
+                ctx.mainScreen.processEvents()
+                ctx.partrequests.remove_all()
+                ctx.use_autopart = True
+                self.autopartDevice()
+                time.sleep(2)
+                info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
+                ctx.partrequests.applyAll()
+            elif ctx.installData.autoPartMethod == methodUseAvail:
+                pass
 
         # Manual Partitioning
         else:
@@ -240,11 +248,6 @@ and easy way to install Pardus.</p>
 
         return True
 
-#
-# initialize the listwidgetitem that will be put on
-# device list listwidget
-# @param dev is the Device object from storage.py
-#
 class DeviceItem(QtGui.QListWidgetItem):
     def __init__(self, parent, dev):
         text = u"%s - %s (%s)" %(dev.getModel(),

@@ -73,18 +73,16 @@ about disk partitioning.
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
 
-        # dont need this
-        # self.partEdit = PartEdit(self)
-        self.partList = DiskList(self)
+        self.diskList = DiskList(self)
 
         vbox = QtGui.QVBoxLayout(self)
-        vbox.addWidget(self.partList)
+        vbox.addWidget(self.diskList)
 
     def shown(self):
         ctx.mainScreen.disableNext()
 
     def update(self):
-        self.partList.update()
+        self.diskList.update()
 
     ##
     # do the work and run requested actions on partitions.

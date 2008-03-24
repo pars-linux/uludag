@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -19,9 +19,6 @@ _ = __trans.ugettext
 
 import yali4.gui.context as ctx
 
-##
-# Base class for dialog windows. used as the title part of window
-# this lets us move the dialog
 class windowTitle(QtGui.QFrame):
     def __init__(self, *args):
         QtGui.QFrame.__init__(self, *args)
@@ -70,13 +67,9 @@ class windowTitle(QtGui.QFrame):
             newpos.setY(self.w_y + pos.y() - self.start_y)
             self.mainwidget.move(newpos)
 
-##
-# Base dialog class
-# @param title is the title of dialog
-# @param widget is the widget we will embed under 'title' and create the dialog
 class Dialog(QtGui.QDialog):
-    def __init__(self, title, widget, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+    def __init__(self, t, w, parent=None):
+        QtGui.QDialog.__init__(self, ctx.mainScreen.ui)
 
         self.gridlayout = QtGui.QGridLayout(self)
         self.gridlayout.setMargin(0)
@@ -84,17 +77,20 @@ class Dialog(QtGui.QDialog):
         self.gridlayout.setObjectName("gridlayout")
 
         self.windowTitle = windowTitle(self)
-        self.windowTitle.label.setText(title)
+        self.windowTitle.label.setText(t)
 
         self.gridlayout.addWidget(self.windowTitle,0,0,1,1)
 
-        self.content = widget
+        self.content = w
         self.gridlayout.addWidget(self.content,1,0,1,1)
 
         QObject.connect(self.windowTitle.pushButton,SIGNAL("clicked()"),self.reject)
         QMetaObject.connectSlotsByName(self)
 
-        self.setStyleSheet("QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}")
+        self.setStyleSheet("""
+            QDialog { background-image:url(':/gui/pics/transBlack.png'); }
+            QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}
+        """)
 
 class WarningDialog(Dialog):
 
@@ -160,14 +156,37 @@ your system formatting the selected partition.</p>
         self.emit(SIGNAL("signalCancel"), ())
 
 
-class InformationWindow(QtGui.QSplashScreen):
+class InformationWindow(QtGui.QWidget):
 
     def __init__(self, message):
         Pix = QtGui.QPixmap(':/gui/pics/working.png')
-        QtGui.QSplashScreen.__init__(self, ctx.mainScreen.ui, Pix)
+        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        self.setObjectName("InfoWin")
+        self.resize(280,200)
+        self.setStyleSheet("""
+            QLabel { border: 1px solid #CCC;
+                     border-radius: 4px;
+                     background-image:url(':/gui/pics/transBlack.png');}
+            QLabel#message { border: 2px solid #AAA;
+                             background-color:#FFFFFF }
+        """)
+        self.gridlayout = QtGui.QGridLayout(self)
+
+        self.label = QtGui.QLabel(self)
+        self.label.setMaximumSize(QSize(16777215,30))
+        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setObjectName("message")
+        self.gridlayout.addWidget(self.label,1,0,1,1)
+
+        self.pix = QtGui.QLabel(self)
+        self.pix.setAlignment(Qt.AlignCenter)
+        self.pix.setPixmap(Pix)
+        self.gridlayout.addWidget(self.pix,0,0,1,1)
         self.updateMessage(message)
-        ctx.mainScreen.processEvents()
 
     def updateMessage(self, message):
-        self.showMessage(message,Qt.AlignBottom | Qt.AlignHCenter)
+        self.move(ctx.mainScreen.ui.width()/2 - self.width()/2 - 20,
+                  ctx.mainScreen.ui.height()/2 - self.height()/2 - 30)
+        self.label.setText(message)
+
 

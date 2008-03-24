@@ -42,7 +42,7 @@ class userFunctions:
 
     def checkAutologin(self):
         """It verifies if another autologin user exists"""
-        if(self.correctData.autoLoginUser):
+        if self.correctData.autoLoginUser:
             return False
         return True
 
@@ -55,7 +55,7 @@ class userFunctions:
     def checkName(self):
         """It verifies if the username already exists"""
         for usr in self.correctData.users:
-            if(usr.username==self.username):
+            if usr.username==self.username:
                 return True
         return False
 
@@ -63,7 +63,7 @@ class userFunctions:
         """It checks the groups validity"""
         for element in self.groups:
             for group in kahya().defaultGroups:
-                if (group==element or element=="wheel"):
+                if group==element or element=="wheel":
                     break
             else:
                 return element
@@ -79,7 +79,7 @@ class otherFunctions:
         for element in getKeymaps():
             if element.X==self.keyX:
                 return True
-        return False 
+        return False
 
     def findKeymap(self):
         """It attaches console Keymap"""
@@ -92,26 +92,28 @@ class partitionFunctions:
     def __init__(self,fs,disk):
         self.fs=fs
         self.disk=disk
+
     def checkFileSystem(self):
         for element in kahya().fileSystems:
             if element==self.fs:
                 return True
         return False
+
     def checkFileSystem2(self):
         for element in kahya().fileSystems2:
             if element == self.fs:
                 return True
         return False
+
     def checkDiskSyntax(self):
         return re.match("disk[0-9]p[1-9]$",self.disk) 
 
     def checkDiskSyntax2(self):
         return re.match("disk[0-9]$",self.disk) 
 
-
 class kahya:
     def __init__(self):
-        self.fileSystems=["swap","ext3","ntfs","reiserf","xfs"]
+        self.fileSystems=["swap","ext3","ntfs","reiserfs","xfs"]
         self.fileSystems2=["ext3","xfs"]
         self.defaultGroups=["audio","dialout","disk","pnp","pnpadmin","power","removable","users","video"]
         self.errorList=[]
@@ -144,15 +146,15 @@ class kahya:
             self.correctData.repoName = self.data.repoName
 
         ###language selection###
-        if(locales.has_key(self.data.language)):
+        if locales.has_key(self.data.language):
             self.correctData.language=self.data.language
         else:
             error.Lang=True
             self.errorList.append("Language Error: %s does not exist"%self.data.language)
 
         ###keymap selection###
-        if(self.data.keyData.X):
-            if (otherFunct.checkKeymapX()):
+        if self.data.keyData.X:
+            if otherFunct.checkKeymapX():
                 self.correctData.keyData.X=self.data.keyData.X
                 self.correctData.keyData.console=otherFunct.findKeymap()
             else:
@@ -161,8 +163,8 @@ class kahya:
         else:
             if error.Lang!=True:
                 for lang in getLangsWithKeymaps():
-                    if(lang[0]==self.correctData.language):
-                        if(self.correctData.language=="tr"):
+                    if lang[0]==self.correctData.language:
+                        if self.correctData.language=="tr":
                             self.correctData.keyData.X=lang[1][0].X
                             self.correctData.keyData.console=lang[1][0].console
                         else:
@@ -174,7 +176,7 @@ class kahya:
                     self.errorList.append("Keymap Error: Cannot associate Keymap for %s"%self.data.language)
 
         ###root password selection###
-        if(len(self.data.rootPassword)<4):
+        if len(self.data.rootPassword)<4:
             if not self.data.useYaliFirstBoot:
                 error.Root=True
                 self.errorList.append("Root Password Error : Password is too short")
@@ -182,13 +184,13 @@ class kahya:
             self.correctData.rootPassword=self.data.rootPassword
 
         ###hostname selection###
-        if(self.data.hostname):
+        if self.data.hostname:
             self.correctData.hostname=self.data.hostname
         else:
             self.correctData.hostname="pardus"
 
         ###users selections###
-        if(len(self.data.users)==0):
+        if len(self.data.users)==0:
             if not self.data.useYaliFirstBoot:
                 error.Users=True
                 self.errorList.append("User Error: No user entry")
@@ -198,9 +200,9 @@ class kahya:
                 userError=userErrors()
                 correctUser=User()
                 checkFunctions=userFunctions(user.username,user.groups,self.correctData)
-                if(user.autologin=="yes" and checkFunctions.checkAutologin()):
+                if user.autologin=="yes" and checkFunctions.checkAutologin():
                     self.correctData.autoLoginUser=user.username
-                if (user.username=="root" or checkFunctions.checkValidity()!=True or checkFunctions.checkName()==True):
+                if user.username=="root" or not checkFunctions.checkValidity()==True or checkFunctions.checkName()==True:
                     userError.Uname=True
                     if (user.username and userError.Uname==True):
                         self.errorList.append("Username Error for %s : username already exist or not valid"%user.username)
@@ -226,33 +228,35 @@ class kahya:
                     correctUser.groups=user.groups
                     self.correctData.users.append(correctUser)
 
-        if (len(self.correctData.users)==0) and not self.data.useYaliFirstBoot:
+        if len(self.correctData.users)==0 and not self.data.useYaliFirstBoot:
             error.Users=True
             self.errorList.append("User Error: No user added")
 
         ###partitioning selection###
         correctPart=yaliReadPiks.yaliPartition()
-        if(self.data.partitioningType=="auto" or self.data.partitioningType!="manuel"):
-            self.correctData.partitioningType="auto"
+        if (self.data.partitioningType in ["auto","smartAuto"]):
+            self.correctData.partitioningType=self.data.partitioningType
             if(len(self.data.partitioning)!=1):
                 error.Empty=True
-                self.errorList.append("Auto Partitioning Error : No partition entry  or too many partition")
+                self.errorList.append("Auto Partitioning Error : No partition entry or too many partition")
             else:
                 PartiFunction=partitionFunctions(self.data.partitioning[0].fsType,self.data.partitioning[0].disk)
                 if not PartiFunction.checkDiskSyntax2():
                     error.Disk=True
                     self.errorList.append("Auto Partitioning Error : Wrong Disk Syntax")
                 else:
-                    correctPart.partitionType="pardus_root"
-                    correctPart.format="true"
-                    correctPart.ratio="100"
                     correctPart.disk=self.data.partitioning[0].disk
+                    if self.correctData.partitioningType == "auto":
+                        correctPart.partitionType="pardus_root"
+                        correctPart.format="true"
+                        correctPart.formatType="full"
+                        correctPart.ratio="100"
                     self.correctData.partitioning.append(correctPart)
 
-        elif(self.data.partitioningType=="manuel"):
+        elif self.data.partitioningType=="manuel":
             self.correctData.partitioningType="manuel"
 
-            if(len(self.data.partitioning)==0):
+            if len(self.data.partitioning)==0:
                 error.Empty=True
                 self.errorList.append("Manuel Partitioning Error : No partition entry ")
             else:
@@ -262,34 +266,37 @@ class kahya:
                 else:
                     error.Root=True
                     self.errorList.append("Manuel Partitioning Error : \"pardus_root\" missing ")
-                if(self.checkRatio()!=True):
+                if not self.checkRatio()==True:
                     error.TotalRatio=True
                     self.errorList.append(" Ratio Error : Total not equal to 100")
-                else:    
+                else:
                     if(error.Empty!=True and error.Root!=True):
                         for partition in self.data.partitioning:
                             errorPartition=partitionErrors()
                             functPart=partitionFunctions(partition.fsType,partition.disk)
-                            if  not (partition.partitionType=="pardus_root" or partition.partitionType=="pardus_swap" or partition.partitionType=="pardus_home" or partition.partitionType=="other"):
+                            if not partition.partitionType in["pardus_root","pardus_swap","pardus_home","other"]:
                                 errorPartition.PartitionType=True
                                 self.errorList.append("Partition type Error :%s not valid"%partition.partitionType)
-                            if(partition.format!="false"):
+                            if not partition.format=="false":
                                 partition.format="true"
-                            if not (functPart.checkDiskSyntax()):
+                            if not functPart.checkDiskSyntax():
                                 errorPartition.Disk=True
                                 self.errorList.append(" Disk Error for %s: %s not valid"%(partition.partitionType,partition.disk))
-                            if (partition.partitionType!="other"):
-                                if not (functPart.checkFileSystem2()):
+                            if not partition.partitionType=="other":
+                                if not functPart.checkFileSystem2():
                                     errorPartition.FsType=True
                                     self.errorList.append("File system Error for %s : %s not valid"%(partition.partitionType,partition.fsType))
                             else:
-                                if not (functPart.checkFileSystem()):
+                                if not functPart.checkFileSystem():
                                     errorPartition.FsType=True
                                     self.errorList.append("File system Error for %s : %s not valid"%(partition.partitionType,partition.fsType))
-                            if  partition.mountPoint!=None  and not(re.search("[a-zA-Z0-9]",partition.mountPoint)) :
+                            if not partition.mountPoint==None  and not(re.search("[a-zA-Z0-9]",partition.mountPoint)) :
                                 errorPartition.MountPoint=True
                                 self.errorList.append("Mountpoint Error for %s : %s not valid"%(partition.partitionType,partition.mountPoint))
-                            if(errorPartition.PartitionType!=True and errorPartition.Disk!=True and errorPartition.FsType!=True and errorPartition.MountPoint!=True):
+                            if not errorPartition.PartitionType==True and\
+                               not errorPartition.Disk==True and\
+                               not errorPartition.FsType==True and\
+                               not errorPartition.MountPoint==True:
                                 self.correctData.partitioning.append(partition)
 
         return self.errorList

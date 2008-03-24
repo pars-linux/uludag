@@ -57,9 +57,6 @@ def init_devices(force = False):
         return True
 
     devices = []
-    
-    # all devices from /sys/block
-    devs = detect_devices()
 
     # raid devices and their members in (mdNum, [members list], level, activeNum) form
     raidMembers = yali4.raid.scanForRaid()
@@ -67,14 +64,17 @@ def init_devices(force = False):
     print "starting raid devices"
     yali4.raid.startAllRaid(raidMembers)
 
+    # all devices from /sys/block
+    devs = detect_devices()
+
     # exclude raid members from devices list
     for rm in raidMembers:
         devs = list(set(devs) - set(rm[1]))
     for dev_path in devs:
         devices.append(Device(dev_path))
-        
+
     # devices are appended in reverse order
-    devices.reverse()
+    # devices.reverse()
 
     if devices:
         return True
@@ -105,21 +105,15 @@ class Device:
         self._sector_size = 0
         self._parted_type = deviceType
         self._isRaid = False
-        global raidMembers
+        self._path = device_path
 
-        for mdDevice, deviceList, level, numActive in raidMembers:
-            if device_path == "/dev/md%d"%mdDevice:
-                print "init raid %s" % device_path
-                self._isRaid = True
-                self._raidMembers = deviceList
-                self._raidLevel = level
-                self._raidActiveNum = numActive
-                self._raidSpares = 0
-                self._raidChunksize = 64
-                self._raidMinor = mdDevice
-                self._raidIsSetup = False
-        
-        self._dev = parted.PedDevice.get(device_path)
+        self.checkRaid()
+
+        try:
+            self._dev = parted.PedDevice.get(device_path)
+        except:
+            print "parted PedDevice error on %s " % device_path
+            return 0
 
         if self._isRaid:
             self._model = "software raid"
@@ -131,17 +125,33 @@ class Device:
         try:
             self._disk = parted.PedDisk.new(self._dev)
         except:
+            print "parted PedDisk error on %s, assuming free space " % device_path
             label = archinfo[self._arch]["disklabel"]
             disk_type = parted.disk_type_get(label)
             self._disk = self._dev.disk_new_fresh(disk_type)
 
         self._disklabel = self._disk.type.name
-        self._path = device_path
 
         if self._isRaid:
             self.raidSanityCheck()
-        else:
-            self.update()
+        #else:
+        #    self.update()
+        self.update()
+
+    def checkRaid(self):
+        global raidMembers
+
+        for mdDevice, deviceList, level, numActive in raidMembers:
+            if self._path == "/dev/md%d" % mdDevice:
+                print "init raid %s" % self._path
+                self._isRaid = True
+                self._raidMembers = deviceList
+                self._raidLevel = level
+                self._raidActiveNum = numActive
+                self._raidSpares = 0
+                self._raidChunksize = 64
+                self._raidMinor = mdDevice
+                self._raidIsSetup = False
 
     ##
     # clear and re-fill partitions dict.
@@ -149,8 +159,11 @@ class Device:
         self._partitions = []
         print "updating partitions of ", self._path
 
-        part = self._disk.next_partition()
-        
+        try:
+            part = self._disk.next_partition()
+        except:
+            print "parted error disk_next_partition in update %s " % self._path
+
         while part:
             if part.num >= 1:
                 self.__addToPartitionsDict(part)
@@ -454,8 +467,9 @@ class Device:
 
 
     def __pedPartitionBytes(self, ped_part):
-        return long(ped_part.geom.length *
-                    self._sector_size)
+        if ped_part:
+            return long(ped_part.geom.length * self._sector_size)
+        return 0
 
     ###############################
     # Partition mangling routines #
@@ -541,15 +555,11 @@ class Device:
         if part.num >= 1:
             fs_name = ""
             if part.is_flag_available(parted.PARTITION_RAID) and part.get_flag(parted.PARTITION_RAID):
-                fs_name = "software raid"
-                fs_ready = False
                 self._partitions.append(RaidPartition(self, part,
                                                       part.num,
                                                       part_mb,
                                                       geom.start,
-                                                      geom.end,
-                                                      fs_name,
-                                                      fs_ready))
+                                                      geom.end))
                 return part
             if part.fs_type:
                 fs_name = part.fs_type.name
@@ -575,7 +585,11 @@ class Device:
     # delete a partition
     # @param part: Partition
     def deletePartition(self, part):
-        self._disk.delete_partition(part.getPartition())
+        try:
+            self._disk.delete_partition(part.getPartition())
+            print "Deleted partition : %s " % part.getPath()
+        except:
+            print "parted error deleting partition %s " % part.getPath()
         self.update()
 
     def deleteAllPartitions(self):
@@ -597,7 +611,6 @@ class Device:
         if not isinstance(fs, yali4.filesystem.FileSystem):
             raise DeviceError, "filesystem is None, can't resize"
 
-        print dir(fs)
         if not fs.resize(size_mb, part):
             raise DeviceError, "fs.resize ERROR"
 
@@ -609,7 +622,9 @@ class Device:
             ptype = PARTITION_PRIMARY
 
         self.deletePartition(part)
+        self.commit()
         self.addPartitionFromStart(ptype, fs_name, start, size_mb)
+        self.commit()
 
     def commit(self):
         self._disk.commit()

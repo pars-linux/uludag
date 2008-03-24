@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -52,7 +52,8 @@ def iter_head_images():
 head_images = iter_head_images()
 
 class User:
-
+    """ User class for adding or editing new users 
+        to the installed system """
     def __init__(self, username = ''):
         self.username = username
         self.groups = []
@@ -71,12 +72,14 @@ class User:
         self.fake_passwd_path = '/etc/passwd'
 
     def exists(self):
+        """ Check if the given user exists on system """
         if filter(lambda x: x == self.username, \
               map(lambda x: x[0], [line.split(':') for line in open(self.fake_passwd_path, 'r').readlines()])):
             return True
         return False
 
     def usernameIsValid(self):
+        """ Check if the given username is valid not """
         valid = ascii_letters + '_' + digits
         name = self.username
         if len(name) == 0 or filter(lambda x: not x in valid, name) or not name[0] in ascii_letters:
@@ -84,11 +87,13 @@ class User:
         return True
 
     def realnameIsValid(self):
+        """ Check if the given Real Name is valid or not """
         not_allowed_chars = '\n' + ':'
         return '' == filter(lambda r: [x for x in not_allowed_chars if x == r], self.realname)
 
     # KDE AutoLogin
     def setAutoLogin(self,state=True):
+        """ Sets the KDE's Autologin feature's state """
         import ConfigParser
         section = 'X-:0-Core'
         confFile = os.path.join(consts.target_dir, 'etc/X11/kdm/kdmrc')

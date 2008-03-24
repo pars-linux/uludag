@@ -19,7 +19,7 @@ _ = __trans.ugettext
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-import comar
+import dbus
 import time
 import yali4.sysutils
 import yali4.users
@@ -110,38 +110,38 @@ don't you?
 
     # process pending actions defined in other screens.
     def processPendingActions(self):
-        comarLink = None
+        bus = None
 
-        def connectToComar():
-            global comarLink
+        def connectToDBus():
+            global bus
             for i in range(20):
                 try:
-                    ctx.debugger.log("trying to start comar..")
-                    comarLink = comar.Link(sockname=consts.comar_socket_file)
+                    ctx.debugger.log("trying to start dbus..")
+                    bus = dbus.bus.BusConnection(address_or_type=consts.dbus_socket_file)
                     break
-                except comar.CannotConnect:
+                except dbus.DBusException:
                     time.sleep(1)
-                    ctx.debugger.log("wait comar for 1 second...")
-            if comarLink:
+                    ctx.debugger.log("wait dbus for 1 second...")
+            if bus:
                 return True
             return False
 
         def setHostName():
-            global comarLink
-            comarLink.Net.Stack.setHostNames(hostnames=ctx.installData.hostName)
-            reply = comarLink.read_cmd()
+            global bus
+            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
+            # setHostName(hostname)
+            obj.setHostName(ctx.installData.hostName, dbus_interface="tr.org.pardus.comar.Net.Stack")
             ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
             return True
 
         def addUsers():
-            global comarLink
+            global bus
+            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
             for u in yali4.users.pending_users:
                 ctx.debugger.log("User %s adding to system" % u.username)
-                comarLink.User.Manager.addUser(name=u.username,
-                                               password=u.passwd,
-                                               realname=u.realname,
-                                               groups=','.join(u.groups))
-                ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
+                # addUser(id, nick, realname, homedir, shell, passwd, groups)
+                obj.addUser("auto", u.username, u.realname, "", "", u.passwd, u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
+                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
 
                 # Enable auto-login
                 if u.username == ctx.installData.autoLoginUser:
@@ -150,9 +150,11 @@ don't you?
 
         def setRootPassword():
             if not ctx.installData.useYaliFirstBoot:
-                global comarLink
-                comarLink.User.Manager.setUser(uid=0,password=ctx.installData.rootPassword)
-                ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
+                global bus
+                obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
+                # setUser(uid, realname, homedir, shell, passwd, groups)
+                obj.setUser(0, "", "", "", ctx.installData.rootPassword, "", dbus_interface="tr.org.pardus.comar.User.Manager")
+                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
             return True
 
         def writeConsoleData():
@@ -166,17 +168,22 @@ don't you?
             return True
 
         def setPackages():
-            global comarLink
+            global bus
             if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
                 ctx.debugger.log("OemInstall selected.")
-                comarLink.System.Service["kdebase"].setState(state="off")
-                ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
-                comarLink.System.Service["yali-firstBoot"].setState(state="on")
-                ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
+                # kdebase off
+                obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
+                obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
+                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
+                # yali on
+                obj = bus.get_object("tr.org.pardus.comar", "/package/yali_firstBoot")
+                obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
             return True
 
         steps = [{"text":"Trying to connect COMAR Daemon...","operation":connectToComar},
                  {"text":"Setting Hostname...","operation":setHostName},
+                 {"text":"Setting TimeZone...","operation":yali4.postinstall.setTimeZone},
                  {"text":"Setting Root Password...","operation":setRootPassword},
                  {"text":"Adding Users...","operation":addUsers},
                  {"text":"Writing Console Data...","operation":writeConsoleData},

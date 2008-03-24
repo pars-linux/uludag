@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2008, TUBITAK/UEKAE
+# Copyright (C) 2005-2007, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -25,6 +25,7 @@ import pisi
 from yali4.exception import *
 
 def default_runner():
+    """ Main runner of YALI """
     import yali4.gui.runner
 
     sys.excepthook = exception_handler
@@ -36,6 +37,7 @@ exception_normal, exception_fatal, \
     exception_unknown = range(5)
 
 def exception_handler(exception, value, tb):
+    """ YALI exception handler for showing exceptions in GUI """
 
     exception_type = exception_unknown
 

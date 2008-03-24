@@ -27,6 +27,7 @@ import yali4.parteddata as parteddata
 import yali4.gui.context as ctx
 from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
+from yali4.gui.GUIAdditional import *
 
 import yali4.raid
 import yali4.partedutils
@@ -43,12 +44,10 @@ partitionTypes = {0:None,
 class DiskList(QtGui.QWidget):
 
     def __init__(self, *args):
-        QtGui.QWidget.__init__(self,None)
+        QtGui.QWidget.__init__(self, None)
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
         self.setAutoFillBackground(False)
         self.diskCount = 1
-        # we override this above, unnecessary
-        # self.partEdit = partEdit
         self.setStyleSheet("""
             QTabWidget::pane { border-top: 2px solid #FFFFFF; }
             QTabWidget::tab-bar { left: 5px; }
@@ -87,6 +86,7 @@ class DiskList(QtGui.QWidget):
         self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
         self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
+        self.connect(self.partEdit.ui.resizePartition,QtCore.SIGNAL("clicked()"),self.slotResizePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
         self.connect(self.partEdit.ui.resetAllChanges,QtCore.SIGNAL("clicked()"),self.resetChanges)
         self.connect(self.partEdit, SIGNAL("updateTheList"),self.update)
@@ -120,7 +120,10 @@ class DiskList(QtGui.QWidget):
         self.diskCount = 1
 
         for dev in self.devs:
-            ctx.debugger.log("Device Found %s" % dev.getModel())
+            try:
+                ctx.debugger.log("Device Found %s" % dev.getModel())
+            except:
+                pass
             print "device found %s" % dev.getModel()
             # add Device objects representing block devices
             # @see storage.py global devices[] and Device class
@@ -224,7 +227,7 @@ class DiskList(QtGui.QWidget):
 
         if dev.isRaid():
             pass
-            
+
         for part in dev.getOrderedPartitionList():
             # we dont show extended partition
             if part.isExtended():
@@ -242,7 +245,7 @@ class DiskList(QtGui.QWidget):
             else:
                 print "found a freespace : ", part.getPath()
                 name = _("Free Space")
-                
+
             ctx.debugger.log("Partition added with %s mb" % part.getMB())
             diskItem.addPartition(name,part)
 
@@ -266,6 +269,13 @@ class DiskList(QtGui.QWidget):
         ctx.partrequests.removeRequest(self.partEdit.currentPart, request.formatRequestType)
         ctx.partrequests.removeRequest(self.partEdit.currentPart, request.labelRequestType)
         self.update()
+
+    def slotResizePart(self):
+        """ Asks for resize for selected partition """
+        dev = self.partEdit.currentPart.getDevice()
+        part = self.partEdit.currentPart
+        resizeWidget = ResizeWidget(dev, part, self)
+        resizeWidget.show()
 
     def slotApplyPartitionChanges(self):
         """Creates requests for changes in selected partition"""
@@ -411,7 +421,7 @@ class DiskItem(QtGui.QWidget):
         self.model = model
         self.totalSize = totalSize
         self.partEdit = partEdit
-        
+
 
     # @param data is Partition type object and 
     # @param name is (gui)label for partition like "Free Space" or "Partition /dev/hda1"
@@ -438,12 +448,12 @@ class DiskItem(QtGui.QWidget):
                          "ext2" :{"bgcolor":"#9DB8D2",
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
-               "linux-swap(new)":{"bgcolor":"#C1665A",
+                    "linux-swap":{"bgcolor":"#C1665A",
                                   "fgcolor":"#FFFFFF",
                                   "icon"   :"linux"},
-               "software raid":{"bgcolor":"#000000",
-                                "fgcolor":"#999999",
-                                "icon"   :"other"}}
+                 "software raid":{"bgcolor":"#000000",
+                                  "fgcolor":"#999999",
+                                  "icon"   :"other"}}
             if metaTypes.has_key(fs_type):
                 return metaTypes[fs_type]
 
@@ -588,11 +598,14 @@ class PartEdit(QtGui.QWidget):
     def updateContent(self):
         part = self.currentPart
         self.ui.deletePartition.setVisible(True)
+        self.ui.resizePartition.setVisible(True)
         self.ui.formatType.setCurrentIndex(0)
         self.ui.formatCheck.setChecked(False)
 
+        self.ui.resizePartition.setVisible(part.isResizable())
         if part._parted_type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
+            self.ui.resizePartition.setVisible(False)
             self.ui.partitionSize.setEnabled(True)
             self.ui.partitionSlider.setEnabled(True)
         elif part._parted_type == parteddata.raidPartitionType:

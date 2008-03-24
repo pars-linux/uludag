@@ -54,8 +54,11 @@ def scanForRaid():
     devs = yali4.storage.detect_devices()
     
     for i in devs:
-        dev = parted.PedDevice.get(i)
-        disk = parted.PedDisk.new(dev)
+        try:
+            dev = parted.PedDevice.get(i)
+            disk = parted.PedDisk.new(dev)
+        except:
+            print "parted error handling %s" % i
         
         parts = []
         
