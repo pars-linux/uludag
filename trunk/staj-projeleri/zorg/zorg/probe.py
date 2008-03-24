@@ -419,7 +419,7 @@ def queryDDC(adapter=0):
 
     res.sort(reverse=True)
 
-    res[:0] = ["%dx%d" % (x, y) for x, y in res]
+    res = ["%dx%d" % (x, y) for x, y in res]
 
     if hsync_max == 0 or vref_max == 0:
         hfreqs = vfreqs = []
