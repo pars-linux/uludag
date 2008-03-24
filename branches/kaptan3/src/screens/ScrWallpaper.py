@@ -30,7 +30,7 @@ from screens.wallpaperdlg import WallpaperWidget
 
 # set summary picture and description
 summary = {"sum" : "",
-           "pic" : "kaptan/pics/summary/wallpaperSummary.png",
+           "pic" : "kaptan/pics/icons/wallpaper.png",
            "desc": i18n("Wallpaper")}
 
 # create a dcopclient for wallpaper

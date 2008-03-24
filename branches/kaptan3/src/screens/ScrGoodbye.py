@@ -24,7 +24,7 @@ class Widget(GoodbyeWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = "Goodbye!"
     desc = "Enjoy with Pardus..."
-    icon = "kaptan/pics/summary/goodbye.png"
+    icon = "kaptan/pics/icons/goodbye.png"
 
     def __init__(self, *args):
         apply(GoodbyeWidget.__init__, (self,) + args)

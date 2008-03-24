@@ -54,7 +54,7 @@ class Kaptan(kaptanUi):
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
 
-        icon = "kaptan/pics/default_icon.png"
+        icon = "kaptan/pics/icons/welcome.png"
 
         # set images
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))

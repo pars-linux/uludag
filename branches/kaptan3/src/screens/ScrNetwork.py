@@ -23,7 +23,7 @@ class Widget(NetworkWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = "Network Manager"
     desc = "Configure network settings..."
-    icon = "kaptan/pics/summary/network.png"
+    icon = "kaptan/pics/icons/network.png"
 
     running = False
     proc = QProcess()

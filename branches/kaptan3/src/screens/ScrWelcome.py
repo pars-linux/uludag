@@ -22,7 +22,7 @@ class Widget(WelcomeWidget, ScreenWidget):
 
     title = i18n("Welcome")
     desc = i18n("Welcome to Kaptan Wizard :)")
-    icon = "kaptan/pics/summary/welcome.png"
+    icon = "kaptan/pics/icons/welcome.png"
 
 
     def __init__(self, *args):

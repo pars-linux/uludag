@@ -60,7 +60,8 @@ app_data = [
     ('/usr/kde/3.5/share/apps/kaptan/pics', ['pics/']),
     'src/kaptan.desktop',
     ('/usr/kde/3.5/share/apps/kaptan/screens', ['src/screens']),
-    ('/usr/kde/3.5/share/apps/kaptan/pics/themes', ['pics/themes/'])
+    ('/usr/kde/3.5/share/apps/kaptan/pics/themes', ['pics/themes/']),
+    ('/usr/kde/3.5/share/apps/kaptan/pics/icons', ['pics/icons/'])
 ]
 
 kdedistutils.setup(

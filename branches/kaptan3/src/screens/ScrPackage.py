@@ -20,7 +20,7 @@ from screens.packagedlg import PackageWidget
 
 # set summary picture and description
 summary = {"sum" : "",
-           "pic" : "kaptan/pics/summary/packageSummary.png",
+           "pic" : "kaptan/pics/icons/package.png",
            "desc": i18n("Package Manager")}
 
 class Widget(PackageWidget, ScreenWidget):
