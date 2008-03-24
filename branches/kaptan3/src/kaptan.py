@@ -177,6 +177,10 @@ class Kaptan(kaptanUi):
     def slotExit(self):
         sys.exit(1)
 
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Escape:
+            self.slotExit()
+
 def AboutData():
     return KAboutData(
         mod_app,

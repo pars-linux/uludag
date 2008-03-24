@@ -39,7 +39,7 @@ class Widget(MultipleWidget, ScreenWidget):
 
         self.info = kdecore.NETRootInfo(int(qt_xdisplay()))
         self.oldNumberOfDesktops =  self.info.numberOfDesktops()
-        print self.oldNumberOfDesktops
+
         # set start value of desktops
         self.numInput.setValue(self.oldNumberOfDesktops)
 
