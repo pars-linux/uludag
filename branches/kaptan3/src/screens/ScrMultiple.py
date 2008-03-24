@@ -34,14 +34,14 @@ class Widget(MultipleWidget, ScreenWidget):
     # for simplicity, multiple desktops are limited to 8
     maxDesktops = 8
 
-    # min value of desktops started from 1
-    minDesktop = 1
-
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
 
+        self.info = kdecore.NETRootInfo(int(qt_xdisplay()))
+        self.oldNumberOfDesktops =  self.info.numberOfDesktops()
+
         # set start value of desktops
-        self.numInput.setValue(self.minDesktop)
+        self.numInput.setValue(self.oldNumberOfDesktops)
 
         # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
@@ -65,9 +65,8 @@ class Widget(MultipleWidget, ScreenWidget):
 
     def changed(self):
         numberOfDesktops =  self.numInput.value()
-        info = kdecore.NETRootInfo(int(qt_xdisplay()))
-        info.setNumberOfDesktops(numberOfDesktops)
-        info.activate()
+        self.info.setNumberOfDesktops(numberOfDesktops)
+        self.info.activate()
 
     def shown(self):
         pass
