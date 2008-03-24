@@ -39,13 +39,18 @@ class Widget(MultipleWidget, ScreenWidget):
 
         self.info = kdecore.NETRootInfo(int(qt_xdisplay()))
         self.oldNumberOfDesktops =  self.info.numberOfDesktops()
-
+        print self.oldNumberOfDesktops
         # set start value of desktops
         self.numInput.setValue(self.oldNumberOfDesktops)
 
         # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
-        self.pixMultiple.setPixmap(QPixmap(locate("data", "kaptan/pics/multiple.png")))
+
+        if KGlobal.locale().language() == "tr":
+            self.pixMultiple.setPixmap(QPixmap(locate("data", "kaptan/pics/multiple_tr.png")))
+        else:
+            self.pixMultiple.setPixmap(QPixmap(locate("data", "kaptan/pics/multiple_en.png")))
+
         self.numInput.setRange(1, self.maxDesktops , 1, True)
 
         # set texts

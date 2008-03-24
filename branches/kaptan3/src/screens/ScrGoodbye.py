@@ -34,6 +34,11 @@ class Widget(GoodbyeWidget, ScreenWidget):
         else:
             self.helpUrl = "http://www.pardus.org.tr/eng/contact.html"
 
+        self.picMigration.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/migration.png")))
+        self.picTasma.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/tasma.png")))
+        self.picFeedback.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/feedback.png")))
+        self.picHelp.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/user_groups.png")))
+
         # set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 

@@ -55,7 +55,7 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.listWallpaper.setSorting(-1)
 
         self.currentText = QString(i18n("Old Wallpaper"))
-        self.noneText = str(i18n("No Wallpaper"))
+        self.noneText = QString(i18n("No Wallpaper"))
         self.nonePic = "kaptan/pics/no-wallpaper.png"
         self.wallpaperList = {}
         self.ultimateList = []
