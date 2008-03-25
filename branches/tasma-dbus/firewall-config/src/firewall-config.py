@@ -267,12 +267,13 @@ class MainApplication(programbase):
     def getState(self):
         def handleState(_type, _desc, _state):
             self.state = "off"
+            mainwidget.pushStatus.setEnabled(True)
             if _state in ["on", "started"]:
                 self.state = "on"
-                mainwidget.pushStatus.setEnabled(True)
                 mainwidget.frameIncoming.setEnabled(True)
                 mainwidget.frameAdvanced.setEnabled(True)
                 mainwidget.pushNewRule.setEnabled(True)
+            self.setState(self.state)
         ch = self.callMethod("info", "tr.org.pardus.comar.system.service.get", "System.Service")
         ch.registerDone(handleState)
         ch.call()
@@ -305,14 +306,14 @@ class MainApplication(programbase):
 
     def setState(self, state):
         self.state = state
-        if self.state == 'on' and self.profile == rules.profile:
+        if self.state == 'on': #and self.profile == rules.profile:
             mainwidget.pushStatus.setText(i18n('&Stop Firewall'))
             mainwidget.textStatus.setText(i18n('<b><font size=\'+1\'>Firewall is running</font></b>'))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
             mainwidget.textStatus2.setText(i18n('Click here to stop the firewall and allow all incoming and outgoing connections.'))
 
             # Load FW rules
-            self.comar.call('Net.Filter.getRules', id=2)
+            self.getRules()
         else:
             mainwidget.pushStatus.setText(i18n('&Start Firewall'))
             mainwidget.textStatus.setText(i18n('<b><font size=\'+1\'>Firewall is not running</font></b>'))
@@ -358,67 +359,46 @@ class MainApplication(programbase):
             'raw': []
         }
 
-
-    def slotComar(self, sock):
-        reply = self.comar.read_cmd()
-        if reply.command == 'notify':
-            # State changed
-            info = reply.data.split('\n')
-            if info[0] == 'state':
-                self.setState(info[1])
-                mainwidget.pushStatus.setEnabled(True)
-            elif info[0] == 'profile':
-                self.profile = {
-                    'profile': info[1],
-                    'save_filter': info[2],
-                    'save_mangle': info[3],
-                    'save_nat': info[4],
-                    'save_raw': info[5],
-                }
-        elif reply.command == 'result':
-            if reply.id == 2:
-                # Get Rules
-                self.emptyRules()
-                for rule in reply.data.split('\n'):
-                    if not rule:
-                        continue
-                    table, rule = rule.split(' ', 1)
-                    self.rules[table].append(rule)
-                self.updateRules()
-            elif reply.id == 3:
-                # Get State
-                self.setState(reply.data)
-                mainwidget.pushStatus.setEnabled(True)
-            elif reply.id == 4:
-                # Get Profile
-                info = reply.data.split('\n')
-                self.profile = {
-                    'profile': info[0],
-                    'save_filter': info[1],
-                    'save_mangle': info[2],
-                    'save_nat': info[3],
-                    'save_raw': info[4],
-                }
-            elif reply.id == 10:
-                mainwidget.pushStatus.setEnabled(True)
-                mainwidget.frameIncoming.setEnabled(True)
-                mainwidget.frameAdvanced.setEnabled(True)
-                mainwidget.pushNewRule.setEnabled(True)
-        elif reply.command == 'fail':
-            if reply.id == 5:
-                if self.wheel:
-                    mainwidget.pushStatus.setEnabled(True)
-        elif reply.command == "denied":
-            KMessageBox.error(self, i18n("You are not allowed to edit firewall settings."), i18n("Access Denied"))
-
-
     def slotStatus(self):
         mainwidget.pushStatus.setEnabled(False)
         if self.state == 'on':
-            self.comar.call('Net.Filter.setState', {'state': 'off'}, id=5)
+            def handleOk():
+                self.setState("off")
+                mainwidget.pushStatus.setEnabled(True)
+            def handleCancel():
+                self.setState("on")
+                mainwidget.pushStatus.setEnabled(True)
+            def handleError(e):
+                self.setState("on")
+                mainwidget.pushStatus.setEnabled(True)
+
+            ch = self.callMethod("stop", "tr.org.pardus.comar.system.service.set", "System.Service")
+            ch.registerCancel(handleCancel)
+            ch.registerError(handleError)
+            ch.registerAuthError(handleError)
+            ch.registerDBusError(handleError)
+            ch.registerDone(handleOk)
+            ch.call()
         else:
-            self.comar.call('Net.Filter.setProfile', rules.profile, id=6)
-            self.comar.call('Net.Filter.setState', {'state': 'on'}, id=5)
+            def handleOk():
+                self.setState("on")
+                mainwidget.pushStatus.setEnabled(True)
+                ch2 = self.callMethod("setProfile", "tr.org.pardus.comar.net.filter.set")
+                ch2.call(rules.profile["profile"], rules.profile["save_filter"], rules.profile["save_mangle"], rules.profile["save_nat"], rules.profile["save_raw"])
+            def handleCancel():
+                self.setState("off")
+                mainwidget.pushStatus.setEnabled(True)
+            def handleError(e):
+                self.setState("off")
+                mainwidget.pushStatus.setEnabled(True)
+
+            ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
+            ch.registerCancel(handleCancel)
+            ch.registerError(handleError)
+            ch.registerAuthError(handleError)
+            ch.registerDBusError(handleError)
+            ch.registerDone(handleOk)
+            ch.call()
 
     def slotOk(self):
         self.saveAll()
@@ -442,7 +422,8 @@ class MainApplication(programbase):
 
     def setRule(self, table, rule):
         rule = '-t %s %s' % (table, rule)
-        self.comar.call('Net.Filter.setRule', {'rule': rule}, id=10)
+        ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
+        ch.call(rule)
 
     def saveRules(self, table, now):
         s1 = set(self.rules[table])
