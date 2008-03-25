@@ -35,7 +35,7 @@
         <pixmap>image0</pixmap>
     </property>
     <property name="caption">
-        <string>kaptanUi</string>
+        <string></string>
     </property>
     <spacer>
         <property name="name">
