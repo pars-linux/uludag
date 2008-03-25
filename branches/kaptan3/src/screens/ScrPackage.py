@@ -18,11 +18,6 @@ import kdedesigner
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
 
-# set summary picture and description
-summary = {"sum" : "",
-           "pic" : "kaptan/pics/icons/package.png",
-           "desc": i18n("Package Manager")}
-
 isUpdateOn = False
 
 class Widget(PackageWidget, ScreenWidget):
@@ -32,7 +27,7 @@ class Widget(PackageWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = i18n("Package Manager")
     desc = i18n("Configure package manager settings...")
-    icon = summary["pic"]
+    icon = "kaptan/pics/icons/package.png"
 
     # min update time
     updateTime = 12

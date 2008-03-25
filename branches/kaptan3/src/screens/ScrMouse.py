@@ -23,17 +23,12 @@ from screens.mousedlg import MouseWidget
 
 RIGHT_HANDED, LEFT_HANDED = range(2)
 
-# set summary picture and description
-summary = {"sum" : "",
-           "pic" : "kaptan/pics/icons/mouse.png",
-           "desc": i18n("Mouse")}
-
 class Widget(MouseWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
     title = i18n("Mouse Settings")
     desc = i18n("Configure your mouse")
-    icon = summary["pic"]
+    icon = "kaptan/pics/icons/mouse.png"
 
     def __init__(self, *args):
         apply(MouseWidget.__init__, (self, ) + args)
@@ -63,19 +58,6 @@ class Widget(MouseWidget, ScreenWidget):
 
     def execute(self):
         self.setHandedness(RIGHT_HANDED)
-
-        if self.singleClick.isChecked():
-            summary["sum"]= i18n("Single Click")
-        else:
-            summary["sum"]= i18n("Double Click")
-
-        if self.rightHanded.isChecked():
-            summary["sum"] += i18n(", Right Handed")
-        else:
-            summary["sum"] += i18n(", Left Handed")
-
-        if self.checkReverse.isChecked():
-            summary["sum"] += i18n(", Reverse Scrolling")
 
     def setClickBehaviour(self):
         config = KConfig("kdeglobals")

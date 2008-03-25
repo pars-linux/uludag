@@ -28,11 +28,6 @@ import ConfigParser
 from screens.Screen import ScreenWidget
 from screens.wallpaperdlg import WallpaperWidget
 
-# set summary picture and description
-summary = {"sum" : "",
-           "pic" : "kaptan/pics/icons/wallpaper.png",
-           "desc": i18n("Wallpaper")}
-
 # create a dcopclient for wallpaper
 dcopclient = kdecore.KApplication.dcopClient()
 dcopclient.registerAs("changewp")
@@ -44,7 +39,7 @@ class Widget(WallpaperWidget, ScreenWidget):
     # title and description at the top of the dialog window
     title = "Set your Wallpaper !"
     desc = "Enjoy with wonderful backgrounds..."
-    icon = summary["pic"]
+    icon = "kaptan/pics/icons/wallpaper.png"
 
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
@@ -182,6 +177,5 @@ class Widget(WallpaperWidget, ScreenWidget):
                 dcopapp.KBackgroundIface.setWallpaper(selectedWallpaper, 6)
 
     def execute(self):
-        #summary["sum"] = self.listWallpaper.currentItem().text(0)
         pass
 

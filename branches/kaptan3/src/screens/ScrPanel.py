@@ -21,17 +21,12 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.paneldlg import PanelWidget
 
-# set summary picture and description
-summary = {"sum" : "",
-           "pic" : "kaptan/pics/icons/panel.png",
-           "desc": i18n("Panel")}
-
 class Widget(PanelWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
     title = i18n("Configure your panel !")
     desc = i18n("Select the one you like...")
-    icon = summary["pic"]
+    icon = "kaptan/pics/icons/panel.png"
 
     selectedStyle= QString()
 
@@ -70,9 +65,6 @@ class Widget(PanelWidget, ScreenWidget):
         for thumbnail in themes:
             self.styleBox.insertItem(QFileInfo(thumbnail).baseName())
 
-        # if no panel chosen, then write defaults
-        summary["sum"] = self.styleBox.currentText()
-
         self.styleBox.setCurrentItem(0)
         self.styleSelected(0)
 
@@ -82,7 +74,6 @@ class Widget(PanelWidget, ScreenWidget):
         # normally this assignment should be in execute(), but for 
         # controlling panel values after applying it's in here.
         self.lastPanel = self.styleBox.currentText()
-        summary["sum"] = self.lastPanel
 
         #read entire xml into DOM tree
         dom = qtxml.QDomDocument()
@@ -175,9 +166,6 @@ class Widget(PanelWidget, ScreenWidget):
         pass
 
     def execute(self):
-        if self.checkKickoff.isChecked():
-            summary["sum"] += i18n(", Kickoff Menu")
-
         #if value changed after pressing to try button, then apply settings again. 
         self.applyStyle()
 

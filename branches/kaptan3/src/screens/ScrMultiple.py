@@ -19,17 +19,12 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.multipledlg import MultipleWidget
 
-# set summary picture and description
-summary = {"sum" : "",
-           "pic" : "kaptan/pics/icons/multiple.png",
-           "desc": i18n("Multiple Desktops")}
-
 class Widget(MultipleWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
     title = i18n("Multiple Desktops")
     desc = i18n("Configure virtual desktops..")
-    icon = summary["pic"]
+    icon = "kaptan/pics/icons/multiple.png"
 
     # for simplicity, multiple desktops are limited to 8
     maxDesktops = 8
@@ -77,8 +72,5 @@ class Widget(MultipleWidget, ScreenWidget):
         pass
 
     def execute(self):
-        summary["sum"] = str(self.numInput.value()) + i18n(" desktop(s)")
-        if self.mouseWheel.isChecked():
-            summary["sum"] += i18n(", Wheel Switches Workspace")
-
+        pass
 
