@@ -20,7 +20,7 @@
         </color>
     </property>
     <property name="caption">
-        <string></string>
+        <string>Mouse</string>
     </property>
     <grid>
         <property name="name">

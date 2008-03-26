@@ -16,7 +16,7 @@
         <enum>AncestorOrigin</enum>
     </property>
     <property name="caption">
-        <string></string>
+        <string>Goodbye</string>
     </property>
     <vbox>
         <property name="name">

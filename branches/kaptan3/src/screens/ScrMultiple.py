@@ -50,7 +50,7 @@ class Widget(MultipleWidget, ScreenWidget):
 
         # set texts
         self.setCaption(i18n("Multiple"))
-        self.multipleText.setText(i18n("<p>In this module, you can configure how many virtual desktops you want and how these should be labeled.</p>"))
+        self.multipleText.setText(i18n("<p>In this module, you can configure how many virtual desktops you want.</p>"))
         self.mouseWheel.setText(i18n("Mouse wheel over desktop background switches desktop."))
         self.numInput.setSuffix(i18n(" Desktop(s)"))
 
