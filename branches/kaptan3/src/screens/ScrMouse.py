@@ -49,7 +49,7 @@ class Widget(MouseWidget, ScreenWidget):
         self.doubleClick.setText(i18n("Dou&ble-click to open files and folders (select icons on first click)"))
 
         # set signals
-        #self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
+        self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
         #self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
         #self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
 
