@@ -16,7 +16,6 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
-
 import sys
 
 from screens.kaptanMain import kaptanUi
@@ -216,6 +215,11 @@ if __name__ == "__main__":
 
     kapp = KUniqueApplication(True, True, True)
     kaptan = Kaptan()
+
+    # if you use different theme our works looks ugly :)
+    style = QStyleFactory.create("Lipstik")
+    kapp.setStyle(style)
+
     kaptan.setCaption(i18n('Kaptan Welcome Wizard'))
     kaptan.setIcon(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
     kaptan.show()
