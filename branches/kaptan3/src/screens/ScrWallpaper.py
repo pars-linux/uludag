@@ -101,7 +101,6 @@ class Widget(WallpaperWidget, ScreenWidget):
             for wallpaperFile, wallpaperTitle in self.wallpaperList.items():
                 if wallpaperTitle == i:
                     item = KListViewItem(self.listWallpaper, "file", str(wallpaperFile))
-                    file = QImage(wallpaperFile)
                     item.setText(0,wallpaperTitle)
                     item.setPixmap(0,QPixmap(QImage(wallpaperFile).smoothScale(150,150, QImage.ScaleMin)))
 
@@ -114,14 +113,12 @@ class Widget(WallpaperWidget, ScreenWidget):
         if current:
             self.wallpaperList[current] = self.currentText
             item = KListViewItem(self.listWallpaper, "file", str(current))
-            file = QImage(current)
             item.setText(0,self.currentText)
             item.setPixmap(0,QPixmap(QImage(current).smoothScale(150,150, QImage.ScaleMin)))
 
         else:
             self.wallpaperList[self.nonePic] = self.noneText
             item = KListViewItem(self.listWallpaper, "file", str(self.nonePic))
-            file = QImage(self.nonePic)
             item.setText(0,self.noneText)
             item.setPixmap(0,QPixmap(QImage(self.nonePic).smoothScale(150,150, QImage.ScaleMin)))
 
