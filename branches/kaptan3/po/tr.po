@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-18 16:21+0200\n"
+"POT-Creation-Date: 2008-03-26 05:27+0200\n"
 "PO-Revision-Date: 2008-03-04 10:58+0200\n"
 "Last-Translator: pinar\n"
 "Language-Team:  <en@li.org>\n"
@@ -18,20 +18,19 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/kaptan.py:72 src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
+#: src/screens/welcomedlg.py:59
 msgid "Welcome"
-msgstr "Hoşgeldiniz"
+msgstr "Hoş geldiniz"
 
 #: src/kaptan.py:73 src/screens/ScrWelcome.py:24
 msgid "Welcome to Kaptan Wizard :)"
 msgstr "Kaptan Masaüstü Sihirbazına Hoşgeldiniz :)"
 
 #: src/kaptan.py:75
-#, fuzzy
 msgid "&Back"
 msgstr "Geri"
 
 #: src/kaptan.py:76
-#, fuzzy
 msgid "&Next"
 msgstr "İleri"
 
@@ -39,327 +38,13 @@ msgstr "İleri"
 msgid "Finish"
 msgstr "Bitir"
 
-#: src/kaptan.py:201
+#: src/kaptan.py:214
 msgid "Kaptan is already running!"
 msgstr "Kaptan zaten çalışıyor!"
 
-#: src/kaptan.py:206
+#: src/kaptan.py:219
 msgid "Kaptan Welcome Wizard"
 msgstr "Kaptan Masaüstü Sihirbazı"
-
-#: src/screens/welcomedlg.py:62
-msgid "WelcomeWidget"
-msgstr ""
-
-#: src/screens/ScrSummary.py:30
-msgid "You have finished !"
-msgstr "Tebrikler! Bitirdiniz!"
-
-#: src/screens/ScrSummary.py:31
-msgid "See your summary.."
-msgstr "Yaptığınız İşlemlerin Özeti"
-
-#: src/screens/ScrSummary.py:38 src/screens/ScrSummary.py:39
-msgid "Summary"
-msgstr "Özet"
-
-#: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:123
-msgid "Thumbnails"
-msgstr "Önizlemeler"
-
-#: src/screens/wallpaperdlg.py:122 src/screens/ScrWallpaper.py:34
-msgid "Wallpaper"
-msgstr "Duvarkağıdı"
-
-#: src/screens/wallpaperdlg.py:124
-msgid "toolTip"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:907
-msgid "Goodbye"
-msgstr "Hoşçakalın"
-
-#: src/screens/goodbyedlg.py:908
-msgid ""
-"<p>Congratulations! You have finished all steps. You can now continue using "
-"Pardus and try applications below.</p>"
-msgstr "<p>Tebrikler! Tüm aşamaları bitirdiniz. Aşağıdaki uygulamaları deneyebilirsiniz.</p>"
-
-#: src/screens/goodbyedlg.py:909
-msgid "Migration Tool"
-msgstr "Göç Aracı"
-
-#: src/screens/goodbyedlg.py:910 src/screens/goodbyedlg.py:913
-#: src/screens/goodbyedlg.py:917 src/screens/goodbyedlg.py:920
-msgid "Start"
-msgstr "Başlat"
-
-#: src/screens/goodbyedlg.py:911
-msgid ""
-"<p>A wizard to transfer files and settings from existing operating systems "
-"(e.g. Windows) to Pardus.</p>"
-msgstr "<p>Sisteminizde varolan bir işletim sistemindeki(ör. Windows) dosyaları "
-"ve ayarları Pardus'a aktarmanıza yardımcı olur.</p>"
-
-#: src/screens/goodbyedlg.py:912
-msgid "Tasma"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:914
-msgid ""
-"<p>TASMA is a configuration application for Pardus Operating System. </p>"
-msgstr "<p>Gelişmiş ayarları Pardus yapılandırma merkezinden yapabilirsiniz.</p>"
-
-#: src/screens/goodbyedlg.py:915
-msgid "Feedback"
-msgstr "Geribildirim"
-
-#: src/screens/goodbyedlg.py:916
-msgid ""
-"<p>A small wizard that you can send your messages to Pardus developers and "
-"help Pardus be the best Linux in the world.</p>"
-msgstr "<p>Bu ufak sihirbaz ile, Pardus geliştiricilerine mesaj gönderebilir \n"
-"ve Pardus'un dünyadaki en iyi Linux olmasına yardımda bulunabilirsiniz.</p>"
-
-#: src/screens/goodbyedlg.py:918
-msgid "User Groups and Help Pages"
-msgstr "Kullanıcı Grupları ve Yardım sayfaları"
-
-#: src/screens/goodbyedlg.py:919
-msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
-msgstr "<p>Pardus camiası, kullanıcı listeleri, IRC kanalları, belgeler ve daha fazlası.</p>"
-
-#: src/screens/paneldlg.py:85
-msgid "PanelWidget"
-msgstr ""
-
-#: src/screens/mousedlg.py:105
-msgid "MouseWidget"
-msgstr ""
-
-#: src/screens/ScrPanel.py:27 src/screens/ScrPanel.py:42
-msgid "Panel"
-msgstr ""
-
-#: src/screens/ScrPanel.py:32
-msgid "Configure your panel !"
-msgstr "Panel Yapılandırması"
-
-#: src/screens/ScrPanel.py:33
-msgid "Select the one you like..."
-msgstr "İstediğiniz panelden birini seçebilirsiniz."
-
-#: src/screens/ScrPanel.py:43
-msgid ""
-"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
-"some eye candy styles for you."
-msgstr ""
-
-#: src/screens/ScrPanel.py:44
-msgid "Style"
-msgstr "Stil"
-
-#: src/screens/ScrPanel.py:46
-msgid "Preview"
-msgstr "Önizleme"
-
-#: src/screens/ScrPanel.py:47
-msgid "Use enhanced Kickoff style menu"
-msgstr "Gelişmiş Kickoff menü stilini kullanın."
-
-#: src/screens/ScrPanel.py:179
-msgid ", Kickoff Menu"
-msgstr ""
-
-#: src/screens/packagedlg.py:114
-msgid "PackageWidget"
-msgstr ""
-
-#: src/screens/packagedlg.py:119 src/screens/ScrPackage.py:47
-msgid "tooltipPisiPopup"
-msgstr ""
-
-#: src/screens/networkdlg.py:46
-msgid "Network"
-msgstr ""
-
-#: src/screens/kaptanMain.py:117
-msgid "kaptanUi"
-msgstr ""
-
-#: src/screens/multipledlg.py:127
-msgid "MultipleWidget"
-msgstr ""
-
-#: src/screens/ScrWallpaper.py:54
-msgid "Show all resolutions."
-msgstr ""
-
-#: src/screens/ScrWallpaper.py:57
-msgid "Old Wallpaper"
-msgstr "Eski Duvarkağıdı"
-
-#: src/screens/ScrWallpaper.py:58
-msgid "No Wallpaper"
-msgstr "Duvarkağıdı Yok"
-
-#: src/screens/summarydlg.py:119
-msgid "SummaryWidget"
-msgstr ""
-
-#: src/screens/ScrMouse.py:29 src/screens/ScrMouse.py:46
-msgid "Mouse"
-msgstr "Fare"
-
-#: src/screens/ScrMouse.py:34
-msgid "Mouse Settings"
-msgstr "Fare Ayarları"
-
-#: src/screens/ScrMouse.py:35
-msgid "Configure your mouse"
-msgstr "Farenizi Yapılandırın"
-
-#: src/screens/ScrMouse.py:47
-msgid "Reverse scroll"
-msgstr "Tekerlek ters yönde çalışsın."
-
-#: src/screens/ScrMouse.py:48
-msgid ""
-"<p align=\"left\">If you are left-handed, you may prefer to swap the "
-"functions on the left and right buttons on your pointing device bu choosing "
-"the \"Left handed\" option below. You can also select default click "
-"behaviour.</p>"
-msgstr ""
-
-#: src/screens/ScrMouse.py:49
-msgid "Button Order"
-msgstr ""
-
-#: src/screens/ScrMouse.py:50
-msgid "Left Hand"
-msgstr ""
-
-#: src/screens/ScrMouse.py:51
-msgid "Right Hand"
-msgstr ""
-
-#: src/screens/ScrMouse.py:52
-msgid "Click behaviour"
-msgstr ""
-
-#: src/screens/ScrMouse.py:53
-msgid "&Single-click to open files and folders"
-msgstr ""
-
-#: src/screens/ScrMouse.py:54
-msgid "Dou&ble-click to open files and folders (select icons on first click)"
-msgstr ""
-
-#: src/screens/ScrMouse.py:68
-msgid "Single Click"
-msgstr ""
-
-#: src/screens/ScrMouse.py:70
-msgid "Double Click"
-msgstr ""
-
-#: src/screens/ScrMouse.py:73
-msgid ", Right Handed"
-msgstr ""
-
-#: src/screens/ScrMouse.py:75
-msgid ", Left Handed"
-msgstr ""
-
-#: src/screens/ScrMouse.py:78
-msgid ", Reverse Scrolling"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:25 src/screens/ScrMultiple.py:30
-msgid "Multiple Desktops"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:31
-msgid "Configure virtual desktops.."
-msgstr ""
-
-#: src/screens/ScrMultiple.py:52
-msgid "Multiple"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:53
-msgid ""
-"<p>In this module, you can configure how many virtual desktops you want and "
-"how these should be labeled.</p>"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:54
-msgid "Mouse wheel over desktop background switches desktop."
-msgstr ""
-
-#: src/screens/ScrMultiple.py:55
-msgid " Desktop(s)"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:76
-msgid " desktop(s)"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:78
-msgid ", Wheel Switches Workspace"
-msgstr ""
-
-#: src/screens/ScrNetwork.py:37
-msgid "<big>Loading...</big>"
-msgstr ""
-
-#: src/screens/ScrPackage.py:24 src/screens/ScrPackage.py:31
-msgid "Package Manager"
-msgstr ""
-
-#: src/screens/ScrPackage.py:32
-msgid "Configure package manager settings..."
-msgstr ""
-
-#: src/screens/ScrPackage.py:45
-msgid "Package"
-msgstr ""
-
-#: src/screens/ScrPackage.py:46
-msgid ""
-"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
-"easily install new programs and upgrade your system and also can see new "
-"upgrades of the programs periodically  from the system tray with package "
-"manager."
-msgstr ""
-
-#: src/screens/ScrPackage.py:48
-msgid "Updates"
-msgstr ""
-
-#: src/screens/ScrPackage.py:49
-msgid "Show in system tray"
-msgstr ""
-
-#: src/screens/ScrPackage.py:50
-msgid "Check updates automatically for every"
-msgstr ""
-
-#: src/screens/ScrPackage.py:51
-msgid " hours"
-msgstr ""
-
-#: src/screens/ScrPackage.py:52
-msgid "Repo"
-msgstr ""
-
-#: src/screens/ScrPackage.py:53
-msgid "Contrib repo bla bla."
-msgstr ""
-
-#: src/screens/ScrPackage.py:54
-msgid "Add contrib repo"
-msgstr ""
 
 #: src/screens/ScrWelcome.py:33
 msgid ""
@@ -368,6 +53,10 @@ msgid ""
 "This application will also set some default configuration for a better "
 "desktop :)."
 msgstr ""
+"<b>Kaptan Masaüstü</b> isimli bu uygulama, <b>Pardus</b> masaüstünüz için "
+"basit ancak yeterli ayarları hızlı bir biçimde yapmanızda size yardım "
+"edecektir. Bu uygulama aynı zamanda daha iyi bir masaüstü için bazı "
+"varsayılan yapılandırmayı da ayarlar :)."
 
 #: src/screens/ScrWelcome.py:34
 msgid ""
@@ -377,3 +66,262 @@ msgid ""
 "has the ability to evolve into an autonomous system; for simplifying the "
 "installation and usage of the computers."
 msgstr ""
+"<b>Pardus</b> GNU/Linux dağıtımı, bilişim okur-yazarlığına sahip bilgisayar "
+"kullanıcılarının temel masaüstü ihtiyaçlarını hedefleyerek; mevcut Linux "
+"dağıtımlarının üstün taraflarını kavram, mimari ya da kod olarak kullanan; "
+"otonom sisteme evrilebilecek bir yapılandırma çerçevesi ve araçları ile "
+"kurulum, yapılandırma ve kullanım kolaylığı sağlamak üzere geliştirilen bir "
+"GNU/Linux dağıtımıdır. "
+
+#: src/screens/mousedlg.py:104 src/screens/ScrMouse.py:41
+msgid "Mouse"
+msgstr "Fare"
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr "Ağ"
+
+#: src/screens/multipledlg.py:72 src/screens/ScrMultiple.py:52
+msgid "Multiple"
+msgstr "Çoklu Masaüstü"
+
+#: src/screens/ScrPanel.py:27
+msgid "Configure your panel !"
+msgstr "Panel Yapılandırması"
+
+#: src/screens/ScrPanel.py:28
+msgid "Select the one you like..."
+msgstr "İstediğiniz panelden birini seçebilirsiniz."
+
+#: src/screens/ScrPanel.py:37 src/screens/paneldlg.py:85
+msgid "Panel"
+msgstr "Panel"
+
+#: src/screens/ScrPanel.py:38
+msgid ""
+"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
+"some eye candy styles for you."
+msgstr "Masaüstünüz için hoş görünümlü paneller seçebilirsiniz."
+
+#: src/screens/ScrPanel.py:41
+msgid "Preview"
+msgstr "Önizleme"
+
+#: src/screens/ScrPanel.py:42
+msgid "Use enhanced Kickoff style menu"
+msgstr "Gelişmiş Kickoff menü stilini kullanın."
+
+#: src/screens/goodbyedlg.py:155
+msgid "Goodbye"
+msgstr "Hoşçakalın"
+
+#: src/screens/goodbyedlg.py:156
+msgid ""
+"<p>Congratulations! You have finished all steps. You can now continue using "
+"Pardus and try applications below.</p>"
+msgstr ""
+"<p>Tebrikler! Tüm aşamaları bitirdiniz. Aşağıdaki uygulamaları "
+"deneyebilirsiniz.</p>"
+
+#: src/screens/goodbyedlg.py:157
+msgid "Migration Tool"
+msgstr "Göç Aracı"
+
+#: src/screens/goodbyedlg.py:158 src/screens/goodbyedlg.py:161
+#: src/screens/goodbyedlg.py:164 src/screens/goodbyedlg.py:167
+msgid "Start"
+msgstr "Başlat"
+
+#: src/screens/goodbyedlg.py:159
+msgid ""
+"<p>A wizard to transfer files and settings from existing operating systems "
+"(e.g. Windows) to Pardus.</p>"
+msgstr ""
+"<p>Sisteminizde varolan bir işletim sistemindeki(ör. Windows) dosyaları ve "
+"ayarları Pardus'a aktarmanıza yardımcı olur.</p>"
+
+#: src/screens/goodbyedlg.py:160
+msgid "Tasma"
+msgstr "Tasma"
+
+#: src/screens/goodbyedlg.py:162
+msgid ""
+"<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgstr ""
+"<p>Gelişmiş ayarları Pardus yapılandırma merkezinden yapabilirsiniz.</p>"
+
+#: src/screens/goodbyedlg.py:163
+msgid "Feedback"
+msgstr "Geribildirim"
+
+#: src/screens/goodbyedlg.py:165
+msgid ""
+"<p>A small wizard that you can send your messages to Pardus developers and "
+"help Pardus be the best Linux in the world.</p>"
+msgstr ""
+"<p>Bu ufak sihirbaz ile, Pardus geliştiricilerine mesaj gönderebilir \n"
+"ve Pardus'un dünyadaki en iyi Linux olmasına yardımda bulunabilirsiniz.</p>"
+
+#: src/screens/goodbyedlg.py:166
+msgid "User Groups and Help Pages"
+msgstr "Kullanıcı Grupları ve Yardım sayfaları"
+
+#: src/screens/goodbyedlg.py:168
+msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
+msgstr ""
+"<p>Pardus camiası, kullanıcı listeleri, IRC kanalları, belgeler ve daha "
+"fazlası.</p>"
+
+#: src/screens/ScrMouse.py:29
+msgid "Mouse Settings"
+msgstr "Fare Ayarları"
+
+#: src/screens/ScrMouse.py:30
+msgid "Configure your mouse"
+msgstr "Farenizi Yapılandırın"
+
+#: src/screens/ScrMouse.py:42
+msgid "Reverse scroll"
+msgstr "Tekerlek ters yönde çalışsın."
+
+#: src/screens/ScrMouse.py:43
+msgid ""
+"<p align=\"left\">If you are left-handed, you may prefer to swap the "
+"functions on the left and right buttons on your pointing device bu choosing "
+"the \"Left handed\" option below. You can also select default click "
+"behaviour.</p>"
+msgstr ""
+"<p align=\"left\">Sol elinizi kullanıyorsanız, farenizin sol ve sağ "
+"düğmelerinin işlevlerini 'sol el' seçeneğini işaretleyerek değiştirmeyi "
+"tercih edebilirsiniz.</p>"
+
+#: src/screens/ScrMouse.py:44
+msgid "Button Order"
+msgstr "Düğme Sırası"
+
+#: src/screens/ScrMouse.py:45
+msgid "Left Hand"
+msgstr "Sol El"
+
+#: src/screens/ScrMouse.py:46
+msgid "Right Hand"
+msgstr "Sağ El"
+
+#: src/screens/ScrMouse.py:47
+msgid "Click behaviour"
+msgstr "Tıklama davranışı"
+
+#: src/screens/ScrMouse.py:48
+msgid "&Single-click to open files and folders"
+msgstr "Dosyalar ve dizinler tek tıklama ile açılsın"
+
+#: src/screens/ScrMouse.py:49
+msgid "Dou&ble-click to open files and folders (select icons on first click)"
+msgstr "Dosyalar ve dizinler çift tıklama ile açılsın"
+
+#: src/screens/ScrMultiple.py:25
+msgid "Multiple Desktops"
+msgstr "Çoklu Masaüstü"
+
+#: src/screens/ScrMultiple.py:26
+msgid "Configure virtual desktops.."
+msgstr "Çoklu masaüstlerini ayarlayın"
+
+#: src/screens/ScrMultiple.py:53
+msgid ""
+"<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgstr "<p>Bu modülde sanal masaüstü sayınızı ayarlayabilirsiniz.</p>"
+
+#: src/screens/ScrMultiple.py:54
+msgid "Mouse wheel over desktop background switches desktop."
+msgstr "Fare tekerleği ile masaüstleri arasında geçiş yapılsın."
+
+#: src/screens/ScrMultiple.py:55
+msgid " Desktop(s)"
+msgstr " Masaüstü"
+
+#: src/screens/summarydlg.py:64
+msgid "SummaryWidget"
+msgstr ""
+
+#: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:124
+msgid "Thumbnails"
+msgstr "Önizlemeler"
+
+#: src/screens/wallpaperdlg.py:123
+msgid "Wallpaper"
+msgstr "Duvarkağıdı"
+
+#: src/screens/wallpaperdlg.py:125
+msgid "toolTip"
+msgstr ""
+
+#: src/screens/packagedlg.py:106 src/screens/ScrPackage.py:42
+msgid "Package"
+msgstr "Paket"
+
+#: src/screens/packagedlg.py:111 src/screens/ScrPackage.py:44
+msgid "tooltipPisiPopup"
+msgstr ""
+
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr "<big>Yükleniyor...</big>"
+
+#: src/screens/ScrWallpaper.py:49
+msgid "Show all resolutions."
+msgstr "Tüm çözünürlükleri göster"
+
+#: src/screens/ScrWallpaper.py:52
+msgid "Old Wallpaper"
+msgstr "Eski Duvarkağıdı"
+
+#: src/screens/ScrWallpaper.py:53
+msgid "No Wallpaper"
+msgstr "Duvarkağıdı Yok"
+
+#: src/screens/ScrPackage.py:28
+msgid "Package Manager"
+msgstr "Paket Yöneticisi"
+
+#: src/screens/ScrPackage.py:29
+msgid "Configure package manager settings..."
+msgstr "Paket yöneticisi ayarları"
+
+#: src/screens/ScrPackage.py:43
+msgid ""
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically  from the system tray with package "
+"manager."
+msgstr ""
+"<b>Paket yöneticisi</b>'nin  öntanımlı davranışlarını buradan "
+"belirleyebilirsiniz."
+
+#: src/screens/ScrPackage.py:45
+msgid "Updates"
+msgstr "Güncellemeler"
+
+#: src/screens/ScrPackage.py:46
+msgid "Show in system tray"
+msgstr "Sistem çubuğunda göster"
+
+#: src/screens/ScrPackage.py:47
+msgid "Check updates automatically for every"
+msgstr "Güncellemeleri belirli aralıklarla kontrol et: "
+
+#: src/screens/ScrPackage.py:48
+msgid " hours"
+msgstr " saat"
+
+#: src/screens/ScrPackage.py:49
+msgid "Repo"
+msgstr "Depo"
+
+#: src/screens/ScrPackage.py:50
+msgid "Contrib repo includes extra packages."
+msgstr "Contrib deposu ek paketler içerir."
+
+#: src/screens/ScrPackage.py:51
+msgid "Add contrib repo"
+msgstr "Contrib deposunu ekle"
