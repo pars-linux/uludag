@@ -98,7 +98,7 @@ class Widget(WallpaperWidget, ScreenWidget):
                     pass
 
         self.sortedWallpaperList = self.dictSort(self.wallpaperList)
-        self.resize_images()
+        self.resize_images(self.wallpaperList)
 
         for i in self.sortedWallpaperList:
             for wallpaperFile, wallpaperTitle in self.wallpaperList.items():
@@ -117,13 +117,13 @@ class Widget(WallpaperWidget, ScreenWidget):
             self.wallpaperList[current] = self.currentText
             item = KListViewItem(self.listWallpaper, "file", str(current))
             item.setText(0,self.currentText)
-            item.setPixmap(0,QPixmap(QImage(current+".thumbnail")))
+            item.setPixmap(0,QPixmap(QImage("/tmp/"+ os.path.basename(current) +".thumbnail")))
 
         else:
             self.wallpaperList[self.nonePic] = self.noneText
             item = KListViewItem(self.listWallpaper, "file", str(self.nonePic))
             item.setText(0,self.noneText)
-            #item.setPixmap(0,QPixmap(self.stretch(QImage(self.nonePic))))
+            item.setPixmap(0,QPixmap(QImage("/tmp/"+ os.path.basename(self.nonePic) +".thumbnail")))
 
         if self.isWide == True:
             self.hideNormals()
@@ -134,19 +134,20 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.listWallpaper.connect(self.listWallpaper, SIGNAL("selectionChanged()"), self.setWallpaper)
         self.checkAllWallpapers.connect(self.checkAllWallpapers, SIGNAL("toggled(bool)"), self.showAllWallpapers)
 
-    def resize_images(self):
+    def resize_images(self, resizeList):
         size = 150, 150
-        for infile in self.wallpaperList:
-            hede =  "/tmp/" + os.path.splitext(os.path.basename(infile))[0]
+
+        if current:
+            resizeList[current] = self.currentText
+        else:
+            resizeList[self.nonePic] = self.noneText
+
+        for infile in resizeList:
+            tmpDir =  "/tmp/" + os.path.splitext(os.path.basename(infile))[0]
             im = Image.open(infile)
             im.thumbnail(size, Image.ANTIALIAS)
-            im.save(hede + ".thumbnail", "PNG")
-            
+            im.save(tmpDir + ".jpg.thumbnail", "PNG")
 
-    def stretch(self,imo,filter=Image.NEAREST):
-        im = Image.open(imo)
-        im = im._new(im.stretch(150, filter))
-        return im
 
     def showAllWallpapers(self):
         if self.checkAllWallpapers.isChecked():
