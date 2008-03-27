@@ -47,11 +47,11 @@ def make_object_path(package):
 def get_iface(package="", model=""):
     """Connect to the DBus daemon and return the system interface."""
     
-    sockname = "unix:path=/var/run/dbus/system_bus_socket"
+    sockname = "/var/run/dbus/system_bus_socket"
     # YALI starts comar chrooted in the install target, but uses PiSi outside of
     # the chroot environment, so PiSi needs to use a different socket path to be
     # able to connect true dbus (and comar).
-    # (usually unix:path=/var/run/dbus/system_bus_socket)
+    # (usually /var/run/dbus/system_bus_socket)
     if ctx.dbus_sockname:
         sockname = ctx.dbus_sockname
     
@@ -70,7 +70,7 @@ def get_iface(package="", model=""):
     timeout = 7
     while timeout > 0:
         try:
-            bus = dbus.bus.BusConnection(address_or_type=sockname)
+            bus = dbus.bus.BusConnection(address_or_type="unix:path=%s" % sockname)
             obj = bus.get_object(ctx.comar_destination, obj_path, introspect=False)
             iface = dbus.Interface(obj, dbus_interface=obj_interface)
             return iface
