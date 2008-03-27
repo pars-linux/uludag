@@ -15,12 +15,8 @@
 import os
 import time
 
-import comar
+import dbus
 import pisi
-import pisi.api
-import pisi.config
-import pisi.util
-import pisi.context as ctx
 
 import yali4.postinstall
 from yali4.constants import consts
@@ -32,22 +28,19 @@ def initialize(ui, with_comar=False):
     options.yes_all = True
     # giving "comar = false" isn't enough for pisi 
     if with_comar:
-        # wait for chroot_comar to initialize
+        # wait for chroot_dbus to initialize
         # generally we don't need this but I think this is safer
         for i in range(20):
             try:
-                comar.Link(sockname=consts.comar_socket_file)
+                bus = dbus.SystemBus()
                 break
-            except:
+            except dbus.DBusException:
                 time.sleep(1)
-                print "wait comar for 1 second..."
+                print "wait dbus for 1 second..."
 
-        pisi.api.init(options = options, comar = with_comar, database = True, ui = ui,
-                      comar_sockname=consts.comar_socket_file, signal_handling = False)
+        pisi.api.pisi.api.set_dbus_sockname("%s/var/run/dbus/system_bus_socket" % options.destdir)
     else:
         options.ignore_comar = True
-        pisi.api.init(options = options, comar = with_comar, database = True, ui = ui,
-                      signal_handling = False)
 
 def add_repo(name, uri):
     print "add",name,uri
