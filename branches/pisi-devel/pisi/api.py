@@ -34,6 +34,7 @@ import pisi.index
 import pisi.config
 import pisi.metadata
 import pisi.file
+import pisi.blacklist
 import pisi.atomicoperations
 import pisi.operations.delta
 import pisi.operations.remove
@@ -145,6 +146,10 @@ def list_upgradable():
     upgradable = filter(is_upgradable, installdb.list_installed())
     # replaced packages can not pass is_upgradable test, so we add them manually
     upgradable.extend(list_replaces())
+
+    # consider also blacklist filtering
+    upgradable = pisi.blacklist.exclude_from(upgradable, ctx.const.blacklist)
+
     return upgradable
 
 def list_repos():
@@ -241,6 +246,16 @@ def search_source(terms, lang=None, repo=None):
     sourcedb = pisi.db.sourcedb.SourceDB()
     return sourcedb.search_spec(terms, lang, repo)
 
+def search_installed(terms, lang=None):
+    """
+    Return a list of components that contains all the given terms either in its name, summary or
+    description -> list_of_strings
+    @param terms: a list of terms used to search components -> list_of_strings
+    @param lang: language of the summary and description
+    """
+    installdb = pisi.db.installdb.InstallDB()
+    return installdb.search_package(terms, lang)
+
 def search_component(terms, lang=None, repo=None):
     """
     Return a list of components that contains all the given terms either in its name, summary or
@@ -316,6 +331,10 @@ def snapshot():
     for name in installdb.list_installed():
         package = installdb.get_package(name)
         historydb.add_package(pkgBefore=package, operation="snapshot")
+        # Save changed config files of the package in snapshot
+        for f in installdb.get_files(name).list:
+            if f.type == "config" and pisi.util.config_changed(f):
+                historydb.save_config(name, "/%s" % f.path)
 
     historydb.update_history()
 
@@ -589,6 +608,7 @@ def rebuild_db(files=False):
     comar = ctx.comar
     pisi._cleanup()
 
+    filesdb.close()
     filesdb.destroy()
     filesdb.init()
 

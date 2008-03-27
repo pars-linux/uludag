@@ -37,18 +37,20 @@ def __listactions(actions):
     
     beinstalled = []
     beremoved = []
+    configs = []
 
     for pkg in actions:
-        action, pkginfo = actions[pkg]
+        action, pkginfo, operation = actions[pkg]
         if action == "install":
             if __pkg_already_installed(pkg, pkginfo):
                 continue
             beinstalled.append("%s-%s" % (pkg, pkginfo))
+            configs.append((pkg, operation))
         else:
             if installdb.has_package(pkg):
                 beremoved.append("%s" % pkg)
 
-    return beinstalled, beremoved
+    return beinstalled, beremoved, configs
 
 def __getpackageurl(package):
     packagedb = pisi.db.packagedb.PackageDB()
@@ -84,10 +86,10 @@ def get_snapshot_actions(operation):
 
     for pkg in operation.packages:
         snapshot_pkgs.add(pkg.name)
-        actions[pkg.name] = ("install", pkg.before)
+        actions[pkg.name] = ("install", pkg.before, operation.no)
 
     for pkg in set(installdb.list_installed()) - snapshot_pkgs:
-        actions[pkg] = ("remove", None)
+        actions[pkg] = ("remove", None, None)
 
     return actions
 
@@ -100,7 +102,7 @@ def get_takeback_actions(operation):
 
         for pkg in operation.packages:
             if pkg.operation in ["upgrade", "downgrade", "remove"]:
-                actions[pkg.name] = ("install", pkg.before)
+                actions[pkg.name] = ("install", pkg.before, operation.no)
             if pkg.operation == "install":
                 actions[pkg.name] = ("remove", None)
 
@@ -114,7 +116,7 @@ def takeback(operation):
     else:
         actions = get_takeback_actions(operation)
 
-    beinstalled, beremoved = __listactions(actions)
+    beinstalled, beremoved, configs = __listactions(actions)
 
     if beinstalled:
         ctx.ui.info(_("Following packages will be installed:\n") + pisi.util.strlist(beinstalled))
@@ -139,12 +141,11 @@ def takeback(operation):
         if not ctx.ui.confirm(_('Do you want to continue?')):
             return
 
+    if beremoved:
+        pisi.operations.remove.remove(beremoved, True, True)
+
     if paths:
         pisi.operations.install.install_pkg_files(paths)
 
-    if beremoved:
-        pisi.operations.remove.remove(beremoved)
-
-    historydb.load_config(operation)
-    
-    
+    for pkg, operation in configs:
+        historydb.load_config(operation, pkg)

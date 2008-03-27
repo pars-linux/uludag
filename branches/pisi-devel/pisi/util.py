@@ -310,6 +310,12 @@ def copy_file(src,dest):
     check_dir(os.path.dirname(dest))
     shutil.copyfile(src, dest)
 
+def copy_file_stat(src,dest):
+    """Copy source file to the destination file with all stat info."""
+    check_file(src)
+    check_dir(os.path.dirname(dest))
+    shutil.copy2(src, dest)
+
 def is_ar_file(file_path):
     return open(file_path).read(8) == '!<arch>\n'
 
@@ -488,6 +494,7 @@ def strip_directory(top, excludelist=[]):
             frpath = join_path(root, fn)
             drpath = join_path(os.path.dirname(top),
                                ctx.const.debug_dir_suffix,
+                               ctx.const.debug_files_suffix,
                                remove_prefix(top, frpath))
 
             # Some upstream sources have buggy libtool and ltmain.sh with them,
@@ -672,3 +679,14 @@ def colorize(msg, color):
     else:
         return msg
 
+def config_changed(config_file):
+    fpath = pisi.util.join_path(ctx.config.dest_dir(), config_file.path)
+    if os.path.exists(fpath) and not os.path.isdir(fpath):
+        if os.path.islink(fpath):
+            f = os.readlink(fpath)
+            if os.path.exists(f) and pisi.util.sha1_data(f) != config_file.hash:
+                return True
+        else:
+            if pisi.util.sha1_file(fpath) != config_file.hash:
+                return True
+    return False
