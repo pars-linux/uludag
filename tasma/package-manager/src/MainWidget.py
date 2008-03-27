@@ -298,7 +298,7 @@ class MainApplicationWidget(QWidget):
         Globals.setWaitCursor()
         try:
             # fetch packages including metadata from cache 
-            packagesWithMeta = [self.packageCache.packages[package] for package in self.componentDict[item].packages]
+            packagesWithMeta = [self.packageCache.get_package(package) for package in self.componentDict[item].packages]
             if self.state == remove_state:
                 self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
             else:
@@ -579,7 +579,7 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.componentsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        packagesWithMeta = [self.packageCache.packages[package] for package in packages]
+        packagesWithMeta = [self.packageCache.get_package(package) for package in packages]
         if self.state == remove_state:
             self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
         else:

@@ -100,3 +100,6 @@ class PackageCache:
                 found.append(pkg.name)
 
         return found
+
+    def get_package(self, package):
+        return self.packages[package]
