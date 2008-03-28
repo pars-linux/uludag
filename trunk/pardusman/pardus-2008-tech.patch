@@ -61,3 +61,97 @@ Index: src/maker.py
          chrun("/usr/bin/comar --stop")
          
          chrun("/sbin/update-modules")
+Index: src/maker.py
+===================================================================
+--- src/maker.py	(revision 17513)
++++ src/maker.py	(working copy)
+@@ -39,9 +39,12 @@
+         except OSError:
+             pass
+         os.chroot(image_dir)
+-        subprocess.call(["/sbin/start-stop-daemon", "--start", "-b", "--pidfile", "/var/run/comar.pid", "--make-pidfile", "--exec", "/usr/bin/comar"])
++        if not os.path.exists("/var/lib/dbus/machine-id"):
++            run("/usr/bin/dbus-uuidgen --ensure")
++
++        run("/sbin/start-stop-daemon -b --start --pidfile /var/run/dbus/pid --exec /usr/bin/dbus-daemon -- --system")
+         sys.exit(0)
+-    waitBus("%s/var/run/comar.socket" % image_dir)
++    waitBus("%s/var/run/dbus/system_bus_socket" % image_dir)
+ 
+ def get_exclude_list(project):
+     exc = project.exclude_list()[:]
+@@ -67,7 +70,7 @@
+     dict["kernel"] = kernel
+     dict["initramfs"] = initramfs
+     dict["title"] = project.title
+-    dict["exparams"] = project.exparams
++    dict["exparams"] = project.exparams or ''
+ 
+     path = os.path.join(image_dir, "usr/share/grub/templates")
+     dest = os.path.join(iso_dir, "boot/grub")
+@@ -163,7 +166,7 @@
+         repo = project.get_repo()
+         repo_dir = project.image_repo_dir(clean=True)
+         if project.type == "install":
+-            imagedeps = repo.full_deps("yali")
++            imagedeps = repo.full_deps("yali4")
+         else:
+             imagedeps = project.all_packages
+         repo.make_local_repo(repo_dir, imagedeps)
+@@ -196,7 +199,7 @@
+         repo = project.get_repo()
+         repo_dir = project.image_repo_dir()
+         if project.type == "install":
+-            imagedeps = repo.full_deps("yali")
++            imagedeps = repo.full_deps("yali4")
+         else:
+             imagedeps = project.all_packages
+         i = 0
+@@ -238,7 +241,7 @@
+         
+         run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
+         if project.type == "install":
+-            run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
++            run('pisi --yes-all --ignore-comar -D"%s" it yali4' % image_dir)
+         else:
+             install_packages(project)
+         
+@@ -257,16 +260,32 @@
+         
+         chrun("/sbin/ldconfig")
+         chrun("/sbin/update-environment")
++        # Hack hack hack
++        passwd = file("%s/etc/passwd" % image_dir,"a")
++        passwd.write("""
++dbus:x:101:101:D-BUS:/dev/null:/bin/false
++hal:x:102:102:Hal:/dev/null:/bin/false
++polkit:x:103:103:PolicyKit:/dev/null:/bin/false
++""")
++        passwd.close()
++        groups = file("%s/etc/group" % image_dir,"a")
++        groups.write("""
++dbus:x:101:dbus
++hal:x:102:hal
++polkit:x:103:polkit
++""")
++        groups.close()
+         chroot_comar(image_dir)
+-        chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
++        chrun("/usr/bin/hav call baselayout System.Package postInstall '' '' '' ''")
+         chrun("/usr/bin/pisi configure-pending")
+         
+-        chrun("hav call User.Manager.setUser uid 0 password pardus")
+-        if project.type != "install":
+-            chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,pnpadmin,video,audio password pardus")
+-        chrun("/usr/bin/comar --stop")
++        chrun("hav call baselayout User.Manager setUser 0 'Pardus Root' '/root' '/bin/bash' 'pardus' '' ")
++        if project.type != "install" and 1==3:
++            chrun("hav call User.Manager addUser '1000' 'pars' 'Panter Pardus' '' password pardus")
+         
+-        chrun("/sbin/update-modules")
++        # chrun("/usr/bin/comar --stop")
++        
++        # chrun("/sbin/update-modules")
+         chrun("/sbin/depmod -a %s-%s" % (repo.packages["kernel"].version, repo.packages["kernel"].release))
+         
+         path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
