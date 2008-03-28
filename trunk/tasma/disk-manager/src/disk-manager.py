@@ -27,9 +27,6 @@ from khtml import *
 import kdedesigner
 from diskform import mainForm
 
-# COMAR
-import comar
-
 # FSTAB
 import fstab
 
