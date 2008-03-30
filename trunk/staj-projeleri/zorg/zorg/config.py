@@ -5,7 +5,7 @@ import os
 import piksemel
 
 from zorg.parser import *
-from zorg.probe import VideoDevice
+from zorg.probe import VideoDevice, Monitor
 from zorg.utils import atoi
 
 xorgConf = "/etc/X11/xorg.conf"
@@ -84,11 +84,9 @@ def saveXorgConfig(card):
         parser.sections.append(monSec)
         monSec.set("Identifier", identifier)
 
-        if card.monitor_settings.has_key("%s-hsync" % output):
-            monSec.set("HorizSync", unquoted(card.monitor_settings["%s-hsync" % output]))
-
-        if card.monitor_settings.has_key("%s-vref" % output):
-            monSec.set("VertRefresh", unquoted(card.monitor_settings["%s-vref" % output]))
+        if card.monitors.has_key(output):
+            monSec.set("HorizSync", unquoted("%s - %s" % card.monitors[output].hsync))
+            monSec.set("VertRefresh", unquoted("%s - %s" % card.monitors[output].vref))
 
         if "randr12" in flags:
             secDevice.options["Monitor-%s" % output] = identifier
@@ -161,6 +159,23 @@ def getDeviceInfo(busId):
             value = ""
         probeResult[key] = value
 
+    monitorsTag = cardTag.getTag("Monitors")
+    for tag in monitorsTag.tags("Monitor"):
+        mon = Monitor()
+        mon.eisaid = tag.getAttribute("id")
+        output = tag.getAttribute("output")
+        device.monitors[output] = mon
+
+        hsync = tag.getTag("HorizSync")
+        min = hsync.getAttribute("min")
+        max = hsync.getAttribute("max")
+        mon.hsync = (min, max)
+
+        vref = tag.getTag("VertRefresh")
+        min = vref.getAttribute("min")
+        max = vref.getAttribute("max")
+        mon.vref = (min, max)
+
     activeConfigTag = cardTag.getTag("ActiveConfig")
 
     driverTag = activeConfigTag.getTag("Driver")
@@ -228,6 +243,22 @@ def saveDeviceInfo(card):
         t.setAttribute("key", key)
         if value:
             t.insertData(value)
+
+    monitors = cardTag.insertTag("Monitors")
+    for output, monitor in card.monitors.items():
+        monitorTag = monitors.insertTag("Monitor")
+        monitorTag.setAttribute("id", monitor.eisaid)
+        monitorTag.setAttribute("output", output)
+
+        min, max = monitor.hsync
+        hor = monitorTag.insertTag("HorizSync")
+        hor.setAttribute("min", min)
+        hor.setAttribute("max", max)
+
+        min, max = monitor.vref
+        ver = monitorTag.insertTag("VertRefresh")
+        ver.setAttribute("min", min)
+        ver.setAttribute("max", max)
 
     config = cardTag.insertTag("ActiveConfig")
 
