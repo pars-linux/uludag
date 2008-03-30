@@ -105,29 +105,31 @@ class VideoDevice:
             return []
 
         driverPackages = iface.listModelApplications("Xorg.Driver")
-        availableDrivers = listAvailableDrivers()
-        driver = None
 
         for line in loadFile(DriversDB):
             if line.startswith(self.vendor_id + self.product_id):
+                print "Device ID found in driver database."
+
                 self.driverlist = line.rstrip("\n").split(" ")[1:]
 
                 for drv in self.driverlist:
                     if ":" in drv:
                         drvname, drvpackage = drv.split(":", 1)
                         if drvpackage.replace("-", "_") in driverPackages:
-                            driver = drvname
+                            self.driver = drvname
                             self.package = drvpackage
                             break
 
-                    elif drv in availableDrivers:
-                        driver = drv
+                    elif driverExists(drv):
+                        self.driver = drv
                         break
+                else:
+                    self.driver = "vesa"
 
+                print "Driver '%s' selected from '%s' package." % (self.driver, self.package)
                 break
-
-        # if could not find driver from driverlist try X -configure
-        if not driver:
+        else:
+            # if could not find driver from driverlist try X -configure
             print "Running X server to query driver..."
             ret = run("/usr/bin/X", ":99", "-configure", "-logfile", "/var/log/xlog")
             if ret == 0:
@@ -137,14 +139,11 @@ class VideoDevice:
                 unlink(home + "/xorg.conf.new")
                 sec = p.getSections("Device")
                 if sec:
-                    driver = sec[0].get("Driver")
-                    if driver not in self.driverlist:
-                        self.driverlist.append(driver)
+                    self.driver = sec[0].get("Driver")
+                    if self.driver not in self.driverlist:
+                        self.driverlist.append(self.driver)
 
-                    print "Driver reported by X server is %s." % driver
-
-        if driver:
-            self.driver = driver
+                    print "Driver reported by X server is %s." % self.driver
 
         app = self.package.replace("-", "_")
         object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
@@ -185,6 +184,9 @@ def pciInfo(dev, attr):
 
 def getKeymapList():
     return os.listdir(xkb_path)
+
+def driverExists(name):
+    return os.path.exists(os.path.join(driver_path, "%s_drv.so" % name))
 
 def listAvailableDrivers(d = driver_path):
     a = []
@@ -276,86 +278,6 @@ def getPrimaryCard():
                 break
 
     return primaryBus
-
-def queryNvidiaOutputs(device):
-    lines = xserverProbe(device)
-    if not lines:
-        return
-
-    device.tvStandards = [
-            "PAL-B",  "PAL-D",  "PAL-G",   "PAL-H",
-            "PAL-I",  "PAL-K1", "PAL-M",   "PAL-N",
-            "PAL-NC", "NTSC-J", "NTSC-M",  "HD480i",
-            "HD480p", "HD720p", "HD1080i", "HD1080p",
-            "HD576i", "HD576p"
-        ]
-
-    # This is for nvidia-old drivers
-    modeFormat = re.compile('.+ "(.+)": .+ MHz, .+ kHz, .+ Hz.*')
-    oldFormat = False
-
-    parsingModesFor = ""
-
-    for line in lines:
-        if "Supported display device(s): " in line:
-            outs = line.rsplit(":", 1)[-1].split(",")
-            for out in outs:
-                out = out.strip()
-                device.outputs[out] = []
-
-        elif "--- Modes in ModePool for " in line:
-            for key in device.outputs.keys():
-                if key in line:
-                    parsingModesFor = key
-                    break
-
-        elif "Validated modes for display device " in line:
-            oldFormat = True
-            for key in device.outputs.keys():
-                if key in line:
-                    parsingModesFor = key
-                    break
-
-        elif parsingModesFor:
-            if not oldFormat:
-                if "--- End of ModePool for " in line:
-                    parsingModesFor = ""
-                    continue
-
-                mode = line.split(":")[2].split("@", 1)[0].replace(" ", "")
-
-                if not mode in device.outputs[parsingModesFor]:
-                    device.outputs[parsingModesFor].append(mode)
-
-            else:
-                matched = modeFormat.match(line)
-                if matched:
-                    mode = matched.groups()[0]
-
-                    if not mode in device.outputs[parsingModesFor]:
-                        device.outputs[parsingModesFor].append(mode)
-
-                else:
-                    parsingModesFor = ""
-
-def xserverProbe(card):
-    dev = {
-            "driver":   card.driver,
-            "bus-id":    card.busId
-        }
-
-    # Old nvidia driver does not enable this option
-    # by default. We need it to get possible modes
-    # supported by monitors.
-    if card.driver == "nvidia":
-        dev["driver-options"] = {
-                "UseEdidFreqs" : "1"
-            }
-
-    if card.driver == "fglrx":
-        dev["depth"] = "24"
-
-    return XProbe(dev)
 
 def XProbe(dev):
     p = XorgParser()
