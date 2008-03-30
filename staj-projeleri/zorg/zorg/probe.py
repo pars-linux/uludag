@@ -77,7 +77,7 @@ class VideoDevice:
         self.desktop_setup = "single"
 
         self.driver_options = {}
-        self.monitor_settings = {}
+        self.monitors = {}
 
     def getDict(self):
         info = {
@@ -90,6 +90,9 @@ class VideoDevice:
 
         for output, mode in self.modes.items():
             info["%s-mode" % output] = mode
+            if self.monitors.has_key(output):
+                info["%s-hsync" % output] = "-".join(self.monitors[output].hsync)
+                info["%s-vref" % output] = "-".join(self.monitors[output].vref)
 
         return info
 
@@ -166,6 +169,12 @@ class VideoDevice:
     def requestDriverOptions(self):
         self.driver_options = call(self.package, "Xorg.Driver", "getOptions", self.getDict())
 
+class Monitor:
+    def __init__(self):
+        self.eisaid = ""
+        self.hsync = ("31.5", "50")
+        self.vref = ("50", "70")
+
 def pciInfo(dev, attr):
     return sysValue(sysdir, dev, attr)
 
@@ -202,8 +211,6 @@ def listAvailableDrivers(d = driver_path):
     return a
 
 def listDriverPackages():
-    import dbus
-
     try:
         bus = dbus.SystemBus()
         object = bus.get_object("tr.org.pardus.comar", "/", introspect=False)
@@ -383,13 +390,12 @@ def queryDDC(adapter=0):
                 vref_min, vref_max = map(float, l[4].strip().split("-"))
                 break
 
-    result = [
-            "%s-%s" % (hsync_min, hsync_max),
-            "%s-%s" % (vref_min, vref_max),
-            res
-            ]
+    mon = Monitor()
+    mon.eisaid = edid.get("eisa_id", "")
+    mon.hsync = (str(hsync_min), str(hsync_max))
+    mon.vref = (str(vref_min), str(vref_max))
 
-    return result
+    return mon, res
 
 def queryPanel(card):
     panel_w = 0
@@ -460,19 +466,16 @@ def queryMonitor(device):
         result = queryDDC(1)
 
     if result:
-        hsync, vref, modes = result
+        monitor, modes = result
     else:
-        hsync, vref = "31.5-50", "50-70"
+        monitor = Monitor()
         modes = ["800x600", "640x480"]
 
     # check lcd panel
     if device.driver in lcd_drivers:
         panel_mode = queryPanel(device)
         if panel_mode:
-            result[2][:0] = panel_mode
+            modes[:0] = panel_mode
 
-    device.monitor_settings = {
-            "default-hsync":    hsync,
-            "default-vref":     vref,
-            "default-modes":    ",".join(modes)
-            }
+    device.monitors["default"] = monitor
+    device.modes["default"] = ",".join(modes)
