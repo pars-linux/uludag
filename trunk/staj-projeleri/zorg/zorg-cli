@@ -37,10 +37,16 @@ class ComarLink:
 link = ComarLink()
 
 def safe():
-    link.safeConfig()
+    if link.safeConfig():
+        print "Initialized a safe configuration using VESA driver."
+    else:
+        print "Failed to create a safe configuration with VESA driver."
 
 def probe(opts):
-    link.initialConfig()
+    if link.initialConfig():
+        print "Created an initial configuration for your video device."
+    else:
+        print "An error occured while creating an initial configuration."
 
 def setMode(opts):
     pass
@@ -49,7 +55,6 @@ def setDriver(driver):
     pass
 
 if __name__ == "__main__":
-    # running from command line
     parser = optparse.OptionParser(description = "%s version %s"
                                     % (zorg_info, zorg.versionString()))
 
