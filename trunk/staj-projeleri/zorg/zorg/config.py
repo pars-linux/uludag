@@ -104,8 +104,9 @@ def saveXorgConfig(card):
 
     if "no-modes-line" not in flags:
         output = card.active_outputs[0]
-        modes = card.modes[output].split(",")
-        subsec.set("Modes", *modes)
+        if card.modes[output]:
+            modes = card.modes[output].split(",")
+            subsec.set("Modes", *modes)
 
     secScr.sections = [subsec]
 
