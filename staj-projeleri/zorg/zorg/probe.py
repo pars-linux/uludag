@@ -94,17 +94,7 @@ class VideoDevice:
         return info
 
     def query(self):
-        bus = dbus.SystemBus()
-
-        try:
-            object = bus.get_object("tr.org.pardus.comar", "/", introspect=False)
-            iface = dbus.Interface(object, "tr.org.pardus.comar")
-
-        except dbus.exceptions.DBusException, e:
-            print "Error: %s" % e
-            return []
-
-        driverPackages = iface.listModelApplications("Xorg.Driver")
+        driverPackages = listDriverPackages()
 
         for line in loadFile(DriversDB):
             if line.startswith(self.vendor_id + self.product_id):
@@ -145,12 +135,14 @@ class VideoDevice:
 
                     print "Driver reported by X server is %s." % self.driver
 
-        app = self.package.replace("-", "_")
-        object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
-        iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Driver")
+        oldpackage = enabledPackage()
+        if self.package != oldpackage:
+            if oldpackage in driverPackages:
+                call(oldpackage, "Xorg.Driver", "disable")
 
-        iface.enable()
-        self.probe_result = iface.probe(self.getDict())
+            call(self.package, "Xorg.Driver", "enable")
+
+        self.probe_result = call(self.package, "Xorg.Driver", "probe", self.getDict())
 
         if self.probe_result is None:
             self.probe_result = {
@@ -172,15 +164,27 @@ class VideoDevice:
         #flags = self.probe_result["flags"].split(",")
 
     def requestDriverOptions(self):
-        bus = dbus.SystemBus()
-        app = self.package.replace("-", "_")
-        object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
-        iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Driver")
-
-        self.driver_options = iface.getOptions(self.getDict())
+        self.driver_options = call(self.package, "Xorg.Driver", "getOptions", self.getDict())
 
 def pciInfo(dev, attr):
     return sysValue(sysdir, dev, attr)
+
+def call(package, model, method, *args):
+    "Calls Comar methods"
+
+    bus = dbus.SystemBus()
+    app = package.replace("-", "_")
+
+    try:
+        object = bus.get_object("tr.org.pardus.comar", "/package/%s" % app, introspect=False)
+        iface = dbus.Interface(object, "tr.org.pardus.comar.%s" % model)
+    except dbus.exceptions.DBusException, e:
+        print "Error:",
+        print e
+        return
+
+    cmethod = getattr(iface, method)
+    return cmethod(*args)
 
 def getKeymapList():
     return os.listdir(xkb_path)
@@ -210,6 +214,12 @@ def listDriverPackages():
         return []
 
     return iface.listModelApplications("Xorg.Driver")
+
+def enabledPackage():
+    try:
+        return file("/var/lib/zorg/enabled_package").read()
+    except IOError:
+        return "xorg-video"
 
 def queryPCI(vendor, device):
     f = file("/usr/share/misc/pci.ids")
