@@ -140,7 +140,7 @@ class VideoDevice:
 
         oldpackage = enabledPackage()
         if self.package != oldpackage:
-            if oldpackage in driverPackages:
+            if oldpackage.replace("-", "_") in driverPackages:
                 call(oldpackage, "Xorg.Driver", "disable")
 
             call(self.package, "Xorg.Driver", "enable")
