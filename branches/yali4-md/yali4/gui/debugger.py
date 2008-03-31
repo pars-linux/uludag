@@ -70,6 +70,7 @@ class DebugContainer(QtGui.QTextBrowser):
     def __init__(self, parent, showTimeStamp=True, sysoutEnabled=True):
         QtGui.QTextBrowser.__init__(self, parent)
         self.setStyleSheet("font-size:8pt;font-family:\"Envy Code R\";")
+        self.sysout = "/var/log/yali"
         self.showTimeStamp = showTimeStamp
         self.sysoutEnabled = sysoutEnabled
         self.setReadOnly(True)
@@ -86,7 +87,11 @@ class DebugContainer(QtGui.QTextBrowser):
         if type==0:
             self.plainLogs += "%s\n" % log
             if self.sysoutEnabled:
-                print "YALI - %s : %s" % (_now,log)
+                mes = "YALI - %s : %s" % (_now,log)
+                try:
+                    file(self.sysout,"a+").write("%s\n" % mes)
+                except:
+                    print mes
             log = "<b>%s</b>" % log
             _indent = ""
 

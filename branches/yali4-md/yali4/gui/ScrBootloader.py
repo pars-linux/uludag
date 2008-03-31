@@ -176,12 +176,11 @@ all your present data on the selected disk will be lost.</p>
 and easy way to install Pardus.</p>
 </b>
 '''))
-        if not ctx.autoInstall:
-            self.dialog = WarningDialog(w, self)
-            if not self.dialog.exec_():
-                # disabled by weaver
-                ctx.mainScreen.enableBack()
-                return False
+        self.dialog = WarningDialog(w, self)
+        if not self.dialog.exec_():
+            # disabled by weaver
+            ctx.mainScreen.enableBack()
+            return False
 
         ctx.mainScreen.processEvents()
         info = InformationWindow(_("Writing disk tables ..."))

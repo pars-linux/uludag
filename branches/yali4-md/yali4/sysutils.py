@@ -44,7 +44,7 @@ def chroot_dbus():
 
 def checkYaliParams(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split()]:
-        if i.startswith("yali="):
+        if i.startswith("yali4="):
             if param in i.split("=")[1].split(","):
                 return True
     return False
