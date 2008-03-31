@@ -90,7 +90,7 @@ def saveXorgConfig(card):
 
         if "randr12" in flags:
             secDevice.options["Monitor-%s" % output] = identifier
-            if card.modes[output]:
+            if card.modes.has_key(output):
                 monSec.options["PreferredMode"] = card.modes[output]
             monSec.options["Enabled"] = "true"
 
@@ -104,7 +104,7 @@ def saveXorgConfig(card):
 
     if "no-modes-line" not in flags:
         output = card.active_outputs[0]
-        if card.modes[output]:
+        if card.modes.has_key(output):
             modes = card.modes[output].split(",")
             subsec.set("Modes", *modes)
 
@@ -191,7 +191,8 @@ def getDeviceInfo(busId):
         name = tag.firstChild().data()
         mode = tag.getAttribute("mode")
         activeOutputs.append(name)
-        modes[name] = mode
+        if mode:
+            modes[name] = mode
 
     device.desktop_setup = activeConfigTag.getTagData("DesktopSetup")
 
@@ -270,18 +271,20 @@ def saveDeviceInfo(card):
     addTag(config, "Depth", card.depth)
 
     outName = card.active_outputs[0]
-    outMode = card.modes[outName]
+    outMode = card.modes.get(outName)
     output = config.insertTag("Output")
-    output.setAttribute("mode", outMode)
+    if outMode:
+        output.setAttribute("mode", outMode)
     output.insertData(outName)
 
     addTag(config, "DesktopSetup", card.desktop_setup)
 
     if card.desktop_setup != "single":
         outName = card.active_outputs[1]
-        outMode = card.modes[outName]
+        outMode = card.modes.get(outName)
         output = config.insertTag("SecondOutput")
-        output.setAttribute("mode", outMode)
+        if outMode:
+            output.setAttribute("mode", outMode)
         output.insertData(outName)
 
     f = file(configFile, "w")
