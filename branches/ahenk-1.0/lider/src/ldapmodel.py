@@ -88,6 +88,7 @@ class UserModel(ldaputil.LdapClass):
         ("home", "homeDirectory", str, i18n("Home"), ldapview.textWidget, "*", {"multi": False, "required": True}),
         ("uid", "uidNumber", int, i18n("User ID"), ldapview.numberWidget, "*", {"multi": False}),
         ("gid", "gidNumber", int, i18n("Group ID"), ldapview.numberWidget, "*", {"multi": False}),
+        ("description", "description", str, i18n("Description"), ldapview.textWidget, "*", {}),
     )
 
 class GroupModel(ldaputil.LdapClass):
@@ -97,4 +98,5 @@ class GroupModel(ldaputil.LdapClass):
     entries = (
         ("gid", "gidNumber", int, i18n("Group ID"), ldapview.numberWidget, "*", {"multi": False, "required": True}),
         ("members", "memberUid", list, i18n("Members"), ldapview.listWidget, "*", {"items": [i18n("Username")]}),
+        ("description", "description", str, i18n("Description"), ldapview.textWidget, "*", {}),
     )
