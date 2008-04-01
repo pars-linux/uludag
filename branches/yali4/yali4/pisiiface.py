@@ -20,23 +20,25 @@ import pisi
 import yali4.postinstall
 from yali4.constants import consts
 
+repodb = pisi.db.repodb.RepoDB()
+
 def initialize(ui, with_comar=False):
     options = pisi.config.Options()
     options.destdir = consts.target_dir
     options.yes_all = True
-    # giving "comar = false" isn't enough for pisi 
-    if with_comar:
-        # wait for chroot_dbus to initialize
-        # generally we don't need this but I think this is safer
-        for i in range(20):
-            try:
-                bus = dbus.SystemBus()
-                break
-            except dbus.DBusException:
-                time.sleep(1)
-        pisi.api.pisi.api.set_dbus_sockname("%s/var/run/dbus/system_bus_socket" % options.destdir)
-    else:
-        options.ignore_comar = True
+    # wait for chroot_dbus to initialize
+    # generally we don't need this but I think this is safer
+    for i in range(20):
+        try:
+            bus = dbus.SystemBus()
+            break
+        except dbus.DBusException:
+            time.sleep(1)
+    pisi.api.set_dbus_sockname("%s/var/run/dbus/system_bus_socket" % options.destdir)
+    pisi.api.set_userinterface(ui)
+    pisi.api.set_options(options)
+    pisi.api.set_comar(with_comar)
+    pisi.api.set_signalhandling(False)
 
 def add_repo(name, uri):
     pisi.api.add_repo(name, uri)
@@ -44,12 +46,12 @@ def add_repo(name, uri):
 def add_cd_repo():
     cd_repo_name = consts.cd_repo_name
     cd_repo_uri = consts.cd_repo_uri
-    if not pisi.context.repodb.has_repo(cd_repo_name):
+    if not repodb.has_repo(cd_repo_name):
         add_repo(cd_repo_name, cd_repo_uri)
         update_repo(cd_repo_name)
 
 def add_remote_repo(name, uri):
-    if not pisi.context.repodb.has_repo(name):
+    if not repodb.has_repo(name):
         add_repo(name, uri)
         update_repo(name)
 
@@ -68,7 +70,7 @@ def remove_repo(name):
     pisi.api.remove_repo(name)
 
 def finalize():
-    pisi.api.finalize()
+    pass
 
 def install(pkg_name_list):
     pisi.api.install(pkg_name_list)
@@ -77,15 +79,13 @@ def install_all():
     install(get_available())
 
 def get_available():
-    l = pisi.context.packagedb.list_packages()
-    return l
+    return pisi.api.list_available()
 
 def get_available_len():
     return len(get_available())
 
 def get_pending():
-    l = pisi.context.installdb.list_pending()
-    return l
+    return pisi.db.installdb.InstallDB().list_pending()
 
 def get_pending_len():
     return len(get_pending())
@@ -99,7 +99,7 @@ def configure_pending():
 def check_package_hash(pkg_name):
     repo_path = os.path.dirname(consts.cd_repo_uri)
 
-    pkg = pisi.context.packagedb.get_package(pkg_name)
+    pkg = pisi.db.packagedb.PackageDB().get_package(pkg_name)
     file_name = pisi.util.package_name(pkg.name,
                                        pkg.version,
                                        pkg.release,

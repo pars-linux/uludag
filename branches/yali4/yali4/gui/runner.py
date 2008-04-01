@@ -124,6 +124,8 @@ def showException(ex_type, tb):
         w = ErrorWidget(tb)
     else:
         w = ExceptionWidget(tb)
+
+    print "BACKTRACE: ",tb
     d = Dialog(title, w, None)
     d.resize(500,400)
     d.exec_()

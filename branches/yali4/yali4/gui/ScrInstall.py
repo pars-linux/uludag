@@ -145,7 +145,6 @@ Have fun!
 
     def packageInstallFinished(self):
 
-        yali4.pisiiface.finalize()
         self.cur = 0
 
         # fill fstab
@@ -199,8 +198,6 @@ Have fun!
     def finished(self):
         if self.hasErrors:
             return
-
-        yali4.pisiiface.finalize()
 
         # trigger next screen. will activate execute()
         ctx.mainScreen.slotNext()
@@ -296,7 +293,6 @@ class PkgConfigurator(QThread):
 
         # Remove cd repository and install add real
         yali4.pisiiface.switch_to_pardus_repo()
-        yali4.pisiiface.finalize()
 
         qevent = PisiEvent(QEvent.User, EventAllFinished)
         QCoreApplication.postEvent(self._widget, qevent)
