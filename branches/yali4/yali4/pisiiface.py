@@ -38,7 +38,7 @@ def initialize(ui, with_comar=False):
     pisi.api.set_userinterface(ui)
     pisi.api.set_options(options)
     pisi.api.set_comar(with_comar)
-    pisi.api.set_signalhandling(False)
+    pisi.api.set_signal_handling(False)
 
 def add_repo(name, uri):
     pisi.api.add_repo(name, uri)

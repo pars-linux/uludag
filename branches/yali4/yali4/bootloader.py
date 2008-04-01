@@ -23,7 +23,7 @@ import yali4.sysutils
 import yali4.partitiontype as parttype
 import yali4.partitionrequest as request
 from yali4.partitionrequest import partrequests
-import yali4.gui.context as ctx
+from yali4.constants import consts
 
 grub_conf_tmp = """\
 default 0
@@ -135,7 +135,11 @@ class BootLoader:
                 It also cleans unnecessary options """
             s = []
             # Get parameters from cmdline.
-            for i in [x for x in open("/proc/cmdline", "r").read().split() if not x.startswith("init=") and not x.startswith("xorg=") and not x.startswith("yali=") and not x.startswith(ctx.consts.kahyaParam)]:
+            for i in [x for x in open("/proc/cmdline", "r").read().split() \
+                        if not x.startswith("init=") \
+                       and not x.startswith("xorg=") \
+                       and not x.startswith("yali=") \
+                       and not x.startswith(consts.kahyaParam)]:
                 if i.startswith("root="):
                     s.append("root=/dev/%s" % (root))
                 elif i.startswith("mudur="):

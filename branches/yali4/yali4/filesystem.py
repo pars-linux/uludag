@@ -60,7 +60,6 @@ class FileSystem:
     _fs_type = None  # parted fs type
 
     def __init__(self):
-        self.readSupportedFilesystems()
         self._fs_type = parted.file_system_type_get(self._name)
 
     def openPartition(self, partition):
@@ -114,42 +113,16 @@ class FileSystem:
             count += 1
         return new_label
 
-    def readSupportedFilesystems(self):
-        """ Check the supported file systems by kernel """
-        f = open("/proc/filesystems", 'r')
-        for line in f.readlines():
-            line = line.split()
-            if line[0] == "nodev":
-                self._filesystems.append(line[1])
-            else:
-                self._filesystems.append(line[0])
-
-        # append swap manually
-        self._filesystems.append("swap")
-
-        # append vfat manually
-        self._filesystems.append("fat32")
-
-    def isSupported(self):
-        """ Check if file system is supported by kernel """
-        if self.name() in self._filesystems:
-            return True
-        return False
-
     def preFormat(self, partition):
         """ Necessary checks before formatting """
         e = ""
-        if not self.isSupported():
-            e = "%s file system is not supported by kernel." %(self.name())
-
         if not self.isImplemented():
             e = "%s file system is not fully implemented." %(self.name())
-
         if e:
             raise YaliException, e
 
-        #FIXME: use logging system
-        print "format %s: %s" %(partition.getPath(), self.name())
+        import yali4.gui.context as ctx
+        ctx.debugger.log("Format %s: %s" %(partition.getPath(), self.name()))
 
     def setImplemented(self, bool):
         """ Set if file system is implemented """

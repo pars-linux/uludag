@@ -21,9 +21,7 @@ _ = __trans.ugettext
 import yali4.filesystem
 
 class PartitionType:
-
     filesystem = None
-
     ##
     # is equal
     # @param rhs: PartitionType
@@ -35,7 +33,6 @@ class PartitionType:
 ##
 # not an intuitive name but need group home and root :(
 class __PartitionType(PartitionType):
-
     def __init__(self):
         # check cmdline for reiserfs support
         cmdline = open("/proc/cmdline", "r").read()
@@ -46,7 +43,6 @@ class __PartitionType(PartitionType):
         else:
             self.filesystem = yali4.filesystem.Ext3FileSystem()
 
-
 class RootPartitionType(__PartitionType):
     name = _("Install Root")
     mountpoint = "/"
@@ -55,7 +51,6 @@ class RootPartitionType(__PartitionType):
     parted_flags = [ parted.PARTITION_BOOT ]
     label = "PARDUS_ROOT"
 
-
 class HomePartitionType(__PartitionType):
     name = _("Users' Files")
     mountpoint = "/home"
@@ -63,7 +58,6 @@ class HomePartitionType(__PartitionType):
     parted_type = parted.PARTITION_PRIMARY
     parted_flags = []
     label = "PARDUS_HOME"
-
 
 class SwapPartitionType(PartitionType):
     name = _("Swap")

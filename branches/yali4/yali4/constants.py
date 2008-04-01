@@ -64,7 +64,7 @@ consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
 consts.source_dir = join(consts.mnt_dir, "cdrom")
 
 # dbus socket path
-consts.dbus_socket_file = consts.target_dir + "/var/run/dbus/system_bus_socket"
+consts.dbus_socket_file = join(consts.target_dir, "var/run/dbus/system_bus_socket")
 
 # swap file path
 consts.swap_file_name = ".swap"

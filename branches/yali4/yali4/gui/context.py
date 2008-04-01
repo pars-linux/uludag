@@ -33,9 +33,6 @@ debugEnabled = False
 # install data
 installData = installdata.InstallData()
 
-# icon factory
-# iconfactory = yali.gui.iconfactory.IconFactory(consts.pics_dir)
-
 # auto partitioning
 use_autopart = False
 

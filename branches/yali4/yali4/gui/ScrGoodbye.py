@@ -35,7 +35,6 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.YaliSteps import YaliSteps
 from yali4.gui.Ui.goodbyewidget import Ui_GoodByeWidget
-from yali4.constants import consts
 import yali4.gui.context as ctx
 
 ##
@@ -77,7 +76,6 @@ don't you?
 
     def execute(self):
         ctx.mainScreen.disableNext()
-
         self.ui.info.show()
 
         try:
@@ -95,8 +93,8 @@ don't you?
         self.dialog = WarningDialog(w, self)
         self.dialog.exec_()
 
-        ctx.debugger.log("Trying to eject the CD.")
         # remove cd...
+        ctx.debugger.log("Trying to eject the CD.")
         yali4.sysutils.eject_cdrom()
 
         ctx.debugger.log("Yali, fastreboot calling..")
@@ -110,14 +108,14 @@ don't you?
 
     # process pending actions defined in other screens.
     def processPendingActions(self):
+        global bus
         bus = None
-
         def connectToDBus():
             global bus
             for i in range(20):
                 try:
                     ctx.debugger.log("trying to start dbus..")
-                    bus = dbus.bus.BusConnection(address_or_type=consts.dbus_socket_file)
+                    bus = dbus.bus.BusConnection(address_or_type=ctx.consts.dbus_socket_file)
                     break
                 except dbus.DBusException:
                     time.sleep(1)
@@ -129,7 +127,6 @@ don't you?
         def setHostName():
             global bus
             obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-            # setHostName(hostname)
             obj.setHostName(ctx.installData.hostName, dbus_interface="tr.org.pardus.comar.Net.Stack")
             ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
             return True
@@ -139,9 +136,7 @@ don't you?
             obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
             for u in yali4.users.pending_users:
                 ctx.debugger.log("User %s adding to system" % u.username)
-                # addUser(id, nick, realname, homedir, shell, passwd, groups)
                 obj.addUser("auto", u.username, u.realname, "", "", u.passwd, u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
 
                 # Enable auto-login
                 if u.username == ctx.installData.autoLoginUser:
@@ -152,9 +147,7 @@ don't you?
             if not ctx.installData.useYaliFirstBoot:
                 global bus
                 obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-                # setUser(uid, realname, homedir, shell, passwd, groups)
                 obj.setUser(0, "", "", "", ctx.installData.rootPassword, "", dbus_interface="tr.org.pardus.comar.User.Manager")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
             return True
 
         def writeConsoleData():
@@ -171,17 +164,13 @@ don't you?
             global bus
             if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
                 ctx.debugger.log("OemInstall selected.")
-                # kdebase off
                 obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
                 obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
-                # yali on
                 obj = bus.get_object("tr.org.pardus.comar", "/package/yali_firstBoot")
                 obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
             return True
 
-        steps = [{"text":"Trying to connect COMAR Daemon...","operation":connectToComar},
+        steps = [{"text":"Trying to connect DBUS...","operation":connectToDBus},
                  {"text":"Setting Hostname...","operation":setHostName},
                  {"text":"Setting TimeZone...","operation":yali4.postinstall.setTimeZone},
                  {"text":"Setting Root Password...","operation":setRootPassword},
