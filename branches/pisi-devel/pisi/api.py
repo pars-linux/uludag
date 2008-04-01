@@ -88,6 +88,18 @@ def set_dbus_sockname(sockname):
     """
     ctx.dbus_sockname = sockname
 
+def set_signal_handling(enable):
+    """ 
+    Enable signal handling. Signal handling in pisi mostly used for disabling keyboard interrupts 
+    in critical paths.
+    Used by YALI
+    @param enable: Flag indicating signal handling usage
+    """
+    if enable:
+        ctx.sig = pisi.signalhandler.SignalHandler()
+    else:
+        ctx.sig = None
+
 def set_options(options):
     """ 
     Set various options of pisi
@@ -233,6 +245,16 @@ def search_package(terms, lang=None, repo=None):
     """
     packagedb = pisi.db.packagedb.PackageDB()
     return packagedb.search_package(terms, lang, repo)
+
+def search_installed(terms, lang=None):
+    """
+    Return a list of components that contains all the given terms either in its name, summary or
+    description -> list_of_strings
+    @param terms: a list of terms used to search components -> list_of_strings
+    @param lang: language of the summary and description
+    """
+    installdb = pisi.db.installdb.InstallDB()
+    return installdb.search_package(terms, lang)
 
 def search_source(terms, lang=None, repo=None):
     """
