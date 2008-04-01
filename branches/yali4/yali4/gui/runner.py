@@ -126,6 +126,7 @@ def showException(ex_type, tb):
         w = ExceptionWidget(tb)
 
     print "BACKTRACE: ",tb
+    ctx.debugger.log(tb)
     d = Dialog(title, w, None)
     d.resize(500,400)
     d.exec_()

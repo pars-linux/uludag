@@ -127,7 +127,7 @@ don't you?
         def setHostName():
             global bus
             obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-            obj.setHostName(ctx.installData.hostName, dbus_interface="tr.org.pardus.comar.Net.Stack")
+            obj.setHostName(str(ctx.installData.hostName), dbus_interface="tr.org.pardus.comar.Net.Stack")
             ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
             return True
 
@@ -147,7 +147,7 @@ don't you?
             if not ctx.installData.useYaliFirstBoot:
                 global bus
                 obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-                obj.setUser(0, "", "", "", ctx.installData.rootPassword, "", dbus_interface="tr.org.pardus.comar.User.Manager")
+                obj.setUser(0, "", "", "", str(ctx.installData.rootPassword), "", dbus_interface="tr.org.pardus.comar.User.Manager")
             return True
 
         def writeConsoleData():

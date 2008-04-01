@@ -283,8 +283,8 @@ class PkgConfigurator(QThread):
 
         try:
             # run all pending...
-            yali4.pisiiface.configure_pending()
             ctx.debugger.log("execute :: yali4.pisiiface.configure_pending() called")
+            yali4.pisiiface.configure_pending()
         except Exception, e:
             # User+10: error
             qevent = PisiEvent(QEvent.User, EventError)

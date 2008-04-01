@@ -15,10 +15,12 @@ import shutil
 import grp
 
 from yali4.constants import consts
+import yali4.gui.context as ctx
 
 def cp(s, d):
     src = os.path.join(consts.target_dir, s)
     dst = os.path.join(consts.target_dir, d)
+    ctx.debugger.log("Copying from '%s' to '%s'" % (src,dst))
     shutil.copyfile(src, dst)
 
 def touch(f, m=0644):
@@ -59,7 +61,8 @@ def initbaselayout():
     os.system("/usr/bin/mknod %s/dev/null c 1 3" % consts.target_dir)
 
 def setTimeZone():
-    cp("usr/share/zoneinfo/%s" % ctx.installdata.timezone, "etc/localtime")
+    os.system("rm -rf %s" % os.path.join(consts.target_dir, "etc/localtime"))
+    cp("usr/share/zoneinfo/%s" % ctx.installData.timezone, "etc/localtime")
     return True
 
 def migrate_xorg_conf(keymap="trq"):
