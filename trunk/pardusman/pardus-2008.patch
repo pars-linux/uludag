@@ -1,6 +1,6 @@
 Index: src/maker.py
 ===================================================================
---- src/maker.py	(revision 17513)
+--- src/maker.py	(revision 17548)
 +++ src/maker.py	(working copy)
 @@ -39,9 +39,12 @@
          except OSError:
@@ -53,25 +53,9 @@ Index: src/maker.py
          else:
              install_packages(project)
          
-@@ -257,16 +260,32 @@
-         
+@@ -258,15 +261,16 @@
          chrun("/sbin/ldconfig")
          chrun("/sbin/update-environment")
-+        # Hack hack hack
-+        passwd = file("%s/etc/passwd" % image_dir,"a")
-+        passwd.write("""
-+dbus:x:101:101:D-BUS:/dev/null:/bin/false
-+hal:x:102:102:Hal:/dev/null:/bin/false
-+polkit:x:103:103:PolicyKit:/dev/null:/bin/false
-+""")
-+        passwd.close()
-+        groups = file("%s/etc/group" % image_dir,"a")
-+        groups.write("""
-+dbus:x:101:dbus
-+hal:x:102:hal
-+polkit:x:103:polkit
-+""")
-+        groups.close()
          chroot_comar(image_dir)
 -        chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
 +        chrun("/usr/bin/hav call baselayout System.Package postInstall '' '' '' ''")
