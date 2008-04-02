@@ -94,7 +94,7 @@ def post_install(package_name, provided_scripts, scriptpath, metapath, filepath,
         if script.om == "System.Package":
             self_post = True
         elif script.om == "System.Service":
-            sys_service = False
+            sys_service = True
         try:
             sys_iface.register(object_name, script.om, os.path.join(scriptpath, script.script))
         except dbus.DBusException, exception:
