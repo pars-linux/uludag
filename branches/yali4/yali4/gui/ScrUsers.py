@@ -182,10 +182,10 @@ go to next screen.</p>
 
     def slotCreateUser(self):
         u = yali4.users.User()
-        u.username = self.ui.username.text().toAscii()
+        u.username = str(self.ui.username.text().toAscii())
         # ignore last character. see bug #887
         u.realname = unicode(self.ui.realname.text())
-        u.passwd = self.ui.pass1.text().toAscii()
+        u.passwd = str(self.ui.pass1.text().toAscii())
         u.groups = ["users", "pnp", "pnpadmin", "removable", "disk", "audio", "video", "power", "dialout"]
         pix = self.normalUserIcon
         if self.ui.admin.isChecked():
