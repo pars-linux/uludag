@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2007, TUBITAK/UEKAE
+# Copyright (C) 2005-2007,2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -29,7 +29,6 @@ class Widget(QTextBrowser):
 
     def __init__(self, *args):
         apply(QTextBrowser.__init__, (self,) + args)
-
         self.setSizePolicy( QSizePolicy(QSizePolicy.Preferred,
                                         QSizePolicy.Expanding))
 
@@ -39,13 +38,13 @@ class Widget(QTextBrowser):
             raise GUIException, e
 
     def find_release_notes(self):
-        rel_path = join(ctx.consts.source_dir,
-                        "release-notes/releasenotes-" + ctx.consts.lang + ".html")
+        rel_path = join(ctx.consts.source_dir,"release-notes/releasenotes-" + ctx.consts.lang + ".html")
+
         if not exists(rel_path):
             rel_path = join(ctx.consts.source_dir, "release-notes/releasenotes-en.html")
 
         if exists(rel_path):
-            return f
+            return rel_path
         else:
             raise GUIException, _("Can't open Release Notes!")
 

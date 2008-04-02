@@ -28,7 +28,7 @@ from yali4.constants import consts
 grub_conf_tmp = """\
 default 0
 timeout 10
-splashimage = (%(grub_root)s)/boot/grub/splash.xpm.gz
+gfxmenu /boot/grub/message
 background 10333C
 
 title %(pardus_version)s

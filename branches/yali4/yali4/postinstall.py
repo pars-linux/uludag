@@ -57,8 +57,8 @@ def initbaselayout():
     chgrp("var/log/wtmp", "utmp")
 
     # create needed device nodes
-    os.system("/usr/bin/mknod %s/dev/console c 5 1" % consts.target_dir)
-    os.system("/usr/bin/mknod %s/dev/null c 1 3" % consts.target_dir)
+    os.system("/bin/mknod %s/dev/console c 5 1" % consts.target_dir)
+    os.system("/bin/mknod %s/dev/null c 1 3" % consts.target_dir)
 
 def setTimeZone():
     os.system("rm -rf %s" % os.path.join(consts.target_dir, "etc/localtime"))

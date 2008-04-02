@@ -77,7 +77,7 @@ class DiskList(QtGui.QWidget):
         self.vbox.addWidget(self.tabWidget)
         self.vbox.addWidget(self.partEdit)
 
-        self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(QWidget*)"),self.updatePartEdit)
+        self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(int)"),self.updatePartEdit)
         self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.connect(self.partEdit.ui.resizePartition,QtCore.SIGNAL("clicked()"),self.slotResizePart)
@@ -93,8 +93,8 @@ class DiskList(QtGui.QWidget):
     ##
     # GUI Operations
     #
-    def updatePartEdit(self, dw):
-        dw.updatePartEdit()
+    def updatePartEdit(self):
+        self.tabWidget.currentWidget().updatePartEdit()
 
     def addDisk(self,dw):
         self.tabWidget.addTab(dw,dw.name)
@@ -115,7 +115,7 @@ class DiskList(QtGui.QWidget):
             self.addDevice(dev)
 
         self.tabWidget.setCurrentIndex(_cur)
-        self.updatePartEdit(self.tabWidget.widget(_cur))
+        self.updatePartEdit()
         self.checkRootPartRequest()
 
     def checkRootPartRequest(self):
