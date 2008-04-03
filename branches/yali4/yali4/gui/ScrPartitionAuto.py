@@ -107,6 +107,9 @@ about disk partitioning.
         ctx.mainScreen.disableNext()
         self.updateUI()
 
+        # Remove it later.
+        self.ui.accept_auto_1.setEnabled(False)
+
     def scanPartitions(self):
         self.resizablePartitions = []
         self.resizableDisks = []
