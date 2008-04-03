@@ -142,10 +142,10 @@ def is_windows_boot(partition_path, file_system):
 def reboot():
     print "Rebooting..."
     try:
-        umount(ctx.consts.target_dir + "/home")
+        umount(consts.target_dir + "/home")
     except:
         pass
-    umount(ctx.consts.target_dir)
+    umount(consts.target_dir)
     fastreboot()
 
 ## Run an external program and capture standard out.
