@@ -138,7 +138,7 @@ class BootLoader:
             for i in [x for x in open("/proc/cmdline", "r").read().split() \
                         if not x.startswith("init=") \
                        and not x.startswith("xorg=") \
-                       and not x.startswith("yali=") \
+                       and not x.startswith("yali4=") \
                        and not x.startswith(consts.kahyaParam)]:
                 if i.startswith("root="):
                     s.append("root=/dev/%s" % (root))
