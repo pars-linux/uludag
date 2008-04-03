@@ -96,8 +96,6 @@ class BootLoader:
         if not install_dev.startswith("/dev/"):
             install_dev = "/dev/%s" % install_dev
 
-        _grb = self._find_grub_dev(install_root_path)
-
         # some paths has own directories like (/dev/cciss/c0d0p1)
         # it removes /dev/ and gets the device.
         install_root = install_root_path[5:]
@@ -111,6 +109,8 @@ class BootLoader:
         # create device map
         cmd = "/sbin/grub --batch --no-floppy --device-map=%s < %s" % (self.device_map, self.grub_conf)
         os.system(cmd)
+
+        _grb = self._find_grub_dev(install_root_path)
 
         # grub_root is the device on which we install.
         minor = str(int(filter(lambda u: u.isdigit(), install_root)) -1)

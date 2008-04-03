@@ -169,11 +169,8 @@ loader.
         if ctx.installData.autoPartDev:
             # show confirmation dialog
             w.warning.setText(_('''<b>
-<p>This action will use your entire disk for Pardus installation and
+<p>This action will use your entire disk for Pardus installation and <br>
 all your present data on the selected disk will be lost.</p>
-
-<p>After being sure you had your backup this is generally a safe
-and easy way to install Pardus.</p>
 </b>
 '''))
         self.dialog = WarningDialog(w, self)
