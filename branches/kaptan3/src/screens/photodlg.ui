@@ -22,17 +22,23 @@
     <property name="caption">
         <string>Photo</string>
     </property>
-    <widget class="QLabel">
+    <widget class="QPushButton">
         <property name="name">
-            <cstring>cameraDisplay</cstring>
+            <cstring>shotButton</cstring>
         </property>
         <property name="geometry">
             <rect>
-                <x>100</x>
-                <y>50</y>
-                <width>310</width>
-                <height>190</height>
+                <x>190</x>
+                <y>230</y>
+                <width>110</width>
+                <height>20</height>
             </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
+        </property>
+        <property name="text">
+            <string>Shot</string>
         </property>
     </widget>
     <widget class="QButtonGroup">
@@ -42,10 +48,13 @@
         <property name="geometry">
             <rect>
                 <x>90</x>
-                <y>310</y>
-                <width>320</width>
-                <height>110</height>
+                <y>270</y>
+                <width>340</width>
+                <height>100</height>
             </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
         </property>
         <property name="title">
             <string>Put my photo to:</string>
@@ -58,6 +67,9 @@
                 <property name="name">
                     <cstring>mailCheckBox</cstring>
                 </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
+                </property>
                 <property name="text">
                     <string>E-mail clients</string>
                 </property>
@@ -65,6 +77,9 @@
             <widget class="QCheckBox" row="1" column="0">
                 <property name="name">
                     <cstring>imCheckBox</cstring>
+                </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
                 </property>
                 <property name="text">
                     <string>Instant messengers</string>
@@ -74,71 +89,30 @@
                 <property name="name">
                     <cstring>kdmCheckBox</cstring>
                 </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
+                </property>
                 <property name="text">
-                    <string>KDM Login Screen</string>
+                    <string>Login Screen (KDM)</string>
                 </property>
             </widget>
         </grid>
     </widget>
-    <widget class="QLayoutWidget">
+    <widget class="QLabel">
         <property name="name">
-            <cstring>layout4</cstring>
+            <cstring>cameraDisplay</cstring>
         </property>
         <property name="geometry">
             <rect>
                 <x>90</x>
-                <y>260</y>
-                <width>320</width>
-                <height>30</height>
+                <y>30</y>
+                <width>340</width>
+                <height>180</height>
             </rect>
         </property>
-        <hbox>
-            <property name="name">
-                <cstring>unnamed</cstring>
-            </property>
-            <spacer>
-                <property name="name">
-                    <cstring>spacer12</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>41</width>
-                        <height>21</height>
-                    </size>
-                </property>
-            </spacer>
-            <widget class="QPushButton">
-                <property name="name">
-                    <cstring>shotButton</cstring>
-                </property>
-                <property name="text">
-                    <string>Shot</string>
-                </property>
-            </widget>
-            <spacer>
-                <property name="name">
-                    <cstring>spacer13</cstring>
-                </property>
-                <property name="orientation">
-                    <enum>Horizontal</enum>
-                </property>
-                <property name="sizeType">
-                    <enum>Expanding</enum>
-                </property>
-                <property name="sizeHint">
-                    <size>
-                        <width>71</width>
-                        <height>21</height>
-                    </size>
-                </property>
-            </spacer>
-        </hbox>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
+        </property>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>

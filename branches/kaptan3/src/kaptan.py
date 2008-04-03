@@ -27,13 +27,14 @@ import screens.ScrPackage as ScrPackage
 import screens.ScrMouse as ScrMouse
 import screens.ScrNetwork as ScrNetwork
 import screens.ScrPanel as ScrPanel
-#import screens.ScrSummary as ScrSummary
+import screens.ScrPhoto as ScrPhoto
 import screens.ScrGoodbye as ScrGoodbye
 import screens.ScrMultiple as ScrMultiple
 
 #set avaiable screens
 avail_screens = [ScrWelcome,
                  ScrMouse,
+                 ScrPhoto,
                  ScrPanel,
                  ScrMultiple,
                  ScrWallpaper,
