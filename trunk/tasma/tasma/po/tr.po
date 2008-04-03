@@ -35,7 +35,6 @@ msgid "(c) 2005-2006, TUBITAK - UEKAE"
 msgstr "(c) 2005-2006, TÜBİTAK - UEKAE"
 
 #: src/main.cpp:64
-#, fuzzy
 msgid "(c) 2005-2007, TUBITAK - UEKAE"
 msgstr "(c) 2005-2006, TÜBİTAK - UEKAE"
 
@@ -75,12 +74,10 @@ msgid "Description"
 msgstr "Açıklama"
 
 #: src/main.cpp:66
-#, fuzzy
 msgid "Developer"
 msgstr "KDE Geliştiricileri"
 
 #: src/tasmamainwin.cpp:89
-#, fuzzy
 msgid "Displays Information About Current Module"
 msgstr "Şimdiki Modül Hakkında"
 
