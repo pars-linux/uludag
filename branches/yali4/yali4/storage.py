@@ -490,7 +490,7 @@ class EDD:
         if os.path.exists(sigfile):
             sig = file(sigfile).read().strip("\n")
         else:
-            sig = "NOT FOUND"
+            sig = False
 
         return sig
 
@@ -514,7 +514,8 @@ class EDD:
                 raise YaliException, "Inserting EDD Module failed !"
         for d in os.listdir(self.edd_dir):
             bios_num = d[9:]
-            sigs[bios_num] = self.get_edd_sig(bios_num)
+            if self.get_edd_sig(bios_num):
+                sigs[bios_num] = self.get_edd_sig(bios_num)
         return sigs
 
     def list_mbr_signatures(self):

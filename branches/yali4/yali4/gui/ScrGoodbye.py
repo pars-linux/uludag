@@ -242,5 +242,5 @@ class RebootWidget(QtGui.QWidget):
                      self.slotReboot)
 
     def slotReboot(self):
-        self.emit(PYSIGNAL("signalOK"), ())
+        self.emit(SIGNAL("signalOK"), ())
 
