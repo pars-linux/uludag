@@ -96,10 +96,7 @@ class BootLoader:
         if not install_dev.startswith("/dev/"):
             install_dev = "/dev/%s" % install_dev
 
-        if install_root_path.startswith(install_dev):
-            _grb = "hd0"
-        else:
-            _grb = "hd1"
+        _grb = self._find_grub_dev(install_root_path)
 
         # some paths has own directories like (/dev/cciss/c0d0p1)
         # it removes /dev/ and gets the device.
