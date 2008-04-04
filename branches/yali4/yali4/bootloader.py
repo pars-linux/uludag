@@ -193,11 +193,12 @@ class BootLoader:
 
     def install_grub(self, grub_install_root=None):
         """ Install GRUB to the given device or partition """
-        # grub installation is always hd0 (http://liste.pardus.org.tr/gelistirici/2007-March/005725.html)
-        # if not explicitly defined...
 
         if not grub_install_root.startswith("/dev/"):
             grub_install_root = "/dev/%s" % grub_install_root
+
+        grub_install_root = str(filter(lambda u: not u.isdigit(),
+                                       grub_install_root))
 
         cmd = "%s --root-directory=%s %s" % (yali4.sysutils.find_executable("grub-install"),
                                              consts.target_dir,

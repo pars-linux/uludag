@@ -42,6 +42,7 @@ class DiskList(QtGui.QWidget):
         self.resize(QSize(QRect(0,0,600,80).size()).expandedTo(self.minimumSizeHint()))
         self.setAutoFillBackground(False)
         self.diskCount = 1
+        self.updateEnabled = True
         self.setStyleSheet("""
             QTabWidget::pane { border-top: 2px solid #FFFFFF; }
             QTabWidget::tab-bar { left: 5px; }
@@ -87,8 +88,10 @@ class DiskList(QtGui.QWidget):
 
         self.initDevices()
 
-    def resizeEvent(self,event):
-        self.update()
+    def resizeEvent(self, event):
+        if self.updateEnabled:
+            self.update()
+            self.updateEnabled = False
 
     ##
     # GUI Operations

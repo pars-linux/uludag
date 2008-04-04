@@ -543,6 +543,7 @@ def detect_all():
     # Check for sysfs. Only works for >2.6 kernels.
     if not os.path.exists("/sys/bus"):
         raise DeviceError, "sysfs not found!"
+
     # Check for /proc/partitions
     if not os.path.exists("/proc/partitions"):
         raise DeviceError, "/proc/partitions not found!"

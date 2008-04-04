@@ -107,4 +107,4 @@ It is important to use correct settings.
         # Store time zone selection we will set it in processPending actions.
         ctx.installData.timezone = self.ui.timeZoneList.currentItem().text()
         ctx.debugger.log("Time zone selected as %s " % ctx.installData.timezone)
-
+        return True

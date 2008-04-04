@@ -59,6 +59,8 @@ class Widget(Ui_YaliMain):
             self.helpContent.hide()
         else:
             self.helpContent.show()
+        _w = self.mainStack.currentWidget()
+        _w.update()
 
     # show/hide debug window
     def toggleDebug(self):
@@ -84,9 +86,9 @@ class Widget(Ui_YaliMain):
     def slotNext(self,dryRun=False):
         if not dryRun:
             _w = self.mainStack.currentWidget()
-            _w.execute()
-        self.stackMove(self.getCur(self.moveInc))
-        self.moveInc = 1
+            if _w.execute():
+                self.stackMove(self.getCur(self.moveInc))
+                self.moveInc = 1
 
     # execute previous step
     def slotBack(self):
@@ -105,6 +107,7 @@ class Widget(Ui_YaliMain):
         self.helpContent.setText(_w.help)
         # shown functions contain necessary instructions before
         # showing a stack ( updating gui, disabling some buttons etc. )
+        _w.update()
         _w.shown()
 
     # create all widgets and add inside stack

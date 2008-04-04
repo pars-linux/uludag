@@ -80,7 +80,7 @@ about disk partitioning.
         ctx.mainScreen.disableNext()
 
     def update(self):
-        self.diskList.update()
+        self.diskList.updateEnabled = True
 
     ##
     # do the work and run requested actions on partitions.

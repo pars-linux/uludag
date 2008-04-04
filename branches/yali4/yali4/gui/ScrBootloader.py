@@ -100,6 +100,10 @@ loader.
         self.connect(self.ui.device_list, SIGNAL("clicked()"),
                      self.slotSelect)
 
+    def shown(self):
+        self.orderedDiskList = yali4.storage.getOrderedDiskList()
+        ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(self.orderedDiskList))
+
     def backCheck(self):
         if ctx.autoInstall:
             # we need to go partition auto screen, not manual ;)
@@ -234,7 +238,6 @@ all your present data on the selected disk will be lost.</p>
             ctx.installData.bootLoaderDev = basename(self.device.getPath())
         else:
             if len(yali4.storage.devices) > 1:
-                self.orderedDiskList = yali4.storage.getOrderedDiskList()
                 ctx.installData.bootLoaderDev = basename(self.orderedDiskList[0])
             else:
                 ctx.installData.bootLoaderDev = str(basename(root_part_req.partition().getPath()))
