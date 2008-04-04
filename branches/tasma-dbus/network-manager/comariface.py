@@ -216,6 +216,7 @@ class DBusInterface(Hook):
             iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar")
         except dbus.DBusException, exception:
             self.errorDBus(exception)
+            return
         try:
             func = getattr(iface, method)
             return func(*args)
