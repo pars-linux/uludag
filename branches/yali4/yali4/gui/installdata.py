@@ -23,6 +23,7 @@ class InstallData:
     autoPartPartition = None
     autoPartMethod = methodUseAvail
     bootLoaderDev = None
+    orderedDiskList = []
     repoAddr = None
     useYaliFirstBoot = False
     timezone = "Europe/Istanbul"

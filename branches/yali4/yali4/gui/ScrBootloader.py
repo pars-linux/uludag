@@ -101,8 +101,8 @@ loader.
                      self.slotSelect)
 
     def shown(self):
-        self.orderedDiskList = yali4.storage.getOrderedDiskList()
-        ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(self.orderedDiskList))
+        ctx.installData.orderedDiskList = yali4.storage.getOrderedDiskList()
+        ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(ctx.installData.orderedDiskList))
 
     def backCheck(self):
         if ctx.autoInstall:
@@ -191,9 +191,6 @@ all your present data on the selected disk will be lost.</p>
             ctx.debugger.log("dryRun activated Yali stopped")
             return
 
-        # We always need swap ..
-        self.checkSwap()
-
         # Auto Partitioning
         if ctx.installData.autoPartDev:
             if ctx.installData.autoPartMethod == methodEraseAll:
@@ -205,6 +202,7 @@ all your present data on the selected disk will be lost.</p>
                 time.sleep(2)
                 info.updateMessage(_("Formatting ..."))
                 ctx.mainScreen.processEvents()
+                self.checkSwap()
                 ctx.partrequests.applyAll()
             elif ctx.installData.autoPartMethod == methodUseAvail:
                 pass
@@ -220,6 +218,7 @@ all your present data on the selected disk will be lost.</p>
             time.sleep(2)
             info.updateMessage(_("Formatting ..."))
             ctx.mainScreen.processEvents()
+            self.checkSwap()
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
             ctx.mainScreen.processEvents()
@@ -238,7 +237,7 @@ all your present data on the selected disk will be lost.</p>
             ctx.installData.bootLoaderDev = basename(self.device.getPath())
         else:
             if len(yali4.storage.devices) > 1:
-                ctx.installData.bootLoaderDev = basename(self.orderedDiskList[0])
+                ctx.installData.bootLoaderDev = basename(ctx.installData.orderedDiskList[0])
             else:
                 ctx.installData.bootLoaderDev = str(basename(root_part_req.partition().getPath()))
 

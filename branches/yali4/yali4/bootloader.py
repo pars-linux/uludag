@@ -23,7 +23,7 @@ import yali4.sysutils
 import yali4.partitiontype as parttype
 import yali4.partitionrequest as request
 from yali4.partitionrequest import partrequests
-from yali4.constants import consts
+import yali4.gui.context as ctx
 
 grub_conf_tmp = """\
 default 0
@@ -90,7 +90,7 @@ class BootLoader:
                 d = l[1]
                 return d
 
-    def write_grub_conf(self, install_root_path,install_dev):
+    def write_grub_conf(self, install_root_path, install_dev):
         """ Check configurations and write grub.conf to the installed system.
             Default path is /mnt/target/boot/grub.conf """
         if not install_dev.startswith("/dev/"):
@@ -106,9 +106,16 @@ class BootLoader:
 
         # write an empty grub.conf, for grub to create a device map.
         open(self.grub_conf, "w").close()
+        deviceMap = open(self.device_map, "w")
+        i = 0
         # create device map
-        cmd = "/sbin/grub --batch --no-floppy --device-map=%s < %s" % (self.device_map, self.grub_conf)
-        os.system(cmd)
+        for disk in ctx.installData.orderedDiskList:
+            deviceMap.write("(hd%d)\t%s\n" % (i,disk))
+            i+=1
+        deviceMap.close()
+
+        # cmd = "/sbin/grub --batch --no-floppy --device-map=%s < %s" % (self.device_map, self.grub_conf)
+        # os.system(cmd)
 
         _grb = self._find_grub_dev(install_root_path)
 

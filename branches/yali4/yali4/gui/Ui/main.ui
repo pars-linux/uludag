@@ -556,7 +556,7 @@ QSpinBox::down-button:pressed {
              <string>Previous Screen</string>
             </property>
             <property name="text" >
-             <string>« Back</string>
+            <string>Back</string>
             </property>
            </widget>
           </item>
@@ -569,7 +569,7 @@ QSpinBox::down-button:pressed {
              <string>Next Screen</string>
             </property>
             <property name="text" >
-             <string> Next »</string>
+             <string>Next</string>
             </property>
            </widget>
           </item>

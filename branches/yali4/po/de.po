@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-19 12:20+0200\n"
+"POT-Creation-Date: 2008-04-04 17:39+0300\n"
 "PO-Revision-Date: 2007-11-16 00:57+0200\n"
 "Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -19,25 +19,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: yali4/gui/Ui/autopartquestion.py:65 yali4/gui/Ui/datetimewidget.py:97
-#: yali4/gui/Ui/goodbyewidget.py:58 yali4/gui/Ui/partedit.py:173
+#: yali4/gui/Ui/autopartquestion.py:77 yali4/gui/Ui/datetimewidget.py:97
+#: yali4/gui/Ui/goodbyewidget.py:54 yali4/gui/Ui/partedit.py:173
 #, fuzzy
 msgid "Form"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartquestion.py:66
+#: yali4/gui/Ui/autopartquestion.py:78
 msgid ""
 "It seems there is more than one partition for resizing. In this case you can "
 "select a partition from the list below or YALI will select one."
 msgstr ""
 
-#: yali4/gui/Ui/autopartquestion.py:67
+#: yali4/gui/Ui/autopartquestion.py:79
 msgid "Choose the best target for resizing (recommended)"
 msgstr ""
 
-#: yali4/gui/Ui/autopartquestion.py:68
+#: yali4/gui/Ui/autopartquestion.py:80
 msgid "I will choose the target"
 msgstr ""
+
+#: yali4/gui/Ui/autopartquestion.py:81
+#, fuzzy
+msgid "Use Selected"
+msgstr "Gewählten Benutzer entfernen"
 
 #: yali4/gui/Ui/autopartwidget.py:110 yali4/gui/Ui/bootloaderwidget.py:90
 #: yali4/gui/Ui/checkcdwidget.py:85 yali4/gui/Ui/keyboardwidget.py:70
@@ -236,7 +241,7 @@ msgstr ""
 msgid "Details about the screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:450 yali4/gui/YaliWindow.py:157
+#: yali4/gui/Ui/main.py:450 yali4/gui/YaliWindow.py:162
 msgid "Release Notes"
 msgstr "Release-Informationen"
 
@@ -249,7 +254,7 @@ msgid "Previous Screen"
 msgstr ""
 
 #: yali4/gui/Ui/main.py:453
-msgid "« Back"
+msgid "Back"
 msgstr ""
 
 #: yali4/gui/Ui/main.py:454
@@ -257,7 +262,7 @@ msgid "Next Screen"
 msgstr ""
 
 #: yali4/gui/Ui/main.py:455
-msgid " Next »"
+msgid "Next"
 msgstr ""
 
 #: yali4/gui/Ui/parteditbuttons.py:49 yali4/gui/Ui/partresize.py:106
@@ -510,7 +515,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Die GPL lesen"
 
-#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:155
+#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:158
 msgid "Reboot System!"
 msgstr "System neustarten"
 
@@ -526,68 +531,68 @@ msgstr "Ich stimme den Lizenzen nicht zu"
 msgid "Debug"
 msgstr "Debuggen"
 
-#: yali4/gui/DiskWidgets.py:140
+#: yali4/gui/DiskWidgets.py:141
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "Die Grösse von 'Root installieren'  muss grösser als %s MB sein."
 
-#: yali4/gui/DiskWidgets.py:175 yali4/gui/ScrBootloader.py:73
-#: yali4/gui/ScrKahyaCheck.py:94 yali4/gui/ScrPartitionAuto.py:72
+#: yali4/gui/DiskWidgets.py:176 yali4/gui/ScrBootloader.py:76
+#: yali4/gui/ScrKahyaCheck.py:94 yali4/gui/ScrPartitionAuto.py:73
 msgid "Can't find a storage device!"
 msgstr "Es kann kein Speichergerät gefunden werden!"
 
-#: yali4/gui/DiskWidgets.py:190
+#: yali4/gui/DiskWidgets.py:191
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB frei"
 
-#: yali4/gui/DiskWidgets.py:192
+#: yali4/gui/DiskWidgets.py:193
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB frei"
 
-#: yali4/gui/DiskWidgets.py:212
+#: yali4/gui/DiskWidgets.py:213
 #, python-format
 msgid "Partition %d"
 msgstr "Partition %d"
 
-#: yali4/gui/DiskWidgets.py:219
+#: yali4/gui/DiskWidgets.py:220
 #, fuzzy
 msgid "Free Space"
 msgstr "freier Speicherplatz"
 
-#: yali4/gui/DiskWidgets.py:308
+#: yali4/gui/DiskWidgets.py:309
 #, fuzzy
 msgid "Too many primary partition !"
 msgstr "Diese Partition formatieren"
 
-#: yali4/gui/DiskWidgets.py:309
+#: yali4/gui/DiskWidgets.py:310
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:362
+#: yali4/gui/DiskWidgets.py:363
 msgid "Delete All Partitions"
 msgstr "Alle Partitionen löschen"
 
-#: yali4/gui/DiskWidgets.py:430
+#: yali4/gui/DiskWidgets.py:431
 msgid "Pardus will install here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:433
+#: yali4/gui/DiskWidgets.py:434
 msgid "User files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:436
+#: yali4/gui/DiskWidgets.py:437
 msgid "Swap will be here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:439
+#: yali4/gui/DiskWidgets.py:440
 msgid "Backup or archive files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:460
+#: yali4/gui/DiskWidgets.py:461
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -599,7 +604,7 @@ msgstr ""
 msgid "Can't open License file!"
 msgstr "Die Lizenzdatei konnte nicht geöffnet werden!"
 
-#: yali4/gui/GUIRelNotes.py:50
+#: yali4/gui/GUIRelNotes.py:49
 #, fuzzy
 msgid "Can't open Release Notes!"
 msgstr "Die Lizenzdatei konnte nicht geöffnet werden!"
@@ -608,7 +613,7 @@ msgstr "Die Lizenzdatei konnte nicht geöffnet werden!"
 msgid "Error!"
 msgstr "Fehler!"
 
-#: yali4/gui/runner.py:150
+#: yali4/gui/runner.py:153
 msgid "Unhandled error occured!"
 msgstr "Es ist ein ungehandhabter Fehler aufgetreten!"
 
@@ -693,15 +698,15 @@ msgid "<font color=\"#FF6D19\">Hostname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Der Hostname enthält unzulässige Zeichen!</font>"
 
-#: yali4/gui/ScrBootloader.py:39
+#: yali4/gui/ScrBootloader.py:42
 msgid "Bootloader Choice"
 msgstr ""
 
-#: yali4/gui/ScrBootloader.py:40
+#: yali4/gui/ScrBootloader.py:43
 msgid "Configure the system boot.."
 msgstr ""
 
-#: yali4/gui/ScrBootloader.py:41
+#: yali4/gui/ScrBootloader.py:44
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -747,14 +752,12 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrBootloader.py:168
+#: yali4/gui/ScrBootloader.py:175
+#, fuzzy
 msgid ""
 "<b>\n"
-"<p>This action will use your entire disk for Pardus installation and\n"
+"<p>This action will use your entire disk for Pardus installation and <br>\n"
 "all your present data on the selected disk will be lost.</p>\n"
-"\n"
-"<p>After being sure you had your backup this is generally a safe\n"
-"and easy way to install Pardus.</p>\n"
 "</b>\n"
 msgstr ""
 "<b>\n"
@@ -766,12 +769,12 @@ msgstr ""
 "installieren. Es wird empfohlen vorher ein Backup zu erstellen.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrBootloader.py:184
+#: yali4/gui/ScrBootloader.py:187
 #, fuzzy
 msgid "Writing disk tables ..."
 msgstr "Konsole-Datei wird beschrieben..."
 
-#: yali4/gui/ScrBootloader.py:196 yali4/gui/ScrBootloader.py:209
+#: yali4/gui/ScrBootloader.py:203 yali4/gui/ScrBootloader.py:219
 #, fuzzy
 msgid "Formatting ..."
 msgstr "Formatierung"
@@ -833,7 +836,7 @@ msgstr ""
 "scheint defekt zu sein.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrCheckCD.py:108 yali4/gui/ScrGoodbye.py:243
+#: yali4/gui/ScrCheckCD.py:108 yali4/gui/ScrGoodbye.py:231
 msgid "Reboot"
 msgstr "Neustarten"
 
@@ -866,15 +869,15 @@ msgstr ""
 "</p>\n"
 "\n"
 
-#: yali4/gui/ScrGoodbye.py:44
+#: yali4/gui/ScrGoodbye.py:43
 msgid "Goodbye from YALI"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:45
+#: yali4/gui/ScrGoodbye.py:44
 msgid "Enjoy your freash Pardus !.."
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:46
+#: yali4/gui/ScrGoodbye.py:45
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
@@ -912,15 +915,16 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrGoodbye.py:70
+#: yali4/gui/ScrGoodbye.py:69
+#, fuzzy
 msgid ""
-"<b><font size=\"+2\" color=\"#FF6D19\">Rebooting system. Please wait!</"
+"<b><font size=\"+2\" color=\"#FFFFFF\">Rebooting system. Please wait!</"
 "font></b>"
 msgstr ""
 "<b><font size=\"+2\" color=\"#FF6D19\">System wird neu gestartet. Bitte "
 "warten!</font></b>"
 
-#: yali4/gui/ScrGoodbye.py:237
+#: yali4/gui/ScrGoodbye.py:225
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
@@ -984,21 +988,21 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:113
+#: yali4/gui/ScrInstall.py:115
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Installation von: %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:118
+#: yali4/gui/ScrInstall.py:120
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Konfiguration des Pakets: %s"
 
-#: yali4/gui/ScrInstall.py:186
+#: yali4/gui/ScrInstall.py:187
 msgid "Configuring packages for your system!"
 msgstr "Pakete werden für Ihr System konfiguriert."
 
-#: yali4/gui/ScrInstall.py:213
+#: yali4/gui/ScrInstall.py:212
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1063,16 +1067,16 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrPartitionAuto.py:38
+#: yali4/gui/ScrPartitionAuto.py:39
 #, fuzzy
 msgid "Choose Partitioning"
 msgstr "Partition anlegen"
 
-#: yali4/gui/ScrPartitionAuto.py:39
+#: yali4/gui/ScrPartitionAuto.py:40
 msgid "Auto or Manual partitioning.."
 msgstr ""
 
-#: yali4/gui/ScrPartitionAuto.py:41
+#: yali4/gui/ScrPartitionAuto.py:42
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1120,7 +1124,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrPartitionAuto.py:83
+#: yali4/gui/ScrPartitionAuto.py:84
 #, python-format
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
@@ -1410,7 +1414,7 @@ msgstr ""
 msgid "O.K. Go Ahead"
 msgstr "O.K., forsetzen"
 
-#: yali4/bootloader.py:182 yali4/bootloader.py:187
+#: yali4/bootloader.py:190 yali4/bootloader.py:195
 msgid "Windows"
 msgstr "Windows"
 
@@ -1586,19 +1590,19 @@ msgstr "freier Speicherplatz"
 msgid "There is a request for the same Partition Type."
 msgstr ""
 
-#: yali4/partitiontype.py:51
+#: yali4/partitiontype.py:47
 msgid "Install Root"
 msgstr "Root installieren"
 
-#: yali4/partitiontype.py:60
+#: yali4/partitiontype.py:55
 msgid "Users' Files"
 msgstr "Persönliche Dateien"
 
-#: yali4/partitiontype.py:69
+#: yali4/partitiontype.py:63
 msgid "Swap"
 msgstr "SWAP"
 
-#: yali4/partitiontype.py:78
+#: yali4/partitiontype.py:72
 #, fuzzy
 msgid "Archive Partition"
 msgstr "Partition anlegen"
