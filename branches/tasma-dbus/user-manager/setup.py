@@ -16,7 +16,7 @@ import shutil
 from distutils.core import Extension
 import kdedistutils
 
-version = "1.2.1"
+version = "2.0.0"
 
 distfiles = """
     README
