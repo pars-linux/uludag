@@ -216,7 +216,9 @@ all your present data on the selected disk will be lost.</p>
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
             ctx.mainScreen.processEvents()
-            self.checkSwap()
+
+        # We always need swap ..
+        self.checkSwap()
 
         info.close()
 

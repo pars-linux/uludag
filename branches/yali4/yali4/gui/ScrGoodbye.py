@@ -66,7 +66,7 @@ don't you?
 
         self.steps = YaliSteps()
 
-        self.ui.info.setText(_('<b><font size="+2" color="#FF6D19">Rebooting system. Please wait!</font></b>'))
+        self.ui.info.setText(_('<b><font size="+2" color="#FFFFFF">Rebooting system. Please wait!</font></b>'))
         self.ui.info.hide()
 
     def shown(self):
