@@ -191,6 +191,9 @@ all your present data on the selected disk will be lost.</p>
             ctx.debugger.log("dryRun activated Yali stopped")
             return
 
+        # We always need swap ..
+        self.checkSwap()
+
         # Auto Partitioning
         if ctx.installData.autoPartDev:
             if ctx.installData.autoPartMethod == methodEraseAll:
@@ -220,9 +223,6 @@ all your present data on the selected disk will be lost.</p>
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
             ctx.mainScreen.processEvents()
-
-        # We always need swap ..
-        self.checkSwap()
 
         info.close()
 
