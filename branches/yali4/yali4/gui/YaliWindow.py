@@ -57,8 +57,10 @@ class Widget(Ui_YaliMain):
     def slotToggleHelp(self):
         if self.helpContent.isVisible():
             self.helpContent.hide()
+            self.toggleHelp.setText(_("Show Help"))
         else:
             self.helpContent.show()
+            self.toggleHelp.setText(_("Hide Help"))
         _w = self.mainStack.currentWidget()
         _w.update()
 

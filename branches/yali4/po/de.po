@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-04 17:39+0300\n"
+"POT-Creation-Date: 2008-04-04 19:33+0300\n"
 "PO-Revision-Date: 2007-11-16 00:57+0200\n"
 "Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -241,7 +241,7 @@ msgstr ""
 msgid "Details about the screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:450 yali4/gui/YaliWindow.py:162
+#: yali4/gui/Ui/main.py:450 yali4/gui/YaliWindow.py:164
 msgid "Release Notes"
 msgstr "Release-Informationen"
 
@@ -1413,6 +1413,14 @@ msgstr ""
 #: yali4/gui/YaliDialog.py:133
 msgid "O.K. Go Ahead"
 msgstr "O.K., forsetzen"
+
+#: yali4/gui/YaliWindow.py:60
+msgid "Show Help"
+msgstr ""
+
+#: yali4/gui/YaliWindow.py:63
+msgid "Hide Help"
+msgstr ""
 
 #: yali4/bootloader.py:190 yali4/bootloader.py:195
 msgid "Windows"

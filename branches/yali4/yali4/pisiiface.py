@@ -40,8 +40,9 @@ def initialize(ui, with_comar=False):
     pisi.api.set_comar(with_comar)
     pisi.api.set_signal_handling(False)
 
-def add_repo(name, uri):
-    pisi.api.add_repo(name, uri)
+def add_repo(name=None, uri=None):
+    if name and uri:
+        pisi.api.add_repo(name, uri)
 
 def add_cd_repo():
     cd_repo_name = consts.cd_repo_name
@@ -56,7 +57,7 @@ def add_remote_repo(name, uri):
         update_repo(name)
 
 def switch_to_pardus_repo():
-    cd_repo_name = consts.cd_repo_name 
+    cd_repo_name = consts.cd_repo_name
     pardus_repo_name = consts.pardus_repo_name
     pardus_repo_uri = consts.pardus_repo_uri
 
