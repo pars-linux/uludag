@@ -219,8 +219,6 @@ class MainApplication(programbase):
 
         # Init
         self.getState()
-        self.getProfile()
-        self.getRules()
 
     def setupBusses(self):
         try:
@@ -237,7 +235,7 @@ class MainApplication(programbase):
         if not path.startswith("/package/"):
             return
         script = path[9:]
-        print script, signal
+        #print script, signal
 
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Filter", member_keyword="signal", path_keyword="path")
@@ -273,6 +271,8 @@ class MainApplication(programbase):
                 mainwidget.frameIncoming.setEnabled(True)
                 mainwidget.frameAdvanced.setEnabled(True)
                 mainwidget.pushNewRule.setEnabled(True)
+                self.getProfile()
+                self.getRules()
             self.setState(self.state)
         ch = self.callMethod("info", "tr.org.pardus.comar.system.service.get", "System.Service")
         ch.registerDone(handleState)
