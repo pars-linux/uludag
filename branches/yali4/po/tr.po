@@ -196,19 +196,19 @@ msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:101
 msgid "HH"
-msgstr "SS"
+msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:102 yali4/gui/Ui/datetimewidget.py:104
 msgid ":"
-msgstr ":"
+msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:103
 msgid "mm"
-msgstr "dd"
+msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:105
 msgid "ss"
-msgstr "ss"
+msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:106
 msgid "Time Zone"
