@@ -46,18 +46,21 @@ Depending on your hardware or choice select a keyboard layout from the list.
         self.ui = Ui_KeyboardWidget()
         self.ui.setupUi(self)
 
-        # iterate over keyboard list and set default
         defaultitem = None
-        for (lang, keymap) in yali4.localedata.getLangsWithKeymaps():
-            if isinstance(keymap, list):
-                for k in keymap:
-                    ki = KeyboardItem(self.ui.keyboard_list, k)
-                    if ctx.consts.lang == lang and not defaultitem:
-                        defaultitem = ki
+        for country,data in yali4.localedata.locales.items():
+            if data["xkbvariant"]:
+                i = 0
+                for variant in data["xkbvariant"]:
+                    _d = dict(data)
+                    _d["xkbvariant"] = variant[0]
+                    _d["name"] = variant[1]
+                    _d["consolekeymap"] = data["consolekeymap"][i]
+                    ki = KeyboardItem(self.ui.keyboard_list, _d)
+                    i+=1
             else:
-                ki = KeyboardItem(self.ui.keyboard_list, keymap)
-                if ctx.consts.lang == lang and not defaultitem:
-                    defaultitem = ki
+                ki = KeyboardItem(self.ui.keyboard_list, data)
+            if ctx.consts.lang == country and not defaultitem:
+                defaultitem = ki
 
         self.ui.keyboard_list.sortItems(Qt.AscendingOrder)
         self.ui.keyboard_list.setCurrentItem(defaultitem)
@@ -74,13 +77,13 @@ Depending on your hardware or choice select a keyboard layout from the list.
     def slotLayoutChanged(self,i,y=None):
         if not i==y:
             keydata = i.getData()
-            yali4.localeutils.set_keymap(keydata.X)
+            yali4.localeutils.set_keymap(keydata["xkblayout"], keydata["xkbvariant"])
 
 class KeyboardItem(QtGui.QListWidgetItem):
 
     def __init__(self, parent, keydata):
-        text = "%s" %(keydata.translation)
-        QtGui.QListWidgetItem.__init__(self,text,parent)
+        text = "%s" %(keydata["name"])
+        QtGui.QListWidgetItem.__init__(self, text, parent)
         self._keydata = keydata
 
     def getData(self):

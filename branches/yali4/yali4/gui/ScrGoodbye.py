@@ -150,7 +150,7 @@ don't you?
             return True
 
         def writeConsoleData():
-            yali4.localeutils.write_keymap(ctx.installData.keyData.console)
+            yali4.localeutils.write_keymap(ctx.installData.keyData["consolekeymap"])
             ctx.debugger.log("Keymap stored.")
             return True
 
