@@ -328,7 +328,7 @@ locales = {
 
 "mk" : {
         "name" : _("Macedonian"),
-        "xkblayout" : "mkd",
+        "xkblayout" : "mk",
         "xkbvariant" : None,
         "locale" : "mk_MK.UTF-8",
         "consolekeymap" : "mk",
@@ -358,7 +358,7 @@ locales = {
 
 "sr" : {
         "name" : _("Serbian"),
-        "xkblayout" : "srp",
+        "xkblayout" : "rs",
         "xkbvariant" : None,
         "locale" : "sr_CS.UTF-8",
         "consolekeymap" : "sr-cy",
