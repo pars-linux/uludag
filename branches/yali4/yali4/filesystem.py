@@ -86,6 +86,11 @@ class FileSystem:
 
     def getLabel(self, partition):
         """ Read filesystem label and return """
+        base = os.walk("/dev/disk/by-label/").next()
+        path = partition.getPath()
+        for part in base[2]:
+            if os.path.realpath("%s%s" % (base[0],part)) == path:
+                return part
         return None
 
     def setLabel(self, partition, label):
@@ -505,20 +510,6 @@ class FatFileSystem(FileSystem):
         o = p.readlines()
         if p.close():
             raise YaliException, "fat32 format failed: %s" % partition.getPath()
-
-    def getLabel(self, partition):
-        cmd_path = sysutils.find_executable("dosfslabel")
-        if not cmd_path:
-            e = "Command not found to get label for %s filesystem" %(self.name())
-            raise FSError, e 
-
-        cmd = "%s %s" % (cmd_path, partition.getPath())
-        p = os.popen(cmd)
-        label = p.read()
-        p.close()
-        if not label == '':
-            return label.strip(' \n')
-        return False
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)

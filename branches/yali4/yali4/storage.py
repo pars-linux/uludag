@@ -495,12 +495,14 @@ class EDD:
         return sig
 
     def get_mbr_sig(self, _f):
-        f = file(_f)
-        f.seek(self.edd_offset)
-        a = f.read(self.edd_len)
-        f.close()
-
-        sig = self.match_sys(binascii.b2a_hex(a))
+        try:
+            f = file(_f)
+            f.seek(self.edd_offset)
+            a = f.read(self.edd_len)
+            f.close()
+            sig = self.match_sys(binascii.b2a_hex(a))
+        except:
+            return False
         return sig
 
     def list_edd_signatures(self):
@@ -521,7 +523,9 @@ class EDD:
     def list_mbr_signatures(self):
         sigs = {}
         for d in self.blockDevices():
-            sigs[self.get_mbr_sig(d)] = d
+            sig = self.get_mbr_sig(d)
+            if sig:
+                sigs[sig] = d
         return sigs
 
 def getOrderedDiskList():
