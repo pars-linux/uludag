@@ -22,9 +22,10 @@ from yali4.constants import consts
 
 repodb = pisi.db.repodb.RepoDB()
 
-def initialize(ui, with_comar=False):
+def initialize(ui, with_comar = False, nodestDir = False):
     options = pisi.config.Options()
-    options.destdir = consts.target_dir
+    if not nodestDir:
+        options.destdir = consts.target_dir
     options.yes_all = True
     # wait for chroot_dbus to initialize
     # generally we don't need this but I think this is safer

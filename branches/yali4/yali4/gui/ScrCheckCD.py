@@ -56,25 +56,32 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def slotCheckCD(self):
         ctx.mainScreen.disableNext()
         ctx.mainScreen.disableBack()
+
         self.ui.checkButton.setEnabled(False)
+
         self.ui.checkLabel.setText(_('<font color="#FF6D19">Please wait while checking CD.</font>'))
-        yali4.pisiiface.initialize(ui=PisiUI())
+
+        yali4.pisiiface.initialize(ui = PisiUI(), with_comar = False, nodestDir = True)
         yali4.pisiiface.add_cd_repo()
+
         ctx.mainScreen.processEvents()
 
         pkg_names = yali4.pisiiface.get_available()
         self.ui.progressBar.setMaximum(len(pkg_names))
+
         cur = 0
         for pkg_name in pkg_names:
             cur += 1
+            ctx.debugger.log("Checking %s " % pkg_name)
             if yali4.pisiiface.check_package_hash(pkg_name):
                 self.ui.progressBar.setValue(cur)
             else:
-                yali4.pisiiface.finalize()
                 self.showError()
-        yali4.pisiiface.finalize()
 
         self.ui.checkLabel.setText(_('<font color="#257216">Check succeeded. You can proceed to the next screen.</font>'))
+
+        yali4.pisiiface.remove_repo(ctx.consts.cd_repo_name)
+
         ctx.mainScreen.enableNext()
         ctx.mainScreen.enableBack()
 
