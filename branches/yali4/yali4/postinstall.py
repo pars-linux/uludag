@@ -66,13 +66,19 @@ def setTimeZone():
     return True
 
 def migrate_xorg():
+    def joy(a):
+        return os.path.join(consts.target_dir,a[1:])
+
     # copy confs
     files = ["/etc/X11/xorg.conf",
              "/etc/hal/fdi/policy/10-keymap.fdi",
              "/var/lib/zorg/config.xml"]
 
     for conf in files:
-        if not os.path.exists(os.path.dirname(conf)):
-            os.makedirs(os.path.dirname(conf))
-        shutil.copyfile(conf, os.path.join(consts.target_dir, conf))
+        if not os.path.exists(joy(os.path.dirname(conf))):
+            os.makedirs(joy(os.path.dirname(conf)))
+
+        if os.path.exists(conf):
+            ctx.debugger.log("Copying from '%s' to '%s'" % (conf, joy(conf)))
+            shutil.copyfile(conf, joy(conf))
 

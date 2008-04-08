@@ -207,7 +207,7 @@ class BootLoader:
         grub_install_root = str(filter(lambda u: not u.isdigit(),
                                        grub_install_root))
 
-        cmd = "%s --root-directory=%s %s" % (yali4.sysutils.find_executable("grub-install"),
+        cmd = "%s --root-directory=%s %s --no-floppy" % (yali4.sysutils.find_executable("grub-install"),
                                              consts.target_dir,
                                              grub_install_root)
         if os.system(cmd) != 0:
