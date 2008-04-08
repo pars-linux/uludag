@@ -158,9 +158,6 @@ class Repository:
     def make_index(self, package_list):
         doc = piksemel.newDocument("PISI")
 
-        for name in package_list:
-            doc.insertNode(self.packages[name].node)
-
         # since new PiSi (pisi 2) needs component info in index file, we need to copy it from original index that user specified
         indexpath = fetch_uri(self.base_uri, self.cache_dir, self.index_name, None, False)
         if indexpath.endswith(".bz2"):
@@ -170,6 +167,14 @@ class Repository:
             doc_index = piksemel.parseString(data)
         else:
             doc_index = piksemel.parse(indexpath)
+
+        # old PiSi needs obsoletes list, so we need to copy it too.
+        for comp_node in doc_index.tags("Distribution"):
+            doc.insertNode(comp_node)
+
+        for name in package_list:
+            doc.insertNode(self.packages[name].node)
+
         for comp_node in doc_index.tags("Component"):
             doc.insertNode(comp_node)
 
