@@ -135,7 +135,7 @@ class diskForm(mainForm):
         # Connections
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
-        self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
+        #self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
         self.connect(self.btn_autoFind, SIGNAL('clicked()'), self.slotAutoFind)
         self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
         self.connect(self.check_allPart, SIGNAL('clicked()'), self.toggleAllPartitions)
