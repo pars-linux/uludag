@@ -431,8 +431,8 @@
 10780104 cyrix
 109200a0 cirrus
 109200a8 cirrus
-10920550 nvidia:nvidia-old nv
-10921092 nvidia:nvidia-old nv
+10920550 nvidia:nvidia-drivers-old nv
+10921092 nvidia:nvidia-drivers-old nv
 10928811 s3
 10a80000 cirrus
 10b41b1d s3virge
@@ -448,13 +448,13 @@
 10de0008 nv
 10de0009 nv
 10de0010 nv
-10de0020 nvidia:nvidia-old nv
-10de0028 nvidia:nvidia-old nv
-10de0029 nvidia:nvidia-old nv
+10de0020 nvidia:nvidia-drivers-old nv
+10de0028 nvidia:nvidia-drivers-old nv
+10de0029 nvidia:nvidia-drivers-old nv
 10de002a nv
 10de002b nv
-10de002c nvidia:nvidia-old nv
-10de002d nvidia:nvidia-old nv
+10de002c nvidia:nvidia-drivers-old nv
+10de002d nvidia:nvidia-drivers-old nv
 10de002e nv
 10de002f nv
 10de0040 nv
@@ -468,7 +468,7 @@
 10de0048 nv
 10de0049 nv
 10de004e nv
-10de00a0 nvidia:nvidia-old nv
+10de00a0 nvidia:nvidia-drivers-old nv
 10de00c0 nv
 10de00c1 nv
 10de00c2 nv
@@ -497,9 +497,9 @@
 10de00fd nv
 10de00fe nv
 10de00ff nv
-10de0100 nvidia:nvidia-old nv
-10de0101 nvidia:nvidia-old nv
-10de0103 nvidia:nvidia-old nv
+10de0100 nvidia:nvidia-drivers-old nv
+10de0101 nvidia:nvidia-drivers-old nv
+10de0103 nvidia:nvidia-drivers-old nv
 10de0110 nv
 10de0111 nv
 10de0112 nv
@@ -520,10 +520,10 @@
 10de014d nv
 10de014e nv
 10de014f nv
-10de0150 nvidia:nvidia-old nv
-10de0151 nvidia:nvidia-old nv
-10de0152 nvidia:nvidia-old nv
-10de0153 nvidia:nvidia-old nv
+10de0150 nvidia:nvidia-drivers-old nv
+10de0151 nvidia:nvidia-drivers-old nv
+10de0152 nvidia:nvidia-drivers-old nv
+10de0153 nvidia:nvidia-drivers-old nv
 10de0160 nv
 10de0161 nv
 10de0162 nv
@@ -743,15 +743,15 @@
 126f0811 siliconmotion
 126f0820 siliconmotion
 126f0910 siliconmotion
-12d20008 nvidia:nvidia-old nv
-12d20009 nvidia:nvidia-old nv
-12d20018 nvidia:nvidia-old nv
-12d20019 nvidia:nvidia-old nv
-12d20020 nvidia:nvidia-old nv
-12d20028 nvidia:nvidia-old nv
-12d20029 nvidia:nvidia-old nv
-12d2002c nvidia:nvidia-old nv
-12d200a0 nvidia:nvidia-old nv
+12d20008 nvidia:nvidia-drivers-old nv
+12d20009 nvidia:nvidia-drivers-old nv
+12d20018 nvidia:nvidia-drivers-old nv
+12d20019 nvidia:nvidia-drivers-old nv
+12d20020 nvidia:nvidia-drivers-old nv
+12d20028 nvidia:nvidia-drivers-old nv
+12d20029 nvidia:nvidia-drivers-old nv
+12d2002c nvidia:nvidia-drivers-old nv
+12d200a0 nvidia:nvidia-drivers-old nv
 15ad0405 vmware
 15ad0710 vmware
 3d3d0001 glint
