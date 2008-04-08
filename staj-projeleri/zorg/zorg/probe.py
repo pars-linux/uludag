@@ -478,4 +478,5 @@ def queryMonitor(device):
             modes[:0] = panel_mode
 
     device.monitors["default"] = monitor
-    device.modes["default"] = ",".join(modes)
+    device.probe_result["default-modes"] = ",".join(modes)
+    device.modes["default"] = modes[0]
