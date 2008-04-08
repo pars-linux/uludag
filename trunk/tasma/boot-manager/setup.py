@@ -60,7 +60,7 @@ if "dist" in sys.argv:
 app_data = [
     'src/boot-manager.py',
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/boot_manager.png']),
-    'src/mainview.py',
+    'src/bm_mainview.py',
     'src/icons/pardus.png',
     'src/icons/linux.png',
     'src/icons/windows.png',
