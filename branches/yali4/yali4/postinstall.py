@@ -65,7 +65,7 @@ def setTimeZone():
     cp("usr/share/zoneinfo/%s" % ctx.installData.timezone, "etc/localtime")
     return True
 
-def migrate_xorg(keymap="tr"):
+def migrate_xorg():
     # copy confs
     files = ["/etc/X11/xorg.conf",
              "/etc/hal/fdi/policy/10-keymap.fdi",
