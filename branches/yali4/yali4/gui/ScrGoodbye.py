@@ -155,8 +155,8 @@ don't you?
             return True
 
         def migrateXorgConf():
-            yali4.postinstall.migrate_xorg_conf(ctx.installData.keyData.X)
-            ctx.debugger.log("xorg.conf merged.")
+            yali4.postinstall.migrate_xorg()
+            ctx.debugger.log("xorg.conf and other files merged.")
             return True
 
         def setPackages():

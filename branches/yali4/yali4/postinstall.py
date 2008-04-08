@@ -65,16 +65,14 @@ def setTimeZone():
     cp("usr/share/zoneinfo/%s" % ctx.installData.timezone, "etc/localtime")
     return True
 
-def migrate_xorg_conf(keymap="trq"):
-    # copy xorg.conf.
-    src = "/etc/X11/xorg.conf"
+def migrate_xorg(keymap="tr"):
+    # copy confs
+    files = ["/etc/X11/xorg.conf",
+             "/etc/hal/fdi/policy/10-keymap.fdi",
+             "/var/lib/zorg/config.xml"]
 
-    # check for Xorg Package
-    target_dir = os.path.join(consts.target_dir, "etc/X11")
-    if os.path.exists(src) and os.path.exists(target_dir):
-        dst = open(os.path.join(target_dir,"xorg.conf"), "w")
-        for l in open(src, "r"):
-            if l.find("XkbLayout") != -1:
-                l = '    Option    "XkbLayout" "%s"\n' %(keymap)
-            dst.write(l)
-        dst.close()
+    for conf in files:
+        if not os.path.exists(os.path.dirname(conf)):
+            os.makedirs(os.path.dirname(conf))
+        shutil.copyfile(conf, os.path.join(consts.target_dir, conf))
+
