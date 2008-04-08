@@ -475,7 +475,7 @@ def queryMonitor(device):
     if device.driver in lcd_drivers:
         panel_mode = queryPanel(device)
         if panel_mode:
-            modes[:0] = panel_mode
+            modes[:0] = [panel_mode]
 
     device.monitors["default"] = monitor
     device.probe_result["default-modes"] = ",".join(modes)
