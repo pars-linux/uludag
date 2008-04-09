@@ -73,13 +73,21 @@ class DiskList(QtGui.QWidget):
         self.tabWidget.setAutoFillBackground(False)
         self.tabWidget.setFocusPolicy(Qt.NoFocus)
 
-        self.partEdit = PartEdit()
+        self.useTypesTexts = [_("as Pardus System Files (mandatory)"),
+                              _("as User Files (optional)"),
+                              _("as Swap Space (optional)"),
+                              _("as Storage Area")]
+
+        self.useTypesKeys = ["pardus","home","swap","archive"]
+        self.useTypes = dict(zip(self.useTypesKeys, self.useTypesTexts))
+
+        self.partEdit = PartEdit(self.useTypesTexts)
         self.partEdit.ui.fileSystemBox.setVisible(False)
+
         self.vbox.addWidget(self.tabWidget)
         self.vbox.addWidget(self.partEdit)
-
         self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(int)"),self.updatePartEdit)
-        self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(int)"),self.formatTypeChanged)
+        self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(QString)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
         self.connect(self.partEdit.ui.resizePartition,QtCore.SIGNAL("clicked()"),self.slotResizePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
@@ -135,7 +143,7 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.formatCheck.setEnabled(False)
 
         # index 1 is Pardus' root partition..
-        if cur == 1:
+        if cur == self.useTypes["pardus"]:
             if self.partEdit.ui.partitionSize.maximum() < ctx.consts.min_root_size and not self.partEdit.isPartitionUsed:
                 self.partEdit.ui.formatType.setCurrentIndex(0)
                 self.partEdit.ui.information.setText(_("'Install Root' size must be larger than %s MB.") % (ctx.consts.min_root_size))
@@ -149,15 +157,15 @@ class DiskList(QtGui.QWidget):
             self.partEdit.ui.partitionSlider.setMinimum(10)
             self.partEdit.ui.formatCheck.setEnabled(True)
 
-        if cur == 2:
+        if cur == self.useTypes["home"]:
             # if selected partition has different fs for userspace, forceToFormat
             if not self.partEdit.currentPart.getFSName() in ["ext3","reiserfs","xfs"]:
                 forceToFormat()
 
-        if cur == 3:
+        if cur == self.useTypes["swap"]:
             forceToFormat()
 
-        if cur == 4:
+        if cur == self.useTypes["archive"]:
             forceToFormat()
             self.partEdit.ui.fileSystem.setVisible(False)
             self.partEdit.ui.fileSystemBox.setVisible(True)
@@ -537,10 +545,13 @@ class PartEdit(QtGui.QWidget):
     currentPartNum = 0
     isPartitionUsed = False
 
-    def __init__(self, *args):
+    def __init__(self, useTypes):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_PartEdit()
         self.ui.setupUi(self)
+
+        for useType in useTypes:
+            self.ui.formatType.addItem(useType)
 
     def updateContent(self):
         part = self.currentPart

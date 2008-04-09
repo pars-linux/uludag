@@ -1596,7 +1596,7 @@ msgstr "boş alan"
 
 #: yali4/partitionrequest.py:182
 msgid "There is a request for the same Partition Type."
-msgstr ""
+msgstr "Bu bölüm tipi için daha önceden bir alan ayrılmış."
 
 #: yali4/partitiontype.py:47
 msgid "Install Root"
