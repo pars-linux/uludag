@@ -92,6 +92,7 @@ don't you?
         ctx.debugger.log("Show reboot dialog.")
         self.dialog = WarningDialog(w, self)
         self.dialog.exec_()
+        ctx.mainScreen.processEvents()
 
         # remove cd...
         ctx.debugger.log("Trying to eject the CD.")
@@ -103,6 +104,7 @@ don't you?
         if ctx.debugEnabled:
             open(ctx.consts.log_file,"w").write(str(ctx.debugger.traceback.plainLogs))
 
+        ctx.mainScreen.processEvents()
         time.sleep(4)
         yali4.sysutils.fastreboot()
 
@@ -186,7 +188,6 @@ don't you?
             ctx.debugger.log("Dont install bootloader selected; skipping.")
             return
 
-        ctx.debugger.log("Bootloader is installing...")
         loader = yali4.bootloader.BootLoader()
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   partrequest.mountRequestType)
@@ -194,11 +195,13 @@ don't you?
         loader.write_grub_conf(_ins_part,ctx.installData.bootLoaderDev)
 
         # Check for windows partitions.
+        ctx.debugger.log("Checking for Windows ...")
         for d in yali4.storage.devices:
             for p in d.getPartitions():
                 fs = p.getFSName()
                 if fs in ("ntfs", "fat32"):
                     if is_windows_boot(p.getPath(), fs):
+                        ctx.debugger.log("Windows Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
                         win_fs = fs
                         win_dev = basename(p.getDevicePath())
                         win_root = basename(p.getPath())
@@ -209,8 +212,7 @@ don't you?
                         continue
 
         # finally install it
-        loader.install_grub(ctx.installData.bootLoaderDev)
-        ctx.debugger.log("Bootloader installed.")
+        return loader.install_grub(ctx.installData.bootLoaderDev)
 
 class RebootWidget(QtGui.QWidget):
 

@@ -182,10 +182,18 @@ class BootLoader:
         minor = str(int(filter(lambda u: u.isdigit(), win_root)) -1)
         grub_root = ",".join([grub_dev, minor])
 
+        ctx.debugger.log("GCAW : win_dev : %s , win_root : %s " % (win_dev, win_root))
+        ctx.debugger.log("GCAW : grub_dev: %s , grub_root: %s " % (grub_dev, grub_root))
+        ctx.debugger.log("GCAW : install_dev: %s " % install_dev)
+
         if not install_dev:
             install_dev = self._find_hd0()
 
+        ctx.debugger.log("GCAW :2install_dev: %s " % install_dev)
+
         dev_str = str(os.path.basename(install_dev))
+        ctx.debugger.log("GCAW : dev_str: %s " % dev_str)
+
         if win_dev == dev_str:
             s = win_part_tmp % {"title": _("Windows"),
                                 "grub_root": grub_root,
@@ -196,6 +204,7 @@ class BootLoader:
                                                "grub_root": grub_root,
                                                "root": win_root,
                                                "fs": win_fs}
+
         open(self.grub_conf, "a").write(s)
 
     def install_grub(self, grub_install_root=None):
@@ -204,11 +213,15 @@ class BootLoader:
         if not grub_install_root.startswith("/dev/"):
             grub_install_root = "/dev/%s" % grub_install_root
 
-        grub_install_root = str(filter(lambda u: not u.isdigit(),
-                                       grub_install_root))
-
         cmd = "%s --root-directory=%s %s --no-floppy" % (yali4.sysutils.find_executable("grub-install"),
                                              consts.target_dir,
                                              grub_install_root)
+
+        ctx.debugger.log("IG : cmd: %s " % cmd)
+
         if os.system(cmd) != 0:
             raise YaliException, "Command failed: %s" % cmd
+        else:
+            return True
+        return False
+

@@ -74,8 +74,9 @@ class Runner:
         if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
             ctx.options.kahyaFile = ctx.consts.firstBootFile
 
-        # font = QtGui.QFont()
-        # font.setFamily("Droid Sans")
+        # font = QtGui.QFont()
+        # font.setFamily("Droid Sans")
+        # font.setPixelSize(11)
         # self._app.setFont(font)
 
         ctx.mainScreen = self._window

@@ -130,6 +130,7 @@ loader.
         # first delete partitions on device
         dev.deleteAllPartitions()
         dev.commit()
+
         ctx.mainScreen.processEvents()
 
         p = dev.addPartition(None,
@@ -239,7 +240,8 @@ all your present data on the selected disk will be lost.</p>
             if len(yali4.storage.devices) > 1:
                 ctx.installData.bootLoaderDev = basename(ctx.installData.orderedDiskList[0])
             else:
-                ctx.installData.bootLoaderDev = str(basename(root_part_req.partition().getPath()))
+                ctx.installData.bootLoaderDev = str(filter(lambda u: not u.isdigit(),
+                                                    basename(root_part_req.partition().getPath())))
 
         _ins_part = root_part_req.partition().getPath()
 
