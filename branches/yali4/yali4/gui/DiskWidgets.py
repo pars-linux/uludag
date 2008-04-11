@@ -25,6 +25,7 @@ import yali4.partitiontype as parttype
 import yali4.parteddata as parteddata
 
 import yali4.gui.context as ctx
+
 from yali4.gui.Ui.partedit import Ui_PartEdit
 from yali4.gui.GUIException import *
 from yali4.gui.GUIAdditional import ResizeWidget
@@ -129,6 +130,9 @@ class DiskList(QtGui.QWidget):
         self.updatePartEdit()
         self.checkRootPartRequest()
 
+        for req in ctx.partrequests:
+            ctx.debugger.log("REQ : %s - %s %s" % (req._partition.getPath(), req._partition.getMB(), req._partition_type.name))
+
     def checkRootPartRequest(self):
         ctx.mainScreen.disableNext()
         for req in ctx.partrequests:
@@ -227,7 +231,7 @@ class DiskList(QtGui.QWidget):
             else:
                 name = _("Free Space")
             ctx.debugger.log("Partition added with %s mb" % part.getMB())
-            diskItem.addPartition(name,part)
+            diskItem.addPartition(name, part)
 
         diskItem.updateSizes(self.tabWidget.width())
 
@@ -268,6 +272,13 @@ class DiskList(QtGui.QWidget):
                 t.setFileSystem("ext3")
 
         if not t:
+            return False
+
+        hasReq = ctx.partrequests.searchPartTypeAndReqType(t, 1)
+
+        if hasReq:
+            self.partEdit.ui.information.setText(_("There is a request for the same Partition Type."))
+            self.partEdit.ui.information.show()
             return False
 
         def edit_requests(partition):
@@ -528,15 +539,17 @@ class DiskItem(QtGui.QWidget):
         return _p
 
 
-def getPartitionType(part,rt=1):
+def getPartitionType(part, rt=1):
     """ Get partition type from request list """
     for pt in partitionTypes.values():
-
         # We use MountRequest type for search keyword 
         # which is 1, defined in partitionrequest.py
         req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
         if req:
+            ctx.debugger.log("GPT #0: %s vs. %s " % (req.partition().getPath(), part.getPath()))
             if req.partition() == part:
+                ctx.debugger.log("GPT #1: %s " % part.getPath())
+                ctx.debugger.log("GPT #2: %s " % pt.name)
                 return pt
 
 class PartEdit(QtGui.QWidget):

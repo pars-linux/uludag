@@ -27,7 +27,8 @@ class PartitionType:
     # @param rhs: PartitionType
     def __eq__(self, rhs):
         if rhs:
-            return self.filesystem == rhs.filesystem
+            if hasattr(rhs, "filesystem"):
+                return self.filesystem == rhs.filesystem
         return False
 
 ##
