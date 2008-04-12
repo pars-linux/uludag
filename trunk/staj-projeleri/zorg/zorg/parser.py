@@ -201,4 +201,4 @@ class XorgParser:
 
             s += "EndSection\n\n"
 
-        return s
+        return s.expandtabs(4)
