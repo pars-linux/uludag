@@ -468,16 +468,6 @@
 10de0048 nv
 10de0049 nv
 10de004e nvidia:nvidia-drivers-new nv
-10de00a0 nvidia:nvidia-drivers-old nv
-10de00c0 nv
-10de00c1 nv
-10de00c2 nv
-10de00c3 nv
-10de00c8 nv
-10de00c9 nv
-10de00cc nv
-10de00cd nv
-10de00ce nv
 10de0090 nv
 10de0091 nv
 10de0092 nv
@@ -486,6 +476,13 @@
 10de0098 nv
 10de0099 nv
 10de009d nvidia:nvidia-drivers-new nv
+10de00a0 nvidia:nvidia-drivers-old nv
+10de00c0 nv
+10de00c1 nv
+10de00c2 nv
+10de00c3 nv
+10de00c8 nv
+10de00c9 nv
 10de00cc nvidia:nvidia-drivers-new nv
 10de00cd nvidia:nvidia-drivers-new nv
 10de00ce nvidia:nvidia-drivers-new nv
@@ -579,7 +576,6 @@
 10de01d7 nvidia:nvidia-drivers-new nv
 10de01d8 nv
 10de01d9 nv
-10de01d8 nv
 10de01da nvidia:nvidia-drivers-new nv
 10de01db nvidia:nvidia-drivers-new nv
 10de01dc nvidia:nvidia-drivers-new nv
