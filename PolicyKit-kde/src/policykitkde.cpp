@@ -28,5 +28,6 @@ PolicyKitKDE::PolicyKitKDE()
 
 PolicyKitKDE::~PolicyKitKDE()
 {
+    Debug::printDebug("PolicyKitKDE object deconstructor: Deleting PolicyService");
     delete service;
 }

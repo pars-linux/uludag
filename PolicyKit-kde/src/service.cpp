@@ -13,8 +13,13 @@
 #include "authdialog.h"
 #include "debug.h"
 
-PolicyService::PolicyService(QDBusConnection sessionBus)
+
+PolicyService* PolicyService::m_self;
+
+PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 {
+    Q_ASSERT(!m_self);
+    m_self = this;
 
     m_sessionBus = sessionBus;
     m_systemBus = QDBusConnection::addConnection(QDBusConnection::SystemBus);
@@ -23,7 +28,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus)
     Debug::printDebug("Registering object: /");
     if (!m_sessionBus.registerObject("/", this))
     {
-        QString msg("Cold not register \"/\" object, exiting");
+        QString msg("Could not register \"/\" object, exiting");
         Debug::printError(msg);
         throw msg;
     }
@@ -41,9 +46,8 @@ PolicyService::PolicyService(QDBusConnection sessionBus)
     polkit_context_set_load_descriptions(m_context);
 
     //TODO: polkit_context_set_config_changed
-    //TODO: polkit_context_set_io_watch_functions
 
-    //polkit_context_set_io_watch_functions (m_context, polkit_add_watch, polkit_remove_watch);
+    polkit_context_set_io_watch_functions (m_context, polkit_add_watch, polkit_remove_watch);
 
     if (!polkit_context_init (m_context, &m_error))
     {
@@ -51,6 +55,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus)
         if (polkit_error_is_set(m_error))
         {
             Debug::printError(msg + ": " + polkit_error_get_error_message(m_error));
+            polkit_error_free(m_error);
         }
         else
             Debug::printError(msg);
@@ -100,7 +105,7 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
     return false;
 }
 
-void slotBusNameOwnerChanged(const QDBusMessage& msg)
+void PolicyService::slotBusNameOwnerChanged(const QDBusMessage& msg)
 {
     //TODO: exit if not busy
     Debug::printWarning(QString("Session bus name owner changed.").arg(msg.member()));
@@ -162,6 +167,42 @@ bool PolicyService::handleObtainAuthorization(const QDBusMessage& message)
     m_sessionBus.send(reply);
 
     return true;
+}
+
+/////////// PolKit IO watch functions ////////////////
+void PolicyService::watchActivated(int fd)
+{
+    Q_ASSERT(m_watches.contains(fd));
+
+    Debug::printDebug("Watch activated");
+
+    polkit_context_io_func (m_context, fd);
+}
+
+int PolicyService::polkit_add_watch(PolKitContext *context, int fd)
+{
+    Debug::printDebug("polkit_add_watch: Adding watch...");
+
+    QSocketNotifier *notify = new QSocketNotifier(fd, QSocketNotifier::Read);
+    m_self->m_watches[fd] = notify;
+
+    notify->connect(notify, SIGNAL(activated(int)), m_self, SLOT(watchActivated(int)));
+
+    Debug::printDebug("polkit_add_watch: Watch added");
+
+    // policykit requires a result != 0
+    return 1;
+}
+
+void PolicyService::polkit_remove_watch(PolKitContext *context, int fd)
+{
+    Debug::printDebug("polkit_remove_watch: Watch removed");
+    Q_ASSERT(m_self->m_watches.contains(fd));
+
+    QSocketNotifier* notify = m_self->m_watches[fd];
+    delete notify;
+
+    m_self->m_watches.remove(fd);
 }
 
 bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
@@ -260,27 +301,4 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     return false;
 }
 
-/////////// PolKit IO watch functions ////////////////
-
-extern "C" {static int polkit_add_watch(PolKitContext *context, int fd);}
-static int polkit_add_watch(PolKitContext *context, int fd)
-{
-    //TODO: delete notify
-
-    QSocketNotifier *notify = new QSocketNotifier(fd, QSocketNotifier::Read);
-    notify->connect(notify, SIGNAL(activated(int)), SLOT(polkit_watch_have_data(PolKitContext *, int)));
-
-    return 0;
-}
-
-extern "C" {static void polkit_remove_watch(PolKitContext *context, int fd);}
-static void polkit_remove_watch(PolKitContext *context, int fd)
-{
-}
-
-extern "C" {static void polkit_watch_have_data(PolKitContext *context, int fd);}
-static void polkit_watch_have_data(PolKitContext *context, int fd)
-{
-    //TODO: check data
-    polkit_context_io_func (context, fd);
-}
+#include "service.moc"
