@@ -16,6 +16,7 @@ public:
     void setType(PolKitResult type);
     void setContent(const QString &);
     void setContent();
+    void setAdminUsers(const QStringList &);
     void setHeader(const QString &);
 
 private:
@@ -23,6 +24,7 @@ private:
     void hideUsersCombo();
     void setPasswordFor(bool set, const QString& user = NULL);
     PolKitResult m_type;
+    QStringList m_users;
 };
 
 #endif // AUTHDIALOG_H

@@ -25,28 +25,12 @@
 AuthDialog::AuthDialog()
     : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
 {
-    /*
-    if (type == POLKIT_RESULT_UNKNOWN || \
-            type == POLKIT_RESULT_NO || \
-            type == POLKIT_RESULT_YES || \
-            type == POLKIT_RESULT_N_RESULTS )
-    {
-        QString msg = QString("Unexpected PolkitResult type sent: '%1'. Ignoring.").arg(polkit_result_to_string_representation(type));
-        //TODO: Create exception classes
-        throw msg;
-    }
-    */
-
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
     pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
     pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
 
     cbUsers->hide();
-
-    //setType(type);
-    //setHeader(header);
-    //setContent();
 }
 
 AuthDialog::~AuthDialog()
@@ -61,6 +45,22 @@ void AuthDialog::setHeader(const QString &header)
 void AuthDialog::setContent(const QString &msg)
 {
     lblContent->setText(msg);
+}
+
+void AuthDialog::setAdminUsers(const QStringList &users)
+{
+    m_users = users;
+    //QString selected = cbUsers->currentText();
+
+    if (m_users.empty())
+    {
+        hideUsersCombo();
+        return;
+    }
+
+    cbUsers->clear();
+    cbUsers->insertStringList(m_users);
+    showUsersCombo();
 }
 
 // set content according to m_type, that is a PolKitResult 
@@ -112,6 +112,16 @@ const char* AuthDialog::getPass()
 
 void AuthDialog::setType(PolKitResult res)
 {
+    if (res == POLKIT_RESULT_UNKNOWN || \
+            res == POLKIT_RESULT_NO || \
+            res == POLKIT_RESULT_YES || \
+            res == POLKIT_RESULT_N_RESULTS )
+    {
+        QString msg = QString("Unexpected PolkitResult type sent: '%1'. Ignoring.").arg(polkit_result_to_string_representation(res));
+        //TODO: Create exception classes
+        throw msg;
+    }
+
     if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || \
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || \
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS)
