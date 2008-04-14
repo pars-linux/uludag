@@ -25,6 +25,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     m_sessionBus = sessionBus;
     m_systemBus = QDBusConnection::addConnection(QDBusConnection::SystemBus);
     m_error = NULL;
+    m_grant = NULL;
 
     Debug::printDebug("Registering object: /");
     if (!m_sessionBus.registerObject("/", this))
@@ -48,7 +49,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 
     //TODO: polkit_context_set_config_changed
 
-    polkit_context_set_io_watch_functions (m_context, polkit_add_watch, polkit_remove_watch);
+    polkit_context_set_io_watch_functions (m_context, polkit_context_add_watch, polkit_context_remove_watch);
 
     if (!polkit_context_init (m_context, &m_error))
     {
@@ -171,39 +172,88 @@ bool PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 }
 
 /////////// PolKit IO watch functions ////////////////
-void PolicyService::watchActivated(int fd)
+void PolicyService::contextWatchActivated(int fd)
 {
-    Q_ASSERT(m_watches.contains(fd));
+    Q_ASSERT(m_contextwatches.contains(fd));
 
-    Debug::printDebug("Watch activated");
+    Debug::printDebug("Context watch activated");
 
     polkit_context_io_func (m_context, fd);
 }
 
-int PolicyService::polkit_add_watch(PolKitContext *context, int fd)
+int PolicyService::polkit_context_add_watch(PolKitContext *context, int fd)
 {
-    Debug::printDebug("polkit_add_watch: Adding watch...");
+    Debug::printDebug("polkit_context_add_watch: Adding watch...");
 
     QSocketNotifier *notify = new QSocketNotifier(fd, QSocketNotifier::Read);
-    m_self->m_watches[fd] = notify;
+    m_self->m_contextwatches[fd] = notify;
 
-    notify->connect(notify, SIGNAL(activated(int)), m_self, SLOT(watchActivated(int)));
+    notify->connect(notify, SIGNAL(activated(int)), m_self, SLOT(contextWatchActivated(int)));
 
-    Debug::printDebug("polkit_add_watch: Watch added");
+    Debug::printDebug("polkit_context_add_watch: Watch added");
 
     // policykit requires a result != 0
     return 1;
 }
 
-void PolicyService::polkit_remove_watch(PolKitContext *context, int fd)
+void PolicyService::polkit_context_remove_watch(PolKitContext *context, int fd)
 {
-    Debug::printDebug("polkit_remove_watch: Watch removed");
-    Q_ASSERT(m_self->m_watches.contains(fd));
+    Debug::printDebug("polkit_context_remove_watch: Removing watch...");
+    Q_ASSERT(m_self->m_contextwatches.contains(fd));
 
-    QSocketNotifier* notify = m_self->m_watches[fd];
+    QSocketNotifier* notify = m_self->m_contextwatches[fd];
     delete notify;
 
-    m_self->m_watches.remove(fd);
+    m_self->m_contextwatches.remove(fd);
+    Debug::printDebug("polkit_context_remove_watch: Watch removed");
+}
+
+void PolicyService::grantWatchActivated(int fd)
+{
+    Q_ASSERT(m_grantwatches.contains(fd));
+    Q_ASSERT(m_grant != NULL);
+
+    Debug::printDebug("Grant watch activated");
+
+    polkit_grant_io_func (m_grant, fd);
+}
+
+int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
+{
+    Q_ASSERT(m_self->m_grant != NULL);
+    Debug::printDebug("polkit_grant_add_watch: Adding watch...");
+
+    QSocketNotifier *notify = new QSocketNotifier(fd, QSocketNotifier::Read);
+    m_self->m_grantwatches[fd] = notify;
+
+    notify->connect(notify, SIGNAL(activated(int)), m_self, SLOT(grantWatchActivated(int)));
+
+    Debug::printDebug("polkit_grant_add_watch: Watch added");
+
+    // policykit requires a result != 0
+    return 1;
+}
+
+int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
+{
+    //this should be called when child dies
+    //polkit_grant_child_func (grant, pid_t pid, int exit_code);
+
+    return 1;
+}
+
+void PolicyService::polkit_grant_remove_watch(PolKitGrant *grant, int fd)
+{
+    Q_ASSERT(m_self->m_grant != NULL);
+
+    Debug::printDebug("polkit_grant_remove_watch: Removing watch...");
+    Q_ASSERT(m_self->m_grantwatches.contains(fd));
+
+    QSocketNotifier* notify = m_self->m_grantwatches[fd];
+    delete notify;
+
+    m_self->m_grantwatches.remove(fd);
+    Debug::printDebug("polkit_grant_remove_watch: Watch removed");
 }
 
 bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
@@ -269,9 +319,9 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         return false;
     }
 
-    PolKitGrant *grant = polkit_grant_new();
+    m_grant = polkit_grant_new();
 
-    if (grant == NULL)
+    if (m_grant == NULL)
     {
         Debug::printError("PolKitGrant object could not be created");
         return false;
