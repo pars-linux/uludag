@@ -26,6 +26,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     m_systemBus = QDBusConnection::addConnection(QDBusConnection::SystemBus);
     m_error = NULL;
     m_grant = NULL;
+    m_dialog = NULL;
 
     Debug::printDebug("Registering object: /");
     if (!m_sessionBus.registerObject("/", this))
@@ -256,6 +257,12 @@ void PolicyService::polkit_grant_remove_watch(PolKitGrant *grant, int fd)
     Debug::printDebug("polkit_grant_remove_watch: Watch removed");
 }
 
+void PolicyService::polkit_grant_type(PolKitGrant *grant, PolKitResult result, void *data)
+{
+    Q_ASSERT(m_self->m_dialog != NULL);
+    m_self->m_dialog->setType(result);
+}
+
 bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
 {
     PolKitError *error = NULL;
@@ -327,7 +334,24 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         return false;
     }
 
-    //polkit_grant_set_functions(grant);
+    m_dialog = new AuthDialog();
+    Debug::printDebug("AuthDialog created");
+
+    /*
+    polkit_grant_set_functions(m_grant,
+                               polkit_grant_add_watch,
+                               polkit_grant_add_child_watch,
+                               polkit_grant_remove_watch,
+                               polkit_grant_type,
+                               polkit_grant_select_admin_user,
+                               polkit_grant_prompt_echo_off,
+                               polkit_grant_prompt_echo_on,
+                               polkit_grant_error_message,
+                               polkit_grant_text_info,
+                               polkit_grant_override_grant_type,
+                               polkit_grant_done,
+                               user_data);
+    */
 
     /*
     PolKitResult polkitresult;

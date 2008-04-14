@@ -11,6 +11,8 @@
 #include "qdbusconnection.h"
 #include "qdbusobject.h"
 
+class AuthDialog;
+
 class PolicyService: public QObject, public QDBusObjectBase
 {
     Q_OBJECT
@@ -34,6 +36,7 @@ protected slots:
 private:
     QDBusConnection m_sessionBus;
     QDBusConnection m_systemBus;
+    AuthDialog *m_dialog;
 
     PolKitContext *m_context;
     PolKitGrant *m_grant;
@@ -52,6 +55,7 @@ private:
     static int polkit_grant_add_watch(PolKitGrant *grant, int fd);
     static int polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid);
     static void polkit_grant_remove_watch(PolKitGrant *grant, int fd);
+    static void polkit_grant_type(PolKitGrant *grant, PolKitResult result, void *data);
 };
 
 #endif
