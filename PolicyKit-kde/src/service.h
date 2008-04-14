@@ -36,7 +36,6 @@ protected slots:
 
 private:
     QDBusConnection m_sessionBus;
-    QDBusConnection m_systemBus;
     AuthDialog *m_dialog;
 
     PolKitContext *m_context;
