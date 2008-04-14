@@ -21,7 +21,12 @@ PolicyService::PolicyService(QDBusConnection sessionBus)
     m_error = NULL;
 
     Debug::printDebug("Registering object: /");
-    m_sessionBus.registerObject("/", this);
+    if (!m_sessionBus.registerObject("/", this))
+    {
+        QString msg("Cold not register \"/\" object, exiting");
+        Debug::printError(msg);
+        throw msg;
+    }
 
     //TODO: handle name owner changed signal
 
