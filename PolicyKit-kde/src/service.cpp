@@ -1,3 +1,4 @@
+
 #include <qvariant.h>
 #include <qsocketnotifier.h>
 #include <kcombobox.h>
@@ -29,6 +30,9 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     m_error = NULL;
     m_grant = NULL;
     m_dialog = NULL;
+    bool m_authInProgress = false;
+    bool m_gainedPrivilege = false;
+    bool m_inputBogus = false;
 
     Debug::printDebug("Registering object: /");
     if (!m_sessionBus.registerObject("/", this))
@@ -231,10 +235,9 @@ int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
 
     notify->connect(notify, SIGNAL(activated(int)), m_self, SLOT(grantWatchActivated(int)));
 
-    Debug::printDebug("polkit_grant_add_watch: Watch added");
+    Debug::printDebug(QString("polkit_grant_add_watch: Watch added, fd= %1").arg(fd));
 
-    // policykit requires a result != 0
-    return 1;
+    return fd;
 }
 
 int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
@@ -242,7 +245,7 @@ int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
     //this should be called when child dies
     //polkit_grant_child_func (grant, pid_t pid, int exit_code);
 
-    return 1;
+    return pid;
 }
 
 void PolicyService::polkit_grant_remove_watch(PolKitGrant *grant, int fd)
@@ -320,11 +323,13 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
 
 char *PolicyService::polkit_grant_prompt_echo_off(PolKitGrant *grant, const char *prompt, void *data)
 {
+    Debug::printDebug(QString("In polkit_grant_prompt_echo_off"));
     return m_self->polkit_grant_prompt(prompt, false);
 }
 
 char *PolicyService::polkit_grant_prompt_echo_on(PolKitGrant *grant, const char *prompt, void *data)
 {
+    Debug::printDebug(QString("In polkit_grant_prompt_echo_on"));
     return m_self->polkit_grant_prompt(prompt, true);
 }
 
@@ -341,11 +346,14 @@ void PolicyService::polkit_grant_text_info(PolKitGrant *grant, const char *info,
 PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant, PolKitResult result, void *data)
 {
     Debug::printDebug("In polkit_grant_override_grant_type");
+    return result;
 }
 
-void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_priviledge, polkit_bool_t invalid_data, void *data)
+void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_privilege, polkit_bool_t invalid_data, void *data)
 {
     Debug::printDebug("In polkit_grant_done");
+    m_self->m_gainedPrivilege = gained_privilege;
+    m_self->m_inputBogus= invalid_data;
 }
 
 bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
@@ -435,6 +443,13 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
                                polkit_grant_override_grant_type,
                                polkit_grant_done,
                                NULL);
+
+    if (!polkit_grant_initiate_auth (m_grant, action, caller)) 
+    {
+        QString msg = QString("Could not initialize grant");
+        Debug::printError(msg);
+        throw msg;
+    }
 
     /*
     PolKitResult polkitresult;

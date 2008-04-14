@@ -1,3 +1,4 @@
+
 #ifndef SERVICE_H
 #define SERVICE_H
 
@@ -43,6 +44,8 @@ private:
     PolKitError *m_error;
 
     bool m_authInProgress;
+    bool m_gainedPrivilege;
+    bool m_inputBogus;
     static PolicyService* m_self;
 
     QMap<int, QSocketNotifier*> m_contextwatches;
@@ -63,7 +66,7 @@ private:
     static void polkit_grant_error_message(PolKitGrant *grant, const char *error, void *data);
     static void polkit_grant_text_info(PolKitGrant *grant, const char *info, void *data);
     static PolKitResult polkit_grant_override_grant_type(PolKitGrant *grant, PolKitResult result, void *data);
-    static void  polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_priviledge, polkit_bool_t invalid_data, void *data);
+    static void  polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_privilege, polkit_bool_t invalid_data, void *data);
 };
 
 #endif
