@@ -240,6 +240,8 @@ int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
 
 int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
 {
+    Debug::printWarning("polkit_grant_add_child_watch: not implemented yet");
+
     //this should be called when child dies
     //polkit_grant_child_func (grant, pid_t pid, int exit_code);
 
@@ -319,20 +321,23 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
     int result = m_dialog->exec();
 
     if (result == QDialog::Rejected)
+    {
+        Debug::printDebug("polkit_grant_prompt: Dialog cancelled");
         return NULL;
+    }
 
     return (char *)m_dialog->getPass();
 }
 
 char *PolicyService::polkit_grant_prompt_echo_off(PolKitGrant *grant, const char *prompt, void *data)
 {
-    Debug::printDebug(QString("In polkit_grant_prompt_echo_off: prompt=\"%1\"").arg(prompt));
+    Debug::printDebug(QString("polkit_grant_prompt_echo_off: prompt=\"%1\"").arg(prompt));
     return m_self->polkit_grant_prompt(prompt, false);
 }
 
 char *PolicyService::polkit_grant_prompt_echo_on(PolKitGrant *grant, const char *prompt, void *data)
 {
-    Debug::printDebug(QString("In polkit_grant_prompt_echo_on: prompt=\"%1\"").arg(prompt));
+    Debug::printDebug(QString("polkit_grant_prompt_echo_on: prompt=\"%1\"").arg(prompt));
     return m_self->polkit_grant_prompt(prompt, true);
 }
 
