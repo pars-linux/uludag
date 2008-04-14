@@ -36,9 +36,13 @@ def AboutData():
         'bugs@pardus.org.tr'
     )
 
+class MainWidget(dm_mainview.mainWidget):
+    def __init__(self, parent):
+        dm_mainview.mainWidget.__init__(self, parent)
+
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
-    self.mainwidget = dm_mainview.mainWidget(self)
+    self.mainwidget = MainWidget(self)
     toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
     toplayout.addWidget(self.mainwidget)
     self.aboutus = KAboutApplication(self)
