@@ -52,8 +52,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     }
 
     polkit_context_set_load_descriptions(m_context);
-
-    //TODO: polkit_context_set_config_changed
+    polkit_context_set_config_changed (m_context, polkit_config_changed, NULL);
 
     polkit_context_set_io_watch_functions (m_context, polkit_context_add_watch, polkit_context_remove_watch);
 
@@ -71,7 +70,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
         throw msg;
     }
 
-    //TODO: add kill_timer
+    //TODO: add kill_timer and no-exit option
 
 }
 
@@ -234,7 +233,7 @@ int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
 
     notify->connect(notify, SIGNAL(activated(int)), m_self, SLOT(grantWatchActivated(int)));
 
-    Debug::printDebug(QString("polkit_grant_add_watch: Watch added, fd= %1").arg(fd));
+    Debug::printDebug(QString("polkit_grant_add_watch: Watch added, fd=%1").arg(fd));
 
     return fd;
 }
@@ -265,6 +264,11 @@ void PolicyService::polkit_grant_type(PolKitGrant *grant, PolKitResult result, v
 {
     Q_ASSERT(m_self->m_dialog != NULL);
     m_self->m_dialog->setType(result);
+}
+
+void PolicyService::polkit_config_changed(PolKitContext *context, void *data)
+{
+    Debug::printWarning("polkit_config_changed");
 }
 
 char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **adminUsers, void *data)
@@ -322,13 +326,13 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
 
 char *PolicyService::polkit_grant_prompt_echo_off(PolKitGrant *grant, const char *prompt, void *data)
 {
-    Debug::printDebug(QString("In polkit_grant_prompt_echo_off"));
+    Debug::printDebug(QString("In polkit_grant_prompt_echo_off: prompt=\"%1\"").arg(prompt));
     return m_self->polkit_grant_prompt(prompt, false);
 }
 
 char *PolicyService::polkit_grant_prompt_echo_on(PolKitGrant *grant, const char *prompt, void *data)
 {
-    Debug::printDebug(QString("In polkit_grant_prompt_echo_on"));
+    Debug::printDebug(QString("In polkit_grant_prompt_echo_on: prompt=\"%1\"").arg(prompt));
     return m_self->polkit_grant_prompt(prompt, true);
 }
 
