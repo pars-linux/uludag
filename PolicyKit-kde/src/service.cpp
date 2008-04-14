@@ -4,6 +4,7 @@
 //policykit header
 #include <polkit/polkit.h>
 #include <polkit-dbus/polkit-dbus.h>
+#include <polkit-grant/polkit-grant.h>
 
 //backport headers
 #include "qdbuserror.h"
@@ -268,6 +269,17 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         return false;
     }
 
+    PolKitGrant *grant = polkit_grant_new();
+
+    if (grant == NULL)
+    {
+        Debug::printError("PolKitGrant object could not be created");
+        return false;
+    }
+
+    //polkit_grant_set_functions(grant);
+
+    /*
     PolKitResult polkitresult;
 
     polkitresult = polkit_context_is_caller_authorized(m_context, action, caller, false, &m_error);
@@ -297,6 +309,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         Debug::printError("Could not determine if caller is authorized for this action.");
         return false;
     }
+    */
 
     return false;
 }

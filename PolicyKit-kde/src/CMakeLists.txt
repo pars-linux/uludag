@@ -49,4 +49,5 @@ TARGET_LINK_LIBRARIES(policykit-kde
                       dbus-1
                       dbus-1-qt3
                       polkit
-                      polkit-dbus)
+                      polkit-dbus
+                      polkit-grant)
