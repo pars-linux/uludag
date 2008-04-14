@@ -56,6 +56,7 @@ private:
     static int polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid);
     static void polkit_grant_remove_watch(PolKitGrant *grant, int fd);
     static void polkit_grant_type(PolKitGrant *grant, PolKitResult result, void *data);
+    static char *polkit_grant_select_admin_user(PolKitGrant *grant, char **adminUsers, void *data);
 };
 
 #endif

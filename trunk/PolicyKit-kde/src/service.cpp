@@ -1,5 +1,6 @@
 #include <qvariant.h>
 #include <qsocketnotifier.h>
+#include <kcombobox.h>
 
 //policykit header
 #include <polkit/polkit.h>
@@ -261,6 +262,38 @@ void PolicyService::polkit_grant_type(PolKitGrant *grant, PolKitResult result, v
 {
     Q_ASSERT(m_self->m_dialog != NULL);
     m_self->m_dialog->setType(result);
+}
+
+char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **adminUsers, void *data)
+{
+    QStringList list;
+    int dialogResult;
+
+    Debug::printDebug("polkit_grant_select_admin_user: Setting user list...");
+
+    for (int n = 0; adminUsers[n] != NULL; n++) {
+        list.append(adminUsers[n]);
+    }
+
+    m_self->m_dialog->setAdminUsers(list);
+    Debug::printDebug("polkit_grant_select_admin_user: Done");
+    Debug::printDebug("polkit_grant_select_admin_user: Showing dialog...");
+
+    dialogResult = m_self->m_dialog->exec();
+    Debug::printDebug("polkit_grant_select_admin_user: Done");
+    const char *selected = m_self->m_dialog->cbUsers->currentText();
+
+    if (dialogResult == QDialog::Rejected)
+    {
+        Debug::printDebug("polkit_grant_select_admin_user: Dialog rejected");
+        return NULL;
+    }
+    else
+    {
+        QString msg = QString("polkit_grant_select_admin_user: User(%1) selected.").arg(selected);
+        Debug::printDebug(msg);
+        return (char *)selected;
+    }
 }
 
 bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
