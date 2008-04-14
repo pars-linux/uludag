@@ -1,15 +1,15 @@
 #ifndef SERVICE_H
 #define SERVICE_H
 
+#include <polkit/polkit.h>
+
 #include "qdbusconnection.h"
 #include "qdbusobject.h"
-
-struct PolKitContext;
 
 class PolicyService: public QDBusObjectBase
 {
 public:
-    PolicyService(QDBusConnection *sessionBus);
+    PolicyService(QDBusConnection sessionBus);
     virtual ~PolicyService();
 
 protected:
@@ -23,9 +23,10 @@ protected slots:
     void slotBusNameOwnerChanged(const QDBusMessage& msg);
 
 private:
-    QDBusConnection *m_sessionBus;
-    QDBusConnection *m_systemBus;
+    QDBusConnection m_sessionBus;
+    QDBusConnection m_systemBus;
     PolKitContext *m_context;
+    PolKitError *m_error;
     bool m_authInProgress;
 };
 
