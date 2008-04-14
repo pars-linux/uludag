@@ -22,10 +22,10 @@
  *  The dialog will by default be modeless, unless you set 'modal' to
  *  TRUE to construct a modal dialog.
  */
-AuthDialog::AuthDialog( const QString &header,
-            PolKitResult type)
+AuthDialog::AuthDialog()
     : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
 {
+    /*
     if (type == POLKIT_RESULT_UNKNOWN || \
             type == POLKIT_RESULT_NO || \
             type == POLKIT_RESULT_YES || \
@@ -35,6 +35,7 @@ AuthDialog::AuthDialog( const QString &header,
         //TODO: Create exception classes
         throw msg;
     }
+    */
 
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
@@ -43,26 +44,9 @@ AuthDialog::AuthDialog( const QString &header,
 
     cbUsers->hide();
 
-    setType(type);
-    setHeader(header);
-    setContent();
-}
-
-AuthDialog::AuthDialog( const QString &header,
-            PolKitResult type,
-            const QString &message)
-    : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
-{
-    KIconLoader* iconloader = KGlobal::iconLoader();
-    lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
-    pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
-    pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
-
-    cbUsers->hide();
-
-    setType(type);
-    setHeader(header);
-    setContent(message);
+    //setType(type);
+    //setHeader(header);
+    //setContent();
 }
 
 AuthDialog::~AuthDialog()
