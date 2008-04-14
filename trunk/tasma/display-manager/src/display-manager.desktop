@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Display Manager
+Name[tr]=Görüntü Yöneticisi
+Name[de]=Hede Manager
+Name[es]=Administrador Muestra
+Name[nl]=Hedebeheer
+Name[pt_BR]=Gerenciador do Hede
+GenericName=Sample Tasma Module
+GenericName[tr]=Örnek Tasma Modülü
+GenericName[de]=Muster Tasma-Modul
+GenericName[pt_BR]=Módulo Tasma de Amostra
+GenericName[es]=Módulo Tasma de Muestra
+GenericName[nl]=Voorbeeld Tasma module
+X-KDE-ModuleType=Library
+X-KDE-Library=display-manager
+X-KDE-FactoryName=display_manager
+Type=Application
+Icon=display_manager
+Exec=kcmshell display-manager
+Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
