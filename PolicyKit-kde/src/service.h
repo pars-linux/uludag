@@ -57,6 +57,13 @@ private:
     static void polkit_grant_remove_watch(PolKitGrant *grant, int fd);
     static void polkit_grant_type(PolKitGrant *grant, PolKitResult result, void *data);
     static char *polkit_grant_select_admin_user(PolKitGrant *grant, char **adminUsers, void *data);
+    static char *polkit_grant_prompt_echo_off(PolKitGrant *grant, const char *prompt, void *data);
+    static char *polkit_grant_prompt_echo_on(PolKitGrant *grant, const char *prompt, void *data);
+    char *polkit_grant_prompt(const QString &prompt, bool echo);
+    static void polkit_grant_error_message(PolKitGrant *grant, const char *error, void *data);
+    static void polkit_grant_text_info(PolKitGrant *grant, const char *info, void *data);
+    static PolKitResult polkit_grant_override_grant_type(PolKitGrant *grant, PolKitResult result, void *data);
+    static void  polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_priviledge, polkit_bool_t invalid_data, void *data);
 };
 
 #endif

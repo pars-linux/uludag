@@ -1,6 +1,7 @@
 #include <qvariant.h>
 #include <qsocketnotifier.h>
 #include <kcombobox.h>
+#include <klineedit.h>
 
 //policykit header
 #include <polkit/polkit.h>
@@ -281,6 +282,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
 
     dialogResult = m_self->m_dialog->exec();
     Debug::printDebug("polkit_grant_select_admin_user: Done");
+
     const char *selected = m_self->m_dialog->cbUsers->currentText();
 
     if (dialogResult == QDialog::Rejected)
@@ -294,6 +296,56 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
         Debug::printDebug(msg);
         return (char *)selected;
     }
+}
+
+char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
+{
+    //TODO: check prompt
+    //
+
+    m_dialog->setPrompt(prompt);
+
+    if (echo)
+        m_dialog->lePassword->setEchoMode(QLineEdit::Normal);
+    else
+        m_dialog->lePassword->setEchoMode(QLineEdit::Password);
+
+    int result = m_dialog->exec();
+
+    if (result == QDialog::Rejected)
+        return NULL;
+
+    return (char *)m_dialog->getPass();
+}
+
+char *PolicyService::polkit_grant_prompt_echo_off(PolKitGrant *grant, const char *prompt, void *data)
+{
+    return m_self->polkit_grant_prompt(prompt, false);
+}
+
+char *PolicyService::polkit_grant_prompt_echo_on(PolKitGrant *grant, const char *prompt, void *data)
+{
+    return m_self->polkit_grant_prompt(prompt, true);
+}
+
+void PolicyService::polkit_grant_error_message(PolKitGrant *grant, const char *error, void *data)
+{
+    Debug::printDebug(QString("polkit_grant_error_message: %1").arg(error));
+}
+
+void PolicyService::polkit_grant_text_info(PolKitGrant *grant, const char *info, void *data)
+{
+    Debug::printDebug(QString("polkit_grant_text_info: %1").arg(info));
+}
+
+PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant, PolKitResult result, void *data)
+{
+    Debug::printDebug("In polkit_grant_override_grant_type");
+}
+
+void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_priviledge, polkit_bool_t invalid_data, void *data)
+{
+    Debug::printDebug("In polkit_grant_done");
 }
 
 bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
@@ -370,7 +422,6 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     m_dialog = new AuthDialog();
     Debug::printDebug("AuthDialog created");
 
-    /*
     polkit_grant_set_functions(m_grant,
                                polkit_grant_add_watch,
                                polkit_grant_add_child_watch,
@@ -383,8 +434,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
                                polkit_grant_text_info,
                                polkit_grant_override_grant_type,
                                polkit_grant_done,
-                               user_data);
-    */
+                               NULL);
 
     /*
     PolKitResult polkitresult;

@@ -18,6 +18,7 @@ public:
     void setContent();
     void setAdminUsers(const QStringList &);
     void setHeader(const QString &);
+    void setPrompt(const QString &);
 
 private:
     void showUsersCombo();

@@ -95,6 +95,11 @@ void AuthDialog::hideUsersCombo()
     cbUsers->hide();
 }
 
+void AuthDialog::setPrompt(const QString &prompt)
+{
+    lblPassword->setText(prompt);
+}
+
 void AuthDialog::setPasswordFor(bool set, const QString& user)
 {
     if (set)
