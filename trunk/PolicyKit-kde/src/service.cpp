@@ -13,8 +13,12 @@
 #include "authdialog.h"
 #include "debug.h"
 
-PolicyService::PolicyService(QDBusConnection *sessionBus): m_sessionBus(sessionBus), m_systemBus(QDBusConnection::addConnection(QDBusConnection::SystemBus))
+PolicyService::PolicyService(QDBusConnection sessionBus)
 {
+
+    m_sessionBus = sessionBus;
+    m_systemBus = QDBusConnection::addConnection(QDBusConnection::SystemBus);
+    m_error = NULL;
 
     Debug::printDebug("Registering object: /");
     m_sessionBus.registerObject("/", this);
@@ -29,20 +33,19 @@ PolicyService::PolicyService(QDBusConnection *sessionBus): m_sessionBus(sessionB
         throw msg;
     }
 
-    polkit_context_set_load_descriptions(context);
+    polkit_context_set_load_descriptions(m_context);
 
     //TODO: polkit_context_set_config_changed
     //TODO: polkit_context_set_io_watch_functions
 
-    polkit_context_set_io_watch_functions (context, polkit_add_watch, polkit_remove_watch);
+    //polkit_context_set_io_watch_functions (m_context, polkit_add_watch, polkit_remove_watch);
 
-
-    if (!polkit_context_init (context, &error))
+    if (!polkit_context_init (m_context, &m_error))
     {
         QString msg("Could not initialize PolKitContext");
-        if (polkit_error_is_set(error))
+        if (polkit_error_is_set(m_error))
         {
-            Debug::printError(msg + ": " + polkit_error_get_error_message(error));
+            Debug::printError(msg + ": " + polkit_error_get_error_message(m_error));
         }
         else
             Debug::printError(msg);
@@ -57,7 +60,7 @@ PolicyService::PolicyService(QDBusConnection *sessionBus): m_sessionBus(sessionB
 PolicyService::~PolicyService()
 {
     Debug::printDebug("Unregistering object: /");
-    m_connection.unregisterObject("/");
+    m_sessionBus.unregisterObject("/");
 }
 
 bool PolicyService::handleMethodCall(const QDBusMessage& message)
@@ -95,7 +98,7 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
 void slotBusNameOwnerChanged(const QDBusMessage& msg)
 {
     //TODO: exit if not busy
-    Debug::printWarning(QString("Session bus name owner changed.").arg(message.member()));
+    Debug::printWarning(QString("Session bus name owner changed.").arg(msg.member()));
 }
 
 void PolicyService::sendDBusError(const QDBusMessage& message, const QString& errorstr, const QString& errortype)
@@ -105,7 +108,7 @@ void PolicyService::sendDBusError(const QDBusMessage& message, const QString& er
         QDBusError error(errortype, errorstr);
         QDBusMessage reply = QDBusMessage::methodError(message, error);
 
-        m_connection.send(reply);
+        m_sessionBus.send(reply);
 }
 
 bool PolicyService::handleIntrospect(const QDBusMessage& message)
@@ -137,7 +140,7 @@ bool PolicyService::handleIntrospect(const QDBusMessage& message)
 
     Debug::printDebug("Handling introspect() call.");
     reply << QVariant(introspection);
-    m_connection.send(reply);
+    m_sessionBus.send(reply);
 
     return true;
 }
@@ -151,7 +154,7 @@ bool PolicyService::handleObtainAuthorization(const QDBusMessage& message)
     bool auth = obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt());
     reply << QVariant(auth);
 
-    m_connection.send(reply);
+    m_sessionBus.send(reply);
 
     return true;
 }
@@ -175,7 +178,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     }
 
     Debug::printDebug("Getting policy cache...");
-    PolKitPolicyCache *cache = polkit_context_get_policy_cache(context);
+    PolKitPolicyCache *cache = polkit_context_get_policy_cache(m_context);
     if (cache == NULL)
     {
         Debug::printWarning("Could not get policy cache.");
@@ -221,8 +224,8 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 
     PolKitResult polkitresult;
 
-    polkitresult = polkit_context_is_caller_authorized(context, action, caller, false, &error);
-    if (polkit_error_is_set (error))
+    polkitresult = polkit_context_is_caller_authorized(m_context, action, caller, false, &m_error);
+    if (polkit_error_is_set (m_error))
     {
         Debug::printError("Could not determine if caller is authorized for this action.");
         return false;
@@ -242,8 +245,8 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     }
 
     // check again if user is authorized
-    polkitresult = polkit_context_is_caller_authorized(context, action, caller, false, &error);
-    if (polkit_error_is_set (error))
+    polkitresult = polkit_context_is_caller_authorized(m_context, action, caller, false, &m_error);
+    if (polkit_error_is_set (m_error))
     {
         Debug::printError("Could not determine if caller is authorized for this action.");
         return false;
