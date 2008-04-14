@@ -26,7 +26,6 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     m_self = this;
 
     m_sessionBus = sessionBus;
-    m_systemBus = QDBusConnection::addConnection(QDBusConnection::SystemBus);
     m_error = NULL;
     m_grant = NULL;
     m_dialog = NULL;
