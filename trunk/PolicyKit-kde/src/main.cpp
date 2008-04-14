@@ -6,6 +6,7 @@
 
 #include "authdialog.h"
 #include "policykitkde.h"
+#include "debug.h"
 
 int main (int argc, char *argv[])
 {
@@ -17,6 +18,13 @@ int main (int argc, char *argv[])
 
     KApplication app;
 
-    PolicyKitKDE pkKDE;
+    try {
+        PolicyKitKDE *pkKDE = new PolicyKitKDE();
+    }
+    catch (QString exc)
+    {
+        return 0;
+    }
+
     return app.exec();
 }
