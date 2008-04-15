@@ -49,6 +49,7 @@ protected slots:
     void slotBusNameOwnerChanged(const QDBusMessage& msg);
     void contextWatchActivated(int fd);
     void grantWatchActivated(int fd);
+    void quitSlot(void);
 
 private:
     QDBusConnection m_sessionBus;
