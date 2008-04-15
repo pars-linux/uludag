@@ -1,5 +1,3 @@
-#ifndef DISPLAY-MANAGER.PY
-#define DISPLAY-MANAGER.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -114,4 +112,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-#endif // DISPLAY-MANAGER.PY

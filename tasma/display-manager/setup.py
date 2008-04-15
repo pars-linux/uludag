@@ -58,7 +58,9 @@ if "dist" in sys.argv:
 app_data = [
     'src/display-manager.py',
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/display_manager.png']),
-    'src/mainview.py',
+    'src/dm_mainview.ui',
+    'src/displayconfig.py',
+    'src/randriface.py',
     'src/utility.py',
     'src/display-manager.desktop',
     'help'
