@@ -1,4 +1,5 @@
 #include <csignal>
+#include <cstring>
 
 #include <qvariant.h>
 #include <qsocketnotifier.h>
@@ -242,7 +243,7 @@ int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
 
 int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
 {
-    Debug::printWarning("polkit_grant_add_child_watch: Addind watch");
+    Debug::printDebug("polkit_grant_add_child_watch: Addind watch");
 
     //TODO: Do this in a KDE/Qt way
     struct sigaction *sigac = (struct sigaction *)calloc(1, sizeof(struct sigaction));
@@ -253,7 +254,7 @@ int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
     if (sigaction(SIGCHLD, sigac, NULL) != 0)
         Debug::printError("polkit_grant_add_child_watch: SIGCHLD action could not be changed.");
     else
-        Debug::printWarning(QString("polkit_grant_add_child_watch: Watch added for %1").arg(pid));
+        Debug::printDebug(QString("polkit_grant_add_child_watch: Watch added for %1").arg(pid));
 
     free(sigac);
     return pid;
@@ -261,7 +262,7 @@ int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
 
 void PolicyService::polkit_grant_sigchld_handler(int sig, siginfo_t *info, void *ucontext)
 {
-    Debug::printWarning(QString("polkit_grant_sigchld_handler: Received SIGCHLD, child exit status=%1 pid=%2").arg(info->si_status).arg(info->si_pid));
+    Debug::printWarning(QString("polkit_grant_sigchld_handler: Received SIGCHLD, child exit status=%1 PID=%2").arg(info->si_status).arg(info->si_pid));
 
     //this should be called when child dies
     polkit_grant_child_func (m_self->m_grant, info->si_pid, info->si_status);
@@ -347,7 +348,9 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
         return NULL;
     }
 
-    return (char *)m_dialog->getPass();
+    //In order to be freed by PolKitGrant class without crash, this is needed
+    char *answer = strdup(m_dialog->getPass());
+    return answer;
 }
 
 char *PolicyService::polkit_grant_prompt_echo_off(PolKitGrant *grant, const char *prompt, void *data)
@@ -380,7 +383,7 @@ PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant,
 
 void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_privilege, polkit_bool_t invalid_data, void *data)
 {
-    Debug::printDebug("In polkit_grant_done");
+    Debug::printDebug(QString("In polkit_grant_done: gained_privilege=%1 invalid_data=%2").arg(gained_privilege).arg(invalid_data));
     m_self->m_gainedPrivilege = gained_privilege;
     m_self->m_inputBogus= invalid_data;
 }
