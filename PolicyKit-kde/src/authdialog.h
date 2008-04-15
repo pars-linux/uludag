@@ -21,7 +21,7 @@ class AuthDialog : public AuthDialogUI
     Q_OBJECT
 
 public:
-    AuthDialog();
+    AuthDialog(QString &header);
     ~AuthDialog();
     const char* getPass();
     void setType(PolKitResult type);
