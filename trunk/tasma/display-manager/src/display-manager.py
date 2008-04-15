@@ -1,3 +1,5 @@
+#ifndef DISPLAY-MANAGER.PY
+#define DISPLAY-MANAGER.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -40,17 +42,24 @@ class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
         dm_mainview.mainWidget.__init__(self, parent)
 
-        def focusSelectedScreen(self, screenId):
-            """Puts a window border to selected screen's pixmap"""
-            pass
+        self.selectedScreen = 0
+        self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
+        self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
+        self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
 
-        def setGroupBoxName(self):
-            """Sets groupbox name as selected screen's name"""
-            pass
+    def getSelectedScreen(self):
+        """Gets selected screen and sets groupbox name as screen's name"""
 
-        def enableExtendedOption(self):
-            """Enables <Extended> option checkbox if <Dual Mode> selected"""
-            pass
+        self.selectedScreen =  self.screenGroup.selected()
+        self.groupBoxScreens.setTitle(self.selectedScreen.textLabel())
+
+    def enableExtendedOption(self):
+        """Enables <Extended> option checkbox if <Dual Mode> selected"""
+
+        if self.checkBoxDualMode.isChecked():
+            self.checkBoxExtended.setEnabled(1)
+        else:
+            self.checkBoxExtended.setEnabled(0)
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
@@ -105,3 +114,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+#endif // DISPLAY-MANAGER.PY
