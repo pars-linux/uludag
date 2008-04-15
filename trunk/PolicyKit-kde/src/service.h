@@ -12,6 +12,8 @@
 #ifndef SERVICE_H
 #define SERVICE_H
 
+#define POLICYKITKDE_MAX_TRY 1
+
 #include <csignal>
 
 #include <polkit/polkit.h>
