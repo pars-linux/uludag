@@ -1,3 +1,14 @@
+/*
+  Copyright (c) 2007,2008 TUBITAK/UEKAE
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  Please read the COPYING file.
+*/
+
 #ifndef SERVICE_H
 #define SERVICE_H
 
@@ -26,11 +37,11 @@ public:
     virtual ~PolicyService();
 
 protected:
-    bool handleMethodCall(const QDBusMessage& message);
-    bool handleIntrospect(const QDBusMessage& message);
-    bool handleObtainAuthorization(const QDBusMessage& message);
+    void handleMethodCall(const QDBusMessage& message);
+    void handleIntrospect(const QDBusMessage& message);
+    void handleObtainAuthorization(const QDBusMessage& message);
     void sendDBusError(const QDBusMessage& message, const QString& errortype, const QString& errorstr = "org.freedesktop.DBus.Error.InvalidSignature");
-    bool obtainAuthorization(const QString& actionId, const uint wid, const uint pid);
+    void obtainAuthorization(const QString& actionId, const uint wid, const uint pid);
 
 protected slots:
     void slotBusNameOwnerChanged(const QDBusMessage& msg);

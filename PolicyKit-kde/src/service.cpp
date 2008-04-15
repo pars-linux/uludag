@@ -1,21 +1,36 @@
+/*
+  Copyright (c) 2007,2008 TUBITAK/UEKAE
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  Please read the COPYING file.
+*/
+
+//headers required for SIGCHLD handling and strdup
 #include <csignal>
 #include <cstring>
 
+//kde and qt headers
 #include <qvariant.h>
 #include <qsocketnotifier.h>
 #include <kcombobox.h>
 #include <klineedit.h>
 
-//policykit header
+//policykit headers
 #include <polkit/polkit.h>
 #include <polkit-dbus/polkit-dbus.h>
 #include <polkit-grant/polkit-grant.h>
 
-//backport headers
+//dbus backport headers
 #include "qdbuserror.h"
 #include "qdbusmessage.h"
 
+//own headers
 #include "service.h"
+#include "policykitkde.h"
 #include "authdialog.h"
 #include "debug.h"
 
@@ -79,40 +94,32 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 
 PolicyService::~PolicyService()
 {
-    Debug::printDebug("Unregistering object: /");
-    m_sessionBus.unregisterObject("/");
+    Debug::printDebug(QString("Unregistering object: %1").arg(POLICYKITKDE_OBJECTNAME));
+    m_sessionBus.unregisterObject(POLICYKITKDE_OBJECTNAME);
 }
 
-bool PolicyService::handleMethodCall(const QDBusMessage& message)
+void PolicyService::handleMethodCall(const QDBusMessage& message)
 {
     Debug::printDebug(QString("DBus method called: '%1'").arg(message.member()));
 
     if (message.interface() == "org.freedesktop.DBus.Introspectable" && message.member() == "Introspect")
     {
         if (message.count() != 0)
-        {
             sendDBusError(message, "No argument expected");
-            return false;
-        }
-
         else
-            return handleIntrospect(message);
+            handleIntrospect(message);
     }
 
-    if (message.interface() == "org.freedesktop.PolicyKit.AuthenticationAgent" && message.member() == "ObtainAuthorization")
+    else if (message.interface() == POLICYKITKDE_INTERFACENAME && message.member() == "ObtainAuthorization")
     {
         if (message.count() != 3 || message[0].type() != QVariant::String || message[1].type() != QVariant::UInt || message[2].type() != QVariant::UInt)
-        {
             sendDBusError(message, "Wrong signature, three arguments expected: (String, UINT, UINT)");
-            return false;
-        }
-
         else
-            return handleObtainAuthorization(message);
+            handleObtainAuthorization(message);
     }
 
-    Debug::printWarning(QString("No such DBus method: '%1'").arg(message.member()));
-    return false;
+    else
+        Debug::printWarning(QString("No such DBus method: '%1'").arg(message.member()));
 }
 
 void PolicyService::slotBusNameOwnerChanged(const QDBusMessage& msg)
@@ -131,7 +138,7 @@ void PolicyService::sendDBusError(const QDBusMessage& message, const QString& er
         m_sessionBus.send(reply);
 }
 
-bool PolicyService::handleIntrospect(const QDBusMessage& message)
+void PolicyService::handleIntrospect(const QDBusMessage& message)
 {
     QDBusMessage reply = QDBusMessage::methodReply(message);
 
@@ -161,22 +168,38 @@ bool PolicyService::handleIntrospect(const QDBusMessage& message)
     Debug::printDebug("Handling introspect() call.");
     reply << QVariant(introspection);
     m_sessionBus.send(reply);
-
-    return true;
 }
 
-bool PolicyService::handleObtainAuthorization(const QDBusMessage& message)
+void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 {
     QDBusMessage reply = QDBusMessage::methodReply(message);
 
     Debug::printDebug("Handling obtainAuthorization() call.");
 
-    bool auth = obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt());
+    if (m_authInProgress)
+    {
+        QString msg = QString("Already authenticating by another agent")
+        Debug::printError(msg);
+
+        // send dbus error
+        QDBusMessage dbusError = QDBusMessage::methodError(message, QDBusError(POLICYKITKDE_BUSNAME, msg));
+        m_sessionBus.send(dbusError);
+    }
+
+    //TODO: Check if another request is in progress
+    //m_authInProgress = true;
+
+    obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt());
+
+   /*
     reply << QVariant(auth);
 
     m_sessionBus.send(reply);
 
+    m_authInProgress = false;
+
     return true;
+    */
 }
 
 /////////// PolKit IO watch functions ////////////////
@@ -388,75 +411,70 @@ void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_p
     m_self->m_inputBogus= invalid_data;
 }
 
-bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
+void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
 {
     PolKitError *error = NULL;
 
     PolKitAction *action = polkit_action_new();
     if (action == NULL)
     {
-        Debug::printError("Could not create new action.");
-        return false;
+        QString msg = QString("Could not create new action");
+        Debug::printError(msg);
+        throw msg;
     }
 
     polkit_bool_t setActionResult = polkit_action_set_action_id(action, actionId.ascii());
     if (!setActionResult)
     {
-        Debug::printError("Could not set actionid.");
-        return false;
+        qString msg = QString("Could not set actionid.");
+        Debug::printError(msg);
+        throw msg;
     }
 
     Debug::printDebug("Getting policy cache...");
     PolKitPolicyCache *cache = polkit_context_get_policy_cache(m_context);
     if (cache == NULL)
-    {
         Debug::printWarning("Could not get policy cache.");
-    //    return false;
-    }
 
     Debug::printDebug("Getting policy cache entry for an action...");
     PolKitPolicyFileEntry *entry = polkit_policy_cache_get_entry(cache, action);
     if (entry == NULL)
-    {
         Debug::printWarning("Could not get policy entry for action.");
-    //    return false;
-    }
 
     Debug::printDebug("Getting action message...");
     const char *message = polkit_policy_file_entry_get_action_message(entry);
+
     if (message == NULL)
-    {
         Debug::printWarning("Could not get action message for action.");
-    //    return false;
-    }
     else
-    {
         Debug::printDebug(QString("Message of action: '%1'").arg(message));
-    }
 
     DBusError dbuserror;
     dbus_error_init (&dbuserror);
     DBusConnection *bus = dbus_bus_get (DBUS_BUS_SYSTEM, &dbuserror);
     if (bus == NULL) 
     {
-        Debug::printError("Could not connect to system bus.");
-        return false;
+        QString msg = QString("Could not connect to system bus.");
+        Debug::printError(msg);
+        throw msg;
     }
 
     PolKitCaller *caller = polkit_caller_new_from_pid(bus, pid, &dbuserror);
     if (caller == NULL)
     {
+        QString msg = QString("Could not define caller from pid: %1").arg(qerror->message());
         QDBusError *qerror = new QDBusError((const DBusError *)&dbuserror);
-        Debug::printError(QString("Could not define caller from pid: %1").arg(qerror->message()));
-        return false;
+        Debug::printError(msg);
+        throw msg;
     }
 
     m_grant = polkit_grant_new();
 
     if (m_grant == NULL)
     {
-        Debug::printError("PolKitGrant object could not be created");
-        return false;
+        QString msg = QString("PolKitGrant object could not be created");
+        Debug::printError(msg);
+        throw msg;
     }
 
     m_dialog = new AuthDialog();
@@ -483,7 +501,7 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         throw msg;
     }
 
-    return false;
+    Debug::printDebug("obtain_authorization returning");
 }
 
 #include "service.moc"
