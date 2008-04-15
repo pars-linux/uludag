@@ -292,7 +292,7 @@ void PolicyService::polkit_grant_type(PolKitGrant *grant, PolKitResult result, v
 
 void PolicyService::polkit_config_changed(PolKitContext *context, void *data)
 {
-    Debug::printWarning("polkit_config_changed");
+    Debug::printWarning("polkit_config_changed: PolicyKit configuration changed");
 }
 
 char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **adminUsers, void *data)
