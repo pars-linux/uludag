@@ -327,6 +327,8 @@ void PolicyService::polkit_grant_remove_watch(PolKitGrant *grant, int fd)
 void PolicyService::polkit_grant_type(PolKitGrant *grant, PolKitResult result, void *data)
 {
     Q_ASSERT(m_self->m_dialog != NULL);
+
+    Debug::printWarning(QString("polkit_grant_type: Type of authentication dialog is set to \"%1\"").arg(polkit_result_to_string_representation(result)));
     m_self->m_dialog->setType(result);
 }
 
@@ -498,8 +500,9 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             throw msg;
         }
 
-        m_dialog = new AuthDialog();
-        Debug::printDebug("AuthDialog created");
+        QString qMessage = QString(message);
+        m_dialog = new AuthDialog(qMessage);
+        Debug::printDebug("AuthDialog created.");
 
         polkit_grant_set_functions(m_grant,
                                    polkit_grant_add_watch,

@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>552</width>
-            <height>332</height>
+            <width>464</width>
+            <height>234</height>
         </rect>
     </property>
     <property name="caption">
@@ -18,6 +18,9 @@
     <property name="sizeGripEnabled">
         <bool>false</bool>
     </property>
+    <property name="modal">
+        <bool>true</bool>
+    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
@@ -25,10 +28,7 @@
         <property name="margin">
             <number>5</number>
         </property>
-        <property name="resizeMode">
-            <enum>Minimum</enum>
-        </property>
-        <widget class="QLayoutWidget" row="0" column="0" rowspan="4" colspan="1">
+        <widget class="QLayoutWidget" row="0" column="0" rowspan="5" colspan="1">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -63,39 +63,7 @@
                 </spacer>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="1">
-            <property name="name">
-                <cstring>layout10</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>lblHeader</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&lt;h3&gt;&lt;b&gt;Header is here! &lt;/b&gt;&lt;/h3&gt;</string>
-                    </property>
-                    <property name="alignment">
-                        <set>WordBreak|AlignTop|AlignLeft</set>
-                    </property>
-                </widget>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>lblContent</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</string>
-                    </property>
-                    <property name="alignment">
-                        <set>WordBreak|AlignTop|AlignLeft</set>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="3" column="1">
+        <widget class="QLayoutWidget" row="4" column="1">
             <property name="name">
                 <cstring>layout7</cstring>
             </property>
@@ -151,7 +119,46 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="5" column="0" rowspan="1" colspan="2">
+        <widget class="KComboBox" row="2" column="1">
+            <item>
+                <property name="text">
+                    <string>Select User...</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>cbUsers</cstring>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Select a user...</string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="3" column="1">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>lblPassword</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KLineEdit">
+                    <property name="name">
+                        <cstring>lePassword</cstring>
+                    </property>
+                    <property name="echoMode">
+                        <enum>Password</enum>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="7" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -228,7 +235,7 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="Line" row="4" column="0" rowspan="1" colspan="2">
+        <widget class="Line" row="6" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>line</cstring>
             </property>
@@ -242,44 +249,44 @@
                 <enum>Horizontal</enum>
             </property>
         </widget>
-        <widget class="KComboBox" row="1" column="1">
-            <item>
-                <property name="text">
-                    <string>Select User...</string>
-                </property>
-            </item>
+        <spacer row="5" column="1">
             <property name="name">
-                <cstring>cbUsers</cstring>
+                <cstring>spacer5_2</cstring>
             </property>
-            <property name="toolTip" stdset="0">
-                <string>Select a user...</string>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Preferred</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>16</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="1" column="1">
+            <property name="name">
+                <cstring>lblContent</cstring>
+            </property>
+            <property name="text">
+                <string>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignTop|AlignLeft</set>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="1">
+        <widget class="QLabel" row="0" column="1">
             <property name="name">
-                <cstring>layout7</cstring>
+                <cstring>lblHeader</cstring>
             </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>lblPassword</cstring>
-                    </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                </widget>
-                <widget class="KLineEdit">
-                    <property name="name">
-                        <cstring>lePassword</cstring>
-                    </property>
-                    <property name="echoMode">
-                        <enum>Password</enum>
-                    </property>
-                </widget>
-            </hbox>
+            <property name="text">
+                <string>&lt;h3&gt;&lt;b&gt;Header is here! &lt;/b&gt;&lt;/h3&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignTop|AlignLeft</set>
+            </property>
         </widget>
     </grid>
 </widget>
@@ -311,7 +318,4 @@
     <tabstop>pbCancel</tabstop>
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>
-<includehints>
-    <includehint>kcombobox.h</includehint>
-</includehints>
 </UI>

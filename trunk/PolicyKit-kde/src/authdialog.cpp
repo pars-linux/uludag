@@ -33,7 +33,7 @@
  *  The dialog will by default be modeless, unless you set 'modal' to
  *  TRUE to construct a modal dialog.
  */
-AuthDialog::AuthDialog()
+AuthDialog::AuthDialog(QString &header)
     : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
@@ -42,6 +42,7 @@ AuthDialog::AuthDialog()
     pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
 
     cbUsers->hide();
+    setHeader(header);
 }
 
 AuthDialog::~AuthDialog()
@@ -158,4 +159,7 @@ void AuthDialog::setType(PolKitResult res)
         cbRemember->hide();
 
     m_type = res;
+
+    //set content message according to m_type
+    setContent();
 }
