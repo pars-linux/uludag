@@ -40,6 +40,18 @@ class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
         dm_mainview.mainWidget.__init__(self, parent)
 
+        def focusSelectedScreen(self, screenId):
+            """Puts a window border to selected screen's pixmap"""
+            pass
+
+        def setGroupBoxName(self):
+            """Sets groupbox name as selected screen's name"""
+            pass
+
+        def enableExtendedOption(self):
+            """Enables <Extended> option checkbox if <Dual Mode> selected"""
+            pass
+
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
     self.mainwidget = MainWidget(self)
