@@ -313,7 +313,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
     dialogResult = m_self->m_dialog->exec();
     Debug::printDebug("polkit_grant_select_admin_user: Done");
 
-    const char *selected = m_self->m_dialog->cbUsers->currentText();
+    char *selected = strdup(m_self->m_dialog->cbUsers->currentText());
 
     if (dialogResult == QDialog::Rejected)
     {
@@ -324,7 +324,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
     {
         QString msg = QString("polkit_grant_select_admin_user: User(%1) selected.").arg(selected);
         Debug::printDebug(msg);
-        return (char *)selected;
+        return selected;
     }
 }
 
