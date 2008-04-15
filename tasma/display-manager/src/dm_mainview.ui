@@ -70,6 +70,7 @@
                                     <cstring>screenImage1</cstring>
                                 </property>
                                 <property name="backgroundMode">
+                                    <enum>PaletteButton</enum>
                                 </property>
                                 <property name="palette">
                                     <palette>
@@ -680,13 +681,11 @@
                                         </property>
                                     </widget>
                                     <widget class="QComboBox">
-                                        <item>
-                                            <property name="text">
-                                                <string>LCD Panel</string>
-                                            </property>
-                                        </item>
                                         <property name="name">
                                             <cstring>comboBoxOutput</cstring>
+                                        </property>
+                                        <property name="duplicatesEnabled">
+                                            <bool>false</bool>
                                         </property>
                                     </widget>
                                     <widget class="QLabel">
@@ -698,13 +697,11 @@
                                         </property>
                                     </widget>
                                     <widget class="QComboBox">
-                                        <item>
-                                            <property name="text">
-                                                <string>1024x768</string>
-                                            </property>
-                                        </item>
                                         <property name="name">
                                             <cstring>comboBoxResolution</cstring>
+                                        </property>
+                                        <property name="duplicatesEnabled">
+                                            <bool>false</bool>
                                         </property>
                                     </widget>
                                 </vbox>

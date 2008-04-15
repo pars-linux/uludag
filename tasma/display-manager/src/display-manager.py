@@ -47,8 +47,7 @@ class MainWidget(dm_mainview.mainWidget):
         #returns a dict of outputs and resolutions.
         """
         {'LVDS': ['1280x800', '1280x768', '1024x768', '800x600', '640x480'],
-        'S-video': ['800x600', '640x480'],
-        'VGA-0': ['800x600', '640x480']}
+        'S-video': ['800x600', '640x480']}
         """
         #self.screenModes = self.displayConfiguration.modes
         self.screenModes = {'LVDS': ['1280x800', '1280x768', '1024x768', '800x600', '640x480'], 'S-video': ['800x600', '640x480']}
@@ -57,18 +56,18 @@ class MainWidget(dm_mainview.mainWidget):
         #['VGA-0', 'LVDS', 'S-video']
         #self.screenOutputs = self.displayConfiguration.outputs
 
-        self.screenOutputs = ['VGA-0', 'LVDS', 'S-video']
+        self.screenOutputs = ['LVDS', 'S-video']
 
         self.selectedScreen = 0
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
+        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setResolutions)
 
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
 
-        for resolution in self.screenModes:
-            self.comboBoxResolution.insertItem()
+        self.setResolutions()
 
     def getSelectedScreen(self):
         """Gets selected screen and sets groupbox name as screen's name"""
@@ -83,6 +82,14 @@ class MainWidget(dm_mainview.mainWidget):
             self.checkBoxExtended.setEnabled(1)
         else:
             self.checkBoxExtended.setEnabled(0)
+
+    def setResolutions(self):
+        """Sets resolutions due to selected output"""
+
+        self.currentOutput =  str(self.comboBoxOutput.currentText())
+        self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
+        for resolution in self.screenModes[self.currentOutput]:
+            self.comboBoxResolution.insertItem(resolution)
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
