@@ -1,6 +1,7 @@
-
 #ifndef SERVICE_H
 #define SERVICE_H
+
+#include <csignal>
 
 #include <polkit/polkit.h>
 #include <polkit-grant/polkit-grant.h>
@@ -11,6 +12,8 @@
 
 #include "qdbusconnection.h"
 #include "qdbusobject.h"
+
+using namespace std;
 
 class AuthDialog;
 
@@ -67,6 +70,7 @@ private:
     static PolKitResult polkit_grant_override_grant_type(PolKitGrant *grant, PolKitResult result, void *data);
     static void  polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_privilege, polkit_bool_t invalid_data, void *data);
     static void polkit_config_changed(PolKitContext *context, void *data);
+    static void PolicyService::polkit_grant_sigchld_handler(int sig, siginfo_t *, void *);
 };
 
 #endif

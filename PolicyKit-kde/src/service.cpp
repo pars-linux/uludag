@@ -1,3 +1,4 @@
+#include <csignal>
 
 #include <qvariant.h>
 #include <qsocketnotifier.h>
@@ -17,6 +18,7 @@
 #include "authdialog.h"
 #include "debug.h"
 
+using namespace std;
 
 PolicyService* PolicyService::m_self;
 
@@ -240,12 +242,29 @@ int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
 
 int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
 {
-    Debug::printWarning("polkit_grant_add_child_watch: not implemented yet");
+    Debug::printWarning("polkit_grant_add_child_watch: Addind watch");
+
+    //TODO: Do this in a KDE/Qt way
+    struct sigaction *sigac = (struct sigaction *)calloc(1, sizeof(struct sigaction));
+
+    sigac->sa_sigaction = m_self->polkit_grant_sigchld_handler;
+    sigac->sa_flags = SA_SIGINFO;
+
+    if (sigaction(SIGCHLD, sigac, NULL) != 0)
+        Debug::printError("polkit_grant_add_child_watch: SIGCHLD action could not be changed.");
+    else
+        Debug::printWarning(QString("polkit_grant_add_child_watch: Watch added for %1").arg(pid));
+
+    free(sigac);
+    return pid;
+}
+
+void PolicyService::polkit_grant_sigchld_handler(int sig, siginfo_t *info, void *ucontext)
+{
+    Debug::printWarning(QString("polkit_grant_sigchld_handler: child exit status=%1 pid=%2").arg(info->si_status).arg(info->si_pid));
 
     //this should be called when child dies
-    //polkit_grant_child_func (grant, pid_t pid, int exit_code);
-
-    return pid;
+    polkit_grant_child_func (m_self->m_grant, info->si_pid, info->si_status);
 }
 
 void PolicyService::polkit_grant_remove_watch(PolKitGrant *grant, int fd)
@@ -261,6 +280,8 @@ void PolicyService::polkit_grant_remove_watch(PolKitGrant *grant, int fd)
     m_self->m_grantwatches.remove(fd);
     Debug::printDebug("polkit_grant_remove_watch: Watch removed");
 }
+
+////////////////////// polkit-grant functions ////////////////////////////
 
 void PolicyService::polkit_grant_type(PolKitGrant *grant, PolKitResult result, void *data)
 {
@@ -458,38 +479,6 @@ bool PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         Debug::printError(msg);
         throw msg;
     }
-
-    /*
-    PolKitResult polkitresult;
-
-    polkitresult = polkit_context_is_caller_authorized(m_context, action, caller, false, &m_error);
-    if (polkit_error_is_set (m_error))
-    {
-        Debug::printError("Could not determine if caller is authorized for this action.");
-        return false;
-    }
-
-    //TODO: Determine AdminAuthType, user, group...
-
-    try
-    {
-        AuthDialog* dia = new AuthDialog(message, polkitresult);
-        dia->show();
-    }
-    catch (QString exc)
-    {
-        Debug::printWarning(exc);
-        return false;
-    }
-
-    // check again if user is authorized
-    polkitresult = polkit_context_is_caller_authorized(m_context, action, caller, false, &m_error);
-    if (polkit_error_is_set (m_error))
-    {
-        Debug::printError("Could not determine if caller is authorized for this action.");
-        return false;
-    }
-    */
 
     return false;
 }
