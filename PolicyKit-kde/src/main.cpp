@@ -14,6 +14,7 @@
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <kapplication.h>
+#include <klocale.h>
 
 #include "authdialog.h"
 #include "policykitkde.h"
@@ -22,10 +23,18 @@
 int main (int argc, char *argv[])
 {
     KAboutData aboutData( "policykit-kde", I18N_NOOP( "PolicyKit-kde" ), "0.1",
-                        I18N_NOOP( "PolicyKit-kde" ), KAboutData::License_GPL,
-                        I18N_NOOP( "(c) 2005-2007, TUBITAK - UEKAE" ) );
-    aboutData.addAuthor( "Gökçen Eraslan", I18N_NOOP( "Current Maintainer" ), "gokcen@pardus.org.tr" );
+                        I18N_NOOP( "PolicyKit-kde" ), KAboutData::License_GPL_V2,
+                        I18N_NOOP( "(c) 2007,2008 TUBITAK - UEKAE" ) );
+    aboutData.addAuthor( "Gökçen Eraslan", I18N_NOOP( "Author" ), "gokcen@pardus.org.tr" );
     KCmdLineArgs::init( argc, argv, &aboutData );
+
+    //set options
+    KCmdLineOptions options[]= {
+                                {"no-exit", I18N_NOOP("Do not exit automatically. This is used for debugging purposes."), 0},
+                                KCmdLineLastOption
+    };
+
+    KCmdLineArgs::addCmdLineOptions(options);
 
     KApplication app;
 

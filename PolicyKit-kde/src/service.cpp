@@ -16,8 +16,11 @@
 //kde and qt headers
 #include <qvariant.h>
 #include <qsocketnotifier.h>
+#include <qtimer.h>
 #include <kcombobox.h>
 #include <klineedit.h>
+#include <kcmdlineargs.h>
+#include <kapplication.h>
 
 //policykit headers
 #include <polkit/polkit.h>
@@ -40,6 +43,15 @@ PolicyService* PolicyService::m_self;
 
 PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 {
+    if (!KCmdLineArgs::parsedArgs()->isSet("no-exit"))
+    {
+        //exit, if no-exit option is not set
+        Debug::printDebug("no-exit option is not set, setting timer to exit in 30 seconds...");
+        QTimer::singleShot(30000, this, SLOT(quitSlot(void)));
+    }
+    else
+        Debug::printDebug("no-exit option is set, not quiting");
+
     Q_ASSERT(!m_self);
     m_self = this;
 
@@ -87,9 +99,14 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 
         throw msg;
     }
+}
 
-    //TODO: add kill_timer and no-exit option
+void PolicyService::quitSlot()
+{
+    Debug::printDebug("Timeout limit reached and no-exit option is not set, quiting...");
+    KApplication::kApplication()->quit();
 
+    //TODO: Do last jobs
 }
 
 PolicyService::~PolicyService()
