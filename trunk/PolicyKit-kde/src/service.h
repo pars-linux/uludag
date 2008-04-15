@@ -43,7 +43,7 @@ protected:
     void handleIntrospect(const QDBusMessage& message);
     void handleObtainAuthorization(const QDBusMessage& message);
     void sendDBusError(const QDBusMessage& message, const QString& errortype, const QString& errorstr = "org.freedesktop.DBus.Error.InvalidSignature");
-    void obtainAuthorization(const QString& actionId, const uint wid, const uint pid);
+    void obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& );
 
 protected slots:
     void slotBusNameOwnerChanged(const QDBusMessage& msg);

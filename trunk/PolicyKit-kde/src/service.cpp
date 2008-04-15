@@ -187,8 +187,6 @@ void PolicyService::handleIntrospect(const QDBusMessage& message)
 
 void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 {
-    QDBusMessage reply = QDBusMessage::methodReply(message);
-
     Debug::printDebug("Handling obtainAuthorization() call.");
 
     /*
@@ -206,7 +204,7 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
     //TODO: Check if another request is in progress
     //m_authInProgress = true;
 
-    obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt());
+    obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt(), message);
 
    /*
     reply << QVariant(auth);
@@ -215,7 +213,6 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 
     m_authInProgress = false;
 
-    return true;
     */
 }
 
@@ -430,7 +427,7 @@ void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_p
     m_self->m_inputBogus= invalid_data;
 }
 
-void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid)
+void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& messageToReply)
 {
     PolKitError *error = NULL;
 
@@ -526,9 +523,19 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         }
 
         if (m_gainedPrivilege)
-            break;
+        {
+            Debug::printDebug("obtain_authorization: Authentication succeeded, sending DBus reply...");
 
-        Debug::printDebug("obtain_authorization: Authentication failed, trying again...");
+            //send dbus reply
+            QDBusMessage reply = QDBusMessage::methodReply(messageToReply);
+
+            reply << QVariant(m_gainedPrivilege);
+            m_sessionBus.send(reply);
+
+            break;
+        }
+        else
+            Debug::printDebug("obtain_authorization: Authentication failed, trying again...");
     }
 
     Debug::printDebug("obtain_authorization returning");
