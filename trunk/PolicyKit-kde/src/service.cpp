@@ -261,7 +261,7 @@ int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
 
 void PolicyService::polkit_grant_sigchld_handler(int sig, siginfo_t *info, void *ucontext)
 {
-    Debug::printWarning(QString("polkit_grant_sigchld_handler: child exit status=%1 pid=%2").arg(info->si_status).arg(info->si_pid));
+    Debug::printWarning(QString("polkit_grant_sigchld_handler: Received SIGCHLD, child exit status=%1 pid=%2").arg(info->si_status).arg(info->si_pid));
 
     //this should be called when child dies
     polkit_grant_child_func (m_self->m_grant, info->si_pid, info->si_status);
