@@ -98,28 +98,43 @@ PolicyService::~PolicyService()
     m_sessionBus.unregisterObject(POLICYKITKDE_OBJECTNAME);
 }
 
-void PolicyService::handleMethodCall(const QDBusMessage& message)
+bool PolicyService::handleMethodCall(const QDBusMessage& message)
 {
     Debug::printDebug(QString("DBus method called: '%1'").arg(message.member()));
 
     if (message.interface() == "org.freedesktop.DBus.Introspectable" && message.member() == "Introspect")
     {
         if (message.count() != 0)
+        {
             sendDBusError(message, "No argument expected");
+            return false;
+        }
         else
+        {
             handleIntrospect(message);
+            return true;
+        }
     }
 
     else if (message.interface() == POLICYKITKDE_INTERFACENAME && message.member() == "ObtainAuthorization")
     {
         if (message.count() != 3 || message[0].type() != QVariant::String || message[1].type() != QVariant::UInt || message[2].type() != QVariant::UInt)
+        {
             sendDBusError(message, "Wrong signature, three arguments expected: (String, UINT, UINT)");
+            return false;
+        }
         else
+        {
             handleObtainAuthorization(message);
+            return true;
+        }
     }
 
     else
+    {
         Debug::printWarning(QString("No such DBus method: '%1'").arg(message.member()));
+        return false;
+    }
 }
 
 void PolicyService::slotBusNameOwnerChanged(const QDBusMessage& msg)
@@ -178,7 +193,7 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 
     if (m_authInProgress)
     {
-        QString msg = QString("Already authenticating by another agent")
+        QString msg = QString("Already authenticating by another agent");
         Debug::printError(msg);
 
         // send dbus error
@@ -426,7 +441,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     polkit_bool_t setActionResult = polkit_action_set_action_id(action, actionId.ascii());
     if (!setActionResult)
     {
-        qString msg = QString("Could not set actionid.");
+        QString msg = QString("Could not set actionid.");
         Debug::printError(msg);
         throw msg;
     }
@@ -462,8 +477,8 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     PolKitCaller *caller = polkit_caller_new_from_pid(bus, pid, &dbuserror);
     if (caller == NULL)
     {
-        QString msg = QString("Could not define caller from pid: %1").arg(qerror->message());
         QDBusError *qerror = new QDBusError((const DBusError *)&dbuserror);
+        QString msg = QString("Could not define caller from pid: %1").arg(qerror->message());
         Debug::printError(msg);
         throw msg;
     }
