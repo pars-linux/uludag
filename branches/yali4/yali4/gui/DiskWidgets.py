@@ -87,6 +87,8 @@ class DiskList(QtGui.QWidget):
 
         self.vbox.addWidget(self.tabWidget)
         self.vbox.addWidget(self.partEdit)
+
+        # Connections
         self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(int)"),self.updatePartEdit)
         self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(QString)"),self.formatTypeChanged)
         self.connect(self.partEdit.ui.deletePartition,QtCore.SIGNAL("clicked()"),self.slotDeletePart)
@@ -542,12 +544,12 @@ class DiskItem(QtGui.QWidget):
 def getPartitionType(part, rt=1):
     """ Get partition type from request list """
     for pt in partitionTypes.values():
-        # We use MountRequest type for search keyword 
+        # We use MountRequest type for search keyword
         # which is 1, defined in partitionrequest.py
         req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
         if req:
             ctx.debugger.log("GPT #0: %s vs. %s " % (req.partition().getPath(), part.getPath()))
-            if req.partition() == part:
+            if req.partition().getPath() == part.getPath():
                 ctx.debugger.log("GPT #1: %s " % part.getPath())
                 ctx.debugger.log("GPT #2: %s " % pt.name)
                 return pt

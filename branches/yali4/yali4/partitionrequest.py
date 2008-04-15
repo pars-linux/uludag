@@ -82,7 +82,7 @@ class RequestList(list):
         try:
             cur = i.next()
             while True:
-                if cur.partition() == p and cur.requestType() == rt:
+                if cur.partition().getPath() == p.getPath() and cur.requestType() == rt:
                     # FOUND
                     yield cur
 
