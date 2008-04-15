@@ -191,6 +191,7 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 
     Debug::printDebug("Handling obtainAuthorization() call.");
 
+    /*
     if (m_authInProgress)
     {
         QString msg = QString("Already authenticating by another agent");
@@ -200,6 +201,7 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
         QDBusMessage dbusError = QDBusMessage::methodError(message, QDBusError(POLICYKITKDE_BUSNAME, msg));
         m_sessionBus.send(dbusError);
     }
+    */
 
     //TODO: Check if another request is in progress
     //m_authInProgress = true;
@@ -483,37 +485,47 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         throw msg;
     }
 
-    m_grant = polkit_grant_new();
+    //TODO: Add vendor icon support
 
-    if (m_grant == NULL)
+    for (int i = 0; i < POLICYKITKDE_MAX_TRY; i++)
     {
-        QString msg = QString("PolKitGrant object could not be created");
-        Debug::printError(msg);
-        throw msg;
-    }
+        m_grant = polkit_grant_new();
 
-    m_dialog = new AuthDialog();
-    Debug::printDebug("AuthDialog created");
+        if (m_grant == NULL)
+        {
+            QString msg = QString("PolKitGrant object could not be created");
+            Debug::printError(msg);
+            throw msg;
+        }
 
-    polkit_grant_set_functions(m_grant,
-                               polkit_grant_add_watch,
-                               polkit_grant_add_child_watch,
-                               polkit_grant_remove_watch,
-                               polkit_grant_type,
-                               polkit_grant_select_admin_user,
-                               polkit_grant_prompt_echo_off,
-                               polkit_grant_prompt_echo_on,
-                               polkit_grant_error_message,
-                               polkit_grant_text_info,
-                               polkit_grant_override_grant_type,
-                               polkit_grant_done,
-                               NULL);
+        m_dialog = new AuthDialog();
+        Debug::printDebug("AuthDialog created");
 
-    if (!polkit_grant_initiate_auth (m_grant, action, caller)) 
-    {
-        QString msg = QString("Could not initialize grant");
-        Debug::printError(msg);
-        throw msg;
+        polkit_grant_set_functions(m_grant,
+                                   polkit_grant_add_watch,
+                                   polkit_grant_add_child_watch,
+                                   polkit_grant_remove_watch,
+                                   polkit_grant_type,
+                                   polkit_grant_select_admin_user,
+                                   polkit_grant_prompt_echo_off,
+                                   polkit_grant_prompt_echo_on,
+                                   polkit_grant_error_message,
+                                   polkit_grant_text_info,
+                                   polkit_grant_override_grant_type,
+                                   polkit_grant_done,
+                                   NULL);
+
+        if (!polkit_grant_initiate_auth (m_grant, action, caller)) 
+        {
+            QString msg = QString("Could not initialize grant");
+            Debug::printError(msg);
+            throw msg;
+        }
+
+        if (m_gainedPrivilege)
+            break;
+
+        Debug::printDebug("obtain_authorization: Authentication failed, trying again...");
     }
 
     Debug::printDebug("obtain_authorization returning");
