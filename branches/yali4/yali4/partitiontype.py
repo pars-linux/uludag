@@ -79,10 +79,11 @@ class ArchivePartitionType(PartitionType):
     label = "ARCHIVE"
 
     def setFileSystem(self, filesystem):
-        if filesystem == "fat32":
-            self.filesystem = yali4.filesystem.FatFileSystem()
-        elif filesystem == "ext3":
-            self.filesystem = yali4.filesystem.Ext3FileSystem()
+        supportedFS = {"fat32":yali4.filesystem.FatFileSystem(),
+                       "ext3" :yali4.filesystem.Ext3FileSystem(),
+                       "ntfs" :yali4.filesystem.NTFSFileSystem()}
+        if supportedFS.has_key(filesystem):
+            self.filesystem = supportedFS[filesystem]
 
 root = RootPartitionType()
 home = HomePartitionType()

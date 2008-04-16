@@ -440,41 +440,60 @@ class NTFSFileSystem(FileSystem):
 
     _name = "ntfs"
     _sysname = "ntfs-3g"
+    _mountoptions = "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6"
 
     def __init__(self):
         FileSystem.__init__(self)
-
         self.setResizable(True)
+        self.setImplemented(True)
 
     def check_resize(self, size_mb, partition):
         #don't do anything, just check
         cmd = "/usr/sbin/ntfsresize -n -f -s %dM %s" %(size_mb, partition.getPath())
-
         p = os.popen(cmd)
         if p.close():
             return False
         return True
 
-
     def resize(self, size_mb, partition):
-
         if size_mb < self.minResizeMB(partition):
             return False
-
         cmd = "/usr/sbin/ntfsresize -f -s %dM %s" %(size_mb, partition.getPath())
-
         try:
             p = os.popen(cmd, "w")
             p.write("y\n")
             p.close()
         except:
             return False
-
         return True
 
+    def setLabel(self, partition, label):
+        label = self.availableLabel(label)
+        cmd_path = sysutils.find_executable("ntfslabel")
+        cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
+        try:
+            p = os.popen(cmd)
+            p.close()
+        except:
+            return False
+        return True
+
+    def format(self, partition):
+        self.preFormat(partition)
+        cmd_path = sysutils.find_executable("mkfs.ntfs")
+
+        if not cmd_path:
+            e = "Command not found to format %s filesystem" %(self.name())
+            raise FSError, e
+
+        cmd = "%s -f %s" % (cmd_path,partition.getPath())
+
+        p = os.popen(cmd)
+        o = p.readlines()
+        if p.close():
+            raise YaliException, "Ntfs format failed: %s" % partition.getPath()
 
     def minResizeMB(self, partition):
-
         cmd = "/usr/sbin/ntfsresize -f -i %s" % partition.getPath()
         lines = os.popen(cmd).readlines()
 
@@ -503,15 +522,12 @@ class FatFileSystem(FileSystem):
 
     def format(self, partition):
         self.preFormat(partition)
-
         cmd_path = sysutils.find_executable("mkfs.vfat")
-
         if not cmd_path:
             e = "Command not found to format %s filesystem" %(self.name())
             raise FSError, e
 
         cmd = "%s %s" %(cmd_path,partition.getPath())
-
         p = os.popen(cmd)
         o = p.readlines()
         if p.close():

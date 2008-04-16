@@ -265,10 +265,8 @@ class DiskList(QtGui.QWidget):
 
         t = partitionTypes[self.partEdit.ui.formatType.currentIndex()]
         if t == parttype.archive:
-            if self.partEdit.ui.fileSystemBox.currentIndex() == 1:
-                t.setFileSystem("fat32")
-            else:
-                t.setFileSystem("ext3")
+            _fsorder = ["ext3","ntfs","fat32"]
+            t.setFileSystem(_fsorder[self.partEdit.ui.fileSystemBox.currentIndex()])
 
         if not t:
             return False

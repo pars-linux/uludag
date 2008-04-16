@@ -278,6 +278,11 @@
           </item>
           <item>
            <property name="text" >
+            <string>NTFS</string>
+           </property>
+          </item>
+          <item>
+           <property name="text" >
             <string>Fat 32</string>
            </property>
           </item>
