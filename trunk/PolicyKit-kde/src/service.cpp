@@ -159,13 +159,13 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
 
 void PolicyService::handleDBusSignals(const QDBusMessage& msg)
 {
-    //TODO: exit if not busy
 
-    //Debug::printWarning(QString("Signal \"%1\" received from sender \"%2\"").arg(msg.member()).arg(msg.sender));
-
-    if (msg.member() == "NameOwnerChanged" && msg.count() == 3 && (msg[0].toString() == m_uniqueSessionName || msg[0].toString() == POLICYKITKDE_BUSNAME))
+    // our service has changed
+    if (msg.member() == "NameOwnerChanged" && msg.count() == 3 && msg[1].toString() == m_uniqueSessionName)
     {
         Debug::printWarning(QString("Session bus name owner changed: service name='%1', old owner='%2', new owner='%3'").arg(msg[0].toString()).arg(msg[1].toString()).arg(msg[2].toString()));
+
+        //TODO: exit if not busy
 
     }
 }
