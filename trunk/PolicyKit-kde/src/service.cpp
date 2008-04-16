@@ -43,10 +43,11 @@ PolicyService* PolicyService::m_self;
 
 PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 {
+    //since kde strips 'no', we have to write -exit to control no-exit option
     if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
     {
-        //exit, if noexit option is not set
-        Debug::printDebug("no-exit option is not set, setting timer to exit in 30 seconds...");
+        //exit, if no-exit option is not set
+        Debug::printWarning("no-exit option is not set, setting timer to exit in 30 seconds...");
         QTimer::singleShot(30000, this, SLOT(quitSlot(void)));
     }
     else
@@ -103,7 +104,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 
 void PolicyService::quitSlot()
 {
-    Debug::printDebug("Timeout limit reached and no-exit option is not set, quiting...");
+    Debug::printWarning("Timeout limit reached and no-exit option is not set, quiting...");
     KApplication::kApplication()->quit();
 
     //TODO: Do last jobs
