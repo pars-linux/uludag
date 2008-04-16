@@ -63,6 +63,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     bool m_authInProgress = false;
     bool m_gainedPrivilege = false;
     bool m_inputBogus = false;
+    m_uniqueSessionName = m_sessionBus.uniqueName();
 
     Debug::printDebug("Registering object: /");
     if (!m_sessionBus.registerObject("/", this))
@@ -162,7 +163,7 @@ void PolicyService::handleDBusSignals(const QDBusMessage& msg)
 
     //Debug::printWarning(QString("Signal \"%1\" received from sender \"%2\"").arg(msg.member()).arg(msg.sender));
 
-    if (msg.member() == "NameOwnerChanged" && msg.count() == 3)
+    if (msg.member() == "NameOwnerChanged" && msg.count() == 3 && (msg[0].toString() == m_uniqueSessionName || msg[0].toString() == POLICYKITKDE_BUSNAME))
     {
         Debug::printWarning(QString("Session bus name owner changed: service name='%1', old owner='%2', new owner='%3'").arg(msg[0].toString()).arg(msg[1].toString()).arg(msg[2].toString()));
 

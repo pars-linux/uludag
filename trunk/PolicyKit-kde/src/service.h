@@ -63,6 +63,7 @@ private:
     bool m_gainedPrivilege;
     bool m_inputBogus;
     static PolicyService* m_self;
+    QString m_uniqueSessionName;
 
     QMap<int, QSocketNotifier*> m_contextwatches;
     QMap<int, QSocketNotifier*> m_grantwatches;
