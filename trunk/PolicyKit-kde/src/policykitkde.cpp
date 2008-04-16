@@ -28,6 +28,7 @@ PolicyKitKDE::PolicyKitKDE()
         qApp->quit();
     }
 
+    // TODO:Seems not working
     // try to get a specific service name
     if (!connection.requestName(POLICYKITKDE_BUSNAME))
         Debug::printWarning(QString("Requesting name '%1' failed, another authentication agent is running already. Will only be addressable through unique name '%2'").arg(POLICYKITKDE_BUSNAME).arg(connection.uniqueName()));

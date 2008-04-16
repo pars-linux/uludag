@@ -162,7 +162,7 @@ void PolicyService::handleDBusSignals(const QDBusMessage& msg)
 
     //Debug::printWarning(QString("Signal \"%1\" received from sender \"%2\"").arg(msg.member()).arg(msg.sender));
 
-    if (msg.member() == "org.freedesktop.DBus.NameOwnerChanged" && msg.count() == 3)
+    if (msg.member() == "NameOwnerChanged" && msg.count() == 3)
     {
         Debug::printWarning(QString("Session bus name owner changed: service name='%1', old owner='%2', new owner='%3'").arg(msg[0].toString()).arg(msg[1].toString()).arg(msg[2].toString()));
 
