@@ -44,6 +44,12 @@ class MainWidget(dm_mainview.mainWidget):
         self.displayConfiguration = displayconfig.DisplayConfig()
         self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
 
+        # set button icons
+        loader = KGlobal.iconLoader()
+        self.buttonCancel.setIconSet(QIconSet(loader.loadIcon("cancel", KIcon.Small)))
+        self.buttonApply.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
+        self.buttonHelp.setIconSet(QIconSet(loader.loadIcon("help", KIcon.Small)))
+
         icon = getIconSet("screen.png", KIcon.User)
         self.screenImage1.setIconSet(icon)
         self.screenImage2.setIconSet(icon)
