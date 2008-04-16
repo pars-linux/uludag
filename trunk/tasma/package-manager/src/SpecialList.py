@@ -10,7 +10,6 @@ from kdeui import *
 from khtml import *
 from kio import KRun
 
-import pisi
 import re
 import string
 
