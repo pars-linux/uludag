@@ -16,6 +16,7 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
+import helpdialog
 import dm_mainview
 import displayconfig
 from utility import *
@@ -78,7 +79,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setResolutions)
-        self.connect(self.buttonCancel, SIGNAL("clicked()"),self.slotExit)
+        self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
 
@@ -112,14 +113,12 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
-    def slotExit(self):
-        sys.exit(1)
-
     def slotApply(self):
         pass
 
     def slotHelp(self):
-        pass
+        helpwin = helpdialog.HelpDialog()
+        helpwin.exec_loop()
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
@@ -127,7 +126,6 @@ def attachMainWidget(self):
     toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
     toplayout.addWidget(self.mainwidget)
     self.aboutus = KAboutApplication(self)
-
 
 class Module(KCModule):
     def __init__(self, parent, name):
