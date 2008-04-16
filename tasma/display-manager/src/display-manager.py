@@ -44,8 +44,9 @@ class MainWidget(dm_mainview.mainWidget):
         self.displayConfiguration = displayconfig.DisplayConfig()
         self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
 
-        self.screenImage1.setIconSet(QIconSet(QPixmap(locate("data", "display-manager/pics/screen.png"))))
-        self.screenImage2.setIconSet(QIconSet(QPixmap(locate("data", "display-manager/pics/screen.png"))))
+        icon = getIconSet("screen.png", KIcon.User)
+        self.screenImage1.setIconSet(icon)
+        self.screenImage2.setIconSet(icon)
 
         #returns a dict of outputs and resolutions.
         """
