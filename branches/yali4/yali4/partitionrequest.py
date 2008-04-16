@@ -50,7 +50,6 @@ class RequestList(list):
         yali4.sysutils.run("/sbin/udevtrigger")
         yali4.sysutils.run("/sbin/udevsettle", "--timeout=180")
 
-
         # then mount request
         # but mount root (/) first
         pt = parttype.root
@@ -326,7 +325,7 @@ class MountRequest(PartRequest):
 
         source = self.partition().getPath()
         target = consts.target_dir + pt.mountpoint
-        filesystem = self.partition().getFSName()
+        filesystem = self.partition().getFSYSName() or self.partition().getFSName()
 
         # print ">>>>>>",target
         if not os.path.isdir(target):

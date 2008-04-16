@@ -156,7 +156,7 @@ Have fun!
                 pt = req.partitionType()
 
                 path = "LABEL=%s" % pt.filesystem.getLabel(p)
-                fs = pt.filesystem._name
+                fs = pt.filesystem._sysname or pt.filesystem._name
                 mountpoint = pt.mountpoint
                 # TODO: consider merging mountoptions in filesystem.py
                 opts = ",".join([pt.filesystem.mountOptions(), pt.mountoptions])

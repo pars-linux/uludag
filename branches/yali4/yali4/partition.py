@@ -128,6 +128,9 @@ class Partition:
     def getFSName(self):
         return self._fsname
 
+    def getFSYSName(self):
+        return yali4.filesystem.get_filesystem(self.getFSName())._sysname
+
     def isResizable(self):
         fs = yali4.filesystem.get_filesystem(self.getFSName())
         try:

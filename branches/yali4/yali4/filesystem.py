@@ -53,6 +53,7 @@ def get_filesystem(name):
 class FileSystem:
     """ Abstract fileSystem class for other implementations """
     _name = None
+    _sysname = None
     _filesystems = []
     _implemented = False
     _resizable = False
@@ -86,6 +87,8 @@ class FileSystem:
 
     def getLabel(self, partition):
         """ Read filesystem label and return """
+        if not os.path.exists("/dev/disk/by-label"):
+            return None
         base = os.walk("/dev/disk/by-label/").next()
         path = partition.getPath()
         for part in base[2]:
@@ -377,6 +380,7 @@ class XFSFileSystem(FileSystem):
 class SwapFileSystem(FileSystem):
 
     _name = "linux-swap"
+    _sysname = "swap"
 
     def __init__(self):
         FileSystem.__init__(self)
@@ -435,6 +439,7 @@ class SwapFileSystem(FileSystem):
 class NTFSFileSystem(FileSystem):
 
     _name = "ntfs"
+    _sysname = "ntfs-3g"
 
     def __init__(self):
         FileSystem.__init__(self)
@@ -486,6 +491,7 @@ class NTFSFileSystem(FileSystem):
 class FatFileSystem(FileSystem):
 
     _name = "fat32"
+    _sysname = "vfat"
     _mountoptions = "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6"
 
     def __init__(self):
@@ -509,7 +515,7 @@ class FatFileSystem(FileSystem):
         p = os.popen(cmd)
         o = p.readlines()
         if p.close():
-            raise YaliException, "fat32 format failed: %s" % partition.getPath()
+            raise YaliException, "vfat format failed: %s" % partition.getPath()
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)

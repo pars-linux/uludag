@@ -132,9 +132,6 @@ class DiskList(QtGui.QWidget):
         self.updatePartEdit()
         self.checkRootPartRequest()
 
-        for req in ctx.partrequests:
-            ctx.debugger.log("REQ : %s - %s %s" % (req._partition.getPath(), req._partition.getMB(), req._partition_type.name))
-
     def checkRootPartRequest(self):
         ctx.mainScreen.disableNext()
         for req in ctx.partrequests:
@@ -276,12 +273,14 @@ class DiskList(QtGui.QWidget):
         if not t:
             return False
 
+        partition = self.partEdit.currentPart
         hasReq = ctx.partrequests.searchPartTypeAndReqType(t, 1)
 
         if hasReq:
-            self.partEdit.ui.information.setText(_("There is a request for the same Partition Type."))
-            self.partEdit.ui.information.show()
-            return False
+            if not hasReq._partition.getPath() == partition.getPath():
+                self.partEdit.ui.information.setText(_("There is a request for the same Partition Type."))
+                self.partEdit.ui.information.show()
+                return False
 
         def edit_requests(partition):
             """edit partition. just set the filesystem and flags."""
@@ -311,7 +310,6 @@ class DiskList(QtGui.QWidget):
             return True
 
         # Get selected Partition and the other informations from GUI
-        partition = self.partEdit.currentPart
         partitionNum = self.partEdit.currentPartNum
         device = partition.getDevice()
         size = self.partEdit.ui.partitionSize.value()
@@ -548,10 +546,7 @@ def getPartitionType(part, rt=1):
         # which is 1, defined in partitionrequest.py
         req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
         if req:
-            ctx.debugger.log("GPT #0: %s vs. %s " % (req.partition().getPath(), part.getPath()))
             if req.partition().getPath() == part.getPath():
-                ctx.debugger.log("GPT #1: %s " % part.getPath())
-                ctx.debugger.log("GPT #2: %s " % pt.name)
                 return pt
 
 class PartEdit(QtGui.QWidget):
