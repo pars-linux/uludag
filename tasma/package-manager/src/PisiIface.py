@@ -31,3 +31,6 @@ def get_repo_package(package):
 
 def humanize(size):
     return pisi.util.human_readable_size(size)
+
+def get_upgradable_packages():
+    return pisi.api.list_upgradable()

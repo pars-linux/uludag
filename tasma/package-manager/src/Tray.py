@@ -16,7 +16,7 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
-import pisi
+import PisiIface
 
 from Notifier import *
 from Icons import *
@@ -58,7 +58,7 @@ class Tray(KSystemTray):
     def showPopup(self):
         from sets import Set as set 
 
-        upgrades = pisi.api.list_upgradable()
+        upgrades = PisiIface.get_upgradable_packages()
         newUpgrades = set(upgrades) - set(self.lastUpgrades)
         self.lastUpgrades = upgrades
         if not len(upgrades) or not newUpgrades:
@@ -106,7 +106,7 @@ class Tray(KSystemTray):
 
     # stolen from Akregator
     def updateTrayIcon(self):
-        nofUpgrades = len(pisi.api.list_upgradable())
+        nofUpgrades = len(PisiIface.get_upgradable_packages())
         if not nofUpgrades:
             self.setPixmap(self.icon)
             return
