@@ -72,7 +72,8 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
         throw msg;
     }
 
-    //TODO: handle name owner changed signal
+    //connect all signals to this method
+    m_sessionBus.connect(this, SLOT(handleDBusSignals(const QDBusMessage&)));
 
     m_context = polkit_context_new();
     if (m_context == NULL)
@@ -155,10 +156,17 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
     }
 }
 
-void PolicyService::slotBusNameOwnerChanged(const QDBusMessage& msg)
+void PolicyService::handleDBusSignals(const QDBusMessage& msg)
 {
     //TODO: exit if not busy
-    Debug::printWarning(QString("Session bus name owner changed.").arg(msg.member()));
+
+    //Debug::printWarning(QString("Signal \"%1\" received from sender \"%2\"").arg(msg.member()).arg(msg.sender));
+
+    if (msg.member() == "org.freedesktop.DBus.NameOwnerChanged" && msg.count() == 3)
+    {
+        Debug::printWarning(QString("Session bus name owner changed: service name='%1', old owner='%2', new owner='%3'").arg(msg[0].toString()).arg(msg[1].toString()).arg(msg[2].toString()));
+
+    }
 }
 
 void PolicyService::sendDBusError(const QDBusMessage& message, const QString& errorstr, const QString& errortype)
@@ -224,12 +232,15 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 
     obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt(), message);
 
-   /*
-    reply << QVariant(auth);
+    QDBusMessage reply = QDBusMessage::methodReply(message);
+
+    //in order to send boolean values, a second integer parameter is required by QVariant class
+    reply << QVariant(true, 1);
 
     m_sessionBus.send(reply);
 
     m_authInProgress = false;
+   /*
 
     */
 }
@@ -485,15 +496,15 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 
     DBusError dbuserror;
     dbus_error_init (&dbuserror);
-    DBusConnection *bus = dbus_bus_get (DBUS_BUS_SYSTEM, &dbuserror);
-    if (bus == NULL) 
+    DBusConnection *systemBus = dbus_bus_get (DBUS_BUS_SYSTEM, &dbuserror);
+    if (systemBus == NULL) 
     {
         QString msg = QString("Could not connect to system bus.");
         Debug::printError(msg);
         throw msg;
     }
 
-    PolKitCaller *caller = polkit_caller_new_from_pid(bus, pid, &dbuserror);
+    PolKitCaller *caller = polkit_caller_new_from_pid(systemBus, pid, &dbuserror);
     if (caller == NULL)
     {
         QDBusError *qerror = new QDBusError((const DBusError *)&dbuserror);
