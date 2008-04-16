@@ -46,7 +46,7 @@ protected:
     void obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& );
 
 protected slots:
-    void slotBusNameOwnerChanged(const QDBusMessage& msg);
+    void handleDBusSignals(const QDBusMessage& msg);
     void contextWatchActivated(int fd);
     void grantWatchActivated(int fd);
     void quitSlot(void);
