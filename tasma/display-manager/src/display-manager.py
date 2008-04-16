@@ -48,7 +48,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.screenImage1.setIconSet(icon)
         self.screenImage2.setIconSet(icon)
 
-        #returns a dict of outputs and resolutions.
+        # returns a dict of outputs: resolutions.
         """
         {'LVDS': ['1280x800', '1280x768', '1024x768', '800x600', '640x480'],
         'S-video': ['800x600', '640x480']}
@@ -56,11 +56,15 @@ class MainWidget(dm_mainview.mainWidget):
         #self.screenModes = self.displayConfiguration.modes
         self.screenModes = {'LVDS': ['1280x800', '1280x768', '1024x768', '800x600', '640x480'], 'S-video': ['800x600', '640x480']}
 
-        #returns a list of outputs
+        # returns a list of outputs
         #['VGA-0', 'LVDS', 'S-video']
         #self.screenOutputs = self.displayConfiguration.outputs
 
         self.screenOutputs = ['LVDS', 'S-video']
+
+        # returns a dict of current outputs: resolutions
+        #self.currentModes = self.displayConfiguration.current_modes
+        self.currentModes = {'LVDS': '1280x800', 'S-video': '800x600', 'VGA-0': '800x600'}
 
         self.selectedScreen = 0
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
@@ -92,8 +96,11 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.currentOutput =  str(self.comboBoxOutput.currentText())
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
+
         for resolution in self.screenModes[self.currentOutput]:
             self.comboBoxResolution.insertItem(resolution)
+
+        self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
