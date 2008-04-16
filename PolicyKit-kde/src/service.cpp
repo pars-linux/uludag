@@ -43,9 +43,9 @@ PolicyService* PolicyService::m_self;
 
 PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 {
-    if (!KCmdLineArgs::parsedArgs()->isSet("no-exit"))
+    if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
     {
-        //exit, if no-exit option is not set
+        //exit, if noexit option is not set
         Debug::printDebug("no-exit option is not set, setting timer to exit in 30 seconds...");
         QTimer::singleShot(30000, this, SLOT(quitSlot(void)));
     }
