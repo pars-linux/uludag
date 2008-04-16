@@ -28,3 +28,6 @@ def get_installed_package(package):
 
 def get_repo_package(package):
     return pisi.db.packagedb.PackageDB().get_package(package)
+
+def humanize(size):
+    return pisi.util.human_readable_size(size)
