@@ -18,7 +18,7 @@ from kdecore import *
 from kdeui import KCursor, KDialog, KPushButton
 from khtml import *
 
-import pisi
+import PisiIface
 import Basket
 from Icons import *
 
@@ -160,7 +160,7 @@ class BasketDialog(KDialog):
             self.extraLabel.hide()
             self.depHBox.hide()
 
-        tpl = pisi.util.human_readable_size(self.basket.getBasketSize())
+        tpl = PisiIface.humanize(self.basket.getBasketSize())
         size = "%.1f %s" % (tpl[0], tpl[1])
         self.totalSizeLabel.setText(i18n("Total Size: <b>%1</b>").arg(size))
 
@@ -206,7 +206,7 @@ class BasketDialog(KDialog):
         for app in packages:
             package = self.basket.getPackage(app)
             size = self.basket.getPackageSize(package)
-            tpl = pisi.util.human_readable_size(size)
+            tpl = PisiIface.humanize(size)
             size = "%.0f %s" % (tpl[0], tpl[1])
             iconPath = getIconPath(package.icon)
             summary = package.summary
