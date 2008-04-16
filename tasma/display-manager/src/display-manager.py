@@ -72,11 +72,15 @@ class MainWidget(dm_mainview.mainWidget):
         #self.currentModes = self.displayConfiguration.current_modes
         self.currentModes = {'LVDS': '1280x800', 'S-video': '800x600', 'VGA-0': '800x600'}
 
+        #set signals
         self.selectedScreen = 0
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setResolutions)
+        self.connect(self.buttonCancel, SIGNAL("clicked()"),self.slotExit)
+        self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
+        self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
 
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
@@ -107,6 +111,15 @@ class MainWidget(dm_mainview.mainWidget):
             self.comboBoxResolution.insertItem(resolution)
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+
+    def slotExit(self):
+        sys.exit(1)
+
+    def slotApply(self):
+        pass
+
+    def slotHelp(self):
+        pass
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
