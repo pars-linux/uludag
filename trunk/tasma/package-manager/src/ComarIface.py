@@ -10,33 +10,66 @@
 #
 # Please read the COPYING file
 
-from qt import QSocketNotifier, QMutex, SIGNAL
-import comar
+from qt import QMutex, SIGNAL
+
+# DBus
+import dbus
+import dbus.mainloop.qt3
+
+from handler import CallHandler
 
 class ComarIface:
     def __init__(self,parent):
         self.parent = parent
-        self.com = comar.Link()
+        self.setupBusses()
 
         # tray and package-manager synchronization
         self.com_lock = QMutex()
 
         # Notification
-        self.com.ask_notify("System.Manager.progress")
-        self.com.ask_notify("System.Manager.error")
-        self.com.ask_notify("System.Manager.warning")
-        self.com.ask_notify("System.Manager.info")
-        self.com.ask_notify("System.Manager.notify")
-        self.com.ask_notify("System.Manager.finished")
-        self.com.ask_notify("System.Manager.updatingRepo")
+        self.listenSignals()
 
-        self.notifier = QSocketNotifier(self.com.sock.fileno(), QSocketNotifier.Read)
+    def setupBusses(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException:
+            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            return False
+        return True
 
-        self.parent.connect(self.notifier, SIGNAL("activated(int)"), self.parent.slotComar)
+    def listenSignals(self):
+        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Manager", member_keyword="signal", path_keyword="path")
+
+    def handleSignals(self, *args, **kwargs):
+        path = kwargs["path"]
+        signal = kwargs["signal"]
+        if not path.startswith("/package/"):
+            return
+        script = path[9:]
+
+    def busError(self, exception):
+        KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
+        self.setupBusses()
+
+    def comarError(self, exception):
+        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+
+    def callMethod(self, method, action, handler=None, *args):
+        ch = CallHandler("pisi", "System.Manager", method,
+                         action,
+                         self.parent.winId(),
+                         self.busSys, self.busSes)
+        ch.registerError(self.comarError)
+        ch.registerAuthError(self.comarError)
+        ch.registerDBusError(self.busError)
+        if handler:
+            ch.registerDone(handler)
+        ch.call(*args)
 
     def installPackage(self, package):
         self.com_lock.lock()
-        self.com.call("System.Manager.installPackage", ["package",package])
+        self.callMethod("installPackage", "tr.org.pardus.comar.system.manager.installpackage", handler=None, package)
 
     def removePackage(self, package):
         self.com_lock.lock()

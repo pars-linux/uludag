@@ -140,6 +140,8 @@ def main():
     global kapp
     global packageToInstall
 
+    dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
+
     about_data = AboutData()
     KCmdLineArgs.init(sys.argv,about_data)
     KCmdLineArgs.addCmdLineOptions ([("install <package>", I18N_NOOP("Package to install")),

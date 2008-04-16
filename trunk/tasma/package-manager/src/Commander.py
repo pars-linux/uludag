@@ -26,7 +26,7 @@ class Commander(QObject):
         self.parent = parent
 
         try:
-            self.comar = ComarIface.ComarIface(self)
+            self.comar = ComarIface.ComarIface(self.parent)
         except:
             parent.showErrorMessage("Cannot connect to Comar daemon")
 
