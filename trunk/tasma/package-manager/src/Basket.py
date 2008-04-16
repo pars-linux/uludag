@@ -11,7 +11,7 @@
 # Please read the COPYING file.
 
 from sets import Set as set
-import pisi
+import PisiIface
 
 (install_state, remove_state, upgrade_state) = range(3)
 
@@ -51,13 +51,11 @@ class Basket:
             return
 
         if self.state == install_state:
-            base = pisi.api.get_base_upgrade_order(pkgs)
-            allPackages = pisi.api.get_install_order(set(base+pkgs))
+            allPackages = PisiIface.get_install_order(pkgs)
         elif self.state == remove_state:
-            allPackages = pisi.api.get_remove_order(pkgs)
+            allPackages = PisiIface.get_remove_order(pkgs)
         elif self.state == upgrade_state:
-            base = pisi.api.get_base_upgrade_order(pkgs)
-            allPackages = pisi.api.get_upgrade_order(set(base+pkgs))
+            allPackages = PisiIface.get_upgrade_order(pkgs)
 
         self.extraPackages = list(set(allPackages) - set(pkgs))
 
@@ -78,6 +76,6 @@ class Basket:
 
     def getPackage(self, package):
         if self.state == remove_state:
-            return pisi.db.installdb.InstallDB().get_package(package)
+            return PisiIface.get_installed_package(package)
         else:
-            return pisi.db.packagedb.PackageDB().get_package(package)
+            return PisiIface.get_repo_package(package)
