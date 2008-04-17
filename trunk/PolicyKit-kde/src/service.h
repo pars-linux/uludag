@@ -12,7 +12,7 @@
 #ifndef SERVICE_H
 #define SERVICE_H
 
-#define POLICYKITKDE_MAX_TRY 1
+#define POLICYKITKDE_MAX_TRY 3
 
 #include <csignal>
 
