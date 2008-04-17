@@ -258,14 +258,14 @@ void PolicyService::contextWatchActivated(int fd)
 
 int PolicyService::polkit_context_add_watch(PolKitContext *context, int fd)
 {
-    Debug::printDebug("polkit_context_add_watch: Adding watch...");
+    Debug::printDebug(QString("polkit_context_add_watch:: Adding watch, fd=%1").arg(fd));
 
     QSocketNotifier *notify = new QSocketNotifier(fd, QSocketNotifier::Read);
     m_self->m_contextwatches[fd] = notify;
 
     notify->connect(notify, SIGNAL(activated(int)), m_self, SLOT(contextWatchActivated(int)));
 
-    Debug::printDebug("polkit_context_add_watch: Watch added");
+    Debug::printDebug(QString("polkit_context_add_watch:: Watch added, fd=%1").arg(fd));
 
     // policykit requires a result != 0
     return 1;
@@ -296,7 +296,7 @@ void PolicyService::grantWatchActivated(int fd)
 int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
 {
     Q_ASSERT(m_self->m_grant != NULL);
-    Debug::printDebug("polkit_grant_add_watch: Adding watch...");
+    Debug::printDebug(QString("polkit_grant_add_watch: Adding watch, fd=%1").arg(fd));
 
     QSocketNotifier *notify = new QSocketNotifier(fd, QSocketNotifier::Read);
     m_self->m_grantwatches[fd] = notify;
@@ -310,7 +310,7 @@ int PolicyService::polkit_grant_add_watch(PolKitGrant *grant, int fd)
 
 int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
 {
-    Debug::printDebug("polkit_grant_add_child_watch: Addind watch");
+    Debug::printDebug(QString("polkit_grant_add_child_watch: Adding watch, fd=%1").arg(pid));
 
     //TODO: Do this in a KDE/Qt way
     struct sigaction *sigac = (struct sigaction *)calloc(1, sizeof(struct sigaction));
@@ -339,14 +339,14 @@ void PolicyService::polkit_grant_remove_watch(PolKitGrant *grant, int fd)
 {
     Q_ASSERT(m_self->m_grant != NULL);
 
-    Debug::printDebug("polkit_grant_remove_watch: Removing watch...");
+    Debug::printDebug(QString("polkit_grant_remove_watch: Removing watch, fd=%1").arg(fd));
     Q_ASSERT(m_self->m_grantwatches.contains(fd));
 
     QSocketNotifier* notify = m_self->m_grantwatches[fd];
     delete notify;
 
     m_self->m_grantwatches.remove(fd);
-    Debug::printDebug("polkit_grant_remove_watch: Watch removed");
+    Debug::printDebug(QString("polkit_grant_remove_watch: Watch removed, fd=%1").arg(fd));
 }
 
 ////////////////////// polkit-grant functions ////////////////////////////
@@ -546,6 +546,10 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
                                    polkit_grant_done,
                                    NULL);
 
+        // explicitly set to false before every try
+        m_gainedPrivilege = false;
+        m_inputBogus = false;
+
         if (!polkit_grant_initiate_auth (m_grant, action, caller)) 
         {
             QString msg = QString("Could not initialize grant");
@@ -557,23 +561,25 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         // polkit_grant_done must return before the following privilege check
         QApplication::eventLoop()->exec();
 
-        if (m_gainedPrivilege)
+        if (!m_gainedPrivilege && !m_inputBogus)
         {
-            Debug::printDebug("obtain_authorization: Authentication succeeded, sending DBus reply...");
-
-            //send dbus reply
-            QDBusMessage reply = QDBusMessage::methodReply(messageToReply);
-
-            reply << QVariant(m_gainedPrivilege);
-            m_sessionBus.send(reply);
-
-            break;
+            Debug::printDebug("obtain_authorization: Authentication failure, trying again...");
+            polkit_grant_unref (m_grant);
         }
         else
-            Debug::printDebug("obtain_authorization: Authentication failed, trying again...");
+            break;
     }
 
-    Debug::printDebug("obtain_authorization returning");
+    if (m_grant)
+        polkit_grant_unref (m_grant);
+
+    Debug::printDebug(QString("obtain_authorization returning %1").arg(m_gainedPrivilege));
+
+    //send dbus reply
+    QDBusMessage reply = QDBusMessage::methodReply(messageToReply);
+
+    reply << QVariant(m_gainedPrivilege, 1);
+    m_sessionBus.send(reply);
 }
 
 #include "service.moc"
