@@ -553,6 +553,8 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             throw msg;
         }
 
+        // This workaround used for to aviod ourself from a race condition,
+        // polkit_grant_done must return before the following privilege check
         QApplication::eventLoop()->exec();
 
         if (m_gainedPrivilege)
