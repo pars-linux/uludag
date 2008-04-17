@@ -317,9 +317,7 @@ class MountRequest(PartRequest):
         self._options = options
 
     def applyRequest(self):
-
         pt = self.partitionType()
-
         if not pt.mountpoint: # do nothing
             return
 
@@ -333,11 +331,11 @@ class MountRequest(PartRequest):
 
         yali4.sysutils.mount(source, target, filesystem)
 
-        mtab_entry = "%s %s %s rw 0 0\n" % (source,
-                                            target,
-                                            filesystem)
-        open("/etc/mtab", "a").write(mtab_entry)
-        # print mtab_entry
+        if pt.needsmtab:
+            mtab_entry = "%s %s %s rw 0 0\n" % (source,
+                                                target,
+                                                filesystem)
+            open("/etc/mtab", "a").write(mtab_entry)
 
         PartRequest.applyRequest(self)
 

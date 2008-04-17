@@ -22,6 +22,7 @@ import yali4.filesystem
 
 class PartitionType:
     filesystem = None
+    needsmtab = True
     ##
     # is equal
     # @param rhs: PartitionType
@@ -74,6 +75,7 @@ class ArchivePartitionType(PartitionType):
     filesystem = yali4.filesystem.Ext3FileSystem()
     mountpoint = "/mnt/archive"
     mountoptions = "noatime"
+    needsmtab = False
     parted_type = parted.PARTITION_PRIMARY
     parted_flags = []
     label = "ARCHIVE"

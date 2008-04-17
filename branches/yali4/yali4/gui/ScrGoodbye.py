@@ -211,6 +211,12 @@ don't you?
                                                     win_fs)
                         continue
 
+        try:
+            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
+            yali4.sysutils.umount(ctx.consts.target_dir + "/mnt/archive")
+        except:
+            ctx.debugger.log("Umount Failed ")
+
         # finally install it
         return loader.install_grub(ctx.installData.bootLoaderDev)
 
