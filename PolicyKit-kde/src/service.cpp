@@ -455,6 +455,7 @@ void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_p
     Debug::printDebug(QString("In polkit_grant_done: gained_privilege=%1 invalid_data=%2").arg(gained_privilege).arg(invalid_data));
     m_self->m_gainedPrivilege = gained_privilege;
     m_self->m_inputBogus= invalid_data;
+    QApplication::eventLoop()->exit();
 }
 
 void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& messageToReply)
@@ -551,6 +552,8 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             Debug::printError(msg);
             throw msg;
         }
+
+        QApplication::eventLoop()->exec();
 
         if (m_gainedPrivilege)
         {

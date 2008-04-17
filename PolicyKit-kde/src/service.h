@@ -22,6 +22,7 @@
 #include <qobject.h>
 #include <qmap.h>
 #include <qsocketnotifier.h>
+#include <qeventloop.h>
 
 #include "qdbusconnection.h"
 #include "qdbusobject.h"
