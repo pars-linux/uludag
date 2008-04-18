@@ -87,6 +87,7 @@ about disk partitioning.
         self.connect(self.ui.accept_auto_2, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
         self.connect(self.ui.device_list, SIGNAL("currentRowChanged(int)"),self.slotDeviceChanged)
+        self.slotDeviceChanged(0)
 
     def shown(self):
         self.scanPartitions()

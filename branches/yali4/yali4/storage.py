@@ -348,9 +348,9 @@ class Device:
 
     ##
     # add a partition starting from a given geom...
-    def addPartitionFromStart(self, type, fs, start, size_mb):
+    def addPartitionFromStart(self, type, fs, start, size_mb, flags = []):
         size = int(size_mb * MEGABYTE / self._sector_size)
-        self.addPartitionStartEnd(type, fs, start, start + size)
+        return self.addPartitionStartEnd(type, fs, start, start + size, flags)
 
     ##
     # Add (create) a new partition to the device from start to end.
@@ -451,8 +451,9 @@ class Device:
 
         self.deletePartition(part)
         self.commit()
-        self.addPartitionFromStart(ptype, fs_name, start, size_mb)
+        np = self.addPartitionFromStart(ptype, fs_name, start, size_mb)
         self.commit()
+        return np
 
     def commit(self):
         self._disk.commit()

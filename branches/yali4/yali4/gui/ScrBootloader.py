@@ -26,6 +26,7 @@ import yali4.storage
 import yali4.bootloader
 import yali4.partitionrequest as request
 import yali4.partitiontype as parttype
+from yali4.parteddata import *
 
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
@@ -155,8 +156,28 @@ loader.
         _part = ctx.installData.autoPartPartition
         part = _part["partition"]
 
-        dev.resizePartition(part._fsname, int(_part["newSize"]/2), part)
-        newPart = dev.getPartition(part.getMinor() + 1)
+        newPartSize = int(_part["newSize"]/2)
+        ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
+        ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
+        _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+        ctx.debugger.log("UA: Resize finished.")
+        time.sleep(2)
+        np = dev.getPartition(_np.num)
+
+        if np.isLogical():
+            ptype = PARTITION_LOGICAL
+        else:
+            ptype = PARTITION_PRIMARY
+
+        newStart = _np.geom.end
+        ctx.debugger.log("UA: newStart : %s " % newStart)
+        _newPart = dev.addPartitionFromStart(ptype,
+                                             "ext3",
+                                             newStart,
+                                             newPartSize,
+                                             parttype.root.parted_flags)
+        dev.commit()
+        newPart = dev.getPartition(_newPart.num)
         ctx.mainScreen.processEvents()
 
         # make partition requests
@@ -180,11 +201,9 @@ loader.
             ctx.partrequests.append(request.SwapFileRequest(root_part_req.partition(),
                                     root_part_req.partitionType()))
 
-
     def execute(self):
 
         w = WarningWidget(self)
-
         # We need different warning messages for Auto and Manual Partitioning
         if ctx.installData.autoPartDev:
             # show confirmation dialog
