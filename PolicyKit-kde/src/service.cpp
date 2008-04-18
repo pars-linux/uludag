@@ -454,8 +454,6 @@ void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_p
 
 void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& messageToReply)
 {
-    PolKitError *error = NULL;
-
     PolKitAction *action = polkit_action_new();
     if (action == NULL)
     {
