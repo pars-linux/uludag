@@ -152,28 +152,18 @@ loader.
 
     def useAvail(self):
         dev = ctx.installData.autoPartDev
-        part = ctx.installData.autoPartPartition
-        
-        dev.commit()
+        _part = ctx.installData.autoPartPartition
+        part = _part["partition"]
 
-        ctx.mainScreen.processEvents()
-
-        p = dev.addPartition(None,
-                             parttype.root.parted_type,
-                             parttype.root.filesystem,
-                             dev.getFreeMB(),
-                             parttype.root.parted_flags)
-        p = dev.getPartition(p.num) # get partition.Partition
-
-        # create the partition
-        dev.commit()
+        dev.resizePartition(part._fsname, int(_part["newSize"]/2), part)
+        newPart = dev.getPartition(part.getMinor() + 1)
         ctx.mainScreen.processEvents()
 
         # make partition requests
-        ctx.partrequests.append(request.MountRequest(p, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(p, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(p, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(p, parttype.root))
+        ctx.partrequests.append(request.MountRequest(newPart, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(newPart, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(newPart, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(newPart, parttype.root))
 
     def checkSwap(self):
         # check swap partition, if not present use swap file
@@ -232,6 +222,7 @@ all your present data on the selected disk will be lost.</p>
                 ctx.partrequests.applyAll()
             elif ctx.installData.autoPartMethod == methodUseAvail:
                 info.show()
+                info.updateMessage(_("Resizing ..."))
                 ctx.mainScreen.processEvents()
                 self.useAvail()
                 time.sleep(2)

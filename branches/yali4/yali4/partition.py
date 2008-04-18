@@ -168,8 +168,10 @@ class Partition:
     def getGB(self):
         return self.getMB() / parteddata.KILOBYTE
 
-    def getSizeStr(self):
+    def getSizeStr(self, manual=None):
         gb = self.getGB()
+        if manual:
+            gb = manual / parteddata.KILOBYTE
         if gb > 1:
             return "%0.2f GB" % gb
         else:
@@ -180,7 +182,6 @@ class Partition:
     # @param: Partition
     # returns: Boolean
     def __eq__(self, rhs):
-#        return self.getPath() == rhs.getPath()
         return self.getStart() == rhs.getStart() and self.getEnd() == rhs.getEnd()
 
 ##

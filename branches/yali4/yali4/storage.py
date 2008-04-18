@@ -534,7 +534,8 @@ def getOrderedDiskList():
     edd_keys.sort()
     for bios_num in edd_keys:
         edd_sig = edd_list[bios_num]
-        sortedList.append(mbr_list[edd_sig])
+        if mbr_list.has_key(edd_sig):
+            sortedList.append(mbr_list[edd_sig])
     return sortedList
 
 ##

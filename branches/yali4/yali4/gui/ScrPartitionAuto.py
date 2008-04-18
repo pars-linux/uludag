@@ -99,7 +99,7 @@ about disk partitioning.
         self.resizablePartitions.sort(sortBySize)
         for partition in self.resizablePartitions:
             if partition["newSize"] / 2 >= ctx.consts.min_root_size:
-                self.arp.append(partition["partition"])
+                self.arp.append(partition)
         if len(self.arp) == 0:
             self.ui.accept_auto_1.setEnabled(False)
             # self.ui.accept_auto_2.toggle()
@@ -138,7 +138,12 @@ about disk partitioning.
 
     def execute(self):
         ctx.installData.autoPartDev = None
-
+        if len(self.arp) > 1:
+            _tmp = []
+            for part in self.arp:
+                if str(part["partition"].getPath()).startswith(self.device.getPath()):
+                    _tmp.append(part)
+            self.arp = _tmp
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
             if self.ui.accept_auto_1.isChecked() and len(self.arp) > 1:
                 question = AutoPartQuestionWidget(self,self.arp)
@@ -183,8 +188,8 @@ about disk partitioning.
 class DeviceItem(QtGui.QListWidgetItem):
     def __init__(self, parent, dev):
         text = u"%s - %s (%s)" %(dev.getModel(),
-                                dev.getName(),
-                                dev.getSizeStr())
+                                 dev.getName(),
+                                 dev.getSizeStr())
         QtGui.QListWidgetItem.__init__(self,text,parent)
         self._dev = dev
 
