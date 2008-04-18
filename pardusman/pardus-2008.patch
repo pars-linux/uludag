@@ -58,7 +58,7 @@ Index: src/maker.py
          chrun("/sbin/update-environment")
          chroot_comar(image_dir)
 -        chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
-+        chrun("/usr/bin/hav call baselayout System.Package postInstall '' '' '' ''")
++        chrun("/usr/bin/pisi configure-pending baselayout")
          chrun("/usr/bin/pisi configure-pending")
          
 -        chrun("hav call User.Manager.setUser uid 0 password pardus")
