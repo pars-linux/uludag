@@ -74,7 +74,7 @@ class ResizeWidget(QtGui.QWidget):
 
 class AutoPartQuestionWidget(QtGui.QWidget):
 
-    def __init__(self, rootWidget):
+    def __init__(self, rootWidget, partList):
         QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
         self.ui = Ui_autoPartQuestion()
         self.ui.setupUi(self)
@@ -85,14 +85,43 @@ class AutoPartQuestionWidget(QtGui.QWidget):
                     border-radius:8px;
                 }
                 QWidget#autoPartQuestion {
-                    background-image: url(:/gui/pics/trans.png); 
+                    background-image: url(:/gui/pics/trans.png);
                 }
         """)
         self.rootWidget = rootWidget
-        self.resize(ctx.mainScreen.ui.size())
+
+        self.connect(self.ui.bestChoice, SIGNAL("clicked()"), self.slotDisableList)
+        self.connect(self.ui.userChoice, SIGNAL("clicked()"), self.slotEnableList)
         self.connect(self.ui.useSelectedButton, SIGNAL("clicked()"), self.slotUseSelected)
 
+        for part in partList:
+            pi = PartitionItem(self.ui.partitionList, part)
+
+        self.ui.bestChoice.toggle()
+        self.slotDisableList()
+        self.resize(ctx.mainScreen.ui.size())
+
+    def slotEnableList(self):
+        self.ui.partitionList.setEnabled(True)
+
+    def slotDisableList(self):
+        self.ui.partitionList.setEnabled(False)
+
     def slotUseSelected(self):
-        self.rootWidget.execute_(True)
         self.hide()
+        ctx.mainScreen.processEvents()
+        self.rootWidget.execute_(True)
+
+class PartitionItem(QtGui.QListWidgetItem):
+
+    def __init__(self, parent, part):
+        text = "[%s (%s)] %s - %s" %(part.getDevice().getModel(),
+                                part.getDevice().getName(),
+                                part.getFSLabel() or _("Partition %d") % part.getMinor(),
+                                part.getSizeStr())
+        QtGui.QListWidgetItem.__init__(self, text, parent)
+        self.part = part
+
+    def getData(self):
+        return self.part
 

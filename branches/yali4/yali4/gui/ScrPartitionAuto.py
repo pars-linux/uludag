@@ -102,14 +102,14 @@ about disk partitioning.
                 self.arp.append(partition["partition"])
         if len(self.arp) == 0:
             self.ui.accept_auto_1.setEnabled(False)
-            self.ui.accept_auto_2.toggle()
+            # self.ui.accept_auto_2.toggle()
         elif len(self.arp) == 1:
             self.autoPartPartition = self.arp[0]
         ctx.mainScreen.disableNext()
         self.updateUI()
 
         # Remove it later.
-        self.ui.accept_auto_1.setEnabled(False)
+        # self.ui.accept_auto_1.setEnabled(False)
 
     def scanPartitions(self):
         self.resizablePartitions = []
@@ -141,14 +141,14 @@ about disk partitioning.
 
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():
             if self.ui.accept_auto_1.isChecked() and len(self.arp) > 1:
-                question = AutoPartQuestionWidget(self)
+                question = AutoPartQuestionWidget(self,self.arp)
                 question.show()
                 ctx.mainScreen.moveInc = 0
             else:
                 self.execute_()
         return True
 
-    def execute_(self,move=False):
+    def execute_(self, move=False):
         ctx.installData.autoPartDev = self.device
         ctx.installData.autoPartPartition = self.autoPartPartition
         ctx.autoInstall = True

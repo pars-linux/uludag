@@ -150,6 +150,31 @@ loader.
         ctx.partrequests.append(request.LabelRequest(p, parttype.root))
         ctx.partrequests.append(request.SwapFileRequest(p, parttype.root))
 
+    def useAvail(self):
+        dev = ctx.installData.autoPartDev
+        part = ctx.installData.autoPartPartition
+        
+        dev.commit()
+
+        ctx.mainScreen.processEvents()
+
+        p = dev.addPartition(None,
+                             parttype.root.parted_type,
+                             parttype.root.filesystem,
+                             dev.getFreeMB(),
+                             parttype.root.parted_flags)
+        p = dev.getPartition(p.num) # get partition.Partition
+
+        # create the partition
+        dev.commit()
+        ctx.mainScreen.processEvents()
+
+        # make partition requests
+        ctx.partrequests.append(request.MountRequest(p, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(p, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(p, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(p, parttype.root))
+
     def checkSwap(self):
         # check swap partition, if not present use swap file
         rt = request.mountRequestType
@@ -194,11 +219,11 @@ all your present data on the selected disk will be lost.</p>
 
         # Auto Partitioning
         if ctx.installData.autoPartDev:
+            ctx.use_autopart = True
             if ctx.installData.autoPartMethod == methodEraseAll:
                 info.show()
                 ctx.mainScreen.processEvents()
                 ctx.partrequests.remove_all()
-                ctx.use_autopart = True
                 self.autopartDevice()
                 time.sleep(2)
                 info.updateMessage(_("Formatting ..."))
@@ -206,7 +231,14 @@ all your present data on the selected disk will be lost.</p>
                 self.checkSwap()
                 ctx.partrequests.applyAll()
             elif ctx.installData.autoPartMethod == methodUseAvail:
-                pass
+                info.show()
+                ctx.mainScreen.processEvents()
+                self.useAvail()
+                time.sleep(2)
+                info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
+                self.checkSwap()
+                ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:

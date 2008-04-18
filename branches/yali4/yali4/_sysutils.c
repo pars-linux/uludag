@@ -77,19 +77,18 @@ PyDoc_STRVAR(eject__doc__,
 static PyObject*
 _sysutils_eject(PyObject *self, PyObject *args)
 {
-    int fd;
+    int fd=-1;
     const char *mount_point;
 
     if (!PyArg_ParseTuple(args, "s", &mount_point))
-	goto failed;
-    
+        goto failed;
+
     fd = open(mount_point, O_RDONLY|O_NONBLOCK, 0);
     if (fd == -1)
-	goto failed;
+        goto failed;
 
     if (ioctl(fd, CDROMEJECT, 0))
-	goto failed;
-
+        goto failed;
 
     close(fd);
     Py_INCREF(Py_True);
@@ -97,7 +96,7 @@ _sysutils_eject(PyObject *self, PyObject *args)
 
 failed:
     if (fd != -1)
-	close(fd);
+        close(fd);
     Py_INCREF(Py_False);
     return Py_False;
 }
