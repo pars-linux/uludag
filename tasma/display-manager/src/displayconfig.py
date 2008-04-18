@@ -81,3 +81,21 @@ class DisplayConfig:
         if self._randr12:
             if self.desktop_setup == "single":
                 run("xrandr", "--output", self.primaryScr, "--mode", self.current_modes[self.primaryScr])
+
+            elif self.desktop_setup == "clone":
+                run("xrandr",
+                        "--output", self.primaryScr,
+                        "--mode",   self.current_modes[self.primaryScr],
+                        "--output", self.secondaryScr,
+                        "--mode",   self.current_modes[self.secondaryScr],
+                        "--same-as", self.primaryScr
+                    )
+
+            elif self.desktop_setup == "horizontal":
+                run("xrandr",
+                        "--output", self.primaryScr,
+                        "--mode",   self.current_modes[self.primaryScr],
+                        "--output", self.secondaryScr,
+                        "--mode",   self.current_modes[self.secondaryScr],
+                        "--right-of", self.primaryScr
+                    )
