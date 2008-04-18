@@ -12,6 +12,10 @@
 #ifndef AUTHDIALOG_H
 #define AUTHDIALOG_H
 
+#include <qdatetime.h>
+#include <qimage.h>
+#include <qpixmap.h>
+
 #include <polkit/polkit.h>
 
 #include "authdialogui.h"
@@ -31,12 +35,21 @@ public:
     void setHeader(const QString &);
     void setPrompt(const QString &);
 
+private slots:
+    void slotPaintEffect();
+    void slotGrab();
+
 private:
     void showUsersCombo();
     void hideUsersCombo();
     void setPasswordFor(bool set, const QString& user = NULL);
     PolKitResult m_type;
     QStringList m_users;
+
+    int m_currentY;
+    QImage m_grabbed;
+    QPixmap m_root;
+    QTime m_passed;
 };
 
 #endif // AUTHDIALOG_H

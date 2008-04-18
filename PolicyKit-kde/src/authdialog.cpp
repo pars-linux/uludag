@@ -12,19 +12,28 @@
 #include "authdialog.h"
 #include "authdialog.moc"
 
-#include <qlabel.h>
-#include <qstring.h>
-#include <qnamespace.h>
 #include <qcheckbox.h>
+#include <qgroupbox.h>
+#include <qimage.h>
+#include <qlabel.h>
+#include <qnamespace.h>
+#include <qpixmap.h>
+#include <qstring.h>
+#include <qtimer.h>
 
-#include <kglobal.h>
-#include <klocale.h>
-#include <kiconloader.h>
 #include <kcombobox.h>
-#include <kpushbutton.h>
+#include <kglobal.h>
+#include <kiconloader.h>
+#include <kimageeffect.h>
 #include <klineedit.h>
+#include <klocale.h>
+#include <kpixmap.h>
+#include <kpushbutton.h>
 
 #include "debug.h"
+
+static const int maxFaded = 2300;
+static const int slice = 20;
 
 /* 
  *  Constructs a AuthDialog which is a child of 'parent', with the 
@@ -34,15 +43,29 @@
  *  TRUE to construct a modal dialog.
  */
 AuthDialog::AuthDialog(QString &header)
-    : AuthDialogUI( NULL, NULL, true, Qt::WStyle_StaysOnTop)
+    : AuthDialogUI( NULL, NULL, true, Qt::WType_Popup),
+        m_currentY( 0 )
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
     pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
     pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
 
+    lePassword->setFocus();
     cbUsers->hide();
     setHeader(header);
+
+    setBackgroundMode(QWidget::NoBackground);
+    QRect geo(QApplication::desktop()->geometry());
+    setGeometry(geo);
+    int dep = QPixmap::defaultDepth();
+    if (dep == 24 || dep == 16)
+    {
+        dep = 32;
+    }
+    m_grabbed.create(geo.size(), dep);
+    QTimer::singleShot(0, this, SLOT( slotGrab()));
+    m_root.resize(width(), height());
 }
 
 AuthDialog::~AuthDialog()
@@ -162,4 +185,81 @@ void AuthDialog::setType(PolKitResult res)
 
     //set content message according to m_type
     setContent();
+}
+
+void AuthDialog::slotGrab()
+{
+    // we start the passed early
+    if (m_currentY * 4 >= height() * 3 && m_passed.isNull())
+        m_passed.start();
+
+    if (m_currentY >= height()) 
+    {
+        slotPaintEffect();
+        return;
+    }
+
+    QImage img;
+    img = QPixmap::grabWindow(qt_xrootwin(), 0, m_currentY, width(), slice);
+    bitBlt(&m_grabbed, 0, m_currentY, &img);
+    m_currentY += slice;
+    QTimer::singleShot(0, this, SLOT(slotGrab()));
+}
+
+void AuthDialog::slotPaintEffect()
+{
+    const unsigned int shift_scale = 10;
+    const unsigned int scale = 1 << shift_scale;
+
+    int current_fade = QMIN(scale, m_passed.elapsed() * scale / maxFaded);
+
+    QImage copy;
+
+    if (m_grabbed.depth() == 32) 
+    {
+        copy.create(m_grabbed.size(), m_grabbed.depth());
+        unsigned int pixels = m_grabbed.width() * m_grabbed.height();
+        QRgb *orig = (QRgb*)m_grabbed.bits();
+        QRgb *dest = (QRgb*)copy.bits();
+        QColor clr;
+
+        int r, g, b, tg;
+
+        for (unsigned int i = 0; i < pixels; ++i)
+        {
+            r = qRed(orig[i]);
+            g = qGreen(orig[i]);
+            b = qBlue(orig[i]);
+
+            // qGray formla
+            tg = (r*11 + g*16 + b*5)/32;
+            // make it a bit darker than gray
+            tg = tg - tg / 5;
+
+            r = ((r << shift_scale) + current_fade * (tg - r)) >> shift_scale;
+            g = ((g << shift_scale) + current_fade * (tg - g)) >> shift_scale;
+            b = ((b << shift_scale) + current_fade * (tg - b)) >> shift_scale;
+
+            dest[i] = qRgb(r, g, b);
+        }
+    } 
+    else 
+    {
+        // old code - now used for 8bit
+        copy = m_grabbed;
+        copy = KImageEffect::desaturate(copy, current_fade);
+        copy = KImageEffect::fade(copy, 0.1 * current_fade, Qt::black);
+    }
+    bitBlt( this, 0, 0, &copy);
+
+    if (current_fade >= scale)
+    {
+        if (backgroundMode() == QWidget::NoBackground)
+        {
+            setBackgroundMode(QWidget::NoBackground);
+            setBackgroundPixmap(copy);
+        }
+        return;
+    }
+    QTimer::singleShot(0, this, SLOT(slotPaintEffect()));
 }

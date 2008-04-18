@@ -6,7 +6,6 @@
 * Fix disabling of keep session label
 * Check one_shot stuff
 * Add keyboard and mouse grab during dialog
-* Add screen darkening and window shaking stuff
 * Control XID and add 'transient for'
 * Add vendor icon support
 * Check "Password: " prompt like polkit-gnome
