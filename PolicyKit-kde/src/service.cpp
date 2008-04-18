@@ -145,7 +145,13 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
         }
         else
         {
+            try {
             handleObtainAuthorization(message);
+            }
+            catch(QString exc)
+            {
+                return false;
+            }
             return true;
         }
     }
@@ -232,18 +238,6 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
     //m_authInProgress = true;
 
     obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt(), message);
-
-    QDBusMessage reply = QDBusMessage::methodReply(message);
-
-    //in order to send boolean values, a second integer parameter is required by QVariant class
-    reply << QVariant(true, 1);
-
-    m_sessionBus.send(reply);
-
-    m_authInProgress = false;
-   /*
-
-    */
 }
 
 /////////// PolKit IO watch functions ////////////////
