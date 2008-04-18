@@ -40,7 +40,7 @@ class Widget(MouseWidget, ScreenWidget):
         # set texts
         self.setCaption(i18n("Mouse"))
         self.checkReverse.setText(i18n("Reverse scroll"))
-        self.mouseLabel.setText(i18n("<p align=\"left\">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device bu choosing the \"Left handed\" option below. You can also select default click behaviour.</p>"))
+        self.mouseLabel.setText(i18n("<p align=\"left\">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the \"Left handed\" option below. You can also select default click behaviour.</p>"))
         self.buttonOrderGroup.setTitle(i18n("Button Order"))
         self.leftHanded.setText(i18n("Left Hand"))
         self.rightHanded.setText(i18n("Right Hand"))
@@ -50,14 +50,14 @@ class Widget(MouseWidget, ScreenWidget):
 
         # set signals
         self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)
-        #self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
-        #self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
+        self.connect(self.rightHanded, SIGNAL("toggled(bool)"), self.setHandedness)
+        self.connect(self.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
 
     def shown(self):
         pass
 
     def execute(self):
-        self.setHandedness(RIGHT_HANDED)
+        pass
 
     def setClickBehaviour(self):
         config = KConfig("kdeglobals")

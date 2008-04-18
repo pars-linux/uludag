@@ -144,9 +144,13 @@ class Widget(WallpaperWidget, ScreenWidget):
 
         for infile in resizeList:
             tmpDir =  "/tmp/" + os.path.splitext(os.path.basename(infile))[0]
-            im = Image.open(infile)
-            im.thumbnail(size, Image.ANTIALIAS)
-            im.save(tmpDir + ".jpg.thumbnail", "PNG")
+            try:
+                im = Image.open(infile)
+                im.thumbnail(size, Image.ANTIALIAS)
+                im.save(tmpDir + ".jpg.thumbnail", "PNG")
+            except IOError:
+                pass
+
 
 
     def showAllWallpapers(self):

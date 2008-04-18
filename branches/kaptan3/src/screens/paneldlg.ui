@@ -8,20 +8,20 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>528</width>
+            <width>530</width>
             <height>399</height>
         </rect>
     </property>
     <property name="caption">
         <string>Panel</string>
     </property>
-    <vbox>
+    <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <spacer>
+        <spacer row="3" column="0">
             <property name="name">
-                <cstring>spacer47</cstring>
+                <cstring>spacer48</cstring>
             </property>
             <property name="orientation">
                 <enum>Vertical</enum>
@@ -36,18 +36,24 @@
                 </size>
             </property>
         </spacer>
-        <widget class="QLabel">
+        <spacer row="0" column="0">
             <property name="name">
-                <cstring>styleLabel</cstring>
+                <cstring>spacer47</cstring>
             </property>
-            <property name="backgroundOrigin">
-                <enum>ParentOrigin</enum>
+            <property name="orientation">
+                <enum>Vertical</enum>
             </property>
-            <property name="alignment">
-                <set>WordBreak|AlignTop</set>
+            <property name="sizeType">
+                <enum>Expanding</enum>
             </property>
-        </widget>
-        <widget class="QGroupBox">
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>38</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QGroupBox" row="2" column="0">
             <property name="name">
                 <cstring>styleSettingsGroup</cstring>
             </property>
@@ -186,24 +192,62 @@
                 </widget>
             </grid>
         </widget>
-        <spacer>
+        <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
-                <cstring>spacer48</cstring>
+                <cstring>layout5</cstring>
             </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>31</height>
-                </size>
-            </property>
-        </spacer>
-    </vbox>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer7</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>60</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>styleLabel</cstring>
+                    </property>
+                    <property name="backgroundOrigin">
+                        <enum>ParentOrigin</enum>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignTop</set>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer8</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>60</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+            </hbox>
+        </widget>
+    </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
