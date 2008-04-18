@@ -83,8 +83,8 @@ class Kaptan(kaptanUi):
         # set signals
         self.connect(self.buttonNext, SIGNAL("clicked()"),self.slotNext)
         self.connect(self.buttonBack, SIGNAL("clicked()"),self.slotBack)
-        self.connect(self.buttonCancel, SIGNAL("clicked()"),self.slotExit)
-        self.connect(self.buttonFinish, SIGNAL("clicked()"),self.slotExit)
+        self.connect(self.buttonCancel, SIGNAL("clicked()"), qApp, SLOT("quit()"))
+        self.connect(self.buttonFinish, SIGNAL("clicked()"), qApp, SLOT("quit()"))
 
         self.initialize()
 
@@ -174,12 +174,9 @@ class Kaptan(kaptanUi):
 
         self.stackMove(self.getCurrent() - 1)
 
-    def slotExit(self):
-        sys.exit(1)
-
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
-            self.slotExit()
+            qApp.quit()
 
     def __del__(self):
         """
