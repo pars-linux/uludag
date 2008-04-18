@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-26 05:27+0200\n"
+"POT-Creation-Date: 2008-04-17 14:52+0300\n"
 "PO-Revision-Date: 2008-03-04 10:58+0200\n"
 "Last-Translator: pinar\n"
 "Language-Team:  <en@li.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/kaptan.py:72 src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
+#: src/kaptan.py:70 src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
 #: src/screens/welcomedlg.py:59
 msgid "Welcome"
 msgstr "Hoş geldiniz"
 
-#: src/kaptan.py:73 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:71 src/screens/ScrWelcome.py:24
 msgid "Welcome to Kaptan Wizard :)"
 msgstr "Kaptan Masaüstü Sihirbazına Hoşgeldiniz :)"
 
-#: src/kaptan.py:75
+#: src/kaptan.py:73
 msgid "&Back"
 msgstr "Geri"
 
-#: src/kaptan.py:76
+#: src/kaptan.py:74
 msgid "&Next"
 msgstr "İleri"
 
-#: src/kaptan.py:77
+#: src/kaptan.py:75
 msgid "Finish"
 msgstr "Bitir"
 
-#: src/kaptan.py:214
+#: src/kaptan.py:212
 msgid "Kaptan is already running!"
 msgstr "Kaptan zaten çalışıyor!"
 
-#: src/kaptan.py:219
+#: src/kaptan.py:222
 msgid "Kaptan Welcome Wizard"
 msgstr "Kaptan Masaüstü Sihirbazı"
 
@@ -111,11 +111,11 @@ msgstr "Önizleme"
 msgid "Use enhanced Kickoff style menu"
 msgstr "Gelişmiş Kickoff menü stilini kullanın."
 
-#: src/screens/goodbyedlg.py:155
+#: src/screens/goodbyedlg.py:156
 msgid "Goodbye"
 msgstr "Hoşçakalın"
 
-#: src/screens/goodbyedlg.py:156
+#: src/screens/goodbyedlg.py:157
 msgid ""
 "<p>Congratulations! You have finished all steps. You can now continue using "
 "Pardus and try applications below.</p>"
@@ -123,16 +123,16 @@ msgstr ""
 "<p>Tebrikler! Tüm aşamaları bitirdiniz. Aşağıdaki uygulamaları "
 "deneyebilirsiniz.</p>"
 
-#: src/screens/goodbyedlg.py:157
+#: src/screens/goodbyedlg.py:158
 msgid "Migration Tool"
 msgstr "Göç Aracı"
 
-#: src/screens/goodbyedlg.py:158 src/screens/goodbyedlg.py:161
-#: src/screens/goodbyedlg.py:164 src/screens/goodbyedlg.py:167
+#: src/screens/goodbyedlg.py:159 src/screens/goodbyedlg.py:162
+#: src/screens/goodbyedlg.py:165
 msgid "Start"
 msgstr "Başlat"
 
-#: src/screens/goodbyedlg.py:159
+#: src/screens/goodbyedlg.py:160
 msgid ""
 "<p>A wizard to transfer files and settings from existing operating systems "
 "(e.g. Windows) to Pardus.</p>"
@@ -140,37 +140,64 @@ msgstr ""
 "<p>Sisteminizde varolan bir işletim sistemindeki(ör. Windows) dosyaları ve "
 "ayarları Pardus'a aktarmanıza yardımcı olur.</p>"
 
-#: src/screens/goodbyedlg.py:160
+#: src/screens/goodbyedlg.py:161
 msgid "Tasma"
 msgstr "Tasma"
 
-#: src/screens/goodbyedlg.py:162
+#: src/screens/goodbyedlg.py:163
 msgid ""
 "<p>TASMA is a configuration application for Pardus Operating System. </p>"
 msgstr ""
 "<p>Gelişmiş ayarları Pardus yapılandırma merkezinden yapabilirsiniz.</p>"
 
-#: src/screens/goodbyedlg.py:163
-msgid "Feedback"
-msgstr "Geribildirim"
-
-#: src/screens/goodbyedlg.py:165
-msgid ""
-"<p>A small wizard that you can send your messages to Pardus developers and "
-"help Pardus be the best Linux in the world.</p>"
-msgstr ""
-"<p>Bu ufak sihirbaz ile, Pardus geliştiricilerine mesaj gönderebilir \n"
-"ve Pardus'un dünyadaki en iyi Linux olmasına yardımda bulunabilirsiniz.</p>"
-
-#: src/screens/goodbyedlg.py:166
+#: src/screens/goodbyedlg.py:164
 msgid "User Groups and Help Pages"
 msgstr "Kullanıcı Grupları ve Yardım sayfaları"
 
-#: src/screens/goodbyedlg.py:168
+#: src/screens/goodbyedlg.py:166
 msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
 msgstr ""
 "<p>Pardus camiası, kullanıcı listeleri, IRC kanalları, belgeler ve daha "
 "fazlası.</p>"
+
+#: src/screens/goodbyedlg.py:167
+msgid "Feedback"
+msgstr "Geribildirim"
+
+#: src/screens/goodbyedlg.py:168
+msgid ""
+"<p>Smolt is a basic hardware profiler. Its intended to be a profiler to get "
+"automated information from users.</p>"
+msgstr "Smolt donanımınızın profili çıkaran basit bir uygulamadır. Pardus kullanıcılarının donanım "
+"bilgilerini otomatik olarak toplamak ve istatistik çıkarmak için kullanılmaktadır."
+
+#: src/screens/goodbyedlg.py:169
+msgid "Send"
+msgstr ""
+
+#: src/screens/photodlg.py:66
+msgid "Photo"
+msgstr ""
+
+#: src/screens/photodlg.py:67
+msgid "Shot"
+msgstr ""
+
+#: src/screens/photodlg.py:68
+msgid "Put my photo to:"
+msgstr ""
+
+#: src/screens/photodlg.py:69
+msgid "E-mail clients"
+msgstr ""
+
+#: src/screens/photodlg.py:70
+msgid "Instant messengers"
+msgstr ""
+
+#: src/screens/photodlg.py:71
+msgid "Login Screen (KDM)"
+msgstr ""
 
 #: src/screens/ScrMouse.py:29
 msgid "Mouse Settings"
@@ -268,15 +295,15 @@ msgstr ""
 msgid "<big>Loading...</big>"
 msgstr "<big>Yükleniyor...</big>"
 
-#: src/screens/ScrWallpaper.py:49
+#: src/screens/ScrWallpaper.py:51
 msgid "Show all resolutions."
 msgstr "Tüm çözünürlükleri göster"
 
-#: src/screens/ScrWallpaper.py:52
+#: src/screens/ScrWallpaper.py:54
 msgid "Old Wallpaper"
 msgstr "Eski Duvarkağıdı"
 
-#: src/screens/ScrWallpaper.py:53
+#: src/screens/ScrWallpaper.py:55
 msgid "No Wallpaper"
 msgstr "Duvarkağıdı Yok"
 
@@ -325,3 +352,11 @@ msgstr "Contrib deposu ek paketler içerir."
 #: src/screens/ScrPackage.py:51
 msgid "Add contrib repo"
 msgstr "Contrib deposunu ekle"
+
+#~ msgid ""
+#~ "<p>A small wizard that you can send your messages to Pardus developers "
+#~ "and help Pardus be the best Linux in the world.</p>"
+#~ msgstr ""
+#~ "<p>Bu ufak sihirbaz ile, Pardus geliştiricilerine mesaj gönderebilir \n"
+#~ "ve Pardus'un dünyadaki en iyi Linux olmasına yardımda bulunabilirsiniz.</"
+#~ "p>"
