@@ -51,7 +51,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonApply.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
         self.buttonHelp.setIconSet(QIconSet(loader.loadIcon("help", KIcon.Small)))
 
-        icon = getIconSet("screen.png", KIcon.User)
+        icon = getIconSet("display-manager.png", KIcon.User)
         self.screenImage1.setIconSet(icon)
         self.screenImage2.setIconSet(icon)
 
@@ -78,7 +78,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
-        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setResolutions)
+        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.getResolutions)
+        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setOutput)
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
@@ -86,7 +87,7 @@ class MainWidget(dm_mainview.mainWidget):
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
 
-        self.setResolutions()
+        self.getResolutions()
 
     def getSelectedScreen(self):
         """Gets selected screen and sets groupbox name as screen's name"""
@@ -102,8 +103,8 @@ class MainWidget(dm_mainview.mainWidget):
         else:
             self.checkBoxExtended.setEnabled(0)
 
-    def setResolutions(self):
-        """Sets resolutions due to selected output"""
+    def getResolutions(self):
+        """Gets resolutions due to selected output"""
 
         self.currentOutput =  str(self.comboBoxOutput.currentText())
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
@@ -112,6 +113,12 @@ class MainWidget(dm_mainview.mainWidget):
             self.comboBoxResolution.insertItem(resolution)
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+
+    def setOutput(self):
+        if self.groupBoxScreens.title() == self.screenImage1.textLabel():
+            self.displayConfiguration.primaryScr = self.comboBoxOutput.currentText()
+        else:
+            self.displayConfiguration.secondaryScr = self.comboBoxOutput.currentText()
 
     def slotApply(self):
         pass
