@@ -59,14 +59,6 @@ class DisplayConfig:
         self.desktop_setup = self._info.desktop_setup
         self.true_color = self._info.depth == "24"
 
-    def setScreens(self, primary, secondary=None):
-        self.primaryScr = primary
-        if secondary:
-            self.secondaryScr = secondary
-
-    def setResolution(self, output, resolution):
-        self.current_modes[output] = resolution
-
     def apply(self):
         options = {
                 "depth":            "24" if self.true_color else "16",
@@ -78,9 +70,9 @@ class DisplayConfig:
                 "mode":     self.current_modes[self.primaryScr],
                 }
 
-        secondScreen = {}
+        secondScreen = {"output":   ""}
         if self.desktop_setup != "single":
             secondScreen["output"] = self.secondaryScr
             secondScreen["mode"] = self.current_modes[self.secondaryScr]
 
-        link.setScreens(self._bus, options, firstScreen, secondScreen)
+        link.setupScreens(self._bus, options, firstScreen, secondScreen)
