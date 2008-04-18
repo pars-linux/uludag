@@ -3,6 +3,7 @@
 
 import dbus
 import zorg.config
+from zorg.utils import *
 
 import randriface
 
@@ -76,3 +77,7 @@ class DisplayConfig:
             secondScreen["mode"] = self.current_modes[self.secondaryScr]
 
         link.setupScreens(self._bus, options, firstScreen, secondScreen)
+
+        if self._randr12:
+            if self.desktop_setup == "single":
+                run("xrandr", "--output", self.primaryScr, "--mode", self.current_modes[self.primaryScr])
