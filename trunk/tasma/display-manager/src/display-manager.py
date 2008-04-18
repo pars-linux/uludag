@@ -45,6 +45,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.displayConfiguration = displayconfig.DisplayConfig()
         self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
 
+        self.screenNames = { "1":"Primary Screen", "2": "Secondary Screen" }
+
         # set button icons
         loader = KGlobal.iconLoader()
         self.buttonCancel.setIconSet(QIconSet(loader.loadIcon("cancel", KIcon.Small)))
@@ -55,45 +57,64 @@ class MainWidget(dm_mainview.mainWidget):
         self.screenImage1.setIconSet(icon)
         self.screenImage2.setIconSet(icon)
 
-        # returns a dict of outputs: resolutions.
-        """
-        {'LVDS': ['1280x800', '1280x768', '1024x768', '800x600', '640x480'],
-        'S-video': ['800x600', '640x480']}
-        """
-        #self.screenModes = self.displayConfiguration.modes
-        self.screenModes = {'LVDS': ['1280x800', '1280x768', '1024x768', '800x600', '640x480'], 'S-video': ['800x600', '640x480']}
-
-        # returns a list of outputs
-        #['VGA-0', 'LVDS', 'S-video']
-        #self.screenOutputs = self.displayConfiguration.outputs
-
-        self.screenOutputs = ['LVDS', 'S-video']
-
-        # returns a dict of current outputs: resolutions
-        #self.currentModes = self.displayConfiguration.current_modes
-        self.currentModes = {'LVDS': '1280x800', 'S-video': '800x600', 'VGA-0': '800x600'}
+        self.getCurrentConf()
 
         #set signals
-        self.selectedScreen = 0
+        self.selectedScreen = 1
+
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
+
+        self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.switchBetweenScreens)
+        self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.switchBetweenScreens)
+
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
+
+        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedModes)
+        self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedModes)
+
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.getResolutions)
-        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setOutput)
+
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
 
+
+        self.getCurrentConf()
+
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
+            for resolution in self.screenModes[output]:
+                self.comboBoxResolution.insertItem(resolution)
 
         self.getResolutions()
+
+    def getCurrentConf(self):
+        # returns a dict of outputs: resolutions.
+        self.screenModes = self.displayConfiguration.modes
+
+        # returns a list of outputs
+        self.screenOutputs = self.displayConfiguration.outputs
+
+        # returns a dict of current outputs: resolutions
+        self.currentModes = self.displayConfiguration.current_modes
+
+    def setSelectedModes(self):
+        curOut =  str(self.comboBoxOutput.currentText())
+        curRes = str(self.comboBoxResolution.currentText())
+
+        if self.selectedScreen == 1:
+            self.displayConfiguration.primaryScr = curOut
+        else:
+            self.displayConfiguration.secondaryScr = curOut
+
+        self.displayConfiguration.current_modes[curOut] = curRes
 
     def getSelectedScreen(self):
         """Gets selected screen and sets groupbox name as screen's name"""
 
-        self.selectedScreen =  self.screenGroup.selected()
-        self.groupBoxScreens.setTitle(self.selectedScreen.textLabel())
+        self.selectedScreen = str(self.screenGroup.selected().textLabel())
+        self.groupBoxScreens.setTitle(self.screenNames[self.selectedScreen])
 
     def enableExtendedOption(self):
         """Enables <Extended> option checkbox if <Dual Mode> selected"""
@@ -103,22 +124,27 @@ class MainWidget(dm_mainview.mainWidget):
         else:
             self.checkBoxExtended.setEnabled(0)
 
-    def getResolutions(self):
+    def switchBetweenScreens(self):
+        if self.selectedScreen == 1:
+            self.currentOutput = str(self.displayConfiguration.primaryScr)
+            self.comboBoxOutput.setCurrentText(self.currentOutput)
+            self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+        elif self.selectedScreen == 2:
+            self.currentOutput = "TV"
+            #self.currentOutput = str(self.displayConfiguration.secondaryScr)
+            self.comboBoxOutput.setCurrentText(self.currentOutput)
+            self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+
+    def getResolutions(self, hede = None):
         """Gets resolutions due to selected output"""
 
-        self.currentOutput =  str(self.comboBoxOutput.currentText())
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
+        self.currentOutput = str(self.comboBoxOutput.currentText())
 
         for resolution in self.screenModes[self.currentOutput]:
             self.comboBoxResolution.insertItem(resolution)
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
-
-    def setOutput(self):
-        if self.groupBoxScreens.title() == self.screenImage1.textLabel():
-            self.displayConfiguration.primaryScr = self.comboBoxOutput.currentText()
-        else:
-            self.displayConfiguration.secondaryScr = self.comboBoxOutput.currentText()
 
     def slotApply(self):
         pass
