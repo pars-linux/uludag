@@ -39,12 +39,9 @@ def chroot_comar(image_dir):
         except OSError:
             pass
         os.chroot(image_dir)
-        if not os.path.exists("/var/lib/dbus/machine-id"):
-            run("/usr/bin/dbus-uuidgen --ensure")
-
-        run("/sbin/start-stop-daemon -b --start --pidfile /var/run/dbus/pid --exec /usr/bin/dbus-daemon -- --system")
+        subprocess.call(["/sbin/start-stop-daemon", "--start", "-b", "--pidfile", "/var/run/comar.pid", "--make-pidfile", "--exec", "/usr/bin/comar"])
         sys.exit(0)
-    waitBus("%s/var/run/dbus/system_bus_socket" % image_dir)
+    waitBus("%s/var/run/comar.socket" % image_dir)
 
 def get_exclude_list(project):
     exc = project.exclude_list()[:]
@@ -70,7 +67,7 @@ def generate_grub_conf(project, kernel, initramfs):
     dict["kernel"] = kernel
     dict["initramfs"] = initramfs
     dict["title"] = project.title
-    dict["exparams"] = project.exparams or ''
+    dict["exparams"] = project.exparams
 
     path = os.path.join(image_dir, "usr/share/grub/templates")
     dest = os.path.join(iso_dir, "boot/grub")
@@ -112,40 +109,6 @@ def setup_grub(project):
     
     # Generate the config file
     generate_grub_conf(project, kernel, initramfs)
-
-def setup_isolinux(project):
-    print "Generating isolinux files..."
-    xterm_title("Generating isolinux files")
-
-    image_dir = project.image_dir()
-    iso_dir = project.iso_dir()
-    kernel = ""
-    initramfs = ""
-
-    # Setup dir
-    path = os.path.join(iso_dir, "boot/isolinux")
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-    def copy(src, dest):
-        run('cp -P "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
-
-    # Copy the kernel and initramfs
-    path = os.path.join(image_dir, "boot")
-    for name in os.listdir(path):
-        if name.startswith("kernel") or name.startswith("initramfs") or name.endswith(".bin"):
-            if name.startswith("kernel"):
-                copy(os.path.join(path, name), "boot/kernel")
-            elif name.startswith("initramfs"):
-                copy(os.path.join(path, name), "boot/initrd")
-
-    # copy config and gfxboot stuff
-    tmplpath = os.path.join(image_dir, "usr/lib/syslinux/pardus")
-    dest = os.path.join(iso_dir, "boot/isolinux")
-    for name in os.listdir(tmplpath):
-        copy(os.path.join(tmplpath, name), dest)
-
-    copy(os.path.join("usr/lib/syslinux/isolinux-debug.bin", dest))
 
 #
 # Image related stuff
@@ -200,7 +163,7 @@ def make_repos(project):
         repo = project.get_repo()
         repo_dir = project.image_repo_dir(clean=True)
         if project.type == "install":
-            imagedeps = repo.full_deps("yali4")
+            imagedeps = repo.full_deps("yali")
         else:
             imagedeps = project.all_packages
         repo.make_local_repo(repo_dir, imagedeps)
@@ -233,7 +196,7 @@ def check_repo_files(project):
         repo = project.get_repo()
         repo_dir = project.image_repo_dir()
         if project.type == "install":
-            imagedeps = repo.full_deps("yali4")
+            imagedeps = repo.full_deps("yali")
         else:
             imagedeps = project.all_packages
         i = 0
@@ -275,7 +238,7 @@ def make_image(project):
         
         run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
         if project.type == "install":
-            run('pisi --yes-all --ignore-comar -D"%s" it yali4' % image_dir)
+            run('pisi --yes-all --ignore-comar -D"%s" it yali' % image_dir)
         else:
             install_packages(project)
         
@@ -295,16 +258,15 @@ def make_image(project):
         chrun("/sbin/ldconfig")
         chrun("/sbin/update-environment")
         chroot_comar(image_dir)
-        chrun("/usr/bin/pisi configure-pending baselayout")
+        chrun("/usr/bin/hav call-package System.Package.postInstall baselayout")
         chrun("/usr/bin/pisi configure-pending")
         
-        chrun("hav call baselayout User.Manager setUser 0 'Pardus Root' '/root' '/bin/bash' 'pardus' '' ")
-        if project.type != "install" and 1==3:
-            chrun("hav call User.Manager addUser '1000' 'pars' 'Panter Pardus' '' password pardus")
+        chrun("hav call User.Manager.setUser uid 0 password pardus")
+        if project.type != "install":
+            chrun("hav call User.Manager.addUser uid 1000 name pars realname Pardus groups users,wheel,disk,removable,power,pnp,pnpadmin,video,audio password pardus")
+        chrun("/usr/bin/comar --stop")
         
-        # chrun("/usr/bin/comar --stop")
-        
-        # chrun("/sbin/update-modules")
+        chrun("/sbin/update-modules")
         chrun("/sbin/depmod -a %s-%s" % (repo.packages["kernel"].version, repo.packages["kernel"].release))
         
         path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
@@ -344,14 +306,12 @@ def make_iso(project):
                 if name != ".svn":
                     copy(os.path.join(path, name), name)
         
-        # setup_grub(project)
-        setup_isolinux(project)
+        setup_grub(project)
         
         if project.type == "install":
             run('ln -s "%s" "%s"' % (project.install_repo_dir(), os.path.join(iso_dir, "repo")))
         
-        # run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
-        run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
+        run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/grub/stage2_eltorito -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (
             iso_file,
             iso_dir,
         ))
