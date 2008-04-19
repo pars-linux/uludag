@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>640</width>
-            <height>480</height>
+            <width>380</width>
+            <height>391</height>
         </rect>
     </property>
     <property name="caption">
@@ -61,7 +61,7 @@
                                 <property name="sizeHint">
                                     <size>
                                         <width>20</width>
-                                        <height>40</height>
+                                        <height>0</height>
                                     </size>
                                 </property>
                             </spacer>
@@ -85,7 +85,7 @@
                                         </property>
                                         <property name="sizeHint">
                                             <size>
-                                                <width>179</width>
+                                                <width>80</width>
                                                 <height>20</height>
                                             </size>
                                         </property>
@@ -657,7 +657,7 @@
                                         </property>
                                         <property name="sizeHint">
                                             <size>
-                                                <width>179</width>
+                                                <width>80</width>
                                                 <height>20</height>
                                             </size>
                                         </property>
@@ -677,7 +677,7 @@
                                 <property name="sizeHint">
                                     <size>
                                         <width>20</width>
-                                        <height>40</height>
+                                        <height>0</height>
                                     </size>
                                 </property>
                             </spacer>
