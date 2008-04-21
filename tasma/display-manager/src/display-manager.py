@@ -45,7 +45,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.displayConfiguration = displayconfig.DisplayConfig()
 
         if not self.displayConfiguration._randr12:
-            message = i18n("Sorry, Display Manager currenty does not support your driver.")
+            message = i18n("Sorry, Display Manager currently does not support your driver.")
             QMessageBox.critical(self, i18n("No Support"), message, QMessageBox.Ok, QMessageBox.NoButton)
             sys.exit()
 
@@ -79,6 +79,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
         self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
 
+        self.connect(self.buttonIdentifyDisplays, SIGNAL("clicked()"), self.identifyDisplays)
+
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
@@ -93,7 +95,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.getResolutions(1)
 
-        if self.currentDualMode is not "single":
+        if not self.currentDualMode == "single":
             if self.currentDualMode == "horizontal":
                 self.checkBoxDualMode.setChecked(1)
                 self.checkBoxExtended.setChecked(1)
@@ -177,6 +179,10 @@ class MainWidget(dm_mainview.mainWidget):
             self.comboBoxResolution.insertItem(resolution)
         
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+
+    def identifyDisplays(self):
+        # what's the fucking dcop call for that!?
+        pass
 
     def slotApply(self):
         self.displayConfiguration.apply()
