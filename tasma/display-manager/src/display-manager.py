@@ -47,13 +47,12 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.screenNames = { "1":"Primary Screen", "2": "Secondary Screen" }
 
-        # set button icons
-        loader = KGlobal.iconLoader()
-        self.buttonCancel.setIconSet(QIconSet(loader.loadIcon("cancel", KIcon.Small)))
-        self.buttonApply.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
-        self.buttonHelp.setIconSet(QIconSet(loader.loadIcon("help", KIcon.Small)))
+        #set button icons
+        self.buttonCancel.setIconSet(getIconSet("cancel", KIcon.Small))
+        self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
+        self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
 
-        icon = getIconSet("display-manager.png", KIcon.User)
+        icon = getIconSet("display_manager", KIcon.User)
         self.screenImage1.setIconSet(icon)
         self.screenImage2.setIconSet(icon)
 
@@ -78,9 +77,6 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
-
-
-        self.getCurrentConf()
 
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
@@ -134,7 +130,7 @@ class MainWidget(dm_mainview.mainWidget):
             #self.currentOutput = str(self.displayConfiguration.secondaryScr)
             self.comboBoxOutput.setCurrentText(self.currentOutput)
             self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
-
+    
     def getResolutions(self, hede = None):
         """Gets resolutions due to selected output"""
 
