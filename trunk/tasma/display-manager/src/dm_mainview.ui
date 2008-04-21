@@ -34,7 +34,7 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLayoutWidget" row="2" column="0">
+                    <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
                         <property name="name">
                             <cstring>layout5</cstring>
                         </property>
@@ -164,7 +164,7 @@
                             </widget>
                         </hbox>
                     </widget>
-                    <widget class="QButtonGroup" row="0" column="0">
+                    <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="2">
                         <property name="name">
                             <cstring>screenGroup</cstring>
                         </property>
@@ -822,6 +822,14 @@
                         </property>
                         <property name="text">
                             <string>Detect Displays</string>
+                        </property>
+                    </widget>
+                    <widget class="QPushButton" row="1" column="1">
+                        <property name="name">
+                            <cstring>buttonIdentifyDisplays</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Identify Displays</string>
                         </property>
                     </widget>
                 </grid>
