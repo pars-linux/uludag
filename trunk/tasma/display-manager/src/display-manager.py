@@ -69,10 +69,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
 
-        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedModes)
-        self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedModes)
-
-        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.getResolutions)
+        self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
+        self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
 
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
@@ -83,7 +81,10 @@ class MainWidget(dm_mainview.mainWidget):
             for resolution in self.screenModes[output]:
                 self.comboBoxResolution.insertItem(resolution)
 
-        self.getResolutions()
+        # remove later.
+        self.displayConfiguration.secondaryScr = "VGA-0"
+
+        self.getResolutions(1)
 
     def getCurrentConf(self):
         # returns a dict of outputs: resolutions.
@@ -95,15 +96,19 @@ class MainWidget(dm_mainview.mainWidget):
         # returns a dict of current outputs: resolutions
         self.currentModes = self.displayConfiguration.current_modes
 
-    def setSelectedModes(self):
+    def setSelectedOutput(self):
         curOut =  str(self.comboBoxOutput.currentText())
-        curRes = str(self.comboBoxResolution.currentText())
 
         if self.selectedScreen == "1":
             self.displayConfiguration.primaryScr = curOut
         else:
             self.displayConfiguration.secondaryScr = curOut
 
+        self.getResolutions()
+
+    def setSelectedMode(self):
+        curOut =  str(self.comboBoxOutput.currentText())
+        curRes = str(self.comboBoxResolution.currentText())
         self.displayConfiguration.current_modes[curOut] = curRes
 
     def getSelectedScreen(self):
@@ -124,22 +129,27 @@ class MainWidget(dm_mainview.mainWidget):
         if self.selectedScreen == "1":
             self.currentOutput = str(self.displayConfiguration.primaryScr)
             self.comboBoxOutput.setCurrentText(self.currentOutput)
-            self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
         elif self.selectedScreen == "2":
-            self.currentOutput = "LVDS"
-            #self.currentOutput = str(self.displayConfiguration.secondaryScr)
+            self.currentOutput = str(self.displayConfiguration.secondaryScr)
             self.comboBoxOutput.setCurrentText(self.currentOutput)
             self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
-    
-    def getResolutions(self, hede = None):
+
+        self.getResolutions()
+
+    def getResolutions(self, firstBoot = None):
         """Gets resolutions due to selected output"""
-
+        
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
-        self.currentOutput = str(self.comboBoxOutput.currentText())
 
+        if firstBoot == 1:
+            self.currentOutput = self.displayConfiguration.primaryScr
+            self.comboBoxOutput.setCurrentText(self.currentOutput)
+        else:
+            self.currentOutput = str(self.comboBoxOutput.currentText())
+        
         for resolution in self.screenModes[self.currentOutput]:
             self.comboBoxResolution.insertItem(resolution)
-
+        
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
     def slotApply(self):
