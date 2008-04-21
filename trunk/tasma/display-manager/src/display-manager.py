@@ -103,7 +103,7 @@ class MainWidget(dm_mainview.mainWidget):
         curOut =  str(self.comboBoxOutput.currentText())
         curRes = str(self.comboBoxResolution.currentText())
 
-        if self.selectedScreen == 1:
+        if self.selectedScreen == "1":
             self.displayConfiguration.primaryScr = curOut
         else:
             self.displayConfiguration.secondaryScr = curOut
@@ -125,12 +125,12 @@ class MainWidget(dm_mainview.mainWidget):
             self.checkBoxExtended.setEnabled(0)
 
     def switchBetweenScreens(self):
-        if self.selectedScreen == 1:
+        if self.selectedScreen == "1":
             self.currentOutput = str(self.displayConfiguration.primaryScr)
             self.comboBoxOutput.setCurrentText(self.currentOutput)
             self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
-        elif self.selectedScreen == 2:
-            self.currentOutput = "TV"
+        elif self.selectedScreen == "2":
+            self.currentOutput = "LVDS"
             #self.currentOutput = str(self.displayConfiguration.secondaryScr)
             self.comboBoxOutput.setCurrentText(self.currentOutput)
             self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
