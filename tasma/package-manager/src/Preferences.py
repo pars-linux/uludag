@@ -21,7 +21,7 @@ import RepoDialog
 import Settings
 import Icons
 
-import pisi
+import PisiIface
 
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
