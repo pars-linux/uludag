@@ -82,6 +82,10 @@ class DisplayConfig:
             if self.desktop_setup == "single":
                 run("xrandr", "--output", self.primaryScr, "--mode", self.current_modes[self.primaryScr])
 
+                for out in self.outputs:
+                    if out != self.primaryScr:
+                        run("xrandr", "--output", out, "--off")
+
             elif self.desktop_setup == "clone":
                 run("xrandr",
                         "--output", self.primaryScr,
