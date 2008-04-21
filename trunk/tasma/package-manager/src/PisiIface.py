@@ -40,3 +40,6 @@ def get_upgradable_packages():
 
 def parse_package_name(name):
     return pisi.util.parse_package_name(name)
+
+def read_config(name):
+    return pisi.configfile.ConfigurationFile(name)
