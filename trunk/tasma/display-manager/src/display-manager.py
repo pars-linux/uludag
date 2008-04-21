@@ -58,9 +58,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
         self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
 
-        icon = getIconSet("display_manager", KIcon.User)
-        self.screenImage1.setIconSet(icon)
-        self.screenImage2.setIconSet(icon)
+        self.iconWide = getIconSet("display_manager_wide", KIcon.User)
+        self.iconNormal = getIconSet("display_manager_normal", KIcon.User)
 
         self.getCurrentConf()
 
@@ -91,9 +90,10 @@ class MainWidget(dm_mainview.mainWidget):
                 self.comboBoxResolution.insertItem(resolution)
 
         # remove later.
-        self.displayConfiguration.secondaryScr = "VGA-0"
+        self.displayConfiguration.secondaryScr = "VGA"
 
         self.getResolutions(1)
+        self.setIconbyResolution()
 
         if not self.currentDualMode == "single":
             if self.currentDualMode == "horizontal":
@@ -101,6 +101,21 @@ class MainWidget(dm_mainview.mainWidget):
                 self.checkBoxExtended.setChecked(1)
             else:
                 self.checkBoxDualMode.setChecked(1)
+        else:
+            self.screenImage2.hide()
+
+    def setIconbyResolution(self, resolution = None, screenId = None):
+        if resolution == None:
+            resolution = self.currentModes[self.currentOutput]
+
+        x, y = resolution.split("x")
+
+        icon = self.iconWide if float(x)/float(y) >= 1.6 else self.iconNormal
+
+        if screenId == 2 or self.selectedScreen == "2":
+            self.screenImage2.setIconSet(icon)
+        else:
+            self.screenImage1.setIconSet(icon)
 
     def getCurrentConf(self):
         # returns a dict of outputs: resolutions.
@@ -136,6 +151,7 @@ class MainWidget(dm_mainview.mainWidget):
         curOut =  str(self.comboBoxOutput.currentText())
         curRes = str(self.comboBoxResolution.currentText())
         self.displayConfiguration.current_modes[curOut] = curRes
+        self.setIconbyResolution(curRes)
 
     def getSelectedScreen(self):
         """Gets selected screen and sets groupbox name as screen's name"""
@@ -147,9 +163,13 @@ class MainWidget(dm_mainview.mainWidget):
         """Enables <Extended> option checkbox if <Dual Mode> selected"""
 
         if self.checkBoxDualMode.isChecked():
+            self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
+            self.screenImage2.show()
             self.checkBoxExtended.setEnabled(1)
             self.displayConfiguration.desktop_setup = "clone"
         else:
+            self.screenImage2.hide()
+            self.screenImage1.setState(QButton.On)
             self.checkBoxExtended.setEnabled(0)
             self.displayConfiguration.desktop_setup = self.currentDualMode
 
