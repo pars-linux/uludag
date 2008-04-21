@@ -8,7 +8,7 @@ ADD_DEFINITIONS(${QT_DEFINITIONS} ${KDE3_DEFINITIONS})
 
 LINK_DIRECTORIES(${KDE3_LIB_DIR} dbus-qt3-backport)
 
-INCLUDE_DIRECTORIES(${KDE3_INCLUDE_DIR} 
+INCLUDE_DIRECTORIES(${KDE3_INCLUDE_DIR}
     ${QT_INCLUDE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
@@ -51,3 +51,9 @@ TARGET_LINK_LIBRARIES(policykit-kde
                       polkit
                       polkit-dbus
                       polkit-grant)
+
+#install policykit-kde executable and service file
+INSTALL(TARGETS policykit-kde DESTINATION ${CMAKE_INSTALL_PREFIX}/libexec)
+INSTALL(FILES
+    ${CMAKE_SOURCE_DIR}/data/kde-org.freedesktop.PolicyKit.AuthenticationAgent.service
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/services)
