@@ -10,7 +10,7 @@
 #
 # Please read the COPYING file
 
-import pisi
+import PisiIface
 from kdecore import i18n
 import Icons
 
@@ -27,7 +27,7 @@ class Package:
 
     def _sizer(self, size):
         if size:
-            tpl = pisi.util.human_readable_size(size)
+            tpl = PisiIface.humanize(size)
             return "%.0f %s" % (tpl[0], tpl[1])
         else:
             return i18n("N\A")
@@ -51,9 +51,9 @@ class PackageCache:
     def populateCache(self, packages, inInstalled = False):
         for pkg_name in packages:
             if inInstalled:
-                packageInstalled = pisi.db.installdb.InstallDB().get_package(pkg_name)
+                packageInstalled = PisiIface.get_installed_package(pkg_name)
                 try:
-                    packageInRepo, repoOfPackage = pisi.db.packagedb.PackageDB().get_package_repo(pkg_name)
+                    packageInRepo, repoOfPackage = PisiIface.get_repo_and_package(pkg_name)
                     # if package is in both packagedb and installdb, then think that if they are same. If not, this means package is installed manually
                     if packageInRepo.version != packageInstalled.version or \
                             packageInRepo.release != packageInstalled.release or \
@@ -69,7 +69,7 @@ class PackageCache:
 
                 size = package.installedSize
             else:
-                package, repo = pisi.db.packagedb.PackageDB().get_package_repo(pkg_name)
+                package, repo = PisiIface.get_repo_and_package(pkg_name)
                 size = package.packageSize
 
             if package.source:
