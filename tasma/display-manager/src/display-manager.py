@@ -59,7 +59,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.getCurrentConf()
 
         #set signals
-        self.selectedScreen = 1
+        self.selectedScreen = "1"
 
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
@@ -153,7 +153,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
     def slotApply(self):
-        pass
+        self.displayConfiguration.apply()
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
