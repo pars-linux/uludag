@@ -110,7 +110,7 @@ def post_install(package_name, provided_scripts, scriptpath, metapath, filepath,
     for handler in sys_iface.listModelApplications("System.PackageHandler"):
         iface = get_iface(handler, "System.PackageHandler")
         try:
-            iface.setupPackage(metapath, filepath, timeout=300)
+            iface.setupPackage(metapath, filepath, timeout=ctx.dbus_timeout)
         except dbus.DBusException, exception:
             # Do nothing if setupPackage method is not defined in package script
             if not (exception._dbus_error_name.startswith("tr.org.pardus.comar") and
@@ -126,7 +126,7 @@ def post_install(package_name, provided_scripts, scriptpath, metapath, filepath,
         ctx.ui.debug(_("Running package's post install script"))
         try:
             iface = get_iface(object_name, "System.Package")
-            iface.postInstall(fromVersion, fromRelease, toVersion, toRelease, timeout=300)
+            iface.postInstall(fromVersion, fromRelease, toVersion, toRelease, timeout=ctx.dbus_timeout)
         except dbus.DBusException, exception:
             # Do nothing if postInstall method is not defined in package script
             if not (exception._dbus_error_name.startswith("tr.org.pardus.comar") and
@@ -147,7 +147,7 @@ def pre_remove(package_name, metapath, filepath):
         ctx.ui.debug(_("Running package's pre remove script"))
         iface = get_iface(object_name, "System.Package")
         try:
-            iface.preRemove(timeout=300)
+            iface.preRemove(timeout=ctx.dbus_timeout)
         except dbus.DBusException, exception:
             # Do nothing if preRemove method is not defined in package script
             if not (exception._dbus_error_name.startswith("tr.org.pardus.comar") and
@@ -158,7 +158,7 @@ def pre_remove(package_name, metapath, filepath):
     for handler in sys_iface.listModelApplications("System.PackageHandler"):
         iface = get_iface(handler, "System.PackageHandler")
         try:
-            iface.cleanupPackage(metapath, filepath, timeout=300)
+            iface.cleanupPackage(metapath, filepath, timeout=ctx.dbus_timeout)
         except dbus.DBusException, exception:
             # Do nothing if cleanupPackage method is not defined in package script
             if not (exception._dbus_error_name.startswith("tr.org.pardus.comar") and

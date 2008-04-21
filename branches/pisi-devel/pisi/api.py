@@ -88,6 +88,14 @@ def set_dbus_sockname(sockname):
     """
     ctx.dbus_sockname = sockname
 
+def set_dbus_timeout(timeout):
+    """ 
+    Set dbus timeout
+    Used by YALI
+    @param timeout: Timeout in seconds
+    """
+    ctx.dbus_timeout = timeout
+
 def set_signal_handling(enable):
     """ 
     Enable signal handling. Signal handling in pisi mostly used for disabling keyboard interrupts 
