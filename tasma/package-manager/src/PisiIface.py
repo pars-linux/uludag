@@ -47,6 +47,9 @@ def humanize(size):
 def get_upgradable_packages():
     return pisi.api.list_upgradable()
 
+def get_installed_packages():
+    return list(pisi.api.list_installed())
+
 def parse_package_name(name):
     return pisi.util.parse_package_name(name)
 
@@ -64,3 +67,17 @@ def reloadPisi(self):
             del sys.modules[module]
 
     reload(pisi)
+
+def get_not_installed_packages():
+    return list((set(pisi.api.list_available()) - set(pisi.api.list_installed())) - set(pisi.api.list_replaces().values()))
+
+def get_repositories():
+    return pisi.db.repodb.RepoDB().list_repos()
+
+def get_repository_url(name):
+    return pisi.db.repodb.RepoDB().get_repo(name).indexuri.get_uri()
+
+def get_conflicts(packages):
+    return pisi.api.get_conflicts(packages)
+
+
