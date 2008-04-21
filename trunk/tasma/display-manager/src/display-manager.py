@@ -92,6 +92,13 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.getResolutions(1)
 
+        if self.currentDualMode is not "single":
+            if self.currentDualMode == "horizontal":
+                self.checkBoxDualMode.setChecked(1)
+                self.checkBoxExtended.setChecked(1)
+            else:
+                self.checkBoxDualMode.setChecked(1)
+
     def getCurrentConf(self):
         # returns a dict of outputs: resolutions.
         self.screenModes = self.displayConfiguration.modes
@@ -101,6 +108,9 @@ class MainWidget(dm_mainview.mainWidget):
 
         # returns a dict of current outputs: resolutions
         self.currentModes = self.displayConfiguration.current_modes
+
+        # returns dual mode status
+        self.currentDualMode = self.displayConfiguration.desktop_setup
 
     def setSelectedOutput(self):
         curOut =  str(self.comboBoxOutput.currentText())
