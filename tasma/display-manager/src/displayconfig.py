@@ -9,19 +9,13 @@ import randriface
 
 class ComarLink:
     def __init__(self):
-        self.bus = None
-        self.iface = None
+        self.bus = dbus.SystemBus()
 
     def __getattr__(self, method):
-        if not self.iface:
-            self._connect()
-
-        return getattr(self.iface, method)
-
-    def _connect(self):
-        self.bus = dbus.SystemBus()
         object = self.bus.get_object("tr.org.pardus.comar", "/package/zorg", introspect=False)
-        self.iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Display")
+        iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Display")
+
+        return getattr(iface, method)
 
 link = ComarLink()
 
