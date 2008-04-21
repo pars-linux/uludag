@@ -37,3 +37,6 @@ def humanize(size):
 
 def get_upgradable_packages():
     return pisi.api.list_upgradable()
+
+def parse_package_name(name):
+    return pisi.util.parse_package_name(name)

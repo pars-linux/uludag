@@ -15,7 +15,7 @@ from kdecore import *
 from ProgressDialog import *
 
 import Basket
-import pisi
+import PisiIface
 
 class Progress(ProgressDialog):
     def __init__(self, parent=None):
@@ -127,7 +127,7 @@ class Progress(ProgressDialog):
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(package))
 
     def updateDownloadingInfo(self, operation, file):
-        self.packageName = pisi.util.parse_package_name(file)[0]
+        self.packageName = PisiIface.parse_package_name(file)[0]
         self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(self.packageName))
         self.updateStatus()
         self.showOperationDescription()
@@ -167,10 +167,10 @@ class Progress(ProgressDialog):
     def getCurrentDownloadedSize(self):
         totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
 
-        size = pisi.util.human_readable_size(totalDownloaded)
+        size = PisiIface.humanize(totalDownloaded)
         totaldownloaded = "%.2f %s" % (size[0], size[1])
 
-        size = pisi.util.human_readable_size(self.totalSize)
+        size = PisiIface.humanize(self.totalSize)
         totalsize = "%.2f %s" % (size[0], size[1])
 
         return (totaldownloaded, totalsize)
