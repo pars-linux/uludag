@@ -74,6 +74,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.switchBetweenScreens)
 
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
+        self.connect(self.checkBoxExtended, SIGNAL("toggled(bool)"), self.setExtendedOption)
 
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
         self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
@@ -122,6 +123,13 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.getResolutions()
 
+    def setExtendedOption(self):
+        if self.checkBoxExtended.isChecked():
+            self.displayConfiguration.desktop_setup = "horizontal"
+        else:
+            self.displayConfiguration.desktop_setup = self.currentDualMode
+            self.displayConfiguration.desktop_setup = "clone"
+
     def setSelectedMode(self):
         curOut =  str(self.comboBoxOutput.currentText())
         curRes = str(self.comboBoxResolution.currentText())
@@ -138,8 +146,10 @@ class MainWidget(dm_mainview.mainWidget):
 
         if self.checkBoxDualMode.isChecked():
             self.checkBoxExtended.setEnabled(1)
+            self.displayConfiguration.desktop_setup = "clone"
         else:
             self.checkBoxExtended.setEnabled(0)
+            self.displayConfiguration.desktop_setup = self.currentDualMode
 
     def switchBetweenScreens(self):
         if self.selectedScreen == "1":
