@@ -55,7 +55,7 @@ class ComarIface:
     def comarError(self, exception):
         KMessageBox.error(self, str(exception), i18n("COMAR Error"))
 
-    def callMethod(self, method, action, handler=None, *args):
+    def callMethod(self, method, action, handler, *args):
         ch = CallHandler("pisi", "System.Manager", method,
                          action,
                          self.parent.winId(),
@@ -69,41 +69,42 @@ class ComarIface:
 
     def installPackage(self, package):
         self.com_lock.lock()
-        self.callMethod("installPackage", "tr.org.pardus.comar.system.manager.installpackage", handler=None, package)
+        self.callMethod("installPackage", "tr.org.pardus.comar.system.manager.installpackage", None, package)
 
     def removePackage(self, package):
         self.com_lock.lock()
-        self.com.call("System.Manager.removePackage", ["package",package])
+        self.callMethod("removePackage", "tr.org.pardus.comar.system.manager.removepackage", None, package)
 
     def updatePackage(self, package):
         self.com_lock.lock()
-        self.com.call("System.Manager.updatePackage", ["package",package])
+        self.callMethod("updatePackage", "tr.org.pardus.comar.system.manager.updatepackage", None, package)
 
     def updateRepo(self, repo):
         self.com_lock.lock()
-        self.com.call("System.Manager.updateRepository", ["repository",repo])
+        self.callMethod("updateRepository", "tr.org.pardus.comar.system.manager.updaterepository", None, repo)
 
-    def updateAllRepos(self, id=0):
+    def updateAllRepos(self):
         self.com_lock.lock()
-        self.com.call("System.Manager.updateAllRepositories", id=id)
+        self.callMethod("updateAllRepositories", "tr.org.pardus.comar.system.manager.updateallrepositories", None)
 
     def addRepo(self, name, uri):
         self.com_lock.lock()
-        self.com.call("System.Manager.addRepository", ["name",name,"uri",uri])
+        self.callMethod("addRepository", "tr.org.pardus.comar.system.manager.addrepository", None, name, uri)
 
     def removeRepo(self, repo):
         self.com_lock.lock()
-        self.com.call("System.Manager.removeRepo", ["repository",repo])
+        self.callMethod("removeRepo", "tr.org.pardus.comar.system.manager.removerepo", None, repo)
 
     def setRepositories(self, repos):
         self.com_lock.lock()
-        self.com.call("System.Manager.setRepositories", ["repos",repos])
+        self.callMethod("setRepositories", "tr.org.pardus.comar.system.manager.setrepositories", None, repos)
 
     def clearCache(self, cacheDir, limit):
-        self.com.call("System.Manager.clearCache", ["cacheDir",cacheDir,"limit",limit])
+        self.callMethod("clearCache", "tr.org.pardus.comar.system.manager.clearcache", None, cacheDir, limit)
 
     def setCache(self, enabled=None, limit=None):
-        self.com.call("System.Manager.setCache", ["enabled",enabled,"limit",limit])
+        self.callMethod("setCache", "tr.org.pardus.comar.system.manager.setcache", None, enabled, limit)
 
     def cancel(self):
-        self.com.cancel()
+        #FIXME
+        pass
