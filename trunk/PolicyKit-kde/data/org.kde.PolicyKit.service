@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.kde.PolicyKit
-Exec=/usr/libexec/policykit-kde
