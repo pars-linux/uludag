@@ -159,25 +159,23 @@ loader.
         newPartSize = int(_part["newSize"]/2)
         ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
         ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
-        _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+        np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+
         ctx.debugger.log("UA: Resize finished.")
-        time.sleep(2)
-        np = dev.getPartition(_np.num)
+        time.sleep(1)
 
-        if np.isLogical():
-            ptype = PARTITION_LOGICAL
-        else:
-            ptype = PARTITION_PRIMARY
-
-        newStart = _np.geom.end
+        newStart = np.geom.end
         ctx.debugger.log("UA: newStart : %s " % newStart)
-        _newPart = dev.addPartitionFromStart(ptype,
-                                             "ext3",
-                                             newStart,
-                                             newPartSize,
-                                             parttype.root.parted_flags)
-        dev.commit()
+        _newPart = dev.addPartition(None,
+                                    parttype.root.parted_type,
+                                    parttype.root.filesystem,
+                                    newPartSize - 150,
+                                    parttype.root.parted_flags,
+                                    newStart)
+
         newPart = dev.getPartition(_newPart.num)
+
+        dev.commit()
         ctx.mainScreen.processEvents()
 
         # make partition requests

@@ -322,25 +322,33 @@ class Device:
     # @param type: parted partition type (eg. parted.PARTITION_PRIMARY)
     # @param fs: filesystem.FileSystem or file system name (like "ext3")
     # @param size_mb: size of the partition in MBs.
-    def addPartition(self, part, type, fs, size_mb, flags = []):
+    def addPartition(self, part, type, fs, size_mb, flags = [], manualGeomStart = None):
 
         # Don't set bootable flag if there is already a bootable
         # partition in this disk. See bug #2217
         if (parted.PARTITION_BOOT in flags) and self.hasBootablePartition():
             flags = list(set(flags) - set([parted.PARTITION_BOOT]))
 
+        size = int(size_mb * MEGABYTE / self._sector_size)
+
         if not part:
             part = self.__getLargestFreePedPartition()
 
-        size = int(size_mb * MEGABYTE / self._sector_size)
-        geom = part.geom
+        if not manualGeomStart:
+            geom = part.geom
 
-        # creating a partition
-        if geom.length >= size:
+            # creating a partition
+            if geom.length >= size:
+                return self.addPartitionStartEnd(type,
+                                                 fs,
+                                                 geom.start,
+                                                 geom.start + size,
+                                                 flags)
+        else:
             return self.addPartitionStartEnd(type,
                                              fs,
-                                             geom.start,
-                                             geom.start + size,
+                                             manualGeomStart,
+                                             manualGeomStart + size,
                                              flags)
 
         # if you are here and then we have some problems..
