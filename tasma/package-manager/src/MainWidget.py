@@ -38,7 +38,7 @@ import Globals
 from Notifier import *
 
 # Pisi
-import pisi
+import PisiIface
 
 (install_state, remove_state, upgrade_state) = range(3)
 
@@ -160,7 +160,7 @@ class MainApplicationWidget(QWidget):
         Globals.processEvents()
 
     def componentsReady(self):
-        if not pisi.db.componentdb.ComponentDB().list_components(): # Repo metadata empty
+        if not PisiIface.get_components(): # Repo metadata empty
             return False
 
         return True
@@ -263,7 +263,7 @@ class MainApplicationWidget(QWidget):
         ##
 
         self.packageCache.clearCache()
-        upgradables = pisi.api.list_upgradable()
+        upgradables = PisiIface.get_upgradable_packages()
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
@@ -311,7 +311,7 @@ class MainApplicationWidget(QWidget):
 
     def updateStatusBar(self):
         def humanReadableSize(size):
-            tpl = pisi.util.human_readable_size(size)
+            tpl = PisiIface.humanize(size)
             if tpl[0] == 0:
                 return "0 B"
             return "%.1f %s" % (tpl[0], tpl[1])
@@ -494,10 +494,10 @@ class MainApplicationWidget(QWidget):
         # filter for selecting only apps with gui
         def appGuiFilter(pkg_name):
             if self.state == remove_state:
-                package = pisi.db.installdb.InstallDB().get_package(pkg_name)
+                package = PisiIface.get_installed_package(pkg_name)
                 return "app:gui" in package.isA
             elif self.state == install_state:
-                package = pisi.db.packagedb.PackageDB().get_package(pkg_name)
+                package = PisiIface.get_repo_package(pkg_name)
                 return "app:gui" in package.isA
 
         self.componentsList.clear()
@@ -509,11 +509,9 @@ class MainApplicationWidget(QWidget):
                 self.packageCache.populateCache(packages, inInstalled = True)
             else:
                 self.packageCache.populateCache(packages)
-        
-        cdb = pisi.db.componentdb.ComponentDB()
 
         # eliminate components that are not visible to users. This is achieved by a tag in component.xmls
-        componentNames = [cname for cname in cdb.list_components() if cdb.get_component(cname).visibleTo == 'user']
+        componentNames = [cname for cname in PisiIface.get_components() if PisiIface.is_component_visible(cname)]
 
         showOnlyGuiApp = self.settings.getBoolValue(Settings.general, "ShowOnlyGuiApp")
 
@@ -522,12 +520,12 @@ class MainApplicationWidget(QWidget):
         for componentName in componentNames:
             # just check the component existance
             try:
-                component = cdb.get_union_component(componentName)
-            except pisi.component.Error:
+                component = PisiIface.get_union_component(componentName)
+            except Exception:
                 continue
 
             # get all packages of the component
-            compPkgs = cdb.get_union_packages(componentName, walk=True)
+            compPkgs = PisiIface.get_union_component_packages(componentName, walk=True)
 
             # find which packages belong to this component
             component_packages = list(set(packages).intersection(compPkgs))
@@ -672,20 +670,12 @@ class MainApplicationWidget(QWidget):
             error=i18n("Confirm")
         return KMessageBox.questionYesNo(self, message, error)
 
-    def reloadPisi(self):
-        for module in sys.modules.keys():
-            if module.startswith("pisi."):
-                """removal from sys.modules forces reload via import"""
-                del sys.modules[module]
-
-        reload(pisi)
-
     def finished(self, command=None):
         # when pisi db version is upgraded, reload is needed before init
         packages = self.basket.packages + self.basket.extraPackages
         print "in finished(): command=%s" % command
         if command == "System.Manager.updatePackage" and "pisi" in packages:
-            self.reloadPisi()
+            PisiIface.reloadPisi()
 
         # after every operation check package cache limits
         if command not in ["System.Manager.clearCache", 
