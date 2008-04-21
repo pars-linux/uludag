@@ -17,6 +17,7 @@ import os
 import pisi.api
 
 """ BuildFarm Modules """
+import cli
 import config
 import logger
 
@@ -24,12 +25,6 @@ import logger
 import gettext
 __trans = gettext.translation("buildfarm", fallback = True)
 _  =  __trans.ugettext
-
-class CLI(pisi.ui.UI):
-    # FIXME: cli/__init__.py is weird!
-    def confirm(self, msg):
-        # return True for all cases, somehow "yes_all" is not working!
-        return True
 
 class PisiApi:
 
@@ -48,7 +43,7 @@ class PisiApi:
         # Set IO streams
         pisi.api.set_io_streams(stdout=stdout, stderr=stderr)
 
-        pisi.api.set_userinterface(CLI())
+        pisi.api.set_userinterface(cli.CLI())
 
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
