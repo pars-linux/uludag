@@ -1,3 +1,6 @@
+** 0.3:
+	- [FIXED] Install to the path of python version that is given as an argument -DPYTHONVER
+
 ** 0.2:
 	- [FIXED] Connecting more than one bus doesn't work properly
 

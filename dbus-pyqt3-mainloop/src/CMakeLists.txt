@@ -32,5 +32,5 @@ TARGET_LINK_LIBRARIES(qt3
                       ${QT_LIBRARIES}
                       dbus-1)
 
-INSTALL(TARGETS qt3 DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/python2.4/site-packages/dbus/mainloop )
+INSTALL(TARGETS qt3 DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/${PYTHONVER}/site-packages/dbus/mainloop )
 
