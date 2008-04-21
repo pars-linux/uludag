@@ -10,7 +10,7 @@
 # Please read the COPYING file.
 
 import string
-import pisi
+import PisiIface
 
 from kdecore import i18n
 from qt import QObject, QTimer
@@ -31,24 +31,8 @@ class Commander(QObject):
             parent.showErrorMessage("Cannot connect to Comar daemon")
 
     def wait_comar(self):
-        self.comar.notifier.setEnabled(False)
-        import socket, time
-        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-        timeout = 5
-        while timeout > 0:
-            self.parent.processEvents()
-            try:
-                if pisi.api.ctx.comar_sockname:
-                    sock.connect(pisi.api.ctx.comar_sockname)
-                    return True
-                else:
-                    self.comar.notifier.setEnabled(True)
-                    sock.connect("/var/run/comar.socket")
-                    return True
-            except socket.error:
-                timeout -= 0.2
-            time.sleep(0.2)
-        return False
+        # FIXME
+        return True
 
     def slotComar(self, sock):
         try:
@@ -113,7 +97,7 @@ class Commander(QObject):
                 self.parent.showErrorMessage(unicode(reply.data))
 
             # if an error occured communicating with comar and components are not ready we should warn
-            if not pisi.db.componentdb.ComponentDB().list_components():
+            if not PisiIface.get_components():
                 self.parent.repoNotReady()
         else:
             # paranoia
@@ -154,28 +138,25 @@ class Commander(QObject):
         self.comar.setRepositories(",".join(list))
 
     def listUpgradable(self):
-        return pisi.api.list_upgradable()
+        return PisiIface.get_upgradable_packages()
 
     def listPackages(self):
-        return list(pisi.api.list_installed())
+        return PisiIface.get_installed_packages()
 
     def listNewPackages(self):
-        return list((set(pisi.api.list_available()) - set(pisi.api.list_installed())) - set(pisi.api.list_replaces().values()))
-
-    def packageGraph(self,list,ignoreInstalled=True):
-        return pisi.api.package_graph(list, ignoreInstalled)
+        return PisiIface.get_not_installed_packages()
 
     def getRepoList(self):
-        return pisi.db.repodb.RepoDB().list_repos()
+        return PisiIface.get_repositories()
 
     def getRepoUri(self,repoName):
-        return pisi.db.repodb.RepoDB().get_repo(repoName).indexuri.get_uri()
+        return PisiIface.get_repository_url(repoName)
 
     def cancel(self):
         self.comar.cancel()
 
     def checkConflicts(self, packages):
-        return pisi.api.get_conflicts(packages)
+        return PisiIface.get_conflicts(packages)
 
     def inProgress(self):
         return self.comar.com_lock.locked()
@@ -189,12 +170,12 @@ class Commander(QObject):
         self.comar.setCache(enabled, limit)
 
     def checkCacheLimits(self):
-        config = pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
+        config = PisiIface.read_config("/etc/pisi/pisi.conf")
 
         cache = config.get("general", "package_cache")
         if cache == "True":
             limit = config.get("general", "package_cache_limit")
-            
+
             # If PackageCache is used and limit is 0. It means limitless.
             if limit and int(limit) != 0:
                 self.clearCache(int(limit) * 1024 * 1024)
