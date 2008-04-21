@@ -43,6 +43,12 @@ class MainWidget(dm_mainview.mainWidget):
         dm_mainview.mainWidget.__init__(self, parent)
 
         self.displayConfiguration = displayconfig.DisplayConfig()
+
+        if not self.displayConfiguration._randr12:
+            message = i18n("Sorry, Display Manager currenty does not support your driver.")
+            QMessageBox.critical(self, i18n("No Support"), message, QMessageBox.Ok, QMessageBox.NoButton)
+            sys.exit()
+
         self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
 
         self.screenNames = { "1":"Primary Screen", "2": "Secondary Screen" }
