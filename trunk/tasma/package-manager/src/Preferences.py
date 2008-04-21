@@ -69,7 +69,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
     
     # Cache settings are system wide and taken from pisi.conf
     def getCacheSettings(self):
-        config = pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
+        config = PisiIface.read_config("/etc/pisi/pisi.conf")
 
         cache = config.get("general", "package_cache")
         cache_limit = config.get("general", "package_cache_limit")
