@@ -104,6 +104,10 @@ class MainWidget(dm_mainview.mainWidget):
         else:
             self.screenImage2.hide()
 
+    def duplicateOutputs(self):
+        message = i18n("Sorry, but you can use one device for each output.\nTry to select another output.")
+        QMessageBox.warning(self, i18n("Duplicate Outputs!"), message, QMessageBox.Ok, QMessageBox.NoButton)
+
     def setIconbyResolution(self, resolution = None, screenId = None):
         if resolution == None:
             resolution = self.currentModes[self.currentOutput]
@@ -134,9 +138,15 @@ class MainWidget(dm_mainview.mainWidget):
         curOut =  str(self.comboBoxOutput.currentText())
 
         if self.selectedScreen == "1":
-            self.displayConfiguration.primaryScr = curOut
+            if curOut == self.displayConfiguration.secondaryScr:
+                self.duplicateOutputs()
+            else:
+                self.displayConfiguration.primaryScr = curOut
         else:
-            self.displayConfiguration.secondaryScr = curOut
+            if curOut == self.displayConfiguration.primaryScr:
+                self.duplicateOutputs()
+            else:
+                self.displayConfiguration.secondaryScr = curOut
 
         self.getResolutions()
 
@@ -186,7 +196,7 @@ class MainWidget(dm_mainview.mainWidget):
 
     def getResolutions(self, firstBoot = None):
         """Gets resolutions due to selected output"""
-        
+
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
 
         if firstBoot == 1:
@@ -194,10 +204,10 @@ class MainWidget(dm_mainview.mainWidget):
             self.comboBoxOutput.setCurrentText(self.currentOutput)
         else:
             self.currentOutput = str(self.comboBoxOutput.currentText())
-        
+
         for resolution in self.screenModes[self.currentOutput]:
             self.comboBoxResolution.insertItem(resolution)
-        
+
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
     def identifyDisplays(self):
