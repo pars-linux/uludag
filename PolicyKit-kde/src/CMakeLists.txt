@@ -53,7 +53,7 @@ TARGET_LINK_LIBRARIES(policykit-kde
                       polkit-grant)
 
 #install policykit-kde executable and service file
-INSTALL(TARGETS policykit-kde DESTINATION ${CMAKE_INSTALL_PREFIX}/libexec)
+INSTALL(TARGETS policykit-kde DESTINATION libexec)
 INSTALL(FILES
     ${CMAKE_SOURCE_DIR}/data/kde-org.freedesktop.PolicyKit.AuthenticationAgent.service
-    DESTINATION ${CMAKE_INSTALL_PREFIX}/share/dbus-1/services)
+    DESTINATION share/dbus-1/services)
