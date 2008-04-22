@@ -13,7 +13,7 @@
 
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
-#include <kapplication.h>
+#include <kuniqueapplication.h>
 #include <klocale.h>
 
 #include "authdialog.h"
@@ -35,8 +35,15 @@ int main (int argc, char *argv[])
     };
 
     KCmdLineArgs::addCmdLineOptions(options);
+    KUniqueApplication::addCmdLineOptions();
 
-    KApplication app;
+    if (!KUniqueApplication::start())
+    {
+        Debug::printError("PolicyKit-kde is already running, exiting");
+        return 0;
+    }
+
+    KUniqueApplication app(true, true, true);
 
     try {
         PolicyKitKDE *pkKDE = new PolicyKitKDE();
