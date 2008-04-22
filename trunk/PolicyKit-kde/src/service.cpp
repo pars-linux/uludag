@@ -11,6 +11,7 @@
 
 //headers required for SIGCHLD handling and strdup
 #include <csignal>
+#include <cstdlib>
 #include <cstring>
 
 //kde and qt headers
