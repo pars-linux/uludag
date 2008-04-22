@@ -30,17 +30,17 @@ from yali4.gui.debugger import DebuggerAspect
 import YaliWindow
 
 # screens
-import ScrKahyaCheck
+#import ScrKahyaCheck
 import ScrWelcome
-import ScrCheckCD
+#import ScrCheckCD
 import ScrKeyboard
 import ScrDateTime
 import ScrAdmin
 import ScrUsers
-import ScrPartitionAuto
-import ScrPartitionManual
-import ScrBootloader
-import ScrInstall
+#import ScrPartitionAuto
+#import ScrPartitionManual
+#import ScrBootloader
+#import ScrInstall
 import ScrGoodbye
 
 ##
@@ -53,18 +53,12 @@ class Runner:
     def __init__(self):
 
         _all_screens = [                        # Numbers can be used with -s paramter
-                        ScrKahyaCheck,          # 00
                         ScrWelcome,             # 01
-                        ScrCheckCD,             # 02
-                        ScrKeyboard,            # 03
-                        ScrDateTime,            # 04
-                        ScrUsers,               # 05
-                        ScrAdmin,               # 06
-                        ScrPartitionAuto,       # 07
-                        ScrPartitionManual,     # 08
-                        ScrBootloader,          # 09
-                        ScrInstall,             # 10
-                        ScrGoodbye              # 11
+                        ScrKeyboard,            # 02
+                        ScrDateTime,            # 03
+                        ScrUsers,               # 04
+                        ScrAdmin,               # 05
+                        ScrGoodbye              # 06
                        ]
 
         self._app = QtGui.QApplication(sys.argv)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#/usr/bin/env python
 #
 # Copyright (C) 2005-2007 TUBITAK/UEKAE
 #
@@ -30,16 +30,8 @@ def qt_ui_files():
     p = "yali4/gui/Ui/*.ui"
     return glob.glob(p)
 
-def gui_slidepics():
-    p = "yali4/gui/pics/slideshow/*.png"
-    return glob.glob(p)
-
 def user_faces():
     p = "yali4/user_faces/*.png"
-    return glob.glob(p)
-
-def data_files():
-    p = "yali4/data/*.xml"
     return glob.glob(p)
 
 def getRevision():
@@ -54,8 +46,6 @@ def getRevision():
         return ""
 
 def getVersion():
-#    rev = getRevision()
-#    return "-r".join([YALI_VERSION, rev])
     # don't use svn revision...
     return YALI_VERSION
 
@@ -177,14 +167,9 @@ setup(name="yali4",
       url="http://www.pardus.org.tr/eng/yali/",
       packages = ['yali4', 'yali4.gui', 'yali4.gui.Ui'],
       package_dir = {'': ''},
-      data_files = [('/usr/share/yali4/slideshow', gui_slidepics()),
-                    ('/usr/share/yali4/user_faces', user_faces()),
-                    ('/usr/share/yali4/data', data_files())],
+      data_files = [('/usr/share/yali4/slideshow', gui_slidepics())],
       scripts = ['yali4-bin'],
-      ext_modules = [Extension('yali4._sysutils',
-                               sources = ['yali4/_sysutils.c'],
-                               libraries = ["ext2fs"],
-                               extra_compile_args = ['-Wall'])],
+      ext_modules = [],
       cmdclass = {
         'build' : YaliBuild,
         'clean' : YaliClean,
