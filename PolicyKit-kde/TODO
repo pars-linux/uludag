@@ -11,7 +11,6 @@ LESS IMPORTANT:
 * Show details about the application request for authorization
 * Check if authentication is in progress, when a new request arrived
 * Check one_shot stuff
-* Add keyboard and mouse grab during dialog
 * Control XID and add 'transient for'
 * Add vendor icon support
 * Check "Password: " prompt like polkit-gnome
