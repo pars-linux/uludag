@@ -58,8 +58,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
         self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
 
-        self.iconWide = getIconSet("display_manager_wide", KIcon.User)
-        self.iconNormal = getIconSet("display_manager_normal", KIcon.User)
+        self.iconWide = getIconSet("monitor_wide", KIcon.User)
+        self.iconNormal = getIconSet("monitor", KIcon.User)
 
         self.getCurrentConf()
 
@@ -267,6 +267,7 @@ def main():
     win.setMinimumSize(400, 300)
     #win.resize(500, 300)
     attachMainWidget(win)
+    win.setIcon(getIconSet("randr").pixmap(QIconSet.Small, QIconSet.Normal))
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
 
