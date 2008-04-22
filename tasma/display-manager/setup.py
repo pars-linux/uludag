@@ -65,7 +65,6 @@ app_data = [
     'src/randriface.py',
     'src/utility.py',
     'src/helpdialog.ui',
-    'src/display-manager.desktop',
     'pics',
     'help'
 ]
