@@ -21,6 +21,8 @@ version = '0.1'
 distfiles = """
     README
     AUTHORS
+    COPYING
+    *.py
     src/*.ui
     src/*.png
     src/*.py
@@ -58,7 +60,6 @@ if "dist" in sys.argv:
 
 app_data = [
     'src/display-manager.py',
-    ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/display_manager.png']),
     'src/dm_mainview.ui',
     'src/displayconfig.py',
     'src/randriface.py',
