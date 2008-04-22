@@ -76,9 +76,6 @@ def mem_total():
             return int(l.split()[1]) / 1024
     return None
 
-def eject_cdrom(mount_point=consts.source_dir):
-    os.system("eject -m %s" % mount_point)
-
 def text_is_valid(text):
     allowed_chars = ascii_letters + digits + '.' + '_' + '-'
     return len(text) == len(filter(lambda u: [x for x in allowed_chars if x == u], text))

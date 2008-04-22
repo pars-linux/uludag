@@ -23,7 +23,6 @@ requestsCompleted = False
 # bind some constant values
 # There are more values defined in yali/constants.py!
 consts.pics_dir = join(consts.data_dir, "pics")
-consts.slidepics_dir = join(consts.data_dir, "slideshow")
 consts.helps_dir = join(consts.data_dir, "helps")
 
 debugger = None
@@ -31,9 +30,6 @@ debugEnabled = False
 
 # install data
 installData = installdata.InstallData()
-
-# auto partitioning
-use_autopart = False
 
 # auto installation
 autoInstall = False

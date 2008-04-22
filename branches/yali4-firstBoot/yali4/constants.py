@@ -52,31 +52,14 @@ consts.pardus_version = file("/etc/pardus-release").readlines()[0].strip()
 
 consts.data_dir = "/usr/share/yali4"
 
-consts.mnt_dir = "/mnt"
-
-# new system will be installed directly into this target directory
-consts.target_dir = join(consts.mnt_dir, "target")
-
 # log file for storing after installation
-consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
-
-# packages (and maybe others) will be in this source (cdrom) directory
-consts.source_dir = join(consts.mnt_dir, "cdrom")
+consts.log_file = "/var/log/yaliFirstBoot.log"
 
 # dbus socket path
-consts.dbus_socket_file = join(consts.target_dir, "var/run/dbus/system_bus_socket")
-
-# swap file path
-consts.swap_file_name = ".swap"
-consts.swap_file_path = join(consts.target_dir, 
-                             consts.swap_file_name)
+consts.dbus_socket_file = "/var/run/dbus/system_bus_socket"
 
 # user faces (for KDM)
 consts.user_faces_dir = join(consts.data_dir, "user_faces")
-
-# pisi repository
-consts.cd_repo_name = "pardus-cd"
-consts.cd_repo_uri = join(consts.source_dir, "repo/pisi-index.xml.bz2")
 
 # pardus repository
 consts.pardus_repo_name = ""
