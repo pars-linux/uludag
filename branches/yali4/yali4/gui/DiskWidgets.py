@@ -108,11 +108,13 @@ class DiskList(QtGui.QWidget):
     # GUI Operations
     #
     def updatePartEdit(self):
-        self.tabWidget.currentWidget().updatePartEdit()
+        cur = self.tabWidget.currentWidget()
+        if cur:
+            cur.updatePartEdit()
 
     def addDisk(self,dw):
-        self.tabWidget.addTab(dw,dw.name)
-        self.tabWidget.setTabToolTip(self.tabWidget.count()-1,"%s - %s" % (dw.model,dw.name))
+        ni = self.tabWidget.addTab(dw,dw.name)
+        self.tabWidget.setTabToolTip(ni,"%s - %s" % (dw.model,dw.name))
         self.diskCount+=1
 
     def update(self):
