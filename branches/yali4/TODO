@@ -112,6 +112,8 @@ Legend:
    + add clock/date settings screen
    + Renew the user interface
 
+ + Smart partitioning setup
+
  / kahya (which; KAHya is Yali Automator) (#3956)
    + load kahya file from given path (from grub)
    + install the system by using given kahya file

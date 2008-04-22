@@ -137,13 +137,17 @@ class BootLoader:
         def boot_parameters(root):
             """ Returns kernel parameters from cmd_line.
                 It also cleans unnecessary options """
+
+            def is_required(param):
+                params = ["initrd","init","xorg","yali4","BOOT_IMAGE","lang",consts.kahyaParam]
+                for p in params:
+                    if p.startswith("%s=" % param):
+                        return False
+                return True
+
             s = []
             # Get parameters from cmdline.
-            for i in [x for x in open("/proc/cmdline", "r").read().split() \
-                        if not x.startswith("init=") \
-                       and not x.startswith("xorg=") \
-                       and not x.startswith("yali4=") \
-                       and not x.startswith(consts.kahyaParam)]:
+            for i in [x for x in open("/proc/cmdline", "r").read().split()]:
                 if i.startswith("root="):
                     s.append("root=/dev/%s" % (root))
                 elif i.startswith("mudur="):
@@ -153,7 +157,7 @@ class BootLoader:
                         mudur += p
                     if not len(mudur) == len("mudur="):
                         s.append(mudur)
-                else:
+                elif is_required(i):
                     s.append(i)
 
             # a hack for http://bugs.pardus.org.tr/3345

@@ -138,7 +138,7 @@ don't you?
             obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
             for u in yali4.users.pending_users:
                 ctx.debugger.log("User %s adding to system" % u.username)
-                obj.addUser("auto", u.username, u.realname, "", "", u.passwd, u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
+                obj.addUser("auto", u.username, u.realname, "", "", unicode(u.passwd), u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
                 # Enable auto-login
                 if u.username == ctx.installData.autoLoginUser:
                     u.setAutoLogin()
