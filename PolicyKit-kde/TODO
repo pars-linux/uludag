@@ -1,5 +1,5 @@
 * Use polkit_grant_cancel_auth in handler of DBus signal NameOwnerChanged
-* Use KUniqueApplication to workaround re-requesting DBus service name by another agent
+* Fix re-requesting DBus service name by another agent
 * Show details about the application request for authorization
 * Check if authentication is in progress, when a new request arrived
 * Fix admin user selection support (another eventloop solution may be required)
@@ -13,5 +13,4 @@
 * Use cancelled member to handle cancalling the dialog
 * Review deconstructors for leaks, unrefs and closing connections
 * Handle exceptions wisely :)
-* Prepare PiSi package of policykit-kde
 * Announcement in HAL mailing list
