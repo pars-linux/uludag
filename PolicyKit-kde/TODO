@@ -1,16 +1,20 @@
+IMPORTANT:
+* Handle cancelling
+* Fix disabling of keep session label
+* Fix admin user selection support (another eventloop solution may be required)
+* Fix override_type function
+
+LESS IMPORTANT:
+* Inform user that authentication is not granted
 * Use polkit_grant_cancel_auth in handler of DBus signal NameOwnerChanged
 * Fix re-requesting DBus service name by another agent
 * Show details about the application request for authorization
 * Check if authentication is in progress, when a new request arrived
-* Fix admin user selection support (another eventloop solution may be required)
-* Fix disabling of keep session label
 * Check one_shot stuff
 * Add keyboard and mouse grab during dialog
 * Control XID and add 'transient for'
 * Add vendor icon support
 * Check "Password: " prompt like polkit-gnome
-* Fix override_type function
-* Use cancelled member to handle cancalling the dialog
 * Review deconstructors for leaks, unrefs and closing connections
 * Handle exceptions wisely :)
 * Announcement in HAL mailing list
