@@ -62,6 +62,7 @@ app_data = [
     'src/displayconfig.py',
     'src/randriface.py',
     'src/utility.py',
+    'src/helpdialog.ui',
     'src/display-manager.desktop',
     'help'
 ]
