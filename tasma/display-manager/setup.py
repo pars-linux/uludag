@@ -27,6 +27,7 @@ distfiles = """
     src/*.desktop
     po/*.po
     po/*.pot
+    pics/*.png
     help/*.css
     help/tr/*.html
     help/en/*.html
@@ -64,6 +65,7 @@ app_data = [
     'src/utility.py',
     'src/helpdialog.ui',
     'src/display-manager.desktop',
+    'pics',
     'help'
 ]
 

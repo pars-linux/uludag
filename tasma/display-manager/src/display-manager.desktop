@@ -15,6 +15,6 @@ X-KDE-ModuleType=Library
 X-KDE-Library=display-manager
 X-KDE-FactoryName=display_manager
 Type=Application
-Icon=display_manager
+Icon=randr
 Exec=kcmshell display-manager
 Categories=QT;KDE;X-KDE-settings-system;X-KDE-tasma-system
