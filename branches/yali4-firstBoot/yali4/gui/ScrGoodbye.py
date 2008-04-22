@@ -25,12 +25,7 @@ import yali4.sysutils
 import yali4.users
 import yali4.localeutils
 import yali4.postinstall
-import yali4.bootloader
-import yali4.storage
-import yali4.partitionrequest as partrequest
-import yali4.partitiontype as parttype
 from os.path import basename
-from yali4.sysutils import is_windows_boot
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.YaliSteps import YaliSteps
@@ -78,25 +73,7 @@ don't you?
         ctx.mainScreen.disableNext()
         self.ui.info.show()
 
-        try:
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
-            yali4.sysutils.umount(ctx.consts.target_dir + "/home")
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir))
-            yali4.sysutils.umount(ctx.consts.target_dir)
-        except:
-            ctx.debugger.log("Umount Failed.")
-            pass
-
         w = RebootWidget(self)
-
-        ctx.debugger.log("Show reboot dialog.")
-        self.dialog = WarningDialog(w, self)
-        self.dialog.exec_()
-        ctx.mainScreen.processEvents()
-
-        # remove cd...
-        ctx.debugger.log("Trying to eject the CD.")
-        yali4.sysutils.eject_cdrom()
 
         ctx.debugger.log("Yali, fastreboot calling..")
 

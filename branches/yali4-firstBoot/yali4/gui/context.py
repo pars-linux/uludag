@@ -16,7 +16,6 @@ from yali4.gui import installdata
 # singletons from yali.*
 from yali4.constants import consts
 from yali4.options import options
-from yali4.partitionrequest import partrequests
 
 # lock for format request
 requestsCompleted = False

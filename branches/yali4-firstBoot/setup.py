@@ -167,9 +167,14 @@ setup(name="yali4",
       url="http://www.pardus.org.tr/eng/yali/",
       packages = ['yali4', 'yali4.gui', 'yali4.gui.Ui'],
       package_dir = {'': ''},
-      data_files = [('/usr/share/yali4/slideshow', gui_slidepics())],
+      data_files = [('/usr/share/yali4/user_faces', user_faces())],
       scripts = ['yali4-bin'],
-      ext_modules = [],
+      ext_modules = [
+                      Extension('yali4._sysutils',
+                        sources = ['yali4/_sysutils.c'],
+                        libraries = ["ext2fs"],
+                        extra_compile_args = ['-Wall'])
+                    ],
       cmdclass = {
         'build' : YaliBuild,
         'clean' : YaliClean,

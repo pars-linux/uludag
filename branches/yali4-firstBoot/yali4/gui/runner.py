@@ -30,17 +30,11 @@ from yali4.gui.debugger import DebuggerAspect
 import YaliWindow
 
 # screens
-#import ScrKahyaCheck
 import ScrWelcome
-#import ScrCheckCD
 import ScrKeyboard
 import ScrDateTime
 import ScrAdmin
 import ScrUsers
-#import ScrPartitionAuto
-#import ScrPartitionManual
-#import ScrBootloader
-#import ScrInstall
 import ScrGoodbye
 
 ##
