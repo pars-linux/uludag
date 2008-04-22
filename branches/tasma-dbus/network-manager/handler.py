@@ -121,7 +121,7 @@ class CallHandler:
     
     def __getAuthIface(self):
         try:
-            obj = self.busSes.get_object("org.gnome.PolicyKit", "/")
+            obj = self.busSes.get_object("org.freedesktop.PolicyKit.AuthenticationAgent", "/")
             return dbus.Interface(obj, "org.freedesktop.PolicyKit.AuthenticationAgent")
         except dbus.DBusException, e:
             for func, args in self.handleDBusError.iteritems():
