@@ -215,7 +215,9 @@ class MainWidget(dm_mainview.mainWidget):
         pass
 
     def slotApply(self):
+        kapp.setOverrideCursor(QCursor(Qt.WaitCursor))
         self.displayConfiguration.apply()
+        kapp.restoreOverrideCursor()
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
