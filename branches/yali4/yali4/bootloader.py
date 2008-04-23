@@ -141,7 +141,7 @@ class BootLoader:
             def is_required(param):
                 params = ["initrd","init","xorg","yali4","BOOT_IMAGE","lang",consts.kahyaParam]
                 for p in params:
-                    if p.startswith("%s=" % param):
+                    if param.startswith("%s=" % p):
                         return False
                 return True
 
