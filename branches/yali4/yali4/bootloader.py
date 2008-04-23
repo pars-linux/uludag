@@ -90,7 +90,7 @@ class BootLoader:
                 d = l[1]
                 return d
 
-    def write_grub_conf(self, install_root_path, install_dev):
+    def write_grub_conf(self, install_root_path, install_dev, install_root_path_label):
         """ Check configurations and write grub.conf to the installed system.
             Default path is /mnt/target/boot/grub.conf """
         if not install_dev.startswith("/dev/"):
@@ -134,7 +134,7 @@ class BootLoader:
             ver = bk[len("kernel-"):]
             return "initramfs-%s" % ver
 
-        def boot_parameters(root):
+        def boot_parameters(root_label):
             """ Returns kernel parameters from cmd_line.
                 It also cleans unnecessary options """
 
@@ -149,7 +149,7 @@ class BootLoader:
             # Get parameters from cmdline.
             for i in [x for x in open("/proc/cmdline", "r").read().split()]:
                 if i.startswith("root="):
-                    s.append("root=/dev/%s" % (root))
+                    s.append("root=LABEL=%s" % (root_label))
                 elif i.startswith("mudur="):
                     mudur = "mudur="
                     for p in i[len("mudur="):].split(','):
@@ -171,7 +171,7 @@ class BootLoader:
 
         boot_kernel = find_boot_kernel()
         initramfs_name = find_initramfs_name(boot_kernel)
-        boot_parameters =  boot_parameters(install_root)
+        boot_parameters =  boot_parameters(install_root_path_label)
         s = grub_conf_tmp % {"root": install_root,
                              "grub_root": grub_root,
                              "pardus_version": consts.pardus_version,

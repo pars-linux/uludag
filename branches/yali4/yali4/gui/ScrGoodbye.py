@@ -192,7 +192,9 @@ don't you?
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   partrequest.mountRequestType)
         _ins_part = root_part_req.partition().getPath()
-        loader.write_grub_conf(_ins_part,ctx.installData.bootLoaderDev)
+        _ins_part_label = root_part_req.partition().getFSLabel()
+
+        loader.write_grub_conf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
 
         # Check for windows partitions.
         ctx.debugger.log("Checking for Windows ...")
