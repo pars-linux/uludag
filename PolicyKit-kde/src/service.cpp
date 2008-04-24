@@ -31,6 +31,7 @@
 //dbus backport headers
 #include "qdbuserror.h"
 #include "qdbusmessage.h"
+#include "qdbusdata.h"
 
 //own headers
 #include "service.h"
@@ -139,7 +140,7 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
 
     else if (message.interface() == POLICYKITKDE_INTERFACENAME && message.member() == "ObtainAuthorization")
     {
-        if (message.count() != 3 || message[0].type() != QVariant::String || message[1].type() != QVariant::UInt || message[2].type() != QVariant::UInt)
+        if (message.count() != 3 || message[0].type() != QDBusData::String || message[1].type() != QDBusData::UInt32 || message[2].type() != QDBusData::UInt32)
         {
             sendDBusError(message, "Wrong signature, three arguments expected: (String, UINT, UINT)");
             return false;
@@ -215,7 +216,7 @@ void PolicyService::handleIntrospect(const QDBusMessage& message)
 "</node>";
 
     Debug::printDebug("Handling introspect() call.");
-    reply << QVariant(introspection);
+    reply << QDBusData::fromString(introspection);
     m_sessionBus.send(reply);
 }
 
@@ -238,7 +239,7 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
     //TODO: Check if another request is in progress
     //m_authInProgress = true;
 
-    obtainAuthorization(message[0].toString(), message[1].toUInt(), message[2].toUInt(), message);
+    obtainAuthorization(message[0].toString(), message[1].toUInt32(), message[2].toUInt32(), message);
 }
 
 /////////// PolKit IO watch functions ////////////////
@@ -571,7 +572,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     //send dbus reply
     QDBusMessage reply = QDBusMessage::methodReply(messageToReply);
 
-    reply << QVariant(m_gainedPrivilege, 1);
+    reply << QDBusData::fromBool(m_gainedPrivilege);
     m_sessionBus.send(reply);
 }
 
