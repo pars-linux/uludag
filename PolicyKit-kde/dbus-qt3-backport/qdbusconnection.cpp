@@ -385,7 +385,11 @@ bool QDBusConnection::requestName(const QString &name, int modeFlags)
     if (modeFlags & ReplaceExisting)
         dbusFlags |= DBUS_NAME_FLAG_REPLACE_EXISTING;
 
-    dbus_bus_request_name(d->connection, name.utf8(), dbusFlags, &d->error);
+    int requestReply = dbus_bus_request_name(d->connection, name.utf8(), dbusFlags, &d->error);
+
+    // return false if we couldn't get ownership or we are alredy owner
+    if ((requestReply != DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER) || (requestReply != DBUS_REQUEST_NAME_REPLY_ALREADY_OWNER))
+        return false;
 
     return !d->handleError();
 }
