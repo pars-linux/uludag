@@ -7,7 +7,6 @@ IMPORTANT:
 LESS IMPORTANT:
 * Inform user that authentication is not granted
 * Use polkit_grant_cancel_auth in handler of DBus signal NameOwnerChanged
-* Fix re-requesting DBus service name by another agent
 * Show details about the application request for authorization
 * Check if authentication is in progress, when a new request arrived
 * Check one_shot stuff
