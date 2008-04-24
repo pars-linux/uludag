@@ -34,6 +34,9 @@ alias cd..="cd .."
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
+alias grep="grep --color"
+alias egrep="egrep --color"
+alias fgrep="fgrep --color"
 
 alias scp-resume="rsync --compress-level=3 --partial --progress --rsh=ssh"
 
