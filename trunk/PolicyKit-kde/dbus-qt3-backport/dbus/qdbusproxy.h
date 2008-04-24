@@ -1,6 +1,6 @@
 /* qdbusproxy.h DBUS Object proxy
  *
- * Copyright (C) 2005 Kevin Krammer <kevin.krammer@gmx.at>
+ * Copyright (C) 2005-2007 Kevin Krammer <kevin.krammer@gmx.at>
  *
  * Licensed under the Academic Free License version 2.1
  *
@@ -25,7 +25,7 @@
 #define QDBUSPROXY_H
 
 /**
- * @page dbusclient Using DBus as a client
+ * @page dbusclient Using D-Bus as a client
  *
  * Contents:
  * - @ref dbusclient-introduction
@@ -43,18 +43,18 @@
  *
  * @section dbusclient-introduction Introduction
  *
- * While it is of course possible to just exchange DBus messages with a
- * DBus service, it is a lot more comfortable to use QDBusProxy.
+ * While it is of course possible to just exchange D-Bus messages with a
+ * D-Bus service, it is a lot more comfortable to use QDBusProxy.
  *
  * With QDBusProxy you only need to specify the service object once, i.e.
- * its DBus name, path and interface, and just provide the method and its
+ * its D-Bus name, path and interface, and just provide the method and its
  * parameters when initiating an invokation.
  *
- * Additionally the proxy transforms DBus signals from the proxy's peer
- * (the DBus service object's interface it is associated with) to QObject
+ * Additionally the proxy transforms D-Bus signals from the proxy's peer
+ * (the D-Bus service object's interface it is associated with) to QObject
  * signal carrying the original signal's content.
  *
- * @section dbusclient-example A simple DBus client example
+ * @section dbusclient-example A simple D-Bus client example
  *
  * @code
  *   #include <dbus/qdbusconnection.h>
@@ -65,9 +65,7 @@
  *   {
  *       // establish a connection to the session bus
  *
- *       QDBusConnection connection =
- *           QDBusConnection::addConnection(QDBusConnection::SessionBus);
- *
+ *       QDBusConnection connection = QDBusConnection::sessionBus();
  *       if (!connection.isConnected())
  *           qFatal("Failed to connect to session bus");
  *
@@ -81,16 +79,20 @@
  *       // call the "ListNames" method. It returns an array of string, in Qt3 terms
  *       // a QStringList, it expects no parameters
  *
- *       QValueList<QVariant> params;
+ *       QValueList<QDBusData> params;
  *       QDBusMessage reply = proxy.sendWithReply("ListNames", params);
  *
  *       if (reply.type() != QDBusMessage::ReplyMessage)
  *           qFatal("Call failed");
  *
- *       if (reply.count() != 1 || reply[0].type() != QVariant::StringList)
+ *       if (reply.count() != 1 || reply[0].type() != QDBusData::List)
  *           qFatal("Unexpected reply");
  *
- *       QStringList names = reply[0].toStringList();
+ *       bool ok = false;
+ *       QStringList names = reply[0].toQStringList(&ok);
+ *
+ *       if (!ok) qFatal("Unexpected reply");
+ *
  *       for (QStringList::iterator it = names.begin(); it != names.end(); ++it)
  *       {
  *           qDebug("%s", (*it).local8Bit().data());
@@ -102,7 +104,7 @@
  *
  * @section dbusclient-initialization Program initialization
  *
- * A connection to the bus is acquired using QDBusConnection::addConnection()
+ * A connection to the bus is acquired using QDBusConnection::sessionBus()
  *
  * Next, a proxy is created for the object @c "/org/freedesktop/DBus" with
  * interface @c "org.freedesktop.DBus" on the service @c "org.freedesktop.DBus"
@@ -120,7 +122,7 @@
  * As seen in the example code above, a synchronous method call can be achieved
  * by QDBusProxy::sendWithReply(). It sends a method call to the remote object,
  * and blocks until reply is received. The outgoing arguments are specified as
- * a list of QVariants.
+ * a list of QDBusData.
  *
  * @subsection dbusclient-asynccall Asynchronous method calls
  *
@@ -139,15 +141,20 @@
  * @note For asynchronous calls you'll need a running event loop, i.e. a
  * QApplication object and its exec() having been invoked.
  *
- * @section dbusclient-signals Connecting to DBus signals
+ * @section dbusclient-signals Connecting to D-Bus signals
  *
  * To receive D-BUS signals just connect to the QDBusProxy's signal
  * QDBusProxy::dbusSignal(const QDBusMessage&)
  *
- * It will be emitted whenever a DBus signal message is received from the peer
+ * It will be emitted whenever a D-Bus signal message is received from the peer
  * object.
  * Filtering of signals is based on the value set for @c service, @c path and
  * @c interface
+ *
+ * @note Filtering for @c service will only happen if @c service is a unique
+ *       D-Bus name, i.e. if it starts with a colon @c ":" since D-Bus signals
+ *       carry the sender's unique name and filtering by a requested name
+ *       would reject all signals
  *
  * Usually a proxy will be also be used to send to the peer object, thus having
  * them all set. However if a proxy is only needed for signals, any of the
@@ -174,7 +181,7 @@
  * @endcode
  * Then somewhere else in a source file:
  * @code
- *   QDBusConnection connection = QDBusConnection::addConnection(QDBusConnection::SessionBus);
+ *   QDBusConnection connection = QDBusConnection::sessionBus();
  *
  *   MyReceiver* receiver1 = new MyReceiver();
  *
@@ -202,22 +209,23 @@
  */
 
 #include <qobject.h>
-#include <qvaluelist.h>
-#include <qvariant.h>
 
 #include "dbus/qdbusmacros.h"
 
 class QDBusConnection;
+class QDBusData;
 class QDBusError;
 class QDBusMessage;
+
+template <class T> class QValueList;
 
 /**
  * @brief Client interface to a remote service object
  *
- * QDBusProxy provides a convenience interface for working with DBus services,
- * or more precisely, interfaces of DBus service objects.
+ * QDBusProxy provides a convenience interface for working with D-Bus services,
+ * or more precisely, interfaces of D-Bus service objects.
  *
- * A DBus service object is identified through the name of its host application
+ * A D-Bus service object is identified through the name of its host application
  * on the bus and its path (logical location) within the host application.
  * Such a service object can implement any number of interfaces, i.e. groups
  * methods and signals, and can create a QDBusProxy instance for every one
@@ -251,7 +259,7 @@ public:
      * This can be useful to monitor all signal on a connection without
      * filtering for a specific peer.
      *
-     * @param connection the DBus connection to work on
+     * @param connection the D-Bus connection to work on
      * @param parent QObject parent
      * @param name QObject name
      */
@@ -268,7 +276,7 @@ public:
      * @param service the name the peer's host application uses on the bus
      * @param path the peer object's path within its host application
      * @param interface the interface to work with
-     * @param connection the DBus connection to work on
+     * @param connection the D-Bus connection to work on
      * @param parent QObject parent
      * @param name QObject name
      */
@@ -282,7 +290,7 @@ public:
     virtual ~QDBusProxy();
 
     /**
-     * @brief Sets the DBus connection to work on
+     * @brief Sets the D-Bus connection to work on
      *
      * Disconnects from any previously used connection and connects
      * to the new connection's signal distribution.
@@ -290,7 +298,7 @@ public:
      * the other set methods, the instance's signal dbusSignal() will emit
      * all signals received on the given connection.
      *
-     * @param connection the DBus connection to work on
+     * @param connection the D-Bus connection to work on
      *
      * @return @c true if connecting to the new connection's signal succeeded,
      *         @c false if it failed, e.g. if the connection is a "null"
@@ -304,7 +312,7 @@ public:
     bool setConnection(const QDBusConnection& connection);
 
     /**
-     * @brief Returns the currently used DBus connection
+     * @brief Returns the currently used D-Bus connection
      *
      * @see setConnection()
      */
@@ -432,7 +440,7 @@ public:
      * @see sendWithAsyncReply()
      * @see @ref dbusconventions-membername
      */
-    bool send(const QString& method, const QValueList<QVariant>& params) const;
+    bool send(const QString& method, const QValueList<QDBusData>& params) const;
 
     /**
      * @brief Sends a method call to the peer object and waits for the reply
@@ -455,7 +463,7 @@ public:
      * @see @ref dbusconventions-membername
      */
     QDBusMessage sendWithReply(const QString& method,
-                               const QValueList<QVariant>& params, QDBusError* error = 0) const;
+                               const QValueList<QDBusData>& params, QDBusError* error = 0) const;
 
     /**
      * @brief Sends a method call to the peer object but does not wait for an
@@ -486,7 +494,7 @@ public:
      * @see sendWithReply()
      * @see @ref dbusconventions-membername
      */
-    int sendWithAsyncReply(const QString& method, const QValueList<QVariant>& params);
+    int sendWithAsyncReply(const QString& method, const QValueList<QDBusData>& params);
 
     /**
      * @brief Returns the last error seen by the proxy
@@ -501,7 +509,7 @@ public:
 
 signals:
     /**
-     * @brief Signal emitted for DBus signals from the peer
+     * @brief Signal emitted for D-Bus signals from the peer
      *
      * Signals received on the proxy's connection are filtered by
      * handleDBusSignal() for all proxy properties that are not empty.
@@ -530,16 +538,21 @@ signals:
 
 protected slots:
     /**
-     * @brief Handles DBus signals received on the proxy's connection
+     * @brief Handles D-Bus signals received on the proxy's connection
      *
      * The base implementation checks each non-empty property, i.e. service
      * name, object path and interface, with the respective field of the
-     * signal's DBus message.
+     * signal's D-Bus message.
      *
      * If all available matches succeed, the message is emitted by
      * dbusSignal(), otherwise it is discarded.
      *
-     * @param message the DBus signal message as received
+     * @note Filtering for @c service will only happen if @c service is a
+     *       unique D-Bus name, i.e. if it starts with a colon @c ":" since
+     *       D-Bus signals carry the sender's unique name and filtering by a
+     *       requested name would reject all signals.
+     *
+     * @param message the D-Bus signal message as received
      *
      * @see QDBusMessage::SignalMessage
      */
@@ -551,7 +564,7 @@ protected slots:
      * The base implementation simply extracts the reply's error and makes
      * it available for lastError(). It then emits asyncReply()
      *
-     * @param message the DBus reply message as received
+     * @param message the D-Bus reply message as received
      *
      * @see QDBusMessage::replySerialNumber()
      */

@@ -26,15 +26,15 @@
 
 struct DBusMessage;
 
-class QVariant;
-template <typename T>
-class QValueList;
+class QDBusData;
+
+template <typename T> class QValueList;
 
 class QDBusMarshall
 {
 public:
-    static void listToMessage(const QValueList<QVariant> &list, DBusMessage *message);
-    static void messageToList(QValueList<QVariant> &list, DBusMessage *message);
+    static void listToMessage(const QValueList<QDBusData> &list, DBusMessage* message);
+    static void messageToList(QValueList<QDBusData>& list, DBusMessage* message);
 };
 
 #endif

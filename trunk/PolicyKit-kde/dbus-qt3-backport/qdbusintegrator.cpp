@@ -251,7 +251,7 @@ static DBusHandlerResult qDBusSignalFilter(DBusConnection *connection,
     int msgType = dbus_message_get_type(message);
     bool handled = false;
 
-    QDBusMessage amsg = QDBusMessage::fromDBusMessage(message);
+    //QDBusMessage amsg = QDBusMessage::fromDBusMessage(message);
     //qDebug() << "got message: " << dbus_message_get_type(message) << amsg;
 
     if (msgType == DBUS_MESSAGE_TYPE_SIGNAL) {
@@ -304,10 +304,12 @@ void QDBusConnectionPrivate::closeConnection()
         }
     } else if (oldMode == ClientMode) {
         if (connection) {
+            // closing shared connections is forbidden
+#if 0
             dbus_connection_close(connection);
             // send the "close" message
             while (dbus_connection_dispatch(connection) == DBUS_DISPATCH_DATA_REMAINS);
-
+#endif
             dbus_connection_unref(connection);
             connection = 0;
         }

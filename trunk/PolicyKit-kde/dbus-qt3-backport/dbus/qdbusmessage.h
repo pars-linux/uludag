@@ -1,7 +1,7 @@
 /* qdbusmessage.h QDBusMessage object
  *
  * Copyright (C) 2005 Harald Fernengel <harry@kdevelop.org>
- * Copyright (C) 2005 Kevin Krammer <kevin.krammer@gmx.at>
+ * Copyright (C) 2005-2007 Kevin Krammer <kevin.krammer@gmx.at>
  *
  * Licensed under the Academic Free License version 2.1
  *
@@ -26,8 +26,9 @@
 #define QDBUSMESSAGE_H
 
 #include "dbus/qdbusmacros.h"
+#include "dbus/qdbusdata.h"
+
 #include <qvaluelist.h>
-#include <qvariant.h>
 
 #include <limits.h>
 
@@ -36,7 +37,7 @@ class QDBusMessagePrivate;
 struct DBusMessage;
 
 /**
- * @brief A message converts and transports data over DBus
+ * @brief A message converts and transports data over D-Bus
  *
  * A QDBusMessage is implicitly shared, similar to a QString, i.e. copying
  * a message creates just a shallow copy.
@@ -46,13 +47,13 @@ struct DBusMessage;
  *
  * Data specifying the sender and receipient is directly accessible through
  * getter methods, while data, e.g. method parameters or return values, are
- * managed as a list of QVariant.
+ * managed as a list of QDBusData.
  *
  * To create a message suitable for sending use one of the static factory
  * methods:
- * - signal() for creating a DBus signal message
+ * - signal() for creating a D-Bus signal message
  *
- * - methodCall() for creating a DBus method calls to a service object
+ * - methodCall() for creating a D-Bus method calls to a service object
  *
  * - methodReply() for creating a method reply on success
  *
@@ -65,7 +66,7 @@ struct DBusMessage;
  *
  * Example:
  * @code
- *   QDBusConnection con = QDBusConnection::addConnection(QDBusConnection::SessionBus);
+ *   QDBusConnection con = QDBusConnection::sessionBus();
  *
  *   // receipient service is the bus' main interface
  *
@@ -80,13 +81,13 @@ struct DBusMessage;
  *   // awaiting for a message list
  *
  *   if (reply.type() != QDBusMessage::ReplyMessage || reply.count() != 2 ||
- *       reply[0].type() != QVariant::StringList)
+ *       reply[0].type() != QDBusData::List)
  *   {
  *       // error handling here
  *   }
  *   else
  *   {
- *       QStringList list = reply[0].toStringList();
+ *       QStringList list = reply[0].toQStringList();
  *
  *       // reply handling here
  *   }
@@ -96,13 +97,14 @@ struct DBusMessage;
  * @code
  *   bool Service::handleMethodCall(const QDBusMessage& call)
  *   {
- *       // leaving out checks for correctness
+ *       // checks for correctness, i.e. correct interface, member,
+ *       // would usually haven been placed here
  *
  *       QStringList result;
  *       result << "Foo" << "Bar";
  *
  *       QDBusMessage reply = QDBusMessage::methodReply(call);
- *       reply << QVariant(result);
+ *       reply << QDBusData::fromList(result);
  *
  *       connection.send(reply);
  *
@@ -110,7 +112,7 @@ struct DBusMessage;
  *   }
  * @endcode
  */
-class QDBUS_EXPORT QDBusMessage: public QValueList<QVariant>
+class QDBUS_EXPORT QDBusMessage: public QValueList<QDBusData>
 {
     friend class QDBusConnection;
 public:
@@ -123,7 +125,7 @@ public:
     enum
     {
         /**
-         * Use whatever DBus has as default timeout
+         * Use whatever D-Bus has as default timeout
          */
         DefaultTimeout = -1,
 
@@ -134,7 +136,7 @@ public:
     };
 
     /**
-     * @brief DBus message types
+     * @brief D-Bus message types
      *
      * A message of a specific type can be created using the respective factory
      * method. A message created by the default constructor becomes an
@@ -149,7 +151,7 @@ public:
     enum MessageType
     {
         /**
-         * An invalid message cannot be sent over DBus. This type serves for
+         * An invalid message cannot be sent over D-Bus. This type serves for
          * initializing message variables without requiring a "real" message
          */
         InvalidMessage,
@@ -176,7 +178,7 @@ public:
         ErrorMessage,
 
         /**
-         * A message for emitting DBus signals
+         * A message for emitting D-Bus signals
          *
          * @see signal()
          */
@@ -186,7 +188,7 @@ public:
     /**
      * @brief Creates an empty and invalid message
      *
-     * To create a message suitable for sending through DBus see the factory
+     * To create a message suitable for sending through D-Bus see the factory
      * methods signal(), methodCall(), methodReply() and methodError()
      *
      * @see #InvalidMessage
@@ -229,9 +231,9 @@ public:
     QDBusMessage &operator=(const QDBusMessage &other);
 
     /**
-     * @brief Creates a message for sending a DBus signal
+     * @brief Creates a message for sending a D-Bus signal
      *
-     * Sending/emitting a signal over DBus requires a message of type
+     * Sending/emitting a signal over D-Bus requires a message of type
      * #SignalMessage as well as the information where it is coming from, i.e.
      * which interface of which object is sending it.
      * See @ref dbusconventions for recommendations on those parameters.
@@ -248,14 +250,14 @@ public:
                                const QString &member);
 
     /**
-     * @brief Creates a message for sending a DBus method call
+     * @brief Creates a message for sending a D-Bus method call
      *
-     * Invoking a method over DBus requires a message of type
+     * Invoking a method over D-Bus requires a message of type
      * #MethodCallMessage as well as the information where it should be sent
      * to, e.g which interface of which object in which service.
      * See @ref dbusconventions for recommendations on those parameters.
      *
-     * @param service the DBus name of the application hosting the service
+     * @param service the D-Bus name of the application hosting the service
      *                object
      * @param path the object path of the service object
      * @param interface the object's interface to which the method belongs
@@ -271,9 +273,9 @@ public:
                                    const QString &interface, const QString &method);
 
     /**
-     * @brief Creates a message for replying to a DBus method call
+     * @brief Creates a message for replying to a D-Bus method call
      *
-     * Replying to a DBus method call in the case of success requires a message
+     * Replying to a D-Bus method call in the case of success requires a message
      * of type #ReplyMessage as well as the information to which method call it
      * is replying to.
      *
@@ -288,9 +290,9 @@ public:
     static QDBusMessage methodReply(const QDBusMessage &other);
 
     /**
-     * @brief Creates a message for replying to a DBus method call
+     * @brief Creates a message for replying to a D-Bus method call
      *
-     * Replying to a DBus method call in the case of failure requires a message
+     * Replying to a D-Bus method call in the case of failure requires a message
      * of type #ErrorMessage as well as the information to which method call it
      * is replying to and which error occured.
      *
@@ -365,7 +367,7 @@ public:
     /**
      * @brief Returns the name of the message sender
      *
-     * The message sender name or address used on the DBus message bus
+     * The message sender name or address used on the D-Bus message bus
      * to refer to the application which sent this message.
      *
      * See section @ref dbusconventions-servicename for details.
@@ -374,7 +376,7 @@ public:
      * QDBusConnection::uniqueName() or a name registered with
      * QDBusConnection::requestName()
      *
-     * @return a non-empty DBus sender name or @c QString::null
+     * @return a non-empty D-Bus sender name or @c QString::null
      *
      * @see path()
      * @see interface()
@@ -414,7 +416,7 @@ public:
     /**
      * @brief Sets the message's timeout
      *
-     * The timeout is the number of milliseconds the DBus connection will
+     * The timeout is the number of milliseconds the D-Bus connection will
      * wait for the reply of an asynchronous call.
      *
      * If no reply is received in time, an error message will be delivered to
@@ -474,30 +476,30 @@ public:
 
 //protected:
     /**
-     * @brief Creates a raw DBus message from this Qt3-bindings message
+     * @brief Creates a raw D-Bus message from this Qt3-bindings message
      *
-     * Marshalls data contained in the message's value list into DBus data
-     * format and creates a low level API DBus message for it.
+     * Marshalls data contained in the message's value list into D-Bus data
+     * format and creates a low level API D-Bus message for it.
      *
      * @note ownership of the returned message is transferred to the caller,
      *       i.e. it has to be deleted using dbus_message_unref()
      *
-     * @return a C API DBus message or @c 0 if this is an #InvalidMessage
+     * @return a C API D-Bus message or @c 0 if this is an #InvalidMessage
      *         or marshalling failed
      */
     DBusMessage *toDBusMessage() const;
 
     /**
-     * @brief Creates a Qt3-bindings message from the given raw DBus message
+     * @brief Creates a Qt3-bindings message from the given raw D-Bus message
      *
-     * De-marshalls data contained in the message to a list of QVariant.
+     * De-marshalls data contained in the message to a list of QDBusData.
      *
      * @note ownership of the given message is shared between the caller and
      *       the returned message, i.e. the message as increased the reference
      *       counter and will still have access to the raw message even if the
      *       caller "deleted" it using dbus_message_unref()
      *
-     * @param dmsg a C API DBus message
+     * @param dmsg a C API D-Bus message
      *
      * @return a Qt3 bindings message. Can be an #InvalidMessage if the given
      *         message was @c 0 or if de-marshalling failed

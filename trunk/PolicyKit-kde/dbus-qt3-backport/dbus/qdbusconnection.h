@@ -1,7 +1,7 @@
 /* qdbusconnection.h QDBusConnection object
  *
  * Copyright (C) 2005 Harald Fernengel <harry@kdevelop.org>
- * Copyright (C) 2005 Kevin Krammer <kevin.krammer@gmx.at>
+ * Copyright (C) 2005-2007 Kevin Krammer <kevin.krammer@gmx.at>
  *
  * Licensed under the Academic Free License version 2.1
  *
@@ -26,17 +26,17 @@
 #define QDBUSCONNECTION_H
 
 /**
- * @mainpage Qt3 Bindings for DBus
+ * @mainpage Qt3 Bindings for D-Bus
  *
- * DBus is an IPC (inter process communication) technology designed to allow
+ * D-Bus is an IPC (inter process communication) technology designed to allow
  * applications to interoperate without requiring tight coupling.
  *
- * For more information about DBus itself see its website:
+ * For more information about D-Bus itself see its website:
  * http://www.freedesktop.org/wiki/Software_2fdbus
  *
- * The Qt3 DBus bindings described here are a Qt3 style API around the base
- * implementation to enable Qt3 developers to use DBus in their applications
- * without requiring them to know about the details of the C based DBus API.
+ * The Qt3 D-Bus bindings described here are a Qt3 style API around the base
+ * implementation to enable Qt3 developers to use D-Bus in their applications
+ * without requiring them to know about the details of the C based D-Bus API.
  *
  * The two main use cases are:
  * - using the API to access service implemented in other applications.
@@ -49,11 +49,11 @@
  */
 
 /**
- * @page dbusconventions Naming and syntax conventions in DBus
+ * @page dbusconventions Naming and syntax conventions in D-Bus
  *
  * @section dbusconventions-servicename Service names
  *
- * The service name is DBus application identifier, i.e. either
+ * The service name is D-Bus application identifier, i.e. either
  * the unique name handed out to the peer application by the bus on connect
  * (see QDBusConnection::uniqueName()) or, more likely, a well known name the
  * peer application has requested, see QDBusConnection::requestName()
@@ -61,7 +61,7 @@
  * Such well known names have the form of word separated by dots, like
  * Internet domain names but in reverse order.
  *
- * For example the name for the bus itself (the DBus daemon) would be
+ * For example the name for the bus itself (the D-Bus daemon) would be
  * @code
  *   "org.freedesktop.DBus"
  * @endcode
@@ -72,7 +72,7 @@
  * The path format looks like a Unix file path, i.e. words separated by
  * slash @c '/' characters.
  *
- * For example the path for the bus itself (the DBus daemon's main object)
+ * For example the path for the bus itself (the D-Bus daemon's main object)
  * would be
  * @code
  *   "/org/freedesktop/DBus"
@@ -86,7 +86,7 @@
  * Interface names have the form of word separated by dots, like Internet
  * domain names but in reverse order or like a fully qualified Java class name.
  *
- * For example the interface for the bus itself (the DBus daemon's main
+ * For example the interface for the bus itself (the D-Bus daemon's main
  * interface) would be
  * @code
  *   "org.freedesktop.DBus"
@@ -94,23 +94,25 @@
  *
  * @section dbusconventions-errorname Error names
  *
- * A DBus error name is a sequence of words separated by dots, similar
- * to DBus service names or interface names, or like a fully qualified
+ * A D-Bus error name is a sequence of words separated by dots, similar
+ * to D-Bus service names or interface names, or like a fully qualified
  * Java class name.
  *
- * For example if a DBus service does not handle a method invocation sent
- * to it because it doesn't know about the method it will return a DBus
+ * For example if a D-Bus service does not handle a method invocation sent
+ * to it because it doesn't know about the method it will return a D-Bus
  * error named
  * @code
  *   "org.freedesktop.DBus.Error.UnknownMethod"
  * @endcode
+ * QDBusError can create some of the more common errors based on a type value
+ * and decode their names into the type respectively. See QDBusError#ErrorType
  *
  * @section dbusconventions-membername Method and signal names
  *
  * There is no mandatory convention for member names, neither for methods nor
  * for signals.
  *
- * However, using the standard interfaces of DBus as a hint, it is recommended
+ * However, using the standard interfaces of D-Bus as a hint, it is recommended
  * to use "camel case" names starting with an uppercase letter, for example
  * @code
  *   "GetConnectionUnixUser"
@@ -127,9 +129,9 @@ class QDBusObjectBase;
 class QObject;
 
 /**
- * @brief Provides access to a specific DBus bus
+ * @brief Provides access to a specific D-Bus bus
  *
- * In order to access a DBus message bus an application has to connect to it.
+ * In order to access a D-Bus message bus an application has to connect to it.
  * This is very similar to connecting to an FTP server using QFtp, where any
  * number of commands can be sent in sequence over the same connection.
  *
@@ -137,7 +139,7 @@ class QObject;
  * QDBusConnection can also execute synchronous (blocking) calls so the
  * code around those calls stays closer to in-process method incovations.
  *
- * However it is recommended to only perform blocking calls on DBus service
+ * However it is recommended to only perform blocking calls on D-Bus service
  * methods that are likely to be processed fast.
  *
  * QDBusConnection implements a shared resource, i.e. if you create a
@@ -161,7 +163,7 @@ class QObject;
  *                controlling session services (e.g. disabling screensaver
  *                in a video player application during playback)
  *
- * While QDBusConnection provides the basic API to access DBus services
+ * While QDBusConnection provides the basic API to access D-Bus services
  * it is more convenient to use QDBusProxy on top of the connection.
  *
  * See sections @ref dbusclient and @ref dbusservice for examples
@@ -309,14 +311,14 @@ public:
      *
      * If an application's purpose is to provide services to other applications
      * the other applications require to know how to address the service
-     * provider. Similar to a domain name on the Internet DBus allows to
+     * provider. Similar to a domain name on the Internet D-Bus allows to
      * register names on the bus and be addressed through those names instead
      * of the connection identifier.
      *
      * @note this is not required if the application only needs to acccess
      *       services or only implements generic service APIs
      *
-     * If more than one application request the same name, DBus will try
+     * If more than one application request the same name, D-Bus will try
      * to resolve this conflict as good as possible.
      * The #NameRequestMode flags allow to control how an application prefers
      * to be treated in such a conflict.
@@ -351,7 +353,7 @@ public:
      * Sends a message composed through the QDBusMessage API to the bus.
      * This is the main method for service objects (see QDBusObjectBase) to
      * send replies and errors for method calls they accepted or for sending
-     * DBus signals.
+     * D-Bus signals.
      *
      * @note for doing method calls it is more convenient to use QDBusProxy,
      *       see QDBusProxy::send()
@@ -452,11 +454,11 @@ public:
     void scheduleDispatch() const;
 
     /**
-     * @brief Connects an object to receive DBus signals
+     * @brief Connects an object to receive D-Bus signals
      *
-     * This provides a basic access to all DBus signals received on this
+     * This provides a basic access to all D-Bus signals received on this
      * connection.
-     * For every DBus signal processed by the connection object a Qt signal
+     * For every D-Bus signal processed by the connection object a Qt signal
      * is emitted and thus delivered to all receiver objects connected
      * through this method.
      *
@@ -496,7 +498,7 @@ public:
     bool connect(QObject* object, const char* slot);
 
     /**
-     * @brief Disconnects a given receiver from the DBus signal handling
+     * @brief Disconnects a given receiver from the D-Bus signal handling
      *
      * @param object the receiver object to disconnect from
      * @param slot the receiver slot (or signal for signal->signal connections)
@@ -510,7 +512,7 @@ public:
     /**
      * @brief Registers a service object for a given path
      *
-     * In order to receive method calls over the DBus connection the service
+     * In order to receive method calls over the D-Bus connection the service
      * objects path within its host application has to be registered with the
      * connection. See section @ref dbusconventions-objectpath for details.
      *
@@ -542,8 +544,42 @@ public:
      * See section @ref dbusconventions-objectpath for details.
      *
      * @warning always(!) unregister a service object before deleting it
+     *
+     * @param path the object path of the object to unregister
+     *
+     * @see registerObject()
      */
     void unregisterObject(const QString &path);
+
+    /**
+     * @brief Gets a connection to the session bus
+     *
+     * Convenience overload for creating the default shared connection to the
+     * D-Bus session bus.
+     *
+     * Equivalent to calling addConnection(SessionBus);
+     *
+     * @return a connection handle. Check isConnected() to find out if the
+     *         connection attempt has been successfull
+     *
+     * @see addConnection(BusType,const QString&);
+     */
+    static QDBusConnection sessionBus();
+
+    /**
+     * @brief Gets a connection to the system bus
+     *
+     * Convenience overload for creating the default shared connection to the
+     * D-Bus system bus.
+     *
+     * Equivalent to calling addConnection(SystemBus);
+     *
+     * @return a connection handle. Check isConnected() to find out if the
+     *         connection attempt has been successfull
+     *
+     * @see addConnection(BusType,const QString&);
+     */
+    static QDBusConnection systemBus();
 
     /**
      * @brief Add a connection to a bus with a specific bus type
@@ -552,9 +588,9 @@ public:
      * name if its not available yet, but return a previously created
      * connection for that name if available.
      *
-     * Depending on the #BusType the DBus library will connect to the address
+     * Depending on the #BusType the D-Bus library will connect to the address
      * configured for that type, so this is the recommended way to create
-     * connection to DBus.
+     * connection to D-Bus.
      *
      * @code
      *   // Associate the default connection name with a connection to the user's
@@ -568,6 +604,7 @@ public:
      *              con.uniqueName().local8Bit().data());
      *   }
      * @endcode
+     * For the common use cases see also sessionBus() and systemBus()
      *
      * @param type the #BusType of the bus to connect to
      * @param name the name to use for QDBusConnection's connection sharing
@@ -587,9 +624,9 @@ public:
      * name if its not available yet, but return a previously created
      * connection for that name if available.
      *
-     * @note this requires to know the address of a DBus daemon to connect to
+     * @note this requires to know the address of a D-Bus daemon to connect to
      *
-     * @param address the address of the DBus daemon. Usually a Unix domain
+     * @param address the address of the D-Bus daemon. Usually a Unix domain
      *                socket address
      * @param name the name to use for QDBusConnection's connection sharing
      *
@@ -601,7 +638,7 @@ public:
     static QDBusConnection addConnection(const QString &address,
                                          const QString &name = default_connection_name);
 
-    // TODO check why this doesn't close the DBus connection
+    // TODO check why this doesn't close the D-Bus connection
     /**
      * @brief Closes a connection with a given name
      *

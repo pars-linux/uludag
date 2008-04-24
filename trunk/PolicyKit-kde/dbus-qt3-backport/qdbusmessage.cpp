@@ -88,6 +88,12 @@ QDBusMessage QDBusMessage::methodError(const QDBusMessage &other, const QDBusErr
     Q_ASSERT(other.d->msg);
 
     QDBusMessage message;
+    if (!error.isValid())
+    {
+        qWarning("QDBusMessage: error passed to methodError() is not valid!");
+        return message;
+    }
+
     message.d->type = DBUS_MESSAGE_TYPE_ERROR;
     message.d->reply = dbus_message_ref(other.d->msg);
     message.d->error = error;
@@ -101,7 +107,7 @@ QDBusMessage::QDBusMessage()
 }
 
 QDBusMessage::QDBusMessage(const QDBusMessage &other)
-    : QValueList<QVariant>(other)
+    : QValueList<QDBusData>(other)
 {
     d = other.d;
     d->ref.ref();
@@ -115,7 +121,7 @@ QDBusMessage::~QDBusMessage()
 
 QDBusMessage &QDBusMessage::operator=(const QDBusMessage &other)
 {
-    QValueList<QVariant>::operator=(other);
+    QValueList<QDBusData>::operator=(other);
     // FIXME-QT4 qAtomicAssign(d, other.d);
     if (other.d) other.d->ref.ref();
     QDBusMessagePrivate* old = d;

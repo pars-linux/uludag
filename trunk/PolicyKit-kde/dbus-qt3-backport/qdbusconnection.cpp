@@ -1,7 +1,7 @@
 /* qdbusconnection.cpp
  *
  * Copyright (C) 2005 Harald Fernengel <harry@kdevelop.org>
- * Copyright (C) 2005 Kevin Krammer <kevin.krammer@gmx.at>
+ * Copyright (C) 2005-2007 Kevin Krammer <kevin.krammer@gmx.at>
  *
  * Licensed under the Academic Free License version 2.1
  *
@@ -176,6 +176,16 @@ QDBusConnection &QDBusConnection::operator=(const QDBusConnection &other)
         delete old;
 
     return *this;
+}
+
+QDBusConnection QDBusConnection::sessionBus()
+{
+    return addConnection(QDBusConnection::SessionBus);
+}
+
+QDBusConnection QDBusConnection::systemBus()
+{
+    return addConnection(QDBusConnection::SystemBus);
 }
 
 QDBusConnection QDBusConnection::addConnection(BusType type, const QString &name)
@@ -373,15 +383,8 @@ bool QDBusConnection::requestName(const QString &name, int modeFlags)
         return false;
 
     int dbusFlags = 0;
-#ifdef DBUS_NAME_FLAG_ALLOW_REPLACEMENT
     if (modeFlags & AllowReplace)
         dbusFlags |= DBUS_NAME_FLAG_ALLOW_REPLACEMENT;
-#elif defined DBUS_NAME_FLAG_PROHIBIT_REPLACEMENT
-    if (!(modeFlags & AllowReplace))
-        dbusFlags |= DBUS_NAME_FLAG_PROHIBIT_REPLACEMENT;
-#else
-#error Neither DBUS_NAME_FLAG_ALLOW_REPLACEMENT nor DBUS_NAME_FLAG_PROHIBIT_REPLACEMENT are defined.
-#endif
     if (modeFlags & ReplaceExisting)
         dbusFlags |= DBUS_NAME_FLAG_REPLACE_EXISTING;
 

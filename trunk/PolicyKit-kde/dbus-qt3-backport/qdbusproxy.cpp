@@ -133,7 +133,7 @@ bool QDBusProxy::canSend() const
     return d->canSend && d->connection.isConnected();
 }
 
-bool QDBusProxy::send(const QString& method, const QValueList<QVariant>& params) const
+bool QDBusProxy::send(const QString& method, const QValueList<QDBusData>& params) const
 {
     if (!d->canSend || method.isEmpty() || !d->connection.isConnected())
         return false;
@@ -146,7 +146,7 @@ bool QDBusProxy::send(const QString& method, const QValueList<QVariant>& params)
 }
 
 QDBusMessage QDBusProxy::sendWithReply(const QString& method,
-                                       const QValueList<QVariant>& params,
+                                       const QValueList<QDBusData>& params,
                                        QDBusError* error) const
 {
     if (!d->canSend || method.isEmpty() || !d->connection.isConnected())
@@ -164,7 +164,7 @@ QDBusMessage QDBusProxy::sendWithReply(const QString& method,
     return reply;
 }
 
-int QDBusProxy::sendWithAsyncReply(const QString& method, const QValueList<QVariant>& params)
+int QDBusProxy::sendWithAsyncReply(const QString& method, const QValueList<QDBusData>& params)
 {
     if (!d->canSend || method.isEmpty() || !d->connection.isConnected())
         return 0;
@@ -187,7 +187,10 @@ void QDBusProxy::handleDBusSignal(const QDBusMessage& message)
     if (!d->path.isEmpty() && d->path != message.path())
         return;
 
-    if (!d->service.isEmpty() && d->service != message.sender())
+    // only filter by service name if the name is a unique name
+    // because signals are always coming from a connection's unique name
+    // and filtering by a generic name would reject all signals
+    if (d->service.startsWith(":") && d->service != message.sender())
         return;
 
     if (!d->interface.isEmpty() && d->interface != message.interface())

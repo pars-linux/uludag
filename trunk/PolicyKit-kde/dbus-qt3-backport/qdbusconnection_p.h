@@ -53,8 +53,8 @@ class QSocketNotifier;
 class QTimer;
 class QTimerEvent;
 
-typedef struct DBusConnection;
-typedef struct DBusServer;
+struct DBusConnection;
+struct DBusServer;
 
 class QDBusConnectionPrivate: public QObject
 {
