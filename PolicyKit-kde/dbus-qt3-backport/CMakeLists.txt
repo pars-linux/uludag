@@ -18,6 +18,10 @@ SET (
     qdbusmessage.cpp
     qdbusproxy.cpp
     qdbusserver.cpp
+    qdbusdataconverter.cpp
+    qdbusdatalist.cpp
+    qdbusdata.cpp
+    qdbusobjectpath.cpp
     )
 
 ADD_CUSTOM_TARGET(moc_target ALL ${QT_MOC_EXECUTABLE} -o qdbusserver.moc ${CMAKE_CURRENT_SOURCE_DIR}/dbus/qdbusserver.h
