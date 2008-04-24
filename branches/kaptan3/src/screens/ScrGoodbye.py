@@ -19,6 +19,8 @@ from kdecore import KGlobal
 from screens.Screen import ScreenWidget
 from screens.goodbyedlg import GoodbyeWidget
 
+import subprocess
+
 class Widget(GoodbyeWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -47,6 +49,13 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.connect(self.buttonTasma, SIGNAL("clicked()"), self.startTasma)
         self.connect(self.buttonFeedback, SIGNAL("clicked()"), self.startFeedback)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.startHelp)
+
+        p = subprocess.Popen(["migration-users"], stdout = subprocess.PIPE)
+        out, err = p.communicate()
+
+        isMigrationAvaiable = out
+        if isMigrationAvaiable:
+            self.groupBoxMigration.hide()
 
 
     def shown(self):
