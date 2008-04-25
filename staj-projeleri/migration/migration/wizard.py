@@ -138,14 +138,14 @@ class MigrationWizard(KWizard):
         "Searches old users and adds them to userpage's combo box"
         self.users = partition.allUsers()
         if len(self.users) == 0:
-            message = i18n("Migration tool couldn't find any old users in your computer. You can't use this aplication.")
-            QMessageBox.critical(self, i18n("No User"), message, QMessageBox.Ok, QMessageBox.NoButton)
+            self.userpage.usersBox.setEnabled(False)
+            self.userpage = UserPage(self)
+            self.setNextEnabled(self.userpage, False)
             logging.error("No User")
-            sys.exit()
         for user in self.users:
             part, parttype, username, userdir = user
             self.userpage.usersBox.insertItem("%s - %s (%s)" % (username, parttype, part))
-    
+
     def next(self):
         "Runs when user clicks next button"
         if self.currentPage() == self.userpage:
