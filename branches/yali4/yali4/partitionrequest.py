@@ -323,7 +323,8 @@ class MountRequest(PartRequest):
 
         source = self.partition().getPath()
         target = consts.target_dir + pt.mountpoint
-        filesystem = self.partition().getFSYSName() or self.partition().getFSName()
+        filesystem = pt.filesystem._sysname or pt.filesystem._name
+        # filesystem = self.partition().getFSYSName() or self.partition().getFSName()
 
         # print ">>>>>>",target
         if not os.path.isdir(target):
