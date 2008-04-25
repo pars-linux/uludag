@@ -51,6 +51,9 @@ def init_devices(force = False):
         d = Device(dev_path)
         devices.append(d)
 
+    # devices are appended in reverse order
+    devices.reverse()
+
     if devices:
         return True
 
