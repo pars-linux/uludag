@@ -278,40 +278,6 @@ class ReiserFileSystem(FileSystem):
         if p.close():
             raise YaliException, "reiserfs format failed: %s" % partition.getPath()
 
-
-    def getLabel(self, partition):
-        label = None
-        fd = self.openPartition(partition)
-
-        # valid block sizes in reiserfs are 512 - 8192, powers of 2
-        # we put 4096 first, since it's the default
-        # reiserfs superblock occupies either the 2nd or 16th block
-        for blksize in (4096, 512, 1024, 2048, 8192):
-            for start in (blksize, (blksize*16)):
-                try:
-                    os.lseek(fd, start, 0)
-                    # read 120 bytes to get s_magic and s_label
-                    buf = os.read(fd, 120)
-
-                    # see if this block is the superblock
-                    # this reads reiserfs_super_block_v1.s_magic as defined
-                    # in include/reiserfs_fs.h in the reiserfsprogs source
-                    m = string.rstrip(buf[52:61], "\0x00")
-                    if m in ["ReIsErFs", "ReIsEr2Fs", "ReIsEr3Fs"]:
-                        # this reads reiserfs_super_block.s_label as
-                        # defined in include/reiserfs_fs.h
-                        label = string.rstrip(buf[100:116], "\0x00")
-                        os.close(fd)
-                        return label
-                except OSError, e:
-                    # [Error 22] probably means we're trying to read an
-                    # extended partition. 
-                    e = "error reading reiserfs label on %s: %s" %(partition.getPath(), e)
-                    raise YaliException, e
-
-        os.close(fd)
-        return label
-
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
         cmd_path = sysutils.find_executable("reiserfstune")
