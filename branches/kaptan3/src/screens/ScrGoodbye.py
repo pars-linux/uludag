@@ -47,16 +47,18 @@ class Widget(GoodbyeWidget, ScreenWidget):
         # set signals
         self.connect(self.buttonMigration, SIGNAL("clicked()"), self.startMigration)
         self.connect(self.buttonTasma, SIGNAL("clicked()"), self.startTasma)
-        self.connect(self.buttonFeedback, SIGNAL("clicked()"), self.startFeedback)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.startHelp)
 
-        p = subprocess.Popen(["migration-users"], stdout = subprocess.PIPE)
-        out, err = p.communicate()
+        try:
+            p = subprocess.Popen(["mdsadigration-users"], stdout = subprocess.PIPE)
+            out, err = p.communicate()
 
-        isMigrationAvaiable = out
-        if isMigrationAvaiable:
+            isMigrationAvaiable = out
+            if isMigrationAvaiable:
+                self.groupBoxMigration.hide()
+        except OSError:
+            # hide migration part, if it's not installed.
             self.groupBoxMigration.hide()
-
 
     def shown(self):
         pass
@@ -74,11 +76,6 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.proc.addArgument("tasma")
         self.proc.start()
 
-    def startFeedback(self):
-        self.proc = QProcess()
-        self.proc.addArgument("feedback")
-        self.proc.start()
-    
     def startHelp(self):
         self.proc = QProcess()
         self.proc.addArgument("firefox")
