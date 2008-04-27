@@ -140,16 +140,14 @@ _sysutils_e2fslabel(PyObject * s, PyObject * args)
 
     if (!PyArg_ParseTuple(args, "s", &device)) return NULL;
 
-    rc = ext2fs_open(device, EXT2_FLAG_FORCE, 0, 0, unix_io_manager,
-		     &fsys);
+    rc = ext2fs_open(device, EXT2_FLAG_FORCE, 0, 0, unix_io_manager, &fsys);
     if (rc) {
-	Py_INCREF(Py_None);
-	return Py_None;
+        Py_INCREF(Py_None);
+        return Py_None;
     }
 
     memset(buf, 0, sizeof(buf));
-    strncpy(buf, fsys->super->s_volume_name, 
-	    sizeof(fsys->super->s_volume_name));
+    strncpy(buf, fsys->super->s_volume_name, sizeof(fsys->super->s_volume_name));
 
     ext2fs_close(fsys);
 
