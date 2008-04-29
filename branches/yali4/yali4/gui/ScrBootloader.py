@@ -94,11 +94,9 @@ loader.
 
             self.device = yali4.storage.devices[0]
 
-        self.connect(self.ui.buttonGroup, SIGNAL("clicked(int)"),
-                     self.slotInstallLoader)
-        self.connect(self.ui.device_list, SIGNAL("selectionChanged(QListBoxItem*)"),
+        self.connect(self.ui.device_list, SIGNAL("currentItemChanged(QListWidgetItem*,QListWidgetItem*)"),
                      self.slotDeviceChanged)
-        self.connect(self.ui.device_list, SIGNAL("clicked()"),
+        self.connect(self.ui.device_list, SIGNAL("itemClicked(QListWidgetItem*)"),
                      self.slotSelect)
 
     def shown(self):
@@ -112,18 +110,10 @@ loader.
         return True
 
     def slotSelect(self):
-        self.ui.installMBR.setChecked(True)
+        self.ui.installMBR.toggle()
 
-    def slotInstallLoader(self, b):
-        if self.ui.installMBR.isChecked():
-            self.ui.device_list.setEnabled(True)
-            self.ui.device_list.setSelected(0,True)
-        else:
-            self.ui.device_list.setEnabled(False)
-            self.ui.device_list.setSelected(self.ui.device_list.selectedItem(),False)
-
-    def slotDeviceChanged(self, i):
-        self.device = i.getDevice()
+    def slotDeviceChanged(self, o, n):
+        self.device = n.getDevice()
 
     def autopartDevice(self):
         dev = ctx.installData.autoPartDev
