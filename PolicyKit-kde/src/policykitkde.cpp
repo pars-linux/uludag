@@ -20,7 +20,7 @@
 
 PolicyKitKDE::PolicyKitKDE()
 {
-    QDBusConnection connection = QDBusConnection::addConnection(QDBusConnection::SessionBus);
+    QDBusConnection connection = QDBusConnection::sessionBus();
 
     if (!connection.isConnected())
     {
