@@ -51,14 +51,17 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.checkAllWallpapers.setText(i18n("Show all resolutions."))
         self.listWallpaper.setSorting(-1)
 
-        self.thumbnailsDir = "/tmp/thumbnails/"
         self.currentText = QString(i18n("Old Wallpaper"))
         self.noneText = QString(i18n("No Wallpaper"))
         self.nonePic = "kaptan/pics/no-wallpaper.jpg"
+        self.tmpThumbDir = "/tmp/kaptan-thumbs"
         self.wallpaperList = {}
         self.ultimateList = []
         self.wideList = {}
         lst = {}
+
+        if not os.path.exists(self.tmpThumbDir):
+            os.mkdir(self.tmpThumbDir)
 
         #detect screen size
         self.isWide = False
@@ -84,13 +87,11 @@ class Widget(WallpaperWidget, ScreenWidget):
                 try:
                     wallpaperTitle = parser.get_locale('Wallpaper', 'Name', '')
                     wallpaperFile = parser.get_locale('Wallpaper', 'File','')
-                    wallpaperFullPath = self.thumbnailsDir + os.path.basename(wallpaperFile) +".thumbnail"
-                    wallpaperFile = "/usr/kde/3.5/share/wallpapers/"+wallpaperFile
 
                     #TODO: don't hardcode the path. strip or sth.
-                    if not os.path.isfile(wallpaperFullPath):
-                        self.resize_images(wallpaperFile)
- 
+                    wallpaperFile = "/usr/kde/3.5/share/wallpapers/" +wallpaperFile
+
+                    #dict titles and file names
                     #get wide wallpapers
                     if resolution == "Wide":
                         self.wideList[wallpaperFile] = wallpaperTitle
@@ -102,13 +103,14 @@ class Widget(WallpaperWidget, ScreenWidget):
                     pass
 
         self.sortedWallpaperList = self.dictSort(self.wallpaperList)
+        self.resize_images(self.wallpaperList)
 
         for i in self.sortedWallpaperList:
             for wallpaperFile, wallpaperTitle in self.wallpaperList.items():
                 if wallpaperTitle == i:
                     item = KListViewItem(self.listWallpaper, "file", str(wallpaperFile))
                     item.setText(0,wallpaperTitle)
-                    item.setPixmap(0,QPixmap(QImage(self.thumbnailsDir + os.path.basename(wallpaperFile) +".thumbnail")))
+                    item.setPixmap(0,QPixmap(QImage(os.path.join(self.tmpThumbDir,  os.path.basename(wallpaperFile) + ".thumbnail"))))
 
                     if wallpaperFile in self.wallpaperList.keys():
                         if wallpaperFile in self.wideList.keys():
@@ -117,14 +119,11 @@ class Widget(WallpaperWidget, ScreenWidget):
                         else:
                             self.ultimateList.append({"Normal": item})
         if current:
-            if os.path.isfile(wallpaperFullPath):
-                self.resize_images(current)
-
             self.wallpaperList[current] = self.currentText
-            self.setWps(current, self.thumbnailsDir, self.currentText)
+            self.setWps(current,self.currentText)
         else:
             self.wallpaperList[self.nonePic] = self.noneText
-            self.setWps(self.nonePic, self.thumbnailsDir, self.noneText)
+            self.setWps(self.nonePic, self.noneText)
 
         if self.isWide == True:
             self.hideNormals()
@@ -135,21 +134,27 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.listWallpaper.connect(self.listWallpaper, SIGNAL("selectionChanged()"), self.setWallpaper)
         self.checkAllWallpapers.connect(self.checkAllWallpapers, SIGNAL("toggled(bool)"), self.showAllWallpapers)
 
-    def setWps(self, wpFile, wpDir, wpTitle):
-         item = KListViewItem(self.listWallpaper, "file", str(wpFile))
-         item.setText(0,wpTitle)
-         item.setPixmap(0,QPixmap(QImage(self.thumbnailsDir + os.path.basename(wpFile) +".thumbnail")))
+    def setWps(self, wpFile, wpTitle):
+        item = KListViewItem(self.listWallpaper, "file", str(wpFile))
+        item.setText(0,wpTitle)
+        item.setPixmap(0,QPixmap(QImage(os.path.join(self.tmpThumbDir,  os.path.basename(wpFile) + ".thumbnail"))))
 
-    def resize_images(self, infile):
+    def resize_images(self, resizeList):
         size = 150, 150
-        tmpDir =  "/tmp/thumbnails/" + os.path.splitext(os.path.basename(infile))[0]
 
-        try:
-            im = Image.open(infile)
-            im.thumbnail(size, Image.ANTIALIAS)
-            im.save(tmpDir + ".jpg.thumbnail", "PNG")
-        except IOError:
-            pass
+        if current:
+            resizeList[current] = self.currentText
+        else:
+            resizeList[self.nonePic] = self.noneText
+
+        for infile in resizeList:
+            tmpDir =  os.path.join(self.tmpThumbDir, os.path.splitext(os.path.basename(infile))[0])
+            try:
+                im = Image.open(infile)
+                im.thumbnail(size, Image.ANTIALIAS)
+                im.save(tmpDir + ".jpg.thumbnail", "BMP")
+            except IOError:
+                pass
 
     def showAllWallpapers(self):
         if self.checkAllWallpapers.isChecked():

@@ -16,8 +16,6 @@ from kdeui import *
 import kdedesigner
 from Xlib import display
 
-import pynotify
-
 from screens.Screen import ScreenWidget
 from screens.mousedlg import MouseWidget
 
