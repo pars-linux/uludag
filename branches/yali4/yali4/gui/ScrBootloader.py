@@ -113,7 +113,7 @@ loader.
         self.ui.installMBR.toggle()
 
     def slotDeviceChanged(self, o, n):
-        self.device = n.getDevice()
+        self.device = o.getDevice()
 
     def autopartDevice(self):
         dev = ctx.installData.autoPartDev
@@ -282,8 +282,8 @@ all your present data on the selected disk will be lost.</p>
 
         _ins_part = root_part_req.partition().getPath()
 
-        ctx.debugger.log("Pardus installed to : %s" % _ins_part)
-        ctx.debugger.log("GRUB will be installed to : %s" % ctx.installData.bootLoaderDev)
+        ctx.debugger.log("Pardus Root is : %s" % _ins_part)
+        ctx.debugger.log("GRUB will be installing to : %s" % ctx.installData.bootLoaderDev)
 
         return True
 
