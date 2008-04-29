@@ -20,6 +20,7 @@ from screens.Screen import ScreenWidget
 from screens.goodbyedlg import GoodbyeWidget
 
 import subprocess
+import logging
 
 class Widget(GoodbyeWidget, ScreenWidget):
 
@@ -56,7 +57,9 @@ class Widget(GoodbyeWidget, ScreenWidget):
             isMigrationAvaiable = out
             if isMigrationAvaiable:
                 self.groupBoxMigration.hide()
-        except OSError:
+        except OSError, e:
+            print "Error: ", e
+            logging.debug("Migration is not installed: " + str(e))
             # hide migration part, if it's not installed.
             self.groupBoxMigration.hide()
 
@@ -81,5 +84,4 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.proc.addArgument("firefox")
         self.proc.addArgument(self.helpUrl)
         self.proc.start()
-    
 

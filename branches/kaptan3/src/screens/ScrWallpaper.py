@@ -21,6 +21,7 @@ import dcopext
 import sys
 import Image
 import glob
+import logging
 
 # parser for .desktop files
 from desktopparser import DesktopParser
@@ -46,24 +47,31 @@ class Widget(WallpaperWidget, ScreenWidget):
     def __init__(self, *args):
         apply(WallpaperWidget.__init__, (self,) + args)
 
-        #set background image
-        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
+        # set texts 
         self.checkAllWallpapers.setText(i18n("Show all resolutions."))
-        self.listWallpaper.setSorting(-1)
-
         self.currentText = QString(i18n("Old Wallpaper"))
         self.noneText = QString(i18n("No Wallpaper"))
+
+        # set images
+        self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.nonePic = "kaptan/pics/no-wallpaper.jpg"
+
+        # reverse sorting
+        self.listWallpaper.setSorting(-1)
+
+        # set/create variables
         self.tmpThumbDir = "/tmp/kaptan-thumbs"
+        self.thumbSize = 150, 150
         self.wallpaperList = {}
         self.ultimateList = []
         self.wideList = {}
         lst = {}
 
+        # create temp directory for wallpaper thumbnails
         if not os.path.exists(self.tmpThumbDir):
             os.mkdir(self.tmpThumbDir)
 
-        #detect screen size
+        # detect if screen is wide or not
         self.isWide = False
         rect =  QApplication.desktop().screenGeometry()
 
@@ -74,36 +82,34 @@ class Widget(WallpaperWidget, ScreenWidget):
         lst= KGlobal.dirs().findAllResources("wallpaper", "*.desktop", False , True )
 
         for desktopFiles in lst:
-            #eliminate svgz files
+            # eliminate svgz files
             if not desktopFiles.endsWith(".svgz.desktop"):
-                #parse .desktop file
+                # parse .desktop file
                 parser = DesktopParser()
                 parser.read(str(desktopFiles))
+
                 try:
-                    #FYI: there must have been a Resolution=Wide tag in wallpaper file.
+                    # FYI: there must have been a Resolution=Wide tag in wallpaper file.
                     resolution =  parser.get_locale('Wallpaper', 'Resolution', '')
                 except ConfigParser.NoOptionError:
                     resolution = False
+
                 try:
                     wallpaperTitle = parser.get_locale('Wallpaper', 'Name', '')
-                    wallpaperFile = parser.get_locale('Wallpaper', 'File','')
+                    wallpaperFile = "/usr/kde/3.5/share/wallpapers/" + parser.get_locale('Wallpaper', 'File','')
 
-                    #TODO: don't hardcode the path. strip or sth.
-                    wallpaperFile = "/usr/kde/3.5/share/wallpapers/" +wallpaperFile
-
-                    #dict titles and file names
-                    #get wide wallpapers
+                    # get wide wallpapers
                     if resolution == "Wide":
                         self.wideList[wallpaperFile] = wallpaperTitle
-                    #get normal size wallpapers
-                    self.wallpaperList[wallpaperFile] = wallpaperTitle
 
-                except ConfigParser.NoOptionError:
-                    #if option doesn't exist, skip.
-                    pass
+                    # get normal size wallpapers
+                    self.wallpaperList[wallpaperFile] = wallpaperTitle
+                except ConfigParser.NoOptionError, e:
+                    print "Error: ", e
+                    logging.debug("No Option Error: " + str(e))
 
         self.sortedWallpaperList = self.dictSort(self.wallpaperList)
-        self.resize_images(self.wallpaperList)
+        self.resizeImages(self.wallpaperList)
 
         for i in self.sortedWallpaperList:
             for wallpaperFile, wallpaperTitle in self.wallpaperList.items():
@@ -115,7 +121,7 @@ class Widget(WallpaperWidget, ScreenWidget):
                     if wallpaperFile in self.wallpaperList.keys():
                         if wallpaperFile in self.wideList.keys():
                             self.ultimateList.append({ "Wide": item })
-                        #get normal size wallpapers
+                        # get normal size wallpapers
                         else:
                             self.ultimateList.append({"Normal": item})
         if current:
@@ -139,22 +145,21 @@ class Widget(WallpaperWidget, ScreenWidget):
         item.setText(0,wpTitle)
         item.setPixmap(0,QPixmap(QImage(os.path.join(self.tmpThumbDir,  os.path.basename(wpFile) + ".thumbnail"))))
 
-    def resize_images(self, resizeList):
-        size = 150, 150
-
+    def resizeImages(self, resizeList):
         if current:
             resizeList[current] = self.currentText
         else:
             resizeList[self.nonePic] = self.noneText
 
         for infile in resizeList:
-            tmpDir =  os.path.join(self.tmpThumbDir, os.path.splitext(os.path.basename(infile))[0])
+            tmpDir = os.path.join(self.tmpThumbDir, os.path.splitext(os.path.basename(infile))[0])
             try:
                 im = Image.open(infile)
-                im.thumbnail(size, Image.ANTIALIAS)
+                im.thumbnail(self.thumbSize, Image.NEAREST)
                 im.save(tmpDir + ".jpg.thumbnail", "BMP")
-            except IOError:
-                pass
+            except IOError, e:
+                print "Error: ", e
+                logging.debug("IO Error: " + str(e))
 
     def showAllWallpapers(self):
         if self.checkAllWallpapers.isChecked():

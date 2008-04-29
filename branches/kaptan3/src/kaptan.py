@@ -17,6 +17,7 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 import sys
+import logging
 
 from screens.kaptanMain import kaptanUi
 
@@ -53,6 +54,14 @@ class Kaptan(kaptanUi):
 
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
+
+        # start logging:
+        logging.basicConfig(level=logging.DEBUG,
+            format='%(asctime)s %(levelname)-8s %(message)s',
+            datefmt='%H:%M:%S',
+            filename='/tmp/kaptan.log',
+            filemode='w')
+        logging.info("Kaptan Started")
 
         icon = "kaptan/pics/icons/welcome.png"
 
