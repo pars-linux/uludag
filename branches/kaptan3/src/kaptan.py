@@ -18,7 +18,7 @@ from kdeui import *
 import kdedesigner
 import sys
 import logging
-
+import os
 from screens.kaptanMain import kaptanUi
 
 # Screens
@@ -55,11 +55,13 @@ class Kaptan(kaptanUi):
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
 
+        self.logDir = os.path.join( os.path.expanduser("~"), ".kde/share/apps/kaptan/")
+
         # start logging:
         logging.basicConfig(level=logging.DEBUG,
             format='%(asctime)s %(levelname)-8s %(message)s',
             datefmt='%H:%M:%S',
-            filename='/tmp/kaptan.log',
+            filename= self.logDir + 'kaptan.log',
             filemode='w')
         logging.info("Kaptan Started")
 
@@ -188,6 +190,16 @@ class Kaptan(kaptanUi):
             qApp.quit()
 
     def __del__(self):
+        self.tmpThumbDir = os.path.join(os.path.expanduser("~"), ".kde/share/apps/kaptan/kaptan-thumbs")
+
+        if os.path.exists(self.tmpThumbDir):
+            for root, dirs, files in os.walk(self.tmpThumbDir):
+                for name in files:
+                    os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+            os.rmdir(self.tmpThumbDir)
+
         """
         if ScrPackage.isUpdateOn == True:
             proc = KProcess()

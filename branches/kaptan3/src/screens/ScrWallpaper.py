@@ -60,7 +60,8 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.listWallpaper.setSorting(-1)
 
         # set/create variables
-        self.tmpThumbDir = "/tmp/kaptan-thumbs"
+        self.tmpThumbDir = os.path.join(os.path.expanduser("~"), ".kde/share/apps/kaptan/kaptan-thumbs")
+
         self.thumbSize = 150, 150
         self.wallpaperList = {}
         self.ultimateList = []
@@ -69,7 +70,7 @@ class Widget(WallpaperWidget, ScreenWidget):
 
         # create temp directory for wallpaper thumbnails
         if not os.path.exists(self.tmpThumbDir):
-            os.mkdir(self.tmpThumbDir)
+            os.makedirs(self.tmpThumbDir)
 
         # detect if screen is wide or not
         self.isWide = False
