@@ -20,13 +20,12 @@ from handler import CallHandler
 
 class ComarIface:
     def __init__(self):
-        self.setupBusses()
-
         # tray and package-manager synchronization
         self.com_lock = QMutex()
 
-        # Notification
-        self.listenSignals()
+        # setup dbus stuff
+        self.setupBusses()
+        self.setupSignals()
 
     def setupBusses(self):
         try:
@@ -37,7 +36,7 @@ class ComarIface:
             return False
         return True
 
-    def listenSignals(self):
+    def setupSignals(self):
         self.sysBus.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Manager", member_keyword="signal", path_keyword="path")
 
     def handleSignals(self, *args, **kwargs):
@@ -56,11 +55,14 @@ class ComarIface:
         ch = CallHandler("pisi", "System.Manager", method,
                          action,
                          self.sysBus, self.sesBus)
+
         ch.registerError(self.comarError)
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
+
         if handler:
             ch.registerDone(handler)
+
         ch.call(*args)
 
     def installPackage(self, package):
