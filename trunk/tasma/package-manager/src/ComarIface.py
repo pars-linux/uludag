@@ -19,8 +19,7 @@ import dbus.mainloop.qt3
 from handler import CallHandler
 
 class ComarIface:
-    def __init__(self,parent):
-        self.parent = parent
+    def __init__(self):
         self.setupBusses()
 
         # tray and package-manager synchronization
@@ -56,7 +55,6 @@ class ComarIface:
     def callMethod(self, method, action, handler, *args):
         ch = CallHandler("pisi", "System.Manager", method,
                          action,
-                         self.parent.winId(),
                          self.sysBus, self.sesBus)
         ch.registerError(self.comarError)
         ch.registerAuthError(self.comarError)
