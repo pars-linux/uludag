@@ -42,12 +42,12 @@ class CallHandler:
       ch.call(arg1, arg2, ...)
     """
 
-    def __init__(self, package, model, method, action, busSys=None, busSes=None):
+    def __init__(self, package, model, method, action, sysBus=None, sesBus=None):
         self.dest = "tr.org.pardus.comar"
         self.path = "/package/%s" % package
         self.iface = "%s.%s" % (self.dest, model)
-        self.busSys = busSys
-        self.busSes = busSes
+        self.sysBus = sysBus
+        self.sesBus = sesBus
         self.method = method
         self.action = action
         self.args = None
@@ -56,47 +56,47 @@ class CallHandler:
         self.handleError = []
         self.handleAuthError = []
         self.handleDBusError = []
-        if not self.busSys:
-            self.busSys = dbus.SystemBus()
-        if not self.busSes:
-            self.busSes = dbus.SessionBus()
-    
+        if not self.sysBus:
+            self.sysBus = dbus.SystemBus()
+        if not self.sesBus:
+            self.sesBus = dbus.SessionBus()
+
     def registerDone(self, func):
         self.handleDone.append(func)
-    
+
     def registerCancel(self, func):
         self.handleCancel.append(func)
-    
+
     def registerError(self, func):
         self.handleError.append(func)
-    
+
     def registerAuthError(self, func):
         self.handleAuthError.append(func)
-    
+
     def registerDBusError(self, func):
         self.handleDBusError.append(func)
-    
+
     def call(self, *args):
         self.args = args
         self.__call()
-    
+
     def __call(self):
         iface = self.__getIface()
         method = getattr(iface, self.method)
         method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
-    
+
     def __getIface(self):
         try:
-            obj = self.busSys.get_object(self.dest, self.path, introspect=False)
+            obj = self.sysBus.get_object(self.dest, self.path, introspect=False)
             return dbus.Interface(obj, dbus_interface=self.iface)
         except dbus.DBusException, e:
             for func in self.handleDBusError:
                 func(e)
-    
+
     def __handleReply(self, *args):
         for func in self.handleDone:
             func(*args)
-    
+
     def __handleError(self, exception):
         name = exception._dbus_error_name
         name = name.split(self.dest)[1]
@@ -105,15 +105,15 @@ class CallHandler:
         else:
             for func in self.handleError:
                 func(exception)
-    
+
     def __getAuthIface(self):
         try:
-            obj = self.busSes.get_object("org.gnome.PolicyKit", "/")
+            obj = self.sesBus.get_object("org.gnome.PolicyKit", "/")
             return dbus.Interface(obj, "org.freedesktop.PolicyKit.AuthenticationAgent")
         except dbus.DBusException, e:
             for func in self.handleDBusError:
                 func(e)
-    
+
     def __obtainAuth(self):
         iface = self.__getAuthIface()
         if iface.ObtainAuthorization(self.action, 0, os.getpid()):
@@ -121,14 +121,14 @@ class CallHandler:
         else:
             for func in self.handleCancel:
                 func()
-    
+
     def __handleAuthReply(self, granted):
         if granted:
             self.__call()
         else:
             for func in self.handleCancel:
                 func()
-    
+
     def __handleAuthError(self, exception):
         for func in self.handleAuthError:
             func(exception)
