@@ -42,11 +42,9 @@ class ComarIface:
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Manager", member_keyword="signal", path_keyword="path")
 
     def handleSignals(self, *args, **kwargs):
-        path = kwargs["path"]
         signal = kwargs["signal"]
-        if not path.startswith("/package/"):
-            return
-        script = path[9:]
+        # use args here
+        pass
 
     def busError(self, exception):
         KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
