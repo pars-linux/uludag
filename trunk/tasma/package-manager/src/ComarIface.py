@@ -31,15 +31,15 @@ class ComarIface:
 
     def setupBusses(self):
         try:
-            self.busSys = dbus.SystemBus()
-            self.busSes = dbus.SessionBus()
+            self.sysBus = dbus.SystemBus()
+            self.sesBus = dbus.SessionBus()
         except dbus.DBusException:
             KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
             return False
         return True
 
     def listenSignals(self):
-        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Manager", member_keyword="signal", path_keyword="path")
+        self.sysBus.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Manager", member_keyword="signal", path_keyword="path")
 
     def handleSignals(self, *args, **kwargs):
         signal = kwargs["signal"]
@@ -57,7 +57,7 @@ class ComarIface:
         ch = CallHandler("pisi", "System.Manager", method,
                          action,
                          self.parent.winId(),
-                         self.busSys, self.busSes)
+                         self.sysBus, self.sesBus)
         ch.registerError(self.comarError)
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
@@ -104,5 +104,5 @@ class ComarIface:
         self.callMethod("setCache", "tr.org.pardus.comar.system.manager.setcache", None, enabled, limit)
 
     def cancel(self):
-        obj = self.busSys.get_object("tr.org.pardus.comar", "/")
+        obj = self.sysBus.get_object("tr.org.pardus.comar", "/")
         obj.cancel(dbus_interface="tr.org.pardus.comar")
