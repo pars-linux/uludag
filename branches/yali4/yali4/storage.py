@@ -475,16 +475,16 @@ class Device:
         # pyparted will do it for us.
         del self._disk
 
-# Check EDD Module
-if not os.path.exists("/sys/firmware/edd"):
-    cmd_path = sysutils.find_executable("modprobe")
-    cmd = "%s %s" % (cmd_path, "edd")
-    p = os.popen(cmd)
-    o = p.readlines()
-    if p.close():
-        raise YaliException, "Inserting EDD Module failed !"
-
 def getOrderedDiskList():
+    # Check EDD Module
+    if not os.path.exists("/sys/firmware/edd"):
+        cmd_path = sysutils.find_executable("modprobe")
+        cmd = "%s %s" % (cmd_path, "edd")
+        p = os.popen(cmd)
+        o = p.readlines()
+        if p.close():
+            raise YaliException, "Inserting EDD Module failed !"
+
     edd = EDD()
     sortedList = []
     edd_list = edd.list_edd_signatures()
