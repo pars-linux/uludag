@@ -277,8 +277,13 @@ all your present data on the selected disk will be lost.</p>
             if len(yali4.storage.devices) > 1:
                 ctx.installData.bootLoaderDev = basename(ctx.installData.orderedDiskList[0])
             else:
-                ctx.installData.bootLoaderDev = str(filter(lambda u: not u.isdigit(),
-                                                    basename(root_part_req.partition().getPath())))
+                dev_path = root_part_req.partition().getPath()
+                if dev_path.find("cciss") > 0:
+                    # HP Smart array controller (something like /dev/cciss/c0d0p1)
+                    ctx.installData.bootLoaderDev = basename(dev_path)[:-2]
+                else:
+                    ctx.installData.bootLoaderDev = str(filter(lambda u: not u.isdigit(),
+                                                               basename(dev_path)))
 
         _ins_part = root_part_req.partition().getPath()
 

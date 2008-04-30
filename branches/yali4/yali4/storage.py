@@ -26,6 +26,7 @@ import glob
 import struct
 import binascii
 
+from pardus.diskutils import *
 from yali4.parteddata import *
 from yali4.partition import Partition, FreeSpace
 from yali4.exception import YaliError, YaliException
@@ -474,68 +475,14 @@ class Device:
         # pyparted will do it for us.
         del self._disk
 
-# Edd Module Class, for getting BIOS Boot order for disks..
-class EDD:
-    def __init__(self):
-        self.edd_dir = "/sys/firmware/edd"
-        self.edd_offset = 440
-        self.edd_len = 4
-
-    def blockDevices(self):
-        devices = []
-        for dev_type in ["hd*", "sd*"]:
-            sysfs_devs = glob.glob("/sys/block/" + dev_type)
-            for sysfs_dev in sysfs_devs:
-                devices.append("/dev/" + os.path.basename(sysfs_dev))
-        devices.sort()
-        return devices
-
-    def match_sys(self, _a):
-        b = struct.unpack("2s2s2s2s", _a)
-        return "0x"+b[3]+b[2]+b[1]+b[0]
-
-    def get_edd_sig(self, _n):
-        sigfile = "%s/int13_dev%s/mbr_signature" % (self.edd_dir, _n)
-        if os.path.exists(sigfile):
-            sig = file(sigfile).read().strip("\n")
-        else:
-            sig = False
-
-        return sig
-
-    def get_mbr_sig(self, _f):
-        try:
-            f = file(_f)
-            f.seek(self.edd_offset)
-            a = f.read(self.edd_len)
-            f.close()
-            sig = self.match_sys(binascii.b2a_hex(a))
-        except:
-            return False
-        return sig
-
-    def list_edd_signatures(self):
-        sigs = {}
-        if not os.path.exists(self.edd_dir):
-            cmd_path = sysutils.find_executable("modprobe")
-            cmd = "%s %s" %(cmd_path,"edd")
-            p = os.popen(cmd)
-            o = p.readlines()
-            if p.close():
-                raise YaliException, "Inserting EDD Module failed !"
-        for d in os.listdir(self.edd_dir):
-            bios_num = d[9:]
-            if self.get_edd_sig(bios_num):
-                sigs[bios_num] = self.get_edd_sig(bios_num)
-        return sigs
-
-    def list_mbr_signatures(self):
-        sigs = {}
-        for d in self.blockDevices():
-            sig = self.get_mbr_sig(d)
-            if sig:
-                sigs[sig] = d
-        return sigs
+# Check EDD Module
+if not os.path.exists("/sys/firmware/edd"):
+    cmd_path = sysutils.find_executable("modprobe")
+    cmd = "%s %s" % (cmd_path, "edd")
+    p = os.popen(cmd)
+    o = p.readlines()
+    if p.close():
+        raise YaliException, "Inserting EDD Module failed !"
 
 def getOrderedDiskList():
     edd = EDD()

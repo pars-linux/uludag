@@ -67,6 +67,17 @@ class Runner:
                         ScrGoodbye              # 11
                        ]
 
+        # This list will be used for yali4-firstBoot
+        _firstBoot_screens = [                        # Numbers can be used with -s paramter
+                              ScrWelcome,             # 01
+                              ScrKeyboard,            # 02
+                              ScrDateTime,            # 03
+                              ScrUsers,               # 04
+                              ScrAdmin,               # 05
+                              ScrGoodbye              # 06
+                             ]
+
+
         self._app = QtGui.QApplication(sys.argv)
         self._window = YaliWindow.Widget()
 

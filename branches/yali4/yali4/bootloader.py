@@ -66,7 +66,7 @@ class BootLoader:
 
     def _find_grub_dev(self, dev_path):
         """ Returns the GRUB device from given dev_path
-            It uses GRUB's deviceMap"""
+            It uses YALI's deviceMap created from EDD"""
         if dev_path.find("cciss") > 0:
             # HP Smart array controller (something like /dev/cciss/c0d0p1)
             dev_name = os.path.basename(dev_path)[:-2]
