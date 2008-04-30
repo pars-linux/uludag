@@ -16,7 +16,7 @@ class CallHandler:
     """Asynchronous call handler.
 
     Usage:
-      ch = CallHandler("baselayout", "User.Manager", "addUser", "polkit.action" windowID, SystemBus, SessionBus)
+      ch = CallHandler("baselayout", "User.Manager", "addUser", "polkit.action", SystemBus, SessionBus)
 
       # Exec func1() on success:
       # (Message reply will be passed to function)
@@ -42,13 +42,12 @@ class CallHandler:
       ch.call(arg1, arg2, ...)
     """
 
-    def __init__(self, package, model, method, action, windowID, busSys=None, busSes=None):
+    def __init__(self, package, model, method, action, busSys=None, busSes=None):
         self.dest = "tr.org.pardus.comar"
         self.path = "/package/%s" % package
         self.iface = "%s.%s" % (self.dest, model)
         self.busSys = busSys
         self.busSes = busSes
-        self.window = windowID
         self.method = method
         self.action = action
         self.args = None
@@ -117,7 +116,7 @@ class CallHandler:
     
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        if iface.ObtainAuthorization(self.action, self.window, os.getpid()):
+        if iface.ObtainAuthorization(self.action, 0, os.getpid()):
             self.__call()
         else:
             for func in self.handleCancel:
