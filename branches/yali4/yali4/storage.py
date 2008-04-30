@@ -442,7 +442,7 @@ class Device:
         # this extra size should be always enough.
         #
         # see: http://mlf.linux.rulez.org/mlf/ezaz/ntfsresize.html
-        size_mb += 140
+        size_mb += 150
 
         if isinstance(fs, str):
             # a string... get the corresponding FileSystem object

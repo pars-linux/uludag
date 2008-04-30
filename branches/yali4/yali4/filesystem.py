@@ -148,6 +148,10 @@ class FileSystem:
         """ Check if filesystem is resizable """
         return self._resizable
 
+    def preResize(self, partition):
+        """ Routine operations before resizing """
+        pass
+
 class Ext3FileSystem(FileSystem):
     """ Implementation of ext3 file system """
 
@@ -218,6 +222,24 @@ class Ext3FileSystem(FileSystem):
 
         return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
 
+    def preResize(self, partition):
+        """ FileSystem Check before resize """
+        cmd_path = sysutils.find_executable("e2fsck")
+
+        if not cmd_path:
+            e = "Command not found to resize %s filesystem" %(self.name())
+            raise FSError, e 
+
+        cmd = "%s -f %s" % (cmd_path, partition.getPath())
+
+        try:
+            p = os.popen(cmd)
+            o = p.readlines()
+            p.close()
+        except:
+            return False
+        return True
+
     def resize(self, size_mb, partition):
         """ Resize given partition as given size """
         if size_mb < self.minResizeMB(partition):
@@ -226,17 +248,20 @@ class Ext3FileSystem(FileSystem):
         cmd_path = sysutils.find_executable("resize2fs")
 
         if not cmd_path:
-            e = "Command not found to format %s filesystem" %(self.name())
+            e = "Command not found to resize %s filesystem" %(self.name())
             raise FSError, e 
 
         cmd = "%s %s %sM" % (cmd_path, partition.getPath(), str(size_mb)) 
 
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except:
-            return False
-        return True
+        if self.preResize(partition):
+            try:
+                p = os.popen(cmd)
+                o = p.readlines()
+                p.close()
+            except:
+                return False
+            return True
+        return False
 
     def getLabel(self, partition):
         return sysutils.e2fslabel(partition.getPath())
