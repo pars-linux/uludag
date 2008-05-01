@@ -16,7 +16,7 @@
    <string>#YaliMain {
        background-image:url(':/gui/pics/backardus.png')
 }
-
+/*
 QStackedWidget#mainStack {
      border-style: outset;
      border-width: 2px;
@@ -24,18 +24,18 @@ QStackedWidget#mainStack {
      border-color: beige;
      background-image:url(':/gui/pics/trans.png');
 }
-
+*/
 QTextBrowser#helpContent {
-     border-style: outset;
      border-width: 2px;
      border-top-right-radius:8px;
      border-bottom-right-radius:8px;
      border-color: beige;
      border-left:none;
      background-image:url(':/gui/pics/helpBack.png');
+     background-repeat:no-repeat;
      padding:5px;
      padding-top:7px;
-	 font: 8px;
+     font: 9px;
 }
 
 /* Make text in message boxes selectable. */
