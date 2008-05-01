@@ -70,9 +70,6 @@ def buildPackages():
         try:
             try:
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
-                print
-                print newBinaryPackages, oldBinaryPackages
-                print
             except Exception, e:
                 qmgr.transferToWaitQueue(pspec)
                 errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
