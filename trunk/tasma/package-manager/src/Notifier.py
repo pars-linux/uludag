@@ -18,7 +18,6 @@ class Notifier(QObject):
 
     def __init__(self):
         QObject.__init__(self)
-        dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
         bus = dbus.SessionBus()
         try:
             object  = bus.get_object("org.freedesktop.Notifications", "/org/freedesktop/Notifications")
