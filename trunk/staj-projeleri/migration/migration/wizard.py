@@ -43,7 +43,7 @@ class MigrationWizard(KWizard):
         logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(levelname)-8s %(message)s',
                         datefmt='%H:%M:%S',
-                        filename='/tmp/migration.log',
+                        filename=os.path.expanduser('~/migration.log'),
                         filemode='w')
         logging.info("Migration Tool Started")
         # i18n:
