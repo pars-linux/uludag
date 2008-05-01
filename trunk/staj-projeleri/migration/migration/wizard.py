@@ -55,7 +55,6 @@ class MigrationWizard(KWizard):
         # User page:
         self.userpage = UserPage(self)
         self.addPage(self.userpage, i18n("Selecting User"))
-        self.addUsers()
         # Empty Options page:
         self.optionspage = QWidget(self)
         self.addPage(self.optionspage, i18n("Selecting Options"))
@@ -68,6 +67,7 @@ class MigrationWizard(KWizard):
         # Connections:
         self.connect(self.helpButton(), SIGNAL("clicked()"), self.slotHelp)
         self.connect(self.kapp, SIGNAL("aboutToQuit()"), self.slotQuit)
+        self.addUsers()
     
     def slotHelp(self):
         self.helpwin = HelpDialog("migration", i18n("Migration Tool Help"), self)
@@ -139,7 +139,6 @@ class MigrationWizard(KWizard):
         self.users = partition.allUsers()
         if len(self.users) == 0:
             self.userpage.usersBox.setEnabled(False)
-            self.userpage = UserPage(self)
             self.setNextEnabled(self.userpage, False)
             logging.error("No User")
         for user in self.users:
