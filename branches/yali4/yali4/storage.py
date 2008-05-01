@@ -23,6 +23,7 @@
 import parted
 import os
 import glob
+import time
 import struct
 import binascii
 
@@ -460,7 +461,7 @@ class Device:
             ptype = PARTITION_LOGICAL
         else:
             ptype = PARTITION_PRIMARY
-
+        time.sleep(3)
         self.deletePartition(part)
         self.commit()
         np = self.addPartitionFromStart(ptype, fs_name, start, size_mb)

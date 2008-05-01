@@ -211,8 +211,7 @@ class Ext3FileSystem(FileSystem):
         cmd_path = sysutils.find_executable("dumpe2fs")
 
         if not cmd_path:
-            e = "Command not found to get information about %s" %(partition)
-            raise FSError, e 
+            raise FSError, "Command not found to get information about %s" % (partition.getPath())
 
         lines = os.popen("%s -h %s" % (cmd_path, partition.getPath())).readlines()
 
@@ -227,17 +226,16 @@ class Ext3FileSystem(FileSystem):
         cmd_path = sysutils.find_executable("e2fsck")
 
         if not cmd_path:
-            e = "Command not found to resize %s filesystem" %(self.name())
-            raise FSError, e 
+            raise FSError, "Command not found to resize %s filesystem" % (self.name())
 
-        cmd = "%s -f %s" % (cmd_path, partition.getPath())
+        res = sysutils.execClear("e2fsck",
+                                ["-f", "-p", "-C", "0", partition.getPath()],
+                                stdout="/tmp/resize.log",
+                                stderr="/tmp/resize.log")
 
-        try:
-            p = os.popen(cmd)
-            o = p.readlines()
-            p.close()
-        except:
-            return False
+        if res >= 4:
+            raise FSError, "FSCheck failed on %s" % (partition.getPath())
+
         return True
 
     def resize(self, size_mb, partition):
@@ -248,20 +246,16 @@ class Ext3FileSystem(FileSystem):
         cmd_path = sysutils.find_executable("resize2fs")
 
         if not cmd_path:
-            e = "Command not found to resize %s filesystem" %(self.name())
-            raise FSError, e 
+            raise FSError, "Command not found to resize %s filesystem" % (self.name())
 
-        cmd = "%s %s %sM" % (cmd_path, partition.getPath(), str(size_mb)) 
+        res = sysutils.execClear("resize2fs",
+                                ["-f", partition.getPath(), "%sM" %(size_mb)],
+                                stdout="/tmp/resize.log",
+                                stderr="/tmp/resize.log")
+        if res:
+            raise FSError, "Resize failed on %s" % (partition.getPath())
 
-        if self.preResize(partition):
-            try:
-                p = os.popen(cmd)
-                o = p.readlines()
-                p.close()
-            except:
-                return False
-            return True
-        return False
+        return True
 
     def getLabel(self, partition):
         return sysutils.e2fslabel(partition.getPath())
@@ -439,7 +433,7 @@ class NTFSFileSystem(FileSystem):
         self.setImplemented(True)
 
     def check_resize(self, size_mb, partition):
-        #don't do anything, just check
+        # don't do anything, just check
         cmd = "/usr/sbin/ntfsresize -n -f -s %dM %s" %(size_mb, partition.getPath())
         p = os.popen(cmd)
         if p.close():
@@ -449,13 +443,19 @@ class NTFSFileSystem(FileSystem):
     def resize(self, size_mb, partition):
         if size_mb < self.minResizeMB(partition):
             return False
-        cmd = "/usr/sbin/ntfsresize -f -s %dM %s" %(size_mb, partition.getPath())
-        try:
-            p = os.popen(cmd, "w")
-            p.write("y\n")
-            p.close()
-        except:
-            return False
+
+        p = os.pipe()
+        os.write(p[1], "y\n")
+        os.close(p[1])
+
+        res = sysutils.execClear("ntfsresize",
+                                ["-f","-s", "%sM" % (size_mb), partition.getPath()],
+                                stdin = p[0],
+                                stdout = "/tmp/resize.log",
+                                stderr = "/tmp/resize.log")
+        if res:
+            raise FSError, "Resize failed on %s " % (partition.getPath())
+
         return True
 
     def setLabel(self, partition, label):

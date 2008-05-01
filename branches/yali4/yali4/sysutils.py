@@ -148,6 +148,67 @@ def reboot():
     umount(consts.target_dir)
     fastreboot()
 
+# Shamelessly stolen from Anaconda :)
+def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
+    import yali4.gui.context as ctx
+
+    argv = list(argv)
+    if type(stdin) == type("string"):
+        if os.access(stdin, os.R_OK):
+            stdin = open(stdin)
+        else:
+            stdin = 0
+    if type(stdout) == type("string"):
+        stdout = open(stdout, "w")
+    if type(stderr) == type("string"):
+        stderr = open(stderr, "w")
+    if stdout is not None and type(stdout) != int:
+        stdout.write("Running... %s\n" %([command] + argv,))
+
+    p = os.pipe()
+    childpid = os.fork()
+    if not childpid:
+        os.close(p[0])
+        os.dup2(p[1], 1)
+        os.dup2(stderr.fileno(), 2)
+        os.dup2(stdin, 0)
+        os.close(stdin)
+        os.close(p[1])
+        stderr.close()
+
+        os.execvp(command, [command] + argv)
+        os._exit(1)
+
+    os.close(p[1])
+
+    while 1:
+        try:
+            s = os.read(p[0], 1)
+        except OSError, args:
+            (num, str) = args
+            if (num != 4):
+                raise IOError, args
+
+        stdout.write(s)
+        ctx.mainScreen.processEvents()
+
+        if len(s) < 1:
+            break
+
+    try:
+        (pid, status) = os.waitpid(childpid, 0)
+    except OSError, (num, msg):
+        ctx.debugger.log("exception from waitpid: %s %s" %(num, msg))
+
+    if status is None:
+        return 0
+
+    if os.WIFEXITED(status):
+        return os.WEXITSTATUS(status)
+
+    return 1
+
+
 ## Run an external program and capture standard out.
 # @param command The command to run.
 # @param argv A list of arguments.
