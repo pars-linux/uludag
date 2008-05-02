@@ -89,6 +89,10 @@ class MainWidget(dm_mainview.mainWidget):
             for resolution in self.screenModes[output]:
                 self.comboBoxResolution.insertItem(resolution)
 
+        # disable dual mode if there's only one output
+        if len(self.displayConfiguration.outputs) <= 1:
+            self.checkBoxDualMode.setEnabled(0)
+
         # remove later.
         self.displayConfiguration.secondaryScr = "VGA"
 
