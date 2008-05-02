@@ -586,7 +586,6 @@ class MainApplicationWidget(QWidget):
 
     def displayProgress(self, data):
         operation = data[0]
-
         if operation in ["updatingrepo", "rebuilding-db"]:
             self.progressDialog.setOperationDescription(i18n(str(data[2])))
             percent = data[1]
@@ -607,31 +606,29 @@ class MainApplicationWidget(QWidget):
                 self.progressDialog.updateTotalDownloaded(pkgDownSize=data[5], pkgTotalSize=data[6])
                 self.progressDialog.updateTotalOperationPercent()
 
-    def pisiNotify(self, data):
-        data = data.split(",")
-        operation = data[0]
+    def pisiNotify(self, operation, args):
 
         # operation is now cancellable
         if operation in ["started"]:
             self.progressDialog.enableCancel()
 
         elif operation in ["removing"]:
-            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
+            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=args[0])
             self.progressDialog.updatePackageInfo()
 
         elif operation in ["cached"]:
             # progressDialog.totalSize is the to be downloaded size by package-manager.
             # And that is (totalDownloadSize - alreadyCachedSize) 
-            self.progressDialog.totalSize = int(data[1]) - int(data[2])
+            self.progressDialog.totalSize = int(args[0]) - int(args[1])
             self.progressDialog.updateTotalOperationPercent()
             self.progressDialog.updateStatus()
 
         elif operation in ["installing"]:
-            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
+            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=args[0])
             self.progressDialog.updatePackageInfo()
 
         elif operation in ["extracting", "configuring"]:
-            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
+            self.progressDialog.updateOperationDescription(i18n(str(operation)), package=args[0])
 
         elif operation in ["removed", "installed", "upgraded"]:
             # Bug 4030
@@ -650,7 +647,7 @@ class MainApplicationWidget(QWidget):
 
         elif operation in ["updatingrepo"]:
             self.progressDialog.setCurrentOperation(i18n("<b>Updating Repository</b>"))
-            self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(data[1]))
+            self.progressDialog.setOperationDescription(i18n('Downloading package list of %1').arg(args[0]))
 
     def showWarningMessage(self, message, warning=None):
         if not warning:
