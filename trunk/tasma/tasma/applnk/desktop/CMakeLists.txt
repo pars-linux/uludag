@@ -10,12 +10,12 @@ SET(
   tasmacomponentchooser.desktop
   tasmacrypto.desktop
   tasmadesktop.desktop
+  tasmadesktopbehavior.desktop
   tasmadesktoppath.desktop
   tasmadisplay.desktop
   tasmafiletypes.desktop
   tasmafonts.desktop
   tasmafontinstaller.desktop
-  tasmagtk.desktop
   tasmaicons.desktop
   tasmajoystick.desktop
   tasmakamera.desktop
