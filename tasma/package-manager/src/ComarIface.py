@@ -11,6 +11,7 @@
 # Please read the COPYING file
 
 from qt import QMutex, SIGNAL
+from kdeui import KMessageBox
 
 # DBus
 import dbus
@@ -19,10 +20,10 @@ import dbus.mainloop.qt3
 from handler import CallHandler
 
 class ComarIface:
-    def __init__(self):
+    def __init__(self, handler=None):
+        self.handler = handler
         # tray and package-manager synchronization
         self.com_lock = QMutex()
-
         # setup dbus stuff
         self.setupBusses()
         self.setupSignals()
@@ -42,22 +43,27 @@ class ComarIface:
     def handleSignals(self, *args, **kwargs):
         signal = kwargs["signal"]
         # use args here
-        pass
+        if self.handler:
+            self.handler(signal, args)
 
     def busError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
+        KMessageBox.error(self, str(exception), "D-Bus Error")
         self.setupBusses()
 
+    def comarAuthError(self, exception):
+        KMessageBox.error(self, str(exception), "COMAR Auth Error")
+
     def comarError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+        KMessageBox.error(self, str(exception), "COMAR Error")
 
     def callMethod(self, method, action, handler, *args):
+        print "Method: %s      Action: %s" % (method, action)
         ch = CallHandler("pisi", "System.Manager", method,
                          action,
                          self.sysBus, self.sesBus)
 
         ch.registerError(self.comarError)
-        ch.registerAuthError(self.comarError)
+        ch.registerAuthError(self.comarAuthError)
         ch.registerDBusError(self.busError)
 
         if handler:

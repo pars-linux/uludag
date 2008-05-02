@@ -585,7 +585,6 @@ class MainApplicationWidget(QWidget):
         self.componentsList.setSelected(self.componentsList.firstChild(),True)
 
     def displayProgress(self, data):
-        data = data.split(",")
         operation = data[0]
 
         if operation in ["updatingrepo", "rebuilding-db"]:
@@ -626,7 +625,7 @@ class MainApplicationWidget(QWidget):
             self.progressDialog.totalSize = int(data[1]) - int(data[2])
             self.progressDialog.updateTotalOperationPercent()
             self.progressDialog.updateStatus()
-            
+
         elif operation in ["installing"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=data[1])
             self.progressDialog.updatePackageInfo()
@@ -678,8 +677,7 @@ class MainApplicationWidget(QWidget):
             PisiIface.reloadPisi()
 
         # after every operation check package cache limits
-        if command not in ["System.Manager.clearCache", 
-                           "System.Manager.setRepositories"]:
+        if command not in ["System.Manager.clearCache", "System.Manager.setRepositories"]:
             self.command.checkCacheLimits()
 
         self.basket.empty()
