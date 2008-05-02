@@ -40,5 +40,7 @@ def setPackageToInstall(pack):
     packageToInstall = pack
 
 def processEvents():
+    return
+    #FIXME: package-manager freezes after this
     if app:
         app.processEvents(QEventLoop.ExcludeUserInput)
