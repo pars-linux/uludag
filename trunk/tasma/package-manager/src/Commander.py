@@ -31,68 +31,63 @@ class Commander(QObject):
     def handler(self, signal, data):
         print "Signal: ", signal
         print "Data: ", data
+        args = data[1:] if len(data) > 1 else None
+
         if signal == "finished":
             command = data[0]
             self.comar.com_lock.unlock()
             self.parent.finished(command)
         elif signal == "progress":
             self.parent.displayProgress(data)
-        elif signal == "notify":
-            notification = data[0]
-            args = data[1:] if len(data) > 1 else None
-            if notification == "System.Manager.error":
-                self.comar.com_lock.unlock()
-                self.parent.showErrorMessage(args)
-                self.parent.resetState()
-                self.parent.refreshState()
-            elif notification == "System.Manager.notify":
-                self.parent.pisiNotify(args)
-            elif notification == "System.Manager.finished":
-                self.comar.com_lock.unlock()
-                self.parent.finished(args)
-            elif notification == "System.Manager.updatingRepo":
-                pass
-            elif notification == "System.Manager.warning":
-                self.comar.com_lock.unlock()
-                self.parent.showWarningMessage(args)
-                self.parent.resetState()
-                self.parent.refreshState()
-            else:
-                print "Got notification : %s with data : %s" % (signal, data)
-
-        # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
-        # some misbehaviour is seen, comar.log is always there to look.
         elif signal == "error":
             self.comar.com_lock.unlock()
-            self.parent.finished("System.Manager.cancelled")
-            return
-        elif signal == "denied":
-            self.comar.com_lock.unlock()
-            self.parent.finished("System.Manager.cancelled")
-            self.parent.showErrorMessage(i18n("You do not have permission to do this operation."))
-        elif signal == "fail":
-            if data == "System.Manager.cancelled":
-                self.comar.com_lock.unlock()
-                self.parent.finished(data)
-                return
-
-            self.comar.com_lock.unlock()
-            self.parent.finished()
+            self.parent.showErrorMessage(args)
             self.parent.resetState()
             self.parent.refreshState()
-
-            #FIXME: What replaces this in new Comar api
-            # do not show any error if it is the interval check
-            # if not reply.id == ID_TRAY_INTERVAL_CHECK:
-            #     self.parent.showErrorMessage(unicode(reply.data))
-
-            # if an error occured communicating with comar and components are not ready we should warn
-            if not PisiIface.get_components():
-                self.parent.repoNotReady()
-        else:
-            # paranoia
+        elif signal == "status":
+            operation = data[0]
+            self.parent.pisiNotify(operation, args)
+        elif notification == "warning":
             self.comar.com_lock.unlock()
-            pass
+            self.parent.showWarningMessage(args)
+            self.parent.resetState()
+            self.parent.refreshState()
+        else:
+            print "Got notification : %s with data : %s" % (signal, data)
+
+#         # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
+#         # some misbehaviour is seen, comar.log is always there to look.
+#         elif signal == "error":
+#             self.comar.com_lock.unlock()
+#             self.parent.finished("System.Manager.cancelled")
+#             return
+#         elif signal == "denied":
+#             self.comar.com_lock.unlock()
+#             self.parent.finished("System.Manager.cancelled")
+#             self.parent.showErrorMessage(i18n("You do not have permission to do this operation."))
+#         elif signal == "fail":
+#             if data == "System.Manager.cancelled":
+#                 self.comar.com_lock.unlock()
+#                 self.parent.finished(data)
+#                 return
+
+#             self.comar.com_lock.unlock()
+#             self.parent.finished()
+#             self.parent.resetState()
+#             self.parent.refreshState()
+
+#             #FIXME: What replaces this in new Comar api
+#             # do not show any error if it is the interval check
+#             # if not reply.id == ID_TRAY_INTERVAL_CHECK:
+#             #     self.parent.showErrorMessage(unicode(reply.data))
+
+#             # if an error occured communicating with comar and components are not ready we should warn
+#             if not PisiIface.get_components():
+#                 self.parent.repoNotReady()
+#         else:
+#             # paranoia
+#             self.comar.com_lock.unlock()
+#             pass
 
     def startUpdate(self, repo = None, id=0):
         if repo is None:
