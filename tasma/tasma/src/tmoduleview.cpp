@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2004,2005 TUBITAK/UEKAE
+  Copyright (c) TUBITAK/UEKAE
   Copyright (c) 1999 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
 
   This program is free software; you can redistribute it and/or modify
