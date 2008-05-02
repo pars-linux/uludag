@@ -22,69 +22,58 @@ from Tray import ID_TRAY_INTERVAL_CHECK
 class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
-
         self.parent = parent
-
         try:
-            self.comar = ComarIface.ComarIface()
+            self.comar = ComarIface.ComarIface(self.handler)
         except:
             parent.showErrorMessage("Cannot connect to Comar daemon")
 
-    def wait_comar(self):
-        # FIXME
-        return True
-
-    def slotComar(self, sock):
-        try:
-            reply = self.comar.com.read_cmd()
-        except:
-            if not self.wait_comar():
-                self.comar.com_lock.unlock()
-                self.parent.showErrorMessage(i18n("Can't connect to Comar daemon"))
-                self.parent.resetState()
-                self.parent.refreshState()
-            else:
-                self.comar = ComarIface.ComarIface()
-            return
-
-        if reply.command == "notify":
-            (notification, script, data) = (reply.notify, reply.script, reply.data)
-            data = unicode(data)
+    def handler(self, signal, data):
+        print "Signal: ", signal
+        print "Data: ", data
+        if signal == "finished":
+            command = data[0]
+            self.comar.com_lock.unlock()
+            self.parent.finished(command)
+        elif signal == "progress":
+            self.parent.displayProgress(data)
+        elif signal == "notify":
+            notification = data[0]
+            args = data[1:] if len(data) > 1 else None
             if notification == "System.Manager.error":
                 self.comar.com_lock.unlock()
-                self.parent.showErrorMessage(data)
+                self.parent.showErrorMessage(args)
                 self.parent.resetState()
                 self.parent.refreshState()
             elif notification == "System.Manager.notify":
-                self.parent.pisiNotify(data)
-            elif notification == "System.Manager.progress":
-                self.parent.displayProgress(data)
+                self.parent.pisiNotify(args)
             elif notification == "System.Manager.finished":
                 self.comar.com_lock.unlock()
-                self.parent.finished(data)
+                self.parent.finished(args)
             elif notification == "System.Manager.updatingRepo":
                 pass
             elif notification == "System.Manager.warning":
                 self.comar.com_lock.unlock()
-                self.parent.showWarningMessage(data)
+                self.parent.showWarningMessage(args)
                 self.parent.resetState()
                 self.parent.refreshState()
             else:
-                print "Got notification : %s , for script : %s , with data : %s" % (notification, script, data)
+                print "Got notification : %s with data : %s" % (signal, data)
+
         # This is paranoia. We dont know what happened but we cancel what ever is being done, gracefully. If
         # some misbehaviour is seen, comar.log is always there to look.
-        elif reply.command == "error":
+        elif signal == "error":
             self.comar.com_lock.unlock()
             self.parent.finished("System.Manager.cancelled")
             return
-        elif reply.command == "denied":
+        elif signal == "denied":
             self.comar.com_lock.unlock()
             self.parent.finished("System.Manager.cancelled")
             self.parent.showErrorMessage(i18n("You do not have permission to do this operation."))
-        elif reply.command == "fail":
-            if reply.data == "System.Manager.cancelled":
+        elif signal == "fail":
+            if data == "System.Manager.cancelled":
                 self.comar.com_lock.unlock()
-                self.parent.finished(reply.data)
+                self.parent.finished(data)
                 return
 
             self.comar.com_lock.unlock()
@@ -92,9 +81,10 @@ class Commander(QObject):
             self.parent.resetState()
             self.parent.refreshState()
 
+            #FIXME: What replaces this in new Comar api
             # do not show any error if it is the interval check
-            if not reply.id == ID_TRAY_INTERVAL_CHECK:
-                self.parent.showErrorMessage(unicode(reply.data))
+            # if not reply.id == ID_TRAY_INTERVAL_CHECK:
+            #     self.parent.showErrorMessage(unicode(reply.data))
 
             # if an error occured communicating with comar and components are not ready we should warn
             if not PisiIface.get_components():
@@ -170,6 +160,7 @@ class Commander(QObject):
         self.comar.setCache(enabled, limit)
 
     def checkCacheLimits(self):
+        print "checkCacheLimits called"
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
 
         cache = config.get("general", "package_cache")
