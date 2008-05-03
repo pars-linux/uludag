@@ -1,4 +1,4 @@
-# translation of es.po to español
+# translation of es.po to Spanish
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -7,14 +7,15 @@
 # klemens <click3d at linuxmail org>, 2007.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # Faik Uygur <faik@pardus.org.tr>, 2007.
+# Klemens Haeckel <click3d at linuxmail org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-26 16:27+0200\n"
-"PO-Revision-Date: 2007-12-03 22:14-0300\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team: español <es@li.org>\n"
+"PO-Revision-Date: 2008-05-03 19:19-0400\n"
+"Last-Translator: Klemens Haeckel <click3d at linuxmail org>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,8 +46,11 @@ msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Abortando operación...</b>"
 
 #: src/Progress.py:127 src/Progress.py:131
+# example: %1=downloading, %2=firefox
+# 080503 changed the word order, to make grammer sound better
+# maybe just skip the word "package" / paquete ??
 msgid "Now %1 <b>%2</b> package"
-msgstr "Ahora paquete %1 <b>%2</b>"
+msgstr "Ahora %1 paquete <b>%2</b>"
 
 #: src/Progress.py:141
 msgid "installed"
