@@ -15,7 +15,6 @@
 #include <cstring>
 
 //kde and qt headers
-#include <qvariant.h>
 #include <qsocketnotifier.h>
 #include <qtimer.h>
 #include <kcombobox.h>
@@ -49,8 +48,8 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
     {
         //exit, if no-exit option is not set
-        Debug::printWarning("no-exit option is not set, setting timer to exit in 30 seconds...");
-        QTimer::singleShot(30000, this, SLOT(quitSlot(void)));
+        Debug::printWarning(QString("no-exit option is not set, setting timer to exit in %1 seconds...").arg(POLICYKITKDE_TIMEOUT / 1000));
+        QTimer::singleShot(POLICYKITKDE_TIMEOUT, this, SLOT(quitSlot(void)));
     }
     else
         Debug::printDebug("no-exit option is set, not quiting");
