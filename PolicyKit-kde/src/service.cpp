@@ -49,7 +49,10 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     {
         //exit, if no-exit option is not set
         Debug::printWarning(QString("no-exit option is not set, setting timer to exit in %1 seconds...").arg(POLICYKITKDE_TIMEOUT / 1000));
-        QTimer::singleShot(POLICYKITKDE_TIMEOUT, this, SLOT(quitSlot(void)));
+
+        exitTimer = new QTimer();
+        exitTimer->connect(exitTimer, SIGNAL(timeout()), this, SLOT(quitSlot(void)));
+        exitTimer->start(POLICYKITKDE_TIMEOUT, true);
     }
     else
         Debug::printDebug("no-exit option is set, not quiting");
@@ -108,9 +111,13 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
 void PolicyService::quitSlot()
 {
     Debug::printWarning("Timeout limit reached and no-exit option is not set, quiting...");
-    KApplication::kApplication()->quit();
+
+    if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
+        delete exitTimer;
 
     //TODO: Do last jobs
+
+    KApplication::kApplication()->quit();
 }
 
 PolicyService::~PolicyService()
@@ -455,6 +462,10 @@ void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_p
 
 void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& messageToReply)
 {
+    //stop exitTimer during authentication, and restart when it is finished
+    if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
+        exitTimer->stop();
+
     PolKitAction *action = polkit_action_new();
     if (action == NULL)
     {
@@ -550,7 +561,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             throw msg;
         }
 
-        // This workaround used for to aviod ourself from a race condition,
+        // This workaround used for to avoid ourself from a race condition,
         // polkit_grant_done must return before the following privilege check
         QApplication::eventLoop()->exec();
 
@@ -573,6 +584,9 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 
     reply << QDBusData::fromBool(m_gainedPrivilege);
     m_sessionBus.send(reply);
+
+    if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
+        exitTimer->start(POLICYKITKDE_TIMEOUT, true);
 }
 
 #include "service.moc"
