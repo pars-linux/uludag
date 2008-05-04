@@ -112,9 +112,6 @@ void PolicyService::quitSlot()
 {
     Debug::printWarning("Timeout limit reached and no-exit option is not set, quiting...");
 
-    if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
-        delete exitTimer;
-
     //TODO: Do last jobs
 
     KApplication::kApplication()->quit();
@@ -124,6 +121,9 @@ PolicyService::~PolicyService()
 {
     Debug::printDebug(QString("Unregistering object: %1").arg(POLICYKITKDE_OBJECTNAME));
     m_sessionBus.unregisterObject(POLICYKITKDE_OBJECTNAME);
+
+    if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
+        delete exitTimer;
 }
 
 bool PolicyService::handleMethodCall(const QDBusMessage& message)
