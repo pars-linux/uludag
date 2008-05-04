@@ -24,6 +24,7 @@
 #include <qmap.h>
 #include <qsocketnotifier.h>
 #include <qeventloop.h>
+#include <qtimer.h>
 
 #include "qdbusconnection.h"
 #include "qdbusobject.h"
@@ -66,6 +67,7 @@ private:
     bool m_inputBogus;
     static PolicyService* m_self;
     QString m_uniqueSessionName;
+    QTimer *exitTimer;
 
     QMap<int, QSocketNotifier*> m_contextwatches;
     QMap<int, QSocketNotifier*> m_grantwatches;
