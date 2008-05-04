@@ -13,6 +13,7 @@
 #define SERVICE_H
 
 #define POLICYKITKDE_MAX_TRY 3
+#define POLICYKITKDE_TIMEOUT 30000
 
 #include <csignal>
 
