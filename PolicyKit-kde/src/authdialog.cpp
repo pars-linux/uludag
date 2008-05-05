@@ -182,6 +182,7 @@ void AuthDialog::setType(PolKitResult res)
     {
         cbRemember->hide();
         cbSession->setEnabled(true);
+        cbSession->setText(i18n("Remember authorization for this session"));
     }
 
     m_type = res;
