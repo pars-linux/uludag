@@ -11,42 +11,16 @@
 # Please read the COPYING file
 
 import PisiIface
-from kdecore import i18n
-import Icons
-
-class Package:
-    def __init__(self, name, summary, description, version, icon_path, size, homepage, repo):
-        self.name = name
-        self.summary = summary
-        self.description = description
-        self.version = version
-        self.icon_path = icon_path
-        self.size = self._sizer(size)
-        self.homepage = homepage
-        self.repo = repo
-
-    def _sizer(self, size):
-        if size:
-            tpl = PisiIface.humanize(size)
-            return "%.0f %s" % (tpl[0], tpl[1])
-        else:
-            return i18n("N\A")
-
-    def __str__(self):
-        return self.name
-
-    def lower(self):
-        return self.name.lower()
 
 class PackageCache:
     def __init__(self):
-        self.packages = {}
+        pass
 
     def clearCache(self):
-        self.packages.clear()
+        pass
 
     def isEmpty(self):
-        return not self.packages
+        pass
 
     def populateCache(self, packages, inInstalled = False):
         for pkg_name in packages:
