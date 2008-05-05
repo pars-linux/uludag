@@ -1,6 +1,4 @@
 IMPORTANT:
-* Handle cancelling
-* Fix disabling of keep session label
 * Fix admin user selection support (another eventloop solution may be required)
 * Fix override_type function
 

@@ -585,7 +585,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     if (m_grant)
         polkit_grant_unref (m_grant);
 
-    Debug::printDebug(QString("obtain_authorization returning %1").arg(m_gainedPrivilege));
+    Debug::printDebug(QString("obtain_authorization: privilege: %1 input_bogus: %2, cancelled: %3").arg(m_gainedPrivilege).arg(m_inputBogus).arg(m_cancelled));
 
     //send dbus reply
     QDBusMessage reply = QDBusMessage::methodReply(messageToReply);
