@@ -64,9 +64,10 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     m_error = NULL;
     m_grant = NULL;
     m_dialog = NULL;
-    bool m_authInProgress = false;
-    bool m_gainedPrivilege = false;
-    bool m_inputBogus = false;
+    m_authInProgress = false;
+    m_gainedPrivilege = false;
+    m_inputBogus = false;
+    m_cancelled = false;
     m_uniqueSessionName = m_sessionBus.uniqueName();
 
     Debug::printDebug("Registering object: /");
@@ -180,6 +181,7 @@ void PolicyService::handleDBusSignals(const QDBusMessage& msg)
         Debug::printWarning(QString("Session bus name owner changed: service name='%1', old owner='%2', new owner='%3'").arg(msg[0].toString()).arg(msg[1].toString()).arg(msg[2].toString()));
 
         //TODO: exit if not busy
+        //polkit_grant_cancel_auth (grant);
 
     }
 }
@@ -416,6 +418,8 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
     if (result == QDialog::Rejected)
     {
         Debug::printDebug("polkit_grant_prompt: Dialog cancelled");
+        m_cancelled = true;
+        polkit_grant_cancel_auth (m_grant);
         return NULL;
     }
 
@@ -438,7 +442,7 @@ char *PolicyService::polkit_grant_prompt_echo_on(PolKitGrant *grant, const char 
 
 void PolicyService::polkit_grant_error_message(PolKitGrant *grant, const char *error, void *data)
 {
-    Debug::printDebug(QString("polkit_grant_error_message: %1").arg(error));
+    Debug::printError(QString("polkit_grant_error_message: %1").arg(error));
 }
 
 void PolicyService::polkit_grant_text_info(PolKitGrant *grant, const char *info, void *data)
@@ -464,7 +468,10 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 {
     //stop exitTimer during authentication, and restart when it is finished
     if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
+    {
+        Debug::printDebug("Authentication is in progress, stopping timer");
         exitTimer->stop();
+    }
 
     PolKitAction *action = polkit_action_new();
     if (action == NULL)
@@ -553,6 +560,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         // explicitly set to false before every try
         m_gainedPrivilege = false;
         m_inputBogus = false;
+        m_cancelled = false;
 
         if (!polkit_grant_initiate_auth (m_grant, action, caller)) 
         {
@@ -565,7 +573,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         // polkit_grant_done must return before the following privilege check
         QApplication::eventLoop()->exec();
 
-        if (!m_gainedPrivilege && !m_inputBogus)
+        if (!m_gainedPrivilege && !m_inputBogus && !m_cancelled)
         {
             Debug::printDebug("obtain_authorization: Authentication failure, trying again...");
             polkit_grant_unref (m_grant);
@@ -586,7 +594,10 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     m_sessionBus.send(reply);
 
     if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
+    {
+        Debug::printDebug("Authentication finished, starting timer again");
         exitTimer->start(POLICYKITKDE_TIMEOUT, true);
+    }
 }
 
 #include "service.moc"
