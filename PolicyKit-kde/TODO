@@ -2,6 +2,7 @@ IMPORTANT:
 * Fix admin user selection support (another eventloop solution may be required)
 
 LESS IMPORTANT:
+* Do not send same DBus exceptions to all errors
 * Inform user that authentication is not granted
 * Use polkit_grant_cancel_auth in handler of DBus signal NameOwnerChanged
 * Show details about the application request for authorization
