@@ -36,8 +36,9 @@ public:
     void setPrompt(const QString &);
 
 protected:
-    virtual void hideEvent( QHideEvent* );
-    virtual void paintEvent( QPaintEvent* );
+    virtual void keyPressEvent(QKeyEvent*);
+    virtual void hideEvent(QHideEvent*);
+    virtual void paintEvent(QPaintEvent*);
 
 private slots:
     void slotPaintEffect();

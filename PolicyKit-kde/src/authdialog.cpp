@@ -81,14 +81,25 @@ void AuthDialog::paintEvent(QPaintEvent* ev)
         lePassword->grabKeyboard();
         grabKeyboard = true;
     }
-    QDialog::paintEvent( ev );
+    QDialog::paintEvent(ev);
 }
 
 void AuthDialog::hideEvent(QHideEvent* ev)
 {
     lePassword->releaseKeyboard();
     grabKeyboard = false;
-    QDialog::hideEvent( ev );
+    QDialog::hideEvent(ev);
+}
+
+void AuthDialog::keyPressEvent(QKeyEvent* e)
+{
+    // pressing Esc closes the dialog
+    if (e->state() == 0 && e->key() == Key_Escape)
+    {
+        emit reject();
+        return;
+    }
+    QDialog::keyPressEvent(e);
 }
 
 void AuthDialog::setHeader(const QString &header)
