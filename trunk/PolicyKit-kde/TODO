@@ -7,7 +7,6 @@ LESS IMPORTANT:
 * Use polkit_grant_cancel_auth in handler of DBus signal NameOwnerChanged
 * Show details about the application request for authorization
 * Check if authentication is in progress, when a new request arrived
-* Check one_shot stuff
 * Control XID and add 'transient for'
 * Add vendor icon support
 * Check "Password: " prompt like polkit-gnome
