@@ -179,7 +179,10 @@ void AuthDialog::setType(PolKitResult res)
     }
 
     if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
+    {
         cbRemember->hide();
+        cbSession->setEnabled(true);
+    }
 
     m_type = res;
 
