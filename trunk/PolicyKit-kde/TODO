@@ -1,6 +1,5 @@
 IMPORTANT:
 * Fix admin user selection support (another eventloop solution may be required)
-* Fix override_type function
 
 LESS IMPORTANT:
 * Inform user that authentication is not granted
