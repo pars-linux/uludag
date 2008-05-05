@@ -54,8 +54,6 @@ private:
     QImage m_grabbed;
     QPixmap m_root;
     QTime m_passed;
-
-    bool grabKeyboard;
 };
 
 #endif // AUTHDIALOG_H
