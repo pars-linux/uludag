@@ -18,28 +18,11 @@
     <property name="caption">
         <string>Goodbye</string>
     </property>
-    <vbox>
+    <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <spacer>
-            <property name="name">
-                <cstring>spacer6</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>16</height>
-                </size>
-            </property>
-        </spacer>
-        <widget class="QLabel">
+        <widget class="QLabel" row="0" column="0">
             <property name="name">
                 <cstring>textGoodbye</cstring>
             </property>
@@ -50,7 +33,7 @@
                 <string>&lt;p&gt;Congratulations! You have finished all steps. You can now continue using Pardus and try applications below.&lt;/p&gt;</string>
             </property>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="QGroupBox" row="1" column="0">
             <property name="name">
                 <cstring>groupBoxMigration</cstring>
             </property>
@@ -141,7 +124,7 @@
                 </widget>
             </grid>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="QGroupBox" row="2" column="0">
             <property name="name">
                 <cstring>groupBoxTasma</cstring>
             </property>
@@ -259,7 +242,7 @@
                 </property>
             </widget>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="QGroupBox" row="3" column="0">
             <property name="name">
                 <cstring>groupBoxHelp</cstring>
             </property>
@@ -377,7 +360,7 @@
                 </property>
             </widget>
         </widget>
-        <widget class="QGroupBox">
+        <widget class="QGroupBox" row="4" column="0">
             <property name="name">
                 <cstring>groupBoxFeedback</cstring>
             </property>
@@ -498,7 +481,24 @@
                 </property>
             </widget>
         </widget>
-    </vbox>
+        <spacer row="5" column="0">
+            <property name="name">
+                <cstring>spacer6</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>16</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

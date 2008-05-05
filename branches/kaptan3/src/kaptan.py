@@ -55,7 +55,12 @@ class Kaptan(kaptanUi):
     def __init__(self, *args):
         apply(kaptanUi.__init__, (self,) + args)
 
-        self.logDir = os.path.join( os.path.expanduser("~"), ".kde/share/apps/kaptan/")
+        self.logPath = os.path.join(os.path.expanduser("~"), ".kde/share/apps/kaptan/")
+
+        if not os.path.exists(self.logPath):
+            os.mkdir(self.logPath)
+
+        self.logDir = os.path.join(self.logPath)
 
         # start logging:
         logging.basicConfig(level=logging.DEBUG,
