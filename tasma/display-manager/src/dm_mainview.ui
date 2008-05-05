@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>609</width>
-            <height>515</height>
+            <width>497</width>
+            <height>403</height>
         </rect>
     </property>
     <property name="caption">
@@ -34,6 +34,67 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
+                    <widget class="QPushButton" row="1" column="1">
+                        <property name="name">
+                            <cstring>buttonIdentifyDisplays</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Identify Displays</string>
+                        </property>
+                    </widget>
+                    <widget class="QGroupBox" row="2" column="0">
+                        <property name="name">
+                            <cstring>groupBoxScreens</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>7</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="title">
+                            <string>Primary Screen</string>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabelOutput</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Output</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <property name="name">
+                                    <cstring>comboBoxOutput</cstring>
+                                </property>
+                                <property name="duplicatesEnabled">
+                                    <bool>false</bool>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabelResolution</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Resolution</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <property name="name">
+                                    <cstring>comboBoxResolution</cstring>
+                                </property>
+                                <property name="duplicatesEnabled">
+                                    <bool>false</bool>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
                     <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="2">
                         <property name="name">
                             <cstring>screenGroup</cstring>
@@ -683,78 +744,6 @@
                             </spacer>
                         </vbox>
                     </widget>
-                    <widget class="QPushButton" row="1" column="0">
-                        <property name="name">
-                            <cstring>buttonDetectDisplays</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>false</bool>
-                        </property>
-                        <property name="text">
-                            <string>Detect Displays</string>
-                        </property>
-                    </widget>
-                    <widget class="QPushButton" row="1" column="1">
-                        <property name="name">
-                            <cstring>buttonIdentifyDisplays</cstring>
-                        </property>
-                        <property name="text">
-                            <string>Identify Displays</string>
-                        </property>
-                    </widget>
-                    <widget class="QGroupBox" row="2" column="0">
-                        <property name="name">
-                            <cstring>groupBoxScreens</cstring>
-                        </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>5</hsizetype>
-                                <vsizetype>0</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="title">
-                            <string>Primary Screen</string>
-                        </property>
-                        <vbox>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>textLabelOutput</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Output</string>
-                                </property>
-                            </widget>
-                            <widget class="QComboBox">
-                                <property name="name">
-                                    <cstring>comboBoxOutput</cstring>
-                                </property>
-                                <property name="duplicatesEnabled">
-                                    <bool>false</bool>
-                                </property>
-                            </widget>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>textLabelResolution</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Resolution</string>
-                                </property>
-                            </widget>
-                            <widget class="QComboBox">
-                                <property name="name">
-                                    <cstring>comboBoxResolution</cstring>
-                                </property>
-                                <property name="duplicatesEnabled">
-                                    <bool>false</bool>
-                                </property>
-                            </widget>
-                        </vbox>
-                    </widget>
                     <widget class="QGroupBox" row="2" column="1">
                         <property name="name">
                             <cstring>groupBoxOptions</cstring>
@@ -779,16 +768,25 @@
                                     <cstring>checkBoxDualMode</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Dual Mode</string>
+                                    <string>Dual Screen</string>
                                 </property>
                             </widget>
-                            <widget class="QLayoutWidget">
+                            <widget class="QButtonGroup">
                                 <property name="name">
-                                    <cstring>layout7</cstring>
+                                    <cstring>buttonGroupDualModes</cstring>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>0</number>
+                                </property>
+                                <property name="title">
+                                    <string></string>
                                 </property>
                                 <hbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
+                                    </property>
+                                    <property name="margin">
+                                        <number>0</number>
                                     </property>
                                     <spacer>
                                         <property name="name">
@@ -807,52 +805,49 @@
                                             </size>
                                         </property>
                                     </spacer>
-                                    <widget class="QRadioButton">
+                                    <widget class="QLayoutWidget">
                                         <property name="name">
-                                            <cstring>radioBoxExtended</cstring>
+                                            <cstring>layout5</cstring>
                                         </property>
-                                        <property name="text">
-                                            <string>Extended</string>
-                                        </property>
-                                    </widget>
-                                </hbox>
-                            </widget>
-                            <widget class="QLayoutWidget">
-                                <property name="name">
-                                    <cstring>layout8</cstring>
-                                </property>
-                                <hbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <spacer>
-                                        <property name="name">
-                                            <cstring>spacer6_3</cstring>
-                                        </property>
-                                        <property name="orientation">
-                                            <enum>Horizontal</enum>
-                                        </property>
-                                        <property name="sizeType">
-                                            <enum>Fixed</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>21</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
-                                    <widget class="QRadioButton">
-                                        <property name="name">
-                                            <cstring>radioCloned</cstring>
-                                        </property>
-                                        <property name="text">
-                                            <string>Cloned</string>
-                                        </property>
+                                        <vbox>
+                                            <property name="name">
+                                                <cstring>unnamed</cstring>
+                                            </property>
+                                            <widget class="QRadioButton">
+                                                <property name="name">
+                                                    <cstring>radioBoxCloned</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Cloned Mode</string>
+                                                </property>
+                                                <property name="checked">
+                                                    <bool>true</bool>
+                                                </property>
+                                            </widget>
+                                            <widget class="QRadioButton">
+                                                <property name="name">
+                                                    <cstring>radiBoxCloned</cstring>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Extended Mode</string>
+                                                </property>
+                                            </widget>
+                                        </vbox>
                                     </widget>
                                 </hbox>
                             </widget>
                         </vbox>
+                    </widget>
+                    <widget class="QPushButton" row="1" column="0">
+                        <property name="name">
+                            <cstring>buttonDetectDisplays</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>false</bool>
+                        </property>
+                        <property name="text">
+                            <string>Detect Displays</string>
+                        </property>
                     </widget>
                 </grid>
             </widget>
