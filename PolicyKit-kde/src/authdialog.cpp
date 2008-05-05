@@ -44,7 +44,7 @@ static const int slice = 20;
  */
 AuthDialog::AuthDialog(QString &header)
     : AuthDialogUI( NULL, NULL, true, Qt::WType_Popup),
-        m_currentY( 0 )
+        m_currentY( 0 ), grabKeyboard( false )
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
@@ -70,6 +70,25 @@ AuthDialog::AuthDialog(QString &header)
 
 AuthDialog::~AuthDialog()
 {
+}
+
+void AuthDialog::paintEvent(QPaintEvent* ev)
+{
+    // Grab keyboard when widget is mapped to screen
+    // It might be a little weird to do it here, but it works!
+    if(!grabKeyboard)
+    {
+        lePassword->grabKeyboard();
+        grabKeyboard = true;
+    }
+    QDialog::paintEvent( ev );
+}
+
+void AuthDialog::hideEvent(QHideEvent* ev)
+{
+    lePassword->releaseKeyboard();
+    grabKeyboard = false;
+    QDialog::hideEvent( ev );
 }
 
 void AuthDialog::setHeader(const QString &header)
