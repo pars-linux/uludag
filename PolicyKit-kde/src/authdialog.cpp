@@ -44,7 +44,7 @@ static const int slice = 20;
  */
 AuthDialog::AuthDialog(QString &header)
     : AuthDialogUI( NULL, 0, TRUE, WType_Popup),
-        m_currentY( 0 ), grabKeyboard( false )
+        m_currentY( 0 )
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
