@@ -7,8 +7,8 @@
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 if [[ $- != *i* ]]; then
-	# Shell is non-interactive.  Be done now
-	return
+    # Shell is non-interactive.  Be done now
+    return
 fi
 
 # Shell is interactive.  It is okay to produce output at this point,
@@ -17,9 +17,9 @@ fi
 
 # colors for ls, etc.  Prefer ~/.dir_colors #64489
 if [[ -f ~/.dir_colors ]]; then
-	eval `dircolors -b ~/.dir_colors`
+    eval `dircolors -b ~/.dir_colors`
 else
-	eval `dircolors -b /etc/DIR_COLORS`
+    eval `dircolors -b /etc/DIR_COLORS`
 fi
 
 alias d="ls --color"
@@ -40,12 +40,12 @@ alias scp-resume="rsync --compress-level=3 --partial --progress --rsh=ssh"
 
 # Change the window title of X terminals
 case $TERM in
-	xterm*|rxvt|Eterm|eterm)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
-		;;
-	screen)
-		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-		;;
+    xterm*|rxvt|Eterm|eterm)
+        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+        ;;
+    screen)
+        PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+        ;;
 esac
 
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0
