@@ -17,6 +17,7 @@
 //kde and qt headers
 #include <qsocketnotifier.h>
 #include <qtimer.h>
+#include <qcheckbox.h>
 #include <kcombobox.h>
 #include <klineedit.h>
 #include <kcmdlineargs.h>
@@ -390,7 +391,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
 
     if (dialogResult == QDialog::Rejected)
     {
-        Debug::printDebug("polkit_grant_select_admin_user: Dialog rejected");
+        Debug::printDebug("polkit_grant_select_admin_user: Dialog cancelled");
         return NULL;
     }
     else
@@ -403,8 +404,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
 
 char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
 {
-    //TODO: check prompt
-    //
+    //TODO: check prompt like polkit-gnome
 
     m_dialog->setPrompt(prompt);
 
@@ -452,8 +452,58 @@ void PolicyService::polkit_grant_text_info(PolKitGrant *grant, const char *info,
 
 PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant, PolKitResult result, void *data)
 {
-    Debug::printDebug("In polkit_grant_override_grant_type");
-    return result;
+    Debug::printDebug("In polkit_grant_override_grant_type...");
+
+    PolKitResult overridden = result;
+    bool keepSession = m_self->m_dialog->cbSession->isChecked();
+    bool keepAlways = m_self->m_dialog->cbRemember->isChecked();
+
+    Debug::printDebug(QString("polkit_grant_override_grant_type: keep session: %1, keep always: %2").arg(keepSession).arg(keepAlways));
+
+    switch(result)
+    {
+        // result can not be overridden if keepsession or keepalways do not exist
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_ONE_SHOT:
+        case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_ONE_SHOT:
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH:
+        case POLKIT_RESULT_ONLY_VIA_SELF_AUTH:
+            overridden = result;
+
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
+            //if keepsession is available but user does not select it, override result with adminauth
+            if (!keepSession)
+                overridden = POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH;
+            else
+                overridden = result;
+            break;
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS:
+            //if keepalways and keepsession options are available but user does not select them, override result with adminauth
+            if (!keepAlways && !keepSession)
+                overridden = POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH;
+            else if (keepSession)
+                overridden = POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION;
+            else
+                overridden = POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS;
+            break;
+
+        case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION:
+            if (!keepSession)
+                overridden = POLKIT_RESULT_ONLY_VIA_SELF_AUTH;
+            break;
+        case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS:
+            if (!keepAlways && !keepSession)
+                overridden = POLKIT_RESULT_ONLY_VIA_SELF_AUTH;
+            else if (keepSession)
+                overridden = POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION;
+            else
+                overridden = POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS;
+            break;
+        default:
+            Debug::printWarning("polkit_grant_override_grant_type: Unexpected PolKitResult type");
+    }
+
+    Debug::printDebug(QString("polkit_grant_override_grant_type: default type = %1, overridden type = %2").arg(polkit_result_to_string_representation(result)).arg(polkit_result_to_string_representation(overridden)));
+    return overridden;
 }
 
 void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_privilege, polkit_bool_t invalid_data, void *data)
