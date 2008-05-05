@@ -58,7 +58,6 @@ class MainApplicationWidget(QWidget):
         self.command = None
         self.state = install_state
         self.basket = Basket.Basket()
-        self.packageCache = PackageCache.PackageCache()
         self.command = Commander.Commander(self)
         self.settings = Settings.Settings(Globals.config())
 
@@ -175,7 +174,6 @@ class MainApplicationWidget(QWidget):
         self.basketAction.setEnabled(False)
         self.operateAction.setEnabled(False)
         self.searchLine.clear()
-        self.packageCache.clearCache()
         self.parent.showNewAction.setChecked(False)
         self.parent.showInstalledAction.setChecked(False)
         self.parent.showUpgradeAction.setEnabled(True)
@@ -262,7 +260,6 @@ class MainApplicationWidget(QWidget):
         self.parent.showInstalledAction.setChecked(False)
         ##
 
-        self.packageCache.clearCache()
         upgradables = PisiIface.get_upgradable_packages()
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
@@ -298,7 +295,7 @@ class MainApplicationWidget(QWidget):
         Globals.setWaitCursor()
         try:
             # fetch packages including metadata from cache 
-            packagesWithMeta = [self.packageCache.get_package(package) for package in self.componentDict[item].packages]
+            packagesWithMeta = [PisiIface.get_package(package, self.state == install_state) for package in self.componentDict[item].packages]
             if self.state == remove_state:
                 self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
             else:
@@ -503,13 +500,6 @@ class MainApplicationWidget(QWidget):
         self.componentsList.clear()
         self.componentDict.clear()
 
-        # populate package cache for accessing package metadata quickly
-        if self.packageCache.isEmpty() and packages:
-            if self.state == remove_state:
-                self.packageCache.populateCache(packages, inInstalled = True)
-            else:
-                self.packageCache.populateCache(packages)
-
         # eliminate components that are not visible to users. This is achieved by a tag in component.xmls
         componentNames = [cname for cname in PisiIface.get_components() if PisiIface.is_component_visible(cname)]
 
@@ -577,7 +567,7 @@ class MainApplicationWidget(QWidget):
         item = KListViewItem(self.componentsList)
         item.setText(0,i18n("Search Results"))
         item.setPixmap(0, KGlobal.iconLoader().loadIcon("find",KIcon.Desktop,KIcon.SizeMedium))
-        packagesWithMeta = [self.packageCache.get_package(package) for package in packages]
+        packagesWithMeta = [PisiIface.get_package(package, self.state == install_state) for package in packages]
         if self.state == remove_state:
             self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
         else:
@@ -711,7 +701,7 @@ class MainApplicationWidget(QWidget):
     def searchPackage(self):
         query = unicode(self.searchLine.text())
         if query:
-            result = self.packageCache.searchInPackages(query.split())
+            result = PisiIface.search_package(query.split(), self.state == install_state)
             self.createSearchResults(result)
         else:
             self.timer.stop()

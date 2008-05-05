@@ -80,4 +80,15 @@ def get_repository_url(name):
 def get_conflicts(packages):
     return pisi.api.get_conflicts(packages)
 
+def get_package(package, installed=False):
+    if installed:
+        return get_installed_package(package)
+    else:
+        return get_repo_package(package)
+
+def search_package(terms, installed=False):
+    if installed:
+        return pisi.api.search_installed(terms)
+    else:
+        return pisi.api.serach_package(terms)
 
