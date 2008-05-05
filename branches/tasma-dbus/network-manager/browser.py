@@ -123,7 +123,7 @@ class Connection(QWidget):
         
         self.view.setEnabled(False)
         ch = comlink.callHandler(self.conn.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link.setstate")
-        ch.callNoReply(self.conn.name, state)
+        ch.call(self.conn.name, state)
         self.view.setEnabled(True)
     
     def slotDelete(self):
