@@ -35,6 +35,10 @@ public:
     void setHeader(const QString &);
     void setPrompt(const QString &);
 
+protected:
+    virtual void hideEvent( QHideEvent* );
+    virtual void paintEvent( QPaintEvent* );
+
 private slots:
     void slotPaintEffect();
     void slotGrab();
@@ -50,6 +54,8 @@ private:
     QImage m_grabbed;
     QPixmap m_root;
     QTime m_passed;
+
+    bool grabKeyboard;
 };
 
 #endif // AUTHDIALOG_H
