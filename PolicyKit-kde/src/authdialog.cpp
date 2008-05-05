@@ -191,7 +191,10 @@ void AuthDialog::setType(PolKitResult res)
             res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS)
         setPasswordFor(false);
 
-    if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH)
+    if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || \
+            res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH || \
+            res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_ONE_SHOT || \
+            res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_ONE_SHOT)
     {
         cbRemember->hide();
         cbSession->hide();
