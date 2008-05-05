@@ -468,7 +468,7 @@ PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant,
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH:
         case POLKIT_RESULT_ONLY_VIA_SELF_AUTH:
             overridden = result;
-
+            break;
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
             //if keepsession is available but user does not select it, override result with adminauth
             if (!keepSession)
