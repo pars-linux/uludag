@@ -43,7 +43,7 @@ static const int slice = 20;
  *  TRUE to construct a modal dialog.
  */
 AuthDialog::AuthDialog(QString &header)
-    : AuthDialogUI( NULL, NULL, true, Qt::WType_Popup),
+    : AuthDialogUI( NULL, 0, TRUE, WType_Popup),
         m_currentY( 0 ), grabKeyboard( false )
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
@@ -52,6 +52,9 @@ AuthDialog::AuthDialog(QString &header)
     pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
 
     lePassword->setFocus();
+    // Grab keyboard when widget is mapped to screen
+    lePassword->grabKeyboard();
+
     cbUsers->hide();
     setHeader(header);
 
@@ -72,23 +75,12 @@ AuthDialog::~AuthDialog()
 {
 }
 
-void AuthDialog::paintEvent(QPaintEvent* ev)
+bool AuthDialog::focusNextPrevChild (bool next)
 {
-    // Grab keyboard when widget is mapped to screen
-    // It might be a little weird to do it here, but it works!
-    if(!grabKeyboard)
-    {
-        lePassword->grabKeyboard();
-        grabKeyboard = true;
-    }
-    QDialog::paintEvent(ev);
-}
-
-void AuthDialog::hideEvent(QHideEvent* ev)
-{
-    lePassword->releaseKeyboard();
-    grabKeyboard = false;
-    QDialog::hideEvent(ev);
+    bool ret = QWidget::focusNextPrevChild(next);
+    QWidget::keyboardGrabber()->releaseKeyboard();
+    QWidget::focusWidget()->grabKeyboard();
+    return ret;
 }
 
 void AuthDialog::keyPressEvent(QKeyEvent* e)

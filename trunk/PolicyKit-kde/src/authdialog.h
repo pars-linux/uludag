@@ -37,8 +37,7 @@ public:
 
 protected:
     virtual void keyPressEvent(QKeyEvent*);
-    virtual void hideEvent(QHideEvent*);
-    virtual void paintEvent(QPaintEvent*);
+    virtual bool focusNextPrevChild (bool);
 
 private slots:
     void slotPaintEffect();
