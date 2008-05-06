@@ -47,7 +47,7 @@ class Commander(QObject):
         elif signal == "status":
             operation = data[0]
             self.parent.pisiNotify(operation, args)
-        elif notification == "warning":
+        elif signal == "warning":
             self.comar.com_lock.unlock()
             self.parent.showWarningMessage(args)
             self.parent.resetState()
