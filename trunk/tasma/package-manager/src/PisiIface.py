@@ -10,6 +10,8 @@
 #
 # Please read the COPYING file
 
+import sys
+
 import pisi
 
 def get_install_order(packages):
@@ -60,7 +62,7 @@ def is_component_visible(name):
     cdb = pisi.db.componentdb.ComponentDB()
     return cdb.get_component(name).visibleTo == 'user'
 
-def reloadPisi(self):
+def reloadPisi():
     for module in sys.modules.keys():
         if module.startswith("pisi."):
             """removal from sys.modules forces reload via import"""
