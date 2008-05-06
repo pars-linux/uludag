@@ -131,7 +131,7 @@ class SpecialList(QObject):
         titleStyle = ""
         style = ""
 
-        packages.sort(key=string.lower)
+#        packages.sort(key=string.lower)
 
         alternativeColor = KGlobalSettings.alternateBackgroundColor().name()
         baseColor = KGlobalSettings.baseColor().name()
@@ -152,18 +152,19 @@ class SpecialList(QObject):
             curindex = index + 1
             if app.name in self.disabled:
                 checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
-                           disabled %s name="%s id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
+                           disabled %s name="%s id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app.name,curindex)
             else:
                 checkbox = """<div class="checkboks" style="%s" id="checkboks_t%d"><input type="checkbox" \
-                           %s onclick="changeBackgroundColor(this)" name="%s" id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app,curindex)
+                           %s onclick="changeBackgroundColor(this)" name="%s" id="checkboks%d"></div>""" % (titleStyle,curindex,checkState,app.name,curindex)
 
             iconSize = getIconSize()
-            result += template % (checkbox, titleStyle, curindex, app.icon_path, iconSize, iconSize, app.name, app.summary, style, curindex, curindex,
+            iconPath = getIconPath(app.icon)
+            result += template % (checkbox, titleStyle, curindex, iconPath, iconSize, iconSize, app.name, app.summary, style, curindex, curindex,
                                   i18n("Description: "), app.description,
                                   i18n("Version: "), app.version,
-                                  i18n("Repository: "), app.repo,
-                                  i18n("Package Size: "), app.size,
-                                  i18n("Homepage: "), app.homepage, app.homepage)
+                                   i18n("Repository: "), "FIXME", #app.repo,
+                                   i18n("Package Size: "), "FIXME", #app.size,
+                                  i18n("Homepage: "), app.source.homepage, app.source.homepage)
             index += 1
 
         return result
