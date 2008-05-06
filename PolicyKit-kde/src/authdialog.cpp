@@ -51,10 +51,6 @@ AuthDialog::AuthDialog(QString &header)
     pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
     pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
 
-    lePassword->setFocus();
-    // Grab keyboard when widget is mapped to screen
-    lePassword->grabKeyboard();
-
     cbUsers->hide();
     setHeader(header);
 
@@ -73,6 +69,14 @@ AuthDialog::AuthDialog(QString &header)
 
 AuthDialog::~AuthDialog()
 {
+}
+
+void AuthDialog::paintEvent(QPaintEvent* ev)
+{
+    lePassword->setFocus();
+    // Grab keyboard when widget is mapped to screen
+    lePassword->grabKeyboard();
+    QDialog::paintEvent(ev);
 }
 
 bool AuthDialog::focusNextPrevChild (bool next)
