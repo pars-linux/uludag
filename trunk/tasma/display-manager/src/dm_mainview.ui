@@ -826,7 +826,7 @@
                                             </widget>
                                             <widget class="QRadioButton">
                                                 <property name="name">
-                                                    <cstring>radiBoxCloned</cstring>
+                                                    <cstring>radioBoxExtended</cstring>
                                                 </property>
                                                 <property name="text">
                                                     <string>Extended Mode</string>
