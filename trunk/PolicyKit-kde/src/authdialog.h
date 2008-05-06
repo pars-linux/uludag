@@ -38,6 +38,7 @@ public:
 protected:
     virtual void keyPressEvent(QKeyEvent*);
     virtual bool focusNextPrevChild (bool);
+    virtual void paintEvent(QPaintEvent*);
 
 private slots:
     void slotPaintEffect();
