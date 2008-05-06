@@ -89,9 +89,10 @@ class Commander(QObject):
 #             self.comar.com_lock.unlock()
 #             pass
 
-    def startUpdate(self, repo = None, id=0):
+    def startUpdate(self, repo = None):
         if repo is None:
-            self.updateAllRepos(id)
+            #FIXME: track id... anything needs to be added here?
+            self.updateAllRepos()
         else:
             self.updateRepo(repo)
 
@@ -110,8 +111,8 @@ class Commander(QObject):
     def updateRepo(self, repo):
         self.comar.updateRepo(repo)
 
-    def updateAllRepos(self, id=0):
-        self.comar.updateAllRepos(id)
+    def updateAllRepos(self):
+        self.comar.updateAllRepos()
 
     def addRepo(self,repoName,repoAddress):
         self.comar.addRepo(repoName,repoAddress)
