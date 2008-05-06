@@ -26,9 +26,9 @@ dict_set_unless_null(PyObject *dict, const char *key, const char *value)
 
 //! Init policy cache
 PolKitPolicyCache *
-pk_init()
+pk_init_cache()
 {
-    PolKitError *pk_error;
+    PolKitError *pk_error = NULL;
     PolKitContext *pk_context = polkit_context_new();
 
     // Init context
@@ -52,6 +52,18 @@ pk_init()
     return pk_cache;
 }
 
+//! Init auth db
+PolKitAuthorizationDB *
+pk_init_authdb()
+{
+    PolKitContext *pk_context = polkit_context_new();
+
+    // Get auth db
+    PolKitAuthorizationDB *pk_auth = polkit_context_get_authorization_db(pk_context);
+
+    return pk_auth;
+}
+
 //! Callback function that fills action list.
 static polkit_bool_t
 pk_action_list_cb(PolKitPolicyCache *policy_cache, PolKitPolicyFileEntry *entry, void *user_data)
@@ -67,7 +79,7 @@ pk_action_list_cb(PolKitPolicyCache *policy_cache, PolKitPolicyFileEntry *entry,
 static PyObject *
 pk_action_list(PyObject *self, PyObject *args)
 {
-    PolKitPolicyCache *pk_cache = pk_init();
+    PolKitPolicyCache *pk_cache = pk_init_cache();
     if (pk_cache == NULL) {
         return NULL;
     }
@@ -100,7 +112,7 @@ pk_action_info(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    PolKitPolicyCache *pk_cache = pk_init();
+    PolKitPolicyCache *pk_cache = pk_init_cache();
     if (pk_cache == NULL) {
         return NULL;
     }
@@ -133,10 +145,76 @@ pk_action_info(PyObject *self, PyObject *args)
     return dict;
 }
 
+//! Callback function that fills auth list.
+static polkit_bool_t
+pk_auth_list_uid_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
+{
+    // Append entry to the list
+    PyList_Append((PyObject*) user_data, PyString_FromString(polkit_authorization_get_action_id(auth)));
+
+    // Continue to iterate
+    return FALSE;
+}
+
+//! Returns granted authorizations
+static PyObject *
+pk_auth_list_uid(PyObject *self, PyObject *args)
+{
+    int uid;
+    if (!PyArg_ParseTuple(args, "i", &uid)) {
+        return NULL;
+    }
+
+    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
+    PolKitError *pk_error = NULL;
+
+    PyObject *list = PyList_New(0);
+    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_list_uid_cb, list, &pk_error);
+
+    if (polkit_error_is_set(pk_error)) {
+        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+        polkit_error_free(pk_error);
+        return NULL;
+    }
+
+    return list;
+}
+
+//! Callback function that fills auth list.
+static polkit_bool_t
+pk_auth_list_all_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
+{
+    // Append entry to the list
+    PyList_Append((PyObject*) user_data, PyString_FromString(polkit_authorization_get_action_id(auth)));
+
+    // Continue to iterate
+    return FALSE;
+}
+
+//! Returns granted authorizations
+static PyObject *
+pk_auth_list_all(PyObject *self, PyObject *args)
+{
+    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
+    PolKitError *pk_error = NULL;
+
+    PyObject *list = PyList_New(0);
+    polkit_authorization_db_foreach(pk_auth, pk_auth_list_all_cb, list, &pk_error);
+
+    if (polkit_error_is_set(pk_error)) {
+        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+        polkit_error_free(pk_error);
+        return NULL;
+    }
+    return list;
+}
+
 //! pypolkit methods
 static PyMethodDef polkit_methods[] = {
     {"action_list", (PyCFunction) pk_action_list, METH_NOARGS, "Lists all actions."},
     {"action_info", (PyCFunction) pk_action_info, METH_VARARGS, "Get action details."},
+    {"auth_list_uid", (PyCFunction) pk_auth_list_uid, METH_VARARGS, "List granted authorizations for specified UID."},
+    {"auth_list_all", (PyCFunction) pk_auth_list_all, METH_NOARGS, "List granted authorizations."},
     {NULL, NULL, 0, NULL}
 };
 
