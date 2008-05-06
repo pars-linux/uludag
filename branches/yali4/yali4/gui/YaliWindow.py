@@ -44,7 +44,8 @@ class Widget(Ui_YaliMain):
         self.moveInc = 1
 
         # Dont need help as default
-        self.slotToggleHelp()
+        self.helpContent.hide()
+        self.toggleHelp.setText(_("Show Help"))
 
         # Main Slots
         QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
