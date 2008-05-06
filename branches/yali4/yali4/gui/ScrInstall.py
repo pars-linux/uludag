@@ -146,65 +146,40 @@ Have fun!
     def packageInstallFinished(self):
 
         self.cur = 0
-
-        # fill fstab
-        fstab = yali4.fstab.Fstab()
-        for req in ctx.partrequests:
-            req_type = req.requestType()
-            if req_type == request.mountRequestType:
-                p = req.partition()
-                pt = req.partitionType()
-
-                path = "LABEL=%s" % pt.filesystem.getLabel(p)
-                fs = pt.filesystem._sysname or pt.filesystem._name
-                mountpoint = pt.mountpoint
-                # TODO: consider merging mountoptions in filesystem.py
-                opts = ",".join([pt.filesystem.mountOptions(), pt.mountoptions])
-
-                e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
-                fstab.insert(e)
-            elif req_type == request.swapFileRequestType:
-                path = "/" + ctx.consts.swap_file_name
-                mountpoint = "none"
-                fs = "swap"
-                opts = "sw"
-                e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
-                fstab.insert(e)
-
-        fstab.close()
+        ctx.yali.fillFstab()
 
         # Configure Pending...
-
         # run baselayout's postinstall first
+
+        ctx.yali.info.updateAndShow(_("Creating baselayout for your system!"))
         yali4.postinstall.initbaselayout()
 
         # postscripts depend on 03locale...
         yali4.localeutils.write_locale_from_cmdline()
 
         # run dbus in chroot
-        yali4.sysutils.chroot_dbus() 
+        yali4.sysutils.chroot_dbus()
 
-        self.ui.info.setText(_("Configuring packages for your system!"))
+        ctx.yali.info.updateMessage(_("Configuring packages for your system!"))
+
         # start configurator thread
         self.pkg_configurator = PkgConfigurator(self)
         self.pkg_configurator.start()
 
+        ctx.yali.info.hide()
+
     def execute(self):
         # stop slide show
         self.timer.stop()
-
         return True
 
     def finished(self):
         if self.hasErrors:
             return
-
         # trigger next screen. will activate execute()
         ctx.mainScreen.slotNext()
 
-
     def installError(self, e):
-        #self.info.setText(str(e))
         import yali4
         import yali4.gui.runner
 
@@ -248,7 +223,6 @@ class PkgInstaller(QThread):
         qevent.setData(total)
         ctx.debugger.log("Posting PisiEvent to the widget..")
         QCoreApplication.postEvent(self._widget, qevent)
-
         ctx.debugger.log("Found %d packages in repo.." % total)
 
         try:

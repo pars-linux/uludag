@@ -28,6 +28,7 @@ from yali4.constants import consts
 import yali4.gui.context as ctx
 import yali4.localeutils
 import yali4.sysutils
+import yali4.fstab
 
 # pisi base
 import pisi.ui
@@ -37,6 +38,7 @@ import yali4.pisiiface
 import yali4.partitiontype as parttype
 import yali4.partitionrequest as request
 from yali4.partitionrequest import partrequests
+from yali4.parteddata import *
 
 # gui
 from yali4.gui.YaliDialog import Dialog
@@ -265,6 +267,47 @@ class Yali:
         ctx.partrequests.append(request.SwapFileRequest(newPart, parttype.root))
 
         time.sleep(2)
+
+    def guessBootLoaderDevice(self):
+        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
+                                                                  request.mountRequestType)
+
+        if len(yali4.storage.devices) > 1:
+            ctx.installData.bootLoaderDev = basename(ctx.installData.orderedDiskList[0])
+        else:
+            dev_path = root_part_req.partition().getPath()
+            if dev_path.find("cciss") > 0:
+                # HP Smart array controller (something like /dev/cciss/c0d0p1)
+                ctx.installData.bootLoaderDev = dev_path[:-2]
+            else:
+                ctx.installData.bootLoaderDev = str(filter(lambda u: not u.isdigit(),
+                                                           basename(dev_path)))
+
+    def fillFstab(self):
+        # fill fstab
+        fstab = yali4.fstab.Fstab()
+        for req in ctx.partrequests:
+            req_type = req.requestType()
+            if req_type == request.mountRequestType:
+                p = req.partition()
+                pt = req.partitionType()
+
+                path = "LABEL=%s" % pt.filesystem.getLabel(p)
+                fs = pt.filesystem._sysname or pt.filesystem._name
+                mountpoint = pt.mountpoint
+                # TODO: consider merging mountoptions in filesystem.py
+                opts = ",".join([pt.filesystem.mountOptions(), pt.mountoptions])
+
+                e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
+                fstab.insert(e)
+            elif req_type == request.swapFileRequestType:
+                path = "/" + ctx.consts.swap_file_name
+                mountpoint = "none"
+                fs = "swap"
+                opts = "sw"
+                e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
+                fstab.insert(e)
+        fstab.close()
 
     def showError(self, title, message):
         r = ErrorWidget(self)

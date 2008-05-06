@@ -66,9 +66,6 @@ don't you?
 
         self.steps = YaliSteps()
 
-        self.ui.info.setText(_('<b><font size="+2" color="#FFFFFF">Rebooting system. Please wait!</font></b>'))
-        self.ui.info.hide()
-
     def shown(self):
         ctx.mainScreen.disableBack()
         self.processPendingActions()
@@ -76,7 +73,7 @@ don't you?
 
     def execute(self):
         ctx.mainScreen.disableNext()
-        self.ui.info.show()
+        ctx.yali.info.updateAndShow(_('<b>Rebooting system. Please wait!</b>'))
 
         try:
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
