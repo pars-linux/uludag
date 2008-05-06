@@ -516,6 +516,22 @@ void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_p
 
 void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& messageToReply)
 {
+    /*
+    if (m_authInProgress)
+    {
+        Debug::printError("obtainAuthorization: Another client is already authenticating.");
+
+        QDBusMessage replyError = QDBusMessage::methodReply(messageToReply);
+
+        replyError << QDBusData::fromBool(false);
+        m_sessionBus.send(replyError);
+
+        return;
+    }
+
+    m_authInProgress = true;
+    */
+
     //stop exitTimer during authentication, and restart when it is finished
     if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
     {
@@ -528,6 +544,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     {
         QString msg = QString("Could not create new action");
         Debug::printError(msg);
+        m_authInProgress = false;
         throw msg;
     }
 
@@ -536,6 +553,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     {
         QString msg = QString("Could not set actionid.");
         Debug::printError(msg);
+        m_authInProgress = false;
         throw msg;
     }
 
@@ -564,6 +582,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     {
         QString msg = QString("Could not connect to system bus.");
         Debug::printError(msg);
+        m_authInProgress = false;
         throw msg;
     }
 
@@ -573,6 +592,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         QDBusError *qerror = new QDBusError((const DBusError *)&dbuserror);
         QString msg = QString("Could not define caller from pid: %1").arg(qerror->message());
         Debug::printError(msg);
+        m_authInProgress = false;
         throw msg;
     }
 
@@ -586,6 +606,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         {
             QString msg = QString("PolKitGrant object could not be created");
             Debug::printError(msg);
+            m_authInProgress = false;
             throw msg;
         }
 
@@ -616,11 +637,16 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         {
             QString msg = QString("Could not initialize grant");
             Debug::printError(msg);
+            m_authInProgress = false;
+            delete m_dialog;
+            if (m_grant)
+                polkit_grant_unref(m_grant);
             throw msg;
         }
 
         // This workaround used for to avoid ourself from a race condition,
         // polkit_grant_done must return before the following privilege check
+        Debug::printDebug("obtain_authorization: Entering eventloop to wait grant_done");
         QApplication::eventLoop()->exec();
 
         if (!m_gainedPrivilege && !m_inputBogus && !m_cancelled)
@@ -634,6 +660,10 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 
     if (m_grant)
         polkit_grant_unref (m_grant);
+    if (action)
+        polkit_action_unref (action);
+    if (caller)
+        polkit_caller_unref (caller);
 
     Debug::printDebug(QString("obtain_authorization: privilege: %1 input_bogus: %2, cancelled: %3").arg(m_gainedPrivilege).arg(m_inputBogus).arg(m_cancelled));
 
@@ -648,6 +678,9 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         Debug::printDebug("Authentication finished, starting timer again");
         exitTimer->start(POLICYKITKDE_TIMEOUT, true);
     }
+
+    //m_authInProgress = false;
+    delete m_dialog;
 }
 
 #include "service.moc"
