@@ -9,8 +9,10 @@
 
 #include <Python.h>
 #include <polkit-grant/polkit-grant.h>
-#include <time.h>
 #include <datetime.h>
+#include <time.h>
+#include <unistd.h>
+#include <grp.h>
 
 //! Standard exception for pypolkit
 static PyObject *PK_Error;
@@ -22,6 +24,33 @@ dict_set_unless_null(PyObject *dict, const char *key, const char *value)
     if (value != NULL) {
         PyDict_SetItemString(dict, key, PyString_FromString(value));
     }
+}
+
+//! Creates action object from action id
+PolKitAction *
+pk_make_action(const char *action_id)
+{
+    PolKitAction *pk_action = polkit_action_new();
+    polkit_action_set_action_id(pk_action, action_id);
+    return pk_action;
+}
+
+//! Creates caller object from uid
+PolKitCaller *
+pk_make_caller_from_uid(int uid)
+{
+    PolKitCaller *pk_caller = polkit_caller_new();
+    polkit_caller_set_uid(pk_caller, (uid_t) uid);
+    return pk_caller;
+}
+
+//! Creates caller object from pid
+PolKitCaller *
+pk_make_caller_from_pid(int pid)
+{
+    PolKitCaller *pk_caller = polkit_caller_new();
+    polkit_caller_set_pid(pk_caller, (pid_t) pid);
+    return pk_caller;
 }
 
 //! Init policy cache
@@ -215,12 +244,66 @@ pk_auth_list_all(PyObject *self, PyObject *args)
     return list;
 }
 
+//! Authorize user for the given action a single time
+static PyObject *
+pk_auth_add(PyObject *self, PyObject *args)
+{
+    const char* action_id;
+    int pid, uid, type;
+
+    if (!PyArg_ParseTuple(args, "siii", &action_id, &pid, &uid, &type)) {
+        return NULL;
+    }
+
+    struct group *gr = getgrnam("polkit");
+    if (gr->gr_gid != getegid()) {
+        PyErr_SetString(PK_Error, "Effective GID must be 'polkit'");
+        return NULL;
+    }
+
+    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
+    PolKitError *pk_error = NULL;
+
+    PolKitAction *pk_action = pk_make_action(action_id);
+    PolKitCaller *pk_caller = pk_make_caller_from_pid(pid);
+
+    polkit_bool_t pk_status;
+
+    switch (type) {
+        case POLKIT_AUTHORIZATION_SCOPE_PROCESS_ONE_SHOT:
+            polkit_authorization_db_add_entry_process_one_shot(pk_auth, pk_action, pk_caller, uid);
+            break;
+        case POLKIT_AUTHORIZATION_SCOPE_PROCESS:
+            polkit_authorization_db_add_entry_process(pk_auth, pk_action, pk_caller, uid);
+            break;
+        case POLKIT_AUTHORIZATION_SCOPE_SESSION:
+            polkit_authorization_db_add_entry_session(pk_auth, pk_action, pk_caller, uid);
+            break;
+        case POLKIT_AUTHORIZATION_SCOPE_ALWAYS:
+            polkit_authorization_db_add_entry_always(pk_auth, pk_action, pk_caller, uid);
+            break;
+        default:
+            PyErr_SetString(PK_Error, "Unknown authorization type.");
+            return NULL;
+    }
+
+    if (pk_status) {
+        Py_INCREF(Py_True);
+        return Py_True;
+    }
+    else {
+        Py_INCREF(Py_False);
+        return Py_False;
+    }
+}
+
 //! pypolkit methods
 static PyMethodDef polkit_methods[] = {
     {"action_list", (PyCFunction) pk_action_list, METH_NOARGS, "Lists all actions."},
     {"action_info", (PyCFunction) pk_action_info, METH_VARARGS, "Get action details."},
     {"auth_list_uid", (PyCFunction) pk_auth_list_uid, METH_VARARGS, "List granted authorizations for specified UID."},
     {"auth_list_all", (PyCFunction) pk_auth_list_all, METH_NOARGS, "List granted authorizations."},
+    {"auth_add", (PyCFunction) pk_auth_add, METH_VARARGS, "Authorize user for the given action."},
     {NULL, NULL, 0, NULL}
 };
 
