@@ -96,7 +96,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         devices.append(dev)
 
                 correctData = yaliKahya.getValues()
-                ctx.debugger.log("Given Kahya Values :")
 
                 # set keymap
                 ctx.yali.setKeymap(correctData.keyData)

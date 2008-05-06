@@ -113,12 +113,12 @@ Have fun!
 
             if event == pisi.ui.installing:
                 self.ui.info.setText(_("Installing: %s<br>%s") % (p.name, p.summary))
-                ctx.debugger.log("customEvent :: %s installed" % p.name)
+                ctx.debugger.log("Pisi : %s installing" % p.name)
                 self.cur += 1
                 self.ui.progress.setValue(self.cur)
             elif event == pisi.ui.configuring:
                 self.ui.info.setText(_("Configuring package: %s") % p.name)
-                ctx.debugger.log("customEvent :: %s configured" % p.name)
+                ctx.debugger.log("Pisi : %s configuring" % p.name)
                 self.cur += 1
                 self.ui.progress.setValue(self.cur)
 
@@ -283,7 +283,7 @@ class PkgConfigurator(QThread):
 
         try:
             # run all pending...
-            ctx.debugger.log("execute :: yali4.pisiiface.configure_pending() called")
+            ctx.debugger.log("exec : yali4.pisiiface.configure_pending() called")
             yali4.pisiiface.configure_pending()
         except Exception, e:
             # User+10: error

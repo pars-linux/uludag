@@ -105,7 +105,6 @@ about disk partitioning.
         self.scanPartitions()
         self.fillDeviceList()
 
-
         def sortBySize(x,y):
             if x["newSize"]>y["newSize"]:return -1
             elif x["newSize"]==y["newSize"]: return 0
@@ -128,9 +127,6 @@ about disk partitioning.
 
         ctx.mainScreen.disableNext()
         self.updateUI()
-
-        # Remove it later.
-        # self.ui.accept_auto_1.setEnabled(False)
 
     def scanPartitions(self):
         self.resizablePartitions = []

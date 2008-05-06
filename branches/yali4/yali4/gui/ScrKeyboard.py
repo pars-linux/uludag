@@ -69,15 +69,9 @@ Depending on your hardware or choice select a keyboard layout from the list.
         self.connect(self.ui.keyboard_list, SIGNAL("currentItemChanged(QListWidgetItem*, QListWidgetItem*)"),
                 self.slotLayoutChanged)
 
-    def execute(self):
-        keydata = self.ui.keyboard_list.currentItem().getData()
-        ctx.installData.keyData = keydata
-        return True
-
-    def slotLayoutChanged(self,i,y=None):
+    def slotLayoutChanged(self, i, y=None):
         if not i==y:
-            keydata = i.getData()
-            ctx.yali.setKeymap(keydata)
+            ctx.yali.setKeymap(i.getData())
 
 class KeyboardItem(QtGui.QListWidgetItem):
 

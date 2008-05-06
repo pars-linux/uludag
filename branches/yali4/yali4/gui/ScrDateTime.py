@@ -65,6 +65,7 @@ It is important to use correct settings.
 
         # Select the timeZone
         self.ui.timeZoneList.setCurrentItem(self.currentZone)
+        self.timer.start(1000)
 
     def dateChanged(self):
         self.isDateChanged = True
@@ -91,20 +92,9 @@ It is important to use correct settings.
 
     def execute(self):
         if not self.timer.isActive() or self.isDateChanged:
-            date = self.ui.calendarWidget.selectedDate()
-            args = "%02d%02d%02d%02d%04d.%02d" % (date.month(), date.day(),
-                                                  self.ui.timeHours.time().hour(), self.ui.timeMinutes.time().minute(),
-                                                  date.year(), self.ui.timeSeconds.time().second())
-            # Set current date and time
-            ctx.debugger.log("Date/Time setting to %s" % args)
-            os.system("date %s" % args)
+            ctx.yali.setTime(self.ui)
             self.timer.stop()
 
-            # Sync date time with hardware
-            ctx.debugger.log("YALI's time is syncing with the system.")
-            os.system("hwclock --systohc")
+        ctx.yali.setTimeZone(self.ui)
 
-        # Store time zone selection we will set it in processPending actions.
-        ctx.installData.timezone = self.ui.timeZoneList.currentItem().text()
-        ctx.debugger.log("Time zone selected as %s " % ctx.installData.timezone)
         return True

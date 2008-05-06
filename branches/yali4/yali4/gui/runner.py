@@ -30,7 +30,7 @@ from yali4.gui.debugger import DebuggerAspect
 # mainScreen
 import YaliWindow
 
-YALI_INSTALL, YALI_FIRSTBOOT, YALI_PARTITIONER = range(3)
+YALI_INSTALL, YALI_FIRSTBOOT, YALI_OEMINSTALL, YALI_PARTITIONER = range(4)
 
 ##
 # Runner creates main GUI components for installation...
@@ -54,22 +54,22 @@ class Runner:
         if ctx.options.firstBoot == True:
             install_type = YALI_FIRSTBOOT
 
+        # check for oemInstall
+        if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
+            install_type = YALI_OEMINSTALL
+
         ctx.yali = yali4.installer.Yali(install_type)
 
         # visual debugger
         ctx.debugger = Debugger()
 
         # check boot flags
-        # check for oemInstall
-        if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
-            ctx.options.kahyaFile = ctx.consts.firstBootFile
-
         # visual debug mode
         if ctx.options.debug == True or yali4.sysutils.checkYaliParams(param="debug"):
             ctx.debugEnabled = True
 
         # Let start
-        ctx.debugger.log("Yali Started")
+        ctx.debugger.log("Yali has been started.")
 
         # font = QtGui.QFont()
         # font.setFamily("Droid Sans")

@@ -107,3 +107,4 @@ Have a fruitful experience with Pardus!
         else:
             ctx.mainScreen.disableNext()
         ctx.mainScreen.processEvents()
+
