@@ -381,6 +381,7 @@ class DBusInterface(Hook):
                 if len(self.links) == self.nr_empty:
                     if self.first_time:
                         self.first_time = False
+                        self.emitNoConn()
                         # get signals
                         self.listenSignals()
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
