@@ -2,6 +2,7 @@
 # You can edit it in the KDE control center, under "GTK Styles and Fonts"
 
 include "/usr/share/themes/Qt/gtk-2.0/gtkrc"
+include "/etc/gtk-2.0/gtkrc"
 
 style "user-font"
 {
