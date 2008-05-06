@@ -293,7 +293,8 @@ void PolicyService::grantWatchActivated(int fd)
     Q_ASSERT(m_grantwatches.contains(fd));
     Q_ASSERT(m_grant != NULL);
 
-    Debug::printDebug("Grant watch activated");
+    //This floods screen
+    //Debug::printDebug("Grant watch activated");
 
     polkit_grant_io_func (m_grant, fd);
 }
@@ -652,7 +653,8 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         if (!m_gainedPrivilege && !m_inputBogus && !m_cancelled)
         {
             Debug::printDebug("obtain_authorization: Authentication failure, trying again...");
-            polkit_grant_unref (m_grant);
+            if (m_grant)
+                polkit_grant_unref (m_grant);
         }
         else
             break;
