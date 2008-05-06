@@ -147,10 +147,27 @@ pk_action_info(PyObject *self, PyObject *args)
 
 //! Callback function that fills auth list.
 static polkit_bool_t
-pk_auth_list_uid_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
+pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
 {
-    // Append entry to the list
-    PyList_Append((PyObject*) user_data, PyString_FromString(polkit_authorization_get_action_id(auth)));
+    PyObject *dict = PyDict_New();
+
+    // Authorization type
+    PyDict_SetItemString(dict, "type", PyInt_FromLong((long) polkit_authorization_type(auth)));
+
+    // UID
+    PyDict_SetItemString(dict, "uid", PyInt_FromLong((long) polkit_authorization_get_uid(auth)));
+
+    // Action ID
+    PyDict_SetItemString(dict, "action_id", PyString_FromString(polkit_authorization_get_action_id(auth)));
+
+    // Time of grant
+    PyDateTime_IMPORT;
+    time_t rawtime = polkit_authorization_get_time_of_grant(auth);
+    struct tm *timeinfo = localtime(&rawtime);
+    PyDict_SetItemString(dict, "date", PyDateTime_FromDateAndTime(1900 + timeinfo->tm_year, timeinfo->tm_mon, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, 0));
+
+    // Append tuple to userlist
+    PyList_Append((PyObject*)user_data, dict);
 
     // Continue to iterate
     return FALSE;
@@ -169,7 +186,7 @@ pk_auth_list_uid(PyObject *self, PyObject *args)
     PolKitError *pk_error = NULL;
 
     PyObject *list = PyList_New(0);
-    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_list_uid_cb, list, &pk_error);
+    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_list_cb, list, &pk_error);
 
     if (polkit_error_is_set(pk_error)) {
         PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
@@ -180,17 +197,6 @@ pk_auth_list_uid(PyObject *self, PyObject *args)
     return list;
 }
 
-//! Callback function that fills auth list.
-static polkit_bool_t
-pk_auth_list_all_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
-{
-    // Append entry to the list
-    PyList_Append((PyObject*) user_data, PyString_FromString(polkit_authorization_get_action_id(auth)));
-
-    // Continue to iterate
-    return FALSE;
-}
-
 //! Returns granted authorizations
 static PyObject *
 pk_auth_list_all(PyObject *self, PyObject *args)
@@ -199,7 +205,7 @@ pk_auth_list_all(PyObject *self, PyObject *args)
     PolKitError *pk_error = NULL;
 
     PyObject *list = PyList_New(0);
-    polkit_authorization_db_foreach(pk_auth, pk_auth_list_all_cb, list, &pk_error);
+    polkit_authorization_db_foreach(pk_auth, pk_auth_list_cb, list, &pk_error);
 
     if (polkit_error_is_set(pk_error)) {
         PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
@@ -223,6 +229,15 @@ PyMODINIT_FUNC
 initpypolkit(void)
 {
     PyObject *m = Py_InitModule("pypolkit", polkit_methods);
+
+    PyModule_AddObject(m, "SCOPE_ONE_SHOT", PyInt_FromLong((long) POLKIT_AUTHORIZATION_SCOPE_PROCESS_ONE_SHOT));
+    PyModule_AddObject(m, "SCOPE_PROCESS", PyInt_FromLong((long) POLKIT_AUTHORIZATION_SCOPE_PROCESS));
+    PyModule_AddObject(m, "SCOPE_SESSION", PyInt_FromLong((long) POLKIT_AUTHORIZATION_SCOPE_SESSION));
+    PyModule_AddObject(m, "SCOPE_ALWAYS", PyInt_FromLong((long) POLKIT_AUTHORIZATION_SCOPE_ALWAYS));
+
+    PyModule_AddObject(m, "TYPE_UID", PyInt_FromLong((long) POLKIT_AUTHORIZATION_TYPE_UID));
+
+    PyModule_AddObject(m, "DB_CAPABILITY_CAN_OBTAIN", PyInt_FromLong((long) POLKIT_AUTHORIZATION_DB_CAPABILITY_CAN_OBTAIN));
 
     PK_Error = PyErr_NewException("pypolkit.error", NULL, NULL);
     Py_INCREF(PK_Error);
