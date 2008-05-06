@@ -144,7 +144,6 @@ all your present data on the selected disk will be lost.</p>
             ctx.use_autopart = True
 
             if ctx.installData.autoPartMethod == methodEraseAll:
-                info.show()
                 ctx.yali.autoPartDevice()
                 ctx.yali.checkSwap()
                 ctx.yali.info.updateMessage(_("Formatting ..."))
