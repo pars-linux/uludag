@@ -701,7 +701,7 @@ class MainApplicationWidget(QWidget):
     def searchPackage(self):
         query = unicode(self.searchLine.text())
         if query:
-            result = PisiIface.search_package(query.split(), self.state == install_state)
+            result = PisiIface.search_package(query.split(), self.state != install_state)
             self.createSearchResults(result)
         else:
             self.timer.stop()

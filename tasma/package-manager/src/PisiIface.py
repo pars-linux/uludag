@@ -90,5 +90,5 @@ def search_package(terms, installed=False):
     if installed:
         return pisi.api.search_installed(terms)
     else:
-        return pisi.api.serach_package(terms)
+        return pisi.api.search_package(terms)
 
