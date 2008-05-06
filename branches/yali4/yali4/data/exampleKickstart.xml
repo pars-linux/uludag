@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-9"?>
 <yali xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="yalisema.xsd">
     <language>tr</language>
-    <keymap>trq</keymap>
+    <keymap>tr</keymap>
+    <variant>q</variant>
     <root_password>pardusman</root_password>
     <hostname>pardus-kickstart</hostname>
     <!-- <users use_yali_first_boot="true"> -->

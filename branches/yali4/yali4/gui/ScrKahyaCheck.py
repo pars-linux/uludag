@@ -27,10 +27,7 @@ import yali4.storage
 
 def loadFile(path):
     """Read contents of a file"""
-    f = file(path)
-    data = f.read()
-    f.close()
-    return data
+    return file(path).read()
 
 def get_kernel_opt(cmdopt):
     cmdline = loadFile("/proc/cmdline").split()
@@ -72,7 +69,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         ctx.autoInstall = True
         yaliKahya = kahya()
-        print "...",ctx.options.kahyaFile
+        ctx.debugger.log("Kahya File : %s " % ctx.options.kahyaFile)
 
         kahyaOpt = get_kernel_opt(ctx.consts.kahyaParam)
 

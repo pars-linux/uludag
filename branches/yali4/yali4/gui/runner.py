@@ -19,6 +19,7 @@ __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 import yali4
+import yali4.installer
 import yali4.sysutils
 import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
@@ -29,20 +30,6 @@ from yali4.gui.debugger import DebuggerAspect
 # mainScreen
 import YaliWindow
 
-# screens
-import ScrKahyaCheck
-import ScrWelcome
-import ScrCheckCD
-import ScrKeyboard
-import ScrDateTime
-import ScrAdmin
-import ScrUsers
-import ScrPartitionAuto
-import ScrPartitionManual
-import ScrBootloader
-import ScrInstall
-import ScrGoodbye
-
 ##
 # Runner creates main GUI components for installation...
 class Runner:
@@ -52,59 +39,41 @@ class Runner:
 
     def __init__(self):
 
-        _all_screens = [                        # Numbers can be used with -s paramter
-                        ScrKahyaCheck,          # 00
-                        ScrWelcome,             # 01
-                        ScrCheckCD,             # 02
-                        ScrKeyboard,            # 03
-                        ScrDateTime,            # 04
-                        ScrUsers,               # 05
-                        ScrAdmin,               # 06
-                        ScrPartitionAuto,       # 07
-                        ScrPartitionManual,     # 08
-                        ScrBootloader,          # 09
-                        ScrInstall,             # 10
-                        ScrGoodbye              # 11
-                       ]
 
-        # This list will be used for yali4-firstBoot
-        _firstBoot_screens = [                        # Numbers can be used with -s paramter
-                              ScrWelcome,             # 01
-                              ScrKeyboard,            # 02
-                              ScrDateTime,            # 03
-                              ScrUsers,               # 04
-                              ScrAdmin,               # 05
-                              ScrGoodbye              # 06
-                             ]
-
-
+        # Qt Stuff
         self._app = QtGui.QApplication(sys.argv)
-        self._window = YaliWindow.Widget()
 
+        # Yali..
+        self._window = YaliWindow.Widget()
+        ctx.mainScreen = self._window
+        ctx.yali = yali4.installer.Yali()
+
+        # visual debugger
+        ctx.debugger = Debugger()
+
+        # check boot flags
         # check for oemInstall
         if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
             ctx.options.kahyaFile = ctx.consts.firstBootFile
+
+        # visual debug mode
+        if ctx.options.debug == True or yali4.sysutils.checkYaliParams(param="debug"):
+            ctx.debugEnabled = True
+
+        # Let start
+        ctx.debugger.log("Yali Started")
 
         # font = QtGui.QFont()
         # font.setFamily("Droid Sans")
         # font.setPixelSize(11)
         # self._app.setFont(font)
 
-        ctx.mainScreen = self._window
+        # add Screens for selected install type
+        self._window.createWidgets(ctx.yali.screens)
 
-        # visual debugger
-        ctx.debugger = Debugger()
-
-        # visual debug mode
-        if ctx.options.debug == True or yali4.sysutils.checkYaliParams(param="debug"):
-            ctx.debugEnabled = True
-
-        ctx.debugger.log("Yali Started")
-
-        self._window.createWidgets(_all_screens)
+        # base connections
         QObject.connect(self._app, SIGNAL("lastWindowClosed()"),
                         self._app, SLOT("quit()"))
-
         QObject.connect(ctx.mainScreen.ui, SIGNAL("signalProcessEvents"),
                         self._app.processEvents)
 
@@ -121,13 +90,14 @@ class Runner:
 
         # We want it to be a full-screen window.
         self._window.ui.resize(self._app.desktop().size())
+        self._window.ui.move(0,0)
         self._window.ui.show()
 
         # For testing..
-        #self._window.ui.resize(QSize(800,600))
-        # self._window.ui.move(0,0)
-        self._app.exec_()
+        # self._window.ui.resize(QSize(800,600))
 
+        # Run run run
+        self._app.exec_()
 
 def showException(ex_type, tb):
     title = _("Error!")

@@ -24,6 +24,9 @@ class Options(object):
         parser.add_option("-r", "--dryRun", dest="dryRun",
                           action="store_true", default="False",
                           help="only show the result")
+        parser.add_option("-f", "--firstBoot", dest="firstBoot",
+                          action="store_true", default="False",
+                          help="only show the result")
         parser.add_option("-k", "--kahyaFile", dest="kahyaFile",
                           help="Run with Kahya file", metavar="FILE")
         parser.add_option("-s", "--startFrom", dest="startupScreen",
