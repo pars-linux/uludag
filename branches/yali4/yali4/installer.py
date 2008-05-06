@@ -12,6 +12,7 @@
 
 # linux ?
 import os
+import time
 
 # we need i18n
 import gettext
@@ -273,7 +274,7 @@ class Yali:
                                                                   request.mountRequestType)
 
         if len(yali4.storage.devices) > 1:
-            ctx.installData.bootLoaderDev = basename(ctx.installData.orderedDiskList[0])
+            ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[0])
         else:
             dev_path = root_part_req.partition().getPath()
             if dev_path.find("cciss") > 0:
@@ -281,7 +282,7 @@ class Yali:
                 ctx.installData.bootLoaderDev = dev_path[:-2]
             else:
                 ctx.installData.bootLoaderDev = str(filter(lambda u: not u.isdigit(),
-                                                           basename(dev_path)))
+                                                           os.path.basename(dev_path)))
 
     def fillFstab(self):
         # fill fstab
