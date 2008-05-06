@@ -40,6 +40,7 @@ from yali4.partitionrequest import partrequests
 
 # gui
 from yali4.gui.YaliDialog import Dialog
+from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 
 # debugger
 from yali4.gui.debugger import Debugger
@@ -112,6 +113,8 @@ class Yali:
         # Let the show begin..
         self.screens = self._screens[install_type]
         self.install_type = install_type
+        self.info = InformationWindow(_("YALI Working..."))
+        self.info.hide()
 
     def checkCD(self, rootWidget):
         ctx.mainScreen.disableNext()
@@ -157,6 +160,7 @@ class Yali:
         args = "%02d%02d%02d%02d%04d.%02d" % (date.month(), date.day(),
                                               rootWidget.timeHours.time().hour(), rootWidget.timeMinutes.time().minute(),
                                               date.year(), rootWidget.timeSeconds.time().second())
+
         # Set current date and time
         ctx.debugger.log("Date/Time setting to %s" % args)
         os.system("date %s" % args)
@@ -169,6 +173,98 @@ class Yali:
         # Store time zone selection we will set it in processPending actions.
         ctx.installData.timezone = rootWidget.timeZoneList.currentItem().text()
         ctx.debugger.log("Time zone selected as %s " % ctx.installData.timezone)
+
+    def autoPartDevice(self):
+        self.info.updateAndShow(_("Writing disk tables ..."))
+
+        ctx.partrequests.remove_all()
+        dev = ctx.installData.autoPartDev
+
+        # first delete partitions on device
+        dev.deleteAllPartitions()
+        dev.commit()
+
+        ctx.mainScreen.processEvents()
+
+        p = dev.addPartition(None,
+                             parttype.root.parted_type,
+                             parttype.root.filesystem,
+                             dev.getFreeMB(),
+                             parttype.root.parted_flags)
+        p = dev.getPartition(p.num) # get partition.Partition
+
+        # create the partition
+        dev.commit()
+        ctx.mainScreen.processEvents()
+
+        # make partition requests
+        ctx.partrequests.append(request.MountRequest(p, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(p, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(p, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(p, parttype.root))
+
+        time.sleep(2)
+
+    def checkSwap(self):
+        # check swap partition, if not present use swap file
+        rt = request.mountRequestType
+        pt = parttype.swap
+        swap_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
+
+        if not swap_part_req:
+            # No swap partition defined using swap as file in root
+            # partition
+            rt = request.mountRequestType
+            pt = parttype.root
+            root_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
+            ctx.partrequests.append(request.SwapFileRequest(root_part_req.partition(),
+                                    root_part_req.partitionType()))
+
+    def autoPartUseAvail(self):
+        dev = ctx.installData.autoPartDev
+        _part = ctx.installData.autoPartPartition
+        part = _part["partition"]
+
+        newPartSize = int(_part["newSize"]/2)
+        ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
+        ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
+
+        self.info.updateAndShow(_("Resizing ..."))
+        _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+
+        self.into.updateMessage(_("Resize Finished ..."))
+        ctx.debugger.log("UA: Resize finished.")
+        time.sleep(1)
+
+        newStart = _np.geom.end
+        np = dev.getPartition(_np.num)
+
+        if np.isLogical():
+            ptype = PARTITION_LOGICAL
+        else:
+            ptype = PARTITION_PRIMARY
+
+        self.into.updateMessage(_("Creating new partition ..."))
+        ctx.debugger.log("UA: newStart : %s " % newStart)
+        _newPart = dev.addPartition(None,
+                                    ptype,
+                                    parttype.root.filesystem,
+                                    newPartSize - 150,
+                                    parttype.root.parted_flags,
+                                    newStart)
+
+        newPart = dev.getPartition(_newPart.num)
+
+        dev.commit()
+        ctx.mainScreen.processEvents()
+
+        # make partition requests
+        ctx.partrequests.append(request.MountRequest(newPart, parttype.root))
+        ctx.partrequests.append(request.FormatRequest(newPart, parttype.root))
+        ctx.partrequests.append(request.LabelRequest(newPart, parttype.root))
+        ctx.partrequests.append(request.SwapFileRequest(newPart, parttype.root))
+
+        time.sleep(2)
 
     def showError(self, title, message):
         r = ErrorWidget(self)

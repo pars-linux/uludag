@@ -67,7 +67,7 @@ Click Next button to proceed.
         self.ui.host_error.setVisible(False)
         self.ui.caps_error.setVisible(False)
 
-        self.ui.caps_error.setText(_('<font color="#FF6D19">Caps Lock is on!</font>'))
+        self.ui.caps_error.setText(_('<center><font color="#FF6D19">Caps Lock is on!</font></center>'))
 
         self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
@@ -109,7 +109,7 @@ Click Next button to proceed.
 
         if p1 == p2 and p1:
             if len(p1)<4:
-                self.ui.pass_error.setText(_('<font color="#FF6D19">Password is too short!</font>'))
+                self.ui.pass_error.setText(_('<center><font color="#FF6D19">Password is too short!</font></center>'))
                 self.ui.pass_error.setVisible(True)
                 self.pass_valid = False
             else:
@@ -118,7 +118,7 @@ Click Next button to proceed.
         else:
             self.pass_valid = False
             if p2:
-                self.ui.pass_error.setText(_('<font color="#FF6D19">Passwords do not match!</font>'))
+                self.ui.pass_error.setText(_('<center><font color="#FF6D19">Passwords do not match!</font></center>'))
                 self.ui.pass_error.setVisible(True)
 
         self.setNext()
@@ -136,7 +136,7 @@ Click Next button to proceed.
 
         if not self.host_valid:
             self.ui.host_error.setVisible(True)
-            self.ui.host_error.setText(_('<font color="#FF6D19">Hostname contains invalid characters!</font>'))
+            self.ui.host_error.setText(_('<center><font color="#FF6D19">Hostname contains invalid characters!</font></center>'))
         else:
             self.ui.host_error.setVisible(False)
         self.setNext()

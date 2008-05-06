@@ -188,5 +188,17 @@ class InformationWindow(QtGui.QWidget):
         self.move(ctx.mainScreen.ui.width()/2 - self.width()/2 - 20,
                   ctx.mainScreen.ui.height()/2 - self.height()/2 - 30)
         self.label.setText(message)
+        ctx.mainScreen.processEvents()
 
+    def updateAndShow(self, message):
+        self.updateMessage(message)
+        self.show()
+
+    def show(self):
+        ctx.mainScreen.processEvents()
+        QtGui.QWidget.show(self)
+
+    def hide(self):
+        ctx.mainScreen.processEvents()
+        QtGui.QWidget.hide(self)
 

@@ -115,87 +115,6 @@ loader.
     def slotDeviceChanged(self, o, n):
         self.device = o.getDevice()
 
-    def autopartDevice(self):
-        dev = ctx.installData.autoPartDev
-
-        # first delete partitions on device
-        dev.deleteAllPartitions()
-        dev.commit()
-
-        ctx.mainScreen.processEvents()
-
-        p = dev.addPartition(None,
-                             parttype.root.parted_type,
-                             parttype.root.filesystem,
-                             dev.getFreeMB(),
-                             parttype.root.parted_flags)
-        p = dev.getPartition(p.num) # get partition.Partition
-
-        # create the partition
-        dev.commit()
-        ctx.mainScreen.processEvents()
-
-        # make partition requests
-        ctx.partrequests.append(request.MountRequest(p, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(p, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(p, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(p, parttype.root))
-
-    def useAvail(self):
-        dev = ctx.installData.autoPartDev
-        _part = ctx.installData.autoPartPartition
-        part = _part["partition"]
-
-        newPartSize = int(_part["newSize"]/2)
-        ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
-        ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
-        _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
-
-        ctx.debugger.log("UA: Resize finished.")
-        time.sleep(1)
-
-        newStart = _np.geom.end
-        np = dev.getPartition(_np.num)
-
-        if np.isLogical():
-            ptype = PARTITION_LOGICAL
-        else:
-            ptype = PARTITION_PRIMARY
-
-        ctx.debugger.log("UA: newStart : %s " % newStart)
-        _newPart = dev.addPartition(None,
-                                    ptype,
-                                    parttype.root.filesystem,
-                                    newPartSize - 150,
-                                    parttype.root.parted_flags,
-                                    newStart)
-
-        newPart = dev.getPartition(_newPart.num)
-
-        dev.commit()
-        ctx.mainScreen.processEvents()
-
-        # make partition requests
-        ctx.partrequests.append(request.MountRequest(newPart, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(newPart, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(newPart, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(newPart, parttype.root))
-
-    def checkSwap(self):
-        # check swap partition, if not present use swap file
-        rt = request.mountRequestType
-        pt = parttype.swap
-        swap_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
-
-        if not swap_part_req:
-            # No swap partition defined using swap as file in root
-            # partition
-            rt = request.mountRequestType
-            pt = parttype.root
-            root_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
-            ctx.partrequests.append(request.SwapFileRequest(root_part_req.partition(),
-                                    root_part_req.partitionType()))
-
     def execute(self):
 
         w = WarningWidget(self)
@@ -214,7 +133,6 @@ all your present data on the selected disk will be lost.</p>
             return False
 
         ctx.mainScreen.processEvents()
-        info = InformationWindow(_("Writing disk tables ..."))
 
         # We should do partitioning operations in here.
         if ctx.options.dryRun == True:
@@ -224,44 +142,36 @@ all your present data on the selected disk will be lost.</p>
         # Auto Partitioning
         if ctx.installData.autoPartDev:
             ctx.use_autopart = True
+
             if ctx.installData.autoPartMethod == methodEraseAll:
                 info.show()
-                ctx.mainScreen.processEvents()
-                ctx.partrequests.remove_all()
-                self.autopartDevice()
-                time.sleep(2)
-                info.updateMessage(_("Formatting ..."))
-                ctx.mainScreen.processEvents()
-                self.checkSwap()
+                ctx.yali.autoPartDevice()
+                ctx.yali.checkSwap()
+                ctx.yali.info.updateMessage(_("Formatting ..."))
                 ctx.partrequests.applyAll()
+
             elif ctx.installData.autoPartMethod == methodUseAvail:
-                info.show()
-                info.updateMessage(_("Resizing ..."))
-                ctx.mainScreen.processEvents()
-                self.useAvail()
-                time.sleep(2)
-                info.updateMessage(_("Formatting ..."))
-                ctx.mainScreen.processEvents()
-                self.checkSwap()
+                ctx.yali.autoPartUseAvail()
+                ctx.yali.checkSwap()
+                ctx.yali.info.updateMessage(_("Formatting ..."))
                 ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:
             ctx.debugger.log("Format Operation Started")
-            info.show()
+            ctx.yali.info.updateAndShow(_("Writing disk tables ..."))
             for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
                 dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
-            info.updateMessage(_("Formatting ..."))
-            ctx.mainScreen.processEvents()
-            self.checkSwap()
+            ctx.yali.checkSwap()
+            ctx.yali.info.updateMessage(_("Formatting ..."))
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
             ctx.mainScreen.processEvents()
 
-        info.close()
+        ctx.yali.info.close()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
