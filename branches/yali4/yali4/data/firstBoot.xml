@@ -4,7 +4,7 @@
     <keymap>tr</keymap>
     <variant>q</variant>
     <hostname>pardus</hostname>
-    <users use_yali_first_boot="true" />
+    <users first_boot="true" />
     <partitioning partitioning_type="auto">disk0</partitioning>
 </yali>
 

@@ -7,7 +7,9 @@ import sys
 class kahyaData:
     def __init__(self):
         self.language=None
-        self.keyData=Keymap()
+        self.keyData={"xkblayout":"tr",
+                      "xkbvariant":"q",
+                      "consolekeymap":"trq"}
         self.rootPassword=''
         self.hostname=None
         self.users=[]
@@ -18,19 +20,13 @@ class kahyaData:
         self.repoAddr = None
         self.useYaliFirstBoot = False
 
-class yaliUser:	
+class yaliUser:
     def __init__(self):
         self.autologin=None
         self.username=None
         self.realname=None
         self.password=None
         self.groups=[]
-
-class Keymap:
-    def __init__(self):
-        self.console = None
-        self.X = None
-        self.translation = None
 
 class yaliPartition:
     def __init__(self):
@@ -46,13 +42,14 @@ def read(args):
     doc=piksemel.parse(args)
     data=kahyaData()
     data.language=doc.getTagData("language")
-    data.keyData.X=doc.getTagData("keymap")
+    data.keyData["xkblayout"]=doc.getTagData("keymap")
+    data.keyData["xkbvariant"]=doc.getTagData("variant") or ''
     data.rootPassword=doc.getTagData("root_password") or ''
     data.hostname=doc.getTagData("hostname")
     data.repoName=doc.getTagData("reponame") or data.repoName
     data.repoAddr=doc.getTagData("repoaddr")
     usrsTag=doc.getTag("users")
-    data.useYaliFirstBoot=usrsTag.getAttribute("use_yali_first_boot") or False
+    data.useYaliFirstBoot=usrsTag.getAttribute("first_boot") or False
 
     for p in usrsTag.tags():
         info=yaliUser()
@@ -70,7 +67,7 @@ def read(args):
         autoPart=yaliPartition()
         autoPart.disk=partitioning.firstChild().data()
         data.partitioning.append(autoPart)
-    else:
+    elif(data.partitioningType=="manual"):
         for q in partitioning.tags():
             partinfo=yaliPartition()
             partinfo.partitionType=q.getAttribute("partition_type")

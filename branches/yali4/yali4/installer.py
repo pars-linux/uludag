@@ -21,6 +21,7 @@ _ = __trans.ugettext
 # yali base
 from yali4.exception import *
 from yali4.constants import consts
+import yali4.localeutils
 import yali4.sysutils
 
 # partitioning
@@ -90,4 +91,8 @@ class Yali:
 
         # Let the show begin..
         self.screens = self._screens[install_type]
+
+    def setKeymap(self, keymap):
+        yali4.localeutils.set_keymap(keymap["xkblayout"], keymap["xkbvariant"])
+        self.keymap = keymap
 

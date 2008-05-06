@@ -98,6 +98,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 correctData = yaliKahya.getValues()
                 ctx.debugger.log("Given Kahya Values :")
 
+                # set keymap
+                ctx.yali.setKeymap(correctData.keyData)
+
                 # single types
                 ctx.installData.keyData = correctData.keyData
                 ctx.installData.rootPassword = correctData.rootPassword

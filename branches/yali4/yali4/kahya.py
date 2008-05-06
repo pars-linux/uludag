@@ -76,16 +76,16 @@ class otherFunctions:
 
     def checkKeymapX(self):
         """It checks keymap validity"""
-        for element in getKeymaps():
-            if element.X==self.keyX:
+        for country, data in yali4.localedata.locales.items():
+            if data["xkblayout"] == self.keyX:
                 return True
         return False
 
     def findKeymap(self):
         """It attaches console Keymap"""
-        for element in getKeymaps():
-            if element.X==self.keyX:
-                return element.console
+        for country,data in yali4.localedata.locales.items():
+            if data["xkblayout"] == self.keyX:
+                return data["consolekeymap"]
         return False
 
 class partitionFunctions:
@@ -138,7 +138,7 @@ class kahya:
     def checkAllOptions(self):
         """It checks all data entries and edits them"""
         error=errors()
-        otherFunct=otherFunctions(self.data.keyData.X)
+        otherFunct=otherFunctions(self.data.keyData["xkblayout"])
 
         ###repo selection###
         if self.data.repoAddr:
@@ -153,27 +153,17 @@ class kahya:
             self.errorList.append("Language Error: %s does not exist"%self.data.language)
 
         ###keymap selection###
-        if self.data.keyData.X:
+        if self.data.keyData["xkblayout"]:
             if otherFunct.checkKeymapX():
-                self.correctData.keyData.X=self.data.keyData.X
-                self.correctData.keyData.console=otherFunct.findKeymap()
+                self.correctData.keyData["xkblayout"]=self.data.keyData["xkblayout"]
+                self.correctData.keyData["consolekeymap"]=otherFunct.findKeymap()
             else:
                 error.Keymap=True
-                self.errorList.append("Keymap Error: %s not valid "%self.data.keyData.X)
+                self.errorList.append("Keymap Error: %s not valid " % self.data.keyData["xkblayout"])
         else:
             if error.Lang!=True:
-                for lang in getLangsWithKeymaps():
-                    if lang[0]==self.correctData.language:
-                        if self.correctData.language=="tr":
-                            self.correctData.keyData.X=lang[1][0].X
-                            self.correctData.keyData.console=lang[1][0].console
-                        else:
-                            self.correctData.keyData.X=lang[1].X
-                            self.correctData.keyData.console=lang[1].console
-                        break
-                else:
-                    error.Keymap=True
-                    self.errorList.append("Keymap Error: Cannot associate Keymap for %s"%self.data.language)
+                error.Keymap=True
+                self.errorList.append("Keymap Error: Cannot associate Keymap for %s"%self.data.language)
 
         ###root password selection###
         if len(self.data.rootPassword)<4:

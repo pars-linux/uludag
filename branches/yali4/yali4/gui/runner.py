@@ -30,6 +30,8 @@ from yali4.gui.debugger import DebuggerAspect
 # mainScreen
 import YaliWindow
 
+YALI_INSTALL, YALI_FIRSTBOOT, YALI_PARTITIONER = range(3)
+
 ##
 # Runner creates main GUI components for installation...
 class Runner:
@@ -46,7 +48,12 @@ class Runner:
         # Yali..
         self._window = YaliWindow.Widget()
         ctx.mainScreen = self._window
-        ctx.yali = yali4.installer.Yali()
+
+        # Check for firstBoot on installed system (parameters from options)
+        install_type = YALI_INSTALL
+        if ctx.options.firstBoot:
+            install_type = YALI_FIRSTBOOT
+        ctx.yali = yali4.installer.Yali(install_type)
 
         # visual debugger
         ctx.debugger = Debugger()

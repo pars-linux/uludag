@@ -77,7 +77,7 @@ Depending on your hardware or choice select a keyboard layout from the list.
     def slotLayoutChanged(self,i,y=None):
         if not i==y:
             keydata = i.getData()
-            yali4.localeutils.set_keymap(keydata["xkblayout"], keydata["xkbvariant"])
+            ctx.yali.setKeymap(keydata)
 
 class KeyboardItem(QtGui.QListWidgetItem):
 
