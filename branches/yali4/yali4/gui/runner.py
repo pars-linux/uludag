@@ -41,7 +41,6 @@ class Runner:
 
     def __init__(self):
 
-
         # Qt Stuff
         self._app = QtGui.QApplication(sys.argv)
 
@@ -51,8 +50,10 @@ class Runner:
 
         # Check for firstBoot on installed system (parameters from options)
         install_type = YALI_INSTALL
-        if ctx.options.firstBoot:
+
+        if ctx.options.firstBoot == True:
             install_type = YALI_FIRSTBOOT
+
         ctx.yali = yali4.installer.Yali(install_type)
 
         # visual debugger

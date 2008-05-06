@@ -26,7 +26,7 @@ class Options(object):
                           help="only show the result")
         parser.add_option("-f", "--firstBoot", dest="firstBoot",
                           action="store_true", default="False",
-                          help="only show the result")
+                          help="start with first boot options")
         parser.add_option("-k", "--kahyaFile", dest="kahyaFile",
                           help="Run with Kahya file", metavar="FILE")
         parser.add_option("-s", "--startFrom", dest="startupScreen",
