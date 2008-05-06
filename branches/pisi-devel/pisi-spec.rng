@@ -384,6 +384,7 @@
                 <value>OSIRIS</value>
                 <value>OSL-1.1</value>
                 <value>OSL-2.0</value>
+                <value>OSML-1.0</value>
                 <value>OTN</value>
                 <value>Omni</value>
                 <value>OpenSoftware</value>
@@ -415,6 +416,7 @@
                 <value>Parallels</value>
                 <value>PathfinderPL-1.1</value>
                 <value>PicoContainer</value>
+                <value>PlaneShift</value>
                 <value>PoseidonCommon.pdf</value>
                 <value>Princeton</value>
                 <value>Q2EULA</value>
@@ -639,6 +641,7 @@
                 <value>ipw2200-fw</value>
                 <value>ipw3945</value>
                 <value>isc-dhcp</value>
+                <value>iwlwifi-ucode</value>
                 <value>ixp4xx</value>
                 <value>jardinains</value>
                 <value>jaxen</value>
@@ -985,6 +988,7 @@
                 <value>xhost</value>
                 <value>xineramaproto</value>
                 <value>xinit</value>
+                <value>xiph</value>
                 <value>xkbcomp</value>
                 <value>xkbdata</value>
                 <value>xkbevd</value>
