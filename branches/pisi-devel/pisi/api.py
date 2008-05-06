@@ -434,12 +434,17 @@ def generate_pending_order(A):
 
     return order
 
-def configure_pending():
+def configure_pending(packages=None):
     # start with pending packages
     # configure them in reverse topological order of dependency
     installdb = pisi.db.installdb.InstallDB()
-    A = installdb.list_pending()
-    order = generate_pending_order(A)
+
+    if not packages:
+        packages = installdb.list_pending()
+    else:
+        packages = set(packages).intersection(installdb.list_pending())
+
+    order = generate_pending_order(packages)
     try:
         for x in order:
             if installdb.has_package(x):
