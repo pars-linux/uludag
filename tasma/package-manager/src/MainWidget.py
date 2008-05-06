@@ -660,8 +660,9 @@ class MainApplicationWidget(QWidget):
         # when pisi db version is upgraded, reload is needed before init
         packages = self.basket.packages + self.basket.extraPackages
         print "in finished(): command=%s" % command
-        if command == "System.Manager.updatePackage" and "pisi" in packages:
-            PisiIface.reloadPisi()
+#        if command == "System.Manager.updatePackage" and "pisi" in packages:
+        #FIXME: Why do we need to reload pisi module every time. Added for not updating mem cached dbs of pisi
+        PisiIface.reloadPisi()
 
         # after every operation check package cache limits
         if command not in ["System.Manager.clearCache", "System.Manager.setRepositories"]:
