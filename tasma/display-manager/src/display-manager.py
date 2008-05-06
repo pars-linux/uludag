@@ -73,7 +73,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.switchBetweenScreens)
 
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
-        self.connect(self.checkBoxExtended, SIGNAL("toggled(bool)"), self.setExtendedOption)
+        self.connect(self.radioBoxExtended, SIGNAL("toggled(bool)"), self.setDualModeOptions)
+        self.connect(self.radioBoxCloned, SIGNAL("toggled(bool)"), self.setDualModeOptions)
 
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
         self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
@@ -102,11 +103,14 @@ class MainWidget(dm_mainview.mainWidget):
         if not self.currentDualMode == "single":
             if self.currentDualMode == "horizontal":
                 self.checkBoxDualMode.setChecked(1)
-                self.checkBoxExtended.setChecked(1)
+                self.radioBoxExtended.setChecked(1)
             else:
                 self.checkBoxDualMode.setChecked(1)
+                self.radioBoxCloned.setChecked(1)
         else:
             self.screenImage2.hide()
+            self.radioBoxCloned.setEnabled(0)
+            self.radioBoxExtended.setEnabled(0)
 
     def duplicateOutputs(self):
         message = i18n("Sorry, but you can use one device for each output.\nTry to select another output.")
@@ -154,11 +158,10 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.getResolutions()
 
-    def setExtendedOption(self):
-        if self.checkBoxExtended.isChecked():
+    def setDualModeOptions(self):
+        if self.radioBoxExtended.isChecked():
             self.displayConfiguration.desktop_setup = "horizontal"
         else:
-            self.displayConfiguration.desktop_setup = self.currentDualMode
             self.displayConfiguration.desktop_setup = "clone"
 
     def setSelectedMode(self):
@@ -179,13 +182,15 @@ class MainWidget(dm_mainview.mainWidget):
         if self.checkBoxDualMode.isChecked():
             self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
             self.screenImage2.show()
-            self.checkBoxExtended.setEnabled(1)
-            self.displayConfiguration.desktop_setup = "clone"
+            self.radioBoxCloned.setEnabled(1)
+            self.radioBoxExtended.setEnabled(1)
+            self.displayConfiguration.desktop_setup = self.currentDualMode
         else:
             self.screenImage2.hide()
             self.screenImage1.setState(QButton.On)
-            self.checkBoxExtended.setEnabled(0)
-            self.displayConfiguration.desktop_setup = self.currentDualMode
+            self.radioBoxExtended.setEnabled(0)
+            self.radioBoxCloned.setEnabled(0)
+            self.displayConfiguration.desktop_setup = "single"
 
     def switchBetweenScreens(self):
         if self.selectedScreen == "1":
