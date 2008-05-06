@@ -76,14 +76,14 @@ class otherFunctions:
 
     def checkKeymapX(self):
         """It checks keymap validity"""
-        for country, data in yali4.localedata.locales.items():
+        for country, data in locales.items():
             if data["xkblayout"] == self.keyX:
                 return True
         return False
 
     def findKeymap(self):
         """It attaches console Keymap"""
-        for country,data in yali4.localedata.locales.items():
+        for country,data in locales.items():
             if data["xkblayout"] == self.keyX:
                 return data["consolekeymap"]
         return False

@@ -106,11 +106,13 @@ class AutoPartQuestionWidget(QtGui.QWidget):
         self.ui.partition_list.setEnabled(True)
 
     def slotDisableList(self):
+        self.rootWidget.autoPartPartition = self.ui.partition_list.item(0).getPartition()
         self.ui.partition_list.setEnabled(False)
 
     def slotUseSelected(self):
         self.hide()
-        self.rootWidget.autoPartPartition = self.ui.partition_list.currentItem().getPartition()
+        if self.ui.partition_list.isEnabled():
+            self.rootWidget.autoPartPartition = self.ui.partition_list.currentItem().getPartition()
         ctx.mainScreen.processEvents()
         self.rootWidget.execute_(True)
 

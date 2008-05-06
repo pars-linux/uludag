@@ -114,7 +114,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 ctx.installData.repoName = correctData.repoName
 
                 ctx.debugger.log("HOSTNAME : %s " % ctx.installData.hostName)
-                ctx.debugger.log("KEYDATA  : %s " % ctx.installData.keyData.X)
+                ctx.debugger.log("KEYDATA  : %s " % ctx.installData.keyData["xkblayout"])
 
                 if ctx.installData.repoAddr:
                     ctx.debugger.log("REPOADDR : %s " % ctx.installData.repoAddr)

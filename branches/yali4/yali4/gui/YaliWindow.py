@@ -102,16 +102,17 @@ class Widget(Ui_YaliMain):
 
     # move to id numbered stack
     def stackMove(self, id):
-        self.mainStack.setCurrentIndex(id)
-        _w = self.mainStack.currentWidget()
-        self.screenName.setText(_w.title)
-        self.screenDescription.setText(_w.desc)
-        self.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
-        self.helpContent.setText(_w.help)
-        # shown functions contain necessary instructions before
-        # showing a stack ( updating gui, disabling some buttons etc. )
-        _w.update()
-        _w.shown()
+        if not id == self.mainStack.currentIndex() or id==0:
+            self.mainStack.setCurrentIndex(id)
+            _w = self.mainStack.currentWidget()
+            self.screenName.setText(_w.title)
+            self.screenDescription.setText(_w.desc)
+            self.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
+            self.helpContent.setText(_w.help)
+            # shown functions contain necessary instructions before
+            # showing a stack ( updating gui, disabling some buttons etc. )
+            _w.update()
+            _w.shown()
 
     # create all widgets and add inside stack
     # see runner.py/_all_screens for the list

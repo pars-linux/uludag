@@ -77,34 +77,55 @@ about disk partitioning.
             if dev.getTotalMB() >= ctx.consts.min_root_size:
                 DeviceItem(self.ui.device_list, dev)
 
-        # select the first disk by default
-        self.ui.device_list.setCurrentRow(0)
-
         if not self.ui.device_list.count():
             raise YaliExceptionInfo, _("It seems that you don't have the required disk space (min. %s) for Pardus installation." % ctx.consts.min_root_size)
 
-        self.connect(self.ui.accept_auto_1, SIGNAL("clicked()"),self.slotSelectAuto)
-        self.connect(self.ui.accept_auto_2, SIGNAL("clicked()"),self.slotSelectAuto)
+        self.connect(self.ui.accept_auto_1, SIGNAL("toggled(bool)"),self.slotSelectAutoUseAvail)
+        self.connect(self.ui.accept_auto_2, SIGNAL("toggled(bool)"),self.slotSelectAutoEraseAll)
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
-        self.connect(self.ui.device_list, SIGNAL("currentRowChanged(int)"),self.slotDeviceChanged)
-        self.slotDeviceChanged(0)
+        self.connect(self.ui.device_list, SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
+
+    def fillDeviceList(self,limit=None):
+        self.ui.device_list.clear()
+        # fill device list
+        for dev in yali4.storage.devices:
+            if dev.getTotalMB() >= ctx.consts.min_root_size:
+                if limit:
+                    if dev in self.resizableDisks:
+                        DeviceItem(self.ui.device_list, dev)
+                else:
+                    DeviceItem(self.ui.device_list, dev)
+
+        # select the first disk by default
+        self.ui.device_list.setCurrentRow(0)
 
     def shown(self):
+
+        # scan partitions for resizing
         self.scanPartitions()
+        self.fillDeviceList()
+
+
         def sortBySize(x,y):
             if x["newSize"]>y["newSize"]:return -1
             elif x["newSize"]==y["newSize"]: return 0
             return 1
+
         self.arp = []
         self.autoPartPartition = None
         self.resizablePartitions.sort(sortBySize)
+
         for partition in self.resizablePartitions:
             if partition["newSize"] / 2 >= ctx.consts.min_root_size:
                 self.arp.append(partition)
+
         if len(self.arp) == 0:
             self.ui.accept_auto_1.setEnabled(False)
+            self.ui.accept_auto_2.toggle()
         elif len(self.arp) == 1:
             self.autoPartPartition = self.arp[0]
+            self.ui.accept_auto_1.toggle()
+
         ctx.mainScreen.disableNext()
         self.updateUI()
 
@@ -170,11 +191,20 @@ about disk partitioning.
         if move:
             ctx.mainScreen.slotNext(dryRun=True)
 
-    def slotDeviceChanged(self, i):
-        self.device = self.ui.device_list.item(i).getDevice()
+    def slotDeviceChanged(self, n, o):
+        if n:
+            self.device = n.getDevice()
+            ctx.debugger.log("Install device selected as %s" % self.device.getPath())
 
-    def slotSelectAuto(self):
-        self.enable_next = True
+    def slotSelectAutoEraseAll(self,state):
+        self.fillDeviceList()
+        self.enable_next = state
+        self.device = self.ui.device_list.currentItem().getDevice()
+        self.updateUI()
+
+    def slotSelectAutoUseAvail(self, state):
+        self.fillDeviceList(state)
+        self.enable_next = state
         self.device = self.ui.device_list.currentItem().getDevice()
         self.updateUI()
 
