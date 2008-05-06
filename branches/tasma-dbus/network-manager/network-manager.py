@@ -69,6 +69,7 @@ def create_network_manager(parent, name):
     global kapp
     
     kapp = KApplication.kApplication()
+    DBusQtMainLoop(set_as_default=True)
     return Module(parent, name)
 
 # Standalone
