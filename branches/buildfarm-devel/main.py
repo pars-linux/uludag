@@ -25,7 +25,6 @@ import logger
 import mailer
 import qmanager
 import pisiinterface
-import pisi.util
 
 """ Gettext Support """
 import gettext
@@ -103,17 +102,16 @@ def buildPackages():
         mailer.info(_("Queue finished without a problem!...\n\n\nNew binary packages are;\n\n%s\n\nnow in repository...") % "\n".join(packageList))
     logger.raw()
 
-    generateIndex(config.binaryPath)
-    generateIndex(config.binaryDebugPath)
-
-def generateIndex(repositoryPath = config.binaryPath):
     logger.raw()
     logger.info(_("Generating PiSi Index..."))
 
     current = os.getcwd()
-    os.chdir(repositoryPath)
+    os.chdir(config.binaryPath)
     os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
     logger.info(_("PiSi Index generated..."))
+
+    #FIXME: will be enableb after some internal tests
+    #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
 
     # Check packages containing binaries and libraries broken by any package update
     os.system("/usr/bin/revdep-rebuild --force")
@@ -152,49 +150,37 @@ def movePackages(newBinaryPackages, oldBinaryPackages):
     remove = os.remove
     copy   = shutil.copy
 
-    def moveOldPackage(package, debug = False):
+    def moveOldPackage(package):
         logger.info(_("*** Old package '%s' is processing") % (package))
         if exists(join(config.binaryPath, package)):
-            if debug:
-                remove(join(config.binaryDebugPath, package))
-            else:
-                remove(join(config.binaryPath, package))
+            remove(join(config.binaryPath, package))
 
         if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
 
-    def moveNewPackage(package, debug = False):
+    def moveNewPackage(package):
         logger.info(_("*** New package '%s' is processing") % (package))
         if exists(join(config.workDir, package)):
-            if debug:
-                copy(join(config.workDir, package), config.binaryDebugPath)
-            else:
-                copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
-    def moveUnchangedPackage(package, debug = False):
+    def moveUnchangedPackage(package):
         logger.info(_("*** Unchanged package '%s' is processing") % (package))
         if exists(join(config.workDir, package)):
-            if debug:
-                copy(join(config.workDir, package), config.binaryDebugPath)
-            else:
-                copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
     for package in newPackages:
         if package:
-            isDebug = (pisi.util.parse_package_name(package)[0]).endswith("-debug")
-            moveNewPackage(package, isDebug)
+            moveNewPackage(package)
 
     for package in oldPackages:
         if package:
-            isDebug = (pisi.util.parse_package_name(package)[0]).endswith("-debug")
-            moveOldPackage(package, isDebug)
+            moveOldPackage(package)
 
     for package in unchangedPackages:
         if package:
-            isDebug = (pisi.util.parse_package_name(package)[0]).endswith("-debug")
-            moveUnchangedPackage(package, isDebug)
+            moveUnchangedPackage(package)
 
 def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join
@@ -204,7 +190,6 @@ def removeBinaryPackageFromWorkDir(package):
 def create_directories():
     directories = [config.workDir,
                    config.binaryPath,
-                   config.binaryDebugPath,
                    config.localPspecRepo,
                    config.outputDir]
 
