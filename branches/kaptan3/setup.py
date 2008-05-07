@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2006, TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -55,10 +55,10 @@ if "dist" in sys.argv:
     sys.exit(0)
 
 app_data = [
-    'src/kaptan.py',
+    ('/usr/kde/3.5/share/apps/kaptan', ['src/kaptan.py']),
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['pics/cr128-app-kaptan.png']),
     ('/usr/kde/3.5/share/apps/kaptan/pics', ['pics/']),
-    'src/kaptan.desktop',
+    ('/usr/kde/3.5/share/autostart/', ['src/kaptan.desktop']),
     ('/usr/kde/3.5/share/apps/kaptan/screens', ['src/screens']),
     ('/usr/kde/3.5/share/apps/kaptan/pics/themes', ['pics/themes/']),
     ('/usr/kde/3.5/share/apps/kaptan/pics/icons', ['pics/icons/'])
