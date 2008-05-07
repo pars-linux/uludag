@@ -161,16 +161,3 @@ class Commander(QObject):
     def setCache(self, enabled, limit):
         self.comar.setCache(enabled, limit)
 
-    def checkCacheLimits(self):
-        print "checkCacheLimits called"
-        config = PisiIface.read_config("/etc/pisi/pisi.conf")
-
-        cache = config.get("general", "package_cache")
-        if cache == "True":
-            limit = config.get("general", "package_cache_limit")
-
-            # If PackageCache is used and limit is 0. It means limitless.
-            if limit and int(limit) != 0:
-                self.clearCache(int(limit) * 1024 * 1024)
-        elif cache == "False":
-            self.clearCache(0)

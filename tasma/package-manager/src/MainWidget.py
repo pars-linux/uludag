@@ -664,10 +664,6 @@ class MainApplicationWidget(QWidget):
         #FIXME: Why do we need to reload pisi module every time. Added for not updating mem cached dbs of pisi
         PisiIface.reloadPisi()
 
-        # after every operation check package cache limits
-        if command not in ["System.Manager.clearCache", "System.Manager.setRepositories"]:
-            self.command.checkCacheLimits()
-
         self.basket.empty()
         self.operateAction.setEnabled(False)
         self.basketAction.setEnabled(False)
