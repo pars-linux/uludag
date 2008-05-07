@@ -215,11 +215,13 @@ class Ext3FileSystem(FileSystem):
 
         lines = os.popen("%s -h %s" % (cmd_path, partition.getPath())).readlines()
 
-        total_blocks = long(filter(lambda line: line.startswith('Block count'), lines)[0].split(':')[1].strip('\n').strip(' '))
-        free_blocks  = long(filter(lambda line: line.startswith('Free blocks'), lines)[0].split(':')[1].strip('\n').strip(' '))
-        block_size   = long(filter(lambda line: line.startswith('Block size'), lines)[0].split(':')[1].strip('\n').strip(' '))
-
-        return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
+        try:
+            total_blocks = long(filter(lambda line: line.startswith('Block count'), lines)[0].split(':')[1].strip('\n').strip(' '))
+            free_blocks  = long(filter(lambda line: line.startswith('Free blocks'), lines)[0].split(':')[1].strip('\n').strip(' '))
+            block_size   = long(filter(lambda line: line.startswith('Block size'), lines)[0].split(':')[1].strip('\n').strip(' '))
+            return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
+        except:
+            return 0
 
     def preResize(self, partition):
         """ FileSystem Check before resize """

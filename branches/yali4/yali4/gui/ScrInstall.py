@@ -167,8 +167,6 @@ Have fun!
         self.pkg_configurator = PkgConfigurator(self)
         self.pkg_configurator.start()
 
-        ctx.yali.info.hide()
-
     def execute(self):
         # stop slide show
         self.timer.stop()
@@ -177,6 +175,7 @@ Have fun!
     def finished(self):
         if self.hasErrors:
             return
+        ctx.yali.info.hide()
         # trigger next screen. will activate execute()
         ctx.mainScreen.slotNext()
 

@@ -51,20 +51,29 @@ class ResizeWidget(QtGui.QWidget):
                 }
 
                 QWidget#PartResizeWidget {
-                    background-image: url(:/gui/pics/trans.png); 
+                    background-image: url(:/gui/pics/trans.png);
                 }
         """)
+
         self.resize(ctx.mainScreen.ui.size())
         self.dev = dev
         self.part = part
         minSize = self.part.getMinResizeMB()
-        maxSize = self.part.getMB()
-        self.ui.resizeMB.setMaximum(maxSize)
-        self.ui.resizeMBSlider.setMaximum(maxSize)
-        self.ui.resizeMB.setMinimum(minSize)
-        self.ui.resizeMBSlider.setMinimum(minSize)
+
+        if minSize == 0:
+            self.ui.resizeMB.setVisible(False)
+            self.ui.resizeMBSlider.setVisible(False)
+            self.ui.resizeButton.setVisible(False)
+            self.ui.label.setText(_("""<p><span style="color:#FFF"><b>It seems this partition is not ready for resizing.</b></span></p>"""))
+        else:
+            maxSize = self.part.getMB()
+            self.ui.resizeMB.setMaximum(maxSize)
+            self.ui.resizeMBSlider.setMaximum(maxSize)
+            self.ui.resizeMB.setMinimum(minSize)
+            self.ui.resizeMBSlider.setMinimum(minSize)
+            self.connect(self.ui.resizeButton, SIGNAL("clicked()"), self.slotResize)
+
         self.connect(self.ui.cancelButton, SIGNAL("clicked()"), self.hide)
-        self.connect(self.ui.resizeButton, SIGNAL("clicked()"), self.slotResize)
 
     def slotResize(self):
         ctx.yali.info.updateAndShow(_("Resizing to %s MB..") % (self.ui.resizeMB.value()))
