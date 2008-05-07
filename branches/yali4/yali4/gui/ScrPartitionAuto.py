@@ -102,7 +102,7 @@ about disk partitioning.
     def shown(self):
 
         # scan partitions for resizing
-        self.scanPartitions()
+        ctx.yali.scanPartitions(self)
         self.fillDeviceList()
 
         def sortBySize(x,y):
@@ -127,34 +127,6 @@ about disk partitioning.
 
         ctx.mainScreen.disableNext()
         self.updateUI()
-
-    def scanPartitions(self):
-        self.resizablePartitions = []
-        self.resizableDisks = []
-        ctx.debugger.log("Disk analyze started.")
-        ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
-        for dev in yali4.storage.devices:
-            ctx.debugger.log("In disk %s, %d mb is free." % (dev.getPath(), dev.getLargestContinuousFreeMB()))
-            if dev.primaryAvailable():
-                if dev.getLargestContinuousFreeMB() > ctx.consts.min_root_size + 100:
-                    self.resizableDisks.append(dev)
-                for part in dev.getOrderedPartitionList():
-                    ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
-                    if part.isResizable():
-                        minSize = part.getMinResizeMB()
-                        possibleFreeSize = part.getMB() - minSize
-                        ctx.debugger.log(" - This partition is resizable")
-                        ctx.debugger.log(" - Total size of this partition is %.2f MB" % part.getMB())
-                        ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
-                        ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
-                        self.resizablePartitions.append({"partition":part,"newSize":possibleFreeSize})
-                        if possibleFreeSize+100 > ctx.consts.min_root_size:
-                            if dev not in self.resizableDisks:
-                                self.resizableDisks.append(dev)
-                    else:
-                        ctx.debugger.log("This partition is not resizable")
-            else:
-                ctx.debugger.log("In disk %s, there is no primary avaliable" % (dev.getPath()))
 
     def execute(self):
         ctx.installData.autoPartDev = None

@@ -88,7 +88,6 @@ class Dialog(QtGui.QDialog):
         QMetaObject.connectSlotsByName(self)
 
         self.setStyleSheet("""
-            QDialog { background-image:url(':/gui/pics/transBlack.png'); }
             QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}
         """)
 
@@ -164,11 +163,12 @@ class InformationWindow(QtGui.QWidget):
         self.setObjectName("InfoWin")
         self.resize(280,200)
         self.setStyleSheet("""
-            QLabel { border: 1px solid #CCC;
+            QLabel { border: 1px solid #555;
                      border-radius: 4px;
                      background-image:url(':/gui/pics/transBlack.png');}
-            QLabel#message { border: 2px solid #AAA;
-                             background-color:#FFFFFF }
+            QLabel#message { border: 1px solid #555;
+                             color:#FFFFFF;
+                             font:bold;}
         """)
         self.gridlayout = QtGui.QGridLayout(self)
 

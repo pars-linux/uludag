@@ -123,6 +123,7 @@ class Yali:
         ctx.mainScreen.disableNext()
         ctx.mainScreen.disableBack()
 
+        self.info.updateAndShow(_("Starting for CD Check"))
         class PisiUI(pisi.ui.UI):
             def notify(self, event, **keywords):
                 pass
@@ -140,6 +141,7 @@ class Yali:
         for pkg_name in pkg_names:
             cur += 1
             ctx.debugger.log("Checking %s " % pkg_name)
+            self.info.updateMessage(_("Checking: %s") % pkg_name)
             if yali4.pisiiface.check_package_hash(pkg_name):
                 rootWidget.progressBar.setValue(cur)
             else:
@@ -147,18 +149,21 @@ class Yali:
                                _("<b><p>Integrity check for packages failed.\
                                   It seems that installation CD is broken.</p></b>"))
 
-        rootWidget.checkLabel.setText(_('<font color="#257216">Check succeeded. You can proceed to the next screen.</font>'))
+        rootWidget.checkLabel.setText(_('<font color="#FFF"><b>Check succeeded. You can proceed to the next screen.</b></font>'))
 
         yali4.pisiiface.remove_repo(ctx.consts.cd_repo_name)
 
         ctx.mainScreen.enableNext()
         ctx.mainScreen.enableBack()
 
+        self.info.hide()
+
     def setKeymap(self, keymap):
         yali4.localeutils.set_keymap(keymap["xkblayout"], keymap["xkbvariant"])
         ctx.installData.keyData = keymap
 
     def setTime(self, rootWidget):
+        self.info.updateAndShow(_("Setting time settings.."))
         date = rootWidget.calendarWidget.selectedDate()
         args = "%02d%02d%02d%02d%04d.%02d" % (date.month(), date.day(),
                                               rootWidget.timeHours.time().hour(), rootWidget.timeMinutes.time().minute(),
@@ -171,11 +176,42 @@ class Yali:
         # Sync date time with hardware
         ctx.debugger.log("YALI's time is syncing with the system.")
         os.system("hwclock --systohc")
+        self.info.hide()
 
     def setTimeZone(self, rootWidget):
         # Store time zone selection we will set it in processPending actions.
         ctx.installData.timezone = rootWidget.timeZoneList.currentItem().text()
         ctx.debugger.log("Time zone selected as %s " % ctx.installData.timezone)
+
+    def scanPartitions(self, rootWidget):
+        self.info.updateAndShow(_("Disk analyze started.."))
+        rootWidget.resizablePartitions = []
+        rootWidget.resizableDisks = []
+        ctx.debugger.log("Disk analyze started.")
+        ctx.debugger.log("%d disk found." % len(yali4.storage.devices))
+        for dev in yali4.storage.devices:
+            ctx.debugger.log("In disk %s, %d mb is free." % (dev.getPath(), dev.getLargestContinuousFreeMB()))
+            if dev.primaryAvailable():
+                if dev.getLargestContinuousFreeMB() > ctx.consts.min_root_size + 100:
+                    rootWidget.resizableDisks.append(dev)
+                for part in dev.getOrderedPartitionList():
+                    ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
+                    if part.isResizable():
+                        minSize = part.getMinResizeMB()
+                        possibleFreeSize = part.getMB() - minSize
+                        ctx.debugger.log(" - This partition is resizable")
+                        ctx.debugger.log(" - Total size of this partition is %.2f MB" % part.getMB())
+                        ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
+                        ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
+                        rootWidget.resizablePartitions.append({"partition":part,"newSize":possibleFreeSize})
+                        if possibleFreeSize+100 > ctx.consts.min_root_size:
+                            if dev not in rootWidget.resizableDisks:
+                                rootWidget.resizableDisks.append(dev)
+                    else:
+                        ctx.debugger.log("This partition is not resizable")
+            else:
+                ctx.debugger.log("In disk %s, there is no primary avaliable" % (dev.getPath()))
+        self.info.hide()
 
     def autoPartDevice(self):
         self.info.updateAndShow(_("Writing disk tables ..."))
