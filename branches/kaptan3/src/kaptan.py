@@ -113,7 +113,7 @@ class Kaptan(kaptanUi):
             _w = screen.Widget()
             self.pageStack.addWidget(_w)
             sId = self.pageStack.id(_w)
-            sCaption = screen.Widget().caption()
+            sCaption = _w.caption()
             screenId[sId] = sCaption
 
             if sId == 1:

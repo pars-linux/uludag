@@ -106,7 +106,6 @@ class Widget(WallpaperWidget, ScreenWidget):
                     # get normal size wallpapers
                     self.wallpaperList[wallpaperFile] = wallpaperTitle
                 except ConfigParser.NoOptionError, e:
-                    print "Error: ", e
                     logging.debug("No Option Error: " + str(e))
 
         self.sortedWallpaperList = self.dictSort(self.wallpaperList)
@@ -117,7 +116,12 @@ class Widget(WallpaperWidget, ScreenWidget):
                 if wallpaperTitle == i:
                     item = KListViewItem(self.listWallpaper, "file", str(wallpaperFile))
                     item.setText(0,wallpaperTitle)
-                    item.setPixmap(0,QPixmap(QImage(os.path.join(self.tmpThumbDir,  os.path.basename(wallpaperFile) + ".thumbnail"))))
+                    wpCurrentThumbnail = os.path.join(self.tmpThumbDir,  os.path.basename(wallpaperFile) + ".thumbnail")
+
+                    if os.path.exists(wpCurrentThumbnail):
+                        item.setPixmap(0,QPixmap(QImage(wpCurrentThumbnail)))
+                    else:
+                        item.setPixmap(0,QPixmap(QImage(locate("data", self.nonePic))))
 
                     if wallpaperFile in self.wallpaperList.keys():
                         if wallpaperFile in self.wideList.keys():
@@ -144,13 +148,16 @@ class Widget(WallpaperWidget, ScreenWidget):
     def setWps(self, wpFile, wpTitle):
         item = KListViewItem(self.listWallpaper, "file", str(wpFile))
         item.setText(0,wpTitle)
-        item.setPixmap(0,QPixmap(QImage(os.path.join(self.tmpThumbDir,  os.path.basename(wpFile) + ".thumbnail"))))
+        wpCurrentThumbnail = os.path.join(self.tmpThumbDir,  os.path.basename(wpFile) + ".thumbnail")
+
+        if os.path.exists(wpCurrentThumbnail):
+            item.setPixmap(0,QPixmap(QImage(wpCurrentThumbnail)))
+        else:
+            item.setPixmap(0,QPixmap(QImage(locate("data", self.nonePic))))
 
     def resizeImages(self, resizeList):
         if current:
             resizeList[current] = self.currentText
-        else:
-            resizeList[self.nonePic] = self.noneText
 
         for infile in resizeList:
             tmpDir = os.path.join(self.tmpThumbDir, os.path.splitext(os.path.basename(infile))[0])
@@ -159,7 +166,6 @@ class Widget(WallpaperWidget, ScreenWidget):
                 im.thumbnail(self.thumbSize, Image.NEAREST)
                 im.save(tmpDir + ".jpg.thumbnail", "BMP")
             except IOError, e:
-                print "Error: ", e
                 logging.debug("IO Error: " + str(e))
 
     def showAllWallpapers(self):
