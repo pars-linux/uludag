@@ -15,14 +15,14 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
+import addrepo
+
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
 
 isUpdateOn = False
 
 class Widget(PackageWidget, ScreenWidget):
-
-    #TODO: Add contrib depo
 
     # title and description at the top of the dialog window
     title = i18n("Package Manager")
@@ -51,13 +51,36 @@ class Widget(PackageWidget, ScreenWidget):
         self.checkBoxContrib.setText(i18n("Add contrib repo"))
 
         #policykit olana kadar enabled
-        self.checkBoxContrib.setEnabled(False)
+        self.checkBoxContrib.setEnabled(True)
 
         #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pixPackage.setPixmap(QPixmap(locate("data", "kaptan/pics/package.png")))
+
         self.showTray.connect(self.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
-        self.checkUpdate.connect(self.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected);
+        self.checkUpdate.connect(self.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
+        self.checkBoxContrib.connect(self.checkBoxContrib, SIGNAL("toggled(bool)"), self.addRepo)
+
+    def addRepo(self):
+        try:
+            addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
+            return 
+        except Exception, e:
+            print e
+            if e.get_dbus_name().endswith('policy.no'):
+                print 'Access denied'
+                #pop up
+                return True
+            elif e.get_dbus_name().endswith('policy.auth_admin'):
+                print 'Access denied, root password required'
+                addrepo.auth()
+            elif e.get_dbus_name().endswith('policy.auth_user'):
+                print 'Access denied, user password required'
+                addrepo.auth()
+            try:
+                addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
+            except:
+                return False
 
     def enableCheckTime(self):
         if self.showTray.isOn():
