@@ -78,15 +78,16 @@ class MainApplicationWidget(QWidget):
 
         self.show()
 
+    def updateAfterAPackageClicked(self):
+        self.updateButtons()
+        self.updateStatusBar()
+
     def packageClicked(self, itemName, checked):
         if checked:
             if itemName not in self.basket.packages:
                 self.basket.add(itemName)
         else:
             self.basket.remove(itemName)
-
-        self.updateButtons()
-        self.updateStatusBar()
 
     def setupInterface(self):
         self.layout = QGridLayout(self)
