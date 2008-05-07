@@ -63,6 +63,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
         self.getCacheSettings()
         self.reposChanged = False
+        self.cacheEnabled = False
 
     def setCacheSettings(self, useCache, cacheLimit):
         self.parent.command.setCache(useCache, cacheLimit)
@@ -84,7 +85,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             enableCache = True
         else:
             enableCache = False
-        
+
+        self.cacheEnabled = enableCache
         self.useCacheCheck.setChecked(enableCache)
         self.useCacheSize.setValue(cache_limit)
 
@@ -196,7 +198,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.parent.settings.setValue(Settings.general, "SystemTray", self.systemTray.isChecked())
         self.parent.settings.setValue(Settings.general, "UpdateCheck", self.intervalCheck.isChecked())
         self.parent.settings.setValue(Settings.general, "UpdateCheckInterval", self.intervalSpin.value())
-        self.setCacheSettings(self.useCacheCheck.isChecked(), self.useCacheSize.value())
+
+        # set cache if changed
+        if self.cacheEnabled != self.useCacheCheck.isChecked():
+            self.setCacheSettings(self.useCacheCheck.isChecked(), self.useCacheSize.value())
 
         if self.intervalCheck.isChecked():
             self.parent.parent.tray.updateInterval(self.intervalSpin.value())
