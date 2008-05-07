@@ -89,7 +89,7 @@ Click Next button to proceed.
         self.ui.pass1.setFocus()
 
     def execute(self):
-        ctx.installData.rootPassword = self.ui.pass1.text().toAscii()
+        ctx.installData.rootPassword = unicode(self.ui.pass1.text())
         ctx.installData.hostName = self.ui.hostname.text().toAscii()
         return True
 

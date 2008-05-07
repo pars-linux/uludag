@@ -160,7 +160,7 @@ don't you?
 
         def setPackages():
             global bus
-            if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
+            if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
                 ctx.debugger.log("OemInstall selected.")
                 obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
                 obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
