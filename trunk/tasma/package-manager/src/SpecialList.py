@@ -43,8 +43,10 @@ class SpecialList(QObject):
         node.addEventListener(DOM.DOMString("click"),self.eventListener,True)
 
     def slotCheckboxClicked(self, itemName, checked):
+        self.emit(PYSIGNAL("checkboxClicked"), (itemName, checked))
+
         if not self.selectingAll:
-            self.emit(PYSIGNAL("checkboxClicked"), (itemName, checked))
+            self.parent.parent().updateAfterAPackageClicked()
 
     def slotHomepageClicked(self, link):
         KRun.runURL(KURL(link),"text/html",False,False);
@@ -59,9 +61,7 @@ class SpecialList(QObject):
             if reverse or not element.checked():
                 element.click()
         self.selectingAll = False
-
-        #TODO: Fix this
-        #self.parent.updateStatusBar()
+        self.parent.parent().updateAfterAPackageClicked()
 
     def clear(self):
         self.part.view().setContentsPos(0, 0)
