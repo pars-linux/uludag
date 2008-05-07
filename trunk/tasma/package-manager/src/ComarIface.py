@@ -12,6 +12,7 @@
 
 from qt import QMutex, SIGNAL
 from kdeui import KMessageBox
+from kdecore import i18n
 
 # DBus
 import dbus
@@ -33,7 +34,7 @@ class ComarIface:
             self.sysBus = dbus.SystemBus()
             self.sesBus = dbus.SessionBus()
         except dbus.DBusException:
-            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            KMessageBox.error(None, i18n("Unable to connect to DBus."), i18n("DBus Error"))
             return False
         return True
 
@@ -47,14 +48,14 @@ class ComarIface:
             self.handler(signal, args)
 
     def busError(self, exception):
-        KMessageBox.error(self, str(exception), "D-Bus Error")
+        KMessageBox.error(None, str(exception), i18n("D-Bus Error"))
         self.setupBusses()
 
     def comarAuthError(self, exception):
-        KMessageBox.error(self, str(exception), "COMAR Auth Error")
+        KMessageBox.error(None, str(exception), i18n("COMAR Auth Error"))
 
     def comarError(self, exception):
-        KMessageBox.error(self, str(exception), "COMAR Error")
+        KMessageBox.error(None, str(exception), i18n("COMAR Error"))
 
     def callMethod(self, method, action, handler, *args):
         print "Method: %s      Action: %s" % (method, action)
