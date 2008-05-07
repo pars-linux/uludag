@@ -21,7 +21,8 @@ import dbus.mainloop.qt3
 from handler import CallHandler
 
 class ComarIface:
-    def __init__(self, handler=None):
+    def __init__(self, handler=None, errHandler=None):
+        self.errHandler = errHandler
         self.handler = handler
         # tray and package-manager synchronization
         self.com_lock = QMutex()
@@ -50,12 +51,15 @@ class ComarIface:
     def busError(self, exception):
         KMessageBox.error(None, str(exception), i18n("D-Bus Error"))
         self.setupBusses()
+        self.errHandler()
 
     def comarAuthError(self, exception):
         KMessageBox.error(None, str(exception), i18n("COMAR Auth Error"))
+        self.errHandler()
 
     def comarError(self, exception):
         KMessageBox.error(None, str(exception), i18n("COMAR Error"))
+        self.errHandler()
 
     def callMethod(self, method, action, handler, *args):
         print "Method: %s      Action: %s" % (method, action)

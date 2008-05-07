@@ -24,9 +24,15 @@ class Commander(QObject):
         QObject.__init__(self)
         self.parent = parent
         try:
-            self.comar = ComarIface.ComarIface(self.handler)
+            self.comar = ComarIface.ComarIface(self.handler, self.errHandler)
         except:
             parent.showErrorMessage("Cannot connect to Comar daemon")
+
+    def errHandler():
+        self.comar.com_lock.unlock()
+        self.parent.finished("System.Manager.cancelled")
+        self.parent.resetState()
+        self.parent.refreshState()
 
     def handler(self, signal, data):
         print "Signal: ", signal
