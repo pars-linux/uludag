@@ -58,7 +58,6 @@ class Widget(GoodbyeWidget, ScreenWidget):
             if isMigrationAvaiable:
                 self.groupBoxMigration.hide()
         except OSError, e:
-            print "Error: ", e
             logging.debug("Migration is not installed: " + str(e))
             # hide migration part, if it's not installed.
             self.groupBoxMigration.hide()
