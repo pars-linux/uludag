@@ -28,7 +28,7 @@ class Commander(QObject):
         except:
             parent.showErrorMessage("Cannot connect to Comar daemon")
 
-    def errHandler():
+    def errHandler(self):
         self.comar.com_lock.unlock()
         self.parent.finished("System.Manager.cancelled")
         self.parent.resetState()
