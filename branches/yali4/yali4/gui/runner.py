@@ -100,6 +100,7 @@ class Runner:
         self._window.ui.resize(self._app.desktop().size())
         self._window.ui.move(0,0)
         self._window.ui.show()
+        ctx.yali.info.updateMessage()
 
         # For testing..
         # self._window.ui.resize(QSize(800,600))

@@ -570,7 +570,7 @@ class PartEdit(QtGui.QWidget):
         self.ui.formatType.setCurrentIndex(0)
         self.ui.formatCheck.setChecked(False)
 
-        self.ui.resizePartition.setVisible(part.isResizable())
+        self.ui.resizePartition.setVisible(part.isResizable() and part.isFileSystemReady())
         if part._parted_type == parteddata.freeSpaceType:
             self.ui.deletePartition.setVisible(False)
             self.ui.resizePartition.setVisible(False)

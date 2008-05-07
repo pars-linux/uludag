@@ -271,7 +271,7 @@ class Yali:
         self.info.updateAndShow(_("Resizing ..."))
         _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
 
-        self.into.updateMessage(_("Resize Finished ..."))
+        self.info.updateMessage(_("Resize Finished ..."))
         ctx.debugger.log("UA: Resize finished.")
         time.sleep(1)
 
@@ -283,7 +283,7 @@ class Yali:
         else:
             ptype = PARTITION_PRIMARY
 
-        self.into.updateMessage(_("Creating new partition ..."))
+        self.info.updateMessage(_("Creating new partition ..."))
         ctx.debugger.log("UA: newStart : %s " % newStart)
         _newPart = dev.addPartition(None,
                                     ptype,

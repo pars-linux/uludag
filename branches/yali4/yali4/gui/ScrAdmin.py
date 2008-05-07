@@ -81,7 +81,9 @@ Click Next button to proceed.
     def shown(self):
         try:
             # Use first added user's name as machine name
-            self.ui.hostname.setText("%s-pardus" % yali4.users.pending_users[0].username)
+            hostname_guess = "%s-pardus" % yali4.users.pending_users[0].username
+            if self.ui.hostname.text() == '':
+                self.ui.hostname.setText(hostname_guess)
         except:
             pass
         self.setNext()

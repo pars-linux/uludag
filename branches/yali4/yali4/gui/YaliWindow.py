@@ -39,7 +39,7 @@ class Widget(Ui_YaliMain):
         self.screenData = None
         # shortcut to open debug window
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
-        self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
+        # self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
         # move one step at a time
         self.moveInc = 1
 
