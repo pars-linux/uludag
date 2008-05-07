@@ -285,6 +285,22 @@ QSpinBox::down-button:hover {
 
 QSpinBox::down-button:pressed {
     border-image: url(:/images/spindown_pressed.png) 1;
+}
+QListWidget {
+    show-decoration-selected: 1;
+    selection-background-color: #E75F10;
+    selection-color: white;
+}
+
+QProgressBar {
+    border: 2px solid #F1610D;
+    border-radius:5px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #F1610D;
+    width: 0.5px;
 }</string>
   </property>
   <layout class="QGridLayout" >

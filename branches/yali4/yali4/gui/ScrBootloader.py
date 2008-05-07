@@ -147,12 +147,14 @@ all your present data on the selected disk will be lost.</p>
                 ctx.yali.autoPartDevice()
                 ctx.yali.checkSwap()
                 ctx.yali.info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
                 ctx.partrequests.applyAll()
 
             elif ctx.installData.autoPartMethod == methodUseAvail:
                 ctx.yali.autoPartUseAvail()
                 ctx.yali.checkSwap()
                 ctx.yali.info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
                 ctx.partrequests.applyAll()
 
         # Manual Partitioning
@@ -166,11 +168,11 @@ all your present data on the selected disk will be lost.</p>
             time.sleep(2)
             ctx.yali.checkSwap()
             ctx.yali.info.updateMessage(_("Formatting ..."))
+            ctx.mainScreen.processEvents()
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
-            ctx.mainScreen.processEvents()
 
-        ctx.yali.info.close()
+        ctx.yali.info.hide()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)

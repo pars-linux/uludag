@@ -76,11 +76,14 @@ class ResizeWidget(QtGui.QWidget):
         self.connect(self.ui.cancelButton, SIGNAL("clicked()"), self.hide)
 
     def slotResize(self):
+        self.hide()
         ctx.yali.info.updateAndShow(_("Resizing to %s MB..") % (self.ui.resizeMB.value()))
         ctx.debugger.log("Resize started on partition %s " % self.part.getPath())
+        QTimer.singleShot(500,self.res)
+
+    def res(self):
         self.dev.resizePartition(self.part._fsname, int(self.ui.resizeMB.value()),self.part)
         self.rootWidget.update()
-        self.hide()
         ctx.yali.info.hide()
 
 class AutoPartQuestionWidget(QtGui.QWidget):

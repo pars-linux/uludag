@@ -90,9 +90,12 @@ It is important to use correct settings.
     def shown(self):
         self.timer.start(1000)
 
+    def setTime(self):
+        ctx.yali.setTime(self.ui)
+
     def execute(self):
         if not self.timer.isActive() or self.isDateChanged:
-            ctx.yali.setTime(self.ui)
+            QTimer.singleShot(500,self.setTime)
             self.timer.stop()
 
         ctx.yali.setTimeZone(self.ui)

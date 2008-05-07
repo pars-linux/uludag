@@ -30,7 +30,7 @@ class windowTitle(QtGui.QFrame):
 
         self.label = QtGui.QLabel(self)
         self.label.setObjectName("label")
-        self.label.setStyleSheet("padding-left:4px; font:bold 11px")
+        self.label.setStyleSheet("padding-left:4px; font:bold 11px; color: #FFFFFF;")
 
         self.hboxlayout.addWidget(self.label)
 
@@ -88,7 +88,7 @@ class Dialog(QtGui.QDialog):
         QMetaObject.connectSlotsByName(self)
 
         self.setStyleSheet("""
-            QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}
+            QFrame#windowTitle {background-color:#E75F10;color:#FFF;border:1px solid #FFF;border-radius:1px;}
         """)
 
 class WarningDialog(Dialog):
