@@ -100,7 +100,12 @@ loader.
                      self.slotSelect)
 
     def shown(self):
-        ctx.installData.orderedDiskList = yali4.storage.getOrderedDiskList()
+
+        if len(yali4.storage.devices) > 1:
+            ctx.installData.orderedDiskList = yali4.storage.getOrderedDiskList()
+        else:
+            ctx.installData.orderedDiskList = yali4.storage.detect_all()
+
         ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(ctx.installData.orderedDiskList))
 
     def backCheck(self):
