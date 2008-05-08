@@ -59,7 +59,13 @@ class Widget(PackageWidget, ScreenWidget):
 
         self.showTray.connect(self.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
         self.checkUpdate.connect(self.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
-        self.checkBoxContrib.connect(self.checkBoxContrib, SIGNAL("toggled(bool)"), self.addRepo)
+        self.checkBoxContrib.connect(self.checkBoxContrib, SIGNAL("toggled(bool)"), self.slotContribRepo)
+
+    def slotContribRepo(self):
+        if self.checkBoxContrib.isChecked():
+            self.addRepo()
+        else:
+            self.removeRepo()
 
     def addRepo(self):
         try:
@@ -72,16 +78,42 @@ class Widget(PackageWidget, ScreenWidget):
                 return False
             elif e.get_dbus_name().endswith('policy.auth_admin'):
                 print 'Access denied, root password required'
-                authResult = addrepo.auth()
+                authResult = addrepo.auth("addrepository")
 
             elif e.get_dbus_name().endswith('policy.auth_user'):
                 print 'Access denied, user password required'
-                authResult = addrepo.auth()
+                authResult = addrepo.auth("addrepository")
             else:
                 return False
             try:
                 if authResult:
                     addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
+                else:
+                    return False
+            except:
+                return False
+
+    def removeRepo(self):
+        try:
+            addrepo.removeRepo("contrib")
+            return True
+        except Exception, e:
+            print e
+            if e.get_dbus_name().endswith('policy.no'):
+                print 'Access denied'
+                return False
+            elif e.get_dbus_name().endswith('policy.auth_admin'):
+                print 'Access denied, root password required'
+                authResult = addrepo.auth("removerepository")
+
+            elif e.get_dbus_name().endswith('policy.auth_user'):
+                print 'Access denied, user password required'
+                authResult = addrepo.auth("removerepository")
+            else:
+                return False
+            try:
+                if authResult:
+                    addrepo.removeRepo("contrib")
                 else:
                     return False
             except:
