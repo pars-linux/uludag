@@ -224,7 +224,7 @@ class DBusInterface(Hook):
             self.error(exception)
     
     def error(self, exception):
-        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+        KMessageBox.error(None, str(exception), i18n("COMAR Error"))
     
     def errorDBus(self, exception):
         if self.dia:
