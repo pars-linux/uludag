@@ -120,7 +120,7 @@ class DBusInterface:
         self.nr_queried = 0
         self.nr_conns = 0
         self.nr_empty = 0
-        self.winID = None
+        self.winID = 0
         
         if self.openBus():
             self.setup()
@@ -453,7 +453,6 @@ class Applet:
         tray.show()
         tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
         self.trays = [tray]
-        comlink.winID = tray.winId()
 
     def deviceGroup(self, id):
         if self.mode == 1:
@@ -465,7 +464,6 @@ class Applet:
             tray.show()
             tray.connect(tray, SIGNAL("quitSelected()"), self.slotQuit)
             self.trays.append(tray)
-        comlink.winID = self.trays[0].winId()
 
     def slotQuit(self):
         autostart = KMessageBox.questionYesNo(None, i18n("Should network-applet start automatically when you login?"))

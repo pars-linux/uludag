@@ -177,7 +177,7 @@ class DBusInterface(Hook):
         self.nr_queried = 0
         self.nr_conns = 0
         self.nr_empty = 0
-        self.winID = None
+        self.winID = 0
         
         if self.openBus():
             self.setup()
