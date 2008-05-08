@@ -36,12 +36,14 @@ class Widget(PackageWidget, ScreenWidget):
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
 
-        #set updateTime
+        # set updateTime
         self.updateInterval.setValue(self.updateTime)
+
+        # set repo name and address
         self.repoName = "contrib"
         self.repoAddress = "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2"
 
-        #set texts
+        # set texts
         self.setCaption(i18n("Package"))
         self.textPackage.setText(i18n("<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can easily install new programs and upgrade your system and also can see new upgrades of the programs periodically  from the system tray with package manager."))
         QToolTip.add(self.pixPackage,i18n("tooltipPisiPopup","Pisi Pop-Up Baloon"))
@@ -55,7 +57,7 @@ class Widget(PackageWidget, ScreenWidget):
 
         self.checkBoxContrib.setEnabled(True)
 
-        #set images
+        # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pixPackage.setPixmap(QPixmap(locate("data", "kaptan/pics/package.png")))
 
@@ -64,14 +66,24 @@ class Widget(PackageWidget, ScreenWidget):
         self.checkBoxContrib.connect(self.checkBoxContrib, SIGNAL("toggled(bool)"), self.slotContribRepo)
 
         self.repodb = pisi.db.repodb.RepoDB()
-        if self.repoName in self.repodb.list_repos():
-            self.groupBoxRepo.hide()
+
+        n = 1
+
+        for repo in self.repodb.list_repos():
+            if self.repoAddress == self.repodb.get_repo_url(repo):
+                self.groupBoxRepo.hide()
+            else:
+                for r in self.repodb.list_repos():
+                    if r == self.repoName + str(n):
+                        n = n + 1
+                    else:
+                        self.repoName = r + str(n)
 
     def slotContribRepo(self):
         if self.checkBoxContrib.isChecked():
-            self.addRepo()
+            print self.addRepo()
         else:
-            self.removeRepo()
+            print self.removeRepo()
 
     def addRepo(self):
         try:
