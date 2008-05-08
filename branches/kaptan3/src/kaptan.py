@@ -76,8 +76,7 @@ class Kaptan(kaptanUi):
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/bg.png")))
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
         self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
-        self.pageDesc.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/bg.png")))
-        self.pageTitle.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/bg.png")))
+        self.pageDesc.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/text_bg.png")))
         self.pageIcon.setPixmap(QPixmap(locate("data", icon)))
 
         # set button icons
@@ -88,7 +87,6 @@ class Kaptan(kaptanUi):
         self.buttonFinish.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
 
         # set texts
-        self.pageTitle.setText(i18n("Welcome"))
         self.pageDesc.setText(i18n("Welcome to Kaptan Wizard :)"))
         self.buttonCancel.setText(i18n("&Cancel"))
         self.buttonBack.setText(i18n("&Back"))
@@ -135,7 +133,6 @@ class Kaptan(kaptanUi):
 
         self.pageStack.raiseWidget(where)
         _w = self.pageStack.visibleWidget()
-        self.pageTitle.setText(_w.title)
         self.pageDesc.setText(_w.desc)
         self.pageIcon.setPixmap(QPixmap(locate("data", _w.icon)))
 
