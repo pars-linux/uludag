@@ -37,6 +37,8 @@ class Widget(GoodbyeWidget, ScreenWidget):
         else:
             self.helpUrl = "http://www.pardus.org.tr/eng/contact.html"
 
+        self.minimumResolution = 800
+
         self.picMigration.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/migration.png")))
         self.picTasma.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/tasma.png")))
         #self.picFeedback.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/feedback.png")))
@@ -49,8 +51,14 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.connect(self.buttonMigration, SIGNAL("clicked()"), self.startMigration)
         self.connect(self.buttonTasma, SIGNAL("clicked()"), self.startTasma)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.startHelp)
+        self.connect(self.buttonResolution, SIGNAL("clicked()"), self.startDisplayManager)
 
         self.isAppAvaiable("migration-users", self.groupBoxMigration)
+
+        # if screen width smaller than 
+        rect =  QApplication.desktop().screenGeometry()
+        if rect.width() > self.minimumResolution:
+            self.groupBoxResolution.hide()
 
     def isAppAvaiable(self, appName, widget2Hide):
         try:
@@ -71,6 +79,11 @@ class Widget(GoodbyeWidget, ScreenWidget):
 
     def execute(self):
         return True
+
+    def startDisplayManager(self):
+        self.proc = QProcess()
+        self.proc.addArgument("display-manager")
+        self.proc.start()
 
     def startMigration(self):
         self.proc = QProcess()
