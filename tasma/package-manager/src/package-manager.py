@@ -32,7 +32,6 @@ def I18N_NOOP(str):
 
 description = I18N_NOOP("GUI for PiSi package manager")
 version = "1.2"
-nop = ["System.Manager.setCache"]
 
 def AboutData():
     global version,description
