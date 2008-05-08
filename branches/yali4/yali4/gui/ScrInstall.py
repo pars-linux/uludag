@@ -161,7 +161,7 @@ Have fun!
         # run dbus in chroot
         yali4.sysutils.chroot_dbus()
 
-        ctx.yali.info.updateMessage(_("Configuring packages for your system!"), True)
+        ctx.yali.info.updateMessage(_("Configuring packages.."), True)
 
         # start configurator thread
         self.pkg_configurator = PkgConfigurator(self)

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-04 19:33+0300\n"
+"POT-Creation-Date: 2008-05-08 12:18+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -30,6 +30,9 @@ msgid ""
 "It seems there is more than one partition for resizing. In this case you can "
 "select a partition from the list below or YALI will select one."
 msgstr ""
+"Yeniden boyutlandırma için uygun birden fazla bölüm bulundu.Böyle bir "
+"durumda aşağıdaki listeden bir bölüm seçebilir ya da YALI'nın seçimine "
+"bırakabilirsiniz."
 
 #: yali4/gui/Ui/autopartquestion.py:79
 msgid "Choose the best target for resizing (recommended)"
@@ -246,44 +249,44 @@ msgstr "Klavyeyi test et: "
 msgid "Yali4"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:447
+#: yali4/gui/Ui/main.py:463
 msgid "Screen Name"
 msgstr "Ekran Adı"
 
-#: yali4/gui/Ui/main.py:449
+#: yali4/gui/Ui/main.py:465
 msgid "Details about the screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:450 yali4/gui/YaliWindow.py:164
+#: yali4/gui/Ui/main.py:466 yali4/gui/YaliWindow.py:166
 msgid "Release Notes"
 msgstr "Sürüm Notları"
 
-#: yali4/gui/Ui/main.py:451
+#: yali4/gui/Ui/main.py:467
 msgid "Toggle Help"
 msgstr "Yardımı Gizle/Göster"
 
-#: yali4/gui/Ui/main.py:452
+#: yali4/gui/Ui/main.py:468
 msgid "Previous Screen"
 msgstr "Önceki Ekran"
 
-#: yali4/gui/Ui/main.py:453
+#: yali4/gui/Ui/main.py:469
 msgid "Back"
 msgstr "Geri"
 
-#: yali4/gui/Ui/main.py:454
+#: yali4/gui/Ui/main.py:470
 msgid "Next Screen"
 msgstr "Sonraki Ekran"
 
-#: yali4/gui/Ui/main.py:455
+#: yali4/gui/Ui/main.py:471
 msgid "Next"
 msgstr "İleri"
 
 #: yali4/gui/Ui/parteditbuttons.py:49 yali4/gui/Ui/partresize.py:106
-#: yali4/gui/YaliDialog.py:130
+#: yali4/gui/YaliDialog.py:129
 msgid "Cancel"
 msgstr "İptal"
 
-#: yali4/gui/Ui/parteditbuttons.py:50 yali4/gui/Ui/partedit.py:193
+#: yali4/gui/Ui/parteditbuttons.py:50 yali4/gui/Ui/partedit.py:190
 msgid "Apply"
 msgstr "Uygula"
 
@@ -312,54 +315,42 @@ msgid "Use :"
 msgstr "Kullan :"
 
 #: yali4/gui/Ui/partedit.py:180
-msgid "as Pardus System Files (mandatory)"
-msgstr "Pardus sistem dosyaları için (zorunlu)"
-
-#: yali4/gui/Ui/partedit.py:181
-msgid "as User Files (optional)"
-msgstr "Kullanıcı dosyaları için (isteğe bağlı)"
-
-#: yali4/gui/Ui/partedit.py:182
-msgid "as Swap Space (optional)"
-msgstr "Takas alanı bölümü olarak (isteğe bağlı)"
-
-#: yali4/gui/Ui/partedit.py:183
-msgid "as Storage Area"
-msgstr "Genel veri saklama için"
-
-#: yali4/gui/Ui/partedit.py:184
 msgid "Size :"
 msgstr "Boyut :"
 
-#: yali4/gui/Ui/partedit.py:185 yali4/gui/Ui/partresize.py:105
+#: yali4/gui/Ui/partedit.py:181 yali4/gui/Ui/partresize.py:105
 msgid " MB"
 msgstr ""
 
-#: yali4/gui/Ui/partedit.py:186
+#: yali4/gui/Ui/partedit.py:182
 msgid "Format :"
 msgstr "Biçimlendir :"
 
-#: yali4/gui/Ui/partedit.py:187
+#: yali4/gui/Ui/partedit.py:183
 msgid "Yes, Format this partition"
 msgstr "Bu disk bölümünü biçimlendir"
 
-#: yali4/gui/Ui/partedit.py:188
+#: yali4/gui/Ui/partedit.py:184
 msgid "File System :"
 msgstr "Dosya Sistemi :"
 
-#: yali4/gui/Ui/partedit.py:189
+#: yali4/gui/Ui/partedit.py:185
 msgid "Ext3"
 msgstr ""
 
-#: yali4/gui/Ui/partedit.py:190
+#: yali4/gui/Ui/partedit.py:186
+msgid "NTFS"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:187
 msgid "Fat 32"
 msgstr ""
 
-#: yali4/gui/Ui/partedit.py:191
+#: yali4/gui/Ui/partedit.py:188
 msgid "Changes will be applied when you finish.."
 msgstr "Değişiklikler işlemi bitirdiğinizde uygulanacaktır.."
 
-#: yali4/gui/Ui/partedit.py:192 yali4/gui/Ui/partlistwidget.py:94
+#: yali4/gui/Ui/partedit.py:189 yali4/gui/Ui/partlistwidget.py:94
 msgid "Reset All Changes"
 msgstr "Tüm Değişiklikleri Geri Al"
 
@@ -469,10 +460,6 @@ msgstr "Sistem yöneticisi parolası (tekrar):"
 msgid "Hostname:"
 msgstr "Makine Adı:"
 
-#: yali4/gui/Ui/rootpasswidget.py:214
-msgid "pardus"
-msgstr "pardus"
-
 #: yali4/gui/Ui/setupuserswidget.py:187
 msgid "New User"
 msgstr "Yeni Kullanıcı"
@@ -493,7 +480,7 @@ msgstr "Parola:"
 msgid "Password (again):"
 msgstr "Parola (tekrar):"
 
-#: yali4/gui/Ui/setupuserswidget.py:192 yali4/gui/ScrUsers.py:209
+#: yali4/gui/Ui/setupuserswidget.py:192 yali4/gui/ScrUsers.py:203
 msgid "Create User"
 msgstr "Kullanıcı Ekle"
 
@@ -532,7 +519,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "GPL Metnini Oku"
 
-#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:158
+#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:150
 msgid "Reboot System!"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -548,40 +535,60 @@ msgstr "Hayır, Kabul Etmiyorum!"
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: yali4/gui/DiskWidgets.py:141
+#: yali4/gui/DiskWidgets.py:77
+msgid "as Pardus System Files (mandatory)"
+msgstr "Pardus sistem dosyaları için (zorunlu)"
+
+#: yali4/gui/DiskWidgets.py:78
+msgid "as User Files (optional)"
+msgstr "Kullanıcı dosyaları için (isteğe bağlı)"
+
+#: yali4/gui/DiskWidgets.py:79
+msgid "as Swap Space (optional)"
+msgstr "Takas alanı bölümü olarak (isteğe bağlı)"
+
+#: yali4/gui/DiskWidgets.py:80
+msgid "as Storage Area"
+msgstr "Genel veri saklama için"
+
+#: yali4/gui/DiskWidgets.py:154
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "'Sistem Dosyaları' bölümü en az %s MB olmalı."
 
-#: yali4/gui/DiskWidgets.py:176 yali4/gui/ScrBootloader.py:76
-#: yali4/gui/ScrKahyaCheck.py:94 yali4/gui/ScrPartitionAuto.py:73
+#: yali4/gui/DiskWidgets.py:189 yali4/gui/ScrBootloader.py:77
+#: yali4/gui/ScrKahyaCheck.py:91 yali4/gui/ScrPartitionAuto.py:73
 msgid "Can't find a storage device!"
 msgstr "Kurulum için disk bulunamadı!"
 
-#: yali4/gui/DiskWidgets.py:191
+#: yali4/gui/DiskWidgets.py:204
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB boş"
 
-#: yali4/gui/DiskWidgets.py:193
+#: yali4/gui/DiskWidgets.py:206
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB boş"
 
-#: yali4/gui/DiskWidgets.py:213
+#: yali4/gui/DiskWidgets.py:226 yali4/gui/GUIAdditional.py:138
 #, python-format
 msgid "Partition %d"
 msgstr "Disk bölümü %d"
 
-#: yali4/gui/DiskWidgets.py:220
+#: yali4/gui/DiskWidgets.py:233
 msgid "Free Space"
 msgstr "Boş Alan"
 
-#: yali4/gui/DiskWidgets.py:309
+#: yali4/gui/DiskWidgets.py:281 yali4/partitionrequest.py:181
+msgid "There is a request for the same Partition Type."
+msgstr "Bu bölüm tipi için daha önceden bir alan ayrılmış."
+
+#: yali4/gui/DiskWidgets.py:328
 msgid "Too many primary partition !"
 msgstr "Çok fazla birincil bölüm !"
 
-#: yali4/gui/DiskWidgets.py:310
+#: yali4/gui/DiskWidgets.py:329
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
@@ -589,27 +596,27 @@ msgstr ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 
-#: yali4/gui/DiskWidgets.py:363
+#: yali4/gui/DiskWidgets.py:382
 msgid "Delete All Partitions"
 msgstr "Tüm Disk Bölümlerini Sil"
 
-#: yali4/gui/DiskWidgets.py:431
+#: yali4/gui/DiskWidgets.py:450
 msgid "Pardus will install here"
 msgstr "Pardus buraya kurulacak"
 
-#: yali4/gui/DiskWidgets.py:434
+#: yali4/gui/DiskWidgets.py:453
 msgid "User files will store here"
 msgstr "Kullanıcı dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:437
+#: yali4/gui/DiskWidgets.py:456
 msgid "Swap will be here"
 msgstr "Takas burada olacak"
 
-#: yali4/gui/DiskWidgets.py:440
+#: yali4/gui/DiskWidgets.py:459
 msgid "Backup or archive files will store here"
 msgstr "Yedek ya da arşiv dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:461
+#: yali4/gui/DiskWidgets.py:480
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -620,6 +627,24 @@ msgstr ""
 "                                  <b>Boyut:</b> %s<br>\n"
 "                                  <b>DosyaSistemi:</b> %s%s"
 
+#: yali4/gui/GUIAdditional.py:67
+msgid ""
+"<p><span style=\"color:#FFF\"><b>It seems this partition is not ready for "
+"resizing.</b></span></p>"
+msgstr ""
+"<p><span style=\"color:#FFF\"><b>Bu disk bölümü yeniden boyutlandırma "
+"içinhazır değil.</b></span></p>"
+
+#: yali4/gui/GUIAdditional.py:80
+#, python-format
+msgid "Resizing to %s MB.."
+msgstr "%s MB'a boyutlandırılıyor.."
+
+#: yali4/gui/GUIAdditional.py:137
+#, python-format
+msgid "(%s) [%s] Size : %s - Free : %s"
+msgstr "(%s) [%s] Boyut : %s - Boş : %s"
+
 #: yali4/gui/GUIGPL.py:52
 msgid "Can't open License file!"
 msgstr "Lisans dosyası açılamıyor!"
@@ -628,11 +653,11 @@ msgstr "Lisans dosyası açılamıyor!"
 msgid "Can't open Release Notes!"
 msgstr "Sürüm Notları dosyası açılamıyor!"
 
-#: yali4/gui/runner.py:121
+#: yali4/gui/runner.py:113
 msgid "Error!"
 msgstr "Hata!"
 
-#: yali4/gui/runner.py:153
+#: yali4/gui/runner.py:145
 msgid "Unhandled error occured!"
 msgstr "Bir hata oluştu!"
 
@@ -699,32 +724,35 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrAdmin.py:70 yali4/gui/ScrUsers.py:65
-msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
-msgstr "<font color=\"#FF6D19\">Caps Lock açık!</font>"
+#: yali4/gui/ScrAdmin.py:70
+msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Caps Lock açık!</font></center>"
 
-#: yali4/gui/ScrAdmin.py:112 yali4/gui/ScrUsers.py:173
-msgid "<font color=\"#FF6D19\">Password is too short!</font>"
-msgstr "<font color=\"#FF6D19\">Parola çok kısa!</font>"
+#: yali4/gui/ScrAdmin.py:114
+msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Parola çok kısa!</font></center>"
 
-#: yali4/gui/ScrAdmin.py:121 yali4/gui/ScrUsers.py:170
-msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
-msgstr "<font color=\"#FF6D19\">Parolalar aynı değil!</font>"
+#: yali4/gui/ScrAdmin.py:123
+msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Parolalar aynı değil!</font></center>"
 
-#: yali4/gui/ScrAdmin.py:139
-msgid "<font color=\"#FF6D19\">Hostname contains invalid characters!</font>"
+#: yali4/gui/ScrAdmin.py:141
+msgid ""
+"<center><font color=\"#FF6D19\">Hostname contains invalid characters!</"
+"font></center>"
 msgstr ""
-"<font color=\"#FF6D19\">Makine adı geçersiz karakterler içeriyor!</font>"
+"<center><font color=\"#FF6D19\">Makine adı geçersiz karakterler içeriyor!</"
+"font></center>"
 
-#: yali4/gui/ScrBootloader.py:42
+#: yali4/gui/ScrBootloader.py:43
 msgid "Bootloader Choice"
 msgstr "Önyükleyici Seçimi"
 
-#: yali4/gui/ScrBootloader.py:43
+#: yali4/gui/ScrBootloader.py:44
 msgid "Configure the system boot.."
 msgstr "Sistem açılışını ayarlayın.."
 
-#: yali4/gui/ScrBootloader.py:44
+#: yali4/gui/ScrBootloader.py:45
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -772,7 +800,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrBootloader.py:175
+#: yali4/gui/ScrBootloader.py:124
 msgid ""
 "<b>\n"
 "<p>This action will use your entire disk for Pardus installation and <br>\n"
@@ -784,13 +812,14 @@ msgstr ""
 "ve seçilen sabit disk üzerindeki tüm verileriniz silinecektir.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrBootloader.py:187
-msgid "Writing disk tables ..."
-msgstr "Disk tablosu yazılıyor ..."
-
-#: yali4/gui/ScrBootloader.py:203 yali4/gui/ScrBootloader.py:219
+#: yali4/gui/ScrBootloader.py:149 yali4/gui/ScrBootloader.py:156
+#: yali4/gui/ScrBootloader.py:170
 msgid "Formatting ..."
 msgstr "Biçimlendiriliyor ..."
+
+#: yali4/gui/ScrBootloader.py:163 yali4/installer.py:218
+msgid "Writing disk tables ..."
+msgstr "Disk tablosu yazılıyor ..."
 
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
@@ -818,37 +847,9 @@ msgstr ""
 "<p>Bu ekranda, kurulum CD'sindeki paketlerin doğruluğunu denetleyebilirsiniz."
 "</p>\n"
 
-#: yali4/gui/ScrCheckCD.py:52
-msgid "Check Failed"
-msgstr "Kontrol Başarısız"
-
-#: yali4/gui/ScrCheckCD.py:60
+#: yali4/gui/ScrCheckCD.py:51
 msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
 msgstr "<font color=\"#FF6D19\">CD kontrol edilirken lütfen bekleyiniz.</font>"
-
-#: yali4/gui/ScrCheckCD.py:77
-msgid ""
-"<font color=\"#257216\">Check succeeded. You can proceed to the next screen."
-"</font>"
-msgstr ""
-"<font color=\"#257216\">Kontrol başarılı. Bir sonraki ekrana geçebilirsiniz."
-"</font>"
-
-#: yali4/gui/ScrCheckCD.py:96
-msgid ""
-"<b>\n"
-"<p>Integrity check for packages failed. It seems that installation CD is "
-"broken.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>CD kontrolü başarısız oldu. Bozuk bir kurulum CD'si olabilir. Lütfen yeni "
-"bir kurulum CD'si ile tekrar deneyiniz.</p>\n"
-"</b>\n"
-
-#: yali4/gui/ScrCheckCD.py:108 yali4/gui/ScrGoodbye.py:231
-msgid "Reboot"
-msgstr "Sistemi Yeniden Başlat!"
 
 #: yali4/gui/ScrDateTime.py:27
 msgid "Set your timezone"
@@ -876,15 +877,15 @@ msgstr ""
 "<p>Bu ekranda saat, tarih ya da zaman dilimi ayarlarınızı "
 "değiştirebilirsiniz..</p>\n"
 
-#: yali4/gui/ScrGoodbye.py:43
+#: yali4/gui/ScrGoodbye.py:45
 msgid "Goodbye from YALI"
 msgstr "Hoşçakalın"
 
-#: yali4/gui/ScrGoodbye.py:44
+#: yali4/gui/ScrGoodbye.py:46
 msgid "Enjoy your freash Pardus !.."
 msgstr "Taze Pardus'unuz zevkini çıkarın !.."
 
-#: yali4/gui/ScrGoodbye.py:45
+#: yali4/gui/ScrGoodbye.py:47
 msgid ""
 "\n"
 "<font size=\"+2\">Congratulations</font>\n"
@@ -921,15 +922,11 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrGoodbye.py:69
-msgid ""
-"<b><font size=\"+2\" color=\"#FFFFFF\">Rebooting system. Please wait!</"
-"font></b>"
-msgstr ""
-"<b><font size=\"+2\" color=\"#FFFFFF\">Sistem yeniden başlatılıyor. Lütfen "
-"bekleyin!</font></b>"
+#: yali4/gui/ScrGoodbye.py:95
+msgid "<b>Rebooting system. Please wait!</b>"
+msgstr "<b>Yeniden başlatılıyor. Lütfen bekleyin!</b>"
 
-#: yali4/gui/ScrGoodbye.py:225
+#: yali4/gui/ScrGoodbye.py:122
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
@@ -939,6 +936,10 @@ msgstr ""
 "<p>Bilgisayarınızı yeniden başlatmak için 'Sistemi Yeniden Başlat!' "
 "düğmesine tıklayın.</p>\n"
 "</b>\n"
+
+#: yali4/gui/ScrGoodbye.py:128 yali4/installer.py:507
+msgid "Reboot"
+msgstr "Sistemi Yeniden Başlat!"
 
 #: yali4/gui/ScrInstall.py:52
 msgid "Installing system.."
@@ -988,23 +989,29 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:115
+#: yali4/gui/ScrInstall.py:101
+msgid "Packages are installing.."
+msgstr "Paketler kuruluyor.."
+
+#: yali4/gui/ScrInstall.py:116
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Kurulan Paket: %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:120
+#: yali4/gui/ScrInstall.py:121
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Yapılandırılan paket: %s"
 
-#: yali4/gui/ScrInstall.py:187
-msgid "Configuring packages for your system!"
-msgstr ""
-"Kurulan paketler sisteminiz için yapılandırılıyor!\n"
-"Bu işlemin tamamlanması için lütfen bekleyiniz."
+#: yali4/gui/ScrInstall.py:155
+msgid "Creating baselayout for your system!"
+msgstr "Sisteminiz için temel bileşenler yaratılıyor!"
 
-#: yali4/gui/ScrInstall.py:212
+#: yali4/gui/ScrInstall.py:164
+msgid "Configuring packages.."
+msgstr "Paketler yapılandırılıyor.."
+
+#: yali4/gui/ScrInstall.py:187
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1021,15 +1028,15 @@ msgstr ""
 "Hata:\n"
 "%s\n"
 
-#: yali4/gui/ScrKahyaCheck.py:53
+#: yali4/gui/ScrKahyaCheck.py:50
 msgid "Kahya is working..."
 msgstr ""
 
-#: yali4/gui/ScrKahyaCheck.py:54
+#: yali4/gui/ScrKahyaCheck.py:51
 msgid "Kahya will automatically install your system.."
 msgstr ""
 
-#: yali4/gui/ScrKahyaCheck.py:55
+#: yali4/gui/ScrKahyaCheck.py:52
 msgid ""
 "\n"
 "<font size=\"+2\">Kicker Check !</font>\n"
@@ -1121,7 +1128,7 @@ msgstr ""
 "</p> \n"
 "</font>\n"
 
-#: yali4/gui/ScrPartitionAuto.py:84
+#: yali4/gui/ScrPartitionAuto.py:81
 #, python-format
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
@@ -1277,7 +1284,11 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrUsers.py:119
+#: yali4/gui/ScrUsers.py:65
+msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
+msgstr "<font color=\"#FF6D19\">Caps Lock açık!</font>"
+
+#: yali4/gui/ScrUsers.py:114
 msgid ""
 "<b>\n"
 "<p>You have not defined an administrator!</p>\n"
@@ -1300,31 +1311,39 @@ msgstr ""
 "\"Tamam\"'a basın.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrUsers.py:167
+#: yali4/gui/ScrUsers.py:161
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
 msgstr ""
 "<font color=\"#FF6D19\">Kullanıcı adınızı parola olarak kullanmayın.</font>"
 
-#: yali4/gui/ScrUsers.py:200
+#: yali4/gui/ScrUsers.py:164
+msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
+msgstr "<font color=\"#FF6D19\">Parolalar aynı değil!</font>"
+
+#: yali4/gui/ScrUsers.py:167
+msgid "<font color=\"#FF6D19\">Password is too short!</font>"
+msgstr "<font color=\"#FF6D19\">Parola çok kısa!</font>"
+
+#: yali4/gui/ScrUsers.py:194
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Bu kullanıcı adı zaten var, başka bir tane seçin!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:203
+#: yali4/gui/ScrUsers.py:197
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Kullanıcı adı geçersiz karakterler içeriyor!</font>"
 
-#: yali4/gui/ScrUsers.py:206
+#: yali4/gui/ScrUsers.py:200
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Gerçek İsim bölümü geçersiz karakterler içeriyor!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:263
+#: yali4/gui/ScrUsers.py:257
 msgid "Update User"
 msgstr "Kullanıcıyı Güncelle"
 
@@ -1394,11 +1413,11 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/YaliDialog.py:99
+#: yali4/gui/YaliDialog.py:98
 msgid "Warning"
 msgstr "Uyarı"
 
-#: yali4/gui/YaliDialog.py:123
+#: yali4/gui/YaliDialog.py:122
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on\n"
@@ -1410,19 +1429,19 @@ msgstr ""
 "Pardus'u bilgisayarınıza kuracaktır.</p>\n"
 "</b>\n"
 
-#: yali4/gui/YaliDialog.py:133
+#: yali4/gui/YaliDialog.py:132
 msgid "O.K. Go Ahead"
 msgstr "Tamam. Devam Et"
 
-#: yali4/gui/YaliWindow.py:60
+#: yali4/gui/YaliWindow.py:48 yali4/gui/YaliWindow.py:61
 msgid "Show Help"
 msgstr "Yardımı Göster"
 
-#: yali4/gui/YaliWindow.py:63
+#: yali4/gui/YaliWindow.py:64
 msgid "Hide Help"
 msgstr "Yardımı Gizle"
 
-#: yali4/bootloader.py:190 yali4/bootloader.py:195
+#: yali4/bootloader.py:202 yali4/bootloader.py:207
 msgid "Windows"
 msgstr "Windows"
 
@@ -1430,195 +1449,247 @@ msgstr "Windows"
 msgid "Backtrace:"
 msgstr "Geri İz:"
 
-#: yali4/localedata.py:85 yali4/localedata.py:86
+#: yali4/installer.py:120
+msgid "YALI Working..."
+msgstr ""
+
+#: yali4/installer.py:127
+msgid "Starting for CD Check"
+msgstr ""
+
+#: yali4/installer.py:145
+#, python-format
+msgid "Checking: %s"
+msgstr ""
+
+#: yali4/installer.py:149
+msgid "Check Failed"
+msgstr "Kontrol Başarısız"
+
+#: yali4/installer.py:150
+msgid ""
+"<b><p>Integrity check for packages failed.                                  "
+"It seems that installation CD is broken.</p></b>"
+msgstr ""
+"<b><p>CD kontrolü başarısız oldu. Bozuk bir kurulum CD'si olabilir. Lütfen "
+"yeni bir kurulum CD'si ile tekrar deneyiniz.</p></b>"
+
+#: yali4/installer.py:153
+msgid ""
+"<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
+"</b></font>"
+msgstr ""
+"<font color=\"#FFF\"><b>Kontrol başarılı. Bir sonraki ekrana geçebilirsiniz."
+"</b></font>"
+
+#: yali4/installer.py:167
+msgid "Setting time settings.."
+msgstr "Saat ayarlanıyor.."
+
+#: yali4/installer.py:188
+msgid "Disk analyze started.."
+msgstr "Disk analizi başladı.."
+
+#: yali4/installer.py:272
+msgid "Resizing ..."
+msgstr "Yeniden boyutlandırıyor.."
+
+#: yali4/installer.py:275
+msgid "Resize Finished ..."
+msgstr "Yeniden boyutlandırma bitti.."
+
+#: yali4/installer.py:287
+msgid "Creating new partition ..."
+msgstr "Yeni disk bölümü yaratılıyor.."
+
+#: yali4/localedata.py:20
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: yali4/localedata.py:22
+msgid "Turkish F"
+msgstr "Türkçe F"
+
+#: yali4/localedata.py:22
+msgid "Turkish Q"
+msgstr "Türkçe Q"
+
+#: yali4/localedata.py:30
+msgid "English"
+msgstr "İngilizce (US)"
+
+#: yali4/localedata.py:40
+msgid "Greek"
+msgstr "Yunanca"
+
+#: yali4/localedata.py:50
 msgid "Afrikaans"
 msgstr "Afrikaansca"
 
-#: yali4/localedata.py:94 yali4/localedata.py:95
-msgid "Arabic"
-msgstr "Arapça"
+#: yali4/localedata.py:60
+msgid "Vietnamese"
+msgstr "Vietnamca"
 
-#: yali4/localedata.py:103 yali4/localedata.py:104
-msgid "Belgium"
-msgstr "Belçika"
-
-#: yali4/localedata.py:112 yali4/localedata.py:113
-msgid "Bulgarian"
-msgstr "Bulgarca"
-
-#: yali4/localedata.py:121 yali4/localedata.py:122
+#: yali4/localedata.py:70
 msgid "Catalan"
 msgstr "Katalanca"
 
-#: yali4/localedata.py:130 yali4/localedata.py:131
-msgid "Croatian"
-msgstr "Hırvatça"
+#: yali4/localedata.py:80
+msgid "Italian"
+msgstr "İtalyanca"
 
-#: yali4/localedata.py:139 yali4/localedata.py:140
+#: yali4/localedata.py:90
 msgid "Czech"
 msgstr "Çekce"
 
-#: yali4/localedata.py:148 yali4/localedata.py:149
-msgid "Danish"
-msgstr "Danca"
+#: yali4/localedata.py:100
+msgid "Welsh"
+msgstr "Gallerce"
 
-#: yali4/localedata.py:157
+#: yali4/localedata.py:110
+msgid "Arabic"
+msgstr "Arapça"
+
+#: yali4/localedata.py:120
+msgid "Estonian"
+msgstr "Estonca"
+
+#: yali4/localedata.py:130
+msgid "Spanish"
+msgstr "İspanyolca"
+
+#: yali4/localedata.py:140
+msgid "Russian"
+msgstr "Rusça"
+
+#: yali4/localedata.py:150
 msgid "Dutch"
 msgstr "Hollandaca"
 
 #: yali4/localedata.py:160
-msgid "Dutch (US)"
-msgstr "Hollandaca (US)"
-
-#: yali4/localedata.py:168 yali4/localedata.py:169
-msgid "English"
-msgstr "İngilizce (US)"
-
-#: yali4/localedata.py:177 yali4/localedata.py:178
-msgid "Estonian"
-msgstr "Estonca"
-
-#: yali4/localedata.py:186 yali4/localedata.py:187
-msgid "Finnish"
-msgstr "Fince"
-
-#: yali4/localedata.py:195 yali4/localedata.py:196
-msgid "French"
-msgstr "Fransızca"
-
-#: yali4/localedata.py:204 yali4/localedata.py:205
-msgid "German"
-msgstr "Almanca"
-
-#: yali4/localedata.py:213 yali4/localedata.py:214
-msgid "Greek"
-msgstr "Yunanca"
-
-#: yali4/localedata.py:222 yali4/localedata.py:223
-msgid "Hungarian"
-msgstr "Macarca"
-
-#: yali4/localedata.py:231 yali4/localedata.py:232
-msgid "Icelandic"
-msgstr "İzlandaca"
-
-#: yali4/localedata.py:240 yali4/localedata.py:241
-msgid "Italian"
-msgstr "İtalyanca"
-
-#: yali4/localedata.py:249 yali4/localedata.py:250
-msgid "Japanese"
-msgstr "Japonca"
-
-#: yali4/localedata.py:258 yali4/localedata.py:259
-msgid "Macedonian"
-msgstr "Makedonca"
-
-#: yali4/localedata.py:267 yali4/localedata.py:268
-msgid "Malayalam"
-msgstr "Malayalamca"
-
-#: yali4/localedata.py:276 yali4/localedata.py:277
-msgid "Norwegian"
-msgstr "Norveççe"
-
-#: yali4/localedata.py:285 yali4/localedata.py:286
-msgid "Polish"
-msgstr "Lehce"
-
-#: yali4/localedata.py:294 yali4/localedata.py:295
 msgid "Portuguese"
 msgstr "Portekizce"
 
-#: yali4/localedata.py:303 yali4/localedata.py:304
-msgid "Brazilian"
-msgstr "Brezilya Portekizcesi"
+#: yali4/localedata.py:170
+msgid "Norwegian"
+msgstr "Norveççe"
 
-#: yali4/localedata.py:312 yali4/localedata.py:313
-msgid "Russian"
-msgstr "Rusça"
+#: yali4/localedata.py:180
+msgid "Icelandic"
+msgstr "İzlandaca"
 
-#: yali4/localedata.py:321 yali4/localedata.py:322
-msgid "Serbian"
-msgstr "Sırpça"
+#: yali4/localedata.py:190
+msgid "Polish"
+msgstr "Lehce"
 
-#: yali4/localedata.py:330 yali4/localedata.py:331
-msgid "Slovak"
-msgstr "Slovakça"
+#: yali4/localedata.py:200
+msgid "Belgium"
+msgstr "Belçika"
 
-#: yali4/localedata.py:339 yali4/localedata.py:340
+#: yali4/localedata.py:210
+msgid "French"
+msgstr "Fransızca"
+
+#: yali4/localedata.py:220
+msgid "Bulgarian"
+msgstr "Bulgarca"
+
+#: yali4/localedata.py:230
 msgid "Slovenian"
 msgstr "Slovence"
 
-#: yali4/localedata.py:348 yali4/localedata.py:349
-msgid "Spanish"
-msgstr "İspanyolca"
+#: yali4/localedata.py:240
+msgid "Croatian"
+msgstr "Hırvatça"
 
-#: yali4/localedata.py:357 yali4/localedata.py:358
+#: yali4/localedata.py:250
+msgid "German"
+msgstr "Almanca"
+
+#: yali4/localedata.py:260
+msgid "Danish"
+msgstr "Danca"
+
+#: yali4/localedata.py:270
+msgid "Brazilian"
+msgstr "Brezilya Portekizcesi"
+
+#: yali4/localedata.py:280
+msgid "Finnish"
+msgstr "Fince"
+
+#: yali4/localedata.py:290
+msgid "Hungarian"
+msgstr "Macarca"
+
+#: yali4/localedata.py:300
+msgid "Japanese"
+msgstr "Japonca"
+
+#: yali4/localedata.py:310
+msgid "Malayalam"
+msgstr "Malayalamca"
+
+#: yali4/localedata.py:320
 msgid "Swedish"
 msgstr "İsveççe"
 
-#: yali4/localedata.py:366
-msgid "Turkish"
-msgstr "Türkçe"
+#: yali4/localedata.py:330
+msgid "Macedonian"
+msgstr "Makedonca"
 
-#: yali4/localedata.py:367
-msgid "Turkish Q"
-msgstr "Türkçe Q"
+#: yali4/localedata.py:340
+msgid "Slovak"
+msgstr "Slovakça"
 
-#: yali4/localedata.py:368
-msgid "Turkish F"
-msgstr "Türkçe F"
-
-#: yali4/localedata.py:376 yali4/localedata.py:377
+#: yali4/localedata.py:350
 msgid "Ukrainian"
 msgstr "Ukraynaca"
 
-#: yali4/localedata.py:385 yali4/localedata.py:386
-msgid "Vietnamese"
-msgstr "Vietnamca"
-
-#: yali4/localedata.py:394
-msgid "Welsh"
-msgstr "Gallerce"
-
-#: yali4/localedata.py:395
-msgid "English (GB)"
-msgstr "İngilizce (Britanya)"
+#: yali4/localedata.py:360
+msgid "Serbian"
+msgstr "Sırpça"
 
 #: yali4/partition.py:34
 msgid "unknown"
 msgstr "bilinmeyen"
 
-#: yali4/partition.py:194
+#: yali4/partition.py:198
 msgid "free space"
 msgstr "boş alan"
 
-#: yali4/partitionrequest.py:182
-msgid "There is a request for the same Partition Type."
-msgstr "Bu bölüm tipi için daha önceden bir alan ayrılmış."
-
-#: yali4/partitiontype.py:47
+#: yali4/partitiontype.py:49
 msgid "Install Root"
 msgstr "Sistem Kurulumu"
 
-#: yali4/partitiontype.py:55
+#: yali4/partitiontype.py:57
 msgid "Users' Files"
 msgstr "Kullanıcı Dosyaları"
 
-#: yali4/partitiontype.py:63
+#: yali4/partitiontype.py:65
 msgid "Swap"
 msgstr "Takas"
 
-#: yali4/partitiontype.py:72
+#: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Arşiv Bölümü"
 
+#~ msgid "Configuring packages for your system!"
+#~ msgstr ""
+#~ "Kurulan paketler sisteminiz için yapılandırılıyor!\n"
+#~ "Bu işlemin tamamlanması için lütfen bekleyiniz."
+
+#~ msgid "pardus"
+#~ msgstr "pardus"
+
+#~ msgid "Dutch (US)"
+#~ msgstr "Hollandaca (US)"
+
+#~ msgid "English (GB)"
+#~ msgstr "İngilizce (Britanya)"
+
 #~ msgid "Trying to connect COMAR Daemon..."
 #~ msgstr "COMAR sunucusunu bağlamaya çalışıyor..."
-
-#~ msgid "Setting Hostname..."
-#~ msgstr "Sunucu adı ayarlanıyor..."
 
 #~ msgid "Setting Root Password..."
 #~ msgstr "Root parolası ayarlanıyor..."
