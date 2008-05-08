@@ -15,7 +15,7 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
-import addrepo
+import contribrepo
 
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
@@ -69,7 +69,7 @@ class Widget(PackageWidget, ScreenWidget):
 
     def addRepo(self):
         try:
-            addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2")
+            contribrepo.addRepo("contrib", "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2")
             return True
         except Exception, e:
             print e
@@ -78,16 +78,16 @@ class Widget(PackageWidget, ScreenWidget):
                 return False
             elif e.get_dbus_name().endswith('policy.auth_admin'):
                 print 'Access denied, root password required'
-                authResult = addrepo.auth("addrepository")
+                authResult = contribrepo.auth("addrepository")
 
             elif e.get_dbus_name().endswith('policy.auth_user'):
                 print 'Access denied, user password required'
-                authResult = addrepo.auth("addrepository")
+                authResult = contribrepo.auth("addrepository")
             else:
                 return False
             try:
                 if authResult:
-                    addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
+                    contribrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
                 else:
                     return False
             except:
@@ -95,7 +95,7 @@ class Widget(PackageWidget, ScreenWidget):
 
     def removeRepo(self):
         try:
-            addrepo.removeRepo("contrib")
+            contribrepo.removeRepo("contrib")
             return True
         except Exception, e:
             print e
@@ -104,16 +104,16 @@ class Widget(PackageWidget, ScreenWidget):
                 return False
             elif e.get_dbus_name().endswith('policy.auth_admin'):
                 print 'Access denied, root password required'
-                authResult = addrepo.auth("removerepository")
+                authResult = contribrepo.auth("removerepository")
 
             elif e.get_dbus_name().endswith('policy.auth_user'):
                 print 'Access denied, user password required'
-                authResult = addrepo.auth("removerepository")
+                authResult = contribrepo.auth("removerepository")
             else:
                 return False
             try:
                 if authResult:
-                    addrepo.removeRepo("contrib")
+                    contribrepo.removeRepo("contrib")
                 else:
                     return False
             except:
