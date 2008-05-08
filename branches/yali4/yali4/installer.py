@@ -404,20 +404,29 @@ class Yali:
             global bus
             if self.install_type == YALI_OEMINSTALL:
                 ctx.debugger.log("OemInstall selected.")
-                obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
-                obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
-                obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
-                obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+                try:
+                    obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
+                    obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
+                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
+                    obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+                except:
+                    ctx.debugger.log("Dbus error: package doesnt exist !")
+                    return False
             elif self.install_type == YALI_FIRSTBOOT:
                 ctx.debugger.log("FirstBoot selected.")
-                obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
-                obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
-                obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
-                obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
+                try:
+                    obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
+                    obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
+                    obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
+                except:
+                    ctx.debugger.log("Dbus error: package doesnt exist !")
+                    return False
             return True
 
-        steps = [{"text":"Trying to connect DBUS...","operation":connectToDBus},
-                 {"text":"Setting Hostname...","operation":setHostName},
+        rootWidget.steps.setOperations([{"text":"Trying to connect DBUS...","operation":connectToDBus}])
+
+        steps = [{"text":"Setting Hostname...","operation":setHostName},
                  {"text":"Setting TimeZone...","operation":yali4.postinstall.setTimeZone},
                  {"text":"Setting Root Password...","operation":setRootPassword},
                  {"text":"Adding Users...","operation":addUsers},
@@ -428,9 +437,9 @@ class Yali:
                      {"text":"Installing BootLoader...","operation":self.installBootloader}]
 
         if self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
-            rootWidget.steps.setOperations(steps.extend(stepsBase))
-        elif self.install_type == YALI_OEMINSTALL:
-            rootWidget.steps.setOperations(stepsBase)
+            rootWidget.steps.setOperations(steps)
+
+        rootWidget.steps.setOperations(stepsBase)
 
     def installBootloader(self):
         if not ctx.installData.bootLoaderDev:
