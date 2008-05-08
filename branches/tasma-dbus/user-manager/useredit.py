@@ -39,14 +39,14 @@ class UID:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
-    
+
     def slotChange(self, text):
         self.stack.checkAdd()
-    
+
     def slotToggle(self, bool):
         self.uid.setEnabled(bool)
         self.stack.checkAdd()
-    
+
     def setText(self, text):
         if text == "auto":
             if not self.edit:
@@ -56,7 +56,7 @@ class UID:
             if not self.edit:
                 self.uid_auto.setChecked(True)
             self.uid.setText(text)
-    
+
     def text(self):
         if self.edit or self.uid_auto.isChecked():
             return str(self.uid.text())
@@ -80,18 +80,18 @@ class Name:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.name, row, 1)
-    
+
     def slotChange(self, text):
         self.stack.checkAdd()
         if not self.edit:
             self.stack.u_home.guess(text)
-    
+
     def guess(self, text):
         self.setText(nickGuess(text, self.usednames))
-    
+
     def text(self):
         return str(self.name.text())
-    
+
     def setText(self, text):
         self.name.setText(text)
 
@@ -108,14 +108,14 @@ class RealName:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.name, row, 1)
-    
+
     def slotChange(self, text):
         if not self.edit:
             self.stack.u_name.guess(text)
-    
+
     def setText(self, text):
         self.name.setText(text)
-    
+
     def text(self):
         return unicode(self.name.text())
 
@@ -134,22 +134,22 @@ class Homedir:
             lab.setBuddy(self.home)
             but = QPushButton("...", hb)
             w.connect(but, SIGNAL("clicked()"), self.browse)
-        
+
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(hb, row, 1)
-    
+
     def guess(self, name):
         cur = unicode(self.home.text())
         if cur == "" or cur.startswith("/home/"):
             self.home.setText("/home/" + name)
-    
+
     def text(self):
         return unicode(self.home.text())
-    
+
     def setText(self, text):
         self.home.setText(text)
-    
+
     def browse(self):
         s = QFileDialog.getExistingDirectory(
             self.text(),
@@ -169,28 +169,28 @@ class Password:
         lab.setBuddy(self.password)
         self.password.connect(self.password, SIGNAL("textChanged(const QString &)"), self.slotChange)
         self.password.setEchoMode(QLineEdit.Password)
-        
+
         lab2 = QLabel(i18n("Confirm password:"), w)
         self.password2 = QLineEdit(w)
         lab2.setBuddy(self.password2)
         self.password2.connect(self.password2, SIGNAL("textChanged(const QString &)"), self.slotChange)
         self.password2.setEchoMode(QLineEdit.Password)
-        
+
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.password, row, 1)
         row += 1
         grid.addWidget(lab2, row, 0, Qt.AlignRight)
         grid.addWidget(self.password2, row, 1)
-    
+
     def slotChange(self, text):
         self.stack.checkAdd()
-    
+
     def text(self):
         if self.password.text() != self.password2.text():
             return None
         return unicode(self.password.text())
-    
+
     def setText(self, text):
         self.password.setText(text)
         self.password2.setText(text)
@@ -208,16 +208,16 @@ class Shell:
         row = grid.numRows()
         grid.addWidget(lab, row, 0, Qt.AlignRight)
         grid.addWidget(self.shell, row, 1)
-    
+
     def slotChange(self, text):
         self.stack.checkAdd()
-    
+
     def setText(self, text):
         self.shell.setCurrentText(text)
-    
+
     def text(self):
         return unicode(self.shell.currentText())
-    
+
     def check(self):
         path = unicode(self.shell.currentText())
         if not os.path.isfile(path):
@@ -232,20 +232,12 @@ class UserGroup(QCheckListItem):
         self.stack = stack
         QCheckListItem.__init__(self, parent, group.name, self.CheckBox)
         self.name = group.name
-    
+
     def text(self, col):
         return (self.name, "")[col]
-    
+
     def stateChange(self, bool):
         self.stack.slotGroup()
-
-
-class Tipper(QToolTip):
-    def maybeTip(self, point):
-        item = self.list.itemAt(point)
-        if item:
-            self.tip(self.list.itemRect(item), "<b>%s</b><br>%s" % (item.name, item.desc))
-
 
 class UserGroupList(QWidget):
     def __init__(self, stack, parent):
@@ -253,17 +245,14 @@ class UserGroupList(QWidget):
         self.stack = stack
         vb = QVBoxLayout(self)
         vb.setSpacing(3)
-        
+
         self.groups = QListView(self)
         self.groups.addColumn(i18n("Group"))
         self.groups.addColumn(i18n("Permission"))
         self.groups.setResizeMode(QListView.LastColumn)
         self.groups.setAllColumnsShowFocus(True)
         vb.addWidget(self.groups, 2)
-        
-        self.tipper = Tipper(self.groups.viewport())
-        self.tipper.list = self.groups
-        
+
         w = QWidget(self)
         hb = QHBoxLayout(w)
         lab = QLabel(i18n("Main group:"), w)
@@ -274,7 +263,7 @@ class UserGroupList(QWidget):
         lab.setBuddy(self.main_group)
         hb.addWidget(self.main_group)
         vb.addWidget(w)
-    
+
     def populate(self, groups):
         self.main_sel = None
         self.toggle.setChecked(False)
@@ -283,7 +272,7 @@ class UserGroupList(QWidget):
         while group:
             g = UserGroup(self, self.groups, group)
             group = group.nextSibling()
-    
+
     def slotGroup(self):
         groups = []
         item = self.groups.firstChild()
@@ -303,15 +292,16 @@ class UserGroupList(QWidget):
             else:
                 self.main_sel = groups[0]
         self.stack.checkAdd()
-    
+
     def slotMain(self, text):
         self.main_sel = unicode(text)
-    
+
     def slotToggle(self, bool):
+        print "heloooooo"
         group = self.groups.firstChild()
         while group:
             group = group.nextSibling()
-    
+
     def text(self):
         groups = []
         group = self.groups.firstChild()
@@ -324,7 +314,7 @@ class UserGroupList(QWidget):
             groups.remove(main)
             groups.insert(0, main)
         return ",".join(groups)
-    
+
     def setText(self, groups):
         self.main_sel = None
         if len(groups) > 0:
@@ -349,60 +339,60 @@ class Guide(QWidget):
         hb.addWidget(lab, 0, hb.AlignTop)
         self.info = KActiveLabel(" ", self)
         hb.addWidget(self.info)
-    
+
     def check(self):
         err = None
         p = self.parent()
-        
+
         if p.u_realname.text() == "" and p.u_name.text() == "":
             err = i18n("Start with typing this user's full name.")
-        
+
         if not err and not self.edit and p.u_password.text() == "":
             err = i18n("You should enter a password for this user.")
-        
+
         if not err:
             pw = unicode(p.u_password.password.text())
             if pw != "" and len(pw) < 4:
                 err = i18n("Password must be longer.")
-            
+
             if not err:
                 if pw == p.u_realname.text() or pw == p.u_name.text():
                     err = i18n("Don't use your full name or user name as a password.")
-        
+
         if not err and p.u_password.text() == None:
             err = i18n("Passwords don't match.")
-        
+
         if not err and p.u_id.text() == "":
             err = i18n("You must enter a user ID or use the auto selection.")
-        
+
         nick = p.u_name.text()
-        
+
         if not err and nick == "":
             err = i18n("You must enter a user name.")
-        
+
         if not err and nick in p.u_name.usednames:
             err = i18n("This user name is used by another user.")
-        
+
         if not err:
             if len(nick) > 0 and nick[0] >= "0" and nick[0] <= "9":
                 err = i18n("User name must not start with a number.")
-        
+
         if not err and p.u_groups.text() == "":
             err = i18n("You should select at least one group this user belongs to.")
-        
+
         if err:
             self.info.setText(u"<font color=red>%s</font>" % err)
             self.ok_but.setEnabled(False)
         else:
             self.info.setText("")
             self.ok_but.setEnabled(True)
-        
+
         return err
-    
+
     def op_start(self, msg):
         self.buttons.setEnabled(False)
         self.info.setText(msg)
-    
+
     def op_end(self, msg=None):
         self.buttons.setEnabled(True)
         if msg:
@@ -414,9 +404,9 @@ class UserStack(QVBox):
         QVBox.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)
-        
+
         self.mainwidget = parent
-        
+
         w = QWidget(self)
         hb = QHBoxLayout(w)
         hb.setMargin(6)
@@ -427,48 +417,48 @@ class UserStack(QVBox):
         hb.addWidget(lab)
         toggle = QCheckBox(i18n("Show all groups"), w)
         hb.addWidget(toggle, 0, Qt.AlignRight)
-        
+
         hb = QHBox(self)
         self.setStretchFactor(hb, 4)
         hb.setSpacing(18)
-        
+
         w = QWidget(hb)
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(9)
-        
+
         self.u_realname = RealName(self, w, grid, edit)
-        
+
         self.u_password = Password(self, w, grid)
-        
+
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
         row = grid.numRows()
         grid.addMultiCellWidget(line, row, row, 0, 1)
-        
+
         self.u_id = UID(self, w, grid, edit)
-        
+
         self.u_name = Name(self, w, grid, edit)
-        
+
         self.u_home = Homedir(w, grid, edit)
-        
+
         self.u_shell = Shell(self, w, grid)
-        
+
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
         row = grid.numRows()
         grid.addMultiCellWidget(line, row, row, 0, 1)
-        
+
         lab = KActiveLabel(w)
         row = grid.numRows()
         grid.addMultiCellWidget(lab, row, row, 0, 1)
-        
+
         self.u_groups = UserGroupList(self, hb)
         self.u_groups.toggle = toggle
         self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
-        
+
         self.guide = Guide(self, edit)
         self.setStretchFactor(self.guide, 1)
-        
+
         hb = QHBox(self)
         self.guide.buttons = hb
         hb.setSpacing(12)
@@ -482,14 +472,14 @@ class UserStack(QVBox):
         self.guide.ok_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
-    
+
     def checkAdd(self):
        return self.guide.check()
-    
+
     def slotEdit(self):
         if self.checkAdd():
             return
-        
+
         dict = self.editdict.copy()
         tmp = self.u_realname.text()
         if tmp:
@@ -513,40 +503,40 @@ class UserStack(QVBox):
                 if ret == KMessageBox.Cancel:
                     return
             dict["groups"] = tmp.split(",")
-        
+
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
-            
+
             def userDone():
                 self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
                 self.parent().slotCancel()
             def userCancel():
                 self.parent().slotCancel()
-            
+
             ch = self.mainwidget.callMethod("setUser", "tr.org.pardus.comar.user.manager.setuser")
             ch.registerDone(userDone)
             ch.registerCancel(userCancel)
             ch.registerError(userCancel)
             ch.call(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
-    
+
     def slotAdd(self):
         if self.checkAdd():
             return
-        
+
         self.guide.op_start(i18n("Adding user..."))
-        
+
         def userDone(uid):
             self.parent().browse.userModified(uid, self.u_name.text(), self.u_realname.text())
             self.parent().slotCancel()
         def userCancel():
             self.parent().slotCancel()
-        
+
         ch = self.mainwidget.callMethod("addUser", "tr.org.pardus.comar.user.manager.adduser")
         ch.registerDone(userDone)
         ch.registerCancel(userCancel)
         ch.registerError(userCancel)
         ch.call(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
-    
+
     def reset(self):
         self.u_id.setText("auto")
         self.u_name.setText("")
@@ -555,7 +545,7 @@ class UserStack(QVBox):
         self.u_home.setText("")
         self.u_groups.setText("")
         self.checkAdd()
-    
+
     def startAdd(self, groups, names):
         self.u_groups.populate(groups)
         self.reset()
@@ -563,7 +553,7 @@ class UserStack(QVBox):
         self.u_groups.setText(["users", "audio", "pnp", "removable"])
         self.guide.op_end()
         self.u_realname.name.setFocus()
-    
+
     def startEdit(self, groups, uid):
         self.u_groups.populate(groups)
         self.reset()
