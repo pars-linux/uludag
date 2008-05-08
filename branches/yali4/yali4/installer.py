@@ -422,11 +422,15 @@ class Yali:
                  {"text":"Setting Root Password...","operation":setRootPassword},
                  {"text":"Adding Users...","operation":addUsers},
                  {"text":"Writing Console Data...","operation":writeConsoleData},
-                 {"text":"Migrating X.org Configuration...","operation":migrateXorgConf},
-                 {"text":"Setting misc. package configurations...","operation":setPackages},
-                 {"text":"Installing BootLoader...","operation":self.installBootloader}]
+                 {"text":"Migrating X.org Configuration...","operation":migrateXorgConf}]
 
-        rootWidget.steps.setOperations(steps)
+        stepsBase = [{"text":"Setting misc. package configurations...","operation":setPackages},
+                     {"text":"Installing BootLoader...","operation":self.installBootloader}]
+
+        if self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
+            rootWidget.steps.setOperations(steps.extend(stepsBase))
+        elif self.install_type == YALI_OEMINSTALL:
+            rootWidget.steps.setOperations(stepsBase))
 
     def installBootloader(self):
         if not ctx.installData.bootLoaderDev:
