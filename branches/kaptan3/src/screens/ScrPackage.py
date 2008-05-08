@@ -38,6 +38,8 @@ class Widget(PackageWidget, ScreenWidget):
 
         #set updateTime
         self.updateInterval.setValue(self.updateTime)
+        self.repoName = "contrib"
+        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2"
 
         #set texts
         self.setCaption(i18n("Package"))
@@ -62,7 +64,7 @@ class Widget(PackageWidget, ScreenWidget):
         self.checkBoxContrib.connect(self.checkBoxContrib, SIGNAL("toggled(bool)"), self.slotContribRepo)
 
         self.repodb = pisi.db.repodb.RepoDB()
-        if "contrib" in self.repodb.list_repos():
+        if self.repoName in self.repodb.list_repos():
             self.groupBoxRepo.hide()
 
     def slotContribRepo(self):
@@ -73,7 +75,7 @@ class Widget(PackageWidget, ScreenWidget):
 
     def addRepo(self):
         try:
-            contribrepo.addRepo("contrib", "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2")
+            contribrepo.addRepo(self.repoName, self.repoAddress)
             return True
         except Exception, e:
             print e
@@ -91,7 +93,7 @@ class Widget(PackageWidget, ScreenWidget):
                 return False
             try:
                 if authResult:
-                    contribrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
+                    contribrepo.addRepo(self.repoName, self.repoAddress)
                 else:
                     return False
             except:
@@ -99,7 +101,7 @@ class Widget(PackageWidget, ScreenWidget):
 
     def removeRepo(self):
         try:
-            contribrepo.removeRepo("contrib")
+            contribrepo.removeRepo(self.repoName)
             return True
         except Exception, e:
             print e
@@ -117,7 +119,7 @@ class Widget(PackageWidget, ScreenWidget):
                 return False
             try:
                 if authResult:
-                    contribrepo.removeRepo("contrib")
+                    contribrepo.removeRepo(self.repoName)
                 else:
                     return False
             except:
