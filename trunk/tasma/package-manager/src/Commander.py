@@ -47,7 +47,8 @@ class Commander(QObject):
             self.parent.displayProgress(data)
         elif signal == "error":
             self.comar.com_lock.unlock()
-            self.parent.showErrorMessage(str(args))
+            print "Error: ", str(data)
+#            self.parent.showErrorMessage(str(args))
             self.parent.resetState()
             self.parent.refreshState()
         elif signal == "status":
@@ -55,7 +56,8 @@ class Commander(QObject):
             self.parent.pisiNotify(operation, args)
         elif signal == "warning":
             self.comar.com_lock.unlock()
-            self.parent.showWarningMessage(str(args))
+#            self.parent.showWarningMessage(str(args))
+            print "Warning: ", str(data)
             self.parent.resetState()
             self.parent.refreshState()
         else:
