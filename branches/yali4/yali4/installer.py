@@ -430,7 +430,7 @@ class Yali:
         if self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
             rootWidget.steps.setOperations(steps.extend(stepsBase))
         elif self.install_type == YALI_OEMINSTALL:
-            rootWidget.steps.setOperations(stepsBase))
+            rootWidget.steps.setOperations(stepsBase)
 
     def installBootloader(self):
         if not ctx.installData.bootLoaderDev:
