@@ -248,9 +248,7 @@ class UserGroupList(QWidget):
 
         self.groups = QListView(self)
         self.groups.addColumn(i18n("Group"))
-        self.groups.addColumn(i18n("Permission"))
         self.groups.setResizeMode(QListView.LastColumn)
-        self.groups.setAllColumnsShowFocus(True)
         vb.addWidget(self.groups, 2)
 
         w = QWidget(self)
@@ -266,7 +264,6 @@ class UserGroupList(QWidget):
 
     def populate(self, groups):
         self.main_sel = None
-        self.toggle.setChecked(False)
         group = groups.firstChild()
         self.groups.clear()
         while group:
@@ -297,7 +294,6 @@ class UserGroupList(QWidget):
         self.main_sel = unicode(text)
 
     def slotToggle(self, bool):
-        print "heloooooo"
         group = self.groups.firstChild()
         while group:
             group = group.nextSibling()
@@ -415,8 +411,6 @@ class UserStack(QVBox):
         else:
             lab = QLabel(u"<b><big>%s</big></b>" % i18n("Enter Information For New User"), w)
         hb.addWidget(lab)
-        toggle = QCheckBox(i18n("Show all groups"), w)
-        hb.addWidget(toggle, 0, Qt.AlignRight)
 
         hb = QHBox(self)
         self.setStretchFactor(hb, 4)
@@ -453,8 +447,6 @@ class UserStack(QVBox):
         grid.addMultiCellWidget(lab, row, row, 0, 1)
 
         self.u_groups = UserGroupList(self, hb)
-        self.u_groups.toggle = toggle
-        self.connect(toggle, SIGNAL("toggled(bool)"), self.u_groups.slotToggle)
 
         self.guide = Guide(self, edit)
         self.setStretchFactor(self.guide, 1)
