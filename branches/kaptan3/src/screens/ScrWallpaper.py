@@ -164,7 +164,7 @@ class Widget(WallpaperWidget, ScreenWidget):
             try:
                 im = Image.open(infile)
                 im.thumbnail(self.thumbSize, Image.NEAREST)
-                im.save(tmpDir + ".jpg.thumbnail", "BMP")
+                im.save(tmpDir + ".jpg.thumbnail", "PNG")
             except IOError, e:
                 logging.debug("IO Error: " + str(e))
 
