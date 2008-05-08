@@ -463,8 +463,8 @@ class Yali:
                     if yali4.sysutils.is_windows_boot(p.getPath(), fs):
                         ctx.debugger.log("Windows Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
                         win_fs = fs
-                        win_dev = basename(p.getDevicePath())
-                        win_root = basename(p.getPath())
+                        win_dev = os.path.basename(p.getDevicePath())
+                        win_root = os.path.basename(p.getPath())
                         loader.grub_conf_append_win(ctx.installData.bootLoaderDev,
                                                     win_dev,
                                                     win_root,
