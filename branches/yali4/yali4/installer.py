@@ -412,8 +412,7 @@ class Yali:
                 except:
                     ctx.debugger.log("Dbus error: package doesnt exist !")
                     return False
-            elif self.install_type == YALI_FIRSTBOOT:
-                ctx.debugger.log("FirstBoot selected.")
+            elif self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
                 try:
                     obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
                     obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
