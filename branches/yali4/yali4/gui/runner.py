@@ -70,6 +70,7 @@ class Runner:
 
         # Let start
         ctx.debugger.log("Yali has been started.")
+        ctx.debugger.log("Install type is %d" % ctx.yali.install_type)
 
         # font = QtGui.QFont()
         # font.setFamily("Droid Sans")

@@ -12,6 +12,7 @@
 
 # linux ?
 import os
+import dbus
 import time
 
 # we need i18n
@@ -345,6 +346,126 @@ class Yali:
                 e = yali4.fstab.FstabEntry(path, mountpoint, fs, opts)
                 fstab.insert(e)
         fstab.close()
+
+    def processPendingActions(self, rootWidget):
+        global bus
+        bus = None
+        def connectToDBus():
+            global bus
+            for i in range(20):
+                try:
+                    ctx.debugger.log("trying to start dbus..")
+                    bus = dbus.bus.BusConnection(address_or_type="unix:path=%s" % ctx.consts.dbus_socket_file)
+                    break
+                except dbus.DBusException:
+                    time.sleep(1)
+                    ctx.debugger.log("wait dbus for 1 second...")
+            if bus:
+                return True
+            return False
+
+        def setHostName():
+            global bus
+            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
+            obj.setHostName(str(ctx.installData.hostName), dbus_interface="tr.org.pardus.comar.Net.Stack")
+            ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
+            return True
+
+        def addUsers():
+            global bus
+            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
+            for u in yali4.users.pending_users:
+                ctx.debugger.log("User %s adding to system" % u.username)
+                obj.addUser("auto", u.username, u.realname, "", "", unicode(u.passwd), u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
+                # Enable auto-login
+                if u.username == ctx.installData.autoLoginUser:
+                    u.setAutoLogin()
+            return True
+
+        def setRootPassword():
+            if not ctx.installData.useYaliFirstBoot:
+                global bus
+                obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
+                obj.setUser(0, "", "", "", str(ctx.installData.rootPassword), "", dbus_interface="tr.org.pardus.comar.User.Manager")
+            return True
+
+        def writeConsoleData():
+            yali4.localeutils.write_keymap(ctx.installData.keyData["consolekeymap"])
+            ctx.debugger.log("Keymap stored.")
+            return True
+
+        def migrateXorgConf():
+            if not self.install_type == YALI_FIRSTBOOT:
+                yali4.postinstall.migrate_xorg()
+                ctx.debugger.log("xorg.conf and other files merged.")
+            return True
+
+        def setPackages():
+            global bus
+            if self.install_type == YALI_OEMINSTALL:
+                ctx.debugger.log("OemInstall selected.")
+                obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
+                obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
+                obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
+                obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+            elif self.install_type == YALI_FIRSTBOOT:
+                ctx.debugger.log("FirstBoot selected.")
+                obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
+                obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+                obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
+                obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
+            return True
+
+        steps = [{"text":"Trying to connect DBUS...","operation":connectToDBus},
+                 {"text":"Setting Hostname...","operation":setHostName},
+                 {"text":"Setting TimeZone...","operation":yali4.postinstall.setTimeZone},
+                 {"text":"Setting Root Password...","operation":setRootPassword},
+                 {"text":"Adding Users...","operation":addUsers},
+                 {"text":"Writing Console Data...","operation":writeConsoleData},
+                 {"text":"Migrating X.org Configuration...","operation":migrateXorgConf},
+                 {"text":"Setting misc. package configurations...","operation":setPackages},
+                 {"text":"Installing BootLoader...","operation":self.installBootloader}]
+
+        rootWidget.steps.setOperations(steps)
+
+    def installBootloader(self):
+        if not ctx.installData.bootLoaderDev:
+            ctx.debugger.log("Dont install bootloader selected; skipping.")
+            return
+
+        loader = yali4.bootloader.BootLoader()
+        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
+                                                                  request.mountRequestType)
+        _ins_part = root_part_req.partition().getPath()
+        _ins_part_label = root_part_req.partition().getFSLabel()
+
+        loader.write_grub_conf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
+
+        # Check for windows partitions.
+        ctx.debugger.log("Checking for Windows ...")
+        for d in yali4.storage.devices:
+            for p in d.getPartitions():
+                fs = p.getFSName()
+                if fs in ("ntfs", "fat32"):
+                    if yali4.sysutils.is_windows_boot(p.getPath(), fs):
+                        ctx.debugger.log("Windows Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
+                        win_fs = fs
+                        win_dev = basename(p.getDevicePath())
+                        win_root = basename(p.getPath())
+                        loader.grub_conf_append_win(ctx.installData.bootLoaderDev,
+                                                    win_dev,
+                                                    win_root,
+                                                    win_fs)
+                        continue
+
+        try:
+            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
+            yali4.sysutils.umount(ctx.consts.target_dir + "/mnt/archive")
+        except:
+            ctx.debugger.log("Umount Failed ")
+
+        # finally install it
+        return loader.install_grub(ctx.installData.bootLoaderDev)
 
     def showError(self, title, message):
         r = ErrorWidget(self)

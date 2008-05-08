@@ -15,6 +15,7 @@
 
 import locale
 from os.path import join
+from yali4.options import options
 
 class _constant:
     """ Constant members implementation """
@@ -54,8 +55,11 @@ consts.data_dir = "/usr/share/yali4"
 
 consts.mnt_dir = "/mnt"
 
-# new system will be installed directly into this target directory
-consts.target_dir = join(consts.mnt_dir, "target")
+if options.firstBoot == True:
+    consts.target_dir = "/"
+else:
+    # new system will be installed directly into this target directory
+    consts.target_dir = join(consts.mnt_dir, "target")
 
 # log file for storing after installation
 consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
