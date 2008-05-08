@@ -47,7 +47,7 @@ class Commander(QObject):
             self.parent.displayProgress(data)
         elif signal == "error":
             self.comar.com_lock.unlock()
-            self.parent.showErrorMessage(args)
+            self.parent.showErrorMessage(str(args))
             self.parent.resetState()
             self.parent.refreshState()
         elif signal == "status":
@@ -55,7 +55,7 @@ class Commander(QObject):
             self.parent.pisiNotify(operation, args)
         elif signal == "warning":
             self.comar.com_lock.unlock()
-            self.parent.showWarningMessage(args)
+            self.parent.showWarningMessage(str(args))
             self.parent.resetState()
             self.parent.refreshState()
         else:
@@ -65,10 +65,6 @@ class Commander(QObject):
 #       # do not show any error if it is the interval check
 #       # if not reply.id == ID_TRAY_INTERVAL_CHECK:
 #       #     self.parent.showErrorMessage(unicode(reply.data))
-
-        # if an error occured communicating with comar and components are not ready we should warn
-        if not PisiIface.get_components():
-            self.parent.repoNotReady()
 
     def startUpdate(self, repo = None):
         if repo is None:
