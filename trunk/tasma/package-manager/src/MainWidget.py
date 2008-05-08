@@ -41,6 +41,7 @@ from Notifier import *
 import PisiIface
 
 (install_state, remove_state, upgrade_state) = range(3)
+nop = ["System.Manager.setCache", "System.Manager.clearCache"]
 
 unremovable_packages = set(['qt','kdelibs','kdebase','sip','PyQt','PyKDE','pisi', 'package-manager'])
 
@@ -661,7 +662,10 @@ class MainApplicationWidget(QWidget):
         # when pisi db version is upgraded, reload is needed before init
         packages = self.basket.packages + self.basket.extraPackages
         print "in finished(): command=%s" % command
-#        if command == "System.Manager.updatePackage" and "pisi" in packages:
+
+        if command in nop:
+            return
+
         #FIXME: Why do we need to reload pisi module every time. Added for not updating mem cached dbs of pisi
         PisiIface.reloadPisi()
 
@@ -682,6 +686,7 @@ class MainApplicationWidget(QWidget):
 
         elif command == "System.Manager.setRepositories":
             self.updateCheck()
+            return
 
         elif command in ["System.Manager.updatePackage",
                          "System.Manager.installPackage",
