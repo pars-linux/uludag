@@ -63,22 +63,27 @@ class Widget(PackageWidget, ScreenWidget):
 
     def addRepo(self):
         try:
-            addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
-            return 
+            addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2")
+            return True
         except Exception, e:
             print e
             if e.get_dbus_name().endswith('policy.no'):
                 print 'Access denied'
-                #pop up
-                return True
+                return False
             elif e.get_dbus_name().endswith('policy.auth_admin'):
                 print 'Access denied, root password required'
-                addrepo.auth()
+                authResult = addrepo.auth()
+
             elif e.get_dbus_name().endswith('policy.auth_user'):
                 print 'Access denied, user password required'
-                addrepo.auth()
+                authResult = addrepo.auth()
+            else:
+                return False
             try:
-                addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
+                if authResult:
+                    addrepo.addRepo("contrib", "http://paketler.pardus.org.tr/pardus-2008-test/pisi-index.xml.bz2")
+                else:
+                    return False
             except:
                 return False
 

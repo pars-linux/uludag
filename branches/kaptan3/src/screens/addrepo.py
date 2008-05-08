@@ -14,7 +14,9 @@ def auth():
     obj = bus.get_object("org.freedesktop.PolicyKit.AuthenticationAgent", "/")
 
     try:
-        auths = obj.obtainAuthorization("tr.org.pardus.comar.addrepository", 0, os.getpid(), dbus_interface="org.freedesktop.PolicyKit.AuthenticationAgent")
+        auths = obj.ObtainAuthorization("tr.org.pardus.comar.system.manager.addrepository", 0, os.getpid(), dbus_interface="org.freedesktop.PolicyKit.AuthenticationAgent")
+        return auths
     except Exception, e:
         print e
+        return False
 
