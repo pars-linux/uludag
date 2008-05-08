@@ -16,6 +16,7 @@ from kdeui import *
 import kdedesigner
 
 import contribrepo
+import pisi
 
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
@@ -50,7 +51,6 @@ class Widget(PackageWidget, ScreenWidget):
         self.textLabelContrib.setText(i18n("Contrib repo includes extra packages."))
         self.checkBoxContrib.setText(i18n("Add contrib repo"))
 
-        #policykit olana kadar enabled
         self.checkBoxContrib.setEnabled(True)
 
         #set images
@@ -60,6 +60,10 @@ class Widget(PackageWidget, ScreenWidget):
         self.showTray.connect(self.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
         self.checkUpdate.connect(self.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
         self.checkBoxContrib.connect(self.checkBoxContrib, SIGNAL("toggled(bool)"), self.slotContribRepo)
+
+        self.repodb = pisi.db.repodb.RepoDB()
+        if "contrib" in self.repodb.list_repos():
+            self.groupBoxRepo.hide()
 
     def slotContribRepo(self):
         if self.checkBoxContrib.isChecked():
