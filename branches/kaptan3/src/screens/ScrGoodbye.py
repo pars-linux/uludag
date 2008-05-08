@@ -50,17 +50,21 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.connect(self.buttonTasma, SIGNAL("clicked()"), self.startTasma)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.startHelp)
 
+        self.isAppAvaiable("migration-users", self.groupBoxMigration)
+
+    def isAppAvaiable(self, appName, widget2Hide):
         try:
-            p = subprocess.Popen(["mdsadigration-users"], stdout = subprocess.PIPE)
+            p = subprocess.Popen([appName], stdout = subprocess.PIPE)
             out, err = p.communicate()
 
-            isMigrationAvaiable = out
-            if isMigrationAvaiable:
-                self.groupBoxMigration.hide()
+            isAvaiable = out
+            if not isAvaiable:
+                widget2Hide.hide()
+
         except OSError, e:
-            logging.debug("Migration is not installed: " + str(e))
-            # hide migration part, if it's not installed.
-            self.groupBoxMigration.hide()
+            logging.debug(appName + " is not installed: " + str(e))
+            # hide app part, if it's not installed.
+            widget2Hide.hide()
 
     def shown(self):
         pass
