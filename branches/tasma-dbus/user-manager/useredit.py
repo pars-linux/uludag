@@ -527,7 +527,11 @@ class UserStack(QVBox):
         ch.registerDone(userDone)
         ch.registerCancel(userCancel)
         ch.registerError(userCancel)
-        ch.call(self.u_id.text(), self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
+        if self.u_id.text() == "auto":
+            uid = -1
+        else:
+            uid = int (self.u_id.text())
+        ch.call(uid, self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
 
     def reset(self):
         self.u_id.setText("auto")
