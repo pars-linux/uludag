@@ -96,6 +96,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         # remove later.
         self.displayConfiguration.secondaryScr = "VGA"
+        self.textCardName.setText(i18n("NVIDIA"))
+        self.textDriver.setText(i18n("nv"))
 
         self.getResolutions(1)
         self.setIconbyResolution()
