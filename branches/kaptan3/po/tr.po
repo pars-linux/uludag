@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-09 11:08+0300\n"
+"POT-Creation-Date: 2008-05-09 16:49+0300\n"
 "PO-Revision-Date: 2008-05-08 11:37+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -19,27 +19,27 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/kaptan.py:89 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:91 src/screens/ScrWelcome.py:24
 msgid "Welcome to Kaptan Wizard :)"
 msgstr "Kaptan Masaüstü Sihirbazına Hoşgeldiniz :)"
 
-#: src/kaptan.py:91
+#: src/kaptan.py:93
 msgid "&Back"
 msgstr "&Geri"
 
-#: src/kaptan.py:92
+#: src/kaptan.py:94
 msgid "&Next"
 msgstr "&İleri"
 
-#: src/kaptan.py:93
+#: src/kaptan.py:95
 msgid "Finish"
 msgstr "Bitir"
 
-#: src/kaptan.py:236
+#: src/kaptan.py:230
 msgid "Kaptan is already running!"
 msgstr "Kaptan zaten çalışıyor!"
 
-#: src/kaptan.py:246
+#: src/kaptan.py:245
 msgid "Kaptan Welcome Wizard"
 msgstr "Kaptan Masaüstü Sihirbazı"
 
@@ -102,11 +102,11 @@ msgstr "Paket Yöneticisi"
 msgid "Configure package manager settings..."
 msgstr "Paket yöneticisi tercihlerini ayarla..."
 
-#: src/screens/ScrPackage.py:47 src/screens/packagedlg.py:106
+#: src/screens/ScrPackage.py:48 src/screens/packagedlg.py:106
 msgid "Package"
 msgstr "Paket"
 
-#: src/screens/ScrPackage.py:48
+#: src/screens/ScrPackage.py:49
 msgid ""
 "<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
 "easily install new programs and upgrade your system and also can see new "
@@ -118,37 +118,45 @@ msgstr ""
 "güncelleyebilir ve programların güncellemelerini sistem tepsisinden "
 "görebilirsiniz."
 
-#: src/screens/ScrPackage.py:49 src/screens/packagedlg.py:111
+#: src/screens/ScrPackage.py:50 src/screens/packagedlg.py:111
 msgid "tooltipPisiPopup"
 msgstr "tooltipPisiPopup"
 
-#: src/screens/ScrPackage.py:50
+#: src/screens/ScrPackage.py:51
 msgid "Updates"
 msgstr "Güncellemeler"
 
-#: src/screens/ScrPackage.py:51
+#: src/screens/ScrPackage.py:52
 msgid "Show in system tray"
 msgstr "Sistem tepsisinde göster"
 
-#: src/screens/ScrPackage.py:52
+#: src/screens/ScrPackage.py:53
 msgid "Check updates automatically for every"
 msgstr "Güncellemeleri belirli aralıklarla kontrol et: "
 
-#: src/screens/ScrPackage.py:53
+#: src/screens/ScrPackage.py:54
 msgid " hours"
 msgstr " saat"
 
-#: src/screens/ScrPackage.py:54
+#: src/screens/ScrPackage.py:55
 msgid "Repo"
 msgstr "Depo"
 
-#: src/screens/ScrPackage.py:55
+#: src/screens/ScrPackage.py:56
 msgid "Contrib repo includes extra packages."
 msgstr "Katkı deposu ek paketler içerir."
 
-#: src/screens/ScrPackage.py:56
+#: src/screens/ScrPackage.py:57
 msgid "Add contrib repo"
 msgstr "Katkı deposunu ekle"
+
+#: src/screens/ScrPackage.py:89
+msgid "You are not authorized for this operation."
+msgstr "Bu işlemi yapmaya yetkili değilsiniz."
+
+#: src/screens/ScrPackage.py:90
+msgid "Authentication Error!"
+msgstr "Yetkilenme Hatası!"
 
 #: src/screens/kaptanMain.py:101
 msgid "KaptanUi"
@@ -280,8 +288,9 @@ msgstr "Ekran Çözünürlüğü"
 msgid ""
 "<p><p>Your screen resolution is very low. It may be wrong. You can change "
 "your resolution bye using <b>Display Manager</b>.</p></p>"
-msgstr "Ekran çözünürlüğünüz çok düşük. Yanlış ayarlanmış olabilir. "
-"Çözünürlüğünüzü Görüntü Yöneticisi yardımı ile değiştirebilirsiniz."
+msgstr ""
+"Ekran çözünürlüğünüz çok düşük. Yanlış ayarlanmış olabilir. Çözünürlüğünüzü "
+"Görüntü Yöneticisi yardımı ile değiştirebilirsiniz."
 
 #: src/screens/ScrWallpaper.py:44
 msgid "Enjoy with wonderful backgrounds..."
