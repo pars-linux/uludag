@@ -21,21 +21,20 @@ _ = __trans.ugettext
 import yali4.filesystem
 
 class PartitionType:
-
     filesystem = None
-
+    needsmtab = True
     ##
     # is equal
     # @param rhs: PartitionType
     def __eq__(self, rhs):
         if rhs:
-            return self.filesystem == rhs.filesystem
+            if hasattr(rhs, "filesystem"):
+                return self.filesystem == rhs.filesystem
         return False
 
 ##
 # not an intuitive name but need group home and root :(
 class __PartitionType(PartitionType):
-
     def __init__(self):
         # check cmdline for reiserfs support
         cmdline = open("/proc/cmdline", "r").read()
@@ -46,7 +45,6 @@ class __PartitionType(PartitionType):
         else:
             self.filesystem = yali4.filesystem.Ext3FileSystem()
 
-
 class RootPartitionType(__PartitionType):
     parttype = "root"
     name = _("Install Root")
@@ -56,7 +54,6 @@ class RootPartitionType(__PartitionType):
     parted_flags = [ parted.PARTITION_BOOT ]
     label = "PARDUS_ROOT"
 
-
 class HomePartitionType(__PartitionType):
     parttype = "home"
     name = _("Users' Files")
@@ -65,7 +62,6 @@ class HomePartitionType(__PartitionType):
     parted_type = parted.PARTITION_PRIMARY
     parted_flags = []
     label = "PARDUS_HOME"
-
 
 class SwapPartitionType(PartitionType):
     parttype = "swap"
@@ -88,10 +84,11 @@ class ArchivePartitionType(PartitionType):
     label = "ARCHIVE"
 
     def setFileSystem(self, filesystem):
-        if filesystem == "fat32":
-            self.filesystem = yali4.filesystem.FatFileSystem()
-        elif filesystem == "ext3":
-            self.filesystem = yali4.filesystem.Ext3FileSystem()
+        supportedFS = {"fat32":yali4.filesystem.FatFileSystem(),
+                       "ext3" :yali4.filesystem.Ext3FileSystem(),
+                       "ntfs" :yali4.filesystem.NTFSFileSystem()}
+        if supportedFS.has_key(filesystem):
+            self.filesystem = supportedFS[filesystem]
 
 ##
 #
@@ -129,7 +126,7 @@ class CustomPartitionType(__PartitionType):
         self.parted_flags = flags
         
     def setPartedType(self, pt):
-        self.parted_type = pt
+        self.parted_type 
         
     def getName(self):
         return self.name

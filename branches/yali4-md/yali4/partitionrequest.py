@@ -195,7 +195,7 @@ class RequestList(list):
                 if f:
                     e = _("There is already this request for this partition")
                     raise RequestException, e
-                    
+
         list.append(self, req)
 
 
@@ -348,11 +348,12 @@ class MountRequest(PartRequest):
 
         yali4.sysutils.mount(source, target, filesystem)
 
-        mtab_entry = "%s %s %s rw 0 0\n" % (source,
-                                            target,
-                                            filesystem)
-        open("/etc/mtab", "a").write(mtab_entry)
-        # print mtab_entry
+
+        if pt.needsmtab:
+            mtab_entry = "%s %s %s rw 0 0\n" % (source,
+                                                target,
+                                                filesystem)
+            open("/etc/mtab", "a").write(mtab_entry)
 
         PartRequest.applyRequest(self)
 
@@ -403,18 +404,14 @@ class LabelRequest(PartRequest):
 ##
 # raid partition request
 class RaidRequest(PartRequest):
-    
     def __init__(self, partition, part_type):
-        
         PartRequest.__init__(self)
         self.setPartition(partition)
         self.setPartitionType(part_type)
         self.setRequestType(raidRequestType)
-        
     def applyRequest(self):
         pass
         # PartRequest.applyRequest(self)
-    
 
 ##
 # @param drive is the drive to remove
@@ -423,19 +420,15 @@ class RaidRequest(PartRequest):
 class DeletePartitionRequest:
     """ A preexisting partition which will be removed """
     def __init__(self, drive, start, end):
-        
         self.drive = drive
         self.start = start
         self.end = end
-        
 
 class DeleteRaidRequest:
     """ A preexisting Raid device which will be removed """
     def __init__(self, minor):
-        
         self.minor = minor
-        
-    
+
 # partition requests singleton.
 partrequests = RequestList()
 

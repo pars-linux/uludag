@@ -61,6 +61,7 @@ def get_filesystem(name):
 class FileSystem:
     """ Abstract fileSystem class for other implementations """
     _name = None
+    _sysname = None
     _filesystems = []
     _implemented = False
     _resizable = False
@@ -68,6 +69,7 @@ class FileSystem:
     _fs_type = None  # parted fs type
 
     def __init__(self):
+        #isbaran
         self.readSupportedFilesystems()
         self._fs_type = parted.file_system_type_get(self._name)
 
@@ -101,6 +103,15 @@ class FileSystem:
     ##
     # read filesystem label and return
     def getLabel(self, partition):
+        if not os.path.exists("/dev/disk/by-label/").next()
+            return None
+        base = os.walk("/dev/disk/by-label/").next()
+        path = partition.getPath()
+        for part in base[2]:
+            if os.path.realpath("%s%s" % (base[0],part)) == path:
+                # isbaran
+                # return part
+                return None
         return None
 
     ##
@@ -130,6 +141,19 @@ class FileSystem:
             new_label = "%s%d" % (label, count)
             count += 1
         return new_label
+
+    ##
+    # Necessary checks before formatting
+    def preFormat(self, partition):
+        e = ""
+        if not self.isImplemented():
+            e = "%s file system is not fully implemented." % (self.name())
+        if e:
+            raise YaliException, e
+
+        import yali4.gui.context as ctx
+        ctx.debugger.log("Format %s: %s" % (partition.getPath(), self.name()))
+
 
     ##
     # check the supported file systems by kernel
@@ -200,16 +224,16 @@ class RaidFileSystem(FileSystem):
 
     def __init__(self):
         FileSystem.__init__(self)
-        
+
         self.name ="software RAID"
         if len(yali4.raid.availRaidLevels) != 0:
             self.setImplemented(True)
-        
+
     def format(self, partition):
         # dont need this
         pass
-        
-        
+
+
 ##
 # ext3 file system
 class Ext3FileSystem(FileSystem):
@@ -273,11 +297,29 @@ class Ext3FileSystem(FileSystem):
 
         lines = os.popen("%s -h %s" % (cmd_path, partition.getPath())).readlines()
 
-        total_blocks = long(filter(lambda line: line.startswith('Block count'), lines)[0].split(':')[1].strip('\n').strip(' '))
-        free_blocks  = long(filter(lambda line: line.startswith('Free blocks'), lines)[0].split(':')[1].strip('\n').strip(' '))
-        block_size   = long(filter(lambda line: line.startswith('Block size'), lines)[0].split(':')[1].strip('\n').strip(' '))
+        try:
+            total_blocks = long(filter(lambda line: line.startswith('Block count'), lines)[0].split(':')[1].strip('\n').strip(' '))
+            free_blocks  = long(filter(lambda line: line.startswith('Free blocks'), lines)[0].split(':')[1].strip('\n').strip(' '))
+            block_size   = long(filter(lambda line: line.startswith('Block size'), lines)[0].split(':')[1].strip('\n').strip(' '))
+            return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
+        except:
+            return 0
 
-        return (((total_blocks - free_blocks) * block_size) / parteddata.MEGABYTE) + 150
+
+    def preResize(self, partition):
+        cmd_path = sysutils.find_executable("e2fsck")
+
+        if not cmd_path:
+            raise FSError, "Command not found to resize %s filesystem" % (self.name())
+
+        res = sysutils.execClear("e2fsck",
+                                ["-f", "-p", "-C", "0", partition.getPath()],
+                                stdout="/tmp/resize.log",
+                                stderr="/tmp/resize.log")
+        if res >= 4:
+            raise FSError, "FSCheck failed on %s" % (partition.getPath())
+
+        return True
 
     def resize(self, size_mb, partition):
         if size_mb < self.minResizeMB(partition):
@@ -289,13 +331,13 @@ class Ext3FileSystem(FileSystem):
             e = "Command not found to format %s filesystem" %(self.name())
             raise FSError, e 
 
-        cmd = "%s %s %sM" % (cmd_path, partition.getPath(), str(size_mb)) 
+        res = sysutils.execClear("resize2fs",
+                                ["-f", partition.getPath(), "%sM" %(size_mb)],
+                                stdout="/tmp/resize.log",
+                                stderr="/tmp/resize.log")
+        if res:
+            raise FSError, "Resize failed on %s" % (partition.getPath())
 
-        try:
-            p = os.popen(cmd)
-            p.close()
-        except:
-            return False
         return True
 
     def getLabel(self, partition):
@@ -440,6 +482,7 @@ class XFSFileSystem(FileSystem):
 class SwapFileSystem(FileSystem):
 
     _name = "linux-swap"
+    _sysname = "swap"
 
     def __init__(self):
         FileSystem.__init__(self)
@@ -498,11 +541,13 @@ class SwapFileSystem(FileSystem):
 class NTFSFileSystem(FileSystem):
 
     _name = "ntfs"
+    _sysname = "ntfs-3g"
+    _mountoptions = "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6"
 
     def __init__(self):
         FileSystem.__init__(self)
-
         self.setResizable(True)
+        self.setImplemented(true)
 
     def check_resize(self, size_mb, partition):
         #don't do anything, just check
@@ -519,17 +564,45 @@ class NTFSFileSystem(FileSystem):
         if size_mb < self.minResizeMB(partition):
             return False
 
-        cmd = "/usr/sbin/ntfsresize -f -s %dM %s" %(size_mb, partition.getPath())
+        p = os.pipe()
+        os.write(p[1], "y\n")
+        os.close(p[1])
 
-        try:
-            p = os.popen(cmd, "w")
-            p.write("y\n")
-            p.close()
-        except:
-            return False
+        res = sysutils.execClear("ntfsresize",
+                                ["-f","-s","%sM" % (size_mb), partition.getPath()],
+                                stdin = P[0],
+                                stdout = "/tmp/resize.log",
+                                stderr = "/tmp/resize.log")
+        if res:
+            raise FSError, "Resize failed on %s " % partition.getPath()
 
         return True
 
+    def setLabel(self, partition, label):
+        label = self.availableLabel(label)
+        cmd_path = sysutils.find_executable("ntfsresize")
+        cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
+        try:
+            p = os.popen(cmd)
+            p.close()
+        except:
+            return False
+        return True
+
+    def format(self, partition):
+        self.preFormat(partition)
+        cmd_path = sysutils.find_executable("mkfs.ntfs")
+
+        if not cmd_path:
+            e = "Command not found to format %s filesystem" % (self.name())
+            raise FSError, e
+
+        cmd = "%s -f %s" % (cmd_path, partition.getPath())
+
+        p = os.popen(cmd)
+        o = p.readlines()
+        if p.close():
+            raise YaliException, "Ntfs format failed: %s" % partition.getPath()
 
     def minResizeMB(self, partition):
 
@@ -549,6 +622,7 @@ class NTFSFileSystem(FileSystem):
 class FatFileSystem(FileSystem):
 
     _name = "fat32"
+    _sysname = "vfat"
     _mountoptions = "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6"
 
     def __init__(self):
@@ -560,19 +634,16 @@ class FatFileSystem(FileSystem):
 
     def format(self, partition):
         self.preFormat(partition)
-
         cmd_path = sysutils.find_executable("mkfs.vfat")
-
         if not cmd_path:
             e = "Command not found to format %s filesystem" %(self.name())
             raise FSError, e
 
         cmd = "%s %s" %(cmd_path,partition.getPath())
-
         p = os.popen(cmd)
         o = p.readlines()
         if p.close():
-            raise YaliException, "fat32 format failed: %s" % partition.getPath()
+            raise YaliException, "vfat format failed: %s" % partition.getPath()
 
     def getLabel(self, partition):
         cmd_path = sysutils.find_executable("dosfslabel")

@@ -77,19 +77,18 @@ PyDoc_STRVAR(eject__doc__,
 static PyObject*
 _sysutils_eject(PyObject *self, PyObject *args)
 {
-    int fd;
+    int fd=-1;
     const char *mount_point;
 
     if (!PyArg_ParseTuple(args, "s", &mount_point))
-	goto failed;
-    
+        goto failed;
+
     fd = open(mount_point, O_RDONLY|O_NONBLOCK, 0);
     if (fd == -1)
-	goto failed;
+        goto failed;
 
     if (ioctl(fd, CDROMEJECT, 0))
-	goto failed;
-
+        goto failed;
 
     close(fd);
     Py_INCREF(Py_True);
@@ -97,7 +96,7 @@ _sysutils_eject(PyObject *self, PyObject *args)
 
 failed:
     if (fd != -1)
-	close(fd);
+        close(fd);
     Py_INCREF(Py_False);
     return Py_False;
 }
@@ -141,16 +140,14 @@ _sysutils_e2fslabel(PyObject * s, PyObject * args)
 
     if (!PyArg_ParseTuple(args, "s", &device)) return NULL;
 
-    rc = ext2fs_open(device, EXT2_FLAG_FORCE, 0, 0, unix_io_manager,
-		     &fsys);
+    rc = ext2fs_open(device, EXT2_FLAG_FORCE, 0, 0, unix_io_manager, &fsys);
     if (rc) {
-	Py_INCREF(Py_None);
-	return Py_None;
+        Py_INCREF(Py_None);
+        return Py_None;
     }
 
     memset(buf, 0, sizeof(buf));
-    strncpy(buf, fsys->super->s_volume_name, 
-	    sizeof(fsys->super->s_volume_name));
+    strncpy(buf, fsys->super->s_volume_name, sizeof(fsys->super->s_volume_name));
 
     ext2fs_close(fsys);
 

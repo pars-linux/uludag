@@ -68,7 +68,7 @@ class Partition:
     # check if partition is extended
     def isExtended(self):
         return self._partition.type == parted.PARTITION_EXTENDED
-    
+
     # later
     def isRaid(self):
         return self._partition.is_flag_available(parted.PARTITION_RAID) and self._partition.get_flag(parted.PARTITION_RAID)
@@ -176,8 +176,10 @@ class Partition:
     def getGB(self):
         return self.getMB() / parteddata.KILOBYTE
 
-    def getSizeStr(self):
+    def getSizeStr(self, manual=None):
         gb = self.getGB()
+        if manual:
+            gb = manual / parteddata.KILOBYTE
         if gb > 1:
             return "%0.2f GB" % gb
         else:
