@@ -98,6 +98,7 @@ class CallHandler:
             func(*args)
 
     def __handleError(self, exception):
+        print "Handle Error:", exception._dbus_error_name
         name = exception._dbus_error_name
         name = name.split(self.dest)[1]
         if name.startswith(".policy.auth"):

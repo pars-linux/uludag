@@ -728,11 +728,8 @@ class MainApplicationWidget(QWidget):
         self.processEvents()
         self.progressDialog.hideStatus(True)
 
-        id = 0
-        if not forced:
-            id = Tray.ID_TRAY_INTERVAL_CHECK
+        self.command.startUpdate(repo, handleErrors=forced)
 
-        self.command.startUpdate(repo, id)
         # update repo command is given by the user
         if forced and not self.parent.isHidden():
             self.progressDialog.show()
