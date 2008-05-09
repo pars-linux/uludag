@@ -63,15 +63,9 @@ class Commander(QObject):
         else:
             print "Got notification : %s with data : %s" % (signal, data)
 
-#       #FIXME: What replaces this in new Comar api
-#       # do not show any error if it is the interval check
-#       # if not reply.id == ID_TRAY_INTERVAL_CHECK:
-#       #     self.parent.showErrorMessage(unicode(reply.data))
-
-    def startUpdate(self, repo = None):
+    def startUpdate(self, repo = None, handleErrors=True):
         if repo is None:
-            #FIXME: track id... anything needs to be added here?
-            self.updateAllRepos()
+            self.updateAllRepos(handleErrors)
         else:
             self.updateRepo(repo)
 
@@ -90,8 +84,8 @@ class Commander(QObject):
     def updateRepo(self, repo):
         self.comar.updateRepo(repo)
 
-    def updateAllRepos(self):
-        self.comar.updateAllRepos()
+    def updateAllRepos(self, handleErrors=True):
+        self.comar.updateAllRepos(handleErrors)
 
     def addRepo(self,repoName,repoAddress):
         self.comar.addRepo(repoName,repoAddress)
