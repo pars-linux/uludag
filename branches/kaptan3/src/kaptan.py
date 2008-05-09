@@ -206,11 +206,6 @@ class Kaptan(kaptanUi):
                     os.rmdir(os.path.join(root, name))
             os.rmdir(self.tmpThumbDir)
 
-        config = ConfigParser.ConfigParser()
-        config.read("/usr/kde/3.5/share/autostart/kaptan.desktop")
-        config.set("Desktop Entry", "x-kde-autostart-condition", "kaptanrc:General:RunOnStart:False")
-        config.write(open("/usr/kde/3.5/share/autostart/kaptan.desktop",'w'))
-
 def AboutData():
     return KAboutData(
         mod_app,
@@ -237,6 +232,11 @@ if __name__ == "__main__":
 
     kapp = KUniqueApplication(True, True, True)
     kaptan = Kaptan()
+
+    config = KConfig("kaptanrc")
+    config.setGroup("General")
+    config.writeEntry("RunOnStart", "False")
+    config.sync()
 
     # if you use different theme our works looks ugly :)
     style = QStyleFactory.create("Lipstik")
