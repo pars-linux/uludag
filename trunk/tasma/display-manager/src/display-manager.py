@@ -126,8 +126,10 @@ class MainWidget(dm_mainview.mainWidget):
 
         if screenId == 2 or self.selectedScreen == "2":
             self.screenImage2.setIconSet(icon)
+            self.pixMonitor2.setPixmap(icon.pixmap(QIconSet.Automatic, QIconSet.Normal))
         else:
             self.screenImage1.setIconSet(icon)
+            self.pixMonitor1.setPixmap(icon.pixmap(QIconSet.Automatic, QIconSet.Normal))
 
     def getCurrentConf(self):
         # returns a dict of outputs: resolutions.
@@ -218,6 +220,12 @@ class MainWidget(dm_mainview.mainWidget):
             self.comboBoxResolution.insertItem(resolution)
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+
+    def setDevicesMonitor1(self):
+        self.textMonitor1.setText(self.currentOutput)
+
+    def setDevicesMonitor2(self):
+        self.textMonitor2.setText(self.currentOutput)
 
     def identifyDisplays(self):
         # what's the fucking dcop call for that!?
