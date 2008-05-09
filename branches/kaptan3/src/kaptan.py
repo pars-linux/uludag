@@ -19,6 +19,8 @@ import kdedesigner
 import sys
 import logging
 import os
+import ConfigParser
+
 from screens.kaptanMain import kaptanUi
 
 # Screens
@@ -203,6 +205,11 @@ class Kaptan(kaptanUi):
                 for name in dirs:
                     os.rmdir(os.path.join(root, name))
             os.rmdir(self.tmpThumbDir)
+
+        config = ConfigParser.ConfigParser()
+        config.read("/usr/kde/3.5/share/autostart/kaptan.desktop")
+        config.set("Desktop Entry", "x-kde-autostart-condition", "kaptanrc:General:RunOnStart:False")
+        config.write(open("/usr/kde/3.5/share/autostart/kaptan.desktop",'w'))
 
 def AboutData():
     return KAboutData(
