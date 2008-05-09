@@ -36,6 +36,7 @@ class Widget(PackageWidget, ScreenWidget):
     def __init__(self, *args):
         apply(PackageWidget.__init__, (self,) + args)
 
+        self.flagRepo = 0
         # set updateTime
         self.updateInterval.setValue(self.updateTime)
 
@@ -77,13 +78,20 @@ class Widget(PackageWidget, ScreenWidget):
                     if r == self.repoName + str(n):
                         n = n + 1
                     else:
-                        self.repoName = r + str(n)
+                        self.repoName = self.repoName + str(n)
 
     def slotContribRepo(self):
         if self.checkBoxContrib.isChecked():
-            print self.addRepo()
+            if self.addRepo() == False:
+                self.flagRepo = 1
+                self.checkBoxContrib.setChecked(0)
+                """
+                message = i18n("Please try again.")
+                QMessageBox.warning(self, i18n("Wrong password!"), message, QMessageBox.Ok, QMessageBox.NoButton)
+                """
         else:
-            print self.removeRepo()
+            if self.flagRepo != 1:
+                print self.removeRepo()
 
     def addRepo(self):
         try:
