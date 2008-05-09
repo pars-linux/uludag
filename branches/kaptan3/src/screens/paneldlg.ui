@@ -181,7 +181,7 @@
                     <enum>ParentOrigin</enum>
                 </property>
                 <property name="frameShape">
-                    <enum>Box</enum>
+                    <enum>NoFrame</enum>
                 </property>
                 <property name="lineWidth">
                     <number>6</number>
