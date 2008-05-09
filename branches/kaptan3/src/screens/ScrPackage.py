@@ -85,10 +85,9 @@ class Widget(PackageWidget, ScreenWidget):
             if self.addRepo() == False:
                 self.flagRepo = 1
                 self.checkBoxContrib.setChecked(0)
-                """
-                message = i18n("Please try again.")
+
+                message = i18n("You are not authorized for this operation.")
                 QMessageBox.warning(self, i18n("Wrong password!"), message, QMessageBox.Ok, QMessageBox.NoButton)
-                """
         else:
             if self.flagRepo != 1:
                 print self.removeRepo()
@@ -114,6 +113,7 @@ class Widget(PackageWidget, ScreenWidget):
             try:
                 if authResult:
                     contribrepo.addRepo(self.repoName, self.repoAddress)
+                    return True
                 else:
                     return False
             except:
@@ -140,6 +140,7 @@ class Widget(PackageWidget, ScreenWidget):
             try:
                 if authResult:
                     contribrepo.removeRepo(self.repoName)
+                    return True
                 else:
                     return False
             except:
