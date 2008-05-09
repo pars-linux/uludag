@@ -85,13 +85,13 @@ a {
 
 /*IE*/
 li {
-     list-style-image: url('resim/bullet-blue.png');
+     list-style-image: url('images/bullet-blue.png');
      margin-right: 5px;
 }
 
 /*Others*/
 html>body li {
-    background-image: url('resim/bullet-blue.png');
+    background-image: url('images/bullet-blue.png');
     background-repeat: no-repeat;
     background-position: 0px 2px;
     vertical-align: top;
