@@ -89,8 +89,9 @@ def get_package(package, installed=False):
         return get_repo_package(package)
 
 def search_package(terms, installed=False):
+    installdb = pisi.db.installdb.InstallDB()
     if installed:
         return pisi.api.search_installed(terms)
     else:
-        return pisi.api.search_package(terms)
+        return filter(lambda x:not installdb.has_package(x), pisi.api.search_package(terms))
 
