@@ -91,7 +91,7 @@ class ComarIface:
 
     def updateRepo(self, repo):
         self.com_lock.lock()
-        self.callMethod("updateRepository", "tr.org.pardus.comar.system.manager.updaterepository", None, True, repo)
+        self.callMethod("updateRepository", "tr.org.pardus.comar.system.manager.updaterepository", None, True, str(repo))
 
     # handleErrors is for Tray's Interval Check. If there is no network, handleErrors param is used for not showing any error to the user.
     def updateAllRepos(self, handleErrors=True):
