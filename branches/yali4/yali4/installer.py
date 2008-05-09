@@ -193,8 +193,8 @@ class Yali:
         for dev in yali4.storage.devices:
             ctx.debugger.log("In disk %s, %d mb is free." % (dev.getPath(), dev.getLargestContinuousFreeMB()))
             if dev.primaryAvailable():
-                if dev.getLargestContinuousFreeMB() > ctx.consts.min_root_size + 100:
-                    rootWidget.resizableDisks.append(dev)
+                #if dev.getLargestContinuousFreeMB() > ctx.consts.min_root_size + 100:
+                #    rootWidget.resizableDisks.append(dev)
                 for part in dev.getOrderedPartitionList():
                     ctx.debugger.log("Partition %s found on disk %s, formatted as %s" % (part.getPath(), dev.getPath(), part.getFSName()))
                     if part.isResizable():
@@ -205,7 +205,7 @@ class Yali:
                         ctx.debugger.log(" - It can resizable to %.2f MB" % minSize)
                         ctx.debugger.log(" - Usable size for this partition is %.2f MB" % possibleFreeSize)
                         rootWidget.resizablePartitions.append({"partition":part,"newSize":possibleFreeSize})
-                        if possibleFreeSize+100 > ctx.consts.min_root_size:
+                        if possibleFreeSize / 2 > ctx.consts.min_root_size:
                             if dev not in rootWidget.resizableDisks:
                                 rootWidget.resizableDisks.append(dev)
                     else:

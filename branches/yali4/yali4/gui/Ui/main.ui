@@ -293,13 +293,13 @@ QListWidget {
 }
 
 QProgressBar {
-    border: 2px solid #F1610D;
+    border: 2px solid #FFFFFF;
     border-radius:5px;
     text-align: center;
 }
 
 QProgressBar::chunk {
-    background-color: #F1610D;
+    background-color: #F5AA02;
     width: 0.5px;
 }</string>
   </property>

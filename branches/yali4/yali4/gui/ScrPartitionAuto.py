@@ -85,7 +85,7 @@ about disk partitioning.
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
         self.connect(self.ui.device_list, SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
 
-    def fillDeviceList(self,limit=None):
+    def fillDeviceList(self,limit=False):
         self.ui.device_list.clear()
         # fill device list
         for dev in yali4.storage.devices:
@@ -103,7 +103,7 @@ about disk partitioning.
 
         # scan partitions for resizing
         ctx.yali.scanPartitions(self)
-        self.fillDeviceList()
+        self.fillDeviceList(self.ui.accept_auto_1.isChecked())
 
         def sortBySize(x,y):
             if x["newSize"]>y["newSize"]:return -1
@@ -151,6 +151,8 @@ about disk partitioning.
         ctx.autoInstall = True
         ctx.debugger.log("Automatic Partition selected..")
         ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.device.getPath())
+        if self.autoPartPartition:
+            ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.autoPartPartition["partition"].getPath())
         if self.ui.accept_auto_2.isChecked():
             ctx.installData.autoPartMethod = methodEraseAll
         # skip next screen()

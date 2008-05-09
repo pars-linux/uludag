@@ -62,7 +62,7 @@ Click Next button to proceed.
         self.ui.pass_error.setVisible(False)
         self.ui.caps_error.setVisible(False)
 
-        self.ui.caps_error.setText(_('<font color="#FF6D19">Caps Lock is on!</font>'))
+        self.ui.caps_error.setText(_('<center><font color="#FF6D19">Caps Lock is on!</font></center>'))
 
         # User Icons
         self.normalUserIcon = QtGui.QPixmap(":/gui/pics/user_normal.png")

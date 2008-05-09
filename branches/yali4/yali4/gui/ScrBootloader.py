@@ -135,6 +135,7 @@ all your present data on the selected disk will be lost.</p>
         if not self.dialog.exec_():
             # disabled by weaver
             ctx.mainScreen.enableBack()
+            ctx.mainScreen.enableNext()
             return False
 
         ctx.mainScreen.processEvents()

@@ -88,10 +88,12 @@ class Widget(Ui_YaliMain):
     # execute next step
     def slotNext(self,dryRun=False):
         _w = self.mainStack.currentWidget()
+        ret = True
         if not dryRun:
-            _w.execute()
-        self.stackMove(self.getCur(self.moveInc))
-        self.moveInc = 1
+            ret = _w.execute()
+        if ret:
+            self.stackMove(self.getCur(self.moveInc))
+            self.moveInc = 1
 
     # execute previous step
     def slotBack(self):

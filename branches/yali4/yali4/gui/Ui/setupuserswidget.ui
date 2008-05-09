@@ -299,6 +299,9 @@
        </item>
        <item>
         <widget class="QComboBox" name="autoLogin" >
+         <property name="minimumContentsLength" >
+          <number>22</number>
+         </property>
          <item>
           <property name="text" >
            <string>Auto Login Disabled</string>
