@@ -28,14 +28,13 @@ import screens.ScrPackage as ScrPackage
 import screens.ScrMouse as ScrMouse
 import screens.ScrNetwork as ScrNetwork
 import screens.ScrPanel as ScrPanel
-import screens.ScrPhoto as ScrPhoto
+#import screens.ScrPhoto as ScrPhoto
 import screens.ScrGoodbye as ScrGoodbye
 import screens.ScrMultiple as ScrMultiple
 
 #set avaiable screens
 avail_screens = [ScrWelcome,
                  ScrMouse,
-                 ScrPhoto,
                  ScrPanel,
                  ScrMultiple,
                  ScrWallpaper,
@@ -133,7 +132,7 @@ class Kaptan(kaptanUi):
 
         self.pageStack.raiseWidget(where)
         _w = self.pageStack.visibleWidget()
-        self.pageDesc.setText(_w.desc)
+        self.pageDesc.setText(i18n(_w.desc))
         self.pageIcon.setPixmap(QPixmap(locate("data", _w.icon)))
 
         _w.shown()
@@ -204,14 +203,6 @@ class Kaptan(kaptanUi):
                 for name in dirs:
                     os.rmdir(os.path.join(root, name))
             os.rmdir(self.tmpThumbDir)
-
-        """
-        if ScrPackage.isUpdateOn == True:
-            proc = KProcess()
-            proc << locate("exe", "package-manager")
-            proc.start(KProcess.DontCare)
-        """
-        pass
 
 def AboutData():
     return KAboutData(
