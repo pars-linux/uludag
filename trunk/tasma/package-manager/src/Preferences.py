@@ -61,9 +61,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.intervalCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "UpdateCheck"))
         self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
-        self.reposChanged = False
-        self.cacheEnabled = False
         self.getCacheSettings()
+
+        # This is to not call setRepositories unnecessarily
+        self.reposChanged = False
 
     def setCacheSettings(self, useCache, cacheLimit):
         self.parent.command.setCache(useCache, cacheLimit)
@@ -87,6 +88,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             enableCache = False
 
         self.cacheEnabled = enableCache
+        self.cacheSize = cache_limit
         self.useCacheCheck.setChecked(enableCache)
         self.useCacheSize.setValue(cache_limit)
 
@@ -200,7 +202,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.parent.settings.setValue(Settings.general, "UpdateCheckInterval", self.intervalSpin.value())
 
         # set cache if changed
-        if self.cacheEnabled != self.useCacheCheck.isChecked():
+        if self.cacheEnabled != self.useCacheCheck.isChecked() or self.cacheSize != self.useCacheSize.value():
             self.setCacheSettings(self.useCacheCheck.isChecked(), self.useCacheSize.value())
 
         if self.intervalCheck.isChecked():
