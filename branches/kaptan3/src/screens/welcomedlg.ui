@@ -59,6 +59,9 @@
                     <property name="backgroundOrigin">
                         <enum>AncestorOrigin</enum>
                     </property>
+                    <property name="scaledContents">
+                        <bool>true</bool>
+                    </property>
                 </widget>
                 <widget class="QLabel">
                     <property name="name">
