@@ -61,9 +61,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.intervalCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "UpdateCheck"))
         self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
-        self.getCacheSettings()
         self.reposChanged = False
         self.cacheEnabled = False
+        self.getCacheSettings()
 
     def setCacheSettings(self, useCache, cacheLimit):
         self.parent.command.setCache(useCache, cacheLimit)
