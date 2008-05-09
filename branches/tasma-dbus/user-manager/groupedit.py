@@ -164,24 +164,25 @@ class GroupStack(QVBox):
     def slotAdd(self):
         if self.guide.check():
             return
-        
+
         self.guide.op_start(i18n("Adding group..."))
-        
-        def groupDone(uid):
-            if self.g_id.text() == "auto":
-                gid = -1
-            else:
-                gid = int (self.g_id.text())
+
+        def groupDone(gid):
             self.parent().browse.groupModified(gid, self.g_name.text())
             self.parent().slotCancel()
         def groupCancel():
             self.parent().slotCancel()
-        
+
+        if self.g_id.text() == "auto":
+            gid = -1
+        else:
+            gid = int (self.g_id.text())
+
         ch = self.mainwidget.callMethod("addGroup", "tr.org.pardus.comar.user.manager.addgroup")
         ch.registerDone(groupDone)
         ch.registerError(groupCancel)
         ch.registerCancel(groupCancel)
-        ch.call(self.g_id.text(), self.g_name.text())
+        ch.call(gid, self.g_name.text())
     
     def startAdd(self):
         self.g_id.setText("auto")
