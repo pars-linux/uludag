@@ -168,7 +168,11 @@ class GroupStack(QVBox):
         self.guide.op_start(i18n("Adding group..."))
         
         def groupDone(uid):
-            self.parent().browse.groupModified(int(self.g_id.text()), self.g_name.text())
+            if self.g_id.text() == "auto":
+                gid = -1
+            else:
+                gid = int (self.g_id.text())
+            self.parent().browse.groupModified(gid, self.g_name.text())
             self.parent().slotCancel()
         def groupCancel():
             self.parent().slotCancel()
