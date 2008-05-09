@@ -17,8 +17,6 @@ from qt import QObject, QTimer
 import ComarIface
 import Settings
 
-from Tray import ID_TRAY_INTERVAL_CHECK
-
 class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
