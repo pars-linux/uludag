@@ -160,8 +160,9 @@ class Widget(PackageWidget, ScreenWidget):
         config.sync()
 
         if self.showTray.isChecked():
-            global isUpdateOn 
-            isUpdateOn = True
+            proc = KProcess()
+            proc << locate("exe", "package-manager")
+            proc.start(KProcess.DontCare)
 
     def shown(self):
         #self.applySettings()
