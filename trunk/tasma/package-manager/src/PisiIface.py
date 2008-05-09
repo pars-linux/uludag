@@ -97,4 +97,4 @@ def search_in_repos(terms):
     return filter(lambda x:not installdb.has_package(x), pisi.api.search_package(terms))
 
 def search_in_upgradables(terms):
-        return list(set(get_upgradable_packages()).intersection(pisi.api.search_package(terms)))
+    return list(set(get_upgradable_packages()).intersection(pisi.api.search_package(terms)))
