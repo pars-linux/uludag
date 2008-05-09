@@ -61,6 +61,11 @@ class ComarIface:
         KMessageBox.error(None, str(exception), i18n("COMAR Error"))
         self.errHandler()
 
+    def cancelError(self):
+        message = i18n("You are not authorized for this operation.")
+        self.errHandler()
+        KMessageBox.sorry(None, message, i18n("Error"))
+
     def callMethod(self, method, action, handler, handleErrors, *args):
         print "Method: %s      Action: %s" % (method, action)
         ch = CallHandler("pisi", "System.Manager", method,
@@ -71,6 +76,7 @@ class ComarIface:
             ch.registerError(self.comarError)
             ch.registerAuthError(self.comarAuthError)
             ch.registerDBusError(self.busError)
+            ch.registerCancel(self.cancelError)
 
         if handler:
             ch.registerDone(handler)
