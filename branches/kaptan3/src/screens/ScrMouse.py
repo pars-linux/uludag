@@ -44,7 +44,7 @@ class Widget(MouseWidget, ScreenWidget):
         self.rightHanded.setText(i18n("Right Hand"))
         self.clickSettingsGroup.setTitle(i18n("Click behaviour"))
         self.singleClick.setText(i18n("&Single-click to open files and folders"))
-        self.doubleClick.setText(i18n("Dou&ble-click to open files and folders (select icons on first click)"))
+        self.doubleClick.setText(i18n("Dou&ble-click to open files and folders"))
 
         # set signals
         self.connect(self.singleClick, SIGNAL("toggled(bool)"),self.setClickBehaviour)

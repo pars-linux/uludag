@@ -41,7 +41,7 @@ class Widget(WallpaperWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
     title = "Set your Wallpaper !"
-    desc = "Enjoy with wonderful backgrounds..."
+    desc = i18n("Enjoy with wonderful backgrounds...")
     icon = "kaptan/pics/icons/wallpaper.png"
 
     def __init__(self, *args):

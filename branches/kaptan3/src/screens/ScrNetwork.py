@@ -22,7 +22,7 @@ class Widget(NetworkWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
     title = "Network Manager"
-    desc = "Configure network settings..."
+    desc = i18n("Configure network settings...")
     icon = "kaptan/pics/icons/network.png"
 
     running = False
