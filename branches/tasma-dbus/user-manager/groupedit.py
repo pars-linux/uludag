@@ -173,7 +173,7 @@ class GroupStack(QVBox):
         def groupCancel():
             self.parent().slotCancel()
         
-        ch = self.mainwidget.callMethod("addGroup", "tr.org.pardus.comar.user.manager.adduser")
+        ch = self.mainwidget.callMethod("addGroup", "tr.org.pardus.comar.user.manager.addgroup")
         ch.registerDone(groupDone)
         ch.registerError(groupCancel)
         ch.registerCancel(groupCancel)
