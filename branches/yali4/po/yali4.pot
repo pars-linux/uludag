@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 12:18+0300\n"
+"POT-Creation-Date: 2008-05-09 15:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgstr ""
 #: yali4/gui/Ui/checkcdwidget.py:85 yali4/gui/Ui/keyboardwidget.py:70
 #: yali4/gui/Ui/kickerwidget.py:27 yali4/gui/Ui/parteditbuttons.py:48
 #: yali4/gui/Ui/parteditwidget.py:93 yali4/gui/Ui/partlistwidget.py:83
-#: yali4/gui/Ui/rootpasswidget.py:207 yali4/gui/Ui/setupuserswidget.py:186
+#: yali4/gui/Ui/rootpasswidget.py:207 yali4/gui/Ui/setupuserswidget.py:187
 #: yali4/gui/Ui/welcomewidget.py:109
 msgid "Form1"
 msgstr ""
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Details about the screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:466 yali4/gui/YaliWindow.py:166
+#: yali4/gui/Ui/main.py:466 yali4/gui/YaliWindow.py:168
 msgid "Release Notes"
 msgstr ""
 
@@ -403,47 +403,47 @@ msgstr ""
 msgid "Hostname:"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:187
+#: yali4/gui/Ui/setupuserswidget.py:188
 msgid "New User"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:188
+#: yali4/gui/Ui/setupuserswidget.py:189
 msgid "User Name:"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:189
+#: yali4/gui/Ui/setupuserswidget.py:190
 msgid "Real Name:"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:190
+#: yali4/gui/Ui/setupuserswidget.py:191
 msgid "Password:"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:191
+#: yali4/gui/Ui/setupuserswidget.py:192
 msgid "Password (again):"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:192 yali4/gui/ScrUsers.py:203
+#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:203
 msgid "Create User"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:193
+#: yali4/gui/Ui/setupuserswidget.py:194
 msgid "Give administrator privileges to this user"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:196
+#: yali4/gui/Ui/setupuserswidget.py:197
 msgid "Users:"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:197
+#: yali4/gui/Ui/setupuserswidget.py:198
 msgid "Delete Selected User"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:198
+#: yali4/gui/Ui/setupuserswidget.py:199
 msgid "Auto Login User :"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:199
+#: yali4/gui/Ui/setupuserswidget.py:200
 msgid "Auto Login Disabled"
 msgstr ""
 
@@ -630,7 +630,7 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrAdmin.py:70
+#: yali4/gui/ScrAdmin.py:70 yali4/gui/ScrUsers.py:65
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
 msgstr ""
 
@@ -681,7 +681,7 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrBootloader.py:124
+#: yali4/gui/ScrBootloader.py:129
 msgid ""
 "<b>\n"
 "<p>This action will use your entire disk for Pardus installation and <br>\n"
@@ -689,12 +689,12 @@ msgid ""
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/ScrBootloader.py:149 yali4/gui/ScrBootloader.py:156
-#: yali4/gui/ScrBootloader.py:170
+#: yali4/gui/ScrBootloader.py:155 yali4/gui/ScrBootloader.py:162
+#: yali4/gui/ScrBootloader.py:176
 msgid "Formatting ..."
 msgstr ""
 
-#: yali4/gui/ScrBootloader.py:163 yali4/installer.py:218
+#: yali4/gui/ScrBootloader.py:169 yali4/installer.py:218
 msgid "Writing disk tables ..."
 msgstr ""
 
@@ -782,7 +782,7 @@ msgid ""
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:128 yali4/installer.py:507
+#: yali4/gui/ScrGoodbye.py:128 yali4/installer.py:506
 msgid "Reboot"
 msgstr ""
 
@@ -1004,10 +1004,6 @@ msgid ""
 "Click Next button to proceed.\n"
 "</p>\n"
 "</font>\n"
-msgstr ""
-
-#: yali4/gui/ScrUsers.py:65
-msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
 msgstr ""
 
 #: yali4/gui/ScrUsers.py:114

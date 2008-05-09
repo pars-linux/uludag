@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 12:18+0300\n"
+"POT-Creation-Date: 2008-05-09 15:00+0300\n"
 "PO-Revision-Date: 2007-10-10 19:20-0400\n"
 "Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
 "Language-Team: español <es@li.org>\n"
@@ -48,7 +48,7 @@ msgstr "Eliminar Usuario Seleccionado"
 #: yali4/gui/Ui/checkcdwidget.py:85 yali4/gui/Ui/keyboardwidget.py:70
 #: yali4/gui/Ui/kickerwidget.py:27 yali4/gui/Ui/parteditbuttons.py:48
 #: yali4/gui/Ui/parteditwidget.py:93 yali4/gui/Ui/partlistwidget.py:83
-#: yali4/gui/Ui/rootpasswidget.py:207 yali4/gui/Ui/setupuserswidget.py:186
+#: yali4/gui/Ui/rootpasswidget.py:207 yali4/gui/Ui/setupuserswidget.py:187
 #: yali4/gui/Ui/welcomewidget.py:109
 msgid "Form1"
 msgstr "Form1"
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Details about the screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:466 yali4/gui/YaliWindow.py:166
+#: yali4/gui/Ui/main.py:466 yali4/gui/YaliWindow.py:168
 msgid "Release Notes"
 msgstr "Notas de Versión"
 
@@ -456,48 +456,48 @@ msgid "Hostname:"
 msgstr "Nombre de la máquina (hostname)"
 
 # Nuevo usuario
-#: yali4/gui/Ui/setupuserswidget.py:187
+#: yali4/gui/Ui/setupuserswidget.py:188
 #, fuzzy
 msgid "New User"
 msgstr "Nuevo usuario"
 
-#: yali4/gui/Ui/setupuserswidget.py:188
+#: yali4/gui/Ui/setupuserswidget.py:189
 msgid "User Name:"
 msgstr "Nombre de Usuario:"
 
-#: yali4/gui/Ui/setupuserswidget.py:189
+#: yali4/gui/Ui/setupuserswidget.py:190
 msgid "Real Name:"
 msgstr "Nombre real:"
 
-#: yali4/gui/Ui/setupuserswidget.py:190
+#: yali4/gui/Ui/setupuserswidget.py:191
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: yali4/gui/Ui/setupuserswidget.py:191
+#: yali4/gui/Ui/setupuserswidget.py:192
 msgid "Password (again):"
 msgstr "Contraseña (repetir):"
 
-#: yali4/gui/Ui/setupuserswidget.py:192 yali4/gui/ScrUsers.py:203
+#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:203
 msgid "Create User"
 msgstr "Crear Usuario"
 
-#: yali4/gui/Ui/setupuserswidget.py:193
+#: yali4/gui/Ui/setupuserswidget.py:194
 msgid "Give administrator privileges to this user"
 msgstr "Conceder derechos administrativo al usuario"
 
-#: yali4/gui/Ui/setupuserswidget.py:196
+#: yali4/gui/Ui/setupuserswidget.py:197
 msgid "Users:"
 msgstr "Usuarios:"
 
-#: yali4/gui/Ui/setupuserswidget.py:197
+#: yali4/gui/Ui/setupuserswidget.py:198
 msgid "Delete Selected User"
 msgstr "Eliminar Usuario Seleccionado"
 
-#: yali4/gui/Ui/setupuserswidget.py:198
+#: yali4/gui/Ui/setupuserswidget.py:199
 msgid "Auto Login User :"
 msgstr "Iniciar sesión automaticamente como usuario:"
 
-#: yali4/gui/Ui/setupuserswidget.py:199
+#: yali4/gui/Ui/setupuserswidget.py:200
 msgid "Auto Login Disabled"
 msgstr "Inicio de sesión automática deshabilitada"
 
@@ -735,7 +735,7 @@ msgstr ""
 # Las Mayúsculas están activadas !
 # o
 # Modo Mayúsculas activado
-#: yali4/gui/ScrAdmin.py:70
+#: yali4/gui/ScrAdmin.py:70 yali4/gui/ScrUsers.py:65
 #, fuzzy
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
 msgstr "<font color=\"#FF6D19\">Las Mayúsculas están activadas !</font>"
@@ -820,7 +820,7 @@ msgstr ""
 " (Guía de instalación y Manual de Usuario de Pardus)</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrBootloader.py:124
+#: yali4/gui/ScrBootloader.py:129
 #, fuzzy
 msgid ""
 "<b>\n"
@@ -839,13 +839,13 @@ msgstr ""
 
 # no dejar espacio entre la ultima palabra y el signo de puntuación:
 # exclamación o interrogación o punto o coma, o punto y coma o dos puntos
-#: yali4/gui/ScrBootloader.py:149 yali4/gui/ScrBootloader.py:156
-#: yali4/gui/ScrBootloader.py:170
+#: yali4/gui/ScrBootloader.py:155 yali4/gui/ScrBootloader.py:162
+#: yali4/gui/ScrBootloader.py:176
 #, fuzzy
 msgid "Formatting ..."
 msgstr "Formateando!"
 
-#: yali4/gui/ScrBootloader.py:163 yali4/installer.py:218
+#: yali4/gui/ScrBootloader.py:169 yali4/installer.py:218
 #, fuzzy
 msgid "Writing disk tables ..."
 msgstr "Guardando datos de consola..."
@@ -980,7 +980,7 @@ msgstr ""
 "<p>Presione el botón 'Reiniciar' para reiniciar el sistema.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:128 yali4/installer.py:507
+#: yali4/gui/ScrGoodbye.py:128 yali4/installer.py:506
 msgid "Reboot"
 msgstr "Reiniciar"
 
@@ -1346,13 +1346,6 @@ msgstr ""
 "Presione el botón Siguiente para continuar.\n"
 "</p>\n"
 "</font>\n"
-
-# Las Mayúsculas están activadas !
-# o
-# Modo Mayúsculas activado
-#: yali4/gui/ScrUsers.py:65
-msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
-msgstr "<font color=\"#FF6D19\">Las Mayúsculas están activadas !</font>"
 
 #: yali4/gui/ScrUsers.py:114
 msgid ""
@@ -1769,6 +1762,12 @@ msgstr "Intercambio (swap)"
 #, fuzzy
 msgid "Archive Partition"
 msgstr "Crear Partición"
+
+# Las Mayúsculas están activadas !
+# o
+# Modo Mayúsculas activado
+#~ msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
+#~ msgstr "<font color=\"#FF6D19\">Las Mayúsculas están activadas !</font>"
 
 #~ msgid "Configuring packages for your system!"
 #~ msgstr "Configurando paquetes para su sistema !"
