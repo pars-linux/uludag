@@ -88,26 +88,26 @@ class Guide(QWidget):
         hb.addWidget(lab, 0, hb.AlignTop)
         self.info = KActiveLabel(" ", self)
         hb.addWidget(self.info)
-    
+
     def check(self):
         err = None
         p = self.parent()
-        
+
         if p.g_id.text() == "":
             err = i18n("Enter a group ID or use auto selection")
-        
+
         if not err and p.g_name.text() == "":
             err = i18n("Enter a group name")
-        
+
         if err:
             self.info.setText(u"<font color=red>%s</font>" % err)
             self.ok_but.setEnabled(False)
         else:
             self.info.setText("")
             self.ok_but.setEnabled(True)
-        
+
         return err
-    
+
     def op_start(self, msg):
         self.buttons.setEnabled(False)
         self.info.setText(msg)
@@ -169,6 +169,7 @@ class GroupStack(QVBox):
 
         def groupDone(gid):
             self.parent().browse.groupModified(gid, self.g_name.text())
+            self.guide.op_end()
             self.parent().slotCancel()
         def groupCancel():
             self.parent().slotCancel()
