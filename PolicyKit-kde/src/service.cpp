@@ -611,7 +611,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             throw msg;
         }
 
-        QString qMessage = QString(message);
+        QString qMessage = QString::fromUtf8(message);
         m_dialog = new AuthDialog(qMessage);
         Debug::printDebug("AuthDialog created.");
 
