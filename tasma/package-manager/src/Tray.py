@@ -21,8 +21,6 @@ import PisiIface
 from Notifier import *
 from Icons import *
 
-ID_TRAY_INTERVAL_CHECK=30
-
 class Tray(KSystemTray):
     def __init__(self, parent):
         KSystemTray.__init__(self, parent)
