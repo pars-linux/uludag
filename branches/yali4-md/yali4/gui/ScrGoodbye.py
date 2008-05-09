@@ -35,8 +35,9 @@ from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.YaliSteps import YaliSteps
 from yali4.gui.Ui.goodbyewidget import Ui_GoodByeWidget
-from yali4.constants import consts
 import yali4.gui.context as ctx
+
+YALI_INSTALL, YALI_FIRSTBOOT, YALI_OEMINSTALL, YALI_PARTITIONER = range(4)
 
 ##
 # Goodbye screen
@@ -67,37 +68,36 @@ don't you?
 
         self.steps = YaliSteps()
 
-        self.ui.info.setText(_('<b><font size="+2" color="#FF6D19">Rebooting system. Please wait!</font></b>'))
-        self.ui.info.hide()
-
     def shown(self):
         ctx.mainScreen.disableBack()
-        self.processPendingActions()
+        ctx.yali.processPendingActions(self)
         self.steps.slotRunOperations()
 
     def execute(self):
         ctx.mainScreen.disableNext()
 
-        self.ui.info.show()
-
-        try:
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
-            yali4.sysutils.umount(ctx.consts.target_dir + "/home")
-            ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir))
-            yali4.sysutils.umount(ctx.consts.target_dir)
-        except:
-            ctx.debugger.log("Umount Failed.")
-            pass
+        if not ctx.yali.install_type == YALI_FIRSTBOOT:
+            try:
+                ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/home"))
+                yali4.sysutils.umount(ctx.consts.target_dir + "/home")
+                ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir))
+                yali4.sysutils.umount(ctx.consts.target_dir)
+            except:
+                ctx.debugger.log("Umount Failed.")
+                pass
 
         w = RebootWidget(self)
 
         ctx.debugger.log("Show reboot dialog.")
         self.dialog = WarningDialog(w, self)
         self.dialog.exec_()
+        ctx.mainScreen.processEvents()
+        ctx.yali.info.updateAndShow(_('<b>Rebooting system. Please wait!</b>'))
 
-        ctx.debugger.log("Trying to eject the CD.")
         # remove cd...
-        yali4.sysutils.eject_cdrom()
+        if not ctx.yali.install_type == YALI_FIRSTBOOT:
+            ctx.debugger.log("Trying to eject the CD.")
+            yali4.sysutils.eject_cdrom()
 
         ctx.debugger.log("Yali, fastreboot calling..")
 
@@ -105,124 +105,9 @@ don't you?
         if ctx.debugEnabled:
             open(ctx.consts.log_file,"w").write(str(ctx.debugger.traceback.plainLogs))
 
+        ctx.mainScreen.processEvents()
         time.sleep(4)
         yali4.sysutils.fastreboot()
-
-    # process pending actions defined in other screens.
-    def processPendingActions(self):
-        bus = None
-
-        def connectToDBus():
-            global bus
-            for i in range(20):
-                try:
-                    ctx.debugger.log("trying to start dbus..")
-                    bus = dbus.bus.BusConnection(address_or_type=consts.dbus_socket_file)
-                    break
-                except dbus.DBusException:
-                    time.sleep(1)
-                    ctx.debugger.log("wait dbus for 1 second...")
-            if bus:
-                return True
-            return False
-
-        def setHostName():
-            global bus
-            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-            # setHostName(hostname)
-            obj.setHostName(ctx.installData.hostName, dbus_interface="tr.org.pardus.comar.Net.Stack")
-            ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
-            return True
-
-        def addUsers():
-            global bus
-            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-            for u in yali4.users.pending_users:
-                ctx.debugger.log("User %s adding to system" % u.username)
-                # addUser(id, nick, realname, homedir, shell, passwd, groups)
-                obj.addUser("auto", u.username, u.realname, "", "", u.passwd, u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
-
-                # Enable auto-login
-                if u.username == ctx.installData.autoLoginUser:
-                    u.setAutoLogin()
-            return True
-
-        def setRootPassword():
-            if not ctx.installData.useYaliFirstBoot:
-                global bus
-                obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-                # setUser(uid, realname, homedir, shell, passwd, groups)
-                obj.setUser(0, "", "", "", ctx.installData.rootPassword, "", dbus_interface="tr.org.pardus.comar.User.Manager")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
-            return True
-
-        def writeConsoleData():
-            yali4.localeutils.write_keymap(ctx.installData.keyData.console)
-            ctx.debugger.log("Keymap stored.")
-            return True
-
-        def migrateXorgConf():
-            yali4.postinstall.migrate_xorg_conf(ctx.installData.keyData.X)
-            ctx.debugger.log("xorg.conf merged.")
-            return True
-
-        def setPackages():
-            global bus
-            if yali4.sysutils.checkYaliParams(param=ctx.consts.firstBootParam):
-                ctx.debugger.log("OemInstall selected.")
-                # kdebase off
-                obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
-                obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
-                # yali on
-                obj = bus.get_object("tr.org.pardus.comar", "/package/yali_firstBoot")
-                obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
-                #ctx.debugger.log("RESULT :: %s" % str(comarLink.read_cmd()))
-            return True
-
-        steps = [{"text":"Trying to connect COMAR Daemon...","operation":connectToComar},
-                 {"text":"Setting Hostname...","operation":setHostName},
-                 {"text":"Setting TimeZone...","operation":yali4.postinstall.setTimeZone},
-                 {"text":"Setting Root Password...","operation":setRootPassword},
-                 {"text":"Adding Users...","operation":addUsers},
-                 {"text":"Writing Console Data...","operation":writeConsoleData},
-                 {"text":"Migrating X.org Configuration...","operation":migrateXorgConf},
-                 {"text":"Setting misc. package configurations...","operation":setPackages},
-                 {"text":"Installing BootLoader...","operation":self.installBootloader}]
-
-        self.steps.setOperations(steps)
-
-    def installBootloader(self):
-        if not ctx.installData.bootLoaderDev:
-            ctx.debugger.log("Dont install bootloader selected; skipping.")
-            return
-
-        ctx.debugger.log("Bootloader is installing...")
-        loader = yali4.bootloader.BootLoader()
-        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
-                                                                  partrequest.mountRequestType)
-        _ins_part = root_part_req.partition().getPath()
-        loader.write_grub_conf(_ins_part,ctx.installData.bootLoaderDev)
-
-        # Check for windows partitions.
-        for d in yali4.storage.devices:
-            for p in d.getPartitions():
-                fs = p.getFSName()
-                if fs in ("ntfs", "fat32"):
-                    if is_windows_boot(p.getPath(), fs):
-                        win_fs = fs
-                        win_dev = basename(p.getDevicePath())
-                        win_root = basename(p.getPath())
-                        loader.grub_conf_append_win(ctx.installData.bootLoaderDev,
-                                                    win_dev,
-                                                    win_root,
-                                                    win_fs)
-                        continue
-
-        # finally install it
-        loader.install_grub(ctx.installData.bootLoaderDev)
-        ctx.debugger.log("Bootloader installed.")
 
 class RebootWidget(QtGui.QWidget):
 
@@ -254,5 +139,5 @@ class RebootWidget(QtGui.QWidget):
                      self.slotReboot)
 
     def slotReboot(self):
-        self.emit(PYSIGNAL("signalOK"), ())
+        self.emit(SIGNAL("signalOK"), ())
 

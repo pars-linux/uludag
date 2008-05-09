@@ -46,80 +46,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.connect(self.ui.checkButton, SIGNAL("clicked()"),
                      self.slotCheckCD)
 
-
-    def showError(self):
-        r = ErrorWidget(self)
-        d = Dialog(_("Check Failed"), r, self)
-        d.resize(300,200)
-        d.exec_()
-
     def slotCheckCD(self):
-        ctx.mainScreen.disableNext()
-        ctx.mainScreen.disableBack()
         self.ui.checkButton.setEnabled(False)
         self.ui.checkLabel.setText(_('<font color="#FF6D19">Please wait while checking CD.</font>'))
-        yali4.pisiiface.initialize(ui=PisiUI())
-        yali4.pisiiface.add_cd_repo()
-        ctx.mainScreen.processEvents()
 
-        pkg_names = yali4.pisiiface.get_available()
-        self.ui.progressBar.setMaximum(len(pkg_names))
-        cur = 0
-        for pkg_name in pkg_names:
-            cur += 1
-            if yali4.pisiiface.check_package_hash(pkg_name):
-                self.ui.progressBar.setValue(cur)
-            else:
-                yali4.pisiiface.finalize()
-                self.showError()
-        yali4.pisiiface.finalize()
-
-        self.ui.checkLabel.setText(_('<font color="#257216">Check succeeded. You can proceed to the next screen.</font>'))
-        ctx.mainScreen.enableNext()
-        ctx.mainScreen.enableBack()
-
-    def shown(self):
-        pass
-        #from os.path import basename
-        #ctx.debugger.log("%s loaded" % basename(__file__))
-
-class PisiUI(pisi.ui.UI):
-    def notify(self, event, **keywords):
-        pass
-    def display_progress(self, operation, percent, info, **keywords):
-        pass
-
-class ErrorWidget(QtGui.QWidget):
-    def __init__(self, *args):
-        apply(QtGui.QWidget.__init__, (self,) + args)
-
-        self.gridlayout = QtGui.QGridLayout(self)
-
-        self.vboxlayout = QtGui.QVBoxLayout()
-
-        self.label = QtGui.QLabel(self)
-        self.label.setText(_('''<b>
-<p>Integrity check for packages failed. It seems that installation CD is broken.</p>
-</b>
-'''))
-        self.vboxlayout.addWidget(self.label)
-        self.hboxlayout = QtGui.QHBoxLayout()
-
-        spacerItem = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
-        self.hboxlayout.addItem(spacerItem)
-
-        self.reboot = QtGui.QPushButton(self)
-        self.reboot.setFocusPolicy(Qt.NoFocus)
-        self.reboot.setText(_("Reboot"))
-
-        self.hboxlayout.addWidget(self.reboot)
-        self.vboxlayout.addLayout(self.hboxlayout)
-        self.gridlayout.addLayout(self.vboxlayout,0,0,1,1)
-
-        yali4.sysutils.eject_cdrom()
-
-        self.connect(self.reboot, SIGNAL("clicked()"),self.slotReboot)
-
-    def slotReboot(self):
-        yali4.sysutils.reboot()
+        # Check the CD
+        ctx.yali.checkCD(self.ui)
 

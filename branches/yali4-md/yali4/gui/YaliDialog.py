@@ -30,7 +30,7 @@ class windowTitle(QtGui.QFrame):
 
         self.label = QtGui.QLabel(self)
         self.label.setObjectName("label")
-        self.label.setStyleSheet("padding-left:4px; font:bold 11px")
+        self.label.setStyleSheet("padding-left:4px; font:bold 11px; color: #FFFFFF;")
 
         self.hboxlayout.addWidget(self.label)
 
@@ -88,8 +88,7 @@ class Dialog(QtGui.QDialog):
         QMetaObject.connectSlotsByName(self)
 
         self.setStyleSheet("""
-            QDialog { background-image:url(':/gui/pics/transBlack.png'); }
-            QFrame#windowTitle {background-color:#70A73C;color:#FFF;border:1px solid #CCC;border-radius:4px;}
+            QFrame#windowTitle {background-color:#E75F10;color:#FFF;border:1px solid #FFF;border-radius:1px;}
         """)
 
 class WarningDialog(Dialog):
@@ -159,34 +158,76 @@ your system formatting the selected partition.</p>
 class InformationWindow(QtGui.QWidget):
 
     def __init__(self, message):
-        Pix = QtGui.QPixmap(':/gui/pics/working.png')
         QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
         self.setObjectName("InfoWin")
-        self.resize(280,200)
+        self.resize(280,50)
         self.setStyleSheet("""
-            QLabel { border: 1px solid #CCC;
-                     border-radius: 4px;
-                     background-image:url(':/gui/pics/transBlack.png');}
-            QLabel#message { border: 2px solid #AAA;
-                             background-color:#FFFFFF }
+            QFrame#frame { border: 1px solid #CCC;
+                           border-radius: 4px;
+                           background-image:url(':/gui/pics/transBlack.png');}
+
+            QLabel { border:none;
+                     color:#FFFFFF;
+                     font:bold; }
+
+            QProgressBar { border: 1px solid white;}
+
+            QProgressBar::chunk { background-color: #F1610D;
+                                  width: 0.5px;}
         """)
+
         self.gridlayout = QtGui.QGridLayout(self)
+        self.gridlayout.setObjectName("gridlayout")
 
-        self.label = QtGui.QLabel(self)
-        self.label.setMaximumSize(QSize(16777215,30))
-        self.label.setAlignment(Qt.AlignCenter)
+        self.frame = QtGui.QFrame(self)
+        self.frame.setObjectName("frame")
+
+        self.gridlayout1 = QtGui.QGridLayout(self.frame)
+        self.gridlayout1.setMargin(2)
+        self.gridlayout1.setSpacing(3)
+        self.gridlayout1.setObjectName("gridlayout1")
+
+        self.hboxlayout = QtGui.QHBoxLayout()
+        self.hboxlayout.setObjectName("hboxlayout")
+
+        spacerItem = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
+        self.hboxlayout.addItem(spacerItem)
+
+        self.label = QtGui.QLabel(self.frame)
         self.label.setObjectName("message")
-        self.gridlayout.addWidget(self.label,1,0,1,1)
+        self.hboxlayout.addWidget(self.label)
 
-        self.pix = QtGui.QLabel(self)
-        self.pix.setAlignment(Qt.AlignCenter)
-        self.pix.setPixmap(Pix)
-        self.gridlayout.addWidget(self.pix,0,0,1,1)
+        spacerItem1 = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
+        self.hboxlayout.addItem(spacerItem1)
+        self.gridlayout1.addLayout(self.hboxlayout,0,0,1,1)
+
+        self.progressBar = QtGui.QProgressBar(self.frame)
+        self.progressBar.setMaximumSize(QSize(16777215,6))
+        self.progressBar.setMaximum(0)
+        self.progressBar.setProperty("value",QVariant(-1))
+        self.progressBar.setObjectName("progressBar")
+        self.gridlayout1.addWidget(self.progressBar,1,0,1,1)
+        self.gridlayout.addWidget(self.frame,0,0,1,1)
+
         self.updateMessage(message)
 
-    def updateMessage(self, message):
-        self.move(ctx.mainScreen.ui.width()/2 - self.width()/2 - 20,
-                  ctx.mainScreen.ui.height()/2 - self.height()/2 - 30)
-        self.label.setText(message)
+    def updateMessage(self, message=None, progress=False):
+        self.progressBar.setVisible(progress)
+        self.move(ctx.mainScreen.ui.width()/2 - self.width()/2,
+                  ctx.mainScreen.ui.height() - self.height()/2 - 26)
+        if message:
+            self.label.setText(message)
+        ctx.mainScreen.processEvents()
 
+    def updateAndShow(self, message, progress=False):
+        self.updateMessage(message,progress)
+        self.show()
+
+    def show(self):
+        QtGui.QWidget.show(self)
+        ctx.mainScreen.processEvents()
+
+    def hide(self):
+        QtGui.QWidget.hide(self)
+        ctx.mainScreen.processEvents()
 

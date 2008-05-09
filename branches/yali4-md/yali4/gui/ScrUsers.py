@@ -93,12 +93,7 @@ Click Next button to proceed.
         self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
 
-        #self.checkUsers()
-
     def shown(self):
-        # from os.path import basename
-        # ctx.debugger.log("%s loaded" % basename(__file__))
-
         ctx.installData.users = []
         ctx.installData.autoLoginUser = None
 
@@ -141,7 +136,6 @@ go to next screen.</p>
             u = self.ui.userList.item(i).getUser()
             ctx.installData.users.append(u)
             yali4.users.pending_users.append(u)
-            # ctx.debugger.log("USER::%s"%u.username)
 
         return True
 
@@ -182,10 +176,10 @@ go to next screen.</p>
 
     def slotCreateUser(self):
         u = yali4.users.User()
-        u.username = self.ui.username.text().toAscii()
+        u.username = str(self.ui.username.text().toAscii())
         # ignore last character. see bug #887
         u.realname = unicode(self.ui.realname.text())
-        u.passwd = self.ui.pass1.text().toAscii()
+        u.passwd = unicode(self.ui.pass1.text())
         u.groups = ["users", "pnp", "pnpadmin", "removable", "disk", "audio", "video", "power", "dialout"]
         pix = self.normalUserIcon
         if self.ui.admin.isChecked():

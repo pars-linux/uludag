@@ -51,30 +51,44 @@ class ResizeWidget(QtGui.QWidget):
                 }
 
                 QWidget#PartResizeWidget {
-                    background-image: url(:/gui/pics/trans.png); 
+                    background-image: url(:/gui/pics/trans.png);
                 }
         """)
+
         self.resize(ctx.mainScreen.ui.size())
         self.dev = dev
         self.part = part
         minSize = self.part.getMinResizeMB()
-        maxSize = self.part.getMB()
-        self.ui.resizeMB.setMaximum(maxSize)
-        self.ui.resizeMBSlider.setMaximum(maxSize)
-        self.ui.resizeMB.setMinimum(minSize)
-        self.ui.resizeMBSlider.setMinimum(minSize)
+
+        if minSize == 0:
+            self.ui.resizeMB.setVisible(False)
+            self.ui.resizeMBSlider.setVisible(False)
+            self.ui.resizeButton.setVisible(False)
+            self.ui.label.setText(_("""<p><span style="color:#FFF"><b>It seems this partition is not ready for resizing.</b></span></p>"""))
+        else:
+            maxSize = self.part.getMB()
+            self.ui.resizeMB.setMaximum(maxSize)
+            self.ui.resizeMBSlider.setMaximum(maxSize)
+            self.ui.resizeMB.setMinimum(minSize)
+            self.ui.resizeMBSlider.setMinimum(minSize)
+            self.connect(self.ui.resizeButton, SIGNAL("clicked()"), self.slotResize)
+
         self.connect(self.ui.cancelButton, SIGNAL("clicked()"), self.hide)
-        self.connect(self.ui.resizeButton, SIGNAL("clicked()"), self.slotResize)
 
     def slotResize(self):
+        self.hide()
+        ctx.yali.info.updateAndShow(_("Resizing to %s MB..") % (self.ui.resizeMB.value()))
         ctx.debugger.log("Resize started on partition %s " % self.part.getPath())
+        QTimer.singleShot(500,self.res)
+
+    def res(self):
         self.dev.resizePartition(self.part._fsname, int(self.ui.resizeMB.value()),self.part)
         self.rootWidget.update()
-        self.hide()
+        ctx.yali.info.hide()
 
 class AutoPartQuestionWidget(QtGui.QWidget):
 
-    def __init__(self, rootWidget):
+    def __init__(self, rootWidget, partList):
         QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
         self.ui = Ui_autoPartQuestion()
         self.ui.setupUi(self)
@@ -85,14 +99,48 @@ class AutoPartQuestionWidget(QtGui.QWidget):
                     border-radius:8px;
                 }
                 QWidget#autoPartQuestion {
-                    background-image: url(:/gui/pics/trans.png); 
+                    background-image: url(:/gui/pics/trans.png);
                 }
         """)
+
         self.rootWidget = rootWidget
-        self.resize(ctx.mainScreen.ui.size())
+
+        self.connect(self.ui.bestChoice, SIGNAL("clicked()"), self.slotDisableList)
+        self.connect(self.ui.userChoice, SIGNAL("clicked()"), self.slotEnableList)
         self.connect(self.ui.useSelectedButton, SIGNAL("clicked()"), self.slotUseSelected)
 
+        for part in partList:
+            pi = PartitionItem(self.ui.partition_list, part)
+
+        self.ui.bestChoice.toggle()
+        self.slotDisableList()
+        self.resize(ctx.mainScreen.ui.size())
+
+    def slotEnableList(self):
+        self.ui.partition_list.setEnabled(True)
+
+    def slotDisableList(self):
+        self.rootWidget.autoPartPartition = self.ui.partition_list.item(0).getPartition()
+        self.ui.partition_list.setEnabled(False)
+
     def slotUseSelected(self):
-        self.rootWidget.execute_(True)
         self.hide()
+        if self.ui.partition_list.isEnabled():
+            self.rootWidget.autoPartPartition = self.ui.partition_list.currentItem().getPartition()
+        ctx.mainScreen.processEvents()
+        self.rootWidget.execute_(True)
+
+class PartitionItem(QtGui.QListWidgetItem):
+
+    def __init__(self, parent, _part):
+        part = _part["partition"]
+        text = _("(%s) [%s] Size : %s - Free : %s" % (part.getDevice().getName(),
+                                                      part.getFSLabel() or _("Partition %d") % part.getMinor(),
+                                                      part.getSizeStr(),
+                                                      part.getSizeStr(_part["newSize"])))
+        QtGui.QListWidgetItem.__init__(self, text, parent)
+        self.part = _part
+
+    def getPartition(self):
+        return self.part
 

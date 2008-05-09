@@ -69,7 +69,7 @@ class Debugger:
 class DebugContainer(QtGui.QTextBrowser):
     def __init__(self, parent, showTimeStamp=True, sysoutEnabled=True):
         QtGui.QTextBrowser.__init__(self, parent)
-        self.setStyleSheet("font-size:8pt;font-family:\"Envy Code R\";")
+        self.setStyleSheet("font-size:8pt;")
         self.sysout = "/var/log/yali"
         self.showTimeStamp = showTimeStamp
         self.sysoutEnabled = sysoutEnabled

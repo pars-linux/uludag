@@ -26,6 +26,7 @@ import yali4.storage
 import yali4.bootloader
 import yali4.partitionrequest as request
 import yali4.partitiontype as parttype
+from yali4.parteddata import *
 
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
@@ -93,12 +94,19 @@ loader.
 
             self.device = yali4.storage.devices[0]
 
-        self.connect(self.ui.buttonGroup, SIGNAL("clicked(int)"),
-                     self.slotInstallLoader)
-        self.connect(self.ui.device_list, SIGNAL("selectionChanged(QListBoxItem*)"),
+        self.connect(self.ui.device_list, SIGNAL("currentItemChanged(QListWidgetItem*,QListWidgetItem*)"),
                      self.slotDeviceChanged)
-        self.connect(self.ui.device_list, SIGNAL("clicked()"),
+        self.connect(self.ui.device_list, SIGNAL("itemClicked(QListWidgetItem*)"),
                      self.slotSelect)
+
+    def shown(self):
+
+        if len(yali4.storage.devices) > 1:
+            ctx.installData.orderedDiskList = yali4.storage.getOrderedDiskList()
+        else:
+            ctx.installData.orderedDiskList = yali4.storage.detect_all()
+
+        ctx.debugger.log("Disks BIOS Boot order : %s " % ','.join(ctx.installData.orderedDiskList))
 
     def backCheck(self):
         if ctx.autoInstall:
@@ -107,73 +115,20 @@ loader.
         return True
 
     def slotSelect(self):
-        self.ui.installMBR.setChecked(True)
+        self.ui.installMBR.toggle()
 
-    def slotInstallLoader(self, b):
-        if self.ui.installMBR.isChecked():
-            self.ui.device_list.setEnabled(True)
-            self.ui.device_list.setSelected(0,True)
-        else:
-            self.ui.device_list.setEnabled(False)
-            self.ui.device_list.setSelected(self.ui.device_list.selectedItem(),False)
-
-    def slotDeviceChanged(self, i):
-        self.device = i.getDevice()
-
-    def autopartDevice(self):
-        dev = ctx.installData.autoPartDev
-
-        # first delete partitions on device
-        dev.deleteAllPartitions()
-        dev.commit()
-        ctx.mainScreen.processEvents()
-
-        p = dev.addPartition(None,
-                             parttype.root.parted_type,
-                             parttype.root.filesystem,
-                             dev.getFreeMB(),
-                             parttype.root.parted_flags)
-        p = dev.getPartition(p.num) # get partition.Partition
-
-        # create the partition
-        dev.commit()
-        ctx.mainScreen.processEvents()
-
-        # make partition requests
-        ctx.partrequests.append(request.MountRequest(p, parttype.root))
-        ctx.partrequests.append(request.FormatRequest(p, parttype.root))
-        ctx.partrequests.append(request.LabelRequest(p, parttype.root))
-        ctx.partrequests.append(request.SwapFileRequest(p, parttype.root))
-
-    def checkSwap(self):
-        # check swap partition, if not present use swap file
-        rt = request.mountRequestType
-        pt = parttype.swap
-        swap_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
-
-        if not swap_part_req:
-            # No swap partition defined using swap as file in root
-            # partition
-            rt = request.mountRequestType
-            pt = parttype.root
-            root_part_req = ctx.partrequests.searchPartTypeAndReqType(pt, rt)
-            ctx.partrequests.append(request.SwapFileRequest(root_part_req.partition(),
-                                    root_part_req.partitionType()))
-
+    def slotDeviceChanged(self, o, n):
+        self.device = o.getDevice()
 
     def execute(self):
 
         w = WarningWidget(self)
-
         # We need different warning messages for Auto and Manual Partitioning
         if ctx.installData.autoPartDev:
             # show confirmation dialog
             w.warning.setText(_('''<b>
-<p>This action will use your entire disk for Pardus installation and
+<p>This action will use your entire disk for Pardus installation and <br>
 all your present data on the selected disk will be lost.</p>
-
-<p>After being sure you had your backup this is generally a safe
-and easy way to install Pardus.</p>
 </b>
 '''))
         self.dialog = WarningDialog(w, self)
@@ -183,7 +138,6 @@ and easy way to install Pardus.</p>
             return False
 
         ctx.mainScreen.processEvents()
-        info = InformationWindow(_("Writing disk tables ..."))
 
         # We should do partitioning operations in here.
         if ctx.options.dryRun == True:
@@ -192,36 +146,38 @@ and easy way to install Pardus.</p>
 
         # Auto Partitioning
         if ctx.installData.autoPartDev:
+            ctx.use_autopart = True
+
             if ctx.installData.autoPartMethod == methodEraseAll:
-                info.show()
-                ctx.mainScreen.processEvents()
-                ctx.partrequests.remove_all()
-                ctx.use_autopart = True
-                self.autopartDevice()
-                time.sleep(2)
-                info.updateMessage(_("Formatting ..."))
+                ctx.yali.autoPartDevice()
+                ctx.yali.checkSwap()
+                ctx.yali.info.updateMessage(_("Formatting ..."))
                 ctx.mainScreen.processEvents()
                 ctx.partrequests.applyAll()
+
             elif ctx.installData.autoPartMethod == methodUseAvail:
-                pass
+                ctx.yali.autoPartUseAvail()
+                ctx.yali.checkSwap()
+                ctx.yali.info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
+                ctx.partrequests.applyAll()
 
         # Manual Partitioning
         else:
             ctx.debugger.log("Format Operation Started")
-            info.show()
+            ctx.yali.info.updateAndShow(_("Writing disk tables ..."))
             for dev in yali4.storage.devices:
                 ctx.mainScreen.processEvents()
                 dev.commit()
             # wait for udev to create device nodes
             time.sleep(2)
-            info.updateMessage(_("Formatting ..."))
+            ctx.yali.checkSwap()
+            ctx.yali.info.updateMessage(_("Formatting ..."))
             ctx.mainScreen.processEvents()
             ctx.partrequests.applyAll()
             ctx.debugger.log("Format Operation Finished")
-            ctx.mainScreen.processEvents()
-            self.checkSwap()
 
-        info.close()
+        ctx.yali.info.hide()
 
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
@@ -234,16 +190,12 @@ and easy way to install Pardus.</p>
         elif self.ui.installMBR.isChecked():
             ctx.installData.bootLoaderDev = basename(self.device.getPath())
         else:
-            if len(yali4.storage.devices) > 1:
-                self.orderedDiskList = yali4.storage.getOrderedDiskList()
-                ctx.installData.bootLoaderDev = basename(self.orderedDiskList[0])
-            else:
-                ctx.installData.bootLoaderDev = str(basename(root_part_req.partition().getPath()))
+            ctx.yali.guessBootLoaderDevice()
 
         _ins_part = root_part_req.partition().getPath()
 
-        ctx.debugger.log("Pardus installed to : %s" % _ins_part)
-        ctx.debugger.log("GRUB will be installed to : %s" % ctx.installData.bootLoaderDev)
+        ctx.debugger.log("Pardus Root is : %s" % _ins_part)
+        ctx.debugger.log("GRUB will be installing to : %s" % ctx.installData.bootLoaderDev)
 
         return True
 
