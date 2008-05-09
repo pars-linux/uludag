@@ -88,10 +88,13 @@ def get_package(package, installed=False):
     else:
         return get_repo_package(package)
 
-def search_package(terms, installed=False):
-    installdb = pisi.db.installdb.InstallDB()
-    if installed:
-        return pisi.api.search_installed(terms)
-    else:
-        return filter(lambda x:not installdb.has_package(x), pisi.api.search_package(terms))
+def search_in_installed(terms):
+    return pisi.api.search_installed(terms)
 
+def search_in_repos(terms):
+    installdb = pisi.db.installdb.InstallDB()
+    # search in repos but filter installed ones
+    return filter(lambda x:not installdb.has_package(x), pisi.api.search_package(terms))
+
+def search_in_upgradables(terms):
+        return list(set(get_upgradable_packages()).intersection(pisi.api.search_package(terms)))
