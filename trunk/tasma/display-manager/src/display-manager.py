@@ -93,6 +93,7 @@ class MainWidget(dm_mainview.mainWidget):
         # disable dual mode if there's only one output
         if len(self.displayConfiguration.outputs) <= 1:
             self.checkBoxDualMode.setEnabled(0)
+            self.groupBoxSecondaryScreen.hide()
 
         # remove later.
         self.displayConfiguration.secondaryScr = "VGA"
