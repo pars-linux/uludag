@@ -29,18 +29,21 @@ import yali4.sysutils
 import yali4.localeutils
 import yali4.partitionrequest as request
 from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.descSlide import slideDesc
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 import yali4.gui.context as ctx
 
 EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished = range(1001,1006)
 
 def iter_slide_pics():
+    def pat(pic):
+        return "%s/%s.png" % (ctx.consts.slidepics_dir, pic)
+
     # load all pics
     pics = []
-    g = glob.glob(ctx.consts.slidepics_dir + "/*.png")
-    g.sort()
-    for p in g:
-        pics.append(QtGui.QPixmap(p))
+
+    for pic, desc in slideDesc.items():
+        pics.append({"pic":QtGui.QPixmap(pat(pic)),"desc":desc})
 
     while True:
         for pic in pics:
@@ -142,7 +145,9 @@ Have fun!
             self.finished()
 
     def slotChangePix(self):
-        self.ui.pix.setPixmap(self.iter_pics.next())
+        slide = self.iter_pics.next()
+        self.ui.pix.setPixmap(slide["pic"])
+        self.ui.desc.setText(slide["desc"])
 
     def packageInstallFinished(self):
 

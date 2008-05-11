@@ -60,6 +60,9 @@ class Runner:
 
         ctx.yali = yali4.installer.Yali(install_type)
 
+        yimirtaShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F5),self._window.ui)
+        QObject.connect(yimirtaShortCut, SIGNAL("activated()"), ctx.yali.toggleYimirta)
+
         # visual debugger
         ctx.debugger = Debugger()
 

@@ -17,6 +17,7 @@ import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
+import random
 import yali4.gui.context as ctx
 
 class windowTitle(QtGui.QFrame):
@@ -231,3 +232,65 @@ class InformationWindow(QtGui.QWidget):
         QtGui.QWidget.hide(self)
         ctx.mainScreen.processEvents()
 
+class Yimirta(QtGui.QWidget):
+
+    def __init__(self, notifier):
+        QtGui.QWidget.__init__(self, ctx.mainScreen.ui)
+        Pix = QtGui.QPixmap(':/gui/pics/working.png')
+        Pix2= QtGui.QPixmap(':/gui/pics/core.png')
+        self.setObjectName("Yimirta")
+        self.resize(300,300)
+
+        self.gridlayout = QtGui.QGridLayout(self)
+        self.gridlayout.setMargin(0)
+        self.gridlayout.setObjectName("gridlayout")
+
+        self.frame = QtGui.QFrame(self)
+        self.frame.setLineWidth(0)
+        self.frame.setObjectName("frame")
+
+        self.gridlayout1 = QtGui.QGridLayout(self.frame)
+        self.gridlayout1.setObjectName("gridlayout1")
+
+        self.timer = QTimer(self)
+        QObject.connect(self.timer, SIGNAL("timeout()"),self.goturBeniGittiginYere)
+        self.pix = QtGui.QLabel(self)
+        self.pix.setObjectName("pix")
+        self.pix.setAlignment(Qt.AlignCenter)
+        self.pix.setPixmap(Pix)
+        self.gridlayout1.addWidget(self.pix,0,0,1,1)
+        self.gridlayout.addWidget(self.frame,0,0,1,1)
+        self.score = 0
+        self.notifier = notifier
+        self.setMouseTracking(True)
+        self.goturBeniGittiginYere()
+        self.timer.start(2000)
+        self.setCursor(QtGui.QCursor(Pix2))
+
+    def goturBeniGittiginYere(self):
+        x = random.randint(20, ctx.mainScreen.ui.width() - 20 - self.width())
+        y = random.randint(20, ctx.mainScreen.ui.height() - 20 - self.height())
+        self.move(x,y)
+        self.notifier.updateAndShow("Score : %d" % self.score)
+        ctx.mainScreen.processEvents()
+
+    def mouseReleaseEvent(self, event):
+        self.score += 10
+        self.goturBeniGittiginYere()
+
+    def start(self):
+        self.timer.start(2000)
+        self.show()
+
+    def stop(self):
+        self.timer.stop()
+        self.notifier.hide()
+        self.hide()
+
+    def show(self):
+        QtGui.QWidget.show(self)
+        ctx.mainScreen.processEvents()
+
+    def hide(self):
+        QtGui.QWidget.hide(self)
+        ctx.mainScreen.processEvents()

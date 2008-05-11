@@ -23,27 +23,47 @@
      </property>
      <property name="sizeHint" >
       <size>
-       <width>31</width>
-       <height>20</height>
+       <width>138</width>
+       <height>171</height>
       </size>
      </property>
     </spacer>
    </item>
    <item row="0" column="1" >
-    <widget class="QLabel" name="pix" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text" >
-      <string>pix</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" >
+     <item>
+      <widget class="QLabel" name="pix" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text" >
+        <string>pix</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="desc" >
+       <property name="styleSheet" >
+        <string>color:#FFFFFF;</string>
+       </property>
+       <property name="text" >
+        <string>Desc</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item row="0" column="2" >
     <spacer>
@@ -55,20 +75,36 @@
      </property>
      <property name="sizeHint" >
       <size>
-       <width>21</width>
-       <height>20</height>
+       <width>138</width>
+       <height>161</height>
       </size>
      </property>
     </spacer>
    </item>
    <item row="1" column="0" colspan="3" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>431</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0" colspan="3" >
     <widget class="QProgressBar" name="progress" >
      <property name="value" >
       <number>0</number>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="3" >
+   <item row="3" column="0" colspan="3" >
     <widget class="QLabel" name="info" >
      <property name="minimumSize" >
       <size>

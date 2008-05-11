@@ -43,7 +43,7 @@ from yali4.partitionrequest import partrequests
 from yali4.parteddata import *
 
 # gui
-from yali4.gui.YaliDialog import Dialog
+from yali4.gui.YaliDialog import Dialog, Yimirta
 from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 
 # debugger
@@ -118,7 +118,15 @@ class Yali:
         self.screens = self._screens[install_type]
         self.install_type = install_type
         self.info = InformationWindow(_("YALI Working..."))
+        self.yimirta = Yimirta(self.info)
+        self.yimirta.stop()
         self.info.hide()
+
+    def toggleYimirta(self):
+        if self.yimirta.isVisible():
+            self.yimirta.stop()
+        else:
+            self.yimirta.start()
 
     def checkCD(self, rootWidget):
         ctx.mainScreen.disableNext()
