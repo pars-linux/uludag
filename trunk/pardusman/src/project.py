@@ -21,26 +21,23 @@ def _(x):
 default_live_exclude_list = """
 lib/rcscripts/
 usr/include/
-usr/lib/python2.5/lib-tk/
-usr/lib/python2.5/idlelib/
-usr/lib/python2.5/bsddb/test/
-usr/lib/python2.5/lib-old/
-usr/lib/python2.5/test/
+usr/lib/python2.4/lib-tk/
+usr/lib/python2.4/idlelib/
+usr/lib/python2.4/bsddb/test/
+usr/lib/python2.4/lib-old/
+usr/lib/python2.4/test/
 usr/lib/klibc/include/
-usr/qt/4/include/
+usr/qt/3/include/
 usr/share/aclocal/
 usr/share/doc/
 usr/share/info/
 usr/share/sip/
 usr/share/man/
-usr/share/groff/
-usr/share/dict/
 var/db/pisi/
 var/lib/pisi/
 var/cache/pisi/packages/
 var/cache/pisi/archives/
 var/tmp/pisi/
-var/pisi/
 tmp/pisi-root/
 var/log/comar.log
 var/log/pisi.log
@@ -51,31 +48,28 @@ default_install_exclude_list = """
 lib/rcscripts/
 usr/include/
 usr/lib/cups/
-usr/lib/python2.5/lib-tk/
-usr/lib/python2.5/idlelib/
-usr/lib/python2.5/distutils/
-usr/lib/python2.5/bsddb/test/
-usr/lib/python2.5/lib-old/
-usr/lib/python2.5/test/
+usr/lib/python2.4/lib-tk/
+usr/lib/python2.4/idlelib/
+usr/lib/python2.4/distutils/
+usr/lib/python2.4/bsddb/test/
+usr/lib/python2.4/lib-old/
+usr/lib/python2.4/test/
 usr/lib/klibc/include/
-usr/qt/4/include/
-usr/qt/4/mkspecs/
-usr/qt/4/bin/
-usr/qt/4/templates/
+usr/qt/3/include/
+usr/qt/3/mkspecs/
+usr/qt/3/bin/
+usr/qt/3/templates/
 usr/share/aclocal/
 usr/share/cups/
 usr/share/doc/
 usr/share/info/
 usr/share/sip/
 usr/share/man/
-usr/share/groff/
-usr/share/dict/
 var/db/pisi/
 var/lib/pisi/
 var/cache/pisi/packages/
 var/cache/pisi/archives/
 var/tmp/pisi/
-var/pisi/
 tmp/pisi-root/
 var/log/comar.log
 var/log/pisi.log
@@ -83,10 +77,8 @@ root/.bash_history
 """
 
 default_glob_excludes = (
-    ( "usr/lib/python2.5/", "*.pyc" ),
-    ( "usr/lib/python2.5/", "*.pyo" ),
-    ( "usr/lib/pardus/", "*.pyc" ),
-    ( "usr/lib/pardus/", "*.pyo" ),
+    ( "usr/lib/python2.4/", "*.pyc" ),
+    ( "usr/lib/python2.4/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
     ( "usr/lib/", "*.la" ),
     ( "lib/", "*.a" ),
