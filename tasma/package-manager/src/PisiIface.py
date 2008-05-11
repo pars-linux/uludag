@@ -85,6 +85,9 @@ def get_not_installed_packages():
 def get_repositories():
     return pisi.db.repodb.RepoDB().list_repos()
 
+def get_package_repository(package):
+    return pisi.db.packagedb.PackageDB().which_repo(package)
+
 def get_repository_url(name):
     return pisi.db.repodb.RepoDB().get_repo(name).indexuri.get_uri()
 
@@ -92,10 +95,20 @@ def get_conflicts(packages):
     return pisi.api.get_conflicts(packages)
 
 def get_package(package, installed=False):
+    pkg = None
     if installed:
-        return get_installed_package(package)
+        pkg = get_installed_package(package)
+        pkg.size = pkg.installedSize
     else:
-        return get_repo_package(package)
+        pkg = get_repo_package(package)
+        pkg.size = pkg.packageSize
+
+    try:
+        pkg.repo = get_package_repository(package)
+    except Exception, e:
+        pkg.repo = "N/A"
+
+    return pkg
 
 def search_in_installed(terms):
     return pisi.api.search_installed(terms)

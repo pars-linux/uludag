@@ -162,8 +162,8 @@ class SpecialList(QObject):
             result += template % (checkbox, titleStyle, curindex, iconPath, iconSize, iconSize, app.name, app.summary, style, curindex, curindex,
                                   i18n("Description: "), app.description,
                                   i18n("Version: "), app.version,
-                                   i18n("Repository: "), "FIXME", #app.repo,
-                                   i18n("Package Size: "), "FIXME", #app.size,
+                                   i18n("Repository: "), app.repo,
+                                   i18n("Package Size: "), app.size,
                                   i18n("Homepage: "), app.source.homepage, app.source.homepage)
             index += 1
 
