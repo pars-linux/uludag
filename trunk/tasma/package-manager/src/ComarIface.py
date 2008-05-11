@@ -124,5 +124,5 @@ class ComarIface:
         self.callMethod("setCache", "tr.org.pardus.comar.system.manager.setcache", None, True, enabled, limit)
 
     def cancel(self):
-        obj = self.sysBus.get_object("tr.org.pardus.comar", "/")
+        obj = self.sysBus.get_object("tr.org.pardus.comar", "/", introspect=False)
         obj.cancel(dbus_interface="tr.org.pardus.comar")
