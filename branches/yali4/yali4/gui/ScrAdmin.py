@@ -34,21 +34,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <font size="+2">System administrator password and hostname</font>
 
 <font size="+1">
-
-<p>Please give a password for the system administrator (i.e root) for your
-system. This password should be unique and private, as it is used to 
-manage your desktop. Choose a password difficult to guess, but easy
-to remember. 
+<p>
+You need to define a password for the "root" user that has full control over the system.
+Your password must be easy to remember (for you) but hard to guess (for others). 
+You can use lower case or upper case letters, numbers and punctuation marks in your password. 
+You should take care not to use letters not found in English to avoid incompatibilities with other systems.
 </p>
 <p>
-The password may include upper and lower case characters, numbers and 
-punctuation marks. Do not use accented characters here.
+Here you can enter a name for your computer in the text box below. As your computer will be 
+known with this name in the local network, it is advised to enter a descriptive text.
+Proceed with the installation after you make your selections.
 </p>
-
-<p>
-And also set the name that the computer will be identified to the network it belongs. The hostname should be descriptive enough to describe the computer.  
-</p>
-
 <p>
 Click Next button to proceed.
 </p>

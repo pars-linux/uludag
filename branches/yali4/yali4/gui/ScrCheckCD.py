@@ -31,11 +31,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconCD"
     help = _('''
 <font size="+2">Check CD Integrity!</font>
-
-<font size="+1">
-<p>In this screen, you can check the integrity of the packages in installation CD.
-</p>
-
+<font size="+1"><p>
+You can check if the packages included in the installation CD are saved correctly into the CD. Performing this test is a highly important step in making sure for a problem-free installation. If the test fails, try re-burning the ISO image in a lower (e.g. 12x or less) speed.</p></font>
 ''')
 
     def __init__(self, *args):

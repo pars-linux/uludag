@@ -41,18 +41,16 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconPartition"
     help = _('''
 <font size="+2">Automatic Partitioning</font>
-
 <font size="+1">
 <p>
-Pardus can be installed on a variety of hardware. You can install Pardus
-on an empty disk or hard disk partition. <b>An installation will automatically
-destroy the previously saved information on selected partitions. </b>
+You can install Pardus if you have an unpartitioned-unused disk space 
+of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. 
+The disk area or partition selected for installation will automatically 
+be formatted. Therefore, it is advised to backup your data to avoid future problems.
 </p>
-<p>
-Automatic partitioning use your entire disk for Pardus installation. From 
-this screen you can select to automatically partition one of you disks, or
-you can skip this screen and try manual partitioning.
-</p>
+<p>Auto-partitioning will automatically format the select disk part/partition 
+and install Pardus 2008. If you like, you can do the partitioning manually or make 
+Pardus 2008 create a new partition for installation.</p>
 <p>
 Please refer to Pardus Installing and Using Guide for more information
 about disk partitioning.

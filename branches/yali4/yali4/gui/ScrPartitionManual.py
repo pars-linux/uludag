@@ -33,34 +33,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconPartition"
     help = _('''
 <font size="+2">Partitioning your hard disk</font>
-
 <font size="+1">
 <p>
-Pardus can be installed on a variety of hardware. You can install Pardus
-on an empty disk or hard disk partition. <b>An installation will automatically
-destroy the previously saved information on selected partitions. </b>
-</p>
-<p>
-In order to use Pardus, you must create one Linux filesystem (for the 
-system files), which is mandatory and a swap space 
-(for improved performance), which is optional. This swap space 
-is used whenever system needs more memory, but the system lacks it.
-We advise you to allocate at least 4 GBs of hard disk area and 
-swap space (between 500 MB - 2 GB, according to your needs) for 
-convenience. A Linux partition size less than 3.5 GB is not allowed.
-You may also optionally use another disk partition for storing 
-user files.
-</p>
-<p>
-You need to format a Linux partition, if it's used for the first time.
-You can enable \'Use available free space\' option, if the hard disk's 
-remaining space is to be used automatically.
-</p>
-<p>
-The partition table shows the device, size, partition type and
-filesystem information. If the partition will be formatted during
-Pardus installation stage, then the corresponding \'Format\' 
-column will be enabled.
+In this screen, you can manually partition your disk. You can select 
+existing partitions and resize or delete them. You can create new 
+partition(s) in the empty parts, make Pardus use them for system files, 
+users' home directories, swap space or general use. The changes that you 
+make will not be applied until you go on with the installation, 
+which means you can revert if you make any unwanted changes or change your configuration.
 </p>
 <p>
 Please refer to Pardus Installing and Using Guide for more information

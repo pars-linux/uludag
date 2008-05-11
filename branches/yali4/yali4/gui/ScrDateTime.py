@@ -29,12 +29,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconDate"
     help = _('''
 <font size="+2">Time Zone settings</font>
-
-<font size="+1">
-<p>In this screen, you can set your timezone, time or date settings. 
-It is important to use correct settings.
-</p>
-
+<font size="+1"><p>Here you can select your location and a timezone; and set the date and time.
+Your settings will update your hardware clock. Proceed with the installation after you make your selections.</p></font>
 ''')
 
     def __init__(self, *args):

@@ -15,33 +15,33 @@ __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
 slideDesc = [
-{"yali":_("""Merhaba! Pardus 2008'in kurulumunda, yenilenen kurulum aracımız YALI sizlere yardımcı olacak. YALI, akıllı disk biçimlendirme aracı ile sisteminizi bölümlendirdikten sonra, hızlı ve sorunsuz bir şekilde Pardus 2008'i bilgisayarınıza kurmanızı sağlayacak.
+{"yali":_("""Welcome! Our improved setup tool YALI will help you with the installation of Pardus 2008. YALI will help install Pardus 2008 quickly and easily following the partitioning of disk(s) using the intelligent partitioning tool.
 """)},
-{"kaptan":_("""Kurulumdan sonra size Kaptan'ımız yol gösterecek. Kaptan ile fare, duvar kâğıdı, web kamerası, panel gibi temel masaüstü ayarlarınızı ve ek depo kurulumu gibi düzenlemeleri kolayca yapabilirsiniz.
+{"kaptan":_("""Our Kaptan will show you the way after the installation. You can easily add additional repositories and manage basic settings like mouse, wallpaper, webcam, and panel using Kaptan.
 """)},
-{"tasma":_("""Tasma, Pardus'un denetim ve ayar merkezidir. Sisteme yeni kullanıcı eklenmesi, yeni harici donanımların (yazıcı, tarayıcı vb.) tanıtılması, masaüstü simgelerinden yazı tiplerine kadar görünüm özelliklerini değiştirilmesi gibi temel yapılandırma işlemleri Tasma arayüzünde toplanmıştır.
+{"tasma":_("""Tasma is the management and settings center of Pardus. Configuration operations including but not limited to adding a new user or hardware (e.g. printer, scanner) to the system, management of visual settings ranging from desktop icons to fonts are all brought together under Tasma's interface.
 """)},
-{"paket":_("""Pardus yazılım depolarında yüklenmeye ve kullanıma hazır binlerce paket bulunmaktadır. Tüm bu yazılımları Paket Yöneticisi'ni kullanarak sadece iki tıklamayla kurabilir, kaldırabilir ve güncelleyebilirsiniz!
+{"paket":_("""There are thousands of packages in Pardus software repositories. You can install, remove or update those packages and programs with just two clicks using the Package Manager!
 """)},
-{"ag":_("""Ağ programcığı, İnternet'e ve yerel ağlara güvenli ve hızlı bir şekilde bağlanmanızı sağlar. İçerdiği profil desteği sayesinde geçmişte bağlandığınız kablolu ve kablosuz bağlantıların ayarlarını belleğinde tutarak, yeniden bağlanmanızı kolaylaştırır.
+{"ag":_("""Network Applet helps connecting to local networks and Internet easily and securely. Thanks to the profile support it has, it will make it easier to reconnect to cable or wireless connections used before, remembering the settings used.
 """)},
-{"firefox":_("""Hızı, sürekli yenilenmesi ve diğer birçok gelişmiş özelliği ile Mozilla Firefox, İnternet'te güvenli bir şekilde gezinmenizi sağlar. Pardus 2008 ile gelen yeni nesil Mozilla Firefox 3.0'ı binlerce farklı eklenti ile zenginleştirebilirsiniz.
+{"firefox":_("""Mozilla Firefox, with its speed, constant development and many advanced features, will help securely surf the Internet. Pardus 2008 includes Mozilla Firefox 3.0, and you can enrich Firefox with thousands of extensions.
 """)},
-{"kontact":_("""KDE Kişisel Bilgi Yönetimi aracı Kontact; tüm e-posta, RSS, ajanda, yapılacaklar listesi ve günlük girdilerinizi tek elden yönetmenizi sağlar. Grup çalışma özellikleriyle Kontact, işyerinizde sizin en büyük yardımcınız olacak.
+{"kontact":_("""Kontact, KDE Personal Information Manager, helps you manage all your emails, RSS feeds, diaries, to-do listes and blog entries in one combined interface. Kontact, with its Groupware feature, will be your best friend at work.
 """)},
-{"open":_("""Dünya çapında yüz binlerce kurum ve milyonlarca kişi tarafından kullanılan OpenOffice.org; kelime işlem, hesap tablosu, sunu, grafik ve veritabanı gibi özellikler sunan bir ofis yazılım paketidir.
+{"open":_("""OpenOffice.org, actively being used by hundreds of thousands of institutes and millions of users around the world, is an office software package including a word processor, a spreadsheet application, a presentation viewer and editor, a graphics editor and a database application.
 """)},
-{"gimp":_("""Pardus 2008 kurulumuyla birlikte gelen Gimp, gelişmiş bir resim düzenleme yazılımıdır. Yaygın grafik işleme ile ilgili bütün dosya biçimlerini düzenlemenize izin veren Gimp, profesyonel grafiker ve tasarımcıların ihtiyaçlarına cevap verecek yeteneklere sahiptir.
+{"gimp":_("""Gimp is an advanced image editing application that comes preinstalled with Pardus 2008. Gimp allows editing all common image file formats and has extensive abilities that will meet professional graphic artists' and designers' needs.
 """)},
-{"amarok":_("""Amarok, müzik dinlemenin keyfini en iyi şekilde sürebileceğiniz kullanışlı bir ortam oynatıcısıdır. Sevdiğiniz müziği dinlerken Amarok, şarkı sözleri ile albüm kapağını önünüze getirir ve Last.FM desteği ile müzik zevkinize uyacak önerilerde bulunur.
+{"amarok":_("""Amarok is a convenient, functional, and advanced media player. It can fetch album covers and lyrics for you, and thanks to its Last.FM support, can suggest similar media, bringing even more possibilities.
 """)},
-{"kaffeine":_("""Kaffeine, Pardus 2008'in öntanımlı video oynatıcısıdır. DVD ve VCD'lerin yanı sıra MPEG, AVI, DivX gibi sayısız biçimdeki video dosyalarını büyük bir başarımla oynatmanızı sağlar. Eğer dijital TV kartınız varsa Kaffeine ile sevdiğiniz TV programlarının video kaydını yapabilirsiniz!
+{"kaffeine":_("""Kaffeine is the default video player of Pardus 2008. It has a high performance in playing DVDs, VCDs, and countless video file formats, including, but not limited to, MPEG, AVI and DivX. If you have a digital TV card, you can record your favourite TV programs using Kaffeine!
 """)},
-{"kopete":_("""MSN, Yahoo!, ICQ, AIM, GTalk, Jabber gibi farklı hızlı mesajlaşma servislerindeki tüm hesaplarınızı Kopete ile kullanabilir, farklı ağlardaki arkadaşlarınızla aynı anda konuşabilirsiniz.
+{"kopete":_("""You can use multiple accounts in various instant messaging services like MSN, Yahoo!, ICQ, AIM, GTalk and Jabber, and can talk to your friends in different networks using Kopete.
 """)},
-{"k3b":_("""CD (ya da DVD) kopyalamak, veri CD'si, ses CD'si oluşturmak, kalıp dosyası oluşturmak ve kalıbı CD'ye yazdırmak, K3b ile yapılabilecek işlemlerinden yalnızca birkaçıdır.
+{"k3b":_("""Copying CDs (or DVDs), creating data or audio CDs, creating ISO images and burning CD/DVD images to discs are just a few of the things you can do with K3b.
 """)},
-{"destek":_("""Kurulumdan sonra, ilk adımlar, nasıl yapılır belgeleri, paket tanıtımları hakkında merak ettiğiniz tüm bilgilere topluluk portalı www.ozgurlukicin.com'dan ulaşabilirsiniz. Herhangi bir sorun yaşadığınızda forum sayfalarından ve Konversation programı ile IRC Freenode #pardus odasına bağlanarak destek alabilirsiniz.
-""")}
+{"support":_("""You can find HOW-TOs, tutorials and package introductions in our community portal www.ozgurlukicin.com. If you happen to have any problems with Pardus 2008, you can get support using the forum pages and the #pardus room in IRC Freenode server (and you can use Konversation for that).
+""")},
 ]
 

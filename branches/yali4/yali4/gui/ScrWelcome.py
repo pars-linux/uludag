@@ -30,29 +30,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Welcome !! ')
     desc = _('Welcome to the Pardus installer..')
     help = _('''
-<font size="+2">Welcome!</font>
-
-<font size="+1">
-<p>Welcome to Pardus, your new and practical desktop with a handful 
-of applications tailored to your needs. With Pardus, you can 
-connect to internet, read your e-mails online, work with 
-documents, listen to music and play DVDs. Its advanced yet
-easy interface will let you be more productive and efficient.
-</p>
-
-<p>
-This software will install Pardus on your computer,
-without disrupting your previous documents and settings. However,
-we advise you to make a backup before proceeding. 
-</p>
-<p>
-The installer will identify your system's hardware and configure
-it according to your needs. You will note the arrow keys on the
-bottom of the screen: Use them to advance to next screen.
-</p>
-<p>
-Have a fruitful experience with Pardus!
-</p>
+<font size="+2">Welcome !</font>
+<font size="+1"><p>Welcome to Pardus 2008 that contains many easy-to-use software components. You can do everything you need to, including, but not limited to, connecting to the Internet, creating documents, playing games, listening to music using Pardus 2008.</p>
+<p>This application will help you with the installation of Pardus 2008 to your computer in few and easy steps and then do what is necessary to identify and configure your hardware. We advise you to backup your data in your disk(s) before starting with the installation.</p>
+<p>You can start the installation process (and step in on a free world) by pressing the Next button.</p>
 </font>
 ''')
 

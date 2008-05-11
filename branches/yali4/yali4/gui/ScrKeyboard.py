@@ -33,10 +33,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconKeyboard"
     help = _('''
 <font size="+2">Keyboard Setup</font>
-
 <font size="+1">
 <p>
-Depending on your hardware or choice select a keyboard layout from the list.
+Here you can select the type of your keyboard and the language map you want to use. You can test your selection's result in the test box. 
+Proceed with the installation after you make your selections.
 </p>
 </font>
 ''')

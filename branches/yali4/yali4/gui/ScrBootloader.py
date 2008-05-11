@@ -45,19 +45,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconBootloader"
     help = _('''
 <font size="+2">Boot loader setup</font>
-
 <font size="+1">
 <p>
-Linux makes use of GRUB boot loader, which
-can boot the operating system of your taste
-during the start up. 
+Pardus 2008 uses a boot manager called GRUB to start the operating system you choose.
 </p>
-<p>
-If you have more than one operating system,
-you can choose which operating system to 
-boot also.
+<p>If there are multiple operating systems in your computer, you can start the one 
+you like using GRUB. Installing GRUB to the beginning of the boot disk is the advised 
+option to avoid boot problems.  If you are sure you know what you are doing, 
+you can change boot loader settings.
 </p>
-
 <p>
 Please refer to Pardus Installing and Using 
 Guide for more information about GRUB boot 

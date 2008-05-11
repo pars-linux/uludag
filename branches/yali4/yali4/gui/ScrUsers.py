@@ -34,17 +34,18 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconUser"
     help = _('''
 <font size="+2">User setup</font>
-
 <font size="+1">
 <p>
-Other than the system administrator user,
-you can create a user account for your 
-daily needs, i.e reading your e-mail, surfing
-on the web and searching for daily recipe
-offerings. Usual password assignment
-rules also apply here: This password should 
-be unique and private. Choose a password 
-difficult to guess, but easy to remember. 
+Pardus 2008 allows multiple users to share the same computer.
+You can assign management rights to the users you create; you can also
+configure permissions to users for various operations through TASMA.
+</p>
+<p>
+To create a new user, fill in the form and press the "Add User" button.
+If you want a user to be automatically logged in to the system, select
+the user from the list; if you want to delete a user, 
+select his/her username from the list and press "Delete".
+Proceed with the installation after you make your selections.
 </p>
 <p>
 Click Next button to proceed.
