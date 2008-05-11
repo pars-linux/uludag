@@ -2,22 +2,98 @@
 # -*- coding: utf-8 -*-
 
 import dbus
+import sys
+import time
+
+from qt import *
+from kdecore import *
+from kdeui import *
+
 import zorg.config
 from zorg.utils import *
 
 import randriface
+from handler import CallHandler
 
-class ComarLink:
+class DBusInterface:
     def __init__(self):
-        self.bus = dbus.SystemBus()
+        self.dia = None
+        self.busSys = None
+        self.busSes = None
 
-    def __getattr__(self, method):
-        object = self.bus.get_object("tr.org.pardus.comar", "/package/zorg", introspect=False)
-        iface = dbus.Interface(object, "tr.org.pardus.comar.Xorg.Display")
+        self.winID = 0
 
-        return getattr(iface, method)
+        self.openBus()
+        #if self.openBus():
+        #    self.setup()
 
-link = ComarLink()
+    def openBus(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException, exception:
+            self.errorDBus(exception)
+            return False
+        return True
+
+    def callHandler(self, script, model, method, action):
+        ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
+        ch.registerError(self.error)
+        ch.registerDBusError(self.errorDBus)
+        ch.registerAuthError(self.errorDBus)
+        return ch
+
+    def call(self, script, model, method, *args):
+        try:
+            obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
+            iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar.%s" % model)
+        except dbus.DBusException, exception:
+            self.errorDBus(exception)
+        try:
+            func = getattr(iface, method)
+            return func(*args)
+        except dbus.DBusException, exception:
+            self.error(exception)
+
+    def callSys(self, method, *args):
+        try:
+            obj = self.busSys.get_object("tr.org.pardus.comar", "/")
+            iface = dbus.Interface(obj, dbus_interface="tr.org.pardus.comar")
+        except dbus.DBusException, exception:
+            self.errorDBus(exception)
+            return
+        try:
+            func = getattr(iface, method)
+            return func(*args)
+        except dbus.DBusException, exception:
+            self.error(exception)
+
+    def error(self, exception):
+        KMessageBox.error(None, str(exception), i18n("COMAR Error"))
+
+    def errorDBus(self, exception):
+        if self.dia:
+            return
+        self.dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
+        self.dia.progressBar().setTotalSteps(50)
+        self.dia.progressBar().setTextEnabled(False)
+        self.dia.show()
+        start = time.time()
+        while time.time() < start + 5:
+            if self.openBus():
+                self.dia.close()
+                self.setup()
+                return
+            if self.dia.wasCancelled():
+                break
+            percent = (time.time() - start) * 10
+            self.dia.progressBar().setProgress(percent)
+            qApp.processEvents(100)
+        self.dia.close()
+        KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
+        sys.exit()
+
+comlink = DBusInterface()
 
 def fglrxOutputInfo():
     connected_outputs = []
@@ -40,7 +116,7 @@ class DisplayConfig:
     def __init__(self):
         self._rriface = randriface.RandRIface()
 
-        self._bus = link.activeDeviceID()
+        self._bus = comlink.call("zorg", "Xorg.Display", "activeDeviceID")
         self._info = zorg.config.getDeviceInfo(self._bus)
 
         self.outputs = self._info.probe_result["outputs"].split(",")
@@ -101,7 +177,8 @@ class DisplayConfig:
             secondScreen["output"] = self.secondaryScr
             secondScreen["mode"] = self.current_modes[self.secondaryScr]
 
-        link.setupScreens(self._bus, options, firstScreen, secondScreen)
+        ch = comlink.callHandler("zorg", "Xorg.Display", "setupScreens", "tr.org.pardus.comar.xorg.display.set")
+        ch.call(self._bus, options, firstScreen, secondScreen)
 
         if self._randr12:
             if self.desktop_setup == "single":

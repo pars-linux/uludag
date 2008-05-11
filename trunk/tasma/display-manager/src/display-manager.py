@@ -16,9 +16,10 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
+from dbus.mainloop.qt3 import DBusQtMainLoop
+
 import helpdialog
 import dm_mainview
-import displayconfig
 from utility import *
 
 mod_name = 'Display Manager'
@@ -42,6 +43,7 @@ class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
         dm_mainview.mainWidget.__init__(self, parent)
 
+        import displayconfig
         self.displayConfiguration = displayconfig.DisplayConfig()
 
         #if not self.displayConfiguration._randr12:
@@ -268,6 +270,7 @@ def create_display_manager(parent, name):
     global kapp
 
     kapp = KApplication.kApplication()
+    DBusQtMainLoop(set_as_default=True)
     return Module(parent, name)
 
 
@@ -285,6 +288,13 @@ def main():
 
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
+
+    DBusQtMainLoop(set_as_default=True)
+
+    # PolicyKit Agent requires window ID
+    from displayconfig import comlink
+    comlink.winID = win.winId()
+
     win.setCaption(i18n('Display Manager'))
     win.setMinimumSize(400, 300)
     #win.resize(500, 300)

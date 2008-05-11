@@ -57,31 +57,31 @@ class CallHandler:
             self.busSys = dbus.SystemBus()
         if not self.busSes:
             self.busSes = dbus.SessionBus()
-    
+
     def registerDone(self, func, *args):
         self.handleDone[func] = args
-    
+
     def registerCancel(self, func, *args):
         self.handleCancel[func] = args
-    
+
     def registerError(self, func, *args):
         self.handleError[func] = args
-    
+
     def registerAuthError(self, func, *args):
         self.handleAuthError[func] = args
-    
+
     def registerDBusError(self, func, *args):
         self.handleDBusError[func] = args
-    
+
     def callNoReply(self, *args):
         self.args = args
         self.ignore_reply = True
         self.__call()
-    
+
     def call(self, *args):
         self.args = args
         self.__call()
-    
+
     def __call(self):
         iface = self.__getIface()
         method = getattr(iface, self.method)
@@ -89,7 +89,7 @@ class CallHandler:
             method(ignore_reply=self.ignore_reply, *self.args)
         else:
             method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
-    
+
     def __getIface(self):
         try:
             obj = self.busSys.get_object(self.dest, self.path, introspect=False)
@@ -99,14 +99,14 @@ class CallHandler:
                 args = list(args)
                 args.append(e)
                 func(*args)
-    
+
     def __handleReply(self, *args):
         for func, _args in self.handleDone.iteritems():
             args = list(args)
             _args = list(_args)
             _args.extend(args)
             func(*_args)
-    
+
     def __handleError(self, exception):
         name = exception._dbus_error_name
         if name.startswith(self.dest):
@@ -118,7 +118,7 @@ class CallHandler:
                 args = list(args)
                 args.append(exception)
                 func(*args)
-    
+
     def __getAuthIface(self):
         try:
             obj = self.busSes.get_object("org.freedesktop.PolicyKit.AuthenticationAgent", "/")
@@ -128,18 +128,18 @@ class CallHandler:
                 args = list(args)
                 args.append(e)
                 func(*args)
-    
+
     def __obtainAuth(self):
         iface = self.__getAuthIface()
         iface.ObtainAuthorization(self.action, self.window, os.getpid(), reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError)
-    
+
     def __handleAuthReply(self, granted):
         if granted:
             self.__call()
         else:
             for func, args in self.handleCancel.iteritems():
                 func(*args)
-    
+
     def __handleAuthError(self, exception):
         for func, args in self.handleAuthError.iteritems():
             args = list(args)
