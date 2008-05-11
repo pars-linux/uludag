@@ -144,8 +144,12 @@ class MainApplicationWidget(QWidget):
         self.connect(self.delayTimer, SIGNAL("timeout()"), self.lazyLoadComponentList)
 
     def lazyLoadComponentList(self):
-        self.parent.tray.updateTrayIcon()
- 
+
+        try:
+            self.parent.tray.updateTrayIcon()
+        except PisiIface.RepoError:
+            self.updateCheck()
+
         if self.componentsReady():
             self.installState()
 
@@ -195,8 +199,12 @@ class MainApplicationWidget(QWidget):
         self.parent.showNewAction.setChecked(True)
         self.processEvents()
 
-        # ask pisi to get available packages
-        packages = self.command.listNewPackages()
+        try:
+            packages = self.command.listNewPackages()
+        except PisiIface.RepoError:
+            Globals.setNormalCursor()
+            self.repoNotReady()
+            return
 
         self.state = install_state
 
@@ -222,7 +230,14 @@ class MainApplicationWidget(QWidget):
             self.resetState()
         self.parent.showInstalledAction.setChecked(True)
         self.processEvents()
-        packages = self.command.listPackages()
+
+        try:
+            packages = self.command.listPackages()
+        except PisiIface.RepoError:
+            Globals.setNormalCursor()
+            self.repoNotReady()
+            return
+
         self.state = remove_state
         self.createComponentList(packages)
         self.operateAction.setText(i18n("Remove Package(s)"))
@@ -262,7 +277,13 @@ class MainApplicationWidget(QWidget):
         self.parent.showInstalledAction.setChecked(False)
         ##
 
-        upgradables = PisiIface.get_upgradable_packages()
+        try:
+            upgradables = PisiIface.get_upgradable_packages()
+        except PisiIface.RepoError:
+            Globals.setNormalCursor()
+            self.repoNotReady()
+            return
+
         self.createComponentList(upgradables, True)
         self.operateAction.setText(i18n("Upgrade Package(s)"))
         self.operateAction.setIconSet(loadIconSet("reload"))
