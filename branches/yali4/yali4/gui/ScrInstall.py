@@ -42,7 +42,8 @@ def iter_slide_pics():
     # load all pics
     pics = []
 
-    for pic, desc in slideDesc.items():
+    for slide in slideDesc:
+        pic, desc = slide.items()[0]
         pics.append({"pic":QtGui.QPixmap(pat(pic)),"desc":desc})
 
     while True:

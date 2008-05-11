@@ -3,19 +3,14 @@
     <file>gui/pics/admin.png</file>
     <file>gui/pics/backardus.png</file>
     <file>gui/pics/goodbye.png</file>
-    <file>gui/pics/hdd_unmount.png</file>
     <file>gui/pics/iconAdmin.png</file>
     <file>gui/pics/iconBootloader.png</file>
     <file>gui/pics/iconCD.png</file>
-    <file>gui/pics/iconDone.png</file>
     <file>gui/pics/iconDate.png</file>
-    <file>gui/pics/iconFailed.png</file>
-    <file>gui/pics/iconFree.png</file>
     <file>gui/pics/iconInstall.png</file>
     <file>gui/pics/iconKeyboard.png</file>
     <file>gui/pics/iconPartition.png</file>
     <file>gui/pics/iconUser.png</file>
-    <file>gui/pics/iconWorking.png</file>
     <file>gui/pics/installcd.png</file>
     <file>gui/pics/keyboards.png</file>
     <file>gui/pics/linux.png</file>

@@ -73,8 +73,9 @@ about disk partitioning.
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.diskList = DiskList(self)
-        vbox = QtGui.QVBoxLayout(self)
-        vbox.addWidget(self.diskList)
+        gridlayout = QtGui.QGridLayout(self)
+        gridlayout.setContentsMargins(1,-1,11,-1)
+        gridlayout.addWidget(self.diskList)
 
     def shown(self):
         ctx.mainScreen.disableNext()

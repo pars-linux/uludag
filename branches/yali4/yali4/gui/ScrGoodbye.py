@@ -70,6 +70,8 @@ don't you?
 
     def shown(self):
         ctx.mainScreen.disableBack()
+        if not ctx.mainScreen.helpContent.isVisible():
+            ctx.mainScreen.slotToggleHelp()
         ctx.yali.processPendingActions(self)
         self.steps.slotRunOperations()
 

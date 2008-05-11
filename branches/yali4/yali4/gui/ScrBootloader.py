@@ -42,6 +42,7 @@ methodUseAvail, methodEraseAll = range(2)
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Bootloader Choice')
     desc = _('Configure the system boot..')
+    icon = "iconBootloader"
     help = _('''
 <font size="+2">Boot loader setup</font>
 

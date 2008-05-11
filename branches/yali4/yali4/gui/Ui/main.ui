@@ -305,14 +305,23 @@ QProgressBar::chunk {
 }</string>
   </property>
   <layout class="QGridLayout" >
+   <property name="leftMargin" >
+    <number>9</number>
+   </property>
    <property name="topMargin" >
-    <number>7</number>
+    <number>3</number>
    </property>
    <property name="rightMargin" >
     <number>0</number>
    </property>
    <property name="bottomMargin" >
-    <number>4</number>
+    <number>3</number>
+   </property>
+   <property name="horizontalSpacing" >
+    <number>0</number>
+   </property>
+   <property name="verticalSpacing" >
+    <number>0</number>
    </property>
    <item row="0" column="0" >
     <widget class="QFrame" name="frame_4" >
@@ -328,17 +337,26 @@ QProgressBar::chunk {
      <property name="frameShadow" >
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" >
+     <layout class="QGridLayout" >
       <property name="leftMargin" >
-       <number>4</number>
+       <number>0</number>
       </property>
       <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
        <number>0</number>
       </property>
       <property name="bottomMargin" >
        <number>0</number>
       </property>
-      <item>
+      <property name="horizontalSpacing" >
+       <number>0</number>
+      </property>
+      <property name="verticalSpacing" >
+       <number>0</number>
+      </property>
+      <item row="0" column="0" >
        <widget class="QLabel" name="screenIcon" >
         <property name="maximumSize" >
          <size>
@@ -354,11 +372,33 @@ QProgressBar::chunk {
         </property>
        </widget>
       </item>
-      <item>
+      <item row="0" column="1" >
        <layout class="QVBoxLayout" >
         <property name="spacing" >
          <number>0</number>
         </property>
+        <property name="leftMargin" >
+         <number>6</number>
+        </property>
+        <property name="topMargin" >
+         <number>4</number>
+        </property>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>20</width>
+            <height>6</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item>
          <widget class="QLabel" name="screenName" >
           <property name="styleSheet" >
@@ -370,6 +410,9 @@ QProgressBar::chunk {
           <property name="textFormat" >
            <enum>Qt::RichText</enum>
           </property>
+          <property name="alignment" >
+           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+          </property>
          </widget>
         </item>
         <item>
@@ -380,27 +423,50 @@ QProgressBar::chunk {
           <property name="text" >
            <string>Details about the screen</string>
           </property>
+          <property name="alignment" >
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
          </widget>
         </item>
        </layout>
       </item>
-      <item>
-       <widget class="QLabel" name="label_4" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="pixmap" >
-         <pixmap resource="../../data.qrc" >:/gui/pics/logo.png</pixmap>
-        </property>
-        <property name="scaledContents" >
-         <bool>false</bool>
-        </property>
-       </widget>
+      <item row="0" column="2" >
+       <layout class="QVBoxLayout" >
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4" >
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Preferred" hsizetype="Fixed" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="pixmap" >
+           <pixmap resource="../../data.qrc" >:/gui/pics/logo.png</pixmap>
+          </property>
+          <property name="scaledContents" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item>
+      <item row="0" column="3" >
        <spacer>
         <property name="orientation" >
          <enum>Qt::Horizontal</enum>
@@ -410,8 +476,8 @@ QProgressBar::chunk {
         </property>
         <property name="sizeHint" >
          <size>
-          <width>5</width>
-          <height>20</height>
+          <width>12</width>
+          <height>53</height>
          </size>
         </property>
        </spacer>
@@ -536,10 +602,10 @@ QProgressBar::chunk {
        </property>
        <layout class="QHBoxLayout" >
         <property name="leftMargin" >
-         <number>9</number>
+         <number>0</number>
         </property>
         <property name="rightMargin" >
-         <number>22</number>
+         <number>11</number>
         </property>
         <item>
          <layout class="QHBoxLayout" >
