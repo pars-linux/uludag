@@ -159,6 +159,7 @@ class DisplayConfig:
             self.secondaryScr = self._info.active_outputs[1]
 
         self.desktop_setup = self._info.desktop_setup
+        self.depths = self._info.probe_result.get("depths", "16,24").split(",")
         self.true_color = self._info.depth == "24"
 
     def apply(self):

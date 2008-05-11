@@ -52,6 +52,8 @@ class MainWidget(dm_mainview.mainWidget):
         #    sys.exit()
 
         self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
+        if len(self.displayConfiguration.depths) == 1:
+            self.checkBoxTrueColor.setDisabled(True)
 
         self.screenNames = { "1":"Primary Screen", "2": "Secondary Screen" }
 
@@ -98,7 +100,6 @@ class MainWidget(dm_mainview.mainWidget):
             self.groupBoxSecondaryScreen.hide()
 
         # remove later.
-        #self.displayConfiguration.secondaryScr = "VGA"
         self.textCardName.setText(i18n("NVIDIA"))
         self.textDriver.setText(i18n("nv"))
 
@@ -108,9 +109,6 @@ class MainWidget(dm_mainview.mainWidget):
         if self.currentDualMode == "single":
             self.checkBoxDualMode.setChecked(False)
             self.enableExtendedOption(False)
-            #self.screenImage2.hide()
-            #self.radioBoxCloned.setEnabled(0)
-            #self.radioBoxExtended.setEnabled(0)
         else:
             self.checkBoxDualMode.setChecked(True)
             self.enableExtendedOption(True)
