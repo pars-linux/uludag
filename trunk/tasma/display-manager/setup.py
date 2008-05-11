@@ -59,12 +59,13 @@ if "dist" in sys.argv:
     sys.exit(0)
 
 app_data = [
+    'src/displayconfig.py',
     'src/display-manager.py',
     'src/dm_mainview.ui',
-    'src/displayconfig.py',
+    'src/handler.py',
+    'src/helpdialog.ui',
     'src/randriface.py',
     'src/utility.py',
-    'src/helpdialog.ui',
     'pics',
     'help'
 ]

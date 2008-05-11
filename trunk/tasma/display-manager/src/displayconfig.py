@@ -82,7 +82,7 @@ class DBusInterface:
         while time.time() < start + 5:
             if self.openBus():
                 self.dia.close()
-                self.setup()
+                #self.setup()
                 return
             if self.dia.wasCancelled():
                 break
@@ -207,6 +207,9 @@ class DisplayConfig:
                         "--mode",   self.current_modes[self.secondaryScr],
                         "--right-of", self.primaryScr
                     )
+
+        elif self._info.driver == "fglrx":
+            run("aticonfig", "--dtop", self.desktop_setup)
 
     def done(self):
         KMessageBox.information(None, i18n("Saved your configuration."))

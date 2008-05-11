@@ -62,6 +62,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
         self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
 
+        self.pixVideoCard.setPixmap(getIconSet("video_card", KIcon.User).pixmap(QIconSet.Automatic, QIconSet.Normal))
+
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
 
@@ -78,7 +80,6 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
         self.connect(self.radioBoxExtended, SIGNAL("toggled(bool)"), self.setDualModeOptions)
-        self.connect(self.radioBoxCloned, SIGNAL("toggled(bool)"), self.setDualModeOptions)
 
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
         self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
@@ -106,13 +107,13 @@ class MainWidget(dm_mainview.mainWidget):
         self.getResolutions(1)
         self.setIconbyResolution()
 
-        if self.currentDualMode == "single":
+        if self.displayConfiguration.desktop_setup == "single":
             self.checkBoxDualMode.setChecked(False)
             self.enableExtendedOption(False)
         else:
             self.checkBoxDualMode.setChecked(True)
             self.enableExtendedOption(True)
-            if self.currentDualMode == "horizontal":
+            if self.displayConfiguration.desktop_setup == "horizontal":
                 self.radioBoxExtended.setChecked(True)
             else:
                 self.radioBoxCloned.setChecked(True)
@@ -146,9 +147,6 @@ class MainWidget(dm_mainview.mainWidget):
         # returns a dict of current outputs: resolutions
         self.currentModes = self.displayConfiguration.current_modes
 
-        # returns dual mode status
-        self.currentDualMode = self.displayConfiguration.desktop_setup
-
     def setSelectedOutput(self):
         curOut =  str(self.comboBoxOutput.currentText())
 
@@ -165,8 +163,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.getResolutions()
 
-    def setDualModeOptions(self):
-        if self.radioBoxExtended.isChecked():
+    def setDualModeOptions(self, extended):
+        if extended:
             self.displayConfiguration.desktop_setup = "horizontal"
         else:
             self.displayConfiguration.desktop_setup = "clone"
@@ -195,10 +193,10 @@ class MainWidget(dm_mainview.mainWidget):
 
             self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
             self.screenImage2.show()
-            self.radioBoxCloned.setEnabled(1)
-            self.radioBoxExtended.setEnabled(1)
+            self.radioBoxCloned.setEnabled(True)
+            self.radioBoxExtended.setEnabled(True)
             self.groupBoxSecondaryScreen.show()
-            self.displayConfiguration.desktop_setup = self.currentDualMode
+            self.setDualModeOptions(self.radioBoxExtended.isChecked())
         else:
             self.screenImage2.hide()
             self.screenImage1.setState(QButton.On)
