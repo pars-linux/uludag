@@ -15,6 +15,25 @@ from zorg.utils import *
 import randriface
 from handler import CallHandler
 
+all_modes = [
+    "2048x1536",
+    "1920x1440",
+    "1920x1200",
+    "1680x1050",
+    "1600x1024",
+    "1440x900",
+    "1400x1050",
+    "1280x1024",
+    "1280x960",
+    "1280x800",
+    "1280x768",
+    "1152x864",
+    "1152x768",
+    "1024x768",
+    "800x600",
+    "640x480"
+]
+
 class DBusInterface:
     def __init__(self):
         self.dia = None
@@ -130,7 +149,7 @@ class DisplayConfig:
         if self._randr12:
             for output in self.outputs:
                 modes = self._rriface.getResolutions(output)
-                self.modes[output] = modes if modes else ["800x600", "640x480"]
+                self.modes[output] = modes if modes else all_modes
 
                 current = self._rriface.currentResolution(output)
                 self.current_modes[output] = current if current else self.modes[output][0]
@@ -146,8 +165,10 @@ class DisplayConfig:
             for output in self.outputs:
                 if self._info.probe_result.has_key("%s-modes" % output):
                     modes = self._info.probe_result["%s-modes" % output].split(",")
+                    if "" in modes:
+                        modes = all_modes
                 else:
-                    modes = ["1024x768", "800x600", "640x480"]
+                    modes = all_modes
 
                 self.modes[output] = modes
                 self.current_modes[output] = self._info.modes.get(output, "800x600")
