@@ -34,13 +34,9 @@ def chroot_dbus():
     tgt = os.path.join(consts.target_dir, "sys")
     os.system("mount --bind /sys %s" % tgt)
 
-    pid = os.fork()
-    if pid == 0: # in child
-        os.chroot(consts.target_dir)
-        os.system("/sbin/ldconfig")
-        os.system("/sbin/update-environment")
-        os.environ["PATH"]="/bin:/sbin:/usr/bin:/usr/sbin"
-        os.execve("/bin/service", ["/bin/service", "dbus", "start"], os.environ)
+    os.system("chroot %s /sbin/ldconfig" % consts.target_dir)
+    os.system("chroot %s /sbin/update-environment" % consts.target_dir)
+    os.system("chroot %s /bin/service dbus start" % consts.target_dir)
 
 def checkYaliParams(param):
     for i in [x for x in open("/proc/cmdline", "r").read().split()]:
