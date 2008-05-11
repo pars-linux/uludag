@@ -58,7 +58,8 @@ class ComarIface:
         self.errHandler()
 
     def comarError(self, exception):
-        KMessageBox.error(None, str(exception), i18n("COMAR Error"))
+        if not "urlopen error" in exception.message:
+            KMessageBox.error(None, str(exception), i18n("COMAR Error"))
         self.errHandler()
 
     def cancelError(self):
