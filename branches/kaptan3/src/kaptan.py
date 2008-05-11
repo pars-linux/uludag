@@ -205,6 +205,10 @@ class Kaptan(kaptanUi):
                 for name in dirs:
                     os.rmdir(os.path.join(root, name))
             os.rmdir(self.tmpThumbDir)
+        config = KConfig("kaptanrc")
+        config.setGroup("General")
+        config.writeEntry("RunOnStart", "False")
+        config.sync()
 
 def AboutData():
     return KAboutData(
@@ -232,11 +236,6 @@ if __name__ == "__main__":
 
     kapp = KUniqueApplication(True, True, True)
     kaptan = Kaptan()
-
-    config = KConfig("kaptanrc")
-    config.setGroup("General")
-    config.writeEntry("RunOnStart", "False")
-    config.sync()
 
     # if you use different theme our works looks ugly :)
     style = QStyleFactory.create("Lipstik")
