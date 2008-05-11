@@ -22,9 +22,9 @@
 
 int main (int argc, char *argv[])
 {
-    KAboutData aboutData( "policykit-kde", I18N_NOOP( "PolicyKit-kde" ), "0.1",
-                        I18N_NOOP( "PolicyKit-kde" ), KAboutData::License_GPL_V2,
-                        I18N_NOOP( "(c) 2007,2008 TUBITAK - UEKAE" ) );
+    KAboutData aboutData( "policykit-kde", "PolicyKit-kde", "0.1",
+                          "PolicyKit-kde", KAboutData::License_GPL_V2,
+                          "(c) 2007,2008 TUBITAK - UEKAE");
     aboutData.addAuthor( "Gökçen Eraslan", I18N_NOOP( "Author" ), "gokcen@pardus.org.tr" );
     KCmdLineArgs::init( argc, argv, &aboutData );
 
