@@ -79,6 +79,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.switchBetweenScreens)
 
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
+        self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.buttonGroupDualModes, SLOT("setEnabled(bool)"))
         self.connect(self.radioBoxExtended, SIGNAL("toggled(bool)"), self.setDualModeOptions)
 
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
@@ -111,12 +112,11 @@ class MainWidget(dm_mainview.mainWidget):
             self.checkBoxDualMode.setChecked(False)
             self.enableExtendedOption(False)
         else:
-            self.checkBoxDualMode.setChecked(True)
-            self.enableExtendedOption(True)
             if self.displayConfiguration.desktop_setup == "horizontal":
                 self.radioBoxExtended.setChecked(True)
             else:
                 self.radioBoxCloned.setChecked(True)
+            self.checkBoxDualMode.setChecked(True)
 
     def duplicateOutputs(self):
         message = i18n("Sorry, but you can use one device for each output.\nTry to select another output.")
@@ -193,16 +193,12 @@ class MainWidget(dm_mainview.mainWidget):
 
             self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
             self.screenImage2.show()
-            self.radioBoxCloned.setEnabled(True)
-            self.radioBoxExtended.setEnabled(True)
             self.groupBoxSecondaryScreen.show()
             self.setDualModeOptions(self.radioBoxExtended.isChecked())
         else:
             self.screenImage2.hide()
             self.screenImage1.setState(QButton.On)
             self.groupBoxSecondaryScreen.hide()
-            self.radioBoxExtended.setEnabled(0)
-            self.radioBoxCloned.setEnabled(0)
             self.displayConfiguration.desktop_setup = "single"
 
     def switchBetweenScreens(self):
