@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-26 16:27+0200\n"
+"POT-Creation-Date: 2008-05-11 22:52+0300\n"
 "PO-Revision-Date: 2007-05-13 21:13+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -17,6 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/CommonText.py:15 src/MainWidget.py:617
+msgid "downloading"
+msgstr "baixando"
+
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "extraindo"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "configurando"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "removendo"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "instalando"
 
 #: src/Progress.py:51
 msgid "downloaded ( total: %1 )"
@@ -61,14 +81,6 @@ msgstr "atualizado"
 #: src/Progress.py:147
 msgid "%1 / %2 package %3"
 msgstr "package %1 / %2 %3"
-
-#: src/Commander.py:62
-msgid "Can't connect to Comar daemon"
-msgstr "Não é possível se conectar com o deamon do Comar"
-
-#: src/Commander.py:97
-msgid "You do not have permission to do this operation."
-msgstr "Você não tem permissão para realizar esta operação."
 
 #: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
 msgid "Repository Name"
@@ -206,13 +218,32 @@ msgstr "Mb <i>(use 0 para não ter limite)</i>"
 msgid "C&ache"
 msgstr "C&ache"
 
-#: src/BalloonMessage.py:44
-msgid "Show Updates"
-msgstr "Mostrar Atualizações"
+#: src/ComarIface.py:38
+msgid "Unable to connect to DBus."
+msgstr ""
 
-#: src/BalloonMessage.py:45
-msgid "Ignore"
-msgstr "Ignorar"
+#: src/ComarIface.py:38
+#, fuzzy
+msgid "DBus Error"
+msgstr "Erro do PiSi"
+
+#: src/ComarIface.py:52
+#, fuzzy
+msgid "D-Bus Error"
+msgstr "Erro do PiSi"
+
+#: src/ComarIface.py:57
+msgid "COMAR Auth Error"
+msgstr ""
+
+#: src/ComarIface.py:62
+msgid "COMAR Error"
+msgstr ""
+
+#: src/ComarIface.py:66
+#, fuzzy
+msgid "You are not authorized for this operation."
+msgstr "Você não tem permissão para realizar esta operação."
 
 #: src/ProgressDialog.py:91
 msgid "Progress"
@@ -226,15 +257,47 @@ msgstr "<h3>Preparando PiSi...</h3>"
 msgid "Now installing <b>amsn</b> package"
 msgstr "Agora instalando o pacote <b>amsn</b>"
 
-#: src/BasketDialog.py:50 src/BasketDialog.py:55
+#: src/Preferences.py:118
+msgid "Add New Repository"
+msgstr "Adicionar Novo Repositório"
+
+#: src/Preferences.py:125
+msgid "Edit Repository"
+msgstr "Editar Repositório"
+
+#: src/Preferences.py:171 src/Preferences.py:187
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Endereço do repositório deve termicar com o sufixo xml ou xml.bz2.<p>Por "
+"favor, tente de novo.</qt>"
+
+#: src/Preferences.py:171 src/Preferences.py:187
+msgid "Pisi Error"
+msgstr "Erro do PiSi"
+
+#: src/Preferences.py:223 src/MainWidget.py:658
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Aplicando Mudanças nos Repositórios</b>"
+
+#: src/Preferences.py:256
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Todos os pacotes em cache serão deletados. Você tem certeza?"
+
+#: src/HelpDialog.py:29 src/package-manager.py:131
+msgid "Package Manager Help"
+msgstr "Ajuda do Gerenciador de Pacotes"
+
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
 msgid "Basket"
 msgstr "Cesta"
 
-#: src/BasketDialog.py:63
+#: src/BasketDialog.py:64
 msgid "Selected package(s) for removal:"
 msgstr "Pacote(s) selecionado(s) para remoção:"
 
-#: src/BasketDialog.py:64
+#: src/BasketDialog.py:65
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
@@ -242,11 +305,11 @@ msgstr ""
 "Dependências reversas do(s) pacote(s) selecionado(s) que serão também "
 "removidas:"
 
-#: src/BasketDialog.py:66
+#: src/BasketDialog.py:67
 msgid "Selected package(s) for install:"
 msgstr "Pacote(s) selecionado(s) para instalação:"
 
-#: src/BasketDialog.py:67
+#: src/BasketDialog.py:68
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
@@ -254,11 +317,11 @@ msgstr ""
 "Dependências extras do(s) pacote(s) selecionado(s) que também vão ser "
 "instaladas:"
 
-#: src/BasketDialog.py:69
+#: src/BasketDialog.py:70
 msgid "Selected package(s) for upgrade:"
 msgstr "Pacote(s) selecionado(s) para atualização:"
 
-#: src/BasketDialog.py:70
+#: src/BasketDialog.py:71
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
@@ -266,25 +329,37 @@ msgstr ""
 "Dependências extras do(s) pacote(s) selecionado(s) que também vão ser "
 "atualizadas:"
 
-#: src/BasketDialog.py:78
+#: src/BasketDialog.py:79
 msgid "Total Size:"
 msgstr "Tamanho Total:"
 
-#: src/BasketDialog.py:85
+#: src/BasketDialog.py:86
 msgid "Update Basket"
 msgstr "Atualizar Cesta:"
 
-#: src/BasketDialog.py:161
+#: src/BasketDialog.py:165
 msgid "Total Size: <b>%1</b>"
 msgstr "Tamanho Total: <b>%1</b>"
 
-#: src/BasketDialog.py:211 src/BasketDialog.py:213
+#: src/BasketDialog.py:215 src/BasketDialog.py:217
 msgid "Size: "
 msgstr "Tamanho:"
 
-#: src/HelpDialog.py:28 src/package-manager.py:998
-msgid "Package Manager Help"
-msgstr "Ajuda do Gerenciador de Pacotes"
+#: src/Tray.py:38
+msgid "Update"
+msgstr "Atualizar"
+
+#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:582
+msgid "All"
+msgstr "Todos"
+
+#: src/Tray.py:66
+msgid "There are <b>%1</b> updates available!"
+msgstr "Existem <b>%1</b> atualizações disponíveis!"
+
+#: src/Tray.py:67
+msgid "Updates Available!"
+msgstr ""
 
 #: src/pm-install.py:33
 msgid "PiSi package to install"
@@ -298,53 +373,293 @@ msgstr "Você selecionou um pacote para instalar. Você deseja continuar?"
 msgid "Install Package"
 msgstr "Instalar Pacote"
 
-#: src/CommonText.py:15 src/package-manager.py:742
-msgid "downloading"
-msgstr "baixando"
+#: src/SpecialList.py:100 src/CustomEventListener.py:37
+#: src/CustomEventListener.py:41
+msgid "Select all packages in this category"
+msgstr "Selecionar todos os pacotes nesta categoria"
 
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "extraindo"
+#: src/SpecialList.py:102 src/CustomEventListener.py:38
+msgid "Reverse package selections"
+msgstr "Inverter seleção de pacotes"
 
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "configurando"
+#: src/SpecialList.py:163
+msgid "Description: "
+msgstr "Descrição:"
 
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "removendo"
+#: src/SpecialList.py:164
+msgid "Version: "
+msgstr "Versão:"
 
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "instalando"
+#: src/SpecialList.py:165
+#, fuzzy
+msgid "Repository: "
+msgstr "Nome do Respositório"
 
-#: src/Preferences.py:114
-msgid "Add New Repository"
-msgstr "Adicionar Novo Repositório"
+#: src/SpecialList.py:166
+msgid "Package Size: "
+msgstr "Tamanho do Pacote:"
 
-#: src/Preferences.py:121
-msgid "Edit Repository"
-msgstr "Editar Repositório"
+#: src/SpecialList.py:167
+msgid "Homepage: "
+msgstr "Homepage:"
 
-#: src/Preferences.py:167 src/Preferences.py:183
+#: src/Notifier.py:41
+msgid "Show Updates"
+msgstr "Mostrar Atualizações"
+
+#: src/Notifier.py:41
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: src/MainWidget.py:75
+msgid "Loading Package List..."
+msgstr "Carregando Lista de Pacotes..."
+
+#: src/MainWidget.py:105
+msgid "Search: "
+msgstr "Pesquisar:"
+
+#: src/MainWidget.py:109
+msgid "Show basket"
+msgstr "Mostrar cesta"
+
+#: src/MainWidget.py:114 src/MainWidget.py:213
+msgid "Install Package(s)"
+msgstr "Instalar Pacote(s)"
+
+#: src/MainWidget.py:123
+msgid "Components"
+msgstr "Componentes"
+
+#: src/MainWidget.py:173
 msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
+"Package-manager needs to update package database. You need a network "
+"connection to update."
 msgstr ""
-"<qt>Endereço do repositório deve termicar com o sufixo xml ou xml.bz2.<p>Por "
-"favor, tente de novo.</qt>"
+"Gerenciador de pacoptes precisa atualizar o banco de dados. Você precisa de "
+"uma conexão de rede para atualizá-lo."
 
-#: src/Preferences.py:167 src/Preferences.py:183
-msgid "Pisi Error"
-msgstr "Erro do PiSi"
+#: src/MainWidget.py:174
+msgid "Package database is empty"
+msgstr "Banco de dados de pacotes está vazio"
 
-#: src/Preferences.py:216 src/package-manager.py:785
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Aplicando Mudanças nos Repositórios</b>"
+#: src/MainWidget.py:242
+msgid "Remove Package(s)"
+msgstr "Remover Pacote(s)"
 
-#: src/Preferences.py:249
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Todos os pacotes em cache serão deletados. Você tem certeza?"
+#: src/MainWidget.py:258 src/MainWidget.py:661
+msgid "<b>Updating Repository</b>"
+msgstr "<b>Atualizando Repositório</b>"
+
+#: src/MainWidget.py:287
+msgid "Upgrade Package(s)"
+msgstr "Atualizar Pacote(s)"
+
+#: src/MainWidget.py:305 src/MainWidget.py:590
+msgid "Search Results"
+msgstr "Resultados da Pesquisa"
+
+#: src/MainWidget.py:343
+msgid "Currently your basket is empty."
+msgstr "Atualmente sua cesta está vazia."
+
+#: src/MainWidget.py:346 src/MainWidget.py:354
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Atualmente existe(m) <b>%1</b> pacote(s) selecionado(s) com um tamanho total "
+"de <b>%2</b> "
+
+#: src/MainWidget.py:349
+msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
+msgstr "com <b>%3</b> dependências extras com um tamanho total de <b>%4</b> "
+
+#: src/MainWidget.py:351 src/MainWidget.py:359
+msgid "in your basket."
+msgstr "na sua cesta."
+
+#: src/MainWidget.py:357
+msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
+msgstr "com <b>%3</b> dependências reversas com um tamanho total de <b>%4</b> "
+
+#: src/MainWidget.py:388
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"Pacotes selecionados [%1] estão em conflito um com o outro. Estes pacotes "
+"não podem ser instalados juntos."
+
+#: src/MainWidget.py:389 src/MainWidget.py:399
+msgid "Conflict Error"
+msgstr "Erro de Conflito"
+
+#: src/MainWidget.py:395
+msgid "The following packages conflicts:\n"
+msgstr "Os seguintes pacotes conflitam:\n"
+
+#: src/MainWidget.py:397
+msgid "%1 conflicts with: [%2]\n"
+msgstr "%1 conflita com: [%2]\n"
+
+#: src/MainWidget.py:398
+#, fuzzy
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+"\n"
+"Remover os seguintes pacotes conflitantes?"
+
+#: src/MainWidget.py:413 src/MainWidget.py:472 src/MainWidget.py:613
+msgid "<b>Installing Package(s)</b>"
+msgstr "<b>Instalando Pacote(s)</b>"
+
+#: src/MainWidget.py:422
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
+msgstr ""
+"<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>instalado(s)</b>."
+
+#: src/MainWidget.py:425
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>installed</b>."
+msgstr ""
+" Com os pacotes selecionados; <b>%1</b> dependências extras serão também "
+"<b>instaladas</b>."
+
+#: src/MainWidget.py:426
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
+msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>instalados</b>."
+
+#: src/MainWidget.py:429
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
+msgstr ""
+"<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>atualizado(s)</b>."
+
+#: src/MainWidget.py:432
+msgid ""
+" With the selected packages; <b>%1</b> extra dependencies are also going to "
+"be <b>upgraded</b>."
+msgstr ""
+" Com os pacotes selecionados; <b>%1</b> dependências extras serão também  "
+"<b>atualizadas</b>."
+
+#: src/MainWidget.py:433
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
+msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>atualizados</b>."
+
+#: src/MainWidget.py:436
+msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
+msgstr "<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>removidos</b>."
+
+#: src/MainWidget.py:439
+msgid ""
+" Selected packages have reverse dependencies. Because the reverse "
+"dependencies of the selected packages needs those packages to work; by "
+"removing the selected packages; <b>%1</b> reverse dependencies are also "
+"going to be <b>removed</b>. Please check your basket and make sure those are "
+"the packages you want to remove. Accidentally removing some reverse "
+"dependencies may break the system stability."
+msgstr ""
+" Pacotes selecionados têm dependências reversas. Porque as dependências "
+"reversas dos pacotes selecionados precisam de tais pacotes para funcionar; "
+"removendo os pacotes selecionados, <b>%1</b> dependências reversas também "
+"serão <b>removidas</b>. Por favor cheque sua cesta e tenha certeza dos "
+"pacotes que deseja remover. Remover algumas dependências reversas "
+"acidentalmente pode quebrar a estabilidade do sistema."
+
+#: src/MainWidget.py:441
+msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
+msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>removidos</b>."
+
+#: src/MainWidget.py:443
+msgid "<br>Do you want to continue?</qt>"
+msgstr "<br>Você deseja continuar?</qt>"
+
+#: src/MainWidget.py:464
+msgid "<b>Removing Package(s)</b>"
+msgstr "<b>Removendo Pacote(s)</b>"
+
+#: src/MainWidget.py:481 src/MainWidget.py:615
+msgid "<b>Upgrading Package(s)</b>"
+msgstr "<b>Atualizando Pacote(s)</b>"
+
+#: src/MainWidget.py:574
+msgid "Others"
+msgstr "Outros"
+
+#: src/MainWidget.py:662
+msgid "Downloading package list of %1"
+msgstr "Baixando lista de pacotes de %1"
+
+#: src/MainWidget.py:678
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: src/package-manager.py:33
+msgid "GUI for PiSi package manager"
+msgstr "Interface gráfica para o gerenciador de pacotes PiSi"
+
+#: src/package-manager.py:39 src/package-manager.py:56
+msgid "Package Manager"
+msgstr "Gerenciador de Pacotes"
+
+#: src/package-manager.py:42
+msgid "Developer and Current Maintainer"
+msgstr "Desenvolvedor e Atual Mantenedor"
+
+#: src/package-manager.py:43
+msgid "Developer"
+msgstr ""
+
+#: src/package-manager.py:44
+msgid "Original Author"
+msgstr "Autor Original"
+
+#: src/package-manager.py:45
+msgid "CSS/JS Meister"
+msgstr "Mestre do CSS/JS"
+
+#: src/package-manager.py:46
+msgid "GUI Design & Usability"
+msgstr "Projeto de GUI & Usabilidade"
+
+#: src/package-manager.py:47
+msgid "PiSi Authors"
+msgstr "Autores do PiSi"
+
+#: src/package-manager.py:47
+msgid "Authors of PiSi API"
+msgstr "Autores da API do PiSi"
+
+#: src/package-manager.py:104
+msgid "Show Installed Packages"
+msgstr "Mostrar Pacotes Instalados"
+
+#: src/package-manager.py:107
+msgid "Show New Packages"
+msgstr "Mostrar Novos Pacotes"
+
+#: src/package-manager.py:109
+msgid "Show Upgradable Packages"
+msgstr "Mostrar Pacotes Atualizáveis"
+
+#: src/package-manager.py:144
+msgid "Package to install"
+msgstr "Pacote para instalar"
+
+#: src/package-manager.py:145
+msgid "Show main window on startup"
+msgstr "Mostrar janela principal ao iniciar"
+
+#: src/package-manager.py:146
+msgid "Show debug output"
+msgstr ""
+
+#: src/package-manager.py:149
+msgid "Package Manager is already running!"
+msgstr "Gerenciador de Pacotes já está executando!"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -374,296 +689,8 @@ msgstr "&Nome do Repositório"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Nome do repositório, e.g <b>pardus-devel</b>"
 
-#: src/Tray.py:39
-msgid "Update"
-msgstr "Atualizar"
+#~ msgid "N\\A"
+#~ msgstr "N\\A"
 
-#: src/Tray.py:44 src/package-manager.py:288 src/package-manager.py:709
-msgid "All"
-msgstr "Todos"
-
-#: src/Tray.py:64
-msgid "There are <b>%1</b> updates available!"
-msgstr "Existem <b>%1</b> atualizações disponíveis!"
-
-#: src/package-manager.py:48
-msgid "GUI for PiSi package manager"
-msgstr "Interface gráfica para o gerenciador de pacotes PiSi"
-
-#: src/package-manager.py:57 src/package-manager.py:924
-msgid "Package Manager"
-msgstr "Gerenciador de Pacotes"
-
-#: src/package-manager.py:60
-msgid "Developer and Current Maintainer"
-msgstr "Desenvolvedor e Atual Mantenedor"
-
-#: src/package-manager.py:61
-msgid "Developer"
-msgstr ""
-
-#: src/package-manager.py:62
-msgid "Original Author"
-msgstr "Autor Original"
-
-#: src/package-manager.py:63
-msgid "CSS/JS Meister"
-msgstr "Mestre do CSS/JS"
-
-#: src/package-manager.py:64
-msgid "GUI Design & Usability"
-msgstr "Projeto de GUI & Usabilidade"
-
-#: src/package-manager.py:65
-msgid "PiSi Authors"
-msgstr "Autores do PiSi"
-
-#: src/package-manager.py:65
-msgid "Authors of PiSi API"
-msgstr "Autores da API do PiSi"
-
-#: src/package-manager.py:117
-msgid "Search: "
-msgstr "Pesquisar:"
-
-#: src/package-manager.py:121
-msgid "Show basket"
-msgstr "Mostrar cesta"
-
-#: src/package-manager.py:126 src/package-manager.py:234
-msgid "Install Package(s)"
-msgstr "Instalar Pacote(s)"
-
-#: src/package-manager.py:147
-msgid "Components"
-msgstr "Componentes"
-
-#: src/package-manager.py:175
-msgid "Loading Package List..."
-msgstr "Carregando Lista de Pacotes..."
-
-#: src/package-manager.py:211
-msgid ""
-"Package-manager needs to update package database. You need a network "
-"connection to update."
-msgstr ""
-"Gerenciador de pacoptes precisa atualizar o banco de dados. Você precisa de "
-"uma conexão de rede para atualizá-lo."
-
-#: src/package-manager.py:212
-msgid "Package database is empty"
-msgstr "Banco de dados de pacotes está vazio"
-
-#: src/package-manager.py:250
-msgid "Remove Package(s)"
-msgstr "Remover Pacote(s)"
-
-#: src/package-manager.py:286
-msgid "Upgrade Package(s)"
-msgstr "Atualizar Pacote(s)"
-
-#: src/package-manager.py:326 src/CustomEventListener.py:47
-#: src/CustomEventListener.py:51
-msgid "Select all packages in this category"
-msgstr "Selecionar todos os pacotes nesta categoria"
-
-#: src/package-manager.py:328 src/CustomEventListener.py:48
-msgid "Reverse package selections"
-msgstr "Inverter seleção de pacotes"
-
-#: src/package-manager.py:376 src/package-manager.py:390
-#: src/package-manager.py:396
-msgid "N\\A"
-msgstr "N\\A"
-
-#: src/package-manager.py:414
-msgid "Description: "
-msgstr "Descrição:"
-
-#: src/package-manager.py:415
-msgid "Version: "
-msgstr "Versão:"
-
-#: src/package-manager.py:416
-#, fuzzy
-msgid "Repository: "
-msgstr "Nome do Respositório"
-
-#: src/package-manager.py:417
-msgid "Package Size: "
-msgstr "Tamanho do Pacote:"
-
-#: src/package-manager.py:418
-msgid "Homepage: "
-msgstr "Homepage:"
-
-#: src/package-manager.py:437 src/package-manager.py:717
-msgid "Search Results"
-msgstr "Resultados da Pesquisa"
-
-#: src/package-manager.py:470
-msgid "Currently your basket is empty."
-msgstr "Atualmente sua cesta está vazia."
-
-#: src/package-manager.py:473 src/package-manager.py:481
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Atualmente existe(m) <b>%1</b> pacote(s) selecionado(s) com um tamanho total "
-"de <b>%2</b> "
-
-#: src/package-manager.py:476
-msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr "com <b>%3</b> dependências extras com um tamanho total de <b>%4</b> "
-
-#: src/package-manager.py:478 src/package-manager.py:486
-msgid "in your basket."
-msgstr "na sua cesta."
-
-#: src/package-manager.py:484
-msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
-msgstr "com <b>%3</b> dependências reversas com um tamanho total de <b>%4</b> "
-
-#: src/package-manager.py:515
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Pacotes selecionados [%1] estão em conflito um com o outro. Estes pacotes "
-"não podem ser instalados juntos."
-
-#: src/package-manager.py:516 src/package-manager.py:526
-msgid "Conflict Error"
-msgstr "Erro de Conflito"
-
-#: src/package-manager.py:522
-msgid "The following packages conflicts:\n"
-msgstr "Os seguintes pacotes conflitam:\n"
-
-#: src/package-manager.py:524
-msgid "%1 conflicts with: [%2]\n"
-msgstr "%1 conflita com: [%2]\n"
-
-#: src/package-manager.py:525
-#, fuzzy
-msgid ""
-"\n"
-"Remove the following conflicting packages?"
-msgstr ""
-"\n"
-"Remover os seguintes pacotes conflitantes?"
-
-#: src/package-manager.py:540 src/package-manager.py:601
-#: src/package-manager.py:738
-msgid "<b>Installing Package(s)</b>"
-msgstr "<b>Instalando Pacote(s)</b>"
-
-#: src/package-manager.py:550
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr ""
-"<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>instalado(s)</b>."
-
-#: src/package-manager.py:553
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>installed</b>."
-msgstr ""
-" Com os pacotes selecionados; <b>%1</b> dependências extras serão também "
-"<b>instaladas</b>."
-
-#: src/package-manager.py:554
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
-msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>instalados</b>."
-
-#: src/package-manager.py:557
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr ""
-"<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>atualizado(s)</b>."
-
-#: src/package-manager.py:560
-msgid ""
-" With the selected packages; <b>%1</b> extra dependencies are also going to "
-"be <b>upgraded</b>."
-msgstr ""
-" Com os pacotes selecionados; <b>%1</b> dependências extras serão também  "
-"<b>atualizadas</b>."
-
-#: src/package-manager.py:561
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>atualizados</b>."
-
-#: src/package-manager.py:564
-msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr "<qt>Você selecionou <b>%1</b> pacote(s) para ser(em) <b>removidos</b>."
-
-#: src/package-manager.py:567
-msgid ""
-" Selected packages have reverse dependencies. Because the reverse "
-"dependencies of the selected packages needs those packages to work; by "
-"removing the selected packages; <b>%1</b> reverse dependencies are also "
-"going to be <b>removed</b>. Please check your basket and make sure those are "
-"the packages you want to remove. Accidentally removing some reverse "
-"dependencies may break the system stability."
-msgstr ""
-" Pacotes selecionados têm dependências reversas. Porque as dependências "
-"reversas dos pacotes selecionados precisam de tais pacotes para funcionar; "
-"removendo os pacotes selecionados, <b>%1</b> dependências reversas também "
-"serão <b>removidas</b>. Por favor cheque sua cesta e tenha certeza dos "
-"pacotes que deseja remover. Remover algumas dependências reversas "
-"acidentalmente pode quebrar a estabilidade do sistema."
-
-#: src/package-manager.py:569
-msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
-msgstr "<br><br>Um total de <b>%1</b> pacotes serão <b>removidos</b>."
-
-#: src/package-manager.py:571
-msgid "<br>Do you want to continue?</qt>"
-msgstr "<br>Você deseja continuar?</qt>"
-
-#: src/package-manager.py:593
-msgid "<b>Removing Package(s)</b>"
-msgstr "<b>Removendo Pacote(s)</b>"
-
-#: src/package-manager.py:610 src/package-manager.py:740
-msgid "<b>Upgrading Package(s)</b>"
-msgstr "<b>Atualizando Pacote(s)</b>"
-
-#: src/package-manager.py:701
-msgid "Others"
-msgstr "Outros"
-
-#: src/package-manager.py:788 src/package-manager.py:890
-msgid "<b>Updating Repository</b>"
-msgstr "<b>Atualizando Repositório</b>"
-
-#: src/package-manager.py:789
-msgid "Downloading package list of %1"
-msgstr "Baixando lista de pacotes de %1"
-
-#: src/package-manager.py:800
-msgid "Confirm"
-msgstr "Confirmar"
-
-#: src/package-manager.py:972
-msgid "Show Installed Packages"
-msgstr "Mostrar Pacotes Instalados"
-
-#: src/package-manager.py:975
-msgid "Show New Packages"
-msgstr "Mostrar Novos Pacotes"
-
-#: src/package-manager.py:977
-msgid "Show Upgradable Packages"
-msgstr "Mostrar Pacotes Atualizáveis"
-
-#: src/package-manager.py:1011
-msgid "Package to install"
-msgstr "Pacote para instalar"
-
-#: src/package-manager.py:1011
-msgid "Show main window on startup"
-msgstr "Mostrar janela principal ao iniciar"
-
-#: src/package-manager.py:1014
-msgid "Package Manager is already running!"
-msgstr "Gerenciador de Pacotes já está executando!"
+#~ msgid "Can't connect to Comar daemon"
+#~ msgstr "Não é possível se conectar com o deamon do Comar"
