@@ -27,7 +27,7 @@ msgid ""
 "Authentication as the <b>super user</b> is required to perform this action."
 msgstr ""
 "Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor."
-"Bu işlemi yapmak için <b>yetkili kullanıcı</b> haklarına sahip olmanız gerekiyor."
+"Bu işlemi yapmak için <b>yetkili kullanıcı</b> haklarına sahip olmanız gerekmektedir."
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:141
 msgid ""
@@ -35,7 +35,7 @@ msgid ""
 "Authentication is required to perform this action."
 msgstr ""
 "Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor."
-"Bu işlemi yapmak için kimlik denetimi gerekiyor."
+"Bu işlemi yapmak için kimlik denetimi gerekmektedir."
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:167
 msgid "Authentication Required"
