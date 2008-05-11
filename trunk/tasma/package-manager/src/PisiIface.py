@@ -14,6 +14,9 @@ import sys
 
 import pisi
 
+class RepoError:
+    pass
+
 def get_install_order(packages):
     base = pisi.api.get_base_upgrade_order(packages)
     return pisi.api.get_install_order(set(base+packages))
@@ -35,7 +38,10 @@ def get_components():
     return pisi.db.componentdb.ComponentDB().list_components()
 
 def get_installed_package(package):
-    return pisi.db.installdb.InstallDB().get_package(package)
+    try:
+        return pisi.db.installdb.InstallDB().get_package(package)
+    except pisi.db.repodb.RepoError:
+        raise RepoError
 
 def get_repo_package(package):
     return pisi.db.packagedb.PackageDB().get_package(package)
@@ -47,7 +53,10 @@ def humanize(size):
     return pisi.util.human_readable_size(size)
 
 def get_upgradable_packages():
-    return pisi.api.list_upgradable()
+    try:
+        return pisi.api.list_upgradable()
+    except pisi.db.repodb.RepoError:
+        raise RepoError
 
 def get_installed_packages():
     return list(pisi.api.list_installed())
