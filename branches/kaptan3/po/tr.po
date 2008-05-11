@@ -289,8 +289,8 @@ msgid ""
 "<p><p>Your screen resolution is very low. It may be wrong. You can change "
 "your resolution bye using <b>Display Manager</b>.</p></p>"
 msgstr ""
-"Ekran çözünürlüğünüz çok düşük. Yanlış ayarlanmış olabilir. Çözünürlüğünüzü "
-"Görüntü Yöneticisi yardımı ile değiştirebilirsiniz."
+"<p>Ekran çözünürlüğünüz çok düşük. Yanlış ayarlanmış olabilir. Çözünürlüğünüzü "
+"Görüntü Yöneticisi yardımı ile değiştirebilirsiniz.</p>"
 
 #: src/screens/ScrWallpaper.py:44
 msgid "Enjoy with wonderful backgrounds..."
