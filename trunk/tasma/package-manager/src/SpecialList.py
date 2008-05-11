@@ -131,7 +131,7 @@ class SpecialList(QObject):
         titleStyle = ""
         style = ""
 
-#        packages.sort(key=string.lower)
+        packages.sort(lambda x,y: x.name.lower() > y.name.lower() or (x.name.lower() < y.name.lower() and -1))
 
         alternativeColor = KGlobalSettings.alternateBackgroundColor().name()
         baseColor = KGlobalSettings.baseColor().name()
