@@ -353,7 +353,7 @@
                 </property>
                 <widget class="QLabel" row="0" column="0" rowspan="2" colspan="1">
                     <property name="name">
-                        <cstring>picMigration_2</cstring>
+                        <cstring>picResolution</cstring>
                     </property>
                     <property name="maximumSize">
                         <size>

@@ -43,6 +43,7 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.picTasma.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/tasma.png")))
         #self.picFeedback.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/feedback.png")))
         self.picHelp.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/user_groups.png")))
+        self.picResolution.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/multiple.png")))
 
         # set background image
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
