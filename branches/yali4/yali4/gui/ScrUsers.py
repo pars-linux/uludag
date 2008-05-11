@@ -72,9 +72,6 @@ Click Next button to proceed.
         # KDE AutoLogin
         self.autoLoginUser = ""
 
-        # Give Admin Privileges default
-        self.ui.admin.setChecked(True)
-
         # Set disabled the create Button
         self.ui.createButton.setEnabled(False)
 
@@ -103,31 +100,6 @@ Click Next button to proceed.
         self.ui.username.setFocus()
 
     def execute(self):
-        isAdminSet = False
-        for i in range(self.ui.userList.count()):
-            u = self.ui.userList.item(i).getUser()
-            if "wheel" in u.groups:
-                isAdminSet = True
-
-        if not isAdminSet:
-            # show confirmation dialog
-            w = WarningWidget(self)
-            w.warning.setText(_('''<b>
-<p>You have not defined an administrator!</p>
-
-<p>A user without administrative rights cannot complete system maintenance 
-tasks. You are strongly encouraged to define an administrator user.</p>
-
-<p>Click "Cancel" to define an administrator user (recommended) or "OK" to 
-go to next screen.</p>
-</b>
-'''))
-            self.dialog = WarningDialog(w, self)
-            if not self.dialog.exec_():
-                ctx.mainScreen.enableBack()
-                ctx.mainScreen.enableNext()
-                return False
-
         # reset and fill pending_users
         yali4.users.reset_pending_users()
 
