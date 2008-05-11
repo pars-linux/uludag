@@ -238,7 +238,7 @@ class Yimirta(QtGui.QWidget):
         Pix = QtGui.QPixmap(':/gui/pics/working.png')
         Pix2= QtGui.QPixmap(':/gui/pics/core.png')
         self.setObjectName("Yimirta")
-        self.resize(300,300)
+        self.resize(140,145)
 
         self.gridlayout = QtGui.QGridLayout(self)
         self.gridlayout.setMargin(0)
@@ -252,6 +252,8 @@ class Yimirta(QtGui.QWidget):
         self.gridlayout1.setObjectName("gridlayout1")
 
         self.timer = QTimer(self)
+        self.remain = 2000
+        self.oldscore = 0
         QObject.connect(self.timer, SIGNAL("timeout()"),self.goturBeniGittiginYere)
         self.pix = QtGui.QLabel(self)
         self.pix.setObjectName("pix")
@@ -263,14 +265,19 @@ class Yimirta(QtGui.QWidget):
         self.notifier = notifier
         self.setMouseTracking(True)
         self.goturBeniGittiginYere()
-        self.timer.start(2000)
+        self.timer.start(self.remain)
         self.setCursor(QtGui.QCursor(Pix2))
 
     def goturBeniGittiginYere(self):
+        self.timer.start(self.remain)
+        self.remain -= 1
         x = random.randint(20, ctx.mainScreen.ui.width() - 20 - self.width())
         y = random.randint(20, ctx.mainScreen.ui.height() - 20 - self.height())
         self.move(x,y)
+        if self.oldscore == self.score:
+            self.score -= 10
         self.notifier.updateAndShow("Score : %d" % self.score)
+        self.oldscore = self.score
         ctx.mainScreen.processEvents()
 
     def mouseReleaseEvent(self, event):
@@ -278,7 +285,7 @@ class Yimirta(QtGui.QWidget):
         self.goturBeniGittiginYere()
 
     def start(self):
-        self.timer.start(2000)
+        self.timer.start(self.remain)
         self.show()
 
     def stop(self):
