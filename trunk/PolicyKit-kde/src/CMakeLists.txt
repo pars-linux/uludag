@@ -41,9 +41,19 @@ KDE3_ADD_EXECUTABLE(policykit-kde ${sources})
 #set exception flag
 SET_TARGET_PROPERTIES(policykit-kde
                     PROPERTIES COMPILE_FLAGS -fexceptions)
+SET(
+  PO_FILES
+  ca.po
+  de.po
+  es.po
+  fr.po
+  it.po
+  nl.po
+  pt_BR.po
+  tr.po
+  )
 
 #generate pot file
-MESSAGE(STATUS "Generating policykit-kde.pot file...")
 ADD_CUSTOM_COMMAND(TARGET policykit-kde
                     POST_BUILD
                     COMMAND xgettext ARGS --qt -o
@@ -51,6 +61,19 @@ ADD_CUSTOM_COMMAND(TARGET policykit-kde
                     -C -x /usr/kde/3.5/include/kde.pot
                     ${CMAKE_CURRENT_SOURCE_DIR}/authdialog.cpp
                     ${CMAKE_BINARY_DIR}/src/authdialogui.cpp)
+
+#merge po files
+FOREACH(_po ${PO_FILES})
+    GET_FILENAME_COMPONENT(_lang ${_po} NAME_WE)
+    SET(_gmofile ${CMAKE_CURRENT_BINARY_DIR}/${_lang}.gmo)
+    ADD_CUSTOM_COMMAND(
+        TARGET policykit-kde
+        POST_BUILD
+        COMMAND msgmerge ARGS --quiet --update --backup=none -s ${CMAKE_SOURCE_DIR}/po/${_po} ${CMAKE_SOURCE_DIR}/po/policykit-kde.pot
+        COMMAND msgfmt ARGS -o ${_gmofile} ${CMAKE_SOURCE_DIR}/po/${_po})
+    INSTALL(FILES ${_gmofile} DESTINATION share/locale/${_lang}/LC_MESSAGES RENAME policykit-kde.mo)
+    SET(_gmofiles ${_gmofiles} ${_gmofile})
+ENDFOREACH(_po ${PO_FILES})
 
 # link executabel with kde libraries
 TARGET_LINK_LIBRARIES(policykit-kde
