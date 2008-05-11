@@ -24,7 +24,6 @@ import kdedesigner
 import Progress
 import Basket
 import BasketDialog
-import PackageCache
 from Icons import *
 import Preferences
 import Commander
