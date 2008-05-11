@@ -98,7 +98,7 @@ class MainWidget(dm_mainview.mainWidget):
             self.groupBoxSecondaryScreen.hide()
 
         # remove later.
-        self.displayConfiguration.secondaryScr = "VGA"
+        #self.displayConfiguration.secondaryScr = "VGA"
         self.textCardName.setText(i18n("NVIDIA"))
         self.textDriver.setText(i18n("nv"))
 

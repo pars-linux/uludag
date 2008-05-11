@@ -178,6 +178,7 @@ class DisplayConfig:
             secondScreen["mode"] = self.current_modes[self.secondaryScr]
 
         ch = comlink.callHandler("zorg", "Xorg.Display", "setupScreens", "tr.org.pardus.comar.xorg.display.set")
+        ch.registerDone(self.done)
         ch.call(self._bus, options, firstScreen, secondScreen)
 
         if self._randr12:
@@ -205,3 +206,6 @@ class DisplayConfig:
                         "--mode",   self.current_modes[self.secondaryScr],
                         "--right-of", self.primaryScr
                     )
+
+    def done(self):
+        KMessageBox.information(None, i18n("Saved your configuration."))

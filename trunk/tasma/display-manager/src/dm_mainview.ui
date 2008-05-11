@@ -858,275 +858,71 @@
                 <attribute name="title">
                     <string>Devices</string>
                 </attribute>
-                <grid>
+                <vbox>
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QGroupBox" row="2" column="0">
-                        <property name="name">
-                            <cstring>groupBoxSecondaryScreen</cstring>
-                        </property>
-                        <property name="title">
-                            <string>Secondary Screen</string>
-                        </property>
-                        <grid>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QLabel" row="1" column="0" rowspan="2" colspan="1">
-                                <property name="name">
-                                    <cstring>pixMonitor2</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>1</hsizetype>
-                                        <vsizetype>1</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                                <property name="text">
-                                    <string></string>
-                                </property>
-                                <property name="scaledContents">
-                                    <bool>true</bool>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="2" column="1">
-                                <property name="name">
-                                    <cstring>textMonitor2</cstring>
-                                </property>
-                            </widget>
-                            <widget class="QPushButton" row="1" column="2">
-                                <property name="name">
-                                    <cstring>buttonMonitor2</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>0</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                                <property name="maximumSize">
-                                    <size>
-                                        <width>32767</width>
-                                        <height>32767</height>
-                                    </size>
-                                </property>
-                                <property name="text">
-                                    <string>Configure</string>
-                                </property>
-                            </widget>
-                            <spacer row="0" column="2">
-                                <property name="name">
-                                    <cstring>spacer7_2</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Vertical</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>20</width>
-                                        <height>16</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <spacer row="2" column="2">
-                                <property name="name">
-                                    <cstring>spacer8_2</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Vertical</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>20</width>
-                                        <height>16</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                        </grid>
-                    </widget>
-                    <widget class="QGroupBox" row="1" column="0">
-                        <property name="name">
-                            <cstring>groupBoxPrimaryScreen</cstring>
-                        </property>
-                        <property name="title">
-                            <string>Primary Screen</string>
-                        </property>
-                        <grid>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QLabel" row="0" column="0" rowspan="3" colspan="1">
-                                <property name="name">
-                                    <cstring>pixMonitor1</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>1</hsizetype>
-                                        <vsizetype>1</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                                <property name="text">
-                                    <string></string>
-                                </property>
-                                <property name="scaledContents">
-                                    <bool>true</bool>
-                                </property>
-                            </widget>
-                            <widget class="QPushButton" row="1" column="2">
-                                <property name="name">
-                                    <cstring>buttonMonitor1</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>0</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                                <property name="maximumSize">
-                                    <size>
-                                        <width>32767</width>
-                                        <height>32767</height>
-                                    </size>
-                                </property>
-                                <property name="text">
-                                    <string>Configure</string>
-                                </property>
-                            </widget>
-                            <spacer row="0" column="2">
-                                <property name="name">
-                                    <cstring>spacer7_2_2</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Vertical</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>20</width>
-                                        <height>20</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <spacer row="2" column="2">
-                                <property name="name">
-                                    <cstring>spacer7_2_2_2</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Vertical</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>20</width>
-                                        <height>20</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <widget class="QLabel" row="0" column="1" rowspan="2" colspan="1">
-                                <property name="name">
-                                    <cstring>textMonitor1</cstring>
-                                </property>
-                                <property name="scaledContents">
-                                    <bool>true</bool>
-                                </property>
-                            </widget>
-                        </grid>
-                    </widget>
-                    <widget class="QGroupBox" row="0" column="0">
+                    <widget class="QGroupBox">
                         <property name="name">
                             <cstring>groupBoxVideoCard</cstring>
                         </property>
                         <property name="title">
                             <string>Video Card</string>
                         </property>
-                        <grid>
+                        <hbox>
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLabel" row="0" column="0" rowspan="2" colspan="1">
+                            <widget class="QLabel">
                                 <property name="name">
                                     <cstring>pixVideoCard</cstring>
                                 </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>1</hsizetype>
-                                        <vsizetype>1</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>130</width>
+                                        <height>90</height>
+                                    </size>
                                 </property>
                                 <property name="text">
-                                    <string></string>
+                                    <string>Card Icon</string>
                                 </property>
                                 <property name="scaledContents">
                                     <bool>true</bool>
                                 </property>
                             </widget>
-                            <spacer row="0" column="2">
+                            <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>spacer7_2_2_3</cstring>
+                                    <cstring>layout5</cstring>
                                 </property>
-                                <property name="orientation">
-                                    <enum>Vertical</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>20</width>
-                                        <height>20</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <spacer row="2" column="2">
-                                <property name="name">
-                                    <cstring>spacer7_2_2_4</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Vertical</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>20</width>
-                                        <height>16</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <widget class="QLabel" row="1" column="1" rowspan="2" colspan="1">
-                                <property name="name">
-                                    <cstring>textDriver</cstring>
-                                </property>
-                                <property name="text">
-                                    <string></string>
-                                </property>
-                                <property name="scaledContents">
-                                    <bool>true</bool>
-                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textCardName</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Card Name</string>
+                                        </property>
+                                        <property name="scaledContents">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textDriver</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Driver Name</string>
+                                        </property>
+                                        <property name="scaledContents">
+                                            <bool>true</bool>
+                                        </property>
+                                    </widget>
+                                </vbox>
                             </widget>
-                            <widget class="QPushButton" row="1" column="2">
+                            <widget class="QPushButton">
                                 <property name="name">
                                     <cstring>buttonVideoCard</cstring>
                                 </property>
@@ -1145,23 +941,152 @@
                                     </size>
                                 </property>
                                 <property name="text">
-                                    <string>Configure</string>
+                                    <string>Configure...</string>
                                 </property>
                             </widget>
-                            <widget class="QLabel" row="0" column="1">
+                        </hbox>
+                    </widget>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBoxPrimaryScreen</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Primary Screen</string>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
                                 <property name="name">
-                                    <cstring>textCardName</cstring>
+                                    <cstring>pixMonitor1</cstring>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>130</width>
+                                        <height>90</height>
+                                    </size>
                                 </property>
                                 <property name="text">
-                                    <string></string>
+                                    <string>Monitor Icon</string>
                                 </property>
                                 <property name="scaledContents">
                                     <bool>true</bool>
                                 </property>
                             </widget>
-                        </grid>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textMonitor1</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Monitor Info</string>
+                                </property>
+                                <property name="scaledContents">
+                                    <bool>true</bool>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>buttonMonitor1</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>0</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>32767</width>
+                                        <height>32767</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Configure...</string>
+                                </property>
+                            </widget>
+                        </hbox>
                     </widget>
-                </grid>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>groupBoxSecondaryScreen</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Secondary Screen</string>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>pixMonitor2</cstring>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>130</width>
+                                        <height>90</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Monitor Icon</string>
+                                </property>
+                                <property name="scaledContents">
+                                    <bool>true</bool>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textMonitor2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Monitor Info</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>buttonMonitor2</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>0</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>32767</width>
+                                        <height>32767</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Configure...</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <spacer>
+                        <property name="name">
+                            <cstring>spacer13</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>40</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </vbox>
             </widget>
         </widget>
         <widget class="QLayoutWidget">
