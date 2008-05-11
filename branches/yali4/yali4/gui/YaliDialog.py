@@ -168,8 +168,7 @@ class InformationWindow(QtGui.QWidget):
                            background-image:url(':/gui/pics/transBlack.png');}
 
             QLabel { border:none;
-                     color:#FFFFFF;
-                     font:bold; }
+                     color:#FFFFFF;}
 
             QProgressBar { border: 1px solid white;}
 

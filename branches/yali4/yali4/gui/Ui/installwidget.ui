@@ -53,13 +53,16 @@
      <item>
       <widget class="QLabel" name="desc" >
        <property name="styleSheet" >
-        <string>color:#FFFFFF;</string>
+        <string>color:#000000;</string>
        </property>
        <property name="text" >
         <string>Desc</string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -92,7 +95,7 @@
      <property name="sizeHint" >
       <size>
        <width>431</width>
-       <height>30</height>
+       <height>10</height>
       </size>
      </property>
     </spacer>
