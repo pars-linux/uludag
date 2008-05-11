@@ -26,15 +26,16 @@ QStackedWidget#mainStack {
 }
 */
 QTextBrowser#helpContent {
+     border-style: solid;
      border-width: 2px;
-     border-top-right-radius:8px;
-     border-bottom-right-radius:8px;
-     border-color: beige;
-     border-left:none;
-     background-image:url(':/gui/pics/helpBack.png');
-     background-repeat:no-repeat;
+     border-top-left-radius:8px;
+     border-bottom-left-radius:8px;
+     border-color: #F4AF2A;
+     border-right:none;
+     background-image:url(':/gui/pics/trans.png');
      padding:5px;
-     padding-top:7px;
+     padding-left:12px;
+     padding-top:12px;
      font: 9px;
 }
 
@@ -307,6 +308,9 @@ QProgressBar::chunk {
    <property name="topMargin" >
     <number>7</number>
    </property>
+   <property name="rightMargin" >
+    <number>0</number>
+   </property>
    <property name="bottomMargin" >
     <number>4</number>
    </property>
@@ -395,6 +399,22 @@ QProgressBar::chunk {
          <bool>false</bool>
         </property>
        </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>5</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>
