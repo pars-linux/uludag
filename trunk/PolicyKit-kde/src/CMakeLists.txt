@@ -42,6 +42,16 @@ KDE3_ADD_EXECUTABLE(policykit-kde ${sources})
 SET_TARGET_PROPERTIES(policykit-kde
                     PROPERTIES COMPILE_FLAGS -fexceptions)
 
+#generate pot file
+MESSAGE(STATUS "Generating policykit-kde.pot file...")
+ADD_CUSTOM_COMMAND(TARGET policykit-kde
+                    POST_BUILD
+                    COMMAND xgettext ARGS --qt -o
+                    ${CMAKE_SOURCE_DIR}/po/policykit-kde.pot -ki18n -ktr2i18n -kI18N_NOOP -ktranslate -kaliasLocale
+                    -C -x /usr/kde/3.5/include/kde.pot
+                    ${CMAKE_CURRENT_SOURCE_DIR}/authdialog.cpp
+                    ${CMAKE_BINARY_DIR}/src/authdialogui.cpp)
+
 # link executabel with kde libraries
 TARGET_LINK_LIBRARIES(policykit-kde
                       ${QT_AND_KDECORE_LIBS}
