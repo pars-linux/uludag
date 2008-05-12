@@ -80,6 +80,7 @@ class MainWidget(dm_mainview.mainWidget):
         dm_mainview.mainWidget.__init__(self, parent)
 
         # hide for now
+        self.buttonHelp.hide()
         self.buttonDetectDisplays.hide()
         self.buttonIdentifyDisplays.hide()
         self.buttonMonitor1.setDisabled(True)
@@ -322,6 +323,7 @@ class Module(KCModule):
         self.setButtons(0)
         self.aboutdata = AboutData()
         attachMainWidget(self)
+        self.mainwidget.buttonCancel.hide()
 
     def aboutData(self):
         return self.aboutdata
