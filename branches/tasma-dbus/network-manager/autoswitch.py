@@ -42,8 +42,6 @@ class autoSwitch:
         _notify.show()
 
     def scanAndConnect(self, force=True):
-        self.notify(i18n("Scanning..."), SUCCESS)
-        
         # Get wireless devices & profiles
         devices = []
         profiles = []
@@ -56,6 +54,9 @@ class autoSwitch:
         # If there is no wi-fi device, go on
         if not profiles or not devices:
             return
+        
+        self.notify(i18n("Scanning..."), SUCCESS)
+        
 
         # Get current APs
         justEssIds = []
