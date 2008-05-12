@@ -381,10 +381,12 @@ class MainApplication(programbase):
             ch.call()
         else:
             def handleOk():
-                self.setState("on")
-                mainwidget.pushStatus.setEnabled(True)
-                ch2 = self.callMethod("setProfile", "tr.org.pardus.comar.net.filter.set")
-                ch2.call(rules.profile["profile"], rules.profile["save_filter"], rules.profile["save_mangle"], rules.profile["save_nat"], rules.profile["save_raw"])
+                def handleState():
+                    self.setState("on")
+                    mainwidget.pushStatus.setEnabled(True)
+                ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
+                ch.registerDone(handleState)
+                ch.call()
             def handleCancel():
                 self.setState("off")
                 mainwidget.pushStatus.setEnabled(True)
@@ -392,13 +394,13 @@ class MainApplication(programbase):
                 self.setState("off")
                 mainwidget.pushStatus.setEnabled(True)
 
-            ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
+            ch = self.callMethod("setProfile", "tr.org.pardus.comar.net.filter.set")
             ch.registerCancel(handleCancel)
             ch.registerError(handleError)
             ch.registerAuthError(handleError)
             ch.registerDBusError(handleError)
             ch.registerDone(handleOk)
-            ch.call()
+            ch.call(rules.profile["profile"], rules.profile["save_filter"], rules.profile["save_mangle"], rules.profile["save_nat"], rules.profile["save_raw"])
 
     def slotOk(self):
         self.saveAll()
