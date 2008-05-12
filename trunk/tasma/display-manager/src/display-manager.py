@@ -293,7 +293,7 @@ class MainWidget(dm_mainview.mainWidget):
         dlg = CardDialog(self)
         if dlg.exec_loop() == QDialog.Accepted:
             item = dlg.listViewVideoCard.currentItem()
-            KMessageBox.information(self, item.name)
+            self.displayConfiguration.changeDriver(item.name)
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()

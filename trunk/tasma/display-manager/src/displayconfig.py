@@ -234,5 +234,10 @@ class DisplayConfig:
         elif self._info.driver == "fglrx":
             run("aticonfig", "--dtop", self.desktop_setup)
 
+    def changeDriver(self, driver):
+        ch = comlink.callHandler("zorg", "Xorg.Display", "changeDriver", "tr.org.pardus.comar.xorg.display.set")
+        ch.registerDone(self.done)
+        ch.call(driver)
+
     def done(self):
         KMessageBox.information(None, i18n("Saved your configuration."))
