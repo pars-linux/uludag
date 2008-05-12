@@ -17,6 +17,7 @@ from kdeui import *
 import kdedesigner
 
 from dbus.mainloop.qt3 import DBusQtMainLoop
+from pardus.deviceutils import idsQuery
 
 import helpdialog
 import dm_mainview
@@ -101,9 +102,8 @@ class MainWidget(dm_mainview.mainWidget):
             self.checkBoxDualMode.setEnabled(0)
             self.groupBoxSecondaryScreen.hide()
 
-        # remove later.
-        self.textCardName.setText(i18n("NVIDIA"))
-        self.textDriver.setText(i18n("nv"))
+        self.getCardInfo()
+        self.getMonitorInfo()
 
         self.getResolutions(1)
         self.setIconbyResolution()
@@ -229,11 +229,24 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
-    def setDevicesMonitor1(self):
-        self.textMonitor1.setText(self.currentOutput)
+    def getCardInfo(self):
+        cardName = idsQuery("/usr/share/misc/pci.ids", self.displayConfiguration.card_vendor_id, self.displayConfiguration.card_product_id)
+        self.textCardName.setText(cardName)
+        self.textDriver.setText( i18n("Driver: %s" % self.displayConfiguration._info.driver))
 
-    def setDevicesMonitor2(self):
-        self.textMonitor2.setText(self.currentOutput)
+    def getMonitorInfo(self):
+        msgpnp = i18n("Plug and Play Monitor")
+
+        if self.displayConfiguration._info.monitors.has_key(self.displayConfiguration.primaryScr):
+            self.textMonitor1.setText("Manually selected monitor")
+        else:
+            self.textMonitor1.setText(msgpnp)
+
+        if self.displayConfiguration.desktop_setup != "single":
+            if self.displayConfiguration._info.monitors.has_key(self.displayConfiguration.secondaryScr):
+                self.textMonitor2.setText("Manually selected monitor")
+            else:
+                self.textMonitor2.setText(msgpnp)
 
     def identifyDisplays(self):
         # what's the fucking dcop call for that!?
