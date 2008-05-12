@@ -71,7 +71,7 @@ class Kaptan(kaptanUi):
             filemode='w')
         logging.info("Kaptan Started")
 
-        icon = "kaptan/pics/icons/welcome.png"
+        icon = "kaptan/pics/kaptan-logo.png"
 
         # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/bg.png")))
