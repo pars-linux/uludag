@@ -137,6 +137,8 @@ class DisplayConfig:
 
         self._bus = comlink.call("zorg", "Xorg.Display", "activeDeviceID")
         self._info = zorg.config.getDeviceInfo(self._bus)
+
+        #FIXME: Check if self._info is None
         self.card_vendor_id = self._info.vendor_id
         self.card_product_id = self._info.product_id
 
