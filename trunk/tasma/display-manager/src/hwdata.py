@@ -30,7 +30,7 @@ drivers = {
                     "nvidia-drivers package contains nVIDIA kernel and glx drivers giving optimized 2d/3d performance",
     "nvidia/nvidia-drivers-new":
                     "nVIDIA kernel and glx drivers for NV3 or better cards (Geforce FX or better)",
-    "openchrome":   "OpenChrome driver"
+    "openchrome":   "OpenChrome driver",
     "r128":         "ATI Rage128 cards, including Rage Fury, XPERT 128, and XPERT 99",
     "radeon":       "ATI Radeon cards, including Radeon Mobility and FireGL",
     "rendition":    "Rendition/Micron Verite cards, including Diamond Stealth II S220",

@@ -21,6 +21,9 @@ from pardus.deviceutils import idsQuery
 
 import helpdialog
 import dm_mainview
+import driverdialog
+import monitordialog
+import hwdata
 from utility import *
 
 mod_name = 'Display Manager'
@@ -40,17 +43,42 @@ def AboutData():
         'bugs@pardus.org.tr'
     )
 
+class DriverItem(QListViewItem):
+    def __init__(self, parent, name, desc):
+        QListViewItem.__init__(self, parent)
+
+        self.name = name
+        self.desc = desc
+        self.setText(0, name)
+        self.setText(1, desc)
+
+class CardDialog(driverdialog.VideoCard):
+    def __init__(self, parent):
+        driverdialog.VideoCard.__init__(self, parent)
+
+        current = None
+        dc = parent.displayConfiguration
+        curdrv = dc._info.driver
+        if dc._info.package != "xorg-video":
+            curdrv += "/%s" % dc._info.package
+
+        for drv in hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id):
+            item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers[drv])
+            self.listViewVideoCard.insertItem(item)
+
+            if drv == curdrv:
+                current = item
+
+        self.listViewVideoCard.setCurrentItem(current)
+        self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
+        self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept)
+
 class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
         dm_mainview.mainWidget.__init__(self, parent)
 
         import displayconfig
         self.displayConfiguration = displayconfig.DisplayConfig()
-
-        #if not self.displayConfiguration._randr12:
-        #    message = i18n("Sorry, Display Manager currently does not support your driver.")
-        #    QMessageBox.critical(self, i18n("No Support"), message, QMessageBox.Ok, QMessageBox.NoButton)
-        #    sys.exit()
 
         self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
         if len(self.displayConfiguration.depths) == 1:
@@ -91,6 +119,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
+
+        self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
 
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
@@ -258,6 +288,12 @@ class MainWidget(dm_mainview.mainWidget):
         kapp.setOverrideCursor(QCursor(Qt.WaitCursor))
         self.displayConfiguration.apply()
         kapp.restoreOverrideCursor()
+
+    def slotCardSettings(self):
+        dlg = CardDialog(self)
+        if dlg.exec_loop() == QDialog.Accepted:
+            item = dlg.listViewVideoCard.currentItem()
+            KMessageBox.information(self, item.name)
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
