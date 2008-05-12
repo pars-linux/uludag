@@ -55,7 +55,7 @@
                 <bool>true</bool>
             </property>
             <property name="resizeMode">
-                <enum>AllColumns</enum>
+                <enum>LastColumn</enum>
             </property>
         </widget>
         <widget class="QLayoutWidget" row="1" column="0">
