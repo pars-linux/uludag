@@ -135,7 +135,7 @@ class Kaptan(kaptanUi):
         self.pageStack.raiseWidget(where)
         _w = self.pageStack.visibleWidget()
         self.pageDesc.setText(i18n(_w.desc))
-        self.pageIcon.setPixmap(QPixmap(locate("data", _w.icon)))
+        #self.pageIcon.setPixmap(QPixmap(locate("data", _w.icon)))
 
         _w.shown()
 
@@ -237,8 +237,8 @@ if __name__ == "__main__":
     kapp = KUniqueApplication(True, True, True)
     kaptan = Kaptan()
 
-    # if you use different theme our works looks ugly :)
-    style = QStyleFactory.create("Lipstik")
+    # if you use different theme our works looks ugly :)
+    style = QStyleFactory.create("QtCurve")
     kapp.setStyle(style)
 
     kaptan.setCaption(i18n('Kaptan Welcome Wizard'))

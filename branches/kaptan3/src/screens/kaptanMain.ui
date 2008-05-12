@@ -35,31 +35,6 @@
     <property name="caption">
         <string>KaptanUi</string>
     </property>
-    <spacer>
-        <property name="name">
-            <cstring>spacerLeftBottom</cstring>
-        </property>
-        <property name="orientation">
-            <enum>Vertical</enum>
-        </property>
-        <property name="sizeType">
-            <enum>Fixed</enum>
-        </property>
-        <property name="sizeHint">
-            <size>
-                <width>41</width>
-                <height>30</height>
-            </size>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>65</x>
-                <y>419</y>
-                <width>41</width>
-                <height>30</height>
-            </rect>
-        </property>
-    </spacer>
     <widget class="QGroupBox">
         <property name="name">
             <cstring>groupBox11</cstring>
@@ -175,101 +150,6 @@
     </spacer>
     <widget class="QLabel">
         <property name="name">
-            <cstring>pixSteps</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>80</y>
-                <width>150</width>
-                <height>338</height>
-            </rect>
-        </property>
-        <property name="sizePolicy">
-            <sizepolicy>
-                <hsizetype>0</hsizetype>
-                <vsizetype>5</vsizetype>
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-            </sizepolicy>
-        </property>
-        <property name="minimumSize">
-            <size>
-                <width>150</width>
-                <height>0</height>
-            </size>
-        </property>
-        <property name="paletteBackgroundColor">
-            <color>
-                <red>239</red>
-                <green>239</green>
-                <blue>239</blue>
-            </color>
-        </property>
-        <property name="font">
-            <font>
-            </font>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-        <property name="textFormat">
-            <enum>AutoText</enum>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-        <property name="alignment">
-            <set>WordBreak|AlignTop</set>
-        </property>
-        <property name="indent">
-            <number>10</number>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>pageIcon</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>60</x>
-                <y>10</y>
-                <width>48</width>
-                <height>48</height>
-            </rect>
-        </property>
-        <property name="sizePolicy">
-            <sizepolicy>
-                <hsizetype>0</hsizetype>
-                <vsizetype>0</vsizetype>
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-            </sizepolicy>
-        </property>
-        <property name="minimumSize">
-            <size>
-                <width>48</width>
-                <height>48</height>
-            </size>
-        </property>
-        <property name="maximumSize">
-            <size>
-                <width>48</width>
-                <height>32767</height>
-            </size>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>ParentOrigin</enum>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-        <property name="scaledContents">
-            <bool>true</bool>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
             <cstring>pageDesc</cstring>
         </property>
         <property name="geometry">
@@ -335,6 +215,107 @@
                 <number>0</number>
             </attribute>
         </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>pageIcon</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>28</x>
+                <y>20</y>
+                <width>90</width>
+                <height>50</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>0</hsizetype>
+                <vsizetype>0</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>90</width>
+                <height>50</height>
+            </size>
+        </property>
+        <property name="maximumSize">
+            <size>
+                <width>90</width>
+                <height>50</height>
+            </size>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>ParentOrigin</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>pixSteps</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>80</y>
+                <width>150</width>
+                <height>373</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>0</hsizetype>
+                <vsizetype>5</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>150</width>
+                <height>373</height>
+            </size>
+        </property>
+        <property name="maximumSize">
+            <size>
+                <width>32767</width>
+                <height>373</height>
+            </size>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>239</red>
+                <green>239</green>
+                <blue>239</blue>
+            </color>
+        </property>
+        <property name="font">
+            <font>
+            </font>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="textFormat">
+            <enum>AutoText</enum>
+        </property>
+        <property name="scaledContents">
+            <bool>true</bool>
+        </property>
+        <property name="alignment">
+            <set>WordBreak|AlignTop</set>
+        </property>
+        <property name="indent">
+            <number>10</number>
+        </property>
     </widget>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>

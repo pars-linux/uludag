@@ -178,6 +178,9 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
+                    <property name="backgroundOrigin">
+                        <enum>ParentOrigin</enum>
+                    </property>
                     <property name="scaledContents">
                         <bool>true</bool>
                     </property>

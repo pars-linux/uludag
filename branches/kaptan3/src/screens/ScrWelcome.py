@@ -35,7 +35,7 @@ class Widget(WelcomeWidget, ScreenWidget):
 
         #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
-        self.pixWelcome.setPixmap(QPixmap(locate("data", "kaptan/pics/kaptan_welcome.png")))
+        self.pixWelcome.setPixmap(QPixmap(locate("data", "kaptan/pics/kaptan.png")))
 
     def shown(self):
         pass

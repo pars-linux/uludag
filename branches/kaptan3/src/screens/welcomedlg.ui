@@ -95,14 +95,14 @@
             </property>
             <property name="minimumSize">
                 <size>
-                    <width>200</width>
-                    <height>200</height>
+                    <width>111</width>
+                    <height>243</height>
                 </size>
             </property>
             <property name="maximumSize">
                 <size>
-                    <width>200</width>
-                    <height>200</height>
+                    <width>111</width>
+                    <height>243</height>
                 </size>
             </property>
             <property name="backgroundOrigin">
