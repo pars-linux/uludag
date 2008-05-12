@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-22 23:40+0300\n"
+"POT-Creation-Date: 2008-05-12 08:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,30 +16,151 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/display-manager.py:33 src/display-manager.py:266 src/dm_mainview.py:261
+#: src/dm_mainview.py:346 src/display-manager.py:38 src/display-manager.py:359
 msgid "Display Manager"
 msgstr ""
 
-#: src/display-manager.py:48
-msgid "Sorry, Display Manager currently does not support your driver."
+#: src/dm_mainview.py:347
+msgid "Identify Displays"
 msgstr ""
 
-#: src/display-manager.py:49
-msgid "No Support"
+#: src/dm_mainview.py:348 src/dm_mainview.py:369
+msgid "Primary Screen"
 msgstr ""
 
-#: src/display-manager.py:108
+#: src/dm_mainview.py:349
+msgid "Output"
+msgstr ""
+
+#: src/dm_mainview.py:350
+msgid "Resolution"
+msgstr ""
+
+#: src/dm_mainview.py:353
+msgid "1"
+msgstr ""
+
+#: src/dm_mainview.py:355
+msgid "2"
+msgstr ""
+
+#: src/dm_mainview.py:357
+msgid "True Color"
+msgstr ""
+
+#: src/dm_mainview.py:358
+msgid "Dual Screen"
+msgstr ""
+
+#: src/dm_mainview.py:360
+msgid "Cloned Mode"
+msgstr ""
+
+#: src/dm_mainview.py:361
+msgid "Extended Mode"
+msgstr ""
+
+#: src/dm_mainview.py:362
+msgid "Detect Displays"
+msgstr ""
+
+#: src/dm_mainview.py:363
+msgid "Screens"
+msgstr ""
+
+#: src/dm_mainview.py:364 src/driverdialog.py:59
+msgid "Video Card"
+msgstr ""
+
+#: src/dm_mainview.py:365
+msgid "Card Icon"
+msgstr ""
+
+#: src/dm_mainview.py:366
+msgid "Card Name"
+msgstr ""
+
+#: src/dm_mainview.py:367 src/driverdialog.py:28 src/driverdialog.py:60
+msgid "Driver Name"
+msgstr ""
+
+#: src/dm_mainview.py:368 src/dm_mainview.py:372 src/dm_mainview.py:376
+msgid "Configure..."
+msgstr ""
+
+#: src/dm_mainview.py:370 src/dm_mainview.py:374
+msgid "Monitor Icon"
+msgstr ""
+
+#: src/dm_mainview.py:371 src/dm_mainview.py:375
+msgid "Monitor Info"
+msgstr ""
+
+#: src/dm_mainview.py:373
+msgid "Secondary Screen"
+msgstr ""
+
+#: src/dm_mainview.py:377
+msgid "Devices"
+msgstr ""
+
+#: src/displayconfig.py:91
+msgid "COMAR Error"
+msgstr ""
+
+#: src/displayconfig.py:96
+msgid "Waiting DBus..."
+msgstr ""
+
+#: src/displayconfig.py:96
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: src/displayconfig.py:112
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+
+#: src/displayconfig.py:243
+msgid ""
+"Configuration has been saved. Some changes may take effect after restarting "
+"your computer."
+msgstr ""
+
+#: src/display-manager.py:160
 msgid ""
 "Sorry, but you can use one device for each output.\n"
 "Try to select another output."
 msgstr ""
 
-#: src/display-manager.py:109
+#: src/display-manager.py:161
 msgid "Duplicate Outputs!"
 msgstr ""
 
-#: src/display-manager.py:261
+#: src/display-manager.py:272
+#, python-format
+msgid "Driver: %s"
+msgstr ""
+
+#: src/display-manager.py:275
+msgid "Plug and Play Monitor"
+msgstr ""
+
+#: src/display-manager.py:347
 msgid "Display Manager is already started!"
+msgstr ""
+
+#: src/driverdialog.py:29 src/driverdialog.py:61
+msgid "Description"
+msgstr ""
+
+#: src/driverdialog.py:62
+msgid "Probe at next boot."
+msgstr ""
+
+#: src/driverdialog.py:63 src/monitordialog.py:96
+msgid "Ok"
 msgstr ""
 
 #: src/helpdialog.py:55
@@ -77,50 +198,22 @@ msgstr ""
 msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr ""
 
-#: src/dm_mainview.py:262
-msgid "Primary Screen"
+#: src/monitordialog.py:87
+msgid "Choose Monitor"
 msgstr ""
 
-#: src/dm_mainview.py:263
-msgid "Output"
+#: src/monitordialog.py:89
+msgid "Details"
 msgstr ""
 
-#: src/dm_mainview.py:264
-msgid "Resolution"
+#: src/monitordialog.py:90
+msgid "<p>Horizontal Range:</p>"
 msgstr ""
 
-#: src/dm_mainview.py:266
-msgid "True Color"
+#: src/monitordialog.py:92
+msgid "<p>Vertical Range:</p>"
 msgstr ""
 
-#: src/dm_mainview.py:267
-msgid "Dual Mode"
-msgstr ""
-
-#: src/dm_mainview.py:268
-msgid "Extended"
-msgstr ""
-
-#: src/dm_mainview.py:271
-msgid "1"
-msgstr ""
-
-#: src/dm_mainview.py:273
-msgid "2"
-msgstr ""
-
-#: src/dm_mainview.py:274
-msgid "Detect Displays"
-msgstr ""
-
-#: src/dm_mainview.py:275
-msgid "Identify Displays"
-msgstr ""
-
-#: src/dm_mainview.py:276
-msgid "Screens"
-msgstr ""
-
-#: src/dm_mainview.py:277
-msgid "Devices"
+#: src/monitordialog.py:94
+msgid "Plug And Play Monitor"
 msgstr ""
