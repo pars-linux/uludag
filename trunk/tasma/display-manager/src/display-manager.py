@@ -80,6 +80,10 @@ class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
         dm_mainview.mainWidget.__init__(self, parent)
 
+        # hide for now
+        self.buttonDetectDisplays.hide()
+        self.buttonIdentifyDisplays.hide()
+
         import displayconfig
         self.displayConfiguration = displayconfig.DisplayConfig()
 
