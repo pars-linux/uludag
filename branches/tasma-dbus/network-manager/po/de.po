@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-06 12:19+0200\n"
+"POT-Creation-Date: 2008-05-12 08:04+0300\n"
 "PO-Revision-Date: 2007-11-17 01:13+0200\n"
 "Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -20,57 +20,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: newconn.py:26
-msgid "Create a new connection"
-msgstr "Eine neue Verbindung erstellen"
+#: comariface.py:227
+msgid "COMAR Error"
+msgstr ""
 
-#: newconn.py:31
-msgid "Select device:"
-msgstr "Gerät auswählen:"
+#: comariface.py:232 network-applet.py:175
+#, fuzzy
+msgid "Waiting DBus..."
+msgstr "Wartend auf COMAR..."
 
-#: newconn.py:58
-msgid "Create"
-msgstr "Erstellen"
+#: comariface.py:232 network-applet.py:175
+#, fuzzy
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+"Verbindung zu COMAR wurde unerwartet geschlossen, es wird versucht erneut zu "
+"verbinden"
 
-#: newconn.py:113
-msgid "No suitable device found"
-msgstr "Kein geeignetes Gerät gefunden"
+#: comariface.py:248 network-applet.py:191
+#, fuzzy
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+"Kann nicht mit COMAR verbinden! Wenn es nicht gestartet worden ist, dann "
+"sollten Sie es mit dem Kommando 'service comar start' in einer Root-Konsole "
+"starten."
 
-#: newconn.py:121
-msgid "Install network packages!"
-msgstr "Netzwerk-Pakete installieren!"
+#: comariface.py:406
+msgid "new connection"
+msgstr "Neue Verbindung"
 
-#: newconn.py:122
-msgid "No package with COMAR network scripts are installed yet."
-msgstr "Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
-
-#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91 network-applet.py:539 network-applet.py:551
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
+#: network-manager.py:108 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Netzwerk-Manager"
 
-#: autoswitch.py:81
-msgid "No scan result"
-msgstr "Keine Suchergebnisse"
+#: autoswitch.py:58
+msgid "Scanning..."
+msgstr ""
 
-#: autoswitch.py:117
+#: autoswitch.py:80
 #, python-format
 msgid "Profile <b>%s</b> matched."
 msgstr "Profile <b>%s</b> zusammengestellt."
 
-#: autoswitch.py:121
+#: autoswitch.py:84
 msgid "There is no matched profile"
 msgstr "Es gibt keine zusammenpassende Profile"
 
-#: autoswitch.py:127
+#: autoswitch.py:86
+msgid "No scan result"
+msgstr "Keine Suchergebnisse"
+
+#: autoswitch.py:96
 #, python-format
 msgid "Connecting to <b>%s</b> ..."
 msgstr "Verbindungsaufbau zu <b>%s</b> ..."
-
-#: autoswitch.py:131
-#, python-format
-msgid "Connected to <b>%s</b>"
-msgstr "Verbunden mit <b>%s</b>"
 
 #: connection.py:27
 msgid "Channel"
@@ -84,128 +89,195 @@ msgstr "Modus"
 msgid "Protocol"
 msgstr "Protokoll"
 
-#: connection.py:55
+#: connection.py:41
+msgid "No remotes found"
+msgstr ""
+
+#: connection.py:61
 msgid "<hidden>"
 msgstr "<versteckt>"
 
-#: connection.py:88
+#: connection.py:94
 msgid "Scan results:"
 msgstr "Suchergebnisse:"
 
-#: connection.py:106
+#: connection.py:112
 msgid "Scan again"
 msgstr "Erneut suchen"
 
-#: connection.py:108
+#: connection.py:114
 msgid "Use"
 msgstr "Verwenden"
 
-#: connection.py:165
+#: connection.py:177
 msgid "Connection name:"
 msgstr "Name der Verbindung:"
 
-#: connection.py:172
+#: connection.py:184
 msgid "Connection"
 msgstr "Verbindung"
 
-#: connection.py:178
+#: connection.py:190
 msgid "Device:"
 msgstr "Gerät:"
 
-#: connection.py:183
+#: connection.py:195
 msgid "Select"
 msgstr "Auswählen"
 
-#: connection.py:197
+#: connection.py:209
 msgid "Scan"
 msgstr "Suchen"
 
-#: connection.py:208 browser.py:57
+#: connection.py:220 browser.py:57
 msgid "Authentication"
 msgstr "Authentifikation"
 
-#: connection.py:214
+#: connection.py:226
 msgid "Mode:"
 msgstr "Art:"
 
-#: connection.py:222
+#: connection.py:234
 msgid "No authentication"
 msgstr "Keine Authentifikation"
 
-#: connection.py:240 connection.py:251
+#: connection.py:252 connection.py:264
 msgid "Password:"
 msgstr "Passwort:"
 
-#: connection.py:248
+#: connection.py:261
 msgid "User name:"
 msgstr "Benutzername:"
 
-#: connection.py:281
+#: connection.py:294
 msgid "Network settings"
 msgstr "Netzwerkeinstellungen"
 
-#: connection.py:291
+#: connection.py:304
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: connection.py:296
+#: connection.py:309
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:300 browser.py:60
+#: connection.py:313 browser.py:60
 msgid "Address:"
 msgstr "Adresse:"
 
-#: connection.py:307 connection.py:324 connection.py:339
+#: connection.py:320 connection.py:337 connection.py:352
 msgid "Custom"
 msgstr "Individuell"
 
-#: connection.py:312
+#: connection.py:325
 msgid "Net mask:"
 msgstr "Netzmaske:"
 
-#: connection.py:319
+#: connection.py:332
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:328 nameconf.py:45
+#: connection.py:341 nameconf.py:45
 msgid "Name servers"
 msgstr "Name-Server"
 
-#: connection.py:337 browser.py:63
+#: connection.py:350 browser.py:63
 msgid "Automatic"
 msgstr "Automatisch"
 
-#: connection.py:534
+#: connection.py:568
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
-#: comariface.py:174
-msgid "Waiting COMAR..."
-msgstr "Wartend auf COMAR..."
+#: network-manager.py:81
+msgid "Just try to connect automatically"
+msgstr "Eine Verbindung versuchen automatisch herzustellen"
 
-#: comariface.py:175
-msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+#: network-manager.py:96
+msgid "Network manager module is already started!"
+msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
+
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr "Eine neue Verbindung erstellen"
+
+#: newconn.py:31
+msgid "Select device:"
+msgstr "Gerät auswählen:"
+
+#: newconn.py:58
+msgid "Create"
+msgstr "Erstellen"
+
+#: newconn.py:112
+msgid "No suitable device found"
+msgstr "Kein geeignetes Gerät gefunden"
+
+#: newconn.py:120
+msgid "Install network packages!"
+msgstr "Netzwerk-Pakete installieren!"
+
+#: newconn.py:121
+msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
-"Verbindung zu COMAR wurde unerwartet geschlossen, es wird versucht erneut zu "
-"verbinden"
+"Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
 
-#: comariface.py:194 comariface.py:211 network-applet.py:114
+#: network-applet.py:393
+msgid "Firewall..."
+msgstr "Firewall..."
+
+#: network-applet.py:394
+msgid "Edit Connections..."
+msgstr "Verbindungen bearbeiten..."
+
+#: network-applet.py:395 browser.py:409
+msgid "Connect Automatically"
+msgstr "Automatisch verbinden"
+
+#: network-applet.py:397
+msgid "Show Notifications"
+msgstr "Meldungen anzeigen"
+
+#: network-applet.py:399
+msgid "Icon Per Device"
+msgstr "Symbol je Gerät"
+
+#: network-applet.py:400
+msgid "Single Icon"
+msgstr "Einzelnes Symbol"
+
+#: network-applet.py:469
+msgid "Should network-applet start automatically when you login?"
+msgstr ""
+"Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
+
+#: network-applet.py:584
+msgid "Connecting to <b>%1</b> ..."
+msgstr "Verbindungsaufbau zu <b>%1</b> ..."
+
+#: network-applet.py:589
+msgid "Connected to <b>%1</b>"
+msgstr "Verbunden mit <b>%1</b>"
+
+#: network-applet.py:595
 msgid ""
-"Cannot connect to the COMAR! If it is not running you should start it with "
-"the 'service comar start' command in a root console."
+"Connection failed \n"
+"<b>%1</b>"
 msgstr ""
-"Kann nicht mit COMAR verbinden! Wenn es nicht gestartet worden ist, dann "
-"sollten Sie es mit dem Kommando 'service comar start' in einer Root-Konsole "
-"starten."
+"Verbindung fehlgeschlagen \n"
+"<b>%1</b>"
 
-#: comariface.py:315
-msgid "You are not allowed to change network settings."
-msgstr "Sie sind nicht berechtigt die Netzwerk-Einstellungen zu ändern."
+#: network-applet.py:597
+msgid "You are offline now"
+msgstr "Sie sind momentan offline"
 
-#: comariface.py:395
-msgid "new connection"
+#: network-applet.py:653 browser.py:399
+msgid "New connection"
 msgstr "Neue Verbindung"
+
+#: network-applet.py:691
+msgid "Network Applet"
+msgstr "Netzwerk Applet"
 
 #: browser.py:50
 msgid "Name:"
@@ -223,7 +295,7 @@ msgstr "Verbindung konfigurieren"
 msgid "Delete connection"
 msgstr "Verbindung löschen"
 
-#: browser.py:127
+#: browser.py:131
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -234,89 +306,25 @@ msgstr ""
 "'%s'\n"
 "Verbindung löschen?"
 
-#: browser.py:128
+#: browser.py:132
 msgid "Delete connection?"
 msgstr "Verbindung löschen?"
 
-#: browser.py:215
+#: browser.py:220
 msgid "No device!"
 msgstr "Kein Gerät!"
 
-#: browser.py:394 network-applet.py:583
-msgid "New connection"
-msgstr "Neue Verbindung"
-
-#: browser.py:399 nameconf.py:28
+#: browser.py:404 nameconf.py:28
 msgid "Name Service Settings"
 msgstr "Name Service Einstellungen"
 
-#: browser.py:404 network-applet.py:329
-msgid "Connect Automatically"
-msgstr "Automatisch verbinden"
-
-#: browser.py:423
+#: browser.py:428
 msgid "Try Auto Connect on startup"
 msgstr "Automatische Verbindungsherstellung beim Systemstart versuchen"
 
-#: browser.py:475
+#: browser.py:479
 msgid "Network Connections Help"
 msgstr "Netzwerkverbindungen-Hilfe"
-
-#: network-manager.py:77
-msgid "Just try to connect automatically"
-msgstr "Eine Verbindung versuchen automatisch herzustellen"
-
-#: network-manager.py:86
-msgid "Network manager module is already started!"
-msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
-
-#: network-applet.py:327
-msgid "Firewall..."
-msgstr "Firewall..."
-
-#: network-applet.py:328
-msgid "Edit Connections..."
-msgstr "Verbindungen bearbeiten..."
-
-#: network-applet.py:331
-msgid "Show Notifications"
-msgstr "Meldungen anzeigen"
-
-#: network-applet.py:333
-msgid "Icon Per Device"
-msgstr "Symbol je Gerät"
-
-#: network-applet.py:334
-msgid "Single Icon"
-msgstr "Einzelnes Symbol"
-
-#: network-applet.py:401
-msgid "Should network-applet start automatically when you login?"
-msgstr "Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
-
-#: network-applet.py:516
-msgid "Connecting to <b>%1</b> ..."
-msgstr "Verbindungsaufbau zu <b>%1</b> ..."
-
-#: network-applet.py:521
-msgid "Connected to <b>%1</b>"
-msgstr "Verbunden mit <b>%1</b>"
-
-#: network-applet.py:527
-msgid ""
-"Connection failed \n"
-"<b>%1</b>"
-msgstr ""
-"Verbindung fehlgeschlagen \n"
-"<b>%1</b>"
-
-#: network-applet.py:529
-msgid "You are offline now"
-msgstr "Sie sind momentan offline"
-
-#: network-applet.py:617
-msgid "Network Applet"
-msgstr "Netzwerk Applet"
 
 #: nameconf.py:35
 msgid "Computer"
@@ -334,11 +342,16 @@ msgstr "Auf"
 msgid "Down"
 msgstr "Ab"
 
-#: nameconf.py:134
+#: nameconf.py:171
 msgid "Add Name Server"
 msgstr "Name-Server hinzufügen"
 
-#: nameconf.py:135
+#: nameconf.py:172
 msgid "Name server:"
 msgstr "Name-Server:"
 
+#~ msgid "Connected to <b>%s</b>"
+#~ msgstr "Verbunden mit <b>%s</b>"
+
+#~ msgid "You are not allowed to change network settings."
+#~ msgstr "Sie sind nicht berechtigt die Netzwerk-Einstellungen zu ändern."

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-06 12:19+0200\n"
+"POT-Creation-Date: 2008-05-12 08:04+0300\n"
 "PO-Revision-Date: 2007-11-12 20:16+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -19,59 +19,61 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: newconn.py:26
-msgid "Create a new connection"
-msgstr "Nieuwe verbinding maken"
+#: comariface.py:227
+msgid "COMAR Error"
+msgstr ""
 
-#: newconn.py:31
-msgid "Select device:"
-msgstr "Kies apparaat:"
+#: comariface.py:232 network-applet.py:175
+#, fuzzy
+msgid "Waiting DBus..."
+msgstr "Wachten COMAR..."
 
-#: newconn.py:58
-msgid "Create"
-msgstr "Maak"
+#: comariface.py:232 network-applet.py:175
+#, fuzzy
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+"Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
+"verbinden..."
 
-#: newconn.py:113
-msgid "No suitable device found"
-msgstr "Geen geschikt apparaat gevonden"
+#: comariface.py:248 network-applet.py:191
+#, fuzzy
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
+"starten met het commando 'service comar start' in de root console."
 
-#: newconn.py:121
-msgid "Install network packages!"
-msgstr "Installeer netwerkpakketten!"
+#: comariface.py:406
+msgid "new connection"
+msgstr "nieuwe verbinding"
 
-# koppelteken vergeten:
-# Comar-netwerkscripts
-#: newconn.py:122
-msgid "No package with COMAR network scripts are installed yet."
-msgstr "Geen pakket met COMAR netwerkscripts is geïnstalleerd."
-
-#: autoswitch.py:44 autoswitch.py:46 network-manager.py:34
-#: network-manager.py:91 network-applet.py:539 network-applet.py:551
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
+#: network-manager.py:108 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Netwerkbeheer"
 
-#: autoswitch.py:81
-msgid "No scan result"
-msgstr "Geen scan resultaten"
+#: autoswitch.py:58
+msgid "Scanning..."
+msgstr ""
 
-#: autoswitch.py:117
+#: autoswitch.py:80
 #, python-format
 msgid "Profile <b>%s</b> matched."
 msgstr "Profiel <b>%s</b> komt overeen."
 
-#: autoswitch.py:121
+#: autoswitch.py:84
 msgid "There is no matched profile"
 msgstr "Er is geen profiel dat overeen komt"
 
-#: autoswitch.py:127
+#: autoswitch.py:86
+msgid "No scan result"
+msgstr "Geen scan resultaten"
+
+#: autoswitch.py:96
 #, python-format
 msgid "Connecting to <b>%s</b> ..."
 msgstr "Verbinding maken met <b>%s</b> ..."
-
-#: autoswitch.py:131
-#, python-format
-msgid "Connected to <b>%s</b>"
-msgstr "Verbonden met <b>%s</b>"
 
 #: connection.py:27
 msgid "Channel"
@@ -85,129 +87,197 @@ msgstr "Modus"
 msgid "Protocol"
 msgstr "Protocol"
 
-#: connection.py:55
+#: connection.py:41
+msgid "No remotes found"
+msgstr ""
+
+#: connection.py:61
 msgid "<hidden>"
 msgstr "<verborgen>"
 
-#: connection.py:88
+#: connection.py:94
 msgid "Scan results:"
 msgstr "Scan resultaten:"
 
-#: connection.py:106
+#: connection.py:112
 msgid "Scan again"
 msgstr "Scan opnieuw"
 
-#: connection.py:108
+#: connection.py:114
 msgid "Use"
 msgstr "Gebruik"
 
-#: connection.py:165
+#: connection.py:177
 msgid "Connection name:"
 msgstr "Naam verbinding:"
 
-#: connection.py:172
+#: connection.py:184
 msgid "Connection"
 msgstr "Verbinding"
 
-#: connection.py:178
+#: connection.py:190
 msgid "Device:"
 msgstr "Apparaat:"
 
-#: connection.py:183
+#: connection.py:195
 msgid "Select"
 msgstr "Selecteer"
 
-#: connection.py:197
+#: connection.py:209
 msgid "Scan"
 msgstr "Scan"
 
-#: connection.py:208 browser.py:57
+#: connection.py:220 browser.py:57
 msgid "Authentication"
 msgstr "Identificatie"
 
-#: connection.py:214
+#: connection.py:226
 msgid "Mode:"
 msgstr "Modus:"
 
-#: connection.py:222
+#: connection.py:234
 msgid "No authentication"
 msgstr "Geen identificatie"
 
-#: connection.py:240 connection.py:251
+#: connection.py:252 connection.py:264
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: connection.py:248
+#: connection.py:261
 msgid "User name:"
 msgstr "Gebruikersnaam:"
 
-#: connection.py:281
+#: connection.py:294
 msgid "Network settings"
 msgstr "Netwerkinstellingen"
 
-#: connection.py:291
+#: connection.py:304
 msgid "Automatic query (DHCP)"
 msgstr "Automatische aanvraag (DHCP)"
 
-#: connection.py:296
+#: connection.py:309
 msgid "Manual"
 msgstr "Handmatig"
 
-#: connection.py:300 browser.py:60
+#: connection.py:313 browser.py:60
 msgid "Address:"
 msgstr "Adres:"
 
-#: connection.py:307 connection.py:324 connection.py:339
+#: connection.py:320 connection.py:337 connection.py:352
 msgid "Custom"
 msgstr "Eigen"
 
-#: connection.py:312
+#: connection.py:325
 msgid "Net mask:"
 msgstr "Netmasker:"
 
-#: connection.py:319
+#: connection.py:332
 msgid "Gateway:"
 msgstr "Poort:"
 
 # naamservers
-#: connection.py:328 nameconf.py:45
+#: connection.py:341 nameconf.py:45
 msgid "Name servers"
 msgstr "Naamservers"
 
-#: connection.py:337 browser.py:63
+#: connection.py:350 browser.py:63
 msgid "Automatic"
 msgstr "Automatisch"
 
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:534
+#: connection.py:568
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
 
-#: comariface.py:174
-msgid "Waiting COMAR..."
-msgstr "Wachten COMAR..."
+#: network-manager.py:81
+msgid "Just try to connect automatically"
+msgstr "Probeer automatisch te verbinden"
 
-#: comariface.py:175
-msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
-"verbinden..."
+#: network-manager.py:96
+msgid "Network manager module is already started!"
+msgstr "Netwerkbeheer module is al opgestart!"
 
-#: comariface.py:194 comariface.py:211 network-applet.py:114
+#: newconn.py:26
+msgid "Create a new connection"
+msgstr "Nieuwe verbinding maken"
+
+#: newconn.py:31
+msgid "Select device:"
+msgstr "Kies apparaat:"
+
+#: newconn.py:58
+msgid "Create"
+msgstr "Maak"
+
+#: newconn.py:112
+msgid "No suitable device found"
+msgstr "Geen geschikt apparaat gevonden"
+
+#: newconn.py:120
+msgid "Install network packages!"
+msgstr "Installeer netwerkpakketten!"
+
+# koppelteken vergeten:
+# Comar-netwerkscripts
+#: newconn.py:121
+msgid "No package with COMAR network scripts are installed yet."
+msgstr "Geen pakket met COMAR netwerkscripts is geïnstalleerd."
+
+#: network-applet.py:393
+msgid "Firewall..."
+msgstr "Firewall..."
+
+#: network-applet.py:394
+msgid "Edit Connections..."
+msgstr "Bewerk verbindingen..."
+
+#: network-applet.py:395 browser.py:409
+msgid "Connect Automatically"
+msgstr "Automatisch verbinden"
+
+#: network-applet.py:397
+msgid "Show Notifications"
+msgstr "Toon berichten"
+
+#: network-applet.py:399
+msgid "Icon Per Device"
+msgstr "Icoon per apparaat"
+
+#: network-applet.py:400
+msgid "Single Icon"
+msgstr "Enkel icoon"
+
+#: network-applet.py:469
+msgid "Should network-applet start automatically when you login?"
+msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
+
+#: network-applet.py:584
+msgid "Connecting to <b>%1</b> ..."
+msgstr "Verbinden met <b>%1</b> ..."
+
+#: network-applet.py:589
+msgid "Connected to <b>%1</b>"
+msgstr "Verboden met <b>%1</b>"
+
+#: network-applet.py:595
 msgid ""
-"Cannot connect to the COMAR! If it is not running you should start it with "
-"the 'service comar start' command in a root console."
+"Connection failed \n"
+"<b>%1</b>"
 msgstr ""
-"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
-"starten met het commando 'service comar start' in de root console."
+"Verbinden mislukt\n"
+"<b>%1</b>"
 
-#: comariface.py:315
-msgid "You are not allowed to change network settings."
-msgstr "U mag de netwerkinstellingen niet aanpassen."
+#: network-applet.py:597
+msgid "You are offline now"
+msgstr "U bent nu offline"
 
-#: comariface.py:395
-msgid "new connection"
-msgstr "nieuwe verbinding"
+#: network-applet.py:653 browser.py:399
+msgid "New connection"
+msgstr "Nieuwe verbinding"
+
+#: network-applet.py:691
+msgid "Network Applet"
+msgstr "Netwerk-applet"
 
 #: browser.py:50
 msgid "Name:"
@@ -230,7 +300,7 @@ msgstr "Verbinding verwijderen"
 #  Wilt u de verbinding\n
 # %s\n
 # verwijderen?
-#: browser.py:127
+#: browser.py:131
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -241,89 +311,25 @@ msgstr ""
 "'%s\n"
 "verwijderen?"
 
-#: browser.py:128
+#: browser.py:132
 msgid "Delete connection?"
 msgstr "Verbinding verwijderen?"
 
-#: browser.py:215
+#: browser.py:220
 msgid "No device!"
 msgstr "Geen apparaat!"
 
-#: browser.py:394 network-applet.py:583
-msgid "New connection"
-msgstr "Nieuwe verbinding"
-
-#: browser.py:399 nameconf.py:28
+#: browser.py:404 nameconf.py:28
 msgid "Name Service Settings"
 msgstr "Naam dienst instellingen"
 
-#: browser.py:404 network-applet.py:329
-msgid "Connect Automatically"
-msgstr "Automatisch verbinden"
-
-#: browser.py:423
+#: browser.py:428
 msgid "Try Auto Connect on startup"
 msgstr "Probeer automatisch te verbinden bij opstarten"
 
-#: browser.py:475
+#: browser.py:479
 msgid "Network Connections Help"
 msgstr "Netwerkverbindingen hulp"
-
-#: network-manager.py:77
-msgid "Just try to connect automatically"
-msgstr "Probeer automatisch te verbinden"
-
-#: network-manager.py:86
-msgid "Network manager module is already started!"
-msgstr "Netwerkbeheer module is al opgestart!"
-
-#: network-applet.py:327
-msgid "Firewall..."
-msgstr "Firewall..."
-
-#: network-applet.py:328
-msgid "Edit Connections..."
-msgstr "Bewerk verbindingen..."
-
-#: network-applet.py:331
-msgid "Show Notifications"
-msgstr "Toon berichten"
-
-#: network-applet.py:333
-msgid "Icon Per Device"
-msgstr "Icoon per apparaat"
-
-#: network-applet.py:334
-msgid "Single Icon"
-msgstr "Enkel icoon"
-
-#: network-applet.py:401
-msgid "Should network-applet start automatically when you login?"
-msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
-
-#: network-applet.py:516
-msgid "Connecting to <b>%1</b> ..."
-msgstr "Verbinden met <b>%1</b> ..."
-
-#: network-applet.py:521
-msgid "Connected to <b>%1</b>"
-msgstr "Verboden met <b>%1</b>"
-
-#: network-applet.py:527
-msgid ""
-"Connection failed \n"
-"<b>%1</b>"
-msgstr ""
-"Verbinden mislukt\n"
-"<b>%1</b>"
-
-#: network-applet.py:529
-msgid "You are offline now"
-msgstr "U bent nu offline"
-
-#: network-applet.py:617
-msgid "Network Applet"
-msgstr "Netwerk-applet"
 
 #: nameconf.py:35
 msgid "Computer"
@@ -343,11 +349,16 @@ msgstr "Omlaag"
 
 # infinitief vertalen:
 # Naamserver toevoegen
-#: nameconf.py:134
+#: nameconf.py:171
 msgid "Add Name Server"
 msgstr "Voeg naamserver toe"
 
-#: nameconf.py:135
+#: nameconf.py:172
 msgid "Name server:"
 msgstr "Naamserver:"
 
+#~ msgid "Connected to <b>%s</b>"
+#~ msgstr "Verbonden met <b>%s</b>"
+
+#~ msgid "You are not allowed to change network settings."
+#~ msgstr "U mag de netwerkinstellingen niet aanpassen."
