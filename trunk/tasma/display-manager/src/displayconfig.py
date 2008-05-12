@@ -240,4 +240,4 @@ class DisplayConfig:
         ch.call(driver)
 
     def done(self):
-        KMessageBox.information(None, i18n("Saved your configuration."))
+        KMessageBox.information(None, i18n("Configuration has been saved. Some changes may take effect after restarting your computer."))
