@@ -56,6 +56,9 @@ class CardDialog(driverdialog.VideoCard):
     def __init__(self, parent):
         driverdialog.VideoCard.__init__(self, parent)
 
+        # hide for now
+        self.checkBoxProbe.hide()
+
         current = None
         dc = parent.displayConfiguration
         curdrv = dc._info.driver
