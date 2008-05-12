@@ -110,6 +110,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         if self.displayConfiguration.desktop_setup == "single":
             self.checkBoxDualMode.setChecked(False)
+            self.buttonGroupDualModes.setDisabled(True)
             self.enableExtendedOption(False)
         else:
             if self.displayConfiguration.desktop_setup == "horizontal":
@@ -239,6 +240,8 @@ class MainWidget(dm_mainview.mainWidget):
         pass
 
     def slotApply(self):
+        self.displayConfiguration.true_color = self.checkBoxTrueColor.isChecked()
+
         kapp.setOverrideCursor(QCursor(Qt.WaitCursor))
         self.displayConfiguration.apply()
         kapp.restoreOverrideCursor()
