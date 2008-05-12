@@ -66,7 +66,7 @@ class CardDialog(driverdialog.VideoCard):
             curdrv += "/%s" % dc._info.package
 
         for drv in hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id):
-            item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers[drv])
+            item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
 
             if drv == curdrv:
                 current = item
