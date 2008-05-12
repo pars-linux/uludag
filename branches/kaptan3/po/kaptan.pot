@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-09 16:49+0300\n"
+"POT-Creation-Date: 2008-05-12 10:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,60 +32,40 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: src/kaptan.py:230
+#: src/kaptan.py:234
 msgid "Kaptan is already running!"
 msgstr ""
 
-#: src/kaptan.py:245
+#: src/kaptan.py:244
 msgid "Kaptan Welcome Wizard"
 msgstr ""
 
-#: src/screens/ScrMouse.py:27
-msgid "Mouse Settings"
+#: src/screens/photodlg.py:66
+msgid "Photo"
 msgstr ""
 
-#: src/screens/ScrMouse.py:28
-msgid "Configure your mouse"
+#: src/screens/photodlg.py:67
+msgid "Shot"
 msgstr ""
 
-#: src/screens/ScrMouse.py:39 src/screens/mousedlg.py:104
-msgid "Mouse"
+#: src/screens/photodlg.py:68
+msgid "Put my photo to:"
 msgstr ""
 
-#: src/screens/ScrMouse.py:40
-msgid "Reverse scroll"
+#: src/screens/photodlg.py:69
+msgid "E-mail clients"
 msgstr ""
 
-#: src/screens/ScrMouse.py:41
-msgid ""
-"<p align=\"left\">If you are left-handed, you may prefer to swap the "
-"functions on the left and right buttons on your pointing device by choosing "
-"the \"Left handed\" option below. You can also select default click "
-"behaviour.</p>"
+#: src/screens/photodlg.py:70
+msgid "Instant messengers"
 msgstr ""
 
-#: src/screens/ScrMouse.py:42
-msgid "Button Order"
+#: src/screens/photodlg.py:71
+msgid "Login Screen (KDM)"
 msgstr ""
 
-#: src/screens/ScrMouse.py:43
-msgid "Left Hand"
-msgstr ""
-
-#: src/screens/ScrMouse.py:44
-msgid "Right Hand"
-msgstr ""
-
-#: src/screens/ScrMouse.py:45
-msgid "Click behaviour"
-msgstr ""
-
-#: src/screens/ScrMouse.py:46
-msgid "&Single-click to open files and folders"
-msgstr ""
-
-#: src/screens/ScrMouse.py:47
-msgid "Dou&ble-click to open files and folders"
+#: src/screens/summarydlg.py:64
+msgid "SummaryWidget"
 msgstr ""
 
 #: src/screens/ScrPackage.py:29
@@ -96,7 +76,7 @@ msgstr ""
 msgid "Configure package manager settings..."
 msgstr ""
 
-#: src/screens/ScrPackage.py:48 src/screens/packagedlg.py:106
+#: src/screens/ScrPackage.py:48 src/screens/packagedlg.py:107
 msgid "Package"
 msgstr ""
 
@@ -108,7 +88,7 @@ msgid ""
 "manager."
 msgstr ""
 
-#: src/screens/ScrPackage.py:50 src/screens/packagedlg.py:111
+#: src/screens/ScrPackage.py:50 src/screens/packagedlg.py:112
 msgid "tooltipPisiPopup"
 msgstr ""
 
@@ -148,32 +128,180 @@ msgstr ""
 msgid "Authentication Error!"
 msgstr ""
 
-#: src/screens/kaptanMain.py:101
+#: src/screens/ScrNetwork.py:25
+msgid "Configure network settings..."
+msgstr ""
+
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr ""
+
+#: src/screens/multipledlg.py:135 src/screens/ScrMultiple.py:52
+msgid "Multiple"
+msgstr ""
+
+#: src/screens/kaptanMain.py:102
 msgid "KaptanUi"
 msgstr ""
 
-#: src/screens/photodlg.py:66
-msgid "Photo"
+#: src/screens/mousedlg.py:104 src/screens/ScrMouse.py:39
+msgid "Mouse"
 msgstr ""
 
-#: src/screens/photodlg.py:67
-msgid "Shot"
+#: src/screens/welcomedlg.py:60 src/screens/ScrWelcome.py:23
+#: src/screens/ScrWelcome.py:32
+msgid "Welcome"
 msgstr ""
 
-#: src/screens/photodlg.py:68
-msgid "Put my photo to:"
+#: src/screens/goodbyedlg.py:191
+msgid "Goodbye"
 msgstr ""
 
-#: src/screens/photodlg.py:69
-msgid "E-mail clients"
+#: src/screens/goodbyedlg.py:192
+msgid "Tasma"
 msgstr ""
 
-#: src/screens/photodlg.py:70
-msgid "Instant messengers"
+#: src/screens/goodbyedlg.py:193
+msgid ""
+"<p>TASMA is a configuration application for Pardus Operating System. </p>"
 msgstr ""
 
-#: src/screens/photodlg.py:71
-msgid "Login Screen (KDM)"
+#: src/screens/goodbyedlg.py:194 src/screens/goodbyedlg.py:196
+#: src/screens/goodbyedlg.py:199 src/screens/goodbyedlg.py:203
+msgid "Start"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:195
+msgid "User Groups and Help Pages"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:197
+msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:198
+msgid "Migration Tool"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:200
+msgid ""
+"<p>A wizard to transfer files and settings from existing operating systems "
+"(e.g. Windows) to Pardus.</p>"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:201
+msgid ""
+"<p>Congratulations! You have finished all steps. You can now continue using "
+"Pardus and try applications below.</p>"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:202
+msgid "Screen Resolution"
+msgstr ""
+
+#: src/screens/goodbyedlg.py:204
+msgid ""
+"<p><p>Your screen resolution is very low. It may be wrong. You can change "
+"your resolution bye using <b>Display Manager</b>.</p></p>"
+msgstr ""
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr ""
+
+#: src/screens/ScrMouse.py:27
+msgid "Mouse Settings"
+msgstr ""
+
+#: src/screens/ScrMouse.py:28
+msgid "Configure your mouse"
+msgstr ""
+
+#: src/screens/ScrMouse.py:40
+msgid "Reverse scroll"
+msgstr ""
+
+#: src/screens/ScrMouse.py:41
+msgid ""
+"<p align=\"left\">If you are left-handed, you may prefer to swap the "
+"functions on the left and right buttons on your pointing device by choosing "
+"the \"Left handed\" option below. You can also select default click "
+"behaviour.</p>"
+msgstr ""
+
+#: src/screens/ScrMouse.py:42
+msgid "Button Order"
+msgstr ""
+
+#: src/screens/ScrMouse.py:43
+msgid "Left Hand"
+msgstr ""
+
+#: src/screens/ScrMouse.py:44
+msgid "Right Hand"
+msgstr ""
+
+#: src/screens/ScrMouse.py:45
+msgid "Click behaviour"
+msgstr ""
+
+#: src/screens/ScrMouse.py:46
+msgid "&Single-click to open files and folders"
+msgstr ""
+
+#: src/screens/ScrMouse.py:47
+msgid "Dou&ble-click to open files and folders"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:25
+msgid "Multiple Desktops"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:26
+msgid "Configure virtual desktops.."
+msgstr ""
+
+#: src/screens/ScrMultiple.py:53
+msgid ""
+"<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgstr ""
+
+#: src/screens/ScrMultiple.py:54
+msgid "Mouse wheel over desktop background switches desktop."
+msgstr ""
+
+#: src/screens/ScrMultiple.py:55
+msgid " Desktop(s)"
+msgstr ""
+
+#: src/screens/ScrWelcome.py:33
+msgid ""
+"This application, called <b>Kaptan Desktop</b>, will help you with your "
+"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
+"Please click <b>Next</b> to personalize your desktop. :)"
+msgstr ""
+
+#: src/screens/ScrWelcome.py:34
+msgid ""
+"<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate "
+"users' basic desktop needs; helps you connect to internet, read e-mails, "
+"work with office documents and more!"
+msgstr ""
+
+#: src/screens/ScrWallpaper.py:44
+msgid "Enjoy with wonderful backgrounds..."
+msgstr ""
+
+#: src/screens/ScrWallpaper.py:51
+msgid "Show all resolutions."
+msgstr ""
+
+#: src/screens/ScrWallpaper.py:52
+msgid "Old Wallpaper"
+msgstr ""
+
+#: src/screens/ScrWallpaper.py:53
+msgid "No Wallpaper"
 msgstr ""
 
 #: src/screens/paneldlg.py:87 src/screens/ScrPanel.py:37
@@ -202,95 +330,6 @@ msgstr ""
 msgid "Use enhanced Kickoff style menu"
 msgstr ""
 
-#: src/screens/welcomedlg.py:60 src/screens/ScrWelcome.py:23
-#: src/screens/ScrWelcome.py:32
-msgid "Welcome"
-msgstr ""
-
-#: src/screens/networkdlg.py:46
-msgid "Network"
-msgstr ""
-
-#: src/screens/ScrNetwork.py:25
-msgid "Configure network settings..."
-msgstr ""
-
-#: src/screens/ScrNetwork.py:37
-msgid "<big>Loading...</big>"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:170
-msgid "Goodbye"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:171
-msgid "Tasma"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:172 src/screens/goodbyedlg.py:175
-#: src/screens/goodbyedlg.py:178 src/screens/goodbyedlg.py:182
-msgid "Start"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:173
-msgid ""
-"<p>TASMA is a configuration application for Pardus Operating System. </p>"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:174
-msgid "User Groups and Help Pages"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:176
-msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:177
-msgid "Migration Tool"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:179
-msgid ""
-"<p>A wizard to transfer files and settings from existing operating systems "
-"(e.g. Windows) to Pardus.</p>"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:180
-msgid ""
-"<p>Congratulations! You have finished all steps. You can now continue using "
-"Pardus and try applications below.</p>"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:181
-msgid "Screen Resolution"
-msgstr ""
-
-#: src/screens/goodbyedlg.py:183
-msgid ""
-"<p><p>Your screen resolution is very low. It may be wrong. You can change "
-"your resolution bye using <b>Display Manager</b>.</p></p>"
-msgstr ""
-
-#: src/screens/ScrWallpaper.py:44
-msgid "Enjoy with wonderful backgrounds..."
-msgstr ""
-
-#: src/screens/ScrWallpaper.py:51
-msgid "Show all resolutions."
-msgstr ""
-
-#: src/screens/ScrWallpaper.py:52
-msgid "Old Wallpaper"
-msgstr ""
-
-#: src/screens/ScrWallpaper.py:53
-msgid "No Wallpaper"
-msgstr ""
-
-#: src/screens/ScrGoodbye.py:29
-msgid "Enjoy with Pardus..."
-msgstr ""
-
 #: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:124
 msgid "Thumbnails"
 msgstr ""
@@ -303,45 +342,6 @@ msgstr ""
 msgid "toolTip"
 msgstr ""
 
-#: src/screens/summarydlg.py:64
-msgid "SummaryWidget"
-msgstr ""
-
-#: src/screens/ScrWelcome.py:33
-msgid ""
-"This application, called <b>Kaptan Desktop</b>, will help you with your "
-"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
-"Please click <b>Next</b> to personalize your desktop. :)"
-msgstr ""
-
-#: src/screens/ScrWelcome.py:34
-msgid ""
-"<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate "
-"users' basic desktop needs; helps you connect to internet, read e-mails, "
-"work with office documents and more!"
-msgstr ""
-
-#: src/screens/multipledlg.py:135 src/screens/ScrMultiple.py:52
-msgid "Multiple"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:25
-msgid "Multiple Desktops"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:26
-msgid "Configure virtual desktops.."
-msgstr ""
-
-#: src/screens/ScrMultiple.py:53
-msgid ""
-"<p>In this module, you can configure how many virtual desktops you want.</p>"
-msgstr ""
-
-#: src/screens/ScrMultiple.py:54
-msgid "Mouse wheel over desktop background switches desktop."
-msgstr ""
-
-#: src/screens/ScrMultiple.py:55
-msgid " Desktop(s)"
+#: src/screens/ScrGoodbye.py:29
+msgid "Enjoy with Pardus..."
 msgstr ""
