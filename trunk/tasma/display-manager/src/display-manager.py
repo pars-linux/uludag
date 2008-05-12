@@ -67,7 +67,6 @@ class CardDialog(driverdialog.VideoCard):
 
         for drv in hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id):
             item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers[drv])
-            self.listViewVideoCard.insertItem(item)
 
             if drv == curdrv:
                 current = item
