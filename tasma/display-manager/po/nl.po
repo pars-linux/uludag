@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 10:46+0300\n"
+"POT-Creation-Date: 2008-05-12 11:15+0300\n"
 "PO-Revision-Date: 2008-05-11 16:58+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "Beeldscherm beheer"
 msgid "Identify Displays"
 msgstr "Identificeer schermen"
 
-#: src/dm_mainview.py:348 src/dm_mainview.py:369
+#: src/dm_mainview.py:348 src/dm_mainview.py:369 src/display-manager.py:96
 msgid "Primary Screen"
 msgstr "Primair scherm"
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Monitor Info"
 msgstr ""
 
-#: src/dm_mainview.py:373
+#: src/dm_mainview.py:373 src/display-manager.py:96
 #, fuzzy
 msgid "Secondary Screen"
 msgstr "Primair scherm"

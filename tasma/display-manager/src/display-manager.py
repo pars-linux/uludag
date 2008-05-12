@@ -93,7 +93,7 @@ class MainWidget(dm_mainview.mainWidget):
         if len(self.displayConfiguration.depths) == 1:
             self.checkBoxTrueColor.setDisabled(True)
 
-        self.screenNames = { "1":"Primary Screen", "2": "Secondary Screen" }
+        self.screenNames = { "1": i18n("Primary Screen"), "2": i18n("Secondary Screen") }
 
         #set button icons
         self.buttonCancel.setIconSet(getIconSet("cancel", KIcon.Small))
