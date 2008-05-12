@@ -903,7 +903,7 @@
                                             <cstring>textCardName</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>Card Name</string>
+                                            <string>&lt;p&gt;Card Name&lt;/p&gt;</string>
                                         </property>
                                         <property name="scaledContents">
                                             <bool>true</bool>
@@ -914,7 +914,7 @@
                                             <cstring>textDriver</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>Driver Name</string>
+                                            <string>&lt;p&gt;Driver Name&lt;/p&gt;</string>
                                         </property>
                                         <property name="scaledContents">
                                             <bool>true</bool>
