@@ -117,9 +117,10 @@ class Widget(WallpaperWidget, ScreenWidget):
                     item = KListViewItem(self.listWallpaper, "file", str(wallpaperFile))
                     item.setText(0,wallpaperTitle)
                     wpCurrentThumbnail = os.path.join(self.tmpThumbDir,  os.path.basename(wallpaperFile) + ".thumbnail")
-
                     if os.path.exists(wpCurrentThumbnail):
                         item.setPixmap(0,QPixmap(QImage(wpCurrentThumbnail)))
+                    elif os.path.exists(os.path.join(self.tmpThumbDir,  os.path.basename(wallpaperFile).replace("png", "jpg") + ".thumbnail")):
+                        item.setPixmap(0,QPixmap(QImage(os.path.join(self.tmpThumbDir, os.path.basename(wallpaperFile).replace("png", "jpg") + ".thumbnail"))))
                     else:
                         item.setPixmap(0,QPixmap(QImage(locate("data", self.nonePic))))
 
@@ -152,6 +153,8 @@ class Widget(WallpaperWidget, ScreenWidget):
 
         if os.path.exists(wpCurrentThumbnail):
             item.setPixmap(0,QPixmap(QImage(wpCurrentThumbnail)))
+        elif os.path.exists(os.path.join(self.tmpThumbDir,  os.path.basename(wpFile).replace("png", "jpg") + ".thumbnail")):
+            item.setPixmap(0,QPixmap(QImage(os.path.join(self.tmpThumbDir, os.path.basename(wpFile).replace("png", "jpg") + ".thumbnail"))))
         else:
             item.setPixmap(0,QPixmap(QImage(locate("data", self.nonePic))))
 
