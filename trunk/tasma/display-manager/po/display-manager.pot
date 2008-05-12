@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 10:46+0300\n"
+"POT-Creation-Date: 2008-05-12 11:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Identify Displays"
 msgstr ""
 
-#: src/dm_mainview.py:348 src/dm_mainview.py:369
+#: src/dm_mainview.py:348 src/dm_mainview.py:369 src/display-manager.py:96
 msgid "Primary Screen"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Monitor Info"
 msgstr ""
 
-#: src/dm_mainview.py:373
+#: src/dm_mainview.py:373 src/display-manager.py:96
 msgid "Secondary Screen"
 msgstr ""
 

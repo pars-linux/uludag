@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 10:46+0300\n"
+"POT-Creation-Date: 2008-05-12 11:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "Görüntü Yöneticisi"
 msgid "Identify Displays"
 msgstr "Ekranları Tanımla"
 
-#: src/dm_mainview.py:348 src/dm_mainview.py:369
+#: src/dm_mainview.py:348 src/dm_mainview.py:369 src/display-manager.py:96
 msgid "Primary Screen"
 msgstr "Birinci Ekran"
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Monitor Info"
 msgstr "Monitör Bilgisi"
 
-#: src/dm_mainview.py:373
+#: src/dm_mainview.py:373 src/display-manager.py:96
 msgid "Secondary Screen"
 msgstr "İkinci Ekran"
 
@@ -114,23 +114,25 @@ msgstr "DBus bekleniyor..."
 
 #: src/displayconfig.py:96
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı deniyor..."
+msgstr ""
+"DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı "
+"deniyor..."
 
 #: src/displayconfig.py:112
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp 'service "
-"dbus start' komutunu deneyebilirsiniz."
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
+"'service dbus start' komutunu deneyebilirsiniz."
 
 #: src/displayconfig.py:243
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
 msgstr ""
-"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden başlatana "
-"kadar etkin olmayabilir."
+"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
+"başlatana kadar etkin olmayabilir."
 
 #: src/display-manager.py:162
 msgid ""
@@ -206,24 +208,24 @@ msgstr ""
 
 #: src/helpdialog.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr "<p><b><h3>Grnt Yneticisi </h3></b></p>"
+msgstr "<p><b><h3>Görüntü Yöneticisi </h3></b></p>"
 
 #: src/monitordialog.py:87
 msgid "Choose Monitor"
-msgstr "Monitr Sein"
+msgstr "Monitör Seçin"
 
 #: src/monitordialog.py:89
 msgid "Details"
-msgstr "Ayrntlar"
+msgstr "Ayrıntılar"
 
 #: src/monitordialog.py:90
 msgid "<p>Horizontal Range:</p>"
-msgstr "<p>Yatay Tarama Aral:</p>"
+msgstr "<p>Yatay Tarama Aralığı:</p>"
 
 #: src/monitordialog.py:92
 msgid "<p>Vertical Range:</p>"
-msgstr "<p>Dikey Tarama Aral:</p>"
+msgstr "<p>Dikey Tarama Aralığı:</p>"
 
 #: src/monitordialog.py:94
 msgid "Plug And Play Monitor"
-msgstr "Tak ve Kullan Monitr"
+msgstr "Tak ve Kullan Monitör"
