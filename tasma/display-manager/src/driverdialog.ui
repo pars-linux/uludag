@@ -48,6 +48,9 @@
             <property name="frameShape">
                 <enum>GroupBoxPanel</enum>
             </property>
+            <property name="selectionMode">
+                <enum>Extended</enum>
+            </property>
             <property name="resizeMode">
                 <enum>AllColumns</enum>
             </property>
