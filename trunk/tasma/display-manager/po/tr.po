@@ -1,40 +1,40 @@
-# translation of nl.po to Nederlands
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Willem Gielen <w.gielen@gmail.com>, 2008.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: nl\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-12 10:46+0300\n"
-"PO-Revision-Date: 2008-05-11 16:58+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <nl@li.org>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #: src/dm_mainview.py:346 src/display-manager.py:38 src/display-manager.py:362
 msgid "Display Manager"
-msgstr "Beeldscherm beheer"
+msgstr "Görüntü Yöneticisi"
 
 #: src/dm_mainview.py:347
 msgid "Identify Displays"
-msgstr "Identificeer schermen"
+msgstr "Ekranları Tanımla"
 
 #: src/dm_mainview.py:348 src/dm_mainview.py:369
 msgid "Primary Screen"
-msgstr "Primair scherm"
+msgstr "Birinci Ekran"
 
 #: src/dm_mainview.py:349
 msgid "Output"
-msgstr "Uitvoer"
+msgstr "Çıkış"
 
 #: src/dm_mainview.py:350
 msgid "Resolution"
-msgstr "Resolutie"
+msgstr "Çözünürlük"
 
 #: src/dm_mainview.py:353
 msgid "1"
@@ -46,34 +46,31 @@ msgstr "2"
 
 #: src/dm_mainview.py:357
 msgid "True Color"
-msgstr "Ware kleuren"
+msgstr "Gerçek Renk"
 
 #: src/dm_mainview.py:358
-#, fuzzy
 msgid "Dual Screen"
-msgstr "Schermen"
+msgstr "Çift Ekran"
 
 #: src/dm_mainview.py:360
-#, fuzzy
 msgid "Cloned Mode"
-msgstr "Duale modus"
+msgstr "Klon Modu"
 
 #: src/dm_mainview.py:361
-#, fuzzy
 msgid "Extended Mode"
-msgstr "Verlengd"
+msgstr "Uzatılmış Mod"
 
 #: src/dm_mainview.py:362
 msgid "Detect Displays"
-msgstr "Detecteer schermen"
+msgstr "Ekranları Algıla"
 
 #: src/dm_mainview.py:363
 msgid "Screens"
-msgstr "Schermen"
+msgstr "Ekranlar"
 
 #: src/dm_mainview.py:364 src/driverdialog.py:59
 msgid "Video Card"
-msgstr ""
+msgstr "Ekran Kart"
 
 #: src/dm_mainview.py:365
 msgid "Card Icon"
@@ -81,15 +78,15 @@ msgstr ""
 
 #: src/dm_mainview.py:366
 msgid "<p>Card Name</p>"
-msgstr ""
+msgstr "<p>Kart Adı</p>"
 
 #: src/dm_mainview.py:367
 msgid "<p>Driver Name</p>"
-msgstr ""
+msgstr "<p>Sürücü Adı</p>"
 
 #: src/dm_mainview.py:368 src/dm_mainview.py:372 src/dm_mainview.py:376
 msgid "Configure..."
-msgstr ""
+msgstr "Yapılandır..."
 
 #: src/dm_mainview.py:370 src/dm_mainview.py:374
 msgid "Monitor Icon"
@@ -97,85 +94,88 @@ msgstr ""
 
 #: src/dm_mainview.py:371 src/dm_mainview.py:375
 msgid "Monitor Info"
-msgstr ""
+msgstr "Monitör Bilgisi"
 
 #: src/dm_mainview.py:373
-#, fuzzy
 msgid "Secondary Screen"
-msgstr "Primair scherm"
+msgstr "İkinci Ekran"
 
 #: src/dm_mainview.py:377
 msgid "Devices"
-msgstr "Apparaten"
+msgstr "Aygıtlar"
 
 #: src/displayconfig.py:91
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR Hatası"
 
 #: src/displayconfig.py:96
 msgid "Waiting DBus..."
-msgstr ""
+msgstr "DBus bekleniyor..."
 
 #: src/displayconfig.py:96
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı deniyor..."
 
 #: src/displayconfig.py:112
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp 'service "
+"dbus start' komutunu deneyebilirsiniz."
 
 #: src/displayconfig.py:243
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
 msgstr ""
+"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden başlatana "
+"kadar etkin olmayabilir."
 
 #: src/display-manager.py:162
 msgid ""
 "Sorry, but you can use one device for each output.\n"
 "Try to select another output."
 msgstr ""
-"Helaas, u kunt slechts één apparaat gebruiken per uitvoer.\n"
-"Probeer een andere uitvoer te selekteren."
+"Aynı anda her çıkış için tek bir cihaz kullanabilirsiniz.\n"
+"Başka bir çıkış deneyin."
 
 #: src/display-manager.py:163
 msgid "Duplicate Outputs!"
-msgstr "Dupliceer output!"
+msgstr "Çıkışlar çakıştı!"
 
 #: src/display-manager.py:274
 #, python-format
 msgid "Driver: %s"
-msgstr ""
+msgstr "Sürücü: %s"
 
 #: src/display-manager.py:277
 msgid "Plug and Play Monitor"
-msgstr ""
+msgstr "Tak ve Kullan Monitör"
 
 #: src/display-manager.py:350
 msgid "Display Manager is already started!"
-msgstr "Beeldscherm beheer is al actief!"
+msgstr "Görüntü Yöneticisi zaten alıyor!"
 
 #: src/driverdialog.py:28 src/driverdialog.py:60
 msgid "Driver Name"
-msgstr ""
+msgstr "Sürücü Adı"
 
 #: src/driverdialog.py:29 src/driverdialog.py:61
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #: src/driverdialog.py:62
 msgid "Probe at next boot."
-msgstr ""
+msgstr "Sonraki açılışta algıla."
 
 #: src/driverdialog.py:63 src/monitordialog.py:96
 msgid "Ok"
-msgstr ""
+msgstr "Tamam"
 
 #: src/helpdialog.py:55
 msgid "Display Manager Help"
-msgstr "Beeldscherm beheer help"
+msgstr "Görüntü Yöneticisi Yardım"
 
 #: src/helpdialog.py:56
 msgid ""
@@ -203,56 +203,27 @@ msgid ""
 "\n"
 "</p>"
 msgstr ""
-"<P>\n"
-"<b><h3>Uitvoer</h3></b>\n"
-"\n"
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
-"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
-"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
-"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
-"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
-"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
-"<br><br>\n"
-"<b><h3>Resolutie </h3></b>\n"
-"\n"
-"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
-"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
-"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
-"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
-"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
-"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
-"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
-"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
-"dignissim dui lectus et orci.\n"
-"\n"
-"</p>"
 
 #: src/helpdialog.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr "<p><b><h3>Beeldscherm beheer </h3></b></p>"
+msgstr "<p><b><h3>Grnt Yneticisi </h3></b></p>"
 
 #: src/monitordialog.py:87
 msgid "Choose Monitor"
-msgstr ""
+msgstr "Monitr Sein"
 
 #: src/monitordialog.py:89
 msgid "Details"
-msgstr ""
+msgstr "Ayrntlar"
 
 #: src/monitordialog.py:90
 msgid "<p>Horizontal Range:</p>"
-msgstr ""
+msgstr "<p>Yatay Tarama Aral:</p>"
 
 #: src/monitordialog.py:92
 msgid "<p>Vertical Range:</p>"
-msgstr ""
+msgstr "<p>Dikey Tarama Aral:</p>"
 
 #: src/monitordialog.py:94
 msgid "Plug And Play Monitor"
-msgstr ""
-
-#~ msgid "Sorry, Display Manager currently does not support your driver."
-#~ msgstr "Helaas, beeldschem beheer ondersteunt momenteel uw driver nog niet."
-
-#~ msgid "No Support"
-#~ msgstr "Geen ondersteuning"
+msgstr "Tak ve Kullan Monitr"
