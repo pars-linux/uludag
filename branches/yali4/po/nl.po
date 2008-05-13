@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-11 22:06+0300\n"
+"POT-Creation-Date: 2008-05-13 13:59+0300\n"
 "PO-Revision-Date: 2007-11-13 19:53+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
@@ -413,7 +413,7 @@ msgstr "Wachtwoord:"
 msgid "Password (again):"
 msgstr "Wachtwoord (nogmaals):"
 
-#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:204
+#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:176
 msgid "Create User"
 msgstr "Maak gebruiker"
 
@@ -451,7 +451,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Lees de GPL"
 
-#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:153
+#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:154
 msgid "Reboot System!"
 msgstr "Herstart systeem!"
 
@@ -688,11 +688,11 @@ msgstr "Kan het licentiebestand niet openen!"
 msgid "Can't open Release Notes!"
 msgstr "Kan het licentiebestand niet openen!"
 
-#: yali4/gui/runner.py:116
+#: yali4/gui/runner.py:117
 msgid "Error!"
 msgstr "Fout!"
 
-#: yali4/gui/runner.py:148
+#: yali4/gui/runner.py:149
 msgid "Unhandled error occured!"
 msgstr "Fout opgetreden!"
 
@@ -1213,65 +1213,39 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:115
-msgid ""
-"<b>\n"
-"<p>You have not defined an administrator!</p>\n"
-"\n"
-"<p>A user without administrative rights cannot complete system maintenance \n"
-"tasks. You are strongly encouraged to define an administrator user.</p>\n"
-"\n"
-"<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK\" "
-"to \n"
-"go to next screen.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>U heeft geen administrator benoemd!</p>\n"
-"\n"
-"<p>Een gebruiker zonder administratieve rechten kan geen systeemonderhoud "
-"doen \n"
-"U wordt ten stelligste aangeraden een administrator te benoemen.</p>\n"
-"\n"
-"<p>Klik \"Annuleer\" om een administrator te benoemen (aangeraden) of \"OK"
-"\" \n"
-"om\n"
-"naar het volgende scherm te gaan.</p>\n"
-"</b>\n"
-
-#: yali4/gui/ScrUsers.py:162
+#: yali4/gui/ScrUsers.py:134
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
 msgstr ""
 "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
 
-#: yali4/gui/ScrUsers.py:165
+#: yali4/gui/ScrUsers.py:137
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
 msgstr "<font color=\"#FF6D19\">De wachtwoorden komen niet overeen!</font>"
 
-#: yali4/gui/ScrUsers.py:168
+#: yali4/gui/ScrUsers.py:140
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
 msgstr "<font color=\"#FF6D19\">Wachtwoord is te kort!</font>"
 
-#: yali4/gui/ScrUsers.py:195
+#: yali4/gui/ScrUsers.py:167
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Deze gebruikersnaam bestaat al, Kies een andere!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:198
+#: yali4/gui/ScrUsers.py:170
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">De gebruikersnaam bevat niet toegestane tekens.</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:201
+#: yali4/gui/ScrUsers.py:173
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
 
-#: yali4/gui/ScrUsers.py:258
+#: yali4/gui/ScrUsers.py:230
 msgid "Update User"
 msgstr "Update gebruiker"
 
@@ -1569,6 +1543,32 @@ msgstr "Swap"
 #, fuzzy
 msgid "Archive Partition"
 msgstr "Maak partitie"
+
+#~ msgid ""
+#~ "<b>\n"
+#~ "<p>You have not defined an administrator!</p>\n"
+#~ "\n"
+#~ "<p>A user without administrative rights cannot complete system "
+#~ "maintenance \n"
+#~ "tasks. You are strongly encouraged to define an administrator user.</p>\n"
+#~ "\n"
+#~ "<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK"
+#~ "\" to \n"
+#~ "go to next screen.</p>\n"
+#~ "</b>\n"
+#~ msgstr ""
+#~ "<b>\n"
+#~ "<p>U heeft geen administrator benoemd!</p>\n"
+#~ "\n"
+#~ "<p>Een gebruiker zonder administratieve rechten kan geen systeemonderhoud "
+#~ "doen \n"
+#~ "U wordt ten stelligste aangeraden een administrator te benoemen.</p>\n"
+#~ "\n"
+#~ "<p>Klik \"Annuleer\" om een administrator te benoemen (aangeraden) of \"OK"
+#~ "\" \n"
+#~ "om\n"
+#~ "naar het volgende scherm te gaan.</p>\n"
+#~ "</b>\n"
 
 #~ msgid " What do you want to store in this partition? "
 #~ msgstr " Wat wilt u in deze partitie opslaan? "

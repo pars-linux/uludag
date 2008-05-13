@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-11 22:06+0300\n"
+"POT-Creation-Date: 2008-05-13 13:59+0300\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -410,7 +410,7 @@ msgstr "Senha:"
 msgid "Password (again):"
 msgstr "Senha (novamente):"
 
-#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:204
+#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:176
 msgid "Create User"
 msgstr "Criar Usuário"
 
@@ -448,7 +448,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Ler GPL"
 
-#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:153
+#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:154
 msgid "Reboot System!"
 msgstr "Reiniciar Sistema!"
 
@@ -685,11 +685,11 @@ msgstr "Não é possível abrir o arquivo de Licença!"
 msgid "Can't open Release Notes!"
 msgstr "Não é possível abrir o arquivo de Notas do Release!"
 
-#: yali4/gui/runner.py:116
+#: yali4/gui/runner.py:117
 msgid "Error!"
 msgstr ""
 
-#: yali4/gui/runner.py:148
+#: yali4/gui/runner.py:149
 #, fuzzy
 msgid "Unhandled error occured!"
 msgstr "Aconteceu um erro!"
@@ -1208,50 +1208,36 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:115
-msgid ""
-"<b>\n"
-"<p>You have not defined an administrator!</p>\n"
-"\n"
-"<p>A user without administrative rights cannot complete system maintenance \n"
-"tasks. You are strongly encouraged to define an administrator user.</p>\n"
-"\n"
-"<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK\" "
-"to \n"
-"go to next screen.</p>\n"
-"</b>\n"
-msgstr ""
-
-#: yali4/gui/ScrUsers.py:162
+#: yali4/gui/ScrUsers.py:134
 #, fuzzy
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
 msgstr "<font color=\"#FF6D19\">Preparando seu disco para instalação!</font>"
 
-#: yali4/gui/ScrUsers.py:165
+#: yali4/gui/ScrUsers.py:137
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
 msgstr "<font color=\"#FF6D19\">Senhas não conferem!</font>"
 
-#: yali4/gui/ScrUsers.py:168
+#: yali4/gui/ScrUsers.py:140
 #, fuzzy
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
 msgstr "<font color=\"#FF6D19\">Senhas não conferem!</font>"
 
-#: yali4/gui/ScrUsers.py:195
+#: yali4/gui/ScrUsers.py:167
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
 msgstr "<font color=\"#FF6D19\">Nome de usuário existe, escolha outro!</font>"
 
-#: yali4/gui/ScrUsers.py:198
+#: yali4/gui/ScrUsers.py:170
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Nome de usuário contém caracteres inválidos!</font>"
 
-#: yali4/gui/ScrUsers.py:201
+#: yali4/gui/ScrUsers.py:173
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
 msgstr "<font color=\"#FF6D19\">Nome real contém caracteres inválidos!</font>"
 
-#: yali4/gui/ScrUsers.py:258
+#: yali4/gui/ScrUsers.py:230
 #, fuzzy
 msgid "Update User"
 msgstr "Criar Usuário"

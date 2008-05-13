@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-11 23:24+0300\n"
+"POT-Creation-Date: 2008-05-13 13:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -380,7 +380,7 @@ msgstr ""
 msgid "Password (again):"
 msgstr ""
 
-#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:204
+#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:176
 msgid "Create User"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr ""
 
-#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:153
+#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:154
 msgid "Reboot System!"
 msgstr ""
 
@@ -646,11 +646,11 @@ msgstr ""
 msgid "Can't open Release Notes!"
 msgstr ""
 
-#: yali4/gui/runner.py:116
+#: yali4/gui/runner.py:117
 msgid "Error!"
 msgstr ""
 
-#: yali4/gui/runner.py:148
+#: yali4/gui/runner.py:149
 msgid "Unhandled error occured!"
 msgstr ""
 
@@ -1045,47 +1045,33 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:115
-msgid ""
-"<b>\n"
-"<p>You have not defined an administrator!</p>\n"
-"\n"
-"<p>A user without administrative rights cannot complete system maintenance \n"
-"tasks. You are strongly encouraged to define an administrator user.</p>\n"
-"\n"
-"<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK\" "
-"to \n"
-"go to next screen.</p>\n"
-"</b>\n"
-msgstr ""
-
-#: yali4/gui/ScrUsers.py:162
+#: yali4/gui/ScrUsers.py:134
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:165
+#: yali4/gui/ScrUsers.py:137
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:168
+#: yali4/gui/ScrUsers.py:140
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:195
+#: yali4/gui/ScrUsers.py:167
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:198
+#: yali4/gui/ScrUsers.py:170
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:201
+#: yali4/gui/ScrUsers.py:173
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:258
+#: yali4/gui/ScrUsers.py:230
 msgid "Update User"
 msgstr ""
 

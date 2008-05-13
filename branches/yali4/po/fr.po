@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-11 22:06+0300\n"
+"POT-Creation-Date: 2008-05-13 13:59+0300\n"
 "PO-Revision-Date: 2007-10-19 22:35+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
@@ -411,7 +411,7 @@ msgstr "Mot de passe:"
 msgid "Password (again):"
 msgstr "Mot de passe (seconde fois):"
 
-#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:204
+#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:176
 msgid "Create User"
 msgstr "Créer un utilisateur"
 
@@ -450,7 +450,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Lire la GPL"
 
-#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:153
+#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:154
 msgid "Reboot System!"
 msgstr "Redémarrer le système!"
 
@@ -687,11 +687,11 @@ msgstr "Impossible d'ouvrir le fichier de licence!"
 msgid "Can't open Release Notes!"
 msgstr "Impossible d'ouvrir le fichier de licence!"
 
-#: yali4/gui/runner.py:116
+#: yali4/gui/runner.py:117
 msgid "Error!"
 msgstr "Erreur !"
 
-#: yali4/gui/runner.py:148
+#: yali4/gui/runner.py:149
 msgid "Unhandled error occured!"
 msgstr "Une erreur non gérée s'est produite !"
 
@@ -1222,33 +1222,7 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:115
-msgid ""
-"<b>\n"
-"<p>You have not defined an administrator!</p>\n"
-"\n"
-"<p>A user without administrative rights cannot complete system maintenance \n"
-"tasks. You are strongly encouraged to define an administrator user.</p>\n"
-"\n"
-"<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK\" "
-"to \n"
-"go to next screen.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>Vous n'avez pas défini d'administrateur !</p>\n"
-"\n"
-"<p>Un utilisateur sans droits d'administration ne peut pas s'occuper des "
-"tâches de \n"
-"maintenance système. Nous vous encourageons fortement à définir un "
-"utilisateur administrateur.</p>\n"
-"\n"
-"<p>Cliquez sur \"Annuler\" pour définir un utilisateur administrateur  "
-"(recommandé) ou \"OK\" pour \n"
-"passer à l'écran suivant.</p>\n"
-"</b>\n"
-
-#: yali4/gui/ScrUsers.py:162
+#: yali4/gui/ScrUsers.py:134
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
@@ -1256,34 +1230,34 @@ msgstr ""
 "<font color=\"#FF6D19\">N'utilisez pas votre nom d'utilisateur ou nom propre "
 "comme mot de passe.</font>"
 
-#: yali4/gui/ScrUsers.py:165
+#: yali4/gui/ScrUsers.py:137
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
 
-#: yali4/gui/ScrUsers.py:168
+#: yali4/gui/ScrUsers.py:140
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
 msgstr "<font color=\"#FF6D19\">Le mot de passe est trop court !</font>"
 
-#: yali4/gui/ScrUsers.py:195
+#: yali4/gui/ScrUsers.py:167
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Cet utilisateur existe déjà, choisissez en un autre!"
 "</font>"
 
-#: yali4/gui/ScrUsers.py:198
+#: yali4/gui/ScrUsers.py:170
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Le nom de l'utilisateur contient des caractères "
 "invalides!</font>"
 
-#: yali4/gui/ScrUsers.py:201
+#: yali4/gui/ScrUsers.py:173
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Le nom réel de l'utilisateur contient des caractères "
 "invalides.!</font>"
 
-#: yali4/gui/ScrUsers.py:258
+#: yali4/gui/ScrUsers.py:230
 msgid "Update User"
 msgstr "Mettre à jour l'utilisateur"
 
@@ -1580,6 +1554,32 @@ msgstr "Swap"
 #, fuzzy
 msgid "Archive Partition"
 msgstr "Créer la partition"
+
+#~ msgid ""
+#~ "<b>\n"
+#~ "<p>You have not defined an administrator!</p>\n"
+#~ "\n"
+#~ "<p>A user without administrative rights cannot complete system "
+#~ "maintenance \n"
+#~ "tasks. You are strongly encouraged to define an administrator user.</p>\n"
+#~ "\n"
+#~ "<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK"
+#~ "\" to \n"
+#~ "go to next screen.</p>\n"
+#~ "</b>\n"
+#~ msgstr ""
+#~ "<b>\n"
+#~ "<p>Vous n'avez pas défini d'administrateur !</p>\n"
+#~ "\n"
+#~ "<p>Un utilisateur sans droits d'administration ne peut pas s'occuper des "
+#~ "tâches de \n"
+#~ "maintenance système. Nous vous encourageons fortement à définir un "
+#~ "utilisateur administrateur.</p>\n"
+#~ "\n"
+#~ "<p>Cliquez sur \"Annuler\" pour définir un utilisateur administrateur  "
+#~ "(recommandé) ou \"OK\" pour \n"
+#~ "passer à l'écran suivant.</p>\n"
+#~ "</b>\n"
 
 #~ msgid " What do you want to store in this partition? "
 #~ msgstr "Que voulez vous stocker dans cette partition?"
