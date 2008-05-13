@@ -69,6 +69,16 @@ class Widget(PackageWidget, ScreenWidget):
 
         self.repodb = pisi.db.repodb.RepoDB()
 
+        """
+        oldContribUrl = "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2"
+
+        if self.repodb.has_repo_url(oldContribUrl):
+            for r in self.repodb.list_repos():
+                if self.repodb.get_repo_url(r) == oldContribUrl:
+                    self.removeRepo(r)
+                    self.addRepo(r, self.repoAddress)
+        """
+
         n = 1
 
         if self.repodb.has_repo_url(self.repoAddress):
@@ -86,7 +96,7 @@ class Widget(PackageWidget, ScreenWidget):
 
     def slotContribRepo(self):
         if self.checkBoxContrib.isChecked():
-            if self.addRepo() == False:
+            if self.addRepo(self.repoName, self.repoAddress) == False:
                 self.flagRepo = 1
                 self.checkBoxContrib.setChecked(0)
 
@@ -94,11 +104,11 @@ class Widget(PackageWidget, ScreenWidget):
                 QMessageBox.warning(self, i18n("Authentication Error!"), message, QMessageBox.Ok, QMessageBox.NoButton)
         else:
             if self.flagRepo != 1:
-                self.removeRepo()
+                self.removeRepo(self.repoName)
 
-    def addRepo(self):
+    def addRepo(self, r_name, r_address):
         try:
-            contribrepo.addRepo(self.repoName, self.repoAddress)
+            contribrepo.addRepo(r_name, r_address)
             return True
         except Exception, e:
             if e.get_dbus_name().endswith('policy.no'):
@@ -114,16 +124,16 @@ class Widget(PackageWidget, ScreenWidget):
                 return False
             try:
                 if authResult:
-                    contribrepo.addRepo(self.repoName, self.repoAddress)
+                    contribrepo.addRepo(r_name, r_address)
                     return True
                 else:
                     return False
             except:
                 return False
 
-    def removeRepo(self):
+    def removeRepo(self, r_name):
         try:
-            contribrepo.removeRepo(self.repoName)
+            contribrepo.removeRepo(r_name)
             return True
         except Exception, e:
             if e.get_dbus_name().endswith('policy.no'):
@@ -139,7 +149,7 @@ class Widget(PackageWidget, ScreenWidget):
                 return False
             try:
                 if authResult:
-                    contribrepo.removeRepo(self.repoName)
+                    contribrepo.removeRepo(r_name)
                     return True
                 else:
                     return False
