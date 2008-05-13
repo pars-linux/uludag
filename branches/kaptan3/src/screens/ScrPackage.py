@@ -17,6 +17,7 @@ import kdedesigner
 
 import contribrepo
 import pisi
+import logging
 
 from screens.Screen import ScreenWidget
 from screens.packagedlg import PackageWidget
@@ -93,23 +94,21 @@ class Widget(PackageWidget, ScreenWidget):
                 QMessageBox.warning(self, i18n("Authentication Error!"), message, QMessageBox.Ok, QMessageBox.NoButton)
         else:
             if self.flagRepo != 1:
-                print self.removeRepo()
+                self.removeRepo()
 
     def addRepo(self):
         try:
             contribrepo.addRepo(self.repoName, self.repoAddress)
             return True
         except Exception, e:
-            print e
             if e.get_dbus_name().endswith('policy.no'):
-                print 'Access denied'
+                logging.debug(str(e) + "Access denied")
                 return False
             elif e.get_dbus_name().endswith('policy.auth_admin'):
-                print 'Access denied, root password required'
+                logging.debug(str(e) + "Access denied, root password required")
                 authResult = contribrepo.auth("addrepository")
-
             elif e.get_dbus_name().endswith('policy.auth_user'):
-                print 'Access denied, user password required'
+                logging.debug(str(e) + "Access denied, user password required")
                 authResult = contribrepo.auth("addrepository")
             else:
                 return False
@@ -127,16 +126,14 @@ class Widget(PackageWidget, ScreenWidget):
             contribrepo.removeRepo(self.repoName)
             return True
         except Exception, e:
-            print e
             if e.get_dbus_name().endswith('policy.no'):
-                print 'Access denied'
+                logging.debug(str(e) + "Access denied")
                 return False
             elif e.get_dbus_name().endswith('policy.auth_admin'):
-                print 'Access denied, root password required'
+                logging.debug(str(e) + "Access denied, root password required")
                 authResult = contribrepo.auth("removerepository")
-
             elif e.get_dbus_name().endswith('policy.auth_user'):
-                print 'Access denied, user password required'
+                logging.debug(str(e) + "Access denied, user password required")
                 authResult = contribrepo.auth("removerepository")
             else:
                 return False
