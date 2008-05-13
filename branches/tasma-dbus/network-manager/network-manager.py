@@ -17,6 +17,7 @@ from kdeui import *
 
 from icons import icons, getIconSet
 
+import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
 
 def I18N_NOOP(x):
@@ -69,7 +70,8 @@ def create_network_manager(parent, name):
     global kapp
     
     kapp = KApplication.kApplication()
-    DBusQtMainLoop(set_as_default=True)
+    if not dbus.get_default_main_loop():
+        DBusQtMainLoop(set_as_default=True)
     return Module(parent, name)
 
 # Standalone
