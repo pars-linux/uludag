@@ -41,7 +41,7 @@ slideDesc = [
 """)},
 {"k3b":_("""Copying CDs (or DVDs), creating data or audio CDs, creating ISO images and burning CD/DVD images to discs are just a few of the things you can do with K3b.
 """)},
-{"support":_("""You can find HOW-TOs, tutorials and package introductions in our community portal www.ozgurlukicin.com. If you happen to have any problems with Pardus 2008, you can get support using the forum pages and the #pardus room in IRC Freenode server (and you can use Konversation for that).
+{"destek":_("""You can find HOW-TOs, tutorials and package introductions in our community portal www.ozgurlukicin.com. If you happen to have any problems with Pardus 2008, you can get support using the forum pages and the #pardus room in IRC Freenode server (and you can use Konversation for that).
 """)},
 ]
 

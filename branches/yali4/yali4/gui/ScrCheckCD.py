@@ -42,6 +42,8 @@ You can check if the packages included in the installation CD are saved correctl
 
         self.connect(self.ui.checkButton, SIGNAL("clicked()"),
                      self.slotCheckCD)
+        if ctx.consts.lang == "tr":
+            self.ui.progressBar.setFormat("%%p")
 
     def slotCheckCD(self):
         self.ui.checkButton.setEnabled(False)

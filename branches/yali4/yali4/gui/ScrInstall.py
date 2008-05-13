@@ -87,6 +87,9 @@ Have fun!
         self.timer = QTimer(self)
         QObject.connect(self.timer, SIGNAL("timeout()"),self.slotChangePix)
 
+        if ctx.consts.lang == "tr":
+            self.ui.progress.setFormat("%%p")
+
         self.iter_pics = iter_slide_pics()
 
         # show first pic
