@@ -501,6 +501,8 @@ def create_firewall_config(parent,name):
     global kapp
 
     kapp = KApplication.kApplication()
+    if not dbus.get_default_main_loop():
+        dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
     return MainApplication(parent, name)
 
 if standalone:
