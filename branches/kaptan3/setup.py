@@ -1,3 +1,5 @@
+#ifndef ../SETUP.PY
+#define ../SETUP.PY
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
@@ -16,7 +18,10 @@ import shutil
 from distutils.core import Extension
 import kdedistutils
 
-version = '3.0'
+# get version number
+sys.path.append("src")
+import screens
+version = screens.version
 
 distfiles = """
     README
@@ -77,3 +82,4 @@ kdedistutils.setup(
     executable_links = [('kaptan', 'kaptan.py')],
     i18n = ('po', ['src', 'src/screens']),
 )
+#endif // ../SETUP.PY

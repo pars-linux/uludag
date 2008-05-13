@@ -20,6 +20,7 @@ import sys
 import logging
 import os
 import ConfigParser
+import screens
 
 from screens.kaptanMain import kaptanUi
 
@@ -49,7 +50,7 @@ screenId = {}
 
 mod_app = "kaptan"
 mod_name = "Kaptan"
-mod_version = "3.0"
+mod_version = screens.version
 
 class Kaptan(kaptanUi):
 
