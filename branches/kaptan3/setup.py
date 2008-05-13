@@ -1,5 +1,3 @@
-#ifndef ../SETUP.PY
-#define ../SETUP.PY
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
@@ -82,4 +80,3 @@ kdedistutils.setup(
     executable_links = [('kaptan', 'kaptan.py')],
     i18n = ('po', ['src', 'src/screens']),
 )
-#endif // ../SETUP.PY
