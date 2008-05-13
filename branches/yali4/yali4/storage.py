@@ -48,6 +48,8 @@ def init_devices(force = False):
     if devices and not force:
         return True
 
+    clear_devices()
+
     devs = detect_all()
     for dev_path in devs:
         d = Device(dev_path)

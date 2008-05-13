@@ -95,6 +95,7 @@ class DiskList(QtGui.QWidget):
         self.connect(self.partEdit.ui.resizePartition,QtCore.SIGNAL("clicked()"),self.slotResizePart)
         self.connect(self.partEdit.ui.applyTheChanges,QtCore.SIGNAL("clicked()"),self.slotApplyPartitionChanges)
         self.connect(self.partEdit.ui.resetAllChanges,QtCore.SIGNAL("clicked()"),self.resetChanges)
+        self.connect(self.partEdit.ui.refreshDisks,QtCore.SIGNAL("clicked()"),self.reinitDevices)
         self.connect(self.partEdit, SIGNAL("updateTheList"),self.update)
 
         self.initDevices()
@@ -111,6 +112,10 @@ class DiskList(QtGui.QWidget):
         cur = self.tabWidget.currentWidget()
         if cur:
             cur.updatePartEdit()
+
+    def reinitDevices(self):
+        self.initDevices(force=True)
+        self.update()
 
     def addDisk(self,dw):
         ni = self.tabWidget.addTab(dw,dw.name)
@@ -182,10 +187,10 @@ class DiskList(QtGui.QWidget):
         if self.partEdit.currentPart.isFreespace():
             forceToFormat()
 
-    def initDevices(self):
+    def initDevices(self, force=False):
         self.devs = []
         # initialize all storage devices
-        if not yali4.storage.init_devices():
+        if not yali4.storage.init_devices(force):
             raise GUIException, _("Can't find a storage device!")
 
         self.devs = [i for i in yali4.storage.devices]
