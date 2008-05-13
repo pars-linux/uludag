@@ -70,15 +70,18 @@ class Widget(PackageWidget, ScreenWidget):
 
         n = 1
 
-        for repo in self.repodb.list_repos():
-            if self.repoAddress == self.repodb.get_repo_url(repo):
-                self.groupBoxRepo.hide()
-            else:
+        if self.repodb.has_repo_url(self.repoAddress):
+            self.groupBoxRepo.hide()
+        else:
+            if self.repodb.has_repo(self.repoName):
+                tmpRepoName = self.repoName
                 for r in self.repodb.list_repos():
-                    if r == self.repoName + str(n):
-                        n = n + 1
+                    if self.repodb.has_repo(tmpRepoName):
+                        tmpRepoName = self.repoName + str(n)
+                        n = n +1
                     else:
-                        self.repoName = self.repoName + str(n)
+                        break
+                self.repoName = tmpRepoName
 
     def slotContribRepo(self):
         if self.checkBoxContrib.isChecked():
