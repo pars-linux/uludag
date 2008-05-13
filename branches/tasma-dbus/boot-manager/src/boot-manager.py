@@ -19,6 +19,7 @@ import mainview
 from utility import *
 
 import dbus.mainloop.qt3
+import dbus
 
 mod_name = 'Boot Manager'
 mod_app = 'boot-manager'
@@ -66,7 +67,8 @@ def create_boot_manager(parent, name):
     global kapp
 
     kapp = KApplication.kApplication()
-    dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
+    if not dbus.get_default_main_loop():
+        dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
     return Module(parent, name)
 
 
