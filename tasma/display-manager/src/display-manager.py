@@ -16,6 +16,7 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
+import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
 from pardus.deviceutils import idsQuery
 
@@ -334,7 +335,8 @@ def create_display_manager(parent, name):
     global kapp
 
     kapp = KApplication.kApplication()
-    DBusQtMainLoop(set_as_default=True)
+    if not dbus.get_default_main_loop():
+        DBusQtMainLoop(set_as_default=True)
     return Module(parent, name)
 
 
