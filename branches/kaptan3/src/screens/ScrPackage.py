@@ -42,7 +42,7 @@ class Widget(PackageWidget, ScreenWidget):
 
         # set repo name and address
         self.repoName = "contrib"
-        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2"
+        self.repoAddress = "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
 
         # set texts
         self.setCaption(i18n("Package"))
