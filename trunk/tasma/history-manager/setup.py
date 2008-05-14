@@ -64,6 +64,7 @@ kdedistutils.setup(
     license = "GPL",
     application_data = ['src/historygui.ui', 'src/history-manager.py', 'src/historygui.py', 'src/ComarIface.py',
                         'src/Commander.py', 'src/handler.py', 'src/history_gui.py',
+                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/History_Manager.png']),
                         'help'],
     executable_links = [('history-manager','history-manager.py')],
     i18n = ('po',['src']),
