@@ -27,8 +27,6 @@ class widgetMain(formMain):
     def __init__(self, parent):
         formMain.__init__(self, parent)
 
-        initDb()
-
         # readOnly means you can't
         self.readOnly = False
 
@@ -38,24 +36,25 @@ class widgetMain(formMain):
         self.previous = None
 
         # by default shows only snapshot points
-        self.config = self.parent().config
-        if self.config.readEntry("snapshots_only") == "off":
-            self.snapshotsCheckBox.setChecked(False)
+        #self.config = self.parent().config
+        #if self.config.readEntry("snapshots_only") == "off":
+        #    self.snapshotsCheckBox.setChecked(False)
 
-        # html view
         self.infoTextEdit.setTextFormat(Qt.RichText)
         self.snapshotsListView.clear()
         self.infoTextEdit.clear()
         self.snapshotsListView.setColumnWidth(1, 170)
-        # sort by date
         self.snapshotsListView.setSortColumn(1)
         self.snapshotsListView.setSortOrder(Qt.Descending)
 
         self.tabWidget.setTabLabel(self.tabWidget.page(0), i18n("History"))
-        self.tabWidget.setTabLabel(self.tabWidget.page(1), i18n("More Info"))
+        self.tabWidget.setTabLabel(self.tabWidget.page(1), i18n("Details"))
 
-        # context menu, LATER
+        # context menu
         self.popupmenu = QPopupMenu()
+        self.popupmenu.insertItem(i18n("Delete Snapshot"), self.delete_snapshot)
+        self.popupmenu.insertSeparator()
+        self.popupmenu.insertItem(i18n("Restore to This Point"), self.take_back)
 
         # progress bar
         self.progress = None
@@ -76,7 +75,22 @@ class widgetMain(formMain):
         self.connect(self.snapshotPushButton, SIGNAL("clicked()"), self.take_snapshot)
         self.connect(self.restorePushButton, SIGNAL("clicked()"), self.take_back)
         self.connect(self.deletePushButton, SIGNAL("clicked()"), self.delete_snapshot)
-
+        self.connect(self.snapshotsListView, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.execPopup)
+        
+    
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_F5:
+            self.updateGui()
+        else:
+            event.ignore()
+        
+    def execPopup(self, item, point, col):
+        if item == None:
+            return
+        self.snapshotsListView.setSelected(item, True)
+        self.selected = item
+        self.popupmenu.popup(point)
+        
     def take_snapshot(self):
         message = i18n("This will take a New Snapshot")
         if not self.command.inProgress():
@@ -85,16 +99,16 @@ class widgetMain(formMain):
                 self.command.takeSnapshot()
 
     def take_back(self, operation=None):
-        message = i18n("This will take your system back at this point !")
+        if self.selected == None:
+            return
+        self.__take_back(self.selected.getOpNo())
+
+    def __take_back(self, operation):
+        message = i18n("This will take your system back at this point ! \n Are you sure ?")
         if not self.command.inProgress():
             if KMessageBox.Yes == KMessageBox.warningYesNo(self, message, i18n("Warning"), \
                     KGuiItem(i18n("Continue"), "ok"), KGuiItem(i18n("Cancel"), "no"),) and self.selected != None:
-                if operation == None:
-                    print "take back to op :" , self.selected.getOpNo()
-                    self.command.takeBack(self.selected.getOpNo())
-                else:
-                    print "else, take back to op : ", operation
-                    self.command.takeBack(operation)
+                self.command.takeBack(operation)
 
     def progressBar(self, new=False, header="", message="", timer=0):
         import time
@@ -162,6 +176,24 @@ class widgetMain(formMain):
     def pisiNotify(self, operation, args):
         if operation in ["started"]:
             print "operation started"
+        elif operation in ["order"]:
+            print "ordering packages"
+        elif operation in ["removing"]:
+            for i in args:
+                print "Removing %s" % i
+        elif operation in ["removed"]:
+            print "package removed"
+        elif operation in ["installing"]:
+            for i in args:
+                print "installing package %s" % i
+        elif operation in ["extracting"]:
+            for i in args:
+                print "extracting package %s" % i
+        elif operation in ["configuring"]:
+            for i in args:
+                print "configuring %s" % i
+        elif operation in ["installed"]:
+            print "package installed"
         elif operation in ["takingSnapshot"]:
             print "taking snapshot"
         elif operation in ["takingBack"]:
@@ -179,10 +211,8 @@ class widgetMain(formMain):
             self.snapshotPushButton.setEnabled(True)
             self.deletePushButton.setEnabled(True)
             self.restorePushButton.setEnabled(True)
-        if self.previous == None:
-            self.previous = self.selected
-        else:
-            self.previous = self.selected
+        self.previous = self.selected or item
+        print "item changed to : ", item.getOpNo()
         self.selected = item
 
     def tabChanged(self, parent):

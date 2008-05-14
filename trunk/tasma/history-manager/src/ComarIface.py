@@ -77,7 +77,7 @@ class ComarIface:
 
     def takeBack(self, operation):
         self.com_lock.lock()
-        self.callMethod("takeBack", "tr.org.pardus.comar.system.manager.takeback", None, True, operation)
+        self.callMethod("takeBack", "tr.org.pardus.comar.system.manager.takeback", None, True, int(operation))
 
     def cancel(self):
         obj = self.sysBus.get_object("tr.org.pardus.comar", "/", introspect=False)
