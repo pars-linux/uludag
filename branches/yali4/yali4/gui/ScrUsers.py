@@ -82,6 +82,8 @@ Click Next button to proceed.
                      self.slotTextChanged)
         self.connect(self.ui.username, SIGNAL("textChanged(const QString &)"),
                      self.slotTextChanged)
+        self.connect(self.ui.realname, SIGNAL("textChanged(const QString &)"),
+                     self.slotTextChanged)
         self.connect(self.ui.createButton, SIGNAL("clicked()"),
                      self.slotCreateUser)
         self.connect(self.ui.deleteButton, SIGNAL("clicked()"),
