@@ -117,6 +117,28 @@
                         <property name="name">
                             <cstring>snapshotsListView</cstring>
                         </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>150</height>
+                            </size>
+                        </property>
+                        <property name="allColumnsShowFocus">
+                            <bool>true</bool>
+                        </property>
+                        <property name="showSortIndicator">
+                            <bool>true</bool>
+                        </property>
+                        <property name="fullWidth">
+                            <bool>true</bool>
+                        </property>
+                        <property name="alternateBackground">
+                            <color>
+                                <red>238</red>
+                                <green>246</green>
+                                <blue>255</blue>
+                            </color>
+                        </property>
                     </widget>
                 </grid>
             </widget>
