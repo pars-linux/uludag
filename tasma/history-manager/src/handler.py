@@ -60,7 +60,6 @@ class CallHandler:
     def __getIface(self):
         """ return dbus.Interface object """
         try:
-            print "in getIface"
             # proxy object
             proxy = self.sysBus.get_object(self.dest, self.path, introspect=False)
             return dbus.Interface(proxy, dbus_interface=self.iface)
@@ -69,7 +68,6 @@ class CallHandler:
                 func(e)
 
     def __handleReply(self, *args):
-        print "handling reply"
         for func in self.handleDone:
             func(*args)
 
@@ -77,6 +75,7 @@ class CallHandler:
         print "Handle Error:", exception._dbus_error_name
         name = exception._dbus_error_name
         try:
+            # 25 sn şeysi
             if(name.count("DBus.Error.NoReply") != 0):
                 return
 
@@ -94,7 +93,6 @@ class CallHandler:
     def __getAuthIface(self):
         """ return authentication interface from policykit """
         try:
-            print "trying to get AuthIface policykit"
             proxy = self.sesBus.get_object("org.freedesktop.PolicyKit.AuthenticationAgent", "/")
             return dbus.Interface(proxy, "org.freedesktop.PolicyKit.AuthenticationAgent")
         except dbus.DBusException, e:
@@ -103,11 +101,8 @@ class CallHandler:
                 func(e)
 
     def __obtainAuth(self):
-        print " in __obtainAuth "
-
         iface = self.__getAuthIface()
         if iface.ObtainAuthorization(self.action, 0, os.getpid()):
-            print "got auth, calling self.__call"
             self.__call()
         else:
             for func in self.handleCancel:

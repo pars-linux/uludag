@@ -20,9 +20,14 @@ import pisi
 
 historydb = pisi.db.historydb.HistoryDB()
 
+def initDb():
+    historydb.init()
+
 class widgetMain(formMain):
     def __init__(self, parent):
         formMain.__init__(self, parent)
+
+        initDb()
 
         # readOnly means you can't
         self.readOnly = False
@@ -73,7 +78,7 @@ class widgetMain(formMain):
         self.connect(self.deletePushButton, SIGNAL("clicked()"), self.delete_snapshot)
 
     def take_snapshot(self):
-        message = i18n("This will take a Snapshot of your entire system")
+        message = i18n("This will take a New Snapshot")
         if not self.command.inProgress():
             if KMessageBox.Yes == KMessageBox.warningYesNo(self, message, i18n("Warning"), \
                     KGuiItem(i18n("Continue"), "ok"), KGuiItem(i18n("Cancel"), "no"),):
@@ -85,8 +90,10 @@ class widgetMain(formMain):
             if KMessageBox.Yes == KMessageBox.warningYesNo(self, message, i18n("Warning"), \
                     KGuiItem(i18n("Continue"), "ok"), KGuiItem(i18n("Cancel"), "no"),) and self.selected != None:
                 if operation == None:
-                    self.command.takeBack(self.selected.op_no)
+                    print "take back to op :" , self.selected.getOpNo()
+                    self.command.takeBack(self.selected.getOpNo())
                 else:
+                    print "else, take back to op : ", operation
                     self.command.takeBack(operation)
 
     def progressBar(self, new=False, header="", message="", timer=0):
@@ -118,7 +125,8 @@ class widgetMain(formMain):
         KMessageBox.information(None, i18n("A New Snapshot has been taken."))
 
     def finished(self, data):
-        self.progressBar()
+        print "finished"
+        self.updateGui()
 
     def displayProgress(self, data):
         print "progress yay"
@@ -139,6 +147,7 @@ class widgetMain(formMain):
     def updateGui(self):
         """ Updates ListView, buttons etc. """
         self.snapshotsListView.clear()
+        initDb()
         for operation in historydb.get_last():
             self.snapshotsListView.insertItem(widgetItem(self.snapshotsListView, operation))
         if self.snapshotsCheckBox.isChecked():
@@ -155,8 +164,6 @@ class widgetMain(formMain):
             print "operation started"
         elif operation in ["takingSnapshot"]:
             print "taking snapshot"
-            self.progressBar()
-            self.progressBar(True, "Taking Snapshot", "Operation Started")
         elif operation in ["takingBack"]:
             print "taking back"
         else:

@@ -1,0 +1,27 @@
+--- /var/db/comar/code/System_Manager_pisi.py.orig	2008-05-14 17:31:18.000000000 +0300
++++ /var/db/comar/code/System_Manager_pisi.py	2008-05-14 15:43:36.000000000 +0300
+@@ -226,6 +226,24 @@
+         fail(unicode(e))
+     finished("System.Manager.clearCache")
+ 
++def takeSnapshot():
++    _init_pisi()
++    try:
++        notify("System.Manager", "status", "takingSnapshot")
++        pisi.api.snapshot()
++    except Exception, e:
++        fail(unicode(e))
++    finished("System.Manager.takeSnapshot")
++
++def takeBack(operation):
++    _init_pisi()
++    try:
++        notify("System.Manager", "status", "takingBack")
++        pisi.api.takeback(operation)
++    except Exception, e:
++        fail(unicode(e))
++    finished("System.Manager.takeBack")
++
+ def __checkCacheLimits():
+     cached_pkgs_dir = "/var/cache/pisi/packages"
+     config = pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")

@@ -1,0 +1,31 @@
+--- /usr/share/PolicyKit/policy/tr.org.pardus.comar.system.manager.policy.orig	2008-05-14 17:37:07.000000000 +0300
++++ /usr/share/PolicyKit/policy/tr.org.pardus.comar.system.manager.policy	2008-05-14 14:35:51.000000000 +0300
+@@ -123,4 +123,28 @@
+         </defaults>
+     </action>
+ 
++    <action id="tr.org.pardus.comar.system.manager.takesnapshot">
++        <description>Take a Snapshot of System</description>
++        <description xml:lang="tr">Sistem Görüntüsünü al</description>
++        <message>System policy prevents taking snapshot</message>
++        <message xml:lang="tr">Sistem politikası sistem görüntüsü almayı engelliyor</message>
++        <defaults>
++            <allow_any>auth_admin_keep_always</allow_any>
++            <allow_active>auth_admin_keep_always</allow_active>
++            <allow_inactive>auth_admin_keep_always</allow_inactive>
++        </defaults>
++    </action>
++
++    <action id="tr.org.pardus.comar.system.manager.takeback">
++        <description>Take system back to a Snapshot</description>
++        <description xml:lang="tr">Sistemi eski bir görüntüye götür</description>
++        <message>System policy prevents system snapshot operation</message>
++        <message xml:lang="tr">Sistem politikası sistem görüntüsüne gitmeyi engelliyor</message>
++        <defaults>
++            <allow_any>auth_admin_keep_always</allow_any>
++            <allow_active>auth_admin_keep_always</allow_active>
++            <allow_inactive>auth_admin_keep_always</allow_inactive>
++        </defaults>
++    </action>
++
+ </policyconfig>
