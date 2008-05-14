@@ -252,7 +252,8 @@ Click Next button to proceed.
         self.ui.createButton.setEnabled(False)
 
     def slotReturnPressed(self):
-        self.slotCreateUser()
+        if self.ui.createButton.isEnabled():
+            self.slotCreateUser()
 
 class UserItem(QtGui.QListWidgetItem):
 
