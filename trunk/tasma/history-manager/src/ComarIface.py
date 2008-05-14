@@ -25,13 +25,12 @@ class ComarIface:
             self.sysBus = dbus.SystemBus()
             self.sesBus = dbus.SessionBus()
         except dbus.DBusException:
-            print "cant connect to dbus"
+            print "Cant connect to dbus"
             KMessageBox.error(None, i18n("Unable to connect to DBus."), i18n("DBus Error"))
             return False
         return True
 
     def setupSignals(self):
-        print "setting up signals in comariface"
         self.sysBus.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Manager", member_keyword="signal", path_keyword="path")
 
     def handleSignals(self, *args, **kwargs):
@@ -78,7 +77,7 @@ class ComarIface:
 
     def takeBack(self, operation):
         self.com_lock.lock()
-        self.callMethod("takeBack", "tr.org.pardus.comar.system.manager.takeback", self.handler, True, operation)
+        self.callMethod("takeBack", "tr.org.pardus.comar.system.manager.takeback", None, True, operation)
 
     def cancel(self):
         obj = self.sysBus.get_object("tr.org.pardus.comar", "/", introspect=False)
