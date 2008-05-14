@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=History Manager
+Name[tr]=Geçmiş Yöneticisi
+GenericName=History Management Interface
+GenericName[tr]=Geçmiş Yönetim Arayüzü
+Icon=history_manager
+X-KDE-ModuleType=Library
+X-KDE-Library=history-manager
+X-KDE-FactoryName=history_manager
+X-KDE-RootOnly=true
+Type=Application
+Exec=history_manager
+Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
+Comment=History Manager
+Comment[tr]=Geçmiş Yönetim Arayüzü
