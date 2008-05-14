@@ -10,58 +10,11 @@
 
 import sys
 
-from qt import *
-from kdecore import *
-from kdeui import *
-
+from utility import *
 from historygui import formMain
 from history_gui import *
 
 import dbus
-
-mod_name = 'History Manager'
-mod_app = 'history-manager'
-mod_version = '0.1'
-
-def AboutData():
-    global mod_app
-    global mod_name
-    global mod_version
-    about_data = KAboutData(mod_app,
-                            mod_name,
-                            mod_version,
-                            'History Manager Interface',
-                            KAboutData.License_GPL,
-                            '(C) 2008 UEKAE/TÜBİTAK',
-                            None, None,
-                            'bugs@pardus.org.tr')
-    about_data.addAuthor('İşbaran Akçayır', None, 'isbaran@gmail.com')
-
-    return about_data
-
-def loadIcon(name, group=KIcon.Desktop, size=16):
-    return KGlobal.iconLoader().loadIcon(name, group, size)
-
-def loadIconSet(name, group=KIcon.Desktop, size=16):
-    return KGlobal.iconLoader().loadIconSet(name, group, size)
-
-def runQuiet(cmd):
-    f = file('/dev/null', 'w')
-    return subprocess.call(cmd, stdout=f, stderr=f)
-
-class HelpDialog(QDialog):
-    def __init__(self, parent=None):
-        QDialog.__init__(self, parent)
-        self.setCaption(i18n('History Manager'))
-        self.layout = QGridLayout(self)
-        self.htmlPart = KHTMLPart(self)
-        self.resize(500, 300)
-        self.layout.addWidget(self.htmlPart.view(), 1, 1)
-        self.lang_code = os.environ['LANG'][:5].split('_')[0].lower()
-        if os.path.isdir(locate('data', 'history-manager/help/%s/'%self.lang_code)):
-            self.htmlPart.openURL(KURL(locate('data', 'history-manager/help/%s/main_help.html'%self.lang_code)))
-        else:
-            self.htmlPart.openURL(KURL(locate('data', 'history-manager/help/en/main_help.html')))
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)

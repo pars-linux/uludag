@@ -2,14 +2,13 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Çrş May 14 22:22:21 2008
+# Created: Prş May 15 01:47:15 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
 
 
 from qt import *
-from kdecore import *
 from kdeui import *
 
 class formMain(QWidget):
@@ -57,6 +56,12 @@ class formMain(QWidget):
         self.infoTextEdit = QTextEdit(self.tab_2,"infoTextEdit")
 
         tabLayout_2.addWidget(self.infoTextEdit,0,0)
+
+        self.infoProgressBar = QProgressBar(self.tab_2,"infoProgressBar")
+        self.infoProgressBar.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.infoProgressBar.sizePolicy().hasHeightForWidth()))
+        self.infoProgressBar.setTotalSteps(0)
+
+        tabLayout_2.addWidget(self.infoProgressBar,1,0)
         self.tabWidget.insertTab(self.tab_2,QString.fromLatin1(""))
 
         formMainLayout.addWidget(self.tabWidget,1,0)
