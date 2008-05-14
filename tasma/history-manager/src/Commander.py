@@ -28,9 +28,8 @@ class Commander(QObject):
         args = data[1:] if len(data) > 1 else None
 
         if signal == "finished":
-            command = data[0]
             self.comar.com_lock.unlock()
-            self.parent.finished(command)
+            self.parent.finished(data[0])
         elif signal == "progress":
             self.parent.displayProgress(data)
         elif signal == "error":
@@ -38,12 +37,13 @@ class Commander(QObject):
             print "Error: ", str(data)
             self.parent.showErrorMessage(str(args))
         elif signal == "status":
-            operation = data[0]
-            self.parent.pisiNotify(operation, args)
+            self.parent.pisiNotify(data[0], args)
         elif signal == "warning":
             self.comar.com_lock.unlock()
             self.parent.showWarningMessage(str(args))
             print "Warning: ", str(data)
+        elif signal == "PolicyKit":
+            self.parent.pisiNotify(data[0], args)
         else:
             print "Got notification : %s with data : %s" % (signal, data)
 

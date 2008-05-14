@@ -14,6 +14,7 @@ from kdecore import *
 from kdeui import *
 
 from historygui import formMain
+from utility import *
 
 import Commander
 import pisi
@@ -35,11 +36,8 @@ class widgetMain(formMain):
         self.selected = None
         self.previous = None
 
-        # by default shows only snapshot points
-        #self.config = self.parent().config
-        #if self.config.readEntry("snapshots_only") == "off":
-        #    self.snapshotsCheckBox.setChecked(False)
-
+        self.infoProgressBar.hide()
+        self.infoProgressBar.setTotalSteps(0)
         self.infoTextEdit.setTextFormat(Qt.RichText)
         self.snapshotsListView.clear()
         self.infoTextEdit.clear()
@@ -49,15 +47,16 @@ class widgetMain(formMain):
 
         self.tabWidget.setTabLabel(self.tabWidget.page(0), i18n("History"))
         self.tabWidget.setTabLabel(self.tabWidget.page(1), i18n("Details"))
+        
+        self.restorePushButton.setIconSet(loadIconSet("reload", KIcon.Small))
+        self.snapshotPushButton.setIconSet(loadIconSet("add_user", KIcon.Small))
+        self.deletePushButton.setIconSet(loadIconSet("delete_user", KIcon.Small))
 
         # context menu
         self.popupmenu = QPopupMenu()
-        self.popupmenu.insertItem(i18n("Delete Snapshot"), self.delete_snapshot)
+        self.popupmenu.insertItem(loadIconSet("delete_user", KIcon.Small), i18n("Delete Snapshot"), self.delete_snapshot)
         self.popupmenu.insertSeparator()
-        self.popupmenu.insertItem(i18n("Restore to This Point"), self.take_back)
-
-        # progress bar
-        self.progress = None
+        self.popupmenu.insertItem(loadIconSet("reload", KIcon.Small), i18n("Restore to This Point"), self.take_back)
 
         # create list items
         for operation in historydb.get_last():
@@ -77,7 +76,6 @@ class widgetMain(formMain):
         self.connect(self.deletePushButton, SIGNAL("clicked()"), self.delete_snapshot)
         self.connect(self.snapshotsListView, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.execPopup)
         
-    
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_F5:
             self.updateGui()
@@ -90,12 +88,18 @@ class widgetMain(formMain):
         self.snapshotsListView.setSelected(item, True)
         self.selected = item
         self.popupmenu.popup(point)
-        
+    
     def take_snapshot(self):
+        self.enableButtons(False)
+        self.__take_snapshot()
+    
+    def __take_snapshot(self):
         message = i18n("This will take a New Snapshot")
         if not self.command.inProgress():
             if KMessageBox.Yes == KMessageBox.warningYesNo(self, message, i18n("Warning"), \
                     KGuiItem(i18n("Continue"), "ok"), KGuiItem(i18n("Cancel"), "no"),):
+                qApp.processEvents()
+                # show information here
                 self.command.takeSnapshot()
 
     def take_back(self, operation=None):
@@ -108,39 +112,31 @@ class widgetMain(formMain):
         if not self.command.inProgress():
             if KMessageBox.Yes == KMessageBox.warningYesNo(self, message, i18n("Warning"), \
                     KGuiItem(i18n("Continue"), "ok"), KGuiItem(i18n("Cancel"), "no"),) and self.selected != None:
+                qApp.processEvents()
                 self.command.takeBack(operation)
-
-    def progressBar(self, new=False, header="", message="", timer=0):
-        import time
-        if new:
-            self.progress = KProgressDialog(None, "", header, message, True)
-            self.progress.progressBar().setTotalSteps(0)
-            self.progress.progressBar().setTextEnabled(False)
-            self.progress.show()
-            start = time.time()
-            while time.time() < start + 120:
-                if self.progress.wasCancelled():
-                    break
-                percent = (time.time() - start) * 10
-                self.progress.progressBar().setProgress(percent)
-                qApp.processEvents(100)
-            self.progress.close()
-            self.progress = None
-            KMessageBox.sorry(None, i18n("Failed : %s " % header))
-        else:
-            if self.progress:
-                self.progress.close()
-                self.progress = None
 
     def delete_snapshot(self):
         pass
+    
+    def enableButtons(self, true):
+        self.restorePushButton.setEnabled(true)
+        self.snapshotPushButton.setEnabled(true)
+        self.deletePushButton.setEnabled(true)
 
     def done(self):
-        KMessageBox.information(None, i18n("A New Snapshot has been taken."))
+        QMessageBox.information(self, i18n("History Manager"), i18n("A New Snapshot has been taken."))
 
     def finished(self, data):
-        print "finished"
+        if data == "System.Manager.takeBack":
+            message = i18n("Take Back operation completed")
+        elif data == "System.Manager.takeSnapshot":
+            message = i18n("New Snapshot Taken")
+        #QMessageBox.information(self, i18n("History Manager"), message)
+        self.infoProgressBar.hide()
+        #qApp.processEvents(100)
+        self.infoTextEdit.append(i18n("Updating Gui"))
         self.updateGui()
+        self.infoTextEdit.append(i18n("Finished"))
 
     def displayProgress(self, data):
         print "progress yay"
@@ -153,9 +149,11 @@ class widgetMain(formMain):
         self.updateGui()
 
     def showErrorMessage(self, message):
+        print "show error kmessagebox error"
         KMessageBox.error(None, message)
 
     def showWarningMessage(self, message):
+        print "show warning kmessagebox warning"
         KMessageBox.warning(None, message)
 
     def updateGui(self):
@@ -169,23 +167,36 @@ class widgetMain(formMain):
         if self.readOnly:
             self.snapshotPushButton.setEnabled(False)
             self.restorePushButton.setEnabled(False)
+            self.deletePushButton.setEnabled(False)
         else:
             self.snapshotPushButton.setEnabled(True)
             self.restorePushButton.setEnabled(False)
+            self.deletePushButton.setEnabled(False)
 
     def pisiNotify(self, operation, args):
-        if operation in ["started"]:
-            print "operation started"
+        """ notify user of events """
+        if operation in ["policy_yes"]:
+            self.infoProgressBar.show()
+            self.tabWidget.setCurrentPage(1)
+            self.infoTextEdit.clear()
+            self.infoTextEdit.append(i18n("<b>Access Granted</b><br>"))
+        elif operation in ["policy_no"]:
+            self.infoProgressBar.show()
+            self.tabWidget.setCurrentPage(1)
+            self.infoTextEdit.clear()
+            self.infoTextEdit.append(i18n("<b>Access Denied</b><br>"))
+        elif operation in ["started"]:
+            self.infoTextEdit.append(i18n("Operation Started<br>"))
         elif operation in ["order"]:
-            print "ordering packages"
+            self.infoTextEdit.append(i18n("Ordering Packages for Operation<br>"))
         elif operation in ["removing"]:
             for i in args:
-                print "Removing %s" % i
+                self.infoTextEdit.append(i18n("Removing : ") + i + " ",)
         elif operation in ["removed"]:
-            print "package removed"
+            self.infoTextEdit.append(i18n("OK") + "<br>")
         elif operation in ["installing"]:
             for i in args:
-                print "installing package %s" % i
+                self.infoTextEdit.append(i18n("Installing : ") + i + " ",)
         elif operation in ["extracting"]:
             for i in args:
                 print "extracting package %s" % i
@@ -193,11 +204,11 @@ class widgetMain(formMain):
             for i in args:
                 print "configuring %s" % i
         elif operation in ["installed"]:
-            print "package installed"
+            self.infoTextEdit.append(i18n("OK") + "<br>")
         elif operation in ["takingSnapshot"]:
-            print "taking snapshot"
+            self.infoTextEdit.append(i18n("Taking a Snapshot of System ") + "<br>")
         elif operation in ["takingBack"]:
-            print "taking back"
+            self.infoTextEdit.append(i18n("Taking System Back to ") + self.selected.getDate() + " at " + self.selected.getTime() + "<br>")
         else:
             print "another operation here", operation
 
@@ -212,7 +223,6 @@ class widgetMain(formMain):
             self.deletePushButton.setEnabled(True)
             self.restorePushButton.setEnabled(True)
         self.previous = self.selected or item
-        print "item changed to : ", item.getOpNo()
         self.selected = item
 
     def tabChanged(self, parent):
@@ -285,6 +295,12 @@ class widgetItem(KListViewItem):
 
     def getOpNo(self):
         return self.op_no
+    
+    def getDate(self):
+        return self.op_date
+    
+    def getTime(self):
+        return self.op_time
 
 
 
