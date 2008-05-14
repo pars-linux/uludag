@@ -335,21 +335,6 @@ class XFSFileSystem(FileSystem):
         if p.close():
             raise YaliException, "%s format failed: %s" % (self.name(), partition.getPath())
 
-    def getLabel(self, partition):
-        label = None
-        fd = self.openPartition(partition)
-        try:
-            buf = os.read(fd, 128)
-            os.close(fd)
-        except OSError, e:
-            e = "error reading xfs label on %s: %s" %(partition.getPath(), e)
-            raise YaliException, e
-
-        if len(buf) == 128 and buf[0:4] == "XFSB":
-            label = string.rstrip(buf[108:120],"\0x00")
-
-        return label
-
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
         cmd_path = sysutils.find_executable("xfs_admin")
