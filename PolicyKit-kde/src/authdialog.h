@@ -53,7 +53,6 @@ private:
 
     int m_currentY;
     QImage m_grabbed;
-    QPixmap m_root;
     QTime m_passed;
 };
 

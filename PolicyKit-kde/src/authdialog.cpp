@@ -64,7 +64,6 @@ AuthDialog::AuthDialog(QString &header)
     }
     m_grabbed.create(geo.size(), dep);
     QTimer::singleShot(0, this, SLOT( slotGrab()));
-    m_root.resize(width(), height());
 }
 
 AuthDialog::~AuthDialog()
