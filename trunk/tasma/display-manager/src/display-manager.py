@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008, TUBITAK/UEKAE
+# Copyright (C) TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -38,7 +38,7 @@ def AboutData():
         mod_version,
         I18N_NOOP('Display Manager'),
         KAboutData.License_GPL,
-        '(C) 2007 UEKAE/TÜBİTAK',
+        '(C) UEKAE/TÜBİTAK',
         None,
         None,
         'bugs@pardus.org.tr'
