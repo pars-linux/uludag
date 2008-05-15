@@ -1,0 +1,119 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>PhotoWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>PhotoWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>544</width>
+            <height>441</height>
+        </rect>
+    </property>
+    <property name="paletteBackgroundColor">
+        <color>
+            <red>239</red>
+            <green>239</green>
+            <blue>239</blue>
+        </color>
+    </property>
+    <property name="caption">
+        <string>Photo</string>
+    </property>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>shotButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>190</x>
+                <y>230</y>
+                <width>110</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
+        </property>
+        <property name="text">
+            <string>Shot</string>
+        </property>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>buttonGroup3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>270</y>
+                <width>340</width>
+                <height>100</height>
+            </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
+        </property>
+        <property name="title">
+            <string>Put my photo to:</string>
+        </property>
+        <grid>
+            <property name="name">
+                <cstring>unnamed</cstring>
+            </property>
+            <widget class="QCheckBox" row="2" column="0">
+                <property name="name">
+                    <cstring>mailCheckBox</cstring>
+                </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
+                </property>
+                <property name="text">
+                    <string>E-mail clients</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox" row="1" column="0">
+                <property name="name">
+                    <cstring>imCheckBox</cstring>
+                </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
+                </property>
+                <property name="text">
+                    <string>Instant messengers</string>
+                </property>
+            </widget>
+            <widget class="QCheckBox" row="0" column="0">
+                <property name="name">
+                    <cstring>kdmCheckBox</cstring>
+                </property>
+                <property name="backgroundOrigin">
+                    <enum>AncestorOrigin</enum>
+                </property>
+                <property name="text">
+                    <string>Login Screen (KDM)</string>
+                </property>
+            </widget>
+        </grid>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>cameraDisplay</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>90</x>
+                <y>30</y>
+                <width>340</width>
+                <height>180</height>
+            </rect>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
+        </property>
+    </widget>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
