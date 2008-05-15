@@ -54,7 +54,6 @@ def main():
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
 
     win = QDialog()
-    #win.config = KConfig(mod_app)
     win.setCaption(i18n('History Manager'))
     win.setIcon(loadIconSet("History_Manager").pixmap(QIconSet.Small, QIconSet.Normal))
     attachMainWidget(win)

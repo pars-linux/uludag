@@ -63,7 +63,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/historygui.ui', 'src/history-manager.py', 'src/historygui.py', 'src/ComarIface.py',
-                        'src/Commander.py', 'src/handler.py', 'src/history_gui.py',
+                        'src/Commander.py', 'src/handler.py', 'src/history_gui.py', 'src/utility.py',
                         ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/History_Manager.png', 'src/details.png']),
                         'help'],
     executable_links = [('history-manager','history-manager.py')],
