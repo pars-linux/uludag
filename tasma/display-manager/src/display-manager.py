@@ -56,7 +56,7 @@ class DriverItem(QListViewItem):
 class MonitorDialog(monitordialog.monitorDialog):
     def __init__(self, parent):
         monitordialog.monitorDialog.__init__(self, parent)
-
+        self.groupBoxDetails.hide()
         # get a dict of monitor.db like:
         # vendor["Siemens"] = {'Siemens Nixdorf': [{'eisa_id': '','hsync': '','is_dpms': '','model': '','vref': ''}}
 
@@ -66,13 +66,17 @@ class MonitorDialog(monitordialog.monitorDialog):
         self.listViewMonitors.header().hide()
 
         for eachVendor in allMonitorInfos.keys():
-            item = KListViewItem(self.listViewMonitors, None)
+            item = KListViewItem(self.listViewMonitors, "parent", "parent","parent")
             item.setText(0, eachVendor)
             self.listViewMonitors.setOpen(item,False)
 
             for eachModel in allMonitorInfos[eachVendor]:
                 subitem = KListViewItem(item, eachModel["eisa_id"], eachModel["hsync"], eachModel["vref"], eachModel["is_dpms"])
                 subitem.setText(0, eachModel["model"])
+
+        self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
+        self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept)
+        self.listViewMonitors.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), parent.getSelectedMonitor)
 
 class CardDialog(driverdialog.VideoCard):
     def __init__(self, parent):
@@ -153,6 +157,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
         self.connect(self.buttonMonitor1, SIGNAL("clicked()"), self.slotSelectMonitor)
 
+        self.mntr =  MonitorDialog(self)
+
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
             for resolution in self.screenModes[output]:
@@ -179,6 +185,14 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 self.radioBoxCloned.setChecked(True)
             self.checkBoxDualMode.setChecked(True)
+
+    def getSelectedMonitor(self):
+        if self.mntr.listViewMonitors.currentItem().key(1,0) == "parent":
+            self.mntr.groupBoxDetails.hide()
+        else:
+            self.mntr.groupBoxDetails.show()
+            self.mntr.lineEditHorizontal.setText(self.mntr.listViewMonitors.currentItem().key(1, 0))
+            self.mntr.lineEditVertical.setText(self.mntr.listViewMonitors.currentItem().key(2, 0))
 
     def duplicateOutputs(self):
         message = i18n("Sorry, but you can use one device for each output.\nTry to select another output.")
@@ -327,8 +341,7 @@ class MainWidget(dm_mainview.mainWidget):
             self.displayConfiguration.changeDriver(item.name)
 
     def slotSelectMonitor(self):
-        mntr = MonitorDialog(self)
-        mntr.exec_loop()
+        self.mntr.exec_loop()
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
