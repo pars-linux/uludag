@@ -60,7 +60,7 @@ class MonitorDialog(monitordialog.monitorDialog):
         # get a dict of monitor.db like:
         # vendor["Siemens"] = {'Siemens Nixdorf': [{'eisa_id': '','hsync': '','is_dpms': '','model': '','vref': ''}}
 
-        allMonitorInfos = hwdata.Monitor().vendor
+        allMonitorInfos = hwdata.getMonitorInfos()
 
         # hide listview caption.
         self.listViewMonitors.header().hide()
