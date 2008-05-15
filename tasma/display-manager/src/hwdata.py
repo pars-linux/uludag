@@ -75,35 +75,29 @@ def getCompatibleDriverNames(vendor_id, product_id):
 
     return drvlist
 
-class Monitor:
-    def __init__(self):
-        self.vendor = {}
-        self.model = ""
-        self.eisa_id = ""
-        self.hsync = ""
-        self.vref = ""
-        self.getMonitorInfos()
+def getMonitorInfos():
+    vendor = {}
 
-    def getMonitorInfos(self):
-        for line in loadFile(zorg.consts.MonitorsDB):
-            monitor = line.split(";")
+    for line in loadFile(zorg.consts.MonitorsDB):
+        monitor = line.split(";")
 
-            if len(monitor) == 5:
-                monitor.append('0')
+        if len(monitor) == 5:
+            monitor.append('0')
 
-            if len(monitor) == 6:
-                if not monitor[0] in self.vendor:
-                    self.vendor[monitor[0]] = [{"model":    monitor[1],
-                                                "eisa_id":  monitor[2],
-                                                "hsync":    monitor[3],
-                                                "vref":     monitor[4],
-                                                "is_dpms":  monitor[5]
-                                                }]
-                else:
-                    self.vendor[monitor[0]].extend([{"model":    monitor[1],
-                                                      "eisa_id":  monitor[2],
-                                                      "hsync":    monitor[3],
-                                                      "vref":     monitor[4],
-                                                      "is_dpms":  monitor[5]
-                                                    }])
+        if len(monitor) == 6:
+            if not monitor[0] in vendor:
+                vendor[monitor[0]] = [{ "model":    monitor[1],
+                                        "eisa_id":  monitor[2],
+                                        "hsync":    monitor[3],
+                                        "vref":     monitor[4],
+                                        "is_dpms":  monitor[5]
+                                        }]
+            else:
+                vendor[monitor[0]].extend([{"model":    monitor[1],
+                                            "eisa_id":  monitor[2],
+                                            "hsync":    monitor[3],
+                                            "vref":     monitor[4],
+                                            "is_dpms":  monitor[5]
+                                            }])
 
+    return vendor
