@@ -66,12 +66,12 @@ class MonitorDialog(monitordialog.monitorDialog):
         self.listViewMonitors.header().hide()
 
         for eachVendor in allMonitorInfos.keys():
-            item = KListViewItem(self.listViewMonitors, "info")
+            item = KListViewItem(self.listViewMonitors, None)
             item.setText(0, eachVendor)
             self.listViewMonitors.setOpen(item,False)
 
             for eachModel in allMonitorInfos[eachVendor]:
-                subitem = KListViewItem(item, None)
+                subitem = KListViewItem(item, eachModel["eisa_id"], eachModel["hsync"], eachModel["vref"], eachModel["is_dpms"])
                 subitem.setText(0, eachModel["model"])
 
 class CardDialog(driverdialog.VideoCard):
