@@ -53,6 +53,27 @@ class DriverItem(QListViewItem):
         self.setText(0, name)
         self.setText(1, desc)
 
+class MonitorDialog(monitordialog.monitorDialog):
+    def __init__(self, parent):
+        monitordialog.monitorDialog.__init__(self, parent)
+
+        # get a dict of monitor.db like:
+        # vendor["Siemens"] = {'Siemens Nixdorf': [{'eisa_id': '','hsync': '','is_dpms': '','model': '','vref': ''}}
+
+        allMonitorInfos = hwdata.Monitor().vendor
+
+        # hide listview caption.
+        self.listViewMonitors.header().hide()
+
+        for eachVendor in allMonitorInfos.keys():
+            item = KListViewItem(self.listViewMonitors, "info")
+            item.setText(0, eachVendor)
+            self.listViewMonitors.setOpen(item,False)
+
+            for eachModel in allMonitorInfos[eachVendor]:
+                subitem = KListViewItem(item, None)
+                subitem.setText(0, eachModel["model"])
+
 class CardDialog(driverdialog.VideoCard):
     def __init__(self, parent):
         driverdialog.VideoCard.__init__(self, parent)
@@ -84,7 +105,6 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonHelp.hide()
         self.buttonDetectDisplays.hide()
         self.buttonIdentifyDisplays.hide()
-        self.buttonMonitor1.setDisabled(True)
         self.buttonMonitor2.setDisabled(True)
 
         import displayconfig
@@ -131,6 +151,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
 
         self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
+        self.connect(self.buttonMonitor1, SIGNAL("clicked()"), self.slotSelectMonitor)
 
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
@@ -304,6 +325,10 @@ class MainWidget(dm_mainview.mainWidget):
         if dlg.exec_loop() == QDialog.Accepted:
             item = dlg.listViewVideoCard.currentItem()
             self.displayConfiguration.changeDriver(item.name)
+
+    def slotSelectMonitor(self):
+        mntr = MonitorDialog(self)
+        mntr.exec_loop()
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
