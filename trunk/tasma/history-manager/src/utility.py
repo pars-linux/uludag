@@ -12,10 +12,15 @@
 from qt import *
 from kdecore import *
 from kdeui import *
+from khtml import *
+import os
 
 mod_name = 'History Manager'
 mod_app = 'history-manager'
 mod_version = '0.1'
+
+def I18N_NOOP(str):
+    return str
 
 def AboutData():
     global mod_app
@@ -24,7 +29,7 @@ def AboutData():
     about_data = KAboutData(mod_app,
                             mod_name,
                             mod_version,
-                            'History Manager Interface',
+                            I18N_NOOP('History Manager Interface'),
                             KAboutData.License_GPL,
                             '(C) 2008 UEKAE/TÜBİTAK',
                             None, None,

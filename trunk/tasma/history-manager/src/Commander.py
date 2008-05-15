@@ -57,10 +57,8 @@ class Commander(QObject):
         self.comar.cancel()
 
     def takeSnapshot(self):
-        qApp.progressEvents()
         self.comar.takeSnapshot()
 
     def takeBack(self, op):
-        qApp.processEvents()
         self.comar.takeBack(op)
 

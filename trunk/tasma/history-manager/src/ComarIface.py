@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from qt import QMutex, SIGNAL
-from kdeui import KMessageBox
 from kdecore import i18n
 
 # DBus
@@ -29,7 +28,6 @@ class ComarIface:
             self.sesBus = dbus.SessionBus()
         except dbus.DBusException:
             self.errHandler(i18n("Cannot connect to dbus"))
-            #KMessageBox.error(None, i18n("Unable to connect to DBus."), i18n("DBus Error"))
             return False
         return True
 
@@ -43,25 +41,21 @@ class ComarIface:
 
     def busError(self, exception):
         message = i18n("D-Bus Error") + str(exception)
-        #KMessageBox.error(None, str(exception), i18n("D-Bus Error"))
         self.setupBusses()
         self.errHandler(message)
 
     def comarAuthError(self, exception):
-        #KMessageBox.error(None, str(exception), i18n("COMAR Auth Error"))
         self.errHandler(i18n("COMAR Auth Error") + str(exception))
 
     def comarError(self, exception):
         message = ""
         if not "urlopen error" in exception.message:
-            #KMessageBox.error(None, str(exception), i18n("COMAR Error"))
             message += i18n("COMAR Error")
         self.errHandler(message + str(exception))
 
     def cancelError(self):
         message = i18n("You are not authorized for this operation.")
         self.errHandler(message)
-        #KMessageBox.sorry(None, message, i18n("Error"))
 
     def callMethod(self, method, action, handler, handleErrors, *args):
         print "Method: %s      Action: %s" % (method, action)
