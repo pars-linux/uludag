@@ -4,7 +4,6 @@
 import os
 import pypolkit
 
-"""
 print "= " * 20
 
 i = 0
@@ -22,6 +21,10 @@ print pypolkit.auth_list_uid(1000)
 print "= " * 20
 
 print pypolkit.auth_list_all()
-"""
 
-print pypolkit.auth_add("tr.org.pardus.comar.system.service.set", os.getpid(), os.getuid(), 10)
+print "= " * 20
+
+try:
+    print pypolkit.auth_add("tr.org.pardus.comar.system.service.set", pypolkit.SCOPE_ALWAYS, os.getuid())
+except Exception, e:
+    print e
