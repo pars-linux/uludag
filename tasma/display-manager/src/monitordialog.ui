@@ -174,7 +174,7 @@
                 <cstring>listViewMonitors</cstring>
             </property>
             <property name="selectionMode" stdset="0">
-                <enum>Extended</enum>
+                <enum>Single</enum>
             </property>
             <property name="rootIsDecorated">
                 <bool>true</bool>
