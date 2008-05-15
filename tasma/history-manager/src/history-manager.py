@@ -56,6 +56,7 @@ def main():
     win = QDialog()
     #win.config = KConfig(mod_app)
     win.setCaption(i18n('History Manager'))
+    win.setIcon(loadIconSet("History_Manager").pixmap(QIconSet.Small, QIconSet.Normal))
     attachMainWidget(win)
     kapp.setMainWidget(win)
 
