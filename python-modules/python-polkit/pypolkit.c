@@ -10,9 +10,7 @@
 #include <Python.h>
 #include <polkit-grant/polkit-grant.h>
 #include <datetime.h>
-#include <time.h>
 #include <unistd.h>
-#include <grp.h>
 
 //! Standard exception for pypolkit
 static PyObject *PK_Error;
@@ -249,9 +247,9 @@ static PyObject *
 pk_auth_add(PyObject *self, PyObject *args)
 {
     const char* action_id;
-    int pid = NULL;
-    int uid = NULL;
-    int type = NULL;
+    int pid = -1;
+    int uid = -1;
+    int type = -1;
 
     if (!PyArg_ParseTuple(args, "sii|i", &action_id, &type, &uid, &pid)) {
         return NULL;
