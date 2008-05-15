@@ -32,6 +32,8 @@ class widgetMain(formMain):
         # selected/previously selected list item
         self.selected = None
         self.previous = None
+        self.addedLater = []
+        self.latest = 0
 
         # gui looks better
         self.infoProgressBar.hide()
@@ -68,13 +70,7 @@ class widgetMain(formMain):
         self.popupmenu.insertSeparator()
         self.popupmenu.insertItem(loadIconSet("reload", KIcon.Small), i18n("Restore to This Point"), self.take_back)
 
-        # create list items
-        for operation in self.historydb.get_last():
-            self.snapshotsListView.insertItem(widgetItem(self.snapshotsListView, operation))
-
-        # list only snapshots or entire history
-        if(self.snapshotsCheckBox.isChecked()):
-            self.onlySnapshots(True)
+        self.updateGui()
 
         # make connections
         self.connect(self.tabWidget, SIGNAL("currentChanged(QWidget *)"), self.tabChanged)
@@ -124,7 +120,6 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     message, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
-                self.snapshotsListView.clear()
                 qApp.processEvents(100)
                 self.command.takeSnapshot()
 
@@ -142,7 +137,6 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     message, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
-                self.snapshotsListView.clear()
                 qApp.processEvents(100)
                 self.command.takeBack(operation)
 
@@ -168,11 +162,10 @@ class widgetMain(formMain):
         # update gui after operation
         self.infoTextEdit.append(message)
         self.infoTextEdit.append(i18n("Updating User Interface, please wait a while"))
-        qApp.processEvents(100)
-        self.updateGui()
         if data == "System.Manager.cancelled":
             self.infoTextEdit.append(i18n("Finished with Errors"))
         else:
+            self.addLast()
             self.infoTextEdit.append(i18n("Finished Succesfully"))
         self.enableButtons(True)
 
@@ -199,16 +192,26 @@ class widgetMain(formMain):
         self.initDb()
         for operation in self.historydb.get_last():
             item = widgetItem(self.snapshotsListView, operation)
+            if operation.no > self.latest:
+                self.latest = operation.no
             if self.snapshotsCheckBox.isChecked():
                 if item.getType() != 'snapshot':
                     item.setVisible(False)
-            self.snapshotsListView.insertItem(widgetItem(self.snapshotsListView, operation))
         if self.readOnly:
             self.snapshotPushButton.setEnabled(False)
             self.restorePushButton.setEnabled(False)
         else:
             self.snapshotPushButton.setEnabled(True)
             self.restorePushButton.setEnabled(False)
+
+    def addLast(self):
+        """ after an operation, add latest operation to list """
+        self.initDb()
+        op = self.historydb.get_last()
+        op = op.next()
+        if op.no > self.latest:
+            self.latest = op.no
+        self.snapshotsListView.insertItem(widgetItem(self.snapshotsListView, op))
 
     def startProgress(self):
         # qt3 is deprecated
