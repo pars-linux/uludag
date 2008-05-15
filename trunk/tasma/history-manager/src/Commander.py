@@ -14,13 +14,16 @@ class Commander(QObject):
         try:
             self.comar = ComarIface.ComarIface(self.handler, self.errHandler)
         except:
-            self.parent.showErrorMessage("Cannot connect to Comar daemon")
-            self.parent.setReadOnly(True)
+            self.parent.showErrorMessage(i18n("Cannot connect to Comar daemon"))
+            #self.parent.setReadOnly(True)
             self.parent.updateGui()
 
-    def errHandler(self):
+    def errHandler(self, err=None):
         self.comar.com_lock.unlock()
-        self.parent.finished("System.Manager.cancelled")
+        if err:
+            self.parent.finished("System.Manager.cancelled", err)
+        else:
+            self.parent.finished("System.Manager.cancelled")
 
     def handler(self, signal=None, data=None):
         print "Signal: ", signal
@@ -39,14 +42,13 @@ class Commander(QObject):
         elif signal == "status":
             self.parent.pisiNotify(data[0], args)
         elif signal == "warning":
-            self.comar.com_lock.unlock()
+            #self.comar.com_lock.unlock()
             self.parent.showWarningMessage(str(args))
             print "Warning: ", str(data)
         elif signal == "PolicyKit":
             self.parent.pisiNotify(data[0], args)
         else:
             print "Got notification : %s with data : %s" % (signal, data)
-
 
     def inProgress(self):
         return self.comar.com_lock.locked()
@@ -55,8 +57,10 @@ class Commander(QObject):
         self.comar.cancel()
 
     def takeSnapshot(self):
+        qApp.progressEvents()
         self.comar.takeSnapshot()
 
     def takeBack(self, op):
+        qApp.processEvents()
         self.comar.takeBack(op)
 
