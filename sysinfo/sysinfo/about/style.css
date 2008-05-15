@@ -105,7 +105,7 @@ h2#dirs+ul {
 
 h2#net+ul {
     padding-left: 60px;
-    background-image: url('images/network.png');
+    /*background-image: url('images/network.png');*/
     background-repeat: no-repeat;
     min-height: 60px;
 }

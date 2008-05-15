@@ -150,7 +150,7 @@ private:
      * Helper function to locate a KDE icon
      * @return img tag with full path to the icon
      */
-    QString icon( const QString & name, int size = KIcon::SizeSmall ) const;
+    QString icon( const QString & name, int size = KIcon::SizeSmall, bool justPath = false ) const;
 
     /**
      * For device @p name like "hdb2", @return name of the corresponding icon, e.g. hdd_mount

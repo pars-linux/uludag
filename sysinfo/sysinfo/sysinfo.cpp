@@ -111,7 +111,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     // common folders
     sysInfo += "<h2 id=\"dirs\">" + i18n( "Common Folders" ) + "</h2>";
-    sysInfo += "<ul>";
+    sysInfo += "<ul style=\"background-image:url('" + icon( "folder_orange", 48, true) + "');\">";
     // We don't have a separate Documents directory in Pardus
     //    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( KGlobalSettings::documentPath() ) + i18n( "My Documents" ) + "</a></li>";
     sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( QDir::homeDirPath() ) + i18n( "My Home Folder" ) + "</a></li>";
@@ -122,8 +122,9 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     // net info
     int state = netInfo();
     if (state > 1) { // assume no network manager / networkstatus
-      sysInfo += "<h2 id=\"net\">" + i18n( "Network Status" ) + "</h2>";
-      sysInfo += "<ul>";
+      sysInfo += "<h2 id=\"net\">";
+      sysInfo += i18n( "Network Status" ) + "</h2>";
+      sysInfo += "<ul style=\"background-image:url('" + icon( "network", 48, true) + "');\">";
       sysInfo += "<li>" + netStatus( state ) + "</li>";
       sysInfo += "</ul>";
     }
@@ -133,7 +134,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     if ( !m_info[CPU_MODEL].isNull() )
     {
         sysInfo += "<h2 id=\"cpu\">" + i18n( "CPU Information" ) + "</h2>";
-        sysInfo += "<ul>";
+        sysInfo += "<ul style=\"background-image:url('" + icon( "kcmprocessor", 48, true) + "');\">";
         sysInfo += "<li><span class=\"label\">" + i18n( "Processor (CPU):" ) + "</span>" + m_info[CPU_MODEL] + "</li>";
         sysInfo += "<li><span class=\"label\">" + i18n( "Speed:" ) + "</span> " +
                    i18n( "%1 MHz" ).arg( KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 ) ) + "</li>";
@@ -143,7 +144,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     // memory info
     memoryInfo();
     sysInfo += "<h2 id=\"memory\">" + i18n( "Memory Information" ) + "</h2>";
-    sysInfo += "<table>";
+    sysInfo += "<table style=\"background-image:url('" + icon( "memory", 48, true) + "');\">";
     sysInfo += "<tr><td>" + i18n( "Total memory (RAM):" ) + "</td><td>" + m_info[MEM_TOTALRAM] + "</td></tr>";
     sysInfo += "<tr><td>" + i18n( "Free memory:" ) + "</td><td>" + m_info[MEM_FREERAM] + "</td></tr>";
     dummy = i18n( "Used Memory" );
@@ -156,7 +157,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
     {
         sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
-        sysInfo += "<table>";
+        sysInfo += "<table style=\"background-image:url('" + icon( "laptop", 48, true) + "');\">";
         sysInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
         sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
         sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
@@ -174,7 +175,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     // Os info
     osInfo();
     sysInfo += "<h2 id=\"sysinfo\">" +i18n( "OS Information" ) + "</h2>";
-    sysInfo += "<table>";
+    sysInfo += "<table style=\"background-image:url('" + icon( "system", 48, true) + "');\">";
     sysInfo += "<tr><td>" + i18n( "OS:" ) + "</td><td>" + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] + "</td></tr>";
     sysInfo += "<tr><td>" + i18n( "Current user:" ) + "</td><td>" + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] + "</td></tr>";
     sysInfo += "<tr><td>" + i18n( "System:" ) +  "</td><td>" + m_info[OS_SYSTEM] + "</td></tr>";
@@ -185,7 +186,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     if ( glInfo() )
     {
         sysInfo += "<h2 id=\"display\">" + i18n( "Display Info" ) + "</h2>";
-        sysInfo += "<table>";
+        sysInfo += "<table style=\"background-image:url('" + icon( "display", 48, true) + "');\">";
         sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[GFX_VENDOR] +  "</td></tr>";
         sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[GFX_MODEL] + "</td></tr>";
         if (!m_info[GFX_DRIVER].isNull())
@@ -511,9 +512,11 @@ QString kio_sysinfoProtocol::readFromFile( const QString & filename, const QStri
     return QString::null;
 }
 
-QString kio_sysinfoProtocol::icon( const QString & name, int size ) const
+QString kio_sysinfoProtocol::icon( const QString & name, int size, bool justPath ) const
 {
     QString path = KGlobal::iconLoader()->iconPath( name, -size );
+    if ( justPath == true )
+        return QString( "file:%1" ).arg( path );
     return QString( "<img src=\"file:%1\" width=\"%2\" height=\"%3\" valign=\"center\"/>" ).arg( path ).arg( size ).arg( size );
 }
 
