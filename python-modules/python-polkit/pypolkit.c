@@ -249,15 +249,11 @@ static PyObject *
 pk_auth_add(PyObject *self, PyObject *args)
 {
     const char* action_id;
-    int pid, uid, type;
+    int pid = NULL;
+    int uid = NULL;
+    int type = NULL;
 
-    if (!PyArg_ParseTuple(args, "siii", &action_id, &pid, &uid, &type)) {
-        return NULL;
-    }
-
-    struct group *gr = getgrnam("polkit");
-    if (gr->gr_gid != getegid()) {
-        PyErr_SetString(PK_Error, "Effective GID must be 'polkit'");
+    if (!PyArg_ParseTuple(args, "sii|i", &action_id, &type, &uid, &pid)) {
         return NULL;
     }
 
@@ -265,22 +261,31 @@ pk_auth_add(PyObject *self, PyObject *args)
     PolKitError *pk_error = NULL;
 
     PolKitAction *pk_action = pk_make_action(action_id);
-    PolKitCaller *pk_caller = pk_make_caller_from_pid(pid);
+    PolKitCaller *pk_caller;
+
+    if ((type == POLKIT_AUTHORIZATION_SCOPE_PROCESS_ONE_SHOT || type == POLKIT_AUTHORIZATION_SCOPE_PROCESS) && !pid) {
+        PyErr_SetString(PK_Error, "SCOPE_ONE_SHOT and SCOPE_PROCESS types require pid");
+        return NULL;
+    }
 
     polkit_bool_t pk_status;
 
     switch (type) {
         case POLKIT_AUTHORIZATION_SCOPE_PROCESS_ONE_SHOT:
-            polkit_authorization_db_add_entry_process_one_shot(pk_auth, pk_action, pk_caller, uid);
+            pk_caller = pk_make_caller_from_pid(pid);
+            pk_status = polkit_authorization_db_add_entry_process_one_shot(pk_auth, pk_action, pk_caller, uid);
             break;
         case POLKIT_AUTHORIZATION_SCOPE_PROCESS:
-            polkit_authorization_db_add_entry_process(pk_auth, pk_action, pk_caller, uid);
+            pk_caller = pk_make_caller_from_pid(pid);
+            pk_status = polkit_authorization_db_add_entry_process(pk_auth, pk_action, pk_caller, uid);
             break;
         case POLKIT_AUTHORIZATION_SCOPE_SESSION:
-            polkit_authorization_db_add_entry_session(pk_auth, pk_action, pk_caller, uid);
+            pk_caller = pk_make_caller_from_uid(uid);
+            pk_status = polkit_authorization_db_add_entry_session(pk_auth, pk_action, pk_caller, uid);
             break;
         case POLKIT_AUTHORIZATION_SCOPE_ALWAYS:
-            polkit_authorization_db_add_entry_always(pk_auth, pk_action, pk_caller, uid);
+            pk_caller = pk_make_caller_from_uid(uid);
+            pk_status = polkit_authorization_db_add_entry_always(pk_auth, pk_action, pk_caller, uid);
             break;
         default:
             PyErr_SetString(PK_Error, "Unknown authorization type.");
