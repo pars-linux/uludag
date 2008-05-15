@@ -44,7 +44,7 @@ def AboutData():
         'bugs@pardus.org.tr'
     )
 
-class DriverItem(QListViewItem):
+class DriverItem(KListViewItem):
     def __init__(self, parent, name, desc):
         QListViewItem.__init__(self, parent)
 
