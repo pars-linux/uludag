@@ -111,7 +111,9 @@ class CardDialog(driverdialog.VideoCard):
 
         self.hideExtraDrivers()
 
-        self.listViewVideoCard.setCurrentItem(current)
+        if current:
+            self.listViewVideoCard.setCurrentItem(current)
+
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
         self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept),
         self.connect(self.checkBoxAllDrivers, SIGNAL("toggled(bool)"), self.listExtraDrivers)
