@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:09+0300\n"
+"POT-Creation-Date: 2008-05-16 13:07+0300\n"
 "PO-Revision-Date: 2007-03-27 18:15+0200\n"
 "Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
 "Language-Team: català <Ubuntu Catalan Translators <ubuntu-l10n-ca@lists."
@@ -16,199 +16,204 @@ msgstr ""
 "X-Generator: KBabel 1.11.2\n"
 
 # ???
-#: ksysinfopart.cpp:72
+#: sysinfo/ksysinfopart.cpp:72
 #, fuzzy
 msgid "KSysinfo"
 msgstr "Informació sobre el sistema i l'ordinador"
 
-#: sysinfo.cpp:67
+#: sysinfo/sysinfo.cpp:67
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: sysinfo.cpp:69
+#: sysinfo/sysinfo.cpp:69
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: sysinfo.cpp:71
+#: sysinfo/sysinfo.cpp:71
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo.cpp:97
+#: sysinfo/sysinfo.cpp:89
+#, fuzzy
+msgid "Not Available"
+msgstr "Espai disponible"
+
+#: sysinfo/sysinfo.cpp:103
 msgid "Looking for hardware information..."
 msgstr "S'està cercant informació sobre el maquinari..."
 
-#: sysinfo.cpp:100 sysinfo.cpp:104
+#: sysinfo/sysinfo.cpp:106 sysinfo/sysinfo.cpp:110
 msgid "My Computer"
 msgstr "El meu ordinador"
 
-#: sysinfo.cpp:105
+#: sysinfo/sysinfo.cpp:111
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 msgstr ""
 "Carpetes, discos durs, dispositius extraïbles, informació sobre el sistema i "
 "altres..."
 
 # dubte
-#: sysinfo.cpp:113
+#: sysinfo/sysinfo.cpp:119
 msgid "Common Folders"
 msgstr "Carpetes personals"
 
 # nnn
-#: sysinfo.cpp:117
+#: sysinfo/sysinfo.cpp:123
 msgid "My Home Folder"
 msgstr "La meva carpeta d'inici"
 
-#: sysinfo.cpp:118
+#: sysinfo/sysinfo.cpp:124
 msgid "Root Folder"
 msgstr "Carpeta arrel"
 
-#: sysinfo.cpp:119
+#: sysinfo/sysinfo.cpp:125
 msgid "Network Folders"
 msgstr "Carpetes de xarxa"
 
-#: sysinfo.cpp:125
+#: sysinfo/sysinfo.cpp:132
 msgid "Network Status"
 msgstr "Estat de la xarxa"
 
-#: sysinfo.cpp:135
+#: sysinfo/sysinfo.cpp:142
 msgid "CPU Information"
 msgstr "Informació sobre la CPU"
 
-#: sysinfo.cpp:137
+#: sysinfo/sysinfo.cpp:144
 msgid "Processor (CPU):"
 msgstr "Processador (CPU):"
 
-#: sysinfo.cpp:138
+#: sysinfo/sysinfo.cpp:145
 msgid "Speed:"
 msgstr "Velocitat:"
 
-#: sysinfo.cpp:139
+#: sysinfo/sysinfo.cpp:146
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo.cpp:145
+#: sysinfo/sysinfo.cpp:152
 msgid "Memory Information"
 msgstr "Informació sobre la memòria"
 
-#: sysinfo.cpp:147
+#: sysinfo/sysinfo.cpp:154
 msgid "Total memory (RAM):"
 msgstr "Memòria total (RAM):"
 
-#: sysinfo.cpp:148
+#: sysinfo/sysinfo.cpp:155
 msgid "Free memory:"
 msgstr "Memòria lliure:"
 
-#: sysinfo.cpp:149
+#: sysinfo/sysinfo.cpp:156
 msgid "Used Memory"
 msgstr "Memòria en ús:"
 
-#: sysinfo.cpp:150
+#: sysinfo/sysinfo.cpp:157
 msgid "Total swap:"
 msgstr "Espai d'intercanvi total:"
 
-#: sysinfo.cpp:151
+#: sysinfo/sysinfo.cpp:158
 msgid "Free swap:"
 msgstr "Espai d'intercanvi lliure:"
 
-#: sysinfo.cpp:158
+#: sysinfo/sysinfo.cpp:165
 msgid "Hardware Information"
 msgstr "Informació sobre el maquinari"
 
-#: sysinfo.cpp:160
+#: sysinfo/sysinfo.cpp:167
 msgid "Type:"
 msgstr ""
 
-#: sysinfo.cpp:161 sysinfo.cpp:189
+#: sysinfo/sysinfo.cpp:168 sysinfo/sysinfo.cpp:196
 #, fuzzy
 msgid "Vendor:"
 msgstr "Marca:"
 
-#: sysinfo.cpp:162 sysinfo.cpp:190
+#: sysinfo/sysinfo.cpp:169 sysinfo/sysinfo.cpp:197
 msgid "Model:"
 msgstr "Model:"
 
-#: sysinfo.cpp:163
+#: sysinfo/sysinfo.cpp:170
 msgid "Bios Vendor:"
 msgstr "Marca de la Bios"
 
-#: sysinfo.cpp:164
+#: sysinfo/sysinfo.cpp:171
 msgid "Bios Version:"
 msgstr "Versió de la Bios"
 
-#: sysinfo.cpp:171
+#: sysinfo/sysinfo.cpp:178
 msgid "Disk Information"
 msgstr "Informació sobre el disc"
 
-#: sysinfo.cpp:176
+#: sysinfo/sysinfo.cpp:183
 msgid "OS Information"
 msgstr "Informació sobre el sistema operatiu"
 
-#: sysinfo.cpp:178
+#: sysinfo/sysinfo.cpp:185
 msgid "OS:"
 msgstr "Sistema operatiu:"
 
-#: sysinfo.cpp:179
+#: sysinfo/sysinfo.cpp:186
 msgid "Current user:"
 msgstr "Usuari actual:"
 
-#: sysinfo.cpp:180
+#: sysinfo/sysinfo.cpp:187
 msgid "System:"
 msgstr "Sistema:"
 
-#: sysinfo.cpp:181
+#: sysinfo/sysinfo.cpp:188
 msgid "KDE:"
 msgstr "KDE:"
 
-#: sysinfo.cpp:187
+#: sysinfo/sysinfo.cpp:194
 msgid "Display Info"
 msgstr "Informació sobre la pantalla"
 
-#: sysinfo.cpp:192
+#: sysinfo/sysinfo.cpp:199
 msgid "Driver:"
 msgstr "Controlador:"
 
-#: sysinfo.cpp:257
+#: sysinfo/sysinfo.cpp:264
 msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 Caches)"
 
-#: sysinfo.cpp:311
+#: sysinfo/sysinfo.cpp:321
 #, fuzzy
 msgid "Total"
 msgstr "Espai d'intercanvi total:"
 
-#: sysinfo.cpp:311
+#: sysinfo/sysinfo.cpp:321
 #, fuzzy
 msgid "Available"
 msgstr "Espai disponible"
 
-#: sysinfo.cpp:403
+#: sysinfo/sysinfo.cpp:469
 msgid "%1 (3D Support)"
 msgstr "%1 (Suport de 3D)"
 
-#: sysinfo.cpp:405
+#: sysinfo/sysinfo.cpp:471
 msgid "%1 (No 3D Support)"
 msgstr "%1 (Sense suport de 3D)"
 
-#: sysinfo.cpp:415
+#: sysinfo/sysinfo.cpp:481
 msgid "Network is <strong>unreachable</strong>"
 msgstr "<strong>No s'ha pogut accedir</strong> a la xarxa"
 
-#: sysinfo.cpp:417
+#: sysinfo/sysinfo.cpp:483
 msgid "You are <strong>offline</strong>"
 msgstr "Esteu <strong>fora de línia</strong>"
 
-#: sysinfo.cpp:419
+#: sysinfo/sysinfo.cpp:485
 msgid "Network is <strong>shutting down</strong>"
 msgstr "<strong>S'està desconnectant</strong> la xarxa"
 
-#: sysinfo.cpp:421
+#: sysinfo/sysinfo.cpp:487
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>S'està establint</strong> la connexió amb la xarxa"
 
-#: sysinfo.cpp:423
+#: sysinfo/sysinfo.cpp:489
 msgid "You are <strong>online</strong>"
 msgstr "Esteu <strong>en línia</strong>"
 
-#: sysinfo.cpp:425
+#: sysinfo/sysinfo.cpp:491
 msgid "Unknown network status"
 msgstr "Estat de la xarxa desconegut"
 

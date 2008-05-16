@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-17 19:09+0300\n"
+"POT-Creation-Date: 2008-05-16 13:07+0300\n"
 "PO-Revision-Date: 2007-02-19 22:24-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -16,195 +16,200 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ksysinfopart.cpp:72
+#: sysinfo/ksysinfopart.cpp:72
 msgid "KSysinfo"
 msgstr "KSysinfo"
 
-#: sysinfo.cpp:67
+#: sysinfo/sysinfo.cpp:67
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: sysinfo.cpp:69
+#: sysinfo/sysinfo.cpp:69
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: sysinfo.cpp:71
+#: sysinfo/sysinfo.cpp:71
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo.cpp:97
+#: sysinfo/sysinfo.cpp:89
+#, fuzzy
+msgid "Not Available"
+msgstr "Espaço disponível"
+
+#: sysinfo/sysinfo.cpp:103
 msgid "Looking for hardware information..."
 msgstr "Procurando por informação de hardware..."
 
-#: sysinfo.cpp:100 sysinfo.cpp:104
+#: sysinfo/sysinfo.cpp:106 sysinfo/sysinfo.cpp:110
 msgid "My Computer"
 msgstr "Meu Computador"
 
-#: sysinfo.cpp:105
+#: sysinfo/sysinfo.cpp:111
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 msgstr ""
 "Pastas, Discos Rígidos, Dispositivos Removíveis, Informações do Sistema e "
 "mais..."
 
-#: sysinfo.cpp:113
+#: sysinfo/sysinfo.cpp:119
 msgid "Common Folders"
 msgstr "Pastas comuns"
 
-#: sysinfo.cpp:117
+#: sysinfo/sysinfo.cpp:123
 msgid "My Home Folder"
 msgstr "Minha Pasta Pessoal"
 
-#: sysinfo.cpp:118
+#: sysinfo/sysinfo.cpp:124
 msgid "Root Folder"
 msgstr "Pasta Raiz"
 
-#: sysinfo.cpp:119
+#: sysinfo/sysinfo.cpp:125
 msgid "Network Folders"
 msgstr "Pastas de Rede"
 
-#: sysinfo.cpp:125
+#: sysinfo/sysinfo.cpp:132
 msgid "Network Status"
 msgstr "Status da Rede"
 
-#: sysinfo.cpp:135
+#: sysinfo/sysinfo.cpp:142
 msgid "CPU Information"
 msgstr "Informação da CPU"
 
-#: sysinfo.cpp:137
+#: sysinfo/sysinfo.cpp:144
 msgid "Processor (CPU):"
 msgstr "Processador (CPU):"
 
-#: sysinfo.cpp:138
+#: sysinfo/sysinfo.cpp:145
 msgid "Speed:"
 msgstr "Velocidade:"
 
-#: sysinfo.cpp:139
+#: sysinfo/sysinfo.cpp:146
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo.cpp:145
+#: sysinfo/sysinfo.cpp:152
 msgid "Memory Information"
 msgstr "Informação da Memória"
 
-#: sysinfo.cpp:147
+#: sysinfo/sysinfo.cpp:154
 msgid "Total memory (RAM):"
 msgstr "Memória total (RAM):"
 
-#: sysinfo.cpp:148
+#: sysinfo/sysinfo.cpp:155
 msgid "Free memory:"
 msgstr "Memória livre:"
 
-#: sysinfo.cpp:149
+#: sysinfo/sysinfo.cpp:156
 msgid "Used Memory"
 msgstr "Memória Usada"
 
-#: sysinfo.cpp:150
+#: sysinfo/sysinfo.cpp:157
 msgid "Total swap:"
 msgstr "Memória de troca total:"
 
-#: sysinfo.cpp:151
+#: sysinfo/sysinfo.cpp:158
 msgid "Free swap:"
 msgstr "Memória de troca livre:"
 
-#: sysinfo.cpp:158
+#: sysinfo/sysinfo.cpp:165
 msgid "Hardware Information"
 msgstr "Informação de Hardware"
 
-#: sysinfo.cpp:160
+#: sysinfo/sysinfo.cpp:167
 msgid "Type:"
 msgstr ""
 
-#: sysinfo.cpp:161 sysinfo.cpp:189
+#: sysinfo/sysinfo.cpp:168 sysinfo/sysinfo.cpp:196
 msgid "Vendor:"
 msgstr "Vendedor:"
 
-#: sysinfo.cpp:162 sysinfo.cpp:190
+#: sysinfo/sysinfo.cpp:169 sysinfo/sysinfo.cpp:197
 msgid "Model:"
 msgstr "Modelo:"
 
-#: sysinfo.cpp:163
+#: sysinfo/sysinfo.cpp:170
 msgid "Bios Vendor:"
 msgstr "Vendedor da Bios:"
 
-#: sysinfo.cpp:164
+#: sysinfo/sysinfo.cpp:171
 msgid "Bios Version:"
 msgstr "Versão da Bios:"
 
-#: sysinfo.cpp:171
+#: sysinfo/sysinfo.cpp:178
 msgid "Disk Information"
 msgstr "Informação do Disco"
 
-#: sysinfo.cpp:176
+#: sysinfo/sysinfo.cpp:183
 msgid "OS Information"
 msgstr "Informação do SO"
 
-#: sysinfo.cpp:178
+#: sysinfo/sysinfo.cpp:185
 msgid "OS:"
 msgstr "SO:"
 
-#: sysinfo.cpp:179
+#: sysinfo/sysinfo.cpp:186
 msgid "Current user:"
 msgstr "Usuário atual:"
 
-#: sysinfo.cpp:180
+#: sysinfo/sysinfo.cpp:187
 msgid "System:"
 msgstr "Sistema:"
 
-#: sysinfo.cpp:181
+#: sysinfo/sysinfo.cpp:188
 msgid "KDE:"
 msgstr "KDE:"
 
-#: sysinfo.cpp:187
+#: sysinfo/sysinfo.cpp:194
 msgid "Display Info"
 msgstr "Informação do Display"
 
-#: sysinfo.cpp:192
+#: sysinfo/sysinfo.cpp:199
 msgid "Driver:"
 msgstr "Driver:"
 
-#: sysinfo.cpp:257
+#: sysinfo/sysinfo.cpp:264
 msgid "%1 (+ %2 Caches)"
 msgstr "%1 (+ %2 Caches)"
 
-#: sysinfo.cpp:311
+#: sysinfo/sysinfo.cpp:321
 #, fuzzy
 msgid "Total"
 msgstr "Memória de troca total:"
 
-#: sysinfo.cpp:311
+#: sysinfo/sysinfo.cpp:321
 #, fuzzy
 msgid "Available"
 msgstr "Espaço disponível"
 
-#: sysinfo.cpp:403
+#: sysinfo/sysinfo.cpp:469
 msgid "%1 (3D Support)"
 msgstr "%1 (Com Suporte 3D)"
 
-#: sysinfo.cpp:405
+#: sysinfo/sysinfo.cpp:471
 msgid "%1 (No 3D Support)"
 msgstr "%1 (Sem suporte 3D)"
 
-#: sysinfo.cpp:415
+#: sysinfo/sysinfo.cpp:481
 msgid "Network is <strong>unreachable</strong>"
 msgstr "A rede está <strong>indisponível</strong>"
 
-#: sysinfo.cpp:417
+#: sysinfo/sysinfo.cpp:483
 msgid "You are <strong>offline</strong>"
 msgstr "Você está <strong>offline</strong>"
 
-#: sysinfo.cpp:419
+#: sysinfo/sysinfo.cpp:485
 msgid "Network is <strong>shutting down</strong>"
 msgstr "A rede está <strong>desconectando-se</strong>"
 
-#: sysinfo.cpp:421
+#: sysinfo/sysinfo.cpp:487
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>Estabilizando</strong> conexão à rede"
 
-#: sysinfo.cpp:423
+#: sysinfo/sysinfo.cpp:489
 msgid "You are <strong>online</strong>"
 msgstr "Você está <strong>online</strong>"
 
-#: sysinfo.cpp:425
+#: sysinfo/sysinfo.cpp:491
 msgid "Unknown network status"
 msgstr "Status da rede desconhecido"
 

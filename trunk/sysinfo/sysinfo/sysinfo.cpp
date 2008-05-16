@@ -84,6 +84,12 @@ kio_sysinfoProtocol::~kio_sysinfoProtocol()
     delete m_dcopClient;
 }
 
+static QString formatStr( QString st) {
+    if ( st == "" )
+        return i18n("Not Available");
+    return st;
+}
+
 void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 {
     mimeType( "application/x-sysinfo" );
@@ -187,8 +193,8 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     {
         sysInfo += "<h2 id=\"display\">" + i18n( "Display Info" ) + "</h2>";
         sysInfo += "<table style=\"background-image:url('" + icon( "display", 48, true) + "');\">";
-        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[GFX_VENDOR] +  "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[GFX_MODEL] + "</td></tr>";
+        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + formatStr(m_info[GFX_VENDOR]) +  "</td></tr>";
+        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + formatStr(m_info[GFX_MODEL]) + "</td></tr>";
         if (!m_info[GFX_DRIVER].isNull())
             sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
         sysInfo += "</table>";
