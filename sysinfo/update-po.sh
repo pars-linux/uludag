@@ -6,6 +6,7 @@ xgettext sysinfo/*.cpp -o po/kio_sysinfo.pot -ki18n -ktr2i18n -kI18N_NOOP -ktran
 
 for lang in $LANGS
 do
+    echo "updating $lang"
     msgmerge -U po/$lang/kio_sysinfo.po po/kio_sysinfo.pot
 done
 
