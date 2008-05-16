@@ -80,6 +80,7 @@ public:
         MEM_FREESWAP,
         SYSTEM_UPTIME,          // in seconds
         CPU_MODEL,
+        CPU_NOFCORE,            // number of cores
         CPU_SPEED,              // in MHz
         OS_SYSNAME,             // man 2 uname
         OS_RELEASE,
@@ -107,7 +108,7 @@ private:
      * @param info requested field (if empty, return the first line from the file)
      * @param sep separator
      */
-    QString readFromFile( const QString & filename, const QString & info = QString::null, const char * sep = 0 ) const;
+    QString readFromFile( const QString & filename, const QString & info = QString::null, const char * sep = 0, const bool getlast = false ) const;
 
     /**
      * Gather basic memory info

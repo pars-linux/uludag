@@ -2,6 +2,7 @@
 // sysinfo.cpp                                                          //
 //                                                                      //
 // Copyright (C)  2005  Lukas Tinkl <lukas.tinkl@suse.cz>               //
+// Copyright (C)  2007-2008  Pardus Developers <info@pardus.org.tr>     //
 //                                                                      //
 // This program is free software; you can redistribute it and/or        //
 // modify it under the terms of the GNU General Public License          //
@@ -144,6 +145,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         sysInfo += "<li><span class=\"label\">" + i18n( "Processor (CPU):" ) + "</span>" + m_info[CPU_MODEL] + "</li>";
         sysInfo += "<li><span class=\"label\">" + i18n( "Speed:" ) + "</span> " +
                    i18n( "%1 MHz" ).arg( KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 ) ) + "</li>";
+        sysInfo += "<li><span class=\"label\">" + i18n( "Number of Core :" ) + "</span>" + m_info[CPU_NOFCORE] + "</li>";
         sysInfo += "</ul>";
     }
 
@@ -285,6 +287,9 @@ void kio_sysinfoProtocol::cpuInfo()
 
     m_info[CPU_SPEED] = speed;
 
+    QString numberOfCores = readFromFile( "/proc/cpuinfo", "processor", ":", true);
+    numberOfCores = QString::number(numberOfCores.toInt() + 1);
+    m_info[CPU_NOFCORE] = numberOfCores;
     m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "model name", ":" );
     if ( m_info[CPU_MODEL].isNull() ) // PPC?
          m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "cpu", ":" );
@@ -417,27 +422,6 @@ bool isOpenGlSupported() {
     XFree(visinfo);
     XCloseDisplay (dpy);
 
-    /*
-    FILE *pipe;
-    QString line;
-
-    if ((pipe = popen(INFO_OPENGL, "r")) == NULL) {
-        pclose(pipe);
-        return false;
-    }
-
-    QTextStream t(pipe, IO_ReadOnly);
-    while (!t.atEnd()) {
-        line = t.readLine();
-        line = line.stripWhiteSpace();
-        if (line.startsWith("direct rendering: "))
-            if (line.replace("direct rendering: ","") == "Yes")
-                return true;
-            else
-                return false;
-    }
-    */
-
     return isEnabled;
 }
 
@@ -491,7 +475,7 @@ QString kio_sysinfoProtocol::netStatus( int code ) const
     return i18n( "Unknown network status" );
 }
 
-QString kio_sysinfoProtocol::readFromFile( const QString & filename, const QString & info, const char * sep ) const
+QString kio_sysinfoProtocol::readFromFile( const QString & filename, const QString & info, const char * sep, const bool getlast ) const
 {
     QFile file( filename );
 
@@ -500,6 +484,7 @@ QString kio_sysinfoProtocol::readFromFile( const QString & filename, const QStri
 
     QTextStream stream( &file );
     QString line;
+    QString temp;
 
     while ( !stream.atEnd() )
     {
@@ -510,12 +495,13 @@ QString kio_sysinfoProtocol::readFromFile( const QString & filename, const QStri
                 return line;
             if ( line.startsWith( info ) )
             {
-                return line.section( sep, 1, 1 );
+                temp = line.section( sep, 1, 1 );
+                if ( !getlast )
+                    return temp;
             }
         }
     }
-
-    return QString::null;
+    return temp;
 }
 
 QString kio_sysinfoProtocol::icon( const QString & name, int size, bool justPath ) const
