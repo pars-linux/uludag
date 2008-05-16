@@ -89,6 +89,9 @@ class CardDialog(driverdialog.VideoCard):
         dc = parent.displayConfiguration
         self.compatibleDriverList = {}
         self.allDriversList = []
+        self.availableDrivers = {}
+
+        self.availableDrivers = hwdata.getAvailableDrivers()
 
         curdrv = dc._info.driver
         if dc._info.package != "xorg-video":
@@ -101,9 +104,9 @@ class CardDialog(driverdialog.VideoCard):
             if drv == curdrv:
                 current = item
 
-        for d, desc  in hwdata.drivers.items():
+        for d in self.availableDrivers:
             if not d in self.compatibleDriverList.keys():
-                item = DriverItem(self.listViewVideoCard, d, desc)
+                item = DriverItem(self.listViewVideoCard, d, self.availableDrivers[d])
                 self.allDriversList.append(item)
 
         self.hideExtraDrivers()
