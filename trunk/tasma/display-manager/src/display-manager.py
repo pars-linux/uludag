@@ -87,19 +87,45 @@ class CardDialog(driverdialog.VideoCard):
 
         current = None
         dc = parent.displayConfiguration
+        self.compatibleDriverList = {}
+        self.allDriversList = []
+
         curdrv = dc._info.driver
         if dc._info.package != "xorg-video":
             curdrv += "/%s" % dc._info.package
 
         for drv in hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id):
             item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
+            self.compatibleDriverList[drv] =  item
 
             if drv == curdrv:
                 current = item
 
+        for d, desc  in hwdata.drivers.items():
+            if not d in self.compatibleDriverList.keys():
+                item = DriverItem(self.listViewVideoCard, d, desc)
+                self.allDriversList.append(item)
+
+        self.hideExtraDrivers()
+
         self.listViewVideoCard.setCurrentItem(current)
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
-        self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept)
+        self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept),
+        self.connect(self.checkBoxAllDrivers, SIGNAL("toggled(bool)"), self.listExtraDrivers)
+
+    def showExtraDrivers(self):
+        for d in self.allDriversList:
+            d.setVisible(True)
+
+    def hideExtraDrivers(self):
+        for d in self.allDriversList:
+            d.setVisible(False)
+
+    def listExtraDrivers(self):
+        if self.checkBoxAllDrivers.isChecked():
+            self.showExtraDrivers()
+        else:
+            self.hideExtraDrivers()
 
 class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
