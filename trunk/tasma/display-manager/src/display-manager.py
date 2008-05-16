@@ -89,7 +89,6 @@ class CardDialog(driverdialog.VideoCard):
         dc = parent.displayConfiguration
         self.compatibleDriverList = {}
         self.allDriversList = []
-        self.availableDrivers = {}
 
         self.availableDrivers = hwdata.getAvailableDrivers()
 
