@@ -109,6 +109,9 @@ class CardDialog(driverdialog.VideoCard):
                 item = DriverItem(self.listViewVideoCard, d, self.availableDrivers[d])
                 self.allDriversList.append(item)
 
+                if d == curdrv:
+                    current = item
+
         self.hideExtraDrivers()
 
         if current:
