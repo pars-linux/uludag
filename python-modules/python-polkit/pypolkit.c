@@ -1,5 +1,6 @@
 /*
-* Copyright (c) 2008, TUBITAK/UEKAE, Harald Hoyer
+* Copyright (c) 2008, TUBITAK/UEKAE
+* Copyright (c) 2008, Harald Hoyer
 *
 * Permission is hereby granted, free of charge, to any person
 * obtaining a copy of this software and associated documentation
