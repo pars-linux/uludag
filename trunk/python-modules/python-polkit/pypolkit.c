@@ -34,7 +34,7 @@
 static PyObject *PK_Error;
 
 //! Sets key of dictionary if value is not null
-void
+static void
 dict_set_unless_null(PyObject *dict, const char *key, const char *value)
 {
     if (value != NULL) {
@@ -43,7 +43,7 @@ dict_set_unless_null(PyObject *dict, const char *key, const char *value)
 }
 
 //! Creates action object from action id
-PolKitAction *
+static PolKitAction *
 pk_make_action(const char *action_id)
 {
     PolKitAction *pk_action = polkit_action_new();
@@ -52,7 +52,7 @@ pk_make_action(const char *action_id)
 }
 
 //! Creates caller object from uid
-PolKitCaller *
+static PolKitCaller *
 pk_make_caller_from_uid(int uid)
 {
     PolKitCaller *pk_caller = polkit_caller_new();
@@ -61,7 +61,7 @@ pk_make_caller_from_uid(int uid)
 }
 
 //! Creates caller object from pid
-PolKitCaller *
+static PolKitCaller *
 pk_make_caller_from_pid(int pid)
 {
     PolKitCaller *pk_caller = polkit_caller_new();
@@ -70,7 +70,7 @@ pk_make_caller_from_pid(int pid)
 }
 
 //! Init policy cache
-PolKitPolicyCache *
+static PolKitPolicyCache *
 pk_init_cache()
 {
     PolKitError *pk_error = NULL;
@@ -98,7 +98,7 @@ pk_init_cache()
 }
 
 //! Init auth db
-PolKitAuthorizationDB *
+static PolKitAuthorizationDB *
 pk_init_authdb()
 {
     PolKitContext *pk_context = polkit_context_new();
@@ -321,8 +321,8 @@ static PyObject *pk_check_authv(PyObject *self, PyObject *args) {
   pid_t pid = 0;
   char **argv = NULL;
   polkit_uint64_t result;
-  PyObject *resultobj = 0;
-  PyObject * obj = 0 ;
+  PyObject *resultobj = NULL;
+  PyObject *obj = NULL ;
   
   if (!PyArg_ParseTuple(args,(char *)"iO:polkit_check_authv",&pid, &obj))
     return NULL;
@@ -387,7 +387,7 @@ fail:
 }
 
 static PyObject *pk_auth_obtain(PyObject *self, PyObject *args) {
-  PyObject *resultobj = 0;
+  PyObject *resultobj = NULL;
   char *action_id = NULL ;
   polkit_uint32_t xid = 0;
   pid_t pid = 0;
@@ -463,7 +463,7 @@ static PyMethodDef polkit_methods[] = {
 #define PyMODINIT_FUNC void
 #endif
 
-PyMODINIT_FUNC
+static PyMODINIT_FUNC
 init_polkit(void)
 {
     PyObject *m = Py_InitModule3("_polkit", polkit_methods, "module for querying system-wide policy");
