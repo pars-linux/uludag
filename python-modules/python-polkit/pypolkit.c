@@ -1,18 +1,35 @@
 /*
-* Copyright (c) 2008, TUBITAK/UEKAE
+* Copyright (c) 2008, TUBITAK/UEKAE, Harald Hoyer
 *
-* This program is free software; you can redistribute it and/or modify it
-* under the terms of the GNU General Public License as published by the
-* Free Software Foundation; either version 2 of the License, or (at your
-* option) any later version. Please read the COPYING file.
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the \"Software\"), to deal in the Software without
+* restriction, including without limitation the rights to use, copy,
+* modify, merge, publish, distribute, sublicense, and/or sell copies
+* of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+* HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+* DEALINGS IN THE SOFTWARE.
+*
 */
 
-#include <Python.h>
 #include <polkit-grant/polkit-grant.h>
+#include <polkit-dbus/polkit-dbus.h>
+#include <Python.h>
 #include <datetime.h>
 #include <unistd.h>
 
-//! Standard exception for pypolkit
+//! Standard exception for polkit
 static PyObject *PK_Error;
 
 //! Sets key of dictionary if value is not null
@@ -256,7 +273,6 @@ pk_auth_add(PyObject *self, PyObject *args)
     }
 
     PolKitAuthorizationDB *pk_auth = pk_init_authdb();
-    PolKitError *pk_error = NULL;
 
     PolKitAction *pk_action = pk_make_action(action_id);
     PolKitCaller *pk_caller;
@@ -300,21 +316,159 @@ pk_auth_add(PyObject *self, PyObject *args)
     }
 }
 
-//! pypolkit methods
+static PyObject *pk_check_authv(PyObject *self, PyObject *args) {
+  pid_t pid = 0;
+  char **argv = NULL;
+  polkit_uint64_t result;
+  PyObject *resultobj = 0;
+  PyObject * obj = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"iO:polkit_check_authv",&pid, &obj))
+    return NULL;
+
+  /* Check if is a list */
+  if (PyList_Check(obj)) {
+    int size = PyList_Size(obj);
+    int i = 0;
+    argv = (char **) malloc((size+1)*sizeof(char *));
+
+    if (!argv) {
+      PyErr_SetString(PK_Error, "malloc failed.");
+      goto fail;
+    }
+
+    for (i = 0; i < size; i++) {
+      PyObject *o = PyList_GetItem(obj,i);
+      if (PyString_Check(o))
+        argv[i] = PyString_AsString(PyList_GetItem(obj,i));
+      else {
+	PyErr_SetString(PyExc_TypeError,"list must contain strings");
+	goto fail;
+      }
+    }
+    argv[i] = NULL;
+  } else if (PyTuple_Check(obj)) {
+    int size = PyTuple_Size(obj);
+    int i = 0;
+    argv = (char **) malloc((size+1)*sizeof(char *));
+    if (!argv) {
+      PyErr_SetString(PK_Error, "malloc failed.");
+      goto fail;
+    }
+    for (i = 0; i < size; i++) {
+      PyObject *o = PyTuple_GetItem(obj,i);
+      if (PyString_Check(o))
+        argv[i] = PyString_AsString(PyTuple_GetItem(obj,i));
+      else {
+	PyErr_SetString(PyExc_TypeError,"tuple must contain strings");
+	goto fail;
+      }
+    }
+    argv[i] = NULL;
+  } else {
+    PyErr_SetString(PyExc_TypeError,"not a list or tuple");
+    goto fail;
+  }
+
+  result = (polkit_uint64_t)polkit_check_authv(pid, (char const **)argv);
+
+  resultobj = PyLong_FromUnsignedLong((unsigned long long)(result));
+
+  if (argv)
+    free((char *) argv);
+
+  return resultobj;
+
+fail:
+  if (argv)
+    free((char *) argv);
+  return NULL;
+}
+
+static PyObject *pk_auth_obtain(PyObject *self, PyObject *args) {
+  PyObject *resultobj = 0;
+  char *action_id = NULL ;
+  polkit_uint32_t xid = 0;
+  pid_t pid = 0;
+  DBusError dbus_err;
+  polkit_bool_t result;
+  PolKitAction *action = NULL;
+  
+  dbus_error_init(&dbus_err);
+  
+  if (!PyArg_ParseTuple(args,(char *)"sii:pk_auth_obtain", &action_id, (int *)&xid, (int *)&pid)) 
+    return NULL;
+
+  result = (polkit_bool_t)polkit_auth_obtain((char const *)action_id, xid, pid, &dbus_err);
+  
+  PyObject *l;
+  
+  if ((result == FALSE) && dbus_error_is_set(&dbus_err)) {
+    PolKitResult res;
+    char *out_action_id;
+    
+    if (polkit_dbus_error_parse(&dbus_err, &action, &res) == FALSE) {
+      PyErr_SetString(PK_Error, "polkit_dbus_error_parse");
+      goto fail;
+    }
+    
+    if (polkit_action_get_action_id(action, &out_action_id) == FALSE)
+      goto fail;
+    
+    l = PyList_New(0);
+
+    if (!l)
+      goto fail_clean_action;
+
+    resultobj = l;
+    PyList_Append(l, PyString_FromString(out_action_id));
+    PyList_Append(l, PyString_FromString(polkit_result_to_string_representation(res)));
+    polkit_action_unref(action);
+  } 
+  else {
+    if (result == TRUE) {
+      Py_INCREF(Py_True);
+      resultobj = Py_True;
+    } else {
+      Py_INCREF(Py_False);
+      resultobj = Py_False;
+    }
+  }
+  
+  dbus_error_free(&dbus_err);
+  return resultobj;
+
+ fail_clean_action:
+  polkit_action_unref(action);
+ fail:
+  dbus_error_free(&dbus_err);
+  return NULL;
+}
+
+
+//! polkit methods
 static PyMethodDef polkit_methods[] = {
     {"action_list", (PyCFunction) pk_action_list, METH_NOARGS, "Lists all actions."},
     {"action_info", (PyCFunction) pk_action_info, METH_VARARGS, "Get action details."},
     {"auth_list_uid", (PyCFunction) pk_auth_list_uid, METH_VARARGS, "List granted authorizations for specified UID."},
     {"auth_list_all", (PyCFunction) pk_auth_list_all, METH_NOARGS, "List granted authorizations."},
     {"auth_add", (PyCFunction) pk_auth_add, METH_VARARGS, "Authorize user for the given action."},
+    {"check_authv", (PyCFunction) pk_check_authv, METH_VARARGS, "Check authorization for the given action."},
+    {"auth_obtain", (PyCFunction) pk_auth_obtain, METH_VARARGS, "Authorize user for the given action."},
     {NULL, NULL, 0, NULL}
 };
 
+#ifndef PyMODINIT_FUNC	/* declarations for DLL import/export */
+#define PyMODINIT_FUNC void
+#endif
 
 PyMODINIT_FUNC
-initpypolkit(void)
+init_polkit(void)
 {
-    PyObject *m = Py_InitModule("pypolkit", polkit_methods);
+    PyObject *m = Py_InitModule3("_polkit", polkit_methods, "module for querying system-wide policy");
+
+    if (m == NULL)
+      return;
 
     PyModule_AddObject(m, "SCOPE_ONE_SHOT", PyInt_FromLong((long) POLKIT_AUTHORIZATION_SCOPE_PROCESS_ONE_SHOT));
     PyModule_AddObject(m, "SCOPE_PROCESS", PyInt_FromLong((long) POLKIT_AUTHORIZATION_SCOPE_PROCESS));
@@ -325,7 +479,7 @@ initpypolkit(void)
 
     PyModule_AddObject(m, "DB_CAPABILITY_CAN_OBTAIN", PyInt_FromLong((long) POLKIT_AUTHORIZATION_DB_CAPABILITY_CAN_OBTAIN));
 
-    PK_Error = PyErr_NewException("pypolkit.error", NULL, NULL);
+    PK_Error = PyErr_NewException("polkit.error", NULL, NULL);
     Py_INCREF(PK_Error);
     PyModule_AddObject(m, "error", PK_Error);
 }
