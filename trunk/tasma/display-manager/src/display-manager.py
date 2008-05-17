@@ -19,6 +19,7 @@ import kdedesigner
 import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
 from pardus.deviceutils import idsQuery
+from zorg.consts import package_sep
 
 import helpdialog
 import dm_mainview
@@ -94,7 +95,7 @@ class CardDialog(driverdialog.VideoCard):
 
         curdrv = dc._info.driver
         if dc._info.package != "xorg-video":
-            curdrv += "/%s" % dc._info.package
+            curdrv += package_sep + dc._info.package
 
         for drv in hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id):
             item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
@@ -112,6 +113,8 @@ class CardDialog(driverdialog.VideoCard):
 
         if current:
             self.listViewVideoCard.setCurrentItem(current)
+
+        self.listViewVideoCard.setFocus()
 
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
         self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept),
