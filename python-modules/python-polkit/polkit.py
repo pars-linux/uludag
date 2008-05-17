@@ -1,35 +1,60 @@
+#-*- coding: utf-8 -*-
+"""
+module for querying system-wide policy
+
+ *
+ * PolicyKit by David Zeuthen, <david@fubar.dk>
+ * Python Bindings by Bahadır Kandemir <bahadir@pardus.org.tr>
+ *                    Harald Hoyer <harald@redhat.com>
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies
+ * of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ *
+
+"""
+
 import _polkit
 
-def action_list():
-    """
-    Lists all actions defined in .policy files.
-
-    returns :
-         A list of action_ids
-    """
-    return _polkit.action_list()
-
-def action_info(action_id):
-    """
-    Gives all actions defined in .policy files.
-
-    action_id :
-        Action ID to get details about.
-
-    returns :
-         A dictionary with description, message, vendor, vendor
-         url, icon and annotations fields.
-    """
-    return _polkit.action_info(action_id)
+from _polkit import (
+    action_list,
+    action_info,
+    auth_list_uid,
+    auth_list_all,
+    auth_add,
+    SCOPE_ONE_SHOT,
+    SCOPE_PROCESS,
+    SCOPE_SESSION,
+    SCOPE_ALWAYS,
+    TYPE_UID,
+    DB_CAPABILITY_CAN_OBTAIN,
+    error
+    )
 
 def check_auth(pid, *args):
     """
-    This function is similar to polkit_check_authv(),
+    This function is similar to check_authv(),
     but takes the action_ids as a plain parameter list.
     """
     return check_authv(pid, args)
 
-def check_authv(pid, action_ids):
+def check_authv(pid, action_ids):    
     """
     A simple convenience function to check whether a given 
     process is authorized for a number of actions.
@@ -71,6 +96,8 @@ def check_authv(pid, action_ids):
     """
     ret = _polkit.check_authv(pid, action_ids)
     auth = set()
+    if (type(ret) is not long):
+        raise error
     for i, action in enumerate(action_ids):
         if (ret & (1<<i)):
             auth.add(action)
@@ -101,15 +128,6 @@ def auth_obtain(action_id, xid, pid):
 
     ret = _polkit.auth_obtain(action_id, xid, pid)
     if (ret is list):
-        raise PolicyKitException, "%s: %s" % ret
-    return ret != 0
+        raise error, "%s: %s" % ret
+    return ret
 
-class PolicyKitException(Exception):
-    pass
-
-__all__ = [ 
-        "polkit_check_auth",
-        "polkit_check_authv",
-        "polkit_auth_obtain",
-        "PolicyKitException",
-        ]
