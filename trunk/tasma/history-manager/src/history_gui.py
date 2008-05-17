@@ -1,3 +1,5 @@
+#ifndef HISTORY_GUI.PY
+#define HISTORY_GUI.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -24,15 +26,12 @@ class widgetMain(formMain):
         self.historydb = pisi.db.historydb.HistoryDB()
         formMain.__init__(self, parent)
 
-        # readOnly means you can't
-        self.readOnly = False
         self.help = None
 
         self.command = Commander.Commander(self)
         # selected/previously selected list item
         self.selected = None
         self.previous = None
-        self.addedLater = []
         self.latest = 0
 
         # gui looks better
@@ -70,6 +69,7 @@ class widgetMain(formMain):
         self.popupmenu.insertSeparator()
         self.popupmenu.insertItem(loadIconSet("reload", KIcon.Small), i18n("Restore to This Point"), self.take_back)
 
+        # this hangs a little bit
         self.updateGui()
 
         # make connections
@@ -97,14 +97,14 @@ class widgetMain(formMain):
         self.historydb.init()
 
     def keyPressEvent(self, event):
-        # F5 Key refreshes list
+        # F5 Key refreshes list, not for users
         if event.key() == Qt.Key_F5:
             self.updateGui()
         else:
             event.ignore()
 
     def execPopup(self, item, point, col):
-        # ContextMenu pops up
+        # ContextMenu
         if item == None:
             return
         self.snapshotsListView.setSelected(item, True)
@@ -120,7 +120,7 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     message, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
-                qApp.processEvents(100)
+                #qApp.processEvents(100)
                 self.command.takeSnapshot()
 
     def take_back(self, operation=None):
@@ -137,7 +137,7 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     message, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
-                qApp.processEvents(100)
+                #qApp.processEvents(100)
                 self.command.takeBack(operation)
 
     def delete_snapshot(self):
@@ -172,14 +172,6 @@ class widgetMain(formMain):
     def displayProgress(self, data):
         print "progress yay"
 
-    def setReadOnly(self, true):
-        # This disables gui from starting any operation
-        if true:
-            self.readOnly = True
-        else:
-            self.readOnly = False
-        self.updateGui()
-
     def showErrorMessage(self, message):
         QMessageBox.critical(self, i18n("Error"), message, i18n("OK"))
 
@@ -197,12 +189,6 @@ class widgetMain(formMain):
             if self.snapshotsCheckBox.isChecked():
                 if item.getType() != 'snapshot':
                     item.setVisible(False)
-        if self.readOnly:
-            self.snapshotPushButton.setEnabled(False)
-            self.restorePushButton.setEnabled(False)
-        else:
-            self.snapshotPushButton.setEnabled(True)
-            self.restorePushButton.setEnabled(False)
 
     def addLast(self):
         """ after an operation, add latest operation to list """
@@ -257,12 +243,6 @@ class widgetMain(formMain):
 
     def itemChanged(self, item):
         """ triggered when listviewitem is changed """
-        if self.readOnly:
-            self.restorePushButton.setEnabled(False)
-            self.snapshotPushButton.setEnabled(False)
-        else:
-            self.snapshotPushButton.setEnabled(True)
-            self.restorePushButton.setEnabled(True)
         self.previous = self.selected or item
         self.selected = item
 
@@ -342,5 +322,4 @@ class widgetItem(QListViewItem):
     def getType(self):
         return self.op_type
 
-
-
+#endif // HISTORY_GUI.PY
