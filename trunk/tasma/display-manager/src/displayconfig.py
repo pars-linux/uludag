@@ -153,10 +153,16 @@ class DisplayConfig:
         if self._randr12:
             for output in self.outputs:
                 modes = self._rriface.getResolutions(output)
-                self.modes[output] = modes if modes else all_modes
+                if modes:
+                    self.modes[output] = modes
+                else:
+                    self.modes[output] = all_modes
 
                 current = self._rriface.currentResolution(output)
-                self.current_modes[output] = current if current else self.modes[output][0]
+                if current:
+                    self.current_modes[output] = current
+                else:
+                    self.current_modes[output] = self.modes[output][0]
 
         else:
             if self._info.driver == "fglrx":
@@ -188,8 +194,12 @@ class DisplayConfig:
         self.true_color = self._info.depth == "24"
 
     def apply(self):
+        if self.true_color:
+            depth = "24"
+        else:
+            depth = "16"
         options = {
-                "depth":            "24" if self.true_color else "16",
+                "depth":            depth,
                 "desktop-setup":    self.desktop_setup
                 }
 
