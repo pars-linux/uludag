@@ -1,0 +1,252 @@
+# translation of es.po to
+# translation of de.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# klemens <click3d_at_linuxmail_org>, 2008.
+# Klemens Häckel <click3d_at_linuxmail_org>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-12 11:15+0300\n"
+"PO-Revision-Date: 2008-05-18 08:26-0400\n"
+"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"Language-Team:  <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/dm_mainview.py:346 src/display-manager.py:38 src/display-manager.py:362
+msgid "Display Manager"
+msgstr "Administrador de Pantallas"
+
+#: src/dm_mainview.py:347
+msgid "Identify Displays"
+msgstr "Identificar pantallas"
+
+#: src/dm_mainview.py:348 src/dm_mainview.py:369 src/display-manager.py:96
+msgid "Primary Screen"
+msgstr "Pantalla principal"
+
+#: src/dm_mainview.py:349
+msgid "Output"
+msgstr "Salida"
+
+#: src/dm_mainview.py:350
+msgid "Resolution"
+msgstr "Resolución"
+
+#: src/dm_mainview.py:353
+msgid "1"
+msgstr "1"
+
+#: src/dm_mainview.py:355
+msgid "2"
+msgstr "2"
+
+#: src/dm_mainview.py:357
+msgid "True Color"
+msgstr "Color verdadero"
+
+#: src/dm_mainview.py:358
+msgid "Dual Screen"
+msgstr "Doble Pantalla"
+
+#: src/dm_mainview.py:360
+msgid "Cloned Mode"
+msgstr "Modo clonado"
+
+#: src/dm_mainview.py:361
+msgid "Extended Mode"
+msgstr "Modo extendido"
+
+#: src/dm_mainview.py:362
+msgid "Detect Displays"
+msgstr "Descubrir Monitores"
+
+#: src/dm_mainview.py:363
+msgid "Screens"
+msgstr "Pantallas"
+
+#: src/dm_mainview.py:364 src/driverdialog.py:59
+msgid "Video Card"
+msgstr "Tarjeta de video"
+
+#: src/dm_mainview.py:365
+msgid "Card Icon"
+msgstr "Ícono de tarjeta"
+
+#: src/dm_mainview.py:366
+msgid "<p>Card Name</p>"
+msgstr "<p>Nombre de tarjeta</p>"
+
+#: src/dm_mainview.py:367
+msgid "<p>Driver Name</p>"
+msgstr "<p>Nombre de Controlador</p>"
+
+#: src/dm_mainview.py:368 src/dm_mainview.py:372 src/dm_mainview.py:376
+msgid "Configure..."
+msgstr "Configurar..."
+
+#: src/dm_mainview.py:370 src/dm_mainview.py:374
+msgid "Monitor Icon"
+msgstr "Ícono de monitor"
+
+#: src/dm_mainview.py:371 src/dm_mainview.py:375
+msgid "Monitor Info"
+msgstr "Información de monitor"
+
+#: src/dm_mainview.py:373 src/display-manager.py:96
+msgid "Secondary Screen"
+msgstr "Pantalla secundaria"
+
+#: src/dm_mainview.py:377
+msgid "Devices"
+msgstr "Dispositivos"
+
+#: src/displayconfig.py:91
+msgid "COMAR Error"
+msgstr "Error COMAR"
+
+#: src/displayconfig.py:96
+msgid "Waiting DBus..."
+msgstr "Esperando DBus..."
+
+#: src/displayconfig.py:96
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr "Conexión con DBus interrumpida inesperadamente, intentando conectar de nuevo..."
+
+#: src/displayconfig.py:112
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr "No posible conectar con DBus! Si no está corriendo lo debería iniciar con el comando 'service dbus start' desde una consola de root."
+
+#: src/displayconfig.py:243
+msgid ""
+"Configuration has been saved. Some changes may take effect after restarting "
+"your computer."
+msgstr "Configuración guardada con éxito. Puede que algunos de los cambios se aplican al reiniciar la computadora."
+
+#: src/display-manager.py:162
+msgid ""
+"Sorry, but you can use one device for each output.\n"
+"Try to select another output."
+msgstr ""
+"Perdon, puede utilizar un dispositivo por cada salida.\n"
+"Intente seleccionar otra salida."
+
+#: src/display-manager.py:163
+msgid "Duplicate Outputs!"
+msgstr "Salidas duplicadas!"
+
+#: src/display-manager.py:274
+#, python-format
+msgid "Driver: %s"
+msgstr "Controlador: %s"
+
+#: src/display-manager.py:277
+msgid "Plug and Play Monitor"
+msgstr "Monitor Plug and Play"
+
+#: src/display-manager.py:350
+msgid "Display Manager is already started!"
+msgstr "Administrador de pantallas ya se está ejecutando!"
+
+#: src/driverdialog.py:28 src/driverdialog.py:60
+msgid "Driver Name"
+msgstr "Nombre de controlador"
+
+#: src/driverdialog.py:29 src/driverdialog.py:61
+msgid "Description"
+msgstr "Descripción"
+
+#: src/driverdialog.py:62
+msgid "Probe at next boot."
+msgstr "Realizar verificación durante el próximo arranque."
+
+#: src/driverdialog.py:63 src/monitordialog.py:96
+msgid "Ok"
+msgstr "Ok"
+
+#: src/helpdialog.py:55
+msgid "Display Manager Help"
+msgstr "Ayuda de Administrador de Pantallas"
+
+#: src/helpdialog.py:56
+msgid ""
+"<p>\n"
+"<b><h3>Outputs </h3></b>\n"
+"\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
+"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
+"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
+"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
+"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
+"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
+"<br><br>\n"
+"<b><h3>Resolution </h3></b>\n"
+"\n"
+"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
+"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
+"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
+"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
+"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
+"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
+"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
+"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
+"dignissim dui lectus et orci.\n"
+"\n"
+"</p>"
+msgstr ""
+"<p>\n"
+"<b><h3>Salidas </h3></b>\n"
+"\n"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque nisl "
+"est, lacinia non, tincidunt ut, varius vitae, enim. Vestibulum quis enim ac "
+"odio tincidunt hendrerit. Proin accumsan convallis justo. Vestibulum "
+"egestas. In nisi. Maecenas ut leo. Donec rutrum ultricies diam. Aenean "
+"rhoncus commodo urna. Quisque nibh turpis, sollicitudin vitae, ultrices "
+"pulvinar, mollis quis, mi. Morbi ultrices egestas tellus.\n"
+"<br><br>\n"
+"<b><h3>Resolución </h3></b>\n"
+"\n"
+"Mauris velit. Curabitur vestibulum eros. Donec euismod. Aliquam erat "
+"volutpat. Proin porttitor turpis id lorem. In pede ante, hendrerit in, "
+"suscipit in, fermentum eget, massa. Sed vel elit. Donec molestie lorem. Sed "
+"tincidunt accumsan purus. Aliquam malesuada augue nec risus. Aliquam mollis "
+"libero in mi. Etiam sit amet orci laoreet mi varius elementum. Donec et "
+"nisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis "
+"natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. "
+"Donec varius, ipsum at gravida gravida, tellus nisi feugiat arcu, quis "
+"dignissim dui lectus et orci.\n"
+"\n"
+"</p>"
+
+#: src/helpdialog.py:67
+msgid "<p><b><h3>Display Manager </h3></b></p>"
+msgstr "<p><b><h3>Administrador de Pantllas </h3></b></p>"
+
+#: src/monitordialog.py:87
+msgid "Choose Monitor"
+msgstr "Seleccionar Monitor"
+
+#: src/monitordialog.py:89
+msgid "Details"
+msgstr "Detalles"
+
+#: src/monitordialog.py:90
+msgid "<p>Horizontal Range:</p>"
+msgstr "<p>Rango Horizontal:</p>"
+
+#: src/monitordialog.py:92
+msgid "<p>Vertical Range:</p>"
+msgstr "<p>Rango Vertical:</p>"
+
+#: src/monitordialog.py:94
+msgid "Plug And Play Monitor"
+msgstr "Monitor Plug And Play"
+
