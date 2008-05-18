@@ -463,7 +463,7 @@ static PyMethodDef polkit_methods[] = {
 #define PyMODINIT_FUNC void
 #endif
 
-static PyMODINIT_FUNC
+PyMODINIT_FUNC
 init_polkit(void)
 {
     PyObject *m = Py_InitModule3("_polkit", polkit_methods, "module for querying system-wide policy");
