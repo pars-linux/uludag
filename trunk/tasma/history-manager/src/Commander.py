@@ -28,7 +28,10 @@ class Commander(QObject):
     def handler(self, signal=None, data=None):
         print "Signal: ", signal
         print "Data: ", data
-        args = data[1:] if len(data) > 1 else None
+        if len(data) > 1:
+            args = data[1:]
+        else:
+            args = None
 
         if signal == "finished":
             self.comar.com_lock.unlock()
