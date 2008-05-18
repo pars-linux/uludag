@@ -240,7 +240,10 @@ class MainWidget(dm_mainview.mainWidget):
 
         x, y = resolution.split("x")
 
-        icon = self.iconWide if float(x)/float(y) >= 1.6 else self.iconNormal
+        if float(x)/float(y) >= 1.6:
+            icon = self.iconWide
+        else:
+            icon = self.iconNormal
 
         if screenId == 2 or self.selectedScreen == "2":
             self.screenImage2.setIconSet(icon)
