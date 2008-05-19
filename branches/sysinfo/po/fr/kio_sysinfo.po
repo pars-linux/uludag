@@ -1,0 +1,216 @@
+# translation of kio_sysinfo.po to french
+# This file is put in the public domain.
+#
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_sysinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-16 15:16+0300\n"
+"PO-Revision-Date: 2007-06-19 00:24+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: french <pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: sysinfo/ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+#: sysinfo/sysinfo.cpp:68
+msgid "%1 GB"
+msgstr "%1 Go"
+
+#: sysinfo/sysinfo.cpp:70
+msgid "%1 MB"
+msgstr "%1 Mo"
+
+#: sysinfo/sysinfo.cpp:72
+msgid "%1 KB"
+msgstr "%1 Ko"
+
+#: sysinfo/sysinfo.cpp:90
+#, fuzzy
+msgid "Not Available"
+msgstr "Espace disponible"
+
+#: sysinfo/sysinfo.cpp:104
+msgid "Looking for hardware information..."
+msgstr "Recherche des informations concernant les périphériques..."
+
+#: sysinfo/sysinfo.cpp:107 sysinfo/sysinfo.cpp:111
+msgid "My Computer"
+msgstr "Mon Ordinateur"
+
+#: sysinfo/sysinfo.cpp:112
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Répertoires, Disques durs, Périphériques mobiles, Informations systèmes et "
+"plus encore..."
+
+#: sysinfo/sysinfo.cpp:120
+msgid "Common Folders"
+msgstr "Répertoire Communs"
+
+#: sysinfo/sysinfo.cpp:124
+msgid "My Home Folder"
+msgstr "Mon Répertoire d'Accueil"
+
+#: sysinfo/sysinfo.cpp:125
+msgid "Root Folder"
+msgstr "Répertoire Racine"
+
+#: sysinfo/sysinfo.cpp:126
+msgid "Network Folders"
+msgstr "Répertoires Réseaux"
+
+#: sysinfo/sysinfo.cpp:133
+msgid "Network Status"
+msgstr "Statu Réseau"
+
+#: sysinfo/sysinfo.cpp:143
+msgid "CPU Information"
+msgstr "Information CPU"
+
+#: sysinfo/sysinfo.cpp:145
+msgid "Processor (CPU):"
+msgstr "Processeur (CPU) :"
+
+#: sysinfo/sysinfo.cpp:146
+msgid "Speed:"
+msgstr "Vitesse :"
+
+#: sysinfo/sysinfo.cpp:147
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo/sysinfo.cpp:148
+msgid "Number of Core :"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:154
+msgid "Memory Information"
+msgstr "Informations concernant la mémoire"
+
+#: sysinfo/sysinfo.cpp:156
+msgid "Total memory (RAM):"
+msgstr "Mémoire cumulée (RAM):"
+
+#: sysinfo/sysinfo.cpp:157
+msgid "Free memory:"
+msgstr "Mémoire disponible :"
+
+#: sysinfo/sysinfo.cpp:158
+msgid "Used Memory"
+msgstr "Mémoire allouée :"
+
+#: sysinfo/sysinfo.cpp:159
+msgid "Total swap:"
+msgstr "Mémoire d'échange (swap) cumulée :"
+
+#: sysinfo/sysinfo.cpp:160
+msgid "Free swap:"
+msgstr "Mémoire d'échange (swap) disponible :"
+
+#: sysinfo/sysinfo.cpp:167
+msgid "Hardware Information"
+msgstr "Informations concernant les périphériques"
+
+#: sysinfo/sysinfo.cpp:169
+msgid "Type:"
+msgstr "Type :"
+
+#: sysinfo/sysinfo.cpp:170 sysinfo/sysinfo.cpp:198
+msgid "Vendor:"
+msgstr "Fabricant : "
+
+#: sysinfo/sysinfo.cpp:171 sysinfo/sysinfo.cpp:199
+msgid "Model:"
+msgstr "Modèle : "
+
+#: sysinfo/sysinfo.cpp:172
+msgid "Bios Vendor:"
+msgstr "Fabricant du Bios :"
+
+#: sysinfo/sysinfo.cpp:173
+msgid "Bios Version:"
+msgstr "Version du Bios :"
+
+#: sysinfo/sysinfo.cpp:180
+msgid "Disk Information"
+msgstr "Informations du disque"
+
+#: sysinfo/sysinfo.cpp:185
+msgid "OS Information"
+msgstr "Information de l'OS"
+
+#: sysinfo/sysinfo.cpp:187
+msgid "OS:"
+msgstr "OS:"
+
+#: sysinfo/sysinfo.cpp:188
+msgid "Current user:"
+msgstr "Utilisateur actif : "
+
+#: sysinfo/sysinfo.cpp:189
+msgid "System:"
+msgstr "Système : "
+
+#: sysinfo/sysinfo.cpp:190
+msgid "KDE:"
+msgstr "KDE :"
+
+#: sysinfo/sysinfo.cpp:196
+msgid "Display Info"
+msgstr "Propriétés de la carte vidéo"
+
+#: sysinfo/sysinfo.cpp:201
+msgid "Driver:"
+msgstr "Pilote :"
+
+#: sysinfo/sysinfo.cpp:266
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 Caches)"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Total"
+msgstr "Total"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Available"
+msgstr "Espace disponible"
+
+#: sysinfo/sysinfo.cpp:453
+msgid "%1 (3D Support)"
+msgstr "%1 (Support 3D)"
+
+#: sysinfo/sysinfo.cpp:455
+msgid "%1 (No 3D Support)"
+msgstr "%1 (Pas de support 3D)"
+
+#: sysinfo/sysinfo.cpp:465
+msgid "Network is <strong>unreachable</strong>"
+msgstr "Le réseau n'est <strong>pas accessible</strong>"
+
+#: sysinfo/sysinfo.cpp:467
+msgid "You are <strong>offline</strong>"
+msgstr "Vous êtes <strong>hors-ligne</strong>"
+
+#: sysinfo/sysinfo.cpp:469
+msgid "Network is <strong>shutting down</strong>"
+msgstr "Le réseau est <strong>en cours d'arrêt.</strong>"
+
+#: sysinfo/sysinfo.cpp:471
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr ""
+"<strong>Etablissement<strong> de la connection <strong>en cours</strong>"
+
+#: sysinfo/sysinfo.cpp:473
+msgid "You are <strong>online</strong>"
+msgstr "Vous êtes <strong>en ligne</strong>"
+
+#: sysinfo/sysinfo.cpp:475
+msgid "Unknown network status"
+msgstr "Statut réseau inconnu"

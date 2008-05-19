@@ -1,0 +1,216 @@
+# translation of kio_sysinfo.po to Italian
+# This file is put in the public domain.
+#
+# Andrea Decorte <adecorte@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_sysinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-16 15:16+0300\n"
+"PO-Revision-Date: 2007-07-11 20:45+0200\n"
+"Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
+"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: sysinfo/ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+#: sysinfo/sysinfo.cpp:68
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: sysinfo/sysinfo.cpp:70
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: sysinfo/sysinfo.cpp:72
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: sysinfo/sysinfo.cpp:90
+#, fuzzy
+msgid "Not Available"
+msgstr "Disponibile"
+
+#: sysinfo/sysinfo.cpp:104
+msgid "Looking for hardware information..."
+msgstr "Recupero delle informazioni sull'hardware..."
+
+#: sysinfo/sysinfo.cpp:107 sysinfo/sysinfo.cpp:111
+msgid "My Computer"
+msgstr "Il mio computer"
+
+#: sysinfo/sysinfo.cpp:112
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Cartelle, dischi rigidi, dispositivi rimovibili, informazioni sul sistema e "
+"altro..."
+
+#: sysinfo/sysinfo.cpp:120
+msgid "Common Folders"
+msgstr "Cartelle di frequente utilizzo"
+
+#: sysinfo/sysinfo.cpp:124
+msgid "My Home Folder"
+msgstr "Cartella Home"
+
+#: sysinfo/sysinfo.cpp:125
+msgid "Root Folder"
+msgstr "Cartella di root"
+
+#: sysinfo/sysinfo.cpp:126
+msgid "Network Folders"
+msgstr "Cartelle di rete"
+
+#: sysinfo/sysinfo.cpp:133
+msgid "Network Status"
+msgstr "Stato della rete"
+
+#: sysinfo/sysinfo.cpp:143
+msgid "CPU Information"
+msgstr "Informazioni sulla CPU"
+
+#: sysinfo/sysinfo.cpp:145
+msgid "Processor (CPU):"
+msgstr "Processore (CPU):"
+
+#: sysinfo/sysinfo.cpp:146
+msgid "Speed:"
+msgstr "Frequenza:"
+
+#: sysinfo/sysinfo.cpp:147
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo/sysinfo.cpp:148
+msgid "Number of Core :"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:154
+msgid "Memory Information"
+msgstr "Informazioni sulla memoria"
+
+#: sysinfo/sysinfo.cpp:156
+msgid "Total memory (RAM):"
+msgstr "Memoria RAM totale:"
+
+#: sysinfo/sysinfo.cpp:157
+msgid "Free memory:"
+msgstr "Memoria libera:"
+
+#: sysinfo/sysinfo.cpp:158
+msgid "Used Memory"
+msgstr "Memoria in uso"
+
+#: sysinfo/sysinfo.cpp:159
+msgid "Total swap:"
+msgstr "Swap totale:"
+
+#: sysinfo/sysinfo.cpp:160
+msgid "Free swap:"
+msgstr "Swap libero:"
+
+#: sysinfo/sysinfo.cpp:167
+msgid "Hardware Information"
+msgstr "Informazioni sull'hardware"
+
+#: sysinfo/sysinfo.cpp:169
+msgid "Type:"
+msgstr "Tipo:"
+
+#: sysinfo/sysinfo.cpp:170 sysinfo/sysinfo.cpp:198
+msgid "Vendor:"
+msgstr "Produttore:"
+
+#: sysinfo/sysinfo.cpp:171 sysinfo/sysinfo.cpp:199
+msgid "Model:"
+msgstr "Modello:"
+
+#: sysinfo/sysinfo.cpp:172
+msgid "Bios Vendor:"
+msgstr "Fornitore BIOS:"
+
+#: sysinfo/sysinfo.cpp:173
+msgid "Bios Version:"
+msgstr "Versione BIOS:"
+
+#: sysinfo/sysinfo.cpp:180
+msgid "Disk Information"
+msgstr "Informazioni sul disco"
+
+#: sysinfo/sysinfo.cpp:185
+msgid "OS Information"
+msgstr "Informazioni sul sistema operativo"
+
+#: sysinfo/sysinfo.cpp:187
+msgid "OS:"
+msgstr "SO:"
+
+#: sysinfo/sysinfo.cpp:188
+msgid "Current user:"
+msgstr "Utente corrente:"
+
+#: sysinfo/sysinfo.cpp:189
+msgid "System:"
+msgstr "Sistema:"
+
+#: sysinfo/sysinfo.cpp:190
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo/sysinfo.cpp:196
+msgid "Display Info"
+msgstr "Informazioni sulla scheda video"
+
+#: sysinfo/sysinfo.cpp:201
+msgid "Driver:"
+msgstr "Driver:"
+
+#: sysinfo/sysinfo.cpp:266
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 cache)"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Total"
+msgstr "Totale"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Available"
+msgstr "Disponibile"
+
+#: sysinfo/sysinfo.cpp:453
+msgid "%1 (3D Support)"
+msgstr "%1 (con supporto 3D)"
+
+#: sysinfo/sysinfo.cpp:455
+msgid "%1 (No 3D Support)"
+msgstr "%1 (senza supporto 3D)"
+
+#: sysinfo/sysinfo.cpp:465
+msgid "Network is <strong>unreachable</strong>"
+msgstr "La rete <strong>non è raggiungibile</strong>"
+
+#: sysinfo/sysinfo.cpp:467
+msgid "You are <strong>offline</strong>"
+msgstr "<strong>Non sei connesso</strong>"
+
+#: sysinfo/sysinfo.cpp:469
+msgid "Network is <strong>shutting down</strong>"
+msgstr "La rete è <strong>in fase di chiusura</strong>"
+
+#: sysinfo/sysinfo.cpp:471
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "Connessione alla rete <strong>in corso</strong>"
+
+#: sysinfo/sysinfo.cpp:473
+msgid "You are <strong>online</strong>"
+msgstr "<strong>Sei connesso</strong>"
+
+#: sysinfo/sysinfo.cpp:475
+msgid "Unknown network status"
+msgstr "Stato della rete sconosciuto"

@@ -1,0 +1,217 @@
+# translation of kio_sysinfo.po to Nederlands
+# translation of tr.po to
+# This file is put in the public domain.
+#
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
+# Rinse de Vries <rinsedevries@kde.nl>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_sysinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-16 15:16+0300\n"
+"PO-Revision-Date: 2007-07-07 16:03+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: sysinfo/ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+#: sysinfo/sysinfo.cpp:68
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: sysinfo/sysinfo.cpp:70
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: sysinfo/sysinfo.cpp:72
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: sysinfo/sysinfo.cpp:90
+#, fuzzy
+msgid "Not Available"
+msgstr "Beschikbaar"
+
+#: sysinfo/sysinfo.cpp:104
+msgid "Looking for hardware information..."
+msgstr "Ophalen hardware informatie..."
+
+#: sysinfo/sysinfo.cpp:107 sysinfo/sysinfo.cpp:111
+msgid "My Computer"
+msgstr "Mijn computer"
+
+#: sysinfo/sysinfo.cpp:112
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
+
+#: sysinfo/sysinfo.cpp:120
+msgid "Common Folders"
+msgstr "Algemene mappen"
+
+#: sysinfo/sysinfo.cpp:124
+msgid "My Home Folder"
+msgstr "Mijn persoonlijke map"
+
+#: sysinfo/sysinfo.cpp:125
+msgid "Root Folder"
+msgstr "Root map"
+
+#: sysinfo/sysinfo.cpp:126
+msgid "Network Folders"
+msgstr "Netwerkmappen"
+
+#: sysinfo/sysinfo.cpp:133
+msgid "Network Status"
+msgstr "Netwerkstatus"
+
+#: sysinfo/sysinfo.cpp:143
+msgid "CPU Information"
+msgstr "CPU-informatie"
+
+#: sysinfo/sysinfo.cpp:145
+msgid "Processor (CPU):"
+msgstr "Processor (CPU):"
+
+#: sysinfo/sysinfo.cpp:146
+msgid "Speed:"
+msgstr "Snelheid:"
+
+#: sysinfo/sysinfo.cpp:147
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo/sysinfo.cpp:148
+msgid "Number of Core :"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:154
+msgid "Memory Information"
+msgstr "Geheugeninformatie"
+
+#: sysinfo/sysinfo.cpp:156
+msgid "Total memory (RAM):"
+msgstr "Totaal geheugen (RAM):"
+
+#: sysinfo/sysinfo.cpp:157
+msgid "Free memory:"
+msgstr "Vrij geheugen:"
+
+#: sysinfo/sysinfo.cpp:158
+msgid "Used Memory"
+msgstr "Gebruikt geheugen"
+
+#: sysinfo/sysinfo.cpp:159
+msgid "Total swap:"
+msgstr "Totaal swapgeheugen:"
+
+#: sysinfo/sysinfo.cpp:160
+msgid "Free swap:"
+msgstr "Vrij swapgeheugen:"
+
+#: sysinfo/sysinfo.cpp:167
+msgid "Hardware Information"
+msgstr "Hardware informatie"
+
+#: sysinfo/sysinfo.cpp:169
+msgid "Type:"
+msgstr "Type:"
+
+#: sysinfo/sysinfo.cpp:170 sysinfo/sysinfo.cpp:198
+msgid "Vendor:"
+msgstr "Leverancier:"
+
+#: sysinfo/sysinfo.cpp:171 sysinfo/sysinfo.cpp:199
+msgid "Model:"
+msgstr "Model:"
+
+#: sysinfo/sysinfo.cpp:172
+msgid "Bios Vendor:"
+msgstr "Bios Aanbieder:"
+
+#: sysinfo/sysinfo.cpp:173
+msgid "Bios Version:"
+msgstr "Bios versie:"
+
+#: sysinfo/sysinfo.cpp:180
+msgid "Disk Information"
+msgstr "Schijfinformatie"
+
+#: sysinfo/sysinfo.cpp:185
+msgid "OS Information"
+msgstr "OS informatie"
+
+#: sysinfo/sysinfo.cpp:187
+msgid "OS:"
+msgstr "OS:"
+
+#: sysinfo/sysinfo.cpp:188
+msgid "Current user:"
+msgstr "Huidige gebruiker:"
+
+#: sysinfo/sysinfo.cpp:189
+msgid "System:"
+msgstr "Systeem:"
+
+#: sysinfo/sysinfo.cpp:190
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo/sysinfo.cpp:196
+msgid "Display Info"
+msgstr "Scherminformatie:"
+
+#: sysinfo/sysinfo.cpp:201
+msgid "Driver:"
+msgstr "Stuurprogramma:"
+
+#: sysinfo/sysinfo.cpp:266
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 caches)"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Total"
+msgstr "Totaal"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Available"
+msgstr "Beschikbaar"
+
+#: sysinfo/sysinfo.cpp:453
+msgid "%1 (3D Support)"
+msgstr "%1 (3D-ondersteuning)"
+
+#: sysinfo/sysinfo.cpp:455
+msgid "%1 (No 3D Support)"
+msgstr "%1 (geen 3D-ondersteuning)"
+
+#: sysinfo/sysinfo.cpp:465
+msgid "Network is <strong>unreachable</strong>"
+msgstr "Netwerk is <strong>onbereikbaar</strong>"
+
+#: sysinfo/sysinfo.cpp:467
+msgid "You are <strong>offline</strong>"
+msgstr "U bent <strong>offline</strong>"
+
+#: sysinfo/sysinfo.cpp:469
+msgid "Network is <strong>shutting down</strong>"
+msgstr "Netwerk is <strong>afgesloten</strong>"
+
+#: sysinfo/sysinfo.cpp:471
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "<strong>Bezig</strong> te verbinden met het netwerk"
+
+#: sysinfo/sysinfo.cpp:473
+msgid "You are <strong>online</strong>"
+msgstr "U bent <strong>online</strong>"
+
+#: sysinfo/sysinfo.cpp:475
+msgid "Unknown network status"
+msgstr "Onbekende netwerkstatus"

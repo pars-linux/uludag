@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+Comment=Sysinfo Viewer
+Comment[de]=Systeminformationen-Viewer
+Comment[pt_BR]=Visualizador das Informações do Sistema
+Comment[nl]=Sysinfo weergave
+MimeType=application/x-sysinfo;
+Name=Sysinfo
+Name[de]=Systeminformationen
+Name[pt_BR]=Informações do Sistema
+Name[nl]=Systeem informatie
+ServiceTypes=KParts/ReadOnlyPart,Browser/View
+X-KDE-Library=libksysinfopart

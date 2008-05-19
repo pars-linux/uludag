@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-16 15:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: sysinfo/ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:68
+msgid "%1 GB"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:70
+msgid "%1 MB"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:72
+msgid "%1 KB"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:90
+msgid "Not Available"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:104
+msgid "Looking for hardware information..."
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:107 sysinfo/sysinfo.cpp:111
+msgid "My Computer"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:112
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:120
+msgid "Common Folders"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:124
+msgid "My Home Folder"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:125
+msgid "Root Folder"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:126
+msgid "Network Folders"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:133
+msgid "Network Status"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:143
+msgid "CPU Information"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:145
+msgid "Processor (CPU):"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:146
+msgid "Speed:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:147
+msgid "%1 MHz"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:148
+msgid "Number of Core :"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:154
+msgid "Memory Information"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:156
+msgid "Total memory (RAM):"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:157
+msgid "Free memory:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:158
+msgid "Used Memory"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:159
+msgid "Total swap:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:160
+msgid "Free swap:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:167
+msgid "Hardware Information"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:169
+msgid "Type:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:170 sysinfo/sysinfo.cpp:198
+msgid "Vendor:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:171 sysinfo/sysinfo.cpp:199
+msgid "Model:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:172
+msgid "Bios Vendor:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:173
+msgid "Bios Version:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:180
+msgid "Disk Information"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:185
+msgid "OS Information"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:187
+msgid "OS:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:188
+msgid "Current user:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:189
+msgid "System:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:190
+msgid "KDE:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:196
+msgid "Display Info"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:201
+msgid "Driver:"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:266
+msgid "%1 (+ %2 Caches)"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Total"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Available"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:453
+msgid "%1 (3D Support)"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:455
+msgid "%1 (No 3D Support)"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:465
+msgid "Network is <strong>unreachable</strong>"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:467
+msgid "You are <strong>offline</strong>"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:469
+msgid "Network is <strong>shutting down</strong>"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:471
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:473
+msgid "You are <strong>online</strong>"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:475
+msgid "Unknown network status"
+msgstr ""

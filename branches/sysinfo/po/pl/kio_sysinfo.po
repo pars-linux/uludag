@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-16 15:16+0300\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: sysinfo/ksysinfopart.cpp:72
+msgid "KSysinfo"
+msgstr "KSysinfo"
+
+#: sysinfo/sysinfo.cpp:68
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: sysinfo/sysinfo.cpp:70
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: sysinfo/sysinfo.cpp:72
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: sysinfo/sysinfo.cpp:90
+#, fuzzy
+msgid "Not Available"
+msgstr "Dostępne"
+
+#: sysinfo/sysinfo.cpp:104
+msgid "Looking for hardware information..."
+msgstr "Wyszukuje informacji o sprzęcie"
+
+#: sysinfo/sysinfo.cpp:107 sysinfo/sysinfo.cpp:111
+msgid "My Computer"
+msgstr "Mój Komputer"
+
+#: sysinfo/sysinfo.cpp:112
+msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+msgstr ""
+"Katalogi, Dyski, Nośniki Wymienne, Informacje Systemowe i wiele więcej..."
+
+#: sysinfo/sysinfo.cpp:120
+msgid "Common Folders"
+msgstr "Popularne Katalogi"
+
+#: sysinfo/sysinfo.cpp:124
+msgid "My Home Folder"
+msgstr "Katalog Domowy"
+
+#: sysinfo/sysinfo.cpp:125
+msgid "Root Folder"
+msgstr "Katalog Użytkownika Root"
+
+#: sysinfo/sysinfo.cpp:126
+msgid "Network Folders"
+msgstr "Katalogi Sieciowe"
+
+#: sysinfo/sysinfo.cpp:133
+msgid "Network Status"
+msgstr "Stan Sieci"
+
+#: sysinfo/sysinfo.cpp:143
+msgid "CPU Information"
+msgstr "Inforpacje o Procesorze"
+
+#: sysinfo/sysinfo.cpp:145
+msgid "Processor (CPU):"
+msgstr "Procesor:"
+
+#: sysinfo/sysinfo.cpp:146
+msgid "Speed:"
+msgstr "Prędkość:"
+
+#: sysinfo/sysinfo.cpp:147
+msgid "%1 MHz"
+msgstr "%1 MHz"
+
+#: sysinfo/sysinfo.cpp:148
+msgid "Number of Core :"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:154
+msgid "Memory Information"
+msgstr "Informacje o Pamięci"
+
+#: sysinfo/sysinfo.cpp:156
+msgid "Total memory (RAM):"
+msgstr "Całkowita pamięć (RAM):"
+
+#: sysinfo/sysinfo.cpp:157
+msgid "Free memory:"
+msgstr "Wolna pamięć:"
+
+#: sysinfo/sysinfo.cpp:158
+msgid "Used Memory"
+msgstr "Używana Pamięć"
+
+#: sysinfo/sysinfo.cpp:159
+msgid "Total swap:"
+msgstr "Całkowity swap:"
+
+#: sysinfo/sysinfo.cpp:160
+msgid "Free swap:"
+msgstr "Wolny swap:"
+
+#: sysinfo/sysinfo.cpp:167
+msgid "Hardware Information"
+msgstr "Informacje o Sprzęcie"
+
+#: sysinfo/sysinfo.cpp:169
+msgid "Type:"
+msgstr "Typ:"
+
+#: sysinfo/sysinfo.cpp:170 sysinfo/sysinfo.cpp:198
+msgid "Vendor:"
+msgstr "Dostawca (Vendor):"
+
+#: sysinfo/sysinfo.cpp:171 sysinfo/sysinfo.cpp:199
+msgid "Model:"
+msgstr "Model:"
+
+#: sysinfo/sysinfo.cpp:172
+msgid "Bios Vendor:"
+msgstr "Dostawca Biosu:"
+
+#: sysinfo/sysinfo.cpp:173
+msgid "Bios Version:"
+msgstr "Wesja Biosu:"
+
+#: sysinfo/sysinfo.cpp:180
+msgid "Disk Information"
+msgstr "Informacje o Dysku"
+
+#: sysinfo/sysinfo.cpp:185
+msgid "OS Information"
+msgstr "Informacje o Systemie Operacyjnym"
+
+#: sysinfo/sysinfo.cpp:187
+msgid "OS:"
+msgstr "System:"
+
+#: sysinfo/sysinfo.cpp:188
+msgid "Current user:"
+msgstr "Bieżący użytkownik:"
+
+#: sysinfo/sysinfo.cpp:189
+msgid "System:"
+msgstr "System:"
+
+#: sysinfo/sysinfo.cpp:190
+msgid "KDE:"
+msgstr "KDE:"
+
+#: sysinfo/sysinfo.cpp:196
+msgid "Display Info"
+msgstr "Wyświetl Informację"
+
+#: sysinfo/sysinfo.cpp:201
+msgid "Driver:"
+msgstr "Sterownik:"
+
+#: sysinfo/sysinfo.cpp:266
+msgid "%1 (+ %2 Caches)"
+msgstr "%1 (+ %2 Caches)"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Total"
+msgstr "Sumarycznie"
+
+#: sysinfo/sysinfo.cpp:326
+msgid "Available"
+msgstr "Dostępne"
+
+#: sysinfo/sysinfo.cpp:453
+msgid "%1 (3D Support)"
+msgstr "%1 (Wsparcie 3D)"
+
+#: sysinfo/sysinfo.cpp:455
+msgid "%1 (No 3D Support)"
+msgstr "%1 (Brak wsparcia 3D)"
+
+#: sysinfo/sysinfo.cpp:465
+msgid "Network is <strong>unreachable</strong>"
+msgstr "Sieć jest <strong>niedostępna</strong>"
+
+#: sysinfo/sysinfo.cpp:467
+msgid "You are <strong>offline</strong>"
+msgstr "Jesteś <strong>offline</strong>"
+
+#: sysinfo/sysinfo.cpp:469
+msgid "Network is <strong>shutting down</strong>"
+msgstr "Połączenie sieciowe jest <strong>zamykane</strong>"
+
+#: sysinfo/sysinfo.cpp:471
+msgid "<strong>Establishing</strong> connection to the network"
+msgstr "<strong>Nawiązuję</strong> połączenie sieciowe"
+
+#: sysinfo/sysinfo.cpp:473
+msgid "You are <strong>online</strong>"
+msgstr "Jesteś <strong>online</strong>"
+
+#: sysinfo/sysinfo.cpp:475
+msgid "Unknown network status"
+msgstr "Nieznany stan połączenia sieciowego"
