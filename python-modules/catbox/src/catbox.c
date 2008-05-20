@@ -58,6 +58,8 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 	PyObject *paths = NULL;
 	PyObject *net = NULL;
 	struct trace_context ctx;
+	struct traced_child *child, *temp;
+	int i;
 
 	memset(&ctx, 0, sizeof(struct trace_context));
 
@@ -92,6 +94,14 @@ catbox_run(PyObject *self, PyObject *args, PyObject *kwargs)
 
 	if (ctx.pathlist) {
 		free_pathlist(ctx.pathlist);
+	}
+
+	for (i = 0; i < PID_TABLE_SIZE; i++) {
+		temp = NULL;
+		for (child = ctx.children[i]; child; child = temp) {
+			temp = child->next;
+			free(child);
+		}
 	}
 
 	return ret;
