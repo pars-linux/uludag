@@ -24,13 +24,14 @@
             }
             #root {
                 width: 100%;
-                margin: 0px auto;
+                margin: 0px 0px;
                 padding-top:8px;
             }
             #root>tr>td {
                 vertical-align:top;
                 padding:15px;
                 padding-top:5px;
+                padding-right:0px;
             }
             #right {
                 background-image:url('images/solTab.png');
@@ -40,9 +41,11 @@
             #left {
                 background-image:url('images/solTab.png');
                 background-repeat:no-repeat;
-                width:30%;
+                width:33%;
                 margin-top:-10px;
             }
+
+            /* Left Panel */
             table.stock {
                 font-size:12px;
                 font-weight:bold;
@@ -50,6 +53,7 @@
                 border-spacing:0;
                 color: white; text-shadow: #555 1px 1px 1px
                 margin-top:10px;
+                width:96%;
             }
             table.stock tr.info {
                 height:35px;
@@ -86,9 +90,63 @@
                 padding-top:10px;
                 text-align:left;
             }
+
+            /* Media Devices */
+
+            table.medias {
+                font-size:12px;
+                font-weight:bold;
+                border:0px;
+                border-spacing:0;
+                color: white; text-shadow: #555 1px 1px 1px
+                margin-top:10px;
+            }
+            table.medias tr.media {
+                height:67px;
+            }
+            table.medias tr.media td:nth-child(1) {
+                background-image:url('images/mdSol.png');
+                background-repeat:no-repeat;
+                width:56px;
+            }
+            table.medias tr.media td:nth-child(1)>img {
+                padding: 4px;
+                padding-top:0px;
+                width:48px;
+                height:48px;
+                border:none;
+            }
+            table.medias tr.media td:nth-child(2) {
+                background-image:url('images/mdArk.png');
+                background-repeat:repeat-x;
+            }
+            table.medias tr.media td:nth-child(2)>span.detail {
+                float:right;
+                font-size:10px;
+                color:whte;
+                font-weight:bold;
+                text-shadow:none;
+            }
+            table.medias tr.media td:nth-child(3) {
+                background-image:url('images/mdSag.png');
+                background-repeat:no-repeat;
+                width:16px;
+            }
+            table.medias>tr>th {
+                padding-top:10px;
+                text-align:left;
+            }
+
+            /* Misc Stuff */
             h2 {
                 clear:left;
                 font-size:15px;
+                }
+
+            img.diskusage {
+                height:16px;
+                padding-top:4px;
+                padding-bottom:4px;
             }
         </style>
     </head>
@@ -98,7 +156,7 @@
         <table id="root">
             <tr>
                 <td id="left">
-                    <table width="100%" class="stock">
+                    <table class="stock">
                         <tr>
                             <th colspan=3><h2>Folders</h2></th>
                         </tr>
@@ -131,8 +189,28 @@
                             <td></td>
                         </tr>
                     </table>
+                </td>
                 <td id="right">
-                    Media Devices
+                    <table width="100%" class="medias">
+                        <tr>
+                            <th colspan=3><h2>Media Devices</h2></th>
+                        </tr>
+                        <tr class="media">
+                            <td><img src="images/iconDisk.png"></td>
+                            <td>
+                                <span class="detail">[ Mounted on / ]<br>[ ext3 ]</span>
+                                PARDUS_ROOT<br><span style="font-size:10px;">3 Gb free of 140 Gb</span>
+                                <br>
+                                <img class="diskusage" src="images/progress.png" width="80%">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="media">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
