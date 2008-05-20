@@ -32,10 +32,12 @@ def testNode(level):
 
 def test():
     tryWrite("parent")
-    for i in range(3):
+    for i in range(7):
         testNode(1)
         tryWrite("parent")
     tryWrite("parent")
 
 ret = catbox.run(test, writable_paths=[os.getcwd()])
-assert(len(ret.violations) == 106)
+#print len(ret.violations)
+assert(len(ret.violations) == 8746)
+
