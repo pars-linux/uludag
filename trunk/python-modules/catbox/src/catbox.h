@@ -29,7 +29,11 @@ struct traced_child {
 	unsigned long orig_eax;
 	/* faked syscall will fail with this error code */
 	int error_code;
+	/* used for hash table collision handling */
+	struct traced_child *next;
 };
+
+#define PID_TABLE_SIZE 367
 
 /* general tracking data */
 struct trace_context {
@@ -45,9 +49,11 @@ struct trace_context {
 	char **pathlist;
 	/* is network connection allowed */
 	int network_allowed;
-	/* traced callable and everything it forks */
+	/* per process data table, hashed by process id */
 	unsigned int nr_children;
-	struct traced_child children[512];
+	struct traced_child *children[PID_TABLE_SIZE];
+	/* first child pointer is kept for determining return code */
+	struct traced_child *first_child;
 };
 
 char *catbox_paths_canonical(pid_t pid, char *path, int dont_follow);

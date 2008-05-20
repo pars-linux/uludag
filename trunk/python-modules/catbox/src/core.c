@@ -35,42 +35,83 @@ setup_kid(struct traced_child *kid)
 	kid->need_setup = 0;
 }
 
-static void
-add_child(struct trace_context *ctx, pid_t pid)
+static int
+pid_hash(pid_t pid)
 {
-	struct traced_child *kid;
-
-	kid = &ctx->children[ctx->nr_children++];
-	memset(kid, 0, sizeof(struct traced_child));
-	kid->pid = pid;
-	kid->need_setup = 1;
+	return ((unsigned long) pid) % PID_TABLE_SIZE;
 }
 
 static struct traced_child *
 find_child(struct trace_context *ctx, pid_t pid)
 {
-	int i;
+	int hash;
+	struct traced_child *kid;
 
-	for (i = 0; i < ctx->nr_children; i++) {
-		if (ctx->children[i].pid == pid)
-			return &ctx->children[i];
+	hash = pid_hash(pid);
+	for (kid = ctx->children[hash]; kid; kid = kid->next) {
+		if (kid->pid == pid) return kid;
 	}
 	return NULL;
+}
+
+static struct traced_child *
+add_child(struct trace_context *ctx, pid_t pid)
+{
+	struct traced_child *kid;
+	int hash;
+
+	kid = find_child(ctx, pid);
+	if (kid) {
+		printf("BORKBORK: Trying to add existing child\n");
+	}
+
+	kid = malloc(sizeof(struct traced_child));
+	memset(kid, 0, sizeof(struct traced_child));
+	kid->pid = pid;
+	kid->need_setup = 1;
+
+	hash = pid_hash(pid);
+
+	if (!ctx->children[hash]) {
+		ctx->children[hash] = kid;
+	} else {
+		kid->next = ctx->children[hash];
+		ctx->children[hash] = kid;
+	}
+
+	ctx->nr_children++;
+
+	return kid;
 }
 
 static void
 rem_child(struct trace_context *ctx, pid_t pid)
 {
-	int i;
+	struct traced_child *kid, *temp;
+	int hash;
 
-	for (i = 0; i < ctx->nr_children; i++) {
-		if (ctx->children[i].pid == pid)
-			goto do_rem;
+	hash = pid_hash(pid);
+	kid = ctx->children[hash];
+	if (kid) {
+		if (kid->pid == pid) {
+			ctx->children[hash] = kid->next;
+			free(kid);
+			ctx->nr_children--;
+			return;
+		} else {
+			temp = kid;
+			for (kid = kid->next; kid; kid = kid->next) {
+				if (kid->pid == pid) {
+					temp->next = kid->next;
+					free(kid);
+					ctx->nr_children--;
+					return;
+				}
+				temp = kid;
+			}
+		}
 	}
-	puts("bjorkbjork");
-do_rem:
-	ctx->nr_children -= 1;
-	ctx->children[i] = ctx->children[ctx->nr_children];
+	puts("BORKBORK: trying to remove non-tracked child");
 }
 
 static PyObject *
@@ -85,12 +126,15 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 		pid = waitpid(-1, &status, __WALL);
 		if (pid == (pid_t) -1) return NULL;
 		kid = find_child(ctx, pid);
-		if (!kid) { puts("borkbork"); continue; }
+		if (!kid) {
+			// This shouldn't happen
+			printf("BORKBORK: nr %d, pid %d, status %x\n", ctx->nr_children, pid, status);
+		}
 
 		if (WIFSTOPPED(status)) {
 			// 1. reason: Execution of child stopped by a signal
 			int stopsig = WSTOPSIG(status);
-			if (stopsig == SIGSTOP && kid->need_setup) {
+			if (stopsig == SIGSTOP && kid && kid->need_setup) {
 				// 1.1. reason: Child is born and ready for tracing
 				setup_kid(kid);
 				ptrace(PTRACE_SYSCALL, pid, 0, 0);
@@ -100,7 +144,7 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 				// 1.2. reason: We got a signal from ptrace
 				if (stopsig == (SIGTRAP | 0x80)) {
 					// 1.2.1. reason: Child made a system call
-					catbox_syscall_handle(ctx, kid);
+					if (kid) catbox_syscall_handle(ctx, kid);
 					continue;
 				}
 				event = (status >> 16) & 0xffff;
@@ -116,7 +160,7 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 					ptrace(PTRACE_SYSCALL, pid, 0, 0);
 					continue;
 				}
-				if (kid->in_execve) {
+				if (kid && kid->in_execve) {
 					// 1.2.3. reason: Spurious sigtrap after execve call
 					kid->in_execve = 0;
 					ptrace(PTRACE_SYSCALL, pid, 0, 0);
@@ -128,8 +172,8 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 			ptrace(PTRACE_SYSCALL, pid, 0, (void*) stopsig);
 		} else if (WIFEXITED(status)) {
 			// 2. reason: Child is exited normally
-			if (kid == &ctx->children[0]) { //if it is our first child
-				// keep ret value
+			if (kid && kid == ctx->first_child) {
+				// If it is our first child, keep its return value
 				retcode = WEXITSTATUS(status);
 			}
 			rem_child(ctx, pid);
@@ -141,7 +185,7 @@ core_trace_loop(struct trace_context *ctx, pid_t pid)
 				rem_child(ctx, pid);
 			} else {
 				// This shouldn't happen
-				printf("xxxxxxxxxSignal %x pid %d\n", status, pid);
+				printf("BORKBORK: Signal %x pid %d\n", status, pid);
 			}
 		}
 	}
@@ -160,6 +204,7 @@ static void sigusr1(int dummy) {
 PyObject *
 catbox_core_run(struct trace_context *ctx)
 {
+	struct traced_child *kid;
 	void (*oldsig)(int);
 	pid_t pid;
 
@@ -239,8 +284,9 @@ catbox_core_run(struct trace_context *ctx)
 	kill(pid, SIGUSR1);
 	waitpid(pid, NULL, 0);
 
-	add_child(ctx, pid);
-	setup_kid(&ctx->children[0]);
+	kid = add_child(ctx, pid);
+	setup_kid(kid);
+	ctx->first_child = kid;
 	ptrace(PTRACE_SYSCALL, pid, 0, (void *) SIGUSR1);
 
 	return core_trace_loop(ctx, pid);
