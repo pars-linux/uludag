@@ -37,110 +37,112 @@
 
 extern "C"
 {
-   KDE_EXPORT void* init_libksysinfopart()
-   {
-      return new KSysinfoPartFactory;
-   }
+    KDE_EXPORT void* init_libksysinfopart()
+    {
+        return new KSysinfoPartFactory;
+    }
 }
 
 KInstance* KSysinfoPartFactory::s_instance = 0L;
 KAboutData* KSysinfoPartFactory::s_about = 0L;
 
 KSysinfoPartFactory::KSysinfoPartFactory( QObject* parent, const char* name )
-   : KParts::Factory( parent, name )
+: KParts::Factory( parent, name )
 {}
 
 KSysinfoPartFactory::~KSysinfoPartFactory()
 {
-   delete s_instance;
-   s_instance = 0L;
-   delete s_about;
+    delete s_instance;
+    s_instance = 0L;
+    delete s_about;
 }
 
 KParts::Part* KSysinfoPartFactory::createPartObject( QWidget * parentWidget, const char* /*widgetName*/, QObject *,
-                                 const char* name, const char* /*className*/,const QStringList & )
+                                                     const char* name, const char* /*className*/,const QStringList & )
 {
-   KSysinfoPart* part = new KSysinfoPart(parentWidget, name );
-   return part;
+    KSysinfoPart* part = new KSysinfoPart( parentWidget, name );
+    return part;
 }
 
 KInstance* KSysinfoPartFactory::instance()
 {
-   if( !s_instance )
-   {
-      s_about = new KAboutData( "ksysinfopart",
-                                I18N_NOOP( "KSysinfo" ), KDE_VERSION_STRING );
-      s_instance = new KInstance( s_about );
-   }
-   return s_instance;
+    if( !s_instance )
+    {
+        s_about = new KAboutData( "ksysinfopart",
+                                  I18N_NOOP( "KSysinfo" ), KDE_VERSION_STRING );
+        s_instance = new KInstance( s_about );
+    }
+    return s_instance;
 }
 
 
 KSysinfoPart::KSysinfoPart( QWidget * parent, const char * name )
-  : KHTMLPart( parent, name )
+: KHTMLPart( parent, name )
 {
-   KInstance * instance = new KInstance( "ksysinfopart" );
-   setInstance( instance );
-   rescanTimer=new QTimer(this);
-   connect(rescanTimer, SIGNAL(timeout()), SLOT(rescan()));
-   rescanTimer->start(20000, true);
+    KInstance * instance = new KInstance( "ksysinfopart" );
+    setInstance( instance );
+    rescanTimer=new QTimer(this);
 
-   connectDCOPSignal("kded", "networkstatus", "statusChange(QString,int)", "rescan()", false);
-   installEventFilter( this );
+    connect(rescanTimer, SIGNAL(timeout()),
+                         SLOT(rescan()));
+
+    rescanTimer->start( 20000, true );
+
+    connectDCOPSignal( "kded", "networkstatus", "statusChange(QString,int)", "rescan()", false );
+    installEventFilter( this );
 }
 
-void KSysinfoPart::slotResult( KIO::Job *job)
+void KSysinfoPart::slotResult( KIO::Job *job )
 {
-  KIO::StatJob *sjob = dynamic_cast<KIO::StatJob*>(job);
-  if (!job)
-    return;
+    KIO::StatJob *sjob = dynamic_cast<KIO::StatJob*>( job );
+    if (!job)
+        return;
 
-  KFileItem item(sjob->statResult(), sjob->url());
-  KFileItemList list;
-  list.append(&item);
-  emit browserExtension()->popupMenu(0, QCursor::pos(), list); //, );
-
+    KFileItem item(sjob->statResult(), sjob->url());
+    KFileItemList list;
+    list.append(&item);
+    emit browserExtension()->popupMenu( 0, QCursor::pos(), list );
 }
 
 void KSysinfoPart::customEvent( QCustomEvent *event )
 {
-  if ( KParts::Event::test(event, "khtml/Events/MousePressEvent") )
-  {
-    khtml::MousePressEvent *ev = static_cast<khtml::MousePressEvent *>( event );
-    KURL url(ev->url().string());
-    if (url.protocol() == "media" && ev->qmouseEvent()->button() == QMouseEvent::RightButton ) 
-      {
-	KIO::UDSEntry entry;
-	KIO::Job *job = KIO::stat(url, false);
-	connect( job, SIGNAL( result( KIO::Job * ) ),
-		 SLOT( slotResult( KIO::Job * ) ) );
-	return;
-      }
-  }
+    if ( KParts::Event::test( event, "khtml/Events/MousePressEvent" ) )
+    {
+        khtml::MousePressEvent *ev = static_cast<khtml::MousePressEvent *>( event );
+        KURL url(ev->url().string());
+        if (url.protocol() == "media" && ev->qmouseEvent()->button() == QMouseEvent::RightButton ) 
+        {
+            KIO::UDSEntry entry;
+            KIO::Job *job = KIO::stat( url, false );
 
-  KHTMLPart::customEvent(event);
+            connect( job, SIGNAL( result( KIO::Job * ) ),
+                          SLOT( slotResult( KIO::Job * ) ) );
+            return;
+        }
+    }
+    KHTMLPart::customEvent(event);
 }
 
 void KSysinfoPart::rescan()
 {
-  openURL("sysinfo:/");
-  rescanTimer->stop();
-  rescanTimer->start(20000, true);
+    openURL( "sysinfo:/" );
+    rescanTimer->stop();
+    rescanTimer->start( 20000, true );
 }
 
 void KSysinfoPart::FilesAdded( const KURL & dir )
 {
-  if (dir.protocol() == "media") 
+    if (dir.protocol() == "media")
     {
-      rescanTimer->stop();
-      rescanTimer->start(10, true);
+        rescanTimer->stop();
+        rescanTimer->start( 10, true );
     }
 }
 
 void KSysinfoPart::FilesRemoved( const KURL::List & urls )
 {
     for ( KURL::List::ConstIterator it = urls.begin() ; it != urls.end() ; ++it )
-      FilesAdded( *it );
+        FilesAdded( *it );
 }
 
 void KSysinfoPart::FilesChanged( const KURL::List & urls )

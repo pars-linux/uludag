@@ -57,11 +57,10 @@
 
 #include "sysinfo.h"
 
-
 using namespace KIO;
 #define BR "<br>"
 
-static QString formattedUnit( unsigned long long value, int post=1)
+static QString formattedUnit( unsigned long long value, int post=1 )
 {
     if (value > (1000 * 1000))
         if (value > (1000 * 1000 * 1000))
@@ -85,7 +84,7 @@ kio_sysinfoProtocol::~kio_sysinfoProtocol()
     delete m_dcopClient;
 }
 
-static QString formatStr( QString st) {
+static QString formatStr( QString st ) {
     if ( st == "" )
         return i18n("Not Available");
     return st;
@@ -101,7 +100,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     f.open( IO_ReadOnly );
     QTextStream t( &f );
 
-    infoMessage(i18n("Looking for hardware information..."));
+    infoMessage( i18n( "Looking for hardware information..." ) );
 
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
