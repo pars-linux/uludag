@@ -12,8 +12,6 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <sys/ptrace.h>
-#include <linux/user.h>
 #include <linux/unistd.h>
 
 static char doc_catbox[] = "Simple and fast sandboxing module.";

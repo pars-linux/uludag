@@ -10,9 +10,9 @@
 #include "catbox.h"
 
 #include <sys/ptrace.h>
+#include <sys/user.h>
 #include <linux/unistd.h>
 #include <fcntl.h>
-#include <linux/user.h>
 
 // System call dispatch flags
 #define CHECK_PATH    1  // First argument should be a valid path

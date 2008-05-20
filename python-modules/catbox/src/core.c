@@ -13,7 +13,6 @@
 #include <sys/types.h>
 #include <sys/ptrace.h>
 #include <linux/ptrace.h>
-#include <linux/user.h>
 #include <linux/unistd.h>
 #include <fcntl.h>
 #include <errno.h>
