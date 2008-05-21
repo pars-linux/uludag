@@ -95,7 +95,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     mimeType( "application/x-sysinfo" );
 
     // header
-    QString location = locate( "data", "sysinfo/about/my-computer.html" );
+    QString location = locate( "data", "sysinfo/themes/2008/index.html" );
     QFile f( location );
     f.open( IO_ReadOnly );
     QTextStream t( &f );
@@ -105,9 +105,8 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
 
-    content = content.arg( "file:" + locate( "data", "sysinfo/about/style.css" ) );
+    content = content.arg( "file:" + locate( "data", "sysinfo/themes/2008/stil.css" ) );
 
-    content = content.arg( i18n( "My Computer" ) ); // <h1>
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
     QString sysInfo = "<div id=\"column\">"; // table with 2 cols
