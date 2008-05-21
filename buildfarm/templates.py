@@ -40,7 +40,7 @@ The last 20 lines of the log before the error happens is as follows:
 %(log)s
 --------------------------------------------------------------------------
 
-Log file: http://paketler.pardus.org.tr/logs/%(packagename)s.log
+Log file: http://paketler.pardus.org.tr/logs/2007/%(packagename)s.log
 
 Happy hacking!
 
@@ -88,7 +88,7 @@ Content-Type: text/html;
 </div>
 
 <p>Log file: <a
-href="http://paketler.pardus.org.tr/logs/%(packagename)s.log">http://paketler.pardus.org.tr/logs/%(packagename)s.log</a>.
+href="http://paketler.pardus.org.tr/logs/2007/%(packagename)s.log">http://paketler.pardus.org.tr/logs/2007/%(packagename)s.log</a>.
 
 <p>Happy hacking!<br>
 
