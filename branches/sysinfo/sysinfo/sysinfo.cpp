@@ -62,13 +62,13 @@ using namespace KIO;
 
 static QString formattedUnit( unsigned long long value, int post=1 )
 {
-    if (value > (1000 * 1000))
-        if (value > (1000 * 1000 * 1000))
-            return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(value / (1000 * 1000 * (post == 0 ? 1000 : 1000.0)), post));
+    if (value > (1024 * 1024))
+        if (value > (1024 * 1024 * 1024))
+            return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(value / (1024 * 1024 * (post == 0 ? 1024 : 1024.0)), post));
         else
-            return i18n("%1 MB").arg(KGlobal::locale()->formatNumber(value / (1000 * (post == 0 ? 1000 : 1000.0)), post));
+            return i18n("%1 MB").arg(KGlobal::locale()->formatNumber(value / (1024 * (post == 0 ? 1024 : 1024.0)), post));
     else
-        return i18n("%1 KB").arg(KGlobal::locale()->formatNumber(value / (post == 0 ? 1000 : 1000.0), post));
+        return i18n("%1 KB").arg(KGlobal::locale()->formatNumber(value / (post == 0 ? 1024 : 1024.0), post));
 }
 
 kio_sysinfoProtocol::kio_sysinfoProtocol( const QCString & pool_socket, const QCString & app_socket )
@@ -84,7 +84,35 @@ kio_sysinfoProtocol::~kio_sysinfoProtocol()
     delete m_dcopClient;
 }
 
-static QString formatStr( QString st ) {
+QString kio_sysinfoProtocol::startStock( const QString title )
+{
+    QString templator = QString ("<table class=\"stock\">"
+                                 "<tr>"
+                                 "     <th colspan=3><h2>%1</h2></th>"
+                                 "</tr>").arg(title);
+    return templator;
+}
+
+QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text, const QString details )
+{
+    QString iconpath = icon(_icon, 22, true);
+    QString templator = QString ("<tr class=\"info\">"
+                                 "    <td><img src=\"%1\"></td>"
+                                 "    <td>"
+                                 "        %2<span class=\"detail\">%3</span>"
+                                 "    </td>"
+                                 "    <td></td>"
+                                 "</tr>").arg(iconpath).arg(text).arg(details);
+    return templator;
+}
+
+QString kio_sysinfoProtocol::finishStock()
+{
+    return QString ("</table>");
+}
+
+static QString formatStr( QString st ) 
+{
     if ( st == "" )
         return i18n("Not Available");
     return st;
@@ -104,60 +132,49 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     QString content = t.read();
     content = content.arg( i18n( "My Computer" ) ); // <title>
-
     content = content.arg( "file:" + locate( "data", "sysinfo/themes/2008/stil.css" ) );
-
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
-    QString sysInfo = "<div id=\"column\">"; // table with 2 cols
+    QString sysInfo;
     QString dummy;
 
     // OS info
 
     // common folders
-    sysInfo += "<h2 id=\"dirs\">" + i18n( "Common Folders" ) + "</h2>";
-    sysInfo += "<ul style=\"background-image:url('" + icon( "folder_orange", 48, true) + "');\">";
-    // We don't have a separate Documents directory in Pardus
-    //    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( KGlobalSettings::documentPath() ) + i18n( "My Documents" ) + "</a></li>";
-    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( QDir::homeDirPath() ) + i18n( "My Home Folder" ) + "</a></li>";
-    sysInfo += QString( "<li><a href=\"file:%1\">" ).arg( QDir::rootDirPath() ) + i18n( "Root Folder" ) + "</a></li>";
-    sysInfo += "<li><a href=\"remote:/\">" + i18n( "Network Folders" ) + "</a></li>";
-    sysInfo += "</ul>";
+    sysInfo += startStock( i18n( "Common Folders" ) );
+    sysInfo += addToStock( "folder_home", QString( "<a href=\"file:%1\">" ).arg( QDir::homeDirPath() ) + 
+                                          i18n( "My Home Folder" ) + "</a>", " [ " + QDir::homeDirPath() + " ] " );
+    sysInfo += addToStock( "folder_red", QString( "<a href=\"file:%1\">" ).arg( QDir::rootDirPath() ) + 
+                                          i18n( "Root Folder" ) + "</a>", " [ " + QDir::rootDirPath() + " ] " );
+    sysInfo += addToStock( "network", QString( "<a href=\"remote:/\">" + i18n( "Network Folders" )) + "</a>" );
+    sysInfo += finishStock();
 
     // net info
     int state = netInfo();
     if (state > 1) { // assume no network manager / networkstatus
-      sysInfo += "<h2 id=\"net\">";
-      sysInfo += i18n( "Network Status" ) + "</h2>";
-      sysInfo += "<ul style=\"background-image:url('" + icon( "network", 48, true) + "');\">";
-      sysInfo += "<li>" + netStatus( state ) + "</li>";
-      sysInfo += "</ul>";
+        sysInfo += startStock( i18n( "Network Status" ) );
+        sysInfo += addToStock( "network", netStatus( state ), "[ 127.0.0.1 ]" );
+        sysInfo += finishStock();
     }
 
     // CPU info
     cpuInfo();
     if ( !m_info[CPU_MODEL].isNull() )
     {
-        sysInfo += "<h2 id=\"cpu\">" + i18n( "CPU Information" ) + "</h2>";
-        sysInfo += "<ul style=\"background-image:url('" + icon( "kcmprocessor", 48, true) + "');\">";
-        sysInfo += "<li><span class=\"label\">" + i18n( "Processor (CPU):" ) + "</span>" + m_info[CPU_MODEL] + "</li>";
-        sysInfo += "<li><span class=\"label\">" + i18n( "Speed:" ) + "</span> " +
-                   i18n( "%1 MHz" ).arg( KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 ) ) + "</li>";
-        sysInfo += "<li><span class=\"label\">" + i18n( "Number of Core :" ) + "</span>" + m_info[CPU_NOFCORE] + "</li>";
-        sysInfo += "</ul>";
+        sysInfo += startStock( i18n( "CPU Information" ) );
+        sysInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL]);
+        sysInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
+                    KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 )), m_info[CPU_NOFCORE] + i18n( "core" ));
+        sysInfo += finishStock();
     }
 
     // memory info
     memoryInfo();
-    sysInfo += "<h2 id=\"memory\">" + i18n( "Memory Information" ) + "</h2>";
-    sysInfo += "<table style=\"background-image:url('" + icon( "memory", 48, true) + "');\">";
-    sysInfo += "<tr><td>" + i18n( "Total memory (RAM):" ) + "</td><td>" + m_info[MEM_TOTALRAM] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Free memory:" ) + "</td><td>" + m_info[MEM_FREERAM] + "</td></tr>";
-    dummy = i18n( "Used Memory" );
-    dummy = "<tr><td>" + i18n( "Total swap:" ) + "</td><td>" + m_info[MEM_TOTALSWAP] + "</td></tr>";
-    dummy = "<tr><td>" + i18n( "Free swap:" ) + "</td><td>" + m_info[MEM_FREESWAP] + "</td></tr>";
-    sysInfo += "</table>";
+    sysInfo += startStock( i18n( "Memory Information" ) );
+    sysInfo += addToStock( "memory", i18n( "Free memory:" ) + m_info[MEM_FREERAM], i18n( "Total : ") + m_info[MEM_TOTALRAM]);
+    sysInfo += finishStock();
 
+    /*
     // hw info
     if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
         || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
@@ -199,9 +216,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
             sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
         sysInfo += "</table>";
     }
-
-    sysInfo += "</div>";
-
+    */
     // Send the data
     content = content.arg( sysInfo ); // put the sysinfo text into the main box
     data( QCString( content.utf8() ) );

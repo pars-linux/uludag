@@ -3,6 +3,10 @@ body {
     margin-left:0px;
     color: white; text-shadow: orange 0.1em 0.1em 0.1em
 }
+
+a {
+    color: white;
+}
 #logo {
     background-image:url('images/logo.png');
     background-repeat:no-repeat;
@@ -130,6 +134,10 @@ table.medias tr.media td:nth-child(3) {
 }
 table.medias>tr>th {
     padding-top:10px;
+    text-align:left;
+}
+
+th {
     text-align:left;
 }
 
