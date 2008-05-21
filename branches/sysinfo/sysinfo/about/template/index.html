@@ -1,164 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title> System </title>
-        <style>
-            body {
-                background-image:url('images/background.png');
-                margin-left:0px;
-                color: white; text-shadow: orange 0.1em 0.1em 0.1em
-            }
-            #logo {
-                background-image:url('images/logo.png');
-                background-repeat:no-repeat;
-                float:right;
-                width:85px;
-                height:55px;
-                margin-right:10px;
-                margin-top:12px;
-            }
-            #header {
-                padding:16px;
-                font-size:12px;
-                font-weight:bold;
-                letter-spacing: .1em;
-            }
-            #root {
-                width: 100%;
-                margin: 0px 0px;
-                padding-top:8px;
-            }
-            #root>tr>td {
-                vertical-align:top;
-                padding:15px;
-                padding-top:5px;
-                padding-right:0px;
-            }
-            #right {
-                background-image:url('images/solTab.png');
-                background-repeat:no-repeat;
-                height:400px;
-            }
-            #left {
-                background-image:url('images/solTab.png');
-                background-repeat:no-repeat;
-                width:33%;
-                margin-top:-10px;
-            }
-
-            /* Left Panel */
-            table.stock {
-                font-size:12px;
-                font-weight:bold;
-                border:0px;
-                border-spacing:0;
-                color: white; text-shadow: #555 1px 1px 1px
-                margin-top:10px;
-                width:96%;
-            }
-            table.stock tr.info {
-                height:35px;
-            }
-            table.stock tr.info td:nth-child(1) {
-                background-image:url('images/infoBack.png');
-                background-repeat:no-repeat;
-                width:30px;
-            }
-            table.stock tr.info td:nth-child(1)>img {
-                padding: 4px;
-                padding-top:0px;
-                width:22px;
-                height:22px;
-                border:none;
-            }
-            table.stock tr.info td:nth-child(2) {
-                background-image:url('images/tbArk.png');
-                background-repeat:repeat-x;
-            }
-            table.stock tr.info td:nth-child(2)>span.detail {
-                float:right;
-                font-size:10px;
-                color:whte;
-                font-weight:bold;
-                text-shadow:none;
-            }
-            table.stock tr.info td:nth-child(3) {
-                background-image:url('images/tbSag.png');
-                background-repeat:no-repeat;
-                width:4px;
-            }
-            table.stock>tr>th {
-                padding-top:10px;
-                text-align:left;
-            }
-
-            /* Media Devices */
-
-            table.medias {
-                font-size:12px;
-                font-weight:bold;
-                border:0px;
-                border-spacing:0;
-                color: white; text-shadow: #555 1px 1px 1px
-                margin-top:10px;
-            }
-            table.medias tr.media {
-                height:67px;
-            }
-            table.medias tr.media td:nth-child(1) {
-                background-image:url('images/mdSol.png');
-                background-repeat:no-repeat;
-                width:56px;
-            }
-            table.medias tr.media td:nth-child(1)>img {
-                padding: 4px;
-                padding-top:0px;
-                width:48px;
-                height:48px;
-                border:none;
-            }
-            table.medias tr.media td:nth-child(2) {
-                background-image:url('images/mdArk.png');
-                background-repeat:repeat-x;
-            }
-            table.medias tr.media td:nth-child(2)>span.detail {
-                float:right;
-                font-size:10px;
-                color:whte;
-                font-weight:bold;
-                text-shadow:none;
-            }
-            table.medias tr.media td:nth-child(3) {
-                background-image:url('images/mdSag.png');
-                background-repeat:no-repeat;
-                width:16px;
-            }
-            table.medias>tr>th {
-                padding-top:10px;
-                text-align:left;
-            }
-
-            /* Misc Stuff */
-            h2 {
-                clear:left;
-                font-size:15px;
-                }
-
-            img.diskusage {
-                height:16px;
-                padding-top:4px;
-                padding-bottom:4px;
-            }
-            span.mediaDf {
-                font-size:11px;
-            }
-        </style>
+        <title> %1 </title>
+        <link rel="stylesheet" type="text/css" href="%2" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
     <body>
         <div id="logo"></div>
-        <span id="header">Folders, Harddisks, Removable Devices, System Information and more...</span>
+        <span id="header">%3</span>
         <table id="root">
             <tr>
                 <td id="left">
+                    %4
+                <!--
                     <table class="stock">
                         <tr>
                             <th colspan=3><h2>Folders</h2></th>
@@ -192,12 +48,15 @@
                             <td></td>
                         </tr>
                     </table>
+                -->
                 </td>
                 <td id="right">
                     <table width="100%" class="medias">
                         <tr>
                             <th colspan=3><h2>Media Devices</h2></th>
                         </tr>
+                        %5
+                    <!--
                         <tr class="media">
                             <td><img src="images/iconDisk.png"></td>
                             <td>
@@ -213,6 +72,7 @@
                             <td></td>
                             <td></td>
                         </tr>
+                    -->
                     </table>
                 </td>
             </tr>
