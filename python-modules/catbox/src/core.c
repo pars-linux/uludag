@@ -117,6 +117,7 @@ rem_child(struct trace_context *ctx, pid_t pid)
 
 enum {
 	E_SETUP = 0,
+	E_SETUP_PREMATURE,
 	E_SYSCALL,
 	E_FORK,
 	E_EXECV,
@@ -140,24 +141,28 @@ decide_event(struct trace_context *ctx, struct traced_child *kid, int status)
 			// 1.1. reason: Child is born and ready for tracing
 			return E_SETUP;
 		}
+		if (sig == SIGSTOP && !kid) {
+			// 1.2. reason: Child is born before fork event, and ready for tracing
+			return E_SETUP_PREMATURE;
+		}
 		if (sig & SIGTRAP) {
-			// 1.2. reason: We got a signal from ptrace
+			// 1.3. reason: We got a signal from ptrace
 			if (sig == (SIGTRAP | 0x80)) {
-				// 1.2.1. reason: Child made a system call
+				// 1.3.1. reason: Child made a system call
 				return E_SYSCALL;
 			}
 			event = (status >> 16) & 0xffff;
 			if (event == PTRACE_EVENT_FORK
 			    || event == PTRACE_EVENT_VFORK
 			    || event == PTRACE_EVENT_CLONE) {
-				// 1.2.2. reason: Child made a fork
+				// 1.3.2. reason: Child made a fork
 				return E_FORK;
 			}
 			if (kid && kid->in_execve) {
-				// 1.2.3. reason: Spurious sigtrap after execve call
+				// 1.3.3. reason: Spurious sigtrap after execve call
 				return E_EXECV;
 			}
-			// 1.3. reason: Genuine signal directed to the child itself
+			// 1.4. reason: Genuine signal directed to the child itself
 			return E_GENUINE;
 		}
 	} else if (WIFEXITED(status)) {
@@ -186,21 +191,19 @@ core_trace_loop(struct trace_context *ctx)
 		if (pid == (pid_t) -1) return NULL;
 		kid = find_child(ctx, pid);
 		event = decide_event(ctx, kid, status);
-		if (!kid) {
+		if (!kid && event != E_SETUP_PREMATURE) {
 			// This shouldn't happen
 			printf("BORKBORK: nr %d, pid %d, status %x, event %d\n", ctx->nr_children, pid, status, event);
-			if (event == E_GENUINE && WSTOPSIG(status) == SIGSTOP) {
-printf("adding strange child %d\n", pid);
-			kid = add_child(ctx, pid);
-			setup_kid(kid);
-			continue;
-			}
 		}
 
 		switch (event) {
 			case E_SETUP:
 				setup_kid(kid);
 				ptrace(PTRACE_SYSCALL, pid, 0, 0);
+				break;
+			case E_SETUP_PREMATURE:
+				kid = add_child(ctx, pid);
+				setup_kid(kid);
 				break;
 			case E_SYSCALL:
 				if (kid) catbox_syscall_handle(ctx, kid);
@@ -209,10 +212,11 @@ printf("adding strange child %d\n", pid);
 				e = ptrace(PTRACE_GETEVENTMSG, pid, 0, &kpid); //get the new kid's pid
 				if (e != 0) printf("geteventmsg %s\n", strerror(e));
 				if (find_child(ctx, kpid)) {
-					printf("AHA! event comes after sigstop for %d\n", kpid);
+					// Kid is prematurely born, let it continue its life
 					ptrace(PTRACE_SYSCALL, kpid, 0, 0);
 				} else {
-					add_child(ctx, kpid);  //add the new kid (setup will be done later)
+					// Add the new kid (setup will be done later)
+					add_child(ctx, kpid);
 				}
 				ptrace(PTRACE_SYSCALL, pid, 0, 0);
 				break;
@@ -231,13 +235,12 @@ printf("adding strange child %d\n", pid);
 				rem_child(ctx, pid);
 				break;
 			case E_EXIT_SIGNAL:
-printf("BORKBORK: Signalled process %d\n", pid);
 				ptrace(PTRACE_SYSCALL, pid, 0, (void*) WTERMSIG(status));
 				retcode = 1;
 				rem_child(ctx, pid);
 				break;
 			case E_UNKNOWN:
-				printf("BORKBORK: Signal %x pid %d\n", status, pid);
+				printf("BORKBORK: Unknown signal %x pid %d\n", status, pid);
 				break;
 		}
 	}
