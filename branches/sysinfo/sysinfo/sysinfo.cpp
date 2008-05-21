@@ -93,16 +93,22 @@ QString kio_sysinfoProtocol::startStock( const QString title )
     return templator;
 }
 
-QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text, const QString details )
+QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text, const QString details, const QString link )
 {
     QString iconpath = icon(_icon, 22, true);
-    QString templator = QString ("<tr class=\"info\">"
-                                 "    <td><img src=\"%1\"></td>"
-                                 "    <td>"
-                                 "        %2<span class=\"detail\">%3</span>"
-                                 "    </td>"
-                                 "    <td></td>"
-                                 "</tr>").arg(iconpath).arg(text).arg(details);
+    QString templator;
+    QString temp = "";
+
+    if ( link != "" )
+        temp = QString(" onClick=\"location.href='%1'\" ").arg(link);
+
+    templator += QString ("<tr class=\"info\" %1>").arg(temp);
+    templator += QString ("    <td><img src=\"%1\"></td>"
+                          "    <td>%2").arg(iconpath).arg(text);
+    if ( details != "" )
+        templator += QString("<span class=\"detail\">[ %1 ]</span>").arg(details);
+
+    templator += "</td><td></td></tr>";
     return templator;
 }
 
@@ -142,18 +148,16 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     // common folders
     sysInfo += startStock( i18n( "Common Folders" ) );
-    sysInfo += addToStock( "folder_home", QString( "<a href=\"file:%1\">" ).arg( QDir::homeDirPath() ) + 
-                                          i18n( "My Home Folder" ) + "</a>", " [ " + QDir::homeDirPath() + " ] " );
-    sysInfo += addToStock( "folder_red", QString( "<a href=\"file:%1\">" ).arg( QDir::rootDirPath() ) + 
-                                          i18n( "Root Folder" ) + "</a>", " [ " + QDir::rootDirPath() + " ] " );
-    sysInfo += addToStock( "network", QString( "<a href=\"remote:/\">" + i18n( "Network Folders" )) + "</a>" );
+    sysInfo += addToStock( "folder_home", i18n( "My Home Folder" ), QDir::homeDirPath(), "file:" + QDir::homeDirPath() );
+    sysInfo += addToStock( "folder_red", i18n( "Root Folder" ), QDir::rootDirPath(), "file:" + QDir::rootDirPath() );
+    sysInfo += addToStock( "network", i18n( "Network Folders" ), "remote:/" , "remote:/" );
     sysInfo += finishStock();
 
     // net info
     int state = netInfo();
     if (state > 1) { // assume no network manager / networkstatus
         sysInfo += startStock( i18n( "Network Status" ) );
-        sysInfo += addToStock( "network", netStatus( state ), "[ 127.0.0.1 ]" );
+        sysInfo += addToStock( "network", netStatus( state ), "127.0.0.1" );
         sysInfo += finishStock();
     }
 
@@ -164,7 +168,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         sysInfo += startStock( i18n( "CPU Information" ) );
         sysInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL]);
         sysInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
-                    KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 )), m_info[CPU_NOFCORE] + i18n( "core" ));
+                    KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 )), m_info[CPU_NOFCORE] + i18n( " core" ));
         sysInfo += finishStock();
     }
 
@@ -190,11 +194,14 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     }
 
     sysInfo += "</div><div id=\"column2\">"; // second column
+    */
 
+    content = content.arg( sysInfo ); // put the sysinfo text into the main box
     // disk info
-    sysInfo += "<h2 id=\"hdds\">" + i18n( "Disk Information" ) + "</h2>";
-    sysInfo += diskInfo();
+    content = content.arg( i18n( "Disk Information" ) );
+    content = content.arg(diskInfo());
 
+    /*
     // Os info
     osInfo();
     sysInfo += "<h2 id=\"sysinfo\">" +i18n( "OS Information" ) + "</h2>";
@@ -218,7 +225,6 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     }
     */
     // Send the data
-    content = content.arg( sysInfo ); // put the sysinfo text into the main box
     data( QCString( content.utf8() ) );
     data( QByteArray() ); // empty array means we're done sending the data
     finished();
@@ -311,7 +317,7 @@ void kio_sysinfoProtocol::cpuInfo()
 
 QString kio_sysinfoProtocol::diskInfo()
 {
-    QString result = "<table>";
+    QString result;
     if ( fillMediaDevices() )
     {
         for ( QValueList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it )
@@ -326,9 +332,23 @@ QString kio_sysinfoProtocol::diskInfo()
             peer == 0 ? percent = 0 : percent = usage / peer;
             percent > 25 ? pattern = "<div style=\"width: %1%\">%2&nbsp;</div>" : pattern = "<div style=\"width: %1%\">&nbsp;</div>&nbsp;%2";
 
-            bar = QString(pattern).arg( di.mounted ? percent : 0).
-                                   arg( di.mounted ? formattedUnit( usage ) : QString::null );
+            bar = di.mounted ? percent : 0;
 
+            result +=   QString("<tr class=\"media\">"
+                                "   <td><img src=\"%1\" /></td>"
+                                "   <td>"
+                                "       <span class=\"detail\">[ Mounted on %2 ]<br>[ %3 ]</span>"
+                                "       %4<br><span class=\"mediaDf\">%5</span><br>"
+                                "       <img class=\"diskusage\" src=\"images/progress.png\" width=\"80%\" />"
+                                "   </td>"
+                                "   <td></td>"
+                                "</tr>").
+                                arg( icon( di.iconName, 48, true) ).
+                                arg( di.mountPoint ).
+                                arg( di.fsType ).
+                                arg( di.label ).
+                                arg( "freeeee" );
+            /*
             result += QString( "<tr>"
                                "    <td>%1</td>"
                                "    <td width=\"100%\">"
@@ -356,9 +376,9 @@ QString kio_sysinfoProtocol::diskInfo()
                                 arg( formattedUnit( di.total,0 ) ).
                                 arg( formattedUnit( di.avail,0 ) ).
                                 arg( bar );
+            */
         }
     }
-    result += "</table>";
     return result;
 }
 
@@ -668,7 +688,7 @@ bool kio_sysinfoProtocol::fillMediaDevices()
                 di.total = 0;
             }
 
-            di.model = libhal_device_get_property_string(  m_halContext, di.id.latin1(  ), "block.storage_device", &error );
+            di.model = libhal_device_get_property_string( m_halContext, di.id.latin1( ), "block.storage_device", &error );
             di.model = libhal_device_get_property_string( m_halContext, di.model.latin1( ), "storage.model", &error );
 
             ++it; // skip separator

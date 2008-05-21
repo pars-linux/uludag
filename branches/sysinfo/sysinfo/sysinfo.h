@@ -170,7 +170,7 @@ private:
     QMap<int, QString> m_info;
 
     QString startStock( const QString title );
-    QString addToStock( const QString _icon, const QString text, const QString details = "" );
+    QString addToStock( const QString _icon, const QString text, const QString details = "", const QString link = "" );
     QString finishStock();
 
     DCOPClient * m_dcopClient;

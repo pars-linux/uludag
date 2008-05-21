@@ -1,7 +1,7 @@
 body {
     background-image:url('images/background.png');
     margin-left:0px;
-    color: white; text-shadow: orange 0.1em 0.1em 0.1em
+    color: white; text-shadow: #333 0.1em 0.1em 0.1em;
 }
 
 a {
@@ -58,6 +58,16 @@ table.stock {
 table.stock tr.info {
     height:35px;
 }
+
+table.stock tr.info[onClick] {
+    cursor:pointer;
+}
+
+table.stock tr.info[onClick]:hover {
+    text-shadow:none;
+    border-bottom:1px solid #000;
+}
+
 table.stock tr.info td:nth-child(1) {
     background-image:url('images/infoBack.png');
     background-repeat:no-repeat;
@@ -145,7 +155,7 @@ th {
 h2 {
     clear:left;
     font-size:15px;
-    }
+}
 
 img.diskusage {
     height:16px;
