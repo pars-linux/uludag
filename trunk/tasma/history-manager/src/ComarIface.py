@@ -51,7 +51,7 @@ class ComarIface:
         message = ""
         if not "urlopen error" in exception.message:
             message += i18n("COMAR Error")
-        self.errHandler(message + str(exception))
+        self.errHandler(message + "<br>" + str(exception))
 
     def cancelError(self):
         message = i18n("You are not authorized for this operation.")

@@ -158,7 +158,7 @@ class widgetMain(formMain):
         elif data == "System.Manager.cancelled":
             message = i18n("Operation Cancelled")
             if err:
-                message += err
+                message += ("<br>" + err)
         # update gui after operation
         self.infoTextEdit.append(message)
         self.infoTextEdit.append(i18n("Updating User Interface, please wait a while"))
