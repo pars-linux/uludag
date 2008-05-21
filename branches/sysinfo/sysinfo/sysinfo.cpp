@@ -325,29 +325,31 @@ QString kio_sysinfoProtocol::diskInfo()
             DiskInfo di = ( *it );
             QString tooltip = i18n( di.model );
             QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
-            QString pattern, bar;
+            QString sizeStatus;
             unsigned long long usage,percent,peer;
             usage = di.total - di.avail;
             peer = di.total / 100;
             peer == 0 ? percent = 0 : percent = usage / peer;
-            percent > 25 ? pattern = "<div style=\"width: %1%\">%2&nbsp;</div>" : pattern = "<div style=\"width: %1%\">&nbsp;</div>&nbsp;%2";
+            sizeStatus = i18n( "%1 free of %2" ).arg( formattedUnit( di.avail,0 ) ).arg( formattedUnit( di.total,0 ) );
 
-            bar = di.mounted ? percent : 0;
-
-            result +=   QString("<tr class=\"media\">"
-                                "   <td><img src=\"%1\" /></td>"
+            result +=   QString("<tr class=\"media\" onClick=\"location.href='media:/%1'\">"
+                                "   <td><img src=\"%2\" /></td>"
                                 "   <td>"
-                                "       <span class=\"detail\">[ Mounted on %2 ]<br>[ %3 ]</span>"
-                                "       %4<br><span class=\"mediaDf\">%5</span><br>"
-                                "       <img class=\"diskusage\" src=\"images/progress.png\" width=\"80%\" />"
+                                "       <span class=\"detail\">[ Mounted on %3 ]<br>[ %4 ]</span>"
+                                "       <a href=\"media:/%5\">%6</a><br><span class=\"mediaDf\">%7</span><br>"
+                                "       <img class=\"diskusage\" src=\"file:%8\" width=\"%9%\">"
                                 "   </td>"
                                 "   <td></td>"
                                 "</tr>").
+                                arg( di.name ).
                                 arg( icon( di.iconName, 48, true) ).
                                 arg( di.mountPoint ).
                                 arg( di.fsType ).
+                                arg( di.name ).
                                 arg( di.label ).
-                                arg( "freeeee" );
+                                arg( sizeStatus ).
+                                arg( locate( "data", "sysinfo/themes/2008/images/progress.png" ) ).
+                                arg( percent );
             /*
             result += QString( "<tr>"
                                "    <td>%1</td>"

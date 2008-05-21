@@ -1,5 +1,6 @@
 body {
-    background-image:url('images/background.png');
+    /*background-image:url('images/background.png');*/
+    background-color:black;
     margin-left:0px;
     color: white; text-shadow: #333 0.1em 0.1em 0.1em;
 }
@@ -114,6 +115,16 @@ table.medias {
 table.medias tr.media {
     height:67px;
 }
+
+table.medias tr.media[onClick] {
+    cursor:pointer;
+}
+
+table.medias tr.media[onClick]:hover {
+    text-shadow:none;
+    border-bottom:1px solid #000;
+}
+
 table.medias tr.media td:nth-child(1) {
     background-image:url('images/mdSol.png');
     background-repeat:no-repeat;
