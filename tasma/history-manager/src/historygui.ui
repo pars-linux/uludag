@@ -8,9 +8,17 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>503</width>
-            <height>429</height>
+            <width>450</width>
+            <height>403</height>
         </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
     </property>
     <property name="minimumSize">
         <size>
@@ -25,7 +33,45 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QTabWidget" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout10</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>snapshotsCheckBox</cstring>
+                    </property>
+                    <property name="text">
+                        <string>List only Snapshots</string>
+                    </property>
+                    <property name="checked">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>301</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+            </hbox>
+        </widget>
+        <widget class="QTabWidget" row="1" column="0">
             <property name="name">
                 <cstring>tabWidget</cstring>
             </property>
@@ -77,6 +123,14 @@
                         <property name="name">
                             <cstring>snapshotsListView</cstring>
                         </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
                         <property name="minimumSize">
                             <size>
                                 <width>0</width>
@@ -103,66 +157,61 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLayoutWidget" row="0" column="0">
+                    <widget class="QProgressBar" row="1" column="0">
                         <property name="name">
-                            <cstring>layout10</cstring>
+                            <cstring>infoProgressBar</cstring>
                         </property>
-                        <vbox>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QTextEdit">
-                                <property name="name">
-                                    <cstring>infoTextEdit</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>true</bool>
-                                </property>
-                                <property name="textFormat">
-                                    <enum>RichText</enum>
-                                </property>
-                            </widget>
-                            <widget class="QProgressBar">
-                                <property name="name">
-                                    <cstring>infoProgressBar</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>1</hsizetype>
-                                        <vsizetype>1</vsizetype>
-                                        <horstretch>0</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                                <property name="totalSteps">
-                                    <number>0</number>
-                                </property>
-                            </widget>
-                        </vbox>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="totalSteps">
+                            <number>0</number>
+                        </property>
+                    </widget>
+                    <widget class="QTextEdit" row="0" column="0">
+                        <property name="name">
+                            <cstring>infoTextEdit</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>true</bool>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>7</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
+                        </property>
                     </widget>
                 </grid>
             </widget>
         </widget>
-        <widget class="QButtonGroup" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="2" column="0">
             <property name="name">
-                <cstring>buttonGroup1</cstring>
+                <cstring>layout11</cstring>
             </property>
-            <property name="title">
-                <string></string>
-            </property>
-            <grid>
+            <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QPushButton" row="0" column="2">
+                <widget class="QPushButton">
                     <property name="name">
-                        <cstring>snapshotPushButton</cstring>
+                        <cstring>helpPushButton</cstring>
                     </property>
                     <property name="text">
-                        <string>New</string>
+                        <string>Help</string>
                     </property>
                 </widget>
-                <spacer row="0" column="1">
+                <spacer>
                     <property name="name">
                         <cstring>spacer1</cstring>
                     </property>
@@ -174,20 +223,20 @@
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>70</width>
+                            <width>160</width>
                             <height>20</height>
                         </size>
                     </property>
                 </spacer>
-                <widget class="QPushButton" row="0" column="0">
+                <widget class="QPushButton">
                     <property name="name">
-                        <cstring>helpPushButton</cstring>
+                        <cstring>snapshotPushButton</cstring>
                     </property>
                     <property name="text">
-                        <string>Help</string>
+                        <string>New</string>
                     </property>
                 </widget>
-                <widget class="QPushButton" row="0" column="3">
+                <widget class="QPushButton">
                     <property name="name">
                         <cstring>restorePushButton</cstring>
                     </property>
@@ -198,36 +247,8 @@
                         <string>Restore</string>
                     </property>
                 </widget>
-            </grid>
+            </hbox>
         </widget>
-        <widget class="QCheckBox" row="0" column="0">
-            <property name="name">
-                <cstring>snapshotsCheckBox</cstring>
-            </property>
-            <property name="text">
-                <string>List only Snapshots</string>
-            </property>
-            <property name="checked">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <spacer row="0" column="1">
-            <property name="name">
-                <cstring>spacer2</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>301</width>
-                    <height>20</height>
-                </size>
-            </property>
-        </spacer>
     </grid>
 </widget>
 <layoutdefaults spacing="6" margin="11"/>

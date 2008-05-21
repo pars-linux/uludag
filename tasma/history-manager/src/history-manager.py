@@ -19,6 +19,8 @@ import dbus
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
     self.mainwidget = widgetMain(self)
+    toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
+    toplayout.addWidget(self.mainwidget)
     self.aboutus = KAboutApplication(self)
 
 class Module(KCModule):
