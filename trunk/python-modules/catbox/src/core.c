@@ -162,9 +162,9 @@ decide_event(struct trace_context *ctx, struct traced_child *kid, int status)
 				// 1.3.3. reason: Spurious sigtrap after execve call
 				return E_EXECV;
 			}
-			// 1.4. reason: Genuine signal directed to the child itself
-			return E_GENUINE;
 		}
+		// 1.4. reason: Genuine signal directed to the child itself
+		return E_GENUINE;
 	} else if (WIFEXITED(status)) {
 		// 2. reason: Child is exited normally
 		return E_EXIT;
