@@ -69,16 +69,6 @@ class Widget(PackageWidget, ScreenWidget):
 
         self.repodb = pisi.db.repodb.RepoDB()
 
-        """
-        oldContribUrl = "http://paketler.pardus.org.tr/contrib-2007/pisi-index.xml.bz2"
-
-        if self.repodb.has_repo_url(oldContribUrl):
-            for r in self.repodb.list_repos():
-                if self.repodb.get_repo_url(r) == oldContribUrl:
-                    self.removeRepo(r)
-                    self.addRepo(r, self.repoAddress)
-        """
-
         n = 1
 
         if self.repodb.has_repo_url(self.repoAddress):
