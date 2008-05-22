@@ -7156,7 +7156,10 @@ function outM(obj,no){
 	obj.src=adres + "/tubitak-bar_0" + no + ".jpg";
 }
 
-var adres="http://www.akiskart.com.tr/tubnav";
+/*
+var adres="http://www.pardus.org.tr/resim";
+*/
+var adres="resim";
 
 document.write('<style>');
 document.write('#ustserit a{ ');
@@ -7179,6 +7182,7 @@ document.write('}');
 document.write('</style>');
  
 document.write('<div id="demomenu" style="position:absolute;z-index:100;width:98%;bordeR:0px solid red;"> ');
+
 document.write('  <center> ');
 document.write('      <div id="tubmenu"> ');
 
