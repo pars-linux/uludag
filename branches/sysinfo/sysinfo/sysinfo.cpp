@@ -323,14 +323,13 @@ QString kio_sysinfoProtocol::diskInfo()
         for ( QValueList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it )
         {
             DiskInfo di = ( *it );
-            QString tooltip = i18n( di.model );
-            QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
-            QString sizeStatus;
             unsigned long long usage,percent,peer;
+            QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
+            QString tooltip = i18n( di.model );
             usage = di.total - di.avail;
             peer = di.total / 100;
             peer == 0 ? percent = 0 : percent = usage / peer;
-            sizeStatus = i18n( "%1 free of %2" ).arg( formattedUnit( di.avail,0 ) ).arg( formattedUnit( di.total,0 ) );
+            QString sizeStatus = i18n( "%1 free of %2" ).arg( formattedUnit( di.avail,0 ) ).arg( formattedUnit( di.total,0 ) );
 
             result +=   QString("<tr class=\"media\" onClick=\"location.href='media:/%1'\">"
                                 "   <td><img src=\"%2\" /></td>"
@@ -432,26 +431,32 @@ bool isOpenGlSupported() {
 
     // Open the display with screen#:scr to fiddle with
     dpy = XOpenDisplay (displayname);
-    if (!dpy) return false;
+
+    if (!dpy)
+        return false;
 
     visinfo = glXChooseVisual(dpy, scr, attribSingle);
-    if (!visinfo) {
+    if (!visinfo) 
+    {
         visinfo = glXChooseVisual(dpy, scr, attribDouble);
-        if (!visinfo) {
+        if (!visinfo) 
+        {
             XCloseDisplay (dpy);
             return false;
         }
     }
 
     ctx = glXCreateContext( dpy, visinfo, NULL, allowDirect );
-    if (!ctx) {
+    if (!ctx) 
+    {
        fprintf(stderr, "Error: glXCreateContext failed\n");
        XFree(visinfo);
        XCloseDisplay (dpy);
        return false;
     }
 
-    if(glXIsDirect(dpy, ctx)) isEnabled = true;
+    if(glXIsDirect(dpy, ctx))
+        isEnabled = true;
 
     glXDestroyContext (dpy,ctx);
     XFree(visinfo);
@@ -571,7 +576,6 @@ void kio_sysinfoProtocol::osInfo()
     m_info[ OS_HOSTNAME ] = uts.nodename;
 
     m_info[ OS_USER ] = KUser().loginName();
-
     m_info[ OS_SYSTEM ] = readFromFile( "/etc/pardus-release" );
 }
 
@@ -587,20 +591,21 @@ extern "C"
 {
     int kdemain(int argc, char **argv)
     {
-      // we need KApp to check the display capabilities
-      putenv(strdup("SESSION_MANAGER="));
-      KCmdLineArgs::init(argc, argv, "kio_sysinfo", 0, 0, 0, 0);
-      KCmdLineArgs::addCmdLineOptions( options );
-      KApplication app( false, true );
+        // we need KApp to check the display capabilities
+        putenv(strdup("SESSION_MANAGER="));
+        KCmdLineArgs::init(argc, argv, "kio_sysinfo", 0, 0, 0, 0);
+        KCmdLineArgs::addCmdLineOptions( options );
+        KApplication app( false, true );
 
         kdDebug(7101) << "*** Starting kio_sysinfo " << endl;
 
-        if (argc != 4) {
-            kdDebug(7101) << "Usage: kio_sysinfo  protocol domain-socket1 domain-socket2" << endl;
+        if (argc != 4) 
+        {
+            kdDebug(7101) << "Usage: kio_sysinfo protocol domain-socket1 domain-socket2" << endl;
             exit(-1);
         }
 
-	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+        KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
         kio_sysinfoProtocol slave( args->arg(1), args->arg(2));
         slave.dispatchLoop();
@@ -612,9 +617,11 @@ extern "C"
 
 bool kio_sysinfoProtocol::fillMediaDevices()
 {
+
     DCOPRef nsd( "kded", "mediamanager" );
     nsd.setDCOPClient( m_dcopClient );
     QStringList devices = nsd.call( "fullList" );
+
     if ( devices.isEmpty() )
         return false;
 
@@ -623,32 +630,33 @@ bool kio_sysinfoProtocol::fillMediaDevices()
     m_devices.clear();
 
     LibHalContext  *m_halContext = libhal_ctx_new();
+
     if (!m_halContext)
-      {
-	kdDebug(1219) << "Failed to initialize HAL!" << endl;
-      }
+        kdDebug(1219) << "Failed to initialize HAL!" << endl;
 
     DBusError error;
     dbus_error_init(&error);
     DBusConnection *dbus_connection = dbus_bus_get(DBUS_BUS_SYSTEM, &error);
 
-    if (dbus_error_is_set(&error)) {
-      dbus_error_free(&error);
-      libhal_ctx_free(m_halContext);
-      m_halContext = 0;
+    if (dbus_error_is_set(&error)) 
+    {
+        dbus_error_free(&error);
+        libhal_ctx_free(m_halContext);
+        m_halContext = 0;
     }
 
-    if (m_halContext) {
-      libhal_ctx_set_dbus_connection(m_halContext, dbus_connection);
-      dbus_error_init(&error);
-      if (!libhal_ctx_init(m_halContext, &error))
-	{
-	  printf("error %s %s\n", error.name, error.message);
-	  if (dbus_error_is_set(&error))
-	    dbus_error_free(&error);
-	  libhal_ctx_free(m_halContext);
-	  m_halContext = 0;
-	}
+    if (m_halContext)
+    {
+        libhal_ctx_set_dbus_connection(m_halContext, dbus_connection);
+        dbus_error_init(&error);
+        if (!libhal_ctx_init(m_halContext, &error))
+            {
+                printf("error %s %s\n", error.name, error.message);
+                if (dbus_error_is_set(&error))
+                    dbus_error_free(&error);
+                libhal_ctx_free(m_halContext);
+                m_halContext = 0;
+            }
     }
 
     for ( QStringList::ConstIterator it = devices.constBegin(); it != devices.constEnd(); ++it )

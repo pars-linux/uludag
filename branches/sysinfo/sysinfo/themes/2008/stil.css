@@ -20,7 +20,6 @@ a {
 #header {
     padding:16px;
     font-size:12px;
-    font-weight:bold;
     letter-spacing: .1em;
 }
 #root {
@@ -35,12 +34,10 @@ a {
     padding-right:0px;
 }
 #right {
-    background-image:url('images/solTab.png');
     background-repeat:no-repeat;
     height:400px;
 }
 #left {
-    background-image:url('images/solTab.png');
     background-repeat:no-repeat;
     width:33%;
     margin-top:-10px;
@@ -49,7 +46,6 @@ a {
 /* Left Panel */
 table.stock {
     font-size:12px;
-    font-weight:bold;
     border:0px;
     border-spacing:0;
     color: white; text-shadow: #555 1px 1px 1px
@@ -89,7 +85,6 @@ table.stock tr.info td:nth-child(2)>span.detail {
     float:right;
     font-size:10px;
     color:whte;
-    font-weight:bold;
     text-shadow:none;
 }
 table.stock tr.info td:nth-child(3) {
@@ -106,7 +101,6 @@ table.stock>tr>th {
 
 table.medias {
     font-size:12px;
-    font-weight:bold;
     border:0px;
     border-spacing:0;
     color: white; text-shadow: #555 1px 1px 1px
