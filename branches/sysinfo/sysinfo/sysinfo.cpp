@@ -141,89 +141,99 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     content = content.arg( "file:" + locate( "data", "sysinfo/themes/2008/stil.css" ) );
     content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
-    QString sysInfo;
+    QString dynamicInfo, staticInfo;
     QString dummy;
 
-    // OS info
+    // Dynamic Info
 
     // common folders
-    sysInfo += startStock( i18n( "Common Folders" ) );
-    sysInfo += addToStock( "folder_home", i18n( "My Home Folder" ), QDir::homeDirPath(), "file:" + QDir::homeDirPath() );
-    sysInfo += addToStock( "folder_red", i18n( "Root Folder" ), QDir::rootDirPath(), "file:" + QDir::rootDirPath() );
-    sysInfo += addToStock( "network", i18n( "Network Folders" ), "remote:/" , "remote:/" );
-    sysInfo += finishStock();
+    dynamicInfo += startStock( i18n( "Common Folders" ) );
+    dynamicInfo += addToStock( "folder_home", i18n( "My Home Folder" ), QDir::homeDirPath(), "file:" + QDir::homeDirPath() );
+    dynamicInfo += addToStock( "folder_red", i18n( "Root Folder" ), QDir::rootDirPath(), "file:" + QDir::rootDirPath() );
+    dynamicInfo += addToStock( "network", i18n( "Network Folders" ), "remote:/" , "remote:/" );
+    dynamicInfo += finishStock();
 
     // net info
     int state = netInfo();
     if (state > 1) { // assume no network manager / networkstatus
-        sysInfo += startStock( i18n( "Network Status" ) );
-        sysInfo += addToStock( "network", netStatus( state ), "127.0.0.1" );
-        sysInfo += finishStock();
+        dynamicInfo += startStock( i18n( "Network" ) );
+        dynamicInfo += addToStock( "network", netStatus( state ), "127.0.0.1" );
+        dynamicInfo += finishStock();
     }
+
+    // memory info
+    memoryInfo();
+    dynamicInfo += startStock( i18n( "Memory" ) );
+    dynamicInfo += addToStock( "memory", i18n( "Free memory:" ) + m_info[MEM_FREERAM], i18n( "Total : ") + m_info[MEM_TOTALRAM]);
+    dynamicInfo += finishStock();
+
+    content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
+
+    // Disk Info
+
+    content = content.arg( i18n( "Disks" ) );
+    content = content.arg(diskInfo()); // put the discInfo text into the disk right box
+
+    // Static Info
+
+    // Os info
+    osInfo();
+    staticInfo += startStock( i18n( "OS Information" ) );
+    staticInfo += addToStock( "system", i18n( "OS:" ) + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] );
+    staticInfo += addToStock( "system", i18n( "Current user:" ) + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] );
+    staticInfo += addToStock( "system", i18n( "System:" ) + m_info[OS_SYSTEM] );
+    staticInfo += addToStock( "system", i18n( "KDE:" ) + KDE::versionString() );
+    staticInfo += finishStock();
+
+    // update content..
+    content = content.arg( staticInfo );
+    staticInfo = "";
 
     // CPU info
     cpuInfo();
     if ( !m_info[CPU_MODEL].isNull() )
     {
-        sysInfo += startStock( i18n( "CPU Information" ) );
-        sysInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL]);
-        sysInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
+        staticInfo += startStock( i18n( "Processor" ) );
+        staticInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL]);
+        staticInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
                     KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 )), m_info[CPU_NOFCORE] + i18n( " core" ));
-        sysInfo += finishStock();
+        staticInfo += finishStock();
     }
 
-    // memory info
-    memoryInfo();
-    sysInfo += startStock( i18n( "Memory Information" ) );
-    sysInfo += addToStock( "memory", i18n( "Free memory:" ) + m_info[MEM_FREERAM], i18n( "Total : ") + m_info[MEM_TOTALRAM]);
-    sysInfo += finishStock();
-
-    /*
-    // hw info
-    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
-        || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
-    {
-        sysInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
-        sysInfo += "<table style=\"background-image:url('" + icon( "laptop", 48, true) + "');\">";
-        sysInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
-        sysInfo += "</table>";
-    }
-
-    sysInfo += "</div><div id=\"column2\">"; // second column
-    */
-
-    content = content.arg( sysInfo ); // put the sysinfo text into the main box
-    // disk info
-    content = content.arg( i18n( "Disk Information" ) );
-    content = content.arg(diskInfo());
-
-    /*
-    // Os info
-    osInfo();
-    sysInfo += "<h2 id=\"sysinfo\">" +i18n( "OS Information" ) + "</h2>";
-    sysInfo += "<table style=\"background-image:url('" + icon( "system", 48, true) + "');\">";
-    sysInfo += "<tr><td>" + i18n( "OS:" ) + "</td><td>" + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "Current user:" ) + "</td><td>" + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "System:" ) +  "</td><td>" + m_info[OS_SYSTEM] + "</td></tr>";
-    sysInfo += "<tr><td>" + i18n( "KDE:" ) + "</td><td>" + KDE::versionString() + "</td></tr>";
-    sysInfo += "</table>";
+    // update content..
+    content = content.arg( staticInfo );
+    staticInfo = "";
 
     // OpenGL info
     if ( glInfo() )
     {
-        sysInfo += "<h2 id=\"display\">" + i18n( "Display Info" ) + "</h2>";
-        sysInfo += "<table style=\"background-image:url('" + icon( "display", 48, true) + "');\">";
-        sysInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + formatStr(m_info[GFX_VENDOR]) +  "</td></tr>";
-        sysInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + formatStr(m_info[GFX_MODEL]) + "</td></tr>";
+        staticInfo += startStock( i18n( "Display" ) );
+        staticInfo += addToStock( "display", formatStr(m_info[GFX_MODEL]), formatStr(m_info[GFX_VENDOR]) );
         if (!m_info[GFX_DRIVER].isNull())
-            sysInfo += "<tr><td>" + i18n( "Driver:" ) + "</td><td>" + m_info[GFX_DRIVER] + "</td></tr>";
-        sysInfo += "</table>";
+            staticInfo += addToStock( "display", i18n( "Driver: " ) + m_info[GFX_DRIVER] );
+        staticInfo += finishStock();
     }
-    */
+
+    // update content
+    content = content.arg( staticInfo );
+    staticInfo = "";
+
+        /*
+    // hw info
+    if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
+        || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
+    {
+        staticInfo += "<h2 id=\"hwinfo\">" +i18n( "Hardware Information" ) + "</h2>";
+        staticInfo += "<table style=\"background-image:url('" + icon( "laptop", 48, true) + "');\">";
+        staticInfo += "<tr><td>" + i18n( "Type:" ) + "</td><td>" + m_info[ TYPE ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Vendor:" ) + "</td><td>" + m_info[ MANUFACTURER ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Model:" ) + "</td><td>" + m_info[ PRODUCT ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Bios Vendor:" ) + "</td><td>" + m_info[ BIOSVENDOR ] + "</td></tr>";
+        staticInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
+        staticInfo += "</table>";
+    }
+*/
+
     // Send the data
     data( QCString( content.utf8() ) );
     data( QByteArray() ); // empty array means we're done sending the data

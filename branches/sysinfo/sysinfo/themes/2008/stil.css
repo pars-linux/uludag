@@ -22,12 +22,15 @@ a {
     font-size:12px;
     letter-spacing: .1em;
 }
-#root {
+#root, #other {
     width: 100%;
     margin: 0px 0px;
     padding-top:8px;
 }
-#root>tr>td {
+#other {
+    width: 100%;
+}
+#root>tr>td, #other>tr>td {
     vertical-align:top;
     padding:15px;
     padding-top:5px;
@@ -42,7 +45,11 @@ a {
     width:33%;
     margin-top:-10px;
 }
-
+.bloc {
+    background-repeat:no-repeat;
+    width:33%;
+    margin-top:-10px;
+}
 /* Left Panel */
 table.stock {
     font-size:12px;
