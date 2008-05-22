@@ -38,7 +38,6 @@ a {
 }
 #right {
     background-repeat:no-repeat;
-    height:400px;
 }
 #left {
     background-repeat:no-repeat;
@@ -59,7 +58,7 @@ table.stock {
     margin-top:10px;
     width:96%;
 }
-table.stock tr.info {
+table.stock tr.info, tr.progress {
     height:35px;
 }
 
@@ -77,6 +76,13 @@ table.stock tr.info td:nth-child(1) {
     background-repeat:no-repeat;
     width:30px;
 }
+
+table.stock tr.progress td:nth-child(1) {
+    background-image:url('images/infoBack.png');
+    background-repeat:no-repeat;
+    width:5px;
+}
+
 table.stock tr.info td:nth-child(1)>img {
     padding: 4px;
     padding-top:0px;
@@ -84,7 +90,17 @@ table.stock tr.info td:nth-child(1)>img {
     height:22px;
     border:none;
 }
+table.stock tr.progress td:nth-child(2)>img {
+    padding: 4px;
+    padding-top:0px;
+    border:none;
+}
+
 table.stock tr.info td:nth-child(2) {
+    background-image:url('images/tbArk.png');
+    background-repeat:repeat-x;
+}
+table.stock tr.progress td:nth-child(2) {
     background-image:url('images/tbArk.png');
     background-repeat:repeat-x;
 }
@@ -99,6 +115,12 @@ table.stock tr.info td:nth-child(3) {
     background-repeat:no-repeat;
     width:4px;
 }
+table.stock tr.progress td:nth-child(3) {
+    background-image:url('images/tbSag.png');
+    background-repeat:no-repeat;
+    width:4px;
+}
+
 table.stock>tr>th {
     padding-top:10px;
     text-align:left;

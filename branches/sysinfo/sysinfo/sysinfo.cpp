@@ -112,6 +112,17 @@ QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text
     return templator;
 }
 
+QString kio_sysinfoProtocol::addProgress( const int size )
+{
+    QString progress = "file:" + locate( "data", "sysinfo/themes/2008/images/progress.png" );
+    QString templator;
+
+    templator += QString ("<tr class=\"progress\"><td></td>");
+    templator += QString ("<td><img src=\"%1\" width=\"%2\"></td><td></td></tr>").
+                         arg(progress).arg(size);
+    return templator;
+}
+
 QString kio_sysinfoProtocol::finishStock()
 {
     return QString ("</table>");
@@ -165,6 +176,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     memoryInfo();
     dynamicInfo += startStock( i18n( "Memory" ) );
     dynamicInfo += addToStock( "memory", i18n( "Free memory:" ) + m_info[MEM_FREERAM], i18n( "Total : ") + m_info[MEM_TOTALRAM]);
+    dynamicInfo += addProgress(30);
     dynamicInfo += finishStock();
 
     content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
@@ -178,11 +190,9 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     // Os info
     osInfo();
-    staticInfo += startStock( i18n( "OS Information" ) );
-    staticInfo += addToStock( "system", i18n( "OS:" ) + m_info[OS_SYSNAME] + " " + m_info[OS_RELEASE] + " " + m_info[OS_MACHINE] );
-    staticInfo += addToStock( "system", i18n( "Current user:" ) + m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] );
-    staticInfo += addToStock( "system", i18n( "System:" ) + m_info[OS_SYSTEM] );
-    staticInfo += addToStock( "system", i18n( "KDE:" ) + KDE::versionString() );
+    staticInfo += startStock( i18n( "Operating System" ) );
+    staticInfo += addToStock( "system", m_info[OS_SYSNAME] + " <b>" + m_info[OS_RELEASE] + "</b> " + m_info[OS_MACHINE], m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] );
+    staticInfo += addToStock( "system", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM] ));
     staticInfo += finishStock();
 
     // update content..
@@ -218,7 +228,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     content = content.arg( staticInfo );
     staticInfo = "";
 
-        /*
+    /*
     // hw info
     if (!m_info[TYPE].isNull() || !m_info[MANUFACTURER].isNull() || !m_info[PRODUCT].isNull()
         || !m_info[BIOSVENDOR].isNull() || !m_info[ BIOSVERSION ].isNull())
@@ -232,7 +242,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         staticInfo += "<tr><td>" + i18n( "Bios Version:" ) + "</td><td>" + m_info[ BIOSVERSION ] + "</td></tr>";
         staticInfo += "</table>";
     }
-*/
+    */
 
     // Send the data
     data( QCString( content.utf8() ) );
@@ -291,11 +301,7 @@ void kio_sysinfoProtocol::memoryInfo()
         m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit ,0);
         unsigned long int totalFree = calculateFreeRam() * 1024;
         kdDebug() << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit << endl;
-        if ( totalFree > info.freeram * info.mem_unit || true )
-            m_info[MEM_FREERAM] = i18n("%1 (+ %2 Caches)").arg(formattedUnit( info.freeram * mem_unit ))
-                                  .arg( formattedUnit( totalFree - info.freeram * mem_unit));
-        else
-            m_info[MEM_FREERAM] = formattedUnit( info.freeram * mem_unit );
+        m_info[MEM_FREERAM] = formattedUnit( totalFree - info.freeram * mem_unit );
 
         m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit );
         m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit );
