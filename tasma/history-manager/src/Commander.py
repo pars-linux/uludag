@@ -15,7 +15,6 @@ class Commander(QObject):
             self.comar = ComarIface.ComarIface(self.handler, self.errHandler)
         except:
             self.parent.showErrorMessage(i18n("Cannot connect to Comar daemon"))
-            #self.parent.setReadOnly(True)
             self.parent.updateGui()
 
     def errHandler(self, err=None):
@@ -45,7 +44,6 @@ class Commander(QObject):
         elif signal == "status":
             self.parent.pisiNotify(data[0], args)
         elif signal == "warning":
-            #self.comar.com_lock.unlock()
             self.parent.showWarningMessage(str(args))
             print "Warning: ", str(data)
         elif signal == "PolicyKit":

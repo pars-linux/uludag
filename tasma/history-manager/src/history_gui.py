@@ -1,5 +1,3 @@
-#ifndef HISTORY_GUI.PY
-#define HISTORY_GUI.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -16,6 +14,7 @@ from kdecore import *
 from kdeui import *
 
 from historygui import formMain
+from progress import progressForm
 from utility import *
 
 import Commander
@@ -27,8 +26,9 @@ class widgetMain(formMain):
         formMain.__init__(self, parent)
 
         self.help = None
-
+        self.progress = widgetProgress(self)
         self.command = Commander.Commander(self)
+
         # selected/previously selected list item
         self.selected = None
         self.previous = None
@@ -40,8 +40,9 @@ class widgetMain(formMain):
         self.snapshotsListView.clear()
         self.infoTextEdit.clear()
         self.snapshotsListView.setColumnWidth(0, 10)
-        self.snapshotsListView.setColumnWidth(1, 170)
-        self.snapshotsListView.setSortColumn(1)
+        self.snapshotsListView.setColumnWidth(1, 10)
+        self.snapshotsListView.setColumnWidth(2, 170)
+        self.snapshotsListView.setSortColumn(2)
         self.snapshotsListView.setSortOrder(Qt.Descending)
 
         # set labels
@@ -52,9 +53,10 @@ class widgetMain(formMain):
         self.helpPushButton.setText(i18n("Help"))
         self.restorePushButton.setText(i18n("Restore"))
         self.snapshotPushButton.setText(i18n("New Snapshot"))
-        self.snapshotsListView.header().setLabel(0, i18n("Id"))
-        self.snapshotsListView.header().setLabel(1, i18n("Date"))
-        self.snapshotsListView.header().setLabel(2, i18n("Type"))
+        self.snapshotsListView.header().setLabel(0, " ")
+        self.snapshotsListView.header().setLabel(1, i18n("Id"))
+        self.snapshotsListView.header().setLabel(2, i18n("Date"))
+        self.snapshotsListView.header().setLabel(3, i18n("Type"))
 
         # set icons
         self.helpPushButton.setIconSet(loadIconSet("help", KIcon.Small))
@@ -146,7 +148,7 @@ class widgetMain(formMain):
     def enableButtons(self, true):
         self.restorePushButton.setEnabled(true)
         self.snapshotPushButton.setEnabled(true)
-        self.tabWidget.setTabEnabled(self.tabWidget.page(0), true)
+        #self.tabWidget.setTabEnabled(self.tabWidget.page(0), true)
 
     def finished(self, data, err=None):
         # this is called after an operation finishes
@@ -160,14 +162,15 @@ class widgetMain(formMain):
             if err:
                 message += ("<br>" + err)
         # update gui after operation
-        self.infoTextEdit.append(message)
-        self.infoTextEdit.append(i18n("Updating User Interface, please wait a while"))
+        self.progress.setCurrentOperation(message)
+        self.progress.setCurrentOperation(i18n("Updating User Interface, please wait a while"))
         if data == "System.Manager.cancelled":
-            self.infoTextEdit.append(i18n("Finished with Errors"))
+            self.progress.setCurrentOperation(i18n("Finished with Errors"))
         else:
             self.addLast()
-            self.infoTextEdit.append(i18n("Finished Succesfully"))
+            self.progress.setCurrentOperation(i18n("Finished Succesfully"))
         self.enableButtons(True)
+        self.progress.hide()
 
     def displayProgress(self, data):
         print "progress yay"
@@ -199,45 +202,40 @@ class widgetMain(formMain):
             self.latest = op.no
         self.snapshotsListView.insertItem(widgetItem(self.snapshotsListView, op))
 
-    def startProgress(self):
-        # qt3 is deprecated
-        pass
-
     def pisiNotify(self, operation, args):
         """ notify gui of events """
-        if operation in ["policy_yes"]:
-            self.tabWidget.setCurrentPage(1)
-            self.infoTextEdit.clear()
-            self.startProgress()
-            self.infoTextEdit.append(i18n("<b>Access Granted</b><br>"))
+        if operation in ["policy_auth_admin"]:
+            print "authenticating admin"
+        elif operation in ["policy_yes"]:
+            self.progress.reset()
+            self.progress.show()
+            self.progress.setCurrentOperation(i18n("<b>Access Granted</b><br>"))
         elif operation in ["policy_no"]:
-            self.tabWidget.setCurrentPage(1)
-            self.infoTextEdit.clear()
-            self.infoTextEdit.append(i18n("<b>Access Denied</b><br>"))
+            self.showErrorMessage(i18n("<b>Access Denied</b><br>"))
         elif operation in ["started"]:
-            self.infoTextEdit.append(i18n("Operation Started"))
+            self.progress.setCurrentOperation(i18n("Operation Started"))
         elif operation in ["order"]:
-            self.infoTextEdit.append(i18n("Ordering Packages for Operation"))
+            self.progress.setCurrentOperation(i18n("Ordering Packages for Operation"))
         elif operation in ["removing"]:
             for i in args:
-                self.infoTextEdit.append(i18n("Removing    : %1").arg(i))
+                self.progress.setCurrentOperation(i18n("Removing    : %1").arg(i))
         elif operation in ["removed"]:
             self.infoTextEdit.append(i18n("OK") + "<br>")
         elif operation in ["installing"]:
             for i in args:
-                self.infoTextEdit.append(i18n("Installing  : %1").arg(i))
+                self.progress.setCurrentOperation(i18n("Installing  : %1").arg(i))
         elif operation in ["extracting"]:
             for i in args:
-                self.infoTextEdit.append(i18n("Extracting  : %1").arg(i))
+                self.progress.setCurrentOperation(i18n("Extracting  : %1").arg(i))
         elif operation in ["configuring"]:
             for i in args:
-                self.infoTextEdit.append(i18n("Configuring  : %1").arg(i))
+                self.progress.setCurrentOperation(i18n("Configuring  : %1").arg(i))
         elif operation in ["installed"]:
             self.infoTextEdit.append(i18n("OK") + "<br>")
         elif operation in ["takingSnapshot"]:
-            self.infoTextEdit.append(i18n("Taking a Snapshot of System ") + "<br>")
+            self.progress.setHeader(i18n("Taking a Snapshot of System "))
         elif operation in ["takingBack"]:
-            self.infoTextEdit.append(i18n("Taking System Back to %1 %2 <br>").arg(self.selected.getDate()).arg(self.selected.getTime()))
+            self.progress.setHeader(i18n("Taking System Back to %1 %2 <br>").arg(self.selected.getDate()).arg(self.selected.getTime()))
         else:
             print "another operation here", operation
 
@@ -245,6 +243,7 @@ class widgetMain(formMain):
         """ triggered when listviewitem is changed """
         self.previous = self.selected or item
         self.selected = item
+        self.restorePushButton.setEnabled(True)
 
     def tabChanged(self, parent):
         """ when tab widget changes, shows info of selected listitem """
@@ -290,6 +289,47 @@ class widgetMain(formMain):
         self.snapshotsListView.setCurrentItem(item)
         self.tabWidget.setCurrentPage(1)
 
+class widgetProgress(progressForm):
+    def __init__(self, parent=None, steps=0):
+        progressForm.__init__(self, parent)
+
+        #self.hide()
+        self.parent = parent
+        animatedPisi = QMovie(locate("data","package-manager/pisianime.gif"))
+        self.animeLabel.setMovie(animatedPisi)
+
+        self.progressBar.setTotalSteps(steps)
+
+        self.connect(self.cancelPushButton, SIGNAL("clicked()"), self.checkCancelClose)
+
+    def checkCancelClose(self):
+        self.hide()
+
+    def enableCancel(self, true):
+        self.cancelPushButton.setEnabled(true)
+
+    def setCurrentOperation(self, mes):
+        self.progressTextLabel.setText(mes)
+
+    def setHeader(self, mes):
+        self.bigTextLabel.setText("<h3><b>%s</b></h3>" % mes)
+
+    def updateProgressBar(self, progress):
+        self.progressBar.setProgress(float(progress))
+
+    def reset(self):
+        self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
+
+        #self.hideOperationDescription()
+        #self.hideStatus()
+        self.progressBar.setProgress(0)
+        self.cancelPushButton.setEnabled(False)
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Escape:
+            return
+        else:
+            progressForm.keyPressEvent(self, event)
 
 class widgetItem(QListViewItem):
     """ class for listviewitem's """
@@ -303,9 +343,20 @@ class widgetItem(QListViewItem):
         self.op_pack = operation.packages
         self.op_tag = operation.tag
 
-        self.setText(0, str(self.op_no))
-        self.setText(1, "%s %s" % (self.op_date, self.op_time))
-        self.setText(2, self.op_type)
+        self.setText(1, str(self.op_no))
+        self.setText(2, "%s %s" % (self.op_date, self.op_time))
+        self.setText(3, self.op_type)
+
+        if self.op_type == 'snapshot':
+            self.setPixmap(0, QPixmap("pics/snapshot.png"))
+        elif self.op_type == 'upgrade':
+            self.setPixmap(0, QPixmap("pics/upgrade.png"))
+        elif self.op_type == 'remove':
+            self.setPixmap(0, QPixmap("pics/remove.png"))
+        elif self.op_type == 'install':
+            self.setPixmap(0, QPixmap("pics/install.png"))
+        elif self.op_type == 'takeback':
+            self.setPixmap(0, QPixmap("pics/takeback.png"))
 
     def getNumPackages(self):
         return len(self.op_pack)
@@ -322,4 +373,3 @@ class widgetItem(QListViewItem):
     def getType(self):
         return self.op_type
 
-#endif // HISTORY_GUI.PY

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Çrş May 21 17:24:41 2008
+# Created: Prş May 22 17:20:04 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -39,6 +39,7 @@ class formMain(QWidget):
         tabLayout = QGridLayout(self.tab,1,1,11,6,"tabLayout")
 
         self.snapshotsListView = QListView(self.tab,"snapshotsListView")
+        self.snapshotsListView.addColumn(self.__tr("1"))
         self.snapshotsListView.addColumn(self.__tr("No"))
         self.snapshotsListView.addColumn(self.__tr("Date"))
         self.snapshotsListView.addColumn(self.__tr("Type"))
@@ -87,16 +88,17 @@ class formMain(QWidget):
 
         self.languageChange()
 
-        self.resize(QSize(450,400).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(450,403).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
 
     def languageChange(self):
         self.setCaption(self.__tr("History Manager"))
         self.snapshotsCheckBox.setText(self.__tr("List only Snapshots"))
-        self.snapshotsListView.header().setLabel(0,self.__tr("No"))
-        self.snapshotsListView.header().setLabel(1,self.__tr("Date"))
-        self.snapshotsListView.header().setLabel(2,self.__tr("Type"))
+        self.snapshotsListView.header().setLabel(0,self.__tr("1"))
+        self.snapshotsListView.header().setLabel(1,self.__tr("No"))
+        self.snapshotsListView.header().setLabel(2,self.__tr("Date"))
+        self.snapshotsListView.header().setLabel(3,self.__tr("Type"))
         self.tabWidget.changeTab(self.tab,self.__tr("History"))
         self.tabWidget.changeTab(self.tab_2,self.__tr("More Info"))
         self.helpPushButton.setText(self.__tr("Help"))
