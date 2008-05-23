@@ -33,7 +33,8 @@ class PisiApi:
         self.options = pisi.config.Options()
         self.options.output_dir = outputDir
         self.options.yes_all = True
-        self.options.ignore_file_conflicts = True
+        # FIXME: Why we ignored these up until now?
+        self.options.ignore_file_conflicts = False
         # FIXME: Band-aid for a while...
         self.options.ignore_sandbox = True
 
