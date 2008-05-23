@@ -900,10 +900,7 @@
                                             <cstring>textCardName</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>&lt;p&gt;Card Name&lt;/p&gt;</string>
-                                        </property>
-                                        <property name="scaledContents">
-                                            <bool>true</bool>
+                                            <string>Card Name</string>
                                         </property>
                                     </widget>
                                     <widget class="QLabel">
@@ -911,10 +908,7 @@
                                             <cstring>textDriver</cstring>
                                         </property>
                                         <property name="text">
-                                            <string>&lt;p&gt;Driver Name&lt;/p&gt;</string>
-                                        </property>
-                                        <property name="scaledContents">
-                                            <bool>true</bool>
+                                            <string>Driver Name</string>
                                         </property>
                                     </widget>
                                 </vbox>
