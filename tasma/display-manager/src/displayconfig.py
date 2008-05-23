@@ -133,8 +133,6 @@ def fglrxOutputInfo():
 
 class DisplayConfig:
     def __init__(self):
-        self._rriface = randriface.RandRIface()
-
         self._bus = comlink.call("zorg", "Xorg.Display", "activeDeviceID")
         self._info = zorg.config.getDeviceInfo(self._bus)
 
@@ -143,12 +141,28 @@ class DisplayConfig:
         self.card_product_id = self._info.product_id
 
         self.outputs = self._info.probe_result["outputs"].split(",")
-        self.modes = {}
-        self.current_modes = {}
 
         self._flags = self._info.probe_result.get("flags", "").split(",")
+
+        self.detect()
+
+        self.primaryScr = self._info.active_outputs[0]
+        self.secondaryScr = None
+
+        if len(self._info.active_outputs) > 1:
+            self.secondaryScr = self._info.active_outputs[1]
+
+        self.desktop_setup = self._info.desktop_setup
+        self.depths = self._info.probe_result.get("depths", "16,24").split(",")
+        self.true_color = self._info.depth == "24"
+
+    def detect(self):
+        self._rriface = randriface.RandRIface()
         #self._randr12 = "randr12" in self._flags
         self._randr12 = len(self._rriface.outputs) > 1
+
+        self.modes = {}
+        self.current_modes = {}
 
         if self._randr12:
             for output in self.outputs:
@@ -166,6 +180,7 @@ class DisplayConfig:
 
         else:
             if self._info.driver == "fglrx":
+                #self.outputs = []
                 connected_outputs, enabled_outputs = fglrxOutputInfo()
 
                 for out in connected_outputs:
@@ -183,17 +198,10 @@ class DisplayConfig:
                 self.modes[output] = modes
                 self.current_modes[output] = self._info.modes.get(output, "800x600")
 
-        self.primaryScr = self._info.active_outputs[0]
-        self.secondaryScr = None
-
-        if len(self._info.active_outputs) > 1:
-            self.secondaryScr = self._info.active_outputs[1]
-
-        self.desktop_setup = self._info.desktop_setup
-        self.depths = self._info.probe_result.get("depths", "16,24").split(",")
-        self.true_color = self._info.depth == "24"
-
     def apply(self):
+        self.applyNow()
+        time.sleep(1)
+
         if self.true_color:
             depth = "24"
         else:
@@ -217,6 +225,7 @@ class DisplayConfig:
         ch.registerDone(self.done)
         ch.call(self._bus, options, firstScreen, secondScreen)
 
+    def applyNow(self):
         if self._randr12:
             if self.desktop_setup == "single":
                 run("xrandr", "--output", self.primaryScr, "--mode", self.current_modes[self.primaryScr])
@@ -244,7 +253,15 @@ class DisplayConfig:
                     )
 
         elif self._info.driver == "fglrx":
-            run("aticonfig", "--dtop", self.desktop_setup)
+            outputs = self.primaryScr
+            if self.desktop_setup != "single":
+                outputs += "," + self.secondaryScr
+
+            run("aticonfig", "--dtop", self.desktop_setup,
+                    "--enable-monitor", outputs)
+
+            if self.desktop_setup == "single":
+                run("xrandr", "-s", self.current_modes[self.primaryScr])
 
     def changeDriver(self, driver):
         ch = comlink.callHandler("zorg", "Xorg.Display", "changeDriver", "tr.org.pardus.comar.xorg.display.set")
