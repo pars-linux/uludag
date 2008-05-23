@@ -153,7 +153,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.screenNames = { "1": i18n("Primary Screen"), "2": i18n("Secondary Screen") }
 
-        #set button icons
+        # set button icons
         self.buttonCancel.setIconSet(getIconSet("cancel", KIcon.Small))
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
         self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
@@ -163,9 +163,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
 
-        self.getCurrentConf()
-
-        #set signals
+        # set signals
         self.selectedScreen = "1"
 
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
@@ -194,6 +192,14 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.mntr =  MonitorDialog(self)
 
+        self.getCardInfo()
+        self.detectDisplays()
+
+    def detectDisplays(self):
+        self.displayConfiguration.detect()
+        self.getCurrentConf()
+
+        self.comboBoxOutput.clear()
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
             for resolution in self.screenModes[output]:
@@ -201,13 +207,15 @@ class MainWidget(dm_mainview.mainWidget):
 
         # disable dual mode if there's only one output
         if len(self.displayConfiguration.outputs) <= 1:
-            self.checkBoxDualMode.setEnabled(0)
+            self.checkBoxDualMode.setDisabled(True)
             self.groupBoxSecondaryScreen.hide()
             self.buttonMonitor2.setDisabled(True)
+        else:
+            self.checkBoxDualMode.setEnabled(True)
+            self.groupBoxSecondaryScreen.show()
+            self.buttonMonitor2.setEnabled(True)
 
-        self.getCardInfo()
         self.getMonitorInfo()
-
         self.getResolutions(1)
         self.setIconbyResolution()
 
@@ -221,19 +229,6 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 self.radioBoxCloned.setChecked(True)
             self.checkBoxDualMode.setChecked(True)
-
-    def detectDisplays(self):
-        self.displayConfiguration.detect()
-        self.getCurrentConf()
-
-        self.comboBoxOutput.clear()
-        for output in self.screenOutputs:
-            self.comboBoxOutput.insertItem(output)
-            for resolution in self.screenModes[output]:
-                self.comboBoxResolution.insertItem(resolution)
-
-        self.getSelectedScreen()
-        self.switchBetweenScreens()
 
     def identifyDisplays(self):
         nod =  QApplication.desktop().numScreens()
