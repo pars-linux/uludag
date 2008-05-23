@@ -18,7 +18,7 @@ import kdedesigner
 
 import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
-from pardus.deviceutils import idsQuery
+from zorg.utils import idsQuery
 from zorg.consts import package_sep
 
 import helpdialog
@@ -384,8 +384,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
     def getCardInfo(self):
-        cardName = idsQuery("/usr/share/misc/pci.ids", self.displayConfiguration.card_vendor_id, self.displayConfiguration.card_product_id)
-        self.textCardName.setText(cardName)
+        vendorName, boardName = idsQuery(self.displayConfiguration.card_vendor_id, self.displayConfiguration.card_product_id)
+        self.textCardName.setText("%s\n%s" % (boardName, vendorName))
         self.textDriver.setText( i18n("Driver: %s" % self.displayConfiguration._info.driver))
 
     def getMonitorInfo(self):
