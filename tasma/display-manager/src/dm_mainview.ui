@@ -842,9 +842,6 @@
                         <property name="name">
                             <cstring>buttonDetectDisplays</cstring>
                         </property>
-                        <property name="enabled">
-                            <bool>false</bool>
-                        </property>
                         <property name="text">
                             <string>Detect Displays</string>
                         </property>
