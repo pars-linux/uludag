@@ -144,7 +144,6 @@ class MainWidget(dm_mainview.mainWidget):
         # hide for now
         self.buttonHelp.hide()
         self.buttonDetectDisplays.setDisabled(True)
-        self.buttonMonitor2.setDisabled(True)
 
         import displayconfig
         self.displayConfiguration = displayconfig.DisplayConfig()
@@ -191,6 +190,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
         self.connect(self.buttonMonitor1, SIGNAL("clicked()"), self.slotSelectMonitor)
+        self.connect(self.buttonMonitor2, SIGNAL("clicked()"), self.slotSelectMonitor)
 
         self.mntr =  MonitorDialog(self)
 
@@ -203,6 +203,7 @@ class MainWidget(dm_mainview.mainWidget):
         if len(self.displayConfiguration.outputs) <= 1:
             self.checkBoxDualMode.setEnabled(0)
             self.groupBoxSecondaryScreen.hide()
+            self.buttonMonitor2.setDisabled(True)
 
         self.getCardInfo()
         self.getMonitorInfo()
