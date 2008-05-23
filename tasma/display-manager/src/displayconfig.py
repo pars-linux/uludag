@@ -153,6 +153,10 @@ class DisplayConfig:
             self.secondaryScr = self._info.active_outputs[1]
 
         self.desktop_setup = self._info.desktop_setup
+
+        if self.desktop_setup != "single" and self.secondaryScr is None:
+            self.desktop_setup = "single"
+
         self.depths = self._info.probe_result.get("depths", "16,24").split(",")
         self.true_color = self._info.depth == "24"
 
@@ -180,10 +184,11 @@ class DisplayConfig:
 
         else:
             if self._info.driver == "fglrx":
-                #self.outputs = []
                 connected_outputs, enabled_outputs = fglrxOutputInfo()
+                outputs = connected_outputs + enabled_outputs
+                self.active_outputs = enabled_outputs
 
-                for out in connected_outputs:
+                for out in outputs:
                     if out not in self.outputs:
                         self.outputs.append(out)
 
