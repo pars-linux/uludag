@@ -143,7 +143,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         # hide for now
         self.buttonHelp.hide()
-        self.buttonDetectDisplays.hide()
+        self.buttonDetectDisplays.setDisabled(True)
         self.buttonMonitor2.setDisabled(True)
 
         import displayconfig
