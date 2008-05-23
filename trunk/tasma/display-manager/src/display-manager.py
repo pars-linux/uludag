@@ -144,7 +144,6 @@ class MainWidget(dm_mainview.mainWidget):
         # hide for now
         self.buttonHelp.hide()
         self.buttonDetectDisplays.hide()
-        self.buttonIdentifyDisplays.hide()
         self.buttonMonitor2.setDisabled(True)
 
         import displayconfig
@@ -221,6 +220,33 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 self.radioBoxCloned.setChecked(True)
             self.checkBoxDualMode.setChecked(True)
+
+    def identifyDisplays(self):
+        nod =  QApplication.desktop().numScreens()
+        self.identifiers = []
+
+        for i in range(nod):
+            si = QLabel(QString.number(i+1), QApplication.desktop(), "Identify Displays", Qt.WX11BypassWM)
+
+            fnt = QFont(KGlobalSettings.generalFont())
+            fnt.setPixelSize(100)
+            si.setFont(fnt)
+            si.setFrameStyle(QFrame.Panel)
+            si.setFrameShadow(QFrame.Plain)
+            si.setAlignment(Qt.AlignCenter)
+
+            screenCenter = QPoint(QApplication.desktop().screenGeometry(i).center())
+            targetGeometry = QRect(QPoint(0,0), si.sizeHint())
+            targetGeometry.moveCenter(screenCenter)
+            si.setGeometry(targetGeometry)
+            self.identifiers.append(si)
+            si.show()
+
+        QTimer.singleShot(1500, self.hideIdentifiers)
+
+    def hideIdentifiers(self):
+        for identifier in self.identifiers:
+            identifier.hide()
 
     def getSelectedMonitor(self):
         if self.mntr.listViewMonitors.currentItem().key(1,0) == "parent":
@@ -361,10 +387,6 @@ class MainWidget(dm_mainview.mainWidget):
                 self.textMonitor2.setText("Manually selected monitor")
             else:
                 self.textMonitor2.setText(msgpnp)
-
-    def identifyDisplays(self):
-        # what's the fucking dcop call for that!?
-        pass
 
     def slotApply(self):
         self.displayConfiguration.true_color = self.checkBoxTrueColor.isChecked()
