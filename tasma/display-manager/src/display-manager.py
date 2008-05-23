@@ -143,7 +143,6 @@ class MainWidget(dm_mainview.mainWidget):
 
         # hide for now
         self.buttonHelp.hide()
-        self.buttonDetectDisplays.setDisabled(True)
 
         import displayconfig
         self.displayConfiguration = displayconfig.DisplayConfig()
@@ -182,6 +181,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.comboBoxOutput, SIGNAL("activated(int)"), self.setSelectedOutput)
         self.connect(self.comboBoxResolution, SIGNAL("activated(int)"), self.setSelectedMode)
 
+        self.connect(self.buttonDetectDisplays, SIGNAL("clicked()"), self.detectDisplays)
         self.connect(self.buttonIdentifyDisplays, SIGNAL("clicked()"), self.identifyDisplays)
 
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
@@ -221,6 +221,19 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 self.radioBoxCloned.setChecked(True)
             self.checkBoxDualMode.setChecked(True)
+
+    def detectDisplays(self):
+        self.displayConfiguration.detect()
+        self.getCurrentConf()
+
+        self.comboBoxOutput.clear()
+        for output in self.screenOutputs:
+            self.comboBoxOutput.insertItem(output)
+            for resolution in self.screenModes[output]:
+                self.comboBoxResolution.insertItem(resolution)
+
+        self.getSelectedScreen()
+        self.switchBetweenScreens()
 
     def identifyDisplays(self):
         nod =  QApplication.desktop().numScreens()
