@@ -74,11 +74,11 @@ public:
      */
     enum
     {
-        MEM_TOTALRAM = 0,       // in sysinfo.mem_unit
+        MEM_TOTALRAM = 0,
         MEM_FREERAM,
+        MEM_USAGE,
         MEM_TOTALSWAP,
         MEM_FREESWAP,
-        SYSTEM_UPTIME,          // in seconds
         CPU_MODEL,
         CPU_NOFCORE,            // number of cores
         CPU_SPEED,              // in MHz
@@ -113,7 +113,7 @@ private:
     /**
      * Gather basic memory info
      */
-    void memoryInfo();
+    unsigned long int memoryInfo();
 
     /**
      * Gather CPU info
@@ -171,7 +171,7 @@ private:
 
     QString startStock( const QString title );
     QString addToStock( const QString _icon, const QString text, const QString details = "", const QString link = "" );
-    QString addProgress( const int size );
+    QString addProgress( const QString _icon, const unsigned long long size );
     QString finishStock();
 
     DCOPClient * m_dcopClient;

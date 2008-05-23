@@ -80,10 +80,11 @@ table.stock tr.info td:nth-child(1) {
 table.stock tr.progress td:nth-child(1) {
     background-image:url('images/infoBack.png');
     background-repeat:no-repeat;
-    width:5px;
+    width:30px;
 }
 
-table.stock tr.info td:nth-child(1)>img {
+table.stock tr.info td:nth-child(1)>img,
+table.stock tr.progress td:nth-child(1)>img {
     padding: 4px;
     padding-top:0px;
     width:22px;
@@ -93,6 +94,7 @@ table.stock tr.info td:nth-child(1)>img {
 table.stock tr.progress td:nth-child(2)>img {
     padding: 4px;
     padding-top:0px;
+    height:16px;
     border:none;
 }
 
@@ -103,6 +105,7 @@ table.stock tr.info td:nth-child(2) {
 table.stock tr.progress td:nth-child(2) {
     background-image:url('images/tbArk.png');
     background-repeat:repeat-x;
+    padding-right:6px;
 }
 table.stock tr.info td:nth-child(2)>span.detail {
     float:right;

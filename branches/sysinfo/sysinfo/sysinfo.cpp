@@ -103,8 +103,8 @@ QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text
         temp = QString(" onClick=\"location.href='%1'\" ").arg(link);
 
     templator += QString ("<tr class=\"info\" %1>").arg(temp);
-    templator += QString ("    <td><img src=\"%1\"></td>"
-                          "    <td>%2").arg(iconpath).arg(text);
+    templator += QString ("<td><img src=\"%1\"></td><td>%2").arg(iconpath).arg(text);
+
     if ( details != "" )
         templator += QString("<span class=\"detail\">[ %1 ]</span>").arg(details);
 
@@ -112,13 +112,15 @@ QString kio_sysinfoProtocol::addToStock( const QString _icon, const QString text
     return templator;
 }
 
-QString kio_sysinfoProtocol::addProgress( const int size )
+QString kio_sysinfoProtocol::addProgress( const QString _icon, const unsigned long long size )
 {
+    QString iconpath = icon(_icon, 22, true);
     QString progress = "file:" + locate( "data", "sysinfo/themes/2008/images/progress.png" );
     QString templator;
 
-    templator += QString ("<tr class=\"progress\"><td></td>");
-    templator += QString ("<td><img src=\"%1\" width=\"%2\"></td><td></td></tr>").
+    templator += QString ("<tr class=\"progress\">");
+    templator += QString ("<td><img src=\"%1\"></td>").arg(iconpath);
+    templator += QString ("<td><img src=\"%1\" width=\"%2%\"></td><td></td></tr>").
                          arg(progress).arg(size);
     return templator;
 }
@@ -173,10 +175,11 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     }
 
     // memory info
-    memoryInfo();
+    unsigned long int percent = memoryInfo();
+
     dynamicInfo += startStock( i18n( "Memory" ) );
-    dynamicInfo += addToStock( "memory", i18n( "Free memory:" ) + m_info[MEM_FREERAM], i18n( "Total : ") + m_info[MEM_TOTALRAM]);
-    dynamicInfo += addProgress(30);
+    dynamicInfo += addToStock( "memory", i18n( "%1 free of %2" ).arg( m_info[MEM_FREERAM] ).arg( m_info[MEM_TOTALRAM] ), m_info[MEM_USAGE]);
+    dynamicInfo += addProgress( "memory", percent);
     dynamicInfo += finishStock();
 
     content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
@@ -289,7 +292,7 @@ static unsigned long int calculateFreeRam()
     return MemFree;
 }
 
-void kio_sysinfoProtocol::memoryInfo()
+unsigned long int kio_sysinfoProtocol::memoryInfo()
 {
     struct sysinfo info;
     int retval = sysinfo( &info );
@@ -297,17 +300,21 @@ void kio_sysinfoProtocol::memoryInfo()
     if ( retval !=-1 )
     {
         const int mem_unit = info.mem_unit;
+        unsigned long int usage,percent,peer;
+        usage = info.totalram - info.freeram * mem_unit;
+        peer = info.totalram / 100;
+        peer == 0 ? percent = 0 : percent = usage / peer;
 
         m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit ,0);
-        unsigned long int totalFree = calculateFreeRam() * 1024;
-        kdDebug() << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit << endl;
-        m_info[MEM_FREERAM] = formattedUnit( totalFree - info.freeram * mem_unit );
-
+        m_info[MEM_FREERAM] = formattedUnit( info.freeram * mem_unit );
+        m_info[MEM_USAGE] = formattedUnit( (info.totalram - info.freeram) * mem_unit);
         m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit );
         m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit );
 
-        m_info[SYSTEM_UPTIME] = convertSeconds( info.uptime );
+        return percent;
     }
+
+    return 0;
 }
 
 void kio_sysinfoProtocol::cpuInfo()
