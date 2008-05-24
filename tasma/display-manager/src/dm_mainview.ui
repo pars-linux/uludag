@@ -1080,13 +1080,16 @@
                 </vbox>
             </widget>
         </widget>
-        <widget class="QLayoutWidget">
+        <widget class="QFrame">
             <property name="name">
-                <cstring>layout3</cstring>
+                <cstring>frameDialogButtons</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
                 </property>
                 <widget class="QPushButton">
                     <property name="name">
@@ -1108,7 +1111,7 @@
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>260</width>
+                            <width>100</width>
                             <height>20</height>
                         </size>
                     </property>
