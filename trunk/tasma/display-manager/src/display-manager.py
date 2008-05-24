@@ -429,10 +429,22 @@ class Module(KCModule):
         KCModule.__init__(self, parent, name)
         KGlobal.locale().insertCatalogue(mod_app)
         self.config = KConfig(mod_app)
-        self.setButtons(0)
+        self.setButtons(KCModule.Apply)
         self.aboutdata = AboutData()
         attachMainWidget(self)
-        self.mainwidget.buttonCancel.hide()
+
+        self.mainwidget.layout().setMargin(0)
+        self.mainwidget.frameDialogButtons.hide()
+
+        QTimer.singleShot(0, self.changed)
+
+    def load(self):
+        self.mainwidget.detectDisplays()
+        QTimer.singleShot(0, self.changed)
+
+    def save(self):
+        self.mainwidget.slotApply()
+        QTimer.singleShot(0, self.changed)
 
     def aboutData(self):
         return self.aboutdata
