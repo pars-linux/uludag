@@ -262,8 +262,11 @@ class DisplayConfig:
             if self.desktop_setup != "single":
                 outputs += "," + self.secondaryScr
 
-            run("aticonfig", "--dtop", self.desktop_setup,
-                    "--enable-monitor", outputs)
+            run("aticonfig",
+                    "--effective", "now",
+                    "--dtop", self.desktop_setup,
+                    "--enable-monitor", outputs
+                )
 
             if self.desktop_setup == "single":
                 run("xrandr", "-s", self.current_modes[self.primaryScr])
