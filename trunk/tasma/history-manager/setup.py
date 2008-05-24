@@ -20,11 +20,14 @@ import kdedistutils
 version = "0.1"
 
 distfiles = """
+    AUTHORS
+    COPYING
+    README
     *.py
     src/*.py
     src/*.ui
     src/*.desktop
-    src/*.png
+    src/pics/*.png
     src/help/*.css
     src/help/*/*.html
     po/*.po
@@ -62,9 +65,8 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = ['src/historygui.ui', 'src/history-manager.py', 'src/historygui.py', 'src/ComarIface.py',
-                        'src/Commander.py', 'src/handler.py', 'src/history_gui.py', 'src/utility.py',
-                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/History_Manager.png', 'src/details.png']),
+    application_data = ['src/historygui.ui', 'src/history-manager.py', 'src/historygui.py', 'src/ComarIface.py', 'src/Commander.py', 'src/handler.py', 'src/history_gui.py', 'src/utility.py',
+                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/History_Manager.png', 'src/pics/details.png', 'src/pics/install.png', 'src/pics/remove.png', 'src/pics/snapshot.png', 'src/pics/takeback.png', 'src/pics/upgrade.png']),
                         'help'],
     executable_links = [('history-manager','history-manager.py')],
     i18n = ('po',['src']),
