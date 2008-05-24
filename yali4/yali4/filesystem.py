@@ -191,6 +191,76 @@ class Ext3FileSystem(FileSystem):
         # for Disabling Lengthy Boot-Time Checks
         self.tune2fs(partition)
 
+    def formatWithCapture(self, partition):
+        self.preFormat(partition)
+
+        cmd_path = sysutils.find_executable("mke2fs")
+        if not cmd_path:
+            cmd_path = sysutils.find_executable("mkfs.ext3")
+
+        if not cmd_path:
+            raise FSError, "Command not found to format %s filesystem" % self.name()
+
+        reserved_percentage = int(math.ceil(100.0 * 100.0 / partition.getMB()))
+
+        cmd = [cmd_path, "-O dir_index", "-j", "-m %d"%reserved_percentage, partition.getPath()]
+
+        pipe = os.pipe()
+        childpid = os.fork()
+        if not childpid:
+            os.close(pipe[0])
+            os.dup2(pipe[1])
+            os.close(pipe[1])
+
+            env = os.environ
+            os.execvpe(cmd_path, cmd, env)
+            print "failed to exec %s " % cmd
+            os._exit(1)
+        os.close(pipe[1])
+
+        s = 1
+        while s and s != '\b':
+            try:
+                s = os.read(pipe[0], 1)
+            except:
+                (num, str) = args
+                if(num != 4):
+                    raise YaliException, "ext3 format failed: %s" % partition.getPath()
+        num = ''
+        while s:
+            try:
+                s = os.read(pipe[0], 1)
+                if s != '\b':
+                    try:
+                        num = num + s
+                    except:
+                        pass
+                else:
+                    if num and len(num):
+                        l = string.split(num, '/')
+                        try:
+                            val = (int(l[0]) * 100) / int(l[1])
+                        except (IndexError, TypeError):
+                            pass
+                        else:
+                            # emit signal
+                            print val
+                    num = ''
+            except OSError, args:
+                (errno, str) = args
+                if(errno != 4):
+                    raise IOError, args
+        try:
+            (pid, status) = os.waitpid(childpid, 0)
+        except OSError, (num, msg):
+            raise YaliException, "exception from waitpid while formatting: %s %s" % (num, msg)
+            status = None
+
+        if status is None:
+            print "wtf status is none, noes!"
+
+        self.tune2fs(partition)
+
     def tune2fs(self, partition):
         """ Runs tune2fs for given partition """
         cmd_path = sysutils.find_executable("tune2fs")
