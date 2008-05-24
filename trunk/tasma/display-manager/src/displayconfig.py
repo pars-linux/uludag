@@ -259,14 +259,22 @@ class DisplayConfig:
 
         elif self._info.driver == "fglrx":
             outputs = self.primaryScr
+
+            tempFile = KTempFile()
+            tempFile.setAutoDelete(True)
+
+            cmd = ["aticonfig",
+                    "--nobackup", "--output", tempFile.name(),
+                    "--dtop", self.desktop_setup,
+                    ]
+
             if self.desktop_setup != "single":
                 outputs += "," + self.secondaryScr
+                cmd += ["--mode2", self.current_modes[self.secondaryScr]]
 
-            run("aticonfig",
-                    "--effective", "now",
-                    "--dtop", self.desktop_setup,
-                    "--enable-monitor", outputs
-                )
+            cmd += ["--enable-monitor", outputs]
+
+            run(*cmd)
 
             if self.desktop_setup == "single":
                 run("xrandr", "-s", self.current_modes[self.primaryScr])
