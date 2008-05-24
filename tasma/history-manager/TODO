@@ -1,9 +1,27 @@
-TODO
-
-* waiting pisi to send package percentage for progress bar
-
-
 Known Issues
 
+* pisi wont take back before an upgrade point
 
+Pisi Api Requirements
+
+* Packages in a snapshot
+* Configuration files in a snapshot
+* Snapshot progress information
+
+* More information on takeback operations
+( Packages and versions, down/up'grade information, warning messages we see in cli and pm )
+
+TODO
+
+* Improve progress bar informations
+* Improve details tab, so it shows configuration files and packages in a snapshot
+* Find/Create better and unique icons
+* Assign some shortcuts
+* Code comment
+* Beautifulize and simplify code
+
+Later On
+
+* Port to Qt4/Kde4
+* Go to Judas Priest concert
 
