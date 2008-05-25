@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-13 13:59+0300\n"
-"PO-Revision-Date: 2008-05-25 19:47+0200\n"
+"PO-Revision-Date: 2008-05-26 00:22+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -746,7 +746,6 @@ msgid "Configure the system boot.."
 msgstr ""
 
 #: yali4/gui/ScrBootloader.py:46
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -775,16 +774,16 @@ msgstr ""
 "\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Linux verwendet GRUB als Boot-Loader.\n"
-"Dadurch kann Ihr gewünschtes Betriebssystem,\n"
-"hochgefahren werden. \n"
+"Pardus 2008 verwendet GRUB als Boot-Loader. Dadurch kann Ihr gewünschtes "
+"Betriebssystem hochgefahren werden. \n"
 "</p>\n"
 "<p>\n"
-"Wenn Sie mehr als ein Betriebssystem auf Ihrem Rechner installiert haben,\n"
-"können Sie auch auswählen, welches Betriebssystem \n"
-"hochgefahren werden soll.\n"
+"Wenn Sie mehr als ein Betriebssystem auf Ihrem Rechner installiert haben, "
+"können Sie mittels GRUB auswählen, welches Betriebssystem hochgefahren "
+" werden soll. Empfohlen wird die Installation von GRUB am Anfang des Laufwerks, \n"
+"um mögliche Boot-Probleme zu vermeiden. Erfahrene Benutzer können die\n"
+" Boot-Loadereinstellungen ändern.\n"
 "</p>\n"
-"\n"
 "<p>\n"
 "Für mehr Informationen über den GRUB Boot-Loader, \n"
 "schlagen Sie bitte im Pardus-Installations- \n"
@@ -793,7 +792,6 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrBootloader.py:126
-#, fuzzy
 msgid ""
 "<b>\n"
 "<p>This action will use your entire disk for Pardus installation and <br>\n"
@@ -804,9 +802,6 @@ msgstr ""
 "<p>Dieser Vorgang wird Ihre gesamte Festplatte für die Pardus-Installation\n"
 "verwenden. Ihre vorhandenen Daten auf der gewählten Partition gehen dabei "
 "verloren.</p>\n"
-"\n"
-"<p>Hauptsächlich ist dies ein sicherer und einfacher Vorgang um Pardus zu \n"
-"installieren. Es wird empfohlen vorher ein Backup zu erstellen.</p>\n"
 "</b>\n"
 
 #: yali4/gui/ScrBootloader.py:152 yali4/gui/ScrBootloader.py:159
@@ -852,7 +847,6 @@ msgid "You can change your timezone, time or date settings.."
 msgstr ""
 
 #: yali4/gui/ScrDateTime.py:30
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Time Zone settings</font>\n"
@@ -862,13 +856,11 @@ msgid ""
 "after you make your selections.</p></font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\"Überprüfung der CD-Integrität</font>\n"
-"\n"
-"<font size=\"+1\">\n"
-"<p>In diesem Installatiosschritt können Sie die Integrität der Pakete auf "
-"der Installations-CD überprüfen.\n"
-"</p>\n"
-"\n"
+"<font size=\"+2\">Zeitzone-Einstellungen</font>\n"
+"<font size=\"+1\"><p>Hier können Sie Ihren Standort und eine Zeitzone auswählen, das "
+"Datum und die Uhrzeit einstellen.\n"
+"Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit der Installation "
+" fort, nachdem Sie Ihre Auswahl vorgenommen haben.</p></font>\n"
 
 #: yali4/gui/ScrGoodbye.py:45
 msgid "Goodbye from YALI"
@@ -1325,9 +1317,8 @@ msgstr ""
 "Fenster fortfahren.</font>"
 
 #: yali4/installer.py:175
-#, fuzzy
 msgid "Setting time settings.."
-msgstr "Hostname wird gesetzt..."
+msgstr "Zeiteinstellungen werden vorgenommen.."
 
 #: yali4/installer.py:196
 msgid "Disk analyze started.."
@@ -1507,7 +1498,7 @@ msgstr "Root installieren"
 
 #: yali4/partitiontype.py:57
 msgid "Users' Files"
-msgstr "Persönliche Dateien"
+msgstr "Benutzer-Dateien"
 
 #: yali4/partitiontype.py:65
 msgid "Swap"
