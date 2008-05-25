@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-13 13:59+0300\n"
-"PO-Revision-Date: 2008-05-19 14:34+0200\n"
+"PO-Revision-Date: 2008-05-25 19:47+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -815,9 +815,8 @@ msgid "Formatting ..."
 msgstr "Am formatieren..."
 
 #: yali4/gui/ScrBootloader.py:166 yali4/installer.py:226
-#, fuzzy
 msgid "Writing disk tables ..."
-msgstr "Konsole-Datei wird beschrieben..."
+msgstr "Laufwerktabellen werden beschrieben..."
 
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
@@ -1230,12 +1229,11 @@ msgstr "Benutzer aktualisieren"
 
 #: yali4/gui/ScrWelcome.py:30
 msgid "Welcome !! "
-msgstr ""
+msgstr "Willkommen!!"
 
 #: yali4/gui/ScrWelcome.py:31
-#, fuzzy
 msgid "Welcome to the Pardus installer.."
-msgstr "Auf die Partition, auf der Pardus installiert ist, installieren"
+msgstr "Willkommen zum Pardus-Installationsprogramm.."
 
 #: yali4/gui/ScrWelcome.py:32
 msgid ""
@@ -1344,9 +1342,8 @@ msgid "Resize Finished ..."
 msgstr ""
 
 #: yali4/installer.py:295
-#, fuzzy
 msgid "Creating new partition ..."
-msgstr "Neue Partition anlegen"
+msgstr "Neue Partition wird erstellt..."
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -1514,10 +1511,9 @@ msgstr "Persönliche Dateien"
 
 #: yali4/partitiontype.py:65
 msgid "Swap"
-msgstr "SWAP"
+msgstr "Swap"
 
 #: yali4/partitiontype.py:74
-#, fuzzy
 msgid "Archive Partition"
-msgstr "Partition anlegen"
+msgstr "Archiv-Partition"
 
