@@ -164,7 +164,11 @@ void TModuleView::runAsRoot()
 
   _proc = new KProcess;
   *_proc << kdesu;
-  *_proc << "--nonewdcop";
+
+  // Using existing dcopserver causes problems (bug #7024)
+  // But i don't know if disabling will cause others. Let it stay here.
+  // *_proc << "--nonewdcop";
+
   // We have to disable the keep-password feature because
   // in that case the modules is started through kdesud and kdesu
   // returns before the module is running and that doesn't work.
