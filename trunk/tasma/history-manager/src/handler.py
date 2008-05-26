@@ -52,7 +52,6 @@ class CallHandler:
         self.__call()
 
     def __call(self):
-        print "in __call"
         iface = self.__getIface()
         method = getattr(iface, self.method)
         method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
@@ -72,10 +71,9 @@ class CallHandler:
             func(*args)
 
     def __handleError(self, exception):
-        print "Handle Error:", exception._dbus_error_name
         name = exception._dbus_error_name
         try:
-            # 25 sn şeysi
+            # FIXME 25 seconds timeout issue
             if(name.count("DBus.Error.NoReply") != 0):
                 return
 
@@ -91,7 +89,7 @@ class CallHandler:
                 func(exception)
 
     def __getAuthIface(self):
-        """ return authentication interface from policykit """
+        """ Return authentication interface from policykit """
         try:
             proxy = self.sesBus.get_object("org.freedesktop.PolicyKit.AuthenticationAgent", "/")
             return dbus.Interface(proxy, "org.freedesktop.PolicyKit.AuthenticationAgent")
