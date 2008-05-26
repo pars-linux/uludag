@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-13 13:59+0300\n"
-"PO-Revision-Date: 2008-05-26 00:22+0200\n"
+"PO-Revision-Date: 2008-05-26 04:36+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -193,7 +193,7 @@ msgstr "ss"
 
 #: yali4/gui/Ui/datetimewidget.py:106
 msgid "Time Zone"
-msgstr ""
+msgstr "Zeitzone"
 
 #: yali4/gui/Ui/dialog.py:60
 msgid "TextLabel"
@@ -257,11 +257,11 @@ msgstr "Zurück"
 
 #: yali4/gui/Ui/main.py:489
 msgid "Next Screen"
-msgstr ""
+msgstr "Nächstes Fenster"
 
 #: yali4/gui/Ui/main.py:490
 msgid "Next"
-msgstr ""
+msgstr "Weiter"
 
 #: yali4/gui/Ui/partedit.py:174
 msgid "Partition 1 on FUJISTU - /dev/sda1"
@@ -626,7 +626,7 @@ msgstr "Alle Partitionen löschen"
 
 #: yali4/gui/DiskWidgets.py:450
 msgid "Pardus will install here"
-msgstr ""
+msgstr "Pardus wird hier installiert"
 
 #: yali4/gui/DiskWidgets.py:453
 msgid "User files will store here"
@@ -739,7 +739,7 @@ msgstr ""
 
 #: yali4/gui/ScrBootloader.py:43
 msgid "Bootloader Choice"
-msgstr "Bootloaderauswahl"
+msgstr "Boot-Loaderauswahl"
 
 #: yali4/gui/ScrBootloader.py:44
 msgid "Configure the system boot.."
@@ -840,7 +840,7 @@ msgstr ""
 
 #: yali4/gui/ScrDateTime.py:27
 msgid "Set your timezone"
-msgstr ""
+msgstr "Stellen Sie Ihre Zeitzone ein"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "You can change your timezone, time or date settings.."
@@ -981,7 +981,7 @@ msgstr ""
 
 #: yali4/gui/ScrInstall.py:105
 msgid "Packages are installing.."
-msgstr ""
+msgstr "Pakete werden installiert.."
 
 #: yali4/gui/ScrInstall.py:120
 #, python-format
@@ -1024,7 +1024,7 @@ msgstr ""
 
 #: yali4/gui/ScrKahyaCheck.py:51
 msgid "Kahya will automatically install your system.."
-msgstr ""
+msgstr "Kahya wird Ihr System automatisch installieren.."
 
 #: yali4/gui/ScrKahyaCheck.py:52
 msgid ""
@@ -1063,7 +1063,7 @@ msgstr "Partitionierung auswählen"
 
 #: yali4/gui/ScrPartitionAuto.py:40
 msgid "Auto or Manual partitioning.."
-msgstr ""
+msgstr "Automatische oder manuelle Partitionierung.."
 
 #: yali4/gui/ScrPartitionAuto.py:42
 #, fuzzy
@@ -1266,11 +1266,11 @@ msgstr "O.K., forsetzen"
 
 #: yali4/gui/YaliWindow.py:48 yali4/gui/YaliWindow.py:61
 msgid "Show Help"
-msgstr ""
+msgstr "Hilfe anzeigen"
 
 #: yali4/gui/YaliWindow.py:64
 msgid "Hide Help"
-msgstr ""
+msgstr "Hilfe ausblenden"
 
 #: yali4/bootloader.py:202 yali4/bootloader.py:207
 msgid "Windows"
@@ -1286,7 +1286,7 @@ msgstr ""
 
 #: yali4/installer.py:135
 msgid "Starting for CD Check"
-msgstr ""
+msgstr "CD-Überprüfung wird gestartet"
 
 #: yali4/installer.py:153
 #, python-format
@@ -1298,23 +1298,20 @@ msgid "Check Failed"
 msgstr "Überprüfung fehlgeschlagen"
 
 #: yali4/installer.py:158
-#, fuzzy
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
 msgstr ""
-"<p>Integritätsüberprüfung der Pakete fehlgeschlagen. Die Installations-CD "
-"scheint defekt zu sein.</p>\n"
-"</b>\n"
+"<b><p>Integritätsüberprüfung der Pakete ist fehlgeschlagen.                                  "
+"Die Installations-CD scheint defekt zu sein.</p></b>"
 
 #: yali4/installer.py:161
-#, fuzzy
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
 msgstr ""
-"<font color=\"#257216\">Überprüfung gelungen. Sie können zum nächsten "
-"Fenster fortfahren.</font>"
+"<font color=\"#FFF\"><b>Überprüfung abgeschlossen. Sie können zum nächsten Fenster fortfahren."
+"</b></font>"
 
 #: yali4/installer.py:175
 msgid "Setting time settings.."
