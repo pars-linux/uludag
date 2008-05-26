@@ -8,6 +8,7 @@ from qt import QObject, QTimer
 import ComarIface
 
 class Commander(QObject):
+    """ Gui uses this class instead of directly ComarIface """
     def __init__(self, parent):
         QObject.__init__(self)
         self.parent = parent
@@ -19,14 +20,15 @@ class Commander(QObject):
 
     def errHandler(self, err=None):
         self.comar.com_lock.unlock()
+        # parent's finished function prints messages
         if err:
             self.parent.finished("System.Manager.cancelled", err)
         else:
             self.parent.finished("System.Manager.cancelled")
 
     def handler(self, signal=None, data=None):
-        print "Signal: ", signal
-        print "Data: ", data
+        #print "Signal: ", signal
+        #print "Data: ", data
         if len(data) > 1:
             args = data[1:]
         else:
@@ -49,6 +51,7 @@ class Commander(QObject):
         elif signal == "PolicyKit":
             self.parent.pisiNotify(data[0], args)
         else:
+            # None of above signals, unhandled
             print "Got notification : %s with data : %s" % (signal, data)
 
     def inProgress(self):

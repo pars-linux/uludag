@@ -4,13 +4,13 @@
 from qt import QMutex, SIGNAL
 from kdecore import i18n
 
-# DBus
 import dbus
 import dbus.mainloop.qt3
 
 from handler import CallHandler
 
 class ComarIface:
+    """ Comar Interface to communicate with Comar """
     def __init__(self, handler=None, errHandler=None):
         self.errHandler = errHandler
         self.handler = handler
@@ -24,6 +24,7 @@ class ComarIface:
 
     def setupBusses(self):
         try:
+            # get system and session busses
             self.sysBus = dbus.SystemBus()
             self.sesBus = dbus.SessionBus()
         except dbus.DBusException:
@@ -58,7 +59,6 @@ class ComarIface:
         self.errHandler(message)
 
     def callMethod(self, method, action, handler, handleErrors, *args):
-        print "Method: %s      Action: %s" % (method, action)
         ch = CallHandler("System.Manager", method, action, self.sysBus, self.sesBus)
 
         if handleErrors:

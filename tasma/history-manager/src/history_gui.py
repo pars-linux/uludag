@@ -22,16 +22,24 @@ import pisi
 
 class widgetMain(formMain):
     def __init__(self, parent):
+        # get history database from pisi
         self.historydb = pisi.db.historydb.HistoryDB()
+        # init gui
         formMain.__init__(self, parent)
 
+        # help window
         self.help = None
+        # progress bar window
         self.progress = widgetProgress(self)
+        # pisi commands interface
         self.command = Commander.Commander(self)
 
         # selected/previously selected list item
         self.selected = None
+        # maybe we need it sometime
         self.previous = None
+        # id of latest history entry, used while adding
+        # new operation to list
         self.latest = 0
 
         # gui looks better
@@ -71,7 +79,7 @@ class widgetMain(formMain):
         self.popupmenu.insertSeparator()
         self.popupmenu.insertItem(loadIconSet("reload", KIcon.Small), i18n("Restore to This Point"), self.take_back)
 
-        # this hangs a little bit
+        # this hangs a little bit with a huge history
         self.updateGui()
 
         # make connections
@@ -85,6 +93,7 @@ class widgetMain(formMain):
         self.connect(self.helpPushButton, SIGNAL("clicked()"), self.showHelp)
         self.connect(self.snapshotsListView, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.execPopup)
 
+    # show help window
     def showHelp(self):
         if not self.help:
             self.help = HelpDialog(self)
@@ -92,14 +101,16 @@ class widgetMain(formMain):
         else:
             self.help.show()
 
+    # change tabwidget's tab
     def changeTab(self):
         self.tabWidget.showPage(self.tabWidget.page(1-self.tabWidget.currentPageIndex()))
 
+    # re-initialize history database for up to date entries
     def initDb(self):
         self.historydb.init()
 
     def keyPressEvent(self, event):
-        # F5 Key refreshes list, not for users
+        # F5 Key may refresh list
         if event.key() == Qt.Key_F5:
             self.updateGui()
         else:
@@ -122,13 +133,10 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     message, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
-                #qApp.processEvents(100)
                 self.command.takeSnapshot()
 
     def take_back(self, operation=None):
         if self.selected == None:
-            # this should not happed
-            print "hello, someone's trying to take_back to None"
             return
         self.__take_back(self.selected.getOpNo())
 
@@ -139,16 +147,18 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     message, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
-                #qApp.processEvents(100)
                 self.command.takeBack(operation)
 
     def delete_snapshot(self):
+        # wont delete snapshots for now
         pass
 
     def enableButtons(self, true):
+        # dont enable buttons in progress
+        if self.command.inProgress():
+            return
         self.restorePushButton.setEnabled(true)
         self.snapshotPushButton.setEnabled(true)
-        #self.tabWidget.setTabEnabled(self.tabWidget.page(0), true)
 
     def finished(self, data, err=None):
         # this is called after an operation finishes
@@ -163,17 +173,19 @@ class widgetMain(formMain):
                 message += ("<br>" + err)
         # update gui after operation
         self.progress.setCurrentOperation(message)
-        self.progress.setCurrentOperation(i18n("Updating User Interface, please wait a while"))
+        self.progress.setCurrentOperation(i18n("Updating User Interface"))
         if data == "System.Manager.cancelled":
             self.progress.setCurrentOperation(i18n("Finished with Errors"))
+            self.showErrorMessage(i18n("Operation Finished with Errors"))
         else:
+            # this adds last operation from db to list
             self.addLast()
             self.progress.setCurrentOperation(i18n("Finished Succesfully"))
         self.enableButtons(True)
         self.progress.hide()
 
     def displayProgress(self, data):
-        print "progress yay"
+        pass
 
     def showErrorMessage(self, message):
         QMessageBox.critical(self, i18n("Error"), message, i18n("OK"))
@@ -187,6 +199,7 @@ class widgetMain(formMain):
         self.initDb()
         for operation in self.historydb.get_last():
             item = widgetItem(self.snapshotsListView, operation)
+            # need this while updating gui after an operation
             if operation.no > self.latest:
                 self.latest = operation.no
             if self.snapshotsCheckBox.isChecked():
@@ -203,14 +216,17 @@ class widgetMain(formMain):
         self.snapshotsListView.insertItem(widgetItem(self.snapshotsListView, op))
 
     def pisiNotify(self, operation, args):
-        """ notify gui of events """
+        """ notify gui of pisi events """
         if operation in ["policy_auth_admin"]:
-            print "authenticating admin"
+            # starting authentication
+            pass
         elif operation in ["policy_yes"]:
+            # access granted
             self.progress.reset()
             self.progress.show()
             self.progress.setCurrentOperation(i18n("<b>Access Granted</b><br>"))
         elif operation in ["policy_no"]:
+            # not allowed
             self.showErrorMessage(i18n("<b>Access Denied</b><br>"))
         elif operation in ["started"]:
             self.progress.setCurrentOperation(i18n("Operation Started"))
@@ -237,10 +253,11 @@ class widgetMain(formMain):
         elif operation in ["takingBack"]:
             self.progress.setHeader(i18n("Taking System Back to %1 %2 <br>").arg(self.selected.getDate()).arg(self.selected.getTime()))
         else:
+            # another signal, unhandled
             print "another operation here", operation
 
     def itemChanged(self, item):
-        """ triggered when listviewitem is changed """
+        """ triggered when a listviewitem is changed """
         self.previous = self.selected or item
         self.selected = item
         self.restorePushButton.setEnabled(True)
@@ -255,9 +272,11 @@ class widgetMain(formMain):
 
         self.infoTextEdit.clear()
 
+        # weird information strings
         information = i18n("<b>Operation Date : </b>%1 %2<br><b>Operation Type : </b>%3<br>")\
                       .arg(self.selected.getDate()).arg(self.selected.getTime()).arg(self.selected.getType())
 
+        # FIXME show packages and configuration files in a snapshot
         if self.selected.getType() == 'snapshot':
             information += i18n("There are <b>%1</b> packages in this snapshot").arg(self.selected.getNumPackages())
             self.infoTextEdit.setText(information)
@@ -267,7 +286,6 @@ class widgetMain(formMain):
             information += "%s %s" % (package.__str__(), "<br>")
 
         self.infoTextEdit.setText(information)
-        return
 
     def onlySnapshots(self, var):
         """ Shows only snapshots if var is True, else shows all history """
@@ -282,6 +300,7 @@ class widgetMain(formMain):
             it += 1
             itm = it.current()
 
+        # sorts by date
         self.snapshotsListView.sort()
 
     def slotDoubleClicked(self, item, pos, var):
@@ -290,19 +309,20 @@ class widgetMain(formMain):
         self.tabWidget.setCurrentPage(1)
 
 class widgetProgress(progressForm):
+    """ progress bar widget """
     def __init__(self, parent=None, steps=0):
         progressForm.__init__(self, parent)
 
-        #self.hide()
         self.parent = parent
         animatedPisi = QMovie(locate("data","package-manager/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
 
         self.progressBar.setTotalSteps(steps)
 
-        self.connect(self.cancelPushButton, SIGNAL("clicked()"), self.checkCancelClose)
+        self.connect(self.cancelPushButton, SIGNAL("clicked()"), self.checkCancelandClose)
 
-    def checkCancelClose(self):
+    def checkCancelandClose(self):
+        self.parent.command.cancel()
         self.hide()
 
     def enableCancel(self, true):
@@ -319,11 +339,7 @@ class widgetProgress(progressForm):
 
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
-
-        #self.hideOperationDescription()
-        #self.hideStatus()
         self.progressBar.setProgress(0)
-        self.cancelPushButton.setEnabled(False)
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
@@ -348,15 +364,15 @@ class widgetItem(QListViewItem):
         self.setText(3, self.op_type)
 
         if self.op_type == 'snapshot':
-            self.setPixmap(0, QPixmap("pics/snapshot.png"))
+            self.setPixmap(0, loadIcon("snapshot", KIcon.Small))
         elif self.op_type == 'upgrade':
-            self.setPixmap(0, QPixmap("pics/upgrade.png"))
+            self.setPixmap(0, loadIcon("upgrade", KIcon.Small))
         elif self.op_type == 'remove':
-            self.setPixmap(0, QPixmap("pics/remove.png"))
+            self.setPixmap(0, loadIcon("remove", KIcon.Small))
         elif self.op_type == 'install':
-            self.setPixmap(0, QPixmap("pics/install.png"))
+            self.setPixmap(0, loadIcon("install", KIcon.Small))
         elif self.op_type == 'takeback':
-            self.setPixmap(0, QPixmap("pics/takeback.png"))
+            self.setPixmap(0, loadIcon("takeback", KIcon.Small))
 
     def getNumPackages(self):
         return len(self.op_pack)
