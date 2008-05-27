@@ -1,0 +1,18 @@
+Pardus Notification Manager README file:
+--------------------------------------------------
+
+English
+---------
+To test the program, change the third line the the org.pardus.notificationmanager.service file to reflect the path of the file notman.py. Then copy this service file to /usr/share/dbus-1/services. You can test the dbus listener part of the notification manager by the simple client I suppled in the client.py file.
+
+Cheers,
+
+ozan
+
+Turkish
+---------
+Programi denemek icin org.pardus.notificationmanager.service dosyasindaki 3. satirdaki D-Bus service pathini notman.py dosyasinin bulundugu yere gore degistirin. Sonra bu dosyayi /usr/share/dbus-1/services altina kopyalayin. Notification manager'in dbus izleyen kismini sagladigim client.py test clienti ile deneyebilirsiniz.
+
+Esen kalin,
+
+ozan
