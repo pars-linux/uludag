@@ -1,9 +1,0 @@
-Pardus Firewall is a free firewall application developed for Pardus Linux. 
-It aims to provide an easy to use, yet powerful firewall software 
-for Pardus, serving desktop users.
-
-Requirements
-------------
-
-* comar-1.8
-* iptables-1.3.6-12
