@@ -1,13 +1,19 @@
 body {
-    /*background-image:url('images/background.png');*/
-    background-color:black;
+    background-image:url('images/background.png');
+    !background-color:black;
     margin-left:0px;
-    color: white; text-shadow: #333 0.1em 0.1em 0.1em;
+    color: white; text-shadow: #000 0em 0em 0.3em;
 }
 
 a {
     color: white;
+    text-decoration:none;
 }
+
+a:hover {
+    color: white; text-shadow: #000 0em 0em 0.6em;
+}
+
 #logo {
     background-image:url('images/logo.png');
     background-repeat:no-repeat;
@@ -54,7 +60,7 @@ table.stock {
     font-size:12px;
     border:0px;
     border-spacing:0;
-    color: white; text-shadow: #555 1px 1px 1px
+    color: white; text-shadow: #000 1px 1px 1px
     margin-top:10px;
     width:96%;
 }
@@ -67,8 +73,7 @@ table.stock tr.info[onClick] {
 }
 
 table.stock tr.info[onClick]:hover {
-    text-shadow:none;
-    border-bottom:1px solid #000;
+    color: white; text-shadow: #000 0em 0em 0.6em;
 }
 
 table.stock tr.info td:nth-child(1) {
@@ -110,8 +115,8 @@ table.stock tr.progress td:nth-child(2) {
 table.stock tr.info td:nth-child(2)>span.detail {
     float:right;
     font-size:10px;
-    color:whte;
-    text-shadow:none;
+    color: white; text-shadow: #000 0px 1px 0.2em;
+    font-weight:bold;
 }
 table.stock tr.info td:nth-child(3) {
     background-image:url('images/tbSag.png');
@@ -135,29 +140,21 @@ table.medias {
     font-size:12px;
     border:0px;
     border-spacing:0;
-    color: white; text-shadow: #555 1px 1px 1px
-    margin-top:10px;
+    color: white; text-shadow: #000 0px 0px 0.3em;
 }
 table.medias tr.media {
     height:67px;
 }
 
-table.medias tr.media[onClick] {
-    cursor:pointer;
-}
-
-table.medias tr.media[onClick]:hover {
-    text-shadow:none;
-    border-bottom:1px solid #000;
-}
-
 table.medias tr.media td:nth-child(1) {
+    padding-left:8px;
     background-image:url('images/mdSol.png');
     background-repeat:no-repeat;
     width:56px;
 }
 table.medias tr.media td:nth-child(1)>img {
     padding: 4px;
+    padding-left:8px;
     padding-top:0px;
     width:48px;
     height:48px;
@@ -170,9 +167,8 @@ table.medias tr.media td:nth-child(2) {
 table.medias tr.media td:nth-child(2)>span.detail {
     float:right;
     font-size:10px;
-    color:whte;
+    color: white; text-shadow: #000 0px 1px 0.2em;
     font-weight:bold;
-    text-shadow:none;
 }
 table.medias tr.media td:nth-child(3) {
     background-image:url('images/mdSag.png');
@@ -201,5 +197,17 @@ img.diskusage {
 }
 span.mediaDf {
     font-size:11px;
+}
+img.mediaIcon {
+    padding:4px;
+    padding-left:0px;
+    float:left;
+}
+div.device {
+    width:100%;
+}
+span.deviceInfo {
+    float:left;
+    padding-left:7px;
 }
 

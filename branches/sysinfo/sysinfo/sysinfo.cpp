@@ -168,7 +168,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
 
     // net info
     int state = netInfo();
-    if (state > 1) { // assume no network manager / networkstatus
+    if (state >= 1) { // assume no network manager / networkstatus
         dynamicInfo += startStock( i18n( "Network" ) );
         dynamicInfo += addToStock( "network", netStatus( state ), "127.0.0.1" );
         dynamicInfo += finishStock();
@@ -194,7 +194,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     // Os info
     osInfo();
     staticInfo += startStock( i18n( "Operating System" ) );
-    staticInfo += addToStock( "system", m_info[OS_SYSNAME] + " <b>" + m_info[OS_RELEASE] + "</b> " + m_info[OS_MACHINE], m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] );
+    staticInfo += addToStock( "system", m_info[OS_SYSNAME] + " <b>" + m_info[OS_RELEASE] + "</b>", m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] );
     staticInfo += addToStock( "system", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM] ));
     staticInfo += finishStock();
 
@@ -259,39 +259,6 @@ void kio_sysinfoProtocol::mimetype( const KURL & /*url*/ )
     finished();
 }
 
-static unsigned long int scan_one( const char* buff, const char *key )
-{
-    char *b = strstr( buff, key );
-    if ( !b )
-        return 0;
-    unsigned long int val = 0;
-    if ( sscanf( b + strlen( key ), ": %lu", &val ) != 1 )
-        return 0;
-    kdDebug() << "scan_one " << key << " " << val << endl;
-    return val;
-}
-
-static unsigned long int calculateFreeRam()
-{
-    FILE *fd = fopen( "/proc/meminfo", "rt" );
-    if ( !fd )
-        return 0;
-
-    QTextIStream is( fd );
-    QString MemInfoBuf = is.read();
-
-    unsigned long int MemFree = scan_one( MemInfoBuf.latin1(), "MemFree" );
-    unsigned long int Buffers = scan_one( MemInfoBuf.latin1(), "Buffers" );
-    unsigned long int Cached  = scan_one( MemInfoBuf.latin1(), "Cached" );
-    unsigned long int Slab    = scan_one( MemInfoBuf.latin1(), "Slab" );
-    fclose( fd );
-
-    MemFree += Cached + Buffers + Slab;
-    if ( MemFree > 50 * 1024 )
-        MemFree -= 50 * 1024;
-    return MemFree;
-}
-
 unsigned long int kio_sysinfoProtocol::memoryInfo()
 {
     struct sysinfo info;
@@ -354,11 +321,14 @@ QString kio_sysinfoProtocol::diskInfo()
             peer == 0 ? percent = 0 : percent = usage / peer;
             QString sizeStatus = i18n( "%1 free of %2" ).arg( formattedUnit( di.avail,0 ) ).arg( formattedUnit( di.total,0 ) );
 
-            result +=   QString("<tr class=\"media\" onClick=\"location.href='media:/%1'\">"
-                                "   <td><img src=\"%2\" /></td>"
+            result +=   QString("<tr class=\"media\">"
                                 "   <td>"
-                                "       <span class=\"detail\">[ Mounted on %3 ]<br>[ %4 ]</span>"
-                                "       <a href=\"media:/%5\">%6</a><br><span class=\"mediaDf\">%7</span><br>"
+                                "   <a href=\"media:/%1\">"
+                                "       <img src=\"%2\" />"
+                                "   </a></td><td>"
+                                "       <span class=\"detail\">[ Mounted on %3 ]<br><span style=\"float:right\">[ %4 ]</span></span>"
+                                "       <a href=\"media:/%5\">"
+                                "       %6<br><span class=\"mediaDf\">%7</span><br></a>"
                                 "       <img class=\"diskusage\" src=\"file:%8\" width=\"%9%\">"
                                 "   </td>"
                                 "   <td></td>"
