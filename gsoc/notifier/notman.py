@@ -1,9 +1,8 @@
 #!/usr/bin/python
     
-# Imports:
+# Import required python libraries:
 import sys
 import pickle
-import threading
 import time
 # Import D-Bus bindings:
 import dbus
@@ -14,19 +13,33 @@ DBusQtMainLoop(set_as_default = True)
 import PyQt4.QtCore
 from PyQt4.QtGui import QApplication
 
-##################################
-# Import GLib main loop stuff:
-# from dbus.mainloop.glib import DBusGMainLoop
-# import gobject
-# Initialize GLib main loop:
-# DBusGMainLoop(set_as_default = True)
-##################################
-
 # Import header that specifies notification class
 from notification import *
 
 # Import notification handler (displayer module):
 from notdisplayer import *
+
+class Timer(QtCore.QThread):
+	def __init__(self, notification_manager):
+	    QtCore.QThread.__init__(self)
+	    self.notification_manager = notification_manager
+	
+	def run(self):
+		# If the notification queue is not empty or the manager's lifespan is not over contrinue running. Else, exit gracefully:
+		timewait = self.notification_manager.lifespan
+		while True:
+			self.msleep(int(timewait * 1000))
+			timewait = self.notification_manager.lifespan - time.time() + self.notification_manager.last_notification_time
+			if self.notification_manager.message_queue != []:
+				timewait = self.notification_manager.lifespan
+				continue
+			elif timewait > 0:
+				continue
+			else:
+				print "Waited for %s seconds, no notification waiting in queue, will die gracefully." % self.notification_manager.lifespan
+				# Exit the Qt4 main loop:
+				self.notification_manager.quit()
+				break
     
 class NotificationManager(QApplication):
     def __init__(self,  object_path):
@@ -39,6 +52,8 @@ class NotificationManager(QApplication):
         self.message_queue = []
         self.lifespan = 15.0
         self.last_notification_time = time.time()
+        # Initialize the timer:
+        self.timer = Timer(self)
         # Initialize the notification displayer (spawned in a new thread):
         self.notification_displayer = NotificationDisplayer()
         # Signal handlers:
@@ -48,24 +63,12 @@ class NotificationManager(QApplication):
     def Die(self):
         QtCore.QTimer().singleShot(1000,  quit)
     
-    def Go(self):
-        ##########################
-        # Initialize threading support of GLib:
-        # gobject.threads_init()
-        ##########################
-        
-        # Spawn the timer thread:
-        thread = threading.Thread(target = self.CheckState)
-        thread.start()
+    def Go(self):        
+        # Start the timer (spawned in its own thread):
+        self.timer.start()
         # Start the Qt4 main loop:
         self.exec_()
         
-        ######################
-        # Start the GLib main loop:
-        # self.loop = gobject.MainLoop()
-        # self.loop.run()
-        ######################
-    
     def HandleNotification(self):
         # If the notification queue is not empty, handle the first notification in the queue:
         if self.message_queue != []:
@@ -73,27 +76,6 @@ class NotificationManager(QApplication):
             self.notification_displayer.DisplayNotification(self.message_queue[0])
             self.message_queue = self.message_queue[1:]
             print "Queue state: %s" % self.message_queue
-    
-    def CheckState(self):
-        # If the notification queue is not empty or the manager's lifespan is not over contrinue running. Else, exit gracefully:
-        timewait = self.lifespan
-        while True:
-            time.sleep(timewait)
-            timewait = self.lifespan - time.time() + self.last_notification_time
-            if self.message_queue != []:
-                timewait = self.lifespan
-                continue
-            elif timewait > 0:
-                continue
-            else:
-                print "Waited for %s seconds, no notification waiting in queue, will die gracefully." % self.lifespan
-                # Exit the Qt4 main loop:
-                self.quit()
-                ####################
-                # Exit the main GLib loop:
-                # self.loop.quit()
-                ####################
-                break
 
 class NotXFace(dbus.service.Object):
     def __init__(self, notification_manager):
