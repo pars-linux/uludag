@@ -16,6 +16,7 @@
 #include <qstringlist.h>
 #include <qcheckbox.h>
 #include <qfile.h>
+#include <stdlib.h>
 
 #include "tvconfig.h"
 
