@@ -15,7 +15,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-import um_mainview
+import mainview
 from utility import *
 
 mod_version = "1.2.1"
@@ -37,7 +37,7 @@ def AboutData():
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
-    self.mainwidget = um_mainview.UserManager(self)
+    self.mainwidget = mainview.UserManager(self)
     toplayout = QVBoxLayout(self, 0, KDialog.spacingHint())
     toplayout.addWidget(self.mainwidget)
     self.aboutus = KAboutApplication(self)
