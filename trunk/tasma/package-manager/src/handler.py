@@ -83,7 +83,7 @@ class CallHandler:
     def __call(self):
         iface = self.__getIface()
         method = getattr(iface, self.method)
-        method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
+        method(reply_handler=self.__handleReply, error_handler=self.__handleError, timeout=2**16-1, *self.args)
 
     def __getIface(self):
         try:
@@ -100,7 +100,10 @@ class CallHandler:
     def __handleError(self, exception):
         print "Handle Error:", exception._dbus_error_name
         name = exception._dbus_error_name
-        name = name.split(self.dest)[1]
+
+        if name != "org.freedesktop.DBus.Error.NoReply":
+            name = name.split(self.dest)[1]
+
         if name.startswith(".policy.auth"):
             self.__obtainAuth()
         else:
@@ -117,7 +120,7 @@ class CallHandler:
 
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        if iface.ObtainAuthorization(self.action, 0, os.getpid()):
+        if iface.ObtainAuthorization(self.action, 0, os.getpid(), timeout=2**16-1):
             self.__call()
         else:
             for func in self.handleCancel:
