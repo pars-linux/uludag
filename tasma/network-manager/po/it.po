@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
 "PO-Revision-Date: 2007-11-12 20:40+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -46,8 +46,8 @@ msgstr ""
 msgid "new connection"
 msgstr "nuova connessione"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Gestore della rete"
 
@@ -185,11 +185,11 @@ msgstr "Automatico"
 msgid "Configure network connection"
 msgstr "Configura connessioni di rete"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Prova semplicemente a connetterti automaticamente"
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Il modulo Gestore della rete è già in esecuzione!"
 
@@ -345,9 +345,9 @@ msgstr "Aggiungi server dei nomi"
 msgid "Name server:"
 msgstr "Server dei nomi (DNS):"
 
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "Conesso a <b>%s</b>"
-
 #~ msgid "You are not allowed to change network settings."
 #~ msgstr ""
 #~ "Non hai i permessi necessari per modificare le impostazioni di rete."
+
+#~ msgid "Connected to <b>%s</b>"
+#~ msgstr "Conesso a <b>%s</b>"

@@ -1,18 +1,20 @@
+# translation of es.po to Spanish
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Klemens Häckel <click3d_at_linuxmail_org>, 2007, 2008.
+# Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
+# Klemens Haeckel <click3d at linuxmail dot org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
-"PO-Revision-Date: 2008-05-27 21:22-0400\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team:  <es@li.org>\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
+"PO-Revision-Date: 2008-01-23 21:06-0300\n"
+"Last-Translator: Klemens Haeckel <click3d at linuxmail dot org>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,36 +22,39 @@ msgstr ""
 
 #: comariface.py:227
 msgid "COMAR Error"
-msgstr "Error COMAR"
+msgstr ""
 
 #: comariface.py:232 network-applet.py:175
+#, fuzzy
 msgid "Waiting DBus..."
-msgstr "Esperando DBus..."
+msgstr "Esperando COMAR..."
 
 #: comariface.py:232 network-applet.py:175
+#, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "Conexión con DBus cerrada inesperadamente, intentando reconectar..."
+msgstr "Conexión con COMAR cerrada inesperadamente, intentando reconectar..."
 
 #: comariface.py:248 network-applet.py:191
+#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"No posible conectar con DBus! Si no se está ejecutando lo debería iniciar "
-"con el comando 'service dbus start' desde una consola de root."
+"No posible conectar con COMAR! Si no se está ejecutando lo debería iniciar "
+"con el comando 'service comar start' desde una consola de root."
 
 #: comariface.py:406
 msgid "new connection"
 msgstr "nueva conexión"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Administrador de Red"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr "Rastreando..."
+msgstr ""
 
 #: autoswitch.py:80
 #, python-format
@@ -82,10 +87,13 @@ msgstr "Modo"
 msgid "Protocol"
 msgstr "Protocolo"
 
+# i translated as: no remote hosts found
+# favor verificar
 #: connection.py:41
 msgid "No remotes found"
-msgstr "Remotos no encontrados"
+msgstr "No se encontraron equipos remotos"
 
+# sure this has to be translated ?
 #: connection.py:61
 msgid "<hidden>"
 msgstr "<oculto>"
@@ -183,11 +191,11 @@ msgstr "Automático"
 msgid "Configure network connection"
 msgstr "Configurar conexiones de Red"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Intentar conexión automática"
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está iniciado!"
 
@@ -244,7 +252,8 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:469
 msgid "Should network-applet start automatically when you login?"
-msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr ""
+"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:584
 msgid "Connecting to <b>%1</b> ..."
@@ -348,3 +357,5 @@ msgstr "Agregar Servidor de nombres"
 msgid "Name server:"
 msgstr "Servidor de nombres:"
 
+#~ msgid "You are not allowed to change network settings."
+#~ msgstr "No tiene permisos para modificar la configuración de red."

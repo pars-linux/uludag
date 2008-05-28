@@ -3,17 +3,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
-# Mustafa Muhammed Ölcerman <oelcerman@fussballkreis.org>, 2007.
-# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
-# Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
+# Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
-"PO-Revision-Date: 2007-11-17 01:13+0200\n"
-"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
+"PO-Revision-Date: 2008-05-26 04:20+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +33,7 @@ msgstr "Wartend auf COMAR..."
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 "Verbindung zu COMAR wurde unerwartet geschlossen, es wird versucht erneut zu "
-"verbinden"
+"verbinden..."
 
 #: comariface.py:248 network-applet.py:191
 #, fuzzy
@@ -42,16 +41,16 @@ msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"Kann nicht mit COMAR verbinden! Wenn es nicht gestartet worden ist, dann "
-"sollten Sie es mit dem Kommando 'service comar start' in einer Root-Konsole "
-"starten."
+"Kann nicht mit COMAR verbunden werden! Wenn es nicht ausgeführt wird, dann "
+"sollten Sie es in einer Root-Konsole mit dem Befehl 'service comar start' "
+"ausführen."
 
 #: comariface.py:406
 msgid "new connection"
-msgstr "Neue Verbindung"
+msgstr "neue Verbindung"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Netzwerk-Manager"
 
@@ -62,7 +61,7 @@ msgstr ""
 #: autoswitch.py:80
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr "Profile <b>%s</b> zusammengestellt."
+msgstr "Profil <b>%s</b> zusammengestellt."
 
 #: autoswitch.py:84
 msgid "There is no matched profile"
@@ -91,7 +90,7 @@ msgstr "Protokoll"
 
 #: connection.py:41
 msgid "No remotes found"
-msgstr ""
+msgstr "Keine Verbindungspunkte gefunden"
 
 #: connection.py:61
 msgid "<hidden>"
@@ -111,7 +110,7 @@ msgstr "Verwenden"
 
 #: connection.py:177
 msgid "Connection name:"
-msgstr "Name der Verbindung:"
+msgstr "Verbindungsname:"
 
 #: connection.py:184
 msgid "Connection"
@@ -131,15 +130,15 @@ msgstr "Suchen"
 
 #: connection.py:220 browser.py:57
 msgid "Authentication"
-msgstr "Authentifikation"
+msgstr "Authentifizierung"
 
 #: connection.py:226
 msgid "Mode:"
-msgstr "Art:"
+msgstr "Modus:"
 
 #: connection.py:234
 msgid "No authentication"
-msgstr "Keine Authentifikation"
+msgstr "Keine Authentifizierung"
 
 #: connection.py:252 connection.py:264
 msgid "Password:"
@@ -167,7 +166,7 @@ msgstr "Adresse:"
 
 #: connection.py:320 connection.py:337 connection.py:352
 msgid "Custom"
-msgstr "Individuell"
+msgstr "Benutzerdefiniert"
 
 #: connection.py:325
 msgid "Net mask:"
@@ -189,11 +188,11 @@ msgstr "Automatisch"
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
-msgstr "Eine Verbindung versuchen automatisch herzustellen"
+msgstr "Versuchen automatisch zu verbinden"
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
 
@@ -219,8 +218,7 @@ msgstr "Netzwerk-Pakete installieren!"
 
 #: newconn.py:121
 msgid "No package with COMAR network scripts are installed yet."
-msgstr ""
-"Es ist noch kein Paket installiert, die die COMAR-Netzwerk-Skripte enthält."
+msgstr "Bisher ist kein Paket mit COMAR-Netzwerkskripten installiert."
 
 #: network-applet.py:393
 msgid "Firewall..."
@@ -240,16 +238,16 @@ msgstr "Meldungen anzeigen"
 
 #: network-applet.py:399
 msgid "Icon Per Device"
-msgstr "Symbol je Gerät"
+msgstr "Ikon je Gerät"
 
 #: network-applet.py:400
 msgid "Single Icon"
-msgstr "Einzelnes Symbol"
+msgstr "Einzelnes Ikon"
 
 #: network-applet.py:469
 msgid "Should network-applet start automatically when you login?"
 msgstr ""
-"Soll der Netzwerk-Applet automatisch bei der Anmeldung gestartet werden?"
+"Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
 
 #: network-applet.py:584
 msgid "Connecting to <b>%1</b> ..."
@@ -277,7 +275,7 @@ msgstr "Neue Verbindung"
 
 #: network-applet.py:691
 msgid "Network Applet"
-msgstr "Netzwerk Applet"
+msgstr "Netzwerk-Applet"
 
 #: browser.py:50
 msgid "Name:"
@@ -302,9 +300,9 @@ msgid ""
 "'%s'\n"
 "connection?"
 msgstr ""
-"Soll ich die \n"
+"Soll die Verbindung\n"
 "'%s'\n"
-"Verbindung löschen?"
+"gelöscht werden?"
 
 #: browser.py:132
 msgid "Delete connection?"
@@ -316,11 +314,11 @@ msgstr "Kein Gerät!"
 
 #: browser.py:404 nameconf.py:28
 msgid "Name Service Settings"
-msgstr "Name Service Einstellungen"
+msgstr "Name Service-Einstellungen"
 
 #: browser.py:428
 msgid "Try Auto Connect on startup"
-msgstr "Automatische Verbindungsherstellung beim Systemstart versuchen"
+msgstr "Beim Systemstart versuchen die Verbindung automatisch herzustellen"
 
 #: browser.py:479
 msgid "Network Connections Help"
@@ -336,11 +334,11 @@ msgstr "Hostname:"
 
 #: nameconf.py:56
 msgid "Up"
-msgstr "Auf"
+msgstr "Nach oben"
 
 #: nameconf.py:59
 msgid "Down"
-msgstr "Ab"
+msgstr "Nach unten"
 
 #: nameconf.py:171
 msgid "Add Name Server"
@@ -349,9 +347,6 @@ msgstr "Name-Server hinzufügen"
 #: nameconf.py:172
 msgid "Name server:"
 msgstr "Name-Server:"
-
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "Verbunden mit <b>%s</b>"
 
 #~ msgid "You are not allowed to change network settings."
 #~ msgstr "Sie sind nicht berechtigt die Netzwerk-Einstellungen zu ändern."

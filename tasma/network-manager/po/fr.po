@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
 "PO-Revision-Date: 2007-11-18 03:02+0100\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -46,8 +46,8 @@ msgstr ""
 msgid "new connection"
 msgstr "Nouvelle connexion"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Gestionnaire réseau"
 
@@ -185,11 +185,11 @@ msgstr "Automatiquement"
 msgid "Configure network connection"
 msgstr "Configurer la connexion réseau"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Juste essayer de se connecter automatiquement."
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Le gestionnaire réseau est déjà en cours d'exécution!"
 
@@ -346,8 +346,8 @@ msgstr "Ajouter un serveur de nom"
 msgid "Name server:"
 msgstr "Serveur de nom:"
 
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "Connecté à <b>%s</b>."
-
 #~ msgid "You are not allowed to change network settings."
 #~ msgstr "Vous n'êtes pas autorisé à changer les paramètres réseau."
+
+#~ msgid "Connected to <b>%s</b>"
+#~ msgstr "Connecté à <b>%s</b>."
