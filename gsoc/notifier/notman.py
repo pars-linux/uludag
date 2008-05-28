@@ -1,9 +1,12 @@
 #!/usr/bin/python
     
-# Import required python libraries:
+# Import required basic python libraries:
 import sys
 import pickle
 import time
+# Import internationalization support:
+import gettext
+_ = gettext.translation("notman", "./i18n", fallback = True).ugettext
 # Import D-Bus bindings:
 import dbus
 import dbus.service
@@ -36,7 +39,7 @@ class Timer(QtCore.QThread):
 			elif timewait > 0:
 				continue
 			else:
-				print "Waited for %s seconds, no notification waiting in queue, will die gracefully." % self.notification_manager.lifespan
+				print _("Waited for %s seconds, no notification waiting in queue, will die gracefully.") % self.notification_manager.lifespan
 				# Exit the Qt4 main loop:
 				self.notification_manager.quit()
 				break
@@ -44,7 +47,7 @@ class Timer(QtCore.QThread):
 class NotificationManager(QApplication):
     def __init__(self,  object_path):
         QApplication.__init__(self,  sys.argv)
-        print "Initializing notification manager..."
+        print _("Initializing notification manager...")
         self.object_path = object_path
         self.session_bus = dbus.SessionBus()
         self.bus_name = dbus.service.BusName("org.pardus.notificationmanager", self.session_bus)
@@ -72,14 +75,14 @@ class NotificationManager(QApplication):
     def HandleNotification(self):
         # If the notification queue is not empty, handle the first notification in the queue:
         if self.message_queue != []:
-            print "Handling notification with text: %s" % self.message_queue[0].text
+            print _("Handling notification with text: %s") % self.message_queue[0].text
             self.notification_displayer.DisplayNotification(self.message_queue[0])
             self.message_queue = self.message_queue[1:]
-            print "Queue state: %s" % self.message_queue
+            print _("Queue state: %s") % self.message_queue
 
 class NotXFace(dbus.service.Object):
     def __init__(self, notification_manager):
-        print "Initializing / exporting NotXFace object..."
+        print _("Initializing / exporting NotXFace object...")
         dbus.service.Object.__init__(self, notification_manager.bus_name, notification_manager.object_path)
         self.notification_manager = notification_manager
         
@@ -90,14 +93,14 @@ class NotXFace(dbus.service.Object):
             notification = pickle.loads(serialized_notification.__str__())
         except:
             # If an error occurs while unpickling serialized notification, notify the requestor of it:
-            notification = Notification("Couldn't unpickle sent notification")
+            notification = Notification(_("Couldn't unpickle sent notification"))
             return pickle.dumps(notification)
         else:
             # Append the notification to the queue of the notification manager:
             self.notification_manager.message_queue.append(notification)
-            print "Notification successfully received. Sender's bus name: %s" % sender
-            print "Received message text: %s" % notification.text
-            print "Added notification to queue."
+            print _("Notification successfully received. Sender's bus name: %s") % sender
+            print _("Received message text: %s") % notification.text
+            print _("Added notification to queue.")
             # Handle the notification in the other thread (in case handling the notification takes too much time, we dont want to stall the requestor):
             self.notification_manager.emit(QtCore.SIGNAL("handleEvent()"))
             # Update the last notification timestamp of the notification manager:
@@ -108,14 +111,14 @@ class NotXFace(dbus.service.Object):
         
     @dbus.service.method(dbus_interface = "org.pardus.notmanxface", in_signature = "s", out_signature = "s", sender_keyword = "sender")
     def EchoSender(self, message_string, sender = None):
-        print "Echo request received. Sender's bus name: %s" % sender
-        print "Text to be echoed: %s" % message_string
-        return "Echoing: %s" % message_string
+        print _("Echo request received. Sender's bus name: %s") % sender
+        print _("Text to be echoed: %s") % message_string
+        return _("Echoing: %s") % message_string
         
     @dbus.service.method(dbus_interface = "org.pardus.notmanxface", in_signature = "", out_signature = "", sender_keyword = "sender")
     def Exit(self, sender = None):
-        print "Sender's bus name: %s" % sender
-        print "Exit method called, exiting service..."
+        print _("Sender's bus name: %s") % sender
+        print _("Exit method called, exiting service...")
         self.notification_manager.emit(QtCore.SIGNAL("exitProgram()"))
  
 class NotXFaceThread(QtCore.QThread):
@@ -133,7 +136,7 @@ if __name__ == "__main__":
     notxfacethread = NotXFaceThread(notification_manager)
     notxfacethread.start()
     notification_manager.Go()
-    print "Exited successfully."
+    print _("Exited successfully.")
 else:
-    print "This thing is not meant to be loaded as a module."
+    print _("This program is not meant to be loaded as a module.")
     
