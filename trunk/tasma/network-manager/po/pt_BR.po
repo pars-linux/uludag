@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
 "PO-Revision-Date: 2007-02-28 23:13-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -44,8 +44,8 @@ msgstr ""
 msgid "new connection"
 msgstr "nova conexão"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Gerenciador de Rede"
 
@@ -186,11 +186,11 @@ msgstr "Automático"
 msgid "Configure network connection"
 msgstr "Configurar conexão de rede"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr ""
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "O módulo do Gerenciador de rede já está iniciado!"
 

@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the net-kga package.
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
-# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
-"PO-Revision-Date: 2007-11-12 20:16+0100\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
+"PO-Revision-Date: 2008-03-08 21:27+0100\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,8 +49,8 @@ msgstr ""
 msgid "new connection"
 msgstr "nieuwe verbinding"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Netwerkbeheer"
 
@@ -89,7 +90,7 @@ msgstr "Protocol"
 
 #: connection.py:41
 msgid "No remotes found"
-msgstr ""
+msgstr "Geen contacten gevonden"
 
 #: connection.py:61
 msgid "<hidden>"
@@ -189,11 +190,11 @@ msgstr "Automatisch"
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Probeer automatisch te verbinden"
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Netwerkbeheer module is al opgestart!"
 
@@ -257,7 +258,7 @@ msgstr "Verbinden met <b>%1</b> ..."
 
 #: network-applet.py:589
 msgid "Connected to <b>%1</b>"
-msgstr "Verboden met <b>%1</b>"
+msgstr "Verbonden met <b>%1</b>"
 
 #: network-applet.py:595
 msgid ""
@@ -356,9 +357,6 @@ msgstr "Voeg naamserver toe"
 #: nameconf.py:172
 msgid "Name server:"
 msgstr "Naamserver:"
-
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "Verbonden met <b>%s</b>"
 
 #~ msgid "You are not allowed to change network settings."
 #~ msgstr "U mag de netwerkinstellingen niet aanpassen."

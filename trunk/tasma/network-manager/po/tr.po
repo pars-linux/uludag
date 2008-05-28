@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net-kga 0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
 "PO-Revision-Date: 2005-12-19 20:02+0200\n"
 "Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
 "Language-Team: tr <tr@li.org>\n"
@@ -20,33 +20,36 @@ msgid "COMAR Error"
 msgstr ""
 
 #: comariface.py:232 network-applet.py:175
+#, fuzzy
 msgid "Waiting DBus..."
-msgstr "DBus Bekleniyor..."
+msgstr "ÇOMAR Bekleniyor..."
 
 #: comariface.py:232 network-applet.py:175
+#, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "DBus bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
+msgstr "ÇOMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
 
 #: comariface.py:248 network-applet.py:191
+#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"DBus bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı konsolu "
-"açıp 'service dbus start' komutu ile çalıştırın."
+"ÇOMAR bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı "
+"konsolu açıp 'service comar start' komutu ile çalıştırın."
 
 #: comariface.py:406
 msgid "new connection"
 msgstr "yeni bağlantı"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Ağ Yöneticisi"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr "Taranıyor..."
+msgstr ""
 
 #: autoswitch.py:80
 #, python-format
@@ -80,7 +83,7 @@ msgstr "Protokol"
 
 #: connection.py:41
 msgid "No remotes found"
-msgstr "Bulunamadı"
+msgstr "Bağlantı noktası bulunamadı"
 
 #: connection.py:61
 msgid "<hidden>"
@@ -178,11 +181,11 @@ msgstr "Otomatik"
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Sadece otomatik bağlanmayı dene"
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
@@ -336,8 +339,8 @@ msgstr "İsim Sunucusu Ekle"
 msgid "Name server:"
 msgstr "İsim sunucusu:"
 
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "<b>%s</b> profiline bağlandı"
-
 #~ msgid "You are not allowed to change network settings."
 #~ msgstr "Ağ ayarlarını değiştirme izniniz yok."
+
+#~ msgid "Connected to <b>%s</b>"
+#~ msgstr "<b>%s</b> profiline bağlandı"

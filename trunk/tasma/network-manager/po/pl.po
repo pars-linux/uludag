@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 08:04+0300\n"
+"POT-Creation-Date: 2008-05-28 10:59+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Michał Środek <michal@srodek.info>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -45,8 +45,8 @@ msgstr ""
 msgid "new connection"
 msgstr "nowe połączenie"
 
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:34
-#: network-manager.py:108 network-applet.py:607 network-applet.py:621
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:607 network-applet.py:621
 msgid "Network Manager"
 msgstr "Manager sieci"
 
@@ -185,11 +185,11 @@ msgstr "Automatycznie"
 msgid "Configure network connection"
 msgstr "Konfiguruj połączenie sieciowe"
 
-#: network-manager.py:81
+#: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr ""
 
-#: network-manager.py:96
+#: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Moduł zarządzania siecią jest już uruchomiony!"
 
