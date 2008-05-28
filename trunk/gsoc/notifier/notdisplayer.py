@@ -1,10 +1,8 @@
 #!/usr/bin/python
     
-# Imports:
-import sys
-import thread
-import threading
-import time
+# Import internationalization support:
+import gettext
+_ = gettext.translation("notman", "./i18n", fallback = True).ugettext
     
 # Import header that specifies notification class
 from notification import *
@@ -28,16 +26,16 @@ class NotificationTrayIcon(QtGui.QSystemTrayIcon):
     
     def BuildMenu(self):
         self.menu = QtGui.QMenu()
-        self.action = QtGui.QAction('Exit', self.menu)
+        self.action = QtGui.QAction(_("Exit"), self.menu)
         self.menu.addAction(self.action)
         self.connect(self.action,  QtCore.SIGNAL("triggered()"),  self.Die)
         self.setContextMenu(self.menu)
     
     def DisplayNotification(self, notif):
         if isinstance(notif,  Notification) == True:
-            self.showMessage("Notification arrived!",  notif.text)
+            self.showMessage(_("Notification arrived!"),  notif.text)
         else:
-            self.showMessage("Error",  "Typing error, this program has just bought the farm.")
+            self.showMessage(_("Error"),  _("Typing error, this program has just bought the farm."))
 
 class NotificationDisplayer:
     def __init__(self):

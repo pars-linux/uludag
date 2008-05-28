@@ -1,5 +1,8 @@
 # Imports:
 import pickle
+# Import internationalization support:
+import gettext
+_ = gettext.translation("notman", "./i18n", fallback = True).ugettext
 # Import D-Bus bindings:
 import dbus
 # Import Notification class definition:

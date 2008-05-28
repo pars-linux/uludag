@@ -2,6 +2,11 @@
 
 # Imports:
 from sys import argv
+
+# Import internationalization support:
+import gettext
+_ = gettext.translation("notman", "./i18n", fallback = True).ugettext
+
 # Import Notifier
 from notclient import *
 
@@ -9,7 +14,7 @@ from notclient import *
 if __name__ == "__main__":
     nt = Notifier()
     while 1:
-        line = raw_input("Enter a command: ")
+        line = raw_input(_("Enter a command: "))
         words = line.split()
         result = None
         if words.__len__() > 0:
@@ -19,14 +24,14 @@ if __name__ == "__main__":
             elif command == "sendexit":
                 nt.SendExitSignal()
             elif command == "echo":
-                result = nt.Echo(line[5:])
+                result = nt.Echo(unicode(line[5:], encoding = "utf-8"))
             elif command == "notify":
                 this_notification = Notification()
-                this_notification.text = line[7:]
+                this_notification.text = unicode(line[7:], encoding = "utf-8")
                 result = nt.SendNotification(this_notification)
             else:
-                print "Wrong command"
+                print _("Wrong command")
         if result != None:
-            print "Service returned: %s" % result
+            print _("Service returned: %s") % result
 else:
-    print "This thing is not meant to be loaded as a module."
+    print _("This program is not meant to be loaded as a module.")
