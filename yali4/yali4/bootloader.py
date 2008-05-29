@@ -108,6 +108,7 @@ class BootLoader:
         open(self.grub_conf, "w").close()
         deviceMap = open(self.device_map, "w")
         i = 0
+
         # create device map
         for disk in ctx.installData.orderedDiskList:
             deviceMap.write("(hd%d)\t%s\n" % (i,disk))
@@ -139,7 +140,7 @@ class BootLoader:
                 It also cleans unnecessary options """
 
             def is_required(param):
-                params = ["initrd","init","xorg","yali4","BOOT_IMAGE","lang",consts.kahyaParam]
+                params = ["initrd","init","xorg","yali4","BOOT_IMAGE","lang","mudur",consts.kahyaParam]
                 for p in params:
                     if param.startswith("%s=" % p):
                         return False
@@ -150,13 +151,6 @@ class BootLoader:
             for i in [x for x in open("/proc/cmdline", "r").read().split()]:
                 if i.startswith("root="):
                     s.append("root=LABEL=%s" % (root_label))
-                elif i.startswith("mudur="):
-                    mudur = "mudur="
-                    for p in i[len("mudur="):].split(','):
-                        if p == "livecd" or p == "livedisk": continue
-                        mudur += p
-                    if not len(mudur) == len("mudur="):
-                        s.append(mudur)
                 elif is_required(i):
                     s.append(i)
 
