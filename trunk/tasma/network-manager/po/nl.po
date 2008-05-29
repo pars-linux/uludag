@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-28 10:59+0300\n"
-"PO-Revision-Date: 2008-03-08 21:27+0100\n"
+"PO-Revision-Date: 2008-05-29 16:51+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,27 +22,24 @@ msgstr ""
 
 #: comariface.py:227
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR fout"
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Waiting DBus..."
-msgstr "Wachten COMAR..."
+msgstr "Wachten DBus..."
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
-"Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
+"Verbinding met DBus is onverwacht afgesloten, proberen opnieuw te "
 "verbinden..."
 
 #: comariface.py:248 network-applet.py:191
-#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"Kan niet met COMAR verbinden! Als het niet actief is, zult u het op moeten "
+"Kan niet verbinden met COMAR! Als het niet actief is, dient u het moeten "
 "starten met het commando 'service comar start' in de root console."
 
 #: comariface.py:406
@@ -56,7 +53,7 @@ msgstr "Netwerkbeheer"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr ""
+msgstr "Scannen..."
 
 #: autoswitch.py:80
 #, python-format
@@ -358,5 +355,3 @@ msgstr "Voeg naamserver toe"
 msgid "Name server:"
 msgstr "Naamserver:"
 
-#~ msgid "You are not allowed to change network settings."
-#~ msgstr "U mag de netwerkinstellingen niet aanpassen."
