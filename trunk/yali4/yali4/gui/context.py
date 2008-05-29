@@ -33,6 +33,9 @@ debugEnabled = False
 # install data
 installData = installdata.InstallData()
 
+# edd check
+isEddFailed = False
+
 # auto partitioning
 use_autopart = False
 

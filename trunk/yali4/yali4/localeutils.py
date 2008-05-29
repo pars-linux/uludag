@@ -40,6 +40,8 @@ def write_keymap(keymap):
     for l in open(mudur_file_path, "r").readlines():
         if l.strip().startswith('keymap=') or l.strip().startswith('#keymap='):
             l = 'keymap="%s"\n' % keymap
+        if l.strip().startswith('language=') or l.strip().startswith('#language='):
+            l = 'language="%s"\n' % consts.lang
         lines.append(l)
 
     open(mudur_file_path, "w").writelines(lines)

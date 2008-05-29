@@ -98,13 +98,14 @@ loader.
 
     def shown(self):
         b = fullDiskList = yali4.storage.detect_all()
+        fullDiskList.sort()
 
         if len(yali4.storage.devices) > 1:
             a = ctx.installData.orderedDiskList = yali4.storage.getOrderedDiskList()
-
             # check consistency of diskList
             if not len(filter(None, map(lambda x: x in a,b))) == len(b):
                 ctx.installData.orderedDiskList = fullDiskList
+                ctx.isEddFailed = True
         else:
             ctx.installData.orderedDiskList = fullDiskList
 
