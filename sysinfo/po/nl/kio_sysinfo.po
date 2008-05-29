@@ -2,16 +2,16 @@
 # translation of tr.po to
 # This file is put in the public domain.
 #
-# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-16 15:16+0300\n"
-"PO-Revision-Date: 2007-07-07 16:03+0200\n"
+"PO-Revision-Date: 2008-05-29 16:11+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,9 +35,8 @@ msgid "%1 KB"
 msgstr "%1 KB"
 
 #: sysinfo/sysinfo.cpp:90
-#, fuzzy
 msgid "Not Available"
-msgstr "Beschikbaar"
+msgstr "Niet beschikbaar"
 
 #: sysinfo/sysinfo.cpp:104
 msgid "Looking for hardware information..."
@@ -49,8 +48,7 @@ msgstr "Mijn computer"
 
 #: sysinfo/sysinfo.cpp:112
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
-"Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
+msgstr "Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
 
 #: sysinfo/sysinfo.cpp:120
 msgid "Common Folders"
@@ -90,7 +88,7 @@ msgstr "%1 MHz"
 
 #: sysinfo/sysinfo.cpp:148
 msgid "Number of Core :"
-msgstr ""
+msgstr "Nummer van kern:"
 
 #: sysinfo/sysinfo.cpp:154
 msgid "Memory Information"
@@ -215,3 +213,4 @@ msgstr "U bent <strong>online</strong>"
 #: sysinfo/sysinfo.cpp:475
 msgid "Unknown network status"
 msgstr "Onbekende netwerkstatus"
+

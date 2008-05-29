@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-12-04 09:12+0200\n"
-"PO-Revision-Date: 2008-05-11 15:26+0200\n"
+"PO-Revision-Date: 2008-05-29 16:15+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,43 +18,43 @@ msgstr ""
 
 #: src/display-config.py:30 src/display-config.py:81
 msgid "Display Configuration"
-msgstr ""
+msgstr "Beeldscherm configuratie"
 
 #: src/display-config.py:76
 msgid "Display Configuration is already started!"
-msgstr ""
+msgstr "Beeldscherm configuratie is al actief!"
 
 #: src/mainview.py:46
 msgid "Resolution:"
-msgstr ""
+msgstr "Resolutie:"
 
 #: src/mainview.py:52
 msgid "Color depth:"
-msgstr ""
+msgstr "Kleurdiepte:"
 
 #: src/mainview.py:54
 msgid "True Color (24 bit)"
-msgstr ""
+msgstr "Ware kleuren (24 bit)"
 
 #: src/mainview.py:55
 msgid "High Color (16 bit)"
-msgstr ""
+msgstr "Hoge kleuren (16 bit)"
 
 #: src/mainview.py:85 src/mainview.py:108
 msgid "Unable to read configuration."
-msgstr ""
+msgstr "Kan configuratie niet lezen."
 
 #: src/mainview.py:139
 msgid "Unable to save configuration."
-msgstr ""
+msgstr "Kan configuratie niet opslaan."
 
 #: src/mainview.py:145
 msgid "Configuration saved"
-msgstr ""
+msgstr "Configuratie opgeslagen"
 
 #: src/mainview.py:146
 msgid ""
 "Xorg configuration saved. The changes will effect upon next start of Xorg "
 "server."
-msgstr ""
+msgstr "Xorg configuratie opgeslagen. De veranderingen zullen optreden bij de volgende keer dat de Xorg server wordt opgestart."
 
