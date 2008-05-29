@@ -214,8 +214,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             repoList = []
             item = self.repoListView.firstChild()
             while item:
-                repoList.append(unicode(item.text(0)))
-                repoList.append(str(item.text(1)))
+                repoList.append((unicode(item.text(0)), str(item.text(1))))
                 item = item.nextSibling()
 
             self.reposChanged = False
