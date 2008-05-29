@@ -111,8 +111,20 @@ class BootLoader:
         deviceMap = open(self.device_map, "w")
         i = 0
 
+        diskList = ctx.installData.orderedDiskList
+
+        # if install root is equal with grub root
+        # force install root to be hd0
+        if install_root.startswith(ctx.installData.bootLoaderDev):
+            # create device map
+            for disk in ctx.installData.orderedDiskList:
+                if install_root.startswith(disk[5:]):
+                    deviceMap.write("(hd%d)\t%s\n" % (i,disk))
+                    diskList.remove(disk)
+                    i+=1
+
         # create device map
-        for disk in ctx.installData.orderedDiskList:
+        for disk in diskList:
             deviceMap.write("(hd%d)\t%s\n" % (i,disk))
             i+=1
         deviceMap.close()
