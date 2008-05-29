@@ -99,6 +99,8 @@ class BootLoader:
         # some paths has own directories like (/dev/cciss/c0d0p1)
         # it removes /dev/ and gets the device.
         install_root = install_root_path[5:]
+        ctx.debugger.log("WGC: Given install_root_path is : %s" % install_root_path)
+        ctx.debugger.log("WGC: Final install_root is : %s" % install_root)
 
         grub_dir = os.path.join(consts.target_dir, "boot/grub")
         if not os.path.exists(grub_dir):
