@@ -51,6 +51,11 @@ class Progress(ProgressDialog):
         self.totalInfo.setText(i18n("downloaded ( total: %1 )").arg(total))
         self.updatePackageInfo()
 
+    def closeEvent(self, closeEvent):
+        closeEvent.accept()
+        if self.parent.command.inProgress():
+            closeEvent.ignore()
+
     def showStatus(self):
         self.packageInfo.show()
         self.completedInfo.show()

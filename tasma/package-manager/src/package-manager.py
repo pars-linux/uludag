@@ -83,13 +83,20 @@ class MainApplication(KMainWindow):
         self.statusLabel.setAlignment(Qt.AlignHCenter)
 
     def closeEvent(self, closeEvent):
+        closeEvent.accept()
         if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
+            closeEvent.ignore()
             Globals.debug("Minimizing to system tray.")
             self.hide()
         else:
             self.slotQuit()
 
+    def queryExit(self):
+        return not self.mainwidget.command.inProgress()
+
     def slotQuit(self):
+        if self.mainwidget.command.inProgress():
+            return
         # Don't know why but without this, after exiting package-manager, crash occurs. This may be a workaround or a PyQt bug.
         self.mainwidget.deleteLater()
         Globals.debug("package-manager is quiting.")
