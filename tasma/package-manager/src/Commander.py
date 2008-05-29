@@ -94,8 +94,8 @@ class Commander(QObject):
     def removeRepo(self, repoName):
         self.comar.removeRepo(repoName)
 
-    def setRepositories(self, list):
-        self.comar.setRepositories(",".join(list))
+    def setRepositories(self, repos):
+        self.comar.setRepositories(repos)
 
     def listUpgradable(self):
         return PisiIface.get_upgradable_packages()
