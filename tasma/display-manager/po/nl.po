@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-12 11:15+0300\n"
-"PO-Revision-Date: 2008-05-11 16:58+0200\n"
+"PO-Revision-Date: 2008-05-29 16:32+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -49,19 +49,16 @@ msgid "True Color"
 msgstr "Ware kleuren"
 
 #: src/dm_mainview.py:358
-#, fuzzy
 msgid "Dual Screen"
-msgstr "Schermen"
+msgstr "Dubbel scherm"
 
 #: src/dm_mainview.py:360
-#, fuzzy
 msgid "Cloned Mode"
-msgstr "Duale modus"
+msgstr "Kloon modus"
 
 #: src/dm_mainview.py:361
-#, fuzzy
 msgid "Extended Mode"
-msgstr "Verlengd"
+msgstr "Verlengde modus"
 
 #: src/dm_mainview.py:362
 msgid "Detect Displays"
@@ -73,36 +70,35 @@ msgstr "Schermen"
 
 #: src/dm_mainview.py:364 src/driverdialog.py:59
 msgid "Video Card"
-msgstr ""
+msgstr "Videokaart"
 
 #: src/dm_mainview.py:365
 msgid "Card Icon"
-msgstr ""
+msgstr "Kaart icoon"
 
 #: src/dm_mainview.py:366
 msgid "<p>Card Name</p>"
-msgstr ""
+msgstr "<p>Kaart naam</p>"
 
 #: src/dm_mainview.py:367
 msgid "<p>Driver Name</p>"
-msgstr ""
+msgstr "<p>Driver naam<p>"
 
 #: src/dm_mainview.py:368 src/dm_mainview.py:372 src/dm_mainview.py:376
 msgid "Configure..."
-msgstr ""
+msgstr "Configureer..."
 
 #: src/dm_mainview.py:370 src/dm_mainview.py:374
 msgid "Monitor Icon"
-msgstr ""
+msgstr "Monitor icoon"
 
 #: src/dm_mainview.py:371 src/dm_mainview.py:375
 msgid "Monitor Info"
-msgstr ""
+msgstr "Monitor info"
 
 #: src/dm_mainview.py:373 src/display-manager.py:96
-#, fuzzy
 msgid "Secondary Screen"
-msgstr "Primair scherm"
+msgstr "Tweede scherm"
 
 #: src/dm_mainview.py:377
 msgid "Devices"
@@ -110,27 +106,27 @@ msgstr "Apparaten"
 
 #: src/displayconfig.py:91
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR fout"
 
 #: src/displayconfig.py:96
 msgid "Waiting DBus..."
-msgstr ""
+msgstr "wachten DBus..."
 
 #: src/displayconfig.py:96
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "Verbinding met de DBus is onverwacht afgesloten, pogen opnieuw te verbinden..."
 
 #: src/displayconfig.py:112
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
-msgstr ""
+msgstr "Kan geen verbinding maken met DBus! Als het niet actief is dient u het te starten met het 'service dbus start' commando in de root console."
 
 #: src/displayconfig.py:243
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
-msgstr ""
+msgstr "Configuratie is opgeslagen. Sommige veranderingen zullen pas optreden na opnieuw opstarten van uw systeem."
 
 #: src/display-manager.py:162
 msgid ""
@@ -147,11 +143,11 @@ msgstr "Dupliceer output!"
 #: src/display-manager.py:274
 #, python-format
 msgid "Driver: %s"
-msgstr ""
+msgstr "Driver: %s"
 
 #: src/display-manager.py:277
 msgid "Plug and Play Monitor"
-msgstr ""
+msgstr "Plug en play monitor"
 
 #: src/display-manager.py:350
 msgid "Display Manager is already started!"
@@ -159,19 +155,19 @@ msgstr "Beeldscherm beheer is al actief!"
 
 #: src/driverdialog.py:28 src/driverdialog.py:60
 msgid "Driver Name"
-msgstr ""
+msgstr "Driver naam"
 
 #: src/driverdialog.py:29 src/driverdialog.py:61
 msgid "Description"
-msgstr ""
+msgstr "Beschrijving"
 
 #: src/driverdialog.py:62
 msgid "Probe at next boot."
-msgstr ""
+msgstr "Verbinden bij volgende maal herstarten."
 
 #: src/driverdialog.py:63 src/monitordialog.py:96
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: src/helpdialog.py:55
 msgid "Display Manager Help"
@@ -233,26 +229,21 @@ msgstr "<p><b><h3>Beeldscherm beheer </h3></b></p>"
 
 #: src/monitordialog.py:87
 msgid "Choose Monitor"
-msgstr ""
+msgstr "Kies monitor"
 
 #: src/monitordialog.py:89
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: src/monitordialog.py:90
 msgid "<p>Horizontal Range:</p>"
-msgstr ""
+msgstr "<p>Horizontaal bereik:</p>"
 
 #: src/monitordialog.py:92
 msgid "<p>Vertical Range:</p>"
-msgstr ""
+msgstr "<p>Verticaal bereik:</p>"
 
 #: src/monitordialog.py:94
 msgid "Plug And Play Monitor"
-msgstr ""
+msgstr "Plug en play monitor"
 
-#~ msgid "Sorry, Display Manager currently does not support your driver."
-#~ msgstr "Helaas, beeldschem beheer ondersteunt momenteel uw driver nog niet."
-
-#~ msgid "No Support"
-#~ msgstr "Geen ondersteuning"
