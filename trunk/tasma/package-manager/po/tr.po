@@ -1,3 +1,4 @@
+# translation of tr.po to Türkçe
 # translation of tr.po to
 # Turkish translations for PiSi KGA package
 # package-manager paketi için Türkçe çeviriler.
@@ -7,219 +8,61 @@
 # İsmail Dönmez <ismail@uludag.org.tr>, 2005.
 # Eray Ozkural <eray@uludag.org.tr>, 2005.
 # Görkem Çetin <gorkem@uludag.org.tr>, 2006.
-# Faik Uygur <faik@pardus.org.tr>, 2006, 2007.
+# Faik Uygur <faik@pardus.org.tr>, 2006, 2007, 2008.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-11 22:52+0300\n"
-"PO-Revision-Date: 2007-12-03 20:58+0200\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"POT-Creation-Date: 2008-05-30 13:58+0300\n"
+"PO-Revision-Date: 2008-05-30 13:57+0300\n"
+"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/CommonText.py:15 src/MainWidget.py:617
-msgid "downloading"
-msgstr "indiriliyor"
+#: src/ProgressDialog.py:91
+msgid "Progress"
+msgstr "İşlem"
 
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "açılıyor"
-
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "ayarlanıyor"
-
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "kaldırılıyor"
-
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "kuruluyor"
-
-#: src/Progress.py:51
-msgid "downloaded ( total: %1 )"
-msgstr "indirildi ( toplam: %1 )"
-
-#: src/Progress.py:78
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<h3>PiSi hazırlanıyor...</h3>"
-
-#: src/Progress.py:80 src/ProgressDialog.py:94
-msgid "--"
-msgstr "--"
-
-#: src/Progress.py:81 src/ProgressDialog.py:93
-msgid "downloaded (total: -- )"
-msgstr "indirildi (toplam: --)"
-
-#: src/Progress.py:82 src/ProgressDialog.py:92
+#: src/ProgressDialog.py:92 src/Progress.py:87
 msgid "-- / --  package"
 msgstr "-- / -- paket"
 
-#: src/Progress.py:100
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>İşlem iptal ediliyor...</b>"
+#: src/ProgressDialog.py:93 src/Progress.py:86
+msgid "downloaded (total: -- )"
+msgstr "indirildi (toplam: --)"
 
-#: src/Progress.py:127 src/Progress.py:131
-msgid "Now %1 <b>%2</b> package"
-msgstr "Şu anda <b>%2</b> paketi %1"
+#: src/ProgressDialog.py:94 src/Progress.py:85
+msgid "--"
+msgstr "--"
 
-#: src/Progress.py:141
-msgid "installed"
-msgstr "kuruldu"
+#: src/ProgressDialog.py:97
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/Progress.py:143
-msgid "removed"
-msgstr "kaldırıldı"
+#: src/ProgressDialog.py:98
+msgid "Now installing <b>amsn</b> package"
+msgstr "Şu anda <b>amsn</b> paketi kuruluyor"
 
-#: src/Progress.py:145
-msgid "upgraded"
-msgstr "güncellendi"
+#: src/Tray.py:38
+msgid "Update"
+msgstr "Güncelle"
 
-#: src/Progress.py:147
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paket %3"
+#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:582
+msgid "All"
+msgstr "Tümü"
 
-#: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
-msgid "Repository Name"
-msgstr "Depo Adı"
+#: src/Tray.py:66
+msgid "There are <b>%1</b> updates available!"
+msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
 
-#: src/PreferencesDialog.py:54 src/PreferencesDialog.py:192
-msgid "Address"
-msgstr "Adres"
-
-#: src/PreferencesDialog.py:184
-msgid "Package Manager Settings"
-msgstr "Paket Yöneticisi Ayarları"
-
-#: src/PreferencesDialog.py:186
-msgid "F1"
-msgstr "F1"
-
-#: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
-
-#: src/PreferencesDialog.py:194
-msgid "&Add New Repository"
-msgstr "Yeni Depo &Ekle"
-
-#: src/PreferencesDialog.py:195
-msgid "Click here to add a new software repository"
-msgstr "Yeni bir depo eklemek için burayı tıklayın"
-
-#: src/PreferencesDialog.py:196
-msgid "&Edit Repository"
-msgstr "&Depoyu Değiştir"
-
-#: src/PreferencesDialog.py:197
-msgid "Click here to modify the name or address of a repository"
-msgstr "Bir deponun adını ya da adresini değiştirmek için burayı tıklayın"
-
-#: src/PreferencesDialog.py:198
-msgid "&Remove Repository"
-msgstr "Depoyu &Kaldır"
-
-#: src/PreferencesDialog.py:199
-msgid "Click here to delete a repository from the list"
-msgstr "Listeden bir depo silmek için burayı tıklayın"
-
-#: src/PreferencesDialog.py:200
-msgid "Move &Up"
-msgstr "&Yukarı Taşı"
-
-#: src/PreferencesDialog.py:201
-msgid "Click here to move the repository one level up"
-msgstr "Depoyu bir satır yukarı kaydırmak için tıklayın"
-
-#: src/PreferencesDialog.py:202
-msgid "Move &Down"
-msgstr "&Aşağı Taşı"
-
-#: src/PreferencesDialog.py:203
-msgid "Click here to move the repository one level down"
-msgstr "Depoyu bir satır aşağı kaydırmak için tıklayın"
-
-#: src/PreferencesDialog.py:204
-msgid "&Repositories"
-msgstr "&Depolar"
-
-#: src/PreferencesDialog.py:205
-msgid "&Show only desktop applications"
-msgstr "&Sadece masaüstü uygulamalarını göster"
-
-#: src/PreferencesDialog.py:206
-msgid "If checked, then pisi will only show desktop applications"
-msgstr "Eğer seçili ise, pisi sadece masaüstü uygulamalarını gösterecektir"
-
-#: src/PreferencesDialog.py:207
-msgid "Enable &periodic update check"
-msgstr "Aralıklı &güncel paket kontrolünü etkinleştir"
-
-#: src/PreferencesDialog.py:208
-msgid "&Enable system tray icon"
-msgstr "Sistem çekmecesi &ikonunu etkinleştir"
-
-#: src/PreferencesDialog.py:209
-msgid "Check interval:"
-msgstr "Kontrol aralığı:"
-
-#: src/PreferencesDialog.py:210
-msgid " min"
-msgstr " dakika"
-
-#: src/PreferencesDialog.py:211
-msgid "&General Settings"
-msgstr "&Genel Ayarlar"
-
-#: src/PreferencesDialog.py:212
-msgid "Clear Cache"
-msgstr "Önbelleği temizle"
-
-#: src/PreferencesDialog.py:213
-msgid "C&lean disk cache now"
-msgstr "Ö&nbelleği şimdi temizle"
-
-#: src/PreferencesDialog.py:214
-msgid ""
-"Clearing the disk cache will remove all downloaded software. \n"
-"This will not delete installed software or affect your system stability."
-msgstr ""
-"Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan \n"
-"tüm paketler silinecektir. Bu işlem sistemde kurulu olan paketleri \n"
-"silmez ve bilgisayarınızın çalışmasını etkilemez."
-
-#: src/PreferencesDialog.py:216
-msgid "Cache usage"
-msgstr "Önbellek kullanımı"
-
-#: src/PreferencesDialog.py:217
-msgid "Maximum cache size:"
-msgstr "Azami önbellek boyutu:"
-
-#: src/PreferencesDialog.py:218
-msgid "&Use hard disk cache for downloaded software"
-msgstr "İ&ndirilen yazılımlar için sabit disk önbelleğini kullan"
-
-#: src/PreferencesDialog.py:219
-msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr "Eğer seçili ise indirilen paketler hard disk önbelleğinde tutulacak"
-
-#: src/PreferencesDialog.py:220
-msgid "Mb <i>(use 0 for no limit)</i>"
-msgstr "Mb <i>(Sınır koymamak için 0 kullanın)</i>"
-
-#: src/PreferencesDialog.py:221
-msgid "C&ache"
-msgstr "&Önbellek"
+#: src/Tray.py:67
+msgid "Updates Available!"
+msgstr "Güncellemeler Mevcut!"
 
 #: src/ComarIface.py:38
 msgid "Unable to connect to DBus."
@@ -238,171 +81,16 @@ msgid "COMAR Auth Error"
 msgstr "Comar Yetki Hatası"
 
 #: src/ComarIface.py:62
+msgid "Network error. Please check your network connections and try again."
+msgstr "Ağ hatası. Lütfen ağ bağlantılarınızı kontrol edin ve tekrar deneyin."
+
+#: src/ComarIface.py:62 src/ComarIface.py:64
 msgid "COMAR Error"
 msgstr "Comar Hatası"
 
-#: src/ComarIface.py:66
+#: src/ComarIface.py:69
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
-
-#: src/ProgressDialog.py:91
-msgid "Progress"
-msgstr "İşlem"
-
-#: src/ProgressDialog.py:97
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>PiSi hazırlanıyor...</h3>"
-
-#: src/ProgressDialog.py:98
-msgid "Now installing <b>amsn</b> package"
-msgstr "Şu anda <b>amsn</b> paketi kuruluyor"
-
-#: src/Preferences.py:118
-msgid "Add New Repository"
-msgstr "Yeni Depo Ekle"
-
-#: src/Preferences.py:125
-msgid "Edit Repository"
-msgstr "Depoyu Değiştir"
-
-#: src/Preferences.py:171 src/Preferences.py:187
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Depo adresleri xml veya xml.bz2 soneki ile bitmelidir. <p>Lütfen yeniden "
-"deneyin.</qt>"
-
-#: src/Preferences.py:171 src/Preferences.py:187
-msgid "Pisi Error"
-msgstr "Pisi Hatası"
-
-#: src/Preferences.py:223 src/MainWidget.py:658
-msgid "<b>Applying Repository Changes</b>"
-msgstr "<b>Depo Değişiklikleri Uygulanıyor</b>"
-
-#: src/Preferences.py:256
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz?"
-
-#: src/HelpDialog.py:29 src/package-manager.py:131
-msgid "Package Manager Help"
-msgstr "Paket Yöneticisi Yardım"
-
-#: src/BasketDialog.py:51 src/BasketDialog.py:56
-msgid "Basket"
-msgstr "Sepet"
-
-#: src/BasketDialog.py:64
-msgid "Selected package(s) for removal:"
-msgstr "Kaldırılmak üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:65
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
-
-#: src/BasketDialog.py:67
-msgid "Selected package(s) for install:"
-msgstr "Kurulmak üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:68
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
-
-#: src/BasketDialog.py:70
-msgid "Selected package(s) for upgrade:"
-msgstr "Güncellenmek üzere seçilmiş paket(ler):"
-
-#: src/BasketDialog.py:71
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
-
-#: src/BasketDialog.py:79
-msgid "Total Size:"
-msgstr "Toplam Boyut:"
-
-#: src/BasketDialog.py:86
-msgid "Update Basket"
-msgstr "Sepeti Güncelle"
-
-#: src/BasketDialog.py:165
-msgid "Total Size: <b>%1</b>"
-msgstr "Toplam Boyut: <b>%1</b>"
-
-#: src/BasketDialog.py:215 src/BasketDialog.py:217
-msgid "Size: "
-msgstr "Boyut: "
-
-#: src/Tray.py:38
-msgid "Update"
-msgstr "Güncelle"
-
-#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:582
-msgid "All"
-msgstr "Tümü"
-
-#: src/Tray.py:66
-msgid "There are <b>%1</b> updates available!"
-msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
-
-#: src/Tray.py:67
-msgid "Updates Available!"
-msgstr "Güncellemeler Mevcut!"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "Kurulacak PiSi paketi ismi"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Kurmak üzere bir paket seçtiniz. Devam etmek istiyor musunuz?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Paket Kur"
-
-#: src/SpecialList.py:100 src/CustomEventListener.py:37
-#: src/CustomEventListener.py:41
-msgid "Select all packages in this category"
-msgstr "Bu kategorideki tüm paketleri seç"
-
-#: src/SpecialList.py:102 src/CustomEventListener.py:38
-msgid "Reverse package selections"
-msgstr "Paket seçimlerini ters çevir"
-
-#: src/SpecialList.py:163
-msgid "Description: "
-msgstr "Açıklama: "
-
-#: src/SpecialList.py:164
-msgid "Version: "
-msgstr "Sürüm: "
-
-#: src/SpecialList.py:165
-msgid "Repository: "
-msgstr "Depo: "
-
-#: src/SpecialList.py:166
-msgid "Package Size: "
-msgstr "Paket Boyutu: "
-
-#: src/SpecialList.py:167
-msgid "Homepage: "
-msgstr "Web sayfası: "
-
-#: src/Notifier.py:41
-msgid "Show Updates"
-msgstr "Güncellemeleri Göster"
-
-#: src/Notifier.py:41
-msgid "Ignore"
-msgstr "Yoksay"
 
 #: src/MainWidget.py:75
 msgid "Loading Package List..."
@@ -577,6 +265,14 @@ msgstr "<b>Paket(ler) Güncelleniyor</b>"
 msgid "Others"
 msgstr "Diğerleri"
 
+#: src/MainWidget.py:617 src/CommonText.py:15
+msgid "downloading"
+msgstr "indiriliyor"
+
+#: src/MainWidget.py:658 src/Preferences.py:222
+msgid "<b>Applying Repository Changes</b>"
+msgstr "<b>Depo Değişiklikleri Uygulanıyor</b>"
+
 #: src/MainWidget.py:662
 msgid "Downloading package list of %1"
 msgstr "%1 paket listesi indiriliyor"
@@ -621,33 +317,127 @@ msgstr "PiSi Yazarları"
 msgid "Authors of PiSi API"
 msgstr "PiSi API Yazarları"
 
-#: src/package-manager.py:104
+#: src/package-manager.py:111
 msgid "Show Installed Packages"
 msgstr "Kurulu Paketleri Göster"
 
-#: src/package-manager.py:107
+#: src/package-manager.py:114
 msgid "Show New Packages"
 msgstr "Yeni Paketleri Göster"
 
-#: src/package-manager.py:109
+#: src/package-manager.py:116
 msgid "Show Upgradable Packages"
 msgstr "Güncellemeleri Göster"
 
-#: src/package-manager.py:144
+#: src/package-manager.py:138 src/HelpDialog.py:29
+msgid "Package Manager Help"
+msgstr "Paket Yöneticisi Yardım"
+
+#: src/package-manager.py:151
 msgid "Package to install"
 msgstr "Yüklenecek paket ismi"
 
-#: src/package-manager.py:145
+#: src/package-manager.py:152
 msgid "Show main window on startup"
 msgstr "Açılışta ana pencereyi göster"
 
-#: src/package-manager.py:146
+#: src/package-manager.py:153
 msgid "Show debug output"
 msgstr "Debug çıktısını göster"
 
-#: src/package-manager.py:149
+#: src/package-manager.py:156
 msgid "Package Manager is already running!"
 msgstr "Paket Yöneticisi başka bir yerde çalışıyor."
+
+#: src/BasketDialog.py:51 src/BasketDialog.py:56
+msgid "Basket"
+msgstr "Sepet"
+
+#: src/BasketDialog.py:64
+msgid "Selected package(s) for removal:"
+msgstr "Kaldırılmak üzere seçilmiş paket(ler):"
+
+#: src/BasketDialog.py:65
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr "Seçili paketlerin ayrıca kaldırılacak olan ters bağımlılıkları:"
+
+#: src/BasketDialog.py:67
+msgid "Selected package(s) for install:"
+msgstr "Kurulmak üzere seçilmiş paket(ler):"
+
+#: src/BasketDialog.py:68
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
+
+#: src/BasketDialog.py:70
+msgid "Selected package(s) for upgrade:"
+msgstr "Güncellenmek üzere seçilmiş paket(ler):"
+
+#: src/BasketDialog.py:71
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr "Seçili paketlerin ayrıca güncellenecek olan ek bağımlılıkları:"
+
+#: src/BasketDialog.py:79
+msgid "Total Size:"
+msgstr "Toplam Boyut:"
+
+#: src/BasketDialog.py:86
+msgid "Update Basket"
+msgstr "Sepeti Güncelle"
+
+#: src/BasketDialog.py:165
+msgid "Total Size: <b>%1</b>"
+msgstr "Toplam Boyut: <b>%1</b>"
+
+#: src/BasketDialog.py:215 src/BasketDialog.py:217
+msgid "Size: "
+msgstr "Boyut: "
+
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "açılıyor"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "ayarlanıyor"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "kaldırılıyor"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "kuruluyor"
+
+#: src/Preferences.py:118
+msgid "Add New Repository"
+msgstr "Yeni Depo Ekle"
+
+#: src/Preferences.py:125
+msgid "Edit Repository"
+msgstr "Depoyu Değiştir"
+
+#: src/Preferences.py:171 src/Preferences.py:187
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Depo adresleri xml veya xml.bz2 soneki ile bitmelidir. <p>Lütfen yeniden "
+"deneyin.</qt>"
+
+#: src/Preferences.py:171 src/Preferences.py:187
+msgid "Pisi Error"
+msgstr "Pisi Hatası"
+
+#: src/Preferences.py:255
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -677,8 +467,217 @@ msgstr "&Depo Adı"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Deponun adı, örneğin <b>pardus-devel</b>"
 
-#~ msgid "N\\A"
-#~ msgstr "Bilinmiyor"
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:100
+msgid "Select all packages in this category"
+msgstr "Bu kategorideki tüm paketleri seç"
 
-#~ msgid "Can't connect to Comar daemon"
-#~ msgstr "Çomar sunucusuna bağlanılamadı"
+#: src/CustomEventListener.py:38 src/SpecialList.py:102
+msgid "Reverse package selections"
+msgstr "Paket seçimlerini ters çevir"
+
+#: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
+msgid "Repository Name"
+msgstr "Depo Adı"
+
+#: src/PreferencesDialog.py:54 src/PreferencesDialog.py:192
+msgid "Address"
+msgstr "Adres"
+
+#: src/PreferencesDialog.py:184
+msgid "Package Manager Settings"
+msgstr "Paket Yöneticisi Ayarları"
+
+#: src/PreferencesDialog.py:186
+msgid "F1"
+msgstr "F1"
+
+#: src/PreferencesDialog.py:193
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
+
+#: src/PreferencesDialog.py:194
+msgid "&Add New Repository"
+msgstr "Yeni Depo &Ekle"
+
+#: src/PreferencesDialog.py:195
+msgid "Click here to add a new software repository"
+msgstr "Yeni bir depo eklemek için burayı tıklayın"
+
+#: src/PreferencesDialog.py:196
+msgid "&Edit Repository"
+msgstr "&Depoyu Değiştir"
+
+#: src/PreferencesDialog.py:197
+msgid "Click here to modify the name or address of a repository"
+msgstr "Bir deponun adını ya da adresini değiştirmek için burayı tıklayın"
+
+#: src/PreferencesDialog.py:198
+msgid "&Remove Repository"
+msgstr "Depoyu &Kaldır"
+
+#: src/PreferencesDialog.py:199
+msgid "Click here to delete a repository from the list"
+msgstr "Listeden bir depo silmek için burayı tıklayın"
+
+#: src/PreferencesDialog.py:200
+msgid "Move &Up"
+msgstr "&Yukarı Taşı"
+
+#: src/PreferencesDialog.py:201
+msgid "Click here to move the repository one level up"
+msgstr "Depoyu bir satır yukarı kaydırmak için tıklayın"
+
+#: src/PreferencesDialog.py:202
+msgid "Move &Down"
+msgstr "&Aşağı Taşı"
+
+#: src/PreferencesDialog.py:203
+msgid "Click here to move the repository one level down"
+msgstr "Depoyu bir satır aşağı kaydırmak için tıklayın"
+
+#: src/PreferencesDialog.py:204
+msgid "&Repositories"
+msgstr "&Depolar"
+
+#: src/PreferencesDialog.py:205
+msgid "&Show only desktop applications"
+msgstr "&Sadece masaüstü uygulamalarını göster"
+
+#: src/PreferencesDialog.py:206
+msgid "If checked, then pisi will only show desktop applications"
+msgstr "Eğer seçili ise, pisi sadece masaüstü uygulamalarını gösterecektir"
+
+#: src/PreferencesDialog.py:207
+msgid "Enable &periodic update check"
+msgstr "Aralıklı &güncel paket kontrolünü etkinleştir"
+
+#: src/PreferencesDialog.py:208
+msgid "&Enable system tray icon"
+msgstr "Sistem çekmecesi &ikonunu etkinleştir"
+
+#: src/PreferencesDialog.py:209
+msgid "Check interval:"
+msgstr "Kontrol aralığı:"
+
+#: src/PreferencesDialog.py:210
+msgid " min"
+msgstr " dakika"
+
+#: src/PreferencesDialog.py:211
+msgid "&General Settings"
+msgstr "&Genel Ayarlar"
+
+#: src/PreferencesDialog.py:212
+msgid "Clear Cache"
+msgstr "Önbelleği temizle"
+
+#: src/PreferencesDialog.py:213
+msgid "C&lean disk cache now"
+msgstr "Ö&nbelleği şimdi temizle"
+
+#: src/PreferencesDialog.py:214
+msgid ""
+"Clearing the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+"Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan \n"
+"tüm paketler silinecektir. Bu işlem sistemde kurulu olan paketleri \n"
+"silmez ve bilgisayarınızın çalışmasını etkilemez."
+
+#: src/PreferencesDialog.py:216
+msgid "Cache usage"
+msgstr "Önbellek kullanımı"
+
+#: src/PreferencesDialog.py:217
+msgid "Maximum cache size:"
+msgstr "Azami önbellek boyutu:"
+
+#: src/PreferencesDialog.py:218
+msgid "&Use hard disk cache for downloaded software"
+msgstr "İ&ndirilen yazılımlar için sabit disk önbelleğini kullan"
+
+#: src/PreferencesDialog.py:219
+msgid "If checked, downloaded packages will be hold at the hard disk cache"
+msgstr "Eğer seçili ise indirilen paketler hard disk önbelleğinde tutulacak"
+
+#: src/PreferencesDialog.py:220
+msgid "Mb <i>(use 0 for no limit)</i>"
+msgstr "Mb <i>(Sınır koymamak için 0 kullanın)</i>"
+
+#: src/PreferencesDialog.py:221
+msgid "C&ache"
+msgstr "&Önbellek"
+
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Kurulacak PiSi paketi ismi"
+
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "Kurmak üzere bir paket seçtiniz. Devam etmek istiyor musunuz?"
+
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Paket Kur"
+
+#: src/SpecialList.py:163
+msgid "Description: "
+msgstr "Açıklama: "
+
+#: src/SpecialList.py:164
+msgid "Version: "
+msgstr "Sürüm: "
+
+#: src/SpecialList.py:165
+msgid "Repository: "
+msgstr "Depo: "
+
+#: src/SpecialList.py:166
+msgid "Package Size: "
+msgstr "Paket Boyutu: "
+
+#: src/SpecialList.py:167
+msgid "Homepage: "
+msgstr "Web sayfası: "
+
+#: src/Progress.py:51
+msgid "downloaded ( total: %1 )"
+msgstr "indirildi ( toplam: %1 )"
+
+#: src/Progress.py:83
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<h3>PiSi hazırlanıyor...</h3>"
+
+#: src/Progress.py:105
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>İşlem iptal ediliyor...</b>"
+
+#: src/Progress.py:132 src/Progress.py:136
+msgid "Now %1 <b>%2</b> package"
+msgstr "Şu anda <b>%2</b> paketi %1"
+
+#: src/Progress.py:146
+msgid "installed"
+msgstr "kuruldu"
+
+#: src/Progress.py:148
+msgid "removed"
+msgstr "kaldırıldı"
+
+#: src/Progress.py:150
+msgid "upgraded"
+msgstr "güncellendi"
+
+#: src/Progress.py:152
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paket %3"
+
+#: src/Notifier.py:41
+msgid "Show Updates"
+msgstr "Güncellemeleri Göster"
+
+#: src/Notifier.py:41
+msgid "Ignore"
+msgstr "Yoksay"
