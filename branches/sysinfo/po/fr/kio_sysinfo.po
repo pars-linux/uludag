@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-16 15:16+0300\n"
+"POT-Creation-Date: 2008-05-30 13:46+0300\n"
 "PO-Revision-Date: 2007-06-19 00:24+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -19,198 +19,205 @@ msgstr ""
 msgid "KSysinfo"
 msgstr "KSysinfo"
 
-#: sysinfo/sysinfo.cpp:68
+#: sysinfo/sysinfo.cpp:67
 msgid "%1 GB"
 msgstr "%1 Go"
 
-#: sysinfo/sysinfo.cpp:70
+#: sysinfo/sysinfo.cpp:69
 msgid "%1 MB"
 msgstr "%1 Mo"
 
-#: sysinfo/sysinfo.cpp:72
+#: sysinfo/sysinfo.cpp:71
 msgid "%1 KB"
 msgstr "%1 Ko"
 
-#: sysinfo/sysinfo.cpp:90
+#: sysinfo/sysinfo.cpp:136
 #, fuzzy
 msgid "Not Available"
 msgstr "Espace disponible"
 
-#: sysinfo/sysinfo.cpp:104
+#: sysinfo/sysinfo.cpp:150
 msgid "Looking for hardware information..."
 msgstr "Recherche des informations concernant les périphériques..."
 
-#: sysinfo/sysinfo.cpp:107 sysinfo/sysinfo.cpp:111
+#: sysinfo/sysinfo.cpp:153
 msgid "My Computer"
 msgstr "Mon Ordinateur"
 
-#: sysinfo/sysinfo.cpp:112
+#: sysinfo/sysinfo.cpp:155
 msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 msgstr ""
 "Répertoires, Disques durs, Périphériques mobiles, Informations systèmes et "
 "plus encore..."
 
-#: sysinfo/sysinfo.cpp:120
+#: sysinfo/sysinfo.cpp:163
 msgid "Common Folders"
 msgstr "Répertoire Communs"
 
-#: sysinfo/sysinfo.cpp:124
+#: sysinfo/sysinfo.cpp:164
 msgid "My Home Folder"
 msgstr "Mon Répertoire d'Accueil"
 
-#: sysinfo/sysinfo.cpp:125
+#: sysinfo/sysinfo.cpp:165
 msgid "Root Folder"
 msgstr "Répertoire Racine"
 
-#: sysinfo/sysinfo.cpp:126
+#: sysinfo/sysinfo.cpp:166
 msgid "Network Folders"
 msgstr "Répertoires Réseaux"
 
-#: sysinfo/sysinfo.cpp:133
-msgid "Network Status"
+#: sysinfo/sysinfo.cpp:172
+#, fuzzy
+msgid "Network"
 msgstr "Statu Réseau"
 
-#: sysinfo/sysinfo.cpp:143
-msgid "CPU Information"
-msgstr "Information CPU"
+#: sysinfo/sysinfo.cpp:180
+#, fuzzy
+msgid "Memory"
+msgstr "Mémoire allouée :"
 
-#: sysinfo/sysinfo.cpp:145
-msgid "Processor (CPU):"
+#: sysinfo/sysinfo.cpp:181 sysinfo/sysinfo.cpp:323
+msgid "%1 free of %2"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:189
+msgid "Disks"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:196
+msgid "Operating System"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:198
+msgid "Kde <b>%1</b> on <b>%2</b>"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:209
+#, fuzzy
+msgid "Processor"
 msgstr "Processeur (CPU) :"
 
-#: sysinfo/sysinfo.cpp:146
-msgid "Speed:"
-msgstr "Vitesse :"
-
-#: sysinfo/sysinfo.cpp:147
+#: sysinfo/sysinfo.cpp:211
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:148
-msgid "Number of Core :"
+#: sysinfo/sysinfo.cpp:212
+msgid " core"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:154
-msgid "Memory Information"
-msgstr "Informations concernant la mémoire"
-
-#: sysinfo/sysinfo.cpp:156
-msgid "Total memory (RAM):"
-msgstr "Mémoire cumulée (RAM):"
-
-#: sysinfo/sysinfo.cpp:157
-msgid "Free memory:"
-msgstr "Mémoire disponible :"
-
-#: sysinfo/sysinfo.cpp:158
-msgid "Used Memory"
-msgstr "Mémoire allouée :"
-
-#: sysinfo/sysinfo.cpp:159
-msgid "Total swap:"
-msgstr "Mémoire d'échange (swap) cumulée :"
-
-#: sysinfo/sysinfo.cpp:160
-msgid "Free swap:"
-msgstr "Mémoire d'échange (swap) disponible :"
-
-#: sysinfo/sysinfo.cpp:167
-msgid "Hardware Information"
-msgstr "Informations concernant les périphériques"
-
-#: sysinfo/sysinfo.cpp:169
-msgid "Type:"
-msgstr "Type :"
-
-#: sysinfo/sysinfo.cpp:170 sysinfo/sysinfo.cpp:198
-msgid "Vendor:"
-msgstr "Fabricant : "
-
-#: sysinfo/sysinfo.cpp:171 sysinfo/sysinfo.cpp:199
-msgid "Model:"
-msgstr "Modèle : "
-
-#: sysinfo/sysinfo.cpp:172
-msgid "Bios Vendor:"
-msgstr "Fabricant du Bios :"
-
-#: sysinfo/sysinfo.cpp:173
-msgid "Bios Version:"
-msgstr "Version du Bios :"
-
-#: sysinfo/sysinfo.cpp:180
-msgid "Disk Information"
-msgstr "Informations du disque"
-
-#: sysinfo/sysinfo.cpp:185
-msgid "OS Information"
-msgstr "Information de l'OS"
-
-#: sysinfo/sysinfo.cpp:187
-msgid "OS:"
-msgstr "OS:"
-
-#: sysinfo/sysinfo.cpp:188
-msgid "Current user:"
-msgstr "Utilisateur actif : "
-
-#: sysinfo/sysinfo.cpp:189
-msgid "System:"
-msgstr "Système : "
-
-#: sysinfo/sysinfo.cpp:190
-msgid "KDE:"
-msgstr "KDE :"
-
-#: sysinfo/sysinfo.cpp:196
-msgid "Display Info"
+#: sysinfo/sysinfo.cpp:223
+#, fuzzy
+msgid "Display"
 msgstr "Propriétés de la carte vidéo"
 
-#: sysinfo/sysinfo.cpp:201
-msgid "Driver:"
+#: sysinfo/sysinfo.cpp:226
+#, fuzzy
+msgid "Driver: "
 msgstr "Pilote :"
 
-#: sysinfo/sysinfo.cpp:266
-msgid "%1 (+ %2 Caches)"
-msgstr "%1 (+ %2 Caches)"
+#: sysinfo/sysinfo.cpp:318
+msgid "Mounted on %1"
+msgstr ""
 
-#: sysinfo/sysinfo.cpp:326
-msgid "Total"
-msgstr "Total"
+#: sysinfo/sysinfo.cpp:318
+msgid "Not mounted"
+msgstr ""
 
-#: sysinfo/sysinfo.cpp:326
-msgid "Available"
-msgstr "Espace disponible"
-
-#: sysinfo/sysinfo.cpp:453
+#: sysinfo/sysinfo.cpp:487
 msgid "%1 (3D Support)"
 msgstr "%1 (Support 3D)"
 
-#: sysinfo/sysinfo.cpp:455
+#: sysinfo/sysinfo.cpp:489
 msgid "%1 (No 3D Support)"
 msgstr "%1 (Pas de support 3D)"
 
-#: sysinfo/sysinfo.cpp:465
+#: sysinfo/sysinfo.cpp:499
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Le réseau n'est <strong>pas accessible</strong>"
 
-#: sysinfo/sysinfo.cpp:467
+#: sysinfo/sysinfo.cpp:501
 msgid "You are <strong>offline</strong>"
 msgstr "Vous êtes <strong>hors-ligne</strong>"
 
-#: sysinfo/sysinfo.cpp:469
+#: sysinfo/sysinfo.cpp:503
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Le réseau est <strong>en cours d'arrêt.</strong>"
 
-#: sysinfo/sysinfo.cpp:471
+#: sysinfo/sysinfo.cpp:505
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr ""
 "<strong>Etablissement<strong> de la connection <strong>en cours</strong>"
 
-#: sysinfo/sysinfo.cpp:473
+#: sysinfo/sysinfo.cpp:507
 msgid "You are <strong>online</strong>"
 msgstr "Vous êtes <strong>en ligne</strong>"
 
-#: sysinfo/sysinfo.cpp:475
+#: sysinfo/sysinfo.cpp:509
 msgid "Unknown network status"
 msgstr "Statut réseau inconnu"
+
+#~ msgid "CPU Information"
+#~ msgstr "Information CPU"
+
+#~ msgid "Speed:"
+#~ msgstr "Vitesse :"
+
+#~ msgid "Memory Information"
+#~ msgstr "Informations concernant la mémoire"
+
+#~ msgid "Total memory (RAM):"
+#~ msgstr "Mémoire cumulée (RAM):"
+
+#~ msgid "Free memory:"
+#~ msgstr "Mémoire disponible :"
+
+#~ msgid "Total swap:"
+#~ msgstr "Mémoire d'échange (swap) cumulée :"
+
+#~ msgid "Free swap:"
+#~ msgstr "Mémoire d'échange (swap) disponible :"
+
+#~ msgid "Hardware Information"
+#~ msgstr "Informations concernant les périphériques"
+
+#~ msgid "Type:"
+#~ msgstr "Type :"
+
+#~ msgid "Vendor:"
+#~ msgstr "Fabricant : "
+
+#~ msgid "Model:"
+#~ msgstr "Modèle : "
+
+#~ msgid "Bios Vendor:"
+#~ msgstr "Fabricant du Bios :"
+
+#~ msgid "Bios Version:"
+#~ msgstr "Version du Bios :"
+
+#~ msgid "Disk Information"
+#~ msgstr "Informations du disque"
+
+#~ msgid "OS Information"
+#~ msgstr "Information de l'OS"
+
+#~ msgid "OS:"
+#~ msgstr "OS:"
+
+#~ msgid "Current user:"
+#~ msgstr "Utilisateur actif : "
+
+#~ msgid "System:"
+#~ msgstr "Système : "
+
+#~ msgid "KDE:"
+#~ msgstr "KDE :"
+
+#~ msgid "%1 (+ %2 Caches)"
+#~ msgstr "%1 (+ %2 Caches)"
+
+#~ msgid "Total"
+#~ msgstr "Total"
+
+#~ msgid "Available"
+#~ msgstr "Espace disponible"

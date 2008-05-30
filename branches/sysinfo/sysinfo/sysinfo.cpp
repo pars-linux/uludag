@@ -315,6 +315,7 @@ QString kio_sysinfoProtocol::diskInfo()
             DiskInfo di = ( *it );
             unsigned long long usage,percent,peer;
             QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
+            QString mountState = di.mounted ? i18n( "Mounted on %1" ).arg(di.mountPoint) : i18n( "Not mounted" );
             QString tooltip = i18n( di.model );
             usage = di.total - di.avail;
             peer = di.total / 100;
@@ -326,7 +327,7 @@ QString kio_sysinfoProtocol::diskInfo()
                                 "   <a href=\"media:/%1\">"
                                 "       <img src=\"%2\" />"
                                 "   </a></td><td>"
-                                "       <span class=\"detail\">[ Mounted on %3 ]<br><span style=\"float:right\">[ %4 ]</span></span>"
+                                "       <span class=\"detail\">[ %3 ]<br><span style=\"float:right\">[ %4 ]</span></span>"
                                 "       <a href=\"media:/%5\">"
                                 "       %6<br><span class=\"mediaDf\">%7</span><br></a>"
                                 "       <img class=\"diskusage\" src=\"file:%8\" width=\"%9%\">"
@@ -335,10 +336,10 @@ QString kio_sysinfoProtocol::diskInfo()
                                 "</tr>").
                                 arg( di.name ).
                                 arg( icon( di.iconName, 48, true) ).
-                                arg( di.mountPoint ).
+                                arg( mountState ).
                                 arg( di.fsType ).
                                 arg( di.name ).
-                                arg( di.label ).
+                                arg( label ).
                                 arg( sizeStatus ).
                                 arg( locate( "data", "sysinfo/themes/2008/images/progress.png" ) ).
                                 arg( percent );
