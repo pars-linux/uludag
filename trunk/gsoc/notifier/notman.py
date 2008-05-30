@@ -4,6 +4,7 @@
 import sys
 import pickle
 import time
+import copy
 # Import internationalization support:
 import gettext
 _ = gettext.translation("notman", "./i18n", fallback = True).ugettext
@@ -48,6 +49,8 @@ class NotificationManager(QApplication):
     def __init__(self,  object_path):
         QApplication.__init__(self,  sys.argv)
         print _("Initializing notification manager...")
+        # We don't want the program to get closed when there is no visible notificaition window:
+        self.setQuitOnLastWindowClosed(False)
         self.object_path = object_path
         self.session_bus = dbus.SessionBus()
         self.bus_name = dbus.service.BusName("org.pardus.notificationmanager", self.session_bus)
@@ -90,24 +93,28 @@ class NotXFace(dbus.service.Object):
     def AddNotification(self, serialized_notification, sender = None):
         try:
             # Try unpickling the serialized notification:
-            notification = pickle.loads(serialized_notification.__str__())
+			notification = pickle.loads(serialized_notification.__str__())
         except:
             # If an error occurs while unpickling serialized notification, notify the requestor of it:
-            notification = Notification(_("Couldn't unpickle sent notification"))
-            return pickle.dumps(notification)
+            notification_response = Notification(_("Couldn't unpickle sent notification"))
+            return pickle.dumps(notification_reponse)
         else:
-            # Append the notification to the queue of the notification manager:
-            self.notification_manager.message_queue.append(notification)
-            print _("Notification successfully received. Sender's bus name: %s") % sender
-            print _("Received message text: %s") % notification.text
-            print _("Added notification to queue.")
-            # Handle the notification in the other thread (in case handling the notification takes too much time, we dont want to stall the requestor):
-            self.notification_manager.emit(QtCore.SIGNAL("handleEvent()"))
-            # Update the last notification timestamp of the notification manager:
-            self.notification_manager.last_notification_time = time.time()
-            # Return the notification to the requestor, acknowledging that the notification is received:
-            notification.isReceived = True
-            return pickle.dumps(notification)
+			# Make a copy of the received notification to send as the response:
+			notification_response = copy.deepcopy(notification)
+			# Unpack the received notification:
+			notification.Unpack()
+        	# Append the notification to the queue of the notification manager:			
+			self.notification_manager.message_queue.append(notification)
+			print _("Notification successfully received. Sender's bus name: %s") % sender
+			print _("Received message text: %s") % notification.text
+			print _("Added notification to queue.")
+			# Handle the notification in the other thread (in case handling the notification takes too much time, we dont want to stall the requestor):
+			self.notification_manager.emit(QtCore.SIGNAL("handleEvent()"))
+			# Update the last notification timestamp of the notification manager:
+			self.notification_manager.last_notification_time = time.time()
+			# Return the notification to the requestor, acknowledging that the notification is received:
+			notification_response.isReceived = True
+			return pickle.dumps(notification_response)        	
         
     @dbus.service.method(dbus_interface = "org.pardus.notmanxface", in_signature = "s", out_signature = "s", sender_keyword = "sender")
     def EchoSender(self, message_string, sender = None):
@@ -132,11 +139,11 @@ class NotXFaceThread(QtCore.QThread):
 
 # If executed as the main program:
 if __name__ == "__main__":
-    notification_manager = NotificationManager("/NotificationManager")
-    notxfacethread = NotXFaceThread(notification_manager)
-    notxfacethread.start()
-    notification_manager.Go()
-    print _("Exited successfully.")
+	notification_manager = NotificationManager("/NotificationManager")
+	notxfacethread = NotXFaceThread(notification_manager)
+	notxfacethread.start()
+	notification_manager.Go()
+	print _("Exited successfully.")
 else:
     print _("This program is not meant to be loaded as a module.")
     
