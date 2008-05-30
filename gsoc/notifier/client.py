@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 # Imports:
-from sys import argv
+import sys
 
 # Import internationalization support:
 import gettext
@@ -14,7 +14,7 @@ from notclient import *
 if __name__ == "__main__":
     nt = Notifier()
     while 1:
-        line = raw_input(_("Enter a command: "))
+        line = raw_input(_("Enter a command: ")).decode(sys.stdin.encoding)
         words = line.split()
         result = None
         if words.__len__() > 0:
@@ -24,10 +24,10 @@ if __name__ == "__main__":
             elif command == "sendexit":
                 nt.SendExitSignal()
             elif command == "echo":
-                result = nt.Echo(unicode(line[5:], encoding = "utf-8"))
+                result = nt.Echo(line[5:])
             elif command == "notify":
-                this_notification = Notification()
-                this_notification.text = unicode(line[7:], encoding = "utf-8")
+                this_notification = Notification(line[7:])
+                this_notification.Pack()
                 result = nt.SendNotification(this_notification)
             else:
                 print _("Wrong command")
