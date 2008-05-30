@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-30 13:58+0300\n"
-"PO-Revision-Date: 2008-05-18 08:31-0400\n"
+"PO-Revision-Date: 2008-05-30 13:54-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Error de autenticación COMAR"
 
 #: src/ComarIface.py:62
 msgid "Network error. Please check your network connections and try again."
-msgstr ""
+msgstr "Error de red. Por favor verifique la conexión de red e intente de nuevo."
 
 #: src/ComarIface.py:62 src/ComarIface.py:64
 msgid "COMAR Error"
@@ -141,8 +141,7 @@ msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: src/MainWidget.py:346 src/MainWidget.py:354
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente están seleccionados <b>%1</b> paquetes con un tamaño total de <b>"
 "%2</b>"
@@ -150,8 +149,7 @@ msgstr ""
 # ...requeridas...
 #: src/MainWidget.py:349
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-" y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
+msgstr " y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
 
 #: src/MainWidget.py:351 src/MainWidget.py:359
 msgid "in your basket."
@@ -188,8 +186,7 @@ msgstr "y <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr ""
-"Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
+msgstr "Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
 
 #: src/MainWidget.py:389 src/MainWidget.py:399
 msgid "Conflict Error"
@@ -390,8 +387,7 @@ msgstr "Paquetes seleccionados para remover:"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
+msgstr "Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
 
 #: src/BasketDialog.py:67
 msgid "Selected package(s) for install:"
@@ -528,10 +524,8 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Aqui se pueden ver los repositorios actuales de software con sus direcciones"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Aqui se pueden ver los repositorios actuales de software con sus direcciones"
 
 #: src/PreferencesDialog.py:194
 msgid "&Add New Repository"
@@ -548,8 +542,7 @@ msgstr "&Editar Repositorio"
 
 #: src/PreferencesDialog.py:197
 msgid "Click here to modify the name or address of a repository"
-msgstr ""
-"Presione aquí para modificar el nombre o la dirección de un repositorio"
+msgstr "Presione aquí para modificar el nombre o la dirección de un repositorio"
 
 #: src/PreferencesDialog.py:198
 msgid "&Remove Repository"
@@ -638,8 +631,7 @@ msgstr "&Usar cache en disco rígido para software descargado"
 
 #: src/PreferencesDialog.py:219
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
-"Si marcado, se conservarán los archivos descargados en el cache del disco"
+msgstr "Si marcado, se conservarán los archivos descargados en el cache del disco"
 
 #: src/PreferencesDialog.py:220
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -723,3 +715,4 @@ msgstr "Mostrar Actualizaciones"
 #: src/Notifier.py:41
 msgid "Ignore"
 msgstr "Ignorar"
+
