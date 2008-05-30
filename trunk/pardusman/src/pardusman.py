@@ -15,14 +15,14 @@ def do_operation(project_file, op):
     import project
     import maker
     import time
-    
+
     prj = project.Project()
     err = prj.open(project_file)
     if err:
         raise RuntimeError("%s" % err)
-    
+
     start = time.time()
-    
+
     if op == "make" or op == "make-repo":
         prj.get_repo(update_repo=True)
         maker.make_repos(prj)
@@ -36,7 +36,7 @@ def do_operation(project_file, op):
         maker.squash_image(prj)
     if op == "make" or op == "make-iso":
         maker.make_iso(prj)
-    
+
     end = time.time()
     print "Total time is", end - start, "seconds."
 
