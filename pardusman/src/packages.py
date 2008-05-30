@@ -104,7 +104,7 @@ class Component:
         self.node = node
         self.name = node.getTagData('Name')
         self.packages = []
-    
+
     def __str__(self):
         return "Component: %s\nPackages: %s" % (self.name, ", ".join(self.packages))
 
@@ -201,7 +201,7 @@ class Repository:
         s.update(data)
         f.write(s.hexdigest())
         f.close()
-    
+
     def full_deps(self, package_name):
         deps = set()
         deps.add(package_name)

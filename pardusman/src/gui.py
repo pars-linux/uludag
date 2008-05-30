@@ -58,7 +58,7 @@ class ProjectWindow(KMainWindow):
         self.updateCaption()
         pman = QPixmap(locate("data", "pardusman/logo.png"))
         self.setIcon(pman)
-        
+
         mb = self.menuBar()
         file_ = QPopupMenu(self)
         mb.insertItem(_("&File"), file_)
@@ -67,24 +67,24 @@ class ProjectWindow(KMainWindow):
         file_.insertItem(_("Save &as..."), self.saveAsProject, self.CTRL + self.SHIFT + self.Key_S)
         file_.insertSeparator()
         file_.insertItem(_("&Quit"), self.quit, self.CTRL + self.Key_Q)
-        
+
         vb = QVBox(self)
         vb.setSpacing(6)
         vb.setMargin(6)
-        
+
         hb = QHBox(vb)
         hb.setSpacing(6)
-        
+
         lab = QLabel(hb)
         lab.setPixmap(pman)
         QToolTip.add(
             lab,
             _("Pardusman says:\n\n  Teh winnars dont use teh drugs!  \n ")
         )
-        
+
         box = QWidget(hb)
         grid = QGridLayout(box, 5, 2, 6, 6)
-        
+
         lab = QLabel(_("Title:"), box)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
         self.title = QLineEdit(box)
@@ -93,7 +93,7 @@ class ProjectWindow(KMainWindow):
             _("Title of distribution media, used in grub menu.")
         )
         grid.addWidget(self.title, 0, 1)
-        
+
         lab = QLabel(_("Work folder:"), box)
         grid.addWidget(lab, 1, 0, Qt.AlignRight)
         hb2 = QHBox(box)
@@ -106,7 +106,7 @@ class ProjectWindow(KMainWindow):
         but = QPushButton("...", hb2)
         self.connect(but, SIGNAL("clicked()"), self.selectWorkdir)
         grid.addWidget(hb2, 1, 1)
-        
+
         lab = QLabel(_("Repository:"), box)
         grid.addWidget(lab, 2, 0, Qt.AlignRight)
         self.repo_uri = QLineEdit(box)
@@ -115,7 +115,7 @@ class ProjectWindow(KMainWindow):
             _("PiSi package repository of the distribution.\nMust be a URL pointing to the repository index\nfile (i.e. pisi-index.xml.bz2).")
         )
         grid.addWidget(self.repo_uri, 2, 1)
-        
+
         lab = QLabel(_("Release files:"), box)
         grid.addWidget(lab, 3, 0, Qt.AlignRight)
         hb2 = QHBox(box)
@@ -144,12 +144,12 @@ class ProjectWindow(KMainWindow):
         QRadioButton(_("Installation"), self.project_type)
         QRadioButton(_("Live system"), self.project_type)
         grid.addWidget(self.project_type, 5, 1)
-        
+
         lab = QLabel(_("Media:"), box)
         grid.addWidget(lab, 6, 0, Qt.AlignRight)
         self.project_media = QComboBox(False, box)
         grid.addWidget(self.project_media, 6, 1)
-        
+
         self.media_types = [
             ("cd", 700, _("CD (700 MB)"), "cdrom_unmount"),
             ("dvd", 4300, _("DVD (4.2 GB)"), "dvd_unmount"),
@@ -158,7 +158,7 @@ class ProjectWindow(KMainWindow):
         ]
         for media_type, media_size, label, icon in self.media_types:
             x = self.project_media.insertItem(getIconPixmap(icon), label)
-        
+
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
         QLabel(" ", bar)
@@ -171,19 +171,19 @@ class ProjectWindow(KMainWindow):
         but = QToolButton(getIconSet("gear"), _("Make ISO"), "lala", self.make, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        
+
         self.console = self.statusBar()
-        
+
         self.setCentralWidget(vb)
-        
+
         self.project = project.Project()
         self.project2ui()
-        
+
         self.progress = Progress(self)
-    
+
     def getMedia(self):
         return self.media_types[self.project_media.currentItem()][0]
-    
+
     def setMedia(self, mtype):
         index = 0
         for media_type, media_size, label, icon in self.media_types:
@@ -192,10 +192,10 @@ class ProjectWindow(KMainWindow):
                 return
             index += 1
         self.project_media.setCurrentItem(len(self.media_types) - 1)
-    
+
     def getMediaSize(self):
         return self.media_types[self.project_media.currentItem()][1] * 1024 * 1024
-    
+
     def selectFiles(self):
         path = QFileDialog.getExistingDirectory(
             self.release_files.text(),
@@ -234,12 +234,12 @@ class ProjectWindow(KMainWindow):
             self.console.message(_("Release files directory does not exist."))
             return
         return True
-    
+
     def update(self):
         if not self.checkSettings():
             return
         self.project.get_repo(self.progress, update_repo=True)
-    
+
     def browse(self):
         if not self.checkSettings():
             return
@@ -254,7 +254,7 @@ class ProjectWindow(KMainWindow):
             self.getMediaSize()
         )
         w.show()
-    
+
     def make(self):
         if not self.checkSettings():
             return
@@ -267,7 +267,7 @@ class ProjectWindow(KMainWindow):
         cmd = 'konsole --notabbar --nomenubar --noclose --noframe --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), ppath, f.name)
         subprocess.Popen(["kdesu", "-d", "-u", "root", "-c", cmd])
         self.f = f
-    
+
     def ui2project(self):
         tmp = unicode(self.title.text())
         if tmp:
