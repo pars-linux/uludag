@@ -241,7 +241,7 @@ class NotificationWindow(QtGui.QFrame):
 		# Move the window one step at each quanta:
 		self.move(self.x() + self.step_size_x, self.y() + self.step_size_y)
 		# If we arrived at the destination, stop animation:
-		if abs(self.x() - self.destination_x) < self.step_size_x or abs(self.y() - self.destination_y) < self.step_size_y:
+		if abs(self.x() - self.destination_x) < abs(self.step_size_x) or abs(self.y() - self.destination_y) < abs(self.step_size_y):
 			self.timer.stop()
 			self.currently_animating = False
 			self.move(self.destination_x, self.destination_y)
@@ -264,8 +264,8 @@ class NotificationDisplayer:
 		self.pixel_height = self.percent_height * screen.height() / 100
 		
 		# Configure starting position:
-		self.starting = "lowerRight"
-		# self.starting = "upperRight"
+		# self.starting = "lowerRight"
+		self.starting = "upperRight"
 		# self.starting = "manual"
 		
 		# Manual starting position:
@@ -273,8 +273,8 @@ class NotificationDisplayer:
 		self.start_y = 500
 		
 		# Configure growth direction:
-		self.direction = "up"
-		# self.direction = "down"   
+		# self.direction = "up"
+		self.direction = "down"   
 		
 		# Configure animation timing (milliseconds):
 		self.total_animation_time = 500
