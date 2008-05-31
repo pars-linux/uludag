@@ -178,7 +178,9 @@ class NotificationWindow(QtGui.QFrame):
 		else:
 			self.resize(self.maxWidth, 2 * self.preferred_height)
 		# Move the new notification window to a suitable place:
-		self.MoveImmediately()
+		dest_x, dest_y, lw_x, lw_y  = self.CalculateDestination()
+		self.MoveImmediately(lw_x, lw_y)
+		self.MoveAnimated(dest_x, dest_y)
 		self.show()
 		
 	def Destroy(self):
@@ -189,6 +191,8 @@ class NotificationWindow(QtGui.QFrame):
 	def CalculateDestination(self):
 		dest_x = 0
 		dest_y = 0
+		lw_x = 0
+		lw_y = 0
 		other_handles = self.displayer.notification_windows.keys()
 		other_handles.sort()
 		other_handles = other_handles[:other_handles.index(self.handle)]
@@ -205,6 +209,9 @@ class NotificationWindow(QtGui.QFrame):
 			elif self.displayer.starting == "lowerRight":
 				dest_x = screen.x() + screen.width() - self.width()
 				dest_y = screen.y() + screen.height() - self.height()
+				
+			lw_x = dest_x
+			lw_y = dest_y	
 		else:
 			last_window_handle = other_handles[-1]
 			last_window = self.displayer.notification_windows[last_window_handle]
@@ -215,21 +222,24 @@ class NotificationWindow(QtGui.QFrame):
 			elif self.displayer.direction == "down":
 				dest_x = last_window.destination_x
 				dest_y = last_window.destination_y + last_window.height()
+				
+			lw_x = last_window.x()
+			lw_y = last_window.y()
 		
-		return (dest_x, dest_y)
+		return (dest_x, dest_y, lw_x, lw_y)
 		
-	def MoveImmediately(self):
-		destination = self.CalculateDestination()
-		self.move(destination[0], destination[1])
-		self.destination_x, self.destination_y = destination
+	def MoveImmediately(self, destination_x, destination_y):
+		self.destination_x = destination_x
+		self.destination_y = destination_y
+		self.move(destination_x, destination_y)
 		
-	def MoveAnimated(self):
-		# Calculate the destination point, animation speed etc:
-		destination = self.CalculateDestination()
-		self.destination_x, self.destination_y = destination
+	def MoveAnimated(self, destination_x, destination_y):
+		# Calculate the animation speed etc:
+		self.destination_x = destination_x
+		self.destination_y = destination_y
 		
-		diff_x = destination[0] - self.x()
-		diff_y = destination[1] - self.y()
+		diff_x = destination_x - self.x()
+		diff_y = destination_y - self.y()
 		self.step_size_x = diff_x * self.displayer.time_quanta / self.displayer.total_animation_time
 		self.step_size_y = diff_y * self.displayer.time_quanta / self.displayer.total_animation_time
 		
@@ -285,11 +295,12 @@ class NotificationDisplayer:
     	handle_list = self.notification_windows.keys()
     	handle_list.sort()
     	for handle in handle_list:
-			self.notification_windows[handle].MoveAnimated()
+			dest_x, dest_y, lw_x, lw_y = self.notification_windows[handle].CalculateDestination()
+			self.notification_windows[handle].MoveAnimated(dest_x, dest_y)
     
     def DisplayNotification(self, notif):
     	# We dont want any caption or border on our notification displayer window:
-		window_flags = QtCore.Qt.WindowFlags() | QtCore.Qt.X11BypassWindowManagerHint
+		window_flags = QtCore.Qt.WindowFlags() | QtCore.Qt.X11BypassWindowManagerHint | QtCore.Qt.WindowStaysOnTopHint
     	# Create a new notification window to display the incoming notification and
     	# append the new notification window to the list of currently open notification windows:
 		self.notification_windows[self.nexthandle] = NotificationWindow(displayer = self, handle = self.nexthandle, percent_width = self.percent_width, percent_height = self.percent_height, parent = None, window_flags = window_flags)
