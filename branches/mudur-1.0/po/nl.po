@@ -2,15 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Willem Gielen <w.gielen@gmail.com>, 2007.
+# Willem Gielen <w.gielen@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-28 13:58+0200\n"
-"PO-Revision-Date: 2007-11-12 20:53+0100\n"
+"PO-Revision-Date: 2008-05-31 14:15+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,8 +107,7 @@ msgstr "Opnieuw aankoppelen root bestandssysteem als lezen/schrijven"
 
 #: bin/mudur.py:579
 msgid "Root filesystem could not be mounted read/write :("
-msgstr ""
-"Root bestandssysteem kon niet aangekoppeld worden als 'lezen/schrijven' :("
+msgstr "Root bestandssysteem kon niet aangekoppeld worden als 'lezen/schrijven' :("
 
 #: bin/mudur.py:622
 #, python-format
@@ -133,8 +132,7 @@ msgstr "Fouten in het bestandssysteem gecorrigeerd"
 
 #: bin/mudur.py:670
 msgid "Fsck could not correct all errors, manual repair needed"
-msgstr ""
-"Fsck kon niet alle problemen oplossen. Handmatige reparatie is vereist."
+msgstr "Fsck kon niet alle problemen oplossen. Handmatige reparatie is vereist."
 
 #: bin/mudur.py:683
 msgid "Mounting USB filesystem"
@@ -158,8 +156,7 @@ msgstr "Aankoppelen bestandssystemen op afstand (CTRL-C stopt pogen)"
 
 #: bin/mudur.py:725
 msgid "Mounting skipped with CTRL-C, remote shares are not accessible!"
-msgstr ""
-"Aankoppelen overgeslagen met CTRL-C, delen op afstand is niet toegankelijk!"
+msgstr "Aankoppelen overgeslagen met CTRL-C, delen op afstand is niet toegankelijk!"
 
 #: bin/mudur.py:738
 msgid "Setting disk parameters"
@@ -359,8 +356,7 @@ msgstr ""
 #: bin/network.py:40
 #, python-format
 msgid "Limit excess, please enter a valid number: ( interval: 0 < entry < %s )"
-msgstr ""
-"Limiteer gebruik, geef een valide getal: ( interval: 0 < trefwoord < %s )"
+msgstr "Limiteer gebruik, geef een valide getal: ( interval: 0 < trefwoord < %s )"
 
 #: bin/network.py:139
 #, python-format
@@ -430,9 +426,8 @@ msgid "[encrypted]"
 msgstr "[versleuteld]"
 
 #: bin/network.py:261
-#, fuzzy
 msgid "No profiles present."
-msgstr "Naam van te verwijderen profiel "
+msgstr "Geen profiel aanwezig. "
 
 #: bin/network.py:335
 msgid "Enter new connection name"
@@ -544,3 +539,4 @@ msgstr ""
 #: bin/network.py:526
 msgid "Cancelled"
 msgstr "Geannuleerd"
+

@@ -4,7 +4,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
-# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # Faik Uygur <faik@pardus.org.tr>, 2007.
 msgid ""
@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-26 18:36+0300\n"
-"PO-Revision-Date: 2007-06-03 21:31+0200\n"
+"PO-Revision-Date: 2008-05-31 14:18+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,8 +87,7 @@ msgstr "<b>Toepassen veranderingen repository</b>"
 
 #: src/Preferences.py:212
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
+msgstr "Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
 
 #: src/BasketDialog.py:50 src/BasketDialog.py:55
 msgid "Basket"
@@ -163,8 +162,7 @@ msgid "F1"
 msgstr "F1"
 
 #: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr ""
 "U kunt hier de huidige software repositories en corresponderende adressen "
 "zien"
@@ -436,16 +434,14 @@ msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
 #: src/package-manager.py:454 src/package-manager.py:462
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
 
 #: src/package-manager.py:457
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-"met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
+msgstr "met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
 
 # mand tonen
 #: src/package-manager.py:459 src/package-manager.py:467
@@ -479,13 +475,12 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 in conflict met: [%2]\n"
 
 #: src/package-manager.py:506
-#, fuzzy
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
-"Verwijder de volgende conflicterende pakketten?"
+"Verwijder de conflicterende pakketten van het systeem?"
 
 #: src/package-manager.py:521 src/package-manager.py:582
 #: src/package-manager.py:719
@@ -494,8 +489,7 @@ msgstr "<b>Installeren pakket(ten)</b>"
 
 #: src/package-manager.py:531
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr ""
-"<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
+msgstr "<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
 
 #: src/package-manager.py:534
 msgid ""
@@ -511,8 +505,7 @@ msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>geïnstalleerd</b>."
 
 #: src/package-manager.py:538
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr ""
-"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
+msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
 
 #: src/package-manager.py:541
 msgid ""
@@ -528,8 +521,7 @@ msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>opgewaardeerd</b>."
 
 #: src/package-manager.py:545
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr ""
-"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
+msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
 
 #: src/package-manager.py:548
 msgid ""
@@ -659,8 +651,7 @@ msgstr "Repository &adres"
 
 #: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr ""
-"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
 msgid "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
@@ -673,3 +664,4 @@ msgstr "Repository &naam"
 #: src/RepoDialog.py:81
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
+
