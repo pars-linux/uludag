@@ -140,6 +140,7 @@ class DisplayConfig:
         self.card_vendor_id = self._info.vendor_id
         self.card_product_id = self._info.product_id
 
+        self.desktop_setup = self._info.desktop_setup
         self.outputs = self._info.probe_result["outputs"].split(",")
         self.monitors = self._info.monitors
 
@@ -152,8 +153,6 @@ class DisplayConfig:
 
         if len(self._info.active_outputs) > 1:
             self.secondaryScr = self._info.active_outputs[1]
-
-        self.desktop_setup = self._info.desktop_setup
 
         if self.desktop_setup != "single" and self.secondaryScr is None:
             self.desktop_setup = "single"
@@ -204,9 +203,10 @@ class DisplayConfig:
                 self.modes[output] = modes
                 self.current_modes[output] = self._info.modes.get(output, "800x600")
 
-            if len(self.outputs) == 1:
+            if self.desktop_setup == "single":
                 out = self.outputs[0]
-                self.current_modes[out] = self._rriface.currentResolution("default")
+                if not self._info.modes.has_key(out):
+                    self.current_modes[out] = self._rriface.currentResolution("default")
 
     def apply(self):
         self.applyNow()
