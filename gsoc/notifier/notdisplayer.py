@@ -74,6 +74,9 @@ class NotificationDisplayer:
 		# Configure animation timing (milliseconds):
 		self.total_animation_time = 500
 		self.time_quanta = 18
+		
+		# Configure the lifetime of the notification windows:
+		self.lifetime = 5500
 
     def ChangeLayout(self):
     	# Move all currently open notification windows properly:
@@ -158,6 +161,8 @@ class NotificationDisplayer:
 				self.MoveImmediately(lw_x, lw_y)
 				self.MoveAnimated(dest_x, dest_y)
 				self.show()
+				# Set up the timer to make sure that the window dies when its lifetime is over:
+				QtCore.QTimer().singleShot(self.displayer.lifetime, self.Destroy)
 				
 			def Destroy(self):
 				self.displayer.notification_windows.pop(self.handle)
