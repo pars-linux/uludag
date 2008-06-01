@@ -16,6 +16,14 @@ if __name__ == "__main__":
     while 1:
         line = raw_input(_("Enter a command: ")).decode(sys.stdin.encoding)
         words = line.split()
+        sections = line.split("\"")
+        if sections.__len__() < 5:
+        	print _("Wrong command")
+        	continue
+        title = sections[1]
+        text = sections[3]
+        if sections.__len__() == 7:
+        	icon_path = sections[5]
         result = None
         if words.__len__() > 0:
             command = words[0]
@@ -26,9 +34,14 @@ if __name__ == "__main__":
             elif command == "echo":
                 result = nt.Echo(line[5:])
             elif command == "notify":
-                this_notification = Notification(line[7:])
-                this_notification.Pack()
-                result = nt.SendNotification(this_notification)
+            	if sections.__len__() == 7:
+                	this_notification = Notification(notification_title = title, notification_text = text, notification_icon_path = icon_path)
+                	result = nt.SendNotification(this_notification)
+            	elif sections.__len__() == 5:
+                	this_notification = Notification(notification_title = title, notification_text = text)
+                	result = nt.SendNotification(this_notification)
+                else:
+                	print _("Command format: notify notification_title notification_text")
             else:
                 print _("Wrong command")
         if result != None:

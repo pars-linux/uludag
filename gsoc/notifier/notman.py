@@ -78,7 +78,7 @@ class NotificationManager(QApplication):
     def HandleNotification(self):
         # If the notification queue is not empty, handle the first notification in the queue:
         if self.message_queue != []:
-            print _("Handling notification with text: %s") % self.message_queue[0].text
+            print _("Handling notification with text: %s") % self.message_queue[0].notification_text
             self.notification_displayer.DisplayNotification(self.message_queue[0])
             self.message_queue = self.message_queue[1:]
             print _("Queue state: %s") % self.message_queue
@@ -106,7 +106,7 @@ class NotXFace(dbus.service.Object):
         	# Append the notification to the queue of the notification manager:			
 			self.notification_manager.message_queue.append(notification)
 			print _("Notification successfully received. Sender's bus name: %s") % sender
-			print _("Received message text: %s") % notification.text
+			print _("Received message text: %s") % notification.notification_text
 			print _("Added notification to queue.")
 			# Handle the notification in the other thread (in case handling the notification takes too much time, we dont want to stall the requestor):
 			self.notification_manager.emit(QtCore.SIGNAL("handleEvent()"))
