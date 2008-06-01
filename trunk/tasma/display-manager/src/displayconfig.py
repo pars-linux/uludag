@@ -141,6 +141,7 @@ class DisplayConfig:
         self.card_product_id = self._info.product_id
 
         self.outputs = self._info.probe_result["outputs"].split(",")
+        self.monitors = self._info.monitors
 
         self._flags = self._info.probe_result.get("flags", "").split(",")
 
@@ -203,6 +204,10 @@ class DisplayConfig:
                 self.modes[output] = modes
                 self.current_modes[output] = self._info.modes.get(output, "800x600")
 
+            if len(self.outputs) == 1:
+                out = self.outputs[0]
+                self.current_modes[out] = self._rriface.currentResolution("default")
+
     def apply(self):
         self.applyNow()
         time.sleep(1)
@@ -216,15 +221,30 @@ class DisplayConfig:
                 "desktop-setup":    self.desktop_setup
                 }
 
-        firstScreen = {
-                "output":   self.primaryScr,
-                "mode":     self.current_modes[self.primaryScr],
-                }
+        def screenInfo(output):
+            screen = {
+                    "output":   output,
+                    "mode":     self.current_modes[output]
+                    }
 
-        secondScreen = {"output":   ""}
-        if self.desktop_setup != "single":
-            secondScreen["output"] = self.secondaryScr
-            secondScreen["mode"] = self.current_modes[self.secondaryScr]
+            if self.monitors.has_key(output):
+                mon = self.monitors[output]
+                opts = {
+                    "monitor-vendor":   mon.vendor,
+                    "monitor-model":    mon.model,
+                    "monitor-hsync":    mon.hsync,
+                    "monitor-vref":     mon.vref
+                    }
+                screen.update(opts)
+
+            return screen
+
+        firstScreen = screenInfo(self.primaryScr)
+
+        if self.desktop_setup == "single":
+            secondScreen = {"output":   ""}
+        else:
+            secondScreen = screenInfo(self.secondaryScr)
 
         ch = comlink.callHandler("zorg", "Xorg.Display", "setupScreens", "tr.org.pardus.comar.xorg.display.set")
         ch.registerDone(self.done)
@@ -264,6 +284,7 @@ class DisplayConfig:
             tempFile.setAutoDelete(True)
 
             cmd = ["aticonfig",
+                    "--effective", "startup",
                     "--nobackup", "--output", tempFile.name(),
                     "--dtop", self.desktop_setup,
                     ]

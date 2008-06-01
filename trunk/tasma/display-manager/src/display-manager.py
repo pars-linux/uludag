@@ -45,15 +45,6 @@ def AboutData():
         'bugs@pardus.org.tr'
     )
 
-class DriverItem(KListViewItem):
-    def __init__(self, parent, name, desc):
-        QListViewItem.__init__(self, parent)
-
-        self.name = name
-        self.desc = desc
-        self.setText(0, name)
-        self.setText(1, desc)
-
 class MonitorDialog(monitordialog.monitorDialog):
     def __init__(self, parent):
         monitordialog.monitorDialog.__init__(self, parent)
@@ -72,12 +63,29 @@ class MonitorDialog(monitordialog.monitorDialog):
             self.listViewMonitors.setOpen(item,False)
 
             for eachModel in allMonitorInfos[eachVendor]:
-                subitem = KListViewItem(item, eachModel["eisa_id"], eachModel["hsync"], eachModel["vref"], eachModel["is_dpms"])
-                subitem.setText(0, eachModel["model"])
+                subitem = KListViewItem(item, eachModel["model"], eachVendor, eachModel["hsync"], eachModel["vref"])
+                #subitem.setText(0, eachModel["model"])
 
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
         self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept)
-        self.listViewMonitors.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), parent.getSelectedMonitor)
+        self.listViewMonitors.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), self.getSelectedMonitor)
+
+    def getSelectedMonitor(self):
+        if self.listViewMonitors.currentItem().key(1,0) == "parent":
+            self.groupBoxDetails.hide()
+        else:
+            self.groupBoxDetails.show()
+            self.lineEditHorizontal.setText(self.listViewMonitors.currentItem().key(2, 0))
+            self.lineEditVertical.setText(self.listViewMonitors.currentItem().key(3, 0))
+
+class DriverItem(KListViewItem):
+    def __init__(self, parent, name, desc):
+        QListViewItem.__init__(self, parent)
+
+        self.name = name
+        self.desc = desc
+        self.setText(0, name)
+        self.setText(1, desc)
 
 class CardDialog(driverdialog.VideoCard):
     def __init__(self, parent):
@@ -187,10 +195,8 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
 
         self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
-        self.connect(self.buttonMonitor1, SIGNAL("clicked()"), self.slotSelectMonitor)
-        self.connect(self.buttonMonitor2, SIGNAL("clicked()"), self.slotSelectMonitor)
-
-        self.mntr =  MonitorDialog(self)
+        self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
+        self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
 
         self.getCardInfo()
         self.detectDisplays()
@@ -257,14 +263,6 @@ class MainWidget(dm_mainview.mainWidget):
         for identifier in self.identifiers:
             identifier.hide()
 
-    def getSelectedMonitor(self):
-        if self.mntr.listViewMonitors.currentItem().key(1,0) == "parent":
-            self.mntr.groupBoxDetails.hide()
-        else:
-            self.mntr.groupBoxDetails.show()
-            self.mntr.lineEditHorizontal.setText(self.mntr.listViewMonitors.currentItem().key(1, 0))
-            self.mntr.lineEditVertical.setText(self.mntr.listViewMonitors.currentItem().key(2, 0))
-
     def duplicateOutputs(self):
         message = i18n("Sorry, but you can use one device for each output.\nTry to select another output.")
         QMessageBox.warning(self, i18n("Duplicate Outputs!"), message, QMessageBox.Ok, QMessageBox.NoButton)
@@ -273,7 +271,10 @@ class MainWidget(dm_mainview.mainWidget):
         if resolution == None:
             resolution = self.currentModes[self.currentOutput]
 
-        x, y = resolution.split("x")
+        if "x" not in resolution:
+            x, y = 4, 3
+        else:
+            x, y = resolution.split("x")
 
         if float(x)/float(y) >= 1.6:
             icon = self.iconWide
@@ -385,17 +386,18 @@ class MainWidget(dm_mainview.mainWidget):
 
     def getMonitorInfo(self):
         msgpnp = i18n("Plug and Play Monitor")
+        monitors = self.displayConfiguration.monitors
 
-        if self.displayConfiguration._info.monitors.has_key(self.displayConfiguration.primaryScr):
-            self.textMonitor1.setText("Manually selected monitor")
-        else:
-            self.textMonitor1.setText(msgpnp)
+        def writeInfo(out, label):
+            if monitors.has_key(out):
+                label.setText("%s\n%s" % (monitors[out].model, monitors[out].vendor))
+            else:
+                label.setText(msgpnp)
+
+        writeInfo(self.displayConfiguration.primaryScr, self.textMonitor1)
 
         if self.displayConfiguration.desktop_setup != "single":
-            if self.displayConfiguration._info.monitors.has_key(self.displayConfiguration.secondaryScr):
-                self.textMonitor2.setText("Manually selected monitor")
-            else:
-                self.textMonitor2.setText(msgpnp)
+            writeInfo(self.displayConfiguration.secondaryScr, self.textMonitor2)
 
     def slotApply(self):
         self.displayConfiguration.true_color = self.checkBoxTrueColor.isChecked()
@@ -409,9 +411,32 @@ class MainWidget(dm_mainview.mainWidget):
         if dlg.exec_loop() == QDialog.Accepted:
             item = dlg.listViewVideoCard.currentItem()
             self.displayConfiguration.changeDriver(item.name)
+            self.getCardInfo()
 
-    def slotSelectMonitor(self):
-        self.mntr.exec_loop()
+    def slotSelectMonitor(self, nscr):
+        dlg = MonitorDialog(self)
+        if dlg.exec_loop() == QDialog.Accepted:
+            if nscr == 1:
+                out = self.displayConfiguration.primaryScr
+            else:
+                out = self.displayConfiguration.secondaryScr
+
+            if dlg.checkBoxPlugPlay.isChecked():
+                if self.displayConfiguration.monitors.has_key(out):
+                    del self.displayConfiguration.monitors[out]
+            else:
+                from zorg.probe import Monitor
+
+                item = dlg.listViewMonitors.currentItem()
+                mon = Monitor()
+                mon.model = str(item.key(0, 0))
+                mon.vendor = str(item.key(1, 0))
+                mon.hsync = str(item.key(2, 0)).replace(" ", "")
+                mon.vref = str(item.key(3, 0)).replace(" ", "")
+
+                self.displayConfiguration.monitors[out] = mon
+
+            self.getMonitorInfo()
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
