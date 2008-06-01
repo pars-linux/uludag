@@ -18,6 +18,7 @@ class Notifier:
         return self.iface.EchoSender(message_string)
     
     def SendNotification(self,  notification):
+    	notification.Pack()
         pickled_notification = pickle.dumps(notification)
         pickled_result = self.iface.AddNotification(pickled_notification)
         notification = pickle.loads(pickled_result.__str__())
