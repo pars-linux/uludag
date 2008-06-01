@@ -105,6 +105,8 @@ def getMonitorInfos():
         if len(monitor) == 5:
             monitor.append('0')
 
+        monitor = map(str.strip, monitor)
+
         if len(monitor) == 6:
             if not monitor[0] in vendor:
                 vendor[monitor[0]] = [{ "model":    monitor[1],
