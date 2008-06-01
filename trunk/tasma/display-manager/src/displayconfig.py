@@ -154,6 +154,9 @@ class DisplayConfig:
         if len(self._info.active_outputs) > 1:
             self.secondaryScr = self._info.active_outputs[1]
 
+        self.currentPrimaryScr = self.primaryScr
+        self.currentSecondaryScy = self.secondaryScr
+
         if self.desktop_setup != "single" and self.secondaryScr is None:
             self.desktop_setup = "single"
 
@@ -182,11 +185,21 @@ class DisplayConfig:
                 else:
                     self.current_modes[output] = self.modes[output][0]
 
+            primary = self._info.active_outputs[0]
+            enabled_outputs = []
+            for output in self._rriface.outputs:
+                if output.current:
+                    enabled_outputs.append(output.name)
+                    if output.name == primary:
+                        break
+            else:
+                self._info.active_outputs = enabled_outputs
+
         else:
             if self._info.driver == "fglrx":
                 connected_outputs, enabled_outputs = fglrxOutputInfo()
                 outputs = connected_outputs + enabled_outputs
-                self.active_outputs = enabled_outputs
+                self._info.active_outputs = enabled_outputs
 
                 for out in outputs:
                     if out not in self.outputs:
@@ -204,7 +217,7 @@ class DisplayConfig:
                 self.current_modes[output] = self._info.modes.get(output, "800x600")
 
             if self.desktop_setup == "single":
-                out = self.outputs[0]
+                out = self._info.active_outputs[0]
                 if not self._info.modes.has_key(out):
                     self.current_modes[out] = self._rriface.currentResolution("default")
 
@@ -297,7 +310,9 @@ class DisplayConfig:
 
             run(*cmd)
 
-            if self.desktop_setup == "single":
+        if not self._randr12:
+            if self.desktop_setup == "single" and \
+                self.currentPrimaryScr == self.primaryScr:
                 run("xrandr", "-s", self.current_modes[self.primaryScr])
 
     def changeDriver(self, driver):
