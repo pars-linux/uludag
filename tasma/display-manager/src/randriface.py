@@ -43,7 +43,8 @@ class RandRIface:
 
                     if "+" in line:
                         output.preferred = mode
-                    elif "*" in line:
+
+                    if "*" in line:
                         output.current = mode
 
     def getResolutions(self, output):
