@@ -1,4 +1,4 @@
-BINDIR      := $(shell [ -x ../../gfxboot-compile ] && echo ../../ )
+BINDIR      := /usr/sbin/
 
 BASED_ON     = $(shell perl -ne 'print if s/^based_on=//' config)
 
@@ -8,7 +8,7 @@ else
 PREPARED     = $(shell [ -f .prepared ] && echo 1)
 endif
 
-ADDDIR       = ../../bin/adddir
+ADDDIR       = /usr/share/gfxboot/bin/adddir
 BFLAGS       = -O -v -L ../..
 
 SUBDIRS      = fonts help-boot help-install po src
