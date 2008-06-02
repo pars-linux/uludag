@@ -345,6 +345,7 @@ class MainWidget(dm_mainview.mainWidget):
             self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
             self.screenImage2.show()
             self.groupBoxSecondaryScreen.show()
+            self.getMonitorInfo()
             self.setDualModeOptions(self.radioBoxExtended.isChecked())
         else:
             self.screenImage2.hide()
