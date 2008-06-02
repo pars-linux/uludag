@@ -384,3 +384,28 @@ msgstr ""
 msgid "Check Installation Media"
 msgstr ""
 
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg
+msgid "Graphical Display"
+msgstr ""
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_default
+msgid "Default"
+msgstr ""
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_safe
+msgid "Failsafe"
+msgstr ""
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_probe
+msgid "Reprobe"
+msgstr ""
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_off
+msgid "Off"
+msgstr ""
+
