@@ -50,7 +50,6 @@ class MonitorDialog(monitordialog.monitorDialog):
         monitordialog.monitorDialog.__init__(self, parent)
 
         self.groupBoxDetails.hide()
-        self.checkBoxPlugPlay.setEnabled(False)
         self.pushButtonOk.setEnabled(False)
 
         # get a dict of monitor.db like:
@@ -77,11 +76,9 @@ class MonitorDialog(monitordialog.monitorDialog):
     def getSelectedMonitor(self):
         if self.listViewMonitors.currentItem().key(1,0) == "parent":
             self.groupBoxDetails.hide()
-            self.checkBoxPlugPlay.setEnabled(False)
             self.pushButtonOk.setEnabled(False)
         else:
             self.groupBoxDetails.show()
-            self.checkBoxPlugPlay.setEnabled(True)
             self.pushButtonOk.setEnabled(True)
             self.lineEditHorizontal.setText(self.listViewMonitors.currentItem().key(2, 0))
             self.lineEditVertical.setText(self.listViewMonitors.currentItem().key(3, 0))
