@@ -1,4 +1,4 @@
-BINDIR      := $(shell [ -x ../../../gfxboot-compile ] && echo ../../../ )
+BINDIR      := /usr/sbin/
 
 GFXBOOT_COMPILE = $(BINDIR)gfxboot-compile
 BFLAGS       = -O -v -L ../..

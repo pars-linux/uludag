@@ -1,8 +1,8 @@
-BINDIR    := $(shell [ -x ../../../gfxboot-compile ] && echo ../../../ )
+BINDIR    := /usr/sbin/
 
 PRODUCT   = $(shell perl -ne 'print if s/^product=//' ../config)
 
-HELP2TXT  = ../../../bin/help2txt
+HELP2TXT  = /usr/share/gfxboot/bin/help2txt
 
 HELPFILES = $(addsuffix .hlp,$(basename $(wildcard *.html)))
 
