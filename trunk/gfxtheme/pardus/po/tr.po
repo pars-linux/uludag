@@ -403,3 +403,29 @@ msgstr ""
 #. txt_mediacheck
 msgid "Check Installation Media"
 msgstr ""
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg
+msgid "Graphical Display"
+msgstr "Grafik Ekran"
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_default
+msgid "Default"
+msgstr "Öntanımlı"
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_safe
+msgid "Failsafe"
+msgstr "Güvenli kip"
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_probe
+msgid "Probe Again"
+msgstr "Tekrar tanı"
+
+#. menu item for zorg variant (cf. txt_zorg)
+#. txt_zorg_off
+msgid "Off"
+msgstr "Kapalı"
+
