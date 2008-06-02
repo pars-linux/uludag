@@ -1547,7 +1547,7 @@ ptheme {
 /menu.start.y          "mainmenu.pos"           253 170 gfxconfig.set.int2
 /menu.max.entries      "mainmenu.entries"             8 gfxconfig.set.int
 /boot.pos.x
-/boot.pos.y            "bootopt.pos"            263 480 gfxconfig.set.int2
+/boot.pos.y            "bootopt.pos"            160 480 gfxconfig.set.int2
 /panel.normal.fg       "panel.normal.fg"          white gfxconfig.set.int
 /panel.title.fg        "panel.title.fg"           white gfxconfig.set.int
 /panel.f-key.fg        "panel.f-key.fg"           black gfxconfig.set.int
