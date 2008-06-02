@@ -19,6 +19,7 @@
 %% include dia_bits.inc
 %% include dia_about.inc
 %% include dia_kernelopts.inc
+%% include dia_zorg.inc
 %% include panel.inc
 %% include keytables.inc
 %% include locale.inc
