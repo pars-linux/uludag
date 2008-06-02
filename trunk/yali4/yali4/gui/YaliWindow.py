@@ -113,7 +113,9 @@ class Widget(Ui_YaliMain):
             self.helpContent.setText(_w.help)
             # shown functions contain necessary instructions before
             # showing a stack ( updating gui, disabling some buttons etc. )
+            ctx.mainScreen.processEvents()
             _w.update()
+            ctx.mainScreen.processEvents()
             _w.shown()
 
     # create all widgets and add inside stack
