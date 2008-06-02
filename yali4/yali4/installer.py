@@ -408,6 +408,23 @@ class Yali:
                 ctx.debugger.log("xorg.conf and other files merged.")
             return True
 
+        def copyPisiIndex():
+            target = os.path.join(ctx.consts.target_dir, "var/lib/pisi/index/%s/" % ctx.consts.pardus_repo_name)
+
+            # Copy package index
+            import shutil
+            shutil.copyfile(ctx.consts.pisiIndexFile, target)
+            shutil.copyfile(ctx.consts.pisiIndexFileSum, target)
+
+            # Extract the index
+            import bz2
+            pureIndex = file(os.path.join(target,"pisi-index.xml","w"))
+            pureIndex.write(bz2.decompress(open(ctx.consts.pisiIndexFile).read()))
+            pureIndex.close()
+
+            ctx.debugger.log("pisi index files copied.")
+            return True
+
         def setPackages():
             global bus
             if self.install_type == YALI_OEMINSTALL:
@@ -438,6 +455,7 @@ class Yali:
                  {"text":"Setting Root Password...","operation":setRootPassword},
                  {"text":"Adding Users...","operation":addUsers},
                  {"text":"Writing Console Data...","operation":writeConsoleData},
+                 {"text":"Copy Pisi index...","operation":copyPisiIndex},
                  {"text":"Migrating X.org Configuration...","operation":migrateXorgConf}]
 
         stepsBase = [{"text":"Setting misc. package configurations...","operation":setPackages},
