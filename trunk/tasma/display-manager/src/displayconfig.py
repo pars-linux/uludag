@@ -10,6 +10,7 @@ from kdecore import *
 from kdeui import *
 
 import zorg.config
+from zorg.consts import *
 from zorg.utils import *
 
 import randriface
@@ -163,6 +164,8 @@ class DisplayConfig:
         self.depths = self._info.probe_result.get("depths", "16,24").split(",")
         self.true_color = self._info.depth == "24"
 
+        self.driver_changed = False
+
     def detect(self):
         self._rriface = randriface.RandRIface()
         #self._randr12 = "randr12" in self._flags
@@ -222,13 +225,32 @@ class DisplayConfig:
                     self.current_modes[out] = self._rriface.currentResolution("default")
 
     def apply(self):
-        self.applyNow()
-        time.sleep(1)
-
         if self.true_color:
             depth = "24"
         else:
             depth = "16"
+
+        if self.driver_changed:
+            config = {
+                    "driver":   self._info.driver + package_sep + self._info.package,
+                    "depth":    depth
+                    }
+
+            if self.monitors.has_key(self.primaryScr):
+                mon = self.monitors[self.primaryScr]
+                config["monitor-vendor"] = mon.vendor
+                config["monitor-model"]  = mon.model
+                config["monitor-hsync"]  = mon.hsync
+                config["monitor-vref"]   = mon.vref
+
+            ch = comlink.callHandler("zorg", "Xorg.Display", "setPendingConfig", "tr.org.pardus.comar.xorg.display.set")
+            ch.registerDone(self.done)
+            ch.call(config)
+            return
+
+        self.applyNow()
+        time.sleep(1)
+
         options = {
                 "depth":            depth,
                 "desktop-setup":    self.desktop_setup
@@ -316,9 +338,14 @@ class DisplayConfig:
                 run("xrandr", "-s", self.current_modes[self.primaryScr])
 
     def changeDriver(self, driver):
-        ch = comlink.callHandler("zorg", "Xorg.Display", "changeDriver", "tr.org.pardus.comar.xorg.display.set")
-        ch.registerDone(self.done)
-        ch.call(driver)
+        self.driver_changed = True
+        if package_sep in driver:
+            drv, pkg = driver.split(package_sep, 1)
+        else:
+            drv, pkg = driver, "xorg-video"
+
+        self._info.driver = drv
+        self._info.package = pkg
 
     def done(self):
         KMessageBox.information(None, i18n("Configuration has been saved. Some changes may take effect after restarting your computer."))
