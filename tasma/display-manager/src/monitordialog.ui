@@ -157,14 +157,6 @@
         </widget>
     </grid>
 </widget>
-<connections>
-    <connection>
-        <sender>checkBoxPlugPlay</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>listViewMonitors</receiver>
-        <slot>setDisabled(bool)</slot>
-    </connection>
-</connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>

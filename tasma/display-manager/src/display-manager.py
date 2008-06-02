@@ -50,6 +50,7 @@ class MonitorDialog(monitordialog.monitorDialog):
         monitordialog.monitorDialog.__init__(self, parent)
 
         self.groupBoxDetails.hide()
+        self.pushButtonOk.setEnabled(False)
 
         # get a dict of monitor.db like:
         # vendor["Siemens"] = {'Siemens Nixdorf': [{'eisa_id': '','hsync': '','is_dpms': '','model': '','vref': ''}}
@@ -71,12 +72,13 @@ class MonitorDialog(monitordialog.monitorDialog):
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
         self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept)
         self.listViewMonitors.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), self.getSelectedMonitor)
+        self.connect(self.checkBoxPlugPlay,SIGNAL("toggled(bool)"),self.listViewMonitors.setDisabled)
+        self.connect(self.checkBoxPlugPlay,SIGNAL("toggled(bool)"),self.groupBoxDetails.setDisabled)
+        self.connect(self.checkBoxPlugPlay,SIGNAL("toggled(bool)"),self.pushButtonOk.setEnabled)
 
     def getSelectedMonitor(self):
         if self.listViewMonitors.currentItem().key(1,0) == "parent":
             self.groupBoxDetails.hide()
-            if self.checkBoxPlugPlay.isChecked:
-                self.pushButtonOk.setEnabled(False)
         else:
             self.groupBoxDetails.show()
             self.pushButtonOk.setEnabled(True)
