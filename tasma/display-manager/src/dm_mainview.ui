@@ -174,7 +174,7 @@
                             </widget>
                             <widget class="QPushButton" row="1" column="2">
                                 <property name="name">
-                                    <cstring>iconSwap</cstring>
+                                    <cstring>buttonSwap</cstring>
                                 </property>
                                 <property name="enabled">
                                     <bool>true</bool>
