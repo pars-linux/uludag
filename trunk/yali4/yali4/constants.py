@@ -96,6 +96,10 @@ consts.kahyaParam = "kahya"
 consts.oemInstallParam = "oeminstall"
 consts.oemInstallFile = join(consts.data_dir,"data/firstBoot.xml")
 
+# pisi index files
+consts.pisiIndexFile = join(consts.data_dir,"data/pisi-index.xml.bz2")
+consts.pisiIndexFileSum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
+
 try:
     consts.lang = locale.getdefaultlocale()[0][:2]
 except:
