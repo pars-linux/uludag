@@ -345,8 +345,8 @@ class MainWidget(dm_mainview.mainWidget):
             self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
             self.screenImage2.show()
             self.groupBoxSecondaryScreen.show()
-            self.getMonitorInfo()
             self.setDualModeOptions(self.radioBoxExtended.isChecked())
+            self.getMonitorInfo()
         else:
             self.screenImage2.hide()
             self.screenImage1.setState(QButton.On)
