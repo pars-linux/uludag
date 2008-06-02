@@ -170,7 +170,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     int state = netInfo();
     if (state >= 1) { // assume no network manager / networkstatus
         dynamicInfo += startStock( i18n( "Network" ) );
-        dynamicInfo += addToStock( "network", netStatus( state ), "127.0.0.1" );
+        dynamicInfo += addToStock( "network", netStatus( state ));
         dynamicInfo += finishStock();
     }
 
@@ -324,54 +324,29 @@ QString kio_sysinfoProtocol::diskInfo()
 
             result +=   QString("<tr class=\"media\">"
                                 "   <td>"
-                                "   <a href=\"media:/%1\">"
-                                "       <img src=\"%2\" />"
-                                "   </a></td><td>"
-                                "       <span class=\"detail\">[ %3 ]<br><span style=\"float:right\">[ %4 ]</span></span>"
-                                "       <a href=\"media:/%5\">"
-                                "       %6<br><span class=\"mediaDf\">%7</span><br></a>"
-                                "       <img class=\"diskusage\" src=\"file:%8\" width=\"%9%\">"
+                                "   <a href=\"media:/%1\" title=\"%2\">"
+                                "       <img src=\"%3\" />"
+                                "   </a></td>").
+                                arg( di.name ).
+                                arg( tooltip+" "+di.deviceNode ).
+                                arg( icon( di.iconName, 48, true) );
+
+            result +=   QString("   <td>"
+                                "       <span class=\"detail\">[ %1 ]<br><span style=\"float:right\">[ %2 ]</span></span>"
+                                "       <a href=\"media:/%3\" title=\"%4\">"
+                                "       %5<br><span class=\"mediaDf\">%6</span><br></a>"
+                                "       <img class=\"diskusage\" src=\"file:%7\" width=\"%8%\">"
                                 "   </td>"
                                 "   <td></td>"
                                 "</tr>").
-                                arg( di.name ).
-                                arg( icon( di.iconName, 48, true) ).
                                 arg( mountState ).
                                 arg( di.fsType ).
                                 arg( di.name ).
+                                arg( tooltip+" "+di.deviceNode ).
                                 arg( label ).
                                 arg( sizeStatus ).
                                 arg( locate( "data", "sysinfo/themes/2008/images/progress.png" ) ).
                                 arg( percent );
-            /*
-            result += QString( "<tr>"
-                               "    <td>%1</td>"
-                               "    <td width=\"100%\">"
-                               "        <table width=\"100%\">"
-                               "            <tr>"
-                               "                <td>"
-                               "                    <a href=\"media:/%2\" title=\"%3\">%4</a> [%5]"
-                               "                    " + i18n("Total") + ": <b>%6</b> " + i18n("Available") + ": <b>%7</b>"
-                               "                </td>"
-                               "            </tr>"
-                               "            <tr height=\"10px\">"
-                               "                <td class=\"bar\">"
-                               "                    %8"
-                               "                </td>"
-                               "            </tr>"
-                               "        </table>"
-                               "    </td>"
-                               "</tr>"
-                               "<tr></tr>" ).
-                                arg( icon( di.iconName, 48 ) ).
-                                arg( di.name ).
-                                arg( tooltip+" "+di.deviceNode ).
-                                arg( label ).
-                                arg( di.fsType ).
-                                arg( formattedUnit( di.total,0 ) ).
-                                arg( formattedUnit( di.avail,0 ) ).
-                                arg( bar );
-            */
         }
     }
     return result;
