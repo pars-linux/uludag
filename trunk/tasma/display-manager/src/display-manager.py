@@ -165,6 +165,9 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.pixVideoCard.setPixmap(getIconSet("video_card", KIcon.User).pixmap(QIconSet.Automatic, QIconSet.Normal))
 
+        # use reload icon for now. will be replaced with swap icon later.
+        self.iconSwap.setPixmap( getIconSet("reload", KIcon.Toolbar).pixmap(QIconSet.Automatic, QIconSet.Normal))
+
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
 
