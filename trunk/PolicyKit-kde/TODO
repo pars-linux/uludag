@@ -1,5 +1,6 @@
 IMPORTANT:
 * Fix admin user selection support (another eventloop solution may be required)
+* Fix dbus-qt3-backport's activation problem. Now, we can't use policykit-kde with dbus activation, it starts with kde.
 
 LESS IMPORTANT:
 * Do not send same DBus exceptions to all errors
