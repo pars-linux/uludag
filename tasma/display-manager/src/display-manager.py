@@ -345,12 +345,14 @@ class MainWidget(dm_mainview.mainWidget):
             self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
             self.screenImage2.show()
             self.groupBoxSecondaryScreen.show()
+            self.iconSwap.show()
             self.setDualModeOptions(self.radioBoxExtended.isChecked())
             self.getMonitorInfo()
         else:
             self.screenImage2.hide()
             self.screenImage1.setState(QButton.On)
             self.groupBoxSecondaryScreen.hide()
+            self.iconSwap.hide()
             self.displayConfiguration.desktop_setup = "single"
 
     def switchBetweenScreens(self):

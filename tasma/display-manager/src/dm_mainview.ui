@@ -176,6 +176,9 @@
                                 <property name="name">
                                     <cstring>iconSwap</cstring>
                                 </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
                                 <property name="maximumSize">
                                     <size>
                                         <width>100</width>
