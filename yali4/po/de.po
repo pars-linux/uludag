@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-13 13:59+0300\n"
+"POT-Creation-Date: 2008-06-02 15:57+0300\n"
 "PO-Revision-Date: 2008-06-01 23:04+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -20,37 +20,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: yali4/gui/Ui/autopartquestion.py:77 yali4/gui/Ui/datetimewidget.py:97
-#: yali4/gui/Ui/goodbyewidget.py:54 yali4/gui/Ui/partedit.py:173
+#: yali4/gui/Ui/autopartquestion.py:64 yali4/gui/Ui/datetimewidget.py:80
+#: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:142
 msgid "Form"
 msgstr "Form"
 
-#: yali4/gui/Ui/autopartquestion.py:78
+#: yali4/gui/Ui/autopartquestion.py:65
 msgid ""
 "It seems there is more than one partition for resizing. In this case you can "
 "select a partition from the list below or YALI will select one."
-msgstr "Es scheint, dass für die Grössenänderung mehr als eine Partition existieren. Sie können aus der nachstehenden Liste eine Partition auswählen oder YALI eins auswählen lassen."
+msgstr ""
+"Es scheint, dass für die Grössenänderung mehr als eine Partition existieren. "
+"Sie können aus der nachstehenden Liste eine Partition auswählen oder YALI "
+"eins auswählen lassen."
 
-#: yali4/gui/Ui/autopartquestion.py:79
+#: yali4/gui/Ui/autopartquestion.py:66
 msgid "Choose the best target for resizing (recommended)"
 msgstr "Passendes Ziel für die Grössenänderung auswählen (empohlen)"
 
-#: yali4/gui/Ui/autopartquestion.py:80
+#: yali4/gui/Ui/autopartquestion.py:67
 msgid "I will choose the target"
 msgstr "Ich werde das Ziel auswählen"
 
-#: yali4/gui/Ui/autopartquestion.py:81
+#: yali4/gui/Ui/autopartquestion.py:68
 msgid "Use Selected"
 msgstr "Benutzer ausgewählt"
 
-#: yali4/gui/Ui/autopartwidget.py:110 yali4/gui/Ui/bootloaderwidget.py:90
-#: yali4/gui/Ui/checkcdwidget.py:86 yali4/gui/Ui/keyboardwidget.py:70
-#: yali4/gui/Ui/kickerwidget.py:27 yali4/gui/Ui/rootpasswidget.py:207
-#: yali4/gui/Ui/setupuserswidget.py:187 yali4/gui/Ui/welcomewidget.py:109
+#: yali4/gui/Ui/autopartwidget.py:90 yali4/gui/Ui/bootloaderwidget.py:74
+#: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
+#: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
+#: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:89
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:111
+#: yali4/gui/Ui/autopartwidget.py:91
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -69,34 +72,37 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:</span></p></"
-"body></html>"
+"size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:"
+"</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:115
+#: yali4/gui/Ui/autopartwidget.py:95
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:117
-msgid "Automatically partition try to use free space or resize current partitions"
-msgstr "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden oder ändert die Grösse der aktuellen Partitionen"
+#: yali4/gui/Ui/autopartwidget.py:97
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
+msgstr ""
+"Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
+"oder ändert die Grösse der aktuellen Partitionen"
 
-#: yali4/gui/Ui/autopartwidget.py:118 yali4/gui/Ui/autopartwidget.py:120
-#: yali4/gui/Ui/autopartwidget.py:122
+#: yali4/gui/Ui/autopartwidget.py:98 yali4/gui/Ui/autopartwidget.py:100
+#: yali4/gui/Ui/autopartwidget.py:102
 msgid "...."
 msgstr "...."
 
-#: yali4/gui/Ui/autopartwidget.py:119
+#: yali4/gui/Ui/autopartwidget.py:99
 msgid "Automatically partition and format selected disk!"
 msgstr "Gewähltes Laufwerk automatisch partitionieren und formatieren!"
 
-#: yali4/gui/Ui/autopartwidget.py:121
+#: yali4/gui/Ui/autopartwidget.py:101
 msgid "No, I'll partition my disk manually."
 msgstr "Nein, ich werde meine Festplatte manuell partitionieren."
 
-#: yali4/gui/Ui/autopartwidget.py:123
+#: yali4/gui/Ui/autopartwidget.py:103
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -115,14 +121,14 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Wählen Sie die Festplatte aus, um die ausgewählte Methode zu übernehmen:</"
-"span></p></body></html>"
+"size:12pt; font-weight:600;\">2. Wählen Sie die Festplatte aus, um die "
+"ausgewählte Methode zu übernehmen:</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:127
+#: yali4/gui/Ui/autopartwidget.py:107
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
-#: yali4/gui/Ui/bootloaderwidget.py:91
+#: yali4/gui/Ui/bootloaderwidget.py:75
 msgid ""
 "<b>Do you want to write boot loader (GRUB) to your hard disk's master boot "
 "record?</b>\n"
@@ -145,33 +151,33 @@ msgstr ""
 "vorhanden) konfigurieren, um Ihr neu installiertes Pardus starten zu können."
 "</p>"
 
-#: yali4/gui/Ui/bootloaderwidget.py:97
+#: yali4/gui/Ui/bootloaderwidget.py:81
 msgid "Where do you want to install the bootlader ?"
 msgstr "Wohin möchten Sie den Boot-Loader installieren?"
 
-#: yali4/gui/Ui/bootloaderwidget.py:98
+#: yali4/gui/Ui/bootloaderwidget.py:82
 msgid "Install to first bootable disk (recommended)"
 msgstr "Auf die erste bootbare Festplatte installieren (empfohlen)"
 
-#: yali4/gui/Ui/bootloaderwidget.py:99
+#: yali4/gui/Ui/bootloaderwidget.py:83
 msgid "Install to Pardus installed partition"
 msgstr "Auf die Partition, auf der Pardus installiert ist, installieren"
 
-#: yali4/gui/Ui/bootloaderwidget.py:100
+#: yali4/gui/Ui/bootloaderwidget.py:84
 msgid "Install to selected disk belove"
 msgstr "Auf die gewählte Festplatte installieren"
 
-#: yali4/gui/Ui/bootloaderwidget.py:101
+#: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Select the disk you to install bootloader:"
 msgstr ""
 "Wählen Sie die Festplatte aus, auf die der Boot-Loader installiert werden "
 "soll."
 
-#: yali4/gui/Ui/bootloaderwidget.py:102
+#: yali4/gui/Ui/bootloaderwidget.py:86
 msgid "Don't install bootloader"
 msgstr "Boot-Loader nicht installieren"
 
-#: yali4/gui/Ui/checkcdwidget.py:87
+#: yali4/gui/Ui/checkcdwidget.py:73
 msgid ""
 "You can check the integrity of the packages in installation CD. Although "
 "this is an optional step, we encourage you to do it to avoid any errors in "
@@ -181,175 +187,179 @@ msgstr ""
 "Obwohl dieser Vorgang optional ist, empfehlen wir Ihnen diesen Vorgang "
 "auszuführen, um jegliche Fehler in der Installation zu vermeiden."
 
-#: yali4/gui/Ui/checkcdwidget.py:88
+#: yali4/gui/Ui/checkcdwidget.py:74
 msgid "Check CD Integrity"
 msgstr "CD-Integrität überprüfen"
 
-#: yali4/gui/Ui/datetimewidget.py:99
+#: yali4/gui/Ui/datetimewidget.py:82
 msgid "The current time"
 msgstr "Die aktuelle Zeit"
 
-#: yali4/gui/Ui/datetimewidget.py:100
+#: yali4/gui/Ui/datetimewidget.py:83
 msgid "The analog clock widget displays the current time."
 msgstr "Das analoge Uhr-Widget zeigt die aktuelle Zeit."
 
-#: yali4/gui/Ui/datetimewidget.py:101
+#: yali4/gui/Ui/datetimewidget.py:84
 msgid "HH"
 msgstr "HH"
 
-#: yali4/gui/Ui/datetimewidget.py:102 yali4/gui/Ui/datetimewidget.py:104
+#: yali4/gui/Ui/datetimewidget.py:85 yali4/gui/Ui/datetimewidget.py:87
 msgid ":"
 msgstr ":"
 
-#: yali4/gui/Ui/datetimewidget.py:103
+#: yali4/gui/Ui/datetimewidget.py:86
 msgid "mm"
 msgstr "mm"
 
-#: yali4/gui/Ui/datetimewidget.py:105
+#: yali4/gui/Ui/datetimewidget.py:88
 msgid "ss"
 msgstr "ss"
 
-#: yali4/gui/Ui/datetimewidget.py:106
+#: yali4/gui/Ui/datetimewidget.py:89
 msgid "Time Zone"
 msgstr "Zeitzone"
 
-#: yali4/gui/Ui/dialog.py:60
+#: yali4/gui/Ui/dialog.py:53
 msgid "TextLabel"
 msgstr "TextLabel"
 
-#: yali4/gui/Ui/dialog.py:62
+#: yali4/gui/Ui/dialog.py:55
 msgid "X"
 msgstr "X"
 
-#: yali4/gui/Ui/installwidget.py:72
+#: yali4/gui/Ui/installwidget.py:62
 msgid "Form3"
 msgstr "Form3"
 
-#: yali4/gui/Ui/installwidget.py:73
+#: yali4/gui/Ui/installwidget.py:63
 msgid "pix"
 msgstr "pix"
 
-#: yali4/gui/Ui/installwidget.py:75
+#: yali4/gui/Ui/installwidget.py:65
 msgid "Desc"
 msgstr "Desc"
 
-#: yali4/gui/Ui/installwidget.py:76
+#: yali4/gui/Ui/installwidget.py:66
 msgid "Installing Package: "
 msgstr "Installation des Pakets:"
 
-#: yali4/gui/Ui/keyboardwidget.py:71
+#: yali4/gui/Ui/keyboardwidget.py:60
 msgid "Select the keyboard layout of your choice."
 msgstr "Wählen Sie eine Tastaturbelegung aus."
 
-#: yali4/gui/Ui/keyboardwidget.py:72
+#: yali4/gui/Ui/keyboardwidget.py:61
 msgid "Test selected keyboard:"
 msgstr "Testen Sie die gewählte Tastatur:"
 
-#: yali4/gui/Ui/main.py:190
+#: yali4/gui/Ui/main.py:156
 msgid "Yali4"
 msgstr "Yali4"
 
-#: yali4/gui/Ui/main.py:482
+#: yali4/gui/Ui/main.py:448
 msgid "Screen Name"
 msgstr "Anzeigename"
 
-#: yali4/gui/Ui/main.py:484
+#: yali4/gui/Ui/main.py:450
 msgid "Details about the screen"
 msgstr "Details über den Bildschirm"
 
-#: yali4/gui/Ui/main.py:485 yali4/gui/YaliWindow.py:168
+#: yali4/gui/Ui/main.py:451 yali4/gui/YaliWindow.py:170
 msgid "Release Notes"
 msgstr "Release-Informationen"
 
-#: yali4/gui/Ui/main.py:486
+#: yali4/gui/Ui/main.py:452
 msgid "Toggle Help"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:487
+#: yali4/gui/Ui/main.py:453
 msgid "Previous Screen"
 msgstr ""
 
-#: yali4/gui/Ui/main.py:488
+#: yali4/gui/Ui/main.py:454
 msgid "Back"
 msgstr "Zurück"
 
-#: yali4/gui/Ui/main.py:489
+#: yali4/gui/Ui/main.py:455
 msgid "Next Screen"
 msgstr "Nächstes Fenster"
 
-#: yali4/gui/Ui/main.py:490
+#: yali4/gui/Ui/main.py:456
 msgid "Next"
 msgstr "Weiter"
 
-#: yali4/gui/Ui/partedit.py:174
+#: yali4/gui/Ui/partedit.py:143
 msgid "Partition 1 on FUJISTU - /dev/sda1"
 msgstr "Partition 1 auf FUJISTU - /dev/sda1"
 
-#: yali4/gui/Ui/partedit.py:175
+#: yali4/gui/Ui/partedit.py:144
 msgid "Device :"
 msgstr "Gerät :"
 
-#: yali4/gui/Ui/partedit.py:176
+#: yali4/gui/Ui/partedit.py:145
 msgid "/dev/sda1"
 msgstr "/dev/sda1"
 
-#: yali4/gui/Ui/partedit.py:177
+#: yali4/gui/Ui/partedit.py:146
 msgid "Delete Partition"
 msgstr "Partition löschen"
 
-#: yali4/gui/Ui/partedit.py:178
+#: yali4/gui/Ui/partedit.py:147
 msgid "Resize Partition"
 msgstr "Partition neu einlesen"
 
-#: yali4/gui/Ui/partedit.py:179
+#: yali4/gui/Ui/partedit.py:148
 msgid "Use :"
 msgstr "Verwenden :"
 
-#: yali4/gui/Ui/partedit.py:180
+#: yali4/gui/Ui/partedit.py:149
 msgid "Size :"
 msgstr "Größe :"
 
-#: yali4/gui/Ui/partedit.py:181 yali4/gui/Ui/partresize.py:105
+#: yali4/gui/Ui/partedit.py:150 yali4/gui/Ui/partresize.py:87
 msgid " MB"
 msgstr " MB"
 
-#: yali4/gui/Ui/partedit.py:182
+#: yali4/gui/Ui/partedit.py:151
 msgid "Format :"
 msgstr "Format :"
 
-#: yali4/gui/Ui/partedit.py:183
+#: yali4/gui/Ui/partedit.py:152
 msgid "Yes, Format this partition"
 msgstr "Ja, diese Partition formatieren"
 
-#: yali4/gui/Ui/partedit.py:184
+#: yali4/gui/Ui/partedit.py:153
 msgid "File System :"
 msgstr "Dateisystem :"
 
-#: yali4/gui/Ui/partedit.py:185
+#: yali4/gui/Ui/partedit.py:154
 msgid "Ext3"
 msgstr "Ext3"
 
-#: yali4/gui/Ui/partedit.py:186
+#: yali4/gui/Ui/partedit.py:155
 msgid "NTFS"
 msgstr "NTFS"
 
-#: yali4/gui/Ui/partedit.py:187
+#: yali4/gui/Ui/partedit.py:156
 msgid "Fat 32"
 msgstr "Fat 32"
 
-#: yali4/gui/Ui/partedit.py:188
+#: yali4/gui/Ui/partedit.py:157
 msgid "Changes will be applied when you finish.."
 msgstr ""
 
-#: yali4/gui/Ui/partedit.py:189
+#: yali4/gui/Ui/partedit.py:158
+msgid "Refresh Disks"
+msgstr ""
+
+#: yali4/gui/Ui/partedit.py:159
 msgid "Reset All Changes"
 msgstr "Alle Änderungen zurückstellen"
 
-#: yali4/gui/Ui/partedit.py:190
+#: yali4/gui/Ui/partedit.py:160
 msgid "Apply"
 msgstr "Anwenden"
 
-#: yali4/gui/Ui/partresize.py:100
+#: yali4/gui/Ui/partresize.py:82
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -377,21 +387,21 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600; color:#ffffff;\">Achtung!</span><span style=\" color:#ffffff;\"> "
-"Diese Einstellungen werden übernommen, wenn Sie klicken \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Resize</span><span style=\" color:"
-"#ffffff;\">\".Klicken, um zurückzukehren \"</span><span style=\" text-"
+"Diese Einstellungen werden übernommen, wenn Sie klicken \"</span><span style="
+"\" text-decoration: underline; color:#ffffff;\">Resize</span><span style=\" "
+"color:#ffffff;\">\".Klicken, um zurückzukehren \"</span><span style=\" text-"
 "decoration: underline; color:#ffffff;\">Abbrechen</span><span style=\" color:"
 "#ffffff;\">\".</span></p></body></html>"
 
-#: yali4/gui/Ui/partresize.py:106 yali4/gui/YaliDialog.py:130
+#: yali4/gui/Ui/partresize.py:88 yali4/gui/YaliDialog.py:130
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: yali4/gui/Ui/partresize.py:107
+#: yali4/gui/Ui/partresize.py:89
 msgid "Resize"
 msgstr "Größe"
 
-#: yali4/gui/Ui/rootpasswidget.py:208
+#: yali4/gui/Ui/rootpasswidget.py:171
 msgid ""
 "<p align=\"left\">System administrator user (root) handles important system "
 "maintanence tasks. Please give password for this special user and do not "
@@ -403,63 +413,63 @@ msgstr ""
 "Passwort und vergessen Sie bitte diesen nicht. Beachten Sie, dass Ihr "
 "Passwort aus Sicherheitsgründen für Dritte nicht zugänglich sein darf.</p>"
 
-#: yali4/gui/Ui/rootpasswidget.py:209
+#: yali4/gui/Ui/rootpasswidget.py:172
 msgid "System administrator password:"
 msgstr "Systemadministrator-Passwort:"
 
-#: yali4/gui/Ui/rootpasswidget.py:210
+#: yali4/gui/Ui/rootpasswidget.py:173
 msgid "System administrator password (again):"
 msgstr "Systemadministrator-Passwort (wiederholen):"
 
-#: yali4/gui/Ui/rootpasswidget.py:213
+#: yali4/gui/Ui/rootpasswidget.py:176
 msgid "Hostname:"
 msgstr "Hostname:"
 
-#: yali4/gui/Ui/setupuserswidget.py:188
+#: yali4/gui/Ui/setupuserswidget.py:153
 msgid "New User"
 msgstr "Neuer Benutzer"
 
-#: yali4/gui/Ui/setupuserswidget.py:189
+#: yali4/gui/Ui/setupuserswidget.py:154
 msgid "User Name:"
 msgstr "Benutzername:"
 
-#: yali4/gui/Ui/setupuserswidget.py:190
+#: yali4/gui/Ui/setupuserswidget.py:155
 msgid "Real Name:"
 msgstr "Vollständiger Name:"
 
-#: yali4/gui/Ui/setupuserswidget.py:191
+#: yali4/gui/Ui/setupuserswidget.py:156
 msgid "Password:"
 msgstr "Passwort:"
 
-#: yali4/gui/Ui/setupuserswidget.py:192
+#: yali4/gui/Ui/setupuserswidget.py:157
 msgid "Password (again):"
 msgstr "Passwort (wiederholen):"
 
-#: yali4/gui/Ui/setupuserswidget.py:193 yali4/gui/ScrUsers.py:176
+#: yali4/gui/Ui/setupuserswidget.py:158 yali4/gui/ScrUsers.py:178
 msgid "Create User"
 msgstr "Benutzer anlegen"
 
-#: yali4/gui/Ui/setupuserswidget.py:194
+#: yali4/gui/Ui/setupuserswidget.py:159
 msgid "Give administrator privileges to this user"
 msgstr "Diesen Benutzer Administrator-Rechte geben"
 
-#: yali4/gui/Ui/setupuserswidget.py:197
+#: yali4/gui/Ui/setupuserswidget.py:162
 msgid "Users:"
 msgstr "Benutzer:"
 
-#: yali4/gui/Ui/setupuserswidget.py:198
+#: yali4/gui/Ui/setupuserswidget.py:163
 msgid "Delete Selected User"
 msgstr "Gewählten Benutzer entfernen"
 
-#: yali4/gui/Ui/setupuserswidget.py:199
+#: yali4/gui/Ui/setupuserswidget.py:164
 msgid "Auto Login User :"
 msgstr "Auto-Login-Benutzer:"
 
-#: yali4/gui/Ui/setupuserswidget.py:200
+#: yali4/gui/Ui/setupuserswidget.py:165
 msgid "Auto Login Disabled"
 msgstr "Auto-Login deaktiviert"
 
-#: yali4/gui/Ui/welcomewidget.py:110
+#: yali4/gui/Ui/welcomewidget.py:90
 msgid ""
 "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
 "software have their corresponding licenses. By installing or using Pardus, "
@@ -470,19 +480,19 @@ msgstr ""
 "installieren zu können, müssen Sie den Lizenzen zustimmen. Möchten Sie "
 "fortfahren?"
 
-#: yali4/gui/Ui/welcomewidget.py:111
+#: yali4/gui/Ui/welcomewidget.py:91
 msgid "Read GPL"
 msgstr "Die GPL lesen"
 
-#: yali4/gui/Ui/welcomewidget.py:112 yali4/gui/runner.py:154
+#: yali4/gui/Ui/welcomewidget.py:92 yali4/gui/runner.py:154
 msgid "Reboot System!"
 msgstr "System neustarten"
 
-#: yali4/gui/Ui/welcomewidget.py:114
+#: yali4/gui/Ui/welcomewidget.py:94
 msgid "Accept!"
 msgstr "Ich stimme den Lizenzen zu"
 
-#: yali4/gui/Ui/welcomewidget.py:115
+#: yali4/gui/Ui/welcomewidget.py:95
 msgid "Don't Accept!"
 msgstr "Ich stimme den Lizenzen nicht zu"
 
@@ -503,9 +513,9 @@ msgid ""
 "additional repositories and manage basic settings like mouse, wallpaper, "
 "webcam, and panel using Kaptan.\n"
 msgstr ""
-"Unser Kaptan wird Sie nach der Installation führen. Sie können mit Kaptan auf leichte "
-"Weise weitere Depots hinzufügen und die Grundeinstellungen wie Maus, Hintergrundbild, "
-"Webcam und Panel  verwalten.\n"
+"Unser Kaptan wird Sie nach der Installation führen. Sie können mit Kaptan "
+"auf leichte Weise weitere Depots hinzufügen und die Grundeinstellungen wie "
+"Maus, Hintergrundbild, Webcam und Panel  verwalten.\n"
 
 #: yali4/gui/descSlide.py:22
 msgid ""
@@ -613,70 +623,70 @@ msgstr "als SWAP-Bereich (optional)"
 msgid "as Storage Area"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:154
+#: yali4/gui/DiskWidgets.py:159
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "Die Grösse von 'Root installieren'  muss grösser als %s MB sein."
 
-#: yali4/gui/DiskWidgets.py:189 yali4/gui/ScrBootloader.py:74
+#: yali4/gui/DiskWidgets.py:194 yali4/gui/ScrBootloader.py:74
 #: yali4/gui/ScrKahyaCheck.py:91 yali4/gui/ScrPartitionAuto.py:71
 msgid "Can't find a storage device!"
 msgstr "Es kann kein Speichergerät gefunden werden!"
 
-#: yali4/gui/DiskWidgets.py:204
+#: yali4/gui/DiskWidgets.py:209
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB frei"
 
-#: yali4/gui/DiskWidgets.py:206
+#: yali4/gui/DiskWidgets.py:211
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB frei"
 
-#: yali4/gui/DiskWidgets.py:226 yali4/gui/GUIAdditional.py:138
+#: yali4/gui/DiskWidgets.py:231 yali4/gui/GUIAdditional.py:138
 #, python-format
 msgid "Partition %d"
 msgstr "Partition %d"
 
-#: yali4/gui/DiskWidgets.py:233
+#: yali4/gui/DiskWidgets.py:238
 msgid "Free Space"
 msgstr "Freier Bereich"
 
-#: yali4/gui/DiskWidgets.py:281 yali4/partitionrequest.py:181
+#: yali4/gui/DiskWidgets.py:286 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:328
+#: yali4/gui/DiskWidgets.py:333
 msgid "Too many primary partition !"
 msgstr "Zu viele primäre Partitionen!"
 
-#: yali4/gui/DiskWidgets.py:329
+#: yali4/gui/DiskWidgets.py:334
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:382
+#: yali4/gui/DiskWidgets.py:387
 msgid "Delete All Partitions"
 msgstr "Alle Partitionen löschen"
 
-#: yali4/gui/DiskWidgets.py:450
+#: yali4/gui/DiskWidgets.py:455
 msgid "Pardus will install here"
 msgstr "Pardus wird hier installiert"
 
-#: yali4/gui/DiskWidgets.py:453
+#: yali4/gui/DiskWidgets.py:458
 msgid "User files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:456
+#: yali4/gui/DiskWidgets.py:461
 msgid "Swap will be here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:459
+#: yali4/gui/DiskWidgets.py:464
 msgid "Backup or archive files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:480
+#: yali4/gui/DiskWidgets.py:485
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -755,7 +765,9 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Die Feststelltaste ist aktiviert!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Die Feststelltaste ist aktiviert!</font></"
+"center>"
 
 #: yali4/gui/ScrAdmin.py:110
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -763,7 +775,9 @@ msgstr "<center><font color=\"#FF6D19\">Passwort ist zu kurz!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Passwörter stimmen nicht überein!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Passwörter stimmen nicht überein!</font></"
+"center>"
 
 #: yali4/gui/ScrAdmin.py:137
 msgid ""
@@ -815,8 +829,9 @@ msgstr ""
 "</p>\n"
 "<p>\n"
 "Wenn Sie mehr als ein Betriebssystem auf Ihrem Rechner installiert haben, "
-"können Sie mittels GRUB auswählen, welches Betriebssystem hochgefahren "
-" werden soll. Empfohlen wird die Installation von GRUB am Anfang des Laufwerks, \n"
+"können Sie mittels GRUB auswählen, welches Betriebssystem hochgefahren  "
+"werden soll. Empfohlen wird die Installation von GRUB am Anfang des "
+"Laufwerks, \n"
 "um mögliche Boot-Probleme zu vermeiden. Erfahrene Benutzer können die\n"
 " Boot-Loadereinstellungen ändern.\n"
 "</p>\n"
@@ -827,7 +842,7 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrBootloader.py:126
+#: yali4/gui/ScrBootloader.py:132
 msgid ""
 "<b>\n"
 "<p>This action will use your entire disk for Pardus installation and <br>\n"
@@ -840,12 +855,12 @@ msgstr ""
 "verloren.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrBootloader.py:152 yali4/gui/ScrBootloader.py:159
-#: yali4/gui/ScrBootloader.py:173
+#: yali4/gui/ScrBootloader.py:158 yali4/gui/ScrBootloader.py:165
+#: yali4/gui/ScrBootloader.py:179
 msgid "Formatting ..."
 msgstr "Am formatieren..."
 
-#: yali4/gui/ScrBootloader.py:166 yali4/installer.py:226
+#: yali4/gui/ScrBootloader.py:172 yali4/installer.py:226
 msgid "Writing disk tables ..."
 msgstr "Laufwerktabellen werden beschrieben..."
 
@@ -868,7 +883,7 @@ msgid ""
 "burning the ISO image in a lower (e.g. 12x or less) speed.</p></font>\n"
 msgstr ""
 
-#: yali4/gui/ScrCheckCD.py:48
+#: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Bitte warten Sie, während die CD überprüft wird.</"
@@ -893,10 +908,11 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Zeitzone-Einstellungen</font>\n"
-"<font size=\"+1\"><p>Hier können Sie Ihren Standort und eine Zeitzone auswählen, das "
-"Datum und die Uhrzeit einstellen.\n"
-"Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit der Installation "
-" fort, nachdem Sie Ihre Auswahl vorgenommen haben.</p></font>\n"
+"<font size=\"+1\"><p>Hier können Sie Ihren Standort und eine Zeitzone "
+"auswählen, das Datum und die Uhrzeit einstellen.\n"
+"Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit "
+"der Installation  fort, nachdem Sie Ihre Auswahl vorgenommen haben.</p></"
+"font>\n"
 
 #: yali4/gui/ScrGoodbye.py:45
 msgid "Goodbye from YALI"
@@ -958,7 +974,7 @@ msgstr ""
 "<p>Klicken Sie auf Neustarten, um Ihr System neuzustarten.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:130 yali4/installer.py:514
+#: yali4/gui/ScrGoodbye.py:130 yali4/installer.py:535
 msgid "Reboot"
 msgstr "Neustarten"
 
@@ -1015,29 +1031,29 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:105
+#: yali4/gui/ScrInstall.py:108
 msgid "Packages are installing.."
 msgstr "Pakete werden installiert.."
 
-#: yali4/gui/ScrInstall.py:120
+#: yali4/gui/ScrInstall.py:123
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Installation von: %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:125
+#: yali4/gui/ScrInstall.py:128
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Konfiguration des Pakets: %s"
 
-#: yali4/gui/ScrInstall.py:161
+#: yali4/gui/ScrInstall.py:164
 msgid "Creating baselayout for your system!"
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:170
+#: yali4/gui/ScrInstall.py:173
 msgid "Configuring packages.."
 msgstr "Pakete werden konfiguriert..."
 
-#: yali4/gui/ScrInstall.py:193
+#: yali4/gui/ScrInstall.py:196
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1219,7 +1235,7 @@ msgid ""
 "</font>\n"
 msgstr ""
 
-#: yali4/gui/ScrUsers.py:134
+#: yali4/gui/ScrUsers.py:136
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
@@ -1227,31 +1243,31 @@ msgstr ""
 "<font color=\"#FF6D19\">Verwenden Sie Ihren Benutzernamen oder Namen nicht "
 "als Passwort.</font>"
 
-#: yali4/gui/ScrUsers.py:137
+#: yali4/gui/ScrUsers.py:139
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
 msgstr "<font color=\"#FF6D19\">Passwörter stimmen nicht überein!</font>"
 
-#: yali4/gui/ScrUsers.py:140
+#: yali4/gui/ScrUsers.py:142
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
 msgstr "<font color=\"#FF6D19\">Passwort ist zu kurz!</font>"
 
-#: yali4/gui/ScrUsers.py:167
+#: yali4/gui/ScrUsers.py:169
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Dieser Benutzername ist bereits vergeben, bitte "
 "wählen Sie einen anderen.</font>"
 
-#: yali4/gui/ScrUsers.py:170
+#: yali4/gui/ScrUsers.py:172
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
 msgstr "<font color=\"#FF6D19\">Benutzname enthält unzulässige Zeichen!</font>"
 
-#: yali4/gui/ScrUsers.py:173
+#: yali4/gui/ScrUsers.py:175
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Vollständiger Name enthält unzulässige Zeichen!</"
 "font>"
 
-#: yali4/gui/ScrUsers.py:230
+#: yali4/gui/ScrUsers.py:232
 msgid "Update User"
 msgstr "Benutzer aktualisieren"
 
@@ -1308,7 +1324,7 @@ msgstr "Hilfe anzeigen"
 msgid "Hide Help"
 msgstr "Hilfe ausblenden"
 
-#: yali4/bootloader.py:202 yali4/bootloader.py:207
+#: yali4/bootloader.py:210 yali4/bootloader.py:215
 msgid "Windows"
 msgstr "Windows"
 
@@ -1338,16 +1354,17 @@ msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
 msgstr ""
-"<b><p>Integritätsüberprüfung der Pakete ist fehlgeschlagen.                                  "
-"Die Installations-CD scheint defekt zu sein.</p></b>"
+"<b><p>Integritätsüberprüfung der Pakete ist "
+"fehlgeschlagen.                                  Die Installations-CD "
+"scheint defekt zu sein.</p></b>"
 
 #: yali4/installer.py:161
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
 msgstr ""
-"<font color=\"#FFF\"><b>Überprüfung abgeschlossen. Sie können zum nächsten Fenster fortfahren."
-"</b></font>"
+"<font color=\"#FFF\"><b>Überprüfung abgeschlossen. Sie können zum nächsten "
+"Fenster fortfahren.</b></font>"
 
 #: yali4/installer.py:175
 msgid "Setting time settings.."
@@ -1540,4 +1557,3 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
-
