@@ -269,7 +269,7 @@ unsigned long int kio_sysinfoProtocol::memoryInfo()
         const int mem_unit = info.mem_unit;
         unsigned long int usage,percent,peer;
         usage = ( info.totalram - info.freeram ) * mem_unit;
-        peer = info.totalram / 100;
+        peer = (info.totalram * mem_unit) / 100;
         peer == 0 ? percent = 0 : percent = usage / peer;
 
         m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit ,0);
