@@ -50,7 +50,6 @@ class MonitorDialog(monitordialog.monitorDialog):
         monitordialog.monitorDialog.__init__(self, parent)
 
         self.groupBoxDetails.hide()
-        self.pushButtonOk.setEnabled(False)
 
         # get a dict of monitor.db like:
         # vendor["Siemens"] = {'Siemens Nixdorf': [{'eisa_id': '','hsync': '','is_dpms': '','model': '','vref': ''}}
@@ -76,7 +75,8 @@ class MonitorDialog(monitordialog.monitorDialog):
     def getSelectedMonitor(self):
         if self.listViewMonitors.currentItem().key(1,0) == "parent":
             self.groupBoxDetails.hide()
-            self.pushButtonOk.setEnabled(False)
+            if self.checkBoxPlugPlay.isChecked:
+                self.pushButtonOk.setEnabled(False)
         else:
             self.groupBoxDetails.show()
             self.pushButtonOk.setEnabled(True)
@@ -167,11 +167,10 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonCancel.setIconSet(getIconSet("cancel", KIcon.Small))
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
         self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
-
         self.pixVideoCard.setPixmap(getIconSet("video_card", KIcon.User).pixmap(QIconSet.Automatic, QIconSet.Normal))
 
         # use reload icon for now. will be replaced with swap icon later.
-        self.iconSwap.setPixmap( getIconSet("reload", KIcon.Toolbar).pixmap(QIconSet.Automatic, QIconSet.Normal))
+        self.buttonSwap.setPixmap( getIconSet("reload", KIcon.Toolbar).pixmap(QIconSet.Automatic, QIconSet.Normal))
 
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
@@ -198,6 +197,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonCancel, SIGNAL("clicked()"),qApp, SLOT("quit()"))
         self.connect(self.buttonApply, SIGNAL("clicked()"),self.slotApply)
         self.connect(self.buttonHelp, SIGNAL("clicked()"),self.slotHelp)
+        self.connect(self.buttonSwap, SIGNAL("clicked()"),self.slotSwap)
 
         self.connect(self.buttonVideoCard, SIGNAL("clicked()"), self.slotCardSettings)
         self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
@@ -350,14 +350,14 @@ class MainWidget(dm_mainview.mainWidget):
             self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
             self.screenImage2.show()
             self.groupBoxSecondaryScreen.show()
-            self.iconSwap.show()
+            self.buttonSwap.show()
             self.setDualModeOptions(self.radioBoxExtended.isChecked())
             self.getMonitorInfo()
         else:
             self.screenImage2.hide()
             self.screenImage1.setState(QButton.On)
             self.groupBoxSecondaryScreen.hide()
-            self.iconSwap.hide()
+            self.buttonSwap.hide()
             self.displayConfiguration.desktop_setup = "single"
 
     def switchBetweenScreens(self):
@@ -449,6 +449,9 @@ class MainWidget(dm_mainview.mainWidget):
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
         helpwin.exec_loop()
+
+    def slotSwap(self):
+        pass
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
