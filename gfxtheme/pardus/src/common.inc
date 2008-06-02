@@ -1544,7 +1544,7 @@ ptheme {
 /menu.bar.min.width    "mainmenu.bar.minwidth"      300 gfxconfig.set.int
 /menu.bar.transparency "mainmenu.bar.transparency"   70 gfxconfig.set.int
 /menu.start.x
-/menu.start.y          "mainmenu.pos"           253 170 gfxconfig.set.int2
+/menu.start.y          "mainmenu.pos"             53 70 gfxconfig.set.int2
 /menu.max.entries      "mainmenu.entries"             8 gfxconfig.set.int
 /boot.pos.x
 /boot.pos.y            "bootopt.pos"            160 480 gfxconfig.set.int2
