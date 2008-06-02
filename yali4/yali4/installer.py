@@ -409,20 +409,23 @@ class Yali:
             return True
 
         def copyPisiIndex():
-            target = os.path.join(ctx.consts.target_dir, "var/lib/pisi/index/%s/" % ctx.consts.pardus_repo_name)
+            target = os.path.join(ctx.consts.target_dir, "var/lib/pisi/index/%s" % ctx.consts.pardus_repo_name)
 
-            # Copy package index
-            import shutil
-            shutil.copyfile(ctx.consts.pisiIndexFile, target)
-            shutil.copyfile(ctx.consts.pisiIndexFileSum, target)
+            if os.path.exists(ctx.consts.pisiIndexFile):
+                # Copy package index
+                import shutil
+                shutil.copy(ctx.consts.pisiIndexFile, target)
+                shutil.copy(ctx.consts.pisiIndexFileSum, target)
 
-            # Extract the index
-            import bz2
-            pureIndex = file(os.path.join(target,"pisi-index.xml","w"))
-            pureIndex.write(bz2.decompress(open(ctx.consts.pisiIndexFile).read()))
-            pureIndex.close()
+                # Extract the index
+                import bz2
+                pureIndex = file(os.path.join(target,"pisi-index.xml"),"w")
+                pureIndex.write(bz2.decompress(open(ctx.consts.pisiIndexFile).read()))
+                pureIndex.close()
 
-            ctx.debugger.log("pisi index files copied.")
+                ctx.debugger.log("pisi index files copied.")
+            else:
+                ctx.debugger.log("pisi index file not found!")
             return True
 
         def setPackages():
