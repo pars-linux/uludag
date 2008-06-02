@@ -330,13 +330,22 @@ class MountRequest(PartRequest):
         if not os.path.isdir(target):
             os.makedirs(target)
 
-        yali4.sysutils.mount(source, target, filesystem)
+        params = ["-t", filesystem, source, target]
+        if not pt.needsmtab:
+            params.insert(0,"-n")
 
-        if pt.needsmtab:
-            mtab_entry = "%s %s %s rw 0 0\n" % (source,
-                                                target,
-                                                filesystem)
-            open("/etc/mtab", "a").write(mtab_entry)
+        mount_res = yali4.sysutils.execClear("mount",
+                                             params,
+                                             stdout="/tmp/mount.log",
+                                             stderr="/tmp/mount.log")
+
+        # The old way ..
+        # yali4.sysutils.mount(source, target, filesystem)
+        # if pt.needsmtab:
+        #     mtab_entry = "%s %s %s rw 0 0\n" % (source,
+        #                                         target,
+        #                                         filesystem)
+        #     open("/etc/mtab", "a").write(mtab_entry)
 
         PartRequest.applyRequest(self)
 
