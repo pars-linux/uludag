@@ -29,10 +29,10 @@
                 </property>
                 <widget class="QCheckBox">
                     <property name="name">
-                        <cstring>checkBoxProbe</cstring>
+                        <cstring>checkBoxAllDrivers</cstring>
                     </property>
                     <property name="text">
-                        <string>Probe at next boot.</string>
+                        <string>Show all drivers</string>
                     </property>
                 </widget>
                 <spacer>
@@ -110,14 +110,6 @@
             </property>
             <property name="resizeMode">
                 <enum>LastColumn</enum>
-            </property>
-        </widget>
-        <widget class="QCheckBox" row="1" column="0">
-            <property name="name">
-                <cstring>checkBoxAllDrivers</cstring>
-            </property>
-            <property name="text">
-                <string>Show all drivers</string>
             </property>
         </widget>
     </grid>
