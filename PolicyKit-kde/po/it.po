@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 15:38+0300\n"
+"POT-Creation-Date: 2008-06-03 19:30+0300\n"
 "PO-Revision-Date: 2008-05-11 18:48+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -45,15 +45,16 @@ msgstr ""
 msgid "For this session only"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:164
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:176
 msgid "Password"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:168
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
 msgid "Password for root"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:170
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:174
 #, qt-format
 msgid "Password for user(%1)"
 msgstr ""
@@ -62,7 +63,7 @@ msgstr ""
 msgid "Remember authorization"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:215
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:219
 msgid "Remember authorization for this session"
 msgstr ""
 

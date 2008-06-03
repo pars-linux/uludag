@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 18:51+0300\n"
+"POT-Creation-Date: 2008-06-03 19:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,20 +28,21 @@ msgid ""
 "Authentication is required to perform this action."
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:168
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:164
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:176
+msgid "Password"
+msgstr ""
+
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
 msgid "Password for root"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:170
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:174
 #, qt-format
 msgid "Password for user(%1)"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
-msgid "Password"
-msgstr ""
-
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:215
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:219
 msgid "Remember authorization for this session"
 msgstr ""
 
