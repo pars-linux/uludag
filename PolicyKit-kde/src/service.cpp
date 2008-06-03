@@ -363,7 +363,7 @@ void PolicyService::polkit_grant_type(PolKitGrant *grant, PolKitResult result, v
 {
     Q_ASSERT(m_self->m_dialog != NULL);
 
-    Debug::printWarning(QString("polkit_grant_type: Type of authentication dialog is set to \"%1\"").arg(polkit_result_to_string_representation(result)));
+    Debug::printDebug(QString("polkit_grant_type: Type of authentication dialog is set to \"%1\"").arg(polkit_result_to_string_representation(result)));
     m_self->m_dialog->setType(result);
 }
 
@@ -664,7 +664,6 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         }
         else if (!m_gainedPrivilege && m_inputBogus && !m_cancelled)
         {
-
             Debug::printWarning("obtain_authorization: Authentication failure, you may already have authentication for this action");
             break;
         }
