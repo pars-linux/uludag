@@ -514,17 +514,6 @@ class UserStack(QVBox):
         tmp = self.u_groups.text()
         tmpA = set(tmp.split(","))
         tmpB = set(dict["groups"])
-        tmpC = ""
-
-        if self.checkBoxAdmin.isChecked():
-            tmpA.add(unicode("wheel"))
-            tmp = ",".join(tmpA)
-        else:
-            if "wheel" in tmpA:
-                tmpA.remove(unicode("wheel"))
-                for i in tmpA:
-                    tmpC = tmpC + i + ","
-                tmp = tmpC[:-1]
 
         if tmpA != tmpB:
             if int(dict["uid"]) == os.getuid() and not "wheel" in tmpA and "wheel" in tmpB:
