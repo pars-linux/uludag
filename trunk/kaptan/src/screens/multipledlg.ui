@@ -404,6 +404,9 @@
                     <property name="acceptDrops">
                         <bool>true</bool>
                     </property>
+                    <property name="minValue">
+                        <number>-2147483645</number>
+                    </property>
                 </widget>
                 <spacer>
                     <property name="name">
