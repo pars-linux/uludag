@@ -26,16 +26,16 @@ msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the <b>super user</b> is required to perform this action."
 msgstr ""
-"Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor.Bu işlemi yapmak "
-"için <b>yetkili kullanıcı</b> haklarına sahip olmanız gerekmektedir."
+"Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor. "
+"Bu işlemi yapmak için <b>yetkili kullanıcı</b> haklarına sahip olmanız gerekmektedir."
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:142
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
-"Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor.Bu işlemi yapmak "
-"için kimlik denetimi gerekmektedir."
+"Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor. "
+"Bu işlemi yapmak için kimlik denetimi gerekmektedir."
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:167
 msgid "Authentication Required"
