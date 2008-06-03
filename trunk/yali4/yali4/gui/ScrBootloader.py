@@ -93,6 +93,14 @@ loader.
 
         self.connect(self.ui.device_list, SIGNAL("currentItemChanged(QListWidgetItem*,QListWidgetItem*)"),
                      self.slotDeviceChanged)
+        self.connect(self.ui.installFirstMBR, SIGNAL("clicked()"),
+                     self.slotDisableList)
+        self.connect(self.ui.installPart, SIGNAL("clicked()"),
+                     self.slotDisableList)
+        self.connect(self.ui.noInstall, SIGNAL("clicked()"),
+                     self.slotDisableList)
+        self.connect(self.ui.installMBR, SIGNAL("clicked()"),
+                     self.slotEnableList)
         self.connect(self.ui.device_list, SIGNAL("itemClicked(QListWidgetItem*)"),
                      self.slotSelect)
 
@@ -116,6 +124,12 @@ loader.
             # we need to go partition auto screen, not manual ;)
             ctx.mainScreen.moveInc = 2
         return True
+
+    def slotDisableList(self):
+        self.ui.device_list.setEnabled(False)
+
+    def slotEnableList(self):
+        self.ui.device_list.setEnabled(True)
 
     def slotSelect(self):
         self.ui.installMBR.toggle()
