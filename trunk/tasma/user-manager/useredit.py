@@ -450,8 +450,6 @@ class UserStack(QVBox):
         grid.addMultiCellWidget(a_hb, row, row, 0, 1)
         self.checkBoxAdmin.setAutoMask(True)
 
-        self.connect(self.checkBoxAdmin, SIGNAL("toggled(bool)"), self.slotAddAdministrator)
-
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
         row = grid.numRows()
@@ -480,9 +478,6 @@ class UserStack(QVBox):
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
 
-    def slotAddAdministrator(self):
-        pass
-
     def checkAdd(self):
        return self.guide.check()
 
@@ -503,10 +498,17 @@ class UserStack(QVBox):
         tmp = self.u_groups.text()
         tmpA = set(tmp.split(","))
         tmpB = set(dict["groups"])
+        tmpC = ""
 
         if self.checkBoxAdmin.isChecked():
             tmpA.add(unicode("wheel"))
             tmp = ",".join(tmpA)
+        else:
+            if "wheel" in tmpA:
+                tmpA.remove(unicode("wheel"))
+                for i in tmpA:
+                    tmpC = tmpC + i + ","
+                tmp = tmpC[:-1]
 
         if tmpA != tmpB:
             if int(dict["uid"]) == os.getuid() and not "wheel" in tmpA and "wheel" in tmpB:
