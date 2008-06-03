@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>611</width>
-            <height>348</height>
+            <height>398</height>
         </rect>
     </property>
     <property name="caption">
@@ -104,6 +104,353 @@
             <property name="name">
                 <cstring>tabWidget</cstring>
             </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>Widget2</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;General Settings</string>
+                </attribute>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>onlyGuiApp</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>11</y>
+                            <width>563</width>
+                            <height>22</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Show only desktop applications</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+S</string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>If checked, then pisi will only show desktop applications</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>systemTray</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>39</y>
+                            <width>563</width>
+                            <height>22</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Enable system tray icon</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>intervalCheck</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>67</y>
+                            <width>563</width>
+                            <height>22</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Enable &amp;periodic update check</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+P</string>
+                    </property>
+                </widget>
+                <widget class="KIntNumInput">
+                    <property name="name">
+                        <cstring>intervalSpin</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>210</x>
+                            <y>100</y>
+                            <width>109</width>
+                            <height>27</height>
+                        </rect>
+                    </property>
+                    <property name="value">
+                        <number>15</number>
+                    </property>
+                    <property name="minValue">
+                        <number>1</number>
+                    </property>
+                    <property name="maxValue">
+                        <number>10000</number>
+                    </property>
+                    <property name="suffix">
+                        <string> min</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>intervalLabel</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>11</x>
+                            <y>105</y>
+                            <width>184</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Check interval:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kIntNumInput3</cstring>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer6</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>131</height>
+                        </size>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>257</x>
+                            <y>171</y>
+                            <width>20</width>
+                            <height>131</height>
+                        </rect>
+                    </property>
+                </spacer>
+                <widget class="KIntNumInput">
+                    <property name="name">
+                        <cstring>bandwidthValue</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>210</x>
+                            <y>140</y>
+                            <width>109</width>
+                            <height>27</height>
+                        </rect>
+                    </property>
+                    <property name="value">
+                        <number>30</number>
+                    </property>
+                    <property name="minValue">
+                        <number>1</number>
+                    </property>
+                    <property name="maxValue">
+                        <number>10000</number>
+                    </property>
+                    <property name="relativeValue">
+                        <number>30</number>
+                    </property>
+                    <property name="suffix">
+                        <string> kb/s</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>bandwidthLabel</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>true</bool>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>140</y>
+                            <width>110</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Bandwidth limit:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kIntNumInput3</cstring>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer8</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>241</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>330</x>
+                            <y>140</y>
+                            <width>241</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                </spacer>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>C&amp;ache</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QGroupBox" row="1" column="0">
+                        <property name="name">
+                            <cstring>groupBox2</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Clear Cache</string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="KPushButton" row="1" column="0">
+                                <property name="name">
+                                    <cstring>clearCacheButton</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>C&amp;lean disk cache now</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+                                <property name="name">
+                                    <cstring>textLabel3</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Clearing the disk cache will remove all downloaded software. 
+This will not delete installed software or affect your system stability.</string>
+                                </property>
+                            </widget>
+                            <spacer row="1" column="1">
+                                <property name="name">
+                                    <cstring>spacer4_2</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>271</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </grid>
+                    </widget>
+                    <widget class="QGroupBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>groupBox1</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Cache usage</string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>useCacheLabel</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Maximum cache size:</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
+                                <property name="name">
+                                    <cstring>useCacheCheck</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Use hard disk cache for downloaded software</string>
+                                </property>
+                                <property name="checked">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="tristate">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>If checked, downloaded packages will be hold at the hard disk cache</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="1" column="2">
+                                <property name="name">
+                                    <cstring>useCacheInfo</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Mb &lt;i&gt;(use 0 for no limit)&lt;/i&gt;</string>
+                                </property>
+                                <property name="alignment">
+                                    <set>AlignVCenter</set>
+                                </property>
+                            </widget>
+                            <widget class="KIntNumInput" row="1" column="1">
+                                <property name="name">
+                                    <cstring>useCacheSize</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="minValue">
+                                    <number>0</number>
+                                </property>
+                                <property name="maxValue">
+                                    <number>100000</number>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
             <widget class="QWidget">
                 <property name="name">
                     <cstring>Widget3</cstring>
@@ -238,243 +585,6 @@
                     </widget>
                 </grid>
             </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>Widget2</cstring>
-                </property>
-                <attribute name="title">
-                    <string>&amp;General Settings</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <spacer row="4" column="1">
-                        <property name="name">
-                            <cstring>spacer4</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>31</width>
-                                <height>50</height>
-                            </size>
-                        </property>
-                    </spacer>
-                    <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
-                        <property name="name">
-                            <cstring>onlyGuiApp</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Show only desktop applications</string>
-                        </property>
-                        <property name="toolTip" stdset="0">
-                            <string>If checked, then pisi will only show desktop applications</string>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="3">
-                        <property name="name">
-                            <cstring>intervalCheck</cstring>
-                        </property>
-                        <property name="text">
-                            <string>Enable &amp;periodic update check</string>
-                        </property>
-                    </widget>
-                    <widget class="QCheckBox" row="1" column="0" rowspan="1" colspan="3">
-                        <property name="name">
-                            <cstring>systemTray</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&amp;Enable system tray icon</string>
-                        </property>
-                    </widget>
-                    <widget class="QLabel" row="3" column="0">
-                        <property name="name">
-                            <cstring>intervalLabel</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>false</bool>
-                        </property>
-                        <property name="text">
-                            <string>Check interval:</string>
-                        </property>
-                        <property name="buddy" stdset="0">
-                            <cstring>kIntNumInput3</cstring>
-                        </property>
-                    </widget>
-                    <widget class="KIntNumInput" row="3" column="1">
-                        <property name="name">
-                            <cstring>intervalSpin</cstring>
-                        </property>
-                        <property name="enabled">
-                            <bool>false</bool>
-                        </property>
-                        <property name="value">
-                            <number>15</number>
-                        </property>
-                        <property name="minValue">
-                            <number>1</number>
-                        </property>
-                        <property name="maxValue">
-                            <number>10000</number>
-                        </property>
-                        <property name="suffix">
-                            <string> min</string>
-                        </property>
-                    </widget>
-                    <spacer row="3" column="2">
-                        <property name="name">
-                            <cstring>spacer5</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Horizontal</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>241</width>
-                                <height>21</height>
-                            </size>
-                        </property>
-                    </spacer>
-                </grid>
-            </widget>
-            <widget class="QWidget">
-                <property name="name">
-                    <cstring>TabPage</cstring>
-                </property>
-                <attribute name="title">
-                    <string>C&amp;ache</string>
-                </attribute>
-                <grid>
-                    <property name="name">
-                        <cstring>unnamed</cstring>
-                    </property>
-                    <widget class="QGroupBox" row="1" column="0">
-                        <property name="name">
-                            <cstring>groupBox2</cstring>
-                        </property>
-                        <property name="title">
-                            <string>Clear Cache</string>
-                        </property>
-                        <grid>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="KPushButton" row="1" column="0">
-                                <property name="name">
-                                    <cstring>clearCacheButton</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>C&amp;lean disk cache now</string>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
-                                <property name="name">
-                                    <cstring>textLabel3</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Clearing the disk cache will remove all downloaded software. 
-This will not delete installed software or affect your system stability.</string>
-                                </property>
-                            </widget>
-                            <spacer row="1" column="1">
-                                <property name="name">
-                                    <cstring>spacer4_2</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Horizontal</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>271</width>
-                                        <height>20</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                        </grid>
-                    </widget>
-                    <widget class="QGroupBox" row="0" column="0">
-                        <property name="name">
-                            <cstring>groupBox1</cstring>
-                        </property>
-                        <property name="title">
-                            <string>Cache usage</string>
-                        </property>
-                        <grid>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>useCacheLabel</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>false</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Maximum cache size:</string>
-                                </property>
-                            </widget>
-                            <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
-                                <property name="name">
-                                    <cstring>useCacheCheck</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>&amp;Use hard disk cache for downloaded software</string>
-                                </property>
-                                <property name="checked">
-                                    <bool>false</bool>
-                                </property>
-                                <property name="tristate">
-                                    <bool>false</bool>
-                                </property>
-                                <property name="toolTip" stdset="0">
-                                    <string>If checked, downloaded packages will be hold at the hard disk cache</string>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="1" column="2">
-                                <property name="name">
-                                    <cstring>useCacheInfo</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>false</bool>
-                                </property>
-                                <property name="text">
-                                    <string>Mb &lt;i&gt;(use 0 for no limit)&lt;/i&gt;</string>
-                                </property>
-                                <property name="alignment">
-                                    <set>AlignVCenter</set>
-                                </property>
-                            </widget>
-                            <widget class="KIntNumInput" row="1" column="1">
-                                <property name="name">
-                                    <cstring>useCacheSize</cstring>
-                                </property>
-                                <property name="enabled">
-                                    <bool>false</bool>
-                                </property>
-                                <property name="minValue">
-                                    <number>0</number>
-                                </property>
-                                <property name="maxValue">
-                                    <number>100000</number>
-                                </property>
-                            </widget>
-                        </grid>
-                    </widget>
-                </grid>
-            </widget>
         </widget>
     </grid>
 </widget>
@@ -494,8 +604,22 @@ This will not delete installed software or affect your system stability.</string
 </connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>klistview.h</includehint>
+    <includehint>kdialog.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
 </includehints>
 </UI>
