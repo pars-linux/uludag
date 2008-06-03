@@ -67,15 +67,16 @@ message: src/main.bin help-boot/.ready po/.ready fonts/.ready
 	cp -rL po/en.tr help-boot/en.hlp message.dir
 	cp src/main.bin message.dir/init
 ifdef DEFAULT_LANG
+	@echo $(DEFAULT_LANG) >message.dir/lang
 ifdef DEFAULT_LANGUAGES
 	@for i in $(DEFAULT_LANGUAGES); do \
 		cp -rL po/$$i.tr help-boot/$$i.hlp message.dir; \
+		echo $$i >> message.dir/languages; \
 	done;
 else
 	cp -rL po/$(DEFAULT_LANG).tr help-boot/$(DEFAULT_LANG).hlp message.dir
-endif
-	@echo $(DEFAULT_LANG) >message.dir/lang
 	@echo $(DEFAULT_LANG) >>message.dir/languages
+endif
 endif
 	@sh -c 'cd message.dir; echo * | sed -e "s/ /\n/g" | cpio --quiet -o >../message'
 
