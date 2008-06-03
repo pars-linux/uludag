@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 23:11+0300\n"
+"POT-Creation-Date: 2008-06-04 00:29+0300\n"
 "PO-Revision-Date: 2008-05-29 16:32+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/driverdialog.py:43 src/driverdialog.py:64 src/dm_mainview.py:273
+#: src/driverdialog.py:43 src/driverdialog.py:64
 msgid "Driver Name"
 msgstr "Driver naam"
 
@@ -40,11 +40,11 @@ msgstr "Ok"
 msgid "Display Manager"
 msgstr "Beeldscherm beheer"
 
-#: src/display-manager.py:164 src/dm_mainview.py:252 src/dm_mainview.py:275
+#: src/display-manager.py:164 src/dm_mainview.py:252 src/dm_mainview.py:272
 msgid "Primary Screen"
 msgstr "Primair scherm"
 
-#: src/display-manager.py:164 src/dm_mainview.py:279
+#: src/display-manager.py:164 src/dm_mainview.py:274
 msgid "Secondary Screen"
 msgstr "Tweede scherm"
 
@@ -117,10 +117,6 @@ msgid "Your hardware will be probed after restarting your computer."
 msgstr ""
 "Configuratie is opgeslagen. Sommige veranderingen zullen pas optreden na "
 "opnieuw opstarten van uw systeem."
-
-#: src/monitordialog.py:43 src/monitordialog.py:93
-msgid "New Column"
-msgstr ""
 
 #: src/monitordialog.py:86
 msgid "Choose Monitor"
@@ -248,30 +244,26 @@ msgstr "Detecteer schermen"
 msgid "Screens"
 msgstr "Schermen"
 
-#: src/dm_mainview.py:271
-msgid "Card Icon"
-msgstr "Kaart icoon"
-
-#: src/dm_mainview.py:272
-#, fuzzy
-msgid "Card Name"
-msgstr "<p>Kaart naam</p>"
-
-#: src/dm_mainview.py:274 src/dm_mainview.py:278 src/dm_mainview.py:282
+#: src/dm_mainview.py:271 src/dm_mainview.py:273 src/dm_mainview.py:275
 msgid "Configure..."
 msgstr "Configureer..."
 
-#: src/dm_mainview.py:276 src/dm_mainview.py:280
-msgid "Monitor Icon"
-msgstr "Monitor icoon"
-
-#: src/dm_mainview.py:277 src/dm_mainview.py:281
-msgid "Monitor Info"
-msgstr "Monitor info"
-
-#: src/dm_mainview.py:283
+#: src/dm_mainview.py:276
 msgid "Devices"
 msgstr "Apparaten"
+
+#~ msgid "Card Icon"
+#~ msgstr "Kaart icoon"
+
+#, fuzzy
+#~ msgid "Card Name"
+#~ msgstr "<p>Kaart naam</p>"
+
+#~ msgid "Monitor Icon"
+#~ msgstr "Monitor icoon"
+
+#~ msgid "Monitor Info"
+#~ msgstr "Monitor info"
 
 #~ msgid "<p>Driver Name</p>"
 #~ msgstr "<p>Driver naam<p>"

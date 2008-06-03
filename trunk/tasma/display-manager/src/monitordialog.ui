@@ -82,7 +82,7 @@
         <widget class="KListView" row="0" column="0">
             <column>
                 <property name="text">
-                    <string>New Column</string>
+                    <string></string>
                 </property>
                 <property name="clickable">
                     <bool>true</bool>
