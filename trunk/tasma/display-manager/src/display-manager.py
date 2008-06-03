@@ -453,7 +453,9 @@ class MainWidget(dm_mainview.mainWidget):
         helpwin.exec_loop()
 
     def slotSwap(self):
-        pass
+        self.displayConfiguration.primaryScr, self.displayConfiguration.secondaryScr = self.displayConfiguration.secondaryScr, self.displayConfiguration.primaryScr
+        self.detectDisplays()
+
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
