@@ -26,11 +26,11 @@ msgstr "Açıklama"
 
 #: src/driverdialog.py:58 src/dm_mainview.py:270
 msgid "Video Card"
-msgstr "Ekran Kart"
+msgstr "Ekran Kartı"
 
 #: src/driverdialog.py:59
 msgid "Show all drivers"
-msgstr ""
+msgstr "Tüm sürücüleri göster"
 
 #: src/driverdialog.py:60 src/monitordialog.py:89
 msgid "Ok"
@@ -102,6 +102,11 @@ msgid ""
 "to configure your video hardware, you must create a new configuration file.\n"
 "Would you like to create a new configuration at the next boot?"
 msgstr ""
+"Görüntü yöneticisi yapılandırma bilgisini alamadı. Yapılandırma dosyası "
+"bozulmuş veya başka bir araç ile değiştirilmiş olabilir. Görüntü aygıtlarınızı "
+"görüntü yöneticisi ile yapılandırmak istiyorsanız yeni bir yapılandırma "
+"dosyası oluşturmanız gerekiyor.\n"
+"Bir sonraki açılışta yeni bir yapılandırma dosyası oluşturmak ister misiniz?"
 
 #: src/displayconfig.py:358
 msgid ""
@@ -191,7 +196,7 @@ msgstr "Çözünürlük"
 
 #: src/dm_mainview.py:256
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Yapılandırma dosyası hazır değil."
 
 #: src/dm_mainview.py:258
 msgid "1"
@@ -250,8 +255,3 @@ msgstr "Monitör Bilgisi"
 msgid "Devices"
 msgstr "Aygıtlar"
 
-#~ msgid "<p>Driver Name</p>"
-#~ msgstr "<p>Sürücü Adı</p>"
-
-#~ msgid "Probe at next boot."
-#~ msgstr "Sonraki açılışta algıla."
