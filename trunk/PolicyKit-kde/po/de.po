@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-11 19:28+0300\n"
+"POT-Creation-Date: 2008-06-03 15:38+0300\n"
 "PO-Revision-Date: 2008-05-16 01:02+0300\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -24,21 +24,22 @@ msgstr ""
 msgid "Alt+O"
 msgstr "Alt+O"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:137
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:138
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the <b>super user</b> is required to perform this action."
 msgstr ""
-"Eine Applikation versucht eine Aktion auszuführen, die benötigte Rechte erfordert. "
-"Authentifizierung als <b>super user</b> ist erforderlich um diese Aktion auszuführen."
+"Eine Applikation versucht eine Aktion auszuführen, die benötigte Rechte "
+"erfordert. Authentifizierung als <b>super user</b> ist erforderlich um diese "
+"Aktion auszuführen."
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:141
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:142
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
-"Eine Applikation versucht eine Aktion auszuführen, die benötigte Rechte erfordert. "
-"Authentifizierung ist erforderlich um diese Aktion auszführen."
+"Eine Applikation versucht eine Aktion auszuführen, die benötigte Rechte "
+"erfordert. Authentifizierung ist erforderlich um diese Aktion auszführen."
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:167
 msgid "Authentication Required"
@@ -52,15 +53,15 @@ msgstr "Strg+S"
 msgid "For this session only"
 msgstr "Nur für diese Sitzung"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:171
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
 msgid "Password"
 msgstr "Passwort"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:167
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:168
 msgid "Password for root"
 msgstr "Passwort für root"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:169
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:170
 #, qt-format
 msgid "Password for user(%1)"
 msgstr "Passwort für Benutzer(%1)"
@@ -69,7 +70,7 @@ msgstr "Passwort für Benutzer(%1)"
 msgid "Remember authorization"
 msgstr "Autorisierung merken"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:214
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:215
 msgid "Remember authorization for this session"
 msgstr "Autorisierung für diese Sitzung merken"
 
@@ -80,4 +81,3 @@ msgstr "Benutzer auswählen..."
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:171
 msgid "Select a user..."
 msgstr "Einen Benutzer auswählen..."
-

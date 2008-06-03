@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-11 19:40+0300\n"
+"POT-Creation-Date: 2008-06-03 18:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,32 +16,32 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:137
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:138
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the <b>super user</b> is required to perform this action."
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:141
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:142
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:167
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:168
 msgid "Password for root"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:169
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:170
 #, qt-format
 msgid "Password for user(%1)"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:171
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
 msgid "Password"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:214
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:215
 msgid "Remember authorization for this session"
 msgstr ""
 
