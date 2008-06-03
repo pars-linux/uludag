@@ -549,7 +549,14 @@ class UserStack(QVBox):
             uid = -1
         else:
             uid = int (self.u_id.text())
-        ch.call(uid, self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), self.u_groups.text().split(","))
+
+        a_groups = self.u_groups.text()
+
+        if self.checkBoxAdmin.isChecked():
+            if not "wheel" in a_groups:
+                a_groups = a_groups + ",wheel"
+
+        ch.call(uid, self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), a_groups.split(","))
 
     def reset(self):
         self.u_id.setText("auto")
