@@ -44,8 +44,15 @@ bootlogo: src/main.bin help-install/.ready po/.ready fonts/.ready
 	@rm -rf bootlogo.dir
 	@mkdir bootlogo.dir
 	cp -rL data-install/* fonts/*.fnt bootlogo.dir
+ifdef DEFAULT_LANGUAGES
+	@for i in $(DEFAULT_LANGUAGES); do \
+		cp -rL po/$$i.tr bootlogo.dir; \
+		cp -rL help-install/$$i.hlp bootlogo.dir; \
+	done;
+else
 	cp -rL po/*.tr bootlogo.dir
 	cp -rL help-install/*.hlp bootlogo.dir
+endif
 	cp src/main.bin bootlogo.dir/init
 ifdef DEFAULT_LANG
 	@echo $(DEFAULT_LANG) >bootlogo.dir/lang
@@ -60,7 +67,13 @@ message: src/main.bin help-boot/.ready po/.ready fonts/.ready
 	cp -rL po/en.tr help-boot/en.hlp message.dir
 	cp src/main.bin message.dir/init
 ifdef DEFAULT_LANG
+ifdef DEFAULT_LANGUAGES
+	@for i in $(DEFAULT_LANGUAGES); do \
+		cp -rL po/$$i.tr help-boot/$$i.hlp message.dir; \
+	done;
+else
 	cp -rL po/$(DEFAULT_LANG).tr help-boot/$(DEFAULT_LANG).hlp message.dir
+endif
 	@echo $(DEFAULT_LANG) >message.dir/lang
 	@echo $(DEFAULT_LANG) >>message.dir/languages
 endif
