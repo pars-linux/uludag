@@ -195,7 +195,6 @@ class Password:
         self.password.setText(text)
         self.password2.setText(text)
 
-
 class Shell:
     def __init__(self, stack, w, grid):
         self.stack = stack
@@ -253,6 +252,7 @@ class UserGroupList(QWidget):
 
         w = QWidget(self)
         hb = QHBoxLayout(w)
+
         lab = QLabel(i18n("Main group:"), w)
         hb.addWidget(lab, 0, Qt.AlignRight)
         self.main_group = QComboBox(False, w)
@@ -261,7 +261,7 @@ class UserGroupList(QWidget):
         lab.setBuddy(self.main_group)
         hb.addWidget(self.main_group)
         vb.addWidget(w)
-
+        
     def populate(self, groups):
         self.main_sel = None
         group = groups.firstChild()
@@ -442,6 +442,21 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(line, row, row, 0, 1)
 
+        a_hb = QHBox(w)
+        a_hb.setSpacing(8)
+
+        toggle = QCheckBox(i18n("Give administrator privileges to this user"), a_hb)
+        row = grid.numRows()
+        grid.addMultiCellWidget(a_hb, row, row, 0, 1)
+        toggle.setAutoMask(True)
+
+        self.connect(toggle, SIGNAL("toggled(bool)"), self.slotAddAdministrator)
+
+        line = QFrame(w)
+        line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
+        row = grid.numRows()
+        grid.addMultiCellWidget(line, row, row, 0, 1)
+
         lab = KActiveLabel(w)
         row = grid.numRows()
         grid.addMultiCellWidget(lab, row, row, 0, 1)
@@ -464,6 +479,9 @@ class UserStack(QVBox):
         self.guide.ok_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
+
+    def slotAddAdministrator(self):
+        pass
 
     def checkAdd(self):
        return self.guide.check()
