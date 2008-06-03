@@ -17,7 +17,7 @@ Index: src/maker.py
 +    image_dir = project.image_dir()
 +    iso_dir = project.iso_dir()
 +
-+    isolinux_tmpl = "
++    isolinux_tmpl = """
 +prompt 1
 +timeout 200
 +
@@ -32,7 +32,7 @@ Index: src/maker.py
 +
 +label memtest
 +    kernel /boot/memtest.bin
-+"
++"""
 +
 +    dest = os.path.join(iso_dir, "boot/isolinux/isolinux.cfg")
 +    data = isolinux_tmpl % dict
