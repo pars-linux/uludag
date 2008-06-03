@@ -31,7 +31,7 @@ Index: src/maker.py
 +    localboot 0x80
 +
 +label memtest
-+    kernel /boot/memtest.bin
++    kernel /boot/memtest
 +"""
 +
 +    dest = os.path.join(iso_dir, "boot/isolinux/isolinux.cfg")
