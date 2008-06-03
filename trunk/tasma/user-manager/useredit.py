@@ -261,7 +261,7 @@ class UserGroupList(QWidget):
         lab.setBuddy(self.main_group)
         hb.addWidget(self.main_group)
         vb.addWidget(w)
-        
+
     def populate(self, groups):
         self.main_sel = None
         group = groups.firstChild()
@@ -318,6 +318,8 @@ class UserGroupList(QWidget):
             while item:
                 if item.name in groups:
                     item.setState(item.On)
+                else:
+                    item.setState(item.Off)
                 item = item.nextSibling()
             self.main_sel = groups[0]
             self.main_group.setCurrentText(groups[0])
