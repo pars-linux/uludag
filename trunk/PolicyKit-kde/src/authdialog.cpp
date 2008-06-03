@@ -159,17 +159,21 @@ void AuthDialog::hideUsersCombo()
 
 void AuthDialog::setPrompt(const QString &prompt)
 {
-    lblPassword->setText(prompt);
+    //workaround for translation of "Password:" prompt
+    if (prompt == "Password: ")
+        lblPassword->setText(i18n("Password") + ": ");
+    else
+        lblPassword->setText(prompt);
 }
 
 void AuthDialog::setPasswordFor(bool set, const QString& user)
 {
     if (set)
-        lblPassword->setText(i18n("Password for root") + ":");
+        lblPassword->setText(i18n("Password for root") + ": ");
     else if (user)
-        lblPassword->setText(i18n("Password for user(%1)").arg(user) + ":");
+        lblPassword->setText(i18n("Password for user(%1)").arg(user) + ": ");
     else
-        lblPassword->setText(i18n("Password") + ":");
+        lblPassword->setText(i18n("Password") + ": ");
 }
 
 const char* AuthDialog::getPass()
