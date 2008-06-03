@@ -409,7 +409,8 @@
 
     config.lang {
       config.lang "en_US" ne {
-        config.lang "lang=%s " bc.cmd dup length add sprintf
+        % config.lang "lang=%s " bc.cmd dup length add sprintf
+        config.lang "mudur=livecd,language:%s " bc.cmd dup length add sprintf
       } if
     } if
 
