@@ -450,6 +450,8 @@ class UserStack(QVBox):
         grid.addMultiCellWidget(a_hb, row, row, 0, 1)
         self.checkBoxAdmin.setAutoMask(True)
 
+        self.connect(self.checkBoxAdmin, SIGNAL("toggled(bool)"), self.slotAddAdministrator)
+
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
         row = grid.numRows()
@@ -477,6 +479,9 @@ class UserStack(QVBox):
         self.guide.ok_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
+
+    def slotAddAdministrator(self):
+        pass
 
     def checkAdd(self):
        return self.guide.check()
@@ -596,6 +601,9 @@ class UserStack(QVBox):
             dict["password"] = ""
             self.editdict = dict
             self.guide.op_end()
+
+            if "wheel" in self.u_groups.text():
+                self.checkBoxAdmin.setChecked(True)
 
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
