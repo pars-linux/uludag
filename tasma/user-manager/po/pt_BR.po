@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-10 22:32+0300\n"
+"POT-Creation-Date: 2008-06-03 23:07+0300\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -16,34 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#: mainview.py:30 mainview.py:69
-msgid ""
-"Cannot connect to the COMAR! If it is not running you should start it with "
-"the 'service comar start' command in a root console."
-msgstr ""
-"Não é possível conectar-se ao COMAR! Se ele não está executando, você deverá "
-"iniciá-lo com o comando 'service comar start' num console como root."
-
-#: mainview.py:49
-msgid "Waiting COMAR..."
-msgstr "Esperando COMAR..."
-
-#: mainview.py:50
-msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-msgstr "Conexão com o COMAR fechada inesperadamente, tentando reconectar-se..."
-
-#: user-manager.py:30
-msgid "User Management"
-msgstr "Gerenciamento de Usuários"
-
-#: user-manager.py:76
-msgid "User manager module is already started!"
-msgstr "Módulo de gerenciamento de usuários já foi iniciado!"
-
-#: user-manager.py:81
-msgid "User Manager"
-msgstr "Gerenciador de Usuários"
 
 #: groupedit.py:22 useredit.py:25
 msgid "ID:"
@@ -65,99 +37,25 @@ msgstr "Digite o ID do grupo ou use a seleção automática"
 msgid "Enter a group name"
 msgstr "Digite um nome de grupo"
 
-#: groupedit.py:127
+#: groupedit.py:129
 msgid "Enter Information For New Group"
 msgstr "Digitar Informação Para Novo Grupo"
 
-#: groupedit.py:175
+#: groupedit.py:168
 msgid "Adding group..."
 msgstr "Adicionando grupo..."
 
-#: groupedit.py:185 useredit.py:554 useredit.py:586
-#, python-format
-msgid "Operation failed, reason:<br>%s"
-msgstr "Operação falhou, razão:<br>%s"
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Gerenciamento de Usuários"
 
-#: groupedit.py:187 useredit.py:556 useredit.py:588
-msgid "You are not allowed to do that"
-msgstr "Você não permissão para realizar tal operação"
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Módulo de gerenciamento de usuários já foi iniciado!"
 
-#: groupedit.py:189 useredit.py:558 useredit.py:590
-msgid "Comar script error :("
-msgstr "Erro do script do Comar :("
-
-#: browser.py:95
-msgid "Show system user and groups"
-msgstr "Mostrar usuários e grupos do sitema"
-
-#: browser.py:105 browser.py:115
-msgid "ID"
-msgstr "ID"
-
-#: browser.py:107
-msgid "User name"
-msgstr "Nome de usuário"
-
-#: browser.py:108
-msgid "Full name"
-msgstr "Nome completo"
-
-#: browser.py:117
-msgid "Group name"
-msgstr "Nome do grupo"
-
-#: browser.py:122
-msgid "Users"
-msgstr "Usuários"
-
-#: browser.py:123
-msgid "Groups"
-msgstr "Grupos"
-
-#: browser.py:136
-msgid "User Manager Help"
-msgstr "Ajuda do Gerenciador de Usuários"
-
-#: browser.py:143
-#, python-format
-msgid ""
-"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
-"s<br>ID: %d"
-msgstr ""
-"<big><b>Devo deletar este usuário?</b></big><br><br>Nome: %s<br>Nome de "
-"usuário: %s<br>ID: %d"
-
-#: browser.py:149
-msgid "Delete User"
-msgstr "Deletar Usuário"
-
-#: browser.py:150
-msgid "Delete user and files"
-msgstr "Deletar usuário e arquivos"
-
-#: browser.py:151
-msgid "Delete user"
-msgstr "Deletar usuário"
-
-#: browser.py:162
-#, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Devo deletar este grupo?</b></big><br><br>Nome do grupo: %s<br>ID: %d"
-
-#: browser.py:168 browser.py:169
-msgid "Delete Group"
-msgstr "Deletar Grupo"
-
-#: browser.py:261
-#, fuzzy
-msgid "You are not allowed to manage user settings."
-msgstr "Você não permissão para realizar tal operação"
-
-#: browser.py:261
-msgid "Access Denied"
-msgstr ""
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Gerenciador de Usuários"
 
 #: useredit.py:72
 msgid "User name:"
@@ -183,83 +81,79 @@ msgstr "Senha:"
 msgid "Confirm password:"
 msgstr "Confirmar senha:"
 
-#: useredit.py:202
+#: useredit.py:201
 msgid "Shell:"
 msgstr "Shell:"
 
-#: useredit.py:224
+#: useredit.py:223
 msgid "Please specify an existing shell command"
 msgstr "Por favor, especifique um comando de shell existente"
 
-#: useredit.py:226
+#: useredit.py:225
 msgid "Specified shell command is not executable"
 msgstr "Comando de shell especificado não é executável"
 
-#: useredit.py:268
+#: useredit.py:249
 msgid "Group"
 msgstr "Grupo"
 
-#: useredit.py:269
-msgid "Permission"
-msgstr "Permissão"
-
-#: useredit.py:279
+#: useredit.py:256
 msgid "Main group:"
 msgstr "Grupo principal:"
 
-#: useredit.py:375
+#: useredit.py:346
 msgid "Start with typing this user's full name."
 msgstr "Comece digitando o nome completo deste usuário."
 
-#: useredit.py:378
+#: useredit.py:349
 msgid "You should enter a password for this user."
 msgstr "Você deve digitar uma senha para este usuário"
 
-#: useredit.py:383
+#: useredit.py:354
 msgid "Password must be longer."
 msgstr "Senha deve ser maior."
 
-#: useredit.py:387
+#: useredit.py:358
 msgid "Don't use your full name or user name as a password."
 msgstr "Não use seu come completo ou nome de usuário como senha."
 
-#: useredit.py:390
+#: useredit.py:361
 msgid "Passwords don't match."
 msgstr "Senhas não conferem."
 
-#: useredit.py:393
+#: useredit.py:364
 msgid "You must enter a user ID or use the auto selection."
 msgstr "Você deve digitar um ID de usuário ou usar a seleção automática."
 
-#: useredit.py:398
+#: useredit.py:369
 msgid "You must enter a user name."
 msgstr "Você deve digitar um nome de usuário."
 
-#: useredit.py:401
+#: useredit.py:372
 msgid "This user name is used by another user."
 msgstr "Este nome de usuário já está sendo usado por outro usuário."
 
-#: useredit.py:405
+#: useredit.py:376
 msgid "User name must not start with a number."
 msgstr "Nome de usuário nçao pode iniciar com um número."
 
-#: useredit.py:408
+#: useredit.py:379
 msgid "You should select at least one group this user belongs to."
 msgstr "Você deve selecionar ao menos um grupo para este usuário pertencer."
 
-#: useredit.py:439
+#: useredit.py:412
 msgid "Edit User's Information"
 msgstr "Editar Informações do Usuário"
 
-#: useredit.py:441
+#: useredit.py:414
 msgid "Enter Information For New User"
 msgstr "Digitar Informação Para Novo Usuário"
 
-#: useredit.py:443
-msgid "Show all groups"
-msgstr "Mostrar todos os grupos"
+#: useredit.py:450
+msgid "Give administrator privileges to this user"
+msgstr ""
 
-#: useredit.py:533
+#: useredit.py:522
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
@@ -267,18 +161,132 @@ msgstr ""
 "Você está se removendo do grupo de sistema 'wheel', você poderá não usar "
 "suas permissões de administrador após isso."
 
-#: useredit.py:534
+#: useredit.py:523
 msgid "Important Group Change"
 msgstr "Mudança de Grupo Important"
 
-#: useredit.py:541
+#: useredit.py:530
 msgid "Changing user information..."
 msgstr "Mudando informação do usuário..."
 
-#: useredit.py:575
+#: useredit.py:548
 msgid "Adding user..."
 msgstr "Adicionando usuário..."
 
-#: useredit.py:615
+#: useredit.py:594
 msgid "Getting user information..."
 msgstr "Acessando informação do usuário..."
+
+#: um_mainview.py:44
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: um_mainview.py:44
+msgid "DBus Error"
+msgstr ""
+
+#: um_mainview.py:59
+msgid "D-Bus Error"
+msgstr ""
+
+#: um_mainview.py:63
+msgid "COMAR Error"
+msgstr ""
+
+#: browser.py:92
+msgid "Show system user and groups"
+msgstr "Mostrar usuários e grupos do sitema"
+
+#: browser.py:102 browser.py:112
+msgid "ID"
+msgstr "ID"
+
+#: browser.py:104
+msgid "User name"
+msgstr "Nome de usuário"
+
+#: browser.py:105
+msgid "Full name"
+msgstr "Nome completo"
+
+#: browser.py:114
+msgid "Group name"
+msgstr "Nome do grupo"
+
+#: browser.py:119
+msgid "Users"
+msgstr "Usuários"
+
+#: browser.py:120
+msgid "Groups"
+msgstr "Grupos"
+
+#: browser.py:135
+msgid "User Manager Help"
+msgstr "Ajuda do Gerenciador de Usuários"
+
+#: browser.py:142
+#, python-format
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Devo deletar este usuário?</b></big><br><br>Nome: %s<br>Nome de "
+"usuário: %s<br>ID: %d"
+
+#: browser.py:148
+msgid "Delete User"
+msgstr "Deletar Usuário"
+
+#: browser.py:149
+msgid "Delete user and files"
+msgstr "Deletar usuário e arquivos"
+
+#: browser.py:150
+msgid "Delete user"
+msgstr "Deletar usuário"
+
+#: browser.py:167
+#, python-format
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Devo deletar este grupo?</b></big><br><br>Nome do grupo: %s<br>ID: %d"
+
+#: browser.py:173 browser.py:174
+msgid "Delete Group"
+msgstr "Deletar Grupo"
+
+#~ msgid ""
+#~ "Cannot connect to the COMAR! If it is not running you should start it "
+#~ "with the 'service comar start' command in a root console."
+#~ msgstr ""
+#~ "Não é possível conectar-se ao COMAR! Se ele não está executando, você "
+#~ "deverá iniciá-lo com o comando 'service comar start' num console como "
+#~ "root."
+
+#~ msgid "Waiting COMAR..."
+#~ msgstr "Esperando COMAR..."
+
+#~ msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
+#~ msgstr ""
+#~ "Conexão com o COMAR fechada inesperadamente, tentando reconectar-se..."
+
+#~ msgid "Operation failed, reason:<br>%s"
+#~ msgstr "Operação falhou, razão:<br>%s"
+
+#~ msgid "You are not allowed to do that"
+#~ msgstr "Você não permissão para realizar tal operação"
+
+#~ msgid "Comar script error :("
+#~ msgstr "Erro do script do Comar :("
+
+#, fuzzy
+#~ msgid "You are not allowed to manage user settings."
+#~ msgstr "Você não permissão para realizar tal operação"
+
+#~ msgid "Permission"
+#~ msgstr "Permissão"
+
+#~ msgid "Show all groups"
+#~ msgstr "Mostrar todos os grupos"
