@@ -53,18 +53,18 @@
         % [ keyF4 0 "F4" /panel.install /panel.install.width /panel.install.update /install.init ]
         [ keyF4 0 "F4" /panel.zorg /panel.zorg.width /panel.zorg.update /zorg.init ]
         [ keyF5 0 "F5" /panel.kernelopts /panel.kernelopts.width /panel.kernelopts.update /kernelopts.init ]
-        [ keyF6 0 "F6" /panel.dud /panel.dud.width /panel.dud.update /dud.init ]
+        % [ keyF6 0 "F6" /panel.dud /panel.dud.width /panel.dud.update /dud.init ]
 
-        32+64bit_source {
-          64bit {
-            32bit_boot_dir .undef ne
-            64bit_boot_dir .undef ne
-            32bit_boot_dir 64bit_boot_dir ne
-            and and {
-              [ keyF7 0 "F7" /panel.bits /panel.bits.width /panel.bits.update /bits.init ]
-            } if
-          } if
-        } if
+        %32+64bit_source {
+        %  64bit {
+        %    32bit_boot_dir .undef ne
+        %    64bit_boot_dir .undef ne
+        %    32bit_boot_dir 64bit_boot_dir ne
+        %    and and {
+        %      [ keyF7 0 "F7" /panel.bits /panel.bits.width /panel.bits.update /bits.init ]
+        %    } if
+        %  } if
+        %} if
 
       } ifelse
 
