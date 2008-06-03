@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 15:38+0300\n"
+"POT-Creation-Date: 2008-06-03 19:30+0300\n"
 "PO-Revision-Date: 2008-05-18 08:02-0400\n"
 "Last-Translator: klemens <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -53,15 +53,16 @@ msgstr "Ctrl+S"
 msgid "For this session only"
 msgstr "Solamente para la sesión actual"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:164
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:176
 msgid "Password"
 msgstr "Contraseña"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:168
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
 msgid "Password for root"
 msgstr "Contraseña de root"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:170
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:174
 #, qt-format
 msgid "Password for user(%1)"
 msgstr "Contraseña de usuario (%1)"
@@ -70,7 +71,7 @@ msgstr "Contraseña de usuario (%1)"
 msgid "Remember authorization"
 msgstr "Recordar autorización"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:215
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:219
 msgid "Remember authorization for this session"
 msgstr "Recordar autorización para la sesión actual"
 

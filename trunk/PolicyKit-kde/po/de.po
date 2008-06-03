@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 15:38+0300\n"
+"POT-Creation-Date: 2008-06-03 19:30+0300\n"
 "PO-Revision-Date: 2008-05-16 01:02+0300\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -53,15 +53,16 @@ msgstr "Strg+S"
 msgid "For this session only"
 msgstr "Nur für diese Sitzung"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:164
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:176
 msgid "Password"
 msgstr "Passwort"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:168
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:172
 msgid "Password for root"
 msgstr "Passwort für root"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:170
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:174
 #, qt-format
 msgid "Password for user(%1)"
 msgstr "Passwort für Benutzer(%1)"
@@ -70,7 +71,7 @@ msgstr "Passwort für Benutzer(%1)"
 msgid "Remember authorization"
 msgstr "Autorisierung merken"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:215
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:219
 msgid "Remember authorization for this session"
 msgstr "Autorisierung für diese Sitzung merken"
 
