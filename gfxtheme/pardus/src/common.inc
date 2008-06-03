@@ -408,12 +408,53 @@
     } ifelse
 
     config.lang {
-      config.lang "en_US" ne {
-        % config.lang "lang=%s " bc.cmd dup length add sprintf
-        config.lang "mudur=livecd,language:%s " bc.cmd dup length add sprintf
-        } {
-        config.lang "mudur=livecd,language:en " bc.cmd dup length add sprintf
-      } ifelse
+      %config.lang "en_US" ne {
+      %  % config.lang "lang=%s " bc.cmd dup length add sprintf
+      %  config.lang "mudur=livecd,language:%s " bc.cmd dup length add sprintf
+      %  } {
+      %  config.lang "mudur=livecd,language:en " bc.cmd dup length add sprintf
+      %} ifelse
+
+      config.lang "ca_ES" eq {
+        config.lang "mudur=livecd,language:ca " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "de_DE" eq {
+        "mudur=livecd,language:de " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "en_US" eq {
+        "mudur=livecd,language:en " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "es_ES" eq {
+        "mudur=livecd,language:es " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "fr_FR" eq {
+        "mudur=livecd,language:fr " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "it_IT" eq {
+        "mudur=livecd,language:it " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "nl_NL" eq {
+        "mudur=livecd,language:nl " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "pl_PL" eq {
+        "mudur=livecd,language:pl " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "pt_BR" eq {
+        "mudur=livecd,language:pt_BR " bc.cmd dup length add sprintf
+      } if
+
+      config.lang "tr_TR" eq {
+        "mudur=livecd,language:tr " bc.cmd dup length add sprintf
+      } if
+
     } if
 
     v_impaired 1 ge {
