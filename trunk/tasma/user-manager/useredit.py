@@ -452,6 +452,8 @@ class UserStack(QVBox):
         grid.addMultiCellWidget(a_hb, row, row, 0, 1)
         self.checkBoxAdmin.setAutoMask(True)
 
+        self.connect(self.checkBoxAdmin, SIGNAL("toggled(bool)"), self.slotAddAdministrator)
+
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
         row = grid.numRows()
@@ -479,6 +481,18 @@ class UserStack(QVBox):
         self.guide.ok_but = but
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
+
+    def slotAddAdministrator(self):
+        tmpGroups =  self.u_groups.text().split(",")
+
+        if self.checkBoxAdmin.isChecked():
+            if not "wheel" in tmpGroups:
+                tmpGroups.append(unicode("wheel"))
+                self.u_groups.setText(tmpGroups)
+        else:
+            if "wheel" in tmpGroups:
+                tmpGroups.remove(unicode("wheel"))
+                self.u_groups.setText(tmpGroups)
 
     def checkAdd(self):
        return self.guide.check()
