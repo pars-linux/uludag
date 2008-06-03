@@ -67,18 +67,23 @@ class MonitorDialog(monitordialog.monitorDialog):
 
             for eachModel in allMonitorInfos[eachVendor]:
                 subitem = KListViewItem(item, eachModel["model"], eachVendor, eachModel["hsync"], eachModel["vref"])
-                #subitem.setText(0, eachModel["model"])
 
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
-        self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept)
-        self.listViewMonitors.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), self.getSelectedMonitor)
-        self.connect(self.checkBoxPlugPlay,SIGNAL("toggled(bool)"),self.listViewMonitors.setDisabled)
-        self.connect(self.checkBoxPlugPlay,SIGNAL("toggled(bool)"),self.groupBoxDetails.setDisabled)
-        self.connect(self.checkBoxPlugPlay,SIGNAL("toggled(bool)"),self.pushButtonOk.setEnabled)
+        self.connect(self.pushButtonOk,     SIGNAL("clicked()"), self.accept)
+        self.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), self.getSelectedMonitor)
+        self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.listViewMonitors.setDisabled)
+        self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.slotPNP)
+
+    def slotPNP(self, checked):
+        if checked:
+            self.pushButtonOk.setEnabled(True)
+        else:
+            self.getSelectedMonitor()
 
     def getSelectedMonitor(self):
         if self.listViewMonitors.currentItem().key(1,0) == "parent":
             self.groupBoxDetails.hide()
+            self.pushButtonOk.setDisabled(True)
         else:
             self.groupBoxDetails.show()
             self.pushButtonOk.setEnabled(True)
