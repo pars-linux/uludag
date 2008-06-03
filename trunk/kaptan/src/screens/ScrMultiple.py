@@ -15,6 +15,7 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 import kdecore
+from pardus.procutils import capture
 
 from screens.Screen import ScreenWidget
 from screens.multipledlg import MultipleWidget
@@ -32,12 +33,14 @@ class Widget(MultipleWidget, ScreenWidget):
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
 
-        self.info = kdecore.NETRootInfo(int(qt_xdisplay()))
-        self.oldNumberOfDesktops =  self.info.numberOfDesktops()
-
-        # make desktop value 2 if we can't detect number of desktops
-        if not self.oldNumberOfDesktops:
-            self.oldNumberOfDesktops = 2
+        try:
+            # as detecting number of desktops via kdecore is not stable, 
+            # first try to get it via xprobe.
+            out, err = capture("xprop", "-root", "-f", "_NET_NUMBER_OF_DESKTOPS", "0c", " $0", "_NET_NUMBER_OF_DESKTOPS")
+            self.oldNumberOfDesktops = int(out.split()[-1])
+        except:
+            info = kdecore.NETRootInfo(int(qt_xdisplay()))
+            self.oldNumberOfDesktops =  info.numberOfDesktops()
 
         # set start value of desktops
         self.numInput.setValue(self.oldNumberOfDesktops)
