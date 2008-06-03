@@ -135,6 +135,9 @@ def is_windows_boot(partition_path, file_system):
         umount(m_dir)
         return False
 
+def umount_(dir):
+    os.system("umount %s" % dir)
+
 def reboot():
     print "Rebooting..."
     try:

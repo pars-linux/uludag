@@ -501,9 +501,9 @@ class Yali:
 
         try:
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
-            yali4.sysutils.umount(ctx.consts.target_dir + "/mnt/archive")
+            yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/archive")
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/home"))
-            yali4.sysutils.umount(ctx.consts.target_dir + "/mnt/home")
+            yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/home")
         except:
             ctx.debugger.log("Umount Failed ")
 
