@@ -243,8 +243,7 @@ class MainWidget(dm_mainview.mainWidget):
             self.buttonMonitor2.setEnabled(True)
 
         self.getMonitorInfo()
-        self.getResolutions(1)
-        self.setIconbyResolution()
+        self.switchBetweenScreens()
 
         if self.displayConfiguration.desktop_setup == "single":
             self.checkBoxDualMode.setChecked(False)
@@ -402,6 +401,7 @@ class MainWidget(dm_mainview.mainWidget):
             self.comboBoxResolution.insertItem(resolution)
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+        self.setIconbyResolution()
 
     def getCardInfo(self):
         vendorName, boardName = idsQuery(self.displayConfiguration.card_vendor_id, self.displayConfiguration.card_product_id)
@@ -468,7 +468,7 @@ class MainWidget(dm_mainview.mainWidget):
 
     def slotSwap(self):
         self.displayConfiguration.primaryScr, self.displayConfiguration.secondaryScr = self.displayConfiguration.secondaryScr, self.displayConfiguration.primaryScr
-        self.detectDisplays()
+        self.switchBetweenScreens()
 
 
 def attachMainWidget(self):
