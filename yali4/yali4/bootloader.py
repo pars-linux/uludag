@@ -12,6 +12,7 @@
 
 import os
 import glob
+import time
 
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
@@ -232,8 +233,12 @@ class BootLoader:
         ctx.debugger.log("IG : cmd: %s " % cmd)
 
         if os.system(cmd) != 0:
-            raise YaliException, "Command failed: %s" % cmd
-        else:
-            return True
-        return False
+            ctx.debugger.log("IG : Command failed %s - trying again.. " % cmd)
+            time.sleep(2)
+            if os.system(cmd) != 0:
+                raise YaliException, "Command failed: %s" % cmd
+            else:
+                return True
+            return False
+        return True
 
