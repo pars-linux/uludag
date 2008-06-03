@@ -43,7 +43,7 @@ static const int slice = 20;
  *  TRUE to construct a modal dialog.
  */
 AuthDialog::AuthDialog(QString &header)
-    : AuthDialogUI( NULL, 0, TRUE, WType_Popup),
+    : AuthDialogUI( NULL, 0, TRUE, WType_Popup|Qt::WStyle_StaysOnTop),
         m_currentY( 0 )
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
@@ -53,15 +53,17 @@ AuthDialog::AuthDialog(QString &header)
 
     cbUsers->hide();
     setHeader(header);
+    lePassword->setFocus();
 
     setBackgroundMode(QWidget::NoBackground);
+    // get desktop size
     QRect geo(QApplication::desktop()->geometry());
+    // set dialog size to desktop size
     setGeometry(geo);
     int dep = QPixmap::defaultDepth();
     if (dep == 24 || dep == 16)
-    {
         dep = 32;
-    }
+    // create an image in desktop size
     m_grabbed.create(geo.size(), dep);
     QTimer::singleShot(0, this, SLOT( slotGrab()));
 }

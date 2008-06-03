@@ -39,6 +39,8 @@
 #include "authdialog.h"
 #include "debug.h"
 
+#include <X11/Xlib.h>
+
 using namespace std;
 
 PolicyService* PolicyService::m_self;
@@ -414,7 +416,11 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
     else
         m_dialog->lePassword->setEchoMode(QLineEdit::Password);
 
+    //This grab workaround is required to prevent blockings caused by notify-python's notifications
+    Display *display = qt_xdisplay();
+    XGrabServer(display);
     int result = m_dialog->exec();
+    XUngrabServer(display);
 
     if (result == QDialog::Rejected)
     {
