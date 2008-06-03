@@ -181,7 +181,9 @@ class MainWidget(dm_mainview.mainWidget):
         if self.displayConfiguration._info:
             self.textNotReady.hide()
         else:
-            self.frameScreens.hide()
+            self.screenImage1.hide()
+            self.screenImage2.hide()
+            self.buttonSwap.hide()
             self.setDisabled(True)
             return
 

@@ -137,22 +137,13 @@
                                     <set>AlignCenter</set>
                                 </property>
                             </widget>
-                            <widget class="QFrame">
+                            <widget class="QLayoutWidget">
                                 <property name="name">
-                                    <cstring>frameScreens</cstring>
-                                </property>
-                                <property name="frameShape">
-                                    <enum>NoFrame</enum>
-                                </property>
-                                <property name="frameShadow">
-                                    <enum>Raised</enum>
+                                    <cstring>layout3</cstring>
                                 </property>
                                 <hbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
-                                    </property>
-                                    <property name="margin">
-                                        <number>0</number>
                                     </property>
                                     <spacer>
                                         <property name="name">
@@ -166,7 +157,7 @@
                                         </property>
                                         <property name="sizeHint">
                                             <size>
-                                                <width>90</width>
+                                                <width>80</width>
                                                 <height>20</height>
                                             </size>
                                         </property>
@@ -255,7 +246,7 @@
                                         </property>
                                         <property name="sizeHint">
                                             <size>
-                                                <width>30</width>
+                                                <width>80</width>
                                                 <height>20</height>
                                             </size>
                                         </property>
