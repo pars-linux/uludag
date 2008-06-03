@@ -55,8 +55,16 @@ def init_devices(force = False):
         d = Device(dev_path)
         devices.append(d)
 
-    # devices are appended in reverse order
-    devices.reverse()
+    def comp(x, y):
+        """sort disks using getName()"""
+        x = x.getName()
+        y = y.getName()
+
+        if x > y: return -1
+        elif x == y: return 0
+        else: return 1
+
+    devices.sort(comp,reverse=True)
 
     if devices:
         return True
