@@ -13,7 +13,7 @@
 /.b_run		 2 def
 
 /bsplash.list [
-  [ /b1.init /b1.done /b1.run ]
+  % [ /b1.init /b1.done /b1.run ]
   [ /b2.init /b2.done /b2.run ]
 ] def
 
