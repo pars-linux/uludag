@@ -445,12 +445,10 @@ class UserStack(QVBox):
         a_hb = QHBox(w)
         a_hb.setSpacing(8)
 
-        toggle = QCheckBox(i18n("Give administrator privileges to this user"), a_hb)
+        self.checkBoxAdmin = QCheckBox(i18n("Give administrator privileges to this user"), a_hb)
         row = grid.numRows()
         grid.addMultiCellWidget(a_hb, row, row, 0, 1)
-        toggle.setAutoMask(True)
-
-        self.connect(toggle, SIGNAL("toggled(bool)"), self.slotAddAdministrator)
+        self.checkBoxAdmin.setAutoMask(True)
 
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
@@ -480,9 +478,6 @@ class UserStack(QVBox):
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
 
-    def slotAddAdministrator(self):
-        pass
-
     def checkAdd(self):
        return self.guide.check()
 
@@ -503,6 +498,11 @@ class UserStack(QVBox):
         tmp = self.u_groups.text()
         tmpA = set(tmp.split(","))
         tmpB = set(dict["groups"])
+
+        if self.checkBoxAdmin.isChecked():
+            tmpA.add(unicode("wheel"))
+            tmp = ",".join(tmpA)
+
         if tmpA != tmpB:
             if int(dict["uid"]) == os.getuid() and not "wheel" in tmpA and "wheel" in tmpB:
                 ret = KMessageBox.warningContinueCancel(
