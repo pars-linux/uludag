@@ -1,6 +1,6 @@
 Index: src/maker.py
 ===================================================================
---- src/maker.py	(revision 18529)
+--- src/maker.py	(revision 18560)
 +++ src/maker.py	(working copy)
 @@ -113,6 +113,42 @@
      # Generate the config file
@@ -45,7 +45,7 @@ Index: src/maker.py
  def setup_isolinux(project):
      print "Generating isolinux files..."
      xterm_title("Generating isolinux files")
-@@ -140,13 +176,16 @@
+@@ -140,12 +176,15 @@
                  copy(os.path.join(path, name), "boot/initrd")
  
      # copy config and gfxboot stuff
@@ -58,8 +58,7 @@ Index: src/maker.py
          copy(os.path.join(tmplpath, name), dest)
  
      copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux-debug.bin"), "%s/isolinux.bin" % dest)
++    copy(os.path.join(image_dir, "boot/memtest"), os.path.join(iso_dir, "boot"))
  
-+
  #
  # Image related stuff
- #
