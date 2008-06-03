@@ -411,7 +411,9 @@
       config.lang "en_US" ne {
         % config.lang "lang=%s " bc.cmd dup length add sprintf
         config.lang "mudur=livecd,language:%s " bc.cmd dup length add sprintf
-      } if
+        } {
+        config.lang "mudur=livecd,language:en " bc.cmd dup length add sprintf
+      } ifelse
     } if
 
     v_impaired 1 ge {
