@@ -43,7 +43,8 @@ src/main.bin: src
 bootlogo: src/main.bin help-install/.ready po/.ready fonts/.ready
 	@rm -rf bootlogo.dir
 	@mkdir bootlogo.dir
-	cp -rL data-install/* fonts/*.fnt po/*.tr bootlogo.dir
+	cp -rL data-install/* fonts/*.fnt bootlogo.dir
+	cp -rL po/*.tr bootlogo.dir
 	cp -rL help-install/*.hlp bootlogo.dir
 	cp src/main.bin bootlogo.dir/init
 ifdef DEFAULT_LANG
