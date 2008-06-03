@@ -337,7 +337,7 @@ int PolicyService::polkit_grant_add_child_watch(PolKitGrant *grant, pid_t pid)
 
 void PolicyService::polkit_grant_sigchld_handler(int sig, siginfo_t *info, void *ucontext)
 {
-    Debug::printWarning(QString("polkit_grant_sigchld_handler: Received SIGCHLD, child exit status=%1 PID=%2").arg(info->si_status).arg(info->si_pid));
+    Debug::printDebug(QString("polkit_grant_sigchld_handler: Received SIGCHLD, child exit status=%1 PID=%2").arg(info->si_status).arg(info->si_pid));
 
     //this should be called when child dies
     polkit_grant_child_func (m_self->m_grant, info->si_pid, info->si_status);
@@ -661,6 +661,12 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             Debug::printDebug("obtain_authorization: Authentication failure, trying again...");
             if (m_grant)
                 polkit_grant_unref (m_grant);
+        }
+        else if (!m_gainedPrivilege && m_inputBogus && !m_cancelled)
+        {
+
+            Debug::printWarning("obtain_authorization: Authentication failure, you may already have authentication for this action");
+            break;
         }
         else
             break;
