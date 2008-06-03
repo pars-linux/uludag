@@ -161,13 +161,6 @@ class MainWidget(dm_mainview.mainWidget):
         # hide for now
         self.buttonHelp.hide()
 
-        import displayconfig
-        self.displayConfiguration = displayconfig.DisplayConfig()
-
-        self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
-        if len(self.displayConfiguration.depths) == 1:
-            self.checkBoxTrueColor.setDisabled(True)
-
         self.screenNames = { "1": i18n("Primary Screen"), "2": i18n("Secondary Screen") }
 
         # set button icons
@@ -181,6 +174,20 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
+
+        import displayconfig
+        self.displayConfiguration = displayconfig.DisplayConfig()
+
+        if self.displayConfiguration._info:
+            self.textNotReady.hide()
+        else:
+            self.frameScreens.hide()
+            self.setDisabled(True)
+            return
+
+        self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
+        if len(self.displayConfiguration.depths) == 1:
+            self.checkBoxTrueColor.setDisabled(True)
 
         # set signals
         self.selectedScreen = "1"
@@ -481,15 +488,18 @@ class Module(KCModule):
         self.mainwidget.layout().setMargin(0)
         self.mainwidget.frameDialogButtons.hide()
 
-        QTimer.singleShot(0, self.changed)
+        if self.mainwidget.displayConfiguration._info:
+            QTimer.singleShot(0, self.changed)
 
     def load(self):
-        self.mainwidget.detectDisplays()
-        QTimer.singleShot(0, self.changed)
+        if self.mainwidget.displayConfiguration._info:
+            self.mainwidget.detectDisplays()
+            QTimer.singleShot(0, self.changed)
 
     def save(self):
-        self.mainwidget.slotApply()
-        QTimer.singleShot(0, self.changed)
+        if self.mainwidget.displayConfiguration._info:
+            self.mainwidget.slotApply()
+            QTimer.singleShot(0, self.changed)
 
     def aboutData(self):
         return self.aboutdata

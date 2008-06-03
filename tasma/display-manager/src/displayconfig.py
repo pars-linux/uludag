@@ -137,7 +137,14 @@ class DisplayConfig:
         self._bus = comlink.call("zorg", "Xorg.Display", "activeDeviceID")
         self._info = zorg.config.getDeviceInfo(self._bus)
 
-        #FIXME: Check if self._info is None
+        if not self._info:
+            answer = KMessageBox.questionYesNo(None, i18n("Display manager cannot get configuration information. Configuration file may be corrupted or modified by another tool. If you want to use display manager to configure your video hardware, you must create a new configuration file.\nWould you like to create a new configuration at the next boot?"))
+            if answer == KMessageBox.Yes:
+                ch = comlink.callHandler("zorg", "Xorg.Display", "setPendingConfig", "tr.org.pardus.comar.xorg.display.set")
+                ch.registerDone(self.startupProbe)
+                ch.call({"":""})
+            return
+
         self.card_vendor_id = self._info.vendor_id
         self.card_product_id = self._info.product_id
 
@@ -349,3 +356,6 @@ class DisplayConfig:
 
     def done(self):
         KMessageBox.information(None, i18n("Configuration has been saved. Some changes may take effect after restarting your computer."))
+
+    def startupProbe(self):
+        KMessageBox.information(None, i18n("Your hardware will be probed after restarting your computer."))
