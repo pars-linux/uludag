@@ -35,7 +35,7 @@ class Widget(GoodbyeWidget, ScreenWidget):
         if KGlobal.locale().language() == "tr":
             self.helpUrl = "http://www.pardus.org.tr/yardim.html"
         else:
-            self.helpUrl = "http://www.pardus.org.tr/help.html"
+            self.helpUrl = "http://www.pardus.org.tr/eng/contact.html"
 
         self.minimumResolution = 800
 

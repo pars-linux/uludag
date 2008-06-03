@@ -33,14 +33,15 @@ class Widget(MultipleWidget, ScreenWidget):
     def __init__(self, *args):
         apply(MultipleWidget.__init__, (self,) + args)
 
+        self.info = kdecore.NETRootInfo(int(qt_xdisplay()))
+
         try:
             # as detecting number of desktops via kdecore is not stable, 
             # first try to get it via xprobe.
             out, err = capture("xprop", "-root", "-f", "_NET_NUMBER_OF_DESKTOPS", "0c", " $0", "_NET_NUMBER_OF_DESKTOPS")
             self.oldNumberOfDesktops = int(out.split()[-1])
         except:
-            info = kdecore.NETRootInfo(int(qt_xdisplay()))
-            self.oldNumberOfDesktops =  info.numberOfDesktops()
+            self.oldNumberOfDesktops =  self.info.numberOfDesktops()
 
         # set start value of desktops
         self.numInput.setValue(self.oldNumberOfDesktops)
