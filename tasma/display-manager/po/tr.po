@@ -117,11 +117,8 @@ msgstr ""
 "başlatana kadar etkin olmayabilir."
 
 #: src/displayconfig.py:361
-#, fuzzy
 msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
-"başlatana kadar etkin olmayabilir."
+msgstr "Donanımınız bilgisayarınız tekrar başlatıldıktan sonra yeniden tanınacak."
 
 #: src/monitordialog.py:43 src/monitordialog.py:93
 msgid "New Column"
