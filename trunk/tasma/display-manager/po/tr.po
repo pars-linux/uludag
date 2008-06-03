@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-12 11:15+0300\n"
+"POT-Creation-Date: 2008-06-03 23:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,125 +16,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/dm_mainview.py:346 src/display-manager.py:38 src/display-manager.py:362
-msgid "Display Manager"
-msgstr "Görüntü Yöneticisi"
+#: src/driverdialog.py:43 src/driverdialog.py:64 src/dm_mainview.py:273
+msgid "Driver Name"
+msgstr "Sürücü Adı"
 
-#: src/dm_mainview.py:347
-msgid "Identify Displays"
-msgstr "Ekranları Tanımla"
+#: src/driverdialog.py:44 src/driverdialog.py:65
+msgid "Description"
+msgstr "Açıklama"
 
-#: src/dm_mainview.py:348 src/dm_mainview.py:369 src/display-manager.py:96
-msgid "Primary Screen"
-msgstr "Birinci Ekran"
-
-#: src/dm_mainview.py:349
-msgid "Output"
-msgstr "Çıkış"
-
-#: src/dm_mainview.py:350
-msgid "Resolution"
-msgstr "Çözünürlük"
-
-#: src/dm_mainview.py:353
-msgid "1"
-msgstr "1"
-
-#: src/dm_mainview.py:355
-msgid "2"
-msgstr "2"
-
-#: src/dm_mainview.py:357
-msgid "True Color"
-msgstr "Gerçek Renk"
-
-#: src/dm_mainview.py:358
-msgid "Dual Screen"
-msgstr "Çift Ekran"
-
-#: src/dm_mainview.py:360
-msgid "Cloned Mode"
-msgstr "Klon Modu"
-
-#: src/dm_mainview.py:361
-msgid "Extended Mode"
-msgstr "Uzatılmış Mod"
-
-#: src/dm_mainview.py:362
-msgid "Detect Displays"
-msgstr "Ekranları Algıla"
-
-#: src/dm_mainview.py:363
-msgid "Screens"
-msgstr "Ekranlar"
-
-#: src/dm_mainview.py:364 src/driverdialog.py:59
+#: src/driverdialog.py:58 src/dm_mainview.py:270
 msgid "Video Card"
 msgstr "Ekran Kart"
 
-#: src/dm_mainview.py:365
-msgid "Card Icon"
+#: src/driverdialog.py:59
+msgid "Show all drivers"
 msgstr ""
 
-#: src/dm_mainview.py:366
-msgid "<p>Card Name</p>"
-msgstr "<p>Kart Adı</p>"
+#: src/driverdialog.py:60 src/monitordialog.py:89
+msgid "Ok"
+msgstr "Tamam"
 
-#: src/dm_mainview.py:367
-msgid "<p>Driver Name</p>"
-msgstr "<p>Sürücü Adı</p>"
+#: src/display-manager.py:40 src/display-manager.py:541 src/dm_mainview.py:250
+msgid "Display Manager"
+msgstr "Görüntü Yöneticisi"
 
-#: src/dm_mainview.py:368 src/dm_mainview.py:372 src/dm_mainview.py:376
-msgid "Configure..."
-msgstr "Yapılandır..."
+#: src/display-manager.py:164 src/dm_mainview.py:252 src/dm_mainview.py:275
+msgid "Primary Screen"
+msgstr "Birinci Ekran"
 
-#: src/dm_mainview.py:370 src/dm_mainview.py:374
-msgid "Monitor Icon"
-msgstr ""
-
-#: src/dm_mainview.py:371 src/dm_mainview.py:375
-msgid "Monitor Info"
-msgstr "Monitör Bilgisi"
-
-#: src/dm_mainview.py:373 src/display-manager.py:96
+#: src/display-manager.py:164 src/dm_mainview.py:279
 msgid "Secondary Screen"
 msgstr "İkinci Ekran"
 
-#: src/dm_mainview.py:377
-msgid "Devices"
-msgstr "Aygıtlar"
-
-#: src/displayconfig.py:91
-msgid "COMAR Error"
-msgstr "COMAR Hatası"
-
-#: src/displayconfig.py:96
-msgid "Waiting DBus..."
-msgstr "DBus bekleniyor..."
-
-#: src/displayconfig.py:96
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı "
-"deniyor..."
-
-#: src/displayconfig.py:112
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
-"'service dbus start' komutunu deneyebilirsiniz."
-
-#: src/displayconfig.py:243
-msgid ""
-"Configuration has been saved. Some changes may take effect after restarting "
-"your computer."
-msgstr ""
-"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
-"başlatana kadar etkin olmayabilir."
-
-#: src/display-manager.py:162
+#: src/display-manager.py:287
 msgid ""
 "Sorry, but you can use one device for each output.\n"
 "Try to select another output."
@@ -142,38 +56,91 @@ msgstr ""
 "Aynı anda her çıkış için tek bir cihaz kullanabilirsiniz.\n"
 "Başka bir çıkış deneyin."
 
-#: src/display-manager.py:163
+#: src/display-manager.py:288
 msgid "Duplicate Outputs!"
 msgstr "Çıkışlar çakıştı!"
 
-#: src/display-manager.py:274
+#: src/display-manager.py:409
 #, python-format
 msgid "Driver: %s"
 msgstr "Sürücü: %s"
 
-#: src/display-manager.py:277
+#: src/display-manager.py:412
 msgid "Plug and Play Monitor"
 msgstr "Tak ve Kullan Monitör"
 
-#: src/display-manager.py:350
+#: src/display-manager.py:529
 msgid "Display Manager is already started!"
 msgstr "Görüntü Yöneticisi zaten alıyor!"
 
-#: src/driverdialog.py:28 src/driverdialog.py:60
-msgid "Driver Name"
-msgstr "Sürücü Adı"
+#: src/displayconfig.py:92
+msgid "COMAR Error"
+msgstr "COMAR Hatası"
 
-#: src/driverdialog.py:29 src/driverdialog.py:61
-msgid "Description"
-msgstr "Açıklama"
+#: src/displayconfig.py:97
+msgid "Waiting DBus..."
+msgstr "DBus bekleniyor..."
 
-#: src/driverdialog.py:62
-msgid "Probe at next boot."
-msgstr "Sonraki açılışta algıla."
+#: src/displayconfig.py:97
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+"DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı "
+"deniyor..."
 
-#: src/driverdialog.py:63 src/monitordialog.py:96
-msgid "Ok"
-msgstr "Tamam"
+#: src/displayconfig.py:113
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
+"'service dbus start' komutunu deneyebilirsiniz."
+
+#: src/displayconfig.py:141
+msgid ""
+"Display manager cannot get configuration information. Configuration file may "
+"be corrupted or modified by another tool. If you want to use display manager "
+"to configure your video hardware, you must create a new configuration file.\n"
+"Would you like to create a new configuration at the next boot?"
+msgstr ""
+
+#: src/displayconfig.py:358
+msgid ""
+"Configuration has been saved. Some changes may take effect after restarting "
+"your computer."
+msgstr ""
+"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
+"başlatana kadar etkin olmayabilir."
+
+#: src/displayconfig.py:361
+#, fuzzy
+msgid "Your hardware will be probed after restarting your computer."
+msgstr ""
+"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
+"başlatana kadar etkin olmayabilir."
+
+#: src/monitordialog.py:43 src/monitordialog.py:93
+msgid "New Column"
+msgstr ""
+
+#: src/monitordialog.py:86
+msgid "Choose Monitor"
+msgstr "Monitör Seçin"
+
+#: src/monitordialog.py:87
+msgid "Plug And Play Monitor"
+msgstr "Tak ve Kullan Monitör"
+
+#: src/monitordialog.py:94
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: src/monitordialog.py:95
+msgid "<p>Horizontal Range:</p>"
+msgstr "<p>Yatay Tarama Aralığı:</p>"
+
+#: src/monitordialog.py:96
+msgid "<p>Vertical Range:</p>"
+msgstr "<p>Dikey Tarama Aralığı:</p>"
 
 #: src/helpdialog.py:55
 msgid "Display Manager Help"
@@ -210,22 +177,81 @@ msgstr ""
 msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr "<p><b><h3>Görüntü Yöneticisi </h3></b></p>"
 
-#: src/monitordialog.py:87
-msgid "Choose Monitor"
-msgstr "Monitör Seçin"
+#: src/dm_mainview.py:251
+msgid "Identify Displays"
+msgstr "Ekranları Tanımla"
 
-#: src/monitordialog.py:89
-msgid "Details"
-msgstr "Ayrıntılar"
+#: src/dm_mainview.py:253
+msgid "Output"
+msgstr "Çıkış"
 
-#: src/monitordialog.py:90
-msgid "<p>Horizontal Range:</p>"
-msgstr "<p>Yatay Tarama Aralığı:</p>"
+#: src/dm_mainview.py:254
+msgid "Resolution"
+msgstr "Çözünürlük"
 
-#: src/monitordialog.py:92
-msgid "<p>Vertical Range:</p>"
-msgstr "<p>Dikey Tarama Aralığı:</p>"
+#: src/dm_mainview.py:256
+msgid "Configuration file is not ready."
+msgstr ""
 
-#: src/monitordialog.py:94
-msgid "Plug And Play Monitor"
-msgstr "Tak ve Kullan Monitör"
+#: src/dm_mainview.py:258
+msgid "1"
+msgstr "1"
+
+#: src/dm_mainview.py:261
+msgid "2"
+msgstr "2"
+
+#: src/dm_mainview.py:263
+msgid "True Color"
+msgstr "Gerçek Renk"
+
+#: src/dm_mainview.py:264
+msgid "Dual Screen"
+msgstr "Çift Ekran"
+
+#: src/dm_mainview.py:266
+msgid "Cloned Mode"
+msgstr "Klon Modu"
+
+#: src/dm_mainview.py:267
+msgid "Extended Mode"
+msgstr "Uzatılmış Mod"
+
+#: src/dm_mainview.py:268
+msgid "Detect Displays"
+msgstr "Ekranları Algıla"
+
+#: src/dm_mainview.py:269
+msgid "Screens"
+msgstr "Ekranlar"
+
+#: src/dm_mainview.py:271
+msgid "Card Icon"
+msgstr ""
+
+#: src/dm_mainview.py:272
+#, fuzzy
+msgid "Card Name"
+msgstr "<p>Kart Adı</p>"
+
+#: src/dm_mainview.py:274 src/dm_mainview.py:278 src/dm_mainview.py:282
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: src/dm_mainview.py:276 src/dm_mainview.py:280
+msgid "Monitor Icon"
+msgstr ""
+
+#: src/dm_mainview.py:277 src/dm_mainview.py:281
+msgid "Monitor Info"
+msgstr "Monitör Bilgisi"
+
+#: src/dm_mainview.py:283
+msgid "Devices"
+msgstr "Aygıtlar"
+
+#~ msgid "<p>Driver Name</p>"
+#~ msgstr "<p>Sürücü Adı</p>"
+
+#~ msgid "Probe at next boot."
+#~ msgstr "Sonraki açılışta algıla."
