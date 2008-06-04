@@ -13,7 +13,7 @@ BFLAGS       = -O -v -L ../..
 
 SUBDIRS      = fonts help-boot help-install po src
 
-DEFAULT_LANG = tr
+DEFAULT_LANG = tr_TR
 DEFAULT_LANGUAGES = ca de en es fr it nl pl pt_BR tr
 
 .PHONY: all clean distclean themes $(SUBDIRS)
