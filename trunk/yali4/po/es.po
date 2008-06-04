@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-02 15:57+0300\n"
-"PO-Revision-Date: 2008-05-18 14:19-0400\n"
+"PO-Revision-Date: 2008-06-03 20:36-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -84,8 +84,7 @@ msgstr ""
 "según el método seleccionado."
 
 #: yali4/gui/Ui/autopartwidget.py:97
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Particionamiento automático intenta usar el espacio libre o redimensiona "
 "particiones existentes"
@@ -364,7 +363,7 @@ msgstr "Se realizarán los cambios cuando usted termina.."
 
 #: yali4/gui/Ui/partedit.py:158
 msgid "Refresh Disks"
-msgstr ""
+msgstr "Actualizar Discos"
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Reset All Changes"
@@ -881,8 +880,7 @@ msgstr ""
 # Modo Mayúsculas activado
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:110
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -893,8 +891,7 @@ msgstr ""
 # Las contraseñas no coinciden!
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 # El Nombre de la máquina (hostname) contiene caracteres no válidos!
 #: yali4/gui/ScrAdmin.py:137
@@ -1449,8 +1446,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:175
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:232
 msgid "Update User"
@@ -1773,3 +1769,4 @@ msgstr "Intercambio (swap)"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Guardar Partición"
+
