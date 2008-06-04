@@ -2,16 +2,16 @@
 # translation of bootloader.po to
 # LANGUAGE translations for boot loader
 # Copyright (C) 2004 SUSE LINUX AG
-# , 2004
-# Ines Pozo <Ines.Pozo@novell.com>, 2005.
 #
+# Ines Pozo <Ines.Pozo@novell.com>, 2005.
+# Klemens Häckel <click3d_at_linuxmail_org>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: bootloader\n"
+"Project-Id-Version: es\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-05-16 20:14+0200\n"
-"Last-Translator: Lluis Martinez <lmartinez@sct.ictnet.es>\n"
-"Language-Team: español <OS-trans-es <opensuse-translation-es@opensuse.org>>\n"
+"PO-Revision-Date: 2008-06-03 20:52-0400\n"
+"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,7 +48,7 @@ msgstr "Instalación manual"
 
 #. txt_noacpi_install
 msgid "Installation--ACPI Disabled"
-msgstr "Instalación -- ACPI inhabilitado"
+msgstr "Instalación -- ACPI deshabilitado"
 
 #. txt_safe_install
 msgid "Installation--Safe Settings"
@@ -272,11 +272,11 @@ msgstr "Instalación -- IOAPIC habilitado"
 
 #. txt_noapic_install
 msgid "Installation--IOAPIC Disabled"
-msgstr "Instalación -- IOAPIC inhabilitado"
+msgstr "Instalación -- IOAPIC deshabilitado"
 
 #. txt_nolapic_install
 msgid "Installation--Local APIC Disabled"
-msgstr "Instalación -- APIC local inhabilitado"
+msgstr "Instalación -- APIC local deshabilitado"
 
 #. txt_yes
 msgid "Yes"
@@ -318,7 +318,7 @@ msgstr "Volver a instalar el cargador de arranque de partición ZEN"
 
 #. txt_zenDisable
 msgid "Disable ZEN Partition"
-msgstr "Inhabilitar partición ZEN"
+msgstr "Deshabilitar partición ZEN"
 
 #. txt_zenEnable
 msgid "Enable ZEN Partition"
@@ -407,3 +407,4 @@ msgstr "Reparar el sistema instalado"
 #. txt_mediacheck
 msgid "Check Installation Media"
 msgstr "Verificar el medio de instalación"
+

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-04 00:29+0300\n"
-"PO-Revision-Date: 2008-05-18 08:26-0400\n"
+"PO-Revision-Date: 2008-06-03 20:44-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "Tarjeta de video"
 
 #: src/driverdialog.py:59
 msgid "Show all drivers"
-msgstr ""
+msgstr "Mostrar todos los controladores"
 
 #: src/driverdialog.py:60 src/monitordialog.py:89
 msgid "Ok"
@@ -105,6 +105,9 @@ msgid ""
 "to configure your video hardware, you must create a new configuration file.\n"
 "Would you like to create a new configuration at the next boot?"
 msgstr ""
+"Administrador de Pantallas no logra obtener información de configuración. "
+"El archivo de configuración podría estar dañado o fue modificado por otra herramienta. Si desea usar el administrador de pantallas para configurar los dispositivos de video, debe crear un nuevo archivo de configuración.\n"
+"Desea crear un nuevo archivo de configuración durante el próximo arranque del sistema ?"
 
 #: src/displayconfig.py:358
 msgid ""
@@ -115,11 +118,10 @@ msgstr ""
 "aplican al reiniciar la computadora."
 
 #: src/displayconfig.py:361
-#, fuzzy
+# favor revisar, free translation, but i think the idea is ok
+# duda: probed - creo que detectares la idea, "comprobar" para mi que no es
 msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-"Configuración guardada con éxito. Puede que algunos de los cambios se "
-"aplican al reiniciar la computadora."
+msgstr "Se detectarán sus dispositivos durante el próximo arranque del sistema."
 
 #: src/monitordialog.py:86
 msgid "Choose Monitor"
@@ -213,7 +215,7 @@ msgstr "Resolución"
 
 #: src/dm_mainview.py:256
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Archivo de configuración no está listo."
 
 #: src/dm_mainview.py:258
 msgid "1"
@@ -255,21 +257,3 @@ msgstr "Configurar..."
 msgid "Devices"
 msgstr "Dispositivos"
 
-#~ msgid "Card Icon"
-#~ msgstr "Ícono de tarjeta"
-
-#, fuzzy
-#~ msgid "Card Name"
-#~ msgstr "<p>Nombre de tarjeta</p>"
-
-#~ msgid "Monitor Icon"
-#~ msgstr "Ícono de monitor"
-
-#~ msgid "Monitor Info"
-#~ msgstr "Información de monitor"
-
-#~ msgid "<p>Driver Name</p>"
-#~ msgstr "<p>Nombre de Controlador</p>"
-
-#~ msgid "Probe at next boot."
-#~ msgstr "Realizar verificación durante el próximo arranque."
