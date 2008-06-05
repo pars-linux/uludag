@@ -176,7 +176,7 @@ class DisplayConfig:
     def detect(self):
         self._rriface = randriface.RandRIface()
         #self._randr12 = "randr12" in self._flags
-        self._randr12 = len(self._rriface.outputs) > 1
+        self._randr12 = self._rriface.outputs != ["default"]
 
         self.modes = {}
         self.current_modes = {}
