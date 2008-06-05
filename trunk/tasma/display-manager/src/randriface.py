@@ -19,7 +19,7 @@ class RandRIface:
     def detect(self):
         self.outputs = []
 
-        output_pattern = re.compile("(.*) (.*connected) .*")
+        output_pattern = re.compile("(.*) (.*connected)")
         mode_pattern = re.compile("   (\S*) .+")
 
         p = subprocess.Popen(["xrandr"], stdout=subprocess.PIPE)
