@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-02 15:57+0300\n"
-"PO-Revision-Date: 2008-06-01 23:04+0200\n"
+"PO-Revision-Date: 2008-06-05 16:03+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Ich werde das Ziel auswählen"
 
 #: yali4/gui/Ui/autopartquestion.py:68
 msgid "Use Selected"
-msgstr "Benutzer ausgewählt"
+msgstr "Ausgewählte verwenden"
 
 #: yali4/gui/Ui/autopartwidget.py:90 yali4/gui/Ui/bootloaderwidget.py:74
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
@@ -81,10 +81,11 @@ msgid ""
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
+"Hier können Sie eine Partitionierungsmethode und anschliessend ein Laufwerk "
+"auswählen um fortzufahren. <br> Laufwerkliste wird für die ausgewählte Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:97
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
@@ -269,11 +270,11 @@ msgstr "Release-Informationen"
 
 #: yali4/gui/Ui/main.py:452
 msgid "Toggle Help"
-msgstr ""
+msgstr "Hilfe umschalten"
 
 #: yali4/gui/Ui/main.py:453
 msgid "Previous Screen"
-msgstr ""
+msgstr "Vorheriges Fenster"
 
 #: yali4/gui/Ui/main.py:454
 msgid "Back"
@@ -654,7 +655,7 @@ msgstr "Freier Bereich"
 
 #: yali4/gui/DiskWidgets.py:286 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
-msgstr ""
+msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:333
 msgid "Too many primary partition !"
@@ -676,15 +677,15 @@ msgstr "Pardus wird hier installiert"
 
 #: yali4/gui/DiskWidgets.py:458
 msgid "User files will store here"
-msgstr ""
+msgstr "Benutzerdateien werden hier abgespeichert"
 
 #: yali4/gui/DiskWidgets.py:461
 msgid "Swap will be here"
-msgstr ""
+msgstr "Swapbereich"
 
 #: yali4/gui/DiskWidgets.py:464
 msgid "Backup or archive files will store here"
-msgstr ""
+msgstr "Backup- oder Archiv-Dateien werden hier abgespeichert"
 
 #: yali4/gui/DiskWidgets.py:485
 #, python-format
@@ -693,22 +694,27 @@ msgid ""
 "                                  <b>Size:</b> %s<br>\n"
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
+"<b>Pfad:</b> %s<br>\n"
+"                                  <b>Grösse:</b> %s<br>\n"
+"                                  <b>Dateisystem:</b> %s%s"
 
 #: yali4/gui/GUIAdditional.py:67
 msgid ""
 "<p><span style=\"color:#FFF\"><b>It seems this partition is not ready for "
 "resizing.</b></span></p>"
 msgstr ""
+"<p><span style=\"color:#FFF\"><b>Es scheint, dass diese Partition für die "
+"Grössenänderung nicht bereit ist.</b></span></p>"
 
 #: yali4/gui/GUIAdditional.py:80
 #, python-format
 msgid "Resizing to %s MB.."
-msgstr ""
+msgstr "Grössenänderung zu %s MB.."
 
 #: yali4/gui/GUIAdditional.py:137
 #, python-format
 msgid "(%s) [%s] Size : %s - Free : %s"
-msgstr ""
+msgstr "(%s) [%s] Grösse : %s - Frei : %s"
 
 #: yali4/gui/GUIGPL.py:52
 msgid "Can't open License file!"
@@ -732,7 +738,7 @@ msgstr "Administrator festlegen"
 
 #: yali4/gui/ScrAdmin.py:31
 msgid "Admins has important rights on the system.."
-msgstr ""
+msgstr "Administratoren haben auf dem System wichtige Rechte.."
 
 #: yali4/gui/ScrAdmin.py:33
 msgid ""
@@ -984,7 +990,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr ""
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1072,7 +1078,7 @@ msgstr ""
 
 #: yali4/gui/ScrKahyaCheck.py:50
 msgid "Kahya is working..."
-msgstr ""
+msgstr "Kahya ist am arbeiten..."
 
 #: yali4/gui/ScrKahyaCheck.py:51
 msgid "Kahya will automatically install your system.."
@@ -1090,11 +1096,11 @@ msgstr ""
 
 #: yali4/gui/ScrKeyboard.py:31
 msgid "Set your keyboard layout"
-msgstr "Wählen Sie Ihre Tastaturbelegung aus"
+msgstr "Stellen Sie Ihre Tastaturbelegung ein"
 
 #: yali4/gui/ScrKeyboard.py:32
 msgid "Use your keyboard layout.."
-msgstr ""
+msgstr "Verwenden Sie Ihre Tastaturbelegung"
 
 #: yali4/gui/ScrKeyboard.py:34
 msgid ""
@@ -1108,6 +1114,15 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Tastatureinstellung</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Hier können Sie den Typ und die Sprachbelegung Ihrer Tastatur auswählen. Sie können die "
+"vorgenommene Änderungen in dem Textfeld testen. \n"
+"Fahren Sie nach Ihrer Wahl mit der Installation fort.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrPartitionAuto.py:39
 msgid "Choose Partitioning"
@@ -1181,7 +1196,7 @@ msgstr "Manuelle Partitionierung"
 
 #: yali4/gui/ScrPartitionManual.py:32
 msgid "You can easily configure your partitions.."
-msgstr ""
+msgstr "Sie können einfach Ihre Partitionen konfigurieren.."
 
 #: yali4/gui/ScrPartitionManual.py:34
 msgid ""
@@ -1210,7 +1225,7 @@ msgstr "Benutzer festlegen"
 
 #: yali4/gui/ScrUsers.py:33
 msgid "Create users to use Pardus.."
-msgstr ""
+msgstr "Legen Sie Benutzer zur Verwendung von Pardus an"
 
 #: yali4/gui/ScrUsers.py:35
 msgid ""
@@ -1334,7 +1349,7 @@ msgstr "Ablaufverfolgung:"
 
 #: yali4/installer.py:120
 msgid "YALI Working..."
-msgstr ""
+msgstr "YALI ist am arbeiten..."
 
 #: yali4/installer.py:135
 msgid "Starting for CD Check"
@@ -1343,7 +1358,7 @@ msgstr "CD-Überprüfung wird gestartet"
 #: yali4/installer.py:153
 #, python-format
 msgid "Checking: %s"
-msgstr ""
+msgstr "Am überprüfen: %s"
 
 #: yali4/installer.py:157
 msgid "Check Failed"
@@ -1372,15 +1387,15 @@ msgstr "Zeiteinstellungen werden vorgenommen.."
 
 #: yali4/installer.py:196
 msgid "Disk analyze started.."
-msgstr ""
+msgstr "Festplattenanalyse gestartet.."
 
 #: yali4/installer.py:280
 msgid "Resizing ..."
-msgstr ""
+msgstr "Grössenänderung wird vorgenommen..."
 
 #: yali4/installer.py:283
 msgid "Resize Finished ..."
-msgstr ""
+msgstr "Grössenänderung abgeschlossen..."
 
 #: yali4/installer.py:295
 msgid "Creating new partition ..."
@@ -1557,3 +1572,4 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
+
