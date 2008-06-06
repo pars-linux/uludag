@@ -60,6 +60,7 @@ class User:
         self.realname = ''
         self.passwd = ''
         self.uid = -1
+        self.icon = head_images.next()
 
         # KDE AutoLogin Defaults
         self.autoLoginDefaults = {"AutoLoginAgain":"false",

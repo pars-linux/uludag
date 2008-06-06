@@ -14,6 +14,7 @@
 import os
 import dbus
 import time
+import shutil
 
 # we need i18n
 import gettext
@@ -388,6 +389,12 @@ class Yali:
             for u in yali4.users.pending_users:
                 ctx.debugger.log("User %s adding to system" % u.username)
                 obj.addUser(-1, u.username, u.realname, "", "", unicode(u.passwd), u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
+
+                # Use random user icon from YALI Archive
+                iconPath = os.path.join(ctx.consts.target_dir,"home/%s/.face.icon" % u.username)
+                shutil.copy(u.icon, iconPath)
+                os.chmod(iconPath, 0644)
+
                 # Enable auto-login
                 if u.username == ctx.installData.autoLoginUser:
                     u.setAutoLogin()
@@ -416,7 +423,6 @@ class Yali:
 
             if os.path.exists(ctx.consts.pisiIndexFile):
                 # Copy package index
-                import shutil
                 shutil.copy(ctx.consts.pisiIndexFile, target)
                 shutil.copy(ctx.consts.pisiIndexFileSum, target)
 
