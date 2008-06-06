@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 23:07+0300\n"
+"POT-Creation-Date: 2008-06-06 19:45+0300\n"
 "PO-Revision-Date: 2006-06-15 15:23+0300\n"
 "Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
 "Language-Team: Türkçe <->\n"
@@ -15,6 +15,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11\n"
+
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: um_mainview.py:43
+msgid "DBus Error"
+msgstr ""
+
+#: um_mainview.py:58
+msgid "D-Bus Error"
+msgstr ""
+
+#: um_mainview.py:62
+msgid "COMAR Error"
+msgstr ""
 
 #: groupedit.py:22 useredit.py:25
 msgid "ID:"
@@ -43,6 +59,69 @@ msgstr "Yeni Grubun Bilgilerini Girin"
 #: groupedit.py:168
 msgid "Adding group..."
 msgstr "Grup ekleniyor..."
+
+#: browser.py:92
+msgid "Show system user and groups"
+msgstr "Sistem kullanıcı ve gruplarını göster"
+
+#: browser.py:102 browser.py:112
+msgid "ID"
+msgstr "No"
+
+#: browser.py:104
+msgid "User name"
+msgstr "Kullanıcı adı"
+
+#: browser.py:105
+msgid "Full name"
+msgstr "Ad soyad"
+
+#: browser.py:114
+msgid "Group name"
+msgstr "Grup adı"
+
+#: browser.py:119
+msgid "Users"
+msgstr "Kullanıcılar"
+
+#: browser.py:120 useredit.py:636
+msgid "Groups"
+msgstr "Gruplar"
+
+#: browser.py:135
+msgid "User Manager Help"
+msgstr "Kullanıcı Yöneticisi Yardımı"
+
+#: browser.py:142
+#, python-format
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Bu kullanıcıyı sileyim mi?</b></big><br><br>Adı soyadı: %"
+"s<br>Kullanıcı adı: %s<br>No: %d"
+
+#: browser.py:148
+msgid "Delete User"
+msgstr "Kullanıcı Sil"
+
+#: browser.py:149
+msgid "Delete user and files"
+msgstr "Kullanıcıyı ve dosyalarını sil"
+
+#: browser.py:150
+msgid "Delete user"
+msgstr "Kullanıcıyı sil"
+
+#: browser.py:167
+#, python-format
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr "<big><b>Bu grubu sileyim mi?</b></big><br><br>Grup adı: %s<br>No: %d"
+
+#: browser.py:173 browser.py:174
+msgid "Delete Group"
+msgstr "Grup Sil"
 
 #: user-manager.py:33
 msgid "User Management"
@@ -152,7 +231,7 @@ msgstr "Yeni Kullanıcının Bilgilerini Girin"
 msgid "Give administrator privileges to this user"
 msgstr "Bu kullanıcıya yönetici yetkileri ver"
 
-#: useredit.py:522
+#: useredit.py:523
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
@@ -160,100 +239,42 @@ msgstr ""
 "Kendinizi 'wheel' sistem grubundan çıkarıyorsunuz, bundan sonra yönetici "
 "yetkilerinizi kullanamayacaksınız."
 
-#: useredit.py:523
+#: useredit.py:524
 msgid "Important Group Change"
 msgstr "Önemli Grup Değişikliği"
 
-#: useredit.py:530
+#: useredit.py:531
 msgid "Changing user information..."
 msgstr "Kullanıcı bilgisi değiştiriliyor..."
 
-#: useredit.py:548
+#: useredit.py:549
 msgid "Adding user..."
 msgstr "Kullanıcı ekleniyor..."
 
-#: useredit.py:594
+#: useredit.py:595
 msgid "Getting user information..."
 msgstr "Kullanıcı bilgisi alınıyor..."
 
-#: um_mainview.py:44
-msgid "Unable to connect to DBus."
+#: useredit.py:629
+msgid "Authorizations"
 msgstr ""
 
-#: um_mainview.py:44
-msgid "DBus Error"
+#: useredit.py:642
+msgid "Actions"
 msgstr ""
 
-#: um_mainview.py:59
-msgid "D-Bus Error"
+#: useredit.py:648
+msgid "Authorize"
 msgstr ""
 
-#: um_mainview.py:63
-msgid "COMAR Error"
+#: useredit.py:652
+msgid "Block"
 msgstr ""
 
-#: browser.py:92
-msgid "Show system user and groups"
-msgstr "Sistem kullanıcı ve gruplarını göster"
-
-#: browser.py:102 browser.py:112
-msgid "ID"
-msgstr "No"
-
-#: browser.py:104
-msgid "User name"
-msgstr "Kullanıcı adı"
-
-#: browser.py:105
-msgid "Full name"
-msgstr "Ad soyad"
-
-#: browser.py:114
-msgid "Group name"
-msgstr "Grup adı"
-
-#: browser.py:119
-msgid "Users"
-msgstr "Kullanıcılar"
-
-#: browser.py:120
-msgid "Groups"
-msgstr "Gruplar"
-
-#: browser.py:135
-msgid "User Manager Help"
-msgstr "Kullanıcı Yöneticisi Yardımı"
-
-#: browser.py:142
-#, python-format
-msgid ""
-"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
-"s<br>ID: %d"
-msgstr ""
-"<big><b>Bu kullanıcıyı sileyim mi?</b></big><br><br>Adı soyadı: %"
-"s<br>Kullanıcı adı: %s<br>No: %d"
-
-#: browser.py:148
-msgid "Delete User"
-msgstr "Kullanıcı Sil"
-
-#: browser.py:149
-msgid "Delete user and files"
-msgstr "Kullanıcıyı ve dosyalarını sil"
-
-#: browser.py:150
-msgid "Delete user"
-msgstr "Kullanıcıyı sil"
-
-#: browser.py:167
-#, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr "<big><b>Bu grubu sileyim mi?</b></big><br><br>Grup adı: %s<br>No: %d"
-
-#: browser.py:173 browser.py:174
-msgid "Delete Group"
-msgstr "Grup Sil"
+#: useredit.py:662
+#, fuzzy
+msgid "Do not ask password"
+msgstr "Parola onay:"
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "

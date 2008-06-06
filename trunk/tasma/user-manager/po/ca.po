@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manager per a Pardus en català\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 23:07+0300\n"
+"POT-Creation-Date: 2008-06-06 19:45+0300\n"
 "PO-Revision-Date: 2007-03-28 03:20+0100\n"
 "Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
 "Language-Team: Catalan translators Pardus <Pardus-translation-ca@uludag.org."
@@ -15,6 +15,22 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: um_mainview.py:43
+msgid "DBus Error"
+msgstr ""
+
+#: um_mainview.py:58
+msgid "D-Bus Error"
+msgstr ""
+
+#: um_mainview.py:62
+msgid "COMAR Error"
+msgstr ""
 
 #: groupedit.py:22 useredit.py:25
 msgid "ID:"
@@ -43,6 +59,73 @@ msgstr "Introduïu informació per al nou grup"
 #: groupedit.py:168
 msgid "Adding group..."
 msgstr "Afegim un grup..."
+
+#: browser.py:92
+msgid "Show system user and groups"
+msgstr "Mostra l'usuari del sistema i els grups"
+
+#: browser.py:102 browser.py:112
+msgid "ID"
+msgstr "ID"
+
+#: browser.py:104
+msgid "User name"
+msgstr "Nom de l'usuari"
+
+#: browser.py:105
+msgid "Full name"
+msgstr "Nom complet"
+
+#: browser.py:114
+msgid "Group name"
+msgstr "Nom del grup"
+
+#: browser.py:119
+msgid "Users"
+msgstr "Usuaris"
+
+#: browser.py:120 useredit.py:636
+msgid "Groups"
+msgstr "Grups"
+
+#: browser.py:135
+msgid "User Manager Help"
+msgstr "Ajuda del gestor d'usuaris"
+
+# S'ha de traduir User Name?
+#: browser.py:142
+#, python-format
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom: %s<br>Nom de "
+"l'usuari: %s<br>ID: %d"
+
+#: browser.py:148
+msgid "Delete User"
+msgstr "Suprimeix l'usuari"
+
+#: browser.py:149
+msgid "Delete user and files"
+msgstr "Suprimeix l'usuari i els arxius"
+
+#: browser.py:150
+msgid "Delete user"
+msgstr "Suprimeix l'usuari"
+
+# S'ha de traduir Group Name?
+#: browser.py:167
+#, python-format
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom del grup: %"
+"s<br>ID: %d"
+
+#: browser.py:173 browser.py:174
+msgid "Delete Group"
+msgstr "Suprimeix el grup"
 
 #: user-manager.py:33
 msgid "User Management"
@@ -153,7 +236,7 @@ msgstr "Introduïu la informació per al nou usuari"
 msgid "Give administrator privileges to this user"
 msgstr ""
 
-#: useredit.py:522
+#: useredit.py:523
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
@@ -161,104 +244,42 @@ msgstr ""
 "Us esteu esborrant del grup de sistema 'wheel', després no podreu utilitzar "
 "els vostres permissos com a administrador."
 
-#: useredit.py:523
+#: useredit.py:524
 msgid "Important Group Change"
 msgstr "Canvi de grup important"
 
-#: useredit.py:530
+#: useredit.py:531
 msgid "Changing user information..."
 msgstr "S'està canviant la informació de l'usuari"
 
-#: useredit.py:548
+#: useredit.py:549
 msgid "Adding user..."
 msgstr "Afegim l'usuari..."
 
-#: useredit.py:594
+#: useredit.py:595
 msgid "Getting user information..."
 msgstr "Recopilem la informació de l'usuari..."
 
-#: um_mainview.py:44
-msgid "Unable to connect to DBus."
+#: useredit.py:629
+msgid "Authorizations"
 msgstr ""
 
-#: um_mainview.py:44
-msgid "DBus Error"
+#: useredit.py:642
+msgid "Actions"
 msgstr ""
 
-#: um_mainview.py:59
-msgid "D-Bus Error"
+#: useredit.py:648
+msgid "Authorize"
 msgstr ""
 
-#: um_mainview.py:63
-msgid "COMAR Error"
+#: useredit.py:652
+msgid "Block"
 msgstr ""
 
-#: browser.py:92
-msgid "Show system user and groups"
-msgstr "Mostra l'usuari del sistema i els grups"
-
-#: browser.py:102 browser.py:112
-msgid "ID"
-msgstr "ID"
-
-#: browser.py:104
-msgid "User name"
-msgstr "Nom de l'usuari"
-
-#: browser.py:105
-msgid "Full name"
-msgstr "Nom complet"
-
-#: browser.py:114
-msgid "Group name"
-msgstr "Nom del grup"
-
-#: browser.py:119
-msgid "Users"
-msgstr "Usuaris"
-
-#: browser.py:120
-msgid "Groups"
-msgstr "Grups"
-
-#: browser.py:135
-msgid "User Manager Help"
-msgstr "Ajuda del gestor d'usuaris"
-
-# S'ha de traduir User Name?
-#: browser.py:142
-#, python-format
-msgid ""
-"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
-"s<br>ID: %d"
-msgstr ""
-"<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom: %s<br>Nom de "
-"l'usuari: %s<br>ID: %d"
-
-#: browser.py:148
-msgid "Delete User"
-msgstr "Suprimeix l'usuari"
-
-#: browser.py:149
-msgid "Delete user and files"
-msgstr "Suprimeix l'usuari i els arxius"
-
-#: browser.py:150
-msgid "Delete user"
-msgstr "Suprimeix l'usuari"
-
-# S'ha de traduir Group Name?
-#: browser.py:167
-#, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom del grup: %"
-"s<br>ID: %d"
-
-#: browser.py:173 browser.py:174
-msgid "Delete Group"
-msgstr "Suprimeix el grup"
+#: useredit.py:662
+#, fuzzy
+msgid "Do not ask password"
+msgstr "Repeteix el mot de pas:"
 
 # S'ha de traduir Service comar start?
 #~ msgid ""
