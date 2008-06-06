@@ -257,24 +257,24 @@ msgstr "Kullanıcı bilgisi alınıyor..."
 
 #: useredit.py:629
 msgid "Authorizations"
-msgstr ""
+msgstr "Yetkiler"
 
 #: useredit.py:642
 msgid "Actions"
-msgstr ""
+msgstr "Eylemler"
 
 #: useredit.py:648
 msgid "Authorize"
-msgstr ""
+msgstr "Yetkilendir"
 
 #: useredit.py:652
 msgid "Block"
-msgstr ""
+msgstr "Engelle"
 
 #: useredit.py:662
 #, fuzzy
 msgid "Do not ask password"
-msgstr "Parola onay:"
+msgstr "Parola sorma"
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "
