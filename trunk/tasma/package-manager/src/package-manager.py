@@ -82,14 +82,12 @@ class MainApplication(KMainWindow):
         self.statusLabel.setText(text)
         self.statusLabel.setAlignment(Qt.AlignHCenter)
 
-    def closeEvent(self, closeEvent):
-        closeEvent.accept()
-        if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray"):
-            closeEvent.ignore()
+    def queryClose(self):
+        if self.mainwidget.settings.getBoolValue(Settings.general, "SystemTray") and not kapp.sessionSaving():
             Globals.debug("Minimizing to system tray.")
             self.hide()
-        else:
-            self.slotQuit()
+            return False
+        return True
 
     def queryExit(self):
         return not self.mainwidget.command.inProgress()
