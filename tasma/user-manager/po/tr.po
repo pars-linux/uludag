@@ -150,7 +150,7 @@ msgstr "Yeni Kullanıcının Bilgilerini Girin"
 
 #: useredit.py:450
 msgid "Give administrator privileges to this user"
-msgstr "Bu kullanıcıya yönetici yetkileri verin"
+msgstr "Bu kullanıcıya yönetici yetkileri ver"
 
 #: useredit.py:522
 msgid ""
