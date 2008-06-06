@@ -36,6 +36,16 @@ locales = {
         "consoletranslation" : "8859-1"
         },
 
+"gb" : {
+        "name" : _("English GB"),
+        "xkblayout" : "gb",
+        "xkbvariant" : None,
+        "locale" : "en_GB.UTF-8",
+        "consolekeymap" : "uk",
+        "consolefont" : "iso01.16",
+        "consoletranslation" : "8859-1"
+        },
+
 "gr" : {
         "name" : _("Greek"),
         "xkblayout" : "gr",
