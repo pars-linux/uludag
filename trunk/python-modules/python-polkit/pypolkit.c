@@ -323,6 +323,81 @@ pk_auth_add(PyObject *self, PyObject *args)
     }
 }
 
+//! Callback function for removing all autorizations
+static polkit_bool_t
+pk_auth_revoke_all_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
+{
+    PolKitError *pk_error = NULL;
+    polkit_authorization_db_revoke_entry(authdb, auth, &pk_error);
+
+    return FALSE;
+}
+
+//! Revoke all authorizations of given user
+static PyObject *
+pk_auth_revoke_all(PyObject *self, PyObject *args)
+{
+    int uid = -1;
+
+    if (!PyArg_ParseTuple(args, "i", &uid)) {
+        return NULL;
+    }
+
+    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
+    PolKitError *pk_error = NULL;
+
+    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_revoke_all_cb, NULL, &pk_error);
+
+    if (polkit_error_is_set(pk_error)) {
+        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+        polkit_error_free(pk_error);
+        return NULL;
+    }
+
+    Py_INCREF(Py_None);
+    return Py_None;
+}
+
+//! Callback function for removing autorizations
+static polkit_bool_t
+pk_auth_revoke_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
+{
+    const char *action_id = (const char *) user_data;
+
+    PolKitError *pk_error = NULL;
+    if (strcmp(polkit_authorization_get_action_id(auth), action_id) == 0) {
+        polkit_authorization_db_revoke_entry(authdb, auth, &pk_error);
+    }
+
+    return FALSE;
+}
+
+//! Revoke authorizations of given user for given action_id
+static PyObject *
+pk_auth_revoke(PyObject *self, PyObject *args)
+{
+    int uid = -1;
+    const char *action_id;
+
+    if (!PyArg_ParseTuple(args, "is", &uid, &action_id)) {
+        return NULL;
+    }
+
+    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
+    PolKitError *pk_error = NULL;
+
+    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_revoke_cb, action_id, &pk_error);
+
+    if (polkit_error_is_set(pk_error)) {
+        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+        polkit_error_free(pk_error);
+        return NULL;
+    }
+
+    Py_INCREF(Py_None);
+    return Py_None;
+}
+
 static PyObject *pk_check_authv(PyObject *self, PyObject *args) {
   pid_t pid = 0;
   char **argv = NULL;
@@ -462,6 +537,8 @@ static PyMethodDef polkit_methods[] = {
     {"auth_add", (PyCFunction) pk_auth_add, METH_VARARGS, "Authorize user for the given action."},
     {"check_authv", (PyCFunction) pk_check_authv, METH_VARARGS, "Check authorization for the given action."},
     {"auth_obtain", (PyCFunction) pk_auth_obtain, METH_VARARGS, "Authorize user for the given action."},
+    {"auth_revoke_all", (PyCFunction) pk_auth_revoke_all, METH_VARARGS, "Revoke all authorizations of given user."},
+    {"auth_revoke", (PyCFunction) pk_auth_revoke, METH_VARARGS, "Revoke authorization of given user for the given action."},
     {NULL, NULL, 0, NULL}
 };
 
