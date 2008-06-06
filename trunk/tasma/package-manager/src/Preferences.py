@@ -62,13 +62,29 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
         self.getCacheSettings()
+        self.getBandwidthSetting()
 
         # This is to not call setRepositories unnecessarily
         self.reposChanged = False
 
     def setCacheSettings(self, useCache, cacheLimit):
         self.parent.command.setCache(useCache, cacheLimit)
-    
+
+    def setBandwidth(self, limit):
+        self.parent.command.setBandwidth(limit)
+
+    def getBandwidthSetting(self):
+        config = PisiIface.read_config("/etc/pisi/pisi.conf")
+        bandwidth_limit = config.get("general", "bandwidth_limit")
+
+        if bandwidth_limit:
+           bandwidth_limit = int(bandwidth_limit)
+        else:
+            bandwidth_limit = 0
+
+        self.bandwidth_limit = bandwidth_limit
+        self.bandwidthValue.setValue(bandwidth_limit)
+
     # Cache settings are system wide and taken from pisi.conf
     def getCacheSettings(self):
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
@@ -204,6 +220,10 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         # set cache if changed
         if self.cacheEnabled != self.useCacheCheck.isChecked() or self.cacheSize != self.useCacheSize.value():
             self.setCacheSettings(self.useCacheCheck.isChecked(), self.useCacheSize.value())
+
+        #set bandwidth if changed
+        if self.bandwidth_limit != self.bandwidthValue.value():
+            self.setBandwidth(self.bandwidthValue.value())
 
         if self.intervalCheck.isChecked():
             self.parent.parent.tray.updateInterval(self.intervalSpin.value())
