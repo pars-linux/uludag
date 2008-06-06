@@ -32,7 +32,7 @@ def AboutData():
         mod_version,
         I18N_NOOP("User Management"),
         KAboutData.License_GPL,
-        "(C) 2005-2006 UEKAE/TÜBİTAK",
+        "(C) 2005-2008 UEKAE/TÜBİTAK",
         None,
         None,
         "bugs@pardus.org.tr"
@@ -54,7 +54,7 @@ class Module(KCModule):
         self.setButtons(0)
         self.aboutdata = AboutData()
         attachMainWidget(self)
-    
+
     def aboutData(self):
         return self.aboutdata
 
@@ -62,7 +62,7 @@ class Module(KCModule):
 # KCModule factory
 def create_user_manager(parent, name):
     global kapp
-    
+
     kapp = KApplication.kApplication()
     if not dbus.get_default_main_loop():
         dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
@@ -72,17 +72,17 @@ def create_user_manager(parent, name):
 # Standalone
 def main():
     global kapp
-    
+
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
-    
+
     about = AboutData()
     KCmdLineArgs.init(sys.argv, about)
     KUniqueApplication.addCmdLineOptions()
-    
+
     if not KUniqueApplication.start():
         print i18n("User manager module is already started!")
         return
-    
+
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
     win.setCaption(i18n("User Manager"))
@@ -92,7 +92,6 @@ def main():
     win.setIcon(getIconSet("kuser").pixmap(QIconSet.Small, QIconSet.Normal))
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
-
 
 if __name__ == "__main__":
     main()
