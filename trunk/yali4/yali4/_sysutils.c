@@ -18,6 +18,33 @@
 #include <sys/reboot.h>
 #include <ext2fs/ext2fs.h>
 
+
+PyDoc_STRVAR(mount__doc__,
+"mount(source, target, filesystem)\n"
+"\n"
+"method implements the mount(2) system call in Linux\n");
+
+static PyObject*
+_sysutils_mount(PyObject *self, PyObject *args)
+{
+
+  int ok;
+  const char *src, *tgt, *fstype;
+
+  /* FIXME: get mount flags! */
+  if (!PyArg_ParseTuple(args, "sss", &src, &tgt, &fstype))
+  {
+      Py_INCREF(Py_None);
+      return Py_None;
+  }
+
+  ok = mount(src, tgt, fstype, MS_NOATIME, NULL);
+
+  return PyInt_FromLong( (long) ok );
+}
+
+
+
 PyDoc_STRVAR(umount__doc__,
 "umount(target)\n"
 "\n"
@@ -129,6 +156,7 @@ _sysutils_e2fslabel(PyObject * s, PyObject * args)
 
 
 static PyMethodDef _sysutils_methods[] = {
+    {"mount",  (PyCFunction)_sysutils_mount,  METH_VARARGS,  mount__doc__},
     {"umount",  (PyCFunction)_sysutils_umount,  METH_VARARGS,  umount__doc__},
     {"eject",  (PyCFunction)_sysutils_eject,  METH_VARARGS,  eject__doc__},
     {"fastreboot",  (PyCFunction)_sysutils_fastreboot,  METH_NOARGS,  fastreboot__doc__},
