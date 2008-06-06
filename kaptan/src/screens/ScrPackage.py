@@ -91,7 +91,7 @@ class Widget(PackageWidget, ScreenWidget):
                 self.checkBoxContrib.setChecked(0)
 
                 message = i18n("You are not authorized for this operation.")
-                KMessageBox.sorry(self, message, i18n("Authentication Error!"))
+                KMessageBox.error(self, message, i18n("Authentication Error!"))
         else:
             if self.flagRepo != 1:
                 self.removeRepo(self.repoName)
