@@ -463,7 +463,8 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(lab, row, row, 0, 1)
 
-        self.u_groups = UserGroupList(self, hb)
+        self.u_policygrouptab = PolicyGroupTab(hb, self)
+        self.u_groups = self.u_policygrouptab.groupsWidget
 
         self.guide = Guide(self, edit)
         self.setStretchFactor(self.guide, 1)
@@ -615,3 +616,49 @@ class UserStack(QVBox):
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
         ch.call(uid)
+
+class PolicyGroupTab(KTabWidget):
+    def __init__(self, parent, stack):
+        KTabWidget.__init__(self, parent)
+
+        #add policy tab
+        hb = QHBox(self)
+        hb.setSpacing(12)
+        hb.setMargin(6)
+        self.policytab = PolicyTab(hb)
+        self.addTab(hb, i18n("Authorizations"))
+
+        #add groups tab
+        hb2 = QHBox(self)
+        hb2.setSpacing(12)
+        hb2.setMargin(6)
+        self.groupsWidget = UserGroupList(stack, hb2)
+        self.addTab(hb2, i18n("Groups"))
+
+class PolicyTab(QVBox):
+    def __init__(self, parent):
+        QVBox.__init__(self, parent)
+        self.policyview = KListView(self)
+        self.policyview.addColumn(i18n("Actions"))
+
+        #add radio buttons
+        w = QButtonGroup(self)
+        w.setFrameShape(QFrame.NoFrame)
+        hb = QHBoxLayout(w)
+        self.authorized = QRadioButton(i18n("Authorize"), w)
+        hb.addStretch(1)
+        hb.addWidget(self.authorized)
+        hb.addStretch(3)
+        self.blocked = QRadioButton(i18n("Block"), w)
+        hb.addWidget(self.blocked)
+        hb.addStretch(1)
+
+        #add checkbox
+        w = QWidget(self)
+        hb = QHBoxLayout(w)
+        hb.addStretch(1)
+        lbl = QLabel("   ", w)
+        hb.addWidget(lbl)
+        self.passwordCheck = QCheckBox(i18n("Do not ask password"), w)
+        hb.addWidget(self.passwordCheck, 1)
+        hb.addStretch(3)

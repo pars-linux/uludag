@@ -23,19 +23,18 @@ from handler import CallHandler
 
 import dbus
 
-
 class UserManager(QWidgetStack):
     def __init__(self, parent):
         QWidgetStack.__init__(self, parent)
-        
+
         if not self.setupBusses():
             sys.exit(1)
-        
+
         self.browse = browser.BrowseStack(self)
         self.user = useredit.UserStack(self)
         self.useredit = useredit.UserStack(self, edit=True)
         self.group = groupedit.GroupStack(self)
-    
+
     def setupBusses(self):
         try:
             self.busSys = dbus.SystemBus()
@@ -44,7 +43,7 @@ class UserManager(QWidgetStack):
             KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
             return False
         return True
-    
+
     def callMethod(self, method, action):
         ch = CallHandler("baselayout", "User.Manager", method,
                          action,
@@ -54,17 +53,17 @@ class UserManager(QWidgetStack):
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
         return ch
-    
+
     def busError(self, exception):
         KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
         self.setupBusses()
-    
+
     def comarError(self, exception):
         KMessageBox.error(self, str(exception), i18n("COMAR Error"))
-    
+
     def slotCancel(self):
         self.raiseWidget(self.browse)
-    
+
     def slotAdd(self):
         if self.browse.tab.currentPageIndex() == 0:
             names = []
@@ -77,7 +76,7 @@ class UserManager(QWidgetStack):
         else:
             self.raiseWidget(self.group)
             self.group.startAdd()
-    
+
     def slotEdit(self):
         self.raiseWidget(self.useredit)
         self.useredit.startEdit(self.browse.groups, self.browse.users.selectedItem().uid)
