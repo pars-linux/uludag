@@ -187,6 +187,12 @@ pk_action_info(PyObject *self, PyObject *args)
     polkit_policy_file_entry_annotations_foreach(pk_entry, pk_action_info_cb, list);
     PyDict_SetItemString(dict, "annotations", list);
 
+    // Default policy
+    PolKitPolicyDefault *pk_default = polkit_policy_file_entry_get_default(pk_entry);
+    PyDict_SetItemString(dict, "policy_any", PyString_FromString(polkit_result_to_string_representation(polkit_policy_default_get_allow_any(pk_default))));
+    PyDict_SetItemString(dict, "policy_active", PyString_FromString(polkit_result_to_string_representation(polkit_policy_default_get_allow_active(pk_default))));
+    PyDict_SetItemString(dict, "policy_inactive", PyString_FromString(polkit_result_to_string_representation(polkit_policy_default_get_allow_inactive(pk_default))));
+
     return dict;
 }
 
