@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>786</width>
-    <height>595</height>
+    <width>742</width>
+    <height>483</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -18,7 +18,7 @@
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>596</width>
        <height>31</height>
@@ -31,7 +31,7 @@
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>40</width>
        <height>20</height>
@@ -77,7 +77,7 @@ p, li { white-space: pre-wrap; }
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>40</width>
        <height>20</height>
@@ -88,7 +88,7 @@ p, li { white-space: pre-wrap; }
    <item row="2" column="1" >
     <widget class="QGroupBox" name="groupBox" >
      <property name="styleSheet" >
-      <string>border:none;</string>
+      <string notr="true" >border:none;</string>
      </property>
      <property name="title" >
       <string/>
@@ -112,8 +112,17 @@ p, li { white-space: pre-wrap; }
       </item>
       <item row="1" column="0" >
        <widget class="QLabel" name="label_2" >
+        <property name="styleSheet" >
+         <string notr="true" >font-size:10px;</string>
+        </property>
         <property name="text" >
-         <string>....</string>
+         <string>This option will try to find suitable free space or resizable partitions (If there is no suitable partition this option will be disabled)</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap" >
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -129,8 +138,14 @@ p, li { white-space: pre-wrap; }
       </item>
       <item row="3" column="0" >
        <widget class="QLabel" name="label_3" >
+        <property name="styleSheet" >
+         <string notr="true" >font-size:10px;</string>
+        </property>
         <property name="text" >
-         <string>....</string>
+         <string>This option will erase your entire disk. All of your data on disk will be lost !</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
         </property>
        </widget>
       </item>
@@ -146,8 +161,14 @@ p, li { white-space: pre-wrap; }
       </item>
       <item row="5" column="0" >
        <widget class="QLabel" name="label_4" >
+        <property name="styleSheet" >
+         <string notr="true" >font-size:10px;</string>
+        </property>
         <property name="text" >
-         <string>....</string>
+         <string>You can use manual partitioning with this option</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
         </property>
        </widget>
       </item>
@@ -198,7 +219,7 @@ p, li { white-space: pre-wrap; }
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>20</width>
        <height>40</height>

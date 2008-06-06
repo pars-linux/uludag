@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-06 10:44+0300\n"
+"POT-Creation-Date: 2008-06-06 12:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,14 +39,14 @@ msgstr ""
 msgid "Use Selected"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:90 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:98 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:89
 msgid "Form1"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:91
+#: yali4/gui/Ui/autopartwidget.py:99
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -59,32 +59,43 @@ msgid ""
 "body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:95
+#: yali4/gui/Ui/autopartwidget.py:103
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:97
+#: yali4/gui/Ui/autopartwidget.py:104
 msgid ""
 "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:98 yali4/gui/Ui/autopartwidget.py:100
-#: yali4/gui/Ui/autopartwidget.py:102
-msgid "...."
+#: yali4/gui/Ui/autopartwidget.py:105
+msgid ""
+"This option will try to find suitable free space or resizable partitions (If "
+"there is no suitable partition this option will be disabled)"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:99
+#: yali4/gui/Ui/autopartwidget.py:106
 msgid "Automatically partition and format selected disk!"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:101
+#: yali4/gui/Ui/autopartwidget.py:107
+msgid ""
+"This option will erase your entire disk. All of your data on disk will be "
+"lost !"
+msgstr ""
+
+#: yali4/gui/Ui/autopartwidget.py:108
 msgid "No, I'll partition my disk manually."
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:103
+#: yali4/gui/Ui/autopartwidget.py:109
+msgid "You can use manual partitioning with this option"
+msgstr ""
+
+#: yali4/gui/Ui/autopartwidget.py:110
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -97,7 +108,7 @@ msgid ""
 "span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:107
+#: yali4/gui/Ui/autopartwidget.py:114
 msgid "&nbsp;"
 msgstr ""
 
@@ -844,7 +855,7 @@ msgid ""
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:130 yali4/installer.py:537
+#: yali4/gui/ScrGoodbye.py:130 yali4/installer.py:540
 msgid "Reboot"
 msgstr ""
 
