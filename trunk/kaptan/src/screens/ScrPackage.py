@@ -91,7 +91,7 @@ class Widget(PackageWidget, ScreenWidget):
                 self.checkBoxContrib.setChecked(0)
 
                 message = i18n("You are not authorized for this operation.")
-                QMessageBox.warning(self, i18n("Authentication Error!"), message, QMessageBox.Ok, QMessageBox.NoButton)
+                KMessageBox.sorry(self, message, i18n("Authentication Error!"))
         else:
             if self.flagRepo != 1:
                 self.removeRepo(self.repoName)
