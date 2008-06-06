@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-03 23:07+0300\n"
+"POT-Creation-Date: 2008-06-06 19:45+0300\n"
 "PO-Revision-Date: 2007-06-14 23:49+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -15,6 +15,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: um_mainview.py:43
+msgid "DBus Error"
+msgstr ""
+
+#: um_mainview.py:58
+msgid "D-Bus Error"
+msgstr ""
+
+#: um_mainview.py:62
+msgid "COMAR Error"
+msgstr ""
 
 #: groupedit.py:22 useredit.py:25
 msgid "ID:"
@@ -43,6 +59,71 @@ msgstr "Entrer les informations concernant un nouveau groupe"
 #: groupedit.py:168
 msgid "Adding group..."
 msgstr "Ajout d'un groupe..."
+
+#: browser.py:92
+msgid "Show system user and groups"
+msgstr "Montrer les utilisateurs et les groupes système."
+
+#: browser.py:102 browser.py:112
+msgid "ID"
+msgstr "ID"
+
+#: browser.py:104
+msgid "User name"
+msgstr "Nom d'utilisateur"
+
+#: browser.py:105
+msgid "Full name"
+msgstr "Nom complet"
+
+#: browser.py:114
+msgid "Group name"
+msgstr "Nom du groupe"
+
+#: browser.py:119
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: browser.py:120 useredit.py:636
+msgid "Groups"
+msgstr "Groupes"
+
+#: browser.py:135
+msgid "User Manager Help"
+msgstr "Aide du gestionnaire d'utilisateurs"
+
+#: browser.py:142
+#, python-format
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Dois je supprimer cet utilisateur ?</b></big><br><br>Nom : %s<br>Nom "
+"d'utilisateur : %s<br>ID: %d"
+
+#: browser.py:148
+msgid "Delete User"
+msgstr "Supprimer l'utilisateur"
+
+#: browser.py:149
+msgid "Delete user and files"
+msgstr "Supprimer l'utilisateur et les fichiers"
+
+#: browser.py:150
+msgid "Delete user"
+msgstr "Supprimer l'utilisateur"
+
+#: browser.py:167
+#, python-format
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Dois je supprimer ce groupe ?</b></big><br><br>Nom du groupe : %"
+"s<br>ID: %d"
+
+#: browser.py:173 browser.py:174
+msgid "Delete Group"
+msgstr "Supprimer le groupe"
 
 #: user-manager.py:33
 msgid "User Management"
@@ -156,7 +237,7 @@ msgstr "Entre les informations concernant le nouvel utilisateur"
 msgid "Give administrator privileges to this user"
 msgstr ""
 
-#: useredit.py:522
+#: useredit.py:523
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
@@ -164,102 +245,42 @@ msgstr ""
 "Vous êtes en train de vous retirer du groupe système 'wheel'. Vous ne "
 "pourrez plus utiliser vos permissions d'administrateur après cela."
 
-#: useredit.py:523
+#: useredit.py:524
 msgid "Important Group Change"
 msgstr "Modifications de groupe importantes"
 
-#: useredit.py:530
+#: useredit.py:531
 msgid "Changing user information..."
 msgstr "Modifications des informations utilisateur..."
 
-#: useredit.py:548
+#: useredit.py:549
 msgid "Adding user..."
 msgstr "Ajout de l'utilisateur..."
 
-#: useredit.py:594
+#: useredit.py:595
 msgid "Getting user information..."
 msgstr "Obtention des informations concernant l'utilisateur..."
 
-#: um_mainview.py:44
-msgid "Unable to connect to DBus."
+#: useredit.py:629
+msgid "Authorizations"
 msgstr ""
 
-#: um_mainview.py:44
-msgid "DBus Error"
+#: useredit.py:642
+msgid "Actions"
 msgstr ""
 
-#: um_mainview.py:59
-msgid "D-Bus Error"
+#: useredit.py:648
+msgid "Authorize"
 msgstr ""
 
-#: um_mainview.py:63
-msgid "COMAR Error"
+#: useredit.py:652
+msgid "Block"
 msgstr ""
 
-#: browser.py:92
-msgid "Show system user and groups"
-msgstr "Montrer les utilisateurs et les groupes système."
-
-#: browser.py:102 browser.py:112
-msgid "ID"
-msgstr "ID"
-
-#: browser.py:104
-msgid "User name"
-msgstr "Nom d'utilisateur"
-
-#: browser.py:105
-msgid "Full name"
-msgstr "Nom complet"
-
-#: browser.py:114
-msgid "Group name"
-msgstr "Nom du groupe"
-
-#: browser.py:119
-msgid "Users"
-msgstr "Utilisateurs"
-
-#: browser.py:120
-msgid "Groups"
-msgstr "Groupes"
-
-#: browser.py:135
-msgid "User Manager Help"
-msgstr "Aide du gestionnaire d'utilisateurs"
-
-#: browser.py:142
-#, python-format
-msgid ""
-"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
-"s<br>ID: %d"
-msgstr ""
-"<big><b>Dois je supprimer cet utilisateur ?</b></big><br><br>Nom : %s<br>Nom "
-"d'utilisateur : %s<br>ID: %d"
-
-#: browser.py:148
-msgid "Delete User"
-msgstr "Supprimer l'utilisateur"
-
-#: browser.py:149
-msgid "Delete user and files"
-msgstr "Supprimer l'utilisateur et les fichiers"
-
-#: browser.py:150
-msgid "Delete user"
-msgstr "Supprimer l'utilisateur"
-
-#: browser.py:167
-#, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Dois je supprimer ce groupe ?</b></big><br><br>Nom du groupe : %"
-"s<br>ID: %d"
-
-#: browser.py:173 browser.py:174
-msgid "Delete Group"
-msgstr "Supprimer le groupe"
+#: useredit.py:662
+#, fuzzy
+msgid "Do not ask password"
+msgstr "Confirmer le mot de passe : "
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "
