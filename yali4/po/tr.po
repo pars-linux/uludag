@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-06 10:44+0300\n"
+"POT-Creation-Date: 2008-06-06 12:27+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -46,14 +46,14 @@ msgstr "Hedefi ben seçeceğim"
 msgid "Use Selected"
 msgstr "Seçiliyi Kullan"
 
-#: yali4/gui/Ui/autopartwidget.py:90 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:98 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:89
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:91
+#: yali4/gui/Ui/autopartwidget.py:99
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -75,7 +75,7 @@ msgstr ""
 "size:12pt; font-weight:600;\">1. Disk bölümlendirme yöntemini seçin:</span></"
 "p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:95
+#: yali4/gui/Ui/autopartwidget.py:103
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
@@ -85,26 +85,41 @@ msgstr ""
 "uygulamak istediğiniz diski seçebilirsiniz. <br>Aygıt listesi bölümlendirme "
 "yöntemine göre güncellenir."
 
-#: yali4/gui/Ui/autopartwidget.py:97
+#: yali4/gui/Ui/autopartwidget.py:104
 msgid ""
 "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Otomatik olarak boş alanı ya da diğer bölümleri yeniden boyutlandırmayı dene"
 
-#: yali4/gui/Ui/autopartwidget.py:98 yali4/gui/Ui/autopartwidget.py:100
-#: yali4/gui/Ui/autopartwidget.py:102
-msgid "...."
-msgstr "...."
+#: yali4/gui/Ui/autopartwidget.py:105
+msgid ""
+"This option will try to find suitable free space or resizable partitions (If "
+"there is no suitable partition this option will be disabled)"
+msgstr ""
+"Bu seçenek uygun bir boş alan ya da yeniden boyutlandırılabilir bir alan arayacaktır "
+"(Eğer uygun alan bulunmazsa seçenek kullanım dışı olacaktır)"
 
-#: yali4/gui/Ui/autopartwidget.py:99
+#: yali4/gui/Ui/autopartwidget.py:106
 msgid "Automatically partition and format selected disk!"
 msgstr "Otomatik olarak bölümlendir ve biçimlendir!"
 
-#: yali4/gui/Ui/autopartwidget.py:101
+#: yali4/gui/Ui/autopartwidget.py:107
+msgid ""
+"This option will erase your entire disk. All of your data on disk will be "
+"lost !"
+msgstr ""
+"Bu seçenek tüm sabit diskinizi silecektir."
+"Seçilen sabit disk üzerindeki tüm verileriniz silinecektir !."
+
+#: yali4/gui/Ui/autopartwidget.py:108
 msgid "No, I'll partition my disk manually."
 msgstr "Hayır, diskimi kendim bölümlendireceğim."
 
-#: yali4/gui/Ui/autopartwidget.py:103
+#: yali4/gui/Ui/autopartwidget.py:109
+msgid "You can use manual partitioning with this option"
+msgstr "Bu seçenek ile bölümlendirmeyi kendiniz yapabilirsiniz"
+
+#: yali4/gui/Ui/autopartwidget.py:110
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -126,7 +141,7 @@ msgstr ""
 "size:12pt; font-weight:600;\">2. Yöntemi uygulamak istediğiniz diski seçin:</"
 "span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:107
+#: yali4/gui/Ui/autopartwidget.py:114
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
@@ -1035,7 +1050,7 @@ msgstr ""
 "düğmesine tıklayın.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:130 yali4/installer.py:537
+#: yali4/gui/ScrGoodbye.py:130 yali4/installer.py:540
 msgid "Reboot"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -1661,6 +1676,9 @@ msgstr "Takas"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Arşiv Bölümü"
+
+#~ msgid "...."
+#~ msgstr "...."
 
 #~ msgid ""
 #~ "<b>\n"
