@@ -38,6 +38,8 @@ from _polkit import (
     auth_list_uid,
     auth_list_all,
     auth_add,
+    auth_revoke_all,
+    auth_revoke,
     SCOPE_ONE_SHOT,
     SCOPE_PROCESS,
     SCOPE_SESSION,
