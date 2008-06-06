@@ -121,7 +121,7 @@ class WarningWidget(QtGui.QWidget):
         self.warning = QtGui.QLabel(self)
         self.warning.setScaledContents(True)
         self.warning.setText(_('''<b>
-<p>This action will start installing Pardus on
+<p>This action will start installing Pardus on<br>
 your system formatting the selected partition.</p>
 </b>
 '''))
