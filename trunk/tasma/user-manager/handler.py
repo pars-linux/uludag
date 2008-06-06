@@ -117,7 +117,7 @@ class CallHandler:
     
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        if iface.ObtainAuthorization(self.action, self.window, os.getpid()):
+        if iface.ObtainAuthorization(self.action, self.window, os.getpid(), timeout=2**16-1):
             self.__call()
         else:
             for func in self.handleCancel:
