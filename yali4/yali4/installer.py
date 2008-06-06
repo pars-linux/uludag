@@ -338,7 +338,10 @@ class Yali:
                 p = req.partition()
                 pt = req.partitionType()
 
-                path = "LABEL=%s" % pt.filesystem.getLabel(p)
+                # Use default label for root partition (PARDUS_ROOT)
+                # TODO: Trigger udev to get new label info.
+                path = "LABEL=%s" % pt.label
+
                 fs = pt.filesystem._sysname or pt.filesystem._name
                 mountpoint = pt.mountpoint
                 # TODO: consider merging mountoptions in filesystem.py
