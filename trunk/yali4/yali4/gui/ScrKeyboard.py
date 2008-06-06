@@ -73,6 +73,10 @@ Proceed with the installation after you make your selections.
         if not i==y:
             ctx.yali.setKeymap(i.getData())
 
+    def execute(self):
+        ctx.debugger.log("Selected keymap is : %s" % ctx.installData.keyData["name"] )
+        return True
+
 class KeyboardItem(QtGui.QListWidgetItem):
 
     def __init__(self, parent, keydata):
