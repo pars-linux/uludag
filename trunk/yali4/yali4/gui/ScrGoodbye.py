@@ -43,7 +43,7 @@ YALI_INSTALL, YALI_FIRSTBOOT, YALI_OEMINSTALL, YALI_PARTITIONER = range(4)
 # Goodbye screen
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Goodbye from YALI')
-    desc = _('Enjoy your freash Pardus !..')
+    desc = _('Enjoy your fresh Pardus !..')
     help = _('''
 <font size="+2">Congratulations</font>
 
