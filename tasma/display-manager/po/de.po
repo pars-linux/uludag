@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-04 00:29+0300\n"
+"POT-Creation-Date: 2008-06-07 18:48+0300\n"
 "PO-Revision-Date: 2008-05-15 09:41+0300\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -59,9 +59,8 @@ msgid "Duplicate Outputs!"
 msgstr ""
 
 #: src/display-manager.py:409
-#, python-format
-msgid "Driver: %s"
-msgstr "Treiber: %s"
+msgid "Driver: %1"
+msgstr "Treiber: %1"
 
 #: src/display-manager.py:412
 msgid "Plug and Play Monitor"

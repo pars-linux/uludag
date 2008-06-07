@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-04 00:29+0300\n"
+"POT-Creation-Date: 2008-06-07 18:48+0300\n"
 "PO-Revision-Date: 2008-06-03 20:44-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -64,9 +64,8 @@ msgid "Duplicate Outputs!"
 msgstr "Salidas duplicadas!"
 
 #: src/display-manager.py:409
-#, python-format
-msgid "Driver: %s"
-msgstr "Controlador: %s"
+msgid "Driver: %1"
+msgstr "Controlador: %1"
 
 #: src/display-manager.py:412
 msgid "Plug and Play Monitor"
@@ -105,9 +104,12 @@ msgid ""
 "to configure your video hardware, you must create a new configuration file.\n"
 "Would you like to create a new configuration at the next boot?"
 msgstr ""
-"Administrador de Pantallas no logra obtener información de configuración. "
-"El archivo de configuración podría estar dañado o fue modificado por otra herramienta. Si desea usar el administrador de pantallas para configurar los dispositivos de video, debe crear un nuevo archivo de configuración.\n"
-"Desea crear un nuevo archivo de configuración durante el próximo arranque del sistema ?"
+"Administrador de Pantallas no logra obtener información de configuración. El "
+"archivo de configuración podría estar dañado o fue modificado por otra "
+"herramienta. Si desea usar el administrador de pantallas para configurar los "
+"dispositivos de video, debe crear un nuevo archivo de configuración.\n"
+"Desea crear un nuevo archivo de configuración durante el próximo arranque "
+"del sistema ?"
 
 #: src/displayconfig.py:358
 msgid ""
@@ -117,11 +119,12 @@ msgstr ""
 "Configuración guardada con éxito. Puede que algunos de los cambios se "
 "aplican al reiniciar la computadora."
 
-#: src/displayconfig.py:361
 # favor revisar, free translation, but i think the idea is ok
 # duda: probed - creo que detectares la idea, "comprobar" para mi que no es
+#: src/displayconfig.py:361
 msgid "Your hardware will be probed after restarting your computer."
-msgstr "Se detectarán sus dispositivos durante el próximo arranque del sistema."
+msgstr ""
+"Se detectarán sus dispositivos durante el próximo arranque del sistema."
 
 #: src/monitordialog.py:86
 msgid "Choose Monitor"
@@ -256,4 +259,3 @@ msgstr "Configurar..."
 #: src/dm_mainview.py:276
 msgid "Devices"
 msgstr "Dispositivos"
-
