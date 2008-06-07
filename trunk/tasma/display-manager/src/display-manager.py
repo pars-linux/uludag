@@ -104,7 +104,7 @@ class CardDialog(driverdialog.VideoCard):
         driverdialog.VideoCard.__init__(self, parent)
 
         current = None
-        dc = parent.displayConfiguration
+        dc = parent.dconfig
         self.extraDrivers = []
 
         self.availableDrivers = hwdata.getAvailableDriverNames()
@@ -183,9 +183,9 @@ class MainWidget(dm_mainview.mainWidget):
         self.iconNormal = getIconSet("monitor", KIcon.User)
 
         import displayconfig
-        self.displayConfiguration = displayconfig.DisplayConfig()
+        self.dconfig = displayconfig.DisplayConfig()
 
-        if self.displayConfiguration._info:
+        if self.dconfig._info:
             self.textNotReady.hide()
         else:
             self.screenImage1.hide()
@@ -194,8 +194,8 @@ class MainWidget(dm_mainview.mainWidget):
             self.setDisabled(True)
             return
 
-        self.checkBoxTrueColor.setChecked(self.displayConfiguration.true_color)
-        if len(self.displayConfiguration.depths) == 1:
+        self.checkBoxTrueColor.setChecked(self.dconfig.true_color)
+        if len(self.dconfig.depths) == 1:
             self.checkBoxTrueColor.setDisabled(True)
 
         # set signals
@@ -233,7 +233,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.suggestDriver()
 
     def detectDisplays(self):
-        self.displayConfiguration.detect()
+        self.dconfig.detect()
         self.getCurrentConf()
         self.updateWidgets()
 
@@ -245,7 +245,7 @@ class MainWidget(dm_mainview.mainWidget):
                 self.comboBoxResolution.insertItem(resolution)
 
         # disable dual mode if there's only one output
-        if len(self.displayConfiguration.outputs) <= 1:
+        if len(self.dconfig.outputs) <= 1:
             self.checkBoxDualMode.setDisabled(True)
             self.groupBoxSecondaryScreen.hide()
             self.buttonMonitor2.setDisabled(True)
@@ -257,12 +257,12 @@ class MainWidget(dm_mainview.mainWidget):
         self.getMonitorInfo()
         self.switchBetweenScreens()
 
-        if self.displayConfiguration.desktop_setup == "single":
+        if self.dconfig.desktop_setup == "single":
             self.checkBoxDualMode.setChecked(False)
             self.buttonGroupDualModes.setDisabled(True)
             self.enableExtendedOption(False)
         else:
-            if self.displayConfiguration.desktop_setup == "horizontal":
+            if self.dconfig.desktop_setup == "horizontal":
                 self.radioBoxExtended.setChecked(True)
             else:
                 self.radioBoxCloned.setChecked(True)
@@ -322,40 +322,40 @@ class MainWidget(dm_mainview.mainWidget):
 
     def getCurrentConf(self):
         # returns a dict of outputs: resolutions.
-        self.screenModes = self.displayConfiguration.modes
+        self.screenModes = self.dconfig.modes
 
         # returns a list of outputs
-        self.screenOutputs = self.displayConfiguration.outputs
+        self.screenOutputs = self.dconfig.outputs
 
         # returns a dict of current outputs: resolutions
-        self.currentModes = self.displayConfiguration.current_modes
+        self.currentModes = self.dconfig.current_modes
 
     def setSelectedOutput(self):
         curOut =  str(self.comboBoxOutput.currentText())
 
         if self.selectedScreen == "1":
-            if curOut == self.displayConfiguration.secondaryScr:
+            if curOut == self.dconfig.secondaryScr:
                 self.duplicateOutputs()
             else:
-                self.displayConfiguration.primaryScr = curOut
+                self.dconfig.primaryScr = curOut
         else:
-            if curOut == self.displayConfiguration.primaryScr:
+            if curOut == self.dconfig.primaryScr:
                 self.duplicateOutputs()
             else:
-                self.displayConfiguration.secondaryScr = curOut
+                self.dconfig.secondaryScr = curOut
 
         self.getResolutions()
 
     def setDualModeOptions(self, extended):
         if extended:
-            self.displayConfiguration.desktop_setup = "horizontal"
+            self.dconfig.desktop_setup = "horizontal"
         else:
-            self.displayConfiguration.desktop_setup = "clone"
+            self.dconfig.desktop_setup = "clone"
 
     def setSelectedMode(self):
         curOut =  str(self.comboBoxOutput.currentText())
         curRes = str(self.comboBoxResolution.currentText())
-        self.displayConfiguration.current_modes[curOut] = curRes
+        self.dconfig.current_modes[curOut] = curRes
         self.setIconbyResolution(curRes)
 
     def getSelectedScreen(self):
@@ -368,13 +368,13 @@ class MainWidget(dm_mainview.mainWidget):
         """Enables <Extended> option checkbox if <Dual Mode> selected"""
 
         if checked:
-            if self.displayConfiguration.secondaryScr is None:
-                for output in self.displayConfiguration.outputs:
-                    if output != self.displayConfiguration.primaryScr:
-                        self.displayConfiguration.secondaryScr = output
+            if self.dconfig.secondaryScr is None:
+                for output in self.dconfig.outputs:
+                    if output != self.dconfig.primaryScr:
+                        self.dconfig.secondaryScr = output
                         break
 
-            self.setIconbyResolution(str(self.currentModes[self.displayConfiguration.secondaryScr]),2)
+            self.setIconbyResolution(str(self.currentModes[self.dconfig.secondaryScr]),2)
             self.screenImage2.show()
             self.groupBoxSecondaryScreen.show()
             self.buttonSwap.show()
@@ -385,14 +385,14 @@ class MainWidget(dm_mainview.mainWidget):
             self.screenImage1.setState(QButton.On)
             self.groupBoxSecondaryScreen.hide()
             self.buttonSwap.hide()
-            self.displayConfiguration.desktop_setup = "single"
+            self.dconfig.desktop_setup = "single"
 
     def switchBetweenScreens(self):
         if self.selectedScreen == "1":
-            self.currentOutput = str(self.displayConfiguration.primaryScr)
+            self.currentOutput = str(self.dconfig.primaryScr)
             self.comboBoxOutput.setCurrentText(self.currentOutput)
         elif self.selectedScreen == "2":
-            self.currentOutput = str(self.displayConfiguration.secondaryScr)
+            self.currentOutput = str(self.dconfig.secondaryScr)
             self.comboBoxOutput.setCurrentText(self.currentOutput)
             self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
 
@@ -404,7 +404,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
 
         if firstBoot == 1:
-            self.currentOutput = self.displayConfiguration.primaryScr
+            self.currentOutput = self.dconfig.primaryScr
             self.comboBoxOutput.setCurrentText(self.currentOutput)
         else:
             self.currentOutput = str(self.comboBoxOutput.currentText())
@@ -416,13 +416,13 @@ class MainWidget(dm_mainview.mainWidget):
         self.setIconbyResolution()
 
     def getCardInfo(self):
-        vendorName, boardName = idsQuery(self.displayConfiguration.card_vendor_id, self.displayConfiguration.card_product_id)
+        vendorName, boardName = idsQuery(self.dconfig.card_vendor_id, self.dconfig.card_product_id)
         self.textCardName.setText("%s\n%s" % (boardName, vendorName))
-        self.textDriver.setText( i18n("Driver: %1").arg(self.displayConfiguration._info.driver))
+        self.textDriver.setText( i18n("Driver: %1").arg(self.dconfig._info.driver))
 
     def getMonitorInfo(self):
         msgpnp = i18n("Plug and Play Monitor")
-        monitors = self.displayConfiguration.monitors
+        monitors = self.dconfig.monitors
 
         def writeInfo(out, label):
             if monitors.has_key(out):
@@ -430,39 +430,39 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 label.setText(msgpnp)
 
-        writeInfo(self.displayConfiguration.primaryScr, self.textMonitor1)
+        writeInfo(self.dconfig.primaryScr, self.textMonitor1)
 
-        if self.displayConfiguration.desktop_setup != "single":
-            writeInfo(self.displayConfiguration.secondaryScr, self.textMonitor2)
+        if self.dconfig.desktop_setup != "single":
+            writeInfo(self.dconfig.secondaryScr, self.textMonitor2)
 
     def suggestDriver(self):
         pass
 
     def slotApply(self):
-        self.displayConfiguration.true_color = self.checkBoxTrueColor.isChecked()
+        self.dconfig.true_color = self.checkBoxTrueColor.isChecked()
 
         kapp.setOverrideCursor(QCursor(Qt.WaitCursor))
-        self.displayConfiguration.apply()
+        self.dconfig.apply()
         kapp.restoreOverrideCursor()
 
     def slotCardSettings(self):
         dlg = CardDialog(self)
         if dlg.exec_loop() == QDialog.Accepted:
             item = dlg.listViewVideoCard.currentItem()
-            self.displayConfiguration.changeDriver(item.name)
+            self.dconfig.changeDriver(item.name)
             self.getCardInfo()
 
     def slotSelectMonitor(self, nscr):
         dlg = MonitorDialog(self)
         if dlg.exec_loop() == QDialog.Accepted:
             if nscr == 1:
-                out = self.displayConfiguration.primaryScr
+                out = self.dconfig.primaryScr
             else:
-                out = self.displayConfiguration.secondaryScr
+                out = self.dconfig.secondaryScr
 
             if dlg.checkBoxPlugPlay.isChecked():
-                if self.displayConfiguration.monitors.has_key(out):
-                    del self.displayConfiguration.monitors[out]
+                if self.dconfig.monitors.has_key(out):
+                    del self.dconfig.monitors[out]
             else:
                 from zorg.probe import Monitor
 
@@ -473,7 +473,7 @@ class MainWidget(dm_mainview.mainWidget):
                 mon.hsync = str(item.key(2, 0)).replace(" ", "")
                 mon.vref = str(item.key(3, 0)).replace(" ", "")
 
-                self.displayConfiguration.monitors[out] = mon
+                self.dconfig.monitors[out] = mon
 
             self.getMonitorInfo()
 
@@ -482,7 +482,7 @@ class MainWidget(dm_mainview.mainWidget):
         helpwin.exec_loop()
 
     def slotSwap(self):
-        self.displayConfiguration.primaryScr, self.displayConfiguration.secondaryScr = self.displayConfiguration.secondaryScr, self.displayConfiguration.primaryScr
+        self.dconfig.primaryScr, self.dconfig.secondaryScr = self.dconfig.secondaryScr, self.dconfig.primaryScr
         self.switchBetweenScreens()
 
 
@@ -505,16 +505,16 @@ class Module(KCModule):
         self.mainwidget.layout().setMargin(0)
         self.mainwidget.frameDialogButtons.hide()
 
-        if self.mainwidget.displayConfiguration._info:
+        if self.mainwidget.dconfig._info:
             QTimer.singleShot(0, self.changed)
 
     def load(self):
-        if self.mainwidget.displayConfiguration._info:
+        if self.mainwidget.dconfig._info:
             self.mainwidget.detectDisplays()
             QTimer.singleShot(0, self.changed)
 
     def save(self):
-        if self.mainwidget.displayConfiguration._info:
+        if self.mainwidget.dconfig._info:
             self.mainwidget.slotApply()
             QTimer.singleShot(0, self.changed)
 
