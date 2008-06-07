@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-07 18:48+0300\n"
+"POT-Creation-Date: 2008-06-08 01:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,37 +36,47 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: src/display-manager.py:40 src/display-manager.py:541 src/dm_mainview.py:250
+#: src/display-manager.py:40 src/display-manager.py:553 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr ""
 
-#: src/display-manager.py:164 src/dm_mainview.py:252 src/dm_mainview.py:272
+#: src/display-manager.py:157
+msgid ""
+"<qt>The driver you selected is not installed on your system. In order to use "
+"this driver, you must install <b>%1</b> package.</qt>"
+msgstr ""
+
+#: src/display-manager.py:158
+msgid "Start Package Manager"
+msgstr ""
+
+#: src/display-manager.py:171 src/dm_mainview.py:252 src/dm_mainview.py:272
 msgid "Primary Screen"
 msgstr ""
 
-#: src/display-manager.py:164 src/dm_mainview.py:274
+#: src/display-manager.py:171 src/dm_mainview.py:274
 msgid "Secondary Screen"
 msgstr ""
 
-#: src/display-manager.py:287
+#: src/display-manager.py:296
 msgid ""
 "Sorry, but you can use one device for each output.\n"
 "Try to select another output."
 msgstr ""
 
-#: src/display-manager.py:288
+#: src/display-manager.py:297
 msgid "Duplicate Outputs!"
 msgstr ""
 
-#: src/display-manager.py:409
+#: src/display-manager.py:418
 msgid "Driver: %1"
 msgstr ""
 
-#: src/display-manager.py:412
+#: src/display-manager.py:421
 msgid "Plug and Play Monitor"
 msgstr ""
 
-#: src/display-manager.py:529
+#: src/display-manager.py:541
 msgid "Display Manager is already started!"
 msgstr ""
 

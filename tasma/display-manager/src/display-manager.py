@@ -18,7 +18,7 @@ import kdedesigner
 
 import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
-from zorg.utils import idsQuery
+from zorg.utils import idsQuery, run
 from zorg.consts import package_sep
 
 import helpdialog
@@ -107,12 +107,8 @@ class CardDialog(driverdialog.VideoCard):
         dc = parent.displayConfiguration
         self.extraDrivers = []
 
-        availableDrivers = hwdata.getAvailableDriverNames()
+        self.availableDrivers = hwdata.getAvailableDriverNames()
         compatibleDrivers = hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id)
-
-        available = set(availableDrivers)
-        compatible = set(compatibleDrivers)
-        self.installedDrivers = list(available & compatible)
 
         curdrv = dc._info.driver
         if dc._info.package != "xorg-video":
@@ -124,7 +120,7 @@ class CardDialog(driverdialog.VideoCard):
             if drv == curdrv:
                 current = item
 
-        for drv in availableDrivers:
+        for drv in self.availableDrivers:
             if not drv in compatibleDrivers:
                 item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
                 self.extraDrivers.append(item)
@@ -146,6 +142,24 @@ class CardDialog(driverdialog.VideoCard):
     def showExtraDrivers(self, show):
         for drv in self.extraDrivers:
             drv.setVisible(show)
+
+    def accept(self):
+        item = self.listViewVideoCard.currentItem()
+
+        if item.name in self.availableDrivers:
+            QDialog.accept(self)
+        else:
+            if package_sep in item.name:
+                package = item.name.split(package_sep, 1)[1]
+            else:
+                package = "xorg-video"
+
+            msg = i18n("<qt>The driver you selected is not installed on your system. In order to use this driver, you must install <b>%1</b> package.</qt>").arg(package)
+            buttonStartPM = KGuiItem(i18n("Start Package Manager"), getIconSet("package-manager"))
+            answer = KMessageBox.warningYesNo(self, msg, QString.null, buttonStartPM, KStdGuiItem.cancel())
+
+            if answer == KMessageBox.Yes:
+                run("package-manager")
 
 class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
