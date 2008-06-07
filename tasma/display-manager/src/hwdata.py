@@ -76,8 +76,8 @@ def getCompatibleDriverNames(vendor_id, product_id):
 
     return drvlist
 
-def getAvailableDrivers():
-    availableDriverList = {}
+def getAvailableDriverNames():
+    drvlist = []
 
     availableDrivers = zorg.probe.listAvailableDrivers()
     availablePackages = zorg.probe.listDriverPackages()
@@ -85,16 +85,16 @@ def getAvailableDrivers():
     packages = [x.split(package_sep) for x in drivers.keys() if package_sep in x]
 
     for d in availableDrivers:
-        availableDriverList[d] = drivers.get(d, "")
+        drvlist.append(d)
 
     for drv, pkg in packages:
         if pkg.replace("-", "_") in availablePackages:
             d = drv + package_sep + pkg
-            availableDriverList[d] = drivers.get(d, "")
-            if availableDriverList.has_key(drv):
-                del availableDriverList[drv]
+            drvlist.append(d)
+            if drv in drvlist:
+                drvlist.remove(drv)
 
-    return availableDriverList
+    return drvlist
 
 def getMonitorInfos():
     vendor = {}

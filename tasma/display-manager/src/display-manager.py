@@ -105,31 +105,34 @@ class CardDialog(driverdialog.VideoCard):
 
         current = None
         dc = parent.displayConfiguration
-        self.compatibleDriverList = {}
-        self.allDriversList = []
+        self.extraDrivers = []
 
-        self.availableDrivers = hwdata.getAvailableDrivers()
+        availableDrivers = hwdata.getAvailableDriverNames()
+        compatibleDrivers = hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id)
+
+        available = set(availableDrivers)
+        compatible = set(compatibleDrivers)
+        self.installedDrivers = list(available & compatible)
 
         curdrv = dc._info.driver
         if dc._info.package != "xorg-video":
             curdrv += package_sep + dc._info.package
 
-        for drv in hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id):
+        for drv in compatibleDrivers:
             item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
-            self.compatibleDriverList[drv] =  item
 
             if drv == curdrv:
                 current = item
 
-        for d in self.availableDrivers:
-            if not d in self.compatibleDriverList.keys():
-                item = DriverItem(self.listViewVideoCard, d, self.availableDrivers[d])
-                self.allDriversList.append(item)
+        for drv in availableDrivers:
+            if not drv in compatibleDrivers:
+                item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
+                self.extraDrivers.append(item)
 
-                if d == curdrv:
+                if drv == curdrv:
                     current = item
 
-        self.hideExtraDrivers()
+        self.showExtraDrivers(False)
 
         if current:
             self.listViewVideoCard.setCurrentItem(current)
@@ -138,21 +141,11 @@ class CardDialog(driverdialog.VideoCard):
 
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
         self.connect(self.pushButtonOk, SIGNAL("clicked()"), self.accept),
-        self.connect(self.checkBoxAllDrivers, SIGNAL("toggled(bool)"), self.listExtraDrivers)
+        self.connect(self.checkBoxAllDrivers, SIGNAL("toggled(bool)"), self.showExtraDrivers)
 
-    def showExtraDrivers(self):
-        for d in self.allDriversList:
-            d.setVisible(True)
-
-    def hideExtraDrivers(self):
-        for d in self.allDriversList:
-            d.setVisible(False)
-
-    def listExtraDrivers(self):
-        if self.checkBoxAllDrivers.isChecked():
-            self.showExtraDrivers()
-        else:
-            self.hideExtraDrivers()
+    def showExtraDrivers(self, show):
+        for drv in self.extraDrivers:
+            drv.setVisible(show)
 
 class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
@@ -221,6 +214,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.getCardInfo()
         self.detectDisplays()
+
+        self.suggestDriver()
 
     def detectDisplays(self):
         self.displayConfiguration.detect()
@@ -422,6 +417,9 @@ class MainWidget(dm_mainview.mainWidget):
 
         if self.displayConfiguration.desktop_setup != "single":
             writeInfo(self.displayConfiguration.secondaryScr, self.textMonitor2)
+
+    def suggestDriver(self):
+        pass
 
     def slotApply(self):
         self.displayConfiguration.true_color = self.checkBoxTrueColor.isChecked()
