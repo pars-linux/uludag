@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-06 12:27+0300\n"
-"PO-Revision-Date: 2008-06-07 16:30+0200\n"
+"PO-Revision-Date: 2008-06-07 17:11+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
@@ -1243,23 +1243,30 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Keyboard Setup</font>\n"
+"<font size=\"+2\">Partitioneren van uw harde schijf</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Here you can select the type of your keyboard and the language map you want "
-"to use. You can test your selection's result in the test box. \n"
-"Proceed with the installation after you make your selections.\n"
+"In dit scherm kunt u handmatig uw harde schijf partitioneren. U kunt bestaande \n"
+"partities kiezen en ze in grootte aanpassen of verwijderen. U kunt nieuwe \n"
+"partities maken in lege delen, en Pardus deze laten gebruiken voor systeembestanden, \n"
+"gebruikers mappen, swap ruimte of voor algemeen gebruik. De veranderingen die u \n"
+"aanbrengt zullen pas toegepast worden als u door gaat met de installatie, \n"
+"wat betekend dat u veranderingen nog ongedaan kunt maken indien u wilt, of u uw "
+"configuratie nog verder aan kan passen.\n"
+"</p>\n"
+"<p>\n"
+"Refereer naar de Pardus-installatie- en gebruikshandleiding voor meer\n"
+"informatie over schijfpartitioneren.\n"
 "</p>\n"
 "</font>\n"
 
 #: yali4/gui/ScrUsers.py:32
-#, fuzzy
 msgid "Set Users"
-msgstr "Nieuwe gebruiker:"
+msgstr "Stel gebruikers in"
 
 #: yali4/gui/ScrUsers.py:33
 msgid "Create users to use Pardus.."
-msgstr ""
+msgstr "Stel gebruikers voor Pardus in.."
 
 #: yali4/gui/ScrUsers.py:35
 msgid ""
@@ -1283,6 +1290,25 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">User setup</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2008 staat meerdere gebruikers toe om dezelfde computer te delen.\n"
+"U kunt beheerders rechten toestaan voor de gebruikers die u aanmaakt; u kunt tevens\n"
+"toestemming geven aan gebruikers om diverse handelingen in TASMA te verrichten.\n"
+"</p>\n"
+"<p>\n"
+"Vul, om een nieuwe gebruiker aan te maken, het formulier in, en klik op \"Gebruiker toevoegen\".\n"
+"Indien u wilt dan een gebruiker automatisch inlogt, selecteer deze\n"
+"gebruiker in de lijst; als u een gebruiker wilt verwijderen;\n"
+"selecteer zijn of haar naam dan in de lijst en klik op \"Verwijder\".\n"
+"Ga door met de installatie na het maken van uw keuze.\n"
+"</p>\n"
+"<p>\n"
+"Klik volgenden om door te gaan.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrUsers.py:136
 msgid ""
@@ -1320,12 +1346,11 @@ msgstr "Update gebruiker"
 
 #: yali4/gui/ScrWelcome.py:30
 msgid "Welcome !! "
-msgstr ""
+msgstr "Welkom !! "
 
 #: yali4/gui/ScrWelcome.py:31
-#, fuzzy
 msgid "Welcome to the Pardus installer.."
-msgstr "Installeer op de partitie waar Pardus op staat"
+msgstr "Welkom bij de Pardus installatie.."
 
 #: yali4/gui/ScrWelcome.py:32
 msgid ""
@@ -1343,13 +1368,18 @@ msgid ""
 "pressing the Next button.</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Welkom !</font>\n"
+"<font size=\"+1\"><p>Welkom bij Pardus 2008 dat vele makkelijk te gebruikern software componenten bevat. U kunt alles doen dat wilt, inclusief (maar niet beperkt tot) verbinden met internet, creëren van documenten, spellen van spelen, en luisteren naar muziek met Pardus 2008. </p>\n"
+"<p>Deze toepassing zal u helpen met de installatie van Pardus 2008 op uw computer, in enkele, gemakkelijke stappen, en zal dan het noodzakelijke doen om uw hardware te identificeren. Wij raden u aan uw gegevens op te slaan in uw schijf (schijven) voor we beginnen met de installatie. </p>\n"
+"<p>U kunt het installatieproces (en instap in een vrije wereld) beginnen door op Volgende te klikken. </p>\n"
+"</font>\n"
 
 #: yali4/gui/YaliDialog.py:99
 msgid "Warning"
 msgstr "Waarschuwing"
 
 #: yali4/gui/YaliDialog.py:123
-#, fuzzy
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on<br>\n"
@@ -1357,9 +1387,8 @@ msgid ""
 "</b>\n"
 msgstr ""
 "<b>\n"
-"<p>Deze actie zal de installatie van Pardus\n"
-"starten en zal de geselecteerde partities\n"
-"formatteren.</p>\n"
+"<p>Deze actie zal de installatie van Pardus starten<br>\n"
+"en zal de geselecteerde partities formatteren.</p>\n"
 "</b>\n"
 
 #: yali4/gui/YaliDialog.py:133
@@ -1368,11 +1397,11 @@ msgstr "O.K. Ga verder"
 
 #: yali4/gui/YaliWindow.py:48 yali4/gui/YaliWindow.py:61
 msgid "Show Help"
-msgstr ""
+msgstr "Toon Help"
 
 #: yali4/gui/YaliWindow.py:64
 msgid "Hide Help"
-msgstr ""
+msgstr "Verberg Help"
 
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
@@ -1384,62 +1413,56 @@ msgstr "Terugloop:"
 
 #: yali4/installer.py:120
 msgid "YALI Working..."
-msgstr ""
+msgstr "YALI werken..."
 
 #: yali4/installer.py:135
 msgid "Starting for CD Check"
-msgstr ""
+msgstr "Starten voor CD controle"
 
 #: yali4/installer.py:153
 #, python-format
 msgid "Checking: %s"
-msgstr ""
+msgstr "Controle: %s"
 
 #: yali4/installer.py:157
 msgid "Check Failed"
 msgstr "Controle mislukt"
 
 #: yali4/installer.py:158
-#, fuzzy
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
 msgstr ""
-"<b>\n"
-"<p>Integriteit contole voor de pakketten is mislukt. Het lijkt erop dat de "
-"installatie CD defect is.</p>\n"
-"</b>\n"
+"<b><p>Integriteit controle voor pakketten mislukt.                         "
+"Het lijkt erop dat de installatie CD defect is.</p></b>"
 
 #: yali4/installer.py:161
-#, fuzzy
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
 msgstr ""
-"<font color=\"#257216\">Controle succesvol. U kunt doorgaan naar het "
-"volgende scherm.</font>"
+"<font color=\"#FFF\"><b>Controle succesvol. U kunt doorgaan naar het volgende scherm. "
+"</b></font>"
 
 #: yali4/installer.py:175
-#, fuzzy
 msgid "Setting time settings.."
-msgstr "Hostnaam instellen..."
+msgstr "Instellen tijd.."
 
 #: yali4/installer.py:196
 msgid "Disk analyze started.."
-msgstr ""
+msgstr "Schijf analyse gestart.."
 
 #: yali4/installer.py:280
 msgid "Resizing ..."
-msgstr ""
+msgstr "Grootte aanpassen ..."
 
 #: yali4/installer.py:283
 msgid "Resize Finished ..."
-msgstr ""
+msgstr "Grootte aanpassen beëindigd ..."
 
 #: yali4/installer.py:295
-#, fuzzy
 msgid "Creating new partition ..."
-msgstr "Maak nieuwe partitie"
+msgstr "Maak nieuwe partitie ..."
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -1458,9 +1481,8 @@ msgid "English"
 msgstr "Engels"
 
 #: yali4/localedata.py:40
-#, fuzzy
 msgid "English GB"
-msgstr "Engels (GB)"
+msgstr "Engels GB"
 
 #: yali4/localedata.py:50
 msgid "Greek"
@@ -1615,7 +1637,6 @@ msgid "Swap"
 msgstr "Swap"
 
 #: yali4/partitiontype.py:74
-#, fuzzy
 msgid "Archive Partition"
-msgstr "Maak partitie"
+msgstr "Archiveer partitie"
 
