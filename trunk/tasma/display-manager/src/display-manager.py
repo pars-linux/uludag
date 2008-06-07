@@ -227,14 +227,17 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
 
         self.getCardInfo()
-        self.detectDisplays()
+        self.getCurrentConf()
+        self.updateWidgets()
 
         self.suggestDriver()
 
     def detectDisplays(self):
         self.displayConfiguration.detect()
         self.getCurrentConf()
+        self.updateWidgets()
 
+    def updateWidgets(self):
         self.comboBoxOutput.clear()
         for output in self.screenOutputs:
             self.comboBoxOutput.insertItem(output)
