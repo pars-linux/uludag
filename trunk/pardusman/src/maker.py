@@ -367,10 +367,7 @@ def make_image(project):
         # Make sure environment is updated regardless of the booting system, by setting comparison
         # files' atime and mtime to UNIX time 1
 
-        tsdir = os.path.join(image_dir, "etc/env.d")
-        for f in os.listdir(tsdir):
-            os.utime(os.path.join(tsdir, f), (1, 1))
-
+        os.utime(os.path.join(image_dir, "etc/profile.env"), (1, 1))
 
         run('umount %s/proc' % image_dir)
         run('umount %s/sys' % image_dir)
