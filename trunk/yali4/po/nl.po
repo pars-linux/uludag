@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-06 12:27+0300\n"
-"PO-Revision-Date: 2008-06-07 12:44+0200\n"
+"PO-Revision-Date: 2008-06-07 16:30+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
@@ -77,7 +77,7 @@ msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
-msgstr "U kunt hier uw partitiemethode selecteren, en u dient een apparaat te selecteren om door te gaan met uw keuze. <br>Apparatenlijst zal aangepast worden naar gelang de keuzen."
+msgstr "U kunt hier uw partitiemethode selecteren, en u dient een station te selecteren om door te gaan met uw keuze. <br>Stationslijst zal aangepast worden naar gelang de keuzen."
 
 #: yali4/gui/Ui/autopartwidget.py:104
 msgid "Automatically partition try to use free space or resize current partitions"
@@ -223,11 +223,11 @@ msgstr "Tijdszone"
 
 #: yali4/gui/Ui/dialog.py:53
 msgid "TextLabel"
-msgstr ""
+msgstr "TextLabel"
 
 #: yali4/gui/Ui/dialog.py:55
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: yali4/gui/Ui/installwidget.py:62
 msgid "Form3"
@@ -239,7 +239,7 @@ msgstr "pix"
 
 #: yali4/gui/Ui/installwidget.py:65
 msgid "Desc"
-msgstr ""
+msgstr "Desc"
 
 #: yali4/gui/Ui/installwidget.py:66
 msgid "Installing Package: "
@@ -255,15 +255,15 @@ msgstr "Test geselecteerd toetsenbord:"
 
 #: yali4/gui/Ui/main.py:156
 msgid "Yali4"
-msgstr ""
+msgstr "Yali4"
 
 #: yali4/gui/Ui/main.py:448
 msgid "Screen Name"
-msgstr ""
+msgstr "Schermnaam"
 
 #: yali4/gui/Ui/main.py:450
 msgid "Details about the screen"
-msgstr ""
+msgstr "Details over het scherm"
 
 #: yali4/gui/Ui/main.py:451 yali4/gui/YaliWindow.py:170
 msgid "Release Notes"
@@ -271,36 +271,35 @@ msgstr "Uitgavenotities"
 
 #: yali4/gui/Ui/main.py:452
 msgid "Toggle Help"
-msgstr ""
+msgstr "Druk hulp"
 
 #: yali4/gui/Ui/main.py:453
 msgid "Previous Screen"
-msgstr ""
+msgstr "Eerder scherm"
 
 #: yali4/gui/Ui/main.py:454
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #: yali4/gui/Ui/main.py:455
 msgid "Next Screen"
-msgstr ""
+msgstr "Volgend scherm"
 
 #: yali4/gui/Ui/main.py:456
 msgid "Next"
-msgstr ""
+msgstr "Volgende"
 
 #: yali4/gui/Ui/partedit.py:143
 msgid "Partition 1 on FUJISTU - /dev/sda1"
-msgstr ""
+msgstr "Partitie 1 op FUJISTU - /dev/sda1"
 
 #: yali4/gui/Ui/partedit.py:144
-#, fuzzy
 msgid "Device :"
-msgstr "Station"
+msgstr "Station :"
 
 #: yali4/gui/Ui/partedit.py:145
 msgid "/dev/sda1"
-msgstr ""
+msgstr "/dev/sda1"
 
 #: yali4/gui/Ui/partedit.py:146
 msgid "Delete Partition"
@@ -311,53 +310,48 @@ msgid "Resize Partition"
 msgstr "Aanpassen partitiegrootte"
 
 #: yali4/gui/Ui/partedit.py:148
-#, fuzzy
 msgid "Use :"
-msgstr "Gebruikers:"
+msgstr "Gebruik :"
 
 #: yali4/gui/Ui/partedit.py:149
-#, fuzzy
 msgid "Size :"
-msgstr "Grootte"
+msgstr "Grootte :"
 
 #: yali4/gui/Ui/partedit.py:150 yali4/gui/Ui/partresize.py:87
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #: yali4/gui/Ui/partedit.py:151
-#, fuzzy
 msgid "Format :"
-msgstr "Formatteren?"
+msgstr "Formaat :"
 
 #: yali4/gui/Ui/partedit.py:152
-#, fuzzy
 msgid "Yes, Format this partition"
-msgstr "Formatteer deze partitie"
+msgstr "Ja, formatteer deze partitie"
 
 #: yali4/gui/Ui/partedit.py:153
-#, fuzzy
 msgid "File System :"
-msgstr "Bestandssysteem"
+msgstr "Bestandssysteem :"
 
 #: yali4/gui/Ui/partedit.py:154
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: yali4/gui/Ui/partedit.py:155
 msgid "NTFS"
-msgstr ""
+msgstr "NTFS"
 
 #: yali4/gui/Ui/partedit.py:156
 msgid "Fat 32"
-msgstr ""
+msgstr "Fat 32"
 
 #: yali4/gui/Ui/partedit.py:157
 msgid "Changes will be applied when you finish.."
-msgstr ""
+msgstr "Veranderingen zullen worden toegepast wanneer u beëindigt.."
 
 #: yali4/gui/Ui/partedit.py:158
 msgid "Refresh Disks"
-msgstr ""
+msgstr "Ververs schijven"
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Reset All Changes"
@@ -385,6 +379,21 @@ msgid ""
 "decoration: underline; color:#ffffff;\">Cancel</span><span style=\" color:"
 "#ffffff;\">\".</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600; color:#ffffff;\">Waarschuwing!</span><span style=\" color:#ffffff;\"> "
+"Deze veranderingen zullen worden toegepast als u klikt \"</span><span style=\" text-"
+"decoration: underline; color:#ffffff;\">Grootte aanpassen</span><span style=\" color:"
+"#ffffff;\">\". Als u terug wilt klik \"</span><span style=\" text-"
+"decoration: underline; color:#ffffff;\">Annuleer</span><span style=\" color:"
+"#ffffff;\">\".</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:88 yali4/gui/YaliDialog.py:130
 msgid "Cancel"
@@ -407,9 +416,8 @@ msgstr ""
 "wordt het afgeraden het wachtwoord ergens op te schrijven. </p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
-#, fuzzy
 msgid "System administrator password:"
-msgstr "Wachtwoord systeembeheerder (nogmaals):"
+msgstr "Systeembeheerder wachtwoord:"
 
 #: yali4/gui/Ui/rootpasswidget.py:173
 msgid "System administrator password (again):"
@@ -420,9 +428,8 @@ msgid "Hostname:"
 msgstr "Hostnaam:"
 
 #: yali4/gui/Ui/setupuserswidget.py:153
-#, fuzzy
 msgid "New User"
-msgstr "Nieuwe gebruiker:"
+msgstr "Nieuwe gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:154
 msgid "User Name:"
@@ -499,7 +506,7 @@ msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
-msgstr ""
+msgstr "Welkom! Onze verbeterde installatie tool YALI zal u helpen met de installatie van Pardus 2008. YALI zorgt voor een snelle en gemakkelijke installatie van Pardus 2008 en vergemakkelijkt het partitioneren van schijf (schijven) met het intelligente partitie tools.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -507,6 +514,8 @@ msgid ""
 "additional repositories and manage basic settings like mouse, wallpaper, "
 "webcam, and panel using Kaptan.\n"
 msgstr ""
+"Onze Kaptan zal aan u de weg na de installatie tonen. U kunt gemakkelijk aanvullende repositories (software bewaarplaatsen) toevoegen en"
+"kunt basisinstellingen zoals muis, achtergrond, webcam en paneel regelen met Kaptan.\n"
 
 #: yali4/gui/descSlide.py:22
 msgid ""
@@ -514,14 +523,14 @@ msgid ""
 "operations including but not limited to adding a new user or hardware (e.g. "
 "printer, scanner) to the system, management of visual settings ranging from "
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
-msgstr ""
+msgstr "Tasma is het beheer- en instellingen centrum van Pardus. Configuratie handelingen inclusief, maar niet beperkt tot, het toevoegen aan het systeem van een nieuwe gebruiker of hardware (b.v. printer, scanner), beheer van visuele instellingen, van iconen tot lettertypen, is samengebracht onder Tasma.\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
 "There are thousands of packages in Pardus software repositories. You can "
 "install, remove or update those packages and programs with just two clicks "
 "using the Package Manager!\n"
-msgstr ""
+msgstr "Er zijn duizenden pakketten in de Pardus software repositories (verzamelplaatsen). U kunt deze pakketten en programma's installeren, verwijderen of updaten met slechts twee muisklikken in Pakketbeheer!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -529,21 +538,21 @@ msgid ""
 "securely. Thanks to the profile support it has, it will make it easier to "
 "reconnect to cable or wireless connections used before, remembering the "
 "settings used.\n"
-msgstr ""
+msgstr "Netwerk Applet helpt gemakkelijk en veilig aan plaatselijke netwerken en Internet aan te sluiten. Door de profielsteun, het zal het gemakkelijker zijn om opnieuw een kabel- of draadloze verbinding aan te gaan, omdat de gebruikte settings onthouden worden.\n"
 
 #: yali4/gui/descSlide.py:28
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
 "features, will help securely surf the Internet. Pardus 2008 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
-msgstr ""
+msgstr "Mozilla Firefox, met zijn snelheid, continue ontwikkeling en vele geavanceerde functies, zal u veilig over het internet laten surfen. Pardus 2008 komt met Mozilla Firefox 3.0, en u kunt Firefox uitbreiden met duizenden extensies.\n"
 
 #: yali4/gui/descSlide.py:30
 msgid ""
 "Kontact, KDE Personal Information Manager, helps you manage all your emails, "
 "RSS feeds, diaries, to-do listes and blog entries in one combined interface. "
 "Kontact, with its Groupware feature, will be your best friend at work.\n"
-msgstr ""
+msgstr "Kontact, de KDE persoonlijke informatie beheerder, helpt u al uw emails, RSS feeds, agenda, te-doen lijstjes en weblogs te beheren in één gecombineerde interface. Kontact met Groupware functionaliteit zal uw beste vriend op uw werk worden.\n"
 
 #: yali4/gui/descSlide.py:32
 msgid ""
@@ -551,7 +560,7 @@ msgid ""
 "and millions of users around the world, is an office software package "
 "including a word processor, a spreadsheet application, a presentation viewer "
 "and editor, a graphics editor and a database application.\n"
-msgstr ""
+msgstr "OpenOffice.org, actief gebruikt door honderdduizenden instituten en miljoenen gebruikers wereldwijd, is een office software pakket, met tekstverwerker, spreadscheet applicatie, gereedschap voor presentaties, een grafische editor en een database applicatie.\n"
 
 #: yali4/gui/descSlide.py:34
 msgid ""
@@ -560,6 +569,10 @@ msgid ""
 "extensive abilities that will meet professional graphic artists' and "
 "designers' needs.\n"
 msgstr ""
+"Gimp is een geavanceerde beeldberwerkings applicatie die voorgeïnstalleerd "
+"is in Pardus 2008. Gimp stelt u in staat alle mogelijke bestandformaten te "
+"bewerken, en heeft ongekende mogelijkheden voor zowel professionele grafische "
+"artiesten als ontwerpers.\n"
 
 #: yali4/gui/descSlide.py:36
 msgid ""
@@ -567,6 +580,9 @@ msgid ""
 "album covers and lyrics for you, and thanks to its Last.FM support, can "
 "suggest similar media, bringing even more possibilities.\n"
 msgstr ""
+"Amarok is een handige, functionele en geavanceerde mediaspeler. Het kan "
+"albumhoezen en liedteksten tonen, en dankzij Last.FM support kan het "
+"soortgelijke media adviseren, met nog meer mogelijkheden tot gevolg.\n"
 
 #: yali4/gui/descSlide.py:38
 msgid ""
@@ -575,20 +591,24 @@ msgid ""
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
 msgstr ""
+"Kaffiene is de standaard videospeler van Pardus 2009. Het kan in hoge "
+"kwaliteit DVD's, VCD's en ontelbare andere beeldformaten afspelen, "
+"inclusief, maar niet beperkt tot, MPEG, AVI en DivX. Als u toegang "
+"heeft tot digitale televiesie, dan kunt u uw favoriete TV programma's opnemen met Kaffeine!\n"
 
 #: yali4/gui/descSlide.py:40
 msgid ""
 "You can use multiple accounts in various instant messaging services like "
 "MSN, Yahoo!, ICQ, AIM, GTalk and Jabber, and can talk to your friends in "
 "different networks using Kopete.\n"
-msgstr ""
+msgstr "U kunt meerdere accounts gebruiken voor verschillende instant messengers als MSN, Yahoo!, ICO, AIM, Google Talk en Jabber, en met uw vrienden praten over verschillenden netwerken met Kopete.\n"
 
 #: yali4/gui/descSlide.py:42
 msgid ""
 "Copying CDs (or DVDs), creating data or audio CDs, creating ISO images and "
 "burning CD/DVD images to discs are just a few of the things you can do with "
 "K3b.\n"
-msgstr ""
+msgstr "CD's (of DVD's) kopiëren; data en audio CD's maken, ISO images maken en branden van CD/DVD images naar schijf zijn slechts een paar van de mogelijkheden die u kunt met K3b.\n"
 
 #: yali4/gui/descSlide.py:44
 msgid ""
@@ -596,26 +616,23 @@ msgid ""
 "portal www.ozgurlukicin.com. If you happen to have any problems with Pardus "
 "2008, you can get support using the forum pages and the #pardus room in IRC "
 "Freenode server (and you can use Konversation for that).\n"
-msgstr ""
+msgstr "U kunt HOW-TO's, lessen, en pakket beschrijvingen vinden via onze community website www.pardus-linux.nl. Als u problemen met Pardus 2008 zou ondervinden, kunt u hulp krijgen via ons forum en de #pardus chatbox op de IRC Freenode server (waar u komt met Konversation).\n"
 
 #: yali4/gui/DiskWidgets.py:77
-#, fuzzy
 msgid "as Pardus System Files (mandatory)"
-msgstr "Pardus systeembestanden (vereist)"
+msgstr "als Pardus systeembestanden (vereist)"
 
 #: yali4/gui/DiskWidgets.py:78
-#, fuzzy
 msgid "as User Files (optional)"
-msgstr "Gebruikersbestanden (optioneel)"
+msgstr "als gebruikersbestanden (optioneel)"
 
 #: yali4/gui/DiskWidgets.py:79
-#, fuzzy
 msgid "as Swap Space (optional)"
-msgstr "Swapruimte (optioneel)"
+msgstr "als Swapruimte (optioneel)"
 
 #: yali4/gui/DiskWidgets.py:80
 msgid "as Storage Area"
-msgstr ""
+msgstr "als opslagruimte"
 
 #: yali4/gui/DiskWidgets.py:159
 #, python-format
@@ -625,7 +642,7 @@ msgstr "De grootte van de hoofdpartitie dient groter te zijn dan %s MB."
 #: yali4/gui/DiskWidgets.py:194 yali4/gui/ScrBootloader.py:74
 #: yali4/gui/ScrKahyaCheck.py:91 yali4/gui/ScrPartitionAuto.py:71
 msgid "Can't find a storage device!"
-msgstr "Kan geen opslagapparaat vinden!"
+msgstr "Kan geen opslagstation vinden!"
 
 #: yali4/gui/DiskWidgets.py:209
 #, python-format
@@ -643,24 +660,24 @@ msgid "Partition %d"
 msgstr "Partitie %d"
 
 #: yali4/gui/DiskWidgets.py:238
-#, fuzzy
 msgid "Free Space"
 msgstr "vrije ruimte"
 
 #: yali4/gui/DiskWidgets.py:286 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
-msgstr ""
+msgstr "Er is een verzoek voor hetzelfde partitietype."
 
 #: yali4/gui/DiskWidgets.py:333
-#, fuzzy
 msgid "Too many primary partition !"
-msgstr "Formatteer deze partitie"
+msgstr "Te veel primaire partities !"
 
 #: yali4/gui/DiskWidgets.py:334
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
+"GPT schijftabellen worden niet ondersteund voor verlengde partities.\n"
+"U dient één van de primaire partities van uw schijftabel te verwijderen !"
 
 #: yali4/gui/DiskWidgets.py:387
 msgid "Delete All Partitions"
@@ -668,19 +685,19 @@ msgstr "Verwijder alle partities"
 
 #: yali4/gui/DiskWidgets.py:455
 msgid "Pardus will install here"
-msgstr ""
+msgstr "Pardus zal hier installeren"
 
 #: yali4/gui/DiskWidgets.py:458
 msgid "User files will store here"
-msgstr ""
+msgstr "Gebruikersbestanden worden hier opgeslagen"
 
 #: yali4/gui/DiskWidgets.py:461
 msgid "Swap will be here"
-msgstr ""
+msgstr "Swap bestanden zullen hier komen"
 
 #: yali4/gui/DiskWidgets.py:464
 msgid "Backup or archive files will store here"
-msgstr ""
+msgstr "Backup op archief bestanden komen hier"
 
 #: yali4/gui/DiskWidgets.py:485
 #, python-format
@@ -689,31 +706,35 @@ msgid ""
 "                                  <b>Size:</b> %s<br>\n"
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
+"<b>Path:</b> %s<br>\n"
+"                                  <b>Grootte:</b> %s<br>\n"
+"                                  <b>Bestandssysteem</b> %s%s"
 
 #: yali4/gui/GUIAdditional.py:67
 msgid ""
 "<p><span style=\"color:#FFF\"><b>It seems this partition is not ready for "
 "resizing.</b></span></p>"
 msgstr ""
+"<p><span style=\"color:#FFF\"><b>Het lijkt dat deze partitie nog niet klaar is "
+"om in grootte aan te passen.</b></span></p>"
 
 #: yali4/gui/GUIAdditional.py:80
 #, python-format
 msgid "Resizing to %s MB.."
-msgstr ""
+msgstr "Grootte aanpassen tot %s MB.."
 
 #: yali4/gui/GUIAdditional.py:137
 #, python-format
 msgid "(%s) [%s] Size : %s - Free : %s"
-msgstr ""
+msgstr "(%s) [%s] Grootte : %s - Vrij : %s"
 
 #: yali4/gui/GUIGPL.py:52
 msgid "Can't open License file!"
 msgstr "Kan het licentiebestand niet openen!"
 
 #: yali4/gui/GUIRelNotes.py:49
-#, fuzzy
 msgid "Can't open Release Notes!"
-msgstr "Kan het licentiebestand niet openen!"
+msgstr "Kan uitgave notities niet openmaken!"
 
 #: yali4/gui/runner.py:117
 msgid "Error!"
@@ -724,13 +745,12 @@ msgid "Unhandled error occured!"
 msgstr "Fout opgetreden!"
 
 #: yali4/gui/ScrAdmin.py:30
-#, fuzzy
 msgid "Set Administrator"
-msgstr "Wachtwoord systeembeheerder:"
+msgstr "Bepaal systeembeheerder"
 
 #: yali4/gui/ScrAdmin.py:31
 msgid "Admins has important rights on the system.."
-msgstr ""
+msgstr "Beheerder heeft belangrijke rechten op het systeem.."
 
 #: yali4/gui/ScrAdmin.py:33
 msgid ""
@@ -760,39 +780,56 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Systeembeheerder wachtwoord en hostnaam</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"U dient een wacht woord in te stellen voor de \"root\" gebruiker die volledige controle "
+"heeft tot het systeem.\n"
+"Uw wachtwoord dient makkelijk te onthouden te zijn (voor u) maar moeilijk om te raden "
+"(voor anderen). \n"
+"U kunt kleine en hoofdletters, cijfers en symbolen gebruiken in uw wachtwoord. \n"
+"Let op dat u geen letters gebruikt die niet in het Engels voorkomen om problemen "
+"met andere systemen te voorkomen.\n"
+"</p>\n"
+"<p>\n"
+"Hier kunt u een naam invoeren voor uw computer, in onderstaand tekstvak. Uw computer "
+"is zo herkenbaar in een lokaal netwerk, het is aan te raden een beschrijvende "
+"tekst toe te voegen.\n"
+"Ga door met de installatie na het maken van uw keuzes.\n"
+"</p>\n"
+"<p>\n"
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
-#, fuzzy
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr "<font color=\"#FF6D19\">Caps Lock staat aan!</font>"
+msgstr "<center><font color=\"#FF6D19\">Caps Lock staat aan!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:110
-#, fuzzy
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
-msgstr "<font color=\"#FF6D19\">Wachtwoord is te kort!</font>"
+msgstr "<center><font color=\"#FF6D19\">Wachtwoord is te kort!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
-#, fuzzy
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<font color=\"#FF6D19\">De wachtwoorden komen niet overeen!</font>"
+msgstr "<center><font color=\"#FF6D19\">De wachtwoorden komen niet overeen!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:137
-#, fuzzy
 msgid ""
 "<center><font color=\"#FF6D19\">Hostname contains invalid characters!</"
 "font></center>"
-msgstr "<font color=\"#FF6D19\">De hostnaam bevat niet toegestane tekens!</font>"
+msgstr ""
+"<center><font color=\"#FF6D19\">De hostnaam bevat niet toegestane tekens!</"
+"font></center>"
 
 #: yali4/gui/ScrBootloader.py:43
 msgid "Bootloader Choice"
-msgstr ""
+msgstr "Bootlader keuze"
 
 #: yali4/gui/ScrBootloader.py:44
 msgid "Configure the system boot.."
-msgstr ""
+msgstr "Configureren systeem boot.."
 
 #: yali4/gui/ScrBootloader.py:46
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -817,26 +854,26 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Bootloader instellen</font>\n"
-"\n"
+"<font size=\"+2\">Bootlader instellen</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Linux maakt gebruik van de bootloader GRUb, waarmee\n"
-" u het besturingssysteem van uw keuze kunt opstarten.\n"
+"Pardus 2008 maakt gebruik van de bootlader GRUb, waarmee u het besturingssysteem "
+"van uw keuze kunt opstarten.\n"
 "</p>\n"
-"<p>\n"
-"Als u meer dan één besturingssysteem hebt \n"
-" kunt u kiezen welk besturingssysteem u wilt starten.\n"
+"<p>Als u meerdere besturingssysteem op uw computer hebt, kunt u kiezen "
+"welk besturingssysteem\n"
+"u wilt starten met GRUB. Installatie van GRUB aan het begin van de bootschijf "
+"is een te adviseren\n"
+"optie om bootproblemen te vermijden.  Als u zeker weet wat u doet,\n"
+"kunt u de bootlader opties aanpassen.\n"
 "</p>\n"
-"\n"
 "<p>\n"
 "Lees de Pardus Installatie- en gebruikshandleiding voor\n"
-" meer informatie over de GRUB bootloader.\n"
+" meer informatie over de GRUB bootlader.\n"
 "</p>\n"
 "</font>\n"
 
 #: yali4/gui/ScrBootloader.py:146
-#, fuzzy
 msgid ""
 "<b>\n"
 "<p>This action will use your entire disk for Pardus installation and <br>\n"
@@ -844,32 +881,26 @@ msgid ""
 "</b>\n"
 msgstr ""
 "<b>\n"
-"<p>Deze actie zal uw volledige harde schijf gebruiken voor de installatie\n"
-"van Pardus, al uw gegevens schijf zullen verloren gaan.</p>\n"
-"\n"
-"<p>Na u ervan verzekerd te hebben dat al uw gegevens elders opgeslagen\n"
-"zijn,  is dit is over het algemeen een veilige een eenvoudige manier om \n"
-"Pardus te installeren.</p>\n"
+"<p>Deze actie zal uw volledige harde schijf voor de Pardus de installatie gebruiken en <br>\n"
+"al uw gegevens op de geselecteerde schijf zullen verloren gaan.</p>\n"
 "</b>\n"
 
 #: yali4/gui/ScrBootloader.py:172 yali4/gui/ScrBootloader.py:179
 #: yali4/gui/ScrBootloader.py:193
-#, fuzzy
 msgid "Formatting ..."
-msgstr "Formatteren!"
+msgstr "Formatteren ..."
 
 #: yali4/gui/ScrBootloader.py:186 yali4/installer.py:226
-#, fuzzy
 msgid "Writing disk tables ..."
-msgstr "Schrijf console gegevens..."
+msgstr "Schrijven schijftabellen ..."
 
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
-msgstr ""
+msgstr "Controlleer uw media"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity.."
-msgstr ""
+msgstr "Om media problemen te negeren kun u uw media integriteit testen.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -881,6 +912,13 @@ msgid ""
 "making sure for a problem-free installation. If the test fails, try re-"
 "burning the ISO image in a lower (e.g. 12x or less) speed.</p></font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Controlleer CD integriteit!</font>\n"
+"<font size=\"+1\"><p>\n"
+"U kunt controleren of de pakketten op de installatie CD correct zijn opgeslagen "
+"op de CD. Het uitvoeren van deze test is een uiterst belangrijke stap om er "
+"zeker van te zijn dat u zonder problemen kunt installeren. Als de test mislukt, "
+"probeer het ISO image dan op een lagere snelheid (bijv. 12x of minder) te branden.</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
@@ -890,14 +928,13 @@ msgstr ""
 
 #: yali4/gui/ScrDateTime.py:27
 msgid "Set your timezone"
-msgstr ""
+msgstr "Stel uw tijdzone in"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "You can change your timezone, time or date settings.."
-msgstr ""
+msgstr "U kunt uw tijdzone, tijd op datum instelling aanpassen.."
 
 #: yali4/gui/ScrDateTime.py:30
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Time Zone settings</font>\n"
@@ -907,20 +944,20 @@ msgid ""
 "after you make your selections.</p></font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Controlleer CD integriteit!</font>\n"
+"<font size=\"+2\">Tijdzone instellend</font>\n"
 "\n"
-"<font size=\"+1\">\n"
-"<p>In dit scherm kunt u de integriteit van de pakketten op de installatie CD "
-"controleren.\n"
-"</p>\n"
+"<font size=\"+1\"><p>Hier kunt u uw locatie en tijdzone; en datum "
+"en tijd instellen. \n"
+"Uw instellingen zullen uw hardware klok aanpassen. Ga door met de installatie "
+"nadat u uw keuzes gemaakt hebt.</p></font>\n"
 
 #: yali4/gui/ScrGoodbye.py:45
 msgid "Goodbye from YALI"
-msgstr ""
+msgstr "Tot ziens van YALI"
 
 #: yali4/gui/ScrGoodbye.py:46
 msgid "Enjoy your fresh Pardus !.."
-msgstr ""
+msgstr "Geniet van uw nieuwe Pardus !.."
 
 #: yali4/gui/ScrGoodbye.py:47
 msgid ""
@@ -960,11 +997,8 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrGoodbye.py:97
-#, fuzzy
 msgid "<b>Rebooting system. Please wait!</b>"
-msgstr ""
-"<b><font size=\"+2\" color=\"#FF6D19\">Herstarten systeem. moment geduld!</"
-"font></b>"
+msgstr "<b>Systeem herstarten. Ogenblik geduld!</b>"
 
 #: yali4/gui/ScrGoodbye.py:124
 msgid ""
@@ -981,13 +1015,12 @@ msgid "Reboot"
 msgstr "Herstart"
 
 #: yali4/gui/ScrInstall.py:56
-#, fuzzy
 msgid "Installing system.."
-msgstr "Systeem installeren"
+msgstr "Installeren systeem.."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr ""
+msgstr "Installeren duurt gemiddeld 30 minuten, afhankelijk van hardware.."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1033,7 +1066,7 @@ msgstr ""
 
 #: yali4/gui/ScrInstall.py:108
 msgid "Packages are installing.."
-msgstr ""
+msgstr "Pakketten worden geïnstalleerd.."
 
 #: yali4/gui/ScrInstall.py:123
 #, python-format
@@ -1046,14 +1079,12 @@ msgid "Configuring package: %s"
 msgstr "Configureren pakket: %s"
 
 #: yali4/gui/ScrInstall.py:164
-#, fuzzy
 msgid "Creating baselayout for your system!"
-msgstr "Configureren pakketten voor uw systeem!"
+msgstr "Aanmaken basisindeling van uw systeem!"
 
 #: yali4/gui/ScrInstall.py:173
-#, fuzzy
 msgid "Configuring packages.."
-msgstr "Configureren pakket: %s"
+msgstr "Configureren pakketten.."
 
 #: yali4/gui/ScrInstall.py:196
 #, python-format
@@ -1074,11 +1105,11 @@ msgstr ""
 
 #: yali4/gui/ScrKahyaCheck.py:50
 msgid "Kahya is working..."
-msgstr ""
+msgstr "Kahya werkt..."
 
 #: yali4/gui/ScrKahyaCheck.py:51
 msgid "Kahya will automatically install your system.."
-msgstr ""
+msgstr "Kahya zal uw systeem automatisch installeren.."
 
 #: yali4/gui/ScrKahyaCheck.py:52
 msgid ""
@@ -1091,13 +1122,12 @@ msgstr ""
 "<p>Enkele help boodschappen </p>\n"
 
 #: yali4/gui/ScrKeyboard.py:31
-#, fuzzy
 msgid "Set your keyboard layout"
-msgstr "Selecteer uw toetenbordindeling."
+msgstr "Stel uw toetenbordindeling in"
 
 #: yali4/gui/ScrKeyboard.py:32
 msgid "Use your keyboard layout.."
-msgstr ""
+msgstr "Gebruik uw toetsenbordindeling.."
 
 #: yali4/gui/ScrKeyboard.py:34
 msgid ""
@@ -1111,18 +1141,25 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Toetsenbord instellen</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"U kunt het type toetsenbord en taalindeling die u wilt gebruiken instellen. "
+"U kunt uw selectie testen in het tekstvak. \n"
+"Ga verder met de installatie na het maken van uw keuzes.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrPartitionAuto.py:39
-#, fuzzy
 msgid "Choose Partitioning"
-msgstr "Maak partitie"
+msgstr "Kies partitioneren"
 
 #: yali4/gui/ScrPartitionAuto.py:40
 msgid "Auto or Manual partitioning.."
-msgstr ""
+msgstr "Automatisch of handmatig partitioneren.."
 
 #: yali4/gui/ScrPartitionAuto.py:42
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1147,25 +1184,26 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Automatisch partitioneren</font>\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus kan geïnstalleerd worden op een veelvoud van hardware. U kunt Pardus "
-"installeren op een lege harde schijf of op een lege partitie. <b>Een "
-"installatie zal automatisch\n"
-" alle gegevens op de geselecteerde partitie verwijderen. </b>\n"
-"</p>\n"
+"U kunt Pardus installeren als u ongepartitioneerde, lege schijfruimte hebt\n"
+"van 4GB (10 GB wordt aangeraden) of een ongebruikte-ongepartitioneerde schijft.\n"
+"De geselecteerde schijfruimte of partitie zal voor installatie automatisch\n"
+"geformateerd worden. Zodoende wordt het geadviseerd uw data op te slaan "
+"om toekomstige problemen te voorkomen\n"
 "<p>\n"
-"Automatisch partitioneren gebruikt uw hele harde schijf voor de Pardus-"
-"installatie. In\n"
+"<p>Auto-partitioneren zal automatisch het geselecteerde schijfdeel/"
+"partitie formateren \n"
+"en zal Pardus 2008 installeren. Indien u wenst, kunt u het partitioneren handmatig "
+"doen of\n"
+"Pardus 2008 een nieuwe partitie voor installatie laten maken.</P>\n"
 " dit scherm kunt u een harde schijf of partitie selecteren om automatisch te "
 "partitioneren, of \n"
 " u kunt dit scherm overslaan en handmatig partitioneren.\n"
 "</p>\n"
 "<p>\n"
-"Refereer a.u.b. naar de Pardus-installatie- en gebruikshandleiding voor meer "
-"informatie\n"
-"  over schijfpartitioneren.\n"
+"Refereer naar de Pardus-installatie- en gebruikshandleiding voor meer\n"
+"informatie over schijfpartitioneren.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1177,13 +1215,12 @@ msgid ""
 msgstr "U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
 
 #: yali4/gui/ScrPartitionManual.py:31
-#, fuzzy
 msgid "Manual Partitioning"
-msgstr "Maak partitie"
+msgstr "Handmatig partitioneren"
 
 #: yali4/gui/ScrPartitionManual.py:32
 msgid "You can easily configure your partitions.."
-msgstr ""
+msgstr "U kunt gemakkelijk uw partities configureren.."
 
 #: yali4/gui/ScrPartitionManual.py:34
 msgid ""
@@ -1205,6 +1242,15 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Keyboard Setup</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Here you can select the type of your keyboard and the language map you want "
+"to use. You can test your selection's result in the test box. \n"
+"Proceed with the installation after you make your selections.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrUsers.py:32
 #, fuzzy
