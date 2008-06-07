@@ -406,7 +406,7 @@ class MainWidget(dm_mainview.mainWidget):
     def getCardInfo(self):
         vendorName, boardName = idsQuery(self.displayConfiguration.card_vendor_id, self.displayConfiguration.card_product_id)
         self.textCardName.setText("%s\n%s" % (boardName, vendorName))
-        self.textDriver.setText( i18n("Driver: %s" % self.displayConfiguration._info.driver))
+        self.textDriver.setText( i18n("Driver: %1").arg(self.displayConfiguration._info.driver))
 
     def getMonitorInfo(self):
         msgpnp = i18n("Plug and Play Monitor")

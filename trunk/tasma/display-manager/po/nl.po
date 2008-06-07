@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-04 00:29+0300\n"
+"POT-Creation-Date: 2008-06-07 18:48+0300\n"
 "PO-Revision-Date: 2008-05-29 16:32+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -61,9 +61,8 @@ msgid "Duplicate Outputs!"
 msgstr "Dupliceer output!"
 
 #: src/display-manager.py:409
-#, python-format
-msgid "Driver: %s"
-msgstr "Driver: %s"
+msgid "Driver: %1"
+msgstr "Driver: %1"
 
 #: src/display-manager.py:412
 msgid "Plug and Play Monitor"
