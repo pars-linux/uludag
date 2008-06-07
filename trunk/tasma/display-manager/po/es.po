@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-07 18:48+0300\n"
+"POT-Creation-Date: 2008-06-08 01:21+0300\n"
 "PO-Revision-Date: 2008-06-03 20:44-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -39,19 +39,29 @@ msgstr "Mostrar todos los controladores"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/display-manager.py:40 src/display-manager.py:541 src/dm_mainview.py:250
+#: src/display-manager.py:40 src/display-manager.py:553 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Administrador de Pantallas"
 
-#: src/display-manager.py:164 src/dm_mainview.py:252 src/dm_mainview.py:272
+#: src/display-manager.py:157
+msgid ""
+"<qt>The driver you selected is not installed on your system. In order to use "
+"this driver, you must install <b>%1</b> package.</qt>"
+msgstr ""
+
+#: src/display-manager.py:158
+msgid "Start Package Manager"
+msgstr ""
+
+#: src/display-manager.py:171 src/dm_mainview.py:252 src/dm_mainview.py:272
 msgid "Primary Screen"
 msgstr "Pantalla principal"
 
-#: src/display-manager.py:164 src/dm_mainview.py:274
+#: src/display-manager.py:171 src/dm_mainview.py:274
 msgid "Secondary Screen"
 msgstr "Pantalla secundaria"
 
-#: src/display-manager.py:287
+#: src/display-manager.py:296
 msgid ""
 "Sorry, but you can use one device for each output.\n"
 "Try to select another output."
@@ -59,19 +69,19 @@ msgstr ""
 "Perdon, puede utilizar un dispositivo por cada salida.\n"
 "Intente seleccionar otra salida."
 
-#: src/display-manager.py:288
+#: src/display-manager.py:297
 msgid "Duplicate Outputs!"
 msgstr "Salidas duplicadas!"
 
-#: src/display-manager.py:409
+#: src/display-manager.py:418
 msgid "Driver: %1"
 msgstr "Controlador: %1"
 
-#: src/display-manager.py:412
+#: src/display-manager.py:421
 msgid "Plug and Play Monitor"
 msgstr "Monitor Plug and Play"
 
-#: src/display-manager.py:529
+#: src/display-manager.py:541
 msgid "Display Manager is already started!"
 msgstr "Administrador de pantallas ya se está ejecutando!"
 
