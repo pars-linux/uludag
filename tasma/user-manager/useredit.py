@@ -616,6 +616,14 @@ class UserStack(QVBox):
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
         ch.call(uid)
+        self.getAuths(uid)
+
+    def getAuths(self, uid):
+        def getAuth(auths):
+            self.u_policygrouptab.setAuths(auths)
+        ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
+        ch.registerDone(getAuth)
+        ch.call(uid)
 
 class PolicyGroupTab(KTabWidget):
     def __init__(self, parent, stack):
@@ -634,6 +642,9 @@ class PolicyGroupTab(KTabWidget):
         hb2.setMargin(6)
         self.groupsWidget = UserGroupList(stack, hb2)
         self.addTab(hb2, i18n("Groups"))
+
+    def setAuths(self, auths):
+        self.policytab.setAuths(auths)
 
 class PolicyTab(QVBox):
     def __init__(self, parent):
@@ -662,3 +673,7 @@ class PolicyTab(QVBox):
         self.passwordCheck = QCheckBox(i18n("Do not ask password"), w)
         hb.addWidget(self.passwordCheck, 1)
         hb.addStretch(3)
+
+    def setAuths(self, auths):
+        print auths
+
