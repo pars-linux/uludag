@@ -17,6 +17,19 @@ from kdeui import *
 
 from utility import *
 
+import polkit
+
+categories = {"tr.org.pardus.comar.user.manager": I18N_NOOP("User/group operations"),
+        "tr.org.pardus.comar.net": I18N_NOOP("Network settings"),
+        "tr.org.pardus.comar.system.manager": I18N_NOOP("Package operations"),
+        "tr.org.pardus.comar.system.service": I18N_NOOP("Service operations"),
+        "tr.org.pardus.comar.time": I18N_NOOP("Date/time operations"),
+        "tr.org.pardus.comar.boot.modules": I18N_NOOP("Kernel module operations"),
+        "tr.org.pardus.comar.boot.loader": I18N_NOOP("Bootloader settings"),
+        "tr.org.pardus.comar.xorg": I18N_NOOP("Screen settings")
+        }
+
+unnecessaryActions = []
 
 class UID:
     def __init__(self, stack, w, grid, edit=False):
@@ -616,7 +629,7 @@ class UserStack(QVBox):
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
         ch.call(uid)
-        self.getAuths(uid)
+        #self.getAuths(uid)
 
     def getAuths(self, uid):
         def getAuth(auths):
@@ -650,6 +663,8 @@ class PolicyTab(QVBox):
     def __init__(self, parent):
         QVBox.__init__(self, parent)
         self.policyview = KListView(self)
+        self.policyview.setRootIsDecorated(True)
+        self.policyview.setResizeMode(KListView.LastColumn)
         self.policyview.addColumn(i18n("Actions"))
 
         #add radio buttons
@@ -671,9 +686,45 @@ class PolicyTab(QVBox):
         lbl = QLabel("   ", w)
         hb.addWidget(lbl)
         self.passwordCheck = QCheckBox(i18n("Do not ask password"), w)
+        self.connect(self.authorized, SIGNAL("toggled(bool)"), self.passwordCheck.setEnabled)
         hb.addWidget(self.passwordCheck, 1)
         hb.addStretch(3)
 
-    def setAuths(self, auths):
-        print auths
+        #disable buttons about policy until one of the policies is selected
+        self.setPolicyButtonsEnabled(False)
 
+        #put all necessary actions to listview
+        self.fillAuths()
+
+        self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
+
+    def setAuths(self, auths):
+        pass
+#        for auth in auths:
+#            print "action:%s date:%s type:%d policy:%s" % (auth[0], auth[1], auth[2], auth[5])
+
+    def fillAuths(self):
+        #do not show policies require policy type yes or no, only the ones require auth_* type
+        allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
+
+        for category in categories.keys():
+            catitem = KListViewItem(self.policyview, categories[category])
+            catactions = filter(lambda x: x.startswith(category), allActions)
+            for cataction in catactions:
+                actioninfo = polkit.action_info(cataction)['description']
+                actionitem = KListViewItem(catitem, unicode(actioninfo))
+
+    def setPolicyButtonsEnabled(self, enable):
+        self.authorized.setEnabled(enable)
+        self.blocked.setEnabled(enable)
+        if enable and self.blocked.isOn():
+            return
+        self.passwordCheck.setEnabled(enable)
+
+    def listviewClicked(self, item):
+        if not item:
+            return
+        if item.depth() != 1:
+            self.setPolicyButtonsEnabled(False)
+        else:
+            self.setPolicyButtonsEnabled(True)
