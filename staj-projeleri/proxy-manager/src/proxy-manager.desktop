@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Proxy-manager
 Name[tr]=Vekil Sunucu Ayarları
+Name[es]=Administrador de Proxy
 Encoding=UTF-8
 Type=Application
 
@@ -13,5 +14,6 @@ X-Tasma-Fork=true
 Icon=proxy
 Comment=Configure proxy settings
 Comment[tr]=Vekil sunucularını yapılandırın
+Comment[es]=Configuración del servidor proxy
 
 Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-network

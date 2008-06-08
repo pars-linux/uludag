@@ -2,14 +2,14 @@
 Name=Display Manager
 Name[tr]=Görüntü Yöneticisi
 Name[de]=Hede Manager
-Name[es]=Administrador Muestra
+Name[es]=Administrador de Pantallas
 Name[nl]=Hedebeheer
 Name[pt_BR]=Gerenciador do Hede
 GenericName=Sample Tasma Module
 GenericName[tr]=Örnek Tasma Modülü
 GenericName[de]=Muster Tasma-Modul
 GenericName[pt_BR]=Módulo Tasma de Amostra
-GenericName[es]=Módulo Tasma de Muestra
+GenericName[es]=Módulo Tasma de Pantallas
 GenericName[nl]=Voorbeeld Tasma module
 X-KDE-ModuleType=Library
 X-KDE-Library=display-manager
