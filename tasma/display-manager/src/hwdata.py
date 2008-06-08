@@ -97,7 +97,9 @@ def getAvailableDriverNames():
     return drvlist
 
 def getMonitorInfos():
-    vendor = {}
+    genericList = {}
+    vendorList = {}
+    vendor = []
 
     for line in loadFile(MonitorsDB):
         monitor = line.split(";")
@@ -108,19 +110,38 @@ def getMonitorInfos():
         monitor = map(str.strip, monitor)
 
         if len(monitor) == 6:
-            if not monitor[0] in vendor:
-                vendor[monitor[0]] = [{ "model":    monitor[1],
-                                        "eisa_id":  monitor[2],
-                                        "hsync":    monitor[3],
-                                        "vref":     monitor[4],
-                                        "is_dpms":  monitor[5]
-                                        }]
-            else:
-                vendor[monitor[0]].extend([{"model":    monitor[1],
+            if "Generic" in monitor[0]:
+                if not monitor[0] in genericList:
+                    genericList[monitor[0]] = [{ "model":    monitor[1],
+                                                 "eisa_id":  monitor[2],
+                                                 "hsync":    monitor[3],
+                                                 "vref":     monitor[4],
+                                                 "is_dpms":  monitor[5]
+                                              }]
+                else:
+                    genericList[monitor[0]].extend([{"model":    monitor[1],
+                                                     "eisa_id":  monitor[2],
+                                                     "hsync":    monitor[3],
+                                                     "vref":     monitor[4],
+                                                     "is_dpms":  monitor[5]
+                                                    }])
+
+
+            elif not monitor[0] in vendorList:
+                vendorList[monitor[0]] = [{ "model":    monitor[1],
                                             "eisa_id":  monitor[2],
                                             "hsync":    monitor[3],
                                             "vref":     monitor[4],
                                             "is_dpms":  monitor[5]
-                                            }])
+                                          }]
+            else:
+                vendorList[monitor[0]].extend([{"model":    monitor[1],
+                                                "eisa_id":  monitor[2],
+                                                "hsync":    monitor[3],
+                                                "vref":     monitor[4],
+                                                "is_dpms":  monitor[5]
+                                               }])
+    vendor.append(genericList)
+    vendor.append(vendorList)
 
     return vendor
