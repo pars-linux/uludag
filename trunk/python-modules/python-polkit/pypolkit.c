@@ -24,9 +24,9 @@
 *
 */
 
+#include <Python.h>
 #include <polkit-grant/polkit-grant.h>
 #include <polkit-dbus/polkit-dbus.h>
-#include <Python.h>
 #include <datetime.h>
 #include <unistd.h>
 
@@ -387,7 +387,7 @@ pk_auth_revoke(PyObject *self, PyObject *args)
     PolKitAuthorizationDB *pk_auth = pk_init_authdb();
     PolKitError *pk_error = NULL;
 
-    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_revoke_cb, action_id, &pk_error);
+    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_revoke_cb, (void *) action_id, &pk_error);
 
     if (polkit_error_is_set(pk_error)) {
         PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
