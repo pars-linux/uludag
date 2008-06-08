@@ -453,7 +453,39 @@ class MainWidget(dm_mainview.mainWidget):
             writeInfo(self.dconfig.secondaryScr, self.textMonitor2)
 
     def suggestDriver(self):
-        pass
+        dontShowAgainName = "Driver Suggestion"
+        shouldBeShown, answer = KMessageBox.shouldBeShownYesNo(dontShowAgainName)
+        if not shouldBeShown:
+            return
+
+        dc = self.dconfig
+        preferredDriver = hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id)[0]
+
+        if package_sep in preferredDriver:
+            driver, package = preferredDriver.split(package_sep, 1)
+
+            if package in hwdata.getAvailableDriverNames():
+                msg = i18n("<qt><p>In order to get better performance, you may want to use <b>%1</b> driver. The driver is installed on your system. Do you want to use this driver?</p><b>Warning:</b> This driver is proprietary and not supported by the distribution.</qt>").arg(driver)
+                answer = KMessageBox.questionYesNo(self, msg,
+                                                    QString.null,
+                                                    KStdGuiItem.yes(),
+                                                    KStdGuiItem.no(),
+                                                    dontShowAgainName)
+
+                if answer == KMessageBox.Yes:
+                    self.dconfig.changeDriver(preferredDriver)
+                    self.getCardInfo()
+            else:
+                msg = i18n("<qt><p>In order to get better performance, you may want to use <b>%1</b> driver. You must install <b>%2</b> package and then choose <b>%3</b> from video card options.</p><b>Warning:</b> This driver is proprietary and not supported by the distribution.</qt>").arg(driver).arg(package).arg(preferredDriver)
+                buttonStartPM = KGuiItem(i18n("Start Package Manager"), getIconSet("package-manager"))
+                answer = KMessageBox.questionYesNo(self, msg,
+                                                    QString.null,
+                                                    buttonStartPM,
+                                                    KStdGuiItem.cont(),
+                                                    dontShowAgainName)
+
+                if answer == KMessageBox.Yes:
+                    run("package-manager")
 
     def slotApply(self):
         self.dconfig.true_color = self.checkBoxTrueColor.isChecked()
