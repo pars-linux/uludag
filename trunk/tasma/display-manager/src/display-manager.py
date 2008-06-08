@@ -356,6 +356,8 @@ class MainWidget(dm_mainview.mainWidget):
                 self.dconfig.secondaryScr = curOut
 
         self.getResolutions()
+        self.setIconbyResolution()
+        self.getMonitorInfo()
 
     def setDualModeOptions(self, extended):
         if extended:
