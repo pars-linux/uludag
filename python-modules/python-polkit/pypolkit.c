@@ -212,14 +212,33 @@ pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *
     // Action ID
     PyDict_SetItemString(dict, "action_id", PyString_FromString(polkit_authorization_get_action_id(auth)));
 
-    // Scope
-    PyDict_SetItemString(dict, "scope", PyInt_FromLong((long) polkit_authorization_get_scope(auth)));
-
     // Time of grant
     PyDateTime_IMPORT;
     time_t rawtime = polkit_authorization_get_time_of_grant(auth);
     struct tm *timeinfo = localtime(&rawtime);
     PyDict_SetItemString(dict, "date", PyDateTime_FromDateAndTime(1900 + timeinfo->tm_year, timeinfo->tm_mon + 1, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, 0));
+
+    // Scope
+    PyDict_SetItemString(dict, "scope", PyInt_FromLong((long) polkit_authorization_get_scope(auth)));
+
+    pid_t out_pid;
+    polkit_uint64_t out_pid_start_time;
+
+    switch (polkit_authorization_get_scope(auth)) {
+        case POLKIT_AUTHORIZATION_SCOPE_PROCESS_ONE_SHOT:
+        case POLKIT_AUTHORIZATION_SCOPE_PROCESS:
+            // Process information
+            polkit_authorization_scope_process_get_pid(auth, &out_pid, &out_pid_start_time);
+            PyDict_SetItemString(dict, "process_id", PyInt_FromLong((long) out_pid));
+            PyDict_SetItemString(dict, "process_time", PyInt_FromLong((long) out_pid_start_time));
+            break;
+        case POLKIT_AUTHORIZATION_SCOPE_SESSION:
+            // ConsoleKit object path
+            PyDict_SetItemString(dict, "session_path", PyInt_FromLong((long) polkit_authorization_scope_session_get_ck_objref(auth)));
+            break;
+        case POLKIT_AUTHORIZATION_SCOPE_ALWAYS:
+            break;
+    }
 
     // Append tuple to userlist
     PyList_Append((PyObject*)user_data, dict);
