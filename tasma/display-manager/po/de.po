@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 01:21+0300\n"
+"POT-Creation-Date: 2008-06-08 05:00+0300\n"
 "PO-Revision-Date: 2008-05-15 09:41+0300\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Ok"
 msgstr "Ok"
 
-#: src/display-manager.py:40 src/display-manager.py:553 src/dm_mainview.py:250
+#: src/display-manager.py:40 src/display-manager.py:561 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Anzeige-Manager"
 
@@ -58,25 +58,21 @@ msgstr "Primärer Bildschirm"
 msgid "Secondary Screen"
 msgstr "Sekundärer Bildschirm"
 
-#: src/display-manager.py:296
-msgid ""
-"Sorry, but you can use one device for each output.\n"
-"Try to select another output."
-msgstr ""
-
 #: src/display-manager.py:297
-msgid "Duplicate Outputs!"
+msgid ""
+"This output is already used by other screen.\n"
+"Do you want to swap between them?"
 msgstr ""
 
-#: src/display-manager.py:418
+#: src/display-manager.py:426
 msgid "Driver: %1"
 msgstr "Treiber: %1"
 
-#: src/display-manager.py:421
+#: src/display-manager.py:429
 msgid "Plug and Play Monitor"
 msgstr "Plug and Play Monitor"
 
-#: src/display-manager.py:541
+#: src/display-manager.py:549
 msgid "Display Manager is already started!"
 msgstr "Anzeige-Manager wird bereits ausführt!"
 
