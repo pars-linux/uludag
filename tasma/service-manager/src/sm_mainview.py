@@ -79,11 +79,14 @@ class widgetMain(formMain):
 
         self.listenSignals()
 
+        self.editSearch.setFocus()
+
         self.listServices.setSorting(1)
         self.listServices.setColumnText(0, '')
         self.listServices.setColumnWidth(0, 22)
         self.listServices.setColumnWidthMode(0, QListView.Manual)
 
+        self.buttonClearSearch.setIconSet(getIconSet('locationbar_erase', 16))
         self.buttonStart.setIconSet(getIconSet('player_play', 32))
         self.buttonStop.setIconSet(getIconSet('player_stop', 32))
         self.buttonRestart.setIconSet(getIconSet('reload', 32))
@@ -105,11 +108,13 @@ class widgetMain(formMain):
         # Connections
         self.connect(self.checkServersOnly, SIGNAL('clicked()'), self.slotListServers)
         self.connect(self.listServices, SIGNAL('selectionChanged()'), self.slotSelectionChanged)
+        self.connect(self.buttonClearSearch, SIGNAL('clicked()'), self.editSearch.clear)
         self.connect(self.buttonStart, SIGNAL('clicked()'), self.slotStart)
         self.connect(self.buttonStop, SIGNAL('clicked()'), self.slotStop)
         self.connect(self.buttonRestart, SIGNAL('clicked()'), self.slotRestart)
         self.connect(self.radioAutoRun, SIGNAL('clicked()'), self.slotOn)
         self.connect(self.radioNoAutoRun, SIGNAL('clicked()'), self.slotOff)
+        self.connect(self.editSearch, SIGNAL('textChanged(const QString &)'), self.slotSearch)
 
         self.connect(self.listServices, SIGNAL('doubleClicked(QListViewItem*)'), self.slotDoubleClicked)
 
@@ -128,7 +133,7 @@ class widgetMain(formMain):
         ch.registerDBusError(self.busError)
         ch.registerAuthError(self.busError)
         return ch
-    
+
     def call(self, script, model, method, *args):
         try:
             obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
@@ -140,7 +145,7 @@ class widgetMain(formMain):
             return func(*args)
         except dbus.DBusException, exception:
             self.error(exception)
-    
+
     def callSys(self, method, *args):
         try:
             obj = self.busSys.get_object("tr.org.pardus.comar", "/")
@@ -236,6 +241,7 @@ class widgetMain(formMain):
         if not item:
             return
 
+        QToolTip.add(self.buttonClearSearch, i18n('Clear Search'))
         QToolTip.add(self.buttonStart, i18n('Start'))
         QToolTip.add(self.buttonStop, i18n('Stop'))
         QToolTip.add(self.buttonRestart, i18n('Restart'))
@@ -265,14 +271,7 @@ class widgetMain(formMain):
             self.config.writeEntry("servers_only", "on")
         else:
             self.config.writeEntry("servers_only", "off")
-        item = self.listServices.firstChild()
-        while item:
-            item.setVisible(not self.checkServersOnly.isChecked() or item.type == 'server')
-            item = item.nextSibling()
-
-        item = self.listServices.selectedItem()
-        if not item or not item.isVisible():
-            self.updateItemStatus(None)
+        self.slotSearch(self.editSearch.text())
 
     def slotSelectionChanged(self):
         item = self.listServices.selectedItem()
@@ -313,6 +312,18 @@ class widgetMain(formMain):
             return
         ch = self.callHandler(item.package, "System.Service", "setState", "tr.org.pardus.comar.system.service.set")
         ch.call("off")
+
+    def slotSearch(self, text):
+        item = self.listServices.firstChild()
+        while item:
+            item.setVisible(text.lower() in item.description.lower() + item.package.lower())
+            if self.checkServersOnly.isChecked() and item.type != 'server':
+                item.setVisible(False)
+            item = item.nextSibling()
+
+        item = self.listServices.selectedItem()
+        if not item or not item.isVisible():
+            self.updateItemStatus(None)
 
     def confirmStop(self):
         msg = i18n('If you stop this service, you may have problems.\nAre you sure you want to stop this service?')
