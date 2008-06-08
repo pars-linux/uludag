@@ -175,32 +175,13 @@ class MainWidget(dm_mainview.mainWidget):
         self.buttonApply.setIconSet(getIconSet("ok", KIcon.Small))
         self.buttonHelp.setIconSet(getIconSet("help", KIcon.Small))
         self.pixVideoCard.setPixmap(getIconSet("video_card", KIcon.User).pixmap(QIconSet.Automatic, QIconSet.Normal))
-
         # use reload icon for now. will be replaced with swap icon later.
         self.buttonSwap.setPixmap( getIconSet("reload", KIcon.Toolbar).pixmap(QIconSet.Automatic, QIconSet.Normal))
 
         self.iconWide = getIconSet("monitor_wide", KIcon.User)
         self.iconNormal = getIconSet("monitor", KIcon.User)
 
-        import displayconfig
-        self.dconfig = displayconfig.DisplayConfig()
-
-        if self.dconfig._info:
-            self.textNotReady.hide()
-        else:
-            self.screenImage1.hide()
-            self.screenImage2.hide()
-            self.buttonSwap.hide()
-            self.setDisabled(True)
-            return
-
-        self.checkBoxTrueColor.setChecked(self.dconfig.true_color)
-        if len(self.dconfig.depths) == 1:
-            self.checkBoxTrueColor.setDisabled(True)
-
         # set signals
-        self.selectedScreen = 1
-
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
 
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
@@ -222,11 +203,31 @@ class MainWidget(dm_mainview.mainWidget):
         self.connect(self.buttonMonitor1, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(1))
         self.connect(self.buttonMonitor2, SIGNAL("clicked()"), lambda: self.slotSelectMonitor(2))
 
+        self.reset()
+        self.suggestDriver()
+
+    def reset(self):
+        import displayconfig
+        self.dconfig = displayconfig.DisplayConfig()
+
+        if self.dconfig._info:
+            self.textNotReady.hide()
+        else:
+            self.screenImage1.hide()
+            self.screenImage2.hide()
+            self.buttonSwap.hide()
+            self.setDisabled(True)
+            return
+
+        self.checkBoxTrueColor.setChecked(self.dconfig.true_color)
+        if len(self.dconfig.depths) == 1:
+            self.checkBoxTrueColor.setDisabled(True)
+
+        self.selectedScreen = 1
+
         self.getCardInfo()
         self.getCurrentConf()
         self.updateWidgets()
-
-        self.suggestDriver()
 
     def detectDisplays(self):
         self.dconfig.detect()
@@ -521,7 +522,7 @@ class Module(KCModule):
 
     def load(self):
         if self.mainwidget.dconfig._info:
-            self.mainwidget.detectDisplays()
+            self.mainwidget.reset()
             QTimer.singleShot(0, self.changed)
 
     def save(self):
