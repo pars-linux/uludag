@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 05:00+0300\n"
+"POT-Creation-Date: 2008-06-08 23:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,11 +35,27 @@ msgstr "Tüm sürücüleri göster"
 msgid "Ok"
 msgstr "Tamam"
 
-#: src/display-manager.py:40 src/display-manager.py:561 src/dm_mainview.py:250
+#: src/display-manager.py:40 src/display-manager.py:612 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Görüntü Yöneticisi"
 
-#: src/display-manager.py:157
+#: src/display-manager.py:57
+msgid "CRT Monitor"
+msgstr "CRT Monitör"
+
+#: src/display-manager.py:58
+msgid "LCD Monitor"
+msgstr "LCD Monitör"
+
+#: src/display-manager.py:65
+msgid "Standard Monitors"
+msgstr "Standart Monitörler"
+
+#: src/display-manager.py:65
+msgid "Vendors"
+msgstr "Üreticiler"
+
+#: src/display-manager.py:170
 msgid ""
 "<qt>The driver you selected is not installed on your system. In order to use "
 "this driver, you must install <b>%1</b> package.</qt>"
@@ -47,19 +63,19 @@ msgstr ""
 "<qt>Seçtiğiniz sürücü sisteminizde kurulu değil. Bu sürücüyü kullanmak için "
 "<b>%1</b> paketini kurmalısınız.</qt>"
 
-#: src/display-manager.py:158
+#: src/display-manager.py:171 src/display-manager.py:488
 msgid "Start Package Manager"
 msgstr "Paket Yöneticisini Başlat"
 
-#: src/display-manager.py:171 src/dm_mainview.py:252 src/dm_mainview.py:272
+#: src/display-manager.py:184 src/dm_mainview.py:252 src/dm_mainview.py:272
 msgid "Primary Screen"
 msgstr "Birinci Ekran"
 
-#: src/display-manager.py:171 src/dm_mainview.py:274
+#: src/display-manager.py:184 src/dm_mainview.py:274
 msgid "Secondary Screen"
 msgstr "İkinci Ekran"
 
-#: src/display-manager.py:297
+#: src/display-manager.py:311
 msgid ""
 "This output is already used by other screen.\n"
 "Do you want to swap between them?"
@@ -67,15 +83,39 @@ msgstr ""
 "Bu çıkış zaten diğer ekranda kullanılıyor.\n"
 "Çıkışları değiştirmek ister misiniz?"
 
-#: src/display-manager.py:426
+#: src/display-manager.py:446
 msgid "Driver: %1"
 msgstr "Sürücü: %1"
 
-#: src/display-manager.py:429
+#: src/display-manager.py:449
 msgid "Plug and Play Monitor"
 msgstr "Tak ve Kullan Monitör"
 
-#: src/display-manager.py:549
+#: src/display-manager.py:476
+msgid ""
+"<qt><p>In order to get better performance, you may want to use <b>%1</b> "
+"driver. The driver is installed on your system. Do you want to use this "
+"driver?</p><b>Warning:</b> This driver is proprietary and not supported by "
+"the distribution.</qt>"
+msgstr ""
+"<qt><p>Daha iyi performans alabilmek için <b>%1</b> sürücüsünü kullanmak "
+"isteyebilirsiniz. Sürücü sisteminizde kurulu. Bu sürücüyü kullanmak "
+"ister misiniz?</p><b>Uyarı:</b> Bu sürücü kapalı kaynak kodlu olduğundan "
+"bu ürün tarafından desteklenmemektedir.</qt>"
+
+#: src/display-manager.py:487
+msgid ""
+"<qt><p>In order to get better performance, you may want to use <b>%1</b> "
+"driver. You must install <b>%2</b> package and then choose <b>%3</b> from "
+"video card options.</p><b>Warning:</b> This driver is proprietary and not "
+"supported by the distribution.</qt>"
+msgstr ""
+"<qt><p>Daha iyi performans alabilmek için <b>%1</b> sürücüsünü kullanmak "
+"isteyebilirsiniz. <b>%2</b> paketini kurup daha sonra ekran kartı ayarlarından "
+"<b>%3</b> sürücüsünü seçin.</p><b>Uyarı:</b> Bu sürücü kapalı kaynak kodlu "
+"olduğundan bu ürün tarafından desteklenmemektedir.</qt>"
+
+#: src/display-manager.py:600
 msgid "Display Manager is already started!"
 msgstr "Görüntü Yöneticisi zaten alıyor!"
 
@@ -114,7 +154,7 @@ msgstr ""
 "yapılandırma dosyası oluşturmanız gerekiyor.\n"
 "Bir sonraki açılışta yeni bir yapılandırma dosyası oluşturmak ister misiniz?"
 
-#: src/displayconfig.py:358
+#: src/displayconfig.py:366
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
@@ -122,7 +162,7 @@ msgstr ""
 "Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
 "başlatana kadar etkin olmayabilir."
 
-#: src/displayconfig.py:361
+#: src/displayconfig.py:369
 msgid "Your hardware will be probed after restarting your computer."
 msgstr ""
 "Donanımınız bilgisayarınız tekrar başlatıldıktan sonra yeniden tanınacak."
