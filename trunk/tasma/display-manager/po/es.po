@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 01:21+0300\n"
+"POT-Creation-Date: 2008-06-08 05:00+0300\n"
 "PO-Revision-Date: 2008-06-03 20:44-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Mostrar todos los controladores"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/display-manager.py:40 src/display-manager.py:553 src/dm_mainview.py:250
+#: src/display-manager.py:40 src/display-manager.py:561 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Administrador de Pantallas"
 
@@ -61,27 +61,21 @@ msgstr "Pantalla principal"
 msgid "Secondary Screen"
 msgstr "Pantalla secundaria"
 
-#: src/display-manager.py:296
-msgid ""
-"Sorry, but you can use one device for each output.\n"
-"Try to select another output."
-msgstr ""
-"Perdon, puede utilizar un dispositivo por cada salida.\n"
-"Intente seleccionar otra salida."
-
 #: src/display-manager.py:297
-msgid "Duplicate Outputs!"
-msgstr "Salidas duplicadas!"
+msgid ""
+"This output is already used by other screen.\n"
+"Do you want to swap between them?"
+msgstr ""
 
-#: src/display-manager.py:418
+#: src/display-manager.py:426
 msgid "Driver: %1"
 msgstr "Controlador: %1"
 
-#: src/display-manager.py:421
+#: src/display-manager.py:429
 msgid "Plug and Play Monitor"
 msgstr "Monitor Plug and Play"
 
-#: src/display-manager.py:541
+#: src/display-manager.py:549
 msgid "Display Manager is already started!"
 msgstr "Administrador de pantallas ya se está ejecutando!"
 
@@ -269,3 +263,13 @@ msgstr "Configurar..."
 #: src/dm_mainview.py:276
 msgid "Devices"
 msgstr "Dispositivos"
+
+#~ msgid ""
+#~ "Sorry, but you can use one device for each output.\n"
+#~ "Try to select another output."
+#~ msgstr ""
+#~ "Perdon, puede utilizar un dispositivo por cada salida.\n"
+#~ "Intente seleccionar otra salida."
+
+#~ msgid "Duplicate Outputs!"
+#~ msgstr "Salidas duplicadas!"
