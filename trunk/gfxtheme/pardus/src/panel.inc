@@ -169,6 +169,9 @@
   % move down one menu entry; but only once
   % see keyDown in main::main.input
 
+  % do not move down in any way, why should we ?
+  return
+
   % only for install CDs
   syslinux not { return } if
 
