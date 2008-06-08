@@ -193,7 +193,13 @@ class DisplayConfig:
                 if current:
                     self.current_modes[output] = current
                 else:
-                    self.current_modes[output] = self.modes[output][0]
+                    modes = self.modes[output]
+                    for mode in ("1024x768", "800x600", "640x480"):
+                        if mode in modes:
+                            self.current_modes[output] = mode
+                            break
+                    else:
+                        self.current_modes[output] = modes[0]
 
             primary = self._info.active_outputs[0]
             enabled_outputs = []
