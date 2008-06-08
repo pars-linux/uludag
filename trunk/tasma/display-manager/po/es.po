@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 00:39+0300\n"
-"PO-Revision-Date: 2008-06-03 20:44-0400\n"
+"PO-Revision-Date: 2008-06-08 18:28-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,33 +44,31 @@ msgid "Display Manager"
 msgstr "Administrador de Pantallas"
 
 #: src/display-manager.py:57
-#, fuzzy
+# favor revisar
 msgid "CRT Monitor"
-msgstr "Seleccionar Monitor"
+msgstr "Monitor CRT"
 
 #: src/display-manager.py:58
-#, fuzzy
 msgid "LCD Monitor"
-msgstr "Seleccionar Monitor"
+msgstr "Monitor LCD"
 
 #: src/display-manager.py:65
-#, fuzzy
 msgid "Standard Monitors"
-msgstr "Monitor Plug and Play"
+msgstr "Monitores estándar"
 
 #: src/display-manager.py:65
 msgid "Vendors"
-msgstr ""
+msgstr "Fabricantes"
 
 #: src/display-manager.py:170
 msgid ""
 "<qt>The driver you selected is not installed on your system. In order to use "
 "this driver, you must install <b>%1</b> package.</qt>"
-msgstr ""
+msgstr "<qt>El controlador seleccionado no está instalado en el sistema. Para utilizar el controlador deseado, necesita instalar el paquete <b>%1</b>.</qt>"
 
 #: src/display-manager.py:171 src/display-manager.py:490
 msgid "Start Package Manager"
-msgstr ""
+msgstr "Iniciar Administrador de Paquetes"
 
 #: src/display-manager.py:184 src/dm_mainview.py:252 src/dm_mainview.py:272
 msgid "Primary Screen"
@@ -85,6 +83,8 @@ msgid ""
 "This output is already used by other screen.\n"
 "Do you want to swap between them?"
 msgstr ""
+"La salida seleccionada ya está en uso por otra pantalla.\n"
+"Desea intercambiar entre ellos ?"
 
 #: src/display-manager.py:446
 msgid "Driver: %1"
@@ -95,12 +95,15 @@ msgid "Plug and Play Monitor"
 msgstr "Monitor Plug and Play"
 
 #: src/display-manager.py:478
+# favor revisar..
 msgid ""
 "<qt><p>In order to get better performance, you may want to use <b>%1</b> "
 "driver. The driver is installed on your system. Do you want to use this "
 "driver?</p><b>Warning:</b> This driver is proprietary and not supported by "
 "the distribution.</qt>"
 msgstr ""
+"<qt><p>Para un mejor rendimiento podría preferir usar el controlador <b>%1</b>. El controlador ya se encuentra instalado en el sistema. "
+"Desea utilizar este controlador?</p><b>Atención:</b> Este controlador es propietario y sin soporte por la distribución.</qt>"
 
 #: src/display-manager.py:489
 msgid ""
@@ -109,6 +112,8 @@ msgid ""
 "b> from video card options.</p><b>Warning:</b> This driver is proprietary "
 "and not supported by the distribution.</qt>"
 msgstr ""
+"<qt><p>Para un mejor rendimiento podría preferir usar el controlador <b>%1</b>. Para poder utilizarlo, debe instalar el paquete <b>%2</b> y luego elegir <b>%3</"
+"b> de las opciones de tarjetas de video.</p><b>Atención:</b> Este controlador es propietario y sin soporte por la distribución.</qt>"
 
 #: src/display-manager.py:602
 msgid "Display Manager is already started!"
@@ -162,8 +167,7 @@ msgstr ""
 # duda: probed - creo que detectares la idea, "comprobar" para mi que no es
 #: src/displayconfig.py:369
 msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-"Se detectarán sus dispositivos durante el próximo arranque del sistema."
+msgstr "Se detectarán sus dispositivos durante el próximo arranque del sistema."
 
 #: src/monitordialog.py:86
 msgid "Choose Monitor"
@@ -299,12 +303,3 @@ msgstr "Configurar..."
 msgid "Devices"
 msgstr "Dispositivos"
 
-#~ msgid ""
-#~ "Sorry, but you can use one device for each output.\n"
-#~ "Try to select another output."
-#~ msgstr ""
-#~ "Perdon, puede utilizar un dispositivo por cada salida.\n"
-#~ "Intente seleccionar otra salida."
-
-#~ msgid "Duplicate Outputs!"
-#~ msgstr "Salidas duplicadas!"

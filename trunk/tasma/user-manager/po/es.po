@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-06 19:45+0300\n"
-"PO-Revision-Date: 2008-06-03 20:37-0400\n"
+"PO-Revision-Date: 2008-06-08 15:35-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -117,10 +117,8 @@ msgstr "Eliminar usuario"
 
 #: browser.py:167
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr "<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
 
 #: browser.py:173 browser.py:174
 msgid "Delete Group"
@@ -266,21 +264,21 @@ msgstr "Obteniendo información de usuario..."
 
 #: useredit.py:629
 msgid "Authorizations"
-msgstr ""
+msgstr "Autorizaciones"
 
 #: useredit.py:642
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: useredit.py:648
 msgid "Authorize"
-msgstr ""
+msgstr "Permitir"
 
 #: useredit.py:652
 msgid "Block"
-msgstr ""
+msgstr "Prohibir"
 
 #: useredit.py:662
-#, fuzzy
 msgid "Do not ask password"
-msgstr "Confirmar contraseña:"
+msgstr "No preguntar contraseña"
+

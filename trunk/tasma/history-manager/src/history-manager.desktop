@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=History Manager
 Name[tr]=Geçmiş Yöneticisi
+Name[es]=Administrador de Históricos
 GenericName=History Management Interface
 GenericName[tr]=Geçmiş Yönetim Arayüzü
+GenericName[es]=Administrador de Históricos
 Icon=History_Manager
 X-KDE-ModuleType=Library
 X-KDE-Library=history-manager
