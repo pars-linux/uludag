@@ -211,7 +211,7 @@ pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *
     PyDateTime_IMPORT;
     time_t rawtime = polkit_authorization_get_time_of_grant(auth);
     struct tm *timeinfo = localtime(&rawtime);
-    PyDict_SetItemString(dict, "date", PyDateTime_FromDateAndTime(1900 + timeinfo->tm_year, timeinfo->tm_mon, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, 0));
+    PyDict_SetItemString(dict, "date", PyDateTime_FromDateAndTime(1900 + timeinfo->tm_year, timeinfo->tm_mon + 1, timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec, 0));
 
     // Append tuple to userlist
     PyList_Append((PyObject*)user_data, dict);
