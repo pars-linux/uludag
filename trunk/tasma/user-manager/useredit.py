@@ -591,6 +591,7 @@ class UserStack(QVBox):
         self.u_password.setText("")
         self.u_home.setText("")
         self.u_groups.setText("")
+        self.u_policygrouptab.reset()
         self.checkAdd()
 
     def startAdd(self, groups, names):
@@ -629,11 +630,11 @@ class UserStack(QVBox):
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
         ch.call(uid)
-        #self.getAuths(uid)
+        self.getAuths(uid)
 
     def getAuths(self, uid):
         def getAuth(auths):
-            self.u_policygrouptab.setAuths(auths)
+            print auths
         ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
         ch.registerDone(getAuth)
         ch.call(uid)
@@ -658,6 +659,9 @@ class PolicyGroupTab(KTabWidget):
 
     def setAuths(self, auths):
         self.policytab.setAuths(auths)
+
+    def reset(self):
+        self.policytab.reset()
 
 class PolicyTab(QVBox):
     def __init__(self, parent):
@@ -702,6 +706,13 @@ class PolicyTab(QVBox):
         pass
 #        for auth in auths:
 #            print "action:%s date:%s type:%d policy:%s" % (auth[0], auth[1], auth[2], auth[5])
+
+    def reset(self):
+        it = self.policyview.firstChild()
+        while it:
+            it.setOpen(False)
+            it = it.nextSibling()
+        self.setPolicyButtonsEnabled(False)
 
     def fillAuths(self):
         #do not show policies require policy type yes or no, only the ones require auth_* type
