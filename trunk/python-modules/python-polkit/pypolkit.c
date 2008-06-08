@@ -78,8 +78,9 @@ pk_init_cache()
 
     // Init context
     if (!polkit_context_init(pk_context, &pk_error)) {
-        polkit_context_unref(pk_context);
         PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+        polkit_context_unref(pk_context);
+        polkit_error_free(pk_error);
         return NULL;
     }
 
@@ -88,12 +89,7 @@ pk_init_cache()
 
     // Get policy cache
     PolKitPolicyCache *pk_cache = polkit_context_get_policy_cache(pk_context);
-    if (pk_cache == NULL) {
-        polkit_context_unref(pk_context);
-        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
-        return NULL;
-    }
-
+    polkit_context_unref(pk_context);
     return pk_cache;
 }
 
@@ -105,7 +101,7 @@ pk_init_authdb()
 
     // Get auth db
     PolKitAuthorizationDB *pk_auth = polkit_context_get_authorization_db(pk_context);
-
+    polkit_context_unref(pk_context);
     return pk_auth;
 }
 
@@ -309,9 +305,13 @@ pk_auth_add(PyObject *self, PyObject *args)
             pk_status = polkit_authorization_db_add_entry_always(pk_auth, pk_action, pk_caller, uid);
             break;
         default:
+            polkit_action_unref(pk_action);
             PyErr_SetString(PK_Error, "Unknown authorization type.");
             return NULL;
     }
+
+    polkit_action_unref(pk_action);
+    polkit_caller_unref(pk_caller);
 
     if (pk_status) {
         Py_INCREF(Py_True);
@@ -369,6 +369,7 @@ pk_auth_revoke_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void
         polkit_authorization_db_revoke_entry(authdb, auth, &pk_error);
     }
 
+    // Continue to iterate
     return FALSE;
 }
 
