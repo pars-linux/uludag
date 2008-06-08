@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 23:23+0300\n"
+"POT-Creation-Date: 2008-06-09 00:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr "Tüm sürücüleri göster"
 msgid "Ok"
 msgstr "Tamam"
 
-#: src/display-manager.py:40 src/display-manager.py:612 src/dm_mainview.py:250
+#: src/display-manager.py:40 src/display-manager.py:614 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Görüntü Yöneticisi"
 
@@ -63,7 +63,7 @@ msgstr ""
 "<qt>Seçtiğiniz sürücü sisteminizde kurulu değil. Bu sürücüyü kullanmak için "
 "<b>%1</b> paketini kurmalısınız.</qt>"
 
-#: src/display-manager.py:171 src/display-manager.py:488
+#: src/display-manager.py:171 src/display-manager.py:490
 msgid "Start Package Manager"
 msgstr "Paket Yöneticisini Başlat"
 
@@ -91,7 +91,7 @@ msgstr "Sürücü: %1"
 msgid "Plug and Play Monitor"
 msgstr "Tak ve Kullan Monitör"
 
-#: src/display-manager.py:476
+#: src/display-manager.py:478
 msgid ""
 "<qt><p>In order to get better performance, you may want to use <b>%1</b> "
 "driver. The driver is installed on your system. Do you want to use this "
@@ -99,23 +99,25 @@ msgid ""
 "the distribution.</qt>"
 msgstr ""
 "<qt><p>Daha iyi performans alabilmek için <b>%1</b> sürücüsünü kullanmak "
-"isteyebilirsiniz. Sürücü sisteminizde kurulu. Bu sürücüyü kullanmak "
-"ister misiniz?</p><b>Uyarı:</b> Bu sürücü kapalı kaynak kodlu olduğundan "
-"bu ürün tarafından desteklenmemektedir.</qt>"
+"isteyebilirsiniz. Sürücü sisteminizde kurulu. Bu sürücüyü kullanmak ister "
+"misiniz?</p><b>Uyarı:</b> Bu sürücü kapalı kaynak kodlu olduğundan bu ürün "
+"tarafından desteklenmemektedir.</qt>"
 
-#: src/display-manager.py:487
+#: src/display-manager.py:489
+#, fuzzy
 msgid ""
 "<qt><p>In order to get better performance, you may want to use <b>%1</b> "
-"driver. You must install <b>%2</b> package and then choose <b>%3</b> from "
-"video card options.</p><b>Warning:</b> This driver is proprietary and not "
-"supported by the distribution.</qt>"
+"driver. To use it, you must install <b>%2</b> package and then choose <b>%3</"
+"b> from video card options.</p><b>Warning:</b> This driver is proprietary "
+"and not supported by the distribution.</qt>"
 msgstr ""
 "<qt><p>Daha iyi performans alabilmek için <b>%1</b> sürücüsünü kullanmak "
-"isteyebilirsiniz. <b>%2</b> paketini kurup daha sonra ekran kartı ayarlarından "
-"<b>%3</b> sürücüsünü seçin.</p><b>Uyarı:</b> Bu sürücü kapalı kaynak kodlu "
-"olduğundan bu ürün tarafından desteklenmemektedir.</qt>"
+"isteyebilirsiniz. Kullanmak için <b>%2</b> paketini kurup daha sonra ekran "
+"kartı ayarlarından <b>%3</b> sürücüsünü seçmelisiniz.</p><b>Uyarı:</b> Bu "
+"sürücü kapalı kaynak kodlu olduğundan bu ürün tarafından desteklenmemektedir."
+"</qt>"
 
-#: src/display-manager.py:600
+#: src/display-manager.py:602
 msgid "Display Manager is already started!"
 msgstr "Görüntü Yöneticisi zaten alıyor!"
 

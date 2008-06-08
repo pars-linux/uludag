@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 23:23+0300\n"
+"POT-Creation-Date: 2008-06-09 00:39+0300\n"
 "PO-Revision-Date: 2008-06-08 13:39+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -38,7 +38,7 @@ msgstr "Toon alle drivers"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/display-manager.py:40 src/display-manager.py:612 src/dm_mainview.py:250
+#: src/display-manager.py:40 src/display-manager.py:614 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Beeldscherm beheer"
 
@@ -70,7 +70,7 @@ msgstr ""
 "deze driver te kunnen gebruiken, dient u <b>%1</b> pakket te installeren.</"
 "qt>"
 
-#: src/display-manager.py:171 src/display-manager.py:488
+#: src/display-manager.py:171 src/display-manager.py:490
 msgid "Start Package Manager"
 msgstr "Start pakketbeheer"
 
@@ -98,7 +98,7 @@ msgstr "Driver: %1"
 msgid "Plug and Play Monitor"
 msgstr "Plug en play monitor"
 
-#: src/display-manager.py:476
+#: src/display-manager.py:478
 msgid ""
 "<qt><p>In order to get better performance, you may want to use <b>%1</b> "
 "driver. The driver is installed on your system. Do you want to use this "
@@ -106,15 +106,15 @@ msgid ""
 "the distribution.</qt>"
 msgstr ""
 
-#: src/display-manager.py:487
+#: src/display-manager.py:489
 msgid ""
 "<qt><p>In order to get better performance, you may want to use <b>%1</b> "
-"driver. You must install <b>%2</b> package and then choose <b>%3</b> from "
-"video card options.</p><b>Warning:</b> This driver is proprietary and not "
-"supported by the distribution.</qt>"
+"driver. To use it, you must install <b>%2</b> package and then choose <b>%3</"
+"b> from video card options.</p><b>Warning:</b> This driver is proprietary "
+"and not supported by the distribution.</qt>"
 msgstr ""
 
-#: src/display-manager.py:600
+#: src/display-manager.py:602
 msgid "Display Manager is already started!"
 msgstr "Beeldscherm beheer is al actief!"
 
