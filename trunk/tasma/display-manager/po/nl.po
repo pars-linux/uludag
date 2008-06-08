@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Willem Gielen <w.gielen@gmail.com>, 2008.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-08 05:00+0300\n"
-"PO-Revision-Date: 2008-05-29 16:32+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <nl@li.org>\n"
+"PO-Revision-Date: 2008-06-08 13:39+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,7 +31,7 @@ msgstr "Videokaart"
 
 #: src/driverdialog.py:59
 msgid "Show all drivers"
-msgstr ""
+msgstr "Toon alle drivers"
 
 #: src/driverdialog.py:60 src/monitordialog.py:89
 msgid "Ok"
@@ -44,11 +45,11 @@ msgstr "Beeldscherm beheer"
 msgid ""
 "<qt>The driver you selected is not installed on your system. In order to use "
 "this driver, you must install <b>%1</b> package.</qt>"
-msgstr ""
+msgstr "<qt>De door u geselecteerde driver is niet op uw systeem geïnstalleerd. Om deze driver te kunnen gebruiken, dient u <b>%1</b> pakket te installeren.</qt>"
 
 #: src/display-manager.py:158
 msgid "Start Package Manager"
-msgstr ""
+msgstr "Start pakketbeheer"
 
 #: src/display-manager.py:171 src/dm_mainview.py:252 src/dm_mainview.py:272
 msgid "Primary Screen"
@@ -63,6 +64,8 @@ msgid ""
 "This output is already used by other screen.\n"
 "Do you want to swap between them?"
 msgstr ""
+"Deze uitvoer wordt als door een ander scherm gebruikt.\n"
+"Wilt u wisselen tussen beide?"
 
 #: src/display-manager.py:426
 msgid "Driver: %1"
@@ -105,6 +108,10 @@ msgid ""
 "to configure your video hardware, you must create a new configuration file.\n"
 "Would you like to create a new configuration at the next boot?"
 msgstr ""
+"Beeldscherm beheer kan geen informatie over de configuratie verkrijgen. Het configuratie "
+"bestand kan defect zijn of veranderd door een ander gereedschap. Als i wilt dat het beeldscherm "
+"beheer uw video hardware configureerd, dient u een nieuw configuratie bestand aan te maken.\n"
+"Wilt u een nieuw configuratiebestand aanmaken bij de volgende maal opstarten?"
 
 #: src/displayconfig.py:358
 msgid ""
@@ -115,11 +122,8 @@ msgstr ""
 "opnieuw opstarten van uw systeem."
 
 #: src/displayconfig.py:361
-#, fuzzy
 msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-"Configuratie is opgeslagen. Sommige veranderingen zullen pas optreden na "
-"opnieuw opstarten van uw systeem."
+msgstr "Uw hardware zal geactiveerd worden na herstarten van uw computer."
 
 #: src/monitordialog.py:86
 msgid "Choose Monitor"
@@ -213,7 +217,7 @@ msgstr "Resolutie"
 
 #: src/dm_mainview.py:256
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Configuratie bestand in niet gereed."
 
 #: src/dm_mainview.py:258
 msgid "1"
@@ -255,31 +259,3 @@ msgstr "Configureer..."
 msgid "Devices"
 msgstr "Apparaten"
 
-#~ msgid ""
-#~ "Sorry, but you can use one device for each output.\n"
-#~ "Try to select another output."
-#~ msgstr ""
-#~ "Helaas, u kunt slechts één apparaat gebruiken per uitvoer.\n"
-#~ "Probeer een andere uitvoer te selekteren."
-
-#~ msgid "Duplicate Outputs!"
-#~ msgstr "Dupliceer output!"
-
-#~ msgid "Card Icon"
-#~ msgstr "Kaart icoon"
-
-#, fuzzy
-#~ msgid "Card Name"
-#~ msgstr "<p>Kaart naam</p>"
-
-#~ msgid "Monitor Icon"
-#~ msgstr "Monitor icoon"
-
-#~ msgid "Monitor Info"
-#~ msgstr "Monitor info"
-
-#~ msgid "<p>Driver Name</p>"
-#~ msgstr "<p>Driver naam<p>"
-
-#~ msgid "Probe at next boot."
-#~ msgstr "Verbinden bij volgende maal herstarten."
