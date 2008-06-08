@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2007, TUBITAK/UEKAE
+# Copyright (C) 2008, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -77,8 +77,8 @@ app_data = [
 kdedistutils.setup(
     name="display-manager",
     version=version,
-    author="Developer",
-    author_email="user@pardus.org.tr",
+    author="Fatih Aşıcı",
+    author_email="fatih@pardus.org.tr",
     url="http://www.pardus.org.tr/",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
