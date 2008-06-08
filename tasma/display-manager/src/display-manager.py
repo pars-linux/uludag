@@ -30,7 +30,7 @@ from utility import *
 
 mod_name = 'Display Manager'
 mod_app = 'display-manager'
-mod_version = '0.1'
+mod_version = '0.2.1'
 
 def AboutData():
     return KAboutData(
