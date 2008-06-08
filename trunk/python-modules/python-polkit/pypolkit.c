@@ -398,6 +398,33 @@ pk_auth_revoke(PyObject *self, PyObject *args)
     return Py_None;
 }
 
+//! Grants a negative authorization to a user for a specific action
+static PyObject *
+pk_auth_block(PyObject *self, PyObject *args)
+{
+    int uid = -1;
+    const char *action_id;
+
+    if (!PyArg_ParseTuple(args, "is", &uid, &action_id)) {
+        return NULL;
+    }
+
+    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
+    PolKitError *pk_error = NULL;
+
+    PolKitAction *pk_action = pk_make_action(action_id);
+    polkit_authorization_db_grant_negative_to_uid(pk_auth, pk_action, uid, NULL, &pk_error);
+
+    if (polkit_error_is_set(pk_error)) {
+        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+        polkit_error_free(pk_error);
+        return NULL;
+    }
+
+    Py_INCREF(Py_None);
+    return Py_None;
+}
+
 static PyObject *pk_check_authv(PyObject *self, PyObject *args) {
   pid_t pid = 0;
   char **argv = NULL;
@@ -539,6 +566,7 @@ static PyMethodDef polkit_methods[] = {
     {"auth_obtain", (PyCFunction) pk_auth_obtain, METH_VARARGS, "Authorize user for the given action."},
     {"auth_revoke_all", (PyCFunction) pk_auth_revoke_all, METH_VARARGS, "Revoke all authorizations of given user."},
     {"auth_revoke", (PyCFunction) pk_auth_revoke, METH_VARARGS, "Revoke authorization of given user for the given action."},
+    {"auth_block", (PyCFunction) pk_auth_block, METH_VARARGS, "Grant a negative authorization to a user for a specific action."},
     {NULL, NULL, 0, NULL}
 };
 
