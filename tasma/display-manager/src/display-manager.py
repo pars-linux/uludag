@@ -342,9 +342,13 @@ class MainWidget(dm_mainview.mainWidget):
 
         if self.selectedScreen == 1:
             if curOut == self.dconfig.secondaryScr:
-                self.duplicateOutputs()
-            else:
-                self.dconfig.primaryScr = curOut
+                if self.dconfig.desktop_setup != "single":
+                    self.duplicateOutputs()
+                    return
+                else:
+                    self.dconfig.secondaryScr = None
+
+            self.dconfig.primaryScr = curOut
         else:
             if curOut == self.dconfig.primaryScr:
                 self.duplicateOutputs()
