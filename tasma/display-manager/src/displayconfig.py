@@ -261,9 +261,6 @@ class DisplayConfig:
             ch.call(config)
             return
 
-        self.applyNow()
-        time.sleep(1)
-
         options = {
                 "depth":            depth,
                 "desktop-setup":    self.desktop_setup
@@ -295,6 +292,7 @@ class DisplayConfig:
             secondScreen = screenInfo(self.secondaryScr)
 
         ch = comlink.callHandler("zorg", "Xorg.Display", "setupScreens", "tr.org.pardus.comar.xorg.display.set")
+        ch.registerCancel(self.cancelled)
         ch.registerDone(self.done)
         ch.call(self._bus, options, firstScreen, secondScreen)
 
@@ -360,7 +358,11 @@ class DisplayConfig:
         self._info.driver = drv
         self._info.package = pkg
 
+    def cancelled(self):
+        self.applyNow()
+
     def done(self):
+        self.applyNow()
         KMessageBox.information(None, i18n("Configuration has been saved. Some changes may take effect after restarting your computer."))
 
     def startupProbe(self):
