@@ -72,6 +72,7 @@ class MonitorDialog(monitordialog.monitorDialog):
         self.connect(self.pushButtonOk,     SIGNAL("clicked()"), self.accept)
         self.connect(self.listViewMonitors, SIGNAL("selectionChanged()"), self.getSelectedMonitor)
         self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.listViewMonitors.setDisabled)
+        self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.groupBoxDetails.setDisabled)
         self.connect(self.checkBoxPlugPlay, SIGNAL("toggled(bool)"), self.slotPNP)
 
     def slotPNP(self, checked):
