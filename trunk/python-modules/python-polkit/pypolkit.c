@@ -427,134 +427,143 @@ pk_auth_block(PyObject *self, PyObject *args)
 }
 
 static PyObject *pk_check_authv(PyObject *self, PyObject *args) {
-  pid_t pid = 0;
-  char **argv = NULL;
-  polkit_uint64_t result;
-  PyObject *resultobj = NULL;
-  PyObject *obj = NULL ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"iO:polkit_check_authv",&pid, &obj))
-    return NULL;
+    pid_t pid = 0;
+    char **argv = NULL;
+    polkit_uint64_t result;
+    PyObject *resultobj = NULL;
+    PyObject *obj = NULL ;
 
-  /* Check if is a list */
-  if (PyList_Check(obj)) {
-    int size = PyList_Size(obj);
-    int i = 0;
-    argv = (char **) malloc((size+1)*sizeof(char *));
-
-    if (!argv) {
-      PyErr_SetString(PK_Error, "malloc failed.");
-      goto fail;
+    if (!PyArg_ParseTuple(args, (char *)"iO:polkit_check_authv", &pid, &obj)) {
+        return NULL;
     }
 
-    for (i = 0; i < size; i++) {
-      PyObject *o = PyList_GetItem(obj,i);
-      if (PyString_Check(o))
-        argv[i] = PyString_AsString(PyList_GetItem(obj,i));
-      else {
-	PyErr_SetString(PyExc_TypeError,"list must contain strings");
-	goto fail;
-      }
+    /* Check if is a list */
+    if (PyList_Check(obj)) {
+        int size = PyList_Size(obj);
+        int i = 0;
+        argv = (char **) malloc((size + 1) * sizeof(char *));
+
+        if (!argv) {
+            PyErr_SetString(PK_Error, "malloc failed.");
+            goto fail;
+        }
+
+        for (i = 0; i < size; i++) {
+            PyObject *o = PyList_GetItem(obj, i);
+            if (PyString_Check(o)) {
+                argv[i] = PyString_AsString(PyList_GetItem(obj, i));
+            }
+            else {
+                PyErr_SetString(PyExc_TypeError, "list must contain strings");
+                goto fail;
+            }
+        }
+
+        argv[i] = NULL;
+
+    } else if (PyTuple_Check(obj)) {
+        int size = PyTuple_Size(obj);
+        int i = 0;
+        argv = (char **) malloc((size+1)*sizeof(char *));
+        if (!argv) {
+            PyErr_SetString(PK_Error, "malloc failed.");
+            goto fail;
+        }
+        for (i = 0; i < size; i++) {
+            PyObject *o = PyTuple_GetItem(obj,i);
+            if (PyString_Check(o)) {
+                argv[i] = PyString_AsString(PyTuple_GetItem(obj, i));
+            }
+            else {
+                PyErr_SetString(PyExc_TypeError, "tuple must contain strings");
+                goto fail;
+            }
+        }
+        argv[i] = NULL;
+    } else {
+        PyErr_SetString(PyExc_TypeError, "not a list or tuple");
+        goto fail;
     }
-    argv[i] = NULL;
-  } else if (PyTuple_Check(obj)) {
-    int size = PyTuple_Size(obj);
-    int i = 0;
-    argv = (char **) malloc((size+1)*sizeof(char *));
-    if (!argv) {
-      PyErr_SetString(PK_Error, "malloc failed.");
-      goto fail;
+
+    result = (polkit_uint64_t) polkit_check_authv(pid, (char const **) argv);
+
+    resultobj = PyLong_FromUnsignedLong((unsigned long long) result);
+
+    if (argv) {
+        free((char *) argv);
     }
-    for (i = 0; i < size; i++) {
-      PyObject *o = PyTuple_GetItem(obj,i);
-      if (PyString_Check(o))
-        argv[i] = PyString_AsString(PyTuple_GetItem(obj,i));
-      else {
-	PyErr_SetString(PyExc_TypeError,"tuple must contain strings");
-	goto fail;
-      }
-    }
-    argv[i] = NULL;
-  } else {
-    PyErr_SetString(PyExc_TypeError,"not a list or tuple");
-    goto fail;
-  }
 
-  result = (polkit_uint64_t)polkit_check_authv(pid, (char const **)argv);
-
-  resultobj = PyLong_FromUnsignedLong((unsigned long long)(result));
-
-  if (argv)
-    free((char *) argv);
-
-  return resultobj;
+    return resultobj;
 
 fail:
-  if (argv)
-    free((char *) argv);
-  return NULL;
+    if (argv) {
+        free((char *) argv);
+    }
+    return NULL;
 }
 
 static PyObject *pk_auth_obtain(PyObject *self, PyObject *args) {
-  PyObject *resultobj = NULL;
-  char *action_id = NULL ;
-  polkit_uint32_t xid = 0;
-  pid_t pid = 0;
-  DBusError dbus_err;
-  polkit_bool_t result;
-  PolKitAction *action = NULL;
-  
-  dbus_error_init(&dbus_err);
-  
-  if (!PyArg_ParseTuple(args,(char *)"sii:pk_auth_obtain", &action_id, (int *)&xid, (int *)&pid)) 
-    return NULL;
+    PyObject *resultobj = NULL;
+    char *action_id = NULL ;
+    polkit_uint32_t xid = 0;
+    pid_t pid = 0;
+    DBusError dbus_err;
+    polkit_bool_t result;
+    PolKitAction *action = NULL;
 
-  result = (polkit_bool_t)polkit_auth_obtain((char const *)action_id, xid, pid, &dbus_err);
-  
-  PyObject *l;
-  
-  if ((result == FALSE) && dbus_error_is_set(&dbus_err)) {
-    PolKitResult res;
-    char *out_action_id;
-    
-    if (polkit_dbus_error_parse(&dbus_err, &action, &res) == FALSE) {
-      PyErr_SetString(PK_Error, "polkit_dbus_error_parse");
-      goto fail;
+    dbus_error_init(&dbus_err);
+
+    if (!PyArg_ParseTuple(args, (char *) "sii:pk_auth_obtain", &action_id, (int *)&xid, (int *)&pid)) {
+        return NULL;
     }
-    
-    if (polkit_action_get_action_id(action, &out_action_id) == FALSE)
-      goto fail;
-    
-    l = PyList_New(0);
 
-    if (!l)
-      goto fail_clean_action;
+    result = (polkit_bool_t) polkit_auth_obtain((char const *)action_id, xid, pid, &dbus_err);
 
-    resultobj = l;
-    PyList_Append(l, PyString_FromString(out_action_id));
-    PyList_Append(l, PyString_FromString(polkit_result_to_string_representation(res)));
+    PyObject *l;
+
+    if ((result == FALSE) && dbus_error_is_set(&dbus_err)) {
+        PolKitResult res;
+        char *out_action_id;
+
+        if (polkit_dbus_error_parse(&dbus_err, &action, &res) == FALSE) {
+            PyErr_SetString(PK_Error, "polkit_dbus_error_parse");
+            goto fail;
+        }
+
+        if (polkit_action_get_action_id(action, &out_action_id) == FALSE) {
+            goto fail;
+        }
+
+        l = PyList_New(0);
+
+        if (!l) {
+            goto fail_clean_action;
+        }
+
+        resultobj = l;
+        PyList_Append(l, PyString_FromString(out_action_id));
+        PyList_Append(l, PyString_FromString(polkit_result_to_string_representation(res)));
+        polkit_action_unref(action);
+    }
+    else {
+        if (result == TRUE) {
+            Py_INCREF(Py_True);
+            resultobj = Py_True;
+        } else {
+            Py_INCREF(Py_False);
+            resultobj = Py_False;
+        }
+    }
+
+    dbus_error_free(&dbus_err);
+    return resultobj;
+
+fail_clean_action:
     polkit_action_unref(action);
-  } 
-  else {
-    if (result == TRUE) {
-      Py_INCREF(Py_True);
-      resultobj = Py_True;
-    } else {
-      Py_INCREF(Py_False);
-      resultobj = Py_False;
-    }
-  }
-  
-  dbus_error_free(&dbus_err);
-  return resultobj;
-
- fail_clean_action:
-  polkit_action_unref(action);
- fail:
-  dbus_error_free(&dbus_err);
-  return NULL;
+fail:
+    dbus_error_free(&dbus_err);
+    return NULL;
 }
-
 
 //! polkit methods
 static PyMethodDef polkit_methods[] = {
