@@ -11,5 +11,6 @@ Name=System Information
 Name[de]=Systeminformation
 Name[pt_BR]=Informação do Sistema
 Name[nl]=Systeem informatie
+Name[es]=Información del Sistema
 Categories=Qt;KDE;System;
 X-KDE-HasTempFileOption=true
