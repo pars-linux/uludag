@@ -419,12 +419,19 @@ pk_auth_block(PyObject *self, PyObject *args)
     PolKitError *pk_error = NULL;
 
     PolKitAction *pk_action = pk_make_action(action_id);
-    polkit_authorization_db_grant_negative_to_uid(pk_auth, pk_action, uid, NULL, &pk_error);
 
-    if (polkit_error_is_set(pk_error)) {
-        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
-        polkit_error_free(pk_error);
-        return NULL;
+    if (!polkit_authorization_db_is_uid_blocked_by_self(pk_auth, pk_action, (uid_t) uid, &pk_error)) {
+        if (polkit_error_is_set(pk_error)) {
+            PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+            polkit_error_free(pk_error);
+            return NULL;
+        }
+        polkit_authorization_db_grant_negative_to_uid(pk_auth, pk_action, (uid_t) uid, NULL, &pk_error);
+        if (polkit_error_is_set(pk_error)) {
+            PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+            polkit_error_free(pk_error);
+            return NULL;
+        }
     }
 
     Py_INCREF(Py_None);
