@@ -76,7 +76,7 @@
       [ keyF3 0 "F3" /panel.zorg /panel.zorg.width /panel.zorg.update /zorg.init ]
       "profiles" findfile dup {
         /profile.data exch def
-        [ keyF3 0 "F3" /panel.profile /panel.profile.width /panel.profile.update /profile.init ]
+        [ keyF4 0 "F4" /panel.profile /panel.profile.width /panel.profile.update /profile.init ]
       } { pop } ifelse
 
     } ifelse
