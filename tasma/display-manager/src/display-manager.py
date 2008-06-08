@@ -451,7 +451,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         def writeInfo(out, label):
             if monitors.has_key(out):
-                label.setText("%s\n%s" % (monitors[out].model, monitors[out].vendor))
+                label.setText(u"%s\n%s" % (monitors[out].model, monitors[out].vendor))
             else:
                 label.setText(msgpnp)
 
