@@ -486,7 +486,7 @@ class MainWidget(dm_mainview.mainWidget):
                     self.dconfig.changeDriver(preferredDriver)
                     self.getCardInfo()
             else:
-                msg = i18n("<qt><p>In order to get better performance, you may want to use <b>%1</b> driver. You must install <b>%2</b> package and then choose <b>%3</b> from video card options.</p><b>Warning:</b> This driver is proprietary and not supported by the distribution.</qt>").arg(driver).arg(package).arg(preferredDriver)
+                msg = i18n("<qt><p>In order to get better performance, you may want to use <b>%1</b> driver. To use it, you must install <b>%2</b> package and then choose <b>%3</b> from video card options.</p><b>Warning:</b> This driver is proprietary and not supported by the distribution.</qt>").arg(driver).arg(package).arg(preferredDriver)
                 buttonStartPM = KGuiItem(i18n("Start Package Manager"), getIconSet("package-manager"))
                 answer = KMessageBox.questionYesNo(self, msg,
                                                     QString.null,
