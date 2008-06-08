@@ -471,7 +471,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         if package_sep in preferredDriver:
             driver, package = preferredDriver.split(package_sep, 1)
-            if package == dc.package:
+            if package == dc._info.package:
                 return
 
             if package in hwdata.getAvailableDriverNames():
