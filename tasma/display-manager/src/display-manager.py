@@ -52,21 +52,25 @@ class MonitorDialog(monitordialog.monitorDialog):
         self.groupBoxDetails.hide()
         self.pushButtonOk.setEnabled(False)
 
-        # get a dict of monitor.db like:
-        # vendor["Siemens"] = {'Siemens Nixdorf': [{'eisa_id': '','hsync': '','is_dpms': '','model': '','vref': ''}}
-
         allMonitorInfos = hwdata.getMonitorInfos()
+
+        vendors = {"Generic Monitors": allMonitorInfos[0], "Vendors": allMonitorInfos[1]}
 
         # hide listview caption.
         self.listViewMonitors.header().hide()
 
-        for eachVendor in allMonitorInfos.keys():
-            item = KListViewItem(self.listViewMonitors, "parent", "parent","parent")
-            item.setText(0, eachVendor)
-            self.listViewMonitors.setOpen(item,False)
+        for eachVendor in vendors:
+            root = KListViewItem(self.listViewMonitors, "parent", "parent","parent")
+            root.setText(0, eachVendor)
+            self.listViewMonitors.setOpen(root,False)
 
-            for eachModel in allMonitorInfos[eachVendor]:
-                subitem = KListViewItem(item, eachModel["model"], eachVendor, eachModel["hsync"], eachModel["vref"])
+            for eachSubVendor in vendors[eachVendor]:
+                item = KListViewItem(root, "parent", "parent","parent")
+                item.setText(0, eachSubVendor)
+                self.listViewMonitors.setOpen(item,False)
+
+                for eachModel in vendors[eachVendor][eachSubVendor]:
+                    subitem = KListViewItem(item, eachModel["model"], eachVendor, eachModel["hsync"], eachModel["vref"])
 
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
         self.connect(self.pushButtonOk,     SIGNAL("clicked()"), self.accept)
@@ -497,7 +501,6 @@ class MainWidget(dm_mainview.mainWidget):
     def slotSwap(self):
         self.dconfig.primaryScr, self.dconfig.secondaryScr = self.dconfig.secondaryScr, self.dconfig.primaryScr
         self.updateWidgets()
-
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
