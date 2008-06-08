@@ -62,6 +62,8 @@ class Widget(WallpaperWidget, ScreenWidget):
         # set/create variables
         self.tmpThumbDir = os.path.join(os.path.expanduser("~"), ".kde/share/apps/kaptan/kaptan-thumbs")
 
+        self.catLang = KGlobal.locale().language()
+
         self.thumbSize = 150, 150
         self.wallpaperList = {}
         self.ultimateList = []
@@ -96,7 +98,13 @@ class Widget(WallpaperWidget, ScreenWidget):
                     resolution = False
 
                 try:
-                    wallpaperTitle = parser.get_locale('Wallpaper', 'Name', '')
+                    try:
+                        wallpaperTitle = parser.get_locale('Wallpaper', 'Name[%s]'%self.catLang, '')
+                    except:
+                        wallpaperTitle = parser.get_locale('Wallpaper', 'Name', '')
+
+                    wallpaperTitle = QString(i18n(wallpaperTitle))
+
                     wallpaperFile = "/usr/kde/3.5/share/wallpapers/" + parser.get_locale('Wallpaper', 'File','')
 
                     # get wide wallpapers
