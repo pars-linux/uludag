@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-06 12:27+0300\n"
-"PO-Revision-Date: 2008-06-03 20:36-0400\n"
+"PO-Revision-Date: 2008-06-08 15:32-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -84,8 +84,7 @@ msgstr ""
 "según el método seleccionado."
 
 #: yali4/gui/Ui/autopartwidget.py:104
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Particionamiento automático intenta usar el espacio libre o redimensiona "
 "particiones existentes"
@@ -94,22 +93,17 @@ msgstr ""
 msgid ""
 "This option will try to find suitable free space or resizable partitions (If "
 "there is no suitable partition this option will be disabled)"
-msgstr ""
+msgstr "Esta opción intentará encontrar espacio adecuado disponible, o particiones que se puedan redimensionar (si no hay una partición adecuada disponible, esta opción queda deshabilitada)"
 
 #: yali4/gui/Ui/autopartwidget.py:106
 msgid "Automatically partition and format selected disk!"
 msgstr "Particionar automáticamente y formatear disco seleccionado!"
 
 #: yali4/gui/Ui/autopartwidget.py:107
-#, fuzzy
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
-msgstr ""
-"<b>\n"
-"<p>Esta acción usará el disco entero para la instalación de Pardus\n"
-"y se perderán todos los datos que están actualmente en el disco seleccionado."
-"</p>\n"
+msgstr "Esta opción utilizará el disco entero. Se eliminará el contenido de todo el disco y los datos actualmente alacenados se perderán !"
 
 #: yali4/gui/Ui/autopartwidget.py:108
 msgid "No, I'll partition my disk manually."
@@ -117,7 +111,7 @@ msgstr "No, particionar manualmente."
 
 #: yali4/gui/Ui/autopartwidget.py:109
 msgid "You can use manual partitioning with this option"
-msgstr ""
+msgstr "Puede utilizar esta opción para realizar particionamiento manual"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid ""
@@ -896,8 +890,7 @@ msgstr ""
 # Modo Mayúsculas activado
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:110
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -908,8 +901,7 @@ msgstr ""
 # Las contraseñas no coinciden!
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 # El Nombre de la máquina (hostname) contiene caracteres no válidos!
 #: yali4/gui/ScrAdmin.py:137
@@ -1058,7 +1050,6 @@ msgid "Goodbye from YALI"
 msgstr "Adios de YALI"
 
 #: yali4/gui/ScrGoodbye.py:46
-#, fuzzy
 msgid "Enjoy your fresh Pardus !.."
 msgstr "Disfrute su nuevo Pardus !.."
 
@@ -1465,8 +1456,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:175
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:232
 msgid "Update User"
@@ -1516,7 +1506,6 @@ msgid "Warning"
 msgstr "Alerta"
 
 #: yali4/gui/YaliDialog.py:123
-#, fuzzy
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on<br>\n"
@@ -1524,7 +1513,7 @@ msgid ""
 "</b>\n"
 msgstr ""
 "<b>\n"
-"<p>Esta acción iniciará la instalación de Pardus en\n"
+"<p>Esta acción iniciará la instalación de Pardus en<br>\n"
 "el equipo formateando la partición seleccionada.</p>\n"
 "</b>\n"
 
@@ -1621,9 +1610,8 @@ msgid "English"
 msgstr "Inglés"
 
 #: yali4/localedata.py:40
-#, fuzzy
 msgid "English GB"
-msgstr "Inglés"
+msgstr "Inglés GB"
 
 #: yali4/localedata.py:50
 msgid "Greek"
@@ -1796,5 +1784,3 @@ msgstr "Intercambio (swap)"
 msgid "Archive Partition"
 msgstr "Guardar Partición"
 
-#~ msgid "...."
-#~ msgstr "...."
