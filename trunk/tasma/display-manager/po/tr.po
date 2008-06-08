@@ -104,7 +104,6 @@ msgstr ""
 "tarafından desteklenmemektedir.</qt>"
 
 #: src/display-manager.py:489
-#, fuzzy
 msgid ""
 "<qt><p>In order to get better performance, you may want to use <b>%1</b> "
 "driver. To use it, you must install <b>%2</b> package and then choose <b>%3</"
