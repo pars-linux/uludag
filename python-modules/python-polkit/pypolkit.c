@@ -161,6 +161,11 @@ pk_action_info(PyObject *self, PyObject *args)
     // Get entry
     PolKitPolicyFileEntry* pk_entry = polkit_policy_cache_get_entry_by_id(pk_cache, action_id);
 
+    if (!pk_entry) {
+        PyErr_SetString(PK_Error, "No such action_id");
+        return NULL;
+    }
+
     PyObject *dict = PyDict_New();
 
     // Description
