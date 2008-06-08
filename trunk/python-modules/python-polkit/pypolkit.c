@@ -212,6 +212,9 @@ pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *
     // Action ID
     PyDict_SetItemString(dict, "action_id", PyString_FromString(polkit_authorization_get_action_id(auth)));
 
+    // Scope
+    PyDict_SetItemString(dict, "scope", PyInt_FromLong((long) polkit_authorization_get_scope(auth)));
+
     // Time of grant
     PyDateTime_IMPORT;
     time_t rawtime = polkit_authorization_get_time_of_grant(auth);
