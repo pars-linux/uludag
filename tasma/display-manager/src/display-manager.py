@@ -52,9 +52,17 @@ class MonitorDialog(monitordialog.monitorDialog):
         self.groupBoxDetails.hide()
         self.pushButtonOk.setEnabled(False)
 
-        allMonitorInfos = hwdata.getMonitorInfos()
+        genericMonitors, vendorMonitors = hwdata.getMonitorInfos()
 
-        vendors = {"Generic Monitors": allMonitorInfos[0], "Vendors": allMonitorInfos[1]}
+        crtText = i18n("CRT Monitor")
+        lcdText = i18n("LCD Monitor")
+
+        genericMonitors[crtText] = genericMonitors["Generic CRT Display"]
+        genericMonitors[lcdText] = genericMonitors["Generic LCD Display"]
+        del genericMonitors["Generic CRT Display"]
+        del genericMonitors["Generic LCD Display"]
+
+        vendors = {i18n("Standard Monitors"): genericMonitors, i18n("Vendors"): vendorMonitors}
 
         # hide listview caption.
         self.listViewMonitors.header().hide()
@@ -70,7 +78,7 @@ class MonitorDialog(monitordialog.monitorDialog):
                 self.listViewMonitors.setOpen(item,False)
 
                 for eachModel in vendors[eachVendor][eachSubVendor]:
-                    subitem = KListViewItem(item, eachModel["model"], eachVendor, eachModel["hsync"], eachModel["vref"])
+                    subitem = KListViewItem(item, eachModel["model"], eachSubVendor, eachModel["hsync"], eachModel["vref"])
 
         self.connect(self.pushButtonCancel, SIGNAL("clicked()"), self.reject)
         self.connect(self.pushButtonOk,     SIGNAL("clicked()"), self.accept)
