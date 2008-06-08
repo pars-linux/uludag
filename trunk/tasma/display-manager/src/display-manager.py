@@ -168,7 +168,7 @@ class MainWidget(dm_mainview.mainWidget):
         # hide for now
         self.buttonHelp.hide()
 
-        self.screenNames = { "1": i18n("Primary Screen"), "2": i18n("Secondary Screen") }
+        self.screenNames = { 1: i18n("Primary Screen"), 2: i18n("Secondary Screen") }
 
         # set button icons
         self.buttonCancel.setIconSet(getIconSet("cancel", KIcon.Small))
@@ -199,13 +199,9 @@ class MainWidget(dm_mainview.mainWidget):
             self.checkBoxTrueColor.setDisabled(True)
 
         # set signals
-        self.selectedScreen = "1"
+        self.selectedScreen = 1
 
         self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.getSelectedScreen)
-        self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.getSelectedScreen)
-
-        self.connect(self.screenImage1, SIGNAL("toggled(bool)"), self.switchBetweenScreens)
-        self.connect(self.screenImage2, SIGNAL("toggled(bool)"), self.switchBetweenScreens)
 
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.enableExtendedOption)
         self.connect(self.checkBoxDualMode, SIGNAL("toggled(bool)"), self.buttonGroupDualModes, SLOT("setEnabled(bool)"))
@@ -256,6 +252,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.getMonitorInfo()
         self.switchBetweenScreens()
+        self.setIconbyResolution(1)
 
         if self.dconfig.desktop_setup == "single":
             self.checkBoxDualMode.setChecked(False)
@@ -267,6 +264,7 @@ class MainWidget(dm_mainview.mainWidget):
             else:
                 self.radioBoxCloned.setChecked(True)
             self.checkBoxDualMode.setChecked(True)
+            self.setIconbyResolution(2)
 
     def identifyDisplays(self):
         nod =  QApplication.desktop().numScreens()
@@ -296,12 +294,25 @@ class MainWidget(dm_mainview.mainWidget):
             identifier.hide()
 
     def duplicateOutputs(self):
-        message = i18n("Sorry, but you can use one device for each output.\nTry to select another output.")
-        QMessageBox.warning(self, i18n("Duplicate Outputs!"), message, QMessageBox.Ok, QMessageBox.NoButton)
+        message = i18n("This output is already used by other screen.\nDo you want to swap between them?")
+        answer = KMessageBox.warningYesNo(self, message)
+        if answer == KMessageBox.Yes:
+            self.slotSwap()
+        else:
+            self.comboBoxOutput.setCurrentText(self.currentOutput)
 
-    def setIconbyResolution(self, resolution = None, screenId = None):
-        if resolution == None:
-            resolution = self.currentModes[self.currentOutput]
+    def setIconbyResolution(self, screenId = None):
+        if not screenId:
+            screenId = self.selectedScreen
+
+        if screenId == 1:
+            screenImage = self.screenImage1
+            pixMonitor = self.pixMonitor1
+            resolution = self.currentModes[self.dconfig.primaryScr]
+        else:
+            screenImage = self.screenImage2
+            pixMonitor = self.pixMonitor2
+            resolution = self.currentModes[self.dconfig.secondaryScr]
 
         if "x" not in resolution:
             x, y = 4, 3
@@ -313,12 +324,8 @@ class MainWidget(dm_mainview.mainWidget):
         else:
             icon = self.iconNormal
 
-        if screenId == 2 or self.selectedScreen == "2":
-            self.screenImage2.setIconSet(icon)
-            self.pixMonitor2.setPixmap(icon.pixmap(QIconSet.Automatic, QIconSet.Normal))
-        else:
-            self.screenImage1.setIconSet(icon)
-            self.pixMonitor1.setPixmap(icon.pixmap(QIconSet.Automatic, QIconSet.Normal))
+        screenImage.setIconSet(icon)
+        pixMonitor.setPixmap(icon.pixmap(QIconSet.Automatic, QIconSet.Normal))
 
     def getCurrentConf(self):
         # returns a dict of outputs: resolutions.
@@ -333,7 +340,7 @@ class MainWidget(dm_mainview.mainWidget):
     def setSelectedOutput(self):
         curOut =  str(self.comboBoxOutput.currentText())
 
-        if self.selectedScreen == "1":
+        if self.selectedScreen == 1:
             if curOut == self.dconfig.secondaryScr:
                 self.duplicateOutputs()
             else:
@@ -356,13 +363,18 @@ class MainWidget(dm_mainview.mainWidget):
         curOut =  str(self.comboBoxOutput.currentText())
         curRes = str(self.comboBoxResolution.currentText())
         self.dconfig.current_modes[curOut] = curRes
-        self.setIconbyResolution(curRes)
+        self.setIconbyResolution()
 
-    def getSelectedScreen(self):
+    def getSelectedScreen(self, primarySelected):
         """Gets selected screen and sets groupbox name as screen's name"""
 
-        self.selectedScreen = str(self.screenGroup.selected().textLabel())
+        if primarySelected:
+            self.selectedScreen = 1
+        else:
+            self.selectedScreen = 2
+
         self.groupBoxScreens.setTitle(self.screenNames[self.selectedScreen])
+        self.switchBetweenScreens()
 
     def enableExtendedOption(self, checked):
         """Enables <Extended> option checkbox if <Dual Mode> selected"""
@@ -374,7 +386,7 @@ class MainWidget(dm_mainview.mainWidget):
                         self.dconfig.secondaryScr = output
                         break
 
-            self.setIconbyResolution(str(self.currentModes[self.dconfig.secondaryScr]),2)
+            self.setIconbyResolution(2)
             self.screenImage2.show()
             self.groupBoxSecondaryScreen.show()
             self.buttonSwap.show()
@@ -388,32 +400,25 @@ class MainWidget(dm_mainview.mainWidget):
             self.dconfig.desktop_setup = "single"
 
     def switchBetweenScreens(self):
-        if self.selectedScreen == "1":
-            self.currentOutput = str(self.dconfig.primaryScr)
-            self.comboBoxOutput.setCurrentText(self.currentOutput)
-        elif self.selectedScreen == "2":
-            self.currentOutput = str(self.dconfig.secondaryScr)
-            self.comboBoxOutput.setCurrentText(self.currentOutput)
-            self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
+        if self.selectedScreen == 1:
+            self.currentOutput = self.dconfig.primaryScr
+        elif self.selectedScreen == 2:
+            self.currentOutput = self.dconfig.secondaryScr
 
+        self.comboBoxOutput.setCurrentText(self.currentOutput)
         self.getResolutions()
 
-    def getResolutions(self, firstBoot = None):
+    def getResolutions(self):
         """Gets resolutions due to selected output"""
 
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
 
-        if firstBoot == 1:
-            self.currentOutput = self.dconfig.primaryScr
-            self.comboBoxOutput.setCurrentText(self.currentOutput)
-        else:
-            self.currentOutput = str(self.comboBoxOutput.currentText())
+        self.currentOutput = str(self.comboBoxOutput.currentText())
 
         for resolution in self.screenModes[self.currentOutput]:
             self.comboBoxResolution.insertItem(resolution)
 
         self.comboBoxResolution.setCurrentText(self.currentModes[self.currentOutput])
-        self.setIconbyResolution()
 
     def getCardInfo(self):
         vendorName, boardName = idsQuery(self.dconfig.card_vendor_id, self.dconfig.card_product_id)
@@ -483,7 +488,7 @@ class MainWidget(dm_mainview.mainWidget):
 
     def slotSwap(self):
         self.dconfig.primaryScr, self.dconfig.secondaryScr = self.dconfig.secondaryScr, self.dconfig.primaryScr
-        self.switchBetweenScreens()
+        self.updateWidgets()
 
 
 def attachMainWidget(self):
