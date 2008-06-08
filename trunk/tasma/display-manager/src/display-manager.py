@@ -471,6 +471,8 @@ class MainWidget(dm_mainview.mainWidget):
 
         if package_sep in preferredDriver:
             driver, package = preferredDriver.split(package_sep, 1)
+            if package == dc.package:
+                return
 
             if package in hwdata.getAvailableDriverNames():
                 msg = i18n("<qt><p>In order to get better performance, you may want to use <b>%1</b> driver. The driver is installed on your system. Do you want to use this driver?</p><b>Warning:</b> This driver is proprietary and not supported by the distribution.</qt>").arg(driver)
