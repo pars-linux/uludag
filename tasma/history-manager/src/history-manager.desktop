@@ -2,9 +2,11 @@
 Name=History Manager
 Name[tr]=Geçmiş Yöneticisi
 Name[es]=Administrador de Históricos
+Name[nl]=Geschiedenis beheer
 GenericName=History Management Interface
 GenericName[tr]=Geçmiş Yönetim Arayüzü
 GenericName[es]=Administrador de Históricos
+GenericName[nl]=Geschiedenis beheer interface
 Icon=History_Manager
 X-KDE-ModuleType=Library
 X-KDE-Library=history-manager
@@ -15,3 +17,4 @@ Exec=history-manager
 Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-system;
 Comment=History Manager
 Comment[tr]=Geçmiş Yönetim Arayüzü
+Comment[nl]=Geschiedenis beheer
