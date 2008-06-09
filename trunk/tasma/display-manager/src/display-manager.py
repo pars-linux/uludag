@@ -474,8 +474,8 @@ class MainWidget(dm_mainview.mainWidget):
             if package == dc._info.package:
                 return
 
-            if preferredDriver in hwdata.getAvailableDriverNames():
-                msg = i18n("<qt><p>In order to get better performance, you may want to use <b>%1</b> driver. The driver is installed on your system. Do you want to use this driver?</p><b>Warning:</b> This driver is proprietary and not supported by the distribution.</qt>").arg(driver)
+            if preferredDriver not in hwdata.getAvailableDriverNames():
+                msg = i18n("<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>").arg(driver)
                 answer = KMessageBox.questionYesNo(self, msg,
                                                     QString.null,
                                                     KStdGuiItem.yes(),
@@ -486,7 +486,7 @@ class MainWidget(dm_mainview.mainWidget):
                     self.dconfig.changeDriver(preferredDriver)
                     self.getCardInfo()
             else:
-                msg = i18n("<qt><p>In order to get better performance, you may want to use <b>%1</b> driver. To use it, you must install <b>%2</b> package and then choose <b>%3</b> from video card options.</p><b>Warning:</b> This driver is proprietary and not supported by the distribution.</qt>").arg(driver).arg(package).arg(preferredDriver)
+                msg = i18n("<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%3</b> from video card options.</qt>").arg(driver).arg(package).arg(preferredDriver)
                 buttonStartPM = KGuiItem(i18n("Start Package Manager"), getIconSet("package-manager"))
                 answer = KMessageBox.questionYesNo(self, msg,
                                                     QString.null,
