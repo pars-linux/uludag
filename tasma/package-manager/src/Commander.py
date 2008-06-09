@@ -129,6 +129,7 @@ class Commander(QObject):
     def setCache(self, enabled, limit):
         self.comar.setCache(enabled, limit)
 
-    def setBandwidth(self, limit):
-        self.comar.setBandwidth(limit)
+    def setConfig(self, category, name, value):
+        self.comar.setConfig(category, name, value)
+
 

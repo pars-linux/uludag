@@ -71,7 +71,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.parent.command.setCache(useCache, cacheLimit)
 
     def setBandwidth(self, limit):
-        self.parent.command.setBandwidth(limit)
+        self.parent.command.setConfig("general", "bandwidth_limit", str(limit))
 
     def getBandwidthSetting(self):
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
