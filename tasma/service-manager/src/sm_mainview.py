@@ -132,7 +132,12 @@ class widgetMain(formMain):
         ch.registerError(self.comarError)
         ch.registerDBusError(self.busError)
         ch.registerAuthError(self.busError)
+        ch.registerCancel(self.cancelError)
         return ch
+
+    def cancelError(self):
+        message = i18n("You are not authorized for this operation.")
+        KMessageBox.sorry(None, message, i18n("Error"))
 
     def call(self, script, model, method, *args):
         try:
