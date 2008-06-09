@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 15:23+0300\n"
+"POT-Creation-Date: 2008-06-09 16:57+0300\n"
 "PO-Revision-Date: 2008-05-15 09:41+0300\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -16,25 +16,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/driverdialog.py:43 src/driverdialog.py:64
-msgid "Driver Name"
-msgstr "Treibername"
+#: src/monitordialog.py:86
+msgid "Choose Monitor"
+msgstr "Monitor auswählen"
 
-#: src/driverdialog.py:44 src/driverdialog.py:65
-msgid "Description"
-msgstr "Beschreibung"
+#: src/monitordialog.py:87
+msgid "Plug And Play Monitor"
+msgstr "Plug And Play Monitor"
 
-#: src/driverdialog.py:58 src/dm_mainview.py:270
-msgid "Video Card"
-msgstr "Grafikkarte"
-
-#: src/driverdialog.py:59
-msgid "Show all drivers"
-msgstr ""
-
-#: src/driverdialog.py:60 src/monitordialog.py:89
+#: src/monitordialog.py:89 src/driverdialog.py:60
 msgid "Ok"
 msgstr "Ok"
+
+#: src/monitordialog.py:94
+msgid "Details"
+msgstr "Details"
+
+#: src/monitordialog.py:95
+msgid "<p>Horizontal Range:</p>"
+msgstr "<p>Horizontaler Bereich:</p>"
+
+#: src/monitordialog.py:96
+msgid "<p>Vertical Range:</p>"
+msgstr "<p>Vertikaler Bereich:</p>"
+
+#: src/displayconfig.py:68
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: src/displayconfig.py:97
+msgid "COMAR Error"
+msgstr "COMAR-Fehler"
+
+#: src/displayconfig.py:102
+msgid "Waiting DBus..."
+msgstr ""
+
+#: src/displayconfig.py:102
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: src/displayconfig.py:118
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+
+#: src/displayconfig.py:146
+msgid ""
+"Display manager cannot get configuration information. Configuration file may "
+"be corrupted or modified by another tool. If you want to use display manager "
+"to configure your video hardware, you must create a new configuration file.\n"
+"Would you like to create a new configuration at the next boot?"
+msgstr ""
+
+#: src/displayconfig.py:377
+msgid ""
+"Configuration has been saved. Some changes may take effect after restarting "
+"your computer."
+msgstr ""
+
+#: src/displayconfig.py:380
+msgid "Your hardware will be probed after restarting your computer."
+msgstr ""
 
 #: src/utility.py:24
 msgid "Laptop Panel (%1)"
@@ -53,133 +97,21 @@ msgstr ""
 msgid "TV Output (%1)"
 msgstr "Ausgang"
 
-#: src/display-manager.py:40 src/display-manager.py:619 src/dm_mainview.py:250
-msgid "Display Manager"
-msgstr "Anzeige-Manager"
+#: src/driverdialog.py:43 src/driverdialog.py:64
+msgid "Driver Name"
+msgstr "Treibername"
 
-#: src/display-manager.py:57
-#, fuzzy
-msgid "CRT Monitor"
-msgstr "Monitor auswählen"
+#: src/driverdialog.py:44 src/driverdialog.py:65
+msgid "Description"
+msgstr "Beschreibung"
 
-#: src/display-manager.py:58
-#, fuzzy
-msgid "LCD Monitor"
-msgstr "Monitor auswählen"
+#: src/driverdialog.py:58 src/dm_mainview.py:270
+msgid "Video Card"
+msgstr "Grafikkarte"
 
-#: src/display-manager.py:65
-#, fuzzy
-msgid "Standard Monitors"
-msgstr "Plug and Play Monitor"
-
-#: src/display-manager.py:65
-msgid "Vendors"
+#: src/driverdialog.py:59
+msgid "Show all drivers"
 msgstr ""
-
-#: src/display-manager.py:170
-msgid ""
-"<qt>The driver you selected is not installed on your system. In order to use "
-"this driver, you must install <b>%1</b> package.</qt>"
-msgstr ""
-
-#: src/display-manager.py:171 src/display-manager.py:490
-msgid "Start Package Manager"
-msgstr ""
-
-#: src/display-manager.py:184 src/dm_mainview.py:252 src/dm_mainview.py:272
-msgid "Primary Screen"
-msgstr "Primärer Bildschirm"
-
-#: src/display-manager.py:184 src/dm_mainview.py:274
-msgid "Secondary Screen"
-msgstr "Sekundärer Bildschirm"
-
-#: src/display-manager.py:311
-msgid ""
-"This output is already used by other screen.\n"
-"Do you want to swap between them?"
-msgstr ""
-
-#: src/display-manager.py:446
-msgid "Driver: %1"
-msgstr "Treiber: %1"
-
-#: src/display-manager.py:449
-msgid "Plug and Play Monitor"
-msgstr "Plug and Play Monitor"
-
-#: src/display-manager.py:478
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-
-#: src/display-manager.py:489
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%3</b> from video card options.</qt>"
-msgstr ""
-
-#: src/display-manager.py:607
-msgid "Display Manager is already started!"
-msgstr "Anzeige-Manager wird bereits ausführt!"
-
-#: src/displayconfig.py:92
-msgid "COMAR Error"
-msgstr "COMAR-Fehler"
-
-#: src/displayconfig.py:97
-msgid "Waiting DBus..."
-msgstr ""
-
-#: src/displayconfig.py:97
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-
-#: src/displayconfig.py:113
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-
-#: src/displayconfig.py:141
-msgid ""
-"Display manager cannot get configuration information. Configuration file may "
-"be corrupted or modified by another tool. If you want to use display manager "
-"to configure your video hardware, you must create a new configuration file.\n"
-"Would you like to create a new configuration at the next boot?"
-msgstr ""
-
-#: src/displayconfig.py:372
-msgid ""
-"Configuration has been saved. Some changes may take effect after restarting "
-"your computer."
-msgstr ""
-
-#: src/displayconfig.py:375
-msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-
-#: src/monitordialog.py:86
-msgid "Choose Monitor"
-msgstr "Monitor auswählen"
-
-#: src/monitordialog.py:87
-msgid "Plug And Play Monitor"
-msgstr "Plug And Play Monitor"
-
-#: src/monitordialog.py:94
-msgid "Details"
-msgstr "Details"
-
-#: src/monitordialog.py:95
-msgid "<p>Horizontal Range:</p>"
-msgstr "<p>Horizontaler Bereich:</p>"
-
-#: src/monitordialog.py:96
-msgid "<p>Vertical Range:</p>"
-msgstr "<p>Vertikaler Bereich:</p>"
 
 #: src/helpdialog.py:55
 msgid "Display Manager Help"
@@ -216,9 +148,17 @@ msgstr ""
 msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr "<p><b><h3>Anzeige-Manager </h3></b></p>"
 
+#: src/dm_mainview.py:250 src/display-manager.py:40 src/display-manager.py:619
+msgid "Display Manager"
+msgstr "Anzeige-Manager"
+
 #: src/dm_mainview.py:251
 msgid "Identify Displays"
 msgstr "Anzeigen identifizieren"
+
+#: src/dm_mainview.py:252 src/dm_mainview.py:272 src/display-manager.py:184
+msgid "Primary Screen"
+msgstr "Primärer Bildschirm"
 
 #: src/dm_mainview.py:253
 msgid "Output"
@@ -268,9 +208,73 @@ msgstr "Bildschirme"
 msgid "Configure..."
 msgstr "Konfigurieren..."
 
+#: src/dm_mainview.py:274 src/display-manager.py:184
+msgid "Secondary Screen"
+msgstr "Sekundärer Bildschirm"
+
 #: src/dm_mainview.py:276
 msgid "Devices"
 msgstr "Geräte"
+
+#: src/display-manager.py:57
+#, fuzzy
+msgid "CRT Monitor"
+msgstr "Monitor auswählen"
+
+#: src/display-manager.py:58
+#, fuzzy
+msgid "LCD Monitor"
+msgstr "Monitor auswählen"
+
+#: src/display-manager.py:65
+#, fuzzy
+msgid "Standard Monitors"
+msgstr "Plug and Play Monitor"
+
+#: src/display-manager.py:65
+msgid "Vendors"
+msgstr ""
+
+#: src/display-manager.py:170
+msgid ""
+"<qt>The driver you selected is not installed on your system. In order to use "
+"this driver, you must install <b>%1</b> package.</qt>"
+msgstr ""
+
+#: src/display-manager.py:171 src/display-manager.py:490
+msgid "Start Package Manager"
+msgstr ""
+
+#: src/display-manager.py:311
+msgid ""
+"This output is already used by other screen.\n"
+"Do you want to swap between them?"
+msgstr ""
+
+#: src/display-manager.py:446
+msgid "Driver: %1"
+msgstr "Treiber: %1"
+
+#: src/display-manager.py:449
+msgid "Plug and Play Monitor"
+msgstr "Plug and Play Monitor"
+
+#: src/display-manager.py:478
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+
+#: src/display-manager.py:489
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%3</b> from video card options.</qt>"
+msgstr ""
+
+#: src/display-manager.py:607
+msgid "Display Manager is already started!"
+msgstr "Anzeige-Manager wird bereits ausführt!"
 
 #~ msgid "Card Icon"
 #~ msgstr "Karten-Ikon"
