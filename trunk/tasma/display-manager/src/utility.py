@@ -9,6 +9,8 @@
 # any later version.
 #
 
+import locale
+
 from qt import *
 from kdecore import *
 from kdeui import *
@@ -27,6 +29,7 @@ def getOutputName(output):
             (i18n("TV Output (%1)"),        ["s-video", "composite", "component", "tv"])
             )
 
+    locale.setlocale(locale.LC_ALL, "en_US")
     outputlower = output.lower()
     for item in outputNames:
         for name in item[1]:
