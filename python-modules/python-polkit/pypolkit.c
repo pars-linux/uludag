@@ -231,6 +231,12 @@ pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *
     // Authorization type
     PyDict_SetItemString(dict, "type", PyInt_FromLong((long) polkit_authorization_type(auth)));
 
+    // Is negative?
+    PolKitError *pk_error;
+    PolKitAction *pk_action = pk_make_action(polkit_authorization_get_action_id(auth));
+    PyDict_SetItemString(dict, "negative", PyBool_FromLong((long) polkit_authorization_db_is_uid_blocked_by_self(authdb, pk_action, polkit_authorization_get_uid(auth), &pk_error)));
+    polkit_action_unref(pk_action);
+
     // UID
     PyDict_SetItemString(dict, "uid", PyInt_FromLong((long) polkit_authorization_get_uid(auth)));
 
@@ -332,15 +338,15 @@ pk_auth_add(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
-
-    PolKitAction *pk_action = pk_make_action(action_id);
-    PolKitCaller *pk_caller;
-
     if ((type == POLKIT_AUTHORIZATION_SCOPE_PROCESS_ONE_SHOT || type == POLKIT_AUTHORIZATION_SCOPE_PROCESS) && !pid) {
         PyErr_SetString(PK_Error, "SCOPE_ONE_SHOT and SCOPE_PROCESS types require pid");
         return NULL;
     }
+
+    PolKitAuthorizationDB *pk_auth = pk_init_authdb();
+
+    PolKitAction *pk_action = pk_make_action(action_id);
+    PolKitCaller *pk_caller;
 
     polkit_bool_t pk_status;
 
@@ -476,15 +482,19 @@ pk_auth_block(PyObject *self, PyObject *args)
         if (polkit_error_is_set(pk_error)) {
             PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
             polkit_error_free(pk_error);
+            polkit_action_unref(pk_action);
             return NULL;
         }
         polkit_authorization_db_grant_negative_to_uid(pk_auth, pk_action, (uid_t) uid, NULL, &pk_error);
         if (polkit_error_is_set(pk_error)) {
             PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
             polkit_error_free(pk_error);
+            polkit_action_unref(pk_action);
             return NULL;
         }
     }
+
+    polkit_action_unref(pk_action);
 
     Py_INCREF(Py_None);
     return Py_None;
