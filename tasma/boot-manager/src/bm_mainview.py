@@ -27,25 +27,25 @@ class widgetEntryList(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
         self.parent = parent
-        
+
         layout = QGridLayout(self, 1, 1, 6, 6)
-        
+
         bar = QToolBar("main", None, self)
-        
+
         but = QToolButton(getIconSet("add"), "", "main", self.slotAddEntry, bar)
         but.setTextLabel(i18n("New Entry"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        
+
         but = QToolButton(getIconSet("file_broken"), "", "main", self.slotUnused, bar)
         but.setTextLabel(i18n("Unused Kernels"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        
+
         lab = QToolButton(bar)
         lab.setEnabled(False)
         bar.setStretchableWidget(lab)
-        
+
         but = QToolButton(getIconSet("help"), "", "main", self.slotHelp, bar)
         but.setTextLabel(i18n("Help"), False)
         but.setUsesTextLabel(True)
@@ -53,42 +53,42 @@ class widgetEntryList(QWidget):
         but.hide()
         layout.addMultiCellWidget(bar, 0, 0, 0, 4)
         self.toolbar = bar
-        
+
         self.listEntries = EntryView(self)
         layout.addMultiCellWidget(self.listEntries, 1, 1, 0, 4)
-        
+
         self.checkSaved = QCheckBox(self)
         self.checkSaved.setText(i18n("Remember last booted entry."))
         layout.addWidget(self.checkSaved, 2, 0)
-        
+
         spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
         layout.addItem(spacer, 2, 1)
-        
+
         self.labelTimeout = QLabel(self)
         self.labelTimeout.setText(i18n("Timeout:"))
         layout.addWidget(self.labelTimeout, 2, 2)
-        
+
         self.spinTimeout = QSpinBox(self)
         self.spinTimeout.setMinValue(3)
         self.spinTimeout.setMaxValue(30)
         layout.addWidget(self.spinTimeout, 2, 3)
-        
+
         self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
         self.setTimeoutSlot(True)
-        
+
         self.init()
-        
+
     def setTimeoutSlot(self, active):
         if active:
             self.connect(self.spinTimeout, SIGNAL("valueChanged(int)"), self.slotTimeoutChanged)
         else:
             self.disconnect(self.spinTimeout, SIGNAL("valueChanged(int)"), self.slotTimeoutChanged)
-    
+
     def init(self):
         self.toolbar.setEnabled(True)
         self.listEntries.viewport().setEnabled(True)
         self.checkSaved.setEnabled(True)
-    
+
     def slotCheckSaved(self):
         def handler():
             self.parent.queryEntries()
@@ -106,7 +106,7 @@ class widgetEntryList(QWidget):
             ch.call("default", "saved")
         else:
             ch.call("default", "0")
-    
+
     def slotTimeoutChanged(self, value):
         def handler():
             self.spinTimeout.setEnabled(True)
@@ -121,13 +121,13 @@ class widgetEntryList(QWidget):
         ch.registerCancel(cancel)
         ch.registerDone(handler)
         ch.call("timeout", str(value))
-    
+
     def slotAddEntry(self):
         self.parent.widgetEditEntry.newEntry()
-    
+
     def slotUnused(self):
         self.parent.showScreen("Unused")
-    
+
     def slotHelp(self):
         pass
 
@@ -136,123 +136,123 @@ class widgetEditEntry(QWidget):
         QWidget.__init__(self, parent)
         self.parent = parent
         self.systems = self.parent.systems
-        
+
         self.saved = False
         self.fields = {}
-        
+
         layout = QGridLayout(self, 1, 1, 11, 6)
-        
+
         self.labelTitle = QLabel(self)
         self.labelTitle.setText(i18n("Title:"))
         layout.addMultiCellWidget(self.labelTitle, 0, 0, 0, 1)
-        
+
         self.editTitle = QLineEdit(self)
         self.labelTitle.setMinimumSize(90, 10)
         layout.addMultiCellWidget(self.editTitle, 1, 1, 0, 1)
-        
+
         self.labelSystem = QLabel(self)
         self.labelSystem.setText(i18n("System:"))
         layout.addMultiCellWidget(self.labelSystem, 2, 2, 0, 1)
-        
+
         self.listSystem = ComboList(self)
         layout.addWidget(self.listSystem, 3, 0)
-        
+
         spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
         layout.addItem(spacer, 3, 1)
-        
+
         self.labelRoot = QLabel(self)
         self.labelRoot.setText(i18n("Root:"))
         layout.addMultiCellWidget(self.labelRoot, 4, 4, 0, 1)
-        
+
         self.editRoot = QLineEdit(self)
         layout.addMultiCellWidget(self.editRoot, 5, 5, 0, 1)
-        
+
         self.fields["root"] = (self.labelRoot, self.editRoot)
-        
+
         self.labelKernel = QLabel(self)
         self.labelKernel.setText(i18n("Kernel:"))
         layout.addMultiCellWidget(self.labelKernel, 6, 6, 0, 1)
-        
+
         self.editKernel = QLineEdit(self)
         layout.addMultiCellWidget(self.editKernel, 7, 7, 0, 1)
-        
+
         self.fields["kernel"] = (self.labelKernel, self.editKernel)
-        
+
         self.labelOptions = QLabel(self)
         self.labelOptions.setText(i18n("Kernel Parameters:"))
         layout.addMultiCellWidget(self.labelOptions, 8, 8, 0, 1)
-        
+
         self.editOptions = QLineEdit(self)
         layout.addMultiCellWidget(self.editOptions, 9, 9, 0, 1)
-        
+
         self.fields["options"] = (self.labelOptions, self.editOptions)
-        
+
         self.labelInitrd = QLabel(self)
         self.labelInitrd.setText(i18n("Initial Ramdisk:"))
         layout.addMultiCellWidget(self.labelInitrd, 10, 10, 0, 1)
-        
+
         self.editInitrd = QLineEdit(self)
         layout.addMultiCellWidget(self.editInitrd, 11, 11, 0, 1)
-        
+
         self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
-        
+
         self.checkDefault = QCheckBox(self)
         self.checkDefault.setText(i18n("Set as default boot entry."))
         layout.addMultiCellWidget(self.checkDefault, 12, 12, 0, 1)
-        
+
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
         layout.addMultiCell(spacer, 13, 13, 0, 1)
-        
+
         layout_buttons = QHBoxLayout(layout)
         spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
         layout_buttons.addItem(spacer)
-        
+
         self.buttonOK = QPushButton(self)
         self.buttonOK.setText(i18n("Save"))
         layout_buttons.addWidget(self.buttonOK)
-        
+
         self.buttonCancel = QPushButton(self)
         self.buttonCancel.setText(i18n("Cancel"))
         layout_buttons.addWidget(self.buttonCancel)
-        
+
         layout.addMultiCell(layout_buttons, 14, 14, 0, 1)
-        
+
         self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
         self.connect(self.buttonCancel, SIGNAL("clicked()"), self.slotExit)
-        
+
         self.resetEntry()
-    
+
     def newEntry(self):
         self.resetEntry()
         self.parent.showScreen("EditEntry")
-    
+
     def editEntry(self, entry):
         self.resetEntry()
         self.entry = entry
         systems = self.parent.systems
-        
+
         self.checkDefault.setChecked(False)
-        
+
         self.editTitle.setText(unicode(entry["title"]))
-        
+
         self.listSystem.setCurrentText(unicode(systems[entry["os_type"]][0]))
         self.slotSystem(unicode(systems[entry["os_type"]][0]))
-        
+
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             if label in entry:
                 widgetEdit.setText(unicode(entry[label]))
-        
+
         if self.parent.widgetEntries.checkSaved.isChecked():
             self.checkDefault.hide()
         else:
             self.checkDefault.show()
-        
+
         if "default" in entry and entry["default"] != "saved":
             self.checkDefault.setChecked(True)
-        
+
         self.parent.showScreen("EditEntry")
-    
+
     def deleteEntry(self, index, title):
         entries = self.parent.entries
         pardus_root = getRoot()
@@ -281,28 +281,28 @@ class widgetEditEntry(QWidget):
 
             ch = self.parent.callMethod("removeEntry", "tr.org.pardus.comar.boot.loader.removeentry")
             ch.call(index, title, uninstall)
-    
+
     def resetEntry(self):
         self.entry = None
         systems = self.parent.systems
-        
+
         self.editTitle.setText("")
-        
+
         self.listSystem.clear()
         if systems:
             for name in systems:
                 label = unicode(systems[name][0])
                 self.listSystem.addItem(name, label)
-            
+
             self.listSystem.setSelected("linux")
             self.slotSystem("Linux")
-        
+
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             widgetEdit.setText("")
-        
+
         self.checkDefault.setChecked(False)
         self.buttonOK.setEnabled(True)
-    
+
     def slotSystem(self, label):
         systems = self.parent.systems
         for name, (sys_label, fields) in systems.iteritems():
@@ -315,10 +315,10 @@ class widgetEditEntry(QWidget):
             else:
                 widgetLabel.hide()
                 widgetEdit.hide()
-    
+
     def showError(self, message):
         KMessageBox.information(self, message, i18n("Error"))
-    
+
     def slotSave(self):
         self.buttonOK.setEnabled(False)
         default = "no"
@@ -326,10 +326,10 @@ class widgetEditEntry(QWidget):
             default = "saved"
         elif self.checkDefault.isChecked():
             default = "yes"
-        
+
         systems = self.parent.systems
         os_type = self.listSystem.getSelected()
-        
+
         args = {
             "title": unicode(self.editTitle.text()),
             "os_type": os_type,
@@ -340,17 +340,17 @@ class widgetEditEntry(QWidget):
             "default": default,
             "index": -1,
         }
-        
+
         for label in self.fields:
             if label in systems[os_type][1]:
                 value = unicode(self.fields[label][1].text())
                 args[label] = value
-        
+
         if self.entry:
             args["index"] = int(self.entry["index"])
-        
+
         self.saved = True
-        
+
         def handlerError(exception):
             self.parent.widgetEditEntry.saved = False
             KMessageBox.error(self, unicode(exception), i18n("Failed"))
@@ -363,7 +363,7 @@ class widgetEditEntry(QWidget):
         ch.registerDone(handler)
         ch.registerError(handlerError)
         ch.call(args["title"], args["os_type"], args["root"], args["kernel"], args["initrd"], args["options"], args["default"], args["index"])
-    
+
     def slotExit(self):
         self.resetEntry()
         self.parent.showScreen("Entries")
@@ -372,45 +372,45 @@ class widgetUnused(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
         self.parent = parent
-        
+
        # self.link = comar_link
-        
+
         layout = QGridLayout(self, 1, 1, 11, 6)
-        
+
         self.labelTitle = QLabel(self)
         self.labelTitle.setText(i18n("These kernels are installed in the system but doesn't exist in boot loader list:"))
         layout.addWidget(self.labelTitle, 0, 0)
-        
+
         self.listKernels = QListBox(self)
         self.listKernels.setMinimumSize(100, 200)
         self.listKernels.setSelectionMode(QListBox.Extended)
         layout.addMultiCellWidget(self.listKernels, 1, 4, 0, 0)
-        
+
         self.buttonAdd = QPushButton(self)
         self.buttonAdd.setText(i18n("Add Boot Entry"))
         self.buttonAdd.setEnabled(False)
         layout.addWidget(self.buttonAdd, 1, 1)
-        
+
         self.buttonRemove = QPushButton(self)
         self.buttonRemove.setText(i18n("Uninstall"))
         self.buttonRemove.setEnabled(False)
         layout.addWidget(self.buttonRemove, 2, 1)
-        
+
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
         layout.addItem(spacer, 3, 1)
-        
+
         self.buttonOK = QPushButton(self)
         self.buttonOK.setText(i18n("Ok"))
         layout.addWidget(self.buttonOK, 4, 1)
-        
+
         self.connect(self.buttonAdd, SIGNAL("clicked()"), self.slotAdd)
         self.connect(self.buttonRemove, SIGNAL("clicked()"), self.slotRemove)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotExit)
         self.connect(self.listKernels, SIGNAL("selectionChanged()"), self.slotKernels)
-        
+
         self.listBusy = False
         self.listUnused()
-    
+
     def listUnused(self):
         def handler(versions):
             self.listKernels.clear()
@@ -534,7 +534,7 @@ class widgetMain(QWidget):
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
         return ch
-    
+
     def busError(self, exception):
         if self.dia:
             return
