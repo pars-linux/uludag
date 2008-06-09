@@ -630,7 +630,7 @@ class UserStack(QVBox):
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
         ch.call(uid)
-        self.getAuths(uid)
+        #self.getAuths(uid)
 
     def getAuths(self, uid):
         def getAuth(auths):
@@ -713,6 +713,10 @@ class PolicyTab(QVBox):
             it.setOpen(False)
             it = it.nextSibling()
         self.setPolicyButtonsEnabled(False)
+        self.policyview.clearSelection()
+        self.passwordCheck.setChecked(False)
+        self.authorized.setChecked(False)
+        self.blocked.setChecked(False)
 
     def fillAuths(self):
         #do not show policies require policy type yes or no, only the ones require auth_* type
