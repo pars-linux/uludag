@@ -1,8 +1,8 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus-2008-RC1-r3</Title>
+    <Title>Pardus 2008 RC1</Title>
     <WorkDir>/home/ekin/cdtemp/</WorkDir>
     <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
-    <ExtraParameters>yali4=debug splash=silent</ExtraParameters>
+    <ExtraParameters>yali4=debug</ExtraParameters>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>system.devel</SelectedComponent>
