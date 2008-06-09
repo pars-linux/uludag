@@ -476,7 +476,7 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(lab, row, row, 0, 1)
 
-        self.u_policygrouptab = PolicyGroupTab(hb, self, self.u_id, edit)
+        self.u_policygrouptab = PolicyGroupTab(hb, self, self.mainwidget, self.u_id, edit)
         self.u_groups = self.u_policygrouptab.groupsWidget
 
         self.guide = Guide(self, edit)
@@ -630,7 +630,6 @@ class UserStack(QVBox):
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
         ch.call(uid)
-        #self.getAuths(uid)
 
     def getAuths(self, uid):
         def getAuth(auths):
@@ -640,14 +639,14 @@ class UserStack(QVBox):
         ch.call(uid)
 
 class PolicyGroupTab(KTabWidget):
-    def __init__(self, parent, stack, uid, edit):
+    def __init__(self, parent, stack, mainwidget, uid, edit):
         KTabWidget.__init__(self, parent)
 
         #add policy tab
         hb = QHBox(self)
         hb.setSpacing(12)
         hb.setMargin(6)
-        self.policytab = PolicyTab(hb, uid, edit)
+        self.policytab = PolicyTab(hb, mainwidget, uid, edit)
         self.addTab(hb, i18n("Authorizations"))
 
         #add groups tab
@@ -657,14 +656,11 @@ class PolicyGroupTab(KTabWidget):
         self.groupsWidget = UserGroupList(stack, hb2)
         self.addTab(hb2, i18n("Groups"))
 
-    def setAuths(self, auths):
-        self.policytab.setAuths(auths)
-
     def reset(self):
         self.policytab.reset()
 
 class PolicyTab(QVBox):
-    def __init__(self, parent, uid, edit):
+    def __init__(self, parent, mainwidget, uid, edit):
         QVBox.__init__(self, parent)
         self.policyview = KListView(self)
         self.policyview.setRootIsDecorated(True)
@@ -672,6 +668,8 @@ class PolicyTab(QVBox):
         self.policyview.addColumn(i18n("Actions"))
         self.uid = uid
         self.edit = edit
+
+        self.ch = mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
 
         #add radio buttons
         w = QButtonGroup(self)
@@ -703,11 +701,6 @@ class PolicyTab(QVBox):
         self.fillAuths()
 
         self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
-
-    def setAuths(self, auths):
-        pass
-#        for auth in auths:
-#            print "action:%s date:%s type:%d policy:%s" % (auth[0], auth[1], auth[2], auth[5])
 
     def reset(self):
         it = self.policyview.firstChild()
@@ -748,31 +741,43 @@ class PolicyTab(QVBox):
             self.actionClicked(item)
 
     def actionClicked(self, actionItem):
+        def listDone(authList):
+            self.selectRightButtons(authList, actionItem, True)
+
+        try:
+            auths = polkit.auth_list_uid(int(self.uid.text()))
+            self.selectRightButtons(auths, actionItem)
+        except:
+            #call COMAR see different users' auths
+            self.ch.registerDone(listDone)
+            self.ch.call(int(self.uid.text()))
+
+    def selectRightButtons(self, auths, actionItem, other = False):
         #if it is a new user, default is authorized
         if not self.edit:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(False)
             return
 
-        try:
-            auths = polkit.auth_list_uid(int(self.uid.text()))
-            auths = filter(lambda x: x['action_id'] == actionItem.id, auths)
-            if len(auths) == 0:
-                self.authorized.setOn(True)
-                self.passwordCheck.setChecked(False)
-                return
+        if other:
+            auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths)
 
-            if len(filter(lambda x: x['negative'], auths)) > 0:
-                #if action is blocked
-                self.blocked.setOn(True)
-                self.passwordCheck.setChecked(False)
-                return
-            else:
-                self.authorized.setOn(True)
-                self.passwordCheck.setChecked(True)
-                return
-        except:
-            pass #call COMAR for different users
+        auths = filter(lambda x: x['action_id'] == actionItem.id, auths)
+
+        if len(auths) == 0:
+            self.authorized.setOn(True)
+            self.passwordCheck.setChecked(False)
+            return
+
+        if len(filter(lambda x: x['negative'], auths)) > 0:
+            #if action is blocked
+            self.blocked.setOn(True)
+            self.passwordCheck.setChecked(False)
+            return
+        else:
+            self.authorized.setOn(True)
+            self.passwordCheck.setChecked(True)
+            return
 
 class ActionItem(KListViewItem):
     def __init__(self, parent, id, desc, policy):
