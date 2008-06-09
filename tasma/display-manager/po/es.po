@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 12:41+0300\n"
+"POT-Creation-Date: 2008-06-09 14:10+0300\n"
 "PO-Revision-Date: 2008-06-08 18:28-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -39,19 +39,19 @@ msgstr "Mostrar todos los controladores"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/utility.py:17
+#: src/utility.py:24
 msgid "Laptop Panel (%1)"
 msgstr ""
 
-#: src/utility.py:18
+#: src/utility.py:25
 msgid "Analog Output (%1)"
 msgstr ""
 
-#: src/utility.py:19
+#: src/utility.py:26
 msgid "Digital Output (%1)"
 msgstr ""
 
-#: src/utility.py:20
+#: src/utility.py:27
 #, fuzzy
 msgid "TV Output (%1)"
 msgstr "Salida"
