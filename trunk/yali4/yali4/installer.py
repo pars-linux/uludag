@@ -388,12 +388,14 @@ class Yali:
             obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
             for u in yali4.users.pending_users:
                 ctx.debugger.log("User %s adding to system" % u.username)
-                obj.addUser(-1, u.username, u.realname, "", "", unicode(u.passwd), u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
+                uid = obj.addUser(-1, u.username, u.realname, "", "", unicode(u.passwd), u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
+                ctx.debugger.log("New user's id is %s" % uid)
 
                 # Use random user icon from YALI Archive
                 iconPath = os.path.join(ctx.consts.target_dir,"home/%s/.face.icon" % u.username)
                 shutil.copy(u.icon, iconPath)
                 os.chmod(iconPath, 0644)
+                os.chown(iconPath, uid, 100)
 
                 # Enable auto-login
                 if u.username == ctx.installData.autoLoginUser:
