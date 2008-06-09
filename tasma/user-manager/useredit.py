@@ -761,6 +761,16 @@ class PolicyTab(QVBox):
                 self.authorized.setOn(True)
                 self.passwordCheck.setChecked(False)
                 return
+
+            if len(filter(lambda x: x['negative'], auths)) > 0:
+                #if action is blocked
+                self.blocked.setOn(True)
+                self.passwordCheck.setChecked(False)
+                return
+            else:
+                self.authorized.setOn(True)
+                self.passwordCheck.setChecked(True)
+                return
         except:
             pass #call COMAR for different users
 
