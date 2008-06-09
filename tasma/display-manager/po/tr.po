@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 15:23+0300\n"
+"POT-Creation-Date: 2008-06-09 16:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,25 +15,81 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/driverdialog.py:43 src/driverdialog.py:64
-msgid "Driver Name"
-msgstr "Sürücü Adı"
+#: src/monitordialog.py:86
+msgid "Choose Monitor"
+msgstr "Monitör Seçin"
 
-#: src/driverdialog.py:44 src/driverdialog.py:65
-msgid "Description"
-msgstr "Açıklama"
+#: src/monitordialog.py:87
+msgid "Plug And Play Monitor"
+msgstr "Tak ve Kullan Monitör"
 
-#: src/driverdialog.py:58 src/dm_mainview.py:270
-msgid "Video Card"
-msgstr "Ekran Kartı"
-
-#: src/driverdialog.py:59
-msgid "Show all drivers"
-msgstr "Tüm sürücüleri göster"
-
-#: src/driverdialog.py:60 src/monitordialog.py:89
+#: src/monitordialog.py:89 src/driverdialog.py:60
 msgid "Ok"
 msgstr "Tamam"
+
+#: src/monitordialog.py:94
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: src/monitordialog.py:95
+msgid "<p>Horizontal Range:</p>"
+msgstr "<p>Yatay Tarama Aralığı:</p>"
+
+#: src/monitordialog.py:96
+msgid "<p>Vertical Range:</p>"
+msgstr "<p>Dikey Tarama Aralığı:</p>"
+
+#: src/displayconfig.py:68
+msgid "You are not authorized for this operation."
+msgstr "Bu işlemi yapmaya yetkili değilsiniz."
+
+#: src/displayconfig.py:97
+msgid "COMAR Error"
+msgstr "COMAR Hatası"
+
+#: src/displayconfig.py:102
+msgid "Waiting DBus..."
+msgstr "DBus bekleniyor..."
+
+#: src/displayconfig.py:102
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+"DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı "
+"deniyor..."
+
+#: src/displayconfig.py:118
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
+"'service dbus start' komutunu deneyebilirsiniz."
+
+#: src/displayconfig.py:146
+msgid ""
+"Display manager cannot get configuration information. Configuration file may "
+"be corrupted or modified by another tool. If you want to use display manager "
+"to configure your video hardware, you must create a new configuration file.\n"
+"Would you like to create a new configuration at the next boot?"
+msgstr ""
+"Görüntü yöneticisi yapılandırma bilgisini alamadı. Yapılandırma dosyası "
+"bozulmuş veya başka bir araç ile değiştirilmiş olabilir. Görüntü "
+"aygıtlarınızı görüntü yöneticisi ile yapılandırmak istiyorsanız yeni bir "
+"yapılandırma dosyası oluşturmanız gerekiyor.\n"
+"Bir sonraki açılışta yeni bir yapılandırma dosyası oluşturmak ister misiniz?"
+
+#: src/displayconfig.py:377
+msgid ""
+"Configuration has been saved. Some changes may take effect after restarting "
+"your computer."
+msgstr ""
+"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
+"başlatana kadar etkin olmayabilir."
+
+#: src/displayconfig.py:380
+msgid "Your hardware will be probed after restarting your computer."
+msgstr ""
+"Donanımınız bilgisayarınız tekrar başlatıldıktan sonra yeniden tanınacak."
 
 #: src/utility.py:24
 msgid "Laptop Panel (%1)"
@@ -51,153 +107,21 @@ msgstr "Dijital Çıkış (%1)"
 msgid "TV Output (%1)"
 msgstr "TV Çıkışı (%1)"
 
-#: src/display-manager.py:40 src/display-manager.py:619 src/dm_mainview.py:250
-msgid "Display Manager"
-msgstr "Görüntü Yöneticisi"
+#: src/driverdialog.py:43 src/driverdialog.py:64
+msgid "Driver Name"
+msgstr "Sürücü Adı"
 
-#: src/display-manager.py:57
-msgid "CRT Monitor"
-msgstr "CRT Monitör"
+#: src/driverdialog.py:44 src/driverdialog.py:65
+msgid "Description"
+msgstr "Açıklama"
 
-#: src/display-manager.py:58
-msgid "LCD Monitor"
-msgstr "LCD Monitör"
+#: src/driverdialog.py:58 src/dm_mainview.py:270
+msgid "Video Card"
+msgstr "Ekran Kartı"
 
-#: src/display-manager.py:65
-msgid "Standard Monitors"
-msgstr "Standart Monitörler"
-
-#: src/display-manager.py:65
-msgid "Vendors"
-msgstr "Üreticiler"
-
-#: src/display-manager.py:170
-msgid ""
-"<qt>The driver you selected is not installed on your system. In order to use "
-"this driver, you must install <b>%1</b> package.</qt>"
-msgstr ""
-"<qt>Seçtiğiniz sürücü sisteminizde kurulu değil. Bu sürücüyü kullanmak için "
-"<b>%1</b> paketini kurmalısınız.</qt>"
-
-#: src/display-manager.py:171 src/display-manager.py:490
-msgid "Start Package Manager"
-msgstr "Paket Yöneticisini Başlat"
-
-#: src/display-manager.py:184 src/dm_mainview.py:252 src/dm_mainview.py:272
-msgid "Primary Screen"
-msgstr "Birinci Ekran"
-
-#: src/display-manager.py:184 src/dm_mainview.py:274
-msgid "Secondary Screen"
-msgstr "İkinci Ekran"
-
-#: src/display-manager.py:311
-msgid ""
-"This output is already used by other screen.\n"
-"Do you want to swap between them?"
-msgstr ""
-"Bu çıkış zaten diğer ekranda kullanılıyor.\n"
-"Çıkışları değiştirmek ister misiniz?"
-
-#: src/display-manager.py:446
-msgid "Driver: %1"
-msgstr "Sürücü: %1"
-
-#: src/display-manager.py:449
-msgid "Plug and Play Monitor"
-msgstr "Tak ve Kullan Monitör"
-
-#: src/display-manager.py:478
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
-"b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak ister "
-"misiniz?</qt>"
-
-#: src/display-manager.py:489
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%3</b> from video card options.</qt>"
-msgstr ""
-"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
-"b> sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini "
-"kurup daha sonra ekran kartı ayarlarından <b>%3</b> sürücüsünü seçmelisiniz."
-"</qt>"
-
-#: src/display-manager.py:607
-msgid "Display Manager is already started!"
-msgstr "Görüntü Yöneticisi zaten alıyor!"
-
-#: src/displayconfig.py:92
-msgid "COMAR Error"
-msgstr "COMAR Hatası"
-
-#: src/displayconfig.py:97
-msgid "Waiting DBus..."
-msgstr "DBus bekleniyor..."
-
-#: src/displayconfig.py:97
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"DBus bağlantısı beklenmedik bir şekilde kapandı, yeniden bağlanmayı "
-"deniyor..."
-
-#: src/displayconfig.py:113
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa root olarak konsol açıp "
-"'service dbus start' komutunu deneyebilirsiniz."
-
-#: src/displayconfig.py:141
-msgid ""
-"Display manager cannot get configuration information. Configuration file may "
-"be corrupted or modified by another tool. If you want to use display manager "
-"to configure your video hardware, you must create a new configuration file.\n"
-"Would you like to create a new configuration at the next boot?"
-msgstr ""
-"Görüntü yöneticisi yapılandırma bilgisini alamadı. Yapılandırma dosyası "
-"bozulmuş veya başka bir araç ile değiştirilmiş olabilir. Görüntü "
-"aygıtlarınızı görüntü yöneticisi ile yapılandırmak istiyorsanız yeni bir "
-"yapılandırma dosyası oluşturmanız gerekiyor.\n"
-"Bir sonraki açılışta yeni bir yapılandırma dosyası oluşturmak ister misiniz?"
-
-#: src/displayconfig.py:372
-msgid ""
-"Configuration has been saved. Some changes may take effect after restarting "
-"your computer."
-msgstr ""
-"Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
-"başlatana kadar etkin olmayabilir."
-
-#: src/displayconfig.py:375
-msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-"Donanımınız bilgisayarınız tekrar başlatıldıktan sonra yeniden tanınacak."
-
-#: src/monitordialog.py:86
-msgid "Choose Monitor"
-msgstr "Monitör Seçin"
-
-#: src/monitordialog.py:87
-msgid "Plug And Play Monitor"
-msgstr "Tak ve Kullan Monitör"
-
-#: src/monitordialog.py:94
-msgid "Details"
-msgstr "Ayrıntılar"
-
-#: src/monitordialog.py:95
-msgid "<p>Horizontal Range:</p>"
-msgstr "<p>Yatay Tarama Aralığı:</p>"
-
-#: src/monitordialog.py:96
-msgid "<p>Vertical Range:</p>"
-msgstr "<p>Dikey Tarama Aralığı:</p>"
+#: src/driverdialog.py:59
+msgid "Show all drivers"
+msgstr "Tüm sürücüleri göster"
 
 #: src/helpdialog.py:55
 msgid "Display Manager Help"
@@ -234,9 +158,17 @@ msgstr ""
 msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr "<p><b><h3>Görüntü Yöneticisi </h3></b></p>"
 
+#: src/dm_mainview.py:250 src/display-manager.py:40 src/display-manager.py:619
+msgid "Display Manager"
+msgstr "Görüntü Yöneticisi"
+
 #: src/dm_mainview.py:251
 msgid "Identify Displays"
 msgstr "Ekranları Tanımla"
+
+#: src/dm_mainview.py:252 src/dm_mainview.py:272 src/display-manager.py:184
+msgid "Primary Screen"
+msgstr "Birinci Ekran"
 
 #: src/dm_mainview.py:253
 msgid "Output"
@@ -286,6 +218,78 @@ msgstr "Ekranlar"
 msgid "Configure..."
 msgstr "Yapılandır..."
 
+#: src/dm_mainview.py:274 src/display-manager.py:184
+msgid "Secondary Screen"
+msgstr "İkinci Ekran"
+
 #: src/dm_mainview.py:276
 msgid "Devices"
 msgstr "Aygıtlar"
+
+#: src/display-manager.py:57
+msgid "CRT Monitor"
+msgstr "CRT Monitör"
+
+#: src/display-manager.py:58
+msgid "LCD Monitor"
+msgstr "LCD Monitör"
+
+#: src/display-manager.py:65
+msgid "Standard Monitors"
+msgstr "Standart Monitörler"
+
+#: src/display-manager.py:65
+msgid "Vendors"
+msgstr "Üreticiler"
+
+#: src/display-manager.py:170
+msgid ""
+"<qt>The driver you selected is not installed on your system. In order to use "
+"this driver, you must install <b>%1</b> package.</qt>"
+msgstr ""
+"<qt>Seçtiğiniz sürücü sisteminizde kurulu değil. Bu sürücüyü kullanmak için "
+"<b>%1</b> paketini kurmalısınız.</qt>"
+
+#: src/display-manager.py:171 src/display-manager.py:490
+msgid "Start Package Manager"
+msgstr "Paket Yöneticisini Başlat"
+
+#: src/display-manager.py:311
+msgid ""
+"This output is already used by other screen.\n"
+"Do you want to swap between them?"
+msgstr ""
+"Bu çıkış zaten diğer ekranda kullanılıyor.\n"
+"Çıkışları değiştirmek ister misiniz?"
+
+#: src/display-manager.py:446
+msgid "Driver: %1"
+msgstr "Sürücü: %1"
+
+#: src/display-manager.py:449
+msgid "Plug and Play Monitor"
+msgstr "Tak ve Kullan Monitör"
+
+#: src/display-manager.py:478
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak ister "
+"misiniz?</qt>"
+
+#: src/display-manager.py:489
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%3</b> from video card options.</qt>"
+msgstr ""
+"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
+"b> sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini "
+"kurup daha sonra ekran kartı ayarlarından <b>%3</b> sürücüsünü seçmelisiniz."
+"</qt>"
+
+#: src/display-manager.py:607
+msgid "Display Manager is already started!"
+msgstr "Görüntü Yöneticisi zaten alıyor!"
