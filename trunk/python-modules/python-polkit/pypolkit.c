@@ -197,6 +197,31 @@ pk_action_info(PyObject *self, PyObject *args)
     return dict;
 }
 
+//! Callback function that fills constraints associated with authorization
+static polkit_bool_t
+pk_auth_list_cb2(PolKitAuthorization *auth, PolKitAuthorizationConstraint *authc, void *user_data)
+{
+    PyObject *dict = PyDict_New();
+
+    // Type
+    PyDict_SetItemString(dict, "type", PyInt_FromLong((long) polkit_authorization_constraint_type(authc)));
+
+    switch (polkit_authorization_constraint_type(authc)) {
+        case POLKIT_AUTHORIZATION_CONSTRAINT_TYPE_REQUIRE_EXE:
+            PyDict_SetItemString(dict, "exe", PyString_FromString(polkit_authorization_constraint_get_exe(authc)));
+            break;
+        case POLKIT_AUTHORIZATION_CONSTRAINT_TYPE_REQUIRE_SELINUX_CONTEXT:
+            PyDict_SetItemString(dict, "selinux_context", PyString_FromString(polkit_authorization_constraint_get_selinux_context(authc)));
+            break;
+    }
+
+    // Append tuple to userlist
+    PyList_Append((PyObject*)user_data, dict);
+
+    // Continue to iterate
+    return FALSE;
+}
+
 //! Callback function that fills auth list.
 static polkit_bool_t
 pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
@@ -239,6 +264,11 @@ pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *
         case POLKIT_AUTHORIZATION_SCOPE_ALWAYS:
             break;
     }
+
+    // Constraints
+    PyObject *list_const = PyList_New(0);
+    polkit_authorization_constraints_foreach(auth, pk_auth_list_cb2, list_const);
+    PyDict_SetItemString(dict, "constraints", list_const);
 
     // Append tuple to userlist
     PyList_Append((PyObject*)user_data, dict);
@@ -634,6 +664,11 @@ init_polkit(void)
     PyModule_AddObject(m, "TYPE_UID", PyInt_FromLong((long) POLKIT_AUTHORIZATION_TYPE_UID));
 
     PyModule_AddObject(m, "DB_CAPABILITY_CAN_OBTAIN", PyInt_FromLong((long) POLKIT_AUTHORIZATION_DB_CAPABILITY_CAN_OBTAIN));
+
+    PyModule_AddObject(m, "CONSTRAINT_TYPE_REQUIRE_LOCAL", PyInt_FromLong((long) POLKIT_AUTHORIZATION_CONSTRAINT_TYPE_REQUIRE_LOCAL));
+    PyModule_AddObject(m, "CONSTRAINT_TYPE_REQUIRE_ACTIVE", PyInt_FromLong((long) POLKIT_AUTHORIZATION_CONSTRAINT_TYPE_REQUIRE_ACTIVE));
+    PyModule_AddObject(m, "CONSTRAINT_TYPE_REQUIRE_EXE", PyInt_FromLong((long) POLKIT_AUTHORIZATION_CONSTRAINT_TYPE_REQUIRE_EXE));
+    PyModule_AddObject(m, "CONSTRAINT_TYPE_REQUIRE_SELINUX_CONTEXT", PyInt_FromLong((long) POLKIT_AUTHORIZATION_CONSTRAINT_TYPE_REQUIRE_SELINUX_CONTEXT));
 
     PK_Error = PyErr_NewException("polkit.error", NULL, NULL);
     Py_INCREF(PK_Error);
