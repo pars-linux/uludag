@@ -533,7 +533,12 @@ class widgetMain(QWidget):
         ch.registerError(self.comarError)
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
+        ch.registerCancel(self.cancelError)
         return ch
+
+    def cancelError(self):
+        message = i18n("You are not authorized for this operation.")
+        KMessageBox.sorry(None, message, i18n("Error"))
 
     def busError(self, exception):
         if self.dia:
