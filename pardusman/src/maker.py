@@ -182,14 +182,14 @@ def setup_isolinux(project):
             elif name.startswith("initramfs"):
                 copy(os.path.join(path, name), "boot/initrd")
 
-    # copy config and gfxboot stuff
-    generate_isolinux_conf(project)
-
     tmplpath = os.path.join(image_dir, "usr/share/gfxtheme/pardus/install")
     dest = os.path.join(iso_dir, "boot/isolinux")
     for name in os.listdir(tmplpath):
         if name != "gfxboot.cfg":
             copy(os.path.join(tmplpath, name), dest)
+
+    # copy config and gfxboot stuff
+    generate_isolinux_conf(project)
 
     copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux-debug.bin"), "%s/isolinux.bin" % dest)
     copy(os.path.join(image_dir, "boot/memtest"), os.path.join(iso_dir, "boot"))
