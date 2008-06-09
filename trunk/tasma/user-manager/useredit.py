@@ -680,6 +680,7 @@ class PolicyTab(QVBox):
         hb.addWidget(self.authorized)
         hb.addStretch(3)
         self.blocked = QRadioButton(i18n("Block"), w)
+        self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
         hb.addWidget(self.blocked)
         hb.addStretch(1)
 
@@ -691,6 +692,7 @@ class PolicyTab(QVBox):
         hb.addWidget(lbl)
         self.passwordCheck = QCheckBox(i18n("Do not ask password"), w)
         self.connect(self.authorized, SIGNAL("toggled(bool)"), self.passwordCheck.setEnabled)
+        self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
         hb.addWidget(self.passwordCheck, 1)
         hb.addStretch(3)
 
@@ -740,7 +742,27 @@ class PolicyTab(QVBox):
             self.setPolicyButtonsEnabled(True)
             self.actionClicked(item)
 
+    def passwordCheckSlot(self, toggle):
+        item = self.policyview.selectedItem()
+        if not item or item.depth() != 1:
+            return
+
+        print "checkbox toggled"
+
+    def blockedSlot(self, toggle):
+        item = self.policyview.selectedItem()
+        if not item or item.depth() != 1:
+            return
+
+        print "blocked toggled"
+
     def actionClicked(self, actionItem):
+        #if it is a new user, default is authorized
+        if not self.edit:
+            self.authorized.setOn(True)
+            self.passwordCheck.setChecked(False)
+            return
+
         def listDone(authList):
             self.selectRightButtons(authList, actionItem, True)
 
@@ -753,12 +775,6 @@ class PolicyTab(QVBox):
             self.ch.call(int(self.uid.text()))
 
     def selectRightButtons(self, auths, actionItem, other = False):
-        #if it is a new user, default is authorized
-        if not self.edit:
-            self.authorized.setOn(True)
-            self.passwordCheck.setChecked(False)
-            return
-
         if other:
             auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths)
 
@@ -773,11 +789,9 @@ class PolicyTab(QVBox):
             #if action is blocked
             self.blocked.setOn(True)
             self.passwordCheck.setChecked(False)
-            return
         else:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(True)
-            return
 
 class ActionItem(KListViewItem):
     def __init__(self, parent, id, desc, policy):
