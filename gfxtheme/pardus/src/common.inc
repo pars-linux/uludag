@@ -976,6 +976,7 @@
       dup "kde"       eq { pop "LiveCD - KDE" return } if
       dup "gnome"     eq { pop "LiveCD - GNOME" return } if
     } {
+      dup "pardus"    eq { pop config.distro      return } if
       dup "linux"     eq { pop txt_install        return } if
       dup "failsafe"  eq { pop txt_safe_install   return } if
     } ifelse
@@ -1555,6 +1556,7 @@ ptheme {
 % Then, read the other config variables (might depend on video mode).
 %
 
+/config.distro         "distro"                "Pardus" gfxconfig.set.str
 /config.welcome        "welcome"                  false gfxconfig.set.bool
 /config.beep           "beep"                     false gfxconfig.set.bool
 /config.volume         "volume"                      70 gfxconfig.set.int
