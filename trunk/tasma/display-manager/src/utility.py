@@ -13,13 +13,6 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-outputNames = (
-        (i18n("Laptop Panel (%1)"),     ["lvds"]),
-        (i18n("Analog Output (%1)"),    ["crt", "vga"]),
-        (i18n("Digital Output (%1)"),   ["dfp", "dvi", "hdmi", "tmds"]),
-        (i18n("TV Output (%1)"),        ["s-video", "composite", "component", "tv"])
-        )
-
 def I18N_NOOP(str):
     return str
 
@@ -27,11 +20,17 @@ def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
 def getOutputName(output):
+    outputNames = (
+            (i18n("Laptop Panel (%1)"),     ["lvds"]),
+            (i18n("Analog Output (%1)"),    ["crt", "vga"]),
+            (i18n("Digital Output (%1)"),   ["dfp", "dvi", "hdmi", "tmds"]),
+            (i18n("TV Output (%1)"),        ["s-video", "composite", "component", "tv"])
+            )
+
     outputlower = output.lower()
     for item in outputNames:
-        longName = item[0]
         for name in item[1]:
-            if name in outputlower:
-                return longName.arg(output)
+            if outputlower.startswith(name):
+                return item[0].arg(output)
 
     return output

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 12:41+0300\n"
+"POT-Creation-Date: 2008-06-09 14:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,19 +35,19 @@ msgstr "Tüm sürücüleri göster"
 msgid "Ok"
 msgstr "Tamam"
 
-#: src/utility.py:17
+#: src/utility.py:24
 msgid "Laptop Panel (%1)"
 msgstr "Dizüstü Paneli (%1)"
 
-#: src/utility.py:18
+#: src/utility.py:25
 msgid "Analog Output (%1)"
 msgstr "Analog Çıkış (%1)"
 
-#: src/utility.py:19
+#: src/utility.py:26
 msgid "Digital Output (%1)"
 msgstr "Dijital Çıkış (%1)"
 
-#: src/utility.py:20
+#: src/utility.py:27
 msgid "TV Output (%1)"
 msgstr "TV Çıkışı (%1)"
 
