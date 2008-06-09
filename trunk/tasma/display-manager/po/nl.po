@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 00:39+0300\n"
+"POT-Creation-Date: 2008-06-09 12:41+0300\n"
 "PO-Revision-Date: 2008-06-08 13:39+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -38,7 +38,24 @@ msgstr "Toon alle drivers"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/display-manager.py:40 src/display-manager.py:614 src/dm_mainview.py:250
+#: src/utility.py:17
+msgid "Laptop Panel (%1)"
+msgstr ""
+
+#: src/utility.py:18
+msgid "Analog Output (%1)"
+msgstr ""
+
+#: src/utility.py:19
+msgid "Digital Output (%1)"
+msgstr ""
+
+#: src/utility.py:20
+#, fuzzy
+msgid "TV Output (%1)"
+msgstr "Uitvoer"
+
+#: src/display-manager.py:40 src/display-manager.py:619 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Beeldscherm beheer"
 
@@ -114,7 +131,7 @@ msgid ""
 "and not supported by the distribution.</qt>"
 msgstr ""
 
-#: src/display-manager.py:602
+#: src/display-manager.py:607
 msgid "Display Manager is already started!"
 msgstr "Beeldscherm beheer is al actief!"
 
@@ -153,7 +170,7 @@ msgstr ""
 "configureerd, dient u een nieuw configuratie bestand aan te maken.\n"
 "Wilt u een nieuw configuratiebestand aanmaken bij de volgende maal opstarten?"
 
-#: src/displayconfig.py:366
+#: src/displayconfig.py:372
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
@@ -161,7 +178,7 @@ msgstr ""
 "Configuratie is opgeslagen. Sommige veranderingen zullen pas optreden na "
 "opnieuw opstarten van uw systeem."
 
-#: src/displayconfig.py:369
+#: src/displayconfig.py:375
 msgid "Your hardware will be probed after restarting your computer."
 msgstr "Uw hardware zal geactiveerd worden na herstarten van uw computer."
 

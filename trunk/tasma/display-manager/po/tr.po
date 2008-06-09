@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 00:39+0300\n"
+"POT-Creation-Date: 2008-06-09 12:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,23 @@ msgstr "Tüm sürücüleri göster"
 msgid "Ok"
 msgstr "Tamam"
 
-#: src/display-manager.py:40 src/display-manager.py:614 src/dm_mainview.py:250
+#: src/utility.py:17
+msgid "Laptop Panel (%1)"
+msgstr "Dizüstü Paneli (%1)"
+
+#: src/utility.py:18
+msgid "Analog Output (%1)"
+msgstr "Analog Çıkış (%1)"
+
+#: src/utility.py:19
+msgid "Digital Output (%1)"
+msgstr "Dijital Çıkış (%1)"
+
+#: src/utility.py:20
+msgid "TV Output (%1)"
+msgstr "TV Çıkışı (%1)"
+
+#: src/display-manager.py:40 src/display-manager.py:619 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Görüntü Yöneticisi"
 
@@ -116,7 +132,7 @@ msgstr ""
 "sürücü kapalı kaynak kodlu olduğundan bu ürün tarafından desteklenmemektedir."
 "</qt>"
 
-#: src/display-manager.py:602
+#: src/display-manager.py:607
 msgid "Display Manager is already started!"
 msgstr "Görüntü Yöneticisi zaten alıyor!"
 
@@ -155,7 +171,7 @@ msgstr ""
 "yapılandırma dosyası oluşturmanız gerekiyor.\n"
 "Bir sonraki açılışta yeni bir yapılandırma dosyası oluşturmak ister misiniz?"
 
-#: src/displayconfig.py:366
+#: src/displayconfig.py:372
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
@@ -163,7 +179,7 @@ msgstr ""
 "Yapılandırma kaydedildi. Ancak bazı değişiklikler bilgisayarınızı yeniden "
 "başlatana kadar etkin olmayabilir."
 
-#: src/displayconfig.py:369
+#: src/displayconfig.py:375
 msgid "Your hardware will be probed after restarting your computer."
 msgstr ""
 "Donanımınız bilgisayarınız tekrar başlatıldıktan sonra yeniden tanınacak."
