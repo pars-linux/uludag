@@ -237,6 +237,12 @@ class DisplayConfig:
                 if not self._info.modes.has_key(out):
                     self.current_modes[out] = self._rriface.currentResolution("default")
 
+        for output in self.outputs:
+            if self.monitors.has_key(output):
+                for mode in all_modes:
+                    if mode not in self.modes[output]:
+                        self.modes[output].append(mode)
+
     def apply(self):
         if self.true_color:
             depth = "24"
