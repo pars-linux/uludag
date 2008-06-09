@@ -534,7 +534,12 @@ class MainWidget(dm_mainview.mainWidget):
 
                 self.dconfig.monitors[out] = mon
 
-            self.getMonitorInfo()
+            from displayconfig import all_modes
+            for output in self.dconfig.outputs:
+                if self.dconfig.monitors.has_key(output):
+                    self.dconfig.modes[output] = all_modes
+
+            self.updateWidgets()
 
     def slotHelp(self):
         helpwin = helpdialog.HelpDialog()
