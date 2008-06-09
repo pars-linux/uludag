@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 14:10+0300\n"
+"POT-Creation-Date: 2008-06-09 15:23+0300\n"
 "PO-Revision-Date: 2008-05-15 09:41+0300\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -110,18 +110,15 @@ msgstr "Plug and Play Monitor"
 
 #: src/display-manager.py:478
 msgid ""
-"<qt><p>In order to get better performance, you may want to use <b>%1</b> "
-"driver. The driver is installed on your system. Do you want to use this "
-"driver?</p><b>Warning:</b> This driver is proprietary and not supported by "
-"the distribution.</qt>"
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
 
 #: src/display-manager.py:489
 msgid ""
-"<qt><p>In order to get better performance, you may want to use <b>%1</b> "
-"driver. To use it, you must install <b>%2</b> package and then choose <b>%3</"
-"b> from video card options.</p><b>Warning:</b> This driver is proprietary "
-"and not supported by the distribution.</qt>"
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%3</b> from video card options.</qt>"
 msgstr ""
 
 #: src/display-manager.py:607
