@@ -668,8 +668,10 @@ class PolicyTab(QVBox):
         self.policyview.addColumn(i18n("Actions"))
         self.uid = uid
         self.edit = edit
+        self.mainwidget = mainwidget
+        self.operations = {}
 
-        self.ch = mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
+        self.ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
 
         #add radio buttons
         w = QButtonGroup(self)
@@ -747,20 +749,69 @@ class PolicyTab(QVBox):
         if not item or item.depth() != 1:
             return
 
+        if toggle:
+            #grant
+            #self.ch = self.mainwidget.callMethod("grantAuthorization", "tr.org.pardus.comar.user.manager.grantauthorization")
+            if item.id in self.operations.keys() and self.operations[item.id] == "grant_revoke":
+                self.operations.pop(item.id)
+            else:
+                self.operations[item.id] = "grant"
+        else:
+            #revoke
+            if item.id in self.operations.keys() and self.operations[item.id] == "grant":
+                self.operations.pop(item.id)
+            else:
+                self.operations[item.id] = "grant_revoke"
+
         print "checkbox toggled"
+        print self.operations
 
     def blockedSlot(self, toggle):
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
             return
 
+        if toggle:
+            #block
+            if item.id in self.operations.keys() and self.operations[item.id] == "block_revoke":
+                self.operations.pop(item.id)
+            else:
+                self.operations[item.id] = "block"
+        else:
+            #revoke
+            if item.id in self.operations.keys() and self.operations[item.id] == "block":
+                self.operations.pop(item.id)
+            else:
+                self.operations[item.id] = "block_revoke"
+
         print "blocked toggled"
+        print self.operations
 
     def actionClicked(self, actionItem):
+        #disconnect these signals to prevent execution of slots
+        self.disconnect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
+        self.disconnect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
+
         #if it is a new user, default is authorized
         if not self.edit:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(False)
+            self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
+            self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
+            return
+
+        #if user changed the default value select buttons according to it
+        if actionItem.id in self.operations.keys():
+            pol =  self.operations[actionItem.id]
+            if pol == "grant":
+                self.authorized.setOn(True)
+                self.passwordCheck.setChecked(True)
+            elif pol.endswith("revoke"):
+                self.authorized.setOn(True)
+                self.passwordCheck.setChecked(False)
+            else: #block
+                self.blocked.setOn(True)
+                self.passwordCheck.setChecked(False)
             return
 
         def listDone(authList):
@@ -783,6 +834,8 @@ class PolicyTab(QVBox):
         if len(auths) == 0:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(False)
+            self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
+            self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
             return
 
         if len(filter(lambda x: x['negative'], auths)) > 0:
@@ -792,6 +845,9 @@ class PolicyTab(QVBox):
         else:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(True)
+
+        self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
+        self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
 
 class ActionItem(KListViewItem):
     def __init__(self, parent, id, desc, policy):
