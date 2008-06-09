@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-08 22:51+0300\n"
+"POT-Creation-Date: 2008-06-09 16:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,48 +33,52 @@ msgstr ""
 msgid "DBus Error"
 msgstr ""
 
-#: src/sm_mainview.py:163
+#: src/sm_mainview.py:139
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: src/sm_mainview.py:168
 msgid "D-Bus Error"
 msgstr ""
 
-#: src/sm_mainview.py:167
+#: src/sm_mainview.py:172
 msgid "COMAR Error"
 msgstr ""
 
-#: src/sm_mainview.py:237 src/service_manager.py:127
+#: src/sm_mainview.py:242 src/service_manager.py:127
 msgid "Select a service from list."
 msgstr ""
 
-#: src/sm_mainview.py:244
+#: src/sm_mainview.py:249
 msgid "Clear Search"
 msgstr ""
 
-#: src/sm_mainview.py:245 src/service_manager.py:129
+#: src/sm_mainview.py:250 src/service_manager.py:129
 #: src/service_manager.py:131
 msgid "Start"
 msgstr ""
 
-#: src/sm_mainview.py:247
+#: src/sm_mainview.py:252
 msgid "Restart"
 msgstr ""
 
-#: src/sm_mainview.py:252
+#: src/sm_mainview.py:257
 #, python-format
 msgid "%s is running."
 msgstr ""
 
-#: src/sm_mainview.py:255
+#: src/sm_mainview.py:260
 #, python-format
 msgid "%s is not running."
 msgstr ""
 
-#: src/sm_mainview.py:329
+#: src/sm_mainview.py:334
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
 msgstr ""
 
-#: src/sm_mainview.py:333
+#: src/sm_mainview.py:338
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
