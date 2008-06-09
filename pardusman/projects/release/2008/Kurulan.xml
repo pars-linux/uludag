@@ -45,7 +45,6 @@
         <SelectedPackage>display-manager</SelectedPackage>
         <SelectedPackage>dosfstools</SelectedPackage>
         <SelectedPackage>eagle-firmware</SelectedPackage>
-        <SelectedPackage>eciadsl</SelectedPackage>
         <SelectedPackage>essential</SelectedPackage>
         <SelectedPackage>et131x</SelectedPackage>
         <SelectedPackage>ethtool</SelectedPackage>
@@ -140,6 +139,7 @@
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
         <SelectedPackage>package-manager</SelectedPackage>
+        <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>polyester</SelectedPackage>
         <SelectedPackage>poppler</SelectedPackage>
@@ -147,7 +147,6 @@
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
         <SelectedPackage>qc-usb</SelectedPackage>
-        <SelectedPackage>r5u870</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
@@ -155,7 +154,6 @@
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
-        <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>sox</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
@@ -292,7 +290,6 @@
         <Package>dvd+rw-tools</Package>
         <Package>e2fsprogs</Package>
         <Package>eagle-firmware</Package>
-        <Package>eciadsl</Package>
         <Package>eject</Package>
         <Package>elfutils</Package>
         <Package>emovix</Package>
@@ -368,6 +365,7 @@
         <Package>gstreamer</Package>
         <Package>gtk2</Package>
         <Package>gtkmm</Package>
+        <Package>guile</Package>
         <Package>gutenprint</Package>
         <Package>gwenview</Package>
         <Package>gwenview-i18n</Package>
@@ -597,7 +595,6 @@
         <Package>mdadm</Package>
         <Package>memtest86</Package>
         <Package>microcode-ctl</Package>
-        <Package>milky</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
@@ -666,7 +663,6 @@
         <Package>portmap</Package>
         <Package>poster</Package>
         <Package>postgresql-lib</Package>
-        <Package>ppp</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
         <Package>pth</Package>
@@ -685,14 +681,12 @@
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
-        <Package>r5u870</Package>
         <Package>ralink-firmware</Package>
         <Package>rdate</Package>
         <Package>rdesktop</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
-        <Package>rp-pppoe</Package>
         <Package>rsync</Package>
         <Package>ruby</Package>
         <Package>samba</Package>
@@ -707,7 +701,6 @@
         <Package>shared-mime-info</Package>
         <Package>sip</Package>
         <Package>slang</Package>
-        <Package>slmodem</Package>
         <Package>sn9c1xx</Package>
         <Package>sox</Package>
         <Package>speedtouch-firmware</Package>
@@ -749,7 +742,6 @@
         <Package>twolame</Package>
         <Package>udev</Package>
         <Package>unarj</Package>
-        <Package>ungrab-winmodem</Package>
         <Package>unionfs</Package>
         <Package>unixODBC</Package>
         <Package>unrar</Package>
