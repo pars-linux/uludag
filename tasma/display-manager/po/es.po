@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 00:39+0300\n"
+"POT-Creation-Date: 2008-06-09 12:41+0300\n"
 "PO-Revision-Date: 2008-06-08 18:28-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -39,12 +39,29 @@ msgstr "Mostrar todos los controladores"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/display-manager.py:40 src/display-manager.py:614 src/dm_mainview.py:250
+#: src/utility.py:17
+msgid "Laptop Panel (%1)"
+msgstr ""
+
+#: src/utility.py:18
+msgid "Analog Output (%1)"
+msgstr ""
+
+#: src/utility.py:19
+msgid "Digital Output (%1)"
+msgstr ""
+
+#: src/utility.py:20
+#, fuzzy
+msgid "TV Output (%1)"
+msgstr "Salida"
+
+#: src/display-manager.py:40 src/display-manager.py:619 src/dm_mainview.py:250
 msgid "Display Manager"
 msgstr "Administrador de Pantallas"
 
-#: src/display-manager.py:57
 # favor revisar
+#: src/display-manager.py:57
 msgid "CRT Monitor"
 msgstr "Monitor CRT"
 
@@ -64,7 +81,9 @@ msgstr "Fabricantes"
 msgid ""
 "<qt>The driver you selected is not installed on your system. In order to use "
 "this driver, you must install <b>%1</b> package.</qt>"
-msgstr "<qt>El controlador seleccionado no está instalado en el sistema. Para utilizar el controlador deseado, necesita instalar el paquete <b>%1</b>.</qt>"
+msgstr ""
+"<qt>El controlador seleccionado no está instalado en el sistema. Para "
+"utilizar el controlador deseado, necesita instalar el paquete <b>%1</b>.</qt>"
 
 #: src/display-manager.py:171 src/display-manager.py:490
 msgid "Start Package Manager"
@@ -94,16 +113,18 @@ msgstr "Controlador: %1"
 msgid "Plug and Play Monitor"
 msgstr "Monitor Plug and Play"
 
-#: src/display-manager.py:478
 # favor revisar..
+#: src/display-manager.py:478
 msgid ""
 "<qt><p>In order to get better performance, you may want to use <b>%1</b> "
 "driver. The driver is installed on your system. Do you want to use this "
 "driver?</p><b>Warning:</b> This driver is proprietary and not supported by "
 "the distribution.</qt>"
 msgstr ""
-"<qt><p>Para un mejor rendimiento podría preferir usar el controlador <b>%1</b>. El controlador ya se encuentra instalado en el sistema. "
-"Desea utilizar este controlador?</p><b>Atención:</b> Este controlador es propietario y sin soporte por la distribución.</qt>"
+"<qt><p>Para un mejor rendimiento podría preferir usar el controlador <b>%1</"
+"b>. El controlador ya se encuentra instalado en el sistema. Desea utilizar "
+"este controlador?</p><b>Atención:</b> Este controlador es propietario y sin "
+"soporte por la distribución.</qt>"
 
 #: src/display-manager.py:489
 msgid ""
@@ -112,10 +133,12 @@ msgid ""
 "b> from video card options.</p><b>Warning:</b> This driver is proprietary "
 "and not supported by the distribution.</qt>"
 msgstr ""
-"<qt><p>Para un mejor rendimiento podría preferir usar el controlador <b>%1</b>. Para poder utilizarlo, debe instalar el paquete <b>%2</b> y luego elegir <b>%3</"
-"b> de las opciones de tarjetas de video.</p><b>Atención:</b> Este controlador es propietario y sin soporte por la distribución.</qt>"
+"<qt><p>Para un mejor rendimiento podría preferir usar el controlador <b>%1</"
+"b>. Para poder utilizarlo, debe instalar el paquete <b>%2</b> y luego elegir "
+"<b>%3</b> de las opciones de tarjetas de video.</p><b>Atención:</b> Este "
+"controlador es propietario y sin soporte por la distribución.</qt>"
 
-#: src/display-manager.py:602
+#: src/display-manager.py:607
 msgid "Display Manager is already started!"
 msgstr "Administrador de pantallas ya se está ejecutando!"
 
@@ -155,7 +178,7 @@ msgstr ""
 "Desea crear un nuevo archivo de configuración durante el próximo arranque "
 "del sistema ?"
 
-#: src/displayconfig.py:366
+#: src/displayconfig.py:372
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
@@ -165,9 +188,10 @@ msgstr ""
 
 # favor revisar, free translation, but i think the idea is ok
 # duda: probed - creo que detectares la idea, "comprobar" para mi que no es
-#: src/displayconfig.py:369
+#: src/displayconfig.py:375
 msgid "Your hardware will be probed after restarting your computer."
-msgstr "Se detectarán sus dispositivos durante el próximo arranque del sistema."
+msgstr ""
+"Se detectarán sus dispositivos durante el próximo arranque del sistema."
 
 #: src/monitordialog.py:86
 msgid "Choose Monitor"
@@ -302,4 +326,3 @@ msgstr "Configurar..."
 #: src/dm_mainview.py:276
 msgid "Devices"
 msgstr "Dispositivos"
-
