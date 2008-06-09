@@ -130,7 +130,7 @@ timeout 200
 
 gfxboot /boot/isolinux/init
 
-label %(title)s
+label pardus
     kernel /boot/kernel
     append initrd=/boot/initrd root=/dev/ram0 vga=791 splash=silent quiet %(exparams)s
 
@@ -141,10 +141,17 @@ label memtest
     kernel /boot/memtest
 """
 
+    # write isolinux.cfg
     dest = os.path.join(iso_dir, "boot/isolinux/isolinux.cfg")
     data = isolinux_tmpl % dict
 
     f = file(dest, "w")
+    f.write(data % dict)
+    f.close()
+
+    # write gfxboot config for title
+    data = file(os.path.join(image_dir, "usr/share/gfxtheme/pardus/install/gfxboot.cfg")).read()
+    f = file(os.path.join(iso_dir, "boot/isolinux/gfxboot.cfg"), "w")
     f.write(data % dict)
     f.close()
 
@@ -181,7 +188,8 @@ def setup_isolinux(project):
     tmplpath = os.path.join(image_dir, "usr/share/gfxtheme/pardus/install")
     dest = os.path.join(iso_dir, "boot/isolinux")
     for name in os.listdir(tmplpath):
-        copy(os.path.join(tmplpath, name), dest)
+        if name != "gfxboot.cfg":
+            copy(os.path.join(tmplpath, name), dest)
 
     copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux-debug.bin"), "%s/isolinux.bin" % dest)
     copy(os.path.join(image_dir, "boot/memtest"), os.path.join(iso_dir, "boot"))
