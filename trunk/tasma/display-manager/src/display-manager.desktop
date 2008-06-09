@@ -2,9 +2,11 @@
 Name=Display Manager
 Name[tr]=Görüntü Yöneticisi
 Name[es]=Administrador de Pantallas
+Name[nl]=Beeldscherm beheer
 GenericName=Display Configuration Tool
 GenericName[tr]=Ekran Yapılandırma Aracı
 GenericName[es]=Herramienta para la Configuración de Pantallas
+GenericName[nl]=Beeldscherm configuratie gereedschap
 X-KDE-ModuleType=Library
 X-KDE-Library=display-manager
 X-KDE-FactoryName=display_manager
