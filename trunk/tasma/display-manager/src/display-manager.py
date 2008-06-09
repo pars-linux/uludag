@@ -250,7 +250,7 @@ class MainWidget(dm_mainview.mainWidget):
     def updateWidgets(self):
         self.comboBoxOutput.clear()
         for output in self.screenOutputs:
-            self.comboBoxOutput.insertItem(output)
+            self.comboBoxOutput.insertItem(getOutputName(output))
             for resolution in self.screenModes[output]:
                 self.comboBoxResolution.insertItem(resolution)
 
@@ -313,7 +313,7 @@ class MainWidget(dm_mainview.mainWidget):
         if answer == KMessageBox.Yes:
             self.slotSwap()
         else:
-            self.comboBoxOutput.setCurrentText(self.currentOutput)
+            self.comboBoxOutput.setCurrentText(getOutputName(self.currentOutput))
 
     def setIconbyResolution(self, screenId = None):
         if not screenId:
@@ -352,7 +352,7 @@ class MainWidget(dm_mainview.mainWidget):
         self.currentModes = self.dconfig.current_modes
 
     def setSelectedOutput(self):
-        curOut =  str(self.comboBoxOutput.currentText())
+        curOut = self.screenOutputs[self.comboBoxOutput.currentItem()]
 
         if self.selectedScreen == 1:
             if curOut == self.dconfig.secondaryScr:
@@ -380,7 +380,7 @@ class MainWidget(dm_mainview.mainWidget):
             self.dconfig.desktop_setup = "clone"
 
     def setSelectedMode(self):
-        curOut =  str(self.comboBoxOutput.currentText())
+        curOut = self.screenOutputs[self.comboBoxOutput.currentItem()]
         curRes = str(self.comboBoxResolution.currentText())
         self.dconfig.current_modes[curOut] = curRes
         self.setIconbyResolution()
@@ -425,7 +425,7 @@ class MainWidget(dm_mainview.mainWidget):
         elif self.selectedScreen == 2:
             self.currentOutput = self.dconfig.secondaryScr
 
-        self.comboBoxOutput.setCurrentText(self.currentOutput)
+        self.comboBoxOutput.setCurrentText(getOutputName(self.currentOutput))
         self.getResolutions()
 
     def getResolutions(self):
@@ -433,7 +433,7 @@ class MainWidget(dm_mainview.mainWidget):
 
         self.comboBoxResolution.clear() #it seems duplicatesEnabled doesn't work x(
 
-        self.currentOutput = str(self.comboBoxOutput.currentText())
+        self.currentOutput = self.screenOutputs[self.comboBoxOutput.currentItem()]
 
         for resolution in self.screenModes[self.currentOutput]:
             self.comboBoxResolution.insertItem(resolution)
