@@ -476,7 +476,7 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(lab, row, row, 0, 1)
 
-        self.u_policygrouptab = PolicyGroupTab(hb, self)
+        self.u_policygrouptab = PolicyGroupTab(hb, self, self.u_id, edit)
         self.u_groups = self.u_policygrouptab.groupsWidget
 
         self.guide = Guide(self, edit)
@@ -640,14 +640,14 @@ class UserStack(QVBox):
         ch.call(uid)
 
 class PolicyGroupTab(KTabWidget):
-    def __init__(self, parent, stack):
+    def __init__(self, parent, stack, uid, edit):
         KTabWidget.__init__(self, parent)
 
         #add policy tab
         hb = QHBox(self)
         hb.setSpacing(12)
         hb.setMargin(6)
-        self.policytab = PolicyTab(hb)
+        self.policytab = PolicyTab(hb, uid, edit)
         self.addTab(hb, i18n("Authorizations"))
 
         #add groups tab
@@ -664,12 +664,14 @@ class PolicyGroupTab(KTabWidget):
         self.policytab.reset()
 
 class PolicyTab(QVBox):
-    def __init__(self, parent):
+    def __init__(self, parent, uid, edit):
         QVBox.__init__(self, parent)
         self.policyview = KListView(self)
         self.policyview.setRootIsDecorated(True)
         self.policyview.setResizeMode(KListView.LastColumn)
         self.policyview.addColumn(i18n("Actions"))
+        self.uid = uid
+        self.edit = edit
 
         #add radio buttons
         w = QButtonGroup(self)
@@ -726,8 +728,8 @@ class PolicyTab(QVBox):
             catitem = KListViewItem(self.policyview, categories[category])
             catactions = filter(lambda x: x.startswith(category), allActions)
             for cataction in catactions:
-                actioninfo = polkit.action_info(cataction)['description']
-                actionitem = KListViewItem(catitem, unicode(actioninfo))
+                actioninfo = polkit.action_info(cataction)
+                actionitem = ActionItem(catitem, cataction, unicode(actioninfo['description']), actioninfo['policy_active'])
 
     def setPolicyButtonsEnabled(self, enable):
         self.authorized.setEnabled(enable)
@@ -743,3 +745,28 @@ class PolicyTab(QVBox):
             self.setPolicyButtonsEnabled(False)
         else:
             self.setPolicyButtonsEnabled(True)
+            self.actionClicked(item)
+
+    def actionClicked(self, actionItem):
+        #if it is a new user, default is authorized
+        if not self.edit:
+            self.authorized.setOn(True)
+            self.passwordCheck.setChecked(False)
+            return
+
+        try:
+            auths = polkit.auth_list_uid(int(self.uid.text()))
+            auths = filter(lambda x: x['action_id'] == actionItem.id, auths)
+            if len(auths) == 0:
+                self.authorized.setOn(True)
+                self.passwordCheck.setChecked(False)
+                return
+        except:
+            pass #call COMAR for different users
+
+class ActionItem(KListViewItem):
+    def __init__(self, parent, id, desc, policy):
+        KListViewItem.__init__(self, parent, desc)
+        self.id = id
+        self.desc = desc
+        self.policy = policy
