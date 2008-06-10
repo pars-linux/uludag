@@ -13,6 +13,8 @@
 #include "authdialog.moc"
 
 #include <qcheckbox.h>
+#include <qradiobutton.h>
+#include <qbuttongroup.h>
 #include <qgroupbox.h>
 #include <qimage.h>
 #include <qlabel.h>
@@ -209,14 +211,12 @@ void AuthDialog::setType(PolKitResult res)
             res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_ONE_SHOT)
     {
         bgRemember->hide();
+        cbRemember->hide();
     }
-
-    if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
-    {
-        rbAlways->hide();
-        //cbSession->setEnabled(true);
-        //cbSession->setText(i18n("Remember authorization for this session"));
-    }
+    else if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
+        bgRemember->hide();
+    else
+        cbRemember->hide();
 
     m_type = res;
 

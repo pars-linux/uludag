@@ -18,6 +18,8 @@
 #include <qsocketnotifier.h>
 #include <qtimer.h>
 #include <qcheckbox.h>
+#include <qradiobutton.h>
+#include <qbuttongroup.h>
 #include <kcombobox.h>
 #include <klineedit.h>
 #include <kcmdlineargs.h>
@@ -463,6 +465,7 @@ PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant,
 
     PolKitResult overridden = result;
     bool remember = m_self->m_dialog->bgRemember->isChecked();
+    bool rememberCheck = m_self->m_dialog->cbRemember->isChecked();
     bool keepSession = m_self->m_dialog->rbSession->isOn();
     bool keepAlways = m_self->m_dialog->rbAlways->isOn();
 
@@ -479,7 +482,7 @@ PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant,
             break;
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
             //if keepsession is available but user does not select it, override result with adminauth
-            if (!remember)
+            if (!rememberCheck)
                 overridden = POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH;
             else
                 overridden = result;
@@ -495,7 +498,7 @@ PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant,
             break;
 
         case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION:
-            if (!keepSession)
+            if (!rememberCheck)
                 overridden = POLKIT_RESULT_ONLY_VIA_SELF_AUTH;
             break;
         case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS:
