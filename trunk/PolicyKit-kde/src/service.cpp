@@ -462,8 +462,9 @@ PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant,
     Debug::printDebug("In polkit_grant_override_grant_type...");
 
     PolKitResult overridden = result;
-    bool keepSession = m_self->m_dialog->cbSession->isChecked();
-    bool keepAlways = m_self->m_dialog->cbRemember->isChecked();
+    bool remember = m_self->m_dialog->bgRemember->isChecked();
+    bool keepSession = m_self->m_dialog->rbSession->isOn();
+    bool keepAlways = m_self->m_dialog->rbAlways->isOn();
 
     Debug::printDebug(QString("polkit_grant_override_grant_type: keep session: %1, keep always: %2").arg(keepSession).arg(keepAlways));
 
@@ -478,7 +479,7 @@ PolKitResult PolicyService::polkit_grant_override_grant_type(PolKitGrant *grant,
             break;
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
             //if keepsession is available but user does not select it, override result with adminauth
-            if (!keepSession)
+            if (!remember)
                 overridden = POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH;
             else
                 overridden = result;
