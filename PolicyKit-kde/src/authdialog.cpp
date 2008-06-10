@@ -208,15 +208,14 @@ void AuthDialog::setType(PolKitResult res)
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_ONE_SHOT || \
             res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_ONE_SHOT)
     {
-        cbRemember->hide();
-        cbSession->hide();
+        bgRemember->hide();
     }
 
     if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
     {
-        cbRemember->hide();
-        cbSession->setEnabled(true);
-        cbSession->setText(i18n("Remember authorization for this session"));
+        rbAlways->hide();
+        //cbSession->setEnabled(true);
+        //cbSession->setText(i18n("Remember authorization for this session"));
     }
 
     m_type = res;

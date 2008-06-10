@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>666</width>
-            <height>447</height>
+            <height>475</height>
         </rect>
     </property>
     <property name="caption">
@@ -31,6 +31,74 @@
         <property name="margin">
             <number>5</number>
         </property>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>spacer13</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>40</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="1" column="3">
+            <property name="name">
+                <cstring>spacer14</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>40</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="2" column="2">
+            <property name="name">
+                <cstring>spacer15</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>40</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="0" column="1">
+            <property name="name">
+                <cstring>spacer16</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>40</height>
+                </size>
+            </property>
+        </spacer>
         <widget class="QGroupBox" row="1" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>groupBox</cstring>
@@ -54,62 +122,6 @@
                     <property name="toolTip" stdset="0">
                         <string>Select a user...</string>
                     </property>
-                </widget>
-                <widget class="QLayoutWidget" row="4" column="1">
-                    <property name="name">
-                        <cstring>layout7</cstring>
-                    </property>
-                    <vbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QCheckBox">
-                            <property name="name">
-                                <cstring>cbRemember</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Remember authorization</string>
-                            </property>
-                        </widget>
-                        <widget class="QLayoutWidget">
-                            <property name="name">
-                                <cstring>layoutSession</cstring>
-                            </property>
-                            <hbox>
-                                <property name="name">
-                                    <cstring>unnamed</cstring>
-                                </property>
-                                <spacer>
-                                    <property name="name">
-                                        <cstring>spacer4</cstring>
-                                    </property>
-                                    <property name="orientation">
-                                        <enum>Horizontal</enum>
-                                    </property>
-                                    <property name="sizeType">
-                                        <enum>Fixed</enum>
-                                    </property>
-                                    <property name="sizeHint">
-                                        <size>
-                                            <width>16</width>
-                                            <height>20</height>
-                                        </size>
-                                    </property>
-                                </spacer>
-                                <widget class="QCheckBox">
-                                    <property name="name">
-                                        <cstring>cbSession</cstring>
-                                    </property>
-                                    <property name="enabled">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="text">
-                                        <string>For this session only</string>
-                                    </property>
-                                </widget>
-                            </hbox>
-                        </widget>
-                    </vbox>
                 </widget>
                 <widget class="QLayoutWidget" row="0" column="0" rowspan="5" colspan="1">
                     <property name="name">
@@ -223,6 +235,58 @@
                         </widget>
                     </hbox>
                 </widget>
+                <widget class="QButtonGroup" row="4" column="1">
+                    <property name="name">
+                        <cstring>bgRemember</cstring>
+                    </property>
+                    <property name="title">
+                        <string>Remember password</string>
+                    </property>
+                    <property name="checkable">
+                        <bool>true</bool>
+                    </property>
+                    <property name="checked">
+                        <bool>false</bool>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer11</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Fixed</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>16</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>rbSession</cstring>
+                            </property>
+                            <property name="text">
+                                <string>For this session only</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>rbAlways</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Always</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
                 <spacer row="5" column="1">
                     <property name="name">
                         <cstring>spacer5</cstring>
@@ -240,6 +304,20 @@
                         </size>
                     </property>
                 </spacer>
+                <widget class="Line" row="6" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>line</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>HLine</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Sunken</enum>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                </widget>
                 <widget class="QLayoutWidget" row="3" column="1">
                     <property name="name">
                         <cstring>layout7</cstring>
@@ -269,20 +347,6 @@
                         </widget>
                     </hbox>
                 </widget>
-                <widget class="Line" row="6" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>line</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>HLine</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Sunken</enum>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                </widget>
                 <widget class="QLabel" row="0" column="1">
                     <property name="name">
                         <cstring>lblHeader</cstring>
@@ -307,83 +371,9 @@
                 </widget>
             </grid>
         </widget>
-        <spacer row="1" column="0">
-            <property name="name">
-                <cstring>spacer13</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>40</width>
-                    <height>20</height>
-                </size>
-            </property>
-        </spacer>
-        <spacer row="1" column="3">
-            <property name="name">
-                <cstring>spacer14</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Horizontal</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>40</width>
-                    <height>20</height>
-                </size>
-            </property>
-        </spacer>
-        <spacer row="2" column="2">
-            <property name="name">
-                <cstring>spacer15</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>40</height>
-                </size>
-            </property>
-        </spacer>
-        <spacer row="0" column="1">
-            <property name="name">
-                <cstring>spacer16</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>40</height>
-                </size>
-            </property>
-        </spacer>
     </grid>
 </widget>
 <connections>
-    <connection>
-        <sender>cbRemember</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>cbSession</receiver>
-        <slot>setEnabled(bool)</slot>
-    </connection>
     <connection>
         <sender>pbCancel</sender>
         <signal>clicked()</signal>
@@ -396,12 +386,16 @@
         <receiver>AuthDialogUI</receiver>
         <slot>accept()</slot>
     </connection>
+    <connection>
+        <sender>bgRemember</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>rbSession</receiver>
+        <slot>toggle()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>lePassword</tabstop>
     <tabstop>cbUsers</tabstop>
-    <tabstop>cbRemember</tabstop>
-    <tabstop>cbSession</tabstop>
     <tabstop>pbOK</tabstop>
     <tabstop>pbCancel</tabstop>
 </tabstops>
