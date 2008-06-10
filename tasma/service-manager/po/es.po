@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 16:37+0300\n"
-"PO-Revision-Date: 2008-06-08 18:21-0400\n"
+"PO-Revision-Date: 2008-06-09 20:57-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,7 @@ msgstr "Error DBus"
 
 #: src/sm_mainview.py:139
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "No está autorizado para esta operación."
 
 #: src/sm_mainview.py:168
 msgid "D-Bus Error"
@@ -131,3 +131,4 @@ msgstr "&Listar solamente servidores."
 #: src/service_manager.py:142
 msgid "Alt+L"
 msgstr "Alt+L"
+
