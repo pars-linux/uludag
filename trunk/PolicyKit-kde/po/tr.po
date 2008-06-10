@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 21:25+0300\n"
+"POT-Creation-Date: 2008-06-10 21:52+0300\n"
 "PO-Revision-Date: 2008-05-11 18:48+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:193
 msgid "Always"
-msgstr ""
+msgstr "Her zaman"
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:140
 msgid ""
@@ -68,13 +68,11 @@ msgid "Password for user(%1)"
 msgstr "Kullanıcı (%1) parolası"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:191
-#, fuzzy
-msgid "Remember password"
+msgid "Remember authorization"
 msgstr "Kimlik denetimini hatırla"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:194
-#, fuzzy
-msgid "Remember password for this session"
+msgid "Remember authorization for this session"
 msgstr "Kimlik denetimini bu oturum için kaydet"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:181

@@ -256,7 +256,7 @@
                                 <cstring>bgRemember</cstring>
                             </property>
                             <property name="title">
-                                <string>Remember password</string>
+                                <string>Remember authorization</string>
                             </property>
                             <property name="checkable">
                                 <bool>true</bool>
@@ -308,7 +308,7 @@
                                 <cstring>cbRemember</cstring>
                             </property>
                             <property name="text">
-                                <string>Remember password for this session</string>
+                                <string>Remember authorization for this session</string>
                             </property>
                         </widget>
                         <spacer>

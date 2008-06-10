@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 21:25+0300\n"
+"POT-Creation-Date: 2008-06-10 21:52+0300\n"
 "PO-Revision-Date: 2008-05-16 01:02+0300\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -73,12 +73,12 @@ msgstr "Passwort für Benutzer(%1)"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:191
 #, fuzzy
-msgid "Remember password"
+msgid "Remember authorization"
 msgstr "Autorisierung merken"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:194
 #, fuzzy
-msgid "Remember password for this session"
+msgid "Remember authorization for this session"
 msgstr "Autorisierung für diese Sitzung merken"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:181
