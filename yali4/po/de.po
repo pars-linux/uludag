@@ -1,4 +1,3 @@
-# translation of de.po to Deutsch
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -7,14 +6,15 @@
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Klemens Häckel <click3d_at_linuxmail_org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-06 12:27+0300\n"
-"PO-Revision-Date: 2008-06-05 16:03+0200\n"
-"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"PO-Revision-Date: 2008-06-09 22:21-0400\n"
+"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -86,33 +86,30 @@ msgstr ""
 "Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:104
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
 
 #: yali4/gui/Ui/autopartwidget.py:105
+# disable auf deutsch ?
 msgid ""
 "This option will try to find suitable free space or resizable partitions (If "
 "there is no suitable partition this option will be disabled)"
-msgstr ""
+msgstr "Diese Option wird versuchen geeigneten freien Platz oder Partitionen mit der Möglichkeit zur Änderung der Partitionsgrösse zu finden (wenn keine geeignete Partition gefunden wird, ist diese Option blockiert)"
 
 #: yali4/gui/Ui/autopartwidget.py:106
 msgid "Automatically partition and format selected disk!"
 msgstr "Gewähltes Laufwerk automatisch partitionieren und formatieren!"
 
 #: yali4/gui/Ui/autopartwidget.py:107
-#, fuzzy
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
 msgstr ""
-"<b>\n"
-"<p>Dieser Vorgang wird Ihre gesamte Festplatte für die Pardus-Installation\n"
+"Dieser Vorgang wird Ihre gesamte Festplatte für die Pardus-Installation "
 "verwenden. Ihre vorhandenen Daten auf der gewählten Partition gehen dabei "
-"verloren.</p>\n"
-"</b>\n"
+"verloren !"
 
 #: yali4/gui/Ui/autopartwidget.py:108
 msgid "No, I'll partition my disk manually."
@@ -120,7 +117,7 @@ msgstr "Nein, ich werde meine Festplatte manuell partitionieren."
 
 #: yali4/gui/Ui/autopartwidget.py:109
 msgid "You can use manual partitioning with this option"
-msgstr ""
+msgstr "Mit dieser Option können Sie manuell partitionieren"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid ""
@@ -365,11 +362,11 @@ msgstr "Fat 32"
 
 #: yali4/gui/Ui/partedit.py:157
 msgid "Changes will be applied when you finish.."
-msgstr ""
+msgstr "Änderungen werden durgeführt wenn Sie fertig sind..."
 
 #: yali4/gui/Ui/partedit.py:158
 msgid "Refresh Disks"
-msgstr ""
+msgstr "Datenträger aktualisieren"
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Reset All Changes"
@@ -521,11 +518,12 @@ msgid "Debug"
 msgstr "Debuggen"
 
 #: yali4/gui/descSlide.py:18
+# habe "integriert" dazugeschrieben, damit sie nicht glauben, sie muessten VORHER ein anderes Programm ausfuehren
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
-msgstr ""
+msgstr "Willkommen! Unser verbessertes Setup-tool YALI wird Ihnen mit der Installation von Pardus 2008 helfen. Mit YALI können Sie Pardus 2008 schnell und einfach installieren, nachdem sie die Festplatte(n) mit dem integrierten intelligenten Partitionstool vorbereitet haban.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -538,19 +536,20 @@ msgstr ""
 "Maus, Hintergrundbild, Webcam und Panel  verwalten.\n"
 
 #: yali4/gui/descSlide.py:22
+# habe uebersichtlich dazu gedichtet, ich hoffe es ist ok
 msgid ""
 "Tasma is the management and settings center of Pardus. Configuration "
 "operations including but not limited to adding a new user or hardware (e.g. "
 "printer, scanner) to the system, management of visual settings ranging from "
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
-msgstr ""
+msgstr "Tasma ist das Management- und Konfigurations-Zentrum von Pardus. Sie können mit einer einzigen, übersichtlichen Bedienoberfläche zum Beispiel Benutzer, Hardware (z.B. Drucker, Scanner) zum System hinzufügen, grafische Einstellungen konfigurieren, angefangen von Schreibtisch-Ikonen, bis zu Schrifttypen, etc..\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
 "There are thousands of packages in Pardus software repositories. You can "
 "install, remove or update those packages and programs with just two clicks "
 "using the Package Manager!\n"
-msgstr ""
+msgstr "Es gibt tausende von Paketen in de Softwware Depos con Pardus. Mit dem Paket-Manager können Sie mit wenigen Klicks Programme installieren, desinstallieren, oder aktualisieren!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -558,7 +557,7 @@ msgid ""
 "securely. Thanks to the profile support it has, it will make it easier to "
 "reconnect to cable or wireless connections used before, remembering the "
 "settings used.\n"
-msgstr ""
+msgstr "Network Applet hilft sich auf einfache und sichere Weise, mit dem lokelen Netzwerk oder Internet zu verbinden. Es können Profile gespeichert werden, die es einfacher machen, sich wieder mit vorher benutzten Netzen zu verbinden.\n"
 
 #: yali4/gui/descSlide.py:28
 msgid ""
@@ -1009,8 +1008,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1599,5 +1597,3 @@ msgstr "Swap"
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
 
-#~ msgid "...."
-#~ msgstr "...."
