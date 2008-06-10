@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 21:25+0300\n"
+"POT-Creation-Date: 2008-06-10 21:52+0300\n"
 "PO-Revision-Date: 2008-05-11 18:48+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -64,11 +64,11 @@ msgid "Password for user(%1)"
 msgstr ""
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:191
-msgid "Remember password"
+msgid "Remember authorization"
 msgstr ""
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:194
-msgid "Remember password for this session"
+msgid "Remember authorization for this session"
 msgstr ""
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:181

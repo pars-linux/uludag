@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 21:25+0300\n"
+"POT-Creation-Date: 2008-06-10 21:52+0300\n"
 "PO-Revision-Date: 2008-05-18 08:02-0400\n"
 "Last-Translator: klemens <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -73,12 +73,12 @@ msgstr "Contraseña de usuario (%1)"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:191
 #, fuzzy
-msgid "Remember password"
+msgid "Remember authorization"
 msgstr "Recordar autorización"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:194
 #, fuzzy
-msgid "Remember password for this session"
+msgid "Remember authorization for this session"
 msgstr "Recordar autorización para la sesión actual"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:181
