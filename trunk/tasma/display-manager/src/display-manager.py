@@ -474,7 +474,7 @@ class MainWidget(dm_mainview.mainWidget):
             if package == dc._info.package:
                 return
 
-            if preferredDriver not in hwdata.getAvailableDriverNames():
+            if preferredDriver in hwdata.getAvailableDriverNames():
                 msg = i18n("<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>").arg(driver)
                 answer = KMessageBox.questionYesNo(self, msg,
                                                     QString.null,
