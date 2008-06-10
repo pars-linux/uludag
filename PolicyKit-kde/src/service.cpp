@@ -397,6 +397,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
     if (dialogResult == QDialog::Rejected)
     {
         Debug::printDebug("polkit_grant_select_admin_user: Dialog cancelled");
+        polkit_grant_cancel_auth (grant);
         return NULL;
     }
     else

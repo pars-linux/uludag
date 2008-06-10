@@ -122,7 +122,9 @@ void AuthDialog::setAdminUsers(const QStringList &users)
         return;
     }
 
+    QString selectprompt(cbUsers->currentText());
     cbUsers->clear();
+    cbUsers->insertItem(selectprompt);
     cbUsers->insertStringList(m_users);
     showUsersCombo();
 }
@@ -214,9 +216,21 @@ void AuthDialog::setType(PolKitResult res)
         cbRemember->hide();
     }
     else if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
+    {
         bgRemember->hide();
+        setTabOrder(lePassword, cbRemember);
+        setTabOrder(cbRemember, pbOK);
+        setTabOrder(pbOK, pbCancel);
+    }
     else
+    {
         cbRemember->hide();
+        setTabOrder(lePassword, bgRemember);
+        setTabOrder(bgRemember, rbSession);
+        setTabOrder(rbSession, rbAlways);
+        setTabOrder(rbAlways, pbOK);
+        setTabOrder(pbOK, pbCancel);
+    }
 
     m_type = res;
 
