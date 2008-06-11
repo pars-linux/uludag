@@ -120,7 +120,7 @@ class CardDialog(driverdialog.VideoCard):
         dc = parent.dconfig
         self.extraDrivers = []
 
-        self.availableDrivers = hwdata.getAvailableDriverNames()
+        availableDrivers = hwdata.getAvailableDriverNames()
         compatibleDrivers = hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id)
 
         curdrv = dc._info.driver
@@ -133,7 +133,7 @@ class CardDialog(driverdialog.VideoCard):
             if drv == curdrv:
                 current = item
 
-        for drv in self.availableDrivers:
+        for drv in availableDrivers:
             if not drv in compatibleDrivers:
                 item = DriverItem(self.listViewVideoCard, drv, hwdata.drivers.get(drv, ""))
                 self.extraDrivers.append(item)
@@ -157,9 +157,10 @@ class CardDialog(driverdialog.VideoCard):
             drv.setVisible(show)
 
     def accept(self):
+        availableDrivers = hwdata.getAvailableDriverNames()
         item = self.listViewVideoCard.currentItem()
 
-        if item.name in self.availableDrivers:
+        if item.name in availableDrivers:
             QDialog.accept(self)
         else:
             if package_sep in item.name:
