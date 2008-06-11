@@ -173,7 +173,7 @@ class CardDialog(driverdialog.VideoCard):
             answer = KMessageBox.warningYesNo(self, msg, QString.null, buttonStartPM, KStdGuiItem.cancel())
 
             if answer == KMessageBox.Yes:
-                run("package-manager")
+                run("package-manager", "--show-mainwindow")
 
 class MainWidget(dm_mainview.mainWidget):
     def __init__(self, parent):
@@ -496,7 +496,7 @@ class MainWidget(dm_mainview.mainWidget):
                                                     dontShowAgainName)
 
                 if answer == KMessageBox.Yes:
-                    run("package-manager")
+                    run("package-manager", "--show-mainwindow")
 
     def slotApply(self):
         self.dconfig.true_color = self.checkBoxTrueColor.isChecked()
