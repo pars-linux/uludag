@@ -42,7 +42,7 @@ class CallHandler:
       ch.call(arg1, arg2, ...)
     """
 
-    def __init__(self, package, model, method, action, sysBus=None, sesBus=None):
+    def __init__(self, package, model, method, action, async=True, sysBus=None, sesBus=None):
         self.dest = "tr.org.pardus.comar"
         self.path = "/package/%s" % package
         self.iface = "%s.%s" % (self.dest, model)
@@ -50,6 +50,7 @@ class CallHandler:
         self.sesBus = sesBus
         self.method = method
         self.action = action
+        self.async = async
         self.args = None
         self.handleDone = []
         self.handleCancel = []
@@ -83,7 +84,17 @@ class CallHandler:
     def __call(self):
         iface = self.__getIface()
         method = getattr(iface, self.method)
-        method(reply_handler=self.__handleReply, error_handler=self.__handleError, timeout=2**16-1, *self.args)
+        if self.async:
+            # Async call
+            method(reply_handler=self.__handleReply, error_handler=self.__handleError, timeout=2**16-1, *self.args)
+        else:
+            # Synchronized call
+            try:
+                method(*self.args)
+            except Exception, e:
+                if str(e).startswith("tr.org.pardus.comar.policy.auth_admin"):
+                    self.__obtainAuth()
+                    method(*self.args)
 
     def __getIface(self):
         try:
