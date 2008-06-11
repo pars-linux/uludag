@@ -510,6 +510,7 @@ class MainWidget(dm_mainview.mainWidget):
             item = dlg.listViewVideoCard.currentItem()
             self.dconfig.changeDriver(item.name)
             self.getCardInfo()
+            self.checkBoxTrueColor.setEnabled(True)
 
     def slotSelectMonitor(self, nscr):
         dlg = MonitorDialog(self)
