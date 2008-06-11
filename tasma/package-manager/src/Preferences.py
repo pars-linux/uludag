@@ -49,6 +49,14 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.useCacheCheck, SIGNAL("toggled(bool)"), self.enableUseCache)
         self.connect(self.clearCacheButton, SIGNAL("clicked()"), self.clearAllCached)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
+        self.connect(self.useHttpForAll, SIGNAL("toggled(bool)"), self.useHttpToggled)
+
+        self.connect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.proxyDataChanged)
+        self.connect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.proxyDataChanged)
+        self.connect(self.httpsProxy, SIGNAL("textChanged(const QString&)"), self.proxyDataChanged)
+        self.connect(self.httpsProxyPort, SIGNAL("valueChanged(int)"), self.proxyDataChanged)
+        self.connect(self.ftpProxy, SIGNAL("textChanged(const QString&)"), self.proxyDataChanged)
+        self.connect(self.ftpProxyPort, SIGNAL("valueChanged(int)"), self.proxyDataChanged)
 
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
@@ -62,17 +70,78 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
         self.noProxyButton.setChecked(True)
+        self.getProxySettings()
         self.getCacheSettings()
         self.getBandwidthSetting()
 
         # This is to not call setRepositories unnecessarily
         self.reposChanged = False
 
+        self.proxyChanged = False
+
+    def proxyDataChanged(self, data):
+        self.proxyChanged = True
+
+    def useHttpToggled(self, enabled):
+        if enabled:
+            self.httpsProxy.setText(self.httpProxy.text())
+            self.httpsProxyPort.setValue(self.httpProxyPort.value())
+            self.ftpProxy.setText(self.httpProxy.text())
+            self.ftpProxyPort.setValue(self.httpProxyPort.value())
+
+            self.connect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.httpsProxy, SLOT("setText(const QString&)"))
+            self.connect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.ftpProxy, SLOT("setText(const QString&)"))
+            self.connect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.httpsProxyPort, SLOT("setValue(int)"))
+            self.connect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.ftpProxyPort, SLOT("setValue(int)"))
+        else:
+            self.disconnect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.httpsProxy, SLOT("setText(const QString&)"))
+            self.disconnect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.ftpProxy, SLOT("setText(const QString&)"))
+            self.disconnect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.httpsProxyPort, SLOT("setValue(int)"))
+            self.disconnect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.ftpProxyPort, SLOT("setValue(int)"))
+
     def setCacheSettings(self, useCache, cacheLimit):
         self.parent.command.setCache(useCache, cacheLimit)
 
     def setBandwidth(self, limit):
         self.parent.command.setConfig("general", "bandwidth_limit", str(limit))
+
+    def updateProxySettings(self):
+        httpProxy, httpProxyPort = self.httpProxy.text(), self.httpProxyPort.value()
+        httpsProxy, httpsProxyPort = self.httpsProxy.text(), self.httpsProxyPort.value()
+        ftpProxy, ftpProxyPort = self.ftpProxy.text(), self.ftpProxyPort.value()
+
+        if httpProxy:
+            self.parent.command.setConfig("general", "http_proxy", "%s:%s" % (httpProxy, httpProxyPort))
+
+        if httpsProxy:
+            self.parent.command.setConfig("general", "https_proxy", "%s:%s" % (httpsProxy, httpsProxyPort))
+
+        if ftpProxy:
+            self.parent.command.setConfig("general", "ftp_proxy", "%s:%s" % (ftpProxy, ftpProxyPort))
+
+    def getProxySettings(self):
+        config = PisiIface.read_config("/etc/pisi/pisi.conf")
+
+        http = config.get("general", "http_proxy")
+        if http:
+            httpProxy, httpProxyPort = http[7:].split(":")
+            self.httpProxy.setText(httpProxy)
+            self.httpProxyPort.setValue(int(httpProxyPort))
+
+        https = config.get("general", "https_proxy")
+        if https:
+            httpsProxy, httpsProxyPort = https[8:].split(":")
+            self.httpsProxy.setText(httpsProxy)
+            self.httpsProxyPort.setValue(int(httpsProxyPort))
+
+        ftp = config.get("general", "ftp_proxy")
+        if ftp:
+            ftpProxy, ftpProxyPort = ftp[6:].split(":")
+            self.ftpProxy.setText(ftpProxy)
+            self.ftpProxyPort.setValue(int(ftpProxyPort))
+
+        if http or https or ftp:
+            self.useProxyButton.setChecked(True)
 
     def getBandwidthSetting(self):
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
@@ -92,7 +161,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         cache = config.get("general", "package_cache")
         cache_limit = config.get("general", "package_cache_limit")
-        
+
         if cache_limit:
             cache_limit = int(cache_limit)
         else:
@@ -230,6 +299,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.parent.parent.tray.updateInterval(self.intervalSpin.value())
         else:
             self.parent.parent.tray.updateInterval(0)
+
+        if self.proxyChanged:
+            self.updateProxySettings()
 
         if self.reposChanged:
             repoList = []
