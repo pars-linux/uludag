@@ -359,6 +359,8 @@ class DisplayConfig:
                 self.currentPrimaryScr == self.primaryScr:
                 run("xrandr", "-s", self.current_modes[self.primaryScr])
 
+        run("xrefresh")
+
     def changeDriver(self, driver):
         self.driver_changed = True
         if package_sep in driver:
