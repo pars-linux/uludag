@@ -187,9 +187,6 @@
                                         <property name="textLabel">
                                             <string>1</string>
                                         </property>
-                                        <property name="autoRaise">
-                                            <bool>true</bool>
-                                        </property>
                                     </widget>
                                     <widget class="QPushButton">
                                         <property name="name">
@@ -229,9 +226,6 @@
                                         </property>
                                         <property name="textLabel">
                                             <string>2</string>
-                                        </property>
-                                        <property name="autoRaise">
-                                            <bool>true</bool>
                                         </property>
                                     </widget>
                                     <spacer>
