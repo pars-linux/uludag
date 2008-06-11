@@ -70,10 +70,15 @@ class ComarIface:
         self.errHandler()
         KMessageBox.sorry(None, message, i18n("Error"))
 
-    def callMethod(self, method, action, handler, handleErrors, *args):
+    def callSyncMethod(self, method, *args):
+        ch = CallHandler("pisi", "System.Manager", method,
+                         None,
+                         self.sysBus, self.sesBus)
+
+    def callMethod(self, method, action, handler, handleErrors, async = True, *args):
         print "Method: %s      Action: %s" % (method, action)
         ch = CallHandler("pisi", "System.Manager", method,
-                         action,
+                         action, async,
                          self.sysBus, self.sesBus)
 
         if handleErrors:
@@ -89,45 +94,45 @@ class ComarIface:
 
     def installPackage(self, package):
         self.com_lock.lock()
-        self.callMethod("installPackage", "tr.org.pardus.comar.system.manager.installpackage", None, True, package)
+        self.callMethod("installPackage", "tr.org.pardus.comar.system.manager.installpackage", None, True, True, package)
 
     def removePackage(self, package):
         self.com_lock.lock()
-        self.callMethod("removePackage", "tr.org.pardus.comar.system.manager.removepackage", None, True, package)
+        self.callMethod("removePackage", "tr.org.pardus.comar.system.manager.removepackage", None, True, True, package)
 
     def updatePackage(self, package):
         self.com_lock.lock()
-        self.callMethod("updatePackage", "tr.org.pardus.comar.system.manager.updatepackage", None, True, package)
+        self.callMethod("updatePackage", "tr.org.pardus.comar.system.manager.updatepackage", None, True, True, package)
 
     def updateRepo(self, repo):
         self.com_lock.lock()
-        self.callMethod("updateRepository", "tr.org.pardus.comar.system.manager.updaterepository", None, True, str(repo))
+        self.callMethod("updateRepository", "tr.org.pardus.comar.system.manager.updaterepository", None, True, True, str(repo))
 
     # handleErrors is for Tray's Interval Check. If there is no network, handleErrors param is used for not showing any error to the user.
     def updateAllRepos(self, handleErrors=True):
         self.com_lock.lock()
-        self.callMethod("updateAllRepositories", "tr.org.pardus.comar.system.manager.updateallrepositories", None, handleErrors)
+        self.callMethod("updateAllRepositories", "tr.org.pardus.comar.system.manager.updateallrepositories", None, handleErrors, True)
 
     def addRepo(self, name, uri):
         self.com_lock.lock()
-        self.callMethod("addRepository", "tr.org.pardus.comar.system.manager.addrepository", None, True, name, uri)
+        self.callMethod("addRepository", "tr.org.pardus.comar.system.manager.addrepository", None, True, True, name, uri)
 
     def removeRepo(self, repo):
         self.com_lock.lock()
-        self.callMethod("removeRepo", "tr.org.pardus.comar.system.manager.removerepo", None, True, repo)
+        self.callMethod("removeRepo", "tr.org.pardus.comar.system.manager.removerepo", None, True, True, repo)
 
     def setRepositories(self, repos):
         self.com_lock.lock()
-        self.callMethod("setRepositories", "tr.org.pardus.comar.system.manager.setrepositories", None, True, repos)
+        self.callMethod("setRepositories", "tr.org.pardus.comar.system.manager.setrepositories", None, True, True, repos)
 
     def clearCache(self, cacheDir, limit):
-        self.callMethod("clearCache", "tr.org.pardus.comar.system.manager.clearcache", None, True, cacheDir, limit)
+        self.callMethod("clearCache", "tr.org.pardus.comar.system.manager.clearcache", None, True, True, cacheDir, limit)
 
     def setCache(self, enabled, limit):
-        self.callMethod("setCache", "tr.org.pardus.comar.system.manager.setcache", None, True, enabled, limit)
+        self.callMethod("setCache", "tr.org.pardus.comar.system.manager.setcache", None, True, True, enabled, limit)
 
     def setConfig(self, category, name, value):
-        self.callMethod("setConfig", "tr.org.pardus.comar.system.manager.setconfig", None, True, category, name, value)
+        self.callMethod("setConfig", "tr.org.pardus.comar.system.manager.setconfig", None, True, False, category, name, value)
 
     def cancel(self):
         obj = self.sysBus.get_object("tr.org.pardus.comar", "/", introspect=False)
