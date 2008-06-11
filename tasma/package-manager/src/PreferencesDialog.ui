@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>611</width>
-            <height>398</height>
+            <width>564</width>
+            <height>366</height>
         </rect>
     </property>
     <property name="caption">
@@ -315,7 +315,7 @@
                         <number>20000</number>
                     </property>
                     <property name="relativeValue">
-                        <number>30</number>
+                        <number>0</number>
                     </property>
                     <property name="suffix">
                         <string> kb/s</string>
@@ -585,6 +585,182 @@ This will not delete installed software or affect your system stability.</string
                     </widget>
                 </grid>
             </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Proxy</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="1" column="0">
+                        <property name="name">
+                            <cstring>layout15</cstring>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel" row="3" column="2">
+                                <property name="name">
+                                    <cstring>textLabel2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Port:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit" row="0" column="1">
+                                <property name="name">
+                                    <cstring>lineEdit2</cstring>
+                                </property>
+                            </widget>
+                            <widget class="QSpinBox" row="2" column="3">
+                                <property name="name">
+                                    <cstring>spinBox2_2</cstring>
+                                </property>
+                                <property name="maxValue">
+                                    <number>65535</number>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit" row="2" column="1">
+                                <property name="name">
+                                    <cstring>lineEdit2_2</cstring>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox" row="1" column="1">
+                                <property name="name">
+                                    <cstring>checkBox5_2_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Use this proxy server for all protocols</string>
+                                </property>
+                            </widget>
+                            <widget class="QSpinBox" row="3" column="3">
+                                <property name="name">
+                                    <cstring>spinBox2_3</cstring>
+                                </property>
+                                <property name="maxValue">
+                                    <number>65535</number>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="3" column="0">
+                                <property name="name">
+                                    <cstring>textLabel1_2_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>FTP proxy server:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="2" column="2">
+                                <property name="name">
+                                    <cstring>textLabel2_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Port:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="0" column="2">
+                                <property name="name">
+                                    <cstring>textLabel2_3</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Port:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="2" column="0">
+                                <property name="name">
+                                    <cstring>textLabel1_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>HTTPS proxy server:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="0" column="0">
+                                <property name="name">
+                                    <cstring>textLabel1</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>HTTP proxy server:</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit" row="3" column="1">
+                                <property name="name">
+                                    <cstring>lineEdit2_2_2</cstring>
+                                </property>
+                            </widget>
+                            <widget class="QSpinBox" row="0" column="3">
+                                <property name="name">
+                                    <cstring>spinBox2</cstring>
+                                </property>
+                                <property name="maxValue">
+                                    <number>65535</number>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <widget class="QButtonGroup" row="0" column="0">
+                        <property name="name">
+                            <cstring>buttonGroup1</cstring>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>32767</width>
+                                <height>60</height>
+                            </size>
+                        </property>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
+                        </property>
+                        <property name="title">
+                            <string></string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <property name="spacing">
+                                <number>0</number>
+                            </property>
+                            <widget class="QRadioButton" row="0" column="0">
+                                <property name="name">
+                                    <cstring>radioButton1</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>No proxy server</string>
+                                </property>
+                            </widget>
+                            <widget class="QRadioButton" row="1" column="0">
+                                <property name="name">
+                                    <cstring>radioButton1_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Use proxy server</string>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <spacer row="2" column="0">
+                        <property name="name">
+                            <cstring>spacer6_2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>21</width>
+                                <height>61</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </grid>
+            </widget>
         </widget>
     </grid>
 </widget>
@@ -601,7 +777,112 @@ This will not delete installed software or affect your system stability.</string
         <receiver>PreferencesDialog</receiver>
         <slot>reject()</slot>
     </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel1</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>lineEdit2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel2_3</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>spinBox2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>checkBox5_2_2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel1_2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>lineEdit2_2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel2_2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>spinBox2_2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel1_2_2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>lineEdit2_2_2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>textLabel2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>radioButton1</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>spinBox2_3</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
 </connections>
+<tabstops>
+    <tabstop>lineEdit2</tabstop>
+    <tabstop>spinBox2</tabstop>
+    <tabstop>checkBox5_2_2</tabstop>
+    <tabstop>lineEdit2_2</tabstop>
+    <tabstop>spinBox2_2</tabstop>
+    <tabstop>lineEdit2_2_2</tabstop>
+    <tabstop>spinBox2_3</tabstop>
+    <tabstop>buttonHelp</tabstop>
+    <tabstop>buttonOk</tabstop>
+    <tabstop>buttonCancel</tabstop>
+    <tabstop>tabWidget</tabstop>
+    <tabstop>onlyGuiApp</tabstop>
+    <tabstop>systemTray</tabstop>
+    <tabstop>intervalCheck</tabstop>
+    <tabstop>intervalSpin</tabstop>
+    <tabstop>bandwidthValue</tabstop>
+    <tabstop>clearCacheButton</tabstop>
+    <tabstop>useCacheCheck</tabstop>
+    <tabstop>useCacheSize</tabstop>
+    <tabstop>repoListView</tabstop>
+    <tabstop>addButton</tabstop>
+    <tabstop>editButton</tabstop>
+    <tabstop>removeButton</tabstop>
+    <tabstop>moveUpButton</tabstop>
+    <tabstop>moveDownButton</tabstop>
+</tabstops>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>kdialog.h</includehint>
