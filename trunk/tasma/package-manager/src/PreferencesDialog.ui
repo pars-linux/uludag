@@ -614,12 +614,12 @@ This will not delete installed software or affect your system stability.</string
                             </widget>
                             <widget class="QLineEdit" row="0" column="1">
                                 <property name="name">
-                                    <cstring>lineEdit2</cstring>
+                                    <cstring>httpProxy</cstring>
                                 </property>
                             </widget>
                             <widget class="QSpinBox" row="2" column="3">
                                 <property name="name">
-                                    <cstring>spinBox2_2</cstring>
+                                    <cstring>httpsProxyPort</cstring>
                                 </property>
                                 <property name="maxValue">
                                     <number>65535</number>
@@ -627,12 +627,12 @@ This will not delete installed software or affect your system stability.</string
                             </widget>
                             <widget class="QLineEdit" row="2" column="1">
                                 <property name="name">
-                                    <cstring>lineEdit2_2</cstring>
+                                    <cstring>httpsProxy</cstring>
                                 </property>
                             </widget>
                             <widget class="QCheckBox" row="1" column="1">
                                 <property name="name">
-                                    <cstring>checkBox5_2_2</cstring>
+                                    <cstring>useHttpForAll</cstring>
                                 </property>
                                 <property name="text">
                                     <string>Use this proxy server for all protocols</string>
@@ -640,7 +640,7 @@ This will not delete installed software or affect your system stability.</string
                             </widget>
                             <widget class="QSpinBox" row="3" column="3">
                                 <property name="name">
-                                    <cstring>spinBox2_3</cstring>
+                                    <cstring>ftpProxyPort</cstring>
                                 </property>
                                 <property name="maxValue">
                                     <number>65535</number>
@@ -688,12 +688,12 @@ This will not delete installed software or affect your system stability.</string
                             </widget>
                             <widget class="QLineEdit" row="3" column="1">
                                 <property name="name">
-                                    <cstring>lineEdit2_2_2</cstring>
+                                    <cstring>ftpProxy</cstring>
                                 </property>
                             </widget>
                             <widget class="QSpinBox" row="0" column="3">
                                 <property name="name">
-                                    <cstring>spinBox2</cstring>
+                                    <cstring>httpProxyPort</cstring>
                                 </property>
                                 <property name="maxValue">
                                     <number>65535</number>
@@ -726,7 +726,7 @@ This will not delete installed software or affect your system stability.</string
                             </property>
                             <widget class="QRadioButton" row="0" column="0">
                                 <property name="name">
-                                    <cstring>radioButton1</cstring>
+                                    <cstring>noProxyButton</cstring>
                                 </property>
                                 <property name="text">
                                     <string>No proxy server</string>
@@ -734,7 +734,7 @@ This will not delete installed software or affect your system stability.</string
                             </widget>
                             <widget class="QRadioButton" row="1" column="0">
                                 <property name="name">
-                                    <cstring>radioButton1_2</cstring>
+                                    <cstring>useProxyButton</cstring>
                                 </property>
                                 <property name="text">
                                     <string>Use proxy server</string>
@@ -778,92 +778,92 @@ This will not delete installed software or affect your system stability.</string
         <slot>reject()</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel1</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
-        <receiver>lineEdit2</receiver>
+        <receiver>httpProxy</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel2_3</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
-        <receiver>spinBox2</receiver>
+        <receiver>httpProxyPort</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
-        <receiver>checkBox5_2_2</receiver>
+        <receiver>useHttpForAll</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel1_2</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
-        <receiver>lineEdit2_2</receiver>
+        <receiver>httpsProxy</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel2_2</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
-        <receiver>spinBox2_2</receiver>
+        <receiver>httpsProxyPort</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel1_2_2</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
-        <receiver>lineEdit2_2_2</receiver>
+        <receiver>ftpProxy</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
         <receiver>textLabel2</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
     <connection>
-        <sender>radioButton1</sender>
+        <sender>noProxyButton</sender>
         <signal>toggled(bool)</signal>
-        <receiver>spinBox2_3</receiver>
+        <receiver>ftpProxyPort</receiver>
         <slot>setDisabled(bool)</slot>
     </connection>
 </connections>
 <tabstops>
-    <tabstop>lineEdit2</tabstop>
-    <tabstop>spinBox2</tabstop>
-    <tabstop>checkBox5_2_2</tabstop>
-    <tabstop>lineEdit2_2</tabstop>
-    <tabstop>spinBox2_2</tabstop>
-    <tabstop>lineEdit2_2_2</tabstop>
-    <tabstop>spinBox2_3</tabstop>
+    <tabstop>httpProxy</tabstop>
+    <tabstop>httpProxyPort</tabstop>
+    <tabstop>useHttpForAll</tabstop>
+    <tabstop>httpsProxy</tabstop>
+    <tabstop>httpsProxyPort</tabstop>
+    <tabstop>ftpProxy</tabstop>
+    <tabstop>ftpProxyPort</tabstop>
     <tabstop>buttonHelp</tabstop>
     <tabstop>buttonOk</tabstop>
     <tabstop>buttonCancel</tabstop>
