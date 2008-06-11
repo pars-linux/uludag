@@ -21,6 +21,10 @@ import kdecore
 from screens.Screen import ScreenWidget
 from screens.paneldlg import PanelWidget
 
+# parser for .desktop files
+from desktopparser import DesktopParser
+import ConfigParser
+
 class Widget(PanelWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
@@ -36,10 +40,12 @@ class Widget(PanelWidget, ScreenWidget):
         # set texts
         self.setCaption(i18n("Panel"))
         self.styleLabel.setText(i18n("Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides some eye candy styles for you."))
-        #self.styleSettingsGroup.setTitle(i18n("Style"))
         self.pix_style.setText(QString.null)
         self.styleButton.setText(i18n("Preview"))
         self.checkKickoff.setText(i18n("Use enhanced Kickoff style menu"))
+
+        # set lang
+        self.sysLang = KGlobal.locale().language()
 
         # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
@@ -59,11 +65,21 @@ class Widget(PanelWidget, ScreenWidget):
         # add kaptan themes into resource pool
         KGlobal.dirs().addResourceType("themes", KStandardDirs.kde_default("data") + "kaptan/pics/themes/")
 
-        themes = QStringList(KGlobal.dirs().findAllResources("themes", "*.xml", True))
-        themes.sort()
+        themeNames = QStringList(KGlobal.dirs().findAllResources("themes", "*.desktop", True))
+        themeNames.sort()
 
-        for thumbnail in themes:
-            self.styleBox.insertItem(QFileInfo(thumbnail).baseName())
+        self.panelNames = {}
+
+        for theme in themeNames:
+            parser = DesktopParser()
+            parser.read(str(theme))
+            try:
+                self.panelNames[parser.get_locale('Panel', 'Name[%s]'%self.sysLang, '')] = parser.get_locale('Panel', 'Name', '')
+            except:
+                self.panelNames[parser.get_locale('Panel', 'Name'%self.sysLang, '')] = parser.get_locale('Panel', 'Name', '')
+
+        for panel in self.panelNames:
+            self.styleBox.insertItem(panel)
 
         self.styleBox.setCurrentItem(0)
         self.styleSelected(0)
@@ -140,12 +156,11 @@ class Widget(PanelWidget, ScreenWidget):
         else:
             return
 
-
     def kickoffSelected(self):
         self.styleSelected(self.styleBox.currentItem())
 
     def styleSelected(self, item):
-        name = QString(self.styleBox.text(item))
+        name = QString(self.panelNames[str(self.styleBox.text(item))])
         previewPath = QString
 
         if self.checkKickoff.isChecked():
