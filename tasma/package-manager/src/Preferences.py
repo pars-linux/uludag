@@ -61,6 +61,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.intervalCheck.setChecked(self.parent.settings.getBoolValue(Settings.general, "UpdateCheck"))
         self.intervalSpin.setValue(self.parent.settings.getNumValue(Settings.general, "UpdateCheckInterval"))
         self.systemTray.setChecked(self.parent.settings.getBoolValue(Settings.general, "SystemTray"))
+        self.noProxyButton.setChecked(True)
         self.getCacheSettings()
         self.getBandwidthSetting()
 
