@@ -78,7 +78,11 @@ class Widget(PanelWidget, ScreenWidget):
             except:
                 self.panelNames[parser.get_locale('Panel', 'Name'%self.sysLang, '')] = parser.get_locale('Panel', 'Name', '')
 
-        for panel in self.panelNames:
+
+        sortedPanels = self.panelNames.keys()
+        sortedPanels.sort()
+
+        for panel in sortedPanels:
             self.styleBox.insertItem(panel)
 
         self.styleBox.setCurrentItem(0)
