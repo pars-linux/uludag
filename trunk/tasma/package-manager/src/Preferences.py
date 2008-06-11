@@ -111,13 +111,13 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         ftpProxy, ftpProxyPort = self.ftpProxy.text(), self.ftpProxyPort.value()
 
         if httpProxy:
-            self.parent.command.setConfig("general", "http_proxy", "%s:%s" % (httpProxy, httpProxyPort))
+            self.parent.command.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
 
         if httpsProxy:
-            self.parent.command.setConfig("general", "https_proxy", "%s:%s" % (httpsProxy, httpsProxyPort))
+            self.parent.command.setConfig("general", "https_proxy", "https://%s:%s" % (httpsProxy, httpsProxyPort))
 
         if ftpProxy:
-            self.parent.command.setConfig("general", "ftp_proxy", "%s:%s" % (ftpProxy, ftpProxyPort))
+            self.parent.command.setConfig("general", "ftp_proxy", "ftp://%s:%s" % (ftpProxy, ftpProxyPort))
 
     def getProxySettings(self):
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
