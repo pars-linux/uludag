@@ -23,19 +23,15 @@ import thread
 from os.path import basename
 
 import yali4.storage
-import yali4.bootloader
 import yali4.partitionrequest as request
 import yali4.partitiontype as parttype
 from yali4.parteddata import *
 
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
-from yali4.gui.YaliDialog import WarningDialog, WarningWidget, InformationWindow
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 
-# Auto Partition Methods
-methodUseAvail, methodEraseAll = range(2)
 
 ##
 # BootLoader screen.
@@ -139,64 +135,6 @@ loader.
 
     def execute(self):
 
-        w = WarningWidget(self)
-        # We need different warning messages for Auto and Manual Partitioning
-        if ctx.installData.autoPartDev:
-            # show confirmation dialog
-            w.warning.setText(_('''<b>
-<p>This action will use your entire disk for Pardus installation and <br>
-all your present data on the selected disk will be lost.</p>
-</b>
-'''))
-        self.dialog = WarningDialog(w, self)
-        if not self.dialog.exec_():
-            # disabled by weaver
-            ctx.mainScreen.enableBack()
-            ctx.mainScreen.enableNext()
-            return False
-
-        ctx.mainScreen.processEvents()
-
-        # We should do partitioning operations in here.
-        if ctx.options.dryRun == True:
-            ctx.debugger.log("dryRun activated Yali stopped")
-            return
-
-        # Auto Partitioning
-        if ctx.installData.autoPartDev:
-            ctx.use_autopart = True
-
-            if ctx.installData.autoPartMethod == methodEraseAll:
-                ctx.yali.autoPartDevice()
-                ctx.yali.checkSwap()
-                ctx.yali.info.updateMessage(_("Formatting ..."))
-                ctx.mainScreen.processEvents()
-                ctx.partrequests.applyAll()
-
-            elif ctx.installData.autoPartMethod == methodUseAvail:
-                ctx.yali.autoPartUseAvail()
-                ctx.yali.checkSwap()
-                ctx.yali.info.updateMessage(_("Formatting ..."))
-                ctx.mainScreen.processEvents()
-                ctx.partrequests.applyAll()
-
-        # Manual Partitioning
-        else:
-            ctx.debugger.log("Format Operation Started")
-            ctx.yali.info.updateAndShow(_("Writing disk tables ..."))
-            for dev in yali4.storage.devices:
-                ctx.mainScreen.processEvents()
-                dev.commit()
-            # wait for udev to create device nodes
-            time.sleep(2)
-            ctx.yali.checkSwap()
-            ctx.yali.info.updateMessage(_("Formatting ..."))
-            ctx.mainScreen.processEvents()
-            ctx.partrequests.applyAll()
-            ctx.debugger.log("Format Operation Finished")
-
-        ctx.yali.info.hide()
-
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
 
@@ -210,6 +148,7 @@ all your present data on the selected disk will be lost.</p>
         else:
             ctx.yali.guessBootLoaderDevice()
 
+        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,request.mountRequestType)
         _ins_part = root_part_req.partition().getPath()
 
         ctx.debugger.log("Pardus Root is : %s" % _ins_part)

@@ -321,6 +321,9 @@ class Yali:
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
 
+        if not root_part_req:
+            raise YaliException, "No Root Part request found !"
+
         if len(yali4.storage.devices) > 1 or ctx.isEddFailed:
             ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[0])
         else:

@@ -19,9 +19,14 @@ _ = __trans.ugettext
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+import yali4.sysutils
 from yali4.gui.ScreenWidget import ScreenWidget
+from yali4.gui.YaliDialog import WarningDialog, WarningWidget
 from yali4.gui.Ui.summarywidget import Ui_SummaryWidget
 import yali4.gui.context as ctx
+
+# Auto Partition Methods
+methodUseAvail, methodEraseAll = range(2)
 
 ##
 # Summary screen
@@ -43,10 +48,64 @@ Here you can see your install options and look at them again before installation
         self.ui = Ui_SummaryWidget()
         self.ui.setupUi(self)
 
-        #self.connect(self.ui.keyboard_list, SIGNAL("currentItemChanged(QListWidgetItem*, QListWidgetItem*)"),
-        #        self.slotLayoutChanged)
+        self.ui.content.setText("")
+        self.connect(self.ui.install, SIGNAL("clicked()"),ctx.mainScreen.slotNext)
+        self.connect(self.ui.cancel, SIGNAL("clicked()"),self.slotReboot)
+
+    def slotReboot(self):
+        w = WarningWidget(self)
+        w.warning.setText(_('''<b><p>This action will reboot your system !</p></b>'''))
+        w.ok.setText(_("Reboot"))
+        dialog = WarningDialog(w, self)
+        if self.dialog.exec_():
+            yali4.sysutils.fastreboot()
+
+    def shown(self):
+        ctx.mainScreen.disableNext()
 
     def execute(self):
-        ctx.debugger.log("Selected keymap is : %s" % ctx.installData.keyData["name"] )
+
+        ctx.mainScreen.processEvents()
+
+        # We should do partitioning operations in here.
+        if ctx.options.dryRun == True:
+            ctx.debugger.log("dryRun activated Yali stopped")
+            return
+
+        # Auto Partitioning
+        if ctx.installData.autoPartDev:
+            ctx.use_autopart = True
+
+            if ctx.installData.autoPartMethod == methodEraseAll:
+                ctx.yali.autoPartDevice()
+                ctx.yali.checkSwap()
+                ctx.yali.info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
+                ctx.partrequests.applyAll()
+
+            elif ctx.installData.autoPartMethod == methodUseAvail:
+                ctx.yali.autoPartUseAvail()
+                ctx.yali.checkSwap()
+                ctx.yali.info.updateMessage(_("Formatting ..."))
+                ctx.mainScreen.processEvents()
+                ctx.partrequests.applyAll()
+
+        # Manual Partitioning
+        else:
+            ctx.debugger.log("Format Operation Started")
+            ctx.yali.info.updateAndShow(_("Writing disk tables ..."))
+            for dev in yali4.storage.devices:
+                ctx.mainScreen.processEvents()
+                dev.commit()
+            # wait for udev to create device nodes
+            time.sleep(2)
+            ctx.yali.checkSwap()
+            ctx.yali.info.updateMessage(_("Formatting ..."))
+            ctx.mainScreen.processEvents()
+            ctx.partrequests.applyAll()
+            ctx.debugger.log("Format Operation Finished")
+
+        ctx.yali.info.hide()
+
         return True
 
