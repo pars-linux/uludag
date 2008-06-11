@@ -63,6 +63,7 @@ import yali4.gui.ScrPartitionAuto
 import yali4.gui.ScrPartitionManual
 import yali4.gui.ScrBootloader
 import yali4.gui.ScrInstall
+import yali4.gui.ScrSummary
 import yali4.gui.ScrGoodbye
 
 PARTITION_ERASE_ALL, PARTITION_USE_AVAIL, PARTITION_USE_OLD = range(3)
@@ -85,8 +86,9 @@ class Yali:
                                        yali4.gui.ScrPartitionAuto,       # 07
                                        yali4.gui.ScrPartitionManual,     # 08
                                        yali4.gui.ScrBootloader,          # 09
-                                       yali4.gui.ScrInstall,             # 10
-                                       yali4.gui.ScrGoodbye              # 11
+                                       yali4.gui.ScrSummary,             # 10
+                                       yali4.gui.ScrInstall,             # 11
+                                       yali4.gui.ScrGoodbye              # 12
                                       ]
 
         # FirstBoot Installation process
