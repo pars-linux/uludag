@@ -121,6 +121,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         httpsProxy, httpsProxyPort = self.httpsProxy.text(), self.httpsProxyPort.value()
         ftpProxy, ftpProxyPort = self.ftpProxy.text(), self.ftpProxyPort.value()
 
+        if self.noProxyButton.isChecked():
+            httpProxy = httpsProxy = ftpProxy = None
+
         if httpProxy:
             self.parent.command.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
         else:
