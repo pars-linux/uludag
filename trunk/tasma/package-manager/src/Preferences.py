@@ -133,26 +133,27 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
     def getProxySettings(self):
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
+        httpProxy = httpProxyPort = ftpProxy = ftpProxyPort = httpsProxy = httpsProxyPort = None
 
         http = config.get("general", "http_proxy")
-        if http:
+        if http and http != "None":
             httpProxy, httpProxyPort = http[7:].split(":")
             self.httpProxy.setText(httpProxy)
             self.httpProxyPort.setValue(int(httpProxyPort))
 
         https = config.get("general", "https_proxy")
-        if https:
+        if https and https != "None":
             httpsProxy, httpsProxyPort = https[8:].split(":")
             self.httpsProxy.setText(httpsProxy)
             self.httpsProxyPort.setValue(int(httpsProxyPort))
 
         ftp = config.get("general", "ftp_proxy")
-        if ftp:
+        if ftp and ftp != "None":
             ftpProxy, ftpProxyPort = ftp[6:].split(":")
             self.ftpProxy.setText(ftpProxy)
             self.ftpProxyPort.setValue(int(ftpProxyPort))
 
-        if http or https or ftp:
+        if httpProxy or ftpProxy or httpsProxy:
             self.useProxyButton.setChecked(True)
 
     def getBandwidthSetting(self):
