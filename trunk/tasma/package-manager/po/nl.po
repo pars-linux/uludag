@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-30 13:58+0300\n"
+"POT-Creation-Date: 2008-06-12 10:46+0300\n"
 "PO-Revision-Date: 2008-05-29 16:54+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -22,73 +22,221 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/ProgressDialog.py:91
-msgid "Progress"
-msgstr "Voortgang"
+#: src/SpecialList.py:100 src/CustomEventListener.py:37
+#: src/CustomEventListener.py:41
+msgid "Select all packages in this category"
+msgstr "Selecteer alle pakketten in deze categorie"
 
-#: src/ProgressDialog.py:92 src/Progress.py:87
-msgid "-- / --  package"
-msgstr "-- / --  pakket"
+#: src/SpecialList.py:102 src/CustomEventListener.py:38
+msgid "Reverse package selections"
+msgstr "Keer pakketselectie om"
 
-#: src/ProgressDialog.py:93 src/Progress.py:86
-msgid "downloaded (total: -- )"
-msgstr "gedownload (totaal: -- )"
+#: src/SpecialList.py:163
+msgid "Description: "
+msgstr "Beschrijving: "
 
-#: src/ProgressDialog.py:94 src/Progress.py:85
-msgid "--"
-msgstr "--"
+#: src/SpecialList.py:164
+msgid "Version: "
+msgstr "Versie: "
 
-#: src/ProgressDialog.py:97
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Voorbereiden PiSi...</h3>"
+#: src/SpecialList.py:165
+msgid "Repository: "
+msgstr "Repository:"
 
-#: src/ProgressDialog.py:98
-msgid "Now installing <b>amsn</b> package"
-msgstr "Installeert nu <b>amsn</b> pakket"
+#: src/SpecialList.py:166
+msgid "Package Size: "
+msgstr "Pakketgrootte: "
 
-#: src/Tray.py:38
-msgid "Update"
-msgstr "Update"
+#: src/SpecialList.py:167
+msgid "Homepage: "
+msgstr "Homepage: "
 
-#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:582
-msgid "All"
-msgstr "Alles"
+#: src/PreferencesDialog.py:144 src/PreferencesDialog.py:336
+msgid "Repository Name"
+msgstr "Repository naam"
 
-#: src/Tray.py:66
-msgid "There are <b>%1</b> updates available!"
-msgstr "Er zijn <b>%1</b> updates beschikbaar!"
+#: src/PreferencesDialog.py:145 src/PreferencesDialog.py:337
+msgid "Address"
+msgstr "Adres"
 
-#: src/Tray.py:67
-msgid "Updates Available!"
-msgstr "Updates verkrijgbaar!"
+#: src/PreferencesDialog.py:308
+msgid "Package Manager Settings"
+msgstr "Pakketbeheer instellingen"
 
-#: src/ComarIface.py:38
-msgid "Unable to connect to DBus."
-msgstr "Kan niet verbinden met DBus."
+#: src/PreferencesDialog.py:310
+msgid "F1"
+msgstr "F1"
 
-#: src/ComarIface.py:38
-msgid "DBus Error"
-msgstr "DBus fout"
+#: src/PreferencesDialog.py:315
+msgid "&Show only desktop applications"
+msgstr "&Toon alleen desktop toepassingen"
 
-#: src/ComarIface.py:52
-msgid "D-Bus Error"
-msgstr "D-Bus fout"
-
-#: src/ComarIface.py:57
-msgid "COMAR Auth Error"
-msgstr "COMAR identificatie fout"
-
-#: src/ComarIface.py:62
-msgid "Network error. Please check your network connections and try again."
+#: src/PreferencesDialog.py:316
+msgid "Alt+S"
 msgstr ""
 
-#: src/ComarIface.py:62 src/ComarIface.py:64
-msgid "COMAR Error"
-msgstr "COMAR fout"
+#: src/PreferencesDialog.py:317
+msgid "If checked, then pisi will only show desktop applications"
+msgstr "Indien geselecteerd, zal pisi alleen desktop toepassingen weergeven"
 
-#: src/ComarIface.py:69
-msgid "You are not authorized for this operation."
-msgstr "U bent niet geautoriseerd voor deze handeling."
+#: src/PreferencesDialog.py:318
+msgid "&Enable system tray icon"
+msgstr "G&ebruik systeemvak icoon"
+
+#: src/PreferencesDialog.py:319
+msgid "Enable &periodic update check"
+msgstr "Activeer &periodieke update check"
+
+#: src/PreferencesDialog.py:320
+msgid "Alt+P"
+msgstr ""
+
+#: src/PreferencesDialog.py:321
+msgid " min"
+msgstr " min"
+
+#: src/PreferencesDialog.py:322
+msgid "Check interval:"
+msgstr "Controle interval:"
+
+#: src/PreferencesDialog.py:323
+msgid "Bandwidth limit:"
+msgstr ""
+
+#: src/PreferencesDialog.py:324
+msgid " kb/s"
+msgstr ""
+
+#: src/PreferencesDialog.py:325
+msgid "&General Settings"
+msgstr "Al&gemene instellingen"
+
+#: src/PreferencesDialog.py:326
+msgid "Clear Cache"
+msgstr "Leeg cachegeheugen"
+
+#: src/PreferencesDialog.py:327
+msgid "C&lean disk cache now"
+msgstr "Opruimen schijf&cache"
+
+#: src/PreferencesDialog.py:328
+msgid ""
+"Clearing the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+"Legen van schijf cache zal alle gedownloade software verwijderen. \n"
+"Het zal geen geÏnstalleerde software verwijderen of de stabiliteit van uw "
+"systeem beïnvloeden."
+
+#: src/PreferencesDialog.py:330
+msgid "Cache usage"
+msgstr "Cachegebruik"
+
+#: src/PreferencesDialog.py:331
+msgid "Maximum cache size:"
+msgstr "Maximum cachegrootte:"
+
+#: src/PreferencesDialog.py:332
+msgid "&Use hard disk cache for downloaded software"
+msgstr "Gebr&uik hardeschijf cache voor gedownloade software"
+
+#: src/PreferencesDialog.py:333
+msgid "If checked, downloaded packages will be hold at the hard disk cache"
+msgstr ""
+"Als geselecteerd, zullen gedownloade pakketten bewaard worden in de "
+"hardeschijf cache"
+
+#: src/PreferencesDialog.py:334
+msgid "Mb <i>(use 0 for no limit)</i>"
+msgstr "Mb <i>(gebruik 0 voor geen limiet)</i>"
+
+#: src/PreferencesDialog.py:335
+msgid "C&ache"
+msgstr "C&ache"
+
+#: src/PreferencesDialog.py:338
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr ""
+"U kunt hier de huidige software repositories en corresponderende adressen "
+"zien"
+
+#: src/PreferencesDialog.py:339
+msgid "&Add New Repository"
+msgstr "&Toevoegen nieuwe repository"
+
+#: src/PreferencesDialog.py:340
+msgid "Click here to add a new software repository"
+msgstr "Klik hier om een nieuwe softwarerepository toe te voegen"
+
+#: src/PreferencesDialog.py:341
+msgid "&Edit Repository"
+msgstr "&Bewerken repository"
+
+#: src/PreferencesDialog.py:342
+msgid "Click here to modify the name or address of a repository"
+msgstr "Klik hier om de naam of het adres van een repository te veranderen"
+
+#: src/PreferencesDialog.py:343
+msgid "&Remove Repository"
+msgstr "&Verwijderen repository"
+
+#: src/PreferencesDialog.py:344
+msgid "Click here to delete a repository from the list"
+msgstr "Klik hier om een repository uit de lijst te verwijderen"
+
+#: src/PreferencesDialog.py:345
+msgid "Move &Up"
+msgstr "&Omhoog verplaatsen"
+
+#: src/PreferencesDialog.py:346
+msgid "Click here to move the repository one level up"
+msgstr "Klik hier om de repository een niveau hoger te plaatsen"
+
+#: src/PreferencesDialog.py:347
+msgid "Move &Down"
+msgstr "Om&laag verplaatsten"
+
+#: src/PreferencesDialog.py:348
+msgid "Click here to move the repository one level down"
+msgstr "Klik hier om de repository een niveau lager te plaatsen"
+
+#: src/PreferencesDialog.py:349
+msgid "&Repositories"
+msgstr "&Repositories"
+
+#: src/PreferencesDialog.py:350 src/PreferencesDialog.py:353
+#: src/PreferencesDialog.py:354
+msgid "Port:"
+msgstr ""
+
+#: src/PreferencesDialog.py:351
+msgid "Use this proxy server for all protocols"
+msgstr ""
+
+#: src/PreferencesDialog.py:352
+msgid "FTP proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:355
+msgid "HTTPS proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:356
+msgid "HTTP proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:358
+msgid "No proxy server"
+msgstr ""
+
+#: src/PreferencesDialog.py:359
+msgid "Use proxy server"
+msgstr ""
+
+#: src/PreferencesDialog.py:360
+msgid "Proxy"
+msgstr ""
 
 #: src/MainWidget.py:75
 msgid "Loading Package List..."
@@ -134,6 +282,10 @@ msgstr "<b>Updaten repository</b>"
 #: src/MainWidget.py:287
 msgid "Upgrade Package(s)"
 msgstr "Opwaarderen pakket(ten)"
+
+#: src/MainWidget.py:289 src/MainWidget.py:582 src/Tray.py:43
+msgid "All"
+msgstr "Alles"
 
 #: src/MainWidget.py:305 src/MainWidget.py:590
 msgid "Search Results"
@@ -280,7 +432,7 @@ msgstr "Anderen"
 msgid "downloading"
 msgstr "downloaden"
 
-#: src/MainWidget.py:658 src/Preferences.py:222
+#: src/MainWidget.py:658 src/Preferences.py:330
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Toepassen veranderingen repository</b>"
 
@@ -328,37 +480,137 @@ msgstr "PiSi auteurs"
 msgid "Authors of PiSi API"
 msgstr "Auteurs van PiSi API"
 
-#: src/package-manager.py:111
+#: src/package-manager.py:109
 msgid "Show Installed Packages"
 msgstr "Toon geïnstalleerde pakketten"
 
-#: src/package-manager.py:114
+#: src/package-manager.py:112
 msgid "Show New Packages"
 msgstr "Toon nieuwe pakketten"
 
-#: src/package-manager.py:116
+#: src/package-manager.py:114
 msgid "Show Upgradable Packages"
 msgstr "Toon op te waarderen pakketten"
 
-#: src/package-manager.py:138 src/HelpDialog.py:29
+#: src/package-manager.py:136 src/HelpDialog.py:29
 msgid "Package Manager Help"
 msgstr "Pakketbeheer hulp"
 
-#: src/package-manager.py:151
+#: src/package-manager.py:149
 msgid "Package to install"
 msgstr "Te installeren pakket"
 
-#: src/package-manager.py:152
+#: src/package-manager.py:150
 msgid "Show main window on startup"
 msgstr "Toon hoofdvenster bij opstarten"
 
-#: src/package-manager.py:153
+#: src/package-manager.py:151
 msgid "Show debug output"
 msgstr "Toon debug uitvoer"
 
-#: src/package-manager.py:156
+#: src/package-manager.py:154
 msgid "Package Manager is already running!"
 msgstr "Pakketbeheer is al opgestart!"
+
+#: src/ComarIface.py:38
+msgid "Unable to connect to DBus."
+msgstr "Kan niet verbinden met DBus."
+
+#: src/ComarIface.py:38
+msgid "DBus Error"
+msgstr "DBus fout"
+
+#: src/ComarIface.py:52
+msgid "D-Bus Error"
+msgstr "D-Bus fout"
+
+#: src/ComarIface.py:57
+msgid "COMAR Auth Error"
+msgstr "COMAR identificatie fout"
+
+#: src/ComarIface.py:62
+msgid "Network error. Please check your network connections and try again."
+msgstr ""
+
+#: src/ComarIface.py:62 src/ComarIface.py:64
+msgid "COMAR Error"
+msgstr "COMAR fout"
+
+#: src/ComarIface.py:69
+msgid "You are not authorized for this operation."
+msgstr "U bent niet geautoriseerd voor deze handeling."
+
+#: src/Progress.py:51
+msgid "downloaded ( total: %1 )"
+msgstr "gedownload (totaal: %1 )"
+
+#: src/Progress.py:83
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Voorbereiden PiSi...</b>"
+
+#: src/Progress.py:85 src/ProgressDialog.py:94
+msgid "--"
+msgstr "--"
+
+#: src/Progress.py:86 src/ProgressDialog.py:93
+msgid "downloaded (total: -- )"
+msgstr "gedownload (totaal: -- )"
+
+#: src/Progress.py:87 src/ProgressDialog.py:92
+msgid "-- / --  package"
+msgstr "-- / --  pakket"
+
+#: src/Progress.py:105
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>Annuleren handeling...</b>"
+
+#: src/Progress.py:132 src/Progress.py:136
+msgid "Now %1 <b>%2</b> package"
+msgstr "Nu %1 <b>%2</b> pakket"
+
+#: src/Progress.py:146
+msgid "installed"
+msgstr "geïnstalleerd"
+
+#: src/Progress.py:148
+msgid "removed"
+msgstr "verwijderd"
+
+#: src/Progress.py:150
+msgid "upgraded"
+msgstr "opgewaardeerd"
+
+#: src/Progress.py:152
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 pakket %3"
+
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Te installeren PiSi pakket"
+
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "U heeft een pakket geselecteerd om te installeren. Wilt u doorgaan?"
+
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Installeer pakket"
+
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "uitpakken"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "configureren"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "verwijderen"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "installeren"
 
 #: src/BasketDialog.py:51 src/BasketDialog.py:56
 msgid "Basket"
@@ -416,47 +668,6 @@ msgstr "Totale grootte: <b>%1</b>"
 msgid "Size: "
 msgstr "Grootte: "
 
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "uitpakken"
-
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "configureren"
-
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "verwijderen"
-
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "installeren"
-
-#: src/Preferences.py:118
-msgid "Add New Repository"
-msgstr "Toevoegen nieuwe repository"
-
-#: src/Preferences.py:125
-msgid "Edit Repository"
-msgstr "Bewerken repository"
-
-#: src/Preferences.py:171 src/Preferences.py:187
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
-"</qt>"
-
-#: src/Preferences.py:171 src/Preferences.py:187
-msgid "Pisi Error"
-msgstr "Pisi fout"
-
-#: src/Preferences.py:255
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
-
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
 msgstr "Repository dialoog"
@@ -486,217 +697,6 @@ msgstr "Repository &naam"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Naam van de repository, bijv. <b>pardus-devel</b>"
 
-#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
-#: src/SpecialList.py:100
-msgid "Select all packages in this category"
-msgstr "Selecteer alle pakketten in deze categorie"
-
-#: src/CustomEventListener.py:38 src/SpecialList.py:102
-msgid "Reverse package selections"
-msgstr "Keer pakketselectie om"
-
-#: src/PreferencesDialog.py:53 src/PreferencesDialog.py:191
-msgid "Repository Name"
-msgstr "Repository naam"
-
-#: src/PreferencesDialog.py:54 src/PreferencesDialog.py:192
-msgid "Address"
-msgstr "Adres"
-
-#: src/PreferencesDialog.py:184
-msgid "Package Manager Settings"
-msgstr "Pakketbeheer instellingen"
-
-#: src/PreferencesDialog.py:186
-msgid "F1"
-msgstr "F1"
-
-#: src/PreferencesDialog.py:193
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"U kunt hier de huidige software repositories en corresponderende adressen "
-"zien"
-
-#: src/PreferencesDialog.py:194
-msgid "&Add New Repository"
-msgstr "&Toevoegen nieuwe repository"
-
-#: src/PreferencesDialog.py:195
-msgid "Click here to add a new software repository"
-msgstr "Klik hier om een nieuwe softwarerepository toe te voegen"
-
-#: src/PreferencesDialog.py:196
-msgid "&Edit Repository"
-msgstr "&Bewerken repository"
-
-#: src/PreferencesDialog.py:197
-msgid "Click here to modify the name or address of a repository"
-msgstr "Klik hier om de naam of het adres van een repository te veranderen"
-
-#: src/PreferencesDialog.py:198
-msgid "&Remove Repository"
-msgstr "&Verwijderen repository"
-
-#: src/PreferencesDialog.py:199
-msgid "Click here to delete a repository from the list"
-msgstr "Klik hier om een repository uit de lijst te verwijderen"
-
-#: src/PreferencesDialog.py:200
-msgid "Move &Up"
-msgstr "&Omhoog verplaatsen"
-
-#: src/PreferencesDialog.py:201
-msgid "Click here to move the repository one level up"
-msgstr "Klik hier om de repository een niveau hoger te plaatsen"
-
-#: src/PreferencesDialog.py:202
-msgid "Move &Down"
-msgstr "Om&laag verplaatsten"
-
-#: src/PreferencesDialog.py:203
-msgid "Click here to move the repository one level down"
-msgstr "Klik hier om de repository een niveau lager te plaatsen"
-
-#: src/PreferencesDialog.py:204
-msgid "&Repositories"
-msgstr "&Repositories"
-
-#: src/PreferencesDialog.py:205
-msgid "&Show only desktop applications"
-msgstr "&Toon alleen desktop toepassingen"
-
-#: src/PreferencesDialog.py:206
-msgid "If checked, then pisi will only show desktop applications"
-msgstr "Indien geselecteerd, zal pisi alleen desktop toepassingen weergeven"
-
-#: src/PreferencesDialog.py:207
-msgid "Enable &periodic update check"
-msgstr "Activeer &periodieke update check"
-
-#: src/PreferencesDialog.py:208
-msgid "&Enable system tray icon"
-msgstr "G&ebruik systeemvak icoon"
-
-#: src/PreferencesDialog.py:209
-msgid "Check interval:"
-msgstr "Controle interval:"
-
-#: src/PreferencesDialog.py:210
-msgid " min"
-msgstr " min"
-
-#: src/PreferencesDialog.py:211
-msgid "&General Settings"
-msgstr "Al&gemene instellingen"
-
-#: src/PreferencesDialog.py:212
-msgid "Clear Cache"
-msgstr "Leeg cachegeheugen"
-
-#: src/PreferencesDialog.py:213
-msgid "C&lean disk cache now"
-msgstr "Opruimen schijf&cache"
-
-#: src/PreferencesDialog.py:214
-msgid ""
-"Clearing the disk cache will remove all downloaded software. \n"
-"This will not delete installed software or affect your system stability."
-msgstr ""
-"Legen van schijf cache zal alle gedownloade software verwijderen. \n"
-"Het zal geen geÏnstalleerde software verwijderen of de stabiliteit van uw "
-"systeem beïnvloeden."
-
-#: src/PreferencesDialog.py:216
-msgid "Cache usage"
-msgstr "Cachegebruik"
-
-#: src/PreferencesDialog.py:217
-msgid "Maximum cache size:"
-msgstr "Maximum cachegrootte:"
-
-#: src/PreferencesDialog.py:218
-msgid "&Use hard disk cache for downloaded software"
-msgstr "Gebr&uik hardeschijf cache voor gedownloade software"
-
-#: src/PreferencesDialog.py:219
-msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
-"Als geselecteerd, zullen gedownloade pakketten bewaard worden in de "
-"hardeschijf cache"
-
-#: src/PreferencesDialog.py:220
-msgid "Mb <i>(use 0 for no limit)</i>"
-msgstr "Mb <i>(gebruik 0 voor geen limiet)</i>"
-
-#: src/PreferencesDialog.py:221
-msgid "C&ache"
-msgstr "C&ache"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "Te installeren PiSi pakket"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "U heeft een pakket geselecteerd om te installeren. Wilt u doorgaan?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Installeer pakket"
-
-#: src/SpecialList.py:163
-msgid "Description: "
-msgstr "Beschrijving: "
-
-#: src/SpecialList.py:164
-msgid "Version: "
-msgstr "Versie: "
-
-#: src/SpecialList.py:165
-msgid "Repository: "
-msgstr "Repository:"
-
-#: src/SpecialList.py:166
-msgid "Package Size: "
-msgstr "Pakketgrootte: "
-
-#: src/SpecialList.py:167
-msgid "Homepage: "
-msgstr "Homepage: "
-
-#: src/Progress.py:51
-msgid "downloaded ( total: %1 )"
-msgstr "gedownload (totaal: %1 )"
-
-#: src/Progress.py:83
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>Voorbereiden PiSi...</b>"
-
-#: src/Progress.py:105
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Annuleren handeling...</b>"
-
-#: src/Progress.py:132 src/Progress.py:136
-msgid "Now %1 <b>%2</b> package"
-msgstr "Nu %1 <b>%2</b> pakket"
-
-#: src/Progress.py:146
-msgid "installed"
-msgstr "geïnstalleerd"
-
-#: src/Progress.py:148
-msgid "removed"
-msgstr "verwijderd"
-
-#: src/Progress.py:150
-msgid "upgraded"
-msgstr "opgewaardeerd"
-
-#: src/Progress.py:152
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 pakket %3"
-
 #: src/Notifier.py:41
 msgid "Show Updates"
 msgstr "Toon updates"
@@ -704,3 +704,52 @@ msgstr "Toon updates"
 #: src/Notifier.py:41
 msgid "Ignore"
 msgstr "Negeer"
+
+#: src/Tray.py:38
+msgid "Update"
+msgstr "Update"
+
+#: src/Tray.py:66
+msgid "There are <b>%1</b> updates available!"
+msgstr "Er zijn <b>%1</b> updates beschikbaar!"
+
+#: src/Tray.py:67
+msgid "Updates Available!"
+msgstr "Updates verkrijgbaar!"
+
+#: src/Preferences.py:219
+msgid "Add New Repository"
+msgstr "Toevoegen nieuwe repository"
+
+#: src/Preferences.py:226
+msgid "Edit Repository"
+msgstr "Bewerken repository"
+
+#: src/Preferences.py:272 src/Preferences.py:288
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Repository adres hoort te eindigen op xml of xml.bz2. <p>Probeer opnieuw."
+"</qt>"
+
+#: src/Preferences.py:272 src/Preferences.py:288
+msgid "Pisi Error"
+msgstr "Pisi fout"
+
+#: src/Preferences.py:363
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
+
+#: src/ProgressDialog.py:91
+msgid "Progress"
+msgstr "Voortgang"
+
+#: src/ProgressDialog.py:97
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Voorbereiden PiSi...</h3>"
+
+#: src/ProgressDialog.py:98
+msgid "Now installing <b>amsn</b> package"
+msgstr "Installeert nu <b>amsn</b> pakket"
