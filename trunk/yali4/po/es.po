@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-12 12:32+0300\n"
-"PO-Revision-Date: 2008-06-11 19:34-0400\n"
+"PO-Revision-Date: 2008-06-12 12:24-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -85,8 +85,7 @@ msgstr ""
 "según el método seleccionado."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Particionamiento automático intenta usar el espacio libre o redimensiona "
 "particiones existentes"
@@ -112,21 +111,17 @@ msgid "You can use manual partitioning with this option"
 msgstr "Puede utilizar esta opción para realizar particionamiento manual"
 
 #: yali4/gui/Ui/autopartwidget.py:110
-#, fuzzy
+
 msgid "If there is no suitable partition this option will be disabled"
 msgstr ""
-"Esta opción intentará encontrar espacio adecuado disponible, o particiones "
-"que se puedan redimensionar (si no hay una partición adecuada disponible, "
-"esta opción queda deshabilitada)"
+"Si no hay una partición adecuada disponible, "
+"esta opción queda deshabilitada"
 
 #: yali4/gui/Ui/autopartwidget.py:111
-#, fuzzy
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
-"que se puedan redimensionar (si no hay una partición adecuada disponible, "
-"esta opción queda deshabilitada)"
+"que se puedan redimensionar"
 
 #: yali4/gui/Ui/autopartwidget.py:112
 msgid ""
@@ -152,7 +147,7 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:116
 msgid "&nbsp;"
-msgstr ""
+msgstr "&nbsp;"
 
 # Desea instalar el cargador de arranque (GRUB) en el MBR del disco ?
 # Se necesita un cargador de arranque para iniciar Pardus.
@@ -312,7 +307,7 @@ msgstr "Mostrar/ocultar Ayuda"
 
 #: yali4/gui/Ui/main.py:453
 msgid "Previous Screen"
-msgstr "Pantalla anterior"
+msgstr "Ir a pantalla anterior"
 
 #: yali4/gui/Ui/main.py:454
 msgid "Back"
@@ -320,7 +315,7 @@ msgstr "Atrás"
 
 #: yali4/gui/Ui/main.py:455
 msgid "Next Screen"
-msgstr "Pantalla siguiente"
+msgstr "Ir a pantalla siguiente"
 
 #: yali4/gui/Ui/main.py:456
 msgid "Next"
@@ -347,8 +342,9 @@ msgid "Resize Partition"
 msgstr "Redimensionar Partición"
 
 #: yali4/gui/Ui/partedit.py:149
+# please verify is this a column header ? favor revisar
 msgid "Use :"
-msgstr "Usar:"
+msgstr "Usado:"
 
 #: yali4/gui/Ui/partedit.py:150
 msgid "Size :"
@@ -363,7 +359,6 @@ msgid "Format :"
 msgstr "Formatear :"
 
 #: yali4/gui/Ui/partedit.py:153
-#, fuzzy
 msgid "Yes, format this partition"
 msgstr "Si, formatear esta partición"
 
@@ -389,15 +384,16 @@ msgstr "Se realizarán los cambios cuando usted termina.."
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Refresh Disks"
-msgstr "Actualizar Discos"
+msgstr "Actualizar información de discos"
 
 #: yali4/gui/Ui/partedit.py:160
 msgid "Reset All Changes"
 msgstr "Deshacer todos Cambios"
 
 #: yali4/gui/Ui/partedit.py:161
+# i just say "accept", because the program does the "apply" act later !!
 msgid "Apply"
-msgstr "Aplicar"
+msgstr "Aceptar"
 
 #: yali4/gui/Ui/partresize.py:82
 msgid ""
@@ -511,7 +507,6 @@ msgid "Auto Login Disabled"
 msgstr "No iniciar sesión automáticamente"
 
 #: yali4/gui/Ui/summarywidget.py:60
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -524,19 +519,20 @@ msgid ""
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
 "p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Seleccione el método de particionamiento:</"
-"span></p></body></html>"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
 
 #: yali4/gui/Ui/summarywidget.py:66
 msgid "Begin Install"
-msgstr ""
+msgstr "iniciar Instalación"
 
 #: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
@@ -576,12 +572,10 @@ msgid ""
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
-"Bienvenido! Nuestro asistente de instalación YALI le ayudará instalar Pardus "
-"2008. YALI le ayudará instalar Pardus 2008 de manera rápida y sencilla "
+"Bienvenido! Nuestro asistente de instalación YALI. YALI le ayudará instalar Pardus 2008 de manera rápida y sencilla "
 "seguido del particionamiento de disco(s) con la herramienta inteligente de "
 "particionamiento.\n"
 
-# what does "panel" refer to ?
 #: yali4/gui/descSlide.py:20
 msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
@@ -590,8 +584,8 @@ msgid ""
 msgstr ""
 "Nuestro asistente Kaptan le guiará una vez finalizada la instalación. Con "
 "Kaptan puede agregar fácilmente repositorios adicionales y administrar "
-"configuraciones básicas como ratón, fondo de pantalla, camara web y "
-"paneles.\n"
+"configuraciones básicas como el ratón, fondo de pantalla, camara web y "
+"paneles al escritorio.\n"
 
 #: yali4/gui/descSlide.py:22
 msgid ""
@@ -646,9 +640,9 @@ msgid ""
 "Kontact, with its Groupware feature, will be your best friend at work.\n"
 msgstr ""
 "Kontact, el administrador de información personal KDE, le ayuda administrar "
-"con una sola herramienta todos sus emails, RSS feeds, diarios, listas de "
+"en una sola herramienta todos sus emails, RSS feeds, diarios, listas de "
 "tareas y entradas en su blog. Kontact, con sus características de Groupware "
-"será su mejor amigo en el trabajo.\n"
+"será su mejor compañero en el trabajo.\n"
 
 #: yali4/gui/descSlide.py:32
 msgid ""
@@ -669,7 +663,7 @@ msgid ""
 "extensive abilities that will meet professional graphic artists' and "
 "designers' needs.\n"
 msgstr ""
-"Gimp es un programa de edición de imágenes avanzado y viene preinstalado en "
+"Gimp es un programa avanzado de edición de imágenes y viene preinstalado en "
 "Pardus 2008. Gimp le permite editar todos los formatos de imagenes comunes y "
 "contiene habilidades extensas requeridos por artistas y diseñadores gráficos "
 "profesionales.\n"
@@ -691,7 +685,7 @@ msgid ""
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
 msgstr ""
-"Kaffeine es el reproductor de video en Pardus 2008 por omisión. Tiene un "
+"Kaffeine es el reproductor de video en Pardus 2008 por defecto. Tiene un "
 "alto rendimiento en la reproduccion de DVDs, VCDs, y una serie de formatos "
 "de video, incluyendo, pero no limitado a, MPEG, AVI y DivX. Si posee una "
 "tarjeta de TV digital puede grabar sus programas favoritos con Kaffeine!\n"
@@ -703,7 +697,7 @@ msgid ""
 "different networks using Kopete.\n"
 msgstr ""
 "Con Kopete puede usar cuentas múltiples de varios servicios de mensajería "
-"instantánea comoMSN, Yahoo!, ICQ, AIM, GTalk y Jabber, y puede chatear con "
+"instantánea como MSN, Yahoo!, ICQ, AIM, GTalk y Jabber, y puede chatear con "
 "sus amigos en las diferentes redes.\n"
 
 #: yali4/gui/descSlide.py:42
@@ -713,8 +707,7 @@ msgid ""
 "K3b.\n"
 msgstr ""
 "Copiar CDs (o DVDs), crear CDs de datos o audio, crear imágenes ISO y quemar "
-"imágenes de CD/DVD a discos son algunas de las funciones para las que se "
-"puede usar el programa K3b.\n"
+"imágenes de CD/DVD a discos, son algunas de las operaciones principales que se pueden realizar con el programa K3b.\n"
 
 #: yali4/gui/descSlide.py:44
 msgid ""
@@ -927,8 +920,7 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:110
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -939,8 +931,7 @@ msgstr ""
 # Las contraseñas no coinciden!
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:137
 msgid ""
@@ -1010,8 +1001,7 @@ msgstr "Verifique sus discos"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity.."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1027,7 +1017,7 @@ msgstr ""
 "<font size=\"+2\">Comprobar CD!</font>\n"
 "<font size=\"+1\"><p>\n"
 "Puede combrobar si los paquetes del CD están guardados corectamente en el "
-"CD. Esta verificación es muy importante para evitar problemas durante la "
+"CD. Esta verificación es muy importante para prevenir problemas durante la "
 "instalación. Si la falla la comprobación intente volver a grabar la imagen "
 "ISO a menor velocidad (ej. 12x o menos).</p></font>\n"
 
@@ -1056,7 +1046,7 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Configuración de Zona Horaria</font>\n"
-"<font size=\"+1\"><p>Aqui puede especificar su ubicación y su zona horaria; "
+"<font size=\"+1\"><p>Aqui puede establecer su ubicación y su zona horaria; "
 "y fijar la fecha y hora.\n"
 "La configuración ajustará el reloj del hardware. Continúe con la instalación "
 "luego de realizar los ajustes pertinentes.</p></font>\n"
@@ -1391,14 +1381,13 @@ msgstr ""
 
 #: yali4/gui/ScrSummary.py:42
 msgid "The last step before install"
-msgstr ""
+msgstr "Ultimo paso antes de la instalación"
 
 #: yali4/gui/ScrSummary.py:43
 msgid "Summary of your installation.."
-msgstr ""
+msgstr "Resumen de la instalación.."
 
 #: yali4/gui/ScrSummary.py:45
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Install Summary</font>\n"
@@ -1410,19 +1399,16 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Configuración de Zona Horaria</font>\n"
-"<font size=\"+1\"><p>Aqui puede especificar su ubicación y su zona horaria; "
-"y fijar la fecha y hora.\n"
-"La configuración ajustará el reloj del hardware. Continúe con la instalación "
-"luego de realizar los ajustes pertinentes.</p></font>\n"
+"<font size=\"+2\">Resumen de instalación</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Aqui se presentan las opciones de instalación determinados. Los puede revisar antes de iniciar la instalación.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrSummary.py:65
-#, fuzzy
 msgid "<b><p>This action will reboot your system !</p></b>"
-msgstr ""
-"<b>\n"
-"<p>Presione el botón 'Reiniciar' para reiniciar el sistema.</p>\n"
-"</b>\n"
+msgstr "<b><p>Esta acción reiniciará su sistema !</p></b>"
 
 #: yali4/gui/ScrSummary.py:90 yali4/gui/ScrSummary.py:98
 #: yali4/gui/ScrSummary.py:112
@@ -1520,8 +1506,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:175
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:232
 msgid "Update User"
@@ -1833,14 +1818,3 @@ msgstr "Intercambio (swap)"
 msgid "Archive Partition"
 msgstr "Guardar Partición"
 
-#~ msgid ""
-#~ "<b>\n"
-#~ "<p>This action will use your entire disk for Pardus installation and "
-#~ "<br>\n"
-#~ "all your present data on the selected disk will be lost.</p>\n"
-#~ "</b>\n"
-#~ msgstr ""
-#~ "<b>\n"
-#~ "<p>Esta acción usará el disco entero para la instalación de Pardus\n"
-#~ "y se perderán todos los datos que están actualmente en el disco "
-#~ "seleccionado.</p>\n"
