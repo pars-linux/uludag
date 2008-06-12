@@ -225,7 +225,7 @@
                             </property>
                             <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
                                 <property name="name">
-                                    <cstring>intervalCheck_2</cstring>
+                                    <cstring>useBandwidthLimit</cstring>
                                 </property>
                                 <property name="text">
                                     <string>Use bandwidth limit</string>
@@ -265,13 +265,13 @@
                                     <number>30</number>
                                 </property>
                                 <property name="minValue">
-                                    <number>0</number>
+                                    <number>1</number>
                                 </property>
                                 <property name="maxValue">
                                     <number>20000</number>
                                 </property>
                                 <property name="relativeValue">
-                                    <number>0</number>
+                                    <number>30</number>
                                 </property>
                                 <property name="suffix">
                                     <string> kb/s</string>
@@ -833,6 +833,18 @@ This will not delete installed software or affect your system stability.</string
         <signal>toggled(bool)</signal>
         <receiver>ftpProxyPort</receiver>
         <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>useBandwidthLimit</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>bandwidthLabel</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>useBandwidthLimit</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>bandwidthValue</receiver>
+        <slot>setEnabled(bool)</slot>
     </connection>
 </connections>
 <tabstops>
