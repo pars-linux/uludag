@@ -84,8 +84,6 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
     def bandwidthSettingChanged(self, data):
         self.bandwidthChanged = True
-        if not self.useBandwidthLimit.isChecked():
-            self.bandwidthValue.setValue(0)
 
     def proxyDataChanged(self, data):
         self.proxyChanged = True
