@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-10 21:52+0300\n"
-"PO-Revision-Date: 2008-05-16 01:02+0300\n"
+"PO-Revision-Date: 2008-06-12 11:07+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Alt+O"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:193
 msgid "Always"
-msgstr ""
+msgstr "Immer"
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:140
 msgid ""
@@ -72,12 +72,10 @@ msgid "Password for user(%1)"
 msgstr "Passwort für Benutzer(%1)"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:191
-#, fuzzy
 msgid "Remember authorization"
 msgstr "Autorisierung merken"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:194
-#, fuzzy
 msgid "Remember authorization for this session"
 msgstr "Autorisierung für diese Sitzung merken"
 
@@ -88,3 +86,4 @@ msgstr "Benutzer auswählen..."
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:182
 msgid "Select a user..."
 msgstr "Einen Benutzer auswählen..."
+
