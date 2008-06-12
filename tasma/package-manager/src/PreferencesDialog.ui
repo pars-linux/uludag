@@ -111,216 +111,192 @@
                 <attribute name="title">
                     <string>&amp;General Settings</string>
                 </attribute>
-                <widget class="QCheckBox">
+                <grid>
                     <property name="name">
-                        <cstring>onlyGuiApp</cstring>
+                        <cstring>unnamed</cstring>
                     </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>11</x>
-                            <y>11</y>
-                            <width>563</width>
-                            <height>22</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Show only desktop applications</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+S</string>
-                    </property>
-                    <property name="toolTip" stdset="0">
-                        <string>If checked, then pisi will only show desktop applications</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>systemTray</cstring>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>11</x>
-                            <y>39</y>
-                            <width>563</width>
-                            <height>22</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Enable system tray icon</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>intervalCheck</cstring>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>11</x>
-                            <y>67</y>
-                            <width>563</width>
-                            <height>22</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>Enable &amp;periodic update check</string>
-                    </property>
-                    <property name="accel">
-                        <string>Alt+P</string>
-                    </property>
-                </widget>
-                <widget class="KIntNumInput">
-                    <property name="name">
-                        <cstring>intervalSpin</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>210</x>
-                            <y>100</y>
-                            <width>109</width>
-                            <height>27</height>
-                        </rect>
-                    </property>
-                    <property name="value">
-                        <number>15</number>
-                    </property>
-                    <property name="minValue">
-                        <number>1</number>
-                    </property>
-                    <property name="maxValue">
-                        <number>10000</number>
-                    </property>
-                    <property name="suffix">
-                        <string> min</string>
-                    </property>
-                </widget>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>intervalLabel</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>false</bool>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>11</x>
-                            <y>105</y>
-                            <width>184</width>
-                            <height>20</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>Check interval:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>kIntNumInput3</cstring>
-                    </property>
-                </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer6</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>131</height>
-                        </size>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>257</x>
-                            <y>171</y>
-                            <width>20</width>
-                            <height>131</height>
-                        </rect>
-                    </property>
-                </spacer>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>bandwidthLabel</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>true</bool>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>10</x>
-                            <y>140</y>
-                            <width>110</width>
-                            <height>20</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>Bandwidth limit:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>kIntNumInput3</cstring>
-                    </property>
-                </widget>
-                <spacer>
-                    <property name="name">
-                        <cstring>spacer8</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>241</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>330</x>
-                            <y>140</y>
-                            <width>241</width>
-                            <height>20</height>
-                        </rect>
-                    </property>
-                </spacer>
-                <widget class="KIntNumInput">
-                    <property name="name">
-                        <cstring>bandwidthValue</cstring>
-                    </property>
-                    <property name="enabled">
-                        <bool>true</bool>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>210</x>
-                            <y>140</y>
-                            <width>109</width>
-                            <height>27</height>
-                        </rect>
-                    </property>
-                    <property name="value">
-                        <number>30</number>
-                    </property>
-                    <property name="minValue">
-                        <number>0</number>
-                    </property>
-                    <property name="maxValue">
-                        <number>20000</number>
-                    </property>
-                    <property name="relativeValue">
-                        <number>0</number>
-                    </property>
-                    <property name="suffix">
-                        <string> kb/s</string>
-                    </property>
-                </widget>
+                    <widget class="QCheckBox" row="0" column="0">
+                        <property name="name">
+                            <cstring>onlyGuiApp</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Show only desktop applications</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+S</string>
+                        </property>
+                        <property name="toolTip" stdset="0">
+                            <string>If checked, then pisi will only show desktop applications</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="1" column="0">
+                        <property name="name">
+                            <cstring>systemTray</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Enable system tray icon</string>
+                        </property>
+                    </widget>
+                    <widget class="QButtonGroup" row="2" column="0">
+                        <property name="name">
+                            <cstring>buttonGroup2</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Update check</string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>intervalLabel</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Check interval:</string>
+                                </property>
+                                <property name="buddy" stdset="0">
+                                    <cstring>kIntNumInput3</cstring>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
+                                <property name="name">
+                                    <cstring>intervalCheck</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Enable &amp;periodic update check</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+P</string>
+                                </property>
+                            </widget>
+                            <widget class="KIntNumInput" row="1" column="1">
+                                <property name="name">
+                                    <cstring>intervalSpin</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="value">
+                                    <number>15</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>1</number>
+                                </property>
+                                <property name="maxValue">
+                                    <number>10000</number>
+                                </property>
+                                <property name="suffix">
+                                    <string> min</string>
+                                </property>
+                            </widget>
+                            <spacer row="1" column="2">
+                                <property name="name">
+                                    <cstring>spacer10</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>151</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </grid>
+                    </widget>
+                    <widget class="QButtonGroup" row="3" column="0">
+                        <property name="name">
+                            <cstring>buttonGroup3</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Bandwidth limit</string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="3">
+                                <property name="name">
+                                    <cstring>intervalCheck_2</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Use bandwidth limit</string>
+                                </property>
+                                <property name="accel">
+                                    <string></string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>bandwidthLabel</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Bandwidth limit:</string>
+                                </property>
+                                <property name="buddy" stdset="0">
+                                    <cstring>kIntNumInput3</cstring>
+                                </property>
+                            </widget>
+                            <widget class="KIntNumInput" row="1" column="1">
+                                <property name="name">
+                                    <cstring>bandwidthValue</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>200</width>
+                                        <height>32767</height>
+                                    </size>
+                                </property>
+                                <property name="value">
+                                    <number>30</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>0</number>
+                                </property>
+                                <property name="maxValue">
+                                    <number>20000</number>
+                                </property>
+                                <property name="relativeValue">
+                                    <number>0</number>
+                                </property>
+                                <property name="suffix">
+                                    <string> kb/s</string>
+                                </property>
+                            </widget>
+                            <spacer row="1" column="2">
+                                <property name="name">
+                                    <cstring>spacer9</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>71</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </grid>
+                    </widget>
+                </grid>
             </widget>
             <widget class="QWidget">
                 <property name="name">
@@ -697,6 +673,9 @@ This will not delete installed software or affect your system stability.</string
                                 </property>
                                 <property name="maxValue">
                                     <number>65535</number>
+                                </property>
+                                <property name="value">
+                                    <number>80</number>
                                 </property>
                             </widget>
                         </grid>
