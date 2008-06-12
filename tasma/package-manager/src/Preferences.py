@@ -155,6 +155,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         if httpProxy or ftpProxy or httpsProxy:
             self.useProxyButton.setChecked(True)
+            if (httpProxy == httpsProxy == ftpProxy) and (httpProxyPort == httpsProxyPort == ftpProxyPort):
+                self.useHttpForAll.setChecked(True)
 
     def getBandwidthSetting(self):
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
