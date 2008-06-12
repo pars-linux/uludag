@@ -50,6 +50,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.clearCacheButton, SIGNAL("clicked()"), self.clearAllCached)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
         self.connect(self.useHttpForAll, SIGNAL("toggled(bool)"), self.useHttpToggled)
+        self.connect(self.useBandwidthLimit, SIGNAL("toggled(bool)"), self.bandwidthSettingChanged)
+        self.connect(self.bandwidthValue, SIGNAL("valueChanged(int)"), self.bandwidthSettingChanged)
 
         self.connect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.proxyDataChanged)
         self.connect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.proxyDataChanged)
@@ -77,8 +79,13 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         # This is to not call setRepositories unnecessarily
         self.reposChanged = False
-
+        self.bandwidthChanged = False
         self.proxyChanged = False
+
+    def bandwidthSettingChanged(self, data):
+        self.bandwidthChanged = True
+        if not self.useBandwidthLimit.isChecked():
+            self.bandwidthValue.setValue(0)
 
     def proxyDataChanged(self, data):
         self.proxyChanged = True
@@ -176,7 +183,8 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         else:
             bandwidth_limit = 0
 
-        self.bandwidth_limit = bandwidth_limit
+        if bandwidth_limit != 0:
+            self.useBandwidthLimit.setChecked(True)
         self.bandwidthValue.setValue(bandwidth_limit)
 
     # Cache settings are system wide and taken from pisi.conf
@@ -190,7 +198,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             cache_limit = int(cache_limit)
         else:
             cache_limit = 0
-        
+
         # If pisi.conf does not have it yet, default is use package cache
         if not cache or cache == "True":
             enableCache = True
@@ -316,8 +324,12 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.setCacheSettings(self.useCacheCheck.isChecked(), self.useCacheSize.value())
 
         #set bandwidth if changed
-        if self.bandwidth_limit != self.bandwidthValue.value():
-            self.setBandwidth(self.bandwidthValue.value())
+        if self.bandwidthChanged:
+            if self.useBandwidthLimit.isChecked():
+                self.setBandwidth(self.bandwidthValue.value())
+            else:
+                # zero for no bandwidth limit
+                self.setBandwidth(0)
 
         if self.intervalCheck.isChecked():
             self.parent.parent.tray.updateInterval(self.intervalSpin.value())
