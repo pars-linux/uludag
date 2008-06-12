@@ -105,6 +105,11 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             for control in [self.httpsProxy, self.httpsProxyPort, self.ftpProxy, self.ftpProxyPort]:
                 control.setEnabled(True)
 
+            self.httpsProxy.setText("")
+            self.httpsProxyPort.setValue(0)
+            self.ftpProxy.setText("")
+            self.ftpProxyPort.setValue(0)
+
     def setCacheSettings(self, useCache, cacheLimit):
         self.parent.command.setCache(useCache, cacheLimit)
 
