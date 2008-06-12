@@ -103,6 +103,7 @@ class Runner:
 
         # We want it to be a full-screen window.
         self._window.ui.resize(self._app.desktop().size())
+        self._window.ui.setMaximumSize(self._app.desktop().size())
         self._window.ui.move(0,0)
         self._window.ui.show()
         ctx.yali.info.updateMessage()

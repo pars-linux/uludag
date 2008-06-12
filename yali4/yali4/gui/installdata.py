@@ -13,6 +13,12 @@
 # Auto Partition Methods
 methodUseAvail, methodEraseAll = range(2)
 
+# Boot Loader Options
+B_DONT_INSTALL = 0
+B_INSTALL_PART = 1
+B_INSTALL_MBR  = 2
+B_INSTALL_SMART= 3
+
 class InstallData:
     keyData = None
     rootPassword = None
@@ -23,6 +29,7 @@ class InstallData:
     autoPartPartition = None
     autoPartMethod = methodUseAvail
     bootLoaderDev = None
+    bootLoaderOption = B_DONT_INSTALL
     orderedDiskList = []
     repoAddr = None
     useYaliFirstBoot = False
