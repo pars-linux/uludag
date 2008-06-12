@@ -23,10 +23,7 @@ import thread
 from os.path import basename
 
 import yali4.storage
-import yali4.partitionrequest as request
-import yali4.partitiontype as parttype
-from yali4.parteddata import *
-
+from yali4.gui.installdata import *
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
 from yali4.gui.GUIException import *
@@ -135,24 +132,15 @@ loader.
 
     def execute(self):
 
-        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
-                                                                  request.mountRequestType)
-
-        # install_dev
+        # Apply GRUB Options
         if self.ui.noInstall.isChecked():
-            ctx.installData.bootLoaderDev = None
+            ctx.installData.bootLoaderOption = B_DONT_INSTALL
         elif self.ui.installPart.isChecked():
-            ctx.installData.bootLoaderDev = basename(root_part_req.partition().getPath())
+            ctx.installData.bootLoaderOption = B_INSTALL_PART
         elif self.ui.installMBR.isChecked():
-            ctx.installData.bootLoaderDev = basename(self.device.getPath())
+            ctx.installData.bootLoaderOption = B_INSTALL_MBR
         else:
-            ctx.yali.guessBootLoaderDevice()
-
-        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,request.mountRequestType)
-        _ins_part = root_part_req.partition().getPath()
-
-        ctx.debugger.log("Pardus Root is : %s" % _ins_part)
-        ctx.debugger.log("GRUB will be installing to : %s" % ctx.installData.bootLoaderDev)
+            ctx.installData.bootLoaderOption = B_INSTALL_SMART
 
         return True
 

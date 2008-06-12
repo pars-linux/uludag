@@ -10,23 +10,31 @@
 # Please read the COPYING file.
 #
 
+# base
 import os
+import time
+import yali4.sysutils
+from yali4.gui.installdata import *
 
+# multi language
 import gettext
 __trans = gettext.translation('yali4', fallback=True)
 _ = __trans.ugettext
 
+# PyQt4 Rocks
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-import yali4.sysutils
+# libParted
+from yali4.parteddata import *
+import yali4.partitionrequest as request
+import yali4.partitiontype as parttype
+
+# GUI Stuff
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import WarningDialog, WarningWidget
 from yali4.gui.Ui.summarywidget import Ui_SummaryWidget
 import yali4.gui.context as ctx
-
-# Auto Partition Methods
-methodUseAvail, methodEraseAll = range(2)
 
 ##
 # Summary screen
@@ -57,7 +65,7 @@ Here you can see your install options and look at them again before installation
         w.warning.setText(_('''<b><p>This action will reboot your system !</p></b>'''))
         w.ok.setText(_("Reboot"))
         dialog = WarningDialog(w, self)
-        if self.dialog.exec_():
+        if dialog.exec_():
             yali4.sysutils.fastreboot()
 
     def shown(self):
@@ -106,6 +114,25 @@ Here you can see your install options and look at them again before installation
             ctx.debugger.log("Format Operation Finished")
 
         ctx.yali.info.hide()
+
+        # Find GRUB Dev
+        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
+                                                                  request.mountRequestType)
+
+        if ctx.installData.bootLoaderOption == B_DONT_INSTALL:
+            ctx.installData.bootLoaderDev = None
+        elif ctx.installData.bootLoaderOption == B_INSTALL_PART:
+            ctx.installData.bootLoaderDev = basename(root_part_req.partition().getPath())
+        elif ctx.installData.bootLoaderOption == B_INSTALL_MBR:
+            ctx.installData.bootLoaderDev = basename(self.device.getPath())
+        else:
+            ctx.yali.guessBootLoaderDevice()
+
+        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,request.mountRequestType)
+        _ins_part = root_part_req.partition().getPath()
+
+        ctx.debugger.log("Pardus Root is : %s" % _ins_part)
+        ctx.debugger.log("GRUB will be installing to : %s" % ctx.installData.bootLoaderDev)
 
         return True
 
