@@ -2,8 +2,8 @@
 # translation of kio_sysinfo.po to
 # This file is put in the public domain.
 #
-# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
-# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
