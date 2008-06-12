@@ -26,7 +26,7 @@ import PisiIface
 class Preferences(PreferencesDialog.PreferencesDialog):
     def __init__(self, parent=None):
         PreferencesDialog.PreferencesDialog.__init__(self, parent)
-        
+
         #add icons to buttons
         self.addButton.setIconSet(Icons.loadIconSet("add", KIcon.Small))
         self.editButton.setIconSet(Icons.loadIconSet("configure", KIcon.Small))
@@ -89,6 +89,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.ftpProxy.setText(self.httpProxy.text())
             self.ftpProxyPort.setValue(self.httpProxyPort.value())
 
+            for control in [self.httpsProxy, self.httpsProxyPort, self.ftpProxy, self.ftpProxyPort]:
+                control.setEnabled(False)
+
             self.connect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.httpsProxy, SLOT("setText(const QString&)"))
             self.connect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.ftpProxy, SLOT("setText(const QString&)"))
             self.connect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.httpsProxyPort, SLOT("setValue(int)"))
@@ -98,6 +101,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
             self.disconnect(self.httpProxy, SIGNAL("textChanged(const QString&)"), self.ftpProxy, SLOT("setText(const QString&)"))
             self.disconnect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.httpsProxyPort, SLOT("setValue(int)"))
             self.disconnect(self.httpProxyPort, SIGNAL("valueChanged(int)"), self.ftpProxyPort, SLOT("setValue(int)"))
+
+            for control in [self.httpsProxy, self.httpsProxyPort, self.ftpProxy, self.ftpProxyPort]:
+                control.setEnabled(True)
 
     def setCacheSettings(self, useCache, cacheLimit):
         self.parent.command.setCache(useCache, cacheLimit)
