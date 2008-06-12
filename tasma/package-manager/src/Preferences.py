@@ -118,12 +118,18 @@ class Preferences(PreferencesDialog.PreferencesDialog):
 
         if httpProxy:
             self.parent.command.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
+        else:
+            self.parent.command.setConfig("general", "http_proxy", "None")
 
         if httpsProxy:
             self.parent.command.setConfig("general", "https_proxy", "https://%s:%s" % (httpsProxy, httpsProxyPort))
+        else:
+            self.parent.command.setConfig("general", "https_proxy", "None")
 
         if ftpProxy:
             self.parent.command.setConfig("general", "ftp_proxy", "ftp://%s:%s" % (ftpProxy, ftpProxyPort))
+        else:
+            self.parent.command.setConfig("general", "ftp_proxy", "None")
 
     def getProxySettings(self):
         config = PisiIface.read_config("/etc/pisi/pisi.conf")
