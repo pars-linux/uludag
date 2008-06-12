@@ -222,6 +222,7 @@ class InformationWindow(QtGui.QWidget):
     def updateAndShow(self, message, progress=False):
         self.updateMessage(message,progress)
         self.show()
+        ctx.mainScreen.processEvents()
 
     def show(self):
         QtGui.QWidget.show(self)

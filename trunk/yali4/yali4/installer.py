@@ -280,7 +280,6 @@ class Yali:
         ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
         ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
 
-        self.info.updateAndShow(_("Resizing ..."))
         _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
 
         self.info.updateMessage(_("Resize Finished ..."))

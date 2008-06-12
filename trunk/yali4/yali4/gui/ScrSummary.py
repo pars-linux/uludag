@@ -92,6 +92,7 @@ Here you can see your install options and look at them again before installation
                 ctx.partrequests.applyAll()
 
             elif ctx.installData.autoPartMethod == methodUseAvail:
+                ctx.yali.info.updateAndShow(_("Resizing ..."))
                 ctx.yali.autoPartUseAvail()
                 ctx.yali.checkSwap()
                 ctx.yali.info.updateMessage(_("Formatting ..."))
