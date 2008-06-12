@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>789</width>
+    <width>580</width>
     <height>514</height>
    </rect>
   </property>
@@ -49,8 +49,8 @@
     <widget class="QTextBrowser" name="content" >
      <property name="minimumSize" >
       <size>
-       <width>600</width>
-       <height>300</height>
+       <width>470</width>
+       <height>280</height>
       </size>
      </property>
      <property name="styleSheet" >

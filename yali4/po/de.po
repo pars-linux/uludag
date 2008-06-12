@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-06 12:27+0300\n"
+"POT-Creation-Date: 2008-06-12 12:32+0300\n"
 "PO-Revision-Date: 2008-06-09 22:21-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -20,8 +20,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: yali4/gui/Ui/autopartquestion.py:64 yali4/gui/Ui/datetimewidget.py:80
-#: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:142
+#: yali4/gui/Ui/autopartquestion.py:64 yali4/gui/Ui/datetimewidget.py:81
+#: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:143
+#: yali4/gui/Ui/summarywidget.py:59
 msgid "Form"
 msgstr "Form"
 
@@ -46,14 +47,14 @@ msgstr "Ich werde das Ziel auswählen"
 msgid "Use Selected"
 msgstr "Ausgewählte verwenden"
 
-#: yali4/gui/Ui/autopartwidget.py:98 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:99 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
-#: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:89
+#: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:99
+#: yali4/gui/Ui/autopartwidget.py:100
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -75,7 +76,7 @@ msgstr ""
 "size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:"
 "</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:103
+#: yali4/gui/Ui/autopartwidget.py:104
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
@@ -85,18 +86,12 @@ msgstr ""
 "auswählen um fortzufahren. <br> Laufwerkliste wird für die ausgewählte "
 "Methode aktualisiert."
 
-#: yali4/gui/Ui/autopartwidget.py:104
-msgid "Automatically partition try to use free space or resize current partitions"
+#: yali4/gui/Ui/autopartwidget.py:105
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
-
-#: yali4/gui/Ui/autopartwidget.py:105
-# disable auf deutsch ?
-msgid ""
-"This option will try to find suitable free space or resizable partitions (If "
-"there is no suitable partition this option will be disabled)"
-msgstr "Diese Option wird versuchen geeigneten freien Platz oder Partitionen mit der Möglichkeit zur Änderung der Partitionsgrösse zu finden (wenn keine geeignete Partition gefunden wird, ist diese Option blockiert)"
 
 #: yali4/gui/Ui/autopartwidget.py:106
 msgid "Automatically partition and format selected disk!"
@@ -119,7 +114,26 @@ msgstr "Nein, ich werde meine Festplatte manuell partitionieren."
 msgid "You can use manual partitioning with this option"
 msgstr "Mit dieser Option können Sie manuell partitionieren"
 
+# disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
+#, fuzzy
+msgid "If there is no suitable partition this option will be disabled"
+msgstr ""
+"Diese Option wird versuchen geeigneten freien Platz oder Partitionen mit der "
+"Möglichkeit zur Änderung der Partitionsgrösse zu finden (wenn keine "
+"geeignete Partition gefunden wird, ist diese Option blockiert)"
+
+# disable auf deutsch ?
+#: yali4/gui/Ui/autopartwidget.py:111
+#, fuzzy
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
+msgstr ""
+"Diese Option wird versuchen geeigneten freien Platz oder Partitionen mit der "
+"Möglichkeit zur Änderung der Partitionsgrösse zu finden (wenn keine "
+"geeignete Partition gefunden wird, ist diese Option blockiert)"
+
+#: yali4/gui/Ui/autopartwidget.py:112
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -141,7 +155,7 @@ msgstr ""
 "size:12pt; font-weight:600;\">2. Wählen Sie die Festplatte aus, um die "
 "ausgewählte Methode zu übernehmen:</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:114
+#: yali4/gui/Ui/autopartwidget.py:116
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
@@ -236,27 +250,27 @@ msgstr "ss"
 msgid "Time Zone"
 msgstr "Zeitzone"
 
-#: yali4/gui/Ui/dialog.py:53
+#: yali4/gui/Ui/dialog.py:59
 msgid "TextLabel"
 msgstr "TextLabel"
 
-#: yali4/gui/Ui/dialog.py:55
+#: yali4/gui/Ui/dialog.py:60
 msgid "X"
 msgstr "X"
 
-#: yali4/gui/Ui/installwidget.py:62
+#: yali4/gui/Ui/installwidget.py:64
 msgid "Form3"
 msgstr "Form3"
 
-#: yali4/gui/Ui/installwidget.py:63
+#: yali4/gui/Ui/installwidget.py:65
 msgid "pix"
 msgstr "pix"
 
-#: yali4/gui/Ui/installwidget.py:65
+#: yali4/gui/Ui/installwidget.py:66
 msgid "Desc"
 msgstr "Desc"
 
-#: yali4/gui/Ui/installwidget.py:66
+#: yali4/gui/Ui/installwidget.py:67
 msgid "Installing Package: "
 msgstr "Installation des Pakets:"
 
@@ -304,75 +318,76 @@ msgstr "Nächstes Fenster"
 msgid "Next"
 msgstr "Weiter"
 
-#: yali4/gui/Ui/partedit.py:143
+#: yali4/gui/Ui/partedit.py:144
 msgid "Partition 1 on FUJISTU - /dev/sda1"
 msgstr "Partition 1 auf FUJISTU - /dev/sda1"
 
-#: yali4/gui/Ui/partedit.py:144
+#: yali4/gui/Ui/partedit.py:145
 msgid "Device :"
 msgstr "Gerät :"
 
-#: yali4/gui/Ui/partedit.py:145
+#: yali4/gui/Ui/partedit.py:146
 msgid "/dev/sda1"
 msgstr "/dev/sda1"
 
-#: yali4/gui/Ui/partedit.py:146
+#: yali4/gui/Ui/partedit.py:147
 msgid "Delete Partition"
 msgstr "Partition löschen"
 
-#: yali4/gui/Ui/partedit.py:147
+#: yali4/gui/Ui/partedit.py:148
 msgid "Resize Partition"
 msgstr "Partition neu einlesen"
 
-#: yali4/gui/Ui/partedit.py:148
+#: yali4/gui/Ui/partedit.py:149
 msgid "Use :"
 msgstr "Verwenden :"
 
-#: yali4/gui/Ui/partedit.py:149
+#: yali4/gui/Ui/partedit.py:150
 msgid "Size :"
 msgstr "Größe :"
 
-#: yali4/gui/Ui/partedit.py:150 yali4/gui/Ui/partresize.py:87
+#: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:87
 msgid " MB"
 msgstr " MB"
 
-#: yali4/gui/Ui/partedit.py:151
+#: yali4/gui/Ui/partedit.py:152
 msgid "Format :"
 msgstr "Format :"
 
-#: yali4/gui/Ui/partedit.py:152
-msgid "Yes, Format this partition"
+#: yali4/gui/Ui/partedit.py:153
+#, fuzzy
+msgid "Yes, format this partition"
 msgstr "Ja, diese Partition formatieren"
 
-#: yali4/gui/Ui/partedit.py:153
+#: yali4/gui/Ui/partedit.py:154
 msgid "File System :"
 msgstr "Dateisystem :"
 
-#: yali4/gui/Ui/partedit.py:154
+#: yali4/gui/Ui/partedit.py:155
 msgid "Ext3"
 msgstr "Ext3"
 
-#: yali4/gui/Ui/partedit.py:155
+#: yali4/gui/Ui/partedit.py:156
 msgid "NTFS"
 msgstr "NTFS"
 
-#: yali4/gui/Ui/partedit.py:156
+#: yali4/gui/Ui/partedit.py:157
 msgid "Fat 32"
 msgstr "Fat 32"
 
-#: yali4/gui/Ui/partedit.py:157
+#: yali4/gui/Ui/partedit.py:158
 msgid "Changes will be applied when you finish.."
 msgstr "Änderungen werden durgeführt wenn Sie fertig sind..."
 
-#: yali4/gui/Ui/partedit.py:158
+#: yali4/gui/Ui/partedit.py:159
 msgid "Refresh Disks"
 msgstr "Datenträger aktualisieren"
 
-#: yali4/gui/Ui/partedit.py:159
+#: yali4/gui/Ui/partedit.py:160
 msgid "Reset All Changes"
 msgstr "Alle Änderungen zurückstellen"
 
-#: yali4/gui/Ui/partedit.py:160
+#: yali4/gui/Ui/partedit.py:161
 msgid "Apply"
 msgstr "Anwenden"
 
@@ -410,7 +425,8 @@ msgstr ""
 "decoration: underline; color:#ffffff;\">Abbrechen</span><span style=\" color:"
 "#ffffff;\">\".</span></p></body></html>"
 
-#: yali4/gui/Ui/partresize.py:88 yali4/gui/YaliDialog.py:130
+#: yali4/gui/Ui/partresize.py:88 yali4/gui/Ui/summarywidget.py:65
+#: yali4/gui/YaliDialog.py:130
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -486,7 +502,35 @@ msgstr "Auto-Login-Benutzer:"
 msgid "Auto Login Disabled"
 msgstr "Auto-Login deaktiviert"
 
-#: yali4/gui/Ui/welcomewidget.py:90
+#: yali4/gui/Ui/summarywidget.py:60
+#, fuzzy
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:"
+"</span></p></body></html>"
+
+#: yali4/gui/Ui/summarywidget.py:66
+msgid "Begin Install"
+msgstr ""
+
+#: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
 "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
 "software have their corresponding licenses. By installing or using Pardus, "
@@ -497,11 +541,11 @@ msgstr ""
 "installieren zu können, müssen Sie den Lizenzen zustimmen. Möchten Sie "
 "fortfahren?"
 
-#: yali4/gui/Ui/welcomewidget.py:91
+#: yali4/gui/Ui/welcomewidget.py:92
 msgid "Read GPL"
 msgstr "Die GPL lesen"
 
-#: yali4/gui/Ui/welcomewidget.py:92 yali4/gui/runner.py:154
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:155
 msgid "Reboot System!"
 msgstr "System neustarten"
 
@@ -517,13 +561,17 @@ msgstr "Ich stimme den Lizenzen nicht zu"
 msgid "Debug"
 msgstr "Debuggen"
 
-#: yali4/gui/descSlide.py:18
 # habe "integriert" dazugeschrieben, damit sie nicht glauben, sie muessten VORHER ein anderes Programm ausfuehren
+#: yali4/gui/descSlide.py:18
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
-msgstr "Willkommen! Unser verbessertes Setup-tool YALI wird Ihnen mit der Installation von Pardus 2008 helfen. Mit YALI können Sie Pardus 2008 schnell und einfach installieren, nachdem sie die Festplatte(n) mit dem integrierten intelligenten Partitionstool vorbereitet haban.\n"
+msgstr ""
+"Willkommen! Unser verbessertes Setup-tool YALI wird Ihnen mit der "
+"Installation von Pardus 2008 helfen. Mit YALI können Sie Pardus 2008 schnell "
+"und einfach installieren, nachdem sie die Festplatte(n) mit dem integrierten "
+"intelligenten Partitionstool vorbereitet haban.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -535,21 +583,29 @@ msgstr ""
 "auf leichte Weise weitere Depots hinzufügen und die Grundeinstellungen wie "
 "Maus, Hintergrundbild, Webcam und Panel  verwalten.\n"
 
-#: yali4/gui/descSlide.py:22
 # habe uebersichtlich dazu gedichtet, ich hoffe es ist ok
+#: yali4/gui/descSlide.py:22
 msgid ""
 "Tasma is the management and settings center of Pardus. Configuration "
 "operations including but not limited to adding a new user or hardware (e.g. "
 "printer, scanner) to the system, management of visual settings ranging from "
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
-msgstr "Tasma ist das Management- und Konfigurations-Zentrum von Pardus. Sie können mit einer einzigen, übersichtlichen Bedienoberfläche zum Beispiel Benutzer, Hardware (z.B. Drucker, Scanner) zum System hinzufügen, grafische Einstellungen konfigurieren, angefangen von Schreibtisch-Ikonen, bis zu Schrifttypen, etc..\n"
+msgstr ""
+"Tasma ist das Management- und Konfigurations-Zentrum von Pardus. Sie können "
+"mit einer einzigen, übersichtlichen Bedienoberfläche zum Beispiel Benutzer, "
+"Hardware (z.B. Drucker, Scanner) zum System hinzufügen, grafische "
+"Einstellungen konfigurieren, angefangen von Schreibtisch-Ikonen, bis zu "
+"Schrifttypen, etc..\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
 "There are thousands of packages in Pardus software repositories. You can "
 "install, remove or update those packages and programs with just two clicks "
 "using the Package Manager!\n"
-msgstr "Es gibt tausende von Paketen in de Softwware Depos con Pardus. Mit dem Paket-Manager können Sie mit wenigen Klicks Programme installieren, desinstallieren, oder aktualisieren!\n"
+msgstr ""
+"Es gibt tausende von Paketen in de Softwware Depos con Pardus. Mit dem Paket-"
+"Manager können Sie mit wenigen Klicks Programme installieren, "
+"desinstallieren, oder aktualisieren!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -557,7 +613,11 @@ msgid ""
 "securely. Thanks to the profile support it has, it will make it easier to "
 "reconnect to cable or wireless connections used before, remembering the "
 "settings used.\n"
-msgstr "Network Applet hilft sich auf einfache und sichere Weise, mit dem lokelen Netzwerk oder Internet zu verbinden. Es können Profile gespeichert werden, die es einfacher machen, sich wieder mit vorher benutzten Netzen zu verbinden.\n"
+msgstr ""
+"Network Applet hilft sich auf einfache und sichere Weise, mit dem lokelen "
+"Netzwerk oder Internet zu verbinden. Es können Profile gespeichert werden, "
+"die es einfacher machen, sich wieder mit vorher benutzten Netzen zu "
+"verbinden.\n"
 
 #: yali4/gui/descSlide.py:28
 msgid ""
@@ -647,7 +707,7 @@ msgstr ""
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "Die Grösse von 'Root installieren'  muss grösser als %s MB sein."
 
-#: yali4/gui/DiskWidgets.py:194 yali4/gui/ScrBootloader.py:74
+#: yali4/gui/DiskWidgets.py:194 yali4/gui/ScrBootloader.py:67
 #: yali4/gui/ScrKahyaCheck.py:91 yali4/gui/ScrPartitionAuto.py:71
 msgid "Can't find a storage device!"
 msgstr "Es kann kein Speichergerät gefunden werden!"
@@ -742,11 +802,11 @@ msgstr "Die Lizenzdatei konnte nicht geöffnet werden!"
 msgid "Can't open Release Notes!"
 msgstr "Release-Informationen können nicht geöffnet werden!"
 
-#: yali4/gui/runner.py:117
+#: yali4/gui/runner.py:118
 msgid "Error!"
 msgstr "Fehler!"
 
-#: yali4/gui/runner.py:149
+#: yali4/gui/runner.py:150
 msgid "Unhandled error occured!"
 msgstr "Es ist ein ungehandhabter Fehler aufgetreten!"
 
@@ -811,15 +871,15 @@ msgstr ""
 "<center><font color=\"#FF6D19\">Der Hostname enthält unzulässige Zeichen!</"
 "font></center>"
 
-#: yali4/gui/ScrBootloader.py:43
+#: yali4/gui/ScrBootloader.py:36
 msgid "Bootloader Choice"
 msgstr "Boot-Loaderauswahl"
 
-#: yali4/gui/ScrBootloader.py:44
+#: yali4/gui/ScrBootloader.py:37
 msgid "Configure the system boot.."
 msgstr ""
 
-#: yali4/gui/ScrBootloader.py:46
+#: yali4/gui/ScrBootloader.py:39
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -865,28 +925,6 @@ msgstr ""
 "und Benutzerhandbuch nach.\n"
 "</p>\n"
 "</font>\n"
-
-#: yali4/gui/ScrBootloader.py:146
-msgid ""
-"<b>\n"
-"<p>This action will use your entire disk for Pardus installation and <br>\n"
-"all your present data on the selected disk will be lost.</p>\n"
-"</b>\n"
-msgstr ""
-"<b>\n"
-"<p>Dieser Vorgang wird Ihre gesamte Festplatte für die Pardus-Installation\n"
-"verwenden. Ihre vorhandenen Daten auf der gewählten Partition gehen dabei "
-"verloren.</p>\n"
-"</b>\n"
-
-#: yali4/gui/ScrBootloader.py:172 yali4/gui/ScrBootloader.py:179
-#: yali4/gui/ScrBootloader.py:193
-msgid "Formatting ..."
-msgstr "Am formatieren..."
-
-#: yali4/gui/ScrBootloader.py:186 yali4/installer.py:226
-msgid "Writing disk tables ..."
-msgstr "Laufwerktabellen werden beschrieben..."
 
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
@@ -998,7 +1036,8 @@ msgstr ""
 "<p>Klicken Sie auf Neustarten, um Ihr System neuzustarten.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:130 yali4/installer.py:540
+#: yali4/gui/ScrGoodbye.py:130 yali4/gui/ScrSummary.py:66
+#: yali4/installer.py:552
 msgid "Reboot"
 msgstr "Neustarten"
 
@@ -1008,7 +1047,8 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
+msgstr ""
+"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1237,6 +1277,55 @@ msgid ""
 "</font>\n"
 msgstr ""
 
+#: yali4/gui/ScrSummary.py:42
+msgid "The last step before install"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:43
+msgid "Summary of your installation.."
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:45
+#, fuzzy
+msgid ""
+"\n"
+"<font size=\"+2\">Install Summary</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Here you can see your install options and look at them again before "
+"installation starts.\n"
+"</p>\n"
+"</font>\n"
+msgstr ""
+"\n"
+"<font size=\"+2\">Zeitzone-Einstellungen</font>\n"
+"<font size=\"+1\"><p>Hier können Sie Ihren Standort und eine Zeitzone "
+"auswählen, das Datum und die Uhrzeit einstellen.\n"
+"Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit "
+"der Installation  fort, nachdem Sie Ihre Auswahl vorgenommen haben.</p></"
+"font>\n"
+
+#: yali4/gui/ScrSummary.py:65
+#, fuzzy
+msgid "<b><p>This action will reboot your system !</p></b>"
+msgstr ""
+"<b>\n"
+"<p>Klicken Sie auf Neustarten, um Ihr System neuzustarten.</p>\n"
+"</b>\n"
+
+#: yali4/gui/ScrSummary.py:90 yali4/gui/ScrSummary.py:98
+#: yali4/gui/ScrSummary.py:112
+msgid "Formatting ..."
+msgstr "Am formatieren..."
+
+#: yali4/gui/ScrSummary.py:95
+msgid "Resizing ..."
+msgstr "Grössenänderung wird vorgenommen..."
+
+#: yali4/gui/ScrSummary.py:105 yali4/installer.py:229
+msgid "Writing disk tables ..."
+msgstr "Laufwerktabellen werden beschrieben..."
+
 #: yali4/gui/ScrUsers.py:32
 msgid "Set Users"
 msgstr "Benutzer festlegen"
@@ -1366,24 +1455,24 @@ msgstr "Windows"
 msgid "Backtrace:"
 msgstr "Ablaufverfolgung:"
 
-#: yali4/installer.py:120
+#: yali4/installer.py:123
 msgid "YALI Working..."
 msgstr "YALI ist am arbeiten..."
 
-#: yali4/installer.py:135
+#: yali4/installer.py:138
 msgid "Starting for CD Check"
 msgstr "CD-Überprüfung wird gestartet"
 
-#: yali4/installer.py:153
+#: yali4/installer.py:156
 #, python-format
 msgid "Checking: %s"
 msgstr "Am überprüfen: %s"
 
-#: yali4/installer.py:157
+#: yali4/installer.py:160
 msgid "Check Failed"
 msgstr "Überprüfung fehlgeschlagen"
 
-#: yali4/installer.py:158
+#: yali4/installer.py:161
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
@@ -1392,7 +1481,7 @@ msgstr ""
 "fehlgeschlagen.                                  Die Installations-CD "
 "scheint defekt zu sein.</p></b>"
 
-#: yali4/installer.py:161
+#: yali4/installer.py:164
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
@@ -1400,23 +1489,19 @@ msgstr ""
 "<font color=\"#FFF\"><b>Überprüfung abgeschlossen. Sie können zum nächsten "
 "Fenster fortfahren.</b></font>"
 
-#: yali4/installer.py:175
+#: yali4/installer.py:178
 msgid "Setting time settings.."
 msgstr "Zeiteinstellungen werden vorgenommen.."
 
-#: yali4/installer.py:196
+#: yali4/installer.py:199
 msgid "Disk analyze started.."
 msgstr "Festplattenanalyse gestartet.."
 
-#: yali4/installer.py:280
-msgid "Resizing ..."
-msgstr "Grössenänderung wird vorgenommen..."
-
-#: yali4/installer.py:283
+#: yali4/installer.py:285
 msgid "Resize Finished ..."
 msgstr "Grössenänderung abgeschlossen..."
 
-#: yali4/installer.py:295
+#: yali4/installer.py:297
 msgid "Creating new partition ..."
 msgstr "Neue Partition wird erstellt..."
 
@@ -1597,3 +1682,16 @@ msgstr "Swap"
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
 
+#~ msgid ""
+#~ "<b>\n"
+#~ "<p>This action will use your entire disk for Pardus installation and "
+#~ "<br>\n"
+#~ "all your present data on the selected disk will be lost.</p>\n"
+#~ "</b>\n"
+#~ msgstr ""
+#~ "<b>\n"
+#~ "<p>Dieser Vorgang wird Ihre gesamte Festplatte für die Pardus-"
+#~ "Installation\n"
+#~ "verwenden. Ihre vorhandenen Daten auf der gewählten Partition gehen dabei "
+#~ "verloren.</p>\n"
+#~ "</b>\n"

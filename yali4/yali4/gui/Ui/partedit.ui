@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>225</height>
+    <width>588</width>
+    <height>227</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -25,10 +25,7 @@
    <property name="bottomMargin" >
     <number>0</number>
    </property>
-   <property name="horizontalSpacing" >
-    <number>-1</number>
-   </property>
-   <property name="verticalSpacing" >
+   <property name="spacing" >
     <number>-1</number>
    </property>
    <item row="0" column="0" >
@@ -36,7 +33,7 @@
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>20</width>
        <height>40</height>
@@ -54,7 +51,7 @@
      </property>
      <property name="minimumSize" >
       <size>
-       <width>610</width>
+       <width>580</width>
        <height>0</height>
       </size>
      </property>
@@ -68,7 +65,7 @@
       <bool>false</bool>
      </property>
      <property name="styleSheet" >
-      <string/>
+      <string notr="true" />
      </property>
      <property name="title" >
       <string>Partition 1 on FUJISTU - /dev/sda1</string>
@@ -102,7 +99,7 @@
            </size>
           </property>
           <property name="styleSheet" >
-           <string/>
+           <string notr="true" />
           </property>
           <property name="text" >
            <string>Delete Partition</string>
@@ -124,7 +121,7 @@
           <property name="sizeType" >
            <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>180</width>
             <height>20</height>
@@ -137,7 +134,7 @@
           <property name="orientation" >
            <enum>Qt::Vertical</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>20</width>
             <height>40</height>
@@ -233,7 +230,7 @@
       <item row="3" column="1" colspan="2" >
        <widget class="QCheckBox" name="formatCheck" >
         <property name="text" >
-         <string>Yes, Format this partition</string>
+         <string>Yes, format this partition</string>
         </property>
        </widget>
       </item>
@@ -264,7 +261,7 @@
           <property name="sizeType" >
            <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>0</width>
             <height>29</height>
@@ -323,7 +320,7 @@
         <property name="orientation" >
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0" >
          <size>
           <width>90</width>
           <height>110</height>
@@ -339,7 +336,7 @@
      <item>
       <widget class="QLabel" name="information" >
        <property name="styleSheet" >
-        <string/>
+        <string notr="true" />
        </property>
        <property name="text" >
         <string>Changes will be applied when you finish..</string>
@@ -351,7 +348,7 @@
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeHint" >
+       <property name="sizeHint" stdset="0" >
         <size>
          <width>40</width>
          <height>20</height>
