@@ -57,6 +57,7 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.connect(self.httpsProxyPort, SIGNAL("valueChanged(int)"), self.proxyDataChanged)
         self.connect(self.ftpProxy, SIGNAL("textChanged(const QString&)"), self.proxyDataChanged)
         self.connect(self.ftpProxyPort, SIGNAL("valueChanged(int)"), self.proxyDataChanged)
+        self.connect(self.noProxyButton, SIGNAL("toggled(bool)"), self.proxyDataChanged)
 
         self.editButton.setEnabled(False)
         self.removeButton.setEnabled(False)
