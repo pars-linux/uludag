@@ -341,7 +341,7 @@ class Ext3FileSystem(FileSystem):
             p.close()
         except:
             return False
-        return True
+        return label
 
 ##
 # reiserfs
@@ -378,7 +378,7 @@ class ReiserFileSystem(FileSystem):
             p.close()
         except:
             return False
-        return True
+        return label
 
 ##
 # xfs
@@ -414,7 +414,7 @@ class XFSFileSystem(FileSystem):
             p.close()
         except:
             return False
-        return True
+        return label
 
 
 ##
@@ -473,7 +473,7 @@ class SwapFileSystem(FileSystem):
             p.close()
         except:
             return False
-        return True
+        return label
 
 
 ##
@@ -524,7 +524,7 @@ class NTFSFileSystem(FileSystem):
             p.close()
         except:
             return False
-        return True
+        return label
 
     def format(self, partition):
         self.preFormat(partition)
@@ -590,6 +590,6 @@ class FatFileSystem(FileSystem):
             p.close()
         except:
             return False
-        return True
+        return label
 
 

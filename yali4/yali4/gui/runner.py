@@ -30,7 +30,11 @@ from yali4.gui.debugger import DebuggerAspect
 # mainScreen
 import YaliWindow
 
-YALI_INSTALL, YALI_FIRSTBOOT, YALI_OEMINSTALL, YALI_PARTITIONER = range(4)
+YALI_INSTALL, \
+        YALI_FIRSTBOOT, \
+        YALI_OEMINSTALL, \
+        YALI_KAHYA, \
+        YALI_PARTITIONER = range(5)
 
 ##
 # Runner creates main GUI components for installation...
@@ -58,6 +62,11 @@ class Runner:
         if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
             install_type = YALI_OEMINSTALL
 
+        # check for kahya
+        if yali4.sysutils.checkYaliParams(param=ctx.consts.kahyaParam):
+            install_type = YALI_KAHYA
+
+        # Creating the installer
         ctx.yali = yali4.installer.Yali(install_type)
 
         yimirtaShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F5),self._window.ui)
