@@ -389,7 +389,9 @@ class LabelRequest(PartRequest):
         pt = self.partitionType()
         if not pt.label:
             return
-        pt.filesystem.setLabel(self.partition(), pt.label)
+
+        label = pt.filesystem.setLabel(self.partition(), pt.label)
+        self._partition.setTempLabel(label)
 
         PartRequest.applyRequest(self)
 

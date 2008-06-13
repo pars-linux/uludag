@@ -34,6 +34,7 @@ class Partition:
         self._fsname = fs_name or _("unknown")
         self._parted_type = parteddata.partitionType
         self._fs_ready = fs_ready
+        self._temp_label = ''
 
     def getFormatted(self):
         return self.isFileSystemReady()
@@ -137,6 +138,12 @@ class Partition:
             return fs.isResizable()
         except AttributeError, e:
             return False
+
+    def getTempLabel(self):
+        return self._temp_label
+
+    def setTempLabel(self,label):
+        self._temp_label = label
 
     def getFSLabel(self):
         fs = yali4.filesystem.get_filesystem(self.getFSName())

@@ -67,7 +67,11 @@ import yali4.gui.ScrSummary
 import yali4.gui.ScrGoodbye
 
 PARTITION_ERASE_ALL, PARTITION_USE_AVAIL, PARTITION_USE_OLD = range(3)
-YALI_INSTALL, YALI_FIRSTBOOT, YALI_OEMINSTALL, YALI_PARTITIONER = range(4)
+YALI_INSTALL, \
+        YALI_FIRSTBOOT, \
+        YALI_OEMINSTALL, \
+        YALI_KAHYA, \
+        YALI_PARTITIONER = range(5)
 
 class Yali:
     def __init__(self, install_type=YALI_INSTALL):
@@ -345,7 +349,8 @@ class Yali:
 
                 # Use default label for root partition (PARDUS_ROOT)
                 # TODO: Trigger udev to get new label info.
-                path = "LABEL=%s" % pt.label
+                ####
+                path = "LABEL=%s" % p.getTempLabel()
 
                 fs = pt.filesystem._sysname or pt.filesystem._name
                 mountpoint = pt.mountpoint
@@ -493,7 +498,7 @@ class Yali:
         root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
                                                                   request.mountRequestType)
         _ins_part = root_part_req.partition().getPath()
-        _ins_part_label = root_part_req.partition().getFSLabel()
+        _ins_part_label = root_part_req.partition().getTempLabel()
 
         loader.write_grub_conf(_ins_part, ctx.installData.bootLoaderDev, _ins_part_label)
 
