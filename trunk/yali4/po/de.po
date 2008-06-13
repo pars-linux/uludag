@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-12 12:32+0300\n"
-"PO-Revision-Date: 2008-06-12 18:01+0200\n"
+"PO-Revision-Date: 2008-06-13 16:20+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -116,21 +116,13 @@ msgstr "Mit dieser Option können Sie manuell partitionieren"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
-#, fuzzy
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Diese Option wird versuchen geeigneten freien Platz oder Partitionen mit der "
-"Möglichkeit zur Änderung der Partitionsgrösse zu finden (wenn keine "
-"geeignete Partition gefunden wird, ist diese Option blockiert)"
+msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:111
-#, fuzzy
 msgid "This option will try to find suitable free space or resizable partitions"
-msgstr ""
-"Diese Option wird versuchen geeigneten freien Platz oder Partitionen mit der "
-"Möglichkeit zur Änderung der Partitionsgrösse zu finden (wenn keine "
-"geeignete Partition gefunden wird, ist diese Option blockiert)"
+msgstr "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder grössenänderbare Partition zu finden"
 
 #: yali4/gui/Ui/autopartwidget.py:112
 msgid ""
@@ -354,7 +346,6 @@ msgid "Format :"
 msgstr "Format :"
 
 #: yali4/gui/Ui/partedit.py:153
-#, fuzzy
 msgid "Yes, format this partition"
 msgstr "Ja, diese Partition formatieren"
 
@@ -502,7 +493,6 @@ msgid "Auto Login Disabled"
 msgstr "Auto-Login deaktiviert"
 
 #: yali4/gui/Ui/summarywidget.py:60
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -515,15 +505,16 @@ msgid ""
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
 "p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:"
-"</span></p></body></html>"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
 
 #: yali4/gui/Ui/summarywidget.py:66
 msgid "Begin Install"
@@ -1226,7 +1217,6 @@ msgid "Auto or Manual partitioning.."
 msgstr "Automatische oder manuelle Partitionierung.."
 
 #: yali4/gui/ScrPartitionAuto.py:42
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1251,26 +1241,21 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Automatische Partitionierung</font>\n"
-"\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus ist mit vielen Hardwarekomponenten kompatibel. Sie können Pardus "
-"auf \n"
-"eine leere Festplatte oder auf eine Partition installieren. <b>Eine "
-"Installation wird automatisch\n"
-"die vorhandenen Informationen auf der gewählten Partition löschen. </b>\n"
+"Für die Pardusinstallation wird 4GB (10GB empfohlen) freier Speicherplatz \n"
+"benötigt. Der für die Installation gewählte Festplattenbereich oder \n"
+"die gewählte Partition wird automatisch formatiert. \n"
+"Daher wird empohlen, ein Backup zu erstellen um jegliche Probleme zu vermeiden.\n"
 "</p>\n"
+"<p>Auto-Partitionierung wird die gewählte Festplatte/Partition automatisch"
+"formatieren\n"
+"und Pardus 2008 installieren. Wenn Sie möchten können Sie die Partitionierung "
+"manuell \n"
+"vornehmen oder eine neue Partition für die Pardus 2008-Installtion erstellen.</p>\n"
 "<p>\n"
-"Die automatische Partitionierung verwendet Ihre gesamte Festplatte für die "
-"Pardus-Installation. Sie \n"
-"können aus diesem Fenster die automatische Partitionierung für eine Ihrer "
-"Festplatten auswählen oder\n"
-"dieses Fenster überspringen und die manuelle Partitionierung auswählen.\n"
-"</p>\n"
-"<p>\n"
-"Für mehr Informationen über die Festplatten-Partitionierung, schlagen Sie "
-"bitte im Pardus-Installations- \n"
-"und Benutzerhandbuch nach.\n"
+"Für weitere Informationen über die Partitionierung schlagen Sie bitte im \n"
+"Pardusinstallations- und -Benutzerhandbuch nach.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1321,7 +1306,6 @@ msgid "Summary of your installation.."
 msgstr ""
 
 #: yali4/gui/ScrSummary.py:45
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Install Summary</font>\n"
@@ -1333,20 +1317,17 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Zeitzone-Einstellungen</font>\n"
-"<font size=\"+1\"><p>Hier können Sie Ihren Standort und eine Zeitzone "
-"auswählen, das Datum und die Uhrzeit einstellen.\n"
-"Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit "
-"der Installation  fort, nachdem Sie Ihre Auswahl vorgenommen haben.</p></"
-"font>\n"
+"<font size=\"+2\">Installationszusammenfassung</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Hier können Sie die von Ihnen gewählten Installtionsoptionen sehen, "
+"bevor die Installation startet.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrSummary.py:65
-#, fuzzy
 msgid "<b><p>This action will reboot your system !</p></b>"
-msgstr ""
-"<b>\n"
-"<p>Klicken Sie auf Neustarten, um Ihr System neuzustarten.</p>\n"
-"</b>\n"
+msgstr "<b><p>Diese Vorgang wird Ihr System neustarten!</p></b>"
 
 #: yali4/gui/ScrSummary.py:90 yali4/gui/ScrSummary.py:98
 #: yali4/gui/ScrSummary.py:112
@@ -1458,7 +1439,6 @@ msgid "Warning"
 msgstr "Warnung"
 
 #: yali4/gui/YaliDialog.py:123
-#, fuzzy
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on<br>\n"
@@ -1466,8 +1446,8 @@ msgid ""
 "</b>\n"
 msgstr ""
 "<b>\n"
-"<p>Dieser Vorgang wird die Pardus Installation auf \n"
-"Ihrem Rechner starten und die gewählte Partition formatieren.</p>\n"
+"<p>Dieser Vorgang wird die Installation von Pardus<br>\n"
+" auf Ihr System starten und die gewählte Partition formatieren.</p>\n"
 "</b>\n"
 
 #: yali4/gui/YaliDialog.py:133
@@ -1557,9 +1537,8 @@ msgid "English"
 msgstr "Englisch"
 
 #: yali4/localedata.py:40
-#, fuzzy
 msgid "English GB"
-msgstr "Englisch"
+msgstr "Englisch GB"
 
 #: yali4/localedata.py:50
 msgid "Greek"
