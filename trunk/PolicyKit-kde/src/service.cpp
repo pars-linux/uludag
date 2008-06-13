@@ -390,6 +390,9 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
     Debug::printDebug("polkit_grant_select_admin_user: Done");
     Debug::printDebug("polkit_grant_select_admin_user: Showing dialog...");
 
+    char *selected = strdup(m_self->m_dialog->cbUsers->text(1));
+    return selected;
+/*
     dialogResult = m_self->m_dialog->exec();
     Debug::printDebug("polkit_grant_select_admin_user: Done");
 
@@ -407,6 +410,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
         Debug::printDebug(msg);
         return selected;
     }
+    */
 }
 
 char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
