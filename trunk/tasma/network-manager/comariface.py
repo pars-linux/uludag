@@ -301,7 +301,8 @@ class DBusInterface(Hook):
         if scripts:
             for script in scripts:
                 info = self.call(script, "Net.Link", "linkInfo")
-                self.links[script] = Link(script, info)
+                if info:
+                    self.links[script] = Link(script, info)
     
     def queryNames(self): 
         def handlerHost(host):
