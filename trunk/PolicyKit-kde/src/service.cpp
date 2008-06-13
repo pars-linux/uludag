@@ -84,7 +84,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     }
 
     //connect all signals to this method
-    m_sessionBus.connect(this, SLOT(handleDBusSignals(const QDBusMessage&)));
+    //m_sessionBus.connect(this, SLOT(handleDBusSignals(const QDBusMessage&)));
 
     m_context = polkit_context_new();
     if (m_context == NULL)
@@ -159,8 +159,9 @@ bool PolicyService::handleMethodCall(const QDBusMessage& message)
         }
         else
         {
-            try {
-            handleObtainAuthorization(message);
+            try
+            {
+                handleObtainAuthorization(message);
             }
             catch(QString exc)
             {
@@ -421,9 +422,7 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
 
     //This grab workaround is required to prevent blockings caused by notify-python's notifications
     Display *display = qt_xdisplay();
-    XGrabServer(display);
     int result = m_dialog->exec();
-    XUngrabServer(display);
 
     if (result == QDialog::Rejected)
     {
