@@ -7,15 +7,15 @@
 # Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # Faik Uygur <faik@pardus.org.tr>, 2007.
-# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2007.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-12 10:46+0300\n"
-"PO-Revision-Date: 2008-05-29 16:54+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <nl@li.org>\n"
+"PO-Revision-Date: 2008-06-13 20:40+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,7 +73,7 @@ msgstr "&Toon alleen desktop toepassingen"
 
 #: src/PreferencesDialog.py:316
 msgid "Alt+S"
-msgstr ""
+msgstr "Alt+S"
 
 #: src/PreferencesDialog.py:317
 msgid "If checked, then pisi will only show desktop applications"
@@ -89,7 +89,7 @@ msgstr "Activeer &periodieke update check"
 
 #: src/PreferencesDialog.py:320
 msgid "Alt+P"
-msgstr ""
+msgstr "Alt+P"
 
 #: src/PreferencesDialog.py:321
 msgid " min"
@@ -101,11 +101,11 @@ msgstr "Controle interval:"
 
 #: src/PreferencesDialog.py:323
 msgid "Bandwidth limit:"
-msgstr ""
+msgstr "Bandbreedte limiet:"
 
 #: src/PreferencesDialog.py:324
 msgid " kb/s"
-msgstr ""
+msgstr " kb/s"
 
 #: src/PreferencesDialog.py:325
 msgid "&General Settings"
@@ -155,8 +155,7 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:338
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr ""
 "U kunt hier de huidige software repositories en corresponderende adressen "
 "zien"
@@ -208,27 +207,27 @@ msgstr "&Repositories"
 #: src/PreferencesDialog.py:350 src/PreferencesDialog.py:353
 #: src/PreferencesDialog.py:354
 msgid "Port:"
-msgstr ""
+msgstr "Poort:"
 
 #: src/PreferencesDialog.py:351
 msgid "Use this proxy server for all protocols"
-msgstr ""
+msgstr "Gebruik proxy server voor alle protocollen"
 
 #: src/PreferencesDialog.py:352
 msgid "FTP proxy server:"
-msgstr ""
+msgstr "FTP proxy server:"
 
 #: src/PreferencesDialog.py:355
 msgid "HTTPS proxy server:"
-msgstr ""
+msgstr "HTTPS proxy server:"
 
 #: src/PreferencesDialog.py:356
 msgid "HTTP proxy server:"
-msgstr ""
+msgstr "HTTP proxy server:"
 
 #: src/PreferencesDialog.py:358
 msgid "No proxy server"
-msgstr ""
+msgstr "Geen proxy server"
 
 #: src/PreferencesDialog.py:359
 msgid "Use proxy server"
@@ -297,16 +296,14 @@ msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
 #: src/MainWidget.py:346 src/MainWidget.py:354
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
 
 #: src/MainWidget.py:349
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-"met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
+msgstr "met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
 
 # mand tonen
 #: src/MainWidget.py:351 src/MainWidget.py:359
@@ -353,8 +350,7 @@ msgstr "<b>Installeren pakket(ten)</b>"
 
 #: src/MainWidget.py:422
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr ""
-"<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
+msgstr "<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
 
 #: src/MainWidget.py:425
 msgid ""
@@ -370,8 +366,7 @@ msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>geïnstalleerd</b>."
 
 #: src/MainWidget.py:429
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr ""
-"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
+msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
 
 #: src/MainWidget.py:432
 msgid ""
@@ -387,8 +382,7 @@ msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>opgewaardeerd</b>."
 
 #: src/MainWidget.py:436
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr ""
-"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
+msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
 
 #: src/MainWidget.py:439
 msgid ""
@@ -682,8 +676,7 @@ msgstr "Repository &adres"
 
 #: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr ""
-"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr "Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
 msgid "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
@@ -739,8 +732,7 @@ msgstr "Pisi fout"
 
 #: src/Preferences.py:363
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
+msgstr "Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
 
 #: src/ProgressDialog.py:91
 msgid "Progress"
@@ -753,3 +745,4 @@ msgstr "<h3>Voorbereiden PiSi...</h3>"
 #: src/ProgressDialog.py:98
 msgid "Now installing <b>amsn</b> package"
 msgstr "Installeert nu <b>amsn</b> pakket"
+

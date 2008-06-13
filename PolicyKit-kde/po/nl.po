@@ -1,77 +1,81 @@
+# translation of nl.po to Nederlands
 # Turkish translations for PACKAGE package
 # PACKAGE paketi için Türkçe çeviriler.
 # Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2008.
 #
+# Automatically generated, 2008.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-13 20:29+0300\n"
-"PO-Revision-Date: 2008-05-11 18:48+0300\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2008-06-13 20:45+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:173
 msgid "Alt+O"
-msgstr ""
+msgstr "Alt+O"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:185
 msgid "Always"
-msgstr ""
+msgstr "Altijd"
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:150
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the <b>super user</b> is required to perform this action."
-msgstr ""
+msgstr "Een toepassing probeert een actie te verrichten die privileges vereist. De autorisatie als <b>super user</b> wordt vereist om deze actie te verrichten. "
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:154
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
-msgstr ""
+msgstr "Een toepassing probeert een actie te verrichten die privileges vereist. De autorisatie wordt vereist om deze actie te verrichten. "
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:170
 msgid "Authentication Required"
-msgstr ""
+msgstr "Authorisatie wordt vereist"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:175
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:184
 msgid "For this session only"
-msgstr ""
+msgstr "Alleen voor deze sessie"
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:176
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:188
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:184
 msgid "Password for root"
-msgstr ""
+msgstr "Wachtwoord voor root"
 
 #: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:186
 #, qt-format
 msgid "Password for user(%1)"
-msgstr ""
+msgstr "Wachtwoord voor gebruiker (%1)"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:183
 msgid "Remember authorization"
-msgstr ""
+msgstr "Onthoud autorisatie"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:186
 msgid "Remember authorization for this session"
-msgstr ""
+msgstr "Onthoud autorisatie voor deze sessie"
 
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:180
 #: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:181
 msgid "Select a user..."
-msgstr ""
+msgstr "Selecteer een gebruiker..."
+
