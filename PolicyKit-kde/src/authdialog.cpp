@@ -22,7 +22,9 @@
 #include <qpixmap.h>
 #include <qstring.h>
 #include <qtimer.h>
-
+#include <qcursor.h>
+#include <qframe.h>
+#include <qlayout.h>
 #include <kcombobox.h>
 #include <kglobal.h>
 #include <kiconloader.h>
@@ -67,6 +69,12 @@ AuthDialog::AuthDialog(QString &header)
         dep = 32;
     // create an image in desktop size
     m_grabbed.create(geo.size(), dep);
+
+    //If multiple monitors are used, this moves dialog to screen where mouse resides.
+    QRect screenSize = KGlobalSettings::desktopGeometry(QCursor::pos());
+    QSize sh = groupBox->sizeHint();
+    groupBox->move(screenSize.x() + (screenSize.width() - sh.width())/2, screenSize.y() + (screenSize.height() - sh.height())/2);
+
     QTimer::singleShot(0, this, SLOT( slotGrab()));
 }
 
@@ -225,6 +233,7 @@ void AuthDialog::setType(PolKitResult res)
     else
     {
         cbRemember->hide();
+        line->hide();
         setTabOrder(lePassword, bgRemember);
         setTabOrder(bgRemember, rbSession);
         setTabOrder(rbSession, rbAlways);
