@@ -235,7 +235,7 @@ static void qDBusNewConnection(DBusServer *server, DBusConnection *c, void *data
 {
     Q_ASSERT(data); Q_ASSERT(server); Q_ASSERT(c);
 
-    qDebug("SERVER: GOT A NEW CONNECTION"); // TODO
+    //qDebug("SERVER: GOT A NEW CONNECTION"); // TODO
 }
 
 static DBusHandlerResult qDBusSignalFilter(DBusConnection *connection,
@@ -367,6 +367,7 @@ void QDBusConnectionPrivate::socketRead(int fd)
             }
         }
     }
+
     if (mode == ClientMode)
         scheduleDispatch();
 }
@@ -528,7 +529,9 @@ void QDBusConnectionPrivate::setConnection(DBusConnection *dbc)
 //    dbus_bus_add_match(connection, "type='signal',interface='com.trolltech.dbus.Signal'", &error);
 //    dbus_bus_add_match(connection, "type='signal'", &error);
 
-    dbus_bus_add_match(connection, "type='signal'", &error);
+    //TODO: This causes process to block always when a dbus signal has arrived. This should be fixed to catch DBus signals
+
+    //dbus_bus_add_match(connection, "type='signal'", &error);
     if (handleError()) {
         closeConnection();
         return;
