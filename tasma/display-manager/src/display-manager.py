@@ -462,12 +462,12 @@ class MainWidget(dm_mainview.mainWidget):
             writeInfo(self.dconfig.secondaryScr, self.textMonitor2)
 
     def suggestDriver(self):
+        dc = self.dconfig
         dontShowAgainName = "Driver Suggestion"
         shouldBeShown, answer = KMessageBox.shouldBeShownYesNo(dontShowAgainName)
-        if not shouldBeShown:
+        if not shouldBeShown or not dc._info:
             return
 
-        dc = self.dconfig
         preferredDriver = hwdata.getCompatibleDriverNames(dc.card_vendor_id, dc.card_product_id)[0]
 
         if package_sep in preferredDriver:
