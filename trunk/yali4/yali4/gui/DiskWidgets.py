@@ -65,8 +65,8 @@ class DiskList(QtGui.QWidget):
             QTabBar::tab:selected { border-color: #CCC; border-bottom-color: #FFFFFF; }
             QTabBar::tab:!selected { margin-top: 2px; }
             QRadioButton::indicator { width:1px;height:1px;border-color:white; }
-            QRadioButton:checked { border:3px solid #777;border-radius:4px; }
-            QSplitter::handle { background-color:white; }
+            QRadioButton:checked { border:6px solid rgba(255,255,255,180); }
+            QSplitter::handle { background-color:rgba(255,255,255,0); }
         """)
         self.vbox = QtGui.QVBoxLayout(self)
 
@@ -528,7 +528,7 @@ class DiskItem(QtGui.QWidget):
             _size = self.sizePix(part['data'].getMB(),toolBoxWidth)
             _widget = self.splinter.widget(i)
             _widget.resize(_size,70)
-            if _size <= 8:
+            if _size <= 16:
                 _widget.setMinimumSize(QSize(_size,90))
                 _widget.setMaximumSize(QSize(_size,100))
             else:
@@ -539,8 +539,8 @@ class DiskItem(QtGui.QWidget):
 
     def sizePix(self,mb,toolBoxWidth):
         _p = (toolBoxWidth * mb) / self.totalSize
-        if _p <= 8:
-            return 8
+        if _p <= 16:
+            return 16
         return _p
 
 
