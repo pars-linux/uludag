@@ -455,6 +455,8 @@ class Applet:
         self.trays = [tray]
 
     def deviceGroup(self, id):
+        if not len(comlink.connections):
+            return
         if self.mode == 1:
             return
         self.reset()
