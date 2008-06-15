@@ -99,6 +99,11 @@ Here you can see your install options and look at them again before installation
             content.append(item % state % (user.realname, user.username))
         content.append(end)
 
+        # HostName
+        content.append(subject % _("Hostname Settings"))
+        content.append(item % _("Hostname is set as <b>%s</b>") % ctx.installData.hostName)
+        content.append(end)
+
         content.append("""</p></ul></body></html>""")
 
         self.ui.content.setHtml(content)
