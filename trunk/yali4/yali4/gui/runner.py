@@ -33,8 +33,7 @@ import YaliWindow
 YALI_INSTALL, \
         YALI_FIRSTBOOT, \
         YALI_OEMINSTALL, \
-        YALI_KAHYA, \
-        YALI_PARTITIONER = range(5)
+        YALI_PARTITIONER = range(4)
 
 ##
 # Runner creates main GUI components for installation...
@@ -61,10 +60,6 @@ class Runner:
         # check for oemInstall
         if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
             install_type = YALI_OEMINSTALL
-
-        # check for kahya
-        if yali4.sysutils.checkYaliParams(param=ctx.consts.kahyaParam):
-            install_type = YALI_KAHYA
 
         # Creating the installer
         ctx.yali = yali4.installer.Yali(install_type)

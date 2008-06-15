@@ -327,8 +327,8 @@ class DiskList(QtGui.QWidget):
             # GPT Disk tables doesnt support extended partitions
             # so we need to reach maximum limit with primary partitions
             if device._disk.type.name == "gpt":
-                min_primary = 4
-                if device.numberOfPrimaryPartitions() == 4:
+                min_primary = 64
+                if device.numberOfPrimaryPartitions() == 64:
                     QtGui.QMessageBox.information(self,
                                                 _("Too many primary partition !"), 
                                                 _("GPT Disk tables does not support for extended partitions.\n" \
