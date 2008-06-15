@@ -408,3 +408,23 @@ msgstr "Reparar el sistema instalado"
 msgid "Check Installation Media"
 msgstr "Verificar el medio de instalación"
 
+#. txt_zorg
+msgid "Graphical Display"
+msgstr ""
+
+#. txt_zorg_default
+msgid "Default"
+msgstr ""
+
+#. txt_zorg_safe
+msgid "Failsafe"
+msgstr ""
+
+#. txt_zorg_probe
+msgid "Probe Again"
+msgstr ""
+
+#. txt_zorg_off
+msgid "Off"
+msgstr ""
+

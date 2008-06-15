@@ -401,3 +401,24 @@ msgstr "修复已安装系统"
 #. txt_mediacheck
 msgid "Check Installation Media"
 msgstr "检查安装媒体"
+
+#. txt_zorg
+msgid "Graphical Display"
+msgstr ""
+
+#. txt_zorg_default
+msgid "Default"
+msgstr ""
+
+#. txt_zorg_safe
+msgid "Failsafe"
+msgstr ""
+
+#. txt_zorg_probe
+msgid "Probe Again"
+msgstr ""
+
+#. txt_zorg_off
+msgid "Off"
+msgstr ""
+

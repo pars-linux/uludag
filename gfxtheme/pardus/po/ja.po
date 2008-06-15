@@ -400,3 +400,24 @@ msgstr "インストール済みのシステムを修復"
 #. txt_mediacheck
 msgid "Check Installation Media"
 msgstr "インストールメディアのチェック"
+
+#. txt_zorg
+msgid "Graphical Display"
+msgstr ""
+
+#. txt_zorg_default
+msgid "Default"
+msgstr ""
+
+#. txt_zorg_safe
+msgid "Failsafe"
+msgstr ""
+
+#. txt_zorg_probe
+msgid "Probe Again"
+msgstr ""
+
+#. txt_zorg_off
+msgid "Off"
+msgstr ""
+
