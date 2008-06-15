@@ -9,10 +9,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 16:57+0300\n"
-"PO-Revision-Date: 2008-06-08 13:39+0200\n"
+"PO-Revision-Date: 2008-06-15 17:26+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +43,7 @@ msgstr "<p>Verticaal bereik:</p>"
 
 #: src/displayconfig.py:68
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "U bent niet geautoriseerd voor deze handeling."
 
 #: src/displayconfig.py:97
 msgid "COMAR Error"
@@ -95,20 +94,19 @@ msgstr "Uw hardware zal geactiveerd worden na herstarten van uw computer."
 
 #: src/utility.py:24
 msgid "Laptop Panel (%1)"
-msgstr ""
+msgstr "Laptop scherm (%1)"
 
 #: src/utility.py:25
 msgid "Analog Output (%1)"
-msgstr ""
+msgstr "Analoge uitvoer (%1)"
 
 #: src/utility.py:26
 msgid "Digital Output (%1)"
-msgstr ""
+msgstr "Digitale uitvoer (%1)"
 
 #: src/utility.py:27
-#, fuzzy
 msgid "TV Output (%1)"
-msgstr "Uitvoer"
+msgstr "TV uitvoer (%1)"
 
 #: src/driverdialog.py:43 src/driverdialog.py:64
 msgid "Driver Name"
@@ -253,23 +251,20 @@ msgid "Devices"
 msgstr "Apparaten"
 
 #: src/display-manager.py:57
-#, fuzzy
 msgid "CRT Monitor"
-msgstr "Kies monitor"
+msgstr "CRT monitor"
 
 #: src/display-manager.py:58
-#, fuzzy
 msgid "LCD Monitor"
-msgstr "Kies monitor"
+msgstr "LCD monitor"
 
 #: src/display-manager.py:65
-#, fuzzy
 msgid "Standard Monitors"
-msgstr "Plug en play monitor"
+msgstr "Standaard monitors"
 
 #: src/display-manager.py:65
 msgid "Vendors"
-msgstr ""
+msgstr "Fabrikanten"
 
 #: src/display-manager.py:170
 msgid ""
@@ -304,15 +299,16 @@ msgstr "Plug en play monitor"
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
+msgstr "<qt>Om betere prestaties te krijgen, kunt u gebruik maken van de <b>%1</b> driver geleverd door de hardware fabrikant. Wilt u deze driver gebruiken?</p></qt>"
 
 #: src/display-manager.py:489
 msgid ""
 "<qt>To get better performance, you may want to use <b>%1</b> driver provided "
 "by hardware vendor. To use it, you must install <b>%2</b> package and choose "
 "<b>%3</b> from video card options.</qt>"
-msgstr ""
+msgstr "<qt>Om betere prestaties te krijgen, kunt u gebruik maken van de <b>%1</b> driver geleverd door de hardware fabrikant. Om deze te gebruiken, dient u het pakket <b>%2</b> installeren en kiezen voor <b>%3</b> bij de videokaart opties.</qt>"
 
 #: src/display-manager.py:607
 msgid "Display Manager is already started!"
 msgstr "Beeldscherm beheer is al actief!"
+
