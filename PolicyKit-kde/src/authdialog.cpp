@@ -73,7 +73,8 @@ AuthDialog::AuthDialog(QString &header)
     //If multiple monitors are used, this moves dialog to screen where mouse resides.
     QRect screenSize = KGlobalSettings::desktopGeometry(QCursor::pos());
     QSize sh = groupBox->sizeHint();
-    groupBox->move(screenSize.x() + (screenSize.width() - sh.width())/2, screenSize.y() + (screenSize.height() - sh.height())/2);
+
+    leftSpacer->changeSize(screenSize.x() + (screenSize.width() - sh.width()) / 2, 30, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     QTimer::singleShot(0, this, SLOT( slotGrab()));
 }
