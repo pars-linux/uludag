@@ -70,6 +70,38 @@ Here you can see your install options and look at them again before installation
 
     def shown(self):
         ctx.mainScreen.disableNext()
+        self.fillContent()
+
+    def fillContent(self):
+        subject = "<li><b>%s</b></li><ul>"
+        item    = "<li>%s</li>"
+        end     = "</ul><br>"
+        content = QString("")
+
+        content.append("""<html><body><p><ul>""")
+
+        # Keyboard Layout
+        content.append(subject % _("Keyboard Settings"))
+        content.append(item % _("Selected layout is %s") % ctx.installData.keyData["name"])
+        content.append(end)
+
+        # TimeZone
+        content.append(subject % _("Date/Time Settings"))
+        content.append(item % _("Selected TimeZone is %s") % ctx.installData.timezone)
+        content.append(end)
+
+        # Users
+        content.append(subject % _("User Settings"))
+        for user in yali4.users.pending_users:
+            state = _("User %s (%s) added.")
+            if "wheel" in user.groups:
+                state = _("User %s (%s) added with admin privileges.")
+            content.append(item % state % (user.realname, user.username))
+        content.append(end)
+
+        content.append("""</p></ul></body></html>""")
+
+        self.ui.content.setHtml(content)
 
     def execute(self):
 
