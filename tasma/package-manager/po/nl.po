@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-12 10:46+0300\n"
-"PO-Revision-Date: 2008-06-13 20:40+0200\n"
+"PO-Revision-Date: 2008-06-15 17:16+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
@@ -231,11 +231,11 @@ msgstr "Geen proxy server"
 
 #: src/PreferencesDialog.py:359
 msgid "Use proxy server"
-msgstr ""
+msgstr "Gebruik proxy server"
 
 #: src/PreferencesDialog.py:360
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: src/MainWidget.py:75
 msgid "Loading Package List..."
@@ -524,7 +524,7 @@ msgstr "COMAR identificatie fout"
 
 #: src/ComarIface.py:62
 msgid "Network error. Please check your network connections and try again."
-msgstr ""
+msgstr "Netwerkfout. Controleer uw netwerkverbindingen en probeer opnieuw."
 
 #: src/ComarIface.py:62 src/ComarIface.py:64
 msgid "COMAR Error"
