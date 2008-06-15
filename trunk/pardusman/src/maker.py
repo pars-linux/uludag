@@ -132,7 +132,7 @@ gfxboot /boot/isolinux/init
 
 label pardus
     kernel /boot/kernel
-    append initrd=/boot/initrd root=/dev/ram0 vga=788 splash=silent quiet %(exparams)s
+    append initrd=/boot/initrd root=/dev/ram0 vga=791 splash=silent quiet %(exparams)s
 
 label harddisk
     localboot 0x80
