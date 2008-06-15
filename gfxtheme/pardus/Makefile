@@ -71,7 +71,6 @@ ifdef DEFAULT_LANG
 ifdef DEFAULT_LANGUAGES
 	@for i in $(DEFAULT_LANGUAGES); do \
 		cp -rL po/$$i.tr help-boot/$$i.hlp message.dir; \
-		echo $$i >> message.dir/languages; \
 	done;
 else
 	cp -rL po/$(DEFAULT_LANG).tr help-boot/$(DEFAULT_LANG).hlp message.dir
