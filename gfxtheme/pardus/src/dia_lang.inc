@@ -199,7 +199,9 @@
   xmenu .xm_current lang.default put
   xmenu .xm_list lang.names put
 
-  xmenu .xm_title /txt_language put
+  % xmenu .xm_title /txt_language put
+  % should we put an syslinux ifelse here ?
+  xmenu .xm_title "Language" put
 
   % make menu smaller if there are more than 19 language entries
   %lang.items length 19 gt {
