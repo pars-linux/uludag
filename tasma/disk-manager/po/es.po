@@ -1,11 +1,10 @@
-# translation of es.po to spanish
 # translation of es.po to
 # Disk Manager Interface
 # Copyright (C) 2006-2007, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Disk-Manager package.
 #
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
-# Klemens Häckel <click3d_at_linuxmail_org>, 2007.
+# Klemens Häckel <click3d_at_linuxmail_org>, 2007, 2008.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
 msgid ""
@@ -13,9 +12,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-20 20:03+0300\n"
-"PO-Revision-Date: 2007-06-23 21:53-0400\n"
-"Last-Translator: klemens <click3d at linuxmail org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2008-06-15 08:59-0400\n"
+"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
+"Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,11 +30,11 @@ msgstr "Particiones"
 
 #: src/diskform.py:133 src/disk-manager.py:89 src/disk-manager.py:392
 msgid "Disk Manager"
-msgstr "Administrador de Discos"
+msgstr "Montaje de Particiones"
 
 #: src/diskform.py:134
 msgid "File System Type :"
-msgstr "Tipo de Sistema de Archivos:"
+msgstr "Sistema de Archivos:"
 
 #: src/diskform.py:135
 msgid "Mount Point :"
@@ -45,30 +44,27 @@ msgstr "Punto de Montaje:"
 msgid "Additional Options :"
 msgstr "Opciones adicionales:"
 
-# ...predeterminadas
 #: src/diskform.py:137
 msgid "Get Default Options"
-msgstr "Usar opciones por defecto"
+msgstr "Usar opciones predeterminadas"
 
 #: src/diskform.py:138
 msgid "Find Disks Automatically"
-msgstr "Detectar discos automaticamente"
+msgstr "Agregar articiones automaticamente"
 
 #: src/diskform.py:139
 msgid "Show System Partitions"
-msgstr "Mostrar Particiones del Sistema"
+msgstr "Mostrar particiones del sistema"
 
-# i translated as if "to apply changes"..
 #: src/diskform.py:142
 msgid "To update disk changes the manager must run as root"
 msgstr ""
-"Para aplicar los cambios se debe ejecutar el administrador de discos como "
+"Para aplicar cambios se debe ejecutar como "
 "usuario root"
 
-# Usuario no pertenece al grupo 'disk'!
 #: src/disk-manager.py:121
 msgid "User not in disk group !"
-msgstr "Usuario no en grupo disk !"
+msgstr "Usuario no pertenece al grupo disk !"
 
 #: src/disk-manager.py:132 src/disk-manager.py:134
 msgid "File /etc/fstab is not correct, please fix it manually."
@@ -93,9 +89,9 @@ msgstr "Punto de Montaje"
 
 #: src/disk-manager.py:308
 msgid "File System Type"
-msgstr "Tipo de Sistema de Archivos"
+msgstr "Sistema de Archivos"
 
 #: src/disk-manager.py:387
 msgid "Disk Manager is already running!"
-msgstr "Administrador de Discos ya se está ejecutando"
+msgstr "Administrador de Puntos de Montajes ya se está ejecutando"
 
