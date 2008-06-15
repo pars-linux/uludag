@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-12 12:32+0300\n"
-"PO-Revision-Date: 2008-06-13 16:20+0200\n"
+"PO-Revision-Date: 2008-06-15 13:11+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -518,7 +518,7 @@ msgstr ""
 
 #: yali4/gui/Ui/summarywidget.py:66
 msgid "Begin Install"
-msgstr ""
+msgstr "Installation beginnen"
 
 #: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
@@ -648,6 +648,10 @@ msgid ""
 "extensive abilities that will meet professional graphic artists' and "
 "designers' needs.\n"
 msgstr ""
+"Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm und ist im Pardus 2008 "
+"vorinstalliert. Gimp ermöglicht die Bearbeitung aller gängigen Bildformate und "
+"deckt die Anforderungen professioneller Künstler und Designer durch seine "
+"umfassenden Fähigkeiten.\n"
 
 #: yali4/gui/descSlide.py:36
 msgid ""
@@ -655,6 +659,9 @@ msgid ""
 "album covers and lyrics for you, and thanks to its Last.FM support, can "
 "suggest similar media, bringing even more possibilities.\n"
 msgstr ""
+"Amarok ist ein komfortabler, funktioneller und leistungsstarker Media Player. Er "
+"ruft für Sie Album Cover und Songtexte ab. Und dank der Last.FM-Unterstützung "
+"können gleichartige Medien angezeigt dadurch mehr Möglichkeiten entstehen.\n"
 
 #: yali4/gui/descSlide.py:38
 msgid ""
@@ -748,6 +755,8 @@ msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
+"GPT Laufwerktabellen werden für erweiterte Partitionen nicht unterstützt.\n"
+"Sie müssen aus Ihrer Laufwerktabelle einen von Ihrer primären Partition löschen!"
 
 #: yali4/gui/DiskWidgets.py:387
 msgid "Delete All Partitions"
@@ -904,7 +913,7 @@ msgstr "Boot-Loaderauswahl"
 
 #: yali4/gui/ScrBootloader.py:37
 msgid "Configure the system boot.."
-msgstr ""
+msgstr "Systemstart wird konfiguriert.."
 
 #: yali4/gui/ScrBootloader.py:39
 msgid ""
@@ -955,7 +964,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
-msgstr ""
+msgstr "Überprüfen Sie Ihre Medien"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity.."
@@ -1299,11 +1308,11 @@ msgstr ""
 
 #: yali4/gui/ScrSummary.py:42
 msgid "The last step before install"
-msgstr ""
+msgstr "Der letzte Schritt vor der Installation"
 
 #: yali4/gui/ScrSummary.py:43
 msgid "Summary of your installation.."
-msgstr ""
+msgstr "Zusammenfassung von Ihrer Installation.."
 
 #: yali4/gui/ScrSummary.py:45
 msgid ""
