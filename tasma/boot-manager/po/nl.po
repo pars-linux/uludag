@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Willem Gielen <w.gielen@gmail.com>, 2007.
-# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2007.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 16:41+0300\n"
-"PO-Revision-Date: 2007-11-12 20:04+0100\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <Pardus-translation-nl@pardus.org.tr>\n"
+"PO-Revision-Date: 2008-06-15 17:36+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -119,34 +119,33 @@ msgstr "Wilt u de onvertaalde kernel(s) van het systeem verwijderen?"
 
 #: src/bm_mainview.py:518
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Kan geen verbinding maken met DBus."
 
 #: src/bm_mainview.py:518
 msgid "DBus Error"
-msgstr ""
+msgstr "DBus fout"
 
 #: src/bm_mainview.py:540
-#, fuzzy
 msgid "You are not authorized for this operation."
-msgstr "U mag de opstartinstellingen niet aanpassen."
+msgstr "U bent niet geautoriseerd voor deze handeling."
 
 #: src/bm_mainview.py:546
 msgid "Waiting DBus..."
-msgstr ""
+msgstr "Wachten DBus..."
 
 #: src/bm_mainview.py:546
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "Verbinding met de DBus onverwacht afgesloten, proberen opnieuw te verbinden..."
 
 #: src/bm_mainview.py:562
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
-msgstr ""
+msgstr "Kan geen verbinding maken met DBus! Als het niet draait dient u het te starten met de dienst 'service dbus start' commando in de root console."
 
 #: src/bm_mainview.py:566
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR fout"
 
 #: src/bm_mainview.py:580
 msgid "Bootloader configuration changed by another application."
@@ -175,3 +174,4 @@ msgstr "Bewerk keuze"
 #: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Verwijder keuze"
+
