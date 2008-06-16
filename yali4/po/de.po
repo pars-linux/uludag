@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-12 12:32+0300\n"
+"POT-Creation-Date: 2008-06-16 17:59+0300\n"
 "PO-Revision-Date: 2008-06-15 13:11+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartquestion.py:64 yali4/gui/Ui/datetimewidget.py:81
 #: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:143
-#: yali4/gui/Ui/summarywidget.py:59
+#: yali4/gui/Ui/summarywidget.py:58
 msgid "Form"
 msgstr "Form"
 
@@ -88,7 +88,8 @@ msgstr ""
 "Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid "Automatically partition try to use free space or resize current partitions"
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
@@ -117,12 +118,16 @@ msgstr "Mit dieser Option können Sie manuell partitionieren"
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
+msgstr ""
+"Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid "This option will try to find suitable free space or resizable partitions"
-msgstr "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder grössenänderbare Partition zu finden"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
+msgstr ""
+"Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
+"grössenänderbare Partition zu finden"
 
 #: yali4/gui/Ui/autopartwidget.py:112
 msgid ""
@@ -415,7 +420,7 @@ msgstr ""
 "decoration: underline; color:#ffffff;\">Abbrechen</span><span style=\" color:"
 "#ffffff;\">\".</span></p></body></html>"
 
-#: yali4/gui/Ui/partresize.py:88 yali4/gui/Ui/summarywidget.py:65
+#: yali4/gui/Ui/partresize.py:88 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -493,30 +498,6 @@ msgid "Auto Login Disabled"
 msgstr "Auto-Login deaktiviert"
 
 #: yali4/gui/Ui/summarywidget.py:60
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
-"p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
-"p></body></html>"
-
-#: yali4/gui/Ui/summarywidget.py:66
 msgid "Begin Install"
 msgstr "Installation beginnen"
 
@@ -535,7 +516,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Die GPL lesen"
 
-#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:155
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:159
 msgid "Reboot System!"
 msgstr "System neustarten"
 
@@ -615,9 +596,10 @@ msgid ""
 "features, will help securely surf the Internet. Pardus 2008 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
 msgstr ""
-"Mozilla Firefox, mit seiner Schnelligkeit, konstanten Entwicklung und vielen"
-"neuen Features wird Ihnen helfen im Internet sich zu surfen. Sie können im "
-"Pardus 2008 beinhalteten Mozilla Firefox 3.0 mit tausenden von Erweiterungen anreichern.\n"
+"Mozilla Firefox, mit seiner Schnelligkeit, konstanten Entwicklung und "
+"vielenneuen Features wird Ihnen helfen im Internet sich zu surfen. Sie "
+"können im Pardus 2008 beinhalteten Mozilla Firefox 3.0 mit tausenden von "
+"Erweiterungen anreichern.\n"
 
 #: yali4/gui/descSlide.py:30
 msgid ""
@@ -625,9 +607,10 @@ msgid ""
 "RSS feeds, diaries, to-do listes and blog entries in one combined interface. "
 "Kontact, with its Groupware feature, will be your best friend at work.\n"
 msgstr ""
-"Kontact, KDE Persönliches Informations-Manager, hilft Ihnen bei der Verwaltung Ihrer "
-"E-Mail-Nachrichten, RSS-Abos, Aufgaben-Listen und Blogeinträgen in einer kombinierten "
-"Benutzerschnittstelle. Kontact wird mit Ihrer Groupware-Feature Ihr bester Freund auf der Arbeit.\n"
+"Kontact, KDE Persönliches Informations-Manager, hilft Ihnen bei der "
+"Verwaltung Ihrer E-Mail-Nachrichten, RSS-Abos, Aufgaben-Listen und "
+"Blogeinträgen in einer kombinierten Benutzerschnittstelle. Kontact wird mit "
+"Ihrer Groupware-Feature Ihr bester Freund auf der Arbeit.\n"
 
 #: yali4/gui/descSlide.py:32
 msgid ""
@@ -637,9 +620,9 @@ msgid ""
 "and editor, a graphics editor and a database application.\n"
 msgstr ""
 "OpenOffice.org, ein aktiv, von tausenden Instituten und Millionen Benutzern "
-"genutztes Office-Paket, enthält ein Word-Prozessor, eine Tabellenkalkulations- "
-"Anwendung, ein Präsentations-Viewer und -Editor, ein grafischen Edtor und "
-"eine Datenbank-Anwendung.\n"
+"genutztes Office-Paket, enthält ein Word-Prozessor, eine "
+"Tabellenkalkulations- Anwendung, ein Präsentations-Viewer und -Editor, ein "
+"grafischen Edtor und eine Datenbank-Anwendung.\n"
 
 #: yali4/gui/descSlide.py:34
 msgid ""
@@ -648,10 +631,10 @@ msgid ""
 "extensive abilities that will meet professional graphic artists' and "
 "designers' needs.\n"
 msgstr ""
-"Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm und ist im Pardus 2008 "
-"vorinstalliert. Gimp ermöglicht die Bearbeitung aller gängigen Bildformate und "
-"deckt die Anforderungen professioneller Künstler und Designer durch seine "
-"umfassenden Fähigkeiten.\n"
+"Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm und ist im Pardus "
+"2008 vorinstalliert. Gimp ermöglicht die Bearbeitung aller gängigen "
+"Bildformate und deckt die Anforderungen professioneller Künstler und "
+"Designer durch seine umfassenden Fähigkeiten.\n"
 
 #: yali4/gui/descSlide.py:36
 msgid ""
@@ -659,9 +642,10 @@ msgid ""
 "album covers and lyrics for you, and thanks to its Last.FM support, can "
 "suggest similar media, bringing even more possibilities.\n"
 msgstr ""
-"Amarok ist ein komfortabler, funktioneller und leistungsstarker Media Player. Er "
-"ruft für Sie Album Cover und Songtexte ab. Und dank der Last.FM-Unterstützung "
-"können gleichartige Medien angezeigt dadurch mehr Möglichkeiten entstehen.\n"
+"Amarok ist ein komfortabler, funktioneller und leistungsstarker Media "
+"Player. Er ruft für Sie Album Cover und Songtexte ab. Und dank der Last.FM-"
+"Unterstützung können gleichartige Medien angezeigt dadurch mehr "
+"Möglichkeiten entstehen.\n"
 
 #: yali4/gui/descSlide.py:38
 msgid ""
@@ -683,7 +667,9 @@ msgid ""
 "Copying CDs (or DVDs), creating data or audio CDs, creating ISO images and "
 "burning CD/DVD images to discs are just a few of the things you can do with "
 "K3b.\n"
-msgstr "Kopieren von CDs (oder DVDs), erstellen von Daten- oder Audio-CDs, erstellen von ISO-Imagen und brennen von CD/DVD-Imagen auf Discs .\n"
+msgstr ""
+"Kopieren von CDs (oder DVDs), erstellen von Daten- oder Audio-CDs, erstellen "
+"von ISO-Imagen und brennen von CD/DVD-Imagen auf Discs .\n"
 
 #: yali4/gui/descSlide.py:44
 msgid ""
@@ -693,9 +679,9 @@ msgid ""
 "Freenode server (and you can use Konversation for that).\n"
 msgstr ""
 "Sie können auf unserer Community www.ozgurlukicin.com Anleitungen, Tutorials "
-"und Paket-Vorstellungen finden. Sollten Sie Probleme mit Pardus 2008 bekommen, "
-"dann können Sie Support auf unseren Forum-Seiten und #pardus Raum im IRC "
-"Freenode Server erhalten.\n"
+"und Paket-Vorstellungen finden. Sollten Sie Probleme mit Pardus 2008 "
+"bekommen, dann können Sie Support auf unseren Forum-Seiten und #pardus Raum "
+"im IRC Freenode Server erhalten.\n"
 
 #: yali4/gui/DiskWidgets.py:77
 msgid "as Pardus System Files (mandatory)"
@@ -713,72 +699,92 @@ msgstr "als SWAP-Bereich (optional)"
 msgid "as Storage Area"
 msgstr "als Archivierungs-Bereich"
 
-#: yali4/gui/DiskWidgets.py:159
+#: yali4/gui/DiskWidgets.py:162
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "Die Grösse von 'Root installieren'  muss grösser als %s MB sein."
 
-#: yali4/gui/DiskWidgets.py:194 yali4/gui/ScrBootloader.py:67
-#: yali4/gui/ScrKahyaCheck.py:91 yali4/gui/ScrPartitionAuto.py:71
+#: yali4/gui/DiskWidgets.py:197 yali4/gui/ScrBootloader.py:67
+#: yali4/gui/ScrKahyaCheck.py:93 yali4/gui/ScrPartitionAuto.py:71
 msgid "Can't find a storage device!"
 msgstr "Es kann kein Speichergerät gefunden werden!"
 
-#: yali4/gui/DiskWidgets.py:209
+#: yali4/gui/DiskWidgets.py:213
 #, python-format
 msgid "%0.1f GB free"
 msgstr "%0.1f GB frei"
 
-#: yali4/gui/DiskWidgets.py:211
+#: yali4/gui/DiskWidgets.py:215
 #, python-format
 msgid "%d MB free"
 msgstr "%d MB frei"
 
-#: yali4/gui/DiskWidgets.py:231 yali4/gui/GUIAdditional.py:138
+#: yali4/gui/DiskWidgets.py:235 yali4/gui/GUIAdditional.py:138
 #, python-format
 msgid "Partition %d"
 msgstr "Partition %d"
 
-#: yali4/gui/DiskWidgets.py:238
+#: yali4/gui/DiskWidgets.py:242
 msgid "Free Space"
 msgstr "Freier Bereich"
 
-#: yali4/gui/DiskWidgets.py:286 yali4/partitionrequest.py:181
+#: yali4/gui/DiskWidgets.py:261
+#, python-format
+msgid ""
+"Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
+"(device)s</b>."
+msgstr ""
+
+#: yali4/gui/DiskWidgets.py:296 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
 msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
-#: yali4/gui/DiskWidgets.py:333
+#: yali4/gui/DiskWidgets.py:327
+#, python-format
+msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
+msgstr ""
+
+#: yali4/gui/DiskWidgets.py:346
 msgid "Too many primary partition !"
 msgstr "Es existieren zu viele primäre Partitionen!"
 
-#: yali4/gui/DiskWidgets.py:334
+#: yali4/gui/DiskWidgets.py:347
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
 "GPT Laufwerktabellen werden für erweiterte Partitionen nicht unterstützt.\n"
-"Sie müssen aus Ihrer Laufwerktabelle einen von Ihrer primären Partition löschen!"
+"Sie müssen aus Ihrer Laufwerktabelle einen von Ihrer primären Partition "
+"löschen!"
 
-#: yali4/gui/DiskWidgets.py:387
+#: yali4/gui/DiskWidgets.py:380
+#, python-format
+msgid ""
+"Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
+"<b>%(size)s MB</b> as <b>%(fs)s</b>."
+msgstr ""
+
+#: yali4/gui/DiskWidgets.py:406
 msgid "Delete All Partitions"
 msgstr "Alle Partitionen löschen"
 
-#: yali4/gui/DiskWidgets.py:455
+#: yali4/gui/DiskWidgets.py:474
 msgid "Pardus will install here"
 msgstr "Pardus wird hier installiert"
 
-#: yali4/gui/DiskWidgets.py:458
+#: yali4/gui/DiskWidgets.py:477
 msgid "User files will store here"
 msgstr "Benutzerdateien werden hier abgespeichert"
 
-#: yali4/gui/DiskWidgets.py:461
+#: yali4/gui/DiskWidgets.py:480
 msgid "Swap will be here"
 msgstr "Swapbereich"
 
-#: yali4/gui/DiskWidgets.py:464
+#: yali4/gui/DiskWidgets.py:483
 msgid "Backup or archive files will store here"
 msgstr "Backup- oder Archiv-Dateien werden hier abgespeichert"
 
-#: yali4/gui/DiskWidgets.py:485
+#: yali4/gui/DiskWidgets.py:504
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -815,11 +821,11 @@ msgstr "Die Lizenzdatei konnte nicht geöffnet werden!"
 msgid "Can't open Release Notes!"
 msgstr "Release-Informationen können nicht geöffnet werden!"
 
-#: yali4/gui/runner.py:118
+#: yali4/gui/runner.py:122
 msgid "Error!"
 msgstr "Fehler!"
 
-#: yali4/gui/runner.py:150
+#: yali4/gui/runner.py:154
 msgid "Unhandled error occured!"
 msgstr "Es ist ein ungehandhabter Fehler aufgetreten!"
 
@@ -864,19 +870,22 @@ msgstr ""
 "\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Sie müssen ein Passwort für den \"root\" -Benutzer, der die völlige Kontrolle über "
-"das System hat, festlegen.\n"
+"Sie müssen ein Passwort für den \"root\" -Benutzer, der die völlige "
+"Kontrolle über das System hat, festlegen.\n"
 "Ihr Passwort sollte für Sie leicht zu merken aber für den Dritten schwerz zu "
 "erraten sein. \n"
-"Ihr Passwort kann Klein- oder Grossbuchstaben, Zahlen und Satzzeichen enthalten. \n"
+"Ihr Passwort kann Klein- oder Grossbuchstaben, Zahlen und Satzzeichen "
+"enthalten. \n"
 "Sie sollten drauf achten, dass Ihr Passwort keine Umlaute enthält, um "
 "jegliche Inkompatibilitäten mit anderen Systemen zu vermeiden.\n"
 "</p>\n"
 "<p>\n"
-"Sie können im nachstehenden Textfeld ein Namen für Ihren Computer eingeben. Um "
-"es im Netzwerk \n"
-"deutlich zu machen, dass es Ihr Computer ist, wird empfohlen einen beschreibenden Text einzugeben.\n"
-"Fahren Sie mit der Installation fort, nachdem Sie Ihre Auswahl vorgenommen haben.\n"
+"Sie können im nachstehenden Textfeld ein Namen für Ihren Computer eingeben. "
+"Um es im Netzwerk \n"
+"deutlich zu machen, dass es Ihr Computer ist, wird empfohlen einen "
+"beschreibenden Text einzugeben.\n"
+"Fahren Sie mit der Installation fort, nachdem Sie Ihre Auswahl vorgenommen "
+"haben.\n"
 "</p>\n"
 "<p>\n"
 "Klicken Sie auf den Button Weiter, um fortzufahren.\n"
@@ -1073,7 +1082,7 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:130 yali4/gui/ScrSummary.py:66
-#: yali4/installer.py:552
+#: yali4/installer.py:556
 msgid "Reboot"
 msgstr "Neustarten"
 
@@ -1083,7 +1092,8 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
+msgstr ""
+"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1255,13 +1265,15 @@ msgstr ""
 "Für die Pardusinstallation wird 4GB (10GB empfohlen) freier Speicherplatz \n"
 "benötigt. Der für die Installation gewählte Festplattenbereich oder \n"
 "die gewählte Partition wird automatisch formatiert. \n"
-"Daher wird empohlen, ein Backup zu erstellen um jegliche Probleme zu vermeiden.\n"
+"Daher wird empohlen, ein Backup zu erstellen um jegliche Probleme zu "
+"vermeiden.\n"
 "</p>\n"
-"<p>Auto-Partitionierung wird die gewählte Festplatte/Partition automatisch"
-"formatieren\n"
-"und Pardus 2008 installieren. Wenn Sie möchten können Sie die Partitionierung "
-"manuell \n"
-"vornehmen oder eine neue Partition für die Pardus 2008-Installtion erstellen.</p>\n"
+"<p>Auto-Partitionierung wird die gewählte Festplatte/Partition "
+"automatischformatieren\n"
+"und Pardus 2008 installieren. Wenn Sie möchten können Sie die "
+"Partitionierung manuell \n"
+"vornehmen oder eine neue Partition für die Pardus 2008-Installtion erstellen."
+"</p>\n"
 "<p>\n"
 "Für weitere Informationen über die Partitionierung schlagen Sie bitte im \n"
 "Pardusinstallations- und -Benutzerhandbuch nach.\n"
@@ -1329,8 +1341,8 @@ msgstr ""
 "<font size=\"+2\">Installationszusammenfassung</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Hier können Sie die von Ihnen gewählten Installtionsoptionen sehen, "
-"bevor die Installation startet.\n"
+"Hier können Sie die von Ihnen gewählten Installtionsoptionen sehen, bevor "
+"die Installation startet.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1338,16 +1350,68 @@ msgstr ""
 msgid "<b><p>This action will reboot your system !</p></b>"
 msgstr "<b><p>Diese Vorgang wird Ihr System neustarten!</p></b>"
 
-#: yali4/gui/ScrSummary.py:90 yali4/gui/ScrSummary.py:98
-#: yali4/gui/ScrSummary.py:112
+#: yali4/gui/ScrSummary.py:84
+msgid "Localization Settings"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:85
+#, python-format
+msgid "Selected language is <b>%s</b>"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:87
+#, fuzzy, python-format
+msgid "Selected keyboard layout is <b>%s%s</b>"
+msgstr "Wählen Sie eine Tastaturbelegung aus."
+
+#: yali4/gui/ScrSummary.py:91
+msgid "Date/Time Settings"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:92
+#, python-format
+msgid "Selected TimeZone is <b>%s</b>"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:96
+msgid "User Settings"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:98
+#, python-format
+msgid "User %s (<b>%s</b>) added."
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:100
+#, python-format
+msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:105
+#, fuzzy
+msgid "Hostname Settings"
+msgstr "Hostname:"
+
+#: yali4/gui/ScrSummary.py:106
+#, python-format
+msgid "Hostname is set as <b>%s</b>"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:110
+#, fuzzy
+msgid "Partition Settings"
+msgstr "Partition %d"
+
+#: yali4/gui/ScrSummary.py:135 yali4/gui/ScrSummary.py:143
+#: yali4/gui/ScrSummary.py:157
 msgid "Formatting ..."
 msgstr "Am formatieren..."
 
-#: yali4/gui/ScrSummary.py:95
+#: yali4/gui/ScrSummary.py:140
 msgid "Resizing ..."
 msgstr "Grössenänderung wird vorgenommen..."
 
-#: yali4/gui/ScrSummary.py:105 yali4/installer.py:229
+#: yali4/gui/ScrSummary.py:150 yali4/installer.py:232
 msgid "Writing disk tables ..."
 msgstr "Laufwerktabellen werden beschrieben..."
 
@@ -1479,24 +1543,24 @@ msgstr "Windows"
 msgid "Backtrace:"
 msgstr "Ablaufverfolgung:"
 
-#: yali4/installer.py:123
+#: yali4/installer.py:126
 msgid "YALI Working..."
 msgstr "YALI ist am arbeiten..."
 
-#: yali4/installer.py:138
+#: yali4/installer.py:141
 msgid "Starting for CD Check"
 msgstr "CD-Überprüfung wird gestartet"
 
-#: yali4/installer.py:156
+#: yali4/installer.py:159
 #, python-format
 msgid "Checking: %s"
 msgstr "Am überprüfen: %s"
 
-#: yali4/installer.py:160
+#: yali4/installer.py:163
 msgid "Check Failed"
 msgstr "Überprüfung fehlgeschlagen"
 
-#: yali4/installer.py:161
+#: yali4/installer.py:164
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
@@ -1505,7 +1569,7 @@ msgstr ""
 "fehlgeschlagen.                                  Die Installations-CD "
 "scheint defekt zu sein.</p></b>"
 
-#: yali4/installer.py:164
+#: yali4/installer.py:167
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
@@ -1513,19 +1577,19 @@ msgstr ""
 "<font color=\"#FFF\"><b>Überprüfung abgeschlossen. Sie können zum nächsten "
 "Fenster fortfahren.</b></font>"
 
-#: yali4/installer.py:178
+#: yali4/installer.py:181
 msgid "Setting time settings.."
 msgstr "Zeiteinstellungen werden vorgenommen.."
 
-#: yali4/installer.py:199
+#: yali4/installer.py:202
 msgid "Disk analyze started.."
 msgstr "Festplattenanalyse gestartet.."
 
-#: yali4/installer.py:285
+#: yali4/installer.py:288
 msgid "Resize Finished ..."
 msgstr "Grössenänderung abgeschlossen..."
 
-#: yali4/installer.py:297
+#: yali4/installer.py:300
 msgid "Creating new partition ..."
 msgstr "Neue Partition wird erstellt..."
 
@@ -1685,7 +1749,7 @@ msgstr "Serbisch"
 msgid "unknown"
 msgstr "Unbekannt"
 
-#: yali4/partition.py:198
+#: yali4/partition.py:205
 msgid "free space"
 msgstr "freier Speicherplatz"
 
@@ -1705,3 +1769,25 @@ msgstr "Swap"
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
 
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p></body></html>"

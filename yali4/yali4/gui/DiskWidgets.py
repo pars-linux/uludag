@@ -88,6 +88,9 @@ class DiskList(QtGui.QWidget):
         self.vbox.addWidget(self.tabWidget)
         self.vbox.addWidget(self.partEdit)
 
+        # Summary
+        ctx.partSum = []
+
         # Connections
         self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(int)"),self.updatePartEdit)
         self.connect(self.partEdit.ui.formatType,QtCore.SIGNAL("currentIndexChanged(QString)"),self.formatTypeChanged)
@@ -196,6 +199,7 @@ class DiskList(QtGui.QWidget):
         self.devs = [i for i in yali4.storage.devices]
 
     def resetChanges(self):
+        ctx.partSum = []
         yali4.storage.clear_devices()
         self.initDevices()
         ctx.partrequests.remove_all()
@@ -248,16 +252,22 @@ class DiskList(QtGui.QWidget):
     def slotDeletePart(self):
         """Creates delete request for selected partition"""
         dev = self.partEdit.currentPart.getDevice()
-        dev.deletePartition(self.partEdit.currentPart)
+        currentPart = self.partEdit.currentPart
+        dev.deletePartition(currentPart)
+
+        _sum = {"partition":currentPart.getFSLabel() or currentPart.getName(),
+                "size":currentPart.getSizeStr(),
+                "device":dev.getModel()}
+        ctx.partSum.append(_("Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%(device)s</b>.") % _sum)
 
         # check for last logical partition
         if dev.numberOfLogicalPartitions() == 0 and dev.getExtendedPartition():
             # if there is no more logical partition we also dont need the extended one ;)
             dev.deletePartition(dev.getExtendedPartition())
 
-        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.mountRequestType)
-        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.formatRequestType)
-        ctx.partrequests.removeRequest(self.partEdit.currentPart, request.labelRequestType)
+        ctx.partrequests.removeRequest(currentPart, request.mountRequestType)
+        ctx.partrequests.removeRequest(currentPart, request.formatRequestType)
+        ctx.partrequests.removeRequest(currentPart, request.labelRequestType)
         self.update()
 
     def slotResizePart(self):
@@ -312,6 +322,9 @@ class DiskList(QtGui.QWidget):
                 self.partEdit.ui.information.setText("%s" % e)
                 self.partEdit.ui.information.show()
                 return False
+            _sum = {"partition":partition.getName(),
+                    "type":t.name}
+            ctx.partSum.append(_("Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
             return True
 
         # Get selected Partition and the other informations from GUI
@@ -359,6 +372,12 @@ class DiskList(QtGui.QWidget):
 
             # Get new partition meta
             partition = device.getPartition(p.num)
+
+            _sum = {"partition":partition.getName(),
+                    "size":size,
+                    "device":device.getModel(),
+                    "fs":t.filesystem.name()}
+            ctx.partSum.append(_("Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
 
         # Apply edit requests
         if not edit_requests(partition):
