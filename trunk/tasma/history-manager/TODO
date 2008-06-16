@@ -4,8 +4,6 @@ Known Issues
 
 Pisi Api Requirements
 
-* Configuration files in a snapshot
-
 * More information on takeback operations
 ( Packages and versions, down/up'grade information, warning messages we see in cli and pm )
 
