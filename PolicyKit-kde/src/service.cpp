@@ -41,8 +41,6 @@
 #include "authdialog.h"
 #include "debug.h"
 
-#include <X11/Xlib.h>
-
 using namespace std;
 
 PolicyService* PolicyService::m_self;
@@ -388,7 +386,7 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
 
     m_self->m_dialog->setAdminUsers(list);
     Debug::printDebug("polkit_grant_select_admin_user: Done");
-    Debug::printDebug("polkit_grant_select_admin_user: Showing dialog...");
+    //Debug::printDebug("polkit_grant_select_admin_user: Showing dialog...");
 
     char *selected = strdup(m_self->m_dialog->cbUsers->text(1));
     return selected;

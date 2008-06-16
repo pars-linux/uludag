@@ -66,6 +66,9 @@ private:
     bool m_gainedPrivilege;
     bool m_inputBogus;
     bool m_cancelled;
+
+    QString m_userSelected;
+
     static PolicyService* m_self;
     QString m_uniqueSessionName;
     QTimer *exitTimer;
