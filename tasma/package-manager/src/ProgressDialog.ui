@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>ProgressDialog</class>
-<widget class="KDialog">
+<widget class="QDialog">
     <property name="name">
         <cstring>ProgressDialog</cstring>
     </property>
@@ -101,7 +101,7 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="KPushButton" row="0" column="1">
+                <widget class="QPushButton" row="0" column="1">
                     <property name="name">
                         <cstring>cancelButton</cstring>
                     </property>
