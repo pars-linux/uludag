@@ -4,9 +4,6 @@ Known Issues
 
 Pisi Api Requirements
 
-* More information on takeback operations
-( Packages and versions, down/up'grade information, warning messages we see in cli and pm )
-
 TODO
 
 * Improve progress bar informations
