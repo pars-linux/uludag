@@ -4,7 +4,6 @@ Known Issues
 
 Pisi Api Requirements
 
-* Packages in a snapshot
 * Configuration files in a snapshot
 * Snapshot progress information
 
