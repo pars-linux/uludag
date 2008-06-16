@@ -30,8 +30,7 @@ from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 
-# Auto Partition Methods
-methodUseAvail, methodEraseAll = range(2)
+from yali4.gui.installdata import *
 
 ##
 # Partition Choice Widget
@@ -151,9 +150,7 @@ about disk partitioning.
         ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.device.getPath())
         if self.autoPartPartition:
             ctx.debugger.log("Trying to use %s for automatic partitioning.." % self.autoPartPartition["partition"].getPath())
-        if self.ui.accept_auto_2.isChecked():
-            ctx.installData.autoPartMethod = methodEraseAll
-        # skip next screen()
+
         # We pass the Manual Partitioning screen
         ctx.mainScreen.moveInc = 2
         if move:
@@ -165,18 +162,21 @@ about disk partitioning.
             ctx.debugger.log("Install device selected as %s" % self.device.getPath())
 
     def slotSelectAutoEraseAll(self,state):
+        ctx.installData.autoPartMethod = methodEraseAll
         self.fillDeviceList()
         self.enable_next = state
         self.device = self.ui.device_list.currentItem().getDevice()
         self.updateUI()
 
     def slotSelectAutoUseAvail(self, state):
+        ctx.installData.autoPartMethod = methodUseAvail
         self.fillDeviceList(state)
         self.enable_next = state
         self.device = self.ui.device_list.currentItem().getDevice()
         self.updateUI()
 
     def slotSelectManual(self):
+        ctx.installData.autoPartMethod = methodManual
         self.enable_next = True
         self.updateUI()
 
