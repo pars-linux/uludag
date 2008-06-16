@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>323</width>
-            <height>158</height>
+            <width>433</width>
+            <height>163</height>
         </rect>
     </property>
     <property name="caption">
@@ -108,6 +108,11 @@
                     <string>http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2</string>
                 </property>
             </item>
+            <item>
+                <property name="text">
+                    <string>http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2</string>
+                </property>
+            </item>
             <property name="name">
                 <cstring>repoAddress</cstring>
             </property>
@@ -147,6 +152,7 @@
 </connections>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
+    <includehint>kdialog.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
