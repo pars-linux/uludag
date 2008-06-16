@@ -69,7 +69,7 @@ FOREACH(_po ${PO_FILES})
     ADD_CUSTOM_COMMAND(
         TARGET policykit-kde
         POST_BUILD
-        COMMAND msgmerge ARGS --quiet --update --backup=none -s ${CMAKE_SOURCE_DIR}/po/${_po} ${CMAKE_SOURCE_DIR}/po/policykit-kde.pot
+        COMMAND msgmerge ARGS --quiet --update --no-location --backup=none -s ${CMAKE_SOURCE_DIR}/po/${_po} ${CMAKE_SOURCE_DIR}/po/policykit-kde.pot
         COMMAND msgfmt ARGS -o ${_gmofile} ${CMAKE_SOURCE_DIR}/po/${_po})
     INSTALL(FILES ${_gmofile} DESTINATION share/locale/${_lang}/LC_MESSAGES RENAME policykit-kde.mo)
     SET(_gmofiles ${_gmofiles} ${_gmofile})
