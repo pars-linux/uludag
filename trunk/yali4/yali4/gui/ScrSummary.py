@@ -108,6 +108,8 @@ Here you can see your install options and look at them again before installation
 
         # Partition
         content.append(subject % _("Partition Settings"))
+        for operation in ctx.partSum:
+            content.append(item % operation)
         content.append(end)
 
         content.append("""</ul></body></html>""")
