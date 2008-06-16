@@ -47,8 +47,9 @@ static const int slice = 20;
  *  TRUE to construct a modal dialog.
  */
 AuthDialog::AuthDialog(QString &header)
-    : AuthDialogUI( NULL, 0, TRUE, WType_Popup|Qt::WStyle_StaysOnTop),
-        m_currentY( 0 )
+    : AuthDialogUI( NULL, 0, TRUE, WType_Dialog|Qt::WStyle_NoBorder|Qt::WStyle_StaysOnTop)//|Qt::WStyle_NoBorder)
+//    : AuthDialogUI( NULL, 0)
+//        m_currentY( 0 )
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
@@ -59,6 +60,7 @@ AuthDialog::AuthDialog(QString &header)
     setHeader(header);
     lePassword->setFocus();
 
+    /*
     setBackgroundMode(QWidget::NoBackground);
     // get desktop size
     QRect geo(QApplication::desktop()->geometry());
@@ -77,37 +79,11 @@ AuthDialog::AuthDialog(QString &header)
     leftSpacer->changeSize(screenSize.x() + (screenSize.width() - sh.width()) / 2, 30, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     QTimer::singleShot(0, this, SLOT( slotGrab()));
+    */
 }
 
 AuthDialog::~AuthDialog()
 {
-}
-
-void AuthDialog::paintEvent(QPaintEvent* ev)
-{
-    lePassword->setFocus();
-    // Grab keyboard when widget is mapped to screen
-    lePassword->grabKeyboard();
-    QDialog::paintEvent(ev);
-}
-
-bool AuthDialog::focusNextPrevChild (bool next)
-{
-    bool ret = QWidget::focusNextPrevChild(next);
-    QWidget::keyboardGrabber()->releaseKeyboard();
-    QWidget::focusWidget()->grabKeyboard();
-    return ret;
-}
-
-void AuthDialog::keyPressEvent(QKeyEvent* e)
-{
-    // pressing Esc closes the dialog
-    if (e->state() == 0 && e->key() == Key_Escape)
-    {
-        emit reject();
-        return;
-    }
-    QDialog::keyPressEvent(e);
 }
 
 void AuthDialog::setHeader(const QString &header)
@@ -122,10 +98,10 @@ void AuthDialog::setContent(const QString &msg)
 
 void AuthDialog::setAdminUsers(const QStringList &users)
 {
-    m_users = users;
+    m_adminUsers = users;
     //QString selected = cbUsers->currentText();
 
-    if (m_users.empty())
+    if (m_adminUsers.empty())
     {
         hideUsersCombo();
         return;
@@ -134,7 +110,7 @@ void AuthDialog::setAdminUsers(const QStringList &users)
     QString selectprompt(cbUsers->currentText());
     cbUsers->clear();
     cbUsers->insertItem(selectprompt);
-    cbUsers->insertStringList(m_users);
+    cbUsers->insertStringList(m_adminUsers);
     showUsersCombo();
 }
 
@@ -227,19 +203,23 @@ void AuthDialog::setType(PolKitResult res)
     else if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION)
     {
         bgRemember->hide();
+        /*
         setTabOrder(lePassword, cbRemember);
         setTabOrder(cbRemember, pbOK);
         setTabOrder(pbOK, pbCancel);
+        */
     }
     else
     {
         cbRemember->hide();
         line->hide();
+        /*
         setTabOrder(lePassword, bgRemember);
         setTabOrder(bgRemember, rbSession);
         setTabOrder(rbSession, rbAlways);
         setTabOrder(rbAlways, pbOK);
         setTabOrder(pbOK, pbCancel);
+        */
     }
 
     m_type = res;
@@ -248,6 +228,7 @@ void AuthDialog::setType(PolKitResult res)
     setContent();
 }
 
+/*
 void AuthDialog::slotGrab()
 {
     // we start the passed early
@@ -324,3 +305,32 @@ void AuthDialog::slotPaintEffect()
     }
     QTimer::singleShot(0, this, SLOT(slotPaintEffect()));
 }
+
+void AuthDialog::paintEvent(QPaintEvent* ev)
+{
+    lePassword->setFocus();
+    // Grab keyboard when widget is mapped to screen
+    lePassword->grabKeyboard();
+    QDialog::paintEvent(ev);
+}
+bool AuthDialog::focusNextPrevChild (bool next)
+{
+    bool ret = QWidget::focusNextPrevChild(next);
+    QWidget::keyboardGrabber()->releaseKeyboard();
+    QWidget::focusWidget()->grabKeyboard();
+    return ret;
+}
+
+void AuthDialog::keyPressEvent(QKeyEvent* e)
+{
+    // pressing Esc closes the dialog
+    if (e->state() == 0 && e->key() == Key_Escape)
+    {
+        emit reject();
+        return;
+    }
+    QDialog::keyPressEvent(e);
+}
+
+*/
+

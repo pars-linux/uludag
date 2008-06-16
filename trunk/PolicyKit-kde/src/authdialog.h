@@ -34,22 +34,21 @@ public:
     void setAdminUsers(const QStringList &);
     void setHeader(const QString &);
     void setPrompt(const QString &);
-
+/*
 protected:
     virtual void keyPressEvent(QKeyEvent*);
     virtual bool focusNextPrevChild (bool);
-    virtual void paintEvent(QPaintEvent*);
 
 private slots:
     void slotPaintEffect();
     void slotGrab();
-
+*/
 private:
     void showUsersCombo();
     void hideUsersCombo();
     void setPasswordFor(bool set, const QString& user = NULL);
     PolKitResult m_type;
-    QStringList m_users;
+    QStringList m_adminUsers;
 
     int m_currentY;
     QImage m_grabbed;
