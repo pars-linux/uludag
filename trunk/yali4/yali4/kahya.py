@@ -145,6 +145,10 @@ class kahya:
             self.correctData.repoAddr = self.data.repoAddr
             self.correctData.repoName = self.data.repoName
 
+        # TimeZone
+        if self.data.timezone:
+            self.correctData.timezone = self.data.timezone
+
         ###language selection###
         if locales.has_key(self.data.language):
             self.correctData.language=self.data.language
@@ -155,8 +159,8 @@ class kahya:
         ###keymap selection###
         if self.data.keyData["xkblayout"]:
             if otherFunct.checkKeymapX():
-                self.correctData.keyData["xkblayout"]=self.data.keyData["xkblayout"]
-                self.correctData.keyData["consolekeymap"]=otherFunct.findKeymap()
+                self.correctData.keyData = self.data.keyData
+                #self.correctData.keyData["consolekeymap"]=otherFunct.findKeymap()
             else:
                 error.Keymap=True
                 self.errorList.append("Keymap Error: %s not valid " % self.data.keyData["xkblayout"])

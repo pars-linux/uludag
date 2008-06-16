@@ -109,6 +109,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 ctx.installData.autoLoginUser = correctData.autoLoginUser
                 ctx.installData.autoPartDev = devices[int(correctData.partitioning[0].disk[-1])]
                 ctx.installData.useYaliFirstBoot = correctData.useYaliFirstBoot
+                ctx.installData.timezone = correctData.timezone
 
                 # if exists use different source repo
                 ctx.installData.repoAddr = correctData.repoAddr

@@ -73,21 +73,23 @@ Here you can see your install options and look at them again before installation
         self.fillContent()
 
     def fillContent(self):
-        subject = "<li><b>%s</b></li><ul>"
+        subject = "<p><li><b>%s</b></li><ul>"
         item    = "<li>%s</li>"
-        end     = "</ul>"
+        end     = "</ul></p>"
         content = QString("")
 
-        content.append("""<html><body><p><ul>""")
+        content.append("""<html><body><ul>""")
 
         # Keyboard Layout
-        content.append(subject % _("Keyboard Settings"))
-        content.append(item % _("Selected layout is %s") % ctx.installData.keyData["name"])
+        content.append(subject % _("Localization Settings"))
+        content.append(item % _("Selected language is <b>%s</b>") % ctx.installData.keyData["name"])
+        variant = ctx.installData.keyData["xkbvariant"] or ''
+        content.append(item % _("Selected keyboard layout is <b>%s%s</b>") % (ctx.installData.keyData["xkblayout"],variant))
         content.append(end)
 
         # TimeZone
         content.append(subject % _("Date/Time Settings"))
-        content.append(item % _("Selected TimeZone is %s") % ctx.installData.timezone)
+        content.append(item % _("Selected TimeZone is <b>%s</b>") % ctx.installData.timezone)
         content.append(end)
 
         # Users
@@ -108,7 +110,7 @@ Here you can see your install options and look at them again before installation
         content.append(subject % _("Partition Settings"))
         content.append(end)
 
-        content.append("""</p></ul></body></html>""")
+        content.append("""</ul></body></html>""")
 
         self.ui.content.setHtml(content)
 

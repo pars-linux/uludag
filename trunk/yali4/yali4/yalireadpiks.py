@@ -3,6 +3,7 @@
 
 import piksemel
 import sys
+import yali4.localedata
 
 class kahyaData:
     def __init__(self):
@@ -18,6 +19,7 @@ class kahyaData:
         self.autoLoginUser=None
         self.repoName = "remoteRepo"
         self.repoAddr = None
+        self.timezone = "Europe/Istanbul"
         self.useYaliFirstBoot = False
 
 class yaliUser:
@@ -42,10 +44,16 @@ def read(args):
     doc=piksemel.parse(args)
     data=kahyaData()
     data.language=doc.getTagData("language")
-    data.keyData["xkblayout"]=doc.getTagData("keymap")
-    data.keyData["xkbvariant"]=doc.getTagData("variant") or ''
+    data.keyData = yali4.localedata.locales[data.language]
+    _xkblayout = data.keyData["xkblayout"]
+    data.keyData["xkblayout"]=doc.getTagData("keymap") or data.keyData["xkblayout"]
+    if data.keyData["xkblayout"] != _xkblayout:
+        data.keyData["xkbvariant"] = None
+    if data.keyData["xkbvariant"]:
+        data.keyData["xkbvariant"]=doc.getTagData("variant") or data.keyData["xkbvariant"][0][0]
     data.rootPassword=doc.getTagData("root_password") or ''
     data.hostname=doc.getTagData("hostname")
+    data.timezone=doc.getTagData("timezone")
     data.repoName=doc.getTagData("reponame") or data.repoName
     data.repoAddr=doc.getTagData("repoaddr")
     usrsTag=doc.getTag("users")
