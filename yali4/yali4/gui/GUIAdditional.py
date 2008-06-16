@@ -82,7 +82,15 @@ class ResizeWidget(QtGui.QWidget):
         QTimer.singleShot(500,self.res)
 
     def res(self):
-        self.dev.resizePartition(self.part._fsname, int(self.ui.resizeMB.value()),self.part)
+        resizeTo = int(self.ui.resizeMB.value())
+        self.dev.resizePartition(self.part._fsname, resizeTo,self.part)
+
+        _sum = {"partition":self.part.getName(),
+                "currentSize":self.part.getMB(),
+                "resizeTo":resizeTo,
+                "fs":self.part._fsname}
+        ctx.partSum.append(_("Partition <b>%(partition)s - %(fs)s</b> <b>resized</b> to <b>%(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>") % _sum)
+
         self.rootWidget.update()
         ctx.yali.info.hide()
 

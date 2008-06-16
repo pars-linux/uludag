@@ -90,6 +90,7 @@ class DiskList(QtGui.QWidget):
 
         # Summary
         ctx.partSum = []
+        ctx.partSum.append(_("Manuel Partitioning selected."))
 
         # Connections
         self.connect(self.tabWidget,QtCore.SIGNAL("currentChanged(int)"),self.updatePartEdit)
@@ -529,6 +530,10 @@ class DiskItem(QtGui.QWidget):
             ctx.partrequests.removeRequest(p, request.formatRequestType)
             ctx.partrequests.removeRequest(p, request.labelRequestType)
         self._data.deleteAllPartitions()
+
+        _sum = {"device":self._data.getModel()}
+        ctx.partSum.append(_("All partitions on device <b>%(device)s</b> has been deleted.") % _sum)
+
         QObject.emit(self.partEdit,SIGNAL("updateTheList"))
 
     def setData(self, d):
