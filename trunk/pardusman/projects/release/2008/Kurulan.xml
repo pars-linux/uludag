@@ -56,6 +56,7 @@
         <SelectedPackage>flashplugin</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
+        <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
@@ -338,6 +339,7 @@
         <Package>gettext</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
+        <Package>gfxtheme-pardus-boot</Package>
         <Package>gimp</Package>
         <Package>gle</Package>
         <Package>glib2</Package>
