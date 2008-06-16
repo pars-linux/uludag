@@ -40,7 +40,7 @@ def get_kernel_opt(cmdopt):
     return ''
 
 def kahyaExists():
-    if get_kernel_opt(ctx.consts.kahyaParam) or ctx.options.kahyaFile:
+    if get_kernel_opt(ctx.consts.kahyaParam) or ctx.options.kahyaFile or ctx.options.useKahya:
         return True
     return False
 
@@ -76,6 +76,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         if kahyaOpt:
             ctx.debugger.log("KAHYA-PARAMS:: %s" % kahyaOpt)
             kahyaFile = kahyaOpt.split(',')[1]
+        elif ctx.options.useKahya:
+            kahyaFile = ctx.consts.defaultKahyaFile
         else:
             kahyaFile = ctx.options.kahyaFile
 
@@ -128,8 +130,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 if ctx.options.dryRun == True:
                     ctx.debugger.log("dryRun activated Yali stopped")
                 else:
-                    # Bootloader Screen is 9
-                    ctx.mainScreen.setCurrent(9)
+                    # Summary Screen is 10
+                    ctx.mainScreen.setCurrent(10)
             else:
                 ctx.debugger.log("This kahya file is not correct !!")
                 wrongData = yaliKahya.getValues()

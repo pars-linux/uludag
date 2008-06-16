@@ -91,6 +91,7 @@ consts.min_root_size = 3500
 
 # kahya options
 consts.kahyaParam = "kahya"
+consts.defaultKahyaFile = join(consts.data_dir,"data/default.xml")
 
 # oemInstall options
 consts.oemInstallParam = "oeminstall"

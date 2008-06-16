@@ -62,8 +62,9 @@ def read(args):
         data.users.append(info)
 
     partitioning=doc.getTag("partitioning")
+    print "OO : ",partitioning.toString()
     data.partitioningType=partitioning.getAttribute("partitioning_type")
-    if(data.partitioningType=="auto"):
+    if(data.partitioningType in ["auto","smartAuto"]):
         autoPart=yaliPartition()
         autoPart.disk=partitioning.firstChild().data()
         data.partitioning.append(autoPart)
