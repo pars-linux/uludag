@@ -56,7 +56,7 @@ SET(
 #generate pot file
 ADD_CUSTOM_COMMAND(TARGET policykit-kde
                     POST_BUILD
-                    COMMAND xgettext ARGS --qt -o
+                    COMMAND xgettext ARGS --no-location --qt -o
                     ${CMAKE_SOURCE_DIR}/po/policykit-kde.pot -ki18n -ktr2i18n -kI18N_NOOP -ktranslate -kaliasLocale
                     -C -x /usr/kde/3.5/include/kde.pot
                     ${CMAKE_CURRENT_SOURCE_DIR}/authdialog.cpp
