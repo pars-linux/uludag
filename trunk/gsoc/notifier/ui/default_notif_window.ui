@@ -40,7 +40,7 @@
      <item>
       <widget class="QLabel" name="notification_picture" >
        <property name="pixmap" >
-        <pixmap>./icons/notif.png</pixmap>
+        <pixmap>icons/notif.png</pixmap>
        </property>
       </widget>
      </item>
@@ -75,11 +75,7 @@
      <item>
       <layout class="QVBoxLayout" name="vboxlayout" >
        <item>
-        <widget class="QToolButton" name="exit_button" >
-         <property name="icon" >
-          <iconset>./icons/exit.png</iconset>
-         </property>
-        </widget>
+        <widget class="QToolButton" name="exit_button" />
        </item>
       </layout>
      </item>
@@ -136,6 +132,9 @@
          <bool>true</bool>
         </property>
        </widget>
+      </item>
+      <item row="1" column="0" >
+       <layout class="QGridLayout" name="gridLayout" />
       </item>
      </layout>
     </widget>

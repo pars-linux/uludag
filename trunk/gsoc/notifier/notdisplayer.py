@@ -128,6 +128,7 @@ class NotificationDisplayer:
 				# Set some properties of the default GUI:
 				if self_outer.default_GUI_used == True:
 					self.vboxlayout.setAlignment(QtCore.Qt.AlignTop)
+					self.exit_button.setIcon(QtGui.QIcon("./icons/exit.png"))
 				
 				# Set some properties of the GUI (skin-independent):
 				
@@ -136,11 +137,11 @@ class NotificationDisplayer:
 				self.setMaximumSize(QtCore.QSize(self.maxWidth, 2 * self.preferred_height))
 				
 				# Maximum sizes of the mandatory components:
-				self.notification_picture.setMaximumSize(QtCore.QSize(self.maxWidth * 0.2, 16777215))
-				self.notification_title.setMaximumSize(QtCore.QSize(self.maxWidth * 0.6, 16777215))
-				self.notification_text.setMaximumSize(QtCore.QSize(self.maxWidth * 0.95, 16777215)) 
+				self.notification_picture.setMaximumSize(QtCore.QSize(self.maxWidth * 0.2, self.preferred_height * 0.3))
+				self.notification_title.setMaximumSize(QtCore.QSize(self.maxWidth * 0.6, self.preferred_height * 0.3))
+				self.notification_text.setMaximumSize(QtCore.QSize(self.maxWidth * 0.95, self.preferred_height * 1.7)) 
 				
-				# Attach remaining signalssignals:
+				# Attach remaining signals:
 				QtCore.QObject.connect(self.exit_button, QtCore.SIGNAL("clicked()"), self.Destroy)	
 				
 			def ShowNotification(self, notification):
