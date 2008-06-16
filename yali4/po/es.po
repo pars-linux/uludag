@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-16 17:59+0300\n"
-"PO-Revision-Date: 2008-06-12 15:15-0400\n"
+"PO-Revision-Date: 2008-06-16 18:57-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -85,8 +85,7 @@ msgstr ""
 "según el método seleccionado."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Particionamiento automático intenta usar el espacio libre o redimensiona "
 "particiones existentes"
@@ -113,12 +112,10 @@ msgstr "Puede utilizar esta opción para realizar particionamiento manual"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Si no hay una partición adecuada disponible, esta opción queda deshabilitada"
+msgstr "Si no hay una partición adecuada disponible, esta opción queda deshabilitada"
 
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -750,6 +747,8 @@ msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
 "(device)s</b>."
 msgstr ""
+"Partición <b>%(partition)s (%(size)s)</b> <b>eliminado</b>de dispositivo <b>%"
+"(device)s</b>."
 
 # favor revisar - la idea
 #: yali4/gui/DiskWidgets.py:296 yali4/partitionrequest.py:181
@@ -758,6 +757,8 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 #: yali4/gui/DiskWidgets.py:327
 #, python-format
+# favor verificar contexto,
+# check context, should this say "format as.." instead o "selected as .." ?
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 
@@ -776,10 +777,13 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:380
 #, python-format
+# i hope "(fs)s" refers to a string rerpresenting the file-system
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
+"Partición <b>%(partition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</b> de "
+"<b>%(size)s MB</b> como <b>%(fs)s</b>."
 
 #: yali4/gui/DiskWidgets.py:406
 msgid "Delete All Partitions"
@@ -915,8 +919,7 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:110
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -927,8 +930,7 @@ msgstr ""
 # Las contraseñas no coinciden!
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:137
 msgid ""
@@ -998,8 +1000,7 @@ msgstr "Verifique sus discos"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity.."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1397,11 +1398,10 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Resumen de instalación</font>\n"
+"<font size=\"+2\">Resumen de Instalación</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Aqui se presentan las opciones de instalación determinados. Los puede "
-"revisar antes de iniciar la instalación.\n"
+"Aqui se presentan las opciones establecidas para la instalación, para que las pueda verificar antes de iniciar el proceso de la instalación.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1411,56 +1411,55 @@ msgstr "<b><p>Esta acción reiniciará su sistema !</p></b>"
 
 #: yali4/gui/ScrSummary.py:84
 msgid "Localization Settings"
-msgstr ""
+msgstr "Configuración de localización"
 
 #: yali4/gui/ScrSummary.py:85
 #, python-format
 msgid "Selected language is <b>%s</b>"
-msgstr ""
+msgstr "Idioma seleccionado <b>%s</b>"
 
 # Seleccione la distribución de su teclado.
 #: yali4/gui/ScrSummary.py:87
-#, fuzzy, python-format
+#, python-format
 msgid "Selected keyboard layout is <b>%s%s</b>"
-msgstr "Seleccione la distribución de su teclado."
+msgstr "Distribución de teclado <b>%s%s</b>"
 
 #: yali4/gui/ScrSummary.py:91
 msgid "Date/Time Settings"
-msgstr ""
+msgstr "Configuración Fecha/Hora"
 
 #: yali4/gui/ScrSummary.py:92
 #, python-format
 msgid "Selected TimeZone is <b>%s</b>"
-msgstr ""
+msgstr "Zona horaria <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:96
 msgid "User Settings"
-msgstr ""
+msgstr "Configuración de Usuarios"
 
 #: yali4/gui/ScrSummary.py:98
 #, python-format
+# is this grammer right ? "added"
 msgid "User %s (<b>%s</b>) added."
-msgstr ""
+msgstr "Usuario %s (<b>%s</b>) agregado."
 
 #: yali4/gui/ScrSummary.py:100
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr ""
+msgstr "Usuario %s (<b>%s</b>) con <u>privilegios de administración</u> agregado."
 
 #: yali4/gui/ScrSummary.py:105
-#, fuzzy
 msgid "Hostname Settings"
-msgstr "Nombre de la máquina (hostname):"
+msgstr "Nombre de la Máquina (hostname)"
 
 #: yali4/gui/ScrSummary.py:106
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
-msgstr ""
+msgstr "Nombre de la máquina (hostname) <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:110
-#, fuzzy
 msgid "Partition Settings"
-msgstr "Partición %d"
+msgstr "Configuración de Particiones"
 
 #: yali4/gui/ScrSummary.py:135 yali4/gui/ScrSummary.py:143
 #: yali4/gui/ScrSummary.py:157
@@ -1558,8 +1557,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:175
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:232
 msgid "Update User"
@@ -1871,25 +1869,3 @@ msgstr "Intercambio (swap)"
 msgid "Archive Partition"
 msgstr "Guardar Partición"
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-#~ "\"></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-#~ "\"></p></body></html>"
