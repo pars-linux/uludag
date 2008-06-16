@@ -11,7 +11,7 @@
 #
 
 # Auto Partition Methods
-methodUseAvail, methodEraseAll = range(2)
+methodUseAvail, methodEraseAll, methodManual = range(3)
 
 # Boot Loader Options
 B_DONT_INSTALL = 0

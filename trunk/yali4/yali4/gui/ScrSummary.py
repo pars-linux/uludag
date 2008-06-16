@@ -110,7 +110,6 @@ Here you can see your install options and look at them again before installation
         content.append(subject % _("Partition Settings"))
         if ctx.installData.autoPartMethod == methodEraseAll:
             content.append(item % _("Automatic Partitioning selected."))
-
             dev = ctx.installData.autoPartDev
             _sum = {"device":dev.getModel(),
                     "partition":dev.getName()+"1",
@@ -121,11 +120,49 @@ Here you can see your install options and look at them again before installation
             content.append(item % _("All partitions on device <b>%(device)s</b> has been deleted.") % _sum)
             content.append(item % _("Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
             content.append(item % _("Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
+
         elif ctx.installData.autoPartMethod == methodUseAvail:
-            pass
+            content.append(item % _("Automatic Partitioning (resize method) selected."))
+            dev = ctx.installData.autoPartDev
+            _part = ctx.installData.autoPartPartition
+            part = _part["partition"]
+            newPartSize = int(_part["newSize"]/2)
+            ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
+            resizeTo = int(part.getMB()) - newPartSize
+
+            _sum = {"device":dev.getModel(),
+                    "partition":part.getName(),
+                    "newPartition":"%s%s" % (part.getName()[:-1],int(part._minor)+1),
+                    "size":newPartSize,
+                    "currentFs":part._fsname,
+                    "fs":parttype.root.filesystem.name(),
+                    "type":parttype.root.name,
+                    "currentSize":part.getMB(),
+                    "resizeTo":resizeTo}
+
+            content.append(item % _("Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>") % _sum)
+            content.append(item % _("Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
+            content.append(item % _("Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
+
         else:
             for operation in ctx.partSum:
                 content.append(item % operation)
+        content.append(end)
+
+        # Bootloader
+        content.append(subject % _("Bootloader Settings"))
+        if ctx.installData.bootLoaderOption == B_DONT_INSTALL:
+            content.append(item % _("GRUB will not be installed"))
+        """
+        elif ctx.installData.bootLoaderOption == B_INSTALL_PART:
+            ctx.installData.bootLoaderDev = basename(root_part_req.partition().getPath())
+        elif ctx.installData.bootLoaderOption == B_INSTALL_MBR:
+            ctx.installData.bootLoaderDev = basename(self.device.getPath())
+        else:
+            ctx.yali.guessBootLoaderDevice()
+
+        content.append(item % _("GRUB will be installing to <b>%s</b>") % ctx.installData.hostName)
+        """
         content.append(end)
 
         content.append("""</ul></body></html>""")
