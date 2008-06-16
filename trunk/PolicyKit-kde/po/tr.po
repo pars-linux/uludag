@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-13 20:29+0300\n"
+"POT-Creation-Date: 2008-06-16 09:12+0300\n"
 "PO-Revision-Date: 2008-05-11 18:48+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:173
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:183
 msgid "Alt+O"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:185
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:195
 msgid "Always"
 msgstr "Her zaman"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:150
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:151
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the <b>super user</b> is required to perform this action."
@@ -33,7 +33,7 @@ msgstr ""
 "Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor. Bu işlemi "
 "yapmak için <b>yetkili kullanıcı</b> haklarına sahip olmanız gerekmektedir."
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:154
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:155
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
@@ -41,43 +41,42 @@ msgstr ""
 "Bir uygulama yetki gerektiren bir işlem yürütmeye çalışıyor. Bu işlemi "
 "yapmak için kimlik denetimi gerekmektedir."
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:170
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:180
 msgid "Authentication Required"
 msgstr "Kimlik Denetimi Gerekiyor"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:175
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:185
 msgid "Ctrl+S"
 msgstr ""
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:184
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:194
 msgid "For this session only"
 msgstr "Sadece bu oturum için"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:176
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:188
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:177
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:189
 msgid "Password"
 msgstr "Parola"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:184
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:185
 msgid "Password for root"
 msgstr "root kullanıcı parolası"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:186
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:187
 #, qt-format
 msgid "Password for user(%1)"
 msgstr "Kullanıcı (%1) parolası"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:183
-#, fuzzy
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:193
 msgid "Remember authorization"
 msgstr "Kimlik denetimini hatırla"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:186
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:196
 msgid "Remember authorization for this session"
 msgstr "Kimlik denetimini bu oturum için kaydet"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:180
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:181
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:190
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:191
 msgid "Select a user..."
 msgstr "Kullanıcı seçimi..."
 

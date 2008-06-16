@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-13 20:29+0300\n"
+"POT-Creation-Date: 2008-06-16 09:12+0300\n"
 "PO-Revision-Date: 2008-06-14 19:43-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -21,15 +21,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:173
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:183
 msgid "Alt+O"
 msgstr "Alt+O"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:185
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:195
 msgid "Always"
 msgstr "Siempre"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:150
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:151
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the <b>super user</b> is required to perform this action."
@@ -38,7 +38,7 @@ msgstr ""
 "especiales. Se requiere autenticación como <b>usuario root</b> para realizar "
 "esta acción."
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:154
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:155
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
@@ -46,42 +46,41 @@ msgstr ""
 "Un programa está intentando realizar una acción que requiere preivilegios "
 "especiales. Se requiere autenticación para realizar esta acción."
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:170
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:180
 msgid "Authentication Required"
 msgstr "Se requiere autenticación"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:175
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:185
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:184
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:194
 msgid "For this session only"
 msgstr "Solamente para la sesión actual"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:176
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:188
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:177
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:189
 msgid "Password"
 msgstr "Contraseña"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:184
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:185
 msgid "Password for root"
 msgstr "Contraseña de root"
 
-#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:186
+#: /home/gokcen/Projects/PolicyKit-kde/src/authdialog.cpp:187
 #, qt-format
 msgid "Password for user(%1)"
 msgstr "Contraseña de usuario (%1)"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:183
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:193
 msgid "Remember authorization"
 msgstr "Recordar autorización"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:186
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:196
 msgid "Remember authorization for this session"
 msgstr "Recordar autorización para la sesión actual"
 
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:180
-#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:181
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:190
+#: /home/gokcen/Projects/PolicyKit-kde/build/src/authdialogui.cpp:191
 msgid "Select a user..."
 msgstr "Seleccione a un usuario..."
-
