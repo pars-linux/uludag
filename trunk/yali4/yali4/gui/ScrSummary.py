@@ -108,8 +108,24 @@ Here you can see your install options and look at them again before installation
 
         # Partition
         content.append(subject % _("Partition Settings"))
-        for operation in ctx.partSum:
-            content.append(item % operation)
+        if ctx.installData.autoPartMethod == methodEraseAll:
+            content.append(item % _("Automatic Partitioning selected."))
+
+            dev = ctx.installData.autoPartDev
+            _sum = {"device":dev.getModel(),
+                    "partition":dev.getName()+"1",
+                    "size":dev.getTotalMB(),
+                    "fs":parttype.root.filesystem.name(),
+                    "type":parttype.root.name}
+
+            content.append(item % _("All partitions on device <b>%(device)s</b> has been deleted.") % _sum)
+            content.append(item % _("Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
+            content.append(item % _("Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
+        elif ctx.installData.autoPartMethod == methodUseAvail:
+            pass
+        else:
+            for operation in ctx.partSum:
+                content.append(item % operation)
         content.append(end)
 
         content.append("""</ul></body></html>""")
