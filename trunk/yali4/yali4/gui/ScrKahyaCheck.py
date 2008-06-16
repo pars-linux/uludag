@@ -40,7 +40,7 @@ def get_kernel_opt(cmdopt):
     return ''
 
 def kahyaExists():
-    if get_kernel_opt(ctx.consts.kahyaParam) or ctx.options.kahyaFile or ctx.options.useKahya:
+    if get_kernel_opt(ctx.consts.kahyaParam) or ctx.options.kahyaFile or ctx.options.useKahya==True:
         return True
     return False
 
