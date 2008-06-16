@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-16 17:59+0300\n"
-"PO-Revision-Date: 2008-06-15 13:11+0200\n"
+"PO-Revision-Date: 2008-06-17 00:23+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -88,8 +88,7 @@ msgstr ""
 "Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
@@ -118,13 +117,11 @@ msgstr "Mit dieser Option können Sie manuell partitionieren"
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
+msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -508,7 +505,7 @@ msgid ""
 "you agree to accept them. Do you want to continue?"
 msgstr ""
 "Alle Programme, die von TÜBITAK/UEKAE entwickelt worden sind, sind unter der "
-"GNU/GPL lizenziert. Andere Programme haben ihre eigene Lizenzen. Um Pardus "
+"GNU/GPL lizenziert. Weiteren Programme haben ihre eigene Lizenzen. Um Pardus "
 "installieren zu können, müssen Sie den Lizenzen zustimmen. Möchten Sie "
 "fortfahren?"
 
@@ -734,6 +731,8 @@ msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
 "(device)s</b>."
 msgstr ""
+"Partition <b>%(partition)s (%(size)s)</b> vom Gerät <b>%"
+"(device)s</b><b>gelöscht</b> ."
 
 #: yali4/gui/DiskWidgets.py:296 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
@@ -742,7 +741,7 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 #: yali4/gui/DiskWidgets.py:327
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
+msgstr "Partition <b>%(partition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:346
 msgid "Too many primary partition !"
@@ -763,6 +762,8 @@ msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
+"Partition <b>%(partition)s</b> zu Gerät <b>%(device)s</b> mit "
+"<b>%(size)s MB</b> als <b>%(fs)s</b><b>hinzugefügt</b>."
 
 #: yali4/gui/DiskWidgets.py:406
 msgid "Delete All Partitions"
@@ -884,7 +885,7 @@ msgstr ""
 "Um es im Netzwerk \n"
 "deutlich zu machen, dass es Ihr Computer ist, wird empfohlen einen "
 "beschreibenden Text einzugeben.\n"
-"Fahren Sie mit der Installation fort, nachdem Sie Ihre Auswahl vorgenommen "
+"Fahren Sie mit der Installation fort, nachdem Sie Ihre Auswahl getroffen "
 "haben.\n"
 "</p>\n"
 "<p>\n"
@@ -965,9 +966,8 @@ msgstr ""
 " Boot-Loadereinstellungen ändern.\n"
 "</p>\n"
 "<p>\n"
-"Für mehr Informationen über den GRUB Boot-Loader, \n"
-"schlagen Sie bitte im Pardus-Installations- \n"
-"und Benutzerhandbuch nach.\n"
+"Für weitere Informationen über den GRUB Boot-Loader \n"
+"schlagen Sie bitte im Pardusinstallations- und -Benutzerhandbuch nach.\n"
 "</p>\n"
 "</font>\n"
 
@@ -977,7 +977,7 @@ msgstr "Überprüfen Sie Ihre Medien"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity.."
-msgstr ""
+msgstr "Um Medien-Fehler zu vermeiden, können Sie Ihre Medien-Integrität überprüfen.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -989,6 +989,11 @@ msgid ""
 "making sure for a problem-free installation. If the test fails, try re-"
 "burning the ISO image in a lower (e.g. 12x or less) speed.</p></font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Überprüfung der CD-Integrität!</font>\n"
+"<font size=\"+1\"><p>\n"
+"Sie können die auf der Installations-CD beinhalteten Pakete überprüfen, ob "
+"Sie ordnungsgemäss auf die CD übertragen sind. Ausführung dieses Tests ist ein äusserst wichtiger Schritt in der Sicherstellung für eine problemlose Installation. Falls der Test fehlschlagen sollte, dann versuchen Sie die ISO Image-Datei in einer niedriegeren Geschwindigkeit (z.B. 12x oder niedriger) zu brennen.</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
@@ -1002,7 +1007,7 @@ msgstr "Stellen Sie Ihre Zeitzone ein"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "You can change your timezone, time or date settings.."
-msgstr ""
+msgstr "Sie können Ihre Zeitzone, Zeit- oder Datumseinstellungen ändern.."
 
 #: yali4/gui/ScrDateTime.py:30
 msgid ""
@@ -1018,16 +1023,16 @@ msgstr ""
 "<font size=\"+1\"><p>Hier können Sie Ihren Standort und eine Zeitzone "
 "auswählen, das Datum und die Uhrzeit einstellen.\n"
 "Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit "
-"der Installation  fort, nachdem Sie Ihre Auswahl vorgenommen haben.</p></"
+"der Installation fort, nachdem Sie Ihre Auswahl getroffen haben.</p></"
 "font>\n"
 
 #: yali4/gui/ScrGoodbye.py:45
 msgid "Goodbye from YALI"
-msgstr ""
+msgstr "Abschied von YALI"
 
 #: yali4/gui/ScrGoodbye.py:46
 msgid "Enjoy your fresh Pardus !.."
-msgstr ""
+msgstr "Viel Spass mit Pardus!.."
 
 #: yali4/gui/ScrGoodbye.py:47
 msgid ""
@@ -1092,8 +1097,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1156,7 +1160,7 @@ msgstr "Konfiguration des Pakets: %s"
 
 #: yali4/gui/ScrInstall.py:164
 msgid "Creating baselayout for your system!"
-msgstr ""
+msgstr "Baselayout für Ihr System wird erstellt!"
 
 #: yali4/gui/ScrInstall.py:173
 msgid "Configuring packages.."
@@ -1317,6 +1321,24 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Partitionierung Ihrer Festplatte</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"In diesem Fenster können Sie Ihre Festplatte manuell partitionieren. Sie können \n"
+"die existierenden Partitionen auswählen und entweder Ihre Grösse ändern oder \n"
+"die Partition löschen. Sie können in den leeren Bereichen neue Partitionen anlegen, \n"
+"für die Pardus-Systemdateien, Home-Verzeichnisse der Benutzer, für den Swap-Bereich \n"
+"oder für die allgemeine Verwendung. Die von Ihnen vorgenommenen Änderungen werden \n"
+"erst wirksam, wenn Sie die Installation starten. \n"
+"Das bedeutet, dass Sie die vorgenommenen Änderungen auch jederzeit zurücksetzen können "
+"und bei ungewollten Änderungen die Konfiguration wieder anpassen können.\n"
+"</p>\n"
+"<p>\n"
+"Für weitere Informationen über die Festplatten-Partitionierung schlagen Sie bitte im \n"
+"Pardusinstallations- und -Benutzerhandbuch nach.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrSummary.py:42
 msgid "The last step before install"
@@ -1352,55 +1374,53 @@ msgstr "<b><p>Diese Vorgang wird Ihr System neustarten!</p></b>"
 
 #: yali4/gui/ScrSummary.py:84
 msgid "Localization Settings"
-msgstr ""
+msgstr "Lokalisierungseinstellungen"
 
 #: yali4/gui/ScrSummary.py:85
 #, python-format
 msgid "Selected language is <b>%s</b>"
-msgstr ""
+msgstr "Gewählte Sprache ist <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:87
-#, fuzzy, python-format
+#, python-format
 msgid "Selected keyboard layout is <b>%s%s</b>"
-msgstr "Wählen Sie eine Tastaturbelegung aus."
+msgstr "Gewählte Tastaturbelegung ist <b>%s%s</b>"
 
 #: yali4/gui/ScrSummary.py:91
 msgid "Date/Time Settings"
-msgstr ""
+msgstr "Datum/Zeit-Einstellungen"
 
 #: yali4/gui/ScrSummary.py:92
 #, python-format
 msgid "Selected TimeZone is <b>%s</b>"
-msgstr ""
+msgstr "Gewählte Zeitzone ist <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:96
 msgid "User Settings"
-msgstr ""
+msgstr "Benutzereinstellungen"
 
 #: yali4/gui/ScrSummary.py:98
 #, python-format
 msgid "User %s (<b>%s</b>) added."
-msgstr ""
+msgstr "Benutzer %s (<b>%s</b>) hinzugefügt."
 
 #: yali4/gui/ScrSummary.py:100
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr ""
+msgstr "Benutzer %s (<b>%s</b>) mit <u>Adminrechten</u> hinzugefügt."
 
 #: yali4/gui/ScrSummary.py:105
-#, fuzzy
 msgid "Hostname Settings"
-msgstr "Hostname:"
+msgstr "Hostnameneinstellungen"
 
 #: yali4/gui/ScrSummary.py:106
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
-msgstr ""
+msgstr "Hostname ist festgelegt als <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:110
-#, fuzzy
 msgid "Partition Settings"
-msgstr "Partition %d"
+msgstr "Partitionseinstellungen"
 
 #: yali4/gui/ScrSummary.py:135 yali4/gui/ScrSummary.py:143
 #: yali4/gui/ScrSummary.py:157
@@ -1445,6 +1465,28 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Benutzereinrichtung</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2008 ermöglicht mehreren Benutzern die gemeinsame Nutzung eines Computers.\n"
+"Sie können den von Ihnen angelegten Benutzern Verwaltungsrechte zuteilen und auch "
+"die Rechte der Benutzer für diverse Tätigkeiten durch TASMA konfigurieren.\n"
+"</p>\n"
+"<p>\n"
+"Um ein neuen  Benutzer zu erstellen, füllen Sie bitte das Forumlar aus und "
+"klicken auf \"Benutzer hinzufügen\".\n"
+"Wenn Sie möchten, dass sich ein Benutzer automatisch am System anmeldet, "
+"dann wählen Sie diesen Benutzer aus der Liste aus. Falls Sie \n"
+"ein Benutzer löschen möchten, dann wählen Sie den Benutzernamen von der Liste und "
+"klicken auf \"löschen\".\n"
+"Fahren Sie mit der Installation fort, nachdem Sie Ihre Auswahl getroffen "
+"haben.\n"
+"</p>\n"
+"<p>\n"
+"Klicken Sie auf den Button Weiter, um fortzufahren.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrUsers.py:136
 msgid ""
@@ -1574,7 +1616,7 @@ msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
 msgstr ""
-"<font color=\"#FFF\"><b>Überprüfung abgeschlossen. Sie können zum nächsten "
+"<font color=\"#FFF\"><b>Überprüfung erfolgreich abgeschlossen. Sie können zum nächsten "
 "Fenster fortfahren.</b></font>"
 
 #: yali4/installer.py:181
@@ -1769,25 +1811,3 @@ msgstr "Swap"
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-#~ "\"></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
-#~ "\"></p></body></html>"
