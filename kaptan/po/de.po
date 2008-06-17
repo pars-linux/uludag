@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-12 10:06+0300\n"
-"PO-Revision-Date: 2008-06-12 11:09+0200\n"
+"PO-Revision-Date: 2008-06-17 15:29+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -226,7 +226,7 @@ msgstr "Konfigurieren Sie Ihre Maus"
 #: src/screens/ScrMouse.py:40
 # Mausrad rückwärts ??
 msgid "Reverse scroll"
-msgstr ""
+msgstr "Entgegengesetztes Scrollen"
 
 #: src/screens/ScrMouse.py:41
 # weiss nicht ob das hier wirklich gut klingt..
@@ -320,11 +320,11 @@ msgstr "Kein Hintergrundbild"
 
 #: src/screens/paneldlg.py:87 src/screens/ScrPanel.py:37
 msgid "Panel"
-msgstr ""
+msgstr "Leiste"
 
 #: src/screens/ScrPanel.py:27
 msgid "Configure your panel !"
-msgstr ""
+msgstr "Konfigurieren Sie Ihre Leiste!"
 
 #: src/screens/ScrPanel.py:28
 # klingt das ok ?
@@ -344,7 +344,7 @@ msgstr "Vorschau"
 
 #: src/screens/ScrPanel.py:42
 msgid "Use enhanced Kickoff style menu"
-msgstr ""
+msgstr "Erweiterten Kickoff-Stylemenü verwenden"
 
 #: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:124
 msgid "Thumbnails"
@@ -356,7 +356,7 @@ msgstr "Hintergrundbild"
 
 #: src/screens/wallpaperdlg.py:125
 msgid "toolTip"
-msgstr ""
+msgstr "toolTip"
 
 #: src/screens/ScrGoodbye.py:29
 msgid "Enjoy with Pardus..."
