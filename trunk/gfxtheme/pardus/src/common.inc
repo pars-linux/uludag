@@ -416,7 +416,7 @@
       %} ifelse
 
       config.lang "ca_ES" eq {
-        config.lang "mudur=livecd,language:ca " bc.cmd dup length add sprintf
+        "mudur=livecd,language:ca " bc.cmd dup length add sprintf
       } if
 
       config.lang "de_DE" eq {
