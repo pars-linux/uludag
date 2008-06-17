@@ -41,6 +41,8 @@ public:
     PolicyService(QDBusConnection sessionBus);
     virtual ~PolicyService();
 
+    void userSelected(const QString &user);
+
 protected:
     bool handleMethodCall(const QDBusMessage& message);
     void handleIntrospect(const QDBusMessage& message);
@@ -66,6 +68,7 @@ private:
     bool m_gainedPrivilege;
     bool m_inputBogus;
     bool m_cancelled;
+    bool m_newUserSelected;
 
     QString m_userSelected;
 

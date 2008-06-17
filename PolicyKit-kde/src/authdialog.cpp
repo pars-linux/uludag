@@ -46,7 +46,7 @@ static const int slice = 20;
  *  The dialog will by default be modeless, unless you set 'modal' to
  *  TRUE to construct a modal dialog.
  */
-AuthDialog::AuthDialog(QString &header)
+AuthDialog::AuthDialog(QString &header, PolicyService *service)
     : AuthDialogUI( NULL, 0, TRUE, WType_Dialog|Qt::WStyle_NoBorder|Qt::WStyle_StaysOnTop)//|Qt::WStyle_NoBorder)
 //    : AuthDialogUI( NULL, 0)
 //        m_currentY( 0 )
@@ -55,11 +55,14 @@ AuthDialog::AuthDialog(QString &header)
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
     pbOK->setIconSet(iconloader->loadIconSet("ok", KIcon::Small, 0, false));
     pbCancel->setIconSet(iconloader->loadIconSet("cancel", KIcon::Small, 0, false));
+    m_service = service;
+    m_selectedUser = "";
 
-    cbUsers->hide();
+    hideUsersCombo();
     setHeader(header);
     lePassword->setFocus();
 
+    connect(cbUsers, SIGNAL(activated(const QString&)), SLOT(slotUserSelected(const QString&)));
     /*
     setBackgroundMode(QWidget::NoBackground);
     // get desktop size
@@ -84,6 +87,15 @@ AuthDialog::AuthDialog(QString &header)
 
 AuthDialog::~AuthDialog()
 {
+}
+
+void AuthDialog::slotUserSelected(const QString& user)
+{
+    if ((cbUsers->currentItem() == 0) || (user == m_selectedUser))
+        return;
+
+    m_selectedUser = user;
+    m_service->userSelected(user);
 }
 
 void AuthDialog::setHeader(const QString &header)
@@ -146,23 +158,21 @@ void AuthDialog::hideUsersCombo()
     cbUsers->hide();
 }
 
-void AuthDialog::setPrompt(const QString &prompt)
+void AuthDialog::setPrompt(const QString &prompt, const QString& user = "")
 {
     //workaround for translation of "Password:" prompt
     if (prompt == "Password: ")
-        lblPassword->setText(i18n("Password") + ": ");
+    {
+        if (user != "")
+        {
+            lblPassword->setText(i18n("Password for user(%1)").arg(user) + ": ");
+            cbUsers->setCurrentText(user);
+        }
+        else
+            lblPassword->setText(i18n("Password") + ": ");
+    }
     else
         lblPassword->setText(prompt);
-}
-
-void AuthDialog::setPasswordFor(bool set, const QString& user)
-{
-    if (set)
-        lblPassword->setText(i18n("Password for root") + ": ");
-    else if (user)
-        lblPassword->setText(i18n("Password for user(%1)").arg(user) + ": ");
-    else
-        lblPassword->setText(i18n("Password") + ": ");
 }
 
 const char* AuthDialog::getPass()
@@ -182,6 +192,7 @@ void AuthDialog::setType(PolKitResult res)
         throw msg;
     }
 
+    /*
     if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || \
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION || \
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS)
@@ -191,7 +202,7 @@ void AuthDialog::setType(PolKitResult res)
             res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_SESSION || \
             res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS)
         setPasswordFor(false);
-
+*/
     if (res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH || \
             res == POLKIT_RESULT_ONLY_VIA_SELF_AUTH || \
             res == POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_ONE_SHOT || \

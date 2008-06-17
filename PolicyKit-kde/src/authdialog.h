@@ -19,13 +19,15 @@
 #include <polkit/polkit.h>
 
 #include "authdialogui.h"
+#include "service.h"
+
 
 class AuthDialog : public AuthDialogUI
 {
     Q_OBJECT
 
 public:
-    AuthDialog(QString &header);
+    AuthDialog(QString &header, PolicyService *service);
     ~AuthDialog();
     const char* getPass();
     void setType(PolKitResult type);
@@ -33,7 +35,7 @@ public:
     void setContent();
     void setAdminUsers(const QStringList &);
     void setHeader(const QString &);
-    void setPrompt(const QString &);
+    void setPrompt(const QString &, const QString &);
 /*
 protected:
     virtual void keyPressEvent(QKeyEvent*);
@@ -43,16 +45,21 @@ private slots:
     void slotPaintEffect();
     void slotGrab();
 */
+
+private slots:
+    void slotUserSelected(const QString&);
+
 private:
     void showUsersCombo();
     void hideUsersCombo();
-    void setPasswordFor(bool set, const QString& user = NULL);
     PolKitResult m_type;
     QStringList m_adminUsers;
+    QString m_selectedUser;
 
     int m_currentY;
     QImage m_grabbed;
     QTime m_passed;
+    PolicyService *m_service;
 };
 
 #endif // AUTHDIALOG_H

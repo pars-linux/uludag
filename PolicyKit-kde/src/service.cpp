@@ -71,6 +71,7 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     m_gainedPrivilege = false;
     m_inputBogus = false;
     m_cancelled = false;
+    m_newUserSelected = false;
     m_uniqueSessionName = m_sessionBus.uniqueName();
 
     Debug::printDebug("Registering object: /");
@@ -388,7 +389,13 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
     Debug::printDebug("polkit_grant_select_admin_user: Done");
     //Debug::printDebug("polkit_grant_select_admin_user: Showing dialog...");
 
-    char *selected = strdup(m_self->m_dialog->cbUsers->text(1));
+    char *selected;
+    
+    if (m_self->m_dialog->cbUsers->currentItem() == 0)
+        selected = strdup(m_self->m_dialog->cbUsers->text(1));
+    else
+        selected = strdup(m_self->m_dialog->cbUsers->currentText());
+
     return selected;
 /*
     dialogResult = m_self->m_dialog->exec();
@@ -415,7 +422,7 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
 {
     //TODO: check prompt like polkit-gnome
 
-    m_dialog->setPrompt(prompt);
+    m_dialog->setPrompt(prompt, m_self->m_userSelected);
 
     if (echo)
         m_dialog->lePassword->setEchoMode(QLineEdit::Normal);
@@ -529,7 +536,6 @@ void PolicyService::polkit_grant_done(PolKitGrant *grant, polkit_bool_t gained_p
 
 void PolicyService::obtainAuthorization(const QString& actionId, const uint wid, const uint pid, const QDBusMessage& messageToReply)
 {
-    /*
     if (m_authInProgress)
     {
         Debug::printError("obtainAuthorization: Another client is already authenticating.");
@@ -543,7 +549,6 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     }
 
     m_authInProgress = true;
-    */
 
     //stop exitTimer during authentication, and restart when it is finished
     if (KCmdLineArgs::parsedArgs()->isSet("-exit"))
@@ -624,8 +629,10 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         }
 
         QString qMessage = QString::fromUtf8(message);
-        m_dialog = new AuthDialog(qMessage);
+        m_dialog = new AuthDialog(qMessage, this);
         Debug::printDebug("AuthDialog created.");
+
+        m_newUserSelected = false;
 
         polkit_grant_set_functions(m_grant,
                                    polkit_grant_add_watch,
@@ -661,6 +668,20 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         // polkit_grant_done must return before the following privilege check
         Debug::printDebug("obtain_authorization: Entering eventloop to wait grant_done");
         QApplication::eventLoop()->exec();
+
+        if(m_newUserSelected)
+        {
+            Debug::printDebug("obtain_authorization: New user selected, restarting authentication process...");
+
+            if (m_dialog)
+                delete m_dialog;
+
+            if (m_grant)
+                polkit_grant_unref (m_grant);
+
+            i--;
+            continue;
+        }
 
         if (!m_gainedPrivilege && !m_inputBogus && !m_cancelled)
         {
@@ -698,8 +719,22 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         exitTimer->start(POLICYKITKDE_TIMEOUT, true);
     }
 
-    //m_authInProgress = false;
+    m_authInProgress = false;
     delete m_dialog;
+}
+
+
+void PolicyService::userSelected(const QString &user)
+{
+    Debug::printDebug(QString("User selected: %1").arg(user));
+    m_newUserSelected = true;
+    m_userSelected = user;
+
+    polkit_grant_cancel_auth (m_grant);
+
+    //close dialog
+    m_dialog->close();
+
 }
 
 #include "service.moc"
