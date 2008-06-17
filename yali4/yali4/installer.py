@@ -199,6 +199,12 @@ class Yali:
         ctx.debugger.log("Time zone selected as %s " % ctx.installData.timezone)
 
     def scanPartitions(self, rootWidget):
+
+        def sortBySize(x,y):
+            if x["newSize"]>y["newSize"]:return -1
+            elif x["newSize"]==y["newSize"]: return 0
+            return 1
+
         self.info.updateAndShow(_("Disk analyze started.."))
         rootWidget.resizablePartitions = []
         rootWidget.resizableDisks = []
@@ -226,7 +232,23 @@ class Yali:
                         ctx.debugger.log("This partition is not resizable")
             else:
                 ctx.debugger.log("In disk %s, there is no primary avaliable" % (dev.getPath()))
+
+        # Sort by Resize..
+        rootWidget.resizablePartitions.sort(sortBySize)
+
         self.info.hide()
+
+    def getResizableFirstPartition(self):
+        # Hacky .. :)
+        arp = []
+        class __v:
+            pass
+        mean = __v()
+        self.scanPartitions(mean)
+        for partition in mean.resizablePartitions:
+            if partition["newSize"] / 2 >= ctx.consts.min_root_size:
+                arp.append(partition)
+        return arp[0]
 
     def autoPartDevice(self):
         self.info.updateAndShow(_("Writing disk tables ..."))
