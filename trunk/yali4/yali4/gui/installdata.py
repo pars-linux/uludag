@@ -24,6 +24,7 @@ class InstallData:
     rootPassword = None
     hostName = None
     users = []
+    isKahyaUsed = False
     autoLoginUser = None
     autoPartDev = None
     autoPartPartition = None
