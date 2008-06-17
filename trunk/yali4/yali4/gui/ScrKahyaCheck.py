@@ -115,8 +115,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 ctx.installData.hostName = correctData.hostname
                 ctx.installData.autoLoginUser = correctData.autoLoginUser
                 ctx.installData.autoPartDev = devices[int(correctData.partitioning[0].disk[-1])]
-                ctx.installData.autoPartPartition = ctx.yali.getResizableFirstPartition()
                 ctx.installData.autoPartMethod = {"auto":methodEraseAll,"smartAuto":methodUseAvail}[correctData.partitioningType]
+                if ctx.installData.autoPartMethod == methodUseAvail:
+                    ctx.installData.autoPartPartition = ctx.yali.getResizableFirstPartition()
                 ctx.installData.useYaliFirstBoot = correctData.useYaliFirstBoot
                 ctx.installData.timezone = correctData.timezone
 
