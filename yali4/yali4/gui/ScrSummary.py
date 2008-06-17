@@ -107,6 +107,7 @@ Here you can see your install options and look at them again before installation
         content.append(end)
 
         # Partition
+        pardus_path = None
         content.append(subject % _("Partition Settings"))
         if ctx.installData.autoPartMethod == methodEraseAll:
             content.append(item % _("Automatic Partitioning selected."))
@@ -117,6 +118,7 @@ Here you can see your install options and look at them again before installation
                     "fs":parttype.root.filesystem.name(),
                     "type":parttype.root.name}
 
+            pardus_path = dev.getPath()+"1"
             content.append(item % _("All partitions on device <b>%(device)s</b> has been deleted.") % _sum)
             content.append(item % _("Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
             content.append(item % _("Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
@@ -140,6 +142,7 @@ Here you can see your install options and look at them again before installation
                     "currentSize":part.getMB(),
                     "resizeTo":resizeTo}
 
+            pardus_path = "%s%s" % (dev.getPath(), int(part._minor)+1)
             content.append(item % _("Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>") % _sum)
             content.append(item % _("Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MB</b> as <b>%(fs)s</b>.") % _sum)
             content.append(item % _("Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
@@ -149,20 +152,26 @@ Here you can see your install options and look at them again before installation
                 content.append(item % operation)
         content.append(end)
 
+        # Find BootLoader Device
+        if not pardus_path:
+            # manual partitioning gives us new grub target
+            root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
+                                                                      request.mountRequestType)
+            pardus_path = root_part_req.partition().getPath()
+
         # Bootloader
         content.append(subject % _("Bootloader Settings"))
+        grub_str = _("GRUB will be installed to <b>%s</b>")
         if ctx.installData.bootLoaderOption == B_DONT_INSTALL:
             content.append(item % _("GRUB will not be installed"))
-        """
         elif ctx.installData.bootLoaderOption == B_INSTALL_PART:
-            ctx.installData.bootLoaderDev = basename(root_part_req.partition().getPath())
+            content.append(item % grub_str % pardus_path)
         elif ctx.installData.bootLoaderOption == B_INSTALL_MBR:
-            ctx.installData.bootLoaderDev = basename(self.device.getPath())
+            content.append(item % grub_str % ctx.installData.bootLoaderOptionalDev.getPath())
         else:
-            ctx.yali.guessBootLoaderDevice()
-
-        content.append(item % _("GRUB will be installing to <b>%s</b>") % ctx.installData.hostName)
-        """
+            _path = ctx.yali.guessBootLoaderDevice(pardus_path)
+            if not _path.startswith("/dev"): _path = "/dev/" + _path
+            content.append(item % grub_str % _path)
         content.append(end)
 
         content.append("""</ul></body></html>""")
@@ -223,7 +232,7 @@ Here you can see your install options and look at them again before installation
         elif ctx.installData.bootLoaderOption == B_INSTALL_PART:
             ctx.installData.bootLoaderDev = basename(root_part_req.partition().getPath())
         elif ctx.installData.bootLoaderOption == B_INSTALL_MBR:
-            ctx.installData.bootLoaderDev = basename(self.device.getPath())
+            ctx.installData.bootLoaderDev = basename(ctx.installData.bootLoaderOptionalDev.getPath())
         else:
             ctx.yali.guessBootLoaderDevice()
 

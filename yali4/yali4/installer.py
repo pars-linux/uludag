@@ -319,23 +319,26 @@ class Yali:
 
         time.sleep(2)
 
-    def guessBootLoaderDevice(self):
-        root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
-                                                                  request.mountRequestType)
-
-        if not root_part_req:
-            raise YaliException, "No Root Part request found !"
+    def guessBootLoaderDevice(self,root_part=None):
+        if root_part:
+            pardus_path = root_part
+        else:
+            root_part_req = ctx.partrequests.searchPartTypeAndReqType(parttype.root,
+                                                                      request.mountRequestType)
+            if not root_part_req:
+                raise YaliException, "No Root Part request found !"
+            pardus_path = root_part_req.partition().getPath()
 
         if len(yali4.storage.devices) > 1 or ctx.isEddFailed:
             ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[0])
         else:
-            dev_path = root_part_req.partition().getPath()
-            if dev_path.find("cciss") > 0:
+            if pardus_path.find("cciss") > 0:
                 # HP Smart array controller (something like /dev/cciss/c0d0p1)
-                ctx.installData.bootLoaderDev = dev_path[:-2]
+                ctx.installData.bootLoaderDev = pardus_path[:-2]
             else:
                 ctx.installData.bootLoaderDev = str(filter(lambda u: not u.isdigit(),
-                                                           os.path.basename(dev_path)))
+                                                           os.path.basename(pardus_path)))
+        return ctx.installData.bootLoaderDev
 
     def fillFstab(self):
         # fill fstab
