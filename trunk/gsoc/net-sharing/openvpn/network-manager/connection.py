@@ -219,7 +219,7 @@ class Settings(QWidget):
             line = widgets.HLine(i18n("VPN Authentication"), self, "vpn_icon")
             lay.addSpacing(6)
             lay.addWidget(line)
-            grid = QGridLayout(6, 2)
+            grid = QGridLayout(7, 2)
             lay.addLayout(grid)
             
             lab = QLabel(i18n("Domain:"), self)
@@ -243,8 +243,19 @@ class Settings(QWidget):
             grid.addWidget(w, 2, 1)
             grid.setSpacing(7)
 
-            lab = QLabel(i18n("CA Certificate:"), self)
+            lab = QLabel(i18n("Cryptographic Chipher:"),self)
             grid.addWidget(lab, 3, 0, Qt.AlignRight)
+            w = QWidget(self)
+            self.chipher = QComboBox(0, w, "None")
+            self.chipher.insertItem("-")
+            self.chipher.insertItem("BF-CBC")
+            self.chipher.insertItem("AES-128-CBC")
+            self.chipher.insertItem("DES-EDE3-CBC")
+            grid.addWidget(w, 3, 1)
+            grid.setSpacing(7)
+
+            lab = QLabel(i18n("CA Certificate:"), self)
+            grid.addWidget(lab, 4, 0, Qt.AlignRight)
 
             hb = QHBox(self)
             self.lab2 = KActiveLabel("", hb)
@@ -252,10 +263,10 @@ class Settings(QWidget):
             self.file_but.setEnabled(True)
             self.ca = ""
             self.connect(self.file_but, SIGNAL("clicked()"), lambda: self.getFileName(1))
-            grid.addWidget(hb, 3, 1)
+            grid.addWidget(hb, 4, 1)
             
             lab = QLabel(i18n("Cert Certificate:"), self)
-            grid.addWidget(lab, 4, 0, Qt.AlignRight)
+            grid.addWidget(lab, 5, 0, Qt.AlignRight)
 
             hb = QHBox(self)
             self.lab3 = KActiveLabel("", hb)
@@ -263,18 +274,18 @@ class Settings(QWidget):
             self.file_but2.setEnabled(True)
             self.cert = ""
             self.connect(self.file_but2, SIGNAL("clicked()"), lambda: self.getFileName(2))
-            grid.addWidget(hb, 4, 1)
+            grid.addWidget(hb, 5, 1)
 
 
             lab = QLabel(i18n("Key:"), self)
-            grid.addWidget(lab, 5, 0, Qt.AlignRight)
+            grid.addWidget(lab, 6, 0, Qt.AlignRight)
             hb = QHBox(self)
             self.lab4 = KActiveLabel("", hb)
             self.file_but3 = QPushButton(i18n("Select .key File"), hb)
             self.file_but3.setEnabled(True)
             self.key = ""
             self.connect(self.file_but3, SIGNAL("clicked()"), lambda: self.getFileName(3))
-            grid.addWidget(hb, 5, 1)
+            grid.addWidget(hb, 6, 1)
 
 
         # Authentication
@@ -437,9 +448,19 @@ class Settings(QWidget):
                 self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
             if "vpn" in self.link.modes:
+                if conn.vpn_domain:
+                    self.domain.setText(conn.vpn_domain)
                 if conn.vpn_port:
                     self.port.setText(conn.vpn_port)
-                pass
+                if conn.vpn_ca:
+                    self.ca = conn.vpn_ca
+                    self.lab2.setText(self.ca)
+                if conn.vpn_cert:
+                    self.cert = conn.vpn_cert
+                    self.lab3.setText(self.cert)
+                if conn.vpn_key:
+                    self.key = conn.vpn_key
+                    self.lab4.setText(self.cert)
             if "remote" in self.link.modes:
                 if conn.remote:
                     self.remote.setText(conn.remote)
@@ -543,11 +564,13 @@ class Settings(QWidget):
                 domain = str(self.domain.text())
                 port = str(self.port.text())
                 protocol = str(self.protocol.currentText()).lower()
-                print protocol
+                chipher = str(self.chipher.currentText())
+                if chipher == "-":
+                    chipher == ""
                 ca = self.ca
                 cert = self.cert
                 key = self.key
-                comlink.call(self.link.script,"Net.Link","setVpn", name, domain, port, protocol, ca, cert, key)
+                comlink.call(self.link.script,"Net.Link","setVpn", name, domain, port, protocol, ca, cert, key, chipher)
 
             # close dialog
             self.parent().setEnabled(True)

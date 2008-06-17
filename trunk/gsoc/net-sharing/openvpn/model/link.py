@@ -71,6 +71,7 @@ class Dev:
         self.ca = _get(dict, "ca", None)
         self.cert = _get(dict, "cert", None)
         self.key = _get(dict, "key", None)
+        self.chipher = _get(dict, "chipher", None)
     
     def up(self):
         vpnfl = open(CFG_FL, "w")
@@ -82,6 +83,8 @@ class Dev:
         vpnfl.write("ca %s\n" % self.ca)
         vpnfl.write("cert %s\n" % self.cert)
         vpnfl.write("key %s\n" % self.key)
+        if self.chipher != None:
+            vpnfl.write("chipher %s\n" % self.chipher)
         vpnfl.close()
         d = DB.getDB(self.name)
         d["state"] = "up"
@@ -120,14 +123,22 @@ def deviceList():
     }
     return vpnlist
 
-def setVpn(name, domain, port, protocol, ca, cert, key):
+def setVpn(name, domain, port, protocol, ca, cert, key, chipher):
     d = DB.getDB(name)
-    d["domain"] = domain
-    d["port"] = port
-    d["protocol"] = protocol
-    d["ca"] = ca
-    d["cert"] = cert
-    d["key"] = key
+    if domain != "":
+        d["domain"] = domain
+    if port != "":
+        d["port"] = port
+    if protocol != "":
+        d["protocol"] = protocol
+    if ca != "":
+        d["ca"] = ca
+    if cert != "":
+        d["cert"] = cert
+    if key != "":
+        d["key"] = key
+    if chipher != "":
+        d["chipher"] = chipher
     DB.setDB(name, d)
     notify("Net.Link", "connectionChanged", ("configured", name))
 
@@ -136,8 +147,8 @@ def scanRemote():
 
 def setConnection(name, device):
     d = DB.getDB(name)
-    changed = "dev" in d
-    d["dev"] = device
+    changed = "device" in d
+    d["device"] = device
     DB.setDB(name, d)
     if changed:
         notify("Net.Link", "connectionChanged", ("configured", name))

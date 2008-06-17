@@ -101,7 +101,11 @@ class Connection(Hook):
         self.auth_pass = None
         self.dns_mode = "default"
         self.dns_server = None
+        self.vpn_domain = None
         self.vpn_port = None
+        self.vpn_ca = None
+        self.vpn_cert = None
+        self.vpn_key = None
 
         self.parse(data)
         self.hash = self.hash(self.script, self.name)
@@ -139,6 +143,15 @@ class Connection(Hook):
                     self.state = value
             elif key == "port":
                 self.vpn_port = value
+            elif key == "domain":
+                self.vpn_domain = value
+            elif key == "ca":
+                self.vpn_ca = value
+            elif key == "cert":
+                self.vpn_cert = value
+            elif key == "key":
+                self.vpn_key = value
+
 
 
 class AuthMode:
