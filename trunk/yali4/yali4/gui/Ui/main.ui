@@ -243,15 +243,8 @@ QCheckBox::indicator:checked:pressed {
     image: url(:/images/checkbox_checked_pressed.png);
 }
 
-/* Customize the size grip. */
-QSizeGrip {
-    image: url(:/images/sizegrip.png);
-    width: 16px;
-    height: 16px;
-}
-
 /* Customize spin boxes. */
-QSpinBox { 
+QSpinBox {
     padding-right: 15px;
 }
 
