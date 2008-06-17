@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-17 12:09+0300\n"
-"PO-Revision-Date: 2008-06-17 05:36+0200\n"
+"PO-Revision-Date: 2008-06-17 15:30+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -517,7 +517,7 @@ msgstr "Updateüberprüfung"
 
 #: src/PreferencesDialog.py:358
 msgid "Check interval:"
-msgstr "Intervall Kontrolle:"
+msgstr "Überprüfugsintervall:"
 
 #: src/PreferencesDialog.py:359
 msgid "Enable &periodic update check"
