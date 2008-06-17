@@ -170,7 +170,7 @@ locales = {
         "name" : _("Portuguese"),
         "xkblayout" : "pt",
         "xkbvariant" : None,
-        "locale" : "pt_PT.UTF-8",
+        "locale" : "pt_BR.UTF-8",
         "consolekeymap" : "pt-latin1",
         "consolefont" : None,
         "consoletranslation" : None
