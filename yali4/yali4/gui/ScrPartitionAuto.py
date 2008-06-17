@@ -117,6 +117,10 @@ about disk partitioning.
             self.ui.accept_auto_1.toggle()
 
         ctx.mainScreen.disableNext()
+        if ctx.installData.autoPartMethod == methodUseAvail:
+            self.ui.accept_auto_1.toggle()
+        if ctx.installData.autoPartMethod == methodEraseAll:
+            self.ui.accept_auto_2.toggle()
         self.updateUI()
 
     def execute(self):

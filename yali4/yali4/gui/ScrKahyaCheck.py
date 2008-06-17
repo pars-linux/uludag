@@ -18,6 +18,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 import yali4.sysutils
+from yali4.gui.installdata import *
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.Ui.kickerwidget import Ui_KickerWidget
 import yali4.gui.context as ctx
@@ -40,7 +41,10 @@ def get_kernel_opt(cmdopt):
     return ''
 
 def kahyaExists():
-    if get_kernel_opt(ctx.consts.kahyaParam) or ctx.options.kahyaFile or ctx.options.useKahya==True:
+    if get_kernel_opt(ctx.consts.kahyaParam) or \
+            yali4.sysutils.checkYaliParams(ctx.consts.kahyaParam) or \
+            ctx.options.kahyaFile or \
+            ctx.options.useKahya==True:
         return True
     return False
 
@@ -76,6 +80,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         if kahyaOpt:
             ctx.debugger.log("KAHYA-PARAMS:: %s" % kahyaOpt)
             kahyaFile = kahyaOpt.split(',')[1]
+            if kahyaFile == "":
+                kahyaFile = ctx.consts.defaultKahyaFile
         elif ctx.options.useKahya:
             kahyaFile = ctx.consts.defaultKahyaFile
         else:
@@ -109,6 +115,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 ctx.installData.autoLoginUser = correctData.autoLoginUser
                 ctx.installData.autoPartDev = devices[int(correctData.partitioning[0].disk[-1])]
                 ctx.installData.autoPartPartition = ctx.yali.getResizableFirstPartition()
+                ctx.installData.autoPartMethod = {"auto":methodEraseAll,"smartAuto":methodUseAvail}[correctData.partitioningType]
                 ctx.installData.useYaliFirstBoot = correctData.useYaliFirstBoot
                 ctx.installData.timezone = correctData.timezone
 
@@ -138,7 +145,4 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 ctx.debugger.log("This kahya file is not correct !!")
                 wrongData = yaliKahya.getValues()
                 ctx.debugger.log("".join(wrongData))
-
-        ctx.mainScreen.disableBack()
-        ctx.mainScreen.disableNext()
 

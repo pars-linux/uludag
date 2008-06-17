@@ -75,13 +75,22 @@ Click Next button to proceed.
                      self.slotHostnameChanged)
 
     def shown(self):
-        try:
-            # Use first added user's name as machine name
-            hostname_guess = "%s-pardus" % yali4.users.pending_users[0].username
-            if self.ui.hostname.text() == '':
-                self.ui.hostname.setText(hostname_guess)
-        except:
-            pass
+
+        if ctx.installData.hostName:
+            self.ui.hostname.setText(ctx.installData.hostName)
+        else:
+            try:
+                # Use first added user's name as machine name
+                hostname_guess = "%s-pardus" % yali4.users.pending_users[0].username
+                if self.ui.hostname.text() == '':
+                    self.ui.hostname.setText(hostname_guess)
+            except:
+                pass
+
+        if ctx.installData.rootPassword:
+            self.ui.pass1.setText(ctx.installData.rootPassword)
+            self.ui.pass2.setText(ctx.installData.rootPassword)
+
         self.setNext()
         self.checkCapsLock()
         self.ui.pass1.setFocus()
