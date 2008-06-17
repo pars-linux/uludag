@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-28 10:59+0300\n"
-"PO-Revision-Date: 2008-05-26 04:20+0200\n"
+"PO-Revision-Date: 2008-06-18 00:00+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -21,28 +21,25 @@ msgstr ""
 
 #: comariface.py:227
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR-Fehler"
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Waiting DBus..."
-msgstr "Wartend auf COMAR..."
+msgstr "Wartend auf DBus..."
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
-"Verbindung zu COMAR wurde unerwartet geschlossen, es wird versucht erneut zu "
+"Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut zu "
 "verbinden..."
 
 #: comariface.py:248 network-applet.py:191
-#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"Kann nicht mit COMAR verbunden werden! Wenn es nicht ausgeführt wird, dann "
-"sollten Sie es in einer Root-Konsole mit dem Befehl 'service comar start' "
+"Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, dann "
+"sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' "
 "ausführen."
 
 #: comariface.py:406
@@ -56,7 +53,7 @@ msgstr "Netzwerk-Manager"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr ""
+msgstr "Am suchen..."
 
 #: autoswitch.py:80
 #, python-format
@@ -246,8 +243,7 @@ msgstr "Einzelnes Ikon"
 
 #: network-applet.py:469
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
+msgstr "Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
 
 #: network-applet.py:584
 msgid "Connecting to <b>%1</b> ..."
@@ -348,5 +344,3 @@ msgstr "Name-Server hinzufügen"
 msgid "Name server:"
 msgstr "Name-Server:"
 
-#~ msgid "You are not allowed to change network settings."
-#~ msgstr "Sie sind nicht berechtigt die Netzwerk-Einstellungen zu ändern."
