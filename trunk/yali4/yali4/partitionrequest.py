@@ -47,7 +47,7 @@ class RequestList(list):
             r.applyRequest()
 
         # we need to trigger udev for our new labels
-        yali4.sysutils.run("/sbin/udevtrigger")
+        yali4.sysutils.run("/sbin/udevadm", "trigger")
         yali4.sysutils.run("/sbin/udevsettle", "--timeout=180")
 
         # then mount request
