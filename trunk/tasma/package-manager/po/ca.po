@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-12 10:46+0300\n"
+"POT-Creation-Date: 2008-06-17 12:09+0300\n"
 "PO-Revision-Date: 2007-05-13 21:14+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -17,223 +17,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/SpecialList.py:100 src/CustomEventListener.py:37
-#: src/CustomEventListener.py:41
-msgid "Select all packages in this category"
-msgstr "Selecciona tots els paquets d'aquesta categoria"
+#: src/ProgressDialog.py:91
+msgid "Progress"
+msgstr "Progrès"
 
-#: src/SpecialList.py:102 src/CustomEventListener.py:38
-msgid "Reverse package selections"
-msgstr "Inverteix les seleccions de paquets"
+#: src/ProgressDialog.py:92 src/Progress.py:87
+msgid "-- / --  package"
+msgstr "-- / --  paquet"
 
-#: src/SpecialList.py:163
-msgid "Description: "
-msgstr "Descripció:"
+#: src/ProgressDialog.py:93 src/Progress.py:86
+msgid "downloaded (total: -- )"
+msgstr "abaixat (total: -- )"
 
-#: src/SpecialList.py:164
-msgid "Version: "
-msgstr "Versió:"
+#: src/ProgressDialog.py:94 src/Progress.py:85
+msgid "--"
+msgstr "--"
 
-#: src/SpecialList.py:165
+#: src/ProgressDialog.py:97
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr "<h3>Preparació del PiSi...</h3>"
+
+#: src/ProgressDialog.py:98
+msgid "Now installing <b>amsn</b> package"
+msgstr "Instal·lació del paquet <b>amsn</b>"
+
+#: src/Tray.py:38
+msgid "Update"
+msgstr "Actualització"
+
+#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:582
+msgid "All"
+msgstr "Tot"
+
+#: src/Tray.py:66
+msgid "There are <b>%1</b> updates available!"
+msgstr "Hi ha <b>%1</b> actualitzacions disponibles!"
+
+#: src/Tray.py:67
+msgid "Updates Available!"
+msgstr ""
+
+#: src/ComarIface.py:38
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: src/ComarIface.py:38
 #, fuzzy
-msgid "Repository: "
-msgstr "Nom del repositori"
+msgid "DBus Error"
+msgstr "Error de Pisi"
 
-#: src/SpecialList.py:166
-msgid "Package Size: "
-msgstr "Grandària del paquet:"
+#: src/ComarIface.py:52
+#, fuzzy
+msgid "D-Bus Error"
+msgstr "Error de Pisi"
 
-#: src/SpecialList.py:167
-msgid "Homepage: "
-msgstr "Plana principal:"
-
-#: src/PreferencesDialog.py:144 src/PreferencesDialog.py:336
-msgid "Repository Name"
-msgstr "Nom del repositori"
-
-#: src/PreferencesDialog.py:145 src/PreferencesDialog.py:337
-msgid "Address"
-msgstr "Adreça"
-
-#: src/PreferencesDialog.py:308
-msgid "Package Manager Settings"
-msgstr "Ajusts del gestor del programari"
-
-#: src/PreferencesDialog.py:310
-msgid "F1"
-msgstr "F1"
-
-#: src/PreferencesDialog.py:315
-msgid "&Show only desktop applications"
-msgstr "&Mostra només les utilitats per a l'escriptori"
-
-#: src/PreferencesDialog.py:316
-msgid "Alt+S"
+#: src/ComarIface.py:57
+msgid "COMAR Auth Error"
 msgstr ""
 
-#: src/PreferencesDialog.py:317
-msgid "If checked, then pisi will only show desktop applications"
-msgstr ""
-"Si està marcat, aleshores PiSi només mostrarà les utilitats per a "
-"l'escriptori"
-
-#: src/PreferencesDialog.py:318
-msgid "&Enable system tray icon"
-msgstr "&Habilita l'icona a la safata del sistema"
-
-#: src/PreferencesDialog.py:319
-msgid "Enable &periodic update check"
-msgstr "Habilita &la comprovació periòdica d'actualitzacions"
-
-#: src/PreferencesDialog.py:320
-msgid "Alt+P"
+#: src/ComarIface.py:62
+msgid "Network error. Please check your network connections and try again."
 msgstr ""
 
-#: src/PreferencesDialog.py:321
-msgid " min"
-msgstr " min"
-
-#: src/PreferencesDialog.py:322
-msgid "Check interval:"
-msgstr "Interval de verificació:"
-
-#: src/PreferencesDialog.py:323
-msgid "Bandwidth limit:"
+#: src/ComarIface.py:62 src/ComarIface.py:64
+msgid "COMAR Error"
 msgstr ""
 
-#: src/PreferencesDialog.py:324
-msgid " kb/s"
-msgstr ""
-
-#: src/PreferencesDialog.py:325
-msgid "&General Settings"
-msgstr "&Arranjaments generals"
-
-#: src/PreferencesDialog.py:326
-msgid "Clear Cache"
-msgstr "Buida la memòria cau"
-
-#: src/PreferencesDialog.py:327
-msgid "C&lean disk cache now"
-msgstr "B&uida la memòria cau ara"
-
-#: src/PreferencesDialog.py:328
-msgid ""
-"Clearing the disk cache will remove all downloaded software. \n"
-"This will not delete installed software or affect your system stability."
-msgstr ""
-"En buidar la memòria cau esborraràs tot el programari que hages abaixat.\n"
-"Açò, però, no esborrarà el programari que hages instal·lat, i tampoc no "
-"afectarà\n"
-"l'estabilitat del teu sistema."
-
-#: src/PreferencesDialog.py:330
-msgid "Cache usage"
-msgstr "Ús de la memòria cau"
-
-#: src/PreferencesDialog.py:331
-msgid "Maximum cache size:"
-msgstr "Grandària màxima de la memòria cau admesa:"
-
-#: src/PreferencesDialog.py:332
-msgid "&Use hard disk cache for downloaded software"
-msgstr "&Usa la memòria cau del disc dur per al programari que s'haja abaixat"
-
-#: src/PreferencesDialog.py:333
-msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
-"Si està marcat, aleshores els paquets que abaixes es mantindran a la memòria "
-"cau del teu disc dur"
-
-#: src/PreferencesDialog.py:334
-msgid "Mb <i>(use 0 for no limit)</i>"
-msgstr "Megaoctets <i>(posa un zero si no vols cap límit)</i>"
-
-#: src/PreferencesDialog.py:335
-msgid "C&ache"
-msgstr "M&emòria cau"
-
-#: src/PreferencesDialog.py:338
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr "Ací pots veure els repositoris actuals i llurs adreces corresponents"
-
-#: src/PreferencesDialog.py:339
-msgid "&Add New Repository"
-msgstr "&Afegeix un nou repositori"
-
-#: src/PreferencesDialog.py:340
-msgid "Click here to add a new software repository"
-msgstr "Pica ací per a afegir un nou repositori de programari"
-
-#: src/PreferencesDialog.py:341
-msgid "&Edit Repository"
-msgstr "&Edita el repositori"
-
-#: src/PreferencesDialog.py:342
-msgid "Click here to modify the name or address of a repository"
-msgstr "Pica ací per a modificar el nom o adreça d'un repositori"
-
-#: src/PreferencesDialog.py:343
-msgid "&Remove Repository"
-msgstr "&Esborra el repositori"
-
-#: src/PreferencesDialog.py:344
-msgid "Click here to delete a repository from the list"
-msgstr "Pica ací per a esborrar un repositori de la llista"
-
-#: src/PreferencesDialog.py:345
-msgid "Move &Up"
-msgstr "Mou & cap amunt"
-
-#: src/PreferencesDialog.py:346
-msgid "Click here to move the repository one level up"
-msgstr "Pica ací per tal de pujar el repositori un nivell"
-
-#: src/PreferencesDialog.py:347
-msgid "Move &Down"
-msgstr "Mou & cap avall"
-
-#: src/PreferencesDialog.py:348
-msgid "Click here to move the repository one level down"
-msgstr "Pica ací per tal de baixar el repositori un nivell"
-
-#: src/PreferencesDialog.py:349
-msgid "&Repositories"
-msgstr "&Repositoris"
-
-#: src/PreferencesDialog.py:350 src/PreferencesDialog.py:353
-#: src/PreferencesDialog.py:354
-msgid "Port:"
-msgstr ""
-
-#: src/PreferencesDialog.py:351
-msgid "Use this proxy server for all protocols"
-msgstr ""
-
-#: src/PreferencesDialog.py:352
-msgid "FTP proxy server:"
-msgstr ""
-
-#: src/PreferencesDialog.py:355
-msgid "HTTPS proxy server:"
-msgstr ""
-
-#: src/PreferencesDialog.py:356
-msgid "HTTP proxy server:"
-msgstr ""
-
-#: src/PreferencesDialog.py:358
-msgid "No proxy server"
-msgstr ""
-
-#: src/PreferencesDialog.py:359
-msgid "Use proxy server"
-msgstr ""
-
-#: src/PreferencesDialog.py:360
-msgid "Proxy"
-msgstr ""
+#: src/ComarIface.py:69
+#, fuzzy
+msgid "You are not authorized for this operation."
+msgstr "Ho sent. No tens permís per a realitzar l'operació."
 
 #: src/MainWidget.py:75
 msgid "Loading Package List..."
@@ -278,10 +131,6 @@ msgstr "<b>Actualizació del repositori</b>"
 #: src/MainWidget.py:287
 msgid "Upgrade Package(s)"
 msgstr "Actualitza el(s) paquet(s)"
-
-#: src/MainWidget.py:289 src/MainWidget.py:582 src/Tray.py:43
-msgid "All"
-msgstr "Tot"
 
 #: src/MainWidget.py:305 src/MainWidget.py:590
 msgid "Search Results"
@@ -421,7 +270,7 @@ msgstr "D'altres"
 msgid "downloading"
 msgstr "estic descarregant"
 
-#: src/MainWidget.py:658 src/Preferences.py:330
+#: src/MainWidget.py:658 src/Preferences.py:349
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Els canvis del repositori s'estan efectuant</b>"
 
@@ -501,109 +350,6 @@ msgstr ""
 msgid "Package Manager is already running!"
 msgstr "Ho sent. El gestor del programari ja està en marxa."
 
-#: src/ComarIface.py:38
-msgid "Unable to connect to DBus."
-msgstr ""
-
-#: src/ComarIface.py:38
-#, fuzzy
-msgid "DBus Error"
-msgstr "Error de Pisi"
-
-#: src/ComarIface.py:52
-#, fuzzy
-msgid "D-Bus Error"
-msgstr "Error de Pisi"
-
-#: src/ComarIface.py:57
-msgid "COMAR Auth Error"
-msgstr ""
-
-#: src/ComarIface.py:62
-msgid "Network error. Please check your network connections and try again."
-msgstr ""
-
-#: src/ComarIface.py:62 src/ComarIface.py:64
-msgid "COMAR Error"
-msgstr ""
-
-#: src/ComarIface.py:69
-#, fuzzy
-msgid "You are not authorized for this operation."
-msgstr "Ho sent. No tens permís per a realitzar l'operació."
-
-#: src/Progress.py:51
-msgid "downloaded ( total: %1 )"
-msgstr "abaixat ( total: %1 )"
-
-#: src/Progress.py:83
-msgid "<b>Preparing PiSi...</b>"
-msgstr "<b>Preparació del PiSi...</b>"
-
-#: src/Progress.py:85 src/ProgressDialog.py:94
-msgid "--"
-msgstr "--"
-
-#: src/Progress.py:86 src/ProgressDialog.py:93
-msgid "downloaded (total: -- )"
-msgstr "abaixat (total: -- )"
-
-#: src/Progress.py:87 src/ProgressDialog.py:92
-msgid "-- / --  package"
-msgstr "-- / --  paquet"
-
-#: src/Progress.py:105
-msgid "<b>Cancelling operation...</b>"
-msgstr "<b>L'operació s'està cancel·lant...</b>"
-
-#: src/Progress.py:132 src/Progress.py:136
-msgid "Now %1 <b>%2</b> package"
-msgstr "Ara %1 <b>%2</b> del paquet"
-
-#: src/Progress.py:146
-msgid "installed"
-msgstr "instal·lat"
-
-#: src/Progress.py:148
-msgid "removed"
-msgstr "esborrat"
-
-#: src/Progress.py:150
-msgid "upgraded"
-msgstr "actualitzat"
-
-#: src/Progress.py:152
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 del paquet %3"
-
-#: src/pm-install.py:33
-msgid "PiSi package to install"
-msgstr "Paquet PiSi a instal·lar"
-
-#: src/pm-install.py:50
-msgid "You have selected a package to install. Do you want to continue?"
-msgstr "Has seleccionat un paquet per a instal·lar. Que vols continuar?"
-
-#: src/pm-install.py:51
-msgid "Install Package"
-msgstr "Instal·la el paquet"
-
-#: src/CommonText.py:15
-msgid "extracting"
-msgstr "estic extraient"
-
-#: src/CommonText.py:15
-msgid "configuring"
-msgstr "estic configurant"
-
-#: src/CommonText.py:15
-msgid "removing"
-msgstr "estic esborrant"
-
-#: src/CommonText.py:15
-msgid "installing"
-msgstr "estic instal·lant"
-
 #: src/BasketDialog.py:51 src/BasketDialog.py:56
 msgid "Basket"
 msgstr "Cistell"
@@ -656,6 +402,46 @@ msgstr "Grandària total: <b>%1</b>"
 msgid "Size: "
 msgstr "Grandària: "
 
+#: src/CommonText.py:15
+msgid "extracting"
+msgstr "estic extraient"
+
+#: src/CommonText.py:15
+msgid "configuring"
+msgstr "estic configurant"
+
+#: src/CommonText.py:15
+msgid "removing"
+msgstr "estic esborrant"
+
+#: src/CommonText.py:15
+msgid "installing"
+msgstr "estic instal·lant"
+
+#: src/Preferences.py:234
+msgid "Add New Repository"
+msgstr "Afegeix un nou repositori"
+
+#: src/Preferences.py:241
+msgid "Edit Repository"
+msgstr "Edita el repositori"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>L'adreça del repositori ha de tenir l'extensió xml o xml.bz2.<p>Si et "
+"plau, intenta-ho una altra vegada.</qt>"
+
+#: src/Preferences.py:287 src/Preferences.py:303
+msgid "Pisi Error"
+msgstr "Error de Pisi"
+
+#: src/Preferences.py:382
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr "Tots els paquets en la memòria cau s'esborraran. Que estàs segur?"
+
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
 msgstr "Capsa de diàleg del repositori"
@@ -674,16 +460,297 @@ msgstr ""
 "Adreça del repositori, per exemple <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
-msgid "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+#, fuzzy
+msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:80
+#, fuzzy
+msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+
+#: src/RepoDialog.py:81
 msgid "Repository &Name"
 msgstr "Repositori i nom"
 
-#: src/RepoDialog.py:81
+#: src/RepoDialog.py:82
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Nom del repositori, per exemple <b>pardus-devel</b>"
+
+#: src/CustomEventListener.py:37 src/CustomEventListener.py:41
+#: src/SpecialList.py:100
+msgid "Select all packages in this category"
+msgstr "Selecciona tots els paquets d'aquesta categoria"
+
+#: src/CustomEventListener.py:38 src/SpecialList.py:102
+msgid "Reverse package selections"
+msgstr "Inverteix les seleccions de paquets"
+
+#: src/PreferencesDialog.py:179 src/PreferencesDialog.py:378
+msgid "Repository Name"
+msgstr "Nom del repositori"
+
+#: src/PreferencesDialog.py:180 src/PreferencesDialog.py:379
+msgid "Address"
+msgstr "Adreça"
+
+#: src/PreferencesDialog.py:346
+msgid "Package Manager Settings"
+msgstr "Ajusts del gestor del programari"
+
+#: src/PreferencesDialog.py:348
+msgid "F1"
+msgstr "F1"
+
+#: src/PreferencesDialog.py:353
+msgid "&Show only desktop applications"
+msgstr "&Mostra només les utilitats per a l'escriptori"
+
+#: src/PreferencesDialog.py:354
+msgid "Alt+S"
+msgstr ""
+
+#: src/PreferencesDialog.py:355
+msgid "If checked, then pisi will only show desktop applications"
+msgstr ""
+"Si està marcat, aleshores PiSi només mostrarà les utilitats per a "
+"l'escriptori"
+
+#: src/PreferencesDialog.py:356
+msgid "&Enable system tray icon"
+msgstr "&Habilita l'icona a la safata del sistema"
+
+#: src/PreferencesDialog.py:357
+#, fuzzy
+msgid "Update check"
+msgstr "Actualització"
+
+#: src/PreferencesDialog.py:358
+msgid "Check interval:"
+msgstr "Interval de verificació:"
+
+#: src/PreferencesDialog.py:359
+msgid "Enable &periodic update check"
+msgstr "Habilita &la comprovació periòdica d'actualitzacions"
+
+#: src/PreferencesDialog.py:360
+msgid "Alt+P"
+msgstr ""
+
+#: src/PreferencesDialog.py:361
+msgid " min"
+msgstr " min"
+
+#: src/PreferencesDialog.py:362
+msgid "Bandwidth limit"
+msgstr ""
+
+#: src/PreferencesDialog.py:363
+msgid "Use bandwidth limit"
+msgstr ""
+
+#: src/PreferencesDialog.py:365
+msgid "Bandwidth limit:"
+msgstr ""
+
+#: src/PreferencesDialog.py:366
+msgid " kb/s"
+msgstr ""
+
+#: src/PreferencesDialog.py:367
+msgid "&General Settings"
+msgstr "&Arranjaments generals"
+
+#: src/PreferencesDialog.py:368
+msgid "Clear Cache"
+msgstr "Buida la memòria cau"
+
+#: src/PreferencesDialog.py:369
+msgid "C&lean disk cache now"
+msgstr "B&uida la memòria cau ara"
+
+#: src/PreferencesDialog.py:370
+msgid ""
+"Clearing the disk cache will remove all downloaded software. \n"
+"This will not delete installed software or affect your system stability."
+msgstr ""
+"En buidar la memòria cau esborraràs tot el programari que hages abaixat.\n"
+"Açò, però, no esborrarà el programari que hages instal·lat, i tampoc no "
+"afectarà\n"
+"l'estabilitat del teu sistema."
+
+#: src/PreferencesDialog.py:372
+msgid "Cache usage"
+msgstr "Ús de la memòria cau"
+
+#: src/PreferencesDialog.py:373
+msgid "Maximum cache size:"
+msgstr "Grandària màxima de la memòria cau admesa:"
+
+#: src/PreferencesDialog.py:374
+msgid "&Use hard disk cache for downloaded software"
+msgstr "&Usa la memòria cau del disc dur per al programari que s'haja abaixat"
+
+#: src/PreferencesDialog.py:375
+msgid "If checked, downloaded packages will be hold at the hard disk cache"
+msgstr ""
+"Si està marcat, aleshores els paquets que abaixes es mantindran a la memòria "
+"cau del teu disc dur"
+
+#: src/PreferencesDialog.py:376
+msgid "Mb <i>(use 0 for no limit)</i>"
+msgstr "Megaoctets <i>(posa un zero si no vols cap límit)</i>"
+
+#: src/PreferencesDialog.py:377
+msgid "C&ache"
+msgstr "M&emòria cau"
+
+#: src/PreferencesDialog.py:380
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr "Ací pots veure els repositoris actuals i llurs adreces corresponents"
+
+#: src/PreferencesDialog.py:381
+msgid "&Add New Repository"
+msgstr "&Afegeix un nou repositori"
+
+#: src/PreferencesDialog.py:382
+msgid "Click here to add a new software repository"
+msgstr "Pica ací per a afegir un nou repositori de programari"
+
+#: src/PreferencesDialog.py:383
+msgid "&Edit Repository"
+msgstr "&Edita el repositori"
+
+#: src/PreferencesDialog.py:384
+msgid "Click here to modify the name or address of a repository"
+msgstr "Pica ací per a modificar el nom o adreça d'un repositori"
+
+#: src/PreferencesDialog.py:385
+msgid "&Remove Repository"
+msgstr "&Esborra el repositori"
+
+#: src/PreferencesDialog.py:386
+msgid "Click here to delete a repository from the list"
+msgstr "Pica ací per a esborrar un repositori de la llista"
+
+#: src/PreferencesDialog.py:387
+msgid "Move &Up"
+msgstr "Mou & cap amunt"
+
+#: src/PreferencesDialog.py:388
+msgid "Click here to move the repository one level up"
+msgstr "Pica ací per tal de pujar el repositori un nivell"
+
+#: src/PreferencesDialog.py:389
+msgid "Move &Down"
+msgstr "Mou & cap avall"
+
+#: src/PreferencesDialog.py:390
+msgid "Click here to move the repository one level down"
+msgstr "Pica ací per tal de baixar el repositori un nivell"
+
+#: src/PreferencesDialog.py:391
+msgid "&Repositories"
+msgstr "&Repositoris"
+
+#: src/PreferencesDialog.py:392 src/PreferencesDialog.py:395
+#: src/PreferencesDialog.py:396
+msgid "Port:"
+msgstr ""
+
+#: src/PreferencesDialog.py:393
+msgid "Use this proxy server for all protocols"
+msgstr ""
+
+#: src/PreferencesDialog.py:394
+msgid "FTP proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:397
+msgid "HTTPS proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:398
+msgid "HTTP proxy server:"
+msgstr ""
+
+#: src/PreferencesDialog.py:400
+msgid "No proxy server"
+msgstr ""
+
+#: src/PreferencesDialog.py:401
+msgid "Use proxy server"
+msgstr ""
+
+#: src/PreferencesDialog.py:402
+msgid "Proxy"
+msgstr ""
+
+#: src/pm-install.py:33
+msgid "PiSi package to install"
+msgstr "Paquet PiSi a instal·lar"
+
+#: src/pm-install.py:50
+msgid "You have selected a package to install. Do you want to continue?"
+msgstr "Has seleccionat un paquet per a instal·lar. Que vols continuar?"
+
+#: src/pm-install.py:51
+msgid "Install Package"
+msgstr "Instal·la el paquet"
+
+#: src/SpecialList.py:163
+msgid "Description: "
+msgstr "Descripció:"
+
+#: src/SpecialList.py:164
+msgid "Version: "
+msgstr "Versió:"
+
+#: src/SpecialList.py:165
+#, fuzzy
+msgid "Repository: "
+msgstr "Nom del repositori"
+
+#: src/SpecialList.py:166
+msgid "Package Size: "
+msgstr "Grandària del paquet:"
+
+#: src/SpecialList.py:167
+msgid "Homepage: "
+msgstr "Plana principal:"
+
+#: src/Progress.py:51
+msgid "downloaded ( total: %1 )"
+msgstr "abaixat ( total: %1 )"
+
+#: src/Progress.py:83
+msgid "<b>Preparing PiSi...</b>"
+msgstr "<b>Preparació del PiSi...</b>"
+
+#: src/Progress.py:105
+msgid "<b>Cancelling operation...</b>"
+msgstr "<b>L'operació s'està cancel·lant...</b>"
+
+#: src/Progress.py:132 src/Progress.py:136
+msgid "Now %1 <b>%2</b> package"
+msgstr "Ara %1 <b>%2</b> del paquet"
+
+#: src/Progress.py:146
+msgid "installed"
+msgstr "instal·lat"
+
+#: src/Progress.py:148
+msgid "removed"
+msgstr "esborrat"
+
+#: src/Progress.py:150
+msgid "upgraded"
+msgstr "actualitzat"
+
+#: src/Progress.py:152
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 del paquet %3"
 
 #: src/Notifier.py:41
 msgid "Show Updates"
@@ -692,54 +759,6 @@ msgstr "Mostra'm les actualitzacions"
 #: src/Notifier.py:41
 msgid "Ignore"
 msgstr "No faces cas"
-
-#: src/Tray.py:38
-msgid "Update"
-msgstr "Actualització"
-
-#: src/Tray.py:66
-msgid "There are <b>%1</b> updates available!"
-msgstr "Hi ha <b>%1</b> actualitzacions disponibles!"
-
-#: src/Tray.py:67
-msgid "Updates Available!"
-msgstr ""
-
-#: src/Preferences.py:219
-msgid "Add New Repository"
-msgstr "Afegeix un nou repositori"
-
-#: src/Preferences.py:226
-msgid "Edit Repository"
-msgstr "Edita el repositori"
-
-#: src/Preferences.py:272 src/Preferences.py:288
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>L'adreça del repositori ha de tenir l'extensió xml o xml.bz2.<p>Si et "
-"plau, intenta-ho una altra vegada.</qt>"
-
-#: src/Preferences.py:272 src/Preferences.py:288
-msgid "Pisi Error"
-msgstr "Error de Pisi"
-
-#: src/Preferences.py:363
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Tots els paquets en la memòria cau s'esborraran. Que estàs segur?"
-
-#: src/ProgressDialog.py:91
-msgid "Progress"
-msgstr "Progrès"
-
-#: src/ProgressDialog.py:97
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Preparació del PiSi...</h3>"
-
-#: src/ProgressDialog.py:98
-msgid "Now installing <b>amsn</b> package"
-msgstr "Instal·lació del paquet <b>amsn</b>"
 
 #~ msgid "N\\A"
 #~ msgstr "N\\A"
