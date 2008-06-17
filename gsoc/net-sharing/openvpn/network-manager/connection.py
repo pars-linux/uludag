@@ -436,6 +436,10 @@ class Settings(QWidget):
             if conn.devname:
                 self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
+            if "vpn" in self.link.modes:
+                if conn.vpn_port:
+                    self.port.setText(conn.vpn_port)
+                pass
             if "remote" in self.link.modes:
                 if conn.remote:
                     self.remote.setText(conn.remote)
@@ -543,7 +547,7 @@ class Settings(QWidget):
                 ca = self.ca
                 cert = self.cert
                 key = self.key
-                #comlink.call(self.link.script,"Net.Link","setvpn", name, domain, port, protocol, ca, cert, key)
+                comlink.call(self.link.script,"Net.Link","setVpn", name, domain, port, protocol, ca, cert, key)
 
             # close dialog
             self.parent().setEnabled(True)
@@ -672,7 +676,7 @@ class Window(QMainWindow):
     
     def slotAccept(self):
         self.settings.useValues()
-    
+
     def slotCancel(self):
         self.settings.cleanup()
         self.close(True)

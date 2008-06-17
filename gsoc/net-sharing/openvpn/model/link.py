@@ -86,8 +86,9 @@ class Dev:
         d = DB.getDB(self.name)
         d["state"] = "up"
         DB.setDB(self.name, d)
-        notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
+        notify("Net.Link", "stateChanged", (self.name, "connecting", self.domain))
         subprocess.call(["/usr/sbin/openvpn","--config","%s" %CFG_FL])
+        notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
         #else:
 	    #pass
             #raise error
