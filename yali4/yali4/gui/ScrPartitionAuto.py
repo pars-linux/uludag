@@ -131,6 +131,7 @@ about disk partitioning.
             _tmp = []
             for part in self.arp:
                 if str(part["partition"].getPath()).startswith(self.device.getPath()):
+                    self.autoPartPartition = part
                     _tmp.append(part)
             self.arp = _tmp
         if self.ui.accept_auto_1.isChecked() or self.ui.accept_auto_2.isChecked():

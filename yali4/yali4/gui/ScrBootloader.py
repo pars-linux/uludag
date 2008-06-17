@@ -132,7 +132,7 @@ loader.
         ctx.bootLoaderOptionalDev = self.device
 
     def execute(self):
-        ctx.bootLoaderOptionalDev = self.device
+        ctx.installData.bootLoaderOptionalDev = self.device
         # Apply GRUB Options
         if self.ui.noInstall.isChecked():
             ctx.installData.bootLoaderOption = B_DONT_INSTALL
