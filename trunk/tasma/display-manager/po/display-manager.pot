@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 16:57+0300\n"
+"POT-Creation-Date: 2008-06-18 01:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,16 +16,157 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/driverdialog.py:43 src/driverdialog.py:64
+msgid "Driver Name"
+msgstr ""
+
+#: src/driverdialog.py:44 src/driverdialog.py:65
+msgid "Description"
+msgstr ""
+
+#: src/driverdialog.py:58 src/dm_mainview.py:268
+msgid "Video Card"
+msgstr ""
+
+#: src/driverdialog.py:59
+msgid "Show all drivers"
+msgstr ""
+
+#: src/driverdialog.py:60 src/monitordialog.py:89
+msgid "Ok"
+msgstr ""
+
+#: src/display-manager.py:40 src/display-manager.py:621 src/dm_mainview.py:248
+msgid "Display Manager"
+msgstr ""
+
+#: src/display-manager.py:57
+msgid "CRT Monitor"
+msgstr ""
+
+#: src/display-manager.py:58
+msgid "LCD Monitor"
+msgstr ""
+
+#: src/display-manager.py:65
+msgid "Standard Monitors"
+msgstr ""
+
+#: src/display-manager.py:65
+msgid "Vendors"
+msgstr ""
+
+#: src/display-manager.py:171
+msgid ""
+"<qt>The driver you selected is not installed on your system. In order to use "
+"this driver, you must install <b>%1</b> package.</qt>"
+msgstr ""
+
+#: src/display-manager.py:172 src/display-manager.py:491
+msgid "Start Package Manager"
+msgstr ""
+
+#: src/display-manager.py:185 src/dm_mainview.py:250 src/dm_mainview.py:270
+msgid "Primary Screen"
+msgstr ""
+
+#: src/display-manager.py:185 src/dm_mainview.py:272
+msgid "Secondary Screen"
+msgstr ""
+
+#: src/display-manager.py:312
+msgid ""
+"This output is already used by other screen.\n"
+"Do you want to swap between them?"
+msgstr ""
+
+#: src/display-manager.py:447
+msgid "Driver: %1"
+msgstr ""
+
+#: src/display-manager.py:450
+msgid "Plug and Play Monitor"
+msgstr ""
+
+#: src/display-manager.py:479
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+
+#: src/display-manager.py:490
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%3</b> from video card options.</qt>"
+msgstr ""
+
+#: src/display-manager.py:609
+msgid "Display Manager is already started!"
+msgstr ""
+
+#: src/dm_mainview.py:249
+msgid "Identify Displays"
+msgstr ""
+
+#: src/dm_mainview.py:251
+msgid "Output"
+msgstr ""
+
+#: src/dm_mainview.py:252
+msgid "Resolution"
+msgstr ""
+
+#: src/dm_mainview.py:254
+msgid "Configuration file is not ready."
+msgstr ""
+
+#: src/dm_mainview.py:256
+msgid "1"
+msgstr ""
+
+#: src/dm_mainview.py:259
+msgid "2"
+msgstr ""
+
+#: src/dm_mainview.py:261
+msgid "True Color"
+msgstr ""
+
+#: src/dm_mainview.py:262
+msgid "Dual Screen"
+msgstr ""
+
+#: src/dm_mainview.py:264
+msgid "Cloned Mode"
+msgstr ""
+
+#: src/dm_mainview.py:265
+msgid "Extended Mode"
+msgstr ""
+
+#: src/dm_mainview.py:266
+msgid "Detect Displays"
+msgstr ""
+
+#: src/dm_mainview.py:267
+msgid "Screens"
+msgstr ""
+
+#: src/dm_mainview.py:269 src/dm_mainview.py:271 src/dm_mainview.py:273
+msgid "Configure..."
+msgstr ""
+
+#: src/dm_mainview.py:274
+msgid "Devices"
+msgstr ""
+
 #: src/monitordialog.py:86
 msgid "Choose Monitor"
 msgstr ""
 
 #: src/monitordialog.py:87
 msgid "Plug And Play Monitor"
-msgstr ""
-
-#: src/monitordialog.py:89 src/driverdialog.py:60
-msgid "Ok"
 msgstr ""
 
 #: src/monitordialog.py:94
@@ -70,46 +211,34 @@ msgid ""
 "Would you like to create a new configuration at the next boot?"
 msgstr ""
 
-#: src/displayconfig.py:377
+#: src/displayconfig.py:379
 msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
 msgstr ""
 
-#: src/displayconfig.py:380
+#: src/displayconfig.py:382
 msgid "Your hardware will be probed after restarting your computer."
 msgstr ""
 
-#: src/utility.py:24
+#: src/utility.py:26
+msgid "Default Output"
+msgstr ""
+
+#: src/utility.py:29
 msgid "Laptop Panel (%1)"
 msgstr ""
 
-#: src/utility.py:25
+#: src/utility.py:30
 msgid "Analog Output (%1)"
 msgstr ""
 
-#: src/utility.py:26
+#: src/utility.py:31
 msgid "Digital Output (%1)"
 msgstr ""
 
-#: src/utility.py:27
+#: src/utility.py:32
 msgid "TV Output (%1)"
-msgstr ""
-
-#: src/driverdialog.py:43 src/driverdialog.py:64
-msgid "Driver Name"
-msgstr ""
-
-#: src/driverdialog.py:44 src/driverdialog.py:65
-msgid "Description"
-msgstr ""
-
-#: src/driverdialog.py:58 src/dm_mainview.py:270
-msgid "Video Card"
-msgstr ""
-
-#: src/driverdialog.py:59
-msgid "Show all drivers"
 msgstr ""
 
 #: src/helpdialog.py:55
@@ -145,129 +274,4 @@ msgstr ""
 
 #: src/helpdialog.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr ""
-
-#: src/dm_mainview.py:250 src/display-manager.py:40 src/display-manager.py:619
-msgid "Display Manager"
-msgstr ""
-
-#: src/dm_mainview.py:251
-msgid "Identify Displays"
-msgstr ""
-
-#: src/dm_mainview.py:252 src/dm_mainview.py:272 src/display-manager.py:184
-msgid "Primary Screen"
-msgstr ""
-
-#: src/dm_mainview.py:253
-msgid "Output"
-msgstr ""
-
-#: src/dm_mainview.py:254
-msgid "Resolution"
-msgstr ""
-
-#: src/dm_mainview.py:256
-msgid "Configuration file is not ready."
-msgstr ""
-
-#: src/dm_mainview.py:258
-msgid "1"
-msgstr ""
-
-#: src/dm_mainview.py:261
-msgid "2"
-msgstr ""
-
-#: src/dm_mainview.py:263
-msgid "True Color"
-msgstr ""
-
-#: src/dm_mainview.py:264
-msgid "Dual Screen"
-msgstr ""
-
-#: src/dm_mainview.py:266
-msgid "Cloned Mode"
-msgstr ""
-
-#: src/dm_mainview.py:267
-msgid "Extended Mode"
-msgstr ""
-
-#: src/dm_mainview.py:268
-msgid "Detect Displays"
-msgstr ""
-
-#: src/dm_mainview.py:269
-msgid "Screens"
-msgstr ""
-
-#: src/dm_mainview.py:271 src/dm_mainview.py:273 src/dm_mainview.py:275
-msgid "Configure..."
-msgstr ""
-
-#: src/dm_mainview.py:274 src/display-manager.py:184
-msgid "Secondary Screen"
-msgstr ""
-
-#: src/dm_mainview.py:276
-msgid "Devices"
-msgstr ""
-
-#: src/display-manager.py:57
-msgid "CRT Monitor"
-msgstr ""
-
-#: src/display-manager.py:58
-msgid "LCD Monitor"
-msgstr ""
-
-#: src/display-manager.py:65
-msgid "Standard Monitors"
-msgstr ""
-
-#: src/display-manager.py:65
-msgid "Vendors"
-msgstr ""
-
-#: src/display-manager.py:170
-msgid ""
-"<qt>The driver you selected is not installed on your system. In order to use "
-"this driver, you must install <b>%1</b> package.</qt>"
-msgstr ""
-
-#: src/display-manager.py:171 src/display-manager.py:490
-msgid "Start Package Manager"
-msgstr ""
-
-#: src/display-manager.py:311
-msgid ""
-"This output is already used by other screen.\n"
-"Do you want to swap between them?"
-msgstr ""
-
-#: src/display-manager.py:446
-msgid "Driver: %1"
-msgstr ""
-
-#: src/display-manager.py:449
-msgid "Plug and Play Monitor"
-msgstr ""
-
-#: src/display-manager.py:478
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-
-#: src/display-manager.py:489
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%3</b> from video card options.</qt>"
-msgstr ""
-
-#: src/display-manager.py:607
-msgid "Display Manager is already started!"
 msgstr ""
