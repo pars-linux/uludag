@@ -4,15 +4,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 16:41+0300\n"
-"PO-Revision-Date: 2007-11-17 01:55+0200\n"
-"Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
+"PO-Revision-Date: 2008-06-17 15:38+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,39 +122,39 @@ msgstr "Nicht verwendete(n) Kernel vom System deinstallieren?"
 
 #: src/bm_mainview.py:518
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Kann nicht mit DBus verbunden werden."
 
 #: src/bm_mainview.py:518
 msgid "DBus Error"
-msgstr ""
+msgstr "DBus-Fehler"
 
 #: src/bm_mainview.py:540
-#, fuzzy
 msgid "You are not authorized for this operation."
-msgstr "Sie sind nicht berechtigt diesBoot-Loader-Einstellungen zu bearbeiten."
+msgstr "Sie sind für diesen Vorgang nicht berechtigt."
 
 #: src/bm_mainview.py:546
 msgid "Waiting DBus..."
-msgstr ""
+msgstr "Auf DBus wartend..."
 
 #: src/bm_mainview.py:546
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "Verbindung zu DBus unerwartet geschlossen, es wird versucht erneut zu verbinden..."
 
 #: src/bm_mainview.py:562
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
+"Kann nicht mit DBus verbunden werden! Falls es nicht gestartet ist, dann sollten "
+"Sie es in einer Konsole mit dem folgenden Befehl ausführen 'service dbus start'."
 
 #: src/bm_mainview.py:566
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR-Fehler"
 
 #: src/bm_mainview.py:580
 msgid "Bootloader configuration changed by another application."
-msgstr ""
-"Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
+msgstr "Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
 
 #: src/boot-manager.py:33 src/boot-manager.py:92
 msgid "Boot Manager"
@@ -178,3 +179,4 @@ msgstr "Eintrag bearbeiten"
 #: src/ui_elements.py:95
 msgid "Delete entry"
 msgstr "Eintrag löschen"
+
