@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 01:05+0300\n"
-"PO-Revision-Date: 2008-06-09 20:55-0400\n"
+"PO-Revision-Date: 2008-06-17 18:50-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -247,13 +247,11 @@ msgstr ""
 # duda: probed - creo que detectares la idea, "comprobar" para mi que no es
 #: src/displayconfig.py:382
 msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
-"Se detectarán sus dispositivos durante el próximo arranque del sistema."
+msgstr "Se detectarán sus dispositivos durante el próximo arranque del sistema."
 
 #: src/utility.py:26
-#, fuzzy
 msgid "Default Output"
-msgstr "Salida Digital (%1)"
+msgstr "Salida preestablecida"
 
 #: src/utility.py:29
 msgid "Laptop Panel (%1)"
@@ -328,3 +326,4 @@ msgstr ""
 #: src/helpdialog.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr "<p><b><h3>Administrador de Pantllas </h3></b></p>"
+

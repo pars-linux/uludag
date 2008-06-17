@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-17 14:35+0300\n"
-"PO-Revision-Date: 2008-06-16 18:57-0400\n"
+"PO-Revision-Date: 2008-06-17 18:45-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -85,8 +85,7 @@ msgstr ""
 "según el método seleccionado."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Particionamiento automático intenta usar el espacio libre o redimensiona "
 "particiones existentes"
@@ -113,12 +112,10 @@ msgstr "Puede utilizar esta opción para realizar particionamiento manual"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Si no hay una partición adecuada disponible, esta opción queda deshabilitada"
+msgstr "Si no hay una partición adecuada disponible, esta opción queda deshabilitada"
 
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -716,9 +713,8 @@ msgid "as Storage Area"
 msgstr "como área de almacenamiento"
 
 #: yali4/gui/DiskWidgets.py:93
-#, fuzzy
 msgid "Manuel Partitioning selected."
-msgstr "Particionamiento Manual"
+msgstr "Particionamiento manual seleccionado"
 
 #: yali4/gui/DiskWidgets.py:163
 #, python-format
@@ -768,7 +764,7 @@ msgstr "Hay una petición para el mismo tipo de partición."
 #: yali4/gui/DiskWidgets.py:328 yali4/gui/ScrSummary.py:124
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
+msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:347
 msgid "Too many primary partition !"
@@ -828,7 +824,7 @@ msgstr ""
 #: yali4/gui/DiskWidgets.py:535 yali4/gui/ScrSummary.py:122
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
-msgstr ""
+msgstr "Se eliminaron todas particiones del dispositivo <b>%(device)s</b>."
 
 #: yali4/gui/GUIAdditional.py:67
 msgid ""
@@ -843,15 +839,14 @@ msgstr ""
 msgid "Resizing to %s MB.."
 msgstr "Redimensionando a %s MB.."
 
-# i hope "(fs)s" refers to a string rerpresenting the file-system
 #: yali4/gui/GUIAdditional.py:92
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s - %(fs)s</b> <b>resized</b> to <b>%(resizeTo)s "
 "MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
-"Partición <b>%(partition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</"
-"b> de <b>%(size)s MB</b> como <b>%(fs)s</b>."
+"Partición <b>%(partition)s - %(fs)s</b> <b>redimensionada</b> a <b>%(resizeTo)s "
+"MB</b>, tamaño anterior era <b>%(currentSize)s MB</b>"
 
 #: yali4/gui/GUIAdditional.py:145
 #, python-format
@@ -942,8 +937,7 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:110
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -954,8 +948,7 @@ msgstr ""
 # Las contraseñas no coinciden!
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:137
 msgid ""
@@ -1025,8 +1018,7 @@ msgstr "Verifique sus discos"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity.."
-msgstr ""
-"Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1473,8 +1465,7 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:100
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr ""
-"Usuario %s (<b>%s</b>) con <u>privilegios de administración</u> agregado."
+msgstr "Usuario %s (<b>%s</b>) con <u>privilegios de administración</u> agregado."
 
 #: yali4/gui/ScrSummary.py:105
 msgid "Hostname Settings"
@@ -1490,55 +1481,50 @@ msgid "Partition Settings"
 msgstr "Configuración de Particiones"
 
 #: yali4/gui/ScrSummary.py:113
-#, fuzzy
 msgid "Automatic Partitioning selected."
-msgstr "Particionar automáticamente y formatear disco seleccionado !"
+msgstr "Particionamiento automático seleccionado !"
 
 #: yali4/gui/ScrSummary.py:127
-#, fuzzy
 msgid "Automatic Partitioning (resize method) selected."
-msgstr "Particionar automáticamente y formatear disco seleccionado !"
+msgstr "Particionamiento automático (método redimensionar) seleccionado."
 
-# i hope "(fs)s" refers to a string rerpresenting the file-system
 #: yali4/gui/ScrSummary.py:146
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
-"Partición <b>%(partition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</"
-"b> de <b>%(size)s MB</b> como <b>%(fs)s</b>."
+"Partición <b>%(partition)s - %(currentFs)s</b> <b>redimensionada</b> a <b>%"
+"(resizeTo)s MB</b>, tamaño anterior era <b>%(currentSize)s MB</b>"
 
 # i hope "(fs)s" refers to a string rerpresenting the file-system
 #: yali4/gui/ScrSummary.py:147
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
-"Partición <b>%(partition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</"
-"b> de <b>%(size)s MB</b> como <b>%(fs)s</b>."
+"Partición <b>%(newPartition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</b> "
+"con <b>%(size)s MB</b> como <b>%(fs)s</b>."
 
 #: yali4/gui/ScrSummary.py:148
-#, fuzzy, python-format
+#, python-format
+# favor revisar contexto
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partición <b>%(partition)s (%(size)s)</b> <b>eliminado</b>de dispositivo <b>%"
-"(device)s</b>."
+msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:163
-#, fuzzy
 msgid "Bootloader Settings"
-msgstr "Nombre de la Máquina (hostname)"
+msgstr "Configuración del Cargador de arranque"
 
 #: yali4/gui/ScrSummary.py:164
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
-msgstr ""
+msgstr "GRUB se va a instalar en <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:166
 msgid "GRUB will not be installed"
-msgstr ""
+msgstr "GRUB no se instalará"
 
 #: yali4/gui/ScrSummary.py:197 yali4/gui/ScrSummary.py:205
 #: yali4/gui/ScrSummary.py:219
@@ -1636,8 +1622,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:175
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:232
 msgid "Update User"
@@ -1948,3 +1933,4 @@ msgstr "Intercambio (swap)"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Guardar Partición"
+
