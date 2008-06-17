@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 16:57+0300\n"
-"PO-Revision-Date: 2008-06-15 17:26+0200\n"
+"PO-Revision-Date: 2008-06-17 18:38+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
@@ -74,7 +74,7 @@ msgid ""
 "to configure your video hardware, you must create a new configuration file.\n"
 "Would you like to create a new configuration at the next boot?"
 msgstr ""
-"Beeldscherm beheer kan geen informatie over de configuratie verkrijgen. Het "
+"Beeldschermbeheer kan geen informatie over de configuratie verkrijgen. Het "
 "configuratie bestand kan defect zijn of veranderd door een ander "
 "gereedschap. Als i wilt dat het beeldscherm beheer uw video hardware "
 "configureerd, dient u een nieuw configuratie bestand aan te maken.\n"
@@ -126,7 +126,7 @@ msgstr "Toon alle drivers"
 
 #: src/helpdialog.py:55
 msgid "Display Manager Help"
-msgstr "Beeldscherm beheer help"
+msgstr "Beeldschermbeheer help"
 
 #: src/helpdialog.py:56
 msgid ""
@@ -180,11 +180,11 @@ msgstr ""
 
 #: src/helpdialog.py:67
 msgid "<p><b><h3>Display Manager </h3></b></p>"
-msgstr "<p><b><h3>Beeldscherm beheer </h3></b></p>"
+msgstr "<p><b><h3>Beeldschermbeheer </h3></b></p>"
 
 #: src/dm_mainview.py:250 src/display-manager.py:40 src/display-manager.py:619
 msgid "Display Manager"
-msgstr "Beeldscherm beheer"
+msgstr "Beeldschermbeheer"
 
 #: src/dm_mainview.py:251
 msgid "Identify Displays"
@@ -310,5 +310,5 @@ msgstr "<qt>Om betere prestaties te krijgen, kunt u gebruik maken van de <b>%1</
 
 #: src/display-manager.py:607
 msgid "Display Manager is already started!"
-msgstr "Beeldscherm beheer is al actief!"
+msgstr "Beeldschermbeheer is al actief!"
 
