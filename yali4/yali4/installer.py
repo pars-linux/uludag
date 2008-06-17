@@ -248,7 +248,10 @@ class Yali:
         for partition in mean.resizablePartitions:
             if partition["newSize"] / 2 >= ctx.consts.min_root_size:
                 arp.append(partition)
-        return arp[0]
+        if len(arp)>0:
+            return arp[0]
+        else:
+            raise YaliException, "No Resizable partition found !"
 
     def autoPartDevice(self):
         self.info.updateAndShow(_("Writing disk tables ..."))
