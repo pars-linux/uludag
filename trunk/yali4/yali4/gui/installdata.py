@@ -30,6 +30,7 @@ class InstallData:
     autoPartMethod = methodUseAvail
     bootLoaderDev = None
     bootLoaderOption = B_DONT_INSTALL
+    bootLoaderOptionalDev = None
     orderedDiskList = []
     repoAddr = None
     useYaliFirstBoot = False
