@@ -290,7 +290,7 @@ msgstr "IHM du gestionnaire de paquet PiSi"
 
 #: src/package-manager.py:39 src/package-manager.py:56
 msgid "Package Manager"
-msgstr "Gestionnaire de Paquets"
+msgstr "Gestionnaire de Paquet"
 
 #: src/package-manager.py:42
 msgid "Developer and Current Maintainer"
