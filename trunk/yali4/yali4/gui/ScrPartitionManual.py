@@ -59,6 +59,7 @@ about disk partitioning.
 
     def shown(self):
         ctx.mainScreen.disableNext()
+        self.diskList.checkRootPartRequest()
 
     def update(self):
         self.diskList.updateEnabled = True

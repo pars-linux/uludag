@@ -93,9 +93,17 @@ Click Next button to proceed.
         self.connect(self.ui.pass2, SIGNAL("returnPressed()"),
                      self.slotReturnPressed)
 
-    def shown(self):
         ctx.installData.users = []
         ctx.installData.autoLoginUser = None
+
+    def shown(self):
+        if len(yali4.users.pending_users) > 0 and self.ui.userList.count() == 0:
+            for u in yali4.users.pending_users:
+                pix = self.normalUserIcon
+                if "wheel" in u.groups:
+                    pix = self.superUserIcon
+                UserItem(self.ui.userList, pix, user = u)
+                self.ui.autoLogin.addItem(QString(u.username))
 
         self.checkUsers()
         self.checkCapsLock()
