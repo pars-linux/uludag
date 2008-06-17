@@ -102,14 +102,8 @@ about disk partitioning.
         ctx.yali.scanPartitions(self)
         self.fillDeviceList(self.ui.accept_auto_1.isChecked())
 
-        def sortBySize(x,y):
-            if x["newSize"]>y["newSize"]:return -1
-            elif x["newSize"]==y["newSize"]: return 0
-            return 1
-
         self.arp = []
         self.autoPartPartition = None
-        self.resizablePartitions.sort(sortBySize)
 
         for partition in self.resizablePartitions:
             if partition["newSize"] / 2 >= ctx.consts.min_root_size:

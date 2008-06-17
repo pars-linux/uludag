@@ -81,10 +81,8 @@ Here you can see your install options and look at them again before installation
         content.append("""<html><body><ul>""")
 
         # Keyboard Layout
-        content.append(subject % _("Localization Settings"))
-        content.append(item % _("Selected language is <b>%s</b>") % ctx.installData.keyData["name"])
-        variant = ctx.installData.keyData["xkbvariant"] or ''
-        content.append(item % _("Selected keyboard layout is <b>%s%s</b>") % (ctx.installData.keyData["xkblayout"],variant))
+        content.append(subject % _("Keyboard Settings"))
+        content.append(item % _("Selected keyboard layout is <b>%s</b>") % ctx.installData.keyData["name"])
         content.append(end)
 
         # TimeZone
