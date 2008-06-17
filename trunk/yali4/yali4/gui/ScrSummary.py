@@ -228,9 +228,9 @@ Here you can see your install options and look at them again before installation
         if ctx.installData.bootLoaderOption == B_DONT_INSTALL:
             ctx.installData.bootLoaderDev = None
         elif ctx.installData.bootLoaderOption == B_INSTALL_PART:
-            ctx.installData.bootLoaderDev = basename(root_part_req.partition().getPath())
+            ctx.installData.bootLoaderDev = os.path.basename(root_part_req.partition().getPath())
         elif ctx.installData.bootLoaderOption == B_INSTALL_MBR:
-            ctx.installData.bootLoaderDev = basename(ctx.installData.bootLoaderOptionalDev.getPath())
+            ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.bootLoaderOptionalDev.getPath())
         else:
             ctx.yali.guessBootLoaderDevice()
 
