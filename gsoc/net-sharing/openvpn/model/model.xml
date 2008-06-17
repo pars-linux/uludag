@@ -34,6 +34,7 @@
         <arg name="ca" type="s" direction="in"/>
         <arg name="cert" type="s" direction="in"/>
         <arg name="key" type="s" direction="in"/>
+        <arg name="chipher" type="s" direction="in"/>
         <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setRemote" access_label="set">
