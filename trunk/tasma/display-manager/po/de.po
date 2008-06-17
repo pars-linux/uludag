@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 01:05+0300\n"
-"PO-Revision-Date: 2008-05-15 09:41+0300\n"
+"PO-Revision-Date: 2008-06-18 00:46+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Grafikkarte"
 
 #: src/driverdialog.py:59
 msgid "Show all drivers"
-msgstr ""
+msgstr "Alle Treiber anzeigen"
 
 #: src/driverdialog.py:60 src/monitordialog.py:89
 msgid "Ok"
@@ -57,7 +57,7 @@ msgstr "Plug and Play Monitor"
 
 #: src/display-manager.py:65
 msgid "Vendors"
-msgstr ""
+msgstr "Hersteller"
 
 #: src/display-manager.py:171
 msgid ""
@@ -67,7 +67,7 @@ msgstr ""
 
 #: src/display-manager.py:172 src/display-manager.py:491
 msgid "Start Package Manager"
-msgstr ""
+msgstr "Paket-Manager starten"
 
 #: src/display-manager.py:185 src/dm_mainview.py:250 src/dm_mainview.py:270
 msgid "Primary Screen"
@@ -122,7 +122,7 @@ msgstr "Auflösung"
 
 #: src/dm_mainview.py:254
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Konfigurationsdatei ist nicht bereit."
 
 #: src/dm_mainview.py:256
 msgid "1"
@@ -134,15 +134,15 @@ msgstr "2"
 
 #: src/dm_mainview.py:261
 msgid "True Color"
-msgstr ""
+msgstr "Echtfarben"
 
 #: src/dm_mainview.py:262
 msgid "Dual Screen"
-msgstr ""
+msgstr "Dual-Anzeige"
 
 #: src/dm_mainview.py:264
 msgid "Cloned Mode"
-msgstr ""
+msgstr "Klon-Modus"
 
 #: src/dm_mainview.py:265
 msgid "Extended Mode"
@@ -186,7 +186,7 @@ msgstr "<p>Vertikaler Bereich:</p>"
 
 #: src/displayconfig.py:68
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Sie sind für diesen Vorgang nicht berechtigt."
 
 #: src/displayconfig.py:97
 msgid "COMAR Error"
@@ -194,17 +194,19 @@ msgstr "COMAR-Fehler"
 
 #: src/displayconfig.py:102
 msgid "Waiting DBus..."
-msgstr ""
+msgstr "Wartend auf DBus..."
 
 #: src/displayconfig.py:102
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
+msgstr "Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut zu verbinden..."
 
 #: src/displayconfig.py:118
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
+"Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, dann"
+"sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' ausführen."
 
 #: src/displayconfig.py:146
 msgid ""
@@ -222,7 +224,7 @@ msgstr ""
 
 #: src/displayconfig.py:382
 msgid "Your hardware will be probed after restarting your computer."
-msgstr ""
+msgstr "Ihre Hardware wird nach dem Neustart Ihres Computers überprüft."
 
 #: src/utility.py:26
 #, fuzzy
@@ -231,15 +233,15 @@ msgstr "Ausgang"
 
 #: src/utility.py:29
 msgid "Laptop Panel (%1)"
-msgstr ""
+msgstr "Laptop-Panel (%1)"
 
 #: src/utility.py:30
 msgid "Analog Output (%1)"
-msgstr ""
+msgstr "Analoge Ausgabe (%1)"
 
 #: src/utility.py:31
 msgid "Digital Output (%1)"
-msgstr ""
+msgstr "Digitale Ausgabe  (%1)"
 
 #: src/utility.py:32
 #, fuzzy
@@ -281,21 +283,3 @@ msgstr ""
 msgid "<p><b><h3>Display Manager </h3></b></p>"
 msgstr "<p><b><h3>Anzeige-Manager </h3></b></p>"
 
-#~ msgid "Card Icon"
-#~ msgstr "Karten-Ikon"
-
-#, fuzzy
-#~ msgid "Card Name"
-#~ msgstr "<p>Kartenname</p>"
-
-#~ msgid "Monitor Icon"
-#~ msgstr "Monitor-Ikon"
-
-#~ msgid "Monitor Info"
-#~ msgstr "Monitor-Info"
-
-#~ msgid "<p>Driver Name</p>"
-#~ msgstr "<p>Treibername</p>"
-
-#~ msgid "Probe at next boot."
-#~ msgstr "Beim nächsten Neustart ausprobieren."
