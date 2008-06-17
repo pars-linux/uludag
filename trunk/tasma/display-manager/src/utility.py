@@ -22,6 +22,9 @@ def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
 def getOutputName(output):
+    if output == "default":
+        return i18n("Default Output")
+
     outputNames = (
             (i18n("Laptop Panel (%1)"),     ["lvds"]),
             (i18n("Analog Output (%1)"),    ["crt", "vga"]),
