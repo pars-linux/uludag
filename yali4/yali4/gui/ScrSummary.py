@@ -57,8 +57,11 @@ Here you can see your install options and look at them again before installation
         self.ui.setupUi(self)
 
         self.ui.content.setText("")
+        self.timer = QTimer()
+
         self.connect(self.ui.install, SIGNAL("clicked()"),ctx.mainScreen.slotNext)
         self.connect(self.ui.cancel, SIGNAL("clicked()"),self.slotReboot)
+        self.connect(self.timer, SIGNAL("timeout()"), self.updateCounter)
 
     def slotReboot(self):
         w = WarningWidget(self)
@@ -68,8 +71,24 @@ Here you can see your install options and look at them again before installation
         if dialog.exec_():
             yali4.sysutils.fastreboot()
 
+    def startBombCounter(self):
+        self.startTime = int(time.time())
+        self.timer.start(1000)
+
+    def backCheck(self):
+        ctx.yali.info.hide()
+        self.timer.stop()
+
+    def updateCounter(self):
+        remain = 20 - (int(time.time()) - self.startTime)
+        ctx.yali.info.updateAndShow(_("Install starts after : <b>%s sec.</b>") % remain)
+        if remain <= 0:
+            self.execute()
+
     def shown(self):
         ctx.mainScreen.disableNext()
+        if ctx.installData.isKahyaUsed:
+            self.startBombCounter()
         self.fillContent()
 
     def fillContent(self):

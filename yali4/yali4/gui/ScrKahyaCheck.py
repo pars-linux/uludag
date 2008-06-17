@@ -109,6 +109,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 ctx.yali.setKeymap(correctData.keyData)
 
                 # single types
+                ctx.installData.isKahyaUsed = True
                 ctx.installData.keyData = correctData.keyData
                 ctx.installData.rootPassword = correctData.rootPassword
                 ctx.installData.hostName = correctData.hostname
