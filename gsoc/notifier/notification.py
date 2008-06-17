@@ -19,6 +19,6 @@ class Notification:
 		
 	def Unpack(self):
 		# Convert the text back to its natural encoding:
-		self.notification_title = self.notification_title.encode("utf-8")
+		self.notification_title = self.notification_title.decode("utf-8")
 		self.notification_text = self.notification_text.decode("utf-8")
-		self.notification_icon_path = self.notification_icon_path.encode("utf-8")
+		self.notification_icon_path = self.notification_icon_path.decode("utf-8")
