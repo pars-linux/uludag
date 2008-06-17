@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-17 14:35+0300\n"
-"PO-Revision-Date: 2008-06-17 05:31+0200\n"
+"PO-Revision-Date: 2008-06-17 15:12+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -88,8 +88,7 @@ msgstr ""
 "Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
@@ -118,13 +117,11 @@ msgstr "Mit dieser Option können Sie manuell partitionieren"
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
+msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -707,9 +704,8 @@ msgid "as Storage Area"
 msgstr "als Archivierungs-Bereich"
 
 #: yali4/gui/DiskWidgets.py:93
-#, fuzzy
 msgid "Manuel Partitioning selected."
-msgstr "Manuelle Partitionierung"
+msgstr "Manuelle Partitionierung ausgewählt."
 
 #: yali4/gui/DiskWidgets.py:163
 #, python-format
@@ -814,7 +810,7 @@ msgstr ""
 #: yali4/gui/DiskWidgets.py:535 yali4/gui/ScrSummary.py:122
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
-msgstr ""
+msgstr "Alle Partitionen auf dem Gerät <b>%(device)s</b> wurden gelöscht."
 
 #: yali4/gui/GUIAdditional.py:67
 msgid ""
@@ -830,13 +826,13 @@ msgid "Resizing to %s MB.."
 msgstr "Grössenänderung zu %s MB.."
 
 #: yali4/gui/GUIAdditional.py:92
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s - %(fs)s</b> <b>resized</b> to <b>%(resizeTo)s "
 "MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
-"Partition <b>%(partition)s</b> zu Gerät <b>%(device)s</b> mit <b>%(size)s "
-"MB</b> als <b>%(fs)s</b><b>hinzugefügt</b>."
+"Grösse der Partition <b>%(partition)s - %(fs)s</b> <b>geändert</b>zu<b>%(resizeTo)s "
+"MB</b>, vorherige Grösse war <b>%(currentSize)s MB</b>"
 
 #: yali4/gui/GUIAdditional.py:145
 #, python-format
@@ -1006,8 +1002,7 @@ msgstr "Überprüfen Sie Ihre Medien"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity.."
-msgstr ""
-"Um Medien-Fehler zu vermeiden, können Sie Ihre Medien-Integrität überprüfen.."
+msgstr "Um Medien-Fehler zu vermeiden, können Sie Ihre Medien-Integrität überprüfen.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1130,8 +1125,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1464,51 +1458,48 @@ msgid "Partition Settings"
 msgstr "Partitionseinstellungen"
 
 #: yali4/gui/ScrSummary.py:113
-#, fuzzy
 msgid "Automatic Partitioning selected."
-msgstr "Gewähltes Laufwerk automatisch partitionieren und formatieren!"
+msgstr "Automatische Partitionierung ausgewählt."
 
 #: yali4/gui/ScrSummary.py:127
-#, fuzzy
 msgid "Automatic Partitioning (resize method) selected."
-msgstr "Gewähltes Laufwerk automatisch partitionieren und formatieren!"
+msgstr "Automatische Partitionierung (Grössenänderungs-Methode) ausgewählt."
 
 #: yali4/gui/ScrSummary.py:146
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
-"Partition <b>%(partition)s</b> zu Gerät <b>%(device)s</b> mit <b>%(size)s "
-"MB</b> als <b>%(fs)s</b><b>hinzugefügt</b>."
+"Grösse der Partition <b>%(partition)s - %(currentFs)s</b> <b>geändert</b> zu <b>%"
+"(resizeTo)s MB</b>, vorherige Grösse war <b>%(currentSize)s MB</b>"
 
 #: yali4/gui/ScrSummary.py:147
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
-"Partition <b>%(partition)s</b> zu Gerät <b>%(device)s</b> mit <b>%(size)s "
-"MB</b> als <b>%(fs)s</b><b>hinzugefügt</b>."
+"Partition <b>%(newPartition)s</b> zu Gerät <b>%(device)s</b> "
+"mit <b>%(size)s MB</b> als <b>%(fs)s</b> <b>hinzugefügt</b>."
 
 #: yali4/gui/ScrSummary.py:148
-#, fuzzy, python-format
+#, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partition <b>%(partition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:163
-#, fuzzy
 msgid "Bootloader Settings"
-msgstr "Hostnameneinstellungen"
+msgstr "Bootloader-Einstellungen"
 
 #: yali4/gui/ScrSummary.py:164
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
-msgstr ""
+msgstr "GRUB wird installiert nach <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:166
 msgid "GRUB will not be installed"
-msgstr ""
+msgstr "GRUB wird nicht installiert"
 
 #: yali4/gui/ScrSummary.py:197 yali4/gui/ScrSummary.py:205
 #: yali4/gui/ScrSummary.py:219
@@ -1914,3 +1905,4 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
+
