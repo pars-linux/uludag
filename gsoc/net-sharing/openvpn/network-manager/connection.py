@@ -565,11 +565,12 @@ class Settings(QWidget):
                 port = str(self.port.text())
                 protocol = str(self.protocol.currentText()).lower()
                 chipher = str(self.chipher.currentText())
-                if chipher == "-":
+                if self.chipher.currentText() == "-":
+                    print chipher
                     chipher == ""
-                ca = self.ca
-                cert = self.cert
-                key = self.key
+                ca = str(self.ca)
+                cert = str(self.cert)
+                key = str(self.key)
                 comlink.call(self.link.script,"Net.Link","setVpn", name, domain, port, protocol, ca, cert, key, chipher)
 
             # close dialog

@@ -62,19 +62,20 @@ class Dev:
         if want:
             if not dict:
                 fail("No such connection")
-        self.dev = _get(dict, "dev", "tun")
+        self.dev = _get(dict, "device", "tun")
         self.name = name
         self.state = _get(dict, "state", "down")
         self.protocol = _get(dict, "protocol", "UDP")
-        self.domain = _get(dict, "domain", None)
+        self.domain = _get(dict, "domain", "not set")
         self.port = _get(dict, "port", "1194")
-        self.ca = _get(dict, "ca", None)
-        self.cert = _get(dict, "cert", None)
-        self.key = _get(dict, "key", None)
-        self.chipher = _get(dict, "chipher", None)
+        self.ca = _get(dict, "ca", "")
+        self.cert = _get(dict, "cert", "")
+        self.key = _get(dict, "key", "")
+        self.chipher = _get(dict, "chipher", "")
     
     def up(self):
         vpnfl = open(CFG_FL, "w")
+        vpnfl.write("daemon\n")
         vpnfl.write("client\n")
         vpnfl.write("dev %s\n" % self.dev)
         vpnfl.write("proto %s\n" % self.protocol)
@@ -83,28 +84,35 @@ class Dev:
         vpnfl.write("ca %s\n" % self.ca)
         vpnfl.write("cert %s\n" % self.cert)
         vpnfl.write("key %s\n" % self.key)
-        if self.chipher != None:
+        if self.chipher != "-":
             vpnfl.write("chipher %s\n" % self.chipher)
         vpnfl.close()
         d = DB.getDB(self.name)
         d["state"] = "up"
         DB.setDB(self.name, d)
         notify("Net.Link", "stateChanged", (self.name, "connecting", self.domain))
-        subprocess.call(["/usr/sbin/openvpn","--config","%s" %CFG_FL])
-        notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
-        #else:
-	    #pass
-            #raise error
+        try:
+            retcode = subprocess.call(["/usr/sbin/openvpn","--config","%s" %CFG_FL])
+            if retcode < 0:
+                notify("Net.Link", "stateChanged", (self.name, "down", ""))
+            else:
+                notify("Net.Link", "stateChanged", (self.name, "up", "self.domain"))
+        except OSError,e:
+                print >>sys.stderr, "Execution Failed:", e
+                notify("Net.Link", "stateChanged", (self.name, "down", ""))
     
     def down(self):
-        if subprocess.call(["usr/bin/killall", "openvpn"]):
-            d = DB.getDB(self.name)
-            d["state"] = "down"
-            DB.setDB(self.name, d)
-            notify("Net.Link", "stateChanged", (self.name, "down", ""))
-        else:
-	    pass
-            #raise error
+        try:
+            retcode =  subprocess.call(["usr/bin/killall", "openvpn"])
+            if retcode >= 0:
+                d = DB.getDB(self.name)
+                d["state"] = "down"
+                DB.setDB(self.name, d)
+                notify("Net.Link", "stateChanged", (self.name, "down", ""))
+            else:
+                pass
+        except:
+            pass
 
 
 # Net.Link API
@@ -119,7 +127,8 @@ def linkInfo():
 
 def deviceList():
     vpnlist = {
-        "device":"VPN Device",
+        "tun":"tun",
+        "tap":"tap"
     }
     return vpnlist
 
@@ -187,8 +196,8 @@ def connections():
 def connectionInfo(name=None):
     dev = Dev(name, True)
     d = {}
-    d["name"] = name    
-    d["dev"] = dev.dev
+    d["name"] = name
+    d["device"] = dev.dev
     d["state"] = dev.state
     d["protocol"] = dev.protocol
     d["domain"] = dev.domain
