@@ -3,18 +3,17 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Faik Uygur <faik@pardus.org.tr>, 2007.
-# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
-# Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-17 12:09+0300\n"
-"PO-Revision-Date: 2008-05-14 18:52+0300\n"
+"PO-Revision-Date: 2008-06-17 05:36+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +79,7 @@ msgstr "COMAR Auth-Fehler"
 
 #: src/ComarIface.py:62
 msgid "Network error. Please check your network connections and try again."
-msgstr ""
+msgstr "Netzwerk-Fehler. Bitte überprüfen Sie Ihre Netzwerkverbindungen und versuchen Sie es noch einmal."
 
 #: src/ComarIface.py:62 src/ComarIface.py:64
 msgid "COMAR Error"
@@ -143,10 +142,8 @@ msgid "Currently your basket is empty."
 msgstr "Momentan ist Ihr Korb leer."
 
 #: src/MainWidget.py:346 src/MainWidget.py:354
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Momentan ausgewählte Pakete:<b>%1</b> mit einer Gesamtgrösse von <b>%2</b> "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Momentan ausgewählte Pakete:<b>%1</b> mit einer Gesamtgrösse von <b>%2</b> "
 
 #: src/MainWidget.py:349
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
@@ -222,8 +219,7 @@ msgstr ""
 
 #: src/MainWidget.py:433
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr ""
-"<br><br>Insgesamt <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
+msgstr "<br><br>Insgesamt <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
 
 #: src/MainWidget.py:436
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -362,8 +358,7 @@ msgstr "Zum Entfernen ausgewählte(s) Paket(e):"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch entfernt werden:"
 
 #: src/BasketDialog.py:67
 msgid "Selected package(s) for install:"
@@ -373,8 +368,7 @@ msgstr "Ausgewählte(s) Paket(e) für die Installation:"
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
-msgstr ""
-"Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
 
 #: src/BasketDialog.py:70
 msgid "Selected package(s) for upgrade:"
@@ -442,8 +436,7 @@ msgstr "PiSi Fehler"
 
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
+msgstr "Alle Pakete, die sich im Cache befinden, werden gelöscht. Sind Sie sicher?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -462,14 +455,12 @@ msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr "Adresse des Depots, z.B. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
-#, fuzzy
 msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:80
-#, fuzzy
 msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:81
 msgid "Repository &Name"
@@ -510,21 +501,19 @@ msgstr "&Nur Desktop-Anwendungen anzeigen"
 
 #: src/PreferencesDialog.py:354
 msgid "Alt+S"
-msgstr ""
+msgstr "Alt+S"
 
 #: src/PreferencesDialog.py:355
 msgid "If checked, then pisi will only show desktop applications"
-msgstr ""
-"Wenn diese Auswahl getroffen ist, wird PiSi nur Desktop-Anwendungen anzeigen"
+msgstr "Wenn diese Auswahl getroffen ist, wird PiSi nur Desktop-Anwendungen anzeigen"
 
 #: src/PreferencesDialog.py:356
 msgid "&Enable system tray icon"
 msgstr "&System-Tray-Icon aktivieren"
 
 #: src/PreferencesDialog.py:357
-#, fuzzy
 msgid "Update check"
-msgstr "Aktualisieren"
+msgstr "Updateüberprüfung"
 
 #: src/PreferencesDialog.py:358
 msgid "Check interval:"
@@ -536,7 +525,7 @@ msgstr "&Intervall-Upgradebare Paket-Überprüfung aktivieren"
 
 #: src/PreferencesDialog.py:360
 msgid "Alt+P"
-msgstr ""
+msgstr "Alt+P"
 
 #: src/PreferencesDialog.py:361
 msgid " min"
@@ -544,19 +533,19 @@ msgstr "min"
 
 #: src/PreferencesDialog.py:362
 msgid "Bandwidth limit"
-msgstr ""
+msgstr "Bandbreitenlimit"
 
 #: src/PreferencesDialog.py:363
 msgid "Use bandwidth limit"
-msgstr ""
+msgstr "Bandbreitenlimit verwenden"
 
 #: src/PreferencesDialog.py:365
 msgid "Bandwidth limit:"
-msgstr ""
+msgstr "Bandbreitenlimit:"
 
 #: src/PreferencesDialog.py:366
 msgid " kb/s"
-msgstr ""
+msgstr " kb/s"
 
 #: src/PreferencesDialog.py:367
 msgid "&General Settings"
@@ -607,10 +596,8 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:380
-msgid ""
-"You can see current software repositories and corresponding addresses here"
-msgstr ""
-"Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
+msgid "You can see current software repositories and corresponding addresses here"
+msgstr "Sie können hier die Software-Depots und die dazugehörigen Adressen ansehen"
 
 #: src/PreferencesDialog.py:381
 msgid "&Add New Repository"
@@ -659,35 +646,35 @@ msgstr "&Depots"
 #: src/PreferencesDialog.py:392 src/PreferencesDialog.py:395
 #: src/PreferencesDialog.py:396
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: src/PreferencesDialog.py:393
 msgid "Use this proxy server for all protocols"
-msgstr ""
+msgstr "Diesen Proxy-Server für alle Protokolle verwenden"
 
 #: src/PreferencesDialog.py:394
 msgid "FTP proxy server:"
-msgstr ""
+msgstr "FTP-Proxy-Server:"
 
 #: src/PreferencesDialog.py:397
 msgid "HTTPS proxy server:"
-msgstr ""
+msgstr "HTTPS-Proxy-Server:"
 
 #: src/PreferencesDialog.py:398
 msgid "HTTP proxy server:"
-msgstr ""
+msgstr "HTTP-Proxy-Server:"
 
 #: src/PreferencesDialog.py:400
 msgid "No proxy server"
-msgstr ""
+msgstr "Kein Proxy-Server"
 
 #: src/PreferencesDialog.py:401
 msgid "Use proxy server"
-msgstr ""
+msgstr "Proxy-Server verwenden"
 
 #: src/PreferencesDialog.py:402
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: src/pm-install.py:33
 msgid "PiSi package to install"
@@ -760,3 +747,4 @@ msgstr "Updates anzeigen"
 #: src/Notifier.py:41
 msgid "Ignore"
 msgstr "Ignorieren"
+
