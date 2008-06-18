@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 19:54+0300\n"
-"PO-Revision-Date: 2008-06-12 11:07+0200\n"
+"PO-Revision-Date: 2008-06-18 19:44+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -63,13 +63,5 @@ msgid "Select a user..."
 msgstr "Einen Benutzer auswählen..."
 
 msgid "User:"
-msgstr ""
+msgstr "Benutzer:"
 
-#~ msgid "Password for root"
-#~ msgstr "Passwort für root"
-
-#~ msgid "Password for user(%1)"
-#~ msgstr "Passwort für Benutzer(%1)"
-
-#~ msgid "Select User..."
-#~ msgstr "Benutzer auswählen..."
