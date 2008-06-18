@@ -140,7 +140,8 @@ Click Next button to proceed.
         p1 = self.ui.pass1.text()
         p2 = self.ui.pass2.text()
 
-        if not p1 == '' and (p1 == self.ui.username.text() or p1 == self.ui.realname.text()):
+        if not p1 == '' and (str(p1).lower() == str(self.ui.username.text()).lower() or \
+                str(p1).lower() == str(self.ui.realname.text()).lower()):
             self.showError(_('<font color="#FF6D19">Don\'t use your user name or name as a password.</font>'))
             return
         elif p2 != p1 and p2:
