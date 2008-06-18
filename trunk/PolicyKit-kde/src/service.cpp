@@ -369,6 +369,8 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
 {
     QStringList list;
     int dialogResult;
+
+    //get username
     passwd *pw = getpwuid(getuid());
     char *username = pw->pw_name;
 
@@ -379,7 +381,10 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
     }
 
     if (list.contains(username) == 1)
+    {
+        Debug::printDebug("polkit_grant_select_admin_user: User is in admin group, preselecting...");
         m_self->m_dialog->setAdminUsers(list, username);
+    }
     else
         m_self->m_dialog->setAdminUsers(list);
 
@@ -394,31 +399,12 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
     }
     else
     {
-        Debug::printDebug(QString("polkit_grant_select_admin_user: First time: %1").arg(m_self->m_dialog->cbUsers->currentText()));
+        Debug::printDebug(QString("polkit_grant_select_admin_user: First time of select_admin_user, user: %1").arg(m_self->m_dialog->cbUsers->currentText()));
         selected = strdup(m_self->m_dialog->cbUsers->currentText());
     }
 
     return selected;
 
-/*
-    dialogResult = m_self->m_dialog->exec();
-    Debug::printDebug("polkit_grant_select_admin_user: Done");
-
-    char *selected = strdup(m_self->m_dialog->cbUsers->currentText());
-
-    if (dialogResult == QDialog::Rejected)
-    {
-        Debug::printDebug("polkit_grant_select_admin_user: Dialog cancelled");
-        polkit_grant_cancel_auth (grant);
-        return NULL;
-    }
-    else
-    {
-        QString msg = QString("polkit_grant_select_admin_user: User(%1) selected.").arg(selected);
-        Debug::printDebug(msg);
-        return selected;
-    }
-    */
 }
 
 char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)

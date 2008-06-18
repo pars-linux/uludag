@@ -111,7 +111,6 @@ void AuthDialog::setContent(const QString &msg)
 void AuthDialog::setAdminUsers(const QStringList &users, const QString &selected)
 {
     m_adminUsers = users;
-    //QString selected = cbUsers->currentText();
 
     if (m_adminUsers.empty())
     {
