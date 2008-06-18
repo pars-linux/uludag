@@ -84,7 +84,7 @@ class CallHandler:
     def __call(self):
         iface = self.__getIface()
         method = getattr(iface, self.method)
-        method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args)
+        method(reply_handler=self.__handleReply, error_handler=self.__handleError, *self.args, timeout=2**16-1)
     
     def __getIface(self):
         try:
@@ -117,7 +117,7 @@ class CallHandler:
     
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        if iface.ObtainAuthorization(self.action, self.window, os.getpid(), timeout=2**16-1):
+        if iface.ObtainAuthorization(self.action, self.window, os.getpid()):
             self.__call()
         else:
             for func in self.handleCancel:
