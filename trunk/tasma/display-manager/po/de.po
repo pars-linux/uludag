@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 01:05+0300\n"
-"PO-Revision-Date: 2008-06-18 19:56+0200\n"
+"PO-Revision-Date: 2008-06-18 19:57+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -49,9 +49,8 @@ msgid "LCD Monitor"
 msgstr "LCD-Monitor"
 
 #: src/display-manager.py:65
-#, fuzzy
 msgid "Standard Monitors"
-msgstr "Plug and Play Monitor"
+msgstr "Standard Monitore"
 
 #: src/display-manager.py:65
 msgid "Vendors"
@@ -229,9 +228,8 @@ msgid "Your hardware will be probed after restarting your computer."
 msgstr "Ihre Hardware wird nach dem Neustart Ihres Computers überprüft."
 
 #: src/utility.py:26
-#, fuzzy
 msgid "Default Output"
-msgstr "Ausgang"
+msgstr "Standard Ausgabe"
 
 #: src/utility.py:29
 msgid "Laptop Panel (%1)"
@@ -246,9 +244,8 @@ msgid "Digital Output (%1)"
 msgstr "Digitale Ausgabe  (%1)"
 
 #: src/utility.py:32
-#, fuzzy
 msgid "TV Output (%1)"
-msgstr "Ausgang"
+msgstr "TV-Ausgabe (%1)"
 
 #: src/helpdialog.py:55
 msgid "Display Manager Help"
