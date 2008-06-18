@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-16 11:02+0300\n"
+"POT-Creation-Date: 2008-06-18 19:54+0300\n"
 "PO-Revision-Date: 2008-06-12 11:07+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -53,13 +53,6 @@ msgstr "Nur für diese Sitzung"
 msgid "Password"
 msgstr "Passwort"
 
-msgid "Password for root"
-msgstr "Passwort für root"
-
-#, qt-format
-msgid "Password for user(%1)"
-msgstr "Passwort für Benutzer(%1)"
-
 msgid "Remember authorization"
 msgstr "Autorisierung merken"
 
@@ -68,6 +61,15 @@ msgstr "Autorisierung für diese Sitzung merken"
 
 msgid "Select a user..."
 msgstr "Einen Benutzer auswählen..."
+
+msgid "User:"
+msgstr ""
+
+#~ msgid "Password for root"
+#~ msgstr "Passwort für root"
+
+#~ msgid "Password for user(%1)"
+#~ msgstr "Passwort für Benutzer(%1)"
 
 #~ msgid "Select User..."
 #~ msgstr "Benutzer auswählen..."

@@ -336,16 +336,22 @@
 </widget>
 <connections>
     <connection>
+        <sender>pbOK</sender>
+        <signal>clicked()</signal>
+        <receiver>AuthDialogUI</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
         <sender>pbCancel</sender>
         <signal>clicked()</signal>
         <receiver>AuthDialogUI</receiver>
         <slot>reject()</slot>
     </connection>
     <connection>
-        <sender>pbOK</sender>
-        <signal>clicked()</signal>
-        <receiver>AuthDialogUI</receiver>
-        <slot>accept()</slot>
+        <sender>bgRemember</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>rbSession</receiver>
+        <slot>setChecked(bool)</slot>
     </connection>
 </connections>
 <tabstops>
