@@ -68,6 +68,7 @@ private:
     bool m_gainedPrivilege;
     bool m_inputBogus;
     bool m_cancelled;
+    bool m_resetForUser;
     bool m_newUserSelected;
 
     QString m_userSelected;

@@ -91,7 +91,7 @@ AuthDialog::~AuthDialog()
 
 void AuthDialog::slotUserSelected(const QString& user)
 {
-    if ((cbUsers->currentItem() == 0) || (user == m_selectedUser))
+    if (user == m_selectedUser)
         return;
 
     m_selectedUser = user;
@@ -119,9 +119,7 @@ void AuthDialog::setAdminUsers(const QStringList &users)
         return;
     }
 
-    QString selectprompt(cbUsers->currentText());
     cbUsers->clear();
-    cbUsers->insertItem(selectprompt);
     cbUsers->insertStringList(m_adminUsers);
     showUsersCombo();
 }
@@ -151,11 +149,13 @@ void AuthDialog::setContent()
 void AuthDialog::showUsersCombo()
 {
     cbUsers->show();
+    lbUser->show();
 }
 
 void AuthDialog::hideUsersCombo()
 {
     cbUsers->hide();
+    lbUser->hide();
 }
 
 void AuthDialog::setPrompt(const QString &prompt, const QString& user = "")
@@ -164,12 +164,9 @@ void AuthDialog::setPrompt(const QString &prompt, const QString& user = "")
     if (prompt == "Password: ")
     {
         if (user != "")
-        {
-            lblPassword->setText(i18n("Password for user(%1)").arg(user) + ": ");
             cbUsers->setCurrentText(user);
-        }
-        else
-            lblPassword->setText(i18n("Password") + ": ");
+
+        lblPassword->setText(i18n("Password") + ": ");
     }
     else
         lblPassword->setText(prompt);
