@@ -240,16 +240,19 @@ class Shell:
 
 
 class UserGroup(QCheckListItem):
-    def __init__(self, stack, parent, group):
+    def __init__(self, stack, parent, group, updateItem = None):
         self.stack = stack
         QCheckListItem.__init__(self, parent, group.name, self.CheckBox)
         self.name = group.name
+        self.updateItem = updateItem
 
     def text(self, col):
         return (self.name, "")[col]
 
     def stateChange(self, bool):
         self.stack.slotGroup()
+        if self.updateItem:
+            self.updateItem.setChecked(bool)
 
 class UserGroupList(QWidget):
     def __init__(self, stack, parent):
@@ -280,7 +283,10 @@ class UserGroupList(QWidget):
         group = groups.firstChild()
         self.groups.clear()
         while group:
-            g = UserGroup(self, self.groups, group)
+            updateItem = None
+            if group.text(1) == "wheel":
+                updateItem = self.stack.checkBoxAdmin
+            g = UserGroup(self, self.groups, group, updateItem)
             group = group.nextSibling()
 
     def slotGroup(self):
