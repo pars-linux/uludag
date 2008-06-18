@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 01:05+0300\n"
-"PO-Revision-Date: 2008-06-18 00:46+0200\n"
+"PO-Revision-Date: 2008-06-18 19:56+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -41,14 +41,12 @@ msgid "Display Manager"
 msgstr "Anzeige-Manager"
 
 #: src/display-manager.py:57
-#, fuzzy
 msgid "CRT Monitor"
-msgstr "Monitor auswählen"
+msgstr "CRT-Monitor"
 
 #: src/display-manager.py:58
-#, fuzzy
 msgid "LCD Monitor"
-msgstr "Monitor auswählen"
+msgstr "LCD-Monitor"
 
 #: src/display-manager.py:65
 #, fuzzy
@@ -82,6 +80,8 @@ msgid ""
 "This output is already used by other screen.\n"
 "Do you want to swap between them?"
 msgstr ""
+"Diese Ausgabe wird bereits von einem anderen Bildschirm verwendet.\n"
+"Möchten Sie zwischen den beiden wechseln?"
 
 #: src/display-manager.py:447
 msgid "Driver: %1"
@@ -221,6 +221,8 @@ msgid ""
 "Configuration has been saved. Some changes may take effect after restarting "
 "your computer."
 msgstr ""
+"Konfiguration wurde gespeichert. Einige Änderungen können evtl. erst nach dem Neustart "
+"Ihres Computers wirksam werden."
 
 #: src/displayconfig.py:382
 msgid "Your hardware will be probed after restarting your computer."
