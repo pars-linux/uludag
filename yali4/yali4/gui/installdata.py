@@ -30,7 +30,7 @@ class InstallData:
     autoPartPartition = None
     autoPartMethod = methodUseAvail
     bootLoaderDev = None
-    bootLoaderOption = B_DONT_INSTALL
+    bootLoaderOption = B_INSTALL_SMART
     bootLoaderOptionalDev = None
     orderedDiskList = []
     repoAddr = None
