@@ -47,7 +47,7 @@ static const int slice = 20;
  *  TRUE to construct a modal dialog.
  */
 AuthDialog::AuthDialog(QString &header, PolicyService *service)
-    : AuthDialogUI( NULL, 0, TRUE, WType_Dialog|Qt::WStyle_NoBorder|Qt::WStyle_StaysOnTop)//|Qt::WStyle_NoBorder)
+    : AuthDialogUI( NULL, 0, TRUE, WType_TopLevel|Qt::WStyle_NoBorder|Qt::WStyle_StaysOnTop)//|Qt::WStyle_NoBorder)
 //    : AuthDialogUI( NULL, 0)
 //        m_currentY( 0 )
 {
@@ -62,7 +62,13 @@ AuthDialog::AuthDialog(QString &header, PolicyService *service)
     setHeader(header);
     lePassword->setFocus();
 
+
     connect(cbUsers, SIGNAL(activated(const QString&)), SLOT(slotUserSelected(const QString&)));
+    QRect screenSize = KGlobalSettings::desktopGeometry(QCursor::pos());
+    QSize sh = sizeHint();
+
+    move(screenSize.x() + (screenSize.width() - sh.width())/2, screenSize.y() + (screenSize.height() - sh.height())/2);
+
     /*
     setBackgroundMode(QWidget::NoBackground);
     // get desktop size
