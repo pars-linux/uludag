@@ -33,8 +33,6 @@ class Commander(QObject):
         self.parent.refreshState()
 
     def handler(self, signal, data):
-        print "Signal: ", signal
-        print "Data: ", data
         if len(data) > 1:
             args = data[1:]
         else:
