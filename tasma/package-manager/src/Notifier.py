@@ -19,6 +19,7 @@ class Notifier(QObject):
     def __init__(self):
         QObject.__init__(self)
         bus = dbus.SessionBus()
+        self.notifyid = 0
         try:
             object  = bus.get_object("org.freedesktop.Notifications", "/org/freedesktop/Notifications")
             self.iface = dbus.Interface(object, dbus_interface='org.freedesktop.Notifications')
@@ -32,6 +33,9 @@ class Notifier(QObject):
             hints = {}
         else:
             hints= {"x": pos[0], "y": pos[1]}
+
+        # close previous notification window
+        self.iface.CloseNotification(self.notifyid)
 
         self.notifyid = self.iface.Notify("package-manager",
                          0,
