@@ -114,6 +114,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 ctx.installData.rootPassword = correctData.rootPassword
                 ctx.installData.hostName = correctData.hostname
                 ctx.installData.autoLoginUser = correctData.autoLoginUser
+                yali4.storage.setOrderedDiskList()
                 ctx.installData.autoPartDev = devices[int(correctData.partitioning[0].disk[-1])]
                 ctx.installData.autoPartMethod = {"auto":methodEraseAll,"smartAuto":methodUseAvail}[correctData.partitioningType]
                 if ctx.installData.autoPartMethod == methodUseAvail:
