@@ -433,6 +433,13 @@ class Yali:
                 os.chmod(iconPath, 0644)
                 os.chown(iconPath, uid, 100)
 
+                # Chown for old users..
+                user_home_dir = os.path.join(consts.target_dir, 'home', u.username)
+                self.info.updateAndShow(_("User <b>%s</b>'s home directory is preparing..") % u.username)
+                os.system('chown -R %d:%d %s ' % (uid, 100, user_home_dir))
+                os.chmod(user_home_dir, 0711)
+                self.info.hide()
+
                 # Enable auto-login
                 if u.username == ctx.installData.autoLoginUser:
                     u.setAutoLogin()

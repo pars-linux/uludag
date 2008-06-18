@@ -486,7 +486,12 @@ class Device:
         # pyparted will do it for us.
         del self._disk
 
-def getOrderedDiskList():
+def setOrderedDiskList():
+    devices = detect_all()
+    devices.sort()
+
+    import yali4.gui.context as ctx
+
     # Check EDD Module
     if not os.path.exists("/sys/firmware/edd"):
         cmd_path = sysutils.find_executable("modprobe")
@@ -494,7 +499,9 @@ def getOrderedDiskList():
         p = os.popen(cmd)
         o = p.readlines()
         if p.close():
-            raise YaliException, "Inserting EDD Module failed !"
+            ctx.installData.orderedDiskList = devices
+            ctx.debugger.log("ERROR : Inserting EDD Module failed !")
+            return
 
     edd = EDD()
     sortedList = []
@@ -506,7 +513,16 @@ def getOrderedDiskList():
         edd_sig = edd_list[bios_num]
         if mbr_list.has_key(edd_sig):
             sortedList.append(mbr_list[edd_sig])
-    return sortedList
+
+    if len(devices) > 1:
+        a = ctx.installData.orderedDiskList = sortedList
+        b = devices
+        # check consistency of diskList
+        if not len(filter(None, map(lambda x: x in a,b))) == len(b):
+            ctx.installData.orderedDiskList = devices
+            ctx.isEddFailed = True
+    else:
+        ctx.installData.orderedDiskList = devices
 
 ##
 # Return a list of block devices in system
