@@ -35,7 +35,7 @@ background 10333C
 title %(pardus_version)s
 root (%(grub_root)s)
 kernel (%(grub_root)s)/boot/%(boot_kernel)s %(boot_parameters)s
-initrd (%(grub_root)s)/boot/%(initramfs)s 
+initrd (%(grub_root)s)/boot/%(initramfs)s
 
 """
 
