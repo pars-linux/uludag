@@ -33,7 +33,7 @@ public:
     void setType(PolKitResult type);
     void setContent(const QString &);
     void setContent();
-    void setAdminUsers(const QStringList &);
+    void setAdminUsers(const QStringList &, const QString & = "");
     void setHeader(const QString &);
     void setPrompt(const QString &, const QString &);
 /*

@@ -13,6 +13,10 @@
 #include <csignal>
 #include <cstdlib>
 #include <cstring>
+#include <cstring>
+
+#include <sys/types.h>
+#include <pwd.h>
 
 //kde and qt headers
 #include <qsocketnotifier.h>
@@ -365,6 +369,8 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
 {
     QStringList list;
     int dialogResult;
+    passwd *pw = getpwuid(getuid());
+    char *username = pw->pw_name;
 
     Debug::printDebug("polkit_grant_select_admin_user: Setting user list...");
 
@@ -372,7 +378,11 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
         list.append(adminUsers[n]);
     }
 
-    m_self->m_dialog->setAdminUsers(list);
+    if (list.contains(username) == 1)
+        m_self->m_dialog->setAdminUsers(list, username);
+    else
+        m_self->m_dialog->setAdminUsers(list);
+
     Debug::printDebug("polkit_grant_select_admin_user: Done");
 
     char *selected;
