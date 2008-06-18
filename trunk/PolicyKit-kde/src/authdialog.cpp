@@ -130,8 +130,8 @@ void AuthDialog::setContent()
     QString msg;
     switch(m_type)
     {
-        //TODO: Add user selection support
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH:
+        case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_ONE_SHOT:
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_SESSION:
         case POLKIT_RESULT_ONLY_VIA_ADMIN_AUTH_KEEP_ALWAYS:
             msg = i18n("An application is attempting to perform an action that requires privileges."
