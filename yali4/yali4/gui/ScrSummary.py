@@ -83,7 +83,7 @@ Here you can see your install options and look at them again before installation
         remain = 20 - (int(time.time()) - self.startTime)
         ctx.yali.info.updateAndShow(_("Install starts after : <b>%s sec.</b>") % remain)
         if remain <= 0:
-            self.execute()
+            ctx.mainScreen.slotNext()
             self.timer.stop()
 
     def shown(self):
