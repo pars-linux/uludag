@@ -108,7 +108,7 @@ void AuthDialog::setContent(const QString &msg)
     lblContent->setText(msg);
 }
 
-void AuthDialog::setAdminUsers(const QStringList &users)
+void AuthDialog::setAdminUsers(const QStringList &users, const QString &selected)
 {
     m_adminUsers = users;
     //QString selected = cbUsers->currentText();
@@ -122,6 +122,9 @@ void AuthDialog::setAdminUsers(const QStringList &users)
     cbUsers->clear();
     cbUsers->insertStringList(m_adminUsers);
     showUsersCombo();
+
+    if (selected != "")
+        cbUsers->setCurrentText(selected);
 }
 
 // set content according to m_type, that is a PolKitResult 
