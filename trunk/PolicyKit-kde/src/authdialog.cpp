@@ -25,6 +25,7 @@
 #include <qcursor.h>
 #include <qframe.h>
 #include <qlayout.h>
+
 #include <kcombobox.h>
 #include <kglobal.h>
 #include <kiconloader.h>
@@ -33,6 +34,7 @@
 #include <klocale.h>
 #include <kpixmap.h>
 #include <kpushbutton.h>
+#include <kapplication.h>
 
 #include "debug.h"
 
@@ -47,9 +49,7 @@ static const int slice = 20;
  *  TRUE to construct a modal dialog.
  */
 AuthDialog::AuthDialog(QString &header, PolicyService *service)
-    : AuthDialogUI( NULL, 0, TRUE, WType_TopLevel|Qt::WStyle_NoBorder|Qt::WStyle_StaysOnTop)//|Qt::WStyle_NoBorder)
-//    : AuthDialogUI( NULL, 0)
-//        m_currentY( 0 )
+    : AuthDialogUI( NULL, 0, TRUE, WType_Dialog | Qt::WStyle_Customize | Qt::WStyle_Dialog | Qt::WStyle_StaysOnTop | Qt::WStyle_DialogBorder  )
 {
     KIconLoader* iconloader = KGlobal::iconLoader();
     lblPixmap->setPixmap(iconloader->loadIcon("lock", KIcon::Desktop));
@@ -62,12 +62,13 @@ AuthDialog::AuthDialog(QString &header, PolicyService *service)
     setHeader(header);
     lePassword->setFocus();
 
-
     connect(cbUsers, SIGNAL(activated(const QString&)), SLOT(slotUserSelected(const QString&)));
     QRect screenSize = KGlobalSettings::desktopGeometry(QCursor::pos());
     QSize sh = sizeHint();
 
     move(screenSize.x() + (screenSize.width() - sh.width())/2, screenSize.y() + (screenSize.height() - sh.height())/2);
+
+    kapp->updateUserTimestamp();
 
     /*
     setBackgroundMode(QWidget::NoBackground);
