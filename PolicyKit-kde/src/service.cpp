@@ -637,7 +637,6 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         m_gainedPrivilege = false;
         m_inputBogus = false;
         m_cancelled = false;
-        //m_newUserSelected = false;
 
         if (!polkit_grant_initiate_auth (m_grant, action, caller)) 
         {
@@ -689,6 +688,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             break;
         }
 
+        delete m_dialog;
     }
 
     if (m_grant)
