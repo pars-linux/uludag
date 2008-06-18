@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>436</width>
-            <height>272</height>
+            <width>447</width>
+            <height>261</height>
         </rect>
     </property>
     <property name="caption">
@@ -24,7 +24,7 @@
     <property name="modal">
         <bool>true</bool>
     </property>
-    <grid>
+    <vbox>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
@@ -34,9 +34,9 @@
         <property name="spacing">
             <number>5</number>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>layout6</cstring>
+                <cstring>layout7</cstring>
             </property>
             <hbox>
                 <property name="name">
@@ -82,7 +82,7 @@
                 </widget>
                 <widget class="QLayoutWidget">
                     <property name="name">
-                        <cstring>layout5</cstring>
+                        <cstring>layout6</cstring>
                     </property>
                     <vbox>
                         <property name="name">
@@ -110,28 +110,15 @@
                                 <set>WordBreak|AlignVCenter</set>
                             </property>
                         </widget>
-                        <widget class="KComboBox">
-                            <item>
-                                <property name="text">
-                                    <string>Select a user...</string>
-                                </property>
-                            </item>
-                            <property name="name">
-                                <cstring>cbUsers</cstring>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Select a user...</string>
-                            </property>
-                        </widget>
                         <widget class="QLayoutWidget">
                             <property name="name">
-                                <cstring>layout7</cstring>
+                                <cstring>layout9</cstring>
                             </property>
-                            <hbox>
+                            <grid>
                                 <property name="name">
                                     <cstring>unnamed</cstring>
                                 </property>
-                                <widget class="QLabel">
+                                <widget class="QLabel" row="1" column="0">
                                     <property name="name">
                                         <cstring>lblPassword</cstring>
                                     </property>
@@ -139,7 +126,7 @@
                                         <string></string>
                                     </property>
                                 </widget>
-                                <widget class="KLineEdit">
+                                <widget class="KLineEdit" row="1" column="1">
                                     <property name="name">
                                         <cstring>lePassword</cstring>
                                     </property>
@@ -150,11 +137,38 @@
                                         <enum>Password</enum>
                                     </property>
                                 </widget>
-                            </hbox>
+                                <widget class="KComboBox" row="0" column="1">
+                                    <property name="name">
+                                        <cstring>cbUsers</cstring>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Select a user...</string>
+                                    </property>
+                                </widget>
+                                <widget class="QLabel" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>lbUser</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>4</hsizetype>
+                                            <vsizetype>5</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="text">
+                                        <string>User:</string>
+                                    </property>
+                                    <property name="scaledContents">
+                                        <bool>true</bool>
+                                    </property>
+                                </widget>
+                            </grid>
                         </widget>
                         <widget class="QLayoutWidget">
                             <property name="name">
-                                <cstring>layout5_2</cstring>
+                                <cstring>layout5</cstring>
                             </property>
                             <vbox>
                                 <property name="name">
@@ -220,30 +234,30 @@
                                         <string>Remember authorization for this session</string>
                                     </property>
                                 </widget>
-                                <spacer>
-                                    <property name="name">
-                                        <cstring>spacer5_2</cstring>
-                                    </property>
-                                    <property name="orientation">
-                                        <enum>Vertical</enum>
-                                    </property>
-                                    <property name="sizeType">
-                                        <enum>Preferred</enum>
-                                    </property>
-                                    <property name="sizeHint">
-                                        <size>
-                                            <width>20</width>
-                                            <height>5</height>
-                                        </size>
-                                    </property>
-                                </spacer>
                             </vbox>
                         </widget>
                     </vbox>
                 </widget>
             </hbox>
         </widget>
-        <widget class="Line" row="1" column="0">
+        <spacer>
+            <property name="name">
+                <cstring>spacer5_2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Preferred</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>16</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="Line">
             <property name="name">
                 <cstring>line</cstring>
             </property>
@@ -257,7 +271,7 @@
                 <enum>Horizontal</enum>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="0">
+        <widget class="QLayoutWidget">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -318,7 +332,7 @@
                 </widget>
             </hbox>
         </widget>
-    </grid>
+    </vbox>
 </widget>
 <connections>
     <connection>
@@ -340,7 +354,7 @@
 </tabstops>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
-    <includehint>kcombobox.h</includehint>
     <includehint>klineedit.h</includehint>
+    <includehint>kcombobox.h</includehint>
 </includehints>
 </UI>

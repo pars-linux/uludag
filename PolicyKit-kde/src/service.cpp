@@ -72,6 +72,8 @@ PolicyService::PolicyService(QDBusConnection sessionBus): QObject()
     m_inputBogus = false;
     m_cancelled = false;
     m_newUserSelected = false;
+    m_resetForUser = false;
+    m_userSelected = "";
     m_uniqueSessionName = m_sessionBus.uniqueName();
 
     Debug::printDebug("Registering object: /");
@@ -237,21 +239,6 @@ void PolicyService::handleObtainAuthorization(const QDBusMessage& message)
 {
     Debug::printDebug("Handling obtainAuthorization() call.");
 
-    /*
-    if (m_authInProgress)
-    {
-        QString msg = QString("Already authenticating by another agent");
-        Debug::printError(msg);
-
-        // send dbus error
-        QDBusMessage dbusError = QDBusMessage::methodError(message, QDBusError(POLICYKITKDE_BUSNAME, msg));
-        m_sessionBus.send(dbusError);
-    }
-    */
-
-    //TODO: Check if another request is in progress
-    //m_authInProgress = true;
-
     obtainAuthorization(message[0].toString(), message[1].toUInt32(), message[2].toUInt32(), message);
 }
 
@@ -387,16 +374,22 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
 
     m_self->m_dialog->setAdminUsers(list);
     Debug::printDebug("polkit_grant_select_admin_user: Done");
-    //Debug::printDebug("polkit_grant_select_admin_user: Showing dialog...");
 
     char *selected;
-    
-    if (m_self->m_dialog->cbUsers->currentItem() == 0)
-        selected = strdup(m_self->m_dialog->cbUsers->text(1));
+
+    if (m_self->m_newUserSelected)
+    {
+        Debug::printDebug(QString("polkit_grant_select_admin_user: New user(%1) selected").arg(m_self->m_userSelected));
+        selected = strdup(m_self->m_userSelected);
+    }
     else
+    {
+        Debug::printDebug(QString("polkit_grant_select_admin_user: First time: %1").arg(m_self->m_dialog->cbUsers->currentText()));
         selected = strdup(m_self->m_dialog->cbUsers->currentText());
+    }
 
     return selected;
+
 /*
     dialogResult = m_self->m_dialog->exec();
     Debug::printDebug("polkit_grant_select_admin_user: Done");
@@ -429,8 +422,6 @@ char *PolicyService::polkit_grant_prompt(const QString &prompt, bool echo)
     else
         m_dialog->lePassword->setEchoMode(QLineEdit::Password);
 
-    //This grab workaround is required to prevent blockings caused by notify-python's notifications
-    Display *display = qt_xdisplay();
     int result = m_dialog->exec();
 
     if (result == QDialog::Rejected)
@@ -538,7 +529,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
 {
     if (m_authInProgress)
     {
-        Debug::printError("obtainAuthorization: Another client is already authenticating.");
+        Debug::printError("obtainAuthorization: Another agent is already authenticating.");
 
         QDBusMessage replyError = QDBusMessage::methodReply(messageToReply);
 
@@ -632,8 +623,6 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         m_dialog = new AuthDialog(qMessage, this);
         Debug::printDebug("AuthDialog created.");
 
-        m_newUserSelected = false;
-
         polkit_grant_set_functions(m_grant,
                                    polkit_grant_add_watch,
                                    polkit_grant_add_child_watch,
@@ -652,6 +641,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         m_gainedPrivilege = false;
         m_inputBogus = false;
         m_cancelled = false;
+        //m_newUserSelected = false;
 
         if (!polkit_grant_initiate_auth (m_grant, action, caller)) 
         {
@@ -669,7 +659,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
         Debug::printDebug("obtain_authorization: Entering eventloop to wait grant_done");
         QApplication::eventLoop()->exec();
 
-        if(m_newUserSelected)
+        if(m_newUserSelected && m_resetForUser)
         {
             Debug::printDebug("obtain_authorization: New user selected, restarting authentication process...");
 
@@ -680,6 +670,7 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
                 polkit_grant_unref (m_grant);
 
             i--;
+            m_resetForUser = false;
             continue;
         }
 
@@ -695,7 +686,13 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             break;
         }
         else
+        {
+            m_userSelected = "";
+            m_newUserSelected = false;
+            m_resetForUser = false;
             break;
+        }
+
     }
 
     if (m_grant)
@@ -723,11 +720,11 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
     delete m_dialog;
 }
 
-
 void PolicyService::userSelected(const QString &user)
 {
     Debug::printDebug(QString("User selected: %1").arg(user));
     m_newUserSelected = true;
+    m_resetForUser = true;
     m_userSelected = user;
 
     polkit_grant_cancel_auth (m_grant);
