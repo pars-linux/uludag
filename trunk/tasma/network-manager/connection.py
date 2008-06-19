@@ -475,7 +475,7 @@ class Settings(QWidget):
         
         self.parent().setEnabled(False)
         if conn and conn.name != name:
-            ch = comlink.callHandler(self.link.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.set")
+            ch = comlink.callHandler(self.link.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.deleteconnection")
             ch.registerDone(saveConnection, True)
             ch.registerCancel(cancel)
             ch.registerError(error)
