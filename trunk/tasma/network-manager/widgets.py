@@ -59,7 +59,7 @@ class HelpDialog(QDialog):
         self.resize(500, 600)
         self.layout.addWidget(self.htmlPart.view(), 1, 1)
         
-        lang = locale.setlocale(locale.LC_MESSAGES)
+        lang = str(KGlobal().locale().language())
         if "_" in lang:
             lang = lang.split("_", 1)[0]
         url = locate("data", "%s/help/%s/main_help.html" % (name, lang))
