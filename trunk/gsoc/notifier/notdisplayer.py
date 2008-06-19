@@ -184,9 +184,14 @@ class NotificationDisplayer:
 			def Respond(self, button_index):
 				self.notification.notification_response.chosen_button = button_index
 				self.notification.reporter(pickle.dumps(self.notification.notification_response))
-				self.Destroy()
+				self.displayer.notification_windows.pop(self.handle)
+				self.deleteLater()
+				self.emit(QtCore.SIGNAL("changeLayout()"))
 
 			def Destroy(self):
+				if self.notification.reporter != None:
+					self.notification.notification_response.chosen_button = -1
+					self.notification.reporter(pickle.dumps(self.notification.notification_response))
 				self.displayer.notification_windows.pop(self.handle)
 				self.deleteLater()
 				self.emit(QtCore.SIGNAL("changeLayout()"))
