@@ -3,6 +3,7 @@
 
 from qt import QEventLoop
 from kdeui import KCursor
+import PisiIface
 
 from Debug import Debug
 
@@ -44,3 +45,11 @@ def processEvents():
     #FIXME: package-manager freezes after this
     if app:
         app.processEvents(QEventLoop.ExcludeUserInput)
+
+def humanReadableSize(size, precision=".1"):
+    tpl = PisiIface.humanize(size)
+    if tpl[0] == 0:
+        return "0 B"
+
+    fmt = "%%%sf %%s" % precision
+    return fmt % (tpl[0], tpl[1])

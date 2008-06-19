@@ -163,7 +163,7 @@ class SpecialList(QObject):
                                   i18n("Description: "), app.description,
                                   i18n("Version: "), app.version,
                                    i18n("Repository: "), app.repo,
-                                   i18n("Package Size: "), app.size,
+                                   i18n("Package Size: "), Globals.humanReadableSize(app.size),
                                   i18n("Homepage: "), app.source.homepage, app.source.homepage)
             index += 1
 
