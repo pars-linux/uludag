@@ -219,7 +219,7 @@ class Settings(QWidget):
             line = widgets.HLine(i18n("VPN Authentication"), self, "vpn_icon")
             lay.addSpacing(6)
             lay.addWidget(line)
-            grid = QGridLayout(7, 2)
+            grid = QGridLayout(3, 2)
             lay.addLayout(grid)
             
             lab = QLabel(i18n("Domain:"), self)
@@ -566,8 +566,7 @@ class Settings(QWidget):
                 protocol = str(self.protocol.currentText()).lower()
                 chipher = str(self.chipher.currentText())
                 if self.chipher.currentText() == "-":
-                    print chipher
-                    chipher == ""
+                    chipher = str("")
                 ca = str(self.ca)
                 cert = str(self.cert)
                 key = str(self.key)

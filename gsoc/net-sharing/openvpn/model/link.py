@@ -33,6 +33,7 @@ from pardus import iniutils
 # Open connection db
 DB = iniutils.iniDB(os.path.join("/etc/network/openvpn.db"))
 CFG_FL = "/etc/network/openvpnclient.conf"
+PID_FL = "/etc/network/openvpn.pid"
 
 # Internal functions
 
@@ -41,6 +42,21 @@ def _get(dict, key, default):
     if dict and dict.has_key(key):
         val = dict[key]
     return val
+
+def _getPid(pidfile):
+    """Read process ID from a .pid file."""
+    try:
+        pid = file(pidfile).read()
+    except IOError, e:
+        if e.errno != 2:
+            raise
+        return None
+    # Some services put custom data after the first line
+    pid = pid.split("\n")[0]
+    # Non-pid data is also seen when stopped state in some services :/
+    if len(pid) == 0 or len(filter(lambda x: not x in "0123456789", pid)) > 0:
+        return None
+    return pid
 
 def stopSameDev(myname):
     conns = DB.listDB()
@@ -56,7 +72,7 @@ def stopSameDev(myname):
             DB.setDB(name, d)
 
 
-class Dev:
+class Dev():
     def __init__(self, name, want=False):
         dict = DB.getDB(name)
         if want:
@@ -68,9 +84,9 @@ class Dev:
         self.protocol = _get(dict, "protocol", "UDP")
         self.domain = _get(dict, "domain", "not set")
         self.port = _get(dict, "port", "1194")
-        self.ca = _get(dict, "ca", "")
-        self.cert = _get(dict, "cert", "")
-        self.key = _get(dict, "key", "")
+        self.ca = _get(dict, "ca", "ca.crt")
+        self.cert = _get(dict, "cert", "client.crt")
+        self.key = _get(dict, "key", "client.key")
         self.chipher = _get(dict, "chipher", "")
     
     def up(self):
@@ -84,36 +100,31 @@ class Dev:
         vpnfl.write("ca %s\n" % self.ca)
         vpnfl.write("cert %s\n" % self.cert)
         vpnfl.write("key %s\n" % self.key)
-        if self.chipher != "-":
+        vpnfl.write("writepid %s\n" % PID_FL)
+        if self.chipher != "":
             vpnfl.write("chipher %s\n" % self.chipher)
         vpnfl.close()
-        d = DB.getDB(self.name)
-        d["state"] = "up"
-        DB.setDB(self.name, d)
-        notify("Net.Link", "stateChanged", (self.name, "connecting", self.domain))
-        try:
-            retcode = subprocess.call(["/usr/sbin/openvpn","--config","%s" %CFG_FL])
-            if retcode < 0:
-                notify("Net.Link", "stateChanged", (self.name, "down", ""))
-            else:
-                notify("Net.Link", "stateChanged", (self.name, "up", "self.domain"))
-        except OSError,e:
-                print >>sys.stderr, "Execution Failed:", e
-                notify("Net.Link", "stateChanged", (self.name, "down", ""))
+        notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
+        ret = subprocess.call(["/usr/sbin/openvpn","--config",CFG_FL])
+        if ret == 0:
+            notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
+            d = DB.getDB(self.name)
+            d["state"] = "up"
+            DB.setDB(self.name, d)
+        else:
+            notify("Net.Link", "stateChanged", (self.name, "down", ""))
+            fail("Unable to set vpn connection. Check your configuration")
     
     def down(self):
         try:
-            retcode =  subprocess.call(["usr/bin/killall", "openvpn"])
-            if retcode >= 0:
-                d = DB.getDB(self.name)
-                d["state"] = "down"
-                DB.setDB(self.name, d)
-                notify("Net.Link", "stateChanged", (self.name, "down", ""))
-            else:
-                pass
+            pid = _getPid(PID_FL)
+            retcode =  subprocess.call(["/usr/bin/kill", pid])
+            d = DB.getDB(self.name)
+            d["state"] = "down"
+            DB.setDB(self.name, d)
+            notify("Net.Link", "stateChanged", (self.name, "down", ""))
         except:
-            pass
-
+            fail("Unable to shutdown vpn connection")
 
 # Net.Link API
 
@@ -146,8 +157,7 @@ def setVpn(name, domain, port, protocol, ca, cert, key, chipher):
         d["cert"] = cert
     if key != "":
         d["key"] = key
-    if chipher != "":
-        d["chipher"] = chipher
+    d["chipher"] = chipher
     DB.setDB(name, d)
     notify("Net.Link", "connectionChanged", ("configured", name))
 
@@ -205,42 +215,11 @@ def connectionInfo(name=None):
     d["ca"] = dev.ca
     d["cert"] = dev.cert
     d["key"] = dev.key
+    d["chipher"] = dev.chipher
     return d
 
 def getAuthentication(name):
     return ("", "", "")
 
-"""def kernelEvent(data):
-    type, dir = data.split("@", 1)
-    if not dir.startswith("/class/net/"):
-        return
-    devname = dir[11:]
-    flag = 1
-    
-    if type == "add":
-        ifc = netutils.IF(devname)
-        if ifc.isWireless():
-            return
-        devuid = ifc.deviceUID()
-        notify("Net.Link", "deviceChanged", ("add", "net", devuid, netutils.deviceName(devuid)))
-        conns = DB.listDB()
-        for conn in conns:
-            dev = Dev(conn)
-            if dev.ifc and dev.ifc.name == devname:
-                if dev.state == "up":
-                    dev.up()
-                    return
-                flag = 0
-        if flag:
-            notify("Net.Link", "deviceChanged", ("new", "net", devuid, netutils.deviceName(devuid)))
-    
-    elif type == "remove":
-        conns = DB.listDB()
-        for conn in conns:
-            dev = Dev(conn)
-            # FIXME: dev.ifc is not enough :(
-            if dev.ifc and dev.ifc.name == devname:
-                if dev.state == "up":
-                    notify("Net.Link", "stateChanged", (dev.name, "inaccessible", "Device removed"))
-        notify("Net.Link", "deviceChanged", ("removed", "net", devname, ""))
-"""
+def kernelEvent(data):
+    pass
