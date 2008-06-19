@@ -205,10 +205,10 @@ class widgetMain(formMain):
     def slotDoubleClicked(self, item):
         # if it's not started
         if not item.state:
-            ch = self.callHandler(item.package, "System.Service", "start")
+            ch = self.callHandler(item.package, "System.Service", "start", "tr.org.pardus.comar.system.service.set")
             ch.call()
         else:
-            ch = self.callHandler(item.package, "System.Service", "stop")
+            ch = self.callHandler(item.package, "System.Service", "stop", "tr.org.pardus.comar.system.service.set")
             ch.call()
 
     def populateList(self):
