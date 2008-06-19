@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Prş Haz 19 03:30:14 2008
+# Created: Prş Haz 19 13:59:56 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -52,6 +52,9 @@ class formMain(QWidget):
         layout5 = QHBoxLayout(None,0,6,"layout5")
 
         self.comboBox = QComboBox(0,self,"comboBox")
+        self.comboBox.setBackgroundOrigin(QComboBox.ParentOrigin)
+        self.comboBox.setMaxCount(10)
+        self.comboBox.setDuplicatesEnabled(0)
         layout5.addWidget(self.comboBox)
         spacer2 = QSpacerItem(390,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
         layout5.addItem(spacer2)
@@ -59,34 +62,37 @@ class formMain(QWidget):
         formMainLayout.addMultiCellLayout(layout5,0,0,0,1)
 
         self.toolBox = QToolBox(self,"toolBox")
-        self.toolBox.setCurrentIndex(1)
+        self.toolBox.setCurrentIndex(0)
 
         self.page1 = QWidget(self.toolBox,"page1")
         self.page1.setBackgroundMode(QWidget.PaletteBase)
         page1Layout = QGridLayout(self.page1,1,1,11,6,"page1Layout")
 
-        self.planTextLabel = QLabel(self.page1,"planTextLabel")
-        self.planTextLabel.setBackgroundMode(QLabel.PaletteBase)
-        self.planTextLabel.setAlignment(QLabel.WordBreak | QLabel.AlignVCenter)
+        self.planTextEdit = QTextEdit(self.page1,"planTextEdit")
+        self.planTextEdit.setFrameShape(QTextEdit.NoFrame)
+        self.planTextEdit.setTextFormat(QTextEdit.RichText)
+        self.planTextEdit.setReadOnly(1)
 
-        page1Layout.addWidget(self.planTextLabel,0,0)
+        page1Layout.addWidget(self.planTextEdit,0,0)
         self.toolBox.addItem(self.page1,QString.fromLatin1(""))
 
         self.takeBackPage = QWidget(self.toolBox,"takeBackPage")
         self.takeBackPage.setBackgroundMode(QWidget.PaletteBase)
         takeBackPageLayout = QGridLayout(self.takeBackPage,1,1,11,6,"takeBackPageLayout")
 
-        self.detailsTextLabel = QLabel(self.takeBackPage,"detailsTextLabel")
-        self.detailsTextLabel.setBackgroundMode(QLabel.PaletteBase)
-        self.detailsTextLabel.setAlignment(QLabel.WordBreak | QLabel.AlignVCenter)
+        self.listDetailsTextEdit = QTextEdit(self.takeBackPage,"listDetailsTextEdit")
+        self.listDetailsTextEdit.setFrameShape(QTextEdit.NoFrame)
+        self.listDetailsTextEdit.setTextFormat(QTextEdit.RichText)
+        self.listDetailsTextEdit.setReadOnly(1)
 
-        takeBackPageLayout.addWidget(self.detailsTextLabel,0,0)
+        takeBackPageLayout.addWidget(self.listDetailsTextEdit,1,0)
 
-        self.listDetailsTextLabel = QLabel(self.takeBackPage,"listDetailsTextLabel")
-        self.listDetailsTextLabel.setBackgroundMode(QLabel.PaletteBase)
-        self.listDetailsTextLabel.setAlignment(QLabel.WordBreak | QLabel.AlignVCenter)
+        self.detailsTextEdit = QTextEdit(self.takeBackPage,"detailsTextEdit")
+        self.detailsTextEdit.setFrameShape(QTextEdit.NoFrame)
+        self.detailsTextEdit.setTextFormat(QTextEdit.RichText)
+        self.detailsTextEdit.setReadOnly(1)
 
-        takeBackPageLayout.addWidget(self.listDetailsTextLabel,1,0)
+        takeBackPageLayout.addWidget(self.detailsTextEdit,0,0)
         self.toolBox.addItem(self.takeBackPage,QString.fromLatin1(""))
 
         formMainLayout.addWidget(self.toolBox,2,1)
@@ -121,10 +127,8 @@ class formMain(QWidget):
         self.comboBox.insertItem(self.__tr("Removes"))
         self.comboBox.insertItem(self.__tr("Installations"))
         self.comboBox.insertItem(self.__tr("TakeBacks"))
-        self.planTextLabel.setText(QString.null)
+        self.comboBox.setCurrentItem(0)
         self.toolBox.setItemLabel(self.toolBox.indexOf(self.page1),self.__tr("TakeBack Plan"))
-        self.detailsTextLabel.setText(QString.null)
-        self.listDetailsTextLabel.setText(QString.null)
         self.toolBox.setItemLabel(self.toolBox.indexOf(self.takeBackPage),self.__tr("Operation Details"))
         self.noLabel.setText(QString.null)
         self.typeLabel.setText(QString.null)
