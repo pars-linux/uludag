@@ -317,7 +317,7 @@ class MainApplicationWidget(QWidget):
         Globals.setWaitCursor()
         try:
             # fetch packages including metadata from cache
-            packagesWithMeta = [PisiIface.get_package(package, self.state != install_state) for package in self.componentDict[item].packages]
+            packagesWithMeta = [PisiIface.get_package(package, self.state == remove_state) for package in self.componentDict[item].packages]
             if self.state == remove_state:
                 self.specialList.createList(packagesWithMeta, selected = self.basket.packages, disabled = unremovable_packages)
             else:
