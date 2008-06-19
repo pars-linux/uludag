@@ -130,7 +130,10 @@ class Scanner(QPopupMenu):
                 if mode.id == item.enc:
                     break
                 i += 1
-        parent.auth_mode.setCurrentItem(i)
+        auth_last = parent.link.auth_modes[parent.auth_mode.currentItem() - 1].id
+        auth_now = item.enc
+        if not (auth_last.startswith("wep") and auth_now.startswith("wep")):
+            parent.auth_mode.setCurrentItem(i)
         parent.slotAuthToggle(i)
         self.hide()
     
