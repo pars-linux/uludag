@@ -16,6 +16,7 @@ from ProgressDialog import *
 
 import Basket
 import PisiIface
+import Globals
 
 class Progress(ProgressDialog):
     def __init__(self, parent=None):
@@ -27,7 +28,7 @@ class Progress(ProgressDialog):
         self.connect(self.cancelButton,SIGNAL("clicked()"),self.cancelThread)
         self.cancelButton.setEnabled(False)
         self.hideOperationDescription()
-        
+
         self.packageNo = 0
         self.totalPackages = 0
         self.packageName = ""
@@ -78,7 +79,7 @@ class Progress(ProgressDialog):
 
     def updateProgressBar(self, progress):
         self.progressBar.setProgress(float(progress))
-    
+
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
 
@@ -170,14 +171,8 @@ class Progress(ProgressDialog):
         self.updateProgressBar(percent)
 
     def getCurrentDownloadedSize(self):
-        totalDownloaded = self.totalDownloaded + self.curPkgDownloaded
-
-        size = PisiIface.humanize(totalDownloaded)
-        totaldownloaded = "%.2f %s" % (size[0], size[1])
-
-        size = PisiIface.humanize(self.totalSize)
-        totalsize = "%.2f %s" % (size[0], size[1])
-
+        totaldownloaded = Globals.humanReadableSize(self.totalDownloaded + self.curPkgDownloaded, ".2")
+        totalsize = Globals.humanReadableSize(self.totalSize, ".2")
         return (totaldownloaded, totalsize)
 
     def updatePackageProgress(self):
