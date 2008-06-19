@@ -254,10 +254,10 @@ class widgetMain(formMain):
         if item.state:
             self.buttonStop.setEnabled(True)
             self.buttonRestart.setEnabled(True)
-            info.append(i18n('%s is running.').replace('%s', item.description))
+            info.append(unicode(i18n('%s is running.').replace('%s', item.description)))
         else:
             self.buttonStart.setEnabled(True)
-            info.append(i18n('%s is not running.').replace('%s', item.description))
+            info.append(unicode(i18n('%s is not running.').replace('%s', item.description)))
 
         self.radioAutoRun.setEnabled(True)
         self.radioAutoRun.setChecked(False)
