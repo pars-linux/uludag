@@ -23,7 +23,7 @@ from dbus.mainloop.qt3 import DBusQtMainLoop
 
 mod_name = 'Service Manager'
 mod_app = 'service-manager'
-mod_version = '1.2.2'
+mod_version = '2.0.1'
 
 def AboutData():
     return KAboutData(
