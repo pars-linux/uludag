@@ -1,14 +1,14 @@
-# translation of history-manager.po to Deutsch
+# translation of de.po to Deutsch
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: history-manager\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-15 18:26+0300\n"
-"PO-Revision-Date: 2008-06-18 04:07+0200\n"
+"PO-Revision-Date: 2008-06-19 22:08+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: src/ComarIface.py:30
 msgid "Cannot connect to dbus"
-msgstr ""
+msgstr "Kann nicht mit DBus verbunden werden"
 
 #: src/ComarIface.py:43
 msgid "D-Bus Error"
-msgstr ""
+msgstr "D-Bus-Fehler"
 
 #: src/ComarIface.py:48
 msgid "COMAR Auth Error"
@@ -34,11 +34,11 @@ msgstr "COMAR-Fehler"
 
 #: src/ComarIface.py:57
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Sie sind für diesen Vorgang nicht berechtigt."
 
 #: src/Commander.py:17
 msgid "Cannot connect to Comar daemon"
-msgstr ""
+msgstr "Kann nicht mit dem Comar-Daemon verbunden werden"
 
 #: src/utility.py:32
 msgid "History Manager Interface"
@@ -108,7 +108,7 @@ msgstr "Vorgang abgebrochen"
 
 #: src/history_gui.py:173
 msgid "Updating User Interface, please wait a while"
-msgstr ""
+msgstr "Benutzerschnittstelle wird aktualisiert, bitte warten Sie solange"
 
 #: src/history_gui.py:177
 msgid "Finished with Errors"
@@ -120,11 +120,11 @@ msgstr "Erfolgreich abgeschlossen"
 
 #: src/history_gui.py:224
 msgid "<b>Access Granted</b><br>"
-msgstr ""
+msgstr "<b>Zugang gewährt</b><br>"
 
 #: src/history_gui.py:228
 msgid "<b>Access Denied</b><br>"
-msgstr ""
+msgstr "<b>Zugang verweigert</b><br>"
 
 #: src/history_gui.py:230
 msgid "Operation Started"
@@ -132,7 +132,7 @@ msgstr "Vorgang gestartet"
 
 #: src/history_gui.py:232
 msgid "Ordering Packages for Operation"
-msgstr ""
+msgstr "Pakete werden für den Vorgang angefordert"
 
 #: src/history_gui.py:235
 msgid "Removing    : %1"
@@ -164,7 +164,7 @@ msgstr "Ein Eintrag auswählen um Details anzusehen"
 
 #: src/history_gui.py:277
 msgid "<b>Operation Date : </b>%1 %2<br><b>Operation Type : </b>%3<br>"
-msgstr ""
+msgstr "<b>Vorgangsdatum : </b>%1 %2<br><b>Vorgangstyp : </b>%3<br>"
 
 #: src/history_gui.py:281
 msgid "There are <b>%1</b> packages in this snapshot"
