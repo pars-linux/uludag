@@ -10,7 +10,7 @@
 #
 # Please read the COPYING file
 
-import os
+import os, sys
 import pisi
 
 def get_history_dir():
@@ -22,3 +22,10 @@ def get_config_files(op):
 def getPlan(op):
     return pisi.api.get_takeback_plan(op)
 
+def reloadPisi():
+    for module in sys.modules.keys():
+        if module.startswith("pisi."):
+            """removal from sys.modules forces reload via import"""
+            del sys.modules[module]
+
+    reload(pisi)

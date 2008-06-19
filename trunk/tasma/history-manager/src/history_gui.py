@@ -51,7 +51,7 @@ class widgetMain(formMain):
         self.snapshotsListView.setSortColumn(1)
         self.snapshotsListView.setSortOrder(Qt.Descending)
         self.toolBox.setCurrentIndex(1)
-        self.listDetailsTextLabel.hide()
+        self.listDetailsTextEdit.hide()
 
         # set labels
         self.setCaption(i18n("History Manager"))
@@ -64,6 +64,7 @@ class widgetMain(formMain):
         self.snapshotPushButton.setText(i18n("New Snapshot"))
         self.snapshotsListView.header().setLabel(0, " ")
         self.snapshotsListView.header().setLabel(1, i18n("Date"))
+        self.toolBox.setItemToolTip(0, i18n("Your system will be restored to that date if you click Take Back button.<br>These are the package installation and removals, also configuration files below (in snapshots) will overwrite your current configuration files."))
 
         # set icons
         self.helpPushButton.setIconSet(loadIconSet("help", KIcon.Small))
@@ -134,27 +135,8 @@ class widgetMain(formMain):
 
     def __take_back(self, operation):
         willbeinstalled, willberemoved = PisiIface.getPlan(operation)
-        qmessage = i18n("This will restore your system back to : %1 %2\n")\
-                        .arg(self.selected.getDate()).arg(self.selected.getTime())
-        imessage = i18n("These packages will be installed:\n")
-        rmessage = i18n("These packages will be removed:\n")
-        smessage = i18n("Are you sure?")
-
-        if len(willbeinstalled) != 0:
-            qmessage += imessage
-            for i in range(len(willbeinstalled)):
-                qmessage += willbeinstalled[i] + " "
-                if i%5 == 0:
-                    qmessage += "\n"
-
-        if len(willberemoved) != 0:
-            qmessage += rmessage
-            for i in range(len(willberemoved)):
-                qmessage += willberemoved[i] + " "
-                if i%5 == 0:
-                    qmessage += "\n"
-
-        qmessage += "\n" + smessage
+        qmessage = i18n("This will restore your system back to : %1 %2\nIf you're unsure, click Cancel and see TakeBack Plan")\
+                .arg(self.selected.getDate()).arg(self.selected.getTime())
 
         if not self.command.inProgress():
             if 0 == QMessageBox.question(self, i18n("Warning"), \
@@ -223,6 +205,7 @@ class widgetMain(formMain):
     def addLast(self):
         """ after an operation, add latest operation to list """
         self.initDb()
+        #PisiIface.reloadPisi()
         op = self.historydb.get_last()
         op = op.next()
         if op.no > self.latest:
@@ -250,7 +233,7 @@ class widgetMain(formMain):
             for i in args:
                 self.progress.setCurrentOperation(i18n("Removing    : %1").arg(i))
         elif operation in ["removed"]:
-            self.infoTextEdit.append(i18n("OK") + "<br>")
+            pass
         elif operation in ["installing"]:
             for i in args:
                 self.progress.setCurrentOperation(i18n("Installing  : %1").arg(i))
@@ -261,7 +244,7 @@ class widgetMain(formMain):
             for i in args:
                 self.progress.setCurrentOperation(i18n("Configuring  : %1").arg(i))
         elif operation in ["installed"]:
-            self.infoTextEdit.append(i18n("OK") + "<br>")
+            pass
         elif operation in ["takingSnapshot"]:
             self.progress.setHeader(i18n("Taking a Snapshot of System "))
         elif operation in ["takingBack"]:
@@ -279,24 +262,40 @@ class widgetMain(formMain):
         self.previous = self.selected or item
         self.selected = item
         self.restorePushButton.setEnabled(True)
-        self.pageChanged(self.comboBox.currentItem())
+        self.pageChanged(self.toolBox.currentIndex())
 
     def pageChanged(self, num):
         """ when toolbox pages change, this function is called """
         if self.selected == None:
-            self.detailsTextLabel.setText(i18n("Select an entry to view details"))
-            self.planTextLabel.setText(i18n("Select an entry to view details"))
+            self.detailsTextEdit.setText(i18n("Select an entry to view details"))
+            self.planTextEdit.setText(i18n("Select an entry to view details"))
             return
+
         self.noLabel.setText(i18n("No: <b>%1</b>").arg(self.selected.getOpNo()))
         self.typeLabel.setText(i18n("Type: <b>%1</b>").arg(self.selected.getType()))
+        if num == 0:
+            self.setTakeBackPlan()
+            return
+
         information = ""
 
-        self.detailsTextLabel.clear()
-        self.planTextLabel.clear()
+        self.detailsTextEdit.clear()
+        self.planTextEdit.clear()
 
         if self.selected.getType() == 'snapshot':
             information += i18n("There are <b>%1</b> packages in this snapshot")\
-                        .arg(self.selected.getNumPackages())
+                    .arg(self.selected.getNumPackages())
+            return
+
+        for package in self.selected.op_pack:
+            information += "%s <br>" % package.__str__()
+        self.detailsTextEdit.setText(information)
+
+    def setTakeBackPlan(self):
+        willbeinstalled, willberemoved = PisiIface.getPlan(self.selected.getOpNo())
+
+        information = ""
+        if self.selected.getType() == 'snapshot':
             # configuration files in a snapshot
             configs = self.historydb.get_config_files(self.selected.getOpNo())
             if len(configs) != 0:
@@ -307,13 +306,27 @@ class widgetMain(formMain):
                         information += j
                         #information += j.split(PisiIface.get_history_dir() + '/'\
                         #        + self.selected.getOpNo() + '/' + i)[-1]
-            self.detailsTextLabel.setText(information)
-            return
+            self.planTextEdit.setText(information)
 
-        for package in self.selected.op_pack:
-            information += "%s <br>" % package.__str__()
+        message = i18n("Take Back Plan for %1 operation on %2")\
+                .arg(self.selected.getType()).arg(self.selected.getDate()) + "<br><br>"
+        if len(willbeinstalled) != 0:
+            message += "<br>" + i18n("These package(s) will be <b>installed</b> :") + "<br>"
+            for i in range(len(willbeinstalled)):
+                message += willbeinstalled[i] + " "
+                if i%5 == 0:
+                    message += "<br>"
 
-        self.detailsTextLabel.setText(information)
+        if len(willberemoved) != 0:
+            message += "<br>" + i18n("These package(s) will be <b>removed</b> :") + "<br>"
+            for i in range(len(willberemoved)):
+                message += willberemoved[i] + " "
+                if i%5 == 0:
+                    message += "<br>"
+
+        message += "<br>"
+        self.planTextEdit.setText(message + information)
+
 
     def showOperations(self, operation=None):
         """ Shows only operation, or all history if operation is None """
@@ -379,6 +392,7 @@ class widgetProgress(progressForm):
 
 class widgetItem(QListViewItem):
     """ class for listviewitem's """
+
     def __init__(self, parent, operation):
         QListViewItem.__init__(self, parent)
 

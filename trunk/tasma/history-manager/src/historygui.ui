@@ -213,7 +213,7 @@
                 <cstring>toolBox</cstring>
             </property>
             <property name="currentIndex">
-                <number>1</number>
+                <number>0</number>
             </property>
             <widget class="QWidget">
                 <property name="name">
@@ -229,18 +229,18 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLabel" row="0" column="0">
+                    <widget class="QTextEdit" row="0" column="0">
                         <property name="name">
-                            <cstring>planTextLabel</cstring>
+                            <cstring>planTextEdit</cstring>
                         </property>
-                        <property name="backgroundMode">
-                            <enum>PaletteBase</enum>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
                         </property>
-                        <property name="text">
-                            <string></string>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
                         </property>
-                        <property name="alignment">
-                            <set>WordBreak|AlignVCenter</set>
+                        <property name="readOnly">
+                            <bool>true</bool>
                         </property>
                     </widget>
                 </grid>
@@ -259,32 +259,32 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLabel" row="0" column="0">
+                    <widget class="QTextEdit" row="1" column="0">
                         <property name="name">
-                            <cstring>detailsTextLabel</cstring>
+                            <cstring>listDetailsTextEdit</cstring>
                         </property>
-                        <property name="backgroundMode">
-                            <enum>PaletteBase</enum>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
                         </property>
-                        <property name="text">
-                            <string></string>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
                         </property>
-                        <property name="alignment">
-                            <set>WordBreak|AlignVCenter</set>
+                        <property name="readOnly">
+                            <bool>true</bool>
                         </property>
                     </widget>
-                    <widget class="QLabel" row="1" column="0">
+                    <widget class="QTextEdit" row="0" column="0">
                         <property name="name">
-                            <cstring>listDetailsTextLabel</cstring>
+                            <cstring>detailsTextEdit</cstring>
                         </property>
-                        <property name="backgroundMode">
-                            <enum>PaletteBase</enum>
+                        <property name="frameShape">
+                            <enum>NoFrame</enum>
                         </property>
-                        <property name="text">
-                            <string></string>
+                        <property name="textFormat">
+                            <enum>RichText</enum>
                         </property>
-                        <property name="alignment">
-                            <set>WordBreak|AlignVCenter</set>
+                        <property name="readOnly">
+                            <bool>true</bool>
                         </property>
                     </widget>
                 </grid>
