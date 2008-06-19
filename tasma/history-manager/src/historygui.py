@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Prş May 22 17:20:04 2008
+# Created: Prş Haz 19 03:30:14 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,53 +23,6 @@ class formMain(QWidget):
 
         formMainLayout = QGridLayout(self,1,1,11,6,"formMainLayout")
 
-        layout10 = QHBoxLayout(None,0,6,"layout10")
-
-        self.snapshotsCheckBox = QCheckBox(self,"snapshotsCheckBox")
-        self.snapshotsCheckBox.setChecked(1)
-        layout10.addWidget(self.snapshotsCheckBox)
-        spacer2 = QSpacerItem(301,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        layout10.addItem(spacer2)
-
-        formMainLayout.addLayout(layout10,0,0)
-
-        self.tabWidget = QTabWidget(self,"tabWidget")
-
-        self.tab = QWidget(self.tabWidget,"tab")
-        tabLayout = QGridLayout(self.tab,1,1,11,6,"tabLayout")
-
-        self.snapshotsListView = QListView(self.tab,"snapshotsListView")
-        self.snapshotsListView.addColumn(self.__tr("1"))
-        self.snapshotsListView.addColumn(self.__tr("No"))
-        self.snapshotsListView.addColumn(self.__tr("Date"))
-        self.snapshotsListView.addColumn(self.__tr("Type"))
-        self.snapshotsListView.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,0,self.snapshotsListView.sizePolicy().hasHeightForWidth()))
-        self.snapshotsListView.setMinimumSize(QSize(0,150))
-        self.snapshotsListView.setAllColumnsShowFocus(1)
-        self.snapshotsListView.setShowSortIndicator(1)
-
-        tabLayout.addWidget(self.snapshotsListView,0,0)
-        self.tabWidget.insertTab(self.tab,QString.fromLatin1(""))
-
-        self.tab_2 = QWidget(self.tabWidget,"tab_2")
-        tabLayout_2 = QGridLayout(self.tab_2,1,1,11,6,"tabLayout_2")
-
-        self.infoProgressBar = QProgressBar(self.tab_2,"infoProgressBar")
-        self.infoProgressBar.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Fixed,0,0,self.infoProgressBar.sizePolicy().hasHeightForWidth()))
-        self.infoProgressBar.setTotalSteps(0)
-
-        tabLayout_2.addWidget(self.infoProgressBar,1,0)
-
-        self.infoTextEdit = QTextEdit(self.tab_2,"infoTextEdit")
-        self.infoTextEdit.setEnabled(1)
-        self.infoTextEdit.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Expanding,0,0,self.infoTextEdit.sizePolicy().hasHeightForWidth()))
-        self.infoTextEdit.setTextFormat(QTextEdit.RichText)
-
-        tabLayout_2.addWidget(self.infoTextEdit,0,0)
-        self.tabWidget.insertTab(self.tab_2,QString.fromLatin1(""))
-
-        formMainLayout.addWidget(self.tabWidget,1,0)
-
         layout11 = QHBoxLayout(None,0,6,"layout11")
 
         self.helpPushButton = QPushButton(self,"helpPushButton")
@@ -84,26 +37,97 @@ class formMain(QWidget):
         self.restorePushButton.setEnabled(0)
         layout11.addWidget(self.restorePushButton)
 
-        formMainLayout.addLayout(layout11,2,0)
+        formMainLayout.addMultiCellLayout(layout11,3,3,0,1)
+
+        self.snapshotsListView = QListView(self,"snapshotsListView")
+        self.snapshotsListView.addColumn(self.__tr("1"))
+        self.snapshotsListView.addColumn(self.__tr("Date"))
+        self.snapshotsListView.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,0,self.snapshotsListView.sizePolicy().hasHeightForWidth()))
+        self.snapshotsListView.setMinimumSize(QSize(0,150))
+        self.snapshotsListView.setAllColumnsShowFocus(1)
+        self.snapshotsListView.setShowSortIndicator(1)
+
+        formMainLayout.addMultiCellWidget(self.snapshotsListView,1,2,0,0)
+
+        layout5 = QHBoxLayout(None,0,6,"layout5")
+
+        self.comboBox = QComboBox(0,self,"comboBox")
+        layout5.addWidget(self.comboBox)
+        spacer2 = QSpacerItem(390,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layout5.addItem(spacer2)
+
+        formMainLayout.addMultiCellLayout(layout5,0,0,0,1)
+
+        self.toolBox = QToolBox(self,"toolBox")
+        self.toolBox.setCurrentIndex(1)
+
+        self.page1 = QWidget(self.toolBox,"page1")
+        self.page1.setBackgroundMode(QWidget.PaletteBase)
+        page1Layout = QGridLayout(self.page1,1,1,11,6,"page1Layout")
+
+        self.planTextLabel = QLabel(self.page1,"planTextLabel")
+        self.planTextLabel.setBackgroundMode(QLabel.PaletteBase)
+        self.planTextLabel.setAlignment(QLabel.WordBreak | QLabel.AlignVCenter)
+
+        page1Layout.addWidget(self.planTextLabel,0,0)
+        self.toolBox.addItem(self.page1,QString.fromLatin1(""))
+
+        self.takeBackPage = QWidget(self.toolBox,"takeBackPage")
+        self.takeBackPage.setBackgroundMode(QWidget.PaletteBase)
+        takeBackPageLayout = QGridLayout(self.takeBackPage,1,1,11,6,"takeBackPageLayout")
+
+        self.detailsTextLabel = QLabel(self.takeBackPage,"detailsTextLabel")
+        self.detailsTextLabel.setBackgroundMode(QLabel.PaletteBase)
+        self.detailsTextLabel.setAlignment(QLabel.WordBreak | QLabel.AlignVCenter)
+
+        takeBackPageLayout.addWidget(self.detailsTextLabel,0,0)
+
+        self.listDetailsTextLabel = QLabel(self.takeBackPage,"listDetailsTextLabel")
+        self.listDetailsTextLabel.setBackgroundMode(QLabel.PaletteBase)
+        self.listDetailsTextLabel.setAlignment(QLabel.WordBreak | QLabel.AlignVCenter)
+
+        takeBackPageLayout.addWidget(self.listDetailsTextLabel,1,0)
+        self.toolBox.addItem(self.takeBackPage,QString.fromLatin1(""))
+
+        formMainLayout.addWidget(self.toolBox,2,1)
+
+        layout8 = QHBoxLayout(None,0,6,"layout8")
+
+        self.noLabel = QLabel(self,"noLabel")
+        layout8.addWidget(self.noLabel)
+
+        self.typeLabel = QLabel(self,"typeLabel")
+        layout8.addWidget(self.typeLabel)
+
+        formMainLayout.addLayout(layout8,1,1)
 
         self.languageChange()
 
-        self.resize(QSize(450,403).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(682,556).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
 
     def languageChange(self):
         self.setCaption(self.__tr("History Manager"))
-        self.snapshotsCheckBox.setText(self.__tr("List only Snapshots"))
-        self.snapshotsListView.header().setLabel(0,self.__tr("1"))
-        self.snapshotsListView.header().setLabel(1,self.__tr("No"))
-        self.snapshotsListView.header().setLabel(2,self.__tr("Date"))
-        self.snapshotsListView.header().setLabel(3,self.__tr("Type"))
-        self.tabWidget.changeTab(self.tab,self.__tr("History"))
-        self.tabWidget.changeTab(self.tab_2,self.__tr("More Info"))
         self.helpPushButton.setText(self.__tr("Help"))
         self.snapshotPushButton.setText(self.__tr("New"))
         self.restorePushButton.setText(self.__tr("Restore"))
+        self.snapshotsListView.header().setLabel(0,self.__tr("1"))
+        self.snapshotsListView.header().setLabel(1,self.__tr("Date"))
+        self.comboBox.clear()
+        self.comboBox.insertItem(self.__tr("All Operations"))
+        self.comboBox.insertItem(self.__tr("Snapshots"))
+        self.comboBox.insertItem(self.__tr("Upgrades"))
+        self.comboBox.insertItem(self.__tr("Removes"))
+        self.comboBox.insertItem(self.__tr("Installations"))
+        self.comboBox.insertItem(self.__tr("TakeBacks"))
+        self.planTextLabel.setText(QString.null)
+        self.toolBox.setItemLabel(self.toolBox.indexOf(self.page1),self.__tr("TakeBack Plan"))
+        self.detailsTextLabel.setText(QString.null)
+        self.listDetailsTextLabel.setText(QString.null)
+        self.toolBox.setItemLabel(self.toolBox.indexOf(self.takeBackPage),self.__tr("Operation Details"))
+        self.noLabel.setText(QString.null)
+        self.typeLabel.setText(QString.null)
 
 
     def __tr(self,s,c = None):

@@ -20,6 +20,8 @@ from utility import *
 import Commander
 import pisi
 
+import PisiIface
+
 class widgetMain(formMain):
     def __init__(self, parent):
         # get history database from pisi
@@ -43,55 +45,49 @@ class widgetMain(formMain):
         self.latest = 0
 
         # gui looks better
-        self.infoProgressBar.hide()
-        self.infoTextEdit.setReadOnly(True)
         self.snapshotsListView.clear()
-        self.infoTextEdit.clear()
         self.snapshotsListView.setColumnWidth(0, 10)
-        self.snapshotsListView.setColumnWidth(1, 10)
-        self.snapshotsListView.setColumnWidth(2, 170)
-        self.snapshotsListView.setSortColumn(2)
+        self.snapshotsListView.setColumnWidth(1, 170)
+        self.snapshotsListView.setSortColumn(1)
         self.snapshotsListView.setSortOrder(Qt.Descending)
+        self.toolBox.setCurrentIndex(1)
+        self.listDetailsTextLabel.hide()
 
         # set labels
         self.setCaption(i18n("History Manager"))
-        self.snapshotsCheckBox.setText(i18n("List only snapshots"))
-        self.tabWidget.setTabLabel(self.tabWidget.page(0), i18n("History"))
-        self.tabWidget.setTabLabel(self.tabWidget.page(1), i18n("Details"))
+        # show snapshots by default
+        self.comboBox.setCurrentItem(0)
+        self.toolBox.setItemLabel(0, i18n("Take Back Plan"))
+        self.toolBox.setItemLabel(1, i18n("Operation Details"))
         self.helpPushButton.setText(i18n("Help"))
         self.restorePushButton.setText(i18n("Restore"))
         self.snapshotPushButton.setText(i18n("New Snapshot"))
         self.snapshotsListView.header().setLabel(0, " ")
-        self.snapshotsListView.header().setLabel(1, i18n("Id"))
-        self.snapshotsListView.header().setLabel(2, i18n("Date"))
-        self.snapshotsListView.header().setLabel(3, i18n("Type"))
+        self.snapshotsListView.header().setLabel(1, i18n("Date"))
 
         # set icons
         self.helpPushButton.setIconSet(loadIconSet("help", KIcon.Small))
         self.restorePushButton.setIconSet(loadIconSet("reload", KIcon.Small))
         self.snapshotPushButton.setIconSet(loadIconSet("add_user", KIcon.Small))
-        self.tabWidget.setTabIconSet(self.tabWidget.page(0), loadIconSet("History_Manager", KIcon.Small))
-        self.tabWidget.setTabIconSet(self.tabWidget.page(1), loadIconSet("details", KIcon.Small))
+        self.toolBox.setItemIconSet(0, loadIconSet("History_Manager", KIcon.Small))
+        self.toolBox.setItemIconSet(1, loadIconSet("details", KIcon.Small))
 
         # context menu
         self.popupmenu = QPopupMenu()
-        self.popupmenu.insertItem(loadIconSet("details", KIcon.Small), i18n("Show Details"), self.changeTab)
-        self.popupmenu.insertSeparator()
         self.popupmenu.insertItem(loadIconSet("reload", KIcon.Small), i18n("Restore to This Point"), self.take_back)
 
         # this hangs a little bit with a huge history
         self.updateGui()
 
         # make connections
-        self.connect(self.tabWidget, SIGNAL("currentChanged(QWidget *)"), self.tabChanged)
+        self.connect(self.toolBox, SIGNAL("currentChanged(int)"), self.pageChanged)
         self.connect(self.snapshotsListView, SIGNAL("currentChanged(QListViewItem *)"), self.itemChanged)
         self.connect(self.snapshotsListView, SIGNAL("selectionChanged(QListViewItem *)"), self.itemChanged)
-        self.connect(self.snapshotsCheckBox, SIGNAL("stateChanged(int)"), self.onlySnapshots)
-        self.connect(self.snapshotsListView, SIGNAL("doubleClicked(QListViewItem *, const QPoint &, int)"), self.slotDoubleClicked)
         self.connect(self.snapshotPushButton, SIGNAL("clicked()"), self.take_snapshot)
         self.connect(self.restorePushButton, SIGNAL("clicked()"), self.take_back)
         self.connect(self.helpPushButton, SIGNAL("clicked()"), self.showHelp)
         self.connect(self.snapshotsListView, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.execPopup)
+        self.connect(self.comboBox, SIGNAL("activated(int)"), self.comboItemChanged)
 
     # show help window
     def showHelp(self):
@@ -100,10 +96,6 @@ class widgetMain(formMain):
             self.help.show()
         else:
             self.help.show()
-
-    # change tabwidget's tab
-    def changeTab(self):
-        self.tabWidget.showPage(self.tabWidget.page(1-self.tabWidget.currentPageIndex()))
 
     # re-initialize history database for up to date entries
     def initDb(self):
@@ -141,11 +133,32 @@ class widgetMain(formMain):
         self.__take_back(self.selected.getOpNo())
 
     def __take_back(self, operation):
-        message = i18n("This will restore your system back to : %1 %2\nAre you sure ?")\
-                  .arg(self.selected.getDate()).arg(self.selected.getTime())
+        willbeinstalled, willberemoved = PisiIface.getPlan(operation)
+        qmessage = i18n("This will restore your system back to : %1 %2\n")\
+                        .arg(self.selected.getDate()).arg(self.selected.getTime())
+        imessage = i18n("These packages will be installed:\n")
+        rmessage = i18n("These packages will be removed:\n")
+        smessage = i18n("Are you sure?")
+
+        if len(willbeinstalled) != 0:
+            qmessage += imessage
+            for i in range(len(willbeinstalled)):
+                qmessage += willbeinstalled[i] + " "
+                if i%5 == 0:
+                    qmessage += "\n"
+
+        if len(willberemoved) != 0:
+            qmessage += rmessage
+            for i in range(len(willberemoved)):
+                qmessage += willberemoved[i] + " "
+                if i%5 == 0:
+                    qmessage += "\n"
+
+        qmessage += "\n" + smessage
+
         if not self.command.inProgress():
             if 0 == QMessageBox.question(self, i18n("Warning"), \
-                    message, i18n("Continue"), i18n("Cancel")):
+                    qmessage, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
                 self.command.takeBack(operation)
 
@@ -202,8 +215,9 @@ class widgetMain(formMain):
             # need this while updating gui after an operation
             if operation.no > self.latest:
                 self.latest = operation.no
-            if self.snapshotsCheckBox.isChecked():
-                if item.getType() != 'snapshot':
+            # not "All Operations"
+            if self.comboBox.currentItem() != 0:
+                if (item.getTypeInt() != self.comboBox.currentItem()):
                     item.setVisible(False)
 
     def addLast(self):
@@ -256,47 +270,63 @@ class widgetMain(formMain):
             # another signal, unhandled
             print "another operation here", operation
 
+    def comboItemChanged(self, num):
+        self.showOperations()
+        self.showOperations(num)
+
     def itemChanged(self, item):
         """ triggered when a listviewitem is changed """
         self.previous = self.selected or item
         self.selected = item
         self.restorePushButton.setEnabled(True)
+        self.pageChanged(self.comboBox.currentItem())
 
-    def tabChanged(self, parent):
-        """ when tab widget changes, shows info of selected listitem """
-        if(self.tabWidget.indexOf(parent) == 0):
+    def pageChanged(self, num):
+        """ when toolbox pages change, this function is called """
+        if self.selected == None:
+            self.detailsTextLabel.setText(i18n("Select an entry to view details"))
+            self.planTextLabel.setText(i18n("Select an entry to view details"))
             return
-        if(self.selected == None):
-            self.infoTextEdit.setText(i18n("Select an entry to view details"))
-            return
+        self.noLabel.setText(i18n("No: <b>%1</b>").arg(self.selected.getOpNo()))
+        self.typeLabel.setText(i18n("Type: <b>%1</b>").arg(self.selected.getType()))
+        information = ""
 
-        self.infoTextEdit.clear()
+        self.detailsTextLabel.clear()
+        self.planTextLabel.clear()
 
-        # weird information strings
-        information = i18n("<b>Operation Date : </b>%1 %2<br><b>Operation Type : </b>%3<br>")\
-                      .arg(self.selected.getDate()).arg(self.selected.getTime()).arg(self.selected.getType())
-
-        # FIXME show packages and configuration files in a snapshot
         if self.selected.getType() == 'snapshot':
-            information += i18n("There are <b>%1</b> packages in this snapshot").arg(self.selected.getNumPackages())
-            self.infoTextEdit.setText(information)
+            information += i18n("There are <b>%1</b> packages in this snapshot")\
+                        .arg(self.selected.getNumPackages())
+            # configuration files in a snapshot
+            configs = self.historydb.get_config_files(self.selected.getOpNo())
+            if len(configs) != 0:
+                information += "<br>" + i18n("Configuration files in snapshot:")
+                for i in configs.keys():
+                    information += "<br><b>" + i + "</b><br>"
+                    for j in configs.get(i):
+                        information += j
+                        #information += j.split(PisiIface.get_history_dir() + '/'\
+                        #        + self.selected.getOpNo() + '/' + i)[-1]
+            self.detailsTextLabel.setText(information)
             return
 
         for package in self.selected.op_pack:
-            information += "%s %s" % (package.__str__(), "<br>")
+            information += "%s <br>" % package.__str__()
 
-        self.infoTextEdit.setText(information)
+        self.detailsTextLabel.setText(information)
 
-    def onlySnapshots(self, var):
-        """ Shows only snapshots if var is True, else shows all history """
+    def showOperations(self, operation=None):
+        """ Shows only operation, or all history if operation is None """
         it = QListViewItemIterator(self.snapshotsListView)
         itm = it.current()
         while itm:
-            if itm.op_type != 'snapshot':
-                if var:
+            if operation:
+                if itm.getTypeInt() != int(operation):
                     itm.setVisible(False)
                 else:
                     itm.setVisible(True)
+            else:
+                itm.setVisible(True)
             it += 1
             itm = it.current()
 
@@ -358,21 +388,26 @@ class widgetItem(QListViewItem):
         self.op_time = operation.time
         self.op_pack = operation.packages
         self.op_tag = operation.tag
+        self.op_type_int = 0
 
-        self.setText(1, str(self.op_no))
-        self.setText(2, "%s %s" % (self.op_date, self.op_time))
-        self.setText(3, self.op_type)
+        self.setText(1, "%s %s" % (self.op_date, self.op_time))
 
+        # op_type_int = 0 -> All Operations
         if self.op_type == 'snapshot':
             self.setPixmap(0, loadIcon("snapshot", KIcon.Small))
+            self.op_type_int = 1
         elif self.op_type == 'upgrade':
             self.setPixmap(0, loadIcon("upgrade", KIcon.Small))
+            self.op_type_int = 2
         elif self.op_type == 'remove':
             self.setPixmap(0, loadIcon("remove", KIcon.Small))
+            self.op_type_int = 3
         elif self.op_type == 'install':
             self.setPixmap(0, loadIcon("install", KIcon.Small))
+            self.op_type_int = 4
         elif self.op_type == 'takeback':
             self.setPixmap(0, loadIcon("takeback", KIcon.Small))
+            self.op_type_int = 5
 
     def getNumPackages(self):
         return len(self.op_pack)
@@ -388,4 +423,7 @@ class widgetItem(QListViewItem):
 
     def getType(self):
         return self.op_type
+
+    def getTypeInt(self):
+        return self.op_type_int
 
