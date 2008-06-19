@@ -122,7 +122,7 @@ class CallHandler:
     
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        iface.ObtainAuthorization(self.action, self.window, os.getpid(), reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError)
+        iface.ObtainAuthorization(self.action, self.window, os.getpid(), reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError, timeout=2**16-1)
     
     def __handleAuthReply(self, granted):
         if granted:
