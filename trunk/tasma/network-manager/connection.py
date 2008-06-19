@@ -327,10 +327,12 @@ class Settings(QWidget):
         
         lab = QLabel(i18n("Net mask:"), self)
         grid.addWidget(lab, row, 1, Qt.AlignRight)
-        self.netmask = QComboBox(self)
+        self.netmask = QComboBox(True, self)
+        self.netmask.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.netmask))
         self.netmask.insertItem("255.0.0.0")
         self.netmask.insertItem("255.255.0.0")
         self.netmask.insertItem("255.255.255.0")
+        self.netmask.setCurrentText("")
         grid.addWidget(self.netmask, row, 2)
         row += 1
         
@@ -555,15 +557,15 @@ class Settings(QWidget):
                 cl = int(addr.split(".", 1)[0])
             except:
                 cl = 0
-            m = unicode(mask.text())
+            m = unicode(mask.currentText())
             if not self.maskOK(m):
                 return
             if cl > 0 and cl < 127:
-                mask.setText("255.0.0.0")
+                mask.setCurrentText("255.0.0.0")
             elif cl > 127 and cl < 192:
-                mask.setText("255.255.0.0")
+                mask.setCurrentText("255.255.0.0")
             elif cl > 191 and cl < 224:
-                mask.setText("255.255.255.0")
+                mask.setCurrentText("255.255.255.0")
 
 
 class Window(QMainWindow):
