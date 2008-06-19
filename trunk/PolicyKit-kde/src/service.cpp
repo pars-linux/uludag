@@ -688,7 +688,6 @@ void PolicyService::obtainAuthorization(const QString& actionId, const uint wid,
             break;
         }
 
-        delete m_dialog;
     }
 
     if (m_grant)
