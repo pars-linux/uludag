@@ -324,8 +324,10 @@ class Settings(QWidget):
         
         lab = QLabel(i18n("Net mask:"), self)
         grid.addWidget(lab, row, 1, Qt.AlignRight)
-        self.netmask = QLineEdit(self)
-        self.netmask.setValidator(QRegExpValidator(QRegExp("[0123456789.:]*"), self.netmask))
+        self.netmask = QComboBox(self)
+        self.netmask.insertItem("255.0.0.0")
+        self.netmask.insertItem("255.255.0.0")
+        self.netmask.insertItem("255.255.255.0")
         grid.addWidget(self.netmask, row, 2)
         row += 1
         
@@ -378,7 +380,7 @@ class Settings(QWidget):
                     if conn.net_addr:
                         self.address.setText(conn.net_addr)
                     if conn.net_mask:
-                        self.netmask.setText(conn.net_mask)
+                        self.netmask.setCurrentText(conn.net_mask)
                     if conn.net_gate:
                         self.gateway.setText(conn.net_gate)
                 if conn.dns_mode == "default":
@@ -425,7 +427,7 @@ class Settings(QWidget):
             if "net" in self.link.modes:
                 # set address
                 address = str(self.address.text())
-                netmask = str(self.netmask.text())
+                netmask = str(self.netmask.currentText())
                 gateway = str(self.gateway.text())
                 if self.r1.isChecked():
                     mode = "auto"
