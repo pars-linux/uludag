@@ -1,42 +1,39 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of tr.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the net-kga package.
-# Gürer Özen <gurer@uludag.org.tr>, 2005.
 #
+# Gürer Özen <gurer@uludag.org.tr>, 2005.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: net-kga 0.3\n"
+"Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-28 10:59+0300\n"
-"PO-Revision-Date: 2005-12-19 20:02+0200\n"
-"Last-Translator: Gürer Özen <gurer@uludag.org.tr>\n"
-"Language-Team: tr <tr@li.org>\n"
+"PO-Revision-Date: 2008-06-20 10:17+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: comariface.py:227
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR Hatası"
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Waiting DBus..."
-msgstr "ÇOMAR Bekleniyor..."
+msgstr "DBus Bekleniyor..."
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "ÇOMAR bağlantısı kesildi, yeniden bağlanmayı deniyorum..."
+msgstr "DBus bağlantısı sonlandı, tekrar bağlanılıyor..."
 
 #: comariface.py:248 network-applet.py:191
-#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
-msgstr ""
-"ÇOMAR bağlantısı sağlanamadı! Eğer çalışmıyorsa bir yetkili kullanıcı "
-"konsolu açıp 'service comar start' komutu ile çalıştırın."
+msgstr "DBus hizmetine bağlanılamadı! Eğer bu hizmet çalışmıyorsa, bir root konsolunda 'service dbus start' komutunu vererek hizmeti başlatın."
 
 #: comariface.py:406
 msgid "new connection"
@@ -49,7 +46,7 @@ msgstr "Ağ Yöneticisi"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr ""
+msgstr "Taranıyor..."
 
 #: autoswitch.py:80
 #, python-format
@@ -339,8 +336,3 @@ msgstr "İsim Sunucusu Ekle"
 msgid "Name server:"
 msgstr "İsim sunucusu:"
 
-#~ msgid "You are not allowed to change network settings."
-#~ msgstr "Ağ ayarlarını değiştirme izniniz yok."
-
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "<b>%s</b> profiline bağlandı"
