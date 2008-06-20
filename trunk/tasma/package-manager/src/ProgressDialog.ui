@@ -8,90 +8,35 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>571</width>
-            <height>231</height>
+            <width>542</width>
+            <height>264</height>
         </rect>
     </property>
     <property name="sizePolicy">
         <sizepolicy>
-            <hsizetype>0</hsizetype>
+            <hsizetype>3</hsizetype>
             <vsizetype>5</vsizetype>
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
     <property name="caption">
-        <string>Progress</string>
-    </property>
-    <property name="modal">
-        <bool>true</bool>
+        <string>Form1</string>
     </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
+        <widget class="QProgressBar" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout14</cstring>
+                <cstring>progressBar</cstring>
             </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <property name="spacing">
-                    <number>2</number>
-                </property>
-                <spacer row="0" column="2">
-                    <property name="name">
-                        <cstring>spacer10</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>135</width>
-                            <height>16</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QLabel" row="0" column="4">
-                    <property name="name">
-                        <cstring>packageInfo</cstring>
-                    </property>
-                    <property name="text">
-                        <string>-- / --  package</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignVCenter|AlignRight</set>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="1">
-                    <property name="name">
-                        <cstring>totalInfo</cstring>
-                    </property>
-                    <property name="text">
-                        <string>downloaded (total: -- )</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignVCenter|AlignLeft</set>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0">
-                    <property name="name">
-                        <cstring>completedInfo</cstring>
-                    </property>
-                    <property name="text">
-                        <string>--</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignVCenter|AlignLeft</set>
-                    </property>
-                </widget>
-            </grid>
+            <property name="minimumSize">
+                <size>
+                    <width>420</width>
+                    <height>35</height>
+                </size>
+            </property>
         </widget>
         <widget class="QLayoutWidget" row="5" column="0" rowspan="1" colspan="2">
             <property name="name">
@@ -107,6 +52,9 @@
                     </property>
                     <property name="text">
                         <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
                     </property>
                 </widget>
                 <spacer row="0" column="0">
@@ -128,7 +76,45 @@
                 </spacer>
             </grid>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="4" colspan="1">
+        <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>completedInfo</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>&lt;p align="center"&gt;&lt;b&gt;490.35 KB of 12.83 MB, 38.2 KB/sec&lt;/b&gt;&lt;/p&gt;</string>
+            </property>
+            <property name="alignment">
+                <set>WordBreak|AlignVCenter|AlignLeft</set>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>currentOperationLabel</cstring>
+            </property>
+            <property name="minimumSize">
+                <size>
+                    <width>300</width>
+                    <height>0</height>
+                </size>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>&lt;h3&gt;Preparing PiSi...&lt;/h3&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="1" rowspan="3" colspan="1">
             <property name="name">
                 <cstring>animeLabel</cstring>
             </property>
@@ -153,35 +139,175 @@
                 <bool>false</bool>
             </property>
         </widget>
-        <widget class="QProgressBar" row="3" column="1">
+        <widget class="QLayoutWidget" row="2" column="0">
             <property name="name">
-                <cstring>progressBar</cstring>
+                <cstring>layout3</cstring>
             </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer row="2" column="2">
+                    <property name="name">
+                        <cstring>spacer25</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>90</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel" row="0" column="1">
+                    <property name="name">
+                        <cstring>packageName</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>3</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>amsn</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>completedInfo_3</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>3</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>&lt;b&gt;Time remaining:&lt;/b&gt;</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignLeft</set>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="1">
+                    <property name="name">
+                        <cstring>packageInfo</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>3</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>2 of 20 packages installed.</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="1">
+                    <property name="name">
+                        <cstring>timeRemaning</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>3</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>01:29</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>completedInfo_3_2_2</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>3</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>&lt;b&gt;Package:&lt;/b&gt;</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter|AlignLeft</set>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>completedInfo_3_2</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>3</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>&lt;b&gt;Status:&lt;/b&gt;</string>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter|AlignLeft</set>
+                    </property>
+                </widget>
+                <spacer row="0" column="2">
+                    <property name="name">
+                        <cstring>spacer5</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>80</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="2">
+                    <property name="name">
+                        <cstring>spacer24</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>90</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+            </grid>
         </widget>
-        <widget class="QLabel" row="0" column="1">
+        <spacer row="1" column="0">
             <property name="name">
-                <cstring>currentOperationLabel</cstring>
-            </property>
-            <property name="font">
-                <font>
-                    <pointsize>12</pointsize>
-                </font>
-            </property>
-            <property name="text">
-                <string>&lt;h3&gt;Preparing PiSi...&lt;/h3&gt;</string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="2" column="1">
-            <property name="name">
-                <cstring>operationDescription</cstring>
-            </property>
-            <property name="text">
-                <string>Now installing &lt;b&gt;amsn&lt;/b&gt; package</string>
-            </property>
-        </widget>
-        <spacer row="1" column="1">
-            <property name="name">
-                <cstring>spacer11_2</cstring>
+                <cstring>spacer6</cstring>
             </property>
             <property name="orientation">
                 <enum>Vertical</enum>
@@ -191,15 +317,12 @@
             </property>
             <property name="sizeHint">
                 <size>
-                    <width>16</width>
+                    <width>21</width>
                     <height>21</height>
                 </size>
             </property>
         </spacer>
     </grid>
 </widget>
-<layoutdefaults spacing="9" margin="11"/>
-<includehints>
-    <includehint>kpushbutton.h</includehint>
-</includehints>
+<layoutdefaults spacing="6" margin="11"/>
 </UI>
