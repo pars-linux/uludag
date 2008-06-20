@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 20:10+0300\n"
-"PO-Revision-Date: 2008-06-18 18:42-0400\n"
+"PO-Revision-Date: 2008-06-19 21:47-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgid ""
 "lost !"
 msgstr ""
 "Esta opción utilizará el disco entero. Se eliminará el contenido de todo el "
-"disco y los datos actualmente alacenados se perderán !"
+"disco y los datos actualmente almacenados se perderán !"
 
 #: yali4/gui/Ui/autopartwidget.py:108
 msgid "No, I'll partition my disk manually."
@@ -187,7 +187,7 @@ msgid "Install to Pardus installed partition"
 msgstr "Instalar en partición raíz (/) de Pardus"
 
 # when writing the english you seemed very romantic ? ;)
-# should say "below" in english !! - "belove" sounds funny
+# should say "BELOW" in english !! - "belove" sounds funny
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Install to selected disk belove"
 msgstr "Instalar a disco seleccionado abajo"
@@ -270,7 +270,6 @@ msgstr ""
 msgid "Installing Package: "
 msgstr "Instalando Paquete:"
 
-# Seleccione la distribución de su teclado.
 #: yali4/gui/Ui/keyboardwidget.py:60
 msgid "Select the keyboard layout of your choice."
 msgstr "Seleccione la distribución de su teclado."
@@ -297,7 +296,6 @@ msgstr "Detalles acerca de la pantalla"
 msgid "Release Notes"
 msgstr "Notas de Versión"
 
-# favor verificar si se usa así
 #: yali4/gui/Ui/main.py:445
 msgid "Toggle Help"
 msgstr "Mostrar/ocultar Ayuda"
@@ -338,14 +336,13 @@ msgstr "Eliminar Partición"
 msgid "Resize Partition"
 msgstr "Redimensionar Partición"
 
-# please verify is this a column header ? favor revisar
 #: yali4/gui/Ui/partedit.py:149
 msgid "Use :"
-msgstr "Usado:"
+msgstr "Usado para :"
 
 #: yali4/gui/Ui/partedit.py:150
 msgid "Size :"
-msgstr "Tamaño:"
+msgstr "Tamaño :"
 
 #: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:87
 msgid " MB"
@@ -477,7 +474,7 @@ msgstr "Contraseña:"
 
 #: yali4/gui/Ui/setupuserswidget.py:157
 msgid "Password (again):"
-msgstr "Contraseña (repetir):"
+msgstr "Repetir Contraseña:"
 
 #: yali4/gui/Ui/setupuserswidget.py:158 yali4/gui/ScrUsers.py:187
 msgid "Create User"
@@ -517,12 +514,10 @@ msgstr ""
 "GNU/GPL. Otros software tienen sus licencias respectivas. Al instalar o usar "
 "Pardus, está tomando la decisión de aceptarlos. Desea continuar ?"
 
-# Leer Licencia GPL
 #: yali4/gui/Ui/welcomewidget.py:92
 msgid "Read GPL"
 msgstr "Leer Licencia GPL"
 
-# cambiar "rebootear" por "reiniciar"
 #: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:159
 msgid "Reboot System!"
 msgstr "Reiniciar Sistema!"
@@ -545,8 +540,8 @@ msgid ""
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
-"Bienvenido! Nuestro asistente de instalación YALI. YALI le ayudará instalar "
-"Pardus 2008 de manera rápida y sencilla seguido del particionamiento de disco"
+"Bienvenido! Nuestro asistente de instalación YALI le ayudará instalar "
+"Pardus 2008 de manera rápida y sencilla, seguido del particionamiento de disco"
 "(s) con la herramienta inteligente de particionamiento.\n"
 
 #: yali4/gui/descSlide.py:20
@@ -557,7 +552,7 @@ msgid ""
 msgstr ""
 "Nuestro asistente Kaptan le guiará una vez finalizada la instalación. Con "
 "Kaptan puede agregar fácilmente repositorios de programas adicionales y "
-"establecerconfiguraciones básicas como el ratón, acceso a internet, fondo de "
+"establecer configuraciones básicas como el ratón, acceso a internet, fondo de "
 "pantalla y barras de menu y de tareas del escritorio.\n"
 
 #: yali4/gui/descSlide.py:22
@@ -581,7 +576,7 @@ msgid ""
 msgstr ""
 "Hay miles de paquetes de software en los repositorios de Pardus. Puede "
 "instalar, remover o actualizar estos paquetes y programas sencillamente con "
-"dos clics usando el administrador de paquetes!\n"
+"pocos clics usando el administrador de paquetes!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -590,7 +585,7 @@ msgid ""
 "reconnect to cable or wireless connections used before, remembering the "
 "settings used.\n"
 msgstr ""
-"El applet de red ayuda conectar a redes locales e internet de manera "
+"La miniaplicación (applet) de red ayuda conectar a redes locales e internet de manera "
 "sencilla y segura. Gracias a un soporte de perfiles le simplifica volver a "
 "conectarse a conexiones de cable o inalambricas, recordando las "
 "configuraciones previas.\n"
@@ -657,7 +652,7 @@ msgid ""
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
 msgstr ""
-"Kaffeine es el reproductor de video en Pardus 2008 por defecto. Tiene un "
+"Kaffeine es el reproductor predeterminado de video en Pardus 2008. Tiene un "
 "alto rendimiento en la reproduccion de DVDs, VCDs, y una serie de formatos "
 "de video, incluyendo, pero no limitado a, MPEG, AVI y DivX. Si posee una "
 "tarjeta de TV digital puede grabar sus programas favoritos con Kaffeine!\n"
@@ -698,19 +693,19 @@ msgstr ""
 # cambiar "mandatorio" por requerido
 #: yali4/gui/DiskWidgets.py:77
 msgid "as Pardus System Files (mandatory)"
-msgstr "como archivos del Sistema Pardus (requerido)"
+msgstr "raíz (/) del Sistema (requerido)"
 
 #: yali4/gui/DiskWidgets.py:78
 msgid "as User Files (optional)"
-msgstr "como archivos de los usuarios (opcional)"
+msgstr "archivos de los usuarios (opcional)"
 
 #: yali4/gui/DiskWidgets.py:79
 msgid "as Swap Space (optional)"
-msgstr "como espacio de intercambio Swap (opcional)"
+msgstr "espacio de intercambio Swap (opcional)"
 
 #: yali4/gui/DiskWidgets.py:80
 msgid "as Storage Area"
-msgstr "como área de almacenamiento"
+msgstr "área de almacenamiento"
 
 #: yali4/gui/DiskWidgets.py:93
 msgid "Manuel Partitioning selected."
@@ -1013,6 +1008,7 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
+# favor revisar, suena raro, porque hay un solo cd para verificar !!
 msgid "Check your media"
 msgstr "Verifique sus discos"
 
@@ -1069,8 +1065,11 @@ msgstr ""
 "luego de realizar los ajustes pertinentes.</p></font>\n"
 
 #: yali4/gui/ScrGoodbye.py:45
+# i had problem with the length of this translated string in pardus 2008rc2
+# i couldn't reach the "next" button any more
+# so now i shortened the message
 msgid "Goodbye from YALI"
-msgstr "YALI terminó de instalar Pardus Linux en su equipo"
+msgstr "YALI finalizó la instalación"
 
 #: yali4/gui/ScrGoodbye.py:46
 msgid "Enjoy your fresh Pardus !.."
@@ -1141,11 +1140,8 @@ msgstr "Instalando el sistema.."
 
 #: yali4/gui/ScrInstall.py:57
 msgid "Installing approximately 30 minutes depending on hardware.."
-msgstr "Instalación dura approx. 30 minutos, dependiendo del equipo.."
+msgstr "Instalación tarda ca. 30 minutos, dependiendo del equipo.."
 
-# Ahora se está instalando Pardus en el disco rígido.
-# ...
-# quitar  "y velocidad"
 #: yali4/gui/ScrInstall.py:59
 msgid ""
 "\n"
@@ -1338,7 +1334,6 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-# cambiar "no tiene" por "no dispone"
 #: yali4/gui/ScrPartitionAuto.py:78
 #, python-format
 msgid ""
@@ -1473,7 +1468,7 @@ msgstr "Nombre de la Máquina (hostname)"
 #: yali4/gui/ScrSummary.py:124
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
-msgstr "Nombre de la máquina (hostname) <b>%s</b>"
+msgstr "Nombre de la Máquina (hostname) <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:129
 msgid "Partition Settings"
@@ -1481,7 +1476,7 @@ msgstr "Configuración de Particiones"
 
 #: yali4/gui/ScrSummary.py:131
 msgid "Automatic Partitioning selected."
-msgstr "Particionamiento automático seleccionado !"
+msgstr "Particionamiento automático seleccionado."
 
 #: yali4/gui/ScrSummary.py:145
 msgid "Automatic Partitioning (resize method) selected."
