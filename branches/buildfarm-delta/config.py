@@ -27,5 +27,5 @@ ccList           = ["paketler-commits@pardus.org.tr"]
 #ccList           = ["ekin@pardus.org.tr"]
 smtpServer       = "mail.pardus.org.tr"
 useSmtpAuth      = True
-smtpUser         = "pardus"
-smtpPassword     = "32llkopZaxq24"
+smtpUser         = ""
+smtpPassword     = ""
