@@ -160,7 +160,11 @@ class NotificationDisplayer:
 				gridsize = int(ceil(notification.buttons.__len__() ** 0.5))
 
 				for i in range(notification.buttons.__len__()):
-					self.buttons.append(QtGui.QPushButton(notification.buttons[i], self.inner_frame))
+					# Create a button with the desired text:
+					self.buttons.append(QtGui.QPushButton(notification.buttons[i][0], self.inner_frame))
+					# If an icon path is provided in the notification, assign an icon to the button:
+					if notification.buttons[i][1] != None:
+						self.buttons[i].setIcon(QtGui.QIcon(notification.buttons[i][1]))
 					self.gridlayout2.addWidget(self.buttons[i], i / gridsize, i % gridsize, 1, 1)
 					# Attach their signal handlers too:
 					QtCore.QObject.connect(self.buttons[i], QtCore.SIGNAL("clicked()"), (lambda(i_bound): lambda : self.Respond(i_bound))(i))

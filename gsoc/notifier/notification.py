@@ -22,8 +22,8 @@ class Notification:
 	def SetNotificationIcon(self, new_icon_path):
 		self.notification_icon_path = new_icon_path
 	
-	def AddButton(self, button):
-		self.buttons.append(button)
+	def AddButton(self, button_text, icon_path = None):
+		self.buttons.append((button_text, icon_path))
 
 	# The following methods are not intended for use by the users of this software.
 	# They are used by the Notifier, NotificationManager and NotificationDisplayer implementations.
@@ -34,7 +34,10 @@ class Notification:
 		self.notification_text = self.notification_text.encode("utf-8")
 		self.notification_icon_path = self.notification_icon_path.encode("utf-8")
 		for i in range(self.buttons.__len__()):
-			self.buttons[i] = self.buttons[i].encode("utf-8")
+			if self.buttons[i][1] != None:
+				self.buttons[i] = (self.buttons[i][0].encode("utf-8"), self.buttons[i][1].encode("utf-8"))
+			else:
+				self.buttons[i] = (self.buttons[i][0].encode("utf-8"), None)
 
 	def Unpack(self):
 		# Convert the text back to its natural encoding:
@@ -42,7 +45,10 @@ class Notification:
 		self.notification_text = self.notification_text.decode("utf-8")
 		self.notification_icon_path = self.notification_icon_path.decode("utf-8")
 		for i in range(self.buttons.__len__()):
-			self.buttons[i] = self.buttons[i].decode("utf-8")
+			if self.buttons[i][1] != None:
+				self.buttons[i] = (self.buttons[i][0].decode("utf-8"), self.buttons[i][1].decode("utf-8"))
+			else:
+				self.buttons[i] = (self.buttons[i][0].decode("utf-8"), None)
 
 	def SetReporterCallable(self, callable, notification_response):
 		self.reporter = callable
