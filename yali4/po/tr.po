@@ -762,7 +762,7 @@ msgid ""
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(device)s</b> diskine <b>%(size)s MB</"
-"b>boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
+"b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
 #: yali4/gui/DiskWidgets.py:407
 msgid "Delete All Partitions"
@@ -1427,7 +1427,7 @@ msgid ""
 "with <b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
 "Disk bölümü <b>%(newPartition)s</b>, <b>%(device)s</b> diskine <b>%(size)s MB</"
-"b>boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
+"b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
 #: yali4/gui/ScrSummary.py:166
 #, python-format
