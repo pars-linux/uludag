@@ -29,7 +29,7 @@ import yali4.gui.context as ctx
 # Keyboard setup screen
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Set your keyboard layout')
-    desc = _('Use your keyboard layout..')
+    desc = _('Use your keyboard layout...')
     icon = "iconKeyboard"
     help = _('''
 <font size="+2">Keyboard Setup</font>

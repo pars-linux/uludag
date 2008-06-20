@@ -30,7 +30,7 @@ from yali4.gui.YaliDialog import Dialog, WarningDialog, WarningWidget
 # Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Set Users')
-    desc = _('Create users to use Pardus..')
+    desc = _('Create users to use Pardus...')
     icon = "iconUser"
     help = _('''
 <font size="+2">User setup</font>

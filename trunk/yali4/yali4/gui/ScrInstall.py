@@ -53,8 +53,8 @@ def iter_slide_pics():
 ##
 # Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = _('Installing system..')
-    desc = _('Installing approximately 30 minutes depending on hardware..')
+    title = _('Installing system...')
+    desc = _('Installing approximately 30 minutes depending on hardware...')
     icon = "iconInstall"
     help = _('''
 <font size="+2">Installation started</font>

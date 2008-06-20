@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-18 20:10+0300\n"
+"POT-Creation-Date: 2008-06-20 13:36+0300\n"
 "PO-Revision-Date: 2007-11-12 20:52+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -767,7 +767,7 @@ msgid "Set Administrator"
 msgstr "Password amministratore di sistema:"
 
 #: yali4/gui/ScrAdmin.py:31
-msgid "Admins has important rights on the system.."
+msgid "Admins has important rights on the system..."
 msgstr ""
 
 #: yali4/gui/ScrAdmin.py:33
@@ -828,7 +828,7 @@ msgid "Bootloader Choice"
 msgstr ""
 
 #: yali4/gui/ScrBootloader.py:37
-msgid "Configure the system boot.."
+msgid "Configure the system boot..."
 msgstr ""
 
 #: yali4/gui/ScrBootloader.py:39
@@ -882,7 +882,7 @@ msgid "Check your media"
 msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:30
-msgid "To ignore media corruptions you can check your media integrity.."
+msgid "To ignore media corruptions you can check your media integrity..."
 msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:32
@@ -905,7 +905,7 @@ msgid "Set your timezone"
 msgstr ""
 
 #: yali4/gui/ScrDateTime.py:28
-msgid "You can change your timezone, time or date settings.."
+msgid "You can change your timezone, time or date settings..."
 msgstr ""
 
 #: yali4/gui/ScrDateTime.py:30
@@ -932,7 +932,7 @@ msgid "Goodbye from YALI"
 msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:46
-msgid "Enjoy your fresh Pardus !.."
+msgid "Enjoy your fresh Pardus !..."
 msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:47
@@ -993,11 +993,11 @@ msgstr "Riavvia"
 
 #: yali4/gui/ScrInstall.py:56
 #, fuzzy
-msgid "Installing system.."
+msgid "Installing system..."
 msgstr "Installazione del sistema"
 
 #: yali4/gui/ScrInstall.py:57
-msgid "Installing approximately 30 minutes depending on hardware.."
+msgid "Installing approximately 30 minutes depending on hardware..."
 msgstr ""
 
 #: yali4/gui/ScrInstall.py:59
@@ -1093,7 +1093,7 @@ msgid "Kahya is working..."
 msgstr ""
 
 #: yali4/gui/ScrKahyaCheck.py:55
-msgid "Kahya will automatically install your system.."
+msgid "Kahya will automatically install your system..."
 msgstr ""
 
 #: yali4/gui/ScrKahyaCheck.py:56
@@ -1112,8 +1112,9 @@ msgid "Set your keyboard layout"
 msgstr "Scegli il layout della tastiera che desideri."
 
 #: yali4/gui/ScrKeyboard.py:32
-msgid "Use your keyboard layout.."
-msgstr ""
+#, fuzzy
+msgid "Use your keyboard layout..."
+msgstr "Scegli il layout della tastiera che desideri."
 
 #: yali4/gui/ScrKeyboard.py:34
 msgid ""
@@ -1134,8 +1135,9 @@ msgid "Choose Partitioning"
 msgstr "Crea partizione"
 
 #: yali4/gui/ScrPartitionAuto.py:39
-msgid "Auto or Manual partitioning.."
-msgstr ""
+#, fuzzy
+msgid "Auto or Manual partitioning..."
+msgstr "Crea partizione"
 
 #: yali4/gui/ScrPartitionAuto.py:41
 #, fuzzy
@@ -1201,7 +1203,7 @@ msgid "Manual Partitioning"
 msgstr "Crea partizione"
 
 #: yali4/gui/ScrPartitionManual.py:32
-msgid "You can easily configure your partitions.."
+msgid "You can easily configure your partitions..."
 msgstr ""
 
 #: yali4/gui/ScrPartitionManual.py:34
@@ -1231,7 +1233,7 @@ msgid "The last step before install"
 msgstr "Preparazione dell'installazione"
 
 #: yali4/gui/ScrSummary.py:43
-msgid "Summary of your installation.."
+msgid "Summary of your installation..."
 msgstr ""
 
 #: yali4/gui/ScrSummary.py:45
@@ -1376,7 +1378,7 @@ msgid "Set Users"
 msgstr "Nuovo utente"
 
 #: yali4/gui/ScrUsers.py:33
-msgid "Create users to use Pardus.."
+msgid "Create users to use Pardus..."
 msgstr ""
 
 #: yali4/gui/ScrUsers.py:35
@@ -1444,7 +1446,7 @@ msgstr ""
 
 #: yali4/gui/ScrWelcome.py:31
 #, fuzzy
-msgid "Welcome to the Pardus installer.."
+msgid "Welcome to the Pardus installer..."
 msgstr "Installa nella partizione sulla quale è installato Pardus"
 
 #: yali4/gui/ScrWelcome.py:32

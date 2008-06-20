@@ -25,7 +25,7 @@ from yali4.sysutils import TimeZoneList
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Set your timezone')
-    desc = _('You can change your timezone, time or date settings..')
+    desc = _('You can change your timezone, time or date settings...')
     icon = "iconDate"
     help = _('''
 <font size="+2">Time Zone settings</font>

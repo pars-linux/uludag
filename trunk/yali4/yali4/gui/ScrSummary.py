@@ -40,7 +40,7 @@ import yali4.gui.context as ctx
 # Summary screen
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('The last step before install')
-    desc = _('Summary of your installation..')
+    desc = _('Summary of your installation...')
     #icon = "iconKeyboard"
     help = _('''
 <font size="+2">Install Summary</font>
