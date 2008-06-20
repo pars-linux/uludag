@@ -1,3 +1,5 @@
+#ifndef NET_LINK_WIRELESS_TOOLS.PY
+#define NET_LINK_WIRELESS_TOOLS.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -347,18 +349,25 @@ class Dev:
                     notify("Net.Link", "stateChanged", (self.name, "inaccessible",  _(dhcp_fail_msg)))
                     fail("DHCP failed")
         elif self.device_mode == "ad-hoc":
+            subprocess.Popen(["/sbin/ifconfig", ifc.name, "up"], stdout=PIPE).communicate()
+            subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, self.mask], stdout=PIPE).communicate()
+            subprocess.Popen(["/sbin/iwconfig", ifc.name, "mode","ad-hoc"], stdout=PIPE).communicate()
+            notify("Net.Link","setConnectionMode",(self.name,"ad-hoc")).communicate()
+            subprocess.Popen(["/sbin/iwconfig","channel", "auto"]).communicate()
+            # ESS ID?
+            # KEY?
             pass
             """
-                # /sbin/ifconfig wmaster0 up  
-                # /sbin/ifconfig wmaster0 192.168.111.1 netmask 255.255.255.0  
-                # /sbin/iwconfig wmaster0 mode ad-hoc  
-                # /sbin/iwconfig wmaster0 key 6572747975  
-                # /sbin/iwconfig wmaster0 channel auto  
-                # /sbin/iwconfig wmaster0 essid ADHOC  
-                # make /etc/dhcp/dhcpd.conf
-                # Start DHCP
-                # notify("Net.Link", "stateChanged", (self.name, "up", addr))
-            """
+              +  # /sbin/ifconfig wmaster0 up  
+              +  # /sbin/ifconfig wmaster0 192.168.111.1 netmask 255.255.255.0 
+              +  # /sbin/iwconfig wmaster0 mode ad-hoc  
+                 # /sbin/iwconfig wmaster0 key 6572747975  
+              +  # /sbin/iwconfig wmaster0 channel auto  
+              +  # /sbin/iwconfig wmaster0 essid ADHOC  
+                 # make /etc/dhcp/dhcpd.conf
+                 # Start DHCP
+                 # notify("Net.Link", "stateChanged", (self.name, "up", addr))
+            """  # DHCP?
     
     def down(self):
         ifc = self.ifc
@@ -577,3 +586,4 @@ def kernelEvent(data):
                 if dev.state == "up":
                     notify("Net.Link", "stateChanged", (dev.name, "inaccessible", "Device removed"))
         notify("Net.Link", "deviceChanged", ("removed", "wifi", devname, ""))
+#endif // NET_LINK_WIRELESS_TOOLS.PY
