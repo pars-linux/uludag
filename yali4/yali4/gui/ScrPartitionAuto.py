@@ -36,7 +36,7 @@ from yali4.gui.installdata import *
 # Partition Choice Widget
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Choose Partitioning')
-    desc = _('Auto or Manual partitioning..')
+    desc = _('Auto or Manual partitioning...')
     icon = "iconPartition"
     help = _('''
 <font size="+2">Automatic Partitioning</font>

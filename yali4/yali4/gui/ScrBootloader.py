@@ -34,7 +34,7 @@ import yali4.gui.context as ctx
 # BootLoader screen.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Bootloader Choice')
-    desc = _('Configure the system boot..')
+    desc = _('Configure the system boot...')
     icon = "iconBootloader"
     help = _('''
 <font size="+2">Boot loader setup</font>
