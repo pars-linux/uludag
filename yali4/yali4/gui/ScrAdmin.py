@@ -77,7 +77,7 @@ Click Next button to proceed.
     def shown(self):
 
         if ctx.installData.hostName:
-            self.ui.hostname.setText(ctx.installData.hostName)
+            self.ui.hostname.setText(str(ctx.installData.hostName))
         else:
             try:
                 # Use first added user's name as machine name
