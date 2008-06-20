@@ -50,14 +50,18 @@ class autoSwitch:
                 if conn.devid not in devices:
                     devices.append(conn.devid)
                 profiles.append(conn)
-
+        
         # If there is no wi-fi device, go on
         if not profiles or not devices:
             return
         
+        # If already connected, go on
+        for profile in profiles:
+            if profile.state == "up":
+                return
+        
         self.notify(i18n("Scanning..."), SUCCESS)
         
-
         # Get current APs
         justEssIds = []
         justMacAddr = []
