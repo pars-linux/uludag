@@ -1,5 +1,3 @@
-#ifndef NET_LINK_WIRELESS_TOOLS.PY
-#define NET_LINK_WIRELESS_TOOLS.PY
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
@@ -37,6 +35,7 @@ wpa_fail_msg = {
 }
 
 no_supplicant_msg = {
+
     "en": "WPA supplicant not found",
     "tr": "WPA supplicant bulunamadı",
 }
@@ -352,10 +351,9 @@ class Dev:
             subprocess.Popen(["/sbin/ifconfig", ifc.name, "up"], stdout=PIPE).communicate()
             subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, self.mask], stdout=PIPE).communicate()
             subprocess.Popen(["/sbin/iwconfig", ifc.name, "mode","ad-hoc"], stdout=PIPE).communicate()
-            notify("Net.Link","setConnectionMode",(self.name,"ad-hoc")).communicate()
-            subprocess.Popen(["/sbin/iwconfig","channel", "auto"]).communicate()
-            # ESS ID?
-            # KEY?
+            subprocess.Popen(["/sbin/iwconfig", ifc.name, "key", self.password], stdout=PIPE).communicate()
+            subprocess.Popen(["/sbin/iwconfig", ifc.name, "essid", "staj2008"], stdout=PIPE).communicate()
+            subprocess.Popen(["/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=PIPE).communicate()
             pass
             """
               +  # /sbin/ifconfig wmaster0 up  
@@ -586,4 +584,3 @@ def kernelEvent(data):
                 if dev.state == "up":
                     notify("Net.Link", "stateChanged", (dev.name, "inaccessible", "Device removed"))
         notify("Net.Link", "deviceChanged", ("removed", "wifi", devname, ""))
-#endif // NET_LINK_WIRELESS_TOOLS.PY
