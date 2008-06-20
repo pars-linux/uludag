@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2008 TUBITAK/UEKAE
 # 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 #e-mail message templates for mailer module..
 
 error_message = """\
-From: Pardus Buildfarm <%(mailFrom)s>
+From: Pardus Buildfarm [2008] <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [buildfarm] %(type)s: %(subject)s
@@ -40,7 +40,7 @@ The last 20 lines of the log before the error happens is as follows:
 %(log)s
 --------------------------------------------------------------------------
 
-Log file: http://paketler.pardus.org.tr/logs/%(packagename)s.log
+Log file: http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log
 
 Happy hacking!
 
@@ -88,7 +88,7 @@ Content-Type: text/html;
 </div>
 
 <p>Log file: <a
-href="http://paketler.pardus.org.tr/logs/%(packagename)s.log">http://paketler.pardus.org.tr/logs/%(packagename)s.log</a>.
+href="http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log">http://paketler.pardus.org.tr/logs/2008/%(packagename)s.log</a>.
 
 <p>Happy hacking!<br>
 
@@ -96,7 +96,7 @@ href="http://paketler.pardus.org.tr/logs/%(packagename)s.log">http://paketler.pa
 """
 
 info_message = """\
-From: Pardus Buildfarm  <%(mailFrom)s>
+From: Pardus Buildfarm [2008] <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [buildfarm] %(subject)s
@@ -112,7 +112,7 @@ Happy hacking!
 """
 
 announce_message = """\
-From: Pardus Buildfarm  <%(mailFrom)s>
+From: Pardus Buildfarm [2008] <%(mailFrom)s>
 To: %(announceAddr)s
 Subject: [buildfarm] [REPORT] New packages in -testing repository
 Content-Type: text/plain;

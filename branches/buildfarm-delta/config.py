@@ -15,13 +15,17 @@ import os
 workDir          = "/var/pisi/"
 outputDir        = "/var/cache/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
-localPspecRepo   = "%s/2007" % os.getcwd()
+testPath         = "/var/cache/pisi/packages-test/"
+deltaPath        = "/var/cache/pisi/packages-delta/"
+localPspecRepo   = "/root/2008/"
 logFile          = "/var/cache/pisi/buildfarm.log"
 
 #information for mailer module.
 mailFrom         = "buildfarm@pardus.org.tr"
-ccList           = []
+announceAddr     = "gelistirici@pardus.org.tr"
+ccList           = ["paketler-commits@pardus.org.tr"]
+#ccList           = ["ekin@pardus.org.tr"]
 smtpServer       = "mail.pardus.org.tr"
-useSmtpAuth      = False
-smtpUser         = ""
-smtpPassword     = ""
+useSmtpAuth      = True
+smtpUser         = "pardus"
+smtpPassword     = "32llkopZaxq24"

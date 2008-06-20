@@ -12,6 +12,7 @@
 
 import sys
 import bz2
+import cPickle
 
 import piksemel
 
@@ -27,5 +28,15 @@ def parseRepoIndex(index):
     return [p.getTagData("PackageURI") for p in doc.tags("Package")]
 
 if __name__ == "__main__":
-    print "\n".join(parseRepoIndex(sys.argv[1]))
+    index = parseRepoIndex(sys.argv[1])
+    d = {}
+
+    for p in index:
+        name = p.rstrip(".pisi\n").rsplit("-", 3)[0]
+        d[name] = p
+
+    o = open("packages.db", "wb")
+    cPickle.Pickler(o, protocol=2)
+    cPickle.dump(d, o, protocol=2)
+    o.close()
 

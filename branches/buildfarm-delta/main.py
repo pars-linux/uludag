@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2008 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@ import shutil
 import traceback
 import cStringIO
 import exceptions
+import cPickle
 
 """ BuildFarm Modules """
 import config
@@ -44,11 +45,14 @@ def buildPackages():
     f = open("/var/run/buildfarm", 'w')
     f.close()
 
+    # Unpickle and load ISO package list here
+    isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
+
     logger.raw(_("QUEUE"))
     logger.info(_("Work Queue: %s") % (qmgr.workQueue))
     sortedQueue = qmgr.workQueue[:]
     sortedQueue.sort()
-    #mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
+    mailer.info(_("I'm starting to compile following packages:\n\n%s") % "\n".join(sortedQueue))
     logger.raw()
 
     for pspec in queue:
@@ -64,29 +68,28 @@ def buildPackages():
             )
         logger.raw()
 
-        # Create API Instance
-        pisi = pisiinterface.PisiApi(stdout=build_output, stderr=build_output, outputDir=config.workDir)
+        # This is here because farm captures the build output
+        pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = config.workDir)
         try:
             try:
-                # Build
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
 
                 # Delta package generation using delta interface
-                (deltasToInstall, deltaPackages) = pisi.delta(oldBinaryPackages, newBinaryPackages)
+                (deltasToInstall, deltaPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
 
                 if deltasToInstall:
                     packagesToInstall = deltasToInstall
                 else:
                     packagesToInstall = newBinaryPackages
 
-                # Merge the lists
+                # Merge the package lists
                 deltaPackages = deltaPackages + deltasToInstall
 
             except Exception, e:
                 qmgr.transferToWaitQueue(pspec)
                 errmsg = _("Error occured for '%s' in BUILD process:\n %s") % (pspec, e)
                 logger.error(errmsg)
-                #mailer.error(errmsg, pspec)
+                mailer.error(errmsg, pspec)
             else:
                 try:
                     for p in packagesToInstall:
@@ -96,7 +99,7 @@ def buildPackages():
                     qmgr.transferToWaitQueue(pspec)
                     errmsg = _("Error occured for '%s' in INSTALL process: %s") % (os.path.join(config.workDir, p), e)
                     logger.error(errmsg)
-                    #mailer.error(errmsg, pspec)
+                    mailer.error(errmsg, pspec)
 
                     newBinaryPackages.remove(p)
                     removeBinaryPackageFromWorkDir(p)
@@ -109,11 +112,12 @@ def buildPackages():
 
     logger.raw(_("QUEUE"))
     logger.info(_("Wait Queue: %s") % (qmgr.waitQueue))
-    """
     if qmgr.waitQueue:
         mailer.info(_("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository") % ("\n".join(qmgr.waitQueue), "\n".join(packageList)))
+        pass
     else:
         mailer.info(_("Queue finished without a problem!...\n\n\nNew binary packages are;\n\n%s\n\nnow in repository...") % "\n".join(packageList))
+        pass
     logger.raw()
 
     logger.raw()
@@ -125,7 +129,7 @@ def buildPackages():
     logger.info(_("PiSi Index generated..."))
 
     #FIXME: will be enableb after some internal tests
-    os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
+    #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
 
     # Check packages containing binaries and libraries broken by any package update
     os.system("/usr/bin/revdep-rebuild --force")
@@ -137,11 +141,10 @@ def buildPackages():
     os.chdir(current)
 
     # FIXME: Use fcntl.funlock
-    """
     os.unlink("/var/run/buildfarm")
 
 def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
-    # sanitize input
+    # normalize files to full paths
     try:
         newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
     except AttributeError:
@@ -167,31 +170,35 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
     copy   = shutil.copy
 
     def moveOldPackage(package):
-        logger.info(_("*** Old package '%s' is processing") % (package))
-        if exists(join(config.binaryPath, package)):
-            #FIXME: uncomment this on buildfarm machine, modify pisiinterface.py
-            #remove(join(config.binaryPath, package))
-            pass
+        logger.info(_("*** Moving old package '%s'") % (package))
+        if exists(join(config.testPath, package)):
+            # If an old build is found in testPath(/packages-test/)
+            # remove it because the test repo is unique.
+            remove(join(config.testPath, package))
 
+        # Cleanup workDir
         if exists(join(config.workDir, package)):
             remove(join(config.workDir, package))
 
     def moveNewPackage(package):
-        logger.info(_("*** New package '%s' is processing") % (package))
+        logger.info(_("*** Moving new package '%s'") % (package))
         if exists(join(config.workDir, package)):
+            # binaryPath : /var/cache/pisi/packages/
+            # testPath : /var/cache/pisi/packages-test/
             copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.testPath)
             remove(join(config.workDir, package))
 
     def moveUnchangedPackage(package):
-        logger.info(_("*** Unchanged package '%s' is processing") % (package))
+        logger.info(_("*** Moving unchanged package %s'") % (package))
         if exists(join(config.workDir, package)):
             copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
 
     def moveDeltaPackage(package):
-        logger.info(_("*** Delta package '%s' is processing") % (package))
+        logger.info(_("*** Moving delta package '%s'") % (package))
         if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.binaryPath)
+            copy(join(config.workDir, package), config.deltaPath)
             remove(join(config.workDir, package))
 
     for package in newPackages:
@@ -217,7 +224,9 @@ def removeBinaryPackageFromWorkDir(package):
 
 def create_directories():
     directories = [config.workDir,
+                   config.testPath,
                    config.binaryPath,
+                   config.deltaPath,
                    config.localPspecRepo,
                    config.outputDir]
 
