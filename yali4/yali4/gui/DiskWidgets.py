@@ -311,6 +311,9 @@ class DiskList(QtGui.QWidget):
                 partition.setFileSystemType(t.filesystem)
             try:
                 if self.partEdit.ui.formatCheck.isChecked():
+                    _sum = {"partition":partition.getName(),
+                            "fsType":t.filesystem._name}
+                    ctx.partSum.append(_("Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>.") % _sum)
                     ctx.partrequests.append(request.FormatRequest(partition, t))
                 else:
                     # remove previous format requests for partition (if there are any)
