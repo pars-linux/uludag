@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-20 13:36+0300\n"
-"PO-Revision-Date: 2008-06-18 19:42+0200\n"
+"PO-Revision-Date: 2008-06-21 17:45+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -88,8 +88,7 @@ msgstr ""
 "Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
@@ -118,13 +117,11 @@ msgstr "Mit dieser Option können Sie manuell partitionieren"
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
+msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -863,9 +860,8 @@ msgid "Set Administrator"
 msgstr "Administrator festlegen"
 
 #: yali4/gui/ScrAdmin.py:31
-#, fuzzy
 msgid "Admins has important rights on the system..."
-msgstr "Administratoren haben auf dem System wichtige Rechte.."
+msgstr "Administratoren haben auf dem System wichtige Rechte..."
 
 #: yali4/gui/ScrAdmin.py:33
 msgid ""
@@ -951,9 +947,8 @@ msgid "Bootloader Choice"
 msgstr "Boot-Loaderauswahl"
 
 #: yali4/gui/ScrBootloader.py:37
-#, fuzzy
 msgid "Configure the system boot..."
-msgstr "Systemstart wird konfiguriert.."
+msgstr "Systemstart wird konfiguriert..."
 
 #: yali4/gui/ScrBootloader.py:39
 msgid ""
@@ -1006,10 +1001,8 @@ msgid "Check your media"
 msgstr "Überprüfen Sie Ihre Medien"
 
 #: yali4/gui/ScrCheckCD.py:30
-#, fuzzy
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr ""
-"Um Medien-Fehler zu vermeiden, können Sie Ihre Medien-Integrität überprüfen.."
+msgstr "Um Medien-Fehler zu vermeiden, können Sie Ihre Medien-Integrität überprüfen..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1042,9 +1035,8 @@ msgid "Set your timezone"
 msgstr "Stellen Sie Ihre Zeitzone ein"
 
 #: yali4/gui/ScrDateTime.py:28
-#, fuzzy
 msgid "You can change your timezone, time or date settings..."
-msgstr "Sie können Ihre Zeitzone, Zeit- oder Datumseinstellungen ändern.."
+msgstr "Sie können Ihre Zeitzone, Zeit- oder Datumseinstellungen ändern..."
 
 #: yali4/gui/ScrDateTime.py:30
 msgid ""
@@ -1067,9 +1059,8 @@ msgid "Goodbye from YALI"
 msgstr "Abschied von YALI"
 
 #: yali4/gui/ScrGoodbye.py:46
-#, fuzzy
 msgid "Enjoy your fresh Pardus !..."
-msgstr "Viel Spass mit Pardus!.."
+msgstr "Viel Spass mit Pardus!..."
 
 #: yali4/gui/ScrGoodbye.py:47
 msgid ""
@@ -1129,15 +1120,12 @@ msgid "Reboot"
 msgstr "Neustarten"
 
 #: yali4/gui/ScrInstall.py:56
-#, fuzzy
 msgid "Installing system..."
 msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
-#, fuzzy
 msgid "Installing approximately 30 minutes depending on hardware..."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware.."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -1228,9 +1216,8 @@ msgid "Kahya is working..."
 msgstr "Kahya ist am arbeiten..."
 
 #: yali4/gui/ScrKahyaCheck.py:55
-#, fuzzy
 msgid "Kahya will automatically install your system..."
-msgstr "Kahya wird Ihr System automatisch installieren.."
+msgstr "Kahya wird Ihr System automatisch installieren..."
 
 #: yali4/gui/ScrKahyaCheck.py:56
 msgid ""
@@ -1247,9 +1234,8 @@ msgid "Set your keyboard layout"
 msgstr "Stellen Sie Ihre Tastaturbelegung ein"
 
 #: yali4/gui/ScrKeyboard.py:32
-#, fuzzy
 msgid "Use your keyboard layout..."
-msgstr "Verwenden Sie Ihre Tastaturbelegung"
+msgstr "Verwenden Sie Ihre Tastaturbelegung..."
 
 #: yali4/gui/ScrKeyboard.py:34
 msgid ""
@@ -1278,9 +1264,8 @@ msgid "Choose Partitioning"
 msgstr "Partitionierung auswählen"
 
 #: yali4/gui/ScrPartitionAuto.py:39
-#, fuzzy
 msgid "Auto or Manual partitioning..."
-msgstr "Automatische oder manuelle Partitionierung.."
+msgstr "Automatische oder manuelle Partitionierung..."
 
 #: yali4/gui/ScrPartitionAuto.py:41
 msgid ""
@@ -1341,9 +1326,8 @@ msgid "Manual Partitioning"
 msgstr "Manuelle Partitionierung"
 
 #: yali4/gui/ScrPartitionManual.py:32
-#, fuzzy
 msgid "You can easily configure your partitions..."
-msgstr "Sie können einfach Ihre Partitionen konfigurieren.."
+msgstr "Sie können einfach Ihre Partitionen konfigurieren..."
 
 #: yali4/gui/ScrPartitionManual.py:34
 msgid ""
@@ -1396,9 +1380,8 @@ msgid "The last step before install"
 msgstr "Der letzte Schritt vor der Installation"
 
 #: yali4/gui/ScrSummary.py:43
-#, fuzzy
 msgid "Summary of your installation..."
-msgstr "Zusammenfassung von Ihrer Installation.."
+msgstr "Zusammenfassung von Ihrer Installation..."
 
 #: yali4/gui/ScrSummary.py:45
 msgid ""
@@ -1503,8 +1486,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:181
 msgid "Bootloader Settings"
@@ -1537,9 +1519,8 @@ msgid "Set Users"
 msgstr "Benutzer festlegen"
 
 #: yali4/gui/ScrUsers.py:33
-#, fuzzy
 msgid "Create users to use Pardus..."
-msgstr "Legen Sie Benutzer zur Verwendung von Pardus an"
+msgstr "Legen Sie Benutzer zur Verwendung von Pardus an..."
 
 #: yali4/gui/ScrUsers.py:35
 msgid ""
@@ -1629,9 +1610,8 @@ msgid "Welcome !! "
 msgstr "Willkommen!!"
 
 #: yali4/gui/ScrWelcome.py:31
-#, fuzzy
 msgid "Welcome to the Pardus installer..."
-msgstr "Willkommen zum Pardus-Installationsprogramm.."
+msgstr "Willkommen zum Pardus-Installationsprogramm..."
 
 #: yali4/gui/ScrWelcome.py:32
 msgid ""
@@ -1930,3 +1910,4 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
+
