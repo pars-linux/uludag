@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-20 13:36+0300\n"
+"POT-Creation-Date: 2008-06-21 21:15+0300\n"
 "PO-Revision-Date: 2008-06-20 22:52-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -85,7 +85,8 @@ msgstr ""
 "según el método seleccionado."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid "Automatically partition try to use free space or resize current partitions"
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Particionamiento automático intenta usar el espacio libre o redimensiona "
 "particiones existentes"
@@ -112,10 +113,12 @@ msgstr "Puede utilizar esta opción para realizar particionamiento manual"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr "Si no hay una partición adecuada disponible, esta opción queda deshabilitada"
+msgstr ""
+"Si no hay una partición adecuada disponible, esta opción queda deshabilitada"
 
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid "This option will try to find suitable free space or resizable partitions"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Esta opción intentará encontrar espacio adecuado disponible, o particiones "
 "que se puedan redimensionar"
@@ -756,16 +759,26 @@ msgstr "Hay una petición para el mismo tipo de partición."
 
 # favor verificar contexto,
 # check context, should this say "format as.." instead o "selected as .." ?
-#: yali4/gui/DiskWidgets.py:328 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:316
+#, fuzzy, python-format
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+
+# favor verificar contexto,
+# check context, should this say "format as.." instead o "selected as .." ?
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr ""
+"Partición <b>%(partition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
-#: yali4/gui/DiskWidgets.py:347
+#: yali4/gui/DiskWidgets.py:350
 msgid "Too many primary partition !"
 msgstr "Demasiadas particiones primarias !"
 
-#: yali4/gui/DiskWidgets.py:348
+#: yali4/gui/DiskWidgets.py:351
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
@@ -775,7 +788,7 @@ msgstr ""
 "particiones !"
 
 # i hope "(fs)s" refers to a string rerpresenting the file-system
-#: yali4/gui/DiskWidgets.py:381 yali4/gui/ScrSummary.py:141
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:141
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -784,28 +797,28 @@ msgstr ""
 "Partición <b>%(partition)s</b> <b>agregada</b> a dispositivo <b>%(device)s</"
 "b> de <b>%(size)s MB</b> como <b>%(fs)s</b>."
 
-#: yali4/gui/DiskWidgets.py:407
+#: yali4/gui/DiskWidgets.py:410
 msgid "Delete All Partitions"
 msgstr "Eliminar todas las particiones"
 
-#: yali4/gui/DiskWidgets.py:475
+#: yali4/gui/DiskWidgets.py:478
 msgid "Pardus will install here"
 msgstr "Aqui se va a instalar Pardus"
 
-#: yali4/gui/DiskWidgets.py:478
+#: yali4/gui/DiskWidgets.py:481
 msgid "User files will store here"
 msgstr "Aqui se guardarán los archivos de los usuarios"
 
 # how long my the translated text be ??
-#: yali4/gui/DiskWidgets.py:481
+#: yali4/gui/DiskWidgets.py:484
 msgid "Swap will be here"
 msgstr "Aqui estará el espacio de intercambio (Swap)"
 
-#: yali4/gui/DiskWidgets.py:484
+#: yali4/gui/DiskWidgets.py:487
 msgid "Backup or archive files will store here"
 msgstr "Aqui se guardarán archivos de copias de respaldo y otros"
 
-#: yali4/gui/DiskWidgets.py:505
+#: yali4/gui/DiskWidgets.py:508
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -816,7 +829,7 @@ msgstr ""
 "                                  <b>Tamaño:</b> %s<br>\n"
 "                                  <b>Sistema de archivos:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:535 yali4/gui/ScrSummary.py:140
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:140
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Se eliminaron todas particiones del dispositivo <b>%(device)s</b>."
@@ -932,7 +945,8 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Mayusculas están activadas !</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
@@ -943,7 +957,8 @@ msgstr ""
 # Las contraseñas no coinciden!
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
+msgstr ""
+"<center><font color=\"#FF6D19\">Las contraseñas no coinciden!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:146
 msgid ""
@@ -1014,7 +1029,8 @@ msgstr "Verifique sus discos"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "Para prevenir problemas por corrupción de datos puede verificar el CD.."
+msgstr ""
+"Para prevenir problemas por corrupción de datos puede verificar el CD.."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1459,7 +1475,8 @@ msgstr "Usuario %s (<b>%s</b>) agregado."
 #: yali4/gui/ScrSummary.py:118
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
-msgstr "Usuario %s (<b>%s</b>) con <u>privilegios de administración</u> agregado."
+msgstr ""
+"Usuario %s (<b>%s</b>) con <u>privilegios de administración</u> agregado."
 
 #: yali4/gui/ScrSummary.py:123
 msgid "Hostname Settings"
@@ -1505,7 +1522,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
+msgstr ""
+"Partición <b>%(newPartition)s</b> <b>seleccionada</b> como <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:181
 msgid "Bootloader Settings"
@@ -1616,7 +1634,8 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Nombre real contiene caractéres no válidos!</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1932,4 +1951,3 @@ msgstr "Intercambio (swap)"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Guardar Partición"
-

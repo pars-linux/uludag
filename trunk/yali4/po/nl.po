@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-20 13:36+0300\n"
+"POT-Creation-Date: 2008-06-21 21:15+0300\n"
 "PO-Revision-Date: 2008-06-21 15:47+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
@@ -739,16 +739,22 @@ msgstr ""
 msgid "There is a request for the same Partition Type."
 msgstr "Er is een verzoek voor hetzelfde partitietype."
 
-#: yali4/gui/DiskWidgets.py:328 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:316
+#, fuzzy, python-format
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partitie <b>%(partition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Partitie <b>%(partition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
-#: yali4/gui/DiskWidgets.py:347
+#: yali4/gui/DiskWidgets.py:350
 msgid "Too many primary partition !"
 msgstr "Te veel primaire partities !"
 
-#: yali4/gui/DiskWidgets.py:348
+#: yali4/gui/DiskWidgets.py:351
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
@@ -756,7 +762,7 @@ msgstr ""
 "GPT schijftabellen worden niet ondersteund voor verlengde partities.\n"
 "U dient één van de primaire partities van uw schijftabel te verwijderen !"
 
-#: yali4/gui/DiskWidgets.py:381 yali4/gui/ScrSummary.py:141
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:141
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -765,27 +771,27 @@ msgstr ""
 "Partitie <b>%(partition)s</b> <b>toegevoegd</b> aan apparaat <b>%(device)s</"
 "b> met <b>%(size)s MB</b> als <b>%(fs)s</b>."
 
-#: yali4/gui/DiskWidgets.py:407
+#: yali4/gui/DiskWidgets.py:410
 msgid "Delete All Partitions"
 msgstr "Verwijder alle partities"
 
-#: yali4/gui/DiskWidgets.py:475
+#: yali4/gui/DiskWidgets.py:478
 msgid "Pardus will install here"
 msgstr "Pardus zal hier installeren"
 
-#: yali4/gui/DiskWidgets.py:478
+#: yali4/gui/DiskWidgets.py:481
 msgid "User files will store here"
 msgstr "Gebruikersbestanden worden hier opgeslagen"
 
-#: yali4/gui/DiskWidgets.py:481
+#: yali4/gui/DiskWidgets.py:484
 msgid "Swap will be here"
 msgstr "Swap bestanden zullen hier komen"
 
-#: yali4/gui/DiskWidgets.py:484
+#: yali4/gui/DiskWidgets.py:487
 msgid "Backup or archive files will store here"
 msgstr "Backup op archief bestanden komen hier"
 
-#: yali4/gui/DiskWidgets.py:505
+#: yali4/gui/DiskWidgets.py:508
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -796,7 +802,7 @@ msgstr ""
 "                                  <b>Grootte:</b> %s<br>\n"
 "                                  <b>Bestandssysteem</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:535 yali4/gui/ScrSummary.py:140
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:140
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Alle partities op apparaat <b>%(device)s</b> zijn verwijderd."

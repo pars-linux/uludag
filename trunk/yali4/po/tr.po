@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-20 13:36+0300\n"
+"POT-Creation-Date: 2008-06-21 21:15+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -738,16 +738,24 @@ msgstr ""
 msgid "There is a request for the same Partition Type."
 msgstr "Bu bölüm tipi için daha önceden bir alan ayrılmış."
 
-#: yali4/gui/DiskWidgets.py:328 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:316
+#, python-format
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Disk bölümü <b>%(partition)s</b>, <b>%(fsType)s</b> tipinde "
+"<b>biçimlendirilecek</b>."
+
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Disk bölümü <b>%(partition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
 
-#: yali4/gui/DiskWidgets.py:347
+#: yali4/gui/DiskWidgets.py:350
 msgid "Too many primary partition !"
 msgstr "Çok fazla birincil bölüm !"
 
-#: yali4/gui/DiskWidgets.py:348
+#: yali4/gui/DiskWidgets.py:351
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
@@ -755,7 +763,7 @@ msgstr ""
 "GPT Disk tabloları extended disk bölümlerini desteklememektedir.\n"
 "Disk tablonuzdan bir disk bölümü silmeniz gerekmekte !"
 
-#: yali4/gui/DiskWidgets.py:381 yali4/gui/ScrSummary.py:141
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:141
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -764,27 +772,27 @@ msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(device)s</b> diskine <b>%(size)s MB</"
 "b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
-#: yali4/gui/DiskWidgets.py:407
+#: yali4/gui/DiskWidgets.py:410
 msgid "Delete All Partitions"
 msgstr "Tüm Disk Bölümlerini Sil"
 
-#: yali4/gui/DiskWidgets.py:475
+#: yali4/gui/DiskWidgets.py:478
 msgid "Pardus will install here"
 msgstr "Pardus buraya kurulacak"
 
-#: yali4/gui/DiskWidgets.py:478
+#: yali4/gui/DiskWidgets.py:481
 msgid "User files will store here"
 msgstr "Kullanıcı dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:481
+#: yali4/gui/DiskWidgets.py:484
 msgid "Swap will be here"
 msgstr "Takas burada olacak"
 
-#: yali4/gui/DiskWidgets.py:484
+#: yali4/gui/DiskWidgets.py:487
 msgid "Backup or archive files will store here"
 msgstr "Yedek ya da arşiv dosyaları burada saklanacak"
 
-#: yali4/gui/DiskWidgets.py:505
+#: yali4/gui/DiskWidgets.py:508
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -795,7 +803,7 @@ msgstr ""
 "                                  <b>Boyut:</b> %s<br>\n"
 "                                  <b>DosyaSistemi:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:535 yali4/gui/ScrSummary.py:140
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:140
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Disk aygıtı <b>%(device)s</b> üzerindeki tüm disk bölümleri silindi."
@@ -1417,8 +1425,8 @@ msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
-"Disk bölümü <b>%(partition)s - %(currentFs)s</b>, <b>%(resizeTo)s MB</b> 'a yeniden "
-"boyutlandırıldı.Eski boyut: <b>%(currentSize)s MB</b>."
+"Disk bölümü <b>%(partition)s - %(currentFs)s</b>, <b>%(resizeTo)s MB</b> 'a "
+"yeniden boyutlandırıldı.Eski boyut: <b>%(currentSize)s MB</b>."
 
 #: yali4/gui/ScrSummary.py:165
 #, python-format
@@ -1426,13 +1434,14 @@ msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
-"Disk bölümü <b>%(newPartition)s</b>, <b>%(device)s</b> diskine <b>%(size)s MB</"
-"b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
+"Disk bölümü <b>%(newPartition)s</b>, <b>%(device)s</b> diskine <b>%(size)s "
+"MB</b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
 #: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Disk bölümü <b>%(newPartition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
+msgstr ""
+"Disk bölümü <b>%(newPartition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
 
 #: yali4/gui/ScrSummary.py:181
 msgid "Bootloader Settings"

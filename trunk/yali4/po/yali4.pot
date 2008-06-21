@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-20 13:36+0300\n"
+"POT-Creation-Date: 2008-06-21 21:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -619,49 +619,55 @@ msgstr ""
 msgid "There is a request for the same Partition Type."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:328 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:316
+#, python-format
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:347
+#: yali4/gui/DiskWidgets.py:350
 msgid "Too many primary partition !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:348
+#: yali4/gui/DiskWidgets.py:351
 msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:381 yali4/gui/ScrSummary.py:141
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:141
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:407
+#: yali4/gui/DiskWidgets.py:410
 msgid "Delete All Partitions"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:475
+#: yali4/gui/DiskWidgets.py:478
 msgid "Pardus will install here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:478
+#: yali4/gui/DiskWidgets.py:481
 msgid "User files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:481
+#: yali4/gui/DiskWidgets.py:484
 msgid "Swap will be here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:484
+#: yali4/gui/DiskWidgets.py:487
 msgid "Backup or archive files will store here"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:505
+#: yali4/gui/DiskWidgets.py:508
 #, python-format
 msgid ""
 "<b>Path:</b> %s<br>\n"
@@ -669,7 +675,7 @@ msgid ""
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:535 yali4/gui/ScrSummary.py:140
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:140
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr ""
