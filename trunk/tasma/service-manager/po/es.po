@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-09 16:37+0300\n"
-"PO-Revision-Date: 2008-06-09 20:57-0400\n"
+"PO-Revision-Date: 2008-06-22 13:41-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -109,12 +109,13 @@ msgid "Package"
 msgstr "Paquete"
 
 #: src/service_manager.py:125
+# i shortened the spanish text, so it would fit into the screen
 msgid "Run on startup."
-msgstr "Iniciar durante el arranque del sistema."
+msgstr "Iniciar al bootear sistema."
 
 #: src/service_manager.py:126
 msgid "Don't run on startup."
-msgstr "No iniciar durante el arranque del sistema."
+msgstr "No iniciar durante boot."
 
 #: src/service_manager.py:139
 msgid "Reset Search"
