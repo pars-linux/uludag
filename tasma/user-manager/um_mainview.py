@@ -44,11 +44,10 @@ class UserManager(QWidgetStack):
             return False
         return True
 
-    def callMethod(self, method, action):
+    def callMethod(self, method, action, async = True):
         ch = CallHandler("baselayout", "User.Manager", method,
                          action,
-                         self.winId(),
-                         self.busSys, self.busSes)
+                         self.winId(), async, self.busSys, self.busSes)
         ch.registerError(self.comarError)
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
