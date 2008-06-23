@@ -12,7 +12,6 @@
 
 import os, sys
 import pisi
-import pisi.db
 
 def get_history_dir():
     return pisi.ctx.config.history_dir()

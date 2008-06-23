@@ -22,10 +22,13 @@ import pisi
 
 import PisiIface
 
+
+
 class widgetMain(formMain):
     def __init__(self, parent):
         # get history database from pisi
         self.historydb = pisi.db.historydb.HistoryDB()
+
         # init gui
         formMain.__init__(self, parent)
 
@@ -100,8 +103,9 @@ class widgetMain(formMain):
 
     # re-initialize history database for up to date entries
     def initDb(self):
-        self.historydb.init()
-        # PisiIface.reloadPisi()
+        # self.self.historydb.init()
+        PisiIface.reloadPisi()
+        self.historydb = pisi.db.historydb.HistoryDB()
 
     def keyPressEvent(self, event):
         # F5 Key may refresh list
@@ -423,7 +427,7 @@ class widgetItem(QListViewItem):
         self.op_tag = operation.tag
         self.op_type_int = 0
 
-        self.setText(1, "%s %s" % (self.op_date, self.op_time))
+        self.setText(1, "%s     %s" % (self.op_date, self.op_time))
 
         # op_type_int = 0 -> All Operations
         if self.op_type == 'snapshot':
