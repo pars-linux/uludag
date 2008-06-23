@@ -10,510 +10,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 21:15+0300\n"
+"POT-Creation-Date: 2008-06-23 09:06+0300\n"
 "PO-Revision-Date: 2008-06-21 15:47+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
+">\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-
-#: yali4/gui/Ui/autopartquestion.py:64 yali4/gui/Ui/datetimewidget.py:81
-#: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:143
-#: yali4/gui/Ui/summarywidget.py:58
-msgid "Form"
-msgstr "Form"
-
-#: yali4/gui/Ui/autopartquestion.py:65
-msgid ""
-"It seems there is more than one partition for resizing. In this case you can "
-"select a partition from the list below or YALI will select one."
-msgstr ""
-"Er zijn blijkbaar meer dan één partitie om in grootte aan te passen. U kunt "
-"in dit geval een partitie kiezen uit de lijst, of Yali één laten kiezen."
-
-#: yali4/gui/Ui/autopartquestion.py:66
-msgid "Choose the best target for resizing (recommended)"
-msgstr "Kies het beste doel om in grootte aan te passen (aangeraden)"
-
-#: yali4/gui/Ui/autopartquestion.py:67
-msgid "I will choose the target"
-msgstr "Ik kies het doel zelf"
-
-#: yali4/gui/Ui/autopartquestion.py:68
-msgid "Use Selected"
-msgstr "Gebruik geselecteerde"
-
-#: yali4/gui/Ui/autopartwidget.py:99 yali4/gui/Ui/bootloaderwidget.py:75
-#: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
-#: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
-#: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:90
-msgid "Form1"
-msgstr "Form1"
-
-#: yali4/gui/Ui/autopartwidget.py:100
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Select the partitioning method:</span></p></"
-"body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Kies partitie methode:</span></p></body></"
-"html>"
-
-#: yali4/gui/Ui/autopartwidget.py:104
-msgid ""
-"Here you can choose one of partitioning method, and then you must select for "
-"a device to proceed your choice. <br>Device list will be updated for "
-"selected method."
-msgstr ""
-"U kunt hier uw partitiemethode selecteren, en u dient een station te "
-"selecteren om door te gaan met uw keuze. <br>Stationslijst zal aangepast "
-"worden naar gelang de keuzen."
-
-#: yali4/gui/Ui/autopartwidget.py:105
-msgid "Automatically partition try to use free space or resize current partitions"
-msgstr ""
-"Automatisch partitioneren, probeer vrije tuimte te creeëren of huidige "
-"partities in grootte aan te passen"
-
-#: yali4/gui/Ui/autopartwidget.py:106
-msgid "Automatically partition and format selected disk!"
-msgstr "Automatisch partitioneren en formatteren van de geselecteerde schijf!"
-
-#: yali4/gui/Ui/autopartwidget.py:107
-msgid ""
-"This option will erase your entire disk. All of your data on disk will be "
-"lost !"
-msgstr "Deze optie zal uw gehele schijf wissen. Alle data zal verloren gaan !"
-
-#: yali4/gui/Ui/autopartwidget.py:108
-msgid "No, I'll partition my disk manually."
-msgstr "Nee, ik wil mijn schijf handmatig partitioneren."
-
-#: yali4/gui/Ui/autopartwidget.py:109
-msgid "You can use manual partitioning with this option"
-msgstr "U kunt met deze optie handmatig partitioneren"
-
-#: yali4/gui/Ui/autopartwidget.py:110
-msgid "If there is no suitable partition this option will be disabled"
-msgstr "Indien er geen geschikte partitie is, zal deze optie niet gebruikt worden"
-
-#: yali4/gui/Ui/autopartwidget.py:111
-msgid "This option will try to find suitable free space or resizable partitions"
-msgstr ""
-"Deze optie zal proberen om voldoende vrije ruimte te vinden of in grootte "
-"aan te passen partities"
-
-#: yali4/gui/Ui/autopartwidget.py:112
-msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Select the disk to apply selected method:</"
-"span></p></body></html>"
-msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Selecteer de schijf om de geselecteerde "
-"optie op toe te passen:</span></p></body></html>"
-
-#: yali4/gui/Ui/autopartwidget.py:116
-msgid "&nbsp;"
-msgstr "&nbsp;"
-
-#: yali4/gui/Ui/bootloaderwidget.py:76
-msgid ""
-"<b>Do you want to write boot loader (GRUB) to your hard disk's master boot "
-"record?</b>\n"
-"\n"
-"<p>You need a boot loader to boot your Pardus system.</p>\n"
-"\n"
-"<p>If you don't install a boot loader or choose to install to root "
-"partition, you will have to configure your other operating system's loader  "
-"(if you have one installed) to start \n"
-"your newly installed Pardus.</p>"
-msgstr ""
-"<b>Wilt u de bootlader (GRUB) naar de master boot record van uw harde schijf "
-"schrijven?</b>\n"
-"\n"
-"<p>U heeft een bootlader nodig om uw Pardus-systeem op te starten.</p>\n"
-"\n"
-"<p>Als u geen bootlader installeert, of ervoor kiest deze in te rootpartitie "
-"te installeren, dient u de lader  van uw andere \n"
-"besturingssysteem (indien geïnstalleerd) te configureren om het nieuw "
-"geïnstalleerde Pardus te kunnen starten.</p>"
-
-#: yali4/gui/Ui/bootloaderwidget.py:82
-msgid "Where do you want to install the bootlader ?"
-msgstr "Waar wilt u de bootlader installeren ?"
-
-#: yali4/gui/Ui/bootloaderwidget.py:83
-msgid "Install to first bootable disk (recommended)"
-msgstr "Installeer op de eerste bootbare schijf (aangeraden)"
-
-#: yali4/gui/Ui/bootloaderwidget.py:84
-msgid "Install to Pardus installed partition"
-msgstr "Installeer op de partitie waar Pardus op staat"
-
-#: yali4/gui/Ui/bootloaderwidget.py:85
-msgid "Install to selected disk belove"
-msgstr "Installeer op geselecteerde schijf"
-
-#: yali4/gui/Ui/bootloaderwidget.py:86
-msgid "Select the disk you to install bootloader:"
-msgstr "Selecteer de schijf waar u de bootlader op wilt installeren:"
-
-#: yali4/gui/Ui/bootloaderwidget.py:87
-msgid "Don't install bootloader"
-msgstr "Installeer geen bootlader"
-
-#: yali4/gui/Ui/checkcdwidget.py:73
-msgid ""
-"You can check the integrity of the packages in installation CD. Although "
-"this is an optional step, we encourage you to do it to avoid any errors in "
-"installation."
-msgstr ""
-"U kunt de integriteit van de pakketten op de installatie CD controleren. "
-"Ondanks dat deze stap optioneel is, raden we het u aan om fouten tijdens de "
-"installatie te vermijden."
-
-#: yali4/gui/Ui/checkcdwidget.py:74
-msgid "Check CD Integrity"
-msgstr "Controleer CD integriteit"
-
-#: yali4/gui/Ui/datetimewidget.py:82
-msgid "The current time"
-msgstr "Huidige tijd"
-
-#: yali4/gui/Ui/datetimewidget.py:83
-msgid "The analog clock widget displays the current time."
-msgstr "De analoge klok widget toont de huidige tijd."
-
-#: yali4/gui/Ui/datetimewidget.py:84
-msgid "HH"
-msgstr "HH"
-
-#: yali4/gui/Ui/datetimewidget.py:85 yali4/gui/Ui/datetimewidget.py:87
-msgid ":"
-msgstr ":"
-
-#: yali4/gui/Ui/datetimewidget.py:86
-msgid "mm"
-msgstr "mm"
-
-#: yali4/gui/Ui/datetimewidget.py:88
-msgid "ss"
-msgstr "ss"
-
-#: yali4/gui/Ui/datetimewidget.py:89
-msgid "Time Zone"
-msgstr "Tijdszone"
-
-#: yali4/gui/Ui/dialog.py:59
-msgid "TextLabel"
-msgstr "TextLabel"
-
-#: yali4/gui/Ui/dialog.py:60
-msgid "X"
-msgstr "X"
-
-#: yali4/gui/Ui/installwidget.py:64
-msgid "Form3"
-msgstr "Form3"
-
-#: yali4/gui/Ui/installwidget.py:65
-msgid "pix"
-msgstr "pix"
-
-#: yali4/gui/Ui/installwidget.py:66
-msgid "Desc"
-msgstr "Desc"
-
-#: yali4/gui/Ui/installwidget.py:67
-msgid "Installing Package: "
-msgstr "Installeren pakket: "
-
-#: yali4/gui/Ui/keyboardwidget.py:60
-msgid "Select the keyboard layout of your choice."
-msgstr "Selecteer uw toetenbordindeling."
-
-#: yali4/gui/Ui/keyboardwidget.py:61
-msgid "Test selected keyboard:"
-msgstr "Test geselecteerd toetsenbord:"
-
-#: yali4/gui/Ui/main.py:156
-msgid "Yali4"
-msgstr "Yali4"
-
-#: yali4/gui/Ui/main.py:441
-msgid "Screen Name"
-msgstr "Schermnaam"
-
-#: yali4/gui/Ui/main.py:443
-msgid "Details about the screen"
-msgstr "Details over het scherm"
-
-#: yali4/gui/Ui/main.py:444 yali4/gui/YaliWindow.py:170
-msgid "Release Notes"
-msgstr "Uitgavenotities"
-
-#: yali4/gui/Ui/main.py:445
-msgid "Toggle Help"
-msgstr "Druk hulp"
-
-#: yali4/gui/Ui/main.py:446
-msgid "Previous Screen"
-msgstr "Eerder scherm"
-
-#: yali4/gui/Ui/main.py:447
-msgid "Back"
-msgstr "Terug"
-
-#: yali4/gui/Ui/main.py:448
-msgid "Next Screen"
-msgstr "Volgend scherm"
-
-#: yali4/gui/Ui/main.py:449
-msgid "Next"
-msgstr "Volgende"
-
-#: yali4/gui/Ui/partedit.py:144
-msgid "Partition 1 on FUJISTU - /dev/sda1"
-msgstr "Partitie 1 op FUJISTU - /dev/sda1"
-
-#: yali4/gui/Ui/partedit.py:145
-msgid "Device :"
-msgstr "Station :"
-
-#: yali4/gui/Ui/partedit.py:146
-msgid "/dev/sda1"
-msgstr "/dev/sda1"
-
-#: yali4/gui/Ui/partedit.py:147
-msgid "Delete Partition"
-msgstr "Verwijder partitie"
-
-#: yali4/gui/Ui/partedit.py:148
-msgid "Resize Partition"
-msgstr "Aanpassen partitiegrootte"
-
-#: yali4/gui/Ui/partedit.py:149
-msgid "Use :"
-msgstr "Gebruik :"
-
-#: yali4/gui/Ui/partedit.py:150
-msgid "Size :"
-msgstr "Grootte :"
-
-#: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:87
-msgid " MB"
-msgstr " MB"
-
-#: yali4/gui/Ui/partedit.py:152
-msgid "Format :"
-msgstr "Formaat :"
-
-#: yali4/gui/Ui/partedit.py:153
-msgid "Yes, format this partition"
-msgstr "Ja, formatteer deze partitie"
-
-#: yali4/gui/Ui/partedit.py:154
-msgid "File System :"
-msgstr "Bestandssysteem :"
-
-#: yali4/gui/Ui/partedit.py:155
-msgid "Ext3"
-msgstr "Ext3"
-
-#: yali4/gui/Ui/partedit.py:156
-msgid "NTFS"
-msgstr "NTFS"
-
-#: yali4/gui/Ui/partedit.py:157
-msgid "Fat 32"
-msgstr "Fat 32"
-
-#: yali4/gui/Ui/partedit.py:158
-msgid "Changes will be applied when you finish.."
-msgstr "Veranderingen zullen worden toegepast wanneer u beëindigt.."
-
-#: yali4/gui/Ui/partedit.py:159
-msgid "Refresh Disks"
-msgstr "Ververs schijven"
-
-#: yali4/gui/Ui/partedit.py:160
-msgid "Reset All Changes"
-msgstr "Alle wijzigingen ongedaan maken"
-
-#: yali4/gui/Ui/partedit.py:161
-msgid "Apply"
-msgstr "Toepassen"
-
-#: yali4/gui/Ui/partresize.py:82
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; color:#ffffff;\">Warning!</span><span style=\" color:#ffffff;\"> "
-"These settings will be applied when you click \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Resize</span><span style=\" color:"
-"#ffffff;\">\". If you want to go back click \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Cancel</span><span style=\" color:"
-"#ffffff;\">\".</span></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; color:#ffffff;\">Waarschuwing!</span><span style=\" color:"
-"#ffffff;\"> Deze veranderingen zullen worden toegepast als u klikt \"</"
-"span><span style=\" text-decoration: underline; color:#ffffff;\">Grootte "
-"aanpassen</span><span style=\" color:#ffffff;\">\". Als u terug wilt klik "
-"\"</span><span style=\" text-decoration: underline; color:#ffffff;"
-"\">Annuleer</span><span style=\" color:#ffffff;\">\".</span></p></body></"
-"html>"
-
-#: yali4/gui/Ui/partresize.py:88 yali4/gui/Ui/summarywidget.py:59
-#: yali4/gui/YaliDialog.py:130
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: yali4/gui/Ui/partresize.py:89
-msgid "Resize"
-msgstr "Grootte aanpassen"
-
-#: yali4/gui/Ui/rootpasswidget.py:171
-msgid ""
-"<p align=\"left\">System administrator user (root) handles important system "
-"maintanence tasks. Please give password for this special user and do not "
-"forget this password. Note that you shouldn't write this password elsewhere "
-"for privacy reasons.</p>"
-msgstr ""
-"<p align=\"left\">De systeembeheerder (root) zorgt voor belangrijke "
-"onderhoudstaken op het systeem. Geef een wachtwoord op voor deze speciale "
-"gebruiker, en vergeet het wachtwoord niet! Uit veiligheids overwegingen "
-"wordt het afgeraden het wachtwoord ergens op te schrijven. </p>"
-
-#: yali4/gui/Ui/rootpasswidget.py:172
-msgid "System administrator password:"
-msgstr "Systeembeheerder wachtwoord:"
-
-#: yali4/gui/Ui/rootpasswidget.py:173
-msgid "System administrator password (again):"
-msgstr "Wachtwoord systeembeheerder (nogmaals):"
-
-#: yali4/gui/Ui/rootpasswidget.py:176
-msgid "Hostname:"
-msgstr "Hostnaam:"
-
-#: yali4/gui/Ui/setupuserswidget.py:153
-msgid "New User"
-msgstr "Nieuwe gebruiker"
-
-#: yali4/gui/Ui/setupuserswidget.py:154
-msgid "User Name:"
-msgstr "Gebruikersnaam:"
-
-#: yali4/gui/Ui/setupuserswidget.py:155
-msgid "Real Name:"
-msgstr "Echte naam:"
-
-#: yali4/gui/Ui/setupuserswidget.py:156
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: yali4/gui/Ui/setupuserswidget.py:157
-msgid "Password (again):"
-msgstr "Wachtwoord (nogmaals):"
-
-#: yali4/gui/Ui/setupuserswidget.py:158 yali4/gui/ScrUsers.py:187
-msgid "Create User"
-msgstr "Maak gebruiker"
-
-#: yali4/gui/Ui/setupuserswidget.py:159
-msgid "Give administrator privileges to this user"
-msgstr "Geef administror rechten aan deze gebruiker"
-
-#: yali4/gui/Ui/setupuserswidget.py:162
-msgid "Users:"
-msgstr "Gebruikers:"
-
-#: yali4/gui/Ui/setupuserswidget.py:163
-msgid "Delete Selected User"
-msgstr "Verwijder geselecteerde gebruiker"
-
-#: yali4/gui/Ui/setupuserswidget.py:164
-msgid "Auto Login User :"
-msgstr "Automatisch inloggen gebruiker:"
-
-#: yali4/gui/Ui/setupuserswidget.py:165
-msgid "Auto Login Disabled"
-msgstr "Automatisch inloggen uitgeschakeld"
-
-#: yali4/gui/Ui/summarywidget.py:60
-msgid "Begin Install"
-msgstr "Begin installatie"
-
-#: yali4/gui/Ui/welcomewidget.py:91
-msgid ""
-"All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
-"software have their corresponding licenses. By installing or using Pardus, "
-"you agree to accept them. Do you want to continue?"
-msgstr ""
-"Alle software is ontwikkeld door TUBITAK/UEKAE valt onder GNU/GPL. "
-"Andere software hebben gelijke licenties. Door installeren of gebruik maken "
-"van Pardus, stemt u toe deze voowaarden te accepteren. Wilt u doorgaan?"
-
-#: yali4/gui/Ui/welcomewidget.py:92
-msgid "Read GPL"
-msgstr "Lees de GPL"
-
-#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:159
-msgid "Reboot System!"
-msgstr "Herstart systeem!"
-
-#: yali4/gui/Ui/welcomewidget.py:94
-msgid "Accept!"
-msgstr "Accepteren!"
-
-#: yali4/gui/Ui/welcomewidget.py:95
-msgid "Don't Accept!"
-msgstr "Verwerpen!"
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
@@ -850,12 +356,17 @@ msgstr "Fout!"
 msgid "Unhandled error occured!"
 msgstr "Fout opgetreden!"
 
+#: yali4/gui/runner.py:159
+msgid "Reboot System!"
+msgstr "Herstart systeem!"
+
 #: yali4/gui/ScrAdmin.py:30
 msgid "Set Administrator"
 msgstr "Bepaal systeembeheerder"
 
 #: yali4/gui/ScrAdmin.py:31
-msgid "Admins has important rights on the system..."
+#, fuzzy
+msgid "Admins have important rights on the system..."
 msgstr "Beheerder heeft belangrijke rechten op het systeem..."
 
 #: yali4/gui/ScrAdmin.py:33
@@ -1109,7 +620,8 @@ msgid "Installing system..."
 msgstr "Installeren systeem..."
 
 #: yali4/gui/ScrInstall.py:57
-msgid "Installing approximately 30 minutes depending on hardware..."
+#, fuzzy
+msgid "Installing takes approximately 30 minutes depending on your hardware..."
 msgstr "Installeren duurt gemiddeld 30 minuten, afhankelijk van hardware..."
 
 #: yali4/gui/ScrInstall.py:59
@@ -1155,7 +667,8 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrInstall.py:108
-msgid "Packages are installing.."
+#, fuzzy
+msgid "Packages are being installed.."
 msgstr "Pakketten worden geïnstalleerd.."
 
 #: yali4/gui/ScrInstall.py:123
@@ -1303,7 +816,8 @@ msgstr ""
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
 "installation."
-msgstr "U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
+msgstr ""
+"U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
 
 #: yali4/gui/ScrPartitionManual.py:31
 msgid "Manual Partitioning"
@@ -1465,7 +979,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr ""
+"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:181
 msgid "Bootloader Settings"
@@ -1550,7 +1065,8 @@ msgstr ""
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
-msgstr "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
 
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
@@ -1574,7 +1090,12 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+
+#: yali4/gui/ScrUsers.py:187
+msgid "Create User"
+msgstr "Maak gebruiker"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1634,6 +1155,10 @@ msgstr ""
 "en zal de geselecteerde partities formatteren.</p>\n"
 "</b>\n"
 
+#: yali4/gui/YaliDialog.py:130
+msgid "Cancel"
+msgstr "Annuleren"
+
 #: yali4/gui/YaliDialog.py:133
 msgid "O.K. Go Ahead"
 msgstr "O.K. Ga verder"
@@ -1646,6 +1171,10 @@ msgstr "Toon Help"
 msgid "Hide Help"
 msgstr "Verberg Help"
 
+#: yali4/gui/YaliWindow.py:170
+msgid "Release Notes"
+msgstr "Uitgavenotities"
+
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
 msgstr "Windows"
@@ -1655,7 +1184,8 @@ msgid "Backtrace:"
 msgstr "Terugloop:"
 
 #: yali4/installer.py:126
-msgid "YALI Working..."
+#, fuzzy
+msgid "YALI Is Working..."
 msgstr "YALI werken..."
 
 #: yali4/installer.py:141
@@ -1704,8 +1234,8 @@ msgid "Creating new partition ..."
 msgstr "Maak nieuwe partitie ..."
 
 #: yali4/installer.py:438
-#, python-format
-msgid "User <b>%s</b>'s home directory is preparing.."
+#, fuzzy, python-format
+msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Gebruiker <b>%s</b> zijn/haar thuismap wordt aangemaakt.."
 
 #: yali4/localedata.py:20
@@ -1884,3 +1414,394 @@ msgstr "Swap"
 msgid "Archive Partition"
 msgstr "Archiveer partitie"
 
+#~ msgid "Form"
+#~ msgstr "Form"
+
+#~ msgid ""
+#~ "It seems there is more than one partition for resizing. In this case you "
+#~ "can select a partition from the list below or YALI will select one."
+#~ msgstr ""
+#~ "Er zijn blijkbaar meer dan één partitie om in grootte aan te passen. U "
+#~ "kunt in dit geval een partitie kiezen uit de lijst, of Yali één laten "
+#~ "kiezen."
+
+#~ msgid "Choose the best target for resizing (recommended)"
+#~ msgstr "Kies het beste doel om in grootte aan te passen (aangeraden)"
+
+#~ msgid "I will choose the target"
+#~ msgstr "Ik kies het doel zelf"
+
+#~ msgid "Use Selected"
+#~ msgstr "Gebruik geselecteerde"
+
+#~ msgid "Form1"
+#~ msgstr "Form1"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "size:12pt; font-weight:600;\">1. Select the partitioning method:</span></"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "size:12pt; font-weight:600;\">1. Kies partitie methode:</span></p></"
+#~ "body></html>"
+
+#~ msgid ""
+#~ "Here you can choose one of partitioning method, and then you must select "
+#~ "for a device to proceed your choice. <br>Device list will be updated for "
+#~ "selected method."
+#~ msgstr ""
+#~ "U kunt hier uw partitiemethode selecteren, en u dient een station te "
+#~ "selecteren om door te gaan met uw keuze. <br>Stationslijst zal aangepast "
+#~ "worden naar gelang de keuzen."
+
+#~ msgid ""
+#~ "Automatically partition try to use free space or resize current partitions"
+#~ msgstr ""
+#~ "Automatisch partitioneren, probeer vrije tuimte te creeëren of huidige "
+#~ "partities in grootte aan te passen"
+
+#~ msgid "Automatically partition and format selected disk!"
+#~ msgstr ""
+#~ "Automatisch partitioneren en formatteren van de geselecteerde schijf!"
+
+#~ msgid ""
+#~ "This option will erase your entire disk. All of your data on disk will be "
+#~ "lost !"
+#~ msgstr ""
+#~ "Deze optie zal uw gehele schijf wissen. Alle data zal verloren gaan !"
+
+#~ msgid "No, I'll partition my disk manually."
+#~ msgstr "Nee, ik wil mijn schijf handmatig partitioneren."
+
+#~ msgid "You can use manual partitioning with this option"
+#~ msgstr "U kunt met deze optie handmatig partitioneren"
+
+#~ msgid "If there is no suitable partition this option will be disabled"
+#~ msgstr ""
+#~ "Indien er geen geschikte partitie is, zal deze optie niet gebruikt worden"
+
+#~ msgid ""
+#~ "This option will try to find suitable free space or resizable partitions"
+#~ msgstr ""
+#~ "Deze optie zal proberen om voldoende vrije ruimte te vinden of in grootte "
+#~ "aan te passen partities"
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "size:12pt; font-weight:600;\">2. Select the disk to apply selected method:"
+#~ "</span></p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "size:12pt; font-weight:600;\">2. Selecteer de schijf om de geselecteerde "
+#~ "optie op toe te passen:</span></p></body></html>"
+
+#~ msgid "&nbsp;"
+#~ msgstr "&nbsp;"
+
+#~ msgid ""
+#~ "<b>Do you want to write boot loader (GRUB) to your hard disk's master "
+#~ "boot record?</b>\n"
+#~ "\n"
+#~ "<p>You need a boot loader to boot your Pardus system.</p>\n"
+#~ "\n"
+#~ "<p>If you don't install a boot loader or choose to install to root "
+#~ "partition, you will have to configure your other operating system's "
+#~ "loader  (if you have one installed) to start \n"
+#~ "your newly installed Pardus.</p>"
+#~ msgstr ""
+#~ "<b>Wilt u de bootlader (GRUB) naar de master boot record van uw harde "
+#~ "schijf schrijven?</b>\n"
+#~ "\n"
+#~ "<p>U heeft een bootlader nodig om uw Pardus-systeem op te starten.</p>\n"
+#~ "\n"
+#~ "<p>Als u geen bootlader installeert, of ervoor kiest deze in te "
+#~ "rootpartitie te installeren, dient u de lader  van uw andere \n"
+#~ "besturingssysteem (indien geïnstalleerd) te configureren om het nieuw "
+#~ "geïnstalleerde Pardus te kunnen starten.</p>"
+
+#~ msgid "Where do you want to install the bootlader ?"
+#~ msgstr "Waar wilt u de bootlader installeren ?"
+
+#~ msgid "Install to first bootable disk (recommended)"
+#~ msgstr "Installeer op de eerste bootbare schijf (aangeraden)"
+
+#~ msgid "Install to Pardus installed partition"
+#~ msgstr "Installeer op de partitie waar Pardus op staat"
+
+#~ msgid "Install to selected disk belove"
+#~ msgstr "Installeer op geselecteerde schijf"
+
+#~ msgid "Select the disk you to install bootloader:"
+#~ msgstr "Selecteer de schijf waar u de bootlader op wilt installeren:"
+
+#~ msgid "Don't install bootloader"
+#~ msgstr "Installeer geen bootlader"
+
+#~ msgid ""
+#~ "You can check the integrity of the packages in installation CD. Although "
+#~ "this is an optional step, we encourage you to do it to avoid any errors "
+#~ "in installation."
+#~ msgstr ""
+#~ "U kunt de integriteit van de pakketten op de installatie CD controleren. "
+#~ "Ondanks dat deze stap optioneel is, raden we het u aan om fouten tijdens "
+#~ "de installatie te vermijden."
+
+#~ msgid "Check CD Integrity"
+#~ msgstr "Controleer CD integriteit"
+
+#~ msgid "The current time"
+#~ msgstr "Huidige tijd"
+
+#~ msgid "The analog clock widget displays the current time."
+#~ msgstr "De analoge klok widget toont de huidige tijd."
+
+#~ msgid "HH"
+#~ msgstr "HH"
+
+#~ msgid ":"
+#~ msgstr ":"
+
+#~ msgid "mm"
+#~ msgstr "mm"
+
+#~ msgid "ss"
+#~ msgstr "ss"
+
+#~ msgid "Time Zone"
+#~ msgstr "Tijdszone"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "Form3"
+#~ msgstr "Form3"
+
+#~ msgid "pix"
+#~ msgstr "pix"
+
+#~ msgid "Desc"
+#~ msgstr "Desc"
+
+#~ msgid "Installing Package: "
+#~ msgstr "Installeren pakket: "
+
+#~ msgid "Select the keyboard layout of your choice."
+#~ msgstr "Selecteer uw toetenbordindeling."
+
+#~ msgid "Test selected keyboard:"
+#~ msgstr "Test geselecteerd toetsenbord:"
+
+#~ msgid "Yali4"
+#~ msgstr "Yali4"
+
+#~ msgid "Screen Name"
+#~ msgstr "Schermnaam"
+
+#~ msgid "Details about the screen"
+#~ msgstr "Details over het scherm"
+
+#~ msgid "Toggle Help"
+#~ msgstr "Druk hulp"
+
+#~ msgid "Previous Screen"
+#~ msgstr "Eerder scherm"
+
+#~ msgid "Back"
+#~ msgstr "Terug"
+
+#~ msgid "Next Screen"
+#~ msgstr "Volgend scherm"
+
+#~ msgid "Next"
+#~ msgstr "Volgende"
+
+#~ msgid "Partition 1 on FUJISTU - /dev/sda1"
+#~ msgstr "Partitie 1 op FUJISTU - /dev/sda1"
+
+#~ msgid "Device :"
+#~ msgstr "Station :"
+
+#~ msgid "/dev/sda1"
+#~ msgstr "/dev/sda1"
+
+#~ msgid "Delete Partition"
+#~ msgstr "Verwijder partitie"
+
+#~ msgid "Resize Partition"
+#~ msgstr "Aanpassen partitiegrootte"
+
+#~ msgid "Use :"
+#~ msgstr "Gebruik :"
+
+#~ msgid "Size :"
+#~ msgstr "Grootte :"
+
+#~ msgid " MB"
+#~ msgstr " MB"
+
+#~ msgid "Format :"
+#~ msgstr "Formaat :"
+
+#~ msgid "Yes, format this partition"
+#~ msgstr "Ja, formatteer deze partitie"
+
+#~ msgid "File System :"
+#~ msgstr "Bestandssysteem :"
+
+#~ msgid "Ext3"
+#~ msgstr "Ext3"
+
+#~ msgid "NTFS"
+#~ msgstr "NTFS"
+
+#~ msgid "Fat 32"
+#~ msgstr "Fat 32"
+
+#~ msgid "Changes will be applied when you finish.."
+#~ msgstr "Veranderingen zullen worden toegepast wanneer u beëindigt.."
+
+#~ msgid "Refresh Disks"
+#~ msgstr "Ververs schijven"
+
+#~ msgid "Reset All Changes"
+#~ msgstr "Alle wijzigingen ongedaan maken"
+
+#~ msgid "Apply"
+#~ msgstr "Toepassen"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600; color:#ffffff;\">Warning!</span><span style=\" color:#ffffff;"
+#~ "\"> These settings will be applied when you click \"</span><span style=\" "
+#~ "text-decoration: underline; color:#ffffff;\">Resize</span><span style=\" "
+#~ "color:#ffffff;\">\". If you want to go back click \"</span><span style=\" "
+#~ "text-decoration: underline; color:#ffffff;\">Cancel</span><span style=\" "
+#~ "color:#ffffff;\">\".</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+#~ "weight:600; color:#ffffff;\">Waarschuwing!</span><span style=\" color:"
+#~ "#ffffff;\"> Deze veranderingen zullen worden toegepast als u klikt \"</"
+#~ "span><span style=\" text-decoration: underline; color:#ffffff;\">Grootte "
+#~ "aanpassen</span><span style=\" color:#ffffff;\">\". Als u terug wilt klik "
+#~ "\"</span><span style=\" text-decoration: underline; color:#ffffff;"
+#~ "\">Annuleer</span><span style=\" color:#ffffff;\">\".</span></p></body></"
+#~ "html>"
+
+#~ msgid "Resize"
+#~ msgstr "Grootte aanpassen"
+
+#~ msgid ""
+#~ "<p align=\"left\">System administrator user (root) handles important "
+#~ "system maintanence tasks. Please give password for this special user and "
+#~ "do not forget this password. Note that you shouldn't write this password "
+#~ "elsewhere for privacy reasons.</p>"
+#~ msgstr ""
+#~ "<p align=\"left\">De systeembeheerder (root) zorgt voor belangrijke "
+#~ "onderhoudstaken op het systeem. Geef een wachtwoord op voor deze speciale "
+#~ "gebruiker, en vergeet het wachtwoord niet! Uit veiligheids overwegingen "
+#~ "wordt het afgeraden het wachtwoord ergens op te schrijven. </p>"
+
+#~ msgid "System administrator password:"
+#~ msgstr "Systeembeheerder wachtwoord:"
+
+#~ msgid "System administrator password (again):"
+#~ msgstr "Wachtwoord systeembeheerder (nogmaals):"
+
+#~ msgid "Hostname:"
+#~ msgstr "Hostnaam:"
+
+#~ msgid "New User"
+#~ msgstr "Nieuwe gebruiker"
+
+#~ msgid "User Name:"
+#~ msgstr "Gebruikersnaam:"
+
+#~ msgid "Real Name:"
+#~ msgstr "Echte naam:"
+
+#~ msgid "Password:"
+#~ msgstr "Wachtwoord:"
+
+#~ msgid "Password (again):"
+#~ msgstr "Wachtwoord (nogmaals):"
+
+#~ msgid "Give administrator privileges to this user"
+#~ msgstr "Geef administror rechten aan deze gebruiker"
+
+#~ msgid "Users:"
+#~ msgstr "Gebruikers:"
+
+#~ msgid "Delete Selected User"
+#~ msgstr "Verwijder geselecteerde gebruiker"
+
+#~ msgid "Auto Login User :"
+#~ msgstr "Automatisch inloggen gebruiker:"
+
+#~ msgid "Auto Login Disabled"
+#~ msgstr "Automatisch inloggen uitgeschakeld"
+
+#~ msgid "Begin Install"
+#~ msgstr "Begin installatie"
+
+#~ msgid ""
+#~ "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
+#~ "software have their corresponding licenses. By installing or using "
+#~ "Pardus, you agree to accept them. Do you want to continue?"
+#~ msgstr ""
+#~ "Alle software is ontwikkeld door TUBITAK/UEKAE valt onder GNU/GPL. "
+#~ "Andere software hebben gelijke licenties. Door installeren of gebruik "
+#~ "maken van Pardus, stemt u toe deze voowaarden te accepteren. Wilt u "
+#~ "doorgaan?"
+
+#~ msgid "Read GPL"
+#~ msgstr "Lees de GPL"
+
+#~ msgid "Accept!"
+#~ msgstr "Accepteren!"
+
+#~ msgid "Don't Accept!"
+#~ msgstr "Verwerpen!"
