@@ -19,14 +19,14 @@ from utility import *
 
 import polkit
 
-categories = {"tr.org.pardus.comar.user.manager": I18N_NOOP("User/group operations"),
-        "tr.org.pardus.comar.net": I18N_NOOP("Network settings"),
-        "tr.org.pardus.comar.system.manager": I18N_NOOP("Package operations"),
-        "tr.org.pardus.comar.system.service": I18N_NOOP("Service operations"),
-        "tr.org.pardus.comar.time": I18N_NOOP("Date/time operations"),
-        "tr.org.pardus.comar.boot.modules": I18N_NOOP("Kernel module operations"),
-        "tr.org.pardus.comar.boot.loader": I18N_NOOP("Bootloader settings"),
-        "tr.org.pardus.comar.xorg": I18N_NOOP("Screen settings")
+categories = {"tr.org.pardus.comar.user.manager": [I18N_NOOP("User/group operations"), "user"],
+        "tr.org.pardus.comar.net": [I18N_NOOP("Network settings"), "network"],
+        "tr.org.pardus.comar.system.manager": [I18N_NOOP("Package operations"), "pisikga"],
+        "tr.org.pardus.comar.system.service": [I18N_NOOP("Service operations"), "ksysv"],
+        "tr.org.pardus.comar.time": [I18N_NOOP("Date/time operations"), "history"],
+        "tr.org.pardus.comar.boot.modules": [I18N_NOOP("Kernel module operations"), "gear"],
+        "tr.org.pardus.comar.boot.loader": [I18N_NOOP("Bootloader settings"), "blockdevice"],
+        "tr.org.pardus.comar.xorg": [I18N_NOOP("Screen settings"), "randr"]
         }
 
 unnecessaryActions = []
@@ -732,7 +732,8 @@ class PolicyTab(QVBox):
         allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         for category in categories.keys():
-            catitem = KListViewItem(self.policyview, categories[category])
+            catitem = KListViewItem(self.policyview, categories[category][0])
+            catitem.setPixmap(0, getIcon(categories[category][1]))
             catactions = filter(lambda x: x.startswith(category), allActions)
             for cataction in catactions:
                 actioninfo = polkit.action_info(cataction)

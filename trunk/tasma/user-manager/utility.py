@@ -26,6 +26,8 @@ def I18N_NOOP(str):
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
+def getIcon(name, group=KIcon.Small):
+    return KGlobal.iconLoader().loadIcon(name, group)
 
 class HelpDialog(QDialog):
     def __init__(self, name, title, parent=None):
