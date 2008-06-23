@@ -59,6 +59,12 @@ class widgetMain(formMain):
         # set labels
         self.setCaption(i18n("History Manager"))
         # show snapshots by default
+        self.comboBox.insertItem(i18n("All Operations"), 0)
+        self.comboBox.insertItem(i18n("Snapshots"), 1)
+        self.comboBox.insertItem(i18n("Upgrades"), 2)
+        self.comboBox.insertItem(i18n("Removes"), 3)
+        self.comboBox.insertItem(i18n("Installations"), 4)
+        self.comboBox.insertItem(i18n("TakeBacks"), 5)
         self.comboBox.setCurrentItem(0)
         self.toolBox.setItemLabel(0, i18n("Take Back Plan"))
         self.toolBox.setItemLabel(1, i18n("Operation Details"))
@@ -369,6 +375,7 @@ class widgetProgress(progressForm):
         progressForm.__init__(self, parent)
 
         self.parent = parent
+        self.setCaption(i18n("Progress"))
         animatedPisi = QMovie(locate("data","package-manager/pisianime.gif"))
         self.animeLabel.setMovie(animatedPisi)
 

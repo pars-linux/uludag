@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Progress.ui'
 #
-# Created: Pzt Haz 23 15:06:46 2008
+# Created: Sal Haz 24 02:36:52 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -62,7 +62,7 @@ class progressForm(QDialog):
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Form2"))
+        self.setCaption(self.__tr("Progress"))
         self.cancelPushButton.setText(self.__tr("Cancel"))
         self.animeLabel.setText(QString.null)
         self.bigTextLabel.setText(self.__tr("<h4><b>Preparing PISI</b></h4>"))
