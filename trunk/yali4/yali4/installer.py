@@ -553,6 +553,20 @@ class Yali:
                                                     win_fs)
                         continue
 
+        # check for linux partitions.
+        ctx.debugger.log("Checking for Other Distros (Linux) ...")
+        for d in yali4.storage.devices:
+            for p in d.getPartitions():
+                fs = p.getFSName()
+                if fs in ("ext3", "reiserfs", "xfs"):
+                    guest_grub_conf = yali4.sysutils.is_linux_boot(p.getPath(), fs)
+                    if guest_grub_conf:
+                        ctx.debugger.log("GRUB Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
+                        linux_dev = os.path.basename(p.getDevicePath())
+                        linux_root = os.path.basename(p.getPath())
+                        loader.grub_conf_append_guest_grub(guest_grub_conf)
+                        continue
+
         try:
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
             yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/archive")

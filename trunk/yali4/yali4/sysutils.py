@@ -145,6 +145,25 @@ def is_windows_boot(partition_path, file_system):
         umount(m_dir)
         return False
 
+def is_linux_boot(partition_path, file_system):
+    m_dir = "/tmp/pcheck"
+    if not os.path.isdir(m_dir):
+        os.makedirs(m_dir)
+    try:
+        mount(partition_path, m_dir, file_system)
+    except:
+        return False
+
+    exist = lambda f: os.path.exists(os.path.join(m_dir,"/boot/grub/", f))
+
+    if exist("grub.conf") or exists("menu.lst"):
+        grub_conf = file(os.path.join(m_dir,f)).readlines()
+        umount(m_dir)
+        return grub_conf
+    else:
+        umount(m_dir)
+        return False
+
 def umount_(dir):
     os.system("umount %s" % dir)
 
