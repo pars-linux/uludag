@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Pzt Haz 23 15:06:54 2008
+# Created: Pzt Haz 23 16:27:49 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -39,6 +39,14 @@ class formMain(QWidget):
 
         formMainLayout.addMultiCellLayout(layout11,3,3,0,1)
 
+        layout5 = QVBoxLayout(None,0,6,"layout5")
+
+        self.comboBox = QComboBox(0,self,"comboBox")
+        self.comboBox.setBackgroundOrigin(QComboBox.ParentOrigin)
+        self.comboBox.setMaxCount(10)
+        self.comboBox.setDuplicatesEnabled(0)
+        layout5.addWidget(self.comboBox)
+
         self.snapshotsListView = QListView(self,"snapshotsListView")
         self.snapshotsListView.addColumn(self.__tr("1"))
         self.snapshotsListView.addColumn(self.__tr("Date"))
@@ -47,20 +55,9 @@ class formMain(QWidget):
         self.snapshotsListView.setHScrollBarMode(QListView.AlwaysOff)
         self.snapshotsListView.setAllColumnsShowFocus(1)
         self.snapshotsListView.setShowSortIndicator(1)
+        layout5.addWidget(self.snapshotsListView)
 
-        formMainLayout.addMultiCellWidget(self.snapshotsListView,1,2,0,0)
-
-        layout5 = QHBoxLayout(None,0,6,"layout5")
-
-        self.comboBox = QComboBox(0,self,"comboBox")
-        self.comboBox.setBackgroundOrigin(QComboBox.ParentOrigin)
-        self.comboBox.setMaxCount(10)
-        self.comboBox.setDuplicatesEnabled(0)
-        layout5.addWidget(self.comboBox)
-        spacer2 = QSpacerItem(390,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        layout5.addItem(spacer2)
-
-        formMainLayout.addMultiCellLayout(layout5,0,0,0,1)
+        formMainLayout.addMultiCellLayout(layout5,0,2,0,0)
 
         self.toolBox = QToolBox(self,"toolBox")
         self.toolBox.setCurrentIndex(0)
@@ -107,6 +104,8 @@ class formMain(QWidget):
         layout8.addWidget(self.typeLabel)
 
         formMainLayout.addLayout(layout8,1,1)
+        spacer2 = QSpacerItem(500,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        formMainLayout.addItem(spacer2,0,1)
 
         self.languageChange()
 
@@ -119,8 +118,6 @@ class formMain(QWidget):
         self.helpPushButton.setText(self.__tr("Help"))
         self.snapshotPushButton.setText(self.__tr("New"))
         self.restorePushButton.setText(self.__tr("Restore"))
-        self.snapshotsListView.header().setLabel(0,self.__tr("1"))
-        self.snapshotsListView.header().setLabel(1,self.__tr("Date"))
         self.comboBox.clear()
         self.comboBox.insertItem(self.__tr("All Operations"))
         self.comboBox.insertItem(self.__tr("Snapshots"))
@@ -129,6 +126,8 @@ class formMain(QWidget):
         self.comboBox.insertItem(self.__tr("Installations"))
         self.comboBox.insertItem(self.__tr("TakeBacks"))
         self.comboBox.setCurrentItem(0)
+        self.snapshotsListView.header().setLabel(0,self.__tr("1"))
+        self.snapshotsListView.header().setLabel(1,self.__tr("Date"))
         self.toolBox.setItemLabel(self.toolBox.indexOf(self.page1),self.__tr("TakeBack Plan"))
         self.toolBox.setItemLabel(self.toolBox.indexOf(self.takeBackPage),self.__tr("Operation Details"))
         self.noLabel.setText(QString.null)
