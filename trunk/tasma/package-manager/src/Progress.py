@@ -10,6 +10,8 @@
 #
 # Please read the COPYING file
 
+import time
+
 from qt import *
 from kdecore import *
 from ProgressDialog import *
@@ -31,11 +33,14 @@ class Progress(ProgressDialog):
 
         self.packageNo = 0
         self.totalPackages = 0
+        self.rate = ""
         self.packageName = ""
+        self.timeLeft = "--:--:--"
 
         self.totalSize = 0
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
+        self.reset()
 
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
@@ -46,10 +51,18 @@ class Progress(ProgressDialog):
     def setOperationDescription(self, text):
         self.operationDescription.setText(text)
 
+    def calculateTimeLeft(self, total, downloaded, rate, symbol):
+        factor = {"B/s":1, "KB/s":1024, "MB/s":1048576, "GB/s":1073741824}
+        if symbol == "--/-":
+            return "--:--:--"
+        rates = float(rate) * factor[symbol]
+        left = total - downloaded
+        self.timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
+
     def updateStatus(self):
         completed, total = self.getCurrentDownloadedSize()
-        self.completedInfo.setText(completed)
-        self.totalInfo.setText(i18n("downloaded ( total: %1 )").arg(total))
+        self.completedInfo.setText(i18n("<p align='center'>%1 of %2, %3</p>").arg(completed).arg(total).arg(self.rate))
+        self.timeRemaining.setText(self.timeLeft)
         self.updatePackageInfo()
 
     def closeEvent(self, closeEvent):
@@ -60,19 +73,19 @@ class Progress(ProgressDialog):
     def showStatus(self):
         self.packageInfo.show()
         self.completedInfo.show()
-        self.totalInfo.show()
 
     def showOperationDescription(self):
         self.operationDescription.show()
 
     def hideStatus(self, hidepackage=False):
         if hidepackage:
+            self.statusLabel.hide()
             self.packageInfo.hide()
         else:
+            self.statusLabel.show()
             self.packageInfo.show()
 
         self.completedInfo.hide()
-        self.totalInfo.hide()
 
     def hideOperationDescription(self):
         self.setOperationDescription("")
@@ -82,10 +95,10 @@ class Progress(ProgressDialog):
 
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
-
-        self.completedInfo.setText(i18n("--"))
-        self.totalInfo.setText(i18n("downloaded (total: -- )"))
-        self.packageInfo.setText(i18n("-- / --  package"))
+        self.timeRemaining.setText("--:--")
+        self.completedInfo.setText(i18n("<p align='center'>-- of --, -- KB/sec</p>"))
+        self.packageInfo.setText(i18n("-- / --"))
+        self.timeLeft = "--:--:--"
 
         self.hideOperationDescription()
         self.hideStatus()
@@ -130,11 +143,11 @@ class Progress(ProgressDialog):
         if not package:
             package = self.packageName
 
-        self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(package))
+        self.setOperationDescription(i18n('%1 %2').arg(package).arg(operation))
 
     def updateDownloadingInfo(self, operation, file):
         self.packageName = PisiIface.parse_package_name(file)[0]
-        self.setOperationDescription(i18n('Now %1 <b>%2</b> package').arg(operation).arg(self.packageName))
+        self.setOperationDescription(i18n('%1 %2').arg(self.packageName).arg(operation))
         self.updateStatus()
         self.showOperationDescription()
 
@@ -150,15 +163,19 @@ class Progress(ProgressDialog):
         elif self.parent.state == Basket.upgrade_state:
             operation = i18n("upgraded")
 
-        self.packageInfo.setText(i18n("%1 / %2 package %3").arg(self.packageNo).arg(self.totalPackages).arg(operation))
+        self.packageInfo.setText(i18n("%1 of %2 packages %3").arg(self.packageNo).arg(self.totalPackages).arg(operation))
 
     # pisi does not provide total downloaded size, just package based.
-    def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize):
+    def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize, rate, symbol):
+        self.rate = "%s %s" % (rate, symbol)
         if pkgDownSize == pkgTotalSize:
             self.totalDownloaded += int(pkgTotalSize)
             self.curPkgDownloaded = 0
         else:
             self.curPkgDownloaded = int(pkgDownSize)
+
+        self.calculateTimeLeft(self.totalSize, self.totalDownloaded, rate, symbol)
+        self.timeRemaining.setText(self.timeLeft)
 
     # pisi does not provide total operation percent, just package based.
     def updateTotalOperationPercent(self):
