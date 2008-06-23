@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Progress.ui'
 #
-# Created: Prş May 22 01:02:04 2008
+# Created: Pzt Haz 23 12:22:25 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -28,25 +28,32 @@ class progressForm(QDialog):
         self.cancelPushButton = QPushButton(self,"cancelPushButton")
         layout1.addWidget(self.cancelPushButton)
 
-        progressFormLayout.addMultiCellLayout(layout1,3,3,0,1)
+        progressFormLayout.addMultiCellLayout(layout1,3,3,0,2)
 
         self.progressBar = QProgressBar(self,"progressBar")
 
-        progressFormLayout.addMultiCellWidget(self.progressBar,2,2,0,1)
+        progressFormLayout.addMultiCellWidget(self.progressBar,2,2,0,2)
+
+        self.animeLabel = QLabel(self,"animeLabel")
+        self.animeLabel.setMaximumSize(QSize(130,32767))
+
+        progressFormLayout.addMultiCellWidget(self.animeLabel,0,1,0,0)
 
         self.bigTextLabel = QLabel(self,"bigTextLabel")
         self.bigTextLabel.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Fixed,0,0,self.bigTextLabel.sizePolicy().hasHeightForWidth()))
 
-        progressFormLayout.addWidget(self.bigTextLabel,0,1)
+        progressFormLayout.addMultiCellWidget(self.bigTextLabel,0,0,1,2)
 
         self.progressTextLabel = QLabel(self,"progressTextLabel")
         self.progressTextLabel.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Fixed,0,0,self.progressTextLabel.sizePolicy().hasHeightForWidth()))
 
         progressFormLayout.addWidget(self.progressTextLabel,1,1)
 
-        self.animeLabel = QLabel(self,"animeLabel")
+        self.percentTextLabel = QLabel(self,"percentTextLabel")
+        self.percentTextLabel.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Fixed,0,0,self.percentTextLabel.sizePolicy().hasHeightForWidth()))
+        self.percentTextLabel.setMaximumSize(QSize(70,17))
 
-        progressFormLayout.addMultiCellWidget(self.animeLabel,0,1,0,0)
+        progressFormLayout.addWidget(self.percentTextLabel,1,2)
 
         self.languageChange()
 
@@ -55,11 +62,12 @@ class progressForm(QDialog):
 
 
     def languageChange(self):
-        self.setCaption(self.__tr("Progress Dialog"))
+        self.setCaption(self.__tr("Form2"))
         self.cancelPushButton.setText(self.__tr("Cancel"))
+        self.animeLabel.setText(QString.null)
         self.bigTextLabel.setText(self.__tr("<h2><b>Preparing PISI</b></h2>"))
         self.progressTextLabel.setText(self.__tr("Taking a snapshot of system"))
-        self.animeLabel.setText(QString.null)
+        self.percentTextLabel.setText(QString.null)
 
 
     def __tr(self,s,c = None):
