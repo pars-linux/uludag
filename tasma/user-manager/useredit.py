@@ -21,7 +21,7 @@ import polkit
 
 categories = {"tr.org.pardus.comar.user.manager": [I18N_NOOP("User/group operations"), "user"],
         "tr.org.pardus.comar.net": [I18N_NOOP("Network settings"), "network"],
-        "tr.org.pardus.comar.system.manager": [I18N_NOOP("Package operations"), "pisikga"],
+        "tr.org.pardus.comar.system.manager": [I18N_NOOP("Package operations"), "package"],
         "tr.org.pardus.comar.system.service": [I18N_NOOP("Service operations"), "ksysv"],
         "tr.org.pardus.comar.time": [I18N_NOOP("Date/time operations"), "history"],
         "tr.org.pardus.comar.boot.modules": [I18N_NOOP("Kernel module operations"), "gear"],
