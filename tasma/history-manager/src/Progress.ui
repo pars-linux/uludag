@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>layout1</cstring>
             </property>
@@ -54,9 +54,39 @@
                 </widget>
             </hbox>
         </widget>
-        <widget class="QProgressBar" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QProgressBar" row="2" column="0" rowspan="1" colspan="3">
             <property name="name">
                 <cstring>progressBar</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="1">
+            <property name="name">
+                <cstring>animeLabel</cstring>
+            </property>
+            <property name="maximumSize">
+                <size>
+                    <width>130</width>
+                    <height>32767</height>
+                </size>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>bigTextLabel</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>&lt;h2&gt;&lt;b&gt;Preparing PISI&lt;/b&gt;&lt;/h2&gt;</string>
             </property>
         </widget>
         <widget class="QLabel" row="1" column="1">
@@ -75,34 +105,26 @@
                 <string>Taking a snapshot of system</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="2" colspan="1">
+        <widget class="QLabel" row="1" column="2">
             <property name="name">
-                <cstring>animeLabel</cstring>
-            </property>
-            <property name="maximumSize">
-                <size>
-                    <width>130</width>
-                    <height>32767</height>
-                </size>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-        </widget>
-        <widget class="QLabel" row="0" column="1">
-            <property name="name">
-                <cstring>bigTextLabel</cstring>
+                <cstring>percentTextLabel</cstring>
             </property>
             <property name="sizePolicy">
                 <sizepolicy>
-                    <hsizetype>5</hsizetype>
+                    <hsizetype>0</hsizetype>
                     <vsizetype>0</vsizetype>
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                 </sizepolicy>
             </property>
+            <property name="maximumSize">
+                <size>
+                    <width>70</width>
+                    <height>17</height>
+                </size>
+            </property>
             <property name="text">
-                <string>&lt;h2&gt;&lt;b&gt;Preparing PISI&lt;/b&gt;&lt;/h2&gt;</string>
+                <string></string>
             </property>
         </widget>
     </grid>

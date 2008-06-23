@@ -127,6 +127,7 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     message, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
+                self.progress.reset()
                 self.command.takeSnapshot()
 
     def take_back(self, operation=None):
@@ -143,6 +144,8 @@ class widgetMain(formMain):
             if 0 == QMessageBox.question(self, i18n("Warning"), \
                     qmessage, i18n("Continue"), i18n("Cancel")):
                 self.enableButtons(False)
+                self.progress.reset()
+                self.progress.setTotalSteps((len(willbeinstalled)+len(willberemoved))*2)
                 self.command.takeBack(operation)
 
     def delete_snapshot(self):
@@ -181,8 +184,18 @@ class widgetMain(formMain):
         self.progress.hide()
 
     def displayProgress(self, data):
-        operation, percent, message = data
-        self.progress.updateProgressBar(percent)
+        try:
+            operation, percent, message = data
+            self.progress.updateProgressBar(percent)
+        except ValueError:
+            try:
+                operation, package, percent, area, speed, hede, hodo = data
+                self.progress.progressTextLabel.setText(i18n("Fetching %1").arg(package))
+                self.progress.setSteps(percent)
+                if percent == 100:
+                    self.progress.increase()
+            except ValueError:
+                pass
 
     def showErrorMessage(self, message):
         QMessageBox.critical(self, i18n("Error"), message, i18n("OK"))
@@ -220,7 +233,6 @@ class widgetMain(formMain):
             pass
         elif operation in ["policy_yes"]:
             # access granted
-            self.progress.reset()
             self.progress.show()
             self.progress.setCurrentOperation(i18n("<b>Access Granted</b><br>"))
         elif operation in ["policy_no"]:
@@ -234,7 +246,7 @@ class widgetMain(formMain):
             for i in args:
                 self.progress.setCurrentOperation(i18n("Removing    : %1").arg(i))
         elif operation in ["removed"]:
-            pass
+            self.progress.increase(2)
         elif operation in ["installing"]:
             for i in args:
                 self.progress.setCurrentOperation(i18n("Installing  : %1").arg(i))
@@ -245,7 +257,7 @@ class widgetMain(formMain):
             for i in args:
                 self.progress.setCurrentOperation(i18n("Configuring  : %1").arg(i))
         elif operation in ["installed"]:
-            pass
+            self.progress.increase()
         elif operation in ["takingSnapshot"]:
             self.progress.setHeader(i18n("Taking a Snapshot of System "))
         elif operation in ["takingBack"]:
@@ -378,7 +390,10 @@ class widgetProgress(progressForm):
     def setHeader(self, mes):
         self.bigTextLabel.setText("<h3><b>%s</b></h3>" % mes)
 
-    def updateProgressBar(self, progress):
+    def updateProgressBar(self, progress, totalSteps=None):
+        if totalSteps:
+            self.progressBar.setProgress(float(progress), totalSteps)
+            return
         self.progressBar.setProgress(float(progress))
 
     def reset(self):
@@ -390,6 +405,18 @@ class widgetProgress(progressForm):
             return
         else:
             progressForm.keyPressEvent(self, event)
+
+    def setTotalSteps(self, num):
+        self.progressBar.setTotalSteps(num)
+
+    def setSteps(self, percent):
+        self.percentTextLabel.setText("%s%d" % ("%", percent))
+
+    def increase(self, num=1):
+        self.progressBar.setProgress(self.progressBar.progress() + num)
+        print "progress : ", self.progressBar.progress()
+        print "setProgress: ", self.progressBar.progress() + num
+        print "total steps: ", self.progressBar.totalSteps()
 
 class widgetItem(QListViewItem):
     """ class for listviewitem's """

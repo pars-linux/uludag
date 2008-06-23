@@ -48,7 +48,7 @@ def main():
     KUniqueApplication.addCmdLineOptions()
 
     if not KUniqueApplication.start():
-        print i18n('History Manager is already runnings!')
+        print i18n('History Manager is already running!')
         return
 
     kapp = KUniqueApplication(True, True, True)

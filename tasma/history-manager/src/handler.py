@@ -73,7 +73,6 @@ class CallHandler:
     def __handleError(self, exception):
         name = exception._dbus_error_name
         try:
-            # FIXME 25 seconds timeout issue
             if(name.count("DBus.Error.NoReply") != 0):
                 return
 
