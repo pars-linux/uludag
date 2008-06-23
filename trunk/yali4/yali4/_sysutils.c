@@ -19,32 +19,6 @@
 #include <ext2fs/ext2fs.h>
 
 
-PyDoc_STRVAR(mount__doc__,
-"mount(source, target, filesystem)\n"
-"\n"
-"method implements the mount(2) system call in Linux\n");
-
-static PyObject*
-_sysutils_mount(PyObject *self, PyObject *args)
-{
-
-  int ok;
-  const char *src, *tgt, *fstype;
-
-  /* FIXME: get mount flags! */
-  if (!PyArg_ParseTuple(args, "sss", &src, &tgt, &fstype))
-  {
-      Py_INCREF(Py_None);
-      return Py_None;
-  }
-
-  ok = mount(src, tgt, fstype, MS_NOATIME, NULL);
-
-  return PyInt_FromLong( (long) ok );
-}
-
-
-
 PyDoc_STRVAR(umount__doc__,
 "umount(target)\n"
 "\n"
@@ -124,43 +98,11 @@ _sysutils_fastreboot(PyObject *self)
 }
 
 
-PyDoc_STRVAR(e2fslabel__doc__,
-"e2fslabel()\n"
-"\n"
-"read filesystem label!\n");
-
-/* function taken from anaconda/isys.c */
-static PyObject *
-_sysutils_e2fslabel(PyObject * s, PyObject * args)
-{
-    char * device;
-    ext2_filsys fsys;
-    char buf[50];
-    int rc;
-
-    if (!PyArg_ParseTuple(args, "s", &device)) return NULL;
-
-    rc = ext2fs_open(device, EXT2_FLAG_FORCE, 0, 0, unix_io_manager, &fsys);
-    if (rc) {
-        Py_INCREF(Py_None);
-        return Py_None;
-    }
-
-    memset(buf, 0, sizeof(buf));
-    strncpy(buf, fsys->super->s_volume_name, sizeof(fsys->super->s_volume_name));
-
-    ext2fs_close(fsys);
-
-    return Py_BuildValue("s", buf); 
-}
-
 
 static PyMethodDef _sysutils_methods[] = {
-    {"mount",  (PyCFunction)_sysutils_mount,  METH_VARARGS,  mount__doc__},
     {"umount",  (PyCFunction)_sysutils_umount,  METH_VARARGS,  umount__doc__},
     {"eject",  (PyCFunction)_sysutils_eject,  METH_VARARGS,  eject__doc__},
     {"fastreboot",  (PyCFunction)_sysutils_fastreboot,  METH_NOARGS,  fastreboot__doc__},
-    {"e2fslabel", (PyCFunction)_sysutils_e2fslabel, METH_VARARGS, e2fslabel__doc__},
     {NULL, NULL}
 };
 

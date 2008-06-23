@@ -330,15 +330,31 @@ class Ext3FileSystem(FileSystem):
         return True
 
     def getLabel(self, partition):
-        return sysutils.e2fslabel(partition.getPath())
+        cmd_path = sysutils.find_executable("e2label")
+        cmd = "%s %s" % (cmd_path, partition.getPath())
+        import yali4.gui.context as ctx
+        ctx.debugger.log("Running CMD: %s" % cmd)
+        try:
+            p = os.popen(cmd)
+            label = p.read()
+            p.close()
+        except:
+            return False
+        return label.strip()
 
     def setLabel(self, partition, label):
         label = self.availableLabel(label)
         cmd_path = sysutils.find_executable("e2label")
+        import yali4.gui.context as ctx
         cmd = "%s %s %s" % (cmd_path, partition.getPath(), label)
+        ctx.debugger.log("Running CMD: %s" % cmd)
         try:
             p = os.popen(cmd)
             p.close()
+            res = sysutils.execClear("e2label",
+                                    [partition.getPath(), label],
+                                    stdout="/tmp/label.log",
+                                    stderr="/tmp/label.log")
         except:
             return False
         return label

@@ -114,6 +114,16 @@ def add_hostname(hostname = 'pardus'):
     else:
         hosts_fp.write('127.0.0.1\t\tlocalhost %s\n' % hostname)
 
+def mount(source, target, fs, needs_mtab=False):
+    params = ["-t", filesystem, source, target]
+    if not needs_mtab:
+        params.insert(0,"-n")
+
+    mount_res = execClear("mount",
+                          params,
+                          stdout="/tmp/mount.log",
+                          stderr="/tmp/mount.log")
+
 def is_windows_boot(partition_path, file_system):
     m_dir = "/tmp/pcheck"
     if not os.path.isdir(m_dir):
@@ -162,6 +172,7 @@ def execClear(command, argv, stdin = 0, stdout = 1, stderr = 2):
     if type(stderr) == type("string"):
         stderr = open(stderr, "w")
     if stdout is not None and type(stdout) != int:
+        ctx.debugger.log("Running CMD : %s" %([command] + argv,))
         stdout.write("Running... %s\n" %([command] + argv,))
 
     p = os.pipe()

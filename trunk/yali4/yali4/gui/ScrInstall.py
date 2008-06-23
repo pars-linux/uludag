@@ -213,8 +213,9 @@ class PkgInstaller(QThread):
     def run(self):
         ctx.debugger.log("PkgInstaller is running.")
         ui = PisiUI(self._widget)
-
+        ctx.debugger.log("PisiUI is creating..")
         yali4.pisiiface.initialize(ui)
+        ctx.debugger.log("Pisi initialize is calling..")
 
         # if exists use remote source repo
         # otherwise use cd as repo
