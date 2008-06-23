@@ -10,34 +10,33 @@
 #
 
 name_msg = {
-"en": "Wireless network",
-"tr": "Kablosuz ağlar"
+    "en": "Wireless network",
+    "tr": "Kablosuz ağlar"
 }
 
 dhcp_fail_msg = {
-"en": "Could not get address",
-"tr": "Adres alınamadı"
+    "en": "Could not get address",
+    "tr": "Adres alınamadı"
 }
 
 no_device_msg = {
-"en": "Device is not plugged",
-"tr": "Aygıt takılı değil"
+    "en": "Device is not plugged",
+    "tr": "Aygıt takılı değil"
 }
 
 wpa_psp_msg = {
-"en": "WPA PreShared Key",
-"tr": "WPA Ortak Parola"
+    "en": "WPA PreShared Key",
+    "tr": "WPA Ortak Parola"
 }
 
 wpa_fail_msg = {
-"en": "Authentication failed",
-"tr": "Kimlik doğrulama başarısız",
+    "en": "Authentication failed",
+    "tr": "Kimlik doğrulama başarısız",
 }
 
 no_supplicant_msg = {
-
-"en": "WPA supplicant not found",
-"tr": "WPA supplicant bulunamadı",
+    "en": "WPA supplicant not found",
+    "tr": "WPA supplicant bulunamadı",
 }
 
 import os
@@ -63,192 +62,192 @@ SIOCGIWESSID = 0x8B1B   # get essid
 
 
 class Point:
-def __init__(self, id=None):
-    self.ssid = ""
-    self.mode = ""
-    self.mac = ""
-    self.encryption = "none"
-    self.qual = ""
-    self.protocol = ""
-    self.channel = ""
-    if id:
-        if " (" in id and id.endswith(")"):
-            self.ssid, rest = id.split(" (", 1)
-            self.mode, self.mac = rest.split(" ", 1)
-            self.mac = self.mac[:-1]
-        else:
-            self.ssid = id
+	def __init__(self, id=None):
+		self.ssid = ""
+		self.mode = ""
+		self.mac = ""
+		self.encryption = "none"
+		self.qual = ""
+		self.protocol = ""
+		self.channel = ""
+		if id:
+			if " (" in id and id.endswith(")"):
+			self.ssid, rest = id.split(" (", 1)
+			self.mode, self.mac = rest.split(" ", 1)
+			self.mac = self.mac[:-1]
+			else:
+			self.ssid = id
 
-def id(self):
-    d = {
-        "remote": self.ssid,
-        "mode": self.mode,
-        "mac": self.mac,
-        "encryption": self.encryption,
-        "quality": self.qual,
-        "protocol": self.protocol,
-        "channel": self.channel,
-    }
-    return d
+	def id(self):
+		d = {
+			"remote": self.ssid,
+			"mode": self.mode,
+			"mac": self.mac,
+			"encryption": self.encryption,
+			"quality": self.qual,
+			"protocol": self.protocol,
+			"channel": self.channel,
+		}
+		return d
 
 
-class Wireless:
-modes = ['Auto', 'Ad-Hoc', 'Managed', 'Master', 'Repeat', 'Second', 'Monitor']
+class Wireless:	
+    	modes = ['Auto', 'Ad-Hoc', 'Managed', 'Master', 'Repeat', 'Second', 'Monitor']
 
-def __init__(self, ifc):
-    self.sock = None
-    self.ifc = ifc
+	def __init__(self, ifc):
+		self.sock = None
+		self.ifc = ifc
 
-def _call(self, func, arg = None):
-    if arg is None:
-        data = (self.ifc.name + '\0' * 32)[:32]
-    else:
-        data = (self.ifc.name + '\0' * 16)[:16] + arg
-    try:
-        result = self.ifc.ioctl(func, data)
-    except IOError:
-        return None
-    return result
+	def _call(self, func, arg = None):
+		if arg is None:
+			data = (self.ifc.name + '\0' * 32)[:32]
+		else:
+			data = (self.ifc.name + '\0' * 16)[:16] + arg
+		try:
+			result = self.ifc.ioctl(func, data)
+		except IOError:
+			return None
+		return result
+	
+	def getSSID(self):
+		buffer = array.array('c', '\0' * 16)
+		addr, length = buffer.buffer_info()
+		arg = struct.pack('Pi', addr, length)
+		self._call(SIOCGIWESSID, arg)
+		return buffer.tostring().strip('\x00')
 
-def getSSID(self):
-    buffer = array.array('c', '\0' * 16)
-    addr, length = buffer.buffer_info()
-    arg = struct.pack('Pi', addr, length)
-    self._call(SIOCGIWESSID, arg)
-    return buffer.tostring().strip('\x00')
+	def setSSID(self, ssid):
+		point = Point(ssid)
+		buffer = array.array('c', point.ssid + '\x00')
+		addr, length = buffer.buffer_info()
+		arg = struct.pack("iHH", addr, length, 1)
+		self._call(SIOCSIWESSID, arg)
+		if self.getSSID() is point.ssid:
+			return True
+		else:
+			return None
+		
+		def scanSSID(self):
+		ifc = self.ifc
+		if not ifc.isUp():
+			# Some drivers cant do the scan while interface is down, doh :(
+			ifc.setAddress("0.0.0.0")
+			ifc.up()
+		cmd = subprocess.Popen(["/usr/sbin/iwlist", ifc.name, "scan"], stdout=subprocess.PIPE)
+			data = cmd.communicate()[0]
+			points = []
+			point = None
+			for line in data.split("\n"):
+			line = line.lstrip()
+			if line.startswith("Cell "):
+				if point != None:
+				points.append(point)
+				point = Point()
+			if "ESSID:" in line:
+				i = line.find('"') + 1
+				j = line.find('"', i)
+				point.ssid = line[i:j]
+			if "Protocol:" in line:
+				point.protocol = line.split("Protocol:")[1]
+			if "Encryption key:" in line:
+				mode = line.split("Encryption key:")[1]
+				if mode == "on":
+				point.encryption = "wepascii"
+			if "IE:" in line:
+				ie = line.split("IE:")[1].strip()
+				if "WPA Version 1" in ie:
+				point.encryption = "wpa-psk"
+				if "WPA2 Version 1" in ie:
+				point.encryption = "wpa-psk"
+			if "Mode:" in line:
+				point.mode = line.split("Mode:")[1]
+			if "Channel:" in line:
+				point.channel = line.split("Channel:")[1]
+			if "Address:" in line:
+				point.mac = line.split("Address:")[1].strip()
+			if "Quality" in line:
+				qual = line.split("Quality")[1][1:]
+				qual = qual.split(" ")[0]
+				if "/" in qual:
+				qual, max = qual.split("/")
+				# normalize to 0-100
+				if max != "100":
+					qual = (float(qual) * 100) / float(max)
+					qual = str(int(qual))
+				point.qual = qual
+			if point != None:
+			points.append(point)
+			return points
+	
+	def getMode(self):
+		result = self._call(SIOCGIWMODE)
+		mode = struct.unpack("i", result[16:20])[0]
+		return self.modes[mode]
+	
+	def setMode(self, mode):
+		arg = struct.pack("l", self.modes.index(mode))
+		self._call(SIOCSIWMODE, arg)
+		if self.getMode() is mode:
+		return True
+		else:
+		return None
+	
+	def setEncryption(self, mode="none", username=None, password=None, ssid=None):
+		have_supplicant = True
+		try:
+		import wpa_supplicant
+		except ImportError:
+		have_supplicant = False
+	
+		ifc = self.ifc
+	
+		# Disable all auth. mechanisms before try to authenticate another methods
+		os.system("/usr/sbin/iwconfig %s enc off" % (ifc.name))
+	
+		if mode == "wep":
+		os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
+		elif mode == "wepascii":
+		#os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (ifc.name, password))
+		os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
+		elif mode == "wpa-psk":
+		if not have_supplicant:
+			return _(no_supplicant_msg)
+		ret = wpa_supplicant.setWpaAuthentication(ifc.name, ssid, password)
+		if not ret:
+			return _(wpa_fail_msg)
+		elif mode == "peap-mschapv2":
+		if not have_supplicant:
+			return _(no_supplicant_msg)
+		peap = wpa_supplicant.Wpa_EAP(ifc.name)
+		peap.ssid = ssid
+		peap.phase2 = "MSCHAPV2"
+		ret = peap.authenticate(username, password)
+		if not ret:
+			return _(wpa_fail_msg)
+		return ""
 
-def setSSID(self, ssid):
-    point = Point(ssid)
-    buffer = array.array('c', point.ssid + '\x00')
-    addr, length = buffer.buffer_info()
-    arg = struct.pack("iHH", addr, length, 1)
-    self._call(SIOCSIWESSID, arg)
-    if self.getSSID() is point.ssid:
-        return True
-    else:
-        return None
-
-def scanSSID(self):
-    ifc = self.ifc
-    if not ifc.isUp():
-        # Some drivers cant do the scan while interface is down, doh :(
-        ifc.setAddress("0.0.0.0")
-        ifc.up()
-    cmd = subprocess.Popen(["/usr/sbin/iwlist", ifc.name, "scan"], stdout=subprocess.PIPE)
-        data = cmd.communicate()[0]
-        points = []
-        point = None
-        for line in data.split("\n"):
-            line = line.lstrip()
-            if line.startswith("Cell "):
-                if point != None:
-                    points.append(point)
-                point = Point()
-            if "ESSID:" in line:
-                i = line.find('"') + 1
-                j = line.find('"', i)
-                point.ssid = line[i:j]
-            if "Protocol:" in line:
-                point.protocol = line.split("Protocol:")[1]
-            if "Encryption key:" in line:
-                mode = line.split("Encryption key:")[1]
-                if mode == "on":
-                    point.encryption = "wepascii"
-            if "IE:" in line:
-                ie = line.split("IE:")[1].strip()
-                if "WPA Version 1" in ie:
-                    point.encryption = "wpa-psk"
-                if "WPA2 Version 1" in ie:
-                    point.encryption = "wpa-psk"
-            if "Mode:" in line:
-                point.mode = line.split("Mode:")[1]
-            if "Channel:" in line:
-                point.channel = line.split("Channel:")[1]
-            if "Address:" in line:
-                point.mac = line.split("Address:")[1].strip()
-            if "Quality" in line:
-                qual = line.split("Quality")[1][1:]
-                qual = qual.split(" ")[0]
-                if "/" in qual:
-                    qual, max = qual.split("/")
-                    # normalize to 0-100
-                    if max != "100":
-                        qual = (float(qual) * 100) / float(max)
-                        qual = str(int(qual))
-                point.qual = qual
-        if point != None:
-            points.append(point)
-        return points
-    
-    def getMode(self):
-        result = self._call(SIOCGIWMODE)
-        mode = struct.unpack("i", result[16:20])[0]
-        return self.modes[mode]
-    
-    def setMode(self, mode):
-        arg = struct.pack("l", self.modes.index(mode))
-        self._call(SIOCSIWMODE, arg)
-        if self.getMode() is mode:
-            return True
-        else:
-            return None
-    
-    def setEncryption(self, mode="none", username=None, password=None, ssid=None):
-        have_supplicant = True
-        try:
-            import wpa_supplicant
-        except ImportError:
-            have_supplicant = False
-
-        ifc = self.ifc
-
-        # Disable all auth. mechanisms before try to authenticate another methods
-        os.system("/usr/sbin/iwconfig %s enc off" % (ifc.name))
-
-        if mode == "wep":
-            os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
-        elif mode == "wepascii":
-            #os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (ifc.name, password))
-            os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
-        elif mode == "wpa-psk":
-            if not have_supplicant:
-                return _(no_supplicant_msg)
-            ret = wpa_supplicant.setWpaAuthentication(ifc.name, ssid, password)
-            if not ret:
-                return _(wpa_fail_msg)
-        elif mode == "peap-mschapv2":
-            if not have_supplicant:
-                return _(no_supplicant_msg)
-            peap = wpa_supplicant.Wpa_EAP(ifc.name)
-            peap.ssid = ssid
-            peap.phase2 = "MSCHAPV2"
-            ret = peap.authenticate(username, password)
-            if not ret:
-                return _(wpa_fail_msg)
-        return ""
-    
-    def getBitrate(self, ifname):
-        # Note for UI coder, KILO is not 2^10 in wireless tools world
-        result = self._call(SIOCGIWRATE)
-        size = struct.calcsize('ihbb')
-        m, e, i, pad = struct.unpack('ihbb', result[16:16+size])
-        if e == 0:
-            bitrate =  m
-        else:
-            bitrate = float(m) * 10**e
-        return bitrate
-    def getLinkStatus(self, ifname):
-        """ Get link status of an interface """
-        link = self._readsys(ifname, "wireless/link")
-        return int(link)
-    def getNoiseStatus(self, ifname):
-        """ Get noise level of an interface """
-        noise = self._readsys(ifname, "wireless/noise")
-        return int(noise) - 256
-    def getSignalStatus(self, ifname):
-        """ Get signal status of an interface """
-        signal = self._readsys(ifname, "wireless/level")
-        return int(signal) - 256
+	def getBitrate(self, ifname):
+		# Note for UI coder, KILO is not 2^10 in wireless tools world
+		result = self._call(SIOCGIWRATE)
+		size = struct.calcsize('ihbb')
+		m, e, i, pad = struct.unpack('ihbb', result[16:16+size])
+		if e == 0:
+		bitrate =  m
+		else:
+		bitrate = float(m) * 10**e
+		return bitrate
+	def getLinkStatus(self, ifname):
+		""" Get link status of an interface """
+		link = self._readsys(ifname, "wireless/link")
+		return int(link)
+	def getNoiseStatus(self, ifname):
+		""" Get noise level of an interface """
+		noise = self._readsys(ifname, "wireless/noise")
+		return int(noise) - 256
+	def getSignalStatus(self, ifname):
+		""" Get signal status of an interface """
+		signal = self._readsys(ifname, "wireless/level")
+		return int(signal) - 256
 
 
 # Internal functions
