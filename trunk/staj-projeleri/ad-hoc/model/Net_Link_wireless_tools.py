@@ -296,7 +296,7 @@ class Dev:
         self.user = _get(dict, "user", "")
         self.password = _get(dict, "password", "")
         self.namemode = _get(dict, "namemode", "default")
-        self.nameserver = _get(dict, "nameserver", none)
+        self.nameserver = _get(dict, "nameserver", "none")
         self.device_mode = _get(dict, "device_mode", "client")
     
     def dns(self):
