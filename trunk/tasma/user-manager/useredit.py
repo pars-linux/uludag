@@ -561,7 +561,6 @@ class UserStack(QVBox):
                     print "Grants: " + key
                     ch = self.mainwidget.callMethod("grantAuthorization", "tr.org.pardus.comar.user.manager.setuser", False)
                     ch.call(int(self.u_id.text()), key)
-                    print int(self.u_id.text()), key
                 elif value == "block":
                     print "Block: " + key
                     ch = self.mainwidget.callMethod("blockAuthorization", "tr.org.pardus.comar.user.manager.setuser", False)
@@ -626,6 +625,9 @@ class UserStack(QVBox):
         self.u_home.setText("")
         self.u_groups.setText("")
         self.u_policygrouptab.reset()
+        grants = []
+        revokes = []
+        blocks = []
         self.checkAdd()
 
     def startAdd(self, groups, names):
@@ -697,6 +699,7 @@ class PolicyTab(QVBox):
         self.edit = edit
         self.mainwidget = mainwidget
         self.operations = {}
+        self.inOperation = False
 
         self.ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
 
@@ -743,6 +746,8 @@ class PolicyTab(QVBox):
         self.passwordCheck.setChecked(False)
         self.authorized.setChecked(False)
         self.blocked.setChecked(False)
+        self.operations.clear()
+        self.inOperation = False
 
     def fillAuths(self):
         #do not show policies require policy type yes or no, only the ones require auth_* type
@@ -773,6 +778,9 @@ class PolicyTab(QVBox):
             self.actionClicked(item)
 
     def passwordCheckSlot(self, toggle):
+        if self.inOperation:
+            return
+
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
             return
@@ -792,6 +800,9 @@ class PolicyTab(QVBox):
                 self.operations[item.id] = "grant_revoke"
 
     def blockedSlot(self, toggle):
+        if self.inOperation:
+            return
+
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
             return
@@ -810,16 +821,15 @@ class PolicyTab(QVBox):
                 self.operations[item.id] = "block_revoke"
 
     def actionClicked(self, actionItem):
-        #disconnect these signals to prevent execution of slots
-        self.disconnect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
-        self.disconnect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
+        #now we will setup radiobuttons and checkbox according to the action clicked, but during this setup
+        #slots of the widgets should not be executed so we set this inOperation variable and check this variable in slots of the widgets
+        self.inOperation = True
 
         #if it is a new user, default is authorized
         if not self.edit:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(False)
-            self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
-            self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
+            self.inOperation = False
             return
 
         #if user changed the default value select buttons according to it
@@ -834,13 +844,18 @@ class PolicyTab(QVBox):
             else: #block
                 self.blocked.setOn(True)
                 self.passwordCheck.setChecked(False)
+
+            self.inOperation = False
             return
 
         def listDone(authList):
+            #since COMAR calls this handler twice, we have a workaround like this
+            self.inOperation = True
             self.selectRightButtons(authList, actionItem, True)
 
         try:
             auths = polkit.auth_list_uid(int(self.uid.text()))
+            self.inOperation = True
             self.selectRightButtons(auths, actionItem)
         except:
             #call COMAR see different users' auths
@@ -858,8 +873,7 @@ class PolicyTab(QVBox):
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(False)
 
-            self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
-            self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
+            self.inOperation = False
             return
 
         if len(filter(lambda x: x['negative'], auths)) > 0:
@@ -870,8 +884,7 @@ class PolicyTab(QVBox):
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(True)
 
-        self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
-        self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
+        self.inOperation = False
 
 class ActionItem(KListViewItem):
     def __init__(self, parent, id, desc, policy):
