@@ -62,7 +62,7 @@ class PisiApi:
         foundPackages = None
 
         while not foundPackages and searchedBuild > 0:
-            foundPackages = glob.glob("%s-*-*-%s.pisi" % (os.path.join(config.binaryPath, package[0]), searchedBuild))
+            foundPackages = glob.glob1(config.binaryPath, "%s-[0-9]*-%s.pisi" % (package[0], searchedBuild))
             if foundPackages:
                 retval = os.path.basename(foundPackages[0])
             else:
