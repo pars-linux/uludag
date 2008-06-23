@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-23 09:06+0300\n"
-"PO-Revision-Date: 2008-06-21 17:45+0200\n"
+"PO-Revision-Date: 2008-06-24 01:09+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -32,10 +32,10 @@ msgid ""
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
-"Willkommen! Unser verbessertes Setup-tool YALI wird Ihnen mit der "
+"Willkommen! Unser verbessertes Setup-tool YALI wird Ihnen bei der "
 "Installation von Pardus 2008 helfen. Mit YALI können Sie Pardus 2008 schnell "
-"und einfach installieren, nachdem sie die Festplatte(n) mit dem integrierten "
-"intelligenten Partitionstool vorbereitet haban.\n"
+"und einfach installieren, nachdem Sie die Festplatte(n) mit dem integrierten "
+"intelligenten Partitionierungstool vorbereitet haben.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -246,10 +246,9 @@ msgid "There is a request for the same Partition Type."
 msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:316
-#, fuzzy, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Partition <b>%(partition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+#, python-format
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partition <b>%(partition)s</b>wird <b>formatiert</b> als <b>%(fsType)s</b>."
 
 #: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
 #, python-format
@@ -366,7 +365,6 @@ msgid "Set Administrator"
 msgstr "Administrator festlegen"
 
 #: yali4/gui/ScrAdmin.py:31
-#, fuzzy
 msgid "Admins have important rights on the system..."
 msgstr "Administratoren haben auf dem System wichtige Rechte..."
 
@@ -633,10 +631,8 @@ msgid "Installing system..."
 msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:57
-#, fuzzy
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von Ihrer Hardware..."
 
 #: yali4/gui/ScrInstall.py:59
 msgid ""
@@ -684,7 +680,6 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrInstall.py:108
-#, fuzzy
 msgid "Packages are being installed.."
 msgstr "Pakete werden installiert.."
 
@@ -998,8 +993,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:181
 msgid "Bootloader Settings"
@@ -1183,7 +1177,7 @@ msgstr "Abbrechen"
 
 #: yali4/gui/YaliDialog.py:133
 msgid "O.K. Go Ahead"
-msgstr "O.K., forsetzen"
+msgstr "O.K. forsetzen"
 
 #: yali4/gui/YaliWindow.py:48 yali4/gui/YaliWindow.py:61
 msgid "Show Help"
@@ -1206,7 +1200,6 @@ msgid "Backtrace:"
 msgstr "Ablaufverfolgung:"
 
 #: yali4/installer.py:126
-#, fuzzy
 msgid "YALI Is Working..."
 msgstr "YALI ist am arbeiten..."
 
@@ -1257,9 +1250,9 @@ msgid "Creating new partition ..."
 msgstr "Neue Partition wird erstellt..."
 
 #: yali4/installer.py:438
-#, fuzzy, python-format
+#, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
-msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
+msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis ist in Vorbereitung.."
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -1437,400 +1430,3 @@ msgstr "Swap"
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
 
-#~ msgid "Form"
-#~ msgstr "Form"
-
-#~ msgid ""
-#~ "It seems there is more than one partition for resizing. In this case you "
-#~ "can select a partition from the list below or YALI will select one."
-#~ msgstr ""
-#~ "Es scheint, dass für die Grössenänderung mehr als eine Partition "
-#~ "existieren. Sie können aus der nachstehenden Liste eine Partition "
-#~ "auswählen oder YALI eins auswählen lassen."
-
-#~ msgid "Choose the best target for resizing (recommended)"
-#~ msgstr "Passendes Ziel für die Grössenänderung auswählen (empohlen)"
-
-#~ msgid "I will choose the target"
-#~ msgstr "Ich werde das Ziel auswählen"
-
-#~ msgid "Use Selected"
-#~ msgstr "Ausgewählte verwenden"
-
-#~ msgid "Form1"
-#~ msgstr "Form1"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">1. Select the partitioning method:</span></"
-#~ "p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode "
-#~ "aus:</span></p></body></html>"
-
-#~ msgid ""
-#~ "Here you can choose one of partitioning method, and then you must select "
-#~ "for a device to proceed your choice. <br>Device list will be updated for "
-#~ "selected method."
-#~ msgstr ""
-#~ "Hier können Sie eine Partitionierungsmethode und anschliessend ein "
-#~ "Laufwerk auswählen um fortzufahren. <br> Laufwerkliste wird für die "
-#~ "ausgewählte Methode aktualisiert."
-
-#~ msgid ""
-#~ "Automatically partition try to use free space or resize current partitions"
-#~ msgstr ""
-#~ "Automatische Partitionierung versucht den freien Speicherplatz zu "
-#~ "verwenden oder ändert die Grösse der aktuellen Partitionen"
-
-#~ msgid "Automatically partition and format selected disk!"
-#~ msgstr "Gewähltes Laufwerk automatisch partitionieren und formatieren!"
-
-#~ msgid ""
-#~ "This option will erase your entire disk. All of your data on disk will be "
-#~ "lost !"
-#~ msgstr ""
-#~ "Dieser Vorgang wird Ihre gesamte Festplatte für die Pardus-Installation "
-#~ "verwenden. Ihre vorhandenen Daten auf der gewählten Partition gehen dabei "
-#~ "verloren !"
-
-#~ msgid "No, I'll partition my disk manually."
-#~ msgstr "Nein, ich werde meine Festplatte manuell partitionieren."
-
-#~ msgid "You can use manual partitioning with this option"
-#~ msgstr "Mit dieser Option können Sie manuell partitionieren"
-
-# disable auf deutsch ?
-#~ msgid "If there is no suitable partition this option will be disabled"
-#~ msgstr ""
-#~ "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
-
-# disable auf deutsch ?
-#~ msgid ""
-#~ "This option will try to find suitable free space or resizable partitions"
-#~ msgstr ""
-#~ "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
-#~ "grössenänderbare Partition zu finden"
-
-#~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">2. Select the disk to apply selected method:"
-#~ "</span></p></body></html>"
-#~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "size:12pt; font-weight:600;\">2. Wählen Sie die Festplatte aus, um die "
-#~ "ausgewählte Methode zu übernehmen:</span></p></body></html>"
-
-#~ msgid "&nbsp;"
-#~ msgstr "&nbsp;"
-
-#~ msgid ""
-#~ "<b>Do you want to write boot loader (GRUB) to your hard disk's master "
-#~ "boot record?</b>\n"
-#~ "\n"
-#~ "<p>You need a boot loader to boot your Pardus system.</p>\n"
-#~ "\n"
-#~ "<p>If you don't install a boot loader or choose to install to root "
-#~ "partition, you will have to configure your other operating system's "
-#~ "loader  (if you have one installed) to start \n"
-#~ "your newly installed Pardus.</p>"
-#~ msgstr ""
-#~ "<b>Wollen Sie den Boot-Loader (GRUB) in den Master Boot Record von Ihrer "
-#~ "Festplatte installieren?</b>\n"
-#~ "\n"
-#~ "<p>Sie brauchen einen Boot-Loader, um Ihr Pardus-System hochfahren zu "
-#~ "können.</p>\n"
-#~ "\n"
-#~ "<p>Wenn Sie kein Boot-Loader installieren oder 'in die Root-Partition' "
-#~ "nicht wählen, müssen Sie den Boot-Loader von Ihrem anderen Betriebssystem "
-#~ "(falls vorhanden) konfigurieren, um Ihr neu installiertes Pardus starten "
-#~ "zu können.</p>"
-
-#~ msgid "Where do you want to install the bootlader ?"
-#~ msgstr "Wohin möchten Sie den Boot-Loader installieren?"
-
-#~ msgid "Install to first bootable disk (recommended)"
-#~ msgstr "Auf die erste bootbare Festplatte installieren (empfohlen)"
-
-#~ msgid "Install to Pardus installed partition"
-#~ msgstr "Auf die Partition, auf der Pardus installiert ist, installieren"
-
-#~ msgid "Install to selected disk belove"
-#~ msgstr "Auf die gewählte Festplatte installieren"
-
-#~ msgid "Select the disk you to install bootloader:"
-#~ msgstr ""
-#~ "Wählen Sie die Festplatte aus, auf die der Boot-Loader installiert werden "
-#~ "soll."
-
-#~ msgid "Don't install bootloader"
-#~ msgstr "Boot-Loader nicht installieren"
-
-#~ msgid ""
-#~ "You can check the integrity of the packages in installation CD. Although "
-#~ "this is an optional step, we encourage you to do it to avoid any errors "
-#~ "in installation."
-#~ msgstr ""
-#~ "Sie können die Integrität der Pakete auf der Installations-CD überprüfen."
-#~ "Obwohl dieser Vorgang optional ist, empfehlen wir Ihnen diesen Vorgang "
-#~ "auszuführen, um jegliche Fehler in der Installation zu vermeiden."
-
-#~ msgid "Check CD Integrity"
-#~ msgstr "CD-Integrität überprüfen"
-
-#~ msgid "The current time"
-#~ msgstr "Die aktuelle Zeit"
-
-#~ msgid "The analog clock widget displays the current time."
-#~ msgstr "Das analoge Uhr-Widget zeigt die aktuelle Zeit."
-
-#~ msgid "HH"
-#~ msgstr "HH"
-
-#~ msgid ":"
-#~ msgstr ":"
-
-#~ msgid "mm"
-#~ msgstr "mm"
-
-#~ msgid "ss"
-#~ msgstr "ss"
-
-#~ msgid "Time Zone"
-#~ msgstr "Zeitzone"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "X"
-#~ msgstr "X"
-
-#~ msgid "Form3"
-#~ msgstr "Form3"
-
-#~ msgid "pix"
-#~ msgstr "pix"
-
-#~ msgid "Desc"
-#~ msgstr "Desc"
-
-#~ msgid "Installing Package: "
-#~ msgstr "Installation des Pakets:"
-
-#~ msgid "Select the keyboard layout of your choice."
-#~ msgstr "Wählen Sie eine Tastaturbelegung aus."
-
-#~ msgid "Test selected keyboard:"
-#~ msgstr "Testen Sie die gewählte Tastatur:"
-
-#~ msgid "Yali4"
-#~ msgstr "Yali4"
-
-#~ msgid "Screen Name"
-#~ msgstr "Anzeigename"
-
-#~ msgid "Details about the screen"
-#~ msgstr "Details über den Bildschirm"
-
-#~ msgid "Toggle Help"
-#~ msgstr "Hilfe umschalten"
-
-#~ msgid "Previous Screen"
-#~ msgstr "Vorheriges Fenster"
-
-#~ msgid "Back"
-#~ msgstr "Zurück"
-
-#~ msgid "Next Screen"
-#~ msgstr "Nächstes Fenster"
-
-#~ msgid "Next"
-#~ msgstr "Weiter"
-
-#~ msgid "Partition 1 on FUJISTU - /dev/sda1"
-#~ msgstr "Partition 1 auf FUJISTU - /dev/sda1"
-
-#~ msgid "Device :"
-#~ msgstr "Gerät :"
-
-#~ msgid "/dev/sda1"
-#~ msgstr "/dev/sda1"
-
-#~ msgid "Delete Partition"
-#~ msgstr "Partition löschen"
-
-#~ msgid "Resize Partition"
-#~ msgstr "Partition neu einlesen"
-
-#~ msgid "Use :"
-#~ msgstr "Verwenden :"
-
-#~ msgid "Size :"
-#~ msgstr "Größe :"
-
-#~ msgid " MB"
-#~ msgstr " MB"
-
-#~ msgid "Format :"
-#~ msgstr "Format :"
-
-#~ msgid "Yes, format this partition"
-#~ msgstr "Ja, diese Partition formatieren"
-
-#~ msgid "File System :"
-#~ msgstr "Dateisystem :"
-
-#~ msgid "Ext3"
-#~ msgstr "Ext3"
-
-#~ msgid "NTFS"
-#~ msgstr "NTFS"
-
-#~ msgid "Fat 32"
-#~ msgstr "Fat 32"
-
-#~ msgid "Changes will be applied when you finish.."
-#~ msgstr "Änderungen werden durgeführt wenn Sie fertig sind..."
-
-#~ msgid "Refresh Disks"
-#~ msgstr "Datenträger aktualisieren"
-
-#~ msgid "Reset All Changes"
-#~ msgstr "Alle Änderungen zurückstellen"
-
-#~ msgid "Apply"
-#~ msgstr "Anwenden"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600; color:#ffffff;\">Warning!</span><span style=\" color:#ffffff;"
-#~ "\"> These settings will be applied when you click \"</span><span style=\" "
-#~ "text-decoration: underline; color:#ffffff;\">Resize</span><span style=\" "
-#~ "color:#ffffff;\">\". If you want to go back click \"</span><span style=\" "
-#~ "text-decoration: underline; color:#ffffff;\">Cancel</span><span style=\" "
-#~ "color:#ffffff;\">\".</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600; color:#ffffff;\">Achtung!</span><span style=\" color:#ffffff;"
-#~ "\"> Diese Einstellungen werden übernommen, wenn Sie klicken \"</"
-#~ "span><span style=\" text-decoration: underline; color:#ffffff;\">Resize</"
-#~ "span><span style=\" color:#ffffff;\">\".Klicken, um zurückzukehren \"</"
-#~ "span><span style=\" text-decoration: underline; color:#ffffff;"
-#~ "\">Abbrechen</span><span style=\" color:#ffffff;\">\".</span></p></body></"
-#~ "html>"
-
-#~ msgid "Resize"
-#~ msgstr "Größe"
-
-#~ msgid ""
-#~ "<p align=\"left\">System administrator user (root) handles important "
-#~ "system maintanence tasks. Please give password for this special user and "
-#~ "do not forget this password. Note that you shouldn't write this password "
-#~ "elsewhere for privacy reasons.</p>"
-#~ msgstr ""
-#~ "<p align=\"left\">Mit dem Systemadministrator-Konto (root) können Sie "
-#~ "Systemwartungen vornehmen. Bitte vergeben Sie diesen speziellen Benutzer "
-#~ "ein Passwort und vergessen Sie bitte diesen nicht. Beachten Sie, dass Ihr "
-#~ "Passwort aus Sicherheitsgründen für Dritte nicht zugänglich sein darf.</p>"
-
-#~ msgid "System administrator password:"
-#~ msgstr "Systemadministrator-Passwort:"
-
-#~ msgid "System administrator password (again):"
-#~ msgstr "Systemadministrator-Passwort (wiederholen):"
-
-#~ msgid "Hostname:"
-#~ msgstr "Hostname:"
-
-#~ msgid "New User"
-#~ msgstr "Neuer Benutzer"
-
-#~ msgid "User Name:"
-#~ msgstr "Benutzername:"
-
-#~ msgid "Real Name:"
-#~ msgstr "Vollständiger Name:"
-
-#~ msgid "Password:"
-#~ msgstr "Passwort:"
-
-#~ msgid "Password (again):"
-#~ msgstr "Passwort (wiederholen):"
-
-#~ msgid "Give administrator privileges to this user"
-#~ msgstr "Diesen Benutzer Administrator-Rechte geben"
-
-#~ msgid "Users:"
-#~ msgstr "Benutzer:"
-
-#~ msgid "Delete Selected User"
-#~ msgstr "Gewählten Benutzer entfernen"
-
-#~ msgid "Auto Login User :"
-#~ msgstr "Auto-Login-Benutzer:"
-
-#~ msgid "Auto Login Disabled"
-#~ msgstr "Auto-Login deaktiviert"
-
-#~ msgid "Begin Install"
-#~ msgstr "Installation beginnen"
-
-#~ msgid ""
-#~ "All software developed by TUBITAK/UEKAE is covered by GNU/GPL. Other "
-#~ "software have their corresponding licenses. By installing or using "
-#~ "Pardus, you agree to accept them. Do you want to continue?"
-#~ msgstr ""
-#~ "Alle Programme, die von TÜBITAK/UEKAE entwickelt worden sind, sind unter "
-#~ "der GNU/GPL lizenziert. Weiteren Programme haben ihre eigene Lizenzen. Um "
-#~ "Pardus installieren zu können, müssen Sie den Lizenzen zustimmen. Möchten "
-#~ "Sie fortfahren?"
-
-#~ msgid "Read GPL"
-#~ msgstr "Die GPL lesen"
-
-#~ msgid "Accept!"
-#~ msgstr "Ich stimme den Lizenzen zu"
-
-#~ msgid "Don't Accept!"
-#~ msgstr "Ich stimme den Lizenzen nicht zu"
