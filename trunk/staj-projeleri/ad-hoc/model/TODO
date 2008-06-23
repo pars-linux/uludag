@@ -1,0 +1,14 @@
+TODO & DESCS
+-------------
+
+- Ad-hoc bağlantı _oluşturma_ için ayrı bir dialog tasarlanabilir. Kablosuz bağlantıya ait bilgilerin girildiği ekrana koyulacak bir buton ile bu işlevsellik gerçekleştirilebilir. Burda ad-hoc bağlantıya ait bağlantı ismi (ve gerekliyse şifre bilgileri) girilince ÇOMAR'da ilgili metodlar çağrılarak ad-hoc ağı oluşturtulabilir.
+
+- Ad-hoc'a bağlanma için ise device_mode'u ad-hoc'a ayarlama haricinde ekstradan bi'şeye gerek yok. 
+
+- Kablosuz bağlantıların listelendiği ekranda ad-hoc modlu bağlantılar özel bir simge ile belirtilebilinir.
+
+############################################################################################################
+
+? Ad-hoc bağlanan makinelere ip dağıtımı...
+
+? Otomatik ip dağıtma nasıl olacak? Her ad-hoc oluşturanın dhcp server'a ihtiyaç duyması ne kadar doğru?
