@@ -10,34 +10,34 @@
 #
 
 name_msg = {
-    "en": "Wireless network",
-    "tr": "Kablosuz ağlar"
+"en": "Wireless network",
+"tr": "Kablosuz ağlar"
 }
 
 dhcp_fail_msg = {
-    "en": "Could not get address",
-    "tr": "Adres alınamadı"
+"en": "Could not get address",
+"tr": "Adres alınamadı"
 }
 
 no_device_msg = {
-    "en": "Device is not plugged",
-    "tr": "Aygıt takılı değil"
+"en": "Device is not plugged",
+"tr": "Aygıt takılı değil"
 }
 
 wpa_psp_msg = {
-    "en": "WPA PreShared Key",
-    "tr": "WPA Ortak Parola"
+"en": "WPA PreShared Key",
+"tr": "WPA Ortak Parola"
 }
 
 wpa_fail_msg = {
-    "en": "Authentication failed",
-    "tr": "Kimlik doğrulama başarısız",
+"en": "Authentication failed",
+"tr": "Kimlik doğrulama başarısız",
 }
 
 no_supplicant_msg = {
 
-    "en": "WPA supplicant not found",
-    "tr": "WPA supplicant bulunamadı",
+"en": "WPA supplicant not found",
+"tr": "WPA supplicant bulunamadı",
 }
 
 import os
@@ -63,78 +63,78 @@ SIOCGIWESSID = 0x8B1B   # get essid
 
 
 class Point:
-    def __init__(self, id=None):
-        self.ssid = ""
-        self.mode = ""
-        self.mac = ""
-        self.encryption = "none"
-        self.qual = ""
-        self.protocol = ""
-        self.channel = ""
-        if id:
-            if " (" in id and id.endswith(")"):
-                self.ssid, rest = id.split(" (", 1)
-                self.mode, self.mac = rest.split(" ", 1)
-                self.mac = self.mac[:-1]
-            else:
-                self.ssid = id
-    
-    def id(self):
-        d = {
-            "remote": self.ssid,
-            "mode": self.mode,
-            "mac": self.mac,
-            "encryption": self.encryption,
-            "quality": self.qual,
-            "protocol": self.protocol,
-            "channel": self.channel,
-        }
-        return d
+def __init__(self, id=None):
+    self.ssid = ""
+    self.mode = ""
+    self.mac = ""
+    self.encryption = "none"
+    self.qual = ""
+    self.protocol = ""
+    self.channel = ""
+    if id:
+        if " (" in id and id.endswith(")"):
+            self.ssid, rest = id.split(" (", 1)
+            self.mode, self.mac = rest.split(" ", 1)
+            self.mac = self.mac[:-1]
+        else:
+            self.ssid = id
+
+def id(self):
+    d = {
+        "remote": self.ssid,
+        "mode": self.mode,
+        "mac": self.mac,
+        "encryption": self.encryption,
+        "quality": self.qual,
+        "protocol": self.protocol,
+        "channel": self.channel,
+    }
+    return d
 
 
 class Wireless:
-    modes = ['Auto', 'Ad-Hoc', 'Managed', 'Master', 'Repeat', 'Second', 'Monitor']
-    
-    def __init__(self, ifc):
-        self.sock = None
-        self.ifc = ifc
-    
-    def _call(self, func, arg = None):
-        if arg is None:
-            data = (self.ifc.name + '\0' * 32)[:32]
-        else:
-            data = (self.ifc.name + '\0' * 16)[:16] + arg
-        try:
-            result = self.ifc.ioctl(func, data)
-        except IOError:
-            return None
-        return result
-    
-    def getSSID(self):
-        buffer = array.array('c', '\0' * 16)
-        addr, length = buffer.buffer_info()
-        arg = struct.pack('Pi', addr, length)
-        self._call(SIOCGIWESSID, arg)
-        return buffer.tostring().strip('\x00')
-    
-    def setSSID(self, ssid):
-        point = Point(ssid)
-        buffer = array.array('c', point.ssid + '\x00')
-        addr, length = buffer.buffer_info()
-        arg = struct.pack("iHH", addr, length, 1)
-        self._call(SIOCSIWESSID, arg)
-        if self.getSSID() is point.ssid:
-            return True
-        else:
-            return None
-    
-    def scanSSID(self):
-        ifc = self.ifc
-        if not ifc.isUp():
-            # Some drivers cant do the scan while interface is down, doh :(
-            ifc.setAddress("0.0.0.0")
-            ifc.up()
-        cmd = subprocess.Popen(["/usr/sbin/iwlist", ifc.name, "scan"], stdout=subprocess.PIPE)
+modes = ['Auto', 'Ad-Hoc', 'Managed', 'Master', 'Repeat', 'Second', 'Monitor']
+
+def __init__(self, ifc):
+    self.sock = None
+    self.ifc = ifc
+
+def _call(self, func, arg = None):
+    if arg is None:
+        data = (self.ifc.name + '\0' * 32)[:32]
+    else:
+        data = (self.ifc.name + '\0' * 16)[:16] + arg
+    try:
+        result = self.ifc.ioctl(func, data)
+    except IOError:
+        return None
+    return result
+
+def getSSID(self):
+    buffer = array.array('c', '\0' * 16)
+    addr, length = buffer.buffer_info()
+    arg = struct.pack('Pi', addr, length)
+    self._call(SIOCGIWESSID, arg)
+    return buffer.tostring().strip('\x00')
+
+def setSSID(self, ssid):
+    point = Point(ssid)
+    buffer = array.array('c', point.ssid + '\x00')
+    addr, length = buffer.buffer_info()
+    arg = struct.pack("iHH", addr, length, 1)
+    self._call(SIOCSIWESSID, arg)
+    if self.getSSID() is point.ssid:
+        return True
+    else:
+        return None
+
+def scanSSID(self):
+    ifc = self.ifc
+    if not ifc.isUp():
+        # Some drivers cant do the scan while interface is down, doh :(
+        ifc.setAddress("0.0.0.0")
+        ifc.up()
+    cmd = subprocess.Popen(["/usr/sbin/iwlist", ifc.name, "scan"], stdout=subprocess.PIPE)
         data = cmd.communicate()[0]
         points = []
         point = None
@@ -348,8 +348,9 @@ class Dev:
                     notify("Net.Link", "stateChanged", (self.name, "inaccessible",  _(dhcp_fail_msg)))
                     fail("DHCP failed")
         elif self.device_mode == "ad-hoc":
-            subprocess.Popen(["/sbin/ifconfig", ifc.name, "up"], stdout=PIPE).communicate()
-            subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, self.mask], stdout=PIPE).communicate()
+            ifc=self.ifc
+            ifc.up()
+            ifc.setAddress(self.address, self.mask)
             subprocess.Popen(["/sbin/iwconfig", ifc.name, "mode","ad-hoc"], stdout=PIPE).communicate()
             subprocess.Popen(["/sbin/iwconfig", ifc.name, "key", self.password], stdout=PIPE).communicate()
             subprocess.Popen(["/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=PIPE).communicate()
@@ -359,13 +360,14 @@ class Dev:
               +  # /sbin/ifconfig wmaster0 up  
               +  # /sbin/ifconfig wmaster0 192.168.111.1 netmask 255.255.255.0 
               +  # /sbin/iwconfig wmaster0 mode ad-hoc  
-                 # /sbin/iwconfig wmaster0 key 6572747975  
+              +  # /sbin/iwconfig wmaster0 key 6572747975  
               +  # /sbin/iwconfig wmaster0 channel auto  
               +  # /sbin/iwconfig wmaster0 essid ADHOC  
                  # make /etc/dhcp/dhcpd.conf
                  # Start DHCP
                  # notify("Net.Link", "stateChanged", (self.name, "up", addr))
-            """  # DHCP?
+                 # DHCP?
+            """
     
     def down(self):
         ifc = self.ifc
