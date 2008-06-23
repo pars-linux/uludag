@@ -123,7 +123,7 @@ class Yali:
         # Let the show begin..
         self.screens = self._screens[install_type]
         self.install_type = install_type
-        self.info = InformationWindow(_("YALI Working..."))
+        self.info = InformationWindow(_("YALI Is Working..."))
         self.yimirta = Yimirta(self.info)
         self.yimirta.stop()
         self.info.hide()
@@ -435,7 +435,7 @@ class Yali:
 
                 # Chown for old users..
                 user_home_dir = os.path.join(consts.target_dir, 'home', u.username)
-                self.info.updateAndShow(_("User <b>%s</b>'s home directory is preparing..") % u.username)
+                self.info.updateAndShow(_("User <b>%s</b>'s home directory is being prepared..") % u.username)
                 os.system('chown -R %d:%d %s ' % (uid, 100, user_home_dir))
                 os.chmod(user_home_dir, 0711)
                 self.info.hide()

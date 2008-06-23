@@ -54,7 +54,7 @@ def iter_slide_pics():
 # Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Installing system...')
-    desc = _('Installing approximately 30 minutes depending on hardware...')
+    desc = _('Installing takes approximately 30 minutes depending on your hardware...')
     icon = "iconInstall"
     help = _('''
 <font size="+2">Installation started</font>
@@ -105,7 +105,7 @@ Have fun!
         self.pkg_installer = PkgInstaller(self)
         ctx.debugger.log("Calling PkgInstaller.start...")
         self.pkg_installer.start()
-        ctx.yali.info.updateAndShow(_("Packages are installing.."), True)
+        ctx.yali.info.updateAndShow(_("Packages are being installed.."), True)
 
         ctx.mainScreen.disableNext()
         ctx.mainScreen.disableBack()
