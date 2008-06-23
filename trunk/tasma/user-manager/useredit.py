@@ -484,6 +484,7 @@ class UserStack(QVBox):
 
         self.u_policygrouptab = PolicyGroupTab(hb, self, self.mainwidget, self.u_id, edit)
         self.u_groups = self.u_policygrouptab.groupsWidget
+        self.u_operations = self.u_policygrouptab.policytab.operations
 
         self.guide = Guide(self, edit)
         self.setStretchFactor(self.guide, 1)
@@ -549,18 +550,28 @@ class UserStack(QVBox):
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
 
-            def userDone():
-                self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
-                self.parent().slotCancel()
-            def userCancel():
-                self.parent().slotCancel()
-
-            ch = self.mainwidget.callMethod("setUser", "tr.org.pardus.comar.user.manager.setuser")
-            ch.registerDone(userDone)
-            ch.registerCancel(userCancel)
-            ch.registerError(userCancel)
+            #asynchronous call 'setuser'
+            ch = self.mainwidget.callMethod("setUser", "tr.org.pardus.comar.user.manager.setuser", async = False)
             ch.call(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
+            self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
 
+            for key in self.u_operations.keys():
+                value = self.u_operations[key]
+                if value == "grant":
+                    print "Grants: " + key
+                    ch = self.mainwidget.callMethod("grantAuthorization", "tr.org.pardus.comar.user.manager.setuser", False)
+                    ch.call(int(self.u_id.text()), key)
+                    print int(self.u_id.text()), key
+                elif value == "block":
+                    print "Block: " + key
+                    ch = self.mainwidget.callMethod("blockAuthorization", "tr.org.pardus.comar.user.manager.setuser", False)
+                    ch.call(int(self.u_id.text()), key)
+                else:
+                    print "Revokes: " + key
+                    ch = self.mainwidget.callMethod("revokeAuthorization", "tr.org.pardus.comar.user.manager.setuser", False)
+                    ch.call(int(self.u_id.text()), key)
+
+            self.parent().slotCancel()
     def slotAdd(self):
         if self.checkAdd():
             return
@@ -635,13 +646,6 @@ class UserStack(QVBox):
 
         ch = self.mainwidget.callMethod("userInfo", "tr.org.pardus.comar.user.manager.get")
         ch.registerDone(userInfo)
-        ch.call(uid)
-
-    def getAuths(self, uid):
-        def getAuth(auths):
-            print auths
-        ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
-        ch.registerDone(getAuth)
         ch.call(uid)
 
 class PolicyGroupTab(KTabWidget):
@@ -769,9 +773,6 @@ class PolicyTab(QVBox):
             else:
                 self.operations[item.id] = "grant_revoke"
 
-        print "checkbox toggled"
-        print self.operations
-
     def blockedSlot(self, toggle):
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
@@ -789,9 +790,6 @@ class PolicyTab(QVBox):
                 self.operations.pop(item.id)
             else:
                 self.operations[item.id] = "block_revoke"
-
-        print "blocked toggled"
-        print self.operations
 
     def actionClicked(self, actionItem):
         #disconnect these signals to prevent execution of slots
@@ -831,8 +829,9 @@ class PolicyTab(QVBox):
             self.ch.registerDone(listDone)
             self.ch.call(int(self.uid.text()))
 
-    def selectRightButtons(self, auths, actionItem, other = False):
-        if other:
+    def selectRightButtons(self, auths, actionItem, otherUser = False):
+        # convert comar answer to pypolkit call structure
+        if otherUser:
             auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths)
 
         auths = filter(lambda x: x['action_id'] == actionItem.id, auths)
@@ -840,6 +839,7 @@ class PolicyTab(QVBox):
         if len(auths) == 0:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(False)
+
             self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
             self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
             return
