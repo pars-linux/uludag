@@ -27,8 +27,6 @@ class Commander(QObject):
             self.parent.finished("System.Manager.cancelled")
 
     def handler(self, signal=None, data=None):
-        #print "Signal: ", signal
-        #print "Data: ", data
         if len(data) > 1:
             args = data[1:]
         else:
