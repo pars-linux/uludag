@@ -24,6 +24,8 @@ repodb = pisi.db.repodb.RepoDB()
 
 def initialize(ui, with_comar = False, nodestDir = False):
     options = pisi.config.Options()
+    import yali4.gui.context as ctx
+    ctx.debugger.log("Pisi initializing..")
     if not nodestDir:
         options.destdir = consts.target_dir
     options.yes_all = True
@@ -31,6 +33,7 @@ def initialize(ui, with_comar = False, nodestDir = False):
     # generally we don't need this but I think this is safer
     for i in range(20):
         try:
+            ctx.debugger.log("DBUS call..")
             bus = dbus.SystemBus()
             break
         except dbus.DBusException:
