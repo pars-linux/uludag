@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Pzt Haz 23 12:15:34 2008
+# Created: Pzt Haz 23 15:06:54 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,6 +44,7 @@ class formMain(QWidget):
         self.snapshotsListView.addColumn(self.__tr("Date"))
         self.snapshotsListView.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Preferred,0,0,self.snapshotsListView.sizePolicy().hasHeightForWidth()))
         self.snapshotsListView.setMinimumSize(QSize(0,150))
+        self.snapshotsListView.setHScrollBarMode(QListView.AlwaysOff)
         self.snapshotsListView.setAllColumnsShowFocus(1)
         self.snapshotsListView.setShowSortIndicator(1)
 

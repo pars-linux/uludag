@@ -314,11 +314,9 @@ class widgetMain(formMain):
             if len(configs) != 0:
                 information += "<br>" + i18n("Configuration files in snapshot:")
                 for i in configs.keys():
-                    information += "<br><b>" + i + "</b><br>"
+                    information += "<br><br><b>" + i + "</b><br>"
                     for j in configs.get(i):
-                        information += j
-                        #information += j.split(PisiIface.get_history_dir() + '/'\
-                        #        + self.selected.getOpNo() + '/' + i)[-1]
+                        information += "/".join(j.split(str(self.selected.getOpNo()),1)[1].split(i,1)[1:])
             self.planTextEdit.setText(information)
 
         message = i18n("Take Back Plan for %1 operation on %2")\
@@ -326,16 +324,12 @@ class widgetMain(formMain):
         if len(willbeinstalled) != 0:
             message += "<br>" + i18n("These package(s) will be <b>installed</b> :") + "<br>"
             for i in range(len(willbeinstalled)):
-                message += willbeinstalled[i] + " "
-                if i%5 == 0:
-                    message += "<br>"
+                message += willbeinstalled[i] + "<br>"
 
         if len(willberemoved) != 0:
             message += "<br>" + i18n("These package(s) will be <b>removed</b> :") + "<br>"
             for i in range(len(willberemoved)):
-                message += willberemoved[i] + " "
-                if i%5 == 0:
-                    message += "<br>"
+                message += willberemoved[i] + "<br>"
 
         message += "<br>"
         self.planTextEdit.setText(message + information)
@@ -388,7 +382,7 @@ class widgetProgress(progressForm):
         self.progressTextLabel.setText(mes)
 
     def setHeader(self, mes):
-        self.bigTextLabel.setText("<h3><b>%s</b></h3>" % mes)
+        self.bigTextLabel.setText("<h4><b>%s</b></h4>" % mes)
 
     def updateProgressBar(self, progress, totalSteps=None):
         if totalSteps:
@@ -414,9 +408,6 @@ class widgetProgress(progressForm):
 
     def increase(self, num=1):
         self.progressBar.setProgress(self.progressBar.progress() + num)
-        print "progress : ", self.progressBar.progress()
-        print "setProgress: ", self.progressBar.progress() + num
-        print "total steps: ", self.progressBar.totalSteps()
 
 class widgetItem(QListViewItem):
     """ class for listviewitem's """
