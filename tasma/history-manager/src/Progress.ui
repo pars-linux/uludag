@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>629</width>
-            <height>205</height>
+            <width>544</width>
+            <height>175</height>
         </rect>
     </property>
     <property name="caption">
@@ -86,7 +86,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>&lt;h2&gt;&lt;b&gt;Preparing PISI&lt;/b&gt;&lt;/h2&gt;</string>
+                <string>&lt;h4&gt;&lt;b&gt;Preparing PISI&lt;/b&gt;&lt;/h4&gt;</string>
             </property>
         </widget>
         <widget class="QLabel" row="1" column="1">

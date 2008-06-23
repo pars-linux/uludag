@@ -127,6 +127,9 @@
                     <height>150</height>
                 </size>
             </property>
+            <property name="hScrollBarMode">
+                <enum>AlwaysOff</enum>
+            </property>
             <property name="allColumnsShowFocus">
                 <bool>true</bool>
             </property>
