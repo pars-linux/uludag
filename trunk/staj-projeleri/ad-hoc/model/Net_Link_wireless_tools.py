@@ -35,7 +35,6 @@ wpa_fail_msg = {
 }
 
 no_supplicant_msg = {
-
     "en": "WPA supplicant not found",
     "tr": "WPA supplicant bulunamadı",
 }
@@ -359,7 +358,7 @@ class Dev:
               +  # /sbin/ifconfig wmaster0 up  
               +  # /sbin/ifconfig wmaster0 192.168.111.1 netmask 255.255.255.0 
               +  # /sbin/iwconfig wmaster0 mode ad-hoc  
-                 # /sbin/iwconfig wmaster0 key 6572747975  
+              +  # /sbin/iwconfig wmaster0 key 6572747975  
               +  # /sbin/iwconfig wmaster0 channel auto  
               +  # /sbin/iwconfig wmaster0 essid ADHOC  
                  # make /etc/dhcp/dhcpd.conf
@@ -393,7 +392,7 @@ def linkInfo():
         "remote_name": "ESS ID",
         "device_modes": "client,ad-hoc",
     }
-   return d
+    return d
 
 def deviceList():
     iflist = {}
