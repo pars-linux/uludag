@@ -56,7 +56,7 @@ def _getPid(pidfile):
     # Non-pid data is also seen when stopped state in some services :/
     if len(pid) == 0 or len(filter(lambda x: not x in "0123456789", pid)) > 0:
         return None
-    return pid
+    return int(pid)
 
 def stopSameDev(myname):
     conns = DB.listDB()
@@ -64,13 +64,12 @@ def stopSameDev(myname):
         if myname == name:
             continue
         dev = Dev(name)
-        
         notify("Net.Link", "stateChanged", (name, "down", ""))
         if dev.state == "up":
-            d = DB.getDB(name)
+            retcode =  subprocess.call(["/usr/bin/kill", dev.pid])
+            d = DB.getDB(dev.name)
             d["state"] = "down"
-            DB.setDB(name, d)
-
+            DB.setDB(dev.name, d)
 
 class Dev():
     def __init__(self, name, want=False):
@@ -88,6 +87,7 @@ class Dev():
         self.cert = _get(dict, "cert", "client.crt")
         self.key = _get(dict, "key", "client.key")
         self.chipher = _get(dict, "chipher", "")
+        self.pid = _get(dict,"pid","")
     
     def up(self):
         vpnfl = open(CFG_FL, "w")
@@ -96,34 +96,44 @@ class Dev():
         vpnfl.write("dev %s\n" % self.dev)
         vpnfl.write("proto %s\n" % self.protocol)
         vpnfl.write("remote %s %s\n" % (self.domain, self.port))
-        vpnfl.write("resolv-retry infinite\nnobind\npersist-key\npersist-tun\ncomp-lzo\nmute 20\nverb 3\n")
+        vpnfl.write("tls-exit\nresolv-retry infinite\nnobind\npersist-key\npersist-tun\ncomp-lzo\nmute 20\nverb 3\n")
         vpnfl.write("ca %s\n" % self.ca)
         vpnfl.write("cert %s\n" % self.cert)
         vpnfl.write("key %s\n" % self.key)
-        vpnfl.write("writepid %s\n" % PID_FL)
+        vpnfl.write("writepid %s\n" % (PID_FL))
         if self.chipher != "":
-            vpnfl.write("chipher %s\n" % self.chipher)
+            vpnfl.write("cipher %s\n" % self.chipher)
         vpnfl.close()
         notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
-        ret = subprocess.call(["/usr/sbin/openvpn","--config",CFG_FL])
-        if ret == 0:
-            notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
-            d = DB.getDB(self.name)
-            d["state"] = "up"
-            DB.setDB(self.name, d)
+        ret = subprocess.Popen(["/usr/sbin/openvpn","--config",CFG_FL])
+        #print ret.communicate()
+        #if ret == 0:
+        d = DB.getDB(self.name)
+        pid =  _getPid(PID_FL)
+        if pid != None:
+            d["pid"] = str(pid)
         else:
-            notify("Net.Link", "stateChanged", (self.name, "down", ""))
-            fail("Unable to set vpn connection. Check your configuration")
+            d["pid"] = ""
+        d["state"] = "up"
+        DB.setDB(self.name, d)
+        notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
+        ret.wait() 
+        notify("Net.Link", "stateChanged", (self.name, "down", ""))
+
+        #else:
+         #   notify("Net.Link", "stateChanged", (self.name, "down", ""))
+          #  fail("Unable to set vpn connection. Check your configuration")
     
     def down(self):
-        try:
-            pid = _getPid(PID_FL)
-            retcode =  subprocess.call(["/usr/bin/kill", pid])
+        try:            
+            retcode =  subprocess.call(["/usr/bin/kill", self.pid])
             d = DB.getDB(self.name)
             d["state"] = "down"
+            d["pid"] = ""
             DB.setDB(self.name, d)
             notify("Net.Link", "stateChanged", (self.name, "down", ""))
         except:
+            notify("Net.Link", "stateChanged", (self.name, "down", ""))
             fail("Unable to shutdown vpn connection")
 
 # Net.Link API
