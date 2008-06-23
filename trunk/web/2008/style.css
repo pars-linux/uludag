@@ -45,6 +45,14 @@ div#navigation {
     z-index: 1;
     overflow: hidden;
 }
+div#navigation h3 { font-size: 14px; }
+div#navigation li {
+    font-size: 12px;
+    font-weight: normal;
+}
+div#navigation li.selected {
+    font-weight: bold;
+}
 div.navbutton_opened {
     background: url('img/menubg_long.png') no-repeat;
 }
