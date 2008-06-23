@@ -101,6 +101,7 @@ class widgetMain(formMain):
     # re-initialize history database for up to date entries
     def initDb(self):
         self.historydb.init()
+        # PisiIface.reloadPisi()
 
     def keyPressEvent(self, event):
         # F5 Key may refresh list
@@ -180,7 +181,8 @@ class widgetMain(formMain):
         self.progress.hide()
 
     def displayProgress(self, data):
-        pass
+        operation, percent, message = data
+        self.progress.updateProgressBar(percent)
 
     def showErrorMessage(self, message):
         QMessageBox.critical(self, i18n("Error"), message, i18n("OK"))
@@ -205,7 +207,6 @@ class widgetMain(formMain):
     def addLast(self):
         """ after an operation, add latest operation to list """
         self.initDb()
-        #PisiIface.reloadPisi()
         op = self.historydb.get_last()
         op = op.next()
         if op.no > self.latest:
@@ -353,7 +354,7 @@ class widgetMain(formMain):
 
 class widgetProgress(progressForm):
     """ progress bar widget """
-    def __init__(self, parent=None, steps=0):
+    def __init__(self, parent=None, steps=100):
         progressForm.__init__(self, parent)
 
         self.parent = parent
