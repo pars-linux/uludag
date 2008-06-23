@@ -601,6 +601,8 @@ class UserStack(QVBox):
 
         ch.call(uid, self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), a_groups.split(","))
 
+        print self.u_operations
+
     def reset(self):
         self.u_id.setText("auto")
         self.u_name.setText("")
