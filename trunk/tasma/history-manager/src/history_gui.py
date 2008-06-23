@@ -279,6 +279,7 @@ class widgetMain(formMain):
         self.previous = self.selected or item
         self.selected = item
         self.restorePushButton.setEnabled(True)
+        self.toolBox.setCurrentIndex(1)
         self.pageChanged(self.toolBox.currentIndex())
 
     def pageChanged(self, num):
