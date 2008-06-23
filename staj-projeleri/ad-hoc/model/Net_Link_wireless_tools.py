@@ -352,7 +352,7 @@ class Dev:
             subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, self.mask], stdout=PIPE).communicate()
             subprocess.Popen(["/sbin/iwconfig", ifc.name, "mode","ad-hoc"], stdout=PIPE).communicate()
             subprocess.Popen(["/sbin/iwconfig", ifc.name, "key", self.password], stdout=PIPE).communicate()
-            subprocess.Popen(["/sbin/iwconfig", ifc.name, "essid", "staj2008"], stdout=PIPE).communicate()
+            subprocess.Popen(["/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=PIPE).communicate()
             subprocess.Popen(["/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=PIPE).communicate()
             pass
             """
@@ -392,7 +392,7 @@ def linkInfo():
         "remote_name": "ESS ID",
         "device_modes": "client,ad-hoc",
     }
-   ereturn d
+   return d
 
 def deviceList():
     iflist = {}
