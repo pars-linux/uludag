@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Pzt Haz 23 16:27:49 2008
+# Created: Sal Haz 24 02:53:03 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -118,13 +118,6 @@ class formMain(QWidget):
         self.helpPushButton.setText(self.__tr("Help"))
         self.snapshotPushButton.setText(self.__tr("New"))
         self.restorePushButton.setText(self.__tr("Restore"))
-        self.comboBox.clear()
-        self.comboBox.insertItem(self.__tr("All Operations"))
-        self.comboBox.insertItem(self.__tr("Snapshots"))
-        self.comboBox.insertItem(self.__tr("Upgrades"))
-        self.comboBox.insertItem(self.__tr("Removes"))
-        self.comboBox.insertItem(self.__tr("Installations"))
-        self.comboBox.insertItem(self.__tr("TakeBacks"))
         self.comboBox.setCurrentItem(0)
         self.snapshotsListView.header().setLabel(0,self.__tr("1"))
         self.snapshotsListView.header().setLabel(1,self.__tr("Date"))

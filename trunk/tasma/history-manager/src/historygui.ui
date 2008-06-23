@@ -96,36 +96,6 @@
                     <cstring>unnamed</cstring>
                 </property>
                 <widget class="QComboBox">
-                    <item>
-                        <property name="text">
-                            <string>All Operations</string>
-                        </property>
-                    </item>
-                    <item>
-                        <property name="text">
-                            <string>Snapshots</string>
-                        </property>
-                    </item>
-                    <item>
-                        <property name="text">
-                            <string>Upgrades</string>
-                        </property>
-                    </item>
-                    <item>
-                        <property name="text">
-                            <string>Removes</string>
-                        </property>
-                    </item>
-                    <item>
-                        <property name="text">
-                            <string>Installations</string>
-                        </property>
-                    </item>
-                    <item>
-                        <property name="text">
-                            <string>TakeBacks</string>
-                        </property>
-                    </item>
                     <property name="name">
                         <cstring>comboBox</cstring>
                     </property>
