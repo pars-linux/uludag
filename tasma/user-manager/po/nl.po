@@ -4,16 +4,15 @@
 #
 # Willem Gielen <w.gielen@gmail.com>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
-# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-06 19:45+0300\n"
-"PO-Revision-Date: 2007-07-08 18:07+0200\n"
+"PO-Revision-Date: 2008-06-24 11:44+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,19 +21,19 @@ msgstr ""
 
 #: um_mainview.py:43
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Kan niet verbinden met DBus."
 
 #: um_mainview.py:43
 msgid "DBus Error"
-msgstr ""
+msgstr "DBus fout"
 
 #: um_mainview.py:58
 msgid "D-Bus Error"
-msgstr ""
+msgstr "D-Bus fout"
 
 #: um_mainview.py:62
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR fout"
 
 #: groupedit.py:22 useredit.py:25
 msgid "ID:"
@@ -119,8 +118,7 @@ msgstr "Verwijder gebruiker"
 
 #: browser.py:167
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
 "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
 "s<br>ID: %d"
@@ -235,7 +233,7 @@ msgstr "Voer informatie voor nieuwe gebruiker in"
 
 #: useredit.py:450
 msgid "Give administrator privileges to this user"
-msgstr ""
+msgstr "Geef systeembeheerder privileges aan deze gebruiker"
 
 #: useredit.py:523
 msgid ""
@@ -243,7 +241,7 @@ msgid ""
 "your administrator permissions after that."
 msgstr ""
 "U wilt uzelf verwijderen van de 'wiel' systeemgroep, u kunt hierna mogelijk "
-"uw administrator rechten niet meer gebruiken."
+"uw systeembeheerder permissies niet meer gebruiken."
 
 #: useredit.py:524
 msgid "Important Group Change"
@@ -263,57 +261,21 @@ msgstr "Ophalen gebruikersinformatie..."
 
 #: useredit.py:629
 msgid "Authorizations"
-msgstr ""
+msgstr "Autorisaties"
 
 #: useredit.py:642
 msgid "Actions"
-msgstr ""
+msgstr "Acties"
 
 #: useredit.py:648
 msgid "Authorize"
-msgstr ""
+msgstr "Autoriseer"
 
 #: useredit.py:652
 msgid "Block"
-msgstr ""
+msgstr "Blok"
 
 #: useredit.py:662
-#, fuzzy
 msgid "Do not ask password"
-msgstr "Wachtwoord bevestigen:"
+msgstr "Vraag geen wachtwoord"
 
-#~ msgid ""
-#~ "Cannot connect to the COMAR! If it is not running you should start it "
-#~ "with the 'service comar start' command in a root console."
-#~ msgstr ""
-#~ "Kan niet met COMAR verbinden! Als het niet actief is, zult u het op "
-#~ "moeten starten met het commando 'service comar start' in de root console."
-
-#~ msgid "Waiting COMAR..."
-#~ msgstr "Wachten COMAR..."
-
-#~ msgid "Connection to the COMAR unexpectedly closed, trying to reconnect..."
-#~ msgstr ""
-#~ "Verbinding met COMAR is onverwacht afgesloten, probeer opnieuw te "
-#~ "verbinden..."
-
-#~ msgid "Operation failed, reason:<br>%s"
-#~ msgstr "Handeling mislukt. reden:<br>%s"
-
-#~ msgid "You are not allowed to do that"
-#~ msgstr "U bent hiertoe niet bevoegd"
-
-#~ msgid "Comar script error :("
-#~ msgstr "Fout in COMAR-script :("
-
-#~ msgid "You are not allowed to manage user settings."
-#~ msgstr "U bent niet bevoegd om gebruikersinstellingen aan te passen."
-
-#~ msgid "Access Denied"
-#~ msgstr "Toegang geweigerd"
-
-#~ msgid "Permission"
-#~ msgstr "Toegangsrechten"
-
-#~ msgid "Show all groups"
-#~ msgstr "Toon alle groepen"
