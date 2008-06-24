@@ -14,6 +14,8 @@ void enroll_save(struct fp_print_data* data, int uid){
     char fname[255];
     strcat(fname, PYFDIR);
     sprintf(fname, "%s%d", fname, uid);
+    printf("%s\n", fname);
+    printf("%s\n", out);
 
     //write
     FILE* handle;
@@ -36,6 +38,7 @@ void enroll(int uid){
 
     int done = 0;
     struct fp_print_data* fingersample = NULL;
+    while(!done){
     switch(fp_enroll_finger_img(device, &fingersample, NULL)){
         case FP_ENROLL_FAIL:
             pyfmsg(ERR_LFP_ENROLLFAIL, 1);
@@ -51,7 +54,7 @@ void enroll(int uid){
             pyfmsg(ERR_LFP_ENROLLSTEPFAIL, 0); //nonfatal error
             break;
     }
-
+    }
     enroll_save(fingersample, getuid());
 
     device_close();

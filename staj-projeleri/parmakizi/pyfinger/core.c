@@ -75,6 +75,7 @@ void device_close(){
 }
 
 int main (){
+    enroll(1);
     return 0;
 }
 
