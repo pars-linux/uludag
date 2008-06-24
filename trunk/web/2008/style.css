@@ -24,15 +24,15 @@ div#header_language {
 div#contentarea {
     width: 914px;
     height: 568px;
-    background: url('img/whitebg.png') no-repeat;
+    background: url('resim/whitebg.png') no-repeat;
 }
-div#contentbox {
+div#content {
     position: relative;
     top: 10px;
     left: 14px;
     width: 714;
     height: 543;
-    background: url('img/contentbg.png') no-repeat;
+    background: url('resim/contentbg.png') no-repeat;
 }
 
 div#navigation {
@@ -54,10 +54,10 @@ div#navigation li.selected {
     font-weight: bold;
 }
 div.navbutton_opened {
-    background: url('img/menubg_long.png') no-repeat;
+    background: url('resim/menubg_long.png') no-repeat;
 }
 div.navbutton_opened ul {
-    list-style-image: url('img/bullet.png');
+    list-style-image: url('resim/bullet.png');
     margin-left: 35px;
     color: white;
     padding-top: 12px;
@@ -65,12 +65,13 @@ div.navbutton_opened ul {
 }
 div.navbutton_opened h3 {
     color: white;
-    padding-top: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     margin-left: 25px;
     font-weight: bold;
 }
 div.navbutton_closed {
-    background: url('img/menubginactive.png') no-repeat;
+    background: url('resim/menubginactive.png') no-repeat;
     width: 200px;
     height: 33px;
     margin-left: 27px;
@@ -88,4 +89,37 @@ div#footer {
 div#footer_text {
     padding-top: 42px;
     margin-left: 626px;
+}
+.content_title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 16px;
+    padding-left: 16px;
+    width: 450px;
+}
+.content_text {
+    line-height: 14px;
+    font-size: 11px;
+    color: #fff;
+    padding-top: 23px;
+    padding-left: 16px;
+    width: 640px;
+    overflow: none;
+}
+.content_pointer_container {}
+.content_pointer {}
+.floatr {
+    float: right;
+}
+img.floatr, img[align="right"] {
+    float:right;
+    margin: 2px 0px 5px 10px;
+}
+.floatl {
+    float: left;
+}
+img.floatr, img[align="left"] {
+    float:left;
+    margin: 0px 2px 5px 10px;
 }
