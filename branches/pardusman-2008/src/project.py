@@ -219,6 +219,12 @@ class Project:
         for component in self.selected_components:
             for package in repo.components[component]:
                 collect(package)
+
+        if not "gfxtheme-pardus-install" in self.selected_packages:
+            self.selected_packages.append("gfxtheme-pardus-install")
+        if not "syslinux" in self.selected_packages:
+            self.selected_packages.append("syslinux")
+
         for package in self.selected_packages:
             collect(package)
         packages.sort()

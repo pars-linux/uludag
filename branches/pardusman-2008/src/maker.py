@@ -16,6 +16,7 @@ import tempfile
 import stat
 import sys
 import time
+import dbus
 
 from utility import xterm_title, waitBus
 
@@ -29,6 +30,21 @@ def run(cmd, ignore_error=False):
     if ret and not ignore_error:
         print "%s returned %s" % (cmd, ret)
         sys.exit(1)
+
+def connectToDBus(path):
+    global bus
+    bus = None
+    for i in range(20):
+        try:
+            print("trying to start dbus..")
+            bus = dbus.bus.BusConnection(address_or_type="unix:path=%s/var/run/dbus/system_bus_socket" % path)
+            break
+        except dbus.DBusException:
+            time.sleep(1)
+            print("wait dbus for 1 second...")
+    if bus:
+        return True
+    return False
 
 def chroot_comar(image_dir):
     if os.fork() == 0:
@@ -215,6 +231,7 @@ def copyPisiIndex(project):
     image_dir = project.image_dir()
     path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
     repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
+
     run('cp -PR "%s" "%s"' % (repo, path))
     run('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
     print('cp -PR "%s" "%s"' % (repo, path))
@@ -316,6 +333,8 @@ def check_repo_files(project):
         sys.exit(1)
 
 def make_image(project):
+    global bus
+
     print "Preparing install image..."
     xterm_title("Preparing install image")
 
@@ -354,9 +373,13 @@ def make_image(project):
         chrun("/usr/bin/pisi configure-pending baselayout")
         chrun("/usr/bin/pisi configure-pending")
 
-        chrun("hav call baselayout User.Manager setUser 0 'Pardus Root' '/root' '/bin/bash' 'pardus' '' ")
-        if project.type != "install" and 1==3:
-            chrun("hav call User.Manager addUser '1000' 'pars' 'Panter Pardus' '' password pardus")
+        connectToDBus(image_dir)
+
+        obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
+
+        obj.setUser(0, "", "", "", "pardus", "", dbus_interface="tr.org.pardus.comar.User.Manager")
+        if project.type != "install":
+            obj.addUser(1000, "pars", "Panter Pardus", "/home/pars", "/bin/bash", "pardus", ["wheel"], [], [], dbus_interface="tr.org.pardus.comar.User.Manager")
 
         chrun("/sbin/depmod -a %s-%s" % (repo.packages["kernel"].version, repo.packages["kernel"].release))
 
@@ -370,7 +393,8 @@ def make_image(project):
         if project.type != "install" and "kdebase" in project.all_packages:
             setup_live_kdm(project)
 
-        copyPisiIndex(project)
+        if project.type == "install":
+            copyPisiIndex(project)
 
         # Make sure environment is updated regardless of the booting system, by setting comparison
         # files' atime and mtime to UNIX time 1
