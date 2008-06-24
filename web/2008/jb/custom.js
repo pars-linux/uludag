@@ -30,20 +30,24 @@
 //     });
 // });
 
+// $(document).ready(function(){
+//     $("#kurumsal_button").click(function () {
+//       $("#kurumsal").slideToggle("slow");
+//     });
+// 
+//     $("#co_button").click(function () {
+//       $("#co").slideToggle("slow");
+//     });
+// 
+//     $("#dev_button").click(function () {
+//       $("#dev").slideToggle("slow");
+//     });
+// 
+//     $("#bireysel_button").click(function () {
+//       $("#bireysel").slideToggle("slow");
+//     });
+// });
+
 $(document).ready(function(){
-    $("#kurumsal_button").click(function () {
-      $("#kurumsal").slideToggle("slow");
-    });
-
-    $("#co_button").click(function () {
-      $("#co").slideToggle("slow");
-    });
-
-    $("#dev_button").click(function () {
-      $("#dev").slideToggle("slow");
-    });
-
-    $("#bireysel_button").click(function () {
-      $("#bireysel").slideToggle("slow");
-    });
+    $("#menu").accordion();
 });

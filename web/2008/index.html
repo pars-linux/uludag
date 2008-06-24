@@ -12,6 +12,8 @@
 <style type="text/css" media="screen">@import url('css/style.css');</style>
 <!-- JS -->
 <script type="text/javascript" src="jb/jquery.js"></script>
+<script type="text/javascript" src="jb/ui.core.js"></script>
+<script type="text/javascript" src="jb/ui.accordion.js"></script>
 <script type="text/javascript" src="jb/custom.js"></script>
 </head>
 <body>
@@ -22,14 +24,24 @@
 <div class="container_top"></div>
 <div id="container">
     <div id="sidebar">
-        <div id="kurumsal_button"><img src="resim/menu/kurumsal.png" alt="Kurumsal" /></div>
-        <div id="kurumsal" style="display: none;">Pardus 2008 sürüm tarihi ertelendi</div>
-        <div id="co_button"><img src="resim/menu/cozumortaklari.png" alt="Çözüm Ortakları" /></div>
-        <div id="co" style="display: none;">Pardus 2008 sürüm tarihi ertelendi</div>
-        <div id="dev_button"><img src="resim/menu/gelistirici.png" alt="Geliştirici" /></div>
-        <div id="dev" style="display: none;">Pardus 2008 sürüm tarihi ertelendi</div>
-        <div id="bireysel_button"><img src="resim/menu/bireysel.png" alt="Bireysel" /></div>
-        <div id="bireysel" style="display: none;">Pardus 2008 sürüm tarihi ertelendi</div>
+        <ul id="menu" class="ui-accordion-container">
+            <li>
+                <a href='#'><img src="resim/menu/kurumsal.png" alt="Kurumsal" class="menu_img" /></a>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            </li>
+            <li>
+                <a href='#'><img src="resim/menu/cozumortaklari.png" alt="Çözüm Ortakları" class="menu_img" /></a>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            </li>
+            <li>
+                <a href='#'><img src="resim/menu/gelistirici.png" alt="Geliştirici" class="menu_img" /></a>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            </li>
+            <li>
+                <a href='#'><img src="resim/menu/bireysel.png" alt="Bireysel" class="menu_img" /></a>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            </li>
+        </ul>
 
         <div id="sidebar_bottom">
             <a href="download"><img src="resim/sag_alt_1.png" alt="İndir" /></a>
