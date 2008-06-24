@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-06 19:45+0300\n"
+"POT-Creation-Date: 2008-06-24 14:36+0300\n"
 "PO-Revision-Date: 2008-06-08 15:35-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -22,23 +22,23 @@ msgstr ""
 msgid "Unable to connect to DBus."
 msgstr "No posible conectar con DBus"
 
-#: um_mainview.py:43
+#: um_mainview.py:43 um_mainview.py:62
 msgid "DBus Error"
 msgstr "Error DBus"
 
 #: um_mainview.py:58
-msgid "D-Bus Error"
-msgstr "Error D-Bus"
+msgid "You are not authorized for this operation."
+msgstr ""
 
-#: um_mainview.py:62
+#: um_mainview.py:66
 msgid "COMAR Error"
 msgstr "Error COMAR"
 
-#: groupedit.py:22 useredit.py:25
+#: groupedit.py:22 useredit.py:38
 msgid "ID:"
 msgstr "ID:"
 
-#: groupedit.py:30 useredit.py:37
+#: groupedit.py:30 useredit.py:50
 msgid "Select manually"
 msgstr "Seleccion manual"
 
@@ -86,7 +86,7 @@ msgstr "Nombre de grupo"
 msgid "Users"
 msgstr "Usuarios"
 
-#: browser.py:120 useredit.py:636
+#: browser.py:120 useredit.py:682
 msgid "Groups"
 msgstr "Grupos"
 
@@ -117,8 +117,10 @@ msgstr "Eliminar usuario"
 
 #: browser.py:167
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr "<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
 
 #: browser.py:173 browser.py:174
 msgid "Delete Group"
@@ -136,108 +138,140 @@ msgstr "Módulo de Administración de usuarios ya se está ejecutando !"
 msgid "User Manager"
 msgstr "Administrador de Usuarios"
 
-#: useredit.py:72
+#: useredit.py:22
+msgid "User/group operations"
+msgstr ""
+
+#: useredit.py:23
+msgid "Network settings"
+msgstr ""
+
+#: useredit.py:24
+msgid "Package operations"
+msgstr ""
+
+#: useredit.py:25
+msgid "Service operations"
+msgstr ""
+
+#: useredit.py:26
+msgid "Date/time operations"
+msgstr ""
+
+#: useredit.py:27
+msgid "Kernel module operations"
+msgstr ""
+
+#: useredit.py:28
+msgid "Bootloader settings"
+msgstr ""
+
+#: useredit.py:29
+msgid "Screen settings"
+msgstr ""
+
+#: useredit.py:85
 msgid "User name:"
 msgstr "Nombre de usuario:"
 
-#: useredit.py:103
+#: useredit.py:116
 msgid "Full name:"
 msgstr "Nombre completo:"
 
 # Carpeta personal (home)
-#: useredit.py:126
+#: useredit.py:139
 msgid "Home:"
 msgstr "Carpeta personal (home):"
 
 # "home" por "personal (home)"
-#: useredit.py:158
+#: useredit.py:171
 msgid "Select user's home directory"
 msgstr "Seleccione la carpeta personal (home) del usuario"
 
-#: useredit.py:167
+#: useredit.py:180
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: useredit.py:173
+#: useredit.py:186
 msgid "Confirm password:"
 msgstr "Confirmar contraseña:"
 
 # Intérprete de comados (shell)
-#: useredit.py:201
+#: useredit.py:214
 msgid "Shell:"
 msgstr "Intérprete de comandos (shell):"
 
 # Favor ingresar comando
-#: useredit.py:223
+#: useredit.py:236
 msgid "Please specify an existing shell command"
 msgstr "Favor ingresar comando"
 
 # El comando indicado no es ejecutable
-#: useredit.py:225
+#: useredit.py:238
 msgid "Specified shell command is not executable"
 msgstr "El comando indicado no es ejecutable"
 
-#: useredit.py:249
+#: useredit.py:265
 msgid "Group"
 msgstr "Grupo"
 
-#: useredit.py:256
+#: useredit.py:272
 msgid "Main group:"
 msgstr "Grupo principal:"
 
-#: useredit.py:346
+#: useredit.py:365
 msgid "Start with typing this user's full name."
 msgstr "Escriba primero el nombre completo de este usuario."
 
-#: useredit.py:349
+#: useredit.py:368
 msgid "You should enter a password for this user."
 msgstr "Favor ingresar una contraseña para este usuario."
 
-#: useredit.py:354
+#: useredit.py:373
 msgid "Password must be longer."
 msgstr "La contraseña debe ser más larga."
 
-#: useredit.py:358
+#: useredit.py:377
 msgid "Don't use your full name or user name as a password."
 msgstr "No use el nombre completo o nombre de usuario como contraseña."
 
-#: useredit.py:361
+#: useredit.py:380
 msgid "Passwords don't match."
 msgstr "Las contraseñas no coinciden."
 
-#: useredit.py:364
+#: useredit.py:383
 msgid "You must enter a user ID or use the auto selection."
 msgstr "Favor ingresar un ID de usuario o use la selección automatica."
 
-#: useredit.py:369
+#: useredit.py:388
 msgid "You must enter a user name."
 msgstr "Debe ingresar un nombre de usuario."
 
-#: useredit.py:372
+#: useredit.py:391
 msgid "This user name is used by another user."
 msgstr "Este nombre de usuario ya existe."
 
-#: useredit.py:376
+#: useredit.py:395
 msgid "User name must not start with a number."
 msgstr "Nombre de usuario no debe empezar con un número."
 
-#: useredit.py:379
+#: useredit.py:398
 msgid "You should select at least one group this user belongs to."
 msgstr "Favor indicar al menos un grupo al cual pertenece este usuario."
 
-#: useredit.py:412
+#: useredit.py:431
 msgid "Edit User's Information"
 msgstr "Editar información del usuario"
 
-#: useredit.py:414
+#: useredit.py:433
 msgid "Enter Information For New User"
 msgstr "Ingrese informaciones del usuario nuevo"
 
-#: useredit.py:450
+#: useredit.py:469
 msgid "Give administrator privileges to this user"
 msgstr "Conceder privilegios de administrador a este usuario"
 
-#: useredit.py:523
+#: useredit.py:543
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
@@ -246,39 +280,41 @@ msgstr ""
 "derechos de administrador a causa de esto."
 
 # should i translate as "dangerous" ?
-#: useredit.py:524
+#: useredit.py:544
 msgid "Important Group Change"
 msgstr "Cambio de grupo importante"
 
-#: useredit.py:531
+#: useredit.py:551
 msgid "Changing user information..."
 msgstr "Cambiando informaciones de usuario..."
 
-#: useredit.py:549
+#: useredit.py:578
 msgid "Adding user..."
 msgstr "Agregando usuario..."
 
-#: useredit.py:595
+#: useredit.py:641
 msgid "Getting user information..."
 msgstr "Obteniendo información de usuario..."
 
-#: useredit.py:629
+#: useredit.py:675
 msgid "Authorizations"
 msgstr "Autorizaciones"
 
-#: useredit.py:642
+#: useredit.py:693
 msgid "Actions"
 msgstr "Acciones"
 
-#: useredit.py:648
+#: useredit.py:706
 msgid "Authorize"
 msgstr "Permitir"
 
-#: useredit.py:652
+#: useredit.py:710
 msgid "Block"
 msgstr "Prohibir"
 
-#: useredit.py:662
+#: useredit.py:721
 msgid "Do not ask password"
 msgstr "No preguntar contraseña"
 
+#~ msgid "D-Bus Error"
+#~ msgstr "Error D-Bus"

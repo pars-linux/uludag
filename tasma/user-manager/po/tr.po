@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-06 19:45+0300\n"
+"POT-Creation-Date: 2008-06-24 14:36+0300\n"
 "PO-Revision-Date: 2006-06-15 15:23+0300\n"
 "Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
 "Language-Team: Türkçe <->\n"
@@ -18,25 +18,25 @@ msgstr ""
 
 #: um_mainview.py:43
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "DBus'a bağlanılamadı."
 
-#: um_mainview.py:43
+#: um_mainview.py:43 um_mainview.py:62
 msgid "DBus Error"
-msgstr ""
+msgstr "DBus Hatası"
 
 #: um_mainview.py:58
-msgid "D-Bus Error"
-msgstr ""
+msgid "You are not authorized for this operation."
+msgstr "Bu işlemi yapmak için yetkili değilsiniz."
 
-#: um_mainview.py:62
+#: um_mainview.py:66
 msgid "COMAR Error"
-msgstr ""
+msgstr "COMAR hatası"
 
-#: groupedit.py:22 useredit.py:25
+#: groupedit.py:22 useredit.py:38
 msgid "ID:"
 msgstr "No:"
 
-#: groupedit.py:30 useredit.py:37
+#: groupedit.py:30 useredit.py:50
 msgid "Select manually"
 msgstr "Elle seç"
 
@@ -84,7 +84,7 @@ msgstr "Grup adı"
 msgid "Users"
 msgstr "Kullanıcılar"
 
-#: browser.py:120 useredit.py:636
+#: browser.py:120 useredit.py:682
 msgid "Groups"
 msgstr "Gruplar"
 
@@ -135,103 +135,135 @@ msgstr "Kullanıcı yönetim modülü zaten çalışıyor!"
 msgid "User Manager"
 msgstr "Kullanıcı Yöneticisi"
 
-#: useredit.py:72
+#: useredit.py:22
+msgid "User/group operations"
+msgstr "Kullanıcı/grup işlemleri"
+
+#: useredit.py:23
+msgid "Network settings"
+msgstr "Ağ ayarları"
+
+#: useredit.py:24
+msgid "Package operations"
+msgstr "Paket işlemleri"
+
+#: useredit.py:25
+msgid "Service operations"
+msgstr "Servis işlemleri"
+
+#: useredit.py:26
+msgid "Date/time operations"
+msgstr "Tarih/zaman ayarları"
+
+#: useredit.py:27
+msgid "Kernel module operations"
+msgstr "Çekirdek modül işlemleri"
+
+#: useredit.py:28
+msgid "Bootloader settings"
+msgstr "Önyükleyici ayarları"
+
+#: useredit.py:29
+msgid "Screen settings"
+msgstr "Ekran ayarları"
+
+#: useredit.py:85
 msgid "User name:"
 msgstr "Kullanıcı adı:"
 
-#: useredit.py:103
+#: useredit.py:116
 msgid "Full name:"
 msgstr "Ad soyad:"
 
-#: useredit.py:126
+#: useredit.py:139
 msgid "Home:"
 msgstr "Ev:"
 
-#: useredit.py:158
+#: useredit.py:171
 msgid "Select user's home directory"
 msgstr "Kullanıcının ev dizinini seçin"
 
-#: useredit.py:167
+#: useredit.py:180
 msgid "Password:"
 msgstr "Parola:"
 
-#: useredit.py:173
+#: useredit.py:186
 msgid "Confirm password:"
 msgstr "Parola onay:"
 
-#: useredit.py:201
+#: useredit.py:214
 msgid "Shell:"
 msgstr "Kabuk:"
 
-#: useredit.py:223
+#: useredit.py:236
 msgid "Please specify an existing shell command"
 msgstr "Varolan bir kabuk komutu seçin"
 
-#: useredit.py:225
+#: useredit.py:238
 msgid "Specified shell command is not executable"
 msgstr "Seçili kabuk komutu çalıştırılabilir değil"
 
-#: useredit.py:249
+#: useredit.py:265
 msgid "Group"
 msgstr "Grup"
 
-#: useredit.py:256
+#: useredit.py:272
 msgid "Main group:"
 msgstr "Ana grup:"
 
-#: useredit.py:346
+#: useredit.py:365
 msgid "Start with typing this user's full name."
 msgstr "Kullanıcının ad soyadını girerek başlayın."
 
-#: useredit.py:349
+#: useredit.py:368
 msgid "You should enter a password for this user."
 msgstr "Bu kullanıcı için bir parola girmelisiniz."
 
-#: useredit.py:354
+#: useredit.py:373
 msgid "Password must be longer."
 msgstr "Parolanız daha uzun olmalı."
 
-#: useredit.py:358
+#: useredit.py:377
 msgid "Don't use your full name or user name as a password."
 msgstr "Ad soyadınızı ya da kullanıcı adınızı parola olarak kullanmayın."
 
-#: useredit.py:361
+#: useredit.py:380
 msgid "Passwords don't match."
 msgstr "Parolalar uyuşmuyor."
 
-#: useredit.py:364
+#: useredit.py:383
 msgid "You must enter a user ID or use the auto selection."
 msgstr "Otomatik seçimi kullanın ya da kullanıcı numarasını girin."
 
-#: useredit.py:369
+#: useredit.py:388
 msgid "You must enter a user name."
 msgstr "Bir kullanıcı adı girin."
 
-#: useredit.py:372
+#: useredit.py:391
 msgid "This user name is used by another user."
 msgstr "Bu kullanıcı adı bir başka kullanıcı tarafından kullanılıyor."
 
-#: useredit.py:376
+#: useredit.py:395
 msgid "User name must not start with a number."
 msgstr "Kullanıcı adı bir sayı ile başlamamalı."
 
-#: useredit.py:379
+#: useredit.py:398
 msgid "You should select at least one group this user belongs to."
 msgstr "Bu kullanıcının üyesi olacağı en az bir grup seçmelisiniz."
 
-#: useredit.py:412
+#: useredit.py:431
 msgid "Edit User's Information"
 msgstr "Kullanıcı Bilgisini Düzenleyin"
 
-#: useredit.py:414
+#: useredit.py:433
 msgid "Enter Information For New User"
 msgstr "Yeni Kullanıcının Bilgilerini Girin"
 
-#: useredit.py:450
+#: useredit.py:469
 msgid "Give administrator privileges to this user"
 msgstr "Bu kullanıcıya yönetici yetkileri ver"
 
-#: useredit.py:523
+#: useredit.py:543
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
@@ -239,42 +271,44 @@ msgstr ""
 "Kendinizi 'wheel' sistem grubundan çıkarıyorsunuz, bundan sonra yönetici "
 "yetkilerinizi kullanamayacaksınız."
 
-#: useredit.py:524
+#: useredit.py:544
 msgid "Important Group Change"
 msgstr "Önemli Grup Değişikliği"
 
-#: useredit.py:531
+#: useredit.py:551
 msgid "Changing user information..."
 msgstr "Kullanıcı bilgisi değiştiriliyor..."
 
-#: useredit.py:549
+#: useredit.py:578
 msgid "Adding user..."
 msgstr "Kullanıcı ekleniyor..."
 
-#: useredit.py:595
+#: useredit.py:641
 msgid "Getting user information..."
 msgstr "Kullanıcı bilgisi alınıyor..."
 
-#: useredit.py:629
+#: useredit.py:675
 msgid "Authorizations"
 msgstr "Yetkiler"
 
-#: useredit.py:642
+#: useredit.py:693
 msgid "Actions"
 msgstr "Eylemler"
 
-#: useredit.py:648
+#: useredit.py:706
 msgid "Authorize"
 msgstr "Yetkilendir"
 
-#: useredit.py:652
+#: useredit.py:710
 msgid "Block"
 msgstr "Engelle"
 
-#: useredit.py:662
-#, fuzzy
+#: useredit.py:721
 msgid "Do not ask password"
 msgstr "Parola sorma"
+
+#~ msgid "D-Bus Error"
+#~ msgstr "D"
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "
@@ -291,9 +325,6 @@ msgstr "Parola sorma"
 
 #~ msgid "Operation failed, reason:<br>%s"
 #~ msgstr "İşlem başarısız oldu, neden:<br>%s"
-
-#~ msgid "You are not allowed to do that"
-#~ msgstr "Bunu yapmaya yetkiniz yok"
 
 #~ msgid "Comar script error :("
 #~ msgstr "Comar betik hatası :("
