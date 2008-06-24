@@ -7,6 +7,10 @@
 //#include <python2.5/Python.h>
 
 
+//---------------- DIRS -------------------
+
+#define PYFDIR "/var/lib/pyfinger/" ///root-restricted dir to store data in, with trailing slash
+
 //-------------- ERROR CODES ---------------
 
 /**\brief Basic error codes
@@ -23,10 +27,11 @@ enum msgtype{
     MSG_LFP_ENROLLCOMPLETE,     ///enrollment process complete
     ERR_LFP_ENROLLFAIL,         ///enrollment process failed
     MSG_LFP_ENROLLSTEPCOMPLETE, ///enrollment step complete
-    ERR_LFP_ENROLLSTEPFAIL      ///enrollment step must be repeated
+    ERR_LFP_ENROLLSTEPFAIL,     ///enrollment step must be repeated
+    ERR_WRITEFAIL               ///write to file failed
 };
 
-#define MAXMSG 9                ///Largest error code for error bounds check
+#define MAXMSG 10               ///Largest error code for error bounds check
 extern char* msglist[MAXMSG+1]; ///Error messages
 
 
@@ -50,8 +55,8 @@ void device_open();
 void device_close();
 
 //imaging
-void image_write(char* filename);
-void image_write_binarized(char* filename);
+void image_save(char* filename);
+void image_save_binarized(char* filename);
 
 //enrolling
 void enroll();
