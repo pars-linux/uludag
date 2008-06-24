@@ -227,8 +227,11 @@ class BootLoader:
         for _line in guest_grub_conf:
             line = _line.strip()
             for p in params:
-                if not line.startswith(p):
-                    s.append(line)
+                _tmp = line
+                if line.startswith(p):
+                    _tmp=""
+            if not _tmp=="":
+                s.append(_tmp)
         open(self.grub_conf, "a").write('\n'.join(s))
 
     def install_grub(self, grub_install_root=None):

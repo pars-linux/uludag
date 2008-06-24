@@ -50,6 +50,10 @@ def iter_slide_pics():
         for pic in pics:
             yield pic
 
+def objectSender(pack):
+    global currentObject
+    QCoreApplication.postEvent(currentObject, pack)
+
 ##
 # Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
@@ -100,9 +104,11 @@ Have fun!
         self.hasErrors = False
 
     def shown(self):
+        global currentObject
+        currentObject = self
         # start installer thread
         ctx.debugger.log("PkgInstaller is creating...")
-        self.pkg_installer = PkgInstaller(self)
+        self.pkg_installer = PkgInstaller()
         ctx.debugger.log("Calling PkgInstaller.start...")
         self.pkg_installer.start()
         ctx.yali.info.updateAndShow(_("Packages are being installed.."), True)
@@ -173,7 +179,7 @@ Have fun!
         ctx.yali.info.updateMessage(_("Configuring packages.."), True)
 
         # start configurator thread
-        self.pkg_configurator = PkgConfigurator(self)
+        self.pkg_configurator = PkgConfigurator()
         self.pkg_configurator.start()
 
     def execute(self):
@@ -205,14 +211,13 @@ Error:
 
 class PkgInstaller(QThread):
 
-    def __init__(self, widget):
+    def __init__(self):
         ctx.debugger.log("PkgInstaller started.")
         QThread.__init__(self)
-        self._widget = widget
 
     def run(self):
         ctx.debugger.log("PkgInstaller is running.")
-        ui = PisiUI(self._widget)
+        ui = PisiUI()
         ctx.debugger.log("PisiUI is creating..")
         yali4.pisiiface.initialize(ui)
         ctx.debugger.log("Pisi initialize is calling..")
@@ -232,7 +237,7 @@ class PkgInstaller(QThread):
         ctx.debugger.log("Setting data on just created PisiEvent (EventSetProgress)..")
         qevent.setData(total)
         ctx.debugger.log("Posting PisiEvent to the widget..")
-        QCoreApplication.postEvent(self._widget, qevent)
+        objectSender(qevent)
         ctx.debugger.log("Found %d packages in repo.." % total)
 
         try:
@@ -241,29 +246,26 @@ class PkgInstaller(QThread):
             # User+10: error
             qevent = PisiEvent(QEvent.User, EventError)
             qevent.setData(e)
-            QCoreApplication.postEvent(self._widget, qevent)
+            objectSender(qevent)
 
         # Package Install finished lets configure them
         qevent = PisiEvent(QEvent.User, EventPackageInstallFinished)
-        QCoreApplication.postEvent(self._widget, qevent)
+        objectSender(qevent)
 
 class PkgConfigurator(QThread):
 
-    def __init__(self, widget):
+    def __init__(self):
         ctx.debugger.log("PkgConfigurator started.")
         QThread.__init__(self)
-        self._widget = widget
 
     def run(self):
         ctx.debugger.log("PkgConfigurator is running.")
-        ui = PisiUI(self._widget)
-
+        ui = PisiUI()
         yali4.pisiiface.initialize(ui=ui, with_comar=True)
-
         total = yali4.pisiiface.get_pending_len()
         qevent = PisiEvent(QEvent.User, EventSetProgress)
         qevent.setData(total)
-        QCoreApplication.postEvent(self._widget, qevent)
+        objectSender(qevent)
 
         try:
             # run all pending...
@@ -273,27 +275,26 @@ class PkgConfigurator(QThread):
             # User+10: error
             qevent = PisiEvent(QEvent.User, EventError)
             qevent.setData(e)
-            QCoreApplication.postEvent(self._widget, qevent)
+            objectSender(qevent)
 
         # Remove cd repository and install add real
         yali4.pisiiface.switch_to_pardus_repo()
 
         qevent = PisiEvent(QEvent.User, EventAllFinished)
-        QCoreApplication.postEvent(self._widget, qevent)
+        objectSender(qevent)
 
-class PisiUI(QObject,pisi.ui.UI):
+class PisiUI(QObject, pisi.ui.UI):
 
-    def __init__(self, widget, *args):
+    def __init__(self, *args):
         pisi.ui.UI.__init__(self)
         apply(QObject.__init__, (self,) + args)
-        self.w = widget
 
     def notify(self, event, **keywords):
         if event == pisi.ui.installing or event == pisi.ui.configuring:
             qevent = PisiEvent(QEvent.User, EventPisi)
             data = [keywords['package'], event]
             qevent.setData(data)
-            QCoreApplication.postEvent(self.w, qevent)
+            objectSender(qevent)
 
     def display_progress(self, operation, percent, info, **keywords):
         pass
