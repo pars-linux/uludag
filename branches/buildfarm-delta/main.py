@@ -120,23 +120,24 @@ def buildPackages():
     logger.raw()
     logger.raw()
 
-    logger.info(_("Generating PiSi Index..."))
-
-    current = os.getcwd()
-    os.chdir(config.binaryPath)
-    os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
-    logger.info(_("PiSi Index generated..."))
-
-    #FIXME: will be enableb after some internal tests
-    #os.system("rsync -avze ssh --delete . pisi.pardus.org.tr:/var/www/paketler.uludag.org.tr/htdocs/pardus-1.1/")
-
     # Check packages containing binaries and libraries broken by any package update
+    print "Checking binary consistency with revdep-rebuild..\n"
     os.system("/usr/bin/revdep-rebuild --force")
-    # FIXME: if there is any broken package,  mail /root/.revdep-rebuild.4_names file
 
-    # Sweeet november, try to find duplicate packages in config.binaryPath
-    os.system("for i in `ls`; do echo ${i/-[0-9]*/}; done | uniq -d")
+    # Save current path
+    current = os.getcwd()
 
+    for dir in [config.binaryPath, config.testPath]:
+        os.chdir(dir)
+        logger.info(_("\nGenerating PiSi Index in %s:" % dir))
+        os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
+        logger.info(_("PiSi Index Generated for %s" % dir))
+
+        # Sweeet november, try to find duplicate packages in dir
+        # print "\nDuplicate packages in %s:\n%s" % (dir, '-'*40)
+        # os.system("for i in `ls`; do echo ${i/-[0-9]*/}; done | uniq -d")
+
+    # Go back to the saved directory
     os.chdir(current)
 
     # FIXME: Use fcntl.funlock
