@@ -599,23 +599,20 @@ class UserStack(QVBox):
                 a_groups = a_groups + ",wheel"
 
         grants = []
-        revokes = []
         blocks = []
 
         for op in self.u_operations.keys():
             if self.u_operations[op] == "grant":
                 grants.append(op)
-            elif self.u_operations[op] == "revoke":
-                revokes.append(op)
             elif self.u_operations[op] == "block":
                 blocks.append(op)
 
         #dbus does not like empty lists as parameters
-        for ls in [grants, revokes, blocks]:
+        for ls in [grants, blocks]:
             if len(ls) == 0:
                 ls.append("")
 
-        ch.call(uid, self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), a_groups.split(","), grants, revokes, blocks)
+        ch.call(uid, self.u_name.text(), self.u_realname.text(), self.u_home.text(), self.u_shell.text(), self.u_password.text(), a_groups.split(","), grants, blocks)
 
     def reset(self):
         self.u_id.setText("auto")
@@ -626,7 +623,6 @@ class UserStack(QVBox):
         self.u_groups.setText("")
         self.u_policygrouptab.reset()
         grants = []
-        revokes = []
         blocks = []
         self.checkAdd()
 
