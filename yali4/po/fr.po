@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 21:15+0300\n"
+"POT-Creation-Date: 2008-06-24 20:51+0300\n"
 "PO-Revision-Date: 2007-10-19 22:35+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
@@ -778,7 +778,7 @@ msgid "Set Administrator"
 msgstr "Mot de passe de l'administrateur du système:"
 
 #: yali4/gui/ScrAdmin.py:31
-msgid "Admins has important rights on the system..."
+msgid "Admins have important rights on the system..."
 msgstr ""
 
 #: yali4/gui/ScrAdmin.py:33
@@ -1005,20 +1005,20 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:130 yali4/gui/ScrSummary.py:69
-#: yali4/installer.py:591
+#: yali4/installer.py:606
 msgid "Reboot"
 msgstr "Redémarrer"
 
-#: yali4/gui/ScrInstall.py:56
+#: yali4/gui/ScrInstall.py:60
 #, fuzzy
 msgid "Installing system..."
 msgstr "Installation du système"
 
-#: yali4/gui/ScrInstall.py:57
-msgid "Installing approximately 30 minutes depending on hardware..."
+#: yali4/gui/ScrInstall.py:61
+msgid "Installing takes approximately 30 minutes depending on your hardware..."
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:59
+#: yali4/gui/ScrInstall.py:63
 msgid ""
 "\n"
 "<font size=\"+2\">Installation started</font>\n"
@@ -1060,31 +1060,31 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:108
-msgid "Packages are installing.."
+#: yali4/gui/ScrInstall.py:112
+msgid "Packages are being installed.."
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:123
+#: yali4/gui/ScrInstall.py:127
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Installation de : %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:128
+#: yali4/gui/ScrInstall.py:132
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Configuration du paquet: %s"
 
-#: yali4/gui/ScrInstall.py:164
+#: yali4/gui/ScrInstall.py:168
 #, fuzzy
 msgid "Creating baselayout for your system!"
 msgstr "Configuration de paquets pour votre système!"
 
-#: yali4/gui/ScrInstall.py:173
+#: yali4/gui/ScrInstall.py:177
 #, fuzzy
 msgid "Configuring packages.."
 msgstr "Configuration du paquet: %s"
 
-#: yali4/gui/ScrInstall.py:196
+#: yali4/gui/ScrInstall.py:200
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1526,7 +1526,7 @@ msgid "Backtrace:"
 msgstr "Pile d'exécution:"
 
 #: yali4/installer.py:126
-msgid "YALI Working..."
+msgid "YALI Is Working..."
 msgstr ""
 
 #: yali4/installer.py:141
@@ -1582,7 +1582,7 @@ msgstr "Créer une nouvelle partition"
 
 #: yali4/installer.py:438
 #, python-format
-msgid "User <b>%s</b>'s home directory is preparing.."
+msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr ""
 
 #: yali4/localedata.py:20
