@@ -57,5 +57,6 @@ void image_write_binarized(char* filename);
 void enroll();
 
 //verifying
+void verify();
 
 #endif
