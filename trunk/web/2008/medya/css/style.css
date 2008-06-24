@@ -63,7 +63,7 @@ img.floatr, img[align="right"] {
 }
 
 .container_top {
-    background: url("../img/container_top.png") no-repeat;
+    background: url("../resim/container_top.png") no-repeat;
     height: 3px;
     width: 926px;
     margin-left: auto;
@@ -71,7 +71,7 @@ img.floatr, img[align="right"] {
 }
 
 .container_bottom {
-    background: url("../img/container_bottom.png") no-repeat;
+    background: url("../resim/container_bottom.png") no-repeat;
     height: 6px;
     width: 926px;
     margin-left: auto;
@@ -83,7 +83,7 @@ img.floatr, img[align="right"] {
     height: 540px;
     margin-left: auto;
     margin-right: auto;
-    background: url("../img/container_bg.png") repeat-y;
+    background: url("../resim/container_bg.png") repeat-y;
 }
 
 #content {
@@ -92,7 +92,7 @@ img.floatr, img[align="right"] {
     left: 14px;
     width: 714px;
     height: 520px;
-    background: url('../img/content_bg.png') no-repeat;
+    background: url('../resim/content_bg.png') no-repeat;
 }
 
 .content_title {
@@ -144,7 +144,7 @@ img.floatr, img[align="right"] {
 }
 
 #sidebar ul {
-    list-style-image: url('../img/bullet.png');
+    list-style-image: url('../resim/bullet.png');
 }
 
 #footer {
