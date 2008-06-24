@@ -174,8 +174,7 @@ class Progress(ProgressDialog):
         else:
             self.curPkgDownloaded = int(pkgDownSize)
 
-        self.calculateTimeLeft(self.totalSize, self.totalDownloaded, rate, symbol)
-        self.timeRemaining.setText(self.timeLeft)
+        self.calculateTimeLeft(self.totalSize, self.totalDownloaded + self.curPkgDownloaded, rate, symbol)
 
     # pisi does not provide total operation percent, just package based.
     def updateTotalOperationPercent(self):
