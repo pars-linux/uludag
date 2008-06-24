@@ -13,7 +13,7 @@
  *
  * A list of all the errors that might be returned by the library.
  */
-enum errortype{
+enum msgtype{
     ERR_LFP_LIBRARYFAIL,    ///library load failed
     ERR_LFP_DISCOVERYFAIL,  ///device discovery failed
     ERR_LFP_NODEVICE,       ///no device found
@@ -22,8 +22,8 @@ enum errortype{
     ERR_LFP_IMAGINGFAIL     ///imaging attempt failed
 };
 
-#define MAXERROR 5                  ///Largest error code for error bounds check
-extern char* errormsg[MAXERROR+1];    ///Error messages
+#define MAXMSG 5                    ///Largest error code for error bounds check
+extern char* msglist[MAXMSG+1];   ///Error messages
 
 
 // ------------- GLOBALS --------------
