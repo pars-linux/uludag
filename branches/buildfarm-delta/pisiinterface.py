@@ -37,6 +37,7 @@ class PisiApi:
         self.options.output_dir = outputDir
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
+        self.options.ignore_package_conflicts = True
         # FIXME: Band-aid for a while...
         self.options.ignore_sandbox = True
 
@@ -133,5 +134,6 @@ class PisiApi:
     def install(self, p):
         a = []
         a.append(p)
-        pisi.api.install(a, ignore_file_conflicts=self.options.ignore_file_conflicts)
+        pisi.api.install(a, ignore_file_conflicts=self.options.ignore_file_conflicts,
+                            ignore_package_conflicts=self.options.ignore_package_conflicts)
 
