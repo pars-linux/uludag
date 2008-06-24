@@ -93,6 +93,7 @@ img.floatr, img[align="right"] {
     width: 714px;
     height: 520px;
     background: url('../resim/content_bg.png') no-repeat;
+    overflow: hidden;
 }
 
 .content_title {
@@ -119,6 +120,7 @@ img.floatr, img[align="right"] {
 }
 
 .content_pointer_container {
+    margin-top: 12px;
     width: 714px;
 }
 
@@ -133,18 +135,35 @@ img.floatr, img[align="right"] {
     padding-left: 5px;
 }
 
+.content_pointer_text img {
+    display: block;
+    padding-bottom: 8px;
+    margin-top: -4px;
+}
+
 #sidebar {
     float: right;
     width: 227px;
-    height: 353px;
+    height: 520px;
     position: relative;
     top: 25px;
     z-index: 1;
-    overflow: hidden;
 }
 
 #sidebar ul {
     list-style-image: url('../resim/bullet.png');
+}
+
+#sidebar_bottom {
+    float: right;
+    width: 190px;
+    position: relative;
+    top: 196px;
+}
+
+#sidebar_bottom img, a {
+    padding-top: 5px;
+    border: 0;
 }
 
 #footer {
