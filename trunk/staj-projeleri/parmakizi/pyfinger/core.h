@@ -14,12 +14,16 @@
  * A list of all the errors that might be returned by the library.
  */
 enum msgtype{
-    ERR_LFP_LIBRARYFAIL,    ///library load failed
-    ERR_LFP_DISCOVERYFAIL,  ///device discovery failed
-    ERR_LFP_NODEVICE,       ///no device found
-    ERR_LFP_DEVICEINITFAIL, ///device failed to start
-    ERR_LFP_NOIMAGING,      ///imaging not supported
-    ERR_LFP_IMAGINGFAIL     ///imaging attempt failed
+    ERR_LFP_LIBRARYFAIL,        ///library load failed
+    ERR_LFP_DISCOVERYFAIL,      ///device discovery failed
+    ERR_LFP_NODEVICE,           ///no device found
+    ERR_LFP_DEVICEINITFAIL,     ///device failed to start
+    ERR_LFP_NOIMAGING,          ///imaging not supported
+    ERR_LFP_IMAGINGFAIL,        ///imaging attempt failed
+    MSG_LFP_ENROLLCOMPLETE,     ///enrollment process complete
+    MSG_LFP_ENROLLFAIL,         ///enrollment process failed
+    MSG_LFP_ENROLLSTEPCOMPLETE, ///enrollment step complete
+    MSG_LFP_ENROLLSTEPFAIL      ///enrollment step must be repeated
 };
 
 #define MAXMSG 5                    ///Largest error code for error bounds check
