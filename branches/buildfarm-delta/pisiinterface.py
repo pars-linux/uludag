@@ -96,8 +96,10 @@ class PisiApi:
 
             if isopackages.has_key(name) and isopackages[name] != pl[0]:
                 # Build delta between ISO build and current build
-                logger.info("Building delta between %s[ISO] and %s." % (isopackages[name], pl[1]))
-                delta_packages.append(create_delta_package(os.path.join(config.binaryPath, isopackages[name]), p))
+                package = os.path.join(config.binaryPath, isopackages[name])
+                if os.path.exists(package):
+                    logger.info("Building delta between %s[ISO] and %s." % (isopackages[name], pl[1]))
+                    delta_packages.append(create_delta_package(package, p))
 
             # Search for an older build (older < previous)
             previous = self.getPreviousBuild(pl[0])

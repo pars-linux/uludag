@@ -19,6 +19,7 @@ import traceback
 import cStringIO
 import exceptions
 import cPickle
+import glob
 
 """ BuildFarm Modules """
 import config
@@ -105,7 +106,7 @@ def buildPackages():
                     removeBinaryPackageFromWorkDir(p)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
-                    movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages)
+                    movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPackages)
                     packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
         finally:
             pass
@@ -118,6 +119,7 @@ def buildPackages():
         mailer.info(_("Queue finished without a problem!...\n\n\nNew binary packages are;\n\n%s\n\nnow in repository...") % "\n".join(packageList))
     logger.raw()
     logger.raw()
+    """
     logger.info(_("Generating PiSi Index..."))
 
     current = os.getcwd()
@@ -136,10 +138,11 @@ def buildPackages():
     os.system("for i in `ls`; do echo ${i/-[0-9]*/}; done | uniq -d")
 
     os.chdir(current)
+    """
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
-def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
+def movePackages(newBinaryPackages, oldBinaryPackages, deltasToInstall, deltaPackages):
     # normalize files to full paths
     try:
         newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
@@ -166,7 +169,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
     copy   = shutil.copy
 
     def moveOldPackage(package):
-        logger.info(_("*** Moving old package '%s'") % (package))
+        logger.info(_("*** Removing old package '%s' from %s") % (package, config.testPath))
         if exists(join(config.testPath, package)):
             # If an old build is found in testPath(/packages-test/)
             # remove it because the test repo is unique.
@@ -192,10 +195,22 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
             remove(join(config.workDir, package))
 
     def moveDeltaPackage(package):
-        logger.info(_("*** Moving delta package '%s'") % (package))
+        # Move all delta packages into binary path and clean them from workDir
+        logger.info(_("*** Moving delta package '%s' to %s") % (package, config.binaryPath))
         if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.deltaPath)
+            copy(join(config.workDir, package), config.binaryPath)
             remove(join(config.workDir, package))
+
+    def moveIncrementalDeltaPackage(package):
+        # Move incremental delta packages to the test repository.
+        # e.g. kernel-88-89-delta.pisi
+        for p in glob.glob1(config.testPath, "%s-[0-9]*-[0-9]*.delta.pisi" % os.path.basename(package).rsplit("-", 2)[0]):
+            logger.info(_("*** Removing %s from %s" % (p, config.testPath)))
+            remove(join(config.testPath, p))
+
+        logger.info(_("*** Moving incremental delta package '%s' to %s") % (package, config.testPath))
+        if exists(join(config.workDir, package)):
+            copy(join(config.workDir, package), config.testPath)
 
     for package in newPackages:
         if package:
@@ -208,6 +223,10 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages):
     for package in unchangedPackages:
         if package:
             moveUnchangedPackage(package)
+
+    for package in deltasToInstall:
+        if package:
+            moveIncrementalDeltaPackage(package)
 
     for package in deltaPackages:
         if package:
@@ -222,7 +241,6 @@ def create_directories():
     directories = [config.workDir,
                    config.testPath,
                    config.binaryPath,
-                   config.deltaPath,
                    config.localPspecRepo,
                    config.outputDir]
 
