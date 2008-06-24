@@ -8,15 +8,14 @@
 /**Save print data to a file*/
 void enroll_save(struct fp_print_data* data, int uid){
     unsigned char* out = NULL;
-    fp_print_data_get_data(data, &out);
-    //FIXME: wtf, libfprint, wtf?!
+    size_t len = fp_print_data_get_data(data, &out); //not necessarily null terminated
 
     //generate filename
     char fname[255];
     strcat(fname, PYFDIR);
     sprintf(fname, "%s%d", fname, uid);
     printf("%s\n", fname);
-    printf("%s\n", out);
+    printf("%s\n", out); //FIXME
 
     //write
     FILE* handle;
