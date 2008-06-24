@@ -347,12 +347,13 @@ class Dev:
                     notify("Net.Link", "stateChanged", (self.name, "inaccessible",  _(dhcp_fail_msg)))
                     fail("DHCP failed")
         elif self.device_mode == "ad-hoc":
+            ifc=self.ifc
             ifc.up()
             ifc.setAddress(self.address, self.mask)
-            subprocess.Popen(["/sbin/iwconfig", ifc.name, "mode","ad-hoc"], stdout=PIPE).communicate()
-            subprocess.Popen(["/sbin/iwconfig", ifc.name, "key", self.password], stdout=PIPE).communicate()
-            subprocess.Popen(["/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=PIPE).communicate()
-            subprocess.Popen(["/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=PIPE).communicate()
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "mode","ad-hoc"], stdout=subprocess.PIPE).wait()
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "key", self.password], stdout=subprocess.PIPE).wait()
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=subprocess.PIPE).wait()
             """
             pass
               +  # /sbin/ifconfig wmaster0 up  
