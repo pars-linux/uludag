@@ -120,10 +120,6 @@ def buildPackages():
     logger.raw()
     logger.raw()
 
-    # Check packages containing binaries and libraries broken by any package update
-    print "\nChecking binary consistency with revdep-rebuild.."
-    os.system("/usr/bin/revdep-rebuild --force")
-
     # Save current path
     current = os.getcwd()
 
@@ -139,6 +135,10 @@ def buildPackages():
 
     # Go back to the saved directory
     os.chdir(current)
+
+    # Check packages containing binaries and libraries broken by any package update
+    print "\nChecking binary consistency with revdep-rebuild.."
+    os.system("/usr/bin/revdep-rebuild --force")
 
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
