@@ -161,8 +161,31 @@ img.menu_img {
     z-index: 1;
 }
 
-#sidebar ul {
+/* sidebar items */
+#opened_kurumsal { background: url('../resim/menu/opened/kurumsal.png') no-repeat; }
+#opened_cozum_ortaklari { background: url('../resim/menu/opened/cozumortaklari.png') no-repeat; }
+#opened_gelistirici { background: url('../resim/menu/opened/gelistirici.png') no-repeat; }
+#opened_bireysel { background: url('../resim/menu/opened/bireysel.png') no-repeat; }
+
+.sidebar_opened {
+    width: 227px;
+    margin-left: -27px;
+    padding-top: 25px;
+    padding-bottom: 14px;
+}
+
+.sidebar_closed {
+    width: 200px;
+    height: 33px;
+}
+
+.sidebar_opened ul {
     list-style-image: url('../resim/bullet.png');
+    margin-bottom: 0px;
+}
+.sidebar_opened a {
+    text-decoration: none;
+    color: white;
 }
 
 #sidebar_bottom {
