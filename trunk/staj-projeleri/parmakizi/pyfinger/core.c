@@ -20,9 +20,9 @@ char* msglist[]={
 
 // ----------------- HELPERS -------------------
 
-/**Generate an error message from given error code according
+/**Generate a message from given error code according
  * to the definitions in core.h */
-void pyferror(int id){
+void pyfmsg(int id){
     if (id <= MAXMSG){
         printf("Error: %s\n", msglist[id]);
     } else {
@@ -35,7 +35,7 @@ void pyferror(int id){
 
 /**Load libfprint*/
 void load(){
-    if (fp_init()) pyferror(ERR_LFP_LIBRARYFAIL);
+    if (fp_init()) pyfmsg(ERR_LFP_LIBRARYFAIL);
 }
 
 /**Unload libfprint*/
@@ -47,14 +47,14 @@ void unload(){
 void device_discover(){
     //get device list
     if (!(ddevice_list = fp_discover_devs())){
-        pyferror(ERR_LFP_DISCOVERYFAIL); //failure
+        pyfmsg(ERR_LFP_DISCOVERYFAIL); //failure
     }
 
     //TODO:check for multiple devices
 
     //select 1st  device
     if(!(ddevice_curr = ddevice_list[0])){
-        pyferror(ERR_LFP_NODEVICE);
+        pyfmsg(ERR_LFP_NODEVICE);
     }
 }
 
@@ -62,7 +62,7 @@ void device_discover(){
 void device_open(){
     //check if discovery has been done first?
     if(!(device = fp_dev_open(ddevice_curr))){
-        pyferror(ERR_LFP_DEVICEINITFAIL);
+        pyfmsg(ERR_LFP_DEVICEINITFAIL);
     }
 }
 
@@ -72,7 +72,6 @@ void device_close(){
 }
 
 int main (){
-    pyferror(4);
     return 0;
 }
 

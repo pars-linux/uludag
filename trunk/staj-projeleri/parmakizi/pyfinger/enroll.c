@@ -5,6 +5,7 @@ void enroll(){
     device_discover();
     device_open();
 
+    int done = 0;
     struct fp_print_data* fingersample = NULL;
     switch(fp_enroll_finger_img(device, &fingersample, NULL)){
         case FP_ENROLL_FAIL:
@@ -20,7 +21,7 @@ void enroll(){
         default:
             printf("Yeniden deneyin!\n");
             break;
-    ·   }
+    }
 
 
     device_close();
