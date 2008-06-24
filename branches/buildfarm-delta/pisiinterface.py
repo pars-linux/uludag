@@ -41,9 +41,6 @@ class PisiApi:
         # FIXME: Band-aid for a while...
         self.options.ignore_sandbox = True
 
-        # ISO package list for delta package creation
-        # self.isopackages = None
-
         # Set API options
         pisi.api.set_options(self.options)
 
