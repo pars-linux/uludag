@@ -40,7 +40,7 @@ struct fp_dev* device; ///Device that we're using
 // ------------ PROTOTYPES ------------
 
 //debug
-void pyfmsg(int id);
+void pyfmsg(int id, int fatalerror);
 
 //core
 void load();
