@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-21 21:15+0300\n"
+"POT-Creation-Date: 2008-06-24 20:51+0300\n"
 "PO-Revision-Date: 2008-06-21 17:45+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -88,7 +88,8 @@ msgstr ""
 "Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid "Automatically partition try to use free space or resize current partitions"
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
@@ -117,11 +118,13 @@ msgstr "Mit dieser Option können Sie manuell partitionieren"
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
+msgstr ""
+"Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid "This option will try to find suitable free space or resizable partitions"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -866,7 +869,8 @@ msgid "Set Administrator"
 msgstr "Administrator festlegen"
 
 #: yali4/gui/ScrAdmin.py:31
-msgid "Admins has important rights on the system..."
+#, fuzzy
+msgid "Admins have important rights on the system..."
 msgstr "Administratoren haben auf dem System wichtige Rechte..."
 
 #: yali4/gui/ScrAdmin.py:33
@@ -1008,7 +1012,9 @@ msgstr "Überprüfen Sie Ihre Medien"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "Um Medien-Fehler zu vermeiden, können Sie Ihre Medien-Integrität überprüfen..."
+msgstr ""
+"Um Medien-Fehler zu vermeiden, können Sie Ihre Medien-Integrität "
+"überprüfen..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1121,19 +1127,21 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:130 yali4/gui/ScrSummary.py:69
-#: yali4/installer.py:591
+#: yali4/installer.py:606
 msgid "Reboot"
 msgstr "Neustarten"
 
-#: yali4/gui/ScrInstall.py:56
+#: yali4/gui/ScrInstall.py:60
 msgid "Installing system..."
 msgstr "System wird installiert..."
 
-#: yali4/gui/ScrInstall.py:57
-msgid "Installing approximately 30 minutes depending on hardware..."
-msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+#: yali4/gui/ScrInstall.py:61
+#, fuzzy
+msgid "Installing takes approximately 30 minutes depending on your hardware..."
+msgstr ""
+"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
-#: yali4/gui/ScrInstall.py:59
+#: yali4/gui/ScrInstall.py:63
 msgid ""
 "\n"
 "<font size=\"+2\">Installation started</font>\n"
@@ -1178,29 +1186,30 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:108
-msgid "Packages are installing.."
+#: yali4/gui/ScrInstall.py:112
+#, fuzzy
+msgid "Packages are being installed.."
 msgstr "Pakete werden installiert.."
 
-#: yali4/gui/ScrInstall.py:123
+#: yali4/gui/ScrInstall.py:127
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Installation von: %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:128
+#: yali4/gui/ScrInstall.py:132
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Konfiguration des Pakets: %s"
 
-#: yali4/gui/ScrInstall.py:164
+#: yali4/gui/ScrInstall.py:168
 msgid "Creating baselayout for your system!"
 msgstr "Baselayout für Ihr System wird erstellt!"
 
-#: yali4/gui/ScrInstall.py:173
+#: yali4/gui/ScrInstall.py:177
 msgid "Configuring packages.."
 msgstr "Pakete werden konfiguriert..."
 
-#: yali4/gui/ScrInstall.py:196
+#: yali4/gui/ScrInstall.py:200
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1492,7 +1501,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr ""
+"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:181
 msgid "Bootloader Settings"
@@ -1687,7 +1697,8 @@ msgid "Backtrace:"
 msgstr "Ablaufverfolgung:"
 
 #: yali4/installer.py:126
-msgid "YALI Working..."
+#, fuzzy
+msgid "YALI Is Working..."
 msgstr "YALI ist am arbeiten..."
 
 #: yali4/installer.py:141
@@ -1737,8 +1748,8 @@ msgid "Creating new partition ..."
 msgstr "Neue Partition wird erstellt..."
 
 #: yali4/installer.py:438
-#, python-format
-msgid "User <b>%s</b>'s home directory is preparing.."
+#, fuzzy, python-format
+msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 
 #: yali4/localedata.py:20
@@ -1916,4 +1927,3 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
-
