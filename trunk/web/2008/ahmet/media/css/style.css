@@ -80,7 +80,7 @@ img.floatr, img[align="right"] {
 
 #container {
     width: 926px;
-    height: 525px;
+    height: 540px;
     margin-left: auto;
     margin-right: auto;
     background: url("../img/container_bg.png") repeat-y;
@@ -91,7 +91,7 @@ img.floatr, img[align="right"] {
     top: 10px;
     left: 14px;
     width: 714px;
-    height: 505px;
+    height: 520px;
     background: url('../img/content_bg.png') no-repeat;
 }
 
@@ -108,15 +108,30 @@ img.floatr, img[align="right"] {
     line-height: 14px;
     font-size: 11px;
     color: #fff;
-    padding-top: 23px;
+    padding-top: 16px;
     padding-left: 16px;
     width: 640px;
     overflow: none;
 }
 
-.content_pointer_container {}
+.content_detail_button {
+    margin-top: -8px;
+}
 
-.content_pointer {}
+.content_pointer_container {
+    width: 714px;
+}
+
+.content_pointer {
+    color: #fff;
+    padding-left: 20px;
+    width: 208px;
+}
+
+.content_pointer_text {
+    font-size: 11px;
+    padding-left: 5px;
+}
 
 #sidebar {
     float: right;
