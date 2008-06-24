@@ -141,6 +141,16 @@ img.floatr, img[align="right"] {
     margin-top: -4px;
 }
 
+#menu {
+    margin-left: -36px;
+    width: 200px;
+}
+
+img.menu_img {
+    border: 0;
+    margin-bottom: -3px;
+}
+
 #sidebar {
     float: right;
     width: 227px;
@@ -157,8 +167,9 @@ img.floatr, img[align="right"] {
 #sidebar_bottom {
     float: right;
     width: 190px;
-    position: relative;
-    top: 196px;
+    position: absolute;
+    left: 40px;
+    top: 328px;
 }
 
 #sidebar_bottom img, a {
