@@ -21,9 +21,9 @@ enum msgtype{
     ERR_LFP_NOIMAGING,          ///imaging not supported
     ERR_LFP_IMAGINGFAIL,        ///imaging attempt failed
     MSG_LFP_ENROLLCOMPLETE,     ///enrollment process complete
-    MSG_LFP_ENROLLFAIL,         ///enrollment process failed
+    ERR_LFP_ENROLLFAIL,         ///enrollment process failed
     MSG_LFP_ENROLLSTEPCOMPLETE, ///enrollment step complete
-    MSG_LFP_ENROLLSTEPFAIL      ///enrollment step must be repeated
+    ERR_LFP_ENROLLSTEPFAIL      ///enrollment step must be repeated
 };
 
 #define MAXMSG 9                ///Largest error code for error bounds check

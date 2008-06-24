@@ -9,17 +9,17 @@ void enroll(){
     struct fp_print_data* fingersample = NULL;
     switch(fp_enroll_finger_img(device, &fingersample, NULL)){
         case FP_ENROLL_FAIL:
-            
-            exit(1); //fail
+            pyfmsg(ERR_LFP_ENROLLFAIL, 1);
+            break;
         case FP_ENROLL_COMPLETE:
             done = 1;
-            printf("Parmakizi alimi basariyla tamamlandi.\n");
+            pyfmsg(MSG_LFP_ENROLLCOMPLETE, 0);
             break;
         case FP_ENROLL_PASS:
-            printf("Tanima asamasi basarili..\n");
+            pyfmsg(MSG_LFP_ENROLLSTEPCOMPLETE, 0);
             break;
-        default:
-            printf("Yeniden deneyin!\n");
+        default: //retry
+            pyfmsg(ERR_LFP_ENROLLSTEPFAIL, 0); //nonfatal error
             break;
     }
 
