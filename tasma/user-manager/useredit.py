@@ -849,6 +849,9 @@ class PolicyTab(QVBox):
             self.inOperation = True
             self.selectRightButtons(authList, actionItem, True)
 
+        def cancelError():
+            self.setPolicyButtonsEnabled(False)
+
         #try:
         #    auths = polkit.auth_list_uid(int(self.uid.text()))
         #    self.inOperation = True
@@ -856,6 +859,7 @@ class PolicyTab(QVBox):
         #except:
         #call COMAR see different users' auths
         self.ch.registerDone(listDone)
+        self.ch.registerCancel(cancelError)
         self.ch.call(int(self.uid.text()))
 
     def selectRightButtons(self, auths, actionItem, otherUser = False):
