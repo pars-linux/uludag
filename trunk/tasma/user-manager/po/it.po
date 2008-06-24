@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-06 19:45+0300\n"
+"POT-Creation-Date: 2008-06-24 14:36+0300\n"
 "PO-Revision-Date: 2007-07-11 20:33+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -21,23 +21,24 @@ msgstr ""
 msgid "Unable to connect to DBus."
 msgstr ""
 
-#: um_mainview.py:43
+#: um_mainview.py:43 um_mainview.py:62
 msgid "DBus Error"
 msgstr ""
 
 #: um_mainview.py:58
-msgid "D-Bus Error"
-msgstr ""
+#, fuzzy
+msgid "You are not authorized for this operation."
+msgstr "Non hai i permessi necessari ad eseguire questa operazione"
 
-#: um_mainview.py:62
+#: um_mainview.py:66
 msgid "COMAR Error"
 msgstr ""
 
-#: groupedit.py:22 useredit.py:25
+#: groupedit.py:22 useredit.py:38
 msgid "ID:"
 msgstr "ID:"
 
-#: groupedit.py:30 useredit.py:37
+#: groupedit.py:30 useredit.py:50
 msgid "Select manually"
 msgstr "Scegli manualmente"
 
@@ -85,7 +86,7 @@ msgstr "Nome del gruppo"
 msgid "Users"
 msgstr "Utenti"
 
-#: browser.py:120 useredit.py:636
+#: browser.py:120 useredit.py:682
 msgid "Groups"
 msgstr "Gruppi"
 
@@ -138,103 +139,135 @@ msgstr "Il modulo di gestione degli utenti è già in esecuzione!"
 msgid "User Manager"
 msgstr "Gestore degli utenti"
 
-#: useredit.py:72
+#: useredit.py:22
+msgid "User/group operations"
+msgstr ""
+
+#: useredit.py:23
+msgid "Network settings"
+msgstr ""
+
+#: useredit.py:24
+msgid "Package operations"
+msgstr ""
+
+#: useredit.py:25
+msgid "Service operations"
+msgstr ""
+
+#: useredit.py:26
+msgid "Date/time operations"
+msgstr ""
+
+#: useredit.py:27
+msgid "Kernel module operations"
+msgstr ""
+
+#: useredit.py:28
+msgid "Bootloader settings"
+msgstr ""
+
+#: useredit.py:29
+msgid "Screen settings"
+msgstr ""
+
+#: useredit.py:85
 msgid "User name:"
 msgstr "Nome utente:"
 
-#: useredit.py:103
+#: useredit.py:116
 msgid "Full name:"
 msgstr "Nome completo:"
 
-#: useredit.py:126
+#: useredit.py:139
 msgid "Home:"
 msgstr "Home:"
 
-#: useredit.py:158
+#: useredit.py:171
 msgid "Select user's home directory"
 msgstr "Scegli la cartella Home dell'utente"
 
-#: useredit.py:167
+#: useredit.py:180
 msgid "Password:"
 msgstr "Password:"
 
-#: useredit.py:173
+#: useredit.py:186
 msgid "Confirm password:"
 msgstr "Conferma password:"
 
-#: useredit.py:201
+#: useredit.py:214
 msgid "Shell:"
 msgstr "Shell:"
 
-#: useredit.py:223
+#: useredit.py:236
 msgid "Please specify an existing shell command"
 msgstr "Specifica per favore un comando shell esistente"
 
-#: useredit.py:225
+#: useredit.py:238
 msgid "Specified shell command is not executable"
 msgstr "Il comando shell specificato non è un eseguibile"
 
-#: useredit.py:249
+#: useredit.py:265
 msgid "Group"
 msgstr "Gruppo"
 
-#: useredit.py:256
+#: useredit.py:272
 msgid "Main group:"
 msgstr "Gruppo principale:"
 
-#: useredit.py:346
+#: useredit.py:365
 msgid "Start with typing this user's full name."
 msgstr "Inizia digitando il nome completo di questo utente."
 
-#: useredit.py:349
+#: useredit.py:368
 msgid "You should enter a password for this user."
 msgstr "Dovresti inserire una password per questo utente."
 
-#: useredit.py:354
+#: useredit.py:373
 msgid "Password must be longer."
 msgstr "La password deve essere più lunga."
 
-#: useredit.py:358
+#: useredit.py:377
 msgid "Don't use your full name or user name as a password."
 msgstr "Non utilizzare il tuo nome completo o il nome utente come password."
 
-#: useredit.py:361
+#: useredit.py:380
 msgid "Passwords don't match."
 msgstr "Le password non corrispondono."
 
-#: useredit.py:364
+#: useredit.py:383
 msgid "You must enter a user ID or use the auto selection."
 msgstr "Devi inserire un ID utente o utilizzare la selezione automatica."
 
-#: useredit.py:369
+#: useredit.py:388
 msgid "You must enter a user name."
 msgstr "Devi inserire un nome utente."
 
-#: useredit.py:372
+#: useredit.py:391
 msgid "This user name is used by another user."
 msgstr "Questo nome utente è già esistente."
 
-#: useredit.py:376
+#: useredit.py:395
 msgid "User name must not start with a number."
 msgstr "Il nome utente non deve iniziare con un numbero."
 
-#: useredit.py:379
+#: useredit.py:398
 msgid "You should select at least one group this user belongs to."
 msgstr "Dovresti selezionare almeno un gruppo a cui l'utente appartiene."
 
-#: useredit.py:412
+#: useredit.py:431
 msgid "Edit User's Information"
 msgstr "Modifica informazioni sull'utente"
 
-#: useredit.py:414
+#: useredit.py:433
 msgid "Enter Information For New User"
 msgstr "Inserisci le informazioni del nuovo utente"
 
-#: useredit.py:450
+#: useredit.py:469
 msgid "Give administrator privileges to this user"
 msgstr ""
 
-#: useredit.py:523
+#: useredit.py:543
 msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
@@ -242,39 +275,39 @@ msgstr ""
 "Ti stai togliendo dal gruppo di sistema 'wheel'; dopo questa operazione non "
 "potrai utilizzare i permessi di amministratore."
 
-#: useredit.py:524
+#: useredit.py:544
 msgid "Important Group Change"
 msgstr "Importante cambiamento di gruppo"
 
-#: useredit.py:531
+#: useredit.py:551
 msgid "Changing user information..."
 msgstr "Modifica informazioni utente in corso..."
 
-#: useredit.py:549
+#: useredit.py:578
 msgid "Adding user..."
 msgstr "Aggiunta utente in corso..."
 
-#: useredit.py:595
+#: useredit.py:641
 msgid "Getting user information..."
 msgstr "Recupero informazioni sull'utente in corso..."
 
-#: useredit.py:629
+#: useredit.py:675
 msgid "Authorizations"
 msgstr ""
 
-#: useredit.py:642
+#: useredit.py:693
 msgid "Actions"
 msgstr ""
 
-#: useredit.py:648
+#: useredit.py:706
 msgid "Authorize"
 msgstr ""
 
-#: useredit.py:652
+#: useredit.py:710
 msgid "Block"
 msgstr ""
 
-#: useredit.py:662
+#: useredit.py:721
 #, fuzzy
 msgid "Do not ask password"
 msgstr "Conferma password:"
@@ -296,9 +329,6 @@ msgstr "Conferma password:"
 
 #~ msgid "Operation failed, reason:<br>%s"
 #~ msgstr "Operazione fallita, causa:<br>%s"
-
-#~ msgid "You are not allowed to do that"
-#~ msgstr "Non hai i permessi necessari ad eseguire questa operazione"
 
 #~ msgid "Comar script error :("
 #~ msgstr "Errore di script di COMAR :("
