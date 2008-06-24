@@ -3,13 +3,17 @@
 // ---------------- GLOBALS --------------------
 
 
-char* errormsg[]={
+char* msglist[]={
     "Library could not be loaded.",
     "Device discovery failed.",
     "No reader could be found.",
     "Device discovery failed.",
     "The device does not support imaging.",
-    "The device failed to get an image."
+    "The device failed to get an image.",
+    "Enrollment was completed successfully.",
+    "Enrollment failed!",
+    "Enrollment step complete.",
+    "Please swipe your finger again."
 };
 
 
