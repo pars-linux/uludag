@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Willem Gielen <w.gielen@gmail.com>, 2008.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-24 02:53+0300\n"
-"PO-Revision-Date: 2008-05-29 16:49+0200\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <nl@li.org>\n"
+"PO-Revision-Date: 2008-06-24 11:40+0200\n"
+"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,29 +19,27 @@ msgstr ""
 
 #: src/Progress.py:68 src/history_gui.py:378
 msgid "Progress"
-msgstr ""
+msgstr "Voortgang"
 
 #: src/Progress.py:71
 msgid "<h4><b>Preparing PISI</b></h4>"
-msgstr ""
+msgstr "<h4><b>Voorbereiden PISI</b></h4>"
 
 #: src/Progress.py:72
-#, fuzzy
 msgid "Taking a snapshot of system"
-msgstr "Neem een snapshot van het systeem "
+msgstr "Neem een snapshot van het systeem"
 
 #: src/history-manager.py:51
-#, fuzzy
 msgid "History Manager is already running!"
-msgstr "Geschiedenis beheer is al actief"
+msgstr "Geschiedenisbeheer is al actief!"
 
 #: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:60
 msgid "History Manager"
-msgstr "Geschiedenis beheer"
+msgstr "Geschiedenisbeheer"
 
 #: src/progress.py:74
 msgid "progressForm"
-msgstr ""
+msgstr "progressForm"
 
 #: src/Commander.py:18
 msgid "Cannot connect to Comar daemon"
@@ -48,47 +47,43 @@ msgstr "Kan geen verbinding maken met Comar deamon"
 
 #: src/utility.py:32
 msgid "History Manager Interface"
-msgstr "Geschiedenis beheer interface"
+msgstr "Geschiedenisbeheer interface"
 
 #: src/historygui.py:131
 msgid "formMain"
 msgstr "formMain"
 
 #: src/history_gui.py:62
-#, fuzzy
 msgid "All Operations"
-msgstr "Handeling gestart"
+msgstr "Alle handelingen"
 
 #: src/history_gui.py:63
-#, fuzzy
 msgid "Snapshots"
-msgstr "Nieuwe snapshot"
+msgstr "Snapshots"
 
 #: src/history_gui.py:64
 msgid "Upgrades"
-msgstr ""
+msgstr "Opwaarderingen"
 
 #: src/history_gui.py:65
 msgid "Removes"
-msgstr ""
+msgstr "Verwijderd"
 
 #: src/history_gui.py:66
-#, fuzzy
 msgid "Installations"
-msgstr "Installeren  :%1"
+msgstr "Installaties"
 
 #: src/history_gui.py:67
 msgid "TakeBacks"
-msgstr ""
+msgstr "GaTerug"
 
 #: src/history_gui.py:69
 msgid "Take Back Plan"
-msgstr ""
+msgstr "Terug gaan plan"
 
 #: src/history_gui.py:70
-#, fuzzy
 msgid "Operation Details"
-msgstr "Handeling gestart"
+msgstr "Handeling details"
 
 #: src/history_gui.py:73
 msgid "New Snapshot"
@@ -104,6 +99,8 @@ msgid ""
 "<br>These are the package installation and removals, also configuration "
 "files below (in snapshots) will overwrite your current configuration files."
 msgstr ""
+"Uw systeem zal hersteld worden naar die datum als u op de Ga Terug knop klikt. "
+"<br>Dit zijn pakket installaties en verwijderingen, ook configuratie bestanden hieronder (in snapshots) zullen uw huidige configuratiebestanden overschrijven."
 
 #: src/history_gui.py:87
 msgid "Restore to This Point"
@@ -114,17 +111,16 @@ msgid "This will take a New Snapshot of your system"
 msgstr "Dit zal een nieuwe snapshot van uw systeem maken"
 
 #: src/history_gui.py:150
-#, fuzzy
 msgid ""
 "This will restore your system back to : %1 %2\n"
 "If you're unsure, click Cancel and see TakeBack Plan"
 msgstr ""
 "Dit zal uw systeem terugplaatsen naar: %1 %2\n"
-"Bent u zeker ?"
+"Als u niet zeker bent, klik dan annuleer en ziek Gaterug plan"
 
 #: src/history_gui.py:176
 msgid "Take Back operation completed"
-msgstr "Terug plaatsen gelukt"
+msgstr "Terug gaan handelingen afgerond"
 
 #: src/history_gui.py:178
 msgid "New Snapshot Taken"
@@ -135,18 +131,16 @@ msgid "Operation Cancelled"
 msgstr "Handeling geannuleerd"
 
 #: src/history_gui.py:185
-#, fuzzy
 msgid "Updating User Interface"
-msgstr "Bijwerken gebuikers interface, ogenblik geduld"
+msgstr "Bijwerken gebuikers interface"
 
 #: src/history_gui.py:187
 msgid "Finished with Errors"
 msgstr "Beëindigd met fouten"
 
 #: src/history_gui.py:188
-#, fuzzy
 msgid "Operation Finished with Errors"
-msgstr "Beëindigd met fouten"
+msgstr "Handeling beëindigd met fouten"
 
 #: src/history_gui.py:192
 msgid "Finished Succesfully"
@@ -154,7 +148,7 @@ msgstr "Succesvol beëindigd"
 
 #: src/history_gui.py:203
 msgid "Fetching %1"
-msgstr ""
+msgstr "Verkrijgen %1"
 
 #: src/history_gui.py:247
 msgid "<b>Access Granted</b><br>"
@@ -202,11 +196,11 @@ msgstr "Selecteer waarde voor details"
 
 #: src/history_gui.py:298
 msgid "No: <b>%1</b>"
-msgstr ""
+msgstr "Geen: <b>%1</b>"
 
 #: src/history_gui.py:299
 msgid "Type: <b>%1</b>"
-msgstr ""
+msgstr "Type: <b>%1</b>"
 
 #: src/history_gui.py:310
 msgid "There are <b>%1</b> packages in this snapshot"
@@ -214,24 +208,23 @@ msgstr "Er zijn <b>%1</b> pakketten in deze snapshot"
 
 #: src/history_gui.py:326
 msgid "Configuration files in snapshot:"
-msgstr ""
+msgstr "Configuratie bestanden in snapshot:"
 
 #: src/history_gui.py:333
-#, fuzzy
 msgid "Take Back Plan for %1 operation on %2"
-msgstr "Terug plaatsen gelukt"
+msgstr "Ga terug naar plan voor %1 handeling op %2"
 
 #: src/history_gui.py:336
 msgid "These package(s) will be <b>installed</b> :"
-msgstr ""
+msgstr "Deze pakket(ten) zullen <b>geïnstalleerd</b> worden:"
 
 #: src/history_gui.py:341
 msgid "These package(s) will be <b>removed</b> :"
-msgstr ""
+msgstr "Deze pakket(ten) zullen <b>verwijderd</b> worden:"
 
 #: src/history_gui.py:406
 msgid "<b>Preparing PiSi...</b>"
-msgstr ""
+msgstr "<b>Voorbereiden PiSi...</b>"
 
 #: src/ComarIface.py:31
 msgid "Cannot connect to dbus"
@@ -253,23 +246,3 @@ msgstr "COMAR fout"
 msgid "You are not authorized for this operation."
 msgstr "U bent niet geautoriseerd voor deze handeling."
 
-#~ msgid "List only snapshots"
-#~ msgstr "Toon alleen snapshots"
-
-#~ msgid "History"
-#~ msgstr "Geschiedenis"
-
-#~ msgid "Details"
-#~ msgstr "Details"
-
-#~ msgid "Id"
-#~ msgstr "Id"
-
-#~ msgid "Type"
-#~ msgstr "Type"
-
-#~ msgid "Show Details"
-#~ msgstr "Toon details"
-
-#~ msgid "<b>Operation Date : </b>%1 %2<br><b>Operation Type : </b>%3<br>"
-#~ msgstr "<b>Operatie datum :</b>%1 %2<br><b>Operatie type :</b>%3<br>"
