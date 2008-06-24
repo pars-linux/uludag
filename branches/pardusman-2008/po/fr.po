@@ -1,0 +1,283 @@
+# translation of fr.po to French
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amine Chadly <amine.chadly@gmail.com>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-27 13:36+0200\n"
+"PO-Revision-Date: 2008-01-16 22:35+0100\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/project.py:112
+#, python-format
+msgid "Project file '%s' does not exists!"
+msgstr "Le fichier projet '%s' n'existe pas !"
+
+#: src/project.py:115
+msgid "Not a Pardusman project file, invalid xml!"
+msgstr "Le fichier n'est pas un fichier projet Pardusman, xml invalide !"
+
+#: src/project.py:117
+msgid "Not a Pardusman project file"
+msgstr "N'est pas un fichier projet Pardusman"
+
+#: src/gui.py:81
+msgid "&Open"
+msgstr "&Ouvrir"
+
+#: src/gui.py:83
+msgid "Save &as..."
+msgstr "S&auver sous..."
+
+#: src/gui.py:98
+msgid ""
+"Pardusman says:\n"
+"\n"
+"  Teh winnars dont use teh drugs!  \n"
+" "
+msgstr ""
+"Pardusman dit :\n"
+"\n"
+"  LeS vaiNquEurs n'uTilIsEnT pAs de drOgUeS!  \n"
+" "
+
+#: src/gui.py:104
+msgid "Title:"
+msgstr "Titre :"
+
+#: src/gui.py:109
+msgid "Title of distribution media, used in grub menu."
+msgstr "Titre du média de distribution, utilisé dans le menu grub."
+
+#: src/gui.py:113
+msgid "Work folder:"
+msgstr "Répertoire de travail :"
+
+#: src/gui.py:120
+msgid ""
+"This folder holds local repository cache\n"
+"and temporary files generated during the\n"
+"ISO making process."
+msgstr ""
+"Ce répertoire conserve un cache local du dépôt\n"
+"et les fichiers temporaires générés durant le processus\n"
+"de génération de l'ISO."
+
+#: src/gui.py:126
+msgid "Repository:"
+msgstr "Dépôt :"
+
+#: src/gui.py:131
+msgid ""
+"PiSi package repository of the distribution.\n"
+"Must be a URL pointing to the repository index\n"
+"file (i.e. pisi-index.xml.bz2)."
+msgstr ""
+"Dépôt de paquet PiSi de la distribution.\n"
+"Doit être une URL pointant vers le fichier d'index\n"
+"du dépôt (i.e pisi-index.xml.bz2)."
+
+#: src/gui.py:135
+msgid "Release files:"
+msgstr "Fichiers de version :"
+
+#: src/gui.py:142
+msgid ""
+"Content of this folder is copied\n"
+"onto the root folder of CD."
+msgstr ""
+"Le contenu de ce répertoire est copié\n"
+"dans la racine du CD."
+
+#: src/gui.py:148
+msgid "Extra Parameters:"
+msgstr "Paramètres supplémentaires : "
+
+#: src/gui.py:153
+msgid "This parameters will add to the install media's GRUB"
+msgstr "Ces paramètres vont être ajoutés au GRUB du média d'installation"
+
+#: src/gui.py:157
+msgid "Type:"
+msgstr "Type :"
+
+#: src/gui.py:160
+msgid "Installation"
+msgstr "Installation :"
+
+#: src/gui.py:161
+msgid "Live system"
+msgstr "Système 'live'"
+
+#: src/gui.py:164
+msgid "Media:"
+msgstr "Média :"
+
+#: src/gui.py:170
+msgid "CD (700 MB)"
+msgstr "CD (700 Mo)"
+
+#: src/gui.py:171
+msgid "DVD (4.2 GB)"
+msgstr "DVD (4.2 Go)"
+
+#: src/gui.py:172
+msgid "FlashDisk (1 GB)"
+msgstr "FlashDisk (1 Go)"
+
+#: src/gui.py:173
+msgid "Custom size"
+msgstr "Taille personnalisée"
+
+#: src/gui.py:181
+msgid "Update Repo"
+msgstr "Mettre à jour le dépôt"
+
+#: src/gui.py:184
+msgid "Select packages"
+msgstr "Sélectionner les paquets"
+
+#: src/gui.py:187
+msgid "Make ISO"
+msgstr "Faire l'ISO"
+
+#: src/gui.py:220
+msgid "Select release files folder"
+msgstr "Sélectionner le répertoire des fichiers de version "
+
+#: src/gui.py:231
+msgid "Select folder for temporary files and cache"
+msgstr "Sélectionner le répertoire pour les fichiers temporaire et le cache"
+
+#: src/gui.py:250
+msgid "Release files directory does not exist."
+msgstr "Le répertoire des fichiers de version n'existe pas."
+
+#: src/gui.py:293
+msgid "Project title not given."
+msgstr "Le titre du projet n'a pas été précisé."
+
+#: src/gui.py:310
+msgid "Project directory not given."
+msgstr "Le répertoire du projet n'a pas été précisé."
+
+#: src/gui.py:317
+msgid "Repository address not given."
+msgstr "L'adresse du dépôt n'a pas été donné."
+
+#: src/gui.py:360
+#, python-format
+msgid "%s - Pardusman"
+msgstr "%s - Pardusman"
+
+#: src/gui.py:362
+msgid "New project - Pardusman"
+msgstr "Nouveau projet - Pardusman"
+
+#: src/gui.py:366
+msgid "Select a project..."
+msgstr "Sélectionner un projet..."
+
+#: src/gui.py:377
+#, python-format
+msgid "Project '%s' opened."
+msgstr "Projet '%s' ouvert."
+
+#: src/gui.py:384
+msgid "Saved."
+msgstr "Sauvé."
+
+#: src/gui.py:389
+msgid "Save project as..."
+msgstr "Sauver le projet sous..."
+
+#: src/gui.py:398
+#, python-format
+msgid "Project saved as '%s'."
+msgstr "Projet sauvé en tant que '%s'."
+
+#: src/gui.py:402
+msgid "Pardus distribution media maker"
+msgstr "Créateur de médias de distribution Pardus"
+
+#: src/browser.py:34
+msgid "Version:"
+msgstr "Version :"
+
+#: src/browser.py:36
+#, python-format
+msgid "%s, release %s, build %s"
+msgstr "%s, version %s, révision %s"
+
+#: src/browser.py:39
+msgid "Component:"
+msgstr "Composant :"
+
+#: src/browser.py:44
+msgid "Homepage:"
+msgstr "Page d'accueil :"
+
+#: src/browser.py:52
+msgid "Summary:"
+msgstr "Résumé :"
+
+#: src/browser.py:59
+msgid "Description:"
+msgstr "Description :"
+
+#: src/browser.py:71
+msgid "Depends on:"
+msgstr "Dépend de :"
+
+#: src/browser.py:76
+msgid "Depended by:"
+msgstr "Dépendance de :"
+
+#: src/browser.py:204
+#, python-format
+msgid "Total of %d packages, %s bytes compressed, %s bytes installed."
+msgstr "Total de %d paquets, %s octets compressés, %s octets installés."
+
+#: src/browser.py:213
+msgid "Component"
+msgstr "Composant"
+
+#: src/browser.py:224
+msgid "Search:"
+msgstr "Recherche :"
+
+#: src/browser.py:228
+msgid "Package"
+msgstr "Paquet"
+
+#: src/browser.py:229
+msgid "Archive Size"
+msgstr "Taille de l'archive"
+
+#: src/browser.py:230
+msgid "Installed Size"
+msgstr "Taille installée"
+
+#: src/browser.py:299
+msgid "No packages selected."
+msgstr "Aucun paquet sélectionné."
+
+#: src/browser.py:304
+#, python-format
+msgid "%d packages selected, %s bytes archive size, %s bytes installed size."
+msgstr ""
+"%d paquets sélectionnés, archive de %s octets, pour une installation de %s "
+"octets."
+
+#: src/browser.py:330
+msgid "Use selected packages"
+msgstr "Utiliser les paquets sélectionnés"
+
