@@ -59,7 +59,7 @@ class UserManager(QWidgetStack):
         KMessageBox.sorry(None, message, i18n("Error"))
 
     def busError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
+        KMessageBox.error(self, str(exception), i18n("DBus Error"))
         self.setupBusses()
 
     def comarError(self, exception):

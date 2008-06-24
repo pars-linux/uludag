@@ -750,7 +750,7 @@ class PolicyTab(QVBox):
         allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         for category in categories.keys():
-            catitem = KListViewItem(self.policyview, categories[category][0])
+            catitem = KListViewItem(self.policyview, i18n(categories[category][0]))
             catitem.setPixmap(0, getIcon(categories[category][1]))
             catactions = filter(lambda x: x.startswith(category), allActions)
             for cataction in catactions:
