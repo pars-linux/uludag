@@ -20,7 +20,7 @@ void enroll_save(struct fp_print_data* data, int uid){
     if(!(handle = fopen(fname, "w"))){
         pyfmsg(ERR_WRITEFAIL, 1);
     }
-    fputs(out, handle);
+    fprintf(handle, "%c", *out);
     fclose(handle);
 }
 
