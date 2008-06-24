@@ -130,7 +130,7 @@ class Connection(QWidget):
         conn = self.conn
         m = i18n("Should I delete the\n'%s'\nconnection?")
         if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % conn.name, i18n("Delete connection?")):
-            ch = comlink.callHandler(self.conn.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.deleteconnection")
+            ch = comlink.callHandler(self.conn.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.set")
             ch.call(conn.name)
     
     def slotEdit(self):
