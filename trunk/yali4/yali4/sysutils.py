@@ -115,7 +115,7 @@ def add_hostname(hostname = 'pardus'):
         hosts_fp.write('127.0.0.1\t\tlocalhost %s\n' % hostname)
 
 def mount(source, target, fs, needs_mtab=False):
-    params = ["-t", filesystem, source, target]
+    params = ["-t", fs, source, target]
     if not needs_mtab:
         params.insert(0,"-n")
 
@@ -146,18 +146,25 @@ def is_windows_boot(partition_path, file_system):
         return False
 
 def is_linux_boot(partition_path, file_system):
+    import yali4.gui.context as ctx
     m_dir = "/tmp/pcheck"
+
     if not os.path.isdir(m_dir):
         os.makedirs(m_dir)
+
+    ctx.debugger.log("Mounting %s to /tmp/pcheck" % partition_path)
+
     try:
         mount(partition_path, m_dir, file_system)
     except:
+        ctx.debugger.log("Mount failed for %s " % partition_path)
         return False
 
-    exist = lambda f: os.path.exists(os.path.join(m_dir,"/boot/grub/", f))
+    exist = lambda f: os.path.exists(os.path.join(m_dir,"boot/grub/", f))
 
-    if exist("grub.conf") or exists("menu.lst"):
-        grub_conf = file(os.path.join(m_dir,f)).readlines()
+    if exist("grub.conf") or exist("menu.lst"):
+        ctx.debugger.log("GRUb Conf found on device %s" % partition_path)
+        grub_conf = file(os.path.join(m_dir,"boot/grub/grub.conf")).readlines()
         umount(m_dir)
         return grub_conf
     else:
