@@ -58,6 +58,7 @@ def buildPackages():
     for pspec in queue:
         packagename = os.path.basename(os.path.dirname(pspec))
         build_output = open(os.path.join(config.outputDir, "%s.log" % packagename), "w")
+        logger.raw()
         logger.info(
             _("Compiling source %s (%d of %d)") % 
                 (
@@ -66,7 +67,6 @@ def buildPackages():
                     len(queue)
                 )
             )
-        logger.raw()
 
         # This is here because farm captures the build output
         pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = config.workDir)
@@ -117,7 +117,6 @@ def buildPackages():
     else:
         mailer.info(_("Queue finished without a problem!...\n\n\nNew binary packages are;\n\n%s\n\nnow in repository...") % "\n".join(packageList))
     logger.raw()
-
     logger.raw()
     logger.info(_("Generating PiSi Index..."))
 
@@ -137,7 +136,6 @@ def buildPackages():
     os.system("for i in `ls`; do echo ${i/-[0-9]*/}; done | uniq -d")
 
     os.chdir(current)
-
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
