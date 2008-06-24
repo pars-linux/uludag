@@ -6,7 +6,7 @@ void verify(){
     device_discover();
     device_open();
 
-    //stuff goes here
+    //stuff goes here 
 
     device_close();
     unload();

@@ -9,6 +9,7 @@
 void enroll_save(struct fp_print_data* data, int uid){
     unsigned char* out = NULL;
     fp_print_data_get_data(data, &out);
+    //FIXME: wtf, libfprint, wtf?!
 
     //generate filename
     char fname[255];
