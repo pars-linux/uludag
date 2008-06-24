@@ -119,7 +119,7 @@ def buildPackages():
         mailer.info(_("Queue finished without a problem!...\n\n\nNew binary packages are;\n\n%s\n\nnow in repository...") % "\n".join(packageList))
     logger.raw()
     logger.raw()
-    """
+
     logger.info(_("Generating PiSi Index..."))
 
     current = os.getcwd()
@@ -138,7 +138,7 @@ def buildPackages():
     os.system("for i in `ls`; do echo ${i/-[0-9]*/}; done | uniq -d")
 
     os.chdir(current)
-    """
+
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
