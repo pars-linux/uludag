@@ -19,8 +19,8 @@ char* errormsg[]={
 /**Generate an error message from given error code according
  * to the definitions in core.h */
 void pyferror(int id){
-    if (id <= MAXERROR){
-        printf("Error: %s\n", errormsg[id]);
+    if (id <= MAXMSG){
+        printf("Error: %s\n", msglist[id]);
     } else {
         printf("Unknown error!\n");
     }
