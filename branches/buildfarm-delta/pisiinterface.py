@@ -109,10 +109,6 @@ class PisiApi:
                 logger.info("Building delta between %s[older build] and %s." % (previous, pl[1]))
                 delta_packages.append(create_delta_package(os.path.join(config.binaryPath, previous), p))
 
-        # debug
-        print "deltas_to_install: %s" % str(deltas_to_install)
-        print "delta_packages: %s" % str(delta_packages)
-
         return (deltas_to_install, delta_packages)
 
     def build(self, pspec):

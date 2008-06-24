@@ -121,7 +121,7 @@ def buildPackages():
     logger.raw()
 
     # Check packages containing binaries and libraries broken by any package update
-    print "Checking binary consistency with revdep-rebuild..\n"
+    print "\nChecking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
 
     # Save current path
