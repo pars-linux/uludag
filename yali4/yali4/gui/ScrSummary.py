@@ -198,6 +198,7 @@ Here you can see your install options and look at them again before installation
 
     def execute(self):
 
+        self.timer.stop()
         ctx.mainScreen.processEvents()
 
         # We should do partitioning operations in here.

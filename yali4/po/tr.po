@@ -1033,7 +1033,7 @@ msgstr "Hoşçakalın"
 
 #: yali4/gui/ScrGoodbye.py:46
 msgid "Enjoy your fresh Pardus !..."
-msgstr "Taze Pardus'unuz zevkini çıkarın !..."
+msgstr "Taze Pardus'unuz zevkini çıkartın !..."
 
 #: yali4/gui/ScrGoodbye.py:47
 msgid ""
@@ -1668,16 +1668,16 @@ msgstr "Disk analizi başladı.."
 
 #: yali4/installer.py:313
 msgid "Resize Finished ..."
-msgstr "Yeniden boyutlandırma bitti.."
+msgstr "Yeniden boyutlandırma bitti ..."
 
 #: yali4/installer.py:325
 msgid "Creating new partition ..."
-msgstr "Yeni disk bölümü yaratılıyor.."
+msgstr "Yeni disk bölümü yaratılıyor ..."
 
 #: yali4/installer.py:438
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
-msgstr ""
+msgstr "<b>%s</b> kullanıcısının ev dizini ayarlanıyor.."
 
 #: yali4/localedata.py:20
 msgid "Turkish"

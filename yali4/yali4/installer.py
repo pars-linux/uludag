@@ -424,7 +424,7 @@ class Yali:
             obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
             for u in yali4.users.pending_users:
                 ctx.debugger.log("User %s adding to system" % u.username)
-                uid = obj.addUser(-1, u.username, u.realname, "", "", unicode(u.passwd), u.groups, dbus_interface="tr.org.pardus.comar.User.Manager")
+                uid = obj.addUser(-1, u.username, u.realname, "", "", unicode(u.passwd), u.groups, [], [], dbus_interface="tr.org.pardus.comar.User.Manager")
                 ctx.debugger.log("New user's id is %s" % uid)
 
                 # Use random user icon from YALI Archive
@@ -565,7 +565,7 @@ class Yali:
                         ctx.debugger.log("GRUB Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
                         linux_dev = os.path.basename(p.getDevicePath())
                         linux_root = os.path.basename(p.getPath())
-                        loader.grub_conf_append_guest_grub(guest_grub_conf)
+                        loader.grub_conf_append_guest_grub(guest_grub_conf,p.getName())
                         continue
 
         try:
