@@ -19,26 +19,26 @@ struct fp_img* image_get(){
 }
 
 /**Helper: Write an image to a file*/
-int writefile(struct fp_img* image, char* filename){
+int image_writefile(struct fp_img* image, char* filename){
     return fp_img_save_to_file(image, filename); // 0 on sucess
 }
 
 // --------------------------------------
 
 /**Capture an image, standardize it, and write it to a file*/
-void image_write(char* filename){
+void image_save(char* filename){
     struct fp_img* img = image_get();
     fp_img_standardize(img);
-    writefile(img, filename);
+    image_writefile(img, filename);
     fp_img_free(img); //free it
 }
 
 /**Capture an image, standardize and binarize it, and write it to a file*/
-void image_write_binarized(char* filename){
+void image_save_binarized(char* filename){
     struct fp_img* img = image_get();
     fp_img_standardize(img);
     struct fp_img* img_binarized = fp_img_binarize(img);
-    writefile(img_binarized, filename);
+    image_writefile(img_binarized, filename);
     fp_img_free(img); //free it
     fp_img_free(img_binarized);
 }

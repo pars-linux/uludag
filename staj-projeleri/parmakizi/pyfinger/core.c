@@ -13,9 +13,9 @@ char* msglist[]={
     "Enrollment was completed successfully.",
     "Enrollment failed!",
     "Enrollment step complete.",
-    "Please swipe your finger again."
+    "Please swipe your finger again.",
+    "Write to file failed, please check your permissions."
 };
-
 
 
 // ----------------- HELPERS -------------------
@@ -29,6 +29,7 @@ void pyfmsg(int id, int fatalerror){
         printf("Unknown error!\n");
     }
     if (fatalerror){ //die if fatal
+        //TODO: cleanup?
         exit(1);
     }
 }
