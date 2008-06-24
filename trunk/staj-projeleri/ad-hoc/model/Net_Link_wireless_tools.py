@@ -334,6 +334,7 @@ class Dev:
                 DB.setDB(self.name, d)
                 notify("Net.Link", "stateChanged", (self.name, "up", self.address))
             else:
+                ifc=self.ifc
                 ifc.up()
                 ret = ifc.startAuto()
                 if ret == 0 and ifc.isUp():
@@ -349,11 +350,11 @@ class Dev:
         elif self.device_mode == "ad-hoc":
             ifc=self.ifc
             ifc.up()
-            ifc.setAddress(self.address, self.mask)
-            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "mode","ad-hoc"], stdout=subprocess.PIPE).wait()
+            subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, "netmask", self.mask], stdout=subprocess.PIPE).wait()
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "mode", "ad-hoc"], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "key", self.password], stdout=subprocess.PIPE).wait()
-            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=subprocess.PIPE).wait()
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
             """
             pass
               +  # /sbin/ifconfig wmaster0 up  
