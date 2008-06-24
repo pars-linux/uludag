@@ -6,13 +6,13 @@
 struct fp_img* image_get(){
     //imaging supported?
     if(!fp_dev_supports_imaging(device)){
-        pyferror(ERR_LFP_NOIMAGING);
+        pyfmsg(ERR_LFP_NOIMAGING);
     }
 
     //capture image
     struct fp_img* image = NULL;
     if (fp_dev_img_capture(device, 0, &image)){
-        pyferror(ERR_LFP_IMAGINGFAIL);
+        pyfmsg(ERR_LFP_IMAGINGFAIL);
     }
 
     return image;

@@ -1,5 +1,5 @@
-#ifndef _CORE_H_
-#define _CORE_H_
+#ifndef CORE_H_
+#define CORE_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,8 +26,8 @@ enum msgtype{
     MSG_LFP_ENROLLSTEPFAIL      ///enrollment step must be repeated
 };
 
-#define MAXMSG 5                    ///Largest error code for error bounds check
-extern char* msglist[MAXMSG+1];   ///Error messages
+#define MAXMSG 9                ///Largest error code for error bounds check
+extern char* msglist[MAXMSG+1]; ///Error messages
 
 
 // ------------- GLOBALS --------------
@@ -40,7 +40,7 @@ struct fp_dev* device; ///Device that we're using
 // ------------ PROTOTYPES ------------
 
 //debug
-void pyferror(int id);
+void pyfmsg(int id);
 
 //core
 void load();
