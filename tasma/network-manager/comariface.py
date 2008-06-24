@@ -85,56 +85,32 @@ class Connection(Hook):
     def __init__(self, script, data):
         Hook.__init__(self)
         self.script = script
-        self.name = None
-        self.devid = None
-        self.devname = None
-        self.remote = None
-        self.state = "unavailable"
-        self.message = None
-        self.net_mode = "auto"
-        self.apmac = None
-        self.net_addr = None
-        self.net_mask = None
-        self.net_gate = None
         self.auth_mode = "none"
         self.auth_user = None
         self.auth_pass = None
-        self.dns_mode = "default"
-        self.dns_server = None
         self.parse(data)
         self.hash = self.hash(self.script, self.name)
         self.got_auth = True
         self.first_time = True
     
     def parse(self, data):
-        for key, value in data.iteritems():
-            if key == "name":
-                self.name = value
-            elif key == "device_id":
-                self.devid = value
-            elif key == "device_name":
-                self.devname = value
-            elif key == "remote":
-                self.remote = value
-            elif key == "net_mode":
-                self.net_mode = value
-            elif key == "net_address":
-                self.net_addr = value
-            elif key == "net_mask":
-                self.net_mask = value
-            elif key == "net_gateway":
-                self.net_gate = value
-            elif key == "namemode":
-                self.dns_mode = value
-            elif key == "nameserver":
-                self.dns_server = value
-            elif key == "apmac":
-                self.apmac = value
-            elif key == "state":
-                if " " in value:
-                    self.state, self.message = value.split(" ", 1)
-                else:
-                    self.state = value
+        self.name = data.get("name")
+        self.devid = data.get("device_id")
+        self.devname = data.get("device_name")
+        self.remote = data.get("remote")
+        self.net_mode = data.get("net_mode", "auto")
+        self.net_addr = data.get("net_address")
+        self.net_mask = data.get("net_mask")
+        self.net_gate = data.get("net_gateway")
+        self.dns_mode = data.get("namemode", "default")
+        self.dns_server = data.get("nameserver")
+        self.apmac = data.get("apmac")
+        state = data.get("state", "unavailable")
+        if " " in state:
+            self.state, self.message = state.split(" ", 1)
+        else:
+            self.state = state
+            self.message = None
 
 
 class AuthMode:

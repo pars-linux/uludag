@@ -380,6 +380,14 @@ class Settings(QWidget):
             if "net" in self.link.modes:
                 if conn.net_mode == "auto":
                     self.r1.setChecked(True)
+                    if conn.net_addr:
+                        self.auto_addr.setChecked(True)
+                        self.address.setText(conn.net_addr)
+                        if conn.net_mask:
+                            self.netmask.setCurrentText(conn.net_mask)
+                    if conn.net_gate:
+                        self.auto_gate.setChecked(True)
+                        self.gateway.setText(conn.net_gate)
                 else:
                     self.r2.setChecked(True)
                     if conn.net_addr:
@@ -436,9 +444,11 @@ class Settings(QWidget):
                 gateway = str(self.gateway.text())
                 if self.r1.isChecked():
                     mode = "auto"
-                    address = ""
-                    netmask = ""
-                    gateway = ""
+                    if not self.auto_addr.isChecked():
+                        address = ""
+                        netmask = ""
+                    if not self.auto_gate.isChecked():
+                        gateway = ""
                 else:
                     mode = "manual"
                 comlink.call(self.link.script, "Net.Link", "setAddress", name, mode, address, netmask, gateway)
