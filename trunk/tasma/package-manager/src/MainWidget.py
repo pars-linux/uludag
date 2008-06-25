@@ -621,7 +621,7 @@ class MainApplicationWidget(QWidget):
 
         elif operation in ["removing"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=args[0])
-            self.progressDialog.updatePackageInfo()
+            self.progressDialog.updateStatusInfo()
 
         elif operation in ["cached"]:
             # progressDialog.totalSize is the to be downloaded size by package-manager.
@@ -632,7 +632,7 @@ class MainApplicationWidget(QWidget):
 
         elif operation in ["installing"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=args[0])
-            self.progressDialog.updatePackageInfo()
+            self.progressDialog.updateStatusInfo()
 
         elif operation in ["extracting", "configuring"]:
             self.progressDialog.updateOperationDescription(i18n(str(operation)), package=args[0])
@@ -643,7 +643,7 @@ class MainApplicationWidget(QWidget):
                 return
 
             self.progressDialog.packageNo += 1
-            self.progressDialog.updatePackageInfo()
+            self.progressDialog.updateStatusInfo()
 
             # installed does not affect progress because the real progress is the "download" in install state
             if operation != "installed":

@@ -63,7 +63,7 @@ class Progress(ProgressDialog):
         completed, total = self.getCurrentDownloadedSize()
         self.completedInfo.setText(i18n("<p align='center'>%1 of %2, %3</p>").arg(completed).arg(total).arg(self.rate))
         self.timeRemaining.setText(self.timeLeft)
-        self.updatePackageInfo()
+        self.updateStatusInfo()
 
     def closeEvent(self, closeEvent):
         closeEvent.accept()
@@ -155,7 +155,7 @@ class Progress(ProgressDialog):
         self.updateCompletedInfo()
         self.showOperationDescription()
 
-    def updatePackageInfo(self):
+    def updateStatusInfo(self):
         if self.parent.state == Basket.install_state:
             operation = i18n("installed")
         elif self.parent.state == Basket.remove_state:
