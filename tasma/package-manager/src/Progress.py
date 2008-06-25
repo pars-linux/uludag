@@ -33,7 +33,7 @@ class Progress(ProgressDialog):
 
         self.packageNo = 0
         self.totalPackages = 0
-        self.rate = "-- KB/sec"
+        self.rate = "-- KB/s"
         self.packageName = ""
         self.timeLeft = "--:--:--"
 
@@ -167,7 +167,11 @@ class Progress(ProgressDialog):
 
     # pisi does not provide total downloaded size, just package based.
     def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize, rate, symbol):
-        self.rate = "%s %s" % (rate, symbol)
+        if rate == 0:
+            self.rate = "-- KB/s"
+        else:
+            self.rate = "%s %s" % (rate, symbol)
+
         if pkgDownSize == pkgTotalSize:
             self.totalDownloaded += int(pkgTotalSize)
             self.curPkgDownloaded = 0
