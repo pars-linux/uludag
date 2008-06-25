@@ -592,6 +592,18 @@ class Yali:
         except:
             ctx.debugger.log("Umount Failed ")
 
+        # GPT stuff
+        gptsync_path = yali4.sysutils.find_executable("gptsync")
+        if gptsync_path:
+            gptsync = os.popen("%s %s" % (gptsync_path, root_part_req.partition().getDevicePath()))
+            for line in gptsync.readlines():
+                if line.startswith("Status:"):
+                    ctx.debugger.log("GPTSYNC: %s" % line.split("Status: ")[1])
+            gptysnc.close()
+            time.sleep(1)
+        else:
+            ctx.debugger.log("GPTSYNC: Command Not Found !")
+
         # finally install it
         return loader.install_grub(ctx.installData.bootLoaderDev)
 
