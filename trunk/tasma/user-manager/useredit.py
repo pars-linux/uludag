@@ -434,11 +434,11 @@ class UserStack(QVBox):
             lab = QLabel(u"<b><big>%s</big></b>" % i18n("Enter Information For New User"), w)
         hb.addWidget(lab)
 
-        hb = QHBox(self)
-        self.setStretchFactor(hb, 4)
-        hb.setSpacing(18)
+        mainhb = QHBox(self)
+        self.setStretchFactor(mainhb, 4)
+        mainhb.setSpacing(18)
 
-        w = QWidget(hb)
+        w = QWidget(mainhb)
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(9)
 
@@ -483,9 +483,13 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(lab, row, row, 0, 1)
 
-        self.u_policygrouptab = PolicyGroupTab(hb, self, self.mainwidget, self.u_id, edit)
+        self.u_policygrouptab = PolicyGroupTab(mainhb, self, self.mainwidget, self.u_id, edit)
         self.u_groups = self.u_policygrouptab.groupsWidget
         self.u_operations = self.u_policygrouptab.policytab.operations
+
+        #make PolicyGroupTab longer than the left side of the dialog contains username/password fields
+        mainhb.setStretchFactor(w, 3)
+        mainhb.setStretchFactor(self.u_policygrouptab, 4)
 
         self.guide = Guide(w, self, edit)
         self.setStretchFactor(self.guide, 1)
