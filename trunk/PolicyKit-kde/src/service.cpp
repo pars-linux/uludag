@@ -386,7 +386,12 @@ char *PolicyService::polkit_grant_select_admin_user(PolKitGrant *grant, char **a
         m_self->m_dialog->setAdminUsers(list, username);
     }
     else
-        m_self->m_dialog->setAdminUsers(list);
+    {
+        if (list.contains("root") == 1)
+            m_self->m_dialog->setAdminUsers(list, "root");
+        else
+            m_self->m_dialog->setAdminUsers(list);
+    }
 
     Debug::printDebug("polkit_grant_select_admin_user: Done");
 
