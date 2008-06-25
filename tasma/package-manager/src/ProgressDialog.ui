@@ -89,7 +89,7 @@
                 </sizepolicy>
             </property>
             <property name="text">
-                <string>&lt;p align="center"&gt;&lt;b&gt;490.35 KB / 12.83 MB, 38.2 KB/sec&lt;/b&gt;&lt;/p&gt;</string>
+                <string>&lt;p align="center"&gt;&lt;b&gt;490.35 KB / 12.83 MB, 38.2 KB/s&lt;/b&gt;&lt;/p&gt;</string>
             </property>
             <property name="alignment">
                 <set>WordBreak|AlignVCenter|AlignLeft</set>
