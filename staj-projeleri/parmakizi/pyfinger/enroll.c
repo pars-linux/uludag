@@ -12,17 +12,15 @@ void enroll_save(struct fp_print_data* data, int uid){
 
     //generate filename
     char fname[255];
-    strcat(fname, PYFDIR);
-    sprintf(fname, "%s%d", fname, uid);
-    printf("%s\n", fname);
-    printf("%s\n", out); //FIXME
+    sprintf(fname, "%s%d", PYFDIR, uid);
 
     //write
     FILE* handle;
-    if(!(handle = fopen(fname, "w"))){
+    handle = fopen(fname, "w");
+    size_t written = fwrite(out, 1, len, handle);
+    if (written != len){
         pyfmsg(ERR_WRITEFAIL, 1);
     }
-    fprintf(handle, "%c", *out);
     fclose(handle);
 }
 
