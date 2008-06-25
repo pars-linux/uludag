@@ -325,7 +325,7 @@ QString kio_sysinfoProtocol::diskInfo()
             result +=   QString("<tr class=\"media\">"
                                 "   <td>"
                                 "   <a href=\"media:/%1\" title=\"%2\">"
-                                "       <img src=\"%3\" />"
+                                "       <img src=\"%3\" width=\"48\" height=\"48\" />"
                                 "   </a></td>").
                                 arg( di.name ).
                                 arg( tooltip+" "+di.deviceNode ).
