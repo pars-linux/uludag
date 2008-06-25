@@ -33,7 +33,7 @@ class Progress(ProgressDialog):
 
         self.packageNo = 0
         self.totalPackages = 0
-        self.rate = ""
+        self.rate = "-- KB/sec"
         self.packageName = ""
         self.timeLeft = "--:--:--"
 
