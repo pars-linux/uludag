@@ -599,7 +599,7 @@ class Yali:
             for line in gptsync.readlines():
                 if line.startswith("Status:"):
                     ctx.debugger.log("GPTSYNC: %s" % line.split("Status: ")[1])
-            gptysnc.close()
+            gptsync.close()
             time.sleep(1)
         else:
             ctx.debugger.log("GPTSYNC: Command Not Found !")
