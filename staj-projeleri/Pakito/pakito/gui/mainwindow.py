@@ -22,9 +22,10 @@ from threading import Thread
 import fcntl
 
 # PiSi imports
-import pisi.api
-from pisi.config import Options 
-import pisi.ui
+#import pisi.api
+#from pisi.config import Options 
+#import pisi.ui
+import pisi
 
 from pakito.gui.pspecWidget.pspecWidget import PspecWidget
 from pakito.gui.actionsWidget import ActionsWidget
@@ -273,6 +274,9 @@ class MainWindow(KParts.MainWindow):
         self.savePspec()
         self.saveActions()
 	
+	
+	if self.realDir[-1] != "/":
+		self.realDir += "/"
 	
 	QMessageBox.information(self,
                                 "Files Saved",

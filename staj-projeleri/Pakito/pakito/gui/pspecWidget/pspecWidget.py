@@ -5,6 +5,7 @@ from kdeui import *
 from kdecore import KURL, KGlobal, KIcon, i18n
 import kdedesigner
 
+#import pisi
 from pisi import specfile as spec
 
 from pakito.gui.pspecWidget.sourceWidget import sourceWidget

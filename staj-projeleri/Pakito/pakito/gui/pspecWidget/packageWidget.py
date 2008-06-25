@@ -7,10 +7,11 @@ from kdecore import *
 import os
 import shutil
 
-from pisi import specfile as spec
-from pisi.dependency import Dependency
-from pisi.conflict import Conflict
-from pisi.replace import Replace
+import pisi
+#from pisi import specfile as spec
+#from pisi.dependency import Dependency
+#from pisi.conflict import Conflict
+#from pisi.replace import Replace
 
 import kdedesigner
 
