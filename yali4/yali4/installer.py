@@ -555,6 +555,7 @@ class Yali:
 
         # check for linux partitions.
         ctx.debugger.log("Checking for Other Distros (Linux) ...")
+        grub_list = ["### These lines below added by YALI ###"]
         for d in yali4.storage.devices:
             for p in d.getPartitions():
                 fs = p.getFSName()
@@ -565,8 +566,11 @@ class Yali:
                         ctx.debugger.log("GRUB Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
                         linux_dev = os.path.basename(p.getDevicePath())
                         linux_root = os.path.basename(p.getPath())
-                        loader.grub_conf_append_guest_grub(guest_grub_conf,p.getName())
+                        grub_list = loader.grub_conf_append_guest_grub(guest_grub_conf,p.getName(),grub_list)
                         continue
+
+        if len(grub_list)>2:
+            loader.grub_conf_write(grub_list)
 
         try:
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
