@@ -96,7 +96,7 @@ class Progress(ProgressDialog):
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
         self.timeRemaining.setText("--:--")
-        self.completedInfo.setText(i18n("<p align='center'>-- / --, -- KB/sec</p>"))
+        self.completedInfo.setText(i18n("<p align='center'>-- / --, -- KB/s</p>"))
         self.statusInfo.setText(i18n("-- / --"))
         self.timeLeft = "--:--:--"
 
