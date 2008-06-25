@@ -1,3 +1,4 @@
+# translation of tr.po to Türkçe
 # translation of tr.po to
 # Turkish translations for PiSi KGA package
 # package-manager paketi için Türkçe çeviriler.
@@ -13,45 +14,61 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-17 12:09+0300\n"
-"PO-Revision-Date: 2008-06-20 11:07+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
-"Language-Team:  <tr@li.org>\n"
+"POT-Creation-Date: 2008-06-25 16:06+0300\n"
+"PO-Revision-Date: 2008-06-25 16:08+0300\n"
+"Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/ProgressDialog.py:91
+#: src/ProgressDialog.py:126
 msgid "Progress"
 msgstr "İşlem"
 
-#: src/ProgressDialog.py:92 src/Progress.py:87
-msgid "-- / --  package"
-msgstr "-- / -- paket"
+#: src/ProgressDialog.py:128
+msgid "Alt+C"
+msgstr "Alt+C"
 
-#: src/ProgressDialog.py:93 src/Progress.py:86
-msgid "downloaded (total: -- )"
-msgstr "indirildi (toplam: --)"
+#: src/ProgressDialog.py:129
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 
-#: src/ProgressDialog.py:94 src/Progress.py:85
-msgid "--"
-msgstr "--"
-
-#: src/ProgressDialog.py:97
+#: src/ProgressDialog.py:130
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/ProgressDialog.py:98
-msgid "Now installing <b>amsn</b> package"
-msgstr "Şu anda <b>amsn</b> paketi kuruluyor"
+#: src/ProgressDialog.py:132
+msgid "amsn"
+msgstr "amsn"
+
+#: src/ProgressDialog.py:133
+msgid "Time remaining:"
+msgstr "Kalan zaman:"
+
+#: src/ProgressDialog.py:134
+msgid "2 / 20 packages installed."
+msgstr "2 / 20 paket kuruldu."
+
+#: src/ProgressDialog.py:135
+msgid "01:29"
+msgstr "01:29"
+
+#: src/ProgressDialog.py:136
+msgid "Operation:"
+msgstr "İşlem: "
+
+#: src/ProgressDialog.py:137
+msgid "Status:"
+msgstr "Durum:"
 
 #: src/Tray.py:38
 msgid "Update"
 msgstr "Güncelle"
 
-#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:582
+#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:576
 msgid "All"
 msgstr "Tümü"
 
@@ -127,7 +144,7 @@ msgstr "Paket veritabanı boş"
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
-#: src/MainWidget.py:258 src/MainWidget.py:661
+#: src/MainWidget.py:258 src/MainWidget.py:656
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Depo Güncelleniyor</b>"
 
@@ -135,49 +152,49 @@ msgstr "<b>Depo Güncelleniyor</b>"
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: src/MainWidget.py:305 src/MainWidget.py:590
+#: src/MainWidget.py:305 src/MainWidget.py:584
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
-#: src/MainWidget.py:343
+#: src/MainWidget.py:337
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
-#: src/MainWidget.py:346 src/MainWidget.py:354
+#: src/MainWidget.py:340 src/MainWidget.py:348
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
-#: src/MainWidget.py:349
+#: src/MainWidget.py:343
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
 msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ek bağımlılık "
 
-#: src/MainWidget.py:351 src/MainWidget.py:359
+#: src/MainWidget.py:345 src/MainWidget.py:353
 msgid "in your basket."
 msgstr "bulunuyor."
 
-#: src/MainWidget.py:357
+#: src/MainWidget.py:351
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ters bağımlılık "
 
-#: src/MainWidget.py:388
+#: src/MainWidget.py:382
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
-#: src/MainWidget.py:389 src/MainWidget.py:399
+#: src/MainWidget.py:383 src/MainWidget.py:393
 msgid "Conflict Error"
 msgstr "Çakışma Hatası"
 
-#: src/MainWidget.py:395
+#: src/MainWidget.py:389
 msgid "The following packages conflicts:\n"
 msgstr "Aşağıdaki paketler çakışıyor:\n"
 
-#: src/MainWidget.py:397
+#: src/MainWidget.py:391
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1: [%2] ile çakışıyor\n"
 
-#: src/MainWidget.py:398
+#: src/MainWidget.py:392
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -185,15 +202,15 @@ msgstr ""
 "\n"
 "Çakışan paketler sistemden kaldırılsın mı?"
 
-#: src/MainWidget.py:413 src/MainWidget.py:472 src/MainWidget.py:613
+#: src/MainWidget.py:407 src/MainWidget.py:466 src/MainWidget.py:608
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Paket(ler) Kuruluyor</b>"
 
-#: src/MainWidget.py:422
+#: src/MainWidget.py:416
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
 msgstr "<qt><b>Kurmak</b> üzere <b>%1</b> paket seçtiniz."
 
-#: src/MainWidget.py:425
+#: src/MainWidget.py:419
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
@@ -201,15 +218,15 @@ msgstr ""
 " Seçili paketler ile birlikte ayrıca <b>%1</b> ek bağımlılık da "
 "<b>kurulacak</b>."
 
-#: src/MainWidget.py:426
+#: src/MainWidget.py:420
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
 msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>kurulacak</b>."
 
-#: src/MainWidget.py:429
+#: src/MainWidget.py:423
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
 msgstr "<qt><b>Güncellemek</b> üzere <b>%1</b> paket seçtiniz."
 
-#: src/MainWidget.py:432
+#: src/MainWidget.py:426
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
@@ -217,15 +234,15 @@ msgstr ""
 " Seçili paketler ile birlikte ayrıca <b>%1</b> ek bağımlılık da "
 "<b>güncellenecek</b>."
 
-#: src/MainWidget.py:433
+#: src/MainWidget.py:427
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
 msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>güncellenecek</b>."
 
-#: src/MainWidget.py:436
+#: src/MainWidget.py:430
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
 msgstr "<qt><b>Kaldırmak</b> üzere <b>%1</b> paket seçtiniz."
 
-#: src/MainWidget.py:439
+#: src/MainWidget.py:433
 msgid ""
 " Selected packages have reverse dependencies. Because the reverse "
 "dependencies of the selected packages needs those packages to work; by "
@@ -241,39 +258,39 @@ msgstr ""
 "Ters bağımlı olan bazı paketlerin kaldırılması sistem kararlılığını "
 "bozabilir."
 
-#: src/MainWidget.py:441
+#: src/MainWidget.py:435
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
 msgstr "<br><br>Toplam olarak <b>%1</b> paket <b>kaldırılacak</b>."
 
-#: src/MainWidget.py:443
+#: src/MainWidget.py:437
 msgid "<br>Do you want to continue?</qt>"
 msgstr "<br>Devam etmek istiyor musunuz?</qt>"
 
-#: src/MainWidget.py:464
+#: src/MainWidget.py:458
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Paket(ler) Kaldırılıyor</b>"
 
-#: src/MainWidget.py:481 src/MainWidget.py:615
+#: src/MainWidget.py:475 src/MainWidget.py:610
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Paket(ler) Güncelleniyor</b>"
 
-#: src/MainWidget.py:574
+#: src/MainWidget.py:568
 msgid "Others"
 msgstr "Diğerleri"
 
-#: src/MainWidget.py:617 src/CommonText.py:15
+#: src/MainWidget.py:612 src/CommonText.py:15
 msgid "downloading"
 msgstr "indiriliyor"
 
-#: src/MainWidget.py:658 src/Preferences.py:349
+#: src/MainWidget.py:653 src/Preferences.py:349
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Depo Değişiklikleri Uygulanıyor</b>"
 
-#: src/MainWidget.py:662
+#: src/MainWidget.py:657
 msgid "Downloading package list of %1"
 msgstr "%1 paket listesi indiriliyor"
 
-#: src/MainWidget.py:678
+#: src/MainWidget.py:673
 msgid "Confirm"
 msgstr "Onay"
 
@@ -387,11 +404,11 @@ msgstr "Toplam Boyut:"
 msgid "Update Basket"
 msgstr "Sepeti Güncelle"
 
-#: src/BasketDialog.py:165
+#: src/BasketDialog.py:164
 msgid "Total Size: <b>%1</b>"
 msgstr "Toplam Boyut: <b>%1</b>"
 
-#: src/BasketDialog.py:215 src/BasketDialog.py:217
+#: src/BasketDialog.py:212 src/BasketDialog.py:214
 msgid "Size: "
 msgstr "Boyut: "
 
@@ -702,43 +719,51 @@ msgstr "Paket Boyutu: "
 msgid "Homepage: "
 msgstr "Web sayfası: "
 
-#: src/Progress.py:51
-msgid "downloaded ( total: %1 )"
-msgstr "indirildi ( toplam: %1 )"
+#: src/Progress.py:64
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/Progress.py:83
+#: src/Progress.py:97
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/Progress.py:105
+#: src/Progress.py:99
+msgid "<p align='center'>-- / --, -- KB/s</p>"
+msgstr "<p align='center'>-- / --, -- KB/s</p>"
+
+#: src/Progress.py:100
+msgid "-- / --"
+msgstr "-- / --"
+
+#: src/Progress.py:119
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>İşlem iptal ediliyor...</b>"
 
-#: src/Progress.py:132 src/Progress.py:136
-msgid "Now %1 <b>%2</b> package"
-msgstr "Şu anda <b>%2</b> paketi %1"
+#: src/Progress.py:146 src/Progress.py:150
+msgid "%1 %2"
+msgstr "%1 %2"
 
-#: src/Progress.py:146
+#: src/Progress.py:160
 msgid "installed"
 msgstr "kuruldu"
 
-#: src/Progress.py:148
+#: src/Progress.py:162
 msgid "removed"
 msgstr "kaldırıldı"
 
-#: src/Progress.py:150
+#: src/Progress.py:164
 msgid "upgraded"
 msgstr "güncellendi"
 
-#: src/Progress.py:152
+#: src/Progress.py:166
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paket %3"
 
-#: src/Notifier.py:41
+#: src/Notifier.py:45
 msgid "Show Updates"
 msgstr "Güncellemeleri Göster"
 
-#: src/Notifier.py:41
+#: src/Notifier.py:45
 msgid "Ignore"
 msgstr "Yoksay"
 
