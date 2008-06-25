@@ -61,7 +61,7 @@ class Progress(ProgressDialog):
 
     def updateCompletedInfo(self):
         completed, total = self.getCurrentDownloadedSize()
-        self.completedInfo.setText(i18n("<p align='center'>%1 of %2, %3</p>").arg(completed).arg(total).arg(self.rate))
+        self.completedInfo.setText(i18n("<p align='center'>%1 / %2, %3</p>").arg(completed).arg(total).arg(self.rate))
         self.timeRemaining.setText(self.timeLeft)
         self.updateStatusInfo()
 
@@ -96,7 +96,7 @@ class Progress(ProgressDialog):
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
         self.timeRemaining.setText("--:--")
-        self.completedInfo.setText(i18n("<p align='center'>-- of --, -- KB/sec</p>"))
+        self.completedInfo.setText(i18n("<p align='center'>-- / --, -- KB/sec</p>"))
         self.statusInfo.setText(i18n("-- / --"))
         self.timeLeft = "--:--:--"
 
@@ -163,7 +163,7 @@ class Progress(ProgressDialog):
         elif self.parent.state == Basket.upgrade_state:
             operation = i18n("upgraded")
 
-        self.statusInfo.setText(i18n("%1 of %2 packages %3").arg(self.packageNo).arg(self.totalPackages).arg(operation))
+        self.statusInfo.setText(i18n("%1 / %2 package %3").arg(self.packageNo).arg(self.totalPackages).arg(operation))
 
     # pisi does not provide total downloaded size, just package based.
     def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize, rate, symbol):
