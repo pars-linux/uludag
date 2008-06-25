@@ -132,7 +132,6 @@ class NotificationDisplayer:
 				# Set some properties of the default GUI:
 				if self_outer.default_GUI_used == True:
 					self.vboxlayout.setAlignment(QtCore.Qt.AlignTop)
-					self.exit_button.setIcon(QtGui.QIcon("./icons/exit.png"))
 
 				# Set some properties of the GUI (skin-independent):
 

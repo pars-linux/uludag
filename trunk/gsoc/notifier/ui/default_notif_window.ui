@@ -75,7 +75,12 @@
      <item>
       <layout class="QVBoxLayout" name="vboxlayout" >
        <item>
-        <widget class="QToolButton" name="exit_button" />
+        <widget class="QToolButton" name="exit_button" >
+         <property name="icon" >
+          <iconset>
+           <normaloff>icons/exit.png</normaloff>icons/exit.png</iconset>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
