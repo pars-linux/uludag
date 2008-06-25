@@ -84,16 +84,18 @@ img.floatr, img[align="right"] {
     margin-left: auto;
     margin-right: auto;
     background: url("../resim/container_bg.png") repeat-y;
+    overflow: hidden;
 }
 
 #content {
     position: relative;
-    top: 10px;
+    top: -510px;
     left: 14px;
     width: 714px;
     height: 520px;
     background: url('../resim/content_bg.png') no-repeat;
     overflow: hidden;
+    float: left;
 }
 
 .content_title {
