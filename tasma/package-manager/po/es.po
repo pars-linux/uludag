@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-17 12:09+0300\n"
+"POT-Creation-Date: 2008-06-25 16:06+0300\n"
 "PO-Revision-Date: 2008-06-17 18:49-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -20,35 +20,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/ProgressDialog.py:91
+#: src/ProgressDialog.py:126
 msgid "Progress"
 msgstr "Progreso"
 
-#: src/ProgressDialog.py:92 src/Progress.py:87
-msgid "-- / --  package"
-msgstr "-- / --  paquete"
+#: src/ProgressDialog.py:128
+#, fuzzy
+msgid "Alt+C"
+msgstr "Alt+S"
 
-#: src/ProgressDialog.py:93 src/Progress.py:86
-msgid "downloaded (total: -- )"
-msgstr "descargado (total: -- )"
+#: src/ProgressDialog.py:129
+msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
+msgstr ""
 
-#: src/ProgressDialog.py:94 src/Progress.py:85
-msgid "--"
-msgstr "--"
-
-#: src/ProgressDialog.py:97
+#: src/ProgressDialog.py:130
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Preparando PiSi...</h3>"
 
-#: src/ProgressDialog.py:98
-msgid "Now installing <b>amsn</b> package"
-msgstr "Instalando ahora paquete <b>amsn</b>"
+#: src/ProgressDialog.py:132
+msgid "amsn"
+msgstr ""
+
+#: src/ProgressDialog.py:133
+msgid "Time remaining:"
+msgstr ""
+
+#: src/ProgressDialog.py:134
+#, fuzzy
+msgid "2 / 20 packages installed."
+msgstr "Paquete PiSi a instalar"
+
+#: src/ProgressDialog.py:135
+msgid "01:29"
+msgstr ""
+
+#: src/ProgressDialog.py:136
+#, fuzzy
+msgid "Operation:"
+msgstr "Versión: "
+
+#: src/ProgressDialog.py:137
+msgid "Status:"
+msgstr ""
 
 #: src/Tray.py:38
 msgid "Update"
 msgstr "Actualizar"
 
-#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:582
+#: src/Tray.py:43 src/MainWidget.py:289 src/MainWidget.py:576
 msgid "All"
 msgstr "Todos"
 
@@ -78,7 +97,8 @@ msgstr "Error de autenticación COMAR"
 
 #: src/ComarIface.py:62
 msgid "Network error. Please check your network connections and try again."
-msgstr "Error de red. Por favor verifique la conexión de red e intente de nuevo."
+msgstr ""
+"Error de red. Por favor verifique la conexión de red e intente de nuevo."
 
 #: src/ComarIface.py:62 src/ComarIface.py:64
 msgid "COMAR Error"
@@ -124,7 +144,7 @@ msgstr "La base de datos de paquetes está vacía."
 msgid "Remove Package(s)"
 msgstr "Remover Paquete(s)"
 
-#: src/MainWidget.py:258 src/MainWidget.py:661
+#: src/MainWidget.py:258 src/MainWidget.py:656
 msgid "<b>Updating Repository</b>"
 msgstr "<b>Actualizando Repositorio</b>"
 
@@ -132,26 +152,28 @@ msgstr "<b>Actualizando Repositorio</b>"
 msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquete(s)"
 
-#: src/MainWidget.py:305 src/MainWidget.py:590
+#: src/MainWidget.py:305 src/MainWidget.py:584
 msgid "Search Results"
 msgstr "Resultados de la Busqueda"
 
-#: src/MainWidget.py:343
+#: src/MainWidget.py:337
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
-#: src/MainWidget.py:346 src/MainWidget.py:354
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+#: src/MainWidget.py:340 src/MainWidget.py:348
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actualmente están seleccionados <b>%1</b> paquetes con un tamaño total de <b>"
 "%2</b>"
 
 # ...requeridas...
-#: src/MainWidget.py:349
+#: src/MainWidget.py:343
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr " y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
+msgstr ""
+" y <b>%3</b> dependencias requeridas con un tamaño adicional de <b>%4</b>"
 
-#: src/MainWidget.py:351 src/MainWidget.py:359
+#: src/MainWidget.py:345 src/MainWidget.py:353
 msgid "in your basket."
 msgstr " en el carrito."
 
@@ -178,29 +200,30 @@ msgstr " en el carrito."
 # C sería la dependencia "reversa" de B
 # en este caso podría haber varios paquetes tipo "C" dependiendo de uno o varios de los del tipo B
 # hay un mensaje --90-- mas adelante con una explicacion
-#: src/MainWidget.py:357
+#: src/MainWidget.py:351
 msgid "with <b>%3</b> reverse dependencies of total <b>%4</b> of size "
 msgstr "y <b>%3</b> dependencias reversas con un tamaño total de <b>%4</b>"
 
-#: src/MainWidget.py:388
+#: src/MainWidget.py:382
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr "Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
+msgstr ""
+"Hay [%1] paquetes conflictivos. Estos paquetes no se pueden instalar juntos."
 
-#: src/MainWidget.py:389 src/MainWidget.py:399
+#: src/MainWidget.py:383 src/MainWidget.py:393
 msgid "Conflict Error"
 msgstr "Error por conflicto"
 
-#: src/MainWidget.py:395
+#: src/MainWidget.py:389
 msgid "The following packages conflicts:\n"
 msgstr "Los siguientes paquetes están en conflicto:\n"
 
-#: src/MainWidget.py:397
+#: src/MainWidget.py:391
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 en conflicto con: [%2]\n"
 
-#: src/MainWidget.py:398
+#: src/MainWidget.py:392
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -208,16 +231,16 @@ msgstr ""
 "\n"
 "Remover los paquetes conflictivos del sistema ?"
 
-#: src/MainWidget.py:413 src/MainWidget.py:472 src/MainWidget.py:613
+#: src/MainWidget.py:407 src/MainWidget.py:466 src/MainWidget.py:608
 msgid "<b>Installing Package(s)</b>"
 msgstr "<b>Instalando Paquete(s)</b>"
 
-#: src/MainWidget.py:422
+#: src/MainWidget.py:416
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>instalar</b>."
 
 #  Con los paquetes seleccionados, también se instalarán <b>%1</b> paquetes adicionales requeridos.
-#: src/MainWidget.py:425
+#: src/MainWidget.py:419
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>installed</b>."
@@ -228,16 +251,16 @@ msgstr ""
 # "Total:"..
 # o
 # "un total de"....
-#: src/MainWidget.py:426
+#: src/MainWidget.py:420
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>installed</b>."
 msgstr "<br><br>un total de <b>%1</b> paquetes se <b>instalarán</b>."
 
-#: src/MainWidget.py:429
+#: src/MainWidget.py:423
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>actualizar</b>."
 
 # Con los paquetes seleccionados, también se actualizarán <b>%1</b> paquetes adicionales requeridos.
-#: src/MainWidget.py:432
+#: src/MainWidget.py:426
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
@@ -245,16 +268,16 @@ msgstr ""
 "Con los paquetes seleccionados, también se <b>actualizarán %1</b> paquetes "
 "adicionales requeridos."
 
-#: src/MainWidget.py:433
+#: src/MainWidget.py:427
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
 msgstr "<br><br>Un total de <b>%1</b> paquetes se <b>actualizarán</b>."
 
-#: src/MainWidget.py:436
+#: src/MainWidget.py:430
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
 msgstr "<qt><b>%1</b> paquetes seleccionados para <b>remover</b>."
 
 # Los paquetes seleccionados son requeridos por otros. Al remover los paquetes seleccionados tambien se <b>removerán %1</b> paquetes dependendientes. Favor verifique el carrito y asegurese que realmente contiene los paquetes que desea remover. Remover accidentalmente algunos paquetes requeridos puede perjudicar gravemente la estabilidad del sistema.
-#: src/MainWidget.py:439
+#: src/MainWidget.py:433
 msgid ""
 " Selected packages have reverse dependencies. Because the reverse "
 "dependencies of the selected packages needs those packages to work; by "
@@ -270,39 +293,39 @@ msgstr ""
 "algunas dependencias reversas importantes puede perjudicar gravemente la "
 "estabilidad del sistema."
 
-#: src/MainWidget.py:441
+#: src/MainWidget.py:435
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>removed</b>."
 msgstr "<br><br>Un total de <b>%1</b> paquetes se <b>removerán</b>."
 
-#: src/MainWidget.py:443
+#: src/MainWidget.py:437
 msgid "<br>Do you want to continue?</qt>"
 msgstr "<br>Desea continuar ?</qt>"
 
-#: src/MainWidget.py:464
+#: src/MainWidget.py:458
 msgid "<b>Removing Package(s)</b>"
 msgstr "<b>Removiendo Paquete(s)</b>"
 
-#: src/MainWidget.py:481 src/MainWidget.py:615
+#: src/MainWidget.py:475 src/MainWidget.py:610
 msgid "<b>Upgrading Package(s)</b>"
 msgstr "<b>Actualizando Paquete(s)</b>"
 
-#: src/MainWidget.py:574
+#: src/MainWidget.py:568
 msgid "Others"
 msgstr "Otros"
 
-#: src/MainWidget.py:617 src/CommonText.py:15
+#: src/MainWidget.py:612 src/CommonText.py:15
 msgid "downloading"
 msgstr "descargando"
 
-#: src/MainWidget.py:658 src/Preferences.py:349
+#: src/MainWidget.py:653 src/Preferences.py:349
 msgid "<b>Applying Repository Changes</b>"
 msgstr "<b>Aplicando Modificaciones de Repositorio</b>"
 
-#: src/MainWidget.py:662
+#: src/MainWidget.py:657
 msgid "Downloading package list of %1"
 msgstr "Descargando lista de paquetes de %1"
 
-#: src/MainWidget.py:678
+#: src/MainWidget.py:673
 msgid "Confirm"
 msgstr "Confirmación"
 
@@ -387,7 +410,8 @@ msgstr "Paquetes seleccionados para remover:"
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
-msgstr "Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
+msgstr ""
+"Dependencias reversas de los paquetes seleccionados que tambien se removerán:"
 
 #: src/BasketDialog.py:67
 msgid "Selected package(s) for install:"
@@ -421,11 +445,11 @@ msgstr "Tamaño total:"
 msgid "Update Basket"
 msgstr "Actualizar Carrito"
 
-#: src/BasketDialog.py:165
+#: src/BasketDialog.py:164
 msgid "Total Size: <b>%1</b>"
 msgstr "Tamaño total: <b>%1</b>"
 
-#: src/BasketDialog.py:215 src/BasketDialog.py:217
+#: src/BasketDialog.py:212 src/BasketDialog.py:214
 msgid "Size: "
 msgstr "Tamaño:"
 
@@ -614,7 +638,8 @@ msgstr "&Usar cache en disco rígido para software descargado"
 
 #: src/PreferencesDialog.py:375
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr "Si marcado, se conservarán los archivos descargados en el cache del disco"
+msgstr ""
+"Si marcado, se conservarán los archivos descargados en el cache del disco"
 
 #: src/PreferencesDialog.py:376
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -625,8 +650,10 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:380
-msgid "You can see current software repositories and corresponding addresses here"
-msgstr "Aqui se pueden ver los repositorios actuales de software con sus direcciones"
+msgid ""
+"You can see current software repositories and corresponding addresses here"
+msgstr ""
+"Aqui se pueden ver los repositorios actuales de software con sus direcciones"
 
 #: src/PreferencesDialog.py:381
 msgid "&Add New Repository"
@@ -643,7 +670,8 @@ msgstr "&Editar Repositorio"
 
 #: src/PreferencesDialog.py:384
 msgid "Click here to modify the name or address of a repository"
-msgstr "Presione aquí para modificar el nombre o la dirección de un repositorio"
+msgstr ""
+"Presione aquí para modificar el nombre o la dirección de un repositorio"
 
 #: src/PreferencesDialog.py:385
 msgid "&Remove Repository"
@@ -738,46 +766,70 @@ msgstr "Tamaño de Paquete: "
 msgid "Homepage: "
 msgstr "Página web: "
 
-#: src/Progress.py:51
-msgid "downloaded ( total: %1 )"
-msgstr "descargado ( total: %1 )"
+#: src/Progress.py:64
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
 
-#: src/Progress.py:83
+#: src/Progress.py:97
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<b>Preparando PiSi...</b>"
 
-#: src/Progress.py:105
+#: src/Progress.py:99
+msgid "<p align='center'>-- / --, -- KB/s</p>"
+msgstr ""
+
+#: src/Progress.py:100
+#, fuzzy
+msgid "-- / --"
+msgstr "-- / --  paquete"
+
+#: src/Progress.py:119
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Abortando operación...</b>"
+
+#: src/Progress.py:146 src/Progress.py:150
+msgid "%1 %2"
+msgstr ""
+
+#: src/Progress.py:160
+msgid "installed"
+msgstr "instalado"
+
+#: src/Progress.py:162
+msgid "removed"
+msgstr "removido"
+
+#: src/Progress.py:164
+msgid "upgraded"
+msgstr "actualizado"
+
+#: src/Progress.py:166
+#, fuzzy
+msgid "%1 / %2 package %3"
+msgstr "%1 / %2 paquete %3"
+
+#: src/Notifier.py:45
+msgid "Show Updates"
+msgstr "Mostrar Actualizaciones"
+
+#: src/Notifier.py:45
+msgid "Ignore"
+msgstr "Ignorar"
+
+#~ msgid "downloaded (total: -- )"
+#~ msgstr "descargado (total: -- )"
+
+#~ msgid "--"
+#~ msgstr "--"
+
+#~ msgid "Now installing <b>amsn</b> package"
+#~ msgstr "Instalando ahora paquete <b>amsn</b>"
+
+#~ msgid "downloaded ( total: %1 )"
+#~ msgstr "descargado ( total: %1 )"
 
 # example: %1=downloading, %2=firefox
 # 080503 changed the word order, to make grammer sound better
 # maybe just skip the word "package" / paquete ??
-#: src/Progress.py:132 src/Progress.py:136
-msgid "Now %1 <b>%2</b> package"
-msgstr "Ahora %1 paquete <b>%2</b>"
-
-#: src/Progress.py:146
-msgid "installed"
-msgstr "instalado"
-
-#: src/Progress.py:148
-msgid "removed"
-msgstr "removido"
-
-#: src/Progress.py:150
-msgid "upgraded"
-msgstr "actualizado"
-
-#: src/Progress.py:152
-msgid "%1 / %2 package %3"
-msgstr "%1 / %2 paquete %3"
-
-#: src/Notifier.py:41
-msgid "Show Updates"
-msgstr "Mostrar Actualizaciones"
-
-#: src/Notifier.py:41
-msgid "Ignore"
-msgstr "Ignorar"
-
+#~ msgid "Now %1 <b>%2</b> package"
+#~ msgstr "Ahora %1 paquete <b>%2</b>"
