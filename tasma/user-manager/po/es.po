@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-24 14:46+0300\n"
-"PO-Revision-Date: 2008-06-08 15:35-0400\n"
+"PO-Revision-Date: 2008-06-24 19:47-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,9 @@ msgid "DBus Error"
 msgstr "Error DBus"
 
 #: um_mainview.py:58
+# favor verificar
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "No tiene los derechos necesarios para esta operación."
 
 #: um_mainview.py:66
 msgid "COMAR Error"
@@ -117,10 +118,8 @@ msgstr "Eliminar usuario"
 
 #: browser.py:167
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr "<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
 
 #: browser.py:173 browser.py:174
 msgid "Delete Group"
@@ -136,39 +135,39 @@ msgstr "Módulo de Administración de usuarios ya se está ejecutando !"
 
 #: user-manager.py:88
 msgid "User Manager"
-msgstr "Administrador de Usuarios"
+msgstr "Administración de Usuarios"
 
 #: useredit.py:22
 msgid "User/group operations"
-msgstr ""
+msgstr "Operaciones de Usuario/Grupo"
 
 #: useredit.py:23
 msgid "Network settings"
-msgstr ""
+msgstr "Configuración de Red"
 
 #: useredit.py:24
 msgid "Package operations"
-msgstr ""
+msgstr "Operaciones con Paquetes"
 
 #: useredit.py:25
 msgid "Service operations"
-msgstr ""
+msgstr "Operaciones con Servicios"
 
 #: useredit.py:26
 msgid "Date/time operations"
-msgstr ""
+msgstr "Configuración de Hora/Fecha"
 
 #: useredit.py:27
 msgid "Kernel module operations"
-msgstr ""
+msgstr "Operaciones con módulos del Kernel"
 
 #: useredit.py:28
 msgid "Bootloader settings"
-msgstr ""
+msgstr "Configuración de Arranque"
 
 #: useredit.py:29
 msgid "Screen settings"
-msgstr ""
+msgstr "Configuración de Pantalla"
 
 #: useredit.py:85
 msgid "User name:"
@@ -316,5 +315,3 @@ msgstr "Prohibir"
 msgid "Do not ask password"
 msgstr "No preguntar contraseña"
 
-#~ msgid "D-Bus Error"
-#~ msgstr "Error D-Bus"
