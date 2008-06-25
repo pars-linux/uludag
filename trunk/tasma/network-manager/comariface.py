@@ -146,6 +146,7 @@ class DBusInterface(Hook):
         self.connections = {}
         self.name_host = None
         self.name_dns = None
+        self.window = None
         
         self.dia = None
         
@@ -200,7 +201,8 @@ class DBusInterface(Hook):
             self.error(exception)
     
     def error(self, exception):
-        KMessageBox.error(None, str(exception), i18n("COMAR Error"))
+        msg = QMessageBox(i18n("Network Manager"), str(exception), QMessageBox.Warning, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton, self.window, "err", True)
+        msg.show()
     
     def errorDBus(self, exception):
         if self.dia:
