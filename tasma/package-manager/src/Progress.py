@@ -59,7 +59,7 @@ class Progress(ProgressDialog):
         left = total - downloaded
         self.timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
 
-    def updateStatus(self):
+    def updateCompletedInfo(self):
         completed, total = self.getCurrentDownloadedSize()
         self.completedInfo.setText(i18n("<p align='center'>%1 of %2, %3</p>").arg(completed).arg(total).arg(self.rate))
         self.timeRemaining.setText(self.timeLeft)
@@ -148,11 +148,11 @@ class Progress(ProgressDialog):
     def updateDownloadingInfo(self, operation, file):
         self.packageName = PisiIface.parse_package_name(file)[0]
         self.setOperationDescription(i18n('%1 %2').arg(self.packageName).arg(operation))
-        self.updateStatus()
+        self.updateCompletedInfo()
         self.showOperationDescription()
 
     def updateUpgradingInfo(self):
-        self.updateStatus()
+        self.updateCompletedInfo()
         self.showOperationDescription()
 
     def updatePackageInfo(self):
