@@ -179,8 +179,10 @@ class MainWindow(KParts.MainWindow):
         self.enableOperations()
         
     def open(self):
+
+	    
         packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package"))
-        
+	
         if not packageDir or packageDir == "":
             return
         else:
@@ -213,6 +215,7 @@ class MainWindow(KParts.MainWindow):
         
         packageName = os.path.split(packageDir[:-1])[1]
         self.tempDir = tempDir + packageName
+	
         if os.path.isdir(self.tempDir):
             shutil.rmtree(self.tempDir)
 
@@ -225,7 +228,7 @@ class MainWindow(KParts.MainWindow):
             qApp.restoreOverrideCursor()
             KMessageBox.sorry(self, i18n("pspec.xml cannot be parsed: %s" % str(err)), i18n("Invalid File"))
             self.closePacket()
-            return          
+            return
         
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.tempDir, "actions.py"))
         self.twTabs.addTab(self.pspecTab, i18n("Specification"))
@@ -258,6 +261,7 @@ class MainWindow(KParts.MainWindow):
             packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package Directory"))
             if not packageDir or str(packageDir) == "":
                 return
+	
             self.realDir = unicode(packageDir)
             
 #        if all == True:
@@ -265,9 +269,14 @@ class MainWindow(KParts.MainWindow):
 #        self.pspecTab.change = False
 #        self.changeActionsTab(False)
 #        self.actionsTab.change = False
-        
+
         self.savePspec()
         self.saveActions()
+	
+	
+	QMessageBox.information(self,
+                                "Files Saved",
+                                "Following files are saved:\n"+self.realDir+"pspec.xml\n"+self.realDir+"actions.py")
         return
         
 #        if self.twTabs.currentPage() is self.pspecTab:
@@ -332,7 +341,7 @@ class MainWindow(KParts.MainWindow):
 #            if self.actionsTab.change or self.pspecTab.change:
 #                ans = KMessageBox.questionYesNoCancel(self, "Do you want to save changes?", "Save")
 #                if ans == KMessageBox.Yes :
-#                    pass #TODO: Real save
+#               .     pass #TODO: Real save
 #                elif ans == KMessageBox.No:
 #                    pass
 #                else:
@@ -559,6 +568,10 @@ class PisiThread(Thread):
         self.output = pipe
         self.pisiTo = pisiTo
         self.setDaemon(True)
+	
+    #SI start eklendi, hata kayboldu ama starta ne yazilacak?
+    def start(self):
+	pass
     
     def run(self):
          from cgi import escape
