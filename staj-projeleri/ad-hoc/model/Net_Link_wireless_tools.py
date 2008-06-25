@@ -349,26 +349,18 @@ class Dev:
                     fail("DHCP failed")
         elif self.device_mode == "ad-hoc":
             ifc=self.ifc
-            ifc.up()
+            ifc.down()
+            #ifc.setAddress(self.address, self.mask)
             subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, "netmask", self.mask], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "mode", "ad-hoc"], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "key", self.password], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
-            """
-            pass
-              +  # /sbin/ifconfig wmaster0 up  
-              +  # /sbin/ifconfig wmaster0 192.168.111.1 netmask 255.255.255.0 
-              +  # /sbin/iwconfig wmaster0 mode ad-hoc  
-              +  # /sbin/iwconfig wmaster0 key 6572747975  
-              +  # /sbin/iwconfig wmaster0 channel auto  
-              +  # /sbin/iwconfig wmaster0 essid ADHOC  
-                 # make /etc/dhcp/dhcpd.conf
-                 # Start DHCP
-                 # notify("Net.Link", "stateChanged", (self.name, "up", addr))
-             # DHCP?
-            """
-    
+            ifc.up() 
+            d=DB.getDB(self.name)
+            d["state"]="up"
+            DB.setDB(self.name,d)
+
     def down(self):
         ifc = self.ifc
         wifi = Wireless(ifc)
