@@ -148,9 +148,9 @@ def is_windows_boot(partition_path, file_system):
 def is_linux_boot(partition_path, file_system):
     import yali4.gui.context as ctx
     m_dir = "/tmp/pcheck"
-
     if not os.path.isdir(m_dir):
         os.makedirs(m_dir)
+    umount(m_dir)
 
     ctx.debugger.log("Mounting %s to /tmp/pcheck" % partition_path)
 
@@ -164,11 +164,8 @@ def is_linux_boot(partition_path, file_system):
 
     if exist("grub.conf") or exist("menu.lst"):
         ctx.debugger.log("GRUb Conf found on device %s" % partition_path)
-        grub_conf = file(os.path.join(m_dir,"boot/grub/grub.conf")).readlines()
-        umount(m_dir)
-        return grub_conf
+        return os.path.join(m_dir,"boot/grub/grub.conf")
     else:
-        umount(m_dir)
         return False
 
 def umount_(dir):
