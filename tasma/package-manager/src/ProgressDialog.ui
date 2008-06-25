@@ -209,7 +209,7 @@
                 </widget>
                 <widget class="QLabel" row="1" column="1">
                     <property name="name">
-                        <cstring>packageInfo</cstring>
+                        <cstring>statusInfo</cstring>
                     </property>
                     <property name="sizePolicy">
                         <sizepolicy>
