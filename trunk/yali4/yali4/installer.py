@@ -554,25 +554,37 @@ class Yali:
                         continue
 
         # check for linux partitions.
+
+        # grubutils
+        import pardus.grubutils
+
+        # our grub.conf
+        grubConf = pardus.grubutils.grubConf()
+        grubConfPath = os.path.join(ctx.consts.target_dir,"boot/grub/grub.conf")
+        grubConf.parseConf(grubConfPath)
+
         ctx.debugger.log("Checking for Other Distros (Linux) ...")
-        grub_list = ["### These lines below added by YALI ###"]
         for d in yali4.storage.devices:
             for p in d.getPartitions():
                 fs = p.getFSName()
-                if fs in ("ext3", "reiserfs", "xfs"):
+                if fs in ("ext3", "reiserfs", "xfs") and not p.getPath() == _ins_part:
                     ctx.debugger.log("Partition found which has usable fs (%s)" % p.getPath())
                     guest_grub_conf = yali4.sysutils.is_linux_boot(p.getPath(), fs)
                     if guest_grub_conf:
                         ctx.debugger.log("GRUB Found on device %s partition %s " % (p.getDevicePath(), p.getPath()))
-                        linux_dev = os.path.basename(p.getDevicePath())
-                        linux_root = os.path.basename(p.getPath())
-                        grub_list = loader.grub_conf_append_guest_grub(guest_grub_conf,p.getName(),grub_list)
+                        guestGrubConf = pardus.grubutils.grubConf()
+                        guestGrubConf.parseConf(guest_grub_conf)
+                        for entry in guestGrubConf.entries:
+                            entry.title = entry.title + " [ %s ]" % p.getName()
+                            grubConf.addEntry(entry)
                         continue
 
-        if len(grub_list)>2:
-            loader.grub_conf_write(grub_list)
+        # write the new grub.conf
+        grubConf.write(grubConfPath)
 
         try:
+            ctx.debugger.log("Trying to umount %s" % "/tmp/pcheck")
+            yali4.sysutils.umount_("/tmp/pcheck")
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/archive"))
             yali4.sysutils.umount_(ctx.consts.target_dir + "/mnt/archive")
             ctx.debugger.log("Trying to umount %s" % (ctx.consts.target_dir + "/mnt/home"))
