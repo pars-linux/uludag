@@ -127,6 +127,11 @@ Click Next button to proceed.
             if p2:
                 self.ui.pass_error.setText(_('<center><font color="#FF6D19">Passwords do not match!</font></center>'))
                 self.ui.pass_error.setVisible(True)
+        if p1=="root" or p2=="root":
+            self.pass_valid = False
+            if p2:
+                self.ui.pass_error.setText(_('<center><font color="#FF6D19">Don\'t use your username as password !</font></center>'))
+                self.ui.pass_error.setVisible(True)
 
         self.setNext()
 
