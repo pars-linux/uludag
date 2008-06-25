@@ -470,7 +470,8 @@ class Settings(QWidget):
                     nameserver = str(self.dns_text.text())
                 comlink.call(self.link.script, "Net.Link", "setNameService", name, namemode, nameserver)
             if "devicemode" in self.link.modes:
-                comlink.call(self.link.script, "Net.Link", "setConnection", name, remote, self.apmac)
+                selected_device_mode = "client" # selected device mode from combobox will be here. default is client mode
+                comlink.call(self.link.script, "Net.Link", "setConnectionMode", name, selected_device_mode)
             if "remote" in self.link.modes:
                 # set remote address
                 remote = str(self.remote.text())
