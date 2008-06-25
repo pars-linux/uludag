@@ -11,12 +11,16 @@ void enroll_save(struct fp_print_data* data, int uid){
     size_t len = fp_print_data_get_data(data, &out); //not necessarily null terminated
 
     //generate filename
-    char fname[255];
+    char cuid[12];
+    sprintf(cuid, "%d", uid);
+    char *fname = malloc(strlen(PYFDIR) + strlen(cuid));
     sprintf(fname, "%s%d", PYFDIR, uid);
 
     //write
     FILE* handle;
     handle = fopen(fname, "w");
+    if (handle == NULL)
+        fprintf(stderr, "Grrrrr");
     size_t written = fwrite(out, 1, len, handle);
     if (written != len){
         pyfmsg(ERR_WRITEFAIL, 1);
