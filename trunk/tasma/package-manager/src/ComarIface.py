@@ -10,7 +10,7 @@
 #
 # Please read the COPYING file
 
-from qt import QMutex, SIGNAL
+from qt import QString, QMutex, SIGNAL
 from kdeui import KMessageBox
 from kdecore import i18n
 
@@ -61,7 +61,7 @@ class ComarIface:
         if "urlopen error" in exception.message or "Socket Error" in exception.message:
             KMessageBox.error(None, i18n("Network error. Please check your network connections and try again."), i18n("COMAR Error"))
         else:
-            KMessageBox.error(None, str(exception), i18n("COMAR Error"))
+            KMessageBox.error(None, QString.fromUtf8(str(exception)), i18n("COMAR Error"))
 
         self.errHandler()
 
