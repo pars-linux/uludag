@@ -345,9 +345,10 @@ class UserGroupList(QWidget):
 
 
 class Guide(QWidget):
-    def __init__(self, parent, edit):
+    def __init__(self, parent, stack, edit):
         QWidget.__init__(self, parent)
         self.edit = edit
+        self.stack = stack
         hb = QHBoxLayout(self)
         hb.setMargin(6)
         hb.setSpacing(6)
@@ -359,7 +360,7 @@ class Guide(QWidget):
 
     def check(self):
         err = None
-        p = self.parent()
+        p = self.stack
 
         if p.u_realname.text() == "" and p.u_name.text() == "":
             err = i18n("Start with typing this user's full name.")
@@ -486,8 +487,10 @@ class UserStack(QVBox):
         self.u_groups = self.u_policygrouptab.groupsWidget
         self.u_operations = self.u_policygrouptab.policytab.operations
 
-        self.guide = Guide(self, edit)
+        self.guide = Guide(w, self, edit)
         self.setStretchFactor(self.guide, 1)
+        row = grid.numRows()
+        grid.addMultiCellWidget(self.guide, row, row, 0, 1)
 
         hb = QHBox(self)
         self.guide.buttons = hb
