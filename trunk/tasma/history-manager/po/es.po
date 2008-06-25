@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-24 02:53+0300\n"
-"PO-Revision-Date: 2008-05-18 08:42-0400\n"
+"PO-Revision-Date: 2008-06-24 21:40-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,21 +21,19 @@ msgstr ""
 
 #: src/Progress.py:68 src/history_gui.py:378
 msgid "Progress"
-msgstr ""
+msgstr "Progreso"
 
 #: src/Progress.py:71
 msgid "<h4><b>Preparing PISI</b></h4>"
-msgstr ""
+msgstr "<h4><b>Preparando PISI</b></h4>"
 
 #: src/Progress.py:72
-#, fuzzy
 msgid "Taking a snapshot of system"
-msgstr "Sistem Görüntüsü Alınıyor "
+msgstr "Realizando captura de instantánea del sistema"
 
 #: src/history-manager.py:51
-#, fuzzy
 msgid "History Manager is already running!"
-msgstr "Geçmiş Yöneticisi zaten çalışıyor"
+msgstr "Administrador de históricos ya se está ejecutando !!"
 
 #: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:60
 msgid "History Manager"
@@ -58,40 +56,39 @@ msgid "formMain"
 msgstr "formMain"
 
 #: src/history_gui.py:62
-#, fuzzy
 msgid "All Operations"
-msgstr "İşlem başlatıldı"
+msgstr "Todas las Operaciones"
 
 #: src/history_gui.py:63
-#, fuzzy
 msgid "Snapshots"
-msgstr "Nueva Instantánea"
+msgstr "Instantáneas"
 
 #: src/history_gui.py:64
+# favor verificar contexto, por la forma gramatical
 msgid "Upgrades"
-msgstr ""
+msgstr "Actualizados"
 
 #: src/history_gui.py:65
+# does "remove" mean just delete file or also "uninstall" ??
 msgid "Removes"
-msgstr ""
+msgstr "Eliminados"
 
 #: src/history_gui.py:66
-#, fuzzy
 msgid "Installations"
-msgstr "Yükleniyor  : %1"
+msgstr "Instalaciones"
 
 #: src/history_gui.py:67
+# favor verificar, tambien depende del contexto, podria ser reestablecer, degradar
 msgid "TakeBacks"
-msgstr ""
+msgstr "Restauraciones"
 
 #: src/history_gui.py:69
 msgid "Take Back Plan"
-msgstr ""
+msgstr "Plan de Restauración"
 
 #: src/history_gui.py:70
-#, fuzzy
 msgid "Operation Details"
-msgstr "İşlem başlatıldı"
+msgstr "Detalles de la Operación"
 
 #: src/history_gui.py:73
 msgid "New Snapshot"
@@ -107,27 +104,29 @@ msgid ""
 "<br>These are the package installation and removals, also configuration "
 "files below (in snapshots) will overwrite your current configuration files."
 msgstr ""
+"El sistema restaurará el estado de esta fecha, al presionar el botón Reestablecer."
+"<br>Esto considera los programas instalados y desinstalados, y tambien los archivos de configuración (de las instantaneas) sobreescribirán los archivos de la configuración actual."
 
 #: src/history_gui.py:87
 msgid "Restore to This Point"
-msgstr "Rastaurar hasta este punto"
+msgstr "Restaurar hasta este punto"
 
 #: src/history_gui.py:135
 msgid "This will take a New Snapshot of your system"
 msgstr "Se realizará una instantánea nueva de su sistema"
 
 #: src/history_gui.py:150
-#, fuzzy
+# favor revisar - plan de reestablecer.. de restauración
 msgid ""
 "This will restore your system back to : %1 %2\n"
 "If you're unsure, click Cancel and see TakeBack Plan"
 msgstr ""
-"Se reestablecerá el estado previo de sus sistema a la versión de : %1 %2\n"
-"Está seguro ?"
+"Se reestablecerá el estado previo de sus sistema a : %1 %2\n"
+"Si no está seguro, puede presionar Cancelar y revisar el plan de Restauración"
 
 #: src/history_gui.py:176
 msgid "Take Back operation completed"
-msgstr "Operación de reestablecer estado previo terminado"
+msgstr "Operación de restauración terminada"
 
 #: src/history_gui.py:178
 msgid "New Snapshot Taken"
@@ -138,103 +137,103 @@ msgid "Operation Cancelled"
 msgstr "Operación abortada"
 
 #: src/history_gui.py:185
-#, fuzzy
 msgid "Updating User Interface"
-msgstr "Actualizando interfaz de usuario, por favor espere algunos instantes"
+msgstr "Actualizando interfaz de usuario"
 
 #: src/history_gui.py:187
 msgid "Finished with Errors"
-msgstr "Hatalarla Tamamlandı"
+msgstr "Terminado con Errores"
 
 #: src/history_gui.py:188
-#, fuzzy
 msgid "Operation Finished with Errors"
-msgstr "Hatalarla Tamamlandı"
+msgstr "Operación terminada con Errores"
 
 #: src/history_gui.py:192
 msgid "Finished Succesfully"
-msgstr "Başarıyla Tamamlandı"
+msgstr "Terminado con éxito"
 
 #: src/history_gui.py:203
+# favor revisar contexto. recuperar, buscar, descompactar, descargar
 msgid "Fetching %1"
-msgstr ""
+msgstr "Descargando %1"
 
 #: src/history_gui.py:247
 msgid "<b>Access Granted</b><br>"
-msgstr "<b>Yetki Alındı</b><br>"
+msgstr "<b>Acceso Aceptado</b><br>"
 
 #: src/history_gui.py:250
 msgid "<b>Access Denied</b><br>"
-msgstr "<b>Yetki Alınamadı</b><br>"
+msgstr "<b>Acceso Denegado</b><br>"
 
 #: src/history_gui.py:252
 msgid "Operation Started"
-msgstr "İşlem başlatıldı"
+msgstr "Operación iniciada"
 
 #: src/history_gui.py:254
 msgid "Ordering Packages for Operation"
-msgstr "Paketleri işlem için sıralıyor"
+msgstr "Ordenando Paquetes para la Operación"
 
 #: src/history_gui.py:257
 msgid "Removing    : %1"
-msgstr "Kaldırılıyor: %1"
+msgstr "Eliminando: %1"
 
 #: src/history_gui.py:262
 msgid "Installing  : %1"
-msgstr "Yükleniyor  : %1"
+msgstr "Instalando : %1"
 
 #: src/history_gui.py:265
 msgid "Extracting  : %1"
-msgstr "Çıkartılıyor: %1"
+msgstr "Extrayendo : %1"
 
 #: src/history_gui.py:268
 msgid "Configuring  : %1"
-msgstr "Yapılandırılıyor : %1"
+msgstr "Configurando : %1"
 
 #: src/history_gui.py:272
 msgid "Taking a Snapshot of System "
-msgstr "Sistem Görüntüsü Alınıyor "
+msgstr "Realizando una instantánea del sistema"
 
 #: src/history_gui.py:274
 msgid "Taking System Back to %1 %2 <br>"
-msgstr "Sistem %1 %2 ye döndürülüyor <br>"
+msgstr "Restaurando sistema a %1 %2 <br>"
 
 #: src/history_gui.py:294 src/history_gui.py:295
 msgid "Select an entry to view details"
-msgstr "Ayrıntıları görüntülenecek bir işlem seçin"
+msgstr "Seleccione una entrada para ver detalles"
 
 #: src/history_gui.py:298
+# does this refer to a number ?
 msgid "No: <b>%1</b>"
-msgstr ""
+msgstr "No: <b>%1</b>"
 
 #: src/history_gui.py:299
 msgid "Type: <b>%1</b>"
-msgstr ""
+msgstr "Tipo: <b>%1</b>"
 
 #: src/history_gui.py:310
 msgid "There are <b>%1</b> packages in this snapshot"
-msgstr "Bu görüntüde <b>%1</b> paket var"
+msgstr "Hay <b>%1</b> paquetes en esta instantánea"
 
 #: src/history_gui.py:326
 msgid "Configuration files in snapshot:"
-msgstr ""
+msgstr "Archivos de configuración en la instantánea:"
 
 #: src/history_gui.py:333
-#, fuzzy
+# favor verificar contexto, check grammer according to context
 msgid "Take Back Plan for %1 operation on %2"
-msgstr "Operación de reestablecer estado previo terminado"
+msgstr "Plan de restauración para %1 operaciones en %2"
 
 #: src/history_gui.py:336
 msgid "These package(s) will be <b>installed</b> :"
-msgstr ""
+msgstr "Se <b>instalarán</b> los siguientes paquetes :"
 
 #: src/history_gui.py:341
 msgid "These package(s) will be <b>removed</b> :"
-msgstr ""
+msgstr "Se <b>eliminarán</b> los siguientes paquetes :"
 
 #: src/history_gui.py:406
 msgid "<b>Preparing PiSi...</b>"
-msgstr ""
+msgstr "<b>Preparando PiSi...</b>"
 
 #: src/ComarIface.py:31
 msgid "Cannot connect to dbus"
@@ -254,25 +253,5 @@ msgstr "Error COMAR"
 
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
-msgstr "No está autorizado para esta operación."
+msgstr "No tiene autorización para esta operación."
 
-#~ msgid "List only snapshots"
-#~ msgstr "Listar solamente instantáneas"
-
-#~ msgid "History"
-#~ msgstr "Historia"
-
-#~ msgid "Details"
-#~ msgstr "Detalles"
-
-#~ msgid "Id"
-#~ msgstr "ID"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#~ msgid "Show Details"
-#~ msgstr "Mostrar Detalles"
-
-#~ msgid "<b>Operation Date : </b>%1 %2<br><b>Operation Type : </b>%3<br>"
-#~ msgstr "<b>İşlem Tarihi : </b>%1 %2<br><b>İşlem Türü : </b>%3<br>"
