@@ -220,10 +220,9 @@ class BootLoader:
 
         open(self.grub_conf, "a").write(s)
 
-    def grub_conf_append_guest_grub(self, guest_grub_conf, partition):
+    def grub_conf_append_guest_grub(self, guest_grub_conf, partition, grub_list):
         """ Appends Linux GRUB's to the Pardus' GRUB Conf """
         params = ["default","gfxmenu","background","timeout","#"]
-        s = []
         for _line in guest_grub_conf:
             line = _line.strip()
             _tmp = line
@@ -234,9 +233,13 @@ class BootLoader:
             if not _tmp=="":
                 if _tmp.startswith("title"):
                     _tmp = _tmp + " [ %s ]" % partition
-                s.append(_tmp)
-        s.append("\n")
-        open(self.grub_conf, "a").write('\n'.join(s))
+                if _tmp not in grub_list:
+                    grub_list.append(_tmp)
+        grub_list.append("\n")
+        return grub_list
+
+    def grub_conf_write(self, grub_list):
+        open(self.grub_conf, "a").write('\n'.join(grub_list))
 
     def install_grub(self, grub_install_root=None):
         """ Install GRUB to the given device or partition """
