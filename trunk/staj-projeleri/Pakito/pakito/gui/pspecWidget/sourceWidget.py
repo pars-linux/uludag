@@ -4,8 +4,10 @@ from qt import *
 from kdeui import *
 from kdecore import *
 
-from pisi import specfile as spec
-from pisi.dependency import Dependency
+
+import pisi
+#from pisi import specfile as spec
+#from pisi.dependency import Dependency
 
 import os
 import shutil
