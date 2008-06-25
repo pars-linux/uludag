@@ -12,3 +12,25 @@ TODO & DESCS
 ? Ad-hoc bağlanan makinelere ip dağıtımı...
 
 ? Otomatik ip dağıtma nasıl olacak? Her ad-hoc oluşturanın dhcp server'a ihtiyaç duyması ne kadar doğru?
+
+
+KNOWN ERRORS
+------------
+
+(Job-3923) [bus:1.512] ComarJob process 3923 started
+(Job-3923) [bus:1.512] PolicyKit: tr.org.pardus.comar.Net.Link.setNameService = yes
+(Job-3923) [bus:1.512] Arguments: ('yeni ba\xc4\x9flant\xc4\xb1', 'default', '')
+(Job-3923) [bus:1.512] Reply: None
+(Comar-3821) DBus method call [org.freedesktop.DBus.Introspectable.Introspect] from [:1.512]
+(Job-3925) [bus:1.512] ComarJob process 3925 started
+(Job-3925) [bus:1.512] Execution of org.freedesktop.DBus.Introspectable.Introspect (/package/wireless_tools) took 0.015 seconds
+(Job-3925) [bus:1.512] ComarJob process 3925 ended
+(Job-3923) [bus:1.512] Execution of tr.org.pardus.comar.Net.Link.setNameService (/package/wireless_tools) took 0.151 seconds
+(Job-3923) [bus:1.512] ComarJob process 3923 ended
+(Comar-3821) DBus method call [tr.org.pardus.comar.Net.Link.setConnectionMode] from [:1.512]
+(Job-3926) [bus:1.512] ComarJob process 3926 started
+(Job-3926) [bus:1.512] PolicyKit: tr.org.pardus.comar.Net.Link.setConnectionMode = no
+(Job-3926) [bus:1.512] Execution of tr.org.pardus.comar.Net.Link.setConnectionMode (/package/wireless_tools) took 0.070 seconds
+(Job-3926) [bus:1.512] ComarJob process 3926 ended
+
+setConnectionMode için policykit yetkisine bak. kilitleniyor zira. (fakat kapatıp açınca çalışıyor )
