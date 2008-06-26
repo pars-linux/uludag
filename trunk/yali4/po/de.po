@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:59+0300\n"
+"POT-Creation-Date: 2008-06-26 15:59+0300\n"
 "PO-Revision-Date: 2008-06-25 19:06-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -555,10 +555,11 @@ msgstr ""
 "intelligenten Partitionstool vorbereitet haban.\n"
 
 #: yali4/gui/descSlide.py:20
+#, fuzzy
 msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
-"additional repositories and manage basic settings like mouse, wallpaper, "
-"webcam, and panel using Kaptan.\n"
+"additional repositories and manage basic settings like mouse, wallpaper and "
+"panel using in Kaptan.\n"
 msgstr ""
 "Unser Kaptan wird Sie nach der Installation führen. Sie können mit Kaptan "
 "auf leichte Weise weitere Depots hinzufügen und die Grundeinstellungen wie "
@@ -1728,6 +1729,10 @@ msgstr "Hilfe ausblenden"
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
 msgstr "Windows"
+
+#: yali4/filesystem.py:526
+msgid "Partition is not ready for resizing. Check it before installation."
+msgstr ""
 
 #: yali4/__init__.py:67
 msgid "Backtrace:"

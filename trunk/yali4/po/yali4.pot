@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:59+0300\n"
+"POT-Creation-Date: 2008-06-26 15:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -475,8 +475,8 @@ msgstr ""
 #: yali4/gui/descSlide.py:20
 msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
-"additional repositories and manage basic settings like mouse, wallpaper, "
-"webcam, and panel using Kaptan.\n"
+"additional repositories and manage basic settings like mouse, wallpaper and "
+"panel using in Kaptan.\n"
 msgstr ""
 
 #: yali4/gui/descSlide.py:22
@@ -1335,6 +1335,10 @@ msgstr ""
 
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
+msgstr ""
+
+#: yali4/filesystem.py:526
+msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 
 #: yali4/__init__.py:67

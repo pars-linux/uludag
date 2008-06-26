@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:59+0300\n"
+"POT-Creation-Date: 2008-06-26 15:59+0300\n"
 "PO-Revision-Date: 2008-06-26 09:51+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -546,10 +546,11 @@ msgstr ""
 "(schijven) met het intelligente partitie tools.\n"
 
 #: yali4/gui/descSlide.py:20
+#, fuzzy
 msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
-"additional repositories and manage basic settings like mouse, wallpaper, "
-"webcam, and panel using Kaptan.\n"
+"additional repositories and manage basic settings like mouse, wallpaper and "
+"panel using in Kaptan.\n"
 msgstr ""
 "Onze Kaptan zal aan u de weg na de installatie tonen. U kunt gemakkelijk "
 "aanvullende repositories (software bewaarplaatsen) toevoegen enkunt "
@@ -1697,6 +1698,10 @@ msgstr "Verberg Help"
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
 msgstr "Windows"
+
+#: yali4/filesystem.py:526
+msgid "Partition is not ready for resizing. Check it before installation."
+msgstr ""
 
 #: yali4/__init__.py:67
 msgid "Backtrace:"
