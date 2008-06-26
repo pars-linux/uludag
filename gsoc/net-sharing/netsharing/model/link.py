@@ -18,26 +18,31 @@ from pardus import iniutils
 #Net.Share 
 
 brcmd = "/usr/sbin/brctl"
+ifcfg = "/sbin/ifconfig"
 
 def addBridge(br_name):
     tup_obj = commands.getstatusoutput("%s show" % brcmd)
     if tup_obj[0] == 0:
         output = str(tup_obj[1])
-        if output.find(br_name) != -1:
+        if output.find("%s\t" % br_name) != -1:
             fail("This bridge already exists")
 
     tup_obj = commands.getstatusoutput("%s addbr %s" %(brcmd, br_name))
     if tup_obj[0] != 0:
         fail("%s cannot created" % br_name)
+    commands.getstatusoutput("%s %s up" %(ifcfg, br_name))
 
 def delBridge(br_name):
-    commands.getstatusoutput("%s delbr %s" % (brcmd, br_name))
+    commands.getstatusoutput("%s %s down" % (ifcfg, br_name))
+    tup_obj =  commands.getstatusoutput("%s delbr %s" % (brcmd, br_name))
+    if tup_obj[0] != 0:
+        fail(str(tup_obj[1]))
     
 def addInterface(br_name, if_name):
     tup_obj = commands.getstatusoutput("%s show" % brcmd)
     if tup_obj[0] == 0:
         output = str(tup_obj[1])
-	if output.find(br_name) != -1:
+	if output.find("%s\t" % br_name) != -1:
             if output.find(if_name) != -1:
                 fail("The interface %s already exists in %s" % (if_name, br_name))
 	else:
