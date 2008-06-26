@@ -60,7 +60,7 @@ class Commander(QObject):
             print "Warning: ", str(data)
             self.parent.resetState()
             self.parent.refreshState()
-        elif signal == "PolicyKit":
+        elif signal == "PolicyKit" and "policy.no" in data:
             message = i18n("You are not authorized for this operation.")
             KMessageBox.sorry(None, message, i18n("Error"))
         else:
