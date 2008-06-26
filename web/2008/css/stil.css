@@ -160,8 +160,11 @@ img.menu_img {
     height: 520px;
     position: relative;
     top: 25px;
+    right: 27px;
     z-index: 1;
 }
+
+#sidebar div, #sidebar img { float: right; }
 
 /* sidebar items */
 #opened_kurumsal { background: url('../resim/menu/opened/kurumsal.png') no-repeat; }
@@ -171,7 +174,6 @@ img.menu_img {
 
 .sidebar_opened {
     width: 227px;
-    margin-left: -27px;
     padding-top: 25px;
     padding-bottom: 14px;
 }
