@@ -126,6 +126,7 @@ Here you can see your install options and look at them again before installation
 
         # Partition
         pardus_path = None
+        self.resizeAction = False
         content.append(subject % _("Partition Settings"))
         if ctx.installData.autoPartMethod == methodEraseAll:
             content.append(item % _("Automatic Partitioning selected."))
@@ -143,6 +144,7 @@ Here you can see your install options and look at them again before installation
 
         elif ctx.installData.autoPartMethod == methodUseAvail:
             content.append(item % _("Automatic Partitioning (resize method) selected."))
+            self.resizeAction = True
             dev = ctx.installData.autoPartDev
             _part = ctx.installData.autoPartPartition
             part = _part["partition"]
@@ -199,6 +201,20 @@ Here you can see your install options and look at them again before installation
     def execute(self):
 
         self.timer.stop()
+
+        if self.resizeAction:
+            w = WarningWidget(self)
+            w.warning.setText(_(
+                """<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt your partition,<br>
+                   rendering your data unreachable. <br>
+                   Make sure that you have a backup for this partition.<br>
+                   <b>Note that this operation cannot be undone ! </b></p>"""))
+            w.ok.setText(_("Begin Install"))
+            dialog = WarningDialog(w, self)
+            if not dialog.exec_():
+                ctx.mainScreen.moveInc = 0
+                return
+
         self.ui.install.setEnabled(False)
         self.ui.cancel.setEnabled(False)
 
