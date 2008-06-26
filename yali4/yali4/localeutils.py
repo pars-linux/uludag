@@ -41,7 +41,7 @@ def write_keymap(keymap):
         if l.strip().startswith('keymap=') or l.strip().startswith('#keymap='):
             l = 'keymap="%s"\n' % keymap
         if l.strip().startswith('language=') or l.strip().startswith('#language='):
-            if consts.lang == "br":
+            if consts.lang == "pt":
                 l = 'language="pt_BR"\n'
             else:
                 l = 'language="%s"\n' % consts.lang
