@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 14:46+0300\n"
+"POT-Creation-Date: 2008-06-26 16:47+0300\n"
 "PO-Revision-Date: 2008-06-24 19:47-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -26,8 +26,8 @@ msgstr "No posible conectar con DBus"
 msgid "DBus Error"
 msgstr "Error DBus"
 
-#: um_mainview.py:58
 # favor verificar
+#: um_mainview.py:58
 msgid "You are not authorized for this operation."
 msgstr "No tiene los derechos necesarios para esta operación."
 
@@ -35,11 +35,11 @@ msgstr "No tiene los derechos necesarios para esta operación."
 msgid "COMAR Error"
 msgstr "Error COMAR"
 
-#: groupedit.py:22 useredit.py:38
+#: groupedit.py:22 useredit.py:36
 msgid "ID:"
 msgstr "ID:"
 
-#: groupedit.py:30 useredit.py:50
+#: groupedit.py:30 useredit.py:48
 msgid "Select manually"
 msgstr "Seleccion manual"
 
@@ -118,8 +118,10 @@ msgstr "Eliminar usuario"
 
 #: browser.py:167
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr "<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Eliminar este grupo ?</b></big><br><br>Nombre de grupo: %s<br>ID: %d"
 
 #: browser.py:173 browser.py:174
 msgid "Delete Group"
@@ -169,104 +171,104 @@ msgstr "Configuración de Arranque"
 msgid "Screen settings"
 msgstr "Configuración de Pantalla"
 
-#: useredit.py:85
+#: useredit.py:83
 msgid "User name:"
 msgstr "Nombre de usuario:"
 
-#: useredit.py:116
+#: useredit.py:114
 msgid "Full name:"
 msgstr "Nombre completo:"
 
 # Carpeta personal (home)
-#: useredit.py:139
+#: useredit.py:137
 msgid "Home:"
 msgstr "Carpeta personal (home):"
 
 # "home" por "personal (home)"
-#: useredit.py:171
+#: useredit.py:169
 msgid "Select user's home directory"
 msgstr "Seleccione la carpeta personal (home) del usuario"
 
-#: useredit.py:180
+#: useredit.py:178
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: useredit.py:186
+#: useredit.py:184
 msgid "Confirm password:"
 msgstr "Confirmar contraseña:"
 
 # Intérprete de comados (shell)
-#: useredit.py:214
+#: useredit.py:212
 msgid "Shell:"
 msgstr "Intérprete de comandos (shell):"
 
 # Favor ingresar comando
-#: useredit.py:236
+#: useredit.py:234
 msgid "Please specify an existing shell command"
 msgstr "Favor ingresar comando"
 
 # El comando indicado no es ejecutable
-#: useredit.py:238
+#: useredit.py:236
 msgid "Specified shell command is not executable"
 msgstr "El comando indicado no es ejecutable"
 
-#: useredit.py:265
+#: useredit.py:263
 msgid "Group"
 msgstr "Grupo"
 
-#: useredit.py:272
+#: useredit.py:270
 msgid "Main group:"
 msgstr "Grupo principal:"
 
-#: useredit.py:365
+#: useredit.py:363
 msgid "Start with typing this user's full name."
 msgstr "Escriba primero el nombre completo de este usuario."
 
-#: useredit.py:368
+#: useredit.py:366
 msgid "You should enter a password for this user."
 msgstr "Favor ingresar una contraseña para este usuario."
 
-#: useredit.py:373
+#: useredit.py:371
 msgid "Password must be longer."
 msgstr "La contraseña debe ser más larga."
 
-#: useredit.py:377
+#: useredit.py:375
 msgid "Don't use your full name or user name as a password."
 msgstr "No use el nombre completo o nombre de usuario como contraseña."
 
-#: useredit.py:380
+#: useredit.py:378
 msgid "Passwords don't match."
 msgstr "Las contraseñas no coinciden."
 
-#: useredit.py:383
+#: useredit.py:381
 msgid "You must enter a user ID or use the auto selection."
 msgstr "Favor ingresar un ID de usuario o use la selección automatica."
 
-#: useredit.py:388
+#: useredit.py:386
 msgid "You must enter a user name."
 msgstr "Debe ingresar un nombre de usuario."
 
-#: useredit.py:391
+#: useredit.py:389
 msgid "This user name is used by another user."
 msgstr "Este nombre de usuario ya existe."
 
-#: useredit.py:395
+#: useredit.py:393
 msgid "User name must not start with a number."
 msgstr "Nombre de usuario no debe empezar con un número."
 
-#: useredit.py:398
+#: useredit.py:396
 msgid "You should select at least one group this user belongs to."
 msgstr "Favor indicar al menos un grupo al cual pertenece este usuario."
 
-#: useredit.py:431
+#: useredit.py:429
 msgid "Edit User's Information"
 msgstr "Editar información del usuario"
 
-#: useredit.py:433
+#: useredit.py:431
 msgid "Enter Information For New User"
 msgstr "Ingrese informaciones del usuario nuevo"
 
-#: useredit.py:469
+#: useredit.py:467
 msgid "Give administrator privileges to this user"
 msgstr "Conceder privilegios de administrador a este usuario"
 
@@ -314,4 +316,3 @@ msgstr "Prohibir"
 #: useredit.py:721
 msgid "Do not ask password"
 msgstr "No preguntar contraseña"
-

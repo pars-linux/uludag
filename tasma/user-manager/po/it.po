@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 14:46+0300\n"
+"POT-Creation-Date: 2008-06-26 16:47+0300\n"
 "PO-Revision-Date: 2007-07-11 20:33+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -34,11 +34,11 @@ msgstr "Non hai i permessi necessari ad eseguire questa operazione"
 msgid "COMAR Error"
 msgstr ""
 
-#: groupedit.py:22 useredit.py:38
+#: groupedit.py:22 useredit.py:36
 msgid "ID:"
 msgstr "ID:"
 
-#: groupedit.py:30 useredit.py:50
+#: groupedit.py:30 useredit.py:48
 msgid "Select manually"
 msgstr "Scegli manualmente"
 
@@ -171,99 +171,99 @@ msgstr ""
 msgid "Screen settings"
 msgstr ""
 
-#: useredit.py:85
+#: useredit.py:83
 msgid "User name:"
 msgstr "Nome utente:"
 
-#: useredit.py:116
+#: useredit.py:114
 msgid "Full name:"
 msgstr "Nome completo:"
 
-#: useredit.py:139
+#: useredit.py:137
 msgid "Home:"
 msgstr "Home:"
 
-#: useredit.py:171
+#: useredit.py:169
 msgid "Select user's home directory"
 msgstr "Scegli la cartella Home dell'utente"
 
-#: useredit.py:180
+#: useredit.py:178
 msgid "Password:"
 msgstr "Password:"
 
-#: useredit.py:186
+#: useredit.py:184
 msgid "Confirm password:"
 msgstr "Conferma password:"
 
-#: useredit.py:214
+#: useredit.py:212
 msgid "Shell:"
 msgstr "Shell:"
 
-#: useredit.py:236
+#: useredit.py:234
 msgid "Please specify an existing shell command"
 msgstr "Specifica per favore un comando shell esistente"
 
-#: useredit.py:238
+#: useredit.py:236
 msgid "Specified shell command is not executable"
 msgstr "Il comando shell specificato non è un eseguibile"
 
-#: useredit.py:265
+#: useredit.py:263
 msgid "Group"
 msgstr "Gruppo"
 
-#: useredit.py:272
+#: useredit.py:270
 msgid "Main group:"
 msgstr "Gruppo principale:"
 
-#: useredit.py:365
+#: useredit.py:363
 msgid "Start with typing this user's full name."
 msgstr "Inizia digitando il nome completo di questo utente."
 
-#: useredit.py:368
+#: useredit.py:366
 msgid "You should enter a password for this user."
 msgstr "Dovresti inserire una password per questo utente."
 
-#: useredit.py:373
+#: useredit.py:371
 msgid "Password must be longer."
 msgstr "La password deve essere più lunga."
 
-#: useredit.py:377
+#: useredit.py:375
 msgid "Don't use your full name or user name as a password."
 msgstr "Non utilizzare il tuo nome completo o il nome utente come password."
 
-#: useredit.py:380
+#: useredit.py:378
 msgid "Passwords don't match."
 msgstr "Le password non corrispondono."
 
-#: useredit.py:383
+#: useredit.py:381
 msgid "You must enter a user ID or use the auto selection."
 msgstr "Devi inserire un ID utente o utilizzare la selezione automatica."
 
-#: useredit.py:388
+#: useredit.py:386
 msgid "You must enter a user name."
 msgstr "Devi inserire un nome utente."
 
-#: useredit.py:391
+#: useredit.py:389
 msgid "This user name is used by another user."
 msgstr "Questo nome utente è già esistente."
 
-#: useredit.py:395
+#: useredit.py:393
 msgid "User name must not start with a number."
 msgstr "Il nome utente non deve iniziare con un numbero."
 
-#: useredit.py:398
+#: useredit.py:396
 msgid "You should select at least one group this user belongs to."
 msgstr "Dovresti selezionare almeno un gruppo a cui l'utente appartiene."
 
-#: useredit.py:431
+#: useredit.py:429
 msgid "Edit User's Information"
 msgstr "Modifica informazioni sull'utente"
 
-#: useredit.py:433
+#: useredit.py:431
 msgid "Enter Information For New User"
 msgstr "Inserisci le informazioni del nuovo utente"
 
-#: useredit.py:469
+#: useredit.py:467
 msgid "Give administrator privileges to this user"
 msgstr ""
 
