@@ -11,10 +11,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-24 20:51+0300\n"
-"PO-Revision-Date: 2008-06-21 15:47+0200\n"
+"PO-Revision-Date: 2008-06-26 09:51+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,8 +86,7 @@ msgstr ""
 "worden naar gelang de keuzen."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatisch partitioneren, probeer vrije tuimte te creeëren of huidige "
 "partities in grootte aan te passen"
@@ -113,12 +111,10 @@ msgstr "U kunt met deze optie handmatig partitioneren"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Indien er geen geschikte partitie is, zal deze optie niet gebruikt worden"
+msgstr "Indien er geen geschikte partitie is, zal deze optie niet gebruikt worden"
 
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Deze optie zal proberen om voldoende vrije ruimte te vinden of in grootte "
 "aan te passen partities"
@@ -744,10 +740,9 @@ msgid "There is a request for the same Partition Type."
 msgstr "Er is een verzoek voor hetzelfde partitietype."
 
 #: yali4/gui/DiskWidgets.py:316
-#, fuzzy, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Partitie <b>%(partition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+#, python-format
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)s</b>."
 
 #: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
 #, python-format
@@ -859,9 +854,8 @@ msgid "Set Administrator"
 msgstr "Bepaal systeembeheerder"
 
 #: yali4/gui/ScrAdmin.py:31
-#, fuzzy
 msgid "Admins have important rights on the system..."
-msgstr "Beheerder heeft belangrijke rechten op het systeem..."
+msgstr "Beheerdershebben belangrijke rechten op het systeem..."
 
 #: yali4/gui/ScrAdmin.py:33
 msgid ""
@@ -1114,9 +1108,8 @@ msgid "Installing system..."
 msgstr "Installeren systeem..."
 
 #: yali4/gui/ScrInstall.py:61
-#, fuzzy
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr "Installeren duurt gemiddeld 30 minuten, afhankelijk van hardware..."
+msgstr "Installeren duurt ongeveer 30 minuten, afhankelijk van uw hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1161,7 +1154,6 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrInstall.py:112
-#, fuzzy
 msgid "Packages are being installed.."
 msgstr "Pakketten worden geïnstalleerd.."
 
@@ -1310,8 +1302,7 @@ msgstr ""
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
 "installation."
-msgstr ""
-"U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
+msgstr "U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
 
 #: yali4/gui/ScrPartitionManual.py:31
 msgid "Manual Partitioning"
@@ -1473,8 +1464,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:181
 msgid "Bootloader Settings"
@@ -1559,8 +1549,7 @@ msgstr ""
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
-msgstr ""
-"<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+msgstr "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
 
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
@@ -1584,8 +1573,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+msgstr "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1666,9 +1654,8 @@ msgid "Backtrace:"
 msgstr "Terugloop:"
 
 #: yali4/installer.py:126
-#, fuzzy
 msgid "YALI Is Working..."
-msgstr "YALI werken..."
+msgstr "YALI werkt..."
 
 #: yali4/installer.py:141
 msgid "Starting for CD Check"
@@ -1716,9 +1703,9 @@ msgid "Creating new partition ..."
 msgstr "Maak nieuwe partitie ..."
 
 #: yali4/installer.py:438
-#, fuzzy, python-format
+#, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
-msgstr "Gebruiker <b>%s</b> zijn/haar thuismap wordt aangemaakt.."
+msgstr "De thuismap van gebruiker <b>%s</b> wordt klaargemaakt.."
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -1895,3 +1882,4 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiveer partitie"
+
