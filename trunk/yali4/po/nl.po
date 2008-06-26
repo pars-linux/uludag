@@ -10,10 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 20:51+0300\n"
+"POT-Creation-Date: 2008-06-26 13:33+0300\n"
 "PO-Revision-Date: 2008-06-26 09:51+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
+">\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -86,7 +87,8 @@ msgstr ""
 "worden naar gelang de keuzen."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid "Automatically partition try to use free space or resize current partitions"
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatisch partitioneren, probeer vrije tuimte te creeëren of huidige "
 "partities in grootte aan te passen"
@@ -111,10 +113,12 @@ msgstr "U kunt met deze optie handmatig partitioneren"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr "Indien er geen geschikte partitie is, zal deze optie niet gebruikt worden"
+msgstr ""
+"Indien er geen geschikte partitie is, zal deze optie niet gebruikt worden"
 
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid "This option will try to find suitable free space or resizable partitions"
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Deze optie zal proberen om voldoende vrije ruimte te vinden of in grootte "
 "aan te passen partities"
@@ -201,7 +205,8 @@ msgstr ""
 "Ondanks dat deze stap optioneel is, raden we het u aan om fouten tijdens de "
 "installatie te vermijden."
 
-#: yali4/gui/Ui/checkcdwidget.py:74
+#: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
+#: yali4/installer.py:172
 msgid "Check CD Integrity"
 msgstr "Controleer CD integriteit"
 
@@ -329,7 +334,7 @@ msgstr "Gebruik :"
 msgid "Size :"
 msgstr "Grootte :"
 
-#: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:87
+#: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:89
 msgid " MB"
 msgstr " MB"
 
@@ -374,6 +379,7 @@ msgid "Apply"
 msgstr "Toepassen"
 
 #: yali4/gui/Ui/partresize.py:82
+#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -383,13 +389,22 @@ msgid ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; color:#ffffff;\">Warning!</span><span style=\" color:#ffffff;\"> "
-"These settings will be applied when you click \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Resize</span><span style=\" color:"
-"#ffffff;\">\". If you want to go back click \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Cancel</span><span style=\" color:"
-"#ffffff;\">\".</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">These settings will be applied when you click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Resize</span><span "
+"style=\" color:#ffffff;\">\". If you want to go back click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Cancel</span><span "
+"style=\" color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Warning:</span> A resizing "
+"operation may corrupt your partition, rendering your data unreachable. Make "
+"sure that you have a backup for this partition.<span style=\" font-"
+"weight:600;\"> </span><span style=\" font-weight:600;\">Note that this "
+"operation cannot be undone</span></p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -408,12 +423,12 @@ msgstr ""
 "\">Annuleer</span><span style=\" color:#ffffff;\">\".</span></p></body></"
 "html>"
 
-#: yali4/gui/Ui/partresize.py:88 yali4/gui/Ui/summarywidget.py:59
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: yali4/gui/Ui/partresize.py:89
+#: yali4/gui/Ui/partresize.py:91
 msgid "Resize"
 msgstr "Grootte aanpassen"
 
@@ -485,7 +500,7 @@ msgstr "Automatisch inloggen gebruiker:"
 msgid "Auto Login Disabled"
 msgstr "Automatisch inloggen uitgeschakeld"
 
-#: yali4/gui/Ui/summarywidget.py:60
+#: yali4/gui/Ui/summarywidget.py:60 yali4/gui/ScrSummary.py:212
 msgid "Begin Install"
 msgstr "Begin installatie"
 
@@ -741,10 +756,13 @@ msgstr "Er is een verzoek voor hetzelfde partitietype."
 
 #: yali4/gui/DiskWidgets.py:316
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
+"s</b>."
 
-#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:143
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Partitie <b>%(partition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
@@ -761,7 +779,7 @@ msgstr ""
 "GPT schijftabellen worden niet ondersteund voor verlengde partities.\n"
 "U dient één van de primaire partities van uw schijftabel te verwijderen !"
 
-#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:141
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:142
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -801,7 +819,7 @@ msgstr ""
 "                                  <b>Grootte:</b> %s<br>\n"
 "                                  <b>Bestandssysteem</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:140
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:141
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Alle partities op apparaat <b>%(device)s</b> zijn verwijderd."
@@ -921,7 +939,15 @@ msgstr ""
 "<center><font color=\"#FF6D19\">De wachtwoorden komen niet overeen!</font></"
 "center>"
 
-#: yali4/gui/ScrAdmin.py:146
+#: yali4/gui/ScrAdmin.py:133
+#, fuzzy
+msgid ""
+"<center><font color=\"#FF6D19\">Don't use your username as password !</"
+"font></center>"
+msgstr ""
+"<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+
+#: yali4/gui/ScrAdmin.py:153
 msgid ""
 "<center><font color=\"#FF6D19\">Hostname contains invalid characters!</"
 "font></center>"
@@ -1009,10 +1035,16 @@ msgstr ""
 "minder) te branden.</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
-msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
+#, fuzzy
+msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Ogenblik geduld wanneer de CD gecontrolleerd wordt.</"
 "font>"
+
+#: yali4/gui/ScrCheckCD.py:51
+#, fuzzy
+msgid "Stop Checking"
+msgstr "Controle: %s"
 
 #: yali4/gui/ScrDateTime.py:27
 msgid "Set your timezone"
@@ -1084,11 +1116,15 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrGoodbye.py:97
+#: yali4/gui/ScrGoodbye.py:72
+msgid "Running post install operations.."
+msgstr ""
+
+#: yali4/gui/ScrGoodbye.py:99
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Systeem herstarten. Ogenblik geduld!</b>"
 
-#: yali4/gui/ScrGoodbye.py:124
+#: yali4/gui/ScrGoodbye.py:126
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
@@ -1098,8 +1134,8 @@ msgstr ""
 "<p>Druk op de Herstart knop om uw systeem opnieuw op te starten.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:130 yali4/gui/ScrSummary.py:69
-#: yali4/installer.py:606
+#: yali4/gui/ScrGoodbye.py:132 yali4/gui/ScrSummary.py:69
+#: yali4/installer.py:642
 msgid "Reboot"
 msgstr "Herstart"
 
@@ -1153,29 +1189,29 @@ msgstr ""
 "Veel plezier!\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:112
+#: yali4/gui/ScrInstall.py:114
 msgid "Packages are being installed.."
 msgstr "Pakketten worden geïnstalleerd.."
 
-#: yali4/gui/ScrInstall.py:127
+#: yali4/gui/ScrInstall.py:129
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Installeren: %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:132
+#: yali4/gui/ScrInstall.py:134
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Configureren pakket: %s"
 
-#: yali4/gui/ScrInstall.py:168
+#: yali4/gui/ScrInstall.py:170
 msgid "Creating baselayout for your system!"
 msgstr "Aanmaken basisindeling van uw systeem!"
 
-#: yali4/gui/ScrInstall.py:177
+#: yali4/gui/ScrInstall.py:179
 msgid "Configuring packages.."
 msgstr "Configureren pakketten.."
 
-#: yali4/gui/ScrInstall.py:200
+#: yali4/gui/ScrInstall.py:202
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1302,7 +1338,8 @@ msgstr ""
 msgid ""
 "It seems that you don't have the required disk space (min. %s) for Pardus "
 "installation."
-msgstr "U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
+msgstr ""
+"U heeft niet voldoende schijfruimte (min. %s) on Pardus te installeren."
 
 #: yali4/gui/ScrPartitionManual.py:31
 msgid "Manual Partitioning"
@@ -1431,19 +1468,19 @@ msgstr "Hostnaam instellingen"
 msgid "Hostname is set as <b>%s</b>"
 msgstr "Hostnaam is ingesteld als <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:129
+#: yali4/gui/ScrSummary.py:130
 msgid "Partition Settings"
 msgstr "Partitie instellingen"
 
-#: yali4/gui/ScrSummary.py:131
+#: yali4/gui/ScrSummary.py:132
 msgid "Automatic Partitioning selected."
 msgstr "Automatisch partitioneren geselecteerd."
 
-#: yali4/gui/ScrSummary.py:145
+#: yali4/gui/ScrSummary.py:146
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatisch partitioneren (grootte aanpassen methode) geselecteerd."
 
-#: yali4/gui/ScrSummary.py:164
+#: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
@@ -1452,7 +1489,7 @@ msgstr ""
 "Partitie <b>%(partition)s - %(currentFs)s</b> <b>in grootte aangepast</b> "
 "naar <b>%(resizeTo)s MB</b>, oude grootte was <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/ScrSummary.py:165
+#: yali4/gui/ScrSummary.py:167
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
@@ -1461,34 +1498,44 @@ msgstr ""
 "Partitie <b>%(newPartition)s</b> <b>toegevoegd</b> aan apparaat <b>%(device)"
 "s</b> met <b>%(size)s MB</b> als <b>%(fs)s</b>."
 
-#: yali4/gui/ScrSummary.py:166
+#: yali4/gui/ScrSummary.py:168
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr ""
+"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
-#: yali4/gui/ScrSummary.py:181
+#: yali4/gui/ScrSummary.py:183
 msgid "Bootloader Settings"
 msgstr "Bootlader instellingen"
 
-#: yali4/gui/ScrSummary.py:182
+#: yali4/gui/ScrSummary.py:184
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr "GRUB zal geïnstalleerd worden op <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:184
+#: yali4/gui/ScrSummary.py:186
 msgid "GRUB will not be installed"
 msgstr "GRUB zal niet geïnstalleerd worden"
 
-#: yali4/gui/ScrSummary.py:215 yali4/gui/ScrSummary.py:223
-#: yali4/gui/ScrSummary.py:237
+#: yali4/gui/ScrSummary.py:208
+msgid ""
+"<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
+"your partition,<br>\n"
+"                   rendering your data unreachable. <br>\n"
+"                   Make sure that you have a backup for this partition.<br>\n"
+"                   <b>Note that this operation cannot be undone ! </b></p>"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:235 yali4/gui/ScrSummary.py:243
+#: yali4/gui/ScrSummary.py:257
 msgid "Formatting ..."
 msgstr "Formatteren ..."
 
-#: yali4/gui/ScrSummary.py:220
+#: yali4/gui/ScrSummary.py:240
 msgid "Resizing ..."
 msgstr "Grootte aanpassen ..."
 
-#: yali4/gui/ScrSummary.py:230 yali4/installer.py:257
+#: yali4/gui/ScrSummary.py:250 yali4/installer.py:265
 msgid "Writing disk tables ..."
 msgstr "Schrijven schijftabellen ..."
 
@@ -1549,7 +1596,8 @@ msgstr ""
 msgid ""
 "<font color=\"#FF6D19\">Don't use your user name or name as a password.</"
 "font>"
-msgstr "<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Gebruik uw gebruikersnaam niet als wachtwoord.</font>"
 
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
@@ -1573,7 +1621,8 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
-msgstr "<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Uw echte naam bevat niet toegestane tekens.</font>"
 
 #: yali4/gui/ScrUsers.py:241
 msgid "Update User"
@@ -1657,20 +1706,20 @@ msgstr "Terugloop:"
 msgid "YALI Is Working..."
 msgstr "YALI werkt..."
 
-#: yali4/installer.py:141
+#: yali4/installer.py:142
 msgid "Starting for CD Check"
 msgstr "Starten voor CD controle"
 
-#: yali4/installer.py:159
+#: yali4/installer.py:160
 #, python-format
 msgid "Checking: %s"
 msgstr "Controle: %s"
 
-#: yali4/installer.py:163
+#: yali4/installer.py:166
 msgid "Check Failed"
 msgstr "Controle mislukt"
 
-#: yali4/installer.py:164
+#: yali4/installer.py:167
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
@@ -1678,7 +1727,7 @@ msgstr ""
 "<b><p>Integriteit controle voor pakketten mislukt.                         "
 "Het lijkt erop dat de installatie CD defect is.</p></b>"
 
-#: yali4/installer.py:167
+#: yali4/installer.py:171
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
@@ -1686,26 +1735,66 @@ msgstr ""
 "<font color=\"#FFF\"><b>Controle succesvol. U kunt doorgaan naar het "
 "volgende scherm. </b></font>"
 
-#: yali4/installer.py:181
+#: yali4/installer.py:189
 msgid "Setting time settings.."
 msgstr "Instellen tijd.."
 
-#: yali4/installer.py:208
+#: yali4/installer.py:216
 msgid "Disk analyze started.."
 msgstr "Schijf analyse gestart.."
 
-#: yali4/installer.py:313
+#: yali4/installer.py:321
 msgid "Resize Finished ..."
 msgstr "Grootte aanpassen beëindigd ..."
 
-#: yali4/installer.py:325
+#: yali4/installer.py:333
 msgid "Creating new partition ..."
 msgstr "Maak nieuwe partitie ..."
 
-#: yali4/installer.py:438
+#: yali4/installer.py:446
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "De thuismap van gebruiker <b>%s</b> wordt klaargemaakt.."
+
+#: yali4/installer.py:518
+#, fuzzy
+msgid "Setting Hostname..."
+msgstr "Instellen tijd.."
+
+#: yali4/installer.py:519
+#, fuzzy
+msgid "Setting TimeZone..."
+msgstr "Instellen tijd.."
+
+#: yali4/installer.py:520
+msgid "Setting Root Password..."
+msgstr ""
+
+#: yali4/installer.py:521
+msgid "Adding Users..."
+msgstr ""
+
+#: yali4/installer.py:522
+#, fuzzy
+msgid "Writing Console Data..."
+msgstr "Schrijven schijftabellen ..."
+
+#: yali4/installer.py:523
+msgid "Copy Pisi index..."
+msgstr ""
+
+#: yali4/installer.py:524
+msgid "Migrating X.org Configuration..."
+msgstr ""
+
+#: yali4/installer.py:526
+msgid "Setting misc. package configurations..."
+msgstr ""
+
+#: yali4/installer.py:527
+#, fuzzy
+msgid "Installing BootLoader..."
+msgstr "Installeren systeem..."
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -1882,4 +1971,3 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiveer partitie"
-

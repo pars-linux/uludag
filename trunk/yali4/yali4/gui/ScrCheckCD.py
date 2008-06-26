@@ -40,15 +40,18 @@ You can check if the packages included in the installation CD are saved correctl
         self.ui = Ui_CheckCDWidget()
         self.ui.setupUi(self)
 
-        self.connect(self.ui.checkButton, SIGNAL("clicked()"),
-                     self.slotCheckCD)
+        self.connect(self.ui.checkButton, SIGNAL("clicked()"),self.slotCheckCD)
         if ctx.consts.lang == "tr":
             self.ui.progressBar.setFormat("%%p")
 
     def slotCheckCD(self):
-        self.ui.checkButton.setEnabled(False)
-        self.ui.checkLabel.setText(_('<font color="#FF6D19">Please wait while checking CD.</font>'))
-
-        # Check the CD
-        ctx.yali.checkCD(self.ui)
+        if ctx.yali.checkCDStop == True:
+            ctx.yali.checkCDStop = False
+            self.ui.checkLabel.setText(_('<font color="#FFF">Please wait while checking CD.</font>'))
+            self.ui.checkButton.setText(_("Stop Checking"))
+            # Check the CD
+            ctx.yali.checkCD(self.ui)
+        else:
+            ctx.yali.checkCDStop = True
+            self.ui.checkButton.setText(_("Check CD Integrity"))
 

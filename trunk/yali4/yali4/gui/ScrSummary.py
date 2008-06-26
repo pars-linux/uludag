@@ -280,5 +280,6 @@ Here you can see your install options and look at them again before installation
         ctx.debugger.log("Pardus Root is : %s" % _ins_part)
         ctx.debugger.log("GRUB will be installing to : %s" % ctx.installData.bootLoaderDev)
 
+        ctx.mainScreen.moveInc = 1
         return True
 

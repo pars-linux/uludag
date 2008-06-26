@@ -124,15 +124,16 @@ class Yali:
         self.screens = self._screens[install_type]
         self.install_type = install_type
         self.info = InformationWindow(_("YALI Is Working..."))
-        self.yimirta = Yimirta(self.info)
-        self.yimirta.stop()
+        # self.yimirta = Yimirta(self.info)
+        # self.yimirta.stop()
         self.info.hide()
+        self.checkCDStop = True
 
-    def toggleYimirta(self):
-        if self.yimirta.isVisible():
-            self.yimirta.stop()
-        else:
-            self.yimirta.start()
+    # def toggleYimirta(self):
+    #     if self.yimirta.isVisible():
+    #         self.yimirta.stop()
+    #     else:
+    #         self.yimirta.start()
 
     def checkCD(self, rootWidget):
         ctx.mainScreen.disableNext()
@@ -157,6 +158,8 @@ class Yali:
             cur += 1
             ctx.debugger.log("Checking %s " % pkg_name)
             self.info.updateMessage(_("Checking: %s") % pkg_name)
+            if self.checkCDStop:
+                continue
             if yali4.pisiiface.check_package_hash(pkg_name):
                 rootWidget.progressBar.setValue(cur)
             else:
@@ -164,7 +167,12 @@ class Yali:
                                _("<b><p>Integrity check for packages failed.\
                                   It seems that installation CD is broken.</p></b>"))
 
-        rootWidget.checkLabel.setText(_('<font color="#FFF"><b>Check succeeded. You can proceed to the next screen.</b></font>'))
+        if not self.checkCDStop:
+            rootWidget.checkLabel.setText(_('<font color="#FFF"><b>Check succeeded. You can proceed to the next screen.</b></font>'))
+            rootWidget.checkButton.setText(_("Check CD Integrity"))
+        else:
+            rootWidget.checkLabel.setText("")
+            rootWidget.progressBar.setValue(0)
 
         yali4.pisiiface.remove_repo(ctx.consts.cd_repo_name)
 
@@ -507,16 +515,16 @@ class Yali:
 
         rootWidget.steps.setOperations([{"text":"Trying to connect DBUS...","operation":connectToDBus}])
 
-        steps = [{"text":"Setting Hostname...","operation":setHostName},
-                 {"text":"Setting TimeZone...","operation":yali4.postinstall.setTimeZone},
-                 {"text":"Setting Root Password...","operation":setRootPassword},
-                 {"text":"Adding Users...","operation":addUsers},
-                 {"text":"Writing Console Data...","operation":writeConsoleData},
-                 {"text":"Copy Pisi index...","operation":copyPisiIndex},
-                 {"text":"Migrating X.org Configuration...","operation":migrateXorgConf}]
+        steps = [{"text":_("Setting Hostname..."),"operation":setHostName},
+                 {"text":_("Setting TimeZone..."),"operation":yali4.postinstall.setTimeZone},
+                 {"text":_("Setting Root Password..."),"operation":setRootPassword},
+                 {"text":_("Adding Users..."),"operation":addUsers},
+                 {"text":_("Writing Console Data..."),"operation":writeConsoleData},
+                 {"text":_("Copy Pisi index..."),"operation":copyPisiIndex},
+                 {"text":_("Migrating X.org Configuration..."),"operation":migrateXorgConf}]
 
-        stepsBase = [{"text":"Setting misc. package configurations...","operation":setPackages},
-                     {"text":"Installing BootLoader...","operation":self.installBootloader}]
+        stepsBase = [{"text":_("Setting misc. package configurations..."),"operation":setPackages},
+                     {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
 
         if self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
             rootWidget.steps.setOperations(steps)
