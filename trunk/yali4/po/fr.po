@@ -1,4 +1,4 @@
-# translation of fr.po to French
+# translation of fr.po to
 # translation of tr.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -6,14 +6,15 @@
 # Barış Metin <baris@uludag.org.tr>, 2005.
 # Atilla Aktuna <aktuna@gmail.com>, 2006.
 # Amine Chadly <amine.chadly@gmail.com>, 2007.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 13:59+0300\n"
-"PO-Revision-Date: 2007-10-19 22:35+0200\n"
-"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
-"Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
+"PO-Revision-Date: 2008-06-26 15:50+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,20 +31,19 @@ msgstr "Form1"
 msgid ""
 "It seems there is more than one partition for resizing. In this case you can "
 "select a partition from the list below or YALI will select one."
-msgstr ""
+msgstr "Il semble qu'il existe plusieurs partitions pour le redimensionnement. Vous pouvez sélectionner une de ces partitions dans la liste ci-dessous ou YALI choisira une."
 
 #: yali4/gui/Ui/autopartquestion.py:66
 msgid "Choose the best target for resizing (recommended)"
-msgstr ""
+msgstr "Choisit la partition cible la plus convenante pour le redimensionnement(recommandé)"
 
 #: yali4/gui/Ui/autopartquestion.py:67
 msgid "I will choose the target"
-msgstr ""
+msgstr "Je vais choisir la partition cible moi-meme"
 
 #: yali4/gui/Ui/autopartquestion.py:68
-#, fuzzy
 msgid "Use Selected"
-msgstr "Supprimer l'utilisateur sélectionné"
+msgstr "Utilise ce qui est choisi"
 
 #: yali4/gui/Ui/autopartwidget.py:99 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
@@ -64,41 +64,36 @@ msgid ""
 "size:12pt; font-weight:600;\">1. Select the partitioning method:</span></p></"
 "body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">1. Choisir la méthode de partitionnement:</span></p></"
+"body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:104
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
-msgstr ""
+msgstr "Ici, vous pouvez sélectionner une des méthodes de partitionnement et la disque qui va etre partitionnée.<br>La liste des disques sera mise à jour selon la méthode choisie."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
-msgstr ""
+msgid "Automatically partition try to use free space or resize current partitions"
+msgstr "Partitionner automatiquement en utilisant l'espace disponible ou en redimensionnant les partitions courantes."
 
 #: yali4/gui/Ui/autopartwidget.py:106
-#, fuzzy
 msgid "Automatically partition and format selected disk!"
-msgstr ""
-"Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
+msgstr "Partitionner et formatter automatiquement la disque choisie!"
 
 #: yali4/gui/Ui/autopartwidget.py:107
-#, fuzzy
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
-msgstr ""
-"<b>\n"
-"<p>Cette opération utilisera entièrement votre disque dur pour "
-"l'installation\n"
-"de Pardus. Toutes les données actuellement sur le disque sélectionné seront "
-"perdues.</p>\n"
-"\n"
-"<p>Après vous êtes assuré d'avoir fait une copie de sauvegarde\n"
-"de vos données, ceci est généralement\n"
-"une manière simple et sûre d'installer Pardus.</p>\n"
-"</b>\n"
+msgstr "Cette opération va effacer votre disque. Toutes les données sur le disque seront perdues!"
 
 #: yali4/gui/Ui/autopartwidget.py:108
 msgid "No, I'll partition my disk manually."
@@ -113,8 +108,7 @@ msgid "If there is no suitable partition this option will be disabled"
 msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:112
@@ -197,7 +191,7 @@ msgstr "Vérifier l'intégrité du CD."
 
 #: yali4/gui/Ui/datetimewidget.py:82
 msgid "The current time"
-msgstr ""
+msgstr "L'heure actuelle"
 
 #: yali4/gui/Ui/datetimewidget.py:83
 msgid "The analog clock widget displays the current time."
@@ -253,7 +247,7 @@ msgstr "Sélectionnez la disposition du clavier de votre choix."
 
 #: yali4/gui/Ui/keyboardwidget.py:61
 msgid "Test selected keyboard:"
-msgstr "Tester la disposition du clavier :"
+msgstr "Tester le clavier choisi:"
 
 #: yali4/gui/Ui/main.py:156
 msgid "Yali4"
@@ -261,7 +255,7 @@ msgstr ""
 
 #: yali4/gui/Ui/main.py:441
 msgid "Screen Name"
-msgstr ""
+msgstr "Nom de l'écran"
 
 #: yali4/gui/Ui/main.py:443
 msgid "Details about the screen"
@@ -273,32 +267,31 @@ msgstr "Notes de publication"
 
 #: yali4/gui/Ui/main.py:445
 msgid "Toggle Help"
-msgstr ""
+msgstr "Montrer/Cacher l'aide"
 
 #: yali4/gui/Ui/main.py:446
 msgid "Previous Screen"
-msgstr ""
+msgstr "Écran Précédente"
 
 #: yali4/gui/Ui/main.py:447
 msgid "Back"
-msgstr ""
+msgstr "Précédent"
 
 #: yali4/gui/Ui/main.py:448
 msgid "Next Screen"
-msgstr ""
+msgstr "Écran Suivante"
 
 #: yali4/gui/Ui/main.py:449
 msgid "Next"
-msgstr ""
+msgstr "Suivant"
 
 #: yali4/gui/Ui/partedit.py:144
 msgid "Partition 1 on FUJISTU - /dev/sda1"
 msgstr ""
 
 #: yali4/gui/Ui/partedit.py:145
-#, fuzzy
 msgid "Device :"
-msgstr "Périphérique"
+msgstr "Disque:"
 
 #: yali4/gui/Ui/partedit.py:146
 msgid "/dev/sda1"
@@ -310,36 +303,31 @@ msgstr "Supprimer la partition"
 
 #: yali4/gui/Ui/partedit.py:148
 msgid "Resize Partition"
-msgstr "Re-dimensionner la partition"
+msgstr "Redimensionner la partition"
 
 #: yali4/gui/Ui/partedit.py:149
-#, fuzzy
 msgid "Use :"
-msgstr "Utilisateurs:"
+msgstr "Utiliser comme :"
 
 #: yali4/gui/Ui/partedit.py:150
-#, fuzzy
 msgid "Size :"
-msgstr "Taille"
+msgstr "Taille : "
 
 #: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:89
 msgid " MB"
 msgstr ""
 
 #: yali4/gui/Ui/partedit.py:152
-#, fuzzy
 msgid "Format :"
-msgstr "Formatter?"
+msgstr "Format :"
 
 #: yali4/gui/Ui/partedit.py:153
-#, fuzzy
 msgid "Yes, format this partition"
-msgstr "Formatter cette partion"
+msgstr "Oui, formatter cette partition"
 
 #: yali4/gui/Ui/partedit.py:154
-#, fuzzy
 msgid "File System :"
-msgstr "Système de fichier"
+msgstr "Système de Fichier :"
 
 #: yali4/gui/Ui/partedit.py:155
 msgid "Ext3"
@@ -355,11 +343,11 @@ msgstr ""
 
 #: yali4/gui/Ui/partedit.py:158
 msgid "Changes will be applied when you finish.."
-msgstr ""
+msgstr "Les changements seront appliquées à la fin de l'opération.."
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Refresh Disks"
-msgstr ""
+msgstr "Rafraîchir les disques"
 
 #: yali4/gui/Ui/partedit.py:160
 msgid "Reset All Changes"
@@ -396,6 +384,27 @@ msgid ""
 "weight:600;\"> </span><span style=\" font-weight:600;\">Note that this "
 "operation cannot be undone</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">Ces réglages seront appliquées quand vous cliquez \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Redimensionner</span><span "
+"style=\" color:#ffffff;\">\"Si vous voulez retourner en arrière cliquez \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Annuler</span><span "
+"style=\" color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Warning:</span> La redimensionnement peut endommager votre partition, ce qui va rendre vos données inaccessibles. Soyez sûr d'avoir une sauvegarde de cette partition.<span style=\" font-"
+"weight:600;\"> </span><span style=\" font-weight:600;\">Notez bien que cette opération est irréversible.</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
@@ -404,7 +413,7 @@ msgstr "Annuler"
 
 #: yali4/gui/Ui/partresize.py:91
 msgid "Resize"
-msgstr "Re-dimensionner"
+msgstr "Redimensionner"
 
 #: yali4/gui/Ui/rootpasswidget.py:171
 msgid ""
@@ -414,27 +423,23 @@ msgid ""
 "for privacy reasons.</p>"
 msgstr ""
 "<p align=\"left\">L'administrateur du système (root) est responsable "
-"d'opérations de maintenance du système importantes. Veuillez choisir un mot "
-"de passe pour cet utilisateur spécial et ne pas l'oublier. Pour des raisons "
-"de sécurité, veuillez ne pas inscrire ce mot de passe ailleurs,</p>"
+"d'opérations importantes de maintenance du système. Veuillez choisir un mot de passe pour cet utilisateur spécial et ne pas l'oublier. Pour des raisons de sécurité, veuillez ne pas écrire ce mot de passe ailleurs,</p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
-#, fuzzy
 msgid "System administrator password:"
-msgstr "Mot de passe de l'administrateur du système (seconde fois):"
+msgstr "Mot de passe pour l'administrateur:"
 
 #: yali4/gui/Ui/rootpasswidget.py:173
 msgid "System administrator password (again):"
-msgstr "Mot de passe de l'administrateur du système (seconde fois):"
+msgstr "Mot de passe pour l'administrateur(seconde fois):"
 
 #: yali4/gui/Ui/rootpasswidget.py:176
 msgid "Hostname:"
 msgstr "Nom d'hôte:"
 
 #: yali4/gui/Ui/setupuserswidget.py:153
-#, fuzzy
 msgid "New User"
-msgstr "nouvel utilisateur"
+msgstr "Nouveau Utilisateur"
 
 #: yali4/gui/Ui/setupuserswidget.py:154
 msgid "User Name:"
@@ -458,7 +463,7 @@ msgstr "Créer un utilisateur"
 
 #: yali4/gui/Ui/setupuserswidget.py:159
 msgid "Give administrator privileges to this user"
-msgstr "Donner les privilèges d'administration à cet utilisateur"
+msgstr "Donner les privilèges d'administrateur à cet utilisateur"
 
 #: yali4/gui/Ui/setupuserswidget.py:162
 msgid "Users:"
@@ -474,11 +479,11 @@ msgstr "Utilisateur de Login Automatique :"
 
 #: yali4/gui/Ui/setupuserswidget.py:165
 msgid "Auto Login Disabled"
-msgstr "Login Automatique Désactivé"
+msgstr "Login Automatique Désactivé."
 
 #: yali4/gui/Ui/summarywidget.py:60 yali4/gui/ScrSummary.py:212
 msgid "Begin Install"
-msgstr ""
+msgstr "Lancer l'installation"
 
 #: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
@@ -505,18 +510,19 @@ msgstr "J'accepte!"
 
 #: yali4/gui/Ui/welcomewidget.py:95
 msgid "Don't Accept!"
-msgstr "Non, Je n'accepte pas!"
+msgstr "Je n'accepte pas!"
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
 msgstr "Debug"
 
 #: yali4/gui/descSlide.py:18
+#, fuzzy
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
-msgstr ""
+msgstr "Bienvenue! Notre outil amélioré YALI va vous guider pendant l'installation de Pardus 2008. Avec l'outil de partitionnement intelligent, \n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -682,8 +688,7 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:316
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 
 #: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:143
@@ -833,8 +838,7 @@ msgstr "<font color=\"#FF6D19\">Le mot de passe est trop court !</font>"
 #: yali4/gui/ScrAdmin.py:128
 #, fuzzy
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
+msgstr "<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
 
 #: yali4/gui/ScrAdmin.py:133
 #, fuzzy
@@ -911,7 +915,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
-msgstr ""
+msgstr "Vérifier votre support"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
@@ -929,23 +933,20 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
-#, fuzzy
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Veuillez patienter lors de la vérification du CD.</"
-"font>"
+msgstr "<font color=\"#FFF\">Veuillez patienter pendant la vérification du CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
-msgstr ""
+msgstr "Arrêter la vérification"
 
 #: yali4/gui/ScrDateTime.py:27
 msgid "Set your timezone"
-msgstr ""
+msgstr "Configurer votre fuseau horaire"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "You can change your timezone, time or date settings..."
-msgstr ""
+msgstr "Vous pouvez changer votre fuseau horaire et les paramètres de date..."
 
 #: yali4/gui/ScrDateTime.py:30
 #, fuzzy
@@ -1013,14 +1014,11 @@ msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:72
 msgid "Running post install operations.."
-msgstr ""
+msgstr "Exécution des opérations post install est en cours.."
 
 #: yali4/gui/ScrGoodbye.py:100
-#, fuzzy
 msgid "<b>Rebooting system. Please wait!</b>"
-msgstr ""
-"<b><font size=\"+2\" color=\"#FF6D19\">Le système redémarre.Veuillez "
-"patienter!</font></b>"
+msgstr "<b>Redémarration en cours. Patientez s'il vous plaît.</b>"
 
 #: yali4/gui/ScrGoodbye.py:127
 msgid ""
@@ -1029,7 +1027,7 @@ msgid ""
 "</b>\n"
 msgstr ""
 "<b>\n"
-"<p>Cliquez le bouton 'Redémarrer' pour redémarrer le système!</p>\n"
+"<p>Cliquez le bouton 'Redémarrer' pour redémarrer le système.</p>\n"
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:133 yali4/gui/ScrSummary.py:69
@@ -1038,13 +1036,12 @@ msgid "Reboot"
 msgstr "Redémarrer"
 
 #: yali4/gui/ScrInstall.py:60
-#, fuzzy
 msgid "Installing system..."
-msgstr "Installation du système"
+msgstr "Installation du système..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
+msgstr "L'installation dure approximativement 30 minutes..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1362,14 +1359,12 @@ msgstr "Partitions:"
 #: yali4/gui/ScrSummary.py:132
 #, fuzzy
 msgid "Automatic Partitioning selected."
-msgstr ""
-"Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
+msgstr "Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
 
 #: yali4/gui/ScrSummary.py:146
 #, fuzzy
 msgid "Automatic Partitioning (resize method) selected."
-msgstr ""
-"Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
+msgstr "Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
 
 #: yali4/gui/ScrSummary.py:166
 #, python-format
@@ -1435,7 +1430,7 @@ msgstr "nouvel utilisateur"
 
 #: yali4/gui/ScrUsers.py:33
 msgid "Create users to use Pardus..."
-msgstr ""
+msgstr "Créer les utilisateur pour Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
 msgid ""
@@ -1459,6 +1454,11 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Configuration des utilisateurs</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Pardus 2008 permet plusieurs utilisateurs d'utiliser la même partition.\n"
 
 #: yali4/gui/ScrUsers.py:145
 msgid ""
@@ -1470,8 +1470,7 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
+msgstr "<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
 
 #: yali4/gui/ScrUsers.py:151
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
@@ -1501,12 +1500,11 @@ msgstr "Mettre à jour l'utilisateur"
 
 #: yali4/gui/ScrWelcome.py:30
 msgid "Welcome !! "
-msgstr ""
+msgstr "Bienvenue!"
 
 #: yali4/gui/ScrWelcome.py:31
-#, fuzzy
 msgid "Welcome to the Pardus installer..."
-msgstr "Installer sur la partition où Pardus est installé."
+msgstr "Bienvenue à l'outil d'installation de Pardus"
 
 #: yali4/gui/ScrWelcome.py:32
 msgid ""
@@ -1524,13 +1522,25 @@ msgid ""
 "pressing the Next button.</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Welcome !</font>\n"
+"<font size=\"+1\"><p>Welcome to Pardus 2008 that contains many easy-to-use "
+"software components. You can do everything you need to, including, but not "
+"limited to, connecting to the Internet, creating documents, playing games, "
+"listening to music using Pardus 2008.</p>\n"
+"<p>This application will help you with the installation of Pardus 2008 to "
+"your computer in few and easy steps and then do what is necessary to "
+"identify and configure your hardware. We advise you to backup your data in "
+"your disk(s) before starting with the installation.</p>\n"
+"<p>You can start the installation process (and step in on a free world) by "
+"pressing the Next button.</p>\n"
+"</font>\n"
 
 #: yali4/gui/YaliDialog.py:99
 msgid "Warning"
 msgstr "Attention"
 
 #: yali4/gui/YaliDialog.py:123
-#, fuzzy
 msgid ""
 "<b>\n"
 "<p>This action will start installing Pardus on<br>\n"
@@ -1538,8 +1548,7 @@ msgid ""
 "</b>\n"
 msgstr ""
 "<b>\n"
-"<p>Cette opération marque le début de l'installation de Pardus sur \n"
-"votre système et va formatter la partition sélectionnée.</p>\n"
+"<p>Cette opération va débuter l'installation de Pardus en formatant la partition sélectionnée.</p>\n"
 "</b>\n"
 
 #: yali4/gui/YaliDialog.py:133
@@ -1548,11 +1557,11 @@ msgstr "O.K. Continuer"
 
 #: yali4/gui/YaliWindow.py:48 yali4/gui/YaliWindow.py:61
 msgid "Show Help"
-msgstr ""
+msgstr "Montrer l'aide"
 
 #: yali4/gui/YaliWindow.py:64
 msgid "Hide Help"
-msgstr ""
+msgstr "Cacher l'aide"
 
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
@@ -1564,104 +1573,93 @@ msgstr "Pile d'exécution:"
 
 #: yali4/installer.py:126
 msgid "YALI Is Working..."
-msgstr ""
+msgstr "YALI est en exécution..."
 
 #: yali4/installer.py:142
 msgid "Starting for CD Check"
-msgstr ""
+msgstr "Vérification d'intégrité du CD est en cours."
 
 #: yali4/installer.py:160
 #, python-format
 msgid "Checking: %s"
-msgstr ""
+msgstr "%s est vérifié"
 
 #: yali4/installer.py:166
 msgid "Check Failed"
 msgstr "La vérification a échoué"
 
 #: yali4/installer.py:167
-#, fuzzy
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
 msgstr ""
-"<b>\n"
-"<p>La vérification d'intégrité des paquets a échoué. Il semblerait que le CD "
-"d'installation soit défectueux.</p>\n"
-"</b>\n"
+"<b><p>La vérification d'intégrité des paquets a échoué.                                  "
+"Il semble que le CD d'installation est endommagé.</p></b>"
 
 #: yali4/installer.py:171
-#, fuzzy
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
 msgstr ""
-"<font color=\"#257216\">La vérification est terminée avec succès. Vous "
-"pouvez passer à l'écran suivant.</font>"
+"<font color=\"#FFF\"><b>La vérification est terminée avec succès. Vous "
+"pouvez passer à l'écran suivante.</b></font>"
 
 #: yali4/installer.py:189
-#, fuzzy
 msgid "Setting time settings.."
-msgstr "Établissement du nom d'hôte..."
+msgstr "Configuration des paramètres"
 
 #: yali4/installer.py:216
 msgid "Disk analyze started.."
-msgstr ""
+msgstr "Analyse du disque en cours.."
 
 #: yali4/installer.py:321
 msgid "Resize Finished ..."
-msgstr ""
+msgstr "Redimensionnement est terminé..."
 
 #: yali4/installer.py:333
-#, fuzzy
 msgid "Creating new partition ..."
-msgstr "Créer une nouvelle partition"
+msgstr "Création d'une nouvelle partition en cours..."
 
 #: yali4/installer.py:446
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
-msgstr ""
+msgstr "Préparation du répertoire de l'utilisateur <b>%s</b> est en cours.."
 
 #: yali4/installer.py:516
-#, fuzzy
 msgid "Trying to connect DBUS..."
-msgstr "Tentative de connexion au Démon COMAR en cours..."
+msgstr "Tentative de connexion au service DBUS..."
 
 #: yali4/installer.py:518
-#, fuzzy
 msgid "Setting Hostname..."
-msgstr "Établissement du mot de passe Root..."
+msgstr "Établissement du nom d'hôte..."
 
 #: yali4/installer.py:519
-#, fuzzy
 msgid "Setting TimeZone..."
-msgstr "Établissement du nom d'hôte..."
+msgstr "Établissement du fuseau horaire..."
 
 #: yali4/installer.py:520
 msgid "Setting Root Password..."
-msgstr "Établissement du mot de passe Root..."
+msgstr "Établissement du mot de passe root..."
 
 #: yali4/installer.py:521
 msgid "Adding Users..."
 msgstr "Ajout des utilisateurs..."
 
 #: yali4/installer.py:522
-#, fuzzy
 msgid "Writing Console Data..."
-msgstr "Écriture des données de Console..."
+msgstr "Écriture de l'information de console..."
 
 #: yali4/installer.py:523
 msgid "Copy Pisi index..."
-msgstr ""
+msgstr "Recopiage de l'index de Pisi..."
 
 #: yali4/installer.py:524
 msgid "Migrating X.org Configuration..."
 msgstr "Migration de la configuration de X.org..."
 
 #: yali4/installer.py:526
-#, fuzzy
 msgid "Setting misc. package configurations..."
-msgstr "Migration de la configuration de X.org..."
+msgstr "Configuration des autres paquets..."
 
 #: yali4/installer.py:527
 msgid "Installing BootLoader..."
@@ -1684,7 +1682,6 @@ msgid "English"
 msgstr "Anglais"
 
 #: yali4/localedata.py:40
-#, fuzzy
 msgid "English GB"
 msgstr "Anglais (GB)"
 
@@ -1841,434 +1838,6 @@ msgid "Swap"
 msgstr "Swap"
 
 #: yali4/partitiontype.py:74
-#, fuzzy
 msgid "Archive Partition"
-msgstr "Créer la partition"
+msgstr "Partition d'archive"
 
-#, fuzzy
-#~ msgid ""
-#~ "<b>\n"
-#~ "<p>This action will use your entire disk for Pardus installation and "
-#~ "<br>\n"
-#~ "all your present data on the selected disk will be lost.</p>\n"
-#~ "</b>\n"
-#~ msgstr ""
-#~ "<b>\n"
-#~ "<p>Cette opération utilisera entièrement votre disque dur pour "
-#~ "l'installation\n"
-#~ "de Pardus. Toutes les données actuellement sur le disque sélectionné "
-#~ "seront perdues.</p>\n"
-#~ "\n"
-#~ "<p>Après vous êtes assuré d'avoir fait une copie de sauvegarde\n"
-#~ "de vos données, ceci est généralement\n"
-#~ "une manière simple et sûre d'installer Pardus.</p>\n"
-#~ "</b>\n"
-
-#~ msgid ""
-#~ "<b>\n"
-#~ "<p>You have not defined an administrator!</p>\n"
-#~ "\n"
-#~ "<p>A user without administrative rights cannot complete system "
-#~ "maintenance \n"
-#~ "tasks. You are strongly encouraged to define an administrator user.</p>\n"
-#~ "\n"
-#~ "<p>Click \"Cancel\" to define an administrator user (recommended) or \"OK"
-#~ "\" to \n"
-#~ "go to next screen.</p>\n"
-#~ "</b>\n"
-#~ msgstr ""
-#~ "<b>\n"
-#~ "<p>Vous n'avez pas défini d'administrateur !</p>\n"
-#~ "\n"
-#~ "<p>Un utilisateur sans droits d'administration ne peut pas s'occuper des "
-#~ "tâches de \n"
-#~ "maintenance système. Nous vous encourageons fortement à définir un "
-#~ "utilisateur administrateur.</p>\n"
-#~ "\n"
-#~ "<p>Cliquez sur \"Annuler\" pour définir un utilisateur administrateur  "
-#~ "(recommandé) ou \"OK\" pour \n"
-#~ "passer à l'écran suivant.</p>\n"
-#~ "</b>\n"
-
-#~ msgid " What do you want to store in this partition? "
-#~ msgstr "Que voulez vous stocker dans cette partition?"
-
-#~ msgid "Pardus system files (mandatory)"
-#~ msgstr "Les fichiers systèmes de Pardus (obligatoire)"
-
-#~ msgid "User files (optional)"
-#~ msgstr "Les fichiers utilisateur (optionnel)"
-
-#~ msgid "Swap space (optional)"
-#~ msgstr "Espace de Swap (optionnel)"
-
-#~ msgid "Size (MB):"
-#~ msgstr "Taille (Mo):"
-
-#~ msgid "Use available free space"
-#~ msgstr "Utiliser tout l'espace disponible."
-
-#~ msgid "Format this partition"
-#~ msgstr "Formatter cette partion"
-
-#~ msgid "Create New Partition"
-#~ msgstr "Créer une nouvelle partition"
-
-#~ msgid "Edit"
-#~ msgstr "Éditer"
-
-#~ msgid "Delete Selected Partition"
-#~ msgstr "Supprimer la partition sélectionnée"
-
-#~ msgid ""
-#~ "\n"
-#~ "<font size=\"+2\">System administrator password and hostname</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "\n"
-#~ "<p>Please give a password for the system administrator (i.e root) for "
-#~ "your\n"
-#~ "system. This password should be unique and private, as it is used to \n"
-#~ "manage your desktop. Choose a password difficult to guess, but easy\n"
-#~ "to remember. \n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "The password may include upper and lower case characters, numbers and \n"
-#~ "punctuation marks. Do not use accented characters here.\n"
-#~ "</p>\n"
-#~ "\n"
-#~ "<p>\n"
-#~ "And also set the name that the computer will be identified to the network "
-#~ "it belongs. The hostname should be descriptive enough to describe the "
-#~ "computer.  \n"
-#~ "</p>\n"
-#~ "\n"
-#~ "<p>\n"
-#~ "Click Next button to proceed.\n"
-#~ "</p>\n"
-#~ "</font>\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<font size=\"+2\">Mot de passe de l'administrateur du système et nom "
-#~ "d'hôte</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>Veuillez choisir un mot de passe pour l'administrateur du système "
-#~ "(root). Ce \n"
-#~ "mot de passe doit être unique et privé, car utilisé pour gérer votre "
-#~ "station.\n"
-#~ "Choisissez un mot de passe difficile à deviner, mais facile  à "
-#~ "mémoriser.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Le mot de passe peut être composé de majuscules, de miniscules, de\n"
-#~ "chiffres et de marqueurs de ponctuation. N'utilisez pas de caractères\n"
-#~ "accentués à ce niveau\n"
-#~ "<p>\n"
-#~ "\n"
-#~ "<p>\n"
-#~ "Choisissez également un nom d'hôte avec lequel votre ordinateur sera "
-#~ "identifié dans le réseau auquel il appartient. Le nom d'hôte doit être "
-#~ "suffisamment descriptif afin de pouvoir identifier votre ordinateur.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Pour continuer, cliquez sur le bouton \"Suivant\"\n"
-#~ "</p>\n"
-#~ "</font>\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "<font size=\"+2\">Keyboard Setup</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Depending on your hardware or choice select a keyboard layout from the "
-#~ "list.\n"
-#~ "</p>\n"
-#~ "</font>\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<font size=\"+2\">Configuration du clavier</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Sélectionnez votre disposition de clavier dans la liste en fonction de "
-#~ "votre \n"
-#~ "périphérique ou de votre choix.\n"
-#~ "</p>\n"
-#~ "</font>\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "<font size=\"+2\">Partitioning your hard disk</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Pardus can be installed on a variety of hardware. You can install Pardus\n"
-#~ "on an empty disk or hard disk partition. <b>An installation will "
-#~ "automatically\n"
-#~ "destroy the previously saved information on selected partitions. </b>\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "In order to use Pardus, you must create one Linux filesystem (for the \n"
-#~ "system files), which is mandatory and a swap space \n"
-#~ "(for improved performance), which is optional. This swap space \n"
-#~ "is used whenever system needs more memory, but the system lacks it.\n"
-#~ "We advise you to allocate at least 4 GBs of hard disk area and \n"
-#~ "swap space (between 500 MB - 2 GB, according to your needs) for \n"
-#~ "convenience. A Linux partition size less than 3.5 GB is not allowed.\n"
-#~ "You may also optionally use another disk partition for storing \n"
-#~ "user files.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "You need to format a Linux partition, if it's used for the first time.\n"
-#~ "You can enable 'Use available free space' option, if the hard disk's \n"
-#~ "remaining space is to be used automatically.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "The partition table shows the device, size, partition type and\n"
-#~ "filesystem information. If the partition will be formatted during\n"
-#~ "Pardus installation stage, then the corresponding 'Format' \n"
-#~ "column will be enabled.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Please refer to Pardus Installing and Using Guide for more information\n"
-#~ "about disk partitioning.\n"
-#~ "</p>\n"
-#~ "</font>\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<font size=\"+2\">Partitionnement du disque dur</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Pardus peut être installé sur des matériels divers. Vous pouvez "
-#~ "installer\n"
-#~ "Pardus sur un disque dur vide ou sur une partition. <b>Toutes\n"
-#~ "les données présentes dans les partitions sélectionnées seront\n"
-#~ "automatiquement supprimées.</b> \n"
-#~ "</p> \n"
-#~ "<p> \n"
-#~ "Afin de pouvoir utiliser Pardus, vous devez obligatoirement créer un \n"
-#~ "système de fichier Linux (pour les fichiers systèmes) et un espace "
-#~ "d'échange swap optionnel (pour des performances optimales). Cet espace "
-#~ "fluctuant\n"
-#~ "est utilisé par le système lorsqu'il a besoin de mémoire, mais n'a plus "
-#~ "de\n"
-#~ "mémoire physique a sa disposition. Nous vous conseillons d'allouer au \n"
-#~ "moins 4Go d'espace disque pour le système de fichier et le swap (nous \n"
-#~ "vous suggérons de tailler entre 500Mo et 2Go en fonction de vos "
-#~ "besoins).\n"
-#~ " Aucune partition Linux de moins de 3.5 Go n'est autorisée. Vous avez\n"
-#~ "également l'option d'utiliser une autre partition du disque pour stocker "
-#~ "les \n"
-#~ "fichier utilisateurs. </p> \n"
-#~ "<p>\n"
-#~ "Vous devez absolument formater une partition Linux s'il s'agit de sa\n"
-#~ "première utilisation. Vous pouvez cocher l'option \n"
-#~ "'Utiliser tout l'espace disponible' si vous voulez allouer "
-#~ "automatiquement \n"
-#~ "tout l'espace libre d'un disque dur.</p>\n"
-#~ "<p>\n"
-#~ "La table de partitionnement montre le périphérique, la taille, \n"
-#~ "le type de partition ainsi que les propriétés du système de fichier.\n"
-#~ "La colonne correspondante 'Formater' sera cochée si la partition \n"
-#~ "sera formatée au cours du processus d'installation de Pardus.\n"
-#~ "</p>\n"
-#~ "<p> \n"
-#~ "Pour toute information concernant le partitionnement de disque dur,\n"
-#~ "veuillez consulter à ce propos le Guide d'installation et d'Utilisation "
-#~ "de\n"
-#~ "Pardus.</p> \n"
-#~ "</font>\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "<font size=\"+2\">User setup</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "Other than the system administrator user,\n"
-#~ "you can create a user account for your \n"
-#~ "daily needs, i.e reading your e-mail, surfing\n"
-#~ "on the web and searching for daily recipe\n"
-#~ "offerings. Usual password assignment\n"
-#~ "rules also apply here: This password should \n"
-#~ "be unique and private. Choose a password \n"
-#~ "difficult to guess, but easy to remember. \n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Click Next button to proceed.\n"
-#~ "</p>\n"
-#~ "</font>\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<font size=\"+2\">Gestion d'utilisateur</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>\n"
-#~ "İl est possible de définir des utilisateurs \n"
-#~ "autres que l'administrateur pour vos besoins \n"
-#~ "quotidiens i.e lire des e-mails, naviguer sur \n"
-#~ "le web, chercher les différentes recettes \n"
-#~ "cuisine du jour. Les règles habituelles de choix\n"
-#~ "de mot de passe s'applique ici aussi. Choisissez un mot de passe "
-#~ "difficile à deviner mais facile à retenir.\n"
-#~ "</p>\n"
-#~ "</p>\n"
-#~ "Pour continuer, cliquez sur le bouton \"Suivant\"\n"
-#~ "</p>\n"
-#~ "</font>\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "<font size=\"+2\">Welcome!</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p>Welcome to Pardus, your new and practical desktop with a handful \n"
-#~ "of applications tailored to your needs. With Pardus, you can \n"
-#~ "connect to internet, read your e-mails online, work with \n"
-#~ "documents, listen to music and play DVDs. Its advanced yet\n"
-#~ "easy interface will let you be more productive and efficient.\n"
-#~ "</p>\n"
-#~ "\n"
-#~ "<p>\n"
-#~ "This software will install Pardus on your computer,\n"
-#~ "without disrupting your previous documents and settings. However,\n"
-#~ "we advise you to make a backup before proceeding. \n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "The installer will identify your system's hardware and configure\n"
-#~ "it according to your needs. You will note the arrow keys on the\n"
-#~ "bottom of the screen: Use them to advance to next screen.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Have a fruitful experience with Pardus!\n"
-#~ "</p>\n"
-#~ "</font>\n"
-#~ msgstr ""
-#~ "\n"
-#~ "<font size=\"+2\">Bienvenue</font>\n"
-#~ "\n"
-#~ "<font size=\"+1\">\n"
-#~ "<p> Bienvenue sur Pardus votre nouveau bureau pratique composé \n"
-#~ " de nombreuses applications taillées pour vos besoins. Avec Pardus, vous\n"
-#~ "pouvez vous connecter à internet, lire vos e-mails en ligne,\n"
-#~ "éditer des documents, écouter de la musique, lire des DVDs.\n"
-#~ "Son interface puissante mais simple vous permettra d'être\n"
-#~ "plus productif et efficace nouveau, pratique et qui possède \n"
-#~ "plusieurs logiciels. Vous pouvez utiliser Pardus pour connecter \n"
-#~ "à internet, pour lire vos courriels, pour écouter de la musique, \n"
-#~ "pour travailler avec les documents, etc. Avec l'interface simple de "
-#~ "Pardus \n"
-#~ "vous allez être plus productif et efficace.\n"
-#~ "</p>\n"
-#~ "\n"
-#~ "<p>\n"
-#~ "Ce logiciel va installer Pardus sur votre ordinateur,\n"
-#~ "sans interférer avec vos documents antérieurs ni vos paramétrages.\n"
-#~ "Toutefois nous vous conseillons de faire une copie de sauvegarde\n"
-#~ "avec de poursuivre.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Le système d'installation va identifier vos périphériques et les \n"
-#~ "configurer en fonction de vos besoins. Les flèches que vous \n"
-#~ "pouvez remarquer en bas de l'écran vous permettront de \n"
-#~ "passer à l'écran suivant.\n"
-#~ "</p>\n"
-#~ "<p>\n"
-#~ "Nous vous souhaitons une utilisation fructueuse de Pardus!\n"
-#~ "</p>\n"
-#~ "</font>\n"
-
-#~ msgid "<font color=\"#FF6D19\">Caps Lock is on!</font>"
-#~ msgstr ""
-#~ "<font color=\"#FF6D19\">le Verrouillage Majuscules est activé !</font>"
-
-#~ msgid "Configuring packages for your system!"
-#~ msgstr "Configuration de paquets pour votre système!"
-
-#~ msgid "pardus"
-#~ msgstr "pardus"
-
-#~ msgid "Dutch (US)"
-#~ msgstr "Hollandais (US)"
-
-#~ msgid ""
-#~ "<font size=\"+1\"><b>Select the partitioning method:</b></font>\n"
-#~ "\n"
-#~ "<p>Below, you can select an hard disk for automatic partitioning.\n"
-#~ "Selected disk will be used for Pardus installation.</p>\n"
-#~ "\n"
-#~ "<p><font color=\"#FF6D19\"><b><u>WARNING:</u></b>\n"
-#~ "Automatic partitioning will use your entire disk for Pardus "
-#~ "installation.\n"
-#~ "All data on the selected disk will be lost!</font></p>"
-#~ msgstr ""
-#~ "<font size=\"+1\"><b>Sélectionner la méthode de Partitionnement</b></"
-#~ "font>\n"
-#~ "\n"
-#~ "<p> Vous pouvez choisir ci-dessous un disque dur pour un partitionnement "
-#~ "automatique.\n"
-#~ "Le disque dur sélectionné sera utilisé pour l'installation de Pardus.</"
-#~ "p>\n"
-#~ "<p><font color=\"#FF6D19\"><b><u>ATTENTION:</u></b>\n"
-#~ "Le partitionnement automatique utilisera entièrement le disque dur pour "
-#~ "installer Pardus.\n"
-#~ "Toutes les données présentes sur le disque seront irrémédiablement "
-#~ "perdues.</font></p>"
-
-#, fuzzy
-#~ msgid "Cancel Setup"
-#~ msgstr "Annuler"
-
-#~ msgid "You are going to delete all partitions on device '%s'"
-#~ msgstr ""
-#~ "Toutes les partitions de votre périphérique '%s' vont être effacées."
-
-#~ msgid "You are going to delete partition '%s' on device '%s'!"
-#~ msgstr "La partition '%s' du disque '%s' va être effacée."
-
-#~ msgid "You must select a partition type from the list below."
-#~ msgstr ""
-#~ "Veuillez sélectionner un type de partition dans la liste ci-dessous."
-
-#~ msgid "ntfsresize check failed! Won't proceed action!"
-#~ msgstr ""
-#~ "La vérification ntfsresize a échouée! L'action ne sera pas réalisée!"
-
-#~ msgid "Extended"
-#~ msgstr "Étendue"
-
-#~ msgid "Can't get partition info from partition request!"
-#~ msgstr ""
-#~ "Impossible de trouver les informations de partition à partir de la "
-#~ "requête de partitionnement."
-
-#~ msgid " req.partition() is None. May be a zombie request!"
-#~ msgstr "req.partition() est à None. Peut-être une requête zombie!"
-
-#~ msgid "YES"
-#~ msgstr "OUI"
-
-#~ msgid "Please wait while formatting!"
-#~ msgstr "Veuillez patienter pendant le formatage!"
-
-#~ msgid "Edit Partition"
-#~ msgstr "Éditer la partition"
-
-#~ msgid "Partition Type"
-#~ msgstr "Type de la partition"
-
-#~ msgid "Basic setup"
-#~ msgstr "Paramétrage basique"
-
-#~ msgid ""
-#~ "<b>\n"
-#~ "<p>Please remove Pardus CD from your drive and pres Reboot button.</p>\n"
-#~ "</b>\n"
-#~ msgstr ""
-#~ "<b>\n"
-#~ "<p>Veuillez retirer le CD de Pardus de votre lecteur et 'cliquez le "
-#~ "bouton \"Redémarrer\".</p>\n"
-#~ "</b>\n"
