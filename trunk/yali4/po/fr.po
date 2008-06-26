@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 15:59+0300\n"
-"PO-Revision-Date: 2008-06-26 16:05+0300\n"
+"POT-Creation-Date: 2008-06-26 13:59+0300\n"
+"PO-Revision-Date: 2008-06-26 16:22+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -534,7 +534,7 @@ msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
 "additional repositories and manage basic settings like mouse, wallpaper and "
 "panel using in Kaptan.\n"
-msgstr ""
+msgstr "Notre Kaptan va vous guider après l'installation. Vous pouvez facilement ajouter des repositoires additionels et configurer la souris, le fond d'écran et le panel grâce à Kaptan.\n"
 
 #: yali4/gui/descSlide.py:22
 msgid ""
@@ -542,14 +542,14 @@ msgid ""
 "operations including but not limited to adding a new user or hardware (e.g. "
 "printer, scanner) to the system, management of visual settings ranging from "
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
-msgstr ""
+msgstr "Tasma est le centre de gestion et de réglage de Pardus. Les opérations comme l'ajout d'un utilisateur ou d'un périphérique(e.g. une imprimante), la gestion des paramètres visuels(e.g. les icônes et les polices) peuvent être facilement gérées avec Tasma.\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
 "There are thousands of packages in Pardus software repositories. You can "
 "install, remove or update those packages and programs with just two clicks "
 "using the Package Manager!\n"
-msgstr ""
+msgstr "Il existe des milliers de paquets dans les repositoires de Pardus. Vous pouvez installer, supprimer ou mettre à jour ces paquets avec juste deux cliques en utilisant le gestionnaire de paquet!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -627,28 +627,24 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/DiskWidgets.py:77
-#, fuzzy
 msgid "as Pardus System Files (mandatory)"
-msgstr "Les fichiers systèmes de Pardus (obligatoire)"
+msgstr "Partition des fichiers systèmes de Pardus (Obligatoire)"
 
 #: yali4/gui/DiskWidgets.py:78
-#, fuzzy
 msgid "as User Files (optional)"
-msgstr "Les fichiers utilisateur (optionnel)"
+msgstr "Partition des fichiers d'utilisateur(Optionnel)"
 
 #: yali4/gui/DiskWidgets.py:79
-#, fuzzy
 msgid "as Swap Space (optional)"
-msgstr "Espace de Swap (optionnel)"
+msgstr "Partition de Swap(Optionnel)"
 
 #: yali4/gui/DiskWidgets.py:80
 msgid "as Storage Area"
-msgstr ""
+msgstr "Partition de stockage"
 
 #: yali4/gui/DiskWidgets.py:93
-#, fuzzy
 msgid "Manuel Partitioning selected."
-msgstr "Créer la partition"
+msgstr "Partitionnement manuel sélectionné."
 
 #: yali4/gui/DiskWidgets.py:163
 #, python-format
@@ -676,9 +672,8 @@ msgid "Partition %d"
 msgstr "Partition %d"
 
 #: yali4/gui/DiskWidgets.py:243
-#, fuzzy
 msgid "Free Space"
-msgstr "espace disponible"
+msgstr "Espace Disponible"
 
 #: yali4/gui/DiskWidgets.py:262
 #, python-format
@@ -1569,10 +1564,6 @@ msgstr "Cacher l'aide"
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
 msgstr "Windows"
-
-#: yali4/filesystem.py:526
-msgid "Partition is not ready for resizing. Check it before installation."
-msgstr ""
 
 #: yali4/__init__.py:67
 msgid "Backtrace:"
