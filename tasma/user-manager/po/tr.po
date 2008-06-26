@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 16:47+0300\n"
+"POT-Creation-Date: 2008-06-27 02:11+0300\n"
 "PO-Revision-Date: 2006-06-15 15:23+0300\n"
 "Last-Translator: Mert Uzbaşlı <mert@bunalmis.com>\n"
 "Language-Team: Türkçe <->\n"
@@ -15,22 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11\n"
-
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr "DBus'a bağlanılamadı."
-
-#: um_mainview.py:43 um_mainview.py:62
-msgid "DBus Error"
-msgstr "DBus Hatası"
-
-#: um_mainview.py:58
-msgid "You are not authorized for this operation."
-msgstr "Bu işlemi yapmak için yetkili değilsiniz."
-
-#: um_mainview.py:66
-msgid "COMAR Error"
-msgstr "COMAR hatası"
 
 #: groupedit.py:22 useredit.py:36
 msgid "ID:"
@@ -123,17 +107,21 @@ msgstr "<big><b>Bu grubu sileyim mi?</b></big><br><br>Grup adı: %s<br>No: %d"
 msgid "Delete Group"
 msgstr "Grup Sil"
 
-#: user-manager.py:33
-msgid "User Management"
-msgstr "Kullanıcı Yönetimi"
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr "DBus'a bağlanılamadı."
 
-#: user-manager.py:83
-msgid "User manager module is already started!"
-msgstr "Kullanıcı yönetim modülü zaten çalışıyor!"
+#: um_mainview.py:43 um_mainview.py:63
+msgid "DBus Error"
+msgstr "DBus Hatası"
 
-#: user-manager.py:88
-msgid "User Manager"
-msgstr "Kullanıcı Yöneticisi"
+#: um_mainview.py:59 useredit.py:857 useredit.py:913
+msgid "You are not authorized for this operation."
+msgstr "Bu işlemi yapmak için yetkili değilsiniz."
+
+#: um_mainview.py:67
+msgid "COMAR Error"
+msgstr "COMAR hatası"
 
 #: useredit.py:22
 msgid "User/group operations"
@@ -295,17 +283,29 @@ msgstr "Yetkiler"
 msgid "Actions"
 msgstr "Eylemler"
 
-#: useredit.py:706
+#: useredit.py:704
 msgid "Authorize"
 msgstr "Yetkilendir"
 
-#: useredit.py:710
+#: useredit.py:708
 msgid "Block"
 msgstr "Engelle"
 
-#: useredit.py:721
+#: useredit.py:719
 msgid "Do not ask password"
 msgstr "Parola sorma"
+
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Kullanıcı Yönetimi"
+
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Kullanıcı yönetim modülü zaten çalışıyor!"
+
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Kullanıcı Yöneticisi"
 
 #~ msgid "D-Bus Error"
 #~ msgstr "D"
