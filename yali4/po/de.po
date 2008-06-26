@@ -762,7 +762,7 @@ msgid ""
 "(device)s</b>."
 msgstr ""
 "Partition <b>%(partition)s (%(size)s)</b> vom Gerät <b>%(device)s</"
-"b><b>gelöscht</b> ."
+"b> <b>gelöscht</b> ."
 
 #: yali4/gui/DiskWidgets.py:297 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
