@@ -17,7 +17,7 @@ _ = __trans.ugettext
 slideDesc = [
 {"yali":_("""Welcome! Our improved setup tool YALI will help you with the installation of Pardus 2008. YALI will help install Pardus 2008 quickly and easily following the partitioning of disk(s) using the intelligent partitioning tool.
 """)},
-{"kaptan":_("""Our Kaptan will show you the way after the installation. You can easily add additional repositories and manage basic settings like mouse, wallpaper, webcam, and panel using Kaptan.
+{"kaptan":_("""Our Kaptan will show you the way after the installation. You can easily add additional repositories and manage basic settings like mouse, wallpaper and panel using in Kaptan.
 """)},
 {"tasma":_("""Tasma is the management and settings center of Pardus. Configuration operations including but not limited to adding a new user or hardware (e.g. printer, scanner) to the system, management of visual settings ranging from desktop icons to fonts are all brought together under Tasma's interface.
 """)},

@@ -16,6 +16,11 @@
 # filesystem.py defines file systems used in YALI. Individual classes
 # also define actions, like format...
 
+# we need i18n
+import gettext
+__trans = gettext.translation('yali4', fallback=True)
+_ = __trans.ugettext
+
 import os
 import resource
 import string
@@ -516,6 +521,9 @@ class NTFSFileSystem(FileSystem):
     def resize(self, size_mb, partition):
         if size_mb < self.minResizeMB(partition):
             return False
+
+        if not self.check_resize(size_mb, partition):
+            raise FSError, _("Partition is not ready for resizing. Check it before installation.")
 
         p = os.pipe()
         os.write(p[1], "y\n")

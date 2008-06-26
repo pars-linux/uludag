@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:59+0300\n"
+"POT-Creation-Date: 2008-06-26 15:59+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -416,14 +416,14 @@ msgstr ""
 "#ffffff;\">Boyutlandır</span><span style=\" color:#ffffff;\">\" tuşuna "
 "bastığınızda uygulanır. Geri dönmek için \"</span><span style=\" text-"
 "decoration: underline; color:#ffffff;\">İptal</span><span style=\" color:"
-"#ffffff;\">\" tuşuna basabilirsiniz.</span></p><p style=\" margin-top:0px; "
+"#ffffff;\">\" tuşuna basabilirsiniz.</span></p><br><p style=\" margin-top:0px; "
 "margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
 "text-indent:0px; color:#ffffff;\"><span style=\" font-weight:600; text-"
 "decoration: underline;\">Uyarı:</span> Yeniden boyutlandırma işlemleri disk "
 "bölümünüzün kullanılmaz hale gelmesine ve verilerinizin bozulmasına neden "
 "olabilir.Yeniden boyutlandırılacak disk bölümü için yedek aldığınıza emin "
 "olun.<span style=\" font-weight:600;\"> </span><span style=\" font-"
-"weight:600;\">Unutmayın kiyeniden boyutlandırma işlemi geri alınamaz.</"
+"weight:600;\">Unutmayın ki yeniden boyutlandırma işlemi geri alınamaz.</"
 "span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
@@ -552,11 +552,11 @@ msgstr ""
 #: yali4/gui/descSlide.py:20
 msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
-"additional repositories and manage basic settings like mouse, wallpaper, "
-"webcam, and panel using Kaptan.\n"
+"additional repositories and manage basic settings like mouse, wallpaper and "
+"panel using in Kaptan.\n"
 msgstr ""
 "Kurulumdan sonra size Kaptan'ımız yol gösterecek. Kaptan ile fare, duvar "
-"kâğıdı, web kamerası, panel gibi temel masaüstü ayarlarınızı ve ek depo "
+"kâğıdı, panel gibi temel masaüstü ayarlarınızı ve ek depo "
 "kurulumu gibi düzenlemeleri kolayca yapabilirsiniz.\n"
 
 #: yali4/gui/descSlide.py:22
@@ -1668,6 +1668,10 @@ msgstr "Yardımı Gizle"
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
 msgstr "Windows"
+
+#: yali4/filesystem.py:526
+msgid "Partition is not ready for resizing. Check it before installation."
+msgstr "Disk bölümü yeniden boyutlandırma için hazır değil. Kurulumdan önce kontrol etmelisiniz."
 
 #: yali4/__init__.py:67
 msgid "Backtrace:"
