@@ -50,6 +50,7 @@ SET(
   it.po
   nl.po
   pt_BR.po
+  pl.po
   tr.po
   )
 
