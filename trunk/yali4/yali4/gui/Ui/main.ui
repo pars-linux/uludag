@@ -198,7 +198,7 @@ QComboBox[editable="true"]::drop-down {
 QComboBox[editable="true"]::drop-down,
 QComboBox[editable="true"]::drop-down:hover,
 QComboBox[editable="true"]::drop-down:on {
-    border-width: 0px;  
+    border-width: 0px;
     border-left-width: 3px; /* we need only left and center part */
 }
 
