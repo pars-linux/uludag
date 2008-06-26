@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 16:47+0300\n"
 "PO-Revision-Date: 2007-06-30 19:59+0100\n"
-"Last-Translator: Michał Środek <michal@srodek.info>\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,20 +12,19 @@ msgstr ""
 
 #: um_mainview.py:43
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Nie mogę połączyć się z DBus."
 
 #: um_mainview.py:43 um_mainview.py:62
 msgid "DBus Error"
-msgstr ""
+msgstr "Błąd DBus"
 
 #: um_mainview.py:58
-#, fuzzy
 msgid "You are not authorized for this operation."
-msgstr "Nie masz uprawnień aby to zrobić"
+msgstr "Nie masz uprawnień dla tej operacji."
 
 #: um_mainview.py:66
 msgid "COMAR Error"
-msgstr ""
+msgstr "Błąd COMARa"
 
 #: groupedit.py:22 useredit.py:36
 msgid "ID:"
@@ -132,35 +131,35 @@ msgstr "Menedżer Użytkowników"
 
 #: useredit.py:22
 msgid "User/group operations"
-msgstr ""
+msgstr "Operacje na użytkownikach/grupach"
 
 #: useredit.py:23
 msgid "Network settings"
-msgstr ""
+msgstr "Ustawienia sieci"
 
 #: useredit.py:24
 msgid "Package operations"
-msgstr ""
+msgstr "Operacje na pakietach"
 
 #: useredit.py:25
 msgid "Service operations"
-msgstr ""
+msgstr "Operacje na usługach"
 
 #: useredit.py:26
 msgid "Date/time operations"
-msgstr ""
+msgstr "Operacje na dacie/czasie"
 
 #: useredit.py:27
 msgid "Kernel module operations"
-msgstr ""
+msgstr "Operacje na modułach kernela"
 
 #: useredit.py:28
 msgid "Bootloader settings"
-msgstr ""
+msgstr "Ustawienia menedżera rozruchowego"
 
 #: useredit.py:29
 msgid "Screen settings"
-msgstr ""
+msgstr "Ustawienia ekranu"
 
 #: useredit.py:83
 msgid "User name:"
@@ -257,7 +256,7 @@ msgstr "Wpisz Informacje Noweg Użytkownika"
 
 #: useredit.py:467
 msgid "Give administrator privileges to this user"
-msgstr ""
+msgstr "Nadaj uprawnienia administratora temu użytkownikowi"
 
 #: useredit.py:543
 msgid ""
@@ -285,24 +284,23 @@ msgstr "Pobieranie danych o użytkowniku"
 
 #: useredit.py:675
 msgid "Authorizations"
-msgstr ""
+msgstr "Autoryzacje"
 
 #: useredit.py:693
 msgid "Actions"
-msgstr ""
+msgstr "Akcje"
 
 #: useredit.py:706
 msgid "Authorize"
-msgstr ""
+msgstr "Autoryzuj"
 
 #: useredit.py:710
 msgid "Block"
-msgstr ""
+msgstr "Blokuj"
 
 #: useredit.py:721
-#, fuzzy
 msgid "Do not ask password"
-msgstr "Potwierdz hasło:"
+msgstr "Nie pytaj o hasło"
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "
