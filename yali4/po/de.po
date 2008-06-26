@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 15:59+0300\n"
-"PO-Revision-Date: 2008-06-26 19:56+0200\n"
+"PO-Revision-Date: 2008-06-26 20:39+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -218,11 +218,11 @@ msgstr "CD-Integrität überprüfen"
 
 #: yali4/gui/Ui/datetimewidget.py:82
 msgid "The current time"
-msgstr "Die aktuelle Zeit"
+msgstr "Die aktuelle Uhrzeit"
 
 #: yali4/gui/Ui/datetimewidget.py:83
 msgid "The analog clock widget displays the current time."
-msgstr "Das analoge Uhr-Widget zeigt die aktuelle Zeit."
+msgstr "Das analoge Uhr-Widget zeigt die aktuelle Uhrzeit."
 
 #: yali4/gui/Ui/datetimewidget.py:84
 msgid "HH"
@@ -432,7 +432,7 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
 "\" font-weight:600; text-decoration: underline;\">Achtung:</span> Ein Grössen- "
 "Änderungsvorgang könnte Ihrer Partition beschädigen und der Zugang zu Ihren Daten "
-"könnte nicht mehr möglich sein. Erstellen Sie für diese Partition sicherheitshalber ein Backup.<span style=\" font-"
+"könnte nicht mehr möglich sein. Erstellen Sie sicherheitshalber für diese Partition ein Backup.<span style=\" font-"
 "weight:600;\"> </span><span style=\" font-weight:600;\">Bitte beachten Sie,"
 "dass dieser Vorgang nicht mehr rückgängig gemacht werden kann.</span></p></body></html>"
 
@@ -454,7 +454,7 @@ msgid ""
 msgstr ""
 "<p align=\"left\">Mit dem Systemadministrator-Konto (root) können Sie "
 "Systemwartungen vornehmen. Bitte vergeben Sie diesen speziellen Benutzer ein "
-"Passwort und vergessen Sie bitte diesen nicht. Beachten Sie, dass Ihr "
+"Passwort und vergessen Sie bitte dies nicht. Beachten Sie, dass Ihr "
 "Passwort aus Sicherheitsgründen für Dritte nicht zugänglich sein darf.</p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
@@ -503,7 +503,7 @@ msgstr "Benutzer:"
 
 #: yali4/gui/Ui/setupuserswidget.py:163
 msgid "Delete Selected User"
-msgstr "Gewählten Benutzer entfernen"
+msgstr "Gewählten Benutzer löschen"
 
 #: yali4/gui/Ui/setupuserswidget.py:164
 msgid "Auto Login User :"
@@ -1072,7 +1072,7 @@ msgstr "Stellen Sie Ihre Zeitzone ein"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "You can change your timezone, time or date settings..."
-msgstr "Sie können Ihre Zeitzone, Zeit- oder Datumseinstellungen ändern..."
+msgstr "Sie können Ihre Zeitzone, Uhrzeit- oder Datumeinstellungen ändern..."
 
 #: yali4/gui/ScrDateTime.py:30
 msgid ""
@@ -1086,7 +1086,7 @@ msgstr ""
 "\n"
 "<font size=\"+2\">Zeitzone-Einstellungen</font>\n"
 "<font size=\"+1\"><p>Hier können Sie Ihren Standort und eine Zeitzone "
-"auswählen, das Datum und die Uhrzeit einstellen.\n"
+"auswählen, das Datum- und die Uhrzeit einstellen.\n"
 "Durch die Einstellungen wird die Hardware-Uhr aktualisiert. Fahren Sie mit "
 "der Installation fort, nachdem Sie Ihre Auswahl getroffen haben.</p></font>\n"
 
@@ -1138,7 +1138,7 @@ msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:72
 msgid "Running post install operations.."
-msgstr ""
+msgstr "Postinstall-Vorgänge werden ausgeführt..."
 
 #: yali4/gui/ScrGoodbye.py:100
 msgid "<b>Rebooting system. Please wait!</b>"
@@ -1463,7 +1463,7 @@ msgstr "Gewählte Tastaturbelegung ist <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:109
 msgid "Date/Time Settings"
-msgstr "Datum/Zeit-Einstellungen"
+msgstr "Datum/Uhrzeiteinstellungen"
 
 #: yali4/gui/ScrSummary.py:110
 #, python-format
@@ -1549,6 +1549,11 @@ msgid ""
 "                   Make sure that you have a backup for this partition.<br>\n"
 "                   <b>Note that this operation cannot be undone ! </b></p>"
 msgstr ""
+"<p><b><u>Achtung</u></b>: Es ist ein Grössenänderungsvorgang und es könnte "
+"Ihre Partition beschädigen<br>\n"
+"                   und der Zugang zu Ihren Daten könnte nicht mehr möglich sein. <br>\n"
+"                   Erstellen Sie sicherheitshalber für diese Partition ein Backup.<br>\n"
+"                   <b>Bitte beachten Sie, dass dieser Vorgang nicht mehr rückgängig gemacht werden kann!</b></p>"
 
 #: yali4/gui/ScrSummary.py:235 yali4/gui/ScrSummary.py:243
 #: yali4/gui/ScrSummary.py:257
@@ -1727,7 +1732,7 @@ msgstr "Windows"
 
 #: yali4/filesystem.py:526
 msgid "Partition is not ready for resizing. Check it before installation."
-msgstr ""
+msgstr "Die Partition ist für die Grössenänderung nicht bereit. Überprüfen Sie es vor der Installation."
 
 #: yali4/__init__.py:67
 msgid "Backtrace:"
@@ -1790,7 +1795,7 @@ msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 
 #: yali4/installer.py:516
 msgid "Trying to connect DBUS..."
-msgstr ""
+msgstr "Wird versucht mit DBus zu verbinden..."
 
 #: yali4/installer.py:518
 msgid "Setting Hostname..."
@@ -1802,11 +1807,11 @@ msgstr "Zeiteinstellungen werden vorgenommen..."
 
 #: yali4/installer.py:520
 msgid "Setting Root Password..."
-msgstr ""
+msgstr "Root-Passwort wird eingestellt..."
 
 #: yali4/installer.py:521
 msgid "Adding Users..."
-msgstr ""
+msgstr "Benutzer werden hinzugefügt..."
 
 #: yali4/installer.py:522
 msgid "Writing Console Data..."
@@ -1814,15 +1819,15 @@ msgstr "Konsoldaten werden beschrieben..."
 
 #: yali4/installer.py:523
 msgid "Copy Pisi index..."
-msgstr ""
+msgstr "Pisi-Index wird kopiert..."
 
 #: yali4/installer.py:524
 msgid "Migrating X.org Configuration..."
-msgstr ""
+msgstr "X.org-Konfiguration wird migriert..."
 
 #: yali4/installer.py:526
 msgid "Setting misc. package configurations..."
-msgstr ""
+msgstr "Sonst. Paket-Konfigurationen werden eingestellt..."
 
 #: yali4/installer.py:527
 msgid "Installing BootLoader..."
