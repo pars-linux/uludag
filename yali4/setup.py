@@ -150,6 +150,7 @@ i18n_languages = ["tr",
                   "de",
                   "pt_BR",
                   "es",
+                  "pl",
                   "ca"]
 
 class I18nInstall(install):
