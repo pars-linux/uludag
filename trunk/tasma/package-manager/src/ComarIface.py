@@ -60,6 +60,9 @@ class ComarIface:
     def comarError(self, exception):
         if "urlopen error" in exception.message or "Socket Error" in exception.message:
             KMessageBox.error(None, i18n("Network error. Please check your network connections and try again."), i18n("COMAR Error"))
+        elif "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(None, message, i18n("Error"))
         else:
             KMessageBox.error(None, QString.fromUtf8(str(exception)), i18n("COMAR Error"))
 
