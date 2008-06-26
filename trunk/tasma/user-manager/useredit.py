@@ -697,8 +697,6 @@ class PolicyTab(QVBox):
         self.operations = {}
         self.inOperation = False
 
-        self.ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations")
-
         #add radio buttons
         w = QButtonGroup(self)
         w.setFrameShape(QFrame.NoFrame)
@@ -761,7 +759,6 @@ class PolicyTab(QVBox):
     def setPolicyButtonsEnabled(self, enable):
         self.authorized.setEnabled(enable)
         self.blocked.setEnabled(enable)
-        self.passwordCheck.setEnabled(enable)
         if enable and self.blocked.isOn():
             return
         self.passwordCheck.setEnabled(enable)
@@ -827,6 +824,7 @@ class PolicyTab(QVBox):
         if not item: # or self.policyview.selectedItem()
             return
 
+        # get list of children items
         childCount = item.childCount()
         if childCount < 1:
             return
@@ -856,7 +854,8 @@ class PolicyTab(QVBox):
 
         def cancelError():
             item.setOpen(False)
-
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(None, message, i18n("Error"))
 
         if not self.edit:
             setIcons([])
@@ -867,9 +866,11 @@ class PolicyTab(QVBox):
         #    setIcons(auths)
         #except:
         #call COMAR see different users' auths
-        self.ch.registerDone(listDone)
-        self.ch.registerCancel(cancelError)
-        self.ch.call(int(self.uid.text()))
+
+        ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations", handleCancel = False)
+        ch.registerDone(listDone)
+        ch.registerCancel(cancelError)
+        ch.call(int(self.uid.text()))
 
     def actionClicked(self, actionItem):
         #now we will setup radiobuttons and checkbox according to the action clicked, but during this setup
@@ -909,6 +910,8 @@ class PolicyTab(QVBox):
 
         def cancelError():
             self.setPolicyButtonsEnabled(False)
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(None, message, i18n("Error"))
 
         #try:
         #    auths = polkit.auth_list_uid(int(self.uid.text()))
@@ -916,9 +919,11 @@ class PolicyTab(QVBox):
         #    self.selectRightButtons(auths, actionItem)
         #except:
         #call COMAR see different users' auths
-        self.ch.registerDone(listDone)
-        self.ch.registerCancel(cancelError)
-        self.ch.call(int(self.uid.text()))
+
+        ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations", handleCancel = False)
+        ch.registerDone(listDone)
+        ch.registerCancel(cancelError)
+        ch.call(int(self.uid.text()))
 
     def selectRightButtons(self, auths, actionItem):
         auths = filter(lambda x: x['action_id'] == actionItem.id, auths)
