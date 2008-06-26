@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:59+0300\n"
+"POT-Creation-Date: 2008-06-27 00:44+0300\n"
 "PO-Revision-Date: 2008-06-26 16:52+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -30,11 +30,16 @@ msgstr "Form"
 msgid ""
 "It seems there is more than one partition for resizing. In this case you can "
 "select a partition from the list below or YALI will select one."
-msgstr "Il semble qu'il existe plusieurs partitions pour le redimensionnement. Vous pouvez sélectionner une de ces partitions dans la liste ci-dessous ou YALI choisira une."
+msgstr ""
+"Il semble qu'il existe plusieurs partitions pour le redimensionnement. Vous "
+"pouvez sélectionner une de ces partitions dans la liste ci-dessous ou YALI "
+"choisira une."
 
 #: yali4/gui/Ui/autopartquestion.py:66
 msgid "Choose the best target for resizing (recommended)"
-msgstr "Choisit la partition cible la plus convenante pour le redimensionnement(recommandé)"
+msgstr ""
+"Choisit la partition cible la plus convenante pour le redimensionnement"
+"(recommandé)"
 
 #: yali4/gui/Ui/autopartquestion.py:67
 msgid "I will choose the target"
@@ -44,14 +49,14 @@ msgstr "Je vais choisir la partition cible moi-même"
 msgid "Use Selected"
 msgstr "Utilise ce qui est choisi"
 
-#: yali4/gui/Ui/autopartwidget.py:99 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:126 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:100
+#: yali4/gui/Ui/autopartwidget.py:127
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -70,47 +75,59 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Choisir la méthode de partitionnement:</span></p></"
-"body></html>"
+"size:12pt; font-weight:600;\">1. Choisir la méthode de partitionnement:</"
+"span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:104
+#: yali4/gui/Ui/autopartwidget.py:131
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
-msgstr "Ici, vous pouvez sélectionner une des méthodes de partitionnement et la disque qui va être partitionnée.<br>La liste des disques sera mise à jour selon la méthode choisie."
+msgstr ""
+"Ici, vous pouvez sélectionner une des méthodes de partitionnement et la "
+"disque qui va être partitionnée.<br>La liste des disques sera mise à jour "
+"selon la méthode choisie."
 
-#: yali4/gui/Ui/autopartwidget.py:105
-msgid "Automatically partition try to use free space or resize current partitions"
-msgstr "Partitionner automatiquement en utilisant l'espace disponible ou en redimensionnant les partitions courantes."
+#: yali4/gui/Ui/autopartwidget.py:132
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
+msgstr ""
+"Partitionner automatiquement en utilisant l'espace disponible ou en "
+"redimensionnant les partitions courantes."
 
-#: yali4/gui/Ui/autopartwidget.py:106
+#: yali4/gui/Ui/autopartwidget.py:133
 msgid "Automatically partition and format selected disk!"
 msgstr "Partitionner et formatter automatiquement la disque choisie!"
 
-#: yali4/gui/Ui/autopartwidget.py:107
+#: yali4/gui/Ui/autopartwidget.py:134
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
-msgstr "Cette opération va effacer votre disque. Toutes les données sur le disque seront perdues!"
+msgstr ""
+"Cette opération va effacer votre disque. Toutes les données sur le disque "
+"seront perdues!"
 
-#: yali4/gui/Ui/autopartwidget.py:108
+#: yali4/gui/Ui/autopartwidget.py:135
 msgid "No, I'll partition my disk manually."
 msgstr "Non, je vais partitionner mon disque manuellement."
 
-#: yali4/gui/Ui/autopartwidget.py:109
+#: yali4/gui/Ui/autopartwidget.py:136
 msgid "You can use manual partitioning with this option"
 msgstr "Vous pouvez utiliser le partitionnement manuel avec cette option"
 
-#: yali4/gui/Ui/autopartwidget.py:110
+#: yali4/gui/Ui/autopartwidget.py:137
 msgid "If there is no suitable partition this option will be disabled"
-msgstr "Cette option sera désactivée en cas d'absence d'une partition convenable"
+msgstr ""
+"Cette option sera désactivée en cas d'absence d'une partition convenable"
 
-#: yali4/gui/Ui/autopartwidget.py:111
-msgid "This option will try to find suitable free space or resizable partitions"
-msgstr "Cette option va essayer de trouver un espace disponible qui convient ou des partitions redimensionnables"
+#: yali4/gui/Ui/autopartwidget.py:138
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
+msgstr ""
+"Cette option va essayer de trouver un espace disponible qui convient ou des "
+"partitions redimensionnables"
 
-#: yali4/gui/Ui/autopartwidget.py:112
+#: yali4/gui/Ui/autopartwidget.py:139
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -129,10 +146,10 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">2. Choisir le disque pour appliquer la méthode sélectionnée:</"
-"span></p></body></html>"
+"size:12pt; font-weight:600;\">2. Choisir le disque pour appliquer la méthode "
+"sélectionnée:</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:116
+#: yali4/gui/Ui/autopartwidget.py:143
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
@@ -152,8 +169,9 @@ msgstr ""
 "\n"
 "<p>Il faut un chargeur de démarrage pour démarrer votre système Pardus<p>\n"
 "\n"
-"Si aucun chargeur de démarrage n'est trouvé ou si ce dernier est installé sur votre "
-"partition racine, il faudra configurer le chargeur de démarrage de l'autre système d'exploitation (si vous en avez un) afin de démarrer votre "
+"Si aucun chargeur de démarrage n'est trouvé ou si ce dernier est installé "
+"sur votre partition racine, il faudra configurer le chargeur de démarrage de "
+"l'autre système d'exploitation (si vous en avez un) afin de démarrer votre "
 "système Pardus fraîchement installé.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82
@@ -400,17 +418,20 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
 "#ffffff;\">Ces réglages seront appliquées quand vous cliquez \"</span><span "
-"style=\" text-decoration: underline; color:#ffffff;\">Redimensionner</span><span "
-"style=\" color:#ffffff;\">\"Si vous voulez retourner en arrière cliquez \"</span><span "
-"style=\" text-decoration: underline; color:#ffffff;\">Annuler</span><span "
-"style=\" color:#ffffff;\">\".</span></p>\n"
+"style=\" text-decoration: underline; color:#ffffff;\">Redimensionner</"
+"span><span style=\" color:#ffffff;\">\"Si vous voulez retourner en arrière "
+"cliquez \"</span><span style=\" text-decoration: underline; color:#ffffff;"
+"\">Annuler</span><span style=\" color:#ffffff;\">\".</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
 "color:#ffffff;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
-"\" font-weight:600; text-decoration: underline;\">Warning:</span> La redimensionnement peut endommager votre partition, ce qui va rendre vos données inaccessibles. Soyez sûr d'avoir une sauvegarde de cette partition.<span style=\" font-"
-"weight:600;\"> </span><span style=\" font-weight:600;\">Notez bien que cette opération est irréversible.</span></p></body></html>"
+"\" font-weight:600; text-decoration: underline;\">Warning:</span> La "
+"redimensionnement peut endommager votre partition, ce qui va rendre vos "
+"données inaccessibles. Soyez sûr d'avoir une sauvegarde de cette partition."
+"<span style=\" font-weight:600;\"> </span><span style=\" font-weight:600;"
+"\">Notez bien que cette opération est irréversible.</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
@@ -429,7 +450,9 @@ msgid ""
 "for privacy reasons.</p>"
 msgstr ""
 "<p align=\"left\">L'administrateur du système (root) est responsable "
-"d'opérations importantes de maintenance du système. Veuillez choisir un mot de passe pour cet utilisateur spécial et ne pas l'oublier. Pour des raisons de sécurité, veuillez ne pas écrire ce mot de passe ailleurs,</p>"
+"d'opérations importantes de maintenance du système. Veuillez choisir un mot "
+"de passe pour cet utilisateur spécial et ne pas l'oublier. Pour des raisons "
+"de sécurité, veuillez ne pas écrire ce mot de passe ailleurs,</p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
 msgid "System administrator password:"
@@ -527,14 +550,21 @@ msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
-msgstr "Bienvenue! Notre outil amélioré YALI va vous guider pendant l'installation de Pardus 2008. Cet outil intelligent va rapidement installer Pardus 2008 après avoir partitionné le(s) disque(s) avec le gestionnaire de disque intégré.\n"
+msgstr ""
+"Bienvenue! Notre outil amélioré YALI va vous guider pendant l'installation "
+"de Pardus 2008. Cet outil intelligent va rapidement installer Pardus 2008 "
+"après avoir partitionné le(s) disque(s) avec le gestionnaire de disque "
+"intégré.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
 "additional repositories and manage basic settings like mouse, wallpaper and "
 "panel using in Kaptan.\n"
-msgstr "Notre Kaptan va vous guider après l'installation. Vous pouvez facilement ajouter des repositoires additionels et configurer la souris, le fond d'écran et le panel grâce à Kaptan.\n"
+msgstr ""
+"Notre Kaptan va vous guider après l'installation. Vous pouvez facilement "
+"ajouter des repositoires additionels et configurer la souris, le fond "
+"d'écran et le panel grâce à Kaptan.\n"
 
 #: yali4/gui/descSlide.py:22
 msgid ""
@@ -542,14 +572,21 @@ msgid ""
 "operations including but not limited to adding a new user or hardware (e.g. "
 "printer, scanner) to the system, management of visual settings ranging from "
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
-msgstr "Tasma est le centre de gestion et de réglage de Pardus. Les opérations comme l'ajout d'un utilisateur ou d'un périphérique(e.g. une imprimante), la gestion des paramètres visuels(e.g. les icônes et les polices) peuvent être facilement gérées avec Tasma.\n"
+msgstr ""
+"Tasma est le centre de gestion et de réglage de Pardus. Les opérations comme "
+"l'ajout d'un utilisateur ou d'un périphérique(e.g. une imprimante), la "
+"gestion des paramètres visuels(e.g. les icônes et les polices) peuvent être "
+"facilement gérées avec Tasma.\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
 "There are thousands of packages in Pardus software repositories. You can "
 "install, remove or update those packages and programs with just two clicks "
 "using the Package Manager!\n"
-msgstr "Il existe des milliers de paquets dans les repositoires de Pardus. Vous pouvez installer, supprimer ou mettre à jour ces paquets avec juste deux cliques en utilisant le gestionnaire de paquet!\n"
+msgstr ""
+"Il existe des milliers de paquets dans les repositoires de Pardus. Vous "
+"pouvez installer, supprimer ou mettre à jour ces paquets avec juste deux "
+"cliques en utilisant le gestionnaire de paquet!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -557,14 +594,21 @@ msgid ""
 "securely. Thanks to the profile support it has, it will make it easier to "
 "reconnect to cable or wireless connections used before, remembering the "
 "settings used.\n"
-msgstr "Applet de Réseau(Network Applet) aide à connecter aux réseaux locals et Internet de manière sécure. Grâce au support de profile, vous allez facilement reconnecter aux réseaux ethernet ou sans-fil déjà utilisés.\n"
+msgstr ""
+"Applet de Réseau(Network Applet) aide à connecter aux réseaux locals et "
+"Internet de manière sécure. Grâce au support de profile, vous allez "
+"facilement reconnecter aux réseaux ethernet ou sans-fil déjà utilisés.\n"
 
 #: yali4/gui/descSlide.py:28
 msgid ""
 "Mozilla Firefox, with its speed, constant development and many advanced "
 "features, will help securely surf the Internet. Pardus 2008 includes Mozilla "
 "Firefox 3.0, and you can enrich Firefox with thousands of extensions.\n"
-msgstr "Mozilla Firefox, étant un navigateur rapide, riche et moderne; va vous aider à naviguer sur Internet de manière sécure. Pardus 2008 contient Mozilla Firefox 3.0. Vous pouvez l'enrichir avec des milliers d'extensions disponibles.\n"
+msgstr ""
+"Mozilla Firefox, étant un navigateur rapide, riche et moderne; va vous aider "
+"à naviguer sur Internet de manière sécure. Pardus 2008 contient Mozilla "
+"Firefox 3.0. Vous pouvez l'enrichir avec des milliers d'extensions "
+"disponibles.\n"
 
 #: yali4/gui/descSlide.py:30
 msgid ""
@@ -690,8 +734,10 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:316
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Partition <b>%(partition)s</b> sera <b>formatée</b> comme <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Partition <b>%(partition)s</b> sera <b>formatée</b> comme <b>%(fsType)s</b>."
 
 #: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:143
 #, python-format
@@ -714,8 +760,8 @@ msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
-"Partition <b>%(partition)s</b> <b>est ajoutée</b>au disque<b>%(device)s</b>avec la taille "
-"<b>%(size)s MB</b> étant <b>%(fs)s</b>."
+"Partition <b>%(partition)s</b> <b>est ajoutée</b>au disque<b>%(device)s</"
+"b>avec la taille <b>%(size)s MB</b> étant <b>%(fs)s</b>."
 
 #: yali4/gui/DiskWidgets.py:410
 msgid "Delete All Partitions"
@@ -752,14 +798,16 @@ msgstr ""
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr ""
-"All partitions on device <b>%(device)s</b> has been deleted. "
-"Toutes les partitions sur le disque <b>%(device)s</b> seront supprimées."
+"All partitions on device <b>%(device)s</b> has been deleted. Toutes les "
+"partitions sur le disque <b>%(device)s</b> seront supprimées."
 
 #: yali4/gui/GUIAdditional.py:67
 msgid ""
 "<p><span style=\"color:#FFF\"><b>It seems this partition is not ready for "
 "resizing.</b></span></p>"
-msgstr "<p><span style=\"color:#FFF\"><b>Il semble que cette partition n'est pas pret pour le redimensionnement.</b></span></p>"
+msgstr ""
+"<p><span style=\"color:#FFF\"><b>Il semble que cette partition n'est pas "
+"pret pour le redimensionnement.</b></span></p>"
 
 #: yali4/gui/GUIAdditional.py:80
 #, python-format
@@ -772,8 +820,8 @@ msgid ""
 "Partition <b>%(partition)s - %(fs)s</b> <b>resized</b> to <b>%(resizeTo)s "
 "MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
-"Partition <b>%(partition)s - %(fs)s</b> <b>est redimensionnée/b> à <b>%(resizeTo)s "
-"MB</b>, l'ancien taille était <b>%(currentSize)s MB</b>"
+"Partition <b>%(partition)s - %(fs)s</b> <b>est redimensionnée/b> à <b>%"
+"(resizeTo)s MB</b>, l'ancien taille était <b>%(currentSize)s MB</b>"
 
 #: yali4/gui/GUIAdditional.py:145
 #, python-format
@@ -846,7 +894,8 @@ msgstr "<font color=\"#FF6D19\">Le mot de passe est trop court !</font>"
 #: yali4/gui/ScrAdmin.py:128
 #, fuzzy
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr "<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
 
 #: yali4/gui/ScrAdmin.py:133
 #, fuzzy
@@ -942,7 +991,8 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Veuillez patienter pendant la vérification du CD.</font>"
+msgstr ""
+"<font color=\"#FFF\">Veuillez patienter pendant la vérification du CD.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1365,12 +1415,14 @@ msgstr "Partitions:"
 #: yali4/gui/ScrSummary.py:132
 #, fuzzy
 msgid "Automatic Partitioning selected."
-msgstr "Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
+msgstr ""
+"Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
 
 #: yali4/gui/ScrSummary.py:146
 #, fuzzy
 msgid "Automatic Partitioning (resize method) selected."
-msgstr "Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
+msgstr ""
+"Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
 
 #: yali4/gui/ScrSummary.py:166
 #, python-format
@@ -1476,7 +1528,8 @@ msgstr ""
 
 #: yali4/gui/ScrUsers.py:148
 msgid "<font color=\"#FF6D19\">Passwords do not match!</font>"
-msgstr "<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
+msgstr ""
+"<font color=\"#FF6D19\">Les mots de passe ne sont pas identiques!</font>"
 
 #: yali4/gui/ScrUsers.py:151
 msgid "<font color=\"#FF6D19\">Password is too short!</font>"
@@ -1554,7 +1607,8 @@ msgid ""
 "</b>\n"
 msgstr ""
 "<b>\n"
-"<p>Cette opération va débuter l'installation de Pardus en formatant la partition sélectionnée.</p>\n"
+"<p>Cette opération va débuter l'installation de Pardus en formatant la "
+"partition sélectionnée.</p>\n"
 "</b>\n"
 
 #: yali4/gui/YaliDialog.py:133
@@ -1572,6 +1626,10 @@ msgstr "Cacher l'aide"
 #: yali4/bootloader.py:211 yali4/bootloader.py:216
 msgid "Windows"
 msgstr "Windows"
+
+#: yali4/filesystem.py:526
+msgid "Partition is not ready for resizing. Check it before installation."
+msgstr ""
 
 #: yali4/__init__.py:67
 msgid "Backtrace:"
@@ -1599,8 +1657,9 @@ msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
 msgstr ""
-"<b><p>La vérification d'intégrité des paquets a échoué.                                  "
-"Il semble que le CD d'installation est endommagé.</p></b>"
+"<b><p>La vérification d'intégrité des paquets a "
+"échoué.                                  Il semble que le CD d'installation "
+"est endommagé.</p></b>"
 
 #: yali4/installer.py:171
 msgid ""
@@ -1846,4 +1905,3 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Partition d'archive"
-
