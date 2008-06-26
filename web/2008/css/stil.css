@@ -174,8 +174,8 @@ img.menu_img {
 
 .sidebar_opened {
     width: 227px;
-    padding-top: 25px;
     padding-bottom: 14px;
+    font-size: 11px;
 }
 
 .sidebar_closed {
@@ -184,6 +184,7 @@ img.menu_img {
 }
 
 .sidebar_opened ul {
+    margin-top: 37px;
     list-style-image: url('../resim/bullet.png');
     margin-bottom: 0px;
 }
