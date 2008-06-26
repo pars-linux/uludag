@@ -119,6 +119,16 @@ img.floatr, img[align="right"] {
     overflow: none;
 }
 
+.icerik_altsayfa_yazi {
+    line-height: 14px;
+    font-size: 11px;
+    color: #fff;
+    padding-top: 16px;
+    padding-left: 16px;
+    width: 640px;
+    height: 460px;
+    overflow: none;
+}
 .content_detail_button {
     margin-top: -8px;
 }
