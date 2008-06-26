@@ -17,7 +17,7 @@ import shutil
 
 import kdedistutils
 
-version = "0.1"
+version = "0.1.1"
 
 distfiles = """
     AUTHORS
@@ -66,7 +66,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/historygui.ui', 'src/Progress.ui', 'src/progress.py', 'src/history-manager.py', 'src/historygui.py', 'src/ComarIface.py', 'src/Commander.py', 'src/handler.py', 'src/history_gui.py', 'src/utility.py', 'src/PisiIface.py',
-                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/pics/History_Manager.png', 'src/pics/details.png', 'src/pics/install.png', 'src/pics/remove.png', 'src/pics/snapshot.png', 'src/pics/takeback.png', 'src/pics/upgrade.png']),
+                        ('/usr/kde/3.5/share/apps/history-manager/pics', ['src/pics/History_Manager.png', 'src/pics/details.png', 'src/pics/install.png', 'src/pics/remove.png', 'src/pics/snapshot.png', 'src/pics/takeback.png', 'src/pics/upgrade.png']),
                         'help'],
     executable_links = [('history-manager','history-manager.py')],
     i18n = ('po',['src']),

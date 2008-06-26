@@ -8,16 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 02:53+0300\n"
+"POT-Creation-Date: 2008-06-26 16:32+0300\n"
 "PO-Revision-Date: 2008-06-24 11:40+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
+">\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/Progress.py:68 src/history_gui.py:378
+#: src/Progress.py:68 src/history_gui.py:375
 msgid "Progress"
 msgstr "Voortgang"
 
@@ -33,7 +34,7 @@ msgstr "Neem een snapshot van het systeem"
 msgid "History Manager is already running!"
 msgstr "Geschiedenisbeheer is al actief!"
 
-#: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:60
+#: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:57
 msgid "History Manager"
 msgstr "Geschiedenisbeheer"
 
@@ -49,68 +50,70 @@ msgstr "Kan geen verbinding maken met Comar deamon"
 msgid "History Manager Interface"
 msgstr "Geschiedenisbeheer interface"
 
-#: src/historygui.py:131
+#: src/historygui.py:124
 msgid "formMain"
 msgstr "formMain"
 
-#: src/history_gui.py:62
+#: src/history_gui.py:59
 msgid "All Operations"
 msgstr "Alle handelingen"
 
-#: src/history_gui.py:63
+#: src/history_gui.py:60
 msgid "Snapshots"
 msgstr "Snapshots"
 
-#: src/history_gui.py:64
+#: src/history_gui.py:61
 msgid "Upgrades"
 msgstr "Opwaarderingen"
 
-#: src/history_gui.py:65
+#: src/history_gui.py:62
 msgid "Removes"
 msgstr "Verwijderd"
 
-#: src/history_gui.py:66
+#: src/history_gui.py:63
 msgid "Installations"
 msgstr "Installaties"
 
-#: src/history_gui.py:67
+#: src/history_gui.py:64
 msgid "TakeBacks"
 msgstr "GaTerug"
 
-#: src/history_gui.py:69
+#: src/history_gui.py:66
 msgid "Take Back Plan"
 msgstr "Terug gaan plan"
 
-#: src/history_gui.py:70
+#: src/history_gui.py:67
 msgid "Operation Details"
 msgstr "Handeling details"
 
-#: src/history_gui.py:73
+#: src/history_gui.py:70
 msgid "New Snapshot"
 msgstr "Nieuwe snapshot"
 
-#: src/history_gui.py:75
+#: src/history_gui.py:72
 msgid "Date"
 msgstr "Datum"
 
-#: src/history_gui.py:76
+#: src/history_gui.py:73
 msgid ""
 "Your system will be restored to that date if you click Take Back button."
 "<br>These are the package installation and removals, also configuration "
 "files below (in snapshots) will overwrite your current configuration files."
 msgstr ""
-"Uw systeem zal hersteld worden naar die datum als u op de Ga Terug knop klikt. "
-"<br>Dit zijn pakket installaties en verwijderingen, ook configuratie bestanden hieronder (in snapshots) zullen uw huidige configuratiebestanden overschrijven."
+"Uw systeem zal hersteld worden naar die datum als u op de Ga Terug knop "
+"klikt. <br>Dit zijn pakket installaties en verwijderingen, ook configuratie "
+"bestanden hieronder (in snapshots) zullen uw huidige configuratiebestanden "
+"overschrijven."
 
-#: src/history_gui.py:87
+#: src/history_gui.py:84
 msgid "Restore to This Point"
 msgstr "Herstel naar dit punt"
 
-#: src/history_gui.py:135
+#: src/history_gui.py:132
 msgid "This will take a New Snapshot of your system"
 msgstr "Dit zal een nieuwe snapshot van uw systeem maken"
 
-#: src/history_gui.py:150
+#: src/history_gui.py:147
 msgid ""
 "This will restore your system back to : %1 %2\n"
 "If you're unsure, click Cancel and see TakeBack Plan"
@@ -118,113 +121,138 @@ msgstr ""
 "Dit zal uw systeem terugplaatsen naar: %1 %2\n"
 "Als u niet zeker bent, klik dan annuleer en ziek Gaterug plan"
 
-#: src/history_gui.py:176
+#: src/history_gui.py:173
 msgid "Take Back operation completed"
 msgstr "Terug gaan handelingen afgerond"
 
-#: src/history_gui.py:178
+#: src/history_gui.py:175
 msgid "New Snapshot Taken"
 msgstr "Nieuwe snapshot genomen"
 
-#: src/history_gui.py:180
+#: src/history_gui.py:177
 msgid "Operation Cancelled"
 msgstr "Handeling geannuleerd"
 
-#: src/history_gui.py:185
+#: src/history_gui.py:182
 msgid "Updating User Interface"
 msgstr "Bijwerken gebuikers interface"
 
-#: src/history_gui.py:187
+#: src/history_gui.py:184
 msgid "Finished with Errors"
 msgstr "Beëindigd met fouten"
 
-#: src/history_gui.py:188
+#: src/history_gui.py:185
 msgid "Operation Finished with Errors"
 msgstr "Handeling beëindigd met fouten"
 
-#: src/history_gui.py:192
+#: src/history_gui.py:189
 msgid "Finished Succesfully"
 msgstr "Succesvol beëindigd"
 
-#: src/history_gui.py:203
+#: src/history_gui.py:200
 msgid "Fetching %1"
 msgstr "Verkrijgen %1"
 
-#: src/history_gui.py:247
+#: src/history_gui.py:244
 msgid "<b>Access Granted</b><br>"
 msgstr "<b>Toegang verkregen</b><br>"
 
-#: src/history_gui.py:250
+#: src/history_gui.py:247
 msgid "<b>Access Denied</b><br>"
 msgstr "<b>Geen toegang verkregen</b><br>"
 
-#: src/history_gui.py:252
+#: src/history_gui.py:249
 msgid "Operation Started"
 msgstr "Handeling gestart"
 
-#: src/history_gui.py:254
+#: src/history_gui.py:251
 msgid "Ordering Packages for Operation"
 msgstr "Pakketten ordenen voor operatie"
 
-#: src/history_gui.py:257
+#: src/history_gui.py:254
 msgid "Removing    : %1"
 msgstr "Verwijderen    :%1"
 
-#: src/history_gui.py:262
+#: src/history_gui.py:259
 msgid "Installing  : %1"
 msgstr "Installeren  :%1"
 
-#: src/history_gui.py:265
+#: src/history_gui.py:262
 msgid "Extracting  : %1"
 msgstr "Uitpakken  :%1"
 
-#: src/history_gui.py:268
+#: src/history_gui.py:265
 msgid "Configuring  : %1"
 msgstr "Configureren  :%1"
 
-#: src/history_gui.py:272
+#: src/history_gui.py:269
 msgid "Taking a Snapshot of System "
 msgstr "Neem een snapshot van het systeem "
 
-#: src/history_gui.py:274
+#: src/history_gui.py:271
 msgid "Taking System Back to %1 %2 <br>"
 msgstr "Neem systeem terug naar %1 %2 <br>"
 
-#: src/history_gui.py:294 src/history_gui.py:295
+#: src/history_gui.py:291 src/history_gui.py:292
 msgid "Select an entry to view details"
 msgstr "Selecteer waarde voor details"
 
-#: src/history_gui.py:298
+#: src/history_gui.py:295
 msgid "No: <b>%1</b>"
 msgstr "Geen: <b>%1</b>"
 
-#: src/history_gui.py:299
+#: src/history_gui.py:296
 msgid "Type: <b>%1</b>"
 msgstr "Type: <b>%1</b>"
 
-#: src/history_gui.py:310
+#: src/history_gui.py:307
 msgid "There are <b>%1</b> packages in this snapshot"
 msgstr "Er zijn <b>%1</b> pakketten in deze snapshot"
 
-#: src/history_gui.py:326
+#: src/history_gui.py:323
 msgid "Configuration files in snapshot:"
 msgstr "Configuratie bestanden in snapshot:"
 
-#: src/history_gui.py:333
+#: src/history_gui.py:330
 msgid "Take Back Plan for %1 operation on %2"
 msgstr "Ga terug naar plan voor %1 handeling op %2"
 
-#: src/history_gui.py:336
+#: src/history_gui.py:333
 msgid "These package(s) will be <b>installed</b> :"
 msgstr "Deze pakket(ten) zullen <b>geïnstalleerd</b> worden:"
 
-#: src/history_gui.py:341
+#: src/history_gui.py:338
 msgid "These package(s) will be <b>removed</b> :"
 msgstr "Deze pakket(ten) zullen <b>verwijderd</b> worden:"
 
-#: src/history_gui.py:406
+#: src/history_gui.py:403
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<b>Voorbereiden PiSi...</b>"
+
+#: src/history_gui.py:441
+#, fuzzy
+msgid "snapshot"
+msgstr "Snapshots"
+
+#: src/history_gui.py:445
+#, fuzzy
+msgid "upgrade"
+msgstr "Opwaarderingen"
+
+#: src/history_gui.py:449
+#, fuzzy
+msgid "remove"
+msgstr "Verwijderd"
+
+#: src/history_gui.py:453
+#, fuzzy
+msgid "install"
+msgstr "Installaties"
+
+#: src/history_gui.py:457
+#, fuzzy
+msgid "takeback"
+msgstr "GaTerug"
 
 #: src/ComarIface.py:31
 msgid "Cannot connect to dbus"
@@ -245,4 +273,3 @@ msgstr "COMAR fout"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "U bent niet geautoriseerd voor deze handeling."
-

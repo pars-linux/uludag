@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 02:53+0300\n"
+"POT-Creation-Date: 2008-06-26 16:32+0300\n"
 "PO-Revision-Date: 2008-06-25 20:18-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/Progress.py:68 src/history_gui.py:378
+#: src/Progress.py:68 src/history_gui.py:375
 msgid "Progress"
 msgstr "Fortschritt"
 
@@ -33,7 +33,7 @@ msgstr "System-Schnappschuss wird erstellt"
 msgid "History Manager is already running!"
 msgstr "History Manager läuft schon!"
 
-#: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:60
+#: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:57
 msgid "History Manager"
 msgstr "History Manager"
 
@@ -49,185 +49,209 @@ msgstr "Kann nicht mit dem Comar-Daemon verbunden werden"
 msgid "History Manager Interface"
 msgstr ""
 
-#: src/historygui.py:131
+#: src/historygui.py:124
 msgid "formMain"
 msgstr "formMain"
 
-#: src/history_gui.py:62
+#: src/history_gui.py:59
 msgid "All Operations"
 msgstr "Alle Vorgänge"
 
-#: src/history_gui.py:63
+#: src/history_gui.py:60
 msgid "Snapshots"
 msgstr "System-Schnappschüsse"
 
-#: src/history_gui.py:64
+#: src/history_gui.py:61
 msgid "Upgrades"
 msgstr "Aktualisierungen"
 
-#: src/history_gui.py:65
+#: src/history_gui.py:62
 msgid "Removes"
 msgstr "Desinstallationen"
 
-#: src/history_gui.py:66
+#: src/history_gui.py:63
 msgid "Installations"
 msgstr "Installationen"
 
-#: src/history_gui.py:67
 # vielleicht: historische Zustände ?
+#: src/history_gui.py:64
 msgid "TakeBacks"
 msgstr ""
 
-#: src/history_gui.py:69
+#: src/history_gui.py:66
 msgid "Take Back Plan"
 msgstr "Zurückversetzungs-Plan"
 
-#: src/history_gui.py:70
+#: src/history_gui.py:67
 msgid "Operation Details"
 msgstr "Vorgang Details"
 
-#: src/history_gui.py:73
+#: src/history_gui.py:70
 msgid "New Snapshot"
 msgstr "Neuer Schnappschuss"
 
-#: src/history_gui.py:75
+#: src/history_gui.py:72
 msgid "Date"
 msgstr "Datum"
 
-#: src/history_gui.py:76
+#: src/history_gui.py:73
 msgid ""
 "Your system will be restored to that date if you click Take Back button."
 "<br>These are the package installation and removals, also configuration "
 "files below (in snapshots) will overwrite your current configuration files."
 msgstr ""
-"Das System wird wieder in den Zustand dieses Datums zurückversetzt, wenn Sie Zurückversetzen anklicken."
-"<br>Das berücksichtigt installierte und entfernte Programme, und die Konfigurationsdateien aus den Schnappschüssen werden die aktuelle Konfigurationsdateien überschreiben."
+"Das System wird wieder in den Zustand dieses Datums zurückversetzt, wenn Sie "
+"Zurückversetzen anklicken.<br>Das berücksichtigt installierte und entfernte "
+"Programme, und die Konfigurationsdateien aus den Schnappschüssen werden die "
+"aktuelle Konfigurationsdateien überschreiben."
 
-#: src/history_gui.py:87
 # vielleicht gibt es etwas treffenderes fuer "restore"..
+#: src/history_gui.py:84
 msgid "Restore to This Point"
 msgstr "Zustand auf diesen Punkt zurück versetzen"
 
-#: src/history_gui.py:135
+#: src/history_gui.py:132
 msgid "This will take a New Snapshot of your system"
 msgstr "Dieses wird einen neuen System-Schnappschuss erstellen"
 
-#: src/history_gui.py:150
+#: src/history_gui.py:147
 msgid ""
 "This will restore your system back to : %1 %2\n"
 "If you're unsure, click Cancel and see TakeBack Plan"
 msgstr ""
 "Dieses wird den Systemzustand wiederherstellen auf : %1 %2\n"
-"Wenn Sie sich nicht sicher sind, Abbrechen anklicken und schauen Sis sich den Zurückversetzungs-Plan an"
+"Wenn Sie sich nicht sicher sind, Abbrechen anklicken und schauen Sis sich "
+"den Zurückversetzungs-Plan an"
 
-#: src/history_gui.py:176
+#: src/history_gui.py:173
 msgid "Take Back operation completed"
 msgstr "Zurückversetzungs-Vorgang beendet"
 
-#: src/history_gui.py:178
+#: src/history_gui.py:175
 msgid "New Snapshot Taken"
 msgstr "Neuer Schnappschuss aufgenommen"
 
-#: src/history_gui.py:180
+#: src/history_gui.py:177
 msgid "Operation Cancelled"
 msgstr "Vorgang abgebrochen"
 
-#: src/history_gui.py:185
+#: src/history_gui.py:182
 msgid "Updating User Interface"
 msgstr "Benutzerschnittstelle wird aktualisiert"
 
-#: src/history_gui.py:187
+#: src/history_gui.py:184
 msgid "Finished with Errors"
 msgstr "Mit Fehlern abgeschlossen"
 
-#: src/history_gui.py:188
+#: src/history_gui.py:185
 msgid "Operation Finished with Errors"
 msgstr "Mit Fehlern abgeschlossen"
 
-#: src/history_gui.py:192
+#: src/history_gui.py:189
 msgid "Finished Succesfully"
 msgstr "Erfolgreich abgeschlossen"
 
-#: src/history_gui.py:203
+#: src/history_gui.py:200
 msgid "Fetching %1"
 msgstr ""
 
-#: src/history_gui.py:247
+#: src/history_gui.py:244
 msgid "<b>Access Granted</b><br>"
 msgstr "<b>Zugang gewährt</b><br>"
 
-#: src/history_gui.py:250
+#: src/history_gui.py:247
 msgid "<b>Access Denied</b><br>"
 msgstr "<b>Zugang verweigert</b><br>"
 
-#: src/history_gui.py:252
+#: src/history_gui.py:249
 msgid "Operation Started"
 msgstr "Vorgang gestartet"
 
-#: src/history_gui.py:254
+#: src/history_gui.py:251
 msgid "Ordering Packages for Operation"
 msgstr "Pakete werden für den Vorgang angefordert"
 
-#: src/history_gui.py:257
+#: src/history_gui.py:254
 msgid "Removing    : %1"
 msgstr "Wird entfernt    : %1"
 
-#: src/history_gui.py:262
+#: src/history_gui.py:259
 msgid "Installing  : %1"
 msgstr "Wird installiert  : %1"
 
-#: src/history_gui.py:265
+#: src/history_gui.py:262
 msgid "Extracting  : %1"
 msgstr "Wird extrahiert  : %1"
 
-#: src/history_gui.py:268
+#: src/history_gui.py:265
 msgid "Configuring  : %1"
 msgstr "Wird konfiguriert  : %1"
 
-#: src/history_gui.py:272
+#: src/history_gui.py:269
 msgid "Taking a Snapshot of System "
 msgstr "Nehme Schnappschuss des Systems"
 
-#: src/history_gui.py:274
+#: src/history_gui.py:271
 msgid "Taking System Back to %1 %2 <br>"
 msgstr "Systemzustand wieder herstellen auf %1 %2 <br>"
 
-#: src/history_gui.py:294 src/history_gui.py:295
+#: src/history_gui.py:291 src/history_gui.py:292
 msgid "Select an entry to view details"
 msgstr "Ein Eintrag auswählen um Details anzusehen"
 
-#: src/history_gui.py:298
+#: src/history_gui.py:295
 msgid "No: <b>%1</b>"
 msgstr ""
 
-#: src/history_gui.py:299
+#: src/history_gui.py:296
 msgid "Type: <b>%1</b>"
 msgstr "Typ: <b>%1</b>"
 
-#: src/history_gui.py:310
+#: src/history_gui.py:307
 msgid "There are <b>%1</b> packages in this snapshot"
 msgstr "Es gibt <b>%1</b> Pakete in diesem Schnappschuss"
 
-#: src/history_gui.py:326
+#: src/history_gui.py:323
 msgid "Configuration files in snapshot:"
 msgstr "Konfigurationsdateien im Schnappschuss:"
 
-#: src/history_gui.py:333
 # bitte nachchecken - wegen Wort-position, eventuell "Operation" vorverlegen..
 # passt "auf" richtig hier ?? in dem Zusammenhang
+#: src/history_gui.py:330
 msgid "Take Back Plan for %1 operation on %2"
 msgstr "Zurückversetzungs-Plan für %1 Operation auf %2"
 
-#: src/history_gui.py:336
+#: src/history_gui.py:333
 msgid "These package(s) will be <b>installed</b> :"
 msgstr "Folgende Pakete werden <b>installiert</b> :"
 
-#: src/history_gui.py:341
+#: src/history_gui.py:338
 msgid "These package(s) will be <b>removed</b> :"
 msgstr "Folgende Pakete werden <b>entfernt</b> :"
 
-#: src/history_gui.py:406
+#: src/history_gui.py:403
 msgid "<b>Preparing PiSi...</b>"
+msgstr ""
+
+#: src/history_gui.py:441
+msgid "snapshot"
+msgstr ""
+
+#: src/history_gui.py:445
+msgid "upgrade"
+msgstr ""
+
+#: src/history_gui.py:449
+msgid "remove"
+msgstr ""
+
+#: src/history_gui.py:453
+#, fuzzy
+msgid "install"
+msgstr "Wird installiert  : %1"
+
+#: src/history_gui.py:457
+msgid "takeback"
 msgstr ""
 
 #: src/ComarIface.py:31
@@ -249,4 +273,3 @@ msgstr "COMAR-Fehler"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht berechtigt."
-
