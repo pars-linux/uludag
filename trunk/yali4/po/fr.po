@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 13:59+0300\n"
-"PO-Revision-Date: 2008-06-26 16:22+0300\n"
+"PO-Revision-Date: 2008-06-26 16:30+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -697,9 +697,8 @@ msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 
 #: yali4/gui/DiskWidgets.py:350
-#, fuzzy
 msgid "Too many primary partition !"
-msgstr "Formatter cette partion"
+msgstr "Plusieurs partitions primaires!"
 
 #: yali4/gui/DiskWidgets.py:351
 msgid ""
@@ -720,19 +719,19 @@ msgstr "Supprimer toutes les partitions"
 
 #: yali4/gui/DiskWidgets.py:478
 msgid "Pardus will install here"
-msgstr ""
+msgstr "Pardus sera installé ici"
 
 #: yali4/gui/DiskWidgets.py:481
 msgid "User files will store here"
-msgstr ""
+msgstr "Les fichiers d'utilisateurs seront stockés ici"
 
 #: yali4/gui/DiskWidgets.py:484
 msgid "Swap will be here"
-msgstr ""
+msgstr "Partition de Swap"
 
 #: yali4/gui/DiskWidgets.py:487
 msgid "Backup or archive files will store here"
-msgstr ""
+msgstr "Les fichiers d'archives ou de sauvegardes seront stockés ici"
 
 #: yali4/gui/DiskWidgets.py:508
 #, python-format
@@ -741,17 +740,22 @@ msgid ""
 "                                  <b>Size:</b> %s<br>\n"
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
+"<b>Chemin:</b> %s<br>\n"
+"                                  <b>Taille:</b> %s<br>\n"
+"                                  <b>Système de Fichier:</b> %s%s"
 
 #: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:141
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr ""
+"All partitions on device <b>%(device)s</b> has been deleted. "
+"Toutes les partitions sur le disque <b>%(device)s</b> seront supprimées."
 
 #: yali4/gui/GUIAdditional.py:67
 msgid ""
 "<p><span style=\"color:#FFF\"><b>It seems this partition is not ready for "
 "resizing.</b></span></p>"
-msgstr ""
+msgstr "<p><span style=\"color:#FFF\"><b>Il semble que cette partition n'est pas pret pour le redimensionnement.</b></span></p>"
 
 #: yali4/gui/GUIAdditional.py:80
 #, python-format
