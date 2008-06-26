@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 16:47+0300\n"
+"POT-Creation-Date: 2008-06-27 02:11+0300\n"
 "PO-Revision-Date: 2008-06-26 09:43+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -19,22 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr "Kan niet verbinden met DBus."
-
-#: um_mainview.py:43 um_mainview.py:62
-msgid "DBus Error"
-msgstr "DBus fout"
-
-#: um_mainview.py:58
-msgid "You are not authorized for this operation."
-msgstr "U bent niet geautoriseerd voor deze handeling."
-
-#: um_mainview.py:66
-msgid "COMAR Error"
-msgstr "COMAR fout"
 
 #: groupedit.py:22 useredit.py:36
 msgid "ID:"
@@ -129,17 +113,21 @@ msgstr ""
 msgid "Delete Group"
 msgstr "Verwijder groep"
 
-#: user-manager.py:33
-msgid "User Management"
-msgstr "Gebruikersbeheer"
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr "Kan niet verbinden met DBus."
 
-#: user-manager.py:83
-msgid "User manager module is already started!"
-msgstr "Module gebruikersbeheer is al opgestart!"
+#: um_mainview.py:43 um_mainview.py:63
+msgid "DBus Error"
+msgstr "DBus fout"
 
-#: user-manager.py:88
-msgid "User Manager"
-msgstr "Gebruikersbeheer"
+#: um_mainview.py:59 useredit.py:857 useredit.py:913
+msgid "You are not authorized for this operation."
+msgstr "U bent niet geautoriseerd voor deze handeling."
+
+#: um_mainview.py:67
+msgid "COMAR Error"
+msgstr "COMAR fout"
 
 #: useredit.py:22
 msgid "User/group operations"
@@ -301,14 +289,26 @@ msgstr "Autorisaties"
 msgid "Actions"
 msgstr "Acties"
 
-#: useredit.py:706
+#: useredit.py:704
 msgid "Authorize"
 msgstr "Autoriseer"
 
-#: useredit.py:710
+#: useredit.py:708
 msgid "Block"
 msgstr "Blok"
 
-#: useredit.py:721
+#: useredit.py:719
 msgid "Do not ask password"
 msgstr "Vraag geen wachtwoord"
+
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Gebruikersbeheer"
+
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Module gebruikersbeheer is al opgestart!"
+
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Gebruikersbeheer"

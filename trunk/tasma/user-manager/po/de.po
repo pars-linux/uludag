@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 16:47+0300\n"
+"POT-Creation-Date: 2008-06-27 02:11+0300\n"
 "PO-Revision-Date: 2008-06-25 19:09-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -18,22 +18,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr "Kann nicht mit DBus verbunden werden."
-
-#: um_mainview.py:43 um_mainview.py:62
-msgid "DBus Error"
-msgstr "DBus-Fehler"
-
-#: um_mainview.py:58
-msgid "You are not authorized for this operation."
-msgstr "Sie sind nicht autorisiert für diese Operation."
-
-#: um_mainview.py:66
-msgid "COMAR Error"
-msgstr "COMAR-Fehler"
 
 #: groupedit.py:22 useredit.py:36
 msgid "ID:"
@@ -129,17 +113,21 @@ msgstr ""
 msgid "Delete Group"
 msgstr "Gruppe löschen"
 
-#: user-manager.py:33
-msgid "User Management"
-msgstr "Benutzer-Verwaltung"
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr "Kann nicht mit DBus verbunden werden."
 
-#: user-manager.py:83
-msgid "User manager module is already started!"
-msgstr "Benutzer-Manager wurde bereits gestartet!"
+#: um_mainview.py:43 um_mainview.py:63
+msgid "DBus Error"
+msgstr "DBus-Fehler"
 
-#: user-manager.py:88
-msgid "User Manager"
-msgstr "Benutzer-Manager"
+#: um_mainview.py:59 useredit.py:857 useredit.py:913
+msgid "You are not authorized for this operation."
+msgstr "Sie sind nicht autorisiert für diese Operation."
+
+#: um_mainview.py:67
+msgid "COMAR Error"
+msgstr "COMAR-Fehler"
 
 #: useredit.py:22
 msgid "User/group operations"
@@ -305,14 +293,26 @@ msgstr "Autorisierungen"
 msgid "Actions"
 msgstr "Aktionen"
 
-#: useredit.py:706
+#: useredit.py:704
 msgid "Authorize"
 msgstr "Autorisieren"
 
-#: useredit.py:710
+#: useredit.py:708
 msgid "Block"
 msgstr "Blockieren"
 
-#: useredit.py:721
+#: useredit.py:719
 msgid "Do not ask password"
 msgstr "Nach Passwort nicht fragen"
+
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Benutzer-Verwaltung"
+
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Benutzer-Manager wurde bereits gestartet!"
+
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Benutzer-Manager"

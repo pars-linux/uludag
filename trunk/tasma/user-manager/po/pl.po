@@ -2,29 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 16:47+0300\n"
+"POT-Creation-Date: 2008-06-27 02:11+0300\n"
 "PO-Revision-Date: 2007-06-30 19:59+0100\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr "Nie mogę połączyć się z DBus."
-
-#: um_mainview.py:43 um_mainview.py:62
-msgid "DBus Error"
-msgstr "Błąd DBus"
-
-#: um_mainview.py:58
-msgid "You are not authorized for this operation."
-msgstr "Nie masz uprawnień dla tej operacji."
-
-#: um_mainview.py:66
-msgid "COMAR Error"
-msgstr "Błąd COMARa"
 
 #: groupedit.py:22 useredit.py:36
 msgid "ID:"
@@ -117,17 +101,21 @@ msgstr "<big><b>Usunąć tą grupę?</b></big><br><br>Nazwa grupy: %s<br>ID: %d"
 msgid "Delete Group"
 msgstr "usuń grupę"
 
-#: user-manager.py:33
-msgid "User Management"
-msgstr "Zarządzanie użytkownikami"
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr "Nie mogę połączyć się z DBus."
 
-#: user-manager.py:83
-msgid "User manager module is already started!"
-msgstr "Moduł zarządzania użytkownikami jest już uruchomiony!"
+#: um_mainview.py:43 um_mainview.py:63
+msgid "DBus Error"
+msgstr "Błąd DBus"
 
-#: user-manager.py:88
-msgid "User Manager"
-msgstr "Menedżer Użytkowników"
+#: um_mainview.py:59 useredit.py:857 useredit.py:913
+msgid "You are not authorized for this operation."
+msgstr "Nie masz uprawnień dla tej operacji."
+
+#: um_mainview.py:67
+msgid "COMAR Error"
+msgstr "Błąd COMARa"
 
 #: useredit.py:22
 msgid "User/group operations"
@@ -290,17 +278,29 @@ msgstr "Autoryzacje"
 msgid "Actions"
 msgstr "Akcje"
 
-#: useredit.py:706
+#: useredit.py:704
 msgid "Authorize"
 msgstr "Autoryzuj"
 
-#: useredit.py:710
+#: useredit.py:708
 msgid "Block"
 msgstr "Blokuj"
 
-#: useredit.py:721
+#: useredit.py:719
 msgid "Do not ask password"
 msgstr "Nie pytaj o hasło"
+
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Zarządzanie użytkownikami"
+
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Moduł zarządzania użytkownikami jest już uruchomiony!"
+
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Menedżer Użytkowników"
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "

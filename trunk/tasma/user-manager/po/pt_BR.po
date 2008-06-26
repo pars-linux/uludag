@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 16:47+0300\n"
+"POT-Creation-Date: 2008-06-27 02:11+0300\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -16,23 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr ""
-
-#: um_mainview.py:43 um_mainview.py:62
-msgid "DBus Error"
-msgstr ""
-
-#: um_mainview.py:58
-#, fuzzy
-msgid "You are not authorized for this operation."
-msgstr "Você não permissão para realizar tal operação"
-
-#: um_mainview.py:66
-msgid "COMAR Error"
-msgstr ""
 
 #: groupedit.py:22 useredit.py:36
 msgid "ID:"
@@ -126,17 +109,22 @@ msgstr ""
 msgid "Delete Group"
 msgstr "Deletar Grupo"
 
-#: user-manager.py:33
-msgid "User Management"
-msgstr "Gerenciamento de Usuários"
+#: um_mainview.py:43
+msgid "Unable to connect to DBus."
+msgstr ""
 
-#: user-manager.py:83
-msgid "User manager module is already started!"
-msgstr "Módulo de gerenciamento de usuários já foi iniciado!"
+#: um_mainview.py:43 um_mainview.py:63
+msgid "DBus Error"
+msgstr ""
 
-#: user-manager.py:88
-msgid "User Manager"
-msgstr "Gerenciador de Usuários"
+#: um_mainview.py:59 useredit.py:857 useredit.py:913
+#, fuzzy
+msgid "You are not authorized for this operation."
+msgstr "Você não permissão para realizar tal operação"
+
+#: um_mainview.py:67
+msgid "COMAR Error"
+msgstr ""
 
 #: useredit.py:22
 msgid "User/group operations"
@@ -298,18 +286,30 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: useredit.py:706
+#: useredit.py:704
 msgid "Authorize"
 msgstr ""
 
-#: useredit.py:710
+#: useredit.py:708
 msgid "Block"
 msgstr ""
 
-#: useredit.py:721
+#: useredit.py:719
 #, fuzzy
 msgid "Do not ask password"
 msgstr "Confirmar senha:"
+
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Gerenciamento de Usuários"
+
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Módulo de gerenciamento de usuários já foi iniciado!"
+
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Gerenciador de Usuários"
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "
