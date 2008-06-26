@@ -1,9 +1,10 @@
+# translation of de.po to Deutsch
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
-# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
+# Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2008.
@@ -12,9 +13,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 15:59+0300\n"
-"PO-Revision-Date: 2008-06-25 19:06-0400\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team:  <es@li.org>\n"
+"PO-Revision-Date: 2008-06-26 19:56+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,8 +88,7 @@ msgstr ""
 "Methode aktualisiert."
 
 #: yali4/gui/Ui/autopartwidget.py:105
-msgid ""
-"Automatically partition try to use free space or resize current partitions"
+msgid "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
@@ -117,13 +117,11 @@ msgstr "Mit dieser Option können Sie manuell partitionieren"
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
-"Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
+msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:111
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
@@ -387,7 +385,6 @@ msgid "Apply"
 msgstr "Anwenden"
 
 #: yali4/gui/Ui/partresize.py:82
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -422,13 +419,22 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; color:#ffffff;\">Achtung!</span><span style=\" color:#ffffff;\"> "
-"Diese Einstellungen werden übernommen, wenn Sie klicken \"</span><span style="
-"\" text-decoration: underline; color:#ffffff;\">Resize</span><span style=\" "
-"color:#ffffff;\">\".Klicken, um zurückzukehren \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Abbrechen</span><span style=\" color:"
-"#ffffff;\">\".</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">Diese Einstellungen werden übernommen, wenn Sie auf \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Grösse ändern</span><span "
+"style=\" color:#ffffff;\">\"klicken. Wenn Sie zurückkehren möchten, klicken Sie auf \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Abbrechen</span><span "
+"style=\" color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Achtung:</span> Ein Grössen- "
+"Änderungsvorgang könnte Ihrer Partition beschädigen und der Zugang zu Ihren Daten "
+"könnte nicht mehr möglich sein. Erstellen Sie für diese Partition sicherheitshalber ein Backup.<span style=\" font-"
+"weight:600;\"> </span><span style=\" font-weight:600;\">Bitte beachten Sie,"
+"dass dieser Vorgang nicht mehr rückgängig gemacht werden kann.</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
@@ -555,7 +561,6 @@ msgstr ""
 "intelligenten Partitionstool vorbereitet haban.\n"
 
 #: yali4/gui/descSlide.py:20
-#, fuzzy
 msgid ""
 "Our Kaptan will show you the way after the installation. You can easily add "
 "additional repositories and manage basic settings like mouse, wallpaper and "
@@ -563,7 +568,7 @@ msgid ""
 msgstr ""
 "Unser Kaptan wird Sie nach der Installation führen. Sie können mit Kaptan "
 "auf leichte Weise weitere Depots hinzufügen und die Grundeinstellungen wie "
-"Maus, Hintergrundbild, Webcam und Panel  verwalten.\n"
+"Maus, Hintergrundbild, Webcam und Panel verwalten.\n"
 
 # habe uebersichtlich dazu gedichtet, ich hoffe es ist ok
 #: yali4/gui/descSlide.py:22
@@ -765,11 +770,8 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:316
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr ""
-"Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
-"(type)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%(fsType)s</b>."
 
 #: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:143
 #, python-format
@@ -957,13 +959,12 @@ msgstr ""
 "center>"
 
 #: yali4/gui/ScrAdmin.py:133
-#, fuzzy
 msgid ""
 "<center><font color=\"#FF6D19\">Don't use your username as password !</"
 "font></center>"
 msgstr ""
-"<font color=\"#FF6D19\">Verwenden Sie Ihren Benutzernamen oder Namen nicht "
-"als Passwort.</font>"
+"<center><font color=\"#FF6D19\">Verwenden Sie nicht Ihren Benutzernamen oder Namen als Passwort!</"
+"font></center>"
 
 #: yali4/gui/ScrAdmin.py:153
 msgid ""
@@ -1058,16 +1059,12 @@ msgstr ""
 "zu brennen.</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
-#, fuzzy
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Bitte warten Sie, während die CD überprüft wird.</"
-"font>"
+msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
-#, fuzzy
 msgid "Stop Checking"
-msgstr "Am überprüfen: %s"
+msgstr "Überprüfung anhalten"
 
 #: yali4/gui/ScrDateTime.py:27
 msgid "Set your timezone"
@@ -1168,8 +1165,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1530,8 +1526,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:168
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:183
 msgid "Bootloader Settings"
@@ -1798,14 +1793,12 @@ msgid "Trying to connect DBUS..."
 msgstr ""
 
 #: yali4/installer.py:518
-#, fuzzy
 msgid "Setting Hostname..."
-msgstr "Zeiteinstellungen werden vorgenommen.."
+msgstr "Hostname wird eingestellt..."
 
 #: yali4/installer.py:519
-#, fuzzy
 msgid "Setting TimeZone..."
-msgstr "Zeiteinstellungen werden vorgenommen.."
+msgstr "Zeiteinstellungen werden vorgenommen..."
 
 #: yali4/installer.py:520
 msgid "Setting Root Password..."
@@ -1816,9 +1809,8 @@ msgid "Adding Users..."
 msgstr ""
 
 #: yali4/installer.py:522
-#, fuzzy
 msgid "Writing Console Data..."
-msgstr "Laufwerktabellen werden beschrieben..."
+msgstr "Konsoldaten werden beschrieben..."
 
 #: yali4/installer.py:523
 msgid "Copy Pisi index..."
@@ -1833,9 +1825,8 @@ msgid "Setting misc. package configurations..."
 msgstr ""
 
 #: yali4/installer.py:527
-#, fuzzy
 msgid "Installing BootLoader..."
-msgstr "System wird installiert..."
+msgstr "Boot-Loader wird installiert..."
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -2012,3 +2003,4 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
+
