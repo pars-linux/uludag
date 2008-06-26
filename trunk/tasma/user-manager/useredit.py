@@ -550,7 +550,7 @@ class UserStack(QVBox):
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
 
-            #asynchronous call 'setuser'
+            # synchronous call 'setuser'
             ch = self.mainwidget.callMethod("setUser", "tr.org.pardus.comar.user.manager.setuser", async = False)
             ch.call(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
             self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
@@ -857,6 +857,9 @@ class PolicyTab(QVBox):
             message = i18n("You are not authorized for this operation.")
             KMessageBox.sorry(None, message, i18n("Error"))
 
+        def error():
+            item.setOpen(False)
+
         if not self.edit:
             setIcons([])
             return
@@ -870,6 +873,10 @@ class PolicyTab(QVBox):
         ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations", handleCancel = False)
         ch.registerDone(listDone)
         ch.registerCancel(cancelError)
+        ch.registerError(error)
+        ch.registerDBusError(error)
+        ch.registerAuthError(error)
+
         ch.call(int(self.uid.text()))
 
     def actionClicked(self, actionItem):
@@ -913,6 +920,9 @@ class PolicyTab(QVBox):
             message = i18n("You are not authorized for this operation.")
             KMessageBox.sorry(None, message, i18n("Error"))
 
+        def error():
+            self.setPolicyButtonsEnabled(False)
+
         #try:
         #    auths = polkit.auth_list_uid(int(self.uid.text()))
         #    self.inOperation = True
@@ -923,6 +933,10 @@ class PolicyTab(QVBox):
         ch = self.mainwidget.callMethod("listUserAuthorizations", "tr.org.pardus.comar.user.manager.listuserauthorizations", handleCancel = False)
         ch.registerDone(listDone)
         ch.registerCancel(cancelError)
+        ch.registerError(error)
+        ch.registerDBusError(error)
+        ch.registerAuthError(error)
+
         ch.call(int(self.uid.text()))
 
     def selectRightButtons(self, auths, actionItem):
