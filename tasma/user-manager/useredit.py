@@ -29,8 +29,6 @@ categories = {"tr.org.pardus.comar.user.manager": [I18N_NOOP("User/group operati
         "tr.org.pardus.comar.xorg": [I18N_NOOP("Screen settings"), "randr"]
         }
 
-unnecessaryActions = []
-
 class UID:
     def __init__(self, stack, w, grid, edit=False):
         self.edit = edit
@@ -733,6 +731,7 @@ class PolicyTab(QVBox):
         self.fillAuths()
 
         self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
+        self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)
 
     def reset(self):
         it = self.policyview.firstChild()
@@ -762,6 +761,7 @@ class PolicyTab(QVBox):
     def setPolicyButtonsEnabled(self, enable):
         self.authorized.setEnabled(enable)
         self.blocked.setEnabled(enable)
+        self.passwordCheck.setEnabled(enable)
         if enable and self.blocked.isOn():
             return
         self.passwordCheck.setEnabled(enable)
@@ -798,37 +798,83 @@ class PolicyTab(QVBox):
                 self.operations[item.id] = "grant_revoke"
 
     def blockedSlot(self, toggle):
-        if self.inOperation:
-            return
-
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
             return
 
         if toggle:
+            item.setAuthIcon("no")
+            if self.inOperation:
+                return
+
             #block
             if item.id in self.operations.keys() and self.operations[item.id] == "block_revoke":
                 self.operations.pop(item.id)
             else:
                 self.operations[item.id] = "block"
         else:
+            item.setAuthIcon("yes")
+            if self.inOperation:
+                return
+
             #revoke
             if item.id in self.operations.keys() and self.operations[item.id] == "block":
                 self.operations.pop(item.id)
             else:
                 self.operations[item.id] = "block_revoke"
 
+    def listviewExpanded(self, item):
+        if not item: # or self.policyview.selectedItem()
+            return
+
+        childCount = item.childCount()
+        if childCount < 1:
+            return
+
+        children = []
+        newItem = item.firstChild()
+        while newItem:
+            children.append(newItem)
+            newItem = newItem.nextSibling()
+
+        def setIcons(auths):
+            blocks = map(lambda x: x["action_id"], filter(lambda x: x["negative"], auths))
+            if self.operations:
+                # add selections done via user-manager
+                blocks.extend(filter(lambda x: self.operations[x] == "block", self.operations.keys()))
+                blocks = list(set(blocks))
+
+            for child in children:
+                if child.id in blocks:
+                    child.setAuthIcon("no")
+                else:
+                    child.setAuthIcon("yes")
+
+        def listDone(auths):
+            auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths)
+            setIcons(auths)
+
+        def cancelError():
+            item.setOpen(False)
+
+
+        if not self.edit:
+            setIcons([])
+            return
+
+        #try:
+        #    auths = polkit.auth_list_uid(int(self.uid.text()))
+        #    setIcons(auths)
+        #except:
+        #call COMAR see different users' auths
+        self.ch.registerDone(listDone)
+        self.ch.registerCancel(cancelError)
+        self.ch.call(int(self.uid.text()))
+
     def actionClicked(self, actionItem):
         #now we will setup radiobuttons and checkbox according to the action clicked, but during this setup
         #slots of the widgets should not be executed so we set this inOperation variable and check this variable in slots of the widgets
         self.inOperation = True
-
-        #if it is a new user, default is authorized
-        if not self.edit:
-            self.authorized.setOn(True)
-            self.passwordCheck.setChecked(False)
-            self.inOperation = False
-            return
 
         #if user changed the default value select buttons according to it
         if actionItem.id in self.operations.keys():
@@ -846,10 +892,20 @@ class PolicyTab(QVBox):
             self.inOperation = False
             return
 
+        #if it is a new user, default is authorized
+        if not self.edit:
+            self.authorized.setOn(True)
+            self.passwordCheck.setChecked(False)
+            self.inOperation = False
+            return
+
         def listDone(authList):
             #since COMAR calls this handler twice, we have a workaround like this
             self.inOperation = True
-            self.selectRightButtons(authList, actionItem, True)
+
+            # convert comar answer to pypolkit call structure
+            authList = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, authList)
+            self.selectRightButtons(authList, actionItem)
 
         def cancelError():
             self.setPolicyButtonsEnabled(False)
@@ -864,11 +920,7 @@ class PolicyTab(QVBox):
         self.ch.registerCancel(cancelError)
         self.ch.call(int(self.uid.text()))
 
-    def selectRightButtons(self, auths, actionItem, otherUser = False):
-        # convert comar answer to pypolkit call structure
-        if otherUser:
-            auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths)
-
+    def selectRightButtons(self, auths, actionItem):
         auths = filter(lambda x: x['action_id'] == actionItem.id, auths)
 
         if len(auths) == 0:
@@ -894,3 +946,10 @@ class ActionItem(KListViewItem):
         self.id = id
         self.desc = desc
         self.policy = policy
+
+        # icon mappings
+        self.states = {"yes": "ok", "no": "cancel", "n/a": "history"}
+        self.setAuthIcon("n/a")
+
+    def setAuthIcon(self, state):
+        self.setPixmap(0, getIcon(self.states[state]))
