@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manager per a Pardus en català\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 14:46+0300\n"
+"POT-Creation-Date: 2008-06-26 16:47+0300\n"
 "PO-Revision-Date: 2007-03-28 03:20+0100\n"
 "Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
 "Language-Team: Catalan translators Pardus <Pardus-translation-ca@uludag.org."
@@ -33,11 +33,11 @@ msgstr "Ho sent. No teniu autorització per a fer això"
 msgid "COMAR Error"
 msgstr ""
 
-#: groupedit.py:22 useredit.py:38
+#: groupedit.py:22 useredit.py:36
 msgid "ID:"
 msgstr "ID:"
 
-#: groupedit.py:30 useredit.py:50
+#: groupedit.py:30 useredit.py:48
 msgid "Select manually"
 msgstr "Selecciona manualment"
 
@@ -172,100 +172,100 @@ msgstr ""
 msgid "Screen settings"
 msgstr ""
 
-#: useredit.py:85
+#: useredit.py:83
 msgid "User name:"
 msgstr "Nom d'usuari:"
 
-#: useredit.py:116
+#: useredit.py:114
 msgid "Full name:"
 msgstr "Nom complet:"
 
-#: useredit.py:139
+#: useredit.py:137
 msgid "Home:"
 msgstr "Inici:"
 
-#: useredit.py:171
+#: useredit.py:169
 msgid "Select user's home directory"
 msgstr "Seleccioneu el directori d'inici de l'usuari"
 
-#: useredit.py:180
+#: useredit.py:178
 msgid "Password:"
 msgstr "Mot de pas:"
 
-#: useredit.py:186
+#: useredit.py:184
 msgid "Confirm password:"
 msgstr "Repeteix el mot de pas:"
 
-#: useredit.py:214
+#: useredit.py:212
 msgid "Shell:"
 msgstr "Intèrpret de comandaments (shell):"
 
-#: useredit.py:236
+#: useredit.py:234
 msgid "Please specify an existing shell command"
 msgstr "Si us plau, especifiqueu una ordre de shell existent."
 
-#: useredit.py:238
+#: useredit.py:236
 msgid "Specified shell command is not executable"
 msgstr "L'ordre de shell especificada no és executable"
 
-#: useredit.py:265
+#: useredit.py:263
 msgid "Group"
 msgstr "Grup"
 
-#: useredit.py:272
+#: useredit.py:270
 msgid "Main group:"
 msgstr "Grup principal:"
 
-#: useredit.py:365
+#: useredit.py:363
 msgid "Start with typing this user's full name."
 msgstr "Comenceu a escriure el nom complet d'aquest usuari."
 
-#: useredit.py:368
+#: useredit.py:366
 msgid "You should enter a password for this user."
 msgstr "Heu de donar un mot de pas per a aquest usuari"
 
-#: useredit.py:373
+#: useredit.py:371
 msgid "Password must be longer."
 msgstr "El mot de pas ha de ser més llarg."
 
-#: useredit.py:377
+#: useredit.py:375
 msgid "Don't use your full name or user name as a password."
 msgstr "No feu servir el nom complet o el nom d'usuari com a mot de pas."
 
-#: useredit.py:380
+#: useredit.py:378
 msgid "Passwords don't match."
 msgstr "Els mots de pas són diferents"
 
-#: useredit.py:383
+#: useredit.py:381
 msgid "You must enter a user ID or use the auto selection."
 msgstr ""
 "Heu d'introduir una ID per a l'usuari o fer servir la selecció automàtica."
 
-#: useredit.py:388
+#: useredit.py:386
 msgid "You must enter a user name."
 msgstr "Heu d'introduir un nom per a l'usuari"
 
-#: useredit.py:391
+#: useredit.py:389
 msgid "This user name is used by another user."
 msgstr "Aquest nom ja està registrat per a un altre usuari"
 
-#: useredit.py:395
+#: useredit.py:393
 msgid "User name must not start with a number."
 msgstr "El nom d'usuari no pot començar amb un número"
 
-#: useredit.py:398
+#: useredit.py:396
 msgid "You should select at least one group this user belongs to."
 msgstr "Heu d'escollir almenys un dels grups als quals pertany aquest usuari"
 
-#: useredit.py:431
+#: useredit.py:429
 msgid "Edit User's Information"
 msgstr "Edita la informació de l'usuari"
 
-#: useredit.py:433
+#: useredit.py:431
 msgid "Enter Information For New User"
 msgstr "Introduïu la informació per al nou usuari"
 
-#: useredit.py:469
+#: useredit.py:467
 msgid "Give administrator privileges to this user"
 msgstr ""
 
