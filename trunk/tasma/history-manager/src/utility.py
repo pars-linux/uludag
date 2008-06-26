@@ -17,7 +17,7 @@ import os
 
 mod_name = 'History Manager'
 mod_app = 'history-manager'
-mod_version = '0.1'
+mod_version = '0.1.1'
 
 def I18N_NOOP(str):
     return str

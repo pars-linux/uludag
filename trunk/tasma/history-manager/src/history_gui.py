@@ -293,7 +293,7 @@ class widgetMain(formMain):
             return
 
         self.noLabel.setText(i18n("No: <b>%1</b>").arg(self.selected.getOpNo()))
-        self.typeLabel.setText(i18n("Type: <b>%1</b>").arg(self.selected.getType()))
+        self.typeLabel.setText(i18n("Type: <b>%1</b>").arg(self.selected.getTypeTr()))
         if num == 0:
             self.setTakeBackPlan()
             return
@@ -438,18 +438,23 @@ class widgetItem(QListViewItem):
         if self.op_type == 'snapshot':
             self.setPixmap(0, loadIcon("snapshot", KIcon.Small))
             self.op_type_int = 1
+            self.op_type_tr = i18n("snapshot")
         elif self.op_type == 'upgrade':
             self.setPixmap(0, loadIcon("upgrade", KIcon.Small))
             self.op_type_int = 2
+            self.op_type_tr = i18n("upgrade")
         elif self.op_type == 'remove':
             self.setPixmap(0, loadIcon("remove", KIcon.Small))
             self.op_type_int = 3
+            self.op_type_tr = i18n("remove")
         elif self.op_type == 'install':
             self.setPixmap(0, loadIcon("install", KIcon.Small))
             self.op_type_int = 4
+            self.op_type_tr = i18n("install")
         elif self.op_type == 'takeback':
             self.setPixmap(0, loadIcon("takeback", KIcon.Small))
             self.op_type_int = 5
+            self.op_type_tr = i18n("takeback")
 
     def getNumPackages(self):
         return len(self.op_pack)
@@ -468,4 +473,7 @@ class widgetItem(QListViewItem):
 
     def getTypeInt(self):
         return self.op_type_int
+
+    def getTypeTr(self):
+        return self.op_type_tr
 
