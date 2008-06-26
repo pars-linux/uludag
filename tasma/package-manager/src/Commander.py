@@ -12,6 +12,7 @@
 import string
 import PisiIface
 
+from kdeui import KMessageBox
 from kdecore import i18n
 from qt import QObject, QTimer
 import ComarIface
@@ -59,6 +60,9 @@ class Commander(QObject):
             print "Warning: ", str(data)
             self.parent.resetState()
             self.parent.refreshState()
+        elif signal == "PolicyKit":
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(None, message, i18n("Error"))
         else:
             print "Got notification : %s with data : %s" % (signal, data)
 
