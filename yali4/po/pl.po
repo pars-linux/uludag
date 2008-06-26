@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-24 20:51+0300\n"
+"POT-Creation-Date: 2008-06-26 13:33+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -185,7 +185,8 @@ msgstr ""
 "Możesz sprawdzić spójność pakietów na płycie instalacyjnej. Mimoże jest to "
 "opcjonalne, nalegamy aby to uczynić, by ominąć błędypodczas instalowania."
 
-#: yali4/gui/Ui/checkcdwidget.py:74
+#: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
+#: yali4/installer.py:172
 msgid "Check CD Integrity"
 msgstr "Sprawdź spójność CD"
 
@@ -316,7 +317,7 @@ msgstr "Użytkownicy:"
 msgid "Size :"
 msgstr "Rozmiar"
 
-#: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:87
+#: yali4/gui/Ui/partedit.py:151 yali4/gui/Ui/partresize.py:89
 msgid " MB"
 msgstr ""
 
@@ -373,21 +374,30 @@ msgid ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; color:#ffffff;\">Warning!</span><span style=\" color:#ffffff;\"> "
-"These settings will be applied when you click \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Resize</span><span style=\" color:"
-"#ffffff;\">\". If you want to go back click \"</span><span style=\" text-"
-"decoration: underline; color:#ffffff;\">Cancel</span><span style=\" color:"
-"#ffffff;\">\".</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">These settings will be applied when you click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Resize</span><span "
+"style=\" color:#ffffff;\">\". If you want to go back click \"</span><span "
+"style=\" text-decoration: underline; color:#ffffff;\">Cancel</span><span "
+"style=\" color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">Warning:</span> A resizing "
+"operation may corrupt your partition, rendering your data unreachable. Make "
+"sure that you have a backup for this partition.<span style=\" font-"
+"weight:600;\"> </span><span style=\" font-weight:600;\">Note that this "
+"operation cannot be undone</span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/partresize.py:88 yali4/gui/Ui/summarywidget.py:59
+#: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: yali4/gui/Ui/partresize.py:89
+#: yali4/gui/Ui/partresize.py:91
 msgid "Resize"
 msgstr "Zmień Rozmiar"
 
@@ -460,7 +470,7 @@ msgstr "Automatycznie zaloguj użytkownika:"
 msgid "Auto Login Disabled"
 msgstr "Automatyczne logowanie wyłączone"
 
-#: yali4/gui/Ui/summarywidget.py:60
+#: yali4/gui/Ui/summarywidget.py:60 yali4/gui/ScrSummary.py:212
 msgid "Begin Install"
 msgstr ""
 
@@ -669,7 +679,7 @@ msgid ""
 "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:143
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
@@ -685,7 +695,7 @@ msgid ""
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:141
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:142
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -720,7 +730,7 @@ msgid ""
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:140
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:141
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr ""
@@ -819,7 +829,14 @@ msgstr "<font color=\"#FF6D19\">Hasło jest zbyt krótkie!</font>"
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
 msgstr "<font color=\"#FF6D19\">Hasła nie zgadzają się!</font>"
 
-#: yali4/gui/ScrAdmin.py:146
+#: yali4/gui/ScrAdmin.py:133
+#, fuzzy
+msgid ""
+"<center><font color=\"#FF6D19\">Don't use your username as password !</"
+"font></center>"
+msgstr "<font color=\"#FF6D19\">Nie używaj Twojego imienia jako hasła.</font>"
+
+#: yali4/gui/ScrAdmin.py:153
 #, fuzzy
 msgid ""
 "<center><font color=\"#FF6D19\">Hostname contains invalid characters!</"
@@ -901,9 +918,14 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
-msgid "<font color=\"#FF6D19\">Please wait while checking CD.</font>"
+#, fuzzy
+msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
 msgstr ""
 "<font color=\"#FF6D19\">Proszę zaczekać w trakcie sprawdzania CD.</font>"
+
+#: yali4/gui/ScrCheckCD.py:51
+msgid "Stop Checking"
+msgstr ""
 
 #: yali4/gui/ScrDateTime.py:27
 msgid "Set your timezone"
@@ -975,22 +997,26 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrGoodbye.py:97
+#: yali4/gui/ScrGoodbye.py:72
+msgid "Running post install operations.."
+msgstr ""
+
+#: yali4/gui/ScrGoodbye.py:99
 #, fuzzy
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Restartuję system. Proszę czekać!</"
 "font></b>"
 
-#: yali4/gui/ScrGoodbye.py:124
+#: yali4/gui/ScrGoodbye.py:126
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:130 yali4/gui/ScrSummary.py:69
-#: yali4/installer.py:606
+#: yali4/gui/ScrGoodbye.py:132 yali4/gui/ScrSummary.py:69
+#: yali4/installer.py:642
 msgid "Reboot"
 msgstr "Restart"
 
@@ -1049,31 +1075,31 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:112
+#: yali4/gui/ScrInstall.py:114
 msgid "Packages are being installed.."
 msgstr ""
 
-#: yali4/gui/ScrInstall.py:127
+#: yali4/gui/ScrInstall.py:129
 #, python-format
 msgid "Installing: %s<br>%s"
 msgstr "Instaluję: %s<br>%s"
 
-#: yali4/gui/ScrInstall.py:132
+#: yali4/gui/ScrInstall.py:134
 #, python-format
 msgid "Configuring package: %s"
 msgstr "Konfiguruję pakiet: %s"
 
-#: yali4/gui/ScrInstall.py:168
+#: yali4/gui/ScrInstall.py:170
 #, fuzzy
 msgid "Creating baselayout for your system!"
 msgstr "Konfiguruję pakiety w systemie!"
 
-#: yali4/gui/ScrInstall.py:177
+#: yali4/gui/ScrInstall.py:179
 #, fuzzy
 msgid "Configuring packages.."
 msgstr "Konfiguruję pakiet: %s"
 
-#: yali4/gui/ScrInstall.py:200
+#: yali4/gui/ScrInstall.py:202
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -1302,65 +1328,74 @@ msgstr "Host:"
 msgid "Hostname is set as <b>%s</b>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:129
+#: yali4/gui/ScrSummary.py:130
 #, fuzzy
 msgid "Partition Settings"
 msgstr "Partycje:"
 
-#: yali4/gui/ScrSummary.py:131
+#: yali4/gui/ScrSummary.py:132
 #, fuzzy
 msgid "Automatic Partitioning selected."
 msgstr "Tak, automatycznie spartycjonuj i sformatuj wybrany dysk!"
 
-#: yali4/gui/ScrSummary.py:145
+#: yali4/gui/ScrSummary.py:146
 #, fuzzy
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Tak, automatycznie spartycjonuj i sformatuj wybrany dysk!"
 
-#: yali4/gui/ScrSummary.py:164
+#: yali4/gui/ScrSummary.py:166
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:165
+#: yali4/gui/ScrSummary.py:167
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:166
+#: yali4/gui/ScrSummary.py:168
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:181
+#: yali4/gui/ScrSummary.py:183
 #, fuzzy
 msgid "Bootloader Settings"
 msgstr "Host:"
 
-#: yali4/gui/ScrSummary.py:182
+#: yali4/gui/ScrSummary.py:184
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:184
+#: yali4/gui/ScrSummary.py:186
 msgid "GRUB will not be installed"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:215 yali4/gui/ScrSummary.py:223
-#: yali4/gui/ScrSummary.py:237
+#: yali4/gui/ScrSummary.py:208
+msgid ""
+"<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
+"your partition,<br>\n"
+"                   rendering your data unreachable. <br>\n"
+"                   Make sure that you have a backup for this partition.<br>\n"
+"                   <b>Note that this operation cannot be undone ! </b></p>"
+msgstr ""
+
+#: yali4/gui/ScrSummary.py:235 yali4/gui/ScrSummary.py:243
+#: yali4/gui/ScrSummary.py:257
 #, fuzzy
 msgid "Formatting ..."
 msgstr "Formatuję!"
 
-#: yali4/gui/ScrSummary.py:220
+#: yali4/gui/ScrSummary.py:240
 msgid "Resizing ..."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:230 yali4/installer.py:257
+#: yali4/gui/ScrSummary.py:250 yali4/installer.py:265
 msgid "Writing disk tables ..."
 msgstr ""
 
@@ -1501,20 +1536,20 @@ msgstr "Log:"
 msgid "YALI Is Working..."
 msgstr ""
 
-#: yali4/installer.py:141
+#: yali4/installer.py:142
 msgid "Starting for CD Check"
 msgstr ""
 
-#: yali4/installer.py:159
+#: yali4/installer.py:160
 #, python-format
 msgid "Checking: %s"
 msgstr ""
 
-#: yali4/installer.py:163
+#: yali4/installer.py:166
 msgid "Check Failed"
 msgstr "Sprawdzanie nieudane"
 
-#: yali4/installer.py:164
+#: yali4/installer.py:167
 #, fuzzy
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
@@ -1525,7 +1560,7 @@ msgstr ""
 "jest uszkodzona.</p>\n"
 "</b>\n"
 
-#: yali4/installer.py:167
+#: yali4/installer.py:171
 #, fuzzy
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
@@ -1534,27 +1569,64 @@ msgstr ""
 "<font color=\"#257216\">Sprawdzenie powiodło się. Możesz przejść dalej.</"
 "font>"
 
-#: yali4/installer.py:181
+#: yali4/installer.py:189
 msgid "Setting time settings.."
 msgstr ""
 
-#: yali4/installer.py:208
+#: yali4/installer.py:216
 msgid "Disk analyze started.."
 msgstr ""
 
-#: yali4/installer.py:313
+#: yali4/installer.py:321
 msgid "Resize Finished ..."
 msgstr ""
 
-#: yali4/installer.py:325
+#: yali4/installer.py:333
 #, fuzzy
 msgid "Creating new partition ..."
 msgstr "Stwórz Nową Partycję"
 
-#: yali4/installer.py:438
+#: yali4/installer.py:446
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr ""
+
+#: yali4/installer.py:518
+msgid "Setting Hostname..."
+msgstr ""
+
+#: yali4/installer.py:519
+msgid "Setting TimeZone..."
+msgstr ""
+
+#: yali4/installer.py:520
+msgid "Setting Root Password..."
+msgstr ""
+
+#: yali4/installer.py:521
+msgid "Adding Users..."
+msgstr ""
+
+#: yali4/installer.py:522
+msgid "Writing Console Data..."
+msgstr ""
+
+#: yali4/installer.py:523
+msgid "Copy Pisi index..."
+msgstr ""
+
+#: yali4/installer.py:524
+msgid "Migrating X.org Configuration..."
+msgstr ""
+
+#: yali4/installer.py:526
+msgid "Setting misc. package configurations..."
+msgstr ""
+
+#: yali4/installer.py:527
+#, fuzzy
+msgid "Installing BootLoader..."
+msgstr "Nie instaluj menedżera rozruchu"
 
 #: yali4/localedata.py:20
 msgid "Turkish"
@@ -2059,10 +2131,6 @@ msgstr "Stwórz Partycję"
 
 #~ msgid "Dutch (US)"
 #~ msgstr "Holenderski (US)"
-
-#, fuzzy
-#~ msgid "Installing BootLoader..."
-#~ msgstr "Nie instaluj menedżera rozruchu"
 
 #~ msgid ""
 #~ "<font size=\"+1\"><b>Select the partitioning method:</b></font>\n"

@@ -45,7 +45,7 @@
       <string/>
      </property>
      <property name="pixmap" >
-      <pixmap resource="../../data.qrc" >:/gui/pics/goodbye.png</pixmap>
+      <pixmap resource="../../data.qrc" >:/gui/pics/postinstall.png</pixmap>
      </property>
      <property name="alignment" >
       <set>Qt::AlignCenter</set>
