@@ -161,17 +161,16 @@ def is_linux_boot(partition_path, file_system):
         return False
 
     exist = lambda f: os.path.exists(os.path.join(m_dir,"boot/grub/", f))
-    isFile = lambda f: os.path.isfile(f)
 
     if exist("grub.conf") or exist("menu.lst"):
         menuLst = os.path.join(m_dir,"boot/grub/menu.lst")
         grubCnf = os.path.join(m_dir,"boot/grub/grub.conf")
-        if isFile(menuLst):
-            ctx.debugger.log("menu.lst found on device %s" % partition_path)
-            return menuLst
-        if isFile(grubCnf):
+        if os.path.islink(menuLst):
             ctx.debugger.log("grub.conf found on device %s" % partition_path)
             return grubCnf
+        else:
+            ctx.debugger.log("menu.lst found on device %s" % partition_path)
+            return menuLst
         return False
     else:
         return False

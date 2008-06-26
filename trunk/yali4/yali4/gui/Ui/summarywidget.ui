@@ -126,6 +126,12 @@ padding-top:30px;</string>
    </item>
    <item row="3" column="4" >
     <widget class="QPushButton" name="install" >
+     <property name="minimumSize" >
+      <size>
+       <width>160</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="text" >
       <string>Begin Install</string>
      </property>
