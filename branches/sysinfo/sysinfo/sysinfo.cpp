@@ -221,9 +221,9 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     if ( glInfo() )
     {
         staticInfo += startStock( i18n( "Display" ) );
-        staticInfo += addToStock( "display", formatStr(m_info[GFX_MODEL]), formatStr(m_info[GFX_VENDOR]) );
+        staticInfo += addToStock( "krdc", formatStr(m_info[GFX_MODEL]), formatStr(m_info[GFX_VENDOR]) );
         if (!m_info[GFX_DRIVER].isNull())
-            staticInfo += addToStock( "display", i18n( "Driver: " ) + m_info[GFX_DRIVER] );
+            staticInfo += addToStock( "x", i18n( "Driver: " ) + m_info[GFX_DRIVER] );
         staticInfo += finishStock();
     }
 
