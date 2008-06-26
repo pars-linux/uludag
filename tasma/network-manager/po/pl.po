@@ -17,29 +17,24 @@ msgstr ""
 
 #: comariface.py:227
 msgid "COMAR Error"
-msgstr ""
+msgstr "Błąd COMAR"
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Waiting DBus..."
-msgstr "Oczekiwanie na manager COMAR..."
+msgstr "Oczekiwanie na DBus..."
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
+
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Połączenie z managerem COMAR niespodziewanie przerwane, próba ponownego "
-"połączenia..."
+msgstr "Połączenie z DBus niespodziewanie zostało zerwane, łączę ponownie..."
 
 #: comariface.py:248 network-applet.py:191
-#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"Nie można połączyć się z managerem COMAR! Jeżeli nie jest uruchomiony "
-"powinieneśuruchomić go w konsoli(jako root) za pomocą polecenia 'service "
-"comar start'."
+"Nie można połączyć się z DBus! Jeżeli nie działa to powinieneś uruchomić "
+"usługę 'service dbus start' jako root."
 
 #: comariface.py:406
 msgid "new connection"
@@ -52,26 +47,25 @@ msgstr "Manager sieci"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr ""
+msgstr "Skanuję..."
 
 #: autoswitch.py:80
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr ""
+msgstr "Profil <b>%s</b> dopasowany."
 
 #: autoswitch.py:84
 msgid "There is no matched profile"
-msgstr ""
+msgstr "Nie ma pasującego profilu"
 
 #: autoswitch.py:86
-#, fuzzy
 msgid "No scan result"
-msgstr "Wynik skanowania:"
+msgstr "Brak wyników skanowania"
 
 #: autoswitch.py:96
 #, python-format
 msgid "Connecting to <b>%s</b> ..."
-msgstr ""
+msgstr "Łączę z <b>%s</b> ..."
 
 #: connection.py:27
 msgid "Channel"
@@ -87,7 +81,7 @@ msgstr "Protokuł"
 
 #: connection.py:41
 msgid "No remotes found"
-msgstr ""
+msgstr "Nic nie znaleziono"
 
 #: connection.py:61
 msgid "<hidden>"
@@ -187,7 +181,7 @@ msgstr "Konfiguruj połączenie sieciowe"
 
 #: network-manager.py:83
 msgid "Just try to connect automatically"
-msgstr ""
+msgstr "Próbuj połączyć się automatycznie"
 
 #: network-manager.py:98
 msgid "Network manager module is already started!"
@@ -228,13 +222,12 @@ msgid "Edit Connections..."
 msgstr "Edytuj połączenia..."
 
 #: network-applet.py:395 browser.py:409
-#, fuzzy
 msgid "Connect Automatically"
-msgstr "Automatycznie"
+msgstr "Połącz Automatycznie"
 
 #: network-applet.py:397
 msgid "Show Notifications"
-msgstr ""
+msgstr "Pokazuj Powiadomienia"
 
 #: network-applet.py:399
 msgid "Icon Per Device"
@@ -250,21 +243,23 @@ msgstr "Uruchamiać aplet sieci automatycznie podczas logowania?"
 
 #: network-applet.py:584
 msgid "Connecting to <b>%1</b> ..."
-msgstr ""
+msgstr "Łączę z <b>%1</b> ..."
 
 #: network-applet.py:589
 msgid "Connected to <b>%1</b>"
-msgstr ""
+msgstr "Połączono z <b>%1</b>"
 
 #: network-applet.py:595
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
 msgstr ""
+"Połączenie nie powiodło się\n"
+"<b>%1</b>"
 
 #: network-applet.py:597
 msgid "You are offline now"
-msgstr ""
+msgstr "Jesteś offline"
 
 #: network-applet.py:653 browser.py:399
 msgid "New connection"
@@ -315,7 +310,7 @@ msgstr "Ustawienia nazwy usługi"
 
 #: browser.py:428
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Próbuj automatycznie połączyć się na starcie"
 
 #: browser.py:479
 msgid "Network Connections Help"
