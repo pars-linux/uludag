@@ -1,3 +1,4 @@
+# translation of de.po to Deutsch
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -9,9 +10,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 16:32+0300\n"
-"PO-Revision-Date: 2008-06-25 20:18-0400\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team:  <es@li.org>\n"
+"PO-Revision-Date: 2008-06-26 21:16+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
+"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,23 +24,23 @@ msgstr "Fortschritt"
 
 #: src/Progress.py:71
 msgid "<h4><b>Preparing PISI</b></h4>"
-msgstr "<h4><b>Vorbereitung PISI</b></h4>"
+msgstr "<h4><b>PISI wird vorbereitet</b></h4>"
 
 #: src/Progress.py:72
 msgid "Taking a snapshot of system"
-msgstr "System-Schnappschuss wird erstellt"
+msgstr "Sicherungspunkt von dem jetztigen Zustand des Systems wird erstellt"
 
 #: src/history-manager.py:51
 msgid "History Manager is already running!"
-msgstr "History Manager läuft schon!"
+msgstr "Verlaufs-Manager wird bereits ausgeführt!"
 
 #: src/history-manager.py:59 src/utility.py:54 src/history_gui.py:57
 msgid "History Manager"
-msgstr "History Manager"
+msgstr "Verlaufs-Manager"
 
 #: src/progress.py:74
 msgid "progressForm"
-msgstr ""
+msgstr "progressForm"
 
 #: src/Commander.py:18
 msgid "Cannot connect to Comar daemon"
@@ -47,7 +48,7 @@ msgstr "Kann nicht mit dem Comar-Daemon verbunden werden"
 
 #: src/utility.py:32
 msgid "History Manager Interface"
-msgstr ""
+msgstr "Verlaufs-Manager-Schnittstelle"
 
 #: src/historygui.py:124
 msgid "formMain"
@@ -59,7 +60,7 @@ msgstr "Alle Vorgänge"
 
 #: src/history_gui.py:60
 msgid "Snapshots"
-msgstr "System-Schnappschüsse"
+msgstr "Sicherungspunkte"
 
 #: src/history_gui.py:61
 msgid "Upgrades"
@@ -76,7 +77,7 @@ msgstr "Installationen"
 # vielleicht: historische Zustände ?
 #: src/history_gui.py:64
 msgid "TakeBacks"
-msgstr ""
+msgstr "Wiederherstellungen"
 
 #: src/history_gui.py:66
 msgid "Take Back Plan"
@@ -88,7 +89,7 @@ msgstr "Vorgang Details"
 
 #: src/history_gui.py:70
 msgid "New Snapshot"
-msgstr "Neuer Schnappschuss"
+msgstr "Neuer Sicherungspunkt"
 
 #: src/history_gui.py:72
 msgid "Date"
@@ -112,7 +113,7 @@ msgstr "Zustand auf diesen Punkt zurück versetzen"
 
 #: src/history_gui.py:132
 msgid "This will take a New Snapshot of your system"
-msgstr "Dieses wird einen neuen System-Schnappschuss erstellen"
+msgstr "Dieser Vorgang wird einen neuen Sicherungspunkt von dem jetztigen Zustand Ihres Systems erstellen"
 
 #: src/history_gui.py:147
 msgid ""
@@ -129,7 +130,7 @@ msgstr "Zurückversetzungs-Vorgang beendet"
 
 #: src/history_gui.py:175
 msgid "New Snapshot Taken"
-msgstr "Neuer Schnappschuss aufgenommen"
+msgstr "Neuer Sicherungspunkt wurde erstellt"
 
 #: src/history_gui.py:177
 msgid "Operation Cancelled"
@@ -145,7 +146,7 @@ msgstr "Mit Fehlern abgeschlossen"
 
 #: src/history_gui.py:185
 msgid "Operation Finished with Errors"
-msgstr "Mit Fehlern abgeschlossen"
+msgstr "Vorgang mit Fehlern abgeschlossen"
 
 #: src/history_gui.py:189
 msgid "Finished Succesfully"
@@ -153,7 +154,7 @@ msgstr "Erfolgreich abgeschlossen"
 
 #: src/history_gui.py:200
 msgid "Fetching %1"
-msgstr ""
+msgstr "Wird abgeruft %1"
 
 #: src/history_gui.py:244
 msgid "<b>Access Granted</b><br>"
@@ -189,11 +190,11 @@ msgstr "Wird konfiguriert  : %1"
 
 #: src/history_gui.py:269
 msgid "Taking a Snapshot of System "
-msgstr "Nehme Schnappschuss des Systems"
+msgstr "Sicherungspunkt von dem jetztigen Zustand des Systems wird erstellt"
 
 #: src/history_gui.py:271
 msgid "Taking System Back to %1 %2 <br>"
-msgstr "Systemzustand wieder herstellen auf %1 %2 <br>"
+msgstr "Systemzustand wird wiederhergestellt zu %1 %2 <br>"
 
 #: src/history_gui.py:291 src/history_gui.py:292
 msgid "Select an entry to view details"
@@ -201,7 +202,7 @@ msgstr "Ein Eintrag auswählen um Details anzusehen"
 
 #: src/history_gui.py:295
 msgid "No: <b>%1</b>"
-msgstr ""
+msgstr "Nr: <b>%1</b>"
 
 #: src/history_gui.py:296
 msgid "Type: <b>%1</b>"
@@ -209,17 +210,17 @@ msgstr "Typ: <b>%1</b>"
 
 #: src/history_gui.py:307
 msgid "There are <b>%1</b> packages in this snapshot"
-msgstr "Es gibt <b>%1</b> Pakete in diesem Schnappschuss"
+msgstr "Es gibt <b>%1</b> Pakete in diesem Sicherungspunkt"
 
 #: src/history_gui.py:323
 msgid "Configuration files in snapshot:"
-msgstr "Konfigurationsdateien im Schnappschuss:"
+msgstr "Konfigurationsdateien im Sicherungspunkt:"
 
 # bitte nachchecken - wegen Wort-position, eventuell "Operation" vorverlegen..
 # passt "auf" richtig hier ?? in dem Zusammenhang
 #: src/history_gui.py:330
 msgid "Take Back Plan for %1 operation on %2"
-msgstr "Zurückversetzungs-Plan für %1 Operation auf %2"
+msgstr "Wiederherstellungsplan für den %1 Vorgang auf %2"
 
 #: src/history_gui.py:333
 msgid "These package(s) will be <b>installed</b> :"
@@ -231,28 +232,27 @@ msgstr "Folgende Pakete werden <b>entfernt</b> :"
 
 #: src/history_gui.py:403
 msgid "<b>Preparing PiSi...</b>"
-msgstr ""
+msgstr "<b>PiSi wird vorbereitet...</b>"
 
 #: src/history_gui.py:441
 msgid "snapshot"
-msgstr ""
+msgstr "Sicherungspunkt"
 
 #: src/history_gui.py:445
 msgid "upgrade"
-msgstr ""
+msgstr "Upgrade vornehmen"
 
 #: src/history_gui.py:449
 msgid "remove"
-msgstr ""
+msgstr "entfernen"
 
 #: src/history_gui.py:453
-#, fuzzy
 msgid "install"
-msgstr "Wird installiert  : %1"
+msgstr "installieren"
 
 #: src/history_gui.py:457
 msgid "takeback"
-msgstr ""
+msgstr "wiederherstellen"
 
 #: src/ComarIface.py:31
 msgid "Cannot connect to dbus"
@@ -273,3 +273,4 @@ msgstr "COMAR-Fehler"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht berechtigt."
+
