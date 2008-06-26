@@ -10,10 +10,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-24 14:46+0300\n"
-"PO-Revision-Date: 2008-06-24 11:44+0200\n"
+"PO-Revision-Date: 2008-06-26 09:43+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,7 +29,7 @@ msgstr "DBus fout"
 
 #: um_mainview.py:58
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "U bent niet geautoriseerd voor deze handeling."
 
 #: um_mainview.py:66
 msgid "COMAR Error"
@@ -119,8 +118,7 @@ msgstr "Verwijder gebruiker"
 
 #: browser.py:167
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
 "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
 "s<br>ID: %d"
@@ -143,35 +141,35 @@ msgstr "Gebruikersbeheer"
 
 #: useredit.py:22
 msgid "User/group operations"
-msgstr ""
+msgstr "Gebruiker/groep handelingen"
 
 #: useredit.py:23
 msgid "Network settings"
-msgstr ""
+msgstr "Netwerk instellingen"
 
 #: useredit.py:24
 msgid "Package operations"
-msgstr ""
+msgstr "Pakket handelingen"
 
 #: useredit.py:25
 msgid "Service operations"
-msgstr ""
+msgstr "Diensten handelingen"
 
 #: useredit.py:26
 msgid "Date/time operations"
-msgstr ""
+msgstr "Datum/tijd handelingen"
 
 #: useredit.py:27
 msgid "Kernel module operations"
-msgstr ""
+msgstr "Kernel module handelingen"
 
 #: useredit.py:28
 msgid "Bootloader settings"
-msgstr ""
+msgstr "Bootlader handelingen"
 
 #: useredit.py:29
 msgid "Screen settings"
-msgstr ""
+msgstr "Scherm instellingen"
 
 #: useredit.py:85
 msgid "User name:"
@@ -313,5 +311,3 @@ msgstr "Blok"
 msgid "Do not ask password"
 msgstr "Vraag geen wachtwoord"
 
-#~ msgid "D-Bus Error"
-#~ msgstr "D-Bus fout"
