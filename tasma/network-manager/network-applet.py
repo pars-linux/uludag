@@ -108,6 +108,7 @@ class Link:
 class DBusInterface:
     def __init__(self):
         self.state_hook = []
+        self.ready_hook = []
         self.connections = {}
         self.devices = {}
         self.links = {}
@@ -268,6 +269,8 @@ class DBusInterface:
             if self.nr_queried == len(self.links) and self.nr_conns == len(self.connections):
                 self.first_time = False
                 self.listenSignals()
+                # Auto connect?
+                map(lambda x: x(), self.ready_hook)
     
     def queryConnections(self, script):
         def handler(profiles):
@@ -352,6 +355,7 @@ class Applet:
         self.showNotifications = self.config.readBoolEntry("ShowNotifications",True)
         self.notifier = False
         comlink.state_hook.append(self.updateIcons)
+        comlink.ready_hook.append(self.tryAutoConnect)
         self.delayTimer = QTimer()
         app.connect(app, SIGNAL("shutDown()"), self.fixQuit)
         app.connect(self.delayTimer, SIGNAL("timeout()"), self.createNotifier)
@@ -378,6 +382,8 @@ class Applet:
         for script in comlink.links:
             comlink.queryConnections(script)
         self.resetViews()
+
+    def tryAutoConnect(self):
         if self.autoConnect:
             self.delayTimer.start(1000, True)
 
