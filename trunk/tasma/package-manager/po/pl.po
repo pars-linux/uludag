@@ -22,11 +22,11 @@ msgstr "Postęp"
 
 #: src/ProgressDialog.py:128
 msgid "Alt+C"
-msgstr ""
+msgstr "Alt+C"
 
 #: src/ProgressDialog.py:129
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr ""
+msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 
 #: src/ProgressDialog.py:130
 msgid "<h3>Preparing PiSi...</h3>"
@@ -34,29 +34,27 @@ msgstr "<h3>Przygotowywanie PiSi...</h3>"
 
 #: src/ProgressDialog.py:132
 msgid "amsn"
-msgstr ""
+msgstr "amsn"
 
 #: src/ProgressDialog.py:133
 msgid "Time remaining:"
-msgstr ""
+msgstr "Pozostały czas:"
 
 #: src/ProgressDialog.py:134
-#, fuzzy
 msgid "2 / 20 packages installed."
-msgstr "Pakiet PiSi do zainstalowania"
+msgstr "2 / 20 zainstalowanych pakietów."
 
 #: src/ProgressDialog.py:135
 msgid "01:29"
-msgstr ""
+msgstr "01:29"
 
 #: src/ProgressDialog.py:136
-#, fuzzy
 msgid "Operation:"
-msgstr "Wersja: "
+msgstr "Operacja:"
 
 #: src/ProgressDialog.py:137
 msgid "Status:"
-msgstr ""
+msgstr "Stan:"
 
 #: src/Tray.py:38
 msgid "Update"
@@ -72,36 +70,33 @@ msgstr "Dostępnych aktualizacji: <b>%1</b>"
 
 #: src/Tray.py:67
 msgid "Updates Available!"
-msgstr ""
+msgstr "Dostępne Aktualizacje!"
 
 #: src/ComarIface.py:38
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Błąd połączenia z DBus."
 
 #: src/ComarIface.py:38
-#, fuzzy
 msgid "DBus Error"
-msgstr "Błąd PiSi"
+msgstr "Błąd DBus"
 
 #: src/ComarIface.py:52
-#, fuzzy
 msgid "D-Bus Error"
-msgstr "Błąd PiSi"
+msgstr "Błąd DBus"
 
 #: src/ComarIface.py:57
 msgid "COMAR Auth Error"
-msgstr ""
+msgstr "Bład autoryzacji COMAR"
 
 #: src/ComarIface.py:62
 msgid "Network error. Please check your network connections and try again."
-msgstr ""
+msgstr "Błąd połączenia sieciowego. Sprawdź połączenie i spróbuj ponownie."
 
 #: src/ComarIface.py:62 src/ComarIface.py:64
 msgid "COMAR Error"
-msgstr ""
+msgstr "Błąd COMAR"
 
 #: src/ComarIface.py:69
-#, fuzzy
 msgid "You are not authorized for this operation."
 msgstr "Nie masz uprawnień do wykonania tej operacji."
 
@@ -197,13 +192,12 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 koliduje z: [%2]\n"
 
 #: src/MainWidget.py:392
-#, fuzzy
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
-"Usunąć wskazane poniżej kolidujące pakiety?"
+"Usunąć wskazane kolidujące pakiety?"
 
 #: src/MainWidget.py:407 src/MainWidget.py:466 src/MainWidget.py:608
 msgid "<b>Installing Package(s)</b>"
@@ -311,7 +305,7 @@ msgstr "Rozwijający i aktualny opiekun"
 
 #: src/package-manager.py:43
 msgid "Developer"
-msgstr ""
+msgstr "Programista"
 
 #: src/package-manager.py:44
 msgid "Original Author"
@@ -359,7 +353,7 @@ msgstr "Pokaż okno główne po uruchomieniu"
 
 #: src/package-manager.py:151
 msgid "Show debug output"
-msgstr ""
+msgstr "Pokaż wyjście debugowania"
 
 #: src/package-manager.py:154
 msgid "Package Manager is already running!"
@@ -478,14 +472,12 @@ msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr "Adres repozytorium, np. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
-#, fuzzy
 msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:80
-#, fuzzy
 msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:81
 msgid "Repository &Name"
@@ -526,7 +518,7 @@ msgstr "Pokaż wyłącznie aplikacje de&sktopowe"
 
 #: src/PreferencesDialog.py:354
 msgid "Alt+S"
-msgstr ""
+msgstr "Alt+S"
 
 #: src/PreferencesDialog.py:355
 msgid "If checked, then pisi will only show desktop applications"
@@ -537,9 +529,8 @@ msgid "&Enable system tray icon"
 msgstr "Umi&eść ikonę w zasobniku systemowym"
 
 #: src/PreferencesDialog.py:357
-#, fuzzy
 msgid "Update check"
-msgstr "Aktualizowanie"
+msgstr "Kontrola aktualizacji"
 
 #: src/PreferencesDialog.py:358
 msgid "Check interval:"
@@ -551,7 +542,7 @@ msgstr "Włącz cykliczne s&prawdzanie aktualizacji"
 
 #: src/PreferencesDialog.py:360
 msgid "Alt+P"
-msgstr ""
+msgstr "Alt+P"
 
 #: src/PreferencesDialog.py:361
 msgid " min"
@@ -559,19 +550,19 @@ msgstr " min"
 
 #: src/PreferencesDialog.py:362
 msgid "Bandwidth limit"
-msgstr ""
+msgstr "Limit transferu"
 
 #: src/PreferencesDialog.py:363
 msgid "Use bandwidth limit"
-msgstr ""
+msgstr "Użyj limitu transferu"
 
 #: src/PreferencesDialog.py:365
 msgid "Bandwidth limit:"
-msgstr ""
+msgstr "Limit transferu:"
 
 #: src/PreferencesDialog.py:366
 msgid " kb/s"
-msgstr ""
+msgstr " kb/s"
 
 #: src/PreferencesDialog.py:367
 msgid "&General Settings"
@@ -674,35 +665,35 @@ msgstr "&Repozytoria"
 #: src/PreferencesDialog.py:392 src/PreferencesDialog.py:395
 #: src/PreferencesDialog.py:396
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: src/PreferencesDialog.py:393
 msgid "Use this proxy server for all protocols"
-msgstr ""
+msgstr "Użyj tego serwera proxy dla wszystkich protokołów"
 
 #: src/PreferencesDialog.py:394
 msgid "FTP proxy server:"
-msgstr ""
+msgstr "Serwer proxy dla FTP:"
 
 #: src/PreferencesDialog.py:397
 msgid "HTTPS proxy server:"
-msgstr ""
+msgstr "Serwer proxy HTTPS:"
 
 #: src/PreferencesDialog.py:398
 msgid "HTTP proxy server:"
-msgstr ""
+msgstr "Serwer proxy HTTP:"
 
 #: src/PreferencesDialog.py:400
 msgid "No proxy server"
-msgstr ""
+msgstr "Brak serwera proxy"
 
 #: src/PreferencesDialog.py:401
 msgid "Use proxy server"
-msgstr ""
+msgstr "Użyj serwer proxy"
 
 #: src/PreferencesDialog.py:402
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: src/pm-install.py:33
 msgid "PiSi package to install"
@@ -725,9 +716,8 @@ msgid "Version: "
 msgstr "Wersja: "
 
 #: src/SpecialList.py:165
-#, fuzzy
 msgid "Repository: "
-msgstr "Nazwa repozytorium"
+msgstr "Repozytorium:"
 
 #: src/SpecialList.py:166
 msgid "Package Size: "
@@ -739,7 +729,7 @@ msgstr "Strona domowa: "
 
 #: src/Progress.py:64
 msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr ""
+msgstr "<p align='center'>%1 / %2, %3</p>"
 
 #: src/Progress.py:97
 msgid "<b>Preparing PiSi...</b>"
@@ -747,12 +737,11 @@ msgstr "<b>Przygotowywanie PiSi...</b>"
 
 #: src/Progress.py:99
 msgid "<p align='center'>-- / --, -- KB/s</p>"
-msgstr ""
+msgstr "<p align='center'>-- / --, -- KB/s</p>"
 
 #: src/Progress.py:100
-#, fuzzy
 msgid "-- / --"
-msgstr "-- / -- pakietów"
+msgstr "-- / --"
 
 #: src/Progress.py:119
 msgid "<b>Cancelling operation...</b>"
@@ -760,7 +749,7 @@ msgstr "<b>Przerywanie zadania...</b>"
 
 #: src/Progress.py:146 src/Progress.py:150
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: src/Progress.py:160
 msgid "installed"
@@ -775,9 +764,8 @@ msgid "upgraded"
 msgstr "zaktualizowano"
 
 #: src/Progress.py:166
-#, fuzzy
 msgid "%1 / %2 package %3"
-msgstr "%1 / %1 pakietów %3"
+msgstr "%1 / %2 pakietów %3"
 
 #: src/Notifier.py:45
 msgid "Show Updates"
