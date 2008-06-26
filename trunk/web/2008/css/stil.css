@@ -2,6 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: #f3f3f3;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", arial, helvetica, clean, verdana, sans-serif;
 }
 
 /* alignments */
@@ -201,8 +202,8 @@ img.menu_img {
     top: 328px;
 }
 
-#sidebar_bottom img, a {
-    padding-top: 5px;
+#sidebar_bottom img {
+    padding-top: 7px;
     border: 0;
 }
 
