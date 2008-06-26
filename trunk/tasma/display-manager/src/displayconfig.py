@@ -94,7 +94,11 @@ class DBusInterface:
             self.error(exception)
 
     def error(self, exception):
-        KMessageBox.error(None, str(exception), i18n("COMAR Error"))
+        if "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(None, message, i18n("Error"))
+        else:
+            KMessageBox.error(None, str(exception), i18n("COMAR Error"))
 
     def errorDBus(self, exception):
         if self.dia:
