@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:33+0300\n"
+"POT-Creation-Date: 2008-06-26 13:59+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -416,15 +416,15 @@ msgstr ""
 "#ffffff;\">Boyutlandır</span><span style=\" color:#ffffff;\">\" tuşuna "
 "bastığınızda uygulanır. Geri dönmek için \"</span><span style=\" text-"
 "decoration: underline; color:#ffffff;\">İptal</span><span style=\" color:"
-"#ffffff;\">\" tuşuna basabilirsiniz.</span></p>"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
-"\" font-weight:600; text-decoration: underline;\">Uyarı:</span> Yeniden boyutlandırma "
-"işlemleri disk bölümünüzün kullanılmaz hale gelmesine ve verilerinizin bozulmasına neden olabilir."
-"Yeniden boyutlandırılacak disk bölümü için yedek aldığınıza emin olun.<span style=\" font-"
-"weight:600;\"> </span><span style=\" font-weight:600;\">Unutmayın ki"
-"yeniden boyutlandırma işlemi geri alınamaz.</span></p></body></html>"
-
+"#ffffff;\">\" tuşuna basabilirsiniz.</span></p><p style=\" margin-top:0px; "
+"margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; "
+"text-indent:0px; color:#ffffff;\"><span style=\" font-weight:600; text-"
+"decoration: underline;\">Uyarı:</span> Yeniden boyutlandırma işlemleri disk "
+"bölümünüzün kullanılmaz hale gelmesine ve verilerinizin bozulmasına neden "
+"olabilir.Yeniden boyutlandırılacak disk bölümü için yedek aldığınıza emin "
+"olun.<span style=\" font-weight:600;\"> </span><span style=\" font-"
+"weight:600;\">Unutmayın kiyeniden boyutlandırma işlemi geri alınamaz.</"
+"span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
@@ -940,7 +940,8 @@ msgid ""
 "<center><font color=\"#FF6D19\">Don't use your username as password !</"
 "font></center>"
 msgstr ""
-"<center><font color=\"#FF6D19\">Kullanıcı adınızı parola olarak kullanmayın.</font></center>"
+"<center><font color=\"#FF6D19\">Kullanıcı adınızı parola olarak kullanmayın."
+"</font></center>"
 
 #: yali4/gui/ScrAdmin.py:153
 msgid ""
@@ -1105,11 +1106,11 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr "Kurulum sonrası işlemler gerçekleştiriliyor..."
 
-#: yali4/gui/ScrGoodbye.py:99
+#: yali4/gui/ScrGoodbye.py:100
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Yeniden başlatılıyor. Lütfen bekleyin!</b>"
 
-#: yali4/gui/ScrGoodbye.py:126
+#: yali4/gui/ScrGoodbye.py:127
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
@@ -1120,7 +1121,7 @@ msgstr ""
 "düğmesine tıklayın.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:132 yali4/gui/ScrSummary.py:69
+#: yali4/gui/ScrGoodbye.py:133 yali4/gui/ScrSummary.py:69
 #: yali4/installer.py:642
 msgid "Reboot"
 msgstr "Sistemi Yeniden Başlat!"
@@ -1497,10 +1498,10 @@ msgid ""
 "                   Make sure that you have a backup for this partition.<br>\n"
 "                   <b>Note that this operation cannot be undone ! </b></p>"
 msgstr ""
-"<p><b><u>Uyarı</u></b>: Kurulumunuzun gerçekleşmei için yeniden boyutlandırma "
-"işlemi bulunuyor. Bu işlem disk bölümünüzün bozulmasına ve verilerinizin kaybolmasına"
-"neden olabilir.<br>\n "
-"Bu disk bölümü için yedek aldığınıza emin olun.<br>\n"
+"<p><b><u>Uyarı</u></b>: Kurulumunuzun gerçekleşmei için yeniden "
+"boyutlandırma işlemi bulunuyor. Bu işlem disk bölümünüzün bozulmasına ve "
+"verilerinizin kaybolmasınaneden olabilir.<br>\n"
+" Bu disk bölümü için yedek aldığınıza emin olun.<br>\n"
 "<b>Unutmayın ki bu işlem geri alınamaz.</b></p>"
 
 #: yali4/gui/ScrSummary.py:235 yali4/gui/ScrSummary.py:243
@@ -1725,6 +1726,10 @@ msgstr "Yeni disk bölümü yaratılıyor ..."
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "<b>%s</b> kullanıcısının ev dizini ayarlanıyor.."
+
+#: yali4/installer.py:516
+msgid "Trying to connect DBUS..."
+msgstr "DBUS'a bağlanmaya çalışıyor..."
 
 #: yali4/installer.py:518
 msgid "Setting Hostname..."
@@ -2304,9 +2309,6 @@ msgstr "Arşiv Bölümü"
 
 #~ msgid "Dutch (US)"
 #~ msgstr "Hollandaca (US)"
-
-#~ msgid "Trying to connect COMAR Daemon..."
-#~ msgstr "COMAR sunucusunu bağlamaya çalışıyor..."
 
 #~ msgid ""
 #~ "<font size=\"+1\"><b>Select the partitioning method:</b></font>\n"

@@ -513,7 +513,7 @@ class Yali:
                     return False
             return True
 
-        rootWidget.steps.setOperations([{"text":"Trying to connect DBUS...","operation":connectToDBus}])
+        rootWidget.steps.setOperations([{"text":_("Trying to connect DBUS..."),"operation":connectToDBus}])
 
         steps = [{"text":_("Setting Hostname..."),"operation":setHostName},
                  {"text":_("Setting TimeZone..."),"operation":yali4.postinstall.setTimeZone},

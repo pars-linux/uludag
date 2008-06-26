@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:33+0300\n"
+"POT-Creation-Date: 2008-06-26 13:59+0300\n"
 "PO-Revision-Date: 2008-06-26 09:51+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -1120,11 +1120,11 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:99
+#: yali4/gui/ScrGoodbye.py:100
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Systeem herstarten. Ogenblik geduld!</b>"
 
-#: yali4/gui/ScrGoodbye.py:126
+#: yali4/gui/ScrGoodbye.py:127
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
@@ -1134,7 +1134,7 @@ msgstr ""
 "<p>Druk op de Herstart knop om uw systeem opnieuw op te starten.</p>\n"
 "</b>\n"
 
-#: yali4/gui/ScrGoodbye.py:132 yali4/gui/ScrSummary.py:69
+#: yali4/gui/ScrGoodbye.py:133 yali4/gui/ScrSummary.py:69
 #: yali4/installer.py:642
 msgid "Reboot"
 msgstr "Herstart"
@@ -1755,6 +1755,10 @@ msgstr "Maak nieuwe partitie ..."
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "De thuismap van gebruiker <b>%s</b> wordt klaargemaakt.."
+
+#: yali4/installer.py:516
+msgid "Trying to connect DBUS..."
+msgstr ""
 
 #: yali4/installer.py:518
 #, fuzzy

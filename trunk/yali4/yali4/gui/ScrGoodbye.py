@@ -76,6 +76,7 @@ don't you?
         if not ctx.mainScreen.helpContent.isVisible():
             ctx.mainScreen.slotToggleHelp()
         self.ui.label.setPixmap(QtGui.QPixmap(":/gui/pics/goodbye.png"))
+        ctx.yali.info.hide()
 
     def execute(self):
         ctx.mainScreen.disableNext()

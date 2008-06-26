@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: yali\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 13:33+0300\n"
+"POT-Creation-Date: 2008-06-26 13:59+0300\n"
 "PO-Revision-Date: 2007-03-18 14:13+0100\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@ns1.uludag.org.tr>\n"
@@ -1008,21 +1008,21 @@ msgstr ""
 msgid "Running post install operations.."
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:99
+#: yali4/gui/ScrGoodbye.py:100
 #, fuzzy
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr ""
 "<b><font size=\"+2\" color=\"#FF6D19\">Estic reengegant el sistema. Si et "
 "plau, espera!</font></b>"
 
-#: yali4/gui/ScrGoodbye.py:126
+#: yali4/gui/ScrGoodbye.py:127
 msgid ""
 "<b>\n"
 "<p>Press Reboot button to restart your system.</p>\n"
 "</b>\n"
 msgstr ""
 
-#: yali4/gui/ScrGoodbye.py:132 yali4/gui/ScrSummary.py:69
+#: yali4/gui/ScrGoodbye.py:133 yali4/gui/ScrSummary.py:69
 #: yali4/installer.py:642
 msgid "Reboot"
 msgstr "Reengega"
@@ -1602,6 +1602,10 @@ msgstr "Fés una nova particó"
 #: yali4/installer.py:446
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
+msgstr ""
+
+#: yali4/installer.py:516
+msgid "Trying to connect DBUS..."
 msgstr ""
 
 #: yali4/installer.py:518
