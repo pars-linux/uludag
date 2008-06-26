@@ -8,6 +8,7 @@
 
 # PyKDE/PyQT imports
 from qt import *
+
 from kdeui import *
 from kdecore import *
 from kparts import KParts
@@ -33,6 +34,7 @@ from pakito.gui.multitabwidget import MultiTabWidget
 from pakito.gui.optionsDialog import OptionsDialog
 import pakito.templates 
 from pakito.config import Config
+
 
 class MainWindow(KParts.MainWindow):
     """ Main window of the application """
@@ -180,9 +182,8 @@ class MainWindow(KParts.MainWindow):
         self.enableOperations()
         
     def open(self):
+	packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package"))
 
-	    
-        packageDir = KFileDialog.getExistingDirectory(QString.null, self, i18n("Select PiSi Source Package"))
 	
         if not packageDir or packageDir == "":
             return
@@ -574,8 +575,8 @@ class PisiThread(Thread):
         self.setDaemon(True)
 	
     #SI start eklendi, hata kayboldu ama starta ne yazilacak?
-    def start(self):
-	pass
+    #def start(self):
+	##pass
     
     def run(self):
          from cgi import escape
@@ -584,7 +585,8 @@ class PisiThread(Thread):
              qApp.processEvents(QEventLoop.ExcludeUserInput)
              pisi.api.build_until(self.path, self.stage)
              qApp.processEvents(QEventLoop.ExcludeUserInput)
-             pisi.api.finalize()
+             #SI pisi.api.finalize()
+	     pisi.api.remove()
              os.write(self.output, str(i18n("<b>Succesfully finished.</b><br>")))
          except Exception, inst:
              os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
@@ -597,10 +599,11 @@ class PisiThread(Thread):
     
     def initPisi(self):
         ui = UI(self.output)
-        opts = Options()
+        #SI opts = Options()
+	opts = pisi.config.Options()
         opts.debug = True
 #        pisi.api.init(database = True, write = False, options = opts, ui = ui, stdout = self.output, stderr = self.output, signal_handling = False)
-        pisi.api.init(database = True, write = False, options = opts, ui = ui, stderr = self.output, signal_handling = False)
+        #SI pisi.api.init(database = True, write = False, options = opts, ui = ui, stderr = self.output, signal_handling = False)
                 
 class UI(pisi.ui.UI):
     def __init__(self, out):
