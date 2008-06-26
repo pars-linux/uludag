@@ -134,9 +134,9 @@ img.floatr, img[align="right"] {
     line-height: 14px;
     font-size: 11px;
     color: #fff;
-    padding-top: 16px;
-    padding-left: 16px;
-    width: 310px;
+    margin-top: 16px;
+    margin-left: 16px;
+    width: 250px;
     height: 460px;
     overflow: none;
     float: left;
@@ -146,11 +146,10 @@ img.floatr, img[align="right"] {
     line-height: 14px;
     font-size: 11px;
     color: #fff;
-    padding-top: 16px;
-    padding-left: 16px;
-    width: 280px;
+    margin-top: 16px;
+    margin-left: 16px;
+    width: 327px;
     height: 460px;
-    margin-left: 5px;
     overflow: none;
     float: left;
 }
@@ -160,8 +159,15 @@ img.floatr, img[align="right"] {
     width: 2px;
     height: 483px;
     margin-top: 18px;
-    margin-left: 20px;
+    margin-left: 29px;
+    margin-right: 5px;
     float: left;
+}
+
+.icerik_sss_yataybolucu {
+    background: url('../resim/ara_yatay.png') no-repeat;
+    width: 327px;
+    height: 2px;
 }
 
 .content_detail_button {
