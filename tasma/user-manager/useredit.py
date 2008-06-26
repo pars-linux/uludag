@@ -343,7 +343,6 @@ class UserGroupList(QWidget):
             self.main_sel = groups[0]
             self.main_group.setCurrentText(groups[0])
 
-
 class Guide(QWidget):
     def __init__(self, parent, stack, edit):
         QWidget.__init__(self, parent)
@@ -354,9 +353,9 @@ class Guide(QWidget):
         hb.setSpacing(6)
         lab = QLabel(self)
         lab.setPixmap(getIconSet("help.png", KIcon.Panel).pixmap(QIconSet.Automatic, QIconSet.Normal))
-        hb.addWidget(lab, 0, hb.AlignTop)
-        self.info = KActiveLabel(" ", self)
-        hb.addWidget(self.info)
+        hb.addWidget(lab, 1, hb.AlignTop)
+        self.info = QLabel(" ", self)
+        hb.addWidget(self.info, 5)
 
     def check(self):
         err = None
@@ -479,15 +478,11 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(line, row, row, 0, 1)
 
-        lab = KActiveLabel(w)
-        row = grid.numRows()
-        grid.addMultiCellWidget(lab, row, row, 0, 1)
-
         self.u_policygrouptab = PolicyGroupTab(mainhb, self, self.mainwidget, self.u_id, edit)
         self.u_groups = self.u_policygrouptab.groupsWidget
         self.u_operations = self.u_policygrouptab.policytab.operations
 
-        #make PolicyGroupTab longer than the left side of the dialog contains username/password fields
+        # make PolicyGroupTab longer than the left side of the dialog contains username/password fields
         mainhb.setStretchFactor(w, 3)
         mainhb.setStretchFactor(self.u_policygrouptab, 4)
 
