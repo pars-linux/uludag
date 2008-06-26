@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 15:59+0300\n"
+"POT-Creation-Date: 2008-06-27 00:44+0300\n"
 "PO-Revision-Date: 2007-11-12 20:52+0100\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -43,14 +43,14 @@ msgstr ""
 msgid "Use Selected"
 msgstr "Elimina l'utente selezionato"
 
-#: yali4/gui/Ui/autopartwidget.py:99 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:126 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:100
+#: yali4/gui/Ui/autopartwidget.py:127
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -63,24 +63,24 @@ msgid ""
 "body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:104
+#: yali4/gui/Ui/autopartwidget.py:131
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:105
+#: yali4/gui/Ui/autopartwidget.py:132
 msgid ""
 "Automatically partition try to use free space or resize current partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:106
+#: yali4/gui/Ui/autopartwidget.py:133
 #, fuzzy
 msgid "Automatically partition and format selected disk!"
 msgstr "Sì, partiziona e formatta automaticamente il disco selezionato!"
 
-#: yali4/gui/Ui/autopartwidget.py:107
+#: yali4/gui/Ui/autopartwidget.py:134
 #, fuzzy
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
@@ -95,24 +95,24 @@ msgstr ""
 "e semplice per installare Pardus.</p>\n"
 "</b>\n"
 
-#: yali4/gui/Ui/autopartwidget.py:108
+#: yali4/gui/Ui/autopartwidget.py:135
 msgid "No, I'll partition my disk manually."
 msgstr "No, partizionerò manualmente il disco."
 
-#: yali4/gui/Ui/autopartwidget.py:109
+#: yali4/gui/Ui/autopartwidget.py:136
 msgid "You can use manual partitioning with this option"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:110
+#: yali4/gui/Ui/autopartwidget.py:137
 msgid "If there is no suitable partition this option will be disabled"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:111
+#: yali4/gui/Ui/autopartwidget.py:138
 msgid ""
 "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:112
+#: yali4/gui/Ui/autopartwidget.py:139
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -125,7 +125,7 @@ msgid ""
 "span></p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/autopartwidget.py:116
+#: yali4/gui/Ui/autopartwidget.py:143
 msgid "&nbsp;"
 msgstr "&nbsp;"
 

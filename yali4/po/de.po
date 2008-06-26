@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 15:59+0300\n"
+"POT-Creation-Date: 2008-06-27 00:44+0300\n"
 "PO-Revision-Date: 2008-06-26 20:39+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -48,14 +48,14 @@ msgstr "Ich werde das Ziel auswählen"
 msgid "Use Selected"
 msgstr "Ausgewählte verwenden"
 
-#: yali4/gui/Ui/autopartwidget.py:99 yali4/gui/Ui/bootloaderwidget.py:75
+#: yali4/gui/Ui/autopartwidget.py:126 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:72 yali4/gui/Ui/keyboardwidget.py:59
 #: yali4/gui/Ui/kickerwidget.py:26 yali4/gui/Ui/rootpasswidget.py:170
 #: yali4/gui/Ui/setupuserswidget.py:152 yali4/gui/Ui/welcomewidget.py:90
 msgid "Form1"
 msgstr "Form1"
 
-#: yali4/gui/Ui/autopartwidget.py:100
+#: yali4/gui/Ui/autopartwidget.py:127
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -77,7 +77,7 @@ msgstr ""
 "size:12pt; font-weight:600;\">1. Wählen Sie the Partitionierungsmethode aus:"
 "</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:104
+#: yali4/gui/Ui/autopartwidget.py:131
 msgid ""
 "Here you can choose one of partitioning method, and then you must select for "
 "a device to proceed your choice. <br>Device list will be updated for "
@@ -87,17 +87,18 @@ msgstr ""
 "auswählen um fortzufahren. <br> Laufwerkliste wird für die ausgewählte "
 "Methode aktualisiert."
 
-#: yali4/gui/Ui/autopartwidget.py:105
-msgid "Automatically partition try to use free space or resize current partitions"
+#: yali4/gui/Ui/autopartwidget.py:132
+msgid ""
+"Automatically partition try to use free space or resize current partitions"
 msgstr ""
 "Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
 "oder ändert die Grösse der aktuellen Partitionen"
 
-#: yali4/gui/Ui/autopartwidget.py:106
+#: yali4/gui/Ui/autopartwidget.py:133
 msgid "Automatically partition and format selected disk!"
 msgstr "Gewähltes Laufwerk automatisch partitionieren und formatieren!"
 
-#: yali4/gui/Ui/autopartwidget.py:107
+#: yali4/gui/Ui/autopartwidget.py:134
 msgid ""
 "This option will erase your entire disk. All of your data on disk will be "
 "lost !"
@@ -106,27 +107,29 @@ msgstr ""
 "verwenden. Ihre vorhandenen Daten auf der gewählten Partition gehen dabei "
 "verloren !"
 
-#: yali4/gui/Ui/autopartwidget.py:108
+#: yali4/gui/Ui/autopartwidget.py:135
 msgid "No, I'll partition my disk manually."
 msgstr "Nein, ich werde meine Festplatte manuell partitionieren."
 
-#: yali4/gui/Ui/autopartwidget.py:109
+#: yali4/gui/Ui/autopartwidget.py:136
 msgid "You can use manual partitioning with this option"
 msgstr "Mit dieser Option können Sie manuell partitionieren"
 
 # disable auf deutsch ?
-#: yali4/gui/Ui/autopartwidget.py:110
+#: yali4/gui/Ui/autopartwidget.py:137
 msgid "If there is no suitable partition this option will be disabled"
-msgstr "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
+msgstr ""
+"Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
 
 # disable auf deutsch ?
-#: yali4/gui/Ui/autopartwidget.py:111
-msgid "This option will try to find suitable free space or resizable partitions"
+#: yali4/gui/Ui/autopartwidget.py:138
+msgid ""
+"This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
 
-#: yali4/gui/Ui/autopartwidget.py:112
+#: yali4/gui/Ui/autopartwidget.py:139
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -148,7 +151,7 @@ msgstr ""
 "size:12pt; font-weight:600;\">2. Wählen Sie die Festplatte aus, um die "
 "ausgewählte Methode zu übernehmen:</span></p></body></html>"
 
-#: yali4/gui/Ui/autopartwidget.py:116
+#: yali4/gui/Ui/autopartwidget.py:143
 msgid "&nbsp;"
 msgstr "&nbsp;"
 
@@ -420,21 +423,24 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
-"#ffffff;\">Diese Einstellungen werden übernommen, wenn Sie auf \"</span><span "
-"style=\" text-decoration: underline; color:#ffffff;\">Grösse ändern</span><span "
-"style=\" color:#ffffff;\">\"klicken. Wenn Sie zurückkehren möchten, klicken Sie auf \"</span><span "
-"style=\" text-decoration: underline; color:#ffffff;\">Abbrechen</span><span "
-"style=\" color:#ffffff;\">\".</span></p>\n"
+"#ffffff;\">Diese Einstellungen werden übernommen, wenn Sie auf \"</"
+"span><span style=\" text-decoration: underline; color:#ffffff;\">Grösse "
+"ändern</span><span style=\" color:#ffffff;\">\"klicken. Wenn Sie "
+"zurückkehren möchten, klicken Sie auf \"</span><span style=\" text-"
+"decoration: underline; color:#ffffff;\">Abbrechen</span><span style=\" color:"
+"#ffffff;\">\".</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
 "color:#ffffff;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
-"\" font-weight:600; text-decoration: underline;\">Achtung:</span> Ein Grössen- "
-"Änderungsvorgang könnte Ihrer Partition beschädigen und der Zugang zu Ihren Daten "
-"könnte nicht mehr möglich sein. Erstellen Sie sicherheitshalber für diese Partition ein Backup.<span style=\" font-"
+"\" font-weight:600; text-decoration: underline;\">Achtung:</span> Ein "
+"Grössen- Änderungsvorgang könnte Ihrer Partition beschädigen und der Zugang "
+"zu Ihren Daten könnte nicht mehr möglich sein. Erstellen Sie "
+"sicherheitshalber für diese Partition ein Backup.<span style=\" font-"
 "weight:600;\"> </span><span style=\" font-weight:600;\">Bitte beachten Sie,"
-"dass dieser Vorgang nicht mehr rückgängig gemacht werden kann.</span></p></body></html>"
+"dass dieser Vorgang nicht mehr rückgängig gemacht werden kann.</span></p></"
+"body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
 #: yali4/gui/YaliDialog.py:130
@@ -454,8 +460,8 @@ msgid ""
 msgstr ""
 "<p align=\"left\">Mit dem Systemadministrator-Konto (root) können Sie "
 "Systemwartungen vornehmen. Bitte vergeben Sie diesen speziellen Benutzer ein "
-"Passwort und vergessen Sie bitte dies nicht. Beachten Sie, dass Ihr "
-"Passwort aus Sicherheitsgründen für Dritte nicht zugänglich sein darf.</p>"
+"Passwort und vergessen Sie bitte dies nicht. Beachten Sie, dass Ihr Passwort "
+"aus Sicherheitsgründen für Dritte nicht zugänglich sein darf.</p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
 msgid "System administrator password:"
@@ -761,8 +767,8 @@ msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
 "(device)s</b>."
 msgstr ""
-"Partition <b>%(partition)s (%(size)s)</b> vom Gerät <b>%(device)s</"
-"b> <b>gelöscht</b> ."
+"Partition <b>%(partition)s (%(size)s)</b> vom Gerät <b>%(device)s</b> "
+"<b>gelöscht</b> ."
 
 #: yali4/gui/DiskWidgets.py:297 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
@@ -770,8 +776,11 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:316
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
-msgstr "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgstr ""
+"Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
+"(fsType)s</b>."
 
 #: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:143
 #, python-format
@@ -963,8 +972,8 @@ msgid ""
 "<center><font color=\"#FF6D19\">Don't use your username as password !</"
 "font></center>"
 msgstr ""
-"<center><font color=\"#FF6D19\">Verwenden Sie nicht Ihren Benutzernamen oder Namen als Passwort!</"
-"font></center>"
+"<center><font color=\"#FF6D19\">Verwenden Sie nicht Ihren Benutzernamen oder "
+"Namen als Passwort!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:153
 msgid ""
@@ -1060,7 +1069,8 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr ""
+"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1165,7 +1175,8 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+msgstr ""
+"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1526,7 +1537,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:168
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr ""
+"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:183
 msgid "Bootloader Settings"
@@ -1551,9 +1563,12 @@ msgid ""
 msgstr ""
 "<p><b><u>Achtung</u></b>: Es ist ein Grössenänderungsvorgang und es könnte "
 "Ihre Partition beschädigen<br>\n"
-"                   und der Zugang zu Ihren Daten könnte nicht mehr möglich sein. <br>\n"
-"                   Erstellen Sie sicherheitshalber für diese Partition ein Backup.<br>\n"
-"                   <b>Bitte beachten Sie, dass dieser Vorgang nicht mehr rückgängig gemacht werden kann!</b></p>"
+"                   und der Zugang zu Ihren Daten könnte nicht mehr möglich "
+"sein. <br>\n"
+"                   Erstellen Sie sicherheitshalber für diese Partition ein "
+"Backup.<br>\n"
+"                   <b>Bitte beachten Sie, dass dieser Vorgang nicht mehr "
+"rückgängig gemacht werden kann!</b></p>"
 
 #: yali4/gui/ScrSummary.py:235 yali4/gui/ScrSummary.py:243
 #: yali4/gui/ScrSummary.py:257
@@ -1732,7 +1747,9 @@ msgstr "Windows"
 
 #: yali4/filesystem.py:526
 msgid "Partition is not ready for resizing. Check it before installation."
-msgstr "Die Partition ist für die Grössenänderung nicht bereit. Überprüfen Sie es vor der Installation."
+msgstr ""
+"Die Partition ist für die Grössenänderung nicht bereit. Überprüfen Sie es "
+"vor der Installation."
 
 #: yali4/__init__.py:67
 msgid "Backtrace:"
@@ -2008,4 +2025,3 @@ msgstr "Swap"
 #: yali4/partitiontype.py:74
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
-
