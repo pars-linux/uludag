@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 13:59+0300\n"
-"PO-Revision-Date: 2008-06-26 15:50+0300\n"
+"PO-Revision-Date: 2008-06-26 16:05+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,9 +23,8 @@ msgstr ""
 #: yali4/gui/Ui/autopartquestion.py:64 yali4/gui/Ui/datetimewidget.py:81
 #: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:143
 #: yali4/gui/Ui/summarywidget.py:58
-#, fuzzy
 msgid "Form"
-msgstr "Form1"
+msgstr "Form"
 
 #: yali4/gui/Ui/autopartquestion.py:65
 msgid ""
@@ -39,7 +38,7 @@ msgstr "Choisit la partition cible la plus convenante pour le redimensionnement(
 
 #: yali4/gui/Ui/autopartquestion.py:67
 msgid "I will choose the target"
-msgstr "Je vais choisir la partition cible moi-meme"
+msgstr "Je vais choisir la partition cible moi-même"
 
 #: yali4/gui/Ui/autopartquestion.py:68
 msgid "Use Selected"
@@ -101,15 +100,15 @@ msgstr "Non, je vais partitionner mon disque manuellement."
 
 #: yali4/gui/Ui/autopartwidget.py:109
 msgid "You can use manual partitioning with this option"
-msgstr ""
+msgstr "Vous pouvez utiliser le partitionnement manuel avec cette option"
 
 #: yali4/gui/Ui/autopartwidget.py:110
 msgid "If there is no suitable partition this option will be disabled"
-msgstr ""
+msgstr "Cette option sera désactivée en cas d'absence d'une partition convenable"
 
 #: yali4/gui/Ui/autopartwidget.py:111
 msgid "This option will try to find suitable free space or resizable partitions"
-msgstr ""
+msgstr "Cette option va essayer de trouver un espace disponible qui convient ou des partitions redimensionnables"
 
 #: yali4/gui/Ui/autopartwidget.py:112
 msgid ""
@@ -123,6 +122,15 @@ msgid ""
 "size:12pt; font-weight:600;\">2. Select the disk to apply selected method:</"
 "span></p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:12pt; font-weight:600;\">2. Choisir le disque pour appliquer la méthode sélectionnée:</"
+"span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:116
 msgid "&nbsp;"
@@ -142,21 +150,19 @@ msgid ""
 msgstr ""
 "<b>Installer le chargeur de démarrage (GRUB) sur le MBR du disque dur?</b>\n"
 "\n"
-"<p>Il faut un chargeur de démarrage pour charger votre système Pardus<p>\n"
+"<p>Il faut un chargeur de démarrage pour démarrer votre système Pardus<p>\n"
 "\n"
-"Si aucun chargeur de démarrage n'est ou si ce dernier est installé sur votre "
-"partition racine, il faudra configurer le chargeur de démarrage de votre "
-"autre système d'exploitation (si vous en avez un) afin de démarrer votre "
+"Si aucun chargeur de démarrage n'est trouvé ou si ce dernier est installé sur votre "
+"partition racine, il faudra configurer le chargeur de démarrage de l'autre système d'exploitation (si vous en avez un) afin de démarrer votre "
 "système Pardus fraîchement installé.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82
-#, fuzzy
 msgid "Where do you want to install the bootlader ?"
 msgstr "Où voulez vous installer le chargeur de démarrage ?"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83
 msgid "Install to first bootable disk (recommended)"
-msgstr "Installer sur le premier disque dur où l'on peut démarrer (recommandé)"
+msgstr "Installer sur le premier disque dur démarrable (recommandé)"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84
 msgid "Install to Pardus installed partition"
@@ -243,11 +249,11 @@ msgstr "Installation du paquet: "
 
 #: yali4/gui/Ui/keyboardwidget.py:60
 msgid "Select the keyboard layout of your choice."
-msgstr "Sélectionnez la disposition du clavier de votre choix."
+msgstr "Sélectionnez le schéma du clavier qui vous convient:"
 
 #: yali4/gui/Ui/keyboardwidget.py:61
 msgid "Test selected keyboard:"
-msgstr "Tester le clavier choisi:"
+msgstr "Tester le schéma du clavier choisi:"
 
 #: yali4/gui/Ui/main.py:156
 msgid "Yali4"
@@ -323,7 +329,7 @@ msgstr "Format :"
 
 #: yali4/gui/Ui/partedit.py:153
 msgid "Yes, format this partition"
-msgstr "Oui, formatter cette partition"
+msgstr "Oui, formater cette partition"
 
 #: yali4/gui/Ui/partedit.py:154
 msgid "File System :"
@@ -483,7 +489,7 @@ msgstr "Login Automatique Désactivé."
 
 #: yali4/gui/Ui/summarywidget.py:60 yali4/gui/ScrSummary.py:212
 msgid "Begin Install"
-msgstr "Lancer l'installation"
+msgstr "Lancer Installation"
 
 #: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
@@ -517,12 +523,11 @@ msgid "Debug"
 msgstr "Debug"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Welcome! Our improved setup tool YALI will help you with the installation of "
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
-msgstr "Bienvenue! Notre outil amélioré YALI va vous guider pendant l'installation de Pardus 2008. Avec l'outil de partitionnement intelligent, \n"
+msgstr "Bienvenue! Notre outil amélioré YALI va vous guider pendant l'installation de Pardus 2008. Cet outil intelligent va rapidement installer Pardus 2008 après avoir partitionné le(s) disque(s) avec le gestionnaire de disque intégré.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
@@ -1168,14 +1173,12 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrPartitionAuto.py:38
-#, fuzzy
 msgid "Choose Partitioning"
-msgstr "Créer la partition"
+msgstr "Partitionnement du disque"
 
 #: yali4/gui/ScrPartitionAuto.py:39
-#, fuzzy
 msgid "Auto or Manual partitioning..."
-msgstr "Créer la partition"
+msgstr "Partitionnement manuel ou automatique..."
 
 #: yali4/gui/ScrPartitionAuto.py:41
 #, fuzzy
