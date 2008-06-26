@@ -117,8 +117,8 @@ class Dev():
         d["state"] = "up"
         DB.setDB(self.name, d)
         notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
-        ret.wait() 
-        notify("Net.Link", "stateChanged", (self.name, "down", ""))
+       # ret.wait() 
+       # notify("Net.Link", "stateChanged", (self.name, "down", ""))
 
         #else:
          #   notify("Net.Link", "stateChanged", (self.name, "down", ""))

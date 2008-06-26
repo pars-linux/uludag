@@ -18,6 +18,10 @@ import connection
 import newconn
 import widgets
 import autoswitch
+#import connsharing
+
+from connsharing import *
+#from PyQt4 import QtGui,QtCore
 from icons import icons, getIconSet
 from comariface import comlink
 
@@ -410,6 +414,11 @@ class Widget(QVBox):
         self.butAutoConnect.setUsesTextLabel(True)
         self.butAutoConnect.setTextPosition(self.butAutoConnect.BesideIcon)
 
+        self.butShare = QToolButton(getIconSet("connect_sharing"), "", "lala", self.slotShare, bar)
+        self.butShare.setTextLabel(i18n("Share Connection"), False)
+        self.butShare.setUsesTextLabel(True)
+        self.butShare.setTextPosition(self.butShare.BesideIcon)
+
         self.helpwin = None
         self.newconnwin = None
         
@@ -437,10 +446,25 @@ class Widget(QVBox):
         comlink.state_hook.append(self.view.stateUpdate)
         comlink.hotplug_hook.append(self.view.hotPlug)
         comlink.noconn_hook.append(self.slotCreate)
+        comlink.device_hook.append(self.getDeviceList)
+        
+        self.share = connShare(self)
         
         for script in comlink.links:
             comlink.queryConnections(script)
-    
+        
+        for script in comlink.links:
+            if script == "openvpn" or script == "ppp":
+                return
+            comlink.queryDevices(script)
+    def getDeviceList(self, script, devices):
+        for key in devices:
+            self.share.intcombo.insertItem("%s-%s" % (key.split("_")[-1], devices[key]))
+            self.share.sharecombo.insertItem("%s-%s" % (key.split("_")[-1], devices[key]))
+
+    def slotShare(self):
+        self.share.show()
+
     def setAutoConnect(self):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
         self.config.sync()
