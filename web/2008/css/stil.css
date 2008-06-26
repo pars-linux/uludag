@@ -129,6 +129,41 @@ img.floatr, img[align="right"] {
     height: 460px;
     overflow: none;
 }
+
+.icerik_sss_sorular {
+    line-height: 14px;
+    font-size: 11px;
+    color: #fff;
+    padding-top: 16px;
+    padding-left: 16px;
+    width: 310px;
+    height: 460px;
+    overflow: none;
+    float: left;
+}
+
+.icerik_sss_cevaplar {
+    line-height: 14px;
+    font-size: 11px;
+    color: #fff;
+    padding-top: 16px;
+    padding-left: 16px;
+    width: 280px;
+    height: 460px;
+    margin-left: 5px;
+    overflow: none;
+    float: left;
+}
+
+.icerik_sss_dikeybolucu {
+    background: url('../resim/ara_dikey.png') no-repeat;
+    width: 2px;
+    height: 483px;
+    margin-top: 18px;
+    margin-left: 20px;
+    float: left;
+}
+
 .content_detail_button {
     margin-top: -8px;
 }
