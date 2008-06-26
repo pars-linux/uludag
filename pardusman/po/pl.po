@@ -93,11 +93,11 @@ msgstr ""
 
 #: src/gui.py:148
 msgid "Extra Parameters:"
-msgstr ""
+msgstr "Dodatkowe Parametry:"
 
 #: src/gui.py:153
 msgid "This parameters will add to the install media's GRUB"
-msgstr ""
+msgstr "Te parametry dodane zostaną do menedżera rozruchu GRUB"
 
 #: src/gui.py:157
 msgid "Type:"
