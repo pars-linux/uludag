@@ -115,7 +115,7 @@ img.floatr, img[align="right"] {
     padding-top: 16px;
     padding-left: 16px;
     width: 640px;
-    height: 281px;
+    height: 278px;
     overflow: none;
 }
 
@@ -198,14 +198,27 @@ img.menu_img {
     float: right;
     width: 190px;
     position: absolute;
-    left: 40px;
-    top: 328px;
+    left: 46px;
+    top: 330px;
 }
 
-#sidebar_bottom img {
-    padding-top: 7px;
-    border: 0;
+#sidebar_bottom div {
+    width: 163px;
+    height: 51px;
+    margin-top: 2px;
+    padding-top: 8px;
+    padding-left: 6px;
+    cursor: pointer;
 }
+#sidebar_bottom a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #666666;
+}
+#indir { background: url('../resim/sag_alt_indir.png') no-repeat; }
+#dukkan { background: url('../resim/sag_alt_dukkan.png') no-repeat; }
+#basin { background: url('../resim/sag_alt_basin.png') no-repeat; }
 
 #footer {
     height: 69px;
