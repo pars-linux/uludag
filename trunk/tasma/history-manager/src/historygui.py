@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Sal Haz 24 02:53:03 2008
+# Created: Prş Haz 26 13:42:52 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -60,7 +60,7 @@ class formMain(QWidget):
         formMainLayout.addMultiCellLayout(layout5,0,2,0,0)
 
         self.toolBox = QToolBox(self,"toolBox")
-        self.toolBox.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(1)
 
         self.page1 = QWidget(self.toolBox,"page1")
         self.page1.setBackgroundMode(QWidget.PaletteBase)
@@ -78,15 +78,8 @@ class formMain(QWidget):
         self.takeBackPage.setBackgroundMode(QWidget.PaletteBase)
         takeBackPageLayout = QGridLayout(self.takeBackPage,1,1,11,6,"takeBackPageLayout")
 
-        self.listDetailsTextEdit = QTextEdit(self.takeBackPage,"listDetailsTextEdit")
-        self.listDetailsTextEdit.setFrameShape(QTextEdit.NoFrame)
-        self.listDetailsTextEdit.setTextFormat(QTextEdit.RichText)
-        self.listDetailsTextEdit.setReadOnly(1)
-
-        takeBackPageLayout.addWidget(self.listDetailsTextEdit,1,0)
-
         self.detailsTextEdit = QTextEdit(self.takeBackPage,"detailsTextEdit")
-        self.detailsTextEdit.setFrameShape(QTextEdit.NoFrame)
+        self.detailsTextEdit.setFrameShape(QTextEdit.MenuBarPanel)
         self.detailsTextEdit.setTextFormat(QTextEdit.RichText)
         self.detailsTextEdit.setReadOnly(1)
 

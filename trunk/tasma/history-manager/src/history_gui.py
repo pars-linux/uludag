@@ -22,8 +22,6 @@ import pisi
 
 import PisiIface
 
-
-
 class widgetMain(formMain):
     def __init__(self, parent):
         # get history database from pisi
@@ -54,7 +52,6 @@ class widgetMain(formMain):
         self.snapshotsListView.setSortColumn(1)
         self.snapshotsListView.setSortOrder(Qt.Descending)
         self.toolBox.setCurrentIndex(1)
-        self.listDetailsTextEdit.hide()
 
         # set labels
         self.setCaption(i18n("History Manager"))
@@ -312,7 +309,7 @@ class widgetMain(formMain):
             return
 
         for package in self.selected.op_pack:
-            information += "%s <br>" % package.__str__()
+            information += "- %s <br>" % package.__str__()
         self.detailsTextEdit.setText(information)
 
     def setTakeBackPlan(self):

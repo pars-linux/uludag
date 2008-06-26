@@ -169,7 +169,7 @@
                 <cstring>toolBox</cstring>
             </property>
             <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
             </property>
             <widget class="QWidget">
                 <property name="name">
@@ -215,26 +215,12 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QTextEdit" row="1" column="0">
-                        <property name="name">
-                            <cstring>listDetailsTextEdit</cstring>
-                        </property>
-                        <property name="frameShape">
-                            <enum>NoFrame</enum>
-                        </property>
-                        <property name="textFormat">
-                            <enum>RichText</enum>
-                        </property>
-                        <property name="readOnly">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
                     <widget class="QTextEdit" row="0" column="0">
                         <property name="name">
                             <cstring>detailsTextEdit</cstring>
                         </property>
                         <property name="frameShape">
-                            <enum>NoFrame</enum>
+                            <enum>MenuBarPanel</enum>
                         </property>
                         <property name="textFormat">
                             <enum>RichText</enum>
