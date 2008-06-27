@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 16:32+0300\n"
+"POT-Creation-Date: 2008-06-27 12:27+0300\n"
 "PO-Revision-Date: 2008-06-24 11:40+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/Progress.py:68 src/history_gui.py:375
+#: src/Progress.py:68 src/history_gui.py:376
 msgid "Progress"
 msgstr "Voortgang"
 
@@ -50,7 +50,7 @@ msgstr "Kan geen verbinding maken met Comar deamon"
 msgid "History Manager Interface"
 msgstr "Geschiedenisbeheer interface"
 
-#: src/historygui.py:124
+#: src/historygui.py:121
 msgid "formMain"
 msgstr "formMain"
 
@@ -193,63 +193,63 @@ msgstr "Neem een snapshot van het systeem "
 msgid "Taking System Back to %1 %2 <br>"
 msgstr "Neem systeem terug naar %1 %2 <br>"
 
-#: src/history_gui.py:291 src/history_gui.py:292
+#: src/history_gui.py:292 src/history_gui.py:293
 msgid "Select an entry to view details"
 msgstr "Selecteer waarde voor details"
 
-#: src/history_gui.py:295
+#: src/history_gui.py:296
 msgid "No: <b>%1</b>"
 msgstr "Geen: <b>%1</b>"
 
-#: src/history_gui.py:296
+#: src/history_gui.py:297
 msgid "Type: <b>%1</b>"
 msgstr "Type: <b>%1</b>"
 
-#: src/history_gui.py:307
-msgid "There are <b>%1</b> packages in this snapshot"
-msgstr "Er zijn <b>%1</b> pakketten in deze snapshot"
+#: src/history_gui.py:309
+msgid "There are %1 packages in this snapshot"
+msgstr "Er zijn %1 pakketten in deze snapshot"
 
-#: src/history_gui.py:323
+#: src/history_gui.py:324
 msgid "Configuration files in snapshot:"
 msgstr "Configuratie bestanden in snapshot:"
 
-#: src/history_gui.py:330
+#: src/history_gui.py:331
 msgid "Take Back Plan for %1 operation on %2"
 msgstr "Ga terug naar plan voor %1 handeling op %2"
 
-#: src/history_gui.py:333
+#: src/history_gui.py:334
 msgid "These package(s) will be <b>installed</b> :"
 msgstr "Deze pakket(ten) zullen <b>geïnstalleerd</b> worden:"
 
-#: src/history_gui.py:338
+#: src/history_gui.py:339
 msgid "These package(s) will be <b>removed</b> :"
 msgstr "Deze pakket(ten) zullen <b>verwijderd</b> worden:"
 
-#: src/history_gui.py:403
+#: src/history_gui.py:404
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<b>Voorbereiden PiSi...</b>"
 
-#: src/history_gui.py:441
+#: src/history_gui.py:442
 #, fuzzy
 msgid "snapshot"
 msgstr "Snapshots"
 
-#: src/history_gui.py:445
+#: src/history_gui.py:446
 #, fuzzy
 msgid "upgrade"
 msgstr "Opwaarderingen"
 
-#: src/history_gui.py:449
+#: src/history_gui.py:450
 #, fuzzy
 msgid "remove"
 msgstr "Verwijderd"
 
-#: src/history_gui.py:453
+#: src/history_gui.py:454
 #, fuzzy
 msgid "install"
 msgstr "Installaties"
 
-#: src/history_gui.py:457
+#: src/history_gui.py:458
 #, fuzzy
 msgid "takeback"
 msgstr "GaTerug"
