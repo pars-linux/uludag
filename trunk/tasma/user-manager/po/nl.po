@@ -10,10 +10,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 02:11+0300\n"
-"PO-Revision-Date: 2008-06-26 09:43+0200\n"
+"PO-Revision-Date: 2008-06-26 20:38+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +25,7 @@ msgstr "ID:"
 
 #: groupedit.py:30 useredit.py:48
 msgid "Select manually"
-msgstr "Handmatig selecteren"
+msgstr "Selecteer handmatig"
 
 #: groupedit.py:61
 msgid "Group name:"
@@ -50,7 +49,7 @@ msgstr "Toevoegen groep..."
 
 #: browser.py:92
 msgid "Show system user and groups"
-msgstr "Systeemgebruikers en -groepen weergeven"
+msgstr "Systeemgebruikers en groepen weergeven"
 
 #: browser.py:102 browser.py:112
 msgid "ID"
@@ -86,8 +85,8 @@ msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %"
-"s<br>Gebruikersnaam: %s <br>ID: %d"
+"<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %s<br>Gebruikersnaam: % "
+"s <br>ID: %d"
 
 #: browser.py:148
 msgid "Delete User"
@@ -103,11 +102,8 @@ msgstr "Verwijder gebruiker"
 
 #: browser.py:167
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
-"s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %s<br>ID: %d"
 
 #: browser.py:173 browser.py:174
 msgid "Delete Group"
@@ -211,11 +207,11 @@ msgstr "Begin met het typen van de volledige naam van de gebruiker."
 
 #: useredit.py:366
 msgid "You should enter a password for this user."
-msgstr "U zult een wachtwoord voor deze gebruiker moeten invoeren."
+msgstr "U dient een wachtwoord voor deze gebruiker in te voeren."
 
 #: useredit.py:371
 msgid "Password must be longer."
-msgstr "Wachtwoord moet langer zijn."
+msgstr "Wachtwoord dient langer te zijn."
 
 #: useredit.py:375
 msgid "Don't use your full name or user name as a password."
@@ -300,6 +296,9 @@ msgstr "Blok"
 #: useredit.py:719
 msgid "Do not ask password"
 msgstr "Vraag geen wachtwoord"
+<<<<<<< .mine
+
+=======
 
 #: user-manager.py:33
 msgid "User Management"
@@ -312,3 +311,4 @@ msgstr "Module gebruikersbeheer is al opgestart!"
 #: user-manager.py:88
 msgid "User Manager"
 msgstr "Gebruikersbeheer"
+>>>>>>> .r19321
