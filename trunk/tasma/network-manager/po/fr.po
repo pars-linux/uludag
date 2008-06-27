@@ -1,17 +1,17 @@
-# translation of fr.po to french
+# translation of fr.po to French
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Atilla Aktuna <aktuna@gmail.com>, 2006.
-# Amine Chadly <amine.chadly@gmail.com>, 2007.
+# Amine Chadly <amine.chadly@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-28 10:59+0300\n"
-"PO-Revision-Date: 2007-11-18 03:02+0100\n"
+"PO-Revision-Date: 2008-06-27 03:23+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
-"Language-Team: french <pardus-translators@pardus.org.tr>\n"
+"Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,28 +19,24 @@ msgstr ""
 
 #: comariface.py:227
 msgid "COMAR Error"
-msgstr ""
+msgstr "Erreur COMAR"
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Waiting DBus..."
-msgstr "En attente de COMAR..."
+msgstr "En attente de DBus..."
 
 #: comariface.py:232 network-applet.py:175
-#, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"La connexion avec COMAR a été perdue, tentative de reconnexion en cours..."
+msgstr "La connexion avec le DBUS a été perdue de manière inopinée, tentative de rétablissement de la connexion en cours..."
 
 #: comariface.py:248 network-applet.py:191
-#, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
-"Impossible de se connecter à COMAR! S'il n'est pas déjà lancé, veuillez le "
-"faire en lançant la commande 'service comar start' dans une invite de "
-"commande de l'administrateur."
+"Impossible de se connecter au Dbus ! S'il n'est pas déjà lancé, veuillez le "
+"faire en tapant la commande 'service dbus start' dans une invite de "
+"commande de l'administrateur (root)."
 
 #: comariface.py:406
 msgid "new connection"
@@ -53,7 +49,7 @@ msgstr "Gestionnaire réseau"
 
 #: autoswitch.py:58
 msgid "Scanning..."
-msgstr ""
+msgstr "Analyse en cours..."
 
 #: autoswitch.py:80
 #, python-format
@@ -87,7 +83,7 @@ msgstr "Protocole"
 
 #: connection.py:41
 msgid "No remotes found"
-msgstr ""
+msgstr "Aucun distant trouvé"
 
 #: connection.py:61
 msgid "<hidden>"
@@ -346,8 +342,3 @@ msgstr "Ajouter un serveur de nom"
 msgid "Name server:"
 msgstr "Serveur de nom:"
 
-#~ msgid "You are not allowed to change network settings."
-#~ msgstr "Vous n'êtes pas autorisé à changer les paramètres réseau."
-
-#~ msgid "Connected to <b>%s</b>"
-#~ msgstr "Connecté à <b>%s</b>."
