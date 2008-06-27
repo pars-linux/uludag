@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Regional & Accessibility
 Name[tr]=Bölgesel ve Erişilebilirlik
-Name[nl]=Regio en toegankelijkheid
+Name[nl]=Regionaal en toegankelijkheid
 Name[es]=Regional & Accesibilidad
 Name[de]=Regional & Eingabehilfen
 Name[pt_BR]=Regional & Acessibilidade
@@ -12,3 +12,4 @@ Comment=Regional and accessibility settings like language and time
 Comment[tr]=Dil, saat gibi bölgesel ve erişilebilirlik ile ilgili ayarlar
 Comment[es]=Configuración Regional y accesibilidad, como idioma y hora
 Comment[de]=Regional- und Eingabehilfen-Einstellungen wie Sprache und Uhrzeit
+Comment[nl]=Regionale- en toegankelijkheidsinstellingen zoals taal en tijd
