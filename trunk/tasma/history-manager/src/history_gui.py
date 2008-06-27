@@ -290,7 +290,6 @@ class widgetMain(formMain):
         if self.selected == None:
             self.opDetailsListBox.clear()
             self.opDetailsListBox.insertItem(i18n("Select an entry to view details"))
-            #self.detailsTextEdit.setText(i18n("Select an entry to view details"))
             self.planTextEdit.setText(i18n("Select an entry to view details"))
             return
 
@@ -303,21 +302,16 @@ class widgetMain(formMain):
         information = ""
 
         self.opDetailsListBox.clear()
-        #self.detailsTextEdit.clear()
         self.planTextEdit.clear()
 
         if self.selected.getType() == 'snapshot':
             self.opDetailsListBox.insertItem(\
                     i18n("There are <b>%1</b> packages in this snapshot")\
                     .arg(self.selected.getNumPackages()))
-            #information += i18n("There are <b>%1</b> packages in this snapshot")\
-            #        .arg(self.selected.getNumPackages())
             return
 
         for package in self.selected.op_pack:
             self.opDetailsListBox.insertItem("* %s" % package.__str__())
-            #information += "- %s <br>" % package.__str__()
-        #self.detailsTextEdit.setText(information)
 
     def setTakeBackPlan(self):
         willbeinstalled, willberemoved = PisiIface.getPlan(self.selected.getOpNo())
