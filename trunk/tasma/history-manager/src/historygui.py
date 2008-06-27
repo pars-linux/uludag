@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Prş Haz 26 13:42:52 2008
+# Created: Cum Haz 27 12:17:55 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -67,8 +67,7 @@ class formMain(QWidget):
         page1Layout = QGridLayout(self.page1,1,1,11,6,"page1Layout")
 
         self.planTextEdit = QTextEdit(self.page1,"planTextEdit")
-        self.planTextEdit.setFrameShape(QTextEdit.NoFrame)
-        self.planTextEdit.setTextFormat(QTextEdit.RichText)
+        self.planTextEdit.setFrameShape(QTextEdit.MenuBarPanel)
         self.planTextEdit.setReadOnly(1)
 
         page1Layout.addWidget(self.planTextEdit,0,0)
@@ -78,12 +77,10 @@ class formMain(QWidget):
         self.takeBackPage.setBackgroundMode(QWidget.PaletteBase)
         takeBackPageLayout = QGridLayout(self.takeBackPage,1,1,11,6,"takeBackPageLayout")
 
-        self.detailsTextEdit = QTextEdit(self.takeBackPage,"detailsTextEdit")
-        self.detailsTextEdit.setFrameShape(QTextEdit.MenuBarPanel)
-        self.detailsTextEdit.setTextFormat(QTextEdit.RichText)
-        self.detailsTextEdit.setReadOnly(1)
+        self.opDetailsListBox = QListBox(self.takeBackPage,"opDetailsListBox")
+        self.opDetailsListBox.setFrameShape(QListBox.MenuBarPanel)
 
-        takeBackPageLayout.addWidget(self.detailsTextEdit,0,0)
+        takeBackPageLayout.addWidget(self.opDetailsListBox,0,0)
         self.toolBox.addItem(self.takeBackPage,QString.fromLatin1(""))
 
         formMainLayout.addWidget(self.toolBox,2,1)

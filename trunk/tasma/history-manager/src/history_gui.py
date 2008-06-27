@@ -288,7 +288,9 @@ class widgetMain(formMain):
     def pageChanged(self, num):
         """ when toolbox pages change, this function is called """
         if self.selected == None:
-            self.detailsTextEdit.setText(i18n("Select an entry to view details"))
+            self.opDetailsListBox.clear()
+            self.opDetailsListBox.insertItem(i18n("Select an entry to view details"))
+            #self.detailsTextEdit.setText(i18n("Select an entry to view details"))
             self.planTextEdit.setText(i18n("Select an entry to view details"))
             return
 
@@ -300,17 +302,22 @@ class widgetMain(formMain):
 
         information = ""
 
-        self.detailsTextEdit.clear()
+        self.opDetailsListBox.clear()
+        #self.detailsTextEdit.clear()
         self.planTextEdit.clear()
 
         if self.selected.getType() == 'snapshot':
-            information += i18n("There are <b>%1</b> packages in this snapshot")\
-                    .arg(self.selected.getNumPackages())
+            self.opDetailsListBox.insertItem(\
+                    i18n("There are <b>%1</b> packages in this snapshot")\
+                    .arg(self.selected.getNumPackages()))
+            #information += i18n("There are <b>%1</b> packages in this snapshot")\
+            #        .arg(self.selected.getNumPackages())
             return
 
         for package in self.selected.op_pack:
-            information += "- %s <br>" % package.__str__()
-        self.detailsTextEdit.setText(information)
+            self.opDetailsListBox.insertItem("* %s" % package.__str__())
+            #information += "- %s <br>" % package.__str__()
+        #self.detailsTextEdit.setText(information)
 
     def setTakeBackPlan(self):
         willbeinstalled, willberemoved = PisiIface.getPlan(self.selected.getOpNo())
