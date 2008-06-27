@@ -105,6 +105,12 @@ class MainWindow(KParts.MainWindow):
             self.pspecTab.syncFromDesign()
         else:
             self.pspecTab.editor.save()
+	    
+    def activateSave(self):
+	self.actionSave.setEnabled(True)
+	
+    def deactivateSave(self):
+	self.actionSave.setEnabled(False)
         
     def disableOperations(self):
         self.actionFetch.setDisabled(True)
@@ -153,7 +159,7 @@ class MainWindow(KParts.MainWindow):
         conf.read()
         tempDir += "newPackage"
         os.mkdir(tempDir)
-        templateDict = {"package": "PackageName", "homepage": "http://www.pardus.org.tr",
+        templateDict = {"package": "PackageName", "homepage": "http://www.pardus.org.tr", "partof": "Pardus",
                  "packagername": conf.packagerName, "packageremail": conf.packagerEmail,
                  "license": "GPL-2", "isa": "isA",
                  "summary": "Summary",
@@ -282,6 +288,12 @@ class MainWindow(KParts.MainWindow):
 	QMessageBox.information(self,
                                 "Files Saved",
                                 "Following files are saved:\n"+self.realDir+"pspec.xml\n"+self.realDir+"actions.py")
+				
+	#After save deactivate Save button, after a key pressed activate Save button...
+	#SI self.deactivateSave()
+	#SI QObject.connect(self.actionSave, SIGNAL("clicked()"), self.activateSave)
+
+	
         return
         
 #        if self.twTabs.currentPage() is self.pspecTab:
@@ -583,10 +595,11 @@ class PisiThread(Thread):
          try:
              self.initPisi()
              qApp.processEvents(QEventLoop.ExcludeUserInput)
-             pisi.api.build_until(self.path, self.stage)
-             qApp.processEvents(QEventLoop.ExcludeUserInput)
-             #SI pisi.api.finalize()
-	     pisi.api.remove()
+	     #SI os.system("sudo chmod 777 /var/cache/pisi/archives") # Password has to be entered automtically
+             #SI pisi.api.build_until(self.path, self.stage)
+	     pisi.api.build(self.path)
+	     qApp.processEvents(QEventLoop.ExcludeUserInput)
+             pisi.api.finalize()
              os.write(self.output, str(i18n("<b>Succesfully finished.</b><br>")))
          except Exception, inst:
              os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
@@ -594,6 +607,7 @@ class PisiThread(Thread):
          
          if self.stage == "buildpackages":
              # TODO: .pisi'nin yerini belirle
+	     self.pisiTo = self.path
              command = "mv %s %s" % (str(os.getcwd() + "/*.pisi").replace(" ", "\ "),self.pisiTo.replace(" ", "\ "))
              os.system(command)
     
@@ -646,3 +660,4 @@ def cleanTabs(tw):
             page = tw.currentPage()
             tw.removePage(page)
             page.close()
+	    
