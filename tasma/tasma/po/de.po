@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 16:45+0200\n"
-"PO-Revision-Date: 2008-01-05 07:50+0200\n"
+"PO-Revision-Date: 2008-06-27 04:40+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: src/tmoduleview.cpp:86
 msgid "&Administrator Mode"
-msgstr "&Administrator Modus"
+msgstr "&Administrator-Modus"
 
 #: src/tmoduleview.cpp:73
 msgid "&Back"
@@ -33,7 +33,7 @@ msgstr "&Zurücksetzen"
 
 #: src/tasmamainwin.cpp:83
 msgid "&Show Extra Modules"
-msgstr "Extra Module An&zeigen"
+msgstr "Extra-Module an&zeigen"
 
 #: modules/tasmatv/tasmatv.cpp:42
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
@@ -98,12 +98,12 @@ msgid ""
 "a category its contents will be shown as icons in the right panel. You can "
 "start a configuration module by clicking (or double clicking) its icon."
 msgstr ""
-"Für eine bessere Verständigung, wurden die Module in Katogerien gruppiert. "
-"Sie können eine Kategorie aktivieren, indem Sie eine Kategorie aus dem "
+"Für eine bessere Verständigung wurden die Module in Katogerien gruppiert. "
+"Sie können eine Kategorie aktivieren indem Sie eine Kategorie aus dem "
 "linken Bereich auswählen. Nachdem Sie eine Kategorie aktiviert haben, wird "
-"dessen Inhalt als Icon in der rechten Leiste angezeigt. Sie können ein "
-"Konfigurationsmodul durch klicken( oder durch einem Doppelklick) des "
-"jeweiligen Icons starten."
+"dessen Inhalt als Ikon in der rechten Leiste angezeigt. Sie können ein "
+"Konfigurationsmodul durch anklicken (oder durch einem Doppelklick) des "
+"jeweiligen Ikons starten."
 
 #: src/main.cpp:68
 msgid "KDE Developers"
@@ -146,7 +146,7 @@ msgstr "Andere"
 
 #: src/main.cpp:63
 msgid "Pardus Configuration Center"
-msgstr "Pardus Konfigurationszentrum"
+msgstr "Pardus-Konfigurationszentrum"
 
 #: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:45
 #, no-c-format
@@ -155,7 +155,7 @@ msgstr "Phasengekoppelter Regelkreis (PLL)"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:38
 msgid "PiSi Package Info"
-msgstr "PiSi Paket-Info"
+msgstr "PiSi-Paket-Info"
 
 #: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:42
 #, no-c-format
@@ -185,7 +185,7 @@ msgid ""
 "tweak the systems default configuration settings by using the modules "
 "presented in TASMA. "
 msgstr ""
-"TASMA ist eine Konfigurationsapplikation für das Pardus Betriebssystem. Durch "
+"TASMA ist eine Konfigurationsanwendung für das Pardus-Betriebssystem. Durch "
 "die Verwendung der Module, die in TASMA aufgeführt werden, können Sie die "
 "Systemvoreinstellungen optimieren."
 
@@ -201,7 +201,7 @@ msgstr "TV-Karte"
 
 #: modules/tasmatv/tasmatv.cpp:81
 msgid "Tv card configuration module for TASMA."
-msgstr "TV-Karte Konfigurationsmodul für TASMA"
+msgstr "TV-Karten-Konfigurationsmodul für TASMA"
 
 #: modules/tasmatv/tvconfigui.moc.cpp:34 modules/tasmatv/tvconfigui.moc.cpp:42
 msgid "TvConfigUI"
