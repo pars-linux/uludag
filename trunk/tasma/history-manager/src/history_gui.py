@@ -306,7 +306,7 @@ class widgetMain(formMain):
 
         if self.selected.getType() == 'snapshot':
             self.opDetailsListBox.insertItem(\
-                    i18n("There are <b>%1</b> packages in this snapshot")\
+                    i18n("There are %1 packages in this snapshot")\
                     .arg(self.selected.getNumPackages()))
             return
 
