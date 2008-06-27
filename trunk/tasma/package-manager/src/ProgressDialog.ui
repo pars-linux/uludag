@@ -23,6 +23,9 @@
     <property name="caption">
         <string>Progress</string>
     </property>
+    <property name="modal">
+        <bool>true</bool>
+    </property>
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
