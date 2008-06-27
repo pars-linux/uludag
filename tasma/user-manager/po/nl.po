@@ -296,9 +296,6 @@ msgstr "Blok"
 #: useredit.py:719
 msgid "Do not ask password"
 msgstr "Vraag geen wachtwoord"
-<<<<<<< .mine
-
-=======
 
 #: user-manager.py:33
 msgid "User Management"
@@ -311,4 +308,3 @@ msgstr "Module gebruikersbeheer is al opgestart!"
 #: user-manager.py:88
 msgid "User Manager"
 msgstr "Gebruikersbeheer"
->>>>>>> .r19321
