@@ -1,11 +1,10 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008 RC3-r5</Title>
+    <Title>Pardus 2008 RC3-r6</Title>
     <WorkDir>/home/ekin/cdtemp/</WorkDir>
-    <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
+    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
-        <SelectedComponent>system.devel</SelectedComponent>
         <SelectedPackage>DirectFB</SelectedPackage>
         <SelectedPackage>PolicyKit-kde</SelectedPackage>
         <SelectedPackage>PyKDE</SelectedPackage>
@@ -60,6 +59,8 @@
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>freealut</SelectedPackage>
+        <SelectedPackage>gcc</SelectedPackage>
+        <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
@@ -68,6 +69,7 @@
         <SelectedPackage>glibc-locales-fr</SelectedPackage>
         <SelectedPackage>glibc-locales-it</SelectedPackage>
         <SelectedPackage>glibc-locales-nl</SelectedPackage>
+        <SelectedPackage>glibc-locales-pl</SelectedPackage>
         <SelectedPackage>glibc-locales-pt</SelectedPackage>
         <SelectedPackage>gparted</SelectedPackage>
         <SelectedPackage>grounation-xcursors</SelectedPackage>
@@ -101,6 +103,7 @@
         <SelectedPackage>kde-i18n-fr</SelectedPackage>
         <SelectedPackage>kde-i18n-it</SelectedPackage>
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
+        <SelectedPackage>kde-i18n-pl</SelectedPackage>
         <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
@@ -124,6 +127,7 @@
         <SelectedPackage>libflashsupport</SelectedPackage>
         <SelectedPackage>libsoup</SelectedPackage>
         <SelectedPackage>libsvg-cairo</SelectedPackage>
+        <SelectedPackage>libtool</SelectedPackage>
         <SelectedPackage>libwmf</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
         <SelectedPackage>lirc-drivers</SelectedPackage>
@@ -351,6 +355,7 @@
         <Package>gconfmm</Package>
         <Package>gd</Package>
         <Package>gdbm</Package>
+        <Package>gecko-mediaplayer</Package>
         <Package>gettext</Package>
         <Package>gfxtheme-pardus-boot</Package>
         <Package>ghostscript</Package>
@@ -365,6 +370,7 @@
         <Package>glibc-locales-fr</Package>
         <Package>glibc-locales-it</Package>
         <Package>glibc-locales-nl</Package>
+        <Package>glibc-locales-pl</Package>
         <Package>glibc-locales-pt</Package>
         <Package>glibc-zoneinfo</Package>
         <Package>glibmm</Package>
@@ -372,6 +378,7 @@
         <Package>glut</Package>
         <Package>gmp</Package>
         <Package>gnokii</Package>
+        <Package>gnome-mplayer</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnuconfig</Package>
         <Package>gnupg</Package>
@@ -446,6 +453,7 @@
         <Package>kde-i18n-fr</Package>
         <Package>kde-i18n-it</Package>
         <Package>kde-i18n-nl</Package>
+        <Package>kde-i18n-pl</Package>
         <Package>kde-i18n-pt_BR</Package>
         <Package>kde-i18n-tr</Package>
         <Package>kdeaddons</Package>
