@@ -13,6 +13,7 @@ pspecTemplate = u"""<?xml version="1.0" encoding="utf-8" standalone="no"?>
         </Packager>
         <License>%(license)s</License>
         <IsA>%(isa)s</IsA>
+	<PartOf>%(partof)s</PartOf>
         <Summary>%(summary)s</Summary>
         <Archive type="%(archivetype)s" sha1sum="%(archivesha1)s">%(archiveuri)s</Archive>
     </Source>
