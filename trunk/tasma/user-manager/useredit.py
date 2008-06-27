@@ -857,7 +857,7 @@ class PolicyTab(QVBox):
             message = i18n("You are not authorized for this operation.")
             KMessageBox.sorry(None, message, i18n("Error"))
 
-        def error():
+        def error(heta):
             item.setOpen(False)
 
         if not self.edit:
@@ -920,7 +920,7 @@ class PolicyTab(QVBox):
             message = i18n("You are not authorized for this operation.")
             KMessageBox.sorry(None, message, i18n("Error"))
 
-        def error():
+        def error(heta):
             self.setPolicyButtonsEnabled(False)
 
         #try:
