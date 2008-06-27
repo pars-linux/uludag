@@ -142,6 +142,15 @@ img.floatr, img[align="right"] {
     float: left;
 }
 
+.icerik_sss_sorular h3 {
+    
+}
+
+.icerik_sss_sorular a {
+    text-decoration: none;
+    color: white;
+}
+
 .icerik_sss_cevaplar {
     line-height: 14px;
     font-size: 11px;
@@ -152,6 +161,10 @@ img.floatr, img[align="right"] {
     height: 460px;
     overflow: none;
     float: left;
+}
+
+.icerik_sss_cevaplar h3 {
+    color: orange;
 }
 
 .icerik_sss_dikeybolucu {
