@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-25 16:06+0300\n"
-"PO-Revision-Date: 2008-06-26 20:44+0200\n"
+"PO-Revision-Date: 2008-06-27 04:16+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "01:29"
 
 #: src/ProgressDialog.py:136
 msgid "Operation:"
-msgstr "Operation:"
+msgstr "Vorgang:"
 
 #: src/ProgressDialog.py:137
 msgid "Status:"
@@ -146,11 +146,11 @@ msgstr "Paket(e) entfernen"
 
 #: src/MainWidget.py:258 src/MainWidget.py:656
 msgid "<b>Updating Repository</b>"
-msgstr "<b>Depot-Upgrade wird durchgeführt</b>"
+msgstr "<b>Depot wird aktualisiert</b>"
 
 #: src/MainWidget.py:287
 msgid "Upgrade Package(s)"
-msgstr "Paket(e) upgraden"
+msgstr "Paket(e)-Upgrade vornehmen"
 
 #: src/MainWidget.py:305 src/MainWidget.py:584
 msgid "Search Results"
@@ -226,19 +226,19 @@ msgstr "<br><br>Insgesamt <b>%1</b> Pakete werden <b>installiert</b>."
 
 #: src/MainWidget.py:423
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr "<qt>Sie haben <b>%1</b> Paket(e) zum <b>upgraden</b> ausgewählt."
+msgstr "<qt>Sie haben <b>%1</b> Paket(e) für den <b>Upgrade</b>-Vorgang ausgewählt."
 
 #: src/MainWidget.py:426
 msgid ""
 " With the selected packages; <b>%1</b> extra dependencies are also going to "
 "be <b>upgraded</b>."
 msgstr ""
-" Zusätzlich zum Upgrade ausgewählte(s) Paket(e), werden auch für Abhängige "
+" Zusätzlich für den Upgrade ausgewählte(s) Paket(e), werden auch für abhängige "
 "Pakete ein <b>Upgrade</b> durchgeführt."
 
 #: src/MainWidget.py:427
 msgid "<br><br>Total of <b>%1</b> packages are going to be <b>upgraded</b>."
-msgstr "<br><br>Insgesamt <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
+msgstr "<br><br>Insgesamt für <b>%1</b> Pakete werden <b>Upgrades</b> durchgeführt."
 
 #: src/MainWidget.py:430
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
@@ -343,11 +343,11 @@ msgstr "Neue Pakete anzeigen"
 
 #: src/package-manager.py:114
 msgid "Show Upgradable Packages"
-msgstr "Upgradebare Pakete anzeigen"
+msgstr "Paket-Upgrades anzeigen"
 
 #: src/package-manager.py:136 src/HelpDialog.py:29
 msgid "Package Manager Help"
-msgstr "Paket-Manager Hilfe"
+msgstr "Paket-Manager-Hilfe"
 
 #: src/package-manager.py:149
 msgid "Package to install"
@@ -540,7 +540,7 @@ msgstr "Überprüfugsintervall:"
 
 #: src/PreferencesDialog.py:359
 msgid "Enable &periodic update check"
-msgstr "&Intervall-Upgradebare Paket-Überprüfung aktivieren"
+msgstr "&Intervall für die Überprüfung der Updated aktivieren"
 
 #: src/PreferencesDialog.py:360
 msgid "Alt+P"
