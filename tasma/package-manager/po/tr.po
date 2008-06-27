@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-25 16:06+0300\n"
+"POT-Creation-Date: 2008-06-27 14:17+0300\n"
 "PO-Revision-Date: 2008-06-25 16:08+0300\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -24,43 +24,43 @@ msgstr ""
 "Plural-Forms:  nplurals=1; plural=0;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/ProgressDialog.py:126
+#: src/ProgressDialog.py:127
 msgid "Progress"
 msgstr "İşlem"
 
-#: src/ProgressDialog.py:128
+#: src/ProgressDialog.py:129
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: src/ProgressDialog.py:129
+#: src/ProgressDialog.py:130
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 
-#: src/ProgressDialog.py:130
+#: src/ProgressDialog.py:131
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>PiSi hazırlanıyor...</h3>"
 
-#: src/ProgressDialog.py:132
+#: src/ProgressDialog.py:133
 msgid "amsn"
 msgstr "amsn"
 
-#: src/ProgressDialog.py:133
+#: src/ProgressDialog.py:134
 msgid "Time remaining:"
 msgstr "Kalan zaman:"
 
-#: src/ProgressDialog.py:134
+#: src/ProgressDialog.py:135
 msgid "2 / 20 packages installed."
 msgstr "2 / 20 paket kuruldu."
 
-#: src/ProgressDialog.py:135
+#: src/ProgressDialog.py:136
 msgid "01:29"
 msgstr "01:29"
 
-#: src/ProgressDialog.py:136
+#: src/ProgressDialog.py:137
 msgid "Operation:"
 msgstr "İşlem: "
 
-#: src/ProgressDialog.py:137
+#: src/ProgressDialog.py:138
 msgid "Status:"
 msgstr "Durum:"
 
@@ -100,11 +100,11 @@ msgstr "Comar Yetki Hatası"
 msgid "Network error. Please check your network connections and try again."
 msgstr "Ağ hatası. Lütfen ağ bağlantılarınızı kontrol edin ve tekrar deneyin."
 
-#: src/ComarIface.py:62 src/ComarIface.py:64
+#: src/ComarIface.py:62 src/ComarIface.py:67
 msgid "COMAR Error"
 msgstr "Comar Hatası"
 
-#: src/ComarIface.py:69
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
 
@@ -161,8 +161,10 @@ msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
 #: src/MainWidget.py:340 src/MainWidget.py:348
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Şu anda sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
 #: src/MainWidget.py:343
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
@@ -180,7 +182,8 @@ msgstr "ile toplam <b>%4</b> boyutunda <b>%3</b> ters bağımlılık "
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
-msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+msgstr ""
+"Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
 #: src/MainWidget.py:383 src/MainWidget.py:393
 msgid "Conflict Error"
@@ -607,7 +610,8 @@ msgid "C&ache"
 msgstr "&Önbellek"
 
 #: src/PreferencesDialog.py:380
-msgid "You can see current software repositories and corresponding addresses here"
+msgid ""
+"You can see current software repositories and corresponding addresses here"
 msgstr "Yazılım depolarını ve karşılık gelen adresleri burada görebilirsiniz"
 
 #: src/PreferencesDialog.py:381
@@ -766,4 +770,3 @@ msgstr "Güncellemeleri Göster"
 #: src/Notifier.py:45
 msgid "Ignore"
 msgstr "Yoksay"
-

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-25 16:06+0300\n"
+"POT-Creation-Date: 2008-06-27 14:17+0300\n"
 "PO-Revision-Date: 2008-01-16 22:08+0100\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
@@ -18,45 +18,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/ProgressDialog.py:126
+#: src/ProgressDialog.py:127
 msgid "Progress"
 msgstr "Progression"
 
-#: src/ProgressDialog.py:128
+#: src/ProgressDialog.py:129
 msgid "Alt+C"
 msgstr ""
 
-#: src/ProgressDialog.py:129
+#: src/ProgressDialog.py:130
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 msgstr ""
 
-#: src/ProgressDialog.py:130
+#: src/ProgressDialog.py:131
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Préparation de Pisi...</h3>"
 
-#: src/ProgressDialog.py:132
+#: src/ProgressDialog.py:133
 msgid "amsn"
 msgstr ""
 
-#: src/ProgressDialog.py:133
+#: src/ProgressDialog.py:134
 msgid "Time remaining:"
 msgstr ""
 
-#: src/ProgressDialog.py:134
+#: src/ProgressDialog.py:135
 #, fuzzy
 msgid "2 / 20 packages installed."
 msgstr "paquet PiSi à installer"
 
-#: src/ProgressDialog.py:135
+#: src/ProgressDialog.py:136
 msgid "01:29"
 msgstr ""
 
-#: src/ProgressDialog.py:136
+#: src/ProgressDialog.py:137
 #, fuzzy
 msgid "Operation:"
 msgstr "Version : "
 
-#: src/ProgressDialog.py:137
+#: src/ProgressDialog.py:138
 msgid "Status:"
 msgstr ""
 
@@ -98,11 +98,11 @@ msgstr ""
 msgid "Network error. Please check your network connections and try again."
 msgstr ""
 
-#: src/ComarIface.py:62 src/ComarIface.py:64
+#: src/ComarIface.py:62 src/ComarIface.py:67
 msgid "COMAR Error"
 msgstr ""
 
-#: src/ComarIface.py:69
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
 #, fuzzy
 msgid "You are not authorized for this operation."
 msgstr ""

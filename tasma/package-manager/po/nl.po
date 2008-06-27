@@ -12,53 +12,54 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-25 16:06+0300\n"
+"POT-Creation-Date: 2008-06-27 14:17+0300\n"
 "PO-Revision-Date: 2008-06-26 09:47+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
+">\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/ProgressDialog.py:126
+#: src/ProgressDialog.py:127
 msgid "Progress"
 msgstr "Voortgang"
 
-#: src/ProgressDialog.py:128
+#: src/ProgressDialog.py:129
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: src/ProgressDialog.py:129
+#: src/ProgressDialog.py:130
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 
-#: src/ProgressDialog.py:130
+#: src/ProgressDialog.py:131
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Voorbereiden PiSi...</h3>"
 
-#: src/ProgressDialog.py:132
+#: src/ProgressDialog.py:133
 msgid "amsn"
 msgstr "amsn"
 
-#: src/ProgressDialog.py:133
+#: src/ProgressDialog.py:134
 msgid "Time remaining:"
 msgstr "Nog te gaan:"
 
-#: src/ProgressDialog.py:134
+#: src/ProgressDialog.py:135
 msgid "2 / 20 packages installed."
 msgstr "2 /20 pakketten geïnstalleerd."
 
-#: src/ProgressDialog.py:135
+#: src/ProgressDialog.py:136
 msgid "01:29"
 msgstr "01:29"
 
-#: src/ProgressDialog.py:136
+#: src/ProgressDialog.py:137
 msgid "Operation:"
 msgstr "Handeling:"
 
-#: src/ProgressDialog.py:137
+#: src/ProgressDialog.py:138
 msgid "Status:"
 msgstr "Status:"
 
@@ -98,11 +99,11 @@ msgstr "COMAR identificatie fout"
 msgid "Network error. Please check your network connections and try again."
 msgstr "Netwerkfout. Controleer uw netwerkverbindingen en probeer opnieuw."
 
-#: src/ComarIface.py:62 src/ComarIface.py:64
+#: src/ComarIface.py:62 src/ComarIface.py:67
 msgid "COMAR Error"
 msgstr "COMAR fout"
 
-#: src/ComarIface.py:69
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
 msgid "You are not authorized for this operation."
 msgstr "U bent niet geautoriseerd voor deze handeling."
 
@@ -161,14 +162,16 @@ msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
 #: src/MainWidget.py:340 src/MainWidget.py:348
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
 
 #: src/MainWidget.py:343
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr "met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
+msgstr ""
+"met <b>%3</b> extra afhankelijkheden met een totale grootte van <b>%4</b>"
 
 # mand tonen
 #: src/MainWidget.py:345 src/MainWidget.py:353
@@ -215,7 +218,8 @@ msgstr "<b>Installeren pakket(ten)</b>"
 
 #: src/MainWidget.py:416
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>installed</b>."
-msgstr "<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
+msgstr ""
+"<qt>U heeft <b>%1</b> pakketten geselelecteerd om te <b>installeren</b>."
 
 #: src/MainWidget.py:419
 msgid ""
@@ -231,7 +235,8 @@ msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>geïnstalleerd</b>."
 
 #: src/MainWidget.py:423
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>upgraded</b>."
-msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
+msgstr ""
+"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om <b>op te waarderen</b>."
 
 #: src/MainWidget.py:426
 msgid ""
@@ -247,7 +252,8 @@ msgstr "<br><br>In totaal worden <b>%1</b> pakketten <b>opgewaardeerd</b>."
 
 #: src/MainWidget.py:430
 msgid "<qt>You have selected <b>%1</b> package(s) to be <b>removed</b>."
-msgstr "<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
+msgstr ""
+"<qt>U heeft <b>%1</b> pakket(ten) geselecteerd om te <b>verwijderen</b>."
 
 #: src/MainWidget.py:433
 msgid ""
@@ -465,7 +471,8 @@ msgstr "Pisi fout"
 
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr "Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
+msgstr ""
+"Alle pakketten in cachegeheugen zullen worden verwijderd. Bent u zeker?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -481,7 +488,8 @@ msgstr "Repository &adres"
 
 #: src/RepoDialog.py:76
 msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
-msgstr "Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
+msgstr ""
+"Adres van de repository, bijv. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
 msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
@@ -624,7 +632,8 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:380
-msgid "You can see current software repositories and corresponding addresses here"
+msgid ""
+"You can see current software repositories and corresponding addresses here"
 msgstr ""
 "U kunt hier de huidige software repositories en corresponderende adressen "
 "zien"
@@ -785,4 +794,3 @@ msgstr "Toon updates"
 #: src/Notifier.py:45
 msgid "Ignore"
 msgstr "Negeer"
-
