@@ -1,7 +1,7 @@
 <PardusmanProject type="install" media="cd">
     <Title>Pardus 2008 RC3-r6</Title>
     <WorkDir>/home/ekin/cdtemp/</WorkDir>
-    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
+    <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
@@ -22,7 +22,6 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
-        <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
@@ -59,7 +58,6 @@
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>freealut</SelectedPackage>
-        <SelectedPackage>gcc</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
@@ -92,6 +90,10 @@
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
+        <SelectedPackage>k3b-i18n-de</SelectedPackage>
+        <SelectedPackage>k3b-i18n-es</SelectedPackage>
+        <SelectedPackage>k3b-i18n-nl</SelectedPackage>
+        <SelectedPackage>k3b-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
@@ -110,6 +112,7 @@
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
         <SelectedPackage>kdebluetooth</SelectedPackage>
+        <SelectedPackage>kdegames</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdepim</SelectedPackage>
@@ -118,6 +121,7 @@
         <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmplayer</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
+        <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lame</SelectedPackage>
@@ -140,6 +144,7 @@
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>mdadm</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
+        <SelectedPackage>microdia</SelectedPackage>
         <SelectedPackage>migration</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
@@ -245,8 +250,6 @@
         <Package>attr</Package>
         <Package>audiofile</Package>
         <Package>audit</Package>
-        <Package>autoconf</Package>
-        <Package>automake</Package>
         <Package>avahi</Package>
         <Package>avahi-glib</Package>
         <Package>avahi-qt</Package>
@@ -255,8 +258,6 @@
         <Package>bash</Package>
         <Package>bc</Package>
         <Package>bind-tools</Package>
-        <Package>binutils</Package>
-        <Package>bison</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
@@ -270,14 +271,10 @@
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
-        <Package>catbox</Package>
-        <Package>ccache</Package>
         <Package>cdparanoia</Package>
         <Package>cdrdao</Package>
         <Package>cdrtools</Package>
         <Package>chmlib</Package>
-        <Package>chrpath</Package>
-        <Package>cmake</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
         <Package>command-not-found</Package>
@@ -350,7 +347,6 @@
         <Package>fuse</Package>
         <Package>fxload</Package>
         <Package>gawk</Package>
-        <Package>gcc</Package>
         <Package>gconf</Package>
         <Package>gconfmm</Package>
         <Package>gd</Package>
@@ -380,7 +376,6 @@
         <Package>gnokii</Package>
         <Package>gnome-mplayer</Package>
         <Package>gnu-gs-fonts-std</Package>
-        <Package>gnuconfig</Package>
         <Package>gnupg</Package>
         <Package>gnutls</Package>
         <Package>gocr</Package>
@@ -417,15 +412,12 @@
         <Package>history-manager</Package>
         <Package>hplip</Package>
         <Package>hsqldb-lib</Package>
-        <Package>icecream</Package>
-        <Package>icecream-scheduler</Package>
         <Package>icu4c</Package>
         <Package>iksemel</Package>
         <Package>ilmbase</Package>
         <Package>imagemagick</Package>
         <Package>imlib2</Package>
         <Package>imposter</Package>
-        <Package>intltool</Package>
         <Package>iptables</Package>
         <Package>iputils</Package>
         <Package>ipw2100-firmware</Package>
@@ -477,6 +469,7 @@
         <Package>klibc</Package>
         <Package>kmplayer</Package>
         <Package>knazar</Package>
+        <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
@@ -552,6 +545,7 @@
         <Package>libgcrypt</Package>
         <Package>libglade2</Package>
         <Package>libglademm</Package>
+        <Package>libgomp</Package>
         <Package>libgpg-error</Package>
         <Package>libgphoto2</Package>
         <Package>libgpod</Package>
@@ -590,7 +584,6 @@
         <Package>libpcap</Package>
         <Package>libpcre</Package>
         <Package>libpng</Package>
-        <Package>libpthread-stubs</Package>
         <Package>libquicktime</Package>
         <Package>libraw1394</Package>
         <Package>librsvg</Package>
@@ -633,10 +626,8 @@
         <Package>ltrace</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
-        <Package>m4</Package>
         <Package>madplay</Package>
         <Package>madwifi-ng</Package>
-        <Package>make</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
         <Package>mc</Package>
@@ -651,7 +642,6 @@
         <Package>mkinitramfs</Package>
         <Package>module-init-tools</Package>
         <Package>mpeg2vidcodec</Package>
-        <Package>mpfr</Package>
         <Package>mpg123</Package>
         <Package>mplayer</Package>
         <Package>mtools</Package>
@@ -659,7 +649,6 @@
         <Package>musicbrainz</Package>
         <Package>mysql-lib</Package>
         <Package>nano</Package>
-        <Package>nasm</Package>
         <Package>ncftp</Package>
         <Package>ncompress</Package>
         <Package>ncurses</Package>
@@ -699,7 +688,6 @@
         <Package>pardus-python</Package>
         <Package>pardus-support</Package>
         <Package>parted</Package>
-        <Package>patch</Package>
         <Package>pavucontrol</Package>
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
@@ -712,7 +700,6 @@
         <Package>pinentry</Package>
         <Package>pisi</Package>
         <Package>pixman</Package>
-        <Package>pkgconfig</Package>
         <Package>pm-utils</Package>
         <Package>pnm2ppa</Package>
         <Package>poppler</Package>
@@ -746,7 +733,6 @@
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
-        <Package>quilt</Package>
         <Package>ralink-firmware</Package>
         <Package>rdate</Package>
         <Package>rdesktop</Package>
@@ -757,7 +743,6 @@
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schedtool</Package>
-        <Package>scons</Package>
         <Package>sdl-gfx</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
@@ -813,7 +798,6 @@
         <Package>ufraw</Package>
         <Package>unarj</Package>
         <Package>ungrab-winmodem</Package>
-        <Package>unifdef</Package>
         <Package>unionfs</Package>
         <Package>unixODBC</Package>
         <Package>unrar</Package>
@@ -824,7 +808,6 @@
         <Package>user-manager</Package>
         <Package>utempter</Package>
         <Package>util-linux</Package>
-        <Package>util-macros</Package>
         <Package>vbetool</Package>
         <Package>vcdimager</Package>
         <Package>vim</Package>
@@ -849,13 +832,10 @@
         <Package>xorg-app</Package>
         <Package>xorg-font</Package>
         <Package>xorg-input</Package>
-        <Package>xorg-proto</Package>
         <Package>xorg-server</Package>
         <Package>xorg-video</Package>
         <Package>xscreensaver</Package>
-        <Package>xtrans</Package>
         <Package>xvid</Package>
-        <Package>yacc</Package>
         <Package>yakuake</Package>
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
