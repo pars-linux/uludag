@@ -186,7 +186,7 @@ class DBusInterface(Hook):
             return func(*args)
         except dbus.DBusException, exception:
             self.error(exception)
-    
+
     def callSys(self, method, *args):
         try:
             obj = self.busSys.get_object("tr.org.pardus.comar", "/")
@@ -199,11 +199,16 @@ class DBusInterface(Hook):
             return func(*args)
         except dbus.DBusException, exception:
             self.error(exception)
-    
+
     def error(self, exception):
-        msg = QMessageBox(i18n("Network Manager"), str(exception), QMessageBox.Warning, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton, self.window, "err", True)
+        if "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+        else:
+            message = str(exception)
+
+        msg = QMessageBox(i18n("Network Manager"), message, QMessageBox.Warning, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton, self.window, "err", True)
         msg.show()
-    
+
     def errorDBus(self, exception):
         if self.dia:
             return
