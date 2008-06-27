@@ -2,8 +2,7 @@
 # translation of de.po to
 # This file is put in the public domain.
 #
-# Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
-# Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
+# Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
 msgid ""
@@ -11,7 +10,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 16:45+0200\n"
-"PO-Revision-Date: 2008-06-27 04:40+0200\n"
+"PO-Revision-Date: 2008-06-27 14:05+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -107,7 +106,7 @@ msgstr ""
 
 #: src/main.cpp:68
 msgid "KDE Developers"
-msgstr "Die KDE-Entwickler"
+msgstr "KDE-Entwickler"
 
 #: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:145
 #: rc.cpp:12 rc.cpp:27
@@ -123,7 +122,7 @@ msgstr "Model"
 
 #: src/main.cpp:68
 msgid "Module Developers"
-msgstr "Die Modul-Entwickler"
+msgstr "Modul-Entwickler"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:42
 msgid "Name"
