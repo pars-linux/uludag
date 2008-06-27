@@ -27,10 +27,15 @@ class Commander(QObject):
             self.parent.finished("System.Manager.cancelled")
 
     def handler(self, signal=None, data=None):
-        if len(data) > 1:
-            args = data[1:]
-        else:
-            args = None
+        print "signal : ", signal
+        print "data : ", data
+        try:
+            if len(data) > 1:
+                args = data[1:]
+            else:
+                args = None
+        except TypeError:
+            pass
 
         if signal == "finished":
             self.comar.com_lock.unlock()

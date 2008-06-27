@@ -403,6 +403,7 @@ class widgetProgress(progressForm):
     def reset(self):
         self.setCurrentOperation(i18n("<b>Preparing PiSi...</b>"))
         self.progressBar.setProgress(0)
+        self.progressBar.setTotalSteps(100)
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
