@@ -106,9 +106,9 @@ class widgetMain(formMain):
 
     # re-initialize history database for up to date entries
     def initDb(self):
-        # self.self.historydb.init()
-        PisiIface.reloadPisi()
-        self.historydb = pisi.db.historydb.HistoryDB()
+        self.historydb.init()
+        # PisiIface.reloadPisi()
+        # self.historydb = pisi.db.historydb.HistoryDB()
 
     def keyPressEvent(self, event):
         # F5 Key may refresh list

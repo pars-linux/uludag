@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-26 16:32+0300\n"
+"POT-Creation-Date: 2008-06-27 12:27+0300\n"
 "PO-Revision-Date: 2008-06-26 20:22-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/Progress.py:68 src/history_gui.py:375
+#: src/Progress.py:68 src/history_gui.py:376
 msgid "Progress"
 msgstr "Progreso"
 
@@ -51,7 +51,7 @@ msgstr "No posible conectar con el servicio Comar"
 msgid "History Manager Interface"
 msgstr "Interfaz de Administrador de Historicos"
 
-#: src/historygui.py:124
+#: src/historygui.py:121
 msgid "formMain"
 msgstr "formMain"
 
@@ -199,62 +199,62 @@ msgstr "Realizando una instantánea del sistema"
 msgid "Taking System Back to %1 %2 <br>"
 msgstr "Restaurando sistema a %1 %2 <br>"
 
-#: src/history_gui.py:291 src/history_gui.py:292
+#: src/history_gui.py:292 src/history_gui.py:293
 msgid "Select an entry to view details"
 msgstr "Seleccione una entrada para ver detalles"
 
 # does this refer to a number ?
-#: src/history_gui.py:295
+#: src/history_gui.py:296
 msgid "No: <b>%1</b>"
 msgstr "No: <b>%1</b>"
 
-#: src/history_gui.py:296
+#: src/history_gui.py:297
 msgid "Type: <b>%1</b>"
 msgstr "Tipo: <b>%1</b>"
 
-#: src/history_gui.py:307
-msgid "There are <b>%1</b> packages in this snapshot"
-msgstr "Hay <b>%1</b> paquetes en esta instantánea"
+#: src/history_gui.py:309
+msgid "There are %1 packages in this snapshot"
+msgstr "Hay %1 paquetes en esta instantánea"
 
-#: src/history_gui.py:323
+#: src/history_gui.py:324
 msgid "Configuration files in snapshot:"
 msgstr "Archivos de configuración en la instantánea:"
 
 # favor verificar contexto, check grammer according to context
-#: src/history_gui.py:330
+#: src/history_gui.py:331
 msgid "Take Back Plan for %1 operation on %2"
 msgstr "Plan de restauración para %1 operaciones en %2"
 
-#: src/history_gui.py:333
+#: src/history_gui.py:334
 msgid "These package(s) will be <b>installed</b> :"
 msgstr "Se <b>instalarán</b> los siguientes paquetes :"
 
-#: src/history_gui.py:338
+#: src/history_gui.py:339
 msgid "These package(s) will be <b>removed</b> :"
 msgstr "Se <b>eliminarán</b> los siguientes paquetes :"
 
-#: src/history_gui.py:403
+#: src/history_gui.py:404
 msgid "<b>Preparing PiSi...</b>"
 msgstr "<b>Preparando PiSi...</b>"
 
-#: src/history_gui.py:441
+#: src/history_gui.py:442
 msgid "snapshot"
 msgstr "Instantánea"
 
-#: src/history_gui.py:445
+#: src/history_gui.py:446
 msgid "upgrade"
 msgstr "actualizar"
 
-#: src/history_gui.py:449
+#: src/history_gui.py:450
 msgid "remove"
 msgstr "eliminar"
 
-#: src/history_gui.py:453
+#: src/history_gui.py:454
 msgid "install"
 msgstr "instalar"
 
 # favor verificar, tambien depende del contexto, podria ser reestablecer, degradar
-#: src/history_gui.py:457
+#: src/history_gui.py:458
 msgid "takeback"
 msgstr "restaurar"
 
@@ -277,4 +277,3 @@ msgstr "Error COMAR"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "No tiene autorización para esta operación."
-
