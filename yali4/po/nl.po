@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 00:44+0300\n"
-"PO-Revision-Date: 2008-06-27 07:40+0200\n"
+"PO-Revision-Date: 2008-06-27 23:40+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
 "MIME-Version: 1.0\n"
@@ -36,11 +36,11 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartquestion.py:66
 msgid "Choose the best target for resizing (recommended)"
-msgstr "Kies het beste doel om in grootte aan te passen (aangeraden)"
+msgstr "Kies de beste om in grootte aan te passen (aangeraden)"
 
 #: yali4/gui/Ui/autopartquestion.py:67
 msgid "I will choose the target"
-msgstr "Ik kies het doel zelf"
+msgstr "Ik kies zelf"
 
 #: yali4/gui/Ui/autopartquestion.py:68
 msgid "Use Selected"
@@ -72,7 +72,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">1. Kies partitie methode:</span></p></body></"
+"size:12pt; font-weight:600;\">1. Kies partitioneringsmethode:</span></p></body></"
 "html>"
 
 #: yali4/gui/Ui/autopartwidget.py:131
@@ -81,9 +81,9 @@ msgid ""
 "a device to proceed your choice. <br>Device list will be updated for "
 "selected method."
 msgstr ""
-"U kunt hier uw partitiemethode selecteren, en u dient een station te "
+"Hier kunt u uw partitioneringsmethode selecteren, waarna u een station  doent te "
 "selecteren om door te gaan met uw keuze. <br>Stationslijst zal aangepast "
-"worden naar gelang de keuzen."
+"worden naar gelang de keuze."
 
 #: yali4/gui/Ui/autopartwidget.py:132
 msgid "Automatically partition try to use free space or resize current partitions"
@@ -111,13 +111,13 @@ msgstr "U kunt met deze optie handmatig partitioneren"
 
 #: yali4/gui/Ui/autopartwidget.py:137
 msgid "If there is no suitable partition this option will be disabled"
-msgstr "Indien er geen geschikte partitie is, zal deze optie niet gebruikt worden"
+msgstr "Indien er geen geschikte partitie is, zal deze optie uitgeschakeld worden"
 
 #: yali4/gui/Ui/autopartwidget.py:138
 msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
-"Deze optie zal proberen om voldoende vrije ruimte te vinden of in grootte "
-"aan te passen partities"
+"Deze optie zal proberen om voldoende vrije ruimte of in grootte "
+"aan te passen partities te vinden"
 
 #: yali4/gui/Ui/autopartwidget.py:139
 msgid ""
