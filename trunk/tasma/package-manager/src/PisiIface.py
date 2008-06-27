@@ -100,11 +100,8 @@ def get_package(package, installed=False):
         pkg = get_installed_package(package)
         pkg.size = pkg.installedSize
     else:
-        try:
-            pkg = get_repo_package(package)
-            pkg.size = pkg.packageSize
-        except Exception, e: #FIXME: this catch added if obsolete package is installed currently
-            pass
+        pkg = get_repo_package(package)
+        pkg.size = pkg.packageSize
 
     try:
         pkg.repo = get_package_repository(package)
