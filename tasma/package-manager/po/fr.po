@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 14:17+0300\n"
-"PO-Revision-Date: 2008-01-16 22:08+0100\n"
+"PO-Revision-Date: 2008-06-27 20:54+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,11 @@ msgstr "Progression"
 
 #: src/ProgressDialog.py:129
 msgid "Alt+C"
-msgstr ""
+msgstr "Alt + C"
 
 #: src/ProgressDialog.py:130
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
-msgstr ""
+msgstr "<p align=\"center\"><b>490.35 Ko / 12.83 Mo, 38.2 Ko/s</b></p>"
 
 #: src/ProgressDialog.py:131
 msgid "<h3>Preparing PiSi...</h3>"
@@ -36,29 +36,27 @@ msgstr "<h3>Préparation de Pisi...</h3>"
 
 #: src/ProgressDialog.py:133
 msgid "amsn"
-msgstr ""
+msgstr "amsn"
 
 #: src/ProgressDialog.py:134
 msgid "Time remaining:"
-msgstr ""
+msgstr "Temps restant :"
 
 #: src/ProgressDialog.py:135
-#, fuzzy
 msgid "2 / 20 packages installed."
-msgstr "paquet PiSi à installer"
+msgstr "2 paquets sur 20 installés."
 
 #: src/ProgressDialog.py:136
 msgid "01:29"
-msgstr ""
+msgstr "01:29"
 
 #: src/ProgressDialog.py:137
-#, fuzzy
 msgid "Operation:"
-msgstr "Version : "
+msgstr "Opération:"
 
 #: src/ProgressDialog.py:138
 msgid "Status:"
-msgstr ""
+msgstr "Statut :"
 
 #: src/Tray.py:38
 msgid "Update"
@@ -74,39 +72,35 @@ msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 
 #: src/Tray.py:67
 msgid "Updates Available!"
-msgstr ""
+msgstr "Mises à jour disponibles !"
 
 #: src/ComarIface.py:38
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Impossible de se connecter à DBus."
 
 #: src/ComarIface.py:38
-#, fuzzy
 msgid "DBus Error"
-msgstr "Erreur de Pisi"
+msgstr "Erreur DBus"
 
 #: src/ComarIface.py:52
-#, fuzzy
 msgid "D-Bus Error"
-msgstr "Erreur de Pisi"
+msgstr "Erreur D-Bus"
 
 #: src/ComarIface.py:57
 msgid "COMAR Auth Error"
-msgstr ""
+msgstr "Erreur d'authentification COMAR"
 
 #: src/ComarIface.py:62
 msgid "Network error. Please check your network connections and try again."
-msgstr ""
+msgstr "Erreur réseau. Veuillez vérifier votre connexion réseau et essayer de nouveau."
 
 #: src/ComarIface.py:62 src/ComarIface.py:67
 msgid "COMAR Error"
-msgstr ""
+msgstr "Erreur COMAR"
 
 #: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
-#, fuzzy
 msgid "You are not authorized for this operation."
-msgstr ""
-"Vous n'avez pas les droits suffisants permettant de réaliser cette opération."
+msgstr "Vous n'avez pas de droits suffisants pour réaliser cette opération."
 
 #: src/MainWidget.py:75
 msgid "Loading Package List..."
@@ -134,7 +128,7 @@ msgid ""
 "connection to update."
 msgstr ""
 "Le gestionnaire de paquet a besoin d'effectuer une mise à jour de sa base de "
-"données des paquets. Une connection au réseau est nécessaire pour faire la "
+"données des paquets. Une connexion au réseau est nécessaire pour faire la "
 "mise à jour."
 
 #: src/MainWidget.py:174
@@ -162,16 +156,14 @@ msgid "Currently your basket is empty."
 msgstr "Votre panier est actuellement vide."
 
 #: src/MainWidget.py:340 src/MainWidget.py:348
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille "
 "cumulée de <b>%2</b>"
 
 #: src/MainWidget.py:343
 msgid "with <b>%3</b> extra dependencies of total <b>%4</b> of size "
-msgstr ""
-"avec <b>%3</b> dépendances supplémentaires de taille cumulée de <b>%4</b>"
+msgstr "avec <b>%3</b> dépendances supplémentaires de taille cumulée de <b>%4</b>"
 
 #: src/MainWidget.py:345 src/MainWidget.py:353
 msgid "in your basket."
@@ -202,13 +194,12 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 est en conflit avec [%2]\n"
 
 #: src/MainWidget.py:392
-#, fuzzy
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 "\n"
-"Supprimer les paquets en conflit suivants ?"
+"Supprimer les paquets en conflit du système ?"
 
 #: src/MainWidget.py:407 src/MainWidget.py:466 src/MainWidget.py:608
 msgid "<b>Installing Package(s)</b>"
@@ -364,7 +355,7 @@ msgstr "Afficher la fenêtre principale au démarrage"
 
 #: src/package-manager.py:151
 msgid "Show debug output"
-msgstr ""
+msgstr "Montrer les messages de debug"
 
 #: src/package-manager.py:154
 msgid "Package Manager is already running!"
@@ -464,8 +455,7 @@ msgstr "Erreur de Pisi"
 
 #: src/Preferences.py:382
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-"Tous les paquets situés dans le cache vont être supprimés. En êtes vous sûr ?"
+msgstr "Tous les paquets situés dans le cache vont être supprimés. En êtes vous sûr ?"
 
 #: src/RepoDialog.py:72
 msgid "Repository Dialog"
@@ -484,14 +474,12 @@ msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr "Adresse du dépôt, e.g. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
-#, fuzzy
 msgid "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/pardus-2008/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:80
-#, fuzzy
 msgid "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2007/pisi-index.xml.bz2"
+msgstr "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:81
 msgid "Repository &Name"
@@ -532,7 +520,7 @@ msgstr "&Montrer seulement les applications de bureautique"
 
 #: src/PreferencesDialog.py:354
 msgid "Alt+S"
-msgstr ""
+msgstr "Alt+S"
 
 #: src/PreferencesDialog.py:355
 msgid "If checked, then pisi will only show desktop applications"
@@ -545,9 +533,8 @@ msgid "&Enable system tray icon"
 msgstr "Activ&er l'affichage de la miniature."
 
 #: src/PreferencesDialog.py:357
-#, fuzzy
 msgid "Update check"
-msgstr "Mise à jour"
+msgstr "Vérification de mise à jour"
 
 #: src/PreferencesDialog.py:358
 msgid "Check interval:"
@@ -559,7 +546,7 @@ msgstr "Activer la vérification de présence de mises à jour périodique"
 
 #: src/PreferencesDialog.py:360
 msgid "Alt+P"
-msgstr ""
+msgstr "Alt+P"
 
 #: src/PreferencesDialog.py:361
 msgid " min"
@@ -567,19 +554,19 @@ msgstr "min"
 
 #: src/PreferencesDialog.py:362
 msgid "Bandwidth limit"
-msgstr ""
+msgstr "Limite de bande passante"
 
 #: src/PreferencesDialog.py:363
 msgid "Use bandwidth limit"
-msgstr ""
+msgstr "Limiter la bande passante"
 
 #: src/PreferencesDialog.py:365
 msgid "Bandwidth limit:"
-msgstr ""
+msgstr "Limite de la bande passante"
 
 #: src/PreferencesDialog.py:366
 msgid " kb/s"
-msgstr ""
+msgstr " kb/s"
 
 #: src/PreferencesDialog.py:367
 msgid "&General Settings"
@@ -616,8 +603,7 @@ msgstr "&Utiliser un cache disque dur pour les logiciels téléchargés"
 
 #: src/PreferencesDialog.py:375
 msgid "If checked, downloaded packages will be hold at the hard disk cache"
-msgstr ""
-"si cochée, les paquets téléchargé seront conservé dans le cache disque dur"
+msgstr "si cochée, les paquets téléchargé seront conservé dans le cache disque dur"
 
 #: src/PreferencesDialog.py:376
 msgid "Mb <i>(use 0 for no limit)</i>"
@@ -628,8 +614,7 @@ msgid "C&ache"
 msgstr "C&ache"
 
 #: src/PreferencesDialog.py:380
-msgid ""
-"You can see current software repositories and corresponding addresses here"
+msgid "You can see current software repositories and corresponding addresses here"
 msgstr ""
 "Vous pouvez accéder aux dépôts courants et à l'adresse qui leur correspond "
 "ici"
@@ -681,35 +666,35 @@ msgstr "&Dépôts"
 #: src/PreferencesDialog.py:392 src/PreferencesDialog.py:395
 #: src/PreferencesDialog.py:396
 msgid "Port:"
-msgstr ""
+msgstr "Port :"
 
 #: src/PreferencesDialog.py:393
 msgid "Use this proxy server for all protocols"
-msgstr ""
+msgstr "Utiliser ce serveur proxy pour tous les protocoles"
 
 #: src/PreferencesDialog.py:394
 msgid "FTP proxy server:"
-msgstr ""
+msgstr "Serveur proxy FTP : "
 
 #: src/PreferencesDialog.py:397
 msgid "HTTPS proxy server:"
-msgstr ""
+msgstr "Serveur proxy HTTPS : "
 
 #: src/PreferencesDialog.py:398
 msgid "HTTP proxy server:"
-msgstr ""
+msgstr "Serveur proxy HTTP : "
 
 #: src/PreferencesDialog.py:400
 msgid "No proxy server"
-msgstr ""
+msgstr "Aucun serveur proxy"
 
 #: src/PreferencesDialog.py:401
 msgid "Use proxy server"
-msgstr ""
+msgstr "Utiliser un serveur proxy"
 
 #: src/PreferencesDialog.py:402
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: src/pm-install.py:33
 msgid "PiSi package to install"
@@ -745,7 +730,7 @@ msgstr "Site web : "
 
 #: src/Progress.py:64
 msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr ""
+msgstr "<p align='center'>%1 / %2, %3</p>"
 
 #: src/Progress.py:97
 msgid "<b>Preparing PiSi...</b>"
@@ -753,12 +738,11 @@ msgstr "<b>Préparation de PiSi...</b>"
 
 #: src/Progress.py:99
 msgid "<p align='center'>-- / --, -- KB/s</p>"
-msgstr ""
+msgstr "<p align='center'>-- / --, -- Ko/s</p>"
 
 #: src/Progress.py:100
-#, fuzzy
 msgid "-- / --"
-msgstr "-- / --  paquet"
+msgstr "-- / --"
 
 #: src/Progress.py:119
 msgid "<b>Cancelling operation...</b>"
@@ -766,7 +750,7 @@ msgstr "<b>Annulation de l'opération...</b>"
 
 #: src/Progress.py:146 src/Progress.py:150
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: src/Progress.py:160
 msgid "installed"
@@ -781,7 +765,6 @@ msgid "upgraded"
 msgstr "mis à jour"
 
 #: src/Progress.py:166
-#, fuzzy
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paquet %3"
 
@@ -793,23 +776,3 @@ msgstr "Montrer les mises à jour"
 msgid "Ignore"
 msgstr "Ignorer"
 
-#~ msgid "downloaded (total: -- )"
-#~ msgstr "téléchargé (total: -- )"
-
-#~ msgid "--"
-#~ msgstr "--"
-
-#~ msgid "Now installing <b>amsn</b> package"
-#~ msgstr "Installation du paquet <b>amsn</b>"
-
-#~ msgid "downloaded ( total: %1 )"
-#~ msgstr "téléchargé ( total : %1 )"
-
-#~ msgid "Now %1 <b>%2</b> package"
-#~ msgstr "Maintenant %1 <b>%2</b> paquet"
-
-#~ msgid "N\\A"
-#~ msgstr "N\\D"
-
-#~ msgid "Can't connect to Comar daemon"
-#~ msgstr "Impossible de se connecter au démon Comar"
