@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-25 16:06+0300\n"
+"POT-Creation-Date: 2008-06-27 14:17+0300\n"
 "PO-Revision-Date: 2007-07-26 03:30+0200\n"
 "Last-Translator: Jakub Basciuk <jakubbasciuk@wp.pl>\n"
 "Language-Team: polski <pl@li.org>\n"
@@ -16,43 +16,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/ProgressDialog.py:126
+#: src/ProgressDialog.py:127
 msgid "Progress"
 msgstr "Postęp"
 
-#: src/ProgressDialog.py:128
+#: src/ProgressDialog.py:129
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: src/ProgressDialog.py:129
+#: src/ProgressDialog.py:130
 msgid "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 msgstr "<p align=\"center\"><b>490.35 KB / 12.83 MB, 38.2 KB/s</b></p>"
 
-#: src/ProgressDialog.py:130
+#: src/ProgressDialog.py:131
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Przygotowywanie PiSi...</h3>"
 
-#: src/ProgressDialog.py:132
+#: src/ProgressDialog.py:133
 msgid "amsn"
 msgstr "amsn"
 
-#: src/ProgressDialog.py:133
+#: src/ProgressDialog.py:134
 msgid "Time remaining:"
 msgstr "Pozostały czas:"
 
-#: src/ProgressDialog.py:134
+#: src/ProgressDialog.py:135
 msgid "2 / 20 packages installed."
 msgstr "2 / 20 zainstalowanych pakietów."
 
-#: src/ProgressDialog.py:135
+#: src/ProgressDialog.py:136
 msgid "01:29"
 msgstr "01:29"
 
-#: src/ProgressDialog.py:136
+#: src/ProgressDialog.py:137
 msgid "Operation:"
 msgstr "Operacja:"
 
-#: src/ProgressDialog.py:137
+#: src/ProgressDialog.py:138
 msgid "Status:"
 msgstr "Stan:"
 
@@ -92,11 +92,11 @@ msgstr "Bład autoryzacji COMAR"
 msgid "Network error. Please check your network connections and try again."
 msgstr "Błąd połączenia sieciowego. Sprawdź połączenie i spróbuj ponownie."
 
-#: src/ComarIface.py:62 src/ComarIface.py:64
+#: src/ComarIface.py:62 src/ComarIface.py:67
 msgid "COMAR Error"
 msgstr "Błąd COMAR"
 
-#: src/ComarIface.py:69
+#: src/ComarIface.py:64 src/ComarIface.py:72 src/Commander.py:64
 msgid "You are not authorized for this operation."
 msgstr "Nie masz uprawnień do wykonania tej operacji."
 
