@@ -258,6 +258,10 @@ img.menu_img {
     color: white;
 }
 
+li.secili {
+    font-weight: bold;
+}
+
 #sidebar_bottom {
     float: right;
     width: 190px;
