@@ -256,11 +256,15 @@ class MainApplication(programbase):
         KMessageBox.sorry(None, message, i18n("Error"))
 
     def busError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
+        KMessageBox.error(None, str(exception), i18n("D-Bus Error"))
         self.setupBusses()
 
     def comarError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+        if "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.error(None, message, i18n("Error"))
+        else:
+            KMessageBox.error(None, str(exception), i18n("COMAR Error"))
 
     def slotChanged(self):
         if not standalone:
