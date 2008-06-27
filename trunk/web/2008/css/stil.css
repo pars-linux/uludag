@@ -262,11 +262,12 @@ img.menu_img {
 }
 .sidebar_opened a {
     text-decoration: none;
-    color: white;
+    color: #FFFCCC;
 }
 
-li.secili {
+li.secili a {
     font-weight: bold;
+    color: white;
 }
 
 #sidebar_bottom {
