@@ -169,6 +169,7 @@ class widgetMain(formMain):
     def finished(self, data, err=None):
         # this is called after an operation finishes
         # err is error if operation cancelled, a message otherwise
+        message = ""
         if data == "System.Manager.takeBack":
             message = i18n("Take Back operation completed")
         elif data == "System.Manager.takeSnapshot":

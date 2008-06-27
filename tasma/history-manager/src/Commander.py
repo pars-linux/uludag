@@ -27,14 +27,12 @@ class Commander(QObject):
             self.parent.finished("System.Manager.cancelled")
 
     def handler(self, signal=None, data=None):
-        print "signal : ", signal
-        print "data : ", data
         try:
             if len(data) > 1:
                 args = data[1:]
             else:
                 args = None
-        except TypeError:
+        except:
             pass
 
         if signal == "finished":
