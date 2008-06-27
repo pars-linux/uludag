@@ -169,7 +169,11 @@ class widgetMain(formMain):
         self.setupBusses()
 
     def comarError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+        if "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(self, message, i18n("Error"))
+        else:
+            KMessageBox.error(self, str(exception), i18n("COMAR Error"))
 
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.System.Service", member_keyword="signal", path_keyword="path")
