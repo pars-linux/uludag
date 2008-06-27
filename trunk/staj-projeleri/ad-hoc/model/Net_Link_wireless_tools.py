@@ -203,21 +203,27 @@ class Wireless:
 
         # Disable all auth. mechanisms before try to authenticate another methods
         os.system("/usr/sbin/iwconfig %s enc off" % (ifc.name))
+        if have_supplicant and wpa_supplicant.isWpaServiceUsable():
+            #stop WPA authentication
+            wpa_supplicant.disableAuthentication(ifc.name)
 
         if mode == "wep":
             os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
         elif mode == "wepascii":
-            #os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (ifc.name, password))
-            os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
+            os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (ifc.name, password))
         elif mode == "wpa-psk":
             if not have_supplicant:
                 return _(no_supplicant_msg)
+            if not wpa_supplicant.startWpaService():
+                fail("Unable to start WPA service")
             ret = wpa_supplicant.setWpaAuthentication(ifc.name, ssid, password)
             if not ret:
                 return _(wpa_fail_msg)
         elif mode == "peap-mschapv2":
             if not have_supplicant:
                 return _(no_supplicant_msg)
+            if not wpa_supplicant.startWpaService():
+                fail("Unable to start WPA service")
             peap = wpa_supplicant.Wpa_EAP(ifc.name)
             peap.ssid = ssid
             peap.phase2 = "MSCHAPV2"
