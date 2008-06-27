@@ -22,26 +22,54 @@ Hata bildirim sistemi yanında, Pardus menüsünden ulaşılabilen "Geribildirim
 
 <h2>2. Temel özellikler</h2>
 
-<h3>2.1 Kolay kullanılır Ağ Yöneticisi</h3>
+<h3>2.1 Kullanıcı yetki yönetimi</h3>
 
-Ağ yöneticisi (network manager) uygulaması, oluşturduğunuz ağ profillerinizi otomatik olarak algılayabilir ve otomatik olarak o profile geçiş yapabilir. Bağlantı bilgilerini sistem çekmecesinden izleyebilir ve sürekli güncel bilgi alabilirsiniz. Kablo (ethernet), kablosuz (wireless) ve modem bağlantılarınızı değişik mekanlara göre profil olarak saklayabilir ve özel ayar isteyen ağlara kolaylıkla bağlanabilirsiniz.
+Pardus 2008 ile birlikte gelen gelişmiş yetki denetim sistemi ile tüm kullanıcıların yetkilerini detaylı bir şekilde düzenlenlenebiliyor, Pardus'un parola sorma ve yetkilendirme davranışını kolayca özelleştirilebiliyor. Yenilenen Kullanıcı Yöneticisi tüm kullanıcılar için yetki yönetimini son derece kolay ve güvenli hale getiriyor.
 
-<h3>2.2 Gelişmiş paket yönetim sistemi</h3>
+Pardus geliştiricileri tarafından geliştirilen yetkilendirme sistemi ve yetki yönetimi arayüzleri PolicyKit - Dbus altyapısını kullanıyor ve COMAR ile birlikte çalışarak tüm sistemde sorunsuz bir yetki denetimi altyapısı sunuyor.
 
-İnternetten bir kaç tıklama ile kolayca yeni uygulamalar indirmeyi ve kurmayı sağlayan paket yöneticisi (PİSİ), Pardus 2008 ile birlikte daha da gelişti. Kullandığınız uygulamaların en güncel hallerini, yalnızca yapılan değişiklikeri içeren küçük paketler indirerek güncelleyebilir, böylece bağlantı kotalarını doldurmadan sisteminizi en güncel ve performanslı şekilde kullanabilirsiniz.
+<h3>2.2 Kolay kullanılır Ağ Yöneticisi</h3>
 
-<h3>2.3 YALI </h3>
+Ağ yöneticisi (network manager) uygulaması, oluşturulan ağ profillerini otomatik olarak algılayabilir ve otomatik olarak o profile geçiş yapabilir. Bağlantı bilgilerini sistem çekmecesinden izlenebiliyor, sürekli güncel bilgi alınabiliyor. Kablo (ethernet), kablosuz (wireless) ve modem bağlantıları değişik mekanlara göre profil olarak saklayanabiliyor, özel ayar isteyen ağlara kolaylıkla bağlananılabiliyor.
 
-Pardus'u sabit diske kurmak için kullanılan YALI (Yet Another Linux Installer), ilk adımda kurulum için gerekli soruları sorup, ardından yaklaşık 30 dakika süren kurulum işlemine geçiyor. Kullanıcı, grafik ortama otomatik olarak (parolası) geçip geçmemeyi, zaman dilimini, kullanacğaı dili bu aşamada seçebiliyor. Elbette tüm bu ayarları daha sonra yapılandırma yöneticisi TASMA aracılığıyla düzenlemek mümkün.
+<h3>2.3 Gelişmiş paket yönetim sistemi</h3>
 
-<br>&nbsp;
-<br>&nbsp;
+İnternetten bir kaç tıklama ile kolayca yeni uygulamalar indirmeyi ve kurmayı sağlayan paket yöneticisi (PİSİ), Pardus 2008 ile birlikte daha da gelişti ve hızlandı. Kullandığınız uygulamaların en güncel hallerini, yalnızca yapılan değişiklikeri içeren küçük paketler indirerek güncelleyebilir, böylece bağlantı kotalarını doldurmadan sisteminizi en güncel ve performanslı şekilde kullanabilirsiniz.
 
-Bunlara ek olarak, YALI kurulacak sistemin hangi sabit diske kurulacağını ve bu sabit diskin açılabilir olup olmadığını belirleyebiliyor. Bu özellik dünyada ilk defa Pardus ile sunulan bir teknoloji.
+PiSi'nin yeni geçmiş yönetimi desteği ve yeni Geçmiş Yöneticisi ile sisteminize kurulan eski paketlere dönebilir, sisteminizin o anki anlık görüntüsünü kaydededebilir, bu görüntüler arasında kolayca geçiş yapabilirsiniz.
 
-<h3>2.4 Güncellenen uygulamalar</h3>
+<h3>2.4 YALI</h3>
 
-Pardus 2008'le birlikte masaüstü ortamı olarak kullanılan ve pek çok uygulamayı içinde barındıran KDE 3.5.9 sürümünü kullanabilirsiniz. Kelime işlemci, hesap tablosu, sunum programı ve çizim aracını içeren Türkçe imla denetimi destekli OpenOffice.org ofis yazılımı 2.4 sürümüyle geliyor.
+Pardus'u sabit diske kurmak için kullanılan YALI (Yet Another Linux Installer), ilk adımda kurulum için gerekli soruları sorup, ardından yaklaşık 30 dakika süren kurulum işlemine geçiyor. Kullanıcı bilgileri, otomatik giriş, zaman dilimini - sistem klavye ve dili gibi özelleştimeleri kolayca yapılmasını sağlıyor. Elbette tüm bu ayarları daha sonra yapılandırma yöneticisi TASMA aracılığıyla düzenlemek mümkün. 
+
+Bunlara ek olarak, YALI sistemdeki sabit diskleri yönetmeyi son derece kolaylaştıran yeni bir bölümlendirme arayüzünü de içeriyor : Bu arayüz ile Pardus'un kurulumunu ve açılış sistemi kolayca özelleştirilebiliyor. Tamamen yenilenen otomatik yeniden boyutlandırma ve kurulum seçenekleri sorunsuz ve hızlı bir kurulum sağlıyor. 
+
+<h3>2.5 Kaptan Masaüstü</h3>
+
+Pardus'un yeni kullancıları karşılayan uygulaması Kaptan Masaüstü de tamamen yenilendi. Kullanıcıların klavye/fare, masaüstü, Ağ ve paket yönetimi ayarlarını tek bir noktadan kolayca yapmalarını sağlayan Kaptan, kullanıcıların sistem ayarlarının iyileştirilmesi için önerilerde de bulunuyor.
+
+<h3>2.6 Görüntü Yöneticisi</h3>
+
+Pardus 2008'in yeni özelliklerinden biri olan Görüntü Yöneticisi, kullanıcıların monitör ve ekran kartı ayarlarını kolayca yapmalarını sağlıyor. Çözünürlük, renk derinliği, çoklu monitor yapılandırması gibi gelişmiş ayarların arayüzden yapılması sağlayan Görüntü Yöneticisi tamamen yenilenen COMAR görüntü yapılandırma altyapısını (zorg) kullanıyor.
+
+<h3>2.7 Otomatik donanım tanıma</h3>
+
+Pardus'un en güçlü yanlarından biri olan tamamen otomatik donanım tanıma, Pardus 2008 ile daha da gelişti. Pardus 29008 ile birlikte sisteme bağlanan yazıcılar da otomatik olarak tanınarak yapılandırılıyor. Özellikle kablosuz ağ cihazları, web kamera, yazıcı - tarayıcı gibi sıkça kullanılan donanım ürünleri çok daha sorunsuz bir şekilde destekleniyor. 
+
+<h3>2.8 Pardus Teknolojileri</h3>
+
+Pardus'un temel teknolojileri COMAR ve Mudur, Dbus altyapısını kullanarak tamamen yeniden yazıldı - Pardus 2008 bu teknolojilerin ilk kez kullanıldığı Pardus Sürümü olarak kullanıcıların karşısına çıkıyor. Yeni COMAR, Dbus ve yetkilendirme altyapısı ile tamamen entegre çalışarak sistem genelinde eksiksiz bir yapılandırma yönetimi hizmeti sunuyor.
+
+<h3>2.9 Güncellenen bileşenler</h3>
+
+Pardus 2008 sürümü, Pardus teknolojilerindeki yeniliklerin yanında birçok güncellemeyi de içeriyor : 
+
+ - Güncellenmiş KDE 3.5.9 Masaüstü Ortamı
+ - En son Linux çekirdeği (2.6.25.9) ile çok daha fazla donanım desteği, kararlı ve güvenilir sistem,
+ - Altyapı tarafında gcc 4.3.1, Glibc 2.8, Python 2.5, Java 6 gibi önemli yenilikler,
+ - En yeni, en hızlı ve en becerikli internet tarayıcısı Mozilla Firefox 3.0,
+ - Tüm ofis formatları ile uyumlu çalışabilen OpenOffice.org 2.4.1,
+ - Hataları giderilmiş ve en son sürüme yükseltilmiş yüzlerce özgür yazılım...
 
 <h2>3. Kurulum gereksinimleri</h2>
 
