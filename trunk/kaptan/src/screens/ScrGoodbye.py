@@ -66,8 +66,7 @@ class Widget(GoodbyeWidget, ScreenWidget):
             p = subprocess.Popen([appName], stdout = subprocess.PIPE)
             out, err = p.communicate()
 
-            isAvaiable = out
-            if not isAvaiable:
+            if out.strip() == "0":
                 widget2Hide.hide()
 
         except OSError, e:
