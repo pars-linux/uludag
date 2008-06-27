@@ -1303,13 +1303,12 @@ msgstr ""
 "s) pour l'installation de Pardus."
 
 #: yali4/gui/ScrPartitionManual.py:31
-#, fuzzy
 msgid "Manual Partitioning"
-msgstr "Créer la partition"
+msgstr "Partitionnement Manuelle"
 
 #: yali4/gui/ScrPartitionManual.py:32
 msgid "You can easily configure your partitions..."
-msgstr ""
+msgstr "Vous pouvez facilement configurer vos partitions..."
 
 #: yali4/gui/ScrPartitionManual.py:34
 msgid ""
@@ -1415,16 +1414,12 @@ msgid "Partition Settings"
 msgstr "Configuration des Partitions"
 
 #: yali4/gui/ScrSummary.py:132
-#, fuzzy
 msgid "Automatic Partitioning selected."
-msgstr ""
-"Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
+msgstr "Partitionnement automatique sélectionnée."
 
 #: yali4/gui/ScrSummary.py:146
-#, fuzzy
 msgid "Automatic Partitioning (resize method) selected."
-msgstr ""
-"Oui, partitionner et formatter automatiquement le disque dur sélectionné !"
+msgstr "Partitionnement automatique(avec redimensionnement) sélectionnée."
 
 #: yali4/gui/ScrSummary.py:166
 #, python-format
@@ -1432,6 +1427,8 @@ msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
+"Partition <b>%(partition)s - %(currentFs)s</b> <b>redimensionnée</b> à <b>%"
+"(resizeTo)s MB</b>, l'ancien taille étant <b>%(currentSize)s MB</b>"
 
 #: yali4/gui/ScrSummary.py:167
 #, python-format
@@ -1439,11 +1436,13 @@ msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
+"Partition <b>%(newPartition)s</b> <b>ajoutée</b> au disque <b>%(device)s</b> "
+"avec <b>%(size)s MB</b> comme <b>%(fs)s</b>."
 
 #: yali4/gui/ScrSummary.py:168
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
+msgstr "Partition <b>%(newPartition)s</b> <b>choisie</b> comme <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:183
 msgid "Bootloader Settings"
@@ -1580,16 +1579,14 @@ msgid ""
 msgstr ""
 "\n"
 "<font size=\"+2\">Bienvenue!</font>\n"
-"<font size=\"+1\"><p>Welcome to Pardus 2008 that contains many easy-to-use "
-"software components. You can do everything you need to, including, but not "
-"limited to, connecting to the Internet, creating documents, playing games, "
-"listening to music using Pardus 2008.</p>\n"
-"<p>This application will help you with the installation of Pardus 2008 to "
-"your computer in few and easy steps and then do what is necessary to "
-"identify and configure your hardware. We advise you to backup your data in "
-"your disk(s) before starting with the installation.</p>\n"
-"<p>You can start the installation process (and step in on a free world) by "
-"pressing the Next button.</p>\n"
+"<font size=\"+1\"><p>Bienvenue à Pardus 2008 qui contient plusieurs logiciels "
+"facile à utiliser. Avec Pardus 2008,vous pouvez réaliser plusieurs tâches comme "
+"écouter de la musique, écrire des documents, connecter à l'Internet, jouer des "
+"jeux etc.</p>\n"
+"<p>Cet outil va vous guider à travers l'installation de Pardus 2008 sur votre "
+"ordinateur. Nous vous proposons de sauvegarder vos données importantes avant "
+"de débuter l'installation.</p>\n"
+"<p>Vous pouvez commencer l'installation en cliquant sur le bouton Suivant.</p>\n"
 "</font>\n"
 
 #: yali4/gui/YaliDialog.py:99
