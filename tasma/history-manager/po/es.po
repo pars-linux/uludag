@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-26 16:32+0300\n"
-"PO-Revision-Date: 2008-06-24 21:40-0400\n"
+"PO-Revision-Date: 2008-06-26 20:22-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -238,32 +238,25 @@ msgid "<b>Preparing PiSi...</b>"
 msgstr "<b>Preparando PiSi...</b>"
 
 #: src/history_gui.py:441
-#, fuzzy
 msgid "snapshot"
-msgstr "Instantáneas"
+msgstr "Instantánea"
 
-# favor verificar contexto, por la forma gramatical
 #: src/history_gui.py:445
-#, fuzzy
 msgid "upgrade"
-msgstr "Actualizados"
+msgstr "actualizar"
 
-# does "remove" mean just delete file or also "uninstall" ??
 #: src/history_gui.py:449
-#, fuzzy
 msgid "remove"
-msgstr "Eliminados"
+msgstr "eliminar"
 
 #: src/history_gui.py:453
-#, fuzzy
 msgid "install"
-msgstr "Instalaciones"
+msgstr "instalar"
 
 # favor verificar, tambien depende del contexto, podria ser reestablecer, degradar
 #: src/history_gui.py:457
-#, fuzzy
 msgid "takeback"
-msgstr "Restauraciones"
+msgstr "restaurar"
 
 #: src/ComarIface.py:31
 msgid "Cannot connect to dbus"
@@ -284,3 +277,4 @@ msgstr "Error COMAR"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "No tiene autorización para esta operación."
+
