@@ -561,10 +561,14 @@ class widgetMain(QWidget):
         self.dia.close()
         KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
         sys.exit()
-    
+
     def comarError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
-    
+        if "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(self, message, i18n("Error"))
+        else:
+            KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Boot.Loader", member_keyword="signal", path_keyword="path")
     
