@@ -163,6 +163,10 @@ img.floatr, img[align="right"] {
     float: left;
 }
 
+.icerik_sss_cevaplar a {
+    color: white;
+}
+
 .icerik_sss_cevaplar h3 {
     color: orange;
 }
