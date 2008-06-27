@@ -100,7 +100,16 @@ def get_package(package, installed=False):
         pkg = get_installed_package(package)
         pkg.size = pkg.installedSize
     else:
-        pkg = get_repo_package(package)
+        try:
+            pkg = get_repo_package(package)
+        except Exception, e: # Repo Item not Found
+            # Handle replaced and obsolete packages
+            replaced = pisi.db.packagedb.PackageDB().get_replaces()
+            if replaced.has_key(package):
+                pkg = get_repo_package(replaced[package])
+            else:
+                raise e
+
         pkg.size = pkg.packageSize
 
     try:
