@@ -1,4 +1,5 @@
 <ui version="4.0" >
+ <author>Mehmet Ali Akmanalp</author>
  <class>dialogFinger</class>
  <widget class="QDialog" name="dialogFinger" >
   <property name="geometry" >
@@ -12,9 +13,19 @@
   <property name="windowTitle" >
    <string>Parmak İzi Düzenleyici</string>
   </property>
+  <property name="modal" >
+   <bool>true</bool>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2" >
    <item>
-    <widget class="QGraphicsView" name="viewFinger" />
+    <widget class="QGraphicsView" name="viewFinger" >
+     <property name="focusPolicy" >
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="interactive" >
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_2" >
@@ -26,6 +37,9 @@
           <widget class="QLabel" name="labelFinger" >
            <property name="text" >
             <string>Parmak:</string>
+           </property>
+           <property name="buddy" >
+            <cstring>comboFinger</cstring>
            </property>
           </widget>
          </item>
@@ -88,6 +102,14 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>comboFinger</tabstop>
+  <tabstop>pushEnroll</tabstop>
+  <tabstop>pushErase</tabstop>
+  <tabstop>pushVerify</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <includes/>
  <resources/>
  <connections>
   <connection>
@@ -97,8 +119,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>248</x>
-     <y>254</y>
+     <x>344</x>
+     <y>204</y>
     </hint>
     <hint type="destinationlabel" >
      <x>157</x>
@@ -113,8 +135,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>316</x>
-     <y>260</y>
+     <x>344</x>
+     <y>204</y>
     </hint>
     <hint type="destinationlabel" >
      <x>286</x>
