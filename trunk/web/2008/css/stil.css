@@ -64,7 +64,7 @@ img.floatr, img[align="right"] {
 }
 
 .container_top {
-    background: url("../resim/container_top.png") no-repeat;
+    background: url("../resim/container_top.png") no-repeat bottom left;
     height: 3px;
     width: 926px;
     margin-left: auto;
@@ -272,13 +272,14 @@ img.menu_img {
 #basin { background: url('../resim/sag_alt_basin.png') no-repeat; }
 
 #footer {
-    height: 69px;
-    width: 873px;
+    height: 77px;
+    width: 880px;
     margin-left: auto;
     margin-right: auto;
     clear: both;
     margin-bottom: 20px;
     margin-top: 20px;
+    padding-right: 9px;
 }
 
 .footer img {
