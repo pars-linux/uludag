@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 01:05+0300\n"
-"PO-Revision-Date: 2008-06-19 21:57+0200\n"
+"PO-Revision-Date: 2008-06-27 04:29+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -144,7 +144,7 @@ msgstr "Echtfarben"
 
 #: src/dm_mainview.py:262
 msgid "Dual Screen"
-msgstr "Dual-Anzeige"
+msgstr "Dual-Bildschirm"
 
 #: src/dm_mainview.py:264
 msgid "Cloned Mode"
