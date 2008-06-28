@@ -305,8 +305,28 @@ li.secili a {
     margin-bottom: 20px;
     margin-top: 20px;
     padding-right: 9px;
+    background: url('../resim/altgriarka.png') no-repeat;
 }
 
 .footer img {
     vertical-align: middle;
 }
+
+.alt_sutun {
+    width: 293px;
+    height: 77px;
+    float: left;
+}
+
+.alt_sutun span {
+    position: relative;
+    top: 30px;
+    font-size: 10px;
+    color: #666666;
+}
+.tubitakuekae span { left: 99px; }
+.iletisim span { left: 103px; }
+.markapolitikasi span { left: 102px; }
+.tubitakuekae { background: url('../resim/alttubitakuekae.png') no-repeat center left; }
+.iletisim { background: url('../resim/altiletisim.png') no-repeat center left; }
+.markapolitikasi { background: url('../resim/altmarkapolitikasi.png') no-repeat center left; }
