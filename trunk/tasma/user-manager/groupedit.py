@@ -171,7 +171,8 @@ class GroupStack(QVBox):
             self.parent().browse.groupModified(gid, self.g_name.text())
             self.guide.op_end()
             self.parent().slotCancel()
-        def groupCancel():
+
+        def groupCancel(heta):
             self.parent().slotCancel()
 
         if self.g_id.text() == "auto":

@@ -571,6 +571,7 @@ class UserStack(QVBox):
                     ch.call(int(self.u_id.text()), key)
 
             self.parent().slotCancel()
+
     def slotAdd(self):
         if self.checkAdd():
             return
@@ -580,7 +581,8 @@ class UserStack(QVBox):
         def userDone(uid):
             self.parent().browse.userModified(uid, self.u_name.text(), self.u_realname.text())
             self.parent().slotCancel()
-        def userCancel():
+
+        def userCancel(heta):
             self.parent().slotCancel()
 
         ch = self.mainwidget.callMethod("addUser", "tr.org.pardus.comar.user.manager.adduser")
