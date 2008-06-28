@@ -212,10 +212,14 @@ class Settings(QWidget):
             lab = QLabel(i18n("Mode:"), self)
             grid.addWidget(lab, 0, 0, Qt.AlignRight)
             
-            self.auth_mode = QComboBox(False, self)
-            self.connect(self.auth_mode, SIGNAL("activated(int)"), self.slotAuthToggle)
-            grid.addWidget(self.auth_mode, 0, 1)
-            grid.setColStretch(2, 2)
+            self.selected_device_mode = QComboBox(False, self)
+            self.selected_device_mode.insertItem("-")
+            self.selected_device_mode.insertItem("Ad-hoc")
+            self.selected_device_mode.insertItem("Managed")
+            self.selected_device_mode.setCurrentText("Select Mode")
+            #self.connect(self.selected_device_mode, SIGNAL("activated(QString)"), self.slotAuthToggle)
+            grid.addWidget(self.selected_device_mode, 0, 1)
+            grid.setColStretch(1, 2)
         
         if "remote" in link.modes:
             lab = QLabel(unicode(link.remote_name), self)
@@ -386,7 +390,12 @@ class Settings(QWidget):
                 self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
             if "devicemode" in self.link.modes:
-                pass
+                if conn.device_mode == "ad-hoc":
+                    self.selected_device_mode.setCurrentText("Ad-hoc")
+                elif conn.device_mode == "managed":
+                    self.selected_device_mode.setCurrentText("Managed")
+                else:
+                    self.selected_device_mode.setCurrentText("Select Mode")
             if "remote" in self.link.modes:
                 if conn.remote:
                     self.remote.setText(conn.remote)
@@ -470,7 +479,8 @@ class Settings(QWidget):
                     nameserver = str(self.dns_text.text())
                 comlink.call(self.link.script, "Net.Link", "setNameService", name, namemode, nameserver)
             if "devicemode" in self.link.modes:
-                selected_device_mode = "client" # selected device mode from combobox will be here. default is client mode
+                from string import lower
+                selected_device_mode = str(lower(self.selected_device_mode.currentText()))
                 comlink.call(self.link.script, "Net.Link", "setConnectionMode", name, selected_device_mode)
             if "remote" in self.link.modes:
                 # set remote address

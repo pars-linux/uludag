@@ -303,7 +303,7 @@ class Dev:
         self.password = _get(dict, "password", "")
         self.namemode = _get(dict, "namemode", "default")
         self.nameserver = _get(dict, "nameserver", None)
-        self.device_mode = _get(dict, "device_mode", "client")
+        self.device_mode = _get(dict, "device_mode", "managed")
     
     def dns(self):
         if self.namemode == "default":
@@ -318,7 +318,7 @@ class Dev:
         call("baselayout", "Net.Stack", "useNameServers", (srvs, self.ifc.autoNameSearch()))
     
     def up(self):
-        if self.device_mode == "client":
+        if self.device_mode == "managed":
             ifc = self.ifc
             wifi = Wireless(ifc)
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
@@ -360,7 +360,7 @@ class Dev:
             subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, "netmask", self.mask], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "mode", "ad-hoc"], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "key", self.password], stdout=subprocess.PIPE).wait()
-            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=subprocess.PIPE).wait()
+            #subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
             ifc.up() 
             d=DB.getDB(self.name)
@@ -390,7 +390,7 @@ def linkInfo():
         "auth_modes": "wep,pass,WEP;wepascii,pass,WEP ASCII;wpa-psk,pass,%s;peap-mschapv2,login,PEAP/MSCHAPV2" % _(wpa_psp_msg),
         "name": _(name_msg),
         "remote_name": "ESS ID",
-        "device_modes": "client,ad-hoc",
+        "device_modes": "managed,ad-hoc",
     }
     return d
 

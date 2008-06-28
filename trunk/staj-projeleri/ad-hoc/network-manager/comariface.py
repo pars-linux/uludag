@@ -105,6 +105,7 @@ class Connection(Hook):
         self.hash = self.hash(self.script, self.name)
         self.got_auth = True
         self.first_time = True
+        self.device_mode = "managed"
     
     def parse(self, data):
         for key, value in data.iteritems():
@@ -130,6 +131,8 @@ class Connection(Hook):
                 self.dns_server = value
             elif key == "apmac":
                 self.apmac = value
+            elif key == "device_mode":
+                self.device_mode = value
             elif key == "state":
                 if " " in value:
                     self.state, self.message = value.split(" ", 1)
