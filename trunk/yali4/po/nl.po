@@ -4,16 +4,16 @@
 #
 # Thijs Hulshof <thijs@fedoraproject.org>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
-# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
+# Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 00:44+0300\n"
-"PO-Revision-Date: 2008-06-27 23:40+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"PO-Revision-Date: 2008-06-28 21:22+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -196,10 +196,7 @@ msgid ""
 "You can check the integrity of the packages in installation CD. Although "
 "this is an optional step, we encourage you to do it to avoid any errors in "
 "installation."
-msgstr ""
-"U kunt de integriteit van de pakketten op de installatie CD controleren. "
-"Ondanks dat deze stap optioneel is, raden we het u aan om fouten tijdens de "
-"installatie te vermijden."
+msgstr "U kunt de pakketten integriteit op de installatie CD controleren. Ondanks dat deze stap optioneel is, raden we dit u aan om fouten tijdens de installatie te vermijden."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
 #: yali4/installer.py:172
