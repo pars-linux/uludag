@@ -1,0 +1,20 @@
+<pnmconfig>
+  <geometry>
+    <height>12</height>
+    <width>17</width>
+  </geometry>
+  <manager>
+    <lifetime>15</lifetime>
+  </manager>
+  <direction choice="up"/>
+  <skinpath>ui/default_notif_window.ui</skinpath>
+  <position choice="manual">
+    <xcoord>115</xcoord>
+    <ycoord>537</ycoord>
+  </position>
+  <animation>
+    <totaltime>500</totaltime>
+    <timequanta>18</timequanta>
+    <windowlifetime>5500</windowlifetime>
+  </animation>
+</pnmconfig>
