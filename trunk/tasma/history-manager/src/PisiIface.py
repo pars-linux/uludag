@@ -10,7 +10,7 @@
 #
 # Please read the COPYING file
 
-import os, sys
+import sys
 import pisi
 
 def get_history_dir():
