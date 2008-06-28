@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 00:44+0300\n"
-"PO-Revision-Date: 2008-06-28 21:22+0200\n"
+"PO-Revision-Date: 2008-06-28 21:41+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -196,16 +196,16 @@ msgid ""
 "You can check the integrity of the packages in installation CD. Although "
 "this is an optional step, we encourage you to do it to avoid any errors in "
 "installation."
-msgstr "U kunt de pakketten integriteit op de installatie CD controleren. Ondanks dat deze stap optioneel is, raden we dit u aan om fouten tijdens de installatie te vermijden."
+msgstr "U kunt de pakketten op de installatie CD op integriteit testen. Ondanks dat deze stap optioneel is, raden wij u dit aan om fouten tijdens de installatie te vermijden."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
 #: yali4/installer.py:172
 msgid "Check CD Integrity"
-msgstr "Controleer CD integriteit"
+msgstr "Test CD integriteit"
 
 #: yali4/gui/Ui/datetimewidget.py:82
 msgid "The current time"
-msgstr "Huidige tijd"
+msgstr "De huidige tijd"
 
 #: yali4/gui/Ui/datetimewidget.py:83
 msgid "The analog clock widget displays the current time."
@@ -253,7 +253,7 @@ msgstr "Desc"
 
 #: yali4/gui/Ui/installwidget.py:67
 msgid "Installing Package: "
-msgstr "Installeren pakket: "
+msgstr "Installeren van pakket: "
 
 #: yali4/gui/Ui/keyboardwidget.py:60
 msgid "Select the keyboard layout of your choice."
@@ -281,7 +281,7 @@ msgstr "Uitgavenotities"
 
 #: yali4/gui/Ui/main.py:445
 msgid "Toggle Help"
-msgstr "Druk hulp"
+msgstr "Help"
 
 #: yali4/gui/Ui/main.py:446
 msgid "Previous Screen"
@@ -317,7 +317,7 @@ msgstr "Verwijder partitie"
 
 #: yali4/gui/Ui/partedit.py:148
 msgid "Resize Partition"
-msgstr "Aanpassen partitiegrootte"
+msgstr "Partitiegrootte aanpassen"
 
 #: yali4/gui/Ui/partedit.py:149
 msgid "Use :"
@@ -357,7 +357,7 @@ msgstr "Fat 32"
 
 #: yali4/gui/Ui/partedit.py:158
 msgid "Changes will be applied when you finish.."
-msgstr "Veranderingen zullen worden toegepast wanneer u beëindigt.."
+msgstr "Veranderingen zullen op het eind worden toegepast.."
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Refresh Disks"
@@ -409,7 +409,7 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
 "#ffffff;\">Deze instellingen zullen worden toegepast als u klikt op \"</span><span "
 "style=\" text-decoration: underline; color:#ffffff;\">Grootte aanpassen</span><span "
-"style=\" color:#ffffff;\">\". Indien u terug wilt klik op \"</span><span "
+"style=\" color:#ffffff;\">\". Indien u terug wilt kies voor \"</span><span "
 "style=\" text-decoration: underline; color:#ffffff;\">Annuleer</span><span "
 "style=\" color:#ffffff;\">\".</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
@@ -417,7 +417,7 @@ msgstr ""
 "color:#ffffff;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
-"\" font-weight:600; text-decoration: underline;\">Waarschuwing:</span> Grootte aanpassen kan uw partitie beschadigen, waardoor uw data onbereikbaar wordt. Zorg dat u een backup hebt van deze partitie.<span style=\" font-"
+"\" font-weight:600; text-decoration: underline;\">Waarschuwing:</span> Aanpassen van de grootte kan uw partitie beschadigen, waardoor uw data onbereikbaar wordt. Zorg dat u een backup van deze partitie hebt.<span style=\" font-"
 "weight:600;\"> </span><span style=\" font-weight:600;\">Besef dat deze handeling niet ongedaan kan worden gemaakt</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/summarywidget.py:59
@@ -436,10 +436,10 @@ msgid ""
 "forget this password. Note that you shouldn't write this password elsewhere "
 "for privacy reasons.</p>"
 msgstr ""
-"<p align=\"left\">De systeembeheerder (root) zorgt voor belangrijke "
-"onderhoudstaken op het systeem. Geef een wachtwoord op voor deze speciale "
-"gebruiker, en vergeet het wachtwoord niet! Uit veiligheids overwegingen "
-"wordt het afgeraden het wachtwoord ergens op te schrijven. </p>"
+"<p align=\"left\">De systeembeheerder (root) draagt zorg voor belangrijke "
+"onderhoudstaken op het systeem. Geef een wachtwoord voor deze speciale "
+"gebruiker, en vergeet dit wachtwoord niet! Uit veiligheids overwegingen "
+"wordt het afgeraden om het wachtwoord ergens op te schrijven. </p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
 msgid "System administrator password:"
@@ -447,7 +447,7 @@ msgstr "Systeembeheerder wachtwoord:"
 
 #: yali4/gui/Ui/rootpasswidget.py:173
 msgid "System administrator password (again):"
-msgstr "Wachtwoord systeembeheerder (nogmaals):"
+msgstr "Systeembeheerder wachtwoord (nogmaals):"
 
 #: yali4/gui/Ui/rootpasswidget.py:176
 msgid "Hostname:"
@@ -479,7 +479,7 @@ msgstr "Maak gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:159
 msgid "Give administrator privileges to this user"
-msgstr "Geef administror rechten aan deze gebruiker"
+msgstr "Geef systeembeheerdersrechten aan deze gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:162
 msgid "Users:"
@@ -491,11 +491,11 @@ msgstr "Verwijder geselecteerde gebruiker"
 
 #: yali4/gui/Ui/setupuserswidget.py:164
 msgid "Auto Login User :"
-msgstr "Automatisch inloggen gebruiker:"
+msgstr "Log gebruiker automatisch in:"
 
 #: yali4/gui/Ui/setupuserswidget.py:165
 msgid "Auto Login Disabled"
-msgstr "Automatisch inloggen uitgeschakeld"
+msgstr "Niet automatisch inloggen"
 
 #: yali4/gui/Ui/summarywidget.py:60 yali4/gui/ScrSummary.py:212
 msgid "Begin Install"
@@ -507,9 +507,9 @@ msgid ""
 "software have their corresponding licenses. By installing or using Pardus, "
 "you agree to accept them. Do you want to continue?"
 msgstr ""
-"Alle software is ontwikkeld door TUBITAK/UEKAE valt onder GNU/GPL. "
-"Andere software hebben gelijke licenties. Door installeren of gebruik maken "
-"van Pardus, stemt u toe deze voowaarden te accepteren. Wilt u doorgaan?"
+"Alle software is ontwikkeld door TUBITAK/UEKAE valt onder GNU/GPL. Andere "
+"software hebben gelijke licenties. Door het installeren of gebruik te maken "
+"van Pardus, stemt u in het accepteren van deze voorwaarden. Wilt u doorgaan?"
 
 #: yali4/gui/Ui/welcomewidget.py:92
 msgid "Read GPL"
@@ -525,7 +525,7 @@ msgstr "Accepteren!"
 
 #: yali4/gui/Ui/welcomewidget.py:95
 msgid "Don't Accept!"
-msgstr "Verwerpen!"
+msgstr "Niet accepteren!"
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
@@ -537,10 +537,9 @@ msgid ""
 "Pardus 2008. YALI will help install Pardus 2008 quickly and easily following "
 "the partitioning of disk(s) using the intelligent partitioning tool.\n"
 msgstr ""
-"Welkom! Onze verbeterde installatie tool YALI zal u helpen met de "
-"installatie van Pardus 2008. YALI zorgt voor een snelle en gemakkelijke "
-"installatie van Pardus 2008 en vergemakkelijkt het partitioneren van schijf "
-"(schijven) met het intelligente partitie tools.\n"
+"Welkom! Ons verbetert installatiegereedschap YALI zal u helpen met de "
+"installatie van Pardus 2008. YALI helpt Pardus 2008 snel snel te installeren en "
+"maakt het partitioneren uw schijven makkelijk met intelligent partitiegereedschap.\n"
 
 #: yali4/gui/descSlide.py:20
 msgid ""
