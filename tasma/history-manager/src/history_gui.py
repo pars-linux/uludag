@@ -76,7 +76,7 @@ class widgetMain(formMain):
         self.helpPushButton.setIconSet(loadIconSet("help", KIcon.Small))
         self.restorePushButton.setIconSet(loadIconSet("reload", KIcon.Small))
         self.snapshotPushButton.setIconSet(loadIconSet("add_user", KIcon.Small))
-        self.toolBox.setItemIconSet(0, loadIconSet("History_Manager", KIcon.Small))
+        self.toolBox.setItemIconSet(0, loadIconSet("date", KIcon.Small))
         self.toolBox.setItemIconSet(1, loadIconSet("details", KIcon.Small))
 
         # context menu
