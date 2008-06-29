@@ -13,6 +13,11 @@ from qt import *
 from kdecore import KCmdLineArgs, KApplication
 from kdeui import *
 from comariface import comlink
+from handler import CallHandler
+
+# DBus
+import dbus
+import dbus.mainloop.qt3
 
 i18n = lambda x:x
 
@@ -77,9 +82,28 @@ class connShare(QDialog):
 
         self.textLabel1.setBuddy(self.intcombo)
         self.textLabel2.setBuddy(self.sharecombo)
+		
+	self.groupBox1.setEnabled(False)
+        self.buttonGroup2.setEnabled(False)
+	    
         self.connect(self.sharecheckBox, SIGNAL("stateChanged(int)"), self.slotCheckBox)
         self.connect(self.applyBut, SIGNAL("clicked()"), self.shareConnection)
         self.connect(self.cancelBut, SIGNAL("clicked()"), self.close)
+	
+	# COMAR
+        self.setupBusses()
+	
+	self.state = "off"
+	self.getState()
+	
+    def setupBusses(self):
+        try:
+            self.busSys = dbus.SystemBus()
+            self.busSes = dbus.SessionBus()
+        except dbus.DBusException:
+            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            return False
+        return True
 
 
     def languageChange(self):
@@ -91,18 +115,71 @@ class connShare(QDialog):
         self.buttonGroup2.setTitle(QString.null)
         self.applyBut.setText(i18n("Apply"))
         self.cancelBut.setText(i18n("Cancel"))
+	    
+    def callMethod(self, method, action, model="Net.Filter"):
+        ch = CallHandler("iptables", model, method,
+                         action,
+                         self.winId(),
+                         self.busSys, self.busSes)
+        ch.registerError(self.comarError)
+        ch.registerAuthError(self.comarError)
+        ch.registerDBusError(self.busError)
+        return ch
+    
+    def busError(self, exception):
+        KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
+        self.setupBusses()
+
+    def comarError(self, exception):
+        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+    
+    def getState(self):
+        def handleState(_type, _desc, _state):
+            self.state = "off"
+            if _state in ["on", "started"]:
+                self.state = "on"
+		self.sharecheckBox.setChecked(True)
+                self.groupBox1.setEnabled(True)
+        	self.buttonGroup2.setEnabled(True)
+                #self.getProfile()
+                #self.getRules()
+            #self.setState(self.state)
+        ch = self.callMethod("info", "tr.org.pardus.comar.system.service.get", "System.Service")
+        ch.registerDone(handleState)
+        ch.call()
+
+    def shareConnection(self):
+        int_if = str(self.intcombo.currentText()).split("-")[0]
+        shr_if = str(self.sharecombo.currentText()).split("-")[0]	
+        if int_if == shr_if:
+            QMessageBox.information(self, i18n("Check Selected Interfaces"), i18n("The interfaces that you have selected must be different to share internet connection"))
+            return
+        self.rule_add = str("-t nat -A POSTROUTING -o %s -j MASQUERADE" % (int_if))
+	    #self.rule_del = str("-t nat -D POSTROUTING -o %s -j MASQUERADE" % (int_if))
+
+	    #check sharing status
+        #DHCP Server
+        ch = CallHandler("dhcp", "System.Service", "start", "tr.org.pardus.comar.system.service.set", self.winId(), self.busSys, self.busSes)
+        ch.call()
+
+        #İptables
+        ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
+        ch.call()
+
+        ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
+        ch.call(self.rule_add)
+        self.close()
+		
     def slotCheckBox(self):
         if not self.sharecheckBox.isOn():
             self.groupBox1.setEnabled(False)
             self.buttonGroup2.setEnabled(False)
+	    #get nat rules and if any exist delete them
         else:
             self.groupBox1.setEnabled(True)
             self.buttonGroup2.setEnabled(True)
 
-    def shareConnection(self):
-        int_if = str(self.intcombo.currentText()).split("-")[0]
-        shr_if = str(self.intcombo.currentText()).split("-")[0]
-        print int_if, shr_if
+	
 if __name__ == "__main__":
     appname     = ""
     description = ""
