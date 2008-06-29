@@ -7,6 +7,7 @@ Name[es]=Módulos Tasma
 Name[de]=Tasma Module
 Name[pt_BR]=Módulos Tasma
 Name[it]=Moduli di Tasma
+Name[fr]=Modules de Tasma
 NoDisplay=true
 Icon=package_settings
 X-KDE-BaseGroup=tasma
