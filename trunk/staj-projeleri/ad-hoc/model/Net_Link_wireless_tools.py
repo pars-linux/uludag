@@ -320,6 +320,7 @@ class Dev:
     def up(self):
         if self.device_mode == "managed":
             ifc = self.ifc
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "mode", "managed"], stdout=subprocess.PIPE).wait() # Interface mode may be ad-hoc from previous operations.
             wifi = Wireless(ifc)
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
             if self.remote:
@@ -360,7 +361,7 @@ class Dev:
             subprocess.Popen(["/sbin/ifconfig", ifc.name, self.address, "netmask", self.mask], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "mode", "ad-hoc"], stdout=subprocess.PIPE).wait()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "key", self.password], stdout=subprocess.PIPE).wait()
-            #subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "auto"], stdout=subprocess.PIPE).wait()
+            subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "01"], stdout=subprocess.PIPE).wait() # FIXME: channel auto mode sometimes does not work. So, a 2 digit number (01,02,03 ... 10) must be given
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
             ifc.up() 
             d=DB.getDB(self.name)
