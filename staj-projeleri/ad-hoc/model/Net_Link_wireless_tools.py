@@ -367,6 +367,7 @@ class Dev:
             d=DB.getDB(self.name)
             d["state"]="up"
             DB.setDB(self.name,d)
+            notify("Net.Link", "stateChanged", (self.name, "up", self.address))
 
     def down(self):
         ifc = self.ifc
