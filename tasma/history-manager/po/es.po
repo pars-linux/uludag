@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 12:27+0300\n"
-"PO-Revision-Date: 2008-06-26 20:22-0400\n"
+"PO-Revision-Date: 2008-06-29 07:37-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -66,12 +66,12 @@ msgstr "Instantáneas"
 # favor verificar contexto, por la forma gramatical
 #: src/history_gui.py:61
 msgid "Upgrades"
-msgstr "Actualizados"
+msgstr "Actualizaciones"
 
 # does "remove" mean just delete file or also "uninstall" ??
 #: src/history_gui.py:62
 msgid "Removes"
-msgstr "Eliminados"
+msgstr "Desinstalaciones"
 
 #: src/history_gui.py:63
 msgid "Installations"
@@ -277,3 +277,4 @@ msgstr "Error COMAR"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "No tiene autorización para esta operación."
+
