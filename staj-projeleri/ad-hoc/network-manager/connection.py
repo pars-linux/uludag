@@ -65,6 +65,12 @@ class ScanItem(QListViewItem):
         self.mac = self.info.get("mac", None)
         if self.mac:
             self.setText(3, self.mac)
+
+        point_mode = self.info["mode"]
+
+        if point_mode == "Ad-Hoc":
+            self.setPixmap(3, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
+
     
     def signalIcon(self, signal):
         # FIXME: make this more pythonic
@@ -203,7 +209,7 @@ class Settings(QWidget):
         grid.addWidget(hb, 0, 1)
 
         if "devicemode" in link.modes:
-            line = widgets.HLine(i18n("Device Mode"), self, "kgpg_key1")
+            line = widgets.HLine(i18n("Device Mode"), self, "unindent")
             lay.addSpacing(6)
             lay.addWidget(line)
             grid = QGridLayout(3, 2)

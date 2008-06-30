@@ -1,0 +1,20 @@
+TODO
+----
+
+Legend:
+
+- Todo
+? Not determined if/how we have to do
+/ In progress
++ Accomplished
+
+--------------------------------------------------------------------------
+
++ Relevant ÇOMAR scripts editings.
+- Eliminating the manual ip/mask information entering process. (Dhcp ...?)
++ Network manager GUI modifying according to ad-hoc usage.
+- Auto interface mode settings from scan results when clicked
+- Interface mode combobox will be filled from relevant ÇOMAR script
+- At scan results, ad-hoc networks will look like different from managed
+
+? i18 for Device Mode subsection header in connection.py
