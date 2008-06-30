@@ -152,7 +152,7 @@ class connShare(QDialog):
         int_if = str(self.intcombo.currentText()).split("-")[0]
         shr_if = str(self.sharecombo.currentText()).split("-")[0]	
         if int_if == shr_if:
-            QMessageBox.information(self, i18n("Check Selected Interfaces"), i18n("The interfaces that you have selected must be different to share internet connection"))
+            KMessageBox.information(self, i18n("The interfaces that you have selected must be different to share internet connection"), i18n("Check Selected Interfaces"))
             return
         self.rule_add = str("-t nat -A POSTROUTING -o %s -j MASQUERADE" % (int_if))
 	    #self.rule_del = str("-t nat -D POSTROUTING -o %s -j MASQUERADE" % (int_if))
