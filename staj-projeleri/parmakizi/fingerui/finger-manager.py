@@ -23,6 +23,8 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.UpdateUi()
         self.initDevice()
         self.getImage()
+        self.closeDevice()
+        self.exitFprint()
 
     #--------ui functions-------
 
@@ -48,16 +50,27 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def initDevice(self):
         self.__devices = pyfprint.discover_devices()
         print [x.get_driver().get_full_name() for x in self.__devices]
-        if self.__devices == None:
+        if self.__devices == []:
             raise "No devices found"
         self.__device = self.__devices[0]
     
+    def exitFprint(self):
+        libfprint.fp_exit()
+
+    def closeDevice():
+        self.__device.close()
+
     def getImage(self):
         self.__device.open()
+        print("asdsasda")
         img = self.__device.capture_image(True)
         img.standardize()
         img = img.binarize()
-        img.save_to_file("parmak.ppm")
+        #img.save_to_file("parmak.ppm")
+        pixmap = QPixmap()
+        print pixmap.loadFromData(img.get_data())
+
+
 
 
 
@@ -67,4 +80,3 @@ if __name__ == "__main__":
     form = fmDialog(1)
     form.show()
     app.exec_()
-
