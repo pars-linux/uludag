@@ -60,16 +60,16 @@ class ScanItem(QListViewItem):
         if remote == "<hidden>" or remote == "":
             remote = i18n("<hidden>")
         self.remote = remote
-        self.setText(2, remote)
+        self.setText(3, remote)
         
         self.mac = self.info.get("mac", None)
         if self.mac:
-            self.setText(3, self.mac)
+            self.setText(4, self.mac)
 
         point_mode = self.info["mode"]
 
         if point_mode == "Ad-Hoc":
-            self.setPixmap(3, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
+            self.setPixmap(2, getIconSet("attach", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
 
     
     def signalIcon(self, signal):
@@ -106,7 +106,8 @@ class Scanner(QPopupMenu):
         self.view.addColumn("")
         self.view.addColumn("")
         self.view.addColumn("")
-        self.view.setColumnAlignment(3, Qt.AlignRight)
+        self.view.addColumn("")
+        self.view.setColumnAlignment(4, Qt.AlignRight)
         self.view.setResizeMode(QListView.LastColumn)
         self.view.setAllColumnsShowFocus(True)
         self.view.setShowToolTips(True)
