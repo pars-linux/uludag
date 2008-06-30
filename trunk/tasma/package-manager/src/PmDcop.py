@@ -27,4 +27,4 @@ class PmDcop(dcopexport.DCOPExObj):
         if manager.command.inProgress():
             return
 
-        manager.installPackage(package)
+        manager.installPackage(str(package))
