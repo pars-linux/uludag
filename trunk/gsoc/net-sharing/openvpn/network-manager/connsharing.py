@@ -99,13 +99,15 @@ class connShare(QDialog):
         comlink.device_hook.append(self.getDeviceList)
         for script in comlink.links:
             if script == "openvpn" or script == "ppp":
-                return
+                continue
             comlink.queryDevices(script)
 
     def getDeviceList(self, script, devices):
         for key in devices:
             self.intcombo.insertItem("%s-%s" % (key.split("_")[-1], devices[key]))
             self.sharecombo.insertItem("%s-%s" % (key.split("_")[-1], devices[key]))
+        if script == comlink.links.keys()[-1]:
+            comlink.device_hook.remove(self.getDeviceList)
 
     def setupBusses(self):
         try:
