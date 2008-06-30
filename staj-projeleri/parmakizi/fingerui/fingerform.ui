@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>355</width>
-    <height>215</height>
+    <width>303</width>
+    <height>164</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -16,7 +16,7 @@
   <property name="modal" >
    <bool>true</bool>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_2" >
+  <layout class="QHBoxLayout" name="horizontalLayout" >
    <item>
     <widget class="QGraphicsView" name="viewFinger" >
      <property name="focusPolicy" >
@@ -28,65 +28,27 @@
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2" >
+    <layout class="QVBoxLayout" name="verticalLayout" >
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout" >
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout" >
-         <item>
-          <widget class="QLabel" name="labelFinger" >
-           <property name="text" >
-            <string>Parmak:</string>
-           </property>
-           <property name="buddy" >
-            <cstring>comboFinger</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboFinger" >
-           <property name="sizePolicy" >
-            <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <item>
-            <property name="text" >
-             <string>Sağ Orta Parmak</string>
-            </property>
-           </item>
-           <item>
-            <property name="text" >
-             <string>Sağ İşaret Parmağı</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushEnroll" >
-         <property name="text" >
-          <string>Parmak İzi Tanıt</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushErase" >
-         <property name="text" >
-          <string>Parmak İzini Sil</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushVerify" >
-         <property name="text" >
-          <string>Parmak İzini Dene</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QPushButton" name="pushEnroll" >
+       <property name="text" >
+        <string>Parmak İzi Tanıt</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushErase" >
+       <property name="text" >
+        <string>Parmak İzini Sil</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushVerify" >
+       <property name="text" >
+        <string>Parmak İzini Dene</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QDialogButtonBox" name="buttonBox" >
@@ -103,13 +65,11 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>comboFinger</tabstop>
   <tabstop>pushEnroll</tabstop>
   <tabstop>pushErase</tabstop>
   <tabstop>pushVerify</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
- <includes/>
  <resources/>
  <connections>
   <connection>
