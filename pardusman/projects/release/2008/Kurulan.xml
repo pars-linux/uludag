@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008 RC3-r6</Title>
+    <Title>Pardus 2008</Title>
     <WorkDir>/home/ekin/cdtemp/</WorkDir>
     <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -14,6 +14,7 @@
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
+        <SelectedPackage>acpi4asus</SelectedPackage>
         <SelectedPackage>acx100</SelectedPackage>
         <SelectedPackage>acx100-firmware</SelectedPackage>
         <SelectedPackage>alsa-driver</SelectedPackage>
@@ -21,6 +22,8 @@
         <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>apmd</SelectedPackage>
+        <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -81,6 +84,7 @@
         <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>imposter</SelectedPackage>
+        <SelectedPackage>iptraf</SelectedPackage>
         <SelectedPackage>ipw2100-firmware</SelectedPackage>
         <SelectedPackage>ipw2200-firmware</SelectedPackage>
         <SelectedPackage>irda-utils</SelectedPackage>
@@ -123,6 +127,7 @@
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
+        <SelectedPackage>krename</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lame</SelectedPackage>
         <SelectedPackage>lib-compat</SelectedPackage>
@@ -223,6 +228,7 @@
         <Package>acerhk</Package>
         <Package>acl</Package>
         <Package>acpi</Package>
+        <Package>acpi4asus</Package>
         <Package>acpid</Package>
         <Package>acx100</Package>
         <Package>acx100-firmware</Package>
@@ -239,11 +245,12 @@
         <Package>amarok</Package>
         <Package>amrnb</Package>
         <Package>amrwb</Package>
+        <Package>apmd</Package>
+        <Package>aria2</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
-        <Package>aspell-nl</Package>
         <Package>atk</Package>
         <Package>atl2</Package>
         <Package>atmel-firmware</Package>
@@ -268,6 +275,7 @@
         <Package>bootsplash-theme-pardus</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
+        <Package>c-ares</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
@@ -419,6 +427,7 @@
         <Package>imlib2</Package>
         <Package>imposter</Package>
         <Package>iptables</Package>
+        <Package>iptraf</Package>
         <Package>iputils</Package>
         <Package>ipw2100-firmware</Package>
         <Package>ipw2200-firmware</Package>
@@ -433,6 +442,10 @@
         <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
         <Package>k3b</Package>
+        <Package>k3b-i18n-de</Package>
+        <Package>k3b-i18n-es</Package>
+        <Package>k3b-i18n-nl</Package>
+        <Package>k3b-i18n-pt_BR</Package>
         <Package>k3b-i18n-tr</Package>
         <Package>kaffeine</Package>
         <Package>kaptan</Package>
@@ -453,6 +466,7 @@
         <Package>kdeartwork-screensavers</Package>
         <Package>kdebase</Package>
         <Package>kdebluetooth</Package>
+        <Package>kdegames</Package>
         <Package>kdegraphics</Package>
         <Package>kdelibs</Package>
         <Package>kdemultimedia</Package>
@@ -471,6 +485,7 @@
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
+        <Package>krename</Package>
         <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
@@ -634,6 +649,7 @@
         <Package>mdadm</Package>
         <Package>memtest86</Package>
         <Package>microcode-ctl</Package>
+        <Package>microdia</Package>
         <Package>migration</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
