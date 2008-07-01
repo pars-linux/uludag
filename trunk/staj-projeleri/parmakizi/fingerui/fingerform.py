@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'fingerform.ui'
 #
-# Created: Mon Jun 30 09:22:40 2008
+# Created: Tue Jul  1 15:10:45 2008
 #      by: PyQt4 UI code generator 4.4.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -16,9 +16,7 @@ class Ui_dialogFinger(object):
         dialogFinger.setModal(True)
         self.horizontalLayout = QtGui.QHBoxLayout(dialogFinger)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.viewFinger = QtGui.QGraphicsView(dialogFinger)
-        self.viewFinger.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.viewFinger.setInteractive(False)
+        self.viewFinger = QtGui.QLabel(dialogFinger)
         self.viewFinger.setObjectName("viewFinger")
         self.horizontalLayout.addWidget(self.viewFinger)
         self.verticalLayout = QtGui.QVBoxLayout()
@@ -49,6 +47,7 @@ class Ui_dialogFinger(object):
 
     def retranslateUi(self, dialogFinger):
         dialogFinger.setWindowTitle(QtGui.QApplication.translate("dialogFinger", "Parmak İzi Düzenleyici", None, QtGui.QApplication.UnicodeUTF8))
+        self.viewFinger.setText(QtGui.QApplication.translate("dialogFinger", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.pushEnroll.setText(QtGui.QApplication.translate("dialogFinger", "Parmak İzi Tanıt", None, QtGui.QApplication.UnicodeUTF8))
         self.pushErase.setText(QtGui.QApplication.translate("dialogFinger", "Parmak İzini Sil", None, QtGui.QApplication.UnicodeUTF8))
         self.pushVerify.setText(QtGui.QApplication.translate("dialogFinger", "Parmak İzini Dene", None, QtGui.QApplication.UnicodeUTF8))
