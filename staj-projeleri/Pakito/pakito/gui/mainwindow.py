@@ -29,6 +29,7 @@ import fcntl
 import pisi
 
 from pakito.gui.pspecWidget.pspecWidget import PspecWidget
+from pakito.gui.pspecWidget.dialogs.permissionDialog import PermissionDialog
 from pakito.gui.actionsWidget import ActionsWidget
 from pakito.gui.multitabwidget import MultiTabWidget
 from pakito.gui.optionsDialog import OptionsDialog
@@ -155,8 +156,16 @@ class MainWindow(KParts.MainWindow):
         if not os.path.isdir(tempDir):
             os.mkdir(tempDir)
             
-        conf = Config()
-        conf.read()
+	try:
+	    conf = Config()
+            conf.read()
+        except Exception, err:
+            KMessageBox.sorry(self, i18n("Config file is not configured"))
+	    
+	if conf.packagerName == '' and conf.packagerEmail == '' :
+	    KMessageBox.sorry(self, i18n("Packager information is not configured!"))
+	    return
+	    
         tempDir += "newPackage"
         os.mkdir(tempDir)
         templateDict = {"package": "PackageName", "homepage": "http://www.pardus.org.tr", "partof": "Pardus",
@@ -595,7 +604,7 @@ class PisiThread(Thread):
          try:
              self.initPisi()
              qApp.processEvents(QEventLoop.ExcludeUserInput)
-	     #SI os.system("sudo chmod 777 /var/cache/pisi/archives") # Password has to be entered automtically
+	     #SI os.system("sudo chmod 777 /var/cache/pisi/archives") # Password has to be entered automatically
              #SI pisi.api.build_until(self.path, self.stage)
 	     pisi.api.build(self.path)
 	     qApp.processEvents(QEventLoop.ExcludeUserInput)
@@ -648,6 +657,17 @@ class UI(pisi.ui.UI):
     def confirm(self, msg):
         self.display(msg + " auto-confirmed.", "red")
         return True
+    
+    def checkPermission(self):
+        from pakito.config import Config
+        permissionDia = PermissionDialog(self)
+        conf = Config()
+        conf.read()
+	
+        if permissionDia.exec_loop() == KDialog.Accepted:
+            conf.rootPassword = permissionDia.pePassword.text()
+	    if permissionDia.cbRemember.isChecked() :
+            	conf.write()
     
     def display_progress(self, **kwargs):
 #        self.display(str(kwargs), "darkgreen")
