@@ -61,3 +61,36 @@ class HelpDialog(QDialog):
             self.htmlPart.openURL(KURL(locate('data', 'history-manager/help/%s/main_help.html'%self.lang_code)))
         else:
             self.htmlPart.openURL(KURL(locate('data', 'history-manager/help/en/main_help.html')))
+
+def isLocked(file):
+    try:
+        f = open(file, 'r')
+    except:
+        print i18n("Can't open lock file")
+    import string
+    a = f.readlines()
+    if string.split(a[0])[0] == 'locked':
+        return True
+    else:
+        return False
+
+def lock(file, true=True):
+    try:
+        f = open(file, 'w')
+    except:
+        print i18n("Can't open lock file")
+        return
+    import fcntl
+    if true:
+        try:
+            fcntl.flock(f.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            f.write("locked")
+        except IO_Error, value:
+            if value[0] == 11:
+                print i18n("Resource temporarily unavailable, Lock failed")
+            else:
+                raise
+    else:
+        fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+    f.close()
+
