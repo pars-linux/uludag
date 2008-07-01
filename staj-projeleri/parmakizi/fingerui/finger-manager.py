@@ -61,17 +61,14 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def closeDevice(self):
         self.__device.close()
 
+    #QImage.Format_RGB32 works.
     def getImage(self):
         self.__device.open()
         img = self.__device.capture_image(True)
-        #img.standardize()
         img = img.binarize()
-        img.save_to_file("parmak.pgm")
-        fpimg = QImage(img.get_data(), img.get_width(), img.get_height(), QImage.Format_Indexed8)
-        #fpimg = QImage.fromData(img.get_data())
-        print fpimg
-        print fpimg.format()
-        print fpimg.save("/home/mali/parmakizi/fingerui/qparmak.pgm")
+        img.save_to_file("parmak.pgm")  #write to root dir (TODO: comarize)
+        fpimg = QPixmap("parmak.pgm")   #read from root dir (TODO: comarize))
+        self.viewFinger.setPixmap(fpimg)
 
 
 if __name__ == "__main__":
