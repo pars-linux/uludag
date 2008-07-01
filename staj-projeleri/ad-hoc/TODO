@@ -13,8 +13,24 @@ Legend:
 + Relevant ÇOMAR scripts editings.
 + Network manager GUI modifying according to ad-hoc usage.
 + At scan results, ad-hoc networks will look like different from managed
-- Auto interface mode settings from scan results when clicked
++ Auto interface mode settings from scan results when clicked
 - Interface mode combobox will be filled from relevant ÇOMAR script
 
 ? Eliminating the manual ip/mask information entering process. (Dhcp ...?)
 ? i18 thing for Device Mode subsection header in connection.py
+
+
+
+
+
+KNOWN BUGS
+--------------------------------------------------------------------------
+
+- Some wireless adaptors says;
+
+Error for wireless request "Set Mode" (8B06) :
+SET failed on device wlan0 ; Device or resource busy. 
+
+while interface mode is being changed
+
+We can handle this issue via downing interface, changing mode, uping interface manually but a generic solution is needed
