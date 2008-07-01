@@ -23,8 +23,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.UpdateUi()
         self.initFprint()
         self.initDevice()
-        self.getImage()
-        self.closeDevice()
+        self.enroll()
         self.exitFprint()
 
     #--------ui functions-------
@@ -58,17 +57,27 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def exitFprint(self):
         fp_exit()
 
+    def openDevice(self):
+        self.__device.open()
+
     def closeDevice(self):
         self.__device.close()
 
     #QImage.Format_RGB32 works.
     def getImage(self):
-        self.__device.open()
+        self.openDevice()
         img = self.__device.capture_image(True)
         img = img.binarize()
         img.save_to_file("parmak.pgm")  #write to root dir (TODO: comarize)
         fpimg = QPixmap("parmak.pgm")   #read from root dir (TODO: comarize))
         self.viewFinger.setPixmap(fpimg)
+        self.closeDevice()
+
+    def enroll(self):
+        self.openDevice()
+        (fprnt, img) = self.__device.enroll_finger()
+        print fprnt.get_data() # not working for some weird reason
+        self.closeDevice()
 
 
 if __name__ == "__main__":
