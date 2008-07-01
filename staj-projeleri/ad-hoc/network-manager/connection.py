@@ -129,7 +129,13 @@ class Scanner(QPopupMenu):
         parent = self.parent
         parent.remote.setText(item.remote)
         parent.apmac = item.mac
-        parent.selected_device_mode.setCurrentText(item.info["mode"])
+        
+        dev_mode = item.info["mode"]
+
+        if dev_mode == "Master" or dev_mode == "Managed":
+            parent.selected_device_mode.setCurrentText("Managed")
+        else:
+            parent.selected_device_mode.setCurrentText("Ad-Hoc")
 
         if item.enc == "none":
             i = 0
@@ -223,10 +229,9 @@ class Settings(QWidget):
             
             self.selected_device_mode = QComboBox(False, self)
             self.selected_device_mode.insertItem("-")
-            self.selected_device_mode.insertItem("Ad-hoc")
+            self.selected_device_mode.insertItem("Ad-Hoc")
             self.selected_device_mode.insertItem("Managed")
             self.selected_device_mode.setCurrentText("Select Mode")
-            #self.connect(self.selected_device_mode, SIGNAL("activated(QString)"), self.slotAuthToggle)
             grid.addWidget(self.selected_device_mode, 0, 1)
             grid.setColStretch(1, 2)
         
@@ -400,7 +405,7 @@ class Settings(QWidget):
             self.device_uid = self.conn.devid
             if "devicemode" in self.link.modes:
                 if conn.device_mode == "ad-hoc":
-                    self.selected_device_mode.setCurrentText("Ad-hoc")
+                    self.selected_device_mode.setCurrentText("Ad-Hoc")
                 elif conn.device_mode == "managed":
                     self.selected_device_mode.setCurrentText("Managed")
                 else:
