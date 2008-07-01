@@ -64,11 +64,14 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def getImage(self):
         self.__device.open()
         img = self.__device.capture_image(True)
-        img.standardize()
+        #img.standardize()
         img = img.binarize()
-        #img.save_to_file("parmak.ppm")
-        pixmap = QPixmap()
-        print pixmap.loadFromData(img.get_data())
+        img.save_to_file("parmak.pgm")
+        fpimg = QImage(img.get_data(), img.get_width(), img.get_height(), QImage.Format_Indexed8)
+        #fpimg = QImage.fromData(img.get_data())
+        print fpimg
+        print fpimg.format()
+        print fpimg.save("/home/mali/parmakizi/fingerui/qparmak.pgm")
 
 
 if __name__ == "__main__":
