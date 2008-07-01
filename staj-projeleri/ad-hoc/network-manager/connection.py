@@ -129,10 +129,7 @@ class Scanner(QPopupMenu):
         parent = self.parent
         parent.remote.setText(item.remote)
         parent.apmac = item.mac
-        try:
-            parent.selected_device_mode.setCurrentText(item.info["mode"])
-        except:
-            pass
+        parent.selected_device_mode.setCurrentText(item.info["mode"])
 
         if item.enc == "none":
             i = 0
