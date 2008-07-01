@@ -75,13 +75,21 @@ def buildPackages():
             try:
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
 
+                # Reduce to filenames
+                newBinaryPackages = sorted(set(map(lambda x: os.path.basename(x), newBinaryPackages)))
+                oldBinaryPackages = sorted(set(map(lambda x: os.path.basename(x), oldBinaryPackages)))
+
                 # Delta package generation using delta interface
                 (deltasToInstall, deltaPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
 
                 if deltasToInstall:
-                    packagesToInstall = deltasToInstall
+                    packagesToInstall = deltasToInstall[:]
+                    if len(newBinaryPackages) > len(oldBinaryPackages):
+                        # There exists some first builds, install them
+                        # because they dont have delta.
+                        packagesToInstall.extend(newBinaryPackages[len(oldBinaryPackages):])
                 else:
-                    packagesToInstall = newBinaryPackages
+                    packagesToInstall = newBinaryPackages[:]
 
                 # Merge the package lists
                 deltaPackages = deltaPackages + deltasToInstall

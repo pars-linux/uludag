@@ -70,8 +70,6 @@ class PisiApi:
 
     def delta(self, isopackages, oldBinaryPackages, newBinaryPackages):
         # Sort the lists
-        oldBinaryPackages = sorted(set(map(lambda x: os.path.basename(x), oldBinaryPackages)))
-        newBinaryPackages = sorted(set(map(lambda x: os.path.basename(x), newBinaryPackages)))
 
         # Delta packages to be installed on farm for upgrading to new packages
         deltas_to_install = []
