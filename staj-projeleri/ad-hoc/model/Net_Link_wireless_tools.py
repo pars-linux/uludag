@@ -392,7 +392,7 @@ def linkInfo():
         "auth_modes": "wep,pass,WEP;wepascii,pass,WEP ASCII;wpa-psk,pass,%s;peap-mschapv2,login,PEAP/MSCHAPV2" % _(wpa_psp_msg),
         "name": _(name_msg),
         "remote_name": "ESS ID",
-        "device_modes": "managed,ad-hoc",
+        "device_modes": "Ad-Hoc,Managed",
     }
     return d
 
