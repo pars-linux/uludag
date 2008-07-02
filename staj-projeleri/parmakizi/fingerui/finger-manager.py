@@ -36,15 +36,15 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     @pyqtSignature("")
     def on_pushEnroll_clicked(self):
-        print "Enrolled for uid " + self.__uid.__str__()
+        self.enroll(self.__uid.__str__())
 
     @pyqtSignature("")
     def on_pushErase_clicked(self):
-        print "FP for uid " + self.__uid.__str__() + " erased"
+        print "FP for uid " + self.__uid.__str__()
 
     @pyqtSignature("")
     def on_pushVerify_clicked(self):
-        print "FP matches!"
+        self.verify(self.__uid.__str__())
 
     def UpdateUi(self):
         pass
@@ -82,7 +82,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         img.save_to_file(filename) #(TODO: comarize)
         return QPixmap(filename)
 
-    def enroll(self):
+    def enroll(self, uid):
         self.openDevice()
         while 1:
             (fprnt, img) = self.__device.enroll_finger()
@@ -98,8 +98,29 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def _savePrint(self, fprint, path=".printdata"):
         file = open(path, "w")
-        file.write(frpint.get_data())
+        file.write(fprint.get_data())
         file.close()
+
+    def _loadPrint(self, fprint, path=".printdata"):
+        file=open(path, "r")
+        printdata = file.read()
+        file.close()
+        return Fprint(printdata)
+
+    def verify(self, uid):
+        self.openDevice()
+        while 1:
+            (ret , img) = self.__device.verify_finger()
+            if ret == True:
+                break
+            elif ret == FALSE:
+                print "Match failed"
+            else:
+                print "please retry"
+        pixmap = self._pixmapize(img.binarize())
+        self.viewFinger.setPixmap(pixmap)
+        self._savePrint(fprint)
+        self.closeDevice()
 
 if __name__ == "__main__":
     import sys
