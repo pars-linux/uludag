@@ -24,7 +24,13 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.initFprint()
         self.initDevice()
         self.enroll()
+
+    def __del__(self):
+        #super(self.__class__, self).__del__()
+        if self.__device:
+            self.closeDevice()
         self.exitFprint()
+        
 
     #--------ui functions-------
 
@@ -68,17 +74,32 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.openDevice()
         img = self.__device.capture_image(True)
         img = img.binarize()
-        img.save_to_file("parmak.pgm")  #write to root dir (TODO: comarize)
-        fpimg = QPixmap("parmak.pgm")   #read from root dir (TODO: comarize))
-        self.viewFinger.setPixmap(fpimg)
+        pixmap = self._pixmapize(img, "parmak.pgm")
+        self.viewFinger.setPixmap(pixmap)
         self.closeDevice()
+
+    def _pixmapize(self, img, savepath=".tmpimg"):
+        img.save_to_file(filename) #(TODO: comarize)
+        return QPixmap(filename)
 
     def enroll(self):
         self.openDevice()
-        (fprnt, img) = self.__device.enroll_finger()
-        print fprnt.get_data() # not working for some weird reason
+        while 1:
+            (fprnt, img) = self.__device.enroll_finger()
+            if fprnt == "xxx": #TODO: Fix binding return data. Also, memory leak?
+                print "Please retry" 
+            else:
+                print "Enrolled"
+                break
+        pixmap = self._pixmapize(img.binarize())
+        self.viewFinger.setPixmap(pixmap)
+        self._savePrint(fprnt)
         self.closeDevice()
 
+    def _savePrint(self, fprint, path=".printdata"):
+        file = open(path, "w")
+        file.write(frpint.get_data())
+        file.close()
 
 if __name__ == "__main__":
     import sys
