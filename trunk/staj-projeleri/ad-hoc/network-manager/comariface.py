@@ -162,6 +162,8 @@ class Link:
                     self.auth_modes.append(AuthMode(mode))
             elif key == "remote_name":
                 self.remote_name = value
+            elif key == "device_modes":
+                self.device_modes = value.split(",")
 
 
 class DBusInterface(Hook):

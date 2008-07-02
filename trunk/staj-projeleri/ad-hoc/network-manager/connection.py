@@ -229,8 +229,10 @@ class Settings(QWidget):
             
             self.selected_device_mode = QComboBox(False, self)
             self.selected_device_mode.insertItem("-")
-            self.selected_device_mode.insertItem("Ad-Hoc")
-            self.selected_device_mode.insertItem("Managed")
+            
+            for dev_mode in link.device_modes:
+                self.selected_device_mode.insertItem(dev_mode)
+
             self.selected_device_mode.setCurrentText("Select Mode")
             grid.addWidget(self.selected_device_mode, 0, 1)
             grid.setColStretch(1, 2)
