@@ -4,6 +4,8 @@
 
 datadir = "/var/lib/pyfinger/"
 
+#FIXME: what are we supposed to return?
+
 def saveFprint(fprintdata, uid):
     """Save fingerprint data for given uid.
     Data is saved under datadir/uid/fpdata.
@@ -12,10 +14,17 @@ def saveFprint(fprintdata, uid):
         return "uid must be an int."
     if (type(fprintdata) != str):
         return "fprintdata must be in serialized string format."
-    datafile = open(datadir + str(uid))
-    datafile.write(dprintdata)
+    datafile = open(datadir + str(uid), "w")
+    datafile.write(fprintdata)
     datafile.close()
 
 def loadFprint(uid):
-    """Load fingerprint data for given uid."""
-    pass
+    """Load fingerprint data for given uid.
+    See saveFprint() for more details."""
+    if (type(uid) != int):
+        return "uid must be an int."
+    datafile = open(datadir+str(uid), "r")
+    fprintdata = datafile.read()
+    datafile.close()
+    return fprintdata
+
