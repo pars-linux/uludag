@@ -25,8 +25,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.__device = None
 
         super(fmDialog, self).__init__(parent)
-        self.setupUi(self)
-        self.UpdateUi()
+        self.setupUi(self) #QT init
+        
+        self.startUi()
         self._initFprint()
 
     def __del__(self):
@@ -50,7 +51,15 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         """Verify button event handler."""
         self.verify()
 
-    def UpdateUi(self):
+    def startUi(self):
+        """Sets the UI to its initial situation.
+        If user has an image, set it. Else, display 'no image'."""
+        #does img for UID exist?
+        #if so, pull it in
+        #else, place 'no image' text / img
+        pass
+
+    def updateUi(self):
         """Updates the UI to set disabled buttons where appropriate.
         Example: When there is no existing fprint, then the user should
         not be able to press erase."""
