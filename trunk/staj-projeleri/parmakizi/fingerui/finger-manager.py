@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature
 from PyQt4.QtGui import QDialog, QPixmap, QApplication
@@ -22,14 +24,13 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         #device
         self.__device = None
 
-
         super(fmDialog, self).__init__(parent)
         self.setupUi(self)
         self.UpdateUi()
         self._initFprint()
 
     def __del__(self):
-        #super(self.__class__, self).__del__()
+        #FIXME: super(self.__class__, self).__del__() ???
         self._exitFprint()
 
     #--------ui functions-------
@@ -56,6 +57,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         pass
 
     #------helper functions------
+
     def _initFprint(self):
         """Start the fprint class and discover devices."""
         libfprint.fp_init()
@@ -80,6 +82,29 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         if self.__device.dev:
             self.__device.close()
 
+    @staticmethod
+    def _savePrint(fprint, path=".printdata"): #TODO: Comarize.
+        """Save serialized print data."""
+        printfile = open(path, "w")
+        printfile.write(fprint.get_data())
+        printfile.close()
+
+    @staticmethod
+    def _loadPrint(path=".printdata"): #TODO: Comarize.
+        """Load serialized print data."""
+        printfile = open(path, "r")
+        printdata = printfile.read()
+        printfile.close()
+        return libfprint.Fprint(printdata)
+
+    @staticmethod
+    def _pixmapize(img, filename=".tmpimg"):
+        """Convert image into pixmap."""
+        img.save_to_file(filename) #TODO: comarize OR Fix workaround.
+        return QPixmap(filename)
+
+    #------- main functions --------
+
     #QImage.Format_RGB32 works.
     def getImage(self):
         """Get the fingerprint image and then display it. Blocking."""
@@ -90,11 +115,6 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.viewFinger.setPixmap(pixmap)
         self._closeDevice()
 
-    @staticmethod
-    def _pixmapize(img, filename=".tmpimg"):
-        """Convert image into pixmap."""
-        img.save_to_file(filename) #TODO: comarize OR Fix workaround.
-        return QPixmap(filename)
 
     def enroll(self):
         """Get fingerprint data, store it, and show image. Blocking."""
@@ -111,20 +131,6 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self._savePrint(fprnt) #TODO: save with uid
         self._closeDevice()
 
-    @staticmethod
-    def _savePrint(fprint, path=".printdata"): #TODO: Comarize.
-        """Save serialized print data."""
-        printfile = open(path, "w")
-        printfile.write(fprint.get_data())
-        printfile.close()
-
-    @staticmethod
-    def _loadPrint(path=".printdata"): #TODO: Comarize.
-        """Load serialized print data."""
-        printfile = open(path, "r")
-        printdata = printfile.read()
-        printfile.close()
-        return libfprint.Fprint(printdata)
 
     def verify(self):
         """Get fingerprint data and verify against previously stored data."""
@@ -149,5 +155,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     form = fmDialog(1)
     form.show()
-    form.enroll()
     app.exec_()
