@@ -1,4 +1,3 @@
-# translation of fr.po to Türkçe
 # translation of fr.po to
 # translation of tr.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
@@ -13,9 +12,9 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 00:44+0300\n"
-"PO-Revision-Date: 2008-07-02 17:16+0300\n"
+"PO-Revision-Date: 2008-07-03 11:13+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
-"Language-Team: Türkçe <tr@li.org>\n"
+"Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,7 +96,7 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:133
 msgid "Automatically partition and format selected disk!"
-msgstr "Partitionner et formatter automatiquement le disque choisi!"
+msgstr "Partitionner et formatter automatiquement le disque choisi"
 
 #: yali4/gui/Ui/autopartwidget.py:134
 msgid ""
@@ -109,11 +108,11 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:135
 msgid "No, I'll partition my disk manually."
-msgstr "Non, je vais partitionner mon disque manuellement."
+msgstr "Je vais partitionner mon disque manuellement"
 
 #: yali4/gui/Ui/autopartwidget.py:136
 msgid "You can use manual partitioning with this option"
-msgstr "Vous pouvez utiliser le partitionnement manuel avec cette option"
+msgstr "Cette option vous permet de partitionner votre disque manuellement"
 
 #: yali4/gui/Ui/autopartwidget.py:137
 msgid "If there is no suitable partition this option will be disabled"
@@ -237,7 +236,7 @@ msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:89
 msgid "Time Zone"
-msgstr ""
+msgstr "Fuseau Horaire"
 
 #: yali4/gui/Ui/dialog.py:59
 msgid "TextLabel"
@@ -486,7 +485,7 @@ msgstr "Mot de passe (seconde fois):"
 
 #: yali4/gui/Ui/setupuserswidget.py:158 yali4/gui/ScrUsers.py:187
 msgid "Create User"
-msgstr "Créer un utilisateur"
+msgstr "Ajouter l'utilisateur"
 
 #: yali4/gui/Ui/setupuserswidget.py:159
 msgid "Give administrator privileges to this user"
@@ -498,7 +497,7 @@ msgstr "Utilisateurs:"
 
 #: yali4/gui/Ui/setupuserswidget.py:163
 msgid "Delete Selected User"
-msgstr "Supprimer l'utilisateur choisi"
+msgstr "Supprimer l'utilisateur"
 
 #: yali4/gui/Ui/setupuserswidget.py:164
 msgid "Auto Login User :"
@@ -874,11 +873,11 @@ msgstr "Une erreur non gérée est produite!"
 
 #: yali4/gui/ScrAdmin.py:30
 msgid "Set Administrator"
-msgstr "Paramètrage d'administration"
+msgstr "Configuration d'administrateur"
 
 #: yali4/gui/ScrAdmin.py:31
 msgid "Admins have important rights on the system..."
-msgstr "Les administrateurs ont des privilèges importantes sur le système.."
+msgstr "Les administrateurs ont des privilèges importantes sur le système"
 
 #: yali4/gui/ScrAdmin.py:33
 msgid ""
@@ -915,7 +914,7 @@ msgstr ""
 "<p>\n"
 "Vous devez définir un mot de passe pour l'utilisateur root qui possède "
 "toutes les privilèges concernant le système.\n"
-"Le mot de passe doit être facile à souvenir(pour vous) mais difficile à deviner "
+"Le mot de passe doit être facile à souvenir (pour vous) mais difficile à deviner "
 "(pour les autres).\n"
 "Vous pouvez utiliser des miniscules ou majuscules, des chiffres et des "
 "ponctuations dans votre mot de passe.\n"
@@ -926,7 +925,6 @@ msgstr ""
 "Ici, vous pouvez définir un nom pour votre ordinateur et l'écrire dans la "
 "boîte ci-dessous. Puisque votre ordinateur sera connu dans le réseau "
 "local avec ce nom, on vous conseille de choisir un nom descriptif.\n"
-"Continuer avec l'installation après avoir réglé les paramètres.\n"
 "</p>\n"
 "<p>\n"
 "Appuyer sur \"Suivant\" pour continuer.\n"
@@ -967,7 +965,7 @@ msgstr "Choix du chargeur de démarrage"
 
 #: yali4/gui/ScrBootloader.py:37
 msgid "Configure the system boot..."
-msgstr "Réglage du démarrage du système..."
+msgstr "Configuration du démarrage du système"
 
 #: yali4/gui/ScrBootloader.py:39
 msgid ""
@@ -1022,7 +1020,7 @@ msgstr "Vérifier votre support"
 msgid "To ignore media corruptions you can check your media integrity..."
 msgstr ""
 "Vous pouvez vérifier l'intégrité de votre support pour ne pas avoir "
-"des problèmes pendant l'installation..."
+"des problèmes pendant l'installation"
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1055,7 +1053,7 @@ msgstr "Configurer votre fuseau horaire"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "You can change your timezone, time or date settings..."
-msgstr "Vous pouvez changer votre fuseau horaire et les paramètres de date..."
+msgstr "Vous pouvez changer votre fuseau horaire et modifier la date et l'heure"
 
 #: yali4/gui/ScrDateTime.py:30
 msgid ""
@@ -1147,7 +1145,7 @@ msgstr "Installation du système..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr "L'installation dure approximativement 30 minutes..."
+msgstr "L'installation dure approximativement 30 minutes"
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1232,11 +1230,11 @@ msgstr ""
 
 #: yali4/gui/ScrKahyaCheck.py:54
 msgid "Kahya is working..."
-msgstr "Kahya est en exécution..."
+msgstr "Kahya est en exécution"
 
 #: yali4/gui/ScrKahyaCheck.py:55
 msgid "Kahya will automatically install your system..."
-msgstr "Kahya va automatiquement installer votre système..."
+msgstr "Kahya va automatiquement installer votre système"
 
 #: yali4/gui/ScrKahyaCheck.py:56
 msgid ""
@@ -1254,7 +1252,7 @@ msgstr "Choisir le schéma du clavier"
 
 #: yali4/gui/ScrKeyboard.py:32
 msgid "Use your keyboard layout..."
-msgstr "Utiliser votre schéma du clavier..."
+msgstr "Utiliser votre propre schéma du clavier"
 
 #: yali4/gui/ScrKeyboard.py:34
 msgid ""
@@ -1284,7 +1282,7 @@ msgstr "Partitionnement du disque"
 
 #: yali4/gui/ScrPartitionAuto.py:39
 msgid "Auto or Manual partitioning..."
-msgstr "Partitionnement manuel ou automatique..."
+msgstr "Choisir entre le partitionnement manuel ou automatique"
 
 #: yali4/gui/ScrPartitionAuto.py:41
 msgid ""
@@ -1314,7 +1312,7 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "Vous pouvez installer Pardus si vous avez une zone de disque disponible \n"
-"une disque non utilisée de 4 Go(10 Go est recommandé). La zone de disque \n"
+"ou une disque non utilisée de 4 Go (10 Go est recommandé). La zone de disque \n"
 "sélectionnée sera automatiquement formatée \n"
 "On vous conseille de sauvegarder les données qui peuvent exister dans \n"
 "cette zone pour empêcher les problèmes futurs.\n"
@@ -1344,7 +1342,7 @@ msgstr "Partitionnement Manuel"
 
 #: yali4/gui/ScrPartitionManual.py:32
 msgid "You can easily configure your partitions..."
-msgstr "Vous pouvez facilement configurer vos partitions..."
+msgstr "Vous pouvez facilement configurer vos partitions"
 
 #: yali4/gui/ScrPartitionManual.py:34
 msgid ""
@@ -1543,7 +1541,7 @@ msgstr "Définir les utilisateurs"
 
 #: yali4/gui/ScrUsers.py:33
 msgid "Create users to use Pardus..."
-msgstr "Créer les utilisateur pour Pardus..."
+msgstr "Créer les utilisateur pour Pardus"
 
 #: yali4/gui/ScrUsers.py:35
 msgid ""
@@ -1572,14 +1570,13 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "Pardus 2008 permet à plusieurs utilisateurs de partager le même ordinateur.\n"
-"Vous pouvez attribuer des privilèges administratifs aux utilisateurs que vous créez;\n"
+"Vous pouvez attribuer des privilèges administratifs aux utilisateurs que vous créez.\n"
 "</p>\n"
 "<p>\n"
-"Pour créer un nouvel utilisateur, remplir le form et appuyez sur le bouton \"Ajouter utilisateur\".\n"
+"Pour créer un nouvel utilisateur, remplir le form et appuyez sur le bouton \"Ajouter l'utilisateur\".\n"
 "Si vous voulez qu'un utilisateur soit automatiquement entré à Pardus, sélectionner\n"
-"l'utilisateur de la liste. Pour supprimer un utilisateur, sélectionner son nom de la liste\n"
-"et appuyer sur le bouton \"Supprimer\".\n"
-"Continuer avec l'installation après avoir fini la configuration.\n"
+"l'utilisateur de la liste \"Utilisateur de Login Automatique\". Pour supprimer un utilisateur, sélectionner son nom de la liste\n"
+"et appuyer sur le bouton \"Supprimer l'utilisateur\".\n"
 "</p>\n"
 "<p>\n"
 "Appuyer \"Suivant\" pour continuer.\n"
@@ -1739,11 +1736,11 @@ msgstr "Configuration des paramètres horaires.."
 
 #: yali4/installer.py:216
 msgid "Disk analyze started.."
-msgstr "Analyse du disque en cours.."
+msgstr "Analyse du disque en cours..."
 
 #: yali4/installer.py:321
 msgid "Resize Finished ..."
-msgstr "Redimensionnement est terminé..."
+msgstr "Redimensionnement est terminé"
 
 #: yali4/installer.py:333
 msgid "Creating new partition ..."
@@ -1752,11 +1749,11 @@ msgstr "Création d'une nouvelle partition..."
 #: yali4/installer.py:446
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
-msgstr "Préparation du répertoire de l'utilisateur <b>%s</b>.."
+msgstr "Préparation du répertoire de l'utilisateur <b>%s</b>..."
 
 #: yali4/installer.py:516
 msgid "Trying to connect DBUS..."
-msgstr "Tentative de connexion au service DBUS..."
+msgstr "Tentative de connexion au service DBUS"
 
 #: yali4/installer.py:518
 msgid "Setting Hostname..."
