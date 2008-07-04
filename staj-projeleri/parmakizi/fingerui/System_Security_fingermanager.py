@@ -1,10 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """COMAR stuff for finger-manager"""
+from os import path
 
-datadir = "/var/lib/pyfinger/"
+datadir = "/var/lib/pyfinger/" #data directory, with trailing slash
 
 #FIXME: what are we supposed to return?
+
+def getPrintStatus(uid):
+    """Check if user has a fignerprint or not."""
+    if (type(uid) != int):
+        return "uid must be an int"
+    return (path.exists(datadir + str))
 
 def saveFprint(fprintdata, uid):
     """Save fingerprint data for given uid.
@@ -14,8 +21,11 @@ def saveFprint(fprintdata, uid):
         return "uid must be an int."
     if (type(fprintdata) != str):
         return "fprintdata must be in serialized string format."
-    datafile = open(datadir + str(uid), "w")
-    datafile.write(fprintdata)
+    try:
+        datafile = open(datadir + str(uid), "w")
+        datafile.write(fprintdata)
+    except:
+        return "Write failed."
     datafile.close()
 
 def loadFprint(uid):
@@ -23,8 +33,11 @@ def loadFprint(uid):
     See saveFprint() for more details."""
     if (type(uid) != int):
         return "uid must be an int."
-    datafile = open(datadir+str(uid), "r")
-    fprintdata = datafile.read()
+    try:
+        datafile = open(datadir+str(uid), "r")
+        fprintdata = datafile.read()
+    except:
+        return "Read failed."
     datafile.close()
     return fprintdata
 
