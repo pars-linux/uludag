@@ -12,7 +12,7 @@
 #include <qlabel.h>
 #include <qlayout.h>
 #include <kiconloader.h>
-
+#include <kconfig.h>
 #include "ticonview.h"
 #include "tcategoryview.h"
 #include "tcategoryview.moc"
@@ -52,9 +52,12 @@ void TCategoryView::setCategory( const QString& path, const QString& icon, const
 
 void TCategoryView::isExtraSelected(bool isChecked){
 
-_iconview->showExtras=isChecked;
-_iconview->setCategory( this->path );
+  _iconview->showExtras=isChecked;
+  _iconview->setCategory( this->path );
 
+  KConfig *config = KGlobal::config();
+  config->setGroup( "Extra" );
+  config->writeEntry("Selected", isChecked);
 }
 
 CategoryTitle::CategoryTitle( TCategoryView *view )

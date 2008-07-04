@@ -86,7 +86,11 @@ void TasmaMainWin::setupActions()
   _extra_modules = new KToggleAction( i18n("&Show Extra Modules"), 0, actionCollection(),"tasma-extra");
   _extra_modules->setWhatsThis ( i18n( "Shows Extra Configuration Modules" ) );
 
-  _extra_modules->setChecked(false);
+  KConfig *config = KGlobal::config();
+  config->setGroup("Extra");
+  bool showExtras = config->readNumEntry("Selected");
+
+  _extra_modules->setChecked(showExtras);
 
   _about_module = new KAction( i18n( "About Current Module" ), 0,
                                this, SLOT( aboutModule() ), actionCollection(),

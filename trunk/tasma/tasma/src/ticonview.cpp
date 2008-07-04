@@ -50,7 +50,10 @@ TIconView::TIconView( QWidget *parent, const char* name )
 
   setShowToolTips( false );
 
-  showExtras = false;
+  KConfig *config = KGlobal::config();
+  config->setGroup("Extra");
+  showExtras = config->readNumEntry( "Selected" );
+
   toolTip = 0;
 
   connect( this, SIGNAL( executed( QIconViewItem* ) ), SLOT( slotItemSelected( QIconViewItem* ) ) );
