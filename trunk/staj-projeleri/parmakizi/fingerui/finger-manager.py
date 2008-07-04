@@ -48,10 +48,15 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.verify()
 
     @pyqtSignature("")
+    def on_pushClose_clicked(self):
+        self._exitFprint()
+        self.reject()
+
+    @pyqtSignature("int")
     def on_dialogFinger_finished(self, result):
         """Handle the cases where the user presses ESC."""
         print "fooasdas"
-        self.exitFprint()
+        self._exitFprint()
 
     def closeEvent(self, event):
         """Handle the close event to exit library on time."""
