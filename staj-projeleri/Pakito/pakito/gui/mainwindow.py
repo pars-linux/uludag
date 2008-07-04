@@ -341,7 +341,6 @@ class MainWindow(KParts.MainWindow):
             dir = os.path.split(self.tempDir)[0]
             if os.path.isdir(dir):
                 shutil.rmtree(dir)
-#        pisi.api.finalize()
         self.close()
     
 #    def changeActionsTab(self, changed=True):
@@ -398,7 +397,12 @@ class MainWindow(KParts.MainWindow):
         self.twBottomTabs.addTab(part.widget(), iconloader.loadIcon("openterm", KIcon.Desktop), 1, "Console")
         self.connect(part, SIGNAL("destroyed()"), self.konsoleClosedSlot)
     
-    def fetchSlot(self):        
+    def fetchSlot(self):
+	from pakito.gui.pspecWidget.sourceWidget import sourceWidget
+	if sourceWidget.lePartOf.text() == '' :
+	    KMessageBox.sorry(self, i18n("\"PartOf\" section must be filled!"))
+	    return    
+	    
         self.prepareBuild()
         self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "fetch", self.pipeWriteEnd)
@@ -595,20 +599,14 @@ class PisiThread(Thread):
         self.pisiTo = pisiTo
         self.setDaemon(True)
 	
-    #SI start eklendi, hata kayboldu ama starta ne yazilacak?
-    #def start(self):
-	##pass
     
     def run(self):
          from cgi import escape
          try:
              self.initPisi()
              qApp.processEvents(QEventLoop.ExcludeUserInput)
-	     #SI os.system("sudo chmod 777 /var/cache/pisi/archives") # Password has to be entered automatically
-             #SI pisi.api.build_until(self.path, self.stage)
 	     pisi.api.build(self.path)
 	     qApp.processEvents(QEventLoop.ExcludeUserInput)
-             pisi.api.finalize()
              os.write(self.output, str(i18n("<b>Succesfully finished.</b><br>")))
          except Exception, inst:
              os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
