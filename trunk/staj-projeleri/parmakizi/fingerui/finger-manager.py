@@ -31,7 +31,6 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self._initFprint()
 
     def __del__(self):
-        #FIXME: super(self.__class__, self).__del__() ???
         self._exitFprint()
 
     #--------ui functions-------
@@ -50,6 +49,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def on_pushVerify_clicked(self):
         """Verify button event handler."""
         self.verify()
+
 
     def startUi(self):
         """Sets the UI to its initial situation.
