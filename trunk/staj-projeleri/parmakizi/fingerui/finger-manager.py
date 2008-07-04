@@ -1,10 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """finger-manager gui."""
-from PyQt4.QtCore import pyqtSignature
+from PyQt4.QtCore import pyqtSignature, SIGNAL
 from PyQt4.QtGui import QDialog, QPixmap, QApplication
 import fingerform
 import libfprint
+
+#FIXME: connectSlotByName problem for on_dialog_finished()
 
 class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     """Dialog for finger-manager.
@@ -29,41 +31,30 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         
         self.startUi()
         self._initFprint()
+        self.connect(self, SIGNAL("finished(int)"), self._exitFprint)
 
     #--------ui functions-------
 
     @pyqtSignature("")
     def on_pushEnroll_clicked(self):
-        """Enroll button event handler."""
+        """Enroll button slot."""
         self.enroll()
 
     @pyqtSignature("")
     def on_pushErase_clicked(self):
-        """Erase button event handler."""
+        """Erase button slot."""
         print "FP for uid " + self.__uid.__str__()
 
     @pyqtSignature("")
     def on_pushVerify_clicked(self):
-        """Verify button event handler."""
+        """Verify button slot."""
         self.verify()
 
     @pyqtSignature("")
     def on_pushClose_clicked(self):
+        """Close button slot."""
         self._exitFprint()
         self.reject()
-
-    @pyqtSignature("int")
-    def on_dialogFinger_finished(self, result):
-        """Handle the cases where the user presses ESC."""
-        print "fooasdas"
-        self._exitFprint()
-
-    def closeEvent(self, event):
-        """Handle the close event to exit library on time."""
-        print "died"
-        event.accept()
-        self._exitFprint()
-        #super(fmDialog, self).closeEvent(event)
 
     def startUi(self):
         """Sets the UI to its initial situation.
