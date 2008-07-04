@@ -30,9 +30,6 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.startUi()
         self._initFprint()
 
-    def __del__(self):
-        self._exitFprint()
-
     #--------ui functions-------
 
     @pyqtSignature("")
@@ -50,6 +47,18 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         """Verify button event handler."""
         self.verify()
 
+    @pyqtSignature("")
+    def on_dialogFinger_finished(self, result):
+        """Handle the cases where the user presses ESC."""
+        print "fooasdas"
+        self.exitFprint()
+
+    def closeEvent(self, event):
+        """Handle the close event to exit library on time."""
+        print "died"
+        event.accept()
+        self._exitFprint()
+        #super(fmDialog, self).closeEvent(event)
 
     def startUi(self):
         """Sets the UI to its initial situation.
