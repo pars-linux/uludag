@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-18 01:05+0300\n"
-"PO-Revision-Date: 2008-06-21 15:41+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"PO-Revision-Date: 2008-07-05 21:25+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,8 +63,7 @@ msgid ""
 "this driver, you must install <b>%1</b> package.</qt>"
 msgstr ""
 "<qt>De door u geselecteerde driver is niet op uw systeem geïnstalleerd. Om "
-"deze driver te kunnen gebruiken, dient u <b>%1</b> pakket te installeren.</"
-"qt>"
+"deze driver te kunnen gebruiken, dient u <b>%1</b> pakket te installeren.</qt>"
 
 #: src/display-manager.py:172 src/display-manager.py:491
 msgid "Start Package Manager"
@@ -72,7 +71,7 @@ msgstr "Start pakketbeheer"
 
 #: src/display-manager.py:185 src/dm_mainview.py:250 src/dm_mainview.py:270
 msgid "Primary Screen"
-msgstr "Primair scherm"
+msgstr "Eerste scherm"
 
 #: src/display-manager.py:185 src/dm_mainview.py:272
 msgid "Secondary Screen"
@@ -83,7 +82,7 @@ msgid ""
 "This output is already used by other screen.\n"
 "Do you want to swap between them?"
 msgstr ""
-"Deze uitvoer wordt als door een ander scherm gebruikt.\n"
+"Deze uitvoer wordt al door een ander scherm gebruikt.\n"
 "Wilt u wisselen tussen beide?"
 
 #: src/display-manager.py:447
@@ -152,7 +151,7 @@ msgstr "Dubbel scherm"
 
 #: src/dm_mainview.py:264
 msgid "Cloned Mode"
-msgstr "Kloon modus"
+msgstr "Gekloonde modus"
 
 #: src/dm_mainview.py:265
 msgid "Extended Mode"
@@ -204,12 +203,12 @@ msgstr "COMAR fout"
 
 #: src/displayconfig.py:102
 msgid "Waiting DBus..."
-msgstr "wachten DBus..."
+msgstr "Wachten DBus..."
 
 #: src/displayconfig.py:102
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
-"Verbinding met de DBus is onverwacht afgesloten, pogen opnieuw te "
+"Verbinding met de DBus is onverwacht afgesloten, proberen opnieuw te "
 "verbinden..."
 
 #: src/displayconfig.py:118
