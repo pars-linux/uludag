@@ -16,20 +16,13 @@ Legend:
 + Auto interface mode settings from scan results when clicked
 + Interface mode combobox will be filled from relevant ÇOMAR script
 
-? Eliminating the manual ip/mask information entering process. (Dhcp ...?)
+- Activating the link-local ip giving via avahi-autoipd   [ still have some problems... :( ]
 
-
-
-
-
-KNOWN BUGS
+TEST LOG
 --------------------------------------------------------------------------
 
-- Some wireless adaptors says;
+- Ad-Hoc tested and works well on;
 
-Error for wireless request "Set Mode" (8B06) :
-SET failed on device wlan0 ; Device or resource busy. 
+    Intel PRO/Wireless 3945ABG 
+    Intel PRO/Wireless 2200BG 
 
-while interface mode is being changed
-
-We can handle this issue via downing interface, changing mode, uping interface manually but a generic solution is needed. but it causes some not-clear, weird code-hacks. doh :(
