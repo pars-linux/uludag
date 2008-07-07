@@ -187,15 +187,18 @@ class connShare(QDialog):
         #İptables
         self.rule_add = str("-t nat -A POSTROUTING -o %s -j MASQUERADE" % (int_if))
         
+        def setProfile():
+            ch = self.callMethod("setProfile", "tr.org.pardus.comar.net.filter.set")
+            ch.registerDone(setRule)
+            ch.call("default","*","*","*","*")
+
+        def setRule():
+            ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
+            ch.call(self.rule_add)
+
         ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
+        ch.registerDone(setProfile)
         ch.call()
-
-        ch = self.callMethod("setProfile", "tr.org.pardus.comar.net.filter.set")
-        ch.call("default","*","*","*","*")
-
-        ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
-        ch.call(self.rule_add)
-
         self.close()
 
     def slotCheckBox(self):
@@ -216,7 +219,7 @@ class connShare(QDialog):
             ch = CallHandler("dhcp", "System.Service", "info", "tr.org.pardus.comar.system.service.set", self.winId(), comlink.busSys, comlink.busSes)
             ch.registerDone(handleState_dhcp)
             ch.call()
-
+            
             ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
             ch.call("-t nat -X")
 
