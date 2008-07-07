@@ -1,25 +1,28 @@
 <ui version="4.0" >
- <class>dialogEnroll</class>
- <widget class="QDialog" name="dialogEnroll" >
+ <class>dialogSwipe</class>
+ <widget class="QDialog" name="dialogSwipe" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>240</width>
-    <height>120</height>
+    <width>177</width>
+    <height>61</height>
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Please swipe your finger!</string>
+   <string>Swipe!</string>
   </property>
   <property name="sizeGripEnabled" >
    <bool>false</bool>
   </property>
+  <property name="modal" >
+   <bool>true</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
-    <widget class="QLabel" name="label" >
+    <widget class="QLabel" name="labelSwipe" >
      <property name="text" >
-      <string>TextLabel</string>
+      <string>Please swipe your finger!</string>
      </property>
      <property name="alignment" >
       <set>Qt::AlignCenter</set>
@@ -30,8 +33,6 @@
     </widget>
    </item>
   </layout>
-  <zorder>buttonBox</zorder>
-  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>
