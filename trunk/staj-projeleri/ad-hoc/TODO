@@ -18,6 +18,9 @@ Legend:
 
 - Activating the link-local ip giving via avahi-autoipd   [ still have some problems... :( ]
 
+
+
+=======
 TEST LOG
 --------------------------------------------------------------------------
 
@@ -25,4 +28,3 @@ TEST LOG
 
     Intel PRO/Wireless 3945ABG 
     Intel PRO/Wireless 2200BG 
-
