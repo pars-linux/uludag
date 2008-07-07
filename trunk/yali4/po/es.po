@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 00:44+0300\n"
-"PO-Revision-Date: 2008-06-26 20:20-0400\n"
+"PO-Revision-Date: 2008-07-06 22:31-0400\n"
 "Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
 "Language-Team:  <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -466,7 +466,7 @@ msgstr "Contraseña del Administrador del Sistema:"
 
 #: yali4/gui/Ui/rootpasswidget.py:173
 msgid "System administrator password (again):"
-msgstr "Contraseña del Administrador del Sistema (repetir):"
+msgstr "Repetir Contraseña:"
 
 #: yali4/gui/Ui/rootpasswidget.py:176
 msgid "Hostname:"
@@ -498,7 +498,7 @@ msgstr "Crear Usuario"
 
 #: yali4/gui/Ui/setupuserswidget.py:159
 msgid "Give administrator privileges to this user"
-msgstr "Conceder derechos administrativo al usuario"
+msgstr "Con derechos administrativos"
 
 #: yali4/gui/Ui/setupuserswidget.py:162
 msgid "Users:"
@@ -540,11 +540,11 @@ msgstr "Reiniciar Sistema!"
 
 #: yali4/gui/Ui/welcomewidget.py:94
 msgid "Accept!"
-msgstr "Acepto!"
+msgstr "Acepto !"
 
 #: yali4/gui/Ui/welcomewidget.py:95
 msgid "Don't Accept!"
-msgstr "No Acepto!"
+msgstr "No Acepto !"
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
@@ -708,19 +708,19 @@ msgstr ""
 # cambiar "mandatorio" por requerido
 #: yali4/gui/DiskWidgets.py:77
 msgid "as Pardus System Files (mandatory)"
-msgstr "raíz (/) del Sistema (requerido)"
+msgstr "Raíz (/) del Sistema (requerido)"
 
 #: yali4/gui/DiskWidgets.py:78
 msgid "as User Files (optional)"
-msgstr "archivos de los usuarios (opcional)"
+msgstr "Archivos de los usuarios (opcional)"
 
 #: yali4/gui/DiskWidgets.py:79
 msgid "as Swap Space (optional)"
-msgstr "espacio de intercambio Swap (opcional)"
+msgstr "Espacio de intercambio Swap (opcional)"
 
 #: yali4/gui/DiskWidgets.py:80
 msgid "as Storage Area"
-msgstr "área de almacenamiento"
+msgstr "Área de almacenamiento"
 
 #: yali4/gui/DiskWidgets.py:93
 msgid "Manuel Partitioning selected."
@@ -1751,7 +1751,7 @@ msgstr "No posible redimensionar la partición. Favor verifiquela antes de la in
 # Traza/Registro/mensaje
 #: yali4/__init__.py:67
 msgid "Backtrace:"
-msgstr "Backtrace:"
+msgstr "Trazo inverso:"
 
 #: yali4/installer.py:126
 msgid "YALI Is Working..."
@@ -2008,7 +2008,7 @@ msgstr "desconocido"
 
 #: yali4/partition.py:205
 msgid "free space"
-msgstr "espacio disponible"
+msgstr "Espacio disponible"
 
 #: yali4/partitiontype.py:49
 msgid "Install Root"
