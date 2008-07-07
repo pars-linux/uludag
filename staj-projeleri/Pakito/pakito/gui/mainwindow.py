@@ -398,10 +398,10 @@ class MainWindow(KParts.MainWindow):
         self.connect(part, SIGNAL("destroyed()"), self.konsoleClosedSlot)
     
     def fetchSlot(self):
-	from pakito.gui.pspecWidget.sourceWidget import sourceWidget
-	if sourceWidget.lePartOf.text() == '' :
-	    KMessageBox.sorry(self, i18n("\"PartOf\" section must be filled!"))
-	    return    
+	#from pakito.gui.pspecWidget.sourceWidget import sourceWidget
+	#if sourceWidget.lePartOf.text() == '' :
+	 #   KMessageBox.sorry(self, i18n("\"PartOf\" section must be filled!"))
+	  #  return
 	    
         self.prepareBuild()
         self.twBottomTabs.expandTab()
@@ -417,18 +417,25 @@ class MainWindow(KParts.MainWindow):
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def setupSlot(self):
+	ui = UI(self.pipeWriteEnd)
         self.prepareBuild()
         self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "setup", self.pipeWriteEnd)    
         qApp.processEvents(QEventLoop.ExcludeUserInput)
+	ui.display("Setup Slot is starting", "black")
         self.pisithread.start()
+	ui.confirm("Fetch operation is ")
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def buildSlot(self):
+	ui = UI(self.pipeWriteEnd)
         self.twBottomTabs.expandTab()
         self.prepareBuild()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
+	ui.display("Build Slot is starting", "black")
         self.pisithread.start()
+	ui.confirm("Fetch operation is ")
+	ui.confirm("Start operation is ")
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def installSlot(self):
@@ -598,16 +605,16 @@ class PisiThread(Thread):
         self.output = pipe
         self.pisiTo = pisiTo
         self.setDaemon(True)
-	
-    
+
     def run(self):
          from cgi import escape
+	 ui = UI(self.output)
          try:
              self.initPisi()
              qApp.processEvents(QEventLoop.ExcludeUserInput)
 	     pisi.api.build(self.path)
 	     qApp.processEvents(QEventLoop.ExcludeUserInput)
-             os.write(self.output, str(i18n("<b>Succesfully finished.</b><br>")))
+             os.write(self.output, str(i18n("<b>Successfully finished.</b><br>")))
          except Exception, inst:
              os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
              return
@@ -615,7 +622,7 @@ class PisiThread(Thread):
          if self.stage == "buildpackages":
              # TODO: .pisi'nin yerini belirle
 	     self.pisiTo = self.path
-             command = "mv %s %s" % (str(os.getcwd() + "/*.pisi").replace(" ", "\ "),self.pisiTo.replace(" ", "\ "))
+             command = "mv %s %s" % (str(os.getcwd() + "/*.pisi").replace(" ", "\ "), self.pisiTo.replace(" ", "\ "))
              os.system(command)
     
     def initPisi(self):
@@ -653,7 +660,7 @@ class UI(pisi.ui.UI):
         self.display(msg, "darkgreen")
     
     def confirm(self, msg):
-        self.display(msg + " auto-confirmed.", "red")
+        self.display(msg + " auto-confirmed.", "green")
         return True
     
     def checkPermission(self):
