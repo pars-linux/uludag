@@ -360,6 +360,7 @@ class Dev:
         elif self.device_mode == "ad-hoc":
             ifc = self.ifc
             wifi = Wireless(ifc)
+            ifc.down()
             wifi.setMode("Ad-Hoc")
             ifc.up() 
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
