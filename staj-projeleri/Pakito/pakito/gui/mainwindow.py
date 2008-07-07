@@ -50,6 +50,11 @@ class MainWindow(KParts.MainWindow):
         self.tempDir = None
         self.realDir = None
         self.pisithread = None
+	
+	self.fetchFlag = 0
+	self.setupFlag = 0
+	self.buildFlag = 0
+	self.makePackageFlag = 0
    
         # main area
         self.mainWidget = QSplitter(self)
@@ -417,12 +422,19 @@ class MainWindow(KParts.MainWindow):
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def setupSlot(self):
+	from cgi import escape
 	ui = UI(self.pipeWriteEnd)
         self.prepareBuild()
         self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "setup", self.pipeWriteEnd)    
         qApp.processEvents(QEventLoop.ExcludeUserInput)
-	ui.display("Setup Slot is starting", "black")
+	ui.display("Setup Slot is starting.", "black")
+	try:
+	    fetchSlot()
+	    fetchFlag = 1
+	except Exception, inst:
+             os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
+             return
         self.pisithread.start()
 	ui.confirm("Fetch operation is ")
         qApp.processEvents(QEventLoop.ExcludeUserInput)
@@ -432,17 +444,22 @@ class MainWindow(KParts.MainWindow):
         self.twBottomTabs.expandTab()
         self.prepareBuild()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
-	ui.display("Build Slot is starting", "black")
+	ui.display("Build Slot is starting.", "black")
         self.pisithread.start()
 	ui.confirm("Fetch operation is ")
 	ui.confirm("Start operation is ")
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def installSlot(self):
+	ui = UI(self.pipeWriteEnd)
         self.prepareBuild()
         self.twBottomTabs.expandTab()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "install", self.pipeWriteEnd)
+	ui.display("Install Slot is starting.", "black")
         self.pisithread.start()
+	ui.confirm("Fetch operation is ")
+	ui.confirm("Start slot operation is ")
+	ui.confirm("Building slot operation is ")
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def makePackageSlot(self):
