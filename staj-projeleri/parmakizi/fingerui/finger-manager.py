@@ -3,10 +3,11 @@
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL
 from PyQt4.QtGui import QDialog, QPixmap, QApplication
-import fingerform
-import libfprint
+import libfprint, time
+import fingerform, swipe
 
 #FIXME: connectSlotByName problem for on_dialog_finished()
+#FIXME: swipe popup not painting in time. when fixed, add to verify too.
 
 class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     """Dialog for finger-manager.
@@ -28,7 +29,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
         super(fmDialog, self).__init__(parent)
         self.setupUi(self) #QT init
-        
+
         self.startUi()
         self._initFprint()
         self.connect(self, SIGNAL("finished(int)"), self._exitFprint)
@@ -43,7 +44,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     @pyqtSignature("")
     def on_pushErase_clicked(self):
         """Erase button slot."""
-        print "FP for uid " + self.__uid.__str__()
+        self.erase()
 
     @pyqtSignature("")
     def on_pushVerify_clicked(self):
@@ -112,6 +113,11 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         return libfprint.Fprint(printdata)
 
     @staticmethod
+    def _erasePrint():
+        """Erase print data.""" #TODO: comarize
+        print "Erase to be implemented!"
+
+    @staticmethod
     def _pixmapize(img, filename=".tmpimg"):
         """Convert image into pixmap."""
         img.save_to_file(filename) #TODO: comarize OR Fix workaround.
@@ -132,6 +138,10 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def enroll(self):
         """Get fingerprint data, store it, and show image. Blocking."""
+        popup = swipe.swipeDialog()
+        popup.show()
+        #popup.repaint()
+        #time.sleep(2)
         self._openDevice()
         while 1:
             (fprnt, img) = self.__device.enroll_finger()
@@ -144,6 +154,11 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.viewFinger.setPixmap(pixmap)
         self._savePrint(fprnt) #TODO: save with uid
         self._closeDevice()
+        #popup.hide()
+
+    def erase(self):
+        """Erase stored fingerprint data."""
+        self._erasePrint(self)
 
 
     def verify(self):
