@@ -55,4 +55,8 @@ def addInterface(br_name, if_name):
 
 def delInterface(br_name, if_name):
     commands.getstatusoutput("%s delif %s %s" % (brcmd, br_name, if_name))
+
+def checkShare(int_if, shr_if):
+    commands.getstatusoutput("/sbin/ifconfig %s" %(shr_if))
+    if tup_obj
     

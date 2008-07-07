@@ -91,34 +91,21 @@ class connShare(QDialog):
         self.connect(self.cancelBut, SIGNAL("clicked()"), self.close)
 
         # COMAR
-        self.setupBusses()
         self.state = "off"
         self.getState()
+        self.profiles = []
 
-        #Comlink
-        comlink.device_hook.append(self.getDeviceList)
-        for script in comlink.links:
-            if script == "openvpn" or script == "ppp":
+    def getProfiles(self):
+        for hash, profile in comlink.connections.iteritems():
+            if profile  in self.profiles:
                 continue
-            comlink.queryDevices(script)
-
-    def getDeviceList(self, script, devices):
-        for key in devices:
-            self.intcombo.insertItem("%s-%s" % (key.split("_")[-1], devices[key]))
-            self.sharecombo.insertItem("%s-%s" % (key.split("_")[-1], devices[key]))
-        if script == comlink.links.keys()[-1]:
-            comlink.device_hook.remove(self.getDeviceList)
-
-    def setupBusses(self):
-        try:
-            self.busSys = dbus.SystemBus()
-            self.busSes = dbus.SessionBus()
-        except dbus.DBusException:
-            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
-            return False
-        return True
-
-
+            if profile.script == "openvpn" or profile.script == "ppp":
+                continue
+            print profile.devid
+            self.profiles.append(profile)
+            self.intcombo.insertItem(profile.name)
+            self.sharecombo.insertItem(profile.name)
+    
     def languageChange(self):
         self.setCaption(i18n("Internet Connection Sharing"))
         self.sharecheckBox.setText(i18n("Share Internet Connection"))
@@ -133,7 +120,7 @@ class connShare(QDialog):
         ch = CallHandler("iptables", model, method,
                          action,
                          self.winId(),
-                         self.busSys, self.busSes)
+                         comlink.busSys, comlink.busSes)
         ch.registerError(self.comarError)
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
@@ -162,32 +149,82 @@ class connShare(QDialog):
         ch.call()
 
     def shareConnection(self):
-        int_if = str(self.intcombo.currentText()).split("-")[0]
-        shr_if = str(self.sharecombo.currentText()).split("-")[0]	
+        int_if = (self.profiles[self.intcombo.currentItem()].devname.split("(")[-1])[:-1]
+        shr_if = (self.profiles[self.sharecombo.currentItem()].devname.split("(")[-1])[:-1]
+
         if int_if == shr_if:
             KMessageBox.information(self, i18n("The interfaces that you have selected must be different to share internet connection"), i18n("Check Selected Interfaces"))
             return
-        self.rule_add = str("-t nat -A POSTROUTING -o %s -j MASQUERADE" % (int_if))
-        #self.rule_del = str("-t nat -D POSTROUTING -o %s -j MASQUERADE" % (int_if))
+        
+        #Set share settings(dhcp...)
+        int = self.profiles[self.intcombo.currentItem()]
+        shr = self.profiles[self.sharecombo.currentItem()]
+        if int.state == None:
+            int.state = "down"
+        if int.name == None:
+            int.name = ""
+        if int.net_addr == None:
+            int.net_addr = ""
+        if shr.name == None:
+            shr.name = ""
+        if shr.state == None:
+            shr.state = "down"
+        if shr.net_addr == None:
+            shr.net_addr = ""
+        if shr.net_mode == None:
+            shr.net_mode = "auto"
+        if shr.net_mask == None:
+            shr.net_mask = ""
 
-        #check sharing status
+        ch = CallHandler("share", "Net.Share", "checkShare", "tr.org.pardus.comar.net.share.set", self.winId(), comlink.busSys, comlink.busSes)
+
+        ch.call(shr.net_addr, shr.net_mode, shr.net_mask, "193.140.100.220")
+
         #DHCP Server
-        ch = CallHandler("dhcp", "System.Service", "start", "tr.org.pardus.comar.system.service.set", self.winId(), self.busSys, self.busSes)
+        ch = CallHandler("dhcp", "System.Service", "start", "tr.org.pardus.comar.system.service.set", self.winId(), comlink.busSys, comlink.busSes)
         ch.call()
 
         #İptables
+        self.rule_add = str("-t nat -A POSTROUTING -o %s -j MASQUERADE" % (int_if))
+        
         ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
         ch.call()
 
+        ch = self.callMethod("setProfile", "tr.org.pardus.comar.net.filter.set")
+        ch.call("default","*","*","*","*")
+
         ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
         ch.call(self.rule_add)
+
         self.close()
 
     def slotCheckBox(self):
+        def handleState_dhcp(_type, _desc, _state):
+            if _state in ["on", "started"]:
+                ch = CallHandler("dhcp", "System.Service", "stop", "tr.org.pardus.comar.system.service.set", self.winId(), comlink.busSys, comlink.busSes)
+                ch.call()
+
+        def handleState_iptables(_type, _desc, _state):
+            if _state in ["on", "started"]:
+                ch = self.callMethod("stop", "tr.org.pardus.comar.system.service.set", "System.Service")
+                ch.call()
+
         if not self.sharecheckBox.isOn():
             self.groupBox1.setEnabled(False)
             self.buttonGroup2.setEnabled(False)
-            #get nat rules and if any exist delete them
+        
+            ch = CallHandler("dhcp", "System.Service", "info", "tr.org.pardus.comar.system.service.set", self.winId(), comlink.busSys, comlink.busSes)
+            ch.registerDone(handleState_dhcp)
+            ch.call()
+
+            ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
+            ch.call("-t nat -X")
+
+            ch = self.callMethod("info", "tr.org.pardus.comar.system.service.set", "System.Service")
+            ch.registerDone(handleState_iptables)
+            ch.call()
+
+
         else:
             self.groupBox1.setEnabled(True)
             self.buttonGroup2.setEnabled(True)

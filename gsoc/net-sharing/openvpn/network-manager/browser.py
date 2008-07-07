@@ -450,7 +450,8 @@ class Widget(QVBox):
         for script in comlink.links:
             comlink.queryConnections(script)
 
-    def slotShare(self):	
+    def slotShare(self):
+        self.share.getProfiles()
         self.share.show()
 	
 
