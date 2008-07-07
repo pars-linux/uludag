@@ -383,7 +383,6 @@ class Dev:
             d["state"]="up"
             DB.setDB(self.name,d)
             notify("Net.Link", "stateChanged", (self.name, "up", self.address))
-            ifc.up()
 
     def down(self):
         ifc = self.ifc
