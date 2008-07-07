@@ -3,27 +3,27 @@
 """COMAR stuff for finger-manager"""
 import os, os.path as path
 
-datadir = "/var/lib/pyfinger/" #data directory, w/ trailing slash
+datadir = "/var/lib/finger-manager/" #data directory, w/ trailing slash
 fpname = "fpdata" #name for fingerprint data files
-imgname = "img" #name for image files
+imgname = "fpimg" #name for image files
 
 #FIXME: Catch more specific exceptions?
 #TODO: should printstatus() check for image too? maybe separate function?
 
-def printstatus(uid):
+def getStatus(uid):
     """Check if user has a fingerprint or not.
     Does not check for image, as it is not always needed."""
     return (path.exists(path.join(datadir, str(uid), fpname)))
 
-def savedata(fprintdata, imgdata, uid):
+def saveData(uid, fprintdata, imgdata):
     """Save fingerprint data for given uid.
     Data is saved under datadir/uid/fpdata.
+    If no image is available, a blank string must be supplied.
     Make sure data dir is not readable by common users."""
-    if (type(uid) != int):
-        return False #uid must be an int.
-    if (type(fprintdata) != str):
-        return False #data must be string
-    writepath = path.join(datadir, str(uid))
+    if (not uid) or (not fprintdata) or (not imgdata):
+        return False
+    writepath = path.join(datadir, uid)
+    print writepath
     try:
         if not path.exists(writepath):
             os.makedirs(writepath)
@@ -32,37 +32,44 @@ def savedata(fprintdata, imgdata, uid):
         fpdatafile.write(fprintdata)
         imgdatafile = open(path.join(writepath, imgname), "w")
         imgdatafile.write(imgdata)
+    except IOError, (errno, strerror):
+        print "I/O error(%s): %s" % (errno, strerror)
     except:
         return False #Write failed.
     fpdatafile.close()
     imgdatafile.close()
+    return True
 
-def loaddata(uid):
+def loadData(uid):
     """Load fingerprint data for given uid.
     See savedata() for more details."""
-    if (type(uid) != int):
-        return False #uid must be an int.
     writepath = path.join(datadir, str(uid))
+    if not uid:
+        return False
     try:
         fpdatafile = open(path.join(writepath, fpname), "r")
         fprintdata = fpdatafile.read()
         imgdatafile = open(path.join(writepath, imgname), "r")
-        imgdata = fpdatafile.read()
+        imgdata = imgdatafile.read()
     except:
         return False #Read failed.
     fpdatafile.close()
     imgdatafile.close()
     return (fprintdata, imgdata)
 
-def eraseFprint(uid):
+def eraseData(uid):
     """Erase fingerprint data for given uid.
     See savedata() for more details."""
-    if (type(uid) != int):
-        return False #uid must be an int.
+    if not uid:
+        return False
     fppath = path.join(datadir, str(uid), fpname)
     imgpath = path.join(datadir, str(uid), imgname)
-    if path.exists(fppath):
-        os.remove(fppath)
-    if path.exists(imgpath):
-        os.remove(imgpath)
+    try:
+        if path.exists(fppath):
+            os.remove(fppath)
+        if path.exists(imgpath):
+            os.remove(imgpath)
+    except:
+        return False
 
+    return True
