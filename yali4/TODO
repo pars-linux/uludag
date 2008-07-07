@@ -1,5 +1,4 @@
 
-
 YALI TODO List
 ==============
 
@@ -13,6 +12,7 @@ Legend:
 + Accomplished
 
 1. Alpha (1.0)
+
  + basic GUI
    + gui structure
    + welcome screen
@@ -40,8 +40,8 @@ Legend:
 
  + boot loader
 
-
 2. Beta (1.0)
+
  + GUI
    + auto partitioning
    + basic setup: users
@@ -64,7 +64,6 @@ Legend:
  + bootloader
    + find Windows partitions and add to grub.conf
 
-
 3. RC1 (1.0)
 
  + GUI
@@ -76,11 +75,8 @@ Legend:
    + support extended partitions
 
  + logging system
-
  + exception handling
-
  + implement swap as file.
-
 
 3. Release (1.0)
 
@@ -90,9 +86,6 @@ Legend:
 
  - GUI
    - try statemachine for screens/stages
-
- - partitioning
-   - fat32 resize
 
  + bootloader
    + only add valid operating system partitions to list (#1455)
@@ -106,9 +99,9 @@ Legend:
  + GUI
    + reorder installation steps, ask questions first and then install (#4639)
 
-6. Release (1.2) - Pardus 2008
+6. Release (2.0) - Pardus 2008
 
- - GUI
+ + GUI
    + add clock/date settings screen
    + Renew the user interface
 
@@ -117,12 +110,24 @@ Legend:
  / kahya (which; KAHya is Yali Automator) (#3956)
    + load kahya file from given path (from grub)
    + install the system by using given kahya file
+
+ + show progress screen for chown operation in home directory (#5715)
+ + support for different types of partitions (#5844)
+ + add other linux distros to the bootloader (#1450)
+
+7. Release (2.1)
+
+ + GUI
+   + Set a usable terminal emulation in X ,thanks to qtermwidget :)
+
+ - Partitioning
+   - fat32 resize
+   - LVM/RAID Support
+
+ - Kahya
    - support for multi-profile in kahya file
    - support for network setup in kahya file
    - export setup session as kahya file
 
- ? show progress screen for chown operation in home directory (#5715)
- + support for different types of partitions (#5844)
- ? add other linux distros to the bootloader (#1450)
  ? dont install unnecessary language packages (based on installation language) (#6139)
 

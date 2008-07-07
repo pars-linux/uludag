@@ -39,6 +39,10 @@ class Widget(Ui_YaliMain):
         self.screenData = None
         # shortcut to open debug window
         self.debugShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F2),self.ui)
+
+        # shortcut to open a console
+        self.consoleShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.Key_F12),self.ui)
+
         # self.ui.setAttribute(Qt.WA_OpaquePaintEvent)
         # move one step at a time
         self.moveInc = 1
@@ -49,10 +53,15 @@ class Widget(Ui_YaliMain):
 
         # Main Slots
         QObject.connect(self.debugShortCut, SIGNAL("activated()"), self.toggleDebug)
+        QObject.connect(self.consoleShortCut, SIGNAL("activated()"), self.toggleConsole)
         QObject.connect(self.buttonNext, SIGNAL("clicked()"), self.slotNext)
         QObject.connect(self.buttonBack, SIGNAL("clicked()"), self.slotBack)
         QObject.connect(self.toggleHelp, SIGNAL("clicked()"), self.slotToggleHelp)
         QObject.connect(self.releaseNotes, SIGNAL("clicked()"), self.showReleaseNotes)
+
+    def toggleConsole(self):
+        import os
+        os.system("TERM='xterm' %s/data/consoleq" % ctx.consts.data_dir)
 
     # show/hide help text
     def slotToggleHelp(self):

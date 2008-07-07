@@ -39,7 +39,7 @@ def user_faces():
     return glob.glob(p)
 
 def data_files():
-    p = "yali4/data/*.xml"
+    p = "yali4/data/*"
     return glob.glob(p)
 
 def getRevision():
