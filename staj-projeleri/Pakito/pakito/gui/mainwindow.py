@@ -452,7 +452,6 @@ class MainWindow(KParts.MainWindow):
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
 	ui.display("Build Slot is starting.", "black")
 	ui.confirm("Fetch operation is ")
-	ui.confirm("Start operation is ")
 	if self.fetchFlag == 0:
 	    try:
 	        ui.confirm("Fetch operation is ")
@@ -463,6 +462,7 @@ class MainWindow(KParts.MainWindow):
 	    except Exception, inst:
                 os.write(self.pipeWriteEnd, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
                 return
+	ui.confirm("Start operation is ")
 	if self.setupFlag == 0:
 	    try:
 	        ui.confirm("Setup Slot operation is ")
@@ -476,6 +476,7 @@ class MainWindow(KParts.MainWindow):
 	
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
+	self.buildFlag = 1
     
     def installSlot(self):
 	ui = UI(self.pipeWriteEnd)
@@ -485,8 +486,38 @@ class MainWindow(KParts.MainWindow):
 	ui.display("Install Slot is starting.", "black")
         self.pisithread.start()
 	ui.confirm("Fetch operation is ")
-	ui.confirm("Start slot operation is ")
+	if self.fetchFlag == 0:
+	    try:
+	        ui.confirm("Fetch operation is ")
+	        self.fetchSlot()
+	        os.write(self.pipeWriteEnd, "<b>Fetch operation is </b>")
+	        #TOFIX: "Thread already started." 
+	        self.fetchFlag = 1
+	    except Exception, inst:
+                os.write(self.pipeWriteEnd, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
+                return
+	ui.confirm("Setup slot operation is ")
+	if self.setupFlag == 0:
+	    try:
+	        ui.confirm("Setup Slot operation is ")
+	        self.setupSlot()
+	        os.write(self.pipeWriteEnd, "<b>Setup Slot operation is </b>")
+	        #TOFIX: "Thread already started." 
+	        self.fetchFlag = 1
+	    except Exception, inst:
+                os.write(self.pipeWriteEnd, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
+                return
 	ui.confirm("Building slot operation is ")
+	if self.buildFlag == 0:
+	    try:
+	        ui.confirm("Buildinf Slot operation is ")
+	        self.setupSlot()
+	        os.write(self.pipeWriteEnd, "<b>Building Slot operation is </b>")
+	        #TOFIX: "Thread already started." 
+	        self.fetchFlag = 1
+	    except Exception, inst:
+                os.write(self.pipeWriteEnd, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
+                return
         qApp.processEvents(QEventLoop.ExcludeUserInput)
         
     def makePackageSlot(self):
