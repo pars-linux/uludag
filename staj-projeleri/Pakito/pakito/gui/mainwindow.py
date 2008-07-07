@@ -413,6 +413,7 @@ class MainWindow(KParts.MainWindow):
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "fetch", self.pipeWriteEnd)
         self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
+	self.fetchFlag = 1
         
     def unpackSlot(self):
         self.prepareBuild()
@@ -429,15 +430,20 @@ class MainWindow(KParts.MainWindow):
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "setup", self.pipeWriteEnd)    
         qApp.processEvents(QEventLoop.ExcludeUserInput)
 	ui.display("Setup Slot is starting.", "black")
-	try:
-	    fetchSlot()
-	    fetchFlag = 1
-	except Exception, inst:
-             os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
-             return
+	if self.fetchFlag == 0:
+	    try:
+	        ui.confirm("Fetch operation is ")
+	        self.fetchSlot()
+	        os.write(self.pipeWriteEnd, "<b>Fetch operation is </b>")
+	        #TOFIX: "Thread already started." 
+	    except Exception, inst:
+                os.write(self.pipeWriteEnd, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
+                return
+	
         self.pisithread.start()
-	ui.confirm("Fetch operation is ")
         qApp.processEvents(QEventLoop.ExcludeUserInput)
+	os.write(self.pipeWriteEnd, "<b>Setup slot operation is</b>")
+	self.setupFlag = 1
         
     def buildSlot(self):
 	ui = UI(self.pipeWriteEnd)
@@ -445,9 +451,30 @@ class MainWindow(KParts.MainWindow):
         self.prepareBuild()
         self.pisithread = PisiThread(self.tempDir + "/pspec.xml", "build", self.pipeWriteEnd)
 	ui.display("Build Slot is starting.", "black")
-        self.pisithread.start()
 	ui.confirm("Fetch operation is ")
 	ui.confirm("Start operation is ")
+	if self.fetchFlag == 0:
+	    try:
+	        ui.confirm("Fetch operation is ")
+	        self.fetchSlot()
+	        os.write(self.pipeWriteEnd, "<b>Fetch operation is </b>")
+	        #TOFIX: "Thread already started." 
+	        self.fetchFlag = 1
+	    except Exception, inst:
+                os.write(self.pipeWriteEnd, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
+                return
+	if self.setupFlag == 0:
+	    try:
+	        ui.confirm("Setup Slot operation is ")
+	        self.setupSlot()
+	        os.write(self.pipeWriteEnd, "<b>Setup Slot operation is </b>")
+	        #TOFIX: "Thread already started." 
+	        self.fetchFlag = 1
+	    except Exception, inst:
+                os.write(self.pipeWriteEnd, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
+                return
+	
+        self.pisithread.start()
         qApp.processEvents(QEventLoop.ExcludeUserInput)
     
     def installSlot(self):
@@ -631,7 +658,7 @@ class PisiThread(Thread):
              qApp.processEvents(QEventLoop.ExcludeUserInput)
 	     pisi.api.build(self.path)
 	     qApp.processEvents(QEventLoop.ExcludeUserInput)
-             os.write(self.output, str(i18n("<b>Successfully finished.</b><br>")))
+             os.write(self.output, str(i18n("<b>successfully finished.</b><br>")))
          except Exception, inst:
              os.write(self.output, str(i18n("\n<font color=\"red\">*** Error: %s</font><br>\n\n")) % unicode(escape(str(inst))))
              return
