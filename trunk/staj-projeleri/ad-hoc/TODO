@@ -15,12 +15,8 @@ Legend:
 + At scan results, ad-hoc networks will look like different from managed
 + Auto interface mode settings from scan results when clicked
 + Interface mode combobox will be filled from relevant ÇOMAR script
++ Activating the link-local ip giving via avahi-autoipd (RFC 3927)  [ps: still have some problems... :( ]
 
-- Activating the link-local ip giving via avahi-autoipd   [ still have some problems... :( ]
-
-
-
-=======
 TEST LOG
 --------------------------------------------------------------------------
 
@@ -28,3 +24,8 @@ TEST LOG
 
     Intel PRO/Wireless 3945ABG 
     Intel PRO/Wireless 2200BG 
+
+KNOW BUGS
+--------------------------------------------------------------------------
+
+- Intel PRO/Wireless 3945ABG gets encryption mode wrong. it always selects wpa when user click at scan results popup
