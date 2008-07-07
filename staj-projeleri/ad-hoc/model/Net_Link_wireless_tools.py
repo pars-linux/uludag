@@ -320,13 +320,15 @@ class Dev:
     def up(self):
         if self.device_mode == "managed":
             ifc = self.ifc
+            #ifc.down()
             wifi = Wireless(ifc)
-            ifc.down()
             wifi.setMode("Managed")
-            ifc.up()
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
-
+            ifc.up()
+            if self.remote:
+                wifi.setSSID(self.remote)
             err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, ssid=self.remote)
+            #ifc.up()
             if err:
                 notify("Net.Link", "stateChanged", (self.name, "inaccessible", err))
                 fail("auth failed")
@@ -358,7 +360,8 @@ class Dev:
         elif self.device_mode == "ad-hoc":
             ifc = self.ifc
             wifi = Wireless(ifc)
-            
+            wifi.setMode("Ad-Hoc")
+            ifc.up() 
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
 
             err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, ssid=self.remote)
@@ -366,23 +369,22 @@ class Dev:
             if err:
                 notify("Net.Link", "stateChanged", (self.name, "inaccessible", err))
                 fail("auth failed")
-            
-            wifi.setMode("Ad-Hoc")
 
             if self.mode == "manual":
                 ifc.setAddress(self.address, self.mask)
             else:
-                subprocess.Popen(["/usr/sbin/avahi-autoipd", "-D", "--force-bind", ifc.name], stdout=subprocess.PIPE)
+                subprocess.Popen(["/usr/sbin/avahi-autoipd", "-D", "--force-bind", ifc.name], stdout=subprocess.PIPE).wait()
                 from time import sleep
                 sleep(9) # Give sometime to the auto-ip deamon
 
-            ifc.up()
+            #ifc.up()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "01"], stdout=subprocess.PIPE).wait() # FIXME: channel auto mode sometimes does not work. So, a 2 digit number (01,02,03 ... 10) must be given
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
             d=DB.getDB(self.name)
             d["state"]="up"
             DB.setDB(self.name,d)
-            notify("Net.Link", "stateChanged", (self.name, "up", self.address))
+            addr = ifc.getAddress()[0]
+            notify("Net.Link", "stateChanged", (self.name, "up", addr))
 
     def down(self):
         ifc = self.ifc
