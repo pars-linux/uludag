@@ -362,7 +362,7 @@ class Dev:
             wifi = Wireless(ifc)
             ifc.down()
             wifi.setMode("Ad-Hoc")
-            ifc.up() 
+            #ifc.up() 
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
 
             err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, ssid=self.remote)
@@ -376,11 +376,11 @@ class Dev:
             else:
                 subprocess.Popen(["/usr/sbin/avahi-autoipd", "-D", "--force-bind", ifc.name], stdout=subprocess.PIPE).wait()
                 from time import sleep
-                sleep(9) # Give sometime to the auto-ip deamon
+                sleep(8) # FIXME: Give sometime to the auto-ip deamon for getting IP. Yeah time.sleep is evil and ugly but works for now. Will be fixed for non-Desperate housecoders :)
 
-            #ifc.up()
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "channel", "01"], stdout=subprocess.PIPE).wait() # FIXME: channel auto mode sometimes does not work. So, a 2 digit number (01,02,03 ... 10) must be given
             subprocess.Popen(["/usr/sbin/iwconfig", ifc.name, "essid", self.remote], stdout=subprocess.PIPE).wait()
+            ifc.up()
             d=DB.getDB(self.name)
             d["state"]="up"
             DB.setDB(self.name,d)
