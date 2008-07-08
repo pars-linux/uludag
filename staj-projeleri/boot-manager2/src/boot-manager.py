@@ -10,6 +10,7 @@
 #
 
 import sys
+import copy,string
 
 from qt import *
 from kdecore import *
@@ -430,9 +431,9 @@ class IconButton(QPushButton):
     def __init__(self, parent, icon_name):
         QPushButton.__init__(self, parent)
         self.setFlat(True)
-        self.myset = getIconSet(icon_name, KIcon.Small)
+        self.myset = getIconSet(icon_name)
         self.setIconSet(self.myset)
-        size = self.myset.iconSize(QIconSet.Small)
+        size = self.myset.iconSize(QIconSet.Automatic)
         self.myWidth = size.width() + 4
         self.myHeight = size.height() + 4
         self.resize(self.myWidth, self.myHeight)
@@ -617,8 +618,8 @@ class widgetEntryList2(QWidget):
 	
 	self.image0 = QPixmap()
         self.image0.loadFromData(image2_data,"PNG")
-	self.pushButton3 = QPushButton(self,"pushButton3")
-        self.pushButton3.setGeometry(QRect(520,230,120,31))
+	self.pushButton3 = IconButton(self,"edittrash")
+        self.pushButton3.setGeometry(QRect(500,230,120,31))
 
        
 
@@ -630,35 +631,36 @@ class widgetEntryList2(QWidget):
         self.pixmapLabel2.setPixmap(self.image0)
         self.pixmapLabel2.setScaledContents(1)
 
-        self.pushButton1 = QPushButton(self,"pushButton1")
-        self.pushButton1.setGeometry(QRect(520,130,120,31))
+        self.pushButton1 = IconButton(self,"add")
+        self.pushButton1.setGeometry(QRect(500,130,120,31))
+	self.pushButton3.setEnabled(False)
 
-        self.pushButton2 = QPushButton(self,"pushButton2")
-        self.pushButton2.setGeometry(QRect(520,180,120,31))
+        self.pushButton2 = IconButton(self,"configure")
+        self.pushButton2.setGeometry(QRect(500,180,120,31))
+	self.pushButton2.setEnabled(False)
 
         self.listEntries = EntryView(self)
-        self.listEntries.setGeometry(QRect(20,90,480,340))
+        self.listEntries.setGeometry(QRect(10,80,470,300))
         self.listEntries.setFocusPolicy(QListView.WheelFocus)
         self.listEntries.setFrameShadow(QListView.Sunken)
         self.listEntries.setAllColumnsShowFocus(1)
-        self.listEntries.setShowSortIndicator(1)
-        self.listEntries.setRootIsDecorated(0)
+        self.listEntries.setShowSortIndicator(0)
         self.listEntries.setResizeMode(QListView.NoColumn)
         self.pushButton3.setText(("Delete"))
         self.textLabel1.setText(("<font><font><font><font size=\"+1\" ><b>Bootloader  Settings<font color=\"#ff5500\" size=\"+1\" face=\"Century Schoolbook L\"></font></b></font></font></font></font>"))
 	
         self.pixmapLabel2.setText(QString.null)
         self.pushButton1.setText(("Add..."))
-        self.pushButton2.setText(("Change"))
+        self.pushButton2.setText(("Properties"))
 
         self.checkSaved = QCheckBox(self,"checkBox1")
-        self.checkSaved.setGeometry(QRect(20,440,220,31))
+        self.checkSaved.setGeometry(QRect(20,400,220,30))
 
         self.spinTimeout= QSpinBox(self,"spinBox1")
-        self.spinTimeout.setGeometry(QRect(591,440,50,31))
+        self.spinTimeout.setGeometry(QRect(570,400,50,30))
 
         self.textLabel1_2 = QLabel(self,"textLabel1_2")
-        self.textLabel1_2.setGeometry(QRect(530,441,60,30))
+        self.textLabel1_2.setGeometry(QRect(510,400,60,30))
         self.checkSaved.setText(("Remember last booted entry."))
         self.textLabel1_2.setText(("Timeout:"))
         
@@ -708,9 +710,43 @@ class widgetEntryList2(QWidget):
         layout.addWidget(self.spinTimeout, 0, 3)"""
 
         self.connect(self.checkSaved, SIGNAL("clicked()"), self.slotCheckSaved)
+	self.connect(self.pushButton1,SIGNAL("clicked()"),self.slotAddEntry)
+	
+	
+	  
         self.setTimeoutSlot(True)
 
         self.init()
+	self.connect(self.listEntries,SIGNAL("selectionChanged()"), self.slotChangeButton)
+	self.connect(self.pushButton2,SIGNAL("clicked()"),self.slotEdit)
+	self.connect(self.pushButton3,SIGNAL("clicked()"),self.slotDelete)
+	
+    def slotEdit(self):
+        item=self.listEntries.selectedItem()
+	for d in self.listEntries.entries:
+		if(d.title==item.text(0)):
+			d.slotEdit()
+   
+    	
+    def slotDelete(self):
+        item=self.listEntries.selectedItem()
+	for d in self.listEntries.entries:
+		if(d.title==item.text(0)):
+			d.slotDelete()
+			
+    def slotChangeButton(self):
+        versions = []
+        for item in self.listEntries.entries:
+            if self.listEntries.isSelected(self.listEntries.findItem(item.title,0)):
+                versions.append(item)
+    
+        if len(versions):
+            self.pushButton2.setEnabled(True)
+            self.pushButton3.setEnabled(True)
+        else:
+            self.pushButton2.setEnabled(False)
+            self.pushButton3.setEnabled(False)	
+    
 
     def setTimeoutSlot(self, active):
         if active:
@@ -725,13 +761,13 @@ class widgetEntryList2(QWidget):
 
     def slotCheckSaved(self):
         def handler():
-            self.parent.queryEntries()
+            self.parent.parent.queryEntries()
         def cancel():
-            default = self.parent.options["default"]
+            default = self.parent.parent.options["default"]
             self.checkSaved.setChecked(default == 'saved')
         def error(exception):
             cancel()
-        ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
+        ch = self.parent.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
         ch.registerAuthError(error)
         ch.registerDBusError(error)
         ch.registerCancel(cancel)
@@ -749,7 +785,7 @@ class widgetEntryList2(QWidget):
         def error(exception):
             handler()
         self.spinTimeout.setEnabled(False)
-        ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
+        ch = self.parent.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
         ch.registerAuthError(error)
         ch.registerDBusError(error)
         ch.registerCancel(cancel)
@@ -757,8 +793,10 @@ class widgetEntryList2(QWidget):
         ch.call("timeout", str(value))
 
    
-    def slotUnused(self):
-        self.parent.showScreen("Unused")
+    
+    def slotAddEntry(self):
+        self.parent.parent.widgetEditEntry.newEntry()
+
 
     def slotHelp(self):
         pass
@@ -768,136 +806,238 @@ class widgetEntryList(QWidget):
         self.parent = parent
 
         self.tabWidget2 = QTabWidget(self,"tabWidget2")
-        self.tabWidget2.setGeometry(QRect(21,91,570,370))
+        self.tabWidget2.setGeometry(QRect(7,7,640,470))
 
-        self.tab = widgetEntryList2(self.tabWidget2)
+        self.tab = widgetEntryList2(self)
         self.tabWidget2.insertTab(self.tab,QString.fromLatin1(""))
 
-        self.tab_2 = QWidget(self.tabWidget2)
+        self.tab_2 = widgetUnused(self)
         self.tabWidget2.insertTab(self.tab_2,QString.fromLatin1(""))
 
        
 
         self.resize(QSize(600,480).expandedTo(self.minimumSizeHint()))
+	self.resize(QSize(700,480).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
       
         self.tabWidget2.changeTab(self.tab,("Existing"))
         self.tabWidget2.changeTab(self.tab_2,("Unused"))
-	self.tab.connect(self.tab.pushButton1,SIGNAL("clicked()"),self.slotAddEntry)
-	self.init()
 	
-    def slotAddEntry(self):
-        self.parent.widgetEditEntry.newEntry()
 
-	
-    def init(self):
-        #self.toolbar.setEnabled(True)
-        self.tab.listEntries.viewport().setEnabled(True)
-        self.tab.checkSaved.setEnabled(True)
-
-
+class Addnew(QDialog):
+	def __init__(self, format,parent=None):
+           #super(Addnew, self).__init__(parent)
+	   QDialog.__init__(self, parent)
+	   self.labelSystem = QLabel(self)
+           self.labelSystem.setText(i18n("System:"))
+	   self.mainwid=widgetEditEntry(win.mainwidget)
+	   #self.mainwid.show()  
 
 class widgetEditEntry(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
-        self.parent = parent
+        
+	self.parent = parent
         self.systems = self.parent.systems
 
         self.saved = False
         self.fields = {}
+	self.fields2 = {}
 
-        layout = QGridLayout(self, 1, 1, 11, 6)
 
-        self.labelTitle = QLabel(self)
-        self.labelTitle.setText(i18n("Title:"))
-        layout.addMultiCellWidget(self.labelTitle, 0, 0, 0, 1)
+        self.textLabel1 = QLabel(self,"textLabel1")
+        self.textLabel1.setGeometry(QRect(20,0,120,40))
 
-        self.editTitle = QLineEdit(self)
-        self.labelTitle.setMinimumSize(90, 10)
-        layout.addMultiCellWidget(self.editTitle, 1, 1, 0, 1)
+        self.textLabel8 = QLabel(self,"textLabel8")
+        self.textLabel8.setGeometry(QRect(20,250,141,31))
 
-        self.labelSystem = QLabel(self)
-        self.labelSystem.setText(i18n("System:"))
-        layout.addMultiCellWidget(self.labelSystem, 2, 2, 0, 1)
+        LayoutWidget = QWidget(self,"layout3")
+        LayoutWidget.setGeometry(QRect(30,290,400,210))
+        layout3 = QGridLayout(LayoutWidget,1,1,11,6,"layout3")
 
-        self.listSystem = ComboList(self)
-        layout.addWidget(self.listSystem, 3, 0)
+        self.labelBoot = QLabel(LayoutWidget)
 
-        spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
-        layout.addItem(spacer, 3, 1)
+        layout3.addWidget(self.labelBoot,3,0)
 
-        self.labelRoot = QLabel(self)
-        self.labelRoot.setText(i18n("Root:"))
-        layout.addMultiCellWidget(self.labelRoot, 4, 4, 0, 1)
+        self.labelSplash = QLabel(LayoutWidget)
 
-        self.editRoot = QLineEdit(self)
-        layout.addMultiCellWidget(self.editRoot, 5, 5, 0, 1)
+        layout3.addWidget(self.labelSplash,2,0)
 
-        self.fields["root"] = (self.labelRoot, self.editRoot)
+        self.labelRoot2= QLabel(LayoutWidget)
 
-        self.labelKernel = QLabel(self)
-        self.labelKernel.setText(i18n("Kernel:"))
-        layout.addMultiCellWidget(self.labelKernel, 6, 6, 0, 1)
+        layout3.addWidget(self.labelRoot2,0,0)
 
-        self.editKernel = QLineEdit(self)
-        layout.addMultiCellWidget(self.editKernel, 7, 7, 0, 1)
+        self.labelResume = QLabel(LayoutWidget)
 
-        self.fields["kernel"] = (self.labelKernel, self.editKernel)
+        layout3.addWidget(self.labelResume,4,0)
 
-        self.labelOptions = QLabel(self)
-        self.labelOptions.setText(i18n("Kernel Parameters:"))
-        layout.addMultiCellWidget(self.labelOptions, 8, 8, 0, 1)
+        self.editOptions5 = QComboBox(0,LayoutWidget)
+        self.editOptions5.setEditable(1)
 
-        self.editOptions = QLineEdit(self)
-        layout.addMultiCellWidget(self.editOptions, 9, 9, 0, 1)
+        layout3.addWidget(self.editOptions5,4,1)
 
-        self.fields["options"] = (self.labelOptions, self.editOptions)
+        self.editOptions1= QLineEdit(LayoutWidget)
 
-        self.labelInitrd = QLabel(self)
-        self.labelInitrd.setText(i18n("Initial Ramdisk:"))
-        layout.addMultiCellWidget(self.labelInitrd, 10, 10, 0, 1)
+        layout3.addWidget(self.editOptions1,0,1)
 
-        self.editInitrd = QLineEdit(self)
-        layout.addMultiCellWidget(self.editInitrd, 11, 11, 0, 1)
+        self.editOptions4 = QComboBox(0,LayoutWidget)
 
-        self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
+        layout3.addWidget(self.editOptions4,3,1)
+
+        self.editOptions3 = QComboBox(0,LayoutWidget)
+
+        layout3.addWidget(self.editOptions3,2,1)
+
+        self.labelvga= QLabel(LayoutWidget)
+
+        layout3.addWidget(self.labelvga,1,0)
+
+        self.editOptions2 = QLineEdit(LayoutWidget)
+
+        layout3.addWidget(self.editOptions2,1,1)
 
         self.checkDefault = QCheckBox(self)
-        self.checkDefault.setText(i18n("Set as default boot entry."))
-        layout.addMultiCellWidget(self.checkDefault, 12, 12, 0, 1)
+        self.checkDefault.setText(("Set as default boot entry."))
+        self.checkDefault.setGeometry(QRect(11,511,188,22))
 
-        spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
-        layout.addMultiCell(spacer, 13, 13, 0, 1)
+        self.buttonCancel = IconButton(self,"cancel")
+        self.buttonCancel.setText(("Cancel"))
+        self.buttonCancel.setGeometry(QRect(349,539,90,29))
 
-        layout_buttons = QHBoxLayout(layout)
-        spacer = QSpacerItem(10, 1, QSizePolicy.Expanding, QSizePolicy.Fixed)
-        layout_buttons.addItem(spacer)
+        self.buttonOK = IconButton(self,"ok")
+        self.buttonOK.setText(("Save"))
+        self.buttonOK.setGeometry(QRect(264,540,80,29))
 
-        self.buttonOK = QPushButton(self)
-        self.buttonOK.setText(i18n("Save"))
-        layout_buttons.addWidget(self.buttonOK)
+        self.labelRoot = QLabel(self)
+	self.labelRoot.setText(("Root:"))
+        self.labelRoot.setGeometry(QRect(30,120,50,20))
 
-        self.buttonCancel = QPushButton(self)
-        self.buttonCancel.setText(i18n("Cancel"))
-        layout_buttons.addWidget(self.buttonCancel)
+        self.labelTitle = QLabel(self)
+	self.labelTitle.setText(("Title:"))
+        self.labelTitle.setGeometry(QRect(30,40,40,20))
 
-        layout.addMultiCell(layout_buttons, 14, 14, 0, 1)
+        self.toolKernel = IconButton(self,"filefind")
+        self.toolKernel.setGeometry(QRect(350,160,90,31))
 
+        self.labelInitrd = QLabel(self)
+        self.labelInitrd.setGeometry(QRect(30,200,50,20))
+
+        self.editTitle = QLineEdit(self)
+        self.editTitle.setGeometry(QRect(91,40,340,25))
+
+        self.editKernel = QComboBox(0,self)
+        self.editKernel.setGeometry(QRect(90,160,251,25))
+        self.editKernel.setEditable(1)
+
+        self.labelSystem= QLabel(self)
+	self.labelSystem.setText(("System:"))
+        self.labelSystem.setGeometry(QRect(30,80,60,20))
+
+        self.editRoot = QComboBox(0,self)
+        self.editRoot.setGeometry(QRect(90,120,340,25))
+        self.editRoot.setEditable(1)
+       
+        self.listSystem = ComboList(self)
+        self.listSystem.setGeometry(QRect(91,80,340,25))
+
+        self.labelKernel = QLabel(self)
+        self.labelKernel.setGeometry(QRect(30,160,60,20))
+
+        self.editInitrd = QComboBox(0,self)
+        self.editInitrd.setGeometry(QRect(90,200,250,25))
+        self.editInitrd.setEditable(1)
+
+        self.toolInitrd = IconButton(self,"filefind")
+        self.toolInitrd.setGeometry(QRect(350,200,90,31))
+
+        self.line1 = QFrame(self,"line1")
+        self.line1.setGeometry(QRect(20,230,420,20))
+        self.line1.setFrameShape(QFrame.HLine)
+        self.line1.setFrameShadow(QFrame.Sunken)
+        self.line1.setFrameShape(QFrame.HLine)
+        self.fields["options1"] = (self.labelRoot2, self.editOptions1)
+	self.fields["options2"] = (self.labelvga, self.editOptions2)
+	self.fields2["options3"] = (self.labelSplash, self.editOptions3)
+	self.fields2["options4"] = (self.labelBoot, self.editOptions4)
+	self.fields2["options5"] = (self.labelResume, self.editOptions5)
+        self.fields2["root"] = (self.labelRoot, self.editRoot)
+        self.fields2["kernel"] = (self.labelKernel, self.editKernel)
+        self.fields2["initrd"] = (self.labelInitrd, self.editInitrd)
+
+
+        self.setCaption(("Form1"))
+        self.textLabel1.setText(("<b>Basic Settings</b>"))
+        self.textLabel8.setText(("<b>Kernel Parameters</b>"))
+        self.labelBoot.setText("Booting mode:")       
+        self.labelSplash.setText("Splash:")
+        self.labelRoot2.setText(("Root:"))
+        self.labelResume.setText(("Resume:"))
+        self.labelvga.setText(("Vga:"))
+        self.buttonCancel.setText(("Cancel"))
+        self.buttonOK.setText(("Save"))
+        self.labelRoot.setText(("Root:"))
+        self.labelTitle.setText(("Title:"))
+        self.toolKernel.setText(("Browse.."))
+        self.labelInitrd.setText(("Initrd:"))
+        self.labelSystem.setText(("System:"))
+        self.labelKernel.setText(("Kernel:"))
+        self.toolInitrd.setText(("Browse.."))
+	self.rootdir=QDir("/sys/block/sda","sda?")
+	self.kerneldir=QDir("/boot","*vmlinuz* *kernel*")
+	self.initdir=QDir("/boot","*initram*")
+	self.editOptions3.insertItem("verbose")
+	self.editOptions3.insertItem("native")
+	self.editOptions3.insertItem("silent")
+	self.editOptions4.insertItem("quiet")
+	self.editOptions4.insertItem("debug")
+	for s in self.rootdir.entryList():
+	  self.editRoot.insertItem("/dev/"+s)
+	  self.editOptions5.insertItem("/dev/"+s)
+	
+	for s in self.kerneldir.entryList():
+	  self.editKernel.insertItem("/boot/"+s)
+	  
+	for s in self.initdir.entryList():
+	  self.editInitrd.insertItem("/boot/"+s)
+	 
+       
+        self.resize(QSize(455,585).expandedTo(self.minimumSizeHint()))
+       
         self.connect(self.listSystem, SIGNAL("activated(const QString &)"), self.slotSystem)
         self.connect(self.buttonOK, SIGNAL("clicked()"), self.slotSave)
+	self.connect(self.toolKernel, SIGNAL("clicked()"), self.slotFile1)
+	self.connect(self.toolInitrd, SIGNAL("clicked()"), self.slotFile2)
         self.connect(self.buttonCancel, SIGNAL("clicked()"), self.slotExit)
 
-        self.resetEntry()
+        self.clearWState(Qt.WState_Polished)
+	self.resetEntry()
+
+    def slotFile1(self):
+        filename=QFileDialog.getOpenFileName("/", "*", self, "Select Kernel image file")
+        self.editKernel.setCurrentText(filename)
+	
+    def slotFile2(self):
+        filename=QFileDialog.getOpenFileName("/", "*", self, "Select Initrd file")
+        self.editInitrd.setCurrentText(filename)
+ 
+
 
     def newEntry(self):
         self.resetEntry()
-        self.parent.showScreen("EditEntry")
-
+        win.resize(QSize(455, 585).expandedTo(win.minimumSizeHint()))
+	d=Addnew(self.parent.widgetEditEntry)
+	#win.mainwidget.hide()
+	#d.show()
+        self.parent.stack.raiseWidget(self.parent.widgetEditEntry)
+	#win.resize(QSize(800, 480).expandedTo(win.minimumSizeHint()))
+	
+       
 
    
     def editEntry(self, entry):
         self.resetEntry()
+        win.resize(QSize(455, 585).expandedTo(win.minimumSizeHint()))
         self.entry = entry
         systems = self.parent.systems
 
@@ -907,12 +1047,27 @@ class widgetEditEntry(QWidget):
 
         self.listSystem.setCurrentText(unicode(systems[entry["os_type"]][0]))
         self.slotSystem(unicode(systems[entry["os_type"]][0]))
+	
+	if "options" in entry:
+            c=(unicode(copy.deepcopy(entry["options"])))
+            paramlist=c.split(" ")
+	    entry["options1"]=paramlist[0].replace("root=","")
+	    entry["options2"]=paramlist[1].replace("vga=","")
+	    entry["options3"]=paramlist[2].replace("splash=","")
+	    entry["options4"]=paramlist[3]
+	    entry["options5"]=paramlist[4].replace("resume=","")
 
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             if label in entry:
                 widgetEdit.setText(unicode(entry[label]))
+		
+	for label, (widgetLabel, widgetEdit) in self.fields2.iteritems():
+            if label in entry:
+                widgetEdit.setCurrentText(unicode(entry[label]))
 
-        if self.parent.widgetEntries.checkSaved.isChecked():
+        
+
+        if self.parent.widgetEntries.tab.checkSaved.isChecked():
             self.checkDefault.hide()
         else:
             self.checkDefault.show()
@@ -920,7 +1075,7 @@ class widgetEditEntry(QWidget):
         if "default" in entry and entry["default"] != "saved":
             self.checkDefault.setChecked(True)
 
-        self.parent.showScreen("EditEntry")
+        self.parent.stack.raiseWidget(self.parent.widgetEditEntry)
 
 
 
@@ -948,7 +1103,7 @@ class widgetEditEntry(QWidget):
                     confirm_uninstall = KMessageBox.questionYesNo(self, i18n("This is a Pardus kernel entry.\nDo you want to uninstall it from the system?"), i18n("Uninstall Kernel"))
                     if confirm_uninstall == KMessageBox.Yes:
                         uninstall = "yes"
-            self.parent.widgetEntries.listEntries.setEnabled(False)
+            self.parent.widgetEntries.tab.listEntries.viewport().setEnabled(False)
 
             ch = self.parent.callMethod("removeEntry", "tr.org.pardus.comar.boot.loader.removeentry")
             ch.call(index, title, uninstall)
@@ -980,7 +1135,14 @@ class widgetEditEntry(QWidget):
             if unicode(sys_label) == label:
                 break
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
-            if label in fields:
+            if label in self.fields:
+                widgetLabel.show()
+                widgetEdit.show()
+            else:
+                widgetLabel.hide()
+                widgetEdit.hide()
+	for label, (widgetLabel, widgetEdit) in self.fields2.iteritems():
+            if label in self.fields2:
                 widgetLabel.show()
                 widgetEdit.show()
             else:
@@ -993,7 +1155,7 @@ class widgetEditEntry(QWidget):
     def slotSave(self):
         self.buttonOK.setEnabled(False)
         default = "no"
-        if self.parent.widgetEntries.checkSaved.isChecked():
+        if self.parent.widgetEntries.tab.checkSaved.isChecked():
             default = "saved"
         elif self.checkDefault.isChecked():
             default = "yes"
@@ -1016,6 +1178,15 @@ class widgetEditEntry(QWidget):
             if label in systems[os_type][1]:
                 value = unicode(self.fields[label][1].text())
                 args[label] = value
+		
+	for label in self.fields2:
+            if label in systems[os_type][1]:
+                value = unicode(self.fields2[label][1].currentText())
+                args[label] = value
+		
+	args["options"]=unicode("root="+self.editOptions1.text()+" vga="+self.editOptions2.text()+
+	                " splash="+self.editOptions3.currentText()+" "+self.editOptions4.currentText()
+	                +" resume="+self.editOptions5.currentText())
 
         if self.entry:
             args["index"] = int(self.entry["index"])
@@ -1037,13 +1208,15 @@ class widgetEditEntry(QWidget):
 
     def slotExit(self):
         self.resetEntry()
-        self.parent.showScreen("Entries")
+        win.resize(QSize(650, 480).expandedTo(win.minimumSizeHint()))
+        self.parent.stack.raiseWidget(self.parent.widgetEntries)
+	
+
 
 class widgetUnused(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
         self.parent = parent
-
        # self.link = comar_link
 
         layout = QGridLayout(self, 1, 1, 11, 6)
@@ -1056,10 +1229,11 @@ class widgetUnused(QWidget):
         self.listKernels.setMinimumSize(100, 200)
         self.listKernels.setSelectionMode(QListBox.Extended)
         layout.addMultiCellWidget(self.listKernels, 1, 4, 0, 0)
-
+       
         self.buttonAdd = QPushButton(self)
-        self.buttonAdd.setText(i18n("Add Boot Entry"))
         self.buttonAdd.setEnabled(False)
+        self.buttonAdd.setText(i18n("Add Boot Entry"))
+       
         layout.addWidget(self.buttonAdd, 1, 1)
 
         self.buttonRemove = QPushButton(self)
@@ -1081,7 +1255,7 @@ class widgetUnused(QWidget):
 
         self.listBusy = False
         self.listUnused()
-
+    
     def listUnused(self):
         def handler(versions):
             self.listKernels.clear()
@@ -1089,9 +1263,13 @@ class widgetUnused(QWidget):
                 if version.strip():
                     self.listKernels.insertItem(version)
             self.slotKernels()
-        ch = self.parent.callMethod("listUnused", "tr.org.pardus.comar.boot.loader.get")
+        ch = self.parent.parent.callMethod("listUnused", "tr.org.pardus.comar.boot.loader.get")
         ch.registerDone(handler)
         ch.call()
+	
+    def slotExit(self):
+        #self.parent.parent.stack.raiseWidget(self.parent.parent.widgetEntries)
+	self.parent.tabWidget2.setCurrentPage(0)
     
     def slotKernels(self):
         item = self.listKernels.firstItem()
@@ -1110,18 +1288,19 @@ class widgetUnused(QWidget):
     def slotAdd(self):
         self.buttonAdd.setEnabled(False)
         self.buttonRemove.setEnabled(False)
-        self.parent.widgetEditEntry.newEntry()
+	self.parent.parent.widgetEditEntry.resetEntry()
+        self.parent.parent.stack.raiseWidget(self.parent.parent.widgetEditEntry)
         
         version = str(self.listKernels.currentText())
         root = getRoot()
-        self.parent.widgetEditEntry.editTitle.setText(version)
-        self.parent.widgetEditEntry.editRoot.setText(root)
+        self.parent.parent.widgetEditEntry.editTitle.setText(version)
+        self.parent.parent.widgetEditEntry.editRoot.setText(root)
         if version.endswith("-dom0"):
-            self.parent.widgetEditEntry.listSystem.setCurrentText("Xen")
+            self.parent.parent.widgetEditEntry.listSystem.setCurrentText("Xen")
         else:
-            self.parent.widgetEditEntry.listSystem.setCurrentText("Linux")
-        self.parent.widgetEditEntry.editKernel.setText("/boot/kernel-%s" % version)
-        self.parent.widgetEditEntry.editOptions.setText("root=%s" % root)
+            self.parent.parent.widgetEditEntry.listSystem.setCurrentText("Linux")
+        self.parent.parent.widgetEditEntry.editKernel.setText("/boot/kernel-%s" % version)
+        self.parent.parent.widgetEditEntry.editOptions.setText("root=%s" % root)
     
     def slotRemove(self):
         confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall selected kernel(s) from the system?"), i18n("Uninstall Kernel"))
@@ -1141,13 +1320,11 @@ class widgetUnused(QWidget):
                         self.listBusy = False
                         self.listUnused()
                 for version in versions:
-                    ch = self.parent.callMethod("removeUnused", "tr.org.pardus.comar.boot.loader.removeunused")
+                    ch = self.parent.parent.callMethod("removeUnused", "tr.org.pardus.comar.boot.loader.removeunused")
                     ch.registerDone(handler, version == versions[-1])
                     ch.call(version)
     
-    def slotExit(self):
-        self.resetEntry()
-        self.parent.showScreen("Entries")
+    
 
 
 class widgetMain(QWidget):
@@ -1177,9 +1354,9 @@ class widgetMain(QWidget):
         self.stack.addWidget(self.widgetEditEntry)
         self.screens.append("EditEntry")
         
-        self.widgetUnused = widgetUnused(self)
+        """self.widgetUnused = widgetUnused(self)
         self.stack.addWidget(self.widgetUnused)
-        self.screens.append("Unused")
+        self.screens.append("Unused")"""
         
         self.setup()
     def openBus(self):
@@ -1235,7 +1412,11 @@ class widgetMain(QWidget):
         sys.exit()
     
     def comarError(self, exception):
-        KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+        if "Access denied" in exception.message:
+            message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(self, message, i18n("Error"))
+        else:
+            KMessageBox.error(self, str(exception), i18n("COMAR Error"))
     
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Boot.Loader", member_keyword="signal", path_keyword="path")
@@ -1251,8 +1432,8 @@ class widgetMain(QWidget):
                 if self.widgetEditEntry.entry and not self.widgetEditEntry.saved:
                     KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
                     self.widgetEditEntry.slotExit()
-                if not self.widgetUnused.listBusy:
-                    self.widgetUnused.listUnused()
+                if not self.widgetEntries.tab_2.listBusy:
+                    self.widgetEntries.tab_2.listUnused()
 
     
     def showScreen(self, label):
@@ -1384,6 +1565,7 @@ def create_boot_manager(parent, name):
 # Standalone
 def main():
     global kapp
+    global win
 
     about = AboutData()
     KCmdLineArgs.init(sys.argv, about)
@@ -1393,13 +1575,13 @@ def main():
         print i18n('Boot Manager is already started!')
         return
 
-    kapp = KUniqueApplication(True, True, True)
+    kapp = KUniqueApplication(True, True, False)
     
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
     
     win = QDialog()
     win.setCaption(i18n('Boot Manager'))
-    win.resize(QSize(500, 475).expandedTo(win.minimumSizeHint()))
+    win.resize(QSize(650, 475).expandedTo(win.minimumSizeHint()))
     attachMainWidget(win)
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
