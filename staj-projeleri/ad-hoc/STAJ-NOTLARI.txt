@@ -1,0 +1,97 @@
+[ 16 Haziran 08 ]
+
+Stajımın ilk günü proje ekibini, çalışma ortamını ve daha önceden bilmediğim kimi Pardus araçlarını tanımakla geçti. İlk gün bize verilen bilgisayarlara Pardus 2008 RC2 kurduk ve gerekli programları/güncelleştirmeleri yükleyerek bize tavsiye edilen "Yeni Geliştirici Kılavuzu" belgesini çalıştık. Bununla beraber projelerimizde kullanacağımız SVN sürüm yönetimi için gerekli hesap ayarlarımızı aldık ve kullanım için belge doğrultusunda kimi çalışmalar yaptık.
+
+[ 17 Haziran 08 ]
+
+Bugün staj boyunca çalışacağımız projelerimiz belli oldu. Projem, benim de
+başvuru yaparken istediğim üzere Pardus'un ilk sürümlerinden beri çalışır
+durumda yer alan ve ünlü dağıtım Kubuntu'nun da ileriki dönemlerde kullanmayı
+düşündüğü Pardus ağ yöneticisi'ne ad-hoc bağlantı desteği
+eklemek oldu.
+
+Ad-hoc bağlantı en genel anlamda kablosuz ağlarda erişim noktası veya
+yönlendirici olmadan aygıttan aygıta (peer-to-peer/p2p) yapılan ağ çeşidi olarak literatüre
+geçmiştir. Linux işletim sistemlerinde kullanıcı profilinden dolayı şu kadar hep konsoldan komut
+girilerek yapılagelindiğinden camiada ciddi anlamda bir kullanım ağırlığına
+sahip, kullanıcı arayüzüne de sahip bir program bulunmamaktadır. Fakat kullanım kolaylığına paralel olarak artan "son
+kullanıcı" sayısı ile bu konuda büyük bir ihtiyaç doğmuştur.
+
+Projemde başlangıç için geleneksel metod olan görsel bir araca ihtiyaç
+duymadan -konsoldan- ad-hoc bağlantının nasıl yapıldığı ile alakalı kimi belgeler araştırıp okudum. Yapacağım işi konsoldan test amaçlı olarak aşağıdaki komutları girerek başardım. 
+
+ozirus@ozirus-pardus Staj $ sudo ifconfig eth1 down
+ozirus@ozirus-pardus Staj $ sudo iwconfig eth1 mode ad-hoc
+ozirus@ozirus-pardus Staj $ sudo iwconfig eth1 channel 4
+ozirus@ozirus-pardus Staj $ sudo iwconfig eth1 essid 'name'
+ozirus@ozirus-pardus Staj $ sudo iwconfig eth1 key 1234567890
+ozirus@ozirus-pardus Staj $ sudo ifconfig eth1 up
+
+Bu komutların ağ-yöneticisinde sırası/hatasız ve GUI entegrasyonu ile
+çalıştırılabilmesi için yapman gereken çalışmaları danışmanım ile görüştüm. Ağ
+yöneticisi PyQt GUI kütüphanesi ve Python programlama dili ile yazıldığından
+önümüzdeki günlerde ara ara ihtiyaç duydukça bu konulara çalışmam gerektiğini
+anladım
+
+[ 18-19-20 Haziran 08 ]
+
+PROJEYE ÖN HAZIRLIK VE VAR OLAN KODLARA ALIŞMAK
+
+18 Haziran, 08 tarihinde Python programlama dili konusunda eğitimimiz oldu ayrıca projeme gerçek anlamda çalışmaya başladım. İlk iş olarak yapacağım GUI düzenlemelerini danışmanımla
+planladık. Daha sonra üzerinde çalışmalar yapacağım ÇOMAR (Configuration
+Manager) mimarisini anlamaya çalıştım. 
+
+ÇOMAR genel anlamda birçok Linux dağıtımında eksikliği çok büyük bir şekilde
+hissedilen bir altyapı çözümü. Yaptığı iş açık kaynak kodlu geliştirme
+çalışmalarının bir sonucu olarak ortaya çıkan dağınık şekilde bir arada
+bulunan programların birbirleriyle uyumlu şekilde çalıştırılabilmesini
+sağlamak. Bunu yaparken de mümkün olduğu kadar işin karmaşık tarafını
+kullanıcıdan soyutluyor ve işleri mümkün olduğunca arkaplanda,
+kullanıcı müdalesine gerek kalmadan yapıyor. ÇOMAR'ın bu işlerliği yıllardır Linux
+dünyasında istemeden de olsa zorunlu hale gelmiş "NASIL" (HOW-TO) belgesi
+okuma zorunluluğunu çok büyük bir şekilde ortadan kaldırıyor. Pardus'un paket
+sistemi PISI, her yeni yüklenen pakette gelen pakete ait yeni ÇOMAR
+konfigürasyon dosyaları bu kolay-ayar kolaylığını daha paket yüklenirken
+sisteme kazandırıyor. Ayar dosyalarının kendisinin bizzat Python gibi yazımı (syntax)'ı basit, kolay anlaşılır ve okunabilirliği yüksek bir dille yazılması ÇOMAR'ın getirdiği bu kolaylıkların kullanılabilirliğini paketçi ve
+geliştirici tarafında daha da kolaylaştırıyor.
+
+ÇOMAR, tasarlanırken bir takım tasarım kuralları gözönüne alınarak
+geliştirilmiş bir sistem. ÇOMAR'ın geliştirilmesi ve kullanılmasında ileriye dönük
+kolaylıklar ve esneklikler sağlayan bu tasarım kuralları şunlardan oluşuyor;
+
+
+   1. Belli uygulamaların değil, bu uygulamaların yaptığı görevlerin
+      yapılandırılması gözetilmeli, modelin genelliği yitirilmemelidir.
+
+   2. Modelin gelişen teknolojilerle birlikte eskiyip, kullanışsız hale
+      gelmemesi için, esnek olması gözetilmelidir.
+
+   3. Bununla birlikte, ucu açık, tanımlanmamış bilgi ve görevler modele
+      sokulmamalıdır.
+
+   4. Burda ayrımı doğru yapabilmek için, görev ve bilgilerin genel
+      kullanıma mı, yoksa özel kullanıma mı yönelik olduğu bir
+      kriterdir. Bir nesnenin bir görevi eğer üst katmandaki her nesne
+      tarafından kullanılabiliyorsa geneldir, açıkça ve kesin olarak
+      tanımlanmalıdır. Eğer görevin kullanımı sadece özel bir üst nesne
+      tarafından yapılabiliyorsa, özeldir ve bunun bilgisi tanımlanmaya
+      çalışılmak yerine, üst nesneye hedef olarak verilip, kendi
+      aralarındaki ilişkileri kendilerinin kurmaları desteklenmelidir.
+
+   5. Model, kullanıcı ve görev tabanlı tasarlanmakla birlikte,
+      görev uygulamalarının ihtiyaçlarına yönelik teknik bilgiler de
+      taşıyacaktır. Bu durumların modelde açıkça belirtilmesi
+      önemlidir. 
+
+Proje boyunca üzerinde çalışacağım ÇOMAR betiği olan
+Net_Link_wireless_tools.py betiği genel anlamda Pardus ağ yöneticisi ile
+bereber çalışıp yine Pardus ekibince yazılmış bir Python modülü olan
+pardus.netutils kütüphanesi yardımıyla çekirdeğe bağlantı için gerekli
+komutları gönderip/alıp istenen işlerliği sağlıyordu. Bu işlemde wireless
+donanımı ile direk ilişkide olan çekirdek ile olan iletişim yine bir Python modülü olan
+ioctl (io control) ile sağlanıyordu. ioctl ilgili daha detaylı bilgi
+http://en.wikipedia.org/wiki/Ioctl adresinden alınabilir.
+
+GUI DÜZENLEMESİ
+
+Projemde kullanacağım kadarı ile ilgili ÇOMAR ve diğer modüllerin incelemesini bitirdikten sonra sıra var olan kullanıcı arabirimi'ni(GUI) gerekli ad-hoc işlevselliği için özelleştirmeye geldi. Bu amaç doğrultusunda ad-hoc modunun etkin bir şekilde kullanılabilmesi için ağ yöneticisinin belirli kısımlarında kimi kısmi düzenlemeler yaptım. Bu düzenlemeler genel olarak bağlantı modu seçimi, ad-hoc ağların listede normal ağlardan farklı gösterimi, bağlantılar yüzen (popup) pencerede listelenirken ad-hoc olan bir bağlantı seçildiğinde ilgili ayarların (mod, şifrelemei, ssid) otomatik algılanabilmesini kapsıyordu. Bu amaçlar doğrultusunda connection.py, browser.py ile comariface.py dosyasını düzenledim.
