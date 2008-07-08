@@ -47,9 +47,9 @@ int main(){
     //printf("%d", fp_dev_get_nr_enroll_stages(device)); //tek olmali, cunku laptop.
 
     int done = 0;
+	struct fp_print_data* guvenliparmak = NULL;
     while(!done){
 
-	struct fp_print_data* guvenliparmak = NULL;
 	switch(fp_enroll_finger_img(device, &guvenliparmak, NULL)){
 		case FP_ENROLL_FAIL:
 			printf("Parmakizi alimi tamamlanamadi!\n");
@@ -75,3 +75,4 @@ int main(){
     fp_exit();
 
     return 0;
+}
