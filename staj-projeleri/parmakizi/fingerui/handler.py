@@ -32,11 +32,11 @@ class CallHandler:
 
       # Exec func4() if PolicyKit returns error:
       # (Exception is passed to function)
-      ch.registerError(func4)
+      ch.registerAuthError(func4)
 
       # Exec func5() if DBus connection error occures:
       # (Exception is passed to function)
-      ch.registerError(func5)
+      ch.registerDBusError(func5)
 
       # Run
       ch.call(arg1, arg2, ...)
