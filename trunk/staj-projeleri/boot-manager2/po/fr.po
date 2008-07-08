@@ -1,0 +1,178 @@
+# translation of fr.po to French
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amine Chadly <amine.chadly@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-09 16:41+0300\n"
+"PO-Revision-Date: 2007-10-19 22:30+0200\n"
+"Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
+"Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/bm_mainview.py:36
+msgid "New Entry"
+msgstr "Nouvelle entrée"
+
+#: src/bm_mainview.py:41
+msgid "Unused Kernels"
+msgstr "Noyaux inutilisés"
+
+#: src/bm_mainview.py:61
+msgid "Remember last booted entry."
+msgstr "Se souvenir de la dernière entrée démarrée."
+
+#: src/bm_mainview.py:68
+msgid "Timeout:"
+msgstr "Délais d'attente dépassé :"
+
+#: src/bm_mainview.py:146
+msgid "Title:"
+msgstr "Titre:"
+
+#: src/bm_mainview.py:154
+msgid "System:"
+msgstr "Système:"
+
+#: src/bm_mainview.py:164
+msgid "Root:"
+msgstr "Root (Racine):"
+
+#: src/bm_mainview.py:173
+msgid "Kernel:"
+msgstr "Noyau:"
+
+#: src/bm_mainview.py:182
+msgid "Kernel Parameters:"
+msgstr "Paramètres du noyau :"
+
+#: src/bm_mainview.py:191
+msgid "Initial Ramdisk:"
+msgstr "Ramdrive initial :"
+
+#: src/bm_mainview.py:200
+msgid "Set as default boot entry."
+msgstr "Établir comme entrée de démarrage par défaut."
+
+#: src/bm_mainview.py:269
+msgid "There must be at least one Pardus entry."
+msgstr "Il doit y avoir au moins une entrée Pardus."
+
+#: src/bm_mainview.py:269
+msgid "Access Denied"
+msgstr "Accès refusé"
+
+#: src/bm_mainview.py:271
+msgid "Are you sure you want to remove this entry?"
+msgstr "Êtes-vous sûr de vouloir supprimer cette entrée ?"
+
+#: src/bm_mainview.py:271
+msgid "Delete Entry"
+msgstr "Supprimer l'entrée"
+
+#: src/bm_mainview.py:277
+msgid ""
+"This is a Pardus kernel entry.\n"
+"Do you want to uninstall it from the system?"
+msgstr ""
+"Ceci est une entrée de noyau Pardus.\n"
+"Voulez vous la désinstaller du système ?"
+
+#: src/bm_mainview.py:277 src/bm_mainview.py:456
+msgid "Uninstall Kernel"
+msgstr "Desinstaller le noyau"
+
+#: src/bm_mainview.py:356
+msgid "Failed"
+msgstr "Échec"
+
+#: src/bm_mainview.py:381
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
+msgstr ""
+"Les noyaux suivants sont installés sur le système mains n'existent pas dans "
+"la liste du chargeur de démarrage :"
+
+#: src/bm_mainview.py:390
+msgid "Add Boot Entry"
+msgstr "Ajouter une Entrée de Démarrage"
+
+#: src/bm_mainview.py:395
+msgid "Uninstall"
+msgstr "Désinstaller"
+
+#: src/bm_mainview.py:403
+msgid "Ok"
+msgstr "Ok"
+
+#: src/bm_mainview.py:456
+msgid "Do you want to uninstall selected kernel(s) from the system?"
+msgstr "Voulez vous désinstaller le(s) noyau(x) sélectionné(s) du système ?"
+
+#: src/bm_mainview.py:518
+msgid "Unable to connect to DBus."
+msgstr ""
+
+#: src/bm_mainview.py:518
+msgid "DBus Error"
+msgstr ""
+
+#: src/bm_mainview.py:540
+#, fuzzy
+msgid "You are not authorized for this operation."
+msgstr ""
+"Vous n'êtes pas autorisé à éditer les paramètres du chargeur de démarrage."
+
+#: src/bm_mainview.py:546
+msgid "Waiting DBus..."
+msgstr ""
+
+#: src/bm_mainview.py:546
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+
+#: src/bm_mainview.py:562
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+
+#: src/bm_mainview.py:566
+msgid "COMAR Error"
+msgstr ""
+
+#: src/bm_mainview.py:580
+msgid "Bootloader configuration changed by another application."
+msgstr ""
+"Configuration du chargeur de démarrage changée par une autre application."
+
+#: src/boot-manager.py:33 src/boot-manager.py:92
+msgid "Boot Manager"
+msgstr "Gestionnaire de démarrage"
+
+#: src/boot-manager.py:40
+msgid "Developer and Current Maintainer"
+msgstr "Développeur et responsable de la maintenance actuel"
+
+#: src/boot-manager.py:41
+msgid "Contributions to Boot.Loader model."
+msgstr "Contributions au modèle du Boot.Loader"
+
+#: src/boot-manager.py:84
+msgid "Boot Manager is already started!"
+msgstr "Le gestionnaire de démarrage est déjà lancé !"
+
+#: src/ui_elements.py:91
+msgid "Edit entry"
+msgstr "Éditer l'entrée"
+
+#: src/ui_elements.py:95
+msgid "Delete entry"
+msgstr "Supprimer l'entrée"
