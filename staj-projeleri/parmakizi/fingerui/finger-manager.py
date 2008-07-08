@@ -6,6 +6,7 @@ from PyQt4.QtGui import QDialog, QPixmap, QApplication
 import libfprint, time          #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
+from dbus.mainloop.qt import DBusQtMainLoop
 
 #TODO: better solution to connectSlotByName problem for on_dialog_finished()
 #FIXME: swipe popup not painting in time. when fixed, add to verify too.
@@ -197,6 +198,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
+    DBusQtMainLoop(set_as_default=True)
     form = fmDialog(1)
     form.show()
     form._getStatus()
