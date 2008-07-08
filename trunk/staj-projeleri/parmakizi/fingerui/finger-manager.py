@@ -3,11 +3,14 @@
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL
 from PyQt4.QtGui import QDialog, QPixmap, QApplication
-import libfprint, time
-import fingerform, swipe
+import libfprint, time          #Utility libs
+import fingerform, swipe        #UI classes
+import handler                  #DBus Handler from user-manager
 
-#FIXME: connectSlotByName problem for on_dialog_finished()
+#TODO: better solution to connectSlotByName problem for on_dialog_finished()
 #FIXME: swipe popup not painting in time. when fixed, add to verify too.
+#FIXME: write dir must be only readable by root
+#FIXME: review security model. auth_self or auth_root?
 
 class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     """Dialog for finger-manager.
@@ -116,6 +119,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def _erasePrint():
         """Erase print data.""" #TODO: comarize
         print "Erase to be implemented!"
+
+#    def _getStatus():
+#        ch = handler.CallHandler("fingermanager", "User.Manager", "getStatus", "polkit.action", 
 
     @staticmethod
     def _pixmapize(img, filename=".tmpimg"):
