@@ -114,8 +114,9 @@ class Advisory(models.Model):
             msg = _("all before %s") % version
             tpl.append("    %s, %s" % (package, msg))
             if release != release_last:
-                tpl.append("")
                 release_last = release
+            else:
+                tpl.append("")
         tpl.append("")
         tpl.append("")
 
