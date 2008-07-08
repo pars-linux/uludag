@@ -104,9 +104,18 @@ class Advisory(models.Model):
 
         tpl.append(_("Affected packages:"))
         tpl.append("")
+        release = None
+        release_last = None
         for package, version in self.get_packages():
+            if " " in version:
+                version, release = version.split()
+            if release != release_last:
+                tpl.append("  Pardus %s:" % release)
             msg = _("all before %s") % version
             tpl.append("    %s, %s" % (package, msg))
+            if release != release_last:
+                tpl.append("")
+                release_last = release
         tpl.append("")
         tpl.append("")
 
