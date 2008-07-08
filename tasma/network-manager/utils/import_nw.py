@@ -34,6 +34,11 @@ def main():
         print 'Must be run as root'
         return 1
     
+    try:
+        os.makedirs('/etc/network')
+    except:
+        pass
+    
     link = ComarLink()
     link.dump()
     reply = link.read_cmd()
