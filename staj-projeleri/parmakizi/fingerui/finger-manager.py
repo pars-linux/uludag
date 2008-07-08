@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL
-from PyQt4.QtGui import QDialog, QPixmap, QApplication
+from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox
 import libfprint, time          #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
@@ -102,11 +102,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
             self.__device.close()
 
     @staticmethod
-    def _savePrint(fprint, path=".printdata"): #TODO: Comarize.
+    def _savePrint(fprint, img): #TODO: base64?
         """Save serialized print data."""
-        printfile = open(path, "w")
-        printfile.write(fprint.get_data())
-        printfile.close()
+        self._comarCall('savePrint', 'fpsaveprint', (fprint, img))
 
     @staticmethod
     def _loadPrint(path=".printdata"): #TODO: Comarize.
@@ -117,24 +115,24 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         return libfprint.Fprint(printdata)
 
     @staticmethod
-    def _erasePrint():
+    def _erasePrint(uid):
         """Erase print data."""
-        print "Erase to be implemented!"
+        self._comarCall('erasePrint', 'fperaseprint', (uid))
 
-    def _comarCall(self, method, action, params, doneAction): #FIX: potential security hole?
+    def _comarCall(self, method, action, params, doneAction=None): #FIX: potential security hole?
         """Call a COMAR method. Action must be the part after
         tr.org.pardus.comar.user.manager Params must be given in a tuple.
         Eg: _comarCall('getStatus', 'fpgetstatus', (1), donefunc)"""
         ch = handler.CallHandler("fingermanager", "User.Manager", method, "tr.org.pardus.comar.user.manager." + action, self.winId())
-        ch.registerDone(doneAction)
+        if doneAction:
+            ch.registerDone(doneAction)
         ch.registerError(self._comarErr)
         ch.registerAuthError(self._comarErr)
         ch.registerDBusError(self._comarErr)
         ch.call(*params)
 
-    @staticmethod
-    def _comarErr(exception):
-        print exception.Message
+    def _comarErr(self, exception):
+        QMessageBox.warning(self, "Finger-Manager Error", exception.Message)
 
     @staticmethod
     def _comarPrint(param):
@@ -207,5 +205,4 @@ if __name__ == "__main__":
     DBusQtMainLoop(set_as_default=True)
     form = fmDialog(1)
     form.show()
-    form._getStatus()
     app.exec_()
