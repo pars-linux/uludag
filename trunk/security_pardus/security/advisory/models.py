@@ -119,15 +119,31 @@ class Advisory(models.Model):
         tpl.append("")
         tpl.append("")
 
-        up = [p[0] for p in self.get_packages()]
+        up_release = {}
+        up_name = []
+        release = None
+        for package, version in self.get_packages():
+            if " " in version:
+                version, release = version.split()
+            if release not in up_release:
+                up_release[release] = []
+            up_release[release].append(package)
+            if package not in up_name:
+                up_name.append(package)
 
         tpl.append(_("Resolution"))
         tpl.append("=" * len(_("Resolution")))
         tpl.append("")
-        if up:
-            tpl.append(wwrap(_("There are update(s) for %s. You can update them via Package Manager or with a single command from console:") % ", ".join(up)))
+        if up_release:
+            tpl.append(wwrap(_("There are update(s) for %s. You can update them via Package Manager or with a single command from console:") % ", ".join(up_name)))
             tpl.append("")
-            tpl.append("    pisi up %s" % " ".join(up))
+            if len() == 1:
+                tpl.append("    pisi up %s" % " ".join(up_name))
+            else:
+                for release, packages in up_release.iteritems():
+                    tpl.append("  Pardus %s:" % release)
+                    tpl.append("    pisi up %s" % " ".join(packages))
+                    tpl.append("")
             tpl.append("")
 
         if self.references:
