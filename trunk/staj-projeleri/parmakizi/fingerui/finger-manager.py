@@ -120,8 +120,17 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         """Erase print data.""" #TODO: comarize
         print "Erase to be implemented!"
 
-#    def _getStatus():
-#        ch = handler.CallHandler("fingermanager", "User.Manager", "getStatus", "polkit.action", 
+    def _getStatus(self):
+        ch = handler.CallHandler("fingermanager", "User.Manager", "getStatus", "tr.org.pardus.comar.user.manager.fpgetdata", self.winId())
+        ch.registerDone(self._prnt)
+        ch.registerError(self._err)
+        ch.call(0)
+
+    def _err(self, exception):
+        print exception.Message
+
+    def _prnt(self, param):
+        print param
 
     @staticmethod
     def _pixmapize(img, filename=".tmpimg"):
@@ -190,4 +199,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     form = fmDialog(1)
     form.show()
+    form._getStatus()
     app.exec_()
