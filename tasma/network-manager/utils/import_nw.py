@@ -6,8 +6,6 @@ import piksemel
 import comar
 import struct
 
-import pardus.iniutils
-
 class ComarLink(comar.Link):
     __DUMPPROFILE = 16
     def __pack(self, cmd, id, args):
@@ -49,11 +47,17 @@ def main():
             for data in item.tags():
                 key = data.getAttribute('key')
                 value = data.getTagData('value')
-                if not value:
+                if not value or key == 'name':
                     continue
                 config[key] = value
-            db = pardus.iniutils.iniDB('/etc/network/%s' % package)
-            db.setDB(name, config)
+            fname = '/etc/network/%s' % package.replace('-', '_')
+            f = file(fname, 'a')
+            f.write('[%s]\n' % name)
+            for key, value in config.iteritems():
+                f.write('%s = %s\n' % (key, value))
+            f.write('\n')
+            f.close()
+            os.chmod(fname, 0600)
             print '%s - %s' % (package, name)
     
     return 0
