@@ -269,22 +269,22 @@
             <arg name="actionid" type="s" direction="in"/>
             <arg name="success" type="b" direction="out"/>
         </method>
-        <method name="getStatus" access_label="get">
+        <method name="getStatus">
             <arg name="uid" type="i" direction="in" />
             <arg name="exists" type="b" direction="out" />
         </method>
-        <method name="saveData" access_label="set">
+        <method name="saveData">
             <arg name="uid" type="i" direction="in" />
             <arg name="fprintdata" type="s" direction="in" />
             <arg name="imgdata" type="s" direction="in" />
             <arg name="success" type="b" direction="out" />
         </method>
-        <method name="loadData" access_label="set">
+        <method name="loadData">
             <arg name="uid" type="i" direction="in" />
             <arg name="fprintdata" type="s" direction="out" />
             <arg name="imgdata" type="s" direction="out" />
         </method>
-        <method name="eraseData" access_label="set">
+        <method name="eraseData">
             <arg name="uid" type="i" direction="in" />
         </method>
     </interface>
