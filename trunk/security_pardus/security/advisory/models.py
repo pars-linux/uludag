@@ -137,7 +137,7 @@ class Advisory(models.Model):
         if up_release:
             tpl.append(wwrap(_("There are update(s) for %s. You can update them via Package Manager or with a single command from console:") % ", ".join(up_name)))
             tpl.append("")
-            if len() == 1:
+            if len(up_release) == 1:
                 tpl.append("    pisi up %s" % " ".join(up_name))
             else:
                 for release, packages in up_release.iteritems():
