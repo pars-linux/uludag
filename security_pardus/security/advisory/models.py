@@ -27,7 +27,7 @@ def isValidPackageList(field_data, all_data):
     try:
         for package in field_data.split("\n"):
             if package.strip():
-                year, no = package.split()
+                year, no = package.split(" ", 1)
     except ValueError:
         raise validators.ValidationError(_("Package name and version must be seperated with a whitespace."))
 
@@ -56,7 +56,7 @@ class Advisory(models.Model):
         return "[PLSA-%s] - %s" % (self.plsa_id, self.title)
 
     def get_packages(self):
-        return [x.split() for x in self.packages.split("\n") if x.strip()]
+        return [x.split(" ", 1) for x in self.packages.split("\n") if x.strip()]
 
     def get_package_names(self):
         return [x.split()[0] for x in self.packages.split("\n") if x.strip()]
