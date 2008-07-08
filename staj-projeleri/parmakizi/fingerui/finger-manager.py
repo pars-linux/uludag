@@ -118,19 +118,26 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     @staticmethod
     def _erasePrint():
-        """Erase print data.""" #TODO: comarize
+        """Erase print data."""
         print "Erase to be implemented!"
 
-    def _getStatus(self):
-        ch = handler.CallHandler("fingermanager", "User.Manager", "getStatus", "tr.org.pardus.comar.user.manager.fpgetdata", self.winId())
-        ch.registerDone(self._prnt)
-        ch.registerError(self._err)
-        ch.call(0)
+    def _comarCall(self, method, action, params, doneAction): #FIX: potential security hole?
+        """Call a COMAR method. Action must be the part after
+        tr.org.pardus.comar.user.manager Params must be given in a tuple.
+        Eg: _comarCall('getStatus', 'fpgetstatus', (1), donefunc)"""
+        ch = handler.CallHandler("fingermanager", "User.Manager", method, "tr.org.pardus.comar.user.manager." + action, self.winId())
+        ch.registerDone(doneAction)
+        ch.registerError(self._comarErr)
+        ch.registerAuthError(self._comarErr)
+        ch.registerDBusError(self._comarErr)
+        ch.call(*params)
 
-    def _err(self, exception):
+    @staticmethod
+    def _comarErr(exception):
         print exception.Message
 
-    def _prnt(self, param):
+    @staticmethod
+    def _comarPrint(param):
         print param
 
     @staticmethod
@@ -175,7 +182,6 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def erase(self):
         """Erase stored fingerprint data."""
         self._erasePrint(self)
-
 
     def verify(self):
         """Get fingerprint data and verify against previously stored data."""
