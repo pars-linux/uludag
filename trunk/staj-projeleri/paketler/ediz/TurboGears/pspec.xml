@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM 'http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd'>
+<PISI>
+    <Source>
+        <Name>TurboGears</Name>
+        <Homepage>http://turbogears.org</Homepage>
+        <Packager>
+            <Name>Ediz Türkoğlu</Name>
+            <Email>ediz.turkoglu@yahoo.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>TurboGears web framework</Summary>
+        <Description>TurboGears is a Python web application framework consisting of several underlying components such as MochiKit, SQLObject, CherryPy and Kid.</Description>
+        <Archive sha1sum="03012aa79279323f968b39470e9f0b28c37bc9dd" type="targz">http://files.turbogears.org/eggs/TurboGears-1.0.4.3.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python</Dependency>
+            <Dependency>ElementTree</Dependency>
+            <Dependency>cheetah</Dependency>
+            <Dependency>cherrypy</Dependency>
+            <Dependency>configobj</Dependency>
+            <Dependency>decoratortools</Dependency> YOK!!!!!!!!!!!!!!
+            <Dependency>dispatch</Dependency> YOK!!!!!!!!!!!
+            <Dependency>formencode</Dependency>
+            <Dependency>kid</Dependency> YOK!!!!!!!!!!!!!
+            <Dependency>nose</Dependency> YOK!!!!!!!!!!
+            <Dependency>paste</Dependency>
+            <Dependency>pastedeploy</Dependency> YOK!!!!!!!
+            <Dependency>pastescript</Dependency> YOK!!!
+            <Dependency>setuptools</Dependency>
+            <Dependency>simplejson</Dependency>
+            <Dependency>sqlalchemy</Dependency>
+            <Dependency>python-support</Dependency> YOK!!!!!!!!!!!!!!
+            <Dependency>turbojson</Dependency> Yapildi.
+            <Dependency>turbokid</Dependency> Yapildi.
+        </BuildDependencies>
+        <Patches>
+            <!-- Report alerts via syslog -->
+            <Patch level="1">mdadm-2.6-syslog-updates.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>mdadm</Name>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="17">comar-api</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/sbin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+        <Provides>
+            <COMAR script="service.py">System.Service</COMAR>
+        </Provides>
+    </Package>
+</PISI>
