@@ -26,7 +26,7 @@
             <Dependency>setuptools</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="all">/</Path>
+            <Path fileType="lib">/usr/lib</Path>
         </Files>
     </Package>
     <History>
