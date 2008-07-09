@@ -362,7 +362,6 @@ class Dev:
             wifi = Wireless(ifc)
             ifc.down()
             wifi.setMode("Ad-Hoc")
-            #ifc.up() 
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
 
             err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, ssid=self.remote)
