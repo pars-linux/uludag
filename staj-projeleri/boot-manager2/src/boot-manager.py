@@ -434,8 +434,8 @@ class IconButton(QPushButton):
         self.myset = getIconSet(icon_name)
         self.setIconSet(self.myset)
         size = self.myset.iconSize(QIconSet.Automatic)
-        self.myWidth = size.width() + 4
-        self.myHeight = size.height() + 4
+        self.myWidth = size.width() 
+        self.myHeight = size.height() 
         self.resize(self.myWidth, self.myHeight)
 
 class EntryView(QListView):
@@ -446,7 +446,7 @@ class EntryView(QListView):
 	self.addColumn(("Name"))
         self.addColumn(("Type"))
         self.addColumn(("Default"))
-        self.addColumn(("Device"))
+        self.addColumn(("Root Device"))
 	self.setAllColumnsShowFocus(1)
         self.setShowSortIndicator(1)
         self.setResizeMode(QListView.NoColumn)
@@ -518,17 +518,7 @@ class Entry(QWidget):
         if "default" in os_data and os_data["default"] != "saved":
 	     self.icon2 = QPixmap()
              self.icon2.loadFromData(image0_data,"PNG")
-	     
-        
-        self.pushEdit = IconButton(self, "configure")
-        QToolTip.add(self.pushEdit, i18n("Edit entry"))
-        self.connect(self.pushEdit, SIGNAL("clicked()"), self.slotEdit)
-        
-        self.pushDelete = IconButton(self, "cancel")
-        QToolTip.add(self.pushDelete, i18n("Delete entry"))
-        self.connect(self.pushDelete, SIGNAL("clicked()"), self.slotDelete)
-        
-        #self.show()
+	    
 	
     
     def slotEdit(self):
@@ -564,8 +554,6 @@ class Entry(QWidget):
     def resizeEvent(self, event):
         w = event.size().width()
         h = event.size().height()
-        self.pushEdit.setGeometry(w - self.pushEdit.myWidth - 6 - 6 - self.pushEdit.myWidth - 3, 6, self.pushEdit.myWidth, self.pushEdit.myHeight)
-        self.pushDelete.setGeometry(w - self.pushDelete.myWidth - 6 - 6, 6, self.pushDelete.myWidth, self.pushDelete.myHeight)
         return QWidget.resizeEvent(self, event)
     
     def sizeHint(self):
@@ -830,7 +818,7 @@ class Addnew(QDialog):
            #super(Addnew, self).__init__(parent)
 	   QDialog.__init__(self, parent)
 	   self.labelSystem = QLabel(self)
-           self.labelSystem.setText(i18n("System:"))
+           self.labelSystem.setText(("System:"))
 	   self.mainwid=widgetEditEntry(win.mainwidget)
 	   #self.mainwid.show()  
 
@@ -931,7 +919,7 @@ class widgetEditEntry(QWidget):
         self.editKernel.setEditable(1)
 
         self.labelSystem= QLabel(self)
-	self.labelSystem.setText(("System:"))
+	self.labelSystem.setText(i18n("System:"))
         self.labelSystem.setGeometry(QRect(30,80,60,20))
 
         self.editRoot = QComboBox(0,self)
@@ -967,9 +955,9 @@ class widgetEditEntry(QWidget):
 
 
         self.setCaption(("Form1"))
-        self.textLabel1.setText(("<b>Basic Settings</b>"))
+        self.textLabel1.setText((("<b>Basic Settings</b>")))
         self.textLabel8.setText(("<b>Kernel Parameters</b>"))
-        self.labelBoot.setText("Booting mode:")       
+        self.labelBoot.setText(("Booting mode:"))       
         self.labelSplash.setText("Splash:")
         self.labelRoot2.setText(("Root:"))
         self.labelResume.setText(("Resume:"))
@@ -1092,15 +1080,15 @@ class widgetEditEntry(QWidget):
                     pardus_versions[version] = 0
                 pardus_versions[version] += 1
         if len(pardus_entries) < 2 and entries[index] in pardus_entries:
-            KMessageBox.error(self, i18n("There must be at least one Pardus entry."), i18n("Access Denied"))
+            KMessageBox.error(self, ("There must be at least one Pardus entry."), ("Access Denied"))
             return
-        confirm = KMessageBox.questionYesNo(self, i18n("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
+        confirm = KMessageBox.questionYesNo(self, ("Are you sure you want to remove this entry?"), i18n("Delete Entry"))
         if confirm == KMessageBox.Yes:
             uninstall = "no"
             if entries[index] in pardus_entries:
                 entry_version = entries[index]["kernel"].split("kernel-")[1]
                 if pardus_versions[entry_version] == 1:
-                    confirm_uninstall = KMessageBox.questionYesNo(self, i18n("This is a Pardus kernel entry.\nDo you want to uninstall it from the system?"), i18n("Uninstall Kernel"))
+                    confirm_uninstall = KMessageBox.questionYesNo(self, ("This is a Pardus kernel entry.\nDo you want to uninstall it from the system?"), ("Uninstall Kernel"))
                     if confirm_uninstall == KMessageBox.Yes:
                         uninstall = "yes"
             self.parent.widgetEntries.tab.listEntries.viewport().setEnabled(False)
@@ -1150,7 +1138,7 @@ class widgetEditEntry(QWidget):
                 widgetEdit.hide()
 
     def showError(self, message):
-        KMessageBox.information(self, message, i18n("Error"))
+        KMessageBox.information(self, message, ("Error"))
 
     def slotSave(self):
         self.buttonOK.setEnabled(False)
@@ -1195,7 +1183,7 @@ class widgetEditEntry(QWidget):
 
         def handlerError(exception):
             self.parent.widgetEditEntry.saved = False
-            KMessageBox.error(self, unicode(exception), i18n("Failed"))
+            KMessageBox.error(self, unicode(exception), ("Failed"))
             self.parent.widgetEditEntry.buttonOK.setEnabled(True)
         def handler():
             self.parent.widgetEditEntry.saved = False
@@ -1222,7 +1210,7 @@ class widgetUnused(QWidget):
         layout = QGridLayout(self, 1, 1, 11, 6)
 
         self.labelTitle = QLabel(self)
-        self.labelTitle.setText(i18n("These kernels are installed in the system but doesn't exist in boot loader list:"))
+        self.labelTitle.setText(("These kernels are installed in the system but doesn't exist in boot loader list:"))
         layout.addWidget(self.labelTitle, 0, 0)
 
         self.listKernels = QListBox(self)
@@ -1230,22 +1218,22 @@ class widgetUnused(QWidget):
         self.listKernels.setSelectionMode(QListBox.Extended)
         layout.addMultiCellWidget(self.listKernels, 1, 4, 0, 0)
        
-        self.buttonAdd = QPushButton(self)
+        self.buttonAdd = IconButton(self,"add")
         self.buttonAdd.setEnabled(False)
-        self.buttonAdd.setText(i18n("Add Boot Entry"))
+        self.buttonAdd.setText(("Add Entry"))
        
         layout.addWidget(self.buttonAdd, 1, 1)
 
-        self.buttonRemove = QPushButton(self)
-        self.buttonRemove.setText(i18n("Uninstall"))
+        self.buttonRemove = IconButton(self,"edittrash")
+        self.buttonRemove.setText(("Uninstall"))
         self.buttonRemove.setEnabled(False)
         layout.addWidget(self.buttonRemove, 2, 1)
 
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
         layout.addItem(spacer, 3, 1)
 
-        self.buttonOK = QPushButton(self)
-        self.buttonOK.setText(i18n("Ok"))
+        self.buttonOK = IconButton(self,"ok")
+        self.buttonOK.setText(("Ok"))
         layout.addWidget(self.buttonOK, 4, 1)
 
         self.connect(self.buttonAdd, SIGNAL("clicked()"), self.slotAdd)
@@ -1303,7 +1291,7 @@ class widgetUnused(QWidget):
         self.parent.parent.widgetEditEntry.editOptions.setText("root=%s" % root)
     
     def slotRemove(self):
-        confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall selected kernel(s) from the system?"), i18n("Uninstall Kernel"))
+        confirm = KMessageBox.questionYesNo(self, ("Do you want to uninstall selected kernel(s) from the system?"), ("Uninstall Kernel"))
         if confirm == KMessageBox.Yes:
             self.buttonAdd.setEnabled(False)
             self.buttonRemove.setEnabled(False)
@@ -1364,7 +1352,7 @@ class widgetMain(QWidget):
             self.busSys = dbus.SystemBus()
             self.busSes = dbus.SessionBus()
         except dbus.DBusException:
-            KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
+            KMessageBox.error(self, ("Unable to connect to DBus."), ("DBus Error"))
             return False
         return True
     
@@ -1386,13 +1374,13 @@ class widgetMain(QWidget):
         return ch
 
     def cancelError(self):
-        message = i18n("You are not authorized for this operation.")
-        KMessageBox.sorry(None, message, i18n("Error"))
+        message = ("You are not authorized for this operation.")
+        KMessageBox.sorry(None, message, ("Error"))
 
     def busError(self, exception):
         if self.dia:
             return
-        self.dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
+        self.dia = KProgressDialog(None, "lala",("Waiting DBus..."), ("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
         self.dia.progressBar().setTotalSteps(50)
         self.dia.progressBar().setTextEnabled(False)
         self.dia.show()
@@ -1408,15 +1396,15 @@ class widgetMain(QWidget):
             self.dia.progressBar().setProgress(percent)
             qApp.processEvents(100)
         self.dia.close()
-        KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
+        KMessageBox.sorry(None, ("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
         sys.exit()
     
     def comarError(self, exception):
         if "Access denied" in exception.message:
-            message = i18n("You are not authorized for this operation.")
-            KMessageBox.sorry(self, message, i18n("Error"))
+            message = ("You are not authorized for this operation.")
+            KMessageBox.sorry(self, message, ("Error"))
         else:
-            KMessageBox.error(self, str(exception), i18n("COMAR Error"))
+            KMessageBox.error(self, str(exception),("COMAR Error"))
     
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Boot.Loader", member_keyword="signal", path_keyword="path")
@@ -1430,7 +1418,7 @@ class widgetMain(QWidget):
             if args[0]== "entry":
                 self.queryEntries()
                 if self.widgetEditEntry.entry and not self.widgetEditEntry.saved:
-                    KMessageBox.information(self, i18n("Bootloader configuration changed by another application."), i18n("Warning"))
+                    KMessageBox.information(self, ("Bootloader configuration changed by another application."), ("Warning"))
                     self.widgetEditEntry.slotExit()
                 if not self.widgetEntries.tab_2.listBusy:
                     self.widgetEntries.tab_2.listUnused()
@@ -1511,8 +1499,8 @@ def getRoot():
         if mount_items[2] == "/":
             return mount_items[0]
 
-mod_name = 'Boot Manager'
-mod_app = 'boot-manager'
+mod_name = 'Boot Manager2'
+mod_app = 'boot-manager2'
 mod_version = '0.3.3'
 
 def AboutData():
@@ -1520,15 +1508,14 @@ def AboutData():
         mod_app,
         mod_name,
         mod_version,
-        I18N_NOOP('Boot Manager'),
+        I18N_NOOP('Boot Manager2'),
         KAboutData.License_GPL,
         '(C) 2006-2007 UEKAE/TÜBİTAK',
         None,
         None,
         'bugs@pardus.org.tr'
     )
-    about_data.addAuthor("Bahadır Kandemir", I18N_NOOP("Developer and Current Maintainer"), "bahadir@pardus.org.tr")
-    about_data.addAuthor("Fred Gansevles", I18N_NOOP("Contributions to Boot.Loader model."), "fred@gansevles.net")
+    about_data.addAuthor("Fatma Ekici", I18N_NOOP("Current Maintainer"), "rhytm16@yahoo.com")
     return about_data
 
 def attachMainWidget(self):
@@ -1572,7 +1559,7 @@ def main():
     KUniqueApplication.addCmdLineOptions()
 
     if not KUniqueApplication.start():
-        print i18n('Boot Manager is already started!')
+        print ('Boot Manager is already started!')
         return
 
     kapp = KUniqueApplication(True, True, False)
@@ -1580,7 +1567,7 @@ def main():
     dbus.mainloop.qt3.DBusQtMainLoop(set_as_default=True)
     
     win = QDialog()
-    win.setCaption(i18n('Boot Manager'))
+    win.setCaption(('Boot Manager'))
     win.resize(QSize(650, 475).expandedTo(win.minimumSizeHint()))
     attachMainWidget(win)
     kapp.setMainWidget(win)

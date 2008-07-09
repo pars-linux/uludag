@@ -1,12 +1,13 @@
 Bootloader Manager
 ============
 
-Bootloader Manager is boot loader editor of Pardus Linux
+Maintainer: Fatma Ekici
 
+  TODO:
 
-Installing & Running
---------------------
-
-1. Build and install COMAR from svn
-2. Run: hav register Boot.Loader grub comar/boot.loader.py
-3. Run: ./boot-manager.py
+1) Instead of stacked widgets, make popup dialogs.
+2) Add layouts to some widgets, which were ignored at the beginning.
+3) Test EditWidget in case there is a Windows entry in grub.conf.
+4) Generate .po files.
+5) Try to expedite boot-manager.py by removing redundant code snippets.
+6) Port boot-manager.py to qt4.
