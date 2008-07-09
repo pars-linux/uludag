@@ -320,7 +320,7 @@ class Dev:
     def up(self):
         if self.device_mode == "managed":
             ifc = self.ifc
-            #ifc.down()
+            ifc.down()
             wifi = Wireless(ifc)
             wifi.setMode("Managed")
             notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
@@ -328,7 +328,6 @@ class Dev:
             if self.remote:
                 wifi.setSSID(self.remote)
             err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, ssid=self.remote)
-            #ifc.up()
             if err:
                 notify("Net.Link", "stateChanged", (self.name, "inaccessible", err))
                 fail("auth failed")
