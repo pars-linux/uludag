@@ -14,6 +14,7 @@ from kdecore import KCmdLineArgs, KApplication
 from kdeui import *
 from comariface import comlink
 from handler import CallHandler
+import commands
 
 # DBus
 import dbus
@@ -101,7 +102,6 @@ class connShare(QDialog):
                 continue
             if profile.script == "openvpn" or profile.script == "ppp":
                 continue
-            print profile.devid
             self.profiles.append(profile)
             self.intcombo.insertItem(profile.name)
             self.sharecombo.insertItem(profile.name)
@@ -141,9 +141,6 @@ class connShare(QDialog):
                 self.sharecheckBox.setChecked(True)
                 self.groupBox1.setEnabled(True)
                 self.buttonGroup2.setEnabled(True)
-                #self.getProfile()
-                #self.getRules()
-            #self.setState(self.state)
         ch = self.callMethod("info", "tr.org.pardus.comar.system.service.get", "System.Service")
         ch.registerDone(handleState)
         ch.call()
@@ -159,12 +156,7 @@ class connShare(QDialog):
         #Set share settings(dhcp...)
         int = self.profiles[self.intcombo.currentItem()]
         shr = self.profiles[self.sharecombo.currentItem()]
-        if int.state == None:
-            int.state = "down"
-        if int.name == None:
-            int.name = ""
-        if int.net_addr == None:
-            int.net_addr = ""
+
         if shr.name == None:
             shr.name = ""
         if shr.state == None:
@@ -175,14 +167,60 @@ class connShare(QDialog):
             shr.net_mode = "auto"
         if shr.net_mask == None:
             shr.net_mask = ""
+        if shr.net_mode == "auto":
+            shr.net_addr = "10.10.10.1"
+            shr.net_mask = "255.255.255.0"
+            shr.net_mode = "manual"
+            if int.net_mode == "manual":
+                shr.net_gate = str(int.net_addr)
+            else:
+                exist = 0
+                ifcfg = commands.getstatusoutput("/sbin/ifconfig %s" % int.devname.split("(")[-1][:-1])
+                for addr in str(ifcfg[1]).split(" "):
+                    if addr.startswith("addr:"):
+                        shr.net_gate = addr[5:]
+                        print addr[5:]
+                        exist = 1
+                if exist == 0:
+                    KMessageBox.information(self, i18n("You do not have an ip address for the interface that goes to internet"), i18n("IP address not found"))
+                    return
+
+            print shr.net_addr, shr.net_mask, shr.net_mode, shr.net_gate
+            ch = CallHandler(shr.script, "Net.Link", "setAddress", "tr.org.pardus.comar.net.link.set", self.winId(), comlink.busSys, comlink.busSes)
+            ch.call(shr.name, shr.net_mode, shr.net_addr, shr.net_mask, shr.net_gate)
 
         ch = CallHandler("share", "Net.Share", "checkShare", "tr.org.pardus.comar.net.share.set", self.winId(), comlink.busSys, comlink.busSes)
 
         ch.call(shr.net_addr, shr.net_mode, shr.net_mask, "193.140.100.220")
 
+        #Down and up the interfaces to avoid lack of routing queries
+        #down the interfaces
+        def downInt():
+            if int.state == "up":
+                ch = CallHandler(int.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link", self.winId(), comlink.busSys, comlink.busSes)
+                ch.call(int.name, "down")
+
+        if shr.state == "up":
+            ch = CallHandler(shr.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link", self.winId(), comlink.busSys, comlink.busSes)
+            ch.registerDone(downInt)
+            ch.call(shr.name, "down")
+        else:
+            downInt()
+        
+        #up the interfaces
+        def upInt():
+            ch = CallHandler(int.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link", self.winId(), comlink.busSys, comlink.busSes)
+            ch.registerDone(startDHCP)
+            ch.call(int.name, "up")
+
+        ch = CallHandler(shr.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link", self.winId(), comlink.busSys, comlink.busSes)
+        ch.registerDone(upInt)
+        ch.call(shr.name, "up")        
+
         #DHCP Server
-        ch = CallHandler("dhcp", "System.Service", "start", "tr.org.pardus.comar.system.service.set", self.winId(), comlink.busSys, comlink.busSes)
-        ch.call()
+        def startDHCP():
+            ch = CallHandler("dhcp", "System.Service", "start", "tr.org.pardus.comar.system.service.set", self.winId(), comlink.busSys, comlink.busSes)
+            ch.call()
 
         #İptables
         self.rule_add = str("-t nat -A POSTROUTING -o %s -j MASQUERADE" % (int_if))
@@ -194,11 +232,16 @@ class connShare(QDialog):
 
         def setRule():
             ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
+            ch.registerDone(notifyOK)
             ch.call(self.rule_add)
+
+        def notifyOK():
+            KMessageBox.information(self, i18n("The sharing of your connection has been successfully done."), i18n("Sharing is OK"))
 
         ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
         ch.registerDone(setProfile)
         ch.call()
+
         self.close()
 
     def slotCheckBox(self):
