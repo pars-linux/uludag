@@ -20,17 +20,12 @@
             <Dependency>cherrypy</Dependency>
             <Dependency>configobj</Dependency>
             <Dependency>decoratortools</Dependency> YOK!!!!!!!!!!!!!!
-            <Dependency>dispatch</Dependency> YOK!!!!!!!!!!!
             <Dependency>formencode</Dependency>
             <Dependency>kid</Dependency> YOK!!!!!!!!!!!!!
             <Dependency>nose</Dependency> YOK!!!!!!!!!!
-            <Dependency>paste</Dependency>
-            <Dependency>pastedeploy</Dependency> YOK!!!!!!!
             <Dependency>pastescript</Dependency> YOK!!!
-            <Dependency>setuptools</Dependency>
             <Dependency>simplejson</Dependency>
             <Dependency>sqlalchemy</Dependency>
-            <Dependency>python-support</Dependency> YOK!!!!!!!!!!!!!!
             <Dependency>turbojson</Dependency> Yapildi.
             <Dependency>turbokid</Dependency> Yapildi.
         </BuildDependencies>
@@ -43,7 +38,21 @@
     <Package>
         <Name>mdadm</Name>
         <RuntimeDependencies>
-            <Dependency releaseFrom="17">comar-api</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>ElementTree</Dependency>
+            <Dependency>cheetah</Dependency>
+            <Dependency>cherrypy</Dependency>
+            <Dependency>configobj</Dependency>
+            <Dependency>decoratortools</Dependency> YOK!!!!!!!!!!!!!!
+            <Dependency>formencode</Dependency>
+            <Dependency>kid</Dependency> YOK!!!!!!!!!!!!!
+            <Dependency>nose</Dependency> YOK!!!!!!!!!!
+            <Dependency>pastescript</Dependency> YOK!!!
+            <Dependency>simplejson</Dependency>
+            <Dependency>sqlalchemy</Dependency>
+            <Dependency>turbojson</Dependency> Yapildi.
+            <Dependency>turbokid</Dependency> Yapildi.
+            <Dependency>setuptools</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="config">/etc</Path>
