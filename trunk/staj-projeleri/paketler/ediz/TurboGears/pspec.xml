@@ -47,8 +47,15 @@
         </RuntimeDependencies>
         <Files>
         </Files>
-        <Provides>
-            <COMAR script="service.py">System.Service</COMAR>
-        </Provides>
     </Package>
+    <History>
+        <Update release="1">
+             <Date>2008-07-10</Date>
+             <Version>1.0.4.3</Version>
+             <Comment>First release.</Comment>
+             <Name>Ediz Türkoğlu</Name>
+             <Email>ediz.turkoglu@yahoo.com</Email>
+         </Update>
+     </History>
+ 
 </PISI>
