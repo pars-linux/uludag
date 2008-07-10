@@ -18,7 +18,9 @@
     <Package>
         <Name>nose</Name>
         <Files>
-            <Path fileType="all">/</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/bin</Path>
         </Files>
     </Package>
     <History>
