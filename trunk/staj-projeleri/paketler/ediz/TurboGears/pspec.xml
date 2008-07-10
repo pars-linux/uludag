@@ -18,7 +18,6 @@
             <Dependency>configobj</Dependency>
             <Dependency>decoratortools</Dependency>
             <Dependency>dispatch</Dependency>
-            <Dependency>kid</Dependency>
             <Dependency>nose</Dependency>
             <Dependency>pastescript</Dependency>
             <Dependency>sqlalchemy</Dependency>
@@ -37,7 +36,6 @@
             <Dependency>decoratortools</Dependency>
             <Dependency>dispatch</Dependency>
             <Dependency>formencode</Dependency>
-            <Dependency>kid</Dependency>
             <Dependency>nose</Dependency>
             <Dependency>paste</Dependency>
             <Dependency>pastedeploy</Dependency>
