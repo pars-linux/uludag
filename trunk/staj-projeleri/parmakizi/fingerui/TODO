@@ -1,8 +1,17 @@
 TODO:
 ------
-+ Advanced GUI - Fix race condition / paint problem. Confirm to save the print or not.
-+ COMAR stuff
+High Priority:
++ Finish changing the rest of the read / write stuff to work through COMAR.
+
++ Confirm to save the print or not.
++ more message boxes
++ use tempfile for the pixmap hack
++ Do the async load thing.
 + 'No Image' image.
+
+Low Priority:
++ Fix race condition / paint problem.
++ pyprocessing
 
 
 + PAM stuff
