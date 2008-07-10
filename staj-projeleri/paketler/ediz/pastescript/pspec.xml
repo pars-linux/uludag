@@ -24,7 +24,8 @@
             <Dependency>pastedeploy</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="all">/</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="lib">/usr/lib</Path>
         </Files>
     </Package>
     <History>
