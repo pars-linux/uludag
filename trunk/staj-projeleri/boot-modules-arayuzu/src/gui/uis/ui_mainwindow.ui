@@ -1,0 +1,64 @@
+<ui version="4.0" >
+ <class>moduleManagerDlg</class>
+ <widget class="QDialog" name="moduleManagerDlg" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>316</width>
+    <height>456</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Module Manager</string>
+  </property>
+  <widget class="QSplitter" name="splitter" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>291</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget" >
+    <layout class="QVBoxLayout" name="verticalLayout" >
+     <item>
+      <widget class="QListWidget" name="listModules" />
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget" >
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="QPushButton" name="btnList" >
+       <property name="text" >
+        <string>Listele</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+    <zorder>btnList</zorder>
+    <zorder>horizontalSpacer</zorder>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
