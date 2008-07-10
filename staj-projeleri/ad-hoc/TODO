@@ -29,4 +29,3 @@ KNOW BUGS
 --------------------------------------------------------------------------
 
 - Intel PRO/Wireless 3945ABG gets encryption mode wrong. it always selects wpa when user click at scan results popup
-- Some more encryption errs while getting ip numbers from avahi-autoip deamon in ad-hoc mode
