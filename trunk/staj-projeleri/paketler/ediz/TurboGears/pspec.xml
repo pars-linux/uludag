@@ -17,7 +17,6 @@
             <Dependency>ElementTree</Dependency>
             <Dependency>configobj</Dependency>
             <Dependency>decoratortools</Dependency>
-            <Dependency>dispatch</Dependency>
             <Dependency>nose</Dependency>
             <Dependency>pastescript</Dependency>
             <Dependency>sqlalchemy</Dependency>
@@ -34,11 +33,8 @@
             <Dependency>cherrypy</Dependency>
             <Dependency>configobj</Dependency>
             <Dependency>decoratortools</Dependency>
-            <Dependency>dispatch</Dependency>
             <Dependency>formencode</Dependency>
             <Dependency>nose</Dependency>
-            <Dependency>paste</Dependency>
-            <Dependency>pastedeploy</Dependency>
             <Dependency>pastescript</Dependency>
             <Dependency>simplejson</Dependency>
             <Dependency>sqlalchemy</Dependency>
@@ -46,16 +42,16 @@
             <Dependency>turbokid</Dependency>
         </RuntimeDependencies>
         <Files>
+            <Path fileType="all">/</Path>
         </Files>
     </Package>
     <History>
         <Update release="1">
-             <Date>2008-07-10</Date>
-             <Version>1.0.4.3</Version>
-             <Comment>First release.</Comment>
-             <Name>Ediz Türkoğlu</Name>
-             <Email>ediz.turkoglu@yahoo.com</Email>
-         </Update>
-     </History>
- 
+            <Date>2008-07-10</Date>
+            <Version>1.0.4.3</Version>
+            <Comment>First release.</Comment>
+            <Name>Ediz Türkoğlu</Name>
+            <Email>ediz.turkoglu@yahoo.com</Email>
+        </Update>
+    </History>
 </PISI>
