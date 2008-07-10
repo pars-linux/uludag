@@ -14,7 +14,6 @@
         <Description>TurboKid is a TurboGears support package which provides a template engine plug-in for the Kid templating engine, allowing you to use Kid with TurboGears, Buffet or other systems that support the python.templating.engines entry point.</Description>
         <Archive sha1sum="31f07da56fe8899aff73fbe1f251e0c985a3239f" type="targz">http://files.turbogears.org/eggs/TurboKid-1.0.4.tar.gz</Archive>
         <BuildDependencies>
-            <Dependency>setuptools</Dependency>
             <Dependency>kid</Dependency>
         </BuildDependencies>
     </Source>
