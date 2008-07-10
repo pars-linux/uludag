@@ -1,17 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """finger-manager gui."""
-from PyQt4.QtCore import pyqtSignature, SIGNAL
+from PyQt4.QtCore import pyqtSignature, SIGNAL, QEventLoop
 from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox
 import libfprint, time          #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
 from dbus.mainloop.qt import DBusQtMainLoop
+from base64 import b64encode as b64, b64decode as b64dec
 
 #TODO: better solution to connectSlotByName problem for on_dialog_finished()
 #FIXME: swipe popup not painting in time. when fixed, add to verify too.
 #FIXME: write dir must be only readable by root
-#FIXME: review security model. auth_self or auth_root?
 
 class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     """Dialog for finger-manager.
@@ -43,7 +43,12 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     @pyqtSignature("")
     def on_pushEnroll_clicked(self):
         """Enroll button slot."""
+        el = QEventLoop()
+        popup = swipe.swipeDialog()
+        popup.show()
+        el.processEvents(QEventLoop.AllEvents)
         self.enroll()
+        popup.reject()
 
     @pyqtSignature("")
     def on_pushErase_clicked(self):
@@ -101,29 +106,25 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         if self.__device.dev:
             self.__device.close()
 
-    @staticmethod
-    def _savePrint(fprint, img): #TODO: base64?
+    def _savePrint(self, fprint, img): #TODO: base64?
         """Save serialized print data."""
-        self._comarCall('savePrint', 'fpsaveprint', (fprint, img))
+        self._comarCall('saveFPData', 'modifyfingerprintdata', (self.__uid, b64(fprint.get_data()), b64(img.get_data())))
 
     @staticmethod
-    def _loadPrint(path=".printdata"): #TODO: Comarize.
+    def _loadPrint(): #TODO: Comarize.
         """Load serialized print data."""
-        printfile = open(path, "r")
-        printdata = printfile.read()
-        printfile.close()
-        return libfprint.Fprint(printdata)
+        pass
 
     @staticmethod
     def _erasePrint(uid):
         """Erase print data."""
-        self._comarCall('erasePrint', 'fperaseprint', (uid))
+        self._comarCall('eraseFPdata', 'modifyfingerprintdata', (uid))
 
-    def _comarCall(self, method, action, params, doneAction=None): #FIX: potential security hole?
+    def _comarCall(self, method, action, params, doneAction=None):
         """Call a COMAR method. Action must be the part after
         tr.org.pardus.comar.user.manager Params must be given in a tuple.
-        Eg: _comarCall('getStatus', 'fpgetstatus', (1), donefunc)"""
-        ch = handler.CallHandler("fingermanager", "User.Manager", method, "tr.org.pardus.comar.user.manager." + action, self.winId())
+        Eg: _comarCall('getFPStatus', 'getfingerprintdata', (1000), donefunc)"""
+        ch = handler.CallHandler("baselayout", "User.Manager", method, "tr.org.pardus.comar.user.manager." + action, self.winId())
         if doneAction:
             ch.registerDone(doneAction)
         ch.registerError(self._comarErr)
@@ -132,7 +133,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         ch.call(*params)
 
     def _comarErr(self, exception):
-        QMessageBox.warning(self, "Finger-Manager Error", exception.Message)
+        QMessageBox.warning(self, "Finger-Manager Error", str(exception))
 
     @staticmethod
     def _comarPrint(param):
@@ -159,10 +160,6 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def enroll(self):
         """Get fingerprint data, store it, and show image. Blocking."""
-        popup = swipe.swipeDialog()
-        popup.show()
-        #popup.repaint()
-        #time.sleep(2)
         self._openDevice()
         while 1:
             (fprnt, img) = self.__device.enroll_finger()
@@ -171,11 +168,10 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
             else:
                 print "Enrolled"
                 break
-        pixmap = self._pixmapize(img.binarize())
+        pixmap = self._pixmapize(img)
         self.viewFinger.setPixmap(pixmap)
-        self._savePrint(fprnt) #TODO: save with uid
+        self._savePrint(fprnt, img)
         self._closeDevice()
-        #popup.hide()
 
     def erase(self):
         """Erase stored fingerprint data."""
@@ -183,7 +179,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def verify(self):
         """Get fingerprint data and verify against previously stored data."""
-        compareprint = self._loadPrint() #TODO: comarize w/ uid, check existance
+        compareprint = self._loadPrint()
         self._openDevice()
         while 1:
             (ret , img) = self.__device.verify_finger(compareprint)
@@ -203,6 +199,6 @@ if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
     DBusQtMainLoop(set_as_default=True)
-    form = fmDialog(1)
+    form = fmDialog(1000)
     form.show()
     app.exec_()

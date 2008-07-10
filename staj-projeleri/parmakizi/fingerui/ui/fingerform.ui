@@ -2,6 +2,9 @@
  <author>Mehmet Ali Akmanalp</author>
  <class>dialogFinger</class>
  <widget class="QDialog" name="dialogFinger" >
+  <property name="enabled" >
+   <bool>true</bool>
+  </property>
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -19,12 +22,21 @@
   <layout class="QHBoxLayout" name="horizontalLayout" >
    <item>
     <widget class="QLabel" name="viewFinger" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>100</width>
+       <height>143</height>
+      </size>
+     </property>
      <property name="text" >
       <string>Resim 
  Yok</string>
      </property>
      <property name="scaledContents" >
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="alignment" >
       <set>Qt::AlignCenter</set>
