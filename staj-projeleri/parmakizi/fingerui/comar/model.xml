@@ -269,22 +269,22 @@
             <arg name="actionid" type="s" direction="in"/>
             <arg name="success" type="b" direction="out"/>
         </method>
-        <method name="getStatus" access_label="fpgetdata">
+        <method name="getFPStatus" access_label="getfingerprintdata">
             <arg name="uid" type="i" direction="in" />
             <arg name="exists" type="b" direction="out" />
         </method>
-        <method name="saveData" access_label="fpmanipulatedata">
+        <method name="saveFPData" access_label="modifyfingerprintdata">
             <arg name="uid" type="i" direction="in" />
             <arg name="fprintdata" type="s" direction="in" />
             <arg name="imgdata" type="s" direction="in" />
             <arg name="success" type="b" direction="out" />
         </method>
-        <method name="loadData" access_label="fpmanipulatedata">
+        <method name="loadFPData" access_label="modifyfingerprintdata">
             <arg name="uid" type="i" direction="in" />
             <arg name="fprintdata" type="s" direction="out" />
             <arg name="imgdata" type="s" direction="out" />
         </method>
-        <method name="eraseData" access_label="fpmanipulatedata">
+        <method name="eraseFPData" access_label="modifyfingerprintdata">
             <arg name="uid" type="i" direction="in" />
         </method>
     </interface>
