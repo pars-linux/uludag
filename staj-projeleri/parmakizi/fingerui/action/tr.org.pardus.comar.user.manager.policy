@@ -123,28 +123,27 @@
         </defaults>
     </action>
 
-
-    <action id="tr.org.pardus.comar.user.manager.fpgetdata">
-        <description>Check if user has a stored fingerprint or not</description>
-        <description xml:lang="tr">Kullanıcının parmak izi kaydının varlığını kontrol et</description>
+    <action id="tr.org.pardus.comar.user.manager.getfingerprintdata">
+        <description>Check fingerprint storage status</description>
+        <description xml:lang="tr">Parmak izi kaydının varlığını kontrol et</description>
         <message>System policy prevents checking the existance of fingerprints</message>
         <message xml:lang="tr">Sistem politikası parmak izinin varlığının kontrol edilmesini engelliyor</message>
         <defaults>
-            <allow_any>auth_self_keep_session</allow_any>
-            <allow_active>auth_self_keep_session</allow_active>
-            <allow_inactive>auth_self_keep_session</allow_inactive>
+            <allow_any>auth_self_keep_always</allow_any>
+            <allow_active>auth_self_keep_always</allow_active>
+            <allow_inactive>auth_self_keep_always</allow_inactive>
         </defaults>
     </action>
-    <action id="tr.org.pardus.comar.user.manager.fpmanipulatedata">
+
+    <action id="tr.org.pardus.comar.user.manager.modifyfingerprintdata">
         <description>Change fingerprint data</description>
         <description xml:lang="tr">Parmak izi verilerini değiştir</description>
         <message>System policy prevents changing fingerprint data</message>
         <message xml:lang="tr">Sistem politikası parmak izi verilerinin değiştirilmesini engelliyor</message>
         <defaults>
-            <allow_any>auth_self</allow_any>
-            <allow_active>auth_self</allow_active>
-            <allow_inactive>auth_self</allow_inactive>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
         </defaults>
     </action>
-
 </policyconfig>
