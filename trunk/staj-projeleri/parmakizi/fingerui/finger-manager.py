@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL, QEventLoop
-from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox
+from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox, qApp
 import libfprint, time          #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
@@ -25,10 +25,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
             raise ValueError
         self.__uid = uid
 
-        #devices
         self.__devices = None
-
-        #device
         self.__device = None
 
         super(fmDialog, self).__init__(parent)
@@ -43,10 +40,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     @pyqtSignature("")
     def on_pushEnroll_clicked(self):
         """Enroll button slot."""
-        el = QEventLoop()
         popup = swipe.swipeDialog()
         popup.show()
-        el.processEvents(QEventLoop.AllEvents)
+        qApp.processEvents(QEventLoop.AllEvents)
         self.enroll()
         popup.reject()
 
@@ -69,10 +65,14 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def startUi(self):
         """Sets the UI to its initial situation.
         If user has an image, set it. Else, display 'no image'."""
-        #does img for UID exist?
-        #if so, pull it in
-        #else, place 'no image' text / img
-        pass
+        if self._getPrintStatus():
+            (data, img) = self._loadPrint()
+            #pixmap = self._pixmapize(img)
+            #self.viewFinger.setPixmap(pixmap)
+        else:
+            print "noimg"
+            #place 'no image' text / img
+            pass
 
     def updateUi(self):
         """Updates the UI to set disabled buttons where appropriate.
@@ -106,31 +106,39 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         if self.__device.dev:
             self.__device.close()
 
-    def _savePrint(self, fprint, img): #TODO: base64?
+    def _savePrint(self, fprint, img):
         """Save serialized print data."""
-        self._comarCall('saveFPData', 'modifyfingerprintdata', (self.__uid, b64(fprint.get_data()), b64(img.get_data())))
+        return self._comarCall('saveFPData', 'modifyfingerprintdata', (self.__uid, b64(fprint.get_data()), b64(img.get_data())))
 
-    @staticmethod
-    def _loadPrint(): #TODO: Comarize.
-        """Load serialized print data."""
-        pass
+    def _loadPrint(self):
+        """Load serialized print data.
+        Returns a tuple containing the unserialized data and image."""
+        (data, img) = self._comarCall('loadFPData', 'modifyfingerprintdata', (self.__uid))
+        return (libfprint.Fprint(b64dec(data)), libfprint.Image(b64dec(img)))
 
-    @staticmethod
-    def _erasePrint(uid):
+    def _erasePrint(self):
         """Erase print data."""
-        self._comarCall('eraseFPdata', 'modifyfingerprintdata', (uid))
+        self._comarCall('eraseFPdata', 'modifyfingerprintdata', (self.__uid))
+
+    def _getPrintStatus(self):
+        """Check if print exists or not.
+        To use, call this function and then check the value of self.__status."""
+        return self._comarCall('getFPStatus', 'getfingerprintdata', (self.__uid))
 
     def _comarCall(self, method, action, params, doneAction=None):
         """Call a COMAR method. Action must be the part after
         tr.org.pardus.comar.user.manager Params must be given in a tuple.
         Eg: _comarCall('getFPStatus', 'getfingerprintdata', (1000), donefunc)"""
-        ch = handler.CallHandler("baselayout", "User.Manager", method, "tr.org.pardus.comar.user.manager." + action, self.winId())
+        ch = handler.CallHandler("baselayout", "User.Manager", method, "tr.org.pardus.comar.user.manager." + action, self.winId(), False)
         if doneAction:
             ch.registerDone(doneAction)
         ch.registerError(self._comarErr)
         ch.registerAuthError(self._comarErr)
         ch.registerDBusError(self._comarErr)
-        ch.call(*params)
+        if type(params) == tuple:
+            return ch.call(*params)
+        else:
+            return ch.call(params)
 
     def _comarErr(self, exception):
         QMessageBox.warning(self, "Finger-Manager Error", str(exception))
