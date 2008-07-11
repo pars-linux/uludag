@@ -65,14 +65,13 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def startUi(self):
         """Sets the UI to its initial situation.
         If user has an image, set it. Else, display 'no image'."""
+        print self._getPrintStatus()
         if self._getPrintStatus():
             (data, img) = self._loadPrint()
-            #pixmap = self._pixmapize(img)
-            #self.viewFinger.setPixmap(pixmap)
+            self.viewFinger.setPixmap(img)
         else:
             print "noimg"
             #place 'no image' text / img
-            pass
 
     def updateUi(self):
         """Updates the UI to set disabled buttons where appropriate.
@@ -114,7 +113,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         """Load serialized print data.
         Returns a tuple containing the unserialized data and image."""
         (data, img) = self._comarCall('loadFPData', 'modifyfingerprintdata', (self.__uid))
-        return (libfprint.Fprint(b64dec(data)), libfprint.Image(b64dec(img)))
+        return (libfprint.Fprint(b64dec(data)), QPixmap(b64dec(img)))
 
     def _erasePrint(self):
         """Erase print data."""
