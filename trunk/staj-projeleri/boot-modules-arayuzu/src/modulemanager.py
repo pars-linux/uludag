@@ -81,13 +81,13 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
             KMessageBox.error(self, str(exception), i18n("COMAR Error"))
 
     def populateList(self):
-        loadedModules = self.callSys("listLoaded", "Boot.Modules")
+        """loadedModules = self.callSys("listLoaded", "Boot.Modules")
         if loadedModules:
             for i,j in loadedModules.iteritems():
                 dosya = open("/home/ozirus/Desktop/test.txt","w")
                 dosya.write(i+ "-->" + j)
                 dosya.close()
-            
+        """    
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     form = ModuleManagerDlg()
