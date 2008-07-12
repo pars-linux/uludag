@@ -260,7 +260,7 @@ class MainApplication(programbase):
         self.setupBusses()
 
     def comarError(self, exception):
-        if "Access denied" in exception.message:
+        if "Access denied" in str(exception):
             message = i18n("You are not authorized for this operation.")
             KMessageBox.error(None, message, i18n("Error"))
         else:
@@ -388,6 +388,9 @@ class MainApplication(programbase):
             ch.registerDBusError(handleError)
             ch.registerDone(handleOk)
             ch.call()
+
+            ch = self.callMethod("off", "tr.org.pardus.comar.system.service.set", "System.Service")
+            ch.call()
         else:
             def handleOk():
                 def handleState():
@@ -395,6 +398,9 @@ class MainApplication(programbase):
                     mainwidget.pushStatus.setEnabled(True)
                 ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
                 ch.registerDone(handleState)
+                ch.call()
+
+                ch = self.callMethod("on", "tr.org.pardus.comar.system.service.set", "System.Service")
                 ch.call()
             def handleCancel():
                 self.setState("off")
