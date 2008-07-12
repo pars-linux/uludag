@@ -5,19 +5,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>314</width>
-    <height>443</height>
+    <width>413</width>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Module Manager</string>
+   <string>Kernel Module Manager</string>
   </property>
-  <widget class="QWidget" name="layoutWidget" >
+  <widget class="QWidget" name="" >
    <property name="geometry" >
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>291</width>
+     <x>11</x>
+     <y>12</y>
+     <width>391</width>
      <height>431</height>
     </rect>
    </property>
