@@ -44,7 +44,7 @@ def AboutData():
     global version, description
 
     about_data = KAboutData('firewall-config',
-                            'Firewal Configuration',
+                            'Firewall Configuration',
                             version,
                             description,
                             KAboutData.License_GPL,
@@ -381,6 +381,9 @@ class MainApplication(programbase):
                 self.setState("on")
                 mainwidget.pushStatus.setEnabled(True)
 
+            ch = self.callMethod("setState", "tr.org.pardus.comar.system.service.get", "System.Service")
+            ch.call("off")
+
             ch = self.callMethod("stop", "tr.org.pardus.comar.system.service.set", "System.Service")
             ch.registerCancel(handleCancel)
             ch.registerError(handleError)
@@ -393,6 +396,10 @@ class MainApplication(programbase):
                 def handleState():
                     self.setState("on")
                     mainwidget.pushStatus.setEnabled(True)
+
+                ch = self.callMethod("setState", "tr.org.pardus.comar.system.service.get", "System.Service")
+                ch.call("on")
+
                 ch = self.callMethod("start", "tr.org.pardus.comar.system.service.set", "System.Service")
                 ch.registerDone(handleState)
                 ch.call()
