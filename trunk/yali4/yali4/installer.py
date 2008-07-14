@@ -403,6 +403,30 @@ class Yali:
                 fstab.insert(e)
         fstab.close()
 
+    def backupInstallData(self):
+        import piksemel
+
+        def insert(root,tag,data):
+            _ = root.insertTag(tag)
+            _.insertData(data)
+
+        # let create a yali piksemel..
+        yali = piksemel.newDocument("yali")
+
+        # let store keymap and language options
+        insert(yali,"language",ctx.consts.lang)
+        insert(yali,"keymap",ctx.installData.keyData["xkblayout"])
+        insert(yali,"variant",ctx.installData.keyData["xkbvariant"])
+
+        # we will store passwords as shadowed..
+        insert(yali,"root_password",yali4.sysutils.getShadowed(ctx.installData.rootPassword))
+
+        # time zone..
+        insert(yali,"timezone",ctx.installData.timezone)
+
+        # hostname ..
+        insert(yali,"hostname",ctx.installData.hostName)
+
     def processPendingActions(self, rootWidget):
         global bus
         bus = None
