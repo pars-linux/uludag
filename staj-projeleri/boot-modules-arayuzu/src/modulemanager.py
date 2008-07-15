@@ -27,8 +27,8 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         self.loadedModules=[]
         self.availableModules={}
 
-        self.connect(self.btnSearch, QtCore.SIGNAL("clicked()"), self.populateList)
-
+        #self.connect(self.btnSearch, QtCore.SIGNAL("clicked()"), self.populateList)
+        self.populateList()
     
     def callMethod(self, method, action):
         ch = CallHandler("module_init_tools", "Boot.Modules", method,
