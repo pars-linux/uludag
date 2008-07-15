@@ -27,9 +27,8 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         self.loadedModules=[]
         self.availableModules={}
 
-        #self.connect(self.btnSearch, QtCore.SIGNAL("clicked()"), self.populateList)
-        self.populateList()
-    
+        self.chkLoaded.setChecked(True)
+
     def callMethod(self, method, action):
         ch = CallHandler("module_init_tools", "Boot.Modules", method,
                          action,
@@ -77,13 +76,27 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
     def populateList(self):
         def handler(modules):
             for key in modules:
-                self.loadedModules.append(str(key))
+                self.loadedModules.append(key)
 
             self.listModules.addItems(self.loadedModules)
 
-        ch = self.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
-        ch.registerDone(handler)
-        ch.call()
+        if self.chkLoaded.isChecked():
+            ch = self.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
+            ch.registerDone(handler)
+            ch.call()
+        if not self.chkLoaded.isChecked():
+            ch = self.callMethod("listAvailable", "tr.org.pardus.comar.boot.modules.get")
+            ch.registerDone(handler)
+            ch.call()
+        
+
+        #self.lblSearch.setText(str(self.listModules.count()))
+
+
+    def on_chkLoaded_stateChanged(self, state):
+
+        self.listModules.clear()
+        self.populateList()
 
 
 if __name__ == "__main__":
