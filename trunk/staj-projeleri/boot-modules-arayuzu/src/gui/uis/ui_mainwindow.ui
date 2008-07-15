@@ -5,75 +5,107 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>413</width>
-    <height>446</height>
+    <width>308</width>
+    <height>427</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>Kernel Module Manager</string>
   </property>
-  <widget class="QWidget" name="" >
+  <widget class="QListWidget" name="listModules" >
    <property name="geometry" >
     <rect>
-     <x>11</x>
-     <y>12</y>
-     <width>391</width>
-     <height>431</height>
+     <x>8</x>
+     <y>43</y>
+     <width>291</width>
+     <height>353</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout" >
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" >
-      <item>
-       <widget class="QLabel" name="lblSearch" >
-        <property name="text" >
-         <string>Ara  </string>
-        </property>
-        <property name="scaledContents" >
-         <bool>true</bool>
-        </property>
-        <property name="wordWrap" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="editSearch" >
-        <property name="maximumSize" >
-         <size>
-          <width>16777215</width>
-          <height>28</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btnSearch" >
-        <property name="maximumSize" >
-         <size>
-          <width>30</width>
-          <height>28</height>
-         </size>
-        </property>
-        <property name="text" >
-         <string>>></string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QListWidget" name="listModules" />
-    </item>
-    <item>
-     <widget class="QCheckBox" name="chkLoaded" >
-      <property name="text" >
-       <string>Sadece yüklü olanları listele</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
   </widget>
+  <widget class="QCheckBox" name="chkLoaded" >
+   <property name="geometry" >
+    <rect>
+     <x>7</x>
+     <y>402</y>
+     <width>299</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Sadece yüklü olanları listele</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSearch" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>9</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Ara  </string>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="editSearch" >
+   <property name="geometry" >
+    <rect>
+     <x>37</x>
+     <y>8</y>
+     <width>224</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>16777215</width>
+     <height>28</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSearch" >
+   <property name="geometry" >
+    <rect>
+     <x>271</x>
+     <y>8</y>
+     <width>30</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="maximumSize" >
+    <size>
+     <width>30</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>6</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>>></string>
+   </property>
+  </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder></zorder>
  </widget>
  <resources/>
  <connections/>
