@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>308</width>
-    <height>427</height>
+    <height>451</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -25,8 +25,8 @@
   <widget class="QCheckBox" name="chkLoaded" >
    <property name="geometry" >
     <rect>
-     <x>7</x>
-     <y>402</y>
+     <x>9</x>
+     <y>428</y>
      <width>299</width>
      <height>24</height>
     </rect>
@@ -37,7 +37,7 @@
     </font>
    </property>
    <property name="text" >
-    <string>Sadece yüklü olanları listele</string>
+    <string>List only loaded modules</string>
    </property>
   </widget>
   <widget class="QLabel" name="lblSearch" >
@@ -55,7 +55,7 @@
     </font>
    </property>
    <property name="text" >
-    <string>Ara  </string>
+    <string>Ara: </string>
    </property>
    <property name="scaledContents" >
     <bool>true</bool>
@@ -104,8 +104,55 @@
     <string>>></string>
    </property>
   </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder></zorder>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>399</y>
+     <width>64</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>Count: </string>
+   </property>
+  </widget>
+  <widget class="Line" name="line" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>417</y>
+     <width>291</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblCount" >
+   <property name="geometry" >
+    <rect>
+     <x>54</x>
+     <y>400</y>
+     <width>64</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font" >
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text" >
+    <string>0</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

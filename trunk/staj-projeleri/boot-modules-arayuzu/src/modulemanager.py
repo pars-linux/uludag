@@ -24,8 +24,7 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         if not self.openBus():
             sys.exit(1)
 
-        self.loadedModules=[]
-        self.availableModules={}
+        self.listingModules=[]
 
         self.chkLoaded.setChecked(True)
 
@@ -76,9 +75,10 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
     def populateList(self):
         def handler(modules):
             for key in modules:
-                self.loadedModules.append(key)
+                self.listingModules.append(key)
 
-            self.listModules.addItems(self.loadedModules)
+            self.listModules.addItems(self.listingModules)
+            self.lblCount.setText(str(len(self.listingModules)))
 
         if self.chkLoaded.isChecked():
             ch = self.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
@@ -95,6 +95,7 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
     def on_chkLoaded_stateChanged(self, state):
 
+        self.listingModules=[]
         self.listModules.clear()
         self.populateList()
 
