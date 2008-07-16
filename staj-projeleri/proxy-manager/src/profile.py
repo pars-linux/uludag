@@ -7,9 +7,9 @@
 # Free Software Foundation; either version 2 of the License, or (at your
 # option) any later version. Please read the COPYING file.
 
-import os
+from os import path, mkdir
 import ConfigParser
-from kdecore import *
+from kdecore import i18n
 
 # Constants
 comment_direct = i18n("Direct connection")
@@ -27,18 +27,19 @@ auto = "3"
 noProxy = "noproxy"
 
 config = ConfigParser.SafeConfigParser()
-configDir = os.path.expanduser("~/.proxy/")
-configPath = configDir +"proxy"
+configDir = path.expanduser("~/.proxy/")
+configPath = configDir +"proxy-manager"
+proxyPath = configDir +"proxy"
 profiles = []
 
 def parseConfig():
-    if not os.path.exists(configDir):
-        os.mkdir(configDir)
+    if not path.exists(configDir):
+        mkdir(configDir)
     config.read(configPath)
     if not config.has_section(noProxy):
         config.add_section(noProxy)
     if not config.has_option(noProxy,"isActive"):
-        config.set(noProxy,"isActive","1")
+        config.set(noProxy,"isActive","True")
     config.set(noProxy, "type", "0")
     # Create profiles
     for s in config.sections():
@@ -47,15 +48,56 @@ def parseConfig():
     return profiles
 
 def save():
+    active = None
     for p in profiles:
         p.save()
+        if p.isActive:
+            active = p
     f = open(configPath,"w")
     config.write(f)
     f.close()
+    
+    f = open(proxyPath,"w")
+    lines = [i18n("# Do not edit this unless you know how proxy-manager works.\n")]
+    auth = ""
+    if active.user:
+        auth = active.user
+        if active.pasw:
+            auth += ":" + active.pasw
+        auth += "@"
+    line = "http_proxy="
+    if active.type == globl:
+        port = ""
+        if active.globl_port: port = ":" + active.globl_port
+        lines.append("http_proxy=" + auth + active.globl_host + port + "\n")
+        lines.append("https_proxy=" + auth + active.globl_host + port + "\n")
+        lines.append("ftp_proxy=" + auth + active.globl_host + port + "\n")
+    elif active.type == globl:
+        lines.append("http_proxy=\n")
+        lines.append("https_proxy=\n")
+        lines.append("ftp_proxy=\n")
+    else:
+        if active.http_host:
+            line += auth + active.http_host
+            if active.http_port: line += ":" + active.http_port
+        lines.append(line + "\n")
+        line = "https_proxy="
+        if active.ssl_host:
+            line += auth + active.ssl_host
+            if active.ssl_port: line += ":" + active.ssl_port
+        lines.append(line + "\n")
+        line = "ftp_proxy="
+        if active.ftp_host:
+            line += auth + active.ftp_host
+            if active.ftp_port: line += ":" + active.ftp_port
+        lines.append(line + "\n")
+    f.writelines(lines)
+    f.close()
 
 def deleteProfile(prfl):
-    config.remove_section(prfl.name)
+    config.remove_section(prfl.section)
     del profiles[profiles.index(prfl)]
+    save()
 
 def exists(name):
     return config.has_section(name)
@@ -72,9 +114,13 @@ class Profile:
             self.type = config.get(self.section, "type")
             self.isActive = config.getboolean(self.section, "isActive")
             
-            # Protocol dependent properties
             self.cleanProperties()
+            if config.has_option(self.section, "user"):
+                self.user = config.get(self.section, "user")
+            if config.has_option(self.section, "pasw"):
+                self.pasw = config.get(self.section, "pasw")
             
+            # Protocol dependent properties
             if self.type == direct:
                 self.comment = comment_direct
             elif self.type == globl:
@@ -108,7 +154,6 @@ class Profile:
                 self.auto_url = config.get(self.section, "auto_url")
                 self.comment = comment_auto
         else:
-            config.add_section(self.section)
             self.isActive = False
             self.cleanProperties()
     
@@ -119,6 +164,8 @@ class Profile:
         self.ssl_host = self.ssl_port = ""
         self.socks_host = self.socks_port = ""
         self.auto_url = ""
+        self.user = ""
+        self.pasw = ""
     
     def changeName(self, new):
         if config.has_section(self.section):
@@ -129,6 +176,8 @@ class Profile:
         self.cleanProperties()
     
     def save(self):
+        if not config.has_section(self.section):
+            config.add_section(self.section)
         config.set(self.section, "type", self.type)
         config.set(self.section, "isActive", str(self.isActive))
         if self.type == direct:
@@ -151,3 +200,7 @@ class Profile:
                 config.set(self.section, "socks_port", self.socks_port)
         elif self.type == auto:
             config.set(self.section, "auto_url", self.auto_url)
+        if self.user:
+            config.set(self.section, "user", self.user)
+        if self.pasw:
+            config.set(self.section, "pasw", self.pasw)
