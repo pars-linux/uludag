@@ -5,12 +5,23 @@ import sys
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 from gui.ui_mainwindow import Ui_moduleManagerDlg
+from gui.ui_availablemodules import Ui_availableModulesDlg
+
 
 import dbus
 import dbus.mainloop.qt
 
 from handler import * 
 
+
+class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
+   
+    def __init__(self, listItems, parent=None) :
+        QtGui.QDialog.__init__(self, parent) 
+        self.setupUi(self)
+        self.listAllModules.addItems(listItems)
+
+   
 class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
     def __init__(self, parent=None):
@@ -18,15 +29,17 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         QtGui.QDialog.__init__(self, parent) 
         self.setupUi(self)
 
+        
         if not dbus.get_default_main_loop():
             dbus.mainloop.qt.DBusQtMainLoop(set_as_default=True)
 
         if not self.openBus():
             sys.exit(1)
 
+        self.allModules=[]
         self.listingModules=[]
-
-        self.chkLoaded.setChecked(True)
+        self.populateLoadedModules()
+        self.populateAllModules()
 
     def callMethod(self, method, action):
         ch = CallHandler("module_init_tools", "Boot.Modules", method,
@@ -38,7 +51,7 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         ch.registerDBusError(self.busError)
         ch.registerCancel(self.cancelError)
         return ch
-    
+
     def callHandler(self, script, model, method, action):
         ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
         ch.registerError(self.error)
@@ -72,34 +85,39 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
             return False
         return True
 
-    def populateList(self):
+  
+    def populateLoadedModules(self):
+
         def handler(modules):
+            self.listingModules=[]
+
             for key in modules:
                 self.listingModules.append(key)
 
             self.listModules.addItems(self.listingModules)
-            self.lblCount.setText(str(len(self.listingModules)))
 
-        if self.chkLoaded.isChecked():
-            ch = self.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
-            ch.registerDone(handler)
-            ch.call()
-        if not self.chkLoaded.isChecked():
-            ch = self.callMethod("listAvailable", "tr.org.pardus.comar.boot.modules.get")
-            ch.registerDone(handler)
-            ch.call()
+        ch = self.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
+        ch.registerDone(handler)
+        ch.call()
+
+    def populateAllModules(self):
+
+        def handler(modules):
+            self.allModules=[]
+
+            for key in modules:
+                self.allModules.append(key)
+
+        ch = self.callMethod("listAvailable","tr.org.pardus.comar.boot.modules.get") 
+        ch.registerDone(handler)
+        ch.call()
+
+
+    def on_btnNewModule_pressed(self):
+        dialog = AvailableModulesDlg(self.allModules, self)
+        if dialog.exec_():
+            pass
         
-
-        #self.lblSearch.setText(str(self.listModules.count()))
-
-
-    def on_chkLoaded_stateChanged(self, state):
-
-        self.listingModules=[]
-        self.listModules.clear()
-        self.populateList()
-
-
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     form = ModuleManagerDlg()
