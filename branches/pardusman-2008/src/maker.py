@@ -227,6 +227,30 @@ def setup_live_kdm(project):
             lines.append(line)
     file(path, "w").write("".join(lines))
 
+def setup_live_policykit_conf(project):
+    policykit_conf_tmpl = """<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
+
+<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
+"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
+
+<!-- See the manual page PolicyKit.conf(5) for file format -->
+
+<config version="0.1">
+    <define_admin_auth group="wheel"/>
+    <match user="pars">
+        <return result="yes"/>
+    </match>
+</config>
+"""
+
+    # Write PolicyKit.conf
+    image_dir = project.image_dir()
+    dest = os.path.join(image_dir, "etc/PolicyKit/PolicyKit.conf")
+
+    f = file(dest, "w")
+    f.write(policykit_conf_tmpl)
+    f.close()
+
 def copyPisiIndex(project):
     image_dir = project.image_dir()
     path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
@@ -390,8 +414,9 @@ def make_image(project):
 
         file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
 
-        if project.type != "install" and "kdebase" in project.all_packages:
+        if project.type != "install" and ("kdebase" in project.all_packages or "kdebase4" in project.all_packages):
             setup_live_kdm(project)
+            setup_live_policykit_conf(project)
 
         if project.type == "install":
             copyPisiIndex(project)
