@@ -13,33 +13,11 @@ import dbus.mainloop.qt
 
 from handler import * 
 
+class ComarLink:
 
-class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
-   
-    def __init__(self, listItems, parent=None) :
-        QtGui.QDialog.__init__(self, parent) 
-        self.setupUi(self)
-        self.listAllModules.addItems(listItems)
+    def __init__(self, winId):
 
-   
-class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
-
-    def __init__(self, parent=None):
-
-        QtGui.QDialog.__init__(self, parent) 
-        self.setupUi(self)
-
-        
-        if not dbus.get_default_main_loop():
-            dbus.mainloop.qt.DBusQtMainLoop(set_as_default=True)
-
-        if not self.openBus():
-            sys.exit(1)
-
-        self.allModules=[]
-        self.listingModules=[]
-        self.populateLoadedModules()
-        self.populateAllModules()
+        self.winId = winId
 
     def callMethod(self, method, action):
         ch = CallHandler("module_init_tools", "Boot.Modules", method,
@@ -85,6 +63,47 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
             return False
         return True
 
+
+class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
+   
+    def __init__(self, comarLink, parent=None) :
+        QtGui.QDialog.__init__(self, parent) 
+        self.setupUi(self)
+        self.comarLink = comarLink
+        self.populateAllModules()
+    
+    def populateAllModules(self):
+
+        def handler(modules):
+            self.allModules=[]
+
+            for key in modules:
+                self.allModules.append(key)
+
+            self.listAllModules.addItems(self.allModules)
+
+        ch = self.comarLink.callMethod("listAvailable","tr.org.pardus.comar.boot.modules.get") 
+        ch.registerDone(handler)
+        ch.call()
+
+   
+class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
+
+    def __init__(self, parent=None):
+
+        QtGui.QDialog.__init__(self, parent) 
+        self.setupUi(self)
+
+        if not dbus.get_default_main_loop():
+            dbus.mainloop.qt.DBusQtMainLoop(set_as_default=True)
+
+        self.comarLink = ComarLink(self.winId)
+
+        if not self.comarLink.openBus():
+            sys.exit(1)
+
+        self.listingModules=[]
+        self.populateLoadedModules()
   
     def populateLoadedModules(self):
 
@@ -96,25 +115,12 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
             self.listModules.addItems(self.listingModules)
 
-        ch = self.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
+        ch = self.comarLink.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
         ch.registerDone(handler)
         ch.call()
-
-    def populateAllModules(self):
-
-        def handler(modules):
-            self.allModules=[]
-
-            for key in modules:
-                self.allModules.append(key)
-
-        ch = self.callMethod("listAvailable","tr.org.pardus.comar.boot.modules.get") 
-        ch.registerDone(handler)
-        ch.call()
-
 
     def on_btnNewModule_pressed(self):
-        dialog = AvailableModulesDlg(self.allModules, self)
+        dialog = AvailableModulesDlg(self.comarLink, self)
         if dialog.exec_():
             pass
         

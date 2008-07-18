@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'gui/uis/ui_availablemodules.ui'
 #
-# Created: Fri Jul 18 00:15:28 2008
+# Created: Fri Jul 18 01:47:45 2008
 #      by: PyQt4 UI code generator 4.4.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,12 +13,16 @@ class Ui_availableModulesDlg(object):
     def setupUi(self, availableModulesDlg):
         availableModulesDlg.setObjectName("availableModulesDlg")
         availableModulesDlg.setWindowModality(QtCore.Qt.NonModal)
-        availableModulesDlg.resize(289,405)
+        availableModulesDlg.resize(291,403)
         self.listAllModules = QtGui.QListWidget(availableModulesDlg)
         self.listAllModules.setGeometry(QtCore.QRect(14,12,261,371))
         font = QtGui.QFont()
         font.setPointSize(8)
         self.listAllModules.setFont(font)
+        self.listAllModules.addAction(QtGui.QAction("Selam",self))
+        self.listAllModules.addAction(QtGui.QAction("Selam",self))
+        self.listAllModules.addAction(QtGui.QAction("Selam",self))
+        self.listAllModules.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
         self.listAllModules.setObjectName("listAllModules")
 
         self.retranslateUi(availableModulesDlg)
