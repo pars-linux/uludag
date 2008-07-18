@@ -63,7 +63,6 @@ class ComarLink:
             return False
         return True
 
-
 class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
    
     def __init__(self, comarLink, parent=None) :
@@ -71,8 +70,21 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         self.setupUi(self)
         self.comarLink = comarLink
         self.populateAllModules()
-    
+        self.connect(self.cmbListType, QtCore.SIGNAL("activated(const QString &)"), self.listViaSelectedType)
+
+    def listViaSelectedType(self, listingType):
+        if listingType == "All available":
+            self.populateAllModules()
+        elif listingType == "Blacklisted":
+            self.populateBlacklistedModules()
+        elif listingType == "Autoloading":
+            self.populateAutoloadingModules()
+        else:
+            pass
+
     def populateAllModules(self):
+
+        self.listAllModules.clear()
 
         def handler(modules):
             self.allModules=[]
@@ -80,13 +92,80 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
             for key in modules:
                 self.allModules.append(key)
 
-            self.listAllModules.addItems(self.allModules)
+            colorIndex = 0
+            sayac=0
+            for i in self.allModules:
+                color = (255,230)   # This and colorIndex are used for background changing. One blue, one white, one blue, one white and so on.
+                item = QtGui.QListWidgetItem(i)
+                item.setBackgroundColor(QtGui.QColor(color[colorIndex], color[colorIndex], 255))
+                self.listAllModules.addItem(item)
+
+                if colorIndex == 0:
+                    colorIndex = 1
+                elif colorIndex == 1:
+                    colorIndex = 0
 
         ch = self.comarLink.callMethod("listAvailable","tr.org.pardus.comar.boot.modules.get") 
         ch.registerDone(handler)
         ch.call()
+    
+    def populateAutoloadingModules(self):
 
-   
+        self.listAllModules.clear()
+
+        def handler(modules):
+            self.allModules=[]
+
+            for key in modules:
+                self.allModules.append(key)
+
+            colorIndex = 0
+            sayac=0
+            for i in self.allModules:
+                color = (255,230)  # This and colorIndex are used for background changing. One blue, one white, one blue, one white and so on..
+                item = QtGui.QListWidgetItem(i)
+                item.setBackgroundColor(QtGui.QColor(color[colorIndex], color[colorIndex], 255))
+                self.listAllModules.addItem(item)
+
+                if colorIndex == 0:
+                    colorIndex = 1
+                elif colorIndex == 1:
+                    colorIndex = 0
+
+        ch = self.comarLink.callMethod("listAutoload","tr.org.pardus.comar.boot.modules.get") 
+        ch.registerDone(handler)
+        ch.call()
+    
+
+    def populateBlacklistedModules(self):
+        
+        self.listAllModules.clear()
+
+        def handler(modules):
+            self.allModules=[]
+
+            for key in modules:
+                self.allModules.append(key)
+
+            colorIndex = 0
+            sayac=0
+            for i in self.allModules:
+                color = (255,230) # This and colorIndex are used for background changing. One blue, one white, one blue, one white and so on..
+                item = QtGui.QListWidgetItem(i)
+                item.setBackgroundColor(QtGui.QColor(color[colorIndex], color[colorIndex], 255))
+                self.listAllModules.addItem(item)
+
+                if colorIndex == 0:
+                    colorIndex = 1
+                elif colorIndex == 1:
+                    colorIndex = 0
+
+        ch = self.comarLink.callMethod("listBlacklist","tr.org.pardus.comar.boot.modules.get") 
+        ch.registerDone(handler)
+        ch.call()
+
+
+
 class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
     def __init__(self, parent=None):
@@ -101,19 +180,22 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
         if not self.comarLink.openBus():
             sys.exit(1)
-
-        self.listingModules=[]
+        
+        
         self.populateLoadedModules()
-  
+
     def populateLoadedModules(self):
 
         def handler(modules):
-            self.listingModules=[]
+            self.loadedModules=[]
 
             for key in modules:
-                self.listingModules.append(key)
+                self.loadedModules.append(key)
+            
+            for i in self.loadedModules:
+                item = QtGui.QListWidgetItem(i)
+                self.listModules.addItem(item)
 
-            self.listModules.addItems(self.listingModules)
 
         ch = self.comarLink.callMethod("listLoaded", "tr.org.pardus.comar.boot.modules.get")
         ch.registerDone(handler)
@@ -123,7 +205,7 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         dialog = AvailableModulesDlg(self.comarLink, self)
         if dialog.exec_():
             pass
-        
+
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     form = ModuleManagerDlg()

@@ -1,0 +1,8 @@
+<RCC>
+  <qresource>
+    <file alias="load.png">images/load.png</file>
+    <file alias="blacklist.png">images/blacklist.png</file>
+    <file alias="autoload.png">images/autoload.png</file>
+    <file alias="moduleedit.png">images/moduleedit.png</file>
+  </qresource>
+</RCC>

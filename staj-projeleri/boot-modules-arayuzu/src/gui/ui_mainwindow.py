@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'gui/uis/ui_mainwindow.ui'
 #
-# Created: Fri Jul 18 01:47:45 2008
+# Created: Fri Jul 18 15:40:54 2008
 #      by: PyQt4 UI code generator 4.4.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -48,13 +48,17 @@ class Ui_moduleManagerDlg(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.btnNewModule = QtGui.QPushButton(moduleManagerDlg)
-        self.btnNewModule.setGeometry(QtCore.QRect(10,466,121,32))
+        self.btnNewModule.setGeometry(QtCore.QRect(10,466,111,32))
         font = QtGui.QFont()
         font.setPointSize(8)
         self.btnNewModule.setFont(font)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/moduleedit.png"),QtGui.QIcon.Normal,QtGui.QIcon.Off)
+        self.btnNewModule.setIcon(icon)
+        self.btnNewModule.setIconSize(QtCore.QSize(24,24))
         self.btnNewModule.setObjectName("btnNewModule")
+        self.btnNewModule.setGeometry(QtCore.QRect(10,466,130,32))
         self.lblSearch.setBuddy(self.editSearch)
-
         self.retranslateUi(moduleManagerDlg)
         QtCore.QMetaObject.connectSlotsByName(moduleManagerDlg)
         moduleManagerDlg.setTabOrder(self.editSearch,self.btnSearch)
@@ -65,5 +69,6 @@ class Ui_moduleManagerDlg(object):
         self.lblSearch.setText(QtGui.QApplication.translate("moduleManagerDlg", "Ara: ", None, QtGui.QApplication.UnicodeUTF8))
         self.btnSearch.setText(QtGui.QApplication.translate("moduleManagerDlg", ">>", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("moduleManagerDlg", "Currently loaded modules", None, QtGui.QApplication.UnicodeUTF8))
-        self.btnNewModule.setText(QtGui.QApplication.translate("moduleManagerDlg", "Load New Module", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnNewModule.setText(QtGui.QApplication.translate("moduleManagerDlg", "Module Settings", None, QtGui.QApplication.UnicodeUTF8))
 
+import resource_rc
