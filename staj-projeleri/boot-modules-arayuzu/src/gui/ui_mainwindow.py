@@ -18,10 +18,24 @@ class Ui_moduleManagerDlg(object):
         font = QtGui.QFont()
         font.setPointSize(8)
         font.setStrikeOut(False)
+    
+        self.listModules.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
+
         self.listModules.setFont(font)
         self.listModules.setAcceptDrops(False)
         self.listModules.setSortingEnabled(True)
         self.listModules.setObjectName("listModules")
+
+        
+        self.unloadAction = QtGui.QAction(QtGui.QIcon(":/remove.png"), "&Remove", self)
+        self.listModules.addAction(self.unloadAction)
+        self.unloadAction.setFont(font)
+
+        self.addblacklistAction = QtGui.QAction(QtGui.QIcon(":/blacklist.png"),"&Add to blacklist", self)
+        self.listModules.addAction(self.addblacklistAction)
+        self.addblacklistAction.setFont(font)
+
+
         self.lblSearch = QtGui.QLabel(moduleManagerDlg)
         self.lblSearch.setGeometry(QtCore.QRect(9,9,28,28))
         font = QtGui.QFont()

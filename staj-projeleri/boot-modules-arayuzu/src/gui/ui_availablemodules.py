@@ -16,7 +16,7 @@ class Ui_availableModulesDlg(object):
         availableModulesDlg.resize(291,450)
 
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(7)
 
 
         self.cmbListType = QtGui.QComboBox(availableModulesDlg)
@@ -41,19 +41,25 @@ class Ui_availableModulesDlg(object):
         self.listAllModules.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
         self.listAllModules.setObjectName("listAllModules")
 
-        loadAction = QtGui.QAction(QtGui.QIcon(":/load.png"),"&Load", self)
-        self.listAllModules.addAction(loadAction)
-        loadAction.setFont(font)
+        self.loadAction = QtGui.QAction(QtGui.QIcon(":/load.png"),"&Load", self)
+        self.listAllModules.addAction(self.loadAction)
+        self.loadAction.setFont(font)
 
-        blacklistAction = QtGui.QAction(QtGui.QIcon(":/blacklist.png"),"&Blacklist", self)
-        self.listAllModules.addAction(blacklistAction)
-        blacklistAction.setFont(font)
+        self.addBlacklistAction = QtGui.QAction(QtGui.QIcon(":/blacklist.png"),"Add to &blacklist", self)
+        self.listAllModules.addAction(self.addBlacklistAction)
+        self.addBlacklistAction.setFont(font)
 
-        addAutoloadAction = QtGui.QAction(QtGui.QIcon(":/autoload.png"),"&Add to autoload", self)
-        self.listAllModules.addAction(addAutoloadAction)
-        addAutoloadAction.setFont(font)
+        self.removeBlacklistAction = QtGui.QAction(QtGui.QIcon(":/removeblacklist.png"),"Remove from blacklist", self)
+        self.listAllModules.addAction(self.removeBlacklistAction)
+        self.removeBlacklistAction.setFont(font)
 
-        #removeAutoloadAction
+        self.addAutoloadAction = QtGui.QAction(QtGui.QIcon(":/autoload.png"), "&Add to autoload", self)
+        self.listAllModules.addAction(self.addAutoloadAction)
+        self.addAutoloadAction.setFont(font)
+
+        self.removeAutoloadAction = QtGui.QAction(QtGui.QIcon(":/removeautoload.png"), "&Remove from autoload", self)
+        self.listAllModules.addAction(self.removeAutoloadAction)
+        self.removeAutoloadAction.setFont(font)
 
         self.retranslateUi(availableModulesDlg)
         QtCore.QMetaObject.connectSlotsByName(availableModulesDlg)
