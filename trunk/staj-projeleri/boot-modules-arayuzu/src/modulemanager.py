@@ -72,6 +72,33 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         self.populateAllModules()
         self.connect(self.cmbListType, QtCore.SIGNAL("activated(const QString &)"), self.listViaSelectedType)
 
+        self.connect(self.addBlacklistAction, QtCore.SIGNAL("triggered()"), self.addModuleToBlacklist)
+        self.connect(self.removeBlacklistAction, QtCore.SIGNAL("triggered()"), self.removeModuleFromBlacklist)
+        self.connect(self.addAutoloadAction, QtCore.SIGNAL("triggered()"), self.addModuleToAutoload)
+        self.connect(self.removeAutoloadAction, QtCore.SIGNAL("triggered()"), self.removeModuleFromAutoload)
+        self.connect(self.loadAction, QtCore.SIGNAL("triggered()"), self.loadModule)
+
+    def addModuleToBlacklist(self):
+        ch = self.comarLink.callMethod("addBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
+        selectedModule = self.listModules.currentItem()
+        ch.call(str(selectedModule.text()))
+
+    def removeModuleFromBlacklist(self): 
+        ch = self.comarLink.callMethod("removeBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
+        selectedModule = self.listModules.currentItem()
+        ch.call(str(selectedModule.text()))
+
+    def addModuleToAutoload(self):
+        pass
+
+    def removeModuleFromAutoload(self):
+        pass
+
+    def loadModule(self):
+        ch = self.comarLink.callMethod("unload","tr.org.pardus.comar.boot.modules.editblacklist") 
+        selectedModule = self.listModules.currentItem()
+        ch.call(str(selectedModule.text()))
+
     def listViaSelectedType(self, listingType):
         if listingType == "All available":
             self.populateAllModules()
@@ -165,7 +192,6 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         ch.call()
 
 
-
 class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
     def __init__(self, parent=None):
@@ -180,9 +206,25 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
         if not self.comarLink.openBus():
             sys.exit(1)
-        
-        
+
+
+        # Action connectings
+        self.connect(self.unloadAction, QtCore.SIGNAL("triggered()"), self.unloadModule)
+        self.connect(self.addblacklistAction, QtCore.SIGNAL("triggered()"), self.addModuleToBlacklist)
+
         self.populateLoadedModules()
+
+    
+    # Slots for actions 
+    def unloadModule(self):
+        ch = self.comarLink.callMethod("unload","tr.org.pardus.comar.boot.modules.unload")
+        selectedModule = self.listModules.currentItem()
+        ch.call(str(selectedModule.text()))
+    
+    def addModuleToBlacklist(self):
+        ch = self.comarLink.callMethod("addBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
+        selectedModule = self.listModules.currentItem()
+        ch.call(str(selectedModule.text()))
 
     def populateLoadedModules(self):
 
