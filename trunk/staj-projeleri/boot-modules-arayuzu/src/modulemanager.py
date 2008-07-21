@@ -80,12 +80,12 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
 
     def addModuleToBlacklist(self):
         ch = self.comarLink.callMethod("addBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
-        selectedModule = self.listModules.currentItem()
+        selectedModule = self.listAllModules.currentItem()
         ch.call(str(selectedModule.text()))
 
     def removeModuleFromBlacklist(self): 
         ch = self.comarLink.callMethod("removeBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
-        selectedModule = self.listModules.currentItem()
+        selectedModule = self.listAllModules.currentItem()
         ch.call(str(selectedModule.text()))
 
     def addModuleToAutoload(self):
@@ -96,7 +96,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
 
     def loadModule(self):
         ch = self.comarLink.callMethod("unload","tr.org.pardus.comar.boot.modules.editblacklist") 
-        selectedModule = self.listModules.currentItem()
+        selectedModule = self.listAllModules.currentItem()
         ch.call(str(selectedModule.text()))
 
     def listViaSelectedType(self, listingType):
