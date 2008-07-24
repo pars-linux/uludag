@@ -41,17 +41,17 @@ class ComarLink:
     def comarError(self, exception):
         if "Access denied" in exception.message:
             message = "You are not authorized for this operation."
-            QtGui.QMessageBox.warning(self, i18n("Error"), message)
+            QtGui.QMessageBox.warning(self, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         else:
-            QtGui.QMessageBox.warning(self, i18n("COMAR Error"), str(exception))
+            QtGui.QMessageBox.warning(self, "COMAR Error", str(exception), QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
 
     def cancelError(self):
         message = "You are not authorized for this operation."
-        QtGui.QMessageBox.warning(self, i18n("Error"), message)
+        QtGui.QMessageBox.warning(self, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
 
 
     def busError(self, exception):
-        QtGui.QMessageBox.warning(self, "Comar Error", "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console.")
+        QtGui.QMessageBox.warning(self, "Comar Error", "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console.", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         sys.exit()
 
     def openBus(self):
@@ -59,7 +59,7 @@ class ComarLink:
             self.busSys = dbus.SystemBus()
             self.busSes = dbus.SessionBus()
         except dbus.DBusException:
-            QtGui.QMessageBox.warning(self, "Unable to connect to DBus.", "DBus Error")
+            QtGui.QMessageBox.warning(self, "Unable to connect to DBus.", "DBus Error", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
             return False
         return True
 
@@ -77,6 +77,11 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         self.connect(self.addAutoloadAction, QtCore.SIGNAL("triggered()"), self.addModuleToAutoload)
         self.connect(self.removeAutoloadAction, QtCore.SIGNAL("triggered()"), self.removeModuleFromAutoload)
         self.connect(self.loadAction, QtCore.SIGNAL("triggered()"), self.loadModule)
+    
+    def loadModule(self):
+        ch = self.comarLink.callMethod("load","tr.org.pardus.comar.boot.modules.load") 
+        selectedModule = str(self.listAllModules.currentItem().text())
+        ch.call(selectedModule)
 
     def addModuleToBlacklist(self):
         ch = self.comarLink.callMethod("addBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
@@ -89,15 +94,14 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         ch.call(selectedModule)
 
     def addModuleToAutoload(self):
-        pass
+        ch = self.comarLink.callMethod("addAutoload","tr.org.pardus.comar.boot.modules.addautoload")
+        selectedModule = str(self.listAllModules.currentItem().text())
+        ch.call(selectedModule, "2.6")
 
     def removeModuleFromAutoload(self):
-        pass
-
-    def loadModule(self):
-        ch = self.comarLink.callMethod("load","tr.org.pardus.comar.boot.modules.load") 
+        ch = self.comarLink.callMethod("removeAutoload","tr.org.pardus.comar.boot.modules.editautoload")
         selectedModule = str(self.listAllModules.currentItem().text())
-        ch.call(selectedModule)
+        ch.call(selectedModule, "2.6")
 
     def listViaSelectedType(self, listingType):
         if listingType == "All available":
@@ -161,7 +165,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
 
         ch = self.comarLink.callMethod("listAutoload","tr.org.pardus.comar.boot.modules.get") 
         ch.registerDone(handler)
-        ch.call()
+        ch.call("2.6")
     
 
     def populateBlacklistedModules(self):
@@ -227,6 +231,8 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         ch.call(selectedModule)
 
     def populateLoadedModules(self):
+
+        self.listModules.clear()
 
         def handler(modules):
             self.loadedModules=[]
