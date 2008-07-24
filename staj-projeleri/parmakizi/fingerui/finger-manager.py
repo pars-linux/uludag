@@ -3,7 +3,7 @@
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL, QEventLoop
 from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox, qApp
-import libfprint, time          #Utility libs
+import pyfprint, time          #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
 from dbus.mainloop.qt import DBusQtMainLoop
@@ -83,8 +83,8 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def _initFprint(self):
         """Start the fprint class and discover devices."""
-        libfprint.fp_init()
-        self.__devices = libfprint.discover_devices()
+        pyfprint.fp_init()
+        self.__devices = pyfprint.discover_devices()
         print [x.get_driver().get_full_name() for x in self.__devices]
         if self.__devices == []:
             sys.exit("No devices found")
@@ -93,7 +93,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def _exitFprint(self):
         """Exit the fprint class."""
         self._closeDevice()
-        libfprint.fp_exit()
+        pyfprint.fp_exit()
 
     def _openDevice(self):
         """Open the current device, if not already open."""
@@ -113,7 +113,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         """Load serialized print data.
         Returns a tuple containing the unserialized data and image."""
         (data, img) = self._comarCall('loadFPData', 'modifyfingerprintdata', (self.__uid))
-        return (libfprint.Fprint(b64dec(data)), QPixmap(b64dec(img)))
+        return (pyfprint.Fprint(b64dec(data)), QPixmap(b64dec(img)))
 
     def _erasePrint(self):
         """Erase print data."""
