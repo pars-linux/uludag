@@ -28,6 +28,7 @@ from PyQt4.QtCore import *
 # yali base
 from yali4.exception import *
 from yali4.constants import consts
+from yali4.gui.installdata import *
 import yali4.gui.context as ctx
 import yali4.localeutils
 import yali4.sysutils
@@ -408,7 +409,7 @@ class Yali:
 
         def insert(root,tag,data):
             _ = root.insertTag(tag)
-            _.insertData(data)
+            _.insertData(str(data))
 
         # let create a yali piksemel..
         yali = piksemel.newDocument("yali")
@@ -426,6 +427,32 @@ class Yali:
 
         # hostname ..
         insert(yali,"hostname",ctx.installData.hostName)
+
+        # users ..
+        users = yali.insertTag("users")
+        for u in yali4.users.pending_users:
+            user = users.insertTag("user")
+            insert(user,"username",u.username)
+            insert(user,"realname",u.realname)
+            insert(user,"password",yali4.sysutils.getShadowed(u.passwd))
+            insert(user,"groups",",".join(u.groups))
+
+        # partitioning ..
+        devices = []
+        for dev in yali4.storage.devices:
+            if dev.getTotalMB() >= ctx.consts.min_root_size:
+                devices.append(dev.getPath())
+
+        partitioning = yali.insertTag("partitioning")
+        partitioning.setAttribute("partition_type",
+                                 {methodEraseAll:"auto",
+                                  methodUseAvail:"smartAuto"}[ctx.installData.autoPartMethod])
+        try:
+            partitioning.insertData("disk%d" % devices.index(ctx.installData.autoPartDev.getPath()))
+        except:
+            partitioning.insertData(ctx.installData.autoPartDev.getPath())
+
+        ctx.debugger.log(yali.toPrettyString())
 
     def processPendingActions(self, rootWidget):
         global bus
