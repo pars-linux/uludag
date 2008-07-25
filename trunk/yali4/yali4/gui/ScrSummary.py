@@ -91,6 +91,7 @@ Here you can see your install options and look at them again before installation
         if ctx.installData.isKahyaUsed:
             self.startBombCounter()
         self.fillContent()
+        ctx.yali.backupInstallData()
 
     def fillContent(self):
         subject = "<p><li><b>%s</b></li><ul>"
