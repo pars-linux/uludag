@@ -237,7 +237,7 @@ class connShare(QDialog):
             ch.registerError(self.dhcpError)
             ch.registerAuthError(self.comarError)
             ch.registerDBusError(self.busError)
-            ch.call(shr.net_addr, shr.net_mode, shr.net_mask, "193.140.100.220")
+            ch.call(shr.net_addr, shr.net_mode, shr.net_mask, shr.dns_server)
 
         if shr.name == None:
             shr.name = ""
@@ -249,6 +249,10 @@ class connShare(QDialog):
             shr.net_mode = "auto"
         if shr.net_mask == None:
             shr.net_mask = ""
+        if shr.dns_server == None:
+            shr.dns_server = ""
+        if shr.net_mode == "manual":
+            setDHCP()
         if shr.net_mode == "auto":
             shr.net_addr = "10.10.10.1"
             shr.net_mask = "255.255.255.0"
@@ -272,9 +276,6 @@ class connShare(QDialog):
             ch.registerAuthError(self.comarError)
             ch.registerDBusError(self.busError)
             ch.call(shr.name, shr.net_mode, shr.net_addr, shr.net_mask, shr.net_gate)
-
-        if shr.net_mode == "manual":
-            setDHCP()
 
     def slotCheckBox(self):
         def handleState_dhcp(_type, _desc, _state):
