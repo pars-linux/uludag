@@ -292,7 +292,7 @@ class connShare(QDialog):
         def removeNatRules():
             ch = self.callMethod("setRule", "tr.org.pardus.comar.net.filter.set")
             ch.registerDone(stopIptables)
-            ch.call("-t nat -X")
+            ch.call("-t nat -F")
 
         def handleState_iptables(_type, _desc, _state):
             if _state in ["on", "started"]:
