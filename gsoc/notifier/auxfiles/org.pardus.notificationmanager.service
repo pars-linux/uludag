@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.pardus.notificationmanager
+Exec=/path/to/be/substituted/later
+
