@@ -77,7 +77,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         self.connect(self.addAutoloadAction, QtCore.SIGNAL("triggered()"), self.addModuleToAutoload)
         self.connect(self.removeAutoloadAction, QtCore.SIGNAL("triggered()"), self.removeModuleFromAutoload)
         self.connect(self.loadAction, QtCore.SIGNAL("triggered()"), self.loadModule)
-    
+
     def loadModule(self):
         ch = self.comarLink.callMethod("load","tr.org.pardus.comar.boot.modules.load") 
         selectedModule = str(self.listAllModules.currentItem().text())
@@ -96,12 +96,12 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def addModuleToAutoload(self):
         ch = self.comarLink.callMethod("addAutoload","tr.org.pardus.comar.boot.modules.addautoload")
         selectedModule = str(self.listAllModules.currentItem().text())
-        ch.call(selectedModule, "2.6")
+        ch.call(selectedModule, "2.6") # FIXME:  This kernel version number is hard-coded but should not be
 
     def removeModuleFromAutoload(self):
         ch = self.comarLink.callMethod("removeAutoload","tr.org.pardus.comar.boot.modules.editautoload")
         selectedModule = str(self.listAllModules.currentItem().text())
-        ch.call(selectedModule, "2.6")
+        ch.call(selectedModule, "2.6") # FIXME:  This kernel version number is hard-coded but should not be
 
     def listViaSelectedType(self, listingType):
         if listingType == "All available":
@@ -124,13 +124,13 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
                 self.allModules.append(key)
 
             colorIndex = 0
-            sayac=0
+            rowIndex = 1
             for i in self.allModules:
                 color = (255,230)   # This and colorIndex are used for background changing. One blue, one white, one blue, one white and so on.
                 item = QtGui.QListWidgetItem(i)
                 item.setBackgroundColor(QtGui.QColor(color[colorIndex], color[colorIndex], 255))
-                self.listAllModules.addItem(item)
-
+                self.listAllModules.insertItem(rowIndex, item)
+                rowIndex = rowIndex + 1
                 if colorIndex == 0:
                     colorIndex = 1
                 elif colorIndex == 1:
@@ -151,12 +151,13 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
                 self.allModules.append(key)
 
             colorIndex = 0
-            sayac=0
+            rowIndex = 1
             for i in self.allModules:
                 color = (255,230)  # This and colorIndex are used for background changing. One blue, one white, one blue, one white and so on..
                 item = QtGui.QListWidgetItem(i)
                 item.setBackgroundColor(QtGui.QColor(color[colorIndex], color[colorIndex], 255))
-                self.listAllModules.addItem(item)
+                self.listAllModules.addItem(rowIndex, item)
+                rowIndex = rowIndex + 1
 
                 if colorIndex == 0:
                     colorIndex = 1
@@ -166,7 +167,6 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         ch = self.comarLink.callMethod("listAutoload","tr.org.pardus.comar.boot.modules.get") 
         ch.registerDone(handler)
         ch.call("2.6")
-    
 
     def populateBlacklistedModules(self):
         
@@ -179,12 +179,13 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
                 self.allModules.append(key)
 
             colorIndex = 0
-            sayac=0
+            self.listAllModules.setCurrentRow(0)
             for i in self.allModules:
                 color = (255,230) # This and colorIndex are used for background changing. One blue, one white, one blue, one white and so on..
                 item = QtGui.QListWidgetItem(i)
                 item.setBackgroundColor(QtGui.QColor(color[colorIndex], color[colorIndex], 255))
-                self.listAllModules.addItem(item)
+                row = self.listAllModules.currentRow()
+                self.listAllModules.insertItem(row, item)
 
                 if colorIndex == 0:
                     colorIndex = 1
@@ -194,7 +195,6 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         ch = self.comarLink.callMethod("listBlacklist","tr.org.pardus.comar.boot.modules.get") 
         ch.registerDone(handler)
         ch.call()
-
 
 class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
@@ -215,6 +215,7 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         # Action connectings
         self.connect(self.unloadAction, QtCore.SIGNAL("triggered()"), self.unloadModule)
         self.connect(self.addblacklistAction, QtCore.SIGNAL("triggered()"), self.addModuleToBlacklist)
+        self.connect(self.editSearch, QtCore.SIGNAL("textChanged(const QString &)"), self.searchOnList)
 
         self.populateLoadedModules()
 
@@ -229,6 +230,24 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
         ch = self.comarLink.callMethod("addBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
         selectedModule = str(self.listModules.currentItem().text())
         ch.call(selectedModule)
+
+    def searchOnList(self, item):
+        
+        self.listModules.clear()
+
+        searchResults = []
+
+        for i in range(len(self.loadedModules)):
+            nextModule=str(self.loadedModules[i])
+            if nextModule.startswith(item):
+                searchResults.append(nextModule)
+
+        if len(searchResults) == 0 and self.editSearch.text() == "":
+            self.listModules.addItems(self.loadedModules)
+        elif len(searchResults) == 0:
+            pass
+        else:
+            self.listModules.addItems(searchResults)
 
     def populateLoadedModules(self):
 
