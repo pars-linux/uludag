@@ -13,7 +13,7 @@ class Ui_availableModulesDlg(object):
     def setupUi(self, availableModulesDlg):
         availableModulesDlg.setObjectName("availableModulesDlg")
         availableModulesDlg.setWindowModality(QtCore.Qt.NonModal)
-        availableModulesDlg.resize(291,450)
+        availableModulesDlg.resize(291,489)
 
         font = QtGui.QFont()
         font.setPointSize(7)
@@ -21,22 +21,33 @@ class Ui_availableModulesDlg(object):
 
         self.cmbListType = QtGui.QComboBox(availableModulesDlg)
         self.cmbListType.setObjectName("cmbListType")
-        self.cmbListType.setGeometry(QtCore.QRect(14,10,261,23))
+        self.cmbListType.setGeometry(QtCore.QRect(14,45,261,23))
         self.cmbListType.setFont(font)
         self.cmbListType.addItem("Select listing filter")
         self.cmbListType.addItem("All available")
         self.cmbListType.addItem("Blacklisted")
         self.cmbListType.addItem("Autoloading")
+        
+        self.lblSearch = QtGui.QLabel(availableModulesDlg)
+        self.lblSearch.setFont(font)
+        self.lblSearch.setScaledContents(True)
+        self.lblSearch.setGeometry(QtCore.QRect(14,10,28,28))
 
-        self.lblListType = QtGui.QLabel(availableModulesDlg)
+
+        self.editSearch = QtGui.QLineEdit(availableModulesDlg)
+        self.editSearch.setGeometry(QtCore.QRect(44,10,231,25))
+        self.editSearch.setObjectName("editSearch")
+        self.editSearch.setFocus()
+
+        """self.lblListType = QtGui.QLabel(availableModulesDlg)
         self.lblListType.setObjectName("lblListType")
         self.lblListType.setFont(font)
         self.lblListType.setText("Listing all available modules")
-        self.lblListType.setGeometry(QtCore.QRect(14,37,261,16))
-        
+        self.lblListType.setGeometry(QtCore.QRect(14,80,261,16))
+        """
         
         self.listAllModules = QtGui.QListWidget(availableModulesDlg)
-        self.listAllModules.setGeometry(QtCore.QRect(14,55,261,375))
+        self.listAllModules.setGeometry(QtCore.QRect(14,79,261,400))
         self.listAllModules.setFont(font)
         self.listAllModules.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
         self.listAllModules.setObjectName("listAllModules")
@@ -66,4 +77,5 @@ class Ui_availableModulesDlg(object):
 
     def retranslateUi(self, availableModulesDlg):
         availableModulesDlg.setWindowTitle(QtGui.QApplication.translate("availableModulesDlg", "Available Modules", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblSearch.setText(QtGui.QApplication.translate("availableModulesDlg", "Ara:",None,QtGui.QApplication.UnicodeUTF8))
 

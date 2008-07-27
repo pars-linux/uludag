@@ -71,12 +71,31 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
         self.comarLink = comarLink
         self.populateAllModules()
         self.connect(self.cmbListType, QtCore.SIGNAL("activated(const QString &)"), self.listViaSelectedType)
-
         self.connect(self.addBlacklistAction, QtCore.SIGNAL("triggered()"), self.addModuleToBlacklist)
         self.connect(self.removeBlacklistAction, QtCore.SIGNAL("triggered()"), self.removeModuleFromBlacklist)
         self.connect(self.addAutoloadAction, QtCore.SIGNAL("triggered()"), self.addModuleToAutoload)
         self.connect(self.removeAutoloadAction, QtCore.SIGNAL("triggered()"), self.removeModuleFromAutoload)
         self.connect(self.loadAction, QtCore.SIGNAL("triggered()"), self.loadModule)
+        self.connect(self.editSearch, QtCore.SIGNAL("textChanged(const QString &)"), self.searchOnList)
+
+    def searchOnList(self, item):
+        
+        self.listAllModules.clear()
+
+        searchResults = []
+
+        for i in range(len(self.allModules)):
+            nextModule=str(self.allModules[i])
+            if nextModule.startswith(item):
+                searchResults.append(nextModule)
+
+        if len(searchResults) == 0 and self.editSearch.text() == "":
+            self.listAllModules.addItems(self.loadedModules)
+        elif len(searchResults) == 0:
+            pass
+        else:
+            self.listAllModules.addItems(searchResults)
+
 
     def loadModule(self):
         ch = self.comarLink.callMethod("load","tr.org.pardus.comar.boot.modules.load") 
@@ -116,8 +135,11 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def populateAllModules(self):
 
         self.listAllModules.clear()
+        self.listAllModules.addItem("Loading...")
 
         def handler(modules):
+
+            self.listAllModules.clear()
             self.allModules=[]
 
             for key in modules:
@@ -143,8 +165,10 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def populateAutoloadingModules(self):
 
         self.listAllModules.clear()
+        self.listAllModules.addItem("Loading...")
 
         def handler(modules):
+            self.listAllModules.clear()
             self.allModules=[]
 
             for key in modules:
@@ -171,8 +195,10 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def populateBlacklistedModules(self):
         
         self.listAllModules.clear()
+        self.listAllModules.addItem("Loading...")
 
         def handler(modules):
+            self.listAllModules.clear()
             self.allModules=[]
 
             for key in modules:
@@ -252,8 +278,11 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
     def populateLoadedModules(self):
 
         self.listModules.clear()
+        self.listModules.addItem("Loading...")
 
         def handler(modules):
+
+            self.listModules.clear()
             self.loadedModules=[]
 
             for key in modules:
