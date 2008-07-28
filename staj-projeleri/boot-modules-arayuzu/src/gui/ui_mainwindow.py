@@ -13,6 +13,7 @@ class Ui_moduleManagerDlg(object):
     def setupUi(self, moduleManagerDlg):
         moduleManagerDlg.setObjectName("moduleManagerDlg")
         moduleManagerDlg.resize(329,505)
+        moduleManagerDlg.setWindowIcon(QtGui.QIcon(":/program-icon.png"))
         self.listModules = QtGui.QListWidget(moduleManagerDlg)
         self.listModules.setGeometry(QtCore.QRect(10,68,311,391))
         font = QtGui.QFont()
