@@ -296,7 +296,9 @@ pk_auth_list_uid(PyObject *self, PyObject *args)
     PolKitError *pk_error = NULL;
 
     PyObject *list = PyList_New(0);
-    polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_list_cb, list, &pk_error);
+    if (polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_list_cb, list, &pk_error)) {
+        return NULL;
+    }
 
     if (polkit_error_is_set(pk_error)) {
         PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
@@ -315,7 +317,9 @@ pk_auth_list_all(PyObject *self, PyObject *args)
     PolKitError *pk_error = NULL;
 
     PyObject *list = PyList_New(0);
-    polkit_authorization_db_foreach(pk_auth, pk_auth_list_cb, list, &pk_error);
+    if (polkit_authorization_db_foreach(pk_auth, pk_auth_list_cb, list, &pk_error)) {
+        return NULL;
+    }
 
     if (polkit_error_is_set(pk_error)) {
         PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
