@@ -466,6 +466,28 @@ pk_auth_revoke(PyObject *self, PyObject *args)
     return Py_None;
 }
 
+//! Callback function for checking negative authorizations
+static polkit_bool_t
+pk_auth_block_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *user_data)
+{
+    const char *action_id = (const char *) user_data;
+
+    if (strcmp(polkit_authorization_get_action_id(auth), action_id) != 0) {
+        return FALSE;
+    }
+
+    uid_t uid = -1;
+    polkit_bool_t pk_negative = FALSE;
+    polkit_authorization_was_granted_explicitly(auth, &uid, &pk_negative);
+
+    if (pk_negative) {
+        return TRUE;
+    }
+
+    // Continue to iterate
+    return FALSE;
+}
+
 //! Grants a negative authorization to a user for a specific action
 static PyObject *
 pk_auth_block(PyObject *self, PyObject *args)
@@ -480,25 +502,24 @@ pk_auth_block(PyObject *self, PyObject *args)
     PolKitAuthorizationDB *pk_auth = pk_init_authdb();
     PolKitError *pk_error = NULL;
 
-    PolKitAction *pk_action = pk_make_action(action_id);
+    polkit_bool_t pk_negative = polkit_authorization_db_foreach_for_uid(pk_auth, uid, pk_auth_block_cb, (void *) action_id, &pk_error);
 
-    if (!polkit_authorization_db_is_uid_blocked_by_self(pk_auth, pk_action, (uid_t) uid, &pk_error)) {
-        if (polkit_error_is_set(pk_error)) {
-            PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
-            polkit_error_free(pk_error);
-            polkit_action_unref(pk_action);
-            return NULL;
-        }
+    if (polkit_error_is_set(pk_error)) {
+        PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
+        polkit_error_free(pk_error);
+        return NULL;
+    }
+
+    if (!pk_negative) {
+        PolKitAction *pk_action = pk_make_action(action_id);
         polkit_authorization_db_grant_negative_to_uid(pk_auth, pk_action, (uid_t) uid, NULL, &pk_error);
+        polkit_action_unref(pk_action);
         if (polkit_error_is_set(pk_error)) {
             PyErr_SetString(PK_Error, polkit_error_get_error_name(pk_error));
             polkit_error_free(pk_error);
-            polkit_action_unref(pk_action);
             return NULL;
         }
     }
-
-    polkit_action_unref(pk_action);
 
     Py_INCREF(Py_None);
     return Py_None;
