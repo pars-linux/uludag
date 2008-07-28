@@ -14,6 +14,7 @@ class Ui_availableModulesDlg(object):
         availableModulesDlg.setObjectName("availableModulesDlg")
         availableModulesDlg.setWindowModality(QtCore.Qt.NonModal)
         availableModulesDlg.resize(291,489)
+        availableModulesDlg.setWindowIcon(QtGui.QIcon("tt:/program-icon.png"))
 
         font = QtGui.QFont()
         font.setPointSize(7)
@@ -39,13 +40,6 @@ class Ui_availableModulesDlg(object):
         self.editSearch.setObjectName("editSearch")
         self.editSearch.setFocus()
 
-        """self.lblListType = QtGui.QLabel(availableModulesDlg)
-        self.lblListType.setObjectName("lblListType")
-        self.lblListType.setFont(font)
-        self.lblListType.setText("Listing all available modules")
-        self.lblListType.setGeometry(QtCore.QRect(14,80,261,16))
-        """
-        
         self.listAllModules = QtGui.QListWidget(availableModulesDlg)
         self.listAllModules.setGeometry(QtCore.QRect(14,79,261,400))
         self.listAllModules.setFont(font)

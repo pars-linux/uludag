@@ -7,5 +7,6 @@
     <file alias="moduleedit.png">images/moduleedit.png</file>
     <file alias="removeautoload.png">images/removeautoload.png</file>
     <file alias="removeblacklist.png">images/removeblacklist.png</file>
+    <file alias="program-icon.png">images/program-icon.png</file>
   </qresource>
 </RCC>
