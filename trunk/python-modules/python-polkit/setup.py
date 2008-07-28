@@ -44,7 +44,7 @@ pk_include_dirs, pk_library_dirs, pk_libs = pkg_config("dbus-1 polkit-dbus polki
 
 
 setup(name="pypolkit",
-      version="0.1",
+      version="0.1.1",
       description="Python bindings for PolicyKit",
       long_description="Python bindings for PolicyKit",
       license="GNU GPL2",
