@@ -232,10 +232,10 @@ pk_auth_list_cb(PolKitAuthorizationDB *authdb, PolKitAuthorization *auth, void *
     PyDict_SetItemString(dict, "type", PyInt_FromLong((long) polkit_authorization_type(auth)));
 
     // Is negative?
-    PolKitError *pk_error;
-    PolKitAction *pk_action = pk_make_action(polkit_authorization_get_action_id(auth));
-    PyDict_SetItemString(dict, "negative", PyBool_FromLong((long) polkit_authorization_db_is_uid_blocked_by_self(authdb, pk_action, polkit_authorization_get_uid(auth), &pk_error)));
-    polkit_action_unref(pk_action);
+    uid_t uid = -1;
+    polkit_bool_t pk_negative = FALSE;
+    polkit_authorization_was_granted_explicitly(auth, &uid, &pk_negative);
+    PyDict_SetItemString(dict, "negative", PyBool_FromLong((long) pk_negative));
 
     // UID
     PyDict_SetItemString(dict, "uid", PyInt_FromLong((long) polkit_authorization_get_uid(auth)));
