@@ -182,7 +182,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def erase(self):
         """Erase stored fingerprint data."""
-        self._erasePrint(self)
+        self._erasePrint()
 
     def verify(self):
         """Get fingerprint data and verify against previously stored data."""
