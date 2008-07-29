@@ -65,7 +65,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def startUi(self):
         """Sets the UI to its initial situation.
         If user has an image, set it. Else, display 'no image'."""
-        print self._getPrintStatus()
+        #print self._getPrintStatus()
         if self._getPrintStatus():
             (data, img) = self._loadPrint()
             self.viewFinger.setPixmap(img)

@@ -94,9 +94,11 @@ class CallHandler:
             try:
                 return method(*self.args)
             except Exception, e:
-                if str(e).startswith("tr.org.pardus.comar.policy.auth_admin"):
+                if str(e).startswith("tr.org.pardus.comar.policy.auth"):
                     self.__obtainAuth()
                     return method(*self.args)
+                else:
+                    raise str(e)
 
     def __getIface(self):
         try:
