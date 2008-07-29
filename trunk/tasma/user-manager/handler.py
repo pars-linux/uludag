@@ -80,7 +80,7 @@ class CallHandler:
     
     def call(self, *args):
         self.args = args
-        self.__call()
+        return self.__call()
     
     def __call(self):
         iface = self.__getIface()
@@ -88,14 +88,17 @@ class CallHandler:
         if self.async:
             # Async call
             method(reply_handler=self.__handleReply, error_handler=self.__handleError, timeout=2**16-1, *self.args)
+            return None
         else:
             # Synchronized call
             try:
-                method(*self.args)
+                return method(*self.args)
             except Exception, e:
-                if str(e).startswith("tr.org.pardus.comar.policy.auth_admin"):
+                if str(e).startswith("tr.org.pardus.comar.policy.auth"):
                     self.__obtainAuth()
-                    method(*self.args)
+                    return method(*self.args)
+                else:
+                    raise str(e)
 
     def __getIface(self):
         try:
