@@ -129,9 +129,9 @@
         <message>System policy prevents checking the existance of fingerprints</message>
         <message xml:lang="tr">Sistem politikası parmak izinin varlığının kontrol edilmesini engelliyor</message>
         <defaults>
-            <allow_any>auth_self_keep_always</allow_any>
-            <allow_active>auth_self_keep_always</allow_active>
-            <allow_inactive>auth_self_keep_always</allow_inactive>
+            <allow_any>auto_self_keep_always</allow_any>
+            <allow_active>auto_self_keep_always</allow_active>
+            <allow_inactive>auto_self_keep_always</allow_inactive>
         </defaults>
     </action>
 
