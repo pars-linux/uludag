@@ -2,7 +2,6 @@ TODO:
 ------
 High Priority:
 + Finish changing the rest of the read / write stuff to work through COMAR.
-+ change eventloop thing
 
 + Confirm to save the print or not.
 + more message boxes
