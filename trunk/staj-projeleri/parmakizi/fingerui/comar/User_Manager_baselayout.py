@@ -597,7 +597,7 @@ imgname = "fpimg" #name for image files
 def getFPStatus(uid):
     """Check if user has a fingerprint or not.
     Does not check for image, as it is not always needed."""
-    return (path.exists(path.join(datadir, str(uid), fpname)))
+    return path.exists(path.join(datadir, str(uid), fpname))
 
 def saveFPData(uid, fprintdata, imgdata):
     """Save fingerprint data for given uid.
