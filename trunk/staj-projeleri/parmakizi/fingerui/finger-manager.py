@@ -118,7 +118,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def _erasePrint(self):
         """Erase print data."""
-        self._comarCall('eraseFPdata', 'modifyfingerprintdata', (self.__uid))
+        self._comarCall('eraseFPData', 'modifyfingerprintdata', (self.__uid))
+        self.viewFinger.clear()
+        self.viewFinger.setText("Resim\n Yok")
 
     def _getPrintStatus(self):
         """Check if print exists or not.
