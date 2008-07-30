@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL, QEventLoop
-from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox, qApp
-import pyfprint, time          #Utility libs
+from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox, qApp, QImage
+import pyfprint                 #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
 from dbus.mainloop.qt import DBusQtMainLoop
@@ -11,7 +11,6 @@ from base64 import b64encode as b64, b64decode as b64dec
 
 #TODO: better solution to connectSlotByName problem for on_dialog_finished()
 #FIXME: swipe popup not painting in time. when fixed, add to verify too.
-#FIXME: write dir must be only readable by root
 
 class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     """Dialog for finger-manager.
@@ -107,13 +106,15 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def _savePrint(self, fprint, img):
         """Save serialized print data."""
-        return self._comarCall('saveFPData', 'modifyfingerprintdata', (self.__uid, b64(fprint.get_data()), b64(img.get_data())))
+        ser_fp = b64(fprint.get_data())
+        ser_img = b64(self.toPGM(img))
+        return self._comarCall('saveFPData', 'modifyfingerprintdata', (self.__uid, ser_fp, ser_img))
 
     def _loadPrint(self):
         """Load serialized print data.
         Returns a tuple containing the unserialized data and image."""
         (data, img) = self._comarCall('loadFPData', 'modifyfingerprintdata', (self.__uid))
-        return (pyfprint.Fprint(b64dec(data)), QPixmap(b64dec(img)))
+        return (pyfprint.Fprint(b64dec(data)), self.toPixmap(b64dec(img)))
 
     def _erasePrint(self):
         """Erase print data."""
@@ -147,10 +148,16 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         print param
 
     @staticmethod
-    def _pixmapize(img, filename=".tmpimg"):
-        """Convert image into pixmap."""
-        img.save_to_file(filename) #TODO: comarize OR Fix workaround.
-        return QPixmap(filename)
+    def toPGM(img):
+        """Convert raw fprint data to PGM format."""
+        return "P5 %s %s 255\n%s" % (img.get_width(), img.get_height(), img.get_data())
+
+    @staticmethod
+    def toPixmap(pgm):
+        """Convert PGM data to pixmap"""
+        pixmap = QPixmap()
+        pixmap.loadFromData(pgm, "PGM")
+        return pixmap
 
     #------- main functions --------
 
@@ -160,7 +167,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self._openDevice()
         img = self.__device.capture_image(True)
         img = img.binarize()
-        pixmap = self._pixmapize(img, "parmak.pgm")
+        pixmap = self.toPixmap(self.toPGM(img))
         self.viewFinger.setPixmap(pixmap)
         self._closeDevice()
 
@@ -175,7 +182,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
             else:
                 print "Enrolled"
                 break
-        pixmap = self._pixmapize(img)
+        pixmap = self.toPixmap(self.toPGM(img))
         self.viewFinger.setPixmap(pixmap)
         self._savePrint(fprnt, img)
         self._closeDevice()
@@ -186,10 +193,10 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def verify(self):
         """Get fingerprint data and verify against previously stored data."""
-        compareprint = self._loadPrint()
+        comparedata = self._loadPrint()[0]
         self._openDevice()
         while 1:
-            (ret , img) = self.__device.verify_finger(compareprint)
+            (ret , img) = self.__device.verify_finger(comparedata)
             if ret == True:
                 print "FP matched"
                 break
@@ -198,7 +205,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
                 break
             else:
                 print "please retry"
-        pixmap = self._pixmapize(img.binarize())
+        pixmap = self.toPixmap(self.toPGM(img))
         self.viewFinger.setPixmap(pixmap)
         self._closeDevice()
 
