@@ -607,7 +607,6 @@ def saveFPData(uid, fprintdata, imgdata):
     if (not uid) or (not fprintdata) or (not imgdata):
         return False
     writepath = path.join(datadir, str(uid))
-    print writepath
     try:
         if not path.exists(writepath):
             os.makedirs(writepath)
@@ -658,5 +657,5 @@ def eraseFPData(uid):
         return "I/O error(%s): %s" % (errno, strerror)
     except:
         return False
-
+    
     return True
