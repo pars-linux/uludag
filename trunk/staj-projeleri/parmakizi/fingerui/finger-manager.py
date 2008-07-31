@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL, QEventLoop
-from PyQt4.QtGui import QDialog, QPixmap, QApplication, QMessageBox, qApp, QImage
+from PyQt4.QtGui import QDialog, QApplication, QMessageBox, qApp
+from PyQt4.QtGui import QPixmap, QImage
 import pyfprint                 #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
@@ -86,8 +87,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self.__devices = pyfprint.discover_devices()
         print [x.get_driver().get_full_name() for x in self.__devices]
         if self.__devices == []:
-            sys.exit("No devices found")
-        self.__device = self.__devices[0]
+            print "No devices found"
+        else:
+            self.__device = self.__devices[0]
 
     def _exitFprint(self):
         """Exit the fprint class."""
