@@ -17,7 +17,7 @@ outputDir        = "/var/cache/pisi/buildlogs/"
 binaryPath       = "/var/cache/pisi/packages/"
 testPath         = "/var/cache/pisi/packages-test/"
 deltaPath        = "/var/cache/pisi/packages-delta/"
-localPspecRepo   = "/home/ozan/pardus/2008"
+localPspecRepo   = "/root/2008"
 logFile          = "/var/cache/pisi/buildfarm.log"
 
 #information for mailer module.
@@ -26,6 +26,6 @@ announceAddr     = "gelistirici@pardus.org.tr"
 ccList           = ["paketler-commits@pardus.org.tr"]
 #ccList           = ["ekin@pardus.org.tr"]
 smtpServer       = "mail.pardus.org.tr"
-useSmtpAuth      = False
+useSmtpAuth      = True
 smtpUser         = ""
 smtpPassword     = ""
