@@ -76,8 +76,8 @@ def buildPackages():
                 (newBinaryPackages, oldBinaryPackages) = pisi.build(pspec)
 
                 # Reduce to filenames
-                newBinaryPackages = sorted(set(map(lambda x: os.path.basename(x), newBinaryPackages)))
-                oldBinaryPackages = sorted(set(map(lambda x: os.path.basename(x), oldBinaryPackages)))
+                newBinaryPackages = map(lambda x: os.path.basename(x), newBinaryPackages)
+                oldBinaryPackages = map(lambda x: os.path.basename(x), oldBinaryPackages)
 
                 # Delta package generation using delta interface
                 (deltasToInstall, deltaPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
@@ -130,7 +130,6 @@ def buildPackages():
 
     # Save current path
     current = os.getcwd()
-
     for dir in [config.binaryPath, config.testPath]:
         os.chdir(dir)
         logger.info(_("\nGenerating PiSi Index in %s:" % dir))
@@ -147,7 +146,6 @@ def buildPackages():
     # Check packages containing binaries and libraries broken by any package update
     print "\nChecking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
-
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
