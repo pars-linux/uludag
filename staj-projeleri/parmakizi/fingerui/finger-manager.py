@@ -3,7 +3,7 @@
 """finger-manager gui."""
 from PyQt4.QtCore import pyqtSignature, SIGNAL, QEventLoop
 from PyQt4.QtGui import QDialog, QApplication, QMessageBox, qApp
-from PyQt4.QtGui import QPixmap, QImage
+from PyQt4.QtGui import QPixmap
 import pyfprint                 #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
@@ -31,8 +31,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         super(fmDialog, self).__init__(parent)
         self.setupUi(self) #QT init
 
-        self.startUi()
         self._initFprint()
+
+        self.startUi()
         self.connect(self, SIGNAL("finished(int)"), self._exitFprint)
 
     #--------ui functions-------
@@ -45,11 +46,13 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         qApp.processEvents(QEventLoop.AllEvents)
         self.enroll()
         popup.reject()
+        self.updateUi()
 
     @pyqtSignature("")
     def on_pushErase_clicked(self):
         """Erase button slot."""
         self.erase()
+        self.updateUi()
 
     @pyqtSignature("")
     def on_pushVerify_clicked(self):
@@ -65,19 +68,23 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def startUi(self):
         """Sets the UI to its initial situation.
         If user has an image, set it. Else, display 'no image'."""
-        #print self._getPrintStatus()
         if self._getPrintStatus():
-            (data, img) = self._loadPrint()
+            img = self._loadPrint()[1]
             self.viewFinger.setPixmap(img)
         else:
-            print "noimg"
-            #place 'no image' text / img
+            pass #place 'no image' text / img
+        self.updateUi()
 
     def updateUi(self):
         """Updates the UI to set disabled buttons where appropriate.
         Example: When there is no existing fprint, then the user should
         not be able to press erase."""
-        pass
+        if not self._deviceExists():
+            self.pushEnroll.setEnabled(False)
+            self.pushVerify.setEnabled(False)
+
+        if not self._getPrintStatus():
+            self.pushErase.setEnabled(False)
 
     #------helper functions------
 
@@ -85,9 +92,11 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         """Start the fprint class and discover devices."""
         pyfprint.fp_init()
         self.__devices = pyfprint.discover_devices()
-        print [x.get_driver().get_full_name() for x in self.__devices]
+        print "Dev: " + str([x.get_driver().get_full_name() for x in self.__devices])
         if self.__devices == []:
-            print "No devices found"
+            QMessageBox.warning(self, "Okuyucu bulunamadi.", "Bilgisayarinizda\
+ bir parmakizi okuyucu bulunamadigindan parmakizi tanitma ve deneme islemleri \
+gerceklestirilemeyecek.")
         else:
             self.__device = self.__devices[0]
 
@@ -96,14 +105,22 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         self._closeDevice()
         pyfprint.fp_exit()
 
+    def _deviceExists(self):
+        """Check if there are any discovered devices."""
+        return self.__device != None
+
+    def _deviceIsOpen(self):
+        """Check if devices are open."""
+        return self.__device.dev != None
+
     def _openDevice(self):
         """Open the current device, if not already open."""
-        if not self.__device.dev:
+        if self._deviceExists() and (not self._deviceIsOpen()):
             self.__device.open()
 
     def _closeDevice(self):
         """Close the current device, if not already closed."""
-        if self.__device.dev:
+        if self._deviceExists() and self._deviceIsOpen():
             self.__device.close()
 
     def _savePrint(self, fprint, img):
@@ -132,7 +149,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     def _comarCall(self, method, action, params, doneAction=None):
         """Call a COMAR method. Action must be the part after
         tr.org.pardus.comar.user.manager Params must be given in a tuple.
-        Eg: _comarCall('getFPStatus', 'getfingerprintdata', (1000), donefunc)"""
+        E: _comarCall('getFPStatus', 'getfingerprintdata', (1000), donefunc)"""
         ch = handler.CallHandler("baselayout", "User.Manager", method, "tr.org.pardus.comar.user.manager." + action, self.winId(), False)
         if doneAction:
             ch.registerDone(doneAction)
@@ -145,11 +162,8 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
             return ch.call(params)
 
     def _comarErr(self, exception):
+        """Return comar errors in a fancy way."""
         QMessageBox.warning(self, "Finger-Manager Error", str(exception))
-
-    @staticmethod
-    def _comarPrint(param):
-        print param
 
     @staticmethod
     def toPGM(img):
@@ -168,6 +182,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
     #QImage.Format_RGB32 works.
     def getImage(self):
         """Get the fingerprint image and then display it. Blocking."""
+        if not self._deviceExists():
+            print "No device found / functionality is disabled."
+            return False
         self._openDevice()
         img = self.__device.capture_image(True)
         img = img.binarize()
@@ -178,6 +195,9 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def enroll(self):
         """Get fingerprint data, store it, and show image. Blocking."""
+        if not self._deviceExists():
+            print "No device found / functionality is disabled."
+            return False
         self._openDevice()
         while 1:
             (fprnt, img) = self.__device.enroll_finger()
@@ -197,18 +217,25 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
     def verify(self):
         """Get fingerprint data and verify against previously stored data."""
+        if not self._deviceExists():
+            print "No device found / functionality is disabled."
+            return False
         comparedata = self._loadPrint()[0]
         self._openDevice()
         while 1:
             (ret , img) = self.__device.verify_finger(comparedata)
             if ret == True:
-                print "FP matched"
+                QMessageBox.information(self, "Parmakizi eslesti!",
+                "Denediginiz parmakizi kayitli olanla eslesti.")
                 break
             elif ret == False:
-                print "Match failed"
+                QMessageBox.warning(self, "Parmakizi eslesmedi!",
+                "Denediginiz parmakizi kayitli olanla eslesmedi!")
                 break
             else:
-                print "please retry"
+                QMessageBox.warning(self, "Tekrar deneyin",
+                "Parmakizi tam olarak okunamadi. Lutfen parmaginizi\
+ortalayarak ve normal hizda gecirerek tekrar deneyin.")
         pixmap = self.toPixmap(self.toPGM(img))
         self.viewFinger.setPixmap(pixmap)
         self._closeDevice()
