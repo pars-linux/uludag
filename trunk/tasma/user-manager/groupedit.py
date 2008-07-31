@@ -172,7 +172,10 @@ class GroupStack(QVBox):
             self.guide.op_end()
             self.parent().slotCancel()
 
-        def groupCancel(heta):
+        def groupCancel():
+            self.parent().slotCancel()
+
+        def groupError(heta):
             self.parent().slotCancel()
 
         if self.g_id.text() == "auto":
@@ -182,7 +185,7 @@ class GroupStack(QVBox):
 
         ch = self.mainwidget.callMethod("addGroup", "tr.org.pardus.comar.user.manager.addgroup")
         ch.registerDone(groupDone)
-        ch.registerError(groupCancel)
+        ch.registerError(groupError)
         ch.registerCancel(groupCancel)
         ch.call(gid, self.g_name.text())
     
