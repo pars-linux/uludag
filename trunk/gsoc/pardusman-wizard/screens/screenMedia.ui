@@ -1,0 +1,83 @@
+<ui version="4.0" >
+ <class>widgetMedia</class>
+ <widget class="QWidget" name="widgetMedia" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Select Media Type</string>
+  </property>
+  <widget class="QRadioButton" name="radioButton" >
+   <property name="geometry" >
+    <rect>
+     <x>100</x>
+     <y>133</y>
+     <width>251</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>CD</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>100</x>
+     <y>160</y>
+     <width>251</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>DVD SL (4 gb)</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_3" >
+   <property name="geometry" >
+    <rect>
+     <x>100</x>
+     <y>190</y>
+     <width>251</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>DVD DL (8 gb)</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_4" >
+   <property name="geometry" >
+    <rect>
+     <x>100</x>
+     <y>220</y>
+     <width>251</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>External Disk</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>80</y>
+     <width>261</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Select cd, dvd, media .... </string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
