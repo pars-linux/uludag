@@ -158,7 +158,7 @@ setup(	name = "pnm",
 		url = "www.pardus.org.tr",
 		packages = ["pnm", "pnm.ui"],
 		# Install the icons, the XSD file and the sample configuration file.
-		data_files = [("/usr/share/pnm/icons", icon_files()), ("/usr/share/pnm", ["auxfiles/pnm.xsd", "auxfiles/sampleconfig.xml"])],
+		data_files = [("/usr/share/pnm/icons", icon_files()), ("/usr/share/pnm", ["auxfiles/pnm.xsd", "auxfiles/sampleconfig.xml"]) ],
 		
 		cmdclass = {
 			'build' : PNMBuild,

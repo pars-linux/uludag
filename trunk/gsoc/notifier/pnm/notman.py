@@ -1,7 +1,7 @@
 #!/usr/bin/env python
     
 # Import required basic python libraries:
-import sys
+import sys, os
 import pickle
 import time
 import copy
@@ -155,6 +155,15 @@ class NotXFaceThread(QtCore.QThread):
 
 # If executed as the main program:
 if __name__ == "__main__":
+	# Check if the config file is there:
+	# If it is not there, copy the sample config file to ~/.notify:
+	if not os.path.exists(os.path.join(os.path.expanduser("~"), ".notify")):
+		os.mkdir(os.path.join(os.path.expanduser("~"), ".notify"))
+		import shutil
+		shutil.copy("/usr/share/pnm/sampleconfig.xml", os.path.join(os.path.expanduser("~"), ".notify/config.xml"))
+	elif not os.path.exists(os.path.join(os.path.expanduser("~"), ".notify/config.xml")):
+		import shutil
+		shutil.copy("/usr/share/pnm/sampleconfig.xml", os.path.join(os.path.expanduser("~"), ".notify/config.xml"))		
 	# Create the notification manager object (which is a QApplication that manages the GUI thread):
 	notification_manager = NotificationManager()
 	# Create the thread containing the notification manager DBus interface object:

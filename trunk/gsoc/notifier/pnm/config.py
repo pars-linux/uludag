@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
 import sys
+import os
+import shutil
+from distutils.spawn import find_executable
+import py_compile
     
 # Import internationalization support:
 import gettext
@@ -8,6 +12,7 @@ _ = gettext.translation("notman", fallback = True).ugettext
 
 # Import PyQt4 GUI stuff:
 from PyQt4 import QtCore, QtGui
+from PyQt4 import pyqtconfig
 
 # Import our own GUI stuff:
 from pnm.ui.configurator import Ui_MainWindow
@@ -17,6 +22,40 @@ from lxml import etree
 
 # XSD path:
 xsd_path = "/usr/share/pnm/pnm.xsd"
+
+# For compiling skin files (.ui files) and adding gettext support to them:
+def py_file_name(ui_file):
+	return os.path.splitext(ui_file)[0] + '.py'
+
+def add_gettext_support(ui_file):
+	# hacky, too hacky. but works...
+	py_file = py_file_name(ui_file)
+	# lines in reverse order
+	lines =  ["\n_ = gettext.translation(\"notman\", fallback = True).ugettext", "\nimport gettext"]
+	f = open(py_file, "r").readlines()
+	for l in lines:
+		f.insert(1, l)
+	x = open(py_file, "w")
+	keyStart = "QtGui.QApplication.translate"
+	keyEnd = ", None, QtGui.QApplication.UnicodeUTF8)"
+	styleKey = "setStyleSheet"
+	for l in f:
+		if not l.find(keyStart)==-1 and l.find(styleKey)==-1:
+			z = "%s(_(" % l.split("(")[0]
+			y = l.split(",")[0]+', '
+			l = l.replace(y,z)
+		l = l.replace(keyEnd,")")
+		x.write(l)
+
+def compile_ui(ui_file):
+	pyqt_configuration = pyqtconfig.Configuration()
+	pyuic_exe = find_executable('pyuic4', pyqt_configuration.default_bin_dir)
+	if not pyuic_exe:
+		# Search on the $Path.
+		pyuic_exe = find_executable('pyuic4')
+	cmd = [pyuic_exe, ui_file, '-o']
+	cmd.append(py_file_name(ui_file))
+	os.system(' '.join(cmd))
 
 def ValidateXMLTree(xml_tree):
 	schema = etree.XMLSchema(etree.parse(xsd_path))
@@ -181,6 +220,11 @@ class Configurator:
 					self.skin_path.setText(file_list[0])
 
 			def Save(self):
+					# Check to see if the .notify directory exists in the users home directory:
+					if not os.path.exists(os.path.join(os.path.expanduser("~"), ".notify")):
+						# If it doesn't exist, create the directory:
+						os.mkdir(os.path.join(os.path.expanduser("~"), ".notify"))
+					
 					if self.current_file == None:
 						message_box = QtGui.QMessageBox(self)
 						message_box.setWindowTitle(_("No current configuration file found"))
@@ -218,6 +262,23 @@ class Configurator:
 
 					skinpath = etree.SubElement(root, "skinpath")
 					skinpath.text = self.skin_path.text().__str__()
+					# Also compile the UI file into a py file and add it to pnm.ui
+					# Note that the UI file needs to supply the class Ui_mainwindow.
+					if skinpath.text != "default":
+						try:
+							compile_ui(skinpath.text)
+							add_gettext_support(skinpath.text)
+							if not os.path.exists(os.path.join(os.path.expanduser("~"), ".notify/pnmskins")):
+								os.mkdir(os.path.join(os.path.expanduser("~"), ".notify/pnmskins"))
+							# Now we are sure that we have the ~/.notify/pnmskins directory, move the result there:
+							shutil.move(py_file_name(skinpath.text), os.path.join(os.path.join(os.path.expanduser("~"), ".notify"), "pnmskins"))
+							py_compile.compile(os.path.join(os.path.join(os.path.join(os.path.expanduser("~"), ".notify"), "pnmskins"), os.path.basename(py_file_name(skinpath.text))))
+						except:
+							message_box = QtGui.QMessageBox(self)
+							message_box.setWindowTitle(_("Error in reading or compiling the skin file"))
+							message_box.setText(_("The skin file you supplied can not be used. The reason may be one of the following: Either the file couldn't be read, or it couldn't be compiled, or you don't have the required permissions."))
+							message_box.exec_()
+							return None						
 
 					position = etree.SubElement(root, "position")
 					if self.manual_position.isChecked() == True:
@@ -242,7 +303,23 @@ class Configurator:
 					result, isValid = ValidateXMLTree(root)
 					if isValid == True:
 						# The resultant XML tree is valid, save the XML file:
-						open(self.current_file, "w").write(etree.tostring(root, pretty_print = True))
+						try:
+							open(self.current_file, "w").write(etree.tostring(root, pretty_print = True))
+						except:
+							message_box = QtGui.QMessageBox(self)
+							message_box.setWindowTitle(_("Error in saving XML file"))
+							message_box.setText(_("Couldn't write back to the opened file, check permissions."))
+							message_box.exec_()
+						# If there is no existing ~/.notify/config.xml, ask if the user wants to make this file the config file to be used:
+						if not os.path.exists(os.path.join(os.path.expanduser("~"), ".notify/config.xml")):
+							message_box = QtGui.QMessageBox(self)
+							message_box.setWindowTitle(_("No currently used config file found"))
+							message_box.setText(_("Do you want to make this file the currently used config file?"))
+							message_box.addButton(QtGui.QMessageBox.Cancel)
+							message_box.addButton(QtGui.QMessageBox.Ok)
+							result = message_box.exec_()
+							if result == QtGui.QMessageBox.Ok:
+								open(os.path.join(os.path.expanduser("~"), ".notify/config.xml"), "w").write(etree.tostring(root, pretty_print = True))
 						return True
 					else:
 						message_box = QtGui.QMessageBox(self)
@@ -298,7 +375,7 @@ class Configurator:
 				else:
 					message_box = QtGui.QMessageBox(self)
 					message_box.setWindowTitle(_("Error parsing configuration file"))
-					message_box.setText(_("The configuration file %s is not a valid configuration file.\nXSD Validation Error:\n%s" % (self.current_file, result)))
+					message_box.setText(_("The configuration file %(config_file_name)s is not a valid configuration file.\nXSD Validation Error:\n%(error_string)s" % {"config_file_name" : self.current_file, "error_string" : result}))
 					message_box.exec_()
 					self.current_file = None
 				return

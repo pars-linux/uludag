@@ -7,11 +7,8 @@
     <lifetime>15</lifetime>
   </manager>
   <direction choice="up"/>
-  <skinpath>ui/default_notif_window.ui</skinpath>
-  <position choice="manual">
-    <xcoord>804</xcoord>
-    <ycoord>184</ycoord>
-  </position>
+  <skinpath>default</skinpath>
+  <position choice="lowerRight"/>
   <animation>
     <totaltime>500</totaltime>
     <timequanta>18</timequanta>

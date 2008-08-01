@@ -14,9 +14,6 @@ from notification import *
 # Import PyQt4 GUI stuff:
 from PyQt4 import QtCore, QtGui
 
-# Import our own GUI stuff:
-from pnm.ui.default_notif_window import Ui_mainwindow
-
 icon_path = "/usr/share/pnm/icons/"
 
 class NotificationTrayIcon(QtGui.QSystemTrayIcon):
@@ -56,6 +53,7 @@ class NotificationDisplayer:
 		# Configurations:
 
 		# Load the GUI:
+		from pnm.ui.default_notif_window import Ui_mainwindow
 		self.ui_class, self.base_class = Ui_mainwindow, QtGui.QFrame
 		self.default_GUI_used = True
 		self.NotificationWindowClass = self.MakeNotificationWindowClass()
