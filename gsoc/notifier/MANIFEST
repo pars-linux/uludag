@@ -6,7 +6,8 @@ auxfiles/org.pardus.notificationmanager.service
 auxfiles/pnm.xsd
 auxfiles/sampleconfig.xml
 i18n/es.po
-i18n/notman.pot
+i18n/nl.po
+i18n/template.pot
 i18n/tr.po
 icons/disk.png
 icons/exit.png
