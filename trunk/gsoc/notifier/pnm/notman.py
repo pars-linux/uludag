@@ -22,6 +22,56 @@ from notification import *
 # Import notification handler (displayer module):
 from notdisplayer import *
 
+# Import XML stuff:
+from lxml import etree
+
+# XSD path:
+xsd_path = "/usr/share/pnm/pnm.xsd"
+# Config file path:
+config_path = os.path.join(os.path.expanduser("~"), ".notify/config.xml")
+
+def ValidateAndParseXML(file_name):
+	schema = etree.XMLSchema(etree.parse(xsd_path))
+	try:
+		xml_doc = etree.parse(file_name)
+	except Exception, err:
+		return (err, False)
+	if schema.validate(xml_doc):
+		return (xml_doc, True)
+	else:
+		return (schema.error_log.last_error, False)
+		
+def ImportConfFile():
+	# Try to validate the XML file:
+	result, isValid = ValidateAndParseXML(config_path)
+	options = {}
+	# If the file is valid, import them from the GUI and make an options dictionary:
+	if isValid == True:
+		options["percent_width"] = int(result.xpath("/pnmconfig/geometry/width")[0].text.strip())
+		options["percent_height"] = int(result.xpath("/pnmconfig/geometry/height")[0].text.strip())
+		options["animation_time"] = int(result.xpath("/pnmconfig/animation/totaltime")[0].text.strip())
+		options["time_quanta"] = int(result.xpath("/pnmconfig/animation/timequanta")[0].text.strip())
+		options["window_lifetime"] = int(result.xpath("/pnmconfig/animation/windowlifetime")[0].text.strip())
+		options["skinpath"] = result.xpath("/pnmconfig/skinpath")[0].text.strip()
+		options["manager_lifetime"] = int(result.xpath("/pnmconfig/manager/lifetime")[0].text.strip())
+		options["stacking_direction"] = result.xpath("/pnmconfig/direction")[0].attrib["choice"]
+		options["position"] = result.xpath("/pnmconfig/position")[0].attrib["choice"]
+					
+		if options["position"] == "manual":
+			xc = result.xpath("/pnmconfig/position/xcoord")
+			yc = result.xpath("/pnmconfig/position/ycoord")
+			xt = "400"
+			yt = "300"
+
+			if xc.__len__() == 1 and yc.__len__() == 1:
+				xt = xc[0].text.strip()
+				yt = yc[0].text.strip()
+
+			options["startx"] = int(xt)
+			options["starty"] = int(yt)
+
+	return options
+
 class Timer(QtCore.QThread):
 	def __init__(self, notification_manager):
 		QtCore.QThread.__init__(self)
@@ -45,19 +95,19 @@ class Timer(QtCore.QThread):
 				break
     
 class NotificationManager(QApplication):
-	def __init__(self):
+	def __init__(self, options):
 		QApplication.__init__(self,  sys.argv)
 		print _("Initializing notification manager...")
 		# We don't want the program to get closed when there is no visible notificaition window:
 		self.setQuitOnLastWindowClosed(False)
 		# Initialize the pending message queue:
 		self.message_queue = []
-		self.lifespan = 15.0
+		self.lifespan = options["manager_lifetime"]
 		self.last_notification_time = time.time()
 		# Initialize the timer:
 		self.timer = Timer(self)
 		# Initialize the notification displayer:
-		self.notification_displayer = NotificationDisplayer()    
+		self.notification_displayer = NotificationDisplayer(options)    
 
 	def Die(self):
 		QtCore.QTimer().singleShot(1000,  quit)
@@ -163,9 +213,13 @@ if __name__ == "__main__":
 		shutil.copy("/usr/share/pnm/sampleconfig.xml", os.path.join(os.path.expanduser("~"), ".notify/config.xml"))
 	elif not os.path.exists(os.path.join(os.path.expanduser("~"), ".notify/config.xml")):
 		import shutil
-		shutil.copy("/usr/share/pnm/sampleconfig.xml", os.path.join(os.path.expanduser("~"), ".notify/config.xml"))		
+		shutil.copy("/usr/share/pnm/sampleconfig.xml", os.path.join(os.path.expanduser("~"), ".notify/config.xml"))
+	
+	# Read the config file:
+	options = ImportConfFile()
+	
 	# Create the notification manager object (which is a QApplication that manages the GUI thread):
-	notification_manager = NotificationManager()
+	notification_manager = NotificationManager(options)
 	# Create the thread containing the notification manager DBus interface object:
 	notxfacethread = NotXFaceThread(notification_manager, "/NotificationManager")
 	# Set the signal handlers of the main thread so that it can receive signals from the DBus interface thread:

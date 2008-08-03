@@ -43,47 +43,54 @@ class NotificationTrayIcon(QtGui.QSystemTrayIcon):
 			self.showMessage(_("Error"),  _("Typing error, this program has just bought the farm."))
 
 class NotificationDisplayer:
-	def __init__(self):
+	def __init__(self, options):
 		self.tray_icon = NotificationTrayIcon(self,  QtGui.QIcon(icon_path + "icon.png"))
 		self.notification_windows = {}
 		self.nexthandle = 0
-		self.Configure()
+		self.Configure(options)
 
-	def Configure(self):
+	def Configure(self, options):
 		# Configurations:
 
 		# Load the GUI:
-		from pnm.ui.default_notif_window import Ui_mainwindow
+		if options["skinpath"] == "default":
+			from pnm.ui.default_notif_window import Ui_mainwindow
+			self.default_GUI_used = True
+		else:
+			import os, sys
+			sys.path.append(os.path.join(os.path.expanduser("~"), ".notify/pnmskins"))
+			exec("from " + os.path.splitext(os.path.basename(options["skinpath"]))[0] + " import Ui_mainwindow")
+			self.default_GUI_used = False
+
 		self.ui_class, self.base_class = Ui_mainwindow, QtGui.QFrame
-		self.default_GUI_used = True
 		self.NotificationWindowClass = self.MakeNotificationWindowClass()
 
 		# Configure notification window geometry:
 		screen = QtGui.QDesktopWidget().screenGeometry()
-		self.percent_width = 17
-		self.percent_height = 13
+		self.percent_width = options["percent_width"]
+		self.percent_height = options["percent_height"]
 		self.pixel_width = self.percent_width * screen.width() / 100
 		self.pixel_height = self.percent_height * screen.height() / 100
 
 		# Configure starting position:
-		# self.starting = "lowerRight"
-		self.starting = "upperRight"
-		# self.starting = "manual"
+		self.starting = options["position"]
 
 		# Manual starting position:
 		self.start_x = 300
 		self.start_y = 500
+		if self.starting == "manual":
+			self.start_x = options["startx"]
+			self.start_y = options["starty"]
 
 		# Configure growth direction:
-		# self.direction = "up"
-		self.direction = "down"  
+		self.direction = options["stacking_direction"]
 
 		# Configure animation timing (milliseconds):
-		self.total_animation_time = 500
-		self.time_quanta = 18
+		self.total_animation_time = options["animation_time"]
+		self.time_quanta = options["time_quanta"]
 
 		# Configure the lifetime of the notification windows:
-		self.lifetime = 5500
+		self.lifetime = options["window_lifetime"]
 
 	def ChangeLayout(self):
 		# Move all currently open notification windows properly:
