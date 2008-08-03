@@ -278,6 +278,7 @@ class Configurator:
 							message_box.setWindowTitle(_("Error in reading or compiling the skin file"))
 							message_box.setText(_("The skin file you supplied can not be used. The reason may be one of the following: Either the file couldn't be read, or it couldn't be compiled, or you don't have the required permissions."))
 							message_box.exec_()
+							skinpath.text = "default"
 							return None						
 
 					position = etree.SubElement(root, "position")
@@ -331,7 +332,7 @@ class Configurator:
 			def ImportConfFile(self, file_list):
 				# Try to validate the XML file:
 				result, isValid = ValidateAndParseXML(file_list[0].__str__())
-				# If the file is valid, make update the GUI accordingly:
+				# If the file is valid, update the GUI accordingly:
 				if isValid == True:
 					# Set the text fields according to the XML file:
 					self.percent_width.setText(result.xpath("/pnmconfig/geometry/width")[0].text.strip())
