@@ -13,6 +13,9 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
+    class Admin:
+        pass
+
     class Meta:
         db_table = "plsa_language"
         verbose_name = _("Language")
