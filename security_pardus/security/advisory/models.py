@@ -65,10 +65,14 @@ class Advisory(models.Model):
         return [x.split() for x in self.packages.split("\n") if x.strip()]
 
     def get_distros(self):
-        try:
-            return [x.split()[2] for x in self.packages.split("\n") if x.strip()]
-        except IndexError:
-            return []
+        distros = []
+        for x in self.packages.split("\n"):
+            try:
+                if x.strip() and x.split()[2] not in distros:
+                    distros.append(x.split()[2])
+            except IndexError:
+                return []
+        return distros
 
     def get_package_names(self):
         packages = []
