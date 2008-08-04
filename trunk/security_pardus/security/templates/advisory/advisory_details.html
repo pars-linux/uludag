@@ -16,18 +16,46 @@
     <h3>{% trans "Description" %}</h3>
     {{ advisory.description|escape|linebreaks }}
 
+    <h3>{% trans "Packages" %}</h3>
+
+    {% if advisory.get_distro_packages.0|length_is:"2" %}
+        <ul>
+        {% for package in advisory.get_packages %}
+            <li>{{ package.0 }}, {% blocktrans with package.1 as version %}all before {{ version }}{% endblocktrans %}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        {% for distro in advisory.get_distros %}
+            <h4>{{ distro }}</h4>
+            <ul>
+                {% for package in advisory.get_distro_packages %}
+                    {% ifequal package.2 distro %}
+                    <li>{{ package.0 }}, {% blocktrans with package.1 as version %}all before {{ version }}{% endblocktrans %}</li>
+                    {% endifequal %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %}
+
     <h3>{% trans "Resolution" %}</h3>
     <p>
         {% blocktrans with advisory.get_package_names|join:", " as packages %}There are update(s) for {{ packages }}. You can update them via Package Manager or with a single command from console:{% endblocktrans %}
     </p>
-    <pre><code>pisi up {{ advisory.get_package_names|join:" " }}</code></pre>
 
-    <h3>{% trans "Packages" %}</h3>
-    <ul>
-        {% for package in advisory.get_packages %}
-            <li>{{ package.0 }}, {% blocktrans with package.1 as version %}all before {{ version }}{% endblocktrans %}</li>
+    {% if advisory.get_distro_packages.0|length_is:"2" %}
+        <pre><code>pisi up {{ advisory.get_package_names|join:" " }}</code></pre>
+    {% else %}
+        {% for distro in advisory.get_distros %}
+            <h4>{{ distro }}</h4>
+            <pre><code>pisi up {% spaceless %}
+                {% for package in advisory.get_distro_packages %}
+                    {% ifequal package.2 distro %}
+                    {{ package.0 }}
+                    {% endifequal %}
+                {% endfor %}
+            {% endspaceless %}</code></pre>
         {% endfor %}
-    </ul>
+    {% endif %}
 
     <h3>{% trans "References" %}</h3>
     <ul>
