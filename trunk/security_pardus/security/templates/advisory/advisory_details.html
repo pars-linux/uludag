@@ -26,7 +26,7 @@
         </ul>
     {% else %}
         {% for distro in advisory.get_distros %}
-            <h4>{{ distro }}</h4>
+            <h4>Pardus {{ distro }}</h4>
             <ul>
                 {% for package in advisory.get_distro_packages %}
                     {% ifequal package.2 distro %}
@@ -46,7 +46,7 @@
         <pre><code>pisi up {{ advisory.get_package_names|join:" " }}</code></pre>
     {% else %}
         {% for distro in advisory.get_distros %}
-            <h4>{{ distro }}</h4>
+            <h4>Pardus {{ distro }}</h4>
             <pre><code>pisi up {% spaceless %}
                 {% for package in advisory.get_distro_packages %}
                     {% ifequal package.2 distro %}
