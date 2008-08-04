@@ -21,5 +21,7 @@ at::25:at
 tape::26:root
 video::27:root
 dbus:x:101:dbus
+hal:x:102:hal
+polkit:x:103:polkit
 nogroup::65533:
 nobody::65534:
