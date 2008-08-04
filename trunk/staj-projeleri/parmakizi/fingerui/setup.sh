@@ -5,7 +5,7 @@ sudo cp ./comar/model.xml /etc/comar/
 
 cd ./comar
 sudo hav remove baselayout
-sudo hav register baselayout User.Manager ./User_Manager_Baselayout.py
+sudo hav register baselayout User.Manager ./User_Manager_baselayout.py
 
 cd ../ui
 ./generatepy.sh

@@ -7,6 +7,7 @@ from PyQt4.QtGui import QPixmap
 import pyfprint                 #Utility libs
 import fingerform, swipe        #UI classes
 import handler                  #DBus Handler from user-manager
+import thread
 from dbus.mainloop.qt import DBusQtMainLoop
 from base64 import b64encode as b64, b64decode as b64dec
 
@@ -35,7 +36,6 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
 
         self.startUi()
         self.connect(self, SIGNAL("finished(int)"), self._exitFprint)
-
     #--------ui functions-------
 
     @pyqtSignature("")
@@ -44,6 +44,7 @@ class fmDialog(QDialog, fingerform.Ui_dialogFinger):
         popup = swipe.swipeDialog()
         popup.show()
         qApp.processEvents(QEventLoop.AllEvents)
+        #thread.start_new_thread(self.enroll())
         self.enroll()
         popup.reject()
         self.updateUi()
