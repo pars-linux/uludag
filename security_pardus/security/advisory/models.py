@@ -51,7 +51,7 @@ class Advisory(models.Model):
     title = models.CharField(_("Title"), maxlength=120)
     summary = models.TextField(_("Summary"))
     description = models.TextField(_("Description"))
-    packages = models.TextField(_("Packages"), validator_list=[isValidPackageList], help_text=_("one package per row (put a whitespace between package name and version)"))
+    packages = models.TextField(_("Packages"), validator_list=[isValidPackageList], help_text=_("one package per row (put a whitespace between package name, version and distro version)"))
     references = models.TextField(_("References"), help_text=_("one link per row"))
     fixed = models.BooleanField(_("Ready to publish"))
 
@@ -61,8 +61,21 @@ class Advisory(models.Model):
     def get_packages(self):
         return [x.split(" ", 1) for x in self.packages.split("\n") if x.strip()]
 
+    def get_distro_packages(self):
+        return [x.split() for x in self.packages.split("\n") if x.strip()]
+
+    def get_distros(self):
+        try:
+            return [x.split()[2] for x in self.packages.split("\n") if x.strip()]
+        except IndexError:
+            return []
+
     def get_package_names(self):
-        return [x.split()[0] for x in self.packages.split("\n") if x.strip()]
+        packages = []
+        for x in self.packages.split("\n"):
+            if x.strip() and x.split()[0] not in packages:
+                packages.append(x.split()[0])
+        return packages
 
     def get_references(self):
         return [x.strip() for x in self.references.split("\n") if x.strip()]
