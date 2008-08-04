@@ -47,13 +47,7 @@
     {% else %}
         {% for distro in advisory.get_distros %}
             <h4>Pardus {{ distro }}</h4>
-            <pre><code>pisi up {% spaceless %}
-                {% for package in advisory.get_distro_packages %}
-                    {% ifequal package.2 distro %}
-                    {{ package.0 }}
-                    {% endifequal %}
-                {% endfor %}
-            {% endspaceless %}</code></pre>
+            <pre><code>pisi up {% for package in advisory.get_distro_packages %}{% ifequal package.2 distro %}{{ package.0 }} {% endifequal %}{% endfor %}</code></pre>
         {% endfor %}
     {% endif %}
 
