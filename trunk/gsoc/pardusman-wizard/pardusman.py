@@ -8,9 +8,15 @@ import gettext
 
 _ = gettext.gettext
 
+from screens import ScrRepo
+from screens import ScrMedia
+from screens import ScrSystemType
+from screens import ScrUsers
+from screens import ScrGrub
+
 screenId = {"":""}
 
-class Wizard(QtGui.QMainWindow):
+class Pardusman(QtGui.QMainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
         uic.loadUi("screens/mainWindowUi.ui", self)
@@ -20,15 +26,15 @@ class Wizard(QtGui.QMainWindow):
         self.setMainWindow()
 
     def getWidgets(self):
-        self.avail_screens = {}
-
-        for file in os.listdir("screens"):
-            if file.startswith("screen"):
-                self.avail_screens[file] = uic.loadUi("screens/%s" % file)
+        self.avail_screens = [ScrRepo.Widget(),
+                              ScrMedia.Widget(),
+                              ScrSystemType.Widget(),
+                              ScrUsers.Widget(),
+                              ScrGrub.Widget()]
 
     def initialize(self):
         leftPanel = ""
-        for screen in self.avail_screens.itervalues():
+        for screen in self.avail_screens:
             _w = screen
             self.pageStack.addWidget(_w)
             sId = self.pageStack.indexOf(_w)
@@ -44,27 +50,24 @@ class Wizard(QtGui.QMainWindow):
         self.pageStack.setCurrentIndex(2)
 
     def setWidgets(self):
-        for widget in self.avail_screens.itervalues():
+        for widget in self.avail_screens:
             self.pageStack.addWidget(widget)
 
     def getCurrent(self):
         return self.pageStack.indexOf(self.pageStack.currentWidget())
 
     def stackMove(self,where):
-        if where<=0:
-            where = 1
-        if where>=len(self.avail_screens):
-            where = len(self.avail_screens)
+        if where<=2:
+            where = 2
+        if where>len(self.avail_screens):
+            where = len(self.avail_screens)+1
 
         self.pageStack.setCurrentIndex(where)
         _w = self.pageStack.currentWidget()
         self.pageDesc.setText(_(_w.desc))
         #self.pageIcon.setPixmap(QPixmap(locate("data", _w.icon)))
 
-        _w.shown()
-
-        if self.getCurrent() == 1:
-            self.buttonBack
+        _w.show()
 
         # hide next and show finish buttons on last screen
         if self.getCurrent() == len(screenId):
@@ -75,26 +78,31 @@ class Wizard(QtGui.QMainWindow):
             self.buttonFinish.hide()
 
         # hide back button on first screen
-        if self.getCurrent() == 1:
+        if self.getCurrent()-1 == 1:
             self.buttonBack.hide()
         else:
             self.buttonBack.show()
 
     def slotNext(self):
-        _w = self.pageStack.currentWidget()
-        _w.show()
+        #_w = self.pageStack.currentWidget()
+        #_w.show()
+
+        if not self.avail_screens[2].radioLive.isChecked() and self.getCurrent() == 4:
+            next = self.getCurrent() + 2
+        else:
+            next = self.getCurrent() + 1
+
         stepBatch = ""
-        stepBatch += self.putBr(screenId[2])
 
         for sId in screenId:
-            if  sId < len(screenId):
-                if sId == self.getCurrent():
-                    stepBatch+= self.putBold(screenId[sId+1])
+            if  sId <= len(screenId):
+                if sId == next:
+                    stepBatch+= self.putBold(screenId[sId])
                 else:
-                    stepBatch+= self.putBr(screenId[sId +1])
+                    stepBatch+= self.putBr(screenId[sId])
 
         self.pixSteps.setText(stepBatch)
-        self.stackMove(self.getCurrent() + 1)
+        self.stackMove(next)
 
     def putBr(self, item):
         return unicode("» ") + item + "<br>"
@@ -103,20 +111,29 @@ class Wizard(QtGui.QMainWindow):
         return "<b>" + unicode("» ") + item + "</b><br>"
 
     def slotBack(self):
+        if not self.avail_screens[2].radioLive.isChecked() and self.getCurrent() == 6:
+            prev = self.getCurrent() - 2
+        else:
+            prev = self.getCurrent() - 1
+ 
         stepBatch = ""
         for sId in screenId:
-            if  sId <= len(screenId) and not sId == 1:
-                if sId == self.getCurrent():
-                    stepBatch+= self.putBold(screenId[sId - 1])
+            if  sId < len(screenId) and not sId == 1:
+                if sId == prev:
+                    stepBatch+= self.putBold(screenId[sId])
                 else:
-                    stepBatch+= self.putBr(screenId[sId - 1])
+                    stepBatch+= self.putBr(screenId[sId])
         stepBatch+= self.putBr(screenId[len(screenId)])
         self.pixSteps.setText(stepBatch)
 
-        self.stackMove(self.getCurrent() - 1)
+        self.stackMove(prev)
 
     def setMainWindow(self):
         self.pageDesc.setText(_("Welcome to Pardus CD/DVD/USB Distribution Wizard"))
+        
+        icon = QtGui.QPixmap(QtCore.QString("data/pardusman.png"))
+        self.pageIcon.setPixmap(icon)
+        
         self.buttonCancel.setText(_("&Cancel"))
         self.buttonBack.setText(_("&Back"))
         self.buttonNext.setText(_("&Next"))
@@ -134,7 +151,7 @@ class Wizard(QtGui.QMainWindow):
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
-    pmw = Wizard()
-    pmw.show()
+    pm = Pardusman()
+    pm.show()
     sys.exit(app.exec_())
 
