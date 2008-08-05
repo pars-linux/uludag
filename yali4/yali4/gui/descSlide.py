@@ -19,7 +19,7 @@ slideDesc = [
 """)},
 {"kaptan":_("""Our Kaptan will show you the way after the installation. You can easily add additional repositories and manage basic settings like mouse, wallpaper and panel using in Kaptan.
 """)},
-{"tasma":_("""Tasma is the management and settings center of Pardus. Configuration operations including but not limited to adding a new user or hardware (e.g. printer, scanner) to the system, management of visual settings ranging from desktop icons to fonts are all brought together under Tasma's interface.
+{"tasma":_("""Tasma is the management and settings center of Pardus. Configuration operations including but not limited to adding a new user or hardware (e.g. printer, monitor) to the system, management of visual settings ranging from desktop icons to fonts are all brought together under Tasma's interface.
 """)},
 {"paket":_("""There are thousands of packages in Pardus software repositories. You can install, remove or update those packages and programs with just two clicks using the Package Manager!
 """)},
