@@ -9,10 +9,10 @@ import subprocess
 import pisi
 
 def get_pardus_cd_device():
-    return os.popen("hal-get-property --udi /org/freedesktop/Hal/devices/volume_label_Pardus --key block.device").read().strip()
+    return os.popen("hal-get-property --udi /org/freedesktop/Hal/devices/volume_label_Pardus --key block.device 2> /dev/null").read().strip()
 
 def is_pardus_cd_mounted():
-    return os.popen("hal-get-property --udi /org/freedesktop/Hal/devices/volume_label_Pardus --key volume.is_mounted").read().strip()
+    return os.popen("hal-get-property --udi /org/freedesktop/Hal/devices/volume_label_Pardus --key volume.is_mounted 2> /dev/null").read().strip()
 
 def error(msg):
     print "\033[31m" + msg
