@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import shutil
 import subprocess
 
@@ -14,7 +15,8 @@ def is_pardus_cd_mounted():
     return os.popen("hal-get-property --udi /org/freedesktop/Hal/devices/volume_label_Pardus --key volume.is_mounted").read().strip()
 
 def error(msg):
-    raise Exception(msg)
+    print "\033[31m" + msg
+    sys.exit(1)
 
 def check_pardus_2008_cd():
     block = get_pardus_cd_device()
