@@ -44,7 +44,15 @@ def AboutData():
     about_data.addAuthor("İsmail Dönmez", I18N_NOOP("Original Author"), "ismail@pardus.org.tr")
     about_data.addAuthor("Gökmen Göksel",I18N_NOOP("CSS/JS Meister"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Görkem Çetin",I18N_NOOP("GUI Design & Usability"), "gorkem@pardus.org.tr")
-    about_data.addCredit(I18N_NOOP("PiSi Authors"), I18N_NOOP("Authors of PiSi API"), "pisi@pardus.org.tr")
+    about_data.addCredit(I18N_NOOP("Ahmet Aygün"), I18N_NOOP("Authors of PiSi API"), "ahmet@pardusman.org")
+    about_data.addCredit(I18N_NOOP("A. Murat Eren"), I18N_NOOP("Authors of PiSi API"), "meren@pardus.org.tr")
+    about_data.addCredit(I18N_NOOP("Bahadır Kandemir"), I18N_NOOP("Authors of PiSi API"), "bahadir@pardus.org.tr")
+    about_data.addCredit(I18N_NOOP("Barış Metin"), I18N_NOOP("Authors of PiSi API"), "baris@pardus.org.tr")
+    about_data.addCredit(I18N_NOOP("Furkan Duman"), I18N_NOOP("Authors of PiSi API"), "coderlord@gmail.com")
+    about_data.addCredit(I18N_NOOP("Gürer Özen"), I18N_NOOP("Authors of PiSi API"), "gurer@pardus.org.tr")
+    about_data.addCredit(I18N_NOOP("Onur Küçük"), I18N_NOOP("Authors of PiSi API"), "onur@pardus.org.tr")
+    about_data.addCredit(I18N_NOOP("S. Çağlar Onur"), I18N_NOOP("Authors of PiSi API"), "caglar@pardus.org.tr")
+
     return about_data
 
 class MainApplication(KMainWindow):
