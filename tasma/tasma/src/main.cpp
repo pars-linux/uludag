@@ -65,8 +65,14 @@ int main( int argc, char *argv[] )
   aboutData.addAuthor( "Pınar Yanardağ", I18N_NOOP( "Current Maintainer" ), "pinar@pardus.org.tr" );
   aboutData.addAuthor( "İsmail Dönmez", I18N_NOOP( "Developer" ), "ismail@pardus.org.tr" );
   aboutData.addAuthor( "Barış Metin", I18N_NOOP( "Old Maintainer & Original Author" ), "baris@pardus.org.tr" );
-  aboutData.addAuthor( I18N_NOOP( "Module Developers" ), I18N_NOOP( "KDE Developers" ) );
+  aboutData.addCredit(I18N_NOOP("Bahadır Kandemir"), I18N_NOOP("Module Developers"), "bahadir@pardus.org.tr");
+  aboutData.addCredit(I18N_NOOP("Faik Uygur"), I18N_NOOP("TV Module Maintainer"), "faik@pardus.org.tr");
+  aboutData.addCredit(I18N_NOOP("Fatih Aşıcı"), I18N_NOOP("Module Developers"), "fatih@pardus.org.tr");
+  aboutData.addCredit(I18N_NOOP("Gökmen Göksel"), I18N_NOOP("Module Developers"), "gokmen@pardus.org.tr");
+  aboutData.addCredit(I18N_NOOP("İşbaran Akçayır"), I18N_NOOP("Module Developers"), "isbaran@gmail.com");
+  aboutData.addCredit(I18N_NOOP("KDE"), I18N_NOOP("Module Developers"), "kde-devel@kde.org");
   aboutData.setTranslator( "Barış Metin", "baris@pardus.org.tr" );
+
   KCmdLineArgs::init( argc, argv, &aboutData );
 
   TasmaApp app;
