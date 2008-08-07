@@ -124,6 +124,53 @@ class PisiApi:
 
         return (self.__newBinaryPackages, self.__oldBinaryPackages)
 
+    def getInstallOrder(self, packages):
+        """ Get installation order for pisi packages. """
+
+        import pisi.dependency as dependency
+        import pisi.pgraph as pgraph
+
+        # d_t: dict assigning package names to metadata's
+        d_t = {}
+
+        # dfn: dict assigning package names to package paths
+        dfn = {}
+        for p in packages:
+            package = pisi.package.Package(os.path.join(config.workDir, p))
+            package.read()
+            name = str(package.metadata.package.name)
+            d_t[name] = package.metadata.package
+            dfn[name] = p
+
+        class PackageDB:
+            def get_package(self, key, repo = None):
+                return d_t[str(key)]
+
+        packagedb = PackageDB()
+
+        A = d_t.keys()
+        G_f = pgraph.PGraph(packagedb)
+
+        for x in A:
+            G_f.add_package(x)
+
+        B = A
+        while len(B) > 0:
+            Bp = set()
+            for x in B:
+                pkg = packagedb.get_package(x)
+                for dep in pkg.runtimeDependencies():
+                    if dependency.dict_satisfies_dep(d_t, dep):
+                        if not dep.package in G_f.vertices():
+                            Bp.add(str(dep.package))
+                        G_f.add_dep(x, dep)
+            B = Bp
+
+        order = G_f.topological_sort()
+        order.reverse()
+
+        return [dfn[p] for p in order]
+
     def install(self, p):
         a = []
         a.append(p)
