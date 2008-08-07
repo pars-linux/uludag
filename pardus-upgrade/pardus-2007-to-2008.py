@@ -97,6 +97,56 @@ def delete_users_dir(user_dir):
         if os.path.exists(user_dir):
             shutil.rmtree(user_dir)
 
+def migrate_users_bashrc(bashrc):
+    bashrcLinesToAdd = """
+alias grep="grep --color"
+alias egrep="egrep --color"
+alias fgrep="fgrep --color"
+
+alias scp-resume="rsync --compress-level=3 --partial --progress --rsh=ssh"
+
+for sh in /etc/profile.d/*.sh ; do
+    if [ -r "$sh" ] ; then
+        . "$sh"
+    fi
+done
+unset sh
+
+"""
+
+    bashrcLinesToRemove = ["source /etc/profile",
+                           "source /etc/bashrc",
+                           "export GTK2_RC_FILES=",
+                           "alias svn="]
+
+    bashrc_backup = "%s-pardus_2007_backup" % bashrc
+    shutil.move(bashrc, bashrc_backup)
+
+    src = file(bashrc_backup).readlines()
+
+    targetData = ""
+    for line in src:
+        found = 0
+        for i in bashrcLinesToRemove:
+            if line.startswith(i):
+                found = 1
+
+        if not found:
+            targetData += line
+
+    targetData += bashrcLinesToAdd
+
+    ftarget = file(bashrc, "w")
+    ftarget.write(targetData)
+    ftarget.close()
+
+def fix_bashrc():
+    users = _find_users()
+    for user in users:
+        bashrcFile = "/home/%s/.bashrc" % user
+        if os.path.exists(bashrcFile):
+            migrate_users_bashrc(bashrcFile)
+
 def fix_dbus():
     delete_users_file(".dbus-session")
     delete_users_dir(".dbus")
@@ -302,6 +352,7 @@ def migrate_2007_to_2008():
     pisi_upgrade()
     fix_keyboard()
     fix_dbus()
+    fix_bashrc()
 
 if __name__ == '__main__':
     migrate_2007_to_2008()
