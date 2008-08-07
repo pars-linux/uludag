@@ -101,6 +101,13 @@ def buildPackages():
                 mailer.error(errmsg, pspec)
             else:
                 try:
+                    # If there exists multiple packages, reorder them.
+                    if len(packagesToInstall) > 1:
+                        # packagesToInstall doesn't contain full paths
+                        logger.info("Reordering packages..")
+                        packagesToInstall = pisi.getInstallOrder(packagesToInstall)
+                        logger.info("New order is: %s" % packagesToInstall)
+
                     for p in packagesToInstall:
                         logger.info("Installing: %s" % os.path.join(config.workDir, p))
                         pisi.install(os.path.join(config.workDir, p))
