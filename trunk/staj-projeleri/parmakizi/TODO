@@ -1,0 +1,6 @@
+-libfprint parmak izi kayıt yeri  bizim istediğimiz dizine çekilecek
+-pyfprint ile yeni değişiklikler sınanacak
+-comar kayıt işlemini pyfprint kullanarak yapacak
+-pam fprint parmak izini bizim dizinimizden okuyacak
+-/etc/pam.d dosyaları düzenlenecek(only fingerprint possible) değilse parola
+-parmakizi image dosyası mümkünse libfprint tarafından istediğimiz yere yazdırılacak/okutulacak
