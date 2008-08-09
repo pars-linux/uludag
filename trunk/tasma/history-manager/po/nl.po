@@ -9,10 +9,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 12:27+0300\n"
-"PO-Revision-Date: 2008-06-24 11:40+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"PO-Revision-Date: 2008-08-09 23:33+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -230,29 +229,24 @@ msgid "<b>Preparing PiSi...</b>"
 msgstr "<b>Voorbereiden PiSi...</b>"
 
 #: src/history_gui.py:442
-#, fuzzy
 msgid "snapshot"
-msgstr "Snapshots"
+msgstr "snapshot"
 
 #: src/history_gui.py:446
-#, fuzzy
 msgid "upgrade"
-msgstr "Opwaarderingen"
+msgstr "opwaarderen"
 
 #: src/history_gui.py:450
-#, fuzzy
 msgid "remove"
-msgstr "Verwijderd"
+msgstr "verwijder"
 
 #: src/history_gui.py:454
-#, fuzzy
 msgid "install"
-msgstr "Installaties"
+msgstr "installatie"
 
 #: src/history_gui.py:458
-#, fuzzy
 msgid "takeback"
-msgstr "GaTerug"
+msgstr "gaterug"
 
 #: src/ComarIface.py:31
 msgid "Cannot connect to dbus"
@@ -273,3 +267,4 @@ msgstr "COMAR fout"
 #: src/ComarIface.py:58
 msgid "You are not authorized for this operation."
 msgstr "U bent niet geautoriseerd voor deze handeling."
+
