@@ -103,6 +103,8 @@ class Connection(Hook):
         self.dns_server = None
         self.vpn_domain = None
         self.vpn_port = None
+        self.vpn_protocol = None
+        self.vpn_chipher = None
         self.vpn_ca = None
         self.vpn_cert = None
         self.vpn_key = None
@@ -145,6 +147,10 @@ class Connection(Hook):
                 self.vpn_port = value
             elif key == "domain":
                 self.vpn_domain = value
+            elif key == "protocol":
+                self.vpn_protocol = value
+            elif key == "chipher":
+                self.vpn_chipher = value
             elif key == "ca":
                 self.vpn_ca = value
             elif key == "cert":
