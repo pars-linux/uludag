@@ -26,14 +26,15 @@ no_device_msg = {
 
 import os
 import subprocess
+import commands
 
 from pardus import netutils
 from pardus import iniutils
 
 # Open connection db
-DB = iniutils.iniDB(os.path.join("/etc/network/openvpn.db"))
-CFG_FL = "/etc/network/openvpnclient.conf"
-PID_FL = "/etc/network/openvpn.pid"
+DB = iniutils.iniDB(os.path.join("/etc/network", script()))
+CFG_FL = "/etc/openvpn/openvpnclient.conf"
+PID_FL = "/etc/openvpn/openvpn.pid"
 
 # Internal functions
 
@@ -106,23 +107,20 @@ class Dev():
         vpnfl.close()
         notify("Net.Link", "stateChanged", (self.name, "connecting", ""))
         ret = subprocess.Popen(["/usr/sbin/openvpn","--config",CFG_FL])
-        #print ret.communicate()
-        #if ret == 0:
-        d = DB.getDB(self.name)
-        pid =  _getPid(PID_FL)
-        if pid != None:
-            d["pid"] = str(pid)
-        else:
-            d["pid"] = ""
-        d["state"] = "up"
-        DB.setDB(self.name, d)
-        notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
-       # ret.wait() 
-       # notify("Net.Link", "stateChanged", (self.name, "down", ""))
+        if ret == 0:
+            d = DB.getDB(self.name)
+            pid =  _getPid(PID_FL)
+            if pid != None:
+                d["pid"] = str(pid)
+            else:
+                d["pid"] = ""
+            d["state"] = "up"
+            DB.setDB(self.name, d)
+            notify("Net.Link", "stateChanged", (self.name, "up", self.domain))
 
-        #else:
-         #   notify("Net.Link", "stateChanged", (self.name, "down", ""))
-          #  fail("Unable to set vpn connection. Check your configuration")
+        else:
+             notify("Net.Link", "stateChanged", (self.name, "down", ""))
+             fail("Unable to set vpn connection. Check your configuration")
     
     def down(self):
         try:            

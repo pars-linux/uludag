@@ -100,7 +100,7 @@ class connShare(QDialog):
         for hash, profile in comlink.connections.iteritems():
             if profile  in self.profiles:
                 continue
-            if profile.script == "openvpn" or profile.script == "ppp":
+            if profile.script != "net_tools" and profile.script != "wireless_tools":
                 continue
             self.profiles.append(profile)
             self.intcombo.insertItem(profile.name)

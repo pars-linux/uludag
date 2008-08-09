@@ -219,43 +219,40 @@ class Settings(QWidget):
             line = widgets.HLine(i18n("VPN Authentication"), self, "vpn_icon")
             lay.addSpacing(6)
             lay.addWidget(line)
-            grid = QGridLayout(3, 2)
-            lay.addLayout(grid)
+            grid2 = QGridLayout(7, 2, 6)
+            lay.addLayout(grid2)
             
             lab = QLabel(i18n("Domain:"), self)
-            grid.addWidget(lab, 0, 0, Qt.AlignRight)
-            w = QWidget(self)
-            self.domain = QLineEdit(w)
-            grid.addWidget(w, 0, 1)
+            grid2.addWidget(lab, 0, 0, Qt.AlignRight)
+            self.domain = QLineEdit(self)
+            grid2.addWidget(self.domain, 0, 1)
             
             lab = QLabel(i18n("Port:"), self)
-            grid.addWidget(lab, 1, 0, Qt.AlignRight)
-            w = QWidget(self)
-            self.port = QLineEdit(w)
-            grid.addWidget(w, 1, 1)
+            grid2.addWidget(lab, 1, 0, Qt.AlignRight)
+            self.port = QLineEdit(self)
+            grid2.addWidget(self.port, 1, 1)
 
             lab = QLabel(i18n("Protocol:"),self)
-            grid.addWidget(lab, 2, 0, Qt.AlignRight)
-            w = QWidget(self)
-            self.protocol = QComboBox(0, w, "TCP")
+            grid2.addWidget(lab, 2, 0, Qt.AlignRight)
+            self.protocol = QComboBox(0, self, "TCP")
             self.protocol.insertItem("TCP")
             self.protocol.insertItem("UDP")
-            grid.addWidget(w, 2, 1)
-            grid.setSpacing(7)
+            grid2.addWidget(self.protocol, 2, 1)
+            grid2.setSpacing(7)
 
             lab = QLabel(i18n("Cryptographic Chipher:"),self)
-            grid.addWidget(lab, 3, 0, Qt.AlignRight)
-            w = QWidget(self)
-            self.chipher = QComboBox(0, w, "None")
+            grid2.addWidget(lab, 3, 0, Qt.AlignRight)
+            self.chipher = QComboBox(0, self, "None")
             self.chipher.insertItem("-")
             self.chipher.insertItem("BF-CBC")
             self.chipher.insertItem("AES-128-CBC")
             self.chipher.insertItem("DES-EDE3-CBC")
-            grid.addWidget(w, 3, 1)
-            grid.setSpacing(7)
+            grid2.addWidget(self.chipher, 3, 1)
+            grid2.setColStretch(2,2)
+            grid2.setSpacing(7)
 
             lab = QLabel(i18n("CA Certificate:"), self)
-            grid.addWidget(lab, 4, 0, Qt.AlignRight)
+            grid2.addWidget(lab, 4, 0, Qt.AlignRight)
 
             hb = QHBox(self)
             self.lab2 = KActiveLabel("", hb)
@@ -263,10 +260,10 @@ class Settings(QWidget):
             self.file_but.setEnabled(True)
             self.ca = ""
             self.connect(self.file_but, SIGNAL("clicked()"), lambda: self.getFileName(1))
-            grid.addWidget(hb, 4, 1)
+            grid2.addWidget(hb, 4, 1)
             
             lab = QLabel(i18n("Cert Certificate:"), self)
-            grid.addWidget(lab, 5, 0, Qt.AlignRight)
+            grid2.addWidget(lab, 5, 0, Qt.AlignRight)
 
             hb = QHBox(self)
             self.lab3 = KActiveLabel("", hb)
@@ -274,18 +271,18 @@ class Settings(QWidget):
             self.file_but2.setEnabled(True)
             self.cert = ""
             self.connect(self.file_but2, SIGNAL("clicked()"), lambda: self.getFileName(2))
-            grid.addWidget(hb, 5, 1)
+            grid2.addWidget(hb, 5, 1)
 
 
             lab = QLabel(i18n("Key:"), self)
-            grid.addWidget(lab, 6, 0, Qt.AlignRight)
+            grid2.addWidget(lab, 6, 0, Qt.AlignRight)
             hb = QHBox(self)
             self.lab4 = KActiveLabel("", hb)
             self.file_but3 = QPushButton(i18n("Select .key File"), hb)
             self.file_but3.setEnabled(True)
             self.key = ""
             self.connect(self.file_but3, SIGNAL("clicked()"), lambda: self.getFileName(3))
-            grid.addWidget(hb, 6, 1)
+            grid2.addWidget(hb, 6, 1)
 
 
         # Authentication
@@ -452,6 +449,14 @@ class Settings(QWidget):
                     self.domain.setText(conn.vpn_domain)
                 if conn.vpn_port:
                     self.port.setText(conn.vpn_port)
+                if conn.vpn_protocol:
+                    if conn.vpn_protocol == "udp":
+                        self.protocol.setCurrentItem(1)
+                    else:
+                        self.protocol.setCurrentItem(0)
+
+                if conn.vpn_chipher:
+                    self.chipher.setCurrentText(conn.vpn_chipher)
                 if conn.vpn_ca:
                     self.ca = conn.vpn_ca
                     self.lab2.setText(self.ca)
