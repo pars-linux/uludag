@@ -82,6 +82,11 @@ def buildPackages():
                 # Delta package generation using delta interface
                 (deltasToInstall, deltaPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
 
+                # Reduce to filenames
+                deltasToInstall = map(lambda x: os.path.basename(x), deltasToInstall)
+                deltaPackages = map(lambda x: os.path.basename(x), deltaPackages)
+
+                # If there exists incremental delta packages, install them.
                 if deltasToInstall:
                     packagesToInstall = deltasToInstall[:]
                     if len(newBinaryPackages) > len(oldBinaryPackages):
@@ -89,6 +94,7 @@ def buildPackages():
                         # because they dont have delta.
                         packagesToInstall.extend(newBinaryPackages[len(oldBinaryPackages):])
                 else:
+                    # No delta, install full packages
                     packagesToInstall = newBinaryPackages[:]
 
                 # Merge the package lists
@@ -101,7 +107,8 @@ def buildPackages():
                 mailer.error(errmsg, pspec)
             else:
                 try:
-                    # If there exists multiple packages, reorder them.
+                    # If there exists multiple packages, reorder them in order to
+                    # correctly install interdependent packages.
                     if len(packagesToInstall) > 1:
                         # packagesToInstall doesn't contain full paths
                         logger.info("Reordering packages..")
@@ -117,7 +124,13 @@ def buildPackages():
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
 
-                    newBinaryPackages.remove(p)
+                    # The package can also be a delta, so handle this.
+                    if p in deltasToInstall:
+                        deltasToInstall.remove(p)
+                    else:
+                        newBinaryPackages.remove(p)
+
+                    # Remove binary package from workdir, e.g '/var/pisi'
                     removeBinaryPackageFromWorkDir(p)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
