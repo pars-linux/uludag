@@ -32,12 +32,23 @@ class DependencyResolver:
 
         self.bdepmap, self.rdepmap, self.namemap, self.pspeccount = {}, {}, {}, len(self.pspeclist)
 
-        for pspec in self.pspeclist: self.bdepmap[pspec] = self.__getBuildDependencies(pspec)
-        for pspec in self.pspeclist: self.rdepmap[pspec] = self.__getRuntimeDependencies(pspec)
-        for pspec in self.pspeclist: self.namemap[pspec] = self.__getPackageNames(pspec)
+        for pspec in self.pspeclist:
+            self.bdepmap[pspec] = self.__getBuildDependencies(pspec)
+        for pspec in self.pspeclist:
+            self.rdepmap[pspec] = self.__getRuntimeDependencies(pspec)
+        for pspec in self.pspeclist:
+            self.namemap[pspec] = self.__getPackageNames(pspec)
+
+        # DEBUG
+        """
+        open("/var/pisi/bdepmap","wb").write("\n".join(["%s -> %s" % (k,v) for k,v in self.bdepmap.items()]))
+        open("/var/pisi/namemap","wb").write("\n".join(["%s -> %s" % (k,v) for k,v in self.namemap.items()]))
+        open("/var/pisi/rdepmap","wb").write("\n".join(["%s -> %s" % (k,v) for k,v in self.rdepmap.items()]))
+        """
 
     def resolvDeps(self):
-        while not (self.buildDepResolver() and self.runtimeDepResolver()): pass
+        while not (self.buildDepResolver() and self.runtimeDepResolver()):
+            pass
 
         os.chdir(self.oldwd)
         return self.pspeclist
@@ -90,6 +101,7 @@ class DependencyResolver:
             for p in self.rdepmap.get(pspec):
                 for j in range(i+1, self.pspeccount):
                     if p in self.namemap.get(self.pspeclist[j]):
+                        print "    -> rdep %s of %s is satisfied by %s" % (p, pspec, self.pspeclist[j])
                         self.pspeclist.insert(j+1, self.pspeclist.pop(i))
                         clean = False
         return clean
@@ -100,9 +112,17 @@ class DependencyResolver:
         clean = True
         for i in range(0, self.pspeccount):
             pspec = self.pspeclist[i]
+            # Current pspec: pspec
+            print "Current pspec is %s:" % pspec
             for p in self.bdepmap.get(pspec):
+                # Traverse build dependency list of 'pspec' with p
+                print "  -> %s in build dependencies:" % p
                 for j in range(i+1, self.pspeccount):
+                    # For each pspec in queue, check if p exists
+                    # in its packages
                     if p in self.namemap.get(self.pspeclist[j]):
+                        # namemap brings package list of a package
+                        print "    -> bdep %s of %s is satisfied by %s" % (p, pspec, self.pspeclist[j])
                         self.pspeclist.insert(j+1, self.pspeclist.pop(i))
                         clean = False
         return clean
