@@ -582,13 +582,16 @@ class UserStack(QVBox):
             self.parent().browse.userModified(uid, self.u_name.text(), self.u_realname.text())
             self.parent().slotCancel()
 
-        def userCancel(heta):
+        def userCancel():
+            self.parent().slotCancel()
+
+        def userError(heta):
             self.parent().slotCancel()
 
         ch = self.mainwidget.callMethod("addUser", "tr.org.pardus.comar.user.manager.adduser")
         ch.registerDone(userDone)
         ch.registerCancel(userCancel)
-        ch.registerError(userCancel)
+        ch.registerError(userError)
         if self.u_id.text() == "auto":
             uid = -1
         else:
@@ -632,7 +635,7 @@ class UserStack(QVBox):
         self.u_groups.populate(groups)
         self.reset()
         self.u_name.usednames = names
-        self.u_groups.setText(["users", "audio", "pnp", "removable"])
+        self.u_groups.setText(["users", "pnp", "pnpadmin", "removable", "disk", "audio", "video", "power", "dialout"])
         self.guide.op_end()
         self.u_realname.name.setFocus()
 
