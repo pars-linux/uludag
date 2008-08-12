@@ -24,11 +24,6 @@ import cli
 import config
 import logger
 
-""" Gettext Support """
-import gettext
-__trans = gettext.translation("buildfarm", fallback = True)
-_  =  __trans.ugettext
-
 class PisiApi:
 
     def __init__(self, stdout=None, stderr=None, outputDir = config.workDir):
@@ -112,13 +107,13 @@ class PisiApi:
     def build(self, pspec):
         pspec = os.path.join(config.localPspecRepo, pspec)
         if not os.path.exists(pspec):
-            logger.error(_("'%s' does not exist!") % (pspec))
-            raise _("'%s' does not exist!") % pspec
+            logger.error("'%s' does not exist!" % pspec)
+            raise ("'%s' does not exist!" % pspec)
 
-        logger.info(_("BUILD called for %s") % (pspec))
+        logger.info("BUILD called for %s" % pspec)
 
         __newBinaryPackages, __oldBinaryPackages = pisi.api.build(pspec)
-        logger.info(_("Created package(s): %s") % (__newBinaryPackages))
+        logger.info("Created package(s): %s" % (__newBinaryPackages))
         self.__newBinaryPackages += __newBinaryPackages
         self.__oldBinaryPackages += __oldBinaryPackages
 
