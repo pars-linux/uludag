@@ -9,3 +9,10 @@ class Widget(QtGui.QWidget):
         uic.loadUi("screens/screenSystemType.ui", self)
 
         self.desc = "System Type Screen"
+        self.frameError.setVisible(0)
+        
+        self.connect(self.radioInstall, QtCore.SIGNAL("clicked()"), self.slotRadio)
+        self.connect(self.radioLive, QtCore.SIGNAL("clicked()"), self.slotRadio)
+
+    def slotRadio(self):
+        self.chosen = str(self.sender().text())
