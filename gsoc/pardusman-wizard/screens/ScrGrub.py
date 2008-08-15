@@ -12,6 +12,8 @@ class Widget(QtGui.QWidget):
         uic.loadUi("screens/screenGrub.ui", self)
 
         self.desc = "grub screen"
+        self.frameError.setVisible(0)
+        self.chosen = "data/grub-default.jpg"
         self.setImage()
         
         self.connect(self.buttonOpen, QtCore.SIGNAL("clicked()"), self.getImage)
@@ -27,3 +29,5 @@ class Widget(QtGui.QWidget):
             return 0
         else:
             self.setImage(file)
+        
+        self.chosen = str(file)

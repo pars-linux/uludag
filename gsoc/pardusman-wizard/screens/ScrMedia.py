@@ -9,8 +9,8 @@ class Widget(QtGui.QWidget):
         uic.loadUi("screens/screenMedia.ui", self)
 
         self.desc = "Media select screen"
+        self.frameError.setVisible(0)
         
-
         self.connect(self.radioCD, QtCore.SIGNAL("clicked()"), self.slotRadio)
         self.connect(self.radioSL, QtCore.SIGNAL("clicked()"), self.slotRadio)
         self.connect(self.radioDL, QtCore.SIGNAL("clicked()"), self.slotRadio)
@@ -26,3 +26,5 @@ class Widget(QtGui.QWidget):
         else:
             self.sliderSize.setDisabled(1)
             self.spinSize.setDisabled(1)
+        
+        self.chosen = str(self.sender().text())
