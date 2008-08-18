@@ -10,6 +10,7 @@ class Widget(QtGui.QWidget):
 
         self.desc = "System Type Screen"
         self.frameError.setVisible(0)
+        self.chosen = "Install CD"
         
         self.connect(self.radioInstall, QtCore.SIGNAL("clicked()"), self.slotRadio)
         self.connect(self.radioLive, QtCore.SIGNAL("clicked()"), self.slotRadio)

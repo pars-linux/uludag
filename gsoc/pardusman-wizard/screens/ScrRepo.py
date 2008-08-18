@@ -11,6 +11,7 @@ class Widget(QtGui.QWidget):
         self.desc = "Repository Screen"
         
         self.frameError.setVisible(0)
+        self.lineOther.setDisabled(1)
 
         self.connect(self.radioPardus, QtCore.SIGNAL("clicked()"), self.slotContrib)
         self.connect(self.radioOther, QtCore.SIGNAL("clicked()"), self.slotOther)
