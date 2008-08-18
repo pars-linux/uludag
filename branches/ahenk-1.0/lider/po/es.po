@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-30 11:16+0200\n"
+"POT-Creation-Date: 2008-08-18 17:16+0300\n"
 "PO-Revision-Date: 2007-10-30 20:15-0300\n"
 "Last-Translator: Klemens <click3d_at_linuxmail_org>\n"
 "Language-Team: español <es@li.org>\n"
@@ -18,201 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/browser.py:35
-msgid "&New Domain"
-msgstr "&Nuevo Dominio"
+#: src/ldapview.py:95
+msgid "Select..."
+msgstr "Elija..."
 
-#: src/browser.py:38 src/browser.py:45
-msgid "&New Directory"
-msgstr "&Nuevo Directorio"
+#: src/ldapview.py:118
+msgid "New Item"
+msgstr "Ítem nuevo"
 
-#: src/browser.py:49
-msgid "&Refresh"
-msgstr "&Recargar"
+#: src/ldapview.py:143
+msgid "Up"
+msgstr "Arriba"
 
-#: src/browser.py:51
-msgid "&Properties"
-msgstr "&Propiedades"
+#: src/ldapview.py:147
+msgid "Down"
+msgstr "Abajo"
 
-#: src/browser.py:114
-msgid "Unable to connect to LDAP server."
-msgstr "No posible conectar con servidor LDAP."
-
-#: src/browser.py:120
-msgid "You can add new domain by right clicking panel on left."
-msgstr ""
-"Puede agregar un domino nuevo con clíc derecho sobre el panel de la "
-"izquierda."
-
-#: src/browser.py:141
-msgid "Remove directory?"
-msgstr "Eliminar directorio ?"
-
-#: src/browser.py:141 src/browser.py:156 src/browser.py:536
-msgid "Are you sure you want to remove '%1' ?"
-msgstr "Está seguro que desea eliminar '%1'?"
-
-#: src/browser.py:141 src/browser.py:536 src/browser.py:540 src/browser.py:543
-msgid "This is not undoable. Are you sure you want to continue?"
-msgstr "Esta operación no se podrá deshacer. Está seguro que desea continuar?"
-
-#: src/browser.py:156
-msgid "Remove domain?"
-msgstr "Eliminar dominio?"
-
-#: src/browser.py:180
-msgid "Computers (%1)"
-msgstr "Computadoras (%1)"
-
-#: src/browser.py:181
-msgid "Units (%1)"
-msgstr "Unidades (%1)"
-
-#: src/browser.py:182
-msgid "Users (%1)"
-msgstr "Usuarios (%1)"
-
-#: src/browser.py:183
-msgid "Groups (%1)"
-msgstr "Grupos (%1)"
-
-#: src/browser.py:225
-msgid "<strong>%1</strong><br>Host: %2"
-msgstr "<strong>%1</strong><br>Host: %2"
-
-#: src/browser.py:366
-msgid "Name"
-msgstr "Nombre"
-
-#: src/browser.py:367 src/ldapmodel.py:59 src/ldapmodel.py:67
-#: src/ldapmodel.py:77
-msgid "Description"
-msgstr "Descripción"
-
-#: src/browser.py:377
-msgid "&New"
-msgstr "&Nuevo"
-
-#: src/browser.py:381
-msgid "&Information"
-msgstr "&Información"
-
-#: src/browser.py:382
-msgid "&Policy"
-msgstr "&Política"
-
-#: src/browser.py:383
-msgid "&Configuration"
-msgstr "&Configuración"
-
-#: src/browser.py:536
-msgid "Remove object?"
-msgstr "Eliminar objeto?"
-
-#: src/browser.py:540 src/browser.py:543
-msgid "Remove objects?"
-msgstr "Eliminar objetos?"
-
-#: src/browser.py:540
-msgid ""
-"Are you sure you want to remove these objects?\n"
-"%1"
-msgstr ""
-"Está seguro que desea eliminar estos objetos?\n"
-"%1"
-
-#: src/browser.py:543
-msgid "Are you sure you want to remove %1 objects?"
-msgstr "Está seguro que desea eliminar %1 objetos?"
-
-#: src/browser.py:559
-msgid ""
-"Unable to delete these objects:\n"
-"%1"
-msgstr ""
-"No posible eliminar los siguientes objetos:\n"
-"%1"
-
-#: src/browser.py:562
-msgid "Removed %1 objects."
-msgstr "%1 objetos eliminados."
-
-#: src/dialogs.py:26 src/dialogs.py:142
-msgid "%1 Properties"
-msgstr "%1 Propiedades"
-
-#: src/dialogs.py:28
-msgid "Add New Domain"
-msgstr "Agregar dominio"
-
-#: src/dialogs.py:38
-msgid "Label:"
-msgstr "Rótulo:"
-
-#: src/dialogs.py:43
-msgid "Directory server:"
-msgstr "Servidor de directorio:"
-
-#: src/dialogs.py:48
-msgid "Base DN:"
-msgstr "DN de base:"
-
-#: src/dialogs.py:53
-msgid "Bind DN:"
-msgstr "Bind DN:"
-
-#: src/dialogs.py:58
-msgid "Bind Password:"
-msgstr "Contraseña Bind:"
-
-#: src/dialogs.py:140
-msgid "%1 Information"
-msgstr "%1 Información"
-
-#: src/dialogs.py:144
-msgid "New %1"
-msgstr "Nuevo %1"
-
-#: src/dialogs.py:157
-msgid "Enable %1"
-msgstr "Enable %1"
-
-#: src/dialogs.py:170
-msgid "DN:"
-msgstr "DN:"
-
-#: src/dialogs.py:172
-msgid "Parent DN:"
-msgstr "DN Padre:"
-
-#: src/dialogs.py:181
-msgid "Name:"
-msgstr "Nombre:"
-
-#: src/dialogs.py:270
-msgid "Name is required"
-msgstr "Se requiere el nombre"
-
-#: src/dialogs.py:276
-# duda: favor revisar
-msgid "%1 is required"
-msgstr "%1 es requerido"
-
-#: src/domain.py:143
-msgid "Not a valid Connection instance."
-msgstr "No es una instancia válida de conexión."
-
-#: src/domain.py:181
-msgid "Domain configuration file is missing."
-msgstr "Archivo de configuración de dominio no encontrado."
-
-#: src/domain.py:185
-msgid "Domain configuration file has syntax errors."
-msgstr "Archivo de configuración de dominios contiene errores de sintaxis."
-
-#: src/lider.py:25
-msgid "Pardus Management Console"
-msgstr "Consola de Administración de Pardus"
+#: src/ldapview.py:217
+msgid "Edit List"
+msgstr "Editar lista"
 
 #: src/mainwindow.py:48
 msgid "Computers"
@@ -238,6 +62,10 @@ msgstr "Error crítico"
 #: src/mainwindow.py:74
 msgid "Unable to complete operation:"
 msgstr "No posible finalizar la operación:"
+
+#: src/lider.py:25
+msgid "Pardus Management Console"
+msgstr "Consola de Administración de Pardus"
 
 #: src/ldapmodel.py:17 src/ldapmodel.py:64
 msgid "Computer"
@@ -373,6 +201,11 @@ msgstr "Directorio"
 msgid "Label"
 msgstr "Rótulo"
 
+#: src/ldapmodel.py:59 src/ldapmodel.py:67 src/ldapmodel.py:77
+#: src/ldapmodel.py:91 src/ldapmodel.py:101 src/browser.py:377
+msgid "Description"
+msgstr "Descripción"
+
 #: src/ldapmodel.py:69
 msgid "Member of"
 msgstr "Miembro de"
@@ -405,39 +238,232 @@ msgstr "Home"
 msgid "User ID"
 msgstr "ID de usuario"
 
-#: src/ldapmodel.py:90 src/ldapmodel.py:98
+#: src/ldapmodel.py:90 src/ldapmodel.py:99
 msgid "Group ID"
 msgstr "ID de grupo"
 
-#: src/ldapmodel.py:95
+#: src/ldapmodel.py:96
 msgid "Group"
 msgstr "Grupo"
 
-#: src/ldapmodel.py:99
+#: src/ldapmodel.py:100
 msgid "Members"
 msgstr "Miembros"
 
-#: src/ldapmodel.py:99
+#: src/ldapmodel.py:100
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: src/ldapview.py:95
-msgid "Select..."
-msgstr "Elija..."
+#: src/dialogs.py:26 src/dialogs.py:146
+msgid "%1 Properties"
+msgstr "%1 Propiedades"
 
-#: src/ldapview.py:118
-msgid "New Item"
-msgstr "Ítem nuevo"
+#: src/dialogs.py:28
+msgid "Add New Domain"
+msgstr "Agregar dominio"
 
-#: src/ldapview.py:143
-msgid "Up"
-msgstr "Arriba"
+#: src/dialogs.py:38
+msgid "Label:"
+msgstr "Rótulo:"
 
-#: src/ldapview.py:147
-msgid "Down"
-msgstr "Abajo"
+#: src/dialogs.py:43
+msgid "Directory server:"
+msgstr "Servidor de directorio:"
 
-#: src/ldapview.py:217
-msgid "Edit List"
-msgstr "Editar lista"
+#: src/dialogs.py:48
+msgid "Base DN:"
+msgstr "DN de base:"
 
+#: src/dialogs.py:53
+msgid "Bind DN:"
+msgstr "Bind DN:"
+
+#: src/dialogs.py:58
+msgid "Bind Password:"
+msgstr "Contraseña Bind:"
+
+#: src/dialogs.py:105
+#, fuzzy
+msgid "Domain label is required"
+msgstr "Se requiere el nombre"
+
+#: src/dialogs.py:107
+#, fuzzy
+msgid "Hostname is required"
+msgstr "Se requiere el nombre"
+
+#: src/dialogs.py:109
+#, fuzzy
+msgid "Base DN is required"
+msgstr "Se requiere el nombre"
+
+#: src/dialogs.py:144
+msgid "%1 Information"
+msgstr "%1 Información"
+
+#: src/dialogs.py:148
+msgid "New %1"
+msgstr "Nuevo %1"
+
+#: src/dialogs.py:161
+msgid "Enable %1"
+msgstr "Enable %1"
+
+#: src/dialogs.py:174
+msgid "DN:"
+msgstr "DN:"
+
+#: src/dialogs.py:176
+msgid "Parent DN:"
+msgstr "DN Padre:"
+
+#: src/dialogs.py:185 src/search.py:34
+msgid "Name:"
+msgstr "Nombre:"
+
+#: src/dialogs.py:274
+msgid "Name is required"
+msgstr "Se requiere el nombre"
+
+# duda: favor revisar
+#: src/dialogs.py:280
+msgid "%1 is required"
+msgstr "%1 es requerido"
+
+#: src/browser.py:36
+msgid "&New Domain"
+msgstr "&Nuevo Dominio"
+
+#: src/browser.py:39 src/browser.py:49
+msgid "&New Directory"
+msgstr "&Nuevo Directorio"
+
+# verificar esta traduccion
+#: src/browser.py:46
+#, fuzzy
+msgid "&Search"
+msgstr "Área de busqueda"
+
+#: src/browser.py:53
+msgid "&Refresh"
+msgstr "&Recargar"
+
+#: src/browser.py:55
+msgid "&Properties"
+msgstr "&Propiedades"
+
+#: src/browser.py:124
+msgid "Unable to connect to LDAP server."
+msgstr "No posible conectar con servidor LDAP."
+
+#: src/browser.py:130
+msgid "You can add new domain by right clicking panel on left."
+msgstr ""
+"Puede agregar un domino nuevo con clíc derecho sobre el panel de la "
+"izquierda."
+
+#: src/browser.py:151
+msgid "Remove directory?"
+msgstr "Eliminar directorio ?"
+
+#: src/browser.py:151 src/browser.py:166 src/browser.py:546
+msgid "Are you sure you want to remove '%1' ?"
+msgstr "Está seguro que desea eliminar '%1'?"
+
+#: src/browser.py:151 src/browser.py:546 src/browser.py:550 src/browser.py:553
+msgid "This is not undoable. Are you sure you want to continue?"
+msgstr "Esta operación no se podrá deshacer. Está seguro que desea continuar?"
+
+#: src/browser.py:166
+msgid "Remove domain?"
+msgstr "Eliminar dominio?"
+
+#: src/browser.py:190
+msgid "Computers (%1)"
+msgstr "Computadoras (%1)"
+
+#: src/browser.py:191
+msgid "Units (%1)"
+msgstr "Unidades (%1)"
+
+#: src/browser.py:192
+msgid "Users (%1)"
+msgstr "Usuarios (%1)"
+
+#: src/browser.py:193
+msgid "Groups (%1)"
+msgstr "Grupos (%1)"
+
+#: src/browser.py:235
+msgid "<strong>%1</strong><br>Host: %2"
+msgstr "<strong>%1</strong><br>Host: %2"
+
+#: src/browser.py:376
+msgid "Name"
+msgstr "Nombre"
+
+#: src/browser.py:387
+msgid "&New"
+msgstr "&Nuevo"
+
+#: src/browser.py:391
+msgid "&Information"
+msgstr "&Información"
+
+#: src/browser.py:392
+msgid "&Policy"
+msgstr "&Política"
+
+#: src/browser.py:393
+msgid "&Configuration"
+msgstr "&Configuración"
+
+#: src/browser.py:546
+msgid "Remove object?"
+msgstr "Eliminar objeto?"
+
+#: src/browser.py:550 src/browser.py:553
+msgid "Remove objects?"
+msgstr "Eliminar objetos?"
+
+#: src/browser.py:550
+msgid ""
+"Are you sure you want to remove these objects?\n"
+"%1"
+msgstr ""
+"Está seguro que desea eliminar estos objetos?\n"
+"%1"
+
+#: src/browser.py:553
+msgid "Are you sure you want to remove %1 objects?"
+msgstr "Está seguro que desea eliminar %1 objetos?"
+
+#: src/browser.py:569
+msgid ""
+"Unable to delete these objects:\n"
+"%1"
+msgstr ""
+"No posible eliminar los siguientes objetos:\n"
+"%1"
+
+#: src/browser.py:572
+msgid "Removed %1 objects."
+msgstr "%1 objetos eliminados."
+
+#: src/domain.py:143
+msgid "Not a valid Connection instance."
+msgstr "No es una instancia válida de conexión."
+
+#: src/domain.py:181
+msgid "Domain configuration file is missing."
+msgstr "Archivo de configuración de dominio no encontrado."
+
+#: src/domain.py:185
+msgid "Domain configuration file has syntax errors."
+msgstr "Archivo de configuración de dominios contiene errores de sintaxis."
+
+# verificar esta traduccion
+#: src/search.py:24 src/search.py:40
+#, fuzzy
+msgid "Search"
+msgstr "Área de busqueda"

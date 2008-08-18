@@ -15,6 +15,7 @@ from kdecore import *
 
 from utility import *
 from dialogs import *
+from search import *
 import domain
 import ldapmodel
 
@@ -40,6 +41,9 @@ class Browser(KListView):
         self.menu_domain.insertItem(getIconSet("remove", KIcon.Small), i18n("&Remove"), self.slotRemove)
         self.menu_domain.insertSeparator()
         self.menu_domain.insertItem(getIconSet("configure", KIcon.Small), i18n("&Configure"), self.slotConfigure)
+        
+        self.menu_domain.insertSeparator()
+        self.menu_domain.insertItem(getIconSet("search", KIcon.Small), i18n("&Search"), self.slotSearch)
         
         self.menu_directory = QPopupMenu(self)
         self.menu_directory.insertItem(getIconSet("folder", KIcon.Small), i18n("&New Directory"), self.slotNewDirectory)
@@ -104,6 +108,12 @@ class Browser(KListView):
             else:
                 item.parent().collapseNodes()
                 item.parent().expandNodes()
+    
+    def slotSearch(self):
+        item = self.selectedItem()
+        if item:
+            od = SearchDialog(self, item.connection, item.dn)
+            od.exec_loop()
     
     def slotNewDomain(self):
         dd = DomainDialog(self)
