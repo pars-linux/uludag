@@ -219,26 +219,27 @@ class Wpa_EAP:
         self.network = self.iface.addNetwork()
 
     def authenticate(self, username, password, timeout = 15):
-        if self.eap == "TLS":
-            self.network.setNetwork(
-                {"ssid": dbus.String(self.ssid, variant_level=1),
+        basic = {"ssid": dbus.String(self.ssid, variant_level=1),
                  "key_mgmt": dbus.String(self.key_mgmt, variant_level=1),
                  "eap": dbus.String(self.eap, variant_level=1),
-                 "identity": dbus.String(username, variant_level=1),
-                 "client_cert": dbus.String(self.client_cert, variant_level=1),
-                 "ca_cert": dbus.String(self.ca_cert, variant_level=1),
-                 "private_key": dbus.String(self.private_key, variant_level=1),
-                 "private_key_passwd": dbus.String(self.private_key_passwd, variant_level=1)})
-        else:
-            self.network.setNetwork(
-                {"ssid": dbus.String(self.ssid, variant_level=1),
-                 "key_mgmt": dbus.String(self.key_mgmt, variant_level=1),
-                 "eap": dbus.String(self.eap, variant_level=1),
-                 "identity": dbus.String(username, variant_level=1),
-                 "password": dbus.String(password, variant_level=1),
-                 "phase2": dbus.String("auth=%s"%self.phase2, variant_level=1)})
-                 #"ca_cert": dbus.String(self.ca_cert, variant_level=1),
-                 #"anonymous_identity": dbus.String(self.anonymous_identity, variant_level=1)})
+                 "identity": dbus.String(username, variant_level=1)}
+
+        if self.client_cert:
+            basic["client_cert"] = dbus.String(self.client_cert, variant_level=1)
+        if self.ca_cert:
+            basic["ca_cert"] = dbus.String(self.ca_cert, variant_level=1)
+        if self.private_key:
+            basic["private_key"] = dbus.String(self.private_key, variant_level=1),
+        if self.private_key_passwd:
+            basic["private_key_passwd"] = dbus.String(self.private_key_passwd, variant_level=1)
+        if self.phase2:
+            basic["phase2"] = dbus.String("auth=%s"%self.phase2, variant_level=1)
+        if password:
+            basic["password"] = dbus.String(password, variant_level=1)
+        if self.anonymous_identity:
+            basic["anonymous_identity"] = dbus.String(self.anonymous_identity, variant_level=1)
+
+        self.network.setNetwork(basic)
 
         self.iface.selectNetwork(self.network.path)
         authentication = waitForAuthenticationComplete(self.iface, timeout)
