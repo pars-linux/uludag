@@ -64,12 +64,6 @@ class ConnectionTipper(QToolTip):
             else:
                 tip += " %s" % conn.net_addr
             tip += "</nobr>"
-        if "devicemode" in link.modes:
-            from string import capitalize
-            tip += "<br><nobr>"
-            tip += i18n("Mod:")
-            tip += " %s" % capitalize(conn.device_mode)
-            tip += "</nobr>"
 
         self.tip(rect, tip)
 

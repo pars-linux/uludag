@@ -60,16 +60,11 @@ class ScanItem(QListViewItem):
         if remote == "<hidden>" or remote == "":
             remote = i18n("<hidden>")
         self.remote = remote
-        self.setText(3, remote)
+        self.setText(2, remote)
 
         self.mac = self.info.get("mac", None)
         if self.mac:
-            self.setText(4, self.mac)
-
-        point_mode = self.info["mode"]
-
-        if point_mode == "Ad-Hoc":
-            self.setPixmap(2, getIconSet("attach", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
+            self.setText(3, self.mac)
 
     def signalIcon(self, signal):
         # FIXME: make this more pythonic
@@ -105,8 +100,7 @@ class Scanner(QPopupMenu):
         self.view.addColumn("")
         self.view.addColumn("")
         self.view.addColumn("")
-        self.view.addColumn("")
-        self.view.setColumnAlignment(4, Qt.AlignRight)
+        self.view.setColumnAlignment(3, Qt.AlignRight)
         self.view.setResizeMode(QListView.LastColumn)
         self.view.setAllColumnsShowFocus(True)
         self.view.setShowToolTips(True)
@@ -129,13 +123,6 @@ class Scanner(QPopupMenu):
         parent.remote.setText(item.remote)
         parent.apmac = item.mac
 
-        dev_mode = item.info["mode"]
-
-        if dev_mode == "Master" or dev_mode == "Managed":
-            parent.selected_device_mode.setCurrentText("Managed")
-        else:
-            parent.selected_device_mode.setCurrentText("Ad-Hoc")
-
         if item.enc == "none":
             i = 0
         else:
@@ -144,10 +131,10 @@ class Scanner(QPopupMenu):
                 if mode.id == item.enc:
                     break
                 i += 1
-        auth_last = parent.link.auth_modes[parent.auth_mode.currentItem() - 1].id
+        auth_last = parent.link.auth_modes[parent.security_mode_combo.currentItem() - 1].id
         auth_now = item.enc
         if not (auth_last.startswith("wep") and auth_now.startswith("wep")):
-            parent.auth_mode.setCurrentItem(i)
+            parent.security_mode_combo.setCurrentItem(i)
         parent.slotSecurityToggle(i)
         self.hide()
 
@@ -217,26 +204,6 @@ class Settings(QWidget):
         self.connect(self.devices, SIGNAL("activated(int)"), self.slotDeviceSelect)
         self.devices_but.setPopup(self.devices)
         grid.addWidget(hb, 0, 1)
-
-        if "devicemode" in link.modes:
-            line = widgets.HLine(i18n("Device Mode"), self, "unindent")
-            lay.addSpacing(6)
-            lay.addWidget(line)
-            grid = QGridLayout(3, 2)
-            lay.addLayout(grid)
-
-            lab = QLabel(i18n("Mode:"), self)
-            grid.addWidget(lab, 0, 0, Qt.AlignRight)
-
-            self.selected_device_mode = QComboBox(False, self)
-            self.selected_device_mode.insertItem("-")
-
-            for dev_mode in link.device_modes:
-                self.selected_device_mode.insertItem(dev_mode)
-
-            self.selected_device_mode.setCurrentText("Select Mode")
-            grid.addWidget(self.selected_device_mode, 0, 1)
-            grid.setColStretch(1, 2)
 
         if "remote" in link.modes:
             lab = QLabel(unicode(link.remote_name), self)
@@ -553,13 +520,6 @@ class Settings(QWidget):
             if conn.devname:
                 self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
-            if "devicemode" in self.link.modes:
-                if conn.device_mode == "Ad-Hoc":
-                    self.selected_device_mode.setCurrentText("Ad-Hoc")
-                elif conn.device_mode == "Managed":
-                    self.selected_device_mode.setCurrentText("Managed")
-                else:
-                    self.selected_device_mode.setCurrentText("Select Mode")
             if "remote" in self.link.modes:
                 if conn.remote:
                     self.remote.setText(conn.remote)
@@ -670,9 +630,6 @@ class Settings(QWidget):
                     namemode = "custom"
                     nameserver = str(self.dns_text.text())
                 comlink.call(self.link.script, "Net.Link", "setNameService", name, namemode, nameserver)
-            if "devicemode" in self.link.modes:
-                selected_device_mode = str(self.selected_device_mode.currentText())
-                comlink.call(self.link.script, "Net.Link", "setConnectionMode", name, selected_device_mode)
             if "remote" in self.link.modes:
                 # set remote address
                 remote = str(self.remote.text())

@@ -100,7 +100,6 @@ class Connection(Hook):
         self.name = data.get("name")
         self.devid = data.get("device_id")
         self.devname = data.get("device_name")
-        self.device_mode = data.get("device_mode", "Managed")
         self.remote = data.get("remote")
         self.net_mode = data.get("net_mode", "auto")
         self.net_addr = data.get("net_address")
@@ -138,8 +137,6 @@ class Link:
                     self.auth_modes.append(AuthMode(mode))
             elif key == "remote_name":
                 self.remote_name = value
-            elif key == "device_modes":
-                self.device_modes = value.split(",")
 
 class DBusInterface(Hook):
     def __init__(self):
