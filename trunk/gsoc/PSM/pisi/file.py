@@ -48,7 +48,7 @@ class Error(pisi.Error):
 
 class InvalidSignature(pisi.Error):
     def __init__(self, url):
-        pisi.Exception.__init__(self, " invalid for %s" % url)
+        pisi.Exception.__init__(self, " invalid for %s" % url)  #TODO: Give more detail
         self.url = url
 
 class File:
@@ -196,24 +196,26 @@ class File:
                     cs = file(compressed_file + '.sha1sum', 'w')
                     cs.write(sha1)
                     cs.close()
-
-            if self.sign==File.detached:
-                if pisi.util.run_batch('gpg --detach-sig ' + self.localfile)[0]:
-                    raise Error(_("ERROR: gpg --detach-sig %s failed") % self.localfile)
+        
+             #FIXME: Selection of the Key should be added here
+             #add-pisi-key is going to implement the solution 
+            if self.sign==File.detached:   
+                if pisi.util.run_batch('gpg -a --detach-sig ' + self.localfile)[0]:
+                    raise Error(_("ERROR: gpg -a --detach-sig %s failed") % self.localfile)
                 if compressed_file:
-                    if pisi.util.run_batch('gpg --detach-sig ' + compressed_file)[0]:
-                        raise Error(_("ERROR: gpg --detach-sig %s failed") % compressed_file)
+                    if pisi.util.run_batch('gpg -a --detach-sig ' + compressed_file)[0]:
+                        raise Error(_("ERROR: gpg -a --detach-sig %s failed") % compressed_file)
 
     @staticmethod
     def check_signature(uri, transfer_dir, sign=detached):
         if sign==File.detached:
             try:
-                sigfilename = File.download(pisi.uri.URI(uri + '.sig'), transfer_dir)
+                sigfilename = File.download(pisi.uri.URI(uri + '.asc'), transfer_dir)
             except KeyboardInterrupt:
                 raise
             except Exception, e: #FIXME: what exception could we catch here, replace with that.
                 raise NoSignatureFound(uri)
-            if os.system('gpg --verify ' + sigfilename) != 0:
+            if os.system('gpg --verify ' + sigfilename) != 0:   # Wouldn't subprocess be nice here? instead of os.system
                 raise InvalidSignature(uri)
             # everything is all right here
 

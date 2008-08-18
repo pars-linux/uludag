@@ -622,10 +622,14 @@ def update_repo(repo, force=False):
 
         try:
             index.check_signature(repouri, repo)
+            ctx.ui.info(_('* Package database updated.'))
         except pisi.file.NoSignatureFound, e:
             ctx.ui.warning(e)
+            if ctx.ui.confirm(_('Adding this repository may harm your system. Do you want to continue?')):
+                ctx.ui.info(_('* Package database updated.'))
+            else:
+                repodb.remove_repo(repo)
 
-        ctx.ui.info(_('* Package database updated.'))
     else:
         raise pisi.Error(_('No repository named %s found.') % repo)
 
