@@ -147,18 +147,3 @@ class Mozilla(App):
         confWrite = open(self.path, "w")
         confWrite.writelines(self.lines)
         confWrite.close()
-
-
-### FIXME: test kodunu sil
-##from time import *
-##print time()
-##a = Mozilla("/home/bertan/.mozilla/firefox/")
-##a.setGlobalProxy("192.223.211.123")
-##a.setHTTPProxy("122.311.11.11")
-##a.setFTPProxy("122.311.11.11", "123")
-##a.setGopherProxy("122.311.11.11", "123")
-##a.setSSLProxy("122.311.11.11", "123")
-##a.setSOCKSProxy("122.311.11.11", "123")
-##a.noProxy()
-##a.close()
-##print time()

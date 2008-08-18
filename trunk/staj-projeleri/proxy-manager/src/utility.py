@@ -5,16 +5,13 @@
 # Free Software Foundation; either version 2 of the License, or (at your
 # option) any later version. Please read the COPYING file.
 
-from qt import *
 from kdecore import *
-
 import os
-
-import pisi
 import profile
 
 profiles = []
 modules = []
+home_dir = os.path.expanduser("~/")
 
 def loadIcon(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIcon(name, group, size)
@@ -31,10 +28,6 @@ def createModules():
     So, below there are some checks to determine whether the module must be imported,
     or not."""
     
-    pisi.api.init(write=False)
-    installed = pisi.api.list_installed()
-    home_dir = os.path.expanduser("~/")
-    
     # kdebase must be installed, hopefully, no need to check.
     from apps.kde import KDE
     modules.append(KDE())
@@ -47,22 +40,22 @@ def createModules():
     if os.path.exists(home_dir + ".amsn/config.xml"):
         from apps.amsn import AMSN
         modules.append(AMSN())
-    if "aria2" in installed:
-        from apps.aria2 import Aria2
-        modules.append(Aria2())
-    if "gftp" in installed:
+    if os.path.exists(home_dir + ".gftp/gftprc"):
         from apps.gftp import Gftp
         modules.append(Gftp())
-    if "pidgin" in installed and os.path.exists(home_dir + ".purple/prefs.xml"):
+    if os.path.exists(home_dir + ".purple/prefs.xml"):
         from apps.pidgin import Pidgin
         modules.append(Pidgin())
-    if "subversion" in installed and os.path.exists(home_dir + ".subversion/servers"):
+    if os.path.exists(home_dir + ".subversion/servers"):
         from apps.svn import Svn
         modules.append(Svn())
-    if "wget" in installed:
-        from apps.wget import Wget
-        modules.append(Wget())
-
+    
+    # Following modules create the config files if it does not exist already
+    from apps.aria2 import Aria2
+    modules.append(Aria2())
+    from apps.wget import Wget
+    modules.append(Wget())
+        
 
 def changeProxy(prfl):
     if prfl.type == profile.direct:
@@ -70,21 +63,21 @@ def changeProxy(prfl):
             m.noProxy()
     elif prfl.type == profile.globl:
         for m in modules:
-            m.setGlobalProxy(prfl.globl_host, prfl.globl_port)
+            m.setGlobalProxy(prfl.globl_host, prfl.globl_port, prfl.user, prfl.pasw)
     elif prfl.type == profile.indiv:
         for m in modules:
             if prfl.has_http:
-                m.setHTTPProxy(prfl.http_host, prfl.http_port)
+                m.setHTTPProxy(prfl.http_host, prfl.http_port, prfl.user, prfl.pasw)
             if prfl.has_ftp:
-                m.setFTPProxy(prfl.ftp_host, prfl.ftp_port)
+                m.setFTPProxy(prfl.ftp_host, prfl.ftp_port, prfl.user, prfl.pasw)
             if prfl.has_ssl:
-                m.setSSLProxy(prfl.ssl_host, prfl.ssl_port)
+                m.setSSLProxy(prfl.ssl_host, prfl.ssl_port, prfl.user, prfl.pasw)
             if prfl.has_socks:
-                m.setSOCKSProxy(prfl.socks_host, prfl.socks_port)
+                m.setSOCKSProxy(prfl.socks_host, prfl.socks_port, prfl.user, prfl.pasw)
     elif prfl.type == profile.auto:
         for m in modules:
             m.setPAC_URL(prfl.auto_url)
-        
+    # apply the changes
     for m in modules:
         m.close()
         

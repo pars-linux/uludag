@@ -70,13 +70,3 @@ class Gftp(App):
         confWrite = open(self.path, "w")
         confWrite.writelines(self.lines)
         confWrite.close()
-
-### FIXME: test kodunu sil
-##from time import *
-##print time()
-##a = Gftp()
-##a.setGlobalProxy("123.321.123.312", "1122")
-##a.setFTPProxy("123.321.123.333", "ftp")
-##a.setHTTPProxy("123.321.123.444", "http")
-##a.close()
-##print time()

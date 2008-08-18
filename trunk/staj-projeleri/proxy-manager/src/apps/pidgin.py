@@ -25,6 +25,10 @@ class Pidgin(App):
                                 self.host = pref3
                             if pref3.getAttribute("name") == "port":
                                 self.port = pref3
+                            if pref3.getAttribute("name") == "username":
+                                self.user = pref3
+                            if pref3.getAttribute("name") == "password":
+                                self.pasw = pref3
 
     def setGlobalProxy(self, ip, port=None, user=None, pasw=None):
         self.setHTTPProxy(ip, port, user, pasw)
@@ -34,24 +38,17 @@ class Pidgin(App):
         self.host.setAttribute("value", ip)
         if port: self.port.setAttribute("value", "" + port)
         else: self.port.setAttribute("value", "0")
+        if user: self.user.setAttribute("value", user)
+        if pasw: self.pasw.setAttribute("value", pasw)
     
     def noProxy(self):
         self.type.setAttribute("value", "none")
         self.host.setAttribute("value", "")
         self.port.setAttribute("value", "0")
+        self.user.setAttribute("value", "")
+        self.pasw.setAttribute("value", "")
     
     def close(self):
         conf = open(self.path, "w")
         conf.write(self.doc.toxml("utf-8"))
         conf.close()
-##
-### FIXME: test kodunu sil
-##from time import *
-##print time()
-##a = Pidgin()
-####a.setGlobalProxy("192.223.211.123")
-##a.setHTTPProxy("122.311.11.11", "123")
-####a.noProxy()
-####print a.doc.toxml("utf-8")
-##a.close()
-##print time()

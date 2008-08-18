@@ -48,12 +48,3 @@ class Aria2(App):
         confWrite = open(self.path, "w")
         confWrite.writelines(self.lines)
         confWrite.close()
-    
-
-### FIXME: test kodunu sil
-##from time import *
-##print time()
-##a = Aria2()
-##a.setGlobalProxy("192.223.211.123")
-##a.close()
-##print time() 
