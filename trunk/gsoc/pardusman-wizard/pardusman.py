@@ -13,6 +13,7 @@ from screens import ScrMedia
 from screens import ScrSystemType
 from screens import ScrUsers
 from screens import ScrGrub
+from screens import ScrPackages
 
 screenId = {"":""}
 
@@ -187,7 +188,7 @@ class Pardusman(QtGui.QMainWindow):
  #               if widget.checkContrib.isChecked():
  #                   self.projectData["repo2"] = "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
             else:
-                self.projectData["repo1"] = widget.lineOther.text()
+                self.projectData["repo"] = [widget.lineOther.text()]
 
         elif where == 3: # Media screen
             options = {"CD":"CD",
@@ -223,18 +224,23 @@ class Pardusman(QtGui.QMainWindow):
                 self.projectData["grub"]["options"].append("memory")
 
     def slotFinish(self):
-        self.collectData(self.getCurrent())
-        
-        filename = QtGui.QFileDialog.getSaveFileName(self,  _("Save Project File"),  ("/home"))
-        
-        self.createProjectFile(filename)
-        
+#        self.collectData(self.getCurrent())
+#        
+#        filename = QtGui.QFileDialog.getSaveFileName(self,  _("Save Project File"),  ("/home"))
+#        
+#        self.createProjectFile(filename)
+#        
         self.showPackages()
     
-    def showPackages(self):
-        from screens import ScrPackages
+    def showPackages(self):        
+        self.packagesWidget = ScrPackages.Widget()
         
-        ScrPackages.Widget().show()
+        self.packagesWidget.repo_uri = self.projectData["repo"][0]
+        self.packagesWidget.systemType = self.projectData["type"]
+        self.packagesWidget.takeList()
+        self.packagesWidget.fillComponents()
+        
+        self.packagesWidget.show()
     
     def setMainWindow(self):
         self.pageDesc.setText(_("Welcome to Pardus CD/DVD/USB Distribution Wizard"))
