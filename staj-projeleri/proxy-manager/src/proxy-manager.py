@@ -18,7 +18,6 @@ from qt import *
 from kdecore import *
 from kdeui import *
 from kfile import *
-from khtml import *
 
 # Widget
 import kdedesigner

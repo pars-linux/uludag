@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'profileDialog.ui'
 #
-# Created: Pzt Tem 14 14:05:22 2008
-#      by: The PyQt User Interface Compiler (pyuic) 3.17.4
+# Created: Cts Eki 13 15:10:22 2007
+#      by: The PyQt User Interface Compiler (pyuic) 3-snapshot-20070613
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -23,20 +23,6 @@ class profileDialog(QDialog):
 
 
         Form1Layout = QGridLayout(self,1,1,8,2,"Form1Layout")
-
-        layout15 = QGridLayout(None,1,1,3,0,"layout15")
-
-        self.name_edit = QLineEdit(self,"name_edit")
-        self.name_edit.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Minimum,0,0,self.name_edit.sizePolicy().hasHeightForWidth()))
-
-        layout15.addWidget(self.name_edit,0,1)
-
-        self.textLabel1 = QLabel(self,"textLabel1")
-        self.textLabel1.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Minimum,0,0,self.textLabel1.sizePolicy().hasHeightForWidth()))
-
-        layout15.addWidget(self.textLabel1,0,0)
-
-        Form1Layout.addLayout(layout15,0,0)
 
         layout6 = QGridLayout(None,1,1,4,4,"layout6")
         spacer4 = QSpacerItem(61,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
@@ -81,10 +67,10 @@ class profileDialog(QDialog):
 
         buttonGroup2Layout.addMultiCellWidget(self.auto_url,5,5,2,6)
 
-        self.pushButton4_2 = QPushButton(self.buttonGroup2,"pushButton4_2")
-        self.pushButton4_2.setMaximumSize(QSize(70,32767))
+        self.details1 = QPushButton(self.buttonGroup2,"details1")
+        self.details1.setMaximumSize(QSize(70,32767))
 
-        buttonGroup2Layout.addWidget(self.pushButton4_2,1,6)
+        buttonGroup2Layout.addWidget(self.details1,1,6)
 
         self.rd2 = QRadioButton(self.buttonGroup2,"rd2")
 
@@ -149,10 +135,10 @@ class profileDialog(QDialog):
 
         layout5.addWidget(self.ftp_host,1,1)
 
-        self.pushButton4 = QPushButton(self.buttonGroup2,"pushButton4")
-        self.pushButton4.setMaximumSize(QSize(70,32767))
+        self.details2 = QPushButton(self.buttonGroup2,"details2")
+        self.details2.setMaximumSize(QSize(70,32767))
 
-        layout5.addWidget(self.pushButton4,0,4)
+        layout5.addWidget(self.details2,0,4)
 
         self.socks_host = QLineEdit(self.buttonGroup2,"socks_host")
         self.socks_host.setEnabled(0)
@@ -222,9 +208,29 @@ class profileDialog(QDialog):
 
         Form1Layout.addWidget(self.buttonGroup2,1,0)
 
+        layout4 = QGridLayout(None,1,1,0,2,"layout4")
+
+        self.textLabel1 = QLabel(self,"textLabel1")
+        self.textLabel1.setSizePolicy(QSizePolicy(QSizePolicy.Preferred,QSizePolicy.Minimum,0,0,self.textLabel1.sizePolicy().hasHeightForWidth()))
+
+        layout4.addWidget(self.textLabel1,0,0)
+
+        self.name_edit = QLineEdit(self,"name_edit")
+        self.name_edit.setSizePolicy(QSizePolicy(QSizePolicy.Expanding,QSizePolicy.Minimum,0,0,self.name_edit.sizePolicy().hasHeightForWidth()))
+
+        layout4.addWidget(self.name_edit,0,1)
+
+        self.warning = QLabel(self,"warning")
+        self.warning.setPaletteForegroundColor(QColor(255,0,0))
+        self.warning.setAlignment(QLabel.AlignCenter)
+
+        layout4.addMultiCellWidget(self.warning,1,1,0,1)
+
+        Form1Layout.addLayout(layout4,0,0)
+
         self.languageChange()
 
-        self.resize(QSize(410,375).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(410,396).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.setTabOrder(self.name_edit,self.rd1)
@@ -249,24 +255,25 @@ class profileDialog(QDialog):
 
     def languageChange(self):
         self.setCaption(i18n("Proxy Settings"))
-        self.textLabel1.setText(i18n("Profile name:"))
         self.cancel_but.setText(QString.null)
         self.apply_but.setText(QString.null)
         self.buttonGroup2.setTitle(i18n("Options"))
         self.textLabel6.setText(i18n("URL"))
         self.textLabel6_2.setText(i18n("Host"))
-        self.pushButton4_2.setText(i18n("Details"))
+        self.details1.setText(i18n("Details"))
         self.rd2.setText(i18n("Use proxy server"))
         self.rd1.setText(i18n("Use a general proxy"))
         self.rd3.setText(i18n("Automatic settings"))
         self.textLabel5_6.setText(i18n("Port"))
         self.textLabel5_5.setText(i18n("Port"))
         self.ch5.setText(i18n("SOCKS"))
-        self.pushButton4.setText(i18n("Details"))
+        self.details2.setText(i18n("Details"))
         self.ch1.setText(i18n("Http"))
         self.textLabel5_4.setText(i18n("Port"))
         self.ch4.setText(i18n("SSL"))
         self.ch2.setText(i18n("Ftp"))
         self.textLabel5.setText(i18n("Port"))
         self.textLabel5_2.setText(i18n("Port"))
+        self.textLabel1.setText(i18n("Profile name:"))
+        self.warning.setText(QString.null)
 

@@ -9,6 +9,7 @@
 # option) any later version. Please read the COPYING file.
 
 from profileDialog import profileDialog
+from detailsHandler import *
 from utility import *
 import profile
 
@@ -18,8 +19,10 @@ class profileHandler(profileDialog):
         self.prfl = prfl
         self.prfl_item = prfl_item
         self.updated = False
+        
         if not prfl:
             self.new = True
+            self.prfl = profile.Profile(i18n("new_proxy"))
             self.name_edit.setText(i18n("new_proxy"))
             self.rd1.setChecked(True)
             self.slotToggleEnableGlobal(True)
@@ -56,6 +59,8 @@ class profileHandler(profileDialog):
         self.connect(self.rd1,SIGNAL('toggled(bool)'), self.slotToggleEnableType)
         self.connect(self.rd2,SIGNAL('toggled(bool)'), self.slotToggleEnableType)
         self.connect(self.rd3,SIGNAL('toggled(bool)'), self.slotToggleEnableType)
+        self.connect(self.details1,SIGNAL('clicked()'), self.slotDetailsHandler)
+        self.connect(self.details2,SIGNAL('clicked()'), self.slotDetailsHandler)
         
         self.show()
         
@@ -79,8 +84,10 @@ class profileHandler(profileDialog):
             self.socks_host.setText(self.prfl.socks_host)
             self.socks_port.setText(self.prfl.socks_port)
         self.slotToggleEnableIndiv(True)
-        
-
+    
+    def slotDetailsHandler(self):
+        detailsHandler(self, self.prfl)
+    
     def slotUpdated(self,content):
         self.updated = True
     
@@ -169,12 +176,19 @@ class profileHandler(profileDialog):
     def slotApply(self):
         name = unicode(self.name_edit.text())
         ok = self.validate()
+        
+        # to save the 'user' and 'pasw' first save temporarily
+        user = self.prfl.user
+        pasw = self.prfl.pasw
+        
         if not ok:
             return
-        if self.new:
-            self.prfl = profile.Profile(name)
-        else:
-            self.prfl.changeName(name)
+        self.prfl.changeName(name)
+        
+        # then save them to prfl itself
+        self.prfl.user = user
+        self.prfl.pasw = pasw
+        
         if self.rd1.isChecked():
             self.prfl.type = profile.globl
             self.prfl.globl_host = unicode(self.globl_host.text())
@@ -211,6 +225,9 @@ class profileHandler(profileDialog):
         if self.new:
             self.parent().add(self.prfl)
         profile.save()
-        self.prfl_item.repaint()
+        if self.prfl_item:
+            self.prfl_item.repaint()
+        if self.prfl.isActive:
+            changeProxy(self.prfl)
         self.close()
         

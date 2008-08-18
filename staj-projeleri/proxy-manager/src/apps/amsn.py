@@ -20,6 +20,7 @@ class AMSN(App):
             attribute = entry.firstChild.nextSibling
             # value of the 'value' element
             value = attribute.nextSibling.nextSibling
+            #TODO: add auth. code
             if attribute.firstChild.nodeValue == "connectiontype":
                 self.connectiontype = value
             elif attribute.firstChild.nodeValue == "proxy":
@@ -42,13 +43,3 @@ class AMSN(App):
         conf = open(self.path, "w")
         conf.write(self.doc.toxml("utf-8"))
         conf.close()
-
-### FIXME: test kodunu sil
-##from time import *
-##print time()
-##a = AMSN()
-####a.setGlobalProxy("192.223.211.123")
-##a.setHTTPProxy("122.311.11.11", "123")
-##a.noProxy()
-##a.close()
-##print time()

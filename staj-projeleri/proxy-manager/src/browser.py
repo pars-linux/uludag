@@ -8,10 +8,7 @@
 # Free Software Foundation; either version 2 of the License, or (at your
 # option) any later version. Please read the COPYING file.
 
-from qt import *
-from kdecore import *
-from kdeui import *
-from khtml import *
+from khtml import KHTMLPart
 import locale
 
 from utility import *
@@ -105,6 +102,7 @@ class ProfileView(QScrollView):
     
     def add(self, prfl):
         ProfileItem(self, prfl)
+        profiles.append(prfl)
         self.myResize()
 
 
@@ -113,7 +111,6 @@ class ProfileItem(QWidget):
         self.is_odd = 0
         QWidget.__init__(self, view.viewport())
         self.prfl = prfl
-        print prfl.comment
         self.tipper = ProfileTipper(self)
         self.tipper.parent = self
         view.profileItems.append(self)
@@ -156,9 +153,10 @@ class ProfileItem(QWidget):
     def slotDelete(self):
         m = i18n("Should I delete the\n'%s'\nproxy profile?")
         if KMessageBox.Yes == KMessageBox.questionYesNo(self, unicode(m) % self.prfl.name, i18n("Delete proxy profile?")):
+            if self.prfl.isActive:
+                self.view.profileItems[0].check.setChecked(True)
             profile.deleteProfile(self.prfl)
             del self.view.profileItems[self.view.profileItems.index(self)]
-            profile.save()
             self.hide()
             self.view.myResize()
     
