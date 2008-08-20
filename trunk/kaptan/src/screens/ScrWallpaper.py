@@ -23,6 +23,8 @@ import Image
 import glob
 import logging
 
+from qt import QFileDialog
+
 # parser for .desktop files
 from desktopparser import DesktopParser
 import ConfigParser
@@ -153,6 +155,21 @@ class Widget(WallpaperWidget, ScreenWidget):
         self.listWallpaper.setSelected(self.listWallpaper.firstChild(),True)
         self.listWallpaper.connect(self.listWallpaper, SIGNAL("selectionChanged()"), self.setWallpaper)
         self.checkAllWallpapers.connect(self.checkAllWallpapers, SIGNAL("toggled(bool)"), self.showAllWallpapers)
+        self.buttonChooseWp.connect(self.buttonChooseWp, SIGNAL("clicked()"), self.chooseWallpaper)
+
+    def chooseWallpaper(self):
+        prog = QFileDialog.getOpenFileName(os.path.expanduser("~") , self.trUtf8("Images (*.jpg *.png *.gif *.jpeg)"), )
+
+        if prog.isNull():
+            return
+
+        item = KListViewItem(self.listWallpaper, "file", str(prog))
+        wallName = str(prog).split("/")[-1]
+        self.wallpaperList[prog] = wallName
+
+        item.setText(0, wallName)
+        eheh = QPixmap(QImage(locate("data", prog)).smoothScale(150,150, QImage.ScaleMin))
+        item.setPixmap(0,eheh)
 
     def setWps(self, wpFile, wpTitle):
         item = KListViewItem(self.listWallpaper, "file", str(wpFile))
