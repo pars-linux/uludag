@@ -22,32 +22,6 @@
     <property name="caption">
         <string>Keyboard</string>
     </property>
-    <widget class="KListView">
-        <property name="name">
-            <cstring>listViewKeyboard</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>70</x>
-                <y>30</y>
-                <width>290</width>
-                <height>270</height>
-            </rect>
-        </property>
-    </widget>
-    <widget class="QLineEdit">
-        <property name="name">
-            <cstring>lineEdit1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>100</x>
-                <y>320</y>
-                <width>257</width>
-                <height>24</height>
-            </rect>
-        </property>
-    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>pix_keyboard</cstring>
@@ -55,7 +29,7 @@
         <property name="geometry">
             <rect>
                 <x>370</x>
-                <y>30</y>
+                <y>170</y>
                 <width>140</width>
                 <height>128</height>
             </rect>
@@ -72,12 +46,52 @@
     </widget>
     <widget class="QLabel">
         <property name="name">
+            <cstring>keyboardLabel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>370</x>
+                <y>40</y>
+                <width>140</width>
+                <height>110</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>7</hsizetype>
+                <vsizetype>7</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="backgroundOrigin">
+            <enum>AncestorOrigin</enum>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>lineEdit1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>100</x>
+                <y>340</y>
+                <width>257</width>
+                <height>24</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
             <cstring>textKeyboard</cstring>
         </property>
         <property name="geometry">
             <rect>
                 <x>70</x>
-                <y>320</y>
+                <y>340</y>
                 <width>25</width>
                 <height>24</height>
             </rect>
@@ -87,6 +101,19 @@
         </property>
         <property name="text">
             <string>Try:</string>
+        </property>
+    </widget>
+    <widget class="KListView">
+        <property name="name">
+            <cstring>listKeyboard</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>70</x>
+                <y>50</y>
+                <width>290</width>
+                <height>270</height>
+            </rect>
         </property>
     </widget>
 </widget>
