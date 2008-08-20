@@ -55,8 +55,8 @@ class Widget(KeyboardWidget, ScreenWidget):
     def setKeyboard(self):
         layout = self.listKeyboard.currentItem().key(1, True)
         variant = self.listKeyboard.currentItem().key(2, True)
+        subprocess.Popen(["setxkbmap", layout, variant])
 
-        subprocess.Popen("setxkbmap -layout %s %s" % (layout, variant), shell = True)
         if variant:
             self.lastLayout = layout + "(" + variant + ")"
         else:
