@@ -122,6 +122,7 @@ class Scanner(QPopupMenu):
         parent = self.parent
         parent.remote.setText(item.remote)
         parent.apmac = item.mac
+        parent.channel = item.info.get("channel")
 
         if item.enc == "none":
             i = 0
@@ -172,10 +173,11 @@ class Settings(QWidget):
         self.link = link
         self.conn = conn
         self.new_conn = new_conn
+        self.channel = None
         self.auth_dict = {"TLS":[], "TTLS":["PAP","MSCHAPV2"], "PEAP":["MSCHAPV2", "MD5"]}
 
         self.apmac = ''
-        lay = QVBoxLayout(self, 3, 3)
+        lay = QVBoxLayout(self, 3, 3, "mainVertLayout")
 
         # Identification
         grid = QGridLayout(1, 2, 6)
@@ -197,7 +199,8 @@ class Settings(QWidget):
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
         hb = QHBox(self)
         hb.setSpacing(3)
-        self.device = KActiveLabel("", hb)
+        self.device = QLabel("", hb)
+        hb.setStretchFactor(self.device, 3)
         self.devices_but = QPushButton(i18n("Select"), hb)
         self.devices_but.setEnabled(False)
         self.devices = QPopupMenu()
@@ -215,6 +218,7 @@ class Settings(QWidget):
                 but = QPushButton(getIconSet("find", KIcon.Small), i18n("Scan"), hb)
                 self.scanpop = Scanner(self)
                 comlink.remote_hook.append(self.scanpop.slotRemotes)
+
                 but.setPopup(self.scanpop)
                 grid.addWidget(hb, 1, 1)
             else:
@@ -365,8 +369,6 @@ class Settings(QWidget):
         if sec != None and auth == None:
             if sec == 0:
                 self.setAuthVisible(False)
-                #self.auth_passphrase_label.show()
-                #self.auth_passphrase_line.show()
             else:
                 self.setAuthVisible(True)
                 self.auth_mode_combo.setCurrentItem(0)
@@ -386,7 +388,6 @@ class Settings(QWidget):
                 self.updateStack(None, auth)
 
                 if len(self.auth_dict[str(self.auth_mode_combo.currentText())]) == 0:
-                    # hide inner auth
                     self.auth_inner_combo.hide()
                     self.auth_inner_label.hide()
 
@@ -520,6 +521,7 @@ class Settings(QWidget):
             if conn.devname:
                 self.device.setText(conn.devname)
             self.device_uid = self.conn.devid
+
             if "remote" in self.link.modes:
                 if conn.remote:
                     self.remote.setText(conn.remote)
@@ -634,6 +636,11 @@ class Settings(QWidget):
                 # set remote address
                 remote = str(self.remote.text())
                 comlink.call(self.link.script, "Net.Link", "setRemote", name, remote, self.apmac)
+                if self.channel != None:
+                    print "setting channel to : ", self.channel
+                    print "name : ", name
+                    comlink.call(self.link.script, "Net.Link", "setChannel", name, self.channel)
+
             if "auth" in self.link.modes:
                 i = self.security_mode_combo.currentItem()
                 if i == 0:

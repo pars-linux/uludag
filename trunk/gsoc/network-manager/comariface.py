@@ -53,6 +53,9 @@ class Hook:
         map(lambda x: x(hostname, servers), self.name_hook)
     
     def emitRemotes(self, script, remotes):
+        print "emit Remotes :"
+        print "script : ", script
+        print "remotes : ", remotes
         map(lambda x: x(script, remotes), self.remote_hook)
     
     def emitHotplug(self, uid, info):
@@ -91,6 +94,7 @@ class Connection(Hook):
         self.auth_anon = None
         self.auth_auth = None
         self.auth_inner = None
+        self.channel = None
         self.parse(data)
         self.hash = self.hash(self.script, self.name)
         self.got_auth = True
@@ -108,6 +112,7 @@ class Connection(Hook):
         self.dns_mode = data.get("namemode", "default")
         self.dns_server = data.get("nameserver")
         self.apmac = data.get("apmac")
+        self.channel = data.get("channel")
         state = data.get("state", "unavailable")
         if " " in state:
             self.state, self.message = state.split(" ", 1)
@@ -307,11 +312,12 @@ class DBusInterface(Hook):
         ch2.call()
 
     def handleConnectionInfo(self, script, info):
-        def handler(conn, mode, username, password, auth, anon, inner, clicert, cacert, prikey, prikeypass):
+        def handler(conn, mode, username, password, channel, auth, anon, inner, clicert, cacert, prikey, prikeypass):
             conn.got_auth = True
             conn.auth_mode = mode
             conn.auth_user = username
             conn.auth_pass = password
+            conn.channel = channel
             conn.auth_anon = anon
             conn.auth_auth = auth
             conn.auth_inner = inner
@@ -380,7 +386,7 @@ class DBusInterface(Hook):
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()
-    
+
     def queryDevices(self, script):
         def handler(info):
             self.emitDevices(script, info)
@@ -391,6 +397,7 @@ class DBusInterface(Hook):
     def queryRemotes(self, script, devid):
         def handler(info):
             self.emitRemotes(script, info)
+            print "query Remotes :"
         ch = self.callHandler(script, "Net.Link", "scanRemote", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call(devid)
