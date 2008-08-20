@@ -37,6 +37,11 @@ class Widget(KeyboardWidget, ScreenWidget):
         self.setCaption(i18n("Keyboard"))
         self.keyboardLabel.setText(i18n("<p align=\"left\">You can configure your keyboard from here.</p>"))
 
+        # get Layout config
+        self.config = KConfig("kxkbrc")
+        self.config.setGroup("Layout")
+        self.layoutList = str(self.config.readEntry("LayoutList"))
+
         # get keyboard layouts
         for lang in localedata.languages:
             for each in localedata.languages[lang].keymaps:
@@ -51,10 +56,21 @@ class Widget(KeyboardWidget, ScreenWidget):
         variant = self.listKeyboard.currentItem().key(2, True)
 
         subprocess.Popen("setxkbmap -layout %s %s" % (layout, variant), shell = True)
+        self.lastLayout = layout + "(" + variant + ")"
 
     def shown(self):
         pass
 
     def execute(self):
-        pass
+        if self.lastLayout:
+            layoutArr = self.layoutList.split(",")
 
+            if self.lastLayout not in layoutArr:
+                layoutArr.insert(0, str(self.lastLayout))
+            else:
+                layoutArr.remove(self.lastLayout)
+                layoutArr.insert(0, str(self.lastLayout))
+
+            layoutList =  ",".join(layoutArr)
+            self.config.writeEntry("LayoutList", layoutList)
+            self.config.sync()
