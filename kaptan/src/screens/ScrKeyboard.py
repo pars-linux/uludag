@@ -14,6 +14,8 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
+from pardus import localedata
+import subprocess
 
 from screens.Screen import ScreenWidget
 from screens.keyboarddlg import KeyboardWidget
@@ -35,11 +37,20 @@ class Widget(KeyboardWidget, ScreenWidget):
         self.setCaption(i18n("Keyboard"))
         self.keyboardLabel.setText(i18n("<p align=\"left\">You can configure your keyboard from here.</p>"))
 
+        # get keyboard layouts
+        for lang in localedata.languages:
+            for each in localedata.languages[lang].keymaps:
+                item = KListViewItem(self.listKeyboard, "keyboard", each.xkb_layout, each.xkb_variant)
+                item.setText(0, each.name)
+
         # set signals
         self.listKeyboard.connect(self.listKeyboard, SIGNAL("selectionChanged()"), self.setKeyboard)
 
     def setKeyboard(self):
-        pass
+        layout = self.listKeyboard.currentItem().key(1, True)
+        variant = self.listKeyboard.currentItem().key(2, True)
+
+        subprocess.Popen("setxkbmap -layout %s %s" % (layout, variant), shell = True)
 
     def shown(self):
         pass

@@ -104,6 +104,17 @@
         </property>
     </widget>
     <widget class="KListView">
+        <column>
+            <property name="text">
+                <string>Keyboard Layouts</string>
+            </property>
+            <property name="clickable">
+                <bool>true</bool>
+            </property>
+            <property name="resizable">
+                <bool>true</bool>
+            </property>
+        </column>
         <property name="name">
             <cstring>listKeyboard</cstring>
         </property>
@@ -114,6 +125,12 @@
                 <width>290</width>
                 <height>270</height>
             </rect>
+        </property>
+        <property name="allColumnsShowFocus">
+            <bool>true</bool>
+        </property>
+        <property name="resizeMode">
+            <enum>AllColumns</enum>
         </property>
     </widget>
 </widget>
