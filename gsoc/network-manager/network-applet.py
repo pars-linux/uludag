@@ -306,13 +306,13 @@ class DBusInterface:
 
 class Icons:
     def _pix(self, name, justGetPath=False):
-        path= locate("data", "network-manager/" + name)
+        # path= locate("data", "network-manager/" + name)
         img = QImage(path)
         img = img.smoothScale(24, 24)
         if justGetPath:
             return path
         return QPixmap(img)
-    
+
     def load_icons(self):
         self.iconmap = {
             "net-up": self._pix("ethernet-online.png"),
@@ -325,7 +325,7 @@ class Icons:
             "dialup-connecting": self._pix("dialup-connecting.png"),
             "dialup-down": self._pix("dialup-offline.png")
         }
-    
+
     def get_state(self, script, state):
         link = comlink.links.get(script, None)
         if link:

@@ -200,7 +200,7 @@ class Wireless:
         else:
             return None
 
-    def setEncryption(self, mode="none", username=None, password=None, ssid=None, auth=None, inner=None, anon=None):
+    def setEncryption(self, mode="none", username=None, password=None, channel=None, ssid=None, auth=None, inner=None, anon=None):
         have_supplicant = True
         try:
             import wpa_supplicant
@@ -216,11 +216,10 @@ class Wireless:
             wpa_supplicant.disableAuthentication(ifc.name)
 
         if mode == "wep":
-            os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (ifc.name, password))
+            os.system("/usr/sbin/iwconfig '%s' channel %s enc restricted '%s'" % (ifc.name, channel, password))
         elif mode == "wepascii":
-            os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (ifc.name, password))
+            os.system("/usr/sbin/iwconfig '%s' channel %s enc restricted 's:%s'" % (ifc.name, channel, password))
         elif mode == "wpa-psk":
-            print "wpa-psk"
             if not have_supplicant:
                 return _(no_supplicant_msg)
             if not wpa_supplicant.startWpaService():
@@ -228,19 +227,6 @@ class Wireless:
             ret = wpa_supplicant.setWpaAuthentication(ifc.name, ssid, password)
             if not ret:
                 return _(wpa_fail_msg)
-        elif mode == "peap-mschapv2":
-            print "peap-mschapv2"
-            if not have_supplicant:
-                return _(no_supplicant_msg)
-            if not wpa_supplicant.startWpaService():
-                fail("Unable to start WPA service")
-            peap = wpa_supplicant.Wpa_EAP(ifc.name)
-            peap.ssid = ssid
-            peap.phase2 = "MSCHAPV2"
-            ret = peap.authenticate(username, password)
-            if not ret:
-                return _(wpa_fail_msg)
-
         elif mode == "802.1x":
             if not have_supplicant:
                 return _(no_supplicant_msg)
@@ -248,7 +234,6 @@ class Wireless:
                 fail("Unable to start WPA service")
 
             ieee = wpa_supplicant.Wpa_EAP(ifc.name)
-            print ssid, auth, username, password, "auth=%s"%inner
             ieee.ssid = ssid
             ieee.anonymous_identity = anon
             ieee.key_mgmt = "IEEE8021X"
@@ -300,13 +285,12 @@ def stopSameDev(myname, myuid):
         dev = Dev(name)
         if myuid != dev.uid:
             continue
-        
+
         notify("Net.Link", "stateChanged", (name, "down", ""))
         if dev.state == "up":
             d = DB.getDB(name)
             d["state"] = "down"
             DB.setDB(name, d)
-
 
 class Dev:
     def __init__(self, name, want=False):
@@ -332,6 +316,7 @@ class Dev:
         # user == identity
         self.user = _get(dict, "user", "")
         self.password = _get(dict, "password", "")
+        self.channel = _get(dict, "channel", "")
         # auth method, as in tls, ttls or peap
         self.auth = _get(dict, "auth", "")
         self.user_anon = _get(dict, "user_anon", "")
@@ -354,8 +339,9 @@ class Dev:
             srvs = [ self.nameserver ]
         # Use nameservers
         call("baselayout", "Net.Stack", "useNameServers", (srvs, self.ifc.autoNameSearch()))
-    
+
     def saveMAC(self):
+        # ZZZZZZZZZZZZZZZZZZZ
         import subprocess
         pop = subprocess.Popen(["/usr/sbin/iwconfig", "eth1"], stdout=subprocess.PIPE)
         for line in pop.stdout.read().split("\n"):
@@ -364,7 +350,7 @@ class Dev:
                 d["apmac"] = line.split("Access Point: ")[1].strip()
                 DB.setDB(self.name, d)
                 break
-    
+
     def up(self):
         ifc = self.ifc
         wifi = Wireless(ifc)
@@ -372,7 +358,7 @@ class Dev:
         ifc.up()
         if self.remote:
             wifi.setSSID(self.remote)
-        err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, ssid=self.remote, auth=self.auth, inner=self.auth_inner, anon=self.user_anon)
+        err = wifi.setEncryption(mode=self.authmode, username=self.user, password=self.password, channel=self.channel, ssid=self.remote, auth=self.auth, inner=self.auth_inner, anon=self.user_anon)
         if err:
             notify("Net.Link", "stateChanged", (self.name, "inaccessible", err))
             fail("auth failed")
@@ -411,14 +397,14 @@ class Dev:
             else:
                 notify("Net.Link", "stateChanged", (self.name, "inaccessible",  _(dhcp_fail_msg)))
                 fail("DHCP failed")
-    
+
     def down(self):
         ifc = self.ifc
         wifi = Wireless(ifc)
         if self.mode != "manual":
             ifc.stopAuto()
         if self.authmode != "" and self.authmode != "none":
-            wifi.setEncryption("none", None, None, None, None, None, None)
+            wifi.setEncryption("none", None, None, None, None, None, None, None)
         ifc.down()
         d = DB.getDB(self.name)
         d["state"] = "down"
@@ -456,6 +442,11 @@ def scanRemote(device):
             points = map(lambda x: x.id(), wifi.scanSSID())
             return points
     return []
+
+def setChannel(name, chan):
+    d = DB.getDB(name)
+    d["channel"] = chan
+    DB.setDB(name, d)
 
 def setConnection(name, device):
     d = DB.getDB(name)
@@ -551,6 +542,8 @@ def connectionInfo(name=None):
         d["remote"] = dev.remote
         if dev.apmac:
             d["apmac"] = dev.apmac
+        if dev.channel:
+            d["channel"] = dev.channel
     d["net_mode"] = dev.mode
     if dev.address:
         d["net_address"] = dev.address
@@ -593,7 +586,7 @@ def connectionInfo(name=None):
 
 def getAuthentication(name):
     dev = Dev(name, True)
-    return (dev.authmode, dev.user, dev.password, dev.auth, dev.user_anon,\
+    return (dev.authmode, dev.user, dev.password, dev.channel, dev.auth, dev.user_anon,\
             dev.auth_inner, dev.auth_client_cert, dev.auth_ca_cert, dev.auth_private_key, dev.auth_private_key_pass)
 
 def kernelEvent(data):
