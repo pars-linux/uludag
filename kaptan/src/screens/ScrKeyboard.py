@@ -41,6 +41,7 @@ class Widget(KeyboardWidget, ScreenWidget):
         self.config = KConfig("kxkbrc")
         self.config.setGroup("Layout")
         self.layoutList = str(self.config.readEntry("LayoutList"))
+        self.lastLayout = 0
 
         # get keyboard layouts
         for lang in localedata.languages:
