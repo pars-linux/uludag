@@ -19,6 +19,7 @@ from pakito.gui.pspecWidget.dialogs.summaryDialog import SummaryDialog
 from pakito.gui.pspecWidget.dialogs.dependencyDialog import DependencyDialog
 from pakito.gui.pspecWidget.dialogs.patchDialog import PatchDialog
 
+
 class sourceWidget(SourceWidgetUI):
     def __init__(self, parent, fileLoc, xmlUtil):
         SourceWidgetUI.__init__(self, parent)
@@ -29,7 +30,7 @@ class sourceWidget(SourceWidgetUI):
 
         self.lePackager.setPaletteForegroundColor(QColor("black"))
         self.lePackager.setPaletteBackgroundColor(QColor("white"))
-              
+
         self.connect(self.pbAddSummary, SIGNAL("clicked()"), self.slotAddSummary)
         self.connect(self.pbRemoveSummary, SIGNAL("clicked()"), self.slotRemoveSummary)
         self.connect(self.pbBrowseSummary, SIGNAL("clicked()"), self.slotBrowseSummary)
@@ -39,23 +40,23 @@ class sourceWidget(SourceWidgetUI):
         self.connect(self.pbRemoveBuildDep, SIGNAL("clicked()"), self.slotRemoveBuildDep)
         self.connect(self.pbBrowseBuildDep, SIGNAL("clicked()"), self.slotBrowseBuildDep)
         self.connect(self.lvBuildDep, SIGNAL("executed(QListViewItem *)"), self.slotBrowseBuildDep)
-        
+
         self.connect(self.pbAddPatch, SIGNAL("clicked()"), self.slotAddPatch)
         self.connect(self.pbRemovePatch, SIGNAL("clicked()"), self.slotRemovePatch)
         self.connect(self.pbBrowsePatch, SIGNAL("clicked()"), self.slotBrowsePatch)
         self.connect(self.pbViewPatch, SIGNAL("clicked()"), self.slotViewPatch)
         self.connect(self.lvPatches, SIGNAL("executed(QListViewItem *)"), self.slotBrowsePatch)
-        
+
         il = KGlobal.iconLoader()
         for w in [self.pbLicense, self.pbIsA, self.pbAddSummary, self.pbAddBuildDep, self.pbAddPatch]:
             w.setIconSet(il.loadIconSet("edit_add", KIcon.Toolbar))
-        
+
         for w in [self.pbRemoveSummary, self.pbRemoveBuildDep, self.pbRemovePatch]:
             w.setIconSet(il.loadIconSet("edit_remove", KIcon.Toolbar))
-       
+
         for w in [self.pbBrowseSummary, self.pbBrowseBuildDep, self.pbBrowsePatch]:
             w.setIconSet(il.loadIconSet("fileopen", KIcon.Toolbar))
-        
+
         self.pbViewPatch.setIconSet(il.loadIconSet("filefind", KIcon.Toolbar))
 
         self.isAPopup = KPopupMenu(self)
@@ -72,14 +73,14 @@ class sourceWidget(SourceWidgetUI):
         self.licensePopup = KPopupMenu(self)
         for l in ["GPL", "GPL-2", "GPL-3", "as-is", "LGPL-2", "LGPL-2.1", "BSD", "MIT", "LGPL"]:
             self.licensePopup.insertItem(l)
-        
+
         self.connect(self.pbLicense, SIGNAL("clicked()"), self.slotLicensePopup)
         self.connect(self.licensePopup, SIGNAL("activated(int)"), self.slotLicenseHandle)
 
         self.lvSummary.setSorting(-1)
         self.lvBuildDep.setSorting(-1)
         self.lvPatches.setSorting(-1)
-        
+
         self.connect(self.leName, SIGNAL("textChanged(const QString &)"), self.slotNameChanged)
         self.connect(self.leHomepage, SIGNAL("textChanged(const QString &)"), self.slotHomepageChanged)
         self.connect(self.leLicense, SIGNAL("textChanged(const QString &)"), self.slotLicenseChanged)
@@ -90,13 +91,14 @@ class sourceWidget(SourceWidgetUI):
         self.connect(self.leURI, SIGNAL("textChanged(const QString &)"), self.slotArchiveChanged)
         self.connect(self.leSHA1, SIGNAL("textChanged(const QString &)"), self.slotArchiveChanged)
         self.connect(self.cbType, SIGNAL("activated(const QString &)"), self.slotArchiveChanged)
-            
+
+
     def slotNameChanged(self, newOne):
         self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Name")
-        
+
     def slotHomepageChanged(self, newOne):
         self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Homepage")
-        
+
     def slotLicenseChanged(self, newOne):
         while self.xmlUtil.deleteTagByPath("Source", "License"):
             pass
@@ -105,21 +107,21 @@ class sourceWidget(SourceWidgetUI):
         licenses.reverse()
         for license in licenses:
             self.xmlUtil.addTagBelow(packagerNode, "License", license)
-                    
+
     def slotIsAChanged(self, newOne):
         while self.xmlUtil.deleteTagByPath("Source", "IsA"):
             pass
-        
+
         packagerNode = self.xmlUtil.getTagByPath("Source", "Summary")
         for isa in str(newOne).split(", "):
             self.xmlUtil.addTagAbove(packagerNode, "IsA", isa)
-    
+
     def slotPackagerChanged(self, newOne):
         self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Packager", "Name")
 
     def slotEmailChanged(self, newOne):
         self.xmlUtil.setDataOfTagByPath(str(newOne), "Source", "Packager", "Email")
-                    
+
     def slotPartOfChanged(self, newOne):
         if str(newOne).strip() == "":
             self.xmlUtil.deleteTagByPath("Source", "PartOf")
@@ -130,7 +132,7 @@ class sourceWidget(SourceWidgetUI):
             else:
                 summaryNode = self.xmlUtil.getTagByPath("Source", "Summary")
                 self.xmlUtil.addTagAbove(summaryNode, "PartOf", str(newOne))
-        
+
     def slotArchiveChanged(self, newOne):
         self.xmlUtil.deleteTagByPath("Source", "Archive")
         descNode = self.xmlUtil.getTagByPath("Source", "Description")
@@ -204,15 +206,14 @@ class sourceWidget(SourceWidgetUI):
             ret.append(l)
             iterator += 1
         return ret
-    
+
     def syncSummary(self):
         #synchronize xml tree with listview
         import pakito.xmlUtil
-        
         summaries = self.getSummaryList()
         while self.xmlUtil.deleteTagByPath("Source", "Summary"):
             pass
-        
+
         transLoc = self.packageDir + "/translations.xml"
         transXML = None
         if os.path.isfile(transLoc):
@@ -220,14 +221,14 @@ class sourceWidget(SourceWidgetUI):
             while transXML.deleteTagByPath("Source", "Summary"):
                 pass
             transXML.write()
-        
+
         isaNode = self.xmlUtil.getTagByPath("Source", "IsA")
         summaries.reverse()
         for sum in summaries:
             if sum[0] == "en" or sum[0] == "":
                 self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1])
             else:
-                #add to translations.xml                    
+                #add to translations.xml
                 if not transXML:
                     import pakito.templates
                     f = open(transLoc, "w")
@@ -240,12 +241,12 @@ class sourceWidget(SourceWidgetUI):
                     self.xmlUtil.addTagBelow(node, "Summary", sum[1], **d)
                     transXML.write()
         self.xmlUtil.write()
-            
+
     def syncDescription(self):
         descs = self.getSummaryList()
         while self.xmlUtil.deleteTagByPath("Source", "Description"):
             pass
-        
+
         transLoc = self.packageDir + "/translations.xml"
         transXML = None
         if os.path.isfile(transLoc):
@@ -254,7 +255,7 @@ class sourceWidget(SourceWidgetUI):
             while transXML.deleteTagByPath("Source", "Description"):
                 pass
             transXML.write()
-            
+
         node = self.xmlUtil.getTagByPath("Source", "Summary")
         descs.reverse()
         for desc in descs:
@@ -269,17 +270,19 @@ class sourceWidget(SourceWidgetUI):
                 self.xmlUtil.addTagBelow(node2, "Description", desc[2], **d)
                 transXML.write()
         self.xmlUtil.write()
-        
+
     def slotAddBuildDep(self):
         dia = DependencyDialog(parent = self)
         if dia.exec_loop() == QDialog.Accepted:
             cond, dep = dia.getResult()
             KListViewItem(self.lvBuildDep, cond, dep)
+	    self.syncBuildDep()
 
     def slotRemoveBuildDep(self):
         lvi = self.lvBuildDep.selectedItem()
         if lvi:
             self.lvBuildDep.takeItem(lvi)
+	    self.syncBuildDep()
 
     def slotBrowseBuildDep(self):
         lvi = self.lvBuildDep.selectedItem()
@@ -290,6 +293,65 @@ class sourceWidget(SourceWidgetUI):
             cond, dep = dia.getResult()
             lvi.setText(0, cond)
             lvi.setText(1, dep)
+    #ugur........................................................................................start
+        self.syncBuildDep()
+
+    def getBuildDepList(self):
+        ret = []
+        iterator = QListViewItemIterator(self.lvBuildDep)
+        while iterator.current():
+            lvi = iterator.current()
+            l = [str(lvi.text(0)), str(lvi.text(1))]
+            ret.append(l)
+            iterator += 1
+        return ret
+
+    def setBuildDepList(self, l):
+        self.lvBuildDep.clear()
+        for sum in l:
+            KListViewItem(self.lvBuildDep, sum[0], sum[1])
+
+    def syncBuildDep(self):
+        #synchronize xml tree with listview
+        import pakito.xmlUtil
+        dependency = self.getBuildDepList()
+        builDepTag=self.xmlUtil.getTagByPath("Source", "BuildDependencies")
+        node = self.xmlUtil.getTagByPath("Source", "Archive")
+        print builDepTag
+        if builDepTag==None:
+            self.xmlUtil.addTagBelow(node, "BuildDependencies","")
+            self.xmlUtil.write()
+        while self.xmlUtil.deleteTagByPath("Source", "BuildDependencies", "Dependency"):
+            pass
+
+        dependency.reverse()
+        dependencyNode = self.xmlUtil.getTagByPath("Source","BuildDependencies")
+        for dep in dependency:
+            if  dep[0] == "":
+                self.xmlUtil.addTag(dependencyNode, "Dependency", dep[1])
+            else:
+                node = self.xmlUtil.getTagByPath("Source","BuildDependencies")
+                if dep[0].find(">=")!=-1:
+                    s=dep[0].partition(">=")
+                    key= "%sFrom" % s[0].replace(" ", "")
+                    value= s[2].replace(" ", "")
+                elif dep[0].find("<=")!=-1:
+                    s=dep[0].partition("<=")
+                    key= "%sTo" % s[0].replace(" ", "")
+                    value= s[2].replace(" ", "")
+                else:
+                    s=dep[0].partition("=")
+                    key= s[0].replace(" ", "")
+                    value= s[2].replace(" ", "")
+                d = {key:value}
+                self.xmlUtil.addTag(node, "Dependency", dep[1], **d)
+
+        dependency = self.getBuildDepList()
+        if dependency==[]:
+            self.xmlUtil.deleteTagByPath("Source", "BuildDependencies")
+
+        self.xmlUtil.write()
+        #..............................................................................................end
 
     def slotAddPatch(self):
         dia = PatchDialog(self)
@@ -299,6 +361,7 @@ class sourceWidget(SourceWidgetUI):
             if not os.path.isdir(self.filesDir):
                 os.mkdir(self.filesDir)
             shutil.copyfile(res[3], self.filesDir + "/" + res[2])
+        self.syncPatch()
 
     def slotRemovePatch(self):
         lvi = self.lvPatches.selectedItem()
@@ -310,6 +373,7 @@ class sourceWidget(SourceWidgetUI):
             self.lvPatches.takeItem(lvi)
         if os.path.isdir(self.filesDir) and os.path.isfile(patchPath):
             os.unlink(patchPath)
+        self.syncPatch()
 
     def slotBrowsePatch(self):
         lvi = self.lvPatches.selectedItem()
@@ -330,6 +394,55 @@ class sourceWidget(SourceWidgetUI):
             lvi.setText(1, res[1])
             lvi.setText(2, res[2])
             #TODO: patch file may be renamed
+    #ugur........................................................................................start
+        self.syncPatch()
+
+    def getPatchList(self):
+        ret = []
+        iterator = QListViewItemIterator(self.lvPatches)
+        while iterator.current():
+            lvi = iterator.current()
+            l = [str(lvi.text(0)), str(lvi.text(1)), str(lvi.text(2))]
+            ret.append(l)
+            iterator += 1
+        return ret
+
+    def setPatchList(self, l):
+        self.lvPatches.clear()
+        for pat in l:
+            KListViewItem(self.lvPatches, pat[0], pat[1],pat[2])
+
+    def syncPatch(self):
+        #synchronize xml tree with listview
+        import pakito.xmlUtil
+        patche = self.getPatchList()
+        patchTag=self.xmlUtil.getTagByPath("Source", "Patches")
+        node = self.xmlUtil.getTagByPath("Source")
+
+        if patchTag==None:
+            self.xmlUtil.addTag(node, "Patches","")
+            self.xmlUtil.write()
+        while self.xmlUtil.deleteTagByPath("Source", "Patches", "Patche"):
+            pass
+
+        patche.reverse()
+        patcheNode = self.xmlUtil.getTagByPath("Source","Patches")
+        for pat in patche:
+            if pat !=[]:
+                d={}
+                if pat[0]!="":
+                    d['level']=pat[0]
+                if pat[1]!="":
+                    d['compressionType']=pat[1]
+                patcheNode = self.xmlUtil.getTagByPath("Source","Patches")
+                self.xmlUtil.addTag(patcheNode, "Patche",pat[2],**d)
+
+        patche = self.getPatchList()
+        if patche==[]:
+            self.xmlUtil.deleteTagByPath("Source", "Patches")
+
+        self.xmlUtil.write()
+        #..............................................................................................end
 
     def slotViewPatch(self):
         lvi = self.lvPatches.selectedItem()
@@ -351,8 +464,8 @@ class sourceWidget(SourceWidgetUI):
         self.lePackager.setText(source.packager.name)
         self.leEmail.setText(source.packager.email)
         if source.partOf:
-            self.lePartOf.setText(source.partOf)   
-        
+            self.lePartOf.setText(source.partOf)
+
         #archive
         self.leURI.setText(source.archive.uri)
         self.cbType.setCurrentText(source.archive.type)
@@ -364,7 +477,7 @@ class sourceWidget(SourceWidgetUI):
             lvi = KListViewItem(self.lvSummary, lang, unicode(sum))
             if lang in source.description:
                 lvi.setText(2, unicode(source.description[lang]))
-        
+
         transLoc = self.packageDir + "/translations.xml"
         if os.path.isfile(transLoc):
             #browse summaries at translations.xml and add to listview
@@ -378,13 +491,13 @@ class sourceWidget(SourceWidgetUI):
                     # search a description for this language
                     descLang = xml.getAttributesOfTag(desc)['xml:lang']
                     if sumLang == descLang:
-                        lvi.setText(2, unicode(xml.getDataOfTag(desc)))                
+                        lvi.setText(2, unicode(xml.getDataOfTag(desc)))
 
         self.lvBuildDep.clear()
-        
+
         for dep in source.buildDependencies:
             lvi = KListViewItem(self.lvBuildDep, getConstraint(dep), dep.package)
-        
+
         self.lvPatches.clear()
         for patch in source.patches:
             if not patch.level:
@@ -392,7 +505,7 @@ class sourceWidget(SourceWidgetUI):
             if not patch.compressionType:
                 patch.compressionType = ""
             lvi = KListViewItem(self.lvPatches, str(patch.level), str(patch.compressionType), patch.filename)
-    
+
 def getConstraint(dep):
     if dep.version:
         constraint = i18n("Version") + " = " + dep.version
@@ -413,7 +526,7 @@ def getConstraint(dep):
 def getConstraintReverse(condition, package, dep):
     dep.version = dep.versionFrom = dep.versionTo = None
     dep.release = dep.releaseFrom = dep.releaseTo = None
-    
+
     if condition.startswith(i18n("Version") + " = "):
         dep.version = condition.split("= ")[1]
     elif condition.startswith(i18n("Version") + " <= "):

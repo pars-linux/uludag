@@ -17,12 +17,12 @@ from pakito.xmlUtil import XmlUtil
 
 class PspecWidget(QWidget):
     """ a widget consists code and design view of an pspec.xml file """
-    
+
     def __init__(self, parent, fileLocation):
         QWidget.__init__(self, parent)
         self.pspec = spec.SpecFile()
         self.fileLocation = fileLocation
-        
+
         self.xmlUtil = XmlUtil(fileLocation)
         self.pspec.read(self.fileLocation)
 
@@ -34,7 +34,7 @@ class PspecWidget(QWidget):
         self.pbCode = KPushButton(i18n("Code"), self)
         self.pbCode.setToggleButton(True)
         self.pbCode.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
-        
+
         # top of the widget - buttons and spacer
         mainLayout = QVBoxLayout(self, 5, 5)
         topLayout = QHBoxLayout(mainLayout)
@@ -42,88 +42,88 @@ class PspecWidget(QWidget):
         topLayout.addWidget(self.pbCode)
         topSpacer = QSpacerItem(200,20, QSizePolicy.Expanding)
         topLayout.addItem(topSpacer)
-        
+
         # a widget stack controlled by "design" and "code" buttons
         self.widgetStack = QWidgetStack(self)
         mainLayout.addWidget(self.widgetStack)
-        
+
         # toolbox of "source", "package(s)" and history
         self.toolBox = QToolBox(self.widgetStack)  
         self.toolBox.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
-        
+
         # source section of toolbox
         self.sourcePage = sourceWidget(self.toolBox, self.fileLocation, self.xmlUtil)
-        
+
         # packages section of toolbox
         self.packagePage = packageWidget(self.toolBox, self.fileLocation, self.xmlUtil)
-        
+
         # history section of toolbox
-        self.historyPage = historyWidget(self.toolBox)
-                
+        self.historyPage = historyWidget(self.toolBox, self.xmlUtil)
+
         # inclusion to toolbox
         self.toolBox.addItem(self.sourcePage, i18n("Source"))
         self.toolBox.addItem(self.packagePage, i18n("Package(s)"))
         self.toolBox.addItem(self.historyPage, i18n("History"))
-        
+
         self.widgetStack.addWidget(self.toolBox, 0)
         self.editor = ed("xml", self.widgetStack)
         self.widgetStack.addWidget(self.editor, 1)
-        
-        # connections        
+
+        # connections
         self.connect(self.pbDesign, SIGNAL("clicked()"), self.pbDesignClicked)
         self.connect(self.pbCode, SIGNAL("clicked()"), self.pbCodeClicked)
-        
+
         self.changeCount = 0
         self.change = False
-        
+
         if self.fileLocation != None:
             self.fill()
-        
+
     def where(self):
         if self.widgetStack.visibleWidget() is self.editor:
             return "code"
         else:
             return "design"
-        
+
     def fill(self):
         #source bilgileri
         self.sourcePage.fill(self.pspec.source)
-        
+
         # paket bilgileri
         self.packagePage.fill(self.pspec.packages)
-        
+
         #history bilgileri
         self.historyPage.fill(self.pspec.history)
-    
+
     def pbDesignClicked(self):
         if self.pbDesign.isOn(): # design section will open
             self.designWillOpen()
         else:
             self.codeWillOpen()
-            
+
     def pbCodeClicked(self):
         if self.pbCode.isOn(): #code section will open
-            self.codeWillOpen()            
+            self.codeWillOpen()
         else:
             self.designWillOpen()
-            
+
     def designWillOpen(self):
         qApp.setOverrideCursor(KCursor.workingCursor())
         try:
-            self.syncFromCode()            
+            self.syncFromCode()
         except Exception, err:
             qApp.restoreOverrideCursor()
             KMessageBox.sorry(self, i18n("Specification is not valid or well-formed: %s" % err), i18n("Invalid XML Code"))
             self.pbDesign.setOn(False)
             self.pbCode.setOn(True)
             return
-        
+
         self.fill()
         self.widgetStack.raiseWidget(0)
         self.pbCode.setOn(False)
         self.pbDesign.setOn(True)
         qApp.restoreOverrideCursor()
-            
+
     def codeWillOpen(self):
         qApp.setOverrideCursor(KCursor.workingCursor())
         self.pbDesign.setOn(False)
@@ -133,18 +133,18 @@ class PspecWidget(QWidget):
         self.syncFromDesign()
         self.editor.openFile(self.fileLocation)
         qApp.restoreOverrideCursor()
-    
+
     def syncFromCode(self):
         self.editor.save()
         self.pspec.read(self.editor.editedFile)
         self.xmlUtil.read() #parse new changes made by editor
-        
+
     def syncFromDesign(self):
         self.xmlUtil.write()
-        
+
     def isSourceDownloaded(self):
         import os.path as path
-        
+
         file = str(self.sourcePage.leURI.text())
         if file.strip() == "":
             return None
@@ -153,4 +153,4 @@ class PspecWidget(QWidget):
         if path.exists(loc):
             return loc
         else:
-            return None      
+            return None

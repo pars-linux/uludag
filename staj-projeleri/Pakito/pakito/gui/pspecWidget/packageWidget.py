@@ -8,10 +8,10 @@ import os
 import shutil
 
 import pisi
-#from pisi import specfile as spec
-#from pisi.dependency import Dependency
-#from pisi.conflict import Conflict
-#from pisi.replace import Replace
+from pisi import specfile as spec
+from pisi.dependency import Dependency
+from pisi.conflict import Conflict
+from pisi.replace import Replace
 
 import kdedesigner
 
@@ -23,19 +23,20 @@ from pakito.gui.pspecWidget.dialogs.additionalFileDialog import AdditionalFileDi
 from pakito.gui.pspecWidget.dialogs.comarDialog import COMARDialog
 
 class packageWidget(QWidget):
-    
+
     class packageTab(PackageWidgetUI):
         def __init__(self, parent, filesDir, comarDir, xmlUtil):
             PackageWidgetUI.__init__(self, parent)
             self.filesDir = filesDir
             self.comarDir = comarDir
             self.xmlUtil = xmlUtil
+            self.packageDir = os.path.split(filesDir)[0]
 
             il = KGlobal.iconLoader()
 
             for w in [self.pbLicense, self.pbIsA, self.pbAddRuntimeDep, self.pbAddSummary, self.pbAddReplaces, self.pbAddFile, self.pbAddAdditional, self.pbAddConflict, self.pbAddCOMAR]:
                 w.setIconSet(il.loadIconSet("edit_add", KIcon.Toolbar))
-            
+
             for w in [self.pbRemoveRuntimeDep, self.pbRemoveSummary, self.pbRemoveReplaces, self.pbRemoveFile, self.pbRemoveAdditional, self.pbRemoveConflict, self.pbRemoveCOMAR]:
                 w.setIconSet(il.loadIconSet("edit_remove", KIcon.Toolbar))
 
@@ -96,10 +97,10 @@ class packageWidget(QWidget):
             self.licensePopup = QPopupMenu(self)
             for l in ["GPL", "GPL-2", "GPL-3", "as-is", "LGPL-2", "LGPL-2.1", "BSD", "MIT", "LGPL"]:
                 self.licensePopup.insertItem(l)
-        
+
             self.connect(self.pbLicense, SIGNAL("clicked()"), self.slotLicensePopup)
             self.connect(self.licensePopup, SIGNAL("activated(int)"), self.slotLicenseHandle)
-            
+
             self.lvSummary.setSorting(-1)
             self.lvRuntimeDep.setSorting(-1)
             self.lvReplaces.setSorting(-1)
@@ -107,46 +108,47 @@ class packageWidget(QWidget):
             self.lvAdditionalFiles.setSorting(-1)
             self.lvConflicts.setSorting(-1)
             self.lvCOMAR.setSorting(-1)
-            
+
             self.connect(self.leName, SIGNAL("textChanged(const QString &)"), self.slotNameChanged)
             self.connect(self.leLicense, SIGNAL("textChanged(const QString &)"), self.slotLicenseChanged)
             self.connect(self.leIsA, SIGNAL("textChanged(const QString &)"), self.slotIsAChanged)
             self.connect(self.lePartOf, SIGNAL("textChanged(const QString &)"), self.slotPartOfChanged)
 
+
         def slotNameChanged(self, newOne):
             self.xmlUtil.setDataOfTagByPath(str(newOne), "Package", "Name")
-            
+
         def slotIsAChanged(self, newOne):
             while self.xmlUtil.deleteTagByPath("Package", "IsA"):
                 pass
-            
+
             if str(newOne).strip() == "":
                 return
-        
+
             nameNode = self.xmlUtil.getTagByPath("Package", "Name")
             list = str(newOne).split(", ")
             list.reverse()
             for isa in list:
                 self.xmlUtil.addTagBelow(nameNode, "IsA", isa)
-                    
+
         def slotLicenseChanged(self, newOne):
             while self.xmlUtil.deleteTagByPath("Package", "License"):
                 pass
-        
+
             if str(newOne).strip() == "":
                 return
-            
+
             isANode = self.xmlUtil.getTagByPath("Package", "IsA")
             if isANode:
                 mainNode = isANode
             else:
                 mainNode = self.xmlUtil.getTagByPath("Package", "Name")
-                    
+
             licenses = str(newOne).split(", ")
             licenses.reverse()
             for license in licenses:
                 self.xmlUtil.addTagBelow(mainNode, "License", license)
-                
+
         def slotPartOfChanged(self, newOne):
             if str(newOne).strip() == "":
                 self.xmlUtil.deleteTagByPath("Package", "PartOf")
@@ -161,7 +163,7 @@ class packageWidget(QWidget):
                     else:
                         filesNode = self.xmlUtil.getTagByPath("Package", "Files")
                         self.xmlUtil.addTagAbove(filesNode, "PartOf", str(newOne))
-        
+
         def slotLicensePopup(self):
             self.licensePopup.exec_loop(self.pbLicense.mapToGlobal(QPoint(0,0 + self.pbLicense.height())))
 
@@ -193,11 +195,15 @@ class packageWidget(QWidget):
             if dia.exec_loop() == QDialog.Rejected:
                 return
             self.setSummaryList(dia.getResult())
+            self.syncSummary()
+            self.syncDescription()
 
         def slotRemoveSummary(self):
             lvi = self.lvSummary.selectedItem()
             if lvi:
-                self.lvSummary.takeItem(lvi) 
+                self.lvSummary.takeItem(lvi)
+                self.syncSummary()
+                self.syncDescription()
 
         def slotAddSummary(self):
             sums = self.getSummaryList()
@@ -205,6 +211,8 @@ class packageWidget(QWidget):
             dialog = SummaryDialog(sums, parent = self)
             if dialog.exec_loop() == QDialog.Accepted:
                 self.setSummaryList(dialog.getResult())
+                self.syncSummary()
+                self.syncDescription()
 
         def setSummaryList(self, l):
             self.lvSummary.clear()
@@ -224,16 +232,84 @@ class packageWidget(QWidget):
                 iterator += 1
             return ret
 
+        #ugur.........................................................................start
+        def syncSummary(self):
+            #synchronize xml tree with listview
+            import pakito.xmlUtil
+            summaries = self.getSummaryList()
+            while self.xmlUtil.deleteTagByPath("Package", "Summary"):
+                pass
+
+            transLoc = self.packageDir + "/translations.xml"
+            transXML = None
+            if os.path.isfile(transLoc):
+                transXML = pakito.xmlUtil.XmlUtil(transLoc)
+                while transXML.deleteTagByPath("Package", "Summary"):
+                    pass
+                transXML.write()
+
+            isaNode = self.xmlUtil.getTagByPath("Package", "Name")
+            summaries.reverse()
+            for sum in summaries:
+                if sum[0] == "en" or sum[0] == "":
+                    self.xmlUtil.addTagBelow(isaNode, "Summary", sum[1])
+                else:
+                    #add to translations.xml
+                    if not transXML:
+                        import pakito.templates
+                        f = open(transLoc, "w")
+                        f.write(pakito.templates.translationTemplate % {"source": self.leName.text(), "lang": sum[0], "summary": sum[1]})
+                        f.close()
+                        transXML = pakito.xmlUtil.XmlUtil(transLoc)
+                    else:
+                        node = transXML.getTagByPath("Package", "Name")
+                        d = {"xml:lang": sum[0]}
+                        self.xmlUtil.addTagBelow(node, "Summary", sum[1], **d)
+                        transXML.write()
+            self.xmlUtil.write()
+
+        def syncDescription(self):
+            descs = self.getSummaryList()
+            while self.xmlUtil.deleteTagByPath("Package", "Description"):
+                pass
+
+            transLoc = self.packageDir + "/translations.xml"
+            transXML = None
+            if os.path.isfile(transLoc):
+                import pakito.xmlUtil
+                transXML = pakito.xmlUtil.XmlUtil(transLoc)
+                while transXML.deleteTagByPath("Package", "Description"):
+                    pass
+                transXML.write()
+
+            node = self.xmlUtil.getTagByPath("Package", "Summary")
+            descs.reverse()
+            for desc in descs:
+                if unicode(desc[2]).strip() == "":
+                    continue 
+                if desc[0] == "en":
+                    self.xmlUtil.addTagBelow(node, "Description", desc[2])
+                    self.xmlUtil.write()
+                else:
+                    node2 = transXML.getTagListByPath("Package", "Summary")[-1]
+                    d = {"xml:lang": desc[0]}
+                    self.xmlUtil.addTagBelow(node2, "Description", desc[2], **d)
+                    transXML.write()
+            self.xmlUtil.write()
+           #Ugur....................................................................................end
+
         def slotAddRuntimeDep(self):
             dia = DependencyDialog(parent = self, title = "Runtime Dependencies")
             if dia.exec_loop() == QDialog.Accepted:
                 cond, dep = dia.getResult()
                 KListViewItem(self.lvRuntimeDep, cond, dep)
+            self.syncRuntimeDep()
 
         def slotRemoveRuntimeDep(self):
             lvi = self.lvRuntimeDep.selectedItem()
             if lvi:
                 self.lvRuntimeDep.takeItem(lvi)
+            self.syncRuntimeDep()
 
         def slotBrowseRuntimeDep(self):
             lvi = self.lvRuntimeDep.selectedItem()
@@ -244,6 +320,70 @@ class packageWidget(QWidget):
                 cond, dep = dia.getResult()
                 lvi.setText(0, cond)
                 lvi.setText(1, dep)
+
+     #ugur........................................................................................start
+            self.syncRuntimeDep()
+
+        def getRuntimeDepList(self):
+            ret = []
+            iterator = QListViewItemIterator(self.lvRuntimeDep)
+            while iterator.current():
+                lvi = iterator.current()
+                l = [str(lvi.text(0)), str(lvi.text(1))]
+                ret.append(l)
+                iterator += 1
+            return ret
+
+        def setRuntimeDepList(self, l):
+            self.lvBuildDep.clear()
+            for sum in l:
+                KListViewItem(self.lvRuntimeDep, sum[0], sum[1])
+
+        def syncRuntimeDep(self):
+            #synchronize xml tree with listview
+            import pakito.xmlUtil
+            dependency = self.getRuntimeDepList()
+            runtimeDepTag=self.xmlUtil.getTagByPath("Package", "RuntimeDependencies")
+            node = self.xmlUtil.getTagByPath("Package", "Description")
+            if node==False:
+                node = self.xmlUtil.getTagByPath("Package", "Summary")
+                if node==False:
+                    node = self.xmlUtil.getTagByPath("Package", "Name")
+
+            if runtimeDepTag==None:
+                self.xmlUtil.addTagBelow(node, "BuildDependencies","")
+                self.xmlUtil.write()
+            while self.xmlUtil.deleteTagByPath("Package", "RuntimeDependencies", "Dependency"):
+                pass
+
+            dependency.reverse()
+            dependencyNode = self.xmlUtil.getTagByPath("Package","RuntimeDependencies")
+            for dep in dependency:
+                if  dep[0] == "":
+                    self.xmlUtil.addTag(dependencyNode, "Dependency", dep[1])
+                else:
+                    node = self.xmlUtil.getTagByPath("Package","RuntimeDependencies")
+                    if dep[0].find(">=")!=-1:
+                        s=dep[0].partition(">=")
+                        key= "%sFrom" % s[0].replace(" ", "")
+                        value= s[2].replace(" ", "")
+                    elif dep[0].find("<=")!=-1:
+                        s=dep[0].partition("<=")
+                        key= "%sTo" % s[0].replace(" ", "")
+                        value= s[2].replace(" ", "")
+                    else:
+                        s=dep[0].partition("=")
+                        key= s[0].replace(" ", "")
+                        value= s[2].replace(" ", "")
+                    d = {key:value}
+                    self.xmlUtil.addTag(node, "Dependency", dep[1], **d)
+
+            dependency = self.getRuntimeDepList()
+            if dependency==[]:
+                self.xmlUtil.deleteTagByPath("Package", "RuntimeDependencies")
+
+            self.xmlUtil.write()
+        #..............................................................................................end 
 
         def slotAddReplaces(self):
             dia = DependencyDialog(parent = self, title = "Replaces", secondLabel = "Package:")
@@ -286,17 +426,19 @@ class packageWidget(QWidget):
                 cond, dep = dia.getResult()
                 lvi.setText(0, cond)
                 lvi.setText(1, dep)
-        
+
         def slotAddFile(self):
             dia = FileDialog(parent = self)
             if dia.exec_loop() == QDialog.Accepted:
                 res = dia.getResult()
                 KListViewItem(self.lvFiles, res[0], res[1], res[2])
+            self.syncFile()
 
         def slotRemoveFile(self):
             lvi = self.lvFiles.selectedItem()
             if lvi:
                 self.lvFiles.takeItem(lvi)
+            self.syncFile()
 
         def slotBrowseFile(self):
             lvi = self.lvFiles.selectedItem()
@@ -309,6 +451,57 @@ class packageWidget(QWidget):
                 lvi.setText(1, res[1])
                 lvi.setText(2, res[2])
 
+    #ugur........................................................................................start
+            self.syncFile()
+
+        def getFileList(self):
+            ret = []
+            iterator = QListViewItemIterator(self.lvFiles)
+            while iterator.current():
+                lvi = iterator.current()
+                l = [str(lvi.text(0)), str(lvi.text(1)), str(lvi.text(2))]
+                ret.append(l)
+                iterator += 1
+            return ret
+
+        def setFileList(self, l):
+            self.lvFiles.clear()
+            for f in l:
+                KListViewItem(self.lvFiles, f[0], f[1],f[2])
+
+        def syncFile(self):
+            #synchronize xml tree with listview
+            import pakito.xmlUtil
+            file = self.getFileList()
+            fileTag=self.xmlUtil.getTagByPath("Package", "Files")
+            node = self.xmlUtil.getTagByPath("Package")
+
+            if fileTag==None:
+                self.xmlUtil.addTag(node, "Files","")
+                self.xmlUtil.write()
+            while self.xmlUtil.deleteTagByPath("Package", "Files", "Path"):
+                pass
+
+            file.reverse()
+            fileNode = self.xmlUtil.getTagByPath("Package","Files")
+            for f in file:
+                if f !=[]:
+                    d={}
+                    if f[0]!="":
+                        d['fileType']=f[0]
+                    if f[1]!="":
+                        d['permanent']=f[1]
+                    fileNode = self.xmlUtil.getTagByPath("Package","Files")
+                    self.xmlUtil.addTag(fileNode, "Path",f[2],**d)
+
+            file = self.getFileList()
+            if file==[]:
+                self.xmlUtil.deleteTagByPath("Package", "Files")
+
+            self.xmlUtil.write()
+        #..............................................................................................end
+
+
         def slotAddAdditional(self):
             dia = AdditionalFileDialog(self)
             if dia.exec_loop() == QDialog.Rejected:
@@ -319,6 +512,8 @@ class packageWidget(QWidget):
                 os.mkdir(self.filesDir)
             shutil.copyfile(res[4], self.filesDir + "/" + res[3])
 
+            self.syncAdditional()
+
         def slotRemoveAdditional(self):
             lvi = self.lvAdditionalFiles.selectedItem()
             if not lvi:
@@ -328,6 +523,7 @@ class packageWidget(QWidget):
             filePath = self.filesDir + "/" + file
             if os.path.isdir(self.filesDir) and os.path.isfile(filePath):
                 os.unlink(filePath)
+            self.syncAdditional()
 
         def slotBrowseAdditional(self):
             lvi = self.lvAdditionalFiles.selectedItem()
@@ -342,6 +538,58 @@ class packageWidget(QWidget):
             lvi.setText(2, res[2])
             lvi.setText(3, res[3])
             #TODO: additinal file may be renamed
+
+    #ugur........................................................................................start
+            self.syncAdditional()
+
+        def getAdditionalList(self):
+            ret = []
+            iterator = QListViewItemIterator(self.lvAdditionalFiles)
+            while iterator.current():
+                lvi = iterator.current()
+                l = [str(lvi.text(0)), str(lvi.text(1)), str(lvi.text(2)), str(lvi.text(2))]
+                ret.append(l)
+                iterator += 1
+            return ret
+
+        def setAdditionalList(self, l):
+            self.lvAdditionalFiles.clear()
+            for add in l:
+                KListViewItem(self.lvAdditionalFiles, add[0], add[1],add[2],add[3])
+
+        def syncAdditional(self):
+            #synchronize xml tree with listview
+            import pakito.xmlUtil
+            additional = self.getAdditionalList()
+            additionalTag=self.xmlUtil.getTagByPath("Package", "AdditionalFiles")
+            node = self.xmlUtil.getTagByPath("Package")
+
+            if additionalTag==None:
+                self.xmlUtil.addTag(node, "AdditionalFiles","")
+                self.xmlUtil.write()
+            while self.xmlUtil.deleteTagByPath("Package", "AdditionalFiles", "AdditionalFile"):
+                pass
+
+            additional.reverse()
+            additionalNode = self.xmlUtil.getTagByPath("Package","AdditionalFiles")
+            for add in additional:
+                if add !=[]:
+                    d={}
+                    if add[0]!="":
+                        d['owner']=add[0]
+                    if add[1]!="":
+                        d['permission']=add[1]
+                    if add[2]!="":
+                        d['target']=add[2]
+                    additionalNode = self.xmlUtil.getTagByPath("Package","AdditionalFiles")
+                    self.xmlUtil.addTag(additionalNode, "AdditionalFile",add[3],**d)
+
+            additional = self.getAdditionalList()
+            if additional==[]:
+                self.xmlUtil.deleteTagByPath("Package", "AdditionalFiles")
+
+            self.xmlUtil.write()
+        #..............................................................................................end
 
         def slotViewAdditional(self):
             lvi = self.lvAdditionalFiles.selectedItem()
@@ -393,52 +641,52 @@ class packageWidget(QWidget):
             self.leIsA.setText(", ".join(package.isA))
             if package.partOf:
                 self.lePartOf.setText(package.partOf)
-                
+
             # summary and descriptions
             self.lvSummary.clear()
             for lang, sum in package.summary.iteritems():
                 lvi = KListViewItem(self.lvSummary, lang, unicode(sum))
                 if lang in package.description:
                     lvi.setText(2, unicode(package.description[lang]))
-            
+
             #runtime deps.
             self.lvRuntimeDep.clear()
             runDeps = package.runtimeDependencies()
             for dep in runDeps:
                 lvi = KListViewItem(self.lvRuntimeDep, getConstraint(dep), dep.package)
-                
+
             #replaces
             self.lvReplaces.clear()
             for rep in package.replaces:
                 lvi = KListViewItem(self.lvReplaces, getConstraint(rep), rep.package)
-                
+
             # files
             self.lvFiles.clear()
             for file in package.files:
                 if not file.permanent:
                     file.permanent = ""
-                lvi = KListViewItem(self.lvFiles, file.fileType, file.permanent, file.path)                
-                
+                lvi = KListViewItem(self.lvFiles, file.fileType, file.permanent, file.path)
+
             # additional files
             self.lvAdditionalFiles.clear()
             for file in package.additionalFiles:  
-                lvi = KListViewItem(self.lvAdditionalFiles, file.owner, file.permission, file.target, file.filename)  
-                
+                lvi = KListViewItem(self.lvAdditionalFiles, file.owner, file.permission, file.target, file.filename)
+
             # conflicts
             self.lvConflicts.clear()
             for conf in package.conflicts:  
-                lvi = KListViewItem(self.lvConflicts, getConstraint(conf), conf.package)  
-                
+                lvi = KListViewItem(self.lvConflicts, getConstraint(conf), conf.package)
+
             # COMAR 
             self.lvCOMAR.clear()
             for comar in package.providesComar:
-                lvi = KListViewItem(self.lvCOMAR, comar.om, comar.script) 
-                 
+                lvi = KListViewItem(self.lvCOMAR, comar.om, comar.script)
+
     def __init__(self, parent, fileLoc, xmlUtil):
         QWidget.__init__(self, parent)
         pageLayout = QVBoxLayout(self, 6, 11)
         topLayout = QHBoxLayout(pageLayout, 5)
-        
+
         tempDir = os.path.split(fileLoc)[0]
         self.filesDir = tempDir + "/files"
         self.comarDir = tempDir + "/comar"
@@ -451,27 +699,27 @@ class packageWidget(QWidget):
         topLayout.addWidget(pbAddPackage)
         topLayout.addWidget(pbRemovePackage)
         topLayout.addItem(topSpacer)
-        
+
         self.twPackages = KTabWidget(self)
         pageLayout.addWidget(self.twPackages)
-        
+
         self.connect(pbAddPackage, SIGNAL("clicked()"), self.addPackageSlot)
         self.connect(pbRemovePackage, SIGNAL("clicked()"), self.removePackageSlot)
-    
+
     def addPackage(self, package, focus = False):
         tab = self.packageTab(self.twPackages, self.filesDir, self.comarDir, self.xmlUtil)
         tab.fill(package)
         self.twPackages.addTab(tab, package.name)
         if focus:
             self.twPackages.showPage(tab)
-    
+
     def fill(self, packages):
         # Add packages
         cleanTabs(self.twPackages)
         self.packages = packages
         for package in packages:
             self.addPackage(package)
-    
+
     def addPackageSlot(self):
         package = spec.Package()
         package.name = "NewPackage"
@@ -481,7 +729,7 @@ class packageWidget(QWidget):
         package.files = []
         package.files.append(fil)
         self.addPackage(package, focus = True)
-    
+
     def removePackageSlot(self):
         if self.twPackages.count() == 1:
             KMessageBox.error(self, i18n("At least one package must exist."), i18n("Error"))
@@ -515,7 +763,7 @@ def getConstraint(dep):
 def getConstraintReverse(condition, package, dep):
     dep.version = dep.versionFrom = dep.versionTo = None
     dep.release = dep.releaseFrom = dep.releaseTo = None
-    
+
     if condition.startswith(i18n("Version") + " = "):
         dep.version = condition.split("= ")[1]
     elif condition.startswith(i18n("Version") + " <= "):
