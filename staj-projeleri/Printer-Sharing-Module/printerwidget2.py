@@ -65,29 +65,65 @@ class IconButton(QPushButton):
 	def getText(self):
 		return self.label.text()
 
+class PrinterWidget2(QFrame):
+	def __init__(self,parent=None,name = None,grand = None):
+		QFrame.__init__(self,parent)
+		
+		self.printer = PrinterWidget(self,name,grand)
+		self.printer.setGeometry(0,0,373,256)
+		
+		self.scrollb = QScrollBar(self,"scrollb")
+		self.scrollb.setGeometry(373,2,15,256)
+		self.connect(self.scrollb,SIGNAL("valueChanged(int)"),self.set)
+		
+		self.increment = (self.printer.getHeight() - 130.0)/100
+		
+		self.resize(380,256)
+		self.clearWState(Qt.WState_Polished)
+	
+	def set(self):
+		y = self.scrollb.value()*self.increment
+		self.printer.setGeometry(0,-y,373,256+y)
+		
+	def changePrinterStatus(self,printer, shared):
+		self.printer.changePrinterStatus(printer, shared)
+	def refreshPrinterStatus(self,shared):
+		self.printer.refreshPrinterStatus(shared)
+	def setPrinterShared(self,printer, pshared, shared):
+		self.printer.setPrinterShared(printer, pshared, shared)
+	def refreshPrinters(self):
+		self.printer.refreshPrinters()
+	def showProperties(self):
+		self.printer.showProperties()
+	
 
 class PrinterWidget(QFrame):
 	def __init__(self,parent = None,name = None,grand = None,fl = 0):
-		QFrame.__init__(self,parent,name,fl)
+		QFrame.__init__(self,parent)
 		self.grand = grand
-		self.first = True
 		
 		if not name:
 			self.setName("PrinterWidget")
 		
 		self.setPaletteBackgroundColor(QColor(255,255,255))
 		
-		KCModule(self,"rightmodule")
+		#This two lines are to get KIcons
+		empty = KCModule(self,"empty")
+		empty.setGeometry(-20,-20,5,5)
+		
+		
+		self.p = QPainter(self)
 		
 		self.languageChange()
 		self.Events = events.Events()
 		self.connection = self.Events.connection
 		
+		
 		self.buttonlist = []
 		
 		self.refreshPrinters()
 		
-		self.resize(QSize(380,240).expandedTo(self.minimumSizeHint()))
+		self.resize(QSize(380,self.height()).expandedTo(self.minimumSizeHint()))
 		self.clearWState(Qt.WState_Polished)
 		
 	def changePrinterStatus(self,printer, shared):
@@ -120,14 +156,24 @@ class PrinterWidget(QFrame):
 			
 		gridx = 0
 		gridy = 0
-		SPACE = 15
+		SPACE = 10
 		for printer in self.buttonlist:
 			x = SPACE + gridx*125
 			y = SPACE + gridy*125
 			printer.setGeometry(QRect(x,y,printer.width(), printer.height()))
 			gridx = gridx + 1
 			gridy = gridy + gridx/3
-			gridx = gridx % 3	
+			gridx = gridx % 3
+		self.h = gridy*125+20
+		self.x = gridx
+				
+	def getHeight(self):
+		if len(self.buttonlist)<7:
+			return 130
+		if self.x==0:
+			return self.h -125
+		else:
+			return self.h
 	
 	def showProperties(self):
 		printers = self.connection.getPrinters()
@@ -140,11 +186,9 @@ class PrinterWidget(QFrame):
 			status = "not shared"
 			self.grand.sharebutton.setText("Share")
 		
-		if self.first:
-			set = self.connection.adminGetServerSettings()
-			set["ServerName"] = "localhost"
-			self.connection.adminSetServerSettings(set)
-			self.first = False
+		set = self.connection.adminGetServerSettings()
+		set["ServerName"] = "localhost"
+		self.connection.adminSetServerSettings(set)
 		
 		self.grand.sharebutton.setEnabled(True)
 		self.grand.loadProperties(self.printers[printername]["printer-info"],status,

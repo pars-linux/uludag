@@ -29,8 +29,6 @@ class MainWindow(QMainWindow):
 		
 		self.setCentralWidget(QWidget(self,"qt_central_widget"))
 		
-		KCModule(self.centralWidget(),"rightmodule")
-		
 		self.propertiesbox = QGroupBox(self.centralWidget(),"propertiesbox")
 		self.propertiesbox.setGeometry(QRect(10,280,590,130))
 		
@@ -58,7 +56,7 @@ class MainWindow(QMainWindow):
 		self.uril2 = QLabel(self.propertiesbox,"uril2")
 		self.uril2.setGeometry(QRect(130,86,440,21))
 		
-		self.printerframe = printerwidget2.PrinterWidget(self.centralWidget(),"printerframe",self)
+		self.printerframe = printerwidget2.PrinterWidget2(self.centralWidget(),"printerframe",self)
 		self.printerframe.setGeometry(QRect(10,10,390,260))
 		self.printerframe.setFrameShape(QFrame.StyledPanel)
 		self.printerframe.setFrameShadow(QFrame.Raised)
@@ -109,7 +107,7 @@ class MainWindow(QMainWindow):
 		self.connect(self.allowcombo, SIGNAL("activated(const QString&)"),self.adjustedit)
 		self.connect(self.advanceButton, SIGNAL("clicked()"), self.advanceFunction)
 		self.connect(self.helpbutton, SIGNAL("clicked()"),self.helpDialog)
-
+		
 	def loadProperties(self,name=None,status=None,location=None,uri=None):
 		if name==None:
 			name = ""
