@@ -232,7 +232,6 @@ class packageWidget(QWidget):
                 iterator += 1
             return ret
 
-        #ugur.........................................................................start
         def syncSummary(self):
             #synchronize xml tree with listview
             import pakito.xmlUtil
@@ -296,7 +295,6 @@ class packageWidget(QWidget):
                     self.xmlUtil.addTagBelow(node2, "Description", desc[2], **d)
                     transXML.write()
             self.xmlUtil.write()
-           #Ugur....................................................................................end
 
         def slotAddRuntimeDep(self):
             dia = DependencyDialog(parent = self, title = "Runtime Dependencies")
@@ -321,7 +319,6 @@ class packageWidget(QWidget):
                 lvi.setText(0, cond)
                 lvi.setText(1, dep)
 
-     #ugur........................................................................................start
             self.syncRuntimeDep()
 
         def getRuntimeDepList(self):
@@ -383,7 +380,6 @@ class packageWidget(QWidget):
                 self.xmlUtil.deleteTagByPath("Package", "RuntimeDependencies")
 
             self.xmlUtil.write()
-        #..............................................................................................end 
 
         def slotAddReplaces(self):
             dia = DependencyDialog(parent = self, title = "Replaces", secondLabel = "Package:")
@@ -451,7 +447,6 @@ class packageWidget(QWidget):
                 lvi.setText(1, res[1])
                 lvi.setText(2, res[2])
 
-    #ugur........................................................................................start
             self.syncFile()
 
         def getFileList(self):
@@ -499,7 +494,6 @@ class packageWidget(QWidget):
                 self.xmlUtil.deleteTagByPath("Package", "Files")
 
             self.xmlUtil.write()
-        #..............................................................................................end
 
 
         def slotAddAdditional(self):
@@ -539,7 +533,6 @@ class packageWidget(QWidget):
             lvi.setText(3, res[3])
             #TODO: additinal file may be renamed
 
-    #ugur........................................................................................start
             self.syncAdditional()
 
         def getAdditionalList(self):
@@ -589,7 +582,6 @@ class packageWidget(QWidget):
                 self.xmlUtil.deleteTagByPath("Package", "AdditionalFiles")
 
             self.xmlUtil.write()
-        #..............................................................................................end
 
         def slotViewAdditional(self):
             lvi = self.lvAdditionalFiles.selectedItem()
