@@ -227,13 +227,15 @@ class MainWindow(KParts.MainWindow):
             return
         actionspyFile.close()
 
-        #component.xml kontrol...........................................................
+        #component.xml control...........................................................
+        component=True
         try: 
             componentFile = open("component.xml", "r+")
         except:
             KMessageBox.sorry(self, i18n("No component.xml found."), i18n("Error"))
-            return
-        componentFile.close()
+            component=False
+        if component:
+            componentFile.close()
         #................................................................................
 
         qApp.setOverrideCursor(KCursor.waitCursor)
@@ -263,17 +265,20 @@ class MainWindow(KParts.MainWindow):
             KMessageBox.sorry(self, i18n("pspec.xml cannot be parsed: %s" % str(err)), i18n("Invalid File"))
             self.closePacket()
             return
-#......................................................................................................................
-        newdir=os.path.realpath("component.xml")
-        shutil.copyfile(newdir,tempDir+"component.xml")
-#......................................................................................................................
+
+        if component:
+            newdir=os.path.realpath("component.xml")
+            shutil.copyfile(newdir,tempDir+"component.xml")
+
         self.actionsTab = ActionsWidget(self.twTabs, os.path.join(self.newTempDir, "actions.py"))
-        self.componentTab = ComponentWidget(self.twTabs, os.path.join(tempDir, "component.xml"))
+        if component:
+            self.componentTab = ComponentWidget(self.twTabs, os.path.join(tempDir, "component.xml"))
 
         self.tempDir = tempDir + packageName
         self.twTabs.addTab(self.pspecTab, i18n("Specification"))
         self.twTabs.addTab(self.actionsTab, i18n("Actions"))
-        self.twTabs.addTab(self.componentTab, i18n("Component"))
+        if component:
+            self.twTabs.addTab(self.componentTab, i18n("Component"))
         self.twTabs.setCurrentPage(0)
 
         #connections

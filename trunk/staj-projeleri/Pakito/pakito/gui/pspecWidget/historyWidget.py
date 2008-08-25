@@ -77,7 +77,6 @@ class historyWidget(HistoryWidgetUI):
         lvi.setText(5, res[6])
         lvi.setText(6, res[3])
 
-       #ugur........................................................................................start
         self.syncHistory()
 
     def getHistoryList(self):
@@ -130,7 +129,6 @@ class historyWidget(HistoryWidgetUI):
                 self.xmlUtil.addTag(node, "Email", his[5])
 
         self.xmlUtil.write()
-        #..............................................................................................end
 
     def fill(self, history):
         self.lvHistory.clear()

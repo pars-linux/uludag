@@ -293,7 +293,7 @@ class sourceWidget(SourceWidgetUI):
             cond, dep = dia.getResult()
             lvi.setText(0, cond)
             lvi.setText(1, dep)
-    #ugur........................................................................................start
+
         self.syncBuildDep()
 
     def getBuildDepList(self):
@@ -351,7 +351,6 @@ class sourceWidget(SourceWidgetUI):
             self.xmlUtil.deleteTagByPath("Source", "BuildDependencies")
 
         self.xmlUtil.write()
-        #..............................................................................................end
 
     def slotAddPatch(self):
         dia = PatchDialog(self)
@@ -394,7 +393,7 @@ class sourceWidget(SourceWidgetUI):
             lvi.setText(1, res[1])
             lvi.setText(2, res[2])
             #TODO: patch file may be renamed
-    #ugur........................................................................................start
+
         self.syncPatch()
 
     def getPatchList(self):
@@ -442,7 +441,7 @@ class sourceWidget(SourceWidgetUI):
             self.xmlUtil.deleteTagByPath("Source", "Patches")
 
         self.xmlUtil.write()
-        #..............................................................................................end
+
 
     def slotViewPatch(self):
         lvi = self.lvPatches.selectedItem()
