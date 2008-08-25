@@ -79,6 +79,8 @@ class DependencyResolver:
             for dep in package.runtimeDependencies():
                 deps += [dep.package]
 
+        deps = list(set(deps).difference(set([p.name for p in specFile.packages])))
+
         return deps
 
     def __getPackageNames(self, pspec):
