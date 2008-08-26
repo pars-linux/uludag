@@ -7,6 +7,8 @@ Name[de]=Paket-Manager
 Name[pt_BR]=Gerenciador de Pacotes
 Name[fr]=Gestionnaire de Paquets
 Name[it]=Gestore di Pacchetti
+Name[sv]=Gestore di Pacchetti
+
 GenericName[en]=Add or Remove Software
 GenericName[tr]=Yazılım ekle ve kaldır
 GenericName[nl]=Software toevoegen of verwijderen
@@ -15,6 +17,8 @@ GenericName[es]=Agregar o remover software
 GenericName[pt_BR]=Adicionar ou Remover Software
 GenericName[fr]=Ajouter ou Supprimer un Logiciel
 GenericName[it]=Aggiungere o rimuovere un programmma
+GenericName[sv]=Lägg till och ta bort program
+
 Comment=PiSi Package Manager Graphical User Interface
 Comment[en]=PiSi Package Manager Graphical User Interface
 Comment[tr]=PiSi Paket Yöneticisi Kullanıcı Grafik Arayüzü
@@ -24,6 +28,8 @@ Comment[de]=PiSi Paket-Manager grafische Benutzeroberfläche
 Comment[pt_BR]=Interface Gráfica do Usuário do Gerenciador de Pacotes PiSi
 Comment[fr]=Interface Graphique du Gestionnaire de Paquet PiSi
 Comment[it]=Interfaccia grafica per il Gestore di pacchetti PiSi
+Comment[sv]=Grafiskt användargränssnitt till pakethanteraren PiSi
+
 Icon=package-manager
 Type=Application
 Exec=package-manager
