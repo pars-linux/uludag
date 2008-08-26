@@ -7,6 +7,7 @@ Name[de]=Schriftart-Installation
 Name[pt_BR]=Instalador de Fontes
 Name[fr]=Installeur de Fontes
 Name[it]=Installatore di caratteri
+Name[sv]=Installation av teckensnitt
 
 Comment=Install & preview fonts
 Comment[tr]=Yazıtiplerini kur ve önizle
@@ -16,6 +17,7 @@ Comment[de]=Schriftarten installieren & Vorschau anzeigen
 Comment[pt_BR]=Instalar & pré-visualizar fontes
 Comment[fr]=Installer & prévisualiser des fontes
 Comment[it]=Installa e vedi un'anteprima dei caratteri
+Comment[sv]=Installera och förhandsgranska teckensnitt
 
 X-KDE-ModuleType=Library
 X-KDE-Library=fontinst

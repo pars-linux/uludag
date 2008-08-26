@@ -18,6 +18,7 @@ Name[de]=Land/Region & Sprache
 Name[pt_BR]=País/Região & Língua
 Name[fr]=Pays/Région & Langue
 Name[it]=Paese/Regione e Lingua
+Name[sv]=Land/region och språk
 
 Comment=Language, numeric, and time settings for your particular region
 Comment[tr]=Bölgenize özgü dil, sayı ve zaman ayarları
@@ -27,6 +28,7 @@ Comment[de]=Sprach-, Ziffer- und Uhrzeiteinstellungen für die von Ihnen gewähl
 Comment[pt_BR]=Configurações de Língua, numéricas e de hora para sua região
 Comment[fr]=Langue, paramètres numériques et temporels régionaux
 Comment[it]=Impostazioni della lingua, del formato dei numeri e dell'ora per la tua regione
+Comment[sv]=Ställ in språk, numeriskt format och tid för din speciella region
 
 Keywords=language,translation,number format,currency,time,date,formats,locale,Country,charsets,character sets,Decimal symbol,Thousands separator,symbol,separator,sign,positive,negative,fractional digits,week,week start
 Keywords[tr]=dil,çeviri,sayı biçimi,para,saat,tarih,biçimler,yerel,ülke,karakter kümeleri, ondalık sembolü,binler ayıracı,sembol,ayırıcı,işaret,pozitif,negatif,ondalık basamaklar,hafta,hafta başı
@@ -36,5 +38,6 @@ Keywords[de]=Sprache,Übersetzung,Nummernformat,Währung,Uhrzeit,Datum,Formate,l
 Keywords[pt_BR]=língua,tradução,formato numérico,moeda,hora,data,formatos,local,País,conjunto de caracteres,Símbolos decimais,Separador de milhares,símbolo,separador,sinal,positivo,negativo,dígitos fracionários,semana,início da semana
 Keywords[fr]=langue,traduction,format numérique,monnaie,temps,date,formats,localisation,Pays,jeux de caractères,Symbols décimaux,séparateur des mille,symbole,séparateur,signe,positif,négatif,chiffres après la virgule,semaine,debut de la semaine
 Keywords[it]=lingua,traduzione,formato dei numeri,moneta,ora,data,formati,localizzazione,Paese,set di caratteri,simboli decimali,Separatore delle migliaia,simbolo,separatore,segno,positivo,negativo,cifre frazionarie,settimana,inizio della settimana
+Keywords[sv]=språk,översättning,talformat,valuta,tid,datum,format,land,teckenuppsättningar,decimaltecken,tusentalsavskiljare,symbol,avskiljare,tecken,positivt,negativt,decimaler,vecka,första veckodag
 
 Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization
