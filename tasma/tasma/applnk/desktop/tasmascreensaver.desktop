@@ -18,6 +18,7 @@ Name[de]=Bildschirmschoner
 Name[pt_BR]=Protetor de Tela
 Name[fr]=Économiseur d'écran
 Name[it]=Salvaschermo
+Name[sv]=Skärmsläckare
 
 Comment=Screen Saver Settings
 Comment[tr]=Ekran Koruyucusu Ayarları
@@ -27,6 +28,7 @@ Comment[de]=Bildschirmschoner-Einstellungen
 Comment[pt_BR]=Configurações do Protetor de Tela
 Comment[fr]=Configuration de l'économiseur d'écran
 Comment[it]=Configurazione del salvaschermo
+Comment[sv]=Anpassa skärmsläckare
 
 Keywords=screensavers,Priority
 Keywords[tr]=ekran koruyucular,Öncelik,ekran koruyucusu,ekran koruyucuları
@@ -36,5 +38,6 @@ Keywords[de]=Bildschirmschoner,Priorität
 Keywords[pt_BR]=protetores de tela,Prioridade
 Keywords[fr]=économiseurs d'écran,Priorité
 Keywords[it]=salvaschermo,screensaver,Priorità
+Keywords[sv]=skärmsläckare,Prioritet
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

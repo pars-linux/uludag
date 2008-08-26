@@ -19,6 +19,7 @@ Name[de]=Maus
 Name[pt_BR]=Mouse
 Name[fr]=Souris
 Name[it]=Mouse
+Name[sv]=Mus
 
 Comment=Mouse settings
 Comment[tr]=Fare ayarları
@@ -28,6 +29,7 @@ Comment[de]=Mauseinstellungen
 Comment[pt_BR]=Configurações do mouse
 Comment[fr]=Configuration de la souris
 Comment[it]=Configurazione del mouse
+Comment[sv]=Anpassa mus
 
 Keywords=Mouse,Mouse acceleration,Mouse threshold,Mouse buttons,Selection,Cursor Shape,Input Devices,Button Mapping,Click,icons,feedback,Pointers,Drag,DoubleClick,mapping,right handed,left handed
 Keywords[tr]=fare,Fare Hızlandırma,Fare eşiği,Fare Tuşları,Seçim,imleç şekli,girdi aygıtları,Tuş Haritası,Tıklama,simgeler,geri besleme,İşaretçiler,Taşı,Çift Tıkla,haritalama,sağ elli,sol elli
@@ -37,5 +39,6 @@ Keywords[de]=Maus,Mausbeschleinigung,Mausschwelle,Maustasten,Auswahl,Cursorform,
 Keywords[pt_BR]=Mouse,Aceleração do mouse,Limiar do mouse,Botões do mouse,Seleção,Forma do Cursos,Dispositivos de Entrada,Mapeamento dos botões,Clique,ícones,retorno,Ponteiros,Arrastar,Clique duplo,mapeamento,destro,canhoto
 Keywords[fr]=Souris,Accélération de la souris,Seuil de souris,Boutons de souris,sélection,Forme du Curseur,Périphérique d'entrée,Association de boutton,Clic,icônes,retour,Pointeurs,Déplacer,Double Clic,association,droitier,gaucher
 Keywords[it]=Mouse,accelerazione del mouse,soglia del mouse,pulsanti del mouse,selezione,forma del cursore,dispositivi di input,mappaggio dei bottoni,Click,icone,riscontro,Puntatori,Trascina,Doppio click,mapping,destro,mancino
+Keywords[sv]=Mus,Musacceleration,Muströskel,Musknappar,Val,Markörutseende,Inmatningsenheter,Knapptolkning,klickning,ikoner,respons,Pekare,Drag,Dubbelklick,Tolkning,högerhänt,vänsterhänt
 
 Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals

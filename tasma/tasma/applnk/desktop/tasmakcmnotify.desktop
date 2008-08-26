@@ -17,6 +17,7 @@ Name[de]=Systemmeldungen
 Name[pt_BR]=Notificações do Sistema
 Name[fr]=Notifications système
 Name[it]=Notifiche di sistema
+Name[sv]=Systemunderrättelser
 
 Comment=System Notification Configuration
 Comment[tr]=Sistem Bildirimi Yapılandırması
@@ -26,6 +27,7 @@ Comment[de]=Systemmeldung Konfiguration
 Comment[pt_BR]=Configuração das Notificações do Sistema
 Comment[fr]=Configuration des notifications système
 Comment[it]=Configurazione delle notifiche di sistema
+Comment[sv]=Anpassa systemunderrättelser
 
 Keywords=System sounds,Audio,Sound,Notify,Alerts,Notification
 Keywords[tr]=Sistem sesleri,Ses,Bildir,Alarmlar,Bildirme
@@ -35,5 +37,6 @@ Keywords[de]=System-Sounds,Audio,Sound,Melden,Alarmsignale,Meldung,
 Keywords[pt_BR]=Sons do sistema,Áudio,Som,Notificar,Alertas,Notificação
 Keywords[fr]=Sons système,Audio,Son,Notifier,Alertes,Notification
 Keywords[it]=Sistema sonoro,Audio,Suono,Notificare,Avvisi,Notifica
+Keywords[sv]=Systemljud,Ljud,ljud,Underrättelse,Varningar,Bekräftelse
 
 Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound

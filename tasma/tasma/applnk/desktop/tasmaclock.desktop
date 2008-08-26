@@ -17,6 +17,7 @@ Name[de]=Datum & Uhrzeit
 Name[pt_BR]=Data & Hora
 Name[fr]=Date & Heure
 Name[it]=Data e Ora
+Name[sv]=Datum och tid
 
 Comment=Date and time settings
 Comment[tr]=Tarih ve saat ayarları
@@ -26,6 +27,7 @@ Comment[de]=Datum und Uhrzeit Einstellungen
 Comment[pt_BR]=Configurações de data e hora
 Comment[fr]=Configuration de la date et de l'heure
 Comment[it]=Impostazione della data e dell'ora
+Comment[sv]=Anpassa datum och tid
 
 Keywords=clock,date,time,time zone
 Keywords[tr]=tarih,saat,saat dilimi,zaman,zaman dilimi
@@ -35,5 +37,6 @@ Keywords[de]=Uhr,Datum,Uhrzeit,Zeitzone
 Keywords[pt_BR]=relógio,data,hora,zona horária
 Keywords[fr]=horloge,date,heure,zone horaire
 Keywords[it]=orologio,data,ora,fuso orario
+Keywords[sv]=klocka,datum,tid,tidszon
 
 Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-localization

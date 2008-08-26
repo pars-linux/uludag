@@ -17,6 +17,7 @@ Name[de]=Startbildschirm
 Name[pt_BR]=Tela de Entrada
 Name[fr]=Page de garde
 Name[it]=Schermata di avvio
+Name[sv]=Startskärm
 
 Type=Application
 
@@ -28,6 +29,7 @@ Comment[de]=Start-Themen-Manager
 Comment[pt_BR]=Gerenciador para Temas de Tela de Entrada
 Comment[fr]=Gestionnaire pour thèmes de pages de garde
 Comment[it]=Gestore dei temi per la schermata di avvio
+Comment[sv]=Hanterare för startskärmsteman
 
 Keywords=splash screen,splash theme,startup
 Keywords[tr]=açılış ekranı, açılış teması, başlangıç
@@ -37,5 +39,6 @@ Keywords[de]=Startbildschirm,Start-Thema,Start
 Keywords[pt_BR]=tela de entrada,tema da tela de entrada,inicialização
 Keywords[fr]=page de garde,thème de page de garde,démarrage
 Keywords[it]=splash screen,schermata di avvio,avvio,tema di avvio
+Keywords[sv]=startskärm,starttema,start
 
 Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel

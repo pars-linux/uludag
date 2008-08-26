@@ -17,6 +17,7 @@ Name[de]=Anzeige
 Name[pt_BR]=Monitor
 Name[fr]=Écran
 Name[it]=Schermo
+Name[sv]=Bildskärm
 
 Comment=Display Settings
 Comment[tr]=Görüntü Ayarları
@@ -26,5 +27,6 @@ Comment[de]=Anzeigeeinstellungen
 Comment[pt_BR]=Configurações do Monitor
 Comment[fr]=Configuration de l'écran
 Comment[it]=Configurazione dello schermo
+Comment[sv]=Anpassa bildskärm
 
 Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals
