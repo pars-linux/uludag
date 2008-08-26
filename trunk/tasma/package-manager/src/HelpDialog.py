@@ -34,7 +34,7 @@ class HelpDialog(KDialog):
 
         locale = getKDELocale()
 
-        if locale in ["tr", "es", "en", "fr", "nl", "de"]:
+        if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
             self.htmlPart.openURL(KURL(locate("data","package-manager/help/%s/%s" % (locale, help_files[help]))))
         else:
             self.htmlPart.openURL(KURL(locate("data","package-manager/help/en/%s" % help_files[help])))
