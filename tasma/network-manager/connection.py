@@ -34,44 +34,43 @@ class ScanItem(QListViewItem):
     def __init__(self, parent, data):
         QListViewItem.__init__(self, parent)
         self.info = {}
-        
+
         if not data:
             self.setPixmap(0, getIconSet("remove", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
             self.setText(1, "")
             self.setText(2, i18n("No remotes found"))
             return
-        
+
         for key, value in data.iteritems():
             self.info[key] = value
-        
+
         enc = self.info.get("encryption", "none")
         if enc != "none":
             self.setPixmap(0, getIconSet("kgpg_key1", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
         self.enc = enc
-        
+
         qual = self.info.get("quality", "0")
         try:
             qual = int(qual)
         except:
             qual = 0
         self.setPixmap(1, self.signalIcon(qual))
-        
+
         remote = self.info["remote"]
         if remote == "<hidden>" or remote == "":
             remote = i18n("<hidden>")
         self.remote = remote
         self.setText(3, remote)
-        
+
         self.mac = self.info.get("mac", None)
         if self.mac:
             self.setText(4, self.mac)
-    
+
         point_mode = self.info["mode"]
 
         if point_mode == "Ad-Hoc":
             self.setPixmap(2, getIconSet("attach", KIcon.Small).pixmap(QIconSet.Automatic, QIconSet.Normal))
-        
-    
+
     def signalIcon(self, signal):
         # FIXME: make this more pythonic
         num = 0
@@ -83,7 +82,7 @@ class ScanItem(QListViewItem):
             num = 2
         elif signal >= 20:
             num = 1
-        
+
         iconSet = getIconSet(locate("data", "network-manager/signal_%d.png" % num), KIcon.Small)
         return iconSet.pixmap(QIconSet.Automatic, QIconSet.Normal)
 
@@ -129,6 +128,7 @@ class Scanner(QPopupMenu):
         parent = self.parent
         parent.remote.setText(item.remote)
         parent.apmac = item.mac
+        parent.channel = item.info.get("channel")
 
         dev_mode = item.info["mode"]
 
@@ -136,7 +136,6 @@ class Scanner(QPopupMenu):
             parent.selected_device_mode.setCurrentText("Managed")
         else:
             parent.selected_device_mode.setCurrentText("Ad-Hoc")
-
 
         if item.enc == "none":
             i = 0
@@ -146,27 +145,27 @@ class Scanner(QPopupMenu):
                 if mode.id == item.enc:
                     break
                 i += 1
-        auth_last = parent.link.auth_modes[parent.auth_mode.currentItem() - 1].id
+        auth_last = parent.link.auth_modes[parent.security_mode_combo.currentItem() - 1].id
         auth_now = item.enc
         if not (auth_last.startswith("wep") and auth_now.startswith("wep")):
-            parent.auth_mode.setCurrentItem(i)
-        parent.slotAuthToggle(i)
+            parent.security_mode_combo.setCurrentItem(i)
+        parent.slotSecurityToggle(i)
         self.hide()
-    
+
     def slotScanSelect(self):
         item = self.view.selectedItem()
         if item.info:
             self.scan_use_but.setEnabled(item != None)
-    
+
     def slotScanUse(self):
         item = self.view.selectedItem()
         if item:
             self.slotScanDouble(item)
-    
+
     def slotScan(self):
         self.scan_use_but.setEnabled(False)
         comlink.queryRemotes(self.parent.link.script, self.parent.device_uid)
-    
+
     def slotRemotes(self, script, remotes):
         if self.parent.link.script != script:
             return
@@ -181,15 +180,17 @@ class Scanner(QPopupMenu):
 class Settings(QWidget):
     def __init__(self, parent, link, conn, new_conn=None):
         QWidget.__init__(self, parent)
-        
+
         self.scanpop = None
         self.link = link
         self.conn = conn
         self.new_conn = new_conn
-        
+        self.channel = None
+        self.auth_dict = {"TLS":[], "TTLS":["PAP","MSCHAPV2"], "PEAP":["MSCHAPV2", "MD5"]}
+
         self.apmac = ''
-        lay = QVBoxLayout(self, 3, 3)
-        
+        lay = QVBoxLayout(self, 3, 3, "mainVertLayout")
+
         # Identification
         grid = QGridLayout(1, 2, 6)
         lay.addLayout(grid)
@@ -198,44 +199,45 @@ class Settings(QWidget):
         self.name = widgets.Edit(self)
         self.name.edit.setMaxLength(48)
         grid.addWidget(self.name, 0, 1)
-        
+
         # Connection
         line = widgets.HLine(i18n("Connection"), self, "irkick")
         lay.addSpacing(6)
         lay.addWidget(line)
         grid = QGridLayout(2, 2)
         lay.addLayout(grid)
-        
+
         lab = QLabel(i18n("Device:"), self)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
         hb = QHBox(self)
         hb.setSpacing(3)
-        self.device = KActiveLabel("", hb)
+        self.device = QLabel("", hb)
+        hb.setStretchFactor(self.device, 3)
         self.devices_but = QPushButton(i18n("Select"), hb)
         self.devices_but.setEnabled(False)
         self.devices = QPopupMenu()
         self.connect(self.devices, SIGNAL("activated(int)"), self.slotDeviceSelect)
         self.devices_but.setPopup(self.devices)
         grid.addWidget(hb, 0, 1)
-        
+
         if "devicemode" in link.modes:
             line = widgets.HLine(i18n("Device Mode"), self, "unindent")
             lay.addSpacing(6)
             lay.addWidget(line)
             grid = QGridLayout(3, 2)
             lay.addLayout(grid)
-            
+
             lab = QLabel(i18n("Mode:"), self)
             grid.addWidget(lab, 0, 0, Qt.AlignRight)
-            
+
             self.selected_device_mode = QComboBox(False, self)
-            
+
             for dev_mode in link.device_modes:
                 self.selected_device_mode.insertItem(dev_mode)
-            
+
             grid.addWidget(self.selected_device_mode, 0, 1)
             grid.setColStretch(1, 2)
-        
+
         if "remote" in link.modes:
             lab = QLabel(unicode(link.remote_name), self)
             grid.addWidget(lab, 1, 0, Qt.AlignRight)
@@ -254,79 +256,222 @@ class Settings(QWidget):
         
         # Authentication
         if "auth" in link.modes:
+            self.auth_client_cert = ""
+            self.auth_ca_cert = ""
+            self.auth_private_key = ""
+            self.auth_private_key_pass = ""
+
             line = widgets.HLine(i18n("Authentication"), self, "kgpg_key1")
             lay.addSpacing(6)
             lay.addWidget(line)
-            grid = QGridLayout(3, 2)
-            lay.addLayout(grid)
-            
-            lab = QLabel(i18n("Mode:"), self)
-            grid.addWidget(lab, 0, 0, Qt.AlignRight)
-            
-            self.auth_mode = QComboBox(False, self)
-            self.connect(self.auth_mode, SIGNAL("activated(int)"), self.slotAuthToggle)
-            grid.addWidget(self.auth_mode, 0, 1)
-            grid.setColStretch(2, 2)
-            
-            self.auth_mode.insertItem(i18n("No authentication"))
-            flag = 0
-            for mode in link.auth_modes:
-                self.auth_mode.insertItem(mode.name)
-                if mode.type == "login":
-                    flag = 1
-            
-            self.auth_stack = QWidgetStack(self)
-            if flag == 1:
-                grid.addMultiCellWidget(self.auth_stack, 0, 1, 2, 2)
-            else:
-                grid.addWidget(self.auth_stack, 0, 2)
-            
-            lab = QLabel("", self)
-            self.auth_stack.addWidget(lab, 0)
-            
-            w = QWidget(self)
-            grid3 = QGridLayout(w, 2, 2, 0, 6)
-            grid3.addWidget(QLabel(i18n("Password:"), w), 0, 0, Qt.AlignRight)
-            self.auth_passphrase = QLineEdit(w)
-            self.auth_passphrase.setEchoMode(QLineEdit.Password)
-            grid3.addWidget(self.auth_passphrase, 0, 1)
-            self.auth_stack.addWidget(w, 1)
 
-            if flag == 1:
-                w = QWidget(self)
-                grid3 = QGridLayout(w, 2, 2, 0, 6)
-                grid3.addWidget(QLabel(i18n("User name:"), w), 0, 0, Qt.AlignRight)
-                self.auth_user = QLineEdit(w)
-                grid3.addWidget(self.auth_user, 0, 1)
-                grid3.addWidget(QLabel(i18n("Password:"), w), 1, 0, Qt.AlignRight)
-                self.auth_password = QLineEdit(w)
-                self.auth_password.setEchoMode(QLineEdit.Password)
-                grid3.addWidget(self.auth_password, 1, 1)
-                self.auth_stack.addWidget(w, 2)
-        
+            grid = QGridLayout(lay, 1, 1, 6, "mainAuthGrid")
+
+            layoutLeft = QGridLayout(None, 1, 1, 0, 6, "layoutLeft")
+
+            self.security_mode_label = QLabel(i18n("Security:"), self)
+            self.security_mode_combo = QComboBox(0, self)
+            self.security_mode_combo.insertItem(i18n("No authentication"))
+            layoutLeft.addWidget(self.security_mode_label, 0, 0, Qt.AlignRight)
+            layoutLeft.addWidget(self.security_mode_combo, 0, 1)               
+
+            self.auth_mode_label = QLabel(i18n("Authentication:"), self)
+            self.auth_mode_combo = QComboBox(0, self)                   
+            layoutLeft.addWidget(self.auth_mode_label, 1, 0, Qt.AlignRight)
+            layoutLeft.addWidget(self.auth_mode_combo, 1, 1)               
+
+            self.auth_inner_label = QLabel(i18n("Inner Authentication:"), self)
+            self.auth_inner_combo = QComboBox(0, self)                         
+            layoutLeft.addWidget(self.auth_inner_label, 2, 0, Qt.AlignRight)   
+            layoutLeft.addWidget(self.auth_inner_combo, 2, 1)                  
+
+            grid.addLayout(layoutLeft, 0, 0)
+            spacer1 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            grid.addItem(spacer1, 1, 0)                                              
+
+            layoutRight = QGridLayout(None, 1, 1, 0, 6, "layoutRight")
+
+            self.auth_anon_id_label = QLabel(i18n("Anonymous Identity:"), self)
+            self.auth_anon_id_line = QLineEdit(self)                           
+            layoutRight.addWidget(self.auth_anon_id_label, 0, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_anon_id_line, 0, 1)                
+
+            self.auth_user_label = QLabel(i18n("User/Identity"), self)
+            self.auth_user_line = QLineEdit(self)                     
+            layoutRight.addWidget(self.auth_user_label, 1, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_user_line, 1, 1)                
+
+            self.auth_passphrase_label = QLabel(i18n("Password:"), self)
+            self.auth_passphrase_line = QLineEdit(self)                 
+            self.auth_passphrase_line.setEchoMode(QLineEdit.Password)   
+            layoutRight.addWidget(self.auth_passphrase_label, 2, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_passphrase_line, 2, 1)                
+
+            self.auth_client_cert_label = QLabel(i18n("Client Certificate:"), self)
+            self.auth_client_cert_but = QPushButton(getIconSet("file", KIcon.Small), "",  self)
+            layoutRight.addWidget(self.auth_client_cert_label, 3, 0, Qt.AlignRight)            
+            layoutRight.addWidget(self.auth_client_cert_but, 3, 1)                             
+
+            self.auth_ca_cert_label = QLabel(i18n("CA Certificate:"), self)
+            self.auth_ca_cert_but = QPushButton(getIconSet("file", KIcon.Small), "", self)
+            layoutRight.addWidget(self.auth_ca_cert_label, 4, 0, Qt.AlignRight)           
+            layoutRight.addWidget(self.auth_ca_cert_but, 4, 1)                            
+
+            self.auth_private_key_label = QLabel(i18n("Private Key File:"), self)
+            self.auth_private_key_but = QPushButton(getIconSet("file", KIcon.Small), "", self)
+            layoutRight.addWidget(self.auth_private_key_label, 5, 0, Qt.AlignRight)           
+            layoutRight.addWidget(self.auth_private_key_but, 5, 1)                            
+
+            self.auth_private_key_pass_label = QLabel(i18n("Private Key Password:"), self)
+            self.auth_private_key_pass_line = QLineEdit(self)                             
+            self.auth_private_key_pass_line.setEchoMode(QLineEdit.Password)
+            layoutRight.addWidget(self.auth_private_key_pass_label, 6, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_private_key_pass_line, 6, 1)
+
+            grid.addMultiCellLayout(layoutRight, 0, 1, 1, 1)
+            spacer2 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
+            grid.addItem(spacer2, 2, 1)
+
+            for mode in self.link.auth_modes:
+                self.security_mode_combo.insertItem(mode.name)
+            for enc in self.auth_dict:
+                self.auth_mode_combo.insertItem(enc)
+
+            self.connect(self.security_mode_combo, SIGNAL("activated(int)"), self.slotSecurityToggle)
+            self.connect(self.auth_mode_combo, SIGNAL("activated(int)"), self.slotAuthToggle)
+            self.connect(self.auth_ca_cert_but, SIGNAL("clicked()"), self.getCaCert)
+            self.connect(self.auth_client_cert_but, SIGNAL("clicked()"), self.getClientCert)
+            self.connect(self.auth_private_key_but, SIGNAL("clicked()"), self.getPrivateKey)
+
+            self.slotSecurityToggle()
+
         # Communication
         if "net" in link.modes:
             self.initNet(lay)
-        
+
         self.setValues()
-        
+
         comlink.device_hook.append(self.slotDevices)
         comlink.queryDevices(link.script)
-    
+
+    def getCaCert(self, parent=None):
+        self.auth_ca_cert = QFileDialog.getOpenFileName("", i18n("Certificates (*)"), parent, i18n("Select CA Certificate File"))
+        if self.auth_ca_cert != None:
+            self.auth_ca_cert_but.setText(self.auth_ca_cert.section('/', -1))
+
+    def getClientCert(self, parent=None):
+        self.auth_client_cert = QFileDialog.getOpenFileName("", i18n("Certificates (*)"), parent, i18n("Select Client Certificate File"))
+        if self.auth_client_cert != None:
+            self.auth_client_cert_but.setText(self.auth_client_cert.section('/', -1))
+
+    def getPrivateKey(self, parent=None):
+        self.auth_private_key = QFileDialog.getOpenFileName("", i18n("Private Keys (*)"), parent, i18n("Select Private Key File"))
+        if self.auth_private_key != None:
+            self.auth_private_key_but.setText(self.auth_private_key.section('/', -1))
+
     def cleanup(self):
         self.apmac = ''
         if self.scanpop:
             comlink.remote_hook.remove(self.scanpop.slotRemotes)
         comlink.device_hook.remove(self.slotDevices)
-    
+
+    def updateStack(self, sec=None, auth=None):
+        """ if auth is given, clears the inner combobox and adds related inner auth methods.
+            if sec is given, hides/shows related parts of authentication section.
+            give both sec and auth, if you'll use this while editing ( not creating a new connection )
+        """
+        if auth != None and sec == None:
+            self.auth_inner_combo.clear()
+            for i in self.auth_dict:
+                if self.auth_dict.keys().index(i) == auth:
+                    self.auth_mode_combo.setCurrentItem(auth)
+                    if len(self.auth_dict[i]) == 0:
+                        self.auth_inner_combo.hide()
+                        self.auth_inner_label.hide()
+                    else:
+                        self.auth_inner_label.show()
+                        self.auth_inner_combo.show()
+                        for j in self.auth_dict[i]:
+                            self.auth_inner_combo.insertItem(j)
+            return
+
+        if sec != None and auth == None:
+            if sec == 0:
+                self.setAuthVisible(False)
+            else:
+                self.setAuthVisible(True)
+                self.auth_mode_combo.setCurrentItem(0)
+                self.slotAuthToggle(0)
+
+        if sec != None and auth != None:
+            if sec == 0:
+                self.setAuthVisible(False)
+
+            elif self.link.auth_modes[sec-1].type == "pass":
+                self.setAuthVisible(False)
+                self.auth_passphrase_label.show()
+                self.auth_passphrase_line.show()
+
+            elif self.link.auth_modes[sec-1].type == "login":
+                self.setAuthVisible(True)
+                self.updateStack(None, auth)
+
+                if len(self.auth_dict[str(self.auth_mode_combo.currentText())]) == 0:
+                    self.auth_inner_combo.hide()
+                    self.auth_inner_label.hide()
+
+                if self.auth_mode_combo.currentText() == "TLS":
+                    self.auth_passphrase_line.hide()
+                    self.auth_passphrase_label.hide()
+                    self.auth_anon_id_line.hide()
+                    self.auth_anon_id_label.hide()
+
+                elif self.auth_mode_combo.currentText() in ["TTLS", "PEAP"]:
+                    self.auth_client_cert_label.hide()
+                    self.auth_client_cert_but.hide()
+                    self.auth_private_key_but.hide()
+                    self.auth_private_key_label.hide()
+                    self.auth_private_key_pass_line.hide()
+                    self.auth_private_key_pass_label.hide()
+
+    def setAuthVisible(self, true):
+        self.auth_mode_label.setShown(true)
+        self.auth_mode_combo.setShown(true)
+        self.auth_inner_label.setShown(true)
+        self.auth_inner_combo.setShown(true)
+        self.auth_anon_id_label.setShown(true)
+        self.auth_anon_id_line.setShown(true)
+        self.auth_user_label.setShown(true)
+        self.auth_user_line.setShown(true)
+        self.auth_passphrase_label.setShown(true)
+        self.auth_passphrase_line.setShown(true)
+        self.auth_client_cert_label.setShown(true)
+        self.auth_client_cert_but.setShown(true)
+        self.auth_ca_cert_label.setShown(true)
+        self.auth_ca_cert_but.setShown(true)
+        self.auth_private_key_label.setShown(true)
+        self.auth_private_key_but.setShown(true)
+        self.auth_private_key_pass_line.setShown(true)
+        self.auth_private_key_pass_label.setShown(true)
+
+    def phase2Toggle(self, i):
+        pass
+
+    def keyToggle(self, i):
+        pass
+
+    def eapToggle(self, i):
+        pass
+
+    def slotSecurityToggle(self, i=None):
+        if i != None:
+            self.updateStack(i, self.auth_mode_combo.currentItem())
+        else:
+            self.updateStack(self.security_mode_combo.currentItem())
+
     def slotAuthToggle(self, i):
-        if i == 0:
-            self.auth_stack.raiseWidget(0)
-        elif self.link.auth_modes[i-1].type == "pass":
-            self.auth_stack.raiseWidget(1)
-        elif self.link.auth_modes[i-1].type == "login":
-            self.auth_stack.raiseWidget(2)
-    
+        self.updateStack(self.security_mode_combo.currentItem(), i)
+
     def initNet(self, lay):
         line = widgets.HLine(i18n("Network settings"), self, "network")
         lay.addSpacing(12)
@@ -441,18 +586,36 @@ class Settings(QWidget):
                     if conn.dns_server:
                         self.dns_text.setText(conn.dns_server)
             if "auth" in self.link.modes:
-                self.auth_mode.setCurrentItem(0)
+                self.security_mode_combo.setCurrentItem(0)
                 if conn.auth_mode != "none":
                     i = 1
                     for mode in self.link.auth_modes:
                         if mode.id == conn.auth_mode:
                             if mode.type == "pass":
-                                self.auth_passphrase.setText(unicode(conn.auth_pass))
+                                self.auth_passphrass_line.setText(unicode(conn.auth_pass))
+                                self.security_mode_combo.setCurrentItem(i)
+                                self.slotSecurityToggle(i)
                             elif mode.type == "login":
-                                self.auth_user.setText(unicode(conn.auth_user))
-                                self.auth_password.setText(unicode(conn.auth_pass))
-                            self.auth_mode.setCurrentItem(i)
-                            self.slotAuthToggle(i)
+                                if mode.id == conn.auth_mode:
+                                    self.security_mode_combo.setCurrentItem(i)
+                                    self.slotSecurityToggle(i)
+
+                                self.auth_client_cert = conn.auth_client_cert
+                                self.auth_ca_cert = conn.auth_ca_cert
+                                self.auth_private_key = conn.auth_private_key
+                                self.auth_user_line.setText(unicode(conn.auth_user))
+                                self.auth_passphrase_line.setText(unicode(conn.auth_pass))
+                                self.auth_anon_id_line.setText(unicode(conn.auth_anon))
+                                self.auth_ca_cert_but.setText(unicode(conn.auth_ca_cert).split('/')[-1])
+                                self.auth_client_cert_but.setText(unicode(conn.auth_client_cert).split('/')[-1])
+                                self.auth_private_key_but.setText(unicode(conn.auth_private_key).split('/')[-1])
+                                self.auth_private_key_pass_line.setText(unicode(conn.auth_private_key_pass))
+                                for j in self.auth_dict:
+                                    if conn.auth_auth == j:
+                                        self.auth_mode_combo.setCurrentItem(self.auth_dict.keys().index(j))
+                                        self.slotAuthToggle(self.auth_dict.keys().index(j))
+                                        if j != "TLS":
+                                            self.auth_inner_combo.setCurrentItem(self.auth_dict[j].index(conn.auth_inner))
                             break
                         i += 1
         else:
@@ -464,11 +627,11 @@ class Settings(QWidget):
                 self.dns1.setChecked(True)
         if "net" in self.link.modes:
             self.slotFields()
-    
+
     def useValues(self):
         name = str(self.name.edit.text())
         conn = self.conn
-        
+
         def saveConnection(set_conn):
             if set_conn:
                 # create connection / update device
@@ -505,30 +668,41 @@ class Settings(QWidget):
                 # set remote address
                 remote = str(self.remote.text())
                 comlink.call(self.link.script, "Net.Link", "setRemote", name, remote, self.apmac)
+                if self.channel != None:
+                    comlink.call(self.link.script, "Net.Link", "setChannel", name, self.channel)
             if "auth" in self.link.modes:
-                i = self.auth_mode.currentItem()
+                i = self.security_mode_combo.currentItem()
                 if i == 0:
-                    comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "")
+                    comlink.call(self.link.script, "Net.Link", "setAuthentication", name, "none", "", "", "", "", "", "", "", "", "")
                 else:
                     mode = self.link.auth_modes[i-1]
                     if mode.type == "pass":
-                        pw = unicode(self.auth_passphrase.text())
-                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw)
+                        pw = unicode(self.auth_passphrase_line.text())
+                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "")
                     elif mode.type == "login":
-                        u = unicode(self.auth_user.text())
-                        pw = unicode(self.auth_password.text())
-                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw)
+                        if mode.id == "802.1x":
+                            u = unicode(self.auth_user_line.text())
+                            pw = unicode(self.auth_passphrase_line.text())
+                            an = unicode(self.auth_anon_id_line.text())
+                            au = unicode(self.auth_mode_combo.currentText())
+                            p2 = unicode(self.auth_inner_combo.currentText())
+                            comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, au, an, p2,\
+                                str(self.auth_client_cert), str(self.auth_ca_cert), str(self.auth_private_key), str(self.auth_private_key_pass_line.text()))
+                        else:
+                            u = unicode(self.auth_user_line.text())
+                            pw = unicode(self.auth_passphrase_line.text())
+                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
             # close dialog
             self.parent().setEnabled(True)
             self.cleanup()
             self.parent().parent().close(True)
-        
+
         def error(exception):
             self.parent().setEnabled(True)
-        
+
         def cancel():
             self.parent().setEnabled(True)
-        
+
         self.parent().setEnabled(False)
         if conn and conn.name != name:
             ch = comlink.callHandler(self.link.script, "Net.Link", "deleteConnection", "tr.org.pardus.comar.net.link.set")
@@ -546,7 +720,7 @@ class Settings(QWidget):
             ch.registerDBusError(error)
             ch.registerAuthError(error)
             ch.call(name, self.device_uid)
-    
+
     def slotDevices(self, script, devices):
         if script != self.link.script:
             return
@@ -561,7 +735,7 @@ class Settings(QWidget):
             self.devices_but.setEnabled(True)
         if id == 1 and self.conn and (self.conn.devid != self.device_items[0][0]):
             self.devices_but.setEnabled(True)
-    
+
     def slotDeviceSelect(self, id):
         item = self.device_items[id]
         self.device_uid = item[0]
