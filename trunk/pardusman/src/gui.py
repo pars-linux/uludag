@@ -264,8 +264,12 @@ class ProjectWindow(KMainWindow):
         ppath = sys.argv[0]
         if ppath[0] != '/':
             ppath = os.path.join(os.getcwd(), ppath)
-        cmd = 'konsole --notabbar --nomenubar --noclose --noframe --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), ppath, f.name)
-        subprocess.Popen(["kdesu", "-d", "-u", "root", "-c", cmd])
+        cmd = 'konsole --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), ppath, f.name)
+        # Hacky KDE4 patch ..
+        if os.popen("konsole --version").readlines()[0].find("Qt: 4") != -1:
+            subprocess.Popen(["/usr/kde/4/lib/kde4/libexec/kdesu", "-d", "-u", "root", "-c", cmd])
+        else:
+            subprocess.Popen(["kdesu", "-d", "-u", "root", "-c", cmd])
         self.f = f
 
     def ui2project(self):
