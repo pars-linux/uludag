@@ -420,7 +420,7 @@ class Yali:
         insert(yali,"variant",ctx.installData.keyData["xkbvariant"])
 
         # we will store passwords as shadowed..
-        insert(yali,"root_password",yali4.sysutils.getShadowed(ctx.installData.rootPassword))
+        insert(yali,"root_password",yali4.sysutils.getShadowed(ctx.installData.rootPassword or ""))
 
         # time zone..
         insert(yali,"timezone",ctx.installData.timezone)
@@ -429,7 +429,8 @@ class Yali:
         insert(yali,"hostname",ctx.installData.hostName)
 
         # users ..
-        users = yali.insertTag("users")
+        if len(yali4.users.pending_users) > 0:
+            users = yali.insertTag("users")
         for u in yali4.users.pending_users:
             user = users.insertTag("user")
             insert(user,"username",u.username)
@@ -446,12 +447,15 @@ class Yali:
         partitioning = yali.insertTag("partitioning")
         partitioning.setAttribute("partition_type",
                                  {methodEraseAll:"auto",
-                                  methodUseAvail:"smartAuto"}[ctx.installData.autoPartMethod])
-        try:
-            partitioning.insertData("disk%d" % devices.index(ctx.installData.autoPartDev.getPath()))
-        except:
-            partitioning.insertData(ctx.installData.autoPartDev.getPath())
+                                  methodUseAvail:"smartAuto",
+                                  methodManual:"manual"}[ctx.installData.autoPartMethod])
+        if not ctx.installData.autoPartMethod == methodManual:
+            try:
+                partitioning.insertData("disk%d" % devices.index(ctx.installData.autoPartDev.getPath()))
+            except:
+                partitioning.insertData(ctx.installData.autoPartDev.getPath())
 
+        ctx.installData.sessionLog = yali.toPrettyString()
         ctx.debugger.log(yali.toPrettyString())
 
     def processPendingActions(self, rootWidget):

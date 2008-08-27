@@ -110,6 +110,10 @@ don't you?
         if ctx.debugEnabled:
             open(ctx.consts.log_file,"w").write(str(ctx.debugger.traceback.plainLogs))
 
+        # store session log as kahya xml
+        open(ctx.consts.session_file,"w").write(str(ctx.installData.sessionLog))
+        os.chmod(ctx.consts.session_file,0600)
+
         ctx.mainScreen.processEvents()
         time.sleep(4)
         yali4.sysutils.fastreboot()

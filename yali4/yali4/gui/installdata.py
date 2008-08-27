@@ -36,4 +36,5 @@ class InstallData:
     repoAddr = None
     useYaliFirstBoot = False
     timezone = "Europe/Istanbul"
+    sessionLog = ""
 
