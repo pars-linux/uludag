@@ -34,11 +34,13 @@ import screens.ScrPanel as ScrPanel
 import screens.ScrKeyboard as ScrKeyboard
 import screens.ScrGoodbye as ScrGoodbye
 import screens.ScrMultiple as ScrMultiple
+import screens.ScrLanguage as ScrLanguage
 
 #set avaiable screens
 avail_screens = [ScrWelcome,
                  ScrMouse,
                  ScrKeyboard,
+                 ScrLanguage,
                  ScrPanel,
                  ScrMultiple,
                  ScrWallpaper,
