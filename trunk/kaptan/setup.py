@@ -59,7 +59,7 @@ if "dist" in sys.argv:
 
 app_data = [
     ('/usr/kde/3.5/share/apps/kaptan', ['src/kaptan.py']),
-    ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['pics/cr128-app-kaptan.png']),
+    ('/usr/kde/3.5/share/icons/hicolor/16x16/apps', ['pics/cr16-app-kaptan.png']),
     ('/usr/kde/3.5/share/apps/kaptan/pics', ['pics/']),
     ('/usr/kde/3.5/share/autostart/', ['src/kaptan.desktop']),
     ('/usr/kde/3.5/share/apps/kaptan/screens', ['src/screens']),
