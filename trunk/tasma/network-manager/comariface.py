@@ -92,6 +92,7 @@ class Connection(Hook):
         self.hash = self.hash(self.script, self.name)
         self.got_auth = True
         self.first_time = True
+        self.device_mode = "Managed"
     
     def parse(self, data):
         self.name = data.get("name")
@@ -105,6 +106,7 @@ class Connection(Hook):
         self.dns_mode = data.get("namemode", "default")
         self.dns_server = data.get("nameserver")
         self.apmac = data.get("apmac")
+        self.device_mode = data.get("device_mode", "Managed")
         state = data.get("state", "unavailable")
         if " " in state:
             self.state, self.message = state.split(" ", 1)
@@ -135,6 +137,8 @@ class Link:
                     self.auth_modes.append(AuthMode(mode))
             elif key == "remote_name":
                 self.remote_name = value
+            elif key == "device_modes":
+                self.device_modes = value.split(",")
 
 
 class DBusInterface(Hook):
