@@ -60,18 +60,16 @@ msgid "Panel"
 msgstr "Panel"
 
 #: src/screens/ScrKeyboard.py:26
-#, fuzzy
 msgid "Keyboard Settings"
-msgstr "Fare Ayarları"
+msgstr "Klavye Ayarları"
 
 #: src/screens/ScrKeyboard.py:27
-#, fuzzy
 msgid "Configure your keyboard"
-msgstr "Farenizi yapılandırın"
+msgstr "Klavyenizi yapılandırın"
 
 #: src/screens/ScrKeyboard.py:38
 msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
-msgstr ""
+msgstr "<p align=\"left\">Klavyenizi buradan yapılandırabilirsiniz.</p>"
 
 #: src/screens/welcomedlg.py:60 src/screens/ScrWelcome.py:23
 #: src/screens/ScrWelcome.py:32
@@ -91,9 +89,8 @@ msgid "toolTip"
 msgstr "toolTip"
 
 #: src/screens/wallpaperdlg.py:135
-#, fuzzy
 msgid "Choose Wallpaper"
-msgstr "Duvarkağıdı Yok"
+msgstr "Duvarkağıdı Seçin"
 
 #: src/screens/ScrMultiple.py:26
 msgid "Multiple Desktops"
