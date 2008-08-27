@@ -64,6 +64,9 @@ else:
 # log file for storing after installation
 consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
 
+# session file for storing after installation
+consts.session_file = join(consts.target_dir,"root/kahyaSession.xml")
+
 # packages (and maybe others) will be in this source (cdrom) directory
 consts.source_dir = join(consts.mnt_dir, "cdrom")
 

@@ -107,7 +107,7 @@ Legend:
 
  + Smart partitioning setup
 
- / kahya (which; KAHya is Yali Automator) (#3956)
+ + kahya (which; KAHya is Yali Automator) (#3956)
    + load kahya file from given path (from grub)
    + install the system by using given kahya file
 
@@ -115,7 +115,7 @@ Legend:
  + support for different types of partitions (#5844)
  + add other linux distros to the bootloader (#1450)
 
-7. Release (2.1)
+7. Release (2.0.1)
 
  + GUI
    + Set a usable terminal emulation in X ,thanks to qtermwidget :)
@@ -124,10 +124,8 @@ Legend:
    - fat32 resize
    - LVM/RAID Support
 
- - Kahya
+ / Kahya
    - support for multi-profile in kahya file
    - support for network setup in kahya file
-   - export setup session as kahya file
-
- ? dont install unnecessary language packages (based on installation language) (#6139)
+   + export setup session as kahya file
 
