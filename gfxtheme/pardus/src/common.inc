@@ -451,6 +451,10 @@
         "mudur=livecd,language:pt_BR " bc.cmd dup length add sprintf
       } if
 
+      config.lang "sv_SE" eq {
+        "mudur=livecd,language:sv_SE " bc.cmd dup length add sprintf
+      } if
+
       config.lang "tr_TR" eq {
         "mudur=livecd,language:tr " bc.cmd dup length add sprintf
       } if
