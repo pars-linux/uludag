@@ -18,6 +18,8 @@ import connection
 import newconn
 import widgets
 import autoswitch
+from connsharing import *
+
 from icons import icons, getIconSet
 from comariface import comlink
 
@@ -416,6 +418,12 @@ class Widget(QVBox):
         self.butAutoConnect.setUsesTextLabel(True)
         self.butAutoConnect.setTextPosition(self.butAutoConnect.BesideIcon)
 
+        self.share = connShare(self)
+        self.butShare = QToolButton(getIconSet("proxy"), "", "lala", self.slotShare, bar)
+        self.butShare.setTextLabel(i18n("Share Connection"), False)
+        self.butShare.setUsesTextLabel(True)
+        self.butShare.setTextPosition(self.butShare.BesideIcon)
+
         self.helpwin = None
         self.newconnwin = None
         
@@ -448,6 +456,10 @@ class Widget(QVBox):
         
         for script in comlink.links:
             comlink.queryConnections(script)
+    
+    def slotShare(self):
+        self.share.getProfiles()
+        self.share.show()
     
     def setAutoConnect(self):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
