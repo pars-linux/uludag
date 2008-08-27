@@ -45,15 +45,15 @@ msgstr "Kaptan Masaüstü Sihirbazı"
 
 #: src/screens/keyboarddlg.py:653 src/screens/keyboarddlg.py:669
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Klavye Seçenekleri"
 
 #: src/screens/keyboarddlg.py:665 src/screens/ScrKeyboard.py:37
 msgid "Keyboard"
-msgstr ""
+msgstr "Klavye"
 
 #: src/screens/keyboarddlg.py:668
 msgid "Try:"
-msgstr ""
+msgstr "Test:"
 
 #: src/screens/paneldlg.py:87 src/screens/ScrPanel.py:41
 msgid "Panel"
