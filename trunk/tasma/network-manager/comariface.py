@@ -36,44 +36,44 @@ class Hook:
         self.denied_hook = []
         self.denied_hook = []
         self.warn_limited_access = False
-    
+
     def emitNoConn(self):
         map(lambda x: x(), self.noconn_hook)
-    
+
     def emitNoWifi(self):
         map(lambda x: x(), self.nowifi_hook)
-    
+
     def emitNew(self, conn):
         map(lambda x: x(conn), self.new_hook)
-    
+
     def emitDevices(self, script, devices):
         map(lambda x: x(script, devices), self.device_hook)
-    
+
     def emitName(self, hostname, servers):
         map(lambda x: x(hostname, servers), self.name_hook)
-    
+
     def emitRemotes(self, script, remotes):
         map(lambda x: x(script, remotes), self.remote_hook)
-    
+
     def emitHotplug(self, uid, info):
         map(lambda x: x(uid, info), self.hotplug_hook)
-    
+
     def _emit(self, conn, func, hook):
         if conn:
             getattr(conn, func)()
             map(lambda x: x(conn), hook)
         else:
             map(lambda x: x(self), hook)
-    
+
     def emitDelete(self, conn=None):
         self._emit(conn, "emitDelete", self.delete_hook)
-    
+
     def emitConfig(self, conn=None):
         self._emit(conn, "emitConfig", self.config_hook)
-    
+
     def emitState(self, conn=None):
         self._emit(conn, "emitState", self.state_hook)
-    
+
     def emitDenied(self):
         map(lambda x: x(), self.denied_hook)
 
@@ -81,19 +81,23 @@ class Connection(Hook):
     @staticmethod
     def hash(script, name):
         return unicode("%s %s" % (script, name))
-    
+
     def __init__(self, script, data):
         Hook.__init__(self)
         self.script = script
         self.auth_mode = "none"
         self.auth_user = None
         self.auth_pass = None
+        self.auth_anon = None
+        self.auth_auth = None
+        self.auth_inner = None
+        self.channel = None
         self.parse(data)
         self.hash = self.hash(self.script, self.name)
         self.got_auth = True
         self.first_time = True
         self.device_mode = "Managed"
-    
+
     def parse(self, data):
         self.name = data.get("name")
         self.devid = data.get("device_id")
@@ -106,6 +110,7 @@ class Connection(Hook):
         self.dns_mode = data.get("namemode", "default")
         self.dns_server = data.get("nameserver")
         self.apmac = data.get("apmac")
+        self.channel = data.get("channel")
         self.device_mode = data.get("device_mode", "Managed")
         state = data.get("state", "unavailable")
         if " " in state:
@@ -151,18 +156,18 @@ class DBusInterface(Hook):
         self.name_host = None
         self.name_dns = None
         self.window = None
-        
+
         self.dia = None
-        
+
         self.first_time = True
         self.nr_queried = 0
         self.nr_conns = 0
         self.nr_empty = 0
         self.winID = 0
-        
+
         if self.openBus():
             self.setup()
-    
+
     def openBus(self):
         try:
             self.busSys = dbus.SystemBus()
@@ -171,14 +176,14 @@ class DBusInterface(Hook):
             self.errorDBus(exception)
             return False
         return True
-    
+
     def callHandler(self, script, model, method, action):
         ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
         ch.registerError(self.error)
         ch.registerDBusError(self.errorDBus)
         ch.registerAuthError(self.errorDBus)
         return ch
-    
+
     def call(self, script, model, method, *args):
         try:
             obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
@@ -234,7 +239,7 @@ class DBusInterface(Hook):
         self.dia.close()
         KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
         sys.exit()
-    
+
     def setup(self, first_time=True):
         if first_time:
             self.queryLinks()
@@ -262,7 +267,7 @@ class DBusInterface(Hook):
                     ch = self.callHandler(script, "Net.Link", "connectionInfo", "tr.org.pardus.comar.net.link.get")
                     ch.registerDone(self.handleConnectionInfo, script)
                     ch.call(profile)
-        
+
         elif signal == "stateChanged":
             profile, state, msg = args
             conn = self.getConn(script, profile)
@@ -270,19 +275,19 @@ class DBusInterface(Hook):
                 conn.message = msg
                 conn.state = state
                 self.emitState(conn)
-        
+
         elif signal == "deviceChanged":
             what, type, devid, devname = args
             if type == "new":
                 self.emitHotplug(uid, info)
-    
+
     def getConn(self, script, name):
         hash = Connection.hash(script, name)
         return self.connections.get(hash, None)
-    
+
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Link", member_keyword="signal", path_keyword="path")
-    
+
     def queryLinks(self):
         scripts = self.callSys("listModelApplications", "Net.Link")
         if scripts:
@@ -290,7 +295,7 @@ class DBusInterface(Hook):
                 info = self.call(script, "Net.Link", "linkInfo")
                 if info:
                     self.links[script] = Link(script, info)
-    
+
     def queryNames(self): 
         def handlerHost(host):
             self.name_host = host
@@ -300,27 +305,36 @@ class DBusInterface(Hook):
             self.name_dns = dns
             if self.name_host:
                 self.emitName(self.name_host, self.name_dns)
-        
+
         ch = self.callHandler("baselayout", "Net.Stack", "getHostName", "tr.org.pardus.comar.net.stack.get")
         ch.registerDone(handlerHost)
         ch.call()
-        
+
         ch2 = self.callHandler("baselayout", "Net.Stack", "getNameServers", "tr.org.pardus.comar.net.stack.get")
         ch2.registerDone(handlerDNS)
         ch2.call()
-    
+
     def handleConnectionInfo(self, script, info):
-        def handler(conn, mode, username, password):
+        def handler(conn, mode, username, password, channel, auth, anon, inner, clicert, cacert, prikey, prikeypass):
             conn.got_auth = True
             conn.auth_mode = mode
             conn.auth_user = username
             conn.auth_pass = password
+            conn.channel = channel
+            conn.auth_anon = anon
+            conn.auth_auth = auth
+            conn.auth_inner = inner
+            conn.auth_ca_cert = cacert
+            conn.auth_client_cert = clicert
+            conn.auth_private_key = prikey
+            conn.auth_private_key_pass = prikeypass
+
             if conn.first_time:
                 conn.first_time = False
                 self.emitNew(conn)
             else:
                 self.emitConfig(conn)
-        
+
         modes = self.links[script].modes
         conn = Connection(script, info)
         old_conn = self.getConn(script, conn.name)
@@ -341,7 +355,7 @@ class DBusInterface(Hook):
         else:
             conn.first_time = False
             self.emitNew(conn)
-        
+
         if self.first_time:
             # After all connections' information fetched...
             if self.nr_queried == len(self.links) and self.nr_conns == len(self.connections):
@@ -352,7 +366,7 @@ class DBusInterface(Hook):
                     self.emitNoWifi()
                 # get signals
                 self.listenSignals()
-    
+
     def queryConnections(self, script):
         def handler(profiles):
             self.nr_queried += 1
@@ -375,21 +389,21 @@ class DBusInterface(Hook):
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()
-    
+
     def queryDevices(self, script):
         def handler(info):
             self.emitDevices(script, info)
         ch = self.callHandler(script, "Net.Link", "deviceList", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()
-    
+
     def queryRemotes(self, script, devid):
         def handler(info):
             self.emitRemotes(script, info)
         ch = self.callHandler(script, "Net.Link", "scanRemote", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call(devid)
-    
+
     def uniqueName(self):
         base_name = str(i18n("new connection"))
         id = 2
