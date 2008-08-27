@@ -456,7 +456,7 @@ class Yali:
                 partitioning.insertData(ctx.installData.autoPartDev.getPath())
 
         ctx.installData.sessionLog = yali.toPrettyString()
-        ctx.debugger.log(yali.toPrettyString())
+        # ctx.debugger.log(yali.toPrettyString())
 
     def processPendingActions(self, rootWidget):
         global bus
