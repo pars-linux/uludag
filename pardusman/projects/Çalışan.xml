@@ -49,6 +49,15 @@
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
+        <SelectedPackage>gimp-i18n-ca</SelectedPackage>
+        <SelectedPackage>gimp-i18n-de</SelectedPackage>
+        <SelectedPackage>gimp-i18n-es</SelectedPackage>
+        <SelectedPackage>gimp-i18n-fr</SelectedPackage>
+        <SelectedPackage>gimp-i18n-it</SelectedPackage>
+        <SelectedPackage>gimp-i18n-nl</SelectedPackage>
+        <SelectedPackage>gimp-i18n-pl</SelectedPackage>
+        <SelectedPackage>gimp-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>gimp-i18n-sv</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
@@ -63,6 +72,16 @@
         <SelectedPackage>gst-ffmpeg</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>gwenview</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-ca</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-de</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-es</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-fr</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-it</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-nl</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-pl</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-sv</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
         <SelectedPackage>hcfpcimodem</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>hsfmodem</SelectedPackage>
@@ -79,6 +98,16 @@
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
+        <SelectedPackage>k3b-i18n-ca</SelectedPackage>
+        <SelectedPackage>k3b-i18n-de</SelectedPackage>
+        <SelectedPackage>k3b-i18n-es</SelectedPackage>
+        <SelectedPackage>k3b-i18n-fr</SelectedPackage>
+        <SelectedPackage>k3b-i18n-it</SelectedPackage>
+        <SelectedPackage>k3b-i18n-nl</SelectedPackage>
+        <SelectedPackage>k3b-i18n-pl</SelectedPackage>
+        <SelectedPackage>k3b-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>k3b-i18n-sv</SelectedPackage>
+        <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
@@ -90,6 +119,7 @@
         <SelectedPackage>kde-i18n-nl</SelectedPackage>
         <SelectedPackage>kde-i18n-pl</SelectedPackage>
         <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>kde-i18n-sv</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
@@ -331,6 +361,15 @@
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
+        <Package>gimp-i18n-ca</Package>
+        <Package>gimp-i18n-de</Package>
+        <Package>gimp-i18n-es</Package>
+        <Package>gimp-i18n-fr</Package>
+        <Package>gimp-i18n-it</Package>
+        <Package>gimp-i18n-nl</Package>
+        <Package>gimp-i18n-pl</Package>
+        <Package>gimp-i18n-pt_BR</Package>
+        <Package>gimp-i18n-sv</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
         <Package>glibc-locales-ca</Package>
@@ -374,6 +413,16 @@
         <Package>guile</Package>
         <Package>gutenprint</Package>
         <Package>gwenview</Package>
+        <Package>gwenview-i18n-ca</Package>
+        <Package>gwenview-i18n-de</Package>
+        <Package>gwenview-i18n-es</Package>
+        <Package>gwenview-i18n-fr</Package>
+        <Package>gwenview-i18n-it</Package>
+        <Package>gwenview-i18n-nl</Package>
+        <Package>gwenview-i18n-pl</Package>
+        <Package>gwenview-i18n-pt_BR</Package>
+        <Package>gwenview-i18n-sv</Package>
+        <Package>gwenview-i18n-tr</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hal-info</Package>
@@ -404,6 +453,16 @@
         <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
         <Package>k3b</Package>
+        <Package>k3b-i18n-ca</Package>
+        <Package>k3b-i18n-de</Package>
+        <Package>k3b-i18n-es</Package>
+        <Package>k3b-i18n-fr</Package>
+        <Package>k3b-i18n-it</Package>
+        <Package>k3b-i18n-nl</Package>
+        <Package>k3b-i18n-pl</Package>
+        <Package>k3b-i18n-pt_BR</Package>
+        <Package>k3b-i18n-sv</Package>
+        <Package>k3b-i18n-tr</Package>
         <Package>kaffeine</Package>
         <Package>kaptan</Package>
         <Package>kbd</Package>
@@ -416,6 +475,7 @@
         <Package>kde-i18n-nl</Package>
         <Package>kde-i18n-pl</Package>
         <Package>kde-i18n-pt_BR</Package>
+        <Package>kde-i18n-sv</Package>
         <Package>kde-i18n-tr</Package>
         <Package>kdeaddons</Package>
         <Package>kdeartwork-emoticons</Package>
