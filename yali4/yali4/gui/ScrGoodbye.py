@@ -69,6 +69,7 @@ don't you?
         self.steps = YaliSteps()
 
     def shown(self):
+        ctx.mainScreen.disableNext()
         ctx.yali.info.updateAndShow(_("Running post install operations.."))
         ctx.mainScreen.disableBack()
         ctx.yali.processPendingActions(self)
@@ -77,6 +78,7 @@ don't you?
             ctx.mainScreen.slotToggleHelp()
         self.ui.label.setPixmap(QtGui.QPixmap(":/gui/pics/goodbye.png"))
         ctx.yali.info.hide()
+        ctx.mainScreen.enableNext()
 
     def execute(self):
         ctx.mainScreen.disableNext()
