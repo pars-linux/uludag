@@ -2,31 +2,29 @@
 <!DOCTYPE PISI SYSTEM 'http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd'>
 <PISI>
     <Source>
-        <Name>nose</Name>
-        <Homepage>http://somethingaboutorange.com/mrl/projects/nose/</Homepage>
+        <Name>paste</Name>
+        <Homepage></Homepage>
         <Packager>
             <Name>Ediz Türkoğlu</Name>
             <Email>ediz.turkoglu@yahoo.com</Email>
         </Packager>
-        <License>LGPL-2.1</License>
+        <License>MIT</License>
         <IsA>library</IsA>
-        <Summary>A unittest extension offering automatic test suite discovery and easy test authoring</Summary>
-        <Description>nose provides an alternate test discovery and running process for unittest, one that is intended to mimic the behavior of py.test as much as is reasonably possible without resorting to too much magic.</Description>
-        <Archive sha1sum="31a47c2b59d0cb513ca5ef8476a94c9194a34ff7" type="targz">http://somethingaboutorange.com/mrl/projects/nose/nose-0.10.3.tar.gz</Archive>
+        <Summary>Tools for using a Web Server Gateway Interface stack</Summary>
+        <Description>Python Paste brings consistency to Python web development and web application installation, providing tools for both developers and system administrators.</Description>
+                <Archive sha1sum="0ae45557b0cc6cfe0a8d66c8051da0ea30d83d96" type="targz">http://pypi.python.org/packages/source/P/Paste/Paste-1.7.1.tar.gz</Archive>
     </Source>
 
     <Package>
-        <Name>nose</Name>
+        <Name>paste</Name>
         <Files>
-            <Path fileType="executable">/usr/bin</Path>
             <Path fileType="library">/usr/lib</Path>
-            <Path fileType="doc">/usr/bin</Path>
         </Files>
     </Package>
     <History>
          <Update release="1">
-             <Date>2008-07-09</Date>
-             <Version>0.10.3</Version>
+             <Date>2008-07-10</Date>
+             <Version>1.7.1</Version>
              <Comment>First release.</Comment>
              <Name>Ediz Türkoğlu</Name>
              <Email>ediz.turkoglu@yahoo.com</Email>
