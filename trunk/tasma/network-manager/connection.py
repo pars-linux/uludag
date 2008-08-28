@@ -605,6 +605,7 @@ class Settings(QWidget):
                             elif mode.type == "login":
                                 self.auth_user_line.setText(unicode(conn.auth_user))
                                 self.auth_passphrase_line.setText(unicode(conn.auth_pass))
+                                self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
                             elif mode.type == "certificate":
                                 if mode.id == conn.auth_mode:
