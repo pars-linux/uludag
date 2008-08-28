@@ -446,7 +446,6 @@
         <Package>guile</Package>
         <Package>gutenprint</Package>
         <Package>gwenview</Package>
-        <Package>gwenview-i18n</Package>
         <Package>gwenview-i18n-ca</Package>
         <Package>gwenview-i18n-de</Package>
         <Package>gwenview-i18n-es</Package>
