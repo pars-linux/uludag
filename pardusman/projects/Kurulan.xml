@@ -274,6 +274,7 @@
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>atk</Package>
+        <Package>atl1e</Package>
         <Package>atl2</Package>
         <Package>atmel-firmware</Package>
         <Package>attr</Package>
@@ -523,7 +524,6 @@
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
-        <Package>kftpgrabber</Package>
         <Package>kio-to-local</Package>
         <Package>kipi-plugins</Package>
         <Package>klibc</Package>
@@ -531,7 +531,6 @@
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
-        <Package>krename</Package>
         <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
@@ -712,7 +711,6 @@
         <Package>musicbrainz</Package>
         <Package>mysql-lib</Package>
         <Package>nano</Package>
-        <Package>ncftp</Package>
         <Package>ncompress</Package>
         <Package>ncurses</Package>
         <Package>ndiswrapper</Package>
@@ -796,6 +794,7 @@
         <Package>qca-tls</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
+        <Package>r5u870</Package>
         <Package>ralink-firmware</Package>
         <Package>rdate</Package>
         <Package>rdesktop</Package>
@@ -805,7 +804,6 @@
         <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
-        <Package>schedtool</Package>
         <Package>schroedinger</Package>
         <Package>sdl-gfx</Package>
         <Package>sdparm</Package>
