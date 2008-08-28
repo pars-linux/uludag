@@ -14,9 +14,7 @@ WorkDir = "CherryPy-%s" % get.srcVERSION()
 def install():
     pisitools.dosed("cherrypy/test/test.py", "raw_input", "")
     pisitools.dosed("cherrypy/test/test.py", "'test_cache_filter',", "")
-    pisitools.dosed("setup.py", "distutils.core", "setuptools")
-    pisitools.dosed("setup.py", "\"cherrypy.tutorial\",", "")
-    pisitools.dosed("setup.py", "('cherrypy\/tutorial',/, /),", "/d")
+
     pythonmodules.install()
 
     pisitools.dodoc("README.txt")
