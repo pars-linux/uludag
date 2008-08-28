@@ -63,6 +63,7 @@
         <SelectedPackage>freealut</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
+        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
@@ -190,6 +191,7 @@
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
+        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
@@ -362,6 +364,7 @@
         <Package>gecko-mediaplayer</Package>
         <Package>gettext</Package>
         <Package>gfxtheme-pardus-boot</Package>
+        <Package>gfxtheme-pardus-install</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
@@ -590,6 +593,7 @@
         <Package>libnfsidmap</Package>
         <Package>libnjb</Package>
         <Package>libnotify</Package>
+        <Package>libnut</Package>
         <Package>libofa</Package>
         <Package>libogg</Package>
         <Package>liboil</Package>
@@ -759,6 +763,7 @@
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schedtool</Package>
+        <Package>schroedinger</Package>
         <Package>sdl-gfx</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
@@ -790,6 +795,7 @@
         <Package>sysfsutils</Package>
         <Package>sysinfo</Package>
         <Package>sysklogd</Package>
+        <Package>syslinux</Package>
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
         <Package>taglib</Package>
@@ -800,7 +806,6 @@
         <Package>tcp-wrappers</Package>
         <Package>tcpdump</Package>
         <Package>telnet-bsd</Package>
-        <Package>terminus-font-core</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>time</Package>
