@@ -92,11 +92,11 @@ class Connection(Hook):
         self.auth_auth = None
         self.auth_inner = None
         self.channel = None
+        self.device_mode = "Managed"
         self.parse(data)
         self.hash = self.hash(self.script, self.name)
         self.got_auth = True
         self.first_time = True
-        self.device_mode = "Managed"
 
     def parse(self, data):
         self.name = data.get("name")
