@@ -592,7 +592,7 @@ class Settings(QWidget):
                     for mode in self.link.auth_modes:
                         if mode.id == conn.auth_mode:
                             if mode.type == "pass":
-                                self.auth_passphrass_line.setText(unicode(conn.auth_pass))
+                                self.auth_passphrase_line.setText(unicode(conn.auth_pass))
                                 self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
                             elif mode.type == "login":
