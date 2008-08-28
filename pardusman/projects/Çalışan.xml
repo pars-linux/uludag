@@ -95,6 +95,7 @@
         <SelectedPackage>irqbalance</SelectedPackage>
         <SelectedPackage>iwlwifi3945-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
+        <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
