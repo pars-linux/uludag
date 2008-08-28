@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-28 10:59+0300\n"
+"POT-Creation-Date: 2008-08-28 09:28+0300\n"
 "PO-Revision-Date: 2007-04-02 17:31+0200\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -17,22 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: comariface.py:227
-msgid "COMAR Error"
+#: comariface.py:214
+msgid "You are not authorized for this operation."
 msgstr ""
 
-#: comariface.py:232 network-applet.py:175
+#: comariface.py:218 autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110 network-applet.py:615 network-applet.py:629
+msgid "Network Manager"
+msgstr "Arranjador de la xarxa"
+
+#: comariface.py:224 network-applet.py:176
 #, fuzzy
 msgid "Waiting DBus..."
 msgstr "Cal esperar el servei de COMAR..."
 
-#: comariface.py:232 network-applet.py:175
+#: comariface.py:224 network-applet.py:176
 #, fuzzy
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 "La connexió a COMAR s'ha tallat sense inesperadament. Mirem de reconnectar..."
 
-#: comariface.py:248 network-applet.py:191
+#: comariface.py:240 network-applet.py:192
 #, fuzzy
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
@@ -42,159 +47,9 @@ msgstr ""
 "engear amb el comandament 'service comar start' com a arrel d'ençà d'una "
 "terminal"
 
-#: comariface.py:406
+#: comariface.py:408
 msgid "new connection"
 msgstr "nova connexió"
-
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
-#: network-manager.py:110 network-applet.py:607 network-applet.py:621
-msgid "Network Manager"
-msgstr "Arranjador de la xarxa"
-
-#: autoswitch.py:58
-#, fuzzy
-msgid "Scanning..."
-msgstr "Edita les connexions..."
-
-#: autoswitch.py:80
-#, python-format
-msgid "Profile <b>%s</b> matched."
-msgstr ""
-
-#: autoswitch.py:84
-msgid "There is no matched profile"
-msgstr ""
-
-#: autoswitch.py:86
-#, fuzzy
-msgid "No scan result"
-msgstr "Resultats de l'exploració:"
-
-#: autoswitch.py:96
-#, fuzzy, python-format
-msgid "Connecting to <b>%s</b> ..."
-msgstr "Edita les connexions..."
-
-#: connection.py:27
-msgid "Channel"
-msgstr ""
-
-#: connection.py:28
-#, fuzzy
-msgid "Mode"
-msgstr "Mode:"
-
-#: connection.py:29
-msgid "Protocol"
-msgstr ""
-
-#: connection.py:41
-msgid "No remotes found"
-msgstr ""
-
-#: connection.py:61
-msgid "<hidden>"
-msgstr "<amagat>"
-
-#: connection.py:94
-msgid "Scan results:"
-msgstr "Resultats de l'exploració:"
-
-#: connection.py:112
-msgid "Scan again"
-msgstr "Explora una altra vegada"
-
-#: connection.py:114
-msgid "Use"
-msgstr "Fés-la servir"
-
-#: connection.py:177
-msgid "Connection name:"
-msgstr "Nom de la connexió:"
-
-#: connection.py:184
-msgid "Connection"
-msgstr "Connexió"
-
-#: connection.py:190
-msgid "Device:"
-msgstr "Dispositiu:"
-
-#: connection.py:195
-msgid "Select"
-msgstr "Seleciona"
-
-#: connection.py:209
-msgid "Scan"
-msgstr "Explora"
-
-#: connection.py:220 browser.py:57
-msgid "Authentication"
-msgstr "Autenticació"
-
-#: connection.py:226
-msgid "Mode:"
-msgstr "Mode:"
-
-#: connection.py:234
-msgid "No authentication"
-msgstr "Sense autenticació"
-
-#: connection.py:252 connection.py:264
-msgid "Password:"
-msgstr "Mot de pas:"
-
-#: connection.py:261
-msgid "User name:"
-msgstr "Nom d'usuari:"
-
-#: connection.py:294
-msgid "Network settings"
-msgstr "Arranjaments de la xarxa"
-
-#: connection.py:304
-msgid "Automatic query (DHCP)"
-msgstr "Protocol dinàmic (DHCP)"
-
-#: connection.py:309
-msgid "Manual"
-msgstr "Personalitzat"
-
-#: connection.py:313 browser.py:60
-msgid "Address:"
-msgstr "Adreça:"
-
-#: connection.py:320 connection.py:337 connection.py:352
-msgid "Custom"
-msgstr "A mida"
-
-#: connection.py:325
-msgid "Net mask:"
-msgstr "Màscara de xarxa:"
-
-#: connection.py:332
-msgid "Gateway:"
-msgstr "Portal d'enllaç:"
-
-#: connection.py:341 nameconf.py:45
-msgid "Name servers"
-msgstr "Nom dels servidors"
-
-#: connection.py:350 browser.py:63
-msgid "Automatic"
-msgstr "Automàtic"
-
-#: connection.py:568
-msgid "Configure network connection"
-msgstr "Configura la connexió de la xarxa"
-
-#: network-manager.py:83
-msgid "Just try to connect automatically"
-msgstr ""
-
-#: network-manager.py:98
-msgid "Network manager module is already started!"
-msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -221,83 +76,64 @@ msgid "No package with COMAR network scripts are installed yet."
 msgstr ""
 "No hi ha cap paquet instal·lat amb seqüències de xarxa relatives a COMAR"
 
-#: network-applet.py:393
-msgid "Firewall..."
-msgstr "Tallafocs..."
-
-#: network-applet.py:394
-msgid "Edit Connections..."
+#: autoswitch.py:63
+#, fuzzy
+msgid "Scanning..."
 msgstr "Edita les connexions..."
 
-#: network-applet.py:395 browser.py:409
-#, fuzzy
-msgid "Connect Automatically"
-msgstr "Automàtic"
-
-#: network-applet.py:397
-msgid "Show Notifications"
+#: autoswitch.py:84
+#, python-format
+msgid "Profile <b>%s</b> matched."
 msgstr ""
 
-#: network-applet.py:399
-msgid "Icon Per Device"
-msgstr "Icona per dispositiu"
-
-#: network-applet.py:400
-msgid "Single Icon"
-msgstr "Icona simple"
-
-#: network-applet.py:469
-msgid "Should network-applet start automatically when you login?"
+#: autoswitch.py:88
+msgid "There is no matched profile"
 msgstr ""
-"Que vols que el programa de gestió de xarxa s'engegue automàticament en "
-"entrar al sistema?"
 
-#: network-applet.py:584
+#: autoswitch.py:90
 #, fuzzy
-msgid "Connecting to <b>%1</b> ..."
+msgid "No scan result"
+msgstr "Resultats de l'exploració:"
+
+#: autoswitch.py:100
+#, fuzzy, python-format
+msgid "Connecting to <b>%s</b> ..."
 msgstr "Edita les connexions..."
 
-#: network-applet.py:589
-#, fuzzy
-msgid "Connected to <b>%1</b>"
-msgstr "Edita les connexions..."
-
-#: network-applet.py:595
-#, fuzzy
-msgid ""
-"Connection failed \n"
-"<b>%1</b>"
-msgstr "Edita les connexions..."
-
-#: network-applet.py:597
-msgid "You are offline now"
-msgstr ""
-
-#: network-applet.py:653 browser.py:399
-msgid "New connection"
-msgstr "Nova connexió"
-
-#: network-applet.py:691
-msgid "Network Applet"
-msgstr ""
-
-#: browser.py:50
+#: browser.py:52
 msgid "Name:"
 msgstr "Nom:"
 
-#: browser.py:93
+#: browser.py:59 connection.py:264
+msgid "Authentication"
+msgstr "Autenticació"
+
+#: browser.py:62 connection.py:495
+msgid "Address:"
+msgstr "Adreça:"
+
+#: browser.py:65 connection.py:536
+msgid "Automatic"
+msgstr "Automàtic"
+
+#: browser.py:72
+#, fuzzy
+msgid "Mod:"
+msgstr "Mode:"
+
+#: browser.py:101
 msgid "Turn on/off connection"
 msgstr "Connecta / Desconnecta"
 
-#: browser.py:106
+#: browser.py:114
 msgid "Configure connection"
 msgstr "Configura la connexió"
 
-#: browser.py:109
+#: browser.py:117
 msgid "Delete connection"
 msgstr "Esborra la connexió"
 
-#: browser.py:131
+#: browser.py:139
 #, python-format
 msgid ""
 "Should I delete the\n"
@@ -307,25 +143,200 @@ msgstr ""
 "Que vols que esborre la\n"
 "connexió '%s'?"
 
-#: browser.py:132
+#: browser.py:140
 msgid "Delete connection?"
 msgstr "Esborre la connexió?"
 
-#: browser.py:220
+#: browser.py:228
 msgid "No device!"
 msgstr "Ho sent. No hi ha cap dispositiu"
 
-#: browser.py:404 nameconf.py:28
+#: browser.py:407 network-applet.py:661
+msgid "New connection"
+msgstr "Nova connexió"
+
+#: browser.py:412 nameconf.py:28
 msgid "Name Service Settings"
 msgstr "Nom dels arranjaments del servei (DNS)"
 
-#: browser.py:428
+#: browser.py:417 network-applet.py:401
+#, fuzzy
+msgid "Connect Automatically"
+msgstr "Automàtic"
+
+#: browser.py:423
+#, fuzzy
+msgid "Share Connection"
+msgstr "Connexió"
+
+#: browser.py:442
 msgid "Try Auto Connect on startup"
 msgstr ""
 
-#: browser.py:479
+#: browser.py:499
 msgid "Network Connections Help"
 msgstr "Ajut per a la connexió de la xarxa"
+
+#: connection.py:27
+msgid "Channel"
+msgstr ""
+
+#: connection.py:28
+#, fuzzy
+msgid "Mode"
+msgstr "Mode:"
+
+#: connection.py:29
+msgid "Protocol"
+msgstr ""
+
+#: connection.py:41
+msgid "No remotes found"
+msgstr ""
+
+#: connection.py:61
+msgid "<hidden>"
+msgstr "<amagat>"
+
+#: connection.py:99
+msgid "Scan results:"
+msgstr "Resultats de l'exploració:"
+
+#: connection.py:118
+msgid "Scan again"
+msgstr "Explora una altra vegada"
+
+#: connection.py:120
+msgid "Use"
+msgstr "Fés-la servir"
+
+#: connection.py:197
+msgid "Connection name:"
+msgstr "Nom de la connexió:"
+
+#: connection.py:204
+msgid "Connection"
+msgstr "Connexió"
+
+#: connection.py:210
+msgid "Device:"
+msgstr "Dispositiu:"
+
+#: connection.py:216
+msgid "Select"
+msgstr "Seleciona"
+
+#: connection.py:224
+#, fuzzy
+msgid "Device Mode"
+msgstr "Dispositiu:"
+
+#: connection.py:230
+msgid "Mode:"
+msgstr "Mode:"
+
+#: connection.py:248
+msgid "Scan"
+msgstr "Explora"
+
+#: connection.py:272
+msgid "Security:"
+msgstr ""
+
+#: connection.py:274
+msgid "No authentication"
+msgstr "Sense autenticació"
+
+#: connection.py:278
+#, fuzzy
+msgid "Authentication:"
+msgstr "Autenticació"
+
+#: connection.py:283
+#, fuzzy
+msgid "Inner Authentication:"
+msgstr "Autenticació"
+
+#: connection.py:294
+msgid "Anonymous Identity:"
+msgstr ""
+
+#: connection.py:299
+msgid "User/Identity"
+msgstr ""
+
+#: connection.py:304
+msgid "Password:"
+msgstr "Mot de pas:"
+
+#: connection.py:310
+msgid "Client Certificate:"
+msgstr ""
+
+#: connection.py:315
+msgid "CA Certificate:"
+msgstr ""
+
+#: connection.py:320
+msgid "Private Key File:"
+msgstr ""
+
+#: connection.py:325
+#, fuzzy
+msgid "Private Key Password:"
+msgstr "Mot de pas:"
+
+#: connection.py:358 connection.py:363
+msgid "Certificates (*)"
+msgstr ""
+
+#: connection.py:358
+msgid "Select CA Certificate File"
+msgstr ""
+
+#: connection.py:363
+msgid "Select Client Certificate File"
+msgstr ""
+
+#: connection.py:368
+msgid "Private Keys (*)"
+msgstr ""
+
+#: connection.py:368
+msgid "Select Private Key File"
+msgstr ""
+
+#: connection.py:476
+msgid "Network settings"
+msgstr "Arranjaments de la xarxa"
+
+#: connection.py:486
+msgid "Automatic query (DHCP)"
+msgstr "Protocol dinàmic (DHCP)"
+
+#: connection.py:491
+msgid "Manual"
+msgstr "Personalitzat"
+
+#: connection.py:502 connection.py:523 connection.py:538
+msgid "Custom"
+msgstr "A mida"
+
+#: connection.py:507
+msgid "Net mask:"
+msgstr "Màscara de xarxa:"
+
+#: connection.py:518
+msgid "Gateway:"
+msgstr "Portal d'enllaç:"
+
+#: connection.py:527 nameconf.py:45
+msgid "Name servers"
+msgstr "Nom dels servidors"
+
+#: connection.py:798
+msgid "Configure network connection"
+msgstr "Configura la connexió de la xarxa"
 
 #: nameconf.py:35
 msgid "Computer"
@@ -350,6 +361,128 @@ msgstr "Afegeix un nom de servidor"
 #: nameconf.py:172
 msgid "Name server:"
 msgstr "Nom del servidor:"
+
+#: connsharing.py:108
+msgid "Internet Connection Sharing"
+msgstr ""
+
+#: connsharing.py:109
+#, fuzzy
+msgid "Share Internet Connection"
+msgstr "Crea una nova connexió"
+
+#: connsharing.py:111
+msgid "Interface that goes to internet"
+msgstr ""
+
+#: connsharing.py:112
+#, fuzzy
+msgid "Interface that will share connection"
+msgstr "Crea una nova connexió"
+
+#: connsharing.py:128
+msgid "D-Bus Error"
+msgstr ""
+
+#: connsharing.py:132
+msgid "COMAR Error"
+msgstr ""
+
+#: connsharing.py:136
+msgid "Changing States of Interfaces Failed"
+msgstr ""
+
+#: connsharing.py:138
+msgid "DHCP Server Error"
+msgstr ""
+
+#: connsharing.py:157
+msgid ""
+"The interfaces that you have selected must be different to share internet "
+"connection"
+msgstr ""
+
+#: connsharing.py:157
+msgid "Check Selected Interfaces"
+msgstr ""
+
+#: connsharing.py:167
+msgid "The sharing of your connection has been successfully done."
+msgstr ""
+
+#: connsharing.py:167
+msgid "Sharing is OK"
+msgstr ""
+
+#: connsharing.py:268
+msgid "You do not have an ip address for the interface that goes to internet"
+msgstr ""
+
+#: connsharing.py:268
+msgid "IP address not found"
+msgstr ""
+
+#: network-manager.py:83
+msgid "Just try to connect automatically"
+msgstr ""
+
+#: network-manager.py:98
+msgid "Network manager module is already started!"
+msgstr "Ho sent. El mòdul de l'arranjador de la xarxa ja està en marxa"
+
+#: network-applet.py:399
+msgid "Firewall..."
+msgstr "Tallafocs..."
+
+#: network-applet.py:400
+msgid "Edit Connections..."
+msgstr "Edita les connexions..."
+
+#: network-applet.py:403
+msgid "Show Notifications"
+msgstr ""
+
+#: network-applet.py:405
+msgid "Icon Per Device"
+msgstr "Icona per dispositiu"
+
+#: network-applet.py:406
+msgid "Single Icon"
+msgstr "Icona simple"
+
+#: network-applet.py:477
+msgid "Should network-applet start automatically when you login?"
+msgstr ""
+"Que vols que el programa de gestió de xarxa s'engegue automàticament en "
+"entrar al sistema?"
+
+#: network-applet.py:592
+#, fuzzy
+msgid "Connecting to <b>%1</b> ..."
+msgstr "Edita les connexions..."
+
+#: network-applet.py:597
+#, fuzzy
+msgid "Connected to <b>%1</b>"
+msgstr "Edita les connexions..."
+
+#: network-applet.py:603
+#, fuzzy
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr "Edita les connexions..."
+
+#: network-applet.py:605
+msgid "You are offline now"
+msgstr ""
+
+#: network-applet.py:699
+msgid "Network Applet"
+msgstr ""
+
+#~ msgid "User name:"
+#~ msgstr "Nom d'usuari:"
 
 #, fuzzy
 #~ msgid "Connected to <b>%s</b>"
