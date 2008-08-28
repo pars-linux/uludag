@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1 Beta [r2]</Title>
+    <Title>Pardus 2008.1 Beta [r3]</Title>
     <WorkDir>/home/ekin/cdtemp/</WorkDir>
     <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -25,6 +25,7 @@
         <SelectedPackage>apmd</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
+        <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
@@ -63,7 +64,6 @@
         <SelectedPackage>freealut</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
-        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gimp-i18n-ca</SelectedPackage>
         <SelectedPackage>gimp-i18n-de</SelectedPackage>
@@ -146,13 +146,11 @@
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdepim</SelectedPackage>
         <SelectedPackage>kdetv</SelectedPackage>
-        <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmplayer</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
-        <SelectedPackage>krename</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lame</SelectedPackage>
         <SelectedPackage>lib-compat</SelectedPackage>
@@ -178,7 +176,6 @@
         <SelectedPackage>migration</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
-        <SelectedPackage>ncftp</SelectedPackage>
         <SelectedPackage>ndiswrapper</SelectedPackage>
         <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>netkit-ftp</SelectedPackage>
@@ -198,10 +195,10 @@
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
         <SelectedPackage>qc-usb</SelectedPackage>
+        <SelectedPackage>r5u870</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
-        <SelectedPackage>schedtool</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
@@ -215,7 +212,6 @@
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
-        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
