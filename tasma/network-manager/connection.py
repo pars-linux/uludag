@@ -413,6 +413,13 @@ class Settings(QWidget):
                 self.auth_passphrase_line.show()
 
             elif self.link.auth_modes[sec-1].type == "login":
+                self.setAuthVisible(False)
+                self.auth_passphrase_line.show()
+                self.auth_passphrase_label.show()
+                self.auth_user_line.show()
+                self.auth_user_label.show()
+
+            elif self.link.auth_modes[sec-1].type == "certificate":
                 self.setAuthVisible(True)
                 self.updateStack(None, auth)
 
@@ -596,6 +603,10 @@ class Settings(QWidget):
                                 self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
                             elif mode.type == "login":
+                                self.auth_user_line.setText(unicode(conn.auth_user))
+                                self.auth_passphrase_line.setText(unicode(conn.auth_pass))
+                                self.slotSecurityToggle(i)
+                            elif mode.type == "certificate":
                                 if mode.id == conn.auth_mode:
                                     self.security_mode_combo.setCurrentItem(i)
                                     self.slotSecurityToggle(i)
@@ -680,6 +691,10 @@ class Settings(QWidget):
                         pw = unicode(self.auth_passphrase_line.text())
                         comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "")
                     elif mode.type == "login":
+                        u = unicode(self.auth_user_line.text())
+                        pw = unicode(self.auth_passphrase_line.text())
+                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
+                    elif mode.type == "certificate":
                         if mode.id == "802.1x":
                             u = unicode(self.auth_user_line.text())
                             pw = unicode(self.auth_passphrase_line.text())
