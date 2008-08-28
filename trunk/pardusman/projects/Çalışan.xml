@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Live 2008_20080820</Title>
+    <Title>Pardus Calisan 2008.1 Beta [r2]</Title>
     <WorkDir>/home/ekin/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
@@ -227,7 +227,6 @@
         <Package>audiofile</Package>
         <Package>audit</Package>
         <Package>avahi</Package>
-        <Package>avahi-glib</Package>
         <Package>avahi-qt</Package>
         <Package>b43-firmware</Package>
         <Package>baselayout</Package>
