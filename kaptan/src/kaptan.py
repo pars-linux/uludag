@@ -35,16 +35,54 @@ import screens.ScrKeyboard as ScrKeyboard
 import screens.ScrGoodbye as ScrGoodbye
 import screens.ScrMultiple as ScrMultiple
 
-#set avaiable screens
-avail_screens = [ScrWelcome,
+def getKernelOpt(cmdopt=None):
+    if cmdopt:
+        for cmd in "".join(loadFile("/proc/cmdline")).split():
+            if cmd.startswith("%s=" % cmdopt):
+                return cmd[len(cmdopt)+1:].split(",")
+    else:
+        return "".join(loadFile("/proc/cmdline")).split()
+
+    return ""
+
+def loadFile(_file):
+    try:
+        f = file(_file)
+        d = [a.strip() for a in f]
+        d = (x for x in d if x and x[0] != "#")
+        f.close()
+        return d
+    except:
+        return []
+
+def isLiveCD():
+    opts = getKernelOpt("mudur")
+
+    if opts and "livecd" in opts:
+        return True
+
+    return False
+
+if isLiveCD():
+    #set avaiable screens
+    avail_screens = [ScrWelcome,
                  ScrMouse,
                  ScrKeyboard,
                  ScrPanel,
                  ScrMultiple,
                  ScrWallpaper,
                  ScrNetwork,
-                 ScrPackage,
                  ScrGoodbye]
+else:
+    #set avaiable screens
+    avail_screens = [ScrWelcome,
+                     ScrMouse,
+                     ScrPanel,
+                     ScrMultiple,
+                     ScrWallpaper,
+                     ScrNetwork,
+                     ScrPackage,
+                     ScrGoodbye]
 
 
 screenId = {}
