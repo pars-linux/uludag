@@ -1,15 +1,25 @@
-import piksemel
-from sahipcore import *
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-    
+"""The XML generator module for Sahip."""
+
+import piksemel
+from sahipcore import User
+
+import gettext
+__trans = gettext.translation('sahip', fallback=True)
+_ = __trans.ugettext
+
 class SahipGenerator:
-    def __init__(self, language=None, #keymap=None,\
+    """Generates XML file with the information filled in the GUI Form."""
+    def __init__(self, filename="~/Desktop/kahya.xml", language=None,\
                   variant=None, root_password=None,\
                   timezone=None, hostname=None, users=None, \
                   partitioning_type=None, disk=None,\
                   reponame=None, repoaddr=None ):
+        """Initializes the genarator with the information from the GUI Form."""
+        self.filename = filename
         self.language = language
-        #self.keymap = keymap
         self.variant = variant
         self.root_password = root_password
         self.timezone = timezone
@@ -19,12 +29,10 @@ class SahipGenerator:
         self.disk = disk
         self.reponame = reponame
         self.repoaddr = repoaddr
-
-
-        self.generate()
         
  
     def generate(self):
+        """Generates XML File with the attributes of the object."""
         xmlHeader =  '''<?xml version="1.0" encoding="utf-8"?>
 '''
         doc = piksemel.newDocument("yali")
@@ -55,15 +63,15 @@ class SahipGenerator:
         pt.setAttribute("partitioning_type", self.partitioning_type)
         
                 
-
-        f = open("/home/emre/Desktop/output.xml","w")
-        f.write(xmlHeader+doc.toPrettyString())
-        f.close()
-        
-
-pars = User("pars", "Panthera Pardus Tulliana", "pardus", ['audio', 'dialout', 'disk', 'pnp', 'pnpadmin', 'users', 'video', 'wheel'])
-pars.autologin = True
-caddy = User("caddy", "Panthera Pardus Caddy", "pardus", ['audio', 'dialout', 'disk', 'pnp', 'pnpadmin', 'users', 'video']
-)
-
-#x = SahipGenerator("tr", "q", "pardus", "Europe/Istanbul", "pardus-pc", [pars, caddy], "auto", "disk0", "testrepo", "http") 
+        try:
+            f = open(self.filename, "w")
+            f.write(xmlHeader+doc.toPrettyString())
+            f.close()
+            return {'status'    : True,
+                    'filename'  : self.filename
+                    }
+        except:
+            print _("Could not write to %s" % self.filename)
+            return {'status'    : False,
+                    'filename'  : self.filename
+                    }
