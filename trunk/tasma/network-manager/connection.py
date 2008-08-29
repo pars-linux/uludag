@@ -154,8 +154,9 @@ class Scanner(QPopupMenu):
 
     def slotScanSelect(self):
         item = self.view.selectedItem()
-        if item.info:
-            self.scan_use_but.setEnabled(item != None)
+        if item:
+            if item.info:
+                self.scan_use_but.setEnabled(True)
 
     def slotScanUse(self):
         item = self.view.selectedItem()
