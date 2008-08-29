@@ -1,0 +1,290 @@
+<ui version="4.0" >
+ <class>Sahip</class>
+ <widget class="QWidget" name="Sahip" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>605</width>
+    <height>626</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Sahip</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3" >
+   <item row="0" column="0" >
+    <widget class="QLabel" name="label" >
+     <property name="text" >
+      <string>Language:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3" >
+    <widget class="QComboBox" name="languageBox" />
+   </item>
+   <item row="1" column="0" >
+    <widget class="QLabel" name="label_2" >
+     <property name="text" >
+      <string>Variant:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="3" >
+    <widget class="QComboBox" name="variantBox" />
+   </item>
+   <item row="2" column="0" >
+    <widget class="QLabel" name="label_3" >
+     <property name="text" >
+      <string>Root password:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3" >
+    <widget class="QSplitter" name="splitter" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QLineEdit" name="rootPassword" />
+     <widget class="QPushButton" name="shadowButton" >
+      <property name="text" >
+       <string>Shadow</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="3" column="0" >
+    <widget class="QLabel" name="label_4" >
+     <property name="text" >
+      <string>Time Zone:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="3" >
+    <widget class="QComboBox" name="timeZone" />
+   </item>
+   <item row="4" column="0" >
+    <widget class="QLabel" name="label_5" >
+     <property name="text" >
+      <string>Hostname:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="3" >
+    <widget class="QLineEdit" name="hostname" />
+   </item>
+   <item row="5" column="0" >
+    <widget class="QLabel" name="label_6" >
+     <property name="text" >
+      <string>Users:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2" colspan="2" >
+    <layout class="QGridLayout" name="gridLayout" >
+     <item row="0" column="0" >
+      <widget class="QLabel" name="label_7" >
+       <property name="text" >
+        <string>Username:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <widget class="QLineEdit" name="username" />
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="label_8" >
+       <property name="text" >
+        <string>Real Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="QLineEdit" name="realname" />
+     </item>
+     <item row="2" column="0" >
+      <widget class="QLabel" name="label_9" >
+       <property name="text" >
+        <string>Password:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" >
+      <widget class="QLineEdit" name="password1" >
+       <property name="inputMask" >
+        <string/>
+       </property>
+       <property name="echoMode" >
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" >
+      <widget class="QLabel" name="label_10" >
+       <property name="text" >
+        <string>Password (again):</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" >
+      <widget class="QLineEdit" name="password2" >
+       <property name="echoMode" >
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" >
+      <widget class="QLabel" name="label_11" >
+       <property name="text" >
+        <string>Groups:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" >
+      <layout class="QGridLayout" name="gridLayout_2" >
+       <item row="0" column="0" >
+        <widget class="QListWidget" name="groupsOut" />
+       </item>
+       <item row="0" column="1" >
+        <layout class="QVBoxLayout" name="verticalLayout_3" >
+         <item>
+          <widget class="QToolButton" name="groupAdd" >
+           <property name="text" >
+            <string>></string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="groupDelete" >
+           <property name="text" >
+            <string>&lt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="2" >
+        <widget class="QListWidget" name="groupsIn" />
+       </item>
+      </layout>
+     </item>
+     <item rowspan="5" row="0" column="2" >
+      <widget class="QListWidget" name="userList" />
+     </item>
+     <item row="5" column="1" >
+      <widget class="QPushButton" name="userAdd" >
+       <property name="text" >
+        <string>Add User</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2" >
+      <widget class="QPushButton" name="userDelete" >
+       <property name="text" >
+        <string>Delete User</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" >
+      <widget class="QLabel" name="label_13" >
+       <property name="text" >
+        <string>Autologin User:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1" colspan="2" >
+      <widget class="QComboBox" name="autologinUserBox" />
+     </item>
+     <item row="5" column="0" >
+      <widget class="QPushButton" name="newUser" >
+       <property name="text" >
+        <string>New User</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="6" column="0" colspan="2" >
+    <widget class="QLabel" name="label_14" >
+     <property name="text" >
+      <string>Partitioning Type:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" colspan="2" >
+    <widget class="QComboBox" name="partitioningTypeBox" />
+   </item>
+   <item row="7" column="0" >
+    <widget class="QLabel" name="label_17" >
+     <property name="text" >
+      <string>Disk:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2" colspan="2" >
+    <widget class="QLineEdit" name="disk" />
+   </item>
+   <item row="8" column="0" colspan="2" >
+    <widget class="QLabel" name="label_15" >
+     <property name="text" >
+      <string>Repo Name:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2" colspan="2" >
+    <widget class="QLineEdit" name="repoName" />
+   </item>
+   <item row="9" column="0" colspan="2" >
+    <widget class="QLabel" name="label_16" >
+     <property name="text" >
+      <string>Repo Address:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2" colspan="2" >
+    <widget class="QLineEdit" name="repoAddress" />
+   </item>
+   <item row="10" column="2" >
+    <widget class="QPushButton" name="generateXMLButton" >
+     <property name="text" >
+      <string>Generate XML File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="3" >
+    <widget class="QPushButton" name="clearButton" >
+     <property name="text" >
+      <string>Clear</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>languageBox</tabstop>
+  <tabstop>variantBox</tabstop>
+  <tabstop>rootPassword</tabstop>
+  <tabstop>shadowButton</tabstop>
+  <tabstop>timeZone</tabstop>
+  <tabstop>hostname</tabstop>
+  <tabstop>username</tabstop>
+  <tabstop>realname</tabstop>
+  <tabstop>password1</tabstop>
+  <tabstop>password2</tabstop>
+  <tabstop>groupsOut</tabstop>
+  <tabstop>groupAdd</tabstop>
+  <tabstop>groupsIn</tabstop>
+  <tabstop>groupDelete</tabstop>
+  <tabstop>userAdd</tabstop>
+  <tabstop>userList</tabstop>
+  <tabstop>userDelete</tabstop>
+  <tabstop>autologinUserBox</tabstop>
+  <tabstop>partitioningTypeBox</tabstop>
+  <tabstop>disk</tabstop>
+  <tabstop>repoName</tabstop>
+  <tabstop>repoAddress</tabstop>
+  <tabstop>generateXMLButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
