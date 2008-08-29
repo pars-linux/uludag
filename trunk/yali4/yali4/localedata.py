@@ -23,7 +23,8 @@ locales = {
         "locale" : "tr_TR.UTF-8",
         "consolekeymap" : ["trf","trq"],
         "consolefont" : "iso09.16",
-        "consoletranslation" : "8859-9"
+        "consoletranslation" : "8859-9",
+        "timezone" : "Europe/Istanbul"
         },
 
 "en" : {
@@ -33,7 +34,8 @@ locales = {
         "locale" : "en_US.UTF-8",
         "consolekeymap" : "us",
         "consolefont" : "iso01.16",
-        "consoletranslation" : "8859-1"
+        "consoletranslation" : "8859-1",
+        "timezone" : "America/New_York"
         },
 
 "gb" : {
@@ -83,7 +85,8 @@ locales = {
         "locale" : "ca_ES.UTF-8",
         "consolekeymap" : "es",
         "consolefont" : None,
-        "consoletranslation" : None
+        "consoletranslation" : None,
+        "timezone" : "Europe/Madrid"
         },
 
 "it" : {
@@ -93,7 +96,8 @@ locales = {
         "locale" : "it_IT.UTF-8",
         "consolekeymap" : "it",
         "consolefont" : None,
-        "consoletranslation" : None
+        "consoletranslation" : None,
+        "timezone" : "Europe/Rome"
         },
 
 "cz" : {
@@ -143,7 +147,8 @@ locales = {
         "locale" : "es_ES.UTF-8",
         "consolekeymap" : "es",
         "consolefont" : None,
-        "consoletranslation" : None
+        "consoletranslation" : None,
+        "timezone" : "Europe/Madrid"
         },
 
 "ru" : {
@@ -163,7 +168,8 @@ locales = {
         "locale" : "nl_NL.UTF-8",
         "consolekeymap" : "us",
         "consolefont" : "iso01.16",
-        "consoletranslation" : "8859-1"
+        "consoletranslation" : "8859-1",
+        "timezone" : "Europe/Amsterdam"
         },
 
 "pt" : {
@@ -173,7 +179,8 @@ locales = {
         "locale" : "pt_BR.UTF-8",
         "consolekeymap" : "pt-latin1",
         "consolefont" : None,
-        "consoletranslation" : None
+        "consoletranslation" : None,
+        "timezone" : "Europe/Lisbon"
         },
 
 "nb" : {
@@ -203,7 +210,8 @@ locales = {
         "locale" : "pl_PL.UTF-8",
         "consolekeymap" : "pl2",
         "consolefont" : None,
-        "consoletranslation" : None
+        "consoletranslation" : None,
+        "timezone" : "Europe/Warsaw"
         },
 
 "be" : {
@@ -223,7 +231,8 @@ locales = {
         "locale" : "fr_FR.UTF-8",
         "consolekeymap" : "fr-latin1",
         "consolefont" : None,
-        "consoletranslation" : None
+        "consoletranslation" : None,
+        "timezone" : "Europe/Paris"
         },
 
 "bg" : {
@@ -263,7 +272,8 @@ locales = {
         "locale" : "de_DE.UTF-8",
         "consolekeymap" : "de-latin1-nodeadkeys",
         "consolefont" : "iso01.16",
-        "consoletranslation" : "8859-1"
+        "consoletranslation" : "8859-1",
+        "timezone" : "Europe/Berlin"
         },
 
 "da" : {
@@ -333,7 +343,8 @@ locales = {
         "locale" : "sv_SE.UTF-8",
         "consolekeymap" : "sv-latin1",
         "consolefont" : None,
-        "consoletranslation" : None
+        "consoletranslation" : None,
+        "timezone" : "Europe/Stockholm"
         },
 
 "mk" : {

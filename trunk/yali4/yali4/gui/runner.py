@@ -21,6 +21,7 @@ _ = __trans.ugettext
 import yali4
 import yali4.installer
 import yali4.sysutils
+import yali4.localedata
 import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
 
