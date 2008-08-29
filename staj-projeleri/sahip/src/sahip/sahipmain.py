@@ -1,176 +1,137 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+"""Main file for sahip. Controls the signals and includes the logic."""
+
+# Qt4 Stuff
 from PyQt4 import QtCore, QtGui
-from sahipcore import User, Partitioning
+
+# Required modules within the project.
+from sahipcore import User, ComboBoxHandler, ListHandler
 from sahipgui import Ui_Sahip
 from sahipgen import SahipGenerator
+
+# The modules borrowed from yali and kahya.
 from yali4.kahya import kahya
 from yali4.localedata import locales
 from yali4.constants import consts
-from yali4.sysutils import TimeZoneList
+from yali4.sysutils import TimeZoneList, getShadowed, text_is_valid
 
+# We need these for i18n.
 import gettext
 __trans = gettext.translation('sahip', fallback=True)
 _ = __trans.ugettext
 
+
 class SahipWidget(QtGui.QWidget):
+    """Uses sahipgui module and defines slots and operations on it."""
     def __init__(self, *args):
+        """Sets ui from sahipgui; calls connectSlots, createHandlers and
+         setDefaults."""
         QtGui.QWidget.__init__(self, None)
         self.ui = Ui_Sahip()
         self.ui.setupUi(self)
         
-        #Events
-        QtCore.QObject.connect(self.ui.languageBox,QtCore.SIGNAL("currentIndexChanged(QString)"), self.languageChanged)
-        QtCore.QObject.connect(self.ui.groupAdd, QtCore.SIGNAL("clicked()"), self.groupAddClicked)
-        QtCore.QObject.connect(self.ui.groupDelete, QtCore.SIGNAL("clicked()"), self.groupDeleteClicked)
-        QtCore.QObject.connect(self.ui.userAdd, QtCore.SIGNAL("clicked()"), self.userAddClicked)
-        QtCore.QObject.connect(self.ui.userDelete, QtCore.SIGNAL("clicked()"), self.userDeleteClicked)       
-        QtCore.QObject.connect(self.ui.shadowButton, QtCore.SIGNAL("clicked()"), self.shadowButtonClicked)
-        QtCore.QObject.connect(self.ui.generateXMLButton, QtCore.SIGNAL("clicked()"), self.generateXMLButtonClicked)
-        
-        self.ui.rootPassword.setText("testroot")
-        self.ui.hostname.setText("pardus-pc")
-        self.ui.username.setText("emre")
-        self.ui.realname.setText( "Emre Aladag")
-        self.ui.password1.setText("test")
-        self.ui.password2.setText("test")
-        
-        self.ui.disk.setText("disk0")
-        
-        
-        #Events end
-        self.users = []
-        
-        # Load languages
-        languages = locales.keys()[:]
-        languages.sort()
-        self.ui.languageBox.insertItems(0, languages)
-        self.ui.languageBox.setCurrentIndex(languages.index("tr"))
-        self.languageChanged("tr")
-               
-        # Load Timezones
-        zom = TimeZoneList()
-        zoneList = [ x.timeZone for x in zom.getEntries() ]
-        zoneList.sort()
-        self.ui.timeZone.insertItems(0, zoneList)
-        self.ui.timeZone.setCurrentIndex(zoneList.index("Europe/Istanbul"))
-        
-        # Load Groups        
-        # Default Groups to groupsIn
-        self.ui.groupsIn.insertItems(0, kahya().defaultGroups)
-        # Other groups to groupsOut
-        self.ui.groupsOut.insertItems(0, list(set(self.allGroupList()) - set(self.getListItems(self.ui.groupsIn))))
-        self.ui.groupsOut.sortItems()        
-        
-        # Load Partitioning types
-        self.partitioningTypes = {
-                             "Automatic Partitioning"       : "auto",
-                             "Smart Automatic Partitioning" : "smartAuto",
-                             "Manuel Partitioning"          : "manuel",
-                             
-                             }
-        
-        self.ui.partitioningTypeBox.insertItems(0, self.partitioningTypes.keys())
-
-        
-        # Repo settings
-        self.ui.repoName.setText(consts.pardus_repo_name)
-        self.ui.repoAddress.setText(consts.pardus_repo_uri)
-        
-    def generateXMLButtonClicked(self):
-        for user in self.users:
-            if user.username == str(self.ui.autologinUserBox.currentText()):
-                user.autologin = True
-        variantKey = unicode(self.ui.variantBox.currentText())
-        if variantKey:
-            variantValue = self.variantContainer[variantKey]
-        else:
-            variantValue = None
+        self.connectSlots()
+        self.createHandlers()
+        self.setDefaults()
             
-        sg = SahipGenerator(language = str(self.ui.languageBox.currentText()),\
-                             variant = variantValue,\
-                       root_password = str(self.ui.rootPassword.text()),\
-                            timezone = str(self.ui.timeZone.currentText()),\
-                            hostname = str(self.ui.hostname.text()),\
-                               users = self.users,\
-                            reponame = str(self.ui.repoName.text()),\
-                            repoaddr = str(self.ui.repoAddress.text()),\
-                   partitioning_type = self.partitioningTypes[str(self.ui.partitioningTypeBox.currentText())],\
-                                disk = str(self.ui.disk.text())
-                        )
-        
-    def isUserAlreadyAdded(self, username):
-        for user in self.users:
-            if user.username == username:
-                return True
-        return False
+    def connectSlots(self):
+        """Connects the slots for the events."""
+        QtCore.QObject.connect(self.ui.languageBox,QtCore.SIGNAL("currentIndexChanged(QString)"), self.slotLanguageChanged)
+        QtCore.QObject.connect(self.ui.groupAdd, QtCore.SIGNAL("clicked()"), self.slotGroupAdd)
+        QtCore.QObject.connect(self.ui.groupDelete, QtCore.SIGNAL("clicked()"), self.slotGroupDelete)
+        QtCore.QObject.connect(self.ui.userAdd, QtCore.SIGNAL("clicked()"), self.slotUserAdd)
+        QtCore.QObject.connect(self.ui.userDelete, QtCore.SIGNAL("clicked()"), self.slotUserDelete)       
+        QtCore.QObject.connect(self.ui.shadowButton, QtCore.SIGNAL("clicked()"), self.slotShadow)
+        QtCore.QObject.connect(self.ui.generateXMLButton, QtCore.SIGNAL("clicked()"), self.slotGenerateXML)
+        QtCore.QObject.connect(self.ui.groupsIn, QtCore.SIGNAL("itemDoubleClicked(QListWidgetItem*)"), self.slotGroupDelete)
+        QtCore.QObject.connect(self.ui.groupsOut, QtCore.SIGNAL("itemDoubleClicked(QListWidgetItem*)"), self.slotGroupAdd)
+        QtCore.QObject.connect(self.ui.clearButton, QtCore.SIGNAL("clicked()"), self.slotClear)
+                
+    def createHandlers(self):
+        """Creates handlers """
+        self.LanguageHandler = ComboBoxHandler(self.ui.languageBox, sorted=True)
+        self.VariantHandler = ComboBoxHandler(self.ui.variantBox, sorted=True)
+        self.TimeZoneHandler = ComboBoxHandler(self.ui.timeZone, sorted=True)
+        self.UserHandler = ListHandler(self.ui.userList, sorted=True)
+        self.AutoLoginHandler = ComboBoxHandler(self.ui.autologinUserBox, sorted=True)
+        self.PartitionHandler = ComboBoxHandler(self.ui.partitioningTypeBox, sorted=False)
     
-    def shadowButtonClicked(self):
-        import crypt
-        inputPass = QtGui.QInputDialog.getText(self, 'Enter the root password to be shadowed', 'Password:', QtGui.QLineEdit.Normal)
-        cryptedPass = crypt.crypt(str(inputPass[0]), str(inputPass[0]))
+    def slotClear(self):
+        """Sets the defaults for the widgets in the form."""
+        self.setDefaults()
+    
+    def slotShadow(self):
+        """Crypts the password entered in a dialog and puts it into the root password field."""        
+        inputPass = QtGui.QInputDialog.getText(self, _('Enter the root password to be shadowed'), _('Password:'), QtGui.QLineEdit.Normal)
+        cryptedPass = getShadowed(str(inputPass[0]))
         self.ui.rootPassword.setText(cryptedPass)
-    
-    
-    def userAddClicked(self):
+            
+    def slotUserAdd(self):
+        """Adds a new user with the information filled in the form to the list (of course, with validation)."""
         if self.ui.password1.text() != self.ui.password2.text():
-            QtGui.QMessageBox.question(self, 'Error',"The Passwords do not match...", QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.question(self, _('Error'),_('The Passwords do not match...'), QtGui.QMessageBox.Ok)
         else: 
             newuser = User(str(self.ui.username.text()), str(self.ui.realname.text()), str(self.ui.password1.text()), self.getListItems(self.ui.groupsIn))
             
             if not newuser.usernameIsValid():
-                QtGui.QMessageBox.question(self, 'Error',"Invalid username. Should include only [a-z][A-Z]_[0-9]", QtGui.QMessageBox.Ok)
+                QtGui.QMessageBox.question(self, _('Error'),_('Invalid username. Should include only [a-z][A-Z]_[0-9]'), QtGui.QMessageBox.Ok)
+                del newuser
                 return
             if not newuser.realnameIsValid():
-                QtGui.QMessageBox.question(self, 'Error',"Invalid real name. Can't have newline or : characters.", QtGui.QMessageBox.Ok)
+                QtGui.QMessageBox.question(self, _('Error'),_('Invalid real name. Can\'t have newline or : characters.'), QtGui.QMessageBox.Ok)
+                del newuser
                 return
             if not newuser.passwordIsValid():
-                QtGui.QMessageBox.question(self, 'Error',"Invalid password!", QtGui.QMessageBox.Ok)
+                QtGui.QMessageBox.question(self, _('Error'),_('Invalid password!'), QtGui.QMessageBox.Ok)
+                del newuser
                 return
-                
             if self.isUserAlreadyAdded(newuser.username):
-                QtGui.QMessageBox.question(self, 'Error',"There's another user with username %s." % newuser.username, QtGui.QMessageBox.Ok)
+                QtGui.QMessageBox.question(self, _('Error'),_('There\'s another user with username %s.' % newuser.username), QtGui.QMessageBox.Ok)
+                del newuser
                 return
             
-            self.ui.userList.insertItem(0, newuser.username)
-            self.ui.userList.sortItems()
-            self.users.append(newuser)
+            self.UserHandler.addItem(newuser.username, newuser)
+            self.AutoLoginHandler.addItem(newuser.username, newuser)
             
-            # Add new user to autologin box. 
-            self.ui.autologinUserBox.addItem(newuser.username)
+            itemsToBeCleared = [ self.ui.username,
+                                 self.ui.realname,
+                                 self.ui.password1,
+                                 self.ui.password2,
+                                 self.ui.groupsIn,
+                                 self.ui.groupsOut
+                                 ]
+            for item in itemsToBeCleared: item.clear()
+            self.loadGroups()
             
+            
+                        
         
-    def userDeleteClicked(self):
-        index = self.ui.userList.currentRow()
-        if index == -1:
-            QtGui.QMessageBox.question(self, 'Error',"No user selected.", QtGui.QMessageBox.Ok)
-            return
-        
-        item = self.ui.userList.takeItem(index)
-        username = item.text()
-        self.ui.autologinUserBox.removeItem(index)
-        del item
+    def slotUserDelete(self):
+        """Deletes the selected user from the list."""
+        username = self.UserHandler.removeCurrentItem()
+        if  username == -1:                             # If no user is selected,
+            QtGui.QMessageBox.question(self, _('Error'),_('No user selected.'), QtGui.QMessageBox.Ok)
+        elif username:
+            self.AutoLoginHandler.removeItem(displayText = username) # Remove the username from the autologinUserBox.
 
-        # Delete the users in self.users list with the username specified.
-        for user in self.users:
-            if user.username == username:
-                self.users.remove(user)
-        
-    def groupAddClicked(self):
+    def slotGroupAdd(self):
+        """Moves the group selected from groupsOut into groupsIn."""
         index = self.ui.groupsOut.currentRow()
         if index == -1:
-            QtGui.QMessageBox.question(self, 'Error',"No group selected.", QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.question(self, _('Error'),_('No group selected.'), QtGui.QMessageBox.Ok)
             return
         item = self.ui.groupsOut.takeItem(index)
         self.ui.groupsIn.insertItem(0, item)
         del item
         self.ui.groupsIn.sortItems()
         
-    def groupDeleteClicked(self):
+    def slotGroupDelete(self):
+        """Moves the group selected from groupsIn into groupsOut."""
         index = self.ui.groupsIn.currentRow()
         if index == -1:
-            QtGui.QMessageBox.question(self, 'Error',"No group selected.", QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.question(self, _('Error'),_('No group selected.'), QtGui.QMessageBox.Ok)
             return
         item = self.ui.groupsIn.takeItem(index)
         self.ui.groupsOut.insertItem(0, item)
@@ -179,27 +140,25 @@ class SahipWidget(QtGui.QWidget):
         
         
 
-    def languageChanged(self, newLanguage):
-        '''Retrieves information about the newLanguage and updates the variantBox accordingly.
+    def slotLanguageChanged(self, newLanguage):
+        """Retrieves information about the newLanguage and updates the variantBox accordingly.
         If the variant is a list, adds each variant to the variantBox
         If the variant is None, adds nothing to the variantBox.
-                
-        Creates a Variant instance for each variant to store the letter-name pair.
-        '''
-        self.localeData = locales[str(newLanguage)]
-        
+        """
+        if not newLanguage:
+            return
+        self.localeData = locales[self.LanguageHandler.getInformation(unicode(newLanguage))]
+        variants = self.localeData['xkbvariant']
         # --------------------------------------------------------------------        
         # Update the xkbvariant combobox according to the language selected.
         # --------------------------------------------------------------------
-        self.ui.variantBox.clear()
-        self.variantContainer = {}
-        variants = self.localeData["xkbvariant"]
+        self.VariantHandler.clear()
+        
         # If there are multiple variants,
         if isinstance(variants, list):
             # "xkbvariant" : [["f",_("Turkish F")],["",_("Turkish Q")]],
             for variant in variants:
-                self.variantContainer[variant[1]] = variant[0]                
-                self.ui.variantBox.insertItem(0, variant[1])
+                self.VariantHandler.addItem(variant[1], variant[0])
         # If the language doesn't have any variant
         elif variants == None:              
             pass
@@ -207,9 +166,128 @@ class SahipWidget(QtGui.QWidget):
         else:
             raise Exception
         # ---------------------------------------------------------------------
+    def isHostNameValid(self):
+        """Checks if hostname is valid."""
+        return text_is_valid(self.ui.hostname.text().toAscii())
+    
+    def slotGenerateXML(self):
+        """Generates XML File with the informatio gathered from the form."""
+        if not self.isHostNameValid():
+            QtGui.QMessageBox.question(self, _('Error'),_('Invalid hostname. Hostname can only include ASCII characters.'), QtGui.QMessageBox.Ok)
+            return 
+        for user in self.UserHandler.getInformationList():
+            if user.username == self.AutoLoginHandler.getSelectedDisplayText():
+                user.autologin = True
+        variantDisplayText = unicode(self.ui.variantBox.currentText())
+        if variantDisplayText:
+            variantInformation = self.VariantHandler.getInformation(variantDisplayText)
+        else:
+            variantInformation = None
+            
+        #a = QtGui.QApplication([])
+        filename = QtGui.QFileDialog.getSaveFileName()
+        if not filename:
+            return
         
+        sg = SahipGenerator(filename = filename,\
+                            language = self.LanguageHandler.getSelectedInformation(),\
+                             variant = self.VariantHandler.getSelectedInformation(),\
+                       root_password = str(self.ui.rootPassword.text()),\
+                            timezone = str(self.ui.timeZone.currentText()),\
+                            hostname = str(self.ui.hostname.text()),\
+                               users = self.UserHandler.getInformationList(),\
+                            reponame = str(self.ui.repoName.text()),\
+                            repoaddr = str(self.ui.repoAddress.text()),\
+                   partitioning_type = self.PartitionHandler.getSelectedInformation(),\
+                                disk = str(self.ui.disk.text())
+                        )
+        result = sg.generate()
+        if result['status']:
+            QtGui.QMessageBox.question(self, _('Successful'),_('The XML File has been saved to %s.' % result['filename']), QtGui.QMessageBox.Ok)
+        else:
+            QtGui.QMessageBox.question(self, _('Error'),_('Could not save the XML File to %s.' % result['filename']), QtGui.QMessageBox.Ok)
+    # ------------------SLOTS END---------------------------------------------
+    
+    def loadPersonalDefaults(self):
+        """Loads test information."""
+        self.ui.rootPassword.setText("testroot")
+        self.ui.hostname.setText("pardus-pc")
+        self.ui.username.setText("pars")
+        self.ui.realname.setText( "Pardus Pantheras")
+        self.ui.password1.setText("pardons")
+        self.ui.password2.setText("pardons")        
+        
+    def setDefaults(self):
+        """Sets defaults for all items in the form.""" 
+        # ------ Clear Combobox and Lists -------
+        itemsToBeCleared = [ self.ui.groupsIn,
+                            self.ui.groupsOut,
+                            self.UserHandler,
+                            self.LanguageHandler,
+                            self.VariantHandler,
+                            self.TimeZoneHandler,
+                            self.PartitionHandler
+                            ]
+        for item in itemsToBeCleared: item.clear()
+        
+        self.loadLanguages()
+        self.loadTimeZones()
+        self.loadGroups()
+        self.loadPartitioningTypes()
+        self.loadRepoSettings()
+        
+        # Should be commented below when releasing.
+        # self.loadPersonalDefaults()
+        
+    def loadLanguages(self):
+        """Loads languages from the locales module of yali into the Language Combobox."""
+        # ------ Load languages -------
+        for abbr in locales.keys():
+            self.LanguageHandler.addItem(locales[abbr]['name'], abbr)
+                    
+        self.LanguageHandler.selectItem("tr")
+        self.VariantHandler.selectItem("")
+        # -----------------------------
+    def loadTimeZones(self):
+        """Loads Time Zones from the sysutils module of yali into the Language Combobox.""" 
+        for tz in TimeZoneList().getEntries():
+            self.TimeZoneHandler.addItem(tz.timeZone, tz.code)
+            
+        self.TimeZoneHandler.selectItem("TR")
+        
+    def loadGroups(self):  
+        """Loads default groups (from kahya) to groupsIn and all other available groups to groupsOut."""
+        # ------ Load Groups ----------        
+        # Default Groups to groupsIn
+        self.ui.groupsIn.insertItems(0, kahya().defaultGroups)
+        # Other groups to groupsOut
+        self.ui.groupsOut.insertItems(0, list(set(self.allGroupList()) - set(self.getListItems(self.ui.groupsIn))))
+        self.ui.groupsOut.sortItems()        
+        # ----------------------------
+        
+    def loadPartitioningTypes(self):
+        """Loads the partitioning types into the partitioning type combobox"""     
+        self.PartitionHandler.addItem(_('Automatic Partitioning'), 'auto')
+        self.PartitionHandler.addItem(_('Smart Automatic Partitioning'), 'smartAuto')
+        self.PartitionHandler.addItem(_('Manuel Partitioning'), 'manuel')
+        self.PartitionHandler.selectItem('smartAuto')
+        self.ui.disk.setText('disk0')
+        # --------------------------------------
+    def loadRepoSettings(self):        
+        """Loads the default repo name and address."""
+        self.ui.repoName.setText(consts.pardus_repo_name)
+        self.ui.repoAddress.setText(consts.pardus_repo_uri)        
+
+        
+    def isUserAlreadyAdded(self, username):
+        """Checks if the userList has a user with the same username as given.""" 
+        if self.UserHandler.getInformation(username):
+            return True
+        return False
         
     def allGroupList(self):
+        """Returns all the group names from the system as a list."""
+        # TODO: Might be dangerous if the generator system has extra groups.
         groupsIn = []
         f = open("/etc/group")
         for line in f:
@@ -218,6 +296,7 @@ class SahipWidget(QtGui.QWidget):
         return groupsIn
     
     def getListItems(self, listWidget):
+        """Returns the items of a list in a string list format."""
         items = []
         for index in xrange(listWidget.count()):
             items.append(str(listWidget.item(index).text()))
