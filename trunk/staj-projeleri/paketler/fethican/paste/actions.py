@@ -9,11 +9,11 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "nose-0.10.3"
+WorkDir = "Paste-1.7.1"
 
 def install():
     pythonmodules.install()
 
-    pisitools.dosed("%s/usr/bin/nose" % get.installDIR(),
+    pisitools.dosed("%s/usr/bin/paste" % get.installDIR(),
                     get.installDIR(),
                     "/")
