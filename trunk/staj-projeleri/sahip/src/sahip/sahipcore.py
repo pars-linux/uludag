@@ -93,11 +93,14 @@ class ListHandler(WidgetHandler):
         
     def getSelectedInformation(self):
         """Returns the information belonging to the selected item"""
-        return self.getInformation(unicode(self.widget.currentText()))
+        return self.getInformation(unicode(self.widget.currentItem().text()))
     
     def getSelectedDisplayText(self):
         """Returns the display text beloging to the selected item."""
         return unicode(self.widget.currentText())
+    
+    def unSelect(self):
+        self.widget.setCurrentRow(-1) 
         
 class ComboBoxHandler(WidgetHandler):
     """Handler for specifically QComboBox. Has special ComboBox functionality implementations."""
@@ -139,14 +142,14 @@ class User:
         self.groups = groups
         self.autologin=False
     
-    def passwordIsValid(self):
+    def isPasswordValid(self):
         """Checks if the password is at least 4 characters."""
         if len(self.password) < 4:
             return False
         else:
             return True
     
-    def usernameIsValid(self):
+    def isUsernameValid(self):
         """Checks if the username is valid or not (including only ascii, "_", digits)."""
         valid = ascii_letters + '_' + digits
         name = self.username
@@ -163,7 +166,7 @@ class User:
         
         return True
 
-    def realnameIsValid(self):
+    def isRealnameValid(self):
         """Checks if the realname is valid or not (excluding newline and colon characters)"""
         not_allowed_chars = '\n' + ':'
         return '' == filter(lambda r: [x for x in not_allowed_chars if x == r], self.realname)

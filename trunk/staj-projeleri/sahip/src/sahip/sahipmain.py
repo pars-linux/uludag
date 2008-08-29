@@ -32,10 +32,12 @@ class SahipWidget(QtGui.QWidget):
         self.ui = Ui_Sahip()
         self.ui.setupUi(self)
         
-        self.connectSlots()
         self.createHandlers()
+        self.connectSlots()
         self.setDefaults()
-            
+        
+    
+           
     def connectSlots(self):
         """Connects the slots for the events."""
         QtCore.QObject.connect(self.ui.languageBox,QtCore.SIGNAL("currentIndexChanged(QString)"), self.slotLanguageChanged)
@@ -48,6 +50,8 @@ class SahipWidget(QtGui.QWidget):
         QtCore.QObject.connect(self.ui.groupsIn, QtCore.SIGNAL("itemDoubleClicked(QListWidgetItem*)"), self.slotGroupDelete)
         QtCore.QObject.connect(self.ui.groupsOut, QtCore.SIGNAL("itemDoubleClicked(QListWidgetItem*)"), self.slotGroupAdd)
         QtCore.QObject.connect(self.ui.clearButton, QtCore.SIGNAL("clicked()"), self.slotClear)
+        QtCore.QObject.connect(self.ui.userList, QtCore.SIGNAL("itemPressed(QListWidgetItem*)"), self.slotUserClicked)
+        QtCore.QObject.connect(self.ui.newUser, QtCore.SIGNAL("clicked()"), self.slotNewUser)
                 
     def createHandlers(self):
         """Creates handlers """
@@ -58,6 +62,15 @@ class SahipWidget(QtGui.QWidget):
         self.AutoLoginHandler = ComboBoxHandler(self.ui.autologinUserBox, sorted=True)
         self.PartitionHandler = ComboBoxHandler(self.ui.partitioningTypeBox, sorted=False)
     
+    def slotUserClicked(self):
+        userTD = self.UserHandler.getSelectedInformation()
+        self.ui.username.setText(userTD.username)
+        self.ui.realname.setText(userTD.realname)
+        self.ui.password1.setText(userTD.password)
+        self.ui.password2.setText(userTD.password)
+        #self.ui.
+        
+    
     def slotClear(self):
         """Sets the defaults for the widgets in the form."""
         self.setDefaults()
@@ -65,36 +78,39 @@ class SahipWidget(QtGui.QWidget):
     def slotShadow(self):
         """Crypts the password entered in a dialog and puts it into the root password field."""        
         inputPass = QtGui.QInputDialog.getText(self, _('Enter the root password to be shadowed'), _('Password:'), QtGui.QLineEdit.Normal)
-        cryptedPass = getShadowed(str(inputPass[0]))
-        self.ui.rootPassword.setText(cryptedPass)
+        if inputPass[0]:
+            cryptedPass = getShadowed(str(inputPass[0]))
+            self.ui.rootPassword.setText(cryptedPass)
             
     def slotUserAdd(self):
         """Adds a new user with the information filled in the form to the list (of course, with validation)."""
         if self.ui.password1.text() != self.ui.password2.text():
-            QtGui.QMessageBox.question(self, _('Error'),_('The Passwords do not match...'), QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.question(self, _('Error'),_('The Passwords do not match.'), QtGui.QMessageBox.Ok)
         else: 
-            newuser = User(str(self.ui.username.text()), str(self.ui.realname.text()), str(self.ui.password1.text()), self.getListItems(self.ui.groupsIn))
+            newuser = User(unicode(self.ui.username.text()), unicode(self.ui.realname.text()), unicode(self.ui.password1.text()), self.getListItems(self.ui.groupsIn))
             
-            if not newuser.usernameIsValid():
+            if not newuser.isUsernameValid():
                 QtGui.QMessageBox.question(self, _('Error'),_('Invalid username. Should include only [a-z][A-Z]_[0-9]'), QtGui.QMessageBox.Ok)
                 del newuser
                 return
-            if not newuser.realnameIsValid():
+            if not newuser.isRealnameValid():
                 QtGui.QMessageBox.question(self, _('Error'),_('Invalid real name. Can\'t have newline or : characters.'), QtGui.QMessageBox.Ok)
                 del newuser
                 return
-            if not newuser.passwordIsValid():
-                QtGui.QMessageBox.question(self, _('Error'),_('Invalid password!'), QtGui.QMessageBox.Ok)
+            if not newuser.isPasswordValid():
+                QtGui.QMessageBox.question(self, _('Error'),_('Invalid password. Password should be at least 4 characters.'), QtGui.QMessageBox.Ok)
                 del newuser
                 return
             if self.isUserAlreadyAdded(newuser.username):
-                QtGui.QMessageBox.question(self, _('Error'),_('There\'s another user with username %s.' % newuser.username), QtGui.QMessageBox.Ok)
+                QtGui.QMessageBox.question(self, _('Error'),_('There\'s another user with username %s.') % newuser.username, QtGui.QMessageBox.Ok)
                 del newuser
                 return
             
             self.UserHandler.addItem(newuser.username, newuser)
             self.AutoLoginHandler.addItem(newuser.username, newuser)
+            self.slotNewUser()
             
+    def slotNewUser(self):
             itemsToBeCleared = [ self.ui.username,
                                  self.ui.realname,
                                  self.ui.password1,
@@ -104,9 +120,7 @@ class SahipWidget(QtGui.QWidget):
                                  ]
             for item in itemsToBeCleared: item.clear()
             self.loadGroups()
-            
-            
-                        
+            self.UserHandler.unSelect()                   
         
     def slotUserDelete(self):
         """Deletes the selected user from the list."""
@@ -166,15 +180,15 @@ class SahipWidget(QtGui.QWidget):
         else:
             raise Exception
         # ---------------------------------------------------------------------
-    def isHostNameValid(self):
-        """Checks if hostname is valid."""
-        return text_is_valid(self.ui.hostname.text().toAscii())
     
     def slotGenerateXML(self):
         """Generates XML File with the informatio gathered from the form."""
         if not self.isHostNameValid():
             QtGui.QMessageBox.question(self, _('Error'),_('Invalid hostname. Hostname can only include ASCII characters.'), QtGui.QMessageBox.Ok)
             return 
+        if not User(None, None, self.ui.rootPassword.text(), None).isPasswordValid():
+            QtGui.QMessageBox.question(self, _('Error'),_('Invalid root password. Root password should be at least 4 characters.'), QtGui.QMessageBox.Ok)
+            return
         for user in self.UserHandler.getInformationList():
             if user.username == self.AutoLoginHandler.getSelectedDisplayText():
                 user.autologin = True
@@ -203,10 +217,18 @@ class SahipWidget(QtGui.QWidget):
                         )
         result = sg.generate()
         if result['status']:
-            QtGui.QMessageBox.question(self, _('Successful'),_('The XML File has been saved to %s.' % result['filename']), QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.question(self, _('Successful'),_('The XML File has been saved to %s.') % result['filename'], QtGui.QMessageBox.Ok)
         else:
-            QtGui.QMessageBox.question(self, _('Error'),_('Could not save the XML File to %s.' % result['filename']), QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.question(self, _('Error'),_('Could not save the XML File to %s.') % result['filename'], QtGui.QMessageBox.Ok)
     # ------------------SLOTS END---------------------------------------------
+    
+    def isHostNameValid(self):
+        """Checks if hostname is valid."""
+        hostname = self.ui.hostname.text().toAscii()
+        if hostname:
+            return text_is_valid(hostname)
+        else:
+            return False
     
     def loadPersonalDefaults(self):
         """Loads test information."""

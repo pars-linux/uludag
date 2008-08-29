@@ -1,0 +1,204 @@
+# translation of tr.po to
+# translation of sahip.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ahmet Emre Aladağ <emre@jabber.pardus.org.tr>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: tr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-29 12:19+0300\n"
+"PO-Revision-Date: 2008-08-29 12:21+0300\n"
+"Last-Translator: Ahmet Emre Aladağ <emre@jabber.pardus.org.tr>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: sahip/sahipgen.py:74
+#, python-format
+msgid "Could not write to %s"
+msgstr "%s dosyasına yazılamadı"
+
+#: sahip/sahipgui.py:185
+msgid "Sahip"
+msgstr "Sahip"
+
+#: sahip/sahipgui.py:186
+msgid "Language:"
+msgstr "Dil:"
+
+#: sahip/sahipgui.py:187
+msgid "Variant:"
+msgstr "Türev:"
+
+#: sahip/sahipgui.py:188
+msgid "Root password:"
+msgstr "Yönetici parolası:"
+
+#: sahip/sahipgui.py:189
+msgid "Shadow"
+msgstr "Gölgele"
+
+#: sahip/sahipgui.py:190
+msgid "Time Zone:"
+msgstr "Saat Dilimi:"
+
+#: sahip/sahipgui.py:191
+msgid "Hostname:"
+msgstr "Bilgisayar adı:"
+
+#: sahip/sahipgui.py:192
+msgid "Users:"
+msgstr "Kullanıcılar:"
+
+#: sahip/sahipgui.py:193
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#: sahip/sahipgui.py:194
+msgid "Real Name:"
+msgstr "Gerçek Ad:"
+
+#: sahip/sahipgui.py:195 sahip/sahipmain.py:80
+msgid "Password:"
+msgstr "Parola:"
+
+#: sahip/sahipgui.py:196
+msgid "Password (again):"
+msgstr "Parola (tekrar):"
+
+#: sahip/sahipgui.py:197
+msgid "Groups:"
+msgstr "Gruplar:"
+
+#: sahip/sahipgui.py:198
+msgid ">"
+msgstr ">"
+
+#: sahip/sahipgui.py:199
+msgid "<"
+msgstr "<"
+
+#: sahip/sahipgui.py:200
+msgid "Add User"
+msgstr "Kullanıcı Ekle"
+
+#: sahip/sahipgui.py:201
+msgid "Delete User"
+msgstr "Kullanıcı Sil"
+
+#: sahip/sahipgui.py:202
+msgid "Autologin User:"
+msgstr "Otomatik Giriş:"
+
+#: sahip/sahipgui.py:203
+msgid "New User"
+msgstr "Yeni Kullanıcı"
+
+#: sahip/sahipgui.py:204
+msgid "Partitioning Type:"
+msgstr "Bölümlendirme Türü:"
+
+#: sahip/sahipgui.py:205
+msgid "Disk:"
+msgstr "Disk:"
+
+#: sahip/sahipgui.py:206
+msgid "Repo Name:"
+msgstr "Depo Adı:"
+
+#: sahip/sahipgui.py:207
+msgid "Repo Address:"
+msgstr "Depo Adresi:"
+
+#: sahip/sahipgui.py:208
+msgid "Generate XML File"
+msgstr "XML Dosyası Oluştur"
+
+#: sahip/sahipgui.py:209
+msgid "Clear"
+msgstr "Temizle"
+
+#: sahip/sahipmain.py:80
+msgid "Enter the root password to be shadowed"
+msgstr "Gölgelenecek yönetici parolasını girin"
+
+#: sahip/sahipmain.py:87 sahip/sahipmain.py:92 sahip/sahipmain.py:96
+#: sahip/sahipmain.py:100 sahip/sahipmain.py:104 sahip/sahipmain.py:128
+#: sahip/sahipmain.py:136 sahip/sahipmain.py:147 sahip/sahipmain.py:186
+#: sahip/sahipmain.py:189 sahip/sahipmain.py:221
+msgid "Error"
+msgstr "Hata"
+
+#: sahip/sahipmain.py:87
+msgid "The Passwords do not match."
+msgstr "Parolalar uyuşmuyor."
+
+#: sahip/sahipmain.py:92
+msgid "Invalid username. Should include only [a-z][A-Z]_[0-9]"
+msgstr ""
+"Geçersiz kullanıcı adı. Kullanıcı adı, sadece [a-z][A-Z]_[0-9] "
+"karakterlerinden oluşabilir."
+
+#: sahip/sahipmain.py:96
+msgid "Invalid real name. Can't have newline or : characters."
+msgstr "Geçersiz gerçek ad. Gerçek ad, yeni satır veya : karakterlerinden oluşamaz."
+
+#: sahip/sahipmain.py:100
+msgid "Invalid password. Password should be at least 4 characters."
+msgstr "Geçersiz parola. Parola en az 4 karakter uzunluğunda olmalıdır."
+
+#: sahip/sahipmain.py:104
+#, python-format
+msgid "There's another user with username %s."
+msgstr "%s kullanıcı adına sahip başka bir kullanıcı mevcut."
+
+#: sahip/sahipmain.py:128
+msgid "No user selected."
+msgstr "Kullanıcı seçilmedi."
+
+#: sahip/sahipmain.py:136 sahip/sahipmain.py:147
+msgid "No group selected."
+msgstr "Grup seçilmedi."
+
+#: sahip/sahipmain.py:186
+msgid "Invalid hostname. Hostname can only include ASCII characters."
+msgstr ""
+"Geçersiz bilgisayar adı. Bilgisayar adı sadece ASCII karakterlerden "
+"oluşabilir."
+
+#: sahip/sahipmain.py:189
+msgid "Invalid root password. Root password should be at least 4 characters."
+msgstr ""
+"Geçersiz yönetici parolası. Yönetici parolası en az 4 karakter uzunluğunda "
+"olmalıdır."
+
+#: sahip/sahipmain.py:219
+msgid "Successful"
+msgstr "Başarılı"
+
+#: sahip/sahipmain.py:219
+#, python-format
+msgid "The XML File has been saved to %s."
+msgstr "XML Dosyası %s olarak kaydedildi."
+
+#: sahip/sahipmain.py:221
+#, python-format
+msgid "Could not save the XML File to %s."
+msgstr "XML Dosyası %s olarak kaydedilemedi."
+
+#: sahip/sahipmain.py:291
+msgid "Automatic Partitioning"
+msgstr "Otomatik Bölümlendirme"
+
+#: sahip/sahipmain.py:292
+msgid "Smart Automatic Partitioning"
+msgstr "Akıllı Otomatik Bölümlendirme"
+
+#: sahip/sahipmain.py:293
+msgid "Manuel Partitioning"
+msgstr "Elle Bölümlendirme"
+
