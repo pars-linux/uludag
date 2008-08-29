@@ -27,9 +27,7 @@ class connShare(QDialog):
         self.setName("connShare")
 
         connShareLayout = QGridLayout(self,1,1,11,6,"connShareLayout")
-
         self.sharecheckBox = QCheckBox(self,"sharecheckBox")
-
         connShareLayout.addWidget(self.sharecheckBox,0,0)
 
         self.groupBox1 = QGroupBox(self,"")
@@ -40,24 +38,17 @@ class connShare(QDialog):
         groupBox1Layout.setAlignment(Qt.AlignTop)
 
         self.textLabel1 = QLabel(self.groupBox1,"textLabel1")
-
         groupBox1Layout.addWidget(self.textLabel1,0,0)
-
         self.intcombo = QComboBox(0,self.groupBox1,"intcombo")
-
         groupBox1Layout.addWidget(self.intcombo,0,1)
-
         self.sharecombo = QComboBox(0,self.groupBox1,"sharecombo")
-
         groupBox1Layout.addWidget(self.sharecombo,1,1)
-
         self.textLabel2 = QLabel(self.groupBox1,"textLabel2")
-
         groupBox1Layout.addWidget(self.textLabel2,1,0)
-
         connShareLayout.addWidget(self.groupBox1,1,0)
 
         self.buttonGroup2 = QButtonGroup(self,"buttonGroup2")
+        self.buttonGroup2.setFrameStyle(QFrame.MenuBarPanel | QFrame.Plain)
         self.buttonGroup2.setColumnLayout(0,Qt.Vertical)
         self.buttonGroup2.layout().setSpacing(6)
         self.buttonGroup2.layout().setMargin(11)
@@ -76,7 +67,7 @@ class connShare(QDialog):
 
         self.languageChange()
 
-        self.resize(QSize(411,196).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(400,120).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
         self.textLabel1.setBuddy(self.intcombo)
