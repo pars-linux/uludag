@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'gui.ui'
+import gettext
+__trans = gettext.translation('sahip', fallback=True)
+_ = __trans.ugettext
+
+# Form implementation generated from reading ui file 'sahip/sahipgui.ui'
 #
-# Created: Thu Aug 28 16:52:55 2008
+# Created: Fri Aug 29 15:36:41 2008
 #      by: PyQt4 UI code generator 4.4.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -111,15 +115,15 @@ class Ui_Sahip(object):
         self.userDelete = QtGui.QPushButton(Sahip)
         self.userDelete.setObjectName("userDelete")
         self.gridLayout.addWidget(self.userDelete, 5, 2, 1, 1)
-        self.label_12 = QtGui.QLabel(Sahip)
-        self.label_12.setObjectName("label_12")
-        self.gridLayout.addWidget(self.label_12, 5, 0, 1, 1)
         self.label_13 = QtGui.QLabel(Sahip)
         self.label_13.setObjectName("label_13")
         self.gridLayout.addWidget(self.label_13, 6, 0, 1, 1)
         self.autologinUserBox = QtGui.QComboBox(Sahip)
         self.autologinUserBox.setObjectName("autologinUserBox")
         self.gridLayout.addWidget(self.autologinUserBox, 6, 1, 1, 2)
+        self.newUser = QtGui.QPushButton(Sahip)
+        self.newUser.setObjectName("newUser")
+        self.gridLayout.addWidget(self.newUser, 5, 0, 1, 1)
         self.gridLayout_3.addLayout(self.gridLayout, 5, 2, 1, 2)
         self.label_14 = QtGui.QLabel(Sahip)
         self.label_14.setObjectName("label_14")
@@ -178,38 +182,29 @@ class Ui_Sahip(object):
         Sahip.setTabOrder(self.repoAddress, self.generateXMLButton)
 
     def retranslateUi(self, Sahip):
-        Sahip.setWindowTitle(QtGui.QApplication.translate("Sahip", "Sahip", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("Sahip", "Language:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("Sahip", "Variant:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_3.setText(QtGui.QApplication.translate("Sahip", "Root password:", None, QtGui.QApplication.UnicodeUTF8))
-        self.shadowButton.setText(QtGui.QApplication.translate("Sahip", "Shadow", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_4.setText(QtGui.QApplication.translate("Sahip", "Time Zone:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_5.setText(QtGui.QApplication.translate("Sahip", "Hostname:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_6.setText(QtGui.QApplication.translate("Sahip", "Users:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_7.setText(QtGui.QApplication.translate("Sahip", "Username:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_8.setText(QtGui.QApplication.translate("Sahip", "Real Name:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_9.setText(QtGui.QApplication.translate("Sahip", "Password:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_10.setText(QtGui.QApplication.translate("Sahip", "Password (again):", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_11.setText(QtGui.QApplication.translate("Sahip", "Groups:", None, QtGui.QApplication.UnicodeUTF8))
-        self.groupAdd.setText(QtGui.QApplication.translate("Sahip", ">", None, QtGui.QApplication.UnicodeUTF8))
-        self.groupDelete.setText(QtGui.QApplication.translate("Sahip", "<", None, QtGui.QApplication.UnicodeUTF8))
-        self.userAdd.setText(QtGui.QApplication.translate("Sahip", "Add User", None, QtGui.QApplication.UnicodeUTF8))
-        self.userDelete.setText(QtGui.QApplication.translate("Sahip", "Delete User", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_13.setText(QtGui.QApplication.translate("Sahip", "Autologin User:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_14.setText(QtGui.QApplication.translate("Sahip", "Partitioning Type:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_17.setText(QtGui.QApplication.translate("Sahip", "Disk:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_15.setText(QtGui.QApplication.translate("Sahip", "Repo Name:", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_16.setText(QtGui.QApplication.translate("Sahip", "Repo Address:", None, QtGui.QApplication.UnicodeUTF8))
-        self.generateXMLButton.setText(QtGui.QApplication.translate("Sahip", "Generate XML File", None, QtGui.QApplication.UnicodeUTF8))
-        self.clearButton.setText(QtGui.QApplication.translate("Sahip", "Clear", None, QtGui.QApplication.UnicodeUTF8))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    Sahip = QtGui.QWidget()
-    ui = Ui_Sahip()
-    ui.setupUi(Sahip)
-    Sahip.show()
-    sys.exit(app.exec_())
+        Sahip.setWindowTitle(_("Sahip"))
+        self.label.setText(_("Language:"))
+        self.label_2.setText(_("Variant:"))
+        self.label_3.setText(_("Root password:"))
+        self.shadowButton.setText(_("Shadow"))
+        self.label_4.setText(_("Time Zone:"))
+        self.label_5.setText(_("Hostname:"))
+        self.label_6.setText(_("Users:"))
+        self.label_7.setText(_("Username:"))
+        self.label_8.setText(_("Real Name:"))
+        self.label_9.setText(_("Password:"))
+        self.label_10.setText(_("Password (again):"))
+        self.label_11.setText(_("Groups:"))
+        self.groupAdd.setText(_(">"))
+        self.groupDelete.setText(_("<"))
+        self.userAdd.setText(_("Add User"))
+        self.userDelete.setText(_("Delete User"))
+        self.label_13.setText(_("Autologin User:"))
+        self.newUser.setText(_("New User"))
+        self.label_14.setText(_("Partitioning Type:"))
+        self.label_17.setText(_("Disk:"))
+        self.label_15.setText(_("Repo Name:"))
+        self.label_16.setText(_("Repo Address:"))
+        self.generateXMLButton.setText(_("Generate XML File"))
+        self.clearButton.setText(_("Clear"))
 
