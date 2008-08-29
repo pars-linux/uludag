@@ -1,6 +1,6 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1 Beta [r3]</Title>
-    <WorkDir>/home/ekin/cdtemp/</WorkDir>
+    <Title>Pardus 2008.1 Beta</Title>
+    <WorkDir>/home/ekin/cdtempson/</WorkDir>
     <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
@@ -23,13 +23,11 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>apmd</SelectedPackage>
-        <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
-        <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
         <SelectedPackage>bogofilter</SelectedPackage>
@@ -268,7 +266,6 @@
         <Package>amrnb</Package>
         <Package>amrwb</Package>
         <Package>apmd</Package>
-        <Package>aria2</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
         <Package>aspell</Package>
@@ -286,7 +283,6 @@
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bc</Package>
-        <Package>bind-tools</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
@@ -297,7 +293,6 @@
         <Package>bootsplash-theme-pardus</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
-        <Package>c-ares</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
