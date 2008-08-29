@@ -708,7 +708,7 @@ class Settings(QWidget):
                         else:
                             u = unicode(self.auth_user_line.text())
                             pw = unicode(self.auth_passphrase_line.text())
-                        comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
+                            comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, u, pw, "", "", "", "", "", "", "")
             # close dialog
             self.parent().setEnabled(True)
             self.cleanup()
