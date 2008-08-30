@@ -1,3 +1,4 @@
+# translation of es.po to Spanish
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -11,9 +12,9 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 09:28+0300\n"
-"PO-Revision-Date: 2008-05-28 14:23-0400\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team:  <es@li.org>\n"
+"PO-Revision-Date: 2008-08-29 21:12-0400\n"
+"Last-Translator: \n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +22,7 @@ msgstr ""
 
 #: comariface.py:214
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "No está autorizado para esta operación."
 
 #: comariface.py:218 autoswitch.py:33 autoswitch.py:35 network-manager.py:35
 #: network-manager.py:110 network-applet.py:615 network-applet.py:629
@@ -113,9 +114,8 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: browser.py:72
-#, fuzzy
 msgid "Mod:"
-msgstr "Modo:"
+msgstr ""
 
 #: browser.py:101
 msgid "Turn on/off connection"
@@ -161,9 +161,8 @@ msgid "Connect Automatically"
 msgstr "Conectar automáticamente"
 
 #: browser.py:423
-#, fuzzy
 msgid "Share Connection"
-msgstr "Conexión"
+msgstr "Compartir conexión"
 
 #: browser.py:442
 msgid "Try Auto Connect on startup"
@@ -225,9 +224,8 @@ msgid "Select"
 msgstr "Seleccionar"
 
 #: connection.py:224
-#, fuzzy
 msgid "Device Mode"
-msgstr "Dispositivo:"
+msgstr "Modo Dispositivo"
 
 #: connection.py:230
 msgid "Mode:"
@@ -239,29 +237,27 @@ msgstr "Buscar"
 
 #: connection.py:272
 msgid "Security:"
-msgstr ""
+msgstr "Seguridad:"
 
 #: connection.py:274
 msgid "No authentication"
 msgstr "Sin autenticación"
 
 #: connection.py:278
-#, fuzzy
 msgid "Authentication:"
-msgstr "Autenticación"
+msgstr "Autenticación:"
 
 #: connection.py:283
-#, fuzzy
 msgid "Inner Authentication:"
-msgstr "Autenticación"
+msgstr "Autenticación interna:"
 
 #: connection.py:294
 msgid "Anonymous Identity:"
-msgstr ""
+msgstr "Identidad anónima:"
 
 #: connection.py:299
 msgid "User/Identity"
-msgstr ""
+msgstr "Usuario/Identidad"
 
 #: connection.py:304
 msgid "Password:"
@@ -269,40 +265,39 @@ msgstr "Contraseña:"
 
 #: connection.py:310
 msgid "Client Certificate:"
-msgstr ""
+msgstr "Certificado de cliente:"
 
 #: connection.py:315
 msgid "CA Certificate:"
-msgstr ""
+msgstr "Certificado CA:"
 
 #: connection.py:320
 msgid "Private Key File:"
-msgstr ""
+msgstr "Archivo de clave privada:"
 
 #: connection.py:325
-#, fuzzy
 msgid "Private Key Password:"
-msgstr "Contraseña:"
+msgstr "Contraseña de clave privada:"
 
 #: connection.py:358 connection.py:363
 msgid "Certificates (*)"
-msgstr ""
+msgstr "Certificados (*)"
 
 #: connection.py:358
 msgid "Select CA Certificate File"
-msgstr ""
+msgstr "Seleccionar Archivo de certificado CA"
 
 #: connection.py:363
 msgid "Select Client Certificate File"
-msgstr ""
+msgstr "Seleccione Archivo de certificado de cliente"
 
 #: connection.py:368
 msgid "Private Keys (*)"
-msgstr ""
+msgstr "Claves Privadas (*)"
 
 #: connection.py:368
 msgid "Select Private Key File"
-msgstr ""
+msgstr "Seleccionar archivo de clave privada"
 
 # Settings por "Configuración"?
 #: connection.py:476
@@ -363,25 +358,23 @@ msgstr "Servidor de nombres:"
 
 #: connsharing.py:108
 msgid "Internet Connection Sharing"
-msgstr ""
+msgstr "Compartir conexión de Internet"
 
 #: connsharing.py:109
-#, fuzzy
 msgid "Share Internet Connection"
-msgstr "Crear una conexión nueva"
+msgstr "Compartir conexión de Internet"
 
 #: connsharing.py:111
 msgid "Interface that goes to internet"
-msgstr ""
+msgstr "Interfaz dirigido hacia la internet"
 
 #: connsharing.py:112
-#, fuzzy
 msgid "Interface that will share connection"
-msgstr "Crear una conexión nueva"
+msgstr "Interfaz que va a compartir la conexión"
 
 #: connsharing.py:128
 msgid "D-Bus Error"
-msgstr ""
+msgstr "Error D-Bus"
 
 #: connsharing.py:132
 msgid "COMAR Error"
@@ -389,40 +382,37 @@ msgstr "Error COMAR"
 
 #: connsharing.py:136
 msgid "Changing States of Interfaces Failed"
-msgstr ""
+msgstr "Falla al aplicar cambios de estado de interfaces"
 
 #: connsharing.py:138
 msgid "DHCP Server Error"
-msgstr ""
+msgstr "Error de servidor DHCP"
 
 #: connsharing.py:157
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
-msgstr ""
+msgstr "Debe seleccionar interfaces diferentes para compartir la conexión a internet"
 
 #: connsharing.py:157
 msgid "Check Selected Interfaces"
-msgstr ""
+msgstr "Verifique las interfaces seleccionados"
 
 #: connsharing.py:167
 msgid "The sharing of your connection has been successfully done."
-msgstr ""
+msgstr "La configuración para compartir la conexión de internet fue aplicada exitosamente."
 
 #: connsharing.py:167
 msgid "Sharing is OK"
-msgstr ""
+msgstr "Compartir está funcionando"
 
 #: connsharing.py:268
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
+msgstr "No tiene una dirección IP para la interfaz hacia la internet"
 
-# i translated as: no remote hosts found
-# favor verificar
 #: connsharing.py:268
-#, fuzzy
 msgid "IP address not found"
-msgstr "No se encontraron equipos remotos"
+msgstr "Dirección IP no encontrada"
 
 #: network-manager.py:83
 msgid "Just try to connect automatically"
@@ -456,8 +446,7 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:477
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:592
 msgid "Connecting to <b>%1</b> ..."
@@ -486,5 +475,3 @@ msgstr "Ud. se encuentra ahora fuera de línea"
 msgid "Network Applet"
 msgstr "Applet de Red"
 
-#~ msgid "User name:"
-#~ msgstr "Nombre de Usuario:"
