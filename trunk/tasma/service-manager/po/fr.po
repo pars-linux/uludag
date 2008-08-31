@@ -19,19 +19,19 @@ msgstr ""
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
 msgid "Service Manager"
-msgstr "Gestionnaire des Services"
+msgstr "Gestionnaire de Services"
 
 #: src/service-manager.py:81
 msgid "Service Manager is already started!"
-msgstr "Le Gestionnaire de Services est déjà en cours d'exécution !"
+msgstr "Le Gestionnaire de Services est déjà en cours d'exécution!"
 
 #: src/sm_mainview.py:126
 msgid "Unable to connect to DBus."
-msgstr ""
+msgstr "Impossible de connecter à DBus."
 
 #: src/sm_mainview.py:126
 msgid "DBus Error"
-msgstr ""
+msgstr "Erreur de DBus"
 
 #: src/sm_mainview.py:139
 msgid "You are not authorized for this operation."
@@ -39,11 +39,11 @@ msgstr "Vous n'êtes pas autorisé à effectuer cette opération."
 
 #: src/sm_mainview.py:168
 msgid "D-Bus Error"
-msgstr ""
+msgstr "Erreur de D-Bus"
 
 #: src/sm_mainview.py:172
 msgid "COMAR Error"
-msgstr ""
+msgstr "Erreur de COMAR"
 
 #: src/sm_mainview.py:242 src/service_manager.py:127
 msgid "Select a service from list."
@@ -51,7 +51,7 @@ msgstr "Sélectionner un service de la liste."
 
 #: src/sm_mainview.py:249
 msgid "Clear Search"
-msgstr ""
+msgstr "Annuler la recherche"
 
 #: src/sm_mainview.py:250 src/service_manager.py:129
 #: src/service_manager.py:131
@@ -70,23 +70,23 @@ msgstr "%s est en cours d'exécution."
 #: src/sm_mainview.py:260
 #, python-format
 msgid "%s is not running."
-msgstr "%s est à l'arrêt."
+msgstr "%s est arrêté."
 
 #: src/sm_mainview.py:334
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
 msgstr ""
-"L'arrêt de service provoquera d'éventuel problèmes. \n"
-"Êtes vous sûr de vouloir arrêter ce service ?"
+"L'arrêt de ce service provoquera d'éventuel problèmes.\n"
+"Êtes vous sûr de vouloir arrêter ce service?"
 
 #: src/sm_mainview.py:338
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
 msgstr ""
-"L'arrêt de service provoquera d'éventuel problèmes. \n"
-"Êtes vous sûr de vouloir arrêter ce service ?"
+"La désactivation de ce service provoquera d'éventuel problèmes.\n"
+"Êtes vous sûr de vouloir désactiver ce service?"
 
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
@@ -114,11 +114,11 @@ msgstr "Ne pas lancer au démarrage du système."
 
 #: src/service_manager.py:139
 msgid "Reset Search"
-msgstr "Redémarrer"
+msgstr "Annuler la recherche"
 
 #: src/service_manager.py:140
 msgid "Search:"
-msgstr ""
+msgstr "Recherche:"
 
 #: src/service_manager.py:141
 msgid "&List servers only."
