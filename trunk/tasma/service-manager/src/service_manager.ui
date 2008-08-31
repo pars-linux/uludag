@@ -324,9 +324,6 @@
                     <property name="text">
                         <string>&amp;List servers only.</string>
                     </property>
-                    <property name="accel">
-                        <string>Alt+L</string>
-                    </property>
                     <property name="checked">
                         <bool>true</bool>
                     </property>
