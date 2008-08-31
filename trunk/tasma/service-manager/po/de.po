@@ -117,7 +117,7 @@ msgstr "Nicht automatisch starten."
 
 #: src/service_manager.py:139
 msgid "Reset Search"
-msgstr "Neustarten"
+msgstr "Suche Leeren"
 
 #: src/service_manager.py:140
 msgid "Search:"
