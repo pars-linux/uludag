@@ -84,8 +84,8 @@ msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
 msgstr ""
-"Bu servisi durdurursanız, problem yaşayabilirsiniz.\n"
-"Servisi durdurmak istediğinizden emin misiniz?"
+"Bu servisi kapatırsanız, problem yaşayabilirsiniz.\n"
+"Servisi kapatmak istediğinizden emin misiniz?"
 
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
@@ -113,7 +113,7 @@ msgstr "Açılışta çalıştırma"
 
 #: src/service_manager.py:139
 msgid "Reset Search"
-msgstr "Yeniden Başlat"
+msgstr "Aramayı Temizle"
 
 #: src/service_manager.py:140
 msgid "Search:"
