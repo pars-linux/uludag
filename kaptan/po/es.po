@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-27 20:48+0300\n"
-"PO-Revision-Date: 2008-08-29 21:17-0400\n"
+"PO-Revision-Date: 2008-08-30 19:21-0400\n"
 "Last-Translator: \n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: src/kaptan.py:93 src/screens/ScrWelcome.py:24
 msgid "Welcome to Kaptan Wizard :)"
-msgstr "Bienvenido al asistene Kaptan :)"
+msgstr "Bienvenido al Asistene Kaptan :)"
 
 #: src/kaptan.py:95
 msgid "&Back"
@@ -41,7 +41,7 @@ msgstr "Kaptan ya se está ejecutando!"
 
 #: src/kaptan.py:246
 msgid "Kaptan Welcome Wizard"
-msgstr "Bienvenido al asistente Kaptan"
+msgstr "Bienvenido al Asistente Kaptan"
 
 #: src/screens/keyboarddlg.py:653 src/screens/keyboarddlg.py:669
 msgid "Keyboard Layouts"
@@ -107,7 +107,7 @@ msgstr "Escritorios"
 
 #: src/screens/ScrMultiple.py:61
 msgid "<p>In this module, you can configure how many virtual desktops you want.</p>"
-msgstr "<p>En este módulo puede especificar cuantos escritorios desea.</p>"
+msgstr "<p>En este módulo puede especificar cuantos escritorios virtuales desea.</p>"
 
 #: src/screens/ScrMultiple.py:62
 msgid "Mouse wheel over desktop background switches desktop."
@@ -186,7 +186,7 @@ msgstr "Do&ble-clic para abrir archivos y carpetas"
 
 #: src/screens/ScrNetwork.py:25
 msgid "Configure network settings..."
-msgstr "Configurar red..."
+msgstr "Configuración de red..."
 
 #: src/screens/ScrNetwork.py:37
 msgid "<big>Loading...</big>"
@@ -200,7 +200,7 @@ msgid ""
 msgstr ""
 "Este asistente, llamado <b>Kaptan Desktop</b>, le ayudará con su "
 "configuración básica de su escritorio <b>Pardus</b> de manera rápida. Por "
-"favor pinche <b>Siguiente</b> para personalizar su escritorio. :)"
+"favor presione <b>Siguiente</b> para personalizar su escritorio. :)"
 
 #: src/screens/ScrWelcome.py:34
 msgid ""
@@ -246,8 +246,8 @@ msgid ""
 "manager."
 msgstr ""
 "<b>Administrador de Paquetes</b> es la interfáz gráfica de <b>PiSi</b>. "
-"Puede fácilmente instalar nuevos programas y actualizar su sistema, además "
-"puede observar actualizaciones disponibles con un ícono en la barra de "
+"Le permite instalar fácilmente nuevos programas y actualizar su sistema, además "
+"puede observar la disponibilidad de actualizaciones en un ícono en la barra de "
 "tareas."
 
 #: src/screens/ScrPackage.py:52
@@ -362,7 +362,7 @@ msgid ""
 "Pardus and try applications below.</p>"
 msgstr ""
 "<p>Felicidades! Ha completado todos los pasos. Ahora puede continuar "
-"usandoPardus y probar los programas.</p>"
+"usando Pardus y probar los programas.</p>"
 
 #: src/screens/goodbyedlg.py:202
 msgid "Screen Resolution"
