@@ -92,6 +92,7 @@ def main():
     win.setCaption(i18n('Boot Manager'))
     win.resize(QSize(500, 400).expandedTo(win.minimumSizeHint()))
     attachMainWidget(win)
+    win.setIcon(getIconSet("boot_manager").pixmap(QIconSet.Small, QIconSet.Normal))
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
 
