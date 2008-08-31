@@ -111,8 +111,14 @@ class widgetEntryList(QWidget):
         def handler():
             self.spinTimeout.setEnabled(True)
         def cancel():
+            self.setTimeoutSlot(False)
+            self.spinTimeout.setValue(int(self.parent.options["timeout"]))
+            self.setTimeoutSlot(True)
             handler()
         def error(exception):
+            self.setTimeoutSlot(False)
+            self.spinTimeout.setValue(int(self.parent.options["timeout"]))
+            self.setTimeoutSlot(True)
             handler()
         self.spinTimeout.setEnabled(False)
         ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
@@ -421,7 +427,7 @@ class widgetUnused(QWidget):
         ch = self.parent.callMethod("listUnused", "tr.org.pardus.comar.boot.loader.get")
         ch.registerDone(handler)
         ch.call()
-    
+
     def slotKernels(self):
         item = self.listKernels.firstItem()
         versions = []
@@ -435,12 +441,12 @@ class widgetUnused(QWidget):
         else:
             self.buttonAdd.setEnabled(False)
             self.buttonRemove.setEnabled(False)
-    
+
     def slotAdd(self):
         self.buttonAdd.setEnabled(False)
         self.buttonRemove.setEnabled(False)
         self.parent.widgetEditEntry.newEntry()
-        
+
         version = str(self.listKernels.currentText())
         root = getRoot()
         self.parent.widgetEditEntry.editTitle.setText(version)
@@ -451,7 +457,7 @@ class widgetUnused(QWidget):
             self.parent.widgetEditEntry.listSystem.setCurrentText("Linux")
         self.parent.widgetEditEntry.editKernel.setText("/boot/kernel-%s" % version)
         self.parent.widgetEditEntry.editOptions.setText("root=%s" % root)
-    
+
     def slotRemove(self):
         confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall selected kernel(s) from the system?"), i18n("Uninstall Kernel"))
         if confirm == KMessageBox.Yes:
@@ -473,43 +479,43 @@ class widgetUnused(QWidget):
                     ch = self.parent.callMethod("removeUnused", "tr.org.pardus.comar.boot.loader.removeunused")
                     ch.registerDone(handler, version == versions[-1])
                     ch.call(version)
-    
+
     def slotExit(self):
         self.parent.showScreen("Entries")
 
 class widgetMain(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
-        
+
         #self.link = None
         self.dia = None
-        
+
         if not self.openBus():
             sys.exit(1)
-        
+
         self.entries = []
         self.options = {}
         self.systems = {}
         self.screens = []
-        
+
         layout = QGridLayout(self, 1, 1, 0, 0)
         self.stack = QWidgetStack(self)
         layout.addWidget(self.stack, 0, 0)
-        
+
         self.widgetEntries = widgetEntryList(self)
         self.stack.addWidget(self.widgetEntries)
         self.screens.append("Entries")
-        
+
         self.widgetEditEntry = widgetEditEntry(self)
         self.stack.addWidget(self.widgetEditEntry)
         self.screens.append("EditEntry")
-        
+
         self.widgetUnused = widgetUnused(self)
         self.stack.addWidget(self.widgetUnused)
         self.screens.append("Unused")
-        
+
         self.setup()
-    
+
     def openBus(self):
         try:
             self.busSys = dbus.SystemBus()
@@ -518,13 +524,13 @@ class widgetMain(QWidget):
             KMessageBox.error(self, i18n("Unable to connect to DBus."), i18n("DBus Error"))
             return False
         return True
-    
+
     def setup(self):
         self.queryOptions()
         self.querySystems()
         self.queryEntries()
         self.listenSignals()
-    
+
     def callMethod(self, method, action):
         ch = CallHandler("grub", "Boot.Loader", method,
                          action,
@@ -571,7 +577,7 @@ class widgetMain(QWidget):
 
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Boot.Loader", member_keyword="signal", path_keyword="path")
-    
+
     def handleSignals(self, *args, **kwargs):
         path = kwargs["path"]
         signal = kwargs["signal"]
@@ -586,11 +592,10 @@ class widgetMain(QWidget):
                 if not self.widgetUnused.listBusy:
                     self.widgetUnused.listUnused()
 
-    
     def showScreen(self, label):
         screen = self.screens.index(label)
         self.stack.raiseWidget(screen)
-    
+
     def queryOptions(self):
         def handler(options):
             for key, value in options.iteritems():
@@ -606,7 +611,7 @@ class widgetMain(QWidget):
         ch = self.callMethod("getOptions", "tr.org.pardus.comar.boot.loader.get")
         ch.registerDone(handler)
         ch.call()
-    
+
     def querySystems(self):
         def handler(systems):
             self.systems = {}
@@ -617,7 +622,7 @@ class widgetMain(QWidget):
         ch = self.callMethod("listSystems", "tr.org.pardus.comar.boot.loader.get")
         ch.registerDone(handler)
         ch.call()
-    
+
     def queryEntries(self):
         def handler(entries):
             self.widgetEntries.listEntries.clear()
