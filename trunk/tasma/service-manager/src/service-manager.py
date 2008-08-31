@@ -89,6 +89,7 @@ def main():
     win.setMinimumSize(620, 420)
     win.resize(620, 420)
     attachMainWidget(win)
+    win.setIcon(getIconSet("service_manager").pixmap(QIconSet.Small, QIconSet.Normal))
     kapp.setMainWidget(win)
     sys.exit(win.exec_loop())
 
