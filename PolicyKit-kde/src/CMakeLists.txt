@@ -51,6 +51,7 @@ SET(
   nl.po
   pt_BR.po
   pl.po
+  sv.po
   tr.po
   )
 
