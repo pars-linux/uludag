@@ -21,10 +21,9 @@ import commands
 i18n = lambda x:x
 
 class connShare(QDialog):
-    def __init__(self, parent = None):
-        QDialog.__init__(self,parent,None,0,0)
-
-        self.setName("connShare")
+    def __init__(self, parent=None):
+        QDialog.__init__(self, parent, "connShare")
+        self.parent = parent
 
         connShareLayout = QGridLayout(self,1,1,11,6,"connShareLayout")
         self.sharecheckBox = QCheckBox(self,"sharecheckBox")
@@ -94,7 +93,7 @@ class connShare(QDialog):
             self.profiles.append(profile)
             self.intcombo.insertItem(profile.name)
             self.sharecombo.insertItem(profile.name)
-    
+
     def languageChange(self):
         self.setCaption(i18n("Internet Connection Sharing"))
         self.sharecheckBox.setText(i18n("Share Internet Connection"))
@@ -104,7 +103,7 @@ class connShare(QDialog):
         self.buttonGroup2.setTitle(QString.null)
         self.applyBut.setText(i18n("Apply"))
         self.cancelBut.setText(i18n("Cancel"))
-    
+
     def callMethod(self, method, action, model="Net.Filter"):
         ch = CallHandler("iptables", model, method,
                          action,
@@ -114,14 +113,14 @@ class connShare(QDialog):
         ch.registerAuthError(self.comarError)
         ch.registerDBusError(self.busError)
         return ch
-    
+
     def busError(self, exception):
         KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
         self.setupBusses()
 
     def comarError(self, exception):
         KMessageBox.error(self, str(exception), i18n("COMAR Error"))
-    
+
     #Errors
     def updownError(self, exception):
         KMessageBox.error(self, str(exception), i18n("Changing States of Interfaces Failed"))
@@ -151,7 +150,7 @@ class connShare(QDialog):
         #Set share settings(dhcp...)
         int = self.profiles[self.intcombo.currentItem()]
         shr = self.profiles[self.sharecombo.currentItem()]
-        
+
         #İptables
         self.rule_add = str("-t nat -A POSTROUTING -o %s -j MASQUERADE" % (int_if))
         def notifyOK():
@@ -199,7 +198,7 @@ class connShare(QDialog):
             ch.registerError(self.updownError)
             ch.registerAuthError(self.comarError)
             ch.registerDBusError(self.busError)
-            ch.call(shr.name, "up")        
+            ch.call(shr.name, "up")
 
         def downInt():
             if int.state == "up":
@@ -209,7 +208,7 @@ class connShare(QDialog):
                 ch.registerAuthError(self.comarError)
                 ch.registerDBusError(self.busError)
                 ch.call(int.name, "down")
-        
+
         def updown():
             if shr.state == "up":
                 ch = CallHandler(shr.script, "Net.Link", "setState", "tr.org.pardus.comar.net.link", self.winId(), comlink.busSys, comlink.busSes)
@@ -288,9 +287,8 @@ class connShare(QDialog):
                 removeNatRules()
 
         if not self.sharecheckBox.isOn():
-            self.groupBox1.setEnabled(False)
-            self.buttonGroup2.setEnabled(False)
-        
+            # FIXME gui freezes if checkbox is clicked 2 times without any other action
+
             ch = CallHandler("dhcp", "System.Service", "info", "tr.org.pardus.comar.system.service.set", self.winId(), comlink.busSys, comlink.busSes)
             ch.registerDone(handleState_dhcp)
             ch.registerError(self.comarError)
@@ -302,21 +300,28 @@ class connShare(QDialog):
             ch.registerDone(handleState_iptables)
             ch.call()
 
+            self.groupBox1.setEnabled(False)
+            self.buttonGroup2.setEnabled(False)
+
         else:
             self.groupBox1.setEnabled(True)
             self.buttonGroup2.setEnabled(True)
 
 
 if __name__ == "__main__":
+
+    """ do we need this ? without dbus mainloop this is useless i guess """
+
     appname     = ""
     description = ""
     version     = ""
 
-    KCmdLineArgs.init (sys.argv, appname, description, version)
-    a = KApplication ()
+    KCmdLineArgs.init(sys.argv, appname, description, version)
+    a = KApplication()
 
-    QObject.connect(a,SIGNAL("lastWindowClosed()"),a,SLOT("quit()"))
-    w = connShare()
+    QObject.connect(a, SIGNAL("lastWindowClosed()"), a, SLOT("quit()"))
+    w = connShare(None)
     a.setMainWidget(w)
     w.show()
     a.exec_loop()
+

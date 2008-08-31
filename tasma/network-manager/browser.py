@@ -235,12 +235,12 @@ class Device(QWidget):
         parent.devices[id] = self
         self.setPaletteBackgroundColor(KGlobalSettings.baseColor())
         self.columns = 3
-    
+
     def myHeight(self):
         fm = QFontMetrics(self.f)
         rect = fm.boundingRect(self.name)
         return rect.height() + 7
-    
+
     def paintEvent(self, event):
         cg = self.colorGroup()
         QWidget.paintEvent(self, event)
@@ -250,7 +250,7 @@ class Device(QWidget):
         paint.setFont(self.f)
         paint.drawText(6, self.myBase + 3, self.name)
         paint.restore()
-    
+
     def maxHint(self):
         maxw = 0
         maxh = 0
@@ -263,7 +263,7 @@ class Device(QWidget):
             if h > maxh:
                 maxh = h
         return maxw, maxh
-    
+
     def columnHint(self, width):
         if self.connections == []:
             return 3
@@ -274,7 +274,7 @@ class Device(QWidget):
         if c > 3:
             c = 3
         return c
-    
+
     def heightForWidth(self, width):
         h = self.myHeight()
         maxw, maxh = self.maxHint()
@@ -282,12 +282,12 @@ class Device(QWidget):
         if L % self.columns != 0:
             L += self.columns
         return h + (L / self.columns) * maxh
-    
+
     def myResize(self, aw, ah):
         childs = self.connections
         if not childs or len(childs) == 0:
             return
-        
+
         i = 0
         j = 0
         maxw = aw / self.columns
@@ -302,7 +302,7 @@ class Device(QWidget):
             if i >= self.columns:
                 i = 0
                 j += 1
-    
+
     def resizeEvent(self, event):
         size = event.size()
         self.myResize(size.width(), size.height())
@@ -315,7 +315,7 @@ class ConnectionView(QScrollView):
         self.devices = {}
         self.connections = {}
         self.viewport().setPaletteBackgroundColor(KGlobalSettings.baseColor())
-    
+
     def myResize(self, width):
         th = 0
         names = self.devices.keys()
@@ -339,15 +339,15 @@ class ConnectionView(QScrollView):
             item.myResize(width, h)
             th += h
         self.resizeContents(width, th)
-    
+
     def resizeEvent(self, event):
         QScrollView.resizeEvent(self, event)
         self.myResize(self.visibleWidth())
-    
+
     def add(self, conn):
         Connection(self, conn)
         self.myResize(self.contentsWidth())
-    
+
     def remove(self, conn):
         conn = self.connections.get(conn.hash, None)
         if not conn:
@@ -362,13 +362,13 @@ class ConnectionView(QScrollView):
             dev.deleteLater()
             del self.devices[dev.devid]
         self.myResize(self.contentsWidth())
-    
+
     def stateUpdate(self, conn):
         conn = self.connections.get(conn.hash, None)
         if not conn:
             return
         conn.updateState()
-    
+
     def configUpdate(self, conn):
         conn = self.connections.get(conn.hash, None)
         if not conn:
@@ -385,7 +385,7 @@ class ConnectionView(QScrollView):
                 dev.deleteLater()
                 del self.devices[dev.devid]
             self.add(temp)
-    
+
     def hotPlug(self, uid, info):
         dev = Device(self, info, uid)
         dev.show()
@@ -397,53 +397,53 @@ class Widget(QVBox):
         QVBox.__init__(self, *args)
         self.setMargin(6)
         self.setSpacing(6)
-        
+
         self.config = KConfig("network-appletrc")
         self.config.setGroup("General")
-        
+
         bar = QToolBar("lala", None, self)
-        
+
         self.butNew = QToolButton(getIconSet("add"), "", "lala", self.slotCreate, bar)
         self.butNew.setTextLabel(i18n("New connection"), False)
         self.butNew.setUsesTextLabel(True)
-        self.butNew.setTextPosition(self.butNew.BesideIcon)
-        
+        self.butNew.setTextPosition(self.butNew.BelowIcon)
+
         self.butConf = QToolButton(getIconSet("configure"), "", "lala", self.slotSettings, bar)
         self.butConf.setTextLabel(i18n("Name Service Settings"), False)
         self.butConf.setUsesTextLabel(True)
-        self.butConf.setTextPosition(self.butConf.BesideIcon)
-        
+        self.butConf.setTextPosition(self.butConf.BelowIcon)
+
         self.butAutoConnect = QToolButton(getIconSet("connect_creating"), "", "lala", self.slotAutoConnect, bar)
         self.butAutoConnect.setTextLabel(i18n("Connect Automatically"), False)
         self.butAutoConnect.setUsesTextLabel(True)
-        self.butAutoConnect.setTextPosition(self.butAutoConnect.BesideIcon)
+        self.butAutoConnect.setTextPosition(self.butAutoConnect.BelowIcon)
 
         self.share = connShare(self)
         self.butShare = QToolButton(getIconSet("proxy"), "", "lala", self.slotShare, bar)
         self.butShare.setTextLabel(i18n("Share Connection"), False)
         self.butShare.setUsesTextLabel(True)
-        self.butShare.setTextPosition(self.butShare.BesideIcon)
+        self.butShare.setTextPosition(self.butShare.BelowIcon)
 
         self.helpwin = None
         self.newconnwin = None
-        
+
         lab = QToolButton(bar)
         lab.setEnabled(False)
         bar.setStretchableWidget(lab)
-        
+
         but = QToolButton(getIconSet("help"), "", "lala", self.slotHelp, bar)
         but.setTextLabel(i18n("Help"), False)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        
+
         self.view = ConnectionView(self)
-        
+
         self.stack = nameconf.Window(self)
         self.autoCheck = QCheckBox(i18n("Try Auto Connect on startup"),self)
         self.connect(self.autoCheck, SIGNAL('clicked()'),self.setAutoConnect)
         self.autoCheck.setOn(self.config.readBoolEntry("AutoConnect",True))
         self.autoSwitch = autoswitch.autoSwitch(comlink, notifier=False)
-        
+
         comlink.new_hook.append(self.view.add)
         comlink.delete_hook.append(self.view.remove)
         comlink.nowifi_hook.append(self.disableAutoConnectButtons)
@@ -453,18 +453,18 @@ class Widget(QVBox):
         comlink.noconn_hook.append(self.slotCreate)
 
         comlink.window = self
-        
+
         for script in comlink.links:
             comlink.queryConnections(script)
-    
+
     def slotShare(self):
         self.share.getProfiles()
         self.share.show()
-    
+
     def setAutoConnect(self):
         self.config.writeEntry("AutoConnect", self.autoCheck.isOn())
         self.config.sync()
-    
+
     def slotAutoConnect(self):
         self.autoSwitch.scanAndConnect(force=True)
 
@@ -482,12 +482,12 @@ class Widget(QVBox):
             except RuntimeError:
                 pass
         self.newconnwin = newconn.ask_for_new(self)
-    
+
     def slotSettings(self):
         self.stack.hide()
         comlink.queryNames()
         self.stack.show()
-    
+
     def slotHelp(self):
         if self.helpwin:
             try:
@@ -497,7 +497,7 @@ class Widget(QVBox):
             except RuntimeError:
                 pass
         self.helpwin = widgets.HelpDialog("network-manager", i18n("Network Connections Help"), self)
-    
+
     def setInterface(self):
         self.butNew.setEnabled(False)
         self.butConf.setEnabled(False)

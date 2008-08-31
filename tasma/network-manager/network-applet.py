@@ -680,7 +680,7 @@ class NetTray(KSystemTray):
             self.applet.scanAndConnect()
         else:
             KSystemTray.mousePressEvent(self, event)
-    
+
     def slotSelect(self, mid):
         menu = self.contextMenu()
         conn = comlink.getConnById(mid)
@@ -708,13 +708,13 @@ def main():
     KCmdLineArgs.init(sys.argv, about)
     KUniqueApplication.addCmdLineOptions()
     app = KUniqueApplication(True, True, True)
-    
+
     DBusQtMainLoop(set_as_default=True)
-    
+
     # PolicyKit Agent requires window ID
     global comlink
     comlink = DBusInterface()
-    
+
     app.connect(app, SIGNAL("lastWindowClosed()"), app, SLOT("quit()"))
     icons.load_icons()
     applet = Applet(app)
