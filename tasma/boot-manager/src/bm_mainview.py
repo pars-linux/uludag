@@ -110,6 +110,7 @@ class widgetEntryList(QWidget):
     def slotTimeoutChanged(self, value):
         def handler():
             self.spinTimeout.setEnabled(True)
+            self.parent.setFocus()
         def cancel():
             self.setTimeoutSlot(False)
             self.spinTimeout.setValue(int(self.parent.options["timeout"]))
