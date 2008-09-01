@@ -1,0 +1,27 @@
+--- client/config.orig	2008-03-08 19:57:57.000000000 +0200
++++ client/config.py	2008-09-01 16:29:46.000000000 +0300
+@@ -11,12 +11,12 @@
+ 
+ 
+ #For Redhat
+-try:
+-    OS = file('/etc/redhat-release').read().strip()
+-except IOError:
+-    OS = "Shadowman!"
++#try:
++#    OS = file('/etc/redhat-release').read().strip()
++#except IOError:
++#    OS = "Shadowman!"
+ 
+-HW_UUID = "/etc/sysconfig/hw-uuid"
++#HW_UUID = "/etc/sysconfig/hw-uuid"
+ 
+ #These are the defaults taken from the source code.
+ #fs_types = get_config_attr("FS_TYPES", ["ext2", "ext3", "xfs", "reiserfs"])
+@@ -91,5 +91,5 @@
+ 
+ 
+ #For non RH Distros
+-#HW_UUID = "/etc/smolt/hw-uuid"
++HW_UUID = "/etc/smolt/hw-uuid"
+ 
