@@ -49,7 +49,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_serverBox_clicked(self):
         self.clientBox.toggle()
         self.browser = sinerjiAvahi.SinerjiAvahi('_workstation._tcp')
-        print self.discoveredHosts()
+        print self.browser.get_domains() ## Test 
         for domain in self.browser.get_domains():
             self.topComboBox.addItem(domain.rstrip())
             self.bottomComboBox.addItem(domain.rstrip())
