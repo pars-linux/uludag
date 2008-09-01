@@ -18,7 +18,7 @@ import connection
 import newconn
 import widgets
 import autoswitch
-from connsharing import *
+from connsharing import connShare
 
 from icons import icons, getIconSet
 from comariface import comlink

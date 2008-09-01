@@ -10,15 +10,13 @@
 
 import sys
 from qt import *
-from kdecore import KCmdLineArgs, KApplication
+from kdecore import KCmdLineArgs, KApplication, i18n
 from kdeui import *
 from comariface import comlink
 from handler import CallHandler
 import commands
 
 # DBus
-
-i18n = lambda x:x
 
 class connShare(QDialog):
     def __init__(self, parent=None):
