@@ -9,8 +9,8 @@ from copy import deepcopy
 
 from yali4.kahya import kahya
 
-from sahiplib import User, getShadowed
-from usergui import Ui_UserDialog
+from sahip.sahiplib import User, getShadowed
+from sahip.usergui import Ui_UserDialog
 
 import gettext
 __trans = gettext.translation('sahip', fallback=True)

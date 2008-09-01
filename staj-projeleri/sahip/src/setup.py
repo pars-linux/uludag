@@ -157,7 +157,7 @@ setup(name="sahip",
       packages = ['sahip'],
       package_dir = {'': ''},
       data_files = [],
-      scripts = [],
+      scripts = ['sahip/sahip'],
       ext_modules = [],
       cmdclass = {
         'build' : SahipBuild,

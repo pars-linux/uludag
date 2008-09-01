@@ -7,15 +7,15 @@
 from PyQt4 import QtCore, QtGui
 
 # Required modules within the project.
-from sahiplib import User, ComboBoxHandler, ListHandler
-from maingui import Ui_Sahip
-from sahipgen import SahipGenerator
-from userdialog import UserDialog
+from sahip.sahiplib import User, ComboBoxHandler, ListHandler, getShadowed
+from sahip.maingui import Ui_Sahip
+from sahip.sahipgen import SahipGenerator
+from sahip.userdialog import UserDialog
 
 # The modules borrowed from yali.
 from yali4.localedata import locales
 from yali4.constants import consts
-from yali4.sysutils import TimeZoneList, getShadowed, text_is_valid
+from yali4.sysutils import TimeZoneList, text_is_valid
 
 # We need these for i18n.
 import gettext
