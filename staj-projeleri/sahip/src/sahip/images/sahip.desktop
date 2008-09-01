@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Sahip
+Name[tr]=Sahip
+Comment=XML Generator for Kahya
+Comment[tr]=Kahya için XML oluşturucu
+
+Encoding=UTF-8
+Version=0.1
+
+Type=Application
+Categories=Application;System;Qt
+
+
+FilePattern=sahip
+Exec=sahip
+TryExec=sahip
+Terminal=false
+StartupNotify=true
+
+Icon=sahip.png
