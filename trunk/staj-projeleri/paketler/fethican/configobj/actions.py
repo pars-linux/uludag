@@ -9,7 +9,7 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "configobj-4.5.3"
+WorkDir = "configobj-%s" % get.srcVERSION()
 
 def install():
     pisitools.dosed("setup.py" ,
