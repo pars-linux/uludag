@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 09:28+0300\n"
+"POT-Creation-Date: 2008-09-01 12:02+0300\n"
 "PO-Revision-Date: 2008-06-20 10:17+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -96,15 +96,15 @@ msgstr "<b>%s</b> profiline bağlanıyor..."
 msgid "Name:"
 msgstr "İsim:"
 
-#: browser.py:59 connection.py:264
+#: browser.py:59 connection.py:265
 msgid "Authentication"
 msgstr "Kimlik doğrulama"
 
-#: browser.py:62 connection.py:495
+#: browser.py:62 connection.py:503
 msgid "Address:"
 msgstr "Adres:"
 
-#: browser.py:65 connection.py:536
+#: browser.py:65 connection.py:544
 msgid "Automatic"
 msgstr "Otomatik"
 
@@ -198,127 +198,127 @@ msgstr "Yeniden tara"
 msgid "Use"
 msgstr "Kullan"
 
-#: connection.py:197
+#: connection.py:198
 msgid "Connection name:"
 msgstr "Bağlantı adı:"
 
-#: connection.py:204
+#: connection.py:205
 msgid "Connection"
 msgstr "Bağlantı"
 
-#: connection.py:210
+#: connection.py:211
 msgid "Device:"
 msgstr "Aygıt:"
 
-#: connection.py:216
+#: connection.py:217
 msgid "Select"
 msgstr "Aygıt seç"
 
-#: connection.py:224
+#: connection.py:225
 msgid "Device Mode"
 msgstr "Aygıt Modu:"
 
-#: connection.py:230
+#: connection.py:231
 msgid "Mode:"
 msgstr "Mod:"
 
-#: connection.py:248
+#: connection.py:249
 msgid "Scan"
 msgstr "Tara"
 
-#: connection.py:272
+#: connection.py:273
 msgid "Security:"
 msgstr "Güvenlik:"
 
-#: connection.py:274
+#: connection.py:275
 msgid "No authentication"
 msgstr "Doğrulama yok"
 
-#: connection.py:278
+#: connection.py:279
 msgid "Authentication:"
 msgstr "Kimlik Doğrulama:"
 
-#: connection.py:283
+#: connection.py:284
 msgid "Inner Authentication:"
 msgstr "İç Doğrulama:"
 
-#: connection.py:294
+#: connection.py:295
 msgid "Anonymous Identity:"
 msgstr "Anonim Kimlik:"
 
-#: connection.py:299
+#: connection.py:300
 msgid "User/Identity"
 msgstr "Kullanıcı/Kimlik"
 
-#: connection.py:304
+#: connection.py:305
 msgid "Password:"
 msgstr "Parola:"
 
-#: connection.py:310
+#: connection.py:311
 msgid "Client Certificate:"
 msgstr "İstemci Sertifikası"
 
-#: connection.py:315
+#: connection.py:316
 msgid "CA Certificate:"
 msgstr "CA Sertifikası:"
 
-#: connection.py:320
+#: connection.py:321
 msgid "Private Key File:"
 msgstr "Özel Anahtar Dosyası:"
 
-#: connection.py:325
+#: connection.py:326
 msgid "Private Key Password:"
 msgstr "Özel Anahtar Parolası:"
 
-#: connection.py:358 connection.py:363
+#: connection.py:359 connection.py:364
 msgid "Certificates (*)"
 msgstr "Sertifikalar (*)"
 
-#: connection.py:358
+#: connection.py:359
 msgid "Select CA Certificate File"
 msgstr "CA Sertifika Dosyası Seçin"
 
-#: connection.py:363
+#: connection.py:364
 msgid "Select Client Certificate File"
 msgstr "İstemci Sertifika Dosyası Seçin"
 
-#: connection.py:368
+#: connection.py:369
 msgid "Private Keys (*)"
 msgstr "Özel Anahtarlar (*)"
 
-#: connection.py:368
+#: connection.py:369
 msgid "Select Private Key File"
 msgstr "Özel Anahtar Dosyası Seçin"
 
-#: connection.py:476
+#: connection.py:484
 msgid "Network settings"
 msgstr "Ağ ayarları"
 
-#: connection.py:486
+#: connection.py:494
 msgid "Automatic query (DHCP)"
 msgstr "Otomatik ayar (DHCP)"
 
-#: connection.py:491
+#: connection.py:499
 msgid "Manual"
 msgstr "Elle ayarla"
 
-#: connection.py:502 connection.py:523 connection.py:538
+#: connection.py:510 connection.py:531 connection.py:546
 msgid "Custom"
 msgstr "Özel"
 
-#: connection.py:507
+#: connection.py:515
 msgid "Net mask:"
 msgstr "Ağ maskesi:"
 
-#: connection.py:518
+#: connection.py:526
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
 
-#: connection.py:527 nameconf.py:45
+#: connection.py:535 nameconf.py:45
 msgid "Name servers"
 msgstr "İsim sunucuları"
 
-#: connection.py:798
+#: connection.py:815
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
@@ -346,39 +346,39 @@ msgstr "İsim Sunucusu Ekle"
 msgid "Name server:"
 msgstr "İsim sunucusu:"
 
-#: connsharing.py:108
+#: connsharing.py:98
 msgid "Internet Connection Sharing"
 msgstr "Internet Bağlantısı Paylaşımı"
 
-#: connsharing.py:109
+#: connsharing.py:99
 msgid "Share Internet Connection"
 msgstr "Internet Bağlantısını Paylaştır"
 
-#: connsharing.py:111
+#: connsharing.py:101
 msgid "Interface that goes to internet"
 msgstr "Internet'e açılan arayüz"
 
-#: connsharing.py:112
+#: connsharing.py:102
 msgid "Interface that will share connection"
 msgstr "Bağlantının paylaştırılacağı arayüz"
 
-#: connsharing.py:128
+#: connsharing.py:118
 msgid "D-Bus Error"
 msgstr "D-Bus Hatası"
 
-#: connsharing.py:132
+#: connsharing.py:122
 msgid "COMAR Error"
 msgstr "COMAR Hatası"
 
-#: connsharing.py:136
+#: connsharing.py:126
 msgid "Changing States of Interfaces Failed"
 msgstr "Arayüz Bağlantı Durumu Değiştirilemedi"
 
-#: connsharing.py:138
+#: connsharing.py:128
 msgid "DHCP Server Error"
 msgstr "DHCP Sunucu Hatası"
 
-#: connsharing.py:157
+#: connsharing.py:147
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
@@ -386,23 +386,23 @@ msgstr ""
 "Internete açılan ve bağlantının paylaştırıldığı arayüzler birbirinden farklı "
 "olmalı"
 
-#: connsharing.py:157
+#: connsharing.py:147
 msgid "Check Selected Interfaces"
 msgstr "Seçilen Arayüzleri Dene"
 
-#: connsharing.py:167
+#: connsharing.py:157
 msgid "The sharing of your connection has been successfully done."
 msgstr "Bağlantı paylaşımı tamamlandı."
 
-#: connsharing.py:167
+#: connsharing.py:157
 msgid "Sharing is OK"
 msgstr "Bağlantı paylaşımı tamam."
 
-#: connsharing.py:268
+#: connsharing.py:258
 msgid "You do not have an ip address for the interface that goes to internet"
 msgstr "Internet'e açılan arayüz IP alamadı"
 
-#: connsharing.py:268
+#: connsharing.py:258
 msgid "IP address not found"
 msgstr "IP adresi bululanamadı"
 

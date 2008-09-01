@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 09:28+0300\n"
+"POT-Creation-Date: 2008-09-01 12:02+0300\n"
 "PO-Revision-Date: 2007-04-02 17:31+0200\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
@@ -104,15 +104,15 @@ msgstr "Edita les connexions..."
 msgid "Name:"
 msgstr "Nom:"
 
-#: browser.py:59 connection.py:264
+#: browser.py:59 connection.py:265
 msgid "Authentication"
 msgstr "Autenticació"
 
-#: browser.py:62 connection.py:495
+#: browser.py:62 connection.py:503
 msgid "Address:"
 msgstr "Adreça:"
 
-#: browser.py:65 connection.py:536
+#: browser.py:65 connection.py:544
 msgid "Automatic"
 msgstr "Automàtic"
 
@@ -210,131 +210,131 @@ msgstr "Explora una altra vegada"
 msgid "Use"
 msgstr "Fés-la servir"
 
-#: connection.py:197
+#: connection.py:198
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
 
-#: connection.py:204
+#: connection.py:205
 msgid "Connection"
 msgstr "Connexió"
 
-#: connection.py:210
+#: connection.py:211
 msgid "Device:"
 msgstr "Dispositiu:"
 
-#: connection.py:216
+#: connection.py:217
 msgid "Select"
 msgstr "Seleciona"
 
-#: connection.py:224
+#: connection.py:225
 #, fuzzy
 msgid "Device Mode"
 msgstr "Dispositiu:"
 
-#: connection.py:230
+#: connection.py:231
 msgid "Mode:"
 msgstr "Mode:"
 
-#: connection.py:248
+#: connection.py:249
 msgid "Scan"
 msgstr "Explora"
 
-#: connection.py:272
+#: connection.py:273
 msgid "Security:"
 msgstr ""
 
-#: connection.py:274
+#: connection.py:275
 msgid "No authentication"
 msgstr "Sense autenticació"
 
-#: connection.py:278
+#: connection.py:279
 #, fuzzy
 msgid "Authentication:"
 msgstr "Autenticació"
 
-#: connection.py:283
+#: connection.py:284
 #, fuzzy
 msgid "Inner Authentication:"
 msgstr "Autenticació"
 
-#: connection.py:294
+#: connection.py:295
 msgid "Anonymous Identity:"
 msgstr ""
 
-#: connection.py:299
+#: connection.py:300
 msgid "User/Identity"
 msgstr ""
 
-#: connection.py:304
+#: connection.py:305
 msgid "Password:"
 msgstr "Mot de pas:"
 
-#: connection.py:310
+#: connection.py:311
 msgid "Client Certificate:"
 msgstr ""
 
-#: connection.py:315
+#: connection.py:316
 msgid "CA Certificate:"
 msgstr ""
 
-#: connection.py:320
+#: connection.py:321
 msgid "Private Key File:"
 msgstr ""
 
-#: connection.py:325
+#: connection.py:326
 #, fuzzy
 msgid "Private Key Password:"
 msgstr "Mot de pas:"
 
-#: connection.py:358 connection.py:363
+#: connection.py:359 connection.py:364
 msgid "Certificates (*)"
 msgstr ""
 
-#: connection.py:358
+#: connection.py:359
 msgid "Select CA Certificate File"
 msgstr ""
 
-#: connection.py:363
+#: connection.py:364
 msgid "Select Client Certificate File"
 msgstr ""
 
-#: connection.py:368
+#: connection.py:369
 msgid "Private Keys (*)"
 msgstr ""
 
-#: connection.py:368
+#: connection.py:369
 msgid "Select Private Key File"
 msgstr ""
 
-#: connection.py:476
+#: connection.py:484
 msgid "Network settings"
 msgstr "Arranjaments de la xarxa"
 
-#: connection.py:486
+#: connection.py:494
 msgid "Automatic query (DHCP)"
 msgstr "Protocol dinàmic (DHCP)"
 
-#: connection.py:491
+#: connection.py:499
 msgid "Manual"
 msgstr "Personalitzat"
 
-#: connection.py:502 connection.py:523 connection.py:538
+#: connection.py:510 connection.py:531 connection.py:546
 msgid "Custom"
 msgstr "A mida"
 
-#: connection.py:507
+#: connection.py:515
 msgid "Net mask:"
 msgstr "Màscara de xarxa:"
 
-#: connection.py:518
+#: connection.py:526
 msgid "Gateway:"
 msgstr "Portal d'enllaç:"
 
-#: connection.py:527 nameconf.py:45
+#: connection.py:535 nameconf.py:45
 msgid "Name servers"
 msgstr "Nom dels servidors"
 
-#: connection.py:798
+#: connection.py:815
 msgid "Configure network connection"
 msgstr "Configura la connexió de la xarxa"
 
@@ -362,63 +362,63 @@ msgstr "Afegeix un nom de servidor"
 msgid "Name server:"
 msgstr "Nom del servidor:"
 
-#: connsharing.py:108
+#: connsharing.py:98
 msgid "Internet Connection Sharing"
 msgstr ""
 
-#: connsharing.py:109
+#: connsharing.py:99
 #, fuzzy
 msgid "Share Internet Connection"
 msgstr "Crea una nova connexió"
 
-#: connsharing.py:111
+#: connsharing.py:101
 msgid "Interface that goes to internet"
 msgstr ""
 
-#: connsharing.py:112
+#: connsharing.py:102
 #, fuzzy
 msgid "Interface that will share connection"
 msgstr "Crea una nova connexió"
 
-#: connsharing.py:128
+#: connsharing.py:118
 msgid "D-Bus Error"
 msgstr ""
 
-#: connsharing.py:132
+#: connsharing.py:122
 msgid "COMAR Error"
 msgstr ""
 
-#: connsharing.py:136
+#: connsharing.py:126
 msgid "Changing States of Interfaces Failed"
 msgstr ""
 
-#: connsharing.py:138
+#: connsharing.py:128
 msgid "DHCP Server Error"
 msgstr ""
 
-#: connsharing.py:157
+#: connsharing.py:147
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
 msgstr ""
 
-#: connsharing.py:157
+#: connsharing.py:147
 msgid "Check Selected Interfaces"
 msgstr ""
 
-#: connsharing.py:167
+#: connsharing.py:157
 msgid "The sharing of your connection has been successfully done."
 msgstr ""
 
-#: connsharing.py:167
+#: connsharing.py:157
 msgid "Sharing is OK"
 msgstr ""
 
-#: connsharing.py:268
+#: connsharing.py:258
 msgid "You do not have an ip address for the interface that goes to internet"
 msgstr ""
 
-#: connsharing.py:268
+#: connsharing.py:258
 msgid "IP address not found"
 msgstr ""
 
