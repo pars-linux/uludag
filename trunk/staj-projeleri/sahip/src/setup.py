@@ -37,6 +37,13 @@ def qt_ui_files():
     p = "sahip/*.ui"
     return glob.glob(p)
 
+def data_files():
+    p = "sahip/images/*"
+    return glob.glob(p)
+def resource_files():
+    p = "sahip/*.qrc"
+    return glob.glob(p)	
+
 ##
 # build command
 class SahipBuild(build):
@@ -63,7 +70,7 @@ class SahipBuild(build):
                 y = l.split(",")[0]+', '
                 l = l.replace(y,z)
             l = l.replace(keyEnd,")")
-            #l = l.replace("data_rc","sahip.data_rc")
+            l = l.replace("resources_rc","sahip.resources_rc")
             x.write(l)
 
     def compile_ui(self, ui_file):
@@ -81,7 +88,7 @@ class SahipBuild(build):
         for f in qt_ui_files():
             self.compile_ui(f)
             self.add_gettext_support(f)
-        #os.system("pyrcc4 sahip/data.qrc -o sahip/data_rc.py")
+        os.system("pyrcc4 sahip/resources.qrc -o sahip/resources_rc.py")
         build.run(self)
 
 ##
@@ -118,6 +125,14 @@ class SahipUninstall(Command):
         if os.path.exists(data_dir):
             print "removing: ", data_dir
             shutil.rmtree(data_dir)
+        bin_path = "/usr/bin/sahip"
+        if os.path.exists(bin_path):
+            print "removing: ", bin_path
+            os.remove(bin_path)
+        link_path = "/usr/share/applications/sahip.desktop"
+        if os.path.exists(link_path):
+            print "removing: ", link_path
+            os.remove(link_path)
 
 i18n_domain = "sahip"
 i18n_languages = ["tr"]
@@ -134,6 +149,7 @@ i18n_languages = ["tr"]
 class I18nInstall(install):
     def run(self):
         install.run(self)
+        shutil.copy("sahip/images/sahip.desktop", "/usr/share/applications/sahip.desktop")
         for lang in i18n_languages:
             print "Installing '%s' translations..." % lang
             os.popen("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
@@ -156,7 +172,8 @@ setup(name="sahip",
       url="http://www.emrealadag.com",
       packages = ['sahip'],
       package_dir = {'': ''},
-      data_files = [],
+      data_files = [('/usr/share/sahip', resource_files()),
+      			('/usr/share/sahip/images', data_files())],
       scripts = ['sahip/sahip'],
       ext_modules = [],
       cmdclass = {
