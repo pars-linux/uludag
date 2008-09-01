@@ -63,7 +63,7 @@ class SahipBuild(build):
                 y = l.split(",")[0]+', '
                 l = l.replace(y,z)
             l = l.replace(keyEnd,")")
-            #l = l.replace("data_rc","yali4.data_rc")
+            #l = l.replace("data_rc","sahip.data_rc")
             x.write(l)
 
     def compile_ui(self, ui_file):
@@ -81,7 +81,7 @@ class SahipBuild(build):
         for f in qt_ui_files():
             self.compile_ui(f)
             self.add_gettext_support(f)
-        #os.system("pyrcc4 yali4/data.qrc -o yali4/data_rc.py")
+        #os.system("pyrcc4 sahip/data.qrc -o sahip/data_rc.py")
         build.run(self)
 
 ##
@@ -149,7 +149,7 @@ class I18nInstall(install):
 setup(name="sahip",
       version= getVersion(),
       description="SAHIP (XML Generator for Kahya)",
-      long_description="SAHIP (XML Generator for Kahya (Silent Installer for YALI)",
+      long_description="SAHIP (XML Generator for Kahya (Silent Installer for YALI))",
       license="GNU GPL2",
       author="Ahmet Emre Aladag",
       author_email="emre@jabber.pardus.org.tr",
