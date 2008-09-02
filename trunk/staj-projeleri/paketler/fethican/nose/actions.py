@@ -9,7 +9,7 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "nose-0.10.3"
+WorkDir = "nose-%s" % get.srcVERSION()
 
 def install():
     pythonmodules.install()
