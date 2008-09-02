@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 import dbus
 import avahi
-import re
-import os, sys
+import os, sys, re 
 from socket import gethostname
 from dbus import DBusException
 
@@ -54,7 +54,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomain.append("right_%s" % text)
         self.updateUi()
     
-    @pyqtSignature("Double")
+    @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
         if text:
             self.confdomain.append("left_%s" % text)
@@ -68,7 +68,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     
     @pyqtSignature("")
     def on_savequitButton_clicked(self):
-        self.save()  #Our custom function
+        self.save()
+
+   ### Test code###  
+    def save(self):
+        for x in self.confdomain:
+            print x
+            
 
 ## Only one checkbox has to be checked ##
     
@@ -137,13 +143,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
     def removeService(self, interface, protocol, name, stype, domain, flags):
-        host = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.remove(host)
+        hostadded = re.sub(r'\.%s$' % domain, '', host)
+        self.discoveredHosts.remove(hostadded)
 
     def service_resolved(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         #print "******", interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags
-        host = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.add(host)
+        hostremoved = re.sub(r'\.%s$' % domain, '', host)
+        self.discoveredHosts.add(hostremoved)
     
     def get_domains(self):
         return list(self.discoveredHosts)
