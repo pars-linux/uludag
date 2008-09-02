@@ -9,7 +9,7 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "DecoratorTools-1.7"
+WorkDir = "DecoratorTools-%s" % get.srcVERSION()
 
 def install():
     pythonmodules.install()
