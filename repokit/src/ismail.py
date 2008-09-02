@@ -293,7 +293,16 @@ class Source(AutoPiksemel):
             "library", "service", "kernel", "driver",
             "data", "data:doc", "data:font",
             "locale", "locale:tr", "locale:en", "locale:es", "locale:nl",
-            "locale:de", "locale:it", "locale:fr"
+            "locale:de", "locale:it", "locale:fr", "locale:sv", "locale:pt", "locale:pt_BR",
+            "locale:da", "locale:vi", "locale:nds", "locale:et", "locale:eu", "locale:el",
+            "locale:eo", "locale:fa", "locale:bn", "locale:fi", "locale:fy", "locale:pl",
+            "locale:gl", "locale:ga", "locale:he", "locale:hi", "locale:hu", "locale:is",
+            "locale:ja", "locale:nb", "locale:nn", "locale:kk", "locale:ko", "locale:km",
+            "locale:ru", "locale:lt", "locale:pt", "locale:lv", "locale:ms", "locale:mn"
+            "locale:mk", "locale:pa", "locale:ro", "locale:rw", "locale:az", "locale:ar",
+            "locale:se", "locale:sk", "locale:sl", "locale:sr", "locale:ss", "locale:bs",
+            "locale:br", "locale:bg", "locale:tg", "locale:ta", "locale:sr@Latn", "locale:af",
+            "locale:hr", "locale:cs", "locale:cy", "locale:ca", "locale:uk", "locale:uz"
         )
         
         for isa in self.isa:
