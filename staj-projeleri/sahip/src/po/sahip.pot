@@ -8,13 +8,68 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-02 11:51+0300\n"
+"POT-Creation-Date: 2008-09-02 16:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: sahip/sahip:97 sahip/sahip:103 sahip/sahip:219 sahip/maingui.py:158
+msgid "&Shadow"
+msgstr ""
+
+#: sahip/sahip:100 sahip/sahip:138
+msgid "&Unshadow"
+msgstr ""
+
+#: sahip/sahip:115 sahip/sahip:127 sahip/sahip:135 sahip/sahip:152
+#: sahip/sahip:199
+msgid "Error"
+msgstr ""
+
+#: sahip/sahip:115 sahip/sahip:127
+msgid "No user selected."
+msgstr ""
+
+#: sahip/sahip:135
+msgid "Invalid hostname. Hostname can only include ASCII characters."
+msgstr ""
+
+#: sahip/sahip:152
+msgid "Invalid root password. Root password should be at least 4 characters."
+msgstr ""
+
+#: sahip/sahip:167
+msgid "Save the XML file as"
+msgstr ""
+
+#: sahip/sahip:197
+msgid "Successful"
+msgstr ""
+
+#: sahip/sahip:197
+#, python-format
+msgid "The XML File has been saved to %s."
+msgstr ""
+
+#: sahip/sahip:199
+#, python-format
+msgid "Could not save the XML File to %s."
+msgstr ""
+
+#: sahip/sahip:260
+msgid "Automatic Partitioning"
+msgstr ""
+
+#: sahip/sahip:261
+msgid "Smart Automatic Partitioning"
+msgstr ""
+
+#: sahip/sahip:262
+msgid "Manuel Partitioning"
+msgstr ""
 
 #: sahip/maingui.py:154
 msgid "Sahip"
@@ -30,10 +85,6 @@ msgstr ""
 
 #: sahip/maingui.py:157
 msgid "Root password:"
-msgstr ""
-
-#: sahip/maingui.py:158 sahip/sahip.py:97 sahip/sahip.py:103
-msgid "&Shadow"
 msgstr ""
 
 #: sahip/maingui.py:159
@@ -86,57 +137,6 @@ msgstr ""
 
 #: sahip/maingui.py:171
 msgid "Partitioning Type:"
-msgstr ""
-
-#: sahip/sahip.py:100 sahip/sahip.py:138
-msgid "&Unshadow"
-msgstr ""
-
-#: sahip/sahip.py:115 sahip/sahip.py:127 sahip/sahip.py:135 sahip/sahip.py:152
-#: sahip/sahip.py:199
-msgid "Error"
-msgstr ""
-
-#: sahip/sahip.py:115 sahip/sahip.py:127
-msgid "No user selected."
-msgstr ""
-
-#: sahip/sahip.py:135
-msgid "Invalid hostname. Hostname can only include ASCII characters."
-msgstr ""
-
-#: sahip/sahip.py:152
-msgid "Invalid root password. Root password should be at least 4 characters."
-msgstr ""
-
-#: sahip/sahip.py:167
-msgid "Save the XML file as"
-msgstr ""
-
-#: sahip/sahip.py:197
-msgid "Successful"
-msgstr ""
-
-#: sahip/sahip.py:197
-#, python-format
-msgid "The XML File has been saved to %s."
-msgstr ""
-
-#: sahip/sahip.py:199
-#, python-format
-msgid "Could not save the XML File to %s."
-msgstr ""
-
-#: sahip/sahip.py:253
-msgid "Automatic Partitioning"
-msgstr ""
-
-#: sahip/sahip.py:254
-msgid "Smart Automatic Partitioning"
-msgstr ""
-
-#: sahip/sahip.py:255
-msgid "Manuel Partitioning"
 msgstr ""
 
 #: sahip/userdialog.py:206
