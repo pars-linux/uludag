@@ -64,6 +64,7 @@ about disk partitioning.
 
         self.device = None
         self.enable_next = False
+        self.lastChoice = self.ui.accept_auto_1
 
         # initialize all storage devices
         if not yali4.storage.init_devices():
@@ -80,6 +81,7 @@ about disk partitioning.
         self.connect(self.ui.accept_auto_1, SIGNAL("toggled(bool)"),self.slotSelectAutoUseAvail)
         self.connect(self.ui.accept_auto_2, SIGNAL("toggled(bool)"),self.slotSelectAutoEraseAll)
         self.connect(self.ui.manual, SIGNAL("clicked()"),self.slotSelectManual)
+        self.connect(self.ui.accept_auto, SIGNAL("clicked()"),self.slotSelectAuto)
         self.connect(self.ui.device_list, SIGNAL("currentItemChanged(QListWidgetItem * ,QListWidgetItem * )"),self.slotDeviceChanged)
 
     def fillDeviceList(self,limit=False):
@@ -165,6 +167,7 @@ about disk partitioning.
         self.fillDeviceList()
         self.enable_next = state
         self.device = self.ui.device_list.currentItem().getDevice()
+        self.lastChoice = self.ui.accept_auto_2
         self.updateUI()
 
     def slotSelectAutoUseAvail(self, state):
@@ -172,12 +175,28 @@ about disk partitioning.
         self.fillDeviceList(state)
         self.enable_next = state
         self.device = self.ui.device_list.currentItem().getDevice()
+        self.lastChoice = self.ui.accept_auto_1
         self.updateUI()
 
+    def slotSelectAuto(self):
+        self.ui.accept_auto.setChecked(True)
+        self.ui.manual.setChecked(False)
+        self.setAutoExclusives()
+        self.lastChoice.setChecked(True)
+
     def slotSelectManual(self):
+        self.ui.manual.setChecked(True)
+        self.ui.accept_auto.setChecked(False)
+        self.setAutoExclusives(False)
+        self.ui.accept_auto_1.setChecked(False)
+        self.ui.accept_auto_2.setChecked(False)
         ctx.installData.autoPartMethod = methodManual
         self.enable_next = True
         self.updateUI()
+
+    def setAutoExclusives(self, val=True):
+        self.ui.accept_auto_1.setAutoExclusive(val)
+        self.ui.accept_auto_2.setAutoExclusive(val)
 
     def updateUI(self):
         if self.enable_next:
