@@ -59,5 +59,5 @@ f.close()
 print "Wrote it"
 os.chdir("/home/emre/pardus/playground/emre/sahip/")
 os.system("sudo pisi rm sahip")
-os.system("sudo pisi bi pspec.xml")
-os.system("sudo pisi it sahip-0.1-1.pisi")
+os.system("sudo pisi bi pspec.xml -d")
+os.system("sudo pisi it sahip-0.1-1.pisi -d")

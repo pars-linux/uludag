@@ -92,7 +92,7 @@ class UserDialog(QtGui.QDialog):
         
     def slotCancel(self):
         """Closes the dialog, Restores the user if the OK button is not clicked.""" 
-        if self.user != None:                           # Means self.user is changed.
+        if self.user.username != None:                           # Means self.user is changed.
             self.restoreUser()                          # Then restore backup
         # No restore required if there's no change.
         self.close()                                    # Close the window
