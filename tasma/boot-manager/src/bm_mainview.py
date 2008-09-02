@@ -121,12 +121,12 @@ class widgetEntryList(QWidget):
             self.spinTimeout.setValue(int(self.parent.options["timeout"]))
             self.setTimeoutSlot(True)
             handler()
-        self.spinTimeout.setEnabled(False)
         ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
         ch.registerAuthError(error)
         ch.registerDBusError(error)
         ch.registerCancel(cancel)
         ch.registerDone(handler)
+        self.spinTimeout.setEnabled(False)
         ch.call("timeout", str(value))
 
     def slotAddEntry(self):
@@ -261,6 +261,13 @@ class widgetEditEntry(QWidget):
         self.parent.showScreen("EditEntry")
 
     def deleteEntry(self, index, title):
+        def handler():
+            self.parent.widgetEntries.listEntries.setEnabled(True)
+        def cancel():
+            handler()
+        def error(exception):
+            handler()
+
         entries = self.parent.entries
         pardus_root = getRoot()
         pardus_entries = []
@@ -284,9 +291,13 @@ class widgetEditEntry(QWidget):
                     confirm_uninstall = KMessageBox.questionYesNo(self, i18n("This is a Pardus kernel entry.\nDo you want to uninstall it from the system?"), i18n("Uninstall Kernel"))
                     if confirm_uninstall == KMessageBox.Yes:
                         uninstall = "yes"
-            self.parent.widgetEntries.listEntries.setEnabled(False)
 
             ch = self.parent.callMethod("removeEntry", "tr.org.pardus.comar.boot.loader.removeentry")
+            ch.registerAuthError(error)
+            ch.registerDBusError(error)
+            ch.registerCancel(cancel)
+            ch.registerDone(handler)
+            self.parent.widgetEntries.listEntries.setEnabled(False)
             ch.call(index, title, uninstall)
 
     def resetEntry(self):
