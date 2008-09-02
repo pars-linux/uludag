@@ -9,7 +9,7 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "TurboJson-1.1.3"
+WorkDir = "TurboJson-%s" % get.srcVERSION()
 
 def install():
     pythonmodules.install()
