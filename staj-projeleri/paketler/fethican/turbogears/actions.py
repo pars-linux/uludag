@@ -9,7 +9,7 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "TurboGears-1.0.5"
+WorkDir = "TurboGears-%s" % get.srcVERSION()
 
 def install():
     pythonmodules.install()
