@@ -1,3 +1,4 @@
+# translation of hebele.po to
 # translation of tr.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -5,10 +6,10 @@
 # Ahmet Emre Aladağ <emre@jabber.pardus.org.tr>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: tr\n"
+"Project-Id-Version: hebele\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-01 05:40+0300\n"
-"PO-Revision-Date: 2008-09-01 15:25+0300\n"
+"POT-Creation-Date: 2008-09-02 11:51+0300\n"
+"PO-Revision-Date: 2008-09-02 11:52+0300\n"
 "Last-Translator: Ahmet Emre Aladağ <emre@jabber.pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,122 +17,126 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: sahip/maingui.py:151
+#: sahip/maingui.py:154
 msgid "Sahip"
 msgstr "Sahip"
 
-#: sahip/maingui.py:152
+#: sahip/maingui.py:155
 msgid "Language:"
 msgstr "Dil:"
 
-#: sahip/maingui.py:153
+#: sahip/maingui.py:156
 msgid "Variant:"
 msgstr "Türev:"
 
-#: sahip/maingui.py:154
+#: sahip/maingui.py:157
 msgid "Root password:"
 msgstr "Yönetici parolası:"
 
-#: sahip/maingui.py:155 sahip/sahip.py:95 sahip/sahip.py:101
+#: sahip/maingui.py:158 sahip/sahip.py:97 sahip/sahip.py:103
 msgid "&Shadow"
 msgstr "&Gölgele"
 
-#: sahip/maingui.py:156
+#: sahip/maingui.py:159
 msgid "Time Zone:"
 msgstr "Saat Dilimi:"
 
-#: sahip/maingui.py:157
+#: sahip/maingui.py:160
 msgid "Hostname:"
 msgstr "Bilgisayar adı:"
 
-#: sahip/maingui.py:158
+#: sahip/maingui.py:161
 msgid "Users:"
 msgstr "Kullanıcılar:"
 
-#: sahip/maingui.py:159
+#: sahip/maingui.py:162
 msgid "&New"
 msgstr "&Yeni"
 
-#: sahip/maingui.py:160
+#: sahip/maingui.py:163
 msgid "&Edit"
 msgstr "&Düzenle"
 
-#: sahip/maingui.py:161
+#: sahip/maingui.py:164
 msgid "&Delete"
 msgstr "&Sil"
 
-#: sahip/maingui.py:162
+#: sahip/maingui.py:165
 msgid "Autologin User:"
 msgstr "Otomatik Giriş:"
 
-#: sahip/maingui.py:163
+#: sahip/maingui.py:166
 msgid "Disk:"
 msgstr "Disk:"
 
-#: sahip/maingui.py:164
+#: sahip/maingui.py:167
 msgid "Repo Name:"
 msgstr "Depo Adı:"
 
-#: sahip/maingui.py:165
+#: sahip/maingui.py:168
 msgid "Repo Address:"
 msgstr "Depo Adresi:"
 
-#: sahip/maingui.py:166
+#: sahip/maingui.py:169
 msgid "&Generate XML File"
 msgstr "XML Dosyası &Oluştur"
 
-#: sahip/maingui.py:167
+#: sahip/maingui.py:170
 msgid "&Clear"
 msgstr "&Temizle"
 
-#: sahip/maingui.py:168
+#: sahip/maingui.py:171
 msgid "Partitioning Type:"
 msgstr "Bölümlendirme Türü"
 
-#: sahip/sahip.py:98 sahip/sahip.py:136
+#: sahip/sahip.py:100 sahip/sahip.py:138
 msgid "&Unshadow"
 msgstr "&Aydınlat"
 
-#: sahip/sahip.py:113 sahip/sahip.py:125 sahip/sahip.py:133 sahip/sahip.py:150
-#: sahip/sahip.py:192
+#: sahip/sahip.py:115 sahip/sahip.py:127 sahip/sahip.py:135 sahip/sahip.py:152
+#: sahip/sahip.py:199
 msgid "Error"
 msgstr "Hata"
 
-#: sahip/sahip.py:113 sahip/sahip.py:125
+#: sahip/sahip.py:115 sahip/sahip.py:127
 msgid "No user selected."
 msgstr "Kullanıcı seçilmedi."
 
-#: sahip/sahip.py:133
+#: sahip/sahip.py:135
 msgid "Invalid hostname. Hostname can only include ASCII characters."
 msgstr "Geçersiz bilgisayar adı. Bilgisayar adı sadece ASCII karakterler içerebilir."
 
-#: sahip/sahip.py:150
+#: sahip/sahip.py:152
 msgid "Invalid root password. Root password should be at least 4 characters."
 msgstr "Geçersiz yönetici parolası. Parola en az 4 karakterden oluşmalıdır."
 
-#: sahip/sahip.py:190
+#: sahip/sahip.py:167
+msgid "Save the XML file as"
+msgstr "XML Dosyasını buraya kaydet"
+
+#: sahip/sahip.py:197
 msgid "Successful"
 msgstr "Başarılı"
 
-#: sahip/sahip.py:190
+#: sahip/sahip.py:197
 #, python-format
 msgid "The XML File has been saved to %s."
 msgstr "XML Dosyası %s olarak kaydedildi."
 
-#: sahip/sahip.py:192
+#: sahip/sahip.py:199
 #, python-format
 msgid "Could not save the XML File to %s."
 msgstr "XML Dosyası %s olarak kaydedilemedi."
 
-#: sahip/sahip.py:246
+#: sahip/sahip.py:253
 msgid "Automatic Partitioning"
 msgstr "Otomatik Bölümlendirme"
 
-#: sahip/sahip.py:247
+#: sahip/sahip.py:254
 msgid "Smart Automatic Partitioning"
 msgstr "Akıllı Otomatik Bölümlendirme"
 
-#: sahip/sahip.py:248
+#: sahip/sahip.py:255
 msgid "Manuel Partitioning"
 msgstr "Elle Bölümlendirme"
 

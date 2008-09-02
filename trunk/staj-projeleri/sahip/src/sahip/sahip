@@ -17,6 +17,8 @@ from yali4.localedata import locales
 from yali4.constants import consts
 from yali4.sysutils import TimeZoneList, text_is_valid
 
+from os import getenv
+
 # We need these for i18n.
 import gettext
 __trans = gettext.translation('sahip', fallback=True)
@@ -45,7 +47,7 @@ class SahipWidget(QtGui.QWidget):
         self.UserHandler = ListHandler(self.ui.userList, sorted=True)
         self.AutoLoginHandler = ComboBoxHandler(self.ui.autologinUserBox, sorted=True)
         self.PartitionHandler = ComboBoxHandler(self.ui.partitioningTypeBox, sorted=False)
-    
+    	
         self.connectSlots()
         self.setDefaults()
            
@@ -162,9 +164,14 @@ class SahipWidget(QtGui.QWidget):
 
             
         # Define filename to save the XML file.
-        filename = QtGui.QFileDialog.getSaveFileName()
+        filename = QtGui.QFileDialog.getSaveFileName(self, _("Save the XML file as"), "/home/%s/Desktop" % getenv("USER"),
+                                                     '.xml',
+                                                     '.xml')
+
         if not filename:
             return
+        elif filename[-4:] != '.xml':
+        	filename += ".xml"
         
         
         
@@ -207,19 +214,26 @@ class SahipWidget(QtGui.QWidget):
            
         
     def setDefaults(self):
-        """Sets defaults for all items in the form.""" 
+        """Sets defaults for all items in the form."""
+        
+       	if self.ui.shadowButton.text() != _("&Shadow"):
+        	self.slotShadow()
+        	self.ui.shadowButton.setChecked(False)
+        	 
         itemsToBeCleared = [
                             self.UserHandler,
+                            self.AutoLoginHandler,
                             self.LanguageHandler,
                             self.VariantHandler,
                             self.TimeZoneHandler,
-                            self.PartitionHandler
+                            self.PartitionHandler,
+                            self.ui.hostname,
+                            self.ui.rootPassword,
                             ]
         for item in itemsToBeCleared: 
             item.clear()
-            
-        self.AutoLoginHandler.addItem("", None)
         
+        self.AutoLoginHandler.addItem("", None)
         self.loadLanguages()
         self.loadTimeZones()
         self.loadPartitioningTypes()
