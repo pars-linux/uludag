@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hebele\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-02 11:51+0300\n"
+"POT-Creation-Date: 2008-09-02 16:29+0300\n"
 "PO-Revision-Date: 2008-09-02 11:52+0300\n"
 "Last-Translator: Ahmet Emre Aladağ <emre@jabber.pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -16,6 +16,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: sahip/sahip:97 sahip/sahip:103 sahip/sahip:219 sahip/maingui.py:158
+msgid "&Shadow"
+msgstr "&Gölgele"
+
+#: sahip/sahip:100 sahip/sahip:138
+msgid "&Unshadow"
+msgstr "&Aydınlat"
+
+#: sahip/sahip:115 sahip/sahip:127 sahip/sahip:135 sahip/sahip:152
+#: sahip/sahip:199
+msgid "Error"
+msgstr "Hata"
+
+#: sahip/sahip:115 sahip/sahip:127
+msgid "No user selected."
+msgstr "Kullanıcı seçilmedi."
+
+#: sahip/sahip:135
+msgid "Invalid hostname. Hostname can only include ASCII characters."
+msgstr ""
+"Geçersiz bilgisayar adı. Bilgisayar adı sadece ASCII karakterler içerebilir."
+
+#: sahip/sahip:152
+msgid "Invalid root password. Root password should be at least 4 characters."
+msgstr "Geçersiz yönetici parolası. Parola en az 4 karakterden oluşmalıdır."
+
+#: sahip/sahip:167
+msgid "Save the XML file as"
+msgstr "XML Dosyasını buraya kaydet"
+
+#: sahip/sahip:197
+msgid "Successful"
+msgstr "Başarılı"
+
+#: sahip/sahip:197
+#, python-format
+msgid "The XML File has been saved to %s."
+msgstr "XML Dosyası %s olarak kaydedildi."
+
+#: sahip/sahip:199
+#, python-format
+msgid "Could not save the XML File to %s."
+msgstr "XML Dosyası %s olarak kaydedilemedi."
+
+#: sahip/sahip:260
+msgid "Automatic Partitioning"
+msgstr "Otomatik Bölümlendirme"
+
+#: sahip/sahip:261
+msgid "Smart Automatic Partitioning"
+msgstr "Akıllı Otomatik Bölümlendirme"
+
+#: sahip/sahip:262
+msgid "Manuel Partitioning"
+msgstr "Elle Bölümlendirme"
 
 #: sahip/maingui.py:154
 msgid "Sahip"
@@ -32,10 +88,6 @@ msgstr "Türev:"
 #: sahip/maingui.py:157
 msgid "Root password:"
 msgstr "Yönetici parolası:"
-
-#: sahip/maingui.py:158 sahip/sahip.py:97 sahip/sahip.py:103
-msgid "&Shadow"
-msgstr "&Gölgele"
 
 #: sahip/maingui.py:159
 msgid "Time Zone:"
@@ -89,64 +141,15 @@ msgstr "&Temizle"
 msgid "Partitioning Type:"
 msgstr "Bölümlendirme Türü"
 
-#: sahip/sahip.py:100 sahip/sahip.py:138
-msgid "&Unshadow"
-msgstr "&Aydınlat"
-
-#: sahip/sahip.py:115 sahip/sahip.py:127 sahip/sahip.py:135 sahip/sahip.py:152
-#: sahip/sahip.py:199
-msgid "Error"
-msgstr "Hata"
-
-#: sahip/sahip.py:115 sahip/sahip.py:127
-msgid "No user selected."
-msgstr "Kullanıcı seçilmedi."
-
-#: sahip/sahip.py:135
-msgid "Invalid hostname. Hostname can only include ASCII characters."
-msgstr "Geçersiz bilgisayar adı. Bilgisayar adı sadece ASCII karakterler içerebilir."
-
-#: sahip/sahip.py:152
-msgid "Invalid root password. Root password should be at least 4 characters."
-msgstr "Geçersiz yönetici parolası. Parola en az 4 karakterden oluşmalıdır."
-
-#: sahip/sahip.py:167
-msgid "Save the XML file as"
-msgstr "XML Dosyasını buraya kaydet"
-
-#: sahip/sahip.py:197
-msgid "Successful"
-msgstr "Başarılı"
-
-#: sahip/sahip.py:197
-#, python-format
-msgid "The XML File has been saved to %s."
-msgstr "XML Dosyası %s olarak kaydedildi."
-
-#: sahip/sahip.py:199
-#, python-format
-msgid "Could not save the XML File to %s."
-msgstr "XML Dosyası %s olarak kaydedilemedi."
-
-#: sahip/sahip.py:253
-msgid "Automatic Partitioning"
-msgstr "Otomatik Bölümlendirme"
-
-#: sahip/sahip.py:254
-msgid "Smart Automatic Partitioning"
-msgstr "Akıllı Otomatik Bölümlendirme"
-
-#: sahip/sahip.py:255
-msgid "Manuel Partitioning"
-msgstr "Elle Bölümlendirme"
-
 #: sahip/userdialog.py:206
 msgid "Invalid username. Should include only [a-z][A-Z]_[0-9]"
-msgstr "Geçersiz kullanıcı adı. Sadece [a-z][A-Z]_[0-9] karakterlerinden oluşabilir."
+msgstr ""
+"Geçersiz kullanıcı adı. Sadece [a-z][A-Z]_[0-9] karakterlerinden oluşabilir."
 
 #: sahip/userdialog.py:214
 msgid "Invalid real name. Can't have newline or : characters."
-msgstr "Geçersiz gerçek ad. Gerçek ad, yeni satır ya da : karakterleri içeremez."
+msgstr ""
+"Geçersiz gerçek ad. Gerçek ad, yeni satır ya da : karakterleri içeremez."
 
 #: sahip/userdialog.py:222
 msgid "Invalid password. Password should be at least 4 characters."
@@ -188,4 +191,3 @@ msgstr "&Tamam"
 #: sahip/usergui.py:105
 msgid "&Cancel"
 msgstr "&İptal"
-
