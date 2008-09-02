@@ -9,7 +9,7 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "TurboKid-1.0.4"
+WorkDir = "TurboKid-%s" % get.srcVERSION()
 
 def install():
     pythonmodules.install()
