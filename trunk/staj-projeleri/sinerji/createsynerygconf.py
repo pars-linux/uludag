@@ -2,12 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
-hostname = "pardus"
-client = "sony"
 names = hostname, client
 positionnames = {"left": hostname, "right": client}
-print positionnames['right']
-print positionnames['left']
 
 ### Takes a tuple of names and write the screen section of synergy.conf
 def screens(*screen):
