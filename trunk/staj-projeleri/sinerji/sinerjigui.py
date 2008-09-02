@@ -60,7 +60,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_clientBox_clicked(self):
         self.serverBox.toggle()
-        self.browser = sinerjiAvahi.SinerjiAvahi('_sinerji._tcp')
+        #self.browser = sinerjiAvahi.SinerjiAvahi('_sinerji._tcp')
 
 ## Main code ##
     def updateUi(self):
