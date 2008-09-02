@@ -12,6 +12,7 @@ from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import ui_sinerjigui
+import createsynergyconf.py
 
 
 
@@ -34,8 +35,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
 
-    @pyqtSignature("Double")
-    def on_topComboBox_activated(self, text):
+    @pyqtSignature("Int")
+    def on_topComboBox_highlighted(self, text):
         self.topComboBox.setEditable
         self.updateUi()
     
