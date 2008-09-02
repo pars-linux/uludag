@@ -12,7 +12,7 @@ from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import ui_sinerjigui
-import createsynergyconf.py
+import createsynerygconf
 
 
 
@@ -25,6 +25,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.discoveredHosts = set()
         self.durum = True
         self.serverboxdurum = None
+        self.confdomain = []
 
 ###############################################################
 ############           Gui Functions             ##############
@@ -35,21 +36,28 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
 
-    @pyqtSignature("Int")
-    def on_topComboBox_highlighted(self, text):
-        self.topComboBox.setEditable
+    @pyqtSignature("QString")
+    def on_topComboBox_activated(self, text):
+        if text:
+            self.confdomain.append("top_%s" % text)
         self.updateUi()
     
-    @pyqtSignature("Double")
-    def on_bottomComboBox_currentIndexChanged(self, text):
+    @pyqtSignature("QString")
+    def on_bottomComboBox_activated(self, text):
+        if text:
+            self.confdomain.append("bottom_%s" % text)
         self.updateUi()
     
-    @pyqtSignature("Double")
-    def on_rightComboBox_highlighted(self, text):
+    @pyqtSignature("QString")
+    def on_rightComboBox_activated(self, text):
+        if text:
+            self.confdomain.append("right_%s" % text)
         self.updateUi()
     
     @pyqtSignature("Double")
     def on_leftComboBox_activated(self, text):
+        if text:
+            self.confdomain.append("left_%s" % text)
         self.updateUi()
 
 ## Svequit and Cancel button signals ##
@@ -79,11 +87,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             pass
         #self.browser = sinerjiAvahi.SinerjiAvahi('_sinerji._tcp')
 
-## Main code ##
     def updateUi(self):
-        print "All Done"
+        pass
     #def save(self):
-    #     #Some code ...
+    #synergyconf.screens()
 
 ###############################################################
 ############           Avahi Services            ##############

@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
+hostname = "server-foo"
+client = "client-foo"
 names = hostname, client
 positionnames = {"left": hostname, "right": client}
 
