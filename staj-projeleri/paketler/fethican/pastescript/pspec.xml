@@ -14,14 +14,15 @@
         <Description>A pluggable command-line frontend, including commands to setup package file layouts</Description>
         <Archive sha1sum="3ba0b91c524ee3dd7cdf30de0322998437a3e1c2" type="targz">http://pypi.python.org/packages/source/P/PasteScript/PasteScript-1.6.3.tar.gz</Archive>
         <BuildDependencies>
-            <Dependency>pastedeploy</Dependency>
+-           <Dependency>pastedeploy</Dependency>
         </BuildDependencies>
     </Source>
-
     <Package>
         <Name>pastescript</Name>
         <RuntimeDependencies>
+            <Dependency versionFrom="1.3">paste</Dependency>
             <Dependency>pastedeploy</Dependency>
+            <Dependency>cheetah</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
