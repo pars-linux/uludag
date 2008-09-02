@@ -12,53 +12,21 @@
   <property name="windowTitle" >
    <string>Form1</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2" >
-   <item row="0" column="0" colspan="3" >
+  <layout class="QGridLayout" name="gridLayout_3" >
+   <item row="0" column="1" colspan="2" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0" >
       <size>
-       <width>596</width>
-       <height>31</height>
+       <width>408</width>
+       <height>110</height>
       </size>
      </property>
     </spacer>
    </item>
-   <item row="1" column="1" colspan="2" >
-    <widget class="QLabel" name="textLabel1" >
-     <property name="text" >
-      <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:12pt; font-weight:600;">1. Select the partitioning method:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignTop</set>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" colspan="2" >
-    <widget class="QLabel" name="label" >
-     <property name="text" >
-      <string>Here you can choose one of partitioning method, and then you must select for a device to proceed your choice. &lt;br>Device list will be updated for selected method.</string>
-     </property>
-     <property name="textFormat" >
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="scaledContents" >
-      <bool>true</bool>
-     </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" >
+   <item row="1" column="0" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Horizontal</enum>
@@ -74,112 +42,15 @@ p, li { white-space: pre-wrap; }
      </property>
     </spacer>
    </item>
-   <item rowspan="2" row="3" column="1" >
-    <widget class="QGroupBox" name="groupBox" >
-     <property name="styleSheet" >
-      <string notr="true" >border:none;</string>
-     </property>
-     <property name="title" >
-      <string/>
-     </property>
-     <property name="flat" >
-      <bool>true</bool>
-     </property>
-     <property name="checkable" >
-      <bool>false</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout" >
-      <property name="leftMargin" >
-       <number>6</number>
-      </property>
-      <property name="topMargin" >
-       <number>1</number>
-      </property>
-      <property name="rightMargin" >
-       <number>0</number>
-      </property>
-      <property name="bottomMargin" >
-       <number>1</number>
-      </property>
-      <property name="horizontalSpacing" >
-       <number>1</number>
-      </property>
-      <property name="verticalSpacing" >
-       <number>3</number>
-      </property>
-      <item row="0" column="0" >
-       <widget class="QRadioButton" name="accept_auto_1" >
-        <property name="font" >
-         <font/>
-        </property>
-        <property name="toolTip" >
-         <string>This option will try to find suitable free space or resizable partitions</string>
-        </property>
-        <property name="text" >
-         <string>Automatically partition try to use free space or resize current partitions</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" >
-       <widget class="QRadioButton" name="manual" >
-        <property name="font" >
-         <font/>
-        </property>
-        <property name="toolTip" >
-         <string>You can use manual partitioning with this option</string>
-        </property>
-        <property name="text" >
-         <string>No, I'll partition my disk manually.</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" >
-       <widget class="QRadioButton" name="accept_auto_2" >
-        <property name="font" >
-         <font/>
-        </property>
-        <property name="toolTip" >
-         <string>This option will erase your entire disk. All of your data on disk will be lost !</string>
-        </property>
-        <property name="text" >
-         <string>Automatically partition and format selected disk!</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-     <zorder>accept_auto_1</zorder>
-     <zorder>label_3</zorder>
-     <zorder>manual</zorder>
-     <zorder>label_4</zorder>
-     <zorder>label_2</zorder>
-     <zorder>accept_auto_2</zorder>
-    </widget>
-   </item>
-   <item row="4" column="2" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType" >
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0" >
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="1" >
-    <layout class="QVBoxLayout" >
+   <item rowspan="2" row="1" column="1" >
+    <layout class="QVBoxLayout" name="verticalLayout" >
      <item>
-      <widget class="QLabel" name="textLabel1_2" >
+      <widget class="QLabel" name="textLabel1" >
        <property name="text" >
         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
 p, li { white-space: pre-wrap; }
 &lt;/style>&lt;/head>&lt;body style=" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:12pt; font-weight:600;">2. Select the disk to apply selected method:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:12pt; font-weight:600;">1. Select the partitioning method:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignTop</set>
@@ -190,48 +61,205 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item>
-      <widget class="QListWidget" name="device_list" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="MinimumExpanding" hsizetype="Expanding" >
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>Here you can choose one of partitioning method, and then you must select for a device to proceed your choice. &lt;br>Device list will be updated for selected method.</string>
        </property>
-       <property name="maximumSize" >
-        <size>
-         <width>16777215</width>
-         <height>120</height>
-        </size>
+       <property name="textFormat" >
+        <enum>Qt::AutoText</enum>
+       </property>
+       <property name="scaledContents" >
+        <bool>true</bool>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame" >
+       <property name="frameShape" >
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Plain</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2" >
+        <item row="0" column="0" >
+         <widget class="QRadioButton" name="accept_auto" >
+          <property name="text" >
+           <string>Automatic</string>
+          </property>
+          <property name="checkable" >
+           <bool>true</bool>
+          </property>
+          <property name="checked" >
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" >
+         <layout class="QGridLayout" name="gridLayout" >
+          <item rowspan="2" row="0" column="0" >
+           <spacer name="horizontalSpacer" >
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0" >
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1" >
+           <widget class="QRadioButton" name="accept_auto_1" >
+            <property name="font" >
+             <font/>
+            </property>
+            <property name="toolTip" >
+             <string>This option will try to find suitable free space or resizable partitions</string>
+            </property>
+            <property name="text" >
+             <string>Try to use free space or resize current partitions</string>
+            </property>
+            <property name="checkable" >
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" >
+           <widget class="QRadioButton" name="accept_auto_2" >
+            <property name="font" >
+             <font/>
+            </property>
+            <property name="toolTip" >
+             <string>This option will erase your entire disk. All of your data on disk will be lost !</string>
+            </property>
+            <property name="text" >
+             <string>Delete all partitions</string>
+            </property>
+            <property name="checkable" >
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0" >
+         <widget class="QRadioButton" name="manual" >
+          <property name="font" >
+           <font/>
+          </property>
+          <property name="toolTip" >
+           <string>You can use manual partitioning with this option</string>
+          </property>
+          <property name="text" >
+           <string>No, I'll partition my disk manually.</string>
+          </property>
+          <property name="checkable" >
+           <bool>true</bool>
+          </property>
+          <property name="autoExclusive" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" >
+       <item>
+        <widget class="QLabel" name="textLabel1_2" >
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:12pt; font-weight:600;">2. Select the disk to apply selected method:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="alignment" >
+          <set>Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="device_list" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="MinimumExpanding" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>16777215</width>
+           <height>120</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="info" >
+       <property name="text" >
+        <string>&amp;nbsp;</string>
+       </property>
+       <property name="textFormat" >
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>true</bool>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item row="6" column="1" >
-    <widget class="QLabel" name="info" >
-     <property name="text" >
-      <string>&amp;nbsp;</string>
+   <item row="2" column="3" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
      </property>
-     <property name="textFormat" >
-      <enum>Qt::RichText</enum>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="alignment" >
-      <set>Qt::AlignCenter</set>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
      </property>
-     <property name="wordWrap" >
-      <bool>true</bool>
-     </property>
-    </widget>
+    </spacer>
    </item>
-   <item row="7" column="1" >
+   <item row="3" column="2" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0" >
       <size>
-       <width>20</width>
-       <height>40</height>
+       <width>17</width>
+       <height>110</height>
       </size>
      </property>
     </spacer>
@@ -241,5 +269,70 @@ p, li { white-space: pre-wrap; }
  <layoutdefault spacing="6" margin="11" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>accept_auto</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>accept_auto_1</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>130</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>160</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>accept_auto</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>accept_auto_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>127</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>130</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>manual</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>accept_auto_1</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>102</x>
+     <y>292</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>99</x>
+     <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>manual</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>accept_auto_2</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>204</x>
+     <y>281</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>212</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
