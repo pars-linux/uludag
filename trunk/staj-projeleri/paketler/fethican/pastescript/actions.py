@@ -9,7 +9,7 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "PasteScript-1.6.3"
+WorkDir = "PasteScript-%s" % get.srcVERSION()
 
 def install():
     pythonmodules.install()
