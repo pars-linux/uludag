@@ -31,7 +31,6 @@ def links(*screen):
             subnames.append(y.split('_'))
         else:
             pass
-    
     ### writing the host part ####
     synergyconf.write("      %s:\n" % gethostname())
     for z in subnames:

@@ -30,63 +30,42 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomainbottom = None
         self.confdomainright = None
         self.confdomainleft = None
-        self.updateUi()
-###############################################################
-############           Gui Functions             ##############
-###############################################################
 
+        self.updateUi()
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
 
+
+###############################################################
+############           Gui Functions             ##############
+###############################################################
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
         self.topComboBox.setEditable(True)
-        if (text == '') or (text != gethostname()):
-            if (text != ''):
-                self.confdomaintop = ("top_bottom_%s" % text)
-            else:
-                pass
-        else:
+        if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.topComboBox.setCurrentIndex(0)
-
 
     @pyqtSignature("QString")
     def on_bottomComboBox_activated(self, text):
         self.bottomComboBox.setEditable(True)
-        if (text == '') or (text != gethostname()):
-            if (text != ''):
-                self.confdomainbottom = ("bottom_top_%s" % text)
-            else:
-                pass
-        else:
+        if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.bottomComboBox.setCurrentIndex(0)
-   
 
     @pyqtSignature("QString")
     def on_rightComboBox_activated(self, text):
         self.rightComboBox.setEditable(True)
-        if (text == '') or (text != gethostname()):
-            if (text != ''):
-                self.confdomainright = ("right_left_%s" % text)
-            else:
-                pass
-        else:
+        if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.rightComboBox.setCurrentIndex(0)
     
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
         self.leftComboBox.setEditable(True)
-        if (text == '') or (text != gethostname()):
-            if (text != ''):
-                self.confdomainleft = ("left_right_%s" % text)
-            else:
-                pass
-        else:
+        if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.leftComboBox.setCurrentIndex(0)
 
@@ -98,21 +77,20 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     
     @pyqtSignature("")
     def on_savequitButton_clicked(self):
-        if not self.confdomaintop:
+        if self.topComboBox.currentText() != '': 
             self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
-        elif not self.confdomainbottom:
+        if self.bottomComboBox.currentText() != '': 
             self.confdomainbottom = ("bottom_top_%s" % self.bottomComboBox.currentText())
-        elif not self.confdomainright:
+        if self.rightComboBox.currentText() != '': 
             self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
-        elif not self.confdomainleft:
+        if self.leftComboBox.currentText() != '': 
             self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
-        else:
-            pass
         self.confdomain.append(self.confdomaintop)
         self.confdomain.append(self.confdomainbottom)
         self.confdomain.append(self.confdomainright)
         self.confdomain.append(self.confdomainleft)
         self.confdomain.append("host_host_%s" % gethostname())
+    
         createsynergyconf.screens(self.confdomain)
         createsynergyconf.links(self.confdomain)
         self.reject()
