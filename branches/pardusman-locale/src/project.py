@@ -147,11 +147,11 @@ class Project:
 
         langsel = doc.getTag("LanguageSelection")
         if langsel:
-            self.default_language = langsel.getAttribute("default_lang")
+            self.default_language = langsel.getAttribute("default_language")
             for tag in langsel.tags("Language"):
                 self.selected_languages.append(tag.firstChild().data())
 
-            if self.default_lang not in self.selected_languages:
+            if self.default_language not in self.selected_languages:
                 self.selected_languages.append(self.default_language)
         
         return None
