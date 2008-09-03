@@ -14,7 +14,7 @@ def screens(*screen):
     synergyconf = open('synergy.conf', 'w')
     synergyconf.write('section: screens\n')
     for x in screen[0]:
-        if x is not None:
+        if x is not None:    ## If the comboBox is not empty
             domains = x.split("_")
             synergyconf.write("      %s:\n" % domains[2])
         else:
@@ -23,14 +23,22 @@ def screens(*screen):
     synergyconf.close()
 
 
-def links(*screen, **position):
+def links(*screen):
     synergyconf = open('synergy.conf', 'a')
     synergyconf.write('section: links\n')
-    for subnames in screen[0]:
-        synergyconf.write("      %s:\n" % subnames)
-        synergyconf.write("         %s = %s\n" % (subnames, position))
-    synergyconf.write('end\n')
-    synergyconf.close()
+    for y in screen[0]:
+        if y is not None: ## If the comboBox is not empty
+            subnames.append(y.split('_'))
+        else:
+            pass
+    
+    ### writing the host part ####
+    synergyconf.write("      %s:\n" % gethostname())
+    for z in subnames:
+            if z[0] == 'host':
+                pass
+            else:
+                synergyconf.write("         %s = %s\n" % (z[0], z[2]))
 
 
 if __name__ == "__main__":
