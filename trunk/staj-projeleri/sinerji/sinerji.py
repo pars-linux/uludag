@@ -13,7 +13,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import ui_sinerjigui
 import createsynergyconf
-
+import parsesynergyconf
 
 
 class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
@@ -30,7 +30,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomainbottom = None
         self.confdomainright = None
         self.confdomainleft = None
-
+        self.updateUi()
 ###############################################################
 ############           Gui Functions             ##############
 ###############################################################
@@ -48,7 +48,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.topComboBox.setCurrentIndex(0)
-        self.updateUi()
 
 
     @pyqtSignature("QString")
@@ -59,7 +58,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.bottomComboBox.setCurrentIndex(0)
-        self.updateUi()
    
 
     @pyqtSignature("QString")
@@ -70,7 +68,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.rightComboBox.setCurrentIndex(0)
-        self.updateUi()
     
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
@@ -80,7 +77,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.leftComboBox.setCurrentIndex(0)
-        self.updateUi()
 
 ## Svequit and Cancel button signals ##
 
@@ -118,8 +114,23 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             pass
         #self.browser = sinerjiAvahi.SinerjiAvahi('_sinerji._tcp')
 
+
     def updateUi(self):
-        pass
+        self.parser = parsesynergyconf.parseSynergyConf("synergy.conf")
+        for position in self.parser.getClients():
+            if position[0] == "top":
+                self.topComboBox.insertItem(0, position[1])
+            elif position[0] == "bottom":
+                self.bottomComboBox.insertItem(0, position[1])
+            elif position[0] == "right":
+                self.rightComboBox.insertItem(0, position[1])
+            elif position[0] == "left":
+                self.leftComboBox.insertItem(0, position[1])
+            else:
+                pass
+            
+        
+        
     #def save(self):
     #synergyconf.screens()
 

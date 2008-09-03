@@ -4,17 +4,17 @@
 from socket import gethostname
 
 
-class parseSynergyConf(self, parsefile):
-    def __init__(self)
+class parseSynergyConf:
+    def __init__(self, parsefile):
         self.parsedfilelist = []
         self.parsedfileset = set()
         self.domain = []
         self.clients = []
-        self.parse = parsing(parsefile)
+        self.parsing(parsefile)
 
     def parsing(self, synergyfile):
         for line in open(synergyfile, "r").readlines():
-            parsedfileset.add(line.strip())
+            self.parsedfileset.add(line.strip())
         
         ### Remove end, section and newlines
         self.parsedfileset.remove("section: screens")
