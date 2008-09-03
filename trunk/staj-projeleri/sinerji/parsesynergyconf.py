@@ -29,7 +29,6 @@ class parseSynergyConf:
                 self.parsedfilelist.remove(names)
 
         ### Remove hostnames
-        print self.parsedfilelist
         for position in self.parsedfilelist[:]:
             domain = position.split(" = ")
             if domain[1] == gethostname():

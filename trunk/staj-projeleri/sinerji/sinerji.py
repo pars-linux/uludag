@@ -22,9 +22,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.setupUi(self)
         self.cancelButton.setFocusPolicy(Qt.NoFocus)
         self.savequitButton.setFocusPolicy(Qt.NoFocus)
+        DBusQtMainLoop( set_as_default=True )
+       
         self.discoveredHosts = set()
-        self.durum = True
-        self.serverboxdurum = None
+        
         self.confdomain = []
         self.confdomaintop = None
         self.confdomainbottom = None
@@ -36,6 +37,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
+
 
 
 ###############################################################
@@ -79,7 +81,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.reject()
 
 
-### If Someone choose an empty string, dont store it, else createsynergyconf and parsesynergyconf wouln't work well ###
+### If Someone choose an empty string, dont store it, else createsynergyconf and parsesynergyconf wouldn't work well ###
 
     @pyqtSignature("")
     def on_savequitButton_clicked(self):
@@ -99,7 +101,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     
         createsynergyconf.screens(self.confdomain)
         createsynergyconf.links(self.confdomain)
-        os.system("synergys -f --config synergy.conf")
         self.reject()
             
 
@@ -108,19 +109,15 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_serverBox_clicked(self):
         self.clientBox.toggle()
-        if self.durum:
-            self.browseDomain('_workstation._tcp')
-            self.durum = None
-            self.serverboxdurum = True
+        self.browseDomain('_workstation._tcp')
+        self.publishService()
+        print "deneme"
 
 
     @pyqtSignature("")
     def on_clientBox_clicked(self):
         self.serverBox.toggle()
-        if self.serverboxdurum:
-            pass
-        else:
-            self.browseDomain('_sinerji._tcp')
+        self.browseDomain('_sinerji._tcp')
 
 
     def updateUi(self):
@@ -147,9 +144,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ############           Avahi Services            ##############
 ###############################################################
 
+    
     def browseDomain(self, servicename):
 
-        DBusQtMainLoop( set_as_default=True )
         bus = dbus.SystemBus()
         self.server = dbus.Interface(
                 bus.get_object(
@@ -205,7 +202,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     def publishService(self):
         
-        DBusQtMainLoop( set_as_default=True )
         bus = dbus.SystemBus()
         server = dbus.Interface(bus.get_object(avahi.DBUS_NAME, avahi.DBUS_PATH_SERVER), avahi.DBUS_INTERFACE_SERVER)
 
