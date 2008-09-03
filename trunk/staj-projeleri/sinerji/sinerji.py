@@ -97,6 +97,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomain.append("host_host_%s" % gethostname())
         createsynerygconf.screens(self.confdomain)
         createsynerygconf.links(self.confdomain)
+        self.reject()
             
 
 ## Only one checkbox has to be checked ##
