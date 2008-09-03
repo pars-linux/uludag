@@ -98,6 +98,16 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     
     @pyqtSignature("")
     def on_savequitButton_clicked(self):
+        if not self.confdomaintop:
+            self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
+        elif not self.confdomainbottom:
+            self.confdomainbottom = ("bottom_top_%s" % self.bottomComboBox.currentText())
+        elif not self.confdomainright:
+            self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
+        elif not self.confdomainleft:
+            self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
+        else:
+            pass
         self.confdomain.append(self.confdomaintop)
         self.confdomain.append(self.confdomainbottom)
         self.confdomain.append(self.confdomainright)
