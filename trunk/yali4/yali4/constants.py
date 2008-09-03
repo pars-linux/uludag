@@ -15,6 +15,7 @@
 
 import locale
 from os.path import join
+from os.path import exists
 from yali4.options import options
 
 class _constant:
@@ -55,7 +56,7 @@ consts.data_dir = "/usr/share/yali4"
 
 consts.mnt_dir = "/mnt"
 
-if options.firstBoot == True:
+if options.firstBoot == True or exists("/etc/yali-is-firstboot"):
     consts.target_dir = "/"
 else:
     # new system will be installed directly into this target directory

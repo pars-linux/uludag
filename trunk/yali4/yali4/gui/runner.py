@@ -10,6 +10,7 @@
 # Please read the COPYING file.
 #
 
+import os
 import sys
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -55,7 +56,7 @@ class Runner:
         # Check for firstBoot on installed system (parameters from options)
         install_type = YALI_INSTALL
 
-        if ctx.options.firstBoot == True:
+        if ctx.options.firstBoot == True or os.path.exists("/etc/yali-is-firstboot"):
             install_type = YALI_FIRSTBOOT
 
         # check for oemInstall

@@ -91,7 +91,6 @@ Here you can see your install options and look at them again before installation
         if ctx.installData.isKahyaUsed:
             self.startBombCounter()
         self.fillContent()
-        ctx.yali.backupInstallData()
 
     def fillContent(self):
         subject = "<p><li><b>%s</b></li><ul>"
@@ -102,9 +101,10 @@ Here you can see your install options and look at them again before installation
         content.append("""<html><body><ul>""")
 
         # Keyboard Layout
-        content.append(subject % _("Keyboard Settings"))
-        content.append(item % _("Selected keyboard layout is <b>%s</b>") % ctx.installData.keyData["name"])
-        content.append(end)
+        if ctx.installData.keyData:
+            content.append(subject % _("Keyboard Settings"))
+            content.append(item % _("Selected keyboard layout is <b>%s</b>") % ctx.installData.keyData["name"])
+            content.append(end)
 
         # TimeZone
         content.append(subject % _("Date/Time Settings"))
@@ -112,18 +112,20 @@ Here you can see your install options and look at them again before installation
         content.append(end)
 
         # Users
-        content.append(subject % _("User Settings"))
-        for user in yali4.users.pending_users:
-            state = _("User %s (<b>%s</b>) added.")
-            if "wheel" in user.groups:
-                state = _("User %s (<b>%s</b>) added with <u>admin privileges</u>.")
-            content.append(item % state % (user.realname, user.username))
-        content.append(end)
+        if len(yali4.users.pending_users)>0:
+            content.append(subject % _("User Settings"))
+            for user in yali4.users.pending_users:
+                state = _("User %s (<b>%s</b>) added.")
+                if "wheel" in user.groups:
+                    state = _("User %s (<b>%s</b>) added with <u>admin privileges</u>.")
+                content.append(item % state % (user.realname, user.username))
+            content.append(end)
 
         # HostName
-        content.append(subject % _("Hostname Settings"))
-        content.append(item % _("Hostname is set as <b>%s</b>") % ctx.installData.hostName)
-        content.append(end)
+        if ctx.installData.hostName:
+            content.append(subject % _("Hostname Settings"))
+            content.append(item % _("Hostname is set as <b>%s</b>") % ctx.installData.hostName)
+            content.append(end)
 
         # Partition
         pardus_path = None
@@ -200,6 +202,10 @@ Here you can see your install options and look at them again before installation
         self.ui.content.setHtml(content)
 
     def execute(self):
+
+        # Just store normal installation session
+        if ctx.yali.install_type == 0:
+            ctx.yali.backupInstallData()
 
         self.timer.stop()
 
