@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 
 
-hostname = "server-foo"
-client = "client-foo"
-names = hostname, client
-positionnames = {"left": hostname, "right": client}
+from socket import gethostname
+hostname = "host_host_sony"
+client = "right_left_lenovo"
+client2 = "top_bottom_pardus"
+names = hostname, client, client2, None, None
+subnames = []
 
 ### Takes a tuple of names and write the screen section of synergy.conf
 def screens(*screen):
