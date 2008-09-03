@@ -43,8 +43,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
         self.topComboBox.setEditable(True)
-        if (text != gethostname()):
-            self.confdomaintop = ("top_bottom_%s" % text)
+        if (text == '') or (text != gethostname()):
+            if (text != ''):
+                self.confdomaintop = ("top_bottom_%s" % text)
+            else:
+                pass
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.topComboBox.setCurrentIndex(0)
@@ -53,8 +56,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_bottomComboBox_activated(self, text):
         self.bottomComboBox.setEditable(True)
-        if (text != gethostname()):
-            self.confdomainbottom = ("bottom_top_%s" % text)
+        if (text == '') or (text != gethostname()):
+            if (text != ''):
+                self.confdomainbottom = ("bottom_top_%s" % text)
+            else:
+                pass
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.bottomComboBox.setCurrentIndex(0)
@@ -63,8 +69,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_rightComboBox_activated(self, text):
         self.rightComboBox.setEditable(True)
-        if (text != gethostname()):
-            self.confdomainright = ("right_left_%s" % text)
+        if (text == '') or (text != gethostname()):
+            if (text != ''):
+                self.confdomainright = ("right_left_%s" % text)
+            else:
+                pass
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.rightComboBox.setCurrentIndex(0)
@@ -72,8 +81,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
         self.leftComboBox.setEditable(True)
-        if (text != gethostname()):
-            self.confdomainleft = ("left_right_%s" % text)
+        if (text == '') or (text != gethostname()):
+            if (text != ''):
+                self.confdomainleft = ("left_right_%s" % text)
+            else:
+                pass
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.leftComboBox.setCurrentIndex(0)
@@ -116,18 +128,19 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
     def updateUi(self):
-        self.parser = parsesynergyconf.parseSynergyConf("synergy.conf")
-        for position in self.parser.getClients():
-            if position[0] == "top":
-                self.topComboBox.insertItem(0, position[1])
-            elif position[0] == "bottom":
-                self.bottomComboBox.insertItem(0, position[1])
-            elif position[0] == "right":
-                self.rightComboBox.insertItem(0, position[1])
-            elif position[0] == "left":
-                self.leftComboBox.insertItem(0, position[1])
-            else:
-                pass
+        if os.path.exists("synergy.conf"):
+            self.parser = parsesynergyconf.parseSynergyConf("synergy.conf")
+            for position in self.parser.getClients():
+                if position[0] == "top":
+                    self.topComboBox.insertItem(0, position[1])
+                elif position[0] == "bottom":
+                    self.bottomComboBox.insertItem(0, position[1])
+                elif position[0] == "right":
+                    self.rightComboBox.insertItem(0, position[1])
+                elif position[0] == "left":
+                    self.leftComboBox.insertItem(0, position[1])
+                else:
+                    pass
             
         
         
@@ -168,7 +181,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.bottomComboBox.addItem(domain)
             self.rightComboBox.addItem(domain)
             self.leftComboBox.addItem(domain)
-        self.updateUi()
 
     def addService(self, interface, protocol, name, stype, domain, flags):
 
