@@ -112,8 +112,9 @@ class Yali:
                                           yali4.gui.ScrPartitionAuto,       # 02
                                           yali4.gui.ScrPartitionManual,     # 03
                                           yali4.gui.ScrBootloader,          # 04
-                                          yali4.gui.ScrInstall,             # 05
-                                          yali4.gui.ScrGoodbye              # 06
+                                          yali4.gui.ScrSummary,             # 05
+                                          yali4.gui.ScrInstall,             # 06
+                                          yali4.gui.ScrGoodbye              # 07
                                          ]
 
         # Use YALI just for partitioning
@@ -550,10 +551,11 @@ class Yali:
             if self.install_type == YALI_OEMINSTALL:
                 ctx.debugger.log("OemInstall selected.")
                 try:
+                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4")
+                    obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+                    file("%s/etc/yali-is-firstboot" % ctx.consts.target_dir, "w")
                     obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
                     obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
-                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
-                    obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
                 except:
                     ctx.debugger.log("Dbus error: package doesnt exist !")
                     return False
@@ -561,7 +563,7 @@ class Yali:
                 try:
                     obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
                     obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
-                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4_firstBoot")
+                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4")
                     obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
                 except:
                     ctx.debugger.log("Dbus error: package doesnt exist !")

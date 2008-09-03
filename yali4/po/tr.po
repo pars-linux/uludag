@@ -558,7 +558,6 @@ msgstr ""
 "düzenlemeleri kolayca yapabilirsiniz.\n"
 
 #: yali4/gui/descSlide.py:22
-#, fuzzy
 msgid ""
 "Tasma is the management and settings center of Pardus. Configuration "
 "operations including but not limited to adding a new user or hardware (e.g. "
@@ -566,7 +565,7 @@ msgid ""
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
 msgstr ""
 "Tasma, Pardus'un denetim ve ayar merkezidir. Sisteme yeni kullanıcı "
-"eklenmesinden yeni harici donanımların (yazıcı, tarayıcı vb.) tanıtılmasına, "
+"eklenmesinden yeni harici donanımların (yazıcı, monitör vb.) tanıtılmasına, "
 "masaüstü simgelerinden yazı tiplerine kadar tüm yapılandırma seçenekleri "
 "Tasma çatısı altında toplanmıştır.\n"
 
