@@ -171,6 +171,9 @@ class ProjectWindow(KMainWindow):
         but = QToolButton(getIconSet("gear"), _("Make ISO"), "lala", self.make, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+        but = QToolButton(getIconSet("gear"), _("Select languages"), "lala", self.lang, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
 
         self.console = self.statusBar()
 
@@ -253,6 +256,10 @@ class ProjectWindow(KMainWindow):
             self.project.selected_packages,
             self.getMediaSize()
         )
+        w.show()
+
+    def lang(self):
+        w = browser.Language(self)
         w.show()
 
     def make(self):

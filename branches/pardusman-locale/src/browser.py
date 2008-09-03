@@ -342,3 +342,68 @@ class Browser(QDialog):
     def reject(self):
         self.callback(None, None)
         QDialog.reject(self)
+
+class Language(QDialog):
+    def __init__(self, parent):
+        QDialog.__init__(self, parent)
+        #self.setCaption(repo.base_uri)
+        self.setIcon(getIconPixmap("package"))
+
+        defaultlang = "en_US"
+        availablelangs = ["ca_ES", "de_DE", "en_US", "es_ES", "fr_FR", "it_IT", "nl_NL", "pl_PL", "pt_BR", "sv_SE", "tr_TR"]
+
+        self.listLang= KListView(self,"listLang")
+        self.listLang.addColumn(i18n("Lang Layouts"))
+        self.listLang.setGeometry(QRect(30,50,290,270))
+        self.listLang.setAllColumnsShowFocus(1)
+        self.listLang.setResizeMode(QListView.AllColumns)
+
+        for each in availablelangs:
+            item = QCheckListItem(self.listLang, "lang", QCheckListItem.CheckBox)
+            item.setText(0, each)
+
+        LayoutWidget = QWidget(self,"layout1")
+        LayoutWidget.setGeometry(QRect(120,330,234,58))
+        layout1 = QHBoxLayout(LayoutWidget,11,6,"layout1")
+
+        self.but1 = QPushButton(LayoutWidget,"but1")
+        layout1.addWidget(self.but1)
+
+        self.but2 = QPushButton(LayoutWidget,"but2")
+        layout1.addWidget(self.but2)
+        self.but1.setText(i18n("Okay"))
+        self.but2.setText(i18n("Cancel"))
+
+        self.checkBox1 = QCheckBox(self,"checkBox1")
+        self.checkBox1.setGeometry(QRect(70,320,180,21))
+        self.checkBox1.setText(i18n("Select all"))
+
+        self.connect(self.but1, SIGNAL("clicked()"), self.accept2)
+        self.connect(self.but2, SIGNAL("clicked()"), self.reject2)
+        self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.selectAll)
+
+    def selectAll(self):
+        aww = self.listLang.firstChild()
+        while aww:
+            aww.activate()
+            aww = aww.nextSibling()
+
+    def reject2(self):
+        QDialog.reject(self)
+
+    def accept2(self):
+        aww = self.listLang.firstChild()
+        while aww:
+            if aww.isOn():
+                print aww.text() # secilen dilleri nereye gondericiz?
+            aww = aww.nextSibling()
+        QDialog.accept(self)
+
+    def accept(self):
+        comps, sel = self.browser.get_selection()
+        self.callback(comps, sel)
+        QDialog.accept(self)
+
+    def reject(self):
+        self.callback(None, None)
+        QDialog.reject(self)
