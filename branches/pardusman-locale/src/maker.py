@@ -124,6 +124,9 @@ def generate_isolinux_conf(project):
     image_dir = project.image_dir()
     iso_dir = project.iso_dir()
 
+    lang_default = project.default_language
+    lang_all = project.selected_languages
+
     isolinux_tmpl = """
 prompt 1
 timeout 200
@@ -154,6 +157,28 @@ label memtest
     f = file(os.path.join(iso_dir, "boot/isolinux/gfxboot.cfg"), "w")
     f.write(data % dict)
     f.close()
+
+    if len(lang_all) and lang_default != "":
+        langdata = ""
+
+        if not lang_default in lang_all:
+            lang_all.append(lang_default)
+
+        lang_all.sort()
+
+        for i in lang_all:
+            langdata += "%s\n" % i
+
+
+        # write default language
+        f = file(os.path.join(iso_dir, "boot/isolinux/lang"), "w")
+        f.write("%s\n" % lang_default)
+        f.close()
+
+        # write available languages
+        f = file(os.path.join(iso_dir, "boot/isolinux/languages"), "w")
+        f.write(langdata)
+        f.close()
 
 
 def setup_isolinux(project):
