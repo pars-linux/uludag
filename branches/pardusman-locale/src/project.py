@@ -110,6 +110,8 @@ class Project:
         self.selected_components = []
         self.selected_packages = []
         self.all_packages = []
+        self.selected_languages = []
+        self.default_language = None
         self.exparams = ''
     
     def open(self, filename):
@@ -142,6 +144,15 @@ class Project:
                 self.selected_packages.append(tag.firstChild().data())
             for tag in paksel.tags("Package"):
                 self.all_packages.append(tag.firstChild().data())
+
+        langsel = doc.getTag("LanguageSelection")
+        if langsel:
+            self.default_language = langsel.getAttribute("default_lang")
+            for tag in langsel.tags("Language"):
+                self.selected_languages.append(tag.firstChild().data())
+
+            if self.default_lang not in self.selected_languages:
+                self.selected_languages.append(self.default_language)
         
         return None
     
@@ -169,6 +180,12 @@ class Project:
             self.all_packages.sort()
             for item in self.all_packages:
                 paks.insertTag("Package").insertData(item)
+        if self.default_language:
+            langs = doc.insertTag("LanguageSelection")
+            langs.setAttribute("default_language", self.default_language)
+            self.selected_languages.sort()
+            for item in self.selected_languages:
+                langs.insertTag("Language").insertData(item)
         data = doc.toPrettyString()
         f = file(filename, "w")
         f.write(data)
