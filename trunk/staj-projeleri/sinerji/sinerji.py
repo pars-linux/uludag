@@ -12,7 +12,7 @@ from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 import ui_sinerjigui
-import createsynerygconf
+import createsynergyconf
 
 
 
@@ -26,7 +26,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.durum = True
         self.serverboxdurum = None
         self.confdomain = []
-	self.confdomaintop = None
+        self.confdomaintop = None
         self.confdomainbottom = None
         self.confdomainright = None
         self.confdomainleft = None
@@ -69,7 +69,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomainright = ("right_left_%s" % text)
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.bottomComboBox.setCurrentIndex(0)
+            self.rightComboBox.setCurrentIndex(0)
         self.updateUi()
     
     @pyqtSignature("QString")
@@ -79,7 +79,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomainleft = ("left_right_%s" % text)
         else:
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.bottomComboBox.setCurrentIndex(0)
+            self.leftComboBox.setCurrentIndex(0)
         self.updateUi()
 
 ## Svequit and Cancel button signals ##
@@ -95,8 +95,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomain.append(self.confdomainright)
         self.confdomain.append(self.confdomainleft)
         self.confdomain.append("host_host_%s" % gethostname())
-        createsynerygconf.screens(self.confdomain)
-        createsynerygconf.links(self.confdomain)
+        createsynergyconf.screens(self.confdomain)
+        createsynergyconf.links(self.confdomain)
         self.reject()
             
 
