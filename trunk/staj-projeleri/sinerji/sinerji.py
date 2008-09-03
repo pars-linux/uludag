@@ -44,28 +44,42 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_topComboBox_activated(self, text):
         self.topComboBox.setEditable(True)
         if (text != gethostname()):
-            self.confdomain.append("top_%s" % text)
+            self.confdomaintop = ("top_bottom_%s" % text)
+        else:
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.topComboBox.setCurrentIndex(0)
         self.updateUi()
-    
+
+
     @pyqtSignature("QString")
     def on_bottomComboBox_activated(self, text):
-        self.topComboBox.setEditable(True)
+        self.bottomComboBox.setEditable(True)
         if (text != gethostname()):
-            self.confdomain.append("bottom_%s" % text)
+            self.confdomainbottom = ("bottom_top_%s" % text)
+        else:
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.bottomComboBox.setCurrentIndex(0)
         self.updateUi()
-    
+   
+
     @pyqtSignature("QString")
     def on_rightComboBox_activated(self, text):
-        self.topComboBox.setEditable(True)
+        self.rightComboBox.setEditable(True)
         if (text != gethostname()):
-            self.confdomain.append("right_%s" % text)
+            self.confdomainright = ("right_left_%s" % text)
+        else:
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.bottomComboBox.setCurrentIndex(0)
         self.updateUi()
     
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
-        self.topComboBox.setEditable(True)
+        self.leftComboBox.setEditable(True)
         if (text != gethostname()):
-            self.confdomain.append("left_%s" % text)
+            self.confdomainleft = ("left_right_%s" % text)
+        else:
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.bottomComboBox.setCurrentIndex(0)
         self.updateUi()
 
 ## Svequit and Cancel button signals ##
