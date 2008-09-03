@@ -99,6 +99,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     
         createsynergyconf.screens(self.confdomain)
         createsynergyconf.links(self.confdomain)
+        os.system("synergys -f --config synergy.conf")
         self.reject()
             
 
@@ -195,7 +196,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.discoveredHosts.add(hostremoved)
     
     def get_domains(self):
-        return list(self.discoveredHosts)
+        return list(sorted(self.discoveredHosts))
 
     def print_error(self, *args):
         print 'error_handler'
