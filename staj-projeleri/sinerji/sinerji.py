@@ -26,6 +26,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.durum = True
         self.serverboxdurum = None
         self.confdomain = []
+	self.confdomaintop = None
+        self.confdomainbottom = None
+        self.confdomainright = None
+        self.confdomainleft = None
 
 ###############################################################
 ############           Gui Functions             ##############
@@ -38,25 +42,29 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
-        if text:
+        self.topComboBox.setEditable(True)
+        if (text != gethostname()):
             self.confdomain.append("top_%s" % text)
         self.updateUi()
     
     @pyqtSignature("QString")
     def on_bottomComboBox_activated(self, text):
-        if text:
+        self.topComboBox.setEditable(True)
+        if (text != gethostname()):
             self.confdomain.append("bottom_%s" % text)
         self.updateUi()
     
     @pyqtSignature("QString")
     def on_rightComboBox_activated(self, text):
-        if text:
+        self.topComboBox.setEditable(True)
+        if (text != gethostname()):
             self.confdomain.append("right_%s" % text)
         self.updateUi()
     
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
-        if text:
+        self.topComboBox.setEditable(True)
+        if (text != gethostname()):
             self.confdomain.append("left_%s" % text)
         self.updateUi()
 
