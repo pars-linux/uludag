@@ -90,12 +90,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     
     @pyqtSignature("")
     def on_savequitButton_clicked(self):
-        self.save()
-
-   ### Test code###  
-    def save(self):
-        for x in self.confdomain:
-            print x
+        self.confdomain.append(self.confdomaintop)
+        self.confdomain.append(self.confdomainbottom)
+        self.confdomain.append(self.confdomainright)
+        self.confdomain.append(self.confdomainleft)
+        self.confdomain.append("host_host_%s" % gethostname())
+        createsynerygconf.screens(self.confdomain)
+        createsynerygconf.links(self.confdomain)
             
 
 ## Only one checkbox has to be checked ##
@@ -107,6 +108,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.browseDomain('_workstation._tcp')
             self.durum = None
             self.serverboxdurum = True
+
 
     @pyqtSignature("")
     def on_clientBox_clicked(self):
