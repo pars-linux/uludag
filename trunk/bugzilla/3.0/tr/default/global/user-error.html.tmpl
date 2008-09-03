@@ -63,15 +63,15 @@
     [% title = "Böyle Bir Kullanıcı Hesabı Zaten Var" %]
 
     [% IF email %]
-      Kullanıcı adı [% email FILTER html %] olan 
+      E-posta adresi [% email FILTER html %] olan 
     [% ELSE %]
-      Bu kullanıcı adına sahip
+      Bu e-posta adresine sahip
     [% END %]
-    bir hesap zaten var.
+    bir kullanıcı hesabı zaten var.
 
   [% ELSIF error == "account_inexistent" %]
     [% title = "Böyle Bir Kullanıcı Hesabı Yok" %]
-    Bu kullanıcı adına sahip herhangi bir [% terms.Bugzilla %] hesabı yok.
+    Bu e-posta adresine sahip herhangi bir [% terms.Bugzilla %] kullanıcı hesabı yok.
 
   [% ELSIF error == "alias_has_comma_or_space" %]
     [% title = "Sembolik Ad Geçersiz Karakter İçeriyor" %]
