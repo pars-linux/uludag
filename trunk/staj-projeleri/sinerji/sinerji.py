@@ -41,6 +41,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ###############################################################
 ############           Gui Functions             ##############
 ###############################################################
+    
+    
+####### ComboxBox Signals, if someone choose the host, deny it #######
+
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
         self.topComboBox.setEditable(True)
@@ -69,12 +73,14 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.leftComboBox.setCurrentIndex(0)
 
-## Svequit and Cancel button signals ##
 
     @pyqtSignature("")
     def on_cancelButton_clicked(self):
         self.reject()
-    
+
+
+### If Someone choose an empty string, dont store it, else createsynergyconf and parsesynergyconf wouln't work well ###
+
     @pyqtSignature("")
     def on_savequitButton_clicked(self):
         if self.topComboBox.currentText() != '': 
@@ -112,7 +118,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.serverBox.toggle()
         if self.serverboxdurum:
             pass
-        #self.browser = sinerjiAvahi.SinerjiAvahi('_sinerji._tcp')
+        else:
+            self.browseDomain('_sinerji._tcp')
 
 
     def updateUi(self):
