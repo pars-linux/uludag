@@ -40,7 +40,17 @@ def links(*screen):
             else:
                 synergyconf.write("         %s = %s\n" % (z[0], z[2]))
 
+    ### writing the client part ###
+    for clients in subnames:
+        if clients[2] == gethostname():
+            pass
+        else:
+            synergyconf.write("      %s:\n" % clients[2])
+            synergyconf.write("          %s = %s\n" % (clients[1], gethostname()))
+
+    synergyconf.write('end\n')
+    synergyconf.close()
 
 if __name__ == "__main__":
     screens(names)
-    links(names, positionnames)
+    links(names)
