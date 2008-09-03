@@ -14,9 +14,14 @@ def screens(*screen):
     synergyconf = open('synergy.conf', 'w')
     synergyconf.write('section: screens\n')
     for x in screen[0]:
-        synergyconf.write("      %s:\n" % x)
+        if x is not None:
+            domains = x.split("_")
+            synergyconf.write("      %s:\n" % domains[2])
+        else:
+            pass
     synergyconf.write('end\n\n')
     synergyconf.close()
+
 
 def links(*screen, **position):
     synergyconf = open('synergy.conf', 'a')
