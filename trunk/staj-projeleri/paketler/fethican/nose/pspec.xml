@@ -22,6 +22,9 @@
             <Path fileType="library">/usr/lib</Path>
             <Path fileType="doc">/usr/bin</Path>
         </Files>
+	<RuntimeDependencies>
+	    <Dependency>setuptools</Dependency>
+        </RuntimeDependencies>
     </Package>
     <History>
          <Update release="1">
