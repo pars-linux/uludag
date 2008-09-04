@@ -162,16 +162,20 @@ class ProjectWindow(KMainWindow):
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
         QLabel(" ", bar)
+
         but = QToolButton(getIconSet("reload"), _("Update Repo"), "lala", self.update, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+
         but = QToolButton(getIconSet("package"), _("Select packages"), "lala", self.browse, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        but = QToolButton(getIconSet("gear"), _("Make ISO"), "lala", self.make, bar)
+
+        but = QToolButton(getIconSet("gear"), _("Select languages"), "lala", self.lang, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
-        but = QToolButton(getIconSet("gear"), _("Select languages"), "lala", self.lang, bar)
+
+        but = QToolButton(getIconSet("gear"), _("Make ISO"), "lala", self.make, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
 
