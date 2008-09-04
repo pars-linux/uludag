@@ -262,8 +262,20 @@ class ProjectWindow(KMainWindow):
         )
         w.show()
 
+    def langResult(self, langdef, langall):
+        self.toolbar.setEnabled(True)
+        if langdef != "":
+            self.project.selected_languages = langall
+            self.project.default_language = langdef
+
     def lang(self):
-        w = browser.Language(self)
+        if not self.checkSettings():
+            return
+        self.toolbar.setEnabled(False)
+        w = browser.Language(self,
+                             self.langResult,
+                             self.project.default_language,
+                             self.project.selected_languages)
         w.show()
 
     def make(self):

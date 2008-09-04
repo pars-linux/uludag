@@ -343,11 +343,12 @@ class Browser(QDialog):
         QDialog.reject(self)
 
 class Language(QDialog):
-    def __init__(self, parent):
+    def __init__(self, parent, callback, langdef, langall):
         QDialog.__init__(self, parent)
 
         defaultlang = "en_US"
         self.availablelangs = ["ca_ES", "de_DE", "en_US", "es_ES", "fr_FR", "it_IT", "nl_NL", "pl_PL", "pt_BR", "sv_SE", "tr_TR"]
+        self.callback = callback
 
         self.listLang= KListView(self,"listLang")
         self.listLang.addColumn(i18n("Lang Layouts"))
@@ -379,8 +380,8 @@ class Language(QDialog):
         self.comboBox.setGeometry(QRect(60,340,240,30))
         self.comboBox.insertItem(defaultlang)
 
-        self.connect(self.but1, SIGNAL("clicked()"), self.accept2)
-        self.connect(self.but2, SIGNAL("clicked()"), self.reject2)
+        self.connect(self.but1, SIGNAL("clicked()"), self.accept)
+        self.connect(self.but2, SIGNAL("clicked()"), self.reject)
         self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.syncCombo)
         self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.selectAll)
         self.connect(self.comboBox, SIGNAL("activated(int)"), self.setDefaultLang)
@@ -397,8 +398,10 @@ class Language(QDialog):
                 self.selectedLangs.append(str(aww.text()))
             aww = aww.nextSibling()
 
-    def accept2(self):
+    def accept(self):
         self.setSelectedLangs()
+        self.setDefaultLang()
+        self.callback(str(self.defaultlang), self.selectedLangs)
         QDialog.accept(self)
 
     def selectAll(self, checked):
@@ -412,7 +415,8 @@ class Language(QDialog):
                     aww.activate()
             aww = aww.nextSibling()
 
-    def reject2(self):
+    def reject(self):
+        self.callback("", None)
         QDialog.reject(self)
 
     def syncCombo(self):
@@ -424,11 +428,3 @@ class Language(QDialog):
         self.comboBox.clear()
         self.comboBox.insertStrList(self.selectedLangs)
 
-    def accept(self):
-        comps, sel = self.browser.get_selection()
-        self.callback(comps, sel)
-        QDialog.accept(self)
-
-    def reject(self):
-        self.callback(None, None)
-        QDialog.reject(self)
