@@ -85,6 +85,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_savequitButton_clicked(self):
+        
+        ### Add the current Hostnames from the ComboBoxes to the variable confdomain*, where * is the position
         if self.topComboBox.currentText() != '': 
             self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
         if self.bottomComboBox.currentText() != '': 
@@ -93,6 +95,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
         if self.leftComboBox.currentText() != '': 
             self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
+        ### Add the variables "confdomain*" to the list "confdomain"
         self.confdomain.append(self.confdomaintop)
         self.confdomain.append(self.confdomainbottom)
         self.confdomain.append(self.confdomainright)
@@ -107,18 +110,20 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ## Only one checkbox has to be checked ##
     
     @pyqtSignature("")
-    def on_serverButton_toggled(self):
-        if serverButton.isChecked():
-            print "Radio button is checked"
-            self.browseDomain('_workstation._tcp')
-            self.publishService()
-            print "deneme"
+    def on_serverButton_clicked(self):
+        print "Radio button is checked"
+        self.browseDomain('_workstation._tcp')
+        self.publishService()
+        print "deneme"
 
 
     @pyqtSignature("")
-    def on_clientButton_toggled(self):
-        if clientButton.isChecked():
-            self.browseDomain('_sinerji._tcp')
+    def on_clientButton_clicked(self):
+        self.topComboBox.clear()
+        self.bottomComboBox.clear()
+        self.rightComboBox.clear()
+        self.leftComboBox.clear()
+        self.browseDomain('_sinerji._tcp')
 
 
     def updateUi(self):
