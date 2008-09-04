@@ -12,6 +12,7 @@ from PyQt4.QtGui import *
 import ui_sinerjigui
 import createsynergyconf
 import parsesynergyconf
+import avahiservices
 
 
 class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
@@ -116,11 +117,14 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_serverButton_clicked(self):
         print "Radio button is checked"
-        self.browseDomain('_workstation._tcp')
-        self.publishService()
-        self.connected = True
-        print "deneme"
+        
+        connecting = avahiservices.avahiSinerji(gethostname())
+        connecting.connectDbus()
+        connecting.connectAvahi()
+        connecting.connect()
+        print connecting.getDomains()
 
+        
 
     @pyqtSignature("")
     def on_clientButton_clicked(self):
@@ -129,16 +133,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.rightComboBox.clear()
         self.leftComboBox.clear()
         
-        if self.connected:
-            self.connected = False
-            if self.browser:
-                self.browser.Free()
-                self.browser._obj._bus = None
-                self.browser._obj = None
-            self.server._obj._bus = None
-            self.server._obj = None
-        self.server = None
-        self.browser = None
         self.browseDomain('_sinerji._tcp')
 
 
@@ -162,77 +156,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     #def save(self):
     #synergyconf.screens()
 
-###############################################################
-############           Avahi Services            ##############
-###############################################################
-
-    
-    def browseDomain(self, servicename):
-
-        self.bus = dbus.SystemBus()
-        self.server = dbus.Interface(
-                self.bus.get_object(
-                    avahi.DBUS_NAME, 
-                    avahi.DBUS_PATH_SERVER), 
-                avahi.DBUS_INTERFACE_SERVER)
-        
-        self.browser = dbus.Interface(self.bus.get_object(
-            avahi.DBUS_NAME, 
-            self.server.ServiceBrowserNew(
-                avahi.IF_UNSPEC, 
-                avahi.PROTO_UNSPEC,servicename,
-                'local', 
-                dbus.UInt32(0))),
-            avahi.DBUS_INTERFACE_SERVICE_BROWSER)
-
-        self.browser.connect_to_signal('ItemNew', self.addService)
-        self.browser.connect_to_signal('ItemRemove', self.removeService)
-        self.browser.connect_to_signal('AllForNow', self.allDone)
-
-
-    def allDone(self):
-        for domain in self.get_domains():
-            self.topComboBox.addItem(domain)
-            self.bottomComboBox.addItem(domain)
-            self.rightComboBox.addItem(domain)
-            self.leftComboBox.addItem(domain)
-
-    def addService(self, interface, protocol, name, stype, domain, flags):
-
-        #print "Found service '%s' type '%s' domain '%s' " % (name, stype, domain)
-        self.server.ResolveService(interface, protocol, name, stype,
-                              domain, avahi.PROTO_UNSPEC, dbus.UInt32(0),
-                              reply_handler=self.service_resolved, error_handler=self.print_error)
-
-
-    def removeService(self, interface, protocol, name, stype, domain, flags):
-        hostremoved = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.remove(hostremoved)
-
-    def service_resolved(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
-        #print "******", interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags
-        hostadded = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.add(hostadded)
-    
-    def get_domains(self):
-        return list(sorted(self.discoveredHosts))
-
-    def print_error(self, *args):
-        print 'error_handler'
-        print args[0]
-
-
-    def publishService(self):
-        
-        bus = dbus.SystemBus()
-        server = dbus.Interface(bus.get_object(avahi.DBUS_NAME, avahi.DBUS_PATH_SERVER), avahi.DBUS_INTERFACE_SERVER)
-
-        txt = ['os=linux']
-        group = dbus.Interface(bus.get_object(avahi.DBUS_NAME, server.EntryGroupNew()), avahi.DBUS_INTERFACE_ENTRY_GROUP)
-        group.AddService(avahi.IF_UNSPEC, avahi.PROTO_UNSPEC, dbus.UInt32(0),
-                         'Synergy at %s' % gethostname(), '_sinerji._tcp', '', '',
-                         dbus.UInt16(24800), avahi.string_array_to_txt_array(txt))
-        group.Commit()
 
 ###############################################################
 ############                Main                 ##############

@@ -7,15 +7,16 @@ from PyQt4.QtGui import QApplication
 import sys
 import dbus
 import avahi
+import re
+
 
 class avahiSinerji:
     def __init__(self, host):
         self.avahi = None
         self.domain = None
-        self.stype = "_sinerji._tcp"
+        self.stype = "_workstation._tcp"
         self.host = host
         self.txt = {}
-
         self.domainBrowser = None
         self.serviceBrowser = None
         self.bus = None
@@ -24,94 +25,100 @@ class avahiSinerji:
         self.entrygroup = None
         self.connected = False
         self.announced = False
+        self.avahi = avahi
+        self.name = "Sinerji"
+        self.port = "24800"
 
     
-    def printError(self, *args):
-        print 'error_handler'
-        print args[0]
+    def entrygroupCommitError(self, err):
+        # left blank for possible later usage
+        pass
+
+    def errorCallbackResolving(self, err):
+        print 'Error while resolving: ' + str(err)
+
+    def errorCallback(self, err):
+        print "str(err)"
+        # timeouts are non-critical
+        if str(err) != 'Timeout reached':
+            self.disconnect()
 
     def newService(self, interface, protocol, name, stype, domain, flags):
-        #print "Found service '%s' type '%s' domain '%s' " % (name, stype, domain)
-        
         if not self.connected:
             return
         # synchronous resolving
+        # print "Found service '%s' type '%s' domain '%s' " % (name, stype, domain)
         self.server.ResolveService( int(interface), int(protocol), name, stype, \
                 domain, self.avahi.PROTO_UNSPEC, dbus.UInt32(0), \
-                        reply_handler=self.service_resolved_callback, error_handler=self.error_callback1)
-       
-
+                        reply_handler=self.serviceResolvedCallback, error_handler=self.errorCallbackResolving)
+        print "--------- service resolving"
+    
     def removeService(self, interface, protocol, name, stype, domain, flags):
         if not self.connected:
             return
-
         hostremoved = re.sub(r'\.%s$' % domain, '', host)
-        print hostremoved
-        self.discoveredHosts.remove(removed)
+        self.discoveredHosts.remove(hostremoved)
 
-
-    def service_resolved_callback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
-        print 'Service data for service %s in domain %s on %i.%i:' % name, domain, interface, protocol
-        print 'Host %s (%s), port %i, TXT data: %s' % (host, address, port, self.txt_array_to_dict(txt))
-        
+    def getDomains(self):
+        return list(sorted(self.discoveredHosts))
+    
+    def serviceResolvedCallback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
             return
         hostadded = re.sub(r'\.%s$' % domain, '', host)
-        print hostadded
-        self.discoveredHosts.remove(hostadded)
-
+        self.discoveredHosts.add(hostadded)
+        print "*************", hostadded
+        #print 'Service data for service %s in domain %s on %i.%i:' % (name, domain, interface, protocol)
 
     def newServiceType(self, interface, protocol, stype, domain, flags):
         if self.serviceBrowser:
             return
-        
+        elif not self.connected:
+            return
+        print "--------- new service type"
         object_path = self.server.ServiceBrowserNew(interface, protocol, \
                 stype, domain, dbus.UInt32(0))
 
-        self.service_browser = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
+        self.serviceBrowser = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
             object_path) , self.avahi.DBUS_INTERFACE_SERVICE_BROWSER)
-        self.service_browser.connect_to_signal('ItemNew', self.newService)
-        self.service_browser.connect_to_signal('ItemRemove', self.removeService)
-        self.service_browser.connect_to_signal('Failure', self.errorService)
+        self.serviceBrowser.connect_to_signal('ItemNew', self.newService)
+        self.serviceBrowser.connect_to_signal('ItemRemove', self.removeService)
+        self.serviceBrowser.connect_to_signal('Failure', self.errorCallback)
 
     def newDomainCallback(self,interface, protocol, domain, flags):
         if domain != "local":
-            self.browse_domain(interface, protocol, domain)
+            self.browseDomain(interface, protocol, domain)
 
-
-
-    def avahi_dbus_connect_cb(self, connect, disconnect):
+    def avahiDbusConnect(self, a, connect, disconnect):
         if connect != "":
             print 'Lost connection to avahi-daemon'
             self.disconnect()
         else:
             print 'We are connected to avahi-daemon'
 
-    
     def connectDbus(self):
         if self.bus:
             return True
         try:
-
+            print "--------- connecting dbus"
             self.bus = dbus.SystemBus()
-            self.bus.add_signal_receiver(self.avahi_dbus_connect_cb, "NameOwnerChanged", "org.freedesktop.DBus", arg0="org.freedesktop.Avahi")
-            print " dbus connecting"
+            self.bus.add_signal_receiver(self.avahiDbusConnect, "NameOwnerChanged", "org.freedesktop.DBus", arg0="org.freedesktop.Avahi")
         except Exception, e:
             print e
             return False
         else:
             return True
-    
+
     def connectAvahi(self):
         if not self.connectDbus():
             return False
         if self.server:
             return True 
         try:
-            self.server = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, 
-                self.avahi.DBUS_PATH_SERVER), self.avahi.DBUS_INTERFACE_SERVER), 
-            self.server.connect_to_signal('StateChanged', self.server_state_changed_callback)
-            print "avahi connecting"
+            print "--------- connecting avahi"
+            self.server = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
+                self.avahi.DBUS_PATH_SERVER), self.avahi.DBUS_INTERFACE_SERVER) 
+            self.server.connect_to_signal('StateChanged', self.serverStateChangedCallback)
         except Exception, e:
             # Avahi service is not present
             self.server = None
@@ -123,58 +130,56 @@ class avahiSinerji:
     def connect(self):
         if not self.connectAvahi():
             return False
-
-            print "browse domain"
         self.connected = True
-        
+
         if self.domain is None:
             # Explicitly browse .local
-            self.browse_domain(self.avahi.IF_UNSPEC, self.avahi.PROTO_UNSPEC, "local")
-            print "browse domain"
+            self.browseDomain(self.avahi.IF_UNSPEC, self.avahi.PROTO_UNSPEC, "local")
+            print "--------- browsing domain"
             # Browse for other browsable domains
-            self.domain_browser = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
+            self.domainBrowser = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
                     self.server.DomainBrowserNew(self.avahi.IF_UNSPEC, \
                     self.avahi.PROTO_UNSPEC, '', self.avahi.DOMAIN_BROWSER_BROWSE,\
                     dbus.UInt32(0))), self.avahi.DBUS_INTERFACE_DOMAIN_BROWSER)
-            self.domain_browser.connect_to_signal('ItemNew', self.new_domain_callback)
-            self.domain_browser.connect_to_signal('Failure', self.error_callback)
+            self.domainBrowser.connect_to_signal('ItemNew', self.newDomainCallback)
+            self.domainBrowser.connect_to_signal('Failure', self.errorCallback)
         else:
-            self.browse_domain(self.avahi.IF_UNSPEC, self.avahi.PROTO_UNSPEC, self.domain)
+            self.browseDomain(self.avahi.IF_UNSPEC, self.avahi.PROTO_UNSPEC, self.domain)
 
         return True
     
-    def browse_domain(self, interface, protocol, domain):
+    def browseDomain(self, interface, protocol, domain):
         self.newServiceType(interface, protocol, self.stype, domain, '')
 
     def disconnect(self):
         if self.connected:
             self.connected = False
-            if self.service_browser:
-                self.service_browser.Free()
-                self.service_browser._obj._bus = None
-                self.service_browser._obj = None
-            if self.domain_browser:
-                self.domain_browser.Free()
-                self.domain_browser._obj._bus = None
-                self.domain_browser._obj = None
-            self.remove_announce()
+            if self.serviceBrowser:
+                self.serviceBrowser.Free()
+                self.serviceBrowser._obj._bus = None
+                self.serviceBrowser._obj = None
+            if self.domainBrowser:
+                self.domainBrowser.Free()
+                self.domainBrowser._obj._bus = None
+                self.domainBrowser._obj = None
+            self.removeAnnounce()
             self.server._obj._bus = None
             self.server._obj = None
         self.server = None
-        self.service_browser = None
-        self.domain_browser = None 
+        self.serviceBrowser = None
+        self.domainBrowser = None
+        print"--------- disconnecting"
     
     def announce(self):
         if not self.connected:
             return False
-
         state = self.server.GetState()
         if state == self.avahi.SERVER_RUNNING:
-            self.create_service()
+            self.createService()
             self.announced = True
             return True
 
-    def remove_announce(self):
+    def removeAnnounce(self):
         if self.announced == False:
             return False
         try:
@@ -191,7 +196,11 @@ class avahiSinerji:
             else:
                 return False
         except dbus.DBusException, e:
-            gajim.log.debug("Can't remove service. That should not happen")
+            print "Can't remove service. That should not happen"
+
+    def clientTxt(self):
+        domainlist = {"deneme":1, "deneme1":2}
+        return self.avahi.dict_to_txt_array(domainlist)
 
     def createService(self):
         try:
@@ -201,37 +210,43 @@ class avahiSinerji:
                     self.server.EntryGroupNew()), 
                     self.avahi.DBUS_INTERFACE_ENTRY_GROUP)
 
-                self.entrygroup.connect_to_signal('StateChanged', self.entrygroup_state_changed_callback)
+                self.entrygroup.connect_to_signal('StateChanged', self.entrygroupStateChangedCallback)
 
 
-            self.txt = txt
-            print 'Publishing service %s of type %s' % self.name, self.stype
+            print 'Publishing service %s of type _sinerji._tcp' % (self.name)
 
             self.entrygroup.AddService(self.avahi.IF_UNSPEC,
-                self.avahi.PROTO_UNSPEC, dbus.UInt32(0), self.name, self.stype, '',
+                self.avahi.PROTO_UNSPEC, dbus.UInt32(0), self.name, '_sinerji._tcp', '',
                 '', dbus.UInt16(self.port), self.clientTxt(),
-                reply_handler=self.service_added_callback,
-                error_handler=self.service_add_fail_callback)
+                reply_handler=self.serviceAddedCallback,
+                error_handler=self.serviceAddFailCallback)
 
-            self.entrygroup.Commit(reply_handler=self.service_committed_callback,
-                error_handler=self.entrygroup_commit_error_CB)
+            self.entrygroup.Commit(reply_handler=self.serviceCommittedCallback,
+                error_handler=self.entrygroupCommitError)
 
             return True
 
         except dbus.DBusException, e:
-            gajim.log.debug(str(e))
+            print str(e)
             return False
 
-    def service_added_callback(self):
+    def serviceAddFailCallback(self, err):
+        print "Error while adding service. %s' % str(err)"
+        if 'Local name collision' in str(err):
+            alternative_name = self.server.GetAlternativeServiceName(self.name)
+            return
+        self.disconnect()
+
+    def serviceAddedCallback(self):
         print 'Service successfully added'
 
-    def service_committed_callback(self):
+    def serviceCommittedCallback(self):
         print 'Service successfully committed'
 
-    def server_state_changed_callback(self, state, error):
+    def serverStateChangedCallback(self, state, error):
         print "Server state changed to %s" % state
         if state == self.avahi.SERVER_RUNNING:
-            self.create_service()
+            self.createService()
         elif state in (self.avahi.SERVER_COLLISION,
                 self.avahi.SERVER_REGISTERING):
             self.disconnect()
@@ -239,15 +254,14 @@ class avahiSinerji:
         elif state == self.avahi.CLIENT_FAILURE:
             print 'CLIENT FAILURE'
 
-    def entrygroup_state_changed_callback(self, state, error):
+    def entrygroupStateChangedCallback(self, state, error):
         if state == self.avahi.ENTRY_GROUP_COLLISION:
-            gajim.log.debug('zeroconf.py: local name collision')
-            self.service_add_fail_callback('Local name collision')
+            print "avahiservices.py: local name collision"
+            self.serviceAddFailCallback('Local name collision')
         elif state == self.avahi.ENTRY_GROUP_FAILURE:
             self.disconnect()
             self.entrygroup.Reset()
-            gajim.log.debug('zeroconf.py: ENTRY_GROUP_FAILURE reached(that'
-                ' should not happen)')
+            print "avahiservices.py: ENTRY_GROUP_FAILURE reached (that should not happen)"
 
 if __name__ == "__main__":
 
@@ -258,8 +272,13 @@ if __name__ == "__main__":
     instance.connectDbus()
     instance.connectAvahi()
     instance.connect()
-    instance.announce()
-    app.exec_()
+    if instance.discoveredHosts:
+        print instance.discoveredHosts
+        instance.disconnect()
+    try:
+        app.exec_()
+    except KeyboardInterrupt:
+        pass
 
 
 
