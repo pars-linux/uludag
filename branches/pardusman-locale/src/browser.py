@@ -364,6 +364,8 @@ class Language(QDialog):
         for each in self.availablelangs:
             item = QCheckListItem(self.listLang, "lang", QCheckListItem.CheckBox)
             item.setText(0, each)
+            if each in langall:
+                item.activate()
 
         LayoutWidget = QWidget(self,"layout1")
         LayoutWidget.setGeometry(QRect(80,380,234,58))
