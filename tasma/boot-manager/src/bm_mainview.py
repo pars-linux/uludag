@@ -487,9 +487,19 @@ class widgetUnused(QWidget):
                     if isLast:
                         self.listBusy = False
                         self.listUnused()
+                    self.setEnabled(True)
+                    self.buttonAdd.setEnabled(True)
+                    self.buttonRemove.setEnabled(True)
+                def cancel():
+                    self.setEnabled(True)
+                    self.buttonAdd.setEnabled(True)
+                    self.buttonRemove.setEnabled(True)
+
                 for version in versions:
                     ch = self.parent.callMethod("removeUnused", "tr.org.pardus.comar.boot.loader.removeunused")
                     ch.registerDone(handler, version == versions[-1])
+                    ch.registerCancel(cancel)
+                    self.setEnabled(False)
                     ch.call(version)
 
     def slotExit(self):
