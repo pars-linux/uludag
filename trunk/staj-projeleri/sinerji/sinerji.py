@@ -214,7 +214,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         txt = ['os=linux']
         group = dbus.Interface(bus.get_object(avahi.DBUS_NAME, server.EntryGroupNew()), avahi.DBUS_INTERFACE_ENTRY_GROUP)
         group.AddService(avahi.IF_UNSPEC, avahi.PROTO_UNSPEC, dbus.UInt32(0),
-                         'Synergy at %s' % gethostname(), '_synergy._tcp', '', '',
+                         'Synergy at %s' % gethostname(), '_sinerji._tcp', '', '',
                          dbus.UInt16(24800), avahi.string_array_to_txt_array(txt))
         group.Commit()
 
