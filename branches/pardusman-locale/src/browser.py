@@ -404,10 +404,15 @@ class Language(QDialog):
         self.setSelectedLangs()
         QDialog.accept(self)
 
-    def selectAll(self):
+    def selectAll(self, checked):
         aww = self.listLang.firstChild()
         while aww:
-            aww.activate()
+            if checked:
+                if not aww.isOn():
+                    aww.activate()
+            else:
+                if aww.isOn():
+                    aww.activate()
             aww = aww.nextSibling()
 
     def reject2(self):
