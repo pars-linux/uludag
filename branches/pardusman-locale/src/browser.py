@@ -440,6 +440,11 @@ class Language(QDialog):
         self.comboBox.clear()
         if not checked:
             self.comboBox.insertItem(self.defaultlang)
+            aww = self.listLang.firstChild()
+            while aww:
+                if aww.text() == self.defaultlang:
+                    aww.activate()
+                aww = aww.nextSibling()
         else:
             self.comboBox.insertStrList(self.selectedLangs)
 
