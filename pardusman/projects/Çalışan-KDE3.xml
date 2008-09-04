@@ -1,6 +1,6 @@
 <PardusmanProject type="live" media="cd">
     <Title>Pardus Calisan 2008.1 RC</Title>
-    <WorkDir>/home/ekin/temp/New Folder 1/</WorkDir>
+    <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
