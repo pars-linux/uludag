@@ -101,10 +101,15 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomain.append(self.confdomainright)
         self.confdomain.append(self.confdomainleft)
         self.confdomain.append("host_host_%s" % gethostname())
-    
+        print self.confdomaintop
+        self.connecting.clientTxt(self.confdomaintop,
+                self.confdomainbottom,
+                self.confdomainright,
+                self.confdomainleft)
+        print self.connecting.clientTxt()
+        
         createsynergyconf.screens(self.confdomain)
         createsynergyconf.links(self.confdomain)
-        self.reject()
             
     @pyqtSignature("")
     def on_cancelButton_clicked(self):
@@ -128,7 +133,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.connecting.connectDbus()
         self.connecting.connectAvahi()
         self.connecting.connect()
-        
+
 
 
     @pyqtSignature("")
