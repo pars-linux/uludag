@@ -10,6 +10,7 @@
 #
 
 import os
+import re
 import subprocess
 import sha
 import tempfile
@@ -400,6 +401,15 @@ def make_image(project):
         chroot_comar(image_dir)
         chrun("/usr/bin/pisi configure-pending baselayout")
         chrun("/usr/bin/pisi configure-pending")
+
+        # FIXME : find a generic way to do this
+        if "kdebase4" in project.all_packages :
+            chrun("/bin/service kdebase4_workspace on")
+            # Change headstart
+            fn_config = os.path.join(image_dir, "etc/conf.d/mudur")
+            str_conf = file(fn_config).read()
+            str_conf = re.sub("kdebase", "kdebase4_workspace", str_conf)
+            file(fn_config, "w").write(str_conf)
 
         connectToDBus(image_dir)
 
