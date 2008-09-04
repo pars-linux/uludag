@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-01 12:02+0300\n"
+"POT-Creation-Date: 2008-09-04 12:23+0300\n"
 "PO-Revision-Date: 2008-06-20 10:17+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -346,39 +346,39 @@ msgstr "İsim Sunucusu Ekle"
 msgid "Name server:"
 msgstr "İsim sunucusu:"
 
-#: connsharing.py:98
+#: connsharing.py:99
 msgid "Internet Connection Sharing"
 msgstr "Internet Bağlantısı Paylaşımı"
 
-#: connsharing.py:99
+#: connsharing.py:100
 msgid "Share Internet Connection"
 msgstr "Internet Bağlantısını Paylaştır"
 
-#: connsharing.py:101
+#: connsharing.py:102
 msgid "Interface that goes to internet"
 msgstr "Internet'e açılan arayüz"
 
-#: connsharing.py:102
+#: connsharing.py:103
 msgid "Interface that will share connection"
 msgstr "Bağlantının paylaştırılacağı arayüz"
 
-#: connsharing.py:118
+#: connsharing.py:119
 msgid "D-Bus Error"
 msgstr "D-Bus Hatası"
 
-#: connsharing.py:122
+#: connsharing.py:123
 msgid "COMAR Error"
 msgstr "COMAR Hatası"
 
-#: connsharing.py:126
+#: connsharing.py:127
 msgid "Changing States of Interfaces Failed"
 msgstr "Arayüz Bağlantı Durumu Değiştirilemedi"
 
-#: connsharing.py:128
+#: connsharing.py:129
 msgid "DHCP Server Error"
 msgstr "DHCP Sunucu Hatası"
 
-#: connsharing.py:147
+#: connsharing.py:156
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
@@ -386,23 +386,23 @@ msgstr ""
 "Internete açılan ve bağlantının paylaştırıldığı arayüzler birbirinden farklı "
 "olmalı"
 
-#: connsharing.py:147
+#: connsharing.py:156
 msgid "Check Selected Interfaces"
 msgstr "Seçilen Arayüzleri Dene"
 
-#: connsharing.py:157
+#: connsharing.py:166
 msgid "The sharing of your connection has been successfully done."
 msgstr "Bağlantı paylaşımı tamamlandı."
 
-#: connsharing.py:157
+#: connsharing.py:166
 msgid "Sharing is OK"
 msgstr "Bağlantı paylaşımı tamam."
 
-#: connsharing.py:258
+#: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
 msgstr "Internet'e açılan arayüz IP alamadı"
 
-#: connsharing.py:258
+#: connsharing.py:267
 msgid "IP address not found"
 msgstr "IP adresi bululanamadı"
 
