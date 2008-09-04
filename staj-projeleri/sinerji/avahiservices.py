@@ -6,7 +6,7 @@ class avahiSinerji:
     def __init__(self):
         self.avahi = None
         self.domain = None
-        self.stype = "_workstation._tcp"
+        self.stype = "_sinerji._tcp"
         self.username = name
         self.host = host
         self.txt = {}
@@ -54,8 +54,6 @@ class avahiSinerji:
         self.service_browser.connect_to_signal('ItemRemove', self.removeService)
         self.service_browser.connect_to_signal('Failure', self.errorService)
 
-
-    ## connect to dbus
     def connectDbus(self):
         try:
             import dbus
@@ -74,7 +72,6 @@ class avahiSinerji:
         else:
             return True
     
-    ## connect to avahi
     def connectAvahi(self):
         if not self.connectDbus():
             return False
@@ -167,6 +164,59 @@ class avahiSinerji:
         except dbus.DBusException, e:
             gajim.log.debug("Can't remove service. That should not happen")
 
+    def createService(self):
+        try:
+            if not self.entrygroup:
+                # create an EntryGroup for publishing
+                self.entrygroup = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, 
+                    self.server.EntryGroupNew()), 
+                    self.avahi.DBUS_INTERFACE_ENTRY_GROUP)
+
+                self.entrygroup.connect_to_signal('StateChanged', self.entrygroup_state_changed_callback)
 
 
+            self.txt = txt
+            print 'Publishing service %s of type %s' % self.name, self.stype
+
+            self.entrygroup.AddService(self.avahi.IF_UNSPEC,
+                self.avahi.PROTO_UNSPEC, dbus.UInt32(0), self.name, self.stype, '',
+                '', dbus.UInt16(self.port), self.clientTxt(),
+                reply_handler=self.service_added_callback,
+                error_handler=self.service_add_fail_callback)
+
+            self.entrygroup.Commit(reply_handler=self.service_committed_callback,
+                error_handler=self.entrygroup_commit_error_CB)
+
+            return True
+
+        except dbus.DBusException, e:
+            gajim.log.debug(str(e))
+            return False
+
+    def service_added_callback(self):
+        Print 'Service successfully added'
+
+    def service_committed_callback(self):
+        gajim.log.debug('Service successfully committed')
+
+    def server_state_changed_callback(self, state, error):
+        print "Server state changed to %s" % state
+        if state == self.avahi.SERVER_RUNNING:
+            self.create_service()
+        elif state in (self.avahi.SERVER_COLLISION,
+                self.avahi.SERVER_REGISTERING):
+            self.disconnect()
+            self.entrygroup.Reset()
+        elif state == self.avahi.CLIENT_FAILURE:
+            print 'CLIENT FAILURE'
+
+    def entrygroup_state_changed_callback(self, state, error):
+        if state == self.avahi.ENTRY_GROUP_COLLISION:
+            gajim.log.debug('zeroconf.py: local name collision')
+            self.service_add_fail_callback('Local name collision')
+        elif state == self.avahi.ENTRY_GROUP_FAILURE:
+            self.disconnect()
+            self.entrygroup.Reset()
+            gajim.log.debug('zeroconf.py: ENTRY_GROUP_FAILURE reached(that'
+                ' should not happen)')
 
