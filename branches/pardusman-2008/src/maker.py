@@ -220,7 +220,7 @@ def setup_live_kdm(project):
         path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
     elif "kdebase4" in project.all_packages :
         # FIXME : find a generic way to do this
-        path = os.path.join(image_dir, "usr/kde/4/share/config/kdm/kdmrc")
+        path = os.path.join(image_dir, "etc/X11/kdm/kdmrc4")
     lines = []
     for line in file(path):
         if line.startswith("#AutoLoginEnable"):
