@@ -381,16 +381,27 @@ class Language(QDialog):
         self.comboBox = QComboBox(0,self,"comboBox")
         self.comboBox.setGeometry(QRect(60,340,240,30))
         self.comboBox.insertItem(defaultlang)
-        
-        #for each in availablelangs:
-        #self.comboBox.insertStrList(availablelangs)
 
         self.connect(self.but1, SIGNAL("clicked()"), self.accept2)
         self.connect(self.but2, SIGNAL("clicked()"), self.reject2)
         self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.syncCombo)
         self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.selectAll)
+        self.connect(self.comboBox, SIGNAL("activated(int)"), self.setDefaultLang)
+
+    def setDefaultLang(self):
+        self.defaultlang =  self.comboBox.currentText()
+
+
+    def setSelectedLangs(self):
+        self.selectedLangs = []
+        aww = self.listLang.firstChild()
+        while aww:
+            if aww.isOn():
+                self.selectedLangs.append(str(aww.text()))
+            aww = aww.nextSibling()
 
     def accept2(self):
+        self.setSelectedLangs()
         QDialog.accept(self)
 
     def selectAll(self):
@@ -403,15 +414,9 @@ class Language(QDialog):
         QDialog.reject(self)
 
     def syncCombo(self):
-        aww = self.listLang.firstChild()
-        curLangs = []
-        while aww:
-            if aww.isOn():
-                curLangs.append(str(aww.text()))
-            aww = aww.nextSibling()
-
+        self.setSelectedLangs()
         self.comboBox.clear()
-        self.comboBox.insertStrList(curLangs)
+        self.comboBox.insertStrList(self.selectedLangs)
 
     def accept(self):
         comps, sel = self.browser.get_selection()
