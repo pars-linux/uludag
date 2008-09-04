@@ -346,8 +346,13 @@ class Language(QDialog):
     def __init__(self, parent, callback, langdef, langall):
         QDialog.__init__(self, parent)
 
-        defaultlang = "en_US"
         self.availablelangs = ["ca_ES", "de_DE", "en_US", "es_ES", "fr_FR", "it_IT", "nl_NL", "pl_PL", "pt_BR", "sv_SE", "tr_TR"]
+
+        if langdef not in self.availablelangs:
+            self.defaultlang = "en_US"
+        else:
+            self.defaultlang = langdef
+
         self.callback = callback
 
         self.listLang= KListView(self,"listLang")
@@ -378,7 +383,7 @@ class Language(QDialog):
 
         self.comboBox = QComboBox(0,self,"comboBox")
         self.comboBox.setGeometry(QRect(60,340,240,30))
-        self.comboBox.insertItem(defaultlang)
+        self.comboBox.insertItem(self.defaultlang)
 
         self.connect(self.but1, SIGNAL("clicked()"), self.accept)
         self.connect(self.but2, SIGNAL("clicked()"), self.reject)
