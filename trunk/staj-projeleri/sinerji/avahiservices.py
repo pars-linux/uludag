@@ -1,17 +1,23 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-class avahiSinerji:
+from socket import gethostname
+from dbus.mainloop.qt import DBusQtMainLoop
+from PyQt4.QtGui import QApplication
+import sys
+import dbus
+import avahi
 
-    def __init__(self):
+class avahiSinerji:
+    def __init__(self, host):
         self.avahi = None
         self.domain = None
         self.stype = "_sinerji._tcp"
-        self.username = name
         self.host = host
         self.txt = {}
 
         self.domainBrowser = None
+        self.serviceBrowser = None
         self.bus = None
         self.server = None
         self.discoveredHosts = set()
@@ -19,6 +25,7 @@ class avahiSinerji:
         self.connected = False
         self.announced = False
 
+    
     def printError(self, *args):
         print 'error_handler'
         print args[0]
@@ -37,9 +44,22 @@ class avahiSinerji:
     def removeService(self, interface, protocol, name, stype, domain, flags):
         if not self.connected:
             return
- 
+
+        hostremoved = re.sub(r'\.%s$' % domain, '', host)
+        print hostremoved
+        self.discoveredHosts.remove(removed)
+
+
+    def service_resolved_callback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
+        print 'Service data for service %s in domain %s on %i.%i:' % name, domain, interface, protocol
+        print 'Host %s (%s), port %i, TXT data: %s' % (host, address, port, self.txt_array_to_dict(txt))
+        
+        if not self.connected:
+            return
         hostadded = re.sub(r'\.%s$' % domain, '', host)
+        print hostadded
         self.discoveredHosts.remove(hostadded)
+
 
     def newServiceType(self, interface, protocol, stype, domain, flags):
         if self.serviceBrowser:
@@ -54,18 +74,28 @@ class avahiSinerji:
         self.service_browser.connect_to_signal('ItemRemove', self.removeService)
         self.service_browser.connect_to_signal('Failure', self.errorService)
 
+    def newDomainCallback(self,interface, protocol, domain, flags):
+        if domain != "local":
+            self.browse_domain(interface, protocol, domain)
+
+
+
+    def avahi_dbus_connect_cb(self, connect, disconnect):
+        if connect != "":
+            print 'Lost connection to avahi-daemon'
+            self.disconnect()
+        else:
+            print 'We are connected to avahi-daemon'
+
+    
     def connectDbus(self):
-        try:
-            import dbus
-        except ImportError:
-            print "Error: python-dbus needs to be installed"
         if self.bus:
             return True
         try:
+
             self.bus = dbus.SystemBus()
-            self.bus.add_signal_receiver(self.avahi_dbus_connect_cb, 
-                    "NameOwnerChanged", "org.freedesktop.DBus",
-                    arg0="org.freedesktop.Avahi")
+            self.bus.add_signal_receiver(self.avahi_dbus_connect_cb, "NameOwnerChanged", "org.freedesktop.DBus", arg0="org.freedesktop.Avahi")
+            print " dbus connecting"
         except Exception, e:
             print e
             return False
@@ -75,19 +105,13 @@ class avahiSinerji:
     def connectAvahi(self):
         if not self.connectDbus():
             return False
-        try:
-            import avahi
-            self.avahi = avahi
-        except ImportError:
-            print "Error: python-avahi needs to be installed"
-            return False
         if self.server:
             return True 
         try:
-            self.server = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
-            self.avahi.DBUS_PATH_SERVER), self.avahi.DBUS_INTERFACE_SERVER)
-            self.server.connect_to_signal('StateChanged',
-                self.server_state_changed_callback)
+            self.server = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, 
+                self.avahi.DBUS_PATH_SERVER), self.avahi.DBUS_INTERFACE_SERVER), 
+            self.server.connect_to_signal('StateChanged', self.server_state_changed_callback)
+            print "avahi connecting"
         except Exception, e:
             # Avahi service is not present
             self.server = None
@@ -99,12 +123,14 @@ class avahiSinerji:
     def connect(self):
         if not self.connectAvahi():
             return False
+
+            print "browse domain"
         self.connected = True
         
         if self.domain is None:
             # Explicitly browse .local
             self.browse_domain(self.avahi.IF_UNSPEC, self.avahi.PROTO_UNSPEC, "local")
-
+            print "browse domain"
             # Browse for other browsable domains
             self.domain_browser = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
                     self.server.DomainBrowserNew(self.avahi.IF_UNSPEC, \
@@ -116,6 +142,9 @@ class avahiSinerji:
             self.browse_domain(self.avahi.IF_UNSPEC, self.avahi.PROTO_UNSPEC, self.domain)
 
         return True
+    
+    def browse_domain(self, interface, protocol, domain):
+        self.newServiceType(interface, protocol, self.stype, domain, '')
 
     def disconnect(self):
         if self.connected:
@@ -194,10 +223,10 @@ class avahiSinerji:
             return False
 
     def service_added_callback(self):
-        Print 'Service successfully added'
+        print 'Service successfully added'
 
     def service_committed_callback(self):
-        gajim.log.debug('Service successfully committed')
+        print 'Service successfully committed'
 
     def server_state_changed_callback(self, state, error):
         print "Server state changed to %s" % state
@@ -219,4 +248,18 @@ class avahiSinerji:
             self.entrygroup.Reset()
             gajim.log.debug('zeroconf.py: ENTRY_GROUP_FAILURE reached(that'
                 ' should not happen)')
+
+if __name__ == "__main__":
+
+    app = QApplication(sys.argv)
+    DBusQtMainLoop(set_as_default=True)
+    
+    instance = avahiSinerji(gethostname())
+    instance.connectDbus()
+    instance.connectAvahi()
+    instance.connect()
+    instance.announce()
+    app.exec_()
+
+
 
