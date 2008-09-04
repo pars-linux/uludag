@@ -14,6 +14,7 @@
 import locale
 import yali4
 import yali4.sysutils
+from os.path import exists
 from yali4.constants import consts
 from yali4.options import options
 
@@ -22,7 +23,7 @@ def try_umount_target():
         yali4.sysutils.umount(consts.target_dir + mpoint)
 
 def main():
-    if not options.firstBoot == True:
+    if not options.firstBoot == True or exists("/etc/yali-is-firstboot"):
         print "Trying to umount .."
         try_umount_target()
     runner = yali4.default_runner()
