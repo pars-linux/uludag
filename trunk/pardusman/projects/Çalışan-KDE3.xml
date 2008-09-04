@@ -191,6 +191,7 @@
         <SelectedPackage>syntekdriver</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
+        <SelectedPackage>system-config-printer</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
@@ -429,6 +430,7 @@
         <Package>gwenview-i18n-tr</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
+        <Package>hal-cups-utils</Package>
         <Package>hal-info</Package>
         <Package>hcfpcimodem</Package>
         <Package>hdparm</Package>
@@ -454,6 +456,7 @@
         <Package>iwlwifi4965-ucode</Package>
         <Package>jack-audio-connection-kit</Package>
         <Package>jasper</Package>
+        <Package>jbigkit</Package>
         <Package>jfsutils</Package>
         <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
@@ -748,6 +751,7 @@
         <Package>pulseaudio</Package>
         <Package>pwc</Package>
         <Package>pycairo</Package>
+        <Package>pycups</Package>
         <Package>pygobject</Package>
         <Package>pygtk</Package>
         <Package>pyparted</Package>
@@ -791,6 +795,7 @@
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
+        <Package>splix</Package>
         <Package>sqlite</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
@@ -805,6 +810,7 @@
         <Package>sysinfo</Package>
         <Package>sysklogd</Package>
         <Package>syslinux</Package>
+        <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
         <Package>taglib</Package>
         <Package>tar</Package>
