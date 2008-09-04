@@ -107,17 +107,18 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ## Only one checkbox has to be checked ##
     
     @pyqtSignature("")
-    def on_serverBox_clicked(self):
-        self.clientBox.toggle()
-        self.browseDomain('_workstation._tcp')
-        self.publishService()
-        print "deneme"
+    def on_serverButton_toggled(self):
+        if serverButton.isChecked():
+            print "Radio button is checked"
+            self.browseDomain('_workstation._tcp')
+            self.publishService()
+            print "deneme"
 
 
     @pyqtSignature("")
-    def on_clientBox_clicked(self):
-        self.serverBox.toggle()
-        self.browseDomain('_sinerji._tcp')
+    def on_clientButton_toggled(self):
+        if clientButton.isChecked():
+            self.browseDomain('_sinerji._tcp')
 
 
     def updateUi(self):
