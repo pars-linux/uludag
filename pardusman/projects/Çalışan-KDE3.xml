@@ -1,7 +1,7 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1 Beta [r2]</Title>
-    <WorkDir>/home/ekin/cdtemplive/</WorkDir>
-    <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
+    <Title>Pardus Calisan 2008.1 RC</Title>
+    <WorkDir>/home/ekin/temp/New Folder 1/</WorkDir>
+    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
@@ -82,6 +82,7 @@
         <SelectedPackage>gwenview-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>gwenview-i18n-sv</SelectedPackage>
         <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
+        <SelectedPackage>hal-cups-utils</SelectedPackage>
         <SelectedPackage>hcfpcimodem</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>hsfmodem</SelectedPackage>
@@ -168,6 +169,7 @@
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pwc</SelectedPackage>
+        <SelectedPackage>pycups</SelectedPackage>
         <SelectedPackage>qc-usb</SelectedPackage>
         <SelectedPackage>r5u870</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
@@ -181,6 +183,7 @@
         <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
+        <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
@@ -449,6 +452,7 @@
         <Package>irqbalance</Package>
         <Package>iwlwifi3945-ucode</Package>
         <Package>iwlwifi4965-ucode</Package>
+        <Package>jack-audio-connection-kit</Package>
         <Package>jasper</Package>
         <Package>jfsutils</Package>
         <Package>jimmac-xcursor</Package>
