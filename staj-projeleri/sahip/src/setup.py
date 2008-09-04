@@ -135,7 +135,8 @@ class SahipUninstall(Command):
             os.remove(link_path)
 
 i18n_domain = "sahip"
-i18n_languages = ["tr"]
+i18n_languages = ["tr",
+                  "es"]
 """,
                   "nl",
                   "it",
