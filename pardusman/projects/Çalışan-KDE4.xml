@@ -4,6 +4,8 @@
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
+        <SelectedPackage>QtCurve-KDE3</SelectedPackage>
+        <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
@@ -89,6 +91,11 @@
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kdeartwork4</SelectedPackage>
+        <SelectedPackage>kdebase4</SelectedPackage>
+        <SelectedPackage>kdebase4-runtime</SelectedPackage>
+        <SelectedPackage>kdemultimedia4</SelectedPackage>
+        <SelectedPackage>kdenetwork4</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
@@ -119,7 +126,6 @@
         <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
-        <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
         <SelectedPackage>ov51x-jpeg</SelectedPackage>
@@ -180,6 +186,8 @@
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
         <Package>QtCurve-Gtk2</Package>
+        <Package>QtCurve-KDE3</Package>
+        <Package>QtCurve-KDE4</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>accessrunner-firmware</Package>
@@ -189,7 +197,7 @@
         <Package>acpid</Package>
         <Package>acx100</Package>
         <Package>acx100-firmware</Package>
-        <Package>agg</Package>
+        <Package>akonadi</Package>
         <Package>allegro</Package>
         <Package>alsa-driver</Package>
         <Package>alsa-firmware</Package>
@@ -202,6 +210,7 @@
         <Package>amrwb</Package>
         <Package>aria2</Package>
         <Package>arts</Package>
+        <Package>artwork</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
@@ -214,6 +223,7 @@
         <Package>audit</Package>
         <Package>avahi</Package>
         <Package>avahi-qt</Package>
+        <Package>avahi-qt4</Package>
         <Package>b43-firmware</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
@@ -237,6 +247,7 @@
         <Package>cairomm</Package>
         <Package>cdparanoia</Package>
         <Package>chmlib</Package>
+        <Package>clucene</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
         <Package>coolplug</Package>
@@ -249,11 +260,12 @@
         <Package>curl</Package>
         <Package>cyrus-sasl</Package>
         <Package>db4</Package>
-        <Package>db4-java</Package>
         <Package>dbus</Package>
         <Package>dbus-glib</Package>
         <Package>dbus-pyqt3-mainloop</Package>
         <Package>dbus-python</Package>
+        <Package>dbus-qt3</Package>
+        <Package>decibel</Package>
         <Package>dejavu-fonts</Package>
         <Package>device-mapper</Package>
         <Package>dhcp</Package>
@@ -273,10 +285,13 @@
         <Package>eagle-firmware</Package>
         <Package>eciadsl</Package>
         <Package>ed</Package>
+        <Package>eject</Package>
+        <Package>enchant</Package>
         <Package>enscript</Package>
         <Package>essential</Package>
         <Package>et131x</Package>
         <Package>ethtool</Package>
+        <Package>exiv2</Package>
         <Package>expat</Package>
         <Package>faac</Package>
         <Package>faad2</Package>
@@ -318,6 +333,7 @@
         <Package>gimp-i18n-pl</Package>
         <Package>gimp-i18n-pt_BR</Package>
         <Package>gimp-i18n-sv</Package>
+        <Package>gle</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
         <Package>glibc-locales-ca</Package>
@@ -336,10 +352,11 @@
         <Package>gnome-mplayer</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnuchess</Package>
+        <Package>gnupg</Package>
         <Package>gnutls</Package>
         <Package>gpac</Package>
         <Package>gparted</Package>
-        <Package>gperf</Package>
+        <Package>gpgme</Package>
         <Package>gpm</Package>
         <Package>graphviz</Package>
         <Package>grep</Package>
@@ -349,8 +366,6 @@
         <Package>gspca</Package>
         <Package>gst-ffmpeg</Package>
         <Package>gst-plugins-base</Package>
-        <Package>gst-plugins-good</Package>
-        <Package>gst-plugins-ugly</Package>
         <Package>gstreamer</Package>
         <Package>gtk2</Package>
         <Package>gtkmm</Package>
@@ -364,7 +379,6 @@
         <Package>hdparm</Package>
         <Package>hplip</Package>
         <Package>hsfmodem</Package>
-        <Package>hsqldb-lib</Package>
         <Package>icu4c</Package>
         <Package>iksemel</Package>
         <Package>ilmbase</Package>
@@ -390,11 +404,20 @@
         <Package>kaffeine</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kdeartwork4</Package>
+        <Package>kdebase</Package>
+        <Package>kdebase4</Package>
+        <Package>kdebase4-runtime</Package>
+        <Package>kdebase4-workspace</Package>
         <Package>kdelibs</Package>
+        <Package>kdelibs4</Package>
+        <Package>kdemultimedia4</Package>
+        <Package>kdenetwork4</Package>
+        <Package>kdepimlibs</Package>
+        <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
         <Package>kftpgrabber</Package>
-        <Package>kio-to-local</Package>
         <Package>klibc</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
@@ -441,13 +464,12 @@
         <Package>libXxf86misc</Package>
         <Package>libXxf86vm</Package>
         <Package>libaio</Package>
+        <Package>libao</Package>
         <Package>libart_lgpl</Package>
         <Package>libatomic_ops</Package>
         <Package>libavc1394</Package>
         <Package>libcaca</Package>
         <Package>libcap</Package>
-        <Package>libcddb</Package>
-        <Package>libcdio</Package>
         <Package>libconfig</Package>
         <Package>libcroco</Package>
         <Package>libdaemon</Package>
@@ -478,6 +500,8 @@
         <Package>libidn</Package>
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
+        <Package>libksba</Package>
+        <Package>liblazy</Package>
         <Package>liblzf</Package>
         <Package>libmad</Package>
         <Package>libmatroska</Package>
@@ -485,7 +509,6 @@
         <Package>libmodplug</Package>
         <Package>libmp4v2</Package>
         <Package>libmpcdec</Package>
-        <Package>libmpeg2</Package>
         <Package>libmtp</Package>
         <Package>libnfsidmap</Package>
         <Package>libnjb</Package>
@@ -508,7 +531,6 @@
         <Package>libsigc++</Package>
         <Package>libsmbios</Package>
         <Package>libsndfile</Package>
-        <Package>libsoup</Package>
         <Package>libstdc++</Package>
         <Package>libsvg</Package>
         <Package>libsvg-cairo</Package>
@@ -517,15 +539,16 @@
         <Package>libusb</Package>
         <Package>libvisual</Package>
         <Package>libvisual-plugins</Package>
+        <Package>libvncserver</Package>
         <Package>libvorbis</Package>
         <Package>libwmf</Package>
         <Package>libwnck</Package>
-        <Package>libwpd</Package>
-        <Package>libwpg</Package>
+        <Package>libwww</Package>
         <Package>libx86</Package>
         <Package>libxcb</Package>
         <Package>libxkbfile</Package>
         <Package>libxkbui</Package>
+        <Package>libxklavier</Package>
         <Package>libxml2</Package>
         <Package>libxslt</Package>
         <Package>linux-atm</Package>
@@ -555,6 +578,7 @@
         <Package>mkinitramfs</Package>
         <Package>module-init-tools</Package>
         <Package>mpeg2vidcodec</Package>
+        <Package>mpfr</Package>
         <Package>mpg123</Package>
         <Package>mplayer</Package>
         <Package>mtools</Package>
@@ -565,7 +589,6 @@
         <Package>ncompress</Package>
         <Package>ncurses</Package>
         <Package>ndiswrapper</Package>
-        <Package>neon</Package>
         <Package>net-snmp</Package>
         <Package>net-tools</Package>
         <Package>netcat</Package>
@@ -579,10 +602,10 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
+        <Package>ntp-client</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
-        <Package>openoffice</Package>
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
@@ -599,7 +622,9 @@
         <Package>pcmciautils</Package>
         <Package>perl</Package>
         <Package>perl-XML-Parser</Package>
+        <Package>phonon</Package>
         <Package>piksemel</Package>
+        <Package>pinentry</Package>
         <Package>pisi</Package>
         <Package>pixman</Package>
         <Package>pm-utils</Package>
@@ -614,6 +639,7 @@
         <Package>procps</Package>
         <Package>psmisc</Package>
         <Package>psutils</Package>
+        <Package>pth</Package>
         <Package>pulseaudio</Package>
         <Package>pwc</Package>
         <Package>pycairo</Package>
@@ -626,12 +652,19 @@
         <Package>python-fchksum</Package>
         <Package>python-imaging</Package>
         <Package>qc-usb</Package>
+        <Package>qca2</Package>
+        <Package>qca2-ossl</Package>
+        <Package>qimageblitz</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
+        <Package>qt4</Package>
         <Package>r5u870</Package>
         <Package>ralink-firmware</Package>
+        <Package>raptor</Package>
+        <Package>rasqal</Package>
         <Package>rdate</Package>
         <Package>readline</Package>
+        <Package>redland</Package>
         <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
         <Package>rp-pppoe</Package>
@@ -652,6 +685,7 @@
         <Package>slang</Package>
         <Package>slmodem</Package>
         <Package>sn9c1xx</Package>
+        <Package>soprano</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
@@ -660,6 +694,7 @@
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
         <Package>strace</Package>
+        <Package>strigi</Package>
         <Package>sudo</Package>
         <Package>sun-jre</Package>
         <Package>suspend</Package>
@@ -672,18 +707,19 @@
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
         <Package>taglib</Package>
+        <Package>tapioca-qt</Package>
         <Package>tar</Package>
         <Package>tcl</Package>
         <Package>tcltk</Package>
         <Package>tcp-wrappers</Package>
         <Package>tcpdump</Package>
+        <Package>telepathy-qt</Package>
         <Package>telnet-bsd</Package>
         <Package>testdisk</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>time</Package>
         <Package>tn5250</Package>
-        <Package>tomcat-servlet-api</Package>
         <Package>traceroute</Package>
         <Package>tulliana2</Package>
         <Package>tunepimp</Package>
@@ -706,7 +742,7 @@
         <Package>vim</Package>
         <Package>vixie-cron</Package>
         <Package>vloopback</Package>
-        <Package>wavpack</Package>
+        <Package>vorbis-tools</Package>
         <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
@@ -727,10 +763,10 @@
         <Package>xorg-input</Package>
         <Package>xorg-server</Package>
         <Package>xorg-video</Package>
+        <Package>xscreensaver</Package>
         <Package>xvid</Package>
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
-        <Package>zemberek-openoffice</Package>
         <Package>zemberek-server</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
