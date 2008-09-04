@@ -561,12 +561,12 @@ class Yali:
                     return False
             elif self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
                 try:
-                    os.system("pisi rm yali4")
-                    os.unlink("%s/etc/yali-is-firstboot" % ctx.consts.target_dir)
                     obj = bus.get_object("tr.org.pardus.comar", "/package/yali4")
                     obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
                     obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
                     obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
+                    os.unlink("%s/etc/yali-is-firstboot" % ctx.consts.target_dir)
+                    os.system("pisi rm yali4")
                 except:
                     ctx.debugger.log("Dbus error: package doesnt exist !")
                     return False
