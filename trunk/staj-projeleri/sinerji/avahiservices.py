@@ -185,10 +185,10 @@ class avahiSinerji:
         except dbus.DBusException, e:
             print "Can't remove service. That should not happen"
 
-    def clientTxt(self,top=None, bottom=None, right=None, left=None):
-        domainlist = dict(top=1, bottom=2, right=3, left=4)
-        #domainlist = {"deneme":"1", "deneme2":"2", "right":"3"}
-        return self.avahi.dict_to_txt_array(domainlist)
+    def clientTxt(self, top="None1", bottom="None2", right="None3", left="None4"):
+        self.domainlist = {top:"1", bottom:"2", right:"3", left:"4"}
+        #return self.avahi.dict_to_txt_array(self.domainlist)
+        return self.domainlist
 
     def createService(self):
         try:
