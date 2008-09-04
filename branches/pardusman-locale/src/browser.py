@@ -317,7 +317,6 @@ class BrowserWidget(QVBox):
         self.nr_paks -= 1
         self._update_label()
 
-
 class Browser(QDialog):
     def __init__(self, parent, repo, callback, components, packages, mediasize):
         QDialog.__init__(self, parent)
@@ -346,11 +345,9 @@ class Browser(QDialog):
 class Language(QDialog):
     def __init__(self, parent):
         QDialog.__init__(self, parent)
-        #self.setCaption(repo.base_uri)
-        self.setIcon(getIconPixmap("package"))
 
         defaultlang = "en_US"
-        availablelangs = ["ca_ES", "de_DE", "en_US", "es_ES", "fr_FR", "it_IT", "nl_NL", "pl_PL", "pt_BR", "sv_SE", "tr_TR"]
+        self.availablelangs = ["ca_ES", "de_DE", "en_US", "es_ES", "fr_FR", "it_IT", "nl_NL", "pl_PL", "pt_BR", "sv_SE", "tr_TR"]
 
         self.listLang= KListView(self,"listLang")
         self.listLang.addColumn(i18n("Lang Layouts"))
@@ -358,7 +355,7 @@ class Language(QDialog):
         self.listLang.setAllColumnsShowFocus(1)
         self.listLang.setResizeMode(QListView.AllColumns)
 
-        for each in availablelangs:
+        for each in self.availablelangs:
             item = QCheckListItem(self.listLang, "lang", QCheckListItem.CheckBox)
             item.setText(0, each)
 
@@ -387,10 +384,10 @@ class Language(QDialog):
         self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.syncCombo)
         self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.selectAll)
         self.connect(self.comboBox, SIGNAL("activated(int)"), self.setDefaultLang)
+        self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.syncCombo)
 
     def setDefaultLang(self):
         self.defaultlang =  self.comboBox.currentText()
-
 
     def setSelectedLangs(self):
         self.selectedLangs = []
@@ -420,6 +417,10 @@ class Language(QDialog):
 
     def syncCombo(self):
         self.setSelectedLangs()
+        """
+        if not len(self.selectedLangs) == len(self.availablelangs):
+            self.checkBox1.setChecked(False)
+        """
         self.comboBox.clear()
         self.comboBox.insertStrList(self.selectedLangs)
 
