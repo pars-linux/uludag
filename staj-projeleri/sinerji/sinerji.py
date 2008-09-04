@@ -5,8 +5,6 @@ import dbus
 import avahi
 import os, sys, re 
 from socket import gethostname
-from dbus import DBusException
-
 
 from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
@@ -208,13 +206,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
     def removeService(self, interface, protocol, name, stype, domain, flags):
-        hostadded = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.remove(hostadded)
+        hostremoved = re.sub(r'\.%s$' % domain, '', host)
+        self.discoveredHosts.remove(hostremoved)
 
     def service_resolved(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         #print "******", interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags
-        hostremoved = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.add(hostremoved)
+        hostadded = re.sub(r'\.%s$' % domain, '', host)
+        self.discoveredHosts.add(hostadded)
     
     def get_domains(self):
         return list(sorted(self.discoveredHosts))
