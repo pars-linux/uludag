@@ -32,6 +32,12 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomainright = None
         self.confdomainleft = None
 
+        self.connected = False
+        self.browser = None
+        self.bus = None
+
+
+
         self.updateUi()
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
@@ -114,6 +120,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         print "Radio button is checked"
         self.browseDomain('_workstation._tcp')
         self.publishService()
+        self.connected = True
         print "deneme"
 
 
@@ -123,6 +130,17 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
+        
+        if self.connected:
+            self.connected = False
+            if self.browser:
+                self.browser.Free()
+                self.browser._obj._bus = None
+                self.browser._obj = None
+            self.server._obj._bus = None
+            self.server._obj = None
+        self.server = None
+        self.browser = None
         self.browseDomain('_sinerji._tcp')
 
 
@@ -153,14 +171,14 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     
     def browseDomain(self, servicename):
 
-        bus = dbus.SystemBus()
+        self.bus = dbus.SystemBus()
         self.server = dbus.Interface(
-                bus.get_object(
+                self.bus.get_object(
                     avahi.DBUS_NAME, 
                     avahi.DBUS_PATH_SERVER), 
                 avahi.DBUS_INTERFACE_SERVER)
         
-        browser = dbus.Interface(bus.get_object(
+        self.browser = dbus.Interface(self.bus.get_object(
             avahi.DBUS_NAME, 
             self.server.ServiceBrowserNew(
                 avahi.IF_UNSPEC, 
@@ -169,9 +187,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 dbus.UInt32(0))),
             avahi.DBUS_INTERFACE_SERVICE_BROWSER)
 
-        browser.connect_to_signal('ItemNew', self.addService)
-        browser.connect_to_signal('ItemRemove', self.removeService)
-        browser.connect_to_signal('AllForNow', self.allDone)
+        self.browser.connect_to_signal('ItemNew', self.addService)
+        self.browser.connect_to_signal('ItemRemove', self.removeService)
+        self.browser.connect_to_signal('AllForNow', self.allDone)
 
 
     def allDone(self):
@@ -208,7 +226,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     def publishService(self):
         
-        bus = dbus.SystemBus()
+        #bus = dbus.SystemBus()
         server = dbus.Interface(bus.get_object(avahi.DBUS_NAME, avahi.DBUS_PATH_SERVER), avahi.DBUS_INTERFACE_SERVER)
 
         txt = ['os=linux']
