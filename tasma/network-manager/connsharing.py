@@ -71,7 +71,7 @@ class connShare(QDialog):
         self.textLabel2.setBuddy(self.sharecombo)
 
         self.groupBox1.setEnabled(False)
-        self.buttonGroup2.setEnabled(False)
+        self.applyBut.setEnabled(False)
 
         self.connect(self.sharecheckBox, SIGNAL("stateChanged(int)"), self.slotCheckBox)
         self.connect(self.applyBut, SIGNAL("clicked()"), self.shareConnection)
@@ -100,7 +100,7 @@ class connShare(QDialog):
         self.textLabel2.setText(i18n("Interface that will share connection"))
         self.buttonGroup2.setTitle(QString.null)
         self.applyBut.setText(i18n("Apply"))
-        self.cancelBut.setText(i18n("Cancel"))
+        self.cancelBut.setText(i18n("Close"))
 
     def callMethod(self, method, action, model="Net.Filter"):
         ch = CallHandler("iptables", model, method,
@@ -129,10 +129,18 @@ class connShare(QDialog):
         def handleState(_type, _desc, _state):
             self.state = "off"
             if _state in ["on", "started"]:
-                self.state = "on"
-                self.sharecheckBox.setChecked(True)
-                self.groupBox1.setEnabled(True)
-                self.buttonGroup2.setEnabled(True)
+                def handleRules(rules):
+                    self.state = "off"
+                    for rule in rules:
+                        if "POSTROUTING" in rule and "MASQUERADE" in rule:
+                            self.state = "on"
+                            self.sharecheckBox.setChecked(True)
+                            self.groupBox1.setEnabled(True)
+                            self.applyBut.setEnabled(True)
+                            break
+                ch = self.callMethod("getRules", "tr.org.pardus.comar.net.filter.get", "Net.Filter")
+                ch.registerDone(handleRules)
+                ch.call()
         ch = self.callMethod("info", "tr.org.pardus.comar.system.service.get", "System.Service")
         ch.registerDone(handleState)
         ch.call()
@@ -299,11 +307,11 @@ class connShare(QDialog):
             ch.call()
 
             self.groupBox1.setEnabled(False)
-            self.buttonGroup2.setEnabled(False)
+            self.applyBut.setEnabled(False)
 
         else:
             self.groupBox1.setEnabled(True)
-            self.buttonGroup2.setEnabled(True)
+            self.applyBut.setEnabled(True)
 
 
 if __name__ == "__main__":
