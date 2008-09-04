@@ -454,5 +454,6 @@ class Language(QDialog):
                 aww = aww.nextSibling()
         else:
             self.comboBox.insertStrList(self.selectedLangs)
-        self.comboBox.setCurrentText(self.defaultlang)
+        if self.defaultlang in self.selectedLangs:
+            self.comboBox.setCurrentText(self.defaultlang)
 
