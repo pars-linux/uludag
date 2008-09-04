@@ -392,6 +392,13 @@ class Language(QDialog):
         else:
             self.comboBox.setCurrentText(str(self.defaultlang))
 
+        aww = self.listLang.firstChild()
+        while aww:
+            if aww.text() == self.defaultlang:
+                aww.activate()
+            aww = aww.nextSibling()
+
+
         self.connect(self.but1, SIGNAL("clicked()"), self.accept)
         self.connect(self.but2, SIGNAL("clicked()"), self.reject)
         self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.syncCombo)
