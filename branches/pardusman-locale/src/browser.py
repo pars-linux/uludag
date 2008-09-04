@@ -402,6 +402,7 @@ class Language(QDialog):
         self.connect(self.but1, SIGNAL("clicked()"), self.accept)
         self.connect(self.but2, SIGNAL("clicked()"), self.reject)
         self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.syncCombo)
+        self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.setDefaultLang)
         self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.selectAll)
         self.connect(self.comboBox, SIGNAL("activated(int)"), self.setDefaultLang)
         self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.syncCombo)
