@@ -382,10 +382,15 @@ class Language(QDialog):
         self.checkBox1 = QCheckBox(self,"checkBox1")
         self.checkBox1.setGeometry(QRect(70,320,180,21))
         self.checkBox1.setText(i18n("Select all"))
-
+   
         self.comboBox = QComboBox(0,self,"comboBox")
         self.comboBox.setGeometry(QRect(60,340,240,30))
-        self.comboBox.insertItem(self.defaultlang)
+        self.comboBox.insertStrList(langall)
+       
+        if not langall:
+            self.comboBox.insertItem(self.defaultlang)
+        else:
+            self.comboBox.setCurrentText(str(self.defaultlang))
 
         self.connect(self.but1, SIGNAL("clicked()"), self.accept)
         self.connect(self.but2, SIGNAL("clicked()"), self.reject)
