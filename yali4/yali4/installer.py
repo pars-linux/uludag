@@ -579,10 +579,10 @@ class Yali:
                  {"text":_("Setting Root Password..."),"operation":setRootPassword},
                  {"text":_("Adding Users..."),"operation":addUsers},
                  {"text":_("Writing Console Data..."),"operation":writeConsoleData},
-                 {"text":_("Copy Pisi index..."),"operation":copyPisiIndex},
                  {"text":_("Migrating X.org Configuration..."),"operation":migrateXorgConf}]
 
-        stepsBase = [{"text":_("Setting misc. package configurations..."),"operation":setPackages},
+        stepsBase = [{"text":_("Copy Pisi index..."),"operation":copyPisiIndex},
+                     {"text":_("Setting misc. package configurations..."),"operation":setPackages},
                      {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
 
         if self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
