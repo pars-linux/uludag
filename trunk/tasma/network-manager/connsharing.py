@@ -83,6 +83,9 @@ class connShare(QDialog):
         self.profiles = []
 
     def getProfiles(self):
+        self.profiles = []
+        self.intcombo.clear()
+        self.sharecombo.clear()
         for hash, profile in comlink.connections.iteritems():
             if profile  in self.profiles:
                 continue
