@@ -216,7 +216,11 @@ def setup_isolinux(project):
 
 def setup_live_kdm(project):
     image_dir = project.image_dir()
-    path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
+    if "kdebase" in project.all_packages :
+        path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
+    elif "kdebase4" in project.all_packages :
+        # FIXME : find a generic way to do this
+        path = os.path.join(image_dir, "usr/kde/4/share/config/kdm/kdmrc")
     lines = []
     for line in file(path):
         if line.startswith("#AutoLoginEnable"):
