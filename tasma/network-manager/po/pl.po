@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-01 12:02+0300\n"
+"POT-Creation-Date: 2008-09-04 12:23+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Michał Środek <michal@srodek.info>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -354,63 +354,63 @@ msgstr "Dodaj Nazwę serwera"
 msgid "Name server:"
 msgstr "Nazwa serwera:"
 
-#: connsharing.py:98
+#: connsharing.py:99
 msgid "Internet Connection Sharing"
 msgstr ""
 
-#: connsharing.py:99
+#: connsharing.py:100
 #, fuzzy
 msgid "Share Internet Connection"
 msgstr "Utwórz nowe połączenie"
 
-#: connsharing.py:101
+#: connsharing.py:102
 msgid "Interface that goes to internet"
 msgstr ""
 
-#: connsharing.py:102
+#: connsharing.py:103
 #, fuzzy
 msgid "Interface that will share connection"
 msgstr "Utwórz nowe połączenie"
 
-#: connsharing.py:118
+#: connsharing.py:119
 msgid "D-Bus Error"
 msgstr ""
 
-#: connsharing.py:122
+#: connsharing.py:123
 msgid "COMAR Error"
 msgstr "Błąd COMAR"
 
-#: connsharing.py:126
+#: connsharing.py:127
 msgid "Changing States of Interfaces Failed"
 msgstr ""
 
-#: connsharing.py:128
+#: connsharing.py:129
 msgid "DHCP Server Error"
 msgstr ""
 
-#: connsharing.py:147
+#: connsharing.py:156
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
 msgstr ""
 
-#: connsharing.py:147
+#: connsharing.py:156
 msgid "Check Selected Interfaces"
 msgstr ""
 
-#: connsharing.py:157
+#: connsharing.py:166
 msgid "The sharing of your connection has been successfully done."
 msgstr ""
 
-#: connsharing.py:157
+#: connsharing.py:166
 msgid "Sharing is OK"
 msgstr ""
 
-#: connsharing.py:258
+#: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
 msgstr ""
 
-#: connsharing.py:258
+#: connsharing.py:267
 #, fuzzy
 msgid "IP address not found"
 msgstr "Nic nie znaleziono"

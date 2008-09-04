@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-01 12:02+0300\n"
+"POT-Creation-Date: 2008-09-04 12:23+0300\n"
 "PO-Revision-Date: 2008-08-29 21:12-0400\n"
 "Last-Translator: \n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -356,64 +356,64 @@ msgstr "Agregar Servidor de nombres"
 msgid "Name server:"
 msgstr "Servidor de nombres:"
 
-#: connsharing.py:98
+#: connsharing.py:99
 msgid "Internet Connection Sharing"
 msgstr "Compartir conexión de Internet"
 
-#: connsharing.py:99
+#: connsharing.py:100
 msgid "Share Internet Connection"
 msgstr "Compartir conexión de Internet"
 
-#: connsharing.py:101
+#: connsharing.py:102
 msgid "Interface that goes to internet"
 msgstr "Interfaz dirigido hacia la internet"
 
-#: connsharing.py:102
+#: connsharing.py:103
 msgid "Interface that will share connection"
 msgstr "Interfaz que va a compartir la conexión"
 
-#: connsharing.py:118
+#: connsharing.py:119
 msgid "D-Bus Error"
 msgstr "Error D-Bus"
 
-#: connsharing.py:122
+#: connsharing.py:123
 msgid "COMAR Error"
 msgstr "Error COMAR"
 
-#: connsharing.py:126
+#: connsharing.py:127
 msgid "Changing States of Interfaces Failed"
 msgstr "Falla al aplicar cambios de estado de interfaces"
 
-#: connsharing.py:128
+#: connsharing.py:129
 msgid "DHCP Server Error"
 msgstr "Error de servidor DHCP"
 
-#: connsharing.py:147
+#: connsharing.py:156
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
 msgstr ""
 "Debe seleccionar interfaces diferentes para compartir la conexión a internet"
 
-#: connsharing.py:147
+#: connsharing.py:156
 msgid "Check Selected Interfaces"
 msgstr "Verifique las interfaces seleccionados"
 
-#: connsharing.py:157
+#: connsharing.py:166
 msgid "The sharing of your connection has been successfully done."
 msgstr ""
 "La configuración para compartir la conexión de internet fue aplicada "
 "exitosamente."
 
-#: connsharing.py:157
+#: connsharing.py:166
 msgid "Sharing is OK"
 msgstr "Compartir está funcionando"
 
-#: connsharing.py:258
+#: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
 msgstr "No tiene una dirección IP para la interfaz hacia la internet"
 
-#: connsharing.py:258
+#: connsharing.py:267
 msgid "IP address not found"
 msgstr "Dirección IP no encontrada"
 
