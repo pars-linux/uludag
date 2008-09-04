@@ -431,12 +431,15 @@ class Language(QDialog):
         self.callback("", None)
         QDialog.reject(self)
 
-    def syncCombo(self):
+    def syncCombo(self, checked):
         self.setSelectedLangs()
         """
         if not len(self.selectedLangs) == len(self.availablelangs):
             self.checkBox1.setChecked(False)
         """
         self.comboBox.clear()
-        self.comboBox.insertStrList(self.selectedLangs)
+        if not checked:
+            self.comboBox.insertItem(self.defaultlang)
+        else:
+            self.comboBox.insertStrList(self.selectedLangs)
 
