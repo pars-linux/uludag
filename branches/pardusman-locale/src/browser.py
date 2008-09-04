@@ -363,7 +363,7 @@ class Language(QDialog):
             item.setText(0, each)
 
         LayoutWidget = QWidget(self,"layout1")
-        LayoutWidget.setGeometry(QRect(120,330,234,58))
+        LayoutWidget.setGeometry(QRect(80,380,234,58))
         layout1 = QHBoxLayout(LayoutWidget,11,6,"layout1")
 
         self.but1 = QPushButton(LayoutWidget,"but1")
@@ -378,9 +378,20 @@ class Language(QDialog):
         self.checkBox1.setGeometry(QRect(70,320,180,21))
         self.checkBox1.setText(i18n("Select all"))
 
+        self.comboBox = QComboBox(0,self,"comboBox")
+        self.comboBox.setGeometry(QRect(60,340,240,30))
+        self.comboBox.insertItem(defaultlang)
+        
+        #for each in availablelangs:
+        #self.comboBox.insertStrList(availablelangs)
+
         self.connect(self.but1, SIGNAL("clicked()"), self.accept2)
         self.connect(self.but2, SIGNAL("clicked()"), self.reject2)
+        self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.syncCombo)
         self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.selectAll)
+
+    def accept2(self):
+        QDialog.accept(self)
 
     def selectAll(self):
         aww = self.listLang.firstChild()
@@ -391,13 +402,16 @@ class Language(QDialog):
     def reject2(self):
         QDialog.reject(self)
 
-    def accept2(self):
+    def syncCombo(self):
         aww = self.listLang.firstChild()
+        curLangs = []
         while aww:
             if aww.isOn():
-                print aww.text() # secilen dilleri nereye gondericiz?
+                curLangs.append(str(aww.text()))
             aww = aww.nextSibling()
-        QDialog.accept(self)
+
+        self.comboBox.clear()
+        self.comboBox.insertStrList(curLangs)
 
     def accept(self):
         comps, sel = self.browser.get_selection()
