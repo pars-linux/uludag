@@ -36,7 +36,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bus = None
 
 
-
+        self.startBrowsing()
         self.updateUi()
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
@@ -81,11 +81,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.leftComboBox.setCurrentIndex(0)
 
 
-    @pyqtSignature("")
-    def on_cancelButton_clicked(self):
-        self.reject()
-
-
 ### If Someone choose an empty string, dont store it, else createsynergyconf and parsesynergyconf wouldn't work well ###
 
     @pyqtSignature("")
@@ -111,20 +106,30 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         createsynergyconf.links(self.confdomain)
         self.reject()
             
+    @pyqtSignature("")
+    def on_cancelButton_clicked(self):
+        self.reject()
+        
 
 ## Only one checkbox has to be checked ##
     
     @pyqtSignature("")
     def on_serverButton_clicked(self):
-        print "Radio button is checked"
-        
-        connecting = avahiservices.avahiSinerji(gethostname())
-        connecting.connectDbus()
-        connecting.connectAvahi()
-        connecting.connect()
-        print connecting.getDomains()
+        print "********* Radio button is checked"
+        for domain in self.connecting.getDomains():
+            self.topComboBox.addItem(domain)
+            self.bottomComboBox.addItem(domain)
+            self.rightComboBox.addItem(domain)
+            self.leftComboBox.addItem(domain)
 
         
+    def startBrowsing(self):
+        self.connecting = avahiservices.avahiSinerji(gethostname())
+        self.connecting.connectDbus()
+        self.connecting.connectAvahi()
+        self.connecting.connect()
+        
+
 
     @pyqtSignature("")
     def on_clientButton_clicked(self):
@@ -132,8 +137,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
-        
-        self.browseDomain('_sinerji._tcp')
+
 
 
     def updateUi(self):

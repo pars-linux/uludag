@@ -17,7 +17,6 @@ class avahiSinerji:
         self.stype = "_workstation._tcp"
         self.host = host
         self.txt = {}
-        self.domainBrowser = None
         self.serviceBrowser = None
         self.bus = None
         self.server = None
@@ -28,6 +27,7 @@ class avahiSinerji:
         self.avahi = avahi
         self.name = "Sinerji"
         self.port = "24800"
+        self.txt = {}
 
 ##############################################################
 ################## Error functions ###########################
@@ -73,10 +73,8 @@ class avahiSinerji:
         if not self.connected:
             return
         hostadded = re.sub(r'\.%s$' % domain, '', host)
-        #self.discoveredHosts.add(hostadded)
-        print "*************", hostadded
-        #print 'Service data for service %s in domain %s on %i.%i:' % (name, domain, interface, protocol)
-        
+        self.discoveredHosts.add(hostadded)
+
 
 ##############################################################
 ################# Connecting to interfaces ###################
@@ -129,8 +127,7 @@ class avahiSinerji:
         print "--------- browsing domain"
         if self.serviceBrowser:
             return
-
-        print "--------- new service type -------------"
+        
         object_path = self.server.ServiceBrowserNew(avahi.IF_UNSPEC,avahi.PROTO_UNSPEC, self.stype, 'local', dbus.UInt32(0))
 
         self.serviceBrowser = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
@@ -138,6 +135,7 @@ class avahiSinerji:
         self.serviceBrowser.connect_to_signal('ItemNew', self.newService)
         self.serviceBrowser.connect_to_signal('ItemRemove', self.removeService)
         self.serviceBrowser.connect_to_signal('Failure', self.errorCallback)
+        print "--------- new service type"
 
     def disconnect(self):
         if self.connected:
@@ -146,16 +144,11 @@ class avahiSinerji:
                 self.serviceBrowser.Free()
                 self.serviceBrowser._obj._bus = None
                 self.serviceBrowser._obj = None
-            if self.domainBrowser:
-                self.domainBrowser.Free()
-                self.domainBrowser._obj._bus = None
-                self.domainBrowser._obj = None
             self.removeAnnounce()
             self.server._obj._bus = None
             self.server._obj = None
         self.server = None
         self.serviceBrowser = None
-        self.domainBrowser = None
         print"--------- disconnecting"
 
 
@@ -192,8 +185,9 @@ class avahiSinerji:
         except dbus.DBusException, e:
             print "Can't remove service. That should not happen"
 
-    def clientTxt(self):
-        domainlist = {"deneme":1, "deneme1":2}
+    def clientTxt(self,top=None, bottom=None, right=None, left=None):
+        domainlist = dict(top=1, bottom=2, right=3, left=4)
+        #domainlist = {"deneme":"1", "deneme2":"2", "right":"3"}
         return self.avahi.dict_to_txt_array(domainlist)
 
     def createService(self):
@@ -205,7 +199,6 @@ class avahiSinerji:
                     self.avahi.DBUS_INTERFACE_ENTRY_GROUP)
 
                 self.entrygroup.connect_to_signal('StateChanged', self.entrygroupStateChangedCallback)
-
 
             print 'Publishing service %s of type _sinerji._tcp' % (self.name)
 
@@ -275,9 +268,7 @@ if __name__ == "__main__":
     instance.connectDbus()
     instance.connectAvahi()
     instance.connect()
-    if instance.discoveredHosts:
-        print instance.discoveredHosts
-        instance.disconnect()
+    instance.announce()
     try:
         app.exec_()
     except KeyboardInterrupt:
