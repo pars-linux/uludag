@@ -207,7 +207,7 @@ class avahiSinerji:
 
 
 
-    def giveData(self, top, bottom, right, left):
+    def giveData(self, top="None_None1", bottom="None_None2", right="None_None3", left="None_None4"):
         val = [1, 2, 3, 4, 5]
         clients = [top,bottom,right,left]
         for (c,v) in zip(clients, val):
