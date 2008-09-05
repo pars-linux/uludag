@@ -33,6 +33,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.connected = False
         self.browser = None
         self.bus = None
+        self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
 
         self.updateUi()
         self.topComboBox.addItem('')
@@ -98,6 +99,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomain.append(self.confdomainright)
             self.confdomain.append(self.confdomainleft)
             self.confdomain.append(u"host_host_%s" % gethostname())
+            
+            ### Date for _sinerji._tcp
+            self.connectingWorkstation.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
 
             ### Announce the _sinerji._tcp service.
             self.connectingWorkstation.announce()
@@ -107,8 +111,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             createsynergyconf.links(self.confdomain)
             
             
-            synergypath = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
-            command = ['synergys', '-f', '-d', synergypath]
+            command = ['synergys', '--config', self.synergyConf]
             process = subprocess.call(command)
             
 
@@ -187,8 +190,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     def updateUi(self):
         ### Look for synergy.conf, if exists parse it and fill the comboBoxes
-        if os.path.exists("synergy.conf"):
-            self.parser = parsesynergyconf.parseSynergyConf("synergy.conf")
+        if os.path.exists(self.synergyConf):
+            self.parser = parsesynergyconf.parseSynergyConf(self.synergyConf)
             for position in self.parser.getClients():
                 if position[0] == "top":
                     self.topComboBox.insertItem(0, position[1])
