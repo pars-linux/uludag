@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="cs" />
+    <meta name="author" lang="cs" content="David Kohout; http://www.davidkohout.cz" />
+    <meta name="copyright" lang="cs" content="David Kohout; http://www.davidkohout.cz" />
+    <meta name="description" content="..." />
+    <meta name="keywords" content="..." />
+    <meta name="robots" content="all,follow" />
+    <link href="/media/css/screen.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <title>Pakettif - {% block title %}{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
+  </head>
+  <body>
+
+    <div id="layout">
+      
+      <div id="header">
+        
+        <h1 id="logo"><a href="/" title="Main Page"><span>Paket</span>tif</a></h1>
+        <hr class="noscreen" />   
+          
+        {% block header_menu %}
+        <div id="navigation">
+        <ul>
+		<li><a href="/about" title="About">About</a></li>
+		<li><a href="/contact" title="Contact">Contact</a></li>
+        </ul>
+        </div>
+	{% endblock %}
+        <hr class="noscreen" />  
+    
+      </div>
+          
+        <div id="main">
+        
+        <div id="main-box">
+        <div id="quote">Özgürlük için Pardus...</div>
+        </div>
+	<hr />
+	<div id="searchForm">
+		<form action="/search/" method="post">
+		<center><input type="text" name="q" value="{{ term }}" checked="true" maxlength="200" size="40" style="font-size:large;"/>&nbsp;<button type="submit">Ara</button><br />
+		{% if group %}
+			<input type="checkbox" name="group" value="yes" checked="true"/>Group Packages
+		{% else %}
+			<input type="checkbox" name="group" value="yes" checked="false"/>Group Packages
+		{% endif %}
+		</center>
+		</form>
+	</div>
+        <div id="content">
+	{% block content %}
+        {% endblock %}
+        </div>
+        
+        <div id="footer">
+		{% block footer %}
+		{% endblock %}
+        
+        </div>
+	{% include "footer.html" %}
+        
+        </div>
+        </div>
+        
+  </body>
+</html>
