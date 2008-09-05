@@ -300,7 +300,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     DBusQtMainLoop(set_as_default=True)
     
-    instance = avahiSinerji(gethostname())
+    instance = avahiSinerji(gethostname(), "_sinerji._tcp")
     instance.connectDbus()
     instance.connectAvahi()
     instance.connect()
