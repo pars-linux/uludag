@@ -11,11 +11,11 @@ import re
 
 
 class avahiSinerji:
-    def __init__(self, host):
+    def __init__(self, host, stype):
         self.avahi = None
         self.domain = None
         #self.stype = "_workstation._tcp"
-        self.stype = "_sinerji._tcp"
+        self.stype = stype
         self.host = host
         self.serviceBrowser = None
         self.bus = None
