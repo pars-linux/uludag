@@ -19,8 +19,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def __init__(self,  parent=None):
         super(SinerjiGui, self).__init__(parent)
         self.setupUi(self)
-        self.cancelButton.setFocusPolicy(Qt.NoFocus)
-        self.savequitButton.setFocusPolicy(Qt.NoFocus)
+        self.closeButton.setFocusPolicy(Qt.NoFocus)
+        self.saveButton.setFocusPolicy(Qt.NoFocus)
         DBusQtMainLoop( set_as_default=True )
        
         self.discoveredHosts = set()
@@ -84,7 +84,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ### If Someone choose an empty string, dont store it, else createsynergyconf and parsesynergyconf wouldn't work well ###
 
     @pyqtSignature("")
-    def on_savequitButton_clicked(self):
+    def on_saveButton_clicked(self):
         
         ### Add the current Hostnames from the ComboBoxes to the variable confdomain*, where * is the position
         if self.topComboBox.currentText() != '': 
@@ -111,7 +111,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         createsynergyconf.links(self.confdomain)
             
     @pyqtSignature("")
-    def on_cancelButton_clicked(self):
+    def on_closeButton_clicked(self):
         self.reject()
 
         
