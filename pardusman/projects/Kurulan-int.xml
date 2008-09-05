@@ -98,6 +98,7 @@
         <SelectedPackage>gwenview-i18n-pl</SelectedPackage>
         <SelectedPackage>gwenview-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>gwenview-i18n-sv</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
         <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
@@ -121,6 +122,7 @@
         <SelectedPackage>k3b-i18n-pl</SelectedPackage>
         <SelectedPackage>k3b-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>k3b-i18n-sv</SelectedPackage>
+        <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
@@ -134,6 +136,7 @@
         <SelectedPackage>kde-i18n-pl</SelectedPackage>
         <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-i18n-sv</SelectedPackage>
+        <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
@@ -449,6 +452,7 @@
         <Package>gwenview-i18n-pl</Package>
         <Package>gwenview-i18n-pt_BR</Package>
         <Package>gwenview-i18n-sv</Package>
+        <Package>gwenview-i18n-tr</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hal-cups-utils</Package>
@@ -488,6 +492,7 @@
         <Package>k3b-i18n-pl</Package>
         <Package>k3b-i18n-pt_BR</Package>
         <Package>k3b-i18n-sv</Package>
+        <Package>k3b-i18n-tr</Package>
         <Package>kaffeine</Package>
         <Package>kaptan</Package>
         <Package>katapult</Package>
@@ -502,6 +507,7 @@
         <Package>kde-i18n-pl</Package>
         <Package>kde-i18n-pt_BR</Package>
         <Package>kde-i18n-sv</Package>
+        <Package>kde-i18n-tr</Package>
         <Package>kdeaddons</Package>
         <Package>kdeartwork-emoticons</Package>
         <Package>kdeartwork-screensavers</Package>
@@ -914,5 +920,6 @@
         <Language>pl_PL</Language>
         <Language>pt_BR</Language>
         <Language>sv_SE</Language>
+        <Language>tr_TR</Language>
     </LanguageSelection>
 </PardusmanProject>
