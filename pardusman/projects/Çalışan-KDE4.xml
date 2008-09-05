@@ -4,7 +4,6 @@
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
-        <SelectedPackage>QtCurve-KDE3</SelectedPackage>
         <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
@@ -13,7 +12,7 @@
         <SelectedPackage>alsa-driver</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
-        <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>amarok-kde4</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
@@ -92,7 +91,8 @@
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
-        <SelectedPackage>kaffeine</SelectedPackage>
+        <SelectedPackage>k3b-kde4</SelectedPackage>
+        <SelectedPackage>kaffeine-kde4</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
         <SelectedPackage>kde4-i18n-ca</SelectedPackage>
         <SelectedPackage>kde4-i18n-de</SelectedPackage>
@@ -103,17 +103,27 @@
         <SelectedPackage>kde4-i18n-pl</SelectedPackage>
         <SelectedPackage>kde4-i18n-sv</SelectedPackage>
         <SelectedPackage>kde4-i18n-tr</SelectedPackage>
-        <SelectedPackage>kdeartwork4</SelectedPackage>
+        <SelectedPackage>kdeartwork4-colorschemes</SelectedPackage>
+        <SelectedPackage>kdeartwork4-emoticons</SelectedPackage>
+        <SelectedPackage>kdeartwork4-screensavers</SelectedPackage>
+        <SelectedPackage>kdeartwork4-sounds</SelectedPackage>
+        <SelectedPackage>kdeartwork4-styles</SelectedPackage>
+        <SelectedPackage>kdeartwork4-wallpapers</SelectedPackage>
         <SelectedPackage>kdebase4</SelectedPackage>
         <SelectedPackage>kdebase4-runtime</SelectedPackage>
+        <SelectedPackage>kdegames4</SelectedPackage>
+        <SelectedPackage>kdegraphics4</SelectedPackage>
         <SelectedPackage>kdemultimedia4</SelectedPackage>
         <SelectedPackage>kdenetwork4</SelectedPackage>
+        <SelectedPackage>kdepim4</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>kradio</SelectedPackage>
-        <SelectedPackage>ktorrent</SelectedPackage>
+        <SelectedPackage>krename-kde4</SelectedPackage>
+        <SelectedPackage>ktorrent-kde4</SelectedPackage>
+        <SelectedPackage>kvirc-kde4</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>libflashsupport</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
@@ -200,7 +210,6 @@
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
         <Package>QtCurve-Gtk2</Package>
-        <Package>QtCurve-KDE3</Package>
         <Package>QtCurve-KDE4</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
@@ -219,7 +228,7 @@
         <Package>alsa-plugins</Package>
         <Package>alsa-tools</Package>
         <Package>alsa-utils</Package>
-        <Package>amarok</Package>
+        <Package>amarok-kde4</Package>
         <Package>amrnb</Package>
         <Package>amrwb</Package>
         <Package>aria2</Package>
@@ -260,6 +269,8 @@
         <Package>cairo</Package>
         <Package>cairomm</Package>
         <Package>cdparanoia</Package>
+        <Package>cdrdao</Package>
+        <Package>cdrtools</Package>
         <Package>chmlib</Package>
         <Package>clucene</Package>
         <Package>comar</Package>
@@ -294,11 +305,13 @@
         <Package>dmidecode</Package>
         <Package>dosfstools</Package>
         <Package>dstat</Package>
+        <Package>dvd+rw-tools</Package>
         <Package>dvgrab</Package>
         <Package>e2fsprogs</Package>
         <Package>eagle-firmware</Package>
         <Package>eciadsl</Package>
         <Package>ed</Package>
+        <Package>emovix</Package>
         <Package>enchant</Package>
         <Package>enscript</Package>
         <Package>essential</Package>
@@ -334,6 +347,7 @@
         <Package>gecko-mediaplayer</Package>
         <Package>gettext</Package>
         <Package>gfxtheme-pardus-install</Package>
+        <Package>ggz-client-libs</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
@@ -416,7 +430,8 @@
         <Package>jfsutils</Package>
         <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
-        <Package>kaffeine</Package>
+        <Package>k3b-kde4</Package>
+        <Package>kaffeine-kde4</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
         <Package>kde4-i18n-ca</Package>
@@ -428,14 +443,22 @@
         <Package>kde4-i18n-pl</Package>
         <Package>kde4-i18n-sv</Package>
         <Package>kde4-i18n-tr</Package>
-        <Package>kdeartwork4</Package>
+        <Package>kdeartwork4-colorschemes</Package>
+        <Package>kdeartwork4-emoticons</Package>
+        <Package>kdeartwork4-screensavers</Package>
+        <Package>kdeartwork4-sounds</Package>
+        <Package>kdeartwork4-styles</Package>
+        <Package>kdeartwork4-wallpapers</Package>
         <Package>kdebase4</Package>
         <Package>kdebase4-runtime</Package>
         <Package>kdebase4-workspace</Package>
+        <Package>kdegames4</Package>
+        <Package>kdegraphics4</Package>
         <Package>kdelibs</Package>
         <Package>kdelibs4</Package>
         <Package>kdemultimedia4</Package>
         <Package>kdenetwork4</Package>
+        <Package>kdepim4</Package>
         <Package>kdepimlibs</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
@@ -444,7 +467,9 @@
         <Package>konversation</Package>
         <Package>kpowersave</Package>
         <Package>kradio</Package>
-        <Package>ktorrent</Package>
+        <Package>krename-kde4</Package>
+        <Package>ktorrent-kde4</Package>
+        <Package>kvirc-kde4</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lcms</Package>
@@ -488,10 +513,13 @@
         <Package>libaio</Package>
         <Package>libao</Package>
         <Package>libart_lgpl</Package>
+        <Package>libassuan</Package>
         <Package>libatomic_ops</Package>
         <Package>libavc1394</Package>
         <Package>libcaca</Package>
         <Package>libcap</Package>
+        <Package>libcddb</Package>
+        <Package>libcdio</Package>
         <Package>libconfig</Package>
         <Package>libcroco</Package>
         <Package>libdaemon</Package>
@@ -512,6 +540,7 @@
         <Package>libfontenc</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
+        <Package>libggz</Package>
         <Package>libglade2</Package>
         <Package>libgomp</Package>
         <Package>libgpg-error</Package>
@@ -529,11 +558,12 @@
         <Package>libmatroska</Package>
         <Package>libmng</Package>
         <Package>libmodplug</Package>
+        <Package>libmovtar</Package>
         <Package>libmp4v2</Package>
         <Package>libmpcdec</Package>
-        <Package>libmtp</Package>
+        <Package>libmpeg2</Package>
+        <Package>libmpeg3</Package>
         <Package>libnfsidmap</Package>
-        <Package>libnjb</Package>
         <Package>libnotify</Package>
         <Package>libnut</Package>
         <Package>libofa</Package>
@@ -553,6 +583,7 @@
         <Package>libsigc++</Package>
         <Package>libsmbios</Package>
         <Package>libsndfile</Package>
+        <Package>libspectre</Package>
         <Package>libstdc++</Package>
         <Package>libsvg</Package>
         <Package>libsvg-cairo</Package>
@@ -560,7 +591,6 @@
         <Package>libtool</Package>
         <Package>libusb</Package>
         <Package>libvisual</Package>
-        <Package>libvisual-plugins</Package>
         <Package>libvncserver</Package>
         <Package>libvorbis</Package>
         <Package>libwmf</Package>
@@ -579,12 +609,14 @@
         <Package>lirc-drivers</Package>
         <Package>live555</Package>
         <Package>lmpcm_usb</Package>
+        <Package>lpc10</Package>
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
         <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
+        <Package>madplay</Package>
         <Package>madwifi-ng</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
@@ -596,9 +628,11 @@
         <Package>minicom</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
+        <Package>mjpegtools</Package>
         <Package>mkinitramfs</Package>
         <Package>module-init-tools</Package>
         <Package>mpeg2vidcodec</Package>
+        <Package>mpeg4ip</Package>
         <Package>mpfr</Package>
         <Package>mpg123</Package>
         <Package>mplayer</Package>
@@ -613,6 +647,7 @@
         <Package>net-snmp</Package>
         <Package>net-tools</Package>
         <Package>netcat</Package>
+        <Package>netpbm</Package>
         <Package>network-manager</Package>
         <Package>nfs-utils</Package>
         <Package>nmap</Package>
@@ -652,6 +687,7 @@
         <Package>pnm2ppa</Package>
         <Package>poppler</Package>
         <Package>poppler-glib</Package>
+        <Package>poppler-qt4</Package>
         <Package>popt</Package>
         <Package>portmap</Package>
         <Package>poster</Package>
@@ -689,11 +725,11 @@
         <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
         <Package>rp-pppoe</Package>
-        <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schroedinger</Package>
         <Package>screen</Package>
+        <Package>sdl-gfx</Package>
         <Package>sdparm</Package>
         <Package>sdricoh_cs</Package>
         <Package>sed</Package>
@@ -707,6 +743,7 @@
         <Package>slmodem</Package>
         <Package>sn9c1xx</Package>
         <Package>soprano</Package>
+        <Package>sox</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
@@ -742,6 +779,7 @@
         <Package>time</Package>
         <Package>tn5250</Package>
         <Package>traceroute</Package>
+        <Package>transcode</Package>
         <Package>tulliana2</Package>
         <Package>tunepimp</Package>
         <Package>twolame</Package>
@@ -761,10 +799,12 @@
         <Package>utempter</Package>
         <Package>util-linux</Package>
         <Package>vbetool</Package>
+        <Package>vcdimager</Package>
         <Package>vim</Package>
         <Package>vixie-cron</Package>
         <Package>vloopback</Package>
         <Package>vorbis-tools</Package>
+        <Package>wavpack</Package>
         <Package>wget</Package>
         <Package>which</Package>
         <Package>whois</Package>
