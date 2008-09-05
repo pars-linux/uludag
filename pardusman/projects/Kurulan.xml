@@ -1,7 +1,7 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1 Beta</Title>
-    <WorkDir>/home/ekin/cdtempson/</WorkDir>
-    <ReleaseFiles>/home/ekin/cdtemp/CD-image-version-2008/</ReleaseFiles>
+    <Title>Pardus 2008.1-tr RC [r06]</Title>
+    <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
+    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
@@ -62,6 +62,7 @@
         <SelectedPackage>freealut</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
+        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
         <SelectedPackage>gimp-i18n-ca</SelectedPackage>
         <SelectedPackage>gimp-i18n-de</SelectedPackage>
@@ -210,6 +211,7 @@
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
+        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
@@ -323,6 +325,7 @@
         <Package>dcraw</Package>
         <Package>dejavu-fonts</Package>
         <Package>device-mapper</Package>
+        <Package>dhcp</Package>
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>diffutils</Package>
