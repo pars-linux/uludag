@@ -14,7 +14,8 @@ class avahiSinerji:
     def __init__(self, host):
         self.avahi = None
         self.domain = None
-        self.stype = "_workstation._tcp"
+        #self.stype = "_workstation._tcp"
+        self.stype = "_sinerji._tcp"
         self.host = host
         self.serviceBrowser = None
         self.bus = None
@@ -27,7 +28,9 @@ class avahiSinerji:
         self.name = "Sinerji"
         self.port = "24800"
         self.domainlist = {}
-
+        self.client = []
+        self.data = []
+        self.sinerjihost = ""
 ##############################################################
 ################## Error functions ###########################
 ##############################################################
@@ -65,14 +68,32 @@ class avahiSinerji:
         hostremoved = re.sub(r'\.%s$' % domain, '', host)
         self.discoveredHosts.remove(hostremoved)
 
+
     def getDomains(self):
         return list(sorted(self.discoveredHosts))
+    
+    def getClients(self):
+        return self.client
+    
+    def getSinerjiHost(self):
+        return self.sinerjihost
     
     def serviceResolvedCallback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
             return
-        hostadded = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.add(hostadded)
+        if stype == "_workstation._tcp":
+            hostadded = re.sub(r'\.%s$' % domain, '', host)
+            self.discoveredHosts.add(hostadded)
+        elif stype == "_sinerji._tcp":
+            host = re.sub(r'\.%s$' % domain, '', host)
+            self.sinerjihost = host
+            for txt in avahi.txt_array_to_string_array(txt):
+                self.data = txt.split("=")
+                self.client.append(self.data[0].split("_"))
+        else:
+            pass
+
+                
 
 
 ##############################################################
@@ -274,7 +295,6 @@ if __name__ == "__main__":
     instance.connectDbus()
     instance.connectAvahi()
     instance.connect()
-    instance.announce()
     try:
         app.exec_()
     except KeyboardInterrupt:
