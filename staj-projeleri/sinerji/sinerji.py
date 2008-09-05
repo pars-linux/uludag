@@ -95,17 +95,17 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
         if self.leftComboBox.currentText() != '': 
             self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
+        
         ### Add the variables "confdomain*" to the list "confdomain"
         self.confdomain.append(self.confdomaintop)
         self.confdomain.append(self.confdomainbottom)
         self.confdomain.append(self.confdomainright)
         self.confdomain.append(self.confdomainleft)
         self.confdomain.append(u"host_host_%s" % gethostname())
-        
-        print self.connecting.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
-        
-        self.connecting.announce()
 
+        print self.connectingWorkstation.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
+
+        self.connectingWorkstation.announce()
 
         createsynergyconf.screens(self.confdomain)
         createsynergyconf.links(self.confdomain)
@@ -166,6 +166,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.connectingWorkstation.connectDbus()
         self.connectingWorkstation.connectAvahi()
         self.connectingWorkstation.connect()
+
 
     def updateUi(self):
         if os.path.exists("synergy.conf"):

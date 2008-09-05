@@ -207,8 +207,18 @@ class avahiSinerji:
 
 
 
-    def giveData(self, top="None_None1", bottom="None_None2", right="None_None3", left="None_None4"):
+    def giveData(self, top=, bottom, right, left):
         val = [1, 2, 3, 4, 5]
+        if top == None:
+            top = "None_None1"
+        elif bottom = None:
+            bottom = "None_None2"
+        elif right = None:
+            right = "None_None3"
+        elif left = None:
+            left = "None_None4"
+        else:
+            pass
         clients = [top,bottom,right,left]
         for (c,v) in zip(clients, val):
             self.domainlist[c] = v
