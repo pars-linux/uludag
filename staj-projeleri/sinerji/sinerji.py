@@ -21,10 +21,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.setupUi(self)
         self.closeButton.setFocusPolicy(Qt.NoFocus)
         self.saveButton.setFocusPolicy(Qt.NoFocus)
-        DBusQtMainLoop( set_as_default=True )
-       
+
         self.discoveredHosts = set()
-        
         self.confdomain = []
         self.confdomaintop = None
         self.confdomainbottom = None
@@ -35,21 +33,17 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.browser = None
         self.bus = None
 
-
-        self.startBrowsing()
         self.updateUi()
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
 
+        ### Start browsing services, and looking for synergy.conf for parsing in updateUi
+        self.startBrowsing()
 
 
-###############################################################
-############           Gui Functions             ##############
-###############################################################
-    
-    
+
 ####### ComboxBox Signals, if someone choose the host, deny it #######
 
     @pyqtSignature("QString")
@@ -103,50 +97,53 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomain.append(self.confdomainleft)
         self.confdomain.append(u"host_host_%s" % gethostname())
 
-        print self.connectingWorkstation.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
-
+        ### Announce the _sinerji._tcp service.
         self.connectingWorkstation.announce()
-
+        
+        ### Creating the synergy.conf file
         createsynergyconf.screens(self.confdomain)
         createsynergyconf.links(self.confdomain)
-            
+
     @pyqtSignature("")
     def on_closeButton_clicked(self):
         self.reject()
 
-        
 
 ## Only one checkbox has to be checked ##
-    
+
     @pyqtSignature("")
     def on_serverButton_clicked(self):
         print "********* Server button is checked"
+        ### Clear the boxes 
+        self.topComboBox.clear()
+        self.bottomComboBox.clear()
+        self.rightComboBox.clear()
+        self.leftComboBox.clear()
+        self.topComboBox.clear()
 
-        print self.connectingWorkstation.getDomains()
+        ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
         for domain in self.connectingWorkstation.getDomains():
             self.topComboBox.addItem(domain)
             self.bottomComboBox.addItem(domain)
             self.rightComboBox.addItem(domain)
             self.leftComboBox.addItem(domain)
 
-        
+
     @pyqtSignature("")
     def on_clientButton_clicked(self):
+        print "********* Client button is checked"
+        ### Clear the boxes 
         self.topComboBox.clear()
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
-        #self.connectingSinerji = avahiservices.avahiSinerji(gethostname(), "_sinerji._tcp")
-        #self.connectingSinerji.connectDbus()
-        #self.connectingSinerji.connectAvahi()
-        #self.connectingSinerji.connect()
-        print self.connectingSinerji.getSinerjiHost()
+
+        ### Get the clients from the _sinerji._tcp service
         for client in self.connectingSinerji.getClients():
-            print client
             if client is None:
                 pass
             else:
-                if client[2] == gethostname():
+                if client[2] == gethostname(): ### We are looking for our hostname
                     if client[1] == "top":
                         self.topComboBox.addItem(self.connectingSinerji.getSinerjiHost())
                     elif client[1] == "bottom":
@@ -163,18 +160,20 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
     def startBrowsing(self):
+        ## Create instances of avahiSinerji for each service
         self.connectingWorkstation = avahiservices.avahiSinerji(gethostname(), "_workstation._tcp")
         self.connectingSinerji = avahiservices.avahiSinerji(gethostname(), "_sinerji._tcp")
+
+        ## Connecting to dbus and avahi,
         self.connectingWorkstation.connectDbus()
         self.connectingWorkstation.connectAvahi()
-        self.connectingWorkstation.connect() 
-
-        #self.connectingSinerji.connectDbus()
-        #self.connectingSinerji.connectAvahi()
+        ## Starting searching for domain for _workstation._tcp and _sinerji._tcp. 
+        self.connectingWorkstation.connect()
         self.connectingSinerji.connect()
 
 
     def updateUi(self):
+        ### Look for synergy.conf, if exists parse it and fill the comboBoxes
         if os.path.exists("synergy.conf"):
             self.parser = parsesynergyconf.parseSynergyConf("synergy.conf")
             for position in self.parser.getClients():
@@ -188,11 +187,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     self.leftComboBox.insertItem(0, position[1])
                 else:
                     pass
-            
-        
-        
-    #def save(self):
-    #synergyconf.screens()
 
 
 ###############################################################
@@ -203,6 +197,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 if __name__ == "__main__":
     
     app = QApplication(sys.argv)
+    DBusQtMainLoop( set_as_default=True )
     form = SinerjiGui()
     form.show()
     app.exec_()

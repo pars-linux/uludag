@@ -93,13 +93,9 @@ class avahiSinerji:
         else:
             pass
 
-                
-
-
 ##############################################################
 ################# Connecting to interfaces ###################
 ##############################################################
-
 
     def avahiDbusConnect(self, a, connect, disconnect):
         if connect != "":
@@ -112,7 +108,6 @@ class avahiSinerji:
         if self.bus:
             return True
         try:
-            print "--------- connecting dbus"
             self.bus = dbus.SystemBus()
             self.bus.add_signal_receiver(self.avahiDbusConnect, "NameOwnerChanged", "org.freedesktop.DBus", arg0="org.freedesktop.Avahi")
         except Exception, e:
@@ -127,7 +122,6 @@ class avahiSinerji:
         if self.server:
             return True 
         try:
-            print "--------- connecting avahi"
             self.server = dbus.Interface(self.bus.get_object(self.avahi.DBUS_NAME, \
                 self.avahi.DBUS_PATH_SERVER), self.avahi.DBUS_INTERFACE_SERVER) 
             self.server.connect_to_signal('StateChanged', self.serverStateChangedCallback)
@@ -144,7 +138,6 @@ class avahiSinerji:
             return False
         self.connected = True
 
-        print "--------- browsing domain"
         if self.serviceBrowser:
             return
         
@@ -155,7 +148,6 @@ class avahiSinerji:
         self.serviceBrowser.connect_to_signal('ItemNew', self.newService)
         self.serviceBrowser.connect_to_signal('ItemRemove', self.removeService)
         self.serviceBrowser.connect_to_signal('Failure', self.errorCallback)
-        print "--------- new service type"
 
     def disconnect(self):
         if self.connected:
@@ -169,7 +161,6 @@ class avahiSinerji:
             self.server._obj = None
         self.server = None
         self.serviceBrowser = None
-        print"--------- disconnecting"
 
 
 ##############################################################
@@ -205,10 +196,12 @@ class avahiSinerji:
         except dbus.DBusException, e:
             print "Can't remove service. That should not happen"
 
-
-
     def giveData(self, top, bottom, right, left):
-        val = [1, 2, 3, 4]
+        ### Creating data for TXT for clientTXT in announce()
+        ### Because avahi has dict_to_txt_array method, we have to create a dict, else a list would be more useful
+        ### Random numbers, just for creating dict. The array is like a set(), thats why the None objects have to be
+        ### other than "None" 
+        val = [1, 2, 3, 4]  
         if top is None or '':
             top = "None_None1"
         if bottom is None or '':
@@ -221,7 +214,6 @@ class avahiSinerji:
         clients = [top,bottom,right,left]
         for (c,v) in zip(clients, val):
             self.domainlist[c] = v
-        return self.domainlist
 
     def clientTxt(self):
         return self.avahi.dict_to_txt_array(self.domainlist)
@@ -296,7 +288,7 @@ class avahiSinerji:
 ###################### Main ##################################
 ##############################################################
 if __name__ == "__main__":
-
+    ### Test code, it creates the "_sinerji._tcp" 
     app = QApplication(sys.argv)
     DBusQtMainLoop(set_as_default=True)
     
