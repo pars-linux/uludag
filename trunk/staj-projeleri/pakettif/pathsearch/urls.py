@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('pakettif.pathsearch.views',
     (r'^$', 'index'),
+    (r'^package/(?P<package_name>[-.0-9A-Za-z]+)/list/$', 'list_package_contents'),
     (r'^package/(?P<package_name>[-.0-9A-Za-z]+)/(?P<term>[-.0-9A-Za-z]+)/$', 'search_in_package'),
     (r'^package/(?P<package_name>[-.0-9A-Za-z]+)/$', 'search_for_package'),
     (r'^(?P<term>[-.0-9A-Za-z]+)/$', 'search_in_all_packages'),

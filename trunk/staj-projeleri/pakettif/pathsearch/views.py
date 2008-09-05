@@ -5,12 +5,31 @@ from django.db import models
 def index(request):
     """ Index page for pathsearch. """
     if request.POST.get('q'):
+        entry = request.POST.get('q')
+        # A workaround here: should be improved:
+        if ' in:'in entry:
+            in_start = entry.find('in:')
+            in_end = in_start + 4
+            term = entry[:in_start-1]
+            pkg = entry[in_end-1:]
+            print entry, term, pkg
+            return search_in_package(request, pkg, term)
+            
         # If search form is submitted, redirect...
         return search_in_all_packages(request)
     
     # If no search is done, display main page.
     return render_to_response('index.html', {})
 
+def list_package_contents(request, package_name):
+    print "yehoo?"
+    print package_name
+    entry_list = Entry.objects.filter(package = package_name).order_by('path')
+    
+    return render_to_response('pathsearch/results.html', {
+                                                          'entry_list'      :   entry_list,
+                                                          'package_name'    :   package_name,
+                                              })
     
 def search_for_package(request, package_name):
     """Searches for a package related to given name in the URL."""
