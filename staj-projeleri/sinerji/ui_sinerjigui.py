@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './sinerjigui.ui'
 #
-# Created: Thu Sep  4 09:26:53 2008
+# Created: Fri Sep  5 12:29:50 2008
 #      by: PyQt4 UI code generator 4.4.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,12 +44,12 @@ class Ui_SinerjiGui(object):
         self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 4)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.gridLayout_2.addItem(spacerItem, 2, 0, 1, 2)
-        self.savequitButton = QtGui.QPushButton(SinerjiGui)
-        self.savequitButton.setObjectName("savequitButton")
-        self.gridLayout_2.addWidget(self.savequitButton, 2, 2, 1, 1)
-        self.cancelButton = QtGui.QPushButton(SinerjiGui)
-        self.cancelButton.setObjectName("cancelButton")
-        self.gridLayout_2.addWidget(self.cancelButton, 2, 3, 1, 1)
+        self.saveButton = QtGui.QPushButton(SinerjiGui)
+        self.saveButton.setObjectName("saveButton")
+        self.gridLayout_2.addWidget(self.saveButton, 2, 2, 1, 1)
+        self.closeButton = QtGui.QPushButton(SinerjiGui)
+        self.closeButton.setObjectName("closeButton")
+        self.gridLayout_2.addWidget(self.closeButton, 2, 3, 1, 1)
         self.clientButton = QtGui.QRadioButton(SinerjiGui)
         self.clientButton.setObjectName("clientButton")
         self.gridLayout_2.addWidget(self.clientButton, 0, 2, 1, 1)
@@ -60,7 +60,7 @@ class Ui_SinerjiGui(object):
     def retranslateUi(self, SinerjiGui):
         SinerjiGui.setWindowTitle(QtGui.QApplication.translate("SinerjiGui", "Sinerji", None, QtGui.QApplication.UnicodeUTF8))
         self.serverButton.setText(QtGui.QApplication.translate("SinerjiGui", "Server Mode", None, QtGui.QApplication.UnicodeUTF8))
-        self.savequitButton.setText(QtGui.QApplication.translate("SinerjiGui", "Save and Quit", None, QtGui.QApplication.UnicodeUTF8))
-        self.cancelButton.setText(QtGui.QApplication.translate("SinerjiGui", "Cancel", None, QtGui.QApplication.UnicodeUTF8))
+        self.saveButton.setText(QtGui.QApplication.translate("SinerjiGui", "Save", None, QtGui.QApplication.UnicodeUTF8))
+        self.closeButton.setText(QtGui.QApplication.translate("SinerjiGui", "Close", None, QtGui.QApplication.UnicodeUTF8))
         self.clientButton.setText(QtGui.QApplication.translate("SinerjiGui", "Client Mode", None, QtGui.QApplication.UnicodeUTF8))
 
