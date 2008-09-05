@@ -60,7 +60,6 @@ class avahiSinerji:
         self.server.ResolveService( int(interface), int(protocol), name, stype, \
                 domain, self.avahi.PROTO_UNSPEC, dbus.UInt32(0), \
                         reply_handler=self.serviceResolvedCallback, error_handler=self.errorCallbackResolving)
-        print "--------- service resolving"
 
     def removeService(self, interface, protocol, name, stype, domain, flags):
         if not self.connected:
