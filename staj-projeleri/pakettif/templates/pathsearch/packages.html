@@ -5,7 +5,7 @@
 		<table>
 		{% for pkg in package_list %}
 			<tr>
-				<td>{{ pkg }}</td>
+				<td><a href="/search/package/{{ pkg }}/list/">{{ pkg }}}</a></td>
 			</tr>
 		{% endfor %}
 		</table>
