@@ -1,12 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
 from socket import gethostname
-hostname = "host_host_sony"
-client = "right_left_lenovo"
-client2 = "top_bottom_pardus"
-names = hostname, client, client2, None, None
 subnames = []
 
 ### Takes a tuple of names and write the screen section of synergy.conf
@@ -51,5 +46,4 @@ def links(*screen):
     synergyconf.close()
 
 if __name__ == "__main__":
-    screens(names)
-    links(names)
+    pass
