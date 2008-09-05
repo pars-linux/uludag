@@ -121,6 +121,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_serverButton_clicked(self):
         print "********* Server button is checked"
+
+        print self.connectingWorkstation.getDomains()
         for domain in self.connectingWorkstation.getDomains():
             self.topComboBox.addItem(domain)
             self.bottomComboBox.addItem(domain)
@@ -134,38 +136,42 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
-        self.connectingWorkstation.disconnect()
-        self.connectingSinerji = avahiservices.avahiSinerji(gethostname(), "_sinerji._tcp")
-        self.connectingSinerji.connectDbus()
-        self.connectingSinerji.connectAvahi()
-        self.connectingSinerji.connect()
+        #self.connectingSinerji = avahiservices.avahiSinerji(gethostname(), "_sinerji._tcp")
+        #self.connectingSinerji.connectDbus()
+        #self.connectingSinerji.connectAvahi()
+        #self.connectingSinerji.connect()
+        print self.connectingSinerji.getSinerjiHost()
         for client in self.connectingSinerji.getClients():
-            print client[2]
+            print client
             if client is None:
                 pass
             else:
                 if client[2] == gethostname():
                     if client[1] == "top":
-                        self.topComboBox.addItem(self.connecting.getSinerjiHost)
+                        self.topComboBox.addItem(self.connectingSinerji.getSinerjiHost())
                     elif client[1] == "bottom":
-                        self.bottomComboBox.addItem(self.connecting.getSinerjiHost)
+                        self.bottomComboBox.addItem(self.connectingSinerji.getSinerjiHost())
                     elif client[1] == "right":
-                        self.rightComboBox.addItem(self.connecting.getSinerjiHost)
+                        print client[0], client[1], client[2]
+                        self.rightComboBox.addItem(self.connectingSinerji.getSinerjiHost())
                     elif client[1] == "left":
-                        self.leftComboBox.addItem(self.connecting.getSinerjiHost)
+                        self.leftComboBox.addItem(self.connectingSinerji.getSinerjiHost())
                     else:
                         QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refresh")
                 else:
                     pass
 
 
-
-
     def startBrowsing(self):
         self.connectingWorkstation = avahiservices.avahiSinerji(gethostname(), "_workstation._tcp")
+        self.connectingSinerji = avahiservices.avahiSinerji(gethostname(), "_sinerji._tcp")
         self.connectingWorkstation.connectDbus()
         self.connectingWorkstation.connectAvahi()
-        self.connectingWorkstation.connect()
+        self.connectingWorkstation.connect() 
+
+        #self.connectingSinerji.connectDbus()
+        #self.connectingSinerji.connectAvahi()
+        self.connectingSinerji.connect()
 
 
     def updateUi(self):
