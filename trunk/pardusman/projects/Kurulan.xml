@@ -64,14 +64,6 @@
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
-        <SelectedPackage>gimp-i18n-ca</SelectedPackage>
-        <SelectedPackage>gimp-i18n-de</SelectedPackage>
-        <SelectedPackage>gimp-i18n-fr</SelectedPackage>
-        <SelectedPackage>gimp-i18n-it</SelectedPackage>
-        <SelectedPackage>gimp-i18n-nl</SelectedPackage>
-        <SelectedPackage>gimp-i18n-pl</SelectedPackage>
-        <SelectedPackage>gimp-i18n-pt_BR</SelectedPackage>
-        <SelectedPackage>gimp-i18n-sv</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
         <SelectedPackage>glibc-locales-de</SelectedPackage>
         <SelectedPackage>glibc-locales-es</SelectedPackage>
@@ -88,16 +80,6 @@
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>gwenview</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-ca</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-de</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-es</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-fr</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-it</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-nl</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-pl</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-pt_BR</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-sv</SelectedPackage>
-        <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
         <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
@@ -112,29 +94,11 @@
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
-        <SelectedPackage>k3b-i18n-ca</SelectedPackage>
-        <SelectedPackage>k3b-i18n-de</SelectedPackage>
-        <SelectedPackage>k3b-i18n-es</SelectedPackage>
-        <SelectedPackage>k3b-i18n-fr</SelectedPackage>
-        <SelectedPackage>k3b-i18n-it</SelectedPackage>
-        <SelectedPackage>k3b-i18n-nl</SelectedPackage>
-        <SelectedPackage>k3b-i18n-pl</SelectedPackage>
-        <SelectedPackage>k3b-i18n-pt_BR</SelectedPackage>
-        <SelectedPackage>k3b-i18n-sv</SelectedPackage>
         <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>katapult</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
-        <SelectedPackage>kde-i18n-ca</SelectedPackage>
-        <SelectedPackage>kde-i18n-de</SelectedPackage>
-        <SelectedPackage>kde-i18n-es</SelectedPackage>
-        <SelectedPackage>kde-i18n-fr</SelectedPackage>
-        <SelectedPackage>kde-i18n-it</SelectedPackage>
-        <SelectedPackage>kde-i18n-nl</SelectedPackage>
-        <SelectedPackage>kde-i18n-pl</SelectedPackage>
-        <SelectedPackage>kde-i18n-pt_BR</SelectedPackage>
-        <SelectedPackage>kde-i18n-sv</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaddons</SelectedPackage>
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
