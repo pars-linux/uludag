@@ -904,4 +904,17 @@
         <Package>zpspell</Package>
         <Package>zvbi</Package>
     </PackageSelection>
+    <LanguageSelection default_language="en_US">
+        <Language>ca_ES</Language>
+        <Language>de_DE</Language>
+        <Language>en_US</Language>
+        <Language>es_ES</Language>
+        <Language>fr_FR</Language>
+        <Language>it_IT</Language>
+        <Language>nl_NL</Language>
+        <Language>pl_PL</Language>
+        <Language>pt_BR</Language>
+        <Language>sv_SE</Language>
+        <Language>tr_TR</Language>
+    </LanguageSelection>
 </PardusmanProject>
