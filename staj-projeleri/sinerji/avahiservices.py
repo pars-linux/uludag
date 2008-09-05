@@ -16,7 +16,6 @@ class avahiSinerji:
         self.domain = None
         self.stype = "_workstation._tcp"
         self.host = host
-        self.txt = {}
         self.serviceBrowser = None
         self.bus = None
         self.server = None
@@ -27,7 +26,7 @@ class avahiSinerji:
         self.avahi = avahi
         self.name = "Sinerji"
         self.port = "24800"
-        self.txt = {}
+        self.domainlist = {}
 
 ##############################################################
 ################## Error functions ###########################
@@ -185,11 +184,18 @@ class avahiSinerji:
         except dbus.DBusException, e:
             print "Can't remove service. That should not happen"
 
-    def clientTxt(self, top="None1", bottom="None2", right="None3", left="None4"):
-        self.domainlist = {top:"1", bottom:"2", right:"3", left:"4"}
-        #return self.avahi.dict_to_txt_array(self.domainlist)
+
+
+    def giveData(self, top, bottom, right, left):
+        val = [1, 2, 3, 4, 5]
+        clients = [top,bottom,right,left]
+        for (c,v) in zip(clients, val):
+            self.domainlist[c] = v
         return self.domainlist
 
+    def clientTxt(self):
+        return self.avahi.dict_to_txt_array(self.domainlist)
+    
     def createService(self):
         try:
             if not self.entrygroup:

@@ -100,27 +100,25 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.confdomain.append(self.confdomainbottom)
         self.confdomain.append(self.confdomainright)
         self.confdomain.append(self.confdomainleft)
-        self.confdomain.append("host_host_%s" % gethostname())
-        print self.confdomaintop
-        self.connecting.clientTxt(self.confdomaintop,
-                self.confdomainbottom,
-                self.confdomainright,
-                self.confdomainleft)
-        print self.connecting.clientTxt()
+        self.confdomain.append(u"host_host_%s" % gethostname())
         
+        print self.connecting.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
+        
+
+
         createsynergyconf.screens(self.confdomain)
         createsynergyconf.links(self.confdomain)
             
     @pyqtSignature("")
     def on_cancelButton_clicked(self):
-        self.reject()
+        self.connecting.announce()
         
 
 ## Only one checkbox has to be checked ##
     
     @pyqtSignature("")
     def on_serverButton_clicked(self):
-        print "********* Radio button is checked"
+        print "********* Server button is checked"
         for domain in self.connecting.getDomains():
             self.topComboBox.addItem(domain)
             self.bottomComboBox.addItem(domain)
