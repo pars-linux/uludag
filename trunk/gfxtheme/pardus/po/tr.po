@@ -99,7 +99,7 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
-"Linux kernel'i yükleniyor\n"
+"Linux çekirdeği yükleniyor\n"
 "\n"
 "\n"
 
