@@ -904,4 +904,8 @@
         <Package>zpspell</Package>
         <Package>zvbi</Package>
     </PackageSelection>
+    <LanguageSelection default_language="tr_TR">
+        <Language>en_US</Language>
+        <Language>tr_TR</Language>
+    </LanguageSelection>
 </PardusmanProject>
