@@ -199,8 +199,8 @@ class avahiSinerji:
         ### Creating data for TXT for clientTXT in announce()
         ### Because avahi has dict_to_txt_array method, we have to create a dict, else a list would be more useful
         ### Random numbers, just for creating dict. The array is like a set(), thats why the None objects have to be
-        ### other than "None" 
-        val = [1, 2, 3, 4]  
+        ### other than "None"
+        val = [1, 2, 3, 4]
         if top is None or '':
             top = "None_None1"
         if bottom is None or '':

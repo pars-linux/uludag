@@ -133,10 +133,16 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_serverButton_clicked(self):
         print "********* Server button is checked"
         ### Clear the boxes 
-        self.topComboBox.addItem("")
+
+        self.topComboBox.clear()
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
+        
+        self.topComboBox.addItem("")
+        self.rightComboBox.addItem("")
+        self.bottomComboBox.addItem("")
+        self.leftComboBox.addItem("")
         ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
         for domain in self.connectingWorkstation.getDomains():
             self.topComboBox.addItem(domain)
@@ -165,7 +171,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     elif client[1] == "bottom":
                         self.bottomComboBox.addItem(self.connectingSinerji.getSinerjiHost())
                     elif client[1] == "right":
-                        print client[0], client[1], client[2]
                         self.rightComboBox.addItem(self.connectingSinerji.getSinerjiHost())
                     elif client[1] == "left":
                         self.leftComboBox.addItem(self.connectingSinerji.getSinerjiHost())
