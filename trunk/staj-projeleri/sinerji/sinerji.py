@@ -104,6 +104,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         
         print self.connecting.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
         
+        self.connecting.announce()
 
 
         createsynergyconf.screens(self.confdomain)
@@ -111,7 +112,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             
     @pyqtSignature("")
     def on_cancelButton_clicked(self):
-        self.connecting.announce()
+        self.reject()
+
         
 
 ## Only one checkbox has to be checked ##
@@ -126,22 +128,34 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.leftComboBox.addItem(domain)
 
         
-    def startBrowsing(self):
-        self.connecting = avahiservices.avahiSinerji(gethostname())
-        self.connecting.connectDbus()
-        self.connecting.connectAvahi()
-        self.connecting.connect()
-
-
-
     @pyqtSignature("")
     def on_clientButton_clicked(self):
         self.topComboBox.clear()
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
+        for client in self.connecting.getClients():
+            print client
+            if client[2] == gethostname():
+                if client[1] == "top":
+                    self.topComboBox.addItem(gethostname())
+                elif client[1] == "bottom":
+                    self.bottomComboBox.addItem(gethostname())
+                elif client[1] == "right":
+                    self.rightComboBox.addItem(gethostname())
+                elif client[1] == "left":
+                    self.leftComboBox.addItem(gethostname())
+                else:
+                    QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refres")
 
 
+
+
+    def startBrowsing(self):
+        self.connecting = avahiservices.avahiSinerji(gethostname())
+        self.connecting.connectDbus()
+        self.connecting.connectAvahi()
+        self.connecting.connect()
 
     def updateUi(self):
         if os.path.exists("synergy.conf"):
