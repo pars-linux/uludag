@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1-tr RC [r06]</Title>
+    <Title>Pardus 2008.1-tr RC</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -60,6 +60,7 @@
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
         <SelectedPackage>freealut</SelectedPackage>
+        <SelectedPackage>frozen-bubble</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
@@ -201,6 +202,7 @@
         <Package>PyQt</Package>
         <Package>QtCurve-Gtk2</Package>
         <Package>QtCurve-KDE3</Package>
+        <Package>Xaw3d</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>accessrunner-firmware</Package>
@@ -329,6 +331,7 @@
         <Package>foomatic-filters</Package>
         <Package>freealut</Package>
         <Package>freetype</Package>
+        <Package>frozen-bubble</Package>
         <Package>fuse</Package>
         <Package>fxload</Package>
         <Package>gawk</Package>
@@ -536,6 +539,7 @@
         <Package>libmad</Package>
         <Package>libmal</Package>
         <Package>libmatroska</Package>
+        <Package>libmikmod</Package>
         <Package>libmng</Package>
         <Package>libmodplug</Package>
         <Package>libmovtar</Package>
@@ -666,8 +670,12 @@
         <Package>pcmciautils</Package>
         <Package>perl</Package>
         <Package>perl-IO-Socket-SSL</Package>
+        <Package>perl-Locale-gettext</Package>
         <Package>perl-Net-SSLeay</Package>
+        <Package>perl-SDL</Package>
         <Package>perl-XML-Parser</Package>
+        <Package>perl-YAML</Package>
+        <Package>physfs</Package>
         <Package>piksemel</Package>
         <Package>pilot-link</Package>
         <Package>pinentry</Package>
@@ -718,6 +726,12 @@
         <Package>sane-backends</Package>
         <Package>schroedinger</Package>
         <Package>sdl-gfx</Package>
+        <Package>sdl-image</Package>
+        <Package>sdl-mixer</Package>
+        <Package>sdl-net</Package>
+        <Package>sdl-pango</Package>
+        <Package>sdl-sound</Package>
+        <Package>sdl-ttf</Package>
         <Package>sdparm</Package>
         <Package>sed</Package>
         <Package>service-manager</Package>
@@ -729,6 +743,7 @@
         <Package>slang</Package>
         <Package>slmodem</Package>
         <Package>smb4k</Package>
+        <Package>smpeg</Package>
         <Package>sn9c1xx</Package>
         <Package>sox</Package>
         <Package>speedtouch-firmware</Package>
@@ -762,6 +777,8 @@
         <Package>texinfo</Package>
         <Package>tiff</Package>
         <Package>time</Package>
+        <Package>timidity</Package>
+        <Package>timidity-shompatches</Package>
         <Package>tomcat-servlet-api</Package>
         <Package>traceroute</Package>
         <Package>transcode</Package>
