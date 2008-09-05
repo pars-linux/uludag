@@ -347,14 +347,6 @@
         <Package>glib2</Package>
         <Package>glibc</Package>
         <Package>glibc-locales-ca</Package>
-        <Package>glibc-locales-de</Package>
-        <Package>glibc-locales-es</Package>
-        <Package>glibc-locales-fr</Package>
-        <Package>glibc-locales-it</Package>
-        <Package>glibc-locales-nl</Package>
-        <Package>glibc-locales-pl</Package>
-        <Package>glibc-locales-pt</Package>
-        <Package>glibc-locales-sv</Package>
         <Package>glibc-zoneinfo</Package>
         <Package>glibmm</Package>
         <Package>glitz</Package>
@@ -390,6 +382,7 @@
         <Package>guile</Package>
         <Package>gutenprint</Package>
         <Package>gwenview</Package>
+        <Package>gwenview-i18n-tr</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hal-cups-utils</Package>
