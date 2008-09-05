@@ -135,18 +135,23 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.rightComboBox.clear()
         self.leftComboBox.clear()
         for client in self.connecting.getClients():
-            print client
-            if client[2] == gethostname():
-                if client[1] == "top":
-                    self.topComboBox.addItem(gethostname())
-                elif client[1] == "bottom":
-                    self.bottomComboBox.addItem(gethostname())
-                elif client[1] == "right":
-                    self.rightComboBox.addItem(gethostname())
-                elif client[1] == "left":
-                    self.leftComboBox.addItem(gethostname())
+            print client[2]
+            if client is None:
+                pass
+            else:
+                if client[2] == gethostname():
+                    if client[1] == "top":
+                        self.topComboBox.addItem(self.connecting.getSinerjiHost)
+                    elif client[1] == "bottom":
+                        self.bottomComboBox.addItem(self.connecting.getSinerjiHost)
+                    elif client[1] == "right":
+                        self.rightComboBox.addItem(self.connecting.getSinerjiHost)
+                    elif client[1] == "left":
+                        self.leftComboBox.addItem(self.connecting.getSinerjiHost)
+                    else:
+                        QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refresh")
                 else:
-                    QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refres")
+                    pass
 
 
 
