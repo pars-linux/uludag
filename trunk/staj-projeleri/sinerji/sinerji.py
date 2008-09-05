@@ -1,10 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import dbus
-import avahi
-import os, sys, re 
+
+import os, sys
+import subprocess
 from socket import gethostname
+
 
 from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
@@ -79,30 +80,44 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_saveButton_clicked(self):
-        
-        ### Add the current Hostnames from the ComboBoxes to the variable confdomain*, where * is the position
-        if self.topComboBox.currentText() != '': 
-            self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
-        if self.bottomComboBox.currentText() != '': 
-            self.confdomainbottom = ("bottom_top_%s" % self.bottomComboBox.currentText())
-        if self.rightComboBox.currentText() != '': 
-            self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
-        if self.leftComboBox.currentText() != '': 
-            self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
-        
-        ### Add the variables "confdomain*" to the list "confdomain"
-        self.confdomain.append(self.confdomaintop)
-        self.confdomain.append(self.confdomainbottom)
-        self.confdomain.append(self.confdomainright)
-        self.confdomain.append(self.confdomainleft)
-        self.confdomain.append(u"host_host_%s" % gethostname())
+        if self.serverButton.isChecked():
 
-        ### Announce the _sinerji._tcp service.
-        self.connectingWorkstation.announce()
-        
-        ### Creating the synergy.conf file
-        createsynergyconf.screens(self.confdomain)
-        createsynergyconf.links(self.confdomain)
+            ### Add the current Hostnames from the ComboBoxes to the variable confdomain*, where * is the position
+            if self.topComboBox.currentText() != '': 
+                self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
+            if self.bottomComboBox.currentText() != '': 
+                self.confdomainbottom = ("bottom_top_%s" % self.bottomComboBox.currentText())
+            if self.rightComboBox.currentText() != '': 
+                self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
+            if self.leftComboBox.currentText() != '': 
+                self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
+            
+            ### Add the variables "confdomain*" to the list "confdomain"
+            self.confdomain.append(self.confdomaintop)
+            self.confdomain.append(self.confdomainbottom)
+            self.confdomain.append(self.confdomainright)
+            self.confdomain.append(self.confdomainleft)
+            self.confdomain.append(u"host_host_%s" % gethostname())
+
+            ### Announce the _sinerji._tcp service.
+            self.connectingWorkstation.announce()
+            
+            ### Creating the synergy.conf file
+            createsynergyconf.screens(self.confdomain)
+            createsynergyconf.links(self.confdomain)
+            
+            
+            synergypath = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
+            command = ['synergys', '-f', '-d', synergypath]
+            process = subprocess.call(command)
+            
+
+        elif self.clientButton.isChecked():
+
+            servername = self.connectingSinerji.getSinerjiHost()
+            command = ['synergyc', '-f', servername]
+            process = subprocess.call(command)
+
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
@@ -115,12 +130,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_serverButton_clicked(self):
         print "********* Server button is checked"
         ### Clear the boxes 
-        self.topComboBox.clear()
+        self.topComboBox.addItem("")
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
-        self.topComboBox.clear()
-
         ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
         for domain in self.connectingWorkstation.getDomains():
             self.topComboBox.addItem(domain)

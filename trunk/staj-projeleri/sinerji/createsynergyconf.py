@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import os
 from socket import gethostname
 subnames = []
-
 ### Takes a tuple of names and write the screen section of synergy.conf
 def screens(*screen):
-    synergyconf = open('synergy.conf', 'w')
+    synergyconf = open(os.path.join(os.path.expanduser("~"), ".synergy.conf"), 'w')
     synergyconf.write('section: screens\n')
     for x in screen[0]:
         if x is not None:    ## If the comboBox is not empty
@@ -19,7 +19,7 @@ def screens(*screen):
 
 
 def links(*screen):
-    synergyconf = open('synergy.conf', 'a')
+    synergyconf = open(os.path.join(os.path.expanduser("~"), ".synergy.conf"), 'a')
     synergyconf.write('section: links\n')
     for y in screen[0]:
         if y is not None: ## If the comboBox is not empty
