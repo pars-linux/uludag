@@ -121,7 +121,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_serverButton_clicked(self):
         print "********* Server button is checked"
-        for domain in self.connecting.getDomains():
+        for domain in self.connectingWorkstation.getDomains():
             self.topComboBox.addItem(domain)
             self.bottomComboBox.addItem(domain)
             self.rightComboBox.addItem(domain)
@@ -134,7 +134,12 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
-        for client in self.connecting.getClients():
+        self.connectingWorkstation.disconnect()
+        self.connectingSinerji = avahiservices.avahiSinerji(gethostname(), "_sinerji._tcp")
+        self.connectingSinerji.connectDbus()
+        self.connectingSinerji.connectAvahi()
+        self.connectingSinerji.connect()
+        for client in self.connectingSinerji.getClients():
             print client[2]
             if client is None:
                 pass
@@ -157,10 +162,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
     def startBrowsing(self):
-        self.connecting = avahiservices.avahiSinerji(gethostname())
-        self.connecting.connectDbus()
-        self.connecting.connectAvahi()
-        self.connecting.connect()
+        self.connectingWorkstation = avahiservices.avahiSinerji(gethostname(), "_workstation._tcp")
+        self.connectingWorkstation.connectDbus()
+        self.connectingWorkstation.connectAvahi()
+        self.connectingWorkstation.connect()
 
     def updateUi(self):
         if os.path.exists("synergy.conf"):
