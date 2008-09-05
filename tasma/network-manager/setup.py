@@ -66,7 +66,7 @@ app_data = [
     'comariface.py',
     'nameconf.py',
     'connsharing.py',
-    ('/usr/kde/3.5/share/autostart/', ['network-applet.desktop']),
+    ('/usr/share/autostart/', ['network-applet.desktop']),
     ('/usr/kde/3.5/share/applications/kde/', ['network-applet.desktop']),
     'images/wireless-online.png',
     'images/wireless-connecting.png',
