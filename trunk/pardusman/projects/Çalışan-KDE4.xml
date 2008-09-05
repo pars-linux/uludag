@@ -28,6 +28,7 @@
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-libs</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
+        <SelectedPackage>boot-manager</SelectedPackage>
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
@@ -74,6 +75,7 @@
         <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
         <SelectedPackage>hcfpcimodem</SelectedPackage>
+        <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>hsfmodem</SelectedPackage>
         <SelectedPackage>iksemel</SelectedPackage>
@@ -91,6 +93,7 @@
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
+        <SelectedPackage>kde4-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeartwork4</SelectedPackage>
         <SelectedPackage>kdebase4</SelectedPackage>
         <SelectedPackage>kdebase4-runtime</SelectedPackage>
@@ -129,6 +132,7 @@
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
         <SelectedPackage>ov51x-jpeg</SelectedPackage>
+        <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
@@ -165,6 +169,7 @@
         <SelectedPackage>unionfs</SelectedPackage>
         <SelectedPackage>unrar</SelectedPackage>
         <SelectedPackage>unshield</SelectedPackage>
+        <SelectedPackage>user-manager</SelectedPackage>
         <SelectedPackage>vbetool</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
         <SelectedPackage>vloopback</SelectedPackage>
@@ -210,7 +215,6 @@
         <Package>amrwb</Package>
         <Package>aria2</Package>
         <Package>arts</Package>
-        <Package>artwork</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
@@ -236,6 +240,7 @@
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
         <Package>boost</Package>
+        <Package>boot-manager</Package>
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
         <Package>br2684ctl</Package>
@@ -264,7 +269,6 @@
         <Package>dbus-glib</Package>
         <Package>dbus-pyqt3-mainloop</Package>
         <Package>dbus-python</Package>
-        <Package>dbus-qt3</Package>
         <Package>decibel</Package>
         <Package>dejavu-fonts</Package>
         <Package>device-mapper</Package>
@@ -285,7 +289,6 @@
         <Package>eagle-firmware</Package>
         <Package>eciadsl</Package>
         <Package>ed</Package>
-        <Package>eject</Package>
         <Package>enchant</Package>
         <Package>enscript</Package>
         <Package>essential</Package>
@@ -377,6 +380,7 @@
         <Package>hal-info</Package>
         <Package>hcfpcimodem</Package>
         <Package>hdparm</Package>
+        <Package>history-manager</Package>
         <Package>hplip</Package>
         <Package>hsfmodem</Package>
         <Package>icu4c</Package>
@@ -404,8 +408,8 @@
         <Package>kaffeine</Package>
         <Package>kbd</Package>
         <Package>kchmviewer</Package>
+        <Package>kde4-i18n-tr</Package>
         <Package>kdeartwork4</Package>
-        <Package>kdebase</Package>
         <Package>kdebase4</Package>
         <Package>kdebase4-runtime</Package>
         <Package>kdebase4-workspace</Package>
@@ -414,7 +418,6 @@
         <Package>kdemultimedia4</Package>
         <Package>kdenetwork4</Package>
         <Package>kdepimlibs</Package>
-        <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
         <Package>kftpgrabber</Package>
@@ -501,7 +504,6 @@
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
         <Package>libksba</Package>
-        <Package>liblazy</Package>
         <Package>liblzf</Package>
         <Package>libmad</Package>
         <Package>libmatroska</Package>
@@ -543,7 +545,6 @@
         <Package>libvorbis</Package>
         <Package>libwmf</Package>
         <Package>libwnck</Package>
-        <Package>libwww</Package>
         <Package>libx86</Package>
         <Package>libxcb</Package>
         <Package>libxkbfile</Package>
@@ -602,7 +603,6 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
-        <Package>ntp-client</Package>
         <Package>openal</Package>
         <Package>openexr</Package>
         <Package>openldap-client</Package>
@@ -613,6 +613,7 @@
         <Package>orbit2</Package>
         <Package>ov511</Package>
         <Package>ov51x-jpeg</Package>
+        <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
         <Package>pardus-python</Package>
@@ -736,6 +737,7 @@
         <Package>unzip</Package>
         <Package>urlgrabber</Package>
         <Package>usbutils</Package>
+        <Package>user-manager</Package>
         <Package>utempter</Package>
         <Package>util-linux</Package>
         <Package>vbetool</Package>
