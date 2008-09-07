@@ -12,8 +12,10 @@ def index(request):
             in_end = in_start + 4
             term = entry[:in_start-1]
             pkg = entry[in_end-1:]
-            print entry, term, pkg
             return search_in_package(request, pkg, term)
+        elif entry.strip().startswith('in:'):
+            pkg = entry[3:].strip()
+            return list_package_contents(request, pkg)
             
         # If search form is submitted, redirect...
         return search_in_all_packages(request)
@@ -22,8 +24,6 @@ def index(request):
     return render_to_response('index.html', {})
 
 def list_package_contents(request, package_name):
-    print "yehoo?"
-    print package_name
     entry_list = Entry.objects.filter(package = package_name).order_by('path')
     
     return render_to_response('pathsearch/results.html', {
