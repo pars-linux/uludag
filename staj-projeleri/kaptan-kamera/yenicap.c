@@ -1,3 +1,10 @@
+/********************************************************
+ *                                                      *
+ * Written by Onur Kücük and Caglar Kilimci             *
+ *                                                      *
+ * Captures frame from cam with uses double buffer      *
+ *                                                      *
+ ********************************************************/
 
 #include <unistd.h>
 #include <stdlib.h>
