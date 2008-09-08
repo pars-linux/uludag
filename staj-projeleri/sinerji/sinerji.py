@@ -119,7 +119,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         elif self.clientButton.isChecked():
             
             address = self.connectingSinerji.getSinerjiAddress()
-            command = ['synergyc', '-f', address]
+            command = ['synergyc', address]
             process = subprocess.call(command)
 
         else:

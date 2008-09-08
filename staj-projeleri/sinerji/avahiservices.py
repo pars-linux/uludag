@@ -25,7 +25,7 @@ class avahiSinerji:
         self.connected = False
         self.announced = False
         self.avahi = avahi
-        self.name = "Sinerji"
+        self.name = ("Sinerji on %" % gethostname())
         self.port = "24800"
         self.domainlist = {}
         self.client = []
@@ -255,7 +255,7 @@ class avahiSinerji:
 ##############################################################
 
     def serviceAddFailCallback(self, err):
-        print "Error while adding service. %s' % str(err)"
+        print "Error while adding service: %s"  % str(err)
         if 'Local name collision' in str(err):
             alternative_name = self.server.GetAlternativeServiceName(self.name)
             return
