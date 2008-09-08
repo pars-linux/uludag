@@ -138,6 +138,9 @@ class Widget(PanelWidget, ScreenWidget):
         # restart kwin
         client.send("kwin", "KWinInterface", "reconfigure()", "")
 
+        # we don't have a widgetStyle anymore.
+
+        """
         # widget settings
         globalConf = KConfig("kdeglobals")
         globalConf.setGroup("General")
@@ -147,7 +150,7 @@ class Widget(PanelWidget, ScreenWidget):
 
         globalConf.writeEntry("widgetStyle", self.getProperty(Widget, "widgetStyle", "value"))
         globalConf.sync()
-
+        """
         KIPC.sendMessageAll(KIPC.StyleChanged)
 
 
