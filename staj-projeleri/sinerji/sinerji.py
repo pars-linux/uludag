@@ -92,6 +92,43 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
             if self.leftComboBox.currentText() != '': 
                 self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
+
+            ### Add the variables "confdomain*" to the list "confdomain"
+            self.confdomain.append(self.confdomaintop)
+            self.confdomain.append(self.confdomainbottom)
+            self.confdomain.append(self.confdomainright)
+            self.confdomain.append(self.confdomainleft)
+            self.confdomain.append(u"host_host_%s" % gethostname())
+
+            ### Give data for _sinerji._tcp
+            self.connectingWorkstation.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
+
+            ### Announce the _sinerji._tcp service.
+            self.connectingWorkstation.announce()
+
+            ### Creating the synergy.conf file
+            createsynergyconf.screens(self.confdomain)
+            createsynergyconf.links(self.confdomain)
+
+            ## Starting synergys
+            command = ['synergys', '--config', self.synergyConf]
+            process = subprocess.call(command)
+
+
+        elif self.clientButton.isChecked():
+            servername = self.connectingSinerji.getSinerjiHost()
+            command = ['synergyc', '-f', servername]
+            process = subprocess.call(command)
+
+        else:
+            if self.topComboBox.currentText() != '': 
+                self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
+            if self.bottomComboBox.currentText() != '': 
+                self.confdomainbottom = ("bottom_top_%s" % self.bottomComboBox.currentText())
+            if self.rightComboBox.currentText() != '': 
+                self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
+            if self.leftComboBox.currentText() != '': 
+                self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
             
             ### Add the variables "confdomain*" to the list "confdomain"
             self.confdomain.append(self.confdomaintop)
@@ -99,27 +136,12 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomain.append(self.confdomainright)
             self.confdomain.append(self.confdomainleft)
             self.confdomain.append(u"host_host_%s" % gethostname())
-            
-            ### Date for _sinerji._tcp
-            self.connectingWorkstation.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
 
-            ### Announce the _sinerji._tcp service.
-            self.connectingWorkstation.announce()
-            
             ### Creating the synergy.conf file
             createsynergyconf.screens(self.confdomain)
             createsynergyconf.links(self.confdomain)
-            
-            
-            command = ['synergys', '--config', self.synergyConf]
-            process = subprocess.call(command)
-            
 
-        elif self.clientButton.isChecked():
 
-            servername = self.connectingSinerji.getSinerjiHost()
-            command = ['synergyc', '-f', servername]
-            process = subprocess.call(command)
 
 
     @pyqtSignature("")
@@ -165,6 +187,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             if client is None:
                 pass
             else:
+                print client
                 if client[2] == gethostname(): ### We are looking for our hostname
                     if client[1] == "top":
                         self.topComboBox.addItem(self.connectingSinerji.getSinerjiHost())

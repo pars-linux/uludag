@@ -202,13 +202,13 @@ class avahiSinerji:
         ### other than "None"
         val = [1, 2, 3, 4]
         if top is None or '':
-            top = "None_None1"
+            top = "None_None1_None2"
         if bottom is None or '':
-            bottom = "None1_None2"
+            bottom = "None1_None2_None3"
         if right is None or '':
-            right = "None2_None3"
+            right = "None2_None3_None4"
         if left is None or '':
-            left = "None3_None4"
+            left = "None3_None4_None5"
         
         clients = [top,bottom,right,left]
         for (c,v) in zip(clients, val):
