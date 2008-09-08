@@ -1507,7 +1507,10 @@ radioobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    //if (-1 == (fd = open(fname, O_RDWR))) {
+/*
+ *  Try to open with using libv4l library
+ *  if (-1 == (fd = open(fname, O_RDWR))) {
+ */
     if( -1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
@@ -1522,7 +1525,10 @@ videoobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    //if (-1 == (fd = open(fname, O_RDWR))) {
+/*
+ *  Try to open with using libv4l library
+ *  if (-1 == (fd = open(fname, O_RDWR))) {
+ */
     if (-1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
