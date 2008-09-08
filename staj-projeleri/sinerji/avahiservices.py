@@ -33,7 +33,6 @@ class avahiSinerji:
         self.sinerjihost = ""
         self.hostList = []
         self.addressList = []
-        self.hostAddressData = {}
 ##############################################################
 ################## Error functions ###########################
 ##############################################################
@@ -80,20 +79,18 @@ class avahiSinerji:
     def getSinerjiHost(self):
         return self.sinerjihost
 
-    def gethostAddressList(self):
-        return dict(zip(self.addressList, self.hostAddressData))
+    def getHostAddressList(self):
+        return dict(zip(self.hostList, self.addressList))
 
     
     def serviceResolvedCallback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
             return
-        print address,name, domain
         if stype == "_workstation._tcp":
             hostadded = re.sub(r'\.%s$' % domain, '', host)
+            
             self.hostList.append(hostadded)
             self.addressList.append(address)
-
-            print self.hostAddressData 
             self.discoveredHosts.add(hostadded)
         elif stype == "_sinerji._tcp":
             host = re.sub(r'\.%s$' % domain, '', host)
