@@ -30,9 +30,8 @@ class avahiSinerji:
         self.domainlist = {}
         self.client = []
         self.data = []
-        self.sinerjihost = ""
-        self.hostList = []
-        self.addressList = []
+        self.sinerjiHost = ""
+        self.sinerjiAddress = ""
 ##############################################################
 ################## Error functions ###########################
 ##############################################################
@@ -78,10 +77,8 @@ class avahiSinerji:
     
     def getSinerjiHost(self):
         return self.sinerjihost
-
-    def getHostAddressList(self):
-        return dict(zip(self.hostList, self.addressList))
-
+    def getSinerjiAddress(self):
+        return self.sinerjiAddress
     
     def serviceResolvedCallback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
@@ -89,12 +86,11 @@ class avahiSinerji:
         if stype == "_workstation._tcp":
             hostadded = re.sub(r'\.%s$' % domain, '', host)
             
-            self.hostList.append(hostadded)
-            self.addressList.append(address)
             self.discoveredHosts.add(hostadded)
         elif stype == "_sinerji._tcp":
             host = re.sub(r'\.%s$' % domain, '', host)
-            self.sinerjihost = host
+            self.sinerjiHost = host
+            self.sinerjiAddress = address
             for txt in avahi.txt_array_to_string_array(txt):
                 self.data = txt.split("=")
                 self.client.append(self.data[0].split("_"))
