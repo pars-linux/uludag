@@ -76,7 +76,7 @@ class avahiSinerji:
         return self.client
     
     def getSinerjiHost(self):
-        return self.sinerjihost
+        return self.sinerjiHost
     def getSinerjiAddress(self):
         return self.sinerjiAddress
     
