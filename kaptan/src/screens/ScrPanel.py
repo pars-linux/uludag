@@ -150,8 +150,8 @@ class Widget(PanelWidget, ScreenWidget):
 
         globalConf.writeEntry("widgetStyle", self.getProperty(Widget, "widgetStyle", "value"))
         globalConf.sync()
-        """
         KIPC.sendMessageAll(KIPC.StyleChanged)
+        """
 
 
     def getProperty(self, parent,tag, attr):
