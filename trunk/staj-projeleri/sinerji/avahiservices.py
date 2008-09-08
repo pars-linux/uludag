@@ -75,13 +75,19 @@ class avahiSinerji:
         return list(sorted(self.discoveredHosts))
     
     def getClients(self):
+        for client in self.client:
+            self.clientlist[self.serviceHost] = client
         return self.clientlist
     
+    def getClient(self):
+        return self.client
+
     def getSinerjiHost(self):
         return self.sinerjiHost
 
     def getSinerjiAddress(self):
         return self.sinerjiAddress
+    
     
     def serviceResolvedCallback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
@@ -91,14 +97,10 @@ class avahiSinerji:
             self.discoveredHosts.add(hostadded)
 
         elif stype == "_sinerji._tcp":
-            host = re.sub(r'\.%s$' % domain, '', host)
-            self.sinerjiHost.append(host)
+            self.serviceHost = re.sub(r'\.%s$' % domain, '', host)
+            self.sinerjiHost.append(self.serviceHost)
             self.sinerjiAddress.append(address)
-            
-            for txt in avahi.txt_array_to_string_array(txt):
-                self.data = txt.split("=")
-                self.client.append(self.data[0].split("_"))
-            self.clientlist[host] = self.client
+            self.client.append(avahi.txt_array_to_string_array(txt))
 
         else:
             pass
