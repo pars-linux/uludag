@@ -39,6 +39,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #define WIDTH 320
 #define HEIGHT 240
 
+#include <libv4l1.h>
 
 /* colourspace conversion */
 #define CLIP         320
