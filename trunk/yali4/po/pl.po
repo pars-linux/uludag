@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-02 11:45+0300\n"
+"POT-Creation-Date: 2008-09-08 12:16+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -185,7 +185,7 @@ msgstr ""
 "opcjonalne, nalegamy aby to uczynić, by ominąć błędypodczas instalowania."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
-#: yali4/installer.py:173
+#: yali4/installer.py:174
 msgid "Check CD Integrity"
 msgstr "Sprawdź spójność CD"
 
@@ -469,7 +469,7 @@ msgstr "Automatycznie zaloguj użytkownika:"
 msgid "Auto Login Disabled"
 msgstr "Automatyczne logowanie wyłączone"
 
-#: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:213
+#: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:219
 msgid "Begin Install"
 msgstr ""
 
@@ -487,7 +487,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Przeczytaj GPL"
 
-#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:160
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:161
 msgid "Reboot System!"
 msgstr "Zrestartuj System!"
 
@@ -678,7 +678,7 @@ msgid ""
 "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:144
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:146
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
@@ -694,7 +694,7 @@ msgid ""
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:143
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:145
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -729,7 +729,7 @@ msgid ""
 "                                  <b>FileSystem:</b> %s%s"
 msgstr ""
 
-#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:144
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr ""
@@ -766,11 +766,11 @@ msgstr "Nie mogę otworzyć pliku z licencją!"
 msgid "Can't open Release Notes!"
 msgstr "Nie mogę otworzyć pliku z notką wydania!"
 
-#: yali4/gui/runner.py:123
+#: yali4/gui/runner.py:124
 msgid "Error!"
 msgstr "Błąd!"
 
-#: yali4/gui/runner.py:155
+#: yali4/gui/runner.py:156
 #, fuzzy
 msgid "Unhandled error occured!"
 msgstr "Pojawił się błąd!"
@@ -1015,7 +1015,7 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:139 yali4/gui/ScrSummary.py:69
-#: yali4/installer.py:697
+#: yali4/installer.py:701
 msgid "Reboot"
 msgstr "Restart"
 
@@ -1303,79 +1303,79 @@ msgstr ""
 msgid "Selected TimeZone is <b>%s</b>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:115
+#: yali4/gui/ScrSummary.py:116
 msgid "User Settings"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:117
+#: yali4/gui/ScrSummary.py:118
 #, python-format
 msgid "User %s (<b>%s</b>) added."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:119
+#: yali4/gui/ScrSummary.py:120
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:124
+#: yali4/gui/ScrSummary.py:126
 #, fuzzy
 msgid "Hostname Settings"
 msgstr "Host:"
 
-#: yali4/gui/ScrSummary.py:125
+#: yali4/gui/ScrSummary.py:127
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:131
+#: yali4/gui/ScrSummary.py:133
 #, fuzzy
 msgid "Partition Settings"
 msgstr "Partycje:"
 
-#: yali4/gui/ScrSummary.py:133
+#: yali4/gui/ScrSummary.py:135
 #, fuzzy
 msgid "Automatic Partitioning selected."
 msgstr "Tak, automatycznie spartycjonuj i sformatuj wybrany dysk!"
 
-#: yali4/gui/ScrSummary.py:147
+#: yali4/gui/ScrSummary.py:149
 #, fuzzy
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Tak, automatycznie spartycjonuj i sformatuj wybrany dysk!"
 
-#: yali4/gui/ScrSummary.py:167
+#: yali4/gui/ScrSummary.py:169
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
 "(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:168
+#: yali4/gui/ScrSummary.py:170
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
 "with <b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:169
+#: yali4/gui/ScrSummary.py:171
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:184
+#: yali4/gui/ScrSummary.py:186
 #, fuzzy
 msgid "Bootloader Settings"
 msgstr "Host:"
 
-#: yali4/gui/ScrSummary.py:185
+#: yali4/gui/ScrSummary.py:187
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:187
+#: yali4/gui/ScrSummary.py:189
 msgid "GRUB will not be installed"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:209
+#: yali4/gui/ScrSummary.py:215
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1384,17 +1384,17 @@ msgid ""
 "                   <b>Note that this operation cannot be undone ! </b></p>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:236 yali4/gui/ScrSummary.py:244
-#: yali4/gui/ScrSummary.py:258
+#: yali4/gui/ScrSummary.py:242 yali4/gui/ScrSummary.py:250
+#: yali4/gui/ScrSummary.py:264
 #, fuzzy
 msgid "Formatting ..."
 msgstr "Formatuję!"
 
-#: yali4/gui/ScrSummary.py:241
+#: yali4/gui/ScrSummary.py:247
 msgid "Resizing ..."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:251 yali4/installer.py:266
+#: yali4/gui/ScrSummary.py:257 yali4/installer.py:267
 msgid "Writing disk tables ..."
 msgstr ""
 
@@ -1535,24 +1535,24 @@ msgstr ""
 msgid "Backtrace:"
 msgstr "Log:"
 
-#: yali4/installer.py:127
+#: yali4/installer.py:128
 msgid "YALI Is Working..."
 msgstr ""
 
-#: yali4/installer.py:143
+#: yali4/installer.py:144
 msgid "Starting for CD Check"
 msgstr ""
 
-#: yali4/installer.py:161
+#: yali4/installer.py:162
 #, python-format
 msgid "Checking: %s"
 msgstr ""
 
-#: yali4/installer.py:167
+#: yali4/installer.py:168
 msgid "Check Failed"
 msgstr "Sprawdzanie nieudane"
 
-#: yali4/installer.py:168
+#: yali4/installer.py:169
 #, fuzzy
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
@@ -1563,7 +1563,7 @@ msgstr ""
 "jest uszkodzona.</p>\n"
 "</b>\n"
 
-#: yali4/installer.py:172
+#: yali4/installer.py:173
 #, fuzzy
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
@@ -1572,65 +1572,65 @@ msgstr ""
 "<font color=\"#257216\">Sprawdzenie powiodło się. Możesz przejść dalej.</"
 "font>"
 
-#: yali4/installer.py:190
+#: yali4/installer.py:191
 msgid "Setting time settings.."
 msgstr ""
 
-#: yali4/installer.py:217
+#: yali4/installer.py:218
 msgid "Disk analyze started.."
 msgstr ""
 
-#: yali4/installer.py:322
+#: yali4/installer.py:323
 msgid "Resize Finished ..."
 msgstr ""
 
-#: yali4/installer.py:334
+#: yali4/installer.py:335
 #, fuzzy
 msgid "Creating new partition ..."
 msgstr "Stwórz Nową Partycję"
 
-#: yali4/installer.py:501
+#: yali4/installer.py:502
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr ""
 
-#: yali4/installer.py:571
+#: yali4/installer.py:575
 msgid "Trying to connect DBUS..."
 msgstr ""
 
-#: yali4/installer.py:573
+#: yali4/installer.py:577
 msgid "Setting Hostname..."
 msgstr ""
 
-#: yali4/installer.py:574
+#: yali4/installer.py:578
 msgid "Setting TimeZone..."
 msgstr ""
 
-#: yali4/installer.py:575
+#: yali4/installer.py:579
 msgid "Setting Root Password..."
 msgstr ""
 
-#: yali4/installer.py:576
+#: yali4/installer.py:580
 msgid "Adding Users..."
 msgstr ""
 
-#: yali4/installer.py:577
+#: yali4/installer.py:581
 msgid "Writing Console Data..."
 msgstr ""
 
-#: yali4/installer.py:578
-msgid "Copy Pisi index..."
-msgstr ""
-
-#: yali4/installer.py:579
+#: yali4/installer.py:582
 msgid "Migrating X.org Configuration..."
 msgstr ""
 
-#: yali4/installer.py:581
+#: yali4/installer.py:584
+msgid "Copy Pisi index..."
+msgstr ""
+
+#: yali4/installer.py:585
 msgid "Setting misc. package configurations..."
 msgstr ""
 
-#: yali4/installer.py:582
+#: yali4/installer.py:586
 #, fuzzy
 msgid "Installing BootLoader..."
 msgstr "Nie instaluj menedżera rozruchu"

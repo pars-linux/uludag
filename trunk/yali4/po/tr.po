@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-02 11:45+0300\n"
+"POT-Creation-Date: 2008-09-08 12:16+0300\n"
 "PO-Revision-Date: 2007-11-18 15:19+0200\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -99,7 +99,7 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:117
 msgid "Try to use free space or resize current partitions"
-msgstr "Otomatik olarak boş da diğer bölümleri yeniden boyutlandırmayı dene"
+msgstr "Bölümleri yeniden boyutlandırmayı dene"
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid ""
@@ -161,6 +161,8 @@ msgid ""
 msgstr ""
 "<b>Sistem yükleyicisini (GRUB) sabit diskinize kurmak ister misiniz?</b>\n"
 "\n"
+"<p>Pardus'u açabilmek için bir açılış yöneticisi gerekir.</p>\n"
+"\n"
 "<p>Eğer bir sistem yükleyicisi açılış diskinin başına kurmazsanız, (eğer "
 "kurulu bir tane varsa) \n"
 "diğer işletim sisteminizin yükleyicisini, kurulmuş olan Pardus'u başlatmak \n"
@@ -201,7 +203,7 @@ msgstr ""
 "için bu doğrulamayı yapmanızı öneririz."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
-#: yali4/installer.py:173
+#: yali4/installer.py:174
 msgid "Check CD Integrity"
 msgstr "CD Doğruluğunu Kontrol Et"
 
@@ -501,7 +503,7 @@ msgstr "Otomatik Giriş Kullanıcısı :"
 msgid "Auto Login Disabled"
 msgstr "Otomatik Giriş Kapalı"
 
-#: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:213
+#: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:219
 msgid "Begin Install"
 msgstr "Kuruluma Başla"
 
@@ -520,7 +522,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "GPL Metnini Oku"
 
-#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:160
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:161
 msgid "Reboot System!"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -762,7 +764,7 @@ msgstr ""
 "Disk bölümü <b>%(partition)s</b>, <b>%(fsType)s</b> tipinde "
 "<b>biçimlendirilecek</b>."
 
-#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:144
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:146
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Disk bölümü <b>%(partition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
@@ -779,7 +781,7 @@ msgstr ""
 "GPT Disk tabloları extended disk bölümlerini desteklememektedir.\n"
 "Disk tablonuzdan bir disk bölümü silmeniz gerekmekte !"
 
-#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:143
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:145
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -819,7 +821,7 @@ msgstr ""
 "                                  <b>Boyut:</b> %s<br>\n"
 "                                  <b>DosyaSistemi:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:144
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Disk aygıtı <b>%(device)s</b> üzerindeki tüm disk bölümleri silindi."
@@ -859,11 +861,11 @@ msgstr "Lisans dosyası açılamıyor!"
 msgid "Can't open Release Notes!"
 msgstr "Sürüm Notları dosyası açılamıyor!"
 
-#: yali4/gui/runner.py:123
+#: yali4/gui/runner.py:124
 msgid "Error!"
 msgstr "Hata!"
 
-#: yali4/gui/runner.py:155
+#: yali4/gui/runner.py:156
 msgid "Unhandled error occured!"
 msgstr "Bir hata oluştu!"
 
@@ -1120,7 +1122,7 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:139 yali4/gui/ScrSummary.py:69
-#: yali4/installer.py:697
+#: yali4/installer.py:701
 msgid "Reboot"
 msgstr "Sistemi Yeniden Başlat!"
 
@@ -1416,42 +1418,42 @@ msgstr "Saat/Tarih Ayarları"
 msgid "Selected TimeZone is <b>%s</b>"
 msgstr "Seçilen ZamanDilimi <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:115
+#: yali4/gui/ScrSummary.py:116
 msgid "User Settings"
 msgstr "Kullanıcı Ayarları"
 
-#: yali4/gui/ScrSummary.py:117
+#: yali4/gui/ScrSummary.py:118
 #, python-format
 msgid "User %s (<b>%s</b>) added."
 msgstr "Kullanıcı %s (<b>%s</b>) eklendi."
 
-#: yali4/gui/ScrSummary.py:119
+#: yali4/gui/ScrSummary.py:120
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
 msgstr "Kullanıcı %s (<b>%s</b>) <u>yönetici hakları ile</u> eklendi."
 
-#: yali4/gui/ScrSummary.py:124
+#: yali4/gui/ScrSummary.py:126
 msgid "Hostname Settings"
 msgstr "Makine Adı Ayarları"
 
-#: yali4/gui/ScrSummary.py:125
+#: yali4/gui/ScrSummary.py:127
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
 msgstr "Makine adı <b>%s</b> olarak seçildi"
 
-#: yali4/gui/ScrSummary.py:131
+#: yali4/gui/ScrSummary.py:133
 msgid "Partition Settings"
 msgstr "Disk Bölümü Ayarları"
 
-#: yali4/gui/ScrSummary.py:133
+#: yali4/gui/ScrSummary.py:135
 msgid "Automatic Partitioning selected."
 msgstr "Otomatik kurulum seçildi."
 
-#: yali4/gui/ScrSummary.py:147
+#: yali4/gui/ScrSummary.py:149
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Otomatik kurulum (yeniden boyutlandırma yöntemi) seçildi."
 
-#: yali4/gui/ScrSummary.py:167
+#: yali4/gui/ScrSummary.py:169
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
@@ -1460,7 +1462,7 @@ msgstr ""
 "Disk bölümü <b>%(partition)s - %(currentFs)s</b>, <b>%(resizeTo)s MB</b> 'a "
 "yeniden boyutlandırıldı.Eski boyut: <b>%(currentSize)s MB</b>."
 
-#: yali4/gui/ScrSummary.py:168
+#: yali4/gui/ScrSummary.py:170
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
@@ -1469,26 +1471,26 @@ msgstr ""
 "Disk bölümü <b>%(newPartition)s</b>, <b>%(device)s</b> diskine <b>%(size)s "
 "MB</b> boyutuyla ve <b>%(fs)s</b> dosya sistemi ile eklendi."
 
-#: yali4/gui/ScrSummary.py:169
+#: yali4/gui/ScrSummary.py:171
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 "Disk bölümü <b>%(newPartition)s</b> <b>%(type)s</b> için <b>seçildi</b>."
 
-#: yali4/gui/ScrSummary.py:184
+#: yali4/gui/ScrSummary.py:186
 msgid "Bootloader Settings"
 msgstr "Açılış Yöneticisi Ayarları"
 
-#: yali4/gui/ScrSummary.py:185
+#: yali4/gui/ScrSummary.py:187
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr "GRUB <b>%s</b> üzerine kurulacak"
 
-#: yali4/gui/ScrSummary.py:187
+#: yali4/gui/ScrSummary.py:189
 msgid "GRUB will not be installed"
 msgstr "GRUB kurulmayacak"
 
-#: yali4/gui/ScrSummary.py:209
+#: yali4/gui/ScrSummary.py:215
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1497,21 +1499,21 @@ msgid ""
 "                   <b>Note that this operation cannot be undone ! </b></p>"
 msgstr ""
 "<p><b><u>Uyarı</u></b>: Kurulumunuzun gerçekleşmei için yeniden "
-"boyutlandırma işlemi bulunuyor.<br>Bu işlem disk bölümünüzün bozulmasına ve "
-"verilerinizin kaybolmasınaneden olabilir.<br>\n"
-" Bu disk bölümü için yedek aldığınıza emin olun.<br>\n"
-"<b>Unutmayın ki bu işlem geri alınamaz.</b></p>"
+"                   boyutlandırma işlemi bulunuyor.<br>\n"
+"                   Bu işlem disk bölümünüzün bozulmasına ve verilerinizin kaybolmasına neden olabilir.<br>\n"
+"                   Bu disk bölümü için yedek aldığınıza emin olun.<br>\n"
+"                   <b>Bu işlem geri alınamaz.</b></p>"
 
-#: yali4/gui/ScrSummary.py:236 yali4/gui/ScrSummary.py:244
-#: yali4/gui/ScrSummary.py:258
+#: yali4/gui/ScrSummary.py:242 yali4/gui/ScrSummary.py:250
+#: yali4/gui/ScrSummary.py:264
 msgid "Formatting ..."
 msgstr "Biçimlendiriliyor ..."
 
-#: yali4/gui/ScrSummary.py:241
+#: yali4/gui/ScrSummary.py:247
 msgid "Resizing ..."
 msgstr "Yeniden boyutlandırıyor.."
 
-#: yali4/gui/ScrSummary.py:251 yali4/installer.py:266
+#: yali4/gui/ScrSummary.py:257 yali4/installer.py:267
 msgid "Writing disk tables ..."
 msgstr "Disk tablosu yazılıyor ..."
 
@@ -1677,24 +1679,24 @@ msgstr ""
 msgid "Backtrace:"
 msgstr "Geri İz:"
 
-#: yali4/installer.py:127
+#: yali4/installer.py:128
 msgid "YALI Is Working..."
 msgstr "YALI Çalışıyor..."
 
-#: yali4/installer.py:143
+#: yali4/installer.py:144
 msgid "Starting for CD Check"
 msgstr "CD Kontrolü başlatılıyor"
 
-#: yali4/installer.py:161
+#: yali4/installer.py:162
 #, python-format
 msgid "Checking: %s"
 msgstr "Kontrol ediliyor: %s"
 
-#: yali4/installer.py:167
+#: yali4/installer.py:168
 msgid "Check Failed"
 msgstr "Kontrol Başarısız"
 
-#: yali4/installer.py:168
+#: yali4/installer.py:169
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
@@ -1702,7 +1704,7 @@ msgstr ""
 "<b><p>CD kontrolü başarısız oldu. Bozuk bir kurulum CD'si olabilir. Lütfen "
 "yeni bir kurulum CD'si ile tekrar deneyiniz.</p></b>"
 
-#: yali4/installer.py:172
+#: yali4/installer.py:173
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
@@ -1710,64 +1712,64 @@ msgstr ""
 "<font color=\"#FFF\"><b>Kontrol başarılı. Bir sonraki ekrana geçebilirsiniz."
 "</b></font>"
 
-#: yali4/installer.py:190
+#: yali4/installer.py:191
 msgid "Setting time settings.."
 msgstr "Saat ayarlanıyor.."
 
-#: yali4/installer.py:217
+#: yali4/installer.py:218
 msgid "Disk analyze started.."
 msgstr "Disk analizi başladı.."
 
-#: yali4/installer.py:322
+#: yali4/installer.py:323
 msgid "Resize Finished ..."
 msgstr "Yeniden boyutlandırma bitti ..."
 
-#: yali4/installer.py:334
+#: yali4/installer.py:335
 msgid "Creating new partition ..."
 msgstr "Yeni disk bölümü yaratılıyor ..."
 
-#: yali4/installer.py:501
+#: yali4/installer.py:502
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "<b>%s</b> kullanıcısının ev dizini ayarlanıyor.."
 
-#: yali4/installer.py:571
+#: yali4/installer.py:575
 msgid "Trying to connect DBUS..."
 msgstr "DBUS'a bağlanmaya çalışıyor..."
 
-#: yali4/installer.py:573
+#: yali4/installer.py:577
 msgid "Setting Hostname..."
 msgstr "Makine adı ayarlanıyor..."
 
-#: yali4/installer.py:574
+#: yali4/installer.py:578
 msgid "Setting TimeZone..."
 msgstr "Zaman dilimi ayarlanıyor..."
 
-#: yali4/installer.py:575
+#: yali4/installer.py:579
 msgid "Setting Root Password..."
 msgstr "Root parolası ayarlanıyor..."
 
-#: yali4/installer.py:576
+#: yali4/installer.py:580
 msgid "Adding Users..."
 msgstr "Kullanıcılar ekleniyor..."
 
-#: yali4/installer.py:577
+#: yali4/installer.py:581
 msgid "Writing Console Data..."
 msgstr "Konsol bilgisi yazılıyor..."
 
-#: yali4/installer.py:578
-msgid "Copy Pisi index..."
-msgstr "Pisi index kopyalanıyor..."
-
-#: yali4/installer.py:579
+#: yali4/installer.py:582
 msgid "Migrating X.org Configuration..."
 msgstr "X.org yapılandırması aktarılıyor..."
 
-#: yali4/installer.py:581
+#: yali4/installer.py:584
+msgid "Copy Pisi index..."
+msgstr "Pisi index kopyalanıyor..."
+
+#: yali4/installer.py:585
 msgid "Setting misc. package configurations..."
 msgstr "Diğer paket yapılandırmaları gerçekleştiriliyor..."
 
-#: yali4/installer.py:582
+#: yali4/installer.py:586
 msgid "Installing BootLoader..."
 msgstr "Açılış yöneticisi yükleniyor..."
 
