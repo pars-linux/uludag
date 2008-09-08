@@ -117,8 +117,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
         elif self.clientButton.isChecked():
+            
             address = self.connectingSinerji.getSinerjiAddress()
-            command = ['synergyc', '-f', addres]
+            command = ['synergyc', '-f', address]
             process = subprocess.call(command)
 
         else:
@@ -137,8 +138,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomain.append(self.confdomainright)
             self.confdomain.append(self.confdomainleft)
             self.confdomain.append(u"host_host_%s" % gethostname())
-
-
 
             
             ### Creating the synergy.conf file
@@ -189,7 +188,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             if client is None:
                 pass
             else:
-                print client
                 if client[2] == gethostname(): ### We are looking for our hostname
                     if client[1] == "top":
                         self.topComboBox.addItem(self.connectingSinerji.getSinerjiHost())
@@ -239,14 +237,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     pass
 
 
-###############################################################
-############                Main                 ##############
-###############################################################
-
-
 if __name__ == "__main__":
-    
     app = QApplication(sys.argv)
+    app.setApplicationName("Sinerji")
+    app.setWindowIcon(QIcon("style.png"))
     DBusQtMainLoop( set_as_default=True )
     form = SinerjiGui()
     form.show()
