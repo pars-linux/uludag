@@ -1361,7 +1361,11 @@ new_video(int fd) {
 /* Release object */
 static void
 v4l_dealloc(v4lobject *self) {
-    close(self->fd);
+/*
+ *  Try to close cam with libv4l
+ *  close(self->fd);
+ */
+    v4l1_close(self->fd);
     PyMem_DEL(self);
 }
 
