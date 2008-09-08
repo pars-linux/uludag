@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-02 11:45+0300\n"
+"POT-Creation-Date: 2008-09-08 12:16+0300\n"
 "PO-Revision-Date: 2008-06-26 20:39+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -214,7 +214,7 @@ msgstr ""
 "auszuführen, um jegliche Fehler in der Installation zu vermeiden."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
-#: yali4/installer.py:173
+#: yali4/installer.py:174
 msgid "Check CD Integrity"
 msgstr "CD-Integrität überprüfen"
 
@@ -518,7 +518,7 @@ msgstr "Auto-Login-Benutzer:"
 msgid "Auto Login Disabled"
 msgstr "Auto-Login deaktiviert"
 
-#: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:213
+#: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:219
 msgid "Begin Install"
 msgstr "Installation beginnen"
 
@@ -537,7 +537,7 @@ msgstr ""
 msgid "Read GPL"
 msgstr "Die GPL lesen"
 
-#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:160
+#: yali4/gui/Ui/welcomewidget.py:93 yali4/gui/runner.py:161
 msgid "Reboot System!"
 msgstr "System neustarten"
 
@@ -782,7 +782,7 @@ msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
 
-#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:144
+#: yali4/gui/DiskWidgets.py:331 yali4/gui/ScrSummary.py:146
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr "Partition <b>%(partition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
@@ -800,7 +800,7 @@ msgstr ""
 "Sie müssen aus Ihrer Laufwerktabelle einen von Ihrer primären Partition "
 "löschen!"
 
-#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:143
+#: yali4/gui/DiskWidgets.py:384 yali4/gui/ScrSummary.py:145
 #, python-format
 msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
@@ -840,7 +840,7 @@ msgstr ""
 "                                  <b>Grösse:</b> %s<br>\n"
 "                                  <b>Dateisystem:</b> %s%s"
 
-#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:142
+#: yali4/gui/DiskWidgets.py:538 yali4/gui/ScrSummary.py:144
 #, python-format
 msgid "All partitions on device <b>%(device)s</b> has been deleted."
 msgstr "Alle Partitionen auf dem Gerät <b>%(device)s</b> wurden gelöscht."
@@ -880,11 +880,11 @@ msgstr "Die Lizenzdatei konnte nicht geöffnet werden!"
 msgid "Can't open Release Notes!"
 msgstr "Release-Informationen können nicht geöffnet werden!"
 
-#: yali4/gui/runner.py:123
+#: yali4/gui/runner.py:124
 msgid "Error!"
 msgstr "Fehler!"
 
-#: yali4/gui/runner.py:155
+#: yali4/gui/runner.py:156
 msgid "Unhandled error occured!"
 msgstr "Es ist ein ungehandhabter Fehler aufgetreten!"
 
@@ -1165,7 +1165,7 @@ msgstr ""
 "</b>\n"
 
 #: yali4/gui/ScrGoodbye.py:139 yali4/gui/ScrSummary.py:69
-#: yali4/installer.py:697
+#: yali4/installer.py:701
 msgid "Reboot"
 msgstr "Neustarten"
 
@@ -1481,42 +1481,42 @@ msgstr "Datum/Uhrzeiteinstellungen"
 msgid "Selected TimeZone is <b>%s</b>"
 msgstr "Gewählte Zeitzone ist <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:115
+#: yali4/gui/ScrSummary.py:116
 msgid "User Settings"
 msgstr "Benutzereinstellungen"
 
-#: yali4/gui/ScrSummary.py:117
+#: yali4/gui/ScrSummary.py:118
 #, python-format
 msgid "User %s (<b>%s</b>) added."
 msgstr "Benutzer %s (<b>%s</b>) hinzugefügt."
 
-#: yali4/gui/ScrSummary.py:119
+#: yali4/gui/ScrSummary.py:120
 #, python-format
 msgid "User %s (<b>%s</b>) added with <u>admin privileges</u>."
 msgstr "Benutzer %s (<b>%s</b>) mit <u>Adminrechten</u> hinzugefügt."
 
-#: yali4/gui/ScrSummary.py:124
+#: yali4/gui/ScrSummary.py:126
 msgid "Hostname Settings"
 msgstr "Hostnameneinstellungen"
 
-#: yali4/gui/ScrSummary.py:125
+#: yali4/gui/ScrSummary.py:127
 #, python-format
 msgid "Hostname is set as <b>%s</b>"
 msgstr "Hostname ist festgelegt als <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:131
+#: yali4/gui/ScrSummary.py:133
 msgid "Partition Settings"
 msgstr "Partitionseinstellungen"
 
-#: yali4/gui/ScrSummary.py:133
+#: yali4/gui/ScrSummary.py:135
 msgid "Automatic Partitioning selected."
 msgstr "Automatische Partitionierung ausgewählt."
 
-#: yali4/gui/ScrSummary.py:147
+#: yali4/gui/ScrSummary.py:149
 msgid "Automatic Partitioning (resize method) selected."
 msgstr "Automatische Partitionierung (Grössenänderungs-Methode) ausgewählt."
 
-#: yali4/gui/ScrSummary.py:167
+#: yali4/gui/ScrSummary.py:169
 #, python-format
 msgid ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>resized</b> to <b>%"
@@ -1525,7 +1525,7 @@ msgstr ""
 "Grösse der Partition <b>%(partition)s - %(currentFs)s</b> <b>geändert</b> zu "
 "<b>%(resizeTo)s MB</b>, vorherige Grösse war <b>%(currentSize)s MB</b>"
 
-#: yali4/gui/ScrSummary.py:168
+#: yali4/gui/ScrSummary.py:170
 #, python-format
 msgid ""
 "Partition <b>%(newPartition)s</b> <b>added</b> to device <b>%(device)s</b> "
@@ -1534,26 +1534,26 @@ msgstr ""
 "Partition <b>%(newPartition)s</b> zu Gerät <b>%(device)s</b> mit <b>%(size)s "
 "MB</b> als <b>%(fs)s</b> <b>hinzugefügt</b>."
 
-#: yali4/gui/ScrSummary.py:169
+#: yali4/gui/ScrSummary.py:171
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
 "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
-#: yali4/gui/ScrSummary.py:184
+#: yali4/gui/ScrSummary.py:186
 msgid "Bootloader Settings"
 msgstr "Bootloader-Einstellungen"
 
-#: yali4/gui/ScrSummary.py:185
+#: yali4/gui/ScrSummary.py:187
 #, python-format
 msgid "GRUB will be installed to <b>%s</b>"
 msgstr "GRUB wird installiert nach <b>%s</b>"
 
-#: yali4/gui/ScrSummary.py:187
+#: yali4/gui/ScrSummary.py:189
 msgid "GRUB will not be installed"
 msgstr "GRUB wird nicht installiert"
 
-#: yali4/gui/ScrSummary.py:209
+#: yali4/gui/ScrSummary.py:215
 msgid ""
 "<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt "
 "your partition,<br>\n"
@@ -1570,16 +1570,16 @@ msgstr ""
 "                   <b>Bitte beachten Sie, dass dieser Vorgang nicht mehr "
 "rückgängig gemacht werden kann!</b></p>"
 
-#: yali4/gui/ScrSummary.py:236 yali4/gui/ScrSummary.py:244
-#: yali4/gui/ScrSummary.py:258
+#: yali4/gui/ScrSummary.py:242 yali4/gui/ScrSummary.py:250
+#: yali4/gui/ScrSummary.py:264
 msgid "Formatting ..."
 msgstr "Am formatieren..."
 
-#: yali4/gui/ScrSummary.py:241
+#: yali4/gui/ScrSummary.py:247
 msgid "Resizing ..."
 msgstr "Grössenänderung wird vorgenommen..."
 
-#: yali4/gui/ScrSummary.py:251 yali4/installer.py:266
+#: yali4/gui/ScrSummary.py:257 yali4/installer.py:267
 msgid "Writing disk tables ..."
 msgstr "Laufwerktabellen werden beschrieben..."
 
@@ -1755,24 +1755,24 @@ msgstr ""
 msgid "Backtrace:"
 msgstr "Ablaufverfolgung:"
 
-#: yali4/installer.py:127
+#: yali4/installer.py:128
 msgid "YALI Is Working..."
 msgstr "YALI ist am arbeiten..."
 
-#: yali4/installer.py:143
+#: yali4/installer.py:144
 msgid "Starting for CD Check"
 msgstr "CD-Überprüfung wird gestartet"
 
-#: yali4/installer.py:161
+#: yali4/installer.py:162
 #, python-format
 msgid "Checking: %s"
 msgstr "Am überprüfen: %s"
 
-#: yali4/installer.py:167
+#: yali4/installer.py:168
 msgid "Check Failed"
 msgstr "Überprüfung fehlgeschlagen"
 
-#: yali4/installer.py:168
+#: yali4/installer.py:169
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
@@ -1781,7 +1781,7 @@ msgstr ""
 "fehlgeschlagen.                                  Die Installations-CD "
 "scheint defekt zu sein.</p></b>"
 
-#: yali4/installer.py:172
+#: yali4/installer.py:173
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
@@ -1789,64 +1789,64 @@ msgstr ""
 "<font color=\"#FFF\"><b>Überprüfung erfolgreich abgeschlossen. Sie können "
 "zum nächsten Fenster fortfahren.</b></font>"
 
-#: yali4/installer.py:190
+#: yali4/installer.py:191
 msgid "Setting time settings.."
 msgstr "Zeiteinstellungen werden vorgenommen.."
 
-#: yali4/installer.py:217
+#: yali4/installer.py:218
 msgid "Disk analyze started.."
 msgstr "Festplattenanalyse gestartet.."
 
-#: yali4/installer.py:322
+#: yali4/installer.py:323
 msgid "Resize Finished ..."
 msgstr "Grössenänderung abgeschlossen..."
 
-#: yali4/installer.py:334
+#: yali4/installer.py:335
 msgid "Creating new partition ..."
 msgstr "Neue Partition wird erstellt..."
 
-#: yali4/installer.py:501
+#: yali4/installer.py:502
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Benutzer <b>%s</b>'s Home-Verzeichnis wird erstellt.."
 
-#: yali4/installer.py:571
+#: yali4/installer.py:575
 msgid "Trying to connect DBUS..."
 msgstr "Wird versucht mit DBus zu verbinden..."
 
-#: yali4/installer.py:573
+#: yali4/installer.py:577
 msgid "Setting Hostname..."
 msgstr "Hostname wird eingestellt..."
 
-#: yali4/installer.py:574
+#: yali4/installer.py:578
 msgid "Setting TimeZone..."
 msgstr "Zeiteinstellungen werden vorgenommen..."
 
-#: yali4/installer.py:575
+#: yali4/installer.py:579
 msgid "Setting Root Password..."
 msgstr "Root-Passwort wird eingestellt..."
 
-#: yali4/installer.py:576
+#: yali4/installer.py:580
 msgid "Adding Users..."
 msgstr "Benutzer werden hinzugefügt..."
 
-#: yali4/installer.py:577
+#: yali4/installer.py:581
 msgid "Writing Console Data..."
 msgstr "Konsoldaten werden beschrieben..."
 
-#: yali4/installer.py:578
-msgid "Copy Pisi index..."
-msgstr "Pisi-Index wird kopiert..."
-
-#: yali4/installer.py:579
+#: yali4/installer.py:582
 msgid "Migrating X.org Configuration..."
 msgstr "X.org-Konfiguration wird migriert..."
 
-#: yali4/installer.py:581
+#: yali4/installer.py:584
+msgid "Copy Pisi index..."
+msgstr "Pisi-Index wird kopiert..."
+
+#: yali4/installer.py:585
 msgid "Setting misc. package configurations..."
 msgstr "Sonst. Paket-Konfigurationen werden eingestellt..."
 
-#: yali4/installer.py:582
+#: yali4/installer.py:586
 msgid "Installing BootLoader..."
 msgstr "Boot-Loader wird installiert..."
 
