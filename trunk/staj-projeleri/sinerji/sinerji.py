@@ -100,12 +100,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.confdomain.append(self.confdomainleft)
             self.confdomain.append(u"host_host_%s" % gethostname())
 
-            self.connectingWorkstation.getHostAddressList()["uekae-pardus"]
 
             ### Give data for _sinerji._tcp
-            self.giveTop = ("top_%s_%s" % self.connectingWorkstation.getHostAddressList()[self.topComboBox.currentText()], 
-                    self.topComboBox.currentText())
-            print self.giveTop
             self.connectingWorkstation.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
 
             ### Announce the _sinerji._tcp service.
@@ -121,8 +117,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
         elif self.clientButton.isChecked():
-            servername = self.connectingSinerji.getSinerjiHost()
-            command = ['synergyc', '-f', servername]
+            address = self.connectingSinerji.getSinerjiAddress()
+            command = ['synergyc', '-f', addres]
             process = subprocess.call(command)
 
         else:
@@ -197,12 +193,16 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 if client[2] == gethostname(): ### We are looking for our hostname
                     if client[1] == "top":
                         self.topComboBox.addItem(self.connectingSinerji.getSinerjiHost())
+                        self.address = self.connectingSinerji.getSinerjiAddress()
                     elif client[1] == "bottom":
                         self.bottomComboBox.addItem(self.connectingSinerji.getSinerjiHost())
+                        self.address = self.connectingSinerji.getSinerjiAddress()
                     elif client[1] == "right":
                         self.rightComboBox.addItem(self.connectingSinerji.getSinerjiHost())
+                        self.address = self.connectingSinerji.getSinerjiAddress()
                     elif client[1] == "left":
                         self.leftComboBox.addItem(self.connectingSinerji.getSinerjiHost())
+                        self.address = self.connectingSinerji.getSinerjiAddress()
                     else:
                         QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refresh")
                 else:
