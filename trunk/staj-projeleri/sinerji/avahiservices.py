@@ -29,9 +29,11 @@ class avahiSinerji:
         self.port = "24800"
         self.domainlist = {}
         self.client = []
+        self.clientlist = {}
         self.data = []
-        self.sinerjiHost = ""
-        self.sinerjiAddress = ""
+        self.sinerjiHost = []
+        self.sinerjiAddress = []
+        self.sinerjiTxt = []
 ##############################################################
 ################## Error functions ###########################
 ##############################################################
@@ -73,10 +75,11 @@ class avahiSinerji:
         return list(sorted(self.discoveredHosts))
     
     def getClients(self):
-        return self.client
+        return self.clientlist
     
     def getSinerjiHost(self):
         return self.sinerjiHost
+
     def getSinerjiAddress(self):
         return self.sinerjiAddress
     
@@ -85,17 +88,21 @@ class avahiSinerji:
             return
         if stype == "_workstation._tcp":
             hostadded = re.sub(r'\.%s$' % domain, '', host)
-            
             self.discoveredHosts.add(hostadded)
+
         elif stype == "_sinerji._tcp":
             host = re.sub(r'\.%s$' % domain, '', host)
-            self.sinerjiHost = host
-            self.sinerjiAddress = address
+            self.sinerjiHost.append(host)
+            self.sinerjiAddress.append(address)
+            
             for txt in avahi.txt_array_to_string_array(txt):
                 self.data = txt.split("=")
                 self.client.append(self.data[0].split("_"))
+            self.clientlist[host] = self.client
+
         else:
             pass
+        
 
 ##############################################################
 ################# Connecting to interfaces ###################
@@ -200,24 +207,10 @@ class avahiSinerji:
         except dbus.DBusException, e:
             print "Can't remove service. That should not happen"
 
-    def giveData(self, top, bottom, right, left):
-        ### Creating data for TXT for clientTXT in announce()
-        ### Because avahi has dict_to_txt_array method, we have to create a dict, else a list would be more useful
-        ### Random numbers, just for creating dict. The array is like a set(), thats why the None objects have to be
-        ### other than "None"
-        val = [1, 2, 3, 4]
-        if top is None or '':
-            top = "None_None1_None2"
-        if bottom is None or '':
-            bottom = "None1_None2_None3"
-        if right is None or '':
-            right = "None2_None3_None4"
-        if left is None or '':
-            left = "None3_None4_None5"
-        
-        clients = [top,bottom,right,left]
-        for (c,v) in zip(clients, val):
-            self.domainlist[c] = v
+    def giveData(self, positions):
+
+        for position, client in positions:
+            self.domainlist[position] = client
 
     def clientTxt(self):
         return self.avahi.dict_to_txt_array(self.domainlist)
@@ -296,7 +289,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     DBusQtMainLoop(set_as_default=True)
     
-    instance = avahiSinerji(gethostname(), "_workstation._tcp")
+    instance = avahiSinerji(gethostname(), "_sinerji._tcp")
     instance.connectDbus()
     instance.connectAvahi()
     instance.connect()

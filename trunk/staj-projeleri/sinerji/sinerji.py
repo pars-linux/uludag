@@ -24,12 +24,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.saveButton.setFocusPolicy(Qt.NoFocus)
 
         self.discoveredHosts = set()
+        self.txtData = []
         self.confdomain = []
-        self.confdomaintop = None
-        self.confdomainbottom = None
-        self.confdomainright = None
-        self.confdomainleft = None
-
         self.connected = False
         self.browser = None
         self.bus = None
@@ -83,31 +79,32 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_saveButton_clicked(self):
         if self.serverButton.isChecked():
 
-            ### Add the current Hostnames from the ComboBoxes to the variable confdomain*, where * is the position
-            if self.topComboBox.currentText() != '': 
-                self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
-            if self.bottomComboBox.currentText() != '': 
-                self.confdomainbottom = ("bottom_top_%s" % self.bottomComboBox.currentText())
-            if self.rightComboBox.currentText() != '': 
-                self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
-            if self.leftComboBox.currentText() != '': 
-                self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
+            ### Add the current Clientnames to the list confdomain to give it to giveData
+            ### After that announce the _sinerji._tcp service
+            if self.topComboBox.currentText(): 
+                self.txtData.append(("top", self.topComboBox.currentText()))
+            if self.bottomComboBox.currentText(): 
+                self.txtData.append(("bottom", self.bottomComboBox.currentText()))
+            if self.rightComboBox.currentText(): 
+                self.txtData.append(("right", self.rightComboBox.currentText()))
+            if self.leftComboBox.currentText(): 
+                self.txtData.append(("left", self.leftComboBox.currentText()))
 
-            ### Add the variables "confdomain*" to the list "confdomain"
-            self.confdomain.append(self.confdomaintop)
-            self.confdomain.append(self.confdomainbottom)
-            self.confdomain.append(self.confdomainright)
-            self.confdomain.append(self.confdomainleft)
-            self.confdomain.append(u"host_host_%s" % gethostname())
-
-
-            ### Give data for _sinerji._tcp
-            self.connectingWorkstation.giveData(self.confdomaintop, self.confdomainbottom, self.confdomainright, self.confdomainleft)
-
-            ### Announce the _sinerji._tcp service.
+            self.connectingWorkstation.giveData(self.txtData)
             self.connectingWorkstation.announce()
 
+
             ### Creating the synergy.conf file
+            if self.topComboBox.currentText() != '': 
+                self.confdomain.append("top_bottom_%s" % self.topComboBox.currentText())
+            if self.bottomComboBox.currentText() != '': 
+                self.confdom.append("bottom_top_%s" % self.bottomComboBox.currentText())
+            if self.rightComboBox.currentText() != '': 
+                self.confdomain.append("right_left_%s" % self.rightComboBox.currentText())
+            if self.leftComboBox.currentText() != '': 
+                self.confdomain.append("left_right_%s" % self.leftComboBox.currentText())
+            self.confdomain.append(("host_host_%s" % gethostname()))
+
             createsynergyconf.screens(self.confdomain)
             createsynergyconf.links(self.confdomain)
 
@@ -133,10 +130,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
             
             ### Add the variables "confdomain*" to the list "confdomain"
-            self.confdomain.append(self.confdomaintop)
-            self.confdomain.append(self.confdomainbottom)
-            self.confdomain.append(self.confdomainright)
-            self.confdomain.append(self.confdomainleft)
             self.confdomain.append(u"host_host_%s" % gethostname())
 
             
