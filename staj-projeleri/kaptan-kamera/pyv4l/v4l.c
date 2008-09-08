@@ -74,6 +74,18 @@ static unsigned int  ng_clip[256 + 2 * CLIP];
 
 
 
+/* driver type */
+typedef enum {
+
+    DRIVER_V4L,
+    DRIVER_V4L2,
+    DRIVER_NONE
+
+} driver;
+
+driver camDriver = DRIVER_NONE;
+
+
 /* conversion buffer */
 struct ng_video_buf {
     int			size;
@@ -125,7 +137,6 @@ struct DISPLAYINFO {
     int   bpl;               /* bytes per scanline              */
     unsigned char *base;
 };
-
 
 
 
@@ -342,6 +353,16 @@ static PyObject *VideoError; /* Errors anything to do with video */
 static PyObject *
 v4l_getCapabilities(v4lobject *self) {
      struct video_capability vc;
+     struct v4l2_capability v4l2_vc;
+
+/********************************
+ * select driver kodu yazılacak
+ * *******************************/
+
+
+
+
+
      PyObject *cap;
      if (ioctl(self->fd, VIDIOCGCAP, &vc) < 0) {
 	 PyErr_SetString(V4lError, "Error retriving video capability.");
@@ -1468,7 +1489,8 @@ v4lobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    if (-1 == (fd = open(fname, O_RDWR))) {
+    //if (-1 == (fd = open(fname, O_RDWR))) {
+    if( -1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
     }
@@ -1482,7 +1504,8 @@ radioobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    if (-1 == (fd = open(fname, O_RDWR))) {
+    //if (-1 == (fd = open(fname, O_RDWR))) {
+    if( -1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
     }
@@ -1496,7 +1519,8 @@ videoobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    if (-1 == (fd = open(fname, O_RDWR))) {
+    //if (-1 == (fd = open(fname, O_RDWR))) {
+    if (-1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
     }
