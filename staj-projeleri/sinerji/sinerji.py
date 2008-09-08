@@ -175,7 +175,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.clear()
         self.rightComboBox.clear()
         self.leftComboBox.clear()
-
+        
+        print self.connectingSinerji.getClients()
         ### Get the clients from the _sinerji._tcp service
         for client in self.connectingSinerji.getClients():
             if client is None:
