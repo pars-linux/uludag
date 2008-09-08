@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-27 00:44+0300\n"
-"PO-Revision-Date: 2008-09-02 20:49+0200\n"
+"PO-Revision-Date: 2008-09-05 22:16+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1781,7 +1781,7 @@ msgstr "Danska"
 
 #: yali4/localedata.py:280
 msgid "Brazilian"
-msgstr "Brasilianska"
+msgstr "Brasiliansk Portugisiska"
 
 #: yali4/localedata.py:290
 msgid "Finnish"
