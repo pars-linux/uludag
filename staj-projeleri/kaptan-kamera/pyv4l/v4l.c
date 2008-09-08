@@ -866,7 +866,11 @@ v4l_setupCapture(videoobject *self) {
     //fprintf(stderr,"  mbuf: size=%d frames=%d\n", self->mbuf.size,self->mbuf.frames);
     //self->map = mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
     //self->map = mmap(0, self->mbuf.size, PROT_READ, MAP_PRIVATE, self->fd, 0);
-    self->map = mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
+/*
+ *  Try to do same thing with using libv4l
+ *  self->map = mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
+ */
+    self->map = v4l1_mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
     if ((self->map == NULL) | (self->map == MAP_FAILED)) {
 	PyErr_SetString(VideoError, "Error Memory Mapping device.");
     	return -1;
