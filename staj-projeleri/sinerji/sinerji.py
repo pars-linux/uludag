@@ -142,8 +142,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             createsynergyconf.links(self.confdomain)
 
 
-
-
     @pyqtSignature("")
     def on_closeButton_clicked(self):
         self.reject()
