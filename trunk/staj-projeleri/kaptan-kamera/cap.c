@@ -1,4 +1,10 @@
-
+/********************************************************
+ *                                                      *
+ * Written by Onur Kücük                                *
+ *                                                      *
+ * Captures frame from cam that uses v4l1 driver        *
+ *                                                      *
+ ********************************************************/
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>

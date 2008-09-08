@@ -1,3 +1,10 @@
+/********************************************************
+ *                                                      *
+ * Written by Caglar Kilimci                            *
+ *                                                      *
+ * Prints which cam driver is used by webcam            *
+ *                                                      *
+ ********************************************************/
 #include <stdio.h>          /* For std i/o          */
 #include <fcntl.h>          /* For opening device   */
 #include <sys/ioctl.h>      /* For ioctl function   */
