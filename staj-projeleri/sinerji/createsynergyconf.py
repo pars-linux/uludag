@@ -27,20 +27,20 @@ def links(*screen):
         else:
             pass
     ### writing the host part ####
-    synergyconf.write("      %s:\n" % gethostname())
+    synergyconf.write("\t%s:\n" % gethostname())
     for z in subnames:
             if z[0] == 'host':
                 pass
             else:
-                synergyconf.write("         %s = %s\n" % (z[0], z[2]))
+                synergyconf.write("\t\t%s = %s\n" % (z[0], z[2]))
 
     ### writing the client part ###
     for clients in subnames:
         if clients[2] == gethostname():
             pass
         else:
-            synergyconf.write("      %s:\n" % clients[2])
-            synergyconf.write("          %s = %s\n" % (clients[1], gethostname()))
+            synergyconf.write("\t%s:\n" % clients[2])
+            synergyconf.write("\t\t%s = %s\n" % (clients[1], gethostname()))
 
     synergyconf.write('end\n')
     synergyconf.close()
