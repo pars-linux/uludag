@@ -25,7 +25,7 @@ class avahiSinerji:
         self.connected = False
         self.announced = False
         self.avahi = avahi
-        self.name = ("Sinerji on %" % gethostname())
+        self.name = ("Sinerji on %s" % gethostname())
         self.port = "24800"
         self.domainlist = {}
         self.client = []
