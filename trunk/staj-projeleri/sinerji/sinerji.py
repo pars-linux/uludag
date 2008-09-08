@@ -98,7 +98,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             if self.topComboBox.currentText() != '': 
                 self.confdomain.append("top_bottom_%s" % self.topComboBox.currentText())
             if self.bottomComboBox.currentText() != '': 
-                self.confdom.append("bottom_top_%s" % self.bottomComboBox.currentText())
+                self.confdomain.append("bottom_top_%s" % self.bottomComboBox.currentText())
             if self.rightComboBox.currentText() != '': 
                 self.confdomain.append("right_left_%s" % self.rightComboBox.currentText())
             if self.leftComboBox.currentText() != '': 
