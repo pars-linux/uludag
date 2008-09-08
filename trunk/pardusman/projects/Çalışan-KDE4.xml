@@ -116,6 +116,7 @@
         <SelectedPackage>kdemultimedia4</SelectedPackage>
         <SelectedPackage>kdenetwork4</SelectedPackage>
         <SelectedPackage>kdepim4</SelectedPackage>
+        <SelectedPackage>kdeplasma-addons</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
@@ -460,6 +461,7 @@
         <Package>kdenetwork4</Package>
         <Package>kdepim4</Package>
         <Package>kdepimlibs</Package>
+        <Package>kdeplasma-addons</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
         <Package>kftpgrabber</Package>
