@@ -43,6 +43,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bus = None
         self.filled = None
         self.searched = None
+        self.clientState = None
         self.clientAndPos = []
         self.serverAndIp = []
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
@@ -75,6 +76,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def about(self):
         QMessageBox.about(self, "About Sinerji",
              """<b>Sinerji</b> v %s
+             <p>Developer: Fatih Arslan\nE-mail: ftharsln@gmail.com     
              <p>This application is a fronted to the program Synergy
              <p>It uses avahi as backed for an easy configure experience
              <p>Python %s - Qt %s - PyQt %s on %s""" % (
@@ -99,199 +101,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.searched = True
     
     def fillClientBox(self):
-        self.topComboBox.clear()
-        self.bottomComboBox.clear()
-        self.rightComboBox.clear()
-        self.leftComboBox.clear()
-        
-        if self.clientAndPos[0] == "bottom": # If client is bottom, than our server is top, that's why we add it to topCombobox
-            self.topComboBox.addItem(self.serverAndIp[0])
-            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
-        elif self.clientAndPos[0] == "top":
-            self.bottomComboBox.addItem(self.serverAndIp[0])
-            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
-        elif self.clientAndPos[0] == "left":
-            self.rightComboBox.addItem(self.serverAndIp[0])
-            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
-        elif self.clientAndPos[0] == "right":
-            self.leftComboBox.addItem(self.serverAndIp[0])
-            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
-        else:
-            QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refresh")
 
-        self.topComboBox.addItem("")
-        self.rightComboBox.addItem("")
-        self.bottomComboBox.addItem("")
-        self.leftComboBox.addItem("")
-
-    def fillComboBoxes(self):
-        self.topComboBox.clear()
-        self.bottomComboBox.clear()
-        self.rightComboBox.clear()
-        self.leftComboBox.clear()
-
-        self.topComboBox.addItem("")
-        self.rightComboBox.addItem("")
-        self.bottomComboBox.addItem("")
-        self.leftComboBox.addItem("")
-        ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
-        for domain in self.connectingWorkstation.getDomains():
-            self.topComboBox.addItem(domain)
-            self.bottomComboBox.addItem(domain)
-            self.rightComboBox.addItem(domain)
-            self.leftComboBox.addItem(domain)
-        self.filled = True
-
-####### ComboxBox Signals, if someone choose the host, deny it #######
-
-
-    
-
-    
-    def on_topComboBox_highlighted(self):
-        if not self.filled:
-            self.fillComboBoxes()
-        if not self.searched:
-            self.searchClient()
-
-
-
-    @pyqtSignature("QString")
-    def on_topComboBox_activated(self, text):
-        self.topComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.topComboBox.setCurrentIndex(0)
-
-
-    def on_bottomComboBox_highlighted(self):
-        if not self.filled:
-            self.fillComboBoxes()
-
-    
-    @pyqtSignature("QString")
-    def on_bottomComboBox_activated(self, text):
-        self.bottomComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.bottomComboBox.setCurrentIndex(0)
-
-
-    def on_rightComboBox_highlighted(self, text):
-        if not self.filled:
-            self.fillComboBoxes()
-    
-    @pyqtSignature("QString")
-    def on_rightComboBox_activated(self, text):
-        self.rightComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.rightComboBox.setCurrentIndex(0)
-    
-    
-    def on_leftComboBox_highlighted(self, text):
-        if not self.filled:
-            self.fillComboBoxes()
-    
-    @pyqtSignature("QString")
-    def on_leftComboBox_activated(self, text):
-        self.leftComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.leftComboBox.setCurrentIndex(0)
-
-
-### If Someone choose an empty string, dont store it, else createsynergyconf and parsesynergyconf wouldn't work well ###
-
-    @pyqtSignature("")
-    def on_applyButton_clicked(self):
-        if self.filled:
-
-            ### Add the current Clientnames to the list confdomain to give it to giveData
-            ### After that announce the _sinerji._tcp service
-            if self.topComboBox.currentText(): 
-                self.txtData.append(("top", self.topComboBox.currentText()))
-            if self.bottomComboBox.currentText(): 
-                self.txtData.append(("bottom", self.bottomComboBox.currentText()))
-            if self.rightComboBox.currentText(): 
-                self.txtData.append(("right", self.rightComboBox.currentText()))
-            if self.leftComboBox.currentText(): 
-                self.txtData.append(("left", self.leftComboBox.currentText()))
-
-            self.connectingWorkstation.giveData(self.txtData)
-            self.connectingWorkstation.announce()
-
-
-            ### Creating the synergy.conf file
-            if self.topComboBox.currentText() != '': 
-                self.confdomain.append("top_bottom_%s" % self.topComboBox.currentText())
-            if self.bottomComboBox.currentText() != '': 
-                self.confdomain.append("bottom_top_%s" % self.bottomComboBox.currentText())
-            if self.rightComboBox.currentText() != '': 
-                self.confdomain.append("right_left_%s" % self.rightComboBox.currentText())
-            if self.leftComboBox.currentText() != '': 
-                self.confdomain.append("left_right_%s" % self.leftComboBox.currentText())
-            self.confdomain.append(("host_host_%s" % gethostname()))
-
-            createsynergyconf.screens(self.confdomain)
-            createsynergyconf.links(self.confdomain)
-
-            ## Starting synergys
-            #command = ['synergys', '--config', self.synergyConf]
-            #process = subprocess.call(command)
-
-            self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
-
-        elif not self.filled:
-            ## Get the server name, look in synergycData dictionary and get from there the ip addres
-
-            if self.topComboBox.currentText():
-                address = self.synergycData[str(self.topComboBox.currentText())]
-            if self.bottomComboBox.currentText():
-                address = self.synergycData[str(self.bottomComboBox.currentText())]
-            if self.rightComboBox.currentText():
-                address = self.synergycData[str(self.rightComboBox.currentText())]
-            if self.leftComboBox.currentText():
-                address = self.synergycData[str(self.leftComboBox.currentText())]
-
-            ## After getting the ip address, start synergyc
-            #command = ['synergyc', address]
-            #self.process = subprocess.Popen(command)
-            
-            self.trayIcon.showMessage("Sinerji", "Synergy client connected succesfull", QSystemTrayIcon.Information, 4000) 
-
-
-        else:
-            if self.topComboBox.currentText() != '': 
-                self.confdomaintop = ("top_bottom_%s" % self.topComboBox.currentText())
-            if self.bottomComboBox.currentText() != '': 
-                self.confdomainbottom = ("bottom_top_%s" % self.bottomComboBox.currentText())
-            if self.rightComboBox.currentText() != '': 
-                self.confdomainright = ("right_left_%s" % self.rightComboBox.currentText())
-            if self.leftComboBox.currentText() != '': 
-                self.confdomainleft = ("left_right_%s" % self.leftComboBox.currentText())
-            
-            ### Add the variables "confdomain*" to the list "confdomain"
-            self.confdomain.append(u"host_host_%s" % gethostname())
-
-            
-            ### Creating the synergy.conf file
-            createsynergyconf.screens(self.confdomain)
-            createsynergyconf.links(self.confdomain)
-            self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
-
-
-    @pyqtSignature("")
-    def on_closeButton_clicked(self):
-        self.reject()
-
-
-## Only one checkbox has to be checked ##
-## FIXME: Remove it's obsolote
-
-
-    @pyqtSignature("")
-    def on_clientButton_clicked(self):
         print "********* Client button is checked"
         ### Clear the boxes 
         self.topComboBox.clear()
@@ -329,7 +139,138 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.rightComboBox.addItem("")
         self.bottomComboBox.addItem("")
         self.leftComboBox.addItem("")
+        self.clientState = True
+    
+    def fillComboBoxes(self):
+        self.topComboBox.clear()
+        self.bottomComboBox.clear()
+        self.rightComboBox.clear()
+        self.leftComboBox.clear()
 
+        self.topComboBox.addItem("")
+        self.rightComboBox.addItem("")
+        self.bottomComboBox.addItem("")
+        self.leftComboBox.addItem("")
+        ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
+        for domain in self.connectingWorkstation.getDomains():
+            self.topComboBox.addItem(domain)
+            self.bottomComboBox.addItem(domain)
+            self.rightComboBox.addItem(domain)
+            self.leftComboBox.addItem(domain)
+        self.filled = True
+
+####### ComboxBox Signals #######
+
+    def on_topComboBox_highlighted(self):
+        if not self.filled:
+            self.fillComboBoxes()
+        if not self.searched:
+            self.searchClient()
+
+    @pyqtSignature("QString")
+    def on_topComboBox_activated(self, text):
+        self.topComboBox.setEditable(True)
+        if (text == gethostname()):
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.topComboBox.setCurrentIndex(0)
+
+    def on_bottomComboBox_highlighted(self):
+        if not self.filled:
+            self.fillComboBoxes()
+
+    @pyqtSignature("QString")
+    def on_bottomComboBox_activated(self, text):
+        self.bottomComboBox.setEditable(True)
+        if (text == gethostname()):
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.bottomComboBox.setCurrentIndex(0)
+
+    def on_rightComboBox_highlighted(self, text):
+        if not self.filled:
+            self.fillComboBoxes()
+
+    @pyqtSignature("QString")
+    def on_rightComboBox_activated(self, text):
+        self.rightComboBox.setEditable(True)
+        if (text == gethostname()):
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.rightComboBox.setCurrentIndex(0)
+
+    def on_leftComboBox_highlighted(self, text):
+        if not self.filled:
+            self.fillComboBoxes()
+
+    @pyqtSignature("QString")
+    def on_leftComboBox_activated(self, text):
+        self.leftComboBox.setEditable(True)
+        if (text == gethostname()):
+            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
+            self.leftComboBox.setCurrentIndex(0)
+
+
+    @pyqtSignature("")
+    def on_applyButton_clicked(self):
+        if not self.clientState: # Either client or server has to be set, if not client, than it's server
+
+            ### Add the current Clientnames to the list confdomain to give it to giveData
+            ### After that announce the _sinerji._tcp service
+            if self.topComboBox.currentText(): 
+                self.txtData.append(("top", self.topComboBox.currentText()))
+            if self.bottomComboBox.currentText(): 
+                self.txtData.append(("bottom", self.bottomComboBox.currentText()))
+            if self.rightComboBox.currentText(): 
+                self.txtData.append(("right", self.rightComboBox.currentText()))
+            if self.leftComboBox.currentText(): 
+                self.txtData.append(("left", self.leftComboBox.currentText()))
+
+            self.connectingWorkstation.giveData(self.txtData)
+            self.connectingWorkstation.announce()
+
+
+            ### Creating the synergy.conf file
+            if self.topComboBox.currentText() != '': 
+                self.confdomain.append("top_bottom_%s" % self.topComboBox.currentText())
+            if self.bottomComboBox.currentText() != '': 
+                self.confdomain.append("bottom_top_%s" % self.bottomComboBox.currentText())
+            if self.rightComboBox.currentText() != '': 
+                self.confdomain.append("right_left_%s" % self.rightComboBox.currentText())
+            if self.leftComboBox.currentText() != '': 
+                self.confdomain.append("left_right_%s" % self.leftComboBox.currentText())
+            self.confdomain.append(("host_host_%s" % gethostname()))
+
+            createsynergyconf.screens(self.confdomain)
+            createsynergyconf.links(self.confdomain)
+
+            ## Starting synergys
+            #command = ['synergys', '--config', self.synergyConf]
+            #process = subprocess.call(command)
+
+            self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
+
+        elif self.clientState:
+            ## Get the server name, look in synergycData dictionary and get from there the ip addres
+
+            if self.topComboBox.currentText():
+                address = self.synergycData[str(self.topComboBox.currentText())]
+            if self.bottomComboBox.currentText():
+                address = self.synergycData[str(self.bottomComboBox.currentText())]
+            if self.rightComboBox.currentText():
+                address = self.synergycData[str(self.rightComboBox.currentText())]
+            if self.leftComboBox.currentText():
+                address = self.synergycData[str(self.leftComboBox.currentText())]
+
+            ## After getting the ip address, start synergyc
+            command = ['synergyc', address]
+            self.process = subprocess.Popen(command)
+            
+            self.trayIcon.showMessage("Sinerji", "Server is connected to you. ", QSystemTrayIcon.Information, 4000) 
+        else:
+            pass
+
+
+    @pyqtSignature("")
+    def on_closeButton_clicked(self):
+        self.reject()
 
     def startBrowsing(self):
         ## Create instances of avahiSinerji for each service
