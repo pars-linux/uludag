@@ -28,9 +28,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.trayActions()
         self.trayIcon.setContextMenu(self.trayMenu)
         self.trayIcon.setToolTip(u"Sinerji")
-
         self.trayIcon.show()
-
 
         self.applyButton.setIcon(QIcon(":/buttonApply.png"))
         self.closeButton.setIcon(QIcon(":/buttonClose.png"))
@@ -57,8 +55,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.leftComboBox.addItem('')
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
 
-    def deneme(self):
-        print "deneme"
+##################################################################
+##################################################################
+##################################################################
     
     def trayActions(self):
         self.trayMenu = QMenu()
@@ -76,7 +75,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def about(self):
         QMessageBox.about(self, "About Sinerji",
              """<b>Sinerji</b> v %s
-             <p>Developer: Fatih Arslan\nE-mail: ftharsln@gmail.com     
+             <p>Developer: Fatih Arslan  E-mail: ftharsln@gmail.com     
              <p>This application is a fronted to the program Synergy
              <p>It uses avahi as backed for an easy configure experience
              <p>Python %s - Qt %s - PyQt %s on %s""" % (
@@ -159,7 +158,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.leftComboBox.addItem(domain)
         self.filled = True
 
-####### ComboxBox Signals #######
+##################################################################
+##################################################################
+##################################################################
 
     def on_topComboBox_highlighted(self):
         if not self.filled:
@@ -208,6 +209,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.leftComboBox.setCurrentIndex(0)
 
 
+##################################################################
+##################################################################
+##################################################################
+
     @pyqtSignature("")
     def on_applyButton_clicked(self):
         if not self.clientState: # Either client or server has to be set, if not client, than it's server
@@ -242,8 +247,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             createsynergyconf.links(self.confdomain)
 
             ## Starting synergys
-            #command = ['synergys', '--config', self.synergyConf]
-            #process = subprocess.call(command)
+            command = ['synergys', '--config', self.synergyConf]
+            process = subprocess.call(command)
 
             self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
 
@@ -271,6 +276,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_closeButton_clicked(self):
         self.reject()
+
+
+##################################################################
+##################################################################
+##################################################################
 
     def startBrowsing(self):
         ## Create instances of avahiSinerji for each service
