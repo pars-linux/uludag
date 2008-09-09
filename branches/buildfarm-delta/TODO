@@ -1,3 +1,6 @@
-* refactor a bit
-* A Django Web GUI which supports XML/RPC for client access
-* Montly Report tool?
+(-) Finalize and test scripts/movetostable              (%60)
+(-) Add delta cleanup support for removing stale
+    delta packages from all repositories                (%0)
+(-) Move separate python modules into a new directory   (%0)
+(-) Improve the code, optimize a little bit             (%0)
+
