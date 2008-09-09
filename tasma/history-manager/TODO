@@ -1,16 +1,10 @@
 Known Issues
 
-* pisi wont take back before an upgrade point (use history repo)
-
 TODO
 
-* Improve progress bar informations
 * Improve details tab, so it shows configuration files and packages in a snapshot
-* Find/Create better and unique icons
-* Beautifulize and simplify code
 
 Later On
 
 * Port to Qt4/Kde4
-* Go to Judas Priest concert
 
