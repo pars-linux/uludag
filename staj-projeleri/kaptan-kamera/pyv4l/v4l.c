@@ -31,6 +31,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  * All close(...)   changed to  v4l1_close(...)
  * All ioctl(...)   changed to  v4l1_ioctl(...)
  * All mmap(...)    changed to  v4l1_mmap(...)
+ * All munmap(...)  changed to  v4l1_munmap(...)
  */
 
 
@@ -1351,7 +1352,7 @@ v4l_dealloc(v4lobject *self) {
 static void
 v4l_dealloc_video(videoobject *self) {
     if (self->map != NULL) {
-	if (munmap(self->map, self->vm.height * self->vm.width * 3) < 0);
+	if (v4l1_munmap(self->map, self->vm.height * self->vm.width * 3) < 0);
 	    //printf("Error Unmapping\n");
     }
     if (self->conversion_buffer.data)
