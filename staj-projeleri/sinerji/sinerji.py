@@ -3,7 +3,7 @@
 
 
 import os, sys
-import subprocess
+import subprocess, signal
 from socket import gethostname
 
 
@@ -14,7 +14,8 @@ import ui_sinerjigui
 import createsynergyconf
 import parsesynergyconf
 import avahiservices
-
+import platform
+__version__ = 0.1
 
 class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def __init__(self,  parent=None):
@@ -22,6 +23,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.setupUi(self)
         self.closeButton.setFocusPolicy(Qt.NoFocus)
         self.saveButton.setFocusPolicy(Qt.NoFocus)
+ 
+        self.trayIcon = QSystemTrayIcon(QIcon("style.png"), self)
+        self.trayActions()
+        self.trayIcon.setContextMenu(self.trayMenu)
+        self.trayIcon.setToolTip(u"Sinerji")
+        self.trayIcon.show()
+
 
         self.discoveredHosts = set()
         self.txtData = []
@@ -40,6 +48,38 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()
+
+    def trayActions(self):
+        self.trayMenu = QMenu()
+        
+        self.actionAbout = QAction(QIcon("images/about.png"),u"About", self)
+        self.connect(self.actionAbout, SIGNAL("activated()"), self.about)
+        self.trayMenu.addAction(self.actionAbout)
+        
+        self.trayMenu.addSeparator()
+        
+        self.actionQuit = QAction(QIcon("images/quit.png"),u"Quit", self)
+        self.connect(self.actionQuit, SIGNAL("activated()"), app.quit)
+        self.trayMenu.addAction(self.actionQuit)
+
+
+
+    
+    def about(self):
+        QMessageBox.about(self, "About Sinerji",
+             """<b>Sinerji</b> v %s
+             <p>This application is a fronted to the program Synergy
+             <p>It uses avahi as backed for an easy configure experience
+             <p>Python %s - Qt %s - PyQt %s on %s""" % (
+             __version__, platform.python_version(),
+             QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
+
+
+
+
+
+
+
 
 
 
@@ -128,7 +168,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             ## After getting the ip address, start synergyc
             command = ['synergyc', address]
-            process = subprocess.call(command)
+            self.process = subprocess.Popen(command)
+
 
         else:
             if self.topComboBox.currentText() != '': 
@@ -151,6 +192,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
+        if self.process.pid:
+            os.kill(self.process.pid, 9)
+        else:
+            pass
+        
         self.reject()
 
 
@@ -255,6 +301,9 @@ if __name__ == "__main__":
     DBusQtMainLoop( set_as_default=True )
     form = SinerjiGui()
     form.show()
+    
+
+    
     app.exec_()
 
 
