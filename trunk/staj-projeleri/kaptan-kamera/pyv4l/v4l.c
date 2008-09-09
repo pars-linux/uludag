@@ -29,6 +29,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 /* 
  * All open(...)    changed to  v4l1_open(...)
  * All close(...)   changed to  v4l1_close(...)
+ * All ioctl(...)   changed to  v4l1_ioctl(...)
  */
 
 
@@ -349,7 +350,7 @@ static PyObject *
 v4l_getCapabilities(v4lobject *self) {
      struct video_capability vc;
      PyObject *cap;
-     if (ioctl(self->fd, VIDIOCGCAP, &vc) < 0) {
+     if (v4l1_ioctl(self->fd, VIDIOCGCAP, &vc) < 0) {
 	 PyErr_SetString(V4lError, "Error retriving video capability.");
 	 return NULL;
      }
@@ -374,7 +375,7 @@ v4l_getChannel(v4lobject *self, PyObject *args) {
     struct video_channel vc;
     vc.channel = chan;
     PyObject *vidchan;
-    if (ioctl(self->fd, VIDIOCGCHAN, &vc) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGCHAN, &vc) < 0) {
 	PyErr_SetString(V4lError, "Error retriving video channel.");
 	return NULL;
     }
@@ -394,7 +395,7 @@ v4l_getChannelExt(v4lobject *self, PyObject *args) {
   struct video_channel vc;
   vc.channel = chan;
   PyObject *vidchan;
-  if (ioctl(self->fd, VIDIOCGCHAN, &vc) < 0) {
+  if (v4l1_ioctl(self->fd, VIDIOCGCHAN, &vc) < 0) {
     PyErr_SetString(V4lError, "Error retriving video channel.");
     return NULL;
   }
@@ -417,14 +418,14 @@ v4l_setChannel(v4lobject *self, PyObject *args) {
       return NULL;
     struct video_channel vc;
     vc.channel = chan;
-    if (ioctl(self->fd, VIDIOCGCHAN, &vc) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGCHAN, &vc) < 0) {
 	PyErr_SetString(V4lError, "Error retriving video channel.");
 	return NULL;
     }
     if ( PySequence_Length(args) > 1) // norm is requested to be set
       vc.norm = norm;
    
-    if (ioctl(self->fd, VIDIOCSCHAN, &vc) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSCHAN, &vc) < 0) {
 	PyErr_SetString(V4lError, "Error setting channel.");
 	return NULL;
     }
@@ -437,7 +438,7 @@ v4l_getTuner(v4lobject *self) {
     struct video_tuner vt;
     PyObject *tuner;
     vt.tuner = 0; // first tuner?
-    if (ioctl(self->fd, VIDIOCGTUNER, &vt) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGTUNER, &vt) < 0) {
 	PyErr_SetString(V4lError, "Error retriving tuner.");
 	return NULL;
     }
@@ -459,14 +460,14 @@ v4l_setTuner(v4lobject *self, PyObject *args) {
     if (!PyArg_ParseTuple(args, "i", &mode)) return NULL;
     struct video_tuner vt;
     vt.tuner = 0; //first tuner?
-    if (ioctl(self->fd, VIDIOCGTUNER, &vt) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGTUNER, &vt) < 0) {
 	PyErr_SetString(V4lError, "Error retriving tuner.");
 	return NULL;
     }
 
     vt.mode = mode;
 
-    if (ioctl(self->fd, VIDIOCSTUNER, &vt) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSTUNER, &vt) < 0) {
 	PyErr_SetString(V4lError, "Error setting tuner mode.");
 	return NULL;
     }
@@ -480,7 +481,7 @@ static PyObject *
 v4l_getPicture(v4lobject *self) {
     struct video_picture vp;
     PyObject *pic;
-    if (ioctl(self->fd, VIDIOCGPICT, &vp) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGPICT, &vp) < 0) {
 	PyErr_SetString(V4lError, "Error retriving picture.");
 	return NULL;
     }
@@ -517,7 +518,7 @@ v4l_setPicture(v4lobject *self, PyObject *args) {
     vp.depth = depth;
     vp.palette = palette;
 
-    if (ioctl(self->fd, VIDIOCSPICT, &vp) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSPICT, &vp) < 0) {
 	PyErr_SetString(V4lError, "Error setting picture.");
 	return NULL;
     }
@@ -528,7 +529,7 @@ v4l_setPicture(v4lobject *self, PyObject *args) {
 static PyObject *
 v4l_startCapture(v4lobject *self) {
     int start = 1;
-    if (ioctl(self->fd, VIDIOCCAPTURE, &start) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCCAPTURE, &start) < 0) {
 	PyErr_SetString(V4lError, "Error starting video capture.");
 	return NULL;
     }
@@ -539,7 +540,7 @@ v4l_startCapture(v4lobject *self) {
 static PyObject *
 v4l_stopCapture(v4lobject *self) {
     int stop = 0;
-    if (ioctl(self->fd, VIDIOCCAPTURE, &stop) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCCAPTURE, &stop) < 0) {
 	PyErr_SetString(V4lError, "Error stopping video capture.");
 	return NULL;
     }
@@ -551,7 +552,7 @@ static PyObject *
 v4l_getOverlay(v4lobject *self) {
     struct video_window vw;
     PyObject *overlay;
-    if (ioctl(self->fd, VIDIOCGWIN, &vw) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGWIN, &vw) < 0) {
 	PyErr_SetString(V4lError, "Error retriving overlay window.");
 	return NULL;
     }
@@ -582,7 +583,7 @@ v4l_setOverlay(v4lobject *self, PyObject *args) {
     vw.clips = 0;
     vw.clipcount = 0;
 
-    if (ioctl(self->fd, VIDIOCSWIN, &vw) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSWIN, &vw) < 0) {
 	PyErr_SetString(V4lError, "Error setting overlay window.");
 	return NULL;
     }
@@ -594,7 +595,7 @@ static PyObject *
 v4l_getBuffer(v4lobject *self) {
     struct video_buffer vb;
     PyObject *buffer;
-    if (ioctl(self->fd, VIDIOCGFBUF, &vb) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGFBUF, &vb) < 0) {
 	PyErr_SetString(V4lError, "Unable to retrieve Video Buffer.");
 	return NULL;
     }
@@ -615,7 +616,7 @@ static int
 displayinfo_v4l(v4lobject *self, struct DISPLAYINFO *d) {
     struct video_buffer vb;
 
-    if (ioctl(self->fd, VIDIOCGFBUF, &vb) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGFBUF, &vb) < 0) {
 	PyErr_SetString(VideoError, "Unable to retrieve Video Buffer.");
 	return 1;
     }
@@ -635,7 +636,7 @@ displayinfo_v4l(v4lobject *self, struct DISPLAYINFO *d) {
     if (d->depth == 15)
 	vb.depth = 15;
 
-    if (ioctl(self->fd, VIDIOCSFBUF, &vb) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSFBUF, &vb) < 0) {
 	PyErr_SetString(VideoError, "Unable to setup Video Buffer, possible root problem.");
 	return 1;
     }
@@ -797,7 +798,7 @@ v4l_setSync(v4lobject *self, PyObject *args) {
     int sync;
     if (!PyArg_ParseTuple(args, "i", &sync))
 	return Py_BuildValue("i", 1);
-    if (ioctl(self->fd, VIDIOCSYNC, &sync) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSYNC, &sync) < 0) {
 	PyErr_SetString(V4lError, "Error syncing video.");
 	return NULL;
     }
@@ -809,7 +810,7 @@ static PyObject *
 v4l_getVbi(v4lobject *self) {
     struct vbi_format vf;
     PyObject * vbi;
-    if (ioctl(self->fd, VIDIOCGVBIFMT, &vf) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGVBIFMT, &vf) < 0) {
 	PyErr_SetString(V4lError, "Error retriving VBI.");
 	return NULL;
     }
@@ -847,7 +848,7 @@ v4l_setupImage(videoobject *self, PyObject *args) {
 
 static int
 v4l_setupCapture(videoobject *self) {
-    if (ioctl(self->fd, VIDIOCGMBUF, &self->mbuf) < 0) return -1;
+    if (v4l1_ioctl(self->fd, VIDIOCGMBUF, &self->mbuf) < 0) return -1;
     //fprintf(stderr,"  mbuf: size=%d frames=%d\n", self->mbuf.size,self->mbuf.frames);
     //self->map = mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
     //self->map = mmap(0, self->mbuf.size, PROT_READ, MAP_PRIVATE, self->fd, 0);
@@ -869,7 +870,7 @@ v4l_preQueueFrames(videoobject *self) {
     if (self->map == NULL) if (v4l_setupCapture(self) < 0) return NULL;
     for (frame=0; frame < self->mbuf.frames; frame++) {
 	self->vm.frame = frame;
-     	if (ioctl(self->fd, VIDIOCMCAPTURE, &self->vm) < 0) {
+     	if (v4l1_ioctl(self->fd, VIDIOCMCAPTURE, &self->vm) < 0) {
 	    PyErr_SetString(VideoError, "Error queuing frame.");
 	    return NULL;
 	}
@@ -882,7 +883,7 @@ static PyObject *
 v4l_queueFrame(videoobject *self) {
     unsigned short frame;
     if (self->map == NULL) if (v4l_setupCapture(self) < 0) return NULL;
-    if (ioctl(self->fd, VIDIOCMCAPTURE, &self->vm) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCMCAPTURE, &self->vm) < 0) {
 	PyErr_SetString(VideoError, "Error queuing frame.");
 	return NULL;
     }
@@ -897,7 +898,7 @@ v4l_getImage(videoobject *self, PyObject *args) {
     if (!PyArg_ParseTuple(args, "|h", &frame)) return NULL;
     
     self->vm.frame = frame;
-    if (ioctl(self->fd, VIDIOCSYNC,  &self->vm.frame) == -1) {
+    if (v4l1_ioctl(self->fd, VIDIOCSYNC,  &self->vm.frame) == -1) {
 	//printf("Error: cannot sync\n");
 	return NULL;
     }
@@ -1047,7 +1048,7 @@ v4l_setFrequency(v4lobject *self, PyObject *args) {
     unsigned long freq;
     if (!PyArg_ParseTuple(args, "l", &basefreq)) return NULL;
     freq = basefreq * self->fact + 0.5 ;
-    if (ioctl(self->fd, VIDIOCSFREQ, &freq) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSFREQ, &freq) < 0) {
 	PyErr_SetString(V4lError, "Error setting frequency.");
 	return NULL;
     }
@@ -1059,7 +1060,7 @@ static PyObject *
 v4l_setRawFreq(v4lobject *self, PyObject *args) {
     unsigned long freq;
     if (!PyArg_ParseTuple(args, "l", &freq)) return NULL;
-    if (ioctl(self->fd, VIDIOCSFREQ, &freq) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSFREQ, &freq) < 0) {
 	PyErr_SetString(V4lError, "Error setting frequency.");
 	return NULL;
     }
@@ -1071,7 +1072,7 @@ static PyObject *
 v4l_getFrequency(v4lobject *self) {
     unsigned long freq;
     unsigned long basefreq;
-    if (ioctl(self->fd, VIDIOCGFREQ, &freq) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGFREQ, &freq) < 0) {
 	PyErr_SetString(V4lError, "Error retriving frequency.");
 	return NULL;
     }
@@ -1087,7 +1088,7 @@ v4l_mute(radioobject *self, PyObject *args) {
     va.flags = VIDEO_AUDIO_MUTE;
     va.volume = 0;
 
-    if (ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
 	PyErr_SetString(V4lError, "Error muting audio.");
 	return NULL;
     }
@@ -1106,7 +1107,7 @@ v4l_setVolume(v4lobject *self, PyObject *args) {
     va.audio = 0;
     va.volume = vol * (65535/10);
 
-    if (ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
 	PyErr_SetString(V4lError, "Error setting volume.");
 	return NULL;
     }
@@ -1118,7 +1119,7 @@ static PyObject *
 v4l_getVolume(v4lobject *self) {
     struct video_audio va;
     va.audio = 0;
-    if (ioctl(self->fd, VIDIOCGAUDIO, &va) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGAUDIO, &va) < 0) {
 	PyErr_SetString(V4lError, "Error retriving volume.");
 	return NULL;
     }
@@ -1132,7 +1133,7 @@ v4l_setMono(v4lobject *self, PyObject *args) {
     va.audio = 0;
     va.mode = VIDEO_SOUND_MONO;
 
-    if (ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
 	PyErr_SetString(V4lError, "Error setting audio to mono.");
 	return NULL;
     }
@@ -1148,7 +1149,7 @@ v4l_setStereo(v4lobject *self, PyObject *args) {
     va.audio = 0;
     va.mode = VIDEO_SOUND_STEREO;
 
-    if (ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSAUDIO, &va) < 0) {
 	PyErr_SetString(V4lError, "Error setting audio to stereo.");
 	return NULL;
     }
@@ -1160,7 +1161,7 @@ static PyObject *
 v4l_getMode(v4lobject *self) {
     struct video_audio va;
     va.audio = 0;
-    if (ioctl(self->fd, VIDIOCGAUDIO, &va) > 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCGAUDIO, &va) > 0) {
 	PyErr_SetString(V4lError, "Error retriving audio mode.");
 	return NULL;
     }
@@ -1179,7 +1180,7 @@ v4l_setBass(v4lobject *self, PyObject *args) {
     va.audio = 0;
     va.bass = level * (65535/10);
 
-    if (ioctl(self->fd, VIDIOCSAUDIO, &va) > 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSAUDIO, &va) > 0) {
 	PyErr_SetString(V4lError, "Error setting bass level.");
 	return NULL;
     }
@@ -1198,7 +1199,7 @@ v4l_setTreble(v4lobject *self, PyObject *args) {
     va.audio = 0;
     va.treble = level * (65535/10);
 
-    if (ioctl(self->fd, VIDIOCSAUDIO, &va) > 0) {
+    if (v4l1_ioctl(self->fd, VIDIOCSAUDIO, &va) > 0) {
 	PyErr_SetString(V4lError, "Error setting treble level.");
 	return NULL;
     }
@@ -1210,7 +1211,7 @@ v4l_setTreble(v4lobject *self, PyObject *args) {
 float get_freq_fact(int fd) {
     struct video_tuner t;
     t.tuner = 0; // first tuner?
-    if (ioctl(fd, VIDIOCGTUNER, &t) == -1 || (t.flags & VIDEO_TUNER_LOW) == 0)
+    if (v4l1_ioctl(fd, VIDIOCGTUNER, &t) == -1 || (t.flags & VIDEO_TUNER_LOW) == 0)
 	return .016;
     return 160.0;
 }
@@ -1282,7 +1283,7 @@ new_v4l(int fd) {
     v4lobject *self;
     struct video_channel vc;
     vc.channel = 0;
-    if (ioctl(fd, VIDIOCGCHAN, &vc) < 0) {
+    if (v4l1_ioctl(fd, VIDIOCGCHAN, &vc) < 0) {
 	PyErr_SetString(V4lError, "No V4L device found.");
 	return NULL;
     }
@@ -1299,7 +1300,7 @@ new_radio(int fd) {
     struct video_tuner t;
     t.tuner = 0; //first device?
     // check to see if v4l is working
-    if (ioctl(fd, VIDIOCGTUNER, &t) < 0) {
+    if (v4l1_ioctl(fd, VIDIOCGTUNER, &t) < 0) {
 	PyErr_SetString(V4lError, "No V4L radio device found.");
 	return NULL;
     }
@@ -1315,7 +1316,7 @@ new_video(int fd) {
     videoobject *self;
     struct video_channel vc;
     vc.channel = 0;
-    if (ioctl(fd, VIDIOCGCHAN, &vc) < 0) {
+    if (v4l1_ioctl(fd, VIDIOCGCHAN, &vc) < 0) {
 	PyErr_SetString(V4lError, "No V4L video device found.");
 	return NULL;
 
