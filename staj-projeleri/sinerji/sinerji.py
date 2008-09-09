@@ -47,6 +47,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
+        self.filled = None
 
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()
@@ -74,32 +75,70 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
 
 
+    def fillComboBoxes(self):
+        self.topComboBox.clear()
+        self.bottomComboBox.clear()
+        self.rightComboBox.clear()
+        self.leftComboBox.clear()
+
+        self.topComboBox.addItem("")
+        self.rightComboBox.addItem("")
+        self.bottomComboBox.addItem("")
+        self.leftComboBox.addItem("")
+        ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
+        for domain in self.connectingWorkstation.getDomains():
+            self.topComboBox.addItem(domain)
+            self.bottomComboBox.addItem(domain)
+            self.rightComboBox.addItem(domain)
+            self.leftComboBox.addItem(domain)
+        self.filled = True
+
 ####### ComboxBox Signals, if someone choose the host, deny it #######
+
+
+    def on_topComboBox_highlighted(self):
+        if not self.filled:
+            self.fillComboBoxes()
+        self.topComboBox.setEditable(True)
 
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
-        self.topComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.topComboBox.setCurrentIndex(0)
 
+
+    def on_bottomComboBox_highlighted(self):
+        if not self.filled:
+            self.fillComboBoxes()
+        self.bottomComboBox.setEditable(True)
+    
     @pyqtSignature("QString")
     def on_bottomComboBox_activated(self, text):
-        self.bottomComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.bottomComboBox.setCurrentIndex(0)
 
+
+    def on_rightComboBox_highlighted(self, text):
+        if not self.filled:
+            self.fillComboBoxes()
+        self.rightComboBox.setEditable(True)
+    
     @pyqtSignature("QString")
     def on_rightComboBox_activated(self, text):
-        self.rightComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.rightComboBox.setCurrentIndex(0)
     
+    
+    def on_leftComboBox_highlighted(self, text):
+        if not self.filled:
+            self.fillComboBoxes()
+        self.leftComboBox.setEditable(True)
+    
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
-        self.leftComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.leftComboBox.setCurrentIndex(0)
@@ -182,7 +221,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             ### Creating the synergy.conf file
             createsynergyconf.screens(self.confdomain)
             createsynergyconf.links(self.confdomain)
-            self.trayIcon.showMessage("Sinerji", "Synergy configuration saved", QSystemTrayIcon.Information, 4000) 
+            self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
 
 
     @pyqtSignature("")
@@ -195,23 +234,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_serverButton_clicked(self):
         print "********* Server button is checked"
-        ### Clear the boxes 
+         
 
-        self.topComboBox.clear()
-        self.bottomComboBox.clear()
-        self.rightComboBox.clear()
-        self.leftComboBox.clear()
-        
-        self.topComboBox.addItem("")
-        self.rightComboBox.addItem("")
-        self.bottomComboBox.addItem("")
-        self.leftComboBox.addItem("")
-        ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
-        for domain in self.connectingWorkstation.getDomains():
-            self.topComboBox.addItem(domain)
-            self.bottomComboBox.addItem(domain)
-            self.rightComboBox.addItem(domain)
-            self.leftComboBox.addItem(domain)
 
 
     @pyqtSignature("")

@@ -60,7 +60,7 @@ class Ui_SinerjiGui(object):
     def retranslateUi(self, SinerjiGui):
         SinerjiGui.setWindowTitle(QtGui.QApplication.translate("SinerjiGui", "Sinerji", None, QtGui.QApplication.UnicodeUTF8))
         self.serverButton.setText(QtGui.QApplication.translate("SinerjiGui", "Server Mode", None, QtGui.QApplication.UnicodeUTF8))
-        self.saveButton.setText(QtGui.QApplication.translate("SinerjiGui", "Save", None, QtGui.QApplication.UnicodeUTF8))
+        self.saveButton.setText(QtGui.QApplication.translate("SinerjiGui", "Apply", None, QtGui.QApplication.UnicodeUTF8))
         self.closeButton.setText(QtGui.QApplication.translate("SinerjiGui", "Close", None, QtGui.QApplication.UnicodeUTF8))
         self.clientButton.setText(QtGui.QApplication.translate("SinerjiGui", "Client Mode", None, QtGui.QApplication.UnicodeUTF8))
 
