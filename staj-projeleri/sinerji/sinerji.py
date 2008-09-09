@@ -115,8 +115,18 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
         elif self.clientButton.isChecked():
-            
-            address = self.connectingSinerji.getSinerjiAddress()
+            ## Get the server name, look in synergycData dictionary and get from there the ip addres
+
+            if self.topComboBox.currentText():
+                address = self.synergycData[str(self.topComboBox.currentText())]
+            if self.bottomComboBox.currentText():
+                address = self.synergycData[str(self.bottomComboBox.currentText())]
+            if self.rightComboBox.currentText():
+                address = self.synergycData[str(self.rightComboBox.currentText())]
+            if self.leftComboBox.currentText():
+                address = self.synergycData[str(self.leftComboBox.currentText())]
+
+            ## After getting the ip address, start synergyc
             command = ['synergyc', address]
             process = subprocess.call(command)
 
@@ -202,6 +212,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                         QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refresh")
                 else:
                     pass
+
+        self.topComboBox.addItem("")
+        self.rightComboBox.addItem("")
+        self.bottomComboBox.addItem("")
+        self.leftComboBox.addItem("")
 
 
     def startBrowsing(self):
