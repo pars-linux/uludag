@@ -37,7 +37,7 @@ class Ui_SinerjiGui(object):
         self.bottomComboBox.setObjectName("bottomComboBox")
         self.gridLayout.addWidget(self.bottomComboBox, 2, 1, 1, 1)
         self.icobLabel = QtGui.QLabel(self.frame)
-        self.icobLabel.setPixmap(QtGui.QPixmap("style.png"))
+        self.icobLabel.setPixmap(QtGui.QPixmap(":/icon.png"))
         self.icobLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.icobLabel.setObjectName("icobLabel")
         self.gridLayout.addWidget(self.icobLabel, 1, 1, 1, 1)
