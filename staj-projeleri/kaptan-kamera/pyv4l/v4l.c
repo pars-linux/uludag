@@ -46,6 +46,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/extensions/xf86dga.h>
+#include "libv4l1.h"
+
 #define WIDTH 320
 #define HEIGHT 240
 
