@@ -1,48 +1,63 @@
 # encoding: utf8
-import sqlite3
+import MySQLdb
+import gettext
+
+__trans = gettext.translation('paketarama', fallback=True)
+_ = __trans.ugettext
+
 
 DOCUMENT_ROOT = '/home/emre/public_html/arama/src/arama'
-WEB_ROOT = '/~emre/arama/src/arama'
-DB_FILE = DOCUMENT_ROOT + '/pisidb'
+root = '/~emre/arama/src/arama'
 
 
+dict = {
+            "root": root,
+            "menu1": _("Information"),
+            "menu2": _("Source Packages"),
+            "menu3": _("Binary Packages"),
+            "menu4": _("Packagers"),
+            "menu5": _("Search"),
+        }
+        
+        
+        
 header = ('''
 <html>
     <head>
         <title>Arama Sayfasi</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link href="%(WEB_ROOT)s/stil.css" rel="stylesheet" type="text/css">
+        <link href="%(root)s/stil.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id='header-bugzilla'>
         </div>
 
         <div class='menu'>
-        <a href='%(WEB_ROOT)s/index.html'>Genel Bilgiler</a>
-         | <a href='%(WEB_ROOT)s/sources.html'>Kaynak Paketler</a>
-        
-         | <a href='%(WEB_ROOT)s/binaries.html'>İkili Paketler</a>
-         | <a href='%(WEB_ROOT)s/packagers.html'>Paketçiler</a>
-         | <a href='%(WEB_ROOT)s/'>Arama</a>
+        <a href='http://paketler.pardus.org.tr/info/2008/index.html'>%(menu1)s</a>
+         | <a href='http://paketler.pardus.org.tr/info/2008/sources.html'>%(menu2)s</a>
+         | <a href='http://paketler.pardus.org.tr/info/2008/binaries.html'>%(menu3)s</a>
+         | <a href='http://paketler.pardus.org.tr/info/2008/packagers.html'>%(menu4)s</a>
+         | <a href='%(root)s/'>%(menu5)s</a>
         </div>
-        ''' % ({'WEB_ROOT'      : WEB_ROOT,}) ) + ('''
-        <h2 align='center'>%s</h2>
-
         <div class='content'>
-        <form action="search" method="post">
+        <form action="%(root)s/search" method="post">
+        ''' % dict) + '''
         <center>
             <input type="text" name="q" size="80"/>
             <input type="submit" value="Search"/>        
         </center>
-''')
+        <h2 align='center'>%s</h2>
+'''
 footer = '''
+        <hr width="40%"/>
         </div>
     </body>
 </html>
 '''
 
 class TableGenerator:
-    def __init__(self, headers, data):
+    def __init__(self, headers, data, term_link=None):
+        self.term_link = term_link
         header_len = len(headers)
         row_num = len(data)
         if data:
@@ -51,9 +66,7 @@ class TableGenerator:
             self.table = Table()
             self.table.close()
             return
-        print header_len, col_num, row_num
         if header_len != col_num:
-            print header_len, col_num
             raise Exception
         
         self.table = Table()
@@ -63,15 +76,26 @@ class TableGenerator:
         self.table.trclose()
         for row in data:
             self.table.tr()
-            for col in row:
-                self.table.td(col)
+            if self.term_link not in [None, []]:
+                for col in row:
+                    self.table.td(self.format_link(col))
+            else:
+                for col in row:
+                    self.table.td(col)
             self.table.trclose()
         self.table.close()
-    
-#(u'eric', u'usr/lib/python2.5/site-packages/eric4/QScintilla/Lexers/LexerMakefile.py'), (u'eric', u'usr/lib/python2.5/site-packages/eric4/Documentation/Source/eric4.QScintilla.Lexers.LexerCMake.html'), (u'eric', u'usr/lib/python2.5/site-packages/eric4/Documentation/Source/eric4.QScintilla.Lexers.LexerMakefile.html'), (u'eric', u'usr/lib/python2.5/site-packages/eric4/QScintilla/Lexers/LexerCMake.py'), 
+        
+    def format_link(self, data):
+        if type(data) == str and '/' not in data:
+            return '<a href="search/?q=%(term)s in:%(pkg)s">%(pkg)s</a>' % {'term' : self.term_link,
+                                                       'pkg'  : data
+                                                       }
+        else:
+            return data
+         
 class Table:
     def __init__(self):
-        self.code = '<table>\n'
+        self.code = '<center><table>\n'
         self.tropen = False
         
     def tr(self):
@@ -90,41 +114,50 @@ class Table:
         self.code += '\t</tr>\n'
         self.tropen = False
     def close(self):
-        self.code += '</table>'
+        self.code += '</table></center>'
     
 class Search:
     def __init__(self):
-        self.connection = sqlite3.connect(DB_FILE)   
-        self.cursor = self.connection.cursor()
+        self.db=MySQLdb.connect("localhost","root","", "paketarama")
+        self.cursor = self.db.cursor()
+        
+    def __del__(self):
+        self.db.close()
     
     def list_package_contents(self, package_name):
-        files = self.cursor.execute('select filepath from files where package=?', [package_name]).fetchall()
-        files.sort()
-        return (header % 'Contents of package %s:' % package_name) + TableGenerator(('Path',), files).table.code + footer
+        """Lists the contents of a given package name."""
+        self.cursor.execute('select path from files where package="%s" order by path;' % package_name)
+        files = self.cursor.fetchall()
+        if package_name:
+            heading = _('Contents of package %(pkg)s:')
+        else:
+            heading = _('No package specified.')
+        
+        return (header % heading % {'pkg':package_name}) + TableGenerator((_('Path'),), files).table.code + footer
     
     def search_for_package(self, package_name):
         """Searches for a package related to given name in the URL."""
-        packages = self.cursor.execute('select distinct package from files where (package LIKE "%%%s%%")' % package_name).fetchall()
-        packages.sort()
-        return (header % 'List of packages with similar name to %s:' % package_name) + TableGenerator(('Package',), packages).table.code + footer
+        self.cursor.execute('select package, count(path) from files where package LIKE "%%%(pkg)s%%" group by package order by package;' % {'pkg':package_name})
+        packages = self.cursor.fetchall()
+        if package_name:
+            heading = _('List of packages with a similar name to %(pkg)s:')
+        else:
+            heading = _('List of packages:')
+        return (header % heading % {'pkg':package_name}) + TableGenerator((_('Package'),_('Count')), packages, '').table.code + footer
     
     def search_in_package(self, package_name, term):
         """Searches for term in the given package."""
-        files = self.cursor.execute('select filepath from files where package = "%s" and filepath like "%%%s%%"' % (package_name, term)).fetchall()
-        files.sort()
-        return (header % 'Files related to %s in package %s:' % (term, package_name)) + TableGenerator(('Path', ), files).table.code + footer 
+        self.cursor.execute('select path from files where package = "%(pkg)s" and path like "%%%(term)s%%" order by path;' % {'pkg':package_name, 'term': term})
+        files = self.cursor.fetchall()
+        return (header % _('Files related to %(term)s in package %(pkg)s:') % {'pkg':package_name,
+                                                                               'term': term}) + TableGenerator((_('Path'), ), files).table.code + footer
+     
     def search_in_all_packages(self, term = None):
         """Searches for term in all packages' file paths."""
-        pairs = self.cursor.execute('select package, filepath from files where filepath like "%%%s%%"' % term).fetchall()
-        pairs.sort()
-        return (header % 'Files related to %s:' % term) + TableGenerator(('Package', 'Path'), pairs).table.code + footer
+        self.cursor.execute('select package, count(path) from files where path like "%%%(term)s%%" group by package  order by package;"' % {'term': term})
+        pairs = self.cursor.fetchall()
+        return (header % _('Files related to %(term)s:') % {'term':term}) + TableGenerator((_('Package'), _('Count')), pairs, term).table.code + footer
 
 
 
-def index():
-    #return Search().list_package_contents('vlc')
-    return Search().search_for_package('test')
-    #pi = PisiDBInterface(DB_FILE)
-    #return (header % 'Packages related:test')+TableGenerator(('Package', 'Path'), pi.get_packages_of('test').fetchall()).table.code + footer
-#print index()
 

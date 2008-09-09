@@ -36,3 +36,8 @@ a:hover {
 .content {
     margin: 0.5em;
 } 
+
+.table {
+    cellpadding:10;
+}
+

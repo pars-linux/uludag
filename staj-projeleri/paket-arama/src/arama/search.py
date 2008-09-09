@@ -1,4 +1,11 @@
 from lib import *
+import gettext
+__trans = gettext.translation('repokit', fallback=True)
+_ = __trans.ugettext
+
+
+def escape(text):
+    return text.replace('\\','').replace('--','').replace('/*','').replace("'", "").replace("\"", "").replace('  ',' ').replace('=','').replace('(','').replace(')','').replace('%','').replace(";", "")
 
 def index(q=None):
     """
@@ -9,9 +16,10 @@ def index(q=None):
     """
     
     if q:
+        q = escape(q)
         s = Search()
         # A workaround here: should be improved:
-        if ' in:'in q:
+        if ' in:' in q:
             # term in:pkg
             in_start = q.find('in:')
             in_end = in_start + 4
