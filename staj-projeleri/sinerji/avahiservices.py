@@ -70,25 +70,12 @@ class avahiSinerji:
         hostremoved = re.sub(r'\.%s$' % domain, '', host)
         self.discoveredHosts.remove(hostremoved)
 
-
     def getDomains(self):
         return list(sorted(self.discoveredHosts))
-    
+
     def getClients(self):
-        for client in self.client:
-            self.clientlist[self.serviceHost] = client
         return self.clientlist
-    
-    def getClient(self):
-        return self.client
 
-    def getSinerjiHost(self):
-        return self.sinerjiHost
-
-    def getSinerjiAddress(self):
-        return self.sinerjiAddress
-    
-    
     def serviceResolvedCallback(self, interface, protocol, name, stype, domain, host, aprotocol, address, port, txt, flags):
         if not self.connected:
             return
@@ -98,9 +85,7 @@ class avahiSinerji:
 
         elif stype == "_sinerji._tcp":
             self.serviceHost = re.sub(r'\.%s$' % domain, '', host)
-            self.sinerjiHost.append(self.serviceHost)
-            self.sinerjiAddress.append(address)
-            self.client.append(avahi.txt_array_to_string_array(txt))
+            self.clientlist[self.serviceHost + "=" + address] = avahi.txt_array_to_string_array(txt)
 
         else:
             pass
