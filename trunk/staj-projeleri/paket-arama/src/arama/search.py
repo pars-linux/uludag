@@ -17,7 +17,7 @@ def index(q=None):
     
     if q:
         q = escape(q)
-        s = Search()
+        s = Search(limit)
         # A workaround here: should be improved:
         if ' in:' in q:
             # term in:pkg

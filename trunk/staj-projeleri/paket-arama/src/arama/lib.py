@@ -8,6 +8,7 @@ _ = __trans.ugettext
 
 DOCUMENT_ROOT = '/home/emre/public_html/arama/src/arama'
 root = '/~emre/arama/src/arama'
+limit = 100
 
 
 dict = {
@@ -117,9 +118,10 @@ class Table:
         self.code += '</table></center>'
     
 class Search:
-    def __init__(self):
+    def __init__(self, limit):
         self.db=MySQLdb.connect("localhost","root","", "paketarama")
         self.cursor = self.db.cursor()
+        self.limit = limit
         
     def __del__(self):
         self.db.close()
@@ -127,13 +129,19 @@ class Search:
     def list_package_contents(self, package_name):
         """Lists the contents of a given package name."""
         self.cursor.execute('select path from files where package="%s" order by path;' % package_name)
-        files = self.cursor.fetchall()
+        files = self.cursor.fetchmany(self.limit)
+        if self.limit>0 and self.limit<self.cursor.rowcount:
+            partial = '(first %s):' % self.limit
+        else:
+            partial = ''
+            
         if package_name:
-            heading = _('Contents of package %(pkg)s:')
+            heading = _('Contents of package %(pkg)s %(partial)s')
         else:
             heading = _('No package specified.')
         
-        return (header % heading % {'pkg':package_name}) + TableGenerator((_('Path'),), files).table.code + footer
+        return (header % heading % {'pkg':package_name,
+                                    'partial' : partial}) + TableGenerator((_('Path'),), files).table.code + footer
     
     def search_for_package(self, package_name):
         """Searches for a package related to given name in the URL."""
@@ -147,10 +155,18 @@ class Search:
     
     def search_in_package(self, package_name, term):
         """Searches for term in the given package."""
+        if not term:
+            return self.list_package_contents(package_name)
         self.cursor.execute('select path from files where package = "%(pkg)s" and path like "%%%(term)s%%" order by path;' % {'pkg':package_name, 'term': term})
-        files = self.cursor.fetchall()
-        return (header % _('Files related to %(term)s in package %(pkg)s:') % {'pkg':package_name,
-                                                                               'term': term}) + TableGenerator((_('Path'), ), files).table.code + footer
+        files = self.cursor.fetchmany(self.limit)
+        if self.limit>0 and self.limit<self.cursor.rowcount:
+            partial = '(first %s):' % self.limit
+        else:
+            partial = ''
+            
+        return (header % _('Files related to %(term)s in package %(pkg)s %(partial)s:') % {'pkg':package_name,
+                                                                               'term': term,
+                                                                               'partial': partial,}) + TableGenerator((_('Path'), ), files).table.code + footer
      
     def search_in_all_packages(self, term = None):
         """Searches for term in all packages' file paths."""
