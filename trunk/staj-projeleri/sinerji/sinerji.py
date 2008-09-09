@@ -31,6 +31,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.trayIcon.setToolTip(u"Sinerji")
         self.trayIcon.show()
 
+        self.saveButton.setIcon(QIcon(":/buttonOk.png"))
+        self.closeButton.setIcon(QIcon(":/buttonCancel.png"))
         self.discoveredHosts = set()
         self.txtData = []
         self.confdomain = []
@@ -52,19 +54,16 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def trayActions(self):
         self.trayMenu = QMenu()
         
-        self.actionAbout = QAction(QIcon("images/about.png"),u"About", self)
+        self.actionAbout = QAction(QIcon(":/about.png"),u"About", self)
         self.connect(self.actionAbout, SIGNAL("activated()"), self.about)
         self.trayMenu.addAction(self.actionAbout)
         
         self.trayMenu.addSeparator()
         
-        self.actionQuit = QAction(QIcon("images/quit.png"),u"Quit", self)
+        self.actionQuit = QAction(QIcon(":/quit.png"),u"Quit", self)
         self.connect(self.actionQuit, SIGNAL("activated()"), app.quit)
         self.trayMenu.addAction(self.actionQuit)
 
-
-
-    
     def about(self):
         QMessageBox.about(self, "About Sinerji",
              """<b>Sinerji</b> v %s
@@ -73,14 +72,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
              <p>Python %s - Qt %s - PyQt %s on %s""" % (
              __version__, platform.python_version(),
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
-
-
-
-
-
-
-
-
 
 
 ####### ComboxBox Signals, if someone choose the host, deny it #######
@@ -153,6 +144,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             command = ['synergys', '--config', self.synergyConf]
             process = subprocess.call(command)
 
+            self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
 
         elif self.clientButton.isChecked():
             ## Get the server name, look in synergycData dictionary and get from there the ip addres
@@ -169,6 +161,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             ## After getting the ip address, start synergyc
             command = ['synergyc', address]
             self.process = subprocess.Popen(command)
+            
+            self.trayIcon.showMessage("Sinerji", "Synergy client connected succesfull", QSystemTrayIcon.Information, 4000) 
 
 
         else:
@@ -188,6 +182,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             ### Creating the synergy.conf file
             createsynergyconf.screens(self.confdomain)
             createsynergyconf.links(self.confdomain)
+            self.trayIcon.showMessage("Sinerji", "Synergy configuration saved", QSystemTrayIcon.Information, 4000) 
 
 
     @pyqtSignature("")
