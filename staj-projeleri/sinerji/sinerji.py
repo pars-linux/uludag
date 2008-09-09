@@ -5,8 +5,6 @@
 import os, sys
 import subprocess, signal
 from socket import gethostname
-
-
 from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -18,17 +16,22 @@ import platform
 import qrc_resources
 __version__ = 0.1
 
+
 class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def __init__(self,  parent=None):
         super(SinerjiGui, self).__init__(parent)
         self.setupUi(self)
         self.closeButton.setFocusPolicy(Qt.NoFocus)
         self.applyButton.setFocusPolicy(Qt.NoFocus)
+
         self.trayIcon = QSystemTrayIcon(QIcon(":/icon.png"), self)
         self.trayActions()
         self.trayIcon.setContextMenu(self.trayMenu)
         self.trayIcon.setToolTip(u"Sinerji")
+
         self.trayIcon.show()
+
+
         self.applyButton.setIcon(QIcon(":/buttonApply.png"))
         self.closeButton.setIcon(QIcon(":/buttonClose.png"))
         self.discoveredHosts = set()
@@ -39,15 +42,23 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.browser = None
         self.bus = None
         self.filled = None
+        self.searched = None
+        self.clientAndPos = []
+        self.serverAndIp = []
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
+        
+        self.startBrowsing()
         self.updateUi()
+        
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
-        self.startBrowsing()
 
+    def deneme(self):
+        print "deneme"
+    
     def trayActions(self):
         self.trayMenu = QMenu()
         
@@ -70,6 +81,48 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
              __version__, platform.python_version(),
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
 
+    def searchClient(self):
+        self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.fillClientBox)
+        for server in self.connectingSinerji.getClients().keys():
+            for client in self.connectingSinerji.getClients()[server]:
+                self.clientAndPos = client.split("=")
+            self.serverAndIp = server.split("=")
+
+        if self.serverAndIp[0] is None:
+            pass
+        else:
+            if self.clientAndPos[1] == gethostname(): ### We are looking for our hostname
+                    self.trayIcon.showMessage("Sinerji", 
+                            ("%s want to use your pc from %s. To allow please click" % (self.serverAndIp[0],self.clientAndPos[0])), 
+                            QSystemTrayIcon.Information, 
+                            8000)
+        self.searched = True
+    
+    def fillClientBox(self):
+        self.topComboBox.clear()
+        self.bottomComboBox.clear()
+        self.rightComboBox.clear()
+        self.leftComboBox.clear()
+        
+        if self.clientAndPos[0] == "bottom": # If client is bottom, than our server is top, that's why we add it to topCombobox
+            self.topComboBox.addItem(self.serverAndIp[0])
+            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
+        elif self.clientAndPos[0] == "top":
+            self.bottomComboBox.addItem(self.serverAndIp[0])
+            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
+        elif self.clientAndPos[0] == "left":
+            self.rightComboBox.addItem(self.serverAndIp[0])
+            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
+        elif self.clientAndPos[0] == "right":
+            self.leftComboBox.addItem(self.serverAndIp[0])
+            self.synergycData[self.serverAndIp[0]] = self.serverAndIp[1]
+        else:
+            QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refresh")
+
+        self.topComboBox.addItem("")
+        self.rightComboBox.addItem("")
+        self.bottomComboBox.addItem("")
+        self.leftComboBox.addItem("")
 
     def fillComboBoxes(self):
         self.topComboBox.clear()
@@ -92,9 +145,15 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ####### ComboxBox Signals, if someone choose the host, deny it #######
 
 
+    
+
+    
     def on_topComboBox_highlighted(self):
         if not self.filled:
             self.fillComboBoxes()
+        if not self.searched:
+            self.searchClient()
+
 
 
     @pyqtSignature("QString")
@@ -178,8 +237,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             createsynergyconf.links(self.confdomain)
 
             ## Starting synergys
-            command = ['synergys', '--config', self.synergyConf]
-            process = subprocess.call(command)
+            #command = ['synergys', '--config', self.synergyConf]
+            #process = subprocess.call(command)
 
             self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
 
@@ -196,8 +255,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 address = self.synergycData[str(self.leftComboBox.currentText())]
 
             ## After getting the ip address, start synergyc
-            command = ['synergyc', address]
-            self.process = subprocess.Popen(command)
+            #command = ['synergyc', address]
+            #self.process = subprocess.Popen(command)
             
             self.trayIcon.showMessage("Sinerji", "Synergy client connected succesfull", QSystemTrayIcon.Information, 4000) 
 
@@ -286,6 +345,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     def updateUi(self):
         ### Look for synergy.conf, if exists parse it and fill the comboBoxes
+
         if os.path.exists(self.synergyConf):
             self.parser = parsesynergyconf.parseSynergyConf(self.synergyConf)
             for position in self.parser.getClients():
@@ -301,6 +361,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     pass
 
 
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setApplicationName("Sinerji")
@@ -308,9 +370,6 @@ if __name__ == "__main__":
     DBusQtMainLoop( set_as_default=True )
     form = SinerjiGui()
     form.show()
-    
-
-    
     app.exec_()
 
 
