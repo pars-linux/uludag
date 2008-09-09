@@ -30,6 +30,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  * All open(...)    changed to  v4l1_open(...)
  * All close(...)   changed to  v4l1_close(...)
  * All ioctl(...)   changed to  v4l1_ioctl(...)
+ * All mmap(...)    changed to  v4l1_mmap(...)
  */
 
 
@@ -852,7 +853,7 @@ v4l_setupCapture(videoobject *self) {
     //fprintf(stderr,"  mbuf: size=%d frames=%d\n", self->mbuf.size,self->mbuf.frames);
     //self->map = mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
     //self->map = mmap(0, self->mbuf.size, PROT_READ, MAP_PRIVATE, self->fd, 0);
-    self->map = mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
+    self->map = v4l1_mmap(0, self->mbuf.size, PROT_READ|PROT_WRITE, MAP_SHARED, self->fd, 0);
     if ((self->map == NULL) | (self->map == MAP_FAILED)) {
 	PyErr_SetString(VideoError, "Error Memory Mapping device.");
     	return -1;
