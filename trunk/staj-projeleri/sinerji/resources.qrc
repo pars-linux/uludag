@@ -3,7 +3,7 @@
 <file alias="icon.png">images/icon.png</file>
 <file alias="about.png">images/about.png</file>
 <file alias="quit.png">images/quit.png</file>
-<file alias="buttonCancel.png">images/buttonCancel.png</file>
-<file alias="buttonOk.png">images/buttonOk.png</file>
+<file alias="buttonClose.png">images/buttonClose.png</file>
+<file alias="buttonApply.png">images/buttonApply.png</file>
 </qresource>
 </RCC>
