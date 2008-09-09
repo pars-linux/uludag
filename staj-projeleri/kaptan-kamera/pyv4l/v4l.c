@@ -24,7 +24,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */ 
 
 /* Derived from fmio <bktr.c> by Vladimir Popov <jumbo@narod.ru> */
- 
+
+
+/* 
+ * All open(...)    changed to  v4l1_open(...)
+ */
+
+
  
 #include <Python.h>
 #include <fcntl.h>
@@ -1467,7 +1473,7 @@ v4lobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    if (-1 == (fd = open(fname, O_RDWR))) {
+    if (-1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
     }
@@ -1481,7 +1487,7 @@ radioobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    if (-1 == (fd = open(fname, O_RDWR))) {
+    if (-1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
     }
@@ -1495,7 +1501,7 @@ videoobject_new(PyObject *self, PyObject *args) {
     int fd;
     char *fname;
     if (!PyArg_ParseTuple(args, "s", &fname)) return NULL;
-    if (-1 == (fd = open(fname, O_RDWR))) {
+    if (-1 == (fd = v4l1_open(fname, O_RDWR))) {
 	PyErr_SetString(PyExc_IOError, "Unable to open Device.");
 	return NULL;
     }
