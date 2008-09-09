@@ -23,16 +23,14 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         super(SinerjiGui, self).__init__(parent)
         self.setupUi(self)
         self.closeButton.setFocusPolicy(Qt.NoFocus)
-        self.saveButton.setFocusPolicy(Qt.NoFocus)
-
+        self.applyButton.setFocusPolicy(Qt.NoFocus)
         self.trayIcon = QSystemTrayIcon(QIcon(":/icon.png"), self)
         self.trayActions()
         self.trayIcon.setContextMenu(self.trayMenu)
         self.trayIcon.setToolTip(u"Sinerji")
         self.trayIcon.show()
-
-        self.saveButton.setIcon(QIcon(":/buttonOk.png"))
-        self.closeButton.setIcon(QIcon(":/buttonCancel.png"))
+        self.applyButton.setIcon(QIcon(":/buttonApply.png"))
+        self.closeButton.setIcon(QIcon(":/buttonClose.png"))
         self.discoveredHosts = set()
         self.txtData = []
         self.confdomain = []
@@ -40,15 +38,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.connected = False
         self.browser = None
         self.bus = None
+        self.filled = None
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
-
         self.updateUi()
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
-        self.filled = None
-
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()
 
@@ -99,10 +95,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_topComboBox_highlighted(self):
         if not self.filled:
             self.fillComboBoxes()
-        self.topComboBox.setEditable(True)
+
 
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
+        self.topComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.topComboBox.setCurrentIndex(0)
@@ -111,10 +108,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_bottomComboBox_highlighted(self):
         if not self.filled:
             self.fillComboBoxes()
-        self.bottomComboBox.setEditable(True)
+
     
     @pyqtSignature("QString")
     def on_bottomComboBox_activated(self, text):
+        self.bottomComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.bottomComboBox.setCurrentIndex(0)
@@ -123,10 +121,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_rightComboBox_highlighted(self, text):
         if not self.filled:
             self.fillComboBoxes()
-        self.rightComboBox.setEditable(True)
     
     @pyqtSignature("QString")
     def on_rightComboBox_activated(self, text):
+        self.rightComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.rightComboBox.setCurrentIndex(0)
@@ -135,10 +133,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_leftComboBox_highlighted(self, text):
         if not self.filled:
             self.fillComboBoxes()
-        self.leftComboBox.setEditable(True)
     
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
+        self.leftComboBox.setEditable(True)
         if (text == gethostname()):
             QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
             self.leftComboBox.setCurrentIndex(0)
@@ -147,8 +145,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ### If Someone choose an empty string, dont store it, else createsynergyconf and parsesynergyconf wouldn't work well ###
 
     @pyqtSignature("")
-    def on_saveButton_clicked(self):
-        if self.serverButton.isChecked():
+    def on_applyButton_clicked(self):
+        if self.filled:
 
             ### Add the current Clientnames to the list confdomain to give it to giveData
             ### After that announce the _sinerji._tcp service
@@ -185,7 +183,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
 
-        elif self.clientButton.isChecked():
+        elif not self.filled:
             ## Get the server name, look in synergycData dictionary and get from there the ip addres
 
             if self.topComboBox.currentText():
@@ -230,12 +228,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
 ## Only one checkbox has to be checked ##
-
-    @pyqtSignature("")
-    def on_serverButton_clicked(self):
-        print "********* Server button is checked"
-         
-
+## FIXME: Remove it's obsolote
 
 
     @pyqtSignature("")
