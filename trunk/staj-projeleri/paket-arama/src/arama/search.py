@@ -1,6 +1,6 @@
 from lib import *
 import gettext
-__trans = gettext.translation('repokit', fallback=True)
+__trans = gettext.translation('paketarama', fallback=True)
 _ = __trans.ugettext
 
 
