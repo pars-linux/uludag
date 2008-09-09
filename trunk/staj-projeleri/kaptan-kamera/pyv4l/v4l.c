@@ -28,6 +28,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 /* 
  * All open(...)    changed to  v4l1_open(...)
+ * All close(...)   changed to  v4l1_close(...)
  */
 
 
@@ -1341,7 +1342,7 @@ new_video(int fd) {
 /* Release object */
 static void
 v4l_dealloc(v4lobject *self) {
-    close(self->fd);
+    v4l1_close(self->fd);
     PyMem_DEL(self);
 }
 
