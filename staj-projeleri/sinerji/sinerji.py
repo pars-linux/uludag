@@ -15,6 +15,7 @@ import createsynergyconf
 import parsesynergyconf
 import avahiservices
 import platform
+import qrc_resources
 __version__ = 0.1
 
 class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
@@ -23,13 +24,12 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.setupUi(self)
         self.closeButton.setFocusPolicy(Qt.NoFocus)
         self.saveButton.setFocusPolicy(Qt.NoFocus)
- 
-        self.trayIcon = QSystemTrayIcon(QIcon("style.png"), self)
+
+        self.trayIcon = QSystemTrayIcon(QIcon(":/icon.png"), self)
         self.trayActions()
         self.trayIcon.setContextMenu(self.trayMenu)
         self.trayIcon.setToolTip(u"Sinerji")
         self.trayIcon.show()
-
 
         self.discoveredHosts = set()
         self.txtData = []
@@ -192,11 +192,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
-        if self.process.pid:
-            os.kill(self.process.pid, 9)
-        else:
-            pass
-        
         self.reject()
 
 
@@ -297,7 +292,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setApplicationName("Sinerji")
-    app.setWindowIcon(QIcon("style.png"))
+    app.setWindowIcon(QIcon(":/icon.png"))
     DBusQtMainLoop( set_as_default=True )
     form = SinerjiGui()
     form.show()
