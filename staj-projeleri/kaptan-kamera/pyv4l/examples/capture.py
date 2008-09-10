@@ -17,20 +17,11 @@ print "Minimum Height: %d" % cap[7]
 vid.setupImage(WIDTH, HEIGHT, v4l.VIDEO_PALETTE_RGB24)
 
 vid.preQueueFrames()
-nextFrame = 0;
 
-try:
-    #while 1:
-	output = vid.getImage(nextFrame)
-	im = Image.fromstring("RGB", (WIDTH, HEIGHT), output)
+output = vid.getImage(0)
+im = Image.fromstring("RGB", (WIDTH, HEIGHT), output)
 
-	# save with PIL as jpeg
-	im.save("xyz.jpg","JPEG")
-	# Display image in xv
-	im.show()
-
-	nextFrame = vid.queueFrame()
-
-except Tkinter.TclError:
-    print "Cant take picture"
-    pass
+# save with PIL as jpeg
+im.save("xyz.jpg","JPEG")
+# Display image in xv
+im.show()
