@@ -3,6 +3,7 @@ Name=Sahip
 Name[tr]=Sahip
 Comment=XML Generator for Kahya
 Comment[tr]=Kahya için XML oluşturucu
+Comment[de]=Generator für Kahya
 
 Encoding=UTF-8
 Version=0.1
