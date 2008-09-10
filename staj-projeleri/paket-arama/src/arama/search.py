@@ -1,8 +1,11 @@
-from lib import *
-import gettext
-__trans = gettext.translation('paketarama', fallback=True)
-_ = __trans.ugettext
+#/usr/bin/python
+# -*- coding: utf-8 -*-
 
+from lib import *
+from lib import _
+#import gettext
+#__trans = gettext.translation('arama', fallback=True)
+#_ = __trans.ugettext
 
 def escape(text):
     return text.replace('\\','').replace('--','').replace('/*','').replace("'", "").replace("\"", "").replace('  ',' ').replace('=','').replace('(','').replace(')','').replace('%','').replace(";", "")

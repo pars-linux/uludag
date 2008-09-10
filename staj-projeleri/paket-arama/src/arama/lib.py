@@ -1,14 +1,15 @@
-# encoding: utf8
+#/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import MySQLdb
-import gettext
+from settings import *
+#import gettext
+#__trans = gettext.translation('arama', fallback=True)
+#_ = __trans.ugettext
 
-__trans = gettext.translation('paketarama', fallback=True)
-_ = __trans.ugettext
-
-
-DOCUMENT_ROOT = '/home/emre/public_html/arama/src/arama'
-root = '/~emre/arama/src/arama'
-limit = 100
+import msg
+def _(text):
+	return msg.messages.get(text) or text
 
 
 dict = {
@@ -17,7 +18,9 @@ dict = {
             "menu2": _("Source Packages"),
             "menu3": _("Binary Packages"),
             "menu4": _("Packagers"),
-            "menu5": _("Search"),
+            "menu5": _("Search Packages"),
+            "title": _("Search Packages"),
+            "search": _("Search"),
         }
         
         
@@ -25,7 +28,7 @@ dict = {
 header = ('''
 <html>
     <head>
-        <title>Arama Sayfasi</title>
+        <title>%(title)s</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link href="%(root)s/stil.css" rel="stylesheet" type="text/css">
     </head>
@@ -38,15 +41,14 @@ header = ('''
          | <a href='http://paketler.pardus.org.tr/info/2008/sources.html'>%(menu2)s</a>
          | <a href='http://paketler.pardus.org.tr/info/2008/binaries.html'>%(menu3)s</a>
          | <a href='http://paketler.pardus.org.tr/info/2008/packagers.html'>%(menu4)s</a>
-         | <a href='%(root)s/'>%(menu5)s</a>
+         | <a href='%(root)s'>%(menu5)s</a>
         </div>
         <div class='content'>
         <form action="%(root)s/search" method="post">
-        ''' % dict) + '''
         <center>
             <input type="text" name="q" size="80"/>
-            <input type="submit" value="Search"/>        
-        </center>
+            <input type="submit" value="%(search)s"/>        
+        </center>''' % dict) + '''
         <h2 align='center'>%s</h2>
 '''
 footer = '''
@@ -119,7 +121,7 @@ class Table:
     
 class Search:
     def __init__(self, limit):
-        self.db=MySQLdb.connect("localhost","root","", "paketarama")
+        self.db=MySQLdb.connect(dbhost, dbuser, dbpass, dbname)
         self.cursor = self.db.cursor()
         self.limit = limit
         
@@ -131,12 +133,12 @@ class Search:
         self.cursor.execute('select path from files where package="%s" order by path;' % package_name)
         files = self.cursor.fetchmany(self.limit)
         if self.limit>0 and self.limit<self.cursor.rowcount:
-            partial = '(first %s):' % self.limit
+            partial = _('(first %s)') % self.limit
         else:
             partial = ''
             
         if package_name:
-            heading = _('Contents of package %(pkg)s %(partial)s')
+            heading = _('Contents of package %(pkg)s %(partial)s:')
         else:
             heading = _('No package specified.')
         
@@ -160,7 +162,7 @@ class Search:
         self.cursor.execute('select path from files where package = "%(pkg)s" and path like "%%%(term)s%%" order by path;' % {'pkg':package_name, 'term': term})
         files = self.cursor.fetchmany(self.limit)
         if self.limit>0 and self.limit<self.cursor.rowcount:
-            partial = '(first %s):' % self.limit
+            partial = _('(first %s)') % self.limit
         else:
             partial = ''
             
