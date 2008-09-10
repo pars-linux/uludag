@@ -1,17 +1,23 @@
+#/usr/bin/python
+# -*- coding: utf-8 -*-
+from settings import *
 from lib import *
-import gettext
-__trans = gettext.translation('paketarama', fallback=True)
-_ = __trans.ugettext
+from lib import _
+
+#import gettext
+#__trans = gettext.translation('arama', fallback=True)
+#_ = __trans.ugettext
+
 
 def index():
     help = TableGenerator((_('Usage'), _('Meaning')),
                           (
-                            ('term in:pkg  ' , 'term in pkg'),
-                            ('in:pkg'      , 'all paths in pkg'),
-                            ('p:pkg'       , 'packages like pkg'),
-                            ('p:'          , 'all packages'), 
-                            ('term'        , 'path in all packages'),  
+                            (_('term in:package  ')  , _('search for "term" in "package"')),
+                            (_('in:package')         , _('list all paths in "package"')),
+                            (_('p:package')          , _('search for packages like "package"')),
+                            (_('p:')                 , _('list all packages')), 
+                            (_('term')               , _('search for "term" in all package contents')),  
                            )
                           ).table.code
  
-    return header % 'Usage' + help +footer
+    return header % _('Usage') + help +footer
