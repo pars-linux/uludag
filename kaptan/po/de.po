@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-27 20:48+0300\n"
-"PO-Revision-Date: 2008-06-27 15:30+0200\n"
+"PO-Revision-Date: 2008-09-10 13:30+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"Language-Team: Deutsch\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,33 +44,31 @@ msgstr "Kaptan-Willkommensassistent"
 
 #: src/screens/keyboarddlg.py:653 src/screens/keyboarddlg.py:669
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Tastaturbelegungen"
 
 #: src/screens/keyboarddlg.py:665 src/screens/ScrKeyboard.py:37
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastatur"
 
 #: src/screens/keyboarddlg.py:668
 msgid "Try:"
-msgstr ""
+msgstr "Testen:"
 
 #: src/screens/paneldlg.py:87 src/screens/ScrPanel.py:41
 msgid "Panel"
 msgstr "Leiste"
 
 #: src/screens/ScrKeyboard.py:26
-#, fuzzy
 msgid "Keyboard Settings"
-msgstr "Mauseinstellungen"
+msgstr "Tastatureinstellungen"
 
 #: src/screens/ScrKeyboard.py:27
-#, fuzzy
 msgid "Configure your keyboard"
-msgstr "Konfigurieren Sie Ihre Maus"
+msgstr "Konfigurieren Sie Ihre Tastatur"
 
 #: src/screens/ScrKeyboard.py:38
 msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
-msgstr ""
+msgstr "<p align=\"left\">Sie können hier Ihre Tastatur konfigurieren.</p>"
 
 #: src/screens/welcomedlg.py:60 src/screens/ScrWelcome.py:23
 #: src/screens/ScrWelcome.py:32
@@ -90,9 +88,8 @@ msgid "toolTip"
 msgstr "toolTip"
 
 #: src/screens/wallpaperdlg.py:135
-#, fuzzy
 msgid "Choose Wallpaper"
-msgstr "Kein Hintergrundbild"
+msgstr "Hintergrundbild auswählen"
 
 #: src/screens/ScrMultiple.py:26
 msgid "Multiple Desktops"
@@ -107,10 +104,9 @@ msgid "Multiple"
 msgstr "Mehrfache Desktops"
 
 #: src/screens/ScrMultiple.py:61
-msgid ""
-"<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgid "<p>In this module, you can configure how many virtual desktops you want.</p>"
 msgstr ""
-"<p>In diesem Modul können Sie festlegen, wieviele virtuelle Desktops Sie "
+"<p>In diesem Modul können Sie festlegen, wie viele virtuelle Desktops Sie "
 "möchten.</p>"
 
 #: src/screens/ScrMultiple.py:62
@@ -163,9 +159,9 @@ msgid ""
 "the \"Left handed\" option below. You can also select default click "
 "behaviour.</p>"
 msgstr ""
-"<p align=\"left\">Wenn Sie Linkshänder sind ist es Ihnen möglicherweise "
+"<p align=\"left\">Wenn Sie Linkshänder sind, ist es Ihnen möglicherweise "
 "angenehmer, die Funktionen der rechten und linken Taste des Zeigegerätes "
-"umzutauschen. Dafür könne Sie weiter unten die Option \"Linkshänder\" "
+"umzutauschen. Dafür können Sie weiter unten die Option \"Linkshänder\" "
 "benutzen. Sie könne auch das Klickverhalten festlegen.</p>"
 
 #: src/screens/ScrMouse.py:42
@@ -338,8 +334,7 @@ msgid "Tasma"
 msgstr "Tasma"
 
 #: src/screens/goodbyedlg.py:193
-msgid ""
-"<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgid "<p>TASMA is a configuration application for Pardus Operating System. </p>"
 msgstr "<p>TASMA ist eine Konfigurationsanwendung von Pardus. </p>"
 
 #: src/screens/goodbyedlg.py:194 src/screens/goodbyedlg.py:196
@@ -418,3 +413,4 @@ msgstr "Instant Messenger"
 #: src/screens/photodlg.py:71
 msgid "Login Screen (KDM)"
 msgstr "Anmeldungs-Bildschirm (KDM)"
+
