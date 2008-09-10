@@ -13,9 +13,9 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-08 12:16+0300\n"
-"PO-Revision-Date: 2008-06-26 20:39+0200\n"
+"PO-Revision-Date: 2008-09-10 14:25+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"Language-Team: Deutsch\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,22 +89,18 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:115
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisch"
 
 # disable auf deutsch ?
 #: yali4/gui/Ui/autopartwidget.py:116
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Diese Option wird versuchen einen geeigneten freien Speicherplatz oder "
 "grössenänderbare Partition zu finden"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-#, fuzzy
 msgid "Try to use free space or resize current partitions"
-msgstr ""
-"Automatische Partitionierung versucht den freien Speicherplatz zu verwenden "
-"oder ändert die Grösse der aktuellen Partitionen"
+msgstr "Versuchen freien Speicherplatz zu verwenden oder die Grösse der verfügbaren Partitionen zu ändern"
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid ""
@@ -116,7 +112,6 @@ msgstr ""
 "verloren !"
 
 #: yali4/gui/Ui/autopartwidget.py:119
-#, fuzzy
 msgid "Delete all partitions"
 msgstr "Alle Partitionen löschen"
 
@@ -209,7 +204,7 @@ msgid ""
 "this is an optional step, we encourage you to do it to avoid any errors in "
 "installation."
 msgstr ""
-"Sie können die Integrität der Pakete auf der Installations-CD überprüfen."
+"Sie können die Integrität der Pakete auf der Installations-CD überprüfen. "
 "Obwohl dieser Vorgang optional ist, empfehlen wir Ihnen diesen Vorgang "
 "auszuführen, um jegliche Fehler in der Installation zu vermeiden."
 
@@ -384,7 +379,7 @@ msgstr "Alle Änderungen zurückstellen"
 
 #: yali4/gui/Ui/partedit.py:165
 msgid "Apply"
-msgstr "Anwenden"
+msgstr "Übernehmen"
 
 #: yali4/gui/Ui/partresize.py:82
 msgid ""
@@ -577,18 +572,17 @@ msgstr ""
 
 # habe uebersichtlich dazu gedichtet, ich hoffe es ist ok
 #: yali4/gui/descSlide.py:22
-#, fuzzy
 msgid ""
 "Tasma is the management and settings center of Pardus. Configuration "
 "operations including but not limited to adding a new user or hardware (e.g. "
 "printer, monitor) to the system, management of visual settings ranging from "
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
 msgstr ""
-"Tasma ist das Management- und Konfigurations-Zentrum von Pardus. Sie können "
-"mit einer einzigen, übersichtlichen Bedienoberfläche zum Beispiel Benutzer, "
-"Hardware (z.B. Drucker, Scanner) zum System hinzufügen, grafische "
-"Einstellungen konfigurieren, angefangen von Schreibtisch-Ikonen, bis zu "
-"Schrifttypen, etc..\n"
+"Tasma ist das Management- und Konfigurations-Zentrum von Pardus. "
+"Sie können Konfigurationen vornehmen, wie das Hinzufügen "
+"von neuen Benutzern oder von Hardware (z.B. Drucker, Monitor) zum Sytem, "
+"Management von optischen Einstellungen wie Desktop-Ikonen bishin zum "
+"Schriftarten- all das und weitere sind in Tasma untergebracht.\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
@@ -776,8 +770,7 @@ msgstr "Es gibt eine Anfrage für den selben Partitionierungstyp."
 
 #: yali4/gui/DiskWidgets.py:316
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Ausgewählte Partition <b>%(partition)s</b> wird <b>formatiert</b> als <b>%"
 "(fsType)s</b>."
@@ -1069,8 +1062,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr ""
-"<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
+msgstr "<font color=\"#FFF\">Bitte warten Sie, während die CD überprüft wird.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1175,8 +1167,7 @@ msgstr "System wird installiert..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
-"Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
+msgstr "Die Installation dauert ungefähr 30 Minuten, abhängig von der Hardware..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1351,8 +1342,8 @@ msgstr ""
 "Daher wird empohlen, ein Backup zu erstellen um jegliche Probleme zu "
 "vermeiden.\n"
 "</p>\n"
-"<p>Auto-Partitionierung wird die gewählte Festplatte/Partition "
-"automatischformatieren\n"
+"<p>Automatische Partitionierung wird die gewählte Festplatte/Partition "
+"automatisch formatieren\n"
 "und Pardus 2008 installieren. Wenn Sie möchten können Sie die "
 "Partitionierung manuell \n"
 "vornehmen oder eine neue Partition für die Pardus 2008-Installtion erstellen."
@@ -1537,8 +1528,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:171
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
+msgstr "Partition <b>%(newPartition)s</b> <b>ausgewählt</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:186
 msgid "Bootloader Settings"
@@ -1625,11 +1615,11 @@ msgstr ""
 "</p>\n"
 "<p>\n"
 "Um ein neuen  Benutzer zu erstellen, füllen Sie bitte das Forumlar aus und "
-"klicken auf \"Benutzer hinzufügen\".\n"
+"klicken auf \"Benutzer anlegen\".\n"
 "Wenn Sie möchten, dass sich ein Benutzer automatisch am System anmeldet, "
 "dann wählen Sie diesen Benutzer aus der Liste aus. Falls Sie \n"
 "ein Benutzer löschen möchten, dann wählen Sie den Benutzernamen von der "
-"Liste und klicken auf \"löschen\".\n"
+"Liste und klicken auf \"Gewählten Benutzer löschen\".\n"
 "Fahren Sie mit der Installation fort, nachdem Sie Ihre Auswahl getroffen "
 "haben.\n"
 "</p>\n"
@@ -2026,10 +2016,3 @@ msgstr "Swap"
 msgid "Archive Partition"
 msgstr "Archiv-Partition"
 
-#~ msgid "Automatically partition and format selected disk!"
-#~ msgstr "Gewähltes Laufwerk automatisch partitionieren und formatieren!"
-
-# disable auf deutsch ?
-#~ msgid "If there is no suitable partition this option will be disabled"
-#~ msgstr ""
-#~ "Falls keine geeignete Partition existiert, wird diese Option deaktiviert"
