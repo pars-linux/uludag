@@ -12,6 +12,7 @@
 from qt import *
 from kdecore import *
 from kdeui import *
+from kfile import KFileDialog
 
 import widgets
 from icons import getIconSet, icons
@@ -254,7 +255,7 @@ class Settings(QWidget):
             else:
                 self.remote = QLineEdit(self)
                 grid.addWidget(self.remote, 1, 1)
-        
+
         # Authentication
         if "auth" in link.modes:
             self.auth_client_cert = ""
@@ -274,57 +275,57 @@ class Settings(QWidget):
             self.security_mode_combo = QComboBox(0, self)
             self.security_mode_combo.insertItem(i18n("No authentication"))
             layoutLeft.addWidget(self.security_mode_label, 0, 0, Qt.AlignRight)
-            layoutLeft.addWidget(self.security_mode_combo, 0, 1)               
+            layoutLeft.addWidget(self.security_mode_combo, 0, 1)
 
             self.auth_mode_label = QLabel(i18n("Authentication:"), self)
-            self.auth_mode_combo = QComboBox(0, self)                   
+            self.auth_mode_combo = QComboBox(0, self)
             layoutLeft.addWidget(self.auth_mode_label, 1, 0, Qt.AlignRight)
-            layoutLeft.addWidget(self.auth_mode_combo, 1, 1)               
+            layoutLeft.addWidget(self.auth_mode_combo, 1, 1)
 
             self.auth_inner_label = QLabel(i18n("Inner Authentication:"), self)
-            self.auth_inner_combo = QComboBox(0, self)                         
-            layoutLeft.addWidget(self.auth_inner_label, 2, 0, Qt.AlignRight)   
-            layoutLeft.addWidget(self.auth_inner_combo, 2, 1)                  
+            self.auth_inner_combo = QComboBox(0, self)
+            layoutLeft.addWidget(self.auth_inner_label, 2, 0, Qt.AlignRight)
+            layoutLeft.addWidget(self.auth_inner_combo, 2, 1)
 
             grid.addLayout(layoutLeft, 0, 0)
             spacer1 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-            grid.addItem(spacer1, 1, 0)                                              
+            grid.addItem(spacer1, 1, 0)
 
             layoutRight = QGridLayout(None, 1, 1, 0, 6, "layoutRight")
 
             self.auth_anon_id_label = QLabel(i18n("Anonymous Identity:"), self)
-            self.auth_anon_id_line = QLineEdit(self)                           
+            self.auth_anon_id_line = QLineEdit(self)
             layoutRight.addWidget(self.auth_anon_id_label, 0, 0, Qt.AlignRight)
-            layoutRight.addWidget(self.auth_anon_id_line, 0, 1)                
+            layoutRight.addWidget(self.auth_anon_id_line, 0, 1)
 
             self.auth_user_label = QLabel(i18n("User/Identity"), self)
-            self.auth_user_line = QLineEdit(self)                     
+            self.auth_user_line = QLineEdit(self)
             layoutRight.addWidget(self.auth_user_label, 1, 0, Qt.AlignRight)
-            layoutRight.addWidget(self.auth_user_line, 1, 1)                
+            layoutRight.addWidget(self.auth_user_line, 1, 1)
 
             self.auth_passphrase_label = QLabel(i18n("Password:"), self)
-            self.auth_passphrase_line = QLineEdit(self)                 
-            self.auth_passphrase_line.setEchoMode(QLineEdit.Password)   
+            self.auth_passphrase_line = QLineEdit(self)
+            self.auth_passphrase_line.setEchoMode(QLineEdit.Password)
             layoutRight.addWidget(self.auth_passphrase_label, 2, 0, Qt.AlignRight)
-            layoutRight.addWidget(self.auth_passphrase_line, 2, 1)                
+            layoutRight.addWidget(self.auth_passphrase_line, 2, 1)
 
             self.auth_client_cert_label = QLabel(i18n("Client Certificate:"), self)
-            self.auth_client_cert_but = QPushButton(getIconSet("file", KIcon.Small), "",  self)
-            layoutRight.addWidget(self.auth_client_cert_label, 3, 0, Qt.AlignRight)            
-            layoutRight.addWidget(self.auth_client_cert_but, 3, 1)                             
+            self.auth_client_cert_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"),  self)
+            layoutRight.addWidget(self.auth_client_cert_label, 3, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_client_cert_but, 3, 1)
 
             self.auth_ca_cert_label = QLabel(i18n("CA Certificate:"), self)
-            self.auth_ca_cert_but = QPushButton(getIconSet("file", KIcon.Small), "", self)
-            layoutRight.addWidget(self.auth_ca_cert_label, 4, 0, Qt.AlignRight)           
-            layoutRight.addWidget(self.auth_ca_cert_but, 4, 1)                            
+            self.auth_ca_cert_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"), self)
+            layoutRight.addWidget(self.auth_ca_cert_label, 4, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_ca_cert_but, 4, 1)
 
             self.auth_private_key_label = QLabel(i18n("Private Key File:"), self)
-            self.auth_private_key_but = QPushButton(getIconSet("file", KIcon.Small), "", self)
-            layoutRight.addWidget(self.auth_private_key_label, 5, 0, Qt.AlignRight)           
-            layoutRight.addWidget(self.auth_private_key_but, 5, 1)                            
+            self.auth_private_key_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"), self)
+            layoutRight.addWidget(self.auth_private_key_label, 5, 0, Qt.AlignRight)
+            layoutRight.addWidget(self.auth_private_key_but, 5, 1)
 
             self.auth_private_key_pass_label = QLabel(i18n("Private Key Password:"), self)
-            self.auth_private_key_pass_line = QLineEdit(self)                             
+            self.auth_private_key_pass_line = QLineEdit(self)
             self.auth_private_key_pass_line.setEchoMode(QLineEdit.Password)
             layoutRight.addWidget(self.auth_private_key_pass_label, 6, 0, Qt.AlignRight)
             layoutRight.addWidget(self.auth_private_key_pass_line, 6, 1)
@@ -356,18 +357,21 @@ class Settings(QWidget):
         comlink.queryDevices(link.script)
 
     def getCaCert(self, parent=None):
-        self.auth_ca_cert = QFileDialog.getOpenFileName("", i18n("Certificates (*)"), parent, i18n("Select CA Certificate File"))
-        if self.auth_ca_cert != None:
+        i = KFileDialog.getOpenFileName("", i18n("*|Certificates"), parent, i18n("Select CA Certificate File"))
+        if i:
+            self.auth_ca_cert = i
             self.auth_ca_cert_but.setText(self.auth_ca_cert.section('/', -1))
 
     def getClientCert(self, parent=None):
-        self.auth_client_cert = QFileDialog.getOpenFileName("", i18n("Certificates (*)"), parent, i18n("Select Client Certificate File"))
-        if self.auth_client_cert != None:
+        i = KFileDialog.getOpenFileName("", i18n("*|Certificates"), parent, i18n("Select Client Certificate File"))
+        if i:
+            self.auth_client_cert = i
             self.auth_client_cert_but.setText(self.auth_client_cert.section('/', -1))
 
     def getPrivateKey(self, parent=None):
-        self.auth_private_key = QFileDialog.getOpenFileName("", i18n("Private Keys (*)"), parent, i18n("Select Private Key File"))
-        if self.auth_private_key != None:
+        i = KFileDialog.getOpenFileName("", i18n("*|Certificates"), parent, i18n("Select Private Key File"))
+        if i:
+            self.auth_private_key = i
             self.auth_private_key_but.setText(self.auth_private_key.section('/', -1))
 
     def cleanup(self):
@@ -462,15 +466,6 @@ class Settings(QWidget):
         self.auth_private_key_pass_line.setShown(true)
         self.auth_private_key_pass_label.setShown(true)
 
-    def phase2Toggle(self, i):
-        pass
-
-    def keyToggle(self, i):
-        pass
-
-    def eapToggle(self, i):
-        pass
-
     def slotSecurityToggle(self, i=None):
         if i != None:
             self.updateStack(i, self.auth_mode_combo.currentItem())
@@ -484,22 +479,22 @@ class Settings(QWidget):
         line = widgets.HLine(i18n("Network settings"), self, "network")
         lay.addSpacing(12)
         lay.addWidget(line)
-        
+
         grid = QGridLayout(3, 4, 6)
         lay.addLayout(grid)
         row = 0
-        
+
         self.group = QButtonGroup()
         self.connect(self.group, SIGNAL("clicked(int)"), self.slotNetToggle)
         self.r1 = QRadioButton(i18n("Automatic query (DHCP)"), self)
         self.group.insert(self.r1, 1)
         grid.addMultiCellWidget(self.r1, row, row, 0, 2)
         row += 1
-        
+
         self.r2 = QRadioButton(i18n("Manual"), self)
         grid.addWidget(self.r2, row, 0, Qt.AlignTop)
         self.group.insert(self.r2, 0)
-        
+
         lab = QLabel(i18n("Address:"), self)
         grid.addWidget(lab, row, 1, Qt.AlignRight)
         self.address = QLineEdit(self)
@@ -511,7 +506,7 @@ class Settings(QWidget):
         self.connect(self.auto_addr, SIGNAL("clicked()"), self.slotFields)
         grid.addWidget(self.auto_addr, row, 3)
         row += 1
-        
+
         lab = QLabel(i18n("Net mask:"), self)
         grid.addWidget(lab, row, 1, Qt.AlignRight)
         self.netmask = QComboBox(True, self)
@@ -522,7 +517,7 @@ class Settings(QWidget):
         self.netmask.setCurrentText("")
         grid.addWidget(self.netmask, row, 2)
         row += 1
-        
+
         lab = QLabel(i18n("Gateway:"), self)
         grid.addWidget(lab, row, 1, Qt.AlignRight)
         self.gateway = QLineEdit(self)
@@ -531,11 +526,11 @@ class Settings(QWidget):
         self.auto_gate = QCheckBox(i18n("Custom"), self)
         self.connect(self.auto_gate, SIGNAL("clicked()"), self.slotFields)
         grid.addWidget(self.auto_gate, row, 3)
-        
+
         line = widgets.HLine(i18n("Name servers"), self, "kaddressbook")
         lay.addSpacing(12)
         lay.addWidget(line)
-        
+
         hb = QHBox(self)
         lay.addWidget(hb)
         self.dns_group = QButtonGroup()
@@ -546,9 +541,9 @@ class Settings(QWidget):
         self.dns3 = QRadioButton(i18n("Custom"), hb)
         self.dns_group.insert(self.dns3, 2)
         self.connect(self.dns_group, SIGNAL("clicked(int)"), self.slotNetToggle)
-        
+
         self.dns_text = QLineEdit(hb)
-    
+
     def setValues(self):
         conn = self.conn
         self.device_items = []
