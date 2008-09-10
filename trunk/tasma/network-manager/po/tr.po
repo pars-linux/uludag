@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-04 12:23+0300\n"
+"POT-Creation-Date: 2008-09-10 13:08+0300\n"
 "PO-Revision-Date: 2008-06-20 10:17+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team:  <tr@li.org>\n"
@@ -21,8 +21,9 @@ msgstr ""
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi yapmaya yetkili değilsiniz."
 
-#: comariface.py:218 autoswitch.py:33 autoswitch.py:35 network-manager.py:35
-#: network-manager.py:110 network-applet.py:615 network-applet.py:629
+#: comariface.py:218 network-applet.py:615 network-applet.py:629
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110
 msgid "Network Manager"
 msgstr "Ağ Yöneticisi"
 
@@ -45,6 +46,94 @@ msgstr ""
 #: comariface.py:408
 msgid "new connection"
 msgstr "yeni bağlantı"
+
+#: network-applet.py:399
+msgid "Firewall..."
+msgstr "Güvenlik Duvarı..."
+
+#: network-applet.py:400
+msgid "Edit Connections..."
+msgstr "Bağlantıları Düzenle..."
+
+#: network-applet.py:401 browser.py:417
+msgid "Connect Automatically"
+msgstr "Otomatik Bağlan"
+
+#: network-applet.py:403
+msgid "Show Notifications"
+msgstr "Uyarıları Göster"
+
+#: network-applet.py:405
+msgid "Icon Per Device"
+msgstr "Her Aygıtın Kendi Simgesi"
+
+#: network-applet.py:406
+msgid "Single Icon"
+msgstr "Tek Simge"
+
+#: network-applet.py:477
+msgid "Should network-applet start automatically when you login?"
+msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
+
+#: network-applet.py:592
+msgid "Connecting to <b>%1</b> ..."
+msgstr "<b>%1</b> profiline bağlanıyor..."
+
+#: network-applet.py:597
+msgid "Connected to <b>%1</b>"
+msgstr "<b>%1</b> profiline bağlandı"
+
+#: network-applet.py:603
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr ""
+"Bağlantı başarısız \n"
+"<b>%1</b>"
+
+#: network-applet.py:605
+msgid "You are offline now"
+msgstr "Şu anda bağlı değilsiniz"
+
+#: network-applet.py:661 browser.py:407
+msgid "New connection"
+msgstr "Yeni bağlantı"
+
+#: network-applet.py:699
+msgid "Network Applet"
+msgstr "Ağ Programcığı"
+
+#: nameconf.py:28 browser.py:412
+msgid "Name Service Settings"
+msgstr "İsim Servisi Ayarları"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Makina adı:"
+
+#: nameconf.py:45 connection.py:530
+msgid "Name servers"
+msgstr "İsim sunucuları"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Yukarı"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Aşağı"
+
+#: nameconf.py:171
+msgid "Add Name Server"
+msgstr "İsim Sunucusu Ekle"
+
+#: nameconf.py:172
+msgid "Name server:"
+msgstr "İsim sunucusu:"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -70,281 +159,169 @@ msgstr "Ağ programlarını kurun!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
 
-#: autoswitch.py:63
-msgid "Scanning..."
-msgstr "Taranıyor..."
-
-#: autoswitch.py:84
-#, python-format
-msgid "Profile <b>%s</b> matched."
-msgstr "Profil <b>%s</b> bulundu."
-
-#: autoswitch.py:88
-msgid "There is no matched profile"
-msgstr "Eşleşen bir profil bulunamadı"
-
-#: autoswitch.py:90
-msgid "No scan result"
-msgstr "Herhangi bir ağ bulunamadı"
-
-#: autoswitch.py:100
-#, python-format
-msgid "Connecting to <b>%s</b> ..."
-msgstr "<b>%s</b> profiline bağlanıyor..."
-
-#: browser.py:52
-msgid "Name:"
-msgstr "İsim:"
-
-#: browser.py:59 connection.py:265
-msgid "Authentication"
-msgstr "Kimlik doğrulama"
-
-#: browser.py:62 connection.py:503
-msgid "Address:"
-msgstr "Adres:"
-
-#: browser.py:65 connection.py:544
-msgid "Automatic"
-msgstr "Otomatik"
-
-#: browser.py:72
-msgid "Mod:"
-msgstr "Mod:"
-
-#: browser.py:101
-msgid "Turn on/off connection"
-msgstr "Bağlantıyı aç/kapa"
-
-#: browser.py:114
-msgid "Configure connection"
-msgstr "Bağlantıyı ayarla"
-
-#: browser.py:117
-msgid "Delete connection"
-msgstr "Bağlantıyı sil"
-
-#: browser.py:139
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"'%s'\n"
-"bağlantısını sileyim mi?"
-
-#: browser.py:140
-msgid "Delete connection?"
-msgstr "Bağlantıyı sil?"
-
-#: browser.py:228
-msgid "No device!"
-msgstr "Aygıt yok!"
-
-#: browser.py:407 network-applet.py:661
-msgid "New connection"
-msgstr "Yeni bağlantı"
-
-#: browser.py:412 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "İsim Servisi Ayarları"
-
-#: browser.py:417 network-applet.py:401
-msgid "Connect Automatically"
-msgstr "Otomatik Bağlan"
-
-#: browser.py:423
-msgid "Share Connection"
-msgstr "Bağlantı Paylaştır"
-
-#: browser.py:442
-msgid "Try Auto Connect on startup"
-msgstr "Açılışta Otomatik Bağlanmayı dene"
-
-#: browser.py:499
-msgid "Network Connections Help"
-msgstr "Ağ Bağlantıları Yardımı"
-
-#: connection.py:27
+#: connection.py:28
 msgid "Channel"
 msgstr "Kanal"
 
-#: connection.py:28
+#: connection.py:29
 msgid "Mode"
 msgstr "Mod"
 
-#: connection.py:29
+#: connection.py:30
 msgid "Protocol"
 msgstr "Protokol"
 
-#: connection.py:41
+#: connection.py:42
 msgid "No remotes found"
 msgstr "Bağlantı noktası bulunamadı"
 
-#: connection.py:61
+#: connection.py:62
 msgid "<hidden>"
 msgstr "<gizli>"
 
-#: connection.py:99
+#: connection.py:100
 msgid "Scan results:"
 msgstr "Tarama sonuçları:"
 
-#: connection.py:118
+#: connection.py:119
 msgid "Scan again"
 msgstr "Yeniden tara"
 
-#: connection.py:120
+#: connection.py:121
 msgid "Use"
 msgstr "Kullan"
 
-#: connection.py:198
+#: connection.py:199
 msgid "Connection name:"
 msgstr "Bağlantı adı:"
 
-#: connection.py:205
+#: connection.py:206
 msgid "Connection"
 msgstr "Bağlantı"
 
-#: connection.py:211
+#: connection.py:212
 msgid "Device:"
 msgstr "Aygıt:"
 
-#: connection.py:217
+#: connection.py:218
 msgid "Select"
 msgstr "Aygıt seç"
 
-#: connection.py:225
+#: connection.py:226
 msgid "Device Mode"
 msgstr "Aygıt Modu:"
 
-#: connection.py:231
+#: connection.py:232
 msgid "Mode:"
 msgstr "Mod:"
 
-#: connection.py:249
+#: connection.py:250
 msgid "Scan"
 msgstr "Tara"
 
-#: connection.py:273
+#: connection.py:266 browser.py:59
+msgid "Authentication"
+msgstr "Kimlik doğrulama"
+
+#: connection.py:274
 msgid "Security:"
 msgstr "Güvenlik:"
 
-#: connection.py:275
+#: connection.py:276
 msgid "No authentication"
 msgstr "Doğrulama yok"
 
-#: connection.py:279
+#: connection.py:280
 msgid "Authentication:"
 msgstr "Kimlik Doğrulama:"
 
-#: connection.py:284
+#: connection.py:285
 msgid "Inner Authentication:"
 msgstr "İç Doğrulama:"
 
-#: connection.py:295
+#: connection.py:296
 msgid "Anonymous Identity:"
 msgstr "Anonim Kimlik:"
 
-#: connection.py:300
+#: connection.py:301
 msgid "User/Identity"
 msgstr "Kullanıcı/Kimlik"
 
-#: connection.py:305
+#: connection.py:306
 msgid "Password:"
 msgstr "Parola:"
 
-#: connection.py:311
+#: connection.py:312
 msgid "Client Certificate:"
 msgstr "İstemci Sertifikası"
 
-#: connection.py:316
+#: connection.py:313 connection.py:318 connection.py:323
+msgid "browse"
+msgstr ""
+
+#: connection.py:317
 msgid "CA Certificate:"
 msgstr "CA Sertifikası:"
 
-#: connection.py:321
+#: connection.py:322
 msgid "Private Key File:"
 msgstr "Özel Anahtar Dosyası:"
 
-#: connection.py:326
+#: connection.py:327
 msgid "Private Key Password:"
 msgstr "Özel Anahtar Parolası:"
 
-#: connection.py:359 connection.py:364
-msgid "Certificates (*)"
-msgstr "Sertifikalar (*)"
+#: connection.py:360 connection.py:366 connection.py:372
+msgid "*|Certificates"
+msgstr "*|Sertifikalar"
 
-#: connection.py:359
+#: connection.py:360
 msgid "Select CA Certificate File"
 msgstr "CA Sertifika Dosyası Seçin"
 
-#: connection.py:364
+#: connection.py:366
 msgid "Select Client Certificate File"
 msgstr "İstemci Sertifika Dosyası Seçin"
 
-#: connection.py:369
-msgid "Private Keys (*)"
-msgstr "Özel Anahtarlar (*)"
-
-#: connection.py:369
+#: connection.py:372
 msgid "Select Private Key File"
 msgstr "Özel Anahtar Dosyası Seçin"
 
-#: connection.py:484
+#: connection.py:479
 msgid "Network settings"
 msgstr "Ağ ayarları"
 
-#: connection.py:494
+#: connection.py:489
 msgid "Automatic query (DHCP)"
 msgstr "Otomatik ayar (DHCP)"
 
-#: connection.py:499
+#: connection.py:494
 msgid "Manual"
 msgstr "Elle ayarla"
 
-#: connection.py:510 connection.py:531 connection.py:546
+#: connection.py:498 browser.py:62
+msgid "Address:"
+msgstr "Adres:"
+
+#: connection.py:505 connection.py:526 connection.py:541
 msgid "Custom"
 msgstr "Özel"
 
-#: connection.py:515
+#: connection.py:510
 msgid "Net mask:"
 msgstr "Ağ maskesi:"
 
-#: connection.py:526
+#: connection.py:521
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
 
-#: connection.py:535 nameconf.py:45
-msgid "Name servers"
-msgstr "İsim sunucuları"
+#: connection.py:539 browser.py:65
+msgid "Automatic"
+msgstr "Otomatik"
 
-#: connection.py:815
+#: connection.py:810
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
-
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Bilgisayar"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Makina adı:"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Yukarı"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Aşağı"
-
-#: nameconf.py:171
-msgid "Add Name Server"
-msgstr "İsim Sunucusu Ekle"
-
-#: nameconf.py:172
-msgid "Name server:"
-msgstr "İsim sunucusu:"
 
 #: connsharing.py:99
 msgid "Internet Connection Sharing"
@@ -406,6 +383,78 @@ msgstr "Internet'e açılan arayüz IP alamadı"
 msgid "IP address not found"
 msgstr "IP adresi bululanamadı"
 
+#: autoswitch.py:63
+msgid "Scanning..."
+msgstr "Taranıyor..."
+
+#: autoswitch.py:84
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr "Profil <b>%s</b> bulundu."
+
+#: autoswitch.py:88
+msgid "There is no matched profile"
+msgstr "Eşleşen bir profil bulunamadı"
+
+#: autoswitch.py:90
+msgid "No scan result"
+msgstr "Herhangi bir ağ bulunamadı"
+
+#: autoswitch.py:100
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "<b>%s</b> profiline bağlanıyor..."
+
+#: browser.py:52
+msgid "Name:"
+msgstr "İsim:"
+
+#: browser.py:72
+msgid "Mod:"
+msgstr "Mod:"
+
+#: browser.py:101
+msgid "Turn on/off connection"
+msgstr "Bağlantıyı aç/kapa"
+
+#: browser.py:114
+msgid "Configure connection"
+msgstr "Bağlantıyı ayarla"
+
+#: browser.py:117
+msgid "Delete connection"
+msgstr "Bağlantıyı sil"
+
+#: browser.py:139
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"'%s'\n"
+"bağlantısını sileyim mi?"
+
+#: browser.py:140
+msgid "Delete connection?"
+msgstr "Bağlantıyı sil?"
+
+#: browser.py:228
+msgid "No device!"
+msgstr "Aygıt yok!"
+
+#: browser.py:423
+msgid "Share Connection"
+msgstr "Bağlantı Paylaştır"
+
+#: browser.py:442
+msgid "Try Auto Connect on startup"
+msgstr "Açılışta Otomatik Bağlanmayı dene"
+
+#: browser.py:499
+msgid "Network Connections Help"
+msgstr "Ağ Bağlantıları Yardımı"
+
 #: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Sadece otomatik bağlanmayı dene"
@@ -414,53 +463,8 @@ msgstr "Sadece otomatik bağlanmayı dene"
 msgid "Network manager module is already started!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
-#: network-applet.py:399
-msgid "Firewall..."
-msgstr "Güvenlik Duvarı..."
-
-#: network-applet.py:400
-msgid "Edit Connections..."
-msgstr "Bağlantıları Düzenle..."
-
-#: network-applet.py:403
-msgid "Show Notifications"
-msgstr "Uyarıları Göster"
-
-#: network-applet.py:405
-msgid "Icon Per Device"
-msgstr "Her Aygıtın Kendi Simgesi"
-
-#: network-applet.py:406
-msgid "Single Icon"
-msgstr "Tek Simge"
-
-#: network-applet.py:477
-msgid "Should network-applet start automatically when you login?"
-msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
-
-#: network-applet.py:592
-msgid "Connecting to <b>%1</b> ..."
-msgstr "<b>%1</b> profiline bağlanıyor..."
-
-#: network-applet.py:597
-msgid "Connected to <b>%1</b>"
-msgstr "<b>%1</b> profiline bağlandı"
-
-#: network-applet.py:603
-msgid ""
-"Connection failed \n"
-"<b>%1</b>"
-msgstr ""
-"Bağlantı başarısız \n"
-"<b>%1</b>"
-
-#: network-applet.py:605
-msgid "You are offline now"
-msgstr "Şu anda bağlı değilsiniz"
-
-#: network-applet.py:699
-msgid "Network Applet"
-msgstr "Ağ Programcığı"
+#~ msgid "Private Keys (*)"
+#~ msgstr "Özel Anahtarlar (*)"
 
 #~ msgid "User name:"
 #~ msgstr "Kullanıcı adı:"

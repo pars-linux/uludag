@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-04 12:23+0300\n"
+"POT-Creation-Date: 2008-09-10 13:08+0300\n"
 "PO-Revision-Date: 2008-06-18 00:00+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -23,8 +23,9 @@ msgstr ""
 msgid "You are not authorized for this operation."
 msgstr ""
 
-#: comariface.py:218 autoswitch.py:33 autoswitch.py:35 network-manager.py:35
-#: network-manager.py:110 network-applet.py:615 network-applet.py:629
+#: comariface.py:218 network-applet.py:615 network-applet.py:629
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110
 msgid "Network Manager"
 msgstr "Netzwerk-Manager"
 
@@ -51,6 +52,95 @@ msgstr ""
 msgid "new connection"
 msgstr "neue Verbindung"
 
+#: network-applet.py:399
+msgid "Firewall..."
+msgstr "Firewall..."
+
+#: network-applet.py:400
+msgid "Edit Connections..."
+msgstr "Verbindungen bearbeiten..."
+
+#: network-applet.py:401 browser.py:417
+msgid "Connect Automatically"
+msgstr "Automatisch verbinden"
+
+#: network-applet.py:403
+msgid "Show Notifications"
+msgstr "Meldungen anzeigen"
+
+#: network-applet.py:405
+msgid "Icon Per Device"
+msgstr "Ikon je Gerät"
+
+#: network-applet.py:406
+msgid "Single Icon"
+msgstr "Einzelnes Ikon"
+
+#: network-applet.py:477
+msgid "Should network-applet start automatically when you login?"
+msgstr ""
+"Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
+
+#: network-applet.py:592
+msgid "Connecting to <b>%1</b> ..."
+msgstr "Verbindungsaufbau zu <b>%1</b> ..."
+
+#: network-applet.py:597
+msgid "Connected to <b>%1</b>"
+msgstr "Verbunden mit <b>%1</b>"
+
+#: network-applet.py:603
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr ""
+"Verbindung fehlgeschlagen \n"
+"<b>%1</b>"
+
+#: network-applet.py:605
+msgid "You are offline now"
+msgstr "Sie sind momentan offline"
+
+#: network-applet.py:661 browser.py:407
+msgid "New connection"
+msgstr "Neue Verbindung"
+
+#: network-applet.py:699
+msgid "Network Applet"
+msgstr "Netzwerk-Applet"
+
+#: nameconf.py:28 browser.py:412
+msgid "Name Service Settings"
+msgstr "Name Service-Einstellungen"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Computer"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Hostname:"
+
+#: nameconf.py:45 connection.py:530
+msgid "Name servers"
+msgstr "Name-Server"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Nach oben"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Nach unten"
+
+#: nameconf.py:171
+msgid "Add Name Server"
+msgstr "Name-Server hinzufügen"
+
+#: nameconf.py:172
+msgid "Name server:"
+msgstr "Name-Server:"
+
 #: newconn.py:26
 msgid "Create a new connection"
 msgstr "Eine neue Verbindung erstellen"
@@ -75,288 +165,173 @@ msgstr "Netzwerk-Pakete installieren!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Bisher ist kein Paket mit COMAR-Netzwerkskripten installiert."
 
-#: autoswitch.py:63
-msgid "Scanning..."
-msgstr "Am suchen..."
-
-#: autoswitch.py:84
-#, python-format
-msgid "Profile <b>%s</b> matched."
-msgstr "Profil <b>%s</b> zusammengestellt."
-
-#: autoswitch.py:88
-msgid "There is no matched profile"
-msgstr "Es gibt keine zusammenpassende Profile"
-
-#: autoswitch.py:90
-msgid "No scan result"
-msgstr "Keine Suchergebnisse"
-
-#: autoswitch.py:100
-#, python-format
-msgid "Connecting to <b>%s</b> ..."
-msgstr "Verbindungsaufbau zu <b>%s</b> ..."
-
-#: browser.py:52
-msgid "Name:"
-msgstr "Name:"
-
-#: browser.py:59 connection.py:265
-msgid "Authentication"
-msgstr "Authentifizierung"
-
-#: browser.py:62 connection.py:503
-msgid "Address:"
-msgstr "Adresse:"
-
-#: browser.py:65 connection.py:544
-msgid "Automatic"
-msgstr "Automatisch"
-
-#: browser.py:72
-#, fuzzy
-msgid "Mod:"
-msgstr "Modus:"
-
-#: browser.py:101
-msgid "Turn on/off connection"
-msgstr "Verbindung de-/aktivieren"
-
-#: browser.py:114
-msgid "Configure connection"
-msgstr "Verbindung konfigurieren"
-
-#: browser.py:117
-msgid "Delete connection"
-msgstr "Verbindung löschen"
-
-#: browser.py:139
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"Soll die Verbindung\n"
-"'%s'\n"
-"gelöscht werden?"
-
-#: browser.py:140
-msgid "Delete connection?"
-msgstr "Verbindung löschen?"
-
-#: browser.py:228
-msgid "No device!"
-msgstr "Kein Gerät!"
-
-#: browser.py:407 network-applet.py:661
-msgid "New connection"
-msgstr "Neue Verbindung"
-
-#: browser.py:412 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "Name Service-Einstellungen"
-
-#: browser.py:417 network-applet.py:401
-msgid "Connect Automatically"
-msgstr "Automatisch verbinden"
-
-#: browser.py:423
-#, fuzzy
-msgid "Share Connection"
-msgstr "Verbindung"
-
-#: browser.py:442
-msgid "Try Auto Connect on startup"
-msgstr "Beim Systemstart versuchen die Verbindung automatisch herzustellen"
-
-#: browser.py:499
-msgid "Network Connections Help"
-msgstr "Netzwerkverbindungen-Hilfe"
-
-#: connection.py:27
+#: connection.py:28
 msgid "Channel"
 msgstr "Kanal"
 
-#: connection.py:28
+#: connection.py:29
 msgid "Mode"
 msgstr "Modus"
 
-#: connection.py:29
+#: connection.py:30
 msgid "Protocol"
 msgstr "Protokoll"
 
-#: connection.py:41
+#: connection.py:42
 msgid "No remotes found"
 msgstr "Keine Verbindungspunkte gefunden"
 
-#: connection.py:61
+#: connection.py:62
 msgid "<hidden>"
 msgstr "<versteckt>"
 
-#: connection.py:99
+#: connection.py:100
 msgid "Scan results:"
 msgstr "Suchergebnisse:"
 
-#: connection.py:118
+#: connection.py:119
 msgid "Scan again"
 msgstr "Erneut suchen"
 
-#: connection.py:120
+#: connection.py:121
 msgid "Use"
 msgstr "Verwenden"
 
-#: connection.py:198
+#: connection.py:199
 msgid "Connection name:"
 msgstr "Verbindungsname:"
 
-#: connection.py:205
+#: connection.py:206
 msgid "Connection"
 msgstr "Verbindung"
 
-#: connection.py:211
+#: connection.py:212
 msgid "Device:"
 msgstr "Gerät:"
 
-#: connection.py:217
+#: connection.py:218
 msgid "Select"
 msgstr "Auswählen"
 
-#: connection.py:225
+#: connection.py:226
 #, fuzzy
 msgid "Device Mode"
 msgstr "Gerät:"
 
-#: connection.py:231
+#: connection.py:232
 msgid "Mode:"
 msgstr "Modus:"
 
-#: connection.py:249
+#: connection.py:250
 msgid "Scan"
 msgstr "Suchen"
 
-#: connection.py:273
+#: connection.py:266 browser.py:59
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+#: connection.py:274
 msgid "Security:"
 msgstr ""
 
-#: connection.py:275
+#: connection.py:276
 msgid "No authentication"
 msgstr "Keine Authentifizierung"
 
-#: connection.py:279
+#: connection.py:280
 #, fuzzy
 msgid "Authentication:"
 msgstr "Authentifizierung"
 
-#: connection.py:284
+#: connection.py:285
 #, fuzzy
 msgid "Inner Authentication:"
 msgstr "Authentifizierung"
 
-#: connection.py:295
+#: connection.py:296
 msgid "Anonymous Identity:"
 msgstr ""
 
-#: connection.py:300
+#: connection.py:301
 msgid "User/Identity"
 msgstr ""
 
-#: connection.py:305
+#: connection.py:306
 msgid "Password:"
 msgstr "Passwort:"
 
-#: connection.py:311
+#: connection.py:312
 msgid "Client Certificate:"
 msgstr ""
 
-#: connection.py:316
+#: connection.py:313 connection.py:318 connection.py:323
+msgid "browse"
+msgstr ""
+
+#: connection.py:317
 msgid "CA Certificate:"
 msgstr ""
 
-#: connection.py:321
+#: connection.py:322
 msgid "Private Key File:"
 msgstr ""
 
-#: connection.py:326
+#: connection.py:327
 #, fuzzy
 msgid "Private Key Password:"
 msgstr "Passwort:"
 
-#: connection.py:359 connection.py:364
-msgid "Certificates (*)"
-msgstr ""
+#: connection.py:360 connection.py:366 connection.py:372
+msgid "*|Certificates"
+msgstr "*|Bescheinigungen"
 
-#: connection.py:359
+#: connection.py:360
 msgid "Select CA Certificate File"
 msgstr ""
 
-#: connection.py:364
+#: connection.py:366
 msgid "Select Client Certificate File"
 msgstr ""
 
-#: connection.py:369
-msgid "Private Keys (*)"
-msgstr ""
-
-#: connection.py:369
+#: connection.py:372
 msgid "Select Private Key File"
 msgstr ""
 
-#: connection.py:484
+#: connection.py:479
 msgid "Network settings"
 msgstr "Netzwerkeinstellungen"
 
-#: connection.py:494
+#: connection.py:489
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: connection.py:499
+#: connection.py:494
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:510 connection.py:531 connection.py:546
+#: connection.py:498 browser.py:62
+msgid "Address:"
+msgstr "Adresse:"
+
+#: connection.py:505 connection.py:526 connection.py:541
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: connection.py:515
+#: connection.py:510
 msgid "Net mask:"
 msgstr "Netzmaske:"
 
-#: connection.py:526
+#: connection.py:521
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:535 nameconf.py:45
-msgid "Name servers"
-msgstr "Name-Server"
+#: connection.py:539 browser.py:65
+msgid "Automatic"
+msgstr "Automatisch"
 
-#: connection.py:815
+#: connection.py:810
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
-
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Computer"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Hostname:"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Nach oben"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Nach unten"
-
-#: nameconf.py:171
-msgid "Add Name Server"
-msgstr "Name-Server hinzufügen"
-
-#: nameconf.py:172
-msgid "Name server:"
-msgstr "Name-Server:"
 
 #: connsharing.py:99
 msgid "Internet Connection Sharing"
@@ -419,6 +394,81 @@ msgstr ""
 msgid "IP address not found"
 msgstr "Keine Verbindungspunkte gefunden"
 
+#: autoswitch.py:63
+msgid "Scanning..."
+msgstr "Am suchen..."
+
+#: autoswitch.py:84
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr "Profil <b>%s</b> zusammengestellt."
+
+#: autoswitch.py:88
+msgid "There is no matched profile"
+msgstr "Es gibt keine zusammenpassende Profile"
+
+#: autoswitch.py:90
+msgid "No scan result"
+msgstr "Keine Suchergebnisse"
+
+#: autoswitch.py:100
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "Verbindungsaufbau zu <b>%s</b> ..."
+
+#: browser.py:52
+msgid "Name:"
+msgstr "Name:"
+
+#: browser.py:72
+#, fuzzy
+msgid "Mod:"
+msgstr "Modus:"
+
+#: browser.py:101
+msgid "Turn on/off connection"
+msgstr "Verbindung de-/aktivieren"
+
+#: browser.py:114
+msgid "Configure connection"
+msgstr "Verbindung konfigurieren"
+
+#: browser.py:117
+msgid "Delete connection"
+msgstr "Verbindung löschen"
+
+#: browser.py:139
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"Soll die Verbindung\n"
+"'%s'\n"
+"gelöscht werden?"
+
+#: browser.py:140
+msgid "Delete connection?"
+msgstr "Verbindung löschen?"
+
+#: browser.py:228
+msgid "No device!"
+msgstr "Kein Gerät!"
+
+#: browser.py:423
+#, fuzzy
+msgid "Share Connection"
+msgstr "Verbindung"
+
+#: browser.py:442
+msgid "Try Auto Connect on startup"
+msgstr "Beim Systemstart versuchen die Verbindung automatisch herzustellen"
+
+#: browser.py:499
+msgid "Network Connections Help"
+msgstr "Netzwerkverbindungen-Hilfe"
+
 #: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Versuchen automatisch zu verbinden"
@@ -426,55 +476,6 @@ msgstr "Versuchen automatisch zu verbinden"
 #: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
-
-#: network-applet.py:399
-msgid "Firewall..."
-msgstr "Firewall..."
-
-#: network-applet.py:400
-msgid "Edit Connections..."
-msgstr "Verbindungen bearbeiten..."
-
-#: network-applet.py:403
-msgid "Show Notifications"
-msgstr "Meldungen anzeigen"
-
-#: network-applet.py:405
-msgid "Icon Per Device"
-msgstr "Ikon je Gerät"
-
-#: network-applet.py:406
-msgid "Single Icon"
-msgstr "Einzelnes Ikon"
-
-#: network-applet.py:477
-msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
-
-#: network-applet.py:592
-msgid "Connecting to <b>%1</b> ..."
-msgstr "Verbindungsaufbau zu <b>%1</b> ..."
-
-#: network-applet.py:597
-msgid "Connected to <b>%1</b>"
-msgstr "Verbunden mit <b>%1</b>"
-
-#: network-applet.py:603
-msgid ""
-"Connection failed \n"
-"<b>%1</b>"
-msgstr ""
-"Verbindung fehlgeschlagen \n"
-"<b>%1</b>"
-
-#: network-applet.py:605
-msgid "You are offline now"
-msgstr "Sie sind momentan offline"
-
-#: network-applet.py:699
-msgid "Network Applet"
-msgstr "Netzwerk-Applet"
 
 #~ msgid "User name:"
 #~ msgstr "Benutzername:"
