@@ -1,0 +1,36 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>smoltPrivacyWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>smoltPrivacyWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>600</width>
+            <height>480</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Smolt Privacy Popup</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTextEdit" row="0" column="0">
+            <property name="name">
+                <cstring>privacyTextEdit</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
