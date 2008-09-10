@@ -11,10 +11,9 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-10 13:08+0300\n"
-"PO-Revision-Date: 2008-06-13 23:44+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"PO-Revision-Date: 2008-09-10 20:22+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,7 +22,7 @@ msgstr ""
 
 #: comariface.py:214
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "U bent niet geautoriseerd voor deze handeling."
 
 #: comariface.py:218 network-applet.py:615 network-applet.py:629
 #: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
@@ -219,9 +218,8 @@ msgid "Select"
 msgstr "Selecteer"
 
 #: connection.py:226
-#, fuzzy
 msgid "Device Mode"
-msgstr "Apparaat:"
+msgstr "Apparaat modus"
 
 #: connection.py:232
 msgid "Mode:"
@@ -237,29 +235,27 @@ msgstr "Identificatie"
 
 #: connection.py:274
 msgid "Security:"
-msgstr ""
+msgstr "Beveiliging:"
 
 #: connection.py:276
 msgid "No authentication"
 msgstr "Geen identificatie"
 
 #: connection.py:280
-#, fuzzy
 msgid "Authentication:"
-msgstr "Identificatie"
+msgstr "Autorisatie:"
 
 #: connection.py:285
-#, fuzzy
 msgid "Inner Authentication:"
-msgstr "Identificatie"
+msgstr "Binnen autorisatie:"
 
 #: connection.py:296
 msgid "Anonymous Identity:"
-msgstr ""
+msgstr "Anonieme identiteit:"
 
 #: connection.py:301
 msgid "User/Identity"
-msgstr ""
+msgstr "Gebruiker/identiteit"
 
 #: connection.py:306
 msgid "Password:"
@@ -267,40 +263,39 @@ msgstr "Wachtwoord:"
 
 #: connection.py:312
 msgid "Client Certificate:"
-msgstr ""
+msgstr "Cliënt certificaat:"
 
 #: connection.py:313 connection.py:318 connection.py:323
 msgid "browse"
-msgstr ""
+msgstr "Blader"
 
 #: connection.py:317
 msgid "CA Certificate:"
-msgstr ""
+msgstr "CA certificaat:"
 
 #: connection.py:322
 msgid "Private Key File:"
-msgstr ""
+msgstr "Privé sleutelbestand:"
 
 #: connection.py:327
-#, fuzzy
 msgid "Private Key Password:"
-msgstr "Wachtwoord:"
+msgstr "Privé sleutelwachtwoord:"
 
 #: connection.py:360 connection.py:366 connection.py:372
 msgid "*|Certificates"
-msgstr ""
+msgstr "*|Certificaten"
 
 #: connection.py:360
 msgid "Select CA Certificate File"
-msgstr ""
+msgstr "Selecteer CA certificaat bestand"
 
 #: connection.py:366
 msgid "Select Client Certificate File"
-msgstr ""
+msgstr "Selecteer cliënt certificaat bestand"
 
 #: connection.py:372
 msgid "Select Private Key File"
-msgstr ""
+msgstr "Selecteer privé sleutelbestand"
 
 #: connection.py:479
 msgid "Network settings"
@@ -341,25 +336,23 @@ msgstr "Configureer netwerkverbinding"
 
 #: connsharing.py:99
 msgid "Internet Connection Sharing"
-msgstr ""
+msgstr "Internetverbinding delen"
 
 #: connsharing.py:100
-#, fuzzy
 msgid "Share Internet Connection"
-msgstr "Nieuwe verbinding maken"
+msgstr "Deel internetverbinding"
 
 #: connsharing.py:102
 msgid "Interface that goes to internet"
-msgstr ""
+msgstr "Interface die op internet gaat"
 
 #: connsharing.py:103
-#, fuzzy
 msgid "Interface that will share connection"
-msgstr "Nieuwe verbinding maken"
+msgstr "Interface welk verbinding deelt"
 
 #: connsharing.py:119
 msgid "D-Bus Error"
-msgstr ""
+msgstr "D-Bus error"
 
 #: connsharing.py:123
 msgid "COMAR Error"
@@ -367,7 +360,7 @@ msgstr "COMAR fout"
 
 #: connsharing.py:127
 msgid "Changing States of Interfaces Failed"
-msgstr ""
+msgstr "Veranderende statussen van interface mislukt"
 
 #: connsharing.py:129
 msgid "DHCP Server Error"
@@ -396,9 +389,8 @@ msgid "You do not have an ip address for the interface that goes to internet"
 msgstr ""
 
 #: connsharing.py:267
-#, fuzzy
 msgid "IP address not found"
-msgstr "Geen contacten gevonden"
+msgstr "IP adres niet gevonden"
 
 #: autoswitch.py:63
 msgid "Scanning..."
@@ -427,9 +419,8 @@ msgid "Name:"
 msgstr "Naam:"
 
 #: browser.py:72
-#, fuzzy
 msgid "Mod:"
-msgstr "Modus:"
+msgstr "Mod:"
 
 #: browser.py:101
 msgid "Turn on/off connection"
@@ -468,9 +459,8 @@ msgid "No device!"
 msgstr "Geen apparaat!"
 
 #: browser.py:423
-#, fuzzy
 msgid "Share Connection"
-msgstr "Verbinding"
+msgstr "Deel verbinding"
 
 #: browser.py:442
 msgid "Try Auto Connect on startup"
@@ -488,5 +478,3 @@ msgstr "Probeer automatisch te verbinden"
 msgid "Network manager module is already started!"
 msgstr "Netwerkbeheer module is al opgestart!"
 
-#~ msgid "User name:"
-#~ msgstr "Gebruikersnaam:"
