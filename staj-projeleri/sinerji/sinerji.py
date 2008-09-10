@@ -25,7 +25,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.applyButton.setFocusPolicy(Qt.NoFocus)
 
         self.trayIcon = QSystemTrayIcon(QIcon(":/icon.png"), self)
-        self.trayActions()
+        self.trayActions() ## Own custom function
         self.trayIcon.setContextMenu(self.trayMenu)
         self.trayIcon.setToolTip(u"Sinerji")
         self.trayIcon.show()
@@ -62,6 +62,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def trayActions(self):
         self.trayMenu = QMenu()
         
+        self.actionManage = QAction(QIcon(":/manage.png"),u"Manage", self)
+        self.connect(self.actionManage, SIGNAL("activated()"), self.show)
+        self.trayMenu.addAction(self.actionManage)
+        
         self.actionAbout = QAction(QIcon(":/about.png"),u"About", self)
         self.connect(self.actionAbout, SIGNAL("activated()"), self.about)
         self.trayMenu.addAction(self.actionAbout)
@@ -71,6 +75,15 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.actionQuit = QAction(QIcon(":/quit.png"),u"Quit", self)
         self.connect(self.actionQuit, SIGNAL("activated()"), app.quit)
         self.trayMenu.addAction(self.actionQuit)
+        
+        self.connect(self.trayIcon, SIGNAL('activated(QSystemTrayIcon::ActivationReason)'), self.trayActivated)
+
+    def trayActivated(self, reason):
+        if reason != QSystemTrayIcon.Context:
+            if self.isHidden():
+                self.showNormal()
+            else:
+                self.hide()
 
     def about(self):
         QMessageBox.about(self, "About Sinerji",
@@ -96,7 +109,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     self.trayIcon.showMessage("Sinerji", 
                             ("%s want to use your pc from %s. To allow please click" % (self.serverAndIp[0],self.clientAndPos[0])), 
                             QSystemTrayIcon.Information, 
-                            8000)
+                            80000)
         self.searched = True
     
     def fillClientBox(self):
@@ -138,18 +151,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.rightComboBox.addItem("")
         self.bottomComboBox.addItem("")
         self.leftComboBox.addItem("")
+        
         self.clientState = True
     
     def fillComboBoxes(self):
-        self.topComboBox.clear()
-        self.bottomComboBox.clear()
-        self.rightComboBox.clear()
-        self.leftComboBox.clear()
-
-        self.topComboBox.addItem("")
-        self.rightComboBox.addItem("")
-        self.bottomComboBox.addItem("")
-        self.leftComboBox.addItem("")
         ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
         for domain in self.connectingWorkstation.getDomains():
             self.topComboBox.addItem(domain)
@@ -215,6 +220,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_applyButton_clicked(self):
+        ## From fillClientBox function we get the state 
         if not self.clientState: # Either client or server has to be set, if not client, than it's server
 
             ### Add the current Clientnames to the list confdomain to give it to giveData
@@ -292,11 +298,12 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         ## Starting searching for domain for _workstation._tcp and _sinerji._tcp. 
         self.connectingWorkstation.connect()
         self.connectingSinerji.connect()
+        QTimer.singleShot(500, self.searchClient)
 
 
     def updateUi(self):
         ### Look for synergy.conf, if exists parse it and fill the comboBoxes
-
+        print "UpdateUi"
         if os.path.exists(self.synergyConf):
             self.parser = parsesynergyconf.parseSynergyConf(self.synergyConf)
             for position in self.parser.getClients():
@@ -320,7 +327,7 @@ if __name__ == "__main__":
     app.setWindowIcon(QIcon(":/icon.png"))
     DBusQtMainLoop( set_as_default=True )
     form = SinerjiGui()
-    form.show()
-    app.exec_()
+    form.hide()
+    sys.exit(app.exec_())
 
 
