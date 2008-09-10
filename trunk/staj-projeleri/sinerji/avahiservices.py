@@ -67,8 +67,9 @@ class avahiSinerji:
     def removeService(self, interface, protocol, name, stype, domain, flags):
         if not self.connected:
             return
-        hostremoved = re.sub(r'\.%s$' % domain, '', host)
-        self.discoveredHosts.remove(hostremoved)
+        #hostremoved = re.sub(r'\.%s$' % domain, '', host)
+        #self.discoveredHosts.remove(hostremoved)
+        print "Service Remove - TODO"
 
     def getDomains(self):
         return list(sorted(self.discoveredHosts))
