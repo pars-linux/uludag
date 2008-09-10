@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-08 12:16+0300\n"
-"PO-Revision-Date: 2008-09-05 22:16+0200\n"
+"PO-Revision-Date: 2008-09-09 18:50+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -84,21 +84,17 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:115
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisk"
 
 #: yali4/gui/Ui/autopartwidget.py:116
-msgid ""
-"This option will try to find suitable free space or resizable partitions"
+msgid "This option will try to find suitable free space or resizable partitions"
 msgstr ""
 "Det här alternativet försöker hitta ett lämpligt ledigt utrymme eller "
 "partitioner för storleksändring"
 
 #: yali4/gui/Ui/autopartwidget.py:117
-#, fuzzy
 msgid "Try to use free space or resize current partitions"
-msgstr ""
-"Automatisk partitionering försöker att använda ledigt utrymme eller ändra "
-"storlek på befintliga partitioner"
+msgstr "Försök att använda ledigt utrymme eller storleksändra befintliga partitioner"
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid ""
@@ -109,7 +105,6 @@ msgstr ""
 "att försvinna!"
 
 #: yali4/gui/Ui/autopartwidget.py:119
-#, fuzzy
 msgid "Delete all partitions"
 msgstr "Ta bort alla partitioner"
 
@@ -166,7 +161,7 @@ msgstr ""
 "\n"
 "<p>Om du inte installerar en starthanterare eller väljer att installera till "
 "huvudpartitionen måste du konfigurera ditt \n"
-"andra operativsystems starthanterare (om du har något) för att kunna starta "
+"andra operativsystems (om du har något) starthanterare för att kunna starta "
 "ditt nyinstallerade Pardussystem.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82
@@ -199,8 +194,8 @@ msgid ""
 "this is an optional step, we encourage you to do it to avoid any errors in "
 "installation."
 msgstr ""
-"Du kan kontrollera paketens integritet på cd-skivan. Även om det är ett "
-"frivilligt steguppmuntras du att göra det för att undvika problem under "
+"Du kan kontrollera paketens integritet på cd-skivan. Även om det här är ett "
+"frivilligt steg uppmuntras du att göra det för att undvika problem under "
 "installationen."
 
 #: yali4/gui/Ui/checkcdwidget.py:74 yali4/gui/ScrCheckCD.py:56
@@ -278,7 +273,7 @@ msgstr "Skärmnamn"
 
 #: yali4/gui/Ui/main.py:443
 msgid "Details about the screen"
-msgstr "Detaljer om bilden"
+msgstr "Detaljer om steget"
 
 #: yali4/gui/Ui/main.py:444 yali4/gui/YaliWindow.py:179
 msgid "Release Notes"
@@ -290,7 +285,7 @@ msgstr "Växla hjälp"
 
 #: yali4/gui/Ui/main.py:446
 msgid "Previous Screen"
-msgstr "Föregående bild"
+msgstr "Föregående steg"
 
 #: yali4/gui/Ui/main.py:447
 msgid "Back"
@@ -298,7 +293,7 @@ msgstr "Bakåt"
 
 #: yali4/gui/Ui/main.py:448
 msgid "Next Screen"
-msgstr "Nästa bild"
+msgstr "Nästa steg"
 
 #: yali4/gui/Ui/main.py:449
 msgid "Next"
@@ -444,10 +439,10 @@ msgid ""
 "forget this password. Note that you shouldn't write this password elsewhere "
 "for privacy reasons.</p>"
 msgstr ""
-"<p align=\"left\">Systemadministratörens användare (root) sköter om viktiga "
-"uppgifter för systemunderhållet. Ange lösenord för den här speciella "
+"<p align=\"left\">Systemadministratören (root) sköter om viktiga "
+"uppgifter för systemunderhållet. Ange lösenord för den här specielle "
 "användaren och glöm inte bort det här lösenordet. Av säkerhetsskäl ska du "
-"inte skriva ner det här lösenordet .</p>"
+"inte skriva ner det här lösenordet.</p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:172
 msgid "System administrator password:"
@@ -503,11 +498,11 @@ msgstr "Logga in användare automatiskt:"
 
 #: yali4/gui/Ui/setupuserswidget.py:166
 msgid "Auto Login Disabled"
-msgstr "Automatisk inloggning avaktiverad"
+msgstr "Inaktivera automatisk inloggning"
 
 #: yali4/gui/Ui/summarywidget.py:88 yali4/gui/ScrSummary.py:219
 msgid "Begin Install"
-msgstr "Påbörja installationen"
+msgstr "Installera"
 
 #: yali4/gui/Ui/welcomewidget.py:91
 msgid ""
@@ -529,11 +524,11 @@ msgstr "Starta om datorn!"
 
 #: yali4/gui/Ui/welcomewidget.py:94
 msgid "Accept!"
-msgstr "Acceptera!"
+msgstr "Accepterar!"
 
 #: yali4/gui/Ui/welcomewidget.py:95
 msgid "Don't Accept!"
-msgstr "Acceptera inte!"
+msgstr "Accepterar inte!"
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
@@ -556,12 +551,11 @@ msgid ""
 "additional repositories and manage basic settings like mouse, wallpaper and "
 "panel using in Kaptan.\n"
 msgstr ""
-"Vår Kaptan visar dig vägen efter installationen. Med Kaptan.kan du enkelt "
+"Vår Kaptan visar dig vägen efter installationen. Med Kaptan kan du enkelt "
 "lägg till förråd och hantera grundläggande inställningar som mus, "
 "bakgrundsbild och panelen.\n"
 
 #: yali4/gui/descSlide.py:22
-#, fuzzy
 msgid ""
 "Tasma is the management and settings center of Pardus. Configuration "
 "operations including but not limited to adding a new user or hardware (e.g. "
@@ -569,8 +563,8 @@ msgid ""
 "desktop icons to fonts are all brought together under Tasma's interface.\n"
 msgstr ""
 "Tasma är Pardus inställningscentral. Konfigurering av bland annat nya "
-"användare, ny hårdvara (skrivare, skanner), hantering av utseendet, allt "
-"från skrivbordsikoner till teckensnitt sker i Tasma.\n"
+"användare, ny hårdvara (skrivare, bildskärm), hantering av utseendet, allt "
+"från skrivbordsikoner till teckensnitt sker via Tasma.\n"
 
 #: yali4/gui/descSlide.py:24
 msgid ""
@@ -579,7 +573,7 @@ msgid ""
 "using the Package Manager!\n"
 msgstr ""
 "Det finns tusentals paket i Pardus programförråd. Med Pakethanteraren kan du "
-"lägga till, ta bort och uppdatera dessa paket med endast två enkla klick!\n"
+"lägga till, ta bort och uppdatera dessa paket med endast två enkla musklick!\n"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -653,11 +647,7 @@ msgid ""
 "performance in playing DVDs, VCDs, and countless video file formats, "
 "including, but not limited to, MPEG, AVI and DivX. If you have a digital TV "
 "card, you can record your favourite TV programs using Kaffeine!\n"
-msgstr ""
-"Kaffeine är standardvideospelaren i Pardus 2008. Den är en högpresterande "
-"spelare av DVDs, VCDs och oändligt många andra format, inkluderat, men inte "
-"begränsat till MPEG, AVI och DivX. Om du har ett digitalt tv-kort kan du "
-"spela in dina favoritprogram med Kaffeine!\n"
+msgstr "Kaffeine är standardvideospelaren i Pardus 2008. Den är en högpresterande spelare av DVDs, VCDs och oändligt många fler format, bland annat MPEG, AVI och DivX. Om du har ett digitalt tv-kort kan du spela in dina favoritprogram med Kaffeine!\n"
 
 #: yali4/gui/descSlide.py:40
 msgid ""
@@ -667,7 +657,7 @@ msgid ""
 msgstr ""
 "Du kan använda flera olika konton för direktmeddelandetjänster som MSN, "
 "Yahoo!, ICQ, AIM, GTalk och Jabber, och du kan prata med dina vänner i olika "
-"nätverk med Kopete.\n"
+"nätverk med hjälp av Kopete.\n"
 
 #: yali4/gui/descSlide.py:42
 msgid ""
@@ -687,7 +677,7 @@ msgid ""
 "Freenode server (and you can use Konversation for that).\n"
 msgstr ""
 "Du kan hitta guider, information om pakethantering och andra instruktioner "
-"på www.ozgurlukicin.com men även på den svenska www.pardus.nu. Om du får "
+"på www.ozgurlukicin.com men även på svenska www.pardus.nu. Om du får "
 "problem med Pardus 2008 kan du få hjälp i det svenska forumet och i #pardus-"
 "se på IRC, Freenodeservern (du kan använda Konversation till det).\n"
 
@@ -755,8 +745,7 @@ msgstr "Den finns en förfrågan av samma partitionstyp"
 
 #: yali4/gui/DiskWidgets.py:316
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partition <b>%(partition)s</b> kommer att <b>formateras</b> som <b>%(fsType)"
 "s</b>."
@@ -868,7 +857,7 @@ msgstr "Ohanterat fel inträffade!"
 
 #: yali4/gui/ScrAdmin.py:30
 msgid "Set Administrator"
-msgstr "Ange administratör"
+msgstr "Ange administratörslösenordet"
 
 #: yali4/gui/ScrAdmin.py:31
 msgid "Admins have important rights on the system..."
@@ -928,18 +917,15 @@ msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66 yali4/gui/ScrUsers.py:66
 msgid "<center><font color=\"#FF6D19\">Caps Lock is on!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Caps Lock är aktiverad!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:119
 msgid "<center><font color=\"#FF6D19\">Password is too short!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Lösenordet är för kort!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:128
 msgid "<center><font color=\"#FF6D19\">Passwords do not match!</font></center>"
-msgstr ""
-"<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
+msgstr "<center><font color=\"#FF6D19\">Lösenorden stämmer inte!</font></center>"
 
 #: yali4/gui/ScrAdmin.py:133
 msgid ""
@@ -1015,7 +1001,7 @@ msgstr "Kontrollera ditt media"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
-msgstr "To ignore media corruptions you can check your media integrity..."
+msgstr "Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1037,7 +1023,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
-msgstr "<font color=\"#FFF\">Vänta medans skivan kontrolleras.</font>"
+msgstr "<font color=\"#FFF\">Vänta medans cd kontrolleras.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1049,7 +1035,7 @@ msgstr "Välj tidszon"
 
 #: yali4/gui/ScrDateTime.py:29
 msgid "You can change your timezone, time or date settings..."
-msgstr "Du kan ändra tidszon, tids- eller datuminställningar..."
+msgstr "Du kan ändra tidszon, tids- och datuminställningar..."
 
 #: yali4/gui/ScrDateTime.py:31
 msgid ""
@@ -1061,7 +1047,7 @@ msgid ""
 "after you make your selections.</p></font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Tidszonsinställningar</font>\n"
+"<font size=\"+2\">Tidszon</font>\n"
 "<font size=\"+1\"><p>Här väljer du din plats och tidszon, du kan även ställa "
 "datum och tid.\n"
 "Dina inställningar ställer systemklockan. Fortsätt med installationen när du "
@@ -1073,7 +1059,7 @@ msgstr "Hej då från YALI"
 
 #: yali4/gui/ScrGoodbye.py:46
 msgid "Enjoy your fresh Pardus !..."
-msgstr "Njut av din nya Pardus!..."
+msgstr "Njut av din nya Pardus..."
 
 #: yali4/gui/ScrGoodbye.py:47
 msgid ""
@@ -1140,8 +1126,7 @@ msgstr "Installerar systemet..."
 
 #: yali4/gui/ScrInstall.py:61
 msgid "Installing takes approximately 30 minutes depending on your hardware..."
-msgstr ""
-"Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
+msgstr "Installationen tar uppskattningsvis 30 minuter beroende på din dator..."
 
 #: yali4/gui/ScrInstall.py:63
 msgid ""
@@ -1221,7 +1206,7 @@ msgid ""
 msgstr ""
 "Ett fel uppstod under paketinstallationen.\n"
 "\n"
-"Det kan möjligtvis bero på en trasig cd-skiva eller cd-spelare.\n"
+"Det kan möjligtvis bero på en trasig cd eller cd-spelare.\n"
 "\n"
 "Fel:\n"
 "%s\n"
@@ -1250,7 +1235,7 @@ msgstr "Välj tangentbordslayout"
 
 #: yali4/gui/ScrKeyboard.py:32
 msgid "Use your keyboard layout..."
-msgstr "Använd tangentbordslayout..."
+msgstr "Använd din tangentbordslayout..."
 
 #: yali4/gui/ScrKeyboard.py:34
 msgid ""
@@ -1265,12 +1250,12 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Tangentbordsinställningar</font>\n"
+"<font size=\"+2\">Tangentbordslayout</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
 "Här väljer du tangentbordstyp och det språk du vill använda. Du kan testa "
 "ditt val i testrutan.\n"
-"Fortsätt med installationen när du gjort dina val.\n"
+"Fortsätt med installationen när du gjort ditt val.\n"
 "</p>\n"
 "</font>\n"
 
@@ -1318,7 +1303,7 @@ msgstr ""
 "installerar\n"
 "Pardus 2008. Om du vill kan du partitionera för hand eller låta Pardus 2008 "
 "skapa\n"
-"en ny partition för installation.</p>\n"
+"en ny partition för installationen.</p>\n"
 "<p>\n"
 "Se Pardus installations- och användarguide för mer information om "
 "diskpartitionering.\n"
@@ -1463,7 +1448,7 @@ msgstr "Värdnamnet är satt till <b>%s</b>"
 
 #: yali4/gui/ScrSummary.py:133
 msgid "Partition Settings"
-msgstr "Partitioneringsinställning"
+msgstr "Partitionering"
 
 #: yali4/gui/ScrSummary.py:135
 msgid "Automatic Partitioning selected."
@@ -1480,7 +1465,7 @@ msgid ""
 "(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>"
 msgstr ""
 "Partition <b>%(partition)s - %(currentFs)s</b> <b>storleksändrad</b> till <b>"
-"%(resizeTo)s MB</b>, tidigare storelk var <b>%(currentSize)s MB</b>"
+"%(resizeTo)s MB</b>, tidigare storlek var <b>%(currentSize)s MB</b>"
 
 #: yali4/gui/ScrSummary.py:170
 #, python-format
@@ -1569,19 +1554,18 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">User setup</font>\n"
+"<font size=\"+2\">Användare</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
 "Pardus 2008 låter flera användare dela på samma dator.\n"
-"Du kan tilldela administratörsrättigheter till de användare du skapar; du "
-"kan också\n"
-"anpassa användarnas rättigheter via olika åtgärder i TASMA.\n"
+"Du kan ge administratörs- rättigheter till de användare du skapar; du "
+"kan också anpassa användarnas rättigheter via olika åtgärder i TASMA.\n"
 "</p>\n"
 "<p>\n"
 "För att skapa en ny användare, fyll i formuläret och klicka på knappen\n"
-"\"Lägg till användare\". Om du vill att en användare ska loggas in\n"
+"\"Skapa användare\". Om du vill att en användare ska loggas in\n"
 "automatiskt väljer du denne från listan, om du vill ta bort en användare, \n"
-"välj det användarnamnet i listan och klicka \"Ta bort\".\n"
+"välj det användarnamnet i listan och klicka \"Ta bort vald användare\".\n"
 "Fortsätt med installationen när du har gjort dina val.\n"
 "</p>\n"
 "<p>\n"
@@ -1607,13 +1591,11 @@ msgstr "<font color=\"#FF6D19\">Lösenordet är för kort!</font>"
 
 #: yali4/gui/ScrUsers.py:178
 msgid "<font color=\"#FF6D19\">Username exists, choose another one!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
+msgstr "<font color=\"#FF6D19\">Användarnamnet finns redan, välj ett annat!</font>"
 
 #: yali4/gui/ScrUsers.py:181
 msgid "<font color=\"#FF6D19\">Username contains invalid characters!</font>"
-msgstr ""
-"<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
+msgstr "<font color=\"#FF6D19\">Användarnamnet innehåller ogiltiga tecken!</font>"
 
 #: yali4/gui/ScrUsers.py:184
 msgid "<font color=\"#FF6D19\">Realname contains invalid characters!</font>"
@@ -1652,9 +1634,7 @@ msgstr ""
 "\n"
 "<font size=\"+2\">Välkommen!</font>\n"
 "<font size=\"+1\"><p>Välkommen till Pardus 2008 som innehåller många "
-"lättanvända program. Du kan göra allt du behöver, inkluderat, men inte "
-"begränsat till, ansluta till Internet, skapa dokument, spela spel, lyssna på "
-"musik med Pardus 2008.</p>\n"
+"lättanvända program. Du kan göra allt du behöver med Pardus 2008, bland annat, ansluta till Internet, skapa dokument, spela spel, lyssna på musik.</p>\n"
 "<p>Det här programmet hjälper dig med installationen av Pardus 2008 på din "
 "dator i några få enkla steg och med identifieringen och konfigurationen av "
 "din hårdvara. Vi råder dig att säkerhetskopiera dina filer före du startar "
@@ -1976,9 +1956,3 @@ msgstr "Växling"
 msgid "Archive Partition"
 msgstr "Arkiveringspartition"
 
-#~ msgid "Automatically partition and format selected disk!"
-#~ msgstr "Automatisk partitionering och formatering av vald enhet!"
-
-#~ msgid "If there is no suitable partition this option will be disabled"
-#~ msgstr ""
-#~ "Om det inte finns någon lämplig partition avaktiveras detta alternativ"
