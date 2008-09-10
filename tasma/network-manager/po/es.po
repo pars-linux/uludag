@@ -7,13 +7,14 @@
 # klemens <click3d at linuxmail org>, 2007.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # Klemens Haeckel <click3d at linuxmail dot org>, 2008.
+# Klemens Häckel <click3d at linuxmail dot org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-10 13:08+0300\n"
-"PO-Revision-Date: 2008-08-29 21:12-0400\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-09-10 18:50-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,8 +79,7 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:477
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:592
 msgid "Connecting to <b>%1</b> ..."
@@ -269,8 +269,9 @@ msgid "Client Certificate:"
 msgstr "Certificado de cliente:"
 
 #: connection.py:313 connection.py:318 connection.py:323
+# podria ser tambien explorar, buscar - navegar, depende del contexto, favor revisar
 msgid "browse"
-msgstr ""
+msgstr "explorar"
 
 #: connection.py:317
 msgid "CA Certificate:"
@@ -373,8 +374,7 @@ msgstr "Error de servidor DHCP"
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
-msgstr ""
-"Debe seleccionar interfaces diferentes para compartir la conexión a internet"
+msgstr "Debe seleccionar interfaces diferentes para compartir la conexión a internet"
 
 #: connsharing.py:156
 msgid "Check Selected Interfaces"
@@ -480,5 +480,3 @@ msgstr "Intentar conexión automática"
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está iniciado!"
 
-#~ msgid "Private Keys (*)"
-#~ msgstr "Claves Privadas (*)"
