@@ -40,6 +40,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.browser = None
         self.bus = None
         self.filled = None
+        self.searched = None
         self.clientState = None
         self.clientAndPos = []
         self.serverAndIp = []
@@ -105,8 +106,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def searchClient(self):
         self.trayIcon.showMessage("Sinerji", "Sinerji started, to configure please right-click", QSystemTrayIcon.Information, 4000) 
         if self.connectingSinerji.getClients():
-            self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.startSynergyc)
-            
+            if not self.searched:            
+                self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.startSynergyc)
+
             for server in self.connectingSinerji.getClients().keys():
                 for client in self.connectingSinerji.getClients()[server]:
                     self.clientAndPos = client.split("=")
@@ -233,7 +235,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             ## Starting synergys
             command = ['synergys', '--config', self.synergyConf]
-            process = subprocess.call(command)
+            self.process = subprocess.Popen(command, shell=False)
 
             self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
             self.trayIcon.setToolTip("Synergy is connected to a pc")
@@ -250,18 +252,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("")
     def on_closeButton_clicked(self):
         if self.process.pid:
-            try:
-                # get rid of dead child on Unix systems; if the child is
-                # non cooperative, it will be killed
-                status = os.waitpid(self.process.pid, os.WNOHANG)
-                if status == (0, 0):
-                    os.kill(self.process.pid, signal.SIGTERM)
-                    time.sleep(1)
-                    status = os.waitpid(self.clientPID, os.WNOHANG)
-                    if status == (0, 0):
-                        os.kill(self.clientPID, signal.SIGKILL)
-            except:
-                pass
+            os.kill(self.process.pid+1, signal.SIGKILL)
         self.reject()
 
 
@@ -299,9 +290,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     self.leftComboBox.insertItem(0, position[1])
                 else:
                     pass
-
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
