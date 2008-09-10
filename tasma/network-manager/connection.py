@@ -117,8 +117,10 @@ class Scanner(QPopupMenu):
         hb = QHBox(vb)
         hb.setSpacing(6)
         but = QPushButton(getIconSet("reload", KIcon.Small), i18n("Scan again"), hb)
+        but.setFlat(1)
         self.connect(but, SIGNAL("clicked()"), self.slotScan)
         but = QPushButton(getIconSet("key_enter", KIcon.Small), i18n("Use"), hb)
+        but.setFlat(1)
         self.scan_use_but = but
         self.connect(but, SIGNAL("clicked()"), self.slotScanUse)
 
@@ -206,55 +208,51 @@ class Settings(QWidget):
         line = widgets.HLine(i18n("Connection"), self, "irkick")
         lay.addSpacing(6)
         lay.addWidget(line)
-        grid = QGridLayout(2, 2)
-        lay.addLayout(grid)
+
+        grid = QGridLayout(None, 1, 1, 11, 6)
 
         lab = QLabel(i18n("Device:"), self)
         grid.addWidget(lab, 0, 0, Qt.AlignRight)
-        hb = QHBox(self)
-        hb.setSpacing(3)
-        self.device = QLabel("", hb)
-        hb.setStretchFactor(self.device, 3)
-        self.devices_but = QPushButton(i18n("Select"), hb)
+        self.device = QLabel("", self)
+        grid.addMultiCellWidget(self.device, 0, 0, 1, 2)
+
+        self.devices_but = QPushButton(i18n("Select"), self)
         self.devices_but.setEnabled(False)
+        self.devices_but.setFlat(1)
+        grid.addWidget(self.devices_but, 0, 3)
+
         self.devices = QPopupMenu()
         self.connect(self.devices, SIGNAL("activated(int)"), self.slotDeviceSelect)
         self.devices_but.setPopup(self.devices)
-        grid.addWidget(hb, 0, 1)
 
-        if "devicemode" in link.modes:
-            line = widgets.HLine(i18n("Device Mode"), self, "unindent")
-            lay.addSpacing(6)
-            lay.addWidget(line)
-            grid = QGridLayout(3, 2)
-            lay.addLayout(grid)
+        self.selected_device_mode = QComboBox(False, self)
+        grid.addWidget(self.selected_device_mode, 1, 2)
 
-            lab = QLabel(i18n("Mode:"), self)
-            grid.addWidget(lab, 0, 0, Qt.AlignRight)
+        lab = QLabel(unicode(link.remote_name), self)
+        grid.addWidget(lab, 1, 0, Qt.AlignRight)
 
-            self.selected_device_mode = QComboBox(False, self)
+        self.remote = QLineEdit(self)
+        grid.addWidget(self.remote, 1, 1)
 
-            for dev_mode in link.device_modes:
-                self.selected_device_mode.insertItem(dev_mode)
-
-            grid.addWidget(self.selected_device_mode, 0, 1)
-            grid.setColStretch(1, 2)
+        self.scanBut = QPushButton(getIconSet("find", KIcon.Small), i18n("Scan"), self)
+        self.scanBut.setFlat(1)
+        grid.addWidget(self.scanBut, 1, 3)
 
         if "remote" in link.modes:
-            lab = QLabel(unicode(link.remote_name), self)
-            grid.addWidget(lab, 1, 0, Qt.AlignRight)
             if "scan" in link.modes:
-                hb = QHBox(self)
-                hb.setSpacing(3)
-                self.remote = QLineEdit(hb)
-                but = QPushButton(getIconSet("find", KIcon.Small), i18n("Scan"), hb)
                 self.scanpop = Scanner(self)
                 comlink.remote_hook.append(self.scanpop.slotRemotes)
-                but.setPopup(self.scanpop)
-                grid.addWidget(hb, 1, 1)
+                self.scanBut.setPopup(self.scanpop)
             else:
-                self.remote = QLineEdit(self)
-                grid.addWidget(self.remote, 1, 1)
+                self.scanBut.hide()
+
+            if "devicemode" in link.modes:
+                for dev_mode in link.device_modes:
+                    self.selected_device_mode.insertItem(dev_mode)
+            else:
+                self.selected_device_mode.hide()
+
+        lay.addLayout(grid)
 
         # Authentication
         if "auth" in link.modes:
@@ -273,17 +271,20 @@ class Settings(QWidget):
 
             self.security_mode_label = QLabel(i18n("Security:"), self)
             self.security_mode_combo = QComboBox(0, self)
+            self.security_mode_combo.setWFlags(Qt.WStyle_NoBorder)
             self.security_mode_combo.insertItem(i18n("No authentication"))
             layoutLeft.addWidget(self.security_mode_label, 0, 0, Qt.AlignRight)
             layoutLeft.addWidget(self.security_mode_combo, 0, 1)
 
             self.auth_mode_label = QLabel(i18n("Authentication:"), self)
             self.auth_mode_combo = QComboBox(0, self)
+            self.auth_mode_combo.setWFlags(Qt.WStyle_NoBorder)
             layoutLeft.addWidget(self.auth_mode_label, 1, 0, Qt.AlignRight)
             layoutLeft.addWidget(self.auth_mode_combo, 1, 1)
 
             self.auth_inner_label = QLabel(i18n("Inner Authentication:"), self)
             self.auth_inner_combo = QComboBox(0, self)
+            self.auth_inner_combo.setWFlags(Qt.WStyle_NoBorder)
             layoutLeft.addWidget(self.auth_inner_label, 2, 0, Qt.AlignRight)
             layoutLeft.addWidget(self.auth_inner_combo, 2, 1)
 
@@ -311,16 +312,19 @@ class Settings(QWidget):
 
             self.auth_client_cert_label = QLabel(i18n("Client Certificate:"), self)
             self.auth_client_cert_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"),  self)
+            self.auth_client_cert_but.setFlat(1)
             layoutRight.addWidget(self.auth_client_cert_label, 3, 0, Qt.AlignRight)
             layoutRight.addWidget(self.auth_client_cert_but, 3, 1)
 
             self.auth_ca_cert_label = QLabel(i18n("CA Certificate:"), self)
             self.auth_ca_cert_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"), self)
+            self.auth_ca_cert_but.setFlat(1)
             layoutRight.addWidget(self.auth_ca_cert_label, 4, 0, Qt.AlignRight)
             layoutRight.addWidget(self.auth_ca_cert_but, 4, 1)
 
             self.auth_private_key_label = QLabel(i18n("Private Key File:"), self)
             self.auth_private_key_but = QPushButton(getIconSet("file", KIcon.Small), i18n("browse"), self)
+            self.auth_private_key_but.setFlat(1)
             layoutRight.addWidget(self.auth_private_key_label, 5, 0, Qt.AlignRight)
             layoutRight.addWidget(self.auth_private_key_but, 5, 1)
 
@@ -823,8 +827,10 @@ class Window(QMainWindow):
         hb.setSpacing(12)
         lab = QLabel("", hb)
         but = QPushButton(getIconSet("apply", KIcon.Small), i18n("Apply"), hb)
+        but.setFlat(1)
         self.connect(but, SIGNAL("clicked()"), self.slotAccept)
         but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
+        but.setFlat(1)
         self.connect(but, SIGNAL("clicked()"), self.slotCancel)
         
         self.show()
