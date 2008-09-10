@@ -40,29 +40,26 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.browser = None
         self.bus = None
         self.filled = None
-        self.searched = None
         self.clientState = None
         self.clientAndPos = []
         self.serverAndIp = []
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
-        
+
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()
         self.updateUi()
-        
+
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
-
-        
 
         self.connect(app, SIGNAL("lasWindowClosed()"), self.hide)
 
 ##################################################################
 ##################################################################
 ##################################################################
-    """Overridden so that closing it doesn't quit the app"""
+    """Override so that closing it doesn't quit the app"""
     def closeEvent(self, event):
         event.ignore()
         self.hide()
@@ -70,23 +67,23 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     ### Menu for the Tray
     def trayActions(self):
         self.trayMenu = QMenu()
-        
+
         self.actionManage = QAction(QIcon(":/manage.png"),u"Configure", self)
         self.connect(self.actionManage, SIGNAL("activated()"), self.show)
         self.trayMenu.addAction(self.actionManage)
-        
+
         self.actionAbout = QAction(QIcon(":/about.png"),u"About", self)
         self.connect(self.actionAbout, SIGNAL("activated()"), self.about)
         self.trayMenu.addAction(self.actionAbout)
-        
+
         self.trayMenu.addSeparator()
-        
+
         self.actionQuit = QAction(QIcon(":/quit.png"),u"Quit", self)
         self.connect(self.actionQuit, SIGNAL("activated()"), app.quit)
         self.trayMenu.addAction(self.actionQuit)
-        
+
         self.connect(self.trayIcon, SIGNAL('activated(QSystemTrayIcon::ActivationReason)'), self.trayActivated)
-    
+
     ## If left clicked, hide and show
     def trayActivated(self, reason):
         if reason != QSystemTrayIcon.Context:
@@ -108,7 +105,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def searchClient(self):
         self.trayIcon.showMessage("Sinerji", "Sinerji started, to configure please right-click", QSystemTrayIcon.Information, 4000) 
         if self.connectingSinerji.getClients():
-            self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.fillClientBox)
+            self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.startSynergyc)
+            
             for server in self.connectingSinerji.getClients().keys():
                 for client in self.connectingSinerji.getClients()[server]:
                     self.clientAndPos = client.split("=")
@@ -123,51 +121,20 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                                 QSystemTrayIcon.Information, 
                                 80000)
             self.searched = True
+            self.address = self.serverAndIp[1]
         else:
             print "No Sinerji service available"
-    
-    def fillClientBox(self):
 
-        print "********* Client button is checked"
-        ### Clear the boxes 
-        self.topComboBox.clear()
-        self.bottomComboBox.clear()
-        self.rightComboBox.clear()
-        self.leftComboBox.clear()
+    def startSynergyc(self):
+            command = ['synergyc', self.address]
+            self.process = subprocess.Popen(command)
+            
+            print "Start Synergyc"
+            
+            self.trayIcon.showMessage("Sinerji", ("%s is connected to you." % self.clientAndPos[1] ), QSystemTrayIcon.Information, 4000) 
+            self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
 
-        ### Get the clients from the _sinerji._tcp service
-        for server in self.connectingSinerji.getClients().keys():
-            for client in self.connectingSinerji.getClients()[server]:
-                clientAndPos = client.split("=")
-            serverAndIp = server.split("=")
-            if serverAndIp[0] is None:
-                pass
-            else:
-                if clientAndPos[1] == gethostname(): ### We are looking for our hostname
-                    if clientAndPos[0] == "bottom": # If client is bottom, than our server is top, that's why we add it to topCombobox
-                        self.topComboBox.addItem(serverAndIp[0])
-                        self.synergycData[serverAndIp[0]] = serverAndIp[1]
-                    elif clientAndPos[0] == "top":
-                        self.bottomComboBox.addItem(serverAndIp[0])
-                        self.synergycData[serverAndIp[0]] = serverAndIp[1]
-                    elif clientAndPos[0] == "left":
-                        self.rightComboBox.addItem(serverAndIp[0])
-                        self.synergycData[serverAndIp[0]] = serverAndIp[1]
-                    elif clientAndPos[0] == "right":
-                        self.leftComboBox.addItem(serverAndIp[0])
-                        self.synergycData[serverAndIp[0]] = serverAndIp[1]
-                    else:
-                        QMessageBox.warning(self, u"No sharing", u"Nobody is sharing with you, please click on client mode for refresh")
-                else:
-                    pass
 
-        self.topComboBox.addItem("")
-        self.rightComboBox.addItem("")
-        self.bottomComboBox.addItem("")
-        self.leftComboBox.addItem("")
-        
-        self.clientState = True
-    
     def fillComboBoxes(self):
         ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
         for domain in self.connectingWorkstation.getDomains():
@@ -184,8 +151,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_topComboBox_highlighted(self):
         if not self.filled:
             self.fillComboBoxes()
-        if not self.searched:
-            self.searchClient()
 
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
@@ -271,30 +236,32 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             process = subprocess.call(command)
 
             self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
+            self.trayIcon.setToolTip("Synergy is connected to a pc")
 
         elif self.clientState:
+            QMessageBox.warning(self, u"Warning", u"Somebody is using your computer. To use other computers please restart")
             ## Get the server name, look in synergycData dictionary and get from there the ip addres
 
-            if self.topComboBox.currentText():
-                address = self.synergycData[str(self.topComboBox.currentText())]
-            if self.bottomComboBox.currentText():
-                address = self.synergycData[str(self.bottomComboBox.currentText())]
-            if self.rightComboBox.currentText():
-                address = self.synergycData[str(self.rightComboBox.currentText())]
-            if self.leftComboBox.currentText():
-                address = self.synergycData[str(self.leftComboBox.currentText())]
 
-            ## After getting the ip address, start synergyc
-            command = ['synergyc', address]
-            self.process = subprocess.Popen(command)
-            
-            self.trayIcon.showMessage("Sinerji", "Server is connected to you. ", QSystemTrayIcon.Information, 4000) 
         else:
             pass
 
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
+        if self.process.pid:
+            try:
+                # get rid of dead child on Unix systems; if the child is
+                # non cooperative, it will be killed
+                status = os.waitpid(self.process.pid, os.WNOHANG)
+                if status == (0, 0):
+                    os.kill(self.process.pid, signal.SIGTERM)
+                    time.sleep(1)
+                    status = os.waitpid(self.clientPID, os.WNOHANG)
+                    if status == (0, 0):
+                        os.kill(self.clientPID, signal.SIGKILL)
+            except:
+                pass
         self.reject()
 
 
@@ -312,7 +279,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         ## Starting searching for domain for _workstation._tcp and _sinerji._tcp. 
         self.connectingWorkstation.connect()
         self.connectingSinerji.connect()
-        QTimer.singleShot(500, self.searchClient)
+        QTimer.singleShot(250, self.searchClient)
 
 
 
