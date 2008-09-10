@@ -46,6 +46,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.serverAndIp = []
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
         
+        ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()
         self.updateUi()
         
@@ -53,16 +54,24 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
-        ### Start browsing services, and looking for synergy.conf for parsing in updateUi
+
+        
+
+        self.connect(app, SIGNAL("lasWindowClosed()"), self.hide)
 
 ##################################################################
 ##################################################################
 ##################################################################
-    
+    """Overridden so that closing it doesn't quit the app"""
+    def closeEvent(self, event):
+        event.ignore()
+        self.hide()
+
+    ### Menu for the Tray
     def trayActions(self):
         self.trayMenu = QMenu()
         
-        self.actionManage = QAction(QIcon(":/manage.png"),u"Manage", self)
+        self.actionManage = QAction(QIcon(":/manage.png"),u"Configure", self)
         self.connect(self.actionManage, SIGNAL("activated()"), self.show)
         self.trayMenu.addAction(self.actionManage)
         
@@ -77,7 +86,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.trayMenu.addAction(self.actionQuit)
         
         self.connect(self.trayIcon, SIGNAL('activated(QSystemTrayIcon::ActivationReason)'), self.trayActivated)
-
+    
+    ## If left clicked, hide and show
     def trayActivated(self, reason):
         if reason != QSystemTrayIcon.Context:
             if self.isHidden():
@@ -96,21 +106,25 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
 
     def searchClient(self):
-        self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.fillClientBox)
-        for server in self.connectingSinerji.getClients().keys():
-            for client in self.connectingSinerji.getClients()[server]:
-                self.clientAndPos = client.split("=")
-            self.serverAndIp = server.split("=")
+        self.trayIcon.showMessage("Sinerji", "Sinerji started, to configure please right-click", QSystemTrayIcon.Information, 4000) 
+        if self.connectingSinerji.getClients():
+            self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.fillClientBox)
+            for server in self.connectingSinerji.getClients().keys():
+                for client in self.connectingSinerji.getClients()[server]:
+                    self.clientAndPos = client.split("=")
+                self.serverAndIp = server.split("=")
 
-        if self.serverAndIp[0] is None:
-            pass
+            if self.serverAndIp[0] is None:
+                pass
+            else:
+                if self.clientAndPos[1] == gethostname(): ### We are looking for our hostname
+                        self.trayIcon.showMessage("Sinerji", 
+                                ("%s want to use your pc from %s. To allow please click" % (self.serverAndIp[0],self.clientAndPos[0])), 
+                                QSystemTrayIcon.Information, 
+                                80000)
+            self.searched = True
         else:
-            if self.clientAndPos[1] == gethostname(): ### We are looking for our hostname
-                    self.trayIcon.showMessage("Sinerji", 
-                            ("%s want to use your pc from %s. To allow please click" % (self.serverAndIp[0],self.clientAndPos[0])), 
-                            QSystemTrayIcon.Information, 
-                            80000)
-        self.searched = True
+            print "No Sinerji service available"
     
     def fillClientBox(self):
 
@@ -299,6 +313,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.connectingWorkstation.connect()
         self.connectingSinerji.connect()
         QTimer.singleShot(500, self.searchClient)
+
 
 
     def updateUi(self):
