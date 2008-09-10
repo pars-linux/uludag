@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-04 12:23+0300\n"
+"POT-Creation-Date: 2008-09-10 13:08+0300\n"
 "PO-Revision-Date: 2008-06-13 23:44+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
@@ -25,8 +25,9 @@ msgstr ""
 msgid "You are not authorized for this operation."
 msgstr ""
 
-#: comariface.py:218 autoswitch.py:33 autoswitch.py:35 network-manager.py:35
-#: network-manager.py:110 network-applet.py:615 network-applet.py:629
+#: comariface.py:218 network-applet.py:615 network-applet.py:629
+#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
+#: network-manager.py:110
 msgid "Network Manager"
 msgstr "Netwerkbeheer"
 
@@ -51,6 +52,97 @@ msgstr ""
 #: comariface.py:408
 msgid "new connection"
 msgstr "nieuwe verbinding"
+
+#: network-applet.py:399
+msgid "Firewall..."
+msgstr "Firewall..."
+
+#: network-applet.py:400
+msgid "Edit Connections..."
+msgstr "Bewerk verbindingen..."
+
+#: network-applet.py:401 browser.py:417
+msgid "Connect Automatically"
+msgstr "Automatisch verbinden"
+
+#: network-applet.py:403
+msgid "Show Notifications"
+msgstr "Toon berichten"
+
+#: network-applet.py:405
+msgid "Icon Per Device"
+msgstr "Icoon per apparaat"
+
+#: network-applet.py:406
+msgid "Single Icon"
+msgstr "Enkel icoon"
+
+#: network-applet.py:477
+msgid "Should network-applet start automatically when you login?"
+msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
+
+#: network-applet.py:592
+msgid "Connecting to <b>%1</b> ..."
+msgstr "Verbinden met <b>%1</b> ..."
+
+#: network-applet.py:597
+msgid "Connected to <b>%1</b>"
+msgstr "Verbonden met <b>%1</b>"
+
+#: network-applet.py:603
+msgid ""
+"Connection failed \n"
+"<b>%1</b>"
+msgstr ""
+"Verbinden mislukt\n"
+"<b>%1</b>"
+
+#: network-applet.py:605
+msgid "You are offline now"
+msgstr "U bent nu offline"
+
+#: network-applet.py:661 browser.py:407
+msgid "New connection"
+msgstr "Nieuwe verbinding"
+
+#: network-applet.py:699
+msgid "Network Applet"
+msgstr "Netwerk-applet"
+
+#: nameconf.py:28 browser.py:412
+msgid "Name Service Settings"
+msgstr "Naam dienst instellingen"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Computer"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Hostnaam:"
+
+# naamservers
+#: nameconf.py:45 connection.py:530
+msgid "Name servers"
+msgstr "Naamservers"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Omhoog"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Omlaag"
+
+# infinitief vertalen:
+# Naamserver toevoegen
+#: nameconf.py:171
+msgid "Add Name Server"
+msgstr "Voeg naamserver toe"
+
+#: nameconf.py:172
+msgid "Name server:"
+msgstr "Naamserver:"
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -78,297 +170,174 @@ msgstr "Installeer netwerkpakketten!"
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Geen pakket met COMAR netwerkscripts is geïnstalleerd."
 
-#: autoswitch.py:63
-msgid "Scanning..."
-msgstr "Scannen..."
-
-#: autoswitch.py:84
-#, python-format
-msgid "Profile <b>%s</b> matched."
-msgstr "Profiel <b>%s</b> komt overeen."
-
-#: autoswitch.py:88
-msgid "There is no matched profile"
-msgstr "Er is geen profiel dat overeen komt"
-
-#: autoswitch.py:90
-msgid "No scan result"
-msgstr "Geen scan resultaten"
-
-#: autoswitch.py:100
-#, python-format
-msgid "Connecting to <b>%s</b> ..."
-msgstr "Verbinding maken met <b>%s</b> ..."
-
-#: browser.py:52
-msgid "Name:"
-msgstr "Naam:"
-
-#: browser.py:59 connection.py:265
-msgid "Authentication"
-msgstr "Identificatie"
-
-#: browser.py:62 connection.py:503
-msgid "Address:"
-msgstr "Adres:"
-
-#: browser.py:65 connection.py:544
-msgid "Automatic"
-msgstr "Automatisch"
-
-#: browser.py:72
-#, fuzzy
-msgid "Mod:"
-msgstr "Modus:"
-
-#: browser.py:101
-msgid "Turn on/off connection"
-msgstr "Schakel verbinding aan/uit"
-
-# infinitief vertalen: netwerkverbinding configureren
-#: browser.py:114
-msgid "Configure connection"
-msgstr "Configureer verbinding"
-
-#: browser.py:117
-msgid "Delete connection"
-msgstr "Verbinding verwijderen"
-
-#  string anders opmaken:
-#  Wilt u de verbinding\n
-# %s\n
-# verwijderen?
-#: browser.py:139
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"Zal ik de verbinding\n"
-"'%s\n"
-"verwijderen?"
-
-#: browser.py:140
-msgid "Delete connection?"
-msgstr "Verbinding verwijderen?"
-
-#: browser.py:228
-msgid "No device!"
-msgstr "Geen apparaat!"
-
-#: browser.py:407 network-applet.py:661
-msgid "New connection"
-msgstr "Nieuwe verbinding"
-
-#: browser.py:412 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "Naam dienst instellingen"
-
-#: browser.py:417 network-applet.py:401
-msgid "Connect Automatically"
-msgstr "Automatisch verbinden"
-
-#: browser.py:423
-#, fuzzy
-msgid "Share Connection"
-msgstr "Verbinding"
-
-#: browser.py:442
-msgid "Try Auto Connect on startup"
-msgstr "Probeer automatisch te verbinden bij opstarten"
-
-#: browser.py:499
-msgid "Network Connections Help"
-msgstr "Netwerkverbindingen hulp"
-
-#: connection.py:27
+#: connection.py:28
 msgid "Channel"
 msgstr "Kanaal"
 
-#: connection.py:28
+#: connection.py:29
 msgid "Mode"
 msgstr "Modus"
 
-#: connection.py:29
+#: connection.py:30
 msgid "Protocol"
 msgstr "Protocol"
 
-#: connection.py:41
+#: connection.py:42
 msgid "No remotes found"
 msgstr "Geen contacten gevonden"
 
-#: connection.py:61
+#: connection.py:62
 msgid "<hidden>"
 msgstr "<verborgen>"
 
-#: connection.py:99
+#: connection.py:100
 msgid "Scan results:"
 msgstr "Scan resultaten:"
 
-#: connection.py:118
+#: connection.py:119
 msgid "Scan again"
 msgstr "Scan opnieuw"
 
-#: connection.py:120
+#: connection.py:121
 msgid "Use"
 msgstr "Gebruik"
 
-#: connection.py:198
+#: connection.py:199
 msgid "Connection name:"
 msgstr "Naam verbinding:"
 
-#: connection.py:205
+#: connection.py:206
 msgid "Connection"
 msgstr "Verbinding"
 
-#: connection.py:211
+#: connection.py:212
 msgid "Device:"
 msgstr "Apparaat:"
 
-#: connection.py:217
+#: connection.py:218
 msgid "Select"
 msgstr "Selecteer"
 
-#: connection.py:225
+#: connection.py:226
 #, fuzzy
 msgid "Device Mode"
 msgstr "Apparaat:"
 
-#: connection.py:231
+#: connection.py:232
 msgid "Mode:"
 msgstr "Modus:"
 
-#: connection.py:249
+#: connection.py:250
 msgid "Scan"
 msgstr "Scan"
 
-#: connection.py:273
+#: connection.py:266 browser.py:59
+msgid "Authentication"
+msgstr "Identificatie"
+
+#: connection.py:274
 msgid "Security:"
 msgstr ""
 
-#: connection.py:275
+#: connection.py:276
 msgid "No authentication"
 msgstr "Geen identificatie"
 
-#: connection.py:279
+#: connection.py:280
 #, fuzzy
 msgid "Authentication:"
 msgstr "Identificatie"
 
-#: connection.py:284
+#: connection.py:285
 #, fuzzy
 msgid "Inner Authentication:"
 msgstr "Identificatie"
 
-#: connection.py:295
+#: connection.py:296
 msgid "Anonymous Identity:"
 msgstr ""
 
-#: connection.py:300
+#: connection.py:301
 msgid "User/Identity"
 msgstr ""
 
-#: connection.py:305
+#: connection.py:306
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: connection.py:311
+#: connection.py:312
 msgid "Client Certificate:"
 msgstr ""
 
-#: connection.py:316
+#: connection.py:313 connection.py:318 connection.py:323
+msgid "browse"
+msgstr ""
+
+#: connection.py:317
 msgid "CA Certificate:"
 msgstr ""
 
-#: connection.py:321
+#: connection.py:322
 msgid "Private Key File:"
 msgstr ""
 
-#: connection.py:326
+#: connection.py:327
 #, fuzzy
 msgid "Private Key Password:"
 msgstr "Wachtwoord:"
 
-#: connection.py:359 connection.py:364
-msgid "Certificates (*)"
+#: connection.py:360 connection.py:366 connection.py:372
+msgid "*|Certificates"
 msgstr ""
 
-#: connection.py:359
+#: connection.py:360
 msgid "Select CA Certificate File"
 msgstr ""
 
-#: connection.py:364
+#: connection.py:366
 msgid "Select Client Certificate File"
 msgstr ""
 
-#: connection.py:369
-msgid "Private Keys (*)"
-msgstr ""
-
-#: connection.py:369
+#: connection.py:372
 msgid "Select Private Key File"
 msgstr ""
 
-#: connection.py:484
+#: connection.py:479
 msgid "Network settings"
 msgstr "Netwerkinstellingen"
 
-#: connection.py:494
+#: connection.py:489
 msgid "Automatic query (DHCP)"
 msgstr "Automatische aanvraag (DHCP)"
 
-#: connection.py:499
+#: connection.py:494
 msgid "Manual"
 msgstr "Handmatig"
 
-#: connection.py:510 connection.py:531 connection.py:546
+#: connection.py:498 browser.py:62
+msgid "Address:"
+msgstr "Adres:"
+
+#: connection.py:505 connection.py:526 connection.py:541
 msgid "Custom"
 msgstr "Eigen"
 
-#: connection.py:515
+#: connection.py:510
 msgid "Net mask:"
 msgstr "Netmasker:"
 
-#: connection.py:526
+#: connection.py:521
 msgid "Gateway:"
 msgstr "Poort:"
 
-# naamservers
-#: connection.py:535 nameconf.py:45
-msgid "Name servers"
-msgstr "Naamservers"
+#: connection.py:539 browser.py:65
+msgid "Automatic"
+msgstr "Automatisch"
 
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:815
+#: connection.py:810
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
-
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Computer"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Hostnaam:"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Omhoog"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Omlaag"
-
-# infinitief vertalen:
-# Naamserver toevoegen
-#: nameconf.py:171
-msgid "Add Name Server"
-msgstr "Voeg naamserver toe"
-
-#: nameconf.py:172
-msgid "Name server:"
-msgstr "Naamserver:"
 
 #: connsharing.py:99
 msgid "Internet Connection Sharing"
@@ -431,6 +400,86 @@ msgstr ""
 msgid "IP address not found"
 msgstr "Geen contacten gevonden"
 
+#: autoswitch.py:63
+msgid "Scanning..."
+msgstr "Scannen..."
+
+#: autoswitch.py:84
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr "Profiel <b>%s</b> komt overeen."
+
+#: autoswitch.py:88
+msgid "There is no matched profile"
+msgstr "Er is geen profiel dat overeen komt"
+
+#: autoswitch.py:90
+msgid "No scan result"
+msgstr "Geen scan resultaten"
+
+#: autoswitch.py:100
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "Verbinding maken met <b>%s</b> ..."
+
+#: browser.py:52
+msgid "Name:"
+msgstr "Naam:"
+
+#: browser.py:72
+#, fuzzy
+msgid "Mod:"
+msgstr "Modus:"
+
+#: browser.py:101
+msgid "Turn on/off connection"
+msgstr "Schakel verbinding aan/uit"
+
+# infinitief vertalen: netwerkverbinding configureren
+#: browser.py:114
+msgid "Configure connection"
+msgstr "Configureer verbinding"
+
+#: browser.py:117
+msgid "Delete connection"
+msgstr "Verbinding verwijderen"
+
+#  string anders opmaken:
+#  Wilt u de verbinding\n
+# %s\n
+# verwijderen?
+#: browser.py:139
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"Zal ik de verbinding\n"
+"'%s\n"
+"verwijderen?"
+
+#: browser.py:140
+msgid "Delete connection?"
+msgstr "Verbinding verwijderen?"
+
+#: browser.py:228
+msgid "No device!"
+msgstr "Geen apparaat!"
+
+#: browser.py:423
+#, fuzzy
+msgid "Share Connection"
+msgstr "Verbinding"
+
+#: browser.py:442
+msgid "Try Auto Connect on startup"
+msgstr "Probeer automatisch te verbinden bij opstarten"
+
+#: browser.py:499
+msgid "Network Connections Help"
+msgstr "Netwerkverbindingen hulp"
+
 #: network-manager.py:83
 msgid "Just try to connect automatically"
 msgstr "Probeer automatisch te verbinden"
@@ -438,54 +487,6 @@ msgstr "Probeer automatisch te verbinden"
 #: network-manager.py:98
 msgid "Network manager module is already started!"
 msgstr "Netwerkbeheer module is al opgestart!"
-
-#: network-applet.py:399
-msgid "Firewall..."
-msgstr "Firewall..."
-
-#: network-applet.py:400
-msgid "Edit Connections..."
-msgstr "Bewerk verbindingen..."
-
-#: network-applet.py:403
-msgid "Show Notifications"
-msgstr "Toon berichten"
-
-#: network-applet.py:405
-msgid "Icon Per Device"
-msgstr "Icoon per apparaat"
-
-#: network-applet.py:406
-msgid "Single Icon"
-msgstr "Enkel icoon"
-
-#: network-applet.py:477
-msgid "Should network-applet start automatically when you login?"
-msgstr "Dient de netwerk-applet automatisch te starten als u inlogt?"
-
-#: network-applet.py:592
-msgid "Connecting to <b>%1</b> ..."
-msgstr "Verbinden met <b>%1</b> ..."
-
-#: network-applet.py:597
-msgid "Connected to <b>%1</b>"
-msgstr "Verbonden met <b>%1</b>"
-
-#: network-applet.py:603
-msgid ""
-"Connection failed \n"
-"<b>%1</b>"
-msgstr ""
-"Verbinden mislukt\n"
-"<b>%1</b>"
-
-#: network-applet.py:605
-msgid "You are offline now"
-msgstr "U bent nu offline"
-
-#: network-applet.py:699
-msgid "Network Applet"
-msgstr "Netwerk-applet"
 
 #~ msgid "User name:"
 #~ msgstr "Gebruikersnaam:"
