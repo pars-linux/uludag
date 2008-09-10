@@ -228,8 +228,8 @@ class Settings(QWidget):
         self.selected_device_mode = QComboBox(False, self)
         grid.addWidget(self.selected_device_mode, 1, 2)
 
-        lab = QLabel(unicode(link.remote_name), self)
-        grid.addWidget(lab, 1, 0, Qt.AlignRight)
+        self.ssidLabel = QLabel(unicode(link.remote_name), self)
+        grid.addWidget(self.ssidLabel, 1, 0, Qt.AlignRight)
 
         self.remote = QLineEdit(self)
         grid.addWidget(self.remote, 1, 1)
@@ -251,6 +251,11 @@ class Settings(QWidget):
                     self.selected_device_mode.insertItem(dev_mode)
             else:
                 self.selected_device_mode.hide()
+        else:
+            self.scanBut.hide()
+            self.remote.hide()
+            self.selected_device_mode.hide()
+            self.ssidLabel.hide()
 
         lay.addLayout(grid)
 
