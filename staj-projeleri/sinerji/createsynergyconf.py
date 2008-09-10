@@ -32,7 +32,7 @@ def links(*screen):
             if z[0] == 'host':
                 pass
             else:
-                synergyconf.write("\t\t%s = %s\n" % (z[0], z[2]))
+                synergyconf.write("\t%s = %s\n" % (z[0], z[2]))
 
     ### writing the client part ###
     for clients in subnames:
