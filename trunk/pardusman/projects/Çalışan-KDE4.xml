@@ -1,9 +1,10 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-Kde4 RC</Title>
+    <Title>Pardus Calisan 2008.1-KDE4 [r1]</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
+        <SelectedPackage>QtCurve-KDE3</SelectedPackage>
         <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
@@ -183,6 +184,7 @@
         <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
+        <SelectedPackage>tulliana2</SelectedPackage>
         <SelectedPackage>ufraw</SelectedPackage>
         <SelectedPackage>uhinv</SelectedPackage>
         <SelectedPackage>unarj</SelectedPackage>
@@ -202,6 +204,7 @@
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
+        <SelectedPackage>zpspell</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>DevIL</Package>
         <Package>DirectFB</Package>
@@ -211,6 +214,7 @@
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
         <Package>QtCurve-Gtk2</Package>
+        <Package>QtCurve-KDE3</Package>
         <Package>QtCurve-KDE4</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
@@ -310,6 +314,7 @@
         <Package>dvgrab</Package>
         <Package>e2fsprogs</Package>
         <Package>eagle-firmware</Package>
+        <Package>ebook-tools</Package>
         <Package>eciadsl</Package>
         <Package>ed</Package>
         <Package>emovix</Package>
@@ -378,6 +383,7 @@
         <Package>glitz</Package>
         <Package>glut</Package>
         <Package>gmp</Package>
+        <Package>gnokii</Package>
         <Package>gnome-mplayer</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnuchess</Package>
@@ -604,6 +610,7 @@
         <Package>libxklavier</Package>
         <Package>libxml2</Package>
         <Package>libxslt</Package>
+        <Package>libzip</Package>
         <Package>linux-atm</Package>
         <Package>linux-uvc</Package>
         <Package>lipstik</Package>
@@ -641,6 +648,7 @@
         <Package>mtools</Package>
         <Package>mudur</Package>
         <Package>musicbrainz</Package>
+        <Package>mysql-lib</Package>
         <Package>nano</Package>
         <Package>ncftp</Package>
         <Package>ncompress</Package>
@@ -693,6 +701,7 @@
         <Package>popt</Package>
         <Package>portmap</Package>
         <Package>poster</Package>
+        <Package>postgresql-lib</Package>
         <Package>ppp</Package>
         <Package>pptpclient</Package>
         <Package>procps</Package>
