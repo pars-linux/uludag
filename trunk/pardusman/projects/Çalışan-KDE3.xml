@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-Kde3 RC</Title>
+    <Title>Pardus Calisan 2008.1-KDE3 [r1]</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
@@ -198,6 +198,7 @@
         <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>tn5250</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
+        <SelectedPackage>tulliana2</SelectedPackage>
         <SelectedPackage>ufraw</SelectedPackage>
         <SelectedPackage>uhinv</SelectedPackage>
         <SelectedPackage>unarj</SelectedPackage>
@@ -217,6 +218,7 @@
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
+        <SelectedPackage>zpspell</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>DevIL</Package>
         <Package>DirectFB</Package>
@@ -828,7 +830,6 @@
         <Package>tomcat-servlet-api</Package>
         <Package>traceroute</Package>
         <Package>transcode</Package>
-        <Package>tulliana2</Package>
         <Package>tunepimp</Package>
         <Package>twolame</Package>
         <Package>udev</Package>
@@ -878,11 +879,9 @@
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
         <Package>zemberek-openoffice</Package>
-        <Package>zemberek-server</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
         <Package>zorg</Package>
-        <Package>zpspell</Package>
         <Package>zvbi</Package>
     </PackageSelection>
 </PardusmanProject>
