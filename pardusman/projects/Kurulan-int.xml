@@ -1,7 +1,7 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1-int RC</Title>
+    <Title>Pardus 2008.1-Int [r1]</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
-    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
+    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
@@ -235,6 +235,7 @@
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
+        <SelectedPackage>zpspell</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>DevIL</Package>
         <Package>DirectFB</Package>
