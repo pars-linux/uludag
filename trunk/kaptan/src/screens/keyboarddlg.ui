@@ -71,38 +71,6 @@
             <string></string>
         </property>
     </widget>
-    <widget class="QLineEdit">
-        <property name="name">
-            <cstring>lineEdit1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>100</x>
-                <y>340</y>
-                <width>257</width>
-                <height>24</height>
-            </rect>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textKeyboard</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>70</x>
-                <y>340</y>
-                <width>25</width>
-                <height>24</height>
-            </rect>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>ParentOrigin</enum>
-        </property>
-        <property name="text">
-            <string>Try:</string>
-        </property>
-    </widget>
     <widget class="KListView">
         <column>
             <property name="text">
@@ -132,6 +100,45 @@
         <property name="resizeMode">
             <enum>AllColumns</enum>
         </property>
+    </widget>
+    <widget class="QSplitter">
+        <property name="name">
+            <cstring>splitter1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>70</x>
+                <y>340</y>
+                <width>290</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textKeyboard</cstring>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>226</red>
+                    <green>226</green>
+                    <blue>226</blue>
+                </color>
+            </property>
+            <property name="backgroundOrigin">
+                <enum>WidgetOrigin</enum>
+            </property>
+            <property name="text">
+                <string>Try:</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>lineEdit1</cstring>
+            </property>
+        </widget>
     </widget>
 </widget>
 <images>
