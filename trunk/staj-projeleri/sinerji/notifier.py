@@ -28,7 +28,7 @@ class Notifier(QObject):
         except dbus.DBusException:
             traceback.print_exc()
 
-    def show(self, icon, header, msg):
+    def show(self, icon, header, msg, button=[]):
         """ ## If getPos do work than use it
 
         if not pos or pos[0] < 0 or pos[1] < 0:
@@ -39,11 +39,12 @@ class Notifier(QObject):
         # close previous notification window
         self.iface.CloseNotification(self.notifyid)
 
+        #self.buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
         self.notifyid = self.iface.Notify("sinerji",
                          0,
                          icon,
                          unicode(header),
                          unicode(msg),
-                         ["accept", unicode("Accept"), "reject", unicode("Reject")],
+                         button,
                          {},
                          0)
