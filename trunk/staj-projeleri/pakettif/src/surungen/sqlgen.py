@@ -34,7 +34,7 @@ if os.path.exists('./output.sql'):
 
 f = open("output.sql", "w")
 f.write("""BEGIN;
-DROP TABLE files;
+DROP TABLE files IF EXISTS;
 CREATE TABLE `files` (
     `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `package` varchar(60) NOT NULL,
