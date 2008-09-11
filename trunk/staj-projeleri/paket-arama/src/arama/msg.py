@@ -1,19 +1,18 @@
 #/usr/bin/python
 # -*- coding: utf-8 -*-
-
 messages = {
 'Usage' : 'Kullanım',
 'Meaning' : 'Anlamı',
 'term in:package  ' : 'ifade in:paket',
-'search for \"term\" in \"package\"' : '"ifade"yi "paket" içerisinde ara',
+'search for \"term\" in \"package\"' : '\"ifade\"yi \"paket\" içerisinde ara',
 'in:package' : 'in:paket',
-'list all paths in \"package\"' : '"paket" içindeki tüm yolları listele',
+'list all paths in \"package\"' : '\"paket\" içindeki tüm yolları listele',
 'p:package' : 'p:paket',
-'search for packages like \"package\"' : '"paket"e benzeyen paketleri ara',
+'search for packages like \"package\"' : '\"paket\"e benzeyen paketleri ara',
 'p:' : 'p:',
 'list all packages' : 'tüm paketleri listele',
 'term' : 'ifade',
-'search for \"term\" in all package contents' : 'tüm paket içeriklerinde "ifade"yi ara.',
+'search for \"term\" in all package contents' : 'tüm paket içeriklerinde \"ifade\"yi ara.',
 'Information' : 'Genel Bilgiler',
 'Source Packages' : 'Kaynak Paketler',
 'Binary Packages' : 'İkili Paketler',
@@ -30,4 +29,5 @@ messages = {
 'Count' : 'Sayı',
 'Files related to %(term)s in package %(pkg)s %(partial)s:' : '%(pkg)s paketindeki %(term)s ile alakalı dosyalar %(partial)s:',
 'Files related to %(term)s:' : '%(term)s ile alakalı dosyalar:',
+'No search terms entered.' : 'Hiçbir arama ifadesi girilmedi.',
 }
