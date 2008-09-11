@@ -15,11 +15,13 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 import subprocess
+import time
 
 from screens.Screen import ScreenWidget
 from screens.smoltdlg import SmoltWidget
 from screens.smoltDetailsPopup import smoltDetailsWidget
 from screens.smoltPrivacyPopup import smoltPrivacyWidget
+from screens.smoltProgressPopup import smoltProgressWidget
 
 class Widget(SmoltWidget, ScreenWidget):
 
@@ -33,10 +35,11 @@ class Widget(SmoltWidget, ScreenWidget):
         apply(SmoltWidget.__init__, (self,) + args)
 
         # set texts
+	self.setName(i18n("Smolt"))
         self.textSmolt.setText(i18n("Pardus hardware profiler gets your hardware info and sends it<br> to public Pardus server."))
-        self.detailesButton.setText(i18n("Show details"))
+        self.detailsKURLLabel.setText(i18n("Show details"))
         self.privacyButton.setText(i18n("Privacy policy"))
-        self.sendCheckBox.setText(i18n("Send"))
+        self.sendCheckBox.setText(i18n("I want to share my hardware info"))
 
         # run smolt and show output to user
         p = subprocess.Popen(["smoltSendProfile", "-p"], stdout=subprocess.PIPE)
@@ -57,29 +60,32 @@ class Widget(SmoltWidget, ScreenWidget):
         self.hdInfoListView.addColumn(i18n("Data"))
         self.hdInfoListView.header().setClickEnabled(0,self.hdInfoListView.header().count() - 1)
         self.hdInfoListView.setResizeMode( KListView.LastColumn )
-        item = KListViewItem(self.hdInfoListView, None)
+
 
         global d
         d = {}
         l = len(sumHdInfo)
-        x = True
+        item = None
         for line in sumHdInfo:
+            item = KListViewItem(self.hdInfoListView, item)
             label, data = line.split(':')
             d[label] = data
             item.setText(0,(label))
             item.setText(1,(d[label]))
-            item = KListViewItem(self.hdInfoListView, item)
+
 
         QObject.connect(self.privacyButton, SIGNAL("clicked()"), self.privacy)
-        QObject.connect(self.detailesButton, SIGNAL("clicked()"), self.popup)
+        QObject.connect(self.detailsKURLLabel, SIGNAL("leftClickedURL()"), self.popup)
 
     def popup(self):
         self.smoltPopup = smoltDetailsWidget()
+	self.smoltPopup.setName(i18n("Smolt Detailes Wigdet"))
         self.smoltPopup.hdInfoTextEdit.setText(fullHdInfo)
         self.smoltPopup.show()
 
     def privacy(self):
         self.smoltPrivacy = smoltPrivacyWidget()
+	self.smoltPrivacy.setName(i18n("Smolt Privacy Widget"))
         self.smoltPrivacy.privacyTextEdit.setText(PRIVACY_POLICY)
         self.smoltPrivacy.show()
 
@@ -88,6 +94,23 @@ class Widget(SmoltWidget, ScreenWidget):
             p = subprocess.Popen(["smoltSendProfile", "-s", "http://www.smolts.org", "-a" ], stdout=subprocess.PIPE)
             out, err = p.communicate()
             #print err, "*****************\n\n\n", out
+
+    def progressBar(self):
+        self.progressBar = self.smoltProgressWidget.progressBar()
+        self.progressBar.setTotalSteps(0)
+        x = 10
+        y = 1
+        for a in r:
+            self.progressBar.setProgress(x*y)
+            y = y + 1
+            sleep(0,5)
+
+
+    def prog(self):
+        self.smoltProgress = smoltProgressWidget()
+        self.smoltProgress.infoTextLabel.setText(i18n("Sending..."))
+        self.smoltProgress.cancelPushButton.setText(i18n("Cancel"))
+        self.smoltProgress.show()
 
     def shown(self):
         pass
