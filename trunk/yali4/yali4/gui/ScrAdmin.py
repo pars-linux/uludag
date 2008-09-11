@@ -132,7 +132,7 @@ Click Next button to proceed.
             if p2:
                 self.ui.pass_error.setText(_('<center><font color="#FF6D19">Don\'t use your username as password !</font></center>'))
                 self.ui.pass_error.setVisible(True)
-        else:
+        if self.pass_valid:
             self.ui.pass_error.setVisible(False)
 
         self.setNext()
