@@ -5,7 +5,7 @@ TEMPLATE_DEBUG = DEBUG
 
 
 WEB_URL = 'http://localhost:8000'
-DOCUMENT_ROOT = '/home/emre/svn/uludag/trunk/staj-projeleri/pakettif'
+DOCUMENT_ROOT = '/home/emre/svn/uludag/trunk/staj-projeleri/pakettif/pakettif'
 
 
 ADMINS = (
