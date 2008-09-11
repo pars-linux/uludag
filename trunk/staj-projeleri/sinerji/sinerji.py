@@ -41,6 +41,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bus = None
         self.filled = None
         self.searched = None
+        self.started = None
         self.clientState = None
         self.clientAndPos = []
         self.serverAndIp = []
@@ -56,6 +57,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.leftComboBox.addItem('')
 
         self.connect(app, SIGNAL("lasWindowClosed()"), self.hide)
+
 
 ##################################################################
 ##################################################################
@@ -104,7 +106,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
 
     def searchClient(self):
-        self.trayIcon.showMessage("Sinerji", "Sinerji started, to configure please right-click", QSystemTrayIcon.Information, 4000) 
+        self.trayIcon.showMessage("Sinerji", "Sinerji started, to configure please click", QSystemTrayIcon.Information, 4000) 
+        self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.show)
         if self.connectingSinerji.getClients():
             if not self.searched:            
                 self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.startSynergyc)
@@ -230,12 +233,17 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 self.confdomain.append("left_right_%s" % self.leftComboBox.currentText())
             self.confdomain.append(("host_host_%s" % gethostname()))
 
+            if os.path.exists(self.synergyConf):
+                os.remove(self.synergyConf)
+            
             createsynergyconf.screens(self.confdomain)
             createsynergyconf.links(self.confdomain)
 
             ## Starting synergys
+
             command = ['synergys', '--config', self.synergyConf]
             self.process = subprocess.Popen(command, shell=False)
+            self.started = True
 
             self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
             self.trayIcon.setToolTip("Synergy is connected to a pc")
@@ -251,8 +259,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
-        if self.process.pid:
-            os.kill(self.process.pid+1, signal.SIGKILL)
+        if self.started:
+            if self.process.pid:
+                os.kill(self.process.pid+1, signal.SIGKILL)
         self.reject()
 
 
