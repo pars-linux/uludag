@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1-tr RC</Title>
+    <Title>Pardus 2008.1 [r1]</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -192,6 +192,7 @@
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
+        <SelectedPackage>zpspell</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>DevIL</Package>
         <Package>DirectFB</Package>
