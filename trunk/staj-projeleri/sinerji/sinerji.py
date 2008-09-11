@@ -8,12 +8,14 @@ from socket import gethostname
 from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
+
 import ui_sinerjigui
 import createsynergyconf
 import parsesynergyconf
 import avahiservices
 import platform
 import qrc_resources
+from notifier import *
 __version__ = 0.1
 
 
@@ -51,17 +53,41 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.startBrowsing()
         self.updateUi()
 
+        self.notifier = Notifier()
+        self.connect(self.notifier, SIGNAL("acceptServer"), self.startSynergyc)
+
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
         self.rightComboBox.addItem('')
         self.leftComboBox.addItem('')
 
-        self.connect(app, SIGNAL("lasWindowClosed()"), self.hide)
-
 
 ##################################################################
 ##################################################################
 ##################################################################
+    def showPopup(self):
+
+        icon = QIcon(":/icon.png")
+        message = "Server foo will connect to you"
+        header = "Sinerji"
+
+        self.notifier.show(icon, header, message, self.getPos())
+
+
+    def getPos(self):
+        pt = self.mapToGlobal(QPoint(0,0))
+        screen = QDesktopWidget()
+        incr = 0
+        if pt.y() < screen.screenGeometry().height()/2 and pt.y() < self.height():
+            incr = self.width() - 4
+        elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
+            incr = 0
+        else:
+            incr = self.width() / 2
+        return (pt.x() + self.height()/2, pt.y() + incr)
+
+
+
     """Override so that closing it doesn't quit the app"""
     def closeEvent(self, event):
         event.ignore()
@@ -106,12 +132,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
 
     def searchClient(self):
-        self.trayIcon.showMessage("Sinerji", "Sinerji started, to configure please click", QSystemTrayIcon.Information, 4000) 
-        self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.show)
-        if self.connectingSinerji.getClients():
-            if not self.searched:            
-                self.connect(self.trayIcon, SIGNAL("messageClicked()"), self.startSynergyc)
 
+        #self.trayIcon.showMessage("Sinerji", "Sinerji started, to configure please click", QSystemTrayIcon.Information, 4000) 
+        if self.connectingSinerji.getClients():
             for server in self.connectingSinerji.getClients().keys():
                 for client in self.connectingSinerji.getClients()[server]:
                     self.clientAndPos = client.split("=")
@@ -120,11 +143,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             if self.serverAndIp[0] is None:
                 pass
             else:
-                if self.clientAndPos[1] == gethostname(): ### We are looking for our hostname
-                        self.trayIcon.showMessage("Sinerji", 
-                                ("%s want to use your pc from %s. To allow please click" % (self.serverAndIp[0],self.clientAndPos[0])), 
-                                QSystemTrayIcon.Information, 
-                                80000)
+                if self.clientAndPos[1] == gethostname():
+                    self.showPopup()
             self.searched = True
             self.address = self.serverAndIp[1]
         else:
