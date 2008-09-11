@@ -1,7 +1,7 @@
 <PardusmanProject type="live" media="cd">
     <Title>Pardus Calisan 2008.1-KDE4 [r1]</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
-    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008/</ReleaseFiles>
+    <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
