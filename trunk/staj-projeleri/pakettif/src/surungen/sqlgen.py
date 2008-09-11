@@ -3,12 +3,17 @@ Generates INSERT SQL Statements for each package-file statement and
 appends these statements at every 50 package into a file.
 """
 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
 import pisi
-import time
 import sys
 import os
 
 debug = False
+file_name = 'arama.sql'
+
 
 if len(sys.argv) > 1:
     if sys.argv[1] in ['--debug', '-d', '-v']:
@@ -27,14 +32,14 @@ if len(sys.argv) > 1:
         -v"""
         sys.exit()
 
-start = time.time()
 
-if os.path.exists('./output.sql'):
-    os.rename('./output.sql','./old-output.sql')
+if os.path.exists('./%s.bz2' % file_name):
+    os.rename('./%s.bz2' % file_name, './%s-old.bz2' %  file_name)
+    if debug: print "Renamed old file."
 
-f = open("output.sql", "w")
+f = open(file_name, "w")
 f.write("""BEGIN;
-DROP TABLE files IF EXISTS;
+DROP TABLE IF EXISTS files;
 CREATE TABLE `files` (
     `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `package` varchar(60) NOT NULL,
@@ -44,7 +49,8 @@ CREATE TABLE `files` (
 COMMIT;
 """)
 f.close()
-
+if debug: print "Written drop/create table statements."
+if debug: print "Fetching package information from pisi."
 
 pi     = pisi.db.installdb.InstallDB()
 statements = ""
@@ -52,6 +58,7 @@ installed_packages = pi.list_installed()
 counter = 0
 index = 1
 
+if debug: print "Writing package information starting..."
 for package in installed_packages:
     if debug: print "Package: %s" % package 
     # Get the file list for a package
@@ -63,13 +70,19 @@ for package in installed_packages:
         index += 1
     counter+=1
     if counter == 50:
-        f = open("output.sql", "a")
+        f = open(file_name, "a")
         f.write(statements)
         f.close()
         statements = ""
         counter = 0
-        if debug: print "Appended..."
+        if debug: print "Appended to the file..."
 
-finish = time.time()
-diff = finish - start
-print 'Time:', diff
+if debug: print 'Adding index'
+f = open(file_name, "a")
+f.write('CREATE INDEX package_index USING BTREE on files(package);\n')
+f.close()
+
+if debug: print 'Compressing...'
+# os.system('tar -czf arama.tar.gz arama.sql')
+os.system('bzip2 -z %s' % file_name)
+if debug: print 'Finished...'
