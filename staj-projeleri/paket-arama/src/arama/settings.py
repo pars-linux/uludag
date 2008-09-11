@@ -1,13 +1,13 @@
 dbhost = 'localhost'
 dbuser = 'root'
 dbpass = ''
-dbname = 'paketarama'
+dbname = 'arama'
 root = '/~emre/arama'
 
-#dbhost = 'paketler.pardus.org.tr'
-#dbuser = 'paketarama'
+#dbhost = 'localhost'
+#dbuser = 'arama'
 #dbpass = 'test'
-#dbname = 'paketarama'
+#dbname = 'arama'
 #root	= '/arama'
 
 

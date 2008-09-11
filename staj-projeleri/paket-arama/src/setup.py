@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (C) 2005-2007 TUBITAK/UEKAE
+# Copyright (C) 2005-2008 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -64,11 +64,14 @@ class AramaUninstall(Command):
             shutil.rmtree(arama_dir)
 
         data_dir = "/var/www/paketler.pardus.org.tr/arama"
+	data_en_dir = "/var/www/packages.pardus.org.tr/arama" 
         if os.path.exists(data_dir):
             print "removing: ", data_dir
             shutil.rmtree(data_dir)
-
-
+	if os.path.exists(data_en_dir):
+            print "removing: ", data_en_dir
+            shutil.rmtree(data_en_dir)
+'''
 i18n_domain = "arama"
 i18n_languages = ["tr"]
 """,
@@ -81,21 +84,26 @@ i18n_languages = ["tr"]
                   "pl",
                   "ca"]
 """
+'''
 class I18nInstall(install):
     def run(self):
         install.run(self)
-        for lang in i18n_languages:
-            print "Installing '%s' translations..." % lang
-            os.popen("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
-            if not self.root:
-                self.root = "/"
-            destpath = os.path.join(self.root, "usr/share/locale/%s/LC_MESSAGES" % lang)
-            try:
-                os.makedirs(destpath)
-            except:
-                pass
-	    print "po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain)
-            shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
+        #for lang in i18n_languages:
+        #print "Installing '%s' translations..." % lang
+	print "Installing English translation file"
+	shutil.copy("arama/msg-en.py", "/var/www/packages.pardus.org.tr/arama/msg.py")
+	'''
+	os.popen("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
+	if not self.root:
+	self.root = "/"
+	destpath = os.path.join(self.root, "usr/share/locale/%s/LC_MESSAGES" % lang)
+	try:
+	os.makedirs(destpath)
+	except:
+	pass
+	print "po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain)
+	shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
+	'''
 
 setup(name="arama",
       version= getVersion(),
@@ -107,7 +115,8 @@ setup(name="arama",
       url="http://www.emrealadag.com",
       packages = ['arama'],
       package_dir = {'': ''},
-      data_files = [('/var/www/paketler.pardus.org.tr/arama', data_files()),],
+      data_files = [('/var/www/paketler.pardus.org.tr/arama', data_files()),
+      			('/var/www/packages.pardus.org.tr/arama', data_files()),],
       ext_modules = [],
       cmdclass = {
         'build' : AramaBuild,

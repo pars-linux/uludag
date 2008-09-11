@@ -41,4 +41,4 @@ def index(q=None):
             # term
             return s.search_in_all_packages(q)
     else:
-         return (header % 'No search terms entered.') + footer
+         return (header % _('No search terms entered.')) + footer
