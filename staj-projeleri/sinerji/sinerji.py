@@ -54,7 +54,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.updateUi()
 
         self.notifier = Notifier()
-        self.connect(self.notifier, SIGNAL("acceptServer"), self.startSynergyc)
+        self.connect(self.notifier, SIGNAL("acceptServer"), self.acceptServer)
+        self.connect(self.notifier, SIGNAL("rejectServer"), self.rejectServer)
 
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
@@ -66,25 +67,26 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ##################################################################
 ##################################################################
     def showPopup(self):
-
-        icon = QIcon(":/icon.png")
-        message = "Server foo will connect to you"
+        icon = "/home/fatih/uludag/trunk/staj-projeleri/sinerji/images/notifyIcon.png" ## FIXME 
+        message = ("%s want to use your pc from %s" % (self.serverAndIp[0], self.clientAndPos[0]))
         header = "Sinerji"
 
-        self.notifier.show(icon, header, message, self.getPos())
+        self.notifier.show(icon, header, message)
 
+    """ FIXME 
 
     def getPos(self):
         pt = self.mapToGlobal(QPoint(0,0))
         screen = QDesktopWidget()
         incr = 0
-        if pt.y() < screen.screenGeometry().height()/2 and pt.y() < self.height():
+        if pt.x() < screen.screenGeometry().height()/2 and pt.x() < self.height():
             incr = self.width() - 4
         elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
             incr = 0
         else:
             incr = self.width() / 2
         return (pt.x() + self.height()/2, pt.y() + incr)
+        """
 
 
 
@@ -145,20 +147,23 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             else:
                 if self.clientAndPos[1] == gethostname():
                     self.showPopup()
-            self.searched = True
             self.address = self.serverAndIp[1]
         else:
             print "No Sinerji service available"
 
-    def startSynergyc(self):
+    def acceptServer(self):
             command = ['synergyc', self.address]
             self.process = subprocess.Popen(command)
-            
-            print "Start Synergyc"
-            
-            self.trayIcon.showMessage("Sinerji", ("%s is connected to you." % self.clientAndPos[1] ), QSystemTrayIcon.Information, 4000) 
+    
+            print "Start Synergyc"            
             self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
 
+    def rejectServer(self):
+        if self.searched:
+            self.timer.stop()
+            self.trayIcon.setToolTip("Idle mode, nothing to do")
+        else:
+            pass
 
     def fillComboBoxes(self):
         ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
@@ -299,7 +304,17 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         ## Starting searching for domain for _workstation._tcp and _sinerji._tcp. 
         self.connectingWorkstation.connect()
         self.connectingSinerji.connect()
-        QTimer.singleShot(250, self.searchClient)
+        
+        QTimer.singleShot(500, self.searchClient)
+        self.searched = True
+        self.searchInterval()
+
+
+
+    def searchInterval(self):
+        self.timer = QTimer()
+        self.connect(self.timer, SIGNAL("timeout()"), self.searchClient)
+        self.timer.start(10000)
 
 
 
