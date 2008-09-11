@@ -4,18 +4,20 @@
 
 import os, sys
 import subprocess, signal
+import platform
 from socket import gethostname
 from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
+## Our custom modules
 import ui_sinerjigui
 import createsynergyconf
 import parsesynergyconf
 import avahiservices
-import platform
 import qrc_resources
-from notifier import *
+import notifier
+
 __version__ = 0.1
 
 
@@ -28,6 +30,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
         self.trayIcon = QSystemTrayIcon(QIcon(":/icon.png"), self)
         self.trayActions() ## Own custom function
+        self.connect(self.trayIcon, SIGNAL('activated(QSystemTrayIcon::ActivationReason)'), self.trayActivated)
         self.trayIcon.setContextMenu(self.trayMenu)
         self.trayIcon.setToolTip(u"Sinerji")
         self.trayIcon.show()
@@ -48,12 +51,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.clientAndPos = []
         self.serverAndIp = []
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
+        self.iconNotify = "/home/fatih/uludag/trunk/staj-projeleri/sinerji/images/notifyIcon.png" ## FIXME 
 
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()
         self.updateUi()
 
-        self.notifier = Notifier()
+        self.notifier = notifier.Notifier()
         self.connect(self.notifier, SIGNAL("acceptServer"), self.acceptServer)
         self.connect(self.notifier, SIGNAL("rejectServer"), self.rejectServer)
 
@@ -67,11 +71,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ##################################################################
 ##################################################################
     def showPopup(self):
-        icon = "/home/fatih/uludag/trunk/staj-projeleri/sinerji/images/notifyIcon.png" ## FIXME 
         message = ("%s want to use your pc from %s" % (self.serverAndIp[0], self.clientAndPos[0]))
         header = "Sinerji"
-
-        self.notifier.show(icon, header, message)
+        buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
+        self.notifier.show(self.iconNotify, header, message, buttonList)
 
     """ FIXME 
 
@@ -88,15 +91,14 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         return (pt.x() + self.height()/2, pt.y() + incr)
         """
 
-
-
-    """Override so that closing it doesn't quit the app"""
     def closeEvent(self, event):
+    ### Override so that closing it doesn't quit the app
         event.ignore()
         self.hide()
 
-    ### Menu for the Tray
+
     def trayActions(self):
+    ### Menu for the Tray
         self.trayMenu = QMenu()
 
         self.actionManage = QAction(QIcon(":/manage.png"),u"Configure", self)
@@ -113,7 +115,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.connect(self.actionQuit, SIGNAL("activated()"), app.quit)
         self.trayMenu.addAction(self.actionQuit)
 
-        self.connect(self.trayIcon, SIGNAL('activated(QSystemTrayIcon::ActivationReason)'), self.trayActivated)
+
 
     ## If left clicked, hide and show
     def trayActivated(self, reason):
@@ -154,8 +156,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def acceptServer(self):
             command = ['synergyc', self.address]
             self.process = subprocess.Popen(command)
-    
             print "Start Synergyc"            
+            self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.clientAndPos[1]))
             self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
 
     def rejectServer(self):
@@ -270,13 +272,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.process = subprocess.Popen(command, shell=False)
             self.started = True
 
-            self.trayIcon.showMessage("Sinerji", "Synergy server started succesfull", QSystemTrayIcon.Information, 4000) 
+            self.notifier.show(self.iconNotify, "Sinerji", "Synergy server started successfull")
             self.trayIcon.setToolTip("Synergy is connected to a pc")
 
         elif self.clientState:
             QMessageBox.warning(self, u"Warning", u"Somebody is using your computer. To use other computers please restart")
-            ## Get the server name, look in synergycData dictionary and get from there the ip addres
-
 
         else:
             pass
@@ -288,7 +288,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             if self.process.pid:
                 os.kill(self.process.pid+1, signal.SIGKILL)
         self.reject()
-
 
 ##################################################################
 ##################################################################
@@ -314,7 +313,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def searchInterval(self):
         self.timer = QTimer()
         self.connect(self.timer, SIGNAL("timeout()"), self.searchClient)
-        self.timer.start(10000)
+        self.timer.start(30000)
 
 
 
