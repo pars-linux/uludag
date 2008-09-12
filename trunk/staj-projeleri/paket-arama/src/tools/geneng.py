@@ -11,6 +11,7 @@ def generate_english():
         shutil.rmtree('search')
     shutil.copytree('arama', 'search')
     shutil.copy('tools/msg-en.py', 'search/msg.py')
+    shutil.rmtree('search/.svn')
 
 if __name__ == '__main__':
     generate_english()
