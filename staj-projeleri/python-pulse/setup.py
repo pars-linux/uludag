@@ -22,20 +22,19 @@ def pkgconfig_inc(args):
   return inc
 
 
-module1 = Extension('test',
-                    define_macros = [('MAJOR_VERSION', '1'), ('MINOR_VERSION', '0')],
+module1 = Extension('pypulse',
+                    define_macros = [('MAJOR_VERSION', '1'),
+                                     ('MINOR_VERSION', '0')],
                     include_dirs = pkgconfig_inc("gtk+-2.0"),
                     libraries = pkgconfig_libs("gtk+-2.0"),
                     library_dirs = ['/usr/lib/pulse-0.9/modules'],
                     sources = ['src/test.c','src/func.c'])
 
-setup (name = 'PackageName',
-       version = '1.0',
-       description = 'This is a demo package',
-       author = 'Martin v. Loewis',
-       author_email = 'martin@v.loewis.de',
-       url = 'http://www.python.org/doc/current/ext/building.html',
-       long_description = '''
-This is really just a demo package.
-''',
+setup (name = 'python-pulse',
+       version = '0.1',
+       description = 'experimental python bindings for pulseaudio',
+       author = 'M.Burak Alkan',
+       author_email = 'mburakalkan@gmail.com',
+       url = 'http://svn.pardus.org.tr/uludag/trunk/staj-projeleri/python-pulse/',
+       long_description = ''' ''',
        ext_modules = [module1])
