@@ -53,14 +53,14 @@ def get_package_version(name):
     return None
 
 def get_package(name):
-    for node in repo.tags("Package"):
+    for node in repodoc.tags("Package"):
         if node.getTagData("Name") == name:
             return node.getTagData("PackageURI")
 
 def get_packages_to_install():
     excludes = ["pisi", "package-manager", "lzma", "ncurses"]
     pkgs = []
-    for node in repo.tags("Package"):
+    for node in repodoc.tags("Package"):
         if node.getTagData("Name") not in excludes:
             pkgs.append(node.getTagData("PackageURI"))
     return pkgs
