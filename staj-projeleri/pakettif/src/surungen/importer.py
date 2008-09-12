@@ -6,10 +6,11 @@ import os
 
 db_name = 'arama'
 user = 'root'
-file_name = 'arama.sql'
-
-print 'Uncompressing the bz2 file...'
-os.system('bzip2 -d %s.bz2' % file_name)
-print 'Import operation starting...'
-os.system('mysql -u %s %s < %s' % (user, db_name, file_name)) 
+files = ['arama2008.sql', 'arama2007.sql']
+for file_name in files:
+    print 'Uncompressing the bz2 file %s ...' % file_name
+    os.system('bzip2 -d %s.bz2' % file_name)
+    print 'Import operation starting...'
+    os.system('mysql -u %s %s < %s' % (user, db_name, file_name)) 
+    print 'Import of %s finished.' % file_name
 print 'Import operation finished...'
