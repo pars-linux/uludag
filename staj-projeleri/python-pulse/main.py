@@ -54,7 +54,7 @@ class Mein(QApplication):
     QApplication.__init__(self, sys.argv)
 
   def go(self):
-    ret = test.initialize()
+    ret = test.connect()
     if ret == 0:
       print "py: initialize OK"
       print "py: entering loop"
