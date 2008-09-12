@@ -1,9 +1,9 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1-Int [r1]</Title>
+    <Title>Pardus 2008.1-Int [r3]</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
-    <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>DirectFB</SelectedPackage>
         <SelectedPackage>PolicyKit-kde</SelectedPackage>
