@@ -9,8 +9,8 @@ from lib import _
 #_ = __trans.ugettext
 
 
-def index():
-    help = TableGenerator((_('Usage'), _('Meaning')),
+def index(v='2008'):
+    help = TableGenerator(v, (_('Usage'), _('Meaning')),
                           (
                             (_('term in:package  ')  , _('search for "term" in "package"')),
                             (_('in:package')         , _('list all paths in "package"')),
@@ -20,4 +20,4 @@ def index():
                            )
                           ).table.code
  
-    return header % _('Usage') + help +footer
+    return header(v) % _('Usage') + help +footer()

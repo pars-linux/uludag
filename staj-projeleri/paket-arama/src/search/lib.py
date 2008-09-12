@@ -21,11 +21,21 @@ dict = {
             "menu5": _("Search Packages"),
             "title": _("Search Packages"),
             "search": _("Search"),
+            "back"  : _("Back"),
+            "packages": _("packages"),
         }
         
         
-        
-header = ('''
+def header(v=2008):
+	dict['version']=v
+	ov = ''
+	root = dict['root']
+
+	for va in versions:
+		ov += '| <a href="%s/?v=%s">%s</a>' % (root, va, 'Pardus %s' % va)
+	dict['otherversions'] = ov
+	
+	return ('''
 <html>
     <head>
         <title>%(title)s</title>
@@ -34,32 +44,45 @@ header = ('''
     </head>
     <body>
         <div id='header-bugzilla'>
+        	<div style='float:right; margin-right:2em'>
+        		<h1>Pardus %(version)s</h1>
+        		%(otherversions)s
+        	</div>
         </div>
 
         <div class='menu'>
-        <a href='http://paketler.pardus.org.tr/info/2008/index.html'>%(menu1)s</a>
-         | <a href='http://paketler.pardus.org.tr/info/2008/sources.html'>%(menu2)s</a>
-         | <a href='http://paketler.pardus.org.tr/info/2008/binaries.html'>%(menu3)s</a>
-         | <a href='http://paketler.pardus.org.tr/info/2008/packagers.html'>%(menu4)s</a>
-         | <a href='%(root)s'>%(menu5)s</a>
+        <a href='http://%(packages)s.pardus.org.tr/info/%(version)s/index.html'>%(menu1)s</a>
+         | <a href='http://%(packages)s.pardus.org.tr/info/%(version)s/sources.html'>%(menu2)s</a>
+         | <a href='http://%(packages)s.pardus.org.tr/info/%(version)s/binaries.html'>%(menu3)s</a>
+         | <a href='http://%(packages)s.pardus.org.tr/info/%(version)s/packagers.html'>%(menu4)s</a>
+         | <a href='%(root)s/?v=%(version)s'>%(menu5)s</a>
+
         </div>
-        <div class='content'>
-        <form action="%(root)s/search" method="post">
-        <center>
+        <div class='content' align='center'>
+        <p><a href='javascript: history.go(-1)'>%(back)s</a></p>
+        
+        
+        <form action="%(root)s/results" method="post">
             <input type="text" name="q" size="80"/>
-            <input type="submit" value="%(search)s"/>        
-        </center>''' % dict) + '''
-        <h2 align='center'>%s</h2>
+            <input type="hidden" name="v" value="%(version)s"/>
+            <input type="submit" value="%(search)s"/> 
+        </form>       
+        ''' % dict) + '''
+        <h2>%s</h2>
 '''
-footer = '''
-        <hr width="40%"/>
+def footer():
+	return '''
+        <hr width="40%%"/>
+        <a href='javascript: history.go(-1)'>%(back)s</a>
         </div>
     </body>
-</html>
-'''
+</html>''' % {'back' : _('Back')}
 
 class TableGenerator:
-    def __init__(self, headers, data, term_link=None):
+    def __init__(self, version, headers, data, term_link=None):
+    	self.version = version
+    	if term_link == '" "':
+    		term_link = ' '
         self.term_link = term_link
         header_len = len(headers)
         row_num = len(data)
@@ -90,15 +113,16 @@ class TableGenerator:
         
     def format_link(self, data):
         if type(data) == str and '/' not in data:
-            return '<a href="search/?q=%(term)s in:%(pkg)s">%(pkg)s</a>' % {'term' : self.term_link,
-                                                       'pkg'  : data
-                                                       }
+            return '<a href="results/?v=%(version)s&q=%(term)s in:%(pkg)s">%(pkg)s</a>' % {'term' : self.term_link,
+                                                                                            'pkg'  : data,
+                                                                                            'version' :self.version,
+                                                                                          }
         else:
             return data
          
 class Table:
     def __init__(self):
-        self.code = '<center><table>\n'
+        self.code = '<table>\n'
         self.tropen = False
         
     def tr(self):
@@ -117,20 +141,22 @@ class Table:
         self.code += '\t</tr>\n'
         self.tropen = False
     def close(self):
-        self.code += '</table></center>'
+        self.code += '</table>'
     
 class Search:
-    def __init__(self, limit):
+    def __init__(self, v):
         self.db=MySQLdb.connect(dbhost, dbuser, dbpass, dbname)
         self.cursor = self.db.cursor()
         self.limit = limit
+        self.v = v          # Version: 2008/2009/etc.
         
     def __del__(self):
         self.db.close()
     
     def list_package_contents(self, package_name):
         """Lists the contents of a given package name."""
-        self.cursor.execute('select path from files where package="%s" order by path;' % package_name)
+        self.cursor.execute('select path from %(table)s where package="%(package)s" order by path;' % {'table': 'files%s' % self.v, 
+																									   'package': package_name})
         files = self.cursor.fetchmany(self.limit)
         if self.limit>0 and self.limit<self.cursor.rowcount:
             partial = _('(first %s)') % self.limit
@@ -142,39 +168,46 @@ class Search:
         else:
             heading = _('No package specified.')
         
-        return (header % heading % {'pkg':package_name,
-                                    'partial' : partial}) + TableGenerator((_('Path'),), files).table.code + footer
+        return (header(self.v) % heading % {'pkg':package_name,
+                                    'partial' : partial}) + TableGenerator(self.v, (_('Path'),), files).table.code + footer()
     
     def search_for_package(self, package_name):
         """Searches for a package related to given name in the URL."""
-        self.cursor.execute('select package, count(path) from files where package LIKE "%%%(pkg)s%%" group by package order by package;' % {'pkg':package_name})
+        self.cursor.execute('select package, count(path) from %(table)s where package LIKE "%%%(pkg)s%%" group by package order by package;' % {'pkg':package_name,
+																																		    'table': 'files%s' % self.v })
         packages = self.cursor.fetchall()
         if package_name:
             heading = _('List of packages with a similar name to %(pkg)s:')
         else:
             heading = _('List of packages:')
-        return (header % heading % {'pkg':package_name}) + TableGenerator((_('Package'),_('Count')), packages, '').table.code + footer
+        return (header(self.v) % heading % {'pkg':package_name}) + TableGenerator(self.v, (_('Package'),_('Count')), packages, '').table.code + footer()
     
     def search_in_package(self, package_name, term):
         """Searches for term in the given package."""
         if not term:
             return self.list_package_contents(package_name)
-        self.cursor.execute('select path from files where package = "%(pkg)s" and path like "%%%(term)s%%" order by path;' % {'pkg':package_name, 'term': term})
+        searchTerm = term.strip('"')
+        self.cursor.execute('select path from %(table)s where package = "%(pkg)s" and path like "%%%(term)s%%" order by path;' % {'pkg':package_name,
+																																  'term': searchTerm,
+																																  'table': 'files%s' % self.v})
         files = self.cursor.fetchmany(self.limit)
         if self.limit>0 and self.limit<self.cursor.rowcount:
             partial = _('(first %s)') % self.limit
         else:
             partial = ''
-            
-        return (header % _('Files related to %(term)s in package %(pkg)s %(partial)s:') % {'pkg':package_name,
+
+        return (header(self.v) % _('Files related to %(term)s in package %(pkg)s %(partial)s:') % {'pkg':package_name,
                                                                                'term': term,
-                                                                               'partial': partial,}) + TableGenerator((_('Path'), ), files).table.code + footer
+                                                                               'partial': partial,}) + TableGenerator(self.v, (_('Path'), ), files).table.code + footer()
      
     def search_in_all_packages(self, term = None):
         """Searches for term in all packages' file paths."""
-        self.cursor.execute('select package, count(path) from files where path like "%%%(term)s%%" group by package  order by package;"' % {'term': term})
+        self.cursor.execute('select package, count(path) from %(table)s where path like "%%%(term)s%%" group by package  order by package;"' % {'term': term,
+																																			    'table': 'files%s' % self.v})
         pairs = self.cursor.fetchall()
-        return (header % _('Files related to %(term)s:') % {'term':term}) + TableGenerator((_('Package'), _('Count')), pairs, term).table.code + footer
+        if term == ' ':
+        	term = '" "'
+        return (header(self.v) % _('Files related to %(term)s:') % {'term':term}) + TableGenerator(self.v, (_('Package'), _('Count')), pairs, term).table.code + footer()
 
 
 
