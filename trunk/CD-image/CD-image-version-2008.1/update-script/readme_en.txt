@@ -27,6 +27,3 @@ system, any interruption of the procedure is dangerous and can leave your system
 in an unstable state.
 - As with all update and installation tools, we highly reccomend you backup your
 valuable data before starting this tool.
-
-
-
