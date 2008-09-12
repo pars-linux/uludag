@@ -47,4 +47,4 @@ class Notifier(QObject):
                          unicode(msg),
                          button,
                          {},
-                         0)
+                         4000)
