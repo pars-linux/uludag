@@ -4,7 +4,7 @@
 
 import os, sys
 import subprocess, signal
-import platform
+import platform, time
 from socket import gethostname
 from dbus.mainloop.qt import DBusQtMainLoop
 from PyQt4.QtCore import *
@@ -89,7 +89,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         else:
             incr = self.width() / 2
         return (pt.x() + self.height()/2, pt.y() + incr)
-        """
+    """
 
     def closeEvent(self, event):
     ### Override so that closing it doesn't quit the app
@@ -157,6 +157,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             command = ['synergyc', self.address]
             self.process = subprocess.Popen(command)
             print "Start Synergyc"            
+            time.sleep(1)
             self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.clientAndPos[1]))
             self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
 
@@ -237,9 +238,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             ### Add the current Clientnames to the list confdomain to give it to giveData
             ### After that announce the _sinerji._tcp service
             if self.topComboBox.currentText(): 
-                self.txtData.append(("top", self.topComboBox.currentText()))
+                self.txtData.append(("up", self.topComboBox.currentText()))
             if self.bottomComboBox.currentText(): 
-                self.txtData.append(("bottom", self.bottomComboBox.currentText()))
+                self.txtData.append(("down", self.bottomComboBox.currentText()))
             if self.rightComboBox.currentText(): 
                 self.txtData.append(("right", self.rightComboBox.currentText()))
             if self.leftComboBox.currentText(): 
@@ -251,9 +252,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             ### Creating the synergy.conf file
             if self.topComboBox.currentText() != '': 
-                self.confdomain.append("top_bottom_%s" % self.topComboBox.currentText())
+                self.confdomain.append("up_down_%s" % self.topComboBox.currentText())
             if self.bottomComboBox.currentText() != '': 
-                self.confdomain.append("bottom_top_%s" % self.bottomComboBox.currentText())
+                self.confdomain.append("down_up_%s" % self.bottomComboBox.currentText())
             if self.rightComboBox.currentText() != '': 
                 self.confdomain.append("right_left_%s" % self.rightComboBox.currentText())
             if self.leftComboBox.currentText() != '': 
@@ -323,9 +324,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         if os.path.exists(self.synergyConf):
             self.parser = parsesynergyconf.parseSynergyConf(self.synergyConf)
             for position in self.parser.getClients():
-                if position[0] == "top":
+                if position[0] == "up":
                     self.topComboBox.insertItem(0, position[1])
-                elif position[0] == "bottom":
+                elif position[0] == "down":
                     self.bottomComboBox.insertItem(0, position[1])
                 elif position[0] == "right":
                     self.rightComboBox.insertItem(0, position[1])
