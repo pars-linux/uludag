@@ -1,0 +1,5 @@
+2008-09-12 Pınar Yanardağ <pinar@pardus.org.tr>
+	* setup.py:	Version bump to 1.0.2
+
+2008-09-11 Pınar Yanardağ <pinar@pardus.org.tr>
+	* CHANGELOG, INSTALL, TODO, README:	Update README and add three new files.
