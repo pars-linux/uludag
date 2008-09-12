@@ -1,9 +1,9 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1 [r1]</Title>
+    <Title>Pardus 2008.1 [r4]</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
-    <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>DirectFB</SelectedPackage>
         <SelectedPackage>PolicyKit-kde</SelectedPackage>
@@ -23,7 +23,7 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>apmd</SelectedPackage>
-        <SelectedPackage>aspell-en</SelectedPackage>
+        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -160,7 +160,6 @@
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
-        <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
@@ -230,8 +229,8 @@
         <Package>apmd</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
+        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
-        <Package>aspell-en</Package>
         <Package>atk</Package>
         <Package>atl1e</Package>
         <Package>atl2</Package>
@@ -710,6 +709,7 @@
         <Package>python</Package>
         <Package>python-fchksum</Package>
         <Package>python-imaging</Package>
+        <Package>python-tk</Package>
         <Package>python-xlib</Package>
         <Package>qc-usb</Package>
         <Package>qca-tls</Package>
@@ -743,7 +743,6 @@
         <Package>sip</Package>
         <Package>slang</Package>
         <Package>slmodem</Package>
-        <Package>smb4k</Package>
         <Package>smpeg</Package>
         <Package>sn9c1xx</Package>
         <Package>sox</Package>
