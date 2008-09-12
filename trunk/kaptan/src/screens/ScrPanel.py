@@ -125,6 +125,9 @@ class Widget(PanelWidget, ScreenWidget):
         # restart kicker
         client.send("kicker", "kicker", "restart()", "")
 
+        """
+        # we don't have a style-changing anymore.
+
         # kwin settings
         kwinConf = KConfig("kwinrc")
         kwinConf.setGroup("Style")
@@ -138,9 +141,6 @@ class Widget(PanelWidget, ScreenWidget):
         # restart kwin
         client.send("kwin", "KWinInterface", "reconfigure()", "")
 
-        # we don't have a widgetStyle anymore.
-
-        """
         # widget settings
         globalConf = KConfig("kdeglobals")
         globalConf.setGroup("General")
