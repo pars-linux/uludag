@@ -232,7 +232,7 @@ msgstr "Pakketbeheer"
 
 #: src/screens/ScrPackage.py:31
 msgid "Configure package manager settings..."
-msgstr "Configureer pakkerbeheer instellingen..."
+msgstr "Configureer pakketbeheer instellingen..."
 
 #: src/screens/ScrPackage.py:50
 msgid ""
@@ -243,7 +243,7 @@ msgid ""
 msgstr ""
 "<b>Pakketbeheer</b> is de grafische schil voor <b>PiSi</b>. U kunt "
 "gemakkelijk nieuwe programma's installeren of uw systeem bijwerken en u kunt "
-"op de hoogte gehouden van nieuwe bijgewerkte pakketten vanuit het systeemvak."
+"op de hoogte gehouden worden van nieuwe bijgewerkte pakketten vanuit het systeemvak."
 
 #: src/screens/ScrPackage.py:52
 msgid "Updates"
