@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-27 20:48+0300\n"
-"PO-Revision-Date: 2008-08-26 20:12+0200\n"
+"PO-Revision-Date: 2008-09-10 16:37+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,33 +43,31 @@ msgstr "Kaptan Lots"
 
 #: src/screens/keyboarddlg.py:653 src/screens/keyboarddlg.py:669
 msgid "Keyboard Layouts"
-msgstr ""
+msgstr "Tangentbordslayout"
 
 #: src/screens/keyboarddlg.py:665 src/screens/ScrKeyboard.py:37
 msgid "Keyboard"
-msgstr ""
+msgstr "Tangentbord"
 
 #: src/screens/keyboarddlg.py:668
 msgid "Try:"
-msgstr ""
+msgstr "Testa:"
 
 #: src/screens/paneldlg.py:87 src/screens/ScrPanel.py:41
 msgid "Panel"
 msgstr "Panel"
 
 #: src/screens/ScrKeyboard.py:26
-#, fuzzy
 msgid "Keyboard Settings"
-msgstr "Musinställningar"
+msgstr "Tangentbordsinställningar"
 
 #: src/screens/ScrKeyboard.py:27
-#, fuzzy
 msgid "Configure your keyboard"
-msgstr "Anpassa musen"
+msgstr "Anpassa tangentbordet"
 
 #: src/screens/ScrKeyboard.py:38
 msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
-msgstr ""
+msgstr "<p align=\"left\">Här kan du anpassa ditt tangentbord.</p>"
 
 #: src/screens/welcomedlg.py:60 src/screens/ScrWelcome.py:23
 #: src/screens/ScrWelcome.py:32
@@ -89,9 +87,8 @@ msgid "toolTip"
 msgstr "toolTip"
 
 #: src/screens/wallpaperdlg.py:135
-#, fuzzy
 msgid "Choose Wallpaper"
-msgstr "Ingen bild"
+msgstr "Välj bakgrundsbild"
 
 #: src/screens/ScrMultiple.py:26
 msgid "Multiple Desktops"
@@ -106,8 +103,7 @@ msgid "Multiple"
 msgstr "Flera skrivbord"
 
 #: src/screens/ScrMultiple.py:61
-msgid ""
-"<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgid "<p>In this module, you can configure how many virtual desktops you want.</p>"
 msgstr "<p>Här kan du välja hur många skrivbord du vill ha.</p>"
 
 #: src/screens/ScrMultiple.py:62
@@ -322,10 +318,8 @@ msgid "Tasma"
 msgstr "Tasma"
 
 #: src/screens/goodbyedlg.py:193
-msgid ""
-"<p>TASMA is a configuration application for Pardus Operating System. </p>"
-msgstr ""
-"<p>TASMA är ett anpassningsprogram för ditt Pardus operativsystem. </p>"
+msgid "<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgstr "<p>TASMA är ett anpassningsprogram för ditt Pardus operativsystem. </p>"
 
 #: src/screens/goodbyedlg.py:194 src/screens/goodbyedlg.py:196
 #: src/screens/goodbyedlg.py:199 src/screens/goodbyedlg.py:203
@@ -338,8 +332,7 @@ msgstr "Användargrupper och hjälpsidor"
 
 #: src/screens/goodbyedlg.py:197
 msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
-msgstr ""
-"<p>Pardus gemenskap, användarförteckning, IRC-kanaler, wiki med mera.</p>"
+msgstr "<p>Pardus gemenskap, användarförteckning, IRC-kanaler, wiki med mera.</p>"
 
 #: src/screens/goodbyedlg.py:198
 msgid "Migration Tool"
@@ -400,3 +393,4 @@ msgstr "Direktmeddelandeklienter"
 #: src/screens/photodlg.py:71
 msgid "Login Screen (KDM)"
 msgstr "Startskärm (KDM)"
+
