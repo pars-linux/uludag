@@ -1,9 +1,10 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-KDE3 [r1]</Title>
+    <Title>Pardus Calisan 2008.1-KDE3 [r3]</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
-    <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
+        <SelectedPackage>Bitstream-Vera-fonts</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acerhk</SelectedPackage>
@@ -13,7 +14,6 @@
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
-        <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
@@ -23,7 +23,6 @@
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>bash-completion-config</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
-        <SelectedPackage>bitstream-vera</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-libs</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
@@ -99,17 +98,6 @@
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>jimmac-xcursor</SelectedPackage>
-        <SelectedPackage>k3b</SelectedPackage>
-        <SelectedPackage>k3b-i18n-ca</SelectedPackage>
-        <SelectedPackage>k3b-i18n-de</SelectedPackage>
-        <SelectedPackage>k3b-i18n-es</SelectedPackage>
-        <SelectedPackage>k3b-i18n-fr</SelectedPackage>
-        <SelectedPackage>k3b-i18n-it</SelectedPackage>
-        <SelectedPackage>k3b-i18n-nl</SelectedPackage>
-        <SelectedPackage>k3b-i18n-pl</SelectedPackage>
-        <SelectedPackage>k3b-i18n-pt_BR</SelectedPackage>
-        <SelectedPackage>k3b-i18n-sv</SelectedPackage>
-        <SelectedPackage>k3b-i18n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kchmviewer</SelectedPackage>
@@ -131,7 +119,6 @@
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
@@ -158,13 +145,13 @@
         <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
-        <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openvpn</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
         <SelectedPackage>ov51x-jpeg</SelectedPackage>
+        <SelectedPackage>pmovie</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
@@ -174,13 +161,11 @@
         <SelectedPackage>r5u870</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
-        <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>sdricoh_cs</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>sg3_utils</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
-        <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
@@ -219,6 +204,7 @@
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <SelectedPackage>zpspell</SelectedPackage>
+        <Package>Bitstream-Vera-fonts</Package>
         <Package>ConsoleKit</Package>
         <Package>DevIL</Package>
         <Package>DirectFB</Package>
@@ -250,7 +236,6 @@
         <Package>amarok</Package>
         <Package>amrnb</Package>
         <Package>amrwb</Package>
-        <Package>aria2</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
         <Package>aspell</Package>
@@ -272,7 +257,6 @@
         <Package>bash-completion-config</Package>
         <Package>bc</Package>
         <Package>bind-tools</Package>
-        <Package>bitstream-vera</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
@@ -283,13 +267,10 @@
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
-        <Package>c-ares</Package>
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
         <Package>cdparanoia</Package>
-        <Package>cdrdao</Package>
-        <Package>cdrtools</Package>
         <Package>chmlib</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
@@ -323,7 +304,6 @@
         <Package>dmidecode</Package>
         <Package>dosfstools</Package>
         <Package>dstat</Package>
-        <Package>dvd+rw-tools</Package>
         <Package>dvgrab</Package>
         <Package>e2fsprogs</Package>
         <Package>eagle-firmware</Package>
@@ -462,17 +442,6 @@
         <Package>jfsutils</Package>
         <Package>jimmac-xcursor</Package>
         <Package>jpeg</Package>
-        <Package>k3b</Package>
-        <Package>k3b-i18n-ca</Package>
-        <Package>k3b-i18n-de</Package>
-        <Package>k3b-i18n-es</Package>
-        <Package>k3b-i18n-fr</Package>
-        <Package>k3b-i18n-it</Package>
-        <Package>k3b-i18n-nl</Package>
-        <Package>k3b-i18n-pl</Package>
-        <Package>k3b-i18n-pt_BR</Package>
-        <Package>k3b-i18n-sv</Package>
-        <Package>k3b-i18n-tr</Package>
         <Package>kaffeine</Package>
         <Package>kaptan</Package>
         <Package>kbd</Package>
@@ -502,7 +471,6 @@
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
-        <Package>kftpgrabber</Package>
         <Package>kio-to-local</Package>
         <Package>klibc</Package>
         <Package>knazar</Package>
@@ -598,11 +566,9 @@
         <Package>libmatroska</Package>
         <Package>libmng</Package>
         <Package>libmodplug</Package>
-        <Package>libmovtar</Package>
         <Package>libmp4v2</Package>
         <Package>libmpcdec</Package>
         <Package>libmpeg2</Package>
-        <Package>libmpeg3</Package>
         <Package>libmtp</Package>
         <Package>libnfsidmap</Package>
         <Package>libnjb</Package>
@@ -654,14 +620,11 @@
         <Package>lirc-drivers</Package>
         <Package>live555</Package>
         <Package>lmpcm_usb</Package>
-        <Package>lpc10</Package>
         <Package>lsof</Package>
         <Package>lsscsi</Package>
         <Package>ltmodem</Package>
-        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
-        <Package>madplay</Package>
         <Package>madwifi-ng</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
@@ -673,7 +636,6 @@
         <Package>minicom</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
-        <Package>mjpegtools</Package>
         <Package>mkinitramfs</Package>
         <Package>module-init-tools</Package>
         <Package>mpeg2vidcodec</Package>
@@ -695,8 +657,6 @@
         <Package>netpbm</Package>
         <Package>network-manager</Package>
         <Package>nfs-utils</Package>
-        <Package>nmap</Package>
-        <Package>normalize</Package>
         <Package>notification-daemon</Package>
         <Package>notify-python</Package>
         <Package>nspr</Package>
@@ -736,6 +696,7 @@
         <Package>pisi</Package>
         <Package>pixman</Package>
         <Package>pm-utils</Package>
+        <Package>pmovie</Package>
         <Package>pnm2ppa</Package>
         <Package>poppler</Package>
         <Package>poppler-glib</Package>
@@ -761,6 +722,7 @@
         <Package>python</Package>
         <Package>python-fchksum</Package>
         <Package>python-imaging</Package>
+        <Package>python-tk</Package>
         <Package>python-xlib</Package>
         <Package>qc-usb</Package>
         <Package>qca-tls</Package>
@@ -778,8 +740,6 @@
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schroedinger</Package>
-        <Package>screen</Package>
-        <Package>sdl-gfx</Package>
         <Package>sdparm</Package>
         <Package>sdricoh_cs</Package>
         <Package>sed</Package>
@@ -791,9 +751,7 @@
         <Package>sip</Package>
         <Package>slang</Package>
         <Package>slmodem</Package>
-        <Package>smb4k</Package>
         <Package>sn9c1xx</Package>
-        <Package>sox</Package>
         <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
@@ -829,7 +787,7 @@
         <Package>tn5250</Package>
         <Package>tomcat-servlet-api</Package>
         <Package>traceroute</Package>
-        <Package>transcode</Package>
+        <Package>tulliana2</Package>
         <Package>tunepimp</Package>
         <Package>twolame</Package>
         <Package>udev</Package>
@@ -848,7 +806,6 @@
         <Package>utempter</Package>
         <Package>util-linux</Package>
         <Package>vbetool</Package>
-        <Package>vcdimager</Package>
         <Package>vim</Package>
         <Package>vixie-cron</Package>
         <Package>vloopback</Package>
@@ -879,9 +836,11 @@
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
         <Package>zemberek-openoffice</Package>
+        <Package>zemberek-server</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
         <Package>zorg</Package>
+        <Package>zpspell</Package>
         <Package>zvbi</Package>
     </PackageSelection>
 </PardusmanProject>

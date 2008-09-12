@@ -1,9 +1,10 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-KDE4 [r1]</Title>
+    <Title>Pardus Calisan 2008.1-KDE4 [r4]</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
-    <PackageSelection repo_uri="file:///var/cache/pisi/packages/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
+        <SelectedPackage>Bitstream-Vera-fonts</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
         <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
@@ -15,8 +16,8 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok-kde4</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
-        <SelectedPackage>aspell-en</SelectedPackage>
-        <SelectedPackage>aspell-nl</SelectedPackage>
+        <SelectedPackage>artwork</SelectedPackage>
+        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -24,7 +25,6 @@
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>bash-completion-config</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
-        <SelectedPackage>bitstream-vera</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-libs</SelectedPackage>
         <SelectedPackage>bluez-utils</SelectedPackage>
@@ -154,6 +154,7 @@
         <SelectedPackage>ov511</SelectedPackage>
         <SelectedPackage>ov51x-jpeg</SelectedPackage>
         <SelectedPackage>package-manager</SelectedPackage>
+        <SelectedPackage>pmovie</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>pptpclient</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
@@ -168,6 +169,7 @@
         <SelectedPackage>sdricoh_cs</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>sg3_utils</SelectedPackage>
+        <SelectedPackage>skel-kde4</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
@@ -205,6 +207,7 @@
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <SelectedPackage>zpspell</SelectedPackage>
+        <Package>Bitstream-Vera-fonts</Package>
         <Package>ConsoleKit</Package>
         <Package>DevIL</Package>
         <Package>DirectFB</Package>
@@ -238,9 +241,9 @@
         <Package>amrwb</Package>
         <Package>aria2</Package>
         <Package>arts</Package>
+        <Package>artwork</Package>
+        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
-        <Package>aspell-en</Package>
-        <Package>aspell-nl</Package>
         <Package>atk</Package>
         <Package>atl1e</Package>
         <Package>atl2</Package>
@@ -258,7 +261,6 @@
         <Package>bash-completion-config</Package>
         <Package>bc</Package>
         <Package>bind-tools</Package>
-        <Package>bitstream-vera</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>bluez-utils</Package>
@@ -694,6 +696,7 @@
         <Package>pisi</Package>
         <Package>pixman</Package>
         <Package>pm-utils</Package>
+        <Package>pmovie</Package>
         <Package>pnm2ppa</Package>
         <Package>poppler</Package>
         <Package>poppler-glib</Package>
@@ -719,6 +722,7 @@
         <Package>python</Package>
         <Package>python-fchksum</Package>
         <Package>python-imaging</Package>
+        <Package>python-tk</Package>
         <Package>qc-usb</Package>
         <Package>qca2</Package>
         <Package>qca2-ossl</Package>
@@ -750,6 +754,7 @@
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
         <Package>sip</Package>
+        <Package>skel-kde4</Package>
         <Package>slang</Package>
         <Package>slmodem</Package>
         <Package>sn9c1xx</Package>
