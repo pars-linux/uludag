@@ -11,8 +11,20 @@ import pisi
 import sys
 import os
 
+
+# Determine version
+try:
+    f = open('/etc/pardus-release')
+    content = f.readline()
+    f.close()
+    import string.digits
+    version = filter(lambda c : c in string.digits, content)[:4]
+except:
+    version = '2008'
+    
+    
 debug = False
-file_name = 'arama.sql'
+file_name = 'arama%s.sql' % version
 
 
 if len(sys.argv) > 1:
@@ -33,21 +45,22 @@ if len(sys.argv) > 1:
         sys.exit()
 
 
+
 if os.path.exists('./%s.bz2' % file_name):
     os.rename('./%s.bz2' % file_name, './%s-old.bz2' %  file_name)
     if debug: print "Renamed old file."
 
 f = open(file_name, "w")
 f.write("""BEGIN;
-DROP TABLE IF EXISTS files;
-CREATE TABLE `files` (
+DROP TABLE IF EXISTS files%(version)s;
+CREATE TABLE `files%(version)s` (
     `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
     `package` varchar(60) NOT NULL,
     `path` varchar(200) NOT NULL
 )
 ;
 COMMIT;
-""")
+""" % {'version':version})
 f.close()
 if debug: print "Written drop/create table statements."
 if debug: print "Fetching package information from pisi."
@@ -66,7 +79,7 @@ for package in installed_packages:
     
     # For each file, generate an INSERT INTO statement and append it
     for file in files:
-        statements += "INSERT INTO files VALUES('%d', '%s', '/%s');\n" % (index, package, file)
+        statements += "INSERT INTO files%s VALUES('%d', '%s', '/%s');\n" % (version, index, package, file)
         index += 1
     counter+=1
     if counter == 50:
@@ -79,7 +92,7 @@ for package in installed_packages:
 
 if debug: print 'Adding index'
 f = open(file_name, "a")
-f.write('CREATE INDEX package_index USING BTREE on files(package);\n')
+f.write('CREATE INDEX package_index USING BTREE on files%s(package);\n' % version)
 f.close()
 
 if debug: print 'Compressing...'
