@@ -13,8 +13,11 @@ class Disconnect(QDialog, ui_disconnect.Ui_Disconnect):
         self.disconnectButton.setFocusPolicy(Qt.NoFocus)
         self.okButton.setFocusPolicy(Qt.NoFocus)
     
+
+    
     def setText(self, client):
         self.clientTextLabel.setText("%s is connected to you" % client)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
