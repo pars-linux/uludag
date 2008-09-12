@@ -204,6 +204,7 @@ import os
 import pisi.version
 import time
 import string
+import fnmatch
 
 
 class Packager(AutoPiksemel):
@@ -378,7 +379,7 @@ class Package(AutoPiksemel):
             filename = additional.target
             flag = False
             for path in self.files:
-                if filename.startswith(path.path):
+                if filename.startswith(path.path) or fnmatch.fnmatch(filename, path.path):
                     flag = True
                     break
             if not flag:
