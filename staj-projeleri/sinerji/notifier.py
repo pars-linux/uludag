@@ -28,7 +28,7 @@ class Notifier(QObject):
         except dbus.DBusException:
             traceback.print_exc()
 
-    def show(self, icon, header, msg, button=[]):
+    def show(self, icon, header, msg, time=3000, button=[]):
         """ ## If getPos do work than use it
 
         if not pos or pos[0] < 0 or pos[1] < 0:
@@ -47,4 +47,4 @@ class Notifier(QObject):
                          unicode(msg),
                          button,
                          {},
-                         4000)
+                         time)
