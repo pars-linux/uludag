@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1-Int [r3]</Title>
+    <Title>Pardus 2008.1-Int [r4]</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -23,6 +23,7 @@
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>apmd</SelectedPackage>
+        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
         <SelectedPackage>atl2</SelectedPackage>
@@ -272,6 +273,7 @@
         <Package>apmd</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
+        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>atk</Package>
@@ -790,6 +792,7 @@
         <Package>python</Package>
         <Package>python-fchksum</Package>
         <Package>python-imaging</Package>
+        <Package>python-tk</Package>
         <Package>python-xlib</Package>
         <Package>qc-usb</Package>
         <Package>qca-tls</Package>
