@@ -3,6 +3,7 @@
 
 import bz2
 import os
+import re
 import sys
 import shutil
 import subprocess
@@ -208,6 +209,16 @@ def get_label(mount_point, label=None):
                     return label
     return None
 
+def get_boot_device():
+    dev = get_device("/")
+    m = re.match("(.*)(\d{1,3})", dev)
+    dev, part = m.groups()[0], m.groups()[1]
+    for line in open("/boot/grub/device.map").readlines():
+        if line.split()[1] == dev:
+            grub_dev = line.split()[0].strip()
+            return grub_dev[:-1] + ",%d)" % (int(part) - 1)
+    return ""
+
 def write_new_grub():
     version = get_package_version("kernel")
     open('/boot/grub/grub.conf', 'w').write("""
@@ -217,10 +228,10 @@ timeout 10
 background 10333C
 
 title Pardus 2008
-root (hd0,0)
+root %s
 kernel /boot/kernel-%s root=LABEL=%s vga=791 mudur=language:tr quiet splash=silent
 initrd /boot/initramfs-%s
-""" % (version, get_label("/", "PARDUS_ROOT"), version))
+""" % (get_boot_device(), version, get_label("/", "PARDUS_ROOT"), version))
 
 def clean_old_pisi():
     if os.path.exists('/etc/pisi/pisi.conf.newconfig'):
