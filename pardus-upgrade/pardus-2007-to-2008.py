@@ -39,13 +39,13 @@ def install_2008_packages():
 
 def get_drivers_list():
     drivers = []
-    for pkg in doc.tags("Package"):
+    for pkg in repodoc.tags("Package"):
         if pkg.getTagData("PartOf") == "kernel.drivers":
             drivers.append(pkg.getTagData("PackageURI"))
     return drivers
 
 def get_package_version(name):
-    for p in doc.tags("Package"):
+    for p in repodoc.tags("Package"):
         if p.getTagData("Name") == name:
             version = p.getTag("History").getTag("Update").getTagData("Version")
             release = p.getTag("History").getTag("Update").getAttribute("release")
@@ -355,7 +355,7 @@ def parse_repo():
     return piksemel.parseString(bz2.decompress(open(index, "r").read()))
 
 cddev = os.path.basename(get_pardus_cd_device())
-repo = parse_repo()
+repodoc = parse_repo()
 
 def migrate_2007_to_2008():
     check_pardus_2008_cd()
