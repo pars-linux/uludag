@@ -21,7 +21,7 @@ from screens.Screen import ScreenWidget
 from screens.smoltdlg import SmoltWidget
 from screens.smoltDetailsPopup import smoltDetailsWidget
 from screens.smoltPrivacyPopup import smoltPrivacyWidget
-from screens.smoltProgressPopup import smoltProgressWidget
+from screens.pProgress import pProgress
 
 class Widget(SmoltWidget, ScreenWidget):
 
@@ -61,6 +61,10 @@ class Widget(SmoltWidget, ScreenWidget):
         self.hdInfoListView.header().setClickEnabled(0,self.hdInfoListView.header().count() - 1)
         self.hdInfoListView.setResizeMode( KListView.LastColumn )
 
+        #font = QFont((self.hdInfoListView.count() - 1).font())
+        #font.setBold(1)
+        #(self.hdInfoListView.count() - 1).setFont(font)
+
 
         global d
         d = {}
@@ -79,13 +83,13 @@ class Widget(SmoltWidget, ScreenWidget):
 
     def popup(self):
         self.smoltPopup = smoltDetailsWidget()
-	self.smoltPopup.setName(i18n("Smolt Detailes Wigdet"))
+        self.smoltPopup.setName(i18n("Smolt Detailes Wigdet"))
         self.smoltPopup.hdInfoTextEdit.setText(fullHdInfo)
         self.smoltPopup.show()
 
     def privacy(self):
         self.smoltPrivacy = smoltPrivacyWidget()
-	self.smoltPrivacy.setName(i18n("Smolt Privacy Widget"))
+        self.smoltPrivacy.setName(i18n("Smolt Privacy Widget"))
         self.smoltPrivacy.privacyTextEdit.setText(PRIVACY_POLICY)
         self.smoltPrivacy.show()
 
@@ -95,22 +99,12 @@ class Widget(SmoltWidget, ScreenWidget):
             out, err = p.communicate()
             #print err, "*****************\n\n\n", out
 
-    def progressBar(self):
-        self.progressBar = self.smoltProgressWidget.progressBar()
-        self.progressBar.setTotalSteps(0)
-        x = 10
-        y = 1
-        for a in r:
-            self.progressBar.setProgress(x*y)
-            y = y + 1
-            sleep(0,5)
-
 
     def prog(self):
-        self.smoltProgress = smoltProgressWidget()
-        self.smoltProgress.infoTextLabel.setText(i18n("Sending..."))
-        self.smoltProgress.cancelPushButton.setText(i18n("Cancel"))
-        self.smoltProgress.show()
+        self.sendingProgress = pProgress()
+        self.sendingProgress.infoTextLabel.setText(i18n("Sending..."))
+        self.sendingProgress.cancelPushButton.setText(i18n("Cancel"))
+        self.sendingProgress.show()
 
     def shown(self):
         pass
