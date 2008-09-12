@@ -1,0 +1,147 @@
+# translation of arama.po to Deutsch
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: arama\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-12 15:10+0300\n"
+"PO-Revision-Date: 2008-09-12 23:26+0200\n"
+"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
+"Language-Team: Deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: arama/index.py:13 arama/index.py:23
+msgid "Usage"
+msgstr "Verwendung"
+
+#: arama/index.py:13
+msgid "Meaning"
+msgstr "Bedeutung"
+
+#: arama/index.py:15
+msgid "term in:package  "
+msgstr ""
+
+#: arama/index.py:15
+msgid "search for \"term\" in \"package\""
+msgstr ""
+
+#: arama/index.py:16
+msgid "in:package"
+msgstr "in:package"
+
+#: arama/index.py:16
+msgid "list all paths in \"package\""
+msgstr ""
+
+#: arama/index.py:17
+msgid "p:package"
+msgstr "p:package"
+
+#: arama/index.py:17
+msgid "search for packages like \"package\""
+msgstr ""
+
+#: arama/index.py:18
+msgid "p:"
+msgstr "p:"
+
+#: arama/index.py:18
+msgid "list all packages"
+msgstr "Alle Pakete auflisten"
+
+#: arama/index.py:19
+msgid "term"
+msgstr "term"
+
+#: arama/index.py:19
+msgid "search for \"term\" in all package contents"
+msgstr ""
+
+#: arama/lib.py:17
+msgid "Information"
+msgstr "Information"
+
+#: arama/lib.py:18
+msgid "Source Packages"
+msgstr "Quell-Pakete"
+
+#: arama/lib.py:19
+msgid "Binary Packages"
+msgstr "Binär-Pakete"
+
+#: arama/lib.py:20
+msgid "Packagers"
+msgstr "Paket-Ersteller"
+
+#: arama/lib.py:21 arama/lib.py:22
+msgid "Search Packages"
+msgstr "Pakete Suche"
+
+#: arama/lib.py:23
+msgid "Search"
+msgstr "Suche"
+
+#: arama/lib.py:24 arama/lib.py:79
+msgid "Back"
+msgstr "Zurück"
+
+#: arama/lib.py:25
+msgid "packages"
+msgstr "Pakete "
+
+#: arama/lib.py:162 arama/lib.py:195
+#, python-format
+msgid "(first %s)"
+msgstr "(first %s)"
+
+#: arama/lib.py:167
+#, python-format
+msgid "Contents of package %(pkg)s %(partial)s:"
+msgstr ""
+
+#: arama/lib.py:169
+msgid "No package specified."
+msgstr ""
+
+#: arama/lib.py:172 arama/lib.py:201
+msgid "Path"
+msgstr "Pfad"
+
+#: arama/lib.py:180
+#, python-format
+msgid "List of packages with a similar name to %(pkg)s:"
+msgstr ""
+
+#: arama/lib.py:182
+msgid "List of packages:"
+msgstr "Liste der Pakete:"
+
+#: arama/lib.py:183 arama/lib.py:210
+msgid "Package"
+msgstr "Paket"
+
+#: arama/lib.py:183 arama/lib.py:210
+msgid "Count"
+msgstr "Anzahl"
+
+#: arama/lib.py:199
+#, python-format
+msgid "Files related to %(term)s in package %(pkg)s %(partial)s:"
+msgstr ""
+
+#: arama/lib.py:210
+#, python-format
+msgid "Files related to %(term)s:"
+msgstr ""
+
+#: arama/results.py:51
+msgid "No search terms entered."
+msgstr ""
+
