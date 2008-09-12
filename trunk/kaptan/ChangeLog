@@ -1,0 +1,7 @@
+2008-09-12 Pınar Yanardağ <pinar@pardus.org.tr>
+	* __init__.py:	Update version to 3.5.2
+	* po/nl.po:		Fix bug#8162
+	* screens/ScrPanel.py:	Remove kwin decoration stuff
+
+2008-09-11 Pınar Yanardağ <pinar@pardus.org.tr>
+	* CHANGELOG, AUTHORS, INSTALL, TODO, README: Update README and add four new files.
