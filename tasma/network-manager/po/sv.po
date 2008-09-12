@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-10 13:08+0300\n"
-"PO-Revision-Date: 2008-09-03 20:47+0200\n"
+"PO-Revision-Date: 2008-09-10 16:31+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,8 +33,7 @@ msgstr "Väntar på D-Bus..."
 
 #: comariface.py:224 network-applet.py:176
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
+msgstr "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
 
 #: comariface.py:240 network-applet.py:192
 msgid ""
@@ -258,7 +257,7 @@ msgstr "Klientcertifikat:"
 
 #: connection.py:313 connection.py:318 connection.py:323
 msgid "browse"
-msgstr ""
+msgstr "bläddra"
 
 #: connection.py:317
 msgid "CA Certificate:"
@@ -376,8 +375,7 @@ msgstr "Delning är ok"
 
 #: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
-"Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
+msgstr "Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
 
 #: connsharing.py:267
 msgid "IP address not found"
@@ -463,5 +461,3 @@ msgstr "Försök ansluta automatiskt"
 msgid "Network manager module is already started!"
 msgstr "Nätverkshanteraren körs redan!"
 
-#~ msgid "Private Keys (*)"
-#~ msgstr "Privata nycklar (*)"
