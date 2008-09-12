@@ -1,11 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import bz2
 import os
 import sys
 import shutil
 import subprocess
 
+import piksemel
 import pisi
 
 def get_pardus_cd_device():
@@ -35,24 +37,44 @@ def install_2008_packages():
     pkgs = get_packages_to_install()
     subprocess.Popen('pisi it -y --ignore-comar --ignore-file-conflicts %s' % pisi.util.strlist(pkgs), shell=True).wait()
 
+def get_drivers_list():
+    drivers = []
+    for pkg in doc.tags("Package"):
+        if pkg.getTagData("PartOf") == "kernel.drivers":
+            drivers.append(pkg.getTagData("PackageURI"))
+    return drivers
+
+def get_package_version(name):
+    for p in doc.tags("Package"):
+        if p.getTagData("Name") == name:
+            version = p.getTag("History").getTag("Update").getTagData("Version")
+            release = p.getTag("History").getTag("Update").getAttribute("release")
+            return "%s-%s" % (version, release)
+    return None
+
+def get_package(name):
+    for node in repo.tags("Package"):
+        if node.getTagData("Name") == name:
+            return pkg.getTagData("PackageURI")
+
 def get_packages_to_install():
-    exclude = ['pisi-index.xml.bz2', 'pisi-index.xml.bz2.sha1sum', 'lzma-4.32.6-6-3.pisi',
-               'ncurses-5.6_20071201-5-2.pisi', 'pisi-2.0-99-25.pisi', 'package-manager-1.3.7-45-13.pisi']
-    pkgs = os.listdir('.')
-    for e in exclude:
-        pkgs.remove(e)
+    excludes = ["pisi", "package-manager", "lzma", "ncurses"]
+    pkgs = []
+    for node in repo.tags("Package"):
+        if node.getTagData("Name") not in excludes:
+            pkgs.append(pkg.getTagData("PackageURI"))
     return pkgs
 
 def install_delayed_packages():
     try:
-        pisi.api.install(['/media/%s/repo/pisi-2.0-99-25.pisi' % cddev,
-                          '/media/%s/repo/package-manager-1.3.7-45-13.pisi' % cddev, 
-                          '/media/%s/repo/lzma-4.32.6-6-3.pisi' % cddev])
+        pisi.api.install(['/media/%s/repo/%s' % (cddev, get_package("pisi")),
+                          '/media/%s/repo/%s' % (cddev, get_package("package-manager")),
+                          '/media/%s/repo/%s' % (cddev, get_package("lzma"))])
     except SyntaxError:
         pass
 
 def install_ncurses():
-    os.system('pisi it -y --ignore-comar ncurses-5.6_20071201-5-2.pisi')
+    os.system('pisi it -y --ignore-comar %s' % get_package("ncurses"))
 
 def pisi_upgrade():
     os.system('pisi up -y')
@@ -187,6 +209,7 @@ def get_label(mount_point, label=None):
     return None
 
 def write_new_grub():
+    version = get_package_version("kernel")
     open('/boot/grub/grub.conf', 'w').write("""
 default 0
 gfxmenu /boot/grub/message
@@ -195,9 +218,9 @@ background 10333C
 
 title Pardus 2008
 root (hd0,0)
-kernel /boot/kernel-2.6.25.9-101 root=LABEL=%s vga=791 mudur=language:tr quiet splash=silent
-initrd /boot/initramfs-2.6.25.9-101
-""" % get_label("/", "PARDUS_ROOT"))
+kernel /boot/kernel-%s root=LABEL=%s vga=791 mudur=language:tr quiet splash=silent
+initrd /boot/initramfs-%s
+""" % (version, get_label("/", "PARDUS_ROOT"), version))
 
 def clean_old_pisi():
     if os.path.exists('/etc/pisi/pisi.conf.newconfig'):
@@ -220,7 +243,7 @@ def move_cp_to_new_db():
     cp.close()
 
 def write_grub_for_new_kernel():
-    os.system("hav call Boot.Loader.updateKernelEntry version '2.6.25.9-101'")
+    os.system("hav call Boot.Loader.updateKernelEntry version '%s'" % get_package_version("kernel"))
     # Just ugly... would be great if updateKernelEntry should accept LABEL=XYZ as root param but
     # instead returns no such device
     os.system("sed -i -r 's#%s#LABEL=%s#g' /boot/grub/grub.conf" % (get_device("/"), get_label("/", "PARDUS_ROOT")))
@@ -233,14 +256,14 @@ def check_and_upgrade_kernel():
     device = os.path.basename(get_pardus_cd_device())
     os.chdir('/media/%s/repo/' % device)
 
-    # FIXME: actually these should be found by looking at PartOf. Hardcoded for now.
-    drivers = ['accessrunner-firmware-1.0-1-1.pisi', 'acerhk-0.5.35-4-16.pisi', 'acx100-20080210-15-16.pisi', 'acx100-firmware-20060207-3-1.pisi', 'atl2-2.0.4-2-16.pisi', 'atmel-firmware-1.3-1-1.pisi', 'b43-firmware-4.150.10.5-1-1.pisi', 'bluez-firmware-1.2-2-1.pisi', 'eagle-firmware-1.1-1-1.pisi', 'et131x-1.2.3-3-15.pisi', 'gspca-0.0_20071224-14-15.pisi', 'ipw2100-firmware-1.3-2-1.pisi', 'ipw2200-firmware-3.0-4-1.pisi', 'iwlwifi3945-ucode-2.14.1.5-1-1.pisi', 'iwlwifi4965-ucode-4.44.1.20-1-1.pisi', 'linux-uvc-0.0_217-30-20.pisi', 'lirc-drivers-0.8.3-18-16.pisi', 'lmpcm_usb-0.5.6-4-16.pisi', 'ltmodem-8.31_alpha10-8-16.pisi', 'madwifi-ng-0.9.4_3698-17-15.pisi', 'microdia-0.0_20080621-1-2.pisi', 'ndiswrapper-1.52-39-15.pisi', 'ov511-2.32-4-16.pisi', 'pwc-10.0.12_20080322-13-15.pisi', 'qc-usb-0.6.6-3-15.pisi', 'ralink-firmware-0.0_20080409-1-1.pisi', 'slmodem-2.9.11_20080126-22-15.pisi', 'sn9c1xx-1.48-2-14.pisi', 'speedtouch-firmware-3.0.1-3-1.pisi', 'ungrab-winmodem-1_20080126-4-15.pisi', 'zd1201-firmware-0.4-1-1.pisi', 'zd1211-firmware-1.4-3-1.pisi']
+    kernelnbootsplash = [get_package("kernel"),
+                         get_package("kernel-headers"),
+                         get_package("bootsplash"),
+                         get_package("bootsplash-theme-pardus")]
 
-    kernelnbootsplash = ["kernel-2.6.25.9-101-40.pisi", "kernel-headers-2.6.25.9-101-40.pisi", "bootsplash-3.3-1-2.pisi", "bootsplash-theme-pardus-0.4.1-6-13.pisi"]
-
-    if os.popen("uname -r").read().strip() != "2.6.25.9-101":
+    if os.popen("uname -r").read().strip() != get_package_version("kernel"):
         subprocess.Popen('pisi it -y --ignore-comar --ignore-safety --ignore-file-conflicts %s' % pisi.util.strlist(kernelnbootsplash), shell=True).wait()
-        subprocess.Popen('pisi it -y --ignore-comar --ignore-safety --ignore-file-conflicts %s' % pisi.util.strlist(drivers), shell=True).wait()
+        subprocess.Popen('pisi it -y --ignore-comar --ignore-safety --ignore-file-conflicts %s' % pisi.util.strlist(get_drivers_list()), shell=True).wait()
         write_grub_for_new_kernel()
         update_fstab()
         error("Reboot needed!")
@@ -327,13 +350,19 @@ def copy_network_data_to_new_comar_db():
 
     run()
 
+def parse_repo():
+    index = "/media/%s/repo/pisi-index.xml.bz2" % cddev
+    return piksemel.parseString(bz2.decompress(open(index, "r").read()))
+
 cddev = os.path.basename(get_pardus_cd_device())
+repo = parse_repo()
 
 def migrate_2007_to_2008():
     check_pardus_2008_cd()
+    parse_repo()
     check_grub_release()
     check_and_upgrade_kernel()
-    # reboot needed to run with 2.6.25 kernel.
+    # reboot needed to run with the new kernel.
     copy_network_data_to_new_comar_db()
     install_2008_packages()
     clean_old_comar()
