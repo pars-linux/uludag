@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-KDE3 [r3]</Title>
+    <Title>Pardus Calisan 2008.1-KDE3 [r4]</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
@@ -14,6 +14,7 @@
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
+        <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>aspell-en</SelectedPackage>
         <SelectedPackage>aspell-nl</SelectedPackage>
         <SelectedPackage>atl1e</SelectedPackage>
@@ -238,6 +239,7 @@
         <Package>amrwb</Package>
         <Package>arts</Package>
         <Package>artwork</Package>
+        <Package>artwork-pardus-release</Package>
         <Package>aspell</Package>
         <Package>aspell-en</Package>
         <Package>aspell-nl</Package>
