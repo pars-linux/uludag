@@ -59,8 +59,14 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.updateUi()
 
         self.notifier = notifier.Notifier()
+        self.clientDisconnect = disconnect.Disconnect(self)
+        
         self.connect(self.notifier, SIGNAL("acceptServer"), self.acceptServer)
         self.connect(self.notifier, SIGNAL("rejectServer"), self.rejectServer)
+        
+        self.connect(self.clientDisconnect.disconnectButton, SIGNAL("clicked()"), self.disconnect)
+        self.connect(self.clientDisconnect.okButton, SIGNAL("clicked()"), self.clientDisconnect.hide)
+
 
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
@@ -130,15 +136,25 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 else:
                     self.hide()
         else:
-            self.clientDisconnect = disconnect.Disconnect(self)
-            if self.clientDisconnect.exec_():
-                self.clientDisconnect.setText(clientAndPos[1])
-                if reason != QSystemTrayIcon.Context:
-                    if self.clientDisconnect.isHidden():
-                        self.clientDisconnect.showNormal()
-                    else:
-                        self.clientDisconnect.hide()
+            self.clientDisconnect.setText(self.clientAndPos[1])
+            if reason != QSystemTrayIcon.Context:
+                if self.clientDisconnect.isHidden():
+                    self.clientDisconnect.showNormal()
+                else:
+                    self.clientDisconnect.hide()
             
+    def disconnect(self):
+        if self.clientDisconnect.isVisible():
+            self.clientDisconnect.hide()
+        self.trayMenu.insertAction(self.actionAbout, self.actionManage) ## Add actionDisconnect before self.actionAbout
+        self.trayMenu.removeAction(self.actionDisconnect)
+        if self.started:
+            if self.process.pid:
+                os.kill(self.process.pid+1, signal.SIGKILL)
+        time.sleep(0.5)
+        self.notifier.show(self.iconNotify, "Sinerji", ("Disconnected from %s " % self.clientAndPos[1]))
+        self.clientState = None
+
 
 
     def about(self):
@@ -304,15 +320,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def on_closeButton_clicked(self):
         self.hide()
     
-    def disconnect(self):
-        self.trayMenu.insertAction(self.actionAbout, self.actionManage) ## Add actionDisconnect before self.actionAbout
-        self.trayMenu.removeAction(self.actionDisconnect)
-        if self.started:
-            if self.process.pid:
-                os.kill(self.process.pid+1, signal.SIGKILL)
-        time.sleep(0.5)
-        self.notifier.show(self.iconNotify, "Sinerji", ("Disconnected from %s " % self.clientAndPos[1]))
-        self.clientState = None
 
 
 ##################################################################
