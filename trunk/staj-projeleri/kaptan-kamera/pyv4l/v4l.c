@@ -1,41 +1,45 @@
-/* PyV4L Version 0.5.0
-Copyright (c) 2002 Michael Dove <pythondeveloper@optushome.com.au>
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-*/
-
-/* Overlay functions derived from G-Streamer <v4l-overlay_calls.c> by Ronald Bultje <rbultje@ronald.bitfreak.net> */
-/* Frame Buffer Setup functions from v4l-conf by Gerd Knorr <kraxel@bytesex.org> */
-
-/* 
+/*
+ *  PyV4L
+ *
+ *  A Python wrapper library to access V4L (video4linux) and V4L2 devices
+ *
+ * Copyright (c) 2002 Michael Dove <pythondeveloper@optushome.com.au>
+ * Copyright (c) 2007, Onur Küçük <onur@pardus.org.tr>
+ * Copyright (c) 2008  Çağlar Kilimci <ckilimci@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ *
+ * Original work was done by Michael Dove. Since the upstream page got loss
+ * and the original authors email address could not be reached, we have forked the
+ * project to clean up the code, fix bugs and add v4l2 support.
+ *
+ * V4L2 support and maintenance by Onur Küçük <onur@pardus.org.tr> and Çağlar Kilimci <ckilimci@gmail.com>
+ *
+ *
+ * Overlay functions derived from G-Streamer <v4l-overlay_calls.c> by Ronald Bultje <rbultje@ronald.bitfreak.net>
+ * Frame Buffer Setup functions from v4l-conf by Gerd Knorr <kraxel@bytesex.org>
+ *
  * Colour palette conversion from XawTV <color_yuv2rgb.c> by Gerd Knorr <kraxel@bytesex.org>
- * , patched by Frederik Fix 
-*/ 
-
-/* Derived from fmio <bktr.c> by Vladimir Popov <jumbo@narod.ru> */
-
-
-/* 
- * All open(...)    changed to  v4l1_open(...)
- * All close(...)   changed to  v4l1_close(...)
- * All ioctl(...)   changed to  v4l1_ioctl(...)
- * All mmap(...)    changed to  v4l1_mmap(...)
- * All munmap(...)  changed to  v4l1_munmap(...)
+ * patched by Frederik Fix
+ *
+ * Derived from fmio <bktr.c> by Vladimir Popov <jumbo@narod.ru>
+ *
  */
 
 
- 
 #include <Python.h>
 #include <fcntl.h>
 #include <linux/videodev.h>
@@ -54,7 +58,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 /* colourspace conversion */
 #define CLIP         320
-    
+
 # define RED_NULL    128
 # define BLUE_NULL   128
 # define LUN_MUL     256
@@ -125,7 +129,7 @@ typedef struct {
     float	fact;
 } v4lobject;
 
-	
+
 
 /* display info */
 struct DISPLAYINFO {
@@ -308,12 +312,12 @@ static char prequeueframes_doc[] =
 "\n"
 "Queue up frames before capture.";
 
-static char queueframe_doc[] = 
+static char queueframe_doc[] =
 "queueFrame() -> None\n"
 "\n"
 "Queue up a single frame.";
 
-static char getimage_doc[] = 
+static char getimage_doc[] =
 "getImage() -> string image\n"
 "\n"
 "Get a frame from device.";
@@ -323,7 +327,7 @@ static char setupimage_doc[] =
 "\n"
 "Set image capture parameters and colourspace (conversion).";
 
-    
+
 
 
 /* Instance methods
@@ -358,11 +362,11 @@ v4l_getCapabilities(v4lobject *self) {
 	 PyErr_SetString(V4lError, "Error retriving video capability.");
 	 return NULL;
      }
-     cap = Py_BuildValue("(siiiiiii)", 
-	     vc.name, 
-	     vc.type, 
-	     vc.channels, 
-	     vc.audios, 
+     cap = Py_BuildValue("(siiiiiii)",
+	     vc.name,
+	     vc.type,
+	     vc.channels,
+	     vc.audios,
 	     vc.maxwidth,
 	     vc.maxheight,
 	     vc.minwidth,
@@ -371,7 +375,7 @@ v4l_getCapabilities(v4lobject *self) {
      //printf("VID_TYPE_CHROMAKEY: %d\n", VID_TYPE_CHROMAKEY);
      return cap;
 }
-     
+
 static PyObject *
 v4l_getChannel(v4lobject *self, PyObject *args) {
     int chan;
@@ -418,7 +422,7 @@ static PyObject *
 v4l_setChannel(v4lobject *self, PyObject *args) {
     int chan;
     int norm;
-    if (!PyArg_ParseTuple(args, "i|i", &chan, &norm)) 
+    if (!PyArg_ParseTuple(args, "i|i", &chan, &norm))
       return NULL;
     struct video_channel vc;
     vc.channel = chan;
@@ -428,7 +432,7 @@ v4l_setChannel(v4lobject *self, PyObject *args) {
     }
     if ( PySequence_Length(args) > 1) // norm is requested to be set
       vc.norm = norm;
-   
+
     if (v4l1_ioctl(self->fd, VIDIOCSCHAN, &vc) < 0) {
 	PyErr_SetString(V4lError, "Error setting channel.");
 	return NULL;
@@ -475,11 +479,11 @@ v4l_setTuner(v4lobject *self, PyObject *args) {
 	PyErr_SetString(V4lError, "Error setting tuner mode.");
 	return NULL;
     }
-			    
+
     Py_INCREF(Py_None);
     return Py_None;
-}     
-   
+}
+
 
 static PyObject *
 v4l_getPicture(v4lobject *self) {
@@ -696,14 +700,14 @@ displayinfo_x11(Display *dpy, struct DISPLAYINFO *d) {
     }
     return 0;
 }
-    
+
 
 static int
 displayinfo_dga(Display *dpy, struct DISPLAYINFO *d) {
     int width,bar,foo,flags=0;
     void *base = NULL;
 
-    if (!XF86DGAQueryExtension(dpy, &foo, &bar)) { 
+    if (!XF86DGAQueryExtension(dpy, &foo, &bar)) {
     	PyErr_SetString(VideoError, "X-Server has no DGA support.");
 	return 1;
     }
@@ -740,7 +744,7 @@ v4l_setupFrameBuffer(v4lobject *self, PyObject *args) {
     	    return NULL;
 	}
     }
-	    
+
 
     if (display[0] != ':') {
 	PyErr_SetString(VideoError, "Remote display is not allowed.");
@@ -752,18 +756,18 @@ v4l_setupFrameBuffer(v4lobject *self, PyObject *args) {
 	return NULL;
     }
 
-    if (displayinfo_x11(dpy, &d)) 
+    if (displayinfo_x11(dpy, &d))
 	return NULL;
 
-    if (displayinfo_dga(dpy, &d)) 
+    if (displayinfo_dga(dpy, &d))
 	return NULL;
 
 
     //FIXME: possibly add framebuffer device attempt here
 
-    if(displayinfo_v4l(self, &d)) 
+    if(displayinfo_v4l(self, &d))
 	return NULL;
-    
+
     Py_INCREF(Py_None);
     return Py_None;
 }
@@ -806,7 +810,7 @@ v4l_setSync(v4lobject *self, PyObject *args) {
 	PyErr_SetString(V4lError, "Error syncing video.");
 	return NULL;
     }
-    Py_INCREF(Py_None); 
+    Py_INCREF(Py_None);
     return Py_None;
 }
 
@@ -830,7 +834,7 @@ v4l_getVbi(v4lobject *self) {
 	    );
     return vbi;
 }
-    
+
 static PyObject *
 v4l_setupImage(videoobject *self, PyObject *args) {
     unsigned int height;
@@ -882,7 +886,7 @@ v4l_preQueueFrames(videoobject *self) {
     Py_INCREF(Py_None);
     return Py_None;
 }
-	   
+
 static PyObject *
 v4l_queueFrame(videoobject *self) {
     unsigned short frame;
@@ -895,12 +899,12 @@ v4l_queueFrame(videoobject *self) {
     if (frame >= self->mbuf.frames) frame = 0;
     return Py_BuildValue("h", frame); // next frame number
 }
-   
+
 static PyObject *
 v4l_getImage(videoobject *self, PyObject *args) {
     unsigned short frame = 0;
     if (!PyArg_ParseTuple(args, "|h", &frame)) return NULL;
-    
+
     self->vm.frame = frame;
     if (v4l1_ioctl(self->fd, VIDIOCSYNC,  &self->vm.frame) == -1) {
 	//printf("Error: cannot sync\n");
@@ -916,9 +920,9 @@ v4l_getImage(videoobject *self, PyObject *args) {
     }
     self->frame_count++;
     */
-      
-	
-    PyObject *result;	   
+
+
+    PyObject *result;
 
     if (self->convertFunc) {
 	struct ng_video_buf in_buffer;
@@ -928,12 +932,12 @@ v4l_getImage(videoobject *self, PyObject *args) {
 	in_buffer.size = self->mbuf.size / self->mbuf.frames;
 	self->convertFunc(&self->conversion_buffer, &in_buffer);
 	result = Py_BuildValue("s#", self->conversion_buffer.data, self->conversion_buffer.size);
-	}	
+	}
     else
 	result = Py_BuildValue("s#", self->map + self->mbuf.offsets[frame], self->vm.width * self->vm.height * 3);
     return (result);
-} 
-	        
+}
+
 
 /**** Colourspace Conversion Functions ****/
 
@@ -969,7 +973,7 @@ void yuv420p_to_rgb24(struct ng_video_buf *out, struct ng_video_buf *in) {
     }
     out->size = d - out->data;
 }
-	
+
 
 void yuv422p_to_rgb24(struct ng_video_buf *out, struct ng_video_buf *in) {
     unsigned char *y, *u, *v, *d;
@@ -1000,7 +1004,7 @@ void yuv422p_to_rgb24(struct ng_video_buf *out, struct ng_video_buf *in) {
 
 
 
-PyObject * 
+PyObject *
 setupConversion(videoobject *self, unsigned int from, unsigned int to) {
     if( from != to ) {
 	if( (from == VIDEO_PALETTE_YUV420P) && (to == VIDEO_PALETTE_RGB24) ) {
@@ -1145,7 +1149,7 @@ v4l_setMono(v4lobject *self, PyObject *args) {
     return Py_None;
 }
 
-	
+
 static PyObject *
 v4l_setStereo(v4lobject *self, PyObject *args) {
     if(!PyArg_ParseTuple(args, "")) return NULL;
@@ -1278,7 +1282,7 @@ static PyMethodDef video_methods[] = {
     {"preQueueFrames", (PyCFunction) v4l_preQueueFrames, METH_NOARGS, prequeueframes_doc},
     { NULL, NULL }
 };
-   
+
 
 /* Basic Operations */
 
@@ -1324,7 +1328,7 @@ new_video(int fd) {
 	PyErr_SetString(V4lError, "No V4L video device found.");
 	return NULL;
 
-	
+
     }
     self = PyObject_NEW(videoobject, &VideoType);
     if (self == NULL) return NULL;
@@ -1340,7 +1344,7 @@ new_video(int fd) {
     self->frame_count = 0;
     self->conversion_buffer.data = 0;
     self->convertFunc = 0;
-    
+
     return self;
 }
 
@@ -1524,7 +1528,7 @@ static struct PyMethodDef v4ltype_methods[] = {
 
 /* Module Description doc string */
 static char module_doc[] =
-"Implementation for V4L (Video4Linux) operations.";  
+"Implementation for V4L (Video4Linux) operations.";
 
 
 /* Module initialization function */
@@ -1537,7 +1541,7 @@ initv4l(void) {
     VideoType.tp_methods = video_methods;
     V4LType.tp_methods = v4l_methods;
 
-   
+
     VideoType.tp_new = (void *) videoobject_new;
     RadioType.tp_new = (void *) radioobject_new;
     V4LType.tp_new = (void *) v4lobject_new;
@@ -1551,7 +1555,6 @@ initv4l(void) {
     if (PyType_Ready(&V4LType) < 0)
     	return;
 
-    
     m = Py_InitModule3("v4l", v4ltype_methods, module_doc);
     d = PyModule_GetDict(m);
 
@@ -1571,7 +1574,7 @@ initv4l(void) {
     PyModule_AddObject(m, "video", (PyObject *) &VideoType);
     PyModule_AddObject(m, "radio", (PyObject *) &RadioType);
     PyModule_AddObject(m, "v4l", (PyObject *) &V4LType);
-		
+
 
     /* Constants */
     PyDict_SetItemString(d, "VIDEO_VC_TUNER", Py_BuildValue("i", VIDEO_VC_TUNER));
@@ -1614,7 +1617,7 @@ initv4l(void) {
     PyDict_SetItemString(d, "VIDEO_PALETTE_YUV410P", Py_BuildValue("i", VIDEO_PALETTE_YUV410P));
     PyDict_SetItemString(d, "VIDEO_PALETTE_PLANAR", Py_BuildValue("i", VIDEO_PALETTE_PLANAR));
     PyDict_SetItemString(d, "VIDEO_PALETTE_COMPONENT", Py_BuildValue("i", VIDEO_PALETTE_COMPONENT));
-    
+
     PyDict_SetItemString(d, "VIDEO_AUDIO_MUTE", Py_BuildValue("i", VIDEO_AUDIO_MUTE));
     PyDict_SetItemString(d, "VIDEO_AUDIO_MUTABLE", Py_BuildValue("i", VIDEO_AUDIO_MUTABLE));
     PyDict_SetItemString(d, "VIDEO_AUDIO_VOLUME", Py_BuildValue("i", VIDEO_AUDIO_VOLUME));
@@ -1626,7 +1629,5 @@ initv4l(void) {
     PyDict_SetItemString(d, "VIDEO_SOUND_LANG1", Py_BuildValue("i", VIDEO_SOUND_LANG1));
     PyDict_SetItemString(d, "VIDEO_SOUND_LANG2", Py_BuildValue("i", VIDEO_SOUND_LANG2));
 
-
 }
-	
 
