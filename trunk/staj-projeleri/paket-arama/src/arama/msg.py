@@ -19,6 +19,8 @@ messages = {
 'Packagers' : 'Paketçiler',
 'Search Packages' : 'Paket Arama',
 'Search' : 'Ara',
+'Back' : 'Geri',
+'packages' : 'paketler',
 '(first %s)' : '(ilk %s)',
 'Contents of package %(pkg)s %(partial)s:' : '%(pkg)s paketinin içeriği %(partial)s:',
 'No package specified.' : 'Paket belirtilmedi.',
