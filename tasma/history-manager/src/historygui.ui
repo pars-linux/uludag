@@ -48,6 +48,9 @@
                     <property name="text">
                         <string>Help</string>
                     </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
                 </widget>
                 <spacer>
                     <property name="name">
@@ -73,6 +76,9 @@
                     <property name="text">
                         <string>New</string>
                     </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
                 </widget>
                 <widget class="QPushButton">
                     <property name="name">
@@ -83,6 +89,9 @@
                     </property>
                     <property name="text">
                         <string>Restore</string>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
                     </property>
                 </widget>
             </hbox>
@@ -218,6 +227,9 @@
                         </property>
                         <property name="frameShape">
                             <enum>MenuBarPanel</enum>
+                        </property>
+                        <property name="selectionMode">
+                            <enum>Extended</enum>
                         </property>
                     </widget>
                 </grid>
