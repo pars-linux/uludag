@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'historygui.ui'
 #
-# Created: Cum Haz 27 12:17:55 2008
+# Created: Cts Eyl 13 01:13:44 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,15 +26,18 @@ class formMain(QWidget):
         layout11 = QHBoxLayout(None,0,6,"layout11")
 
         self.helpPushButton = QPushButton(self,"helpPushButton")
+        self.helpPushButton.setFlat(1)
         layout11.addWidget(self.helpPushButton)
         spacer1 = QSpacerItem(160,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
         layout11.addItem(spacer1)
 
         self.snapshotPushButton = QPushButton(self,"snapshotPushButton")
+        self.snapshotPushButton.setFlat(1)
         layout11.addWidget(self.snapshotPushButton)
 
         self.restorePushButton = QPushButton(self,"restorePushButton")
         self.restorePushButton.setEnabled(0)
+        self.restorePushButton.setFlat(1)
         layout11.addWidget(self.restorePushButton)
 
         formMainLayout.addMultiCellLayout(layout11,3,3,0,1)
@@ -79,6 +82,7 @@ class formMain(QWidget):
 
         self.opDetailsListBox = QListBox(self.takeBackPage,"opDetailsListBox")
         self.opDetailsListBox.setFrameShape(QListBox.MenuBarPanel)
+        self.opDetailsListBox.setSelectionMode(QListBox.Extended)
 
         takeBackPageLayout.addWidget(self.opDetailsListBox,0,0)
         self.toolBox.addItem(self.takeBackPage,QString.fromLatin1(""))

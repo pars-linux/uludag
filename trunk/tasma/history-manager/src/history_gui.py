@@ -83,6 +83,11 @@ class widgetMain(formMain):
         self.popupmenu = QPopupMenu()
         self.popupmenu.insertItem(loadIconSet("reload", KIcon.Small), i18n("Restore to This Point"), self.take_back)
 
+        # context menu for operation details
+        self.oppopup = QPopupMenu()
+        self.oppopup.insertItem(i18n("Copy"), self.copyToClipboard)
+        self.oppopup.insertItem(i18n("Select All"), self.selectAllOps)
+
         # this hangs a little bit with a huge history
         self.updateGui()
 
@@ -94,6 +99,7 @@ class widgetMain(formMain):
         self.connect(self.restorePushButton, SIGNAL("clicked()"), self.take_back)
         self.connect(self.helpPushButton, SIGNAL("clicked()"), self.showHelp)
         self.connect(self.snapshotsListView, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.execPopup)
+        self.connect(self.opDetailsListBox, SIGNAL("contextMenuRequested(QListBoxItem *, const QPoint &)"), self.execOpPopup)
         self.connect(self.comboBox, SIGNAL("activated(int)"), self.comboItemChanged)
 
     # show help window
@@ -125,6 +131,24 @@ class widgetMain(formMain):
         self.selected = item
         self.popupmenu.popup(point)
 
+    def execOpPopup(self, item, point):
+        if item == None:
+            return
+        self.oppopup.popup(point)
+
+    def selectAllOps(self):
+        self.opDetailsListBox.selectAll(True)
+
+    def copyToClipboard(self):
+        cb = QApplication.clipboard()
+
+        selected = ""
+        for i in range(self.opDetailsListBox.count()):
+            if self.opDetailsListBox.item(i).isSelected():
+                selected += self.opDetailsListBox.item(i).text() + '\n'
+
+        cb.setText(selected, QClipboard.Clipboard)
+
     def take_snapshot(self):
         self.__take_snapshot()
 
@@ -154,10 +178,6 @@ class widgetMain(formMain):
                 self.progress.reset()
                 self.progress.setTotalSteps((len(willbeinstalled)+len(willberemoved))*2)
                 self.command.takeBack(operation)
-
-    def delete_snapshot(self):
-        # wont delete snapshots for now
-        pass
 
     def enableButtons(self, true):
         # dont enable buttons in progress
@@ -330,7 +350,7 @@ class widgetMain(formMain):
             self.planTextEdit.setText(information)
 
         message = i18n("Take Back Plan for %1 operation on %2")\
-                .arg(self.selected.getType()).arg(self.selected.getDate()) + "<br><br>"
+                .arg(self.selected.getTypeTr()).arg(self.selected.getDate()) + "<br><br>"
         if len(willbeinstalled) != 0:
             message += "<br>" + i18n("These package(s) will be <b>installed</b> :") + "<br>"
             for i in range(len(willbeinstalled)):
