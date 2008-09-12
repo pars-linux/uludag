@@ -43,20 +43,20 @@ header = ('''
          | <a href='http://paketler.pardus.org.tr/info/2008/packagers.html'>%(menu4)s</a>
          | <a href='%(root)s'>%(menu5)s</a>
         </div>
-        <div class='content'>
+        <div class='content' align='center'>
         <form action="%(root)s/search" method="post">
-        <center>
             <input type="text" name="q" size="80"/>
-            <input type="submit" value="%(search)s"/>        
-        </center>''' % dict) + '''
-        <h2 align='center'>%s</h2>
+            <input type="submit" value="%(search)s"/> 
+        </form>       
+        ''' % dict) + '''
+        <h2>%s</h2>
 '''
 footer = '''
-        <hr width="40%"/>
+        <hr width="40%%"/>
+        <a href='javascript: history.go(-1)'>%(back)s</a>
         </div>
     </body>
-</html>
-'''
+</html>''' % {'back' : _('Back')}
 
 class TableGenerator:
     def __init__(self, headers, data, term_link=None):

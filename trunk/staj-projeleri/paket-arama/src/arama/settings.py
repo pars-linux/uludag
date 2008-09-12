@@ -2,7 +2,7 @@ dbhost = 'localhost'
 dbuser = 'root'
 dbpass = ''
 dbname = 'arama'
-root = '/arama'
+root = '/~emre/src/arama'
 
 #dbhost = 'localhost'
 #dbuser = 'arama'

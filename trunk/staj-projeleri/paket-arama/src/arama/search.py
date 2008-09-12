@@ -8,7 +8,10 @@ from lib import _
 #_ = __trans.ugettext
 
 def escape(text):
-    return text.replace('\\','').replace('--','').replace('/*','').replace("'", "").replace("\"", "").replace('  ',' ').replace('=','').replace('(','').replace(')','').replace('%','').replace(";", "")
+    return text.replace('\\','').replace('--','').replace('/*','').\
+    replace("'", "").replace("\"", "").replace('=','').replace('(','').\
+    replace(')','').replace('%','').replace(";", "").replace('$', '').\
+    replace('^', '').replace('#', '').replace('?', '')
 
 def index(q=None):
     """
