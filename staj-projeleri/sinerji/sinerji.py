@@ -101,7 +101,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     ### Menu for the Tray
         self.trayMenu = QMenu()
 
-        self.actionManage = QAction(QIcon(":/manage.png"),u"Configure", self)
+        self.actionManage = QAction(QIcon(":/manage.png"),u"Manage", self)
         self.connect(self.actionManage, SIGNAL("activated()"), self.show)
         self.trayMenu.addAction(self.actionManage)
 
@@ -154,12 +154,14 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             print "No Sinerji service available"
 
     def acceptServer(self):
+            self.actionManage = QAction(QIcon(":/manage.png"),u"Disconnect", self)
             command = ['synergyc', self.address]
             self.process = subprocess.Popen(command)
             print "Start Synergyc"            
-            time.sleep(1)
+            time.sleep(0.5)
             self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.clientAndPos[1]))
             self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
+            self.timer.stop()
 
     def rejectServer(self):
         if self.searched:
@@ -167,15 +169,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.trayIcon.setToolTip("Idle mode, nothing to do")
         else:
             pass
-
-    def fillComboBoxes(self):
-        ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
-        for domain in self.connectingWorkstation.getDomains():
-            self.topComboBox.addItem(domain)
-            self.bottomComboBox.addItem(domain)
-            self.rightComboBox.addItem(domain)
-            self.leftComboBox.addItem(domain)
-        self.filled = True
 
 ##################################################################
 ##################################################################
@@ -188,9 +181,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_topComboBox_activated(self, text):
         self.topComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.topComboBox.setCurrentIndex(0)
+
 
     def on_bottomComboBox_highlighted(self):
         if not self.filled:
@@ -199,9 +190,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_bottomComboBox_activated(self, text):
         self.bottomComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.bottomComboBox.setCurrentIndex(0)
 
     def on_rightComboBox_highlighted(self, text):
         if not self.filled:
@@ -210,9 +198,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_rightComboBox_activated(self, text):
         self.rightComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.rightComboBox.setCurrentIndex(0)
 
     def on_leftComboBox_highlighted(self, text):
         if not self.filled:
@@ -221,10 +206,20 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     @pyqtSignature("QString")
     def on_leftComboBox_activated(self, text):
         self.leftComboBox.setEditable(True)
-        if (text == gethostname()):
-            QMessageBox.warning(self, u"Warning", u"The pc you have choosen is you own pc, please chose another pc")
-            self.leftComboBox.setCurrentIndex(0)
 
+
+    def fillComboBoxes(self):
+        ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
+        for domain in self.connectingWorkstation.getDomains():
+            self.topComboBox.addItem(domain)
+            self.bottomComboBox.addItem(domain)
+            self.rightComboBox.addItem(domain)
+            self.leftComboBox.addItem(domain)
+        self.filled = True
+        self.topComboBox.removeItem(self.topComboBox.findText(gethostname()))
+        self.bottomComboBox.removeItem(self.bottomComboBox.findText(gethostname()))
+        self.rightComboBox.removeItem(self.rightComboBox.findText(gethostname()))
+        self.leftComboBox.removeItem(self.leftComboBox.findText(gethostname()))
 
 ##################################################################
 ##################################################################
@@ -272,7 +267,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             command = ['synergys', '--config', self.synergyConf]
             self.process = subprocess.Popen(command, shell=False)
             self.started = True
-
+            self.hide()
+            time.sleep(0.5)
             self.notifier.show(self.iconNotify, "Sinerji", "Synergy server started successfull")
             self.trayIcon.setToolTip("Synergy is connected to a pc")
 
@@ -288,7 +284,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         if self.started:
             if self.process.pid:
                 os.kill(self.process.pid+1, signal.SIGKILL)
-        self.reject()
+        self.hide()
 
 ##################################################################
 ##################################################################
