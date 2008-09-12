@@ -55,14 +55,14 @@ def get_package_version(name):
 def get_package(name):
     for node in repo.tags("Package"):
         if node.getTagData("Name") == name:
-            return pkg.getTagData("PackageURI")
+            return node.getTagData("PackageURI")
 
 def get_packages_to_install():
     excludes = ["pisi", "package-manager", "lzma", "ncurses"]
     pkgs = []
     for node in repo.tags("Package"):
         if node.getTagData("Name") not in excludes:
-            pkgs.append(pkg.getTagData("PackageURI"))
+            pkgs.append(node.getTagData("PackageURI"))
     return pkgs
 
 def install_delayed_packages():
