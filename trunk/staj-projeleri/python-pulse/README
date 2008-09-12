@@ -1,0 +1,20 @@
+-------------python-pulse--------------
+PulseAudio icin deneysel python bindingleri;
+Author: Burak Alkan
+
+
+modulu derlemek icin;
+
+$ python setup.py build
+
+install icin(pypulse.so isimli share-obj /usr/lib/python2.5/site-packages/
+altina kopyalar);
+
+# python setup.py install
+
+main.py calistir;
+
+$ ./main.py
+
+
+NOTE: for now always quit with "quit" button on gui, don't use [X] button.

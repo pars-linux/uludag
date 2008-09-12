@@ -4,9 +4,9 @@
 
 
 
-
 int context_state_callback(pa_context* c)
 {
+	printf("context_state_callback pa_context* c assertion\n");
     g_assert(c);
 
     switch (pa_context_get_state(c)) {
@@ -52,8 +52,7 @@ int context_state_callback(pa_context* c)
 }
 
 
-
-static PyObject* enter_loop()
+static PyObject* main_event_loop()
 {
   gtk_main();
   return Py_BuildValue("i", 0);
@@ -69,7 +68,35 @@ void safe_quit()
 }
 
 
-static PyObject* context_connect()
+/* run this after py_context_connect()
+ * if you want to get notified when
+ * an event occurs
+ */
+static PyObject* py_context_set_state_callback()
+{
+	pa_context_set_state_callback(context, context_state_callback, NULL);
+	Py_INCREF(Py_None);
+	return Py_None;
+}
+
+
+/* connect to default running pulse server
+ * returns -1 on fail, 0 on success
+ */
+static PyObject* py_context_connect()
+{
+	// TODO: change return values ?
+	if(pa_context_connect(context, NULL, 0, NULL < 0)){
+		return Py_BuildValue("i", -1);
+	}
+	return Py_BuildValue("i",0);
+}
+
+
+/* main initialize function for pulseaudio
+ * first step
+ */
+static PyObject* py_initialize()
 {
     pa_glib_mainloop* m = pa_glib_mainloop_new(g_main_context_default()); // instead of pa_mainloop_new()
     printf("m assertion.. \n");
@@ -81,31 +108,27 @@ static PyObject* context_connect()
     printf("context assertion...\n");
     g_assert(context);
 	
-    pa_context_set_state_callback(context, context_state_callback, NULL);
-	
-    if(pa_context_connect(context, NULL, 0, NULL) < 0){
-      printf("connection failed\n");
-      safe_quit();
-    }
+    //pa_context_set_state_callback(context, context_state_callback, NULL);
+	//pa_context_connect(context, NULL, 0, NULL);
 
-    printf("***done***\n");
     return Py_BuildValue("i",0);
 
 }
 
 
 static PyMethodDef Methods[] = {
-    {"connect", context_connect, METH_VARARGS},
-    {"loop", enter_loop, METH_VARARGS},
-    {NULL , NULL, 0, NULL},
-	{NULL , NULL, 0, NULL}
+    {"initialize", py_initialize, METH_VARARGS},
+	{"context_set_state_callback", py_context_set_state_callback, METH_VARARGS},
+    {"context_connect", py_context_connect, METH_VARARGS},
+    {"loop", main_event_loop, METH_VARARGS},
+    {NULL , NULL, 0, NULL}
 };
 
 
 PyMODINIT_FUNC
-inittest(void)
+initpypulse(void)
 {
     PyObject* m;
-    m = Py_InitModule("test", Methods);
+    m = Py_InitModule("pypulse", Methods);
     if(m == NULL) return;
 }
