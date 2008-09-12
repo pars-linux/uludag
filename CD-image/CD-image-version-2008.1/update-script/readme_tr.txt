@@ -1,5 +1,4 @@
 Pardus 2007 - Pardus 2008 Geçiş Uygulaması
-------------------------------------------
 
 Pardus 2008.1 Hyaena hyaena Kurulan CD'si, Pardus 2007 - Pardus 2008 geçiş
 uygulamasını da içeriyor. Bu uygulama, Pardus 2007 kurulu sistemlerin Pardus
@@ -30,6 +29,7 @@ sürebilir, işlem tamamlanana kadar bekleyin.
 Pardus 2008.1 sisteminizi kullanmaya başlayabilirsiniz.
 
 Dikkat !
+
 - Geçiş uygulaması sisteminizin kritik bileşenlerini güncellediğinden hiçbir
 şekilde çalışması kesintiye uğramamalıdır. Geçiş uygulamasının kesintiye
 uğratılması sisteminizi kararsız bir durumda bırakabilir.
