@@ -12,6 +12,7 @@ import piksemel
 import pisi
 
 def get_pardus_cd_device():
+    print "oheo"
     return os.popen("hal-get-property --udi /org/freedesktop/Hal/devices/volume_label_Pardus --key block.device 2> /dev/null").read().strip()
 
 def is_pardus_cd_mounted():
@@ -394,5 +395,6 @@ def migrate_2007_to_2008():
     fix_dbus()
     fix_bashrc()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    print "ooooooo"
     migrate_2007_to_2008()
