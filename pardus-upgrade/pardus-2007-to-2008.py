@@ -366,8 +366,8 @@ def parse_repo():
     return piksemel.parseString(bz2.decompress(open(index, "r").read()))
 
 check_pardus_2008_cd()
-repodoc = parse_repo()
 cddev = os.path.basename(get_pardus_cd_device())
+repodoc = parse_repo()
 
 def migrate_2007_to_2008():
     check_grub_release()
