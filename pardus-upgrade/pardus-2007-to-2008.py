@@ -361,12 +361,12 @@ def copy_network_data_to_new_comar_db():
 
     run()
 
+repodoc = None
 def parse_repo():
     index = "/media/%s/repo/pisi-index.xml.bz2" % cddev
-    return piksemel.parseString(bz2.decompress(open(index, "r").read()))
+    repodoc = piksemel.parseString(bz2.decompress(open(index, "r").read()))
 
 cddev = os.path.basename(get_pardus_cd_device())
-repodoc = parse_repo()
 
 def migrate_2007_to_2008():
     check_pardus_2008_cd()
