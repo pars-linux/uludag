@@ -2,9 +2,9 @@
 #include <gtk/gtk.h>
 #include "pypulse.h"
 
+static int connection_state = 0;
 
-
-int context_state_callback(pa_context* c)
+int context_state_callback(pa_context* c, void* userdata)
 {
 	printf("context_state_callback pa_context* c assertion\n");
     g_assert(c);
@@ -25,19 +25,22 @@ int context_state_callback(pa_context* c)
         case PA_CONTEXT_READY: {
             g_assert(c);
             printf("INF: connection seems  OK\n");
-			// TODO: add pa_context_set_subscribe_callback !
-			pa_operation* o;
-			pa_context_set_subscribe_callback(c, subscribe_cb, NULL);
+						connection_state = 1;
+						// TODO: add pa_context_set_subscribe_callback !
+						/*
+						pa_operation* o;
+						pa_context_set_subscribe_callback(c, subscribe_cb, NULL);
 
-			if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t)
+						if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t)
                                            (PA_SUBSCRIPTION_MASK_SINK|
                                             PA_SUBSCRIPTION_MASK_SOURCE|
                                             PA_SUBSCRIPTION_MASK_SINK_INPUT|
                                             PA_SUBSCRIPTION_MASK_CLIENT|
                                             PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))) {
-				printf("pa_context_subscribe() failed");
-                return;
+						printf("pa_context_subscribe() failed");
+            return;
             }
+						*/
             break;
         }
         case PA_CONTEXT_TERMINATED:
@@ -67,6 +70,17 @@ void safe_quit()
 	printf("WAR: returning ret\n");
 }
 
+
+static PyObject* check_connection_flag()
+{
+	if (connection_state){
+		Py_INCREF(Py_True);
+		return Py_True;
+	}else{
+		Py_INCREF(Py_False);
+		return Py_False;
+	}
+}
 
 /* run this after py_context_connect()
  * if you want to get notified when
@@ -107,10 +121,9 @@ static PyObject* py_initialize()
     context = pa_context_new(api, "dummy");
     printf("context assertion...\n");
     g_assert(context);
-	
-    //pa_context_set_state_callback(context, context_state_callback, NULL);
-	//pa_context_connect(context, NULL, 0, NULL);
 
+    //pa_context_set_state_callback(context, context_state_callback, NULL);
+		//pa_context_connect(context, NULL, 0, NULL);
     return Py_BuildValue("i",0);
 
 }
@@ -118,8 +131,9 @@ static PyObject* py_initialize()
 
 static PyMethodDef Methods[] = {
     {"initialize", py_initialize, METH_VARARGS},
-	{"context_set_state_callback", py_context_set_state_callback, METH_VARARGS},
+		{"context_set_state_callback", py_context_set_state_callback, METH_VARARGS},
     {"context_connect", py_context_connect, METH_VARARGS},
+		{"is_connection_valid",check_connection_flag , METH_VARARGS},
     {"loop", main_event_loop, METH_VARARGS},
     {NULL , NULL, 0, NULL}
 };

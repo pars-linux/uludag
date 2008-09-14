@@ -16,5 +16,4 @@ main.py calistir;
 
 $ ./main.py
 
-
-NOTE: for now always quit with "quit" button on gui, don't use [X] button.
+looptan cikmak icin guideki quit butonunu kullanin
