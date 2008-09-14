@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from tabbed import Ui_MainWindow
-import sys,os,threading
+import sys
 from PyQt4 import QtGui
 from PyQt4  import QtCore
 import pypulse
@@ -33,14 +33,20 @@ class mein(QtGui.QApplication):
 		QtGui.QApplication.__init__(self, sys.argv)
 
 	def go(self):
-	  """
-	  main pulse action
-	  """
-	  pypulse.initialize()
-	  pypulse.context_set_state_callback()
-	  pypulse.context_connect()
-	  pypulse.loop()
-
+		"""
+		default subscribe flags
+		PA_SUBSCRIPTION_MASK_SINK
+		PA_SUBSCRIPTION_MASK_SOURCE
+		PA_SUBSCRIPTION_MASK_SINK_INPUT
+		PA_SUBSCRIPTION_MASK_CLIENT
+		PA_SUBSCRIPTION_MASK_SERVER
+		"""
+		pypulse.initialize()
+		pypulse.context_set_state_callback()
+		if pypulse.is_connection_valid:
+			print "connection valid"
+			pypulse.context_connect()
+			pypulse.loop()
 
 def main():
 	main_app = mein()
