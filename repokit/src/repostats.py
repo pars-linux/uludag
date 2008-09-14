@@ -125,7 +125,7 @@ def find_pisi_specs(folder):
 
 def make_table(elements, titles=None):
     def make_row(element):
-        return "<td>%s" % "<td>".join(map(str, element))
+        return "<tr><td> %s </td></tr>" % ("</td><td>".join(map(str, element)).replace('\n', '<br/>'))
     
     title_html = ""
     if titles:
@@ -135,9 +135,9 @@ def make_table(elements, titles=None):
     
     html = """
         <table>%s<tbody>
-        <tr>%s
+        %s
         </tbody></table>
-    """ % (title_html, "<tr>".join(map(make_row, elements)))
+    """ % (title_html, "\n".join(map(make_row, elements)))
     
     return html
 
@@ -381,7 +381,7 @@ class Source:
             _("Binary packages"),
             "<br>".join(paks),
             _("Release history"),
-            "<br/>".join(hist),
+            "".join(hist),
             _("Patches"),
             "<br>".join(ptch),
         )
