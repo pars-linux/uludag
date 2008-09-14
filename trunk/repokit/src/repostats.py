@@ -381,7 +381,7 @@ class Source:
             _("Binary packages"),
             "<br>".join(paks),
             _("Release history"),
-            "".join(hist),
+            "<br/>".join(hist),
             _("Patches"),
             "<br>".join(ptch),
         )
