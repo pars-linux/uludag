@@ -196,7 +196,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.clientState = True
             
             time.sleep(0.5)
-            self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.clientAndPos[1]))
+            self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.clientAndPos[1]), 1500)
             self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
             self.timer.stop()
 
@@ -301,7 +301,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             ## Starting synergys
 
-            command = ['synergys', '--config', self.synergyConf]
+            command = ['synergys', '-f', '--config', self.synergyConf]
             self.process = subprocess.Popen(command, shell=False)
             self.started = True
             self.hide()
