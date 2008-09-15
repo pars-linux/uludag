@@ -46,6 +46,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bus = None
         self.filled = None
         self.searched = None
+        self.popup = None
         self.started = None
         self.clientState = None
         self.clientAndPos = []
@@ -338,32 +339,27 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.reject()
 
     def readData(self):
-        self.processOutput.append(self.process.readAllStandardOutput())
+        self.processOutput = self.process.readAllStandardOutput()
         self.text = QString.fromLocal8Bit(str(self.processOutput))
-        self.text = self.text.split('\n')
-        #for line in self.text:
-        #    self.parseReadData(self.text)
-    """
-    def parseReadData(self, line):
-        clientMatch = re.search(r'client "(?P<client>[^"]+)" has connected', line)
-        if clientMatch:
-            host = clientMatch.group('client')
-            self.notifier.show(self.iconNotify, "Sinerji", "Computer %s is sharing its screen" % serverAndIp[0])
-        clientMatch = re.search(r'client "(?P<client>[^"]+)" has disconnected', line)
-        if clientMatch:
-            host = clientMatch.group('client')
-            if host in self.clients:
-                notification = self.notify_popup(u'Screen disconnected', u'Computer "%s" is no longer sharing its screen.' % host)
-                notification.show()
-                self.clients.remove(host)
-                """
+        self.parseReadData(self.text)
+
+    def parseReadData(self, data):
+        self.patternFound = 'NOTE:.*client "(.*)" has connected'
+        self.patternRemoved = 'NOTE:.*client "(.*)" has disconnected'
+        n = re.match(self.patternFound, str(data), re.I)
+        m = re.match(self.patternRemoved, str(data), re.I)
+
+        if n:
+            clientFound = n.groups()[0]
+            self.notifier.show(self.iconNotify, "Screen connected", "Computer %s is sharing its screen" % clientFound)
+        if m:
+            clientRemoved = m.groups()[0]
+            self.notifier.show(self.iconNotify, "Screen disconnected", "Computer %s is no longer sharing its screen" % clientRemoved)
 
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
         self.hide()
-    
-
 
 ##################################################################
 ##################################################################
