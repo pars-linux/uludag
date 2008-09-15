@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-import os, sys
+import os, sys, re
 import platform, time
 from socket import gethostname
 from dbus.mainloop.qt import DBusQtMainLoop
@@ -59,12 +59,19 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
         self.notifier = notifier.Notifier()
         self.clientDisconnect = disconnect.Disconnect(self)
-        
+
         self.connect(self.notifier, SIGNAL("acceptServer"), self.acceptServer)
         self.connect(self.notifier, SIGNAL("rejectServer"), self.rejectServer)
-        
+
         self.connect(self.clientDisconnect.disconnectButton, SIGNAL("clicked()"), self.disconnect)
         self.connect(self.clientDisconnect.okButton, SIGNAL("clicked()"), self.clientDisconnect.hide)
+
+        self.process = QProcess()
+        self.processOutput = QByteArray()
+        self.process.setReadChannelMode(QProcess.MergedChannels)
+        self.process.setReadChannel(QProcess.StandardOutput)
+        self.connect(self.process, SIGNAL("readyReadStandardOutput()"), self.readData)
+
 
 
         self.topComboBox.addItem('')
@@ -147,6 +154,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
 
     def about(self):
+        self.show()
         QMessageBox.about(self, "About Sinerji",
              """<b>Sinerji</b> v %s
              <p>Developer: Fatih Arslan  E-mail: ftharsln@gmail.com     
@@ -179,7 +187,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.trayMenu.insertAction(self.actionAbout, self.actionDisconnect) ## Add actionDisconnect before self.actionAbout
             self.trayMenu.removeAction(self.actionManage)
             
-            self.process = QProcess()
             self.clientCmdList = QStringList()
             self.clientCmdList.append("-f")
             self.clientCmdList.append(self.address)
@@ -306,7 +313,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             createsynergyconf.links(self.confdomain)
 
             ## Starting synergys
-            self.process = QProcess()
+
             self.cmdList = QStringList()
             self.cmdList.append("-f")
             self.cmdList.append("--config")
@@ -329,6 +336,28 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         if self.started:
             self.process.kill()
         self.reject()
+
+    def readData(self):
+        self.processOutput.append(self.process.readAllStandardOutput())
+        self.text = QString.fromLocal8Bit(str(self.processOutput))
+        self.text = self.text.split('\n')
+        #for line in self.text:
+        #    self.parseReadData(self.text)
+    """
+    def parseReadData(self, line):
+        clientMatch = re.search(r'client "(?P<client>[^"]+)" has connected', line)
+        if clientMatch:
+            host = clientMatch.group('client')
+            self.notifier.show(self.iconNotify, "Sinerji", "Computer %s is sharing its screen" % serverAndIp[0])
+        clientMatch = re.search(r'client "(?P<client>[^"]+)" has disconnected', line)
+        if clientMatch:
+            host = clientMatch.group('client')
+            if host in self.clients:
+                notification = self.notify_popup(u'Screen disconnected', u'Computer "%s" is no longer sharing its screen.' % host)
+                notification.show()
+                self.clients.remove(host)
+                """
+
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
