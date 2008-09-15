@@ -18,6 +18,10 @@ class Disconnect(QDialog, ui_disconnect.Ui_Disconnect):
     def setText(self, client):
         self.clientTextLabel.setText("%s is connected to you" % client)
 
+    def closeEvent(self, event):
+    ### Override so that closing it doesn't quit the app
+        event.ignore()
+        self.hide()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
