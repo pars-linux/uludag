@@ -84,20 +84,20 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.notifier.show(self.iconNotify, header, message, 0, buttonList)
 
 
-    """ FIXME 
+    #""" FIXME 
 
-    def getPos(self):
-        pt = self.mapToGlobal(QPoint(0,0))
-        screen = QDesktopWidget()
-        incr = 0
-        if pt.x() < screen.screenGeometry().height()/2 and pt.x() < self.height():
-            incr = self.width() - 4
-        elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
-            incr = 0
-        else:
-            incr = self.width() / 2
-        return (pt.x() + self.height()/2, pt.y() + incr)
-    """
+    #def getPos(self):
+    #    pt = self.mapToGlobal(QPoint(0,0))
+    #    screen = QDesktopWidget()
+    #    incr = 0
+    #    if pt.x() < screen.screenGeometry().height()/2 and pt.x() < self.height():
+    #        incr = self.width() - 4
+    #    elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
+    #        incr = 0
+    #    else:
+    #        incr = self.width() / 2
+    #    return (pt.x() + self.height()/2, pt.y() + incr)
+
 
     def closeEvent(self, event):
     ### Override so that closing it doesn't quit the app
@@ -182,20 +182,22 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             command = ['synergyc', '-f', self.address]
             self.process = subprocess.Popen(command)
+
+
             print "Start Synergyc"            
             self.clientState = True
-            
+
             time.sleep(0.5)
             self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.serverAndIp[0]), 1500)
             self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
             self.timer.stop()
-    
+
     def disconnect(self):
         if self.clientDisconnect.isVisible():
             self.clientDisconnect.hide()
         self.trayMenu.insertAction(self.actionAbout, self.actionManage) ## Add actionDisconnect before self.actionAbout
         self.trayMenu.removeAction(self.actionDisconnect)
-        if self.started:
+        if self.clientState:
             if self.process.pid:
                 os.kill(self.process.pid, signal.SIGKILL)
         time.sleep(0.5)
@@ -305,7 +307,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             ## Starting synergys
 
             command = ['synergys', '-f', '--config', self.synergyConf]
-            self.process = subprocess.Popen(command, shell=False)
+            self.process = subprocess.Popen(command, stdout = subprocess.PIPE)
+
             self.started = True
             self.hide()
             time.sleep(0.5)
@@ -319,7 +322,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             pass
 
     def killSynergys(self):
-        os.kill(self.process.pid, signal.SIGKILL)
+        if self.started:
+            if self.process.pid:
+                os.kill(self.process.pid, signal.SIGKILL)
         self.reject()
 
     @pyqtSignature("")
