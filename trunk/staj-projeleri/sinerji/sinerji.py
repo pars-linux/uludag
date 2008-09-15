@@ -83,6 +83,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
         self.notifier.show(self.iconNotify, header, message, 0, buttonList)
 
+
     """ FIXME 
 
     def getPos(self):
@@ -119,7 +120,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.trayMenu.addSeparator()
 
         self.actionQuit = QAction(QIcon(":/quit.png"),u"Quit", self)
-        self.connect(self.actionQuit, SIGNAL("activated()"), app.quit)
+        self.connect(self.actionQuit, SIGNAL("activated()"), self.killSynergys)
         self.trayMenu.addAction(self.actionQuit)
         
         ## for Client
@@ -136,24 +137,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 else:
                     self.hide()
         else:
-            self.clientDisconnect.setText(self.clientAndPos[1])
+            self.clientDisconnect.setText(self.serverAndIp[0])
             if reason != QSystemTrayIcon.Context:
                 if self.clientDisconnect.isHidden():
                     self.clientDisconnect.showNormal()
                 else:
                     self.clientDisconnect.hide()
             
-    def disconnect(self):
-        if self.clientDisconnect.isVisible():
-            self.clientDisconnect.hide()
-        self.trayMenu.insertAction(self.actionAbout, self.actionManage) ## Add actionDisconnect before self.actionAbout
-        self.trayMenu.removeAction(self.actionDisconnect)
-        if self.started:
-            if self.process.pid:
-                os.kill(self.process.pid+1, signal.SIGKILL)
-        time.sleep(0.5)
-        self.notifier.show(self.iconNotify, "Sinerji", ("Disconnected from %s " % self.clientAndPos[1]))
-        self.clientState = None
 
 
 
@@ -190,15 +180,28 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.trayMenu.insertAction(self.actionAbout, self.actionDisconnect) ## Add actionDisconnect before self.actionAbout
             self.trayMenu.removeAction(self.actionManage)
 
-            command = ['synergyc', self.address]
+            command = ['synergyc', '-f', self.address]
             self.process = subprocess.Popen(command)
             print "Start Synergyc"            
             self.clientState = True
             
             time.sleep(0.5)
-            self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.clientAndPos[1]), 1500)
+            self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.serverAndIp[0]), 1500)
             self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
             self.timer.stop()
+    
+    def disconnect(self):
+        if self.clientDisconnect.isVisible():
+            self.clientDisconnect.hide()
+        self.trayMenu.insertAction(self.actionAbout, self.actionManage) ## Add actionDisconnect before self.actionAbout
+        self.trayMenu.removeAction(self.actionDisconnect)
+        if self.started:
+            if self.process.pid:
+                os.kill(self.process.pid, signal.SIGKILL)
+        time.sleep(0.5)
+        self.notifier.show(self.iconNotify, "Sinerji", ("Disconnected from %s " % self.serverAndIp[0]))
+        self.clientState = None
+
 
     def rejectServer(self):
         if self.searched:
@@ -315,6 +318,9 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         else:
             pass
 
+    def killSynergys(self):
+        os.kill(self.process.pid, signal.SIGKILL)
+        self.reject()
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
