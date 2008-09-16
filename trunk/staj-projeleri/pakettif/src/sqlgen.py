@@ -65,9 +65,17 @@ f.close()
 if debug: print "Written drop/create table statements."
 if debug: print "Fetching package information from pisi."
 
-pi     = pisi.db.installdb.InstallDB()
 statements = ""
-installed_packages = pi.list_installed()
+if version == '2008':
+    pi = pisi.db.installdb.InstallDB()
+    installed_packages = pi.list_installed()
+elif version == '2007':
+    pi = pisi.installdb.init()
+    installed_packages = pi.list_installed()
+    pi.finalize()
+else:
+    raise Error("Unknown version!")
+
 counter = 0
 index = 1
 
