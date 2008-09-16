@@ -15,6 +15,7 @@ class Cam:
         self.picture = None
         self.capabilities = None
         self.nextFrame = 0
+        self.array = qt.QByteArray(self.WIDTH*self.HEIGHT*3)
 
     def start(self):
 #       print "start"
@@ -22,7 +23,7 @@ class Cam:
             return
 
         if(self.device == None):
-            self.device = v4l.video('/dev/video0')
+            self.device = v4l.video('/dev/video')
             self.picture = self.device.getPicture()
             self.capabilities = self.device.getCapabilities()
             self.device.preQueueFrames()
@@ -38,6 +39,18 @@ class Cam:
             list[i] = temp
         return "".join(list)
 
+    def from24to32(self, str):
+        list = [l for l in str]
+        newstr = []
+        for i in range(940):
+            newstr.append('\x00')
+        for i in range(0, len(list), 3):
+            newstr.append(list[i])
+            newstr.append(list[i+1])
+            newstr.append(list[i+2])
+            newstr.append('\x00')
+        return qt.QString("".join(newstr))
+
 
     def getFrame(self):
 #       print "getFrame"
@@ -48,15 +61,22 @@ class Cam:
 #           print "Device:", self.device
         out = self.device.getImage(self.nextFrame)
 
-#       new = ''
-#       for i in range(0, len(out), 3):
-#           new = new + out[i+2] + out[i+1] + out[i]
-#       imTemp = Image.fromstring("RGB", (self.WIDTH, self.HEIGHT), new)
+        #out = self.RGB2BGR(out)
+        #imTemp = Image.fromstring("RGB", (self.WIDTH, self.HEIGHT), out)
+        #PILstring = imTemp.convert("RGB").tostring("jpeg", "RGB")
+        #im = qt.QImage(qt.QByteArray(PILstring))
 
-        out = self.RGB2BGR(out)
-        imTemp = Image.fromstring("RGB", (self.WIDTH, self.HEIGHT), out)
-        PILstring = imTemp.convert("RGB").tostring("jpeg", "RGB")
-        im = qt.QImage(qt.QByteArray(PILstring))
+        #im = qt.QImage(out, self.WIDTH, self.HEIGHT, 24, 0, 2**24, qt.QImage.IgnoreEndian)
+
+
+        tmp = self.from24to32(out)
+
+        # tmp = qt.QString(out)
+
+        im = qt.QImage(self.WIDTH, self.HEIGHT,32,qt.QImage.IgnoreEndian)
+        im.loadFromData(tmp)
+
+
         image = qt.QPixmap(im)
         self.ui.lbl_screen.setPixmap(image)
         self.nextFrame = self.device.queueFrame()
@@ -64,9 +84,11 @@ class Cam:
     def capture(self):
 #       print "capture"
         if(self.device == None):
-            self.device = v4l.video('/dev/video0')
+            self.device = v4l.video('/dev/video')
             self.device.preQueueFrames()
+            print "i"
         out = self.device.getImage(self.nextFrame)
+        out = self.RGB2BGR(out)
         image = Image.fromstring("RGB", (self.WIDTH, self.HEIGHT), out)
         image.save("image.jpg", "JPEG")
         self.ui.timer.stop()
