@@ -30,6 +30,13 @@ class Cam:
 
         self.ui.timer.start(100)
 
+    def RGB2BGR(self, str):
+        list = [l for l in str]
+        for i in range(0, len(list), 3):
+            temp = list[i+2]
+            list[i+2] = list[i]
+            list[i] = temp
+        return "".join(list)
 
 
     def getFrame(self):
@@ -40,6 +47,13 @@ class Cam:
 #       else:
 #           print "Device:", self.device
         out = self.device.getImage(self.nextFrame)
+
+#       new = ''
+#       for i in range(0, len(out), 3):
+#           new = new + out[i+2] + out[i+1] + out[i]
+#       imTemp = Image.fromstring("RGB", (self.WIDTH, self.HEIGHT), new)
+
+        out = self.RGB2BGR(out)
         imTemp = Image.fromstring("RGB", (self.WIDTH, self.HEIGHT), out)
         PILstring = imTemp.convert("RGB").tostring("jpeg", "RGB")
         im = qt.QImage(qt.QByteArray(PILstring))
