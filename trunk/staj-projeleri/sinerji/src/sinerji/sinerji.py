@@ -22,7 +22,6 @@ import gettext
 __trans = gettext.translation('sinerji', fallback=True)
 _ = __trans.ugettext
 
-__version__ = 0.1
 
 class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def __init__(self,  parent=None):

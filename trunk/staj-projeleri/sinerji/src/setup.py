@@ -22,12 +22,6 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 from distutils.spawn import find_executable, spawn
 
-import sinerji
-
-SINERJIP_VERSION = sinerji.__version__
-
-def getVersion():
-    return SINERJI_VERSION
 
 def py_file_name(ui_file):
     return os.path.splitext(ui_file)[0] + '.py'
@@ -37,7 +31,7 @@ def qt_ui_files():
     p = "sinerji/*.ui"
     return glob.glob(p)
 
-def data_files():
+def image_files():
     p = "sinerji/images/*"
     return glob.glob(p)
 
@@ -48,9 +42,6 @@ def resource_files():
 ##
 # build command
 class SinerjiBuild(build):
-    
-    
-
     def add_gettext_support(self, ui_file):
         # hacky, too hacky. but works...
         py_file = py_file_name(ui_file)
@@ -165,19 +156,16 @@ class I18nInstall(install):
             shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
 
 setup(name="sinerji",
-      version= getVersion(),
-      description="SINERJI (Fronted for Synergy)",
-      long_description="SINERJI (Fronet for Synergy, it aims to be)",
+      version= "0.1",
+      description="Sinerji is a fronted for Synergy)",
       license="GNU GPL2",
       author="Fatih Arslan",
       author_email="fatih@arsln.org",
       url="http://blog.arsln.org",
       packages = ['sinerji'],
       package_dir = {'': ''},
-      data_files = [('/usr/share/sinerji', resource_files()),
-          '/usr/share/sinerji/images', data_files())],
+      data_files = [('/usr/share/sinerji', resource_files()), ('/usr/share/sinerji/images', image_files())],
       scripts = ['sinerji/sinerji.py'],
-      ext_modules = [],
       cmdclass = {
         'build' : SinerjiBuild,
         'clean' : SinerjiClean,
