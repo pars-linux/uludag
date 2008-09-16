@@ -6,6 +6,10 @@ from PyQt4.QtGui import *
 import ui_disconnect
 import sys 
 
+import gettext
+__trans = gettext.translation('sinerji', fallback=True)
+_ = __trans.ugettext
+
 class Disconnect(QDialog, ui_disconnect.Ui_Disconnect):
     def __init__(self,  parent=None):
         super(Disconnect, self).__init__(parent)
@@ -16,7 +20,7 @@ class Disconnect(QDialog, ui_disconnect.Ui_Disconnect):
 
     
     def setText(self, client):
-        self.clientTextLabel.setText("%s is connected to you" % client)
+        self.clientTextLabel.setText(_("%s is connected to you") % client)
 
     def closeEvent(self, event):
     ### Override so that closing it doesn't quit the app

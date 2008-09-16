@@ -10,6 +10,10 @@ import avahi
 import re
 
 
+import gettext
+__trans = gettext.translation('sinerji', fallback=True)
+_ = __trans.ugettext
+
 class avahiSinerji:
     def __init__(self, host, stype):
         self.avahi = None
@@ -43,7 +47,7 @@ class avahiSinerji:
         pass
 
     def errorCallbackResolving(self, err):
-        print 'Error while resolving: ' + str(err)
+        print _('Error while resolving: ') + str(err)
 
     def errorCallback(self, err):
         print "str(err)"
@@ -98,10 +102,10 @@ class avahiSinerji:
 
     def avahiDbusConnect(self, a, connect, disconnect):
         if connect != "":
-            print 'Lost connection to avahi-daemon'
+            print _('Lost connection to avahi-daemon')
             self.disconnect()
         else:
-            print 'We are connected to avahi-daemon'
+            print _('We are connected to avahi-daemon')
 
     def connectDbus(self):
         if self.bus:
@@ -193,7 +197,7 @@ class avahiSinerji:
             else:
                 return False
         except dbus.DBusException, e:
-            print "Can't remove service. That should not happen"
+            print _("Can't remove service. That should not happen")
 
     def giveData(self, positions):
 
@@ -213,7 +217,7 @@ class avahiSinerji:
 
                 self.entrygroup.connect_to_signal('StateChanged', self.entrygroupStateChangedCallback)
 
-            print 'Publishing service %s of type _sinerji._tcp' % (self.name)
+            print _('Publishing service %s of type _sinerji._tcp') % (self.name)
 
             self.entrygroup.AddService(self.avahi.IF_UNSPEC,
                 self.avahi.PROTO_UNSPEC, dbus.UInt32(0), self.name, '_sinerji._tcp', '',
@@ -236,20 +240,20 @@ class avahiSinerji:
 ##############################################################
 
     def serviceAddFailCallback(self, err):
-        print "Error while adding service: %s"  % str(err)
-        if 'Local name collision' in str(err):
+        print _("Error while adding service: %s")  % str(err)
+        if _('Local name collision') in str(err):
             alternative_name = self.server.GetAlternativeServiceName(self.name)
             return
         self.disconnect()
 
     def serviceAddedCallback(self):
-        print 'Service successfully added'
+        print _('Service successfully added')
 
     def serviceCommittedCallback(self):
-        print 'Service successfully committed'
+        print _('Service successfully committed')
 
     def serverStateChangedCallback(self, state, error):
-        print "Server state changed to %s" % state
+        print _("Server state changed to %s") % state
         if state == self.avahi.SERVER_RUNNING:
             self.createService()
         elif state in (self.avahi.SERVER_COLLISION,
@@ -257,16 +261,16 @@ class avahiSinerji:
             self.disconnect()
             self.entrygroup.Reset()
         elif state == self.avahi.CLIENT_FAILURE:
-            print 'CLIENT FAILURE'
+            print _('CLIENT FAILURE')
 
     def entrygroupStateChangedCallback(self, state, error):
         if state == self.avahi.ENTRY_GROUP_COLLISION:
-            print "avahiservices.py: local name collision"
-            self.serviceAddFailCallback('Local name collision')
+            print _("avahiservices.py: local name collision")
+            self.serviceAddFailCallback(_('Local name collision'))
         elif state == self.avahi.ENTRY_GROUP_FAILURE:
             self.disconnect()
             self.entrygroup.Reset()
-            print "avahiservices.py: ENTRY_GROUP_FAILURE reached (that should not happen)"
+            print _("avahiservices.py: ENTRY_GROUP_FAILURE reached (that should not happen)")
 
 
 ##############################################################

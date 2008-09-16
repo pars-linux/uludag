@@ -18,8 +18,11 @@ import avahiservices
 import qrc_resources
 import notifier
 
-__version__ = 0.1
+import gettext
+__trans = gettext.translation('sinerji', fallback=True)
+_ = __trans.ugettext
 
+__version__ = 0.1
 
 class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def __init__(self,  parent=None):
@@ -85,7 +88,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ##################################################################
 ##################################################################
     def showPopup(self):
-        message = ("%s want to use your pc from %s" % (self.serverAndIp[0], self.clientAndPos[0]))
+        message = (_("%s want to use your pc from %s") % (self.serverAndIp[0], self.clientAndPos[0]))
         header = "Sinerji"
         buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
         self.notifier.show(self.iconNotify, header, message, 0, buttonList)
@@ -116,22 +119,22 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     ### Menu for the Tray
         self.trayMenu = QMenu()
 
-        self.actionManage = QAction(QIcon(":/manage.png"),u"Manage", self)
+        self.actionManage = QAction(QIcon(":/manage.png"),_("Manage"), self)
         self.connect(self.actionManage, SIGNAL("activated()"), self.show)
         self.trayMenu.addAction(self.actionManage)
 
-        self.actionAbout = QAction(QIcon(":/about.png"),u"About", self)
+        self.actionAbout = QAction(QIcon(":/about.png"),_("About"), self)
         self.connect(self.actionAbout, SIGNAL("activated()"), self.about)
         self.trayMenu.addAction(self.actionAbout)
 
         self.trayMenu.addSeparator()
 
-        self.actionQuit = QAction(QIcon(":/quit.png"), u"Quit", self)
+        self.actionQuit = QAction(QIcon(":/quit.png"), _("Quit"), self)
         self.connect(self.actionQuit, SIGNAL("activated()"), self.killSynergys)
         self.trayMenu.addAction(self.actionQuit)
         
         ## for Client
-        self.actionDisconnect = QAction(QIcon(":/disconnect.png"),u"Disconnect", self)
+        self.actionDisconnect = QAction(QIcon(":/disconnect.png"),_("Disconnect"), self)
         self.connect(self.actionDisconnect, SIGNAL("activated()"), self.disconnect)
 
 
@@ -181,7 +184,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     self.showPopup()
             self.address = self.serverAndIp[1]
         else:
-            print "No Sinerji service available"
+            print _("No Sinerji service available")
 
     def acceptServer(self):
 
@@ -194,12 +197,12 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.process.start('synergyc', self.clientCmdList)
 
 
-            print "Start Synergyc"            
+            print _("Start Synergyc")
             self.clientState = True
 
             time.sleep(0.5)
-            self.notifier.show(self.iconNotify, "Sinerji", ("%s is connected to you" % self.serverAndIp[0]), 1500)
-            self.trayIcon.setToolTip("%s is connected to you." % self.clientAndPos[1])
+            self.notifier.show(self.iconNotify, "Sinerji", _("%s is connected to you") % self.serverAndIp[0], 1500)
+            self.trayIcon.setToolTip(_("%s is connected to you.") % self.serverAndIp[1])
             self.timer.stop()
 
     def disconnect(self):
@@ -210,7 +213,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         if self.clientState:
             self.process.kill()
         time.sleep(0.5)
-        self.notifier.show(self.iconNotify, "Sinerji", ("Disconnected from %s" % self.serverAndIp[0]))
+        self.notifier.show(self.iconNotify, "Sinerji", (_("Disconnected from %s") % self.serverAndIp[0]))
         self.clientState = None
 
 
@@ -324,11 +327,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.started = True
             self.hide()
             time.sleep(0.5)
-            self.notifier.show(self.iconNotify, "Sinerji", "Synergy server started successfull")
-            self.trayIcon.setToolTip("Synergy is connected to a pc")
+            self.notifier.show(self.iconNotify, "Sinerji", _("Synergy server started successfull"))
+            self.trayIcon.setToolTip(_("Synergy is connected to a pc"))
 
         elif self.clientState:
-            QMessageBox.warning(self, u"Warning", u"Somebody is using your computer. To use other computers please restart")
+            QMessageBox.warning(self, _("Warning"), _("Somebody is using your computer. To use other computers please restart"))
 
         else:
             pass
@@ -351,10 +354,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
         if n:
             clientFound = n.groups()[0]
-            self.notifier.show(self.iconNotify, "Screen connected", "Computer %s is sharing its screen" % clientFound)
+            self.notifier.show(self.iconNotify, "Sinerji", _("Computer %s is sharing its screen") % clientFound)
         if m:
             clientRemoved = m.groups()[0]
-            self.notifier.show(self.iconNotify, "Screen disconnected", "Computer %s is no longer sharing its screen" % clientRemoved)
+            self.notifier.show(self.iconNotify, "Sinerji", _("Computer %s is no longer sharing its screen") % clientRemoved)
 
 
     @pyqtSignature("")
