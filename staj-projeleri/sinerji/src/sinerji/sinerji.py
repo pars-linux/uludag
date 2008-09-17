@@ -87,11 +87,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ##################################################################
 ##################################################################
 ##################################################################
-    def showPopup(self):
-        message = (_("%s want to use your pc from %s") % (self.serverAndIp[0], self.clientAndPos[0]))
-        header = "Sinerji"
-        buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
-        self.notifier.show(self.iconNotify, header, message, 0, buttonList)
+
 
 
     #""" FIXME 
@@ -174,14 +170,17 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         if self.connectingSinerji.getClients():
             for server in self.connectingSinerji.getClients().keys():
                 for client in self.connectingSinerji.getClients()[server]:
-                    self.clientAndPos = client.split("=")
-                self.serverAndIp = server.split("=")
-
+                    if gethostname() in client:
+                        self.clientAndPos = client.split("=")
+                        self.serverAndIp = server.split("=")
             if self.serverAndIp[0] is None:
                 pass
             else:
                 if self.clientAndPos[1] == gethostname():
-                    self.showPopup()
+                    message = (_("%s want to use your pc from %s") % (self.serverAndIp[0], self.clientAndPos[0]))
+                    header = "Sinerji"
+                    buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
+                    self.notifier.show(self.iconNotify, "Sinerji", message, 0, buttonList)
             self.address = self.serverAndIp[1]
         else:
             print _("No Sinerji service available")
@@ -323,7 +322,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.cmdList.append("--config")
             self.cmdList.append(self.synergyConf)
             self.process.start('synergys', self.cmdList)
-
             self.started = True
             self.hide()
             time.sleep(0.5)
