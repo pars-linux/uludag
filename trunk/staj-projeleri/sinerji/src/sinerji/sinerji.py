@@ -55,7 +55,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.clientAndPos = []
         self.serverAndIp = []
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
-        self.iconNotify = "/home/fatih/uludag/trunk/staj-projeleri/sinerji/images/notifyIcon.png" ## FIXME 
+        self.iconNotify = "/usr/share/sinerji/images/notifyIcon.png"
 
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()

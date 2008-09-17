@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './sinerjigui.ui'
 #
-# Created: Tue Sep 16 09:30:27 2008
+# Created: Wed Sep 17 12:52:59 2008
 #      by: PyQt4 UI code generator 4.4.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,11 +44,11 @@ class Ui_SinerjiGui(object):
         self.bottomComboBox = QtGui.QComboBox(self.frame)
         self.bottomComboBox.setObjectName("bottomComboBox")
         self.gridLayout.addWidget(self.bottomComboBox, 2, 1, 1, 1)
-        self.icobLabel = QtGui.QLabel(self.frame)
-        self.icobLabel.setPixmap(QtGui.QPixmap("images/icon.png"))
-        self.icobLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.icobLabel.setObjectName("icobLabel")
-        self.gridLayout.addWidget(self.icobLabel, 1, 1, 1, 1)
+        self.iconLabel = QtGui.QLabel(self.frame)
+        self.iconLabel.setPixmap(QtGui.QPixmap("/usr/share/pixmaps/sinerji.png"))
+        self.iconLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.iconLabel.setObjectName("iconLabel")
+        self.gridLayout.addWidget(self.iconLabel, 1, 1, 1, 1)
         self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 1)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -73,7 +73,7 @@ class Ui_SinerjiGui(object):
 
     def retranslateUi(self, SinerjiGui):
         SinerjiGui.setWindowTitle(QtGui.QApplication.translate("SinerjiGui", "Sinerji", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("SinerjiGui", "<b>Choose the computer and his position to manage it</b>", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("SinerjiGui", "<b>Yönetmek istediğiniz bilgisayarı ve fiziksel konumunu seçin</b>", None, QtGui.QApplication.UnicodeUTF8))
         self.applyButton.setText(QtGui.QApplication.translate("SinerjiGui", "Apply", None, QtGui.QApplication.UnicodeUTF8))
         self.closeButton.setText(QtGui.QApplication.translate("SinerjiGui", "Close", None, QtGui.QApplication.UnicodeUTF8))
 
