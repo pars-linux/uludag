@@ -9,7 +9,7 @@ int context_state_callback(pa_context* c, void* userdata)
 	printf("context_state_callback pa_context* c assertion\n");
     g_assert(c);
 
-    switch (pa_context_get_state(c)) {
+    switch (pa_context_get_state(c)){
         case PA_CONTEXT_CONNECTING:
             printf("INF: connecting..\n");
             break;
@@ -25,22 +25,19 @@ int context_state_callback(pa_context* c, void* userdata)
         case PA_CONTEXT_READY: {
             g_assert(c);
             printf("INF: connection seems  OK\n");
-						connection_state = 1;
-						// TODO: add pa_context_set_subscribe_callback !
-						/*
-						pa_operation* o;
-						pa_context_set_subscribe_callback(c, subscribe_cb, NULL);
-
-						if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t)
-                                           (PA_SUBSCRIPTION_MASK_SINK|
-                                            PA_SUBSCRIPTION_MASK_SOURCE|
-                                            PA_SUBSCRIPTION_MASK_SINK_INPUT|
-                                            PA_SUBSCRIPTION_MASK_CLIENT|
-                                            PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))) {
-						printf("pa_context_subscribe() failed");
+			connection_state = 1; // for is_valid
+			// TODO: add pa_context_set_subscribe_callback !
+			pa_operation* o;
+			pa_context_set_subscribe_callback(c, subscribe_cb, NULL);
+			if (!(o = pa_context_subscribe(c, (pa_subscription_mask_t)
+                               (PA_SUBSCRIPTION_MASK_SINK|
+                                PA_SUBSCRIPTION_MASK_SOURCE|
+                                PA_SUBSCRIPTION_MASK_SINK_INPUT|
+                                PA_SUBSCRIPTION_MASK_CLIENT|
+                                PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))) {
+			printf("pa_context_subscribe() failed");
             return;
             }
-						*/
             break;
         }
         case PA_CONTEXT_TERMINATED:
@@ -54,6 +51,26 @@ int context_state_callback(pa_context* c, void* userdata)
     }
 }
 
+/*
+static PyObject* py_context_set_subscribe_callback()
+{
+	pa_operation* o;
+	// c->context
+	if(!(o = pa_context_subscribe(context, (pa_subscription_mask_t)
+                                           (PA_SUBSCRIPTION_MASK_SINK|
+                                            PA_SUBSCRIPTION_MASK_SOURCE|
+                                            PA_SUBSCRIPTION_MASK_SINK_INPUT|
+                                            PA_SUBSCRIPTION_MASK_CLIENT|
+                                            PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))){
+		printf("py_context_set_subscribe_callback: pa_context_subscribe failed\n");
+		Py_INCREF(Py_False);
+		return Py_False;
+	}else{
+		Py_INCREF(Py_True);
+		return Py_True;
+	}
+}
+*/
 
 static PyObject* main_event_loop()
 {
@@ -84,7 +101,8 @@ static PyObject* check_connection_flag()
 
 /* run this after py_context_connect()
  * if you want to get notified when
- * an event occurs
+ * an event occurs.
+ * Notification starts here
  */
 static PyObject* py_context_set_state_callback()
 {
@@ -123,7 +141,7 @@ static PyObject* py_initialize()
     g_assert(context);
 
     //pa_context_set_state_callback(context, context_state_callback, NULL);
-		//pa_context_connect(context, NULL, 0, NULL);
+	//pa_context_connect(context, NULL, 0, NULL);
     return Py_BuildValue("i",0);
 
 }
@@ -131,9 +149,10 @@ static PyObject* py_initialize()
 
 static PyMethodDef Methods[] = {
     {"initialize", py_initialize, METH_VARARGS},
-		{"context_set_state_callback", py_context_set_state_callback, METH_VARARGS},
+	{"context_set_state_callback", py_context_set_state_callback, METH_VARARGS},
     {"context_connect", py_context_connect, METH_VARARGS},
-		{"is_connection_valid",check_connection_flag , METH_VARARGS},
+	{"is_connection_valid",check_connection_flag , METH_VARARGS},
+	//{"context_set_subscribe_callback",py_context_set_subscribe_callback , METH_VARARGS},
     {"loop", main_event_loop, METH_VARARGS},
     {NULL , NULL, 0, NULL}
 };

@@ -44,8 +44,10 @@ class mein(QtGui.QApplication):
 		pypulse.initialize()
 		pypulse.context_set_state_callback()
 		if pypulse.is_connection_valid:
-			print "connection valid"
+			print "main.py: connection valid"
+			#pypulse.context_set_subscribe_callback()
 			pypulse.context_connect()
+			# enter mainloop
 			pypulse.loop()
 
 def main():
