@@ -4,6 +4,39 @@
 
 
 
+void py_updateSinkInput(pa_sink_input_info* info)
+{
+	printf("*****index = %i\n", info->index);
+	printf("*****name = %c\n", *info->name);
+	printf("*****client = %i\n", info->client);
+	printf("*****sink = %i\n", info->sink);
+	printf("*****driver = %c\n", *info->driver);
+	
+}
+
+void py_updateSink(pa_sink_info* info)
+{
+	printf("");
+	printf("");
+	printf("");
+	printf("");
+	printf("");
+	
+}
+
+
+void py_updateSource(pa_source_info* info)
+{
+	printf("");
+	printf("");
+	printf("");
+	printf("");
+	printf("");
+	
+}
+
+
+
 void sink_cb(pa_context *c, const pa_sink_info *i, int eol)
 {
 	if (eol) {
@@ -19,7 +52,7 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol)
 	}
 	
 	//w->updateSink(*i);
-	printf("suppose to updateSink\n");
+	printf("suppose to updateSink(*i)\n");
 }
 
 
@@ -37,7 +70,7 @@ void source_cb(pa_context *c, const pa_source_info *i, int eol) {
 	}
 
 	//w->updateSource(*i);
-	printf("supoose to updateSource\n");
+	printf("supoose to updateSource(*i)\n");
 }
 
 void sink_input_cb(pa_context *c, const pa_sink_input_info *i, int eol)
@@ -48,15 +81,25 @@ void sink_input_cb(pa_context *c, const pa_sink_input_info *i, int eol)
 		return;
 	}
 
-	if (!i) {
+	if (!i){
         //show_error("Sink input callback failure");
 		printf("<error>sink input callback failure\n");
 		return;
 	}
 
     //w->updateSinkInput(*i);
-	printf("suppose to updateSinkInput\n");
+	py_updateSinkInput(i);
+	/*
+	printf("*****index = %i\n", i->index);
+	printf("*****name = %c\n", *i->name);
+	//printf("*****client = %i\n", i->client);
+	//printf("*****sink = %i\n", i->sink);
+	printf("suppose to updateSinkInput(*i)\n");
+	*/
 }
+
+
+
 
 void client_cb(pa_context *c, const pa_client_info *i, int eol)
 {
@@ -73,7 +116,7 @@ void client_cb(pa_context *c, const pa_client_info *i, int eol)
 	}
 
     //w->updateClient(*i);
-	printf("suppose to updateClient\n");
+	printf("suppose to updateClient(*i)\n");
 }
 
 void server_info_cb(pa_context *c, const pa_server_info *i)
@@ -84,7 +127,7 @@ void server_info_cb(pa_context *c, const pa_server_info *i)
 		return;
 	}
     //w->updateServer(*i);
-	printf("suppose to updateServer\n");
+	printf("suppose to updateServer(*i)\n");
     //dec_outstanding(w);
 }
 
@@ -96,7 +139,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SINK:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeSink(index);
-				printf("suppose to removeSink[index]\n");
+				printf("suppose to removeSink(index)\n");
 			else {
 				pa_operation *o;
 
@@ -113,7 +156,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SOURCE:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeSource(index);
-				printf("suppose to removeSource[index]\n");
+				printf("suppose to removeSource(index)\n");
 
 			else {
 				pa_operation *o;
@@ -161,7 +204,6 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SERVER:
 			printf("pa_subscription_event_server triggered\n");
 			{
-
 				pa_operation *o;
 				if (!(o = pa_context_get_server_info(c, server_info_cb, NULL))) {
                 //show_error("pa_context_get_server_info() failed");

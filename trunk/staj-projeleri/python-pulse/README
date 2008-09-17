@@ -1,19 +1,19 @@
 -------------python-pulse--------------
-PulseAudio icin deneysel python bindingleri;
+Experimental python bindings for pulseaudio
 Author: Burak Alkan
 
 
-modulu derlemek icin;
+in prder to compile module;
 
 $ python setup.py build
 
-install icin(pypulse.so isimli share-obj /usr/lib/python2.5/site-packages/
-altina kopyalar);
+install pypulse.so to /usr/lib/python2.5/site-packages/
 
 # python setup.py install
 
-main.py calistir;
+at last run main.py
 
 $ ./main.py
 
-looptan cikmak icin guideki quit butonunu kullanin
+
+Note: Use quit button on gui to close program for now, don't use [X] window button, otherwise loop won't die.
