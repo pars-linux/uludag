@@ -14,6 +14,7 @@ distfiles = """
     setup.py
     po/*.po
     sinerji/*.py
+    sinerji/sinerji
     sinerji/*.ui
     sinerji/*.qrc
     sinerji/images/*.png
@@ -81,7 +82,7 @@ setup (name='Sinerji',
       package_dir = {'': ''},
       data_files = [('/usr/share/sinerji', resource_files()), 
           ('/usr/share/sinerji/images', image_files())],
-      scripts = ['sinerji/sinerji.py'],
+      scripts = ['sinerji/sinerji'],
       cmdclass = {
         'install': I18nInstall,
         }
