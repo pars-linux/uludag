@@ -88,23 +88,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ##################################################################
 ##################################################################
 
-
-
-    #""" FIXME 
-
-    #def getPos(self):
-    #    pt = self.mapToGlobal(QPoint(0,0))
-    #    screen = QDesktopWidget()
-    #    incr = 0
-    #    if pt.x() < screen.screenGeometry().height()/2 and pt.x() < self.height():
-    #        incr = self.width() - 4
-    #    elif pt.y() > screen.screenGeometry().height() - self.height() - 80:
-    #        incr = 0
-    #    else:
-    #        incr = self.width() / 2
-    #    return (pt.x() + self.height()/2, pt.y() + incr)
-
-
     def closeEvent(self, event):
     ### Override so that closing it doesn't quit the app
         event.ignore()
@@ -203,7 +186,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             print _("Start Synergyc")
             self.clientState = True
-            self.clientDisconnect.setText(self.serverAndIp[0])
+            self.clientDisconnect.setText("%s is connected to you" %self.serverAndIp[0])
 
             time.sleep(0.5)
             self.notifier.show(self.iconNotify, "Sinerji", _("%s is connected to you") % self.serverAndIp[0], 1500)
@@ -373,15 +356,15 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             clientFound = n.groups()[0]
             self.notifier.show(self.iconNotify, "Sinerji", _("Computer %s is sharing its screen") % clientFound)
             self.trayIcon.setToolTip(_("Synergy server is connected"))
-
-
             self.serverState = True
             self.clientDisconnect.setText("Your are connected to %s" % self.rightComboBox.currentText())
-
 
         if m:
             clientRemoved = m.groups()[0]
             self.notifier.show(self.iconNotify, "Sinerji", _("Computer %s is no longer sharing its screen") % clientRemoved)
+            self.trayMenu.insertAction(self.actionAbout, self.actionManage) ## Add actionDisconnect before self.actionAbout
+            self.trayMenu.insertAction(self.actionAbout, self.actionSearch) ## Add actionDisconnect before self.actionAbout
+            self.trayMenu.removeAction(self.actionDisconnect)
             self.serverState = None
 
     @pyqtSignature("")
