@@ -20,7 +20,7 @@ import sys
 import commands
 
 
-pspec = os.path.join(os.path.expanduser("~"), "Desktop/sinerji_pisi/pspec.xml")
+pspec = "/home/fatih/uludag/trunk/staj-projeleri/paketler/fatih/applications/network/sinerji/pspec.xml" 
 pspecyedek = pspec + "yedek"
 
 os.system("python setup.py dist")
@@ -58,15 +58,16 @@ for file in os.listdir("."):
         os.remove(file)
 
 
-os.chdir("/home/fatih/Desktop/sinerji_pisi/")
+os.chdir("/home/fatih/uludag/trunk/staj-projeleri/paketler/fatih/applications/network/sinerji/")
 os.system("sudo pisi bi pspec.xml")
 
 for file in os.listdir("."):
     if file.endswith("pisi"):
         pisiname = file
+
 os.system("lspisi %s" % pisiname)
 
-yanit = raw_input("\n%s paketini kurmak istiyor musun? (evet|hayır): " % pisiname)
+yanit = raw_input("\n%s paketini kurmak istiyor musun? (evet/hayır): " % pisiname)
 
 if yanit == ("e" or "evet") :
     os.system("sudo pisi it %s" % pisiname)
