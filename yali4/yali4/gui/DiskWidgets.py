@@ -144,7 +144,10 @@ class DiskList(QtGui.QWidget):
         self.checkRootPartRequest()
 
     def checkRootPartRequest(self):
-        ctx.mainScreen.disableNext()
+        try:
+            ctx.mainScreen.disableNext()
+        except:
+            pass
         for req in ctx.partrequests:
             if req.partitionType() == parttype.root:
                 # root partition type. can enable next
@@ -241,7 +244,8 @@ class DiskList(QtGui.QWidget):
                         pass
             else:
                 name = _("Free Space")
-            ctx.debugger.log("Partition added with %s mb" % part.getMB())
+            if ctx.debugger:
+                ctx.debugger.log("Partition added with %s mb" % part.getMB())
             diskItem.addPartition(name, part)
 
         diskItem.updateSizes(self.tabWidget.width())

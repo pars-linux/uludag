@@ -120,12 +120,15 @@ Legend:
  + GUI
    + Set a usable terminal emulation in X ,thanks to qtermwidget :)
 
+ + Kahya
+   + export setup session as kahya file
+
+8. Release (2.1.0)
+
+ - Kahya
+   - support for multi-profile in kahya file
+   - support for network setup in kahya file
+
  - Partitioning
    - fat32 resize
    - LVM/RAID Support
-
- / Kahya
-   - support for multi-profile in kahya file
-   - support for network setup in kahya file
-   + export setup session as kahya file
-
