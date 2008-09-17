@@ -59,9 +59,13 @@ Here you can see your install options and look at them again before installation
         self.ui.content.setText("")
         self.timer = QTimer()
 
-        self.connect(self.ui.install, SIGNAL("clicked()"),ctx.mainScreen.slotNext)
-        self.connect(self.ui.cancel, SIGNAL("clicked()"),self.slotReboot)
-        self.connect(self.timer, SIGNAL("timeout()"), self.updateCounter)
+        # Handle translators tool problems ..
+        try:
+            self.connect(self.ui.install, SIGNAL("clicked()"), ctx.mainScreen.slotNext)
+            self.connect(self.ui.cancel, SIGNAL("clicked()"), self.slotReboot)
+            self.connect(self.timer, SIGNAL("timeout()"), self.updateCounter)
+        except:
+            pass
 
     def slotReboot(self):
         w = WarningWidget(self)

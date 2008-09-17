@@ -70,8 +70,11 @@ Proceed with the installation after you make your selections.
                 self.slotLayoutChanged)
 
     def slotLayoutChanged(self, i, y=None):
-        if not i==y:
-            ctx.yali.setKeymap(i.getData())
+        try:
+            if not i==y:
+                ctx.yali.setKeymap(i.getData())
+        except:
+            pass
 
     def execute(self):
         ctx.debugger.log("Selected keymap is : %s" % ctx.installData.keyData["name"] )

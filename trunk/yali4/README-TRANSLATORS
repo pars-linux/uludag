@@ -33,6 +33,7 @@ ScrPartitionAuto
 ScrPartitionManual
 ScrBootloader
 ScrGoodbye
+ScrSummary
 ScrInstall
 
 Same order with installation.
