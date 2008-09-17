@@ -119,6 +119,10 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.connect(self.actionManage, SIGNAL("activated()"), self.show)
         self.trayMenu.addAction(self.actionManage)
 
+        self.actionSearch = QAction(QIcon(":/search.png"),_("Search"), self)
+        self.connect(self.actionSearch, SIGNAL("activated()"), self.searchClient)
+        self.trayMenu.addAction(self.actionSearch)
+        
         self.actionAbout = QAction(QIcon(":/about.png"),_("About"), self)
         self.connect(self.actionAbout, SIGNAL("activated()"), self.about)
         self.trayMenu.addAction(self.actionAbout)
