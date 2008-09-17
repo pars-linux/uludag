@@ -16,6 +16,10 @@ class Notifier(QObject):
             else:
                 pass
 
+    def close_handler(self ,id):
+        #If notification popup is closed
+        self.emit(SIGNAL("rejectServer"), ())
+
     def __init__(self):
         QObject.__init__(self)
         bus = dbus.SessionBus()
@@ -24,6 +28,7 @@ class Notifier(QObject):
             object  = bus.get_object("org.freedesktop.Notifications", "/org/freedesktop/Notifications")
             self.iface = dbus.Interface(object, dbus_interface='org.freedesktop.Notifications')
             object.connect_to_signal("ActionInvoked", self.click_handler, dbus_interface="org.freedesktop.Notifications")
+            object.connect_to_signal("NotificationClosed", self.close_handler, dbus_interface="org.freedesktop.Notifications")
 
         except dbus.DBusException:
             traceback.print_exc()
