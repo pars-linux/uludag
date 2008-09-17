@@ -52,6 +52,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.popup = None
         self.started = None
         self.clientState = None
+        self.serverState = None
         self.clientAndPos = []
         self.serverAndIp = []
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
@@ -147,7 +148,12 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                 else:
                     self.hide()
         else:
-            self.clientDisconnect.setText(self.serverAndIp[0])
+            if self.clientState:
+                self.clientDisconnect.setText(self.serverAndIp[0])
+            elif self.serverState:
+                self.clientDisconnect.setText(self.clientAndPos[1])
+            else:
+                pass
             if reason != QSystemTrayIcon.Context:
                 if self.clientDisconnect.isHidden():
                     self.clientDisconnect.showNormal()
@@ -193,7 +199,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             self.trayMenu.insertAction(self.actionAbout, self.actionDisconnect) ## Add actionDisconnect before self.actionAbout
             self.trayMenu.removeAction(self.actionManage)
-            
+
             self.clientCmdList = QStringList()
             self.clientCmdList.append("-f")
             self.clientCmdList.append(self.address)
@@ -357,10 +363,11 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         if n:
             clientFound = n.groups()[0]
             self.notifier.show(self.iconNotify, "Sinerji", _("Computer %s is sharing its screen") % clientFound)
+            self.serverState = True
         if m:
             clientRemoved = m.groups()[0]
             self.notifier.show(self.iconNotify, "Sinerji", _("Computer %s is no longer sharing its screen") % clientRemoved)
-
+            self.serverState = None
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
