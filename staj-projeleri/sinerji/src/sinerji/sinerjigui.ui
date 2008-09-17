@@ -60,7 +60,7 @@
        <widget class="QComboBox" name="bottomComboBox" />
       </item>
       <item row="1" column="1" >
-       <widget class="QLabel" name="icobLabel" >
+       <widget class="QLabel" name="iconLabel" >
         <property name="text" >
          <string/>
         </property>
