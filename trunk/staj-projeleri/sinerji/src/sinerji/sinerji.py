@@ -167,29 +167,18 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
                     header = hostname
                     buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
                     self.notifier.show(self.iconNotify, header, message, 0, buttonList)
-            print self.clientData
         else:
             print _("No Sinerji service available")
 
     def acceptServer(self, hostname):
         self.notifier.stopNotifier(hostname)   ## Stop the others hostnames
-        self.trayMenu.insertAction(self.actionAbout, self.actionDisconnect) ## Add actionDisconnect before self.actionAbout
-        self.trayMenu.removeAction(self.actionManage)
-        self.trayMenu.removeAction(self.actionSearch)
-
+        self.hostname = hostname   ## Need or parsingData function
         self.address = self.clientData[hostname][2]
         self.clientCmdList = QStringList()
         self.clientCmdList.append("-f")
         self.clientCmdList.append(self.address)
         self.process.start('synergyc', self.clientCmdList)
 
-        print _("Start Synergyc")
-        self.clientState = True
-        time.sleep(0.5)
-        self.notifier.show(self.iconNotify, "Sinerji", _("%s is connected to you") % hostname, 1500)
-        self.clientDisconnect.setText(_("%s is connected to you") % hostname)
-        self.trayIcon.setToolTip(_("%s is connected to you.") % hostname)
-        self.timer.stop()
 
     def disconnect(self):
         if self.clientDisconnect.isVisible():
@@ -202,7 +191,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         if self.clientState:
             self.process.kill()
             time.sleep(0.5)
-            self.notifier.show(self.iconNotify, "Sinerji", (_("Disconnected from %s") % self.serverAndIp[0]))
+            self.notifier.show(self.iconNotify, "Sinerji", (_("Disconnected from %s") % self.clientData[self.hostname][0]))
             self.clientState = None
 
         if self.serverState:
@@ -346,14 +335,19 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def parseReadData(self, data):
         self.patternFound = 'NOTE:.*client "(.*)" has connected'
         self.patternRemoved = 'NOTE:.*client "(.*)" has disconnected'
+        self.patternFoundClient = 'NOTE:.*connected to server'
+        self.patternRemovedClient = 'NOTE:.*disconnected from server'
         n = re.match(self.patternFound, str(data), re.I)
         m = re.match(self.patternRemoved, str(data), re.I)
+        p = re.match(self.patternFoundClient, str(data), re.I)
+        o = re.match(self.patternRemovedClient, str(data), re.I)
 
         if n:
             clientFound = n.groups()[0]
             self.notifier.show(self.iconNotify, "Sinerji", _("Computer %s is sharing its screen") % clientFound)
             self.trayIcon.setToolTip(_("Synergy server is connected"))
             self.serverState = True
+
             self.clientDisconnect.setText("Your are connected to %s" % clientFound)
 
         if m:
@@ -363,6 +357,24 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.trayMenu.insertAction(self.actionAbout, self.actionSearch) ## Add actionDisconnect before self.actionAbout
             self.trayMenu.removeAction(self.actionDisconnect)
             self.serverState = None
+            self.process.kill()
+        if p:
+            self.trayMenu.insertAction(self.actionAbout, self.actionDisconnect) ## Add actionDisconnect before self.actionAbout
+            self.trayMenu.removeAction(self.actionManage)
+            self.trayMenu.removeAction(self.actionSearch)
+            self.clientState = True
+            self.notifier.show(self.iconNotify, "Sinerji", _("%s is connected to you") % self.hostname, 1500)
+            self.clientDisconnect.setText(_("%s is connected to you") % self.hostname)
+            self.trayIcon.setToolTip(_("%s is connected to you.") % self.hostname)
+            self.timer.stop()
+        if o:
+            self.trayMenu.insertAction(self.actionAbout, self.actionManage) ## Add actionDisconnect before self.actionAbout
+            self.trayMenu.insertAction(self.actionAbout, self.actionSearch) ## Add actionDisconnect before self.actionAbout
+            self.trayMenu.removeAction(self.actionDisconnect)
+            self.clientState = None
+            self.process.kill()
+            time.sleep(0.5)
+            self.notifier.show(self.iconNotify, "Sinerji", (_("Disconnected from %s") % self.clientData[self.hostname][0]))
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
