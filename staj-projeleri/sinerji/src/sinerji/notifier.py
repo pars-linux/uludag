@@ -7,18 +7,6 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 class Notifier(QObject):
-    def click_handler(self, id, button):
-        if id == self.notifyid:
-            if button == "reject":
-                self.emit(SIGNAL("rejectServer"), ())
-            elif button == "accept":
-                self.emit(SIGNAL("acceptServer"), ())
-            else:
-                pass
-
-    def close_handler(self ,id):
-        #If notification popup is closed
-        self.emit(SIGNAL("rejectServer"), ())
 
     def __init__(self):
         QObject.__init__(self)
@@ -33,17 +21,32 @@ class Notifier(QObject):
         except dbus.DBusException:
             traceback.print_exc()
 
+    def click_handler(self, id, button):
+        if id == self.notifyid:
+            if button == "reject":
+                self.emit(SIGNAL("rejectServer"), ())
+            elif button == "accept":
+                self.emit(SIGNAL("acceptServer"), self.hostname)
+            else:
+                pass
+
+    def close_handler(self ,id):
+        #If notification popup is closed
+        self.emit(SIGNAL("rejectServer"), ())
+
+    def stopNotifier(self):
+        self.iface.CloseNotification(self.notifyid)
+
     def show(self, icon, header, msg, time=3000, button=[]):
         """ ## If getPos do work than use it
-
+        
         if not pos or pos[0] < 0 or pos[1] < 0:
             hints = {}
         else:
             hints= {"x": pos[0], "y": pos[1]}
         """
         # close previous notification window
-        self.iface.CloseNotification(self.notifyid)
-
+        self.hostname = header
         #self.buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
         self.notifyid = self.iface.Notify("sinerji",
                          0,
