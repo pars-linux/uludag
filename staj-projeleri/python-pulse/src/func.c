@@ -2,15 +2,47 @@
 #include <Python.h>
 #include "pypulse.h"
 
+#define CNT 10
 
+typedef struct _notify{
+	int client;
+	struct _notify *next;
+}notify;
 
+notify **root;
+static int allocated = 0; /* allocated -> 1 not allocated-> 0 */
+
+void alloc_first()
+{
+	printf("allocating root\n");
+	int i = 0;
+	root = (notify**)calloc(CNT, sizeof(notify));
+	printf("root allocated done\n");
+	allocated = 1;
+}
+
+// add, update application list
 void py_updateSinkInput(pa_sink_input_info* info)
 {
+	int notify_index = 0;
+	
 	printf("*****index = %i\n", info->index);
 	printf("*****name = %c\n", *info->name);
-	printf("*****client = %i\n", info->client);
+	printf("*****client = %i\n", info->client);// unique one
 	printf("*****sink = %i\n", info->sink);
 	printf("*****driver = %c\n", *info->driver);
+	
+	// if **root is not allocated allocate it first
+	if(!allocated) alloc_first();
+	
+	root[notify_index] = (notify*)calloc(1,sizeof(notify));
+	root[notify_index]->client = info->client;
+	
+	if (notify_index > 0){
+		printf("adding chain\n");
+		root[notify_index - 1]->client = root[notify_index];
+	}
+	notify_index++;
 	
 }
 
@@ -41,7 +73,7 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol)
 {
 	if (eol) {
 		//dec_outstanding(w);
-		printf("dec_outstanding MainWindow\n");
+		printf("INF: dec_outstanding MainWindow\n");
 		return;
 	}
 
@@ -52,14 +84,14 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol)
 	}
 	
 	//w->updateSink(*i);
-	printf("suppose to updateSink(*i)\n");
+	printf("INF: suppose to updateSink(*i)\n");
 }
 
 
 void source_cb(pa_context *c, const pa_source_info *i, int eol) {
 	if (eol) {
 		//dec_outstanding(w);
-		printf("dec_outstanding MainWindow\n");
+		printf("INF: dec_outstanding MainWindow\n");
 		return;
 	}
 
@@ -70,14 +102,14 @@ void source_cb(pa_context *c, const pa_source_info *i, int eol) {
 	}
 
 	//w->updateSource(*i);
-	printf("supoose to updateSource(*i)\n");
+	printf("INF: suppose to updateSource(*i)\n");
 }
 
 void sink_input_cb(pa_context *c, const pa_sink_input_info *i, int eol)
 {
 	if (eol) {
         //dec_outstanding(w);
-		printf("dec_outstanding MainWindow\n");
+		printf("INF: dec_outstanding MainWindow\n");
 		return;
 	}
 
@@ -105,7 +137,7 @@ void client_cb(pa_context *c, const pa_client_info *i, int eol)
 {
 	if (eol) {
         //dec_outstanding(w);
-		printf("dec_outstanding MainWindow\n");
+		printf("INF: dec_outstanding MainWindow\n");
 		return;
 	}
 
@@ -116,7 +148,7 @@ void client_cb(pa_context *c, const pa_client_info *i, int eol)
 	}
 
     //w->updateClient(*i);
-	printf("suppose to updateClient(*i)\n");
+	printf("INF: suppose to updateClient(*i)\n");
 }
 
 void server_info_cb(pa_context *c, const pa_server_info *i)
@@ -127,7 +159,7 @@ void server_info_cb(pa_context *c, const pa_server_info *i)
 		return;
 	}
     //w->updateServer(*i);
-	printf("suppose to updateServer(*i)\n");
+	printf("INF: suppose to updateServer(*i)\n");
     //dec_outstanding(w);
 }
 
@@ -139,7 +171,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SINK:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeSink(index);
-				printf("suppose to removeSink(index)\n");
+				printf("INF: suppose to removeSink(index)\n");
 			else {
 				pa_operation *o;
 
@@ -156,7 +188,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SOURCE:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeSource(index);
-				printf("suppose to removeSource(index)\n");
+				printf("INF: suppose to removeSource(index)\n");
 
 			else {
 				pa_operation *o;
@@ -173,12 +205,12 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeSinkInput(index);
-				printf("suppose to removeSinkInput(index)\n");
+				printf("INF: suppose to removeSinkInput(index)\n");
 			else {
 				pa_operation *o;
 				if (!(o = pa_context_get_sink_input_info(c, index, sink_input_cb, NULL))) {
                     //show_error("pa_context_get_sink_input_info() failed");
-					printf("<erro>pa_context_get_sink_input_info() failed");
+					printf("<error>pa_context_get_sink_input_info() failed");
 					return;
 				}
 				pa_operation_unref(o);
@@ -188,7 +220,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_CLIENT:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeClient(index);
-				printf("suppose to removeClient(index)\n");
+				printf("INF: suppose to removeClient(index)\n");
 
 			else {
 				pa_operation *o;
@@ -206,8 +238,8 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 			{
 				pa_operation *o;
 				if (!(o = pa_context_get_server_info(c, server_info_cb, NULL))) {
-                //show_error("pa_context_get_server_info() failed");
-					printf("pa_context_get_server_info() failed\n");
+					//show_error("pa_context_get_server_info() failed");
+					printf("<error>pa_context_get_server_info() failed\n");
 					return;
 				}
 				pa_operation_unref(o);

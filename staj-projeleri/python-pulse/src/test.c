@@ -131,13 +131,13 @@ static PyObject* py_context_connect()
 static PyObject* py_initialize()
 {
     pa_glib_mainloop* m = pa_glib_mainloop_new(g_main_context_default()); // instead of pa_mainloop_new()
-    printf("m assertion.. \n");
+    printf("ASSERT: m assertion.. \n");
     g_assert(m);
     pa_mainloop_api *api = pa_glib_mainloop_get_api(m);
-    printf("api assertion... \n");
+    printf("ASSERT: api assertion... \n");
     g_assert(api);
     context = pa_context_new(api, "dummy");
-    printf("context assertion...\n");
+    printf("ASSERT: context assertion...\n");
     g_assert(context);
 
     //pa_context_set_state_callback(context, context_state_callback, NULL);
