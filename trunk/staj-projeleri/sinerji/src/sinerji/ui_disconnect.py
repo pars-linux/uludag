@@ -23,7 +23,7 @@ class Ui_Disconnect(object):
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.iconDisLabel = QtGui.QLabel(Disconnect)
-        self.iconDisLabel.setPixmap(QtGui.QPixmap("images/connect.png"))
+        self.iconDisLabel.setPixmap(QtGui.QPixmap("/usr/share/sinerji/images/connect.png"))
         self.iconDisLabel.setObjectName("iconDisLabel")
         self.horizontalLayout_2.addWidget(self.iconDisLabel)
         self.clientTextLabel = QtGui.QLabel(Disconnect)
