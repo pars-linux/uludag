@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import os
 import qt
 import v4l
 import Image
@@ -11,25 +12,31 @@ class Cam:
         self.ui = ui
         self.WIDTH = 320
         self.HEIGHT = 240
-        self.device = None
+        self.deviceDic = {}
         self.picture = None
         self.capabilities = None
         self.nextFrame = 0
         self.array = qt.QByteArray(self.WIDTH*self.HEIGHT*3)
 
+        list = os.listdir("/dev/v4l")
+        for i in list:
+            self.ui.cb_video.insertItem(i)
+
     def start(self):
 #       print "start"
-        if( self.ui.timer.isActive() ):
-            return
 
-        if(self.device == None):
-            self.device = v4l.video('/dev/video')
-            self.picture = self.device.getPicture()
-            self.capabilities = self.device.getCapabilities()
-            self.device.preQueueFrames()
-            self.ui.connect(self.ui.timer, qt.SIGNAL("timeout()"), self.ui.cam.getFrame)
+        tmpPath =  "/dev/" + str(self.ui.cb_video.currentText())
+        if tmpPath not in self.deviceDic:
+            self.deviceDic[tmpPath] = v4l.video(tmpPath)
 
+        self.device = self.deviceDic[tmpPath]
+        self.picture = self.device.getPicture()
+        self.capabilities = self.device.getCapabilities()
+        self.device.preQueueFrames()
+        self.nextFrame = 0
+        self.ui.connect(self.ui.timer, qt.SIGNAL("timeout()"), self.ui.cam.getFrame)
         self.ui.timer.start(100)
+
 
     def RGB2BGR(self, str):
         list = [l for l in str]
@@ -93,10 +100,16 @@ class Cam:
 
     def capture(self):
 #       print "capture"
-        if(self.device == None):
-            self.device = v4l.video('/dev/video')
-            self.device.preQueueFrames()
-            print "i"
+        tmpPath =  "/dev/" + str(self.ui.cb_video.currentText())
+        if tmpPath not in self.deviceDic:
+            self.deviceDic[tmpPath] = v4l.video(tmpPath)
+
+
+        self.device = self.deviceDic[tmpPath]
+        self.picture = self.device.getPicture()
+        self.capabilities = self.device.getCapabilities()
+        self.device.preQueueFrames()
+
         out = self.device.getImage(self.nextFrame)
         out = self.RGB2BGR(out)
         image = Image.fromstring("RGB", (self.WIDTH, self.HEIGHT), out)
