@@ -6,8 +6,7 @@ TEMPLATE_DEBUG = DEBUG
 
 WEB_URL = 'http://localhost:8000'
 DOCUMENT_ROOT = '/home/emre/svn/uludag/trunk/staj-projeleri/pakettif/pakettif'
-
-
+versions = ['2007', '2008']
 ADMINS = (
      ('Ahmet Emre Aladag', 'aladagemre@users.sourceforge.net'),
 )
