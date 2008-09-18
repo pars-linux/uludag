@@ -1,0 +1,7 @@
+/search/package/glibc/test.py -> search for test.py in glibc package.
+
+/search/package/sahip -> search for package whose name is sth like sahip.
+
+1. /search/package/{packagename}/{term} > search for term in a package
+2. /search/package/{packagename} > search for package
+3. /search/{term} > search for term in all packages. post:group->only package names, clicked -> 3.
