@@ -28,6 +28,12 @@
             <Path fileType="doc">/usr/share/smolt/doc</Path>
             <Path fileType="config">/etc</Path>
         </Files>
+        <RuntimeDependencies>
+            <Dependency>simplejson</Dependency>
+        </RuntimeDependencies>
+        <Provides>
+            <COMAR script="hw_uuid.py">System.Package</COMAR>
+        </Provides>
     </Package>
     <History>
             <Update release="1">
