@@ -23,5 +23,5 @@
  
  #For non RH Distros
 -#HW_UUID = "/etc/smolt/hw-uuid"
-+HW_UUID = "/etc/smolt/hw-uuid"
++HW_UUID = "/etc/hw-uuid"
  
