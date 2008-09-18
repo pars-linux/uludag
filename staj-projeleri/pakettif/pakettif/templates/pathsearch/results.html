@@ -13,7 +13,7 @@
 				</tr>
 				{% for pkg in pkg_list %}
 				<tr>
-					<td><a href="/search/package/{{ pkg.grouper }}/{{ term }}">{{ pkg.grouper }} ({{ pkg.list|length}})</a></td>
+					<td><a href="/search/{{current_version}}/package/{{ pkg.grouper }}/{{ term }}">{{ pkg.grouper }} ({{ pkg.list|length}})</a></td>
 				</tr>
 				{% endfor %}
 			</table>
@@ -21,7 +21,7 @@
 		<!-- If grouping is not desired -->
 			{% if package_name %}
 			<!-- Search for term in a specific package-->
-				<h2>Files {% if term %}related to {{ term }} {% endif %}inside <a href="/search/package/{{ package_name }}/list/">{{ package_name }}</a>:</h2>
+				<h2>Files {% if term %}related to {{ term }} {% endif %}inside <a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ package_name }}</a>:</h2>
 	
 				<table>
 					<tr class="table-top">
@@ -29,7 +29,7 @@
 					</tr>
 					{% for entry in entry_list %}
 						<tr>
-							<td><a href="file://{{ entry.path }}">{{ entry.path }}</a></td>
+							<td>{{ entry.path }}</td>
 						</tr>		
 					{% endfor %}
 				</table>
@@ -43,8 +43,8 @@
 					</tr>
 					{% for entry in entry_list %}
 						<tr>
-							<td><a href="/search/package/{{ package_name }}/list/">{{ entry.package }}</a></td>
-							<td><a href="file:{{ entry.path }}">{{ entry.path }}</a></td>
+							<td><a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ entry.package }}</a></td>
+							<td>{{ entry.path }}</td>
 						</tr>		
 					{% endfor %}
 				</table>

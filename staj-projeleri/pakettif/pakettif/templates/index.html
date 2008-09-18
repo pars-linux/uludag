@@ -1,7 +1,35 @@
 {% extends "base.html" %} 
-{% block title %}Results for {{ term }}{% endblock %}
+{% block title %}Package Search{% endblock %}
 {% block content %}
-<h2>Welcome to Pakettif, a package detective.</h2>
-<p>You can search for any program, file or even subpath in this site. Simply enter what
-you want to search for in the search box and hit enter.</p>
+        <h2 align="center">Kullanım</h2>
+
+	<table align="center">
+	<tr>
+		<th>Kullanım</th>
+		<th>Anlamı</th>
+	</tr>
+	<tr>
+		<td>ifade in:paket</td>
+		<td>"ifade"yi "paket" içerisinde ara</td>
+
+	</tr>
+	<tr>
+		<td>in:paket</td>
+		<td>"paket" içindeki tüm yolları listele</td>
+	</tr>
+	<tr>
+		<td>p:paket</td>
+
+		<td>"paket"e benzeyen paketleri ara</td>
+	</tr>
+	<tr>
+		<td>p:</td>
+		<td>tüm paketleri listele</td>
+	</tr>
+	<tr>
+
+		<td>ifade</td>
+		<td>tüm paket içeriklerinde "ifade"yi ara.</td>
+	</tr>
+</table>
 {% endblock %}
