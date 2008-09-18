@@ -3,7 +3,7 @@ Experimental python bindings for pulseaudio
 Author: Burak Alkan
 
 
-in prder to compile module;
+in order to compile module;
 
 $ python setup.py build
 
