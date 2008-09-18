@@ -42,14 +42,21 @@ class Cam:
     def from24to32(self, str):
         list = [l for l in str]
         newstr = []
-        for i in range(940):
-            newstr.append('\x00')
+        # for i in range(940):
+        newstr.append(940 * '\x00')
         for i in range(0, len(list), 3):
             newstr.append(list[i])
             newstr.append(list[i+1])
             newstr.append(list[i+2])
             newstr.append('\x00')
         return qt.QString("".join(newstr))
+
+    @staticmethod
+    def toPixmap(pgm):
+        """Convert PGM data to pixmap"""
+        pixmap = qt.QPixmap()
+        pixmap.loadFromData(pgm, "PGM")
+        return pixmap
 
 
     def getFrame(self):
@@ -69,16 +76,19 @@ class Cam:
         #im = qt.QImage(out, self.WIDTH, self.HEIGHT, 24, 0, 2**24, qt.QImage.IgnoreEndian)
 
 
-        tmp = self.from24to32(out)
+        # tmp = self.from24to32(out)
 
         # tmp = qt.QString(out)
 
-        im = qt.QImage(self.WIDTH, self.HEIGHT,32,qt.QImage.IgnoreEndian)
-        im.loadFromData(tmp)
+        # im = qt.QImage(self.WIDTH, self.HEIGHT,32,qt.QImage.IgnoreEndian)
+        # im.loadFromData(tmp)
 
+        # image = qt.QPixmap(im)
 
-        image = qt.QPixmap(im)
-        self.ui.lbl_screen.setPixmap(image)
+        # tmp = self.RGB2BGR(out)
+        im = "P6 %s %s 16777216\n%s" % (self.WIDTH, self.HEIGHT, tmp)
+        pixmap = self.toPixmap(im)
+        self.ui.lbl_screen.setPixmap(pixmap)
         self.nextFrame = self.device.queueFrame()
 
     def capture(self):
