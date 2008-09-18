@@ -153,7 +153,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
 
     def searchClient(self):
-        self.notifier.stopNotifier()
         if self.connectingSinerji.getClients():
             for server in self.connectingSinerji.getClients().keys():
                 for client in self.connectingSinerji.getClients()[server]:
@@ -164,33 +163,33 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
             for hostname in self.clientData.keys():
                 if self.clientData[hostname][0] == gethostname():
-                    message = (_("%s want to use your pc from %s") % (hostname, self.clientData[hostname][1]))
+                    message = (_("<b>%s</b> want to use your pc from <b>%s</b>") % (hostname, self.clientData[hostname][1]))
                     header = hostname
                     buttonList = ["accept", unicode("Accept"), "reject", unicode("Reject")]
                     self.notifier.show(self.iconNotify, header, message, 0, buttonList)
-
-
+            print self.clientData
         else:
             print _("No Sinerji service available")
 
     def acceptServer(self, hostname):
-            self.trayMenu.insertAction(self.actionAbout, self.actionDisconnect) ## Add actionDisconnect before self.actionAbout
-            self.trayMenu.removeAction(self.actionManage)
-            self.trayMenu.removeAction(self.actionSearch)
+        self.notifier.stopNotifier(hostname)   ## Stop the others hostnames
+        self.trayMenu.insertAction(self.actionAbout, self.actionDisconnect) ## Add actionDisconnect before self.actionAbout
+        self.trayMenu.removeAction(self.actionManage)
+        self.trayMenu.removeAction(self.actionSearch)
 
-            self.address = self.clientData[hostname][2]
-            self.clientCmdList = QStringList()
-            self.clientCmdList.append("-f")
-            self.clientCmdList.append(self.address)
-            self.process.start('synergyc', self.clientCmdList)
+        self.address = self.clientData[hostname][2]
+        self.clientCmdList = QStringList()
+        self.clientCmdList.append("-f")
+        self.clientCmdList.append(self.address)
+        self.process.start('synergyc', self.clientCmdList)
 
-            print _("Start Synergyc")
-            self.clientState = True
-            time.sleep(0.5)
-            self.notifier.show(self.iconNotify, "Sinerji", _("%s is connected to you") % hostname, 1500)
-            self.clientDisconnect.setText(_("%s is connected to you") % hostname)
-            self.trayIcon.setToolTip(_("%s is connected to you.") % hostname)
-            self.timer.stop()
+        print _("Start Synergyc")
+        self.clientState = True
+        time.sleep(0.5)
+        self.notifier.show(self.iconNotify, "Sinerji", _("%s is connected to you") % hostname, 1500)
+        self.clientDisconnect.setText(_("%s is connected to you") % hostname)
+        self.trayIcon.setToolTip(_("%s is connected to you.") % hostname)
+        self.timer.stop()
 
     def disconnect(self):
         if self.clientDisconnect.isVisible():
