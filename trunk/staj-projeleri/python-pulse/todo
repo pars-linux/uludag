@@ -4,3 +4,4 @@
 ? get rid of "incompatible pointer type" warnings, make gcc happy
 ? fix void* userdata issue
 ? double check Py_INCREF, Py_DECREF statements
+-> cleanup destruct code

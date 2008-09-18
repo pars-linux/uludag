@@ -3,29 +3,49 @@
 #include "pypulse.h"
 
 #define CNT 10
+#define BUFF 25
 
 typedef struct _notify{
+	char name[BUFF];
 	int client;
 	struct _notify *next;
 }notify;
 
 notify **root;
-static int allocated = 0; /* allocated -> 1 not allocated-> 0 */
+static int allocated = 0; 		/* allocated -> 1 not allocated-> 0 */
+static int notify_index = 0;
+
+
+// check value from python side
+PyObject* check_callback_value()
+{
+	int i = 0;
+	
+	printf("INF: checking values\n");
+	for(;i< CNT;i++){
+		notify *item = root[i];
+		if(item->next != NULL){
+			printf("tryout->name %s :",  item->name);
+			printf("tryout->client %d :", item->client);
+		}
+	}
+	printf("INF: checking values done\n");
+}
 
 void alloc_first()
 {
-	printf("allocating root\n");
+	printf("INF: allocating root\n");
 	int i = 0;
-	root = (notify**)calloc(CNT, sizeof(notify));
-	printf("root allocated done\n");
+	root = (notify**)calloc(CNT, sizeof(notify*));
+	printf("INF: root allocated done\n");
 	allocated = 1;
 }
 
 // add, update application list
 void py_updateSinkInput(pa_sink_input_info* info)
 {
-	int notify_index = 0;
 	
+	printf("update time = %d\n", notify_index);
 	printf("*****index = %i\n", info->index);
 	printf("*****name = %c\n", *info->name);
 	printf("*****client = %i\n", info->client);// unique one
@@ -34,15 +54,19 @@ void py_updateSinkInput(pa_sink_input_info* info)
 	
 	// if **root is not allocated allocate it first
 	if(!allocated) alloc_first();
+	else printf("root will not allocated this time\n");
 	
 	root[notify_index] = (notify*)calloc(1,sizeof(notify));
 	root[notify_index]->client = info->client;
+	printf("INF: entering sprintf\n");
+	sprintf(root[notify_index]->name, "member %d", notify_index);
+	
 	
 	if (notify_index > 0){
-		printf("adding chain\n");
-		root[notify_index - 1]->client = root[notify_index];
+		printf("INF: adding chain\n");
+		root[notify_index - 1]->next = root[notify_index];
 	}
-	notify_index++;
+	notify_index++;	
 	
 }
 
@@ -88,7 +112,8 @@ void sink_cb(pa_context *c, const pa_sink_info *i, int eol)
 }
 
 
-void source_cb(pa_context *c, const pa_source_info *i, int eol) {
+void source_cb(pa_context *c, const pa_source_info *i, int eol)
+{
 	if (eol) {
 		//dec_outstanding(w);
 		printf("INF: dec_outstanding MainWindow\n");
@@ -248,3 +273,11 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 			break;
 	}
 }
+
+
+
+static PyMethodDef Methods[] = {
+    {"check_values", check_callback_value, METH_VARARGS},
+    {NULL , NULL, 0, NULL}
+};
+
