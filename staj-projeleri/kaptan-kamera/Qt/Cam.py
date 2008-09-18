@@ -86,7 +86,7 @@ class Cam:
         # image = qt.QPixmap(im)
 
         # tmp = self.RGB2BGR(out)
-        im = "P6 %s %s 16777216\n%s" % (self.WIDTH, self.HEIGHT, tmp)
+        im = "P6 %s %s 16777216\n%s" % (self.WIDTH, self.HEIGHT, out)
         pixmap = self.toPixmap(im)
         self.ui.lbl_screen.setPixmap(pixmap)
         self.nextFrame = self.device.queueFrame()
