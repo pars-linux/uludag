@@ -56,6 +56,8 @@ if "dist" in sys.argv:
 class I18nInstall(install):
     def run(self):
         install.run(self)
+        shutil.copy("sinerji/images/sinerji.desktop", "/usr/share/applications/sinerji.desktop")
+        shutil.copy("sinerji/images/sinerji.png", "/usr/share/pixmaps/sinerji.png")
         i18n_domain = "sinerji"
         i18n_languages = ["tr", "es"]  ### List of languases, if other languages is added, add it to this list, like ["tr","en" ]
         for lang in i18n_languages:
@@ -69,6 +71,7 @@ class I18nInstall(install):
             except:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(destpath, "%s.mo" % i18n_domain))
+
 
 
 setup (name='Sinerji',
