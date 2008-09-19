@@ -70,9 +70,9 @@ if version == '2008':
     pi = pisi.db.installdb.InstallDB()
     installed_packages = pi.list_installed()
 elif version == '2007':
+    pisi.api.init()
     pi = pisi.installdb.init()
-    installed_packages = pi.list_installed()
-    pi.finalize()
+    installed_packages = pi.list_installed()        
 else:
     raise Error("Unknown version!")
 
@@ -83,7 +83,13 @@ if debug: print "Writing package information starting..."
 for package in installed_packages:
     if debug: print "Package: %s" % package 
     # Get the file list for a package
-    files = [file.path for file in pi.get_files(package).list]
+    if version == '2007':
+        files = [file.path for file in pi.files(package).list]
+    elif version == '2008':
+        files = [file.path for file in pi.get_files(package).list]
+    #else:
+        # for pisi api changes...
+    #    files = [file.path for file in pi.get_files(package).list]
     
     # For each file, generate an INSERT INTO statement and append it
     for file in files:
@@ -97,7 +103,11 @@ for package in installed_packages:
         statements = ""
         counter = 0
         if debug: print "Appended to the file..."
-
+        
+if version == '2007':
+    pisi.installdb.finalize()
+    pisi.api.finalize()
+    
 if debug: print 'Adding index'
 f = open(file_name, "a")
 f.write('CREATE INDEX package_index USING BTREE on files%s(package);\n' % version)
