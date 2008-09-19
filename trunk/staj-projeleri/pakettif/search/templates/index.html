@@ -1,35 +1,36 @@
 {% extends "base.html" %} 
-{% block title %}Package Search{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Package Search' %}{% endblock %}
 {% block content %}
-        <h2 align="center">Kullanım</h2>
+        <h2 align="center">{% trans 'Usage' %}</h2>
 
 	<table align="center">
 	<tr>
-		<th>Kullanım</th>
-		<th>Anlamı</th>
+		<th>{% trans 'Usage' %}</th>
+		<th>{% trans 'Meaning' %}</th>
 	</tr>
 	<tr>
-		<td>ifade in:paket</td>
-		<td>"ifade"yi "paket" içerisinde ara</td>
+		<td>{% trans 'term in:packge' %}</td>
+		<td>{% trans 'Search for "term" in "package"' %}</td>
 
 	</tr>
 	<tr>
-		<td>in:paket</td>
-		<td>"paket" içindeki tüm yolları listele</td>
+		<td>{% trans 'in:package' %}</td>
+		<td>{% trans 'List all paths in "package"' %}</td>
 	</tr>
 	<tr>
-		<td>p:paket</td>
+		<td>{% trans 'p:package' %}</td>
 
-		<td>"paket"e benzeyen paketleri ara</td>
+		<td>{% trans 'Search for packages related to "package"' %}</td>
 	</tr>
 	<tr>
-		<td>p:</td>
-		<td>tüm paketleri listele</td>
+		<td>{% trans 'p:' %}</td>
+		<td>{% trans 'List all packages' %}</td>
 	</tr>
 	<tr>
 
-		<td>ifade</td>
-		<td>tüm paket içeriklerinde "ifade"yi ara.</td>
+		<td>{% trans 'term' %}</td>
+		<td>{% trans 'Search for "term" in all packages' %}</td>
 	</tr>
 </table>
 {% endblock %}

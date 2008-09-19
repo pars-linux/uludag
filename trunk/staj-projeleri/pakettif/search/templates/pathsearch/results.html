@@ -1,15 +1,22 @@
 {% extends "base.html" %} 
-{% block title %}Results for {{ term }}{% endblock %}
+{% load i18n %}
+{% block title %}
+{% if term %}
+	{% blocktrans %}Results for {{ term }}{% endblocktrans %}
+{% else %}
+	{% blocktrans %}Results for {{package_name}}{% endblocktrans %}
+{% endif %}
+{% endblock %}
 {% block content %}
 	{% if entry_list %}
 		{% if group %}
 		<!-- If grouping is desired -->
 			{% regroup entry_list by package as pkg_list %}
 		
-			<h2>Packages containing files related to {{ term }}:</h2>
+			<h2>{% blocktrans %}Packages containing files related to {{ term }}{% endblocktrans %}:</h2>
 			<table>
 				<tr class="table-top">
-					<th>Package</th>
+					<th>{% trans 'Package' %}</th>
 				</tr>
 				{% for pkg in pkg_list %}
 				<tr>
@@ -21,11 +28,19 @@
 		<!-- If grouping is not desired -->
 			{% if package_name %}
 			<!-- Search for term in a specific package-->
-				<h2>Files {% if term %}related to {{ term }} {% endif %}inside <a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ package_name }}</a>:</h2>
+				<h2>
+					{% if term %}
+					{% blocktrans %} Files related to {{ term }} inside <a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ package_name }}</a>:{% endblocktrans %}
+					{% else %}
+					{% blocktrans %} Files inside <a href="/search/{{current_version}}/package/{{ package_name }}/list/">{{ package_name }}</a>:{% endblocktrans %}
+					{% endif %}
+				
+					
+				</h2>
 	
 				<table>
 					<tr class="table-top">
-						<th>Filepath</th>
+						<th>{% trans 'Filepath' %}</th>
 					</tr>
 					{% for entry in entry_list %}
 						<tr>
@@ -35,11 +50,11 @@
 				</table>
 			{% else %}
 			<!-- Search for term in all packages-->
-				<h2>Packages and paths of files inside related to {{ term }}:</h2>
+				<h2>{% blocktrans %}Packages and paths of files related to {{ term }}:{% endblocktrans %}</h2>
 				<table>
 					<tr class="table-top">
-						<th>Package</th>
-						<th>Filepath</th>
+						<th>{% trans 'Package' %}</th>
+						<th>{% trans 'Filepath' %}</th>
 					</tr>
 					{% for entry in entry_list %}
 						<tr>
@@ -53,6 +68,6 @@
 		{% endif %}
 	<!-- Results ended -->
 	{% else %}
-		<h3>No results...</h3>
+		<h3>{% trans 'No results...' %}</h3>
 	{% endif %}
 {% endblock %}

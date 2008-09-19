@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-{% block title %}Results for {{ package }}{% endblock %}
+{% block title %}{% blocktrans %}Results for {{ package }}{% endblocktrans %}{% endblock %}
 {% block content %}
 	{% if package_list %}
 		<table>
