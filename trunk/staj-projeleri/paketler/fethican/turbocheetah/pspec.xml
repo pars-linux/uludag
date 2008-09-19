@@ -22,7 +22,8 @@
             <Dependency versionFrom="2.0.1">cheetah</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="all">/</Path>
+            <Path fileType="lib">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
         </Files>
     </Package>
     <History>
