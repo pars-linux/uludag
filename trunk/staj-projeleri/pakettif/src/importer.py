@@ -4,9 +4,11 @@
 
 import os
 
-db_name = 'arama'
+db_name = 'search'
 user = 'root'
+
 files = ['arama2008.sql', 'arama2007.sql']
+
 for file_name in files:
     print 'Uncompressing the bz2 file %s ...' % file_name
     os.system('bzip2 -d %s.bz2' % file_name)
