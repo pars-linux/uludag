@@ -11,6 +11,9 @@ from distutils.command.install import install
 version = "0.1"
 
 distfiles = """
+    README
+    AUTHORS
+    COPYING
     setup.py
     po/*.po
     sinerji/*.py
