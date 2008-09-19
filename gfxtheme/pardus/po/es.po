@@ -1,3 +1,4 @@
+# translation of es.po to Spanish
 # translation of es.po to
 # translation of bootloader.po to
 # LANGUAGE translations for boot loader
@@ -5,13 +6,14 @@
 #
 # Ines Pozo <Ines.Pozo@novell.com>, 2005.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2008.
+# Klemens Häckel <click3d at linuxmail dot org>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-06-03 20:52-0400\n"
-"Last-Translator: Klemens Häckel <click3d_at_linuxmail_org>\n"
-"Language-Team:  <es@li.org>\n"
+"PO-Revision-Date: 2008-09-18 20:27-0400\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -410,21 +412,24 @@ msgstr "Verificar el medio de instalación"
 
 #. txt_zorg
 msgid "Graphical Display"
-msgstr ""
+msgstr "Presentación gráfica"
 
 #. txt_zorg_default
+# favor revisar, si se puede decir mas breve..
 msgid "Default"
-msgstr ""
+msgstr "Valor por omisión"
 
 #. txt_zorg_safe
 msgid "Failsafe"
-msgstr ""
+msgstr "Modo seguro"
 
 #. txt_zorg_probe
+# probe - tal vez hay mejor traduccion, favor revisar
 msgid "Probe Again"
-msgstr ""
+msgstr "Probar de nuevo"
 
 #. txt_zorg_off
+# favor revisar, alternativas segun contexto: Apagado, inactivo, desactivado, deshabilitado
 msgid "Off"
-msgstr ""
+msgstr "Apagar"
 
