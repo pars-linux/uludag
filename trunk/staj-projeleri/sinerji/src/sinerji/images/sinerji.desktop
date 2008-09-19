@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Sinerji
-Name[tr]=Sinerjş
+Name[tr]=Sinerji
 Comment=Fronted for Synergy
 Comment[tr]=Synergy için arayüz
 
@@ -17,4 +17,4 @@ TryExec=sinerji
 Terminal=false
 StartupNotify=true
 
-Icon=sinerji.png
+Icon=sinerji
