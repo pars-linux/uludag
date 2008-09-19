@@ -24,7 +24,8 @@
     <Package>
         <Name>cherrypy2</Name>
         <Files>
-            <Path fileType="all">/</Path>
+	    <Path fileType="library">/usr/lib</Path>
+	    <Path fileType="doc">/usr/share/doc</Path>
         </Files>
     </Package>
     <History>
