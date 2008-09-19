@@ -44,6 +44,13 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.txtData = []
         self.confdomain = []
         self.synergycData = {}
+        self.completedTop = None
+        self.completedBottom = None
+        self.completedRight = None
+        self.completedLeft = None
+        
+        
+        
         self.connected = False
         self.browser = None
         self.bus = None
@@ -55,19 +62,18 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.clientAndPos = []
         self.serverAndIp = []
         self.clientData = {}
+        self.clientModel = QStringList()
         self.synergyConf = os.path.join(os.path.expanduser("~"), ".synergy.conf") 
         self.iconNotify = "/usr/share/sinerji/images/notifyIcon.png"
 
         ### Start browsing services, and looking for synergy.conf for parsing in updateUi
         self.startBrowsing()
         self.updateUi()
-
+        self.setComboBoxes()
         self.notifier = notifier.Notifier()
         self.clientDisconnect = disconnect.Disconnect(self)
-
         self.connect(self.notifier, SIGNAL("acceptServer"), self.acceptServer)
         self.connect(self.notifier, SIGNAL("rejectServer"), self.rejectServer)
-
         self.connect(self.clientDisconnect.disconnectButton, SIGNAL("clicked()"), self.disconnect)
         self.connect(self.clientDisconnect.okButton, SIGNAL("clicked()"), self.clientDisconnect.hide)
 
@@ -76,8 +82,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.process.setReadChannelMode(QProcess.MergedChannels)
         self.process.setReadChannel(QProcess.StandardOutput)
         self.connect(self.process, SIGNAL("readyReadStandardOutput()"), self.readData)
-
-
 
         self.topComboBox.addItem('')
         self.bottomComboBox.addItem('')
@@ -143,12 +147,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
     def about(self):
         if not self.clientState and not self.serverState:
             self.show()
-        QMessageBox.about(self, "About Sinerji",
-             """<b>Sinerji</b> v %s
-             <p>Developer: Fatih Arslan  E-mail: ftharsln@gmail.com     
-             <p>This application is a fronted to the program Synergy
-             <p>It uses avahi as backed for an easy configure experience
-             <p>Python %s - Qt %s - PyQt %s on %s""" % (
+        QMessageBox.about(self, _("About Sinerji"),
+             _("<b>Sinerji</b> v %s <p>Developer: Fatih Arslan  E-mail: fatih@arsln.org <p>This application is a fronted to the program Synergy <p>It uses avahi as backed for an easy configure experience <p>Python %s - Qt %s - PyQt %s on %s") % (
              __version__, platform.python_version(),
              QT_VERSION_STR, PYQT_VERSION_STR, platform.system()))
 
@@ -210,43 +210,102 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 ##################################################################
 ##################################################################
 
+    def setComboBoxes(self):
+        self.topComboBox.setEditable(True)
+        self.bottomComboBox.setEditable(True)
+        self.rightComboBox.setEditable(True)
+        self.leftComboBox.setEditable(True)
+# ---------------TOP--------------
     def on_topComboBox_highlighted(self):
         if not self.filled:
             self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedTop:
+            self.topComboBox.setCompleter(self.completer)
+            self.completedTop = True
 
-    @pyqtSignature("QString")
-    def on_topComboBox_activated(self, text):
-        self.topComboBox.setEditable(True)
-
-
-    def on_bottomComboBox_highlighted(self):
+    def on_topComboBox_editTextChanged(self):
         if not self.filled:
             self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedTop:
+            self.topComboBox.setCompleter(self.completer)
+            self.completedTop = True
 
-    @pyqtSignature("QString")
-    def on_bottomComboBox_activated(self, text):
-        self.bottomComboBox.setEditable(True)
 
+# ---------------Bottom--------------
+
+    def on_bottomComboBox_highlighted(self, text):
+        if not self.filled:
+            self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedBottom:
+            self.bottomComboBox.setCompleter(self.completer)
+            self.completedBottom = True
+
+
+    def on_bottomComboBox_editTextChanged(self):
+        if not self.filled:
+            self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedBottom:
+            self.bottomComboBox.setCompleter(self.completer)
+            self.completedBottom = True
+
+
+
+# ---------------Right--------------
     def on_rightComboBox_highlighted(self, text):
         if not self.filled:
             self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedRight:
+            self.rightComboBox.setCompleter(self.completer)
+            self.completedRight = True
 
-    @pyqtSignature("QString")
-    def on_rightComboBox_activated(self, text):
-        self.rightComboBox.setEditable(True)
 
+    def on_rightComboBox_editTextChanged(self):
+        if not self.filled:
+            self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedRight:
+            self.rightComboBox.setCompleter(self.completer)
+            self.completedRight = True
+
+
+# ---------------LEFT--------------
     def on_leftComboBox_highlighted(self, text):
         if not self.filled:
             self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedLeft:
+            self.leftComboBox.setCompleter(self.completer)
+            self.completedLeft = True
 
-    @pyqtSignature("QString")
-    def on_leftComboBox_activated(self, text):
-        self.leftComboBox.setEditable(True)
+    def on_leftComboBox_editTextChanged(self):
+        if not self.filled:
+            self.fillComboBoxes()
+            self.completer = QCompleter(self.clientModel)
+            self.completer.setCompletionMode(QCompleter.PopupCompletion)
+        if not self.completedLeft:
+            self.leftComboBox.setCompleter(self.completer)
+            self.completedLeft = True
 
 
+
+## ------------- FILL COMBOBOXES ----------------
     def fillComboBoxes(self):
         ### Add the hostnames that we get from browsing _workstation._tcp to the comboBoxes
         for domain in self.connectingWorkstation.getDomains():
+            print domain
+            self.clientModel.append(domain)
             self.topComboBox.addItem(domain)
             self.bottomComboBox.addItem(domain)
             self.rightComboBox.addItem(domain)
@@ -314,7 +373,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.trayMenu.removeAction(self.actionManage)
             self.trayMenu.removeAction(self.actionSearch)
 
-            self.clientDisconnect.setText("Synergy server has started and waiting response from %s" % self.rightComboBox.currentText())
+            self.clientDisconnect.setText(_("Synergy server has started and waiting response from %s") % self.rightComboBox.currentText())
 
         elif self.clientState:
             QMessageBox.warning(self, _("Warning"), _("Somebody is using your computer. To use other computers please restart"))
@@ -348,7 +407,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
             self.trayIcon.setToolTip(_("Synergy server is connected"))
             self.serverState = True
 
-            self.clientDisconnect.setText("Your are connected to %s" % clientFound)
+            self.clientDisconnect.setText(_("Your are connected to %s") % clientFound)
 
         if m:
             clientRemoved = m.groups()[0]
@@ -378,6 +437,8 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
+        for line in self.clientModel:
+            print str(line)
         self.hide()
 
 ##################################################################
