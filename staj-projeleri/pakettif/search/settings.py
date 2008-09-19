@@ -20,7 +20,13 @@ DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
+ugettext = lambda s: s
 
+LANGUAGES = (
+	('tr', ugettext('Turkish')),
+#  ('de', _('German')),
+ 	('en', ugettext('English')),
+)
 
 
 # Local time zone for this installation. Choices can be found here:
@@ -32,7 +38,7 @@ TIME_ZONE = 'Europe/Istanbul'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'tr-TR'
+#LANGUAGE_CODE = 'tr-TR'
 
 SITE_ID = 1
 
@@ -68,6 +74,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
