@@ -215,6 +215,7 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
         self.bottomComboBox.setEditable(True)
         self.rightComboBox.setEditable(True)
         self.leftComboBox.setEditable(True)
+
 # ---------------TOP--------------
     def on_topComboBox_highlighted(self):
         if not self.filled:
@@ -437,8 +438,6 @@ class SinerjiGui(QDialog, ui_sinerjigui.Ui_SinerjiGui):
 
     @pyqtSignature("")
     def on_closeButton_clicked(self):
-        for line in self.clientModel:
-            print str(line)
         self.hide()
 
 ##################################################################
