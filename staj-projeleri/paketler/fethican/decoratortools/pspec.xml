@@ -18,7 +18,7 @@
     <Package>
         <Name>decoratortools</Name>
         <Files>
-            <Path fileType="all">/</Path>
+            <Path fileType="lib">/usr/lib</Path>
         </Files>
     </Package>
     <History>
