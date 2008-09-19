@@ -12,5 +12,19 @@ On the other hand, if nothing is applied, it will also search for servers who wa
 it will automatically popup a notification, which will ask you to accept or reject the request from the server. 
 
 
+Credits:
+
+First thanks to the Pardus Project Team who helps me a lot of during my internship. This application is product of this great time.
+Special thanks goes to Faik Uygur, Emre Ahmet Aladağ and Gökçen Eraslan
+
+GPL stuff that i've used:
+
+Icons are from Oxygen Icon set: http://www.oxygen-icons.org/
+The application icon is from Black&White : http://www.kde-look.org/content/show.php/black+%2B+white+icons?content=24645
+Some part of the avahiservices.py code is from Gajim's zeroconf-avahi.py 
+Also get some inspiration from http://code.google.com/p/gnome-synergy/
+
+
+
 
 
