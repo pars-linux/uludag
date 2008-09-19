@@ -57,7 +57,7 @@ class I18nInstall(install):
     def run(self):
         install.run(self)
         i18n_domain = "sinerji"
-        i18n_languages = ["tr"]  ### List of languases, if other languages is added, add it to this list, like ["tr","en" ]
+        i18n_languages = ["tr", "es"]  ### List of languases, if other languages is added, add it to this list, like ["tr","en" ]
         for lang in i18n_languages:
             print "Installing '%s' translations..." % lang
             os.popen("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
