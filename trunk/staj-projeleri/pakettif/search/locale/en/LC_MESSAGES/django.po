@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-19 10:22+0300\n"
+"POT-Creation-Date: 2008-09-19 14:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,43 +114,48 @@ msgstr ""
 msgid "Results for %(package)s"
 msgstr ""
 
-#: templates/pathsearch/results.html:3
+#: templates/pathsearch/results.html:5
 #, python-format
 msgid "Results for %(term)s"
 msgstr ""
 
-#: templates/pathsearch/results.html:10
+#: templates/pathsearch/results.html:7
+#, python-format
+msgid "Results for %(package_name)s"
+msgstr ""
+
+#: templates/pathsearch/results.html:16
 #, python-format
 msgid "Packages containing files related to %(term)s"
 msgstr ""
 
-#: templates/pathsearch/results.html:13 templates/pathsearch/results.html:50
+#: templates/pathsearch/results.html:19 templates/pathsearch/results.html:56
 msgid "Package"
 msgstr ""
 
-#: templates/pathsearch/results.html:27
+#: templates/pathsearch/results.html:33
 #, python-format
 msgid ""
 " Files related to %(term)s inside <a href=\"/search/%(current_version)s/"
 "package/%(package_name)s/list/\">%(package_name)s</a>:"
 msgstr ""
 
-#: templates/pathsearch/results.html:29
+#: templates/pathsearch/results.html:35
 #, python-format
 msgid ""
-" Files related inside <a href=\"/search/%(current_version)s/package/%"
-"(package_name)s/list/\">%(package_name)s</a>:"
+" Files inside <a href=\"/search/%(current_version)s/package/%(package_name)s/"
+"list/\">%(package_name)s</a>:"
 msgstr ""
 
-#: templates/pathsearch/results.html:37 templates/pathsearch/results.html:51
+#: templates/pathsearch/results.html:43 templates/pathsearch/results.html:57
 msgid "Filepath"
 msgstr ""
 
-#: templates/pathsearch/results.html:47
+#: templates/pathsearch/results.html:53
 #, python-format
-msgid "Packages and paths of files inside related to %(term)s:"
+msgid "Packages and paths of files related to %(term)s:"
 msgstr ""
 
-#: templates/pathsearch/results.html:65
+#: templates/pathsearch/results.html:71
 msgid "No results..."
 msgstr ""
