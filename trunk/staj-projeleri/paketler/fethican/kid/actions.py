@@ -9,7 +9,6 @@ from pisi.actionsapi import pythonmodules
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
-WorkDir = "kid-%s" % get.srcVERSION()
 
 def install():
     pythonmodules.install()
