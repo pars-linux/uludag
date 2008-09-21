@@ -12,7 +12,7 @@
         <IsA>app:gui</IsA>
         <Summary>Sinerji is a fronted for Synergy</Summary>
         <Description>Sinerji is a fronted for Synergy which use avahi and dbus as backends. It aims an easy-to-use experience </Description>
-		<Archive sha1sum="fa9e0ab9296eef3f56c82bb58234cfd8a9f3898f" type="targz">http://www.arsln.org/dosya/sinerji-0.1.tar.gz</Archive>
+		<Archive sha1sum="9b135c6e6f88979686eba6ed92cdd47d307a7b64" type="targz">http://www.arsln.org/dosya/sinerji-0.1.tar.gz</Archive>
         <BuildDependencies>
             <Dependency>PyQt4</Dependency>
         </BuildDependencies>
