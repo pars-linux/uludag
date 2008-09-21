@@ -598,6 +598,7 @@ class packageWidget(QWidget):
             if not os.path.isdir(self.comarDir):
                 os.mkdir(self.comarDir)
             shutil.copyfile(res[2], self.comarDir + "/" + res[1])
+            self.syncCOMAR()
 
         def slotRemoveCOMAR(self):
             lvi = self.lvCOMAR.selectedItem()
@@ -608,6 +609,7 @@ class packageWidget(QWidget):
             filePath = self.comarDir + "/" + file
             if os.path.isdir(self.comarDir) and os.path.isfile(filePath):
                 os.unlink(filePath)
+            self.syncCOMAR()
 
         def slotBrowseCOMAR(self):
             lvi = self.lvCOMAR.selectedItem()
@@ -619,6 +621,53 @@ class packageWidget(QWidget):
             res = dia.getResult()
             lvi.setText(0, res[0])
             lvi.setText(1, res[1])
+
+            self.syncCOMAR()
+
+        def getCOMARList(self):
+            ret = []
+            iterator = QListViewItemIterator(self.lvCOMAR)
+            while iterator.current():
+                lvi = iterator.current()
+                l = [str(lvi.text(0)), str(lvi.text(1))]
+                ret.append(l)
+                iterator += 1
+            return ret
+
+        def setCOMARList(self, l):
+            self.lvCOMAR.clear()
+            for c in l:
+                KListViewItem(self.lvCOMAR, c[0], c[1])
+
+        def syncCOMAR(self):
+            print "neber"
+            #synchronize xml tree with listview
+            import pakito.xmlUtil
+            comar = self.getCOMARList()
+            comarTag=self.xmlUtil.getTagByPath("Package", "Provides")
+            node = self.xmlUtil.getTagByPath("Package")
+
+            if comarTag==None:
+                self.xmlUtil.addTag(node, "Provides","")
+                self.xmlUtil.write()
+            while self.xmlUtil.deleteTagByPath("Package", "Provides", "COMAR"):
+                pass
+
+            comar.reverse()
+            comarNode = self.xmlUtil.getTagByPath("Package","Provides")
+            for c in comar:
+                if c !=[]:
+                    d={}
+                    if c[1]!="":
+                        d['script']=c[1]
+                    self.xmlUtil.addTag(comarNode, "COMAR",c[0],**d)
+
+            comar = self.getCOMARList()
+            if comar==[]:
+                self.xmlUtil.deleteTagByPath("Package", "Provides")
+
+            self.xmlUtil.write()
+
 
         def slotViewCOMAR(self):
             lvi = self.lvCOMAR.selectedItem()
