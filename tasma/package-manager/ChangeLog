@@ -1,0 +1,15 @@
+2008-08-26 Gökçen Eraslan <gokcen@pardus.org.tr>
+        * Swedish help page added
+
+2008-08-26 Pınar Yanardağ <pinar@pardus.org.tr>
+        * Fix credits section
+
+2008-06-30 Faik Uygur <faik@pardus.org.tr>
+        * pm-install not working fix
+
+2008-06-27 Faik Uygur <faik@pardus.org.tr>
+        * package-manager-1.3.7
+
+2008-06-27 Faik Uygur <faik@pardus.org.tr>
+        * Fix for upgradable packages when a replaced package exists.
+
