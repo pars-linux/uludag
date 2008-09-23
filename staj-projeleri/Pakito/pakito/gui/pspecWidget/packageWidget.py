@@ -640,7 +640,6 @@ class packageWidget(QWidget):
                 KListViewItem(self.lvCOMAR, c[0], c[1])
 
         def syncCOMAR(self):
-            print "neber"
             #synchronize xml tree with listview
             import pakito.xmlUtil
             comar = self.getCOMARList()
