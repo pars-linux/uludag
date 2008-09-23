@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from search.pathsearch.models import Entry, Entry2007, Entry2008
+from search.pathsearch.models import Entry2007, Entry2008
 from django.db import models
 from search.settings import versions
 
