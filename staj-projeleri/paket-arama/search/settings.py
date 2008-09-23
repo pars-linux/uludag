@@ -24,7 +24,6 @@ ugettext = lambda s: s
 
 LANGUAGES = (
 	('tr', ugettext('Turkish')),
-#  ('de', _('German')),
  	('en', ugettext('English')),
 )
 
@@ -88,7 +87,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
+#    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

@@ -1,5 +1,6 @@
 from django.db import models
 
+'''
 class Entry(models.Model):
     package = models.CharField(max_length=60)
     path    = models.CharField(max_length=200)
@@ -11,7 +12,7 @@ class Entry(models.Model):
     
     def __unicode__(self):
         return '%s - %s' % (self.package, self.path)
-    
+''' 
     
 class Entry2007(models.Model):
     package = models.CharField(max_length=60)
