@@ -49,10 +49,9 @@ def sort_packages(p_name, path):
     packages.sort(cmp=lambda x,y: int(get_build(x)) - int(get_build(y)), reverse=True)
     return packages
 
-def check_skipped_builds(p):
-    # p: kernel-2.6.25.16-108-45.pisi (new package)
-    # stable: kernel-2.6.25.16-108.44.pisi -> Return False
-    #         kernel-2.6.25.16-107.43.pisi -> Return True
+def get_delta_list(p):
+
+    deltas_to_copy = []
 
     c_build = get_build(p)
     c_name = get_name(p)
@@ -98,18 +97,24 @@ def check_skipped_builds(p):
         delta_packages = list(set(delta_packages))
 
         _debug("\nNeeded delta packages are:\n")
-        for p in delta_packages:
-            exists = os.path.exists(os.path.join(history_path, p))
-            _debug("  *** %s (In %s? ->%s)" % (p, history_path, exists))
-            if exists:
-                # Copy it to stable_path
-                file_copy(os.path.join(history_path, p), stable_path_test)
+        for delta in delta_packages:
+            exists = os.path.exists(os.path.join(history_path, delta))
+            _debug("  *** %s (In %s? ->%s)" % (delta, history_path, exists))
+            if not exists:
+                # We have to create the delta package 'delta'
+                print "We have to build %s using PiSi API" % delta
+                # TODO: Add delta build code
+                new_delta = ""
+                #deltas_to_copy.append(create_delta_package(..))
             else:
-                # We have to create the delta package p
-                print "We have to build %s using PiSi API" % p
+                # Add the delta to the list to be returned from this function
+                print "Adding %s to list" % delta
+                deltas_to_copy.append(delta)
 
     except IndexError:
         pass
+
+    return deltas_to_copy
 
 def main(ack_file):
     if not os.path.exists(ack_file):
@@ -118,7 +123,6 @@ def main(ack_file):
 
     # Bring ISO packages
     if os.path.exists(iso_packages_list):
-        global iso_packages
         iso_packages = cPickle.Unpickler(open(iso_packages_list, "rb")).load()
     else:
         # Iso packages will be copied from history_path
@@ -129,18 +133,25 @@ def main(ack_file):
     _debug("Number of packages: %d" % len(package_list))
 
     # Create another list containing the packages to be moved
-    packages_to_move = package_list[:]
+    packages_to_copy = package_list[:]
 
     for p in package_list:
         # Move the package itself
-        packages_to_move.append(p)
+        packages_to_copy.append(p)
 
         # Parse the package name, version, release and buildNo
         p_name = get_name(p)
         p_build = get_build(p)
 
-        print "Current package is: %s\n" % p
-        check_skipped_builds(p)
+        _debug("Current package is: %s\n" % p)
+        packages_to_copy.extend(get_delta_list(p))
+
+    print "\n".join(packages_to_copy)
+
+    # Finally copy the packages
+    for f in packages_to_copy:
+        print "Copying %s.." % f
+        file_copy(os.path.join(history_path, f), stable_path_test)
 
 if __name__ == "__main__":
     if "--debug" in sys.argv:
