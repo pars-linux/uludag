@@ -74,6 +74,8 @@ def buildPackages():
                 # Reduce to filenames
                 newBinaryPackages = map(lambda x: os.path.basename(x), newBinaryPackages)
                 oldBinaryPackages = map(lambda x: os.path.basename(x), oldBinaryPackages)
+                newBinaryPackages.sort()
+                oldBinaryPackages.sort()
 
                 # Delta package generation using delta interface
                 (deltasToInstall, deltaPackages) = pisi.delta(isopackages, oldBinaryPackages, newBinaryPackages)
@@ -86,16 +88,18 @@ def buildPackages():
                 if deltasToInstall:
                     packagesToInstall = deltasToInstall[:]
                     if len(newBinaryPackages) > len(oldBinaryPackages):
-                        logger.info("*** (Report) # of newBinaryPackages > # of oldBinaryPackages")
+                        logger.info("*** There are new binaries, the package is probably splitted.")
                         # There exists some first builds, install them
                         # because they dont have delta.
                         packagesToInstall.extend(newBinaryPackages[len(oldBinaryPackages):])
+                        logger.debug("(splitted package), packagesToInstall: %s" % packagesToInstall)
                 else:
                     # No delta, install full packages
                     packagesToInstall = newBinaryPackages[:]
 
                 # Merge the package lists
                 deltaPackages = deltaPackages + deltasToInstall
+                logger.debug("All delta packages: %s" % deltaPackages)
 
             except Exception, e:
                 # Transfer source package to wait queue in case of a build error
@@ -109,9 +113,9 @@ def buildPackages():
                     # correctly install interdependent packages.
                     if len(packagesToInstall) > 1:
                         # packagesToInstall doesn't contain full paths
-                        logger.info("*** Reordering packages..")
+                        logger.info("*** Reordering packages to satisfy inner runtime dependencies...")
                         packagesToInstall = pisi.getInstallOrder(packagesToInstall)
-                        logger.info("*** New order is: %s" % packagesToInstall)
+                        logger.info("*** Installation order is: %s" % packagesToInstall)
 
                     for p in packagesToInstall:
                         # Install package
@@ -156,16 +160,13 @@ def buildPackages():
         os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
         logger.info("*** PiSi Index Generated for %s" % dir)
 
-        # Sweeet november, try to find duplicate packages in dir
-        # print "\nDuplicate packages in %s:\n%s" % (dir, '-'*40)
-        # os.system("for i in `ls`; do echo ${i/-[0-9]*/}; done | uniq -d")
-
     # Go back to the saved directory
     os.chdir(current)
 
     # Check packages containing binaries and libraries broken by any package update
     print "\n*** Checking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
+
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 

@@ -64,7 +64,9 @@ class PisiApi:
         return retval
 
     def delta(self, isopackages, oldBinaryPackages, newBinaryPackages):
-        # Sort the lists
+
+        logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
+        logger.debug("delta() -> newBinaryPackages: %s" % newBinaryPackages)
 
         # Delta packages to be installed on farm for upgrading to new packages
         deltas_to_install = []
@@ -74,6 +76,7 @@ class PisiApi:
 
         for pl in zip(oldBinaryPackages, newBinaryPackages):
             # zip() returns [] if oldBinaryPackages is empty.
+            logger.debug("Current (old,new) tuple is: %s" % str(pl))
 
             # Parse the name of the new package
             name = os.path.basename(pl[1]).rstrip(".pisi").rsplit("-", 3)[0]
@@ -101,6 +104,9 @@ class PisiApi:
                 # Found build (older-1)
                 logger.info("Building delta between %s[older build] and %s." % (previous, pl[1]))
                 delta_packages.append(create_delta_package(os.path.join(config.binaryPath, previous), p))
+
+        # Ok for here
+        logger.debug("delta() -> deltas_to_install: %s" % deltas_to_install)
 
         return (deltas_to_install, delta_packages)
 
