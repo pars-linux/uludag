@@ -93,7 +93,8 @@ for package in installed_packages:
     
     # For each file, generate an INSERT INTO statement and append it
     for file in files:
-        statements += "INSERT INTO files%s VALUES('%d', '%s', '/%s');\n" % (version, index, package, file)
+        statements += "INSERT INTO files%s VALUES('%d', '%s', '/%s');\n" % (version, index, package, 
+file.replace("'", "''"))
         index += 1
     counter+=1
     if counter == 50:
