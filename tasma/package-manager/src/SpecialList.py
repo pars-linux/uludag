@@ -113,7 +113,7 @@ class SpecialList(QObject):
         <!-- checkbox --> %s <!-- checkbox -->
         <div class="package_title" style="%s" id="package_t%d" onclick="showHideContent(this)">
         <img src="%s" style="float:left;" width="%dpx" height="%dpx">
-        <b>%s</b><br><span style="color:#303030">%s</span><br>
+        <b>%s</b><br><span style="color:%s">%s</span><br>
         </div>
         <div class="package_info" style="%s" id="package_i%d">
         <div style="margin-left:25px;" class="package_info_content" id="package_ic%d">
@@ -135,6 +135,8 @@ class SpecialList(QObject):
 
         alternativeColor = KGlobalSettings.alternateBackgroundColor().name()
         baseColor = KGlobalSettings.baseColor().name()
+        selectedBaseColor = "#678DB2"
+        summaryColor = "#303030"
 
         for app in packages:
             if index % 2 == 0:
@@ -144,7 +146,7 @@ class SpecialList(QObject):
             titleStyle = style
 
             if app.name in self.selected:
-                titleStyle = "background-color:#678DB2"
+                titleStyle = "background-color:%s" % selectedBaseColor
                 checkState = "checked"
             else:
                 checkState = ""
@@ -159,7 +161,7 @@ class SpecialList(QObject):
 
             iconSize = getIconSize()
             iconPath = getIconPath(app.icon)
-            result += template % (checkbox, titleStyle, curindex, iconPath, iconSize, iconSize, app.name, app.summary, style, curindex, curindex,
+            result += template % (checkbox, titleStyle, curindex, iconPath, iconSize, iconSize, app.name, summaryColor, app.summary, style, curindex, curindex,
                                   i18n("Description: "), app.description,
                                   i18n("Version: "), app.version,
                                    i18n("Repository: "), app.repo,
