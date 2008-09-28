@@ -62,6 +62,9 @@ def AboutData():
 def loadIcon(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIcon(name, group, size)
 
+def loadIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group, 0, False)
+
 # Are we running as a separate standalone application or in KControl?
 standalone = __name__ == '__main__'
 
@@ -122,6 +125,10 @@ class dialogRule(dialog.dialogRule):
 
         self.connect(self.pushCancel, SIGNAL('clicked()'), self, SLOT('reject()'))
         self.connect(self.pushOK, SIGNAL('clicked()'), SLOT('accept()'))
+
+        # Load icons for buttons
+        self.pushCancel.setIconSet(loadIconSet('cancel', group=KIcon.Small))
+        self.pushOK.setIconSet(loadIconSet('ok', group=KIcon.Small))
 
     def accept(self):
         if checkPortFormat(str(self.linePorts.text())):
@@ -206,6 +213,11 @@ class MainApplication(programbase):
         mainwidget.pixmapIncoming.setPixmap(loadIcon('server.png', size=48))
         mainwidget.pixmapAdvanced.setPixmap(loadIcon('gear.png', size=48))
         mainwidget.pushNewRule.setPixmap(loadIcon('add.png', size=32))
+
+        mainwidget.pushOk.setIconSet(loadIconSet('ok', group=KIcon.Small))
+        mainwidget.pushCancel.setIconSet(loadIconSet('cancel', group=KIcon.Small))
+        mainwidget.pushHelp.setIconSet(loadIconSet('help', group=KIcon.Small))
+        mainwidget.pushApply.setIconSet(loadIconSet('apply', group=KIcon.Small))
 
         # COMAR
         self.setupBusses()
