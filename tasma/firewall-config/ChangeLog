@@ -1,3 +1,6 @@
+2008-09-29 Pınar Yanardağ <pinar@pardus.org.tr>
+	* src/firewall-config.py, setup.py:	update version.
+
 2008-09-28 Ozan Çağlayan <ozan@pardus.org.tr>
 	* src/firewall-config.py: add new method loadIconSet()
 	for being able to fix the issue of missing icons.
