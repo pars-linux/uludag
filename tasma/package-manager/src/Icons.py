@@ -33,5 +33,5 @@ def loadIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group, 0, False)
 
 def getIconSize():
-    KGlobal.config().setGroup("DesktopIcons")
-    return KGlobal.config().readNumEntry("Size", 48)
+    # Return large icons size instead of desktop icons size
+    return KIcon.SizeLarge
