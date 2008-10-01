@@ -1,11 +1,12 @@
 {% extends "base.html" %} 
-{% block title %}{% blocktrans %}Results for {{ package }}{% endblocktrans %}{% endblock %}
+{% load i18n %}
+{% block title %}{% blocktrans %}Results for {{ package_name }}{% endblocktrans %}{% endblock %}
 {% block content %}
 	{% if package_list %}
 		<table>
 		{% for pkg in package_list %}
 			<tr>
-				<td><a href="/search/package/{{ pkg }}/list/">{{ pkg }}}</a></td>
+				<td><a href="/search/{{current_version}}/package/{{ pkg }}/list/">{{ pkg }}</a></td>
 			</tr>
 		{% endfor %}
 		</table>

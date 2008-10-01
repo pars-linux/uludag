@@ -19,6 +19,10 @@ def index(request, version='2008'):
         elif entry.strip().startswith('in:'):
             pkg = entry[3:].strip()
             return list_package_contents(request, version, pkg)
+        
+        elif entry.strip().startswith('p:'):
+            pkg = entry[2:].strip()
+            return search_for_package(request, version, pkg)
             
         # If search form is submitted, redirect...
         return search_in_all_packages(request, version)
@@ -44,10 +48,13 @@ def list_package_contents(request, version, package_name):
                                                           'current_version'         : version,
                                                           'versions'       :versions,
                                               })
-    
+
 def search_for_package(request, version, package_name):
     """Searches for a package related to given name in the URL."""
-    package_list = ENTRY(version).objects.filter(package__contains=package_name)
+    if not package_name.strip():
+        package_list = ENTRY(version).objects.all().distinct()
+    else:
+        package_list = ENTRY(version).objects.filter(package__contains=package_name).distinct()
     package_list = [p.package for p in package_list]
     package_list = list(set(package_list))
     package_list.sort()
