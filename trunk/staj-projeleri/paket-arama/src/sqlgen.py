@@ -11,6 +11,10 @@ import pisi
 import sys
 import os
 
+def append_to_file(file_name, content):
+    f = open(file_name, "a")
+    f.write(content)
+    f.close()
 
 # Determine version
 try:
@@ -90,20 +94,23 @@ for package in installed_packages:
     #else:
         # for pisi api changes...
     #    files = [file.path for file in pi.get_files(package).list]
-    
     # For each file, generate an INSERT INTO statement and append it
+
     for file in files:
-        statements += "INSERT INTO files%s VALUES('%d', '%s', '/%s');\n" % (version, index, package, 
-file.replace("'", "''"))
+        to_be_added = '''INSERT INTO files%s VALUES(%d, "%s", "/%s");
+''' % (version, index, package, file)
+
+        statements += to_be_added
         index += 1
     counter+=1
     if counter == 50:
-        f = open(file_name, "a")
-        f.write(statements)
-        f.close()
+        append_to_file(file_name, statements)
         statements = ""
         counter = 0
         if debug: print "Appended to the file..."
+
+if counter != 0:
+    append_to_file(file_name, statements)
         
 if version == '2007':
     pisi.installdb.finalize()

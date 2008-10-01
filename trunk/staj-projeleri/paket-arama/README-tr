@@ -41,4 +41,6 @@ paket-arama, web üzerinden kararlı depo paket içeriklerini ve paket isimlerin
 	===============
 	1) Django kurulmalı veya projeyle aynı dizine konularak PythonPath'e eklenmeli.
 	2) settings.py dosyası ihtiyaca göre düzenlenmeli.
-	3) Düzenli olarak çiftliklerden bz2 dosyalarını toplayan/sync eden bir betik yazılmalı(sha1sum kontrolü yapılabilir, henüz desteği yok). Bu dosyalar aynı zamanda uygun bir zamanda MySQL'e yüklenmeli. Bu yükleme sürecinde bir bakım modu koyulabilir. En kötü ihtimalle sonuç bulunamadı çıktısı alınır. DROP TABLE IF EXISTS ve CREATE TABLE ard arda yapıldığı için tablo bulunamadı hatası alma olasılığı oldukça düşüktür.
+	3) python manage.py syncdb ile veritabanında gerekli tablolar oluşturulmalı.
+	4) Düzenli olarak çiftliklerden bz2 dosyalarını toplayan/sync eden bir betik yazılmalı(sha1sum kontrolü 
+yapılabilir, henüz desteği yok) ve bu betik düzenli olarak çalıştırılmalı. Bu dosyalar aynı zamanda uygun bir zamanda MySQL'e yüklenmeli. Bu yükleme sürecinde bir bakım modu koyulabilir. En kötü ihtimalle sonuç bulunamadı çıktısı alınır. DROP TABLE IF EXISTS ve CREATE TABLE ard arda yapıldığı için tablo bulunamadı hatası alma olasılığı oldukça düşüktür.
