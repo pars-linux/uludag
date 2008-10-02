@@ -1,14 +1,18 @@
 {% extends "base.html" %} 
 {% load i18n %}
+{# {% load pagination_tags %} #}
+
 {% block title %}{% blocktrans %}Results for {{ package_name }}{% endblocktrans %}{% endblock %}
 {% block content %}
 	{% if package_list %}
 		<table>
+        {#{% autopaginate package_list 200 %}#}
 		{% for pkg in package_list %}
 			<tr>
 				<td><a href="/search/{{current_version}}/package/{{ pkg }}/list/">{{ pkg }}</a></td>
 			</tr>
 		{% endfor %}
+        {#{% paginate %}#}
 		</table>
 	{% endif %}
 {% endblock %}
