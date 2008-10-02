@@ -2,12 +2,14 @@ from django.shortcuts import render_to_response
 from search.pathsearch.models import Entry2007, Entry2008
 from django.db import models
 from search.settings import versions
+from django.template import RequestContext
+
 
 
 def index(request, version='2008'):
     """ Index page for pathsearch. """
-    if request.POST.get('q'):
-        entry = request.POST.get('q')
+    if request.POST.get('q') or request.GET.get('q'):
+        entry = request.POST.get('q')  or request.GET.get('q')
         # A workaround here: should be improved:
         if ' in:'in entry:
             in_start = entry.find('in:')
@@ -52,21 +54,25 @@ def list_package_contents(request, version, package_name):
 def search_for_package(request, version, package_name):
     """Searches for a package related to given name in the URL."""
     if not package_name.strip():
-        package_list = ENTRY(version).objects.all().distinct()
+        package_list = ENTRY(version).objects.values_list('package').order_by('package').distinct()
+
     else:
-        package_list = ENTRY(version).objects.filter(package__contains=package_name).distinct()
-    package_list = [p.package for p in package_list]
-    package_list = list(set(package_list))
-    package_list.sort()
+        package_list = ENTRY(version).objects.values_list('package').order_by('package').distinct().filter(package__contains=package_name)
+    
+    #package_list = [p.package for p in package_list]
+    package_list = [p[0] for p in package_list]
+
     # We have a sorting problem here!
     # package_list is the related package names.
     
     return render_to_response('pathsearch/packages.html',
-                              { 'package_list'         : set(package_list),
+                              { 'package_list'         : package_list,
                                 'package_name'         : package_name,
                                 'current_version'      : version,
                                 'versions'              :versions,
-                               }
+                                'q'                     : request.GET.get('q'),
+                               },
+                               context_instance = RequestContext(request)
                               )
 def search_in_package(request, version, package_name, term):
     """Searches for term in the given package."""

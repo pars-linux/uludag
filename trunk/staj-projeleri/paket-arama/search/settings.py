@@ -1,11 +1,14 @@
 # Django settings for search project.
 
-DEBUG = False
-TEMPLATE_DEBUG = False #DEBUG
+DEBUG = True
+TEMPLATE_DEBUG = True #DEBUG
 
 
 WEB_URL = 'http://localhost:8000'
 DOCUMENT_ROOT = '/home/emre/svn/uludag/trunk/staj-projeleri/paket-arama/search'
+
+
+
 versions = ['2007', '2008']
 ADMINS = (
      ('Ahmet Emre Aladag', 'aladagemre@users.sourceforge.net'),
@@ -75,6 +78,15 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'search.pagination.middleware.PaginationMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
 )
 
 ROOT_URLCONF = 'search.urls'
@@ -93,4 +105,5 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'search.pathsearch',
+    'search.pagination',
 )
