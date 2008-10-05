@@ -35,7 +35,7 @@ msgstr "paketler"
 
 #: templates/base.html:27
 msgid "Information"
-msgstr "Genel Bilgi"
+msgstr "Genel Bilgiler"
 
 #: templates/base.html:28
 msgid "Source Packages"
