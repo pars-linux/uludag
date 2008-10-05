@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True #DEBUG
 
 
-WEB_URL = 'http://localhost:8000'
+WEB_URL = 'http://localhost/search'
 DOCUMENT_ROOT = '/home/emre/svn/uludag/trunk/staj-projeleri/paket-arama/search'
 
 
