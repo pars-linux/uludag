@@ -6,10 +6,10 @@ static int connection_state = 0;
 
 int context_state_callback(pa_context* c, void* userdata)
 {
-	printf("context_state_callback pa_context* c assertion\n");
-    g_assert(c);
+		printf("context_state_callback pa_context* c assertion\n");
+		g_assert(c);
 
-    switch (pa_context_get_state(c)){
+		switch (pa_context_get_state(c)){
         case PA_CONTEXT_CONNECTING:
             printf("INF: connecting..\n");
             break;
@@ -35,7 +35,7 @@ int context_state_callback(pa_context* c, void* userdata)
                                 PA_SUBSCRIPTION_MASK_SINK_INPUT|
                                 PA_SUBSCRIPTION_MASK_CLIENT|
                                 PA_SUBSCRIPTION_MASK_SERVER), NULL, NULL))) {
-			printf("pa_context_subscribe() failed");
+	    printf("pa_context_subscribe() failed");
             return;
             }
             break;
@@ -81,10 +81,10 @@ static PyObject* main_event_loop()
 
 void safe_quit()
 {
-	printf("WAR: quitting\n");
-	/* prepare and quit */
-	if(context) pa_context_unref(context);
-	printf("WAR: returning ret\n");
+    printf("WAR: quitting\n");
+    /* prepare and quit */
+    if(context) pa_context_unref(context);
+    printf("WAR: returning ret\n");
 }
 
 
@@ -141,7 +141,7 @@ static PyObject* py_initialize()
     g_assert(context);
 
     //pa_context_set_state_callback(context, context_state_callback, NULL);
-	//pa_context_connect(context, NULL, 0, NULL);
+    //pa_context_connect(context, NULL, 0, NULL);
     return Py_BuildValue("i",0);
 
 }
@@ -149,10 +149,11 @@ static PyObject* py_initialize()
 
 static PyMethodDef Methods[] = {
     {"initialize", py_initialize, METH_VARARGS},
-	{"context_set_state_callback", py_context_set_state_callback, METH_VARARGS},
+    {"context_set_state_callback", py_context_set_state_callback, METH_VARARGS},
     {"context_connect", py_context_connect, METH_VARARGS},
-	{"is_connection_valid",check_connection_flag , METH_VARARGS},
-	//{"context_set_subscribe_callback",py_context_set_subscribe_callback , METH_VARARGS},
+    //{"check_values", check_callback, METH_VARARGS},
+    {"is_connection_valid",check_connection_flag , METH_VARARGS},
+    //{"context_set_subscribe_callback",py_context_set_subscribe_callback , METH_VARARGS},
     {"loop", main_event_loop, METH_VARARGS},
     {NULL , NULL, 0, NULL}
 };

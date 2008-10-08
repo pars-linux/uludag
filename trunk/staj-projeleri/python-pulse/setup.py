@@ -28,7 +28,7 @@ module1 = Extension('pypulse',
                     include_dirs = pkgconfig_inc("gtk+-2.0"),
                     libraries = pkgconfig_libs("gtk+-2.0"),
                     library_dirs = ['/usr/lib/pulse-0.9/modules'],
-                    sources = ['src/test.c','src/func.c'])
+                    sources = ['src/pypulse.c','src/func.c'])
 
 setup (name = 'python-pulse',
        version = '0.1',
