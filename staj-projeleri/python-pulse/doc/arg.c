@@ -6,7 +6,7 @@ keywdarg_parrot(self, args, keywds)
     PyObject *self;
     PyObject *args;
     PyObject *keywds;
-{ 
+{
     /* Argument passing,
      * values before | are mandatory, after | are not
      */
@@ -17,11 +17,11 @@ keywdarg_parrot(self, args, keywds)
 
     static char *kwlist[] = {"voltage", "state", "action", "type", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, keywds, "|isss", kwlist, 
+    if (!PyArg_ParseTupleAndKeywords(args, keywds, "|isss", kwlist,
                                      &voltage, &state, &action, &type))
-        return NULL; 
-  
-    printf("-- This parrot wouldn't %s if you put %i Volts through it.\n", 
+        return NULL;
+
+    printf("-- This parrot wouldn't %s if you put %i Volts through it.\n",
 action, voltage);
     printf("-- Lovely plumage, the %s -- It's %s!\n", type, state);
 

@@ -17,12 +17,12 @@ event: next track
 reflect: removeSinkInput(index), updateSinkInput(*i), dec_outstand
 pavucontrol: nothing
 
-4-) 
+4-)
 event: stop playing
 reflect : removeSinkInput(index)
 pavucontrol: remove application from list
 
-5-) 
+5-)
 event: close application
 reflect: removeClient(index)
 pavucontrol: nothing

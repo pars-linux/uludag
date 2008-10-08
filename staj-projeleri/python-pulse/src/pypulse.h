@@ -23,9 +23,9 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 // new
 void py_updateSinkInput(pa_sink_input_info* info);
 void alloc_first(void);
-PyObject* check_value(void);
+static PyObject* check_callback(void);
 //
-static pa_context* context = NULL; 
+static pa_context* context = NULL;
 
 static pa_channel_map channel_map;
 static int channel_map_set = 0;
