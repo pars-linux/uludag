@@ -1,7 +1,7 @@
 # translation of pt_BR.po to
 # Translation of pt_BR.po to Brazilian Portuguese
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2007
+# This file is distributed under the same license as the package-manager package.
 #
 # Pedro Leite <pedro.leite@gmail.com>, 2007.
 # Faik Uygur <faik@pardus.org.tr>, 2007.
