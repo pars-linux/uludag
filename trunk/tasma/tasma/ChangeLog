@@ -1,3 +1,6 @@
+2008-10-10 Pınar Yanardağ <pinar@pardus.org.tr>
+	* src/main.cpp:·Update version to 1.5.2
+
 2008-10-10 Ozan Çağlayan <ozan@pardus.org.tr>
 	* po/CMakefiles.txt: Add pl.po and sv.po to CMakefiles.txt
 
