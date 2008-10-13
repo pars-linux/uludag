@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-KDE4 Hyaena hyaena</Title>
+    <Title>Pardus Calisan 2008.1-KDE4</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
@@ -274,6 +274,7 @@
         <Package>cabextract</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
+        <Package>capseo</Package>
         <Package>cdparanoia</Package>
         <Package>chmlib</Package>
         <Package>clucene</Package>
@@ -524,6 +525,7 @@
         <Package>libavc1394</Package>
         <Package>libcaca</Package>
         <Package>libcap</Package>
+        <Package>libcaptury</Package>
         <Package>libconfig</Package>
         <Package>libcroco</Package>
         <Package>libdaemon</Package>
