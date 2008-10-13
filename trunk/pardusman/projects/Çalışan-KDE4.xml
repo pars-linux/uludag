@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd">
-    <Title>Pardus Calisan 2008.1-KDE4 [r5]</Title>
+    <Title>Pardus Calisan 2008.1-KDE4 Hyaena hyaena</Title>
     <WorkDir>/home/ekin/temp/cdtemplive/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
@@ -117,6 +117,7 @@
         <SelectedPackage>kdepim4</SelectedPackage>
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
         <SelectedPackage>kdm-pardus-theme</SelectedPackage>
+        <SelectedPackage>kdm-pardus-theme-kde4</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kftpgrabber</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
@@ -464,6 +465,7 @@
         <Package>kdepimlibs</Package>
         <Package>kdeplasma-addons</Package>
         <Package>kdm-pardus-theme</Package>
+        <Package>kdm-pardus-theme-kde4</Package>
         <Package>kernel</Package>
         <Package>kernel-headers</Package>
         <Package>kftpgrabber</Package>
