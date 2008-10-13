@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1-Int [r4]</Title>
+    <Title>Pardus 2008.1 Hyaena hyaena [Int]</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -148,11 +148,9 @@
         <SelectedPackage>kdepim</SelectedPackage>
         <SelectedPackage>kdetv</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
-        <SelectedPackage>kmplayer</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
-        <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lame</SelectedPackage>
         <SelectedPackage>lib-compat</SelectedPackage>
         <SelectedPackage>libassuan</SelectedPackage>
@@ -185,6 +183,7 @@
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
+        <SelectedPackage>ov51x-jpeg</SelectedPackage>
         <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
@@ -204,7 +203,6 @@
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
         <SelectedPackage>slmodem</SelectedPackage>
-        <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
@@ -530,11 +528,9 @@
         <Package>kio-to-local</Package>
         <Package>kipi-plugins</Package>
         <Package>klibc</Package>
-        <Package>kmplayer</Package>
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
-        <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lcms</Package>
@@ -745,6 +741,7 @@
         <Package>openssl</Package>
         <Package>orbit2</Package>
         <Package>ov511</Package>
+        <Package>ov51x-jpeg</Package>
         <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
@@ -820,7 +817,6 @@
         <Package>sip</Package>
         <Package>slang</Package>
         <Package>slmodem</Package>
-        <Package>smb4k</Package>
         <Package>sn9c1xx</Package>
         <Package>sox</Package>
         <Package>speedtouch-firmware</Package>

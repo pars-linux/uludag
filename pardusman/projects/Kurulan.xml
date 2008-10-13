@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1 [r4]</Title>
+    <Title>Pardus 2008.1 Hyaena hyaena</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -108,7 +108,6 @@
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
-        <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>lame</SelectedPackage>
         <SelectedPackage>lib-compat</SelectedPackage>
         <SelectedPackage>libassuan</SelectedPackage>
@@ -141,6 +140,7 @@
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>ov511</SelectedPackage>
+        <SelectedPackage>ov51x-jpeg</SelectedPackage>
         <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
@@ -163,14 +163,12 @@
         <SelectedPackage>sn9c1xx</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
-        <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
-        <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>tulliana2</SelectedPackage>
@@ -446,7 +444,6 @@
         <Package>knazar</Package>
         <Package>konversation</Package>
         <Package>kpowersave</Package>
-        <Package>ktorrent</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lcms</Package>
@@ -658,6 +655,7 @@
         <Package>openssl</Package>
         <Package>orbit2</Package>
         <Package>ov511</Package>
+        <Package>ov51x-jpeg</Package>
         <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
@@ -751,7 +749,6 @@
         <Package>spidermonkey</Package>
         <Package>splix</Package>
         <Package>sqlite</Package>
-        <Package>squashfs-tools</Package>
         <Package>sshfs</Package>
         <Package>startup-notification</Package>
         <Package>strace</Package>
@@ -772,7 +769,6 @@
         <Package>tcl</Package>
         <Package>tcltk</Package>
         <Package>tcp-wrappers</Package>
-        <Package>tcpdump</Package>
         <Package>telnet-bsd</Package>
         <Package>texinfo</Package>
         <Package>tiff</Package>
