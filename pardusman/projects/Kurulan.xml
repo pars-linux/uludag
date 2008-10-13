@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd">
-    <Title>Pardus 2008.1 Hyaena hyaena</Title>
+    <Title>Pardus 2008.1</Title>
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
@@ -48,6 +48,7 @@
         <SelectedPackage>dstat</SelectedPackage>
         <SelectedPackage>dvgrab</SelectedPackage>
         <SelectedPackage>eagle-firmware</SelectedPackage>
+        <SelectedPackage>eciadsl</SelectedPackage>
         <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>essential</SelectedPackage>
         <SelectedPackage>et131x</SelectedPackage>
@@ -156,6 +157,7 @@
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
+        <SelectedPackage>rp-pppoe</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>setserial</SelectedPackage>
@@ -299,6 +301,7 @@
         <Package>dvgrab</Package>
         <Package>e2fsprogs</Package>
         <Package>eagle-firmware</Package>
+        <Package>eciadsl</Package>
         <Package>ed</Package>
         <Package>eject</Package>
         <Package>elfutils</Package>
@@ -720,6 +723,7 @@
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
+        <Package>rp-pppoe</Package>
         <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
