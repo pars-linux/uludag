@@ -12,7 +12,7 @@ typedef struct _notify{
 }notify;
 
 notify **root;
-static int allocated = 0;		/* allocated -> 1 not allocated-> 0 */
+static int allocated = 0;
 static int notify_index = 0;
 
 
@@ -45,31 +45,30 @@ void alloc_first()
 void py_updateSinkInput(pa_sink_input_info* info)
 {
 
-	printf("update time = %d\n", notify_index);
-	printf("*****index = %i\n", info->index);
-	printf("*****name = %c\n", *info->name);
-	printf("*****client = %i\n", info->client);// unique one
-	printf("*****sink = %i\n", info->sink);
-	printf("*****driver = %c\n", *info->driver);
+	printf("func.c: update time = %d\n", notify_index);
+	printf("func.c: index = %i\n", info->index);
+	printf("func.c: name = %c\n", *info->name);
+	printf("func.c: client = %i\n", info->client);// unique one
+	printf("func.c: sink = %i\n", info->sink);
+	printf("func.c: driver = %c\n", *info->driver);
 
 	// if **root is not allocated allocate it first
 	if(!allocated) alloc_first();
-	else printf("root will not allocated this time\n");
+	else printf("func.c: root will not allocated this time\n");
 
 	root[notify_index] = (notify*)calloc(1,sizeof(notify));
 	root[notify_index]->client = info->client;
-	printf("INF: entering sprintf\n");
+	printf("func.c:INF: entering sprintf\n");
 	sprintf(root[notify_index]->name, "member %d", notify_index);
 
-
 	if (notify_index > 0){
-		printf("INF: adding chain\n");
+		printf("func.c:INF: adding chain\n");
 		root[notify_index - 1]->next = root[notify_index];
 	}
 	notify_index++;
-
 }
 
+/*
 void py_updateSink(pa_sink_info* info)
 {
 	printf("");
@@ -80,7 +79,6 @@ void py_updateSink(pa_sink_info* info)
 
 }
 
-
 void py_updateSource(pa_source_info* info)
 {
 	printf("");
@@ -90,23 +88,20 @@ void py_updateSource(pa_source_info* info)
 	printf("");
 
 }
-
-
+*/
 
 void sink_cb(pa_context *c, const pa_sink_info *i, int eol)
 {
 	if (eol) {
 		//dec_outstanding(w);
-		printf("INF: dec_outstanding MainWindow\n");
+		printf("func.c:INF: dec_outstanding MainWindow\n");
 		return;
 	}
-
 	if (!i) {
 		//show_error("Sink callback failure");
-		printf("<error>sink callback failure \n");
+		printf("func.c:<error> sink callback failure \n");
 		return;
 	}
-
 	//w->updateSink(*i);
 	printf("INF: suppose to updateSink(*i)\n");
 }
@@ -202,7 +197,7 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 
 				if (!(o = pa_context_get_sink_info_by_index(c, index, sink_cb, NULL))) {
                     //show_error("pa_context_get_sink_info_by_index() failed");
-					printf("<error>pa_context_get_sink_info_by_index() failed\n");
+					printf("func.c:<error> pa_context_get_sink_info_by_index() failed\n");
 					return;
 				}
 				pa_operation_unref(o);
@@ -213,13 +208,13 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SOURCE:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeSource(index);
-				printf("INF: suppose to removeSource(index)\n");
+				printf("func.c:INF: suppose to removeSource(index)\n");
 
 			else {
 				pa_operation *o;
 				if (!(o = pa_context_get_source_info_by_index(c, index, source_cb, NULL))) {
                     //show_error("pa_context_get_source_info_by_index() failed");
-					printf("<error>pa_context_get_source_info_by_index() failed\n");
+					printf("func.c:<error> pa_context_get_source_info_by_index() failed\n");
 					return;
 				}
 				pa_operation_unref(o);
@@ -230,12 +225,12 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeSinkInput(index);
-				printf("INF: suppose to removeSinkInput(index)\n");
+				printf("func.c:INF: suppose to removeSinkInput(index)\n");
 			else {
 				pa_operation *o;
 				if (!(o = pa_context_get_sink_input_info(c, index, sink_input_cb, NULL))) {
                     //show_error("pa_context_get_sink_input_info() failed");
-					printf("<error>pa_context_get_sink_input_info() failed");
+					printf("func.c:<error> pa_context_get_sink_input_info() failed");
 					return;
 				}
 				pa_operation_unref(o);
@@ -245,13 +240,13 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 		case PA_SUBSCRIPTION_EVENT_CLIENT:
 			if ((t & PA_SUBSCRIPTION_EVENT_TYPE_MASK) == PA_SUBSCRIPTION_EVENT_REMOVE)
                 //w->removeClient(index);
-				printf("INF: suppose to removeClient(index)\n");
+				printf("func.c:INF: suppose to removeClient(index)\n");
 
 			else {
 				pa_operation *o;
 				if (!(o = pa_context_get_client_info(c, index, client_cb, NULL))) {
                     //show_error("pa_context_get_client_info() failed");
-					printf("<error>pa_context_get_client_info() failed\n");
+					printf("func.c:<error> pa_context_get_client_info() failed\n");
 					return;
 				}
 				pa_operation_unref(o);
@@ -259,12 +254,12 @@ void subscribe_cb(pa_context *c, pa_subscription_event_type_t t, uint32_t index)
 			break;
 
 		case PA_SUBSCRIPTION_EVENT_SERVER:
-			printf("pa_subscription_event_server triggered\n");
+			printf("func.c: pa_subscription_event_server triggered\n");
 			{
 				pa_operation *o;
 				if (!(o = pa_context_get_server_info(c, server_info_cb, NULL))) {
 					//show_error("pa_context_get_server_info() failed");
-					printf("<error>pa_context_get_server_info() failed\n");
+					printf("func.c:<error> pa_context_get_server_info() failed\n");
 					return;
 				}
 				pa_operation_unref(o);
