@@ -41,17 +41,17 @@ class ComarLink:
     def comarError(self, exception):
         if "Access denied" in exception.message:
             message = "You are not authorized for this operation."
-            QtGui.QMessageBox.warning(self, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+            QtGui.QMessageBox.warning(None, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         else:
-            QtGui.QMessageBox.warning(self, "COMAR Error", str(exception), QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+            QtGui.QMessageBox.warning(None, "COMAR Error", str(exception), QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
 
     def cancelError(self):
         message = "You are not authorized for this operation."
-        QtGui.QMessageBox.warning(self, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+        QtGui.QMessageBox.warning(None, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
 
 
     def busError(self, exception):
-        QtGui.QMessageBox.warning(self, "Comar Error", "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console.", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+        QtGui.QMessageBox.warning(None, "Comar Error", "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console.", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         sys.exit()
 
     def openBus(self):
@@ -59,7 +59,7 @@ class ComarLink:
             self.busSys = dbus.SystemBus()
             self.busSes = dbus.SessionBus()
         except dbus.DBusException:
-            QtGui.QMessageBox.warning(self, "Unable to connect to DBus.", "DBus Error", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+            QtGui.QMessageBox.warning(None, "Unable to connect to DBus.", "DBus Error", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
             return False
         return True
 
