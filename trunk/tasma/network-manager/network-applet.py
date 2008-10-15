@@ -46,7 +46,7 @@ class Connection:
     @staticmethod
     def hash(script, name):
         return unicode("%s %s" % (script, name))
-    
+
     def __init__(self, script, data):
         self.mid = -1
         self.device = None
@@ -64,7 +64,7 @@ class Connection:
         self.parse(data)
         self.hash = self.hash(self.script, self.name)
         self.menu_name = unicode(self.name)
-    
+
     def parse(self, data):
         for key, value in data.iteritems():
             if key == "name":
@@ -112,20 +112,20 @@ class DBusInterface:
         self.connections = {}
         self.devices = {}
         self.links = {}
-        
+
         self.dia = None
         self.busSys = None
         self.busSes = None
-        
+
         self.first_time = True
         self.nr_queried = 0
         self.nr_conns = 0
         self.nr_empty = 0
         self.winID = 0
-        
+
         if self.openBus():
             self.setup()
-    
+
     def openBus(self):
         try:
             self.busSys = dbus.SystemBus()
@@ -134,14 +134,14 @@ class DBusInterface:
             self.errorDBus(exception)
             return False
         return True
-    
+
     def callHandler(self, script, model, method, action):
         ch = CallHandler(script, model, method, action, self.winID, self.busSys, self.busSes)
         ch.registerError(self.error)
         ch.registerDBusError(self.errorDBus)
         ch.registerAuthError(self.errorDBus)
         return ch
-    
+
     def call(self, script, model, method, *args):
         try:
             obj = self.busSys.get_object("tr.org.pardus.comar", "/package/%s" % script)
@@ -154,7 +154,7 @@ class DBusInterface:
             return func(*args)
         except dbus.DBusException, exception:
             self.error(exception)
-    
+
     def callSys(self, method, *args):
         try:
             obj = self.busSys.get_object("tr.org.pardus.comar", "/")
@@ -166,10 +166,10 @@ class DBusInterface:
             return func(*args)
         except dbus.DBusException, exception:
             self.error(exception)
-    
+
     def error(self, exception):
         print exception
-    
+
     def errorDBus(self, exception):
         if self.dia:
             return
@@ -191,11 +191,11 @@ class DBusInterface:
         self.dia.close()
         KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
         sys.exit()
-    
+
     def setup(self, first_time=True):
         if first_time:
             self.queryLinks()
-    
+
     def handleSignals(self, *args, **kwargs):
         path = kwargs["path"]
         signal = kwargs["signal"]
@@ -225,17 +225,17 @@ class DBusInterface:
                         if len(dev.connections) == 0:
                             del self.devices[dev.devid]
                     map(lambda x: x(), self.state_hook)
-    
+
     def listenSignals(self):
         self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Net.Link", member_keyword="signal", path_keyword="path")
-    
+
     def queryLinks(self):
         scripts = self.callSys("listModelApplications", "Net.Link")
         if scripts:
             for script in scripts:
                 info = self.call(script, "Net.Link", "linkInfo")
                 self.links[script] = Link(script, info)
-    
+
     def handleConnectionInfo(self, script, info):
         conn = Connection(script, info)
         old_conn = self.getConn(script, conn.name)
@@ -271,7 +271,7 @@ class DBusInterface:
                 self.listenSignals()
                 # Auto connect?
                 map(lambda x: x(), self.ready_hook)
-    
+
     def queryConnections(self, script):
         def handler(profiles):
             self.nr_queried += 1
@@ -291,11 +291,11 @@ class DBusInterface:
         ch = self.callHandler(script, "Net.Link", "connections", "tr.org.pardus.comar.net.link.get")
         ch.registerDone(handler)
         ch.call()
-    
+
     def getConn(self, script, name):
         hash = Connection.hash(script, name)
         return self.connections.get(hash, None)
-    
+
     def getConnById(self, mid):
         for dev in self.devices.values():
             for conn in dev.connections.values():
@@ -312,7 +312,7 @@ class Icons:
         if justGetPath:
             return path
         return QPixmap(img)
-    
+
     def load_icons(self):
         self.iconmap = {
             "net-up": self._pix("ethernet-online.png"),
@@ -325,7 +325,7 @@ class Icons:
             "dialup-connecting": self._pix("dialup-connecting.png"),
             "dialup-down": self._pix("dialup-offline.png")
         }
-    
+
     def get_state(self, script, state):
         link = comlink.links.get(script, None)
         if link:
@@ -377,7 +377,7 @@ class Applet:
         self.config.sync()
         for item in self.trays:
             item.deleteLater()
-    
+
     def start(self):
         for script in comlink.links:
             comlink.queryConnections(script)
@@ -394,7 +394,7 @@ class Applet:
         else:
             self.mode = -1
             self.deviceGroup(0)
-    
+
     def setMenu(self, menu):
         KAction(i18n("Firewall..."), "firewall_config", KShortcut.null(), self.startFirewall, menu).plug(menu)
         KAction(i18n("Edit Connections..."), "configure", KShortcut.null(), self.startManager, menu).plug(menu)
@@ -404,7 +404,7 @@ class Applet:
         menu.insertSeparator(1)
         device_mid = menu.insertItem(i18n("Icon Per Device"), self.deviceGroup, 0, -1, 1)
         single_mid = menu.insertItem(i18n("Single Icon"), self.noGroup, 0, -1, 1)
-       
+
         if self.mode == 0:
             menu.setItemChecked(single_mid, True)
         else:
@@ -424,22 +424,22 @@ class Applet:
 
     def startManager(self):
         os.system("network-manager")
-    
+
     def startFirewall(self):
         os.system("firewall-config")
-    
+
     def reset(self):
         if len(self.trays) > 0:
             for item in self.trays:
                 item.hide()
             tray = []
-    
+
     def updateIcons(self):
         if not self.notifier and self.showNotifications:
             self.createNotifier(dry=True)
         for item in self.trays:
             item.updateIcon(self.notifier)
-    
+
     def setNotify(self, id):
         if self.showNotifications:
             self.config.writeEntry("ShowNotifications", False)
@@ -489,7 +489,7 @@ class ConnectionItem(QCustomMenuItem):
         self.conn = conn
         self.mypix = icons.get_state(conn.script, conn.state)
         self.text_start = self.mypix.width() + 6
-    
+
     def addressText(self):
         text = ""
         if self.conn.state == "up":
@@ -500,14 +500,14 @@ class ConnectionItem(QCustomMenuItem):
             if self.conn.message:
                 text = unicode(self.conn.message)
         return text
-    
+
     def paint(self, paint, cg, act, enabled, x, y, w, h):
         paint.setFont(self.my_font)
         fm = paint.fontMetrics()
         paint.drawPixmap(x + 3, y + (h - self.mypix.height()) / 2, self.mypix)
         paint.drawText(x + self.text_start, y + fm.ascent(), self.conn.menu_name)
         paint.drawText(x + self.text_start, y + fm.height() + fm.ascent(), self.addressText())
-    
+
     def sizeHint(self):
         fm = QFontMetrics(self.my_font)
         rect = fm.boundingRect(self.conn.menu_name)
@@ -519,7 +519,7 @@ class ConnectionItem(QCustomMenuItem):
         th += 3 + fm.height()
         th = max(th, self.mypix.height() + 6)
         return QSize(tw, th)
-    
+
     def setFont(self, font):
         self.my_font = QFont(font)
 
@@ -638,7 +638,7 @@ class NetTray(KSystemTray):
             if conn.state in ("up", "connecting", "inaccessible"):
                 menu.setItemChecked(conn.mid, True)
             menu.connectItem(conn.mid, self.slotSelect)
-    
+
     def buildPopup(self):
         menu = KPopupMenu()
         flag = True
@@ -660,7 +660,7 @@ class NetTray(KSystemTray):
         if flag:
             menu.insertItem(getIconSet("add"), i18n("New connection"), self.applet.startManager)
         return menu
-    
+
     def mousePressEvent(self, event):
         if event.button() == event.LeftButton:
             if self.popup:
