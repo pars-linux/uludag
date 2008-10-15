@@ -101,7 +101,9 @@ about disk partitioning.
     def shown(self):
 
         # scan partitions for resizing
+        self.toggleAll()
         ctx.yali.scanPartitions(self)
+        self.toggleAll(True)
         self.fillDeviceList(self.ui.accept_auto_1.isChecked())
 
         self.arp = []
@@ -203,6 +205,11 @@ about disk partitioning.
             ctx.mainScreen.enableNext()
         else:
             ctx.mainScreen.disableNext()
+
+    def toggleAll(self, state=False):
+        widgets = ["manual", "accept_auto", "accept_auto_1", "accept_auto_2"]
+        for widget in widgets:
+            getattr(self.ui, widget).setEnabled(state)
 
 class DeviceItem(QtGui.QListWidgetItem):
     def __init__(self, parent, dev):
