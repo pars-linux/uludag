@@ -71,10 +71,11 @@ PARTITION_ERASE_ALL, PARTITION_USE_AVAIL, PARTITION_USE_OLD = range(3)
 YALI_INSTALL, \
         YALI_FIRSTBOOT, \
         YALI_OEMINSTALL, \
-        YALI_PARTITIONER = range(4)
+        YALI_PLUGIN, \
+        YALI_PARTITIONER = range(5)
 
 class Yali:
-    def __init__(self, install_type=YALI_INSTALL):
+    def __init__(self, install_type=YALI_INSTALL, install_plugin=None):
 
         self._screens = {}
 
@@ -124,6 +125,11 @@ class Yali:
 
         # Let the show begin..
         self.screens = self._screens[install_type]
+
+        # TODO
+        if install_type == YALI_PLUGIN:
+            self.screens = getScreensFromPlugin(install_plugin)
+
         self.install_type = install_type
         self.info = InformationWindow(_("YALI Is Working..."))
         # self.yimirta = Yimirta(self.info)
@@ -460,129 +466,17 @@ class Yali:
         # ctx.debugger.log(yali.toPrettyString())
 
     def processPendingActions(self, rootWidget):
-        global bus
-        bus = None
-        def connectToDBus():
-            global bus
-            for i in range(20):
-                try:
-                    ctx.debugger.log("trying to start dbus..")
-                    bus = dbus.bus.BusConnection(address_or_type="unix:path=%s" % ctx.consts.dbus_socket_file)
-                    break
-                except dbus.DBusException:
-                    time.sleep(1)
-                    ctx.debugger.log("wait dbus for 1 second...")
-            if bus:
-                return True
-            return False
+        rootWidget.steps.setOperations([{"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus}])
 
-        def setHostName():
-            global bus
-            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-            obj.setHostName(str(ctx.installData.hostName), dbus_interface="tr.org.pardus.comar.Net.Stack")
-            ctx.debugger.log("Hostname set as %s" % ctx.installData.hostName)
-            return True
-
-        def addUsers():
-            global bus
-            obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-            for u in yali4.users.pending_users:
-                ctx.debugger.log("User %s adding to system" % u.username)
-                uid = obj.addUser(-1, u.username, u.realname, "", "", unicode(u.passwd), u.groups, [], [], dbus_interface="tr.org.pardus.comar.User.Manager")
-                ctx.debugger.log("New user's id is %s" % uid)
-
-                # Use random user icon from YALI Archive
-                iconPath = os.path.join(ctx.consts.target_dir,"home/%s/.face.icon" % u.username)
-                shutil.copy(u.icon, iconPath)
-                os.chmod(iconPath, 0644)
-                os.chown(iconPath, uid, 100)
-
-                # Chown for old users..
-                user_home_dir = os.path.join(consts.target_dir, 'home', u.username)
-                self.info.updateAndShow(_("User <b>%s</b>'s home directory is being prepared..") % u.username)
-                os.system('chown -R %d:%d %s ' % (uid, 100, user_home_dir))
-                os.chmod(user_home_dir, 0711)
-                self.info.hide()
-
-                # Enable auto-login
-                if u.username == ctx.installData.autoLoginUser:
-                    u.setAutoLogin()
-            return True
-
-        def setRootPassword():
-            if not ctx.installData.useYaliFirstBoot:
-                global bus
-                obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
-                obj.setUser(0, "", "", "", str(ctx.installData.rootPassword), "", dbus_interface="tr.org.pardus.comar.User.Manager")
-            return True
-
-        def writeConsoleData():
-            yali4.localeutils.write_keymap(ctx.installData.keyData["consolekeymap"])
-            ctx.debugger.log("Keymap stored.")
-            return True
-
-        def migrateXorgConf():
-            if not self.install_type == YALI_FIRSTBOOT:
-                yali4.postinstall.migrate_xorg()
-                ctx.debugger.log("xorg.conf and other files merged.")
-            return True
-
-        def copyPisiIndex():
-            target = os.path.join(ctx.consts.target_dir, "var/lib/pisi/index/%s" % ctx.consts.pardus_repo_name)
-
-            if os.path.exists(ctx.consts.pisiIndexFile):
-                # Copy package index
-                shutil.copy(ctx.consts.pisiIndexFile, target)
-                shutil.copy(ctx.consts.pisiIndexFileSum, target)
-
-                # Extract the index
-                import bz2
-                pureIndex = file(os.path.join(target,"pisi-index.xml"),"w")
-                pureIndex.write(bz2.decompress(open(ctx.consts.pisiIndexFile).read()))
-                pureIndex.close()
-
-                ctx.debugger.log("pisi index files copied.")
-            else:
-                ctx.debugger.log("pisi index file not found!")
-            return True
-
-        def setPackages():
-            global bus
-            if self.install_type == YALI_OEMINSTALL:
-                ctx.debugger.log("OemInstall selected.")
-                try:
-                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4")
-                    obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
-                    file("%s/etc/yali-is-firstboot" % ctx.consts.target_dir, "w")
-                    obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
-                    obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
-                except:
-                    ctx.debugger.log("Dbus error: package doesnt exist !")
-                    return False
-            elif self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
-                try:
-                    obj = bus.get_object("tr.org.pardus.comar", "/package/yali4")
-                    obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
-                    obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
-                    obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
-                    os.unlink("%s/etc/yali-is-firstboot" % ctx.consts.target_dir)
-                    os.system("pisi rm yali4")
-                except:
-                    ctx.debugger.log("Dbus error: package doesnt exist !")
-                    return False
-            return True
-
-        rootWidget.steps.setOperations([{"text":_("Trying to connect DBUS..."),"operation":connectToDBus}])
-
-        steps = [{"text":_("Setting Hostname..."),"operation":setHostName},
+        steps = [{"text":_("Setting Hostname..."),"operation":yali4.postinstall.setHostName},
                  {"text":_("Setting TimeZone..."),"operation":yali4.postinstall.setTimeZone},
-                 {"text":_("Setting Root Password..."),"operation":setRootPassword},
-                 {"text":_("Adding Users..."),"operation":addUsers},
-                 {"text":_("Writing Console Data..."),"operation":writeConsoleData},
-                 {"text":_("Migrating X.org Configuration..."),"operation":migrateXorgConf}]
+                 {"text":_("Setting Root Password..."),"operation":yali4.postinstall.setRootPassword},
+                 {"text":_("Adding Users..."),"operation":yali4.postinstall.addUsers},
+                 {"text":_("Writing Console Data..."),"operation":yali4.postinstall.writeConsoleData},
+                 {"text":_("Migrating X.org Configuration..."),"operation":yali4.postinstall.migrateXorgConf}]
 
-        stepsBase = [{"text":_("Copy Pisi index..."),"operation":copyPisiIndex},
-                     {"text":_("Setting misc. package configurations..."),"operation":setPackages},
+        stepsBase = [{"text":_("Copy Pisi index..."),"operation":yali4.postinstall.copyPisiIndex},
+                     {"text":_("Setting misc. package configurations..."),"operation":yali4.postinstall.setPackages},
                      {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
 
         if self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
