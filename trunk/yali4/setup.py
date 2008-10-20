@@ -67,7 +67,7 @@ def py_file_name(ui_file):
 class YaliBuild(build):
 
     def add_gettext_support(self, ui_file):
-        # hacky, too hacky. but works...
+        # hacky, too hacky. but it works...
         py_file = py_file_name(ui_file)
         # lines in reverse order
         lines =  ["\n_ = __trans.ugettext\n",
