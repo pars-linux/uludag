@@ -39,7 +39,7 @@ def chroot_dbus():
     os.system("chroot %s /bin/service dbus start" % consts.target_dir)
 
 def checkYaliParams(param):
-    for i in [x for x in open("/proc/cmdline", "r").read().split(' ')]:
+    for i in [x for x in open("/proc/cmdline", "r").read().split()]:
         if i.startswith("yali4="):
             if param in i.split("=")[1].split(","):
                 return True
@@ -51,7 +51,7 @@ def checkPlugin():
             for param in i.split("=")[1].split(","):
                 if param.startswith("plugin:"):
                     return param.split(':')[1]
-    return False
+    return None
 
 def swap_as_file(filepath, mb_size):
     dd, mkswap = find_executable('dd'), find_executable('mkswap')

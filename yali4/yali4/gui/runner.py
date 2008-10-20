@@ -64,12 +64,12 @@ class Runner:
         if yali4.sysutils.checkYaliParams(param=ctx.consts.oemInstallParam):
             install_type = YALI_OEMINSTALL
 
-        install_plugin = yali4.sysutils.checkPlugin()
+        install_plugin = yali4.sysutils.checkPlugin() or ctx.options.plugin or None
         if install_plugin:
             install_type = YALI_PLUGIN
 
         # Creating the installer
-        ctx.yali = yali4.installer.Yali(install_type)
+        ctx.yali = yali4.installer.Yali(install_type, install_plugin)
 
         # yimirtaShortCut = QtGui.QShortcut(QtGui.QKeySequence(Qt.SHIFT + Qt.Key_F5),self._window.ui)
         # QObject.connect(yimirtaShortCut, SIGNAL("activated()"), ctx.yali.toggleYimirta)

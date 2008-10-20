@@ -124,11 +124,10 @@ class Yali:
                                           ]
 
         # Let the show begin..
-        self.screens = self._screens[install_type]
-
-        # TODO
         if install_type == YALI_PLUGIN:
-            self.screens = getScreensFromPlugin(install_plugin)
+            self.screens = self.getScreensFromPlugin(install_plugin)
+        else:
+            self.screens = self._screens[install_type]
 
         self.install_type = install_type
         self.info = InformationWindow(_("YALI Is Working..."))
@@ -142,6 +141,14 @@ class Yali:
     #         self.yimirta.stop()
     #     else:
     #         self.yimirta.start()
+
+    def getScreensFromPlugin(self, p):
+        try:
+            _p = __import__("yali4.plugins.%s.config" % p)
+        except ImportError:
+            raise YaliException, "No Plugin found named with %s " % p
+        plugin = getattr(_p.plugins,p)
+        return plugin.config.screens
 
     def checkCD(self, rootWidget):
         ctx.mainScreen.disableNext()
