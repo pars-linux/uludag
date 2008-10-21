@@ -124,7 +124,7 @@ void TvConfig::saveOptions()
     int card, tuner, pll, radio = 0;
 
     KConfig *config = new KConfig("kcmtasmatvrc");
-    QFile bttv("/etc/modules.d/bttv");
+    QFile bttv("/etc/modprobe.d/bttv");
 
     card = getCard();
     tuner = getTuner();
