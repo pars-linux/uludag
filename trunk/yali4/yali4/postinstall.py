@@ -103,7 +103,7 @@ def connectToDBus():
     for i in range(20):
         try:
             ctx.debugger.log("trying to start dbus..")
-            bus = dbus.bus.BusConnection(address_or_type="unix:path=%s" % ctx.consts.dbus_socket_file)
+            ctx.bus = bus = dbus.bus.BusConnection(address_or_type="unix:path=%s" % ctx.consts.dbus_socket_file)
             break
         except dbus.DBusException:
             time.sleep(1)

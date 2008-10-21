@@ -50,7 +50,7 @@ def checkPlugin():
         if i.startswith("yali4=") and not i.find("plugin:") == -1:
             for param in i.split("=")[1].split(","):
                 if param.startswith("plugin:"):
-                    return param.split(':')[1]
+                    return str(param.split(':')[1]).strip()
     return None
 
 def swap_as_file(filepath, mb_size):

@@ -44,3 +44,6 @@ autoInstall = False
 
 # keydata
 keydata = None
+
+# Bus
+bus = None

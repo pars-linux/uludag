@@ -125,30 +125,25 @@ class Yali:
 
         # Let the show begin..
         if install_type == YALI_PLUGIN:
-            self.screens = self.getScreensFromPlugin(install_plugin)
+            self.plugin  = self.getPlugin(install_plugin)
+            self.screens = self.plugin.config.screens
+            # run plugins setup
+            self.plugin.config.setup()
         else:
             self.screens = self._screens[install_type]
 
         self.install_type = install_type
         self.info = InformationWindow(_("YALI Is Working..."))
-        # self.yimirta = Yimirta(self.info)
-        # self.yimirta.stop()
         self.info.hide()
         self.checkCDStop = True
 
-    # def toggleYimirta(self):
-    #     if self.yimirta.isVisible():
-    #         self.yimirta.stop()
-    #     else:
-    #         self.yimirta.start()
-
-    def getScreensFromPlugin(self, p):
+    def getPlugin(self, p):
         try:
             _p = __import__("yali4.plugins.%s.config" % p)
         except ImportError:
             raise YaliException, "No Plugin found named with %s " % p
         plugin = getattr(_p.plugins,p)
-        return plugin.config.screens
+        return plugin
 
     def checkCD(self, rootWidget):
         ctx.mainScreen.disableNext()
@@ -488,6 +483,8 @@ class Yali:
 
         if self.install_type in [YALI_INSTALL, YALI_FIRSTBOOT]:
             rootWidget.steps.setOperations(steps)
+        elif self.install_type == YALI_PLUGIN:
+            rootWidget.steps.setOperations(self.plugin.config.steps)
 
         rootWidget.steps.setOperations(stepsBase)
 
