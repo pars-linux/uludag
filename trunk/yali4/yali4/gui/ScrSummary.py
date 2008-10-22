@@ -104,6 +104,17 @@ Here you can see your install options and look at them again before installation
 
         content.append("""<html><body><ul>""")
 
+        # Plugin Summary
+        if ctx.yali.install_type == YALI_PLUGIN:
+            try:
+                _summary = ctx.yali.plugin.config.getSummary()
+                content.append(subject % _summary["subject"])
+                for _item in _summary["items"]:
+                    content.append(item % _item)
+                content.append(end)
+            except:
+                pass
+
         # Keyboard Layout
         if ctx.installData.keyData:
             content.append(subject % _("Keyboard Settings"))

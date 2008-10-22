@@ -68,11 +68,6 @@ import yali4.gui.ScrSummary
 import yali4.gui.ScrGoodbye
 
 PARTITION_ERASE_ALL, PARTITION_USE_AVAIL, PARTITION_USE_OLD = range(3)
-YALI_INSTALL, \
-        YALI_FIRSTBOOT, \
-        YALI_OEMINSTALL, \
-        YALI_PLUGIN, \
-        YALI_PARTITIONER = range(5)
 
 class Yali:
     def __init__(self, install_type=YALI_INSTALL, install_plugin=None):

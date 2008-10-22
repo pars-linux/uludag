@@ -36,8 +36,7 @@ from yali4.gui.YaliDialog import WarningDialog
 from yali4.gui.YaliSteps import YaliSteps
 from yali4.gui.Ui.goodbyewidget import Ui_GoodByeWidget
 import yali4.gui.context as ctx
-
-YALI_INSTALL, YALI_FIRSTBOOT, YALI_OEMINSTALL, YALI_PARTITIONER = range(4)
+from yali4.gui.installdata import *
 
 ##
 # Goodbye screen

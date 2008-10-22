@@ -19,6 +19,12 @@ B_INSTALL_PART = 1
 B_INSTALL_MBR  = 2
 B_INSTALL_SMART= 3
 
+YALI_INSTALL, \
+        YALI_FIRSTBOOT, \
+        YALI_OEMINSTALL, \
+        YALI_PLUGIN, \
+        YALI_PARTITIONER = range(5)
+
 class InstallData:
     keyData = None
     rootPassword = None
