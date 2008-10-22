@@ -146,6 +146,7 @@ class YaliUninstall(Command):
         if os.path.exists(data_dir):
             print "removing: ", data_dir
             shutil.rmtree(data_dir)
+        os.unlink("/usr/bin/yali4-bin")
 
 i18n_domain = "yali4"
 i18n_languages = ["tr",
@@ -182,7 +183,7 @@ setup(name="yali4",
       author="Pardus Developers",
       author_email="yali@pardus.org.tr",
       url="http://www.pardus.org.tr/eng/yali/",
-      packages = ['yali4', 'yali4.gui', 'yali4.gui.Ui'],
+      packages = ['yali4', 'yali4.gui', 'yali4.gui.Ui', 'yali4.plugins'],
       package_dir = {'': ''},
       data_files = [('/usr/share/yali4/slideshow', gui_slidepics()),
                     ('/usr/share/yali4/user_faces', user_faces()),
