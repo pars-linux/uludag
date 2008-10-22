@@ -125,6 +125,11 @@ class YaliClean(clean):
             if os.path.exists(f):
                 os.unlink(f)
 
+        if os.path.exists("yali4/data_rc.py"):
+            os.unlink("yali4/data_rc.py")
+        if os.path.exists("build"):
+            shutil.rmtree("build")
+
 ##
 # uninstall command
 class YaliUninstall(Command):
