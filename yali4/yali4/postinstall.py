@@ -23,12 +23,7 @@ _ = __trans.ugettext
 
 import yali4.gui.context as ctx
 from yali4.constants import consts
-
-YALI_INSTALL, \
-        YALI_FIRSTBOOT, \
-        YALI_OEMINSTALL, \
-        YALI_PLUGIN, \
-        YALI_PARTITIONER = range(5)
+from yali4.gui.installdata import *
 
 def cp(s, d):
     src = os.path.join(consts.target_dir, s)
