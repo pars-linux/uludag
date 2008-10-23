@@ -118,13 +118,20 @@ class Yali:
                                            yali4.gui.ScrPartitionManual  # Manual Partitioning
                                           ]
 
+        self.plugin = None
+
         # Let the show begin..
         if install_type == YALI_PLUGIN:
             self.plugin  = self.getPlugin(install_plugin)
-            self.screens = self.plugin.config.screens
-            # run plugins setup
-            self.plugin.config.setup()
-        else:
+            if self.plugin:
+                self.screens = self.plugin.config.screens
+                # run plugins setup
+                self.plugin.config.setup()
+            else:
+                install_type = YALI_INSTALL
+                self.showFail(_("Plugin (%s) not found or error occured while loading switching to normal installation process." % install_plugin))
+
+        if not self.plugin:
             self.screens = self._screens[install_type]
 
         self.install_type = install_type
@@ -136,9 +143,12 @@ class Yali:
         try:
             _p = __import__("yali4.plugins.%s.config" % p)
         except ImportError:
-            raise YaliException, "No Plugin found named with %s " % p
+            return False
         plugin = getattr(_p.plugins,p)
         return plugin
+
+    def showFail(self, message):
+        QtGui.QMessageBox.warning(None, _("Warning !"), message, QtGui.QMessageBox.Ok)
 
     def checkCD(self, rootWidget):
         ctx.mainScreen.disableNext()
