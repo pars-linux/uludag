@@ -111,6 +111,7 @@ class Project:
         self.selected_packages = []
         self.all_packages = []
         self.exparams = ''
+        self.plugin_package = ''
     
     def open(self, filename):
         try:
@@ -132,6 +133,7 @@ class Project:
         self.work_dir = doc.getTagData("WorkDir")
         self.release_files = doc.getTagData("ReleaseFiles")
         self.exparams = doc.getTagData("ExtraParameters")
+        self.plugin_package = doc.getTagData("PluginPackage")
         
         paksel = doc.getTag("PackageSelection")
         if paksel:
@@ -157,6 +159,8 @@ class Project:
             doc.insertTag("ReleaseFiles").insertData(self.release_files)
         if self.exparams:
             doc.insertTag("ExtraParameters").insertData(self.exparams)
+        if self.plugin_package:
+            doc.insertTag("PluginPackage").insertData(self.plugin_package)
         if self.repo_uri:
             paks = doc.insertTag("PackageSelection")
             paks.setAttribute("repo_uri", self.repo_uri)
