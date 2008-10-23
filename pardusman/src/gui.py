@@ -138,17 +138,30 @@ class ProjectWindow(KMainWindow):
         )
         grid.addWidget(self.exparams, 4, 1)
 
-        lab = QLabel(_("Type:"), box)
+        lab = QLabel(_("Plugin package:"), box)
         grid.addWidget(lab, 5, 0, Qt.AlignRight)
+        hb2 = QHBox(box)
+        hb2.setSpacing(3)
+        self.plugin_package = QLineEdit(hb2)
+        QToolTip.add(
+            self.plugin_package,
+            _("YALI4 plugin package")
+        )
+        but = QPushButton("...", hb2)
+        self.connect(but, SIGNAL("clicked()"), self.selectPlugin)
+        grid.addWidget(hb2, 5, 1)
+
+        lab = QLabel(_("Type:"), box)
+        grid.addWidget(lab, 6, 0, Qt.AlignRight)
         self.project_type = QHButtonGroup(box)
         QRadioButton(_("Installation"), self.project_type)
         QRadioButton(_("Live system"), self.project_type)
-        grid.addWidget(self.project_type, 5, 1)
+        grid.addWidget(self.project_type, 6, 1)
 
         lab = QLabel(_("Media:"), box)
-        grid.addWidget(lab, 6, 0, Qt.AlignRight)
+        grid.addWidget(lab, 7, 0, Qt.AlignRight)
         self.project_media = QComboBox(False, box)
-        grid.addWidget(self.project_media, 6, 1)
+        grid.addWidget(self.project_media, 7, 1)
 
         self.media_types = [
             ("cd", 700, _("CD (700 MB)"), "cdrom_unmount"),
@@ -206,7 +219,16 @@ class ProjectWindow(KMainWindow):
         )
         if not path.isNull():
             self.release_files.setText(path)
-    
+
+    def selectPlugin(self):
+        path = QFileDialog.getOpenFileName(
+            "*.pisi",
+            _("Select plugin package"),
+            self
+        )
+        if not path.isNull():
+            self.plugin_package.setText(path)
+
     def selectWorkdir(self):
         path = QFileDialog.getExistingDirectory(
             self.work_dir.text(),
@@ -264,7 +286,7 @@ class ProjectWindow(KMainWindow):
         ppath = sys.argv[0]
         if ppath[0] != '/':
             ppath = os.path.join(os.getcwd(), ppath)
-        cmd = 'konsole --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), ppath, f.name)
+        cmd = 'konsole --noclose --workdir "%s" -e "%s" make "%s"' % (os.getcwd(), ppath, f.name)
         # Hacky KDE4 patch ..
         if os.popen("konsole --version").readlines()[0].find("Qt: 4") != -1:
             subprocess.Popen(["/usr/kde/4/lib/kde4/libexec/kdesu", "-d", "-u", "root", "-c", cmd])
@@ -290,6 +312,9 @@ class ProjectWindow(KMainWindow):
             self.project.exparams = tmp
         else:
             self.project.exparams = None
+
+        self.project.plugin_package = unicode(self.plugin_package.text())
+
         tmp = unicode(self.work_dir.text())
         if tmp:
             self.project.work_dir = tmp
@@ -327,6 +352,7 @@ class ProjectWindow(KMainWindow):
         else:
             tmp = ""
         self.exparams.setText(tmp)
+        self.plugin_package.setText(unicode(self.project.plugin_package))
         if self.project.work_dir:
             tmp = unicode(self.project.work_dir)
         else:

@@ -332,6 +332,9 @@ def make_image(project):
         run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
         if project.type == "install":
             run('pisi --yes-all --ignore-comar -D"%s" it yali4' % image_dir)
+            if project.plugin_package:
+                plugin_package = project.plugin_package
+                run('pisi --yes-all --ignore-comar -D"%s" it %s' % plugin_package)
         else:
             install_packages(project)
 
