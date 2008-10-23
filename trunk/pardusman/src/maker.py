@@ -334,7 +334,7 @@ def make_image(project):
             run('pisi --yes-all --ignore-comar -D"%s" it yali4' % image_dir)
             if project.plugin_package:
                 plugin_package = project.plugin_package
-                run('pisi --yes-all --ignore-comar -D"%s" it %s' % plugin_package)
+                run('pisi --yes-all --ignore-comar -D"%s" it %s' % (image_dir, plugin_package))
         else:
             install_packages(project)
 
