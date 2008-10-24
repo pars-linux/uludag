@@ -96,6 +96,16 @@ path_arg_writable(struct trace_context *ctx, pid_t pid, char *path, const char *
 		mkdir_case = strcmp("mkdir", name) == 0;
 		ret = path_writable(ctx->pathlist, canonical, mkdir_case);
 		if (ret == 0) {
+			if (strcmp("open", name) == 0) {
+				// Special case for kernel build
+				unsigned int flags;
+				struct stat st;
+				flags = ptrace(PTRACE_PEEKUSER, pid, 4, 0);
+				if ((flags & O_CREAT) == 0 && stat(canonical, &st) == -1 && errno == ENOENT) {
+					free(canonical);
+					return ENOENT;
+				}
+			}
 			catbox_retval_add_violation(ctx, name, path, canonical);
 			err = -EACCES;
 		} else if (ret == -1) {

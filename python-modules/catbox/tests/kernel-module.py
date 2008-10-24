@@ -13,7 +13,6 @@ def good_open_syscall():
 def bad_open_syscall():
     # Should bork because it creates the file if it doesn't exist
     f = os.open("/usr/src/linux/null.gcda", os.O_RDWR | os.O_CREAT)
-    f.close()
 
 ret = catbox.run(good_open_syscall, writable_paths=[os.getcwd()])
 assert(ret.code == 0)
