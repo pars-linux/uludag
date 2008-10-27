@@ -317,7 +317,6 @@ class BrowserWidget(QVBox):
         self.nr_paks -= 1
         self._update_label()
 
-
 class Browser(QDialog):
     def __init__(self, parent, repo, callback, components, packages, mediasize):
         QDialog.__init__(self, parent)
@@ -342,3 +341,120 @@ class Browser(QDialog):
     def reject(self):
         self.callback(None, None)
         QDialog.reject(self)
+
+class Language(QDialog):
+    def __init__(self, parent, callback, langdef, langall):
+        QDialog.__init__(self, parent)
+
+        self.availablelangs = ["ca_ES", "de_DE", "en_US", "es_ES", "fr_FR", "it_IT", "nl_NL", "pl_PL", "pt_BR", "sv_SE", "tr_TR"]
+
+        if langdef not in self.availablelangs:
+            self.defaultlang = "en_US"
+        else:
+            self.defaultlang = langdef
+
+        self.callback = callback
+
+        self.listLang= KListView(self,"listLang")
+        self.listLang.addColumn(i18n("Lang Layouts"))
+        self.listLang.setGeometry(QRect(30,50,290,270))
+        self.listLang.setAllColumnsShowFocus(1)
+        self.listLang.setResizeMode(QListView.AllColumns)
+
+        for each in self.availablelangs:
+            item = QCheckListItem(self.listLang, "lang", QCheckListItem.CheckBox)
+            item.setText(0, each)
+            if each in langall:
+                item.activate()
+
+        LayoutWidget = QWidget(self,"layout1")
+        LayoutWidget.setGeometry(QRect(80,380,234,58))
+        layout1 = QHBoxLayout(LayoutWidget,11,6,"layout1")
+
+        self.but1 = QPushButton(LayoutWidget,"but1")
+        layout1.addWidget(self.but1)
+
+        self.but2 = QPushButton(LayoutWidget,"but2")
+        layout1.addWidget(self.but2)
+        self.but1.setText(i18n("Okay"))
+        self.but2.setText(i18n("Cancel"))
+
+        self.checkBox1 = QCheckBox(self,"checkBox1")
+        self.checkBox1.setGeometry(QRect(70,320,180,21))
+        self.checkBox1.setText(i18n("Select all"))
+   
+        self.comboBox = QComboBox(0,self,"comboBox")
+        self.comboBox.setGeometry(QRect(60,340,240,30))
+        self.comboBox.insertStrList(langall)
+       
+        if not langall:
+            self.comboBox.insertItem(self.defaultlang)
+        else:
+            self.comboBox.setCurrentText(str(self.defaultlang))
+
+        if not langall:
+            aww = self.listLang.firstChild()
+            while aww:
+                if aww.text() == self.defaultlang:
+                    aww.activate()
+                aww = aww.nextSibling()
+
+        self.connect(self.but1, SIGNAL("clicked()"), self.accept)
+        self.connect(self.but2, SIGNAL("clicked()"), self.reject)
+        self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.syncCombo)
+        self.connect(self.listLang, SIGNAL("clicked(QListViewItem *)"), self.setDefaultLang)
+        self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.selectAll)
+        self.connect(self.comboBox, SIGNAL("activated(int)"), self.setDefaultLang)
+        self.connect(self.checkBox1, SIGNAL("toggled(bool)"), self.syncCombo)
+
+    def setDefaultLang(self):
+        self.defaultlang =  self.comboBox.currentText()
+
+    def setSelectedLangs(self):
+        self.selectedLangs = []
+        aww = self.listLang.firstChild()
+        while aww:
+            if aww.isOn():
+                self.selectedLangs.append(str(aww.text()))
+            aww = aww.nextSibling()
+
+    def accept(self):
+        self.setSelectedLangs()
+        self.setDefaultLang()
+        self.callback(str(self.defaultlang), self.selectedLangs)
+        QDialog.accept(self)
+
+    def selectAll(self, checked):
+        aww = self.listLang.firstChild()
+        while aww:
+            if checked:
+                if not aww.isOn():
+                    aww.activate()
+            else:
+                if aww.isOn():
+                    aww.activate()
+            aww = aww.nextSibling()
+
+    def reject(self):
+        self.callback("", None)
+        QDialog.reject(self)
+
+    def syncCombo(self, checked):
+        self.setSelectedLangs()
+        """
+        if not len(self.selectedLangs) == len(self.availablelangs):
+            self.checkBox1.setChecked(False)
+        """
+        self.comboBox.clear()
+        if not checked:
+            self.comboBox.insertItem(self.defaultlang)
+            aww = self.listLang.firstChild()
+            while aww:
+                if aww.text() == self.defaultlang:
+                    aww.activate()
+                aww = aww.nextSibling()
+        else:
+            self.comboBox.insertStrList(self.selectedLangs)
+        if self.defaultlang in self.selectedLangs:
+            self.comboBox.setCurrentText(self.defaultlang)
+
