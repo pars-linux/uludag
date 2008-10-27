@@ -175,12 +175,19 @@ class ProjectWindow(KMainWindow):
         bar = QToolBar("lala", None, vb)
         self.toolbar = bar
         QLabel(" ", bar)
+
         but = QToolButton(getIconSet("reload"), _("Update Repo"), "lala", self.update, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+
         but = QToolButton(getIconSet("package"), _("Select packages"), "lala", self.browse, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
+
+        but = QToolButton(getIconSet("gear"), _("Select languages"), "lala", self.lang, bar)
+        but.setUsesTextLabel(True)
+        but.setTextPosition(but.BesideIcon)
+
         but = QToolButton(getIconSet("gear"), _("Make ISO"), "lala", self.make, bar)
         but.setUsesTextLabel(True)
         but.setTextPosition(but.BesideIcon)
@@ -275,6 +282,22 @@ class ProjectWindow(KMainWindow):
             self.project.selected_packages,
             self.getMediaSize()
         )
+        w.show()
+
+    def langResult(self, langdef, langall):
+        self.toolbar.setEnabled(True)
+        if langdef != "":
+            self.project.selected_languages = langall
+            self.project.default_language = langdef
+
+    def lang(self):
+        if not self.checkSettings():
+            return
+        self.toolbar.setEnabled(False)
+        w = browser.Language(self,
+                             self.langResult,
+                             self.project.default_language,
+                             self.project.selected_languages)
         w.show()
 
     def make(self):
