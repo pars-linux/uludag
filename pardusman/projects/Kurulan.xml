@@ -33,6 +33,7 @@
         <SelectedPackage>bogofilter</SelectedPackage>
         <SelectedPackage>boost</SelectedPackage>
         <SelectedPackage>boot-manager</SelectedPackage>
+        <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>cabextract</SelectedPackage>
         <SelectedPackage>cdparanoia</SelectedPackage>
@@ -118,6 +119,7 @@
         <SelectedPackage>libsvg-cairo</SelectedPackage>
         <SelectedPackage>libtool</SelectedPackage>
         <SelectedPackage>libwmf</SelectedPackage>
+        <SelectedPackage>linux-atm</SelectedPackage>
         <SelectedPackage>linux-uvc</SelectedPackage>
         <SelectedPackage>lirc-drivers</SelectedPackage>
         <SelectedPackage>lmpcm_usb</SelectedPackage>
@@ -252,6 +254,7 @@
         <Package>boot-manager</Package>
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
+        <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>bzip2</Package>
         <Package>cabextract</Package>
@@ -591,6 +594,7 @@
         <Package>libxkbui</Package>
         <Package>libxml2</Package>
         <Package>libxslt</Package>
+        <Package>linux-atm</Package>
         <Package>linux-uvc</Package>
         <Package>lirc</Package>
         <Package>lirc-drivers</Package>
