@@ -10,12 +10,14 @@
 #
 
 import os
+import re
 import subprocess
 import sha
 import tempfile
 import stat
 import sys
 import time
+import dbus
 
 from utility import xterm_title, waitBus
 
@@ -29,6 +31,21 @@ def run(cmd, ignore_error=False):
     if ret and not ignore_error:
         print "%s returned %s" % (cmd, ret)
         sys.exit(1)
+
+def connectToDBus(path):
+    global bus
+    bus = None
+    for i in range(20):
+        try:
+            print("trying to start dbus..")
+            bus = dbus.bus.BusConnection(address_or_type="unix:path=%s/var/run/dbus/system_bus_socket" % path)
+            break
+        except dbus.DBusException:
+            time.sleep(1)
+            print("wait dbus for 1 second...")
+    if bus:
+        return True
+    return False
 
 def chroot_comar(image_dir):
     if os.fork() == 0:
@@ -200,7 +217,11 @@ def setup_isolinux(project):
 
 def setup_live_kdm(project):
     image_dir = project.image_dir()
-    path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
+    if "kdebase" in project.all_packages :
+        path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
+    elif "kdebase4" in project.all_packages :
+        # FIXME : find a generic way to do this
+        path = os.path.join(image_dir, "etc/X11/kdm/kdmrc4")
     lines = []
     for line in file(path):
         if line.startswith("#AutoLoginEnable"):
@@ -211,10 +232,35 @@ def setup_live_kdm(project):
             lines.append(line)
     file(path, "w").write("".join(lines))
 
+def setup_live_policykit_conf(project):
+    policykit_conf_tmpl = """<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
+
+<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
+"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
+
+<!-- See the manual page PolicyKit.conf(5) for file format -->
+
+<config version="0.1">
+    <define_admin_auth group="wheel"/>
+    <match user="pars">
+        <return result="yes"/>
+    </match>
+</config>
+"""
+
+    # Write PolicyKit.conf
+    image_dir = project.image_dir()
+    dest = os.path.join(image_dir, "etc/PolicyKit/PolicyKit.conf")
+
+    f = file(dest, "w")
+    f.write(policykit_conf_tmpl)
+    f.close()
+
 def copyPisiIndex(project):
     image_dir = project.image_dir()
     path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
     repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
+
     run('cp -PR "%s" "%s"' % (repo, path))
     run('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
     print('cp -PR "%s" "%s"' % (repo, path))
@@ -316,6 +362,8 @@ def check_repo_files(project):
         sys.exit(1)
 
 def make_image(project):
+    global bus
+
     print "Preparing install image..."
     xterm_title("Preparing install image")
 
@@ -357,9 +405,22 @@ def make_image(project):
         chrun("/usr/bin/pisi configure-pending baselayout")
         chrun("/usr/bin/pisi configure-pending")
 
-        chrun("hav call baselayout User.Manager setUser 0 'Pardus Root' '/root' '/bin/bash' 'pardus' '' ")
-        if project.type != "install" and 1==3:
-            chrun("hav call User.Manager addUser '1000' 'pars' 'Panter Pardus' '' password pardus")
+        # FIXME : find a generic way to do this
+        if "kdebase4" in project.all_packages :
+            chrun("/bin/service kdebase4_workspace on")
+            # Change headstart
+            fn_config = os.path.join(image_dir, "etc/conf.d/mudur")
+            str_conf = file(fn_config).read()
+            str_conf = re.sub("kdebase", "kdebase4_workspace", str_conf)
+            file(fn_config, "w").write(str_conf)
+
+        connectToDBus(image_dir)
+
+        obj = bus.get_object("tr.org.pardus.comar", "/package/baselayout")
+
+        obj.setUser(0, "", "", "", "pardus", "", dbus_interface="tr.org.pardus.comar.User.Manager")
+        if project.type != "install":
+            obj.addUser(1000, "pars", "Panter Pardus", "/home/pars", "/bin/bash", "pardus", ["wheel", "users", "pnp", "pnpadmin", "removable", "disk", "audio", "video", "power", "dialout"], [], [], dbus_interface="tr.org.pardus.comar.User.Manager")
 
         chrun("/sbin/depmod -a %s-%s" % (repo.packages["kernel"].version, repo.packages["kernel"].release))
 
@@ -370,10 +431,12 @@ def make_image(project):
 
         file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
 
-        if project.type != "install" and "kdebase" in project.all_packages:
+        if project.type != "install" and ("kdebase" in project.all_packages or "kdebase4" in project.all_packages):
             setup_live_kdm(project)
+            setup_live_policykit_conf(project)
 
-        copyPisiIndex(project)
+        if project.type == "install":
+            copyPisiIndex(project)
 
         # Make sure environment is updated regardless of the booting system, by setting comparison
         # files' atime and mtime to UNIX time 1

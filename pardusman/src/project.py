@@ -36,7 +36,6 @@ usr/share/man/
 usr/share/groff/
 usr/share/dict/
 var/db/pisi/
-var/lib/pisi/
 var/cache/pisi/packages/
 var/cache/pisi/archives/
 var/tmp/pisi/
@@ -82,7 +81,7 @@ var/log/pisi.log
 root/.bash_history
 """
 
-default_glob_excludes = (
+default_install_glob_excludes = (
     ( "usr/lib/python2.5/", "*.pyc" ),
     ( "usr/lib/python2.5/", "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
@@ -93,6 +92,22 @@ default_glob_excludes = (
     ( "lib/", "*.la" ),
     ( "var/db/comar/", "__db*" ),
     ( "var/db/comar/", "log.*" ),
+)
+
+default_live_glob_excludes = (
+    ( "usr/lib/python2.5/", "*.pyc" ),
+    ( "usr/lib/python2.5/", "*.pyo" ),
+    ( "usr/lib/pardus/", "*.pyc" ),
+    ( "usr/lib/pardus/", "*.pyo" ),
+    ( "usr/lib/", "*.a" ),
+    ( "usr/lib/", "*.la" ),
+    ( "lib/", "*.a" ),
+    ( "lib/", "*.la" ),
+    ( "var/db/comar/", "__db*" ),
+    ( "var/db/comar/", "log.*" ),
+    ( "var/lib/pisi/index", "*" ),
+    ( "var/lib/pisi/info", "*" ),
+    ( "var/lib/pisi/package", "*" ),
 )
 
 
@@ -181,17 +196,21 @@ class Project:
     def exclude_list(self):
         import fnmatch
         
+        def _glob_exclude(lst, excludes):
+            image_dir = self.image_dir()
+            for exc in excludes:
+                path = os.path.join(image_dir, exc[0])
+                for root, dirs, files in os.walk(path):
+                    for name in files:
+                        if fnmatch.fnmatch(name, exc[1]):
+                            lst.append(os.path.join(root[len(image_dir)+1:], name))
+        
         if self.type == "install":
             temp = default_install_exclude_list.split()
+            _glob_exclude(temp, default_install_glob_excludes)
         else:
             temp = default_live_exclude_list.split()
-        image_dir = self.image_dir()
-        for exc in default_glob_excludes:
-            path = os.path.join(image_dir, exc[0])
-            for root, dirs, files in os.walk(path):
-                for name in files:
-                    if fnmatch.fnmatch(name, exc[1]):
-                        temp.append(os.path.join(root[len(image_dir)+1:], name))
+            _glob_exclude(temp, default_live_glob_excludes)
         return temp
     
     def _get_dir(self, name, clean=False):
@@ -223,6 +242,12 @@ class Project:
         for component in self.selected_components:
             for package in repo.components[component]:
                 collect(package)
+
+        if not "gfxtheme-pardus-install" in self.selected_packages:
+            self.selected_packages.append("gfxtheme-pardus-install")
+        if not "syslinux" in self.selected_packages:
+            self.selected_packages.append("syslinux")
+
         for package in self.selected_packages:
             collect(package)
         packages.sort()
