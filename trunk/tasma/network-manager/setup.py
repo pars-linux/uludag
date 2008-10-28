@@ -66,6 +66,8 @@ app_data = [
     'icons.py',
     'comariface.py',
     'nameconf.py',
+    'nameConf.ui',
+    'nameConf.py',
     'connsharing.py',
     'connSharing.ui',
     'connSharing.py',
