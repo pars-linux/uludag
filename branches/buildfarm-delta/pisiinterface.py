@@ -71,9 +71,19 @@ class PisiApi:
         logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
         logger.debug("delta() -> newBinaryPackages: %s" % newBinaryPackages)
 
-        # Sort them correctly, please..
-        oldDict = dict([(getName(l),l) for l in oldBinaryPackages])
-        packages = dict([(getName(p), (oldDict.get(getName(p), ""), p)) for p in newBinaryPackages])
+        brandNewBinaryPackages = []
+
+        for p in newBinaryPackages:
+            if not getName(p) in [getName(p) for p in oldBinaryPackages]:
+                brandNewBinaryPackages.append(newBinaryPackages.pop(newBinaryPackages.index(p)))
+
+        # brandNew contains the possible first builds
+        # Just add those to the end of newBinaryPackages for
+        # correct delta generation..
+
+        oldBinaryPackages.sort()
+        newBinaryPackages.sort()
+        newBinaryPackages.extend(brandNewBinaryPackages)
 
         # Delta packages to be installed on farm for upgrading to new packages
         deltas_to_install = []
