@@ -47,6 +47,9 @@ class PisiApi:
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
 
+    def getName(package):
+        return package.rstrip(".pisi").rsplit("-", 3)[0]
+
     def getPreviousBuild(self, package):
         """ Returns the previous build with buildno < buildno(package) (nearest) """
         package = package.rstrip(".pisi\n").rsplit("-", 3)
@@ -68,6 +71,10 @@ class PisiApi:
         logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
         logger.debug("delta() -> newBinaryPackages: %s" % newBinaryPackages)
 
+        # Sort them correctly, please..
+        oldDict = dict([(getName(l),l) for l in oldBinaryPackages])
+        packages = dict([(getName(p), (oldDict.get(getName(p), ""), p)) for p in newBinaryPackages])
+
         # Delta packages to be installed on farm for upgrading to new packages
         deltas_to_install = []
 
@@ -79,7 +86,7 @@ class PisiApi:
             logger.debug("Current (old,new) tuple is: %s" % str(pl))
 
             # Parse the name of the new package
-            name = os.path.basename(pl[1]).rstrip(".pisi").rsplit("-", 3)[0]
+            name = getName(os.path.basename(pl[1])
 
             # Full path of the new package
             p = os.path.join(config.workDir, pl[1])
