@@ -10,12 +10,13 @@
 
 import sys
 from qt import *
-from kdecore import KCmdLineArgs, KApplication, i18n
+from kdecore import *
 from kdeui import *
 from comariface import comlink
 from handler import CallHandler
 import commands
 
+from icons import getIconSet
 from connSharing import ConnSharing
 
 # DBus
@@ -25,7 +26,7 @@ class connShare(ConnSharing):
         ConnSharing.__init__(self, parent, "connShare")
         self.parent = parent
 
-        self.languageChange()
+        self.fillLabels()
 
         self.connect(self.sharecheckBox, SIGNAL("stateChanged(int)"), self.slotCheckBox)
         self.connect(self.applyBut, SIGNAL("clicked()"), self.shareConnection)
@@ -49,13 +50,15 @@ class connShare(ConnSharing):
             self.intcombo.insertItem(profile.name)
             self.sharecombo.insertItem(profile.name)
 
-    def languageChange(self):
+    def fillLabels(self):
         self.setCaption(i18n("Internet Connection Sharing"))
         self.sharecheckBox.setText(i18n("Share Internet Connection"))
         self.textLabel1.setText(i18n("Interface that goes to internet"))
         self.textLabel2.setText(i18n("Interface that will share connection"))
         self.applyBut.setText(i18n("Apply"))
+        self.applyBut.setIconSet(getIconSet("apply", KIcon.Small))
         self.cancelBut.setText(i18n("Close"))
+        self.cancelBut.setIconSet(getIconSet("cancel", KIcon.Small))
 
     def callMethod(self, method, action, model="Net.Filter"):
         ch = CallHandler("iptables", model, method,
