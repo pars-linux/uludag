@@ -17,11 +17,12 @@ import glob
 import shutil
 import kdedistutils
 
-version = "2.1.4"
+version = "2.1.5"
 
 distfiles = """
     README
     *.py
+    *.ui
     *.desktop
     images/*.png
     help/*.css
@@ -66,6 +67,8 @@ app_data = [
     'comariface.py',
     'nameconf.py',
     'connsharing.py',
+    'connSharing.ui',
+    'connSharing.py',
     ('/usr/share/autostart/', ['network-applet.desktop']),
     ('/usr/kde/3.5/share/applications/kde/', ['network-applet.desktop']),
     'images/wireless-online.png',
