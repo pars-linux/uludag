@@ -47,9 +47,6 @@ class PisiApi:
         self.__newBinaryPackages = []
         self.__oldBinaryPackages = []
 
-    def getName(package):
-        return package.rstrip(".pisi").rsplit("-", 3)[0]
-
     def getPreviousBuild(self, package):
         """ Returns the previous build with buildno < buildno(package) (nearest) """
         package = package.rstrip(".pisi\n").rsplit("-", 3)
@@ -68,13 +65,16 @@ class PisiApi:
 
     def delta(self, isopackages, oldBinaryPackages, newBinaryPackages):
 
+        def getName(package):
+            return package.rstrip(".pisi").rsplit("-", 3)[0]
+
         logger.debug("delta() -> oldBinaryPackages: %s" % oldBinaryPackages)
         logger.debug("delta() -> newBinaryPackages: %s" % newBinaryPackages)
 
         brandNewBinaryPackages = []
 
         for p in newBinaryPackages:
-            if not getName(p) in [getName(p) for p in oldBinaryPackages]:
+            if not getName(p) in [getName(pa) for pa in oldBinaryPackages]:
                 brandNewBinaryPackages.append(newBinaryPackages.pop(newBinaryPackages.index(p)))
 
         # brandNew contains the possible first builds
