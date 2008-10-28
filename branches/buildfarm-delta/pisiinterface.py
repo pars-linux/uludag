@@ -96,7 +96,7 @@ class PisiApi:
             logger.debug("Current (old,new) tuple is: %s" % str(pl))
 
             # Parse the name of the new package
-            name = getName(os.path.basename(pl[1])
+            name = getName(os.path.basename(pl[1]))
 
             # Full path of the new package
             p = os.path.join(config.workDir, pl[1])
