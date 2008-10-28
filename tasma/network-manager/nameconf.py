@@ -17,95 +17,70 @@ import widgets
 from icons import getIconSet
 from comariface import comlink
 
+from nameConf import NameConf
 
-class Window(QDialog):
+class Window(NameConf):
     def __init__(self, parent):
-        QDialog.__init__(self, parent)
-        
+        NameConf.__init__(self, parent)
+
         self.old_host = None
         self.old_dns = None
-        
-        self.setCaption(i18n("Name Service Settings"))
-        self.resize(260, 290)
-        
-        vb = QVBoxLayout(self)
-        vb.setMargin(12)
-        vb.setSpacing(6)
-        
-        line = widgets.HLine(i18n("Computer"), self)
-        vb.addWidget(line)
-        
-        hb = QHBox(self)
-        vb.addWidget(hb)
-        hb.setSpacing(6)
-        QLabel(i18n("Host name:"), hb)
-        self.host = QLineEdit(hb)
-        
-        vb.addSpacing(6)
-        line = widgets.HLine(i18n("Name servers"), self)
-        vb.addWidget(line)
-        
-        vb2 = QVBox(self)
-        vb.addWidget(vb2)
-        vb2.setSpacing(3)
-        
-        self.dns = QListBox(vb2)
-        
-        hb = QHBox(vb2)
-        hb.setSpacing(3)
-        but = QPushButton(getIconSet("up", KIcon.Small), i18n("Up"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotUp)
-        self.b1 = but
-        but = QPushButton(getIconSet("down", KIcon.Small), i18n("Down"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotDown)
-        self.b2 = but
-        but = QPushButton(getIconSet("add", KIcon.Small), i18n("Add"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        but = QPushButton(getIconSet("remove", KIcon.Small), i18n("Remove"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.slotRemove)
-        self.b3 = but
-        
+
+        self.fillLabels()
+
+        self.connect(self.b1, SIGNAL("clicked()"), self.slotUp)
+        self.connect(self.b2, SIGNAL("clicked()"), self.slotDown)
+        self.connect(self.b3, SIGNAL("clicked()"), self.slotRemove)
+        self.connect(self.b4, SIGNAL("clicked()"), self.slotAdd)
+
         self.connect(self.dns, SIGNAL("selectionChanged()"), self.slotSelection)
         self.slotSelection()
-        
-        hb = QWidget(self)
-        vb.addSpacing(6)
-        vb.addWidget(hb)
-        lay = QHBoxLayout(hb)
-        lay.setMargin(3)
-        lay.setSpacing(12)
-        lay.addStretch(1)
-        but = QPushButton(getIconSet("apply", KIcon.Small), i18n("Apply"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.accept)
-        lay.addWidget(but)
-        but = QPushButton(getIconSet("cancel", KIcon.Small), i18n("Cancel"), hb)
-        self.connect(but, SIGNAL("clicked()"), self.reject)
-        lay.addWidget(but)
-        
+
+        self.connect(self.applyBut, SIGNAL("clicked()"), self.accept)
+        self.connect(self.cancelBut, SIGNAL("clicked()"), self.reject)
+
         comlink.name_hook.append(self.slotName)
-    
+
+    def fillLabels(self):
+        self.setCaption(i18n("Name Service Settings"))
+        self.hostNameLabel.setText(i18n("Host name:"))
+        self.nameServLabel.setText(i18n("Name servers"))
+
+        self.b1.setIconSet(getIconSet("up", KIcon.Small))
+        self.b1.setText(i18n("Up"))
+        self.b2.setIconSet(getIconSet("down", KIcon.Small))
+        self.b2.setText(i18n("Down"))
+        self.b3.setIconSet(getIconSet("remove", KIcon.Small))
+        self.b3.setText(i18n("Remove"))
+        self.b4.setIconSet(getIconSet("add", KIcon.Small))
+        self.b4.setText(i18n("Add"))
+        self.applyBut.setIconSet(getIconSet("apply", KIcon.Small))
+        self.applyBut.setText(i18n("Apply"))
+        self.cancelBut.setIconSet(getIconSet("cancel", KIcon.Small))
+        self.cancelBut.setText(i18n("Cancel"))
+
     def accept(self):
         host = str(self.host.text())
         dns = []
-        
+
         item = self.dns.firstItem()
         while item:
             dns.append(str(item.text()))
             item = item.next()
-        
+
         self.done = 0
         def handler():
             self.done += 1
             if self.done == 2:
                 self.setEnabled(True)
                 QDialog.accept(self)
-        
+
         def error(exception):
             self.setEnabled(True)
-        
+
         def cancel():
             self.setEnabled(True)
-        
+
         if self.old_host != host:
             self.setEnabled(False)
             ch = comlink.callHandler("baselayout", "Net.Stack", "setHostName", "tr.org.pardus.comar.net.stack.set")
@@ -117,7 +92,7 @@ class Window(QDialog):
             ch.call(host)
         else:
             self.done += 1
-        
+
         if self.old_dns != dns:
             self.setEnabled(False)
             ch = comlink.callHandler("baselayout", "Net.Stack", "setNameServers", "tr.org.pardus.comar.net.stack.set")
@@ -129,21 +104,21 @@ class Window(QDialog):
             ch.call(dns)
         else:
             self.done += 1
-        
+
         if self.done == 2:
             self.setEnabled(True)
             QDialog.accept(self)
-        
-    
+
+
     def reject(self):
         QDialog.reject(self)
-    
+
     def slotSelection(self):
         item = self.dns.selectedItem()
         self.b1.setEnabled(item != None and item.prev() != None)
         self.b2.setEnabled(item != None and item.next() != None)
         self.b3.setEnabled(item != None)
-    
+
     def slotUp(self):
         item = self.dns.selectedItem()
         prev = item.prev()
@@ -156,7 +131,7 @@ class Window(QDialog):
                 self.dns.insertItem(item, 0)
             self.dns.setCurrentItem(item)
             self.slotSelection()
-    
+
     def slotDown(self):
         item = self.dns.selectedItem()
         next = item.next()
@@ -165,7 +140,7 @@ class Window(QDialog):
             self.dns.insertItem(item, next)
             self.dns.setCurrentItem(item)
             self.slotSelection()
-    
+
     def slotAdd(self):
         tmp = KInputDialog.getText(
             i18n("Add Name Server"),
@@ -178,18 +153,19 @@ class Window(QDialog):
         if tmp[1]:
             self.dns.insertItem(tmp[0])
             self.slotSelection()
-    
+
     def slotRemove(self):
         item = self.dns.selectedItem()
         if item:
             self.dns.removeItem(self.dns.index(item))
             self.slotSelection()
-    
+
     def slotName(self, hostname, servers):
         self.dns.clear()
         self.old_dns = servers
         for item in self.old_dns:
             self.dns.insertItem(item)
-        
+
         self.old_host = hostname
         self.host.setText(hostname)
+
