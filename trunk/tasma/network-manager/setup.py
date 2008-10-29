@@ -22,7 +22,8 @@ version = "2.1.5"
 distfiles = """
     README
     *.py
-    *.ui
+    ui/*.ui
+    ui/*.py
     *.desktop
     images/*.png
     help/*.css
@@ -64,17 +65,17 @@ app_data = [
     'icons.py',
     'comariface.py',
     'connection.py',
-    'settingsWindow.py',
-    'settingsWindow.ui',
+    'ui/settingsWindow.py',
+    'ui/settingsWindow.ui',
     'newconn.py',
-    'newConn.ui',
-    'newConn.py',
+    'ui/newConn.ui',
+    'ui/newConn.py',
     'nameconf.py',
-    'nameConf.ui',
-    'nameConf.py',
+    'ui/nameConf.ui',
+    'ui/nameConf.py',
     'connsharing.py',
-    'connSharing.ui',
-    'connSharing.py',
+    'ui/connSharing.ui',
+    'ui/connSharing.py',
     ('/usr/share/autostart/', ['network-applet.desktop']),
     ('/usr/kde/3.5/share/applications/kde/', ['network-applet.desktop']),
     'images/wireless-online.png',
