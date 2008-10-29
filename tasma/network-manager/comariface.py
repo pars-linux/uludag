@@ -315,7 +315,7 @@ class DBusInterface(Hook):
         ch2.call()
 
     def handleConnectionInfo(self, script, info):
-        def handler(conn, mode, username, password, channel, auth, anon, inner, clicert, cacert, prikey, prikeypass):
+        def handler(conn, mode, username, password, channel, auth, anon, inner, clicert, cacert, prikey, prikeypass, kmode, ktype):
             conn.got_auth = True
             conn.auth_mode = mode
             conn.auth_user = username
@@ -328,6 +328,8 @@ class DBusInterface(Hook):
             conn.auth_client_cert = clicert
             conn.auth_private_key = prikey
             conn.auth_private_key_pass = prikeypass
+            conn.keymode = kmode
+            conn.keytype = ktype
 
             if conn.first_time:
                 conn.first_time = False
