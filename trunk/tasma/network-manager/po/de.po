@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-10 13:08+0300\n"
+"POT-Creation-Date: 2008-10-30 01:43+0200\n"
 "PO-Revision-Date: 2008-09-12 23:19+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch\n"
@@ -48,7 +48,7 @@ msgstr ""
 "sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' "
 "ausführen."
 
-#: comariface.py:408
+#: comariface.py:410
 msgid "new connection"
 msgstr "neue Verbindung"
 
@@ -78,7 +78,8 @@ msgstr "Einzelnes Ikon"
 
 #: network-applet.py:477
 msgid "Should network-applet start automatically when you login?"
-msgstr "Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
+msgstr ""
+"Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
 
 #: network-applet.py:592
 msgid "Connecting to <b>%1</b> ..."
@@ -108,281 +109,283 @@ msgstr "Neue Verbindung"
 msgid "Network Applet"
 msgstr "Netzwerk-Applet"
 
-#: nameconf.py:28 browser.py:412
+#: nameconf.py:45 browser.py:412
 msgid "Name Service Settings"
 msgstr "Name Service-Einstellungen"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Computer"
-
-#: nameconf.py:41
+#: nameconf.py:46
 msgid "Host name:"
 msgstr "Hostname:"
 
-#: nameconf.py:45 connection.py:530
+#: nameconf.py:47
 msgid "Name servers"
 msgstr "Name-Server"
 
-#: nameconf.py:56
+#: nameconf.py:50
 msgid "Up"
 msgstr "Nach oben"
 
-#: nameconf.py:59
+#: nameconf.py:52
 msgid "Down"
 msgstr "Nach unten"
 
-#: nameconf.py:171
+#: nameconf.py:146
 msgid "Add Name Server"
 msgstr "Name-Server hinzufügen"
 
-#: nameconf.py:172
+#: nameconf.py:147
 msgid "Name server:"
 msgstr "Name-Server:"
 
-#: newconn.py:26
+#: newconn.py:53
 msgid "Create a new connection"
 msgstr "Eine neue Verbindung erstellen"
 
-#: newconn.py:31
+#: newconn.py:54
 msgid "Select device:"
 msgstr "Gerät auswählen:"
 
-#: newconn.py:58
+#: newconn.py:56
 msgid "Create"
 msgstr "Erstellen"
 
-#: newconn.py:112
+#: newconn.py:102
 msgid "No suitable device found"
 msgstr "Kein geeignetes Gerät gefunden"
 
-#: newconn.py:120
+#: newconn.py:110
 msgid "Install network packages!"
 msgstr "Netzwerk-Pakete installieren!"
 
-#: newconn.py:121
+#: newconn.py:111
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Bisher ist kein Paket mit COMAR-Netzwerkskripten installiert."
 
-#: connection.py:28
+#: connection.py:30
 msgid "Channel"
 msgstr "Kanal"
 
-#: connection.py:29
+#: connection.py:31 connection.py:303
 msgid "Mode"
 msgstr "Modus"
 
-#: connection.py:30
+#: connection.py:32
 msgid "Protocol"
 msgstr "Protokoll"
 
-#: connection.py:42
+#: connection.py:44
 msgid "No remotes found"
 msgstr "Keine Verbindungspunkte gefunden"
 
-#: connection.py:62
+#: connection.py:64
 msgid "<hidden>"
 msgstr "<versteckt>"
 
-#: connection.py:100
+#: connection.py:102
 msgid "Scan results:"
 msgstr "Suchergebnisse:"
 
-#: connection.py:119
+#: connection.py:121
 msgid "Scan again"
 msgstr "Erneut suchen"
 
-#: connection.py:121
+#: connection.py:124
 msgid "Use"
 msgstr "Verwenden"
 
-#: connection.py:199
-msgid "Connection name:"
-msgstr "Verbindungsname:"
-
-#: connection.py:206
-msgid "Connection"
-msgstr "Verbindung"
-
-#: connection.py:212
-msgid "Device:"
-msgstr "Gerät:"
-
-#: connection.py:218
-msgid "Select"
-msgstr "Auswählen"
-
-#: connection.py:226
-msgid "Device Mode"
-msgstr "Geräte-Modus:"
-
-#: connection.py:232
-msgid "Mode:"
-msgstr "Modus:"
-
-#: connection.py:250
-msgid "Scan"
-msgstr "Suchen"
-
-#: connection.py:266 browser.py:59
-msgid "Authentication"
-msgstr "Authentifizierung"
-
-#: connection.py:274
-msgid "Security:"
-msgstr "Sicherheit:"
-
-#: connection.py:276
+#: connection.py:231
 msgid "No authentication"
 msgstr "Keine Authentifizierung"
 
+#: connection.py:275
+msgid "Connection"
+msgstr "Verbindung"
+
+#: connection.py:276
+msgid "Address Settings"
+msgstr ""
+
+#: connection.py:277
+#, fuzzy
+msgid "Name Server Settings"
+msgstr "Name Service-Einstellungen"
+
+#: connection.py:278
+#, fuzzy
+msgid "Name"
+msgstr "Name:"
+
+#: connection.py:279
+#, fuzzy
+msgid "Device"
+msgstr "Gerät:"
+
 #: connection.py:280
-msgid "Authentication:"
-msgstr "Authentifizierung:"
+msgid "Select"
+msgstr "Auswählen"
 
-#: connection.py:285
-msgid "Inner Authentication:"
-msgstr "Innen-Authentifizierung:"
-
-#: connection.py:296
-msgid "Anonymous Identity:"
-msgstr "Anonyme Identität:"
-
-#: connection.py:301
-msgid "User/Identity"
-msgstr "Benutzer/Identität"
-
-#: connection.py:306
-msgid "Password:"
-msgstr "Passwort:"
-
-#: connection.py:312
-msgid "Client Certificate:"
-msgstr "Client-Zertifikat:"
-
-#: connection.py:313 connection.py:318 connection.py:323
-msgid "browse"
-msgstr "durchsuchen"
-
-#: connection.py:317
-msgid "CA Certificate:"
-msgstr "CA Zertifikat:"
-
-#: connection.py:322
-msgid "Private Key File:"
-msgstr "Private Key-Datei:"
-
-#: connection.py:327
-msgid "Private Key Password:"
-msgstr "Pivates Key-Passwort:"
-
-#: connection.py:360 connection.py:366 connection.py:372
-msgid "*|Certificates"
-msgstr "*|Bescheinigungen"
-
-#: connection.py:360
-msgid "Select CA Certificate File"
-msgstr "CA Zertifikat-Datei auswählen"
-
-#: connection.py:366
-msgid "Select Client Certificate File"
-msgstr "Client-Zertifikat auswählen"
-
-#: connection.py:372
-msgid "Select Private Key File"
-msgstr "Private Key-Datei auswählen"
-
-#: connection.py:479
-msgid "Network settings"
-msgstr "Netzwerkeinstellungen"
-
-#: connection.py:489
+#: connection.py:282
 msgid "Automatic query (DHCP)"
 msgstr "Automatisch beziehen (DHCP)"
 
-#: connection.py:494
+#: connection.py:283
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:498 browser.py:62
-msgid "Address:"
+#: connection.py:284
+#, fuzzy
+msgid "Address :"
 msgstr "Adresse:"
 
-#: connection.py:505 connection.py:526 connection.py:541
+#: connection.py:285 connection.py:288 connection.py:291
 msgid "Custom"
 msgstr "Benutzerdefiniert"
 
-#: connection.py:510
-msgid "Net mask:"
+#: connection.py:286
+#, fuzzy
+msgid "Net mask :"
 msgstr "Netzmaske:"
 
-#: connection.py:521
-msgid "Gateway:"
+#: connection.py:287
+#, fuzzy
+msgid "Gateway :"
 msgstr "Gateway:"
 
-#: connection.py:539 browser.py:65
+#: connection.py:290 browser.py:65
 msgid "Automatic"
 msgstr "Automatisch"
 
-#: connection.py:810
+#: connection.py:293
+#, fuzzy
+msgid "Private Key File :"
+msgstr "Private Key-Datei:"
+
+#: connection.py:294
+#, fuzzy
+msgid "Private Key Password :"
+msgstr "Pivates Key-Passwort:"
+
+#: connection.py:295
+#, fuzzy
+msgid "CA Certificate :"
+msgstr "CA Zertifikat:"
+
+#: connection.py:296
+#, fuzzy
+msgid "Client Certificate :"
+msgstr "Client-Zertifikat:"
+
+#: connection.py:297
+#, fuzzy
+msgid "Password :"
+msgstr "Passwort:"
+
+#: connection.py:298
+#, fuzzy
+msgid "User/Identity :"
+msgstr "Benutzer/Identität"
+
+#: connection.py:299
+#, fuzzy
+msgid "Anonymous User :"
+msgstr "Anonyme Identität:"
+
+#: connection.py:300
+#, fuzzy
+msgid "Inner Authentication"
+msgstr "Innen-Authentifizierung:"
+
+#: connection.py:301 browser.py:59
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+#: connection.py:302
+msgid "Key Type"
+msgstr ""
+
+#: connection.py:304 connection.py:306 connection.py:308
+msgid "browse"
+msgstr "durchsuchen"
+
+#: connection.py:316 connection.py:322 connection.py:328
+msgid "*|Certificates"
+msgstr "*|Bescheinigungen"
+
+#: connection.py:316
+msgid "Select CA Certificate File"
+msgstr "CA Zertifikat-Datei auswählen"
+
+#: connection.py:322
+msgid "Select Client Certificate File"
+msgstr "Client-Zertifikat auswählen"
+
+#: connection.py:328
+msgid "Select Private Key File"
+msgstr "Private Key-Datei auswählen"
+
+#: connection.py:719
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
-#: connsharing.py:99
+#: connsharing.py:54
 msgid "Internet Connection Sharing"
 msgstr "Internet-Verbindungsfreigabe"
 
-#: connsharing.py:100
+#: connsharing.py:55
 msgid "Share Internet Connection"
 msgstr "Internetverbindung freigeben"
 
-#: connsharing.py:102
+#: connsharing.py:56
 msgid "Interface that goes to internet"
 msgstr "Schnittstelle, die die Internetverbindung herstellt"
 
-#: connsharing.py:103
+#: connsharing.py:57
 msgid "Interface that will share connection"
 msgstr "Schnittstelle, die die Verbindung freigeben wird"
 
-#: connsharing.py:119
+#: connsharing.py:74
 msgid "D-Bus Error"
 msgstr "D-Bus-Fehler"
 
-#: connsharing.py:123
+#: connsharing.py:78
 msgid "COMAR Error"
 msgstr "COMAR-Fehler"
 
-#: connsharing.py:127
+#: connsharing.py:82
 msgid "Changing States of Interfaces Failed"
 msgstr "Zustandsänderungen von Schnittstellen ist fehlgeschlagen"
 
-#: connsharing.py:129
+#: connsharing.py:84
 msgid "DHCP Server Error"
 msgstr "DHCP-Serverfehler:"
 
-#: connsharing.py:156
+#: connsharing.py:111
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
-msgstr "Die ausgewählte Schnittstelle muss unterschiedlich sein, um die Internetverbindung freizugeben"
+msgstr ""
+"Die ausgewählte Schnittstelle muss unterschiedlich sein, um die "
+"Internetverbindung freizugeben"
 
-#: connsharing.py:156
+#: connsharing.py:111
 msgid "Check Selected Interfaces"
 msgstr "Gewählte Schnittstellen überprüfen"
 
-#: connsharing.py:166
+#: connsharing.py:121
 msgid "The sharing of your connection has been successfully done."
 msgstr "Die Freigabe Ihrer Verbindung ist erfolgreich fertiggestellt worden."
 
-#: connsharing.py:166
+#: connsharing.py:121
 msgid "Sharing is OK"
 msgstr "Freigabe ist OK"
 
-#: connsharing.py:267
+#: connsharing.py:222
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr "Sie haben für die Schnittstelle, die die Internetverbindung herstellt, keine IP-Adresse"
+msgstr ""
+"Sie haben für die Schnittstelle, die die Internetverbindung herstellt, keine "
+"IP-Adresse"
 
-#: connsharing.py:267
+#: connsharing.py:222
 msgid "IP address not found"
 msgstr "IP-Adresse nicht gefunden"
 
@@ -411,6 +414,10 @@ msgstr "Verbindungsaufbau zu <b>%s</b> ..."
 #: browser.py:52
 msgid "Name:"
 msgstr "Name:"
+
+#: browser.py:62
+msgid "Address:"
+msgstr "Adresse:"
 
 #: browser.py:72
 msgid "Mod:"
@@ -467,3 +474,34 @@ msgstr "Versuchen automatisch zu verbinden"
 msgid "Network manager module is already started!"
 msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
 
+#, fuzzy
+#~ msgid "Name Server"
+#~ msgstr "Name-Server"
+
+#, fuzzy
+#~ msgid "Name :"
+#~ msgstr "Name:"
+
+#~ msgid "Computer"
+#~ msgstr "Computer"
+
+#~ msgid "Connection name:"
+#~ msgstr "Verbindungsname:"
+
+#~ msgid "Device Mode"
+#~ msgstr "Geräte-Modus:"
+
+#~ msgid "Mode:"
+#~ msgstr "Modus:"
+
+#~ msgid "Scan"
+#~ msgstr "Suchen"
+
+#~ msgid "Security:"
+#~ msgstr "Sicherheit:"
+
+#~ msgid "Authentication:"
+#~ msgstr "Authentifizierung:"
+
+#~ msgid "Network settings"
+#~ msgstr "Netzwerkeinstellungen"
