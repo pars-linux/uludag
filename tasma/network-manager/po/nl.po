@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-10 13:08+0300\n"
+"POT-Creation-Date: 2008-10-30 01:43+0200\n"
 "PO-Revision-Date: 2008-09-10 20:22+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Kan niet verbinden met COMAR! Als het niet actief is, dient u het moeten "
 "starten met het commando 'service comar start' in de root console."
 
-#: comariface.py:408
+#: comariface.py:410
 msgid "new connection"
 msgstr "nieuwe verbinding"
 
@@ -108,287 +108,285 @@ msgstr "Nieuwe verbinding"
 msgid "Network Applet"
 msgstr "Netwerk-applet"
 
-#: nameconf.py:28 browser.py:412
+#: nameconf.py:45 browser.py:412
 msgid "Name Service Settings"
 msgstr "Naam dienst instellingen"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Computer"
-
-#: nameconf.py:41
+#: nameconf.py:46
 msgid "Host name:"
 msgstr "Hostnaam:"
 
 # naamservers
-#: nameconf.py:45 connection.py:530
+#: nameconf.py:47
 msgid "Name servers"
 msgstr "Naamservers"
 
-#: nameconf.py:56
+#: nameconf.py:50
 msgid "Up"
 msgstr "Omhoog"
 
-#: nameconf.py:59
+#: nameconf.py:52
 msgid "Down"
 msgstr "Omlaag"
 
 # infinitief vertalen:
 # Naamserver toevoegen
-#: nameconf.py:171
+#: nameconf.py:146
 msgid "Add Name Server"
 msgstr "Voeg naamserver toe"
 
-#: nameconf.py:172
+#: nameconf.py:147
 msgid "Name server:"
 msgstr "Naamserver:"
 
-#: newconn.py:26
+#: newconn.py:53
 msgid "Create a new connection"
 msgstr "Nieuwe verbinding maken"
 
-#: newconn.py:31
+#: newconn.py:54
 msgid "Select device:"
 msgstr "Kies apparaat:"
 
-#: newconn.py:58
+#: newconn.py:56
 msgid "Create"
 msgstr "Maak"
 
-#: newconn.py:112
+#: newconn.py:102
 msgid "No suitable device found"
 msgstr "Geen geschikt apparaat gevonden"
 
-#: newconn.py:120
+#: newconn.py:110
 msgid "Install network packages!"
 msgstr "Installeer netwerkpakketten!"
 
 # koppelteken vergeten:
 # Comar-netwerkscripts
-#: newconn.py:121
+#: newconn.py:111
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Geen pakket met COMAR netwerkscripts is geïnstalleerd."
 
-#: connection.py:28
+#: connection.py:30
 msgid "Channel"
 msgstr "Kanaal"
 
-#: connection.py:29
+#: connection.py:31 connection.py:303
 msgid "Mode"
 msgstr "Modus"
 
-#: connection.py:30
+#: connection.py:32
 msgid "Protocol"
 msgstr "Protocol"
 
-#: connection.py:42
+#: connection.py:44
 msgid "No remotes found"
 msgstr "Geen contacten gevonden"
 
-#: connection.py:62
+#: connection.py:64
 msgid "<hidden>"
 msgstr "<verborgen>"
 
-#: connection.py:100
+#: connection.py:102
 msgid "Scan results:"
 msgstr "Scan resultaten:"
 
-#: connection.py:119
+#: connection.py:121
 msgid "Scan again"
 msgstr "Scan opnieuw"
 
-#: connection.py:121
+#: connection.py:124
 msgid "Use"
 msgstr "Gebruik"
 
-#: connection.py:199
-msgid "Connection name:"
-msgstr "Naam verbinding:"
-
-#: connection.py:206
-msgid "Connection"
-msgstr "Verbinding"
-
-#: connection.py:212
-msgid "Device:"
-msgstr "Apparaat:"
-
-#: connection.py:218
-msgid "Select"
-msgstr "Selecteer"
-
-#: connection.py:226
-msgid "Device Mode"
-msgstr "Apparaat modus"
-
-#: connection.py:232
-msgid "Mode:"
-msgstr "Modus:"
-
-#: connection.py:250
-msgid "Scan"
-msgstr "Scan"
-
-#: connection.py:266 browser.py:59
-msgid "Authentication"
-msgstr "Identificatie"
-
-#: connection.py:274
-msgid "Security:"
-msgstr "Beveiliging:"
-
-#: connection.py:276
+#: connection.py:231
 msgid "No authentication"
 msgstr "Geen identificatie"
 
+#: connection.py:275
+msgid "Connection"
+msgstr "Verbinding"
+
+#: connection.py:276
+msgid "Address Settings"
+msgstr ""
+
+#: connection.py:277
+#, fuzzy
+msgid "Name Server Settings"
+msgstr "Naam dienst instellingen"
+
+#: connection.py:278
+#, fuzzy
+msgid "Name"
+msgstr "Naam:"
+
+#: connection.py:279
+#, fuzzy
+msgid "Device"
+msgstr "Apparaat:"
+
 #: connection.py:280
-msgid "Authentication:"
-msgstr "Autorisatie:"
+msgid "Select"
+msgstr "Selecteer"
 
-#: connection.py:285
-msgid "Inner Authentication:"
-msgstr "Binnen autorisatie:"
-
-#: connection.py:296
-msgid "Anonymous Identity:"
-msgstr "Anonieme identiteit:"
-
-#: connection.py:301
-msgid "User/Identity"
-msgstr "Gebruiker/identiteit"
-
-#: connection.py:306
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: connection.py:312
-msgid "Client Certificate:"
-msgstr "Cliënt certificaat:"
-
-#: connection.py:313 connection.py:318 connection.py:323
-msgid "browse"
-msgstr "Blader"
-
-#: connection.py:317
-msgid "CA Certificate:"
-msgstr "CA certificaat:"
-
-#: connection.py:322
-msgid "Private Key File:"
-msgstr "Privé sleutelbestand:"
-
-#: connection.py:327
-msgid "Private Key Password:"
-msgstr "Privé sleutelwachtwoord:"
-
-#: connection.py:360 connection.py:366 connection.py:372
-msgid "*|Certificates"
-msgstr "*|Certificaten"
-
-#: connection.py:360
-msgid "Select CA Certificate File"
-msgstr "Selecteer CA certificaat bestand"
-
-#: connection.py:366
-msgid "Select Client Certificate File"
-msgstr "Selecteer cliënt certificaat bestand"
-
-#: connection.py:372
-msgid "Select Private Key File"
-msgstr "Selecteer privé sleutelbestand"
-
-#: connection.py:479
-msgid "Network settings"
-msgstr "Netwerkinstellingen"
-
-#: connection.py:489
+#: connection.py:282
 msgid "Automatic query (DHCP)"
 msgstr "Automatische aanvraag (DHCP)"
 
-#: connection.py:494
+#: connection.py:283
 msgid "Manual"
 msgstr "Handmatig"
 
-#: connection.py:498 browser.py:62
-msgid "Address:"
+#: connection.py:284
+#, fuzzy
+msgid "Address :"
 msgstr "Adres:"
 
-#: connection.py:505 connection.py:526 connection.py:541
+#: connection.py:285 connection.py:288 connection.py:291
 msgid "Custom"
 msgstr "Eigen"
 
-#: connection.py:510
-msgid "Net mask:"
+#: connection.py:286
+#, fuzzy
+msgid "Net mask :"
 msgstr "Netmasker:"
 
-#: connection.py:521
-msgid "Gateway:"
+#: connection.py:287
+#, fuzzy
+msgid "Gateway :"
 msgstr "Poort:"
 
-#: connection.py:539 browser.py:65
+#: connection.py:290 browser.py:65
 msgid "Automatic"
 msgstr "Automatisch"
 
+#: connection.py:293
+#, fuzzy
+msgid "Private Key File :"
+msgstr "Privé sleutelbestand:"
+
+#: connection.py:294
+#, fuzzy
+msgid "Private Key Password :"
+msgstr "Privé sleutelwachtwoord:"
+
+#: connection.py:295
+#, fuzzy
+msgid "CA Certificate :"
+msgstr "CA certificaat:"
+
+#: connection.py:296
+#, fuzzy
+msgid "Client Certificate :"
+msgstr "Cliënt certificaat:"
+
+#: connection.py:297
+#, fuzzy
+msgid "Password :"
+msgstr "Wachtwoord:"
+
+#: connection.py:298
+#, fuzzy
+msgid "User/Identity :"
+msgstr "Gebruiker/identiteit"
+
+#: connection.py:299
+#, fuzzy
+msgid "Anonymous User :"
+msgstr "Anonieme identiteit:"
+
+#: connection.py:300
+#, fuzzy
+msgid "Inner Authentication"
+msgstr "Binnen autorisatie:"
+
+#: connection.py:301 browser.py:59
+msgid "Authentication"
+msgstr "Identificatie"
+
+#: connection.py:302
+msgid "Key Type"
+msgstr ""
+
+#: connection.py:304 connection.py:306 connection.py:308
+msgid "browse"
+msgstr "Blader"
+
+#: connection.py:316 connection.py:322 connection.py:328
+msgid "*|Certificates"
+msgstr "*|Certificaten"
+
+#: connection.py:316
+msgid "Select CA Certificate File"
+msgstr "Selecteer CA certificaat bestand"
+
+#: connection.py:322
+msgid "Select Client Certificate File"
+msgstr "Selecteer cliënt certificaat bestand"
+
+#: connection.py:328
+msgid "Select Private Key File"
+msgstr "Selecteer privé sleutelbestand"
+
 # infinitief vertalen: netwerkverbinding configureren
-#: connection.py:810
+#: connection.py:719
 msgid "Configure network connection"
 msgstr "Configureer netwerkverbinding"
 
-#: connsharing.py:99
+#: connsharing.py:54
 msgid "Internet Connection Sharing"
 msgstr "Internetverbinding delen"
 
-#: connsharing.py:100
+#: connsharing.py:55
 msgid "Share Internet Connection"
 msgstr "Deel internetverbinding"
 
-#: connsharing.py:102
+#: connsharing.py:56
 msgid "Interface that goes to internet"
 msgstr "Interface die op internet gaat"
 
-#: connsharing.py:103
+#: connsharing.py:57
 msgid "Interface that will share connection"
 msgstr "Interface welk verbinding deelt"
 
-#: connsharing.py:119
+#: connsharing.py:74
 msgid "D-Bus Error"
 msgstr "D-Bus error"
 
-#: connsharing.py:123
+#: connsharing.py:78
 msgid "COMAR Error"
 msgstr "COMAR fout"
 
-#: connsharing.py:127
+#: connsharing.py:82
 msgid "Changing States of Interfaces Failed"
 msgstr "Veranderende statussen van interface mislukt"
 
-#: connsharing.py:129
+#: connsharing.py:84
 msgid "DHCP Server Error"
 msgstr ""
 
-#: connsharing.py:156
+#: connsharing.py:111
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
 msgstr ""
 
-#: connsharing.py:156
+#: connsharing.py:111
 msgid "Check Selected Interfaces"
 msgstr ""
 
-#: connsharing.py:166
+#: connsharing.py:121
 msgid "The sharing of your connection has been successfully done."
 msgstr ""
 
-#: connsharing.py:166
+#: connsharing.py:121
 msgid "Sharing is OK"
 msgstr ""
 
-#: connsharing.py:267
+#: connsharing.py:222
 msgid "You do not have an ip address for the interface that goes to internet"
 msgstr ""
 
-#: connsharing.py:267
+#: connsharing.py:222
 msgid "IP address not found"
 msgstr "IP adres niet gevonden"
 
@@ -417,6 +415,10 @@ msgstr "Verbinding maken met <b>%s</b> ..."
 #: browser.py:52
 msgid "Name:"
 msgstr "Naam:"
+
+#: browser.py:62
+msgid "Address:"
+msgstr "Adres:"
 
 #: browser.py:72
 msgid "Mod:"
@@ -478,3 +480,35 @@ msgstr "Probeer automatisch te verbinden"
 msgid "Network manager module is already started!"
 msgstr "Netwerkbeheer module is al opgestart!"
 
+# naamservers
+#, fuzzy
+#~ msgid "Name Server"
+#~ msgstr "Naamservers"
+
+#, fuzzy
+#~ msgid "Name :"
+#~ msgstr "Naam:"
+
+#~ msgid "Computer"
+#~ msgstr "Computer"
+
+#~ msgid "Connection name:"
+#~ msgstr "Naam verbinding:"
+
+#~ msgid "Device Mode"
+#~ msgstr "Apparaat modus"
+
+#~ msgid "Mode:"
+#~ msgstr "Modus:"
+
+#~ msgid "Scan"
+#~ msgstr "Scan"
+
+#~ msgid "Security:"
+#~ msgstr "Beveiliging:"
+
+#~ msgid "Authentication:"
+#~ msgstr "Autorisatie:"
+
+#~ msgid "Network settings"
+#~ msgstr "Netwerkinstellingen"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-10 13:08+0300\n"
+"POT-Creation-Date: 2008-10-30 01:43+0200\n"
 "PO-Revision-Date: 2008-09-10 16:31+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -33,7 +33,8 @@ msgstr "Väntar på D-Bus..."
 
 #: comariface.py:224 network-applet.py:176
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
+msgstr ""
+"Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
 
 #: comariface.py:240 network-applet.py:192
 msgid ""
@@ -43,7 +44,7 @@ msgstr ""
 "Kan inte ansluta till D-Bus! Om den inte körs bör du starta den med "
 "kommandot 'service dbus start' som root."
 
-#: comariface.py:408
+#: comariface.py:410
 msgid "new connection"
 msgstr "ny anslutning"
 
@@ -103,281 +104,280 @@ msgstr "Ny anslutning"
 msgid "Network Applet"
 msgstr "Nätverksminiprogram"
 
-#: nameconf.py:28 browser.py:412
+#: nameconf.py:45 browser.py:412
 msgid "Name Service Settings"
 msgstr "Namninställningar"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Dator"
-
-#: nameconf.py:41
+#: nameconf.py:46
 msgid "Host name:"
 msgstr "Värddatornamn:"
 
-#: nameconf.py:45 connection.py:530
+#: nameconf.py:47
 msgid "Name servers"
 msgstr "Namnservrar"
 
-#: nameconf.py:56
+#: nameconf.py:50
 msgid "Up"
 msgstr "Upp"
 
-#: nameconf.py:59
+#: nameconf.py:52
 msgid "Down"
 msgstr "Ner"
 
-#: nameconf.py:171
+#: nameconf.py:146
 msgid "Add Name Server"
 msgstr "Lägg till namnserver"
 
-#: nameconf.py:172
+#: nameconf.py:147
 msgid "Name server:"
 msgstr "Namnserver:"
 
-#: newconn.py:26
+#: newconn.py:53
 msgid "Create a new connection"
 msgstr "Skapa ny anslutning"
 
-#: newconn.py:31
+#: newconn.py:54
 msgid "Select device:"
 msgstr "Välj enhet:"
 
-#: newconn.py:58
+#: newconn.py:56
 msgid "Create"
 msgstr "Skapa"
 
-#: newconn.py:112
+#: newconn.py:102
 msgid "No suitable device found"
 msgstr "Ingen passande enhet funnen"
 
-#: newconn.py:120
+#: newconn.py:110
 msgid "Install network packages!"
 msgstr "Installera nätverkspaket!"
 
-#: newconn.py:121
+#: newconn.py:111
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Inga paket med COMAR nätverksskript är installerade."
 
-#: connection.py:28
+#: connection.py:30
 msgid "Channel"
 msgstr "Kanal"
 
-#: connection.py:29
+#: connection.py:31 connection.py:303
 msgid "Mode"
 msgstr "Läge"
 
-#: connection.py:30
+#: connection.py:32
 msgid "Protocol"
 msgstr "Protokoll"
 
-#: connection.py:42
+#: connection.py:44
 msgid "No remotes found"
 msgstr "Inga fjärr funna"
 
-#: connection.py:62
+#: connection.py:64
 msgid "<hidden>"
 msgstr "<dold>"
 
-#: connection.py:100
+#: connection.py:102
 msgid "Scan results:"
 msgstr "Skanningsresultat:"
 
-#: connection.py:119
+#: connection.py:121
 msgid "Scan again"
 msgstr "Skanna igen"
 
-#: connection.py:121
+#: connection.py:124
 msgid "Use"
 msgstr "Använd"
 
-#: connection.py:199
-msgid "Connection name:"
-msgstr "Anslutningens namn:"
-
-#: connection.py:206
-msgid "Connection"
-msgstr "Anslutning"
-
-#: connection.py:212
-msgid "Device:"
-msgstr "Enhet:"
-
-#: connection.py:218
-msgid "Select"
-msgstr "Välj"
-
-#: connection.py:226
-msgid "Device Mode"
-msgstr "Enhetsläge"
-
-#: connection.py:232
-msgid "Mode:"
-msgstr "Läge:"
-
-#: connection.py:250
-msgid "Scan"
-msgstr "Skanna"
-
-#: connection.py:266 browser.py:59
-msgid "Authentication"
-msgstr "Autentisering"
-
-#: connection.py:274
-msgid "Security:"
-msgstr "Säkerhet:"
-
-#: connection.py:276
+#: connection.py:231
 msgid "No authentication"
 msgstr "Ingen autentisering"
 
+#: connection.py:275
+msgid "Connection"
+msgstr "Anslutning"
+
+#: connection.py:276
+msgid "Address Settings"
+msgstr ""
+
+#: connection.py:277
+#, fuzzy
+msgid "Name Server Settings"
+msgstr "Namninställningar"
+
+#: connection.py:278
+#, fuzzy
+msgid "Name"
+msgstr "Namn:"
+
+#: connection.py:279
+#, fuzzy
+msgid "Device"
+msgstr "Enhet:"
+
 #: connection.py:280
-msgid "Authentication:"
-msgstr "Autentisering:"
+msgid "Select"
+msgstr "Välj"
 
-#: connection.py:285
-msgid "Inner Authentication:"
-msgstr "Inre autentisering"
-
-#: connection.py:296
-msgid "Anonymous Identity:"
-msgstr "Anonym identitet"
-
-#: connection.py:301
-msgid "User/Identity"
-msgstr "Användare/identitet"
-
-#: connection.py:306
-msgid "Password:"
-msgstr "Lösenord:"
-
-#: connection.py:312
-msgid "Client Certificate:"
-msgstr "Klientcertifikat:"
-
-#: connection.py:313 connection.py:318 connection.py:323
-msgid "browse"
-msgstr "bläddra"
-
-#: connection.py:317
-msgid "CA Certificate:"
-msgstr "CA-certifikat:"
-
-#: connection.py:322
-msgid "Private Key File:"
-msgstr "Privat nyckelfil:"
-
-#: connection.py:327
-msgid "Private Key Password:"
-msgstr "Privat lösenordsnyckel:"
-
-#: connection.py:360 connection.py:366 connection.py:372
-msgid "*|Certificates"
-msgstr "*|Certifikat"
-
-#: connection.py:360
-msgid "Select CA Certificate File"
-msgstr "Välj CA-certifikatsfil"
-
-#: connection.py:366
-msgid "Select Client Certificate File"
-msgstr "Välj klientcertifikatfil"
-
-#: connection.py:372
-msgid "Select Private Key File"
-msgstr "Välj privat nyckelfil"
-
-#: connection.py:479
-msgid "Network settings"
-msgstr "Nätverksinställningar"
-
-#: connection.py:489
+#: connection.py:282
 msgid "Automatic query (DHCP)"
 msgstr "Automatisk förfrågan (DHCP)"
 
-#: connection.py:494
+#: connection.py:283
 msgid "Manual"
 msgstr "Manuell"
 
-#: connection.py:498 browser.py:62
-msgid "Address:"
+#: connection.py:284
+#, fuzzy
+msgid "Address :"
 msgstr "Adress:"
 
-#: connection.py:505 connection.py:526 connection.py:541
+#: connection.py:285 connection.py:288 connection.py:291
 msgid "Custom"
 msgstr "Anpassad"
 
-#: connection.py:510
-msgid "Net mask:"
+#: connection.py:286
+#, fuzzy
+msgid "Net mask :"
 msgstr "Nätmask:"
 
-#: connection.py:521
-msgid "Gateway:"
+#: connection.py:287
+#, fuzzy
+msgid "Gateway :"
 msgstr "Förmedlingsnod:"
 
-#: connection.py:539 browser.py:65
+#: connection.py:290 browser.py:65
 msgid "Automatic"
 msgstr "Automatisk"
 
-#: connection.py:810
+#: connection.py:293
+#, fuzzy
+msgid "Private Key File :"
+msgstr "Privat nyckelfil:"
+
+#: connection.py:294
+#, fuzzy
+msgid "Private Key Password :"
+msgstr "Privat lösenordsnyckel:"
+
+#: connection.py:295
+#, fuzzy
+msgid "CA Certificate :"
+msgstr "CA-certifikat:"
+
+#: connection.py:296
+#, fuzzy
+msgid "Client Certificate :"
+msgstr "Klientcertifikat:"
+
+#: connection.py:297
+#, fuzzy
+msgid "Password :"
+msgstr "Lösenord:"
+
+#: connection.py:298
+#, fuzzy
+msgid "User/Identity :"
+msgstr "Användare/identitet"
+
+#: connection.py:299
+#, fuzzy
+msgid "Anonymous User :"
+msgstr "Anonym identitet"
+
+#: connection.py:300
+#, fuzzy
+msgid "Inner Authentication"
+msgstr "Inre autentisering"
+
+#: connection.py:301 browser.py:59
+msgid "Authentication"
+msgstr "Autentisering"
+
+#: connection.py:302
+msgid "Key Type"
+msgstr ""
+
+#: connection.py:304 connection.py:306 connection.py:308
+msgid "browse"
+msgstr "bläddra"
+
+#: connection.py:316 connection.py:322 connection.py:328
+msgid "*|Certificates"
+msgstr "*|Certifikat"
+
+#: connection.py:316
+msgid "Select CA Certificate File"
+msgstr "Välj CA-certifikatsfil"
+
+#: connection.py:322
+msgid "Select Client Certificate File"
+msgstr "Välj klientcertifikatfil"
+
+#: connection.py:328
+msgid "Select Private Key File"
+msgstr "Välj privat nyckelfil"
+
+#: connection.py:719
 msgid "Configure network connection"
 msgstr "Anpasa nätverksanslutning"
 
-#: connsharing.py:99
+#: connsharing.py:54
 msgid "Internet Connection Sharing"
 msgstr "Internetanslutningsdelning"
 
-#: connsharing.py:100
+#: connsharing.py:55
 msgid "Share Internet Connection"
 msgstr "Dela Internetanslutning"
 
-#: connsharing.py:102
+#: connsharing.py:56
 msgid "Interface that goes to internet"
 msgstr "Gränssnitt till Internet"
 
-#: connsharing.py:103
+#: connsharing.py:57
 msgid "Interface that will share connection"
 msgstr "Gränssnitt som kommer att dela anslutning"
 
-#: connsharing.py:119
+#: connsharing.py:74
 msgid "D-Bus Error"
 msgstr "D-Bus-fel"
 
-#: connsharing.py:123
+#: connsharing.py:78
 msgid "COMAR Error"
 msgstr "COMAR-fel"
 
-#: connsharing.py:127
+#: connsharing.py:82
 msgid "Changing States of Interfaces Failed"
 msgstr "Ändring av gränssnittets tillstånd misslyckades"
 
-#: connsharing.py:129
+#: connsharing.py:84
 msgid "DHCP Server Error"
 msgstr "DHCP-serverfel"
 
-#: connsharing.py:156
+#: connsharing.py:111
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
 msgstr "Du måste välja ett annat gränssnitt för att dela Internetanslutning"
 
-#: connsharing.py:156
+#: connsharing.py:111
 msgid "Check Selected Interfaces"
 msgstr "Kontrollera valda gränssnitt"
 
-#: connsharing.py:166
+#: connsharing.py:121
 msgid "The sharing of your connection has been successfully done."
 msgstr "Anslutningsdelningen utfördes med lyckat resultat."
 
-#: connsharing.py:166
+#: connsharing.py:121
 msgid "Sharing is OK"
 msgstr "Delning är ok"
 
-#: connsharing.py:267
+#: connsharing.py:222
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr "Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
+msgstr ""
+"Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
 
-#: connsharing.py:267
+#: connsharing.py:222
 msgid "IP address not found"
 msgstr "Kunde inte hitta IP-adress"
 
@@ -406,6 +406,10 @@ msgstr "Ansluter till <b>%s</b> ..."
 #: browser.py:52
 msgid "Name:"
 msgstr "Namn:"
+
+#: browser.py:62
+msgid "Address:"
+msgstr "Adress:"
 
 #: browser.py:72
 msgid "Mod:"
@@ -461,3 +465,34 @@ msgstr "Försök ansluta automatiskt"
 msgid "Network manager module is already started!"
 msgstr "Nätverkshanteraren körs redan!"
 
+#, fuzzy
+#~ msgid "Name Server"
+#~ msgstr "Namnservrar"
+
+#, fuzzy
+#~ msgid "Name :"
+#~ msgstr "Namn:"
+
+#~ msgid "Computer"
+#~ msgstr "Dator"
+
+#~ msgid "Connection name:"
+#~ msgstr "Anslutningens namn:"
+
+#~ msgid "Device Mode"
+#~ msgstr "Enhetsläge"
+
+#~ msgid "Mode:"
+#~ msgstr "Läge:"
+
+#~ msgid "Scan"
+#~ msgstr "Skanna"
+
+#~ msgid "Security:"
+#~ msgstr "Säkerhet:"
+
+#~ msgid "Authentication:"
+#~ msgstr "Autentisering:"
+
+#~ msgid "Network settings"
+#~ msgstr "Nätverksinställningar"
