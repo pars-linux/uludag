@@ -41,7 +41,7 @@ class connShare(ConnSharing):
         self.profiles = []
         self.intcombo.clear()
         self.sharecombo.clear()
-        for hash, profile in comlink.connections.iteritems():
+        for myhash, profile in comlink.connections.iteritems():
             if profile  in self.profiles:
                 continue
             if profile.script != "net_tools" and profile.script != "wireless_tools":
@@ -72,7 +72,8 @@ class connShare(ConnSharing):
 
     def busError(self, exception):
         KMessageBox.error(self, str(exception), i18n("D-Bus Error"))
-        self.setupBusses()
+        # where is setupBusses ?
+        # self.setupBusses()
 
     def comarError(self, exception):
         KMessageBox.error(self, str(exception), i18n("COMAR Error"))
@@ -271,21 +272,4 @@ class connShare(ConnSharing):
             self.groupBox1.setEnabled(True)
             self.applyBut.setEnabled(True)
 
-
-if __name__ == "__main__":
-
-    """ do we need this ? without dbus mainloop this is useless i guess """
-
-    appname     = ""
-    description = ""
-    version     = ""
-
-    KCmdLineArgs.init(sys.argv, appname, description, version)
-    a = KApplication()
-
-    QObject.connect(a, SIGNAL("lastWindowClosed()"), a, SLOT("quit()"))
-    w = connShare(None)
-    a.setMainWidget(w)
-    w.show()
-    a.exec_loop()
 
