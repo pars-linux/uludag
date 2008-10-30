@@ -45,27 +45,27 @@ class autoSwitch:
         # Get wireless devices & profiles
         devices = []
         profiles = []
-        for hash, conn in self.comlink.connections.iteritems():
+        for myhash, conn in self.comlink.connections.iteritems():
             if conn.script == 'wireless_tools':
                 if conn.devid not in devices:
                     devices.append(conn.devid)
                 profiles.append(conn)
-        
+
         # If there is no wi-fi device, go on
         if not profiles or not devices:
             return
-        
+
         # If already connected, go on
         for profile in profiles:
             if profile.state == "up":
                 return
-        
+
         self.notify(i18n("Scanning..."), SUCCESS)
-        
+
         # Get current APs
         justEssIds = []
         justMacAddr = []
-        
+
         def handler(remotes):
             if remotes:
                 for remote in remotes:
@@ -88,12 +88,12 @@ class autoSwitch:
                     self.notify(i18n("There is no matched profile"),FAIL)
             else:
                 self.notify(i18n("No scan result"),FAIL)
-        
+
         for dev in devices:
             ch = self.comlink.callHandler("wireless_tools", "Net.Link", "scanRemote", "tr.org.pardus.comar.net.link.get")
             ch.registerDone(handler)
             ch.call(dev)
-    
+
     def connect(self, profile, force=False):
         profileName = profile.name
         if not profile.state.startswith('up') or force:
@@ -101,3 +101,4 @@ class autoSwitch:
             self.notify(m % profileName)
             ch = self.comlink.callHandler("wireless_tools", "Net.Link", "setState", "tr.org.pardus.comar.net.link.setstate")
             ch.call(profileName, "up")
+
