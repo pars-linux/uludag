@@ -289,7 +289,7 @@ class Settings(SettingsWindow):
         self.dns1.setText(i18n("Default"))
         self.dns2.setText(i18n("Automatic"))
         self.dns3.setText(i18n("Custom"))
-        self.security_mode_label.setText("Security"))
+        self.security_mode_label.setText(i18n("Security"))
         self.auth_private_key_label.setText(i18n("Private Key File :"))
         self.auth_private_key_pass_label.setText(i18n("Private Key Password :"))
         self.auth_ca_cert_label.setText(i18n("CA Certificate :"))
