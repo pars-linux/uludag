@@ -13,7 +13,6 @@ from qt import *
 from kdecore import *
 
 import connection
-import widgets
 from icons import icons, getIconSet
 from comariface import comlink
 

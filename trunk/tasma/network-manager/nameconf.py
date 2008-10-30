@@ -12,7 +12,6 @@
 from qt import *
 from kdecore import *
 from kdeui import *
-import widgets
 
 from icons import getIconSet
 from comariface import comlink
