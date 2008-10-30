@@ -7,8 +7,6 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-
-import sys
 from qt import *
 from kdecore import *
 from kdeui import *

@@ -10,45 +10,11 @@
 #
 
 import os
-import locale
 from qt import *
 from kdecore import *
 from khtml import *
 
 from icons import getIconSet
-
-
-class Edit(QHBox):
-    def __init__(self, parent, is_password=False):
-        QHBox.__init__(self, parent)
-        
-        self.edit = QLineEdit(self)
-        self.setStretchFactor(self.edit, 3)
-        if is_password:
-            self.edit.setEchoMode(QLineEdit.Password)
-        
-        self.layout().insertStretch(-1, 2)
-
-
-class HLine(QHBox):
-    def __init__(self, title, parent, pixmap=None):
-        QHBox.__init__(self, parent)
-        self.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
-        self.setSpacing(6)
-        
-        line = QFrame(self)
-        line.setFrameStyle(line.HLine | line.Sunken)
-        line.setFixedWidth(24)
-        
-        if pixmap:
-            gfx = QLabel(self)
-            gfx.setPixmap(getIconSet(pixmap).pixmap(QIconSet.Small, QIconSet.Normal))
-        text = QLabel(unicode(title), self)
-        
-        line = QFrame(self)
-        line.setFrameStyle(line.HLine | line.Sunken)
-        self.setStretchFactor(line, 8)
-
 
 class HelpDialog(QDialog):
     def __init__(self, name, title, parent=None):
@@ -58,7 +24,7 @@ class HelpDialog(QDialog):
         self.htmlPart = KHTMLPart(self)
         self.resize(500, 600)
         self.layout.addWidget(self.htmlPart.view(), 1, 1)
-        
+
         lang = str(KGlobal().locale().language())
         if "_" in lang:
             lang = lang.split("_", 1)[0]
@@ -70,3 +36,4 @@ class HelpDialog(QDialog):
 
     def closeEvent(self, event):
         QDialog.closeEvent(self, event)
+
