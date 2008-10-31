@@ -38,7 +38,7 @@ class Ui_moduleManagerDlg(object):
 
 
         self.lblSearch = QtGui.QLabel(moduleManagerDlg)
-        self.lblSearch.setGeometry(QtCore.QRect(9,9,28,28))
+        self.lblSearch.setGeometry(QtCore.QRect(9,9,40,28))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lblSearch.setFont(font)
@@ -46,7 +46,7 @@ class Ui_moduleManagerDlg(object):
         self.lblSearch.setWordWrap(True)
         self.lblSearch.setObjectName("lblSearch")
         self.editSearch = QtGui.QLineEdit(moduleManagerDlg)
-        self.editSearch.setGeometry(QtCore.QRect(47,8,270,28))
+        self.editSearch.setGeometry(QtCore.QRect(59,8,263,28))
         self.editSearch.setMaximumSize(QtCore.QSize(16777215,28))
         self.editSearch.setObjectName("editSearch")
         self.editSearch.setFocus()
@@ -75,7 +75,7 @@ class Ui_moduleManagerDlg(object):
 
     def retranslateUi(self, moduleManagerDlg):
         moduleManagerDlg.setWindowTitle(QtGui.QApplication.translate("moduleManagerDlg", "Kernel Module Manager", None, QtGui.QApplication.UnicodeUTF8))
-        self.lblSearch.setText(QtGui.QApplication.translate("moduleManagerDlg", "Ara: ", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblSearch.setText(QtGui.QApplication.translate("moduleManagerDlg", "Search", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("moduleManagerDlg", "Currently loaded modules", None, QtGui.QApplication.UnicodeUTF8))
         self.btnNewModule.setText(QtGui.QApplication.translate("moduleManagerDlg", "Module Settings", None, QtGui.QApplication.UnicodeUTF8))
 
