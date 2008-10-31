@@ -42,7 +42,12 @@ def buildPackages():
     f.close()
 
     # Unpickle and load ISO package list here
-    isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
+    try:
+        isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
+    except:
+        logger.error("You have to put packages.db in data/ for delta generation.")
+        os.unlink("/var/run/buildfarm")
+        sys.exit(1)
 
     logger.raw("QUEUE")
     logger.info("*** Work Queue: %s" % qmgr.workQueue)
