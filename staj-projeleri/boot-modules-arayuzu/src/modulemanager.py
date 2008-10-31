@@ -13,6 +13,11 @@ import dbus.mainloop.qt
 
 from handler import * 
 
+import gettext
+__trans = gettext.translation('bootmodulesgui', fallback=True)
+_ = __trans.ugettext
+
+
 class ComarLink:
 
     def __init__(self, winId):
@@ -40,18 +45,18 @@ class ComarLink:
 
     def comarError(self, exception):
         if "Access denied" in exception.message:
-            message = "You are not authorized for this operation."
+            message = _("You are not authorized for this operation.")
             QtGui.QMessageBox.warning(None, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         else:
             QtGui.QMessageBox.warning(None, "COMAR Error", str(exception), QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
 
     def cancelError(self):
-        message = "You are not authorized for this operation."
+        message = _("You are not authorized for this operation.")
         QtGui.QMessageBox.warning(None, "Error", message, QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
 
 
     def busError(self, exception):
-        QtGui.QMessageBox.warning(None, "Comar Error", "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console.", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+        QtGui.QMessageBox.warning(None, _("Comar Error"), _("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."), QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         sys.exit()
 
     def openBus(self):
@@ -59,7 +64,7 @@ class ComarLink:
             self.busSys = dbus.SystemBus()
             self.busSes = dbus.SessionBus()
         except dbus.DBusException:
-            QtGui.QMessageBox.warning(None, "Unable to connect to DBus.", "DBus Error", QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+            QtGui.QMessageBox.warning(None, _("Unable to connect to DBus."), _("DBus Error"), QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
             return False
         return True
 
@@ -100,6 +105,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def loadModule(self):
         ch = self.comarLink.callMethod("load","tr.org.pardus.comar.boot.modules.load") 
         selectedModule = str(self.listAllModules.currentItem().text())
+
         ch.call(selectedModule)
 
     def addModuleToBlacklist(self):
@@ -135,7 +141,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def populateAllModules(self):
 
         self.listAllModules.clear()
-        self.listAllModules.addItem("Loading...")
+        self.listAllModules.addItem(_("Loading..."))
 
         def handler(modules):
 
@@ -165,7 +171,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def populateAutoloadingModules(self):
 
         self.listAllModules.clear()
-        self.listAllModules.addItem("Loading...")
+        self.listAllModules.addItem(_("Loading..."))
 
         def handler(modules):
             self.listAllModules.clear()
@@ -195,7 +201,7 @@ class AvailableModulesDlg(QtGui.QDialog, Ui_availableModulesDlg):
     def populateBlacklistedModules(self):
         
         self.listAllModules.clear()
-        self.listAllModules.addItem("Loading...")
+        self.listAllModules.addItem(_("Loading..."))
 
         def handler(modules):
             self.listAllModules.clear()
@@ -250,7 +256,13 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
     def unloadModule(self):
         ch = self.comarLink.callMethod("unload","tr.org.pardus.comar.boot.modules.unload")
         selectedModule = str(self.listModules.currentItem().text())
+
+        def handler():
+            self.populateLoadedModules()
+
+        ch.registerDone(handler)
         ch.call(selectedModule)
+
     
     def addModuleToBlacklist(self):
         ch = self.comarLink.callMethod("addBlacklist","tr.org.pardus.comar.boot.modules.editblacklist") 
@@ -278,7 +290,7 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
     def populateLoadedModules(self):
 
         self.listModules.clear()
-        self.listModules.addItem("Loading...")
+        self.listModules.addItem(_("Loading..."))
 
         def handler(modules):
 
@@ -287,7 +299,7 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
             for key in modules:
                 self.loadedModules.append(key)
-            
+ 
             for i in self.loadedModules:
                 item = QtGui.QListWidgetItem(i)
                 self.listModules.addItem(item)
@@ -299,8 +311,8 @@ class ModuleManagerDlg(QtGui.QDialog, Ui_moduleManagerDlg):
 
     def on_btnNewModule_pressed(self):
         dialog = AvailableModulesDlg(self.comarLink, self)
-        if dialog.exec_():
-            pass
+        self.connect(dialog.loadAction, QtCore.SIGNAL("triggered()"), self.populateLoadedModules)
+        dialog.show()
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
