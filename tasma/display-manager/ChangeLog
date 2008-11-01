@@ -1,2 +1,8 @@
+2008-11-01 Fatih Aşıcı <fatih@pardus.org.tr>
+	* src/hwdata.py:
+		nvidia-drivers-new renamed to nvidia-drivers173.
+		Package for new nvidia cards added (nvidia-drivers177).
+
 2008-09-11 Pınar Yanardağ <pinar@pardus.org.tr>
-* CHANGELOG, INSTALL, AUTHORS, README: Update README, AUTHORS and add two new files.
+	* CHANGELOG, INSTALL, AUTHORS, README:
+		Update README, AUTHORS and add two new files.
