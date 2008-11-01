@@ -29,8 +29,10 @@ drivers = {
                     "nVIDIA kernel and glx drivers for old nVIDIA cards like TNT2",
     "nvidia/nvidia-drivers":
                     "nvidia-drivers package contains nVIDIA kernel and glx drivers giving optimized 2d/3d performance",
-    "nvidia/nvidia-drivers-new":
-                    "nVIDIA kernel and glx drivers for NV3 or better cards (Geforce FX or better)",
+    "nvidia/nvidia-drivers173":
+                    "nVIDIA kernel and glx drivers for GeForce FX cards",
+    "nvidia/nvidia-drivers177":
+                    "nVIDIA kernel and glx drivers for GeForce 6xxx and newer NVIDIA cards",
     "openchrome":   "VIA/S3G UniChrome, UniChrome Pro and Chrome9 graphics chipsets",
     "r128":         "ATI Rage128 cards, including Rage Fury, XPERT 128, and XPERT 99",
     "radeon":       "ATI Radeon cards, including Radeon Mobility and FireGL",
