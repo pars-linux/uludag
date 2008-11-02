@@ -216,7 +216,9 @@ class DBusInterface(Hook):
             message = str(exception)
 
         msg = QMessageBox(i18n("Network Manager"), message, QMessageBox.Warning, QMessageBox.Ok, QMessageBox.NoButton, QMessageBox.NoButton, self.window, "err", True)
+        msg.setTextFormat(Qt.RichText)
         msg.show()
+
 
     def errorDBus(self, exception):
         if self.dia:
