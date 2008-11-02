@@ -1,4 +1,4 @@
-# translation of es.po to Spanish
+# translation of es.po to español
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
@@ -8,14 +8,15 @@
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # Klemens Haeckel <click3d at linuxmail dot org>, 2008.
 # Klemens Häckel <click3d at linuxmail dot org>, 2008.
+# Klemens Häckel <click3d at linuxmail dot com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-30 01:43+0200\n"
-"PO-Revision-Date: 2008-09-10 18:50-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2008-11-02 09:09-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
+"Language-Team: español <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,8 +80,7 @@ msgstr "Ícono único"
 # Icono de la barra de tareas?
 #: network-applet.py:477
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
+msgstr "Iniciar ícono del network-applet en barra de tareas al iniciar sesión ?"
 
 #: network-applet.py:592
 msgid "Connecting to <b>%1</b> ..."
@@ -211,22 +211,19 @@ msgstr "Conexión"
 
 #: connection.py:276
 msgid "Address Settings"
-msgstr ""
+msgstr "Dirección IP"
 
 #: connection.py:277
-#, fuzzy
 msgid "Name Server Settings"
-msgstr "Configuración de servidores de nombres (DNS)"
+msgstr "Servidores de nombres (DNS)"
 
 #: connection.py:278
-#, fuzzy
 msgid "Name"
-msgstr "Nombre:"
+msgstr "Nombre"
 
 #: connection.py:279
-#, fuzzy
 msgid "Device"
-msgstr "Dispositivo:"
+msgstr "Dispositivo"
 
 #: connection.py:280
 msgid "Select"
@@ -241,67 +238,56 @@ msgid "Manual"
 msgstr "Manual"
 
 #: connection.py:284
-#, fuzzy
 msgid "Address :"
-msgstr "Dirección:"
+msgstr "Dirección :"
 
 #: connection.py:285 connection.py:288 connection.py:291
 msgid "Custom"
 msgstr "Personalizado"
 
 #: connection.py:286
-#, fuzzy
 msgid "Net mask :"
-msgstr "Mascara de Red:"
+msgstr "Mascara de Red :"
 
 #: connection.py:287
-#, fuzzy
 msgid "Gateway :"
-msgstr "Puerta de enlace (GW):"
+msgstr "Puerta de enlace (GW) :"
 
 #: connection.py:290 browser.py:65
 msgid "Automatic"
 msgstr "Automático"
 
 #: connection.py:293
-#, fuzzy
 msgid "Private Key File :"
-msgstr "Archivo de clave privada:"
+msgstr "Archivo de clave privada :"
 
 #: connection.py:294
-#, fuzzy
 msgid "Private Key Password :"
-msgstr "Contraseña de clave privada:"
+msgstr "Contraseña de clave privada :"
 
 #: connection.py:295
-#, fuzzy
 msgid "CA Certificate :"
-msgstr "Certificado CA:"
+msgstr "Certificado CA :"
 
 #: connection.py:296
-#, fuzzy
 msgid "Client Certificate :"
-msgstr "Certificado de cliente:"
+msgstr "Certificado de cliente :"
 
 #: connection.py:297
-#, fuzzy
 msgid "Password :"
-msgstr "Contraseña:"
+msgstr "Contraseña :"
 
 #: connection.py:298
-#, fuzzy
 msgid "User/Identity :"
-msgstr "Usuario/Identidad"
+msgstr "Usuario/Identidad :"
 
 #: connection.py:299
-#, fuzzy
 msgid "Anonymous User :"
-msgstr "Identidad anónima:"
+msgstr "Usuario anónimo :"
 
 #: connection.py:300
-#, fuzzy
 msgid "Inner Authentication"
-msgstr "Autenticación interna:"
+msgstr "Autenticación interna"
 
 #: connection.py:301 browser.py:59
 msgid "Authentication"
@@ -309,7 +295,7 @@ msgstr "Autenticación"
 
 #: connection.py:302
 msgid "Key Type"
-msgstr ""
+msgstr "Tipo de clave"
 
 # podria ser tambien explorar, buscar - navegar, depende del contexto, favor revisar
 #: connection.py:304 connection.py:306 connection.py:308
@@ -372,8 +358,7 @@ msgstr "Error de servidor DHCP"
 msgid ""
 "The interfaces that you have selected must be different to share internet "
 "connection"
-msgstr ""
-"Debe seleccionar interfaces diferentes para compartir la conexión a internet"
+msgstr "Debe seleccionar interfaces diferentes para compartir la conexión a internet"
 
 #: connsharing.py:111
 msgid "Check Selected Interfaces"
@@ -483,35 +468,3 @@ msgstr "Intentar conexión automática"
 msgid "Network manager module is already started!"
 msgstr "Módulo de administración de Red ya está iniciado!"
 
-#, fuzzy
-#~ msgid "Name Server"
-#~ msgstr "Servidores de Nombres"
-
-#, fuzzy
-#~ msgid "Name :"
-#~ msgstr "Nombre:"
-
-#~ msgid "Computer"
-#~ msgstr "Computadora"
-
-#~ msgid "Connection name:"
-#~ msgstr "Nombre de conexión:"
-
-#~ msgid "Device Mode"
-#~ msgstr "Modo Dispositivo"
-
-#~ msgid "Mode:"
-#~ msgstr "Modo:"
-
-#~ msgid "Scan"
-#~ msgstr "Buscar"
-
-#~ msgid "Security:"
-#~ msgstr "Seguridad:"
-
-#~ msgid "Authentication:"
-#~ msgstr "Autenticación:"
-
-# Settings por "Configuración"?
-#~ msgid "Network settings"
-#~ msgstr "Configuración de Red"
