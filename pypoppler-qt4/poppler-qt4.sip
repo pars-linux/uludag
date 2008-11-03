@@ -13,6 +13,8 @@
 #include <poppler/poppler-qt4.h>
 %End
 
+//Author Rajeev J Sebastian <rajeev.sebastian@gmail.com>
+
 /**
    The Poppler Qt bindings
 */
