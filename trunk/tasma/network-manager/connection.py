@@ -502,6 +502,17 @@ class Settings(SettingsWindow):
                                 self.auth_passphrase_line.setText(unicode(conn.auth_pass))
                                 self.security_mode_combo.setCurrentItem(i)
                                 self.slotSecurityToggle(i)
+                                if mode.id == "wep":
+                                    if not self.auth_key_mode_combo.currentText() == unicode(conn.keymode):
+                                        if self.auth_key_mode_combo.currentItem():
+                                            self.auth_key_mode_combo.setCurrentItem(0)
+                                        else:
+                                            self.auth_key_mode_combo.setCurrentItem(1)
+                                    if not self.auth_key_type_combo.currentText() == unicode(conn.keytype):
+                                        if self.auth_key_type_combo.currentItem():
+                                            self.auth_key_type_combo.setCurrentItem(0)
+                                        else:
+                                            self.auth_key_type_combo.setCurrentItem(1)
                             elif mode.type == "login":
                                 self.auth_user_line.setText(unicode(conn.auth_user))
                                 self.auth_passphrase_line.setText(unicode(conn.auth_pass))
@@ -593,8 +604,8 @@ class Settings(SettingsWindow):
                     mode = self.link.auth_modes[i-1]
                     if mode.type == "pass":
                         pw = unicode(self.auth_passphrase_line.text())
-                        am = self.auth_key_mode_combo.currentText()
-                        at = self.auth_key_type_combo.currentText()
+                        am = unicode(self.auth_key_mode_combo.currentText())
+                        at = unicode(self.auth_key_type_combo.currentText())
                         comlink.call(self.link.script, "Net.Link", "setAuthentication", name, mode.id, "", pw, "", "", "", "", "", "", "", am, at)
                     elif mode.type == "login":
                         u = unicode(self.auth_user_line.text())
