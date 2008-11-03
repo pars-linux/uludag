@@ -91,6 +91,8 @@ class Connection(Hook):
         self.auth_anon = None
         self.auth_auth = None
         self.auth_inner = None
+        self.keymode = "restricted"
+        self.keytype = None
         self.channel = None
         self.device_mode = "Managed"
         self.parse(data)
@@ -111,6 +113,8 @@ class Connection(Hook):
         self.dns_server = data.get("nameserver")
         self.apmac = data.get("apmac")
         self.channel = data.get("channel")
+        self.keymode = data.get("key_mode")
+        self.keytype = data.get("key_type")
         self.device_mode = data.get("device_mode", "Managed")
         state = data.get("state", "unavailable")
         if " " in state:
