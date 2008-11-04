@@ -239,6 +239,8 @@ class Settings(SettingsWindow):
             for enc in self.auth_dict:
                 self.auth_mode_combo.insertItem(enc)
 
+            self.connect(self.auth_key_type_combo, SIGNAL("activated(int)"), self.slotPasswordCheck)
+            self.connect(self.auth_passphrase_line, SIGNAL("textChanged(const QString &)"), self.slotPasswordCheck)
             self.connect(self.security_mode_combo, SIGNAL("activated(int)"), self.slotSecurityToggle)
             self.connect(self.auth_mode_combo, SIGNAL("activated(int)"), self.slotAuthToggle)
             self.connect(self.auth_ca_cert_but, SIGNAL("clicked()"), self.getCaCert)
@@ -266,6 +268,7 @@ class Settings(SettingsWindow):
             self.dnsGroupBox.hide()
 
         self.setValues()
+        self.slotPasswordCheck()
         self.parent().adjustSize()
 
         comlink.device_hook.append(self.slotDevices)
@@ -438,12 +441,31 @@ class Settings(SettingsWindow):
         self.auth_key_type_label.setShown(true)
         self.auth_key_type_combo.setShown(true)
 
+    def slotPasswordCheck(self, pword=None):
+        pword = self.auth_passphrase_line.text()
+
+        self.auth_passphrase_line.setPaletteBackgroundColor(QColor(208, 255, 192))
+
+        if pword.isEmpty():
+            self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
+        # wep
+        elif self.security_mode_combo.currentText() == "WEP":
+            # hex key
+            if self.auth_key_type_combo.currentItem():
+                if not pword.length() in [10, 26, 58]:
+                    self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
+            # ascii
+            else:
+                if not pword.length() == 5:
+                    self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
+
     def slotSecurityToggle(self, i=None):
         # security mode changed, like wep, wpa-psk ..
         if i != None:
             self.updateStack(i, self.auth_mode_combo.currentItem())
         else:
             self.updateStack(self.security_mode_combo.currentItem())
+        self.slotPasswordCheck()
 
     def slotAuthToggle(self, i):
         self.updateStack(self.security_mode_combo.currentItem(), i)

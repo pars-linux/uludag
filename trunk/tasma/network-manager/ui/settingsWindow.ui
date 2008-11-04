@@ -923,8 +923,8 @@
                                     </property>
                                     <property name="paletteBackgroundColor">
                                         <color>
-                                            <red>208</red>
-                                            <green>255</green>
+                                            <red>255</red>
+                                            <green>192</green>
                                             <blue>192</blue>
                                         </color>
                                     </property>
