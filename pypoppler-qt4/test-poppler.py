@@ -50,6 +50,7 @@ class PDFDisplay(QtGui.QWidget):
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     d = QtPoppler.Poppler.Document.load(sys.argv[1])
+    d.setRenderHint(QtPoppler.Poppler.Document.Antialiasing and QtPoppler.Poppler.Document.TextAntialiasing)
     disp = PDFDisplay(d)
     disp.show()
     sys.exit(app.exec_())
