@@ -245,7 +245,25 @@ class Document {
     
     void setPaperColor(const QColor &color);
     QColor paperColor() const;
+    enum RenderBackend {
+        SplashBackend,   ///< Splash backend
+        ArthurBackend   ///< Arthur (Qt4) backend
+    };
 
+    enum RenderHint {
+        Antialiasing = 0x00000001,      ///< Antialiasing for graphics
+        TextAntialiasing = 0x00000002   ///< Antialiasing for text
+    };
+
+//    void setRenderBackend( RenderBackend backend );
+
+//    RenderBackend renderBackend() const;
+
+//    static QSet<RenderBackend> availableRenderBackends();
+
+    void setRenderHint( RenderHint hint, bool on = true );
+
+   // RenderHints renderHints() const;
     ~Document();
   
 private:
