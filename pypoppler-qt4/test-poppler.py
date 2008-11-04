@@ -28,6 +28,10 @@ class PDFDisplay(QtGui.QWidget):
             if self.currentPage > 0:
                 self.currentPage -= 1
                 self.display()
+        elif (event.key() == QtCore.Qt.Key_F):
+            r = QtCore.QRectF()
+            print self.doc.page(self.currentPage).search(QtCore.QString("Dinamis"), r, QtPoppler.Poppler.Page.FromTop, QtPoppler.Poppler.Page.CaseSensitive)
+            print r
         elif (event.key() == QtCore.Qt.Key_Q):
             sys.exit(0)
     
