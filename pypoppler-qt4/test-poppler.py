@@ -8,14 +8,14 @@ class PDFDisplay(QtGui.QWidget):
     def __init__(self, doc):
         QtGui.QWidget.__init__(self, None)
         self.doc = doc
-        self.pixmap = None
+        self.pdfImage = None
         self.currentPage = 0
         self.display()
 
     def paintEvent(self, event):
         painter = QtGui.QPainter(self)
-        if self.pixmap is not None:
-            painter.drawPixmap(0, 0, self.pixmap)
+        if self.pdfImage is not None:
+            painter.drawImage(0, 0, self.pdfImage)
         else:
             print "No Pixmap"
 
@@ -35,8 +35,8 @@ class PDFDisplay(QtGui.QWidget):
         if self.doc is not None:
             page = self.doc.page(self.currentPage)
             if page:
-                self.pixmap = None
-                self.pixmap = page.splashRenderToPixmap()
+                self.pdfImage = None
+                self.pdfImage = page.renderToImage()
                 self.update()
                 #delete page;
         else:

@@ -10,10 +10,8 @@
 
 %ModuleHeaderCode
 #define UNSTABLE_POPPLER_QT4 1
-#include <poppler/poppler-qt4.h>
+#include <qt4/poppler-qt4.h>
 %End
-
-//Author Rajeev J Sebastian <rajeev.sebastian@gmail.com>
 
 /**
    The Poppler Qt bindings
@@ -27,7 +25,7 @@ class TextBox {
 
 %TypeHeaderCode
 #define UNSTABLE_POPPLER_QT4 1
-#include <poppler/poppler-qt4.h>
+#include <qt4/poppler-qt4.h>
 %End
 
 public:
@@ -35,16 +33,17 @@ public:
     const QString &text() const;
     const QRectF &boundingBox() const;
     Poppler::TextBox *nextWord() const;
-    double edge(int i) const;
     bool hasSpaceAfter() const;
 
+private:
+    TextBox( const Poppler::TextBox & );
 };
 
 
 class FontInfo {
 %TypeHeaderCode
 #define UNSTABLE_POPPLER_QT4 1
-#include <poppler/poppler-qt4.h>
+#include <qt4/poppler-qt4.h>
 %End
 
 
@@ -77,7 +76,7 @@ private:
 class EmbeddedFile {
 %TypeHeaderCode
 #define UNSTABLE_POPPLER_QT4 1
-#include <poppler/poppler-qt4.h>
+#include <qt4/poppler-qt4.h>
 %End
 
 public:
@@ -92,22 +91,20 @@ public:
     QByteArray data();
 private:
     EmbeddedFile();
-//     EmbeddedFile(const EmbeddedFile &ef);
+    EmbeddedFile( const Poppler::EmbeddedFile & );
 };
 
 
 class Page {
 %TypeHeaderCode
 #define UNSTABLE_POPPLER_QT4 1
-#include <poppler/poppler-qt4.h>
+#include <qt4/poppler-qt4.h>
 %End
 
 public:
     ~Page();
 
-    QImage splashRenderToImage(double xres=72.0, double yres=72.0, int x=-1, int y=-1, int w=-1, int h=-1, bool doLinks = false) const;
-    QPixmap *splashRenderToPixmap(double xres=72.0, double yres=72.0, int x=-1, int y=-1, int w=-1, int h=-1, bool doLinks = false) const;
-    void renderToPixmap(QPixmap *q, double xres=72.0, double yres=72.0) const;
+    QImage renderToImage(double xres=72.0, double yres=72.0, int x=-1, int y=-1, int w=-1, int h=-1) const;
 
     QString text(const QRectF &rect) const;
     
@@ -145,14 +142,13 @@ public:
     
 private:
     Page();
+    Page( const Poppler::Page & );
 };
-
-
 
 class Document {
 %TypeHeaderCode
 #define UNSTABLE_POPPLER_QT4 1
-#include <poppler/poppler-qt4.h>
+#include <qt4/poppler-qt4.h>
 %End
 
     public:
@@ -254,6 +250,7 @@ class Document {
   
 private:
     Document();
+    Document(const Poppler::Document &);
 };
 
     QDateTime convertDate( char *dateString );
