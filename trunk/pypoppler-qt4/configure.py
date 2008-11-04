@@ -40,9 +40,12 @@ makefile = pyqtconfig.QtGuiModuleMakefile(
 # Add the library we are wrapping.  The name doesn't include any platform
 # specific prefixes or extensions (e.g. the "lib" prefix on UNIX, or the
 # ".dll" extension on Windows).
-makefile.extra_lib_dirs = ["/home/kane/projects/malayalam/tree/lib"]
+#makefile.extra_lib_dirs = ["/home/kane/projects/malayalam/tree/lib"]
 makefile.extra_libs = ["poppler-qt4"]
-makefile.extra_include_dirs = ['/home/kane/projects/malayalam/tree/include/poppler', '/usr/qt/4/include/QtXml'] #["/usr/include/poppler", "/usr/qt/4/include", "/usr/qt/4/include/QtXml/"]
+#makefile.extra_include_dirs = ['/home/kane/projects/malayalam/tree/include/poppler', '/usr/qt/4/include/QtXml'] #["/usr/include/poppler", "/usr/qt/4/include", "/usr/qt/4/include/QtXml/"]
+
+makefile.extra_include_dirs = ["/usr/include/poppler", "/usr/qt/4/include", "/usr/qt/4/include/QtXml/"] #RJS: for some reason, we get an error including dom.h .. so including QtXml include here
+
 
 # Generate the Makefile itself.
 makefile.generate()
