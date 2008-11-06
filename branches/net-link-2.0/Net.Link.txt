@@ -55,11 +55,11 @@ Net.Link Model Taslağı
         Örnek Fonksiyon Tanımı:
 
         01 def authModes():
-        02     return (
+        02     return [
         03         ("wep", "WEP"),
         04         ("wpa", "WPA"),
         05         ("802.1x", "Dynamic WEP (802.1x)"),
-        06     )
+        06     ]
 
         İlk eleman method adı, ikincisi ise method tanımıdır. Method tanımları yerelleştirilebilir.
 
@@ -72,21 +72,21 @@ Net.Link Model Taslağı
 
         01 def authParameters(method):
         02     if method == "wep":
-        03         return (
+        03         return [
         04             ("password", "Password", "pass"),
-        05         )
+        05         ]
         06     elif method == "wpa":
-        07         return (
+        07         return [
         08             ("password", "Password", "pass"),
-        09         )
+        09         ]
         10     elif method == "802.1x":
-        11         return (
+        11         return [
         12             ("username", "Username", "text"),
         13             ("password", "Password", "pass"),
         14             ("cert_cli", "Client Certificate", "file"),
         15             ("cert_ca", "CA Certificate", "file"),
         16             ("keyfile", "Private Key", "file"),
-        17         )
+        17         ]
         18 
         19     return modes
 
@@ -138,10 +138,10 @@ Net.Link Model Taslağı
         Örnek Fonksiyon Tanımı:
 
         01 def deviceModes():
-        02     return (
+        02     return [
         03         ("managed", "Managed"),
         04         ("adhoc", "Ad Hoc"),
-        05     }
+        05     ]
 
         İlk eleman mod adı, ikincisi ise mod tanımdır. Mod tanımı yerelleştirilebilir.
 
