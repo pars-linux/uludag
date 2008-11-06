@@ -152,7 +152,7 @@ class Connection(QWidget):
                     return
             except RuntimeError:
                 pass
-        self.edit = connection.Window(self.view.parent(), self.conn)
+        self.edit = connection.Settings(self.parent().parent(), self.conn)
 
     def mouseDoubleClickEvent(self, event):
         self.slotEdit()
