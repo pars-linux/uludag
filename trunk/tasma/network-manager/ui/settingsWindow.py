@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'settingsWindow.ui'
 #
-# Created: Çrş Eki 29 00:00:51 2008
+# Created: Prş Kas 6 13:03:51 2008
 #      by: The PyQt User Interface Compiler (pyuic) 3.17.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -11,17 +11,199 @@
 from qt import *
 
 
-class SettingsWindow(QWidget):
-    def __init__(self,parent = None,name = None,fl = 0):
-        QWidget.__init__(self,parent,name,fl)
+class SettingsWindow(QDialog):
+    def __init__(self,parent = None,name = None,modal = 0,fl = 0):
+        QDialog.__init__(self,parent,name,modal,fl)
 
         if not name:
             self.setName("SettingsWindow")
 
         self.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.sizePolicy().hasHeightForWidth()))
-        self.setBackgroundOrigin(QWidget.WidgetOrigin)
 
-        SettingsWindowLayout = QGridLayout(self,1,1,6,10,"SettingsWindowLayout")
+        SettingsWindowLayout = QGridLayout(self,1,1,11,6,"SettingsWindowLayout")
+
+        layout7 = QHBoxLayout(None,0,6,"layout7")
+        spacer5 = QSpacerItem(518,21,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layout7.addItem(spacer5)
+
+        self.applyBut = QPushButton(self,"applyBut")
+        self.applyBut.setFlat(1)
+        layout7.addWidget(self.applyBut)
+
+        self.cancelBut = QPushButton(self,"cancelBut")
+        self.cancelBut.setFlat(1)
+        layout7.addWidget(self.cancelBut)
+
+        SettingsWindowLayout.addLayout(layout7,3,0)
+
+        self.authenticationGroupBox = QGroupBox(self,"authenticationGroupBox")
+        self.authenticationGroupBox.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.authenticationGroupBox.sizePolicy().hasHeightForWidth()))
+        self.authenticationGroupBox.setFrameShape(QGroupBox.NoFrame)
+        self.authenticationGroupBox.setFlat(0)
+        self.authenticationGroupBox.setColumnLayout(0,Qt.Vertical)
+        self.authenticationGroupBox.layout().setSpacing(3)
+        self.authenticationGroupBox.layout().setMargin(6)
+        authenticationGroupBoxLayout = QVBoxLayout(self.authenticationGroupBox.layout())
+        authenticationGroupBoxLayout.setAlignment(Qt.AlignTop)
+
+        layoutTop = QHBoxLayout(None,0,6,"layoutTop")
+
+        self.security_mode_label = QLabel(self.authenticationGroupBox,"security_mode_label")
+        layoutTop.addWidget(self.security_mode_label)
+
+        self.security_mode_combo = QComboBox(0,self.authenticationGroupBox,"security_mode_combo")
+        layoutTop.addWidget(self.security_mode_combo)
+        spacer1 = QSpacerItem(380,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layoutTop.addItem(spacer1)
+        authenticationGroupBoxLayout.addLayout(layoutTop)
+
+        layout10 = QHBoxLayout(None,0,6,"layout10")
+
+        layout8 = QGridLayout(None,1,1,0,6,"layout8")
+
+        self.auth_key_type_label = QLabel(self.authenticationGroupBox,"auth_key_type_label")
+        self.auth_key_type_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout8.addWidget(self.auth_key_type_label,1,0)
+
+        self.auth_key_type_combo = QComboBox(0,self.authenticationGroupBox,"auth_key_type_combo")
+        self.auth_key_type_combo.setDuplicatesEnabled(0)
+
+        layout8.addWidget(self.auth_key_type_combo,1,1)
+
+        self.auth_key_mode_label = QLabel(self.authenticationGroupBox,"auth_key_mode_label")
+        self.auth_key_mode_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout8.addWidget(self.auth_key_mode_label,0,0)
+
+        self.auth_inner_combo = QComboBox(0,self.authenticationGroupBox,"auth_inner_combo")
+        self.auth_inner_combo.setDuplicatesEnabled(0)
+
+        layout8.addWidget(self.auth_inner_combo,3,1)
+        spacer9 = QSpacerItem(20,21,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        layout8.addItem(spacer9,4,1)
+
+        self.auth_key_mode_combo = QComboBox(0,self.authenticationGroupBox,"auth_key_mode_combo")
+        self.auth_key_mode_combo.setSizeLimit(2)
+        self.auth_key_mode_combo.setMaxCount(2)
+        self.auth_key_mode_combo.setInsertionPolicy(QComboBox.AtBottom)
+        self.auth_key_mode_combo.setDuplicatesEnabled(0)
+
+        layout8.addWidget(self.auth_key_mode_combo,0,1)
+
+        self.auth_inner_label = QLabel(self.authenticationGroupBox,"auth_inner_label")
+        self.auth_inner_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout8.addWidget(self.auth_inner_label,3,0)
+
+        self.auth_mode_combo = QComboBox(0,self.authenticationGroupBox,"auth_mode_combo")
+        self.auth_mode_combo.setDuplicatesEnabled(0)
+
+        layout8.addWidget(self.auth_mode_combo,2,1)
+
+        self.auth_mode_label = QLabel(self.authenticationGroupBox,"auth_mode_label")
+        self.auth_mode_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout8.addWidget(self.auth_mode_label,2,0)
+        layout10.addLayout(layout8)
+        spacer8 = QSpacerItem(21,16,QSizePolicy.Minimum,QSizePolicy.Fixed)
+        layout10.addItem(spacer8)
+
+        layout11 = QGridLayout(None,1,1,0,6,"layout11")
+
+        self.auth_private_key_label = QLabel(self.authenticationGroupBox,"auth_private_key_label")
+        self.auth_private_key_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout11.addWidget(self.auth_private_key_label,5,0)
+
+        self.auth_private_key_pass_line = QLineEdit(self.authenticationGroupBox,"auth_private_key_pass_line")
+        self.auth_private_key_pass_line.setMinimumSize(QSize(210,0))
+        self.auth_private_key_pass_line.setMaximumSize(QSize(232,32767))
+        self.auth_private_key_pass_line.setFrameShape(QLineEdit.PopupPanel)
+        self.auth_private_key_pass_line.setEchoMode(QLineEdit.Password)
+
+        layout11.addWidget(self.auth_private_key_pass_line,6,1)
+
+        self.auth_passphrase_label = QLabel(self.authenticationGroupBox,"auth_passphrase_label")
+        self.auth_passphrase_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout11.addWidget(self.auth_passphrase_label,2,0)
+
+        self.auth_private_key_but = QPushButton(self.authenticationGroupBox,"auth_private_key_but")
+        self.auth_private_key_but.setMinimumSize(QSize(210,0))
+        self.auth_private_key_but.setMaximumSize(QSize(232,32767))
+        self.auth_private_key_but.setFlat(1)
+
+        layout11.addWidget(self.auth_private_key_but,5,1)
+
+        self.auth_client_cert_label = QLabel(self.authenticationGroupBox,"auth_client_cert_label")
+        self.auth_client_cert_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout11.addWidget(self.auth_client_cert_label,3,0)
+
+        self.auth_anon_id_label = QLabel(self.authenticationGroupBox,"auth_anon_id_label")
+        self.auth_anon_id_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout11.addWidget(self.auth_anon_id_label,0,0)
+
+        self.auth_user_line = QLineEdit(self.authenticationGroupBox,"auth_user_line")
+        self.auth_user_line.setMinimumSize(QSize(210,0))
+        self.auth_user_line.setMaximumSize(QSize(232,32767))
+        self.auth_user_line.setFrameShape(QLineEdit.PopupPanel)
+
+        layout11.addWidget(self.auth_user_line,1,1)
+
+        self.auth_ca_cert_but = QPushButton(self.authenticationGroupBox,"auth_ca_cert_but")
+        self.auth_ca_cert_but.setMinimumSize(QSize(210,0))
+        self.auth_ca_cert_but.setMaximumSize(QSize(232,32767))
+        self.auth_ca_cert_but.setFlat(1)
+
+        layout11.addWidget(self.auth_ca_cert_but,4,1)
+
+        self.auth_client_cert_but = QPushButton(self.authenticationGroupBox,"auth_client_cert_but")
+        self.auth_client_cert_but.setMinimumSize(QSize(210,0))
+        self.auth_client_cert_but.setMaximumSize(QSize(232,32767))
+        self.auth_client_cert_but.setFlat(1)
+
+        layout11.addWidget(self.auth_client_cert_but,3,1)
+
+        self.auth_private_key_pass_label = QLabel(self.authenticationGroupBox,"auth_private_key_pass_label")
+        self.auth_private_key_pass_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout11.addWidget(self.auth_private_key_pass_label,6,0)
+
+        self.auth_anon_id_line = QLineEdit(self.authenticationGroupBox,"auth_anon_id_line")
+        self.auth_anon_id_line.setMinimumSize(QSize(210,0))
+        self.auth_anon_id_line.setMaximumSize(QSize(232,32767))
+        self.auth_anon_id_line.setFrameShape(QLineEdit.PopupPanel)
+
+        layout11.addWidget(self.auth_anon_id_line,0,1)
+
+        self.auth_passphrase_line = QLineEdit(self.authenticationGroupBox,"auth_passphrase_line")
+        self.auth_passphrase_line.setMinimumSize(QSize(210,0))
+        self.auth_passphrase_line.setMaximumSize(QSize(232,32767))
+        self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255,192,192))
+        self.auth_passphrase_line.setEchoMode(QLineEdit.Password)
+
+        layout11.addWidget(self.auth_passphrase_line,2,1)
+
+        self.auth_ca_cert_label = QLabel(self.authenticationGroupBox,"auth_ca_cert_label")
+        self.auth_ca_cert_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout11.addWidget(self.auth_ca_cert_label,4,0)
+
+        self.auth_user_label = QLabel(self.authenticationGroupBox,"auth_user_label")
+        self.auth_user_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
+
+        layout11.addWidget(self.auth_user_label,1,0)
+        spacer10 = QSpacerItem(20,34,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        layout11.addItem(spacer10,7,1)
+        layout10.addLayout(layout11)
+        spacer9_2 = QSpacerItem(20,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
+        layout10.addItem(spacer9_2)
+        authenticationGroupBoxLayout.addLayout(layout10)
+
+        SettingsWindowLayout.addWidget(self.authenticationGroupBox,1,0)
 
         layout6 = QHBoxLayout(None,0,6,"layout6")
 
@@ -192,198 +374,11 @@ class SettingsWindow(QWidget):
 
         SettingsWindowLayout.addWidget(self.connectionGroupBox,0,0)
 
-        layout7 = QHBoxLayout(None,0,6,"layout7")
-        spacer5 = QSpacerItem(518,21,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        layout7.addItem(spacer5)
-
-        self.applyBut = QPushButton(self,"applyBut")
-        self.applyBut.setFlat(1)
-        layout7.addWidget(self.applyBut)
-
-        self.cancelBut = QPushButton(self,"cancelBut")
-        self.cancelBut.setFlat(1)
-        layout7.addWidget(self.cancelBut)
-
-        SettingsWindowLayout.addLayout(layout7,3,0)
-
-        self.authenticationGroupBox = QGroupBox(self,"authenticationGroupBox")
-        self.authenticationGroupBox.setSizePolicy(QSizePolicy(QSizePolicy.Minimum,QSizePolicy.Minimum,0,0,self.authenticationGroupBox.sizePolicy().hasHeightForWidth()))
-        self.authenticationGroupBox.setFrameShape(QGroupBox.NoFrame)
-        self.authenticationGroupBox.setFlat(0)
-        self.authenticationGroupBox.setColumnLayout(0,Qt.Vertical)
-        self.authenticationGroupBox.layout().setSpacing(3)
-        self.authenticationGroupBox.layout().setMargin(6)
-        authenticationGroupBoxLayout = QVBoxLayout(self.authenticationGroupBox.layout())
-        authenticationGroupBoxLayout.setAlignment(Qt.AlignTop)
-
-        layoutTop = QHBoxLayout(None,0,6,"layoutTop")
-
-        self.security_mode_label = QLabel(self.authenticationGroupBox,"security_mode_label")
-        layoutTop.addWidget(self.security_mode_label)
-
-        self.security_mode_combo = QComboBox(0,self.authenticationGroupBox,"security_mode_combo")
-        layoutTop.addWidget(self.security_mode_combo)
-        spacer1 = QSpacerItem(380,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        layoutTop.addItem(spacer1)
-        authenticationGroupBoxLayout.addLayout(layoutTop)
-
-        layout10 = QHBoxLayout(None,0,6,"layout10")
-
-        layout8 = QGridLayout(None,1,1,0,6,"layout8")
-
-        self.auth_key_type_label = QLabel(self.authenticationGroupBox,"auth_key_type_label")
-        self.auth_key_type_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout8.addWidget(self.auth_key_type_label,1,0)
-
-        self.auth_key_type_combo = QComboBox(0,self.authenticationGroupBox,"auth_key_type_combo")
-        self.auth_key_type_combo.setDuplicatesEnabled(0)
-
-        layout8.addWidget(self.auth_key_type_combo,1,1)
-
-        self.auth_key_mode_label = QLabel(self.authenticationGroupBox,"auth_key_mode_label")
-        self.auth_key_mode_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout8.addWidget(self.auth_key_mode_label,0,0)
-
-        self.auth_inner_combo = QComboBox(0,self.authenticationGroupBox,"auth_inner_combo")
-        self.auth_inner_combo.setDuplicatesEnabled(0)
-
-        layout8.addWidget(self.auth_inner_combo,3,1)
-        spacer9 = QSpacerItem(20,21,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        layout8.addItem(spacer9,4,1)
-
-        self.auth_key_mode_combo = QComboBox(0,self.authenticationGroupBox,"auth_key_mode_combo")
-        self.auth_key_mode_combo.setSizeLimit(2)
-        self.auth_key_mode_combo.setMaxCount(2)
-        self.auth_key_mode_combo.setInsertionPolicy(QComboBox.AtBottom)
-        self.auth_key_mode_combo.setDuplicatesEnabled(0)
-
-        layout8.addWidget(self.auth_key_mode_combo,0,1)
-
-        self.auth_inner_label = QLabel(self.authenticationGroupBox,"auth_inner_label")
-        self.auth_inner_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout8.addWidget(self.auth_inner_label,3,0)
-
-        self.auth_mode_combo = QComboBox(0,self.authenticationGroupBox,"auth_mode_combo")
-        self.auth_mode_combo.setDuplicatesEnabled(0)
-
-        layout8.addWidget(self.auth_mode_combo,2,1)
-
-        self.auth_mode_label = QLabel(self.authenticationGroupBox,"auth_mode_label")
-        self.auth_mode_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout8.addWidget(self.auth_mode_label,2,0)
-        layout10.addLayout(layout8)
-        spacer8 = QSpacerItem(21,16,QSizePolicy.Minimum,QSizePolicy.Fixed)
-        layout10.addItem(spacer8)
-
-        layout11 = QGridLayout(None,1,1,0,6,"layout11")
-
-        self.auth_private_key_label = QLabel(self.authenticationGroupBox,"auth_private_key_label")
-        self.auth_private_key_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout11.addWidget(self.auth_private_key_label,5,0)
-
-        self.auth_private_key_pass_line = QLineEdit(self.authenticationGroupBox,"auth_private_key_pass_line")
-        self.auth_private_key_pass_line.setMinimumSize(QSize(210,0))
-        self.auth_private_key_pass_line.setMaximumSize(QSize(232,32767))
-        self.auth_private_key_pass_line.setFrameShape(QLineEdit.PopupPanel)
-        self.auth_private_key_pass_line.setEchoMode(QLineEdit.Password)
-
-        layout11.addWidget(self.auth_private_key_pass_line,6,1)
-
-        self.auth_passphrase_label = QLabel(self.authenticationGroupBox,"auth_passphrase_label")
-        self.auth_passphrase_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout11.addWidget(self.auth_passphrase_label,2,0)
-
-        self.auth_private_key_but = QPushButton(self.authenticationGroupBox,"auth_private_key_but")
-        self.auth_private_key_but.setMinimumSize(QSize(210,0))
-        self.auth_private_key_but.setMaximumSize(QSize(232,32767))
-        self.auth_private_key_but.setFlat(1)
-
-        layout11.addWidget(self.auth_private_key_but,5,1)
-
-        self.auth_client_cert_label = QLabel(self.authenticationGroupBox,"auth_client_cert_label")
-        self.auth_client_cert_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout11.addWidget(self.auth_client_cert_label,3,0)
-
-        self.auth_anon_id_label = QLabel(self.authenticationGroupBox,"auth_anon_id_label")
-        self.auth_anon_id_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout11.addWidget(self.auth_anon_id_label,0,0)
-
-        self.auth_user_line = QLineEdit(self.authenticationGroupBox,"auth_user_line")
-        self.auth_user_line.setMinimumSize(QSize(210,0))
-        self.auth_user_line.setMaximumSize(QSize(232,32767))
-        self.auth_user_line.setFrameShape(QLineEdit.PopupPanel)
-
-        layout11.addWidget(self.auth_user_line,1,1)
-
-        self.auth_ca_cert_but = QPushButton(self.authenticationGroupBox,"auth_ca_cert_but")
-        self.auth_ca_cert_but.setMinimumSize(QSize(210,0))
-        self.auth_ca_cert_but.setMaximumSize(QSize(232,32767))
-        self.auth_ca_cert_but.setFlat(1)
-
-        layout11.addWidget(self.auth_ca_cert_but,4,1)
-
-        self.auth_client_cert_but = QPushButton(self.authenticationGroupBox,"auth_client_cert_but")
-        self.auth_client_cert_but.setMinimumSize(QSize(210,0))
-        self.auth_client_cert_but.setMaximumSize(QSize(232,32767))
-        self.auth_client_cert_but.setFlat(1)
-
-        layout11.addWidget(self.auth_client_cert_but,3,1)
-
-        self.auth_private_key_pass_label = QLabel(self.authenticationGroupBox,"auth_private_key_pass_label")
-        self.auth_private_key_pass_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout11.addWidget(self.auth_private_key_pass_label,6,0)
-
-        self.auth_anon_id_line = QLineEdit(self.authenticationGroupBox,"auth_anon_id_line")
-        self.auth_anon_id_line.setMinimumSize(QSize(210,0))
-        self.auth_anon_id_line.setMaximumSize(QSize(232,32767))
-        self.auth_anon_id_line.setFrameShape(QLineEdit.PopupPanel)
-
-        layout11.addWidget(self.auth_anon_id_line,0,1)
-
-        self.auth_passphrase_line = QLineEdit(self.authenticationGroupBox,"auth_passphrase_line")
-        self.auth_passphrase_line.setMinimumSize(QSize(210,0))
-        self.auth_passphrase_line.setMaximumSize(QSize(232,32767))
-        self.auth_passphrase_line.setPaletteBackgroundColor(QColor(208,255,192))
-        self.auth_passphrase_line.setEchoMode(QLineEdit.Password)
-
-        layout11.addWidget(self.auth_passphrase_line,2,1)
-
-        self.auth_ca_cert_label = QLabel(self.authenticationGroupBox,"auth_ca_cert_label")
-        self.auth_ca_cert_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout11.addWidget(self.auth_ca_cert_label,4,0)
-
-        self.auth_user_label = QLabel(self.authenticationGroupBox,"auth_user_label")
-        self.auth_user_label.setAlignment(QLabel.AlignVCenter | QLabel.AlignRight)
-
-        layout11.addWidget(self.auth_user_label,1,0)
-        spacer10 = QSpacerItem(20,34,QSizePolicy.Minimum,QSizePolicy.Expanding)
-        layout11.addItem(spacer10,7,1)
-        layout10.addLayout(layout11)
-        spacer9_2 = QSpacerItem(20,20,QSizePolicy.Expanding,QSizePolicy.Minimum)
-        layout10.addItem(spacer9_2)
-        authenticationGroupBoxLayout.addLayout(layout10)
-
-        SettingsWindowLayout.addWidget(self.authenticationGroupBox,1,0)
-
         self.languageChange()
 
-        self.resize(QSize(626,568).expandedTo(self.minimumSizeHint()))
+        self.resize(QSize(636,566).expandedTo(self.minimumSizeHint()))
         self.clearWState(Qt.WState_Polished)
 
-        self.gatewayLabel.setBuddy(self.gateway)
-        self.netmaskLabel.setBuddy(self.netmask)
-        self.addressLabel.setBuddy(self.address)
-        self.device.setBuddy(self.auth_client_cert_but)
         self.security_mode_label.setBuddy(self.security_mode_combo)
         self.auth_key_type_label.setBuddy(self.auth_key_type_combo)
         self.auth_key_mode_label.setBuddy(self.auth_key_mode_combo)
@@ -396,10 +391,32 @@ class SettingsWindow(QWidget):
         self.auth_private_key_pass_label.setBuddy(self.auth_private_key_pass_line)
         self.auth_ca_cert_label.setBuddy(self.auth_ca_cert_but)
         self.auth_user_label.setBuddy(self.auth_user_line)
+        self.gatewayLabel.setBuddy(self.gateway)
+        self.netmaskLabel.setBuddy(self.netmask)
+        self.addressLabel.setBuddy(self.address)
+        self.device.setBuddy(self.auth_client_cert_but)
 
 
     def languageChange(self):
         self.setCaption(self.__tr("Network Settings"))
+        self.applyBut.setText(self.__tr("Uygula"))
+        self.cancelBut.setText(self.__trUtf8("\xc4\xb0\x70\x74\x61\x6c"))
+        self.authenticationGroupBox.setTitle(QString.null)
+        self.security_mode_label.setText(self.__trUtf8("\x47\xc3\xbc\x76\x65\x6e\x6c\x69\x6b"))
+        self.auth_key_type_label.setText(self.__tr("Key Type"))
+        self.auth_key_mode_label.setText(self.__tr("Mod"))
+        self.auth_inner_label.setText(self.__trUtf8("\xc4\xb0\xc3\xa7\x20\x64\x6f\xc4\x9f\x72\x75\x6c\x61\x6d\x61"))
+        self.auth_mode_label.setText(self.__trUtf8("\x4b\x69\x6d\x6c\x69\x6b\x20\x64\x6f\xc4\x9f\x72\x75\x6c\x61\x6d\x61"))
+        self.auth_private_key_label.setText(self.__tr("Private Key File :"))
+        self.auth_passphrase_label.setText(self.__tr("Parola :"))
+        self.auth_private_key_but.setText(self.__tr("browse"))
+        self.auth_client_cert_label.setText(self.__trUtf8("\xc4\xb0\x73\x74\x65\x6d\x63\x69\x20\x53\x65\x72\x74\x69\x66\x69\x6b\x61\x73\xc4\xb1\x20\x3a"))
+        self.auth_anon_id_label.setText(self.__trUtf8("\x41\x6e\x6f\x6e\x69\x6d\x20\x4b\x75\x6c\x6c\x61\x6e\xc4\xb1\x63\xc4\xb1\x20\x3a"))
+        self.auth_ca_cert_but.setText(self.__tr("browse"))
+        self.auth_client_cert_but.setText(self.__tr("browse"))
+        self.auth_private_key_pass_label.setText(self.__tr("Private Key Password :"))
+        self.auth_ca_cert_label.setText(self.__trUtf8("\x43\x41\x20\x53\x65\x72\x74\x69\x66\x69\x6b\x61\x73\xc4\xb1\x20\x3a"))
+        self.auth_user_label.setText(self.__trUtf8("\x4b\x75\x6c\x6c\x61\x6e\xc4\xb1\x63\xc4\xb1\x2f\x4b\x69\x6d\x6c\x69\x6b\x20\x3a"))
         self.addressGroupBox.setTitle(self.__trUtf8("\x41\x64\x72\x65\x73\x20\x41\x79\x61\x72\x6c\x61\x72\xc4\xb1"))
         self.auto_addr.setText(self.__trUtf8("\xc3\x96\x7a\x65\x6c"))
         self.gatewayLabel.setText(self.__trUtf8("\x41\xc4\x9f\x20\x47\x65\xc3\xa7\x69\x64\x69\x20\x3a"))
@@ -423,24 +440,6 @@ class SettingsWindow(QWidget):
         self.nameLabel.setText(self.__trUtf8("\x41\x64\xc4\xb1\x20\x3a"))
         self.deviceLabel.setText(self.__trUtf8("\x41\x79\x67\xc4\xb1\x74\x20\x3a"))
         self.ssidLabel.setText(self.__tr("Ess ID :"))
-        self.applyBut.setText(self.__tr("Uygula"))
-        self.cancelBut.setText(self.__trUtf8("\xc4\xb0\x70\x74\x61\x6c"))
-        self.authenticationGroupBox.setTitle(QString.null)
-        self.security_mode_label.setText(self.__trUtf8("\x47\xc3\xbc\x76\x65\x6e\x6c\x69\x6b"))
-        self.auth_key_type_label.setText(self.__tr("Key Type"))
-        self.auth_key_mode_label.setText(self.__tr("Mod"))
-        self.auth_inner_label.setText(self.__trUtf8("\xc4\xb0\xc3\xa7\x20\x64\x6f\xc4\x9f\x72\x75\x6c\x61\x6d\x61"))
-        self.auth_mode_label.setText(self.__trUtf8("\x4b\x69\x6d\x6c\x69\x6b\x20\x64\x6f\xc4\x9f\x72\x75\x6c\x61\x6d\x61"))
-        self.auth_private_key_label.setText(self.__tr("Private Key File :"))
-        self.auth_passphrase_label.setText(self.__tr("Parola :"))
-        self.auth_private_key_but.setText(self.__tr("browse"))
-        self.auth_client_cert_label.setText(self.__trUtf8("\xc4\xb0\x73\x74\x65\x6d\x63\x69\x20\x53\x65\x72\x74\x69\x66\x69\x6b\x61\x73\xc4\xb1\x20\x3a"))
-        self.auth_anon_id_label.setText(self.__trUtf8("\x41\x6e\x6f\x6e\x69\x6d\x20\x4b\x75\x6c\x6c\x61\x6e\xc4\xb1\x63\xc4\xb1\x20\x3a"))
-        self.auth_ca_cert_but.setText(self.__tr("browse"))
-        self.auth_client_cert_but.setText(self.__tr("browse"))
-        self.auth_private_key_pass_label.setText(self.__tr("Private Key Password :"))
-        self.auth_ca_cert_label.setText(self.__trUtf8("\x43\x41\x20\x53\x65\x72\x74\x69\x66\x69\x6b\x61\x73\xc4\xb1\x20\x3a"))
-        self.auth_user_label.setText(self.__trUtf8("\x4b\x75\x6c\x6c\x61\x6e\xc4\xb1\x63\xc4\xb1\x2f\x4b\x69\x6d\x6c\x69\x6b\x20\x3a"))
 
 
     def __tr(self,s,c = None):
