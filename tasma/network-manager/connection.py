@@ -461,11 +461,11 @@ class Settings(SettingsWindow):
         elif self.security_mode_combo.currentText() == "WEP":
             # hex key
             if self.auth_key_type_combo.currentItem():
-                if not pword.length() in [10, 26, 58]:
+                if not pword.length() in [10, 26]:
                     self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
             # ascii
             else:
-                if not pword.length() == 5:
+                if not pword.length() in[5, 13]:
                     self.auth_passphrase_line.setPaletteBackgroundColor(QColor(255, 192, 192))
 
     def slotSecurityToggle(self, i=None):
