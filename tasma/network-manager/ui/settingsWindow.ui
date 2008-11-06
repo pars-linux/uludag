@@ -1,6 +1,6 @@
 <!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>SettingsWindow</class>
-<widget class="QWidget">
+<widget class="QDialog">
     <property name="name">
         <cstring>SettingsWindow</cstring>
     </property>
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>626</width>
-            <height>568</height>
+            <width>636</width>
+            <height>566</height>
         </rect>
     </property>
     <property name="sizePolicy">
@@ -20,9 +20,6 @@
             <verstretch>0</verstretch>
         </sizepolicy>
     </property>
-    <property name="backgroundOrigin">
-        <enum>WidgetOrigin</enum>
-    </property>
     <property name="caption">
         <string>Network Settings</string>
     </property>
@@ -30,399 +27,6 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <property name="margin">
-            <number>6</number>
-        </property>
-        <property name="spacing">
-            <number>10</number>
-        </property>
-        <widget class="QLayoutWidget" row="2" column="0">
-            <property name="name">
-                <cstring>layout6</cstring>
-            </property>
-            <hbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QGroupBox">
-                    <property name="name">
-                        <cstring>addressGroupBox</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>GroupBoxPanel</enum>
-                    </property>
-                    <property name="title">
-                        <string>Adres Ayarları</string>
-                    </property>
-                    <property name="flat">
-                        <bool>false</bool>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <property name="margin">
-                            <number>10</number>
-                        </property>
-                        <property name="spacing">
-                            <number>3</number>
-                        </property>
-                        <widget class="QCheckBox" row="1" column="2">
-                            <property name="name">
-                                <cstring>auto_addr</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Özel</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="2" column="0">
-                            <property name="name">
-                                <cstring>gatewayLabel</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Ağ Geçidi :</string>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignVCenter|AlignRight</set>
-                            </property>
-                            <property name="buddy" stdset="0">
-                                <cstring>gateway</cstring>
-                            </property>
-                        </widget>
-                        <widget class="QCheckBox" row="2" column="2">
-                            <property name="name">
-                                <cstring>auto_gate</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Özel</string>
-                            </property>
-                        </widget>
-                        <widget class="QComboBox" row="3" column="1">
-                            <item>
-                                <property name="text">
-                                    <string></string>
-                                </property>
-                            </item>
-                            <property name="name">
-                                <cstring>netmask</cstring>
-                            </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <width>140</width>
-                                    <height>0</height>
-                                </size>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>140</width>
-                                    <height>32767</height>
-                                </size>
-                            </property>
-                            <property name="editable">
-                                <bool>true</bool>
-                            </property>
-                            <property name="maxCount">
-                                <number>5</number>
-                            </property>
-                            <property name="duplicatesEnabled">
-                                <bool>false</bool>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="2" column="1">
-                            <property name="name">
-                                <cstring>gateway</cstring>
-                            </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <width>140</width>
-                                    <height>0</height>
-                                </size>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>140</width>
-                                    <height>32767</height>
-                                </size>
-                            </property>
-                            <property name="frameShape">
-                                <enum>PopupPanel</enum>
-                            </property>
-                        </widget>
-                        <widget class="QLineEdit" row="1" column="1">
-                            <property name="name">
-                                <cstring>address</cstring>
-                            </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <width>140</width>
-                                    <height>0</height>
-                                </size>
-                            </property>
-                            <property name="maximumSize">
-                                <size>
-                                    <width>140</width>
-                                    <height>32767</height>
-                                </size>
-                            </property>
-                            <property name="frameShape">
-                                <enum>PopupPanel</enum>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="3" column="0">
-                            <property name="name">
-                                <cstring>netmaskLabel</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Ağ Maskesi :</string>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignVCenter|AlignRight</set>
-                            </property>
-                            <property name="buddy" stdset="0">
-                                <cstring>netmask</cstring>
-                            </property>
-                        </widget>
-                        <widget class="QLabel" row="1" column="0">
-                            <property name="name">
-                                <cstring>addressLabel</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Adres :</string>
-                            </property>
-                            <property name="alignment">
-                                <set>AlignVCenter|AlignRight</set>
-                            </property>
-                            <property name="buddy" stdset="0">
-                                <cstring>address</cstring>
-                            </property>
-                        </widget>
-                        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="3">
-                            <property name="name">
-                                <cstring>dhcpButtonGroup</cstring>
-                            </property>
-                            <property name="frameShape">
-                                <enum>NoFrame</enum>
-                            </property>
-                            <property name="title">
-                                <string></string>
-                            </property>
-                            <property name="flat">
-                                <bool>false</bool>
-                            </property>
-                            <grid>
-                                <property name="name">
-                                    <cstring>unnamed</cstring>
-                                </property>
-                                <widget class="QRadioButton" row="0" column="1">
-                                    <property name="name">
-                                        <cstring>r2</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Elle Ayarla</string>
-                                    </property>
-                                </widget>
-                                <widget class="QRadioButton" row="0" column="0">
-                                    <property name="name">
-                                        <cstring>r1</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Otomatik Ayar (DHCP)</string>
-                                    </property>
-                                </widget>
-                            </grid>
-                        </widget>
-                    </grid>
-                </widget>
-                <widget class="QGroupBox">
-                    <property name="name">
-                        <cstring>dnsGroupBox</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>GroupBoxPanel</enum>
-                    </property>
-                    <property name="title">
-                        <string>İsim Sunucusu</string>
-                    </property>
-                    <property name="flat">
-                        <bool>false</bool>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <property name="margin">
-                            <number>10</number>
-                        </property>
-                        <property name="spacing">
-                            <number>3</number>
-                        </property>
-                        <widget class="QLineEdit" row="1" column="0">
-                            <property name="name">
-                                <cstring>dns_text</cstring>
-                            </property>
-                            <property name="frameShape">
-                                <enum>PopupPanel</enum>
-                            </property>
-                        </widget>
-                        <widget class="QButtonGroup" row="0" column="0">
-                            <property name="name">
-                                <cstring>dns_group</cstring>
-                            </property>
-                            <property name="frameShape">
-                                <enum>NoFrame</enum>
-                            </property>
-                            <property name="title">
-                                <string></string>
-                            </property>
-                            <grid>
-                                <property name="name">
-                                    <cstring>unnamed</cstring>
-                                </property>
-                                <widget class="QRadioButton" row="0" column="0">
-                                    <property name="name">
-                                        <cstring>dns1</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Öntanımlı</string>
-                                    </property>
-                                </widget>
-                                <widget class="QRadioButton" row="0" column="1">
-                                    <property name="name">
-                                        <cstring>dns2</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Otomatik</string>
-                                    </property>
-                                </widget>
-                                <widget class="QRadioButton" row="0" column="2">
-                                    <property name="name">
-                                        <cstring>dns3</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Özel</string>
-                                    </property>
-                                </widget>
-                            </grid>
-                        </widget>
-                    </grid>
-                </widget>
-            </hbox>
-        </widget>
-        <widget class="QGroupBox" row="0" column="0">
-            <property name="name">
-                <cstring>connectionGroupBox</cstring>
-            </property>
-            <property name="frameShape">
-                <enum>GroupBoxPanel</enum>
-            </property>
-            <property name="title">
-                <string>Bağlantı</string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <property name="margin">
-                    <number>10</number>
-                </property>
-                <property name="spacing">
-                    <number>4</number>
-                </property>
-                <widget class="QLineEdit" row="2" column="1">
-                    <property name="name">
-                        <cstring>remote</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>PopupPanel</enum>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="2" column="3">
-                    <property name="name">
-                        <cstring>scanBut</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Tara</string>
-                    </property>
-                    <property name="flat">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-                <widget class="QComboBox" row="2" column="2">
-                    <property name="name">
-                        <cstring>selected_device_mode</cstring>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="1" column="3">
-                    <property name="name">
-                        <cstring>devices_but</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Aygıt Seç</string>
-                    </property>
-                    <property name="flat">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="1" column="1" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>device</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Pro Wireless Hede Hot Intel Corporation Yooo (wlan0)</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>auth_client_cert_but</cstring>
-                    </property>
-                </widget>
-                <widget class="QLineEdit" row="0" column="1" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>nameLineEdit</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>PopupPanel</enum>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0">
-                    <property name="name">
-                        <cstring>nameLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Adı :</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignVCenter|AlignRight</set>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>lineEdit10</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="1" column="0">
-                    <property name="name">
-                        <cstring>deviceLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Aygıt :</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignVCenter|AlignRight</set>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="2" column="0">
-                    <property name="name">
-                        <cstring>ssidLabel</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Ess ID :</string>
-                    </property>
-                    <property name="alignment">
-                        <set>AlignVCenter|AlignRight</set>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>lineEdit5</cstring>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
         <widget class="QLayoutWidget" row="3" column="0">
             <property name="name">
                 <cstring>layout7</cstring>
@@ -999,6 +603,393 @@
                     </hbox>
                 </widget>
             </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="2" column="0">
+            <property name="name">
+                <cstring>layout6</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>addressGroupBox</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>GroupBoxPanel</enum>
+                    </property>
+                    <property name="title">
+                        <string>Adres Ayarları</string>
+                    </property>
+                    <property name="flat">
+                        <bool>false</bool>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>10</number>
+                        </property>
+                        <property name="spacing">
+                            <number>3</number>
+                        </property>
+                        <widget class="QCheckBox" row="1" column="2">
+                            <property name="name">
+                                <cstring>auto_addr</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Özel</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="2" column="0">
+                            <property name="name">
+                                <cstring>gatewayLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Ağ Geçidi :</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignVCenter|AlignRight</set>
+                            </property>
+                            <property name="buddy" stdset="0">
+                                <cstring>gateway</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox" row="2" column="2">
+                            <property name="name">
+                                <cstring>auto_gate</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Özel</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="3" column="1">
+                            <item>
+                                <property name="text">
+                                    <string></string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>netmask</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>140</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>140</width>
+                                    <height>32767</height>
+                                </size>
+                            </property>
+                            <property name="editable">
+                                <bool>true</bool>
+                            </property>
+                            <property name="maxCount">
+                                <number>5</number>
+                            </property>
+                            <property name="duplicatesEnabled">
+                                <bool>false</bool>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit" row="2" column="1">
+                            <property name="name">
+                                <cstring>gateway</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>140</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>140</width>
+                                    <height>32767</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>PopupPanel</enum>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit" row="1" column="1">
+                            <property name="name">
+                                <cstring>address</cstring>
+                            </property>
+                            <property name="minimumSize">
+                                <size>
+                                    <width>140</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>140</width>
+                                    <height>32767</height>
+                                </size>
+                            </property>
+                            <property name="frameShape">
+                                <enum>PopupPanel</enum>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="3" column="0">
+                            <property name="name">
+                                <cstring>netmaskLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Ağ Maskesi :</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignVCenter|AlignRight</set>
+                            </property>
+                            <property name="buddy" stdset="0">
+                                <cstring>netmask</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="1" column="0">
+                            <property name="name">
+                                <cstring>addressLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Adres :</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignVCenter|AlignRight</set>
+                            </property>
+                            <property name="buddy" stdset="0">
+                                <cstring>address</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="3">
+                            <property name="name">
+                                <cstring>dhcpButtonGroup</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="title">
+                                <string></string>
+                            </property>
+                            <property name="flat">
+                                <bool>false</bool>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QRadioButton" row="0" column="1">
+                                    <property name="name">
+                                        <cstring>r2</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Elle Ayarla</string>
+                                    </property>
+                                </widget>
+                                <widget class="QRadioButton" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>r1</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Otomatik Ayar (DHCP)</string>
+                                    </property>
+                                </widget>
+                            </grid>
+                        </widget>
+                    </grid>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>dnsGroupBox</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>GroupBoxPanel</enum>
+                    </property>
+                    <property name="title">
+                        <string>İsim Sunucusu</string>
+                    </property>
+                    <property name="flat">
+                        <bool>false</bool>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>10</number>
+                        </property>
+                        <property name="spacing">
+                            <number>3</number>
+                        </property>
+                        <widget class="QLineEdit" row="1" column="0">
+                            <property name="name">
+                                <cstring>dns_text</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>PopupPanel</enum>
+                            </property>
+                        </widget>
+                        <widget class="QButtonGroup" row="0" column="0">
+                            <property name="name">
+                                <cstring>dns_group</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="title">
+                                <string></string>
+                            </property>
+                            <grid>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QRadioButton" row="0" column="0">
+                                    <property name="name">
+                                        <cstring>dns1</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Öntanımlı</string>
+                                    </property>
+                                </widget>
+                                <widget class="QRadioButton" row="0" column="1">
+                                    <property name="name">
+                                        <cstring>dns2</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Otomatik</string>
+                                    </property>
+                                </widget>
+                                <widget class="QRadioButton" row="0" column="2">
+                                    <property name="name">
+                                        <cstring>dns3</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Özel</string>
+                                    </property>
+                                </widget>
+                            </grid>
+                        </widget>
+                    </grid>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QGroupBox" row="0" column="0">
+            <property name="name">
+                <cstring>connectionGroupBox</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>GroupBoxPanel</enum>
+            </property>
+            <property name="title">
+                <string>Bağlantı</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>10</number>
+                </property>
+                <property name="spacing">
+                    <number>4</number>
+                </property>
+                <widget class="QLineEdit" row="2" column="1">
+                    <property name="name">
+                        <cstring>remote</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>PopupPanel</enum>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="2" column="3">
+                    <property name="name">
+                        <cstring>scanBut</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Tara</string>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="2" column="2">
+                    <property name="name">
+                        <cstring>selected_device_mode</cstring>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="3">
+                    <property name="name">
+                        <cstring>devices_but</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Aygıt Seç</string>
+                    </property>
+                    <property name="flat">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>device</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Pro Wireless Hede Hot Intel Corporation Yooo (wlan0)</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>auth_client_cert_but</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="0" column="1" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>nameLineEdit</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>PopupPanel</enum>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>nameLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Adı :</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>lineEdit10</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>deviceLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Aygıt :</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>ssidLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ess ID :</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>lineEdit5</cstring>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>
