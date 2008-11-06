@@ -183,8 +183,14 @@ class Scanner(QPopupMenu):
             ScanItem(self.view, None)
 
 class Settings(SettingsWindow):
-    def __init__(self, parent, link, conn, new_conn=None):
+    def __init__(self, parent, conn, link=None, new_conn=None):
         SettingsWindow.__init__(self, parent)
+
+        if not link:
+            link = comlink.links[conn.script]
+
+        self.connect(self.applyBut, SIGNAL("clicked()"), self.useValues)
+        self.connect(self.cancelBut, SIGNAL("clicked()"), self.slotCancel)
 
         self.scanpop = None
         self.link = link
@@ -269,12 +275,15 @@ class Settings(SettingsWindow):
 
         self.setValues()
         self.slotPasswordCheck()
-        self.parent().adjustSize()
+        self.adjustSize()
 
         comlink.device_hook.append(self.slotDevices)
         comlink.queryDevices(link.script)
 
+        self.show()
+
     def fillLabels(self):
+        self.setCaption(i18n("Configure network connection"))
         self.connectionGroupBox.setTitle(i18n("Connection"))
         self.addressGroupBox.setTitle(i18n("Address Settings"))
         self.dnsGroupBox.setTitle(i18n("Name Server Settings"))
@@ -357,7 +366,7 @@ class Settings(SettingsWindow):
                         self.auth_inner_combo.show()
                         for j in self.auth_dict[i]:
                             self.auth_inner_combo.insertItem(j)
-            self.parent().adjustSize()
+            self.adjustSize()
             return
 
         if sec != None and auth == None:
@@ -415,7 +424,7 @@ class Settings(SettingsWindow):
                     self.auth_private_key_pass_line.hide()
                     self.auth_private_key_pass_label.hide()
 
-        self.parent().adjustSize()
+        self.adjustSize()
 
     def setAuthVisible(self, true):
         self.auth_mode_label.setShown(true)
@@ -649,7 +658,7 @@ class Settings(SettingsWindow):
             # close dialog
             self.parent().setEnabled(True)
             self.cleanup()
-            self.parent().close()
+            self.close()
 
         def error(exception):
             self.parent().setEnabled(True)
@@ -744,26 +753,7 @@ class Settings(SettingsWindow):
             elif cl > 191 and cl < 224:
                 mask.setCurrentText("255.255.255.0")
 
-
-class Window(QMainWindow):
-    def __init__(self, parent, conn, link=None, new_conn=None):
-        QMainWindow.__init__(self, parent, " ", Qt.WType_Dialog)
-
-        self.setCaption(i18n("Configure network connection"))
-
-        if not link:
-            link = comlink.links[conn.script]
-        self.settings = Settings(self, link, conn, new_conn)
-        self.setCentralWidget(self.settings)
-
-        self.connect(self.settings.applyBut, SIGNAL("clicked()"), self.slotAccept)
-        self.connect(self.settings.cancelBut, SIGNAL("clicked()"), self.slotCancel)
-
-        self.show()
-
-    def slotAccept(self):
-        self.settings.useValues()
-
     def slotCancel(self):
-        self.settings.cleanup()
-        self.close(True)
+        self.cleanup()
+        self.close()
+
