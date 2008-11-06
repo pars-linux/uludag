@@ -9,7 +9,7 @@ def linkInfo():
     }
     return d
 
-def authModes():
+def authMethods():
     return [
         ("wep", "WEP"),
         ("wepascii", "WEP ASCII"),
@@ -72,7 +72,7 @@ def setNameService(name, namemode, nameserver):
     # TODO: Add/update name servers
     pass
 
-def setAuthMode(name, mode):
+def setAuthMethod(name, method):
     # TODO: Add/update auth mode
     pass
 
@@ -80,7 +80,7 @@ def setAuthParameters(name, key, value):
     # TODO: Add/update auth parameter
     pass
 
-def getAuthMode(name):
+def getAuthMethod(name):
     # TODO: Return auth mode
     return None
 

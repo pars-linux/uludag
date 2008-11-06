@@ -3,15 +3,15 @@
         <method name="linkInfo" access_label="get">
             <arg name="info" type="{ss}" direction="out"/>
         </method>
-        <method name="authModes" access_label="get">
+        <method name="authMethods" access_label="get">
             <arg name="info" type="a(ss)" direction="out"/>
         </method>
         <method name="authParameters" access_label="get">
             <arg name="info" type="a(sss)" direction="out"/>
         </method>
-        <method name="setAuthMode" access_label="set">
+        <method name="setAuthMethod" access_label="set">
             <arg name="name" type="s" direction="in"/>
-            <arg name="mode" type="s" direction="in"/>
+            <arg name="method" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
         <method name="setAuthParameters" access_label="set">
@@ -20,9 +20,9 @@
             <arg name="value" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
-        <method name="getAuthMode" access_label="get">
+        <method name="getAuthMethod" access_label="get">
             <arg name="name" type="s" direction="in"/>
-            <arg name="mode" type="s" direction="out"/>
+            <arg name="method" type="s" direction="out"/>
         </method>
         <method name="getAuthParameters" access_label="get">
             <arg name="name" type="s" direction="in"/>
@@ -52,7 +52,7 @@
             <arg name="name" type="s" direction="in"/>
             <arg name="info" type="{ss}" direction="out"/>
         </method>
-        <method name="setConnection" access_label="set">
+        <method name="setDevice" access_label="set">
             <arg name="name" type="s" direction="in"/>
             <arg name="device" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>

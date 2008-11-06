@@ -9,7 +9,7 @@ def linkInfo():
     }
     return d
 
-def authModes():
+def authMethods():
     return [
         ("login", "Login/Password"), # TODO: Localize 2. element
     ]
@@ -35,7 +35,7 @@ def scanRemote(device):
     # TODO: Raise an exception here. "remote_scan" mode not supported
     return []
 
-def setConnection(name, device):
+def setDevice(name, device):
     # TODO: Add/update device
     pass
 
@@ -59,7 +59,7 @@ def setNameService(name, namemode, nameserver):
     # TODO: Add/update name servers
     pass
 
-def setAuthMode(name, mode):
+def setAuthMethod(name, method):
     # TODO: Add/update auth mode
     pass
 
@@ -67,7 +67,7 @@ def setAuthParameters(name, key, value):
     # TODO: Add/update auth parameter
     pass
 
-def getAuthMode(name):
+def getAuthMethod(name):
     # TODO: Return auth mode
     return None
 

@@ -14,15 +14,13 @@ Net.Link Model Taslağı
         06     }
 
         - type: Uygulamanın sağladığı bağlantı türünü ifade eden anahtar kelime
-                (wifi, net, ppp, ...)
+                (wifi, net, dialup, ...)
 
         - name: Bağlantı türüne ait açıklama. Yerelleştirilebilir.
 
         - modes: Profil oluştururken kullanılabilecek metodlar ve özellikler ile ilgili bilgi sunar.
 
                  device : Bağlantı kurarken bir aygıt seçilmesi gerektiğini gösterir.
-                          setConnection(profile, device) komutu ile belirlenebilir.
-                          deviceList() komutu ile aygıt bilgisi alınabilir.
 
             device_mode : Bağlantıda kullanılacak aygıt, birden fazla çalışma modu
                           desteklediğini (wireless kartlardaki adhoc, managed, ... 
@@ -30,31 +28,22 @@ Net.Link Model Taslağı
 
                  remote : Bağlantı kurarken uzak bir bağlantı noktası adresi verilmesi gerektiğini gösterir.
                           (ppp için telefon numarası, wifi için essid, ...)
-                          setRemote(profile, remote_address) komutu ile belirlenebilir.
 
             remote_scan : Uzak bağlantı tarama işlemi yapılabileceği anlamına gelir.
-                          scanRemote(device_id) komutu ile tarama yapılabilir.
 
-                 net    : Bağlantı kurmak için adres belirlemek gerektiğini gösterir.
-                          setAddresss(profile, mode="manual", address, mask, gateway)
-                          komutu ile adres belirlenebilir. 
+                 net    : Alınacak adresin önceden belirlenebildiği anlamına gelir.
 
-                 auto   : Adresin karşı taraf tarafından belirlenebileceği (DHCP gibi) anlamına gelir.
-                          setAddresss(profile, mode="auto", address="", mask="", gateway="")
-                          komutu kullanılabilir.
+                 auto   : Adres almak için DHCP kullanılabileceği anlamına gelir.
 
                  auth   : Bağlantı kurarken kimlik doğrulama yapılabileceği anlamına gelir.
-                          setAuthentication(profile, authmode, user, password) komutu ile doğrulama
-                          methodu ve bilgileri belirlenebilir. Kullanılabilir modlar "auth_modes"
-                          başlığında açıklanmıştır.
 
 
-    def authModes():
+    def authMethods():
         "auth" destekleniyorsa, kullanılabilir kimlik doğrulama methodlarını listelemek için kullanılır.
 
         Örnek Fonksiyon Tanımı:
 
-        01 def authModes():
+        01 def authMethods():
         02     return [
         03         ("wep", "WEP"),
         04         ("wpa", "WPA"),
@@ -65,8 +54,7 @@ Net.Link Model Taslağı
 
 
     def authParameters(method):
-        "auth" destekleniyorsa, ilgili kimlik doğrulama methodunun ihtiyaç duyduğu bilgileri tanımlamak için kullanılır. 
-        Bağlantı kurmak istendiğinde, "auth" modu destekleniyorsa, 
+        "auth" destekleniyorsa, ilgili kimlik doğrulama methodunun ihtiyaç duyduğu bilgileri tanımlamak için kullanılır.
 
         Örnek Fonksiyon Tanımı:
 
@@ -101,15 +89,15 @@ Net.Link Model Taslağı
             file : Dosya girişleri için
 
 
-    setAuthMode(profile, mode):
-        "auth" modu destekleniyorsa, authModes() ile alınan modlardan birini profille ilişkilendirmek için kullanılır.
+    setAuthMethod(profile, method):
+        "auth" modu destekleniyorsa, profili kimlik doğrulama "method"u ile ilişkilendirmek için kullanılır.
 
 
     setAuthParameters(profile, auth_key, auth_value):
-        "auth" modu destekleniyorsa, authParameters() ile alınan alanları belirlemek için kullanır.
+        "auth" modu destekleniyorsa, kimlik doğrulama için gereken alanları belirlemek için kullanır.
 
 
-    getAuthMode(profile):
+    getAuthMethod(profile):
         "auth" modu destekleniyorsa, profille ilişkilendirilmiş auth modunu döndürür.
 
         Yazılacak fonksiyon, aşağıdaki gibi bir çıktı vermelidir:
@@ -118,8 +106,7 @@ Net.Link Model Taslağı
 
 
     getAuthParameters(profile):
-        Profilin kimlik doğrulama bilgilerini verir. Bu bilgiler güvenlik amacıyla
-        connectionInfo()'da bulunmaz.
+        "auth" modu destekleniyorsa, profilin kimlik doğrulama bilgilerini verir.
 
         Yazılacak fonksiyon, aşağıdaki gibi bir çıktı vermelidir:
 
@@ -130,6 +117,16 @@ Net.Link Model Taslağı
         05     "cert_ca": "/home/bahadir/.cert/ca.cert",
         06     "keyfile": "/home/bahadir/.cert/mykey",
         07 }
+
+
+    deviceList():
+        "device" modu destekleniyorsa, yygulama tarafından kullanılabilen aygıt listesini verir.
+
+        Yazılacak fonksiyon, aşağıdaki gibi bir çıktı vermelidir:
+
+        O1 {
+        02     "pci:1106_3065_eth1": "VT6102 [Rhine-II] - VIA Technologies, Inc. (eth1)",
+        03 }
 
 
     def deviceModes():
@@ -158,7 +155,7 @@ Net.Link Model Taslağı
 
 
     scanRemote(device):
-        'remote' modu destekleniyorsa bağlanılabilir uzak noktaları taramak için kullanılır.
+        "remote" modu destekleniyorsa bağlanılabilir uzak noktaları taramak için kullanılır.
 
         Yazılacak fonksiyon, aşağıdaki gibi bir çıktı vermelidir:
 
@@ -187,19 +184,9 @@ Net.Link Model Taslağı
 
 
     setRemote(profile, remote):
-        'remote' modu destekleniyorsa, uzaktaki noktanın adresini belirtmek için kullanılır.
+        "remote" modu destekleniyorsa, uzaktaki noktanın adresini belirtmek için kullanılır.
 
-        Wireless için ESSID, PPP için telefon numarası, VPN için host:port bu şekilde belirtilebilir. Birden fazla 
-
-
-    deviceList():
-        Uygulama tarafından kullanılabilen aygıt listesini verir. {"device_id": "Device Label", ...} formatında bir dictionary'dir.
-
-        Yazılacak fonksiyon, aşağıdaki gibi bir çıktı vermelidir:
-
-        O1 {
-        02     "pci:1106_3065_eth1": "VT6102 [Rhine-II] - VIA Technologies, Inc. (eth1)",
-        03 }
+        Wireless için ESSID, PPP için telefon numarası, VPN için host:port bu şekilde belirtilebilir.
 
 
     connections():
@@ -214,7 +201,7 @@ Net.Link Model Taslağı
 
 
     connectionInfo(profile):
-        Bağlantıya ait bilgileri (kimlik doğrulama bilgisi hariç) gösterir.
+        Bağlantıya ait bilgileri gösterir.
 
         Yazılacak fonksiyon, aşağıdaki gibi bir çıktı vermelidir:
 
@@ -229,11 +216,11 @@ Net.Link Model Taslağı
         09     "state": "up",
         00 }
 
-        NOT: Döndürülmesi gereken alanların listesi ve açıklamaları yazılmalı.
+        NOT: Alanlar tanımlanmalı.
 
 
-    setConnection(profile, device):
-        Profili bir aygıtla ilişkilendirmek için kullanılabilir.
+    setDevice(profile, device):
+        "device" modu destekleniyorsa, profili bir aygıtla ilişkilendirmek için kullanılabilir.
 
 
     setDeviceMode(profile, mode):
@@ -245,16 +232,23 @@ Net.Link Model Taslağı
 
 
     setAddress(profile, mode, address, mask, gateway):
-        'net' modu destekleniyorsa adres girmek girme için kullanılır.
-        'auto' modu destekleniyorsa mode olarak 'auto' verilerek DHCP ayarlanabilir
+        "net" modu destekleniyorsa adres girmek girmek için kullanılır:
+
+            setAddress("ev", "manual", "192.168.2.2", "255.255.255.0", "192.168.2.1")
+
+        "auto" modu destekleniyorsa, otomatik adres alma sağlanabilir:
+
+            setAddress("ev", "auth", "", "", "")
+
+        NOT: Sadeleştirilebilir.
 
 
     setNameService(profile, namemode, nameserver):
-        ...
+        NOT: Fonsksiyon tanımlanmalı
 
 
     setState(profile, state):
-        'up' ile ilgili profil bağlantısını kurar, 'down' ile kapatır.
+        "up" ile ilgili profil bağlantısını kurar, "down" ile kapatır.
 
 
     getState(profile):
