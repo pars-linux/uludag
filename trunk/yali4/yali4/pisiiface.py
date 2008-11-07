@@ -85,7 +85,10 @@ def finalize():
     pass
 
 def install(pkg_name_list):
-    pisi.api.install(pkg_name_list)
+    try:
+        pisi.api.install(pkg_name_list)
+    except Exception, e:
+        raise e
 
 def install_all():
     install(get_available())
@@ -98,6 +101,9 @@ def get_available_len():
 
 def get_pending():
     return pisi.db.installdb.InstallDB().list_pending()
+
+def get_install_order(pkg_name_list):
+    return pisi.api.get_install_order(pkg_name_list)
 
 def get_pending_len():
     return len(get_pending())
