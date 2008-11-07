@@ -135,7 +135,10 @@ def setState(name, state):
             # Stop other profiles on same device
             stopSameDevice(name)
             # Notify clients
-            notify("Net.Link", "stateChanged", (name, "connecting", ""))
+            notify("Network.Link", "stateChanged", (name, "connecting", ""))
+            # Save state to profile database
+            profile.info["state"] = "connecting"
+            profile.save()
             # Start DHCP client
             ret = iface.startAuto()
             if ret == 0 and iface.isUp():
@@ -145,21 +148,21 @@ def setState(name, state):
                     profile.info["state"] = "up " + address[0]
                     profile.save()
                     # Notify clients
-                    notify("Net.Link", "stateChanged", (name, "up", address[0]))
+                    notify("Network.Link", "stateChanged", (name, "up", address[0]))
                 else:
                     iface.down()
                     # Save state to profile database
                     profile.info["state"] = "down"
                     profile.save()
                     # Notify clients
-                    notify("Net.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
+                    notify("Network.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
             else:
                 iface.down()
                 # Save state to profile database
                 profile.info["state"] = "down"
                 profile.save()
                 # Notify clients
-                notify("Net.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
+                notify("Network.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
         else:
             try:
                 net_address = profile.info["net_address"]
@@ -177,7 +180,7 @@ def setState(name, state):
             profile.info["state"] = "up " + net_address
             profile.save()
             # Notify clients
-            notify("Net.Link", "stateChanged", (name, "up", net_address))
+            notify("Network.Link", "stateChanged", (name, "up", net_address))
     elif state == "down":
         if profile.info.get("net_mode", "auto") == "auto":
             iface.stopAuto()
@@ -186,7 +189,7 @@ def setState(name, state):
         profile.info["state"] = "down"
         profile.save()
         # Notify clients
-        notify("Net.Link", "stateChanged", (name, "down", ""))
+        notify("Network.Link", "stateChanged", (name, "down", ""))
 
 def connections():
     return listProfiles()
