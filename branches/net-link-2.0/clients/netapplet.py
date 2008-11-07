@@ -86,7 +86,7 @@ class NetTray(KSystemTray):
             type_ = self.parent.info[package]["type"].split()[0]
 
             if state == "up":
-                self.parent.updateStatus(profileName, "up")
+                self.parent.updateStatus("%s %s" % (package, profileName), "up")
 
             if state in ("up", "connecting"):
                 break
@@ -156,18 +156,19 @@ class NetTray(KSystemTray):
                         profile = profileInfo
                         break
                 if profile:
-                    self.parent.updateStatus(profileName, "down")
+                    self.parent.updateStatus("%s %s" % (package, profileName), "down")
                     self.profiles.remove(profile)
         elif signal == "stateChanged":
             profileName, action, data = args
             for profileInfo in self.profiles:
                 if profileInfo["name"] == profileName:
                     if action != "up":
-                        self.parent.updateStatus(profileName, "down")
-                    if len(data):
-                        profileInfo["state"] = "%s %s" % (action, data)
-                    else:
-                        profileInfo["state"] = action
+                        self.parent.updateStatus("%s %s" % (package, profileName), "down")
+                    if self.parent.devices[profileInfo["device_id"]] == package:
+                        if len(data):
+                            profileInfo["state"] = "%s %s" % (action, data)
+                        else:
+                            profileInfo["state"] = action
                     break
             self.buildPopup()
             self.updateIcon()
