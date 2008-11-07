@@ -1,5 +1,5 @@
 <comarModel>
-    <interface name="Net.Link">
+    <interface name="Network.Link">
         <method name="linkInfo" access_label="get">
             <arg name="info" type="{ss}" direction="out"/>
         </method>

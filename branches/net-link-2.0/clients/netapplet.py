@@ -58,8 +58,8 @@ class NetTray(KSystemTray):
         # Build menus
         self.updateMenu()
 
-        # Listen Net.Link signals
-        self.link.listenSignals("Net.Link", self.handleSignals)
+        # Listen Network.Link signals
+        self.link.listenSignals("Network.Link", self.handleSignals)
 
         # Show yourself!
         self.updateIcon()
@@ -136,15 +136,15 @@ class NetTray(KSystemTray):
         state = profileInfo["state"].split()[0]
 
         if state in ("up", "connecting"):
-            self.link.Net.Link[package].setState(profileName, "down", quiet=True)
+            self.link.Network.Link[package].setState(profileName, "down", quiet=True)
         else:
-            self.link.Net.Link[package].setState(profileName, "up", quiet=True)
+            self.link.Network.Link[package].setState(profileName, "up", quiet=True)
 
     def handleSignals(self, package, signal, args):
         if signal == "connectionChanged":
             action, profileName = args
             if action == "added":
-                profileInfo = self.link.Net.Link[package].connectionInfo(profileName)
+                profileInfo = self.link.Network.Link[package].connectionInfo(profileName)
                 self.profiles.append(profileInfo)
             elif action == "deleted":
                 profile = None
@@ -217,16 +217,16 @@ class Applet:
         self.buildTrays()
 
     def getProfiles(self):
-        for package in self.link.Net.Link:
+        for package in self.link.Network.Link:
             self.profiles[package] = {}
             # Get backend info
-            self.info[package] = self.link.Net.Link[package].linkInfo()
+            self.info[package] = self.link.Network.Link[package].linkInfo()
             # Get device list
-            for device in self.link.Net.Link[package].deviceList():
+            for device in self.link.Network.Link[package].deviceList():
                 self.devices[device] = package
             # Get profile list
-            for profile in self.link.Net.Link[package].connections():
-                self.profiles[package][profile] = self.link.Net.Link[package].connectionInfo(profile)
+            for profile in self.link.Network.Link[package].connections():
+                self.profiles[package][profile] = self.link.Network.Link[package].connectionInfo(profile)
 
     def buildTrays(self):
         # Clear all

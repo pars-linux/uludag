@@ -1,5 +1,5 @@
-Net.Link Model Taslağı
-======================
+Network.Link Model Taslağı
+==========================
 
     linkInfo():
         Uygulamanın ağ bağlantısı kurmak ya da yönetmek için ihtiyaç duyduğu bilgileri sunar.
