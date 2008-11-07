@@ -131,14 +131,14 @@ def setState(name, state):
     profile = Profile(name)
     iface = netutils.findInterface(profile.info["device"])
     if state == "up":
+        # Stop other profiles on same device
+        stopSameDevice(name)
+        # Notify clients
+        notify("Network.Link", "stateChanged", (name, "connecting", ""))
+        # Save state to profile database
+        profile.info["state"] = "connecting"
+        profile.save()
         if profile.info.get("net_mode", "auto") == "auto":
-            # Stop other profiles on same device
-            stopSameDevice(name)
-            # Notify clients
-            notify("Network.Link", "stateChanged", (name, "connecting", ""))
-            # Save state to profile database
-            profile.info["state"] = "connecting"
-            profile.save()
             # Start DHCP client
             ret = iface.startAuto()
             if ret == 0 and iface.isUp():
