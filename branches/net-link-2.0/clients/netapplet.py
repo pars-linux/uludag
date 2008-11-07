@@ -135,10 +135,13 @@ class NetTray(KSystemTray):
         profileName = profileInfo["name"]
         state = profileInfo["state"].split()[0]
 
+        def handler(package, exception, results):
+            pass
+
         if state in ("up", "connecting"):
-            self.link.Network.Link[package].setState(profileName, "down", quiet=True)
+            self.link.Network.Link[package].setState(profileName, "down", timeout=300, async=handler)
         else:
-            self.link.Network.Link[package].setState(profileName, "up", quiet=True)
+            self.link.Network.Link[package].setState(profileName, "up", timeout=300, async=handler)
 
     def handleSignals(self, package, signal, args):
         if signal == "connectionChanged":
