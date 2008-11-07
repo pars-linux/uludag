@@ -414,6 +414,7 @@ def setState(name, state):
             if profile.info.get("net_mode", "auto") == "auto":
                 iface.stopAuto()
             # Set encryption to none
+            wifi = Wireless(iface)
             wifi.setEncryption(None, None)
             # Bring down interface
             iface.down()
