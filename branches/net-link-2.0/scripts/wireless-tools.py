@@ -100,7 +100,7 @@ def connections():
     # TODO: Return list of profile names
     return []
 
-def connectionInfo(name=None):
+def connectionInfo(name):
     # TODO: Return profile info
     return {}
 
