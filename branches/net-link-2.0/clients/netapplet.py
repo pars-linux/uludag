@@ -136,6 +136,7 @@ class NetTray(KSystemTray):
         state = profileInfo["state"].split()[0]
 
         def handler(package, exception, results):
+            # TODO: Handle connection errors here
             pass
 
         if state in ("up", "connecting"):
@@ -162,14 +163,13 @@ class NetTray(KSystemTray):
             profileName, action, data = args
             for profileInfo in self.profiles:
                 if profileInfo["name"] == profileName:
-                    if action != "up":
-                        self.parent.updateStatus("%s %s" % (package, profileName), "down")
                     if self.parent.devices[profileInfo["device_id"]] == package:
+                        if action != "up":
+                            self.parent.updateStatus("%s %s" % (package, profileName), "down")
                         if len(data):
                             profileInfo["state"] = "%s %s" % (action, data)
                         else:
                             profileInfo["state"] = action
-                    break
             self.buildPopup()
             self.updateIcon()
 
