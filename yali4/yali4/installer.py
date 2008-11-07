@@ -120,6 +120,11 @@ class Yali:
 
         self.plugin = None
 
+        # mutual exclusion
+        self.mutex = QMutex()
+        self.waitCondition = QWaitCondition()
+        self.retryAnswer = False
+
         # Let the show begin..
         if install_type == YALI_PLUGIN:
             self.plugin  = self.getPlugin(install_plugin)
@@ -583,6 +588,15 @@ class Yali:
         d = Dialog(title, r, self)
         d.resize(300,200)
         d.exec_()
+
+    def askForRetry(self, message):
+        w = WarningWidget()
+        w.warning.setText(str(message))
+        w.ok.setText(_("Retry"))
+        dialog = WarningDialog(w, self)
+        if not dialog.exec_():
+            return False
+        return True
 
 class ErrorWidget(QtGui.QWidget):
     def __init__(self, *args):

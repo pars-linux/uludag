@@ -33,7 +33,7 @@ from yali4.gui.descSlide import slideDesc
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 import yali4.gui.context as ctx
 
-EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished = range(1001,1006)
+EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished, EventRetry = range(1001,1007)
 
 def iter_slide_pics():
     def pat(pic):
@@ -106,6 +106,7 @@ Have fun!
     def shown(self):
         global currentObject
         currentObject = self
+
         # start installer thread
         ctx.debugger.log("PkgInstaller is creating...")
         self.pkg_installer = PkgInstaller()
@@ -149,6 +150,12 @@ Have fun!
         elif qevent.eventType() == EventError:
             err = qevent.data()
             self.installError(err)
+
+        # EventRetry
+        elif qevent.eventType() == EventRetry:
+            package = qevent.data()
+            ctx.yali.retryAnswer = ctx.yali.askForRetry(_("Package install failed : <b>%s</b><br>Do you want to retry ?" % package))
+            ctx.yali.waitCondition.wakeAll()
 
         # EventAllFinished
         elif qevent.eventType() == EventAllFinished:
@@ -241,12 +248,41 @@ class PkgInstaller(QThread):
         ctx.debugger.log("Found %d packages in repo.." % total)
 
         try:
-            yali4.pisiiface.install_all()
+            order = yali4.pisiiface.get_install_order(yali4.pisiiface.get_available())
+            for package in order:
+                while True:
+                    try:
+                        yali4.pisiiface.install([package])
+                        break # while
+                    except Exception, e:
+                        # Lock the mutex
+                        ctx.yali.mutex.lock()
+
+                        ctx.debugger.log("Waiting Mutex")
+                        # Send event for asking retry
+                        qevent = PisiEvent(QEvent.User, EventRetry)
+                        qevent.setData(package)
+                        objectSender(qevent)
+
+                        # wait for the result
+                        ctx.yali.waitCondition.wait(ctx.yali.mutex)
+                        ctx.yali.mutex.unlock()
+                        ctx.debugger.log("Mutex finished")
+
+                        if ctx.yali.retryAnswer == False:
+                            raise e
+
         except Exception, e:
+            # Lock the mutex
+            ctx.yali.mutex.lock()
+
             # User+10: error
             qevent = PisiEvent(QEvent.User, EventError)
             qevent.setData(e)
             objectSender(qevent)
+
+            # wait for the result
+            ctx.yali.waitCondition.wait(ctx.yali.mutex)
 
         # Package Install finished lets configure them
         qevent = PisiEvent(QEvent.User, EventPackageInstallFinished)
