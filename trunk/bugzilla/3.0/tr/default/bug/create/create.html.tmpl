@@ -351,16 +351,16 @@ function handleWantsAttachment(wants_attachment) {
 
 [% IF user.in_group(Param('timetrackinggroup')) %]
   <tr>
-    <td align="right"><strong>Estimated Hours:</strong></td>
+    <td align="right"><strong>Tahmini süre:</strong></td>
     <td colspan="2">
       <input name="estimated_time" size="6" maxlength="6" value="0.0">
     </td>
   </tr>
   <tr>
-    <td align="right"><strong>Deadline:</strong></td>
+    <td align="right"><strong>Son mühlet:</strong></td>
     <td colspan="2">
       <input name="deadline" size="10" maxlength="10" value="[% deadline FILTER html %]">
-      <small>(YYYY-MM-DD)</small>
+      <small>(YYYY-AA-GG)</small>
     </td>
   </tr>
 
@@ -372,7 +372,7 @@ function handleWantsAttachment(wants_attachment) {
 
 [% IF Param("usebugaliases") %]
   <tr>
-    <td align="right"><strong>Alias:</strong></td>
+    <td align="right"><strong>Sembolik ad:</strong></td>
     <td colspan="2">
       <input name="alias" size="20">
     </td>
