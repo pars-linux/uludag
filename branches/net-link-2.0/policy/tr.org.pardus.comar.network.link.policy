@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+
+<policyconfig>
+    <action id="tr.org.pardus.comar.network.link.setstate">
+        <description>Set connection state</description>
+        <description xml:lang="tr">Bağlantı durumunu değiştir</description>
+        <description xml:lang="fr">Établir l'état de la connexion</description>
+        <description xml:lang="es">Establecer estado de conexión</description>
+        <description xml:lang="pl">Ustawianie stanu połączenia</description>
+        <description xml:lang="de">Verbindungszustand einstellen</description>
+        <message>System policy prevents changing connection state</message>
+        <message xml:lang="tr">Sistem politikası bağlantı durumunu değiştirmeyi engelliyor</message>
+        <message xml:lang="fr">Le mode de gestion du système ne permet pas d'établir l'état de la connexion</message>
+        <message xml:lang="es">La política del sistema no permite cambiar el estado de la conexión</message>
+        <message xml:lang="de">Systemrichtlinie verhindert die Änderung des Verbindungszustandes</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+    <action id="tr.org.pardus.comar.network.link.set">
+        <description>Add connection or set connection details</description>
+        <description xml:lang="tr">Bağlantı ekle veya detaylarını değiştir</description>
+        <description xml:lang="fr">Ajouter une connexion ou établir les détails de la connexion</description>
+        <description xml:lang="es">Agregar conexión o configurar detalles de una conexión</description>
+        <description xml:lang="pl">Ustawianie szczegółów połączenia</description>
+        <description xml:lang="de">Verbindung hinzufügen oder Verbindungsdetails einstellen</description>
+        <message>System policy prevents adding/editing connections</message>
+        <message xml:lang="tr">Sistem politikası bağlantı eklemeyi/bağlantıda değişiklik yapmayı engelliyor</message>
+        <message xml:lang="fr">Le mode de gestion du système ne permet pas d'établir les détails concernant la connexion</message>
+        <message xml:lang="es">La política del sistema no permite agregar/modificar conexiones</message>
+        <message xml:lang="de">Systemrichtlinie verhindert das Hinzufügen/Bearbeiten der Verbindungen</message>
+        <defaults>
+            <allow_any>auth_admin_keep_always</allow_any>
+            <allow_active>auth_admin_keep_always</allow_active>
+            <allow_inactive>auth_admin_keep_always</allow_inactive>
+        </defaults>
+    </action>
+
+    <action id="tr.org.pardus.comar.network.link.get">
+        <description>Get connection/device details</description>
+        <description xml:lang="tr">Bağlantı/aygıt detaylarını al</description>
+        <description xml:lang="fr">Obtenir les informations concernant la connexion / le périphérique</description>
+        <description xml:lang="es">Obtener información de la conexión /del dispositivo</description>
+        <description xml:lang="pl">Odczyt ustawień połączenia/urządzenia</description>
+        <description xml:lang="de">Verbindungs-/Geräte-Details abrufen</description>
+        <message>System policy prevents getting connection/device details</message>
+        <message xml:lang="tr">Sistem politikası bağlantı/aygıt detaylarını almayı engelliyor</message>
+        <message xml:lang="fr">Le mode de gestion du système ne permet pas d'obtenir les informations concernant la connexion / le périphérique</message>
+        <message xml:lang="es">La política del sistema no permite obtener detalles de la conexión / del dispositivo</message>
+        <message xml:lang="de">Systemrichtlinie verhindert den Abruf der Verbindungs-/Geräte-Details</message>
+        <defaults>
+            <allow_any>yes</allow_any>
+            <allow_active>yes</allow_active>
+            <allow_inactive>yes</allow_inactive>
+        </defaults>
+    </action>
+</policyconfig>
