@@ -7,6 +7,7 @@
 
 import os
 import sys
+import time
 
 if os.getuid() != 0:
     print "Run as root"
@@ -21,3 +22,6 @@ for package in link.Network.Link:
         if info.get("state", "down").startswith("up"):
             print "Bringing up %s" % info["device_id"]
             link.Network.Link[package].setState(profile, "up", quiet=True)
+
+# Give COMAR some time to get process ID
+time.sleep(5)
