@@ -194,8 +194,11 @@ def connections():
 def connectionInfo(name):
     # TODO: Expand
     profile = Profile(name)
+    device = profile.info["device"]
     return {
         "name": name,
+        "device_id": device,
+        "device_name": netutils.deviceName(device),
         "state": profile.info.get("state", "down"),
     }
 
