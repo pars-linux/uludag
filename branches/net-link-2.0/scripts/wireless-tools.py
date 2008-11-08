@@ -245,7 +245,7 @@ def linkInfo():
     d = {
         "type": "wifi",
         "name": _(MSG_WIRELESS),
-        "modes": "device,devicemode,remote,remote_scan,net,auto,auth",
+        "modes": "device,device_mode,remote,remote_scan,net,auto,auth",
     }
     return d
 
