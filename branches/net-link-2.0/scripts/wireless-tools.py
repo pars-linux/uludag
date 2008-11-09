@@ -208,13 +208,13 @@ class Wireless:
             os.system("/usr/sbin/iwconfig '%s' enc restricted 's:%s'" % (self.ifc.name, parameters["password"]))
         elif mode == "wpa-psk":
             if not supplicant:
-                return _(MSG_NO_WPA)
+                fail(_(MSG_NO_WPA))
             if not wpa_supplicant.startWpaService():
                 fail("Unable to start WPA service")
             print self.ifc.name, self.ssid, parameters["password"]
             ret = wpa_supplicant.setWpaAuthentication(self.ifc.name, self.ssid, parameters["password"])
             if not ret:
-                return _(MSG_WPA_FAILED)
+                fail(_(MSG_WPA_FAILED))
         elif mode == "802.1x":
             pass
         elif mode == "WPA-EAP":
