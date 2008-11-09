@@ -1,5 +1,5 @@
 --- client/config.orig	2008-03-08 19:57:57.000000000 +0200
-+++ client/config.py	2008-09-01 16:29:46.000000000 +0300
++++ client/config.py	2008-11-09 02:48:45.000000000 +0200
 @@ -11,12 +11,12 @@
  
  
@@ -18,8 +18,15 @@
  
  #These are the defaults taken from the source code.
  #fs_types = get_config_attr("FS_TYPES", ["ext2", "ext3", "xfs", "reiserfs"])
-@@ -91,5 +91,5 @@
+@@ -89,7 +89,12 @@
+ #except IOError:
+ #    return "Chuck Norris"
  
++#For Pardus
++try:
++    OS = file('/etc/pardus-release').read().strip()
++except IOError:
++    OS = "Absolutely not Pardus!"
  
  #For non RH Distros
 -#HW_UUID = "/etc/smolt/hw-uuid"
