@@ -149,9 +149,7 @@ class Wireless:
                     point.encryption = "wepascii"
             if "IE:" in line:
                 ie = line.split("IE:")[1].strip()
-                if "WPA Version 1" in ie:
-                    point.encryption = "wpa-psk"
-                if "WPA2 Version 1" in ie:
+                if "WPA" in ie or "WPA2" in ie:
                     point.encryption = "wpa-psk"
             if "Authentication Suites" in line:
                 point.auth_suit = line.split(":")[1].strip()
@@ -202,6 +200,8 @@ class Wireless:
         if supplicant and wpa_supplicant.isWpaServiceUsable():
             wpa_supplicant.disableAuthentication(self.ifc.name)
 
+        # TODO a guessEncryption() function to determine if its wep or wepascii or open (no enc)
+        # TODO check returning data from iwconfig, these calls dont work most of the time but we simply pass
         if mode == "wep":
             os.system("/usr/sbin/iwconfig '%s' enc restricted '%s'" % (self.ifc.name, parameters["password"]))
         elif mode == "wepascii":
@@ -215,7 +215,9 @@ class Wireless:
             ret = wpa_supplicant.setWpaAuthentication(self.ifc.name, self.ssid, parameters["password"])
             if not ret:
                 return _(MSG_WPA_FAILED)
-        elif mode == "802.1.x":
+        elif mode == "802.1x":
+            pass
+        elif mode == "WPA-EAP":
             pass
 
     def getBitrate(self, ifname):
