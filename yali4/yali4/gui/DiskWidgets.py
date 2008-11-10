@@ -360,7 +360,7 @@ class DiskList(QtGui.QWidget):
 
             if partitionNum == 0:
                 type = parteddata.PARTITION_PRIMARY
-            elif device.numberOfPrimaryPartitions() >= min_primary and not extendedPartition:
+            elif device.numberOfPrimaryPartitions() >= min_primary and device.numberOfPrimaryPartitions() <= 3 and not extendedPartition:
                 # if three primary partitions exists on disk and no more extendedPartition
                 # we must create new extended one for other logical partitions
                 ctx.debugger.log("There is no extended partition, Yalı will create new one")
@@ -371,6 +371,15 @@ class DiskList(QtGui.QWidget):
                 partition = device.getPartition(p.num)
                 ctx.debugger.log("Yalı created new extended partition as number of %d " % p.num)
                 type = parteddata.PARTITION_LOGICAL
+            elif device.numberOfPrimaryPartitions() == 4 or ( device.numberOfPrimaryPartitions() == 3 and extendedPartition and not(partition._partition.type and parteddata.PARTITION_LOGICAL)):
+                # if four primary partitions or
+                # three primary partitions and additionaly an extendedPartition
+                # exists on the disk we can't create a new primary partition
+                QtGui.QMessageBox.information(self,
+                                                _("Too many primary partition !"), 
+                                                _("You need to delete one of the primary or extended(if exist) partition from your disk table !"))
+                return
+
 
             if extendedPartition and partition._partition.type & parteddata.PARTITION_LOGICAL:
                 type = parteddata.PARTITION_LOGICAL
