@@ -376,8 +376,8 @@ class DiskList(QtGui.QWidget):
                 # three primary partitions and additionaly an extendedPartition
                 # exists on the disk we can't create a new primary partition
                 QtGui.QMessageBox.information(self,
-                                                _("Too many primary partition !"), 
-                                                _("You need to delete one of the primary or extended(if exist) partition from your disk table !"))
+                                                _("Too many primary partitions !"), 
+                                                _("You need to delete one of the primary or extended(if exists) partition from your disk table !"))
                 return
 
 
