@@ -19,4 +19,4 @@ Icon=package-manager
 Type=Application
 X-Tasma-Fork=true
 Exec=package-manager --show-mainwindow
-Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-system
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-system;
