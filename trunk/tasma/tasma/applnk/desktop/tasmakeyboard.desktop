@@ -223,4 +223,4 @@ Keywords[zh_CN]=Keyboard,Keyboard repeat,Click volume,Input Devices,repeat,volum
 Keywords[zh_TW]=Keyboard,Keyboard repeat,Click volume,Input Devices,repeat,volume,鍵盤,鍵盤重複,敲擊音量,輸入裝置,重複速度,音量
 Keywords[zu]=Ibhodi lokhiye,ukuphindwa kwebhodi lokhiye,Cofa izinga lomsindo, Amathuluzi anenjongo omphumela wangaphakathi,phinda,izina lomsindo
 
-Categories=Qt;KDE;X-KDE-settings-hardware;X-KDE-tasma-peripherals
+Categories=Qt;KDE;X-KDE-settings-hardware;X-KDE-tasma-peripherals;

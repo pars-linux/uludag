@@ -27,5 +27,5 @@ Type=Application
 Icon=fonts
 Exec=kcmshell kcmfontinst
 
-Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-looknfeel
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-looknfeel;
 

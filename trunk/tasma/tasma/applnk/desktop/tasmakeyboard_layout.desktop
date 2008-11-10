@@ -41,4 +41,4 @@ Keywords[fr]=Clavier,Disposition,International
 Keywords[it]=Tastiera,Layout,Internazionale
 Keywords[sv]=Tangentbord,Layout,Internationell
 
-Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-peripherals
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-peripherals;

@@ -165,5 +165,5 @@ Keywords[uz]=Gestures,Mouse gestures,Тугмалар,Умумий тугмал�
 Keywords[zh_CN]=Keys,Global key bindings,Key bindings,Gestures,Mouse gestures,键,全局键绑定,手势,鼠标手势
 Keywords[zh_TW]=Keys,Global key bindings,Key bindings,Gestures,Mouse gestures,按鍵,全域按建連結,按鍵連結,手勢,滑鼠手勢
 
-Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization;
 Encoding=UTF-8

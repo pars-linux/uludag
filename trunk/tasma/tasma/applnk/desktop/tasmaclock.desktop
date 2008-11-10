@@ -39,4 +39,4 @@ Keywords[fr]=horloge,date,heure,zone horaire
 Keywords[it]=orologio,data,ora,fuso orario
 Keywords[sv]=klocka,datum,tid,tidszon
 
-Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-localization
+Categories=Qt;KDE;X-KDE-settings-system;X-KDE-tasma-localization;

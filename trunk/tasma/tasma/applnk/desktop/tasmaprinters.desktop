@@ -40,4 +40,4 @@ Keywords[fr]=imprimer,imprimante,gestion d'impression
 Keywords[it]=stampare,stampante,gestione della stampa
 Keywords[sv]=skriv ut,skrivare,skrivarhantering
 
-Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals;
+Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals;;

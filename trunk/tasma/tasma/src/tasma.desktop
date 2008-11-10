@@ -22,4 +22,4 @@ GenericName[pt_BR]=Centro de Configuração Pardus
 GenericName[es]=Centro de Configuración de Pardus
 GenericName[sv]=Pardus inställningscentral
 
-Categories=Qt;KDE;Core
+Categories=Qt;KDE;Core;

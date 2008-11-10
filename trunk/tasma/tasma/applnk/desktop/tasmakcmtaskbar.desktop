@@ -40,4 +40,4 @@ Keywords[fr]=kicker,panneau,kpanel,barre des tâches,barre de démarrage,barre d
 Keywords[it]=kicker,panello,kpanel,barra delle applicazioni,barra di avvio,launchbar,finestre
 Keywords[sv]=kicker,panel,kpanel,aktivitetsfält,startrad,programrad,fönster
 
-Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop
+Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop;

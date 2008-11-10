@@ -38,4 +38,4 @@ Keywords[pt_BR]=kwin,janela,gerenciador,borda,estilo,tema,visual,layout,botão,h
 Keywords[fr]=kwin,fenêtre,gestionnaire,bord,style,thème,rendu visuel,impressions,disposition,boutton,prise en main,bord,kwm,décoration
 Keywords[it]=kwin,finestra,gestore,bordo,stile,tema,aspetto,impressione,feel,disposizione,layout,pulsante,handle,bordo,kwm,decorazione
 Keywords[sv]=kwin,fönster,hanterare,kant,stil,tema,utseende,känsla,layout
-Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel;

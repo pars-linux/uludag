@@ -39,4 +39,4 @@ Keywords[fr]=Sons système,Audio,Son,Notifier,Alertes,Notification
 Keywords[it]=Sistema sonoro,Audio,Suono,Notificare,Avvisi,Notifica
 Keywords[sv]=Systemljud,Ljud,ljud,Underrättelse,Varningar,Bekräftelse
 
-Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound
+Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound;

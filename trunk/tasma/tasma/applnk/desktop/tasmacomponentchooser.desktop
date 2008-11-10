@@ -39,4 +39,4 @@ Keywords[fr]=composants,sélectionneur de composants,ressources,client de mail,�
 Keywords[it]=componenti,selettore di componenti,risorse,client di posta,emulatore del terminale
 Keywords[sv]=komponenter,komponentväljare,resurser,e-postklient,terminalemulator
 
-Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop
+Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop;

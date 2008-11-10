@@ -40,4 +40,4 @@ Keywords[fr]=bureau,bureaux,nombre,bureau virtuel
 Keywords[it]=desktop,numero,desktop virtuale
 Keywords[sv]=skrivbord,antal skrivbord,antal,virtuellt skrivbord
 
-Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop
+Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop;

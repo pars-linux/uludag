@@ -36,4 +36,4 @@ Keywords[fr]=mot de passe,email,nom,organisation,nom réel,image de connection,f
 Keywords[it]=password,posta elettronica,email,organizzazione,nome,nome reale,immagine di login,faccia,modalità eco
 Keywords[sv]=lösenord;e-post;namn;organisation;verkligt namn;inloggningsbild;bild;ekoläge
 
-Categories=QT;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount
+Categories=QT;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount;
