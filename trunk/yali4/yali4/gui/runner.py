@@ -127,15 +127,17 @@ class Runner:
 
 def showException(ex_type, tb):
     title = _("Error!")
+    closeButton = True
 
     if ex_type in (yali4.exception_fatal, yali4.exception_pisi):
+        closeButton = False
         w = ErrorWidget(tb)
     else:
         w = ExceptionWidget(tb)
 
     print "BACKTRACE: ",tb
     ctx.debugger.log(tb)
-    d = Dialog(title, w, None)
+    d = Dialog(title, w, None, closeButton)
     d.resize(500,400)
     d.exec_()
 
