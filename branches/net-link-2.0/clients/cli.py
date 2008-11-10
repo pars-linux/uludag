@@ -97,7 +97,7 @@ def getRemote(package, device):
         elif remoteNo == len(remotes):
             return None
         else:
-            return raw_input("Enter Remote > ")
+            return raw_input("%s > " % link.Network.Link[package].remoteName())
     while not remote:
         remote = scanRemote()
     return remote
@@ -143,6 +143,8 @@ def main():
         # Get backend info
         info = link.Network.Link[package].linkInfo()
         modes = info["modes"].split(",")
+        # Get name
+        profile = raw_input("Profile name > ")
         # Select device
         if "device" in modes:
             device = getDevice(package)
@@ -166,8 +168,6 @@ def main():
             if auth:
                 for key, value in getAuthSettings(package, auth):
                     settings.append(("auth_%s" % key, value,))
-        print settings
-        return
         # Address
         if "net" in modes:
             print
@@ -177,18 +177,27 @@ def main():
                 print "  [2] Get address automatically"
                 auto = getNumber("Type", 1, 2) == 2
             if auto:
-                settings.append(("net_mode", "auto"))
+                settings.append(("net", ("auto", "", "", "")))
             else:
                 net_address = raw_input("Address > ")
                 net_mask = raw_input("Mask > ")
                 net_gateway = raw_input("Gateway > ")
-                settings.append(("net_mode", "manual"))
-                settings.append(("net_address", net_address))
-                settings.append(("net_mask", net_mask))
-                settings.append(("net_gateway", net_gateway))
+                settings.append(("net", ("manual", net_address, net_mask, net_gateway)))
         # Create
-        print
-        print settings
+        for key, value in settings:
+            if key == "device":
+                link.Network.Link[package].setDevice(profile, value)
+            elif key == "device_mode":
+                link.Network.Link[package].setDeviceMode(profile, value)
+            elif key == "remote":
+                link.Network.Link[package].setRemote(profile, value)
+            elif key == "auth":
+                link.Network.Link[package].setAuthMethod(profile, value)
+            elif key.startswith("auth_"):
+                link.Network.Link[package].setAuthParameters(profile, key[5:], value)
+            elif key == "net":
+                mode_, address_, mask_, gateway_ = value
+                link.Network.Link[package].setAddress(profile, mode_, address_, mask_, gateway_)
     else:
         printUsage()
         return 1
