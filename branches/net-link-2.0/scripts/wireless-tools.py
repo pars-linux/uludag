@@ -211,7 +211,6 @@ class Wireless:
                 fail(_(MSG_NO_WPA))
             if not wpa_supplicant.startWpaService():
                 fail("Unable to start WPA service")
-            print self.ifc.name, self.ssid, parameters["password"]
             ret = wpa_supplicant.setWpaAuthentication(self.ifc.name, self.ssid, parameters["password"])
             if not ret:
                 fail(_(MSG_WPA_FAILED))
@@ -393,6 +392,13 @@ def setState(name, state):
                         profile.save()
                         # Notify clients
                         notify("Network.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
+                else:
+                    iface.down()
+                    # Save state to profile database
+                    profile.info["state"] = "down"
+                    profile.save()
+                    # Notify clients
+                    notify("Network.Link", "stateChanged", (name, "inaccesible", _(MSG_DHCP_FAILED)))
             else:
                 try:
                     net_address = profile.info["net_address"]
