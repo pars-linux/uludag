@@ -21,8 +21,8 @@ import random
 import yali4.gui.context as ctx
 
 class windowTitle(QtGui.QFrame):
-    def __init__(self, *args):
-        QtGui.QFrame.__init__(self, *args)
+    def __init__(self, parent, closeButton=True):
+        QtGui.QFrame.__init__(self, parent)
         self.setMaximumSize(QSize(9999999,26))
         self.setObjectName("windowTitle")
         self.hboxlayout = QtGui.QHBoxLayout(self)
@@ -38,13 +38,14 @@ class windowTitle(QtGui.QFrame):
         spacerItem = QtGui.QSpacerItem(40,20,QtGui.QSizePolicy.Expanding,QtGui.QSizePolicy.Minimum)
         self.hboxlayout.addItem(spacerItem)
 
-        self.pushButton = QtGui.QPushButton(self)
-        self.pushButton.setFocusPolicy(Qt.NoFocus)
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton.setStyleSheet("font:bold;")
-        self.pushButton.setText("X")
+        if closeButton:
+            self.pushButton = QtGui.QPushButton(self)
+            self.pushButton.setFocusPolicy(Qt.NoFocus)
+            self.pushButton.setObjectName("pushButton")
+            self.pushButton.setStyleSheet("font:bold;")
+            self.pushButton.setText("X")
 
-        self.hboxlayout.addWidget(self.pushButton)
+            self.hboxlayout.addWidget(self.pushButton)
 
         self.move = 0
         self.mainwidget = self.parent()
@@ -69,7 +70,7 @@ class windowTitle(QtGui.QFrame):
             self.mainwidget.move(newpos)
 
 class Dialog(QtGui.QDialog):
-    def __init__(self, t, w, parent=None):
+    def __init__(self, t, w, parent=None, closeButton = True):
         QtGui.QDialog.__init__(self, ctx.mainScreen.ui)
 
         self.gridlayout = QtGui.QGridLayout(self)
@@ -77,7 +78,7 @@ class Dialog(QtGui.QDialog):
         self.gridlayout.setSpacing(0)
         self.gridlayout.setObjectName("gridlayout")
 
-        self.windowTitle = windowTitle(self)
+        self.windowTitle = windowTitle(self, closeButton)
         self.windowTitle.label.setText(t)
 
         self.gridlayout.addWidget(self.windowTitle,0,0,1,1)
@@ -85,7 +86,9 @@ class Dialog(QtGui.QDialog):
         self.content = w
         self.gridlayout.addWidget(self.content,1,0,1,1)
 
-        QObject.connect(self.windowTitle.pushButton,SIGNAL("clicked()"),self.reject)
+        if closeButton:
+            QObject.connect(self.windowTitle.pushButton,SIGNAL("clicked()"),self.reject)
+
         QMetaObject.connectSlotsByName(self)
 
         self.setStyleSheet("""

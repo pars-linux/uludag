@@ -258,7 +258,6 @@ class PkgInstaller(QThread):
                         # Lock the mutex
                         ctx.yali.mutex.lock()
 
-                        ctx.debugger.log("Waiting Mutex")
                         # Send event for asking retry
                         qevent = PisiEvent(QEvent.User, EventRetry)
                         qevent.setData(package)
@@ -267,7 +266,6 @@ class PkgInstaller(QThread):
                         # wait for the result
                         ctx.yali.waitCondition.wait(ctx.yali.mutex)
                         ctx.yali.mutex.unlock()
-                        ctx.debugger.log("Mutex finished")
 
                         if ctx.yali.retryAnswer == False:
                             raise e

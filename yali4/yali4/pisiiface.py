@@ -29,6 +29,8 @@ def initialize(ui, with_comar = False, nodestDir = False):
     if not nodestDir:
         options.destdir = consts.target_dir
     options.yes_all = True
+    options.ignore_dependency = True
+    options.ignore_safety = True
     # wait for chroot_dbus to initialize
     # generally we don't need this but I think this is safer
     for i in range(20):
@@ -85,10 +87,7 @@ def finalize():
     pass
 
 def install(pkg_name_list):
-    try:
-        pisi.api.install(pkg_name_list)
-    except Exception, e:
-        raise e
+    pisi.api.install(pkg_name_list)
 
 def install_all():
     install(get_available())
