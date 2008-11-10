@@ -4,7 +4,7 @@ Exec=kcmshell printmgr
 Icon=printmgr
 Type=Application
 DocPath=kdeprint/index.html
-MimeType=print/manager
+MimeType=print/manager;
 
 X-KDE-ModuleType=Library
 X-KDE-Library=printmgr
@@ -40,4 +40,4 @@ Keywords[fr]=imprimer,imprimante,gestion d'impression
 Keywords[it]=stampare,stampante,gestione della stampa
 Keywords[sv]=skriv ut,skrivare,skrivarhantering
 
-Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals
+Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals;
