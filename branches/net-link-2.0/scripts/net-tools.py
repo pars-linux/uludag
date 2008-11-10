@@ -28,7 +28,12 @@ class Profile:
         self.db.remDB(self.name)
 
     def save(self):
+        is_new = self.name not in listProfiles()
         self.db.setDB(self.name, self.info)
+        if is_new:
+            notify("Network.Link", "connectionChanged", ("added", self.name))
+        else:
+            notify("Network.Link", "connectionChanged", ("changed", self.name))
 
 def stopSameDevice(name):
     profile = Profile(name)
@@ -90,6 +95,7 @@ def setDeviceMode(name, mode):
 def deleteConnection(name):
     profile = Profile(name)
     profile.delete()
+    notify("Network.Link", "connectionChanged", ("deleted", name))
 
 def setAddress(name, mode, address, mask, gateway):
     profile = Profile(name)
