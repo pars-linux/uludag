@@ -40,4 +40,4 @@ Keywords[fr]=Touches,Raccourcis claviers généraux,Raccourcis claviers,Schéma 
 Keywords[it]=Tasti,Tasti globali,Schema di tasti,Scorciatorie globali da tastiera,scorciatoie da tastiera,collegamenti,collegamenti alle applicazioni
 Keywords[sv]=Tangenter,Globala 
 
-Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-peripherals
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-peripherals;

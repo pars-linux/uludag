@@ -40,4 +40,4 @@ Keywords[fr]=fontes,taille de fonte,styles,jeux de caractères,panneau,kicker,pa
 Keywords[it]=caratteri,dimensione dei caratteri,stili,set di caratteri,pannello,kicker,pannello di controllo,desktop,File manager,Barre degli strumenti,Menu,Titolo della finestra,Titolo
 Keywords[sv]=typsnitt,teckensnitt,typsnittstorlek,teckensnittstorlek,stil,teckenkodning,panel,kicker,kontrollpanel,inställningscentral,Filhanterare,Verktygsrader,Meny,Fönstertitel,Titel
 
-Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel;

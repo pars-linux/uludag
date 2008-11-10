@@ -181,5 +181,5 @@ X-KDE-ModuleType=Library
 Icon=camera
 Exec=kcmshell kamera
 DocPath=kamera/index.html
-Categories=Qt;KDE;X-KDE-settings-hardware;X-KDE-tasma-peripherals
+Categories=Qt;KDE;X-KDE-settings-hardware;X-KDE-tasma-peripherals;
 

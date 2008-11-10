@@ -38,4 +38,4 @@ Keywords[fr]=crypto,krypto,cryptographie,encryption,SSL,https,certificats,chiffr
 Keywords[it]==crypto,critto,crittografia,ciframento,SSL,https,certificati,cifre,TLS,sicuro,sicurezza
 Keywords[sv]=Crypto,Krypto,Kryptografi,kryptering,SSL,https,certifikat,krypton,TLS,säkra,säkerhet
 
-Categories=Qt;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount
+Categories=Qt;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount;

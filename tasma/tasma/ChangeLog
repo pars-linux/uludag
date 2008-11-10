@@ -1,3 +1,6 @@
+2008-11-10 Ozan Çağlayan <ozan@pardus.org.tr>
+	* *desktop: Fix all desktop files to make them XDG compliant.
+
 2008-10-10 Pınar Yanardağ <pinar@pardus.org.tr>
 	* src/main.cpp:·Update version to 1.5.2
 

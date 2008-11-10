@@ -41,4 +41,4 @@ Keywords[fr]=Souris,Accélération de la souris,Seuil de souris,Boutons de souri
 Keywords[it]=Mouse,accelerazione del mouse,soglia del mouse,pulsanti del mouse,selezione,forma del cursore,dispositivi di input,mappaggio dei bottoni,Click,icone,riscontro,Puntatori,Trascina,Doppio click,mapping,destro,mancino
 Keywords[sv]=Mus,Musacceleration,Muströskel,Musknappar,Val,Markörutseende,Inmatningsenheter,Knapptolkning,klickning,ikoner,respons,Pekare,Drag,Dubbelklick,Tolkning,högerhänt,vänsterhänt
 
-Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals
+Categories=Qt;KDE;X-KDE-settings-peripherals;X-KDE-tasma-peripherals;

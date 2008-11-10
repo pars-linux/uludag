@@ -40,4 +40,4 @@ Keywords[fr]=Proxy,Serveur proxy,Pare-feu,Squid,proxy
 Keywords[it]=Proxy,server proxy,Firewall,Squid,proxy
 Keywords[sv]=Proxy,Proxy-server,Brandvägg,Squid,proxy
 
-Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network
+Categories=Qt;KDE;X-KDE-settings-network;X-KDE-tasma-network;

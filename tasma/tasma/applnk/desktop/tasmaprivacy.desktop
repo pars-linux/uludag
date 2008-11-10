@@ -38,4 +38,4 @@ Type=Application
 X-KDE-FactoryName=privacy
 X-KDE-Library=privacy
 X-KDE-ModuleType=Library
-Categories=Qt;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount
+Categories=Qt;KDE;X-KDE-settings-security;X-KDE-tasma-useraccount;

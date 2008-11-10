@@ -39,4 +39,4 @@ Keywords[fr]=kicker,panneau,kpanel,barre des tâches,barre de démarrage,barre d
 Keywords[it]=kicker,panello,kpanel,barra delle applicazioni,barra di avvio,launchbar,posizione,dimensioni,nascondi automaticamente,nascondi,pulsanti,animazione,sfondo,temi,cache dei menu,cache,nascosto,K-Menu,segnalibiri,documenti recenti,browser del menu,menu,icone,titoli,applets,avvio,evidenzia,maniglie,zoom sulle icone
 Keywords[sv]=kicker,panel,k-panel,aktivitetsfält,startfält,körningsfält,plats,storlek,dölj automatiskt,dölj,göm,knappar,animering,bakgrund,teman,menycache,cache,gömd,dold,K-meny,bokmärken,senaste dokument,snabbläddrare,bläddringsmeny,meny,ikoner,miniprogram,start,framhäv,grepp,zoomikoner
 
-Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop
+Categories=Qt;KDE;X-KDE-settings-desktop;X-KDE-tasma-desktop;

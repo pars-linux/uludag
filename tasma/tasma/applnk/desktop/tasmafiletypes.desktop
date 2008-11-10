@@ -39,4 +39,4 @@ Keywords[fr]=Type de fichiers,Association de fichiers,Types Mime,Patrons de fich
 Keywords[it]=Tipi di file,Associazioni,Tipi MIME,Modelli di file,File,Pattern
 Keywords[sv]=Filtyper,Filbindningar,Mime-typer,Filmönster,Filer,Mönster
 
-Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop
+Categories=Qt;KDE;X-KDE-settings-components;X-KDE-tasma-desktop;

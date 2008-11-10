@@ -40,4 +40,4 @@ Keywords[pt_BR]=aRts,servidor de som,artsd,Áudio,Som,inicialização,transparê
 Keywords[fr]=aRts,serveur de son,artsd,Audio,Son, démarrage,transparence réseau,transparence,priorité,duplex,full duplex,temps de réponse,Mixer,Volume,KMix,Mix,login,MIDI,synthétiseur,musique
 Keywords[it]=aRts,server sonoro,artsd,Audio,Suono,avvio,trasparenza di rete,trasparenza,priorità,duplex,full duplex,tempo di risposta,Mixer,Volume,KMix,Mix,login,MIDI,sintetizzatore,musica
 Keywords[sv]=aRts,Ljudserver,artsd,Ljud,uppstart,nätverkstransparens,transparens,prioritet,duplex,full duplex,svarstid,Mixer,Volym,Kmix,Mixa,inloggning,MIDI,synthesizer,musik
-Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound
+Categories=Qt;KDE;X-KDE-settings-sound;X-KDE-tasma-sound;

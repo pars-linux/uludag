@@ -40,4 +40,4 @@ Keywords[fr]=accès,accessibilité,sourd,handicapé,alerte,alerte sonore,alerte 
 Keywords[it]=accesso,accessibilità,sordo,disabile,allarme,allarme sonoro,allarme visivo,Tastiera,tasti,tasti sticky,tasti bounce,tasti rallentati,navigazione con il mouse,tastierino numerico
 Keywords[sv]=tillgång,tillgänglighet,döv,handikappad,signal,ljudsignal,visuell signal,Tangentbord,tangenter,klistriga tangenter,studsande tangenter,långsamma tangenter,musnavigering,numeriskt tangentbord
 
-Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization;

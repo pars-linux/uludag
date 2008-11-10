@@ -39,4 +39,4 @@ Keywords[pt_BR]=fundo,áreas de trabalho,cor,cores,imagens,papéis de parede,ble
 Keywords[fr]=fond d'écran,bureaux,couleurs,coloris,images,papiers-peints,blending,balance,cache,papiers-peints multiples,pixmap
 Keywords[it]=sfondo dello schermo,sfondo,desktop,colori,immagini,sfondi,blendinf,balance,cache,sfondi multipli,pixmap
 Keywords[sv]=bakgrund,skrivbord,färger,bilder,skrivbordsunderlägg,blandning,balans,cache,flera skrivbordsunderlägg,pixmapp
-Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel
+Categories=Qt;KDE;X-KDE-settings-looknfeel;X-KDE-tasma-looknfeel;

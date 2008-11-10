@@ -40,4 +40,4 @@ Keywords[fr]=langue,traduction,format numérique,monnaie,temps,date,formats,loca
 Keywords[it]=lingua,traduzione,formato dei numeri,moneta,ora,data,formati,localizzazione,Paese,set di caratteri,simboli decimali,Separatore delle migliaia,simbolo,separatore,segno,positivo,negativo,cifre frazionarie,settimana,inizio della settimana
 Keywords[sv]=språk,översättning,talformat,valuta,tid,datum,format,land,teckenuppsättningar,decimaltecken,tusentalsavskiljare,symbol,avskiljare,tecken,positivt,negativt,decimaler,vecka,första veckodag
 
-Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization
+Categories=Qt;KDE;X-KDE-settings-accessibility;X-KDE-tasma-localization;
