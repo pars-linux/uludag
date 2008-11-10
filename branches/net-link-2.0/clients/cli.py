@@ -81,6 +81,7 @@ def getDeviceMode(package):
 
 def getRemote(package, device):
     remote = None
+    remoteName = link.Network.Link[package].remoteName()
     def scanRemote():
         remotes = []
         print
@@ -91,13 +92,13 @@ def getRemote(package, device):
             index_ += 1
         print "  [%s] Scan Again" % index_
         print "  [%s] Enter Manually" % (index_ + 1)
-        remoteNo = getNumber("Remote", 1, len(remotes) + 2) - 1
+        remoteNo = getNumber(remoteName, 1, len(remotes) + 2) - 1
         if remoteNo < len(remotes):
             return remotes[remoteNo]
         elif remoteNo == len(remotes):
             return None
         else:
-            return raw_input("%s > " % link.Network.Link[package].remoteName())
+            return raw_input("%s > " % remoteName)
     while not remote:
         remote = scanRemote()
     return remote
