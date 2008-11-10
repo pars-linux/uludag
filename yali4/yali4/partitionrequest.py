@@ -324,9 +324,7 @@ class MountRequest(PartRequest):
         source = self.partition().getPath()
         target = consts.target_dir + pt.mountpoint
         filesystem = pt.filesystem._sysname or pt.filesystem._name
-        # filesystem = self.partition().getFSYSName() or self.partition().getFSName()
 
-        # print ">>>>>>",target
         if not os.path.isdir(target):
             os.makedirs(target)
 
@@ -338,14 +336,6 @@ class MountRequest(PartRequest):
                                              params,
                                              stdout="/tmp/mount.log",
                                              stderr="/tmp/mount.log")
-
-        # The old way ..
-        # yali4.sysutils.mount(source, target, filesystem)
-        # if pt.needsmtab:
-        #     mtab_entry = "%s %s %s rw 0 0\n" % (source,
-        #                                         target,
-        #                                         filesystem)
-        #     open("/etc/mtab", "a").write(mtab_entry)
 
         PartRequest.applyRequest(self)
 
@@ -370,8 +360,9 @@ class SwapFileRequest(PartRequest):
         else:
             yali4.sysutils.swap_as_file(consts.swap_file_path, 600)
 
-        PartRequest.applyRequest(self)
+        yali4.sysutils.swap_on(consts.swap_file_path)
 
+        PartRequest.applyRequest(self)
 
 ##
 # partition/filesystem labeling request
