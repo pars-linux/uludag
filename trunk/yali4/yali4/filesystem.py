@@ -468,6 +468,8 @@ class SwapFileSystem(FileSystem):
         if p.close():
             raise YaliException, "swap format failed: %s" % partition.getPath()
 
+        # Swap on
+        sysutils.swap_on(partition.getPath())
 
     def getLabel(self, partition):
         label = None

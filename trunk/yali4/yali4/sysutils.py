@@ -71,6 +71,12 @@ def swap_as_file(filepath, mb_size):
 
     return True
 
+def swap_on(partition):
+    # swap on
+    params = ["-v", partition]
+    execClear("swapon", params, stdout="/tmp/swapon.log",
+                                stderr="/tmp/swapon.log")
+
 ##
 # total memory size
 def mem_total():
