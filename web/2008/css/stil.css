@@ -46,6 +46,9 @@ img.floatr, img[align="right"] {
     clear:both;
 }
 
+.italic { font-style: italic }
+.bold { font-weight: bold }
+
 .header {
     height: 64px;
     width: 908px;
@@ -128,6 +131,9 @@ img.floatr, img[align="right"] {
     width: 640px;
     height: 460px;
     overflow: none;
+}
+.icerik_altsayfa_yazi a {
+    color: white;
 }
 
 .icerik_sss_sorular {
