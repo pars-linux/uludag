@@ -3,6 +3,7 @@
     <WorkDir>/home/ekin/temp/cdtemprelease/</WorkDir>
     <ReleaseFiles>/home/ekin/svn/uludag/trunk/CD-image/CD-image-version-2008.1/</ReleaseFiles>
     <ExtraParameters>yali4=debug</ExtraParameters>
+    <PluginPackage>/home/gokmen/pardus/internal/projeler/huzur/uygulamalar/packages/yali4-plugin-huzur-1.0-1.pisi</PluginPackage>
     <PackageSelection repo_uri="file:///home/ekin/packages/release/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>DirectFB</SelectedPackage>
@@ -842,8 +843,4 @@
         <Package>zpspell</Package>
         <Package>zvbi</Package>
     </PackageSelection>
-    <LanguageSelection default_language="tr_TR">
-        <Language>en_US</Language>
-        <Language>tr_TR</Language>
-    </LanguageSelection>
 </PardusmanProject>
