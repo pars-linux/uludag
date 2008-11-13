@@ -1,3 +1,8 @@
+2008-11-14  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
+
+	* Fixed type conversion bug (int(version))
+	* Activated debug mode. We've got lots of things to do...
+
 2008-11-13  Ahmet Emre ALADAĞ  <aladagemre@users.sourceforge.net>
 
 	* Added requested version validation.
