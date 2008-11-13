@@ -3,11 +3,13 @@ from search.pathsearch.models import Entry2007, Entry2008
 from django.db import models
 from search.settings import versions
 from django.template import RequestContext
-
+from django.http import Http404
 
 
 def index(request, version='2008'):
     """ Index page for pathsearch. """
+    if version not in versions:
+        version = 2008
     if request.POST.get('q') or request.GET.get('q'):
         entry = request.POST.get('q')  or request.GET.get('q')
         # A workaround here: should be improved:
@@ -38,8 +40,10 @@ def ENTRY(version):
              '2007' : Entry2007,
              '2008' : Entry2008,
              }
-    return match[version]
-    
+    try:
+        return match[version]
+    except:
+        raise Http404
 
 def list_package_contents(request, version, package_name):
     entry_list = ENTRY(version).objects.filter(package = package_name)
