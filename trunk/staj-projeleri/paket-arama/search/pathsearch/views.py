@@ -8,7 +8,7 @@ from django.http import Http404
 
 def index(request, version='2008'):
     """ Index page for pathsearch. """
-    if version not in versions:
+    if int(version) not in versions:
         version = 2008
     if request.POST.get('q') or request.GET.get('q'):
         entry = request.POST.get('q')  or request.GET.get('q')

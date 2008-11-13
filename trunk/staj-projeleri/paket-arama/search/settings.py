@@ -1,7 +1,7 @@
 # Django settings for search project.
 
-DEBUG = False
-TEMPLATE_DEBUG = False #DEBUG
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 
 WEB_URL = 'http://localhost/search'
