@@ -1,10 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from qt import QEventLoop
+from qt import QEventLoop, Qt, QCursor
 from kdeui import KCursor
 import PisiIface
-
 from Debug import Debug
 
 # global KApplication reference for setting cursor type
@@ -25,7 +24,7 @@ def debug(msg):
 
 def setWaitCursor():
     if app:
-        app.setOverrideCursor(KCursor.waitCursor)
+        app.setOverrideCursor(QCursor(Qt.WaitCursor))
 
 def setNormalCursor():
     if app:
