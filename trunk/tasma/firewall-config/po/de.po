@@ -178,7 +178,7 @@ msgid ""
 "create rules, and uncheck rules from list to remove them."
 msgstr ""
 "In dieser Registerkarte, können Sie Ihre eigenen Firewall-Richtlinien "
-"einrichten. Benutzen Sie die '+'  Taste, um die Richtlinien zu erstellen und "
+"einrichten. Benutzen Sie die '+' Schaltfläche, um die Richtlinien zu erstellen und "
 "deaktivieren Sie die Richtlinien, um diese zu entfernen."
 
 #: src/firewall.py:201
