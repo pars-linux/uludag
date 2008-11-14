@@ -110,8 +110,10 @@ def setRemote(name, remote):
     pass
 
 def setNameService(name, namemode, nameserver):
-    # TODO: Add/update name servers
-    pass
+    profile = Profile(name)
+    profile.info["name_mode"] = namemode
+    profile.info["name_server"] = nameserver
+    profile.save()
 
 def setAuthMethod(name, method):
     # TODO: Raise an exception here. "auth" mode not supported
@@ -187,6 +189,7 @@ def setState(name, state):
             profile.save()
             # Notify clients
             notify("Network.Link", "stateChanged", (name, "up", net_address))
+            # TODO: Set Network Stack
     elif state == "down":
         if profile.info.get("net_mode", "auto") == "auto":
             iface.stopAuto()
@@ -196,6 +199,8 @@ def setState(name, state):
         profile.save()
         # Notify clients
         notify("Network.Link", "stateChanged", (name, "down", ""))
+        # Reset Network Stack
+        call("baselayout", "Network.Stack", "updateNameServers", ([], ""))
 
 def connections():
     return listProfiles()
