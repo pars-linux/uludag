@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: #f3f3f3;
+    background-image: url("../resim/arkaplan.png");
     font-family: "Lucida Grande", "Lucida Sans Unicode", arial, helvetica, clean, verdana, sans-serif;
 }
 
@@ -68,7 +68,7 @@ img.floatr, img[align="right"] {
 
 .container_top {
     background: url("../resim/container_top.png") no-repeat bottom left;
-    height: 3px;
+    height: 9px;
     width: 926px;
     margin-left: auto;
     margin-right: auto;
@@ -76,7 +76,7 @@ img.floatr, img[align="right"] {
 
 .container_bottom {
     background: url("../resim/container_bottom.png") no-repeat;
-    height: 6px;
+    height: 10px;
     width: 926px;
     margin-left: auto;
     margin-right: auto;
@@ -84,7 +84,7 @@ img.floatr, img[align="right"] {
 
 #container {
     width: 926px;
-    height: 540px;
+    min-height: 540px;
     margin-left: auto;
     margin-right: auto;
     background: url("../resim/container_bg.png") repeat-y;
@@ -92,12 +92,9 @@ img.floatr, img[align="right"] {
 }
 
 #content {
-    position: relative;
-    top: -510px;
-    left: 14px;
-    width: 714px;
-    height: 520px;
-    background: url('../resim/content_bg.png') no-repeat;
+    margin: 10px 0px 10px 14px;
+    width: 654px;
+    min-height: 520px;
     overflow: hidden;
     float: left;
 }
@@ -105,7 +102,7 @@ img.floatr, img[align="right"] {
 .content_title {
     font-size: 22px;
     font-weight: bold;
-    color: #fff;
+    color: #58797C;
     padding-top: 16px;
     padding-left: 16px;
     width: 450px;
@@ -114,32 +111,31 @@ img.floatr, img[align="right"] {
 .content_text {
     line-height: 14px;
     font-size: 11px;
-    color: #fff;
+    color: #58797C;
     padding-top: 16px;
     padding-left: 16px;
+    padding-left: 16px;
     width: 640px;
-    height: 278px;
-    overflow: none;
+    overflow: hidden;
 }
 
 .icerik_altsayfa_yazi {
     line-height: 14px;
     font-size: 11px;
-    color: #fff;
+    color: #58797C;
     padding-top: 16px;
     padding-left: 16px;
     width: 640px;
-    height: 460px;
-    overflow: none;
+    overflow: hidden;
 }
 .icerik_altsayfa_yazi a {
-    color: white;
+    color: #58797C;
 }
 
 .icerik_sss_sorular {
     line-height: 13px;
     font-size: 11px;
-    color: #fff;
+    color: #58797C;
     margin-top: 16px;
     margin-left: 16px;
     width: 250px;
@@ -155,13 +151,13 @@ img.floatr, img[align="right"] {
 
 .icerik_sss_sorular a {
     text-decoration: none;
-    color: white;
+    color: #58797C;
 }
 
 .icerik_sss_cevaplar {
     line-height: 13px;
     font-size: 11px;
-    color: #fff;
+    color: #58797C;
     margin-top: 16px;
     margin-left: 16px;
     width: 327px;
@@ -171,11 +167,11 @@ img.floatr, img[align="right"] {
 }
 
 .icerik_sss_cevaplar a {
-    color: white;
+    color: #58797C;
 }
 
 .icerik_sss_cevaplar h3 {
-    color: #FFFCCC;
+    color: #58797C;
     font-size: 15px;
     line-height: 16px;
 }
@@ -206,7 +202,7 @@ img.floatr, img[align="right"] {
 }
 
 .content_pointer {
-    color: #fff;
+    color: #58797C;
     padding-left: 20px;
     width: 208px;
 }
@@ -303,8 +299,8 @@ li.secili a {
 #basin { background: url('../resim/sag_alt_basin.png') no-repeat; }
 
 #footer {
-    height: 77px;
-    width: 880px;
+    height: 81px;
+    width: 885px;
     margin-left: auto;
     margin-right: auto;
     clear: both;
@@ -329,12 +325,12 @@ li.secili a {
 .alt_sutun a {
     font-size: 10px;
     text-decoration: none;
-    color: #666666;
+    color: #FFF;
 }
 
 .tubitakuekae span { left: 99px; }
 .iletisim span { left: 103px; }
 .markapolitikasi span { left: 102px; }
-.tubitakuekae { background: url('../resim/alttubitakuekae.png') no-repeat center left; }
+.tubitakuekae { background: url('../resim/alttubitakuekae.png') no-repeat 15px 10px; }
 .iletisim { background: url('../resim/altiletisim.png') no-repeat center left; }
 .markapolitikasi { background: url('../resim/altmarkapolitikasi.png') no-repeat center left; }
