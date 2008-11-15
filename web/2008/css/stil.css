@@ -149,7 +149,7 @@ img.floatr, img[align="right"] {
     line-height: 16px;
 }
 
-.icerik_sss_sorular a {
+.icerik_sss_sorular li a, .icerik_sss_sorular li.secili a {
     text-decoration: none;
     color: #58797C;
 }
