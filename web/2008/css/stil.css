@@ -118,6 +118,9 @@ img.floatr, img[align="right"] {
     width: 640px;
     overflow: hidden;
 }
+.content_text a {
+    color: #58797C;
+}
 
 .icerik_altsayfa_yazi {
     line-height: 14px;
